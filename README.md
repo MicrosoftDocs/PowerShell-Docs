@@ -1,5 +1,5 @@
-# Experiments for docs
-Right now this repo is being used to experiment with authoring, tracking, and publishing demos and documentation for ongoing feature work.
+# PowerShell Documentation
+Note: right now, this repo is only intended for DSC content. In the future, it may expanded to include a greater set of PowerShell documentation. 
 
 ## Gold Standard
 * Any public release
