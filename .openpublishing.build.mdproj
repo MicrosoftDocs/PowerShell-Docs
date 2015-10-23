@@ -1,0 +1,158 @@
+<Project
+    DefaultTargets="Build"
+    ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <BuildTaskPackage>OpenPublishingBuild</BuildTaskPackage>
+    <ToolsFolder>$(MSBuildThisFileDirectory)Tools\</ToolsFolder>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageInstalled>True</PackageInstalled>
+    <PackageInstalled Condition="EXISTS('$(PackageRootFolder)build\Net451\OpenPublishingBuild.props') != 'True'">False</PackageInstalled>
+    <PackageInstalled Condition="EXISTS('$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj') != 'True'">False</PackageInstalled>
+  </PropertyGroup>
+
+  <!-- nuget Restore Target-->
+  <Target Name="RestorePackages">
+
+    <!-- There are three files manually needed to publish a content repository. This -->
+    <!-- file, packages.config, and nuget.exe. The rest can be boot strapped by the build process. -->
+    <Error Condition="EXISTS('$(MSBuildThisFileDirectory)packages.config') != 'True'" Text="packages.config was not found at the expected location: $(MSBuildThisFileDirectory)." />
+    <Error Condition="EXISTS('$(ToolsFolder)NuGet\NuGet.exe') != 'True'" Text="Nuget.exe was not found at the expected location: $(ToolsFolder)NuGet." />
+
+    <!-- Get package version from packages.config -->
+    <XmlPeek
+        XmlInputPath=".\packages.config"
+        Query="//package[@id='$(BuildTaskPackage)']/@version">
+      <Output
+          TaskParameter="Result"
+          ItemName="PackageVersion" />
+    </XmlPeek>
+    <CreateProperty
+        Value="@(PackageVersion)">
+      <Output
+          TaskParameter="Value"
+          PropertyName="PackageVersion" />
+    </CreateProperty>
+    <Message Text="Original PackageVersion=$(PackageVersion)" />
+
+    <!-- Check whether need latest package version -->
+    <PropertyGroup>
+      <UseLatestPackage>false</UseLatestPackage>
+      <UseLatestPackage Condition="'$(PackageVersion)'=='latest'">true</UseLatestPackage>
+    </PropertyGroup>
+    <Message Text="Use latest package version: $(UseLatestPackage)" />
+
+    <!-- Get Latest version from nuget server if latest version is needed -->
+    <XmlPeek
+        Condition="$(UseLatestPackage)"
+        XmlInputPath="$(ToolsFolder)NuGet\NuGet.config"
+        Query="//packageSources/add[@key='Azure']/@value">
+      <Output
+          TaskParameter="Result"
+          ItemName="NugetSource" />
+    </XmlPeek>
+    <CreateProperty
+        Condition="$(UseLatestPackage)"
+        Value="@(NugetSource)">
+      <Output
+          TaskParameter="Value"
+          PropertyName="NugetSource" />
+    </CreateProperty>
+    <Message Text="NugetSource=$(NugetSource)" Condition="$(UseLatestPackage)" />
+
+    <Exec Command="&quot;$(ToolsFolder)NuGet\NuGet.exe&quot; list $(BuildTaskPackage) -Source &quot;$(NugetSource)&quot;" ConsoleToMSBuild="true" Condition="$(UseLatestPackage)">
+      <Output TaskParameter="ConsoleOutput" PropertyName="LatestPackage" />
+    </Exec>
+    <ItemGroup Condition="$(UseLatestPackage)" >
+      <LatestPackageVersion Include="$(LatestPackage.Split(' ')[1])" />
+    </ItemGroup>
+    <CreateProperty
+        Condition="$(UseLatestPackage)"
+        Value="@(LatestPackageVersion)">
+      <Output
+          TaskParameter="Value"
+          PropertyName="LatestPackageVersion" />
+    </CreateProperty>
+    <Message Text="LatestPackageVersion=@(LatestPackageVersion)" Condition="$(UseLatestPackage)" />
+
+    <!-- Update packages.config file's version with latest version then do the restore-->
+    <XmlPoke
+       Condition="$(UseLatestPackage)"
+       XmlInputPath=".\packages.config"
+       Query="//packages/package[@id='$(BuildTaskPackage)']/@version"
+       Value="$(LatestPackageVersion)" />
+
+    <!-- Use NuGet to pull down specific version packages -->
+    <PropertyGroup>
+      <NuGetConfigFileArgument Condition="EXISTS('$(ToolsFolder)NuGet\NuGet.config') == 'True'">-ConfigFile &quot;$(ToolsFolder)NuGet\NuGet.config&quot;</NuGetConfigFileArgument>
+    </PropertyGroup>
+    <Exec Command="&quot;$(ToolsFolder)NuGet\NuGet.exe&quot; restore &quot;.\packages.config&quot; -PackagesDirectory &quot;.\packages&quot; $(NuGetConfigFileArgument)" Condition="$(PackageInstalled) != 'True'"/>
+
+    <PropertyGroup>
+      <BuildTaskNugetPackageFolderName>$(BuildTaskPackage).$(PackageVersion)</BuildTaskNugetPackageFolderName>
+      <BuildTaskNugetPackageFolderName Condition="$(UseLatestPackage)">$(BuildTaskPackage).$(LatestPackageVersion)</BuildTaskNugetPackageFolderName>
+      <PackageRootFolder>$(MSBuildThisFileDirectory)packages\$(BuildTaskNugetPackageFolderName)\</PackageRootFolder>
+    </PropertyGroup>
+
+    <!-- Update packages.config file's version back to "latest" string-->
+    <XmlPoke
+       Condition="$(UseLatestPackage)"
+       XmlInputPath=".\packages.config"
+       Query="//packages/package[@id='$(BuildTaskPackage)']/@version"
+       Value="$(PackageVersion)" />
+  </Target>
+
+  <!-- Build Target -->
+  <Target
+      Name="Build"
+      DependsOnTargets="RestorePackages">
+
+    <MSBuild
+        Targets="Build"
+        Projects="$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj" />
+
+  </Target>
+
+  <Target
+    Name="Generate"
+    DependsOnTargets="RestorePackages">
+
+    <MSBuild
+        Targets="Generate"
+        Projects="$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj" />
+
+  </Target>
+
+  <Target
+      Name="Serve"
+      DependsOnTargets="RestorePackages">
+
+    <MSBuild
+        Targets="Serve"
+        Projects="$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj" />
+
+  </Target>
+
+  <Target
+      Name="Clean"
+      DependsOnTargets="RestorePackages">
+
+    <MSBuild
+        Targets="Clean"
+        Projects="$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj" />
+
+  </Target>
+
+  <Target
+      Name="Rebuild"
+      DependsOnTargets="RestorePackages">
+
+    <MSBuild
+        Targets="Rebuild"
+        Projects="$(PackageRootFolder)build\Net451\OpenPublishingBuild.mdproj" />
+  </Target>
+
+</Project>
