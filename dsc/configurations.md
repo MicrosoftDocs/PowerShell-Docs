@@ -1,7 +1,9 @@
 # DSC Configurations #
 
 DSC configurations are PowerShell scripts that define a special type of function. 
-To define a configurations, you use the PowerShell keyword called **```powershell
+To define a configuration, you use the PowerShell keyword called __Configuration__.
+
+```powershell
 Configuration MyDscConfiguration {
 	Node “TEST-PC1” {
 		WindowsFeature MyFeatureInstance {
@@ -14,12 +16,7 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
-
-# Running the configuration function here will generate a MOF file for the LCM
-MyDscConfiguration
-```Configuration**.
-
-The following configuration, when compiled and run, would ensure that the Windows features RSAT and BitLocker are present on a target computer named "TEST-PC1".
+```
 
 ## Configuration sytax
 A configuration script consists of the following parts:
@@ -35,8 +32,6 @@ Configuration MyDscConfiguration {
 	param(
         [string[]]$computerName="localhost"
     )
-
-
 	Node $computerName {
 		WindowsFeature MyFeatureInstance {
 			Ensure = “Present”
@@ -48,10 +43,10 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
-
-# Running the configuration function here will generate a MOF file for the LCM
-MyDscConfiguration
 ```
 
 In this example, you specify the name of the node by passing it as the $computerName parameter when you [compile the configuraton](# Compiling the configuration). The name defaults to "localhost".
 
+## Compiling the configuration
+Before you can enact a configuration, you have to compile it into a MOF document. You do this by calling the configuration like you would a PowerShell function.
+>__Note:__ To call a configuration, the function must be in global scope (as with any other PowerShell function). You can make this happen either by "dot-sourcing" the script, or by running the configuration script by using F5 or clicking on the __Run Script__ button in the ISE. To dot-source the script, run the command `. .\`
