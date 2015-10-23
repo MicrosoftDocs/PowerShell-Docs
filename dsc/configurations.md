@@ -1,11 +1,7 @@
 # DSC Configurations #
 
-DSC configurations are declarative PowerShell scripts which define and configure instances of resources. Upon running the configuration, DSC (and the resources being called by the configuration) will simply “make it so”, ensuring that the system exists in the state laid out by the configuration. DSC configurations are also idempotent: the Local Configuration Manager (LCM) will continue to ensure that machines are configured in whatever state the configuration declares.
-To define these configurations, DSC introduces a new PowerShell keyword called **Configuration**. To use DSC resources to configure your environment, first define a PowerShell script block using the Configuration keyword, followed by an identifier and curly braces **{}** to delimit the block. This creates a function that, when executed, generates a MOF file that can be passed to the LCM. You may have other PowerShell commands and variable definitions outside of this Configuration script block, but it should contain the entirety of your DSC configuration. 
-
-Inside the configuration block you can define **Node** blocks that specify the desired configuration for each node (computer or VM) within your environment. A node block starts with the **Node** keyword, followed by an identifier for the target computer. This identifier can be a hostname, computer name, or IP address, and it may be represented as a variable. After the computer name, delimit the node block as follows:
-
-```powershell
+DSC configurations are PowerShell scripts that define a special type of function. 
+To define a configurations, you use the PowerShell keyword called **```powershell
 Configuration MyDscConfiguration {
 	Node “TEST-PC1” {
 		WindowsFeature MyFeatureInstance {
@@ -21,3 +17,41 @@ Configuration MyDscConfiguration {
 
 # Running the configuration function here will generate a MOF file for the LCM
 MyDscConfiguration
+```Configuration**.
+
+The following configuration, when compiled and run, would ensure that the Windows features RSAT and BitLocker are present on a target computer named "TEST-PC1".
+
+## Configuration sytax
+A configuration script consists of the following parts:
+- The **Configuration** block. This is the outermost script block. You define it by using the **Configuration** keyword and providing a name. In this case, the name of the configuration is "MyDscConfiguration".
+- One or more **Node** blocks. These define the nodes (computers or VMs) that you are configuring. In the above configuration, there is one **Node** block that targets a computer named "TEST-PC1".
+- One or more resource blocks. This is where the configuration sets the properties for the resources that it is configuring. In this case, there are two resource blocks, each of which call the "WindowsFeature" resource.
+
+Within a **Configuration** block, you can do anything that you normally could in a PoweShell function. For example, in the previous example, if you didn't want to hard code the name of the target computer in the configuration, you could add a parameter for the node name:
+
+```powershell
+Configuration MyDscConfiguration {
+
+	param(
+        [string[]]$computerName="localhost"
+    )
+
+
+	Node $computerName {
+		WindowsFeature MyFeatureInstance {
+			Ensure = “Present”
+			Name =	“RSAT”
+		}
+		WindowsFeature My2ndFeatureInstance {
+			Ensure = “Present”
+			Name = “Bitlocker”
+		}
+	}
+}
+
+# Running the configuration function here will generate a MOF file for the LCM
+MyDscConfiguration
+```
+
+In this example, you specify the name of the node by passing it as the $computerName parameter when you [compile the configuraton](# Compiling the configuration). The name defaults to "localhost".
+
