@@ -2,8 +2,8 @@
     "build_entry_point": "",
     "docsets_to_publish": [
         {
-            "docset_name": "PowerShell_PowerShell-docs_dcs",
-            "build_output_subfolder": "dcs",
+            "docset_name": "PowerShell_PowerShell-docs_dsc",
+            "build_output_subfolder": "dsc",
             "locale": "en-us",
             "version": 0,
             "open_to_public_contributors": "false"
