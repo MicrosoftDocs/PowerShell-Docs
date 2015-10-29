@@ -1,75 +1,22 @@
-Outline:
 
-* What is it?       
-    - Service for central management of DSC configurations, resources, and reports
-    - Implemented on REST (OData), PSWS
-    - Windows Feature that can turn it on 
-* Setting it up
-    - xDscWebService
-* Reporting server [v2]
+# Setting up a DSC web pull server
 
-# Windows PowerShell Desired State Configuration Pull Servers
-
-Windows PowerShell Desired State Configuration (DSC) offers two ways to let target nodes know what configuration they should have. In “push” mode (the default), you have to transmit configuration files to each target node yourself, keeping track of which configurations go with which nodes. In “pull” mode, the Local Configuration Manager (LCM) target node (a pull client, if so configured) performs a compliance check on the configuration of the node. If the client is configured as desired, nothing happens. If not, the LCM requests the pull server for the current configuration. If it finds a configuration marked for itself (and the configuration passes validation checks) the configuration is transmitted to the pull client, where the LCM executes it. If the configuration requires resources that the pull client is missing, they get downloaded as well.
-
-## Setting up and using a pull server
-Basically, a pull server is a website in IIS that uses an OData interface to make DSC configuration files available to target nodes when those nodes ask for them. You can also set up a pull server that uses SMB, but this example uses HTTP.
+A DSC web pull server is a web service in IIS that uses an OData interface to make DSC configuration files available to target nodes when those nodes ask for them.
 
 Requirements for using a pull server:
 
-* Any server with at least WMF 4.0
-* Server needs the IIS server role
-* Server needs the DSC Service
-* Ideally, some means of generating a certificate, to secure credentials passed to the Local Configuration Manager on target nodes
+- Any server with at least WMF 4.0
+- Server needs the IIS server role
+- Server needs the DSC Service
+- Ideally, some means of generating a certificate, to secure credentials passed to the Local Configuration Manager (LCM) on target nodes
 
-You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using Windows PowerShell. The sample scripts included in this topic will handle both of these steps for you as well.
-
-In overview, setting up and using a pull server involves these steps:
-
-1. Write a configuration to be applied to a target node
-1. Use the configuration to generate a MOF file
-1. Generate a checksum file to accompany the MOF
-1. Create the pull server itself
-1. Deploy the MOF and checksum files to the pull server
-1. Configure the target node to use the pull server
-
-## TODO
-1. **Write a configuration to be applied to a target node**
-You can write a new configuration or use an existing one that you already created for use in push mode. Basic information about writing a configuration is in Get Started with Windows PowerShell Desired State Configuration, but here’s an example as well:
-  ```
-  Configuration SimpleConfigurationForPullSample
-   { 
-      Node 1C707B86-EF8E-4C29-B7C1-34DA2190AE24 
-      {      
-         Computer ManagedNode
-         {
-            Ensure   = "Present"
-            Name     = “DomainClient1”
-            DomainName = “TestDomain”
-         }
-      }
-   }
-  SimpleConfigurationForPullSample-output "."
-  ```
-  **Important**: An important difference in configuration for pull mode is that you identify the target node not by name, but with a GUID. This ensures that each target node gets the proper configuration file. To generate a GUID, you can use [Create GUID (guidgen.exe)](https://msdn.microsoft.com/library/ms241442.aspx) or [Guid.NewGuid Method](https://msdn.microsoft.com/library/system.guid.newguid.aspx).
-1. **Generate a MOF file from the configuration**
-As shown in [Get Started with Windows PowerShell Desired State Configuration](dsc/getStarted.md), create the MOF file by invoking the configuration script, in this case: `PS C:\Scripts> SimpleConfigurationForPullSample`. The MOF file, called <yournewGUID>.mof, appears in a new directory with the same name as the configuration script. It’s a good idea to check the MOF file to make sure it matches the contents of the configuration.
-1. **Generate a checksum file**
-The GUID ensures that the target node’s Local Configuration Manager picks up the right configuration from the pull server; the checksum file allows the LCM to confirm that the MOF file didn’t get garbled. Generate the checksum with New-DSCChecksum, making sure to specify the path where the configuration MOF file was generated:
-  ```
-  PS D:\Samples> New-DSCCheckSum –ConfigurationPath .\SimpleConfigurationForPullSample -OutPath .\SimpleConfigurationForPullSample -Verbose -Force
-  VERBOSE: Create checksum file 'D:\Samples\SimpleConfigurationForPullSample\1C707B86-EF8E-4C29-B7C1-34DA2190AE24.mof.checksum'
-  ```
-1. **Create the pull server**
-
-#### To set up the pull server
-
-1. Any server with WMF 4.0 installed can be used as a pull server. On the computer you want to be the pull server, if you haven’t already, add the DSC Service, which is a Windows Server feature, either with the Add Roles and Features wizard in Server Manager, or with WindowsFeature. See [Install or Uninstall Roles, Role Services, or Features](https://technet.microsoft.com/library/hh831809.aspx) for the different ways you can add a server feature. If you add the feature using the Add Roles and Features wizard of Server Manager, you will find the DSC Service listed under the Windows PowerShell feature in the menu.
-1. Obtain the [xPSDesiredStateConfiguration module from the PowerShell Gallery](https://powershellgallery.com/packages/xPSDesiredStateConfiguration), and then unzip DSCPullServerConfiguration.zip to $env:systemdrive on the future pull server.
+You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using PowerShell. The sample scripts included in this topic will handle both of these steps for you as well.
+1. If you are using PowerShell 5.0, 
+1. Download the [xPSDesiredStateConfiguration module from the PowerShell Gallery](https://powershellgallery.com/packages/xPSDesiredStateConfiguration), and then unzip DSCPullServerConfiguration.zip to `$env:systemdrive` on the future pull server (in PowerShell 5.0, you can simply use the command `Install-Module xPSDesiredStateConfiguration` .
 1. Deploy the DSC Resources module to the Program Files directory.
-1. Run this configuration script (included in the unzipped files as Sample_xDscWebService.ps1). This script sets up the pull server and a compliance server.
-  **Note**: This sample script configures the pull server to use HTTPS, and so requires that you have created a certificate called “CN=PSDSCPullServerCert” stored in the "CERT:\LocalMachine\MY\" store. You can generate a self-signed certificate with MakeCert.exe. There is additional information about securing credentials to MOF files in Securing the MOF file.
-
+2. Create a self-signed certificate with the subject `"CN=PSDSCPullServerCert"` in the `CERT:\LocalMachine\MY\` store. You can do this with the command `New-SelfSignedCertificate  -CertStoreLocation 'CERT:\LocalMachine\MY' -Subject 'CN=PSDSCPullServerCert'`.
+1. In the PowerShell ISE, start (F5) the following configuration script (included in the unzipped files as Sample_xDscWebService.ps1). This script sets up the pull server and a compliance server.
+  
   ```powershell
   Configuration Sample_xDSCService
   {
@@ -101,25 +48,11 @@ The GUID ensures that the target node’s Local Configuration Manager picks up t
              
           }
 
-        DSCService PSDSCComplianceServer
-        {
-              Ensure   = "Present"
-              Name     = “PSDSCComplianceServer”
-              Port     = 9080
-              PhysicalPath = "$env:SystemDrive\inetpub\wwwroot\PSDSCComplianceServer"
-              EnableFirewallException = $true
-              CertificateThumbprint = “AllowUnencryptedTraffic”
-              State = “Started”
-                                         IsComplianceServer = $true
-              DependsOn = “[WindowsFeature]DSCServiceFeature”
-
       }
   }
   ```
-
-  When you run this script, a new subfolder named **Sample_xDSCService** is created on the pull server and in that subfolder is a MOF file called [TODO].
-
-  **Note**: This script actually creates two IIS web servers, the pull server itself (PSDSCPullServer) and a compliance server (PSDSCComplianceServer). The target nodes report to the compliance server whether or not they are compliant with the specified configuration. You can query the compliance status yourself from the compliance server at any time. See the **Query the compliance status** section later in this topic for instructions.
+1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the certificateThumbPrint parameter.
+  
 1. **Deploy the MOF and checksum files to the pull server**
   Now that the pull server exists, copy the MOF and checksum files you created in overview Steps 2 and 3 to **$env:SystemDrive\Program Files\WindowsPowershell\DscService\Configuration** on the pull server.
 1. **Configure the target node to use the new pull server**
@@ -142,7 +75,7 @@ The GUID ensures that the target node’s Local Configuration Manager picks up t
      SimpleMetaConfigurationForPull -Output "."
   ```
 
-Note how DownloadManagerCustomData passes the URL of the pull server and (for this example) allows an unsecured connection. The script also sets the ConfigurationID property of LCM to match the value of the configuration MOF file created in overview Step 1.
+Note how DownloadManagerCustomData passes the URL of the pull server and (for this example) allows an unsecured connection. The script also sets the __ConfigurationID__ property of LCM to match the value of the configuration MOF file created in overview Step 1.
 
 When this script runs, it creates a new output folder called **SimpleMetaConfigurationForPull** and puts a metaconfiguration MOF file there.
 
