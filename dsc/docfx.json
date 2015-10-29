@@ -1,0 +1,17 @@
+﻿{
+  "build": {
+    "content":
+      [
+        {
+          "files": ["**/**.md"]
+        }
+      ],
+    "resource": [
+        {
+          "files": ["**/images/**"]
+        }
+    ],
+    "template": "op.html",
+    "dest": "dsc"
+  }
+}
