@@ -1,5 +1,5 @@
 # PowerShell Documentation
-Note: right now, this repo is only intended for DSC content. In the future, it may expanded to include a greater set of PowerShell documentation. 
+Note: right now, this repo is only intended for DSC content. In the future, it may be expanded to include a greater set of PowerShell documentation. 
 
 ## Gold Standard
 * Any public release
