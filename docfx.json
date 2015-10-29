@@ -11,7 +11,6 @@
           "files": ["**/images/**"]
         }
     ],
-    "template": "op.html",
-    "dest": "dsc"
+    "template": "op.html"
   }
 }
