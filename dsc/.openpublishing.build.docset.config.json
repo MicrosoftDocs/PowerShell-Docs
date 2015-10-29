@@ -1,7 +1,0 @@
-{
-  "toc_file": "TOC.md",
-  "exclude_path_patterns":[ "*.docx" ],
-  "common_metadata": {
-    "ROBOTS": "NOINDEX, NOFOLLOW"
-  }
-}
