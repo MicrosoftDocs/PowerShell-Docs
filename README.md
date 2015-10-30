@@ -29,14 +29,6 @@ Note: right now, this repo is only intended for DSC content. In the future, it m
     - End-to-end whitepapers
     - App compat
 
-## DSC TechNet Documentation
-
-Current goals:
-* Build a filesystem with separate docs for whatever we want to be a separate doc
-* Backfill the current TechNet content and outlines into those docs so that we have a plan of record for what we want to do.
-
-[Download .docx for the Starter Kit](dsc/DSC Starter Kit.docx), a doc Joey wrote a million years ago with some decent snippets here and there. 
-
 * [Overview/Intro](dsc/overview.md) (1% - outlined)
     - Why do I care about DSC? Value add?
     - Basics of concepts
@@ -50,7 +42,7 @@ Current goals:
             * Windows/Linux
             * Versions 
     - Review initial blog post for reference
-* Configuration Topics
+* Configurations
     - [Authoring](dsc/configuration_authoring.md)
         + Compilation into MOF
         + Advanced authoring
