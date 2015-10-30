@@ -80,10 +80,10 @@ __"ApplyOnly"__: DSC applies the configuration and does nothing further unless a
 __"ApplyAndMonitor"__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs.__"ApplyAndAutoCorrect"__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.| 
 | ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are as follows:
 __"ContuinueConfiguration"__: Continue applying the current configuration.__"StopConfiguraiton"__: Stop the current configuration.| 
-| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are as follows: __"Disabled"__: DSC configurations are disabled for this node. __"Push"__: Configurations are initiated by calling the Start-DscConfiguration cmdlet. The configuration is applied immediately to the node. This is the default value. __Pull:__ The node is configured to regularly check for configurations from a pull server. If this property is set to Pull, you must specify a pull server in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block. For more information about pull servers, see [DSC pull model](pullModel.md).| 
+| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are as follows: __"Disabled"__: DSC configurations are disabled for this node. __"Push"__: Configurations are initiated by calling the Start-DscConfiguration cmdlet. The configuration is applied immediately to the node. This is the default value. __Pull:__ The node is configured to regularly check for configurations from a pull server. If this property is set to Pull, you must specify a pull server in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).| 
 | CertificateID| string| A GUID that specifies a certificate used to secure credentials for access to the configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?.| 
 | ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull sever if the name of the configuration MOF is named ConfigurationID.mof.
-__Note:__ If you set this property, registering the node with a pull server by using __RegistryKeys__ and does not work. For more information, see [Registering a node with a pull server](registerPullServer.md).| 
+__Note:__ If you set this property, registering the node with a pull server by using __RegistryKeys__ and does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
 | RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull server to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30. __Note:__  Either the value of this property must be a multiple of the value of the __ConfigurationModeFrequencyMins__ property, or the value of the __ConfigurationModeFrequencyMins__ property must be a multiple of the value of this property.| 
 | AllowModlueOverwrite| bool| __$TRUE__ if new configurations downloaded from the configuration server are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.| 
 | DebugMode| bool| If set to __$TRUE__, this causes the LCM to reload any DSC resources, even if they have been previously cached. Set to $FALSE to use cached resources. Typically you would set this property to __$TRUE__ while debugging a resource, and to __$FALSE__ for production. The default value is __$FALSE__.| 
@@ -109,7 +109,7 @@ A pull server is either an OData web service or an SMB share that is used as a c
 
 
 
-For information about setting up and using pull servers, see [DSC pull model](pullModel.md)
+For information about setting up and using pull servers, see [Setting up a DSC pull server](pullServer.md).
 
 ## Configuration server blocks
 
@@ -120,8 +120,8 @@ To define a web-based configuration sever, you create a __ConfigurationRepositor
 |---|---|---| 
 |AllowUnsecureConnection|bool|Set to __$TRUE__ to allow connections from the node to the server without authentication. Set to __$FALSE__ to require authentication.|
 |CertificateID|string|A GUID that represents the certificate used to authenticate to the server.|
-|ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull server by using a __RegistrationKey__. For more information, see [Registering a node with a pull server](registerPullServer.md).|
-|RegistrationKey|string|A GUID that registers the node with the pull server. For more information, see [Registering a node with a pull server](registerPullServer.md).|
+|ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull server by using a __RegistrationKey__. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
+|RegistrationKey|string|A GUID that registers the node with the pull server. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
 |ServerURL|string|The URL of the configuration server.|
 
 To define an SMB-based configuration server, you create a __ConfigurationRepositoryShare__ block. A __ConfigurationRepositoryShare__ defines the following properties.
@@ -167,16 +167,16 @@ To define a partial configuration, you create a __PartialConfiguration__ block. 
 |DependsOn|string{}|A list of names of other configurations that must be completed before this partial configuration is applied.|
 |Description|string|Text used to describe the partial configuration.|
 |ExclusiveResources|string[]|An array of resources exclusive to this partial configuration.|
-|RefreshMode|string|Specifies how DCS gets this partial configuration.. The possible values are as follows: __Disabled__: This partial configuration is disabled. __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet. After all partial configurations for the node are either pushed or pulled from a server, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value. __Pull__: The node is configured to regularly check for the partial configuration from a pull server. If this property is set to "Pull", you must specify a pull server by setting the __ConfigurationSource__ property. For more information about pull servers, see [DSC pull model](pullModel.md).|
+|RefreshMode|string|Specifies how DCS gets this partial configuration.. The possible values are as follows: __Disabled__: This partial configuration is disabled. __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet. After all partial configurations for the node are either pushed or pulled from a server, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value. __Pull__: The node is configured to regularly check for the partial configuration from a pull server. If this property is set to "Pull", you must specify a pull server by setting the __ConfigurationSource__ property. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).|
 |ResourceModlueSource|string[]|An array of the names of resource servers from which to download required resources for this partial configuration. These names must refer to resource servers previously defined in __ResourceRepositoryWeb__ and __ResourceRepositoryShare__ blocks.|
 
 ## See Also 
 
 ### Concepts
 Get Started with Windows PowerShell Desired State Configuration 
-[DSC pull model](pullModel.md) 
+[Setting up a DSC pull server](pullServer.md) 
 [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](LCM.md) 
 
 ### Other Resources
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
-[Registering a node with a pull server](registerPullServer.md) 
+[Setting up a pull client with configuration names](pullClientConfigNames.md) 

@@ -1,7 +1,7 @@
 # [Overview](overview.md)
 
 # [Configurations](configurations.md)
-## [Authoring configurations](configuration_authoring.md)
+## [Authoring configurations](configurations.md)
 ## [Configuration data](configData.md)
 
 # Resources

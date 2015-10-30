@@ -15,6 +15,6 @@ The following table provides a list of these resources and links to topics that 
 - [nxGroup Resource](lnxGroupResource.md)--Manages local Linux groups. 
 - [nxPackage Resource](lnxPackageResource.md)--Manages packages on Linux nodes.- [nxScript Resource](lnxScriptResource.md)--Runs scripts on target nodes.
 - [nxService Resource](lnxServiceResource.md)--Manages Linux services (daemons).
-- [nxSshAuthorizedKeys Resource](lnxSshAuthorizeKeysResource.md)--Manages public ssh keys for a Linux user. 
+- [nxSshAuthorizedKeys Resource](lnxSshAuthorizedKeysResource.md)--Manages public ssh keys for a Linux user. 
 - [nxUser Resource](lnxUserResource.md)--Manages local Linux users. 
   

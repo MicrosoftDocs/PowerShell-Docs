@@ -68,6 +68,6 @@ After the pull server setup completes, there is a new folder under $env:PROGRAMF
 - [Partial configurations](partialConfigs.md)
 
 ## See also
-* [Windows PowerShell Desired State Configuration Overview](dsc/overview.md)
+* [Windows PowerShell Desired State Configuration Overview](overview.md)
 * [Enacting configurations](enactingConfigurations.md)
 * [How to retrieve node information from DSC pull server](retrieveNodeInfo.md)

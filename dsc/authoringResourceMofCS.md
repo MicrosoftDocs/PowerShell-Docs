@@ -2,7 +2,7 @@
 
 Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script. However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#. For an introduction on writing cmdlets in C#, see Writing a [Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).
 
-Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](dsc/authoringResourceMOF.mds).
+Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).
 
 ## Writing a cmdlet-based resource
 For this example, we will implement a simple resource that manages a text file and its contents.
@@ -157,6 +157,6 @@ $env: psmodulepath (folder)
 
 ### See Also
 #### Concepts
-[Writing a custom DSC resource with MOF](dsc/authoringResourceMOF.md)
+[Writing a custom DSC resource with MOF](authoringResourceMOF.md)
 #### Other Resources
-[Writing a Windows PowerShell Cmdlet](dsc/)
+[Writing a Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)

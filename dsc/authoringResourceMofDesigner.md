@@ -163,7 +163,7 @@ The Resource Designer tool exposes one more cmdlet that can be used to test the 
 ### See Also
 
 #### Concepts
-[Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+[Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 #### Other Resources
 [xDscResourceDesigner Module](https://powershellgallery.com/packages/xDscResourceDesigner)
