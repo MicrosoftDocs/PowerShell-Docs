@@ -444,4 +444,4 @@ onlyProperty                            PSComputerName
 * [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ### Other Resources
-* [Windows PowerShell Desired State Configuration Cmdlets](TODO)
+* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
