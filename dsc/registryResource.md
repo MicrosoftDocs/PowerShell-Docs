@@ -1,10 +1,8 @@
 #DSC Registry Resource#
 
- 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 The __Registry__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage registry keys and values on a target node.
-
 
 ##Syntax##
 ```
@@ -20,9 +18,6 @@ Registry [string] #ResourceName
     [ ValueType = [string] { Binary | Dword | ExpandString | MultiString | Qword | String }  ]
 }
 ```
-
-
-
 
 ##Properties##
 |  Property  |  Description   | 

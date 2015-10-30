@@ -1,11 +1,10 @@
-#DSC Package Resource#
+# DSC Package Resource
 
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.
 
-The __Package__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.
-
-##Syntax##
+## Syntax
 
 ```
 Package [string] #ResourceName
@@ -22,7 +21,7 @@ Package [string] #ResourceName
 }
 ```
 
-##Properties##
+## Properties
 |  Property  |  Description   | 
 |---|---| 
 | Name| Indicates the name of the package for which you want to ensure a specific state.| 
@@ -32,10 +31,10 @@ Package [string] #ResourceName
 | Credential| Provides access to the package on a remote source. This property is not used to install the package. The package is always installed on the local system.| 
 | Ensure| Indicates if the package is installed. Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed). Set it to "Present" (the default value) to ensure the package is installed.| 
 | LogPath| Indicates the full path where you want the provider to save a log file to install or uninstall the package.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"``.| 
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"``.| 
 | ReturnCode| Indicates the expected return code. If the actual return code does not match the expected value provided here, the configuration will return an error.| 
 
-##Example##
+## Example
 
 This example runs the .msi installer that is located at the specified path and has the specified product ID.
 
@@ -48,4 +47,3 @@ Package PackageExample
     ProductId = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
 } 
 ```
-

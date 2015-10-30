@@ -1,5 +1,6 @@
 # DSC function to query node information from pull server.
-#>
+
+```powershell
 function QueryNodeInformation
 {
   Param (      
@@ -33,4 +34,5 @@ To retrieve the node information from the $json parameter, use the following:
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status 
 
-$json.value | Format-Table TargetName, ConfigurationId, ServerChecksum, NodeCompliant, LastComplianceTime, StatusCode 
+$json.value | Format-Table TargetName, ConfigurationId, ServerChecksum, NodeCompliant, LastComplianceTime, StatusCode
+```
