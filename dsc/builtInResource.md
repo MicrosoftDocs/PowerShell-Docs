@@ -1,4 +1,4 @@
-#Built-In Windows PowerShell Desired State Configuration Resources#
+# Built-In Windows PowerShell Desired State Configuration Resources
 
 Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 

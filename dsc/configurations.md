@@ -1,12 +1,11 @@
 # DSC Configurations #
 
-DSC configurations are declarative PowerShell scripts which define and configure instances of resources. Upon running the configuration, DSC (and the resources being called by the configuration) will simply “make it so”, ensuring that the system exists in the state laid out by the configuration. DSC configurations are also idempotent: the Local Configuration Manager (LCM) will continue to ensure that machines are configured in whatever state the configuration declares.
-To define these configurations, DSC introduces a new PowerShell keyword called **Configuration**. To use DSC resources to configure your environment, first define a PowerShell script block using the Configuration keyword, followed by an identifier and curly braces **{}** to delimit the block. This creates a function that, when executed, generates a MOF file that can be passed to the LCM. You may have other PowerShell commands and variable definitions outside of this Configuration script block, but it should contain the entirety of your DSC configuration. 
-
-Inside the configuration block you can define **Node** blocks that specify the desired configuration for each node (computer or VM) within your environment. A node block starts with the **Node** keyword, followed by an identifier for the target computer. This identifier can be a hostname, computer name, or IP address, and it may be represented as a variable. After the computer name, delimit the node block as follows:
+DSC configurations are PowerShell scripts that define a special type of function. 
+To define a configuration, you use the PowerShell keyword __Configuration__.
 
 ```powershell
 Configuration MyDscConfiguration {
+
 	Node “TEST-PC1” {
 		WindowsFeature MyFeatureInstance {
 			Ensure = “Present”
@@ -18,6 +17,85 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
+```
+Save the script as a .ps1 file.
+## Configuration sytax
+A configuration script consists of the following parts:
+- The **Configuration** block. This is the outermost script block. You define it by using the **Configuration** keyword and providing a name. In this case, the name of the configuration is "MyDscConfiguration".
+- One or more **Node** blocks. These define the nodes (computers or VMs) that you are configuring. In the above configuration, there is one **Node** block that targets a computer named "TEST-PC1".
+- One or more resource blocks. This is where the configuration sets the properties for the resources that it is configuring. In this case, there are two resource blocks, each of which call the "WindowsFeature" resource.
 
-# Running the configuration function here will generate a MOF file for the LCM
-MyDscConfiguration
+Within a **Configuration** block, you can do anything that you normally could in a PoweShell function. For example, in the previous example, if you didn't want to hard code the name of the target computer in the configuration, you could add a parameter for the node name:
+
+```powershell
+Configuration MyDscConfiguration {
+
+	param(
+        [string[]]$computerName="localhost"
+    )
+	Node $computerName {
+		WindowsFeature MyFeatureInstance {
+			Ensure = “Present”
+			Name =	“RSAT”
+		}
+		WindowsFeature My2ndFeatureInstance {
+			Ensure = “Present”
+			Name = “Bitlocker”
+		}
+	}
+}
+```
+
+In this example, you specify the name of the node by passing it as the $computerName parameter when you [compile the configuraton](# Compiling the configuration). The name defaults to "localhost".
+
+## Compiling the configuration
+Before you can enact a configuration, you have to compile it into a MOF document. You do this by calling the configuration like you would a PowerShell function.
+>__Note:__ To call a configuration, the function must be in global scope (as with any other PowerShell function). You can make this happen either by "dot-sourcing" the script, or by running the configuration script by using F5 or clicking on the __Run Script__ button in the ISE. To dot-source the script, run the command `. .\myConfig.ps1` where `myConfig.ps1` is the name of the script file that contains your configuration.
+
+When you call the configuration, it creates:
+- A folder in the current directory with the same name as the configuration.
+- A file named _NodeName_.mof in the new directory, where _NodeName_ is the name of the target node of the configuration. If there are more than one nodes, a MOF file will be created for each node.
+>__Note__: The MOF file contains all of the configuration information for the target node. Because of this, it’s important to keep it secure. For more information, see [Securing the MOF file](secureMOF.md).
+
+Compiling the first configuration above results in the following folder structure:
+```powershell
+PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
+PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration
+    Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
+Mode                LastWriteTime         Length Name                                                                                              
+----                -------------         ------ ----                                                                                         
+-a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
+```                                                                      
+If the configuration takes a parameter, as in the second example, that has to be provided at compile time. Here's how that would look:
+```powershell
+PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
+PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -computerName 'MyTestNode'
+    Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
+Mode                LastWriteTime         Length Name                                                                                              
+----                -------------         ------ ----                                                                                         
+-a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
+```      
+
+## Using DependsOn
+A useful DSC keyword is __DependsOn__. Typically (though not necessarily always), DSC applies the resources in the order that they appear within the configuration. However, __DependsOn__ specifies which resources depend on other resources, and the LCM ensures that they are applied in the correct order, regardless of the order in which resource instances are defined. For example, a configuration might specify that an instance of the __User__ resource depends on the existence of a __Group__ instance:
+```powershell
+Configuration DependsOnExample {
+	Node Test-PC1 {
+		Group GroupExample {
+			Ensure = “Present”
+			GroupName = “TestGroup”
+		}
+User UserExample {
+Ensure = “Present”
+FullName = “TestUser”
+DependsOn = “GroupExample”
+}
+	}
+}
+```
+## Using New Resources in Your Configuration
+If you ran the previous examples, you might have noticed that you were warned that you were using a resource without explicitly importing it.
+Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration module. Other resources in external modules must be placed in `$env:PSModulePath` in order to be recognized by the LCM. A new cmdlet, [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), can be used to determine what resources are installed on the system and available for use by the LCM. 
+Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), they still need to be loaded within your configuration. __Import-DscResource__ is a dynamic keyword that can only be recognized within a __Configuration__ block (i.e. it is not a cmdlet). __Import-DscResource__ supports two parameters:
+•	-__ModuleName__ is the recommended way of using __Import-DscResource__. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
+•	-__Name__ is the name of the resource to import. This is not the friendly name returned as “Name” by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 

@@ -1,21 +1,4 @@
-* Why do I care about DSC? Value add?
-    - Fits into PS ecosystem
-    - Uses cmdlet coverage
-    - Simpler to read/use
-    - Separates config from implementation
-* Basics of concepts
-    - Configs
-        + Basics
-            * 4 line PUSH config
-    - Resources
-    - Packaged as PS modules
-    - Discovery of resources
-            * On-box (Get-DscResource)
-            * Gallery (Find/Install-DscResource)
-    - Platforms/Availability
-        + Windows/Linux
-        + Versions 
-* Review initial blog post for reference
+
 
 # Windows PowerShell Desired State Configuration Overview 
 This topic describes the Windows PowerShell Desired State Configuration (DSC) feature in Windows PowerShell. You can use this topic to get an overview of DSC and to find the documentation resources you need to understand and use DSC.
@@ -39,14 +22,13 @@ Following are some example scenarios where you can use built-in DSC resources to
 * Fixing a configuration that has drifted away from the desired state
 * Discovering the actual configuration state on a given node
 
-In addition, you can create custom resources to configure the state of any application or system setting.
+## Key Concepts
+DSC is a declarative platform used for configuration, deployment, and management of systems. It consists of three primary components:
+* [Configurations](configurations.md) are declarative PowerShell scripts which define and configure instances of resources. Upon running the configuration, DSC (and the resources being called by the configuration) will simply “make it so”, ensuring that the system exists in the state laid out by the configuration. DSC configurations are also idempotent: the Local Configuration Manager (LCM) will continue to ensure that machines are configured in whatever state the configuration declares.
+* Resources are the imperative building blocks of DSC which are written to model the various components of a sub-system and implement the control flow of their changing states. They reside within PowerShell modules and can be written to model something as generic as a file or a Windows process or as specific as an IIS server or a VM running in Azure.
+* The Local Configuration Manager (LCM) is the engine by which DSC facilitates the interaction between resources and configurations. The LCM regularly polls the system using the control flow implemented by resources to ensure that the state laid out by a Configuration is maintained. If the system is out of state, the LCM uses more logic inside of the resources to “make it so” according to the Configuration declaration. 
 
-## Important functionality
-The following list will help you navigate the documentation for DSC.
- 
-* Get Started with Windows PowerShell Desired State Configuration: Explains how to use Windows PowerShell extensions that are part of DSC to automate an example configuration.
-* Windows PowerShell Desired State Configuration Resources: Explains how to create custom resources for if your environment requires a type of configuration that is not provided by the built-in resources that come in DSC for performing basic configuration work.
-* Separating Configuration and Environment Data: Demonstrates a structured way to separate the data used in configuration from the configuration logic. This provides modularity, which enables you reuse the data and the logic independently. It also makes it easier to update the data and logic when necessary.
-* Windows PowerShell Desired State Configuration Local Configuration Manager: Explains the DSC engine, which is available on all nodes (computers) and coordinates the reception and application of configuration data for each node.
-* Windows PowerShell Desired State Configuration Pull Servers: Explains the DSC Service, which includes the options to push configuration information to target nodes, or to have an environment where the nodes retrieve the information from a server that is set up for that purpose. The nodes can continue to update and maintain their state, based on the configuration information on that server. It is also possible to use such a server to distribute custom resources to the target nodes.
-* Troubleshooting DSC: Provides several techniques you can use to troubleshoot your DSC configuration or to track the progress of its operations.
+DSC also includes a number of new language keywords, cmdlets and tools that allow creation of configurations, help build DSC resources, invoke configurations, and manage the LCM. Many of these cmdlets can be found in Windows 8.1 as part of the PsDesiredStateConfig module (including Start-DscConfiguration, Set-DscLocalConfigurationManager, and Get-DscResource). The xDscResourceDesigner (found in the PowerShell gallery) is a collection of cmdlets that simplify the development of DSC resources.
+
+
+
