@@ -6,7 +6,7 @@ In a class-based DSC resource, the schema is defined as properties of the class 
 
 In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.
 
-For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ## Folder structure for a class resource
 

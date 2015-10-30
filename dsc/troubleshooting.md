@@ -438,10 +438,10 @@ onlyProperty                            PSComputerName
 ## See Also
 
 ### Reference
-* [DSC Log Resource](TODO)
+* [DSC Log Resource](logResource.md)
 
 ### Concepts
-* [Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+* [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ### Other Resources
 * [Windows PowerShell Desired State Configuration Cmdlets](TODO)
