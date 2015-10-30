@@ -784,7 +784,7 @@ PowerShellVersion = '5.0'
 
 ## Test the resource
 
-After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource. For information about how to run a DSC configuration, see [Get Started with Windows PowerShell Desired State Configuration](dsc/getStarted.md). The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).
+After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource. For information about how to run a DSC configuration, see [Get Started with Windows PowerShell Desired State Configuration](overview.md). The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).
 
 ```powershell
 Configuration Test
@@ -803,4 +803,4 @@ Start-DscConfiguration -Wait -Force Test
 
 ## See Also
 ### Concepts
-[Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+[Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
