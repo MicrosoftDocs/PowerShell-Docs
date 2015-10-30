@@ -31,7 +31,7 @@ PartialConfigDemo
 The __RefreshMode__ for each partial configuration is set to "Push". The names of the __PartialConfiguration__ blocks (in this case, "OSInstall" and "SharePointConfig") must match exactly the names of the configurations that are pushed to the target node.
 
 ###Publishing and starting push-mode partial configurations###
-![PartialConfig folder structure](../images/PartialConfig1.jpg)
+![PartialConfig folder structure](./images/PartialConfig1.jpg)
 
 
 You then call __Publish-DSCConfiguration__ for each configuration, passing the folders that contain the configuration documents as the Path parameters. After publishing both configurations, you can call `Start-DSCConfiguration –UseExisting` on the target node.
@@ -91,7 +91,7 @@ After creating the meta-configuration, you must run it to create a configuration
 
 
 The partial configuration documents must be placed in the folder specified as the __ConfigurationPath__ in the `web.config` file for the pull server (typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: _ConfigurationName_. _ConfigurationID_`.mof`, where _ConfigurationName_ is the name of the partial configuration and _ConfigurationID_ is the configuration ID defined in the LCM on the target node. For our example, the configuration documents should be names as follows.
-![PartialConfig names on pull server](../images/PartialConfigPullServer.jpg)
+![PartialConfig names on pull server](images/PartialConfigPullServer.jpg)
 
 ### Running partial configurations from a pull server###
 
