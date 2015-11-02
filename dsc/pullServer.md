@@ -15,9 +15,7 @@ You can add the IIS server role and DSC Service with the Add Roles and Features 
 ## Using the xWebService resource
 The easiest way to set up a web pull server is to use the xWebService resource, included in the xPSDesiredStateConfiguration module. The following steps explain how to use the resource in a configuration that sets up the web service.
 
-1. If you are using PowerShell 5.0, use the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the xPSDesiredStateConfiguration module. You can skip to step 4.
-1. Download the [xPSDesiredStateConfiguration module from the PowerShell Gallery](https://powershellgallery.com/packages/xPSDesiredStateConfiguration), and then unzip DSCPullServerConfiguration.zip to `$env:systemdrive` on the future pull server (in PowerShell 5.0, you can simply use the command `Install-Module xPSDesiredStateConfiguration`.
-1. Deploy the DSC Resources module to the Program Files directory.
+1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
 2. Create a self-signed certificate with the subject `"CN=PSDSCPullServerCert"` in the `CERT:\LocalMachine\MY\` store. You can do this with the command `New-SelfSignedCertificate  -CertStoreLocation 'CERT:\LocalMachine\MY' -Subject 'CN=PSDSCPullServerCert'`.
 1. In the PowerShell ISE, start (F5) the following configuration script (included in the unzipped files as Sample_xDscWebService.ps1). This script sets up the pull server and a compliance server.
   
