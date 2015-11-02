@@ -25,5 +25,5 @@
 ## [Troubleshooting DSC](troubleshooting.md)
 
 ## DSC on Linux
-### [Getting started with DSC for Linux](LinuxGettingStarted.md)
+### [Getting started with DSC for Linux](lnxGettingStarted.md)
 ### [Built-in resorces for Linux](lnxBuiltInResources.md)

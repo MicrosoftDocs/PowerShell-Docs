@@ -39,7 +39,7 @@ Current goals:
 * [Overview/Intro](dsc/overview.md) (1% - outlined)
     - Why do I care about DSC? Value add?
     - Basics of concepts
-        + [Configurations](dsc/configurations.md)
+        + [Configurations](dsc/enactingConfigurations.md)
         + Resources
         + Packaged as PS modules
         + Discovery of resources
@@ -78,7 +78,7 @@ Current goals:
         + [Composite resources](dsc/authoringResourceComposite.md)
         + Debugging DSC resources
     - Linux resources
-* [MetaConfiguration (LCM)](dsc/LCM.md)
+* [MetaConfiguration (LCM)](dsc/metaConfig.md)
 * [Pull server](dsc/pullServer.md)
 * Error reporting/logging
 * Scenario (end-to-end) examples

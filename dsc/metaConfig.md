@@ -139,7 +139,7 @@ To define a partial configuration, you create a **PartialConfiguration** block. 
 ### Concepts
 Get Started with Windows PowerShell Desired State Configuration 
 [Setting up a DSC pull server](pullServer.md) 
-[Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](LCM.md) 
+[Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md) 
 
 ### Other Resources
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
