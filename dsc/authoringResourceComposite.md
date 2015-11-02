@@ -1,5 +1,7 @@
 # Composite resources: Using a DSC configuration as a resource
 
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 In real-world situations, configurations can become long and complex, calling many different resources and setting many different properties. To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations. We call this a composite resource. A composite resource is a DSC configuration that takes parameters. The parameters of the configuration act as the properties of the resource. The configuration is saved as a file with a **. schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).
 
 ## Creating the composite resource

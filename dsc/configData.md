@@ -1,12 +1,6 @@
-* Why is it useful?
-    - Dev -> Test -> Prod
-    - Explain entities inside the structure
-* Different ways to specify
-    - Inline
-    - .psd1 (static)
-    - .ps1 (runtime dynamic)
-
 # Separating Configuration and Environment Data
+
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 In Windows PowerShell Desired State Configuration (DSC), it is possible to separate configuration data from the logic of your configuration. Another way to look at this is to consider the structural configuration (for example, a configuration might require that IIS be installed) as separate from the environmental configuration (that is, whether the situation is a test environment vs. a production one—the node names would be different, but the configuration applied to them would be the same). This has the following advantages:
 

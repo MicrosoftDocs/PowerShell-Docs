@@ -1,5 +1,7 @@
 # Writing a custom DSC resource with PowerShell classes
 
+> Applies To: Windows Windows PowerShell 5.0
+
 With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class. The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file. The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.
 
 In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type.. The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.

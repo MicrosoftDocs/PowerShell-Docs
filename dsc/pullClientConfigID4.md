@@ -1,5 +1,7 @@
 # Setting up a pull client using configuration ID in PowerShell 4.0
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration known as a "metaconfiguration". For more information about configuring the LCM, see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md)
 
 The following script configures the LCM to pull configurations from a server named "PullServer".

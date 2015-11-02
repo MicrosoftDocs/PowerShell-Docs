@@ -1,5 +1,7 @@
 # Writing a custom DSC resource with MOF
 
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 In this topic, we will define the schema for a Windows PowerShell Desired State Configuration (DSC) custom resource in a MOF file, and implement the resource in a Windows PowerShell script file. This custom resource is for creating and maintaining a web site.
 
 ## Creating the MOF schema

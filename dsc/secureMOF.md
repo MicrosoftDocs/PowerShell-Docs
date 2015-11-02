@@ -1,6 +1,8 @@
 # Securing the MOF File
 
-DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager implements the desired configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the Local Configuration Manager to check the credentials of a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the Local Configuration Manager to check the credentials of a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
 
 ## Prerequisites
 
