@@ -20,7 +20,7 @@
 ### [Setting up a web pull server](pullServer.md)
 ### [Setting up an SMB pull server](pullServerSMB.md)
 ### [Setting up a pull client](pullClient.md)
-### [Securing a pull server](secureServer.md)
+### [Pull server best practices](secureServer.md)
 
 ## [Troubleshooting DSC](troubleshooting.md)
 
