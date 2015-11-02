@@ -47,7 +47,7 @@ $ConfigData= @{
 
 ## Configuration script
 
-In the configuration script itself, use the PsCredential parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
+In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
 
 ```
 configuration CredentialEncryptionExample 
@@ -73,19 +73,19 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before Start-DscConfiguration can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before `Start-DscConfiguration` can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption 
 function Get-LocalEncryptionCertificateThumbprint 
 { 
-    (dir Cert:\LocalMachine\my) | %{ 
-                        # Verify the certificate is for Encryption and valid 
-                        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify()) 
-                        { 
-                            return $_.Thumbprint 
-                        } 
-                    } 
+    (dir Cert:\LocalMachine\my) | %{
+        # Verify the certificate is for Encryption and valid 
+        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify()) 
+        { 
+            return $_.Thumbprint 
+        } 
+    } 
 }
 ```
 
