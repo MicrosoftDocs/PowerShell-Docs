@@ -3,7 +3,7 @@
 # [Configurations](configurations.md)
 ## [Enacting configurations](enactingConfigurations.md)
 ## [Configuration data](configData.md)
-## [Securing the configuration MOF file](securtMOF.md)
+## [Securing the configuration MOF file](secureMOF.md)
 
 # [Resources](resources.md)
 ## [Built-in resources](builtInResource.md)
