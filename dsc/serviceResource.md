@@ -1,12 +1,11 @@
-#DSC Service Resource#
+# DSC Service Resource
+
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.
 
-
-The __Service__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.
-
-##Syntax##
+## Syntax
 
 ```
 Service [string] #ResourceName
@@ -20,7 +19,7 @@ Service [string] #ResourceName
 }
 ```
 
-##Properties##
+## Properties
 
 |  Property  |  Description   | 
 |---|---| 
@@ -37,15 +36,11 @@ Service [string] #ResourceName
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 | StartupType| Indicates the startup type for the service. The values that are allowed for this property are:
 <ul><li>Automatic</li> 
-
-
 <li>Disabled</li> 
-
-
 <li>Manual</li> | 
 | State| Indicates the state you want to ensure for the service.| 
 
-##Example##
+## Example
 ```powershell
 Service ServiceExample
 {

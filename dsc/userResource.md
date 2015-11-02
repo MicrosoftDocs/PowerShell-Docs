@@ -25,8 +25,8 @@ User [string] #ResourceName
 }
 ```
 
-##Properties##
- |  Property  |  Description   | 
+## Properties
+|  Property  |  Description   | 
 |---|---| 
 | UserName| Indicates the account name for which you want to ensure a specific state.| 
 | Description| Indicates the description you want to use for the user account.| 
@@ -39,7 +39,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| Indicates if the password will expire. To ensure that the password for this account will never expire, set this property to __$true__, and set it to __$false__ if the password will expire. The default value is __$false__.| 
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
-##Example##
+## Example
 
 ```powershell
 User UserExample

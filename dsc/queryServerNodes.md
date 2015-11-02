@@ -27,9 +27,9 @@ Param (
 }
 ```
 
-Replace the Uri parameter with the URI for your pull server. If you want the node information in XML format, set ContentType to “application/xml”.
+Replace the `Uri` parameter with the URI for your pull server. If you want the node information in XML format, set `ContentType` to `application/xml`.
 
-To retrieve the node information from the $json parameter, use the following:
+To retrieve the node information from the `$json` parameter, use the following:
 
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status 
