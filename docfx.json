@@ -1,16 +1,22 @@
-﻿{
-  "build": {
-    "content":
-      [
-        {
-          "files": ["**/**.md"]
-        }
-      ],
-    "resource": [
-        {
-          "files": ["**/images/**"]
-        }
-    ],
-    "template": "op.html"
-  }
+{
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "**/**.md"
+                ]
+            }
+        ],
+        "globalMetadata": {
+            "ROBOTS": "NOINDEX, NOFOLLOW"
+        },
+        "resource": [
+            {
+                "files": [
+                    "**/images/**"
+                ]
+            }
+        ],
+        "template": "op.html"
+    }
 }
