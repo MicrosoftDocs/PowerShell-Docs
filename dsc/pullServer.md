@@ -53,12 +53,16 @@ The easiest way to set up a web pull server is to use the xWebService resource, 
       }
   }
   ```
-1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the certificateThumbPrint parameter:
+1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the **certificateThumbPrint** parameter:
 
 ```powershell
 PS:\>$myCert = Get-ChildItem CERT: | Where {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
+## Registration Key
+To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key (which is a GUID known to both the server and the client node) must be placed in a file named `RegistrationKeys.txt`. By default, the pull server created by this example expects that file to be located in `C:\Program Files\WindowsPowerShell\DscService`. Create a text file with only one line consisting of the registration key and save it in that folder.
+>**Note**: Registration keys are not supported only in PowerShell 4.0. 
+
 ## Placing configurations and resources
 After the pull server setup completes, there is a new folder under $env:PROGRAMFILES\WindowsPowerShell named "DscService". In that folder, there are two folders named "Modules" and "Configuration". In the "Modules" folder, place any resources that are needed for configurations that nodes will pull from this server. In the "Configuration" folder, place the configuration MOF files for any configurations that are to be pulled by nodes. The names of the MOF files depend on the type of pull client. The following topics describe setting up pull clients in detail:
 - [Setting up a DSC pull client using a configuration ID](pullClientConfigID.md)
