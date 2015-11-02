@@ -46,47 +46,34 @@ An LCM configuration can contain blocks only for a limited set of resources. In 
 Other than specifying pull servers and partial configurations, all of the properties of the LCM are configured in a **Settings** block. The following properties are available in a **Settings** block.
 
 |  Property  |  Type  |  Description   | 
-|--- |--- |---  | 
-| ConfigurationModeFrequencyMins| UInt32| How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15. **Note**: Either the value of this property must be a multiple of the value of the RefreshFrequencyMins property, or the value of the >RefreshFrequencyMins property must be a multiple of the value of this property.| 
-| RebootNodeIfNeeded| bool| Set this to **$true** to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is **$false**.| 
-| ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. It can take the following values:
-* **"ApplyOnly"**: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a server. After initial application of a new configuration, DSC does not check for drift from a previously configured state.
-* **"ApplyAndMonitor"**: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs.
-* **"ApplyAndAutoCorrect"**: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.| 
-| ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are as follows:
-**"ContinueConfiguration"**: Continue applying the current configuration.**"StopConfiguraiton"**: Stop the current configuration.| 
-| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are as follows: **"Disabled"**: DSC configurations are disabled for this node. **"Push"**: Configurations are initiated by calling the Start-DscConfiguration cmdlet. The configuration is applied immediately to the node. This is the default value. **Pull:** The node is configured to regularly check for configurations from a pull server. If this property is set to Pull, you must specify a pull server in a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).| 
+|--- |--- |---| 
+| ConfigurationModeFrequencyMins| UInt32| How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15. __Note__: Either the value of this property must be a multiple of the value of the __RefreshFrequencyMins__ property, or the value of the __RefreshFrequencyMins__ property must be a multiple of the value of this property.| 
+| RebootNodeIfNeeded| bool| Set this to __$true__ to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is __$false__.| 
+| ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. It can take the following values: __"ApplyOnly"__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a server. After initial application of a new configuration, DSC does not check for drift from a previously configured state. __"ApplyAndMonitor"__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs __"ApplyAndAutoCorrect"__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.| 
+| ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are as follows: __"ContuinueConfiguration"__: Continue applying the current configuration.__"StopConfiguraiton"__: Stop the current configuration.| 
+| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are as follows: __"Disabled"__: DSC configurations are disabled for this node. __"Push"__: Configurations are initiated by calling the Start-DscConfiguration cmdlet. The configuration is applied immediately to the node. This is the default value. __Pull:__ The node is configured to regularly check for configurations from a pull server. If this property is set to Pull, you must specify a pull server in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).| 
 | CertificateID| string| A GUID that specifies a certificate used to secure credentials for access to the configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?.| 
-| ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull sever if the name of the configuration MOF is named ConfigurationID.mof.
-**Note:** If you set this property, registering the node with a pull server by using **RegistryKeys** and does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
-| RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull server to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30. **Note:**  Either the value of this property must be a multiple of the value of the **ConfigurationModeFrequencyMins** property, or the value of the **ConfigurationModeFrequencyMins** property must be a multiple of the value of this property.| 
-| AllowModlueOverwrite| bool| **$TRUE** if new configurations downloaded from the configuration server are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.| 
-| DebugMode| bool| If set to **$TRUE**, this causes the LCM to reload any DSC resources, even if they have been previously cached. Set to $FALSE to use cached resources. Typically you would set this property to **$TRUE** while debugging a resource, and to **$FALSE** for production. The default value is **$FALSE**.| 
-| ConfigurationDownloadManagers| CimInstance[]| Obsolete. Use **ConfigurationRepositoryWeb** and **ConfigurationRepositoryShare** blocks to define configuration pull servers.| 
-| ResourceModuleManagers| CimInstance[]| Obsolete. Use **ResourceRepositoryWeb** and **ResourceRepositoryShare** blocks to define resource pull servers.| 
-| ReportManagers| CimInstance[]| Obsolete. Use **ReportServerWeb** blocks to define report pull servers.| 
+| ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull sever if the name of the configuration MOF is named ConfigurationID.mof. __Note:__ If you set this property, registering the node with a pull server by using __RegistryKeys__ and does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
+| RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull server to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30. __Note:__  Either the value of this property must be a multiple of the value of the __ConfigurationModeFrequencyMins__ property, or the value of the __ConfigurationModeFrequencyMins__ property must be a multiple of the value of this property.| 
+| AllowModlueOverwrite| bool| __$TRUE__ if new configurations downloaded from the configuration server are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.| 
+| DebugMode| bool| If set to __$TRUE__, this causes the LCM to reload any DSC resources, even if they have been previously cached. Set to $FALSE to use cached resources. Typically you would set this property to __$TRUE__ while debugging a resource, and to __$FALSE__ for production. The default value is __$FALSE__.| 
+| ConfigurationDownloadManagers| CimInstance[]| Obsolete. Use __ConfigurationRepositoryWeb__ and __ConfigurationRepositoryShare__ blocks to define configuration pull servers.| 
+| ResourceModuleManagers| CimInstance[]| Obsolete. Use __ResourceRepositoryWeb__ and __ResourceRepositoryShare__ blocks to define resource pull servers.| 
+| ReportManagers| CimInstance[]| Obsolete. Use __ReportServerWeb__ blocks to define report pull servers.| 
 | PartialConfigurations| CimInstance| Not implemented. Do not use.| 
 | StatusRetentionTimeInDays | UInt32| The number of days the LCM keeps the status of the current configuration.| 
-
- 
 
 ## Pull servers
 
 A pull server is either an OData web service or an SMB share that is used as a central location for DSC files. LCM configuration supports defining the following types of pull servers:
 
 * **Configuration server**: A repository for DSC configurations. Define configuration severs by using **ConfigurationRepositoryWeb** (for web-based servers) and **ConfigurationRepositoryShare** (for SMB-based servers) blocks.
-
-- Resource server—A repository for DSC resources, packaged as PowerShell modules. Define resource severs by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
-
-
-- Report server—A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
-
-
+* Resource server—A repository for DSC resources, packaged as PowerShell modules. Define resource severs by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
+* Report server—A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
 
 For information about setting up and using pull servers, see [Setting up a DSC pull server](pullServer.md).
 
 ## Configuration server blocks
-
 
 To define a web-based configuration sever, you create a **ConfigurationRepositoryWeb** block. A **ConfigurationRepositoryWeb** defines the following properties.
 
@@ -99,14 +86,16 @@ To define a web-based configuration sever, you create a **ConfigurationRepositor
 |ServerURL|string|The URL of the configuration server.|
 
 To define an SMB-based configuration server, you create a **ConfigurationRepositoryShare** block. A **ConfigurationRepositoryShare** defines the following properties.
+
 |Property|Type|Description|
 |---|---|---|
 |Credential|MSFT_Credential|The credential used to authenticate to the SMB share.|
 |SourcePath|string|The path of the SMB share.|
 
-##Resource server blocks
+## Resource server blocks
 
 To define a web-based resource sever, you create a **ResourceRepositoryWeb** block. A **ResourceRepositoryWeb** defines the following properties.
+
 |Property|Type|Description|
 |---|---|---|
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
@@ -114,17 +103,17 @@ To define a web-based resource sever, you create a **ResourceRepositoryWeb** blo
 |RegistrationKey|string|A GUID that identifies the node to the pull server. For more information, see How to register a node with a DSC pull server.|
 |ServerURL|string|The URL of the configuration server.|
  
-
 To define an SMB-based resource server, you create a **ResourceRepositoryShare** block. **ResourceRepositoryShare** defines the following properties.
+
 |Property|Type|Description|
 |---|---|---|
 |Credential|MSFT_Credential|The credential used to authenticate to the SMB share.|
 |SourcePath|string|The path of the SMB share.|
 
-##Report server blocks
-
+## Report server blocks
 
 A report server must be an OData web service. To define a report server, you create a **ReportServerWeb** block. **ReportServerWeb** defines the following properties.
+
 |Property|Type|Description|
 |---|---|---| 
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
@@ -132,9 +121,10 @@ A report server must be an OData web service. To define a report server, you cre
 |RegistrationKey|string|A GUID that identifies the node to the pull server. For more information, see How to register a node with a DSC pull server.|
 |ServerURL|string|The URL of the configuration server.|
 
-##Partial configurations
+## Partial configurations
 
 To define a partial configuration, you create a **PartialConfiguration** block. For more information about partial configurations, see [DSC Partial configurations](partialConfigs.md). **PartialConfiguration** defines the following properties.
+
 |Property|Type|Description|
 |---|---|---| 
 |ConfigurationSource|string[]|An array of names of configuration servers, previously defined in **ConfiguratoinRepositoryWeb** and **ConfigurationRepositoryShare** blocks, where the partial configuration is pulled from.|

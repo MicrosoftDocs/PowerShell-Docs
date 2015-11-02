@@ -3,7 +3,7 @@
 ```powershell
 function QueryNodeInformation
 {
-  Param (      
+Param (      
        [string] $Uri =
 "http://localhost:7070/PSDSCComplianceServer.svc/Status",                         
        [string] $ContentType = "application/json"           
