@@ -1,5 +1,7 @@
 # Setting up a DSC web pull server
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 A DSC web pull server is a web service in IIS that uses an OData interface to make DSC configuration files available to target nodes when those nodes ask for them.
 
 Requirements for using a pull server:

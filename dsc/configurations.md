@@ -1,5 +1,7 @@
 # DSC Configurations
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 DSC configurations are PowerShell scripts that define a special type of function. 
 To define a configuration, you use the PowerShell keyword __Configuration__.
 

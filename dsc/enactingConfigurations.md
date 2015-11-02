@@ -1,4 +1,7 @@
 # Enacting configurations
+
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 There are two ways to enact PowerShell Desired State Configuration (DSC) configurations: push mode and pull mode.
 
 ## Push mode
