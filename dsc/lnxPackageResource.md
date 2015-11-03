@@ -35,6 +35,7 @@ nxPackage <string> #ResourceName
 ## Example
 
 The following example ensures that the package named "httpd" is installed on a Linux computer, using the “Yum” package manager.
+
 ```
 Import-DSCResource -Module nx 
 
