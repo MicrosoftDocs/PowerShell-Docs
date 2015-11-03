@@ -20,6 +20,7 @@ In pull mode, pull clients are configured to get their desired state configurati
 Each one of the pull clients has a scheduled task that performs a periodic compliance check on the configuration of the node. When the event is triggered the first time, it causes the Local Configuration Manager (LCM) on the pull client to validate the configuration. If the pull client is configured as desired, nothing happens. Otherwise, the LCM makes a request to the pull server to get a given configuration. If that configuration exists on the pull server, and it passes initial validation checks, the configuration is transmitted to the pull client, where it is then executed by the LCM.
 
 The following topics explain how to set up pull servers and clients:
+
 - [Setting up a web pull server](pullServer.md)
 - [Setting up an SMB pull server](pullServerSMB.md)
 - [Configuring a pull client](pullClientConfigID.md)

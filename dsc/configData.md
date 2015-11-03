@@ -206,4 +206,4 @@ configuration MyConfiguration
 }
 ```
 
-You can find a full example included in the [xWebAdministration module](https://powershellgallery.com/packages/xWebAdministration)
+You can find a full example included in the [xWebAdministration module](https://powershellgallery.com/packages/xWebAdministration).

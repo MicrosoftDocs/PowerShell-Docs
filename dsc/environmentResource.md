@@ -29,6 +29,7 @@ Environment [string] #ResourceName
 ## Example
 
 The following example ensures that __TestEnvironmentVariable__ is present and it has the value __TestValue__. If it is not present, it creates it.
+
 ```powershell
 Environment EnvironmentExample
 {
