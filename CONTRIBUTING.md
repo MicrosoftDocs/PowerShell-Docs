@@ -1,5 +1,15 @@
 # Contributing to PowerShell Documentation
 
+## Sign a CLA
+
+Before you can contribute to any PowerShell repositories, you must [sign a Microsoft Contribution Licensing Agreement (CLA)](https://cla.microsoft.com/). 
+If you've already contributed to PowerShell repostories in the past, congratulations! You've already completed this step.
+
+> **Note**: for a short period of time, CLA automation is not enabled on this repository.
+Pull requests may take slightly longer to process because of the manual steps involved with making sure a CLA has been signed. 
+
+## Writing PowerShell documentation
+
 One of the easiest ways to contribute to PowerShell is by helping to write and edit documentation. 
 All of our documentation hosted on GitHub is written using [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).
 
