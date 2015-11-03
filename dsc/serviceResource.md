@@ -24,23 +24,14 @@ Service [string] #ResourceName
 |  Property  |  Description   | 
 |---|---| 
 | Name| Indicates the service name. Note that sometimes this is different from the display name. You can get a list of the services and their current state with the Get-Service cmdlet.| 
-| BuiltInAccount| Indicates the sign-in account to use for the service. The values that are allowed for this property are:
-<ul><li>LocalService</li> 
-
-
-<li>LocalSystem</li>  
-
-
-<li>NetworkService</li></ul> | 
+| BuiltInAccount| Indicates the sign-in account to use for the service. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.| 
 | Credential| Indicates credentials for the account that the service will run under. This property and the __BuiltinAccount__ property cannot be used together.| 
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
-| StartupType| Indicates the startup type for the service. The values that are allowed for this property are:
-<ul><li>Automatic</li> 
-<li>Disabled</li> 
-<li>Manual</li> | 
+| StartupType| Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**| 
 | State| Indicates the state you want to ensure for the service.| 
 
 ## Example
+
 ```powershell
 Service ServiceExample
 {

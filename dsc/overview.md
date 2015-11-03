@@ -1,4 +1,7 @@
 # Windows PowerShell Desired State Configuration Overview 
+
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 This topic describes the Windows PowerShell Desired State Configuration (DSC) feature in Windows PowerShell. You can use this topic to get an overview of DSC and to find the documentation resources you need to understand and use DSC.
 
 ## Feature description
@@ -22,6 +25,7 @@ Following are some example scenarios where you can use built-in DSC resources to
 
 ## Key Concepts
 DSC is a declarative platform used for configuration, deployment, and management of systems. It consists of three primary components:
+
 * [Configurations](configurations.md) are declarative PowerShell scripts which define and configure instances of resources. Upon running the configuration, DSC (and the resources being called by the configuration) will simply “make it so”, ensuring that the system exists in the state laid out by the configuration. DSC configurations are also idempotent: the Local Configuration Manager (LCM) will continue to ensure that machines are configured in whatever state the configuration declares.
 
 * Resources are the imperative building blocks of DSC which are written to model the various components of a sub-system and implement the control flow of their changing states. They reside within PowerShell modules and can be written to model something as generic as a file or a Windows process or as specific as an IIS server or a VM running in Azure.

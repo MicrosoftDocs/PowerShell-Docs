@@ -1,5 +1,7 @@
 # Troubleshooting DSC
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 This topic describes methods for getting your Desired State Configuration (DSC) scripts to run without error. By using logs effectively to track down errors, and understanding how to recycle the cache to see the immediate results of your resource changes, you’ll be able to troubleshoot DSC more effectively. These technics are discussed in two sections:
 
 * My script won’t run: **Using DSC logs to diagnose script errors**
