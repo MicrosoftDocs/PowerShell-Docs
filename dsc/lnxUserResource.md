@@ -1,7 +1,6 @@
-# PowerShell Desired State Configuration nxUser Resource
+# DSC for Linux nxUser Resource
 
-The __nxUser__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to to manage local users on a Linux node.
-
+The **nxUser** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage local users on a Linux node.
 
 ## Syntax
 
@@ -32,8 +31,8 @@ nxUser <string> #ResourceName
 | FullName| A string that contains the full name to use for the user account.| 
 | Description| The description for the user account.| 
 | Password| The hash of the users password in the appropriate form for the Linux computer. Typically, this is a salted SHA-256, or SHA-512 hash. On Debian and Ubuntu Linux, this value can be generated with the mkpasswd command. For other Linux distros, the crypt method of Python’s Crypt library can be used to generate the hash.| 
-| Disabled| Indicates whether the account is enabled. Set this property to __$true__ to ensure that this account is disabled, and set it to __$false__ to ensure that it is enabled.| 
-| PasswordChangeRequired| Indicates whether the user can change the password. Set this property to __$true__ to ensure that the user cannot change the password, and set it to __$false__ to allow the user to change the password. The default value is __$false__. This property is only evaluated if the user account did not exist previously and is being created.| 
+| Disabled| Indicates whether the account is enabled. Set this property to **$true** to ensure that this account is disabled, and set it to **$false** to ensure that it is enabled.| 
+| PasswordChangeRequired| Indicates whether the user can change the password. Set this property to **$true** to ensure that the user cannot change the password, and set it to **$false** to allow the user to change the password. The default value is **$false**. This property is only evaluated if the user account did not exist previously and is being created.| 
 | HomeDirectory| The home directory for the user.| 
 | GroupID| The primary group ID for the user.| 
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is "ResourceName" and its type is "ResourceType", the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
@@ -41,7 +40,6 @@ nxUser <string> #ResourceName
 ## Example
 
 The following example ensures that the user "monuser" exists and is a member of the group "DBusers".
-
 
 ```
 Import-DSCResource -Module nx 

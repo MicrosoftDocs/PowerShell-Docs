@@ -1,4 +1,4 @@
-#DSC Log Resource 
+# DSC Log Resource 
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 

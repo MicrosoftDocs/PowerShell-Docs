@@ -33,6 +33,7 @@ Archive [string] #ResourceName
 ## Example
 
 The following example shows how to use the Archive resource to ensure that the contents of an archive file called Test.zip exist and are extracted at a given destination.
+
 ```
 Archive ArchiveExample {
     Ensure = "Present"  # You can also set Ensure to "Absent"

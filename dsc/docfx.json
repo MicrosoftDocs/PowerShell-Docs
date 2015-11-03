@@ -1,0 +1,25 @@
+{
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "**/**.md"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "globalMetadata": {
+            "ROBOTS": "NOINDEX, NOFOLLOW"
+        },
+        "resource": [
+            {
+                "files": [
+                    "**/images/**"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "template": "op.html",
+        "dest": "dsc"
+    }
+}

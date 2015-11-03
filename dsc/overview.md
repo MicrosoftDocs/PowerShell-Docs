@@ -1,4 +1,7 @@
 # Windows PowerShell Desired State Configuration Overview 
+
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 This topic describes the Windows PowerShell Desired State Configuration (DSC) feature in Windows PowerShell. You can use this topic to get an overview of DSC and to find the documentation resources you need to understand and use DSC.
 
 ## Feature description

@@ -1,5 +1,7 @@
 # Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 Local Configuration Manager is the Windows PowerShell Desired State Configuration (DSC) engine. It runs on all target nodes, and it is responsible for calling the configuration resources that are included in a DSC configuration script. This topic lists the properties of Local Configuration Manager and describes how you can modify the Local Configuration Manager settings on a target node.
 
 ## Local Configuration Manager properties

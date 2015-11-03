@@ -35,6 +35,7 @@ Group [string] #ResourceName
 ## Example
 
 The following example shows how to ensure that a group called TestGroup is absent. 
+
 ```powershell
 Group GroupExample
 {
