@@ -4,7 +4,8 @@
             {
                 "files": [
                     "**/**.md"
-                ]
+                ],
+                "exclude": ["**/obj/**"]
             }
         ],
         "globalMetadata": {
@@ -14,9 +15,11 @@
             {
                 "files": [
                     "**/images/**"
-                ]
+                ],
+                "exclude": ["**/obj/**"]
             }
         ],
-        "template": "op.html"
+        "template": "op.html",
+        "dest": "dsc"
     }
 }
