@@ -1,7 +1,6 @@
-# PowerShell Desired State Configuration nxFile Resource
+# DSC for Linux nxFile Resource
 
-The __nxFile__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to to manage files and directories on a Linux node.
-
+The **nxFile** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage files and directories on a Linux node.
 
 ## Syntax
 
@@ -30,22 +29,22 @@ nxFile <string> #ResourceName
 |  Property |  Description | 
 |---|---|
 | DestinationPath| Specifies the location where you want to ensure the state for a file or directory.| 
-| SourcePath| Specifies the path from which to copy the file or folder resource. This path may be a local path, or an `http/https/ftp` URL. Remote `http/https/ftp` URLs are only supported when the value of the __Type__ property is file.| 
+| SourcePath| Specifies the path from which to copy the file or folder resource. This path may be a local path, or an `http/https/ftp` URL. Remote `http/https/ftp` URLs are only supported when the value of the **Type** property is file.| 
 | Ensure| Determines whether to check if the file exists. Set this property to "Present" to ensure the file exists. Set it to "Absent" to ensure the file does not exist. The default value is "Present".| 
 | Type| Specifies whether the resource being configured is a directory or a file. Set this property to "directory" to indicate that the resource is a directory. Set it to "file" to indicate that the resource is a file. The default value is "file"| 
 | Contents| Specifies the contents of a file, such as a particular string.| 
-| Checksum| Defines the type to use when determining whether two files are the same. If __Checksum__ is not specified, only the file or directory name is used for comparison. Values are: "ctime", "mtime", or "md5".| 
-| Recurse| Indicates if subdirectories are included. Set this property to __$true__ to indicate that you want subdirectories to be included. The default is __$false__. __Note:__ This property is only valid when the __Type__ property is set to directory.| 
-| Force| Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the __Force__ property overrides such errors. The default value is __$false__.| 
+| Checksum| Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Values are: "ctime", "mtime", or "md5".| 
+| Recurse| Indicates if subdirectories are included. Set this property to **$true** to indicate that you want subdirectories to be included. The default is **$false**. **Note:** This property is only valid when the **Type** property is set to directory.| 
+| Force| Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is **$false**.| 
 | Links| Specifies the desired behavior for symbolic links. Set this property to "follow" to follow symbolic links and act on the links target (for example. copy the file instead of the link). Set this property to "manage" to act on the link (for example. copy the link itself). Set this property to "ignore" to ignore symbolic links.| 
-| Group| The name of the __Group__ to own the file or directory.| 
+| Group| The name of the **Group** to own the file or directory.| 
 | Mode| Specifies the desired permissions for the resource, in octal or symbolic notation. (for example, 777 or rwxrwxrwx). If using symbolic notation, do not provide the first character which indicates directory or file.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the __ID__ of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
 ## Additional Information
 
-Linux and Windows use different line break characters in text files by default, and this can cause unexpected results when configuring some files on a Linux computer with __nxFile__. There are multiple ways to manage the content of a Linux file while avoiding issues caused by unexpected line break characters:
-1. Copy the file from a remote source (http, https, or ftp): create a file on Linux with the desired contents, and stage it on a web or ftp server accessible the node(s) you will configure. Define the __SourcePath__ property in the __nxFile__ resource with the web or ftp URL to the file.
+Linux and Windows use different line break characters in text files by default, and this can cause unexpected results when configuring some files on a Linux computer with **nxFile**. There are multiple ways to manage the content of a Linux file while avoiding issues caused by unexpected line break characters:
+1. Copy the file from a remote source (http, https, or ftp): create a file on Linux with the desired contents, and stage it on a web or ftp server accessible the node(s) you will configure. Define the **SourcePath** property in the **nxFile** resource with the web or ftp URL to the file.
 
 ```
 Import-DSCResource -Module nx
@@ -63,7 +62,7 @@ nxFile resolvConf
 }
 ```
 
-2. Read the file contents in the PowerShell script with [Get-Content](https://technet.microsoft.com/en-us/library/hh849787.aspx) after setting the __$OFS__ property to use the Linux line-break character.
+2. Read the file contents in the PowerShell script with [Get-Content](https://technet.microsoft.com/en-us/library/hh849787.aspx) after setting the **$OFS** property to use the Linux line-break character.
 
 ```
 Import-DSCResource -Module nx
@@ -82,7 +81,6 @@ nxFile resolvConf
 
 }
 ```
-
 
 3. Use a PowerShell function to replace Windows line breaks with Linux line-break characters.
 
@@ -115,7 +113,6 @@ nxFile resolvConf
 }
 }
 ```
-
 
 ## Example
 

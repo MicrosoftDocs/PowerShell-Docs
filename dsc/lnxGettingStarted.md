@@ -1,6 +1,6 @@
-# Get started with Windows PowerShell Desired State Configuration for Linux
+# Get started with Desired State Configuration (DSC) for Linux
 
-This topic explains how to get started using Windows PowerShell Desired State Configuration (DSC) for Linux. For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](overview.md).
+This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux. For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](overview.md).
 
 ## Supported Linux operation system versions
 
@@ -22,7 +22,6 @@ The following table describes the required ackage dependencies for DSC for Linux
 | openssl| OpenSSL Libraries| 0.9.8 or 1.0| 
 | ctypes| Python CTypes library| Must match Python version| 
 | libcurl| cURL http client library| 7.15.1| 
-
 
 ## Installing DSC for Linux
 
