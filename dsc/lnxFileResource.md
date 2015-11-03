@@ -45,7 +45,8 @@ nxFile <string> #ResourceName
 ## Additional Information
 
 Linux and Windows use different line break characters in text files by default, and this can cause unexpected results when configuring some files on a Linux computer with __nxFile__. There are multiple ways to manage the content of a Linux file while avoiding issues caused by unexpected line break characters:
-1. Copy the file from a remote source (http, https, or ftp): create a file on Linux with the desired contents, and stage it on a web or ftp server accessible the node(s) you will configure. Define the __SourcePath__ property in the __nxFile__ resource with the web or ftp URL to the file.
+
+Step 1: Copy the file from a remote source (http, https, or ftp): create a file on Linux with the desired contents, and stage it on a web or ftp server accessible the node(s) you will configure. Define the __SourcePath__ property in the __nxFile__ resource with the web or ftp URL to the file.
 
 ```
 Import-DSCResource -Module nx
@@ -63,7 +64,7 @@ nxFile resolvConf
 }
 ```
 
-2. Read the file contents in the PowerShell script with [Get-Content](https://technet.microsoft.com/en-us/library/hh849787.aspx) after setting the __$OFS__ property to use the Linux line-break character.
+Step 2: Read the file contents in the PowerShell script with [Get-Content](https://technet.microsoft.com/en-us/library/hh849787.aspx) after setting the __$OFS__ property to use the Linux line-break character.
 
 ```
 Import-DSCResource -Module nx
@@ -84,7 +85,7 @@ nxFile resolvConf
 ```
 
 
-3. Use a PowerShell function to replace Windows line breaks with Linux line-break characters.
+Step 3: Use a PowerShell function to replace Windows line breaks with Linux line-break characters.
 
 ```
 Function LinuxString($inputStr){
