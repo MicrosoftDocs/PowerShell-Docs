@@ -9,7 +9,7 @@
             }
         ],
         "globalMetadata": {
-            "ROBOTS": "NOINDEX, NOFOLLOW"
+            "ROBOTS": "INDEX, FOLLOW"
         },
         "resource": [
             {
