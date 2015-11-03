@@ -89,6 +89,7 @@ Mode                LastWriteTime         Length Name
 
 ## Using DependsOn
 A useful DSC keyword is __DependsOn__. Typically (though not necessarily always), DSC applies the resources in the order that they appear within the configuration. However, __DependsOn__ specifies which resources depend on other resources, and the LCM ensures that they are applied in the correct order, regardless of the order in which resource instances are defined. For example, a configuration might specify that an instance of the __User__ resource depends on the existence of a __Group__ instance:
+
 ```powershell
 Configuration DependsOnExample {
 	Node Test-PC1 {
