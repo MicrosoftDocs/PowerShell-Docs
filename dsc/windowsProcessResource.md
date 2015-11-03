@@ -1,11 +1,10 @@
-#DSC WindowsProcess Resource#
+# DSC WindowsProcess Resource
 
- 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-The __WindowsProcess__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to configure processes on a target node.
+The **WindowsProcess** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to configure processes on a target node.
 
-##Syntax##
+## Syntax
 
 ```
 WindowsProcess [string] #ResourceName
@@ -22,7 +21,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-##Properties##
+## Properties
 |  Property  |  Description   | 
 |---|---| 
 | Arguments| Indicates a string of arguments to pass to the process as-is. If you need to pass several arguments, put them all in this string.| 

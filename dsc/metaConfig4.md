@@ -1,10 +1,6 @@
-Outline:
+# Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
 
-* Get-DscLocalConfigurationManager
-* Old style of configuring
-* New style of configuring
-
-# Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Local Configuration Manager is the Windows PowerShell Desired State Configuration (DSC) engine. It runs on all target nodes, and it is responsible for calling the configuration resources that are included in a DSC configuration script. This topic lists the properties of Local Configuration Manager and describes how you can modify the Local Configuration Manager settings on a target node.
 
@@ -63,6 +59,6 @@ Running the script in the previous example generates a MOF file that specifies a
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-**Note**: For the **Path** parameter, you must specify the same path that you specified for the **OutputPath** parameter when you invoked the configuration in the previous example.
+> **Note**: For the **Path** parameter, you must specify the same path that you specified for the **OutputPath** parameter when you invoked the configuration in the previous example.
 
 To see the current Local Configuration Manager settings, you can use the **Get-DscLocalConfigurationManager** cmdlet. If you invoke this cmdlet with no parameters, by default it will get the Local Configuration Manager settings for the node on which you run it. To specify another node, use the **CimSession** parameter with this cmdlet.

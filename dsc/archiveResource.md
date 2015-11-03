@@ -1,10 +1,10 @@
-#DSC Archive Resource#
+# DSC Archive Resource
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 The Archive resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to unpack archive (.zip) files at a specific path.
 
-##Syntax##
+## Syntax 
 ```MOF
 Archive [string] #ResourceName
 {
@@ -18,12 +18,7 @@ Archive [string] #ResourceName
 }
 ```
 
-##Properties##
-
-
-
- 
-
+## Properties
 
 |  Property  |  Description   | 
 |---|---| 
@@ -35,9 +30,10 @@ Archive [string] #ResourceName
 | Validate| Uses the Checksum property to determine if the archive matches the signature. If you specify Checksum without Validate, the configuration will fail. If you specify Validate without Checksum, a SHA-256 checksum is used by default.| 
 | Force| Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the Force property overrides such errors. The default value is False.| 
 
-##Example##
+## Example
 
 The following example shows how to use the Archive resource to ensure that the contents of an archive file called Test.zip exist and are extracted at a given destination.
+
 ```
 Archive ArchiveExample {
     Ensure = "Present"  # You can also set Ensure to "Absent"
@@ -45,4 +41,3 @@ Archive ArchiveExample {
     Destination = "C:\Users\Public\Documents\ExtractionPath"
 } 
 ```
-

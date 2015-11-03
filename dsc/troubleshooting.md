@@ -1,5 +1,7 @@
 # Troubleshooting DSC
 
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 This topic describes methods for getting your Desired State Configuration (DSC) scripts to run without error. By using logs effectively to track down errors, and understanding how to recycle the cache to see the immediate results of your resource changes, you’ll be able to troubleshoot DSC more effectively. These technics are discussed in two sections:
 
 * My script won’t run: **Using DSC logs to diagnose script errors**
@@ -26,7 +28,7 @@ TimeCreated                     Id LevelDisplayName Message
 As shown above, DSC’s primary log name is **Microsoft->Windows->DSC** (other log names under Windows are not shown here for brevity). The primary name is appended to the channel name to create the complete log name. The DSC engine writes mainly into three types of logs: [Operational, Analytic, and Debug logs](https://technet.microsoft.com/library/cc722404.aspx). Since the analytic and debug logs are turned off by default, you should enable them in Event Viewer. To do this, open Event Viewer by typing eventvwr in Windows PowerShell; or, click the **Start** button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**. On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name for the analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is **Microsoft-Windows-Dsc/Debug**. You could also use the [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) utility to enable the logs, as shown in the following example.
 
 ```powershell
-PS C:\Users> wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
+wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 ```
 
 ## What do DSC logs contain?
@@ -43,9 +45,8 @@ Consistency engine was run successfully.
 
 DSC events are logged in a particular structure that enables the user to aggregate events from one DSC job. The structure is as follows:
 
-**Job ID : <Guid>**
-
-**<Event Message>**
+**Job ID : \<Guid\>**
+**\<Event Message\>**
 
 ## Gathering events from a single DSC operation
 
@@ -126,7 +127,8 @@ Count Name                      Group
 ### 2: Details of operations run in the last half hour
 
 `TimeCreated`, a property of every Windows event, states the time the event was created. Comparing this property with a particular date/time object can be used to filter all events:
-```
+
+```powershell
 PS C:\> $DateLatest=(Get-date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations  | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
 Count Name                      Group                                                                     
@@ -138,7 +140,7 @@ Count Name                      Group
 
 The latest operation is stored in the first index of the array group `$SeparateDscOperations`. Querying the group’s messages for index 0 returns all messages for the latest operation:
 
-```
+```powershelll
 PS C:\> $SeparateDscOperations[0].Group.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} : 
 Running consistency engine.
@@ -160,7 +162,7 @@ Displaying messages from built-in DSC resources:
 
 `$SeparateDscOperations[0].Group` contains a set of events for the latest operation. Run the `Where-Object` cmdlet to filter the events based on their level display name. Results are stored in the `$myFailedEvent` variable, which can be further dissected to get the event message:
 
-```
+```powershell
 PS C:\> $myFailedEvent=($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
  
 PS C:\> $myFailedEvent.Message
@@ -175,10 +177,9 @@ Error Code : 1
 
 `$SeparateDscOperations` is an array of groups, each of which has the name as the unique job ID. By running the `Where-Object` cmdlet, you can extract those groups of events that have a particular job ID:
 
-```
+```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
- 
- 
+
    ProviderName: Microsoft-Windows-DSC
  
 TimeCreated                     Id LevelDisplayName Message                                               
@@ -204,9 +205,9 @@ TODO: Replace this image that shows Get-xDscOperation output
 * **Newest**: Accepts an integer value to indicate the number of operations to be displayed. By default, it returns 10 newest operations. For instance,
   TODO: Show Get-xDscOperation -Newest 5
 * **ComputerName**: Parameter that accepts an array of strings, each containing the name of a computer from where you’d like to collect DSC event log data. By default, it collects data from the host machine. To enable this feature, you must run the following command in the remote machines, in elevated mode so that the will allow collection of events
-  ```powershell
+```powershell
   New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
-  ```
+```
 * **Credential**: Parameter that is of type PSCredential, which can help access to the computers specified in the ComputerName parameter.
 
 ### Returned object
@@ -233,9 +234,9 @@ Trace-xDscOperation with sequence ID specified
 * **JobID**: This is the GUID value assigned by LCM xDscOperation to uniquely identify an operation. when a JobID is specified, the trace of the corresponding DSC operation is output.
   TODO: Replace picture for Trace-xDscOperation taking JobID as a parameter
 * **ComputerName** and **Credential**: These parameters allow the trace to be collected from remote computers:
-  ```powershell
-  New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
-  ```
+```powershell
+New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
+```
   TODO: Replace picture for Trace-xDscOperation run on a different compute
 
 Note that, since `Trace-xDscOperation` aggregates events from the Analytic, Debug, and operational logs, it will prompt you to enable these logs as described above.
@@ -261,7 +262,7 @@ Following are fields in this object that can be used for more information about 
 
 Alternately, you can gather information on the events by saving the output of `Trace-xDscOperation` into a variable. You can use the following command to display all the events for a particular DSC operation:
 
-```
+```powershell
 (Trace-xDscOperation-EquenceID3).Event
 ```
 
@@ -438,10 +439,10 @@ onlyProperty                            PSComputerName
 ## See Also
 
 ### Reference
-* [DSC Log Resource](TODO)
+* [DSC Log Resource](logResource.md)
 
 ### Concepts
-* [Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+* [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ### Other Resources
-* [Windows PowerShell Desired State Configuration Cmdlets](TODO)
+* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)

@@ -1,6 +1,8 @@
 # Securing the MOF File
 
-DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager implements the desired configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the Local Configuration Manager to check the credentials of a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the Local Configuration Manager to check the credentials of a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
 
 ## Prerequisites
 
@@ -20,7 +22,7 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
 
 ## Configuration data
 
-The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](dsc/configData.md).
+The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](configData.md).
 
 This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.
 
@@ -47,7 +49,7 @@ $ConfigData= @{
 
 ## Configuration script
 
-In the configuration script itself, use the PsCredential parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
+In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
 
 ```
 configuration CredentialEncryptionExample 
@@ -73,19 +75,19 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before Start-DscConfiguration can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before `Start-DscConfiguration` can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption 
 function Get-LocalEncryptionCertificateThumbprint 
 { 
-    (dir Cert:\LocalMachine\my) | %{ 
-                        # Verify the certificate is for Encryption and valid 
-                        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify()) 
-                        { 
-                            return $_.Thumbprint 
-                        } 
-                    } 
+    (dir Cert:\LocalMachine\my) | %{
+        # Verify the certificate is for Encryption and valid 
+        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify()) 
+        { 
+            return $_.Thumbprint 
+        } 
+    } 
 }
 ```
 

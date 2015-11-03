@@ -1,10 +1,14 @@
 # Using the Resource Designer tool
 
-The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that make creating Windows PowerShell Desired State Configuration (DSC) resources easier. The cmdlets in this resource help create the MOF schema, the script module, and the directory structure for your new resource. For more information about DSC resources, see Build Custom Windows PowerShell Desired State Configuration Resources.
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that make creating Windows PowerShell Desired State Configuration (DSC) resources easier. The cmdlets in this resource help create the MOF schema, the script module, and the directory structure for your new resource. For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md).
 In this topic, we will create a DSC resource that manages Active Directory users.
-You can download the xDscResourceDesigner module at xDscResourceDesigner Module –PowerShell Desired State Configuration Resource Kit. After downloading, install and import this module like you would any other Windows PowerShell module.
-If you have Windows Management Framework 5.0 Preview installed, you can use PowerShellGet to install the resource designer. Use the Install-Module cmdlet to install the xDscResourceDesigner module.
-Creating resource properties
+Use the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xDscResourceDesigner** module.
+
+>**Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+
+## Creating resource properties
 The first thing we need to do is decide on properties that the resource will expose. For this example, we will define an Active Directory user with the following properties.
  
 Parameter name  Description
@@ -163,7 +167,7 @@ The Resource Designer tool exposes one more cmdlet that can be used to test the 
 ### See Also
 
 #### Concepts
-[Build Custom Windows PowerShell Desired State Configuration Resources](dsc/authoringResource.md)
+[Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 #### Other Resources
 [xDscResourceDesigner Module](https://powershellgallery.com/packages/xDscResourceDesigner)

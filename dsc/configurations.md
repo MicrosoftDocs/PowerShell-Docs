@@ -1,4 +1,6 @@
-# DSC Configurations #
+# DSC Configurations
+
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC configurations are PowerShell scripts that define a special type of function. 
 To define a configuration, you use the PowerShell keyword __Configuration__.
@@ -18,8 +20,11 @@ Configuration MyDscConfiguration {
 	}
 }
 ```
+
 Save the script as a .ps1 file.
-## Configuration sytax
+
+## Configuration syntax
+
 A configuration script consists of the following parts:
 - The **Configuration** block. This is the outermost script block. You define it by using the **Configuration** keyword and providing a name. In this case, the name of the configuration is "MyDscConfiguration".
 - One or more **Node** blocks. These define the nodes (computers or VMs) that you are configuring. In the above configuration, there is one **Node** block that targets a computer named "TEST-PC1".
@@ -93,9 +98,10 @@ DependsOn = “GroupExample”
 	}
 }
 ```
+
 ## Using New Resources in Your Configuration
 If you ran the previous examples, you might have noticed that you were warned that you were using a resource without explicitly importing it.
 Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration module. Other resources in external modules must be placed in `$env:PSModulePath` in order to be recognized by the LCM. A new cmdlet, [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), can be used to determine what resources are installed on the system and available for use by the LCM. 
 Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), they still need to be loaded within your configuration. __Import-DscResource__ is a dynamic keyword that can only be recognized within a __Configuration__ block (i.e. it is not a cmdlet). __Import-DscResource__ supports two parameters:
-•	-__ModuleName__ is the recommended way of using __Import-DscResource__. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
-•	-__Name__ is the name of the resource to import. This is not the friendly name returned as “Name” by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+* __ModuleName__ is the recommended way of using __Import-DscResource__. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
+* __Name__ is the name of the resource to import. This is not the friendly name returned as “Name” by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
