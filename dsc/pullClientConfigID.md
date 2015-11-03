@@ -110,4 +110,5 @@ PullClientConfigID
 ```
 
 ## See Also
-[Setting up a pull client with configuration names](pullClientConfigNames.md)
+
+* [Setting up a pull client with configuration names](pullClientConfigNames.md)

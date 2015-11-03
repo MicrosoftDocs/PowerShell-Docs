@@ -1,11 +1,11 @@
-# PowerShell Desired State Configuration nxGroup Resource
+# DSC for Linux nxGroup Resource
 
-The __nxGroup__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.
+The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.
 
 ## Syntax
 
-
-```nxGroup <string> #ResourceName
+```powershell
+nxGroup <string> #ResourceName
 {
     GroupName = <string>
     [ Ensure = <string> { Absent | Present }  ]
@@ -13,8 +13,8 @@ The __nxGroup__ resource in Windows PowerShell Desired State Configuration (DSC)
     [ MebersToInclude = <string[]>]
     [ MembersToExclude = <string[]> ]
     [ DependsOn = <string[]> ]
-    
 }
+
 ```
 
 ## Properties
@@ -27,7 +27,7 @@ The __nxGroup__ resource in Windows PowerShell Desired State Configuration (DSC)
 | MembersToInclude| Specifies the users who you want to ensure are members of the group.| 
 | MembersToExclude| Specifies the users who you want to ensure are not members of the group.| 
 | PreferredGroupID| Sets the group id to the provided value if possible. If the group id is currently in use, the next available group id is used.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the __ID__ of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
 ## Example
 

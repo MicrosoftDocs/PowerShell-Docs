@@ -3,6 +3,7 @@
 > Applies To: Windows PowerShell 5.0
 
 The Local Configuration Manager (LCM) is the engine of Windows PowerShell Desired State Configuration (DSC). The LCM runs on every target node, and is responsible for parsing and enacting configurations that are sent to the node. It is also responsible for a number of other aspects of DSC, including the following.
+
 * Determining refresh mode (push or pull).
 * Specifying how often a node pulls and enacts configurations.
 * Associating the node with pull servers.

@@ -1,6 +1,6 @@
-# PowerShell Desired State Configuration nxSshAuthorizedKeys Resource
+# DSC for Linux nxSshAuthorizedKeys Resource
 
-The __nxAuthorizedKeys__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.
+The **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.
 
 ## Syntax
 
@@ -23,12 +23,10 @@ nxAuthorizedKeys <string> #ResourceName
 | KeyComment| A unique comment for the key. This is used to uniquely identify keys.| 
 | Ensure| Specifies whether the key is defined. Set this property to "Absent" to ensure the key does not exist in the user’s authorized keys file. Set it to "Present" to ensure the key is defined in the user’s authorized key file.| 
 | Username| The username to manage ssh authorized keys for. If not defined, the default user is "root".| 
-| Key| The contents of the key. This is required if __Ensure__ is set to "Present".| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the __ID__ of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
-
+| Key| The contents of the key. This is required if **Ensure** is set to "Present".| 
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
 ## Example
-
 
 The following example defines a public ssh authorized key for the user "monuser".
 
