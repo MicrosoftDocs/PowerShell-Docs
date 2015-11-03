@@ -15,4 +15,5 @@ Windows PowerShell Desired State Configuration (DSC) comes with a set of built-i
 - [Script Resource](scriptResource.md)
 - [Service Resource](serviceResource.md)
 - [User Resource](userResource.md)
-- [Windows Feature Resource](windowsFeatureResource.md)
+- [Windows Feature Resource](windowsfeatureResource.md)
+- [WindowsProcess Resource](windowsProcessResource.md)

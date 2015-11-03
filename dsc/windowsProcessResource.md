@@ -1,6 +1,5 @@
 # DSC WindowsProcess Resource
 
- 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 The **WindowsProcess** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to configure processes on a target node.
