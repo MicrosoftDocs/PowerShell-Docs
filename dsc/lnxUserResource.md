@@ -41,7 +41,6 @@ nxUser <string> #ResourceName
 
 The following example ensures that the user "monuser" exists and is a member of the group "DBusers".
 
-
 ```
 Import-DSCResource -Module nx 
 
