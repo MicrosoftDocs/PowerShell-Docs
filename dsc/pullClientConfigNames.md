@@ -84,5 +84,6 @@ PullClientConfigID
 ```
 
 ## See Also
-[Setting up a pull client with configuration ID](pullClientConfigID.md)
-[Setting up a DSC web pull server](pullServer.md)
+
+* [Setting up a pull client with configuration ID](pullClientConfigID.md)
+* [Setting up a DSC web pull server](pullServer.md)
