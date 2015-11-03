@@ -33,7 +33,7 @@
 ### [Setting up an SMB pull server](pullServerSMB.md)
 ### [Setting up a pull client](pullClient.md)
 #### [Setting up a pull client using configuration names](pullClientConfigNames.md)
-#### [Setting up a pull client using configuration ID](pullClientConfigID)
+#### [Setting up a pull client using configuration ID](pullClientConfigID.md)
 ### [Pull server best practices](secureServer.md)
 
 ## [Troubleshooting DSC](troubleshooting.md)
