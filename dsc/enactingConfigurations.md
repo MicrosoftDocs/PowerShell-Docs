@@ -1,4 +1,7 @@
 # Enacting configurations
+
+>Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
 There are two ways to enact PowerShell Desired State Configuration (DSC) configurations: push mode and pull mode.
 
 ## Push mode
@@ -9,7 +12,7 @@ Push mode refers to a user actively applying a configuration to a target node by
 After creating and compiling a configuration, you can enact it in push mode by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, setting the -Path parameter of the cmdlet to the path where the configuration MOF is located. For example, if the configuration MOF is locted at `C:\DSC\Configurations\localhost.mof`, you would apply it to the local machine with the following command:
 `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
->__Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) with the __-Wait__ parameter.
+> __Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) with the __-Wait__ parameter.
 
 ## Pull mode
 ![Pull Mode](images/Pull.png "How pull mode works")

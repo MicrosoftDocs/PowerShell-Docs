@@ -1,4 +1,6 @@
-# Implementing a DSC resource in C#
+# Authoring a DSC resource in C#
+
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script. However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#. For an introduction on writing cmdlets in C#, see Writing a [Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).
 

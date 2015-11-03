@@ -1,11 +1,10 @@
-#DSC WindowsFeature Resource#
+# DSC WindowsFeature Resource
 
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.
 
-The __WindowsFeature__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.
-
-##Syntax##
+## Syntax
 
 ```
 WindowsFeature [string] #ResourceName
@@ -20,8 +19,7 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-##Properties##
-
+## Properties
 
 |  Property  |  Description   | 
 |---|---| 
@@ -33,11 +31,12 @@ WindowsFeature [string] #ResourceName
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 | Source| Indicates the location of the source file to use for installation, if necessary.| 
 
-##Example##
+## Example
 ```powershell
 WindowsFeature RoleExample
 {
-    Ensure = "Present" # Alternatively, to ensure the role is uninstalled, set Ensure to "Absent"
+    Ensure = "Present" 
+    # Alternatively, to ensure the role is uninstalled, set Ensure to "Absent"
     Name = "Web-Server" # Use the Name property from Get-WindowsFeature  
 }
 ```

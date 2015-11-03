@@ -1,12 +1,11 @@
-#DSC Registry Resource#
+# DSC Registry Resource
 
- 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-The __Registry__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage registry keys and values on a target node.
+The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage registry keys and values on a target node.
 
+## Syntax
 
-##Syntax##
 ```
 Registry [string] #ResourceName
 {
@@ -21,10 +20,7 @@ Registry [string] #ResourceName
 }
 ```
 
-
-
-
-##Properties##
+## Properties
 |  Property  |  Description   | 
 |---|---| 
 | Key| Indicates the path of the registry key for which you want to ensure a specific state. This path must include the hive.| 
@@ -50,11 +46,9 @@ Registry [string] #ResourceName
 <li>Multi-string (REG_MULTI_SZ)</li>
 
 
-<li>Expandable string (REG_EXPAND_SZ)</li></ul>| 
+<li>Expandable string (REG_EXPAND_SZ)</li></ul>
 
-##Example##
-
-
+## Example
 ```powershell
 Registry RegistryExample
 {
