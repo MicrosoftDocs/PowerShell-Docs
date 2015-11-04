@@ -32,5 +32,8 @@ DSC is a declarative platform used for configuration, deployment, and management
 
 DSC also includes a number of new language keywords, cmdlets and tools that allow creation of configurations, help build DSC resources, invoke configurations, and manage the LCM. Many of these cmdlets can be found in Windows 8.1 as part of the PsDesiredStateConfig module (including `Start-DscConfiguration`, `Set-DscLocalConfigurationManager`, and `Get-DscResource`). The xDscResourceDesigner (found in the [PowerShell Gallery](https://powershellgallery.com/)) is a collection of cmdlets that simplify the development of DSC resources.
 
-
+## See Also
+* [DSC Configurations](configurations.md)
+* [DSC Resources](resources.md)
+* [Configuring The Local Configuration Manager](metaconfig.md)
 
