@@ -1,6 +1,6 @@
 # PowerShell Documentation
 
-Welcome to the PowerShell-Docs repository, housing the official PowerShell documenation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview). 
+Welcome to the PowerShell-Docs repository, housing the official PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview). 
 
 > **Note**: right now, this repo is only intended for PowerShell Desired State Configuration (DSC) content. 
 In the future, it may be expanded to include a greater set of PowerShell documentation. 
