@@ -112,3 +112,8 @@ Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration mo
 Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), they still need to be loaded within your configuration. __Import-DscResource__ is a dynamic keyword that can only be recognized within a __Configuration__ block (i.e. it is not a cmdlet). __Import-DscResource__ supports two parameters:
 * __ModuleName__ is the recommended way of using __Import-DscResource__. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
 * __Name__ is the name of the resource to import. This is not the friendly name returned as “Name” by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+
+## See Also
+* [Windows PowerShell Desired State Configuration Overview](overview.md)
+* [DSC Resources](resources.md)
+* [Configuring The Local Configuration Manager](metaconfig.md)
