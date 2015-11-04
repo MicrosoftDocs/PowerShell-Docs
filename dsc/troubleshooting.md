@@ -263,7 +263,7 @@ Following are fields in this object that can be used for more information about 
 Alternately, you can gather information on the events by saving the output of `Trace-xDscOperation` into a variable. You can use the following command to display all the events for a particular DSC operation:
 
 ```powershell
-(Trace-xDscOperation-EquenceID3).Event
+(Trace-xDscOperation -SequenceID 3).Event
 ```
 
 This will display the same results as the `Get-WinEvent` cmdlet, such as in the output below:
