@@ -59,7 +59,9 @@ The following sections explain how to create and run DSC configurations on Linux
 The Windows PowerShell Configuration keyword is used to create a configuration for Linux computers, just like for Windows computers. The following steps describe the creation of a configuration document for a Linux computer using Windows PowerShell.
 
 1. Import the nx module. The nx Windows PowerShell module contains the schema for Built-In resources for DSC for Linux, and must be installed to your local computer and imported in the configuration.
+
     -To install the nx module, copy the nx module directory to either `%UserProfile%\Documents\WindowsPowerShell\Modules\` or `C:\windows\system32\WindowsPowerShell\v1.0\Modules`. The nx module is included in the DSC for Linux installation package (MSI). To import the nx module in your configuration, use the __Import-DSCResource__ command:
+    
 ```powershell
 Configuration ExampleConfiguration{
    
