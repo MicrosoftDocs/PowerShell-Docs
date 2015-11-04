@@ -1,4 +1,6 @@
+_site/
 log/
+obj/
 xhtml/
 packages/
 obj/
