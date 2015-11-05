@@ -10,10 +10,10 @@ Archive [string] #ResourceName
 {
     Destination = [string]
     Path = [string]
-    [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 }  ]
+    [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
     [ DependsOn = [string[]] ]
-    [ Ensure = [string] { Absent | Present }  ]
-   [Force = [bool] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ Force = [bool] ]
     [ Validate = [bool] ]
 }
 ```
