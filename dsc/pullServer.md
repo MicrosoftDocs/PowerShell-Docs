@@ -24,31 +24,33 @@ The easiest way to set up a web pull server is to use the xWebService resource, 
 ```powershell
 Configuration Sample_xDSCService
 {
-    param (
-    [ValidateNotNullOrEmpty()]
-    [String] $certificateThumbPrint
+    param
+    (
+      [ValidateNotNullOrEmpty()]
+      [String] $certificateThumbPrint
     )
-    Import-DSCResource –ModuleName DSCServic
+
+    Import-DSCResource –ModuleName DSCService
     Node localhost
     {
         WindowsFeature DSCServiceFeature
         {
-            Ensure = “Present”
-            Name = “DSC-Service”
+            Ensure = "Present"
+            Name = "DSC-Service"
         }
         
         DSCService PSDSCPullServer
         {
             Ensure   = "Present"
-            Name     = “PSDSCPullServer”
+            Name     = "PSDSCPullServer"
             Port     = 8080
             PhysicalPath = "$env:SystemDrive\inetpub\wwwroot\PSDSCPullServer"
             EnableFirewallException = $true
             CertificateThumbprint = $certificateThumbPrint
-            ModulePath = “$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules”
-            ConfigurationPath = “$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration”
-            State = “Started”
-            DependsOn = “[WindowsFeature]DSCServiceFeature             
+            ModulePath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
+            ConfigurationPath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
+            State = "Started"
+            DependsOn = "[WindowsFeature]DSCServiceFeature
         }
     }
 }
@@ -57,7 +59,7 @@ Configuration Sample_xDSCService
 1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the **certificateThumbPrint** parameter:
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
