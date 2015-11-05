@@ -27,7 +27,7 @@ You use the class keyword to create a PowerShell class. To specify that a class 
 
 ```powershell
 [DscResource()]
-class FileResource{
+class FileResource {
 }
 ```
 
@@ -39,10 +39,8 @@ The DSC resource schema is defined as properties of the class. We declare three 
 [DscProperty(Key)]
 [string]$Path
 
-
 [DscProperty(Mandatory)]
 [Ensure] $Ensure
-
 
 [DscProperty(Mandatory)]
 [string] $SourcePath
@@ -51,9 +49,11 @@ The DSC resource schema is defined as properties of the class. We declare three 
 [Nullable[datetime]] $CreationTime
 ```
 
-Notice that the properties are modified by attributes. The attribues map to equivalent attributes used in MOF classes as follows.
+Notice that the properties are modified by attributes. The attributes map to equivalent attributes used in MOF classes as follows.
 
-Property attribute in class MOF attribute   Description
+Property attribute in class MOF attribute 
+
+Description
 DscProperty(Key)
 Key
 The property is required. The property is a key. The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.
@@ -84,14 +84,16 @@ The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-Targ
 This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**. 
 
 ```powershell
-<#
+
+	<#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
     #>
     [void] Set()
-    {        
+    {
         $fileExists = $this.TestFilePath($this.Path)
-        if($this.ensure -eq [Ensure]::Present)
+
+        if ($this.ensure -eq [Ensure]::Present)
         {
             if(-not $fileExists)
             {
@@ -100,7 +102,7 @@ This code also includes the CopyFile() function, a helper function that copies t
         }
         else
         {
-            if($fileExists)
+            if ($fileExists)
             {
                 Write-Verbose -Message "Deleting the file $($this.Path)"
                 Remove-Item -LiteralPath $this.Path -Force
@@ -108,17 +110,16 @@ This code also includes the CopyFile() function, a helper function that copies t
         }
     }
 
-    <# 
-
-        This method is equivalent of the Test-TargetResource script function. 
+    <#
+        This method is equivalent of the Test-TargetResource script function.
         It should return True or False, showing whether the resource
-        is in a desired state.         
+        is in a desired state.
     #>
     [bool] Test()
     {
         $present = $this.TestFilePath($this.Path)
 
-        if($this.Ensure -eq [Ensure]::Present)
+        if ($this.Ensure -eq [Ensure]::Present)
         {
             return $present
         }
@@ -127,7 +128,6 @@ This code also includes the CopyFile() function, a helper function that copies t
             return -not $present
         }
     }
-    
 
     <#
         This method is equivalent of the Get-TargetResource script function.
@@ -137,8 +137,8 @@ This code also includes the CopyFile() function, a helper function that copies t
     #>
     [FileResource] Get()
     {
-        $present = $this.TestFilePath($this.Path)        
-        
+        $present = $this.TestFilePath($this.Path)
+
         if ($present)
         {
             $file = Get-ChildItem -LiteralPath $this.Path
@@ -149,7 +149,7 @@ This code also includes the CopyFile() function, a helper function that copies t
         {
             $this.CreationTime = $null
             $this.Ensure = [Ensure]::Absent
-        }        
+        }
 
         return $this
     }
@@ -158,22 +158,24 @@ This code also includes the CopyFile() function, a helper function that copies t
         Helper method to check if the file exists and it is file
     #>
     [bool] TestFilePath([string] $location)
-    {      
+    {
         $present = $true
 
-        $item = Get-ChildItem -LiteralPath $location -ea Ignore
+        $item = Get-ChildItem -LiteralPath $location -ErrorAction Ignore
+
         if ($item -eq $null)
         {
-            $present = $false            
+            $present = $false
         }
-        elseif( $item.PSProvider.Name -ne "FileSystem")
+        elseif ($item.PSProvider.Name -ne "FileSystem")
         {
             throw "Path $($location) is not a file path."
         }
-        elseif($item.PSIsContainer)
+        elseif ($item.PSIsContainer)
         {
             throw "Path $($location) is a directory path."
         }
+
         return $present
     }
 
@@ -181,230 +183,34 @@ This code also includes the CopyFile() function, a helper function that copies t
         Helper method to copy file from source to path
     #>
     [void] CopyFile()
-    { 
-        if(-not $this.TestFilePath($this.SourcePath))
+    {
+        if (-not $this.TestFilePath($this.SourcePath))
         {
             throw "SourcePath $($this.SourcePath) is not found."
         }
 
-        [System.IO.FileInfo] $destFileInfo = new-object System.IO.FileInfo($this.Path)
+        [System.IO.FileInfo] $destFileInfo = New-Object -TypeName System.IO.FileInfo($this.Path)
+
         if (-not $destFileInfo.Directory.Exists)
         {
             Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
 
-            #use CreateDirectory instead of New-Item to avoid code
-            # to handle the non-terminating error
+            <#
+                Use CreateDirectory instead of New-Item to avoid code
+                to handle the non-terminating error
+            #>
             [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
         }
 
-        if(Test-Path -LiteralPath $this.Path -PathType Container)
+        if (Test-Path -LiteralPath $this.Path -PathType Container)
         {
             throw "Path $($this.Path) is a directory path"
         }
 
         Write-Verbose -Message "Copying $($this.SourcePath) to $($this.Path)"
 
-        #DSC engine catches and reports any error that occurs
+        # DSC engine catches and reports any error that occurs
         Copy-Item -LiteralPath $this.SourcePath -Destination $this.Path -Force
-    }
-}<# 
-        This method replaces the Set-TargetResource DSC script function.
-        It sets the resource to the desired state. 
-    #>
-    [void] Set() 
-    {       
-        $fileExists = Test-Path -path $this.Path -PathType Leaf 
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            if(-not $fileExists)
-            {
-                $this.CopyFile()            
-            }
-        }
-        else
-        {
-            if($fileExists)         
-            {
-                Write-Verbose -Message "Deleting the file $this.Path"
-                Remove-Item -LiteralPath $this.Path                     
-            }
-        } 
-    } 
-
-
-    <# 
-
-        This method replaces the Test-TargetResource function. 
-        It should return True or False, showing whether the resource
-         is in a desired state.         
-    #> 
-
-    [bool] Test()
-    {
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path."
-        }
-
-        $fileExists = Test-Path -path $this.Path -PathType Leaf
-
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            return $fileExists
-        }
-                
-        return (-not $fileExists)
-    }
-
-
-    <# 
-        This method replaces the Get-TargetResource function.         
-        The implementation should use the keys to find appropriate resources. 
-        This method returns an instance of this class with the updated key properties. 
-    #> 
-
-    [FileResource] Get() 
-    {
-        $file = Get-item $this.Path
-        return $this
-    }
-
-    <#
-        Helper method to copy file from source to path.
-        Because this resource provider run under system,
-        Only the Administrators and system have full
-         access to the new created directory and file
-    #>
-    CopyFile()
-    {
-        if(Test-Path -path $this.SourcePath -PathType Container)
-        {
-            throw "SourcePath '$this.SourcePath' is a directory path"
-        }
-
-        if( -not (Test-Path -path $this.SourcePath -PathType Leaf))
-        {
-            throw "SourcePath '$this.SourcePath' is not found."
-        }
-        
-        [System.IO.FileInfo] $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        if (-not $destFileInfo.Directory.Exists)
-        {         
-            Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
-
-            #use CreateDirectory instead of New-Item to avoid lines
-            # to handle the non-terminating error
-            [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
-        }
-
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $this.SourcePath to $this.Path"
-
-        #DSC engine catches and reports any error that occurs
-        Copy-Item -Path $this.SourcePath -Destination $this.Path -Force
-    } 
- <# 
-        This method replaces the Set-TargetResource DSC script function.
-        It sets the resource to the desired state. 
-    #>
-    [void] Set() 
-    {       
-        $fileExists = Test-Path -path $Path -PathType Leaf 
-        if($ensure -eq [Ensure]::Present)
-        {
-            if(-not $fileExists)
-            {
-                $this.CopyFile()            
-            }
-        }
-        else
-        {
-            if($fileExists)         
-            {
-                Write-Verbose -Message "Deleting the file $Path"
-                Remove-Item -LiteralPath $Path                     
-            }
-        } 
-    } 
-
-
-    <# 
-
-        This method replaces the Test-TargetResource function. 
-        It should return True or False, showing whether the resource
-         is in a desired state.         
-    #> 
-
-    [bool] Test()
-    {
-        if(Test-Path -path $Path -PathType Container)
-        {
-            throw "Path '$Path' is a directory path."
-        }
-
-        $fileExists = Test-Path -path $Path -PathType Leaf
-if($ensure -eq [Ensure]::Present)
-        {
-            return $fileExists
-        }
-                
-        return (-not $fileExists)
-    }
-
-
-    <# 
-        This method replaces the Get-TargetResource function.         
-        The implementation should use the keys to find appropriate resources. 
-        This method returns an instance of this class with the updated key properties. 
-    #> 
-
-    [FileResource] Get() 
-    {
-        $file = Get-item $Path
-        return $this
-    }
-
-    <#
-        Helper method to copy file from source to path
-        Because this resource provider run under system,
-        Only the Administrators and system have full
-         access to the new created directory and file
-    #>
-    CopyFile()
-    {
-        if(Test-Path -path $SourcePath -PathType Container)
-        {
-            throw "SourcePath '$SourcePath' is a directory path"
-        }
-
-        if( -not (Test-Path -path $SourcePath -PathType Leaf))
-        {
-            throw "SourcePath '$SourcePath' is not found."
-        }
-        
-        [System.IO.FileInfo] $destFileInfo = new-object System.IO.FileInfo($Path)
-        if (-not $destFileInfo.Directory.Exists)
-        {         
-            Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
-
-            #use CreateDirectory instead of New-Item to avoid lines
-            # to handle the non-terminating error
-            [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
-        }
-
-        if(Test-Path -path $Path -PathType Container)
-        {
-            throw "Path '$Path' is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $SourcePath to $Path"
-
-        #DSC engine catches and reports any error that occurs
-        Copy-Item -Path $SourcePath -Destination $Path -Force
     }
 ```
 
@@ -426,7 +232,7 @@ enum Ensure
 [DscResource()]
 class FileResource
 {
-    <# 
+    <#
        This property is the fully qualified path to the file that is
        expected to be present or absent.
 
@@ -448,19 +254,19 @@ class FileResource
 
         The [DscProperty(Mandatory)] attribute indicates the property is
         required and DSC will guarantee it is set.
- 
-        If Mandatory is not specified or if it is defined as 
+
+        If Mandatory is not specified or if it is defined as
         Mandatory=$false, the value is not guaranteed to be set when DSC
         calls the resource.  This is appropriate for optional properties.
     #>
     [DscProperty(Mandatory)]
-    [Ensure] $Ensure    
-    
+    [Ensure] $Ensure
+
     <#
        This property defines the fully qualified path to a file that will
        be placed on the system if $Ensure = Present and $Path does not
         exist.
-         
+
        NOTE: This property is required because [DscProperty(Mandatory)] is
         set.
     #>
@@ -474,7 +280,7 @@ class FileResource
        not configurable in DSC configuration.  Properties marked this way
        are populated by the Get() method to report additional details
        about the resource when it is present.
-      
+
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $CreationTime
@@ -484,18 +290,18 @@ class FileResource
         It sets the resource to the desired state.
     #>
     [void] Set()
-    {        
+    {
         $fileExists = $this.TestFilePath($this.Path)
-        if($this.ensure -eq [Ensure]::Present)
+        if ($this.ensure -eq [Ensure]::Present)
         {
-            if(-not $fileExists)
+            if (-not $fileExists)
             {
                 $this.CopyFile()
             }
         }
         else
         {
-            if($fileExists)
+            if ($fileExists)
             {
                 Write-Verbose -Message "Deleting the file $($this.Path)"
                 Remove-Item -LiteralPath $this.Path -Force
@@ -503,17 +309,16 @@ class FileResource
         }
     }
 
-    <# 
-
-        This method is equivalent of the Test-TargetResource script function. 
+    <#
+        This method is equivalent of the Test-TargetResource script function.
         It should return True or False, showing whether the resource
-        is in a desired state.         
+        is in a desired state.
     #>
     [bool] Test()
     {
         $present = $this.TestFilePath($this.Path)
 
-        if($this.Ensure -eq [Ensure]::Present)
+        if ($this.Ensure -eq [Ensure]::Present)
         {
             return $present
         }
@@ -522,7 +327,6 @@ class FileResource
             return -not $present
         }
     }
-    
 
     <#
         This method is equivalent of the Get-TargetResource script function.
@@ -532,8 +336,8 @@ class FileResource
     #>
     [FileResource] Get()
     {
-        $present = $this.TestFilePath($this.Path)        
-        
+        $present = $this.TestFilePath($this.Path)
+
         if ($present)
         {
             $file = Get-ChildItem -LiteralPath $this.Path
@@ -544,7 +348,7 @@ class FileResource
         {
             $this.CreationTime = $null
             $this.Ensure = [Ensure]::Absent
-        }        
+        }
 
         return $this
     }
@@ -553,22 +357,23 @@ class FileResource
         Helper method to check if the file exists and it is file
     #>
     [bool] TestFilePath([string] $location)
-    {      
+    {
         $present = $true
 
         $item = Get-ChildItem -LiteralPath $location -ea Ignore
         if ($item -eq $null)
         {
-            $present = $false            
+            $present = $false
         }
-        elseif( $item.PSProvider.Name -ne "FileSystem")
+        elseif ($item.PSProvider.Name -ne "FileSystem")
         {
             throw "Path $($location) is not a file path."
         }
-        elseif($item.PSIsContainer)
+        elseif ($item.PSIsContainer)
         {
             throw "Path $($location) is a directory path."
         }
+
         return $present
     }
 
@@ -576,8 +381,8 @@ class FileResource
         Helper method to copy file from source to path
     #>
     [void] CopyFile()
-    { 
-        if(-not $this.TestFilePath($this.SourcePath))
+    {
+        if (-not $this.TestFilePath($this.SourcePath))
         {
             throw "SourcePath $($this.SourcePath) is not found."
         }
@@ -587,164 +392,26 @@ class FileResource
         {
             Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
 
-            #use CreateDirectory instead of New-Item to avoid code
-            # to handle the non-terminating error
+            <#
+                Use CreateDirectory instead of New-Item to avoid code
+                 to handle the non-terminating error
+            #>
             [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
         }
 
-        if(Test-Path -LiteralPath $this.Path -PathType Container)
+        if (Test-Path -LiteralPath $this.Path -PathType Container)
         {
             throw "Path $($this.Path) is a directory path"
         }
 
         Write-Verbose -Message "Copying $($this.SourcePath) to $($this.Path)"
 
-        #DSC engine catches and reports any error that occurs
+        # DSC engine catches and reports any error that occurs
         Copy-Item -LiteralPath $this.SourcePath -Destination $this.Path -Force
     }
-}# This module defines a class for a DSC "FileResource" provider. 
-
-
-enum Ensure 
-{ 
-    Absent 
-    Present 
-} 
-
-
-<# This resource manages the file in a specific path. 
-[DscResource()] indicates the class is a DSC resource 
-#> 
-
-[DscResource()]
-class FileResource{ 
-
-    <# This is a key property 
-       [DscResourceKey()] also means the property is required.
-       It is guaranteed to be set, other properties may not
-        be set if the configuration did not specify values.
-    #> 
-    [DscResourceKey()]
-    [string]$Path
-
-    <# 
-       [DscResourceMandatory()] means the property is required.
-       It is guaranteed to be set, other properties may not be set
-        if the configuration did not specify values.
-    #>
-    [DscResourceMandatory()]
-    [Ensure] $Ensure
-
-    <# 
-       [DscResourceMandatory()] means the property is required.
-    #>
-    [DscResourceMandatory()]
-    [string] $SourcePath     
-
-    [DscResource
-
-    <# 
-        This method replaces the Set-TargetResource DSC script function.
-        It sets the resource to the desired state. 
-    #>
-    [void] Set() 
-    {       
-        $fileExists = Test-Path -path $this.Path -PathType Leaf 
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            if(-not $fileExists)
-            {
-                $this.CopyFile()            
-            }
-        }
-        else
-        {
-            if($fileExists)         
-            {
-                Write-Verbose -Message "Deleting the file $this.Path"
-                Remove-Item -LiteralPath $this.Path                     
-            }
-        } 
-    } 
-
-
-    <# 
-
-        This method replaces the Test-TargetResource function. 
-        It should return True or False, showing whether the resource
-         is in a desired state.         
-    #> 
-
-    [bool] Test()
-    {
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path."
-        }
-
-        $fileExists = Test-Path -path $this.Path -PathType Leaf
-
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            return $fileExists
-        }
-                
-        return (-not $fileExists)
-    }
-
-
-    <# 
-        This method replaces the Get-TargetResource function.         
-        The implementation should use the keys to find appropriate resources. 
-        This method returns an instance of this class with the updated key properties. 
-    #> 
-
-    [FileResource] Get() 
-    {
-        $file = Get-item $this.Path
-        return $this
-    }
-
-    <#
-        Helper method to copy file from source to path.
-        Because this resource provider run under system,
-        Only the Administrators and system have full
-         access to the new created directory and file
-    #>
-    CopyFile()
-    {
-        if(Test-Path -path $this.SourcePath -PathType Container)
-        {
-            throw "SourcePath '$this.SourcePath' is a directory path"
-        }
-
-        if( -not (Test-Path -path $this.SourcePath -PathType Leaf))
-        {
-            throw "SourcePath '$this.SourcePath' is not found."
-        }
-        
-        [System.IO.FileInfo] $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        if (-not $destFileInfo.Directory.Exists)
-        {         
-            Write-Verbose -Message "Creating directory $($destFileInfo.Directory.FullName)"
-
-            #use CreateDirectory instead of New-Item to avoid lines
-            # to handle the non-terminating error
-            [System.IO.Directory]::CreateDirectory($destFileInfo.Directory.FullName)
-        }
-
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $this.SourcePath to $this.Path"
-
-        #DSC engine catches and reports any error that occurs
-        Copy-Item -Path $this.SourcePath -Destination $this.Path -Force
-    }
-} 
+} # This module defines a class for a DSC "FileResource" provider.
 ```
+
 
 ## Create a manifest
 
