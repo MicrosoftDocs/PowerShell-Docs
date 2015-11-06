@@ -2,7 +2,9 @@
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-A Desired State Configuration (DSC) resource can model something as generic as a file or a Windows process or as specific as an IIS server or a VM running in Azure. Resources provide the building blocks for a DSC configuration. A resource exposes properties that can be configured (schema) and contains the PowerShell code that the Local Configuration Manager (LCM) calls to "make it so." 
+Desired State Configuration (DSC) Resources provide the building blocks for a DSC configuration. A resource exposes properties that can be configured (schema) and contains the PowerShell script functions that the Local Configuration Manager (LCM) calls to "make it so".
+
+A resource can model something as generic as a file or as specific as an IIS server setting.  Groups of like resources are combined in to a DSC Module, which organizes all the required files in to a structure that is portable and includes metadata to identify how the resources are intended to be used.  
 
 The following topics describe DSC resources:
 
