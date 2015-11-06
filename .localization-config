@@ -1,0 +1,8 @@
+{
+  "locales": [ "ja-jp", "de-de" ],
+  "files": [
+	    "**/*.md"
+  ],
+  "includeDependencies": true,
+  "autoPush": true
+}
