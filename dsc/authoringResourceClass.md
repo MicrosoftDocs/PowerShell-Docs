@@ -49,23 +49,12 @@ The DSC resource schema is defined as properties of the class. We declare three 
 [Nullable[datetime]] $CreationTime
 ```
 
-Notice that the properties are modified by attributes. The attributes map to equivalent attributes used in MOF classes as follows.
+Notice that the properties are modified by attributes. The meaning of the attributes is as follows:
 
-Property attribute in class MOF attribute 
-
-Description
-DscProperty(Key)
-Key
-The property is required. The property is a key. The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.
-DscProperty(Mandatory)
-Required
-The property is required.
-DscProperty(NotConfigurable)
-read
-The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the Get() method when present.
-DscProperty()
-Write
-The property is configurable, but it is not required.
+- **DscProperty(Key)**: The property is required. The property is a key. The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.
+- **DscProperty(Mandatory)**: The property is required.
+- **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.
+- **DscProperty()**: The property is configurable, but it is not required.
 
 The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
 
