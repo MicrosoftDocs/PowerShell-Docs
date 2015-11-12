@@ -1,5 +1,5 @@
 {
-  "locales": [ "ja-jp", "de-de", "fr-fr", "es-es", "it-it", "zh-cn", "zh-tw", "ko-kr","ru-ru", "pt-br" ],
+  "locales": [ "ja-jp", "de-de", "fr-fr", "es-es", "it-it", "zh-cn", "zh-tw", "ko-kr","ru-ru" ],
   "files": [
 	    "**/*.md"
   ],
