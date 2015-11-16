@@ -23,7 +23,7 @@ Each one of the pull clients has a scheduled task that performs a periodic compl
 
 For more information on deploying a DSC Pull Server on premises, see the DSC Pull Server Configuration and Planning Guide.
 
-If you would prefer to take advantage of an online service to host Pull Server functionality, see the (Azure Automation DSC)[https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/] service.
+If you would prefer to take advantage of an online service to host Pull Server functionality, see the [Azure Automation DSC](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/) service.
 
 The following topics explain how to set up pull servers and clients:
 
