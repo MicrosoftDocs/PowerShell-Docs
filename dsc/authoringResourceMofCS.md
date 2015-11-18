@@ -1,4 +1,4 @@
-# Authoring a DSC resource in C#
+# Authoring a DSC resource in C`#`
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
