@@ -24,31 +24,33 @@ The easiest way to set up a web pull server is to use the xWebService resource, 
 ```powershell
 Configuration Sample_xDSCService
 {
-    param (
-    [ValidateNotNullOrEmpty()]
-    [String] $certificateThumbPrint
+    param
+    (
+      [ValidateNotNullOrEmpty()]
+      [String] $certificateThumbPrint
     )
-    Import-DSCResource –ModuleName DSCServic
+
+    Import-DSCResource –ModuleName DSCService
     Node localhost
     {
         WindowsFeature DSCServiceFeature
         {
-            Ensure = “Present”
-            Name = “DSC-Service”
+            Ensure = "Present"
+            Name = "DSC-Service"
         }
         
         DSCService PSDSCPullServer
         {
             Ensure   = "Present"
-            Name     = “PSDSCPullServer”
+            Name     = "PSDSCPullServer"
             Port     = 8080
             PhysicalPath = "$env:SystemDrive\inetpub\wwwroot\PSDSCPullServer"
             EnableFirewallException = $true
             CertificateThumbprint = $certificateThumbPrint
-            ModulePath = “$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules”
-            ConfigurationPath = “$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration”
-            State = “Started”
-            DependsOn = “[WindowsFeature]DSCServiceFeature             
+            ModulePath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
+            ConfigurationPath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
+            State = "Started"
+            DependsOn = "[WindowsFeature]DSCServiceFeature
         }
     }
 }
@@ -57,7 +59,7 @@ Configuration Sample_xDSCService
 1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the **certificateThumbPrint** parameter:
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
@@ -71,6 +73,13 @@ After the pull server setup completes, there is a new folder under `$env:PROGRAM
 * [Setting up a DSC pull client using a configuration ID](pullClientConfigID.md)
 * [Setting up a DSC pull client using configuration names](pullClientConfigNames.md)
 * [Partial configurations](partialConfigs.md)
+
+## Creating the MOF checksum
+A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.
+
+The checksum file must be present in the same directory as the configuration MOF file (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` by default), and have the same name with the `.checksum` extension appended.
+
+>**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.
 
 ## See also
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
