@@ -8,14 +8,14 @@ To define a configuration, you use the PowerShell keyword __Configuration__.
 ```powershell
 Configuration MyDscConfiguration {
 
-	Node “TEST-PC1” {
+	Node "TEST-PC1" {
 		WindowsFeature MyFeatureInstance {
-			Ensure = “Present”
-			Name =	“RSAT”
+			Ensure = "Present"
+			Name =	"RSAT"
 		}
 		WindowsFeature My2ndFeatureInstance {
-			Ensure = “Present”
-			Name = “Bitlocker”
+			Ensure = "Present"
+			Name = "Bitlocker"
 		}
 	}
 }
@@ -41,12 +41,12 @@ Configuration MyDscConfiguration {
     )
 	Node $computerName {
 		WindowsFeature MyFeatureInstance {
-			Ensure = “Present”
-			Name =	“RSAT”
+			Ensure = "Present"
+			Name =	"RSAT"
 		}
 		WindowsFeature My2ndFeatureInstance {
-			Ensure = “Present”
-			Name = “Bitlocker”
+			Ensure = "Present"
+			Name = "Bitlocker"
 		}
 	}
 }
@@ -94,14 +94,15 @@ A useful DSC keyword is __DependsOn__. Typically (though not necessarily always)
 Configuration DependsOnExample {
 	Node Test-PC1 {
 		Group GroupExample {
-			Ensure = “Present”
-			GroupName = “TestGroup”
+			Ensure = "Present"
+			GroupName = "TestGroup"
 		}
-User UserExample {
-Ensure = “Present”
-FullName = “TestUser”
-DependsOn = “GroupExample”
-}
+
+		User UserExample {
+			Ensure = "Present"
+			FullName = "TestUser"
+			DependsOn = "GroupExample"
+		}
 	}
 }
 ```
@@ -111,7 +112,7 @@ If you ran the previous examples, you might have noticed that you were warned th
 Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration module. Other resources in external modules must be placed in `$env:PSModulePath` in order to be recognized by the LCM. A new cmdlet, [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), can be used to determine what resources are installed on the system and available for use by the LCM. 
 Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), they still need to be loaded within your configuration. __Import-DscResource__ is a dynamic keyword that can only be recognized within a __Configuration__ block (i.e. it is not a cmdlet). __Import-DscResource__ supports two parameters:
 * __ModuleName__ is the recommended way of using __Import-DscResource__. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
-* __Name__ is the name of the resource to import. This is not the friendly name returned as “Name” by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+* __Name__ is the name of the resource to import. This is not the friendly name returned as "Name" by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as __ResourceType__ by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
 
 ## See Also
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
