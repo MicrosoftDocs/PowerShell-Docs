@@ -30,7 +30,7 @@
     <Message Text="Use latest package version: $(UseLatestPackage)"/>
 
     <!-- Get Latest version from nuget server if latest version is needed -->
-    <XmlPeek Condition="$(UseLatestPackage)" Query="//packageSources/add[@key='Azure']/@value" XmlInputPath="$(ToolsFolder)NuGet\NuGet.config">
+    <XmlPeek Condition="$(UseLatestPackage)" Query="//packageSources/add[@key='NuGet official package source']/@value" XmlInputPath="$(ToolsFolder)NuGet\NuGet.config">
       <Output PropertyName="NugetSource" TaskParameter="Result"/>
     </XmlPeek>
     <Message Condition="$(UseLatestPackage)" Text="NugetSource=$(NugetSource)"/>
