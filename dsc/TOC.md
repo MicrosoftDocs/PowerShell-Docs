@@ -4,7 +4,7 @@
 ## [Enacting configurations](enactingConfigurations.md)
 ## [Configuration data](configData.md)
 ## [Securing the configuration MOF file](secureMOF.md)
-
+## [Partial Configurations](partialConfigs.md)
 # [Resources](resources.md)
 ## [Built-in resources](builtInResource.md)
 ### [Archive Resource](archiveResource.md)
