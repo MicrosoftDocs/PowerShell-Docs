@@ -104,6 +104,6 @@
 
 ## [Software Inventory Logging (SIL)](sil_overview.md)
 
-## [Known Issues and Limitations](limitation_overview.md)
-### [Desired State Configuration (DSC)](limitation_dsc.md)
-### [Classes with PowerShell Syntax](limitation_classes.md)
+# [Known Issues and Limitations](limitation_overview.md)
+## [Desired State Configuration (DSC)](limitation_dsc.md)
+## [Classes with PowerShell Syntax](limitation_classes.md)
