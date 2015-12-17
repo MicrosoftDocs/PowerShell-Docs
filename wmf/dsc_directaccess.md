@@ -12,8 +12,6 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 
 $result | fl \*
 
-![](media/image6.png)
-
 \# Test the resource state
 
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -24,8 +22,6 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 
 $result | fl \*
 
-![](media/image7.png)
-
 \# Get the contents of File
 
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -35,5 +31,3 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
                                 Contents='This file is create by Invoke-DscResource'} -Verbose
 
 $result.ItemValue | fl \*
-
-![](media/image8.png)
