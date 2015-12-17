@@ -14,7 +14,7 @@ The following Linux operating system versions are supported for DSC for Linux.
 
 The following table describes the required ackage dependencies for DSC for Linux.
 
-|  Required package |  Description |  Minumum version | 
+|  Required package |  Description |  Minimum version | 
 |---|---|---|
 | glibc| GNU Library| 2…4 – 31.30| 
 | python| Python| 2.4 – 3.4| 
@@ -164,6 +164,7 @@ DSC for Linux includes scripts to work with configuration from the local Linux c
 ## PowerShell Desired State Configuration for Linux Log Files
 
 The following log files are generated for DSC for Linux messages.
+
 |Log file|Directory|Description|
 |---|---|---|
 |omiserver.log|/opt/omi/var/log/|Messages relating to the operation of the OMI CIM server.|
