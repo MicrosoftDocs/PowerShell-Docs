@@ -58,10 +58,6 @@ Find-Module -Filter Cookbook -Repository PSGallery
 
 Find-Module -Filter RBAC -Repository PSGallery
 
-### Example output
-
-![](media/image10.png)
-
 ### New features in PowerShellGet
 
 -   Side-by-side version support on Windows PowerShell 5.0 or newer

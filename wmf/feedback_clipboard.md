@@ -1,8 +1,6 @@
 ### Clipboard cmdlets
 **Get-Clipboard** and **Set-Clipboard** make it easier for you to transfer content to and from a Windows PowerShell session. The following example uses File Explorer to copy three files:
 
-![](media/image3.png)
-
 Now, you can easily access the contents of the clipboard as a list of files:
 
 PS C:\\&gt; Get-Clipboard -Format FileDropList

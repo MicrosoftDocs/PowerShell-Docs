@@ -79,10 +79,6 @@ Resolution: Perform one of the following actions:
 
 Once you have performed either of the above actions, the PowerShell shortcuts will work. These actions only need to be performed only once.
 
-![](media/image14.png)
-
-Figure 1: Select the green box, not the red box.
-
 Invoke-DscResource operations cannot be retrieved by Get-DscConfigurationStatus cmdlet
 --------------------------------------------------------------------------------------
 

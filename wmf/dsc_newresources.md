@@ -26,8 +26,6 @@ Name = \[String\[\]\]
 
 }
 
-![](media/image11.png)
-
 #### WindowsOptionalFeatureSet 
 
 WindowsOptionalFeatureSet \[String\] \#ResourceName
@@ -52,8 +50,6 @@ Ensure = \[String\]
 
 }
 
-![](media/image12.png)
-
 #### ServiceSet 
 
 PS C:\\&gt; Get-DscResource -Module psdesiredstateconfiguration -Name ServiceSet -Syntax
@@ -77,5 +73,3 @@ Name = \[String\[\]\]
 \[Credential = \[PSCredential\]\]
 
 }
-
-![](media/image13.png)

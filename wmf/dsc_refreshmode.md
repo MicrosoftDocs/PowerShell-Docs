@@ -26,4 +26,3 @@ LCMSettings -OutputPath .\\LCMSettings
 
 Set-DscLocalConfigurationManager -Path .\\LCMSettings -Verbose -ComputerName localhost
 
-![](media/image5.png)
