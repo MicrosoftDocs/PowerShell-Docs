@@ -1,4 +1,5 @@
 # Credentials Options in Configuration Data
+>Applies To: Windows PowerShell 5.0
 
 ## Plain Text Passwords and Domain Users
 
