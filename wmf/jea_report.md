@@ -1,4 +1,4 @@
-### Reporting on JEA
+# Reporting on JEA
 In order to report on the state of your JEA configuration, you can use:
 1.	**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.
 2.	**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.
