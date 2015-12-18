@@ -1,4 +1,4 @@
-# Desired State Configuration (DSC)
+# Desired State Configuration (DSC) Known Issues and Limitations
 
 Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
 --------------------------------------------------------------------------------------------------------------------------------
