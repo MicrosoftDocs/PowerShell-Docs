@@ -1,19 +1,9 @@
-## Known Issues and Limitations
-
-Reverting to a Windows 8.1 (2012 R2) build from WMF 5.0 Preview can break DSC cmdlets because of updates in metaconfig.mof
----------------------------------------------------------------------------------------------------------------------------
-
-Resolution: Delete metaconfig.mof.
-
-1.  Open **powershell.exe** with elevated user rights (run as administrator).
-2.  Run the following command in the console:
-    1.  Remove-Item -Path $env:SystemRoot\\system32\\Configuration\\metaconfig.mof
-
+# Known Issues and Limitations
 
 Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
 --------------------------------------------------------------------------------------------------------------------------------
 
-In WMF 4.0 and WMF 5.0 preview release, DSC would not allow passwords in the configuration to be of length more than 121 characters. DSC was forcing to use short passwords even if lengthy and strong password was desired. This breaking change allows passwords to be of arbitrary length in the DSC configuration.
+In WMF 4.0 and WMF 5.0 Preview releases, DSC would not allow passwords in the configuration to be of length more than 121 characters. DSC was forcing to use short passwords even if lengthy and strong password was desired. This breaking change allows passwords to be of arbitrary length in the DSC configuration.
 
 Resolution: Re-create the certificate with Data Encipherment or Key Encipherment Key usage, and Document Encryption Enhanced Key usage (1.3.6.1.4.1.311.80.1). Technet article <https://technet.microsoft.com/en-us/library/dn807171.aspx> has more information.
 
@@ -32,35 +22,12 @@ If LCM is in DebugMode, Stop-DscConfiguration may hang while trying to stop an o
 Resolution: Finish the debugging of the operation started by Get-DscConfiguration as outlined in section ‘[DSC RESOURCE SCRIPT DEBUGGING](#dsc-resource-script-debugging)’.
 
 
-WMF 5.0 Preview installation can appear to succeed, but the installation rolls back after the system is restarted (or just fails)
----------------------------------------------------------------------------------------------------------------------------------
-
-Resolution: Delete the **\\\\root\\microsoft\\windows\\desiredstateconfiguration** namespace in WMI.
-
-1.  Open **powershell.exe** with elevated user rights (**Run as Administrator**).
-2.  Run the following commands:
-    1.  $dscNamespace = Get-CimInstance -Namespace root\\microsoft\\windows -Query "select \* from \_\_namespace where name = 'desiredstateconfiguration'"
-    2.  $dscNamespace | Remove-CimInstance
-    3.  mofcomp.exe $env:windir\\system32\\wbem\\DSCCoreConfProv.mof
-3.  Install the WMF 5.0 Preview package.
-
-
-Modules and DSC Resources reporting error about ExecutionPolicy on Windows 7
-----------------------------------------------------------------------------------
-
-Resolution: Change ExecutionPolicy to RemoteSigned
-
-1.  Open **powershell.exe** with elevated user rights (run as administrator).
-2.  Run the following command in the console:
-    1.  Set-ExecutionPolicy RemoteSigned
-
-
 Connecting to an old remote Exchange endpoint causes a crash
 ------------------------------------------------------------
 
 The old Exchange endpoint redirects to a new endpoint. There is a bug in the redirection logic that results in a crash.
 
-Resolution: Connect directly to the new endpoint
+Resolution: Connect directly to the new endpoint.
 
 
 PowerShell Shortcuts are broken when used for the first time
