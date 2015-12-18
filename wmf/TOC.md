@@ -1,4 +1,4 @@
-# [WMF 5 Release Notes Overview](releasenotes.md)
+# [WMF Release Notes Overview](releasenotes.md)
 
 # [System Requirements](requirements.md)
 
@@ -84,7 +84,7 @@
 
 ## [New and updated cmdlets based on community feedback ](feedback_cmdlets.md)
 ### [Symbolic links using Item cmdlets](feedback_symbolic.md)
-### [Archieve cmdlets](feedback_archive.md)
+### [Archive cmdlets](feedback_archive.md)
 ### [Clipboard cmdlets](feedback_clipboard.md)
 ### [Convert-String](feedback_convertstring.md)
 ### [Extract and Parse Structured Objects out of String](feedback_convertfromString.md)
@@ -105,5 +105,4 @@
 ## [Software Inventory Logging (SIL)](sil_overview.md)
 
 # [Known Issues and Limitations](limitation_overview.md)
-## [Desired State Configuration (DSC)](limitation_dsc.md)
-## [Classes with PowerShell Syntax](limitation_classes.md)
+## [Desired State Configuration (DSC) Known Issues](limitation_dsc.md)
