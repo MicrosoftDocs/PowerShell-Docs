@@ -1,6 +1,6 @@
-## Software Inventory Logging (SIL)
+# Software Inventory Logging (SIL)
 
-**IMPORTANT:** *When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already running SIL, it is necessary to run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.*
+**IMPORTANT: ** *When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already running SIL, it is necessary to run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.*
 
 Software Inventory Logging helps reduce the operational costs of getting accurate information about the Microsoft software installed locally on a server, but especially across many servers in an IT environment (assuming the software is installed and running across the IT environment). Provided one is set up, you can forward this data to an aggregation server, and collect the log data in one place by using a uniform, automatic process.
 
