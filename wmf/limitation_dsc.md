@@ -18,7 +18,7 @@ Start-DscConfiguration and other DSC cmdlets may fail after installing WMF 5.0 R
 	+ PSComputerName : localhost
 ```
 
-**Resolution:** Delete DSCEngineCache.mof by running the following command in an elevated PowerShell session (run as administrator):
+**Resolution:** Delete DSCEngineCache.mof by running the following command in an elevated PowerShell session (Run as Administrator):
 	
 ```powershell
 Remove-Item -Path $env:SystemRoot\\system32\\Configuration\\DSCEngineCache.mof
