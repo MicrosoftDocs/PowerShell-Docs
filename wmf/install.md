@@ -28,6 +28,7 @@ Download the correct package for your operating system and architecture:
 	- On computers that are running Windows 7 SP1 x86, run **Win7-KB3094176-x86.msu /quiet**.
 
 **Additional Installation Notes for Windows Server 2008 and Windows 7:**
+
 Ensure following prerequisites have been met:
 - Latest service pack is installed.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) is installed
