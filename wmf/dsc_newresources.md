@@ -1,4 +1,4 @@
-## New in-box Resources
+# New in-box Resources
 
 WMF 5.0 RTM has three new DSC resources name WindowsFeatureSet, WindowsOptionalFeatureSet and ServiceSet.
 
