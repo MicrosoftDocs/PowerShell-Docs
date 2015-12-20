@@ -1,4 +1,4 @@
-### NoNewLine parameter
+# NoNewLine parameter
 **Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.
 
 PS C:\\Users\\slee&gt; "This is " | Out-File -FilePath Example.txt -NoNewline

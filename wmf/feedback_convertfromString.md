@@ -1,4 +1,4 @@
-### Extract and Parse Structured Objects out of String
+# Extract and Parse Structured Objects out of String
 This also introduces some additional functionality for the ConvertFrom-String cmdlet:
 
 -   Removes the extent text property by default. You can include it with the -IncludeExtent parameter.
