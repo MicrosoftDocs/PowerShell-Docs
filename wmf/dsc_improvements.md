@@ -1,4 +1,4 @@
-## Improvements in Desired State Configuration (DSC)
+# Improvements in Desired State Configuration (DSC)
 
 **PSDesiredStateConfiguration module version updated to 1.1 **
 

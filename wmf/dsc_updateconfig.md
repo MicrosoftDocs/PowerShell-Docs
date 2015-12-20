@@ -1,4 +1,4 @@
-## On-demand PULL of DSC Configurations
+# On-demand PULL of DSC Configurations
 
 The new Update-DscConfiguration cmdlet triggers a pull from the pull server(s) defined in the meta-configuration. The behavior is often referred to as 'Pull Now'. 
 

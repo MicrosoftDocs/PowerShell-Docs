@@ -1,4 +1,4 @@
-### Automatic RunAs support for DSC Resources
+# Automatic RunAs support for DSC Resources
 Support for DSC RunAs credential
 --------------------------------
 
@@ -58,7 +58,7 @@ CertificateFile = "C:\\publicKeys\\targetNode.cer"
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 
-### Known issues
+## Known issues
 
 In this release, the following are known issues of the DSC RunAs credential feature:
 

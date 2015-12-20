@@ -1,4 +1,4 @@
-### Frequencies for RefreshMode and ConfigurationMode need not be multiple of each other
+# Frequencies for RefreshMode and ConfigurationMode need not be multiple of each other
 
 There have been some improvements to Windows PowerShell debugging after WMF 5.0 September Preview.
 

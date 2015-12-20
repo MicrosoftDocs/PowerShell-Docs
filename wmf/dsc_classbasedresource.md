@@ -1,8 +1,8 @@
-### Class-based DSC Resources
+# Class-based DSC Resources
 Develop DSC resources with classes in Windows PowerShell
 --------------------------------------------------------
 
-### Define DSC resources with classes
+## Define DSC resources with classes
 
 Based on feedback, we’ve made authoring class-defined DSC resources simpler and easier to understand. The major differences between a class-defined DSC resource and a cmdlet DSC resource provider are:
 
@@ -13,7 +13,7 @@ Based on feedback, we’ve made authoring class-defined DSC resources simpler an
 -   A Windows PowerShell module file can contain multiple DSC resource classes.
 
 The following is an example of a class-defined DSC resource provider that extends the other class DSC resource in the same file. This is saved as a module, **MyDSCResource.psm1**. Note that you must always include at least one key property and Get, Set, Test method in a class-defined DSC resource or its base classes.
-
+```powershell
 enum Ensure
 
 {
@@ -401,9 +401,9 @@ return $this
 }
 
 }
-
+```
 After creating the class-defined DSC resource provider, and saving it as a module, create a module manifest for the module. In this example, the following module manifest is saved as **MyDscResource.psd1**.
-
+```powershell
 @{
 
 \# Script module or binary module file associated with this manifest.
@@ -447,11 +447,11 @@ PowerShellVersion = '5.0'
 DscResourcesToExport = @('BaseFileResource','FileResource')
 
 }
-
+```
 Deploy the new DSC resource provider by creating a **MyDscResource** folder for it under $env:SystemDrive\\Program Files\\WindowsPowerShell\\Modules. You do not need to create a DSCResource subfolder. Copy the module and module manifest files (**MyDscResource.psm1** and **MyDscResource.psd1**) to the **MyDscResource** folder.
 
 From this point, you create and run a configuration script as you would with any DSC resource. The following is a configuration that references the MyDSCResource module. Save this as a script, **MyResource.ps1**.
-
+```powershell
 Configuration MyConfig
 
 {
@@ -485,16 +485,17 @@ Ensure = "Present"
 }
 
 MyConfig
-
+```
 Run this as you would any DSC configuration script. To start the configuration, in an elevated Windows PowerShell console, run the following cmdlet. You will see the output of Get-DscConfiguration from FileResource contains more information than BaseFileResource.
-
+```powershell
 PS C:\\test&gt; .\\MyResource.ps1
 
 PS C:\\test&gt; Start-DscConfiguration c:\\test\\MyConfig –wait –verbose
 
 PS C:\\test&gt; Get-DscConfiguration
+```
 
-### Known issues
+## Known issues
 
 In this release, the following are known issues with class-defined DSC resource providers.
 
