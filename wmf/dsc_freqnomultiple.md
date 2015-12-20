@@ -3,10 +3,10 @@ In the previous version of DSC, LCM would treat RefreshFrequencyMins and Configu
 
 Behaviour in **PULL** mode: 
 
-|                                  |**Value in Meta Configuration**| **Value after Meta Configuration is applied**|**How often pull happens (in mins)**|**How often configuration is applied (in mins)** |
-|----------------------------------|-------------------------------|----------------------------------------------|-------------------------------------|----------------------------------------------------|
-|**ConfigurationModeFrequencyMins**|70							   |70											  |										|70											  		|
-|**RefreshFrequencyMins**          |40							   |40											  |40									|											  		|
+|                                  |**Value in Meta Configuration**|**Value after Meta Configuration is applied**|**How often pull happens (in mins)**|**How often configuration is applied (in mins)**|
+|----------------------------------|-------------------------------|---------------------------------------------|------------------------------------|------------------------------------------------|
+|**ConfigurationModeFrequencyMins**|70							   |70											 |									  |70											  |
+|**RefreshFrequencyMins**          |40							   |40											 |40								  |											  	  |
 
 Behavior in **PUSH** mode:
 
