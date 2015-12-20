@@ -1,4 +1,4 @@
-## Help support for DSC Configuration
+# Help support for DSC Configuration
 Support for -? during DSC configuration compilation
 ---------------------------------------------------
 

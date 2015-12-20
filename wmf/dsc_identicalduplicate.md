@@ -1,4 +1,4 @@
-## Allowance for Identical Duplicate Resources in a Configuration
+# Allowance for Identical Duplicate Resources in a Configuration
 
 DSC does not allow or handle conflicting resource definitions within a configuration. It does not try to resolve the conflict it simply fails. As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, it does.
 

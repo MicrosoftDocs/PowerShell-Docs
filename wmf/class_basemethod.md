@@ -1,4 +1,4 @@
-### Call Base Class Method
+# Call Base Class Method
 
 You can override existing methods in subclasses. To do this, declare methods by using the same name and signature.
 ```PowerShell

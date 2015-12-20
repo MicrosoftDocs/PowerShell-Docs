@@ -1,4 +1,4 @@
-### Separation of Configuration, Resource and Report Repositories
+# Separation of Configuration, Resource and Report Repositories
 
 In this release we allow you all of the flexibility that you need to pull and report to one or more DSC Pull Servers. Each endpoint can be defined separately so that you can pull configurations from one location, resources from another and report to yet another location. The following meta-configuration does just this.
 

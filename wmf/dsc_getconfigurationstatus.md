@@ -1,4 +1,4 @@
-### Details about Configuration Status
+# Details about Configuration Status
 The Get-DscConfigurationStatus cmdlet gets information about configuration status from a target node. A rich object is returned that includes high-level information about whether or not the configuration run was successful or not. You can dig into the object to discover details about the configuration run such as:
 
 * All of the resources that failed
@@ -22,7 +22,7 @@ Get-DscConfigurationStatus 	-All
 							[<CommonParameters>]
 ```
 
-#### Example
+## Example
 ```PowerShell
 PS C:\> $Status = Get-DscConfigurationStatus 
 

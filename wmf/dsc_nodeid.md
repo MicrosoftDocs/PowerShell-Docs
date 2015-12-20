@@ -1,6 +1,6 @@
-## Seperation of Node and Configuration Ids
+# Seperation of Node and Configuration Ids
 
-### Overview
+## Overview
 
 In order to provide a more flexible and streamlined experience when using DSC in 'Pull' mode, we have added a number of features in this release. These features are intended to allow you to have the flexibility to easily setup and deploy configurations across multiple nodes, while still tracking status and reporting information for each node individually. These features are as follows:
 
@@ -10,10 +10,10 @@ In order to provide a more flexible and streamlined experience when using DSC in
 
 **Note:** These features and functionality have been added and do not replace the existing pull features and concepts so you can use these new features or the older ones with the new Pull Server shipping in this release.
 
-### Agent ID
+## Agent ID
 Users who do not want to setup and manage unique identifiers for each target node will be very pleased by this feature. With this feature there is no more bookkeeping of GUIDs required. DSC automatically generates an agent ID that it uses when communicating with the pull server. This ID is used by the pull server to uniquely identify all information with a given node. It also means that you do not need to set up each target node with a unique meta-configuation containing a unique ID so a single meta-configuation can be used by many target nodes while still retaining each node's unique identity. 
 
-### Configuration Name
+## Configuration Name
 
 The configuration name is a friendly name that defines that name of the configuration that a target node will apply. The changes associated to this are as follows:  
 
@@ -23,7 +23,7 @@ The configuration name is a friendly name that defines that name of the configur
 
 * Multiple/Partial Config: If multiple configuration names are assigned to a target node, they will be treated like partial configurations. In order for this to work, the meta-configuration on the target node must be configured to accept the partial configurations. **Note:** This is only supported on the on-premises pull server. Azure Automation does not support partial configurations.
 
-### Registration
+## Registration
 
 Because configuration names are no longer GUIDs (they are now friendly names), anyone can guess them. To mitigate the inherent security issue with this, we added a registration step before a node can start requesting configurations from a server. A node registers itself with the pull server with a shared secret (which the node and the server both know already), and optionally the name of the configuration it will request. This shared secret need not be unique for each computer. Assumption: the shared secret is a hard-to-guess identifier, like a GUID. This shared secret is defined by the **RegistrationKey** propety in the target node's meta-configuration.
 
