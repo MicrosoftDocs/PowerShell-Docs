@@ -13,9 +13,10 @@ This is the core of PackageManagement to support software discovery, installatio
 -   Set-PackageSource
 -   Uninstall-Package
 -   Unregister-PackageSource
+
 As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:
 ```powershell
-PS C:\> Install-module PackageManagement –force
+PS C:\> Install-Module PackageManagement –Force
 ```
 In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.
 
@@ -108,7 +109,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-### Install-Package Cmdlet
+## Install-Package Cmdlet
 
 This cmdlet allows installation of software packages in available package sources using loaded package providers.
 ```powershell
@@ -120,7 +121,7 @@ Install-Package -Name jquery -Source nuget.org -Destination C:\\test
 
 \# Install a package by piping.
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination C:\\test
-```powershell
+```
 
 ## Install-PackageProvider
 This cmdlet installs one or more Package Management package providers.
