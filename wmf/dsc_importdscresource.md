@@ -1,4 +1,4 @@
-## Import-DscResource keyword supports -moduleversion parameter
+# Import-DscResource keyword supports -moduleversion parameter
 
 We have added a new parameter to Import-DscResource dynamic keyword available when authoring DSC Configurations. This will help the authors directly specify the module version to load the DSC resources from. The new syntax of the keyword is:
 

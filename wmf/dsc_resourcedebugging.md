@@ -1,16 +1,16 @@
-### DSC Resource Script Debugging
+# DSC Resource Script Debugging
 WMF 5.0 Production Preview includes support for debugging DSC resource scripts while they run on target nodes. In older WMF 5.0 releases, we added advanced script debugging features with the ability to attach to local processes (Get-PSHostProcessInfo, Enter-PSHostProcessInfo, Exit-PSHostProcessInfo), enumerate all runspaces in a process, and debug an arbitrary runspace in a process (Get-Runspace, Debug-Runspace).
 
 DSC resource script debugging builds on this work by adding two new cmdlets.
 
-####Syntax
+##Syntax
 **Enable-DscDebug**
 Enable-DscDebug \[-BreakAll\] \[-CimSession &lt;CimSession\[\]&gt;\] \[-ThrottleLimit &lt;int&gt;\] \[-AsJob\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
 **Disable-DscDebug**
 Disable-DscDebug \[-CimSession &lt;CimSession\[\]&gt;\] \[-ThrottleLimit &lt;int&gt;\] \[-AsJob\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
-####Typical WorkFlow
+##Typical WorkFlow
 
 
 ```PowerShell

@@ -1,7 +1,8 @@
-## Information Stream
+# Information Stream
 
 A new structured Information stream can now be used to transmit structured data between a script and its host. Write-Host has also been updated to emit its output to the Information stream where you can now capture or silence it. The new Write-Information cmdlet (along with a corresponding WriteInformation API) used with InformationVariable and InformationAction common parameters enables more flexibility and capability.
 
+```powershell
 PS C:\\Users\\leeholm&gt; \#\# Here's a typical PowerShell script
 PS C:\\Users\\leeholm&gt; Show-ColorizedContent c:\\temp\\OutputGusher.ps1
 
@@ -46,55 +47,31 @@ Preparing to give you output!
 =============================
 I &lt;3 Output
 =============================
-
- 
-
 SCRIPT COMPLETE!One!Eleven!
-
 =============================
-
 PS C:\\Users\\leeholm&gt; $ivOutput = $iv | Group-Object -AsHash { $\_.Tags\[0\] } -AsString
-
 PS C:\\Users\\leeholm&gt; $ivOutput.PSHOST | Format-Table
 
- 
-
 MessageData
-
 -----------
 
 {\[Message, Preparing to give you output!\], \[NoNewLine, False\], \[ForegroundColor, Green\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message, =============================\], \[NoNewLine, False\], \[ForegroundColor, DarkYellow\], \[BackgroundColor, DarkMa...
-
 {\[Message, I \], \[NoNewLine, True\], \[ForegroundColor, White\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message, &lt;3\], \[NoNewLine, True\], \[ForegroundColor, Red\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message,  Output\], \[NoNewLine, False\], \[ForegroundColor, White\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message, =============================\], \[NoNewLine, False\], \[ForegroundColor, DarkYellow\], \[BackgroundColor, DarkMa...
-
 {\[Message, \], \[NoNewLine, False\], \[ForegroundColor, DarkYellow\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message, SCRIPT COMPLETE!One!Eleven!\], \[NoNewLine, False\], \[ForegroundColor, Green\], \[BackgroundColor, DarkMagenta\]}
-
 {\[Message, =============================\], \[NoNewLine, False\], \[ForegroundColor, DarkYellow\], \[BackgroundColor, DarkMa...
-
- 
-
- 
 
 PS C:\\Users\\leeholm&gt;
 
 PS C:\\Users\\leeholm&gt; \#\# And even ignore spammy output altogether
-
 PS C:\\Users\\leeholm&gt; $r = c:\\temp\\OutputGusher -InformationAction "SilentlyContinue"
-
 PS C:\\Users\\leeholm&gt;
 
 PS C:\\Users\\leeholm&gt; \#\# As we saw in lines 14..16 of the original script, though,
-
 PS C:\\Users\\leeholm&gt; \#\# the Write-Information cmdlet lets a script emit more than
 
 PS C:\\Users\\leeholm&gt; \#\# just one stream of output.
@@ -134,4 +111,4 @@ Computer        : srv2
 ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
-
+```
