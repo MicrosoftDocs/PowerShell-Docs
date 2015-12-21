@@ -9,7 +9,7 @@
 
 # [Feedback](feedback.md)
 
-# [Scenarios Enabled by WMF 5.0](wmf5scenarios.md)
+# [Scenarios Enabled by WMF 5.0]()
 ## [Just Enough Administration (JEA)](jea_overview.md)
 ### [Creating and Connecting to a JEA Endpoint](jea_endpoint.md)
 ### [Reporting on JEA](jea_report.md)
