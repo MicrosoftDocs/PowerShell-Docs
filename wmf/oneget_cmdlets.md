@@ -13,9 +13,10 @@ This is the core of PackageManagement to support software discovery, installatio
 -   Set-PackageSource
 -   Uninstall-Package
 -   Unregister-PackageSource
+
 As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:
 ```powershell
-PS C:\> Install-module PackageManagement –force
+PS C:\> Install-Module PackageManagement –Force
 ```
 In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.
 
@@ -39,7 +40,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## Find-PackageProvider
+## Find-PackageProvider Cmdlet
 The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet. These are package providers available for installation with the Install-PackageProvider cmdlet. By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags. 
 
 Find-PackageProvider also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.
@@ -65,7 +66,7 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination C:\\test
 ```
 
-## Get-PackageProvider
+## Get-PackageProvider Cmdlet
 Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.
 ```powershell
 \# Get all currently loaded package providers
@@ -75,8 +76,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## Get-PackageSource
-
+## Get-PackageSource Cmdlet
 This cmdlet gets a list of package sources that are registered for a package provider.
 ```powershelll
 \# Get all package sources
@@ -86,7 +86,7 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## Import-PackageProvider
+## Import-PackageProvider Cmdlet
 This cmdlet adds Package Management package providers to the current session.
 ```powershell
 \# Import a package provider from the local machine
@@ -108,7 +108,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-### Install-Package Cmdlet
+## Install-Package Cmdlet
 
 This cmdlet allows installation of software packages in available package sources using loaded package providers.
 ```powershell
@@ -120,9 +120,9 @@ Install-Package -Name jquery -Source nuget.org -Destination C:\\test
 
 \# Install a package by piping.
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination C:\\test
-```powershell
+```
 
-## Install-PackageProvider
+## Install-PackageProvider Cmdlet
 This cmdlet installs one or more Package Management package providers.
 ```powershell
 \# Install a package provider from the PowerShell Gallery
@@ -139,7 +139,7 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## Register-PackageSource
+## Register-PackageSource Cmdlet
 This cmdlet adds a package source for a specified package provider.
 Each PackageManagement provider may have one or multiple software sources, or repositories. PackageManagement provides PowerShell cmdlets to add/remove/query the source. For example, you can register a package source for the NuGet provider:
 ```powershell
@@ -158,14 +158,14 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## Set-PackageSource
+## Set-PackageSource Cmdlet
 This cmdlet changes information about an existing package source. 
 ```powershell
 Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
 ```
 
-## Uninstall-Package cmdlet
+## Uninstall-Package Cmdlet
 This cmdlet uninstalls packages installed on the local computer.
 ```powershell
 \# Uninstall jquery using nuget
@@ -175,7 +175,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination C:\\test
 Get-Package -Name jquery –Provider NuGet -Destination C:\\test | Uninstall-Package
 ```
 
-## Unregister-PackageSource
+## Unregister-PackageSource Cmdlet
 ```powershell
 \# Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
