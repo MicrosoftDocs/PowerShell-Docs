@@ -1,4 +1,4 @@
-### Test-DscConfiguration cmdlet supports Reference Configurations
+# Test-DscConfiguration cmdlet supports Reference Configurations
 
 The Test-DscConfiguration cmdlet has been updated to allow testing of desired configuration state of one or more target nodes by specifying a reference configuration document to compare against.
 

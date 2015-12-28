@@ -1,4 +1,4 @@
-### Get-ChildItem has -Depth parameter
+# Get-ChildItem has -Depth parameter
 **Get-ChildItem** now has a **–Depth** parameter you use with **–Recurse** to limit the recursion:
 
 PS C:\\Users\\slee\\Downloads\\Example&gt; Get-ChildItem -Recurse -Depth 0

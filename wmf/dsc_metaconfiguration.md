@@ -1,4 +1,4 @@
-### Configure DSC Engine with New Attribute
+# Configure DSC Engine with New Attribute
 Configure DSC’s Local Configuration Manager with the meta-configuration attribute
 ---------------------------------------------------------------------------------
 

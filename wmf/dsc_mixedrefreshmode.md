@@ -1,1 +1,1 @@
-### Mix and Match of PUSH and PULL modes
+# Mix and Match of PUSH and PULL modes

@@ -76,7 +76,7 @@
 ## [PowerShell Module Discovery, Install and Inventory with PowerShellGet](psget_module_overview.md)
 ### [Register a PowerShell Repository](psget_psrepository.md)
 ### [Side-by-Side Version Support on PowerShell 5.0 or newer](psget_modulesxsinstall.md)
-### [Installtion of Module Dependencies](psget_moduledependency.md)
+### [Installation of Module Dependencies](psget_moduledependency.md)
 ### [PowerShellGet Cmdlets for Module Management](psget_modulecmdlets.md)
 
 ## [PowerShell Script Discovery, Install and Management with PowerShellGet](psget_script_overview.md)

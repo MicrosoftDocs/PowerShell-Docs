@@ -1,4 +1,4 @@
-### Declare Base Class
+# Declare Base Class
 You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.
 
 ```PowerShell

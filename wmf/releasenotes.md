@@ -1,5 +1,7 @@
 # Windows Management Framework (WMF) 5.0 RTM Release Notes Overview
 
+**Update 12/23/2015:** WMF 5.0 RTM has been removed from Download Center due to an issue impacting our customers. Further details are available on the [PowerShell Blog](http://blogs.msdn.com/b/powershell/archive/2015/12/23/windows-management-framework-wmf-5-0-currently-removed-from-download-center.aspx).
+
 Windows Management Framework (WMF) 5.0 RTM brings functionality that has been updated from WMF 4.0. WMF 5.0 RTM is available for installation only on **Windows Server 2012 R2**, **Windows Server 2012**, **Windows Server 2008 R2**, **Windows 8.1**, and **Windows 7 SP1** and contains updated versions or introduction of the following features:
 
 - Windows PowerShell

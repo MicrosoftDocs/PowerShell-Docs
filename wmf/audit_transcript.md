@@ -1,4 +1,4 @@
-### Enhanced Transcription Options
+# Enhanced Transcription Options
 
 Windows PowerShell transcription has been improved to apply to all hosting applications (such as Windows PowerShell ISE) rather than just the console host (powershell.exe).
 

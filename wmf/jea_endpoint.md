@@ -130,7 +130,7 @@ Finally, once you have finished customizing your session configuration and relat
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-#### Connect to a JEA Endpoint
+## Connect to a JEA Endpoint
 Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.  You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.
 
 ```powershell

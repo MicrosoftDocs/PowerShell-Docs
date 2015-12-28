@@ -1,4 +1,4 @@
-### Format-Hex
+# Format-Hex
 **Format-Hex** lets you view text or binary data in hexadecimal format. Here is an example, looking at the hexadecimal representation of a string, as well as the binary contents of a Word document.
 
 PS C:\\&gt; "hello world" | Format-Hex
