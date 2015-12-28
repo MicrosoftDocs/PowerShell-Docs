@@ -1,12 +1,12 @@
 # PowerShell Documentation
 
-Welcome to the PowerShell-Docs repository, housing the official PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview). 
+Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview). 
 
-> **Note**: right now, this repo is only intended for PowerShell Desired State Configuration (DSC) content and Windows Management Framework (WMF) Release Notes. 
-In the future, it will be expanded to include a greater set of PowerShell documentation. 
+> **Note**: Currently, this repository is intended only for PowerShell [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) content and Windows Management Framework (WMF) release notes. 
+In the future, the repo will be expanded to include a wider range of PowerShell documentation. 
 
 ## Contributing
 
-We will be actively merging contributions into this repository via pull request. 
-Please note that before contributing, you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your contributions.
+We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/). 
+Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.
 For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
