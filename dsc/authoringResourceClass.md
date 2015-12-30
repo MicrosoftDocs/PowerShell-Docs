@@ -16,7 +16,7 @@ To implement a DSC custom resource with a PowerShell class, create the following
 
 ```
 $env: psmodulepath (folder)
-    |- MyDscResources (folder)
+    |- MyDscResource (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
 ```
