@@ -7,6 +7,6 @@ That is no longer the case because **all configuration MOFs are secured by defau
 **Example:** Encryption in push mode
 ![MOF Encryption](images/MOF_Encryption.jpg)
 
-If you are already using the certificate method for encrypting passwords or if you need additional security for your passwords, the [existing method of certificate based encryption](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx) will continue to work. The result will be a MOF document that is fully encrypted using the DPAPIs and additionally have passwords encrypted within it.
+If you are already using the certificate method for encrypting passwords or if you need additional security for your passwords, the [existing method of certificate based encryption](https://msdn.microsoft.com/en-us/powershell/dsc/securemof) will continue to work. The result will be a MOF document that is fully encrypted using the DPAPIs and additionally have passwords encrypted within it.
 
 This encryption only applies to configuration MOF documents (pending.mof, current.mof and previous.mof). Meta-configuration MOFs are still saved in plain text since they less likely to contain secrets. 
