@@ -9,4 +9,4 @@ That is no longer the case because **all configuration MOFs are secured by defau
 
 If you are already using the certificate method for encrypting passwords or if you need additional security for your passwords, the [existing method of certificate based encryption](https://msdn.microsoft.com/en-us/powershell/dsc/securemof) will continue to work. The result will be a MOF document that is fully encrypted using the DPAPIs and additionally have passwords encrypted within it.
 
-This encryption only applies to configuration MOF documents (pending.mof, current.mof and previous.mof). Meta-configuration MOFs are still saved in plain text since they less likely to contain secrets. 
+This encryption only applies to configuration MOF documents (pending.mof, current.mof, previous.mof and partial MOFs). Meta-configuration MOFs are still saved in plain text since they less likely contain secrets.
