@@ -36,3 +36,10 @@ When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already runni
 
 **Resolution:** Run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.
 
+Get-ChildItem does not work if -LiteralPath and -Recurse are used together
+--------------------------------------------------------------------------
+
+If a directory name contains an invalid wildcard character, then Get-ChildItem will not produce expected results when both
+-LiteralPath and -Recurse are used together.
+
+**Resolution:** Not ideal, but current workaround is to implement recursion in the script rather than rely on the cmdlet.
