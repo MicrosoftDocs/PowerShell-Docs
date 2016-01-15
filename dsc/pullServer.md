@@ -19,41 +19,45 @@ The easiest way to set up a web pull server is to use the xWebService resource, 
 
 1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
 1. Create a self-signed certificate with the subject `"CN=PSDSCPullServerCert"` in the `CERT:\LocalMachine\MY\` store. You can do this with the command `New-SelfSignedCertificate  -CertStoreLocation 'CERT:\LocalMachine\MY' -Subject 'CN=PSDSCPullServerCert'`.
-1. In the PowerShell ISE, start (F5) the following configuration script (included in the unzipped files as Sample_xDscWebService.ps1). This script sets up the pull server and a compliance server.
+1. In the PowerShell ISE, start (F5) the following configuration script (included in the Example folder of the  **xPSDesiredStateConfiguration** module as Sample_xDscWebService.ps1). This script sets up the pull server and a compliance server.
   
 ```powershell
-Configuration Sample_xDSCService
-{
-    param
-    (
-      [ValidateNotNullOrEmpty()]
-      [String] $certificateThumbPrint
-    )
-
-    Import-DSCResource –ModuleName DSCService
-    Node localhost
-    {
-        WindowsFeature DSCServiceFeature
-        {
-            Ensure = "Present"
-            Name = "DSC-Service"
-        }
-        
-        DSCService PSDSCPullServer
-        {
-            Ensure   = "Present"
-            Name     = "PSDSCPullServer"
-            Port     = 8080
-            PhysicalPath = "$env:SystemDrive\inetpub\wwwroot\PSDSCPullServer"
-            EnableFirewallException = $true
-            CertificateThumbprint = $certificateThumbPrint
-            ModulePath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
-            ConfigurationPath = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
-            State = "Started"
-            DependsOn = "[WindowsFeature]DSCServiceFeature
-        }
-    }
-}
+configuration Sample_xDscWebService 
+6 { 
+7     param  
+8     ( 
+9         [string[]]$NodeName = 'localhost', 
+10 
+ 
+11         [ValidateNotNullOrEmpty()] 
+12         [string] $certificateThumbPrint 
+13     ) 
+14 
+ 
+15     Import-DSCResource -ModuleName xPSDesiredStateConfiguration 
+16 
+ 
+17     Node $NodeName 
+18     { 
+19         WindowsFeature DSCServiceFeature 
+20         { 
+21             Ensure = "Present" 
+22             Name   = "DSC-Service"             
+23         } 
+24 
+ 
+25         xDscWebService PSDSCPullServer 
+26         { 
+27             Ensure                  = "Present" 
+28             EndpointName            = "PSDSCPullServer" 
+29             Port                    = 8080 
+30             PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer" 
+31             CertificateThumbPrint   = $certificateThumbPrint          
+32             ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
+33             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"             
+34             State                   = "Started" 
+35             DependsOn               = "[WindowsFeature]DSCServiceFeature"                         
+36         } 
 ```
 
 1. Run the configuration, passing the thumbprint of the self-signed certificate you created as the **certificateThumbPrint** parameter:
