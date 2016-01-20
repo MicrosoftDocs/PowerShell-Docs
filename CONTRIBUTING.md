@@ -25,7 +25,8 @@ If no one seems to be working on what you have planned:
 
 All of the articles in this repository use [GitHub Flavored Markdown (GFM)](https://help.github.com/articles/github-flavored-markdown/).
 
-If you are looking for a good editor, try [Markdown Pad](http://markdownpad.com/) or 
+If you are looking for a good editor, try [Visual Studio Code](https://code.visualstudio.com), 
+[Markdown Pad](http://markdownpad.com/) or 
 GitHub also provides a web interface for Markdown editing with syntax highlighting and the ability to preview changes. 
 
 Some of the more basic GFM syntax includes:
