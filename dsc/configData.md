@@ -55,7 +55,7 @@ $MyData =
     @(
         @{
             NodeName = "VM-1";
-            
+            Role     = "WebServer"
         },
 
  
