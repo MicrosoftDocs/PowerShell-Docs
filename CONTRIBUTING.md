@@ -17,7 +17,7 @@ After your pull request is created,
 
 If you want to contribute new documentation, first check for [issues tagged as "in progress"](https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress) to make sure you're not duplicating efforts.
 If no one seems to be working on what you have planned:
-* Open a new issue tagged as "in progress" to tell others what you're working on
+* Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization) or add "in progress" as a comment to tell others what you're working on
 * Create a fork of our repository and start adding new Markdown-based documentation to it
 * When you're ready to contribute your documentation, submit a pull request to the *master* branch
 
