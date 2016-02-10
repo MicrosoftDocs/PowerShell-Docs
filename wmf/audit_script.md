@@ -13,11 +13,7 @@ The events are:
 | Task    | CommandStart                                |
 | Keyword | Runspace                                    |
 | EventId | Engine\_ScriptBlockCompiled (0x1008 = 4104) |
-| Message | Creating Scriptblock text (%1 of %2):       
-                                                        
-           %3                                           
-                                                        
-           ScriptBlock ID: %4                           |
+| Message | Creating Scriptblock text (%1 of %2): </br> %3 </br> ScriptBlock ID: %4 |
 
 The text embedded in the message is the extent of the script block compiled. The ID is a GUID that is retained for the life of the script block.
 
@@ -29,12 +25,8 @@ When you enable verbose logging, the feature writes begin and end markers:
 | Opcode  | Open (/ Close)                                         |
 | Task    | CommandStart (/ CommandStop)                           |
 | Keyword | Runspace                                               |
-| EventId | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) /   
-                                                                   
-           ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106)   |
-| Message | Started (/ Completed) invocation of ScriptBlock ID: %1 
-                                                                   
-           Runspace ID: %2                                         |
+| EventId | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
+| Message | Started (/ Completed) invocation of ScriptBlock ID: %1 </br> Runspace ID: %2 |
 
 The ID is the GUID representing the script block (that can be correlated with event ID 0x1008), and the Runspace ID represents the runspace in which this script block was run.
 
@@ -43,19 +35,19 @@ Percent signs in the invocation message represent structured ETW properties. Whi
 Here's an example of how this functionality can help unwrap a malicious attempt to encrypt and obfuscate a script:
 
 ```powershell
- \#\# Malware
+ ## Malware
  function SuperDecrypt
  {
      param($script)
-     $bytes = \[Convert\]::FromBase64String($script)
+     $bytes = [Convert]::FromBase64String($script)
               
-     \#\# XOR “encryption”
+     ## XOR “encryption”
      $xorKey = 0x42
      for($counter = 0; $counter -lt $bytes.Length; $counter++)
      {
-         $bytes\[$counter\] = $bytes\[$counter\] -bxor $xorKey
+         $bytes[$counter] = $bytes[$counter] -bxor $xorKey
      }
-     \[System.Text.Encoding\]::Unicode.GetString($bytes)
+     [System.Text.Encoding]::Unicode.GetString($bytes)
  }
 
  $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
@@ -68,14 +60,14 @@ Compiling Scriptblock text (1 of 1):
 function SuperDecrypt
 {
 param($script)
-$bytes = \[Convert\]::FromBase64String($script)
-\#\# XOR "encryption"
+$bytes = [Convert]::FromBase64String($script)
+## XOR "encryption"
 $xorKey = 0x42
 for($counter = 0; $counter -lt $bytes.Length; $counter++)
 {
-$bytes\[$counter\] = $bytes\[$counter\] -bxor $xorKey
+$bytes[$counter] = $bytes[$counter] -bxor $xorKey
 }
-\[System.Text.Encoding\]::Unicode.GetString($bytes)
+[System.Text.Encoding]::Unicode.GetString($bytes)
 }
 ScriptBlock ID: ad8ae740-1f33-42aa-8dfc-1314411877e3
 Compiling Scriptblock text (1 of 1):
@@ -92,8 +84,8 @@ ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8
 If the script block length exceeds what ETW is capable of holding in a single event, Windows PowerShell breaks the script into multiple parts. Here is sample code to recombine a script from its log messages:
 ```powershell
     $created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } |
-        Where-Object { $\_.&lt;...&gt; }
-    $sortedScripts = $created | sort { $\_.Properties\[0\].Value }
-    $mergedScript = -join ($sortedScripts | % { $\_.Properties\[2\].Value })
+        Where-Object { $_.<...>}
+    $sortedScripts = $created | sort { $_.Properties[0].Value }
+    $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 As with all logging systems that have a limited retention buffer (i.e., ETW logs), one attack against this infrastructure is to flood the log with spurious events to hide earlier evidence. To protect yourself from this attack, ensure that you have some form of event log collection set up (i.e., Windows Event Forwarding, <http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf>) to move event logs off of the computer as soon as possible.
