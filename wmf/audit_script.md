@@ -70,12 +70,15 @@ $bytes[$counter] = $bytes[$counter] -bxor $xorKey
 [System.Text.Encoding]::Unicode.GetString($bytes)
 }
 ScriptBlock ID: ad8ae740-1f33-42aa-8dfc-1314411877e3
+
 Compiling Scriptblock text (1 of 1):
 $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
 ScriptBlock ID: ba11c155-d34c-4004-88e3-6502ecb50f52
+
 Compiling Scriptblock text (1 of 1):
 Invoke-Expression $decrypted
 ScriptBlock ID: 856c01ca-85d7-4989-b47f-e6a09ee4eeb3
+
 Compiling Scriptblock text (1 of 1):
 Write-Host 'Pwnd'
 ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8

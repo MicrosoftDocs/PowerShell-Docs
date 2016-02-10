@@ -5,26 +5,26 @@ This cmdlet has been added to allow direct access to DSC resources and there met
 ### Ensure a File is present
 
 ```powershell
-$result = Invoke-DscResource -Name File -Verbose -Method Set -Property @{
+$result = Invoke-DscResource -Name File -Method Set -Property @{
 							DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
-							Contents = 'This file is create by Invoke-DscResource'}
+							Contents = 'This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
 ### Test a File is present
 
 ```powershell
-$result = Invoke-DscResource -Name File -Verbose -Method Test -Property @{
+$result = Invoke-DscResource -Name File -Method Test -Property @{
 							DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-							Contents='This file is create by Invoke-DscResource'} 
+							Contents='This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
 ### Get the contents of File
 
 ```powershell
-$result = Invoke-DscResource -Name File -Verbose -Method Get -Property @{
+$result = Invoke-DscResource -Name File -Method Get -Property @{
 							DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-							Contents='This file is create by Invoke-DscResource'}
+							Contents='This file is create by Invoke-DscResource'} -Verbose
 $result.ItemValue | fl
 ```
