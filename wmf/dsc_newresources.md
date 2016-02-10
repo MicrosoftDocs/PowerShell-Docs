@@ -1,48 +1,73 @@
 # New in-box Resources
 
-WMF 5.0 RTM has three new DSC resources name WindowsFeatureSet, WindowsOptionalFeatureSet and ServiceSet.
+WMF 5.0 RTM has 4 new DSC resources namely - WindowsFeatureSet, WindowsOptionalFeatureSet, ServiceSet and ProcessSet. These resources provide an easy way to configure multiple instances using a single resource call.
 
-## WindowsFeatureSet
+### WindowsFeatureSet
 ```powershell
-PS C:\\&gt; Get-DscResource -Module psdesiredstateconfiguration -Name WindowsFeatureSet -Syntax
-WindowsFeatureSet \[String\] \#ResourceName
+# Get the syntax of WindowsFeatureSet resource
+Get-DscResource -Module psdesiredstateconfiguration -Name WindowsFeatureSet -Syntax
+
+WindowsFeatureSet [String] #ResourceName
 {
-\[DependsOn = \[String\[\]\]\]
-Name = \[String\[\]\]
-\[Ensure = \[String\]\]
-\[Source = \[String\]\]
-\[IncludeAllSubFeature = \[Boolean\]\]
-\[Credential = \[PSCredential\]\]
-\[LogPath = \[String\]\]
+	[DependsOn = [String[]]]
+	Name = [String[]]
+	[Ensure = [String]]
+	[Source = [String]]
+	[IncludeAllSubFeature = [Boolean]]
+	[Credential = [PSCredential]]
+	[LogPath = [String]]
 }
 ```
 
-## WindowsOptionalFeatureSet 
+### WindowsOptionalFeatureSet 
 ```powershell
-WindowsOptionalFeatureSet \[String\] \#ResourceName
+# Get the syntax of WindowsOptionalFeatureSet resource
+Get-DscResource -Module psdesiredstateconfiguration -Name WindowsOptionalFeatureSet -Syntax
+
+WindowsOptionalFeatureSet [String] #ResourceName
 {
-\[DependsOn = \[String\[\]\]\]
-Name = \[String\[\]\]
-Ensure = \[String\]
-\[Source = \[String\[\]\]\]
-\[RemoveFilesOnDisable = \[Boolean\]\]
-\[LogPath = \[String\]\]
-\[NoWindowsUpdateCheck = \[Boolean\]\]
-\[LogLevel = \[String\]\]
+	[DependsOn = [String[]]]
+	Name = [String[]]
+	Ensure = [String]
+	[Source = [String[]]]
+	[RemoveFilesOnDisable = [Boolean]]
+	[LogPath = [String]]
+	[NoWindowsUpdateCheck = [Boolean]]
+	[LogLevel = [String]]
 }
 ```
 
-## ServiceSet 
+### ServiceSet 
 ```powershell
-PS C:\\&gt; Get-DscResource -Module psdesiredstateconfiguration -Name ServiceSet -Syntax
-ServiceSet \[String\] \#ResourceName
+# Get the syntax of ServiceSet resource
+Get-DscResource -Module psdesiredstateconfiguration -Name ServiceSet -Syntax
+
+ServiceSet [String] #ResourceName
 {
-\[DependsOn = \[String\[\]\]\]
-Name = \[String\[\]\]
-\[StartupType = \[String\]\]
-\[BuiltInAccount = \[String\]\]
-\[State = \[String\]\]
-\[Ensure = \[String\]\]
-\[Credential = \[PSCredential\]\]
+	[DependsOn = [String[]]]
+	Name = [String[]]
+	[StartupType = [String]]
+	[BuiltInAccount = [String]]
+	[State = [String]]
+	[Ensure = [String]]
+	[Credential = [PSCredential]]
+}
+```
+
+### ProcessSet 
+```powershell
+# Get the syntax of ProcessSet resource
+Get-DscResource -Module psdesiredstateconfiguration -Name ProcessSet -Syntax
+
+ProcessSet [String] #ResourceName
+{
+    [DependsOn = [String[]]]
+    Path = [String[]]
+    [Credential = [PSCredential]]
+    [Ensure = [String]]
+    [StandardOutputPath = [String]]
+    [StandardErrorPath = [String]]
+    [StandardInputPath = [String]]
+    [WorkingDirectory = [String]]
 }
 ```
