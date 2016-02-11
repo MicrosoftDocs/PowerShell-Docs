@@ -253,6 +253,7 @@ class FileResource : BaseFileResource
 ```
 
 After creating the class-defined DSC resource provider, and saving it as a module, create a module manifest for the module. In this example, the following module manifest is saved as **MyDscResource.psd1**.
+
 ```powershell
 @{
 # Script module or binary module file associated with this manifest.
