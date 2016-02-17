@@ -153,8 +153,6 @@ Note that these examples are meant to give you an idea of what you can do with r
 [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## See Also
->[Configuring the Local Configuration Manager](megaConfig.md)
+>[Configuring the Local Configuration Manager](metaConfig.md)
 >[Setting up a DSC web pull server](pullServer.md)
 >[Setting up a pull client using configuration names](pullClientConfigNames.md)
-
-
