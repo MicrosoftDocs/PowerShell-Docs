@@ -11,7 +11,7 @@ information such as what configurations were applied and whether they succeeded,
 ## Configuring a node to send reports
 
 You tell a node to send reports to a server by using a **ReportServerWeb** block in the node's LCM configuration (for information about configuring the LCM,
- see [Configuring the Local Configuration Manager](megaConfig.md)). The server to which the node sends reports must be set up as a web pull server (you cannot send reports
+ see [Configuring the Local Configuration Manager](metaConfig.md)). The server to which the node sends reports must be set up as a web pull server (you cannot send reports
  to an SMB share). For information about setting up a pull server, see [Setting up a DSC web pull server](pullServer.md). The report server can be the same service from which
  the node pulls configurations and gets resources, or it can be a different service.
  
