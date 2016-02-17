@@ -21,7 +21,7 @@ You tell a node to send reports to a server by using a **ReportServerWeb** block
   The following configuration configures a node to pull configurations from one service, and send reports
  to a service on a different server. 
  
- ```powershell
+```powershell
 [DSCLocalConfigurationManager()]
 configuration ReportClientConfig
 {
@@ -29,26 +29,22 @@ configuration ReportClientConfig
     {
         Settings
         {
-            RefreshMode = 'Pull'
+            RefreshMode          = 'Pull'
             RefreshFrequencyMins = 30 
-            RebootNodeIfNeeded = $true
-
+            RebootNodeIfNeeded   = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL = 'https://CONTOSO-PULL:8080/PSDSCPullServer.svc'
-            RegistrationKey = 'bbb9778f-43f2-47de-b61e-a0daff474c6d'
+            ServerURL          = 'https://CONTOSO-PULL:8080/PSDSCPullServer.svc'
+            RegistrationKey    = 'bbb9778f-43f2-47de-b61e-a0daff474c6d'
             ConfigurationNames = @('ClientConfig')
-            
         }
-
-        
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
-            RegistrationKey = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }
     }
@@ -69,25 +65,26 @@ The reports are returned as an array of JSON objects.
 The following script returns the reports for the node on which it is run:
 
 ```powershell
- function GetReport
-    {
-        param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCReportServer.svc")
-        $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
-        $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
-                   -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
-                   -ErrorAction SilentlyContinue -ErrorVariable ev
-        $object = ConvertFrom-Json $request.content
-        return $object.value
-    }
-    ```
+function GetReport
+{
+    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCReportServer.svc")
+    $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
+    $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
+               -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
+               -ErrorAction SilentlyContinue -ErrorVariable ev
+    $object = ConvertFrom-Json $request.content
+    return $object.value
+}
+```
     
 ## Viewing report data
 
 If you set a variable to the result of the **GetReport** function, you can view the individual fields in an element of the array that is returned:
 
 ```powershell
-PS C:\> $reports = GetReport
-PS C:\> $reports[1]
+$reports = GetReport
+$reports[1]
+
 JobId                : 71515ae8-7294-40a3-8137-fc85bf4b678f
 OperationType        : Consistency
 RefreshMode          : 
@@ -109,8 +106,8 @@ Notice that the **StatusData** field is an object with three properties: **Numbe
 property is an array of objects that each have a number of properties. The following script takes a single report as a parameter, iterates through its **ResourcesInDesiredState**
 array, and writes them to the console:
  
- ```powershell
- function GetStatusData
+```powershell
+function GetStatusData
 {
     param ($Report)
     $statusData = $Report.StatusData | ConvertFrom-Json
@@ -133,7 +130,8 @@ array, and writes them to the console:
 Here is a sample output after calling the **GetStatusData** function:
 
 ```powershell
-PS C:\> GetStatusData -Report $report[1]
+GetStatusData -Report $report[1]
+
 ResourceId:  [WindowsFeature]MyFeatureInstance
 SourceInfo:  C:\ReportTest\ClientConfig.ps1::4::9::WindowsFeature
 ModuleName:  PsDesiredStateConfiguration
