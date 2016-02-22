@@ -2,5 +2,6 @@
 	"locales": ["ja-jp", "de-de", "fr-fr", "zh-cn", "zh-tw", "ko-kr", "es-es", "it-it", "ru-ru", "pt-br"],
 	"files": ["dsc/*.md", "dsc/**/*.md"],
 	"includeDependencies": true,
-	"autoPush": true
+	"autoPush": true,
+	"useJavascriptMarkdownTransformer": true
 }
