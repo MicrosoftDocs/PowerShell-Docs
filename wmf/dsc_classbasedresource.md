@@ -330,5 +330,5 @@ Get-DscConfiguration
 
 In this release, the following are known issues with class-based DSC resources:
 
-* Get-DscConfiguration may return empty values for the properties within the complex type property.
+* Get-DscConfiguration may return empty values (null) or errors if a complex type is returned by Get() function of a class based DSC resource.
 * Composite resources cannot be written as a class-based resource.
