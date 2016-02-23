@@ -57,7 +57,7 @@
 #### [Direct Access to DSC Resource Methods](dsc_directaccess.md)
 #### [Deliver Configuration Document without Applying](dsc_publishconfig.md)
 #### [Remove DSC Documents](dsc_removeconfigdoc.md)
-#### [Unified and Consistent State and Staus Representation](dsc_statestatus.md)
+#### [Unified and Consistent State and Status Representation](dsc_statestatus.md)
 #### [Set-DscLocalConfigurationManager cmdlet supports -force parameter](dsc_setdsclcm.md)
 ### [Pull Mode]()
 #### [On-demand PULL of DSC Configurations](dsc_updateconfig.md)

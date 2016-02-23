@@ -17,7 +17,7 @@ After your pull request is created,
 
 If you want to contribute new documentation, first check for [issues tagged as "in progress"](https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress) to make sure you're not duplicating efforts.
 If no one seems to be working on what you have planned:
-* Open a new issue tagged as "in progress" to tell others what you're working on
+* Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization) or add "in progress" as a comment to tell others what you're working on
 * Create a fork of our repository and start adding new Markdown-based documentation to it
 * When you're ready to contribute your documentation, submit a pull request to the *master* branch
 
@@ -25,7 +25,8 @@ If no one seems to be working on what you have planned:
 
 All of the articles in this repository use [GitHub Flavored Markdown (GFM)](https://help.github.com/articles/github-flavored-markdown/).
 
-If you are looking for a good editor, try [Markdown Pad](http://markdownpad.com/) or 
+If you are looking for a good editor, try [Visual Studio Code](https://code.visualstudio.com), 
+[Markdown Pad](http://markdownpad.com/) or 
 GitHub also provides a web interface for Markdown editing with syntax highlighting and the ability to preview changes. 
 
 Some of the more basic GFM syntax includes:
