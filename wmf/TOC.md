@@ -1,11 +1,8 @@
 # [WMF Release Notes Overview](releasenotes.md)
 
-# [System Requirements](requirements.md)
+# [Installation Details](requirements.md)
 
 # [Known Product Incompatibilites](productincompat.md)
-
-# [Installation Instructions](install.md)
-# [Uninstallation Instructions](uninstall.md)
 
 # [Feedback](feedback.md)
 
