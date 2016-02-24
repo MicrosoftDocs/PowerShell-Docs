@@ -1,8 +1,8 @@
 # Network Switch Management with PowerShell
 
-The Get-NetworkSwitchEthernetPort cmdlet now returns the following additional information with instances:
+The **Get-NetworkSwitchEthernetPort** cmdlet now returns the following additional information with instances:
 -   IPAddress – the IP address associated with the port
--   PortMode – the port mode: access, route or trunk
+-   PortMode – the port mode: access, route, or trunk
 -   AccessVLAN – the ID of the VLAN associated with this port in access mode
 -   TrunkedVLANList – a list of IDs of VLANs associated with this port in trunk mode
 
@@ -30,11 +30,11 @@ The Network Switch cmdlets, introduced in the first WMF 5.0 Preview, enable you 
 Start exploring by looking for all of the NetworkSwitch cmdlets!
 
 ```powershell
-PS&gt; Get-Command \*-NetworkSwitch\*
+PS> Get-Command *-NetworkSwitch*
 
 | CommandType | Name                                      | Source        |
 |-------------|-------------------------------------------|---------------|
-| ----------- | ----                                      | ------        |
+|             |                                           |               |
 | Function    | Disable-NetworkSwitchEthernetPort         | NetworkSwitch |
 | Function    | Disable-NetworkSwitchFeature              | NetworkSwitch |
 | Function    | Disable-NetworkSwitchVlan                 | NetworkSwitch |
