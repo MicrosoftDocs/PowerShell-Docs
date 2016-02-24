@@ -1,11 +1,8 @@
 # [WMF Release Notes Overview](releasenotes.md)
 
-# [System Requirements](requirements.md)
+# [Installation Details](requirements.md)
 
 # [Known Product Incompatibilites](productincompat.md)
-
-# [Installation Instructions](install.md)
-# [Uninstallation Instructions](uninstall.md)
 
 # [Feedback](feedback.md)
 
@@ -22,11 +19,6 @@
 ### [Call Base Class Method](class_basemethod.md)
 
 ## [Improvements in PowerShell Script Debugging](debug_overview.md)
-### [Break into Debugger from Running Scripts](debug_breakall.md)
-### [Remote File Editing and Debugging in PowerShell ISE](debug_remote.md)
-### [Advanced Script Debugging](debug_advance.md)
-#### [Runspace Debugging](debug_runspace.md)
-#### [Attach to Process hosting PowerShell](debug_process.md)
 
 ## [Improvements in Desired State Configuration (DSC)](dsc_improvements.md)
 ### [Configurations]()
