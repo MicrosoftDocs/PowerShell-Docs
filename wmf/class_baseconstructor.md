@@ -1,6 +1,7 @@
 # Call Base Class Constructor
 
-To call a base class constructor from a subclass, use the keyword **base**.
+To call a base class constructor from a subclass, use the keyword **base**:
+
 ```PowerShell
 class A 
 {
@@ -19,7 +20,8 @@ class B : A
 
 [B]::new().a # return 103
 ```
-If a base class has a default (no parameter) constructor, you can omit an explicit constructor call.
+
+If a base class has a default (no parameter) constructor, you can omit an explicit constructor call:
 
 ```PowerShell
 class C : B

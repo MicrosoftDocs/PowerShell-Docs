@@ -1,6 +1,7 @@
 # Call Base Class Method
 
-You can override existing methods in subclasses. To do this, declare methods by using the same name and signature.
+You can override existing methods in subclasses. To do this, declare methods by using the same name and signature:
+
 ```PowerShell
 class baseClass
 {
@@ -14,7 +15,8 @@ class childClass1 : baseClass
 
 [childClass1]::new().foo() # return 200600
 ```
-To call base class methods from overridden implementations, cast to the base class (\[baseclass\]$this) on invocation.
+
+To call base class methods from overridden implementations, cast to the base class ([baseClass]$this) on invocation:
 
 ```PowerShell
 class childClass2 : baseClass
@@ -27,7 +29,8 @@ class childClass2 : baseClass
 
 [childClass2]::new().foo() # return 301500
 ```
-All Windows PowerShell methods are virtual. You can hide non-virtual .NET methods in a subclass by using the same syntax as you do for an override: just declare methods with same name and signature.
+
+All PowerShell methods are virtual. You can hide non-virtual .NET methods in a subclass by using the same syntax as you do for an override: just declare methods with same name and signature.
 
 ```PowerShell
 class MyIntList : system.collections.generic.list[int]

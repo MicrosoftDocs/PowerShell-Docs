@@ -1,13 +1,9 @@
-# Deliver Configuration Document without Applying
-## Publish-DscConfiguration
+# Deliver a configuration document without applying
 
-The Publish-DscConfiguration cmdlet copies a configuration MOF file to a target node, but does not apply the configuration. This configuration is applied during the next consistency pass, or when you run the Update-DscConfiguration cmdlet.
+The **Publish-DscConfiguration** cmdlet copies a configuration MOF file to a target node, but does not apply the configuration. This configuration is applied during the next consistency pass, or when you run the `Update-DscConfiguration` cmdlet.
 
-Publish-DscConfiguration \[-Path\] &lt;string&gt; \[\[-ComputerName\] &lt;string\[\]&gt;\] \[-Force\] \[-Credential &lt;pscredential&gt;\]
+```powershell
+Publish-DscConfiguration [-Path] <string> [[-ComputerName] <string[]>] [-Force] [-Credential <pscredential>] [-ThrottleLimit <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 
-\[-ThrottleLimit &lt;int&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
-
-Publish-DscConfiguration \[-Path\] &lt;string&gt; -CimSession &lt;CimSession\[\]&gt; \[-Force\] \[-ThrottleLimit &lt;int&gt;\] \[-WhatIf\]
-
-\[-Confirm\] \[&lt;CommonParameters&gt;\]
-
+Publish-DscConfiguration [-Path] <string> -CimSession <CimSession[]> [-Force] [-ThrottleLimit <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```

@@ -1,8 +1,9 @@
-# Direct Access to DSC Resource Methods
+# Direct access to DSC resource methods
 
-This cmdlet has been added to allow direct access to DSC resources and there methods (Get, Set or Test). It can be used by third-parties that want to take advantage of DSC Resources. This cmdlet is typically used in combination with the refreshMode = ‘Disabled’ but can be used no matter what refreshMode is set to. Below are some examples of how to use the new cmdlet.
 
-### Ensure a File is present
+The `Invoke-DscResource` cmdlet has been added to allow direct access to DSC resources and there methods (Get, Set or Test). It can be used by third-parties that want to take advantage of DSC resources. This cmdlet is typically used in combination with `refreshMode = ‘Disabled’` but can be used no matter what refreshMode is set to. Below are some examples of how to use the new cmdlet:
+
+## Ensure a file is present
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -11,7 +12,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-### Test a File is present
+## Test that a file is present
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -20,7 +21,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-### Get the contents of File
+## Get the contents of file
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
