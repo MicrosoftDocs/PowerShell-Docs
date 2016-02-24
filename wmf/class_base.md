@@ -14,11 +14,13 @@ class baz : bar {}
 
 [baz]::new().foo() # return 100500
 ```
-You can also use existing .NET Framework types as base classes.
+
+You can also use existing .NET Framework types as base classes:
+
 ```PowerShell
 class MyIntList : system.collections.generic.list[int]
 {
-
+    
 }
 
 $list = [MyIntList]::new()
