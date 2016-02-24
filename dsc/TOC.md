@@ -36,6 +36,7 @@
 ## [Setting up a pull client](pullClient.md)
 ### [Setting up a pull client using configuration names](pullClientConfigNames.md)
 ### [Setting up a pull client using configuration ID](pullClientConfigID.md)
+## [Using a DSC report server](reportServer.md)
 ## [Pull server best practices](secureServer.md)
 
 # [Troubleshooting DSC](troubleshooting.md)

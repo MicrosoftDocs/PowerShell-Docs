@@ -1,6 +1,6 @@
 # New language features in PowerShell 5.0 
 
-PowerShell 5.0 introduces the following new language elements in Windows PowerShell.
+PowerShell 5.0 introduces the following new language elements in Windows PowerShell:
 
 ## Class keyword
 
@@ -160,7 +160,7 @@ Hidden members are public, but do not appear in the output of Get-Member unless 
 
 Hidden members are not included when tab completing or using Intellisense unless the completion occurs in the class defining the hidden member.
 
-A new attribute, **System.Management.Automation.HiddenAttribute** has been added so that C\# code can have the same semantics within Windows PowerShell.
+A new attribute, **System.Management.Automation.HiddenAttribute** has been added so that C# code can have the same semantics within Windows PowerShell.
 
 ## Return types
 
