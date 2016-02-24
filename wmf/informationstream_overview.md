@@ -1,6 +1,6 @@
 # Information Stream
 
-A new structured Information stream can now be used to transmit structured data between a script and its host. Write-Host has also been updated to emit its output to the Information stream where you can now capture or silence it. The new Write-Information cmdlet (along with a corresponding WriteInformation API) used with InformationVariable and InformationAction common parameters enables more flexibility and capability.
+A new structured Information stream can now be used to transmit structured data between a script and its host. **Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it. The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -42,7 +42,7 @@ PS C:\Users\demo> $r.Id
 PS C:\Users\demo>
 PS C:\Users\demo> ## With the -InformationVariable common variable, you can capture
 PS C:\Users\demo> ## the Write-Host data now.
-PS C:\Users\demo> $r = c:\\temp\\OutputGusher -InformationVariable iv
+PS C:\Users\demo> $r = c:\temp\OutputGusher -InformationVariable iv
 Preparing to give you output!
 =============================
 I <3 Output
