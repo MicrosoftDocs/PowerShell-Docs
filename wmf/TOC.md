@@ -82,7 +82,7 @@
 ### [Extract and Parse Structured Objects out of String](feedback_convertfromString.md)
 ### [Format-Hex](feedback_formathex.md)
 ### [NoNewLine parameter](feedback_nonewline.md)
-### [New-TemproaryFile](feedback_tempfile.md)
+### [New-TemporaryFile](feedback_tempfile.md)
 ### [New-Guid](feedback_newguid.md)
 ### [Get-ChildItem has -Depth parameter](feedback_getchilditem.md)
 ### [Updates to FileInfo object](feedback_fileinfo.md)
