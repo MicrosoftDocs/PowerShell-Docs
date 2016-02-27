@@ -9,7 +9,7 @@ nxService <string> #ResourceName
 {
     Name = <string>
     [ Controller = <string> { init | upstart | system }  ]
-    [ Enambled = <bool> ]
+    [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
 
