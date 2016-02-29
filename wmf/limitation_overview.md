@@ -8,7 +8,7 @@ PowerShell Shortcuts are broken when used for the first time
 1.  Right click on the PowerShell shortcut. Select “Windows PowerShell” to launch in a non-elevated mode.
 2.  Right click on the PowerShell shortcut. Right click on “Windows PowerShell” and select “Run As Administrator” to launch in an elevated mode.
 
-Once you have performed either of the above actions, the PowerShell shortcuts will work. These actions only need to be performed only once.
+Once you have performed either of the above actions, the PowerShell shortcuts will work. These actions need to be performed only once.
 
 
 PowerShell Modules and DSC Resources report errors about ExecutionPolicy on Windows 7
@@ -29,12 +29,12 @@ The old Exchange endpoint redirects to a new endpoint. There is a bug in the red
 **Resolution:** Connect directly to the new endpoint.
 
 
-Software Inventory Logging feature is erroneously stopped after WMF 5 installation on Windows Server 2012 R2
+Software Inventory Logging feature is erroneously stopped after WMF 5.0 installation on Windows Server 2012 R2
 -------------------------------------------------------------------------------------------------------------
 
-When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already running SIL, the Software Inventory Logging feature is erroneously stopped after install.
+When installing WMF 5.0 on a Windows Server 2012 R2 that is already running SIL, the Software Inventory Logging feature is erroneously stopped after installation.
 
-**Resolution:** Run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.
+**Resolution:** Run the Start-SilLogging cmdlet once after the WMF installation, as the installation process will errantly stop the Software Inventory Logging feature.
 
 Get-ChildItem does not work if -LiteralPath and -Recurse are used together
 --------------------------------------------------------------------------

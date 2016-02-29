@@ -1,6 +1,6 @@
 # Interact with Symbolic links using improved Item cmdlets
 
-To support symbolic links, **\*-Item** and a few related cmdlets have been extended. Now you can create symbolic links in a single, simple line with **New-Item**. You’ll notice that the Item related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.
+To support symbolic links, **\*-Item** and a few related cmdlets have been extended. Now you can create symbolic links in a single, simple line with **New-Item**. You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.
 
 The following shows some use cases of the new capabilities:
 
@@ -10,14 +10,14 @@ The following shows some use cases of the new capabilities:
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
-cd C:\\Temp
+cd C:\Temp
 New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1 
 
 # Target is an alias to the Value parameter
-# All the 3 below are equivalent to above
-New-Item -ItemType SymbolicLink -Path C:\\Temp -Name MySymLinkFile.txt -Value $pshome\\profile.ps1
-New-Item -ItemType SymbolicLink -Path C:\\Temp\\MySymLinkFile.txt -Value $pshome\\profile.ps1
-New-Item -ItemType SymbolicLink -Name C:\\Temp\\MySymLinkFile.txt -Value $pshome\\profile.ps1
+# All 3 commands below are equivalent to above
+New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkFile.txt -Value $pshome\profile.ps1
+New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
+New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
 ### SYMBOLIC LINK DIRECTORIES
@@ -25,7 +25,7 @@ New-Item -ItemType SymbolicLink -Name C:\\Temp\\MySymLinkFile.txt -Value $pshome
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
 # ItemType is the same for files and directories - autodetect based on specified target
-cd C:\\Temp
+cd C:\Temp
 New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome 
 
 # Target is an alias to the Value parameter
