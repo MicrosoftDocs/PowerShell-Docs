@@ -21,6 +21,25 @@ $env: psmodulepath (folder)
            MyDscResource.psd1 
 ```
 
+### Nested modules
+
+Alternatively, you can split resources across several `.psm1` files and include them as nested modules.
+It's reasonable, when you have a lot of resources and putting them all in one file would make it hard to manage.
+
+```
+$env: psmodulepath (folder)
+    |- MyDscResource (folder)
+        |- MyDscResourceA.psm1
+           MyDscResourceB.psm1 
+           MyDscResource.psd1 
+```
+
+You can put one class in each file, or several of them. 
+It can be useful to group resources by a sub-area inside one nested module.
+From the user point of view, there is no difference in usage.
+All resource will show up in `MyDscResource` module.
+Think about these nested modules as implementation details and use it for your convinience.
+
 ## Create the class
 
 You use the class keyword to create a PowerShell class. To specify that a class is a DSC resource, use the **DscResource()** attribute. The name of the class is the name of the DSC resource.
