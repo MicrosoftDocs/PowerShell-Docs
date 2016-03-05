@@ -1,8 +1,8 @@
 # Script Tracing and Loggging
 
-While Windows PowerShell already has the **LogPipelineExecutionDetails** Group Policy setting to log the invocation of cmdlets, Windows PowerShell’s scripting language has plenty of features that you might want to log and/or audit. The new Detailed Script Tracing feature lets you enable detailed tracking and analysis of Windows PowerShell scripting use on a system. After you enable detailed script tracing, Windows PowerShell logs all script blocks to the ETW event log, **Microsoft-Windows-PowerShell/Operational**. If a script block creates another script block (for example, a script that calls the Invoke-Expression cmdlet on a string), that resulting script block is logged as well.
+While Windows PowerShell already has the **LogPipelineExecutionDetails** Group Policy setting to log the invocation of cmdlets, PowerShell’s scripting language has plenty of features that you might want to log and/or audit. The new Detailed Script Tracing feature lets you enable detailed tracking and analysis of Windows PowerShell scripting use on a system. After you enable detailed script tracing, Windows PowerShell logs all script blocks to the ETW event log, **Microsoft-Windows-PowerShell/Operational**. If a script block creates another script block (for example, a script that calls the Invoke-Expression cmdlet on a string), that resulting script block is logged as well.
 
-Logging of these events can be enabled through the **Turn on PowerShell Script Block Logging** Group Policy setting (in Administrative Templates -&gt; Windows Components -&gt; Windows PowerShell).
+Logging of these events can be enabled through the **Turn on PowerShell Script Block Logging** Group Policy setting (in Administrative Templates -> Windows Components -> Windows PowerShell).
 
 The events are:
 
@@ -12,8 +12,9 @@ The events are:
 | Opcode  | Create                                      |
 | Task    | CommandStart                                |
 | Keyword | Runspace                                    |
-| EventId | Engine\_ScriptBlockCompiled (0x1008 = 4104) |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Message | Creating Scriptblock text (%1 of %2): </br> %3 </br> ScriptBlock ID: %4 |
+
 
 The text embedded in the message is the extent of the script block compiled. The ID is a GUID that is retained for the life of the script block.
 
@@ -35,39 +36,41 @@ Percent signs in the invocation message represent structured ETW properties. Whi
 Here's an example of how this functionality can help unwrap a malicious attempt to encrypt and obfuscate a script:
 
 ```powershell
- ## Malware
- function SuperDecrypt
- {
-     param($script)
-     $bytes = [Convert]::FromBase64String($script)
-              
-     ## XOR “encryption”
-     $xorKey = 0x42
-     for($counter = 0; $counter -lt $bytes.Length; $counter++)
-     {
-         $bytes[$counter] = $bytes[$counter] -bxor $xorKey
-     }
-     [System.Text.Encoding]::Unicode.GetString($bytes)
- }
+## Malware
+function SuperDecrypt
+{
+    param($script)
+    $bytes = [Convert]::FromBase64String($script)
+             
+    ## XOR “encryption”
+    $xorKey = 0x42
+    for($counter = 0; $counter -lt $bytes.Length; $counter++)
+    {
+        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
+    }
+    [System.Text.Encoding]::Unicode.GetString($bytes)
+}
 
- $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
- Invoke-Expression $decrypted 
+$decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
+Invoke-Expression $decrypted
 ```
 
 Running this generates the following log entries:
-```powershell
+
+```
 Compiling Scriptblock text (1 of 1):
 function SuperDecrypt
 {
-param($script)
-$bytes = [Convert]::FromBase64String($script)
-## XOR "encryption"
-$xorKey = 0x42
-for($counter = 0; $counter -lt $bytes.Length; $counter++)
-{
-$bytes[$counter] = $bytes[$counter] -bxor $xorKey
-}
-[System.Text.Encoding]::Unicode.GetString($bytes)
+    param($script)
+    $bytes = [Convert]::FromBase64String($script)
+    ## XOR "encryption"
+    $xorKey = 0x42
+    for($counter = 0; $counter -lt $bytes.Length; $counter++)
+    {
+        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
+    }
+    [System.Text.Encoding]::Unicode.GetString($bytes)
+
 }
 ScriptBlock ID: ad8ae740-1f33-42aa-8dfc-1314411877e3
 
@@ -85,10 +88,11 @@ ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8
 ```
 
 If the script block length exceeds what ETW is capable of holding in a single event, Windows PowerShell breaks the script into multiple parts. Here is sample code to recombine a script from its log messages:
+
 ```powershell
-    $created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } |
-        Where-Object { $_.<...>}
-    $sortedScripts = $created | sort { $_.Properties[0].Value }
-    $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
+$created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } | Where-Object { $\_.&lt;...> }
+$sortedScripts = $created | sort { $\_.Properties[0].Value }
+$mergedScript = -join ($sortedScripts | % { $\_.Properties[2].Value })
 ```
-As with all logging systems that have a limited retention buffer (i.e., ETW logs), one attack against this infrastructure is to flood the log with spurious events to hide earlier evidence. To protect yourself from this attack, ensure that you have some form of event log collection set up (i.e., Windows Event Forwarding, <http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf>) to move event logs off of the computer as soon as possible.
+
+As with all logging systems that have a limited retention buffer (i.e. ETW logs), one attack against this infrastructure is to flood the log with spurious events to hide earlier evidence. To protect yourself from this attack, ensure that you have some form of event log collection set up (i.e., Windows Event Forwarding, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) to move event logs off of the computer as soon as possible.

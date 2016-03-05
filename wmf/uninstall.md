@@ -6,19 +6,19 @@
 
 On Windows Server 2012 R2 and Windows 8.1:
 ```powershell
-wusa /uninstall /kb:3094174
+wusa /uninstall /kb:3134758
 ```
 On Windows Server 2012:
 ```powershell
-wusa /uninstall /kb:3094175
+wusa /uninstall /kb:3134759
 ```
 On Windows Server 2008 R2 SP1 and Windows 7 SP1:
 ```powershell
-wusa /uninstall /kb:3094176
+wusa /uninstall /kb:3134760
 ```
 
 ## Using Control Panel
 1.	Open **Control Panel.**
 2.	Open **Programs**, then open **Uninstall a program.**
 3.	Click **View installed updates.**
-4.	Select **Windows Management Framework 5.0** from the list of installed updates. This corresponds to *KB3094174*, *KB3094175*, or *KB3094176*. Click **Uninstall.**
+4.	Select **Windows Management Framework 5.0** from the list of installed updates. This corresponds to *KB3134758*, *KB3134759*, or *KB3134760*. Click **Uninstall.**
