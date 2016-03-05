@@ -59,19 +59,19 @@
 
 ## [Audit PowerShell Usage using Transcript and Logging](audit_overview.md)
 ### [Enhanced Transcription Options](audit_transcript.md)
-### [Script Tracing and Loggging](audit_script.md)
+### [Script Tracing and Logging](audit_script.md)
 ### [Cryptographic Message Syntax (CMS) cmdlets](audit_cms.md)
 
-## [Software Discovery, Install and Inventory with PackageManagement](oneget_overview.md)
+## [Software Discovery, Install, and Inventory with PackageManagement](oneget_overview.md)
 ### [PackageManagement Cmdlets](oneget_cmdlets.md)
 
-## [PowerShell Module Discovery, Install and Inventory with PowerShellGet](psget_module_overview.md)
+## [PowerShell Module Discovery, Install, and Inventory with PowerShellGet](psget_module_overview.md)
 ### [Register a PowerShell Repository](psget_psrepository.md)
 ### [Side-by-Side Version Support on PowerShell 5.0 or newer](psget_modulesxsinstall.md)
 ### [Installation of Module Dependencies](psget_moduledependency.md)
 ### [PowerShellGet Cmdlets for Module Management](psget_modulecmdlets.md)
 
-## [PowerShell Script Discovery, Install and Management with PowerShellGet](psget_script_overview.md)
+## [PowerShell Script Discovery, Install, and Management with PowerShellGet](psget_script_overview.md)
 ### [PowerShellGet Cmdlets for Script Management](psget_scriptcmdlets.md)
 
 ## [New and updated cmdlets based on community feedback ](feedback_cmdlets.md)
