@@ -32,6 +32,7 @@
 
 # The DSC pull model
 ## [Setting up a web pull server](pullServer.md)
+## [Setting up a DSC SMB pull server](pullServerSMB.md)
 ## [Setting up a pull client](pullClient.md)
 ### [Setting up a pull client using configuration names](pullClientConfigNames.md)
 ### [Setting up a pull client using configuration ID](pullClientConfigID.md)
