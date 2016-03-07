@@ -10,9 +10,9 @@ This guide describes how to begin creating PowerShell Desired State Configuratio
 Configurations can come in a variety of forms. The easiest way to create a new configuration is to create a .ps1 (PowerShell script) file. To do this, open your editor of choice. The PowerShell ISE is a good choice, since it understands DSC natively. Save the following as a PS1:
 
 ```powershell
-configuration myFirstConfiguration
+configuration MyFirstConfiguration
 {
-    import-dscresource -name WindowsFeature
+    Import-DscResource -Name WindowsFeature
 
     Node localhost
     {
@@ -29,11 +29,11 @@ configuration myFirstConfiguration
 ## Parts of a Configuration ##
 **Configuration** is a keyword that has been added to PowerShell 4.0. It signifies a special kind of PowerShell function used by Desired State Configuration. In this example, the function is named myFirstConfiguration. 
 
-The next line is a import statement, similar to importing a module. It will be discussed later on.
+The next line is an import statement, similar to importing a module. It will be discussed later on.
 
 "Node" defines the machine name this configuration will act on. Although this configuration is edited locally, configurations can reach out to remote nodes and configure them. 
 
-Nodes can be machine names or IP addresses. You can have multiple nodes in a single configuration document. Using [configuration data](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), you can also have the same configuration apply to multiple nodes. In this case,  the node is "localhost" - which means the local computer. 
+Nodes can be machine names or IP addresses. You can have multiple nodes in a single configuration document. Using [configuration data](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), you can also have the same configuration apply to multiple nodes. In this case, the node is "localhost" - which means the local computer. 
 
 The next item is a [**resource**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Resources are building blocks of configurations. Each resource is a module that defines the implementation logic of a single aspect of a machine. You can view every resource on your machine by running **Get-DscResource** in PowerShell. Resources must be present on the local machine and imported before they can be used in a configuration with **Import-DscResource** which is on the second line of this configuration. 
 
@@ -50,10 +50,10 @@ Once the configuration is executed, it creates a folder with the name of the con
 
 To enact the configuration:
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration
+Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-This creates a PowerShell job that reaches out to the nodes in the configuration and configures them. To see the output of the job, use -wait. 
+This creates a PowerShell job that reaches out to the nodes in the configuration and configures them. To see the output of the job, use -Wait. 
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration -wait
+Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
 

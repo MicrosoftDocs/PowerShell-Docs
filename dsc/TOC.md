@@ -26,6 +26,7 @@
 ### [Class-based custom resouces](authoringResourceClass.md)
 ### [Composite resources](authoringResourceComposite.md)
 ### [Debugging DSC resources](debugResource.md)
+### [Resource authoring checklist](resourceAuthoringChecklist.md)
 
 # [Configuring the Local Configuration Manager (LCM)](metaConfig.md)
 ## [Configuring the LCM in PowerShell 4.0](metaConfig4.md)
