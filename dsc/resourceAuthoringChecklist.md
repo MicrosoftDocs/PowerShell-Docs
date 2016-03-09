@@ -1,7 +1,7 @@
 # Resource authoring checklist
-
+This checklist is a list of best practices when authoring a new DSC Resource
 ## Resource module contains .psd1 file and schema.mof for every resource 
-The first think you should do is to check that your resource has correct structure and contains all required files. Every resource module should contain a .psd1 file and every non-composite resource should have schema.mof file. Resources that do not contain schema will not be listed by **Get-DscResource** and users will not be able to use the intellisense when writing code against those modules in ISE. 
+The first thing you should do is to check that your resource has correct structure and contains all required files. Every resource module should contain a .psd1 file and every non-composite resource should have schema.mof file. Resources that do not contain schema will not be listed by **Get-DscResource** and users will not be able to use the intellisense when writing code against those modules in ISE. 
 The sample directory structure for xRemoteFile resource, which is part of the xPSDesiredStateConfiguration resource module, could look as follows:
 
 
