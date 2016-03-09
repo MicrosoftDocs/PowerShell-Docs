@@ -15,14 +15,38 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
 
 ## Overall process
 
-1. Set up the certificates, keys, and thumbprints, making sure that each target node has copies of the certificate and the configuration computer has the public key and thumbprint.
-1. Create a configuration data block that contains the path and thumbprint of the public key.
-1. Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.
-1. Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.
+ 1. Set up the certificates, keys, and thumbprints, making sure that each target node has copies of the certificate and the configuration computer has the public key and thumbprint.
+ 2. Create a configuration data block that contains the path and thumbprint of the public key.
+ 3. Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.
+ 4. Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.
+
+![Diagram1](images/CredentialEncryptionDiagram1.png)
+
+## Certificate Requirements
+
+To enact credential encryption, a public key certificate is required to be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.
+This public key certificate has specific requirements that must be satisfied to allow it to be used for DSC Credential Encryption:
+ 1. **Key Usage**: must contain 'DigitalSignature', 'KeyEncipherment' and 'DataEncipherment'.
+ 2. **Enhanced Key Usage**: must contain 'Document Encryption'.
+ 3. The Private Key for the certificate is available on the _Target Node_.
+ 
+Any existing certificate on the _Target Node_ that meets these criteria may be used to secure DSC credentials.
+ 
+## Creating the Certificate
+
+The private key certificate can be created on the _Target Node_ and the public key certificate copied to up to the computer being used to compile the DSC configuration into a MOF file.
+
+Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file, exported with the private key then imported on the _Target Node_. This is the current method for implementing DSC credential encryption on Nano Server. 
 
 ## Configuration data
 
 The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](configData.md).
+
+The elements that can be configured for each node that are related to credential encryption are:
+* **NodeName** - the name of the target node that the credential encryption is being configured for.
+* **PsDscAllowPlainTextPassword** - whether unencrypted credentials will be allowed to be passed to this node. This is **not recommended**.
+* **Thumbprint** - the thumbprint of the certificate that will be used to decrypt the credentials in the DSC Configuration on the _Target Node_. **This certificate must exist in the Local Machine certificate store on the Target Node.**
+* **CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_.
 
 This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.
 
@@ -75,7 +99,7 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before `Start-DscConfiguration` can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before [`Start-DscConfiguration`](http://technet.microsoft.com/en-us/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -124,8 +148,8 @@ configuration CredentialEncryptionExample
 
 At this point, you can run the configuration, which will output two files:
 
-* A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. Set-DscLocalConfigurationManager applies the *.meta.mof file.
-* A MOF file that actually applies the configuration. Start-DscConfiguration applies the configuration.
+ * A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. [`Set-DscLocalConfigurationManager`](http://technet.microsoft.com/en-us/library/dn521621.aspx) applies the *.meta.mof file.
+ * A MOF file that actually applies the configuration. Start-DscConfiguration applies the configuration.
 
 These commands will accomplish those steps:
 
@@ -139,6 +163,13 @@ Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose
 Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
+
+This example would push the DSC configuration to the target node.
+The DSC configuration can also be applied using a DSC Pull Server if one is available.
+
+See [this page](PullClient.md) for more information on applying DSC configurations using a DSC Pull Server.
+
+## Credential Encryption Module Example
 
 Here is a full example that incorporates all of these steps, plus a helper cmdlet that exports and copies the public keys:
 
@@ -252,4 +283,6 @@ function Get-EncryptionCertificate
     # Return the thumbprint
     return $returnValue[0]
 }
+
+Start-CredentialEncryptionExample
 ```
