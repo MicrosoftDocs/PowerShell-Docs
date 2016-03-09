@@ -12,7 +12,7 @@ The following Linux operating system versions are supported for DSC for Linux.
 - SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)
 - Ubuntu Server 12.04 LTS and 14.04 LTS (x86/x64)
 
-The following table describes the required ackage dependencies for DSC for Linux.
+The following table describes the required package dependencies for DSC for Linux.
 
 |  Required package |  Description |  Minimum version | 
 |---|---|---|
