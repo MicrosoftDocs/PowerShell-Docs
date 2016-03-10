@@ -73,7 +73,16 @@ At this point, the LCM has called the resource, and come to the first break poin
 ## Debugging the resource script
 
 Start a new instance of the PowerShell ISE. In the console pane, enter the last three lines of output from the `Start-DscConifiguration` output as commands, replacing `<credentials>` with
-valid user credentials. Here is the resulting output.
+valid user credentials. You should now see a prompt that looks similar to:
 
+```powershell
+[TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
+```
 
+The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).
+Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on. For information about debugging in the PowerShell ISE,
+see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx). Remember that every line in the resource script (or class) is set as a break point.
 
+## See Also
+- [Writing a custom DSC resource with MOF](authoringResourceMOF.md) 
+- [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
