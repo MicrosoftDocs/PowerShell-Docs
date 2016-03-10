@@ -41,6 +41,8 @@ Run the following command to install OMI on a CentOS 7 x64 system.
 
 ### Installing DSC
 
+DSC for Linux is available for download [here](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest). 
+
 To install DSC, install the package that is appropriate for your Linux system (.rpm or .deb) and OpenSSL version (ssl_098 or ssl_100), and architecture (x64/x86). RPM packages are appropriate for CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server, and Oracle Linux. DEB packages are appropriate for Debian GNU/Linux and Ubuntu Server. The ssl_098 packages are appropriate for computers with OpenSSL 0.9.8 installed while the ssl_100 packages are appropriate for computers with OpenSSL 1.0 installed.
 
 > **Note**: To determine the installed OpenSSL version, run the command openssl version.
@@ -125,17 +127,17 @@ Configurations can be distributed to a Linux computer with a pull server, just l
 ### Working with configurations locally
 
 DSC for Linux includes scripts to work with configuration from the local Linux computer. These scripts are locate in `/opt/microsoft/dsc/Scripts` and include the following:
-* GetConfiguration.py
+* GetDscConfiguration.py
 
  Returns the current configuration applied to the computer. Similar to the Windows PowerShell cmdlet Get-DscConfiguration cmdlet.
 
-`# sudo ./GetConfiguration.py`
+`# sudo ./GetDscConfiguration.py`
 
-* GetMetaConfiguration.py
+* GetDscLocalConfigurationManager.py
 
  Returns the current meta-configuration applied to the computer. Similar to the cmdlet [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.
 
-`# sudo ./GetMetaConfiguration.py`
+`# sudo ./GetDscLocalConfigurationManager.py`
 
 * InstallModule.py
 
@@ -149,17 +151,17 @@ DSC for Linux includes scripts to work with configuration from the local Linux c
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* SendConfigurationApply.py
+* StartDscLocalConfigurationManager.py 
 
  Applies a configuration MOF file to the computer. Similar to the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. Requires the path to the configuration MOF to apply.
 
-`# sudo ./RemoveModule.py cnx_Resource`
+`# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SendMetaConfiguration.py
+* SetDscLocalConfigurationManager.py
 
  Applies a Meta Configuration MOF file to the computer. Similar to the [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet. Requires the path to the Meta Configuration MOF to apply.
 
-`# sudo ./SendMetaConfiguration.py –configurationmof /tmp/localhost.meta.mof`
+`# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
 ## PowerShell Desired State Configuration for Linux Log Files
 
