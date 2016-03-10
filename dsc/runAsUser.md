@@ -24,8 +24,6 @@ Configuration ChangeCmdBackGroundColor
     Node $AllNodes.NodeName
 
     {
-        
-
         Registry CmdPath
 
         {
@@ -45,12 +43,8 @@ Configuration ChangeCmdBackGroundColor
             Hex = $true
 
             PsDscRunAsCredential = Get-Credential
-
-
         }
-
     }                   
-
 }
 
 $configData = @{
