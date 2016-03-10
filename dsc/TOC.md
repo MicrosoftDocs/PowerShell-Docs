@@ -4,6 +4,7 @@
 ## [Enacting configurations](enactingConfigurations.md)
 ## [Configuration data](configData.md)
 ### [Credential options in configuration data](configDataCredentials.md)
+### [Running DSC with user credentials](runAsUser.md)
 ## [Securing the configuration MOF file](secureMOF.md)
 ## [Partial Configurations](partialConfigs.md)
 # [Resources](resources.md)
