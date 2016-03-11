@@ -26,10 +26,16 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
 
 To enact credential encryption, a public key certificate is required to be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.
 This public key certificate has specific requirements that must be satisfied to allow it to be used for DSC Credential Encryption:
- 1. **Key Usage**: must contain 'DigitalSignature', 'KeyEncipherment' and 'DataEncipherment'.
- 2. **Enhanced Key Usage**: must contain 'Document Encryption'.
+ 1. **Key Usage**:
+   - Must contain: 'KeyEncipherment' and 'DataEncipherment'.
+   - Should _not_ contain: 'Digital Signature'.
+ 2. **Enhanced Key Usage**:
+   - Must contain: Document Encryption (1.3.6.1.4.1.311.80.1).
+   - Should _not_ contain: Client Authentication (1.3.6.1.5.5.7.3.2) and Server Authentication (1.3.6.1.5.5.7.3.1).
  3. The Private Key for the certificate is available on the _Target Node_.
  
+**Recommended Best Practice:** Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key to be more easily misused and vulnerable to attack. So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and EKUs.
+  
 Any existing certificate on the _Target Node_ that meets these criteria may be used to secure DSC credentials.
  
 ## Creating the Certificate
@@ -46,7 +52,7 @@ The elements that can be configured for each node that are related to credential
 * **NodeName** - the name of the target node that the credential encryption is being configured for.
 * **PsDscAllowPlainTextPassword** - whether unencrypted credentials will be allowed to be passed to this node. This is **not recommended**.
 * **Thumbprint** - the thumbprint of the certificate that will be used to decrypt the credentials in the DSC Configuration on the _Target Node_. **This certificate must exist in the Local Machine certificate store on the Target Node.**
-* **CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_.
+* **CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_. This must be either a DER encoded binary X.509 or Base-64 encoded X.509 format certificate file.
 
 This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.
 
@@ -99,7 +105,7 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before [`Start-DscConfiguration`](http://technet.microsoft.com/en-us/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before [`Start-DscConfiguration`](/en-us/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -148,7 +154,7 @@ configuration CredentialEncryptionExample
 
 At this point, you can run the configuration, which will output two files:
 
- * A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. [`Set-DscLocalConfigurationManager`](http://technet.microsoft.com/en-us/library/dn521621.aspx) applies the *.meta.mof file.
+ * A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. [`Set-DscLocalConfigurationManager`](/en-us/library/dn521621.aspx) applies the *.meta.mof file.
  * A MOF file that actually applies the configuration. Start-DscConfiguration applies the configuration.
 
 These commands will accomplish those steps:
