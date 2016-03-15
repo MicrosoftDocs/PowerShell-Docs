@@ -98,6 +98,8 @@ PullClientConfigID
 ```
 The ConfigurationNames property in the metaconfiguration file implicitly means that Pull Server is supporting the V2 version of the Pull Server protocol so an initial registration is required. Conversely using a ConfigurationID means that the V1 version of the Pull Server protocol is used and there is no registration processing.
 
+In a PUSH scenario, currently it's necessary to use a ConfigurationID placeholder in the metaconfiguration file. This will force the V1 Pull Server protocol and avoid registration failure messages.
+
 ## Placing configurations and resources
 After the pull server setup completes, there is a new folder under `$env:PROGRAMFILES\WindowsPowerShell` named "DscService". In that folder, there are two folders named "Modules" and "Configuration". In the "Modules" folder, place any resources that are needed for configurations that nodes will pull from this server. In the "Configuration" folder, place the configuration MOF files for any configurations that are to be pulled by nodes. The names of the MOF files depend on the type of pull client. The following topics describe setting up pull clients in detail:
 
