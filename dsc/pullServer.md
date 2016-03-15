@@ -68,7 +68,7 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 ```
 
 ## Registration Key
-To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key (which is a GUID known to both the server and the client node) must be placed in a file named `RegistrationKeys.txt`. By default, the pull server created by this example expects that file to be located in `C:\Program Files\WindowsPowerShell\DscService`. Create a text file with only one line consisting of the registration key and save it in that folder.
+To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key (which is a GUID known to both the server and the client node) must be placed in a file named `RegistrationKeys.txt`. By default, the pull server created by this example expects that file to be located in `C:\Program Files\WindowsPowerShell\DscService`. Create a text file with only one line consisting of the registration key and save it in that folder. The registration key functions as a shared secret to allow the initial registration with the Pull Server. During registration the client will also generate a self-signed certificate which will be used to provide client authentication.
 > **Note**: Registration keys are not supported in PowerShell 4.0. 
 
 ## Placing configurations and resources
