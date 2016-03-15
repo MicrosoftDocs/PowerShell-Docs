@@ -39,7 +39,6 @@
 #### [Configure Node with Multiple Configuration Fragments](dsc_partialconfig.md)
 ##### [Support for Mixed RefreshModes](dsc_partialconfig_mixedmode.md)
 #### [Configure DSC Engine with New Attribute](dsc_metaconfiguration.md)
-#### [Mix and Match of PUSH and PULL modes](dsc_mixedrefreshmode.md)
 #### [Detailed information about LCM State](dsc_lcmstate.md)
 #### [Frequencies for RefreshMode and ConfigurationMode need not be multiple of each other](dsc_freqnomultiple.md)
 #### [Additional Value for RefreshMode Property](dsc_refreshmode.md)
