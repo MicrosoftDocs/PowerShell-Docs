@@ -68,8 +68,37 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 ```
 
 ## Registration Key
-To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key (which is a GUID known to both the server and the client node) must be placed in a file named `RegistrationKeys.txt`. By default, the pull server created by this example expects that file to be located in `C:\Program Files\WindowsPowerShell\DscService`. Create a text file with only one line consisting of the registration key and save it in that folder.
+To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key (which is a GUID known to both the server and the client node) must be placed in a file named `RegistrationKeys.txt`. By default, the pull server created by this example expects that file to be located in `C:\Program Files\WindowsPowerShell\DscService`. Create a text file with only one line consisting of the registration key and save it in that folder. The registration key functions as a shared secret used during the initial registration by the client with the pull server. The client will also generate a self-signed certificate which is used during the registration. The thumbprint of the self-signed certificate is stored in the dscenginecache.mof associated with the URL of the pull server.
 > **Note**: Registration keys are not supported in PowerShell 4.0. 
+
+Below is the metaconfiguration for a target machine that will be registering with a pPull server using a configuration name. Note that the **RegistrationKey** in the metaconfiguration below is removed after the target machine has successfully registered, and that the value '140a952b-b9d6-406b-b416-e0f759c9c0e4' must match the value stored in the RegistrationKeys.txt file on the pull server. Always treat the registration key value securely, because knowing it allows any target machine to register with the pPull server.
+
+```powershell
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigID
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+        }
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
+            ConfigurationNames = @('ClientConfig')
+            
+        }      
+    }
+}
+PullClientConfigID
+```
+The **ConfigurationNames** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration is required. Conversely, using a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
+
+In a push scenario, currently it's necessary to use a **ConfigurationID** placeholder in the metaconfiguration file. This will force the V1 pull server protocol and avoid registration failure messages.
 
 ## Placing configurations and resources
 After the pull server setup completes, there is a new folder under `$env:PROGRAMFILES\WindowsPowerShell` named "DscService". In that folder, there are two folders named "Modules" and "Configuration". In the "Modules" folder, place any resources that are needed for configurations that nodes will pull from this server. In the "Configuration" folder, place the configuration MOF files for any configurations that are to be pulled by nodes. The names of the MOF files depend on the type of pull client. The following topics describe setting up pull clients in detail:
@@ -77,6 +106,9 @@ After the pull server setup completes, there is a new folder under `$env:PROGRAM
 * [Setting up a DSC pull client using a configuration ID](pullClientConfigID.md)
 * [Setting up a DSC pull client using configuration names](pullClientConfigNames.md)
 * [Partial configurations](partialConfigs.md)
+
+There is a github module that validates the Pull Server. Download it from [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+
 
 ## Creating the MOF checksum
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.
