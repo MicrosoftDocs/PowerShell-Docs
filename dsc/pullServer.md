@@ -107,7 +107,7 @@ After the pull server setup completes, there is a new folder under `$env:PROGRAM
 * [Setting up a DSC pull client using configuration names](pullClientConfigNames.md)
 * [Partial configurations](partialConfigs.md)
 
-There is a github module that validates the Pull Server. Download it from https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1
+There is a github module that validates the Pull Server. Download it from [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## Creating the MOF checksum
