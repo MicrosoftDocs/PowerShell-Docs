@@ -109,7 +109,7 @@ After the pull server setup completes, there is a new folder under `$env:PROGRAM
 
 There is a github module that validates the Pull Server. Download it from [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
-There is also a script available on github that will help with packaging the dependent resources for a configuration. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Examples below:
+There is also a script available on github that will help with packaging the dependent resources for a configuration as well as the configuration file. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Examples below:
 
 ```powershell
      $moduleList = @("xWebAdministration", "xPhp") 
