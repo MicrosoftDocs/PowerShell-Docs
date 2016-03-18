@@ -18,7 +18,7 @@
 ### [Script Resource](scriptResource.md)
 ### [Service Resource](serviceResource.md)
 ### [User Resource](userResource.md)
-### [Windows Feature Resource](windowsfeatureResource.md)
+### [WindowsFeature Resource](windowsfeatureResource.md)
 ### [WindowsProcess Resource](windowsProcessResource.md)
 ## [Authoring custom resources](authoringResource.md) 
 ### [MOF-based custom resources](authoringResourceMOF.md)
