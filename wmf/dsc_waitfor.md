@@ -33,4 +33,4 @@ Configuration JoinDomain
 	}
 }
 ```
-**Hint:** By default the WaitFor\* resources try one time and then fail so although it is not required, you will typically want to specify a regry interval and count.
+**Hint:** By default the WaitFor\* resources try one time and then fail so although it is not required, you will typically want to specify a retry interval and count.
