@@ -109,6 +109,14 @@ After the pull server setup completes, there is a new folder under `$env:PROGRAM
 
 There is a github module that validates the Pull Server. Download it from [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
+There is also a script available on github that will help with packaging the dependent resources for a configuration as well as the configuration file. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Examples below:
+
+```powershell
+     $moduleList = @("xWebAdministration", "xPhp") 
+     Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+     Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+```
+
 
 ## Creating the MOF checksum
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.

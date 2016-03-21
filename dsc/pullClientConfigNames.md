@@ -70,13 +70,13 @@ configuration PullClientConfigID
         
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
-            ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'
+            ServerURL = 'https://CONTOSO-ResourceSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = '30ef9bd8-9acf-4e01-8374-4dc35710fc90'
         }
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'
+            ServerURL = 'https://CONTOSO-ReportSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
