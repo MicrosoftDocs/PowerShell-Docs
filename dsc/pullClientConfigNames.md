@@ -44,8 +44,44 @@ To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet
 
 ## Resource and report servers
 
-By default, the client node gets required resources from and reports status to the configuration pull server. However, you can specify different pull servers for resources and reporting.
-To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).
+If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull 
+resources from the specified server, but it will not send reports to it. You can use a single pull server for configurations, resources, and reporting, but you have to create a 
+**ReportRepositoryWeb** block to set up reporting. The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single
+pull server.
+
+```powershell
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigID
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+        }
+
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
+        }
+        
+        
+
+        ReportServerWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+        }
+    }
+}
+PullClientConfigID
+```
+
+
+You can also specify different pull servers for resources and reporting. To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a 
+**ResourceRepositoryShare** block (for an SMB pull server).
 To specify a report server, you use a **ReportRepositoryWeb** block. A report server cannot be an SMB server.
 The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:
 

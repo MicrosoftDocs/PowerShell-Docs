@@ -2,7 +2,10 @@
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations. The following topics explain how to set up pull clients:
+Each target node has to be told to use pull mode and given the URL or file location where it can contact the pull server to get configurations and resources, and where it should send report data.
+
+
+The following topics explain how to set up pull clients:
 
 * [Setting up a pull client using configuration names](pullClientConfigNames.md)
 * [Setting up a pull client using configuration ID](pullClientConfigID.md)
