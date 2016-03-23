@@ -2,7 +2,7 @@
 
 > Applies To: Windows PowerShell 5.0
 
-> **Note:** The report server described in this topic is not availalbe in PowerShell 4.0. For reporting in PowerShell 4.0, see Using a DSC compliance server.
+>**Note:** The report server described in this topic is not available in PowerShell 4.0. For reporting in PowerShell 4.0, see Using a DSC compliance server.
 
 The Local Configuration Manager (LCM) of a node can be configured to send reports about its configuration status to a pull server, which can then be queried to retrieve that data. Each time the node checks and applies
 a configuration, it sends a report to the report server. These reports are stored in a database on the server, and can be retrieved by calling the reporting web service. Each report contains
@@ -11,15 +11,15 @@ information such as what configurations were applied and whether they succeeded,
 ## Configuring a node to send reports
 
 You tell a node to send reports to a server by using a **ReportServerWeb** block in the node's LCM configuration (for information about configuring the LCM,
- see [Configuring the Local Configuration Manager](metaConfig.md)). The server to which the node sends reports must be set up as a web pull server (you cannot send reports
- to an SMB share). For information about setting up a pull server, see [Setting up a DSC web pull server](pullServer.md). The report server can be the same service from which
- the node pulls configurations and gets resources, or it can be a different service.
+see [Configuring the Local Configuration Manager](metaConfig.md)). The server to which the node sends reports must be set up as a web pull server (you cannot send reports
+to an SMB share). For information about setting up a pull server, see [Setting up a DSC web pull server](pullServer.md). The report server can be the same service from which
+the node pulls configurations and gets resources, or it can be a different service.
  
- In the **ReportServerWeb** block, you specify the URL of the pull service
- and a registration key that is known to the server.
+In the **ReportServerWeb** block, you specify the URL of the pull service
+and a registration key that is known to the server.
  
-  The following configuration configures a node to pull configurations from one service, and send reports
- to a service on a different server. 
+The following configuration configures a node to pull configurations from one service, and send reports
+to a service on a different server. 
  
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,6 +51,40 @@ configuration ReportClientConfig
 }
 PullClientConfigID
 ```
+
+The following configuration configures a node to use a single server for configurations, resources, and reporting.
+
+```powershell
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigID
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+        }
+
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
+        }
+        
+        
+
+        ReportServerWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+        }
+    }
+}
+PullClientConfigID
+```
+
+>**Note:** You can name the web service whatever you want when you set up a pull server, but the **ServerURL** property must match the service name.
 
 ## Getting report data
 
