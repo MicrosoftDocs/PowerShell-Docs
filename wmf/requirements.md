@@ -8,8 +8,8 @@
     | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012	 |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
     | Windows Server 2008 R2 SP1 | All, except IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) and [.NET Framework 4.5 or above](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) are installed| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | Windows 8.1 | Pro, Enterprise | | **x64:** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | All | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) and [.NET Framework 4.5 or above](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) are installed | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
+    | Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
+    | Windows 7 SP1 | All | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) and [.NET Framework 4.5 or above](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) are installed | **x64:**  [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # Installation Instructions
 
@@ -41,15 +41,15 @@ Ensure following prerequisites have been met:
 
 **WMF 4.0 Dependency**
 
-Windows Server 2008 R2 SP1 and Windows 7 SP1 systems have built-in PowerShell 2.0, WinRM, and WMI. WMF 3.0 and WMF 4.0 ship updates to the PowerShell 2.0, WinRM, and WMI and were released after the release of Windows Server 2008 R2 SP1 and Windows 7 SP1. Installing/Uninstalling WMF 3.0 and WMF 4.0 packages uncovered some issues in the following upgrade path:
+Windows Server 2008 R2 SP1 and Windows 7 SP1 systems have built-in PowerShell 2.0, WinRM, and WMI. WMF 3.0 and WMF 4.0 packages, which updates these built-in components, were released after the release of Windows Server 2008 R2 SP1 and Windows 7 SP1. Installing/Uninstalling WMF 3.0 and WMF 4.0 packages uncovered some issues in the following upgrade path:
 
 - Built-in --> WMF 4.0
 - Built-in --> WMF 3.0 --> WMF4.0. 
 
-We fixed all those issues in WMF 4.0 packages. Hence, there is a prerequisite of WMF 4.0 for installing WMF 5.0 on Windows Server 2008 R2 SP1 and Windows 7 SP1. Below are the specific issues you might face if you do not install WMF 4.0 before upgrading to WMF 5.0: 
+We fixed all these issues in WMF 4.0 packages. Hence, there is a prerequisite of WMF 4.0 for installing WMF 5.0 on Windows Server 2008 R2 SP1 and Windows 7 SP1. Below are the specific issues you might encounter if you do not install WMF 4.0 before upgrading to WMF 5.0:
 
 - Forwarded Events log is unavailable and EventCollector log is not displayed in Event Viewer after you uninstall WMF 3.0 or WMF 5.0 (without the prerequisite WMF 4.0 installed) in Windows 7 SP1 and in Windows Server 2008 R2 SP1 ([KB2809215](https://support.microsoft.com/en-us/kb/2809215)).
-- Customization to *PSModulePath* environment variable gets reset to default value when you upgrade directly from inbox to WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) or from WMF 3.0 to WMF 5.0. ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)).
+- Customization to *PSModulePath* environment variable gets reset to default value when you upgrade directly from built-in PowerShell 2.0 to WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) or from WMF 3.0 to WMF 5.0. ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)) in Windows 7 SP1 and in Windows Server 2008 R2 SP1.
 
 **WinRM Dependency**
 
