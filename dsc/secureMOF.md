@@ -6,7 +6,7 @@ DSC tells the target nodes what configuration they should have by sending a MOF 
 configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the LCM to check the credentials of 
 a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
 
->**Note:** This topic discusses certificates used for encryption. For encryption, a self-signed certificate is sufficient, because the private key is always kept secret. self-signed certificates
+>**Note:** This topic discusses certificates used for encryption. For encryption, a self-signed certificate is sufficient, because the private key is always kept secret. Self-signed certificates
 >should *not* be used for authentication purposes. You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.
 
 ## Prerequisites
