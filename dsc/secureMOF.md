@@ -2,16 +2,25 @@
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the Local Configuration Manager to check the credentials of a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
+DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired 
+configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the LCM to check the credentials of 
+a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
+
+>**Note:** This topic discusses certificates used for encryption. For encryption, a self-signed certificate is sufficient, because the private key is always kept secret. self-signed certificates
+>should *not* be used for authentication purposes. You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.
 
 ## Prerequisites
 
 To successfully encrypt the credentials used to secure a DSC configuration, make sure you have the following:
 
-* **Some means of issuing and distributing certificates**. This topic and its examples assume you are using Active Directory Certification Authority. For more background information on Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
+* **Some means of issuing and distributing certificates**. This topic and its examples assume you are using Active Directory Certification Authority. For more background information on 
+Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and 
+[Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
 * **Administrative access to the target node or nodes**.
-* **Each target node has an encryption-capable certificate saved its Personal Store**. In Windows PowerShell, the path to the store is Cert:\LocalMachine\My. The examples in this topic use the “workstation authentication” template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
-* If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the configuration from. Make sure that you export only the **public** key; keep the private key secure.
+* **Each target node has an encryption-capable certificate saved its Personal Store**. In Windows PowerShell, the path to the store is Cert:\LocalMachine\My. The examples in this topic use the 
+“workstation authentication” template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+* If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the 
+configuration from. Make sure that you export only the **public** key; keep the private key secure.
 
 ## Overall process
 
@@ -24,25 +33,40 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
 
 ## Certificate Requirements
 
-To enact credential encryption, a public key certificate is required to be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.
-This public key certificate has specific requirements that must be satisfied to allow it to be used for DSC Credential Encryption:
+To enact credential encryption, a public key certificate is must be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.
+This public key certificate has specific requirements for it to be used for DSC credential encryption:
  1. **Key Usage**:
    - Must contain: 'KeyEncipherment' and 'DataEncipherment'.
    - Should _not_ contain: 'Digital Signature'.
  2. **Enhanced Key Usage**:
    - Must contain: Document Encryption (1.3.6.1.4.1.311.80.1).
    - Should _not_ contain: Client Authentication (1.3.6.1.5.5.7.3.2) and Server Authentication (1.3.6.1.5.5.7.3.1).
- 3. The Private Key for the certificate is available on the _Target Node_.
+ 3. The Private Key for the certificate is available on the *Target Node_.
+ 4. The **Provider** for the certificate must be "Microsoft RSA SChannel Cryptographic Provider".
  
-**Recommended Best Practice:** Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key to be more easily misused and vulnerable to attack. So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and EKUs.
+>**Recommended Best Practice:** Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key 
+>to be more easily misused and vulnerable to attack. So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and 
+>EKUs.
   
-Any existing certificate on the _Target Node_ that meets these criteria may be used to secure DSC credentials.
+Any existing certificate on the _Target Node_ that meets these criteria can be used to secure DSC credentials.
  
 ## Creating the Certificate
 
-The private key certificate can be created on the _Target Node_ and the public key certificate copied to up to the computer being used to compile the DSC configuration into a MOF file.
+The private key must be kept secret, because it is used to decrypt the MOF. The easiest way to do that is to create the private key certificate on the *Target Node*, and copy the public key 
+certificate to the computer being used to compile the DSC configuration into a MOF file. The following example creates a certificate, exports the public key, and then imports the public key
+into the root of the local certificate store.
 
-Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file, exported with the private key then imported on the _Target Node_. This is the current method for implementing DSC credential encryption on Nano Server. 
+```powershell
+# create the cert
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
+# export the cert’s public key
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force                                                              
+# import the cert’s public key as a trusted root certificate authority so that it is trusted
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
+```
+
+Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file, exported with the private key then imported on the _Target Node_. 
+This is the current method for implementing DSC credential encryption on Nano Server. The private key must be kept secure during transit.
 
 ## Configuration data
 
