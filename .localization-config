@@ -1,7 +1,7 @@
 {
 "filters": [ 
 { 
-"files": [ "dsc/Test1/*.md" ]
+"files": [ "dsc/Test1/*.md" ],
 "priorities": [ 
 {
 "priority": "SuperHigh", 
@@ -17,4 +17,5 @@
   ],
   "includeDependencies": true,
   "autoPush": true
+  "xliffVersion": "1.2"
 }
