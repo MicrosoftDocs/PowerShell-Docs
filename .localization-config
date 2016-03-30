@@ -1,21 +1,21 @@
-{
-"filters": [ 
-{ 
-"files": [ "dsc/Test1/*.md" ],
-"priorities": [ 
-{
-"priority": "SuperHigh", 
-"locales": [ "de-de", "vi-vn" ]
-}
-]
-},
-{
-  "locales": [ "ja-jp", "de-de", "fr-fr", "es-es", "it-it", "zh-cn", "zh-tw", "ko-kr","ru-ru", "pt-br", "vi-vn"],
-  "files": [
-	    "**/*.md"
-	    "**/**/*.md"
-  ],
-  "includeDependencies": true,
-  "autoPush": true
-  "xliffVersion": "1.2"
+{  
+   "filters":[  
+      {  
+         "files":[  
+            "dsc/Test1/*.md"
+         ],
+         "priorities":[  
+            {  
+               "priority":"SuperHigh",
+               "locales":[  
+                  "de-de",
+                  "vi-vn"
+               ]
+            }
+         ]
+      }
+   ],
+   "includeDependencies":true,
+   "autoPush":true,
+   "xliffVersion":"1.2"
 }
