@@ -2,7 +2,7 @@
 
 The Test-DscConfiguration cmdlet has been updated to allow testing of desired configuration state of one or more target nodes by specifying a reference configuration document to compare against.
 
-The following new parameter sets use DSC configurations in the path specified to only test and never apply each configuration on the specified targt node(s). As with Start-DscConfiguration and other DSC cmdlets, the name of each MOF is used to determine which target node to test the configuration on. 
+The following new parameter sets use DSC configurations in the path specified to only test and never apply each configuration on the specified target node(s). As with Start-DscConfiguration and other DSC cmdlets, the name of each MOF is used to determine which target node to test the configuration on. 
 
 ```PowerShell
 Test-DscConfiguration 	[-Path] <string> 
@@ -19,7 +19,7 @@ Test-DscConfiguration 	[-Path] <string>
 						[<CommonParameters>]
 ```
 
-The following new parameter sets use a single DSC configuration to only test and never apply the configuration on the specified targt node(s). 
+The following new parameter sets use a single DSC configuration to only test and never apply the configuration on the specified target node(s). 
 
 ```PowerShell
 Test-DscConfiguration 	-ReferenceConfiguration <string> 
