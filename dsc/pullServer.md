@@ -165,4 +165,4 @@ The following topics describe setting up pull clients in detail:
 ## See also
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
 * [Enacting configurations](enactingConfigurations.md)
-* [How to retrieve node information from DSC pull server](retrieveNodeInfo.md)
+* [Using a DSC report server](reportServer.md)
