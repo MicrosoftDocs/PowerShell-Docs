@@ -49,7 +49,7 @@ configuration ReportClientConfig
         }
     }
 }
-PullClientConfigID
+ReportClientConfig
 ```
 
 The following configuration configures a node to use a single server for configurations, resources, and reporting.
