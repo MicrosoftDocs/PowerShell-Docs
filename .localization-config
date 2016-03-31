@@ -1,20 +1,9 @@
 {  
-   "filters":[  
-      {  
-         "files":[  
-            "dsc/Test1/*.md"
-         ],
-         "priorities":[  
-            {  
-               "priority":"SuperHigh",
-               "locales":[  
-                  "de-de",
-                  "vi-vn"
-               ]
-            }
-         ]
-      }
-   ],
+   "locales":[ "de-de", "es-es", "fr-fr", "it-it", "ja-jp", "ko-kr", "pt-br", "ru-ru", "zh-cn", "zh-tw","vi-vn" ],
+   "files": [
+      "*.md",
+      "**/*.md",
+      "**/**/*.md" ],
    "includeDependencies":true,
    "autoPush":true,
    "xliffVersion":"1.2"
