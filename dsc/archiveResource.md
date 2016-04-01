@@ -4,7 +4,7 @@
 
 The Archive resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to unpack archive (.zip) files at a specific path.
 
-## Syntax 
+## Syntax  
 ```MOF
 Archive [string] #ResourceName
 {
