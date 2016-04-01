@@ -59,7 +59,7 @@ To begin learning [!INCLUDE[wps_2](../Token/wps_2_md.md)], start with the follow
 
 -   [Windows and Windows Server Automation with Windows PowerShell](http://technet.microsoft.com/library/dn249523.aspx). An alphabetized list of help topics for [!INCLUDE[wps_2](../Token/wps_2_md.md)] modules that are included as part of features or server roles included in Windows Server and Windows Client.
 
--   [System Center Automation with Windows PowerShell](../Topic/System-Center-Automation-with-Windows-PowerShell.md). An alphabetized list of help topics for [!INCLUDE[wps_2](../Token/wps_2_md.md)] modules that are included with components of Microsoft System Center.
+-   [System Center Automation with Windows PowerShell](https://technet.microsoft.com/en-us/library/mt156962.aspx). An alphabetized list of help topics for [!INCLUDE[wps_2](../Token/wps_2_md.md)] modules that are included with components of Microsoft System Center.
 
 ## Downloading and Updating Windows PowerShell Help
 The following topics describe how you can get the latest Help for [!INCLUDE[wps_2](../Token/wps_2_md.md)] and display it at the [!INCLUDE[wps_2](../Token/wps_2_md.md)] command prompt.
