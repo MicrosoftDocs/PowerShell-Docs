@@ -117,7 +117,7 @@ If you set a variable to the result of the **GetReport** function, you can view 
 
 ```powershell
 $reports = GetReport
-PS C:\ReportTest> $reports[1]
+$reports[1]
 
 
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
