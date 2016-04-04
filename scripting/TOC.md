@@ -2,7 +2,7 @@
 ## [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)
 ## [Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
 ### [Installing the Windows PowerShell 2.0 Engine](Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
-### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115\(v=vs.85\).aspx)
+### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
 ### [Getting Ready to Use Windows PowerShell](Topic/Getting-Ready-to-Use-Windows-PowerShell.md)
 ### [Starting Windows PowerShell](Topic/Starting-Windows-PowerShell.md)
 #### [Starting Windows PowerShell on Earlier Versions of Windows](Topic/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
