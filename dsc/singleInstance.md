@@ -1,7 +1,10 @@
-# Writing a single-instance DSC resource
+# Writing a single-instance DSC resource (best practice)
+
+>**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration. Currently, there is no built-in DSC feature to do this. That might
+>change in the future.
 
 There are situations where you don't want to allow a resource to be used multiple times in a configuration. For example, in a previous implementation of the 
-[xTimeZone](https://github.com/PowerShell/xTimeZone) resoource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:
+[xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:
 
 ```powershell
 Configuration SetTimeZone 
@@ -34,9 +37,10 @@ Configuration SetTimeZone
 } 
 ```
 
-This is because of the way DSC resource keys work. A resource must have at least one key property. A resource instance is considered unique if the combination of the values of all of its key
-properties is unique. In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.
-Because of this, a configuration such as the one above would compile and run without warning. Each of the **xTimeZone** resource blocks is considered unique.
+This is because of the way DSC resource keys work. A resource must have at least one key property. A resource instance is considered unique if the combination of the values of all of 
+its key properties is unique. In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required 
+to be a key. Because of this, a configuration such as the one above would compile and run without warning. Each of the **xTimeZone** resource blocks is considered unique. This would cause the 
+configuration to be repeatedly applied to the node, cycling the timezone back and forth.
 
 To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property. 
 The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**. The old MOF schema for the resource was:
@@ -145,7 +149,7 @@ function Test-TargetResource
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Here is the updated script:
+Here is the updated script. Notice that a **IsSingleInstance** mandatory parameter has been added to each function.
 
 ```powershell
 function Get-TargetResource
@@ -234,22 +238,26 @@ function Test-TargetResource
     #Output from Get-TargetResource
     $CurrentTimeZone = Get-TimeZone
 
-    If($TimeZone -eq $CurrentTimeZone){
+    If($TimeZone -eq $CurrentTimeZone)
+    {
         return $true
     }
-    Else{
+    Else
+    {
         return $false
     }
 }
 
-Function Get-TimeZone {
+Function Get-TimeZone 
+{
     [CmdletBinding()]
     param()
 
     & tzutil.exe /g
 }
 
-Function Set-TimeZone {
+Function Set-TimeZone 
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
@@ -257,9 +265,11 @@ Function Set-TimeZone {
         $TimeZone
     )
 
-    try{
+    try
+    {
         & tzutil.exe /s $TimeZone    
-    }catch{
+    }catch
+    {
         $ErrorMsg = $_.Exception.Message
         Write-Verbose $ErrorMsg
     }

@@ -75,7 +75,7 @@ configuration PullClientConfig
         
         
 
-        ReportServerWeb CONTOSO-PullSrv
+        ReportServerWeb CONTOSO-ReportSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
