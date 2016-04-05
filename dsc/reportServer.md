@@ -56,7 +56,7 @@ The following configuration configures a node to use a single server for configu
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfig
 {
     Node localhost
     {
@@ -75,13 +75,13 @@ configuration PullClientConfigID
         
         
 
-        ReportServerWeb CONTOSO-PullSrv
+        ReportServerWeb CONTOSO-ReportSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
-PullClientConfigID
+PullClientConfig
 ```
 
 >**Note:** You can name the web service whatever you want when you set up a pull server, but the **ServerURL** property must match the service name.
@@ -119,72 +119,109 @@ If you set a variable to the result of the **GetReport** function, you can view 
 $reports = GetReport
 $reports[1]
 
-JobId                : 71515ae8-7294-40a3-8137-fc85bf4b678f
+
+JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
-RefreshMode          : 
-Status               : 
-ReportFormatVersion  : 1.0
+RefreshMode          : Pull
+Status               : Success
+ReportFormatVersion  : 2.0
 ConfigurationVersion : 2.0.0
-StartTime            : 02/08/2016 01:28:54
-EndTime              : 02/08/2016 01:28:57
+StartTime            : 04/03/2016 06:21:43
+EndTime              : 04/03/2016 06:22:04
 RebootRequested      : False
 Errors               : {}
-StatusData           : {{"NumberOfResources":"2","Locale":"en-US","ResourcesInDesiredState":[{"ResourceId":"[WindowsFeature]MyFeatureInstance","SourceI
-                       nfo":"C:\\ReportTest\\ClientConfig.ps1::4::9::WindowsFeature","ModuleName":"PsDesiredStateConfiguration","ModuleVersion":"1.0","
-                       ConfigurationName":"ClientConfig","ResourceName":"WindowsFeature"},{"ResourceId":"[WindowsFeature]My2ndFeatureInstance","SourceI
-                       nfo":"C:\\ReportTest\\ClientConfig.ps1::8::9::WindowsFeature","ModuleName":"PsDesiredStateConfiguration","ModuleVersion":"1.0","
-                       ConfigurationName":"ClientConfig","ResourceName":"WindowsFeature"}]}}
+StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Addresses":["2001:4898:d8:f2f2:852b:b255:b071:283b","fe80::852b:b255:b071
+                       :283b%12","::2000:0:0:0","::1","::2000:0:0:0"],"DurationInSeconds":"21","JobID":"{019DFBE5-F99F-11E5-80C6-001DD8B8065C}","Curren
+                       tChecksum":"A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F","MetaData":"Author: configAuthor; Name: 
+                       Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: CONTOSO-PullSrv;","RebootRequested":"False
+                       ","Status":"Success","IPV4Addresses":["10.240.179.151","127.0.0.1"],"LCMVersion":"2.0","ResourcesNotInDesiredState":[{"SourceInf
+                       o":"C:\\ReportTest\\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall","ModuleName":"xNetworking","DurationInSeconds":"8.785",
+                       "InstanceName":"Firewall","StartDate":"2016-04-03T06:21:56.4650000-07:00","ResourceName":"xFirewall","ModuleVersion":"2.7.0.0","
+                       RebootRequested":"False","ResourceId":"[xFirewall]Firewall","ConfigurationName":"Sample_ArchiveFirewall","InDesiredState":"False
+                       "}],"NumberOfResources":"2","Type":"Consistency","HostName":"CONTOSO-PULLCLI","ResourcesInDesiredState":[{"SourceInfo":"C:\\ReportTest\\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive","ModuleName":"PSDesiredStateConfiguration","DurationInSeconds":"1.848",
+                       "InstanceName":"ArchiveExample","StartDate":"2016-04-03T06:21:56.4650000-07:00","ResourceName":"Archive","ModuleVersion":"1.1","
+                       RebootRequested":"False","ResourceId":"[Archive]ArchiveExample","ConfigurationName":"Sample_ArchiveFirewall","InDesiredState":"T
+                       rue"}],"MACAddresses":["00-1D-D8-B8-06-5C","00-00-00-00-00-00-00-E0"],"MetaConfiguration":{"AgentId":"52DA826D-00DE-4166-8ACB-73F2B46A7E00",
+                       "ConfigurationDownloadManagers":[{"SourceInfo":"C:\\ReportTest\\LCMConfig.ps1::14::9::ConfigurationRepositoryWeb","A
+                       llowUnsecureConnection":"True","ServerURL":"http://CONTOSO-PullSrv:8080/PSDSCPullServer.svc","RegistrationKey":"","ResourceId":"[Config
+                       urationRepositoryWeb]CONTOSO-PullSrv","ConfigurationNames":["ClientConfig"]}],"ActionAfterReboot":"ContinueConfiguration","LCMCo
+                       mpatibleVersions":["1.0","2.0"],"LCMState":"Idle","ResourceModuleManagers":[],"ReportManagers":[{"AllowUnsecureConnection":"True
+                       ","RegistrationKey":"","ServerURL":"http://CONTOSO-PullSrv:8080/PSDSCPullServer.svc","ResourceId":"[ReportServerWeb]CONTOSO-PullSrv","S
+                       ourceInfo":"C:\\ReportTest\\LCMConfig.ps1::24::9::ReportServerWeb"}],"StatusRetentionTimeInDays":"10","LCMVersion":"2.0","Config
+                       urationMode":"ApplyAndMonitor","RefreshFrequencyMins":"30","RebootNodeIfNeeded":"True","RefreshMode":"Pull","DebugMode":["NONE"]
+                       ,"LCMStateDetail":"","AllowModuleOverwrite":"False","ConfigurationModeFrequencyMins":"15"},"Locale":"en-US","Mode":"Pull"}}
+AdditionalData       : {}
 ```
 
-Notice that the **StatusData** field is an object with three properties: **NumberOfResources**, **Locale**, and **ResourcesInDesiredState**. The **ResourcesInDesiredState**
-property is an array of objects that each have a number of properties. The following script takes a single report as a parameter, iterates through its **ResourcesInDesiredState**
-array, and writes them to the console:
- 
+By default, the reports are sorted by **JobID**. To get the most recent report, you can sort the reports by descending **StartTime** property, and then get the first element of the array:
+
 ```powershell
-function GetStatusData
-{
-    param ($Report)
-    $statusData = $Report.StatusData | ConvertFrom-Json
-
-    $Resources = $statusData.ResourcesInDesiredState
-
-    Foreach ($Resource in $Resources)
-    {
-        Write-Host 'ResourceId: ' $Resource.ResourceId
-        Write-Host 'SourceInfo: ' $Resource.SourceInfo
-        Write-Host 'ModuleName: ' $Resource.ModuleName
-        Write-Host 'ModuleVersion: ' $Resource.ModuleVersion
-        Write-Host 'ConfigurationName: ' $Resource.ConfigurationName
-        Write-Host 'ResourceName: ' $Resource.ResourceName
-        Write-Host
-    }
-}
+$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportMostRecent = $reportsByStartTime[0]
 ```
 
-Here is a sample output after calling the **GetStatusData** function:
+Notice that the **StatusData** property is an object with a number of properties. This is where much of the reporting data is. Let's look at the individual fields of the
+**StatusData** property for the most recent report:
 
 ```powershell
-GetStatusData -Report $report[1]
+$statusData = $reportMostRecent.StatusData | ConvertFrom-Json
+$statusData
 
-ResourceId:  [WindowsFeature]MyFeatureInstance
-SourceInfo:  C:\ReportTest\ClientConfig.ps1::4::9::WindowsFeature
-ModuleName:  PsDesiredStateConfiguration
-ModuleVersion:  1.0
-ConfigurationName:  ClientConfig
-ResourceName:  WindowsFeature
+StartDate                  : 2016-04-04T11:21:41.2990000-07:00
+IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
+DurationInSeconds          : 25
+JobID                      : {135D230E-FA92-11E5-80C6-001DD8B8065C}
+CurrentChecksum            : A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F
+MetaData                   : Author: configAuthor; Name: Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: 
+                             CONTOSO-PullSrv;
+RebootRequested            : False
+Status                     : Success
+IPV4Addresses              : {10.240.179.151, 127.0.0.1}
+LCMVersion                 : 2.0
+ResourcesNotInDesiredState : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall; ModuleName=xNetworking; 
+                             DurationInSeconds=10.725; InstanceName=Firewall; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=xFirewall; 
+                             ModuleVersion=2.7.0.0; RebootRequested=False; ResourceId=[xFirewall]Firewall; ConfigurationName=Sample_ArchiveFirewall; 
+                             InDesiredState=False}}
+NumberOfResources          : 2
+Type                       : Consistency
+HostName                   : CONTOSO-PULLCLI
+ResourcesInDesiredState    : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive; ModuleName=PSDesiredStateConfiguration; 
+                             DurationInSeconds=2.672; InstanceName=ArchiveExample; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=Archive; 
+                             ModuleVersion=1.1; RebootRequested=False; ResourceId=[Archive]ArchiveExample; ConfigurationName=Sample_ArchiveFirewall; 
+                             InDesiredState=True}}
+MACAddresses               : {00-1D-D8-B8-06-5C, 00-00-00-00-00-00-00-E0}
+MetaConfiguration          : @{AgentId=52DA826D-00DE-4166-8ACB-73F2B46A7E00; ConfigurationDownloadManagers=System.Object[]; 
+                             ActionAfterReboot=ContinueConfiguration; LCMCompatibleVersions=System.Object[]; LCMState=Idle; 
+                             ResourceModuleManagers=System.Object[]; ReportManagers=System.Object[]; StatusRetentionTimeInDays=10; LCMVersion=2.0; 
+                             ConfigurationMode=ApplyAndMonitor; RefreshFrequencyMins=30; RebootNodeIfNeeded=True; RefreshMode=Pull; 
+                             DebugMode=System.Object[]; LCMStateDetail=; AllowModuleOverwrite=False; ConfigurationModeFrequencyMins=15}
+Locale                     : en-US
+Mode                       : Pull
+```
 
-ResourceId:  [WindowsFeature]My2ndFeatureInstance
-SourceInfo:  C:\ReportTest\ClientConfig.ps1::8::9::WindowsFeature
-ModuleName:  PsDesiredStateConfiguration
-ModuleVersion:  1.0
-ConfigurationName:  ClientConfig
-ResourceName:  WindowsFeature
+Among other things, this shows that the most recent configuration called two resources, and that one of them was in the desired state, and one of them was not. You can get
+a more readable output of just the **ResourcesNotInDesiredState** property:
+
+```powershell
+$statusData.ResourcesInDesiredState
+
+SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
+ModuleName        : PSDesiredStateConfiguration
+DurationInSeconds : 2.672
+InstanceName      : ArchiveExample
+StartDate         : 2016-04-04T11:21:55.7200000-07:00
+ResourceName      : Archive
+ModuleVersion     : 1.1
+RebootRequested   : False
+ResourceId        : [Archive]ArchiveExample
+ConfigurationName : Sample_ArchiveFirewall
+InDesiredState    : True
 ```
 
 Note that these examples are meant to give you an idea of what you can do with report data. For an introduction on working with JSON in PowerShell, see
 [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## See Also
->[Configuring the Local Configuration Manager](metaConfig.md)
->[Setting up a DSC web pull server](pullServer.md)
->[Setting up a pull client using configuration names](pullClientConfigNames.md)
+- [Configuring the Local Configuration Manager](metaConfig.md)
+- [Setting up a DSC web pull server](pullServer.md)
+- [Setting up a pull client using configuration names](pullClientConfigNames.md)
