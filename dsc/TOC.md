@@ -55,3 +55,6 @@
 ### [nxService Resource](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys Resource](lnxSshAuthorizedKeysResource.md)
 ### [nxUser Resource](lnxUserResource.md)
+
+# More Resources
+## [The Release Pipeline Model](theReleasePipelineModel.md)
