@@ -20,7 +20,7 @@ Here are some of the features that have been added to the ISE in the most recent
 
 **Snippets** are short sections of code that you can easily insert into the scripts your write. A collection of useful snippets is included in the box and you can more by using the **New\-Snippet** cmdlet.
 
-**Add\-on tools** that add features to the ISE can be created by writing code that interacts with the [The Windows PowerShell ISE Scripting Object Model](assetId:///69b047d0-da79-413e-b948-8e45d05d1f85). These tools can display controls in a tabbed pane or work invisibly in the background. The **Commands** add\-on is a good example and is included with version 3.0 and later that displays a list of the available commands and their Help.
+**Add\-on tools** that add features to the ISE can be created by writing code that interacts with the [The Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/dd819478.aspx). These tools can display controls in a tabbed pane or work invisibly in the background. The **Commands** add\-on is a good example and is included with version 3.0 and later that displays a list of the available commands and their Help.
 
 **Restart Manager and Auto\-save** automatically save your scripts every two minutes to help you avoid the loss of your work in the event of a crash or unexpected restart.
 
