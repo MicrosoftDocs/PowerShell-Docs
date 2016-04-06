@@ -62,7 +62,7 @@ The Windows PowerShell Configuration keyword is used to create a configuration f
 
 1. Import the nx module. The nx Windows PowerShell module contains the schema for Built-In resources for DSC for Linux, and must be installed to your local computer and imported in the configuration.
 
-    -To install the nx module, copy the nx module directory to either `%UserProfile%\Documents\WindowsPowerShell\Modules\` or `C:\windows\system32\WindowsPowerShell\v1.0\Modules`. The nx module is included in the DSC for Linux installation package (MSI). To import the nx module in your configuration, use the __Import-DSCResource__ command:
+    -To install the nx module, copy the nx module directory to either `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` or `$PSHOME\Modules`. The nx module is included in the DSC for Linux installation package (MSI). To import the nx module in your configuration, use the __Import-DSCResource__ command:
     
 ```powershell
 Configuration ExampleConfiguration{
@@ -76,7 +76,7 @@ Configuration ExampleConfiguration{
 ```powershell
 Configuration ExampleConfiguration{
    
-    Import-DSCResource -Module nx
+    Import-DscResource -Module nx
  
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
@@ -118,7 +118,7 @@ If this certificate is not trusted by the Windows computer that you are running 
 
 Run the following command to push the DSC configuration to the Linux node.
 
-`Start-DSCConfiguration -Path:"C:\temp" -cimsession:$sess -wait -verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
 ### Distribute the configuration with a pull server
 
