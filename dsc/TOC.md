@@ -27,6 +27,7 @@
 ### [Class-based custom resouces](authoringResourceClass.md)
 ### [Composite resources](authoringResourceComposite.md)
 ### [Debugging DSC resources](debugResource.md)
+### [Writing a single-instance DSC resource (best practice)](singleInstance.md)
 ### [Resource authoring checklist](resourceAuthoringChecklist.md)
 
 # [Configuring the Local Configuration Manager (LCM)](metaConfig.md)
