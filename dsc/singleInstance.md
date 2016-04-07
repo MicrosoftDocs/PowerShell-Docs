@@ -74,94 +74,9 @@ function Get-TargetResource
     param
     (
         [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [String]
-        $TimeZone
-    )
-
-    #Get the current TimeZone
-    $CurrentTimeZone = Invoke-Expression "tzutil.exe /g"
-
-    $returnValue = @{
-        TimeZone = $CurrentTimeZone
-    }
-
-    #Output the target resource
-    $returnValue
-}
-
-
-function Set-TargetResource
-{
-    [CmdletBinding(SupportsShouldProcess=$true)]
-    param
-    (
-        [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [String]
-        $TimeZone
-    )
-    
-    #Output the result of Get-TargetResource function.
-    $GetCurrentTimeZone = Get-TargetResource -TimeZone $TimeZone
-
-    If($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
-    {
-        Try
-        {
-            Write-Verbose "Setting the TimeZone"
-            Invoke-Expression "tzutil.exe /s ""$TimeZone"""
-        }
-        Catch
-        {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose $ErrorMsg
-        }
-    }
-}
-
-
-function Test-TargetResource
-{
-    [CmdletBinding()]
-    [OutputType([Boolean])]
-    param
-    (
-        [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [String]
-        $TimeZone
-    )
-
-    #Output from Get-TargetResource
-    $Get = Get-TargetResource -TimeZone $TimeZone
-
-    If($TimeZone -eq $Get.TimeZone)
-    {
-        return $true
-    }
-    Else
-    {
-        return $false
-    }
-}
-
-Export-ModuleMember -Function *-TargetResource
-```
-
-Here is the updated script. Notice that a **IsSingleInstance** mandatory parameter has been added to each function.
-
-```powershell
-function Get-TargetResource
-{
-    [CmdletBinding()]
-    [OutputType([Hashtable])]
-    param
-    (
-        [parameter(Mandatory = $true)]
         [ValidateSet('Yes')]
         [String]
-        $IsSingleInstance, 
+        $IsSingleInstance,
 
         [parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
@@ -174,6 +89,7 @@ function Get-TargetResource
 
     $returnValue = @{
         TimeZone = $CurrentTimeZone
+        IsSingleInstance = 'Yes'
     }
 
     #Output the target resource
@@ -189,7 +105,7 @@ function Set-TargetResource
         [parameter(Mandatory = $true)]
         [ValidateSet('Yes')]
         [String]
-        $IsSingleInstance, 
+        $IsSingleInstance,
 
         [parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
@@ -200,19 +116,23 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
     
-    If($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
     {
-        Try{
-            if($CurrentTimeZone -ne $TimeZone){
-                Write-Verbose "Setting the TimeZone"
+        try
+        {
+            if($CurrentTimeZone -ne $TimeZone)
+            {
+                Write-Verbose -Verbose "Setting the TimeZone"
                 Set-TimeZone -TimeZone $TimeZone}
-            else{
-                Write-Verbose "TimeZone already set to $TimeZone"
+            else
+            {
+                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
             }
         }
-        Catch{
+        catch
+        {
             $ErrorMsg = $_.Exception.Message
-            Write-Verbose $ErrorMsg
+            Write-Verbose -Verbose $ErrorMsg
         }
     }
 }
@@ -238,26 +158,24 @@ function Test-TargetResource
     #Output from Get-TargetResource
     $CurrentTimeZone = Get-TimeZone
 
-    If($TimeZone -eq $CurrentTimeZone)
+    if($TimeZone -eq $CurrentTimeZone)
     {
         return $true
     }
-    Else
+    else
     {
         return $false
     }
 }
 
-Function Get-TimeZone 
-{
+Function Get-TimeZone {
     [CmdletBinding()]
     param()
 
     & tzutil.exe /g
 }
 
-Function Set-TimeZone 
-{
+Function Set-TimeZone {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
@@ -267,8 +185,9 @@ Function Set-TimeZone
 
     try
     {
-        & tzutil.exe /s $TimeZone    
-    }catch
+        & tzutil.exe /s $TimeZone
+    }
+    catch
     {
         $ErrorMsg = $_.Exception.Message
         Write-Verbose $ErrorMsg
