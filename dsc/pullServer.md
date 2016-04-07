@@ -123,7 +123,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ```
 > **Note**: The **ReportServerWeb** section allows reporting data to be sent to the pull server. 
 
-The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration is required. Conversely, the presents of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
+The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration is required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
 
 >**Note**: In a PUSH scenario, a bug exists in the current relase that makes it necessary to define a ConfigurationID property in the metaconfiguration file for nodes that have never registered with a pull server. This will force the V1 Pull Server protocol and avoid registration failure messages.
 
