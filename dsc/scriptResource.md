@@ -3,7 +3,16 @@
  
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.
+The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes. The `Script` resource has `GetScript`, `SetScript`, and `TestScript` properties. These properties should be set to script blocks that will run on each target node. 
+
+The `GetScript` script block should return a hashtable representing the state of the current node. It is not required to return anything. DSC doesn't do anything with the output of this script block.
+
+The `TestScript` script block should determine if the current node needs to be modified. It should return `$true` if the node is up-to-date. It should return `$false` if the node's configuration is out-of-date and should be updated by the `SetScript` script block. The `TestScript` script block is called by DSC.
+
+The `SetScript` script block should modify the node. It is called by DSC if the `TestScript` block return `$false`.
+
+If you need to use variables from your configuration script in the `GetScript`, `TestScript`, or `SetScript` script blocks, use the `$using:` scope (see below for an example).
+
 
 ## Syntax
 
@@ -41,4 +50,31 @@ Script ScriptExample
     GetScript = { <# This must return a hash table #> }          
 }
 ```
+
+## Example
+```powershell
+$version = Get-Content 'version.txt'
+Script UpdateConfigurationVersion
+{
+    SetScript = { 
+        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+    }
+    GetScript = { 
+        $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+        return @{ 'Version' = $currentVersion }
+    }          
+    TestScript = { 
+        $state = GetScript
+        if( $state['Version'] -eq $using:version )
+        {
+            Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+            return $true
+        }
+        Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+        return $false
+    }
+}
+```
+
+This resource is writing the configuration's versionto a text file. This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resources script blocks with PowerShell's `using` scope. When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer. DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.
 
