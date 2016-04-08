@@ -13,7 +13,7 @@ Tabs in the [!INCLUDE[ise_1](../Token/ise_1_md.md)] allow you to simultaneously 
 > [!NOTE]
 > Variables, functions, and aliases that you create in one tab do not carry over to another. They are different Windows PowerShell sessions.
 
-Use the following steps to open or close a tab in [!INCLUDE[wps_2](../Token/wps_2_md.md)]. To rename a tab, set the [DisplayName](assetId:///a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) property on the [!INCLUDE[wps_2](../Token/wps_2_md.md)] Tab scripting object.
+Use the following steps to open or close a tab in [!INCLUDE[wps_2](../Token/wps_2_md.md)]. To rename a tab, set the [DisplayName](https://technet.microsoft.com/en-us/library/a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) property on the [!INCLUDE[wps_2](../Token/wps_2_md.md)] Tab scripting object.
 
 ## To create and use a new PowerShell Tab
 On the **File** menu, click **New PowerShell Tab**. The new PowerShell tab always opens as the active window. PowerShell tabs are incrementally numbered in the order that they are opened. Each tab is associated with its own Windows PowerShell console window. You can have up to 32 PowerShell tabs with their own session open at a time (this is limited to 8 on [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0.)
@@ -32,7 +32,7 @@ To close a tab, you can use any of the following techniques:
 
 -   On the **File** menu, click **Close PowerShell Tab**, or click  the Close button  (**X**) on an active tab to close the tab.
 
-If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save or discard them. For more information about how to save a script, see [How to Save a Script](assetId:///162f594d-efd3-4234-9960-45e56e6eadc8).
+If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save or discard them. For more information about how to save a script, see [How to Save a Script](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8).
 
 ## See Also
 [Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)

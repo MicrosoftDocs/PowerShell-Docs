@@ -22,6 +22,6 @@ In the Command Pane or Script pane, type a cmdlet followed by a dash, and then p
 For example, type `get-process -` and then press TAB multiple times to display each of the parameters for the cmdlet in turn.
 
 ## See Also
-[Using Windows PowerShell ISE](assetId:///777ea82b-dd73-4269-b61a-69a17e6ff16f)
-[How to Create a PowerShell Tab](assetId:///c57fc210-19c8-47b1-9171-26a2144c907c)
+[Using Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
+[How to Create a PowerShell Tab](https://technet.microsoft.com/en-us/library/c57fc210-19c8-47b1-9171-26a2144c907c)
 

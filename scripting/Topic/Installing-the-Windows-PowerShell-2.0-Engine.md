@@ -74,6 +74,6 @@ The [!INCLUDE[ps_wmf_3.0](../Token/ps_wmf_3.0_md.md)] package that installs [!IN
 ## See Also
 [Windows PowerShell System Requirements](../Topic/Windows-PowerShell-System-Requirements.md)
 [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
-[Starting Windows PowerShell [ps]](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 [Starting the Windows PowerShell 2.0 Engine](../Topic/Starting-the-Windows-PowerShell-2.0-Engine.md)
 

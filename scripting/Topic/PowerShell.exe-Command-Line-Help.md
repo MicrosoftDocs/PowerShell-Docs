@@ -72,7 +72,7 @@ Does not load the Windows PowerShell profile.
 Determines how output from Windows PowerShell is formatted. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
 
 ### \-PSConsoleFile <FilePath>
-Loads the specified Windows PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](assetId:///4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet in Windows PowerShell.
+Loads the specified Windows PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet in Windows PowerShell.
 
 ### \-Sta
 Starts Windows PowerShell using a single\-threaded apartment. In [!INCLUDE[psversion3](../Token/psversion3_md.md)], single\-threaded apartment (STA) is the default. In [!INCLUDE[psversion2](../Token/psversion2_md.md)], multi\-threaded apartment (MTA) is the default.
@@ -82,7 +82,7 @@ Starts the specified version of Windows PowerShell. The version that you specify
 
 If [!INCLUDE[psversion3](../Token/psversion3_md.md)] is not installed, the only valid value is "2.0". Other values are ignored.
 
-For more information, see "Installing Windows PowerShell" in the [Getting Started with Windows PowerShell [OLD MSDN]](assetId:///69555d95-b481-43e1-86e7-b46d68b3e2dd).
+For more information, see "Installing Windows PowerShell" in the [Getting Started with Windows PowerShell [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 ### \-WindowStyle <Window style>
 Sets the window style for the session. Valid values are Normal, Minimized, Maximized and Hidden.

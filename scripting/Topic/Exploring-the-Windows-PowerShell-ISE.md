@@ -14,7 +14,7 @@ You can use the [!INCLUDE[ise_1](../Token/ise_1_md.md)] to create, run, and debu
 > Beginning with [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0 the Command and Output Panes were combined into a single Console Pane.
 
 ## Menu Bar
-The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Additionally, an [Add-ons menu](assetId:///412dd662-417a-4661-ada2-558802d0f6d2#submenus) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](assetId:///1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1).
+The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Additionally, an [Add-ons menu](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1).
 
 > [!NOTE]
 > In [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0, The **Tools** and **Add\-ons** menus were not present.

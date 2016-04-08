@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
 ---
 # How to Use Profiles in Windows PowerShell ISE
-This topic explains how to use Profiles in [!INCLUDE[ise_1](../Token/ise_1_md.md)]. We recommend that before performing the tasks in this section, you review [about_Profiles [v4]](assetId:///e1d9e30a-70cc-4f36-949f-fc7cd96b4054), or in the Console Pane, type, “get\-help about\_profiles” and press **ENTER**.
+This topic explains how to use Profiles in [!INCLUDE[ise_1](../Token/ise_1_md.md)]. We recommend that before performing the tasks in this section, you review [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054), or in the Console Pane, type, “get\-help about\_profiles” and press **ENTER**.
 
 A profile is a [!INCLUDE[ise_2](../Token/ise_2_md.md)] script that runs automatically when you start a new session.  You can create one or more [!INCLUDE[wps_2](../Token/wps_2_md.md)] profiles for [!INCLUDE[ise_2](../Token/ise_2_md.md)] and use them to add the configure the [!INCLUDE[wps_2](../Token/wps_2_md.md)] or [!INCLUDE[ise_2](../Token/ise_2_md.md)] environment, preparing it for your use, with variables, aliases, functions, and color and font preferences that you want available. A profile affects every [!INCLUDE[ise_2](../Token/ise_2_md.md)] session that you start.
 
 > [!NOTE]
-> The [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policy determines whether you can run scripts and load a profile. The default execution policy, “Restricted,” prevents all scripts from running, including profiles. If you use the “Restricted” policy, the profile cannot load. For more information about execution policy, see [about_Execution_Policies [v4]](assetId:///347708dc-1515-4d74-978b-8334603472e6).
+> The [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policy determines whether you can run scripts and load a profile. The default execution policy, “Restricted,” prevents all scripts from running, including profiles. If you use the “Restricted” policy, the profile cannot load. For more information about execution policy, see [about_Execution_Policies [v4]](https://technet.microsoft.com/en-us/library/347708dc-1515-4d74-978b-8334603472e6).
 
 ## Selecting a profile to use in the Windows PowerShell ISE
 [!INCLUDE[ise_2](../Token/ise_2_md.md)] supports profiles for the current user and all users. It also supports the [!INCLUDE[wps_2](../Token/wps_2_md.md)] profiles that apply to all hosts.
@@ -68,13 +68,13 @@ if (!(test-path $profile.AllUsersAllHosts))
 
 2.  Add some items to your profile. The following are a few examples to get you started:
 
-    -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](assetId:///e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c).
+    -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](https://technet.microsoft.com/en-us/library/e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c).
 
     -   To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
 3.  To save your profile file, on the **File** menu, click **Save**. Next time you open the [!INCLUDE[ise_2](../Token/ise_2_md.md)], your customizations are applied.
 
 ## See Also
-[about_Profiles [v4]](assetId:///e1d9e30a-70cc-4f36-949f-fc7cd96b4054)
+[about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)
 [Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
 
