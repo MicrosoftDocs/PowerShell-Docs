@@ -37,7 +37,7 @@ Script [string] #ResourceName
 | Credential| Indicates the credentials to use for running this script, if credentials are required.| 
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.
 
-## Example
+## Example 1
 ```powershell
 Script ScriptExample
 {
@@ -51,14 +51,11 @@ Script ScriptExample
 }
 ```
 
-## Example
+## Example 2
 ```powershell
 $version = Get-Content 'version.txt'
 Script UpdateConfigurationVersion
 {
-    SetScript = { 
-        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-    }
     GetScript = { 
         $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
         return @{ 'Version' = $currentVersion }
@@ -73,8 +70,11 @@ Script UpdateConfigurationVersion
         Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
         return $false
     }
+    SetScript = { 
+        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+    }
 }
 ```
 
-This resource is writing the configuration's versionto a text file. This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resources script blocks with PowerShell's `using` scope. When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer. DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.
+This resource is writing the configuration's version to a text file. This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resource's script blocks with PowerShell's `using` scope. When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer. DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.
 
