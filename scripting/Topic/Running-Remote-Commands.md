@@ -15,25 +15,25 @@ Many Windows PowerShell cmdlets have a ComputerName parameter that enables you t
 
 These cmdlets include:
 
--   [Restart-Computer](assetId:///bd52bcf6-80ee-4866-9320-04ee1d1dca4a)
+-   [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
 
--   [Test-Connection](assetId:///87d293e5-10e2-489b-b0a9-922d77c05f3f)
+-   [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
 
--   [Clear-EventLog](assetId:///05d0de31-3c9d-4cd6-8e1a-dac19835464c)
+-   [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
 
--   [Get-EventLog [m2]](assetId:///a4372a60-b7d9-4b1c-a268-aa5240300141)
+-   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
 -   [Get-Hotfix](assetId:///e1ef636f-5170-4675-b564-199d9ef6f101)
 
--   [Get-Process [m2]](assetId:///27a05dbd-4b69-48a3-8d55-b295f6225f15)
+-   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
--   [Get-Service [m2]](assetId:///0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+-   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
--   [Set-Service [m2]](assetId:///b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+-   [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
 
--   [Get-WinEvent](assetId:///e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
 
--   [Get-WmiObject [m2]](assetId:///a4c499fa-deec-4c4b-b3fb-6e195d48a396)
+-   [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
 
 Typically, cmdlets that support remoting without special configuration have a ComputerName parameter and do not have a Session parameter. To find these cmdlets in your session, type:
 
@@ -44,12 +44,13 @@ get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## Windows PowerShell Remoting
 Windows PowerShell remoting, which uses the WS\-Management protocol, lets you run any Windows PowerShell command on one or many remote computers. It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.
 
-To use Windows PowerShell remoting, the remote computer must be configured for remote management. For more information, including instructions, see [about_Remote_Requirements](assetId:///da213949-134c-4741-b307-81f4492ba1bd).
+To use Windows PowerShell remoting, the remote computer must be configured for remote management. For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx).
 
-After you have configured Windows PowerShell remoting, many remoting strategies are available to you. The remainder of this document lists just a few of them. For more information, see [about_Remote](assetId:///9b4a5c87-9162-4adf-bdfe-fbc80b9b8970) and [about_Remote_FAQ](assetId:///e23702fd-9415-4a98-9975-390a4d3adc42).
+After you have configured Windows PowerShell remoting, many remoting strategies are available to you. The remainder of this document lists just a few of them. For more information, see [About Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) and 
+[About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).
 
 ### Start an Interactive Session
-To start an interactive session with a single remote computer, use the [Enter-PSSession](assetId:///f4fd89b4-80e9-434e-bd46-952aa8d40d4c) cmdlet. For example, to start an interactive session with the Server01 remote computer, type:
+To start an interactive session with a single remote computer, use the [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet. For example, to start an interactive session with the Server01 remote computer, type:
 
 ```
 enter-pssession Server01
@@ -63,10 +64,12 @@ To end the interactive session, type:
 exit-pssession
 ```
 
-For more information about the Enter\-PSSession and Exit\-PSSession cmdlets, see [Enter-PSSession](assetId:///f4fd89b4-80e9-434e-bd46-952aa8d40d4c) and [Exit-PSSession](assetId:///b6daa1ce-48a5-41a3-ac4b-b64dbe03465d).
+For more information about the Enter\-PSSession and Exit\-PSSession cmdlets, see [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
+and [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
 
 ### Run a Remote Command
-To run any command on one or many remote computers, use the [Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462) cmdlet. For example, to run a [Get-UICulture [m2]](assetId:///99175c2e-e856-4208-970e-3dd2f6bac5b8) command on the Server01 and Server02 remote computers, type:
+To run any command on one or many remote computers, use the [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet.
+ For example, to run a [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) command on the Server01 and Server02 remote computers, type:
 
 ```
 invoke-command -computername Server01, Server02 {get-UICulture}
@@ -92,7 +95,7 @@ For example, the following command runs the DiskCollect.ps1 script on the Server
 invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
 ```
 
-For more information about the Invoke\-Command cmdlet, see [Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462).
+For more information about the Invoke\-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
 
 ### Establish a Persistent Connection
 To run a series of related commands that share data, create a session on the remote computer and then use the Invoke\-Command cmdlet to run commands in the session that you create. To create a remote session, use the New\-PSSession cmdlet.
@@ -120,20 +123,27 @@ invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
 ### Advanced Remoting
 Windows PowerShell remote management just begins here. By using the cmdlets installed with Windows PowerShell, you can establish and configure remote sessions both from the local and remote ends, create customized and restricted sessions, allow users to import commands from a remote session that actually run implicitly on the remote session, configure the security of a remote session, and much more.
 
-To facilitate remote configuration, Windows PowerShell includes a WSMan provider. The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers. For more information about the WSMan provider, see  [WSMan Provider](assetId:///66fe1241-e08f-49ca-832f-a84c33ca8735) and [about_WS-Management_Cmdlets](assetId:///6ed3370a-ea10-45a5-9493-696aeace27ed), or in the Windows PowerShell console, type "get\-help wsman".
+To facilitate remote configuration, Windows PowerShell includes a WSMan provider. The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers.
+ For more information about the WSMan provider, see  [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) and
+  [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "get\-help wsman".
 
-For more information, see [about_Remote_FAQ](assetId:///e23702fd-9415-4a98-9975-390a4d3adc42), [Register-PSSessionConfiguration](assetId:///af68867a-d201-4b19-a1de-594015ed8a25), and [Import-PSSession](assetId:///048c115e-a6fb-4e0d-8cea-c5ca24630c9d). For help with remoting errors, see [about_Remote_Troubleshooting](assetId:///2f890148-8578-49ed-85ea-79a489dd6317).
+For more information, see:
+- [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
+- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/dd819496.aspx)
+- [Import-PSSession](https://technet.microsoft.com/en-us/library/dd347575.aspx). 
+
+For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
 
 ## See Also
-[about_Remote](assetId:///9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-[about_Remote_FAQ](assetId:///e23702fd-9415-4a98-9975-390a4d3adc42)
-[about_Remote_Requirements](assetId:///da213949-134c-4741-b307-81f4492ba1bd)
-[about_Remote_Troubleshooting](assetId:///2f890148-8578-49ed-85ea-79a489dd6317)
-[about_PSSessions](assetId:///7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-[about_WS-Management_Cmdlets](assetId:///6ed3370a-ea10-45a5-9493-696aeace27ed)
-[Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462)
-[Import-PSSession](assetId:///048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
-[New-PSSession](assetId:///59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
-[Register-PSSessionConfiguration](assetId:///af68867a-d201-4b19-a1de-594015ed8a25)
-[WSMan Provider](assetId:///66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [about_Remote](assetId:///9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
+- [about_Remote_FAQ](assetId:///e23702fd-9415-4a98-9975-390a4d3adc42)
+- [about_Remote_Requirements](assetId:///da213949-134c-4741-b307-81f4492ba1bd)
+- [about_Remote_Troubleshooting](assetId:///2f890148-8578-49ed-85ea-79a489dd6317)
+- [about_PSSessions](assetId:///7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
+- [about_WS-Management_Cmdlets](assetId:///6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462)
+- [Import-PSSession](assetId:///048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
+- [New-PSSession](assetId:///59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
+- [Register-PSSessionConfiguration](assetId:///af68867a-d201-4b19-a1de-594015ed8a25)
+- [WSMan Provider](assetId:///66fe1241-e08f-49ca-832f-a84c33ca8735)
 
