@@ -31,5 +31,5 @@ Provides information about and steps for creating and using profiles in [!INCLUD
 ## See Also
 [Exploring the Windows PowerShell ISE](../Topic/Exploring-the-Windows-PowerShell-ISE.md)
 [Accessibility in Windows PowerShell ISE](../Topic/Accessibility-in-Windows-PowerShell-ISE.md)
-[The Windows PowerShell ISE Scripting Object Model](assetId:///69b047d0-da79-413e-b948-8e45d05d1f85)
+[The Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
 

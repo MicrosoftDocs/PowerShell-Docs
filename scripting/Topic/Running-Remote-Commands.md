@@ -23,7 +23,7 @@ These cmdlets include:
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](assetId:///e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -84,7 +84,7 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-For more information about the Invoke\-Command cmdlet, see [Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462).
+For more information about the Invoke\-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### Run a Script
 To run a script on one or many remote computers, use the FilePath parameter of the Invoke\-Command cmdlet. The script must be on or accessible to your local computer. The results are returned to your local computer.
@@ -135,15 +135,15 @@ For more information, see:
 For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
 
 ## See Also
-- [about_Remote](assetId:///9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](assetId:///e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](assetId:///da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](assetId:///2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](assetId:///7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](assetId:///6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](assetId:///22fd98ba-1874-492e-95a5-c069467b8462)
-- [Import-PSSession](assetId:///048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
-- [New-PSSession](assetId:///59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
-- [Register-PSSessionConfiguration](assetId:///af68867a-d201-4b19-a1de-594015ed8a25)
-- [WSMan Provider](assetId:///66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [about_Remote](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
+- [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
+- [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
+- [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
+- [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
+- [Import-PSSession](https://technet.microsoft.com/en-us/library/048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
+- [New-PSSession](https://technet.microsoft.com/en-us/library/59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
+- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/af68867a-d201-4b19-a1de-594015ed8a25)
+- [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 

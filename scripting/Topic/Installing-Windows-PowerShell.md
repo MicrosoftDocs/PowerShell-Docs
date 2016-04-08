@@ -22,12 +22,12 @@ This topic includes the following sections:
 
 -   [Installing Windows PowerShell on Server Core](../Topic/Installing-Windows-PowerShell.md#BKMK_InstallingOnServerCore)
 
--   [Deploying Windows PowerShell Web Access](assetId:///639d0eff-98a3-4124-b52c-26921ebd98b0)
+-   [Deploying Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/639d0eff-98a3-4124-b52c-26921ebd98b0)
 
 -   [Installing the Windows PowerShell 2.0 Engine](../Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>Installing Windows PowerShell on Windows 8 and Windows Server 2012
-[!INCLUDE[psversion3](../Token/psversion3_md.md)] arrives installed, configured, and ready to use. [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] is installed and enabled. For information about starting [!INCLUDE[mshshort](../Token/mshshort_md.md)], see [Starting Windows PowerShell on Windows 8](assetId:///d7be1668-8617-4890-ad90-dd9765fbd2c3) and [Starting Windows PowerShell on Windows Server 2012](assetId:///4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968).
+[!INCLUDE[psversion3](../Token/psversion3_md.md)] arrives installed, configured, and ready to use. [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] is installed and enabled. For information about starting [!INCLUDE[mshshort](../Token/mshshort_md.md)], see [Starting Windows PowerShell on Windows 8](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3) and [Starting Windows PowerShell on Windows Server 2012](https://technet.microsoft.com/en-us/library/4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968).
 
 ## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>Installing Windows PowerShell on Windows 7 and Windows Server 2008 R2
 These instructions explain how to install [!INCLUDE[psversion3](../Token/psversion3_md.md)] on computers running [!INCLUDE[win7_client_secondref](../Token/win7_client_secondref_md.md)] with Service Pack 1 and [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] with Service Pack 1. There are separate installation instructions below for computers running with the Server Core installation option of [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)].
@@ -96,5 +96,5 @@ On [!INCLUDE[lserver](../Token/lserver_md.md)] systems, Windows Management Frame
 
 ## See Also
 [Windows PowerShell System Requirements](../Topic/Windows-PowerShell-System-Requirements.md)
-[Starting Windows PowerShell [ps]](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 

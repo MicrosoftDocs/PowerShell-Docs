@@ -13,7 +13,7 @@ This topic explains the new and updated features that have been introduced in ve
 ## <a name="overview"></a>Feature description
 The [!INCLUDE[ise_2](../Token/ise_2_md.md)] is a host application that enables you to write, run, and test scripts and modules in a graphical and intuitive environment. Key features such as syntax\-coloring, tab completion, visual debugging, Unicode compliance, and context\-sensitive Help provide a rich scripting experience.
 
-For an overview of [!INCLUDE[ise_2](../Token/ise_2_md.md)], see [Windows PowerShell Integrated Scripting Environment overview](assetId:///3c1892c2-bf84-4cb6-af26-1f453be9e671).
+For an overview of [!INCLUDE[ise_2](../Token/ise_2_md.md)], see [Windows PowerShell Integrated Scripting Environment overview](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="versions"></a>New and changed functionality in Windows PowerShell ISE
 The following table lists the new and changed features for this release of [!INCLUDE[ise_2](../Token/ise_2_md.md)] in [!INCLUDE[wps_2](../Token/wps_2_md.md)].
@@ -220,7 +220,7 @@ Show\-Command is new [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0.
 ## <a name="BKMK_LINKS"></a>See also
 For more information about using [!INCLUDE[ise_2](../Token/ise_2_md.md)] in [!INCLUDE[wps_2](../Token/wps_2_md.md)], see the following links.
 
--   [Using the Windows PowerShell Integrated Scripting Environment](assetId:///777ea82b-dd73-4269-b61a-69a17e6ff16f)
+-   [Using the Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
 
 -   [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 

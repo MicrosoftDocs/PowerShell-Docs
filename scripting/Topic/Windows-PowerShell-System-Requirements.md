@@ -62,19 +62,19 @@ However, some items, such as the following, require a graphical user interface. 
 
 -   Cmdlets
 
-    1.  [Out-GridView](assetId:///70915a86-d753-464e-8349-cba02316154c)
+    1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
 
-    2.  [Show-Command](assetId:///65bba50b-91a8-49d5-80a2-a30fc684ba41)
+    2.  [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41)
 
-    3.  [Show-ControlPanelItem](assetId:///0685d42c-37cc-498f-acf6-0ecfeb0cb162)
+    3.  [Show-ControlPanelItem](https://technet.microsoft.com/en-us/library/0685d42c-37cc-498f-acf6-0ecfeb0cb162)
 
-    4.  [Show-EventLog](assetId:///a3b0f5ad-0438-42c7-915b-d1b4793a431c)
+    4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
 -   Parameters
 
-    1.  **ShowWindow** parameter of the [Get-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet.
+    1.  **ShowWindow** parameter of the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet.
 
-    2.  **ShowSecurityDescriptorUi** parameter of the [Register-PSSessionConfiguration](assetId:///e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](assetId:///b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
+    2.  **ShowSecurityDescriptorUi** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
 
 ## Windows PowerShell Engine Requirements
 [!INCLUDE[psversion4](../Token/psversion4_md.md)] is designed to be backwards compatible with [!INCLUDE[psversion3](../Token/psversion3_md.md)] and [!INCLUDE[psversion2](../Token/psversion2_md.md)]. Cmdlets, providers, snap\-ins, modules, and scripts written for [!INCLUDE[psversion2](../Token/psversion2_md.md)] and [!INCLUDE[psversion3](../Token/psversion3_md.md)] run unchanged in [!INCLUDE[psversion4](../Token/psversion4_md.md)].
@@ -90,18 +90,18 @@ For information about adding or installing the [!INCLUDE[psversion2](../Token/ps
 
 -   [Background Intelligent Transfer Service (BITS) Cmdlets](http://go.microsoft.com/fwlink/?LinkId=257514)
 
--   [Get-EventLog](assetId:///b4985b11-82bf-487d-928d-becd96fc0419)
+-   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](assetId:///5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
--   [Save-Help](assetId:///aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+-   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
--   [Update-Help](assetId:///93e1d870-ace6-432b-8778-8920291d7545)
+-   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
 Also, the **WinRm** service is not present on Windows PE.
 
 ## See Also
 [Getting Started with Windows PowerShell](../Topic/Getting-Started-with-Windows-PowerShell.md)
 [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
-[Starting Windows PowerShell [ps]](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
