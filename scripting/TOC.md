@@ -44,7 +44,7 @@
 ### [Windows PowerShell Navigation](Topic/Windows-PowerShell-Navigation.md)
 #### [Managing Current Location](Topic/Managing-Current-Location.md)
 #### [Managing Windows PowerShell Drives](Topic/Managing-Windows-PowerShell-Drives.md)
-#### [Working With Files, Folders and Registry Keys](Topic/Working-With-Files,-Folders-and-Registry-Keys.md)
+#### [Working With Files, Folders and Registry Keys](Topic/Working-With-Files-Folders-and-Registry-Keys.md)
 #### [Manipulating Items Directly](Topic/Manipulating-Items-Directly.md)
 ### [Working with Objects](Topic/Working-with-Objects.md)
 #### [Getting WMI Objects 'Get-WmiObject'](Topic/Getting-WMI-Objects--Get-WmiObject-.md)
