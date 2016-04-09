@@ -52,21 +52,30 @@ Any existing certificate on the _Target Node_ that meets these criteria can be u
  
 ## Creating the Certificate
 
-The private key must be kept secret, because it is used to decrypt the MOF. The easiest way to do that is to create the private key certificate on the *Target Node*, and copy the public key 
-certificate to the computer being used to compile the DSC configuration into a MOF file. The following example creates a certificate, exports the public key, and then imports the public key
-into the root of the local certificate store.
+The private key must be kept secret, because it is used to decrypt the MOF.
+The easiest way to do that is to create the private key certificate on the *Target Node*, and copy the public key certificate to the computer being used to compile the DSC configuration into a MOF file.
+The following example:
+ 1. creates a certificate on the DSC Node.
+ 2. exports the public key on the DSC Node.
+ 3. imports the public key certificate into the root certificate store on the compiling machine.
+   - it must be added to the root store so that it will be trusted by the compiling machine.
 
+### On the DSC Node: create and export the certificate
 ```powershell
-# create the cert
 $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
 # export the cert’s public key
-$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force                                                              
-# import the cert’s public key as a trusted root certificate authority so that it is trusted
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force
+```
+
+### On the Compiling Machine: import the cert’s public key as a trusted root
+```powershell
+# certificate authority so that it is trusted
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
 ```
 
-Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file, exported with the private key then imported on the _Target Node_. 
-This is the current method for implementing DSC credential encryption on Nano Server. The private key must be kept secure during transit.
+Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file (the development machine), exported with the private key then imported on the _Target Node_.
+This is the current method for implementing DSC credential encryption on Nano Server.
+The private key must be kept secure during transit.
 
 ## Configuration data
 

@@ -26,12 +26,12 @@ You can set three types of breakpoints in the Windows PowerShell debugging envir
 
 3.  **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
 
-Of these, in the [!INCLUDE[ise_2](../Token/ise_2_md.md)] debugging environment, only line breakpoints can be set by using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they are set from the Console Pane by using the [Set-PSBreakpoint [m2]](assetId:///88d2d9ad-17dc-44ae-99aa-f841125b9dc8) cmdlet. This section describes how you can perform debugging tasks in [!INCLUDE[ise_2](../Token/ise_2_md.md)] by using the menus where available, and perform a wider range of commands from the Console Pane by using scripting.
+Of these, in the [!INCLUDE[ise_2](../Token/ise_2_md.md)] debugging environment, only line breakpoints can be set by using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they are set from the Console Pane by using the [Set-PSBreakpoint [m2]](https://technet.microsoft.com/en-us/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) cmdlet. This section describes how you can perform debugging tasks in [!INCLUDE[ise_2](../Token/ise_2_md.md)] by using the menus where available, and perform a wider range of commands from the Console Pane by using scripting.
 
 ### To set a breakpoint
 A breakpoint can be set in a script only after it has been saved. Right\-click the line where you want to set a line breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to set a line breakpoint, and press **F9** or, on the **Debug** menu, click **Toggle Breakpoint**.
 
-The following script is an example of how you can set a variable breakpoint from the Console Pane by using the [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420) cmdlet.
+The following script is an example of how you can set a variable breakpoint from the Console Pane by using the [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) cmdlet.
 
 ```
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -41,7 +41,7 @@ set-psbreakpoint -script sample.ps1 -variable Server
 ### List all breakpoints
 Displays all breakpoints in the current [!INCLUDE[wps_1](../Token/wps_1_md.md)] session.
 
-On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](assetId:///0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
+On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
 
 ```
 # This command lists all breakpoints in the current session. 
@@ -49,7 +49,7 @@ get-psbreakpoint
 ```
 
 ### Remove a breakpoint
-Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [disabling](#bkmk_disable) it instead.  Right\-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
+Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [disabling](#bkmk_disable) it instead.  Right\-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
 
 ```
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -59,7 +59,7 @@ remove-psbreakpoint -id 2
 ### Remove All Breakpoints
 To remove all breakpoints defined in the current session, on the **Debug** menu, click **Remove All Breakpoints**.
 
-The following script is an example of how to remove all breakpoints from the Console Pane by using the [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
+The following script is an example of how to remove all breakpoints from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
 
 ```
 # This command deletes all of the breakpoints in the current session.
@@ -67,7 +67,7 @@ get-breakpoint | remove-breakpoint
 ```
 
 ### <a name="bkmk_disable"></a>Disable a Breakpoint
-Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable a specific line breakpoint, right\-click the line where you want to disable a breakpoint, and then click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press **F9** or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
+Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable a specific line breakpoint, right\-click the line where you want to disable a breakpoint, and then click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press **F9** or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ```
 # This command disables the breakpoint with breakpoint ID 0.
@@ -75,7 +75,7 @@ disable-psbreakpoint -id 0
 ```
 
 ### Disable All Breakpoints
-Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable all breakpoints in the current session, on the **Debug** menu, click **Disable all Breakpoints**. The following script is an example of how you can disable all breakpoints from the Console Pane by using the [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
+Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable all breakpoints in the current session, on the **Debug** menu, click **Disable all Breakpoints**. The following script is an example of how you can disable all breakpoints from the Console Pane by using the [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ```
 # This command disables all breakpoints in the current session. 
@@ -84,7 +84,7 @@ get-psbreakpoint | disable-psbreakpoint
 ```
 
 ### Enable a Breakpoint
-To enable a specific breakpoint, right\-click the line where you want to enable a breakpoint, and then click **Enable Breakpoint**. Or, click the line where you want to enable a breakpoint, and then press **F9** or, on the **Debug** menu, click **Enable Breakpoint**. The following script is an example of how you can enable specific breakpoints from the Console Pane by using the [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
+To enable a specific breakpoint, right\-click the line where you want to enable a breakpoint, and then click **Enable Breakpoint**. Or, click the line where you want to enable a breakpoint, and then press **F9** or, on the **Debug** menu, click **Enable Breakpoint**. The following script is an example of how you can enable specific breakpoints from the Console Pane by using the [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
 
 ```
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -92,7 +92,7 @@ enable-psbreakpoint -id 0, 1, 5
 ```
 
 ### Enable All Breakpoints
-To enable all breakpoints defined in the current session, on the **Debug** menu, click **Enable all Breakpoints**. The following script is an example of how you can enable all breakpoints from the Console Pane by using the [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
+To enable all breakpoints defined in the current session, on the **Debug** menu, click **Enable all Breakpoints**. The following script is an example of how you can enable all breakpoints from the Console Pane by using the [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
 
 ```
 # This command enables all breakpoints in the current session. 
@@ -101,7 +101,7 @@ get-psbreakpoint | enable-psbreakpoint
 ```
 
 ## <a name="bkmk_2"></a>How to manage a debugging session
-Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints](#bkmk_1) or [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420). After you start debugging, you cannot edit a script until you stop debugging. A script that has one or more breakpoints set is automatically saved before it is run.
+Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints](#bkmk_1) or [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). After you start debugging, you cannot edit a script until you stop debugging. A script that has one or more breakpoints set is automatically saved before it is run.
 
 ### To start debugging
 Press **F5** or, on the toolbar, click the **Run Script** icon, or on the **Debug** menu click **Run\/Continue**. The script runs until it encounters the first breakpoint. It pauses operation there and highlights the line on which it paused.
