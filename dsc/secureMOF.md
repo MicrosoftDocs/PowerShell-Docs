@@ -57,11 +57,11 @@ The easiest way to do that is to create the private key certificate on the **Tar
 The following example:
  1. creates a certificate on the **Target node**
  2. exports the public key certificate on the **Target node**.
- 3. imports the public key certificate into the root certificate store on the **Authoring node**.
-   - it must be added to the root store so that it will be trusted by the **Authoring node**.
+ 3. imports the public key certificate into the **my** certificate store on the **Authoring node**.
 
 ### On the Target Node: create and export the certificate
 ```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
 $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
 # export the public key certificate
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
@@ -69,30 +69,34 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.
 
-### On the Authoring Node: import the cert’s public key as a trusted root
+### On the Authoring Node: import the cert’s public key
 ```powershell
-# Import to the root store so that it is trusted
-Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
+# Import to the my store
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My > $null
 ```
 
 ## Creating the Certificate on the Authoring Node
 Alternately, the private key certificate can be created on the **Authoring Node**, exported with the **private key** as a PFX file and then imported on the **Target Node**.
-After exporting
 This is the current method for implementing DSC credential encryption on _Nano Server_.
 Although the PFX is secured with a password it should be kept secure during transit.
 The following example:
  1. creates a certificate on the **Authoring node**.
  2. exports the certificate including the private key on the **Authoring node**.
-   - the Private key (not the certificate) could be deleted from the **Authoring node** at this point, but it is not included in the instructions.
- 3. imports the private key certificate into the root certificate store on the **Target node**.
+ 3. removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.
+ 4. imports the private key certificate into the root certificate store on the **Target node**.
    - it must be added to the root store so that it will be trusted by the **Target node**.
 
 ### On the Auhtoring Node: create and export the certificate
 ```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
 $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert'
 # export the private key certificate
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
-$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the pulbic key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My > $null
 ```
 
 Once exported, the ```DscPrivateKey.cer``` would need to be copied to the **Target Node**.
@@ -107,7 +111,7 @@ Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation
 Note: If your target node is a _Nano Server_, you should use the CertOC.exe application to import the private key certificate because the ```Import-PfxCertificate``` cmdlet is not available.
 ```powershell
 # Import to the root store so that it is trusted
-certoc.exe -ImportPFX -p YOUR_PFX_PASSWD My c:\temp\DscPrivateKey.pfx
+certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
 ```
 
 
