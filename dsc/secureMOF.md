@@ -52,6 +52,8 @@ Any existing certificate on the _Target Node_ that meets these criteria can be u
 
 ## Certificate creation
 
+There are two approaches you can take to create and use the required Encryption Certificate (public-private key pair).
+
 1. Create it on the **Target Node** and export just the public key to the **Authoring Node**
 2. Create it on the **Authoring Node** and export the entire key pair to the **Target Node**
 
