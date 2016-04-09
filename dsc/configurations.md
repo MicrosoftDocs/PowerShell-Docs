@@ -117,4 +117,4 @@ Once these modules have been placed in `$env:PSModulePath` and are properly reco
 ## See Also
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
 * [DSC Resources](resources.md)
-* [Configuring The Local Configuration Manager](metaconfig.md)
+* [Configuring The Local Configuration Manager](metaConfig.md)
