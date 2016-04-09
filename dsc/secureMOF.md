@@ -57,7 +57,7 @@ There are two approaches you can take to create and use the required Encryption 
 1. Create it on the **Target Node** and export just the public key to the **Authoring Node**
 2. Create it on the **Authoring Node** and export the entire key pair to the **Target Node**
 
-Method 1 is recommended because the private key used to decrypt credentials in the mof stays on the Target Node at all times.
+Method 1 is recommended because the private key used to decrypt credentials in the MOF stays on the Target Node at all times.
 
 
 ### Creating the Certificate on the Target Node
