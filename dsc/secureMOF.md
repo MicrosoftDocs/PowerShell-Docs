@@ -206,7 +206,7 @@ Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 This example would push the DSC configuration to the target node.
 The DSC configuration can also be applied using a DSC Pull Server if one is available.
 
-See [this page](PullClient.md) for more information on applying DSC configurations using a DSC Pull Server.
+See [Setting up a DSC pull client](pullClient.md) for more information on applying DSC configurations using a DSC Pull Server.
 
 ## Credential Encryption Module Example
 
