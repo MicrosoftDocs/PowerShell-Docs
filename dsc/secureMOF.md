@@ -49,33 +49,81 @@ This public key certificate has specific requirements for it to be used for DSC 
 >EKUs.
   
 Any existing certificate on the _Target Node_ that meets these criteria can be used to secure DSC credentials.
- 
-## Creating the Certificate
 
-The private key must be kept secret, because it is used to decrypt the MOF.
-The easiest way to do that is to create the private key certificate on the *Target Node*, and copy the public key certificate to the computer being used to compile the DSC configuration into a MOF file.
+## Certificate creation
+
+There are two approaches you can take to create and use the required Encryption Certificate (public-private key pair).
+
+1. Create it on the **Target Node** and export just the public key to the **Authoring Node**
+2. Create it on the **Authoring Node** and export the entire key pair to the **Target Node**
+
+Method 1 is recommended because the private key used to decrypt credentials in the MOF stays on the Target Node at all times.
+
+
+### Creating the Certificate on the Target Node
+
+The private key must be kept secret, because is used to decrypt the MOF on the **Target Node**
+The easiest way to do that is to create the private key certificate on the **Target Node**, and copy the **public key certificate** to the computer being used to author the DSC configuration into a MOF file.
 The following example:
- 1. creates a certificate on the DSC Node.
- 2. exports the public key on the DSC Node.
- 3. imports the public key certificate into the root certificate store on the compiling machine.
-   - it must be added to the root store so that it will be trusted by the compiling machine.
+ 1. creates a certificate on the **Target node**
+ 2. exports the public key certificate on the **Target node**.
+ 3. imports the public key certificate into the **my** certificate store on the **Authoring node**.
 
-### On the DSC Node: create and export the certificate
+#### On the Target Node: create and export the certificate
 ```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
 $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
-# export the cert’s public key
-$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force
+# export the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-### On the Compiling Machine: import the cert’s public key as a trusted root
+Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.
+
+#### On the Authoring Node: import the cert’s public key
 ```powershell
-# certificate authority so that it is trusted
-Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
+# Import to the my store
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-Alternately, the private key certificate can be created on the computer being used to compile the DSC configuration file (the development machine), exported with the private key then imported on the _Target Node_.
-This is the current method for implementing DSC credential encryption on Nano Server.
-The private key must be kept secure during transit.
+### Creating the Certificate on the Authoring Node
+Alternately, the encryption certificate can be created on the **Authoring Node**, exported with the **private key** as a PFX file and then imported on the **Target Node**.
+This is the current method for implementing DSC credential encryption on _Nano Server_.
+Although the PFX is secured with a password it should be kept secure during transit.
+The following example:
+ 1. creates a certificate on the **Authoring node**.
+ 2. exports the certificate including the private key on the **Authoring node**.
+ 3. removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.
+ 4. imports the private key certificate into the root certificate store on the **Target node**.
+   - it must be added to the root store so that it will be trusted by the **Target node**.
+
+#### On the Authoring Node: create and export the certificate
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert'
+# export the private key certificate
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
+```
+
+Once exported, the ```DscPrivateKey.cer``` would need to be copied to the **Target Node**.
+
+#### On the Target Node: import the cert’s private key as a trusted root
+```powershell
+# Import to the root store so that it is trusted
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
+```
+
+Note: If your target node is a _Nano Server_, you should use the CertOC.exe application to import the private key certificate because the ```Import-PfxCertificate``` cmdlet is not available.
+```powershell
+# Import to the root store so that it is trusted
+certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
+```
+
 
 ## Configuration data
 
