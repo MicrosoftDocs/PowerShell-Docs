@@ -92,18 +92,19 @@ A useful DSC keyword is __DependsOn__. Typically (though not necessarily always)
 
 ```powershell
 Configuration DependsOnExample {
-	Node Test-PC1 {
-		Group GroupExample {
-			Ensure = "Present"
-			GroupName = "TestGroup"
-		}
+    Node Test-PC1 {
+        Group GroupExample {
+            Ensure = "Present"
+            GroupName = "TestGroup"
+        }
 
-		User UserExample {
-			Ensure = "Present"
-			FullName = "TestUser"
-			DependsOn = "GroupExample"
-		}
-	}
+        User UserExample {
+            Ensure = "Present"
+            UserName = "TestUser"
+            FullName = "TestUser"
+            DependsOn = "[Group]GroupExample"
+        }
+    }
 }
 ```
 

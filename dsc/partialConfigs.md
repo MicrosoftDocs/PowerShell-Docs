@@ -131,7 +131,7 @@ configuration PartialConfigDemo
            PartialConfiguration SharePointConfig
         {
             Description = 'Configuration for the Sharepoint Server'
-            DependsOn = [PartialConfiguration]OSInstall
+            DependsOn = '[PartialConfiguration]OSInstall'
             RefreshMode = 'Push'
         }
     }
