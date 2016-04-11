@@ -1,1 +1,0 @@
-Windows PowerShell 2.0
