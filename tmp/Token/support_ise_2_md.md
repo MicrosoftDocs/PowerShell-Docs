@@ -1,0 +1,1 @@
+ This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE. 
