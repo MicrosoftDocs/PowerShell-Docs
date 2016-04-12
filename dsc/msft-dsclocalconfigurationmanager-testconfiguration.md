@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Send the configuration document to the managed node and test it against the current configuration.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_testconfiguration'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_testconfiguration'
 MSHAttr: 'PreferredLib:/library'
-title: 'TestConfiguration method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'TestConfiguration method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# TestConfiguration method of the MSFT\_DSCLocalConfigurationManager class
+# TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Send the configuration document to the managed node and test it against the current configuration.
+Sends the configuration document to the managed node and verifies the current configuration against the document.
 
 Syntax
 ------
@@ -29,54 +26,38 @@ Parameters
 ----------
 
 *configurationData* \[in\]  
-TBD
+Environment data for the confuguration.
 
 *InDesiredState* \[out\]  
-TBD
+On return, specifies whether the managed node is in the state specified by the configuration document.
 
 *ResourcesInDesiredState* \[out\]  
-TBD
+On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.
 
 *ResourcesNotInDesiredState* \[out\]  
-TBD
+On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.
 
-Return value
+## Return value
 ------------
 
-TBD
+Returns zero on success; otherwise returns an error code.
 
-Requirements
+## Remarks
+
+This is a static method.
+
+## Requirements
 ------------
+>**MOF:** DscCore.mof
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Minimum supported client</p></td>
-<td align="left"><p>Windows 10</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Minimum supported server</p></td>
-<td align="left"><p>Windows Server 2016 Technical Preview</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Namespace</p></td>
-<td align="left"><p>Root\Microsoft\Windows\DesiredStateConfiguration</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>MOF</p></td>
-<td align="left">DscCore.mof</td>
-</tr>
-</tbody>
-</table>
-
-## <span id="see_also"></span>See also
+>**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## See also
+
+
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+
 
  
 

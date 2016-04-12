@@ -1,12 +1,12 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Disable Debug DSC Configuration.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_disabledebugconfiguration'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_disabledebugconfiguration'
 MSHAttr: 'PreferredLib:/library'
-title: 'DisableDebugConfiguration method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# DisableDebugConfiguration method of the MSFT\_DSCLocalConfigurationManager class
+# DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
 Disables DSC resource debugging.
 
@@ -21,6 +21,9 @@ Parameters
 ----------
 
 This method has no parameters.
+
+## Return value
+------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -38,7 +41,7 @@ This is a static method.
 ## See also
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
 
  
 

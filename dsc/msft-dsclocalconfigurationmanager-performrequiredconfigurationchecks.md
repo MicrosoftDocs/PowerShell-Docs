@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Starts the consistency check.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_performrequiredconfigurationchecks'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_performrequiredconfigurationchecks'
 MSHAttr: 'PreferredLib:/library'
-title: 'PerformRequiredConfigurationChecks method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# PerformRequiredConfigurationChecks method of the MSFT\_DSCLocalConfigurationManager class
+# PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Starts the consistency check.
+Starts a consistency check by using the Task Scheduler.
 
 Syntax
 ------
@@ -26,45 +23,36 @@ Parameters
 ----------
 
 *Flags* \[in\]  
-TBD
+A bitmask that specifies the type of consistency check to run. The following values are valid, and can be combined by using a bitwise **OR** operation:
 
-Return value
+|Value |Description |
+|:--- |:---|
+|**1** | A normal consistency check. |
+|**2** | A continuation of a consistency check after a reboot. This value should not be combined with other values. |
+|**4** | The configuration should be pulled from the pull server specified in the metaconfiguration for the node. This value should always be combined with **1**, for a value of **5**. |
+|**8** | Send status to the report server. |
+
+## Return value
 ------------
 
-TBD
+Returns zero on success; otherwise returns an error code.
 
-Requirements
+## Remarks
+
+This is a static method.
+
+## Requirements
 ------------
+>**MOF:** DscCore.mof
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Minimum supported client</p></td>
-<td align="left"><p>Windows 10</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Minimum supported server</p></td>
-<td align="left"><p>Windows Server 2016 Technical Preview</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Namespace</p></td>
-<td align="left"><p>Root\Microsoft\Windows\DesiredStateConfiguration</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>MOF</p></td>
-<td align="left">DscCore.mof</td>
-</tr>
-</tbody>
-</table>
-
-## <span id="see_also"></span>See also
+>**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## See also
+
+
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+
 
  
 

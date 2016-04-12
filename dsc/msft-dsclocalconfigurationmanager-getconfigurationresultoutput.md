@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Retrieve the Configuration Agent output relating to a specific job.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_getconfigurationresultoutput'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationresultoutput'
 MSHAttr: 'PreferredLib:/library'
-title: 'GetConfigurationResultOutput method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# GetConfigurationResultOutput method of the MSFT\_DSCLocalConfigurationManager class
+# GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Retrieve the Configuration Agent output relating to a specific job.
+Gets the Configuration Agent output associated with a specific job.
 
 Syntax
 ------
@@ -28,13 +25,16 @@ Parameters
 ----------
 
 *jobId* \[in\]  
-TBD
+The ID of the job for which to get output data.
 
 *resumeOutputBookmark* \[in\]  
-TBD
+Specifies that the output should be a continuation from a previous bookmark.
 
 *output* \[out\]  
-TBD
+The output for the specified job.
+
+## Return value
+------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -52,7 +52,7 @@ This is a static method.
 ## See also
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
 
  
 

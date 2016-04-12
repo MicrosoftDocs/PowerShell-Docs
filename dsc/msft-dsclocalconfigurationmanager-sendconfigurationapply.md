@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Send the configuration document to the managed node and use Configuration Agent to apply the configuration.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_sendconfigurationapply'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfigurationapply'
 MSHAttr: 'PreferredLib:/library'
-title: 'SendConfigurationApply method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# SendConfigurationApply method of the MSFT\_DSCLocalConfigurationManager class
+# SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Send the configuration document to the managed node and use Configuration Agent to apply the configuration.
+Sends the configuration document to the managed node and uses the Configuration Agent to apply the configuration.
 
 Syntax
 ------
@@ -27,48 +24,32 @@ Parameters
 ----------
 
 *ConfigurationData* \[in\]  
-TBD
+The environment data for the configuration.
 
 *force* \[in\]  
-TBD
+**true** to force the configuration to stop.
 
-Return value
+## Return value
 ------------
 
-TBD
+Returns zero on success; otherwise returns an error code.
 
-Requirements
+## Remarks
+
+This is a static method.
+
+## Requirements
 ------------
+>**MOF:** DscCore.mof
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Minimum supported client</p></td>
-<td align="left"><p>Windows 10</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Minimum supported server</p></td>
-<td align="left"><p>Windows Server 2016 Technical Preview</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Namespace</p></td>
-<td align="left"><p>Root\Microsoft\Windows\DesiredStateConfiguration</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>MOF</p></td>
-<td align="left">DscCore.mof</td>
-</tr>
-</tbody>
-</table>
-
-## <span id="see_also"></span>See also
+>**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## See also
+
+
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+
 
  
 

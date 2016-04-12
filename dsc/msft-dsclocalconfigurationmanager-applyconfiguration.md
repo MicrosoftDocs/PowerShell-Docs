@@ -40,7 +40,7 @@ This is a static method.
 ## See also
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
 
  
 

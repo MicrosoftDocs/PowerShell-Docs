@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Execute Get on a provider directly.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_resourceget'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceget'
 MSHAttr: 'PreferredLib:/library'
-title: 'ResourceGet method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'ResourceGet method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# ResourceGet method of the MSFT\_DSCLocalConfigurationManager class
+# ResourceGet method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Execute Get on a provider directly
+Directly calls the **Get** method of a DSC resource.
 
 Syntax
 ------
@@ -29,54 +26,39 @@ Parameters
 ----------
 
 *ResourceType* \[in\]  
-TBD
+The name of the resource to call.
 
 *ModuleName* \[in\]  
-TBD
+The name of the module that contains the resource to call.
 
 *resourceProperty* \[in\]  
-TBD
+Specifies the resource property name and its value in a hash table as key and value, respectively. Use the
+[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet to discover resource properties and their types.
 
 *configurations* \[out\]  
-TBD
+On return, contains an embedded instance of the configurations.
 
-Return value
+## Return value
 ------------
 
-TBD
+Returns zero on success; otherwise returns an error code.
 
-Requirements
+## Remarks
+
+This is a static method.
+
+## Requirements
 ------------
+>**MOF:** DscCore.mof
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Minimum supported client</p></td>
-<td align="left"><p>Windows 10</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Minimum supported server</p></td>
-<td align="left"><p>Windows Server 2016 Technical Preview</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Namespace</p></td>
-<td align="left"><p>Root\Microsoft\Windows\DesiredStateConfiguration</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>MOF</p></td>
-<td align="left">DscCore.mof</td>
-</tr>
-</tbody>
-</table>
-
-## <span id="see_also"></span>See also
+>**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## See also
+
+
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+
 
  
 

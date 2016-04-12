@@ -1,17 +1,14 @@
 ---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Send the configuration document to the managed node and use Configuration Agent to apply the configuration using the Get method.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_getconfiguration'
+MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfiguration'
 MSHAttr: 'PreferredLib:/library'
-title: 'GetConfiguration method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'GetConfiguration method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# GetConfiguration method of the MSFT\_DSCLocalConfigurationManager class
+# GetConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Send the configuration document to the managed node and use Configuration Agent to apply the configuration using the Get method.
+Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.
 
 Syntax
 ------
@@ -27,10 +24,13 @@ Parameters
 ----------
 
 *configurationData* \[in\]  
-TBD
+Specifies the configuration data to send.
 
 *configurations* \[out\]  
-TBD
+On return, contains an embedded instance of the configurations.
+
+## Return value
+------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -48,7 +48,7 @@ This is a static method.
 ## See also
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
  
 
  

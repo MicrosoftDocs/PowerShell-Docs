@@ -3,15 +3,12 @@ DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Enable Debug DSC Configuration.'
 MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_enabledebugconfiguration'
 MSHAttr: 'PreferredLib:/library'
-title: 'EnableDebugConfiguration method of the MSFT\_DSCLocalConfigurationManager class'
+title: 'EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
-# EnableDebugConfiguration method of the MSFT\_DSCLocalConfigurationManager class
+# EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
-Enable Debug DSC Configuration.
+Enables DSC resource debugging.
 
 Syntax
 ------
@@ -26,7 +23,10 @@ Parameters
 ----------
 
 *BreakAll* \[in\]  
-TBD
+Sets a breakpoint at every line in the resource script.
+
+## Return value
+------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -44,7 +44,7 @@ This is a static method.
 ## See also
 
 
-[**MSFT\_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
  
 
  
