@@ -57,5 +57,27 @@
 ### [nxSshAuthorizedKeys Resource](lnxSshAuthorizedKeysResource.md)
 ### [nxUser Resource](lnxUserResource.md)
 
+# DSC MOF Reference
+## [MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager.md)
+### [ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-applyconfiguration.md)
+### [DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
+### [EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
+### [GetConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-getconfiguration.md)
+### [GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
+### [GetConfigurationStatus method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)
+### [GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)
+### [PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)
+### [RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-removeconfiguration.md)
+### [ResourceGet method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-resourceget.md)
+### [ResourceSet method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-resourceset.md)
+### [ResourceTest method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-resourcetest.md)
+### [RollBack method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-rollback.md)
+### [SendConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-sendconfiguration.md)
+### [SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
+### [SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
+### [SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
+### [StopConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-stopconfiguration.md)
+### [TestConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-testconfiguration.md)
+
 # More Resources
 ## [Whitepapers](whitepapers.md)
