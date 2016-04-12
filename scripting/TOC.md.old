@@ -1,12 +1,4 @@
-# [PowerShell Scripting](./PowerShell Scripting.md)
-## [What's new with PowerShell](./What-s-New-With-PowerShell.md)
-### [PowerShell v5.0](./New-PowerShell-V50.md)
-## [Setup](./Setup.md)
-
-
-
-
-
+# [Getting Started with Windows PowerShell](Topic/Getting-Started-with-Windows-PowerShell.md)
 ## [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)
 ## [Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
 ### [Installing the Windows PowerShell 2.0 Engine](Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
