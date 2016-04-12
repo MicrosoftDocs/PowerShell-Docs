@@ -1,16 +1,17 @@
 # [PowerShell Scripting](./PowerShell Scripting.md)
 ## [What's new with PowerShell](./What-s-New-With-PowerShell.md)
-### [PowerShell v5.0](./New-PowerShell-V50.md)
+### [PowerShell v5.0](./What-s-New-in-Windows-PowerShell-50.md)
+### [PowerShell 5.0 ISE](./What-s-New-in-the-PowerShell-50-ISE.md)
 ## [Setup](./Setup.md)
-
-
-
-
-
-## [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)
-## [Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
-### [Installing the Windows PowerShell 2.0 Engine](Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
+### [Windows PowerShell System Requirements](./Windows-PowerShell-System-Requirements.md)
+### [Installing Windows PowerShell](./Installing-Windows-PowerShell.md)
+### [Installing the Windows PowerShell 2.0 Engine](./Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+## [Getting Started](./getting-started.md)
+
+
+
+
 ### [Getting Ready to Use Windows PowerShell](Topic/Getting-Ready-to-Use-Windows-PowerShell.md)
 ### [Starting Windows PowerShell](Topic/Starting-Windows-PowerShell.md)
 #### [Starting Windows PowerShell on Earlier Versions of Windows](Topic/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
@@ -75,8 +76,6 @@
 #### [Working with Registry Keys](Topic/Working-with-Registry-Keys.md)
 #### [Working with Registry Entries](Topic/Working-with-Registry-Entries.md)
 #### [Running Remote Commands](Topic/Running-Remote-Commands.md)
-## [What's New in Windows PowerShell 5](Topic/What-s-New-in-Windows-PowerShell.md)
 ### [Compatibility Aliases](Topic/Appendix-1---Compatibility-Aliases.md)
 ### [Creating a Custom PowerShell Shortcut](Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
-## [What's New in the Windows PowerShell ISE](Topic/What-s-New-in-the-Windows-PowerShell-ISE.md)
 ## [Windows PowerShell Glossary](Topic/Windows-PowerShell-Glossary.md)
