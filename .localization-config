@@ -1,25 +1,6 @@
 {  
-   "filters":[  
-      {  
-         "files":[  
-            "**/*.md"
-         ],
-         "priorities":[  
-            {  
-               "priority":"ht",
-               "locales":[  
-                  "pt-br; de-de"
-               ]
-            },
-            {  
-               "priority":"High",
-               "locales":[  
-                  "zh-cn"
-               ]
-            }
-         ]
-      }
-   ],
+  "locales": ["de-de", "zh-cn", "zh-tw", "pt-br", "vi-vn", "fr-fr", "es-es", "ko-kr", "ja-jp" ],
+  "files":[ "**/*.md", "**/**/*.md"],
    "includeDependencies":true,
    "autoPush":true,
    "xliffVersion":"1.2"
