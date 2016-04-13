@@ -37,7 +37,7 @@ PartialConfigDemo
 The **RefreshMode** for each partial configuration is set to "Push". The names of the **PartialConfiguration** blocks (in this case, "OSInstall" and "SharePointConfig") must match exactly the names of the configurations that are pushed to the target node.
 
 ### Publishing and starting push-mode partial configurations
-![PartialConfig folder structure](./images/PartialConfig1.jpg)
+![PartialConfig folder structure](./images/Pull.png)
 
 You then call **Publish-DSCConfiguration** for each configuration, passing the folders that contain the configuration documents as the Path parameters. After publishing both configurations, you can call `Start-DSCConfiguration –UseExisting` on the target node.
 
