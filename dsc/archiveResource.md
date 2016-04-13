@@ -1,4 +1,4 @@
-# DSC Archive Resource Version 1
+# DSC Archive Resource Version 2
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
