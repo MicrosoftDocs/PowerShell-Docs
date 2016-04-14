@@ -78,7 +78,7 @@ configuration PartialConfigDemo
         {
             Description = 'Configuration for the Sharepoint Server'
             ConfigurationSource = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            DependsOn = [PartialConfiguration]OSInstall
+            DependsOn = '[PartialConfiguration]OSInstall'
             RefreshMode = 'Pull'
         }
     }
