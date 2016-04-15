@@ -92,8 +92,8 @@ An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script f
 . .\New-SelfSignedCertificateEx.ps1
 New-SelfsignedCertificateEx `
     -Subject "CN=${ENV:ComputerName}" `
-    -EKU 'Document Encryption','Server Authentication','Client Authentication' `
-    -KeyUsage 'DigitalSignature, KeyEncipherment, DataEncipherment' `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
     -SAN ${ENV:ComputerName} `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
@@ -159,8 +159,8 @@ An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script f
 . .\New-SelfSignedCertificateEx.ps1
 New-SelfsignedCertificateEx `
     -Subject "CN=${ENV:ComputerName}" `
-    -EKU 'Document Encryption','Server Authentication','Client Authentication' `
-    -KeyUsage 'DigitalSignature, KeyEncipherment, DataEncipherment' `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
     -SAN ${ENV:ComputerName} `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
