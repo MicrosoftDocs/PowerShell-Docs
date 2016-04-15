@@ -1,4 +1,4 @@
-# [PowerShell Scripting](./PowerShell Scripting.md)
+# [PowerShell Scripting](./PowerShell-Scripting.md)
 ## [What's new with PowerShell](./What-s-New-With-PowerShell.md)
 ### [PowerShell v5.0](./What-s-New-in-Windows-PowerShell-50.md)
 ### [PowerShell 5.0 ISE](./What-s-New-in-the-PowerShell-50-ISE.md)
