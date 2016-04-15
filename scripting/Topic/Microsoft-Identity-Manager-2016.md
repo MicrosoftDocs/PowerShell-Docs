@@ -15,7 +15,7 @@ This topic lists the Windows PowerShell® modules included with Microsoft Identi
 
 |Module|Version|
 |----------|-----------|
-|[Microsoft Identity Manager (MIM) Privileged Access Management (PAM) Administrator](assetId:///a821a0a5-e511-4606-a532-cc8d813b1758)|2016|
+|[Microsoft Identity Manager (MIM) Privileged Access Management (PAM) Administrator](https://technet.microsoft.com/en-us/library/a821a0a5-e511-4606-a532-cc8d813b1758)|2016|
 
 [!INCLUDE[ps_cmdlet_help](../Token/ps_cmdlet_help_md.md)]
 

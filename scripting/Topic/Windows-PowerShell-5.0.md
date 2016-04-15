@@ -20,7 +20,7 @@ The table below also shows the latest published version of the Help for each mod
 |Module Name|Title and Link to Web Version|Latest Version|
 |---------------|---------------------------------|------------------|
 |Microsoft.PowerShell.Archive|[Microsoft.PowerShell.Archive Module](../Topic/Microsoft.PowerShell.Archive-Module.md)|5.0.1.0|
-|Microsoft.PowerShell.Core|[Windows PowerShell Core Cmdlet Help Topics](assetId:///416b758e-e714-407f-bb6e-4d4e9112be95)|5.0.1.0|
+|Microsoft.PowerShell.Core|[Windows PowerShell Core Cmdlet Help Topics](https://technet.microsoft.com/en-us/library/416b758e-e714-407f-bb6e-4d4e9112be95)|5.0.1.0|
 |Microsoft.PowerShell.Diagnostics|[Windows PowerShell Diagnostic Cmdlets](http://technet.microsoft.com/library/792C093D-2DAA-4A9D-96CF-A30A9A9595B4)|5.0.1.0|
 |Microsoft.PowerShell.Host|[Windows PowerShell Host Cmdlets](http://technet.microsoft.com/library/E1957183-3E3C-481F-B604-F58550D42C4C)|5.0.1.0|
 |Microsoft.PowerShell.Management|[Windows PowerShell Management Cmdlets](http://technet.microsoft.com/library/A7DCE904-3284-4CBD-8AF4-9B660E0F8CF4)|5.0.1.0|

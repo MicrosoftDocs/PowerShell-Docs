@@ -19,5 +19,5 @@ The table below also shows the latest published version of the Help for each mod
 
 |Module Name|Title and Link to Web Version|Latest Version|
 |---------------|---------------------------------|------------------|
-|Operations Manager|[Operations Manager Cmdlets](assetId:///984e0027-f0a2-4e5e-b45c-2c47fa136f46)|5.0.0.0|
+|Operations Manager|[Operations Manager Cmdlets](https://technet.microsoft.com/en-us/library/984e0027-f0a2-4e5e-b45c-2c47fa136f46)|5.0.0.0|
 

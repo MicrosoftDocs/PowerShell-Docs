@@ -12,10 +12,10 @@ ms.assetid: f16d306b-a30a-45b3-a585-c450ad7ba93b
 ## Windows Server 2016 Technical Preview and Windows 10
 This topic lists the [!INCLUDE[wps_1](../Token/wps_1_md.md)] modules included with [!INCLUDE[winthreshold_server_1](../Token/winthreshold_server_1_md.md)] and [!INCLUDE[winthreshold_client_1](../Token/winthreshold_client_1_md.md)]. The [!INCLUDE[wps_2](../Token/wps_2_md.md)] modules in the list support automating the features of those versions of the Windows operating system and provide links to the cmdlet references for each module. These modules enable you to use [!INCLUDE[wps_2](../Token/wps_2_md.md)] to administer, maintain, configure, and develop new features for [!INCLUDE[winthreshold_server_2](../Token/winthreshold_server_2_md.md)] and [!INCLUDE[winthreshold_client_2](../Token/winthreshold_client_2_md.md)].
 
-For information about the core features common to all versions of [!INCLUDE[wps_2](../Token/wps_2_md.md)], see [Windows PowerShell Core Cmdlets [cmdlet stub]](assetId:///37928ddd-44cd-40d5-8c96-f58e8e327ecf).
+For information about the core features common to all versions of [!INCLUDE[wps_2](../Token/wps_2_md.md)], see [Windows PowerShell Core Cmdlets [cmdlet stub]](https://technet.microsoft.com/en-us/library/37928ddd-44cd-40d5-8c96-f58e8e327ecf).
 
 ### Windows Server 2016 Technical Preview and Windows 10
-The table below also shows the latest published version of the Help for each module. The Help is available in the TechNet Library through the links below, or as Updatable Help files. Updatable Help was introduced with [!INCLUDE[psversion3](../Token/psversion3_md.md)] and enables you to have the latest Help topics available locally on your computer. For more information, see [about_Updatable_Help](assetId:///10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+The table below also shows the latest published version of the Help for each module. The Help is available in the TechNet Library through the links below, or as Updatable Help files. Updatable Help was introduced with [!INCLUDE[psversion3](../Token/psversion3_md.md)] and enables you to have the latest Help topics available locally on your computer. For more information, see [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
 
 |Module name|Title and link to Web version|
 |---------------|---------------------------------|

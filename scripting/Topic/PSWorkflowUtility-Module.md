@@ -15,13 +15,13 @@ This section contains the help topics for the **PSWorkflowUtility** module, whic
 
 [PSWorkflow Module](../Topic/PSWorkflow-Module.md)
 
-[about_Workflows](assetId:///f2897bdd-1b9d-4679-8b19-09840bd40a22)
+[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
-[about_WorkflowCommonParameters](assetId:///119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
 ## See Also
-[Introducing Windows PowerShell Workflow](assetId:///35b33701-fe36-4c85-a1db-3c89093cb592)
-[Writing a Windows PowerShell Workflow](assetId:///2551ceed-836f-4275-9fc0-ea68446d6a35)
+[Introducing Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/35b33701-fe36-4c85-a1db-3c89093cb592)
+[Writing a Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
 [Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
 [Windows PowerShell Core About Topics](../Topic/Windows-PowerShell-Core-About-Topics.md)
 [Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)

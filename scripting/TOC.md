@@ -7,8 +7,11 @@
 ### [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 ### [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
-## [Getting Started](getting-started.md)
-
+## [Getting Started](Getting-Started-with-Windows-PowerShell.md)
+### [Basic Setup](basic-setup.md)
+### [Fundamental Concepts](fundamental-concepts.md)
+### [Basic Cookbooks](basic-cookbooks.md)
+### [Where can I go for more learning](more-basic-learning.md)
 
 
 
