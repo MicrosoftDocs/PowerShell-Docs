@@ -1,13 +1,13 @@
-# [PowerShell Scripting](./PowerShell-Scripting.md)
-## [What's new with PowerShell](./What-s-New-With-PowerShell.md)
-### [PowerShell v5.0](./What-s-New-in-Windows-PowerShell-50.md)
-### [PowerShell 5.0 ISE](./What-s-New-in-the-PowerShell-50-ISE.md)
-## [Setup](./Setup.md)
-### [Windows PowerShell System Requirements](./Windows-PowerShell-System-Requirements.md)
-### [Installing Windows PowerShell](./Installing-Windows-PowerShell.md)
-### [Installing the Windows PowerShell 2.0 Engine](./Installing-the-Windows-PowerShell-2.0-Engine.md)
+# [PowerShell Scripting](PowerShell-Scripting.md)
+## [What's new with PowerShell](What-s-New-With-PowerShell.md)
+### [PowerShell v5.0](What-s-New-in-Windows-PowerShell-50.md)
+### [PowerShell 5.0 ISE](What-s-New-in-the-PowerShell-50-ISE.md)
+## [Setup](Setup.md)
+### [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+### [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+### [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
-## [Getting Started](./getting-started.md)
+## [Getting Started](getting-started.md)
 
 
 
