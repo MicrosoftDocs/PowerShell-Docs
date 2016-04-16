@@ -1,4 +1,4 @@
-# Troubleshooting DSC
+# Troubleshooting DSC222
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
