@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 ---
 # Other Useful Scripting Objects
-  The following objects provide additional scripting functionality in [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)]. They are not part of the **$psISE** hierarchy.
+  The following objects provide additional scripting functionality in Windows PowerShell ISE. They are not part of the **$psISE** hierarchy.
 
 ## Useful Scripting objects
 
 ### $psUnsupportedConsoleApplications
- There are some limitations on how [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] interacts with console applications. A command or an automation script that requires user intervention might not work the way it works from the [!INCLUDE[psconsole](../Token/psconsole_md.md)]. You might want to block these commands or scripts from running in the [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] Command pane. The **$psUnsupportedConsoleApplications** object keeps a list of such commands. If you try to run the commands in this list, you get a message that they are not supported. The following script adds an entry to the list.
+ There are some limitations on how Windows PowerShell ISE interacts with console applications. A command or an automation script that requires user intervention might not work the way it works from the Windows PowerShell console. You might want to block these commands or scripts from running in the Windows PowerShell ISE Command pane. The **$psUnsupportedConsoleApplications** object keeps a list of such commands. If you try to run the commands in this list, you get a message that they are not supported. The following script adds an entry to the list.
 
 ```
 # List the unsupported commands

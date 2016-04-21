@@ -8,39 +8,39 @@ ms.topic: article
 ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
 ---
 # The ObjectModelRoot Object
-  The **$psISE** object, which is the principal root object in [!INCLUDE[ise_1](../Token/ise_1_md.md)] is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This topic describes the properties of the **ObjectModelRoot** object.
+  The **$psISE** object, which is the principal root object in Windows PowerShellÂ® Integrated Scripting Environment (ISE) is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This topic describes the properties of the **ObjectModelRoot** object.
 
 ## Properties
 
 ### CurrentFile
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the file, which is associated with this host object that currently has the focus.
 
 ### CurrentPowerShellTab
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the PowerShell tab that has the focus.
 
 ### CurrentVisibleHorizontalTool
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the currently visible [!INCLUDE[ise_2](../Token/ise_2_md.md)] add\-on tool that is located in the horizontal tool pane at the bottom of the editor.
+ The read\-only property that gets the currently visible Windows PowerShell ISE add\-on tool that is located in the horizontal tool pane at the bottom of the editor.
 
 ### CurrentVisibleVerticalTool
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the currently visible [!INCLUDE[ise_2](../Token/ise_2_md.md)] add\-on tool that is located in the vertical tool pane on the right side of the editor.
+ The read\-only property that gets the currently visible Windows PowerShell ISE add\-on tool that is located in the vertical tool pane on the right side of the editor.
 
 ### Options
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the various options that can change settings in [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+ The read\-only property that gets the various options that can change settings in Windows PowerShell ISE.
 
 ### PowerShellTabs
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the collection of the PowerShell tabs, which are open in [!INCLUDE[ise_2](../Token/ise_2_md.md)]. By default, this object contains one PowerShell tab. However, you can add more PowerShell tabs to this object by using scripts or by using the menus in [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+ The read\-only property that gets the collection of the PowerShell tabs, which are open in Windows PowerShell ISE. By default, this object contains one PowerShell tab. However, you can add more PowerShell tabs to this object by using scripts or by using the menus in Windows PowerShell ISE.
 
 ## See Also
  [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 

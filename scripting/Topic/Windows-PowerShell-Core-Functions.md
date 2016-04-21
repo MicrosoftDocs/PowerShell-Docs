@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 386c957f-7616-4d9e-89d6-28cad0745c44
 ---
 # Windows PowerShell Core Functions
-This section contains the help topics for the advanced functions in the **Microsoft.PowerShell.Core** module. The **Microsoft.PowerShell.Core** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the advanced functions in the **Microsoft.PowerShell.Core** module. The **Microsoft.PowerShell.Core** module is installed with Windows PowerShell.
 
 This section includes:
 

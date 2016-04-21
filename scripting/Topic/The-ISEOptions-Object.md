@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
 # The ISEOptions Object
-  The **ISEOptions** object represents various settings for [!INCLUDE[ise_2](../Token/ise_2_md.md)]. It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.
+  The **ISEOptions** object represents various settings for Windows PowerShell ISE. It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.
 
  The **ISEOptions** object provides the following methods and properties.
 
@@ -107,7 +107,7 @@ ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ## Methods
 
 ###  <a name="rdctc"></a> RestoreDefaultConsoleTokenColors\(\)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Restores the default values of the token colors in the Console pane.
 
@@ -118,7 +118,7 @@ $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
 ###  <a name="rd"></a> RestoreDefaults\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Restores the default values of all options settings in the Console pane. It also resets the behavior of various warning messages that provide the standard check box to prevent the message from being shown again.
 
@@ -129,7 +129,7 @@ $psISE.Options.RestoreDefaults()
 ```
 
 ###  <a name="rdtc"></a> RestoreDefaultTokenColors\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Restores the default values of the token colors in the Script pane.
 
@@ -140,9 +140,9 @@ $psISE.Options.RestoreDefaultTokenColors()
 ```
 
 ###  <a name="rdxtc"></a> RestoreDefaultXmlTokenColors\(\)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Restores the default values of the token colors for XML elements that are displayed in [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Also see [XmlTokenColors](#xtc).
+ Restores the default values of the token colors for XML elements that are displayed in Windows PowerShell ISE. Also see [XmlTokenColors](#xtc).
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -153,9 +153,9 @@ $psISE.Options.RestoreDefaultXmlTokenColors()
 ## Properties
 
 ###  <a name="asmi"></a> AutoSaveMinuteInterval
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies the number of minutes between automatic save operations of your files by [!INCLUDE[ise_2](../Token/ise_2_md.md)]. The default value is 2 minutes. The value is an integer.
+ Specifies the number of minutes between automatic save operations of your files by Windows PowerShell ISE. The default value is 2 minutes. The value is an integer.
 
 ```
 # Changes the number of minutes between automatic save operations to every 3 minutes. 
@@ -163,7 +163,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
 ###  <a name="cpbc"></a> CommandPaneBackgroundColor
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)] For later versions, see [ConsolePaneBackgroundColor](#conpbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneBackgroundColor](#conpbc).
 
  Specifies the background color for the Command pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -173,7 +173,7 @@ $psISE.Options.CommandPaneBackgroundColor = "orange"
 ```
 
 ###  <a name="cpu"></a> CommandPaneUp
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)]
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE. 
 
  Specifies whether the Command pane is located above the Output pane.
 
@@ -184,7 +184,7 @@ $psISE.Options.CommandPaneUp  = $true
 ```
 
 ###  <a name="conpbc"></a> ConsolePaneBackgroundColor
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies the background color for the Console pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -194,7 +194,7 @@ $psISE.Options.ConsolePaneBackgroundColor = "red"
 ```
 
 ###  <a name="conpfc"></a> ConsolePaneForegroundColor
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies the foreground color of the text in the Console pane.
 
@@ -205,7 +205,7 @@ $psISE.Options.ConsolePaneForegroundColor  = "yellow"
 ```
 
 ###  <a name="conptbc"></a> ConsolePaneTextBackgroundColor
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies the background color of the text in the Console pane.
 
@@ -215,9 +215,9 @@ $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ```
 
 ###  <a name="contc"></a> ConsoleTokenColors
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies the colors of the IntelliSense tokens in the [!INCLUDE[ise_2](../Token/ise_2_md.md)] Console pane. This property is a dictionary object that contains name\/value pairs of token types and colors for the Console pane. To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tc). To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors()](#rdctc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+ Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane. This property is a dictionary object that contains name\/value pairs of token types and colors for the Console pane. To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tc). To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors()](#rdctc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```
 # Sets the color of commands to green.
@@ -228,7 +228,7 @@ $psISE.Options.ConsoleTokenColors["Keyword"] = "magenta"
 ```
 
 ###  <a name="dbc"></a> DebugBackgroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the background color for the debug text that appears in the Console pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -238,7 +238,7 @@ $psISE.Options.DebugBackgroundColor ='#0000FF'
 ```
 
 ###  <a name="dfc"></a> DebugForegroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the foreground color for the debug text that appears in the Console pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -248,7 +248,7 @@ $psISE.Options.DebugForegroundColor ="yellow"
 ```
 
 ###  <a name="do"></a> DefaultOptions
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  A collection of properties that specify the default values to be used when the Reset methods are used.
 
@@ -295,7 +295,7 @@ IntellisenseTimeoutInSeconds              : 3
 ```
 
 ###  <a name="ebc"></a> ErrorBackgroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the background color for error text that appears in the Console pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -305,7 +305,7 @@ $psISE.Options.ErrorBackgroundColor="black"
 ```
 
 ###  <a name="efc"></a> ErrorForegroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the foreground color for error text that appears in the Console pane. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -315,7 +315,7 @@ $psISE.Options.ErrorForegroundColor ="green"
 ```
 
 ###  <a name="fn"></a> FontName
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the font name currently in use in both the Script pane and the Console pane.
 
@@ -325,7 +325,7 @@ $psISE.Options.FontName = "courier new"
 ```
 
 ###  <a name="fs"></a> FontSize
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the font size as an integer. It is used in the Script pane, the Command pane, and the Output pane. The valid range of values is 8 through 32.
 
@@ -336,7 +336,7 @@ $psISE.Options.FontSize = 20
 ```
 
 ###  <a name="itis"></a> IntellisenseTimeoutInSeconds
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies the number of seconds that IntelliSense uses to try to resolve the currently typed text. After this number of seconds, IntelliSense times out and enables you to continue typing. The default value is 3 seconds. The value is an integer.
 
@@ -346,9 +346,9 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 ```
 
 ###  <a name="mc"></a> MruCount
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies the number of recently opened files that [!INCLUDE[ise_2](../Token/ise_2_md.md)] tracks and displays at the bottom of the **File Open** menu. The default value is 10. The value is an integer.
+ Specifies the number of recently opened files that Windows PowerShell ISE tracks and displays at the bottom of the **File Open** menu. The default value is 10. The value is an integer.
 
 ```
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5. 
@@ -356,7 +356,7 @@ $psISE.Options.MruCount = 5
 ```
 
 ###  <a name="opbc"></a> OutputPaneBackgroundColor
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)] For later versions, see [ConsolePaneBackgroundColor](#conpbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneBackgroundColor](#conpbc).
 
  The read\/write property that gets or sets the background color for the Output pane itself. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -367,9 +367,9 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ```
 
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)] For later versions, see [ConsolePaneForegroundColor](#conpfc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneForegroundColor](#conpfc).
 
- The read\/write property that changes the foreground color of the text in the Output pane in [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0.
+ The read\/write property that changes the foreground color of the text in the Output pane in Windows PowerShell ISE 2.0.
 
 ```
 # Changes the foreground color of the text in the Output Pane to blue.
@@ -378,7 +378,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ```
 
 ###  <a name="optbc"></a> OutputPaneTextBackgroundColor
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)] For later versions, see [ConsolePaneTextBackgroundColor](#conptbc).
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  For later versions, see [ConsolePaneTextBackgroundColor](#conptbc).
 
  The read\/write property that changes the background color of the text in the Output pane.
 
@@ -388,7 +388,7 @@ $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ```
 
 ###  <a name="spbc"></a> ScriptPaneBackgroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\/write property that gets or sets the background color for files. It is an instance of the **System.Windows.Media.Color** class.
 
@@ -400,7 +400,7 @@ $psISE.Options.ScriptPaneBackgroundColor = ”yellow”
 ```
 
 ###  <a name="spfc"></a> ScriptPaneForegroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\/write property that gets or sets the foreground color for non\-script files in the Script pane. 
 To set the foreground color for script files, use the [TokenColors](../Topic/The-ISEOptions-Object.md#tc) property.
@@ -412,7 +412,7 @@ $psISE.Options.ScriptPaneBackgroundColor = "green"
 ```
 
 ###  <a name="ssps"></a> SelectedScriptPaneState
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\/write property that gets or sets the position of the Script pane on the display. The string can be either "Maximized", "Top", or "Right".
 
@@ -427,9 +427,9 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ```
 
 ###  <a name="sds"></a> ShowDefaultSnippets
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies whether the **CTRL\+J** list of snippets includes the starter set that is included in [!INCLUDE[wps_2](../Token/wps_2_md.md)]. When set to **$false**, only user\-defined snippets appear in the **CTRL\+J** list. The default value is **$true**.
+ Specifies whether the **CTRL\+J** list of snippets includes the starter set that is included in Windows PowerShell. When set to **$false**, only user\-defined snippets appear in the **CTRL\+J** list. The default value is **$true**.
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -437,7 +437,7 @@ $psISe.Options.ShowDefaultSnippets = $false
 ```
 
 ###  <a name="siicp"></a> ShowIntellisenseInConsolePane
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Console pane. The default value is **$true**.
 
@@ -447,7 +447,7 @@ $psISe.Options.ShowIntellisenseInConsolePane = $false
 ```
 
 ###  <a name="siisp"></a> ShowIntellisenseInScriptPane
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Script pane. The default value is **$true**.
 
@@ -457,7 +457,7 @@ $psISe.Options.ShowIntellisenseInScriptPane = $false
 ```
 
 ###  <a name="sln"></a> ShowLineNumbers
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether the Script pane displays line numbers in the left margin. The default value is **$true**.
 
@@ -467,7 +467,7 @@ $psISe.Options.ShowLineNumbers = $false
 ```
 
 ###  <a name="so"></a> ShowOutlining
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether the Script pane displays expandable and collapsible brackets next to sections of code in the left margin. When they are displayed, you can click the minus \(\-\) icons next to a block of text to collapse it or click the plus \(\+\) icon to expand a block of text. The default value is **$true**.
 
@@ -477,9 +477,9 @@ $psISe.Options.ShowOutlining = $false
 ```
 
 ###  <a name="stb"></a> ShowToolBar
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Specifies whether the ISE toolbar appears at the top of the [!INCLUDE[ise_2](../Token/ise_2_md.md)] window. The default value is **$true**.
+ Specifies whether the ISE toolbar appears at the top of the Windows PowerShell ISE window. The default value is **$true**.
 
 ```
 # Show the toolbar.
@@ -487,7 +487,7 @@ $psISe.Options.ShowToolBar = $true
 ```
 
 ###  <a name="swbsor"></a> ShowWarningBeforeSavingOnRun
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies whether a warning message appears when a script is saved automatically before it is run. The default value is **$true**.
 
@@ -499,9 +499,9 @@ $psISE.Options.ShowWarningBeforeSavingOnRun=$true
 ```
 
 ###  <a name="swfdf"></a> ShowWarningForDuplicateFiles
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Specifies whether a warning message appears when the same file is opened in different PowerShell tabs. If set to **$true**, to open the same file in multiple tabs displays this message: "A copy of this file is open in another [!INCLUDE[wps_2](../Token/wps_2_md.md)] tab. Changes made to this file will affect all open copies." The default value is **$true**.
+ Specifies whether a warning message appears when the same file is opened in different PowerShell tabs. If set to **$true**, to open the same file in multiple tabs displays this message: "A copy of this file is open in another Windows PowerShell tab. Changes made to this file will affect all open copies." The default value is **$true**.
 
 ```
 # Enable the warning message when a file is
@@ -511,9 +511,9 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 ```
 
 ###  <a name="tc"></a> TokenColors
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Specifies the colors of the IntelliSense tokens in the [!INCLUDE[ise_2](../Token/ise_2_md.md)] Script pane. This property is a dictionary object that contains name\/value pairs of token types and colors for the Script pane. To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#ctc). To reset the colors to the default values, see [RestoreDefaultTokenColors()](#rdtc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+ Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane. This property is a dictionary object that contains name\/value pairs of token types and colors for the Script pane. To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#ctc). To reset the colors to the default values, see [RestoreDefaultTokenColors()](#rdtc). Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```
 # Sets the color of commands to green.
@@ -524,7 +524,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 ```
 
 ###  <a name="uetsicpi"></a> UseEnterToSelectInConsolePaneIntellisense
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether you can use the Enter key to select an IntelliSense provided option in the Console pane. The default value is **$true**.
 
@@ -535,7 +535,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$false
 ```
 
 ###  <a name="uetsispi"></a> UseEnterToSelectInScriptPaneIntellisense
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether you can use the Enter key to select an IntelliSense\-provided option in the Script pane. The default value is **$true**.
 
@@ -546,7 +546,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$true
 ```
 
 ###  <a name="ulh"></a> UseLocalHelp
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Specifies whether the locally installed Help or the online TechNet Library Help appears when you press F1 with the cursor positioned in a keyword. If set to **$true**, then a pop\-up window shows content from the locally installed Help. You can install the Help files by running the `Update-Help` command. If set to **$false**, then your browser opens to a page in the TechNet Library.
 
@@ -559,7 +559,7 @@ $psISE.Options.UseLocalHelp=$true
 ```
 
 ###  <a name="vbc"></a> VerboseBackgroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the background color for verbose text that appears in the Console pane. It is a **System.Windows.Media.Color** object.
 
@@ -569,7 +569,7 @@ $psISE.Options.VerboseBackgroundColor ='#0000FF'
 ```
 
 ###  <a name="vfc"></a> VerboseForegroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the foreground color for verbose text that appears in the Console pane. It is a **System.Windows.Media.Color** object.
 
@@ -579,7 +579,7 @@ $psISE.Options.VerboseForegroundColor =”yellow”
 ```
 
 ###  <a name="wbc"></a> WarningBackgroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the background color for warning text that appears in the Console pane. It is a **System.Windows.Media.Color** object.
 
@@ -589,7 +589,7 @@ $psISE.Options.WarningBackgroundColor ='#0000FF'
 ```
 
 ###  <a name="wfc"></a> WarningForegroundColor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Specifies the foreground color for warning text that appears in the Output pane. It is a **System.Windows.Media.Color** object.
 
@@ -599,9 +599,9 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ```
 
 ###  <a name="xtc"></a> XmlTokenColors
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies a dictionary object that contains name\/value pairs of token types and colors for XML content that is displayed in [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Also see [RestoreDefaultXmlTokenColors()](#rdxtc).
+ Specifies a dictionary object that contains name\/value pairs of token types and colors for XML content that is displayed in Windows PowerShell ISE. Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Also see [RestoreDefaultXmlTokenColors()](#rdxtc).
 
 ```
 # Sets the color of XML element names to green.
@@ -612,9 +612,9 @@ $psISE.Options.XmlTokenColors["Comment"] = "magenta"
 ```
 
 ###  <a name="z"></a> Zoom
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Specifies the relative size of text in both the Console and Script panes. The default value is 100. Smaller values cause the text in [!INCLUDE[ise_2](../Token/ise_2_md.md)] to appear smaller while larger numbers cause text to appear larger. The value is an integer that ranges from 20 to 400.
+ Specifies the relative size of text in both the Console and Script panes. The default value is 100. Smaller values cause the text in Windows PowerShell ISE to appear smaller while larger numbers cause text to appear larger. The value is an integer that ranges from 20 to 400.
 
 ```
 # Changes the text in the Windows PowerShell ISE to be double its normal size. 

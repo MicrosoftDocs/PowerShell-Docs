@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 ---
 # The Windows PowerShell ISE Scripting Object Model
-  The [!INCLUDE[ise_1](../Token/ise_1_md.md)] exposes its functionality through an underlying scripting object model that enables users to write [!INCLUDE[wps_2](../Token/wps_2_md.md)] scripts that manipulate the various visual and functional aspects of the [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Scripting objects, their properties, and their methods are defined specifically for this purpose.
+  The Windows PowerShellÂ® Integrated Scripting Environment (ISE) exposes its functionality through an underlying scripting object model that enables users to write Windows PowerShell scripts that manipulate the various visual and functional aspects of the Windows PowerShell ISE. Scripting objects, their properties, and their methods are defined specifically for this purpose.
 
 ## In this document
 

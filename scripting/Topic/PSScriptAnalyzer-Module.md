@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
 ---
 # PSScriptAnalyzer Module
-This section contains the help topics for the **PSScriptAnalyzer** module, which you can use to check for problems in scripts and modules in [!INCLUDE[wps_1](../Token/wps_1_md.md)]. This module is installed with [!INCLUDE[wps_2](../Token/wps_2_md.md)].
+This section contains the help topics for the **PSScriptAnalyzer** module, which you can use to check for problems in scripts and modules in Windows PowerShellÂ®. This module is installed with Windows PowerShell.
 
 ## Help Topics
 

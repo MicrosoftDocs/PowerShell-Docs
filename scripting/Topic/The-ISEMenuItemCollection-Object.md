@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 ---
 # The ISEMenuItemCollection Object
-  An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add\-On** menu in [!INCLUDE[ise_1](../Token/ise_1_md.md)].
+  An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add\-On** menu in Windows PowerShellÂ® Integrated Scripting Environment (ISE).
 
 ## Method
 
 ### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Adds a menu item to the collection.
 
@@ -36,7 +36,7 @@ $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get
 ```
 
 ### Clear\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Removes all submenus from the menu item.
 

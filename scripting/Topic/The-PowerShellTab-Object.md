@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ---
 # The PowerShellTab Object
-  The **PowerShellTab** object represents a [!INCLUDE[wps_2](../Token/wps_2_md.md)] runtime environment.
+  The **PowerShellTab** object represents a Windows PowerShell runtime environment.
 
 ## Methods
 
 ###  <a name="invoke"></a> Invoke\( Script \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Runs the given script in the PowerShell tab.
 
@@ -30,7 +30,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 ```
 
 ### InvokeSynchronous\( Script, \[useNewScope\], millisecondsTimeout \)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Runs the given script in the PowerShell tab.
 
@@ -69,7 +69,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 ## Properties
 
 ###  <a name="AddOnsMenu"></a> AddOnsMenu
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the Add\-ons menu for the PowerShell tab.
 
@@ -87,7 +87,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
 ###  <a name="CanExecute"></a> CanInvoke
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only Boolean property that returns a **$true** value if a script can be invoked with the [Invoke( Script )](#invoke) method.
 
@@ -106,7 +106,7 @@ $secondTab.CanInvoke
 ```
 
 ###  <a name="Commandpane"></a> Consolepane
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)] In [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0 this was named **CommandPane**.
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.  In Windows PowerShell ISE 2.0 this was named **CommandPane**.
 
  The read\-only property that gets the Console pane [editor](../Topic/The-ISEEditor-Object.md) object.
 
@@ -117,7 +117,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 ```
 
 ###  <a name="Displayname"></a> DisplayName
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-write property that gets or sets the text that is displayed on the PowerShell tab. By default, tabs are named "PowerShell \#", where the \# represents a number.
 
@@ -128,7 +128,7 @@ $newTab.DisplayName="Brand New Tab"
 ```
 
 ###  <a name="ExpandedScript"></a> ExpandedScript
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-write Boolean property that determines whether the Script pane is expanded or hidden.
 
@@ -139,7 +139,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 ```
 
 ###  <a name="Files"></a> Files
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the [collection of script files](../Topic/The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
 
@@ -151,7 +151,7 @@ $newFile.Editor.LineCount
 ```
 
 ###  <a name="Output"></a> Output
- [!INCLUDE[support_ise_2](../Token/support_ise_2_md.md)] In later versions of [!INCLUDE[ise_2](../Token/ise_2_md.md)], you can use the **ConsolePane** object for the same purposes.
+  This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  In later versions of Windows PowerShell ISE, you can use the **ConsolePane** object for the same purposes.
 
  The read\-only property that gets the Output pane of the current [editor](../Topic/The-ISEEditor-Object.md).
 
@@ -161,7 +161,7 @@ $psise.CurrentPowerShellTab.output.clear()
 ```
 
 ###  <a name="Prompt"></a> Prompt
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the current prompt text. Note: the **Prompt** function can be overridden by the user’s profile. If the result is other than a simple string, then this property returns nothing.
 
@@ -171,7 +171,7 @@ $psISE.CurrentPowerShellTab.Prompt
 ```
 
 ###  <a name="ShowCommands"></a> ShowCommands
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-write property that indicates if the Commands pane is currently displayed.
 
@@ -183,7 +183,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
 ###  <a name="StatusText"></a> StatusText
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the **PowerShellTab** status text.
 
@@ -193,7 +193,7 @@ $psISE.CurrentPowerShellTab.StatusText
 ```
 
 ###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only property that indicates whether the horizontal Add\-Ons tool pane is currently open.
 
@@ -203,7 +203,7 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
 ###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only property that indicates whether the vertical Add\-Ons tool pane is currently open.
 

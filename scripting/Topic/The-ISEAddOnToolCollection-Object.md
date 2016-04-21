@@ -13,12 +13,12 @@ ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 ## Methods
 
 ### Add\( Name, ControlType, \[IsVisible\] \)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Adds a new add\-on tool to the collection. It returns the newly added add\-on tool. Before you run this command, you must install the add\-on tool on the local computer and load the assembly.
 
  **Name** – String
- Specifies the display name of the add\-on tool that is added to [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+ Specifies the display name of the add\-on tool that is added to Windows PowerShell ISE.
 
  **ControlType** –Type
  Specifies the control that is added.
@@ -34,12 +34,12 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 ```
 
 ### Remove\( Item \)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Removes the specified add\-on tool from the collection.
 
  **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool
- Specifies the object to be removed from [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+ Specifies the object to be removed from Windows PowerShell ISE.
 
 ```
 # Load a DLL with an add-on and then add it to the ISE
@@ -49,7 +49,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 ```
 
 ### SetSelectedPowerShellTab\( psTab \)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Selects the PowerShell tab that the **psTab** parameter specifies.
 
@@ -65,7 +65,7 @@ $newTab.DisplayName="Brand New Tab"
 ```
 
 ### Remove\( psTab \)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Removes the PowerShell tab that the **psTab** parameter specifies.
 

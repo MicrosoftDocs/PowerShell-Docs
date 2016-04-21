@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 03d69ab7-89d8-4cff-863e-d5f3864fee5a
 ---
 # Microsoft.PowerShell.Management Module
-This section contains the help topics for the **Microsoft.PowerShell.Management** module. The **Microsoft.PowerShell.Management** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **Microsoft.PowerShell.Management** module. The **Microsoft.PowerShell.Management** module is installed with Windows PowerShell.
 
 ## Help Topics
 [Windows PowerShell Management Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245862)

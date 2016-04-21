@@ -10,7 +10,7 @@ ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 # Windows PowerShell ISE Object Model Reference
   
 ## Object Model Reference
- This section provides a reference on the underlying classes that define the various objects in[!INCLUDE[ise_1](../Token/ise_1_md.md)]. To see the objects organized in their hierarchy, see [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md).
+ This section provides a reference on the underlying classes that define the various objects inWindows PowerShellÂ® Integrated Scripting Environment (ISE). To see the objects organized in their hierarchy, see [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md).
 
  [The ISEAddOnTool Object](../Topic/The-ISEAddOnTool-Object.md)
  Examples: $psISE.CurrentVisibleHorizontalTool, $psISE.CurrentVisibleVerticalTool.

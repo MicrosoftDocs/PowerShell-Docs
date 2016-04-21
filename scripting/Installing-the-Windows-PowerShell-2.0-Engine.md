@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ---
 # Installing the Windows PowerShell 2.0 Engine
-This topic explains how to install the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine.
+This topic explains how to install the Windows PowerShell 2.0 Engine.
 
-[!INCLUDE[psversion3](Token/psversion3_md.md)] is designed to be backwards compatible with [!INCLUDE[psversion2](Token/psversion2_md.md)]. Cmdlets, providers, snap\-ins, modules, and scripts written for [!INCLUDE[psversion2](Token/psversion2_md.md)] run unchanged in [!INCLUDE[psversion3](Token/psversion3_md.md)] and [!INCLUDE[psversion4](Token/psversion4_md.md)]. However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for [!INCLUDE[psversion2](Token/psversion2_md.md)] and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in later releases of [!INCLUDE[wps_2](Token/wps_2_md.md)], which is compiled with CLR 4.0.
+Windows PowerShell 3.0 is designed to be backwards compatible with Windows PowerShell 2.0. Cmdlets, providers, snap\-ins, modules, and scripts written for Windows PowerShell 2.0 run unchanged in Windows PowerShell 3.0 and Windows PowerShell 4.0. However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for Windows PowerShell 2.0 and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in later releases of Windows PowerShell, which is compiled with CLR 4.0.
 
-To maintain backward compatibility with commands and host programs that are affected by these changes, the [!INCLUDE[psversion2](Token/psversion2_md.md)], [!INCLUDE[psversion3](Token/psversion3_md.md)], and [!INCLUDE[psversion4](Token/psversion4_md.md)] engines are designed to run side\-by\-side. Also, the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is included in [!INCLUDE[winblue_server_2](Token/winblue_server_2_md.md)], [!INCLUDE[winblue_client_2](Token/winblue_client_2_md.md)], [!INCLUDE[win8_client_2](Token/win8_client_2_md.md)], [!INCLUDE[win8_server_2](Token/win8_server_2_md.md)], and [!INCLUDE[ps_wmf_3.0](Token/ps_wmf_3.0_md.md)]. The [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is intended to be used only when an existing script or host program cannot run because it is incompatible with [!INCLUDE[psversion3](Token/psversion3_md.md)], [!INCLUDE[psversion4](Token/psversion4_md.md)], or Microsoft .NET Framework 4. Such cases are expected to be rare.
+To maintain backward compatibility with commands and host programs that are affected by these changes, the Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 engines are designed to run side\-by\-side. Also, the Windows PowerShell 2.0 Engine is included in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012, and Windows Management Framework 3.0. The Windows PowerShell 2.0 Engine is intended to be used only when an existing script or host program cannot run because it is incompatible with Windows PowerShell 3.0, Windows PowerShell 4.0, or Microsoft .NET Framework 4. Such cases are expected to be rare.
 
-The [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is an optional feature of [!INCLUDE[winblue_server_2](Token/winblue_server_2_md.md)], [!INCLUDE[winblue_client_2](Token/winblue_client_2_md.md)], [!INCLUDE[win8_client_1](Token/win8_client_1_md.md)] and [!INCLUDE[win8_server_1](Token/win8_server_1_md.md)]. On earlier versions of Windows, when you install [!INCLUDE[ps_wmf_3.0](Token/ps_wmf_3.0_md.md)], the [!INCLUDE[psversion3](Token/psversion3_md.md)] installation completely replaces the [!INCLUDE[psversion2](Token/psversion2_md.md)] installation in the [!INCLUDE[wps_2](Token/wps_2_md.md)] installation directory. However, the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is retained.
+The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1, WindowsÂ® 8 and Windows ServerÂ® 2012. On earlier versions of Windows, when you install Windows Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows PowerShell 2.0 Engine is retained.
 
-For information about starting the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
+For information about starting the Windows PowerShell 2.0 Engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
 
-## On [!INCLUDE[winblue_client_2](Token/winblue_client_2_md.md)] and [!INCLUDE[win8_client_2](Token/win8_client_2_md.md)]
-On [!INCLUDE[winblue_client_2](Token/winblue_client_2_md.md)] and [!INCLUDE[win8_client_2](Token/win8_client_2_md.md)], the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine feature is turned on by default. However, to use it, you need to turn on the option for Microsoft .NET Framework 3.5, which it requires. This section also explains how to turn the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine feature on and off.
+## On Windows 8.1 and Windows 8
+On Windows 8.1 and Windows 8, the Windows PowerShell 2.0 Engine feature is turned on by default. However, to use it, you need to turn on the option for Microsoft .NET Framework 3.5, which it requires. This section also explains how to turn the Windows PowerShell 2.0 Engine feature on and off.
 
 #### To turn on .NET Framework 3.5
 
@@ -29,18 +29,18 @@ On [!INCLUDE[winblue_client_2](Token/winblue_client_2_md.md)] and [!INCLUDE[win8
 
 3.  In the **Windows Features** box, click **.NET Framework 3.5 (includes .NET 2.0 and 3.0** to select it.
 
-    When you select **.NET Framework 3.5 (includes .NET 2.0 and 3.0**, the box fills to indicate that only part of the feature is selected. However, this is sufficient for the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine.
+    When you select **.NET Framework 3.5 (includes .NET 2.0 and 3.0**, the box fills to indicate that only part of the feature is selected. However, this is sufficient for the Windows PowerShell 2.0 Engine.
 
-#### To turn the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine on and off
+#### To turn the Windows PowerShell 2.0 Engine on and off
 
 1.  On the **Start** screen, type **Windows Features**.
 
 2.  On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
 
-3.  In the **Windows Features** box, expand the **[!INCLUDE[psversion2](Token/psversion2_md.md)]** node, and click the **[!INCLUDE[psversion2](Token/psversion2_md.md)] Engine** box to select or clear it.
+3.  In the **Windows Features** box, expand the **Windows PowerShell 2.0** node, and click the **Windows PowerShell 2.0 Engine** box to select or clear it.
 
-## On [!INCLUDE[winblue_server_2](Token/winblue_server_2_md.md)] and [!INCLUDE[win8_server_2](Token/win8_server_2_md.md)]
-Use the following procedures to add the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine and Microsoft .NET Framework 3.5 features. The [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine requires Microsoft .NET Framework 2.0.50727 at a minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
+## On Windows Server 2012 R2 and Windows Server 2012
+Use the following procedures to add the Windows PowerShell 2.0 Engine and Microsoft .NET Framework 3.5 features. The Windows PowerShell 2.0 Engine requires Microsoft .NET Framework 2.0.50727 at a minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
 
 #### To add the .NET Framework 3.5 feature
 
@@ -52,9 +52,9 @@ Use the following procedures to add the [!INCLUDE[psversion2](Token/psversion2_m
 
 3.  On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET Framework 3.5 (includes .NET 2.0 and 3.0)**.
 
-    The other options under that node are not required for the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine.
+    The other options under that node are not required for the Windows PowerShell 2.0 Engine.
 
-#### To add the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine feature
+#### To add the Windows PowerShell 2.0 Engine feature
 
 -   In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
@@ -62,14 +62,14 @@ Use the following procedures to add the [!INCLUDE[psversion2](Token/psversion2_m
 
 -   On the **Installation Type** page, select **Role\-based or feature\-based installation**.
 
--   On the **Features** page, expand the **[!INCLUDE[mshshort](Token/mshshort_md.md)] (Installed)** node and select **[!INCLUDE[psversion2](Token/psversion2_md.md)] Engine**.
+-   On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.
 
-For information about starting the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
+For information about starting the Windows PowerShell 2.0 Engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## On Earlier Systems
-The [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) package that installs [!INCLUDE[psversion4](Token/psversion4_md.md)] on [!INCLUDE[win7_client_secondref](Token/win7_client_secondref_md.md)], [!INCLUDE[win7_server_secondref](Token/win7_server_secondref_md.md)], and [!INCLUDE[win8_server_2](Token/win8_server_2_md.md)], includes the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine. The [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is enabled and ready to use, if necessary, without additional installation, setup, or configuration.
+The [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) package that installs Windows PowerShell 4.0 on Windows 7, Windows Server 2008 R2, and Windows Server 2012, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
-The [!INCLUDE[ps_wmf_3.0](Token/ps_wmf_3.0_md.md)] package that installs [!INCLUDE[psversion3](Token/psversion3_md.md)] on [!INCLUDE[win7_client_secondref](Token/win7_client_secondref_md.md)], [!INCLUDE[win7_server_secondref](Token/win7_server_secondref_md.md)], and [!INCLUDE[lserver](Token/lserver_md.md)], includes the [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine. The [!INCLUDE[psversion2](Token/psversion2_md.md)] Engine is enabled and ready to use, if necessary, without additional installation, setup, or configuration.
+The Windows Management Framework 3.0 package that installs Windows PowerShell 3.0 on Windows 7, Windows Server 2008 R2, and Windows Server 2008, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
 ## See Also
 [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)

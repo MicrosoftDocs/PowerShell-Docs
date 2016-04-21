@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 2ae52a0d-2eb5-4c71-971f-fb3f612d281b
 ---
 # Windows PowerShell 5.0
-This topic lists the cmdlet and function modules that are included with [!INCLUDE[wps_2](../Token/wps_2_md.md)]. The [!INCLUDE[wps_2](../Token/wps_2_md.md)] modules in the list provide the basic functionality of [!INCLUDE[wps_2](../Token/wps_2_md.md)].
+This topic lists the cmdlet and function modules that are included with Windows PowerShell. The Windows PowerShell modules in the list provide the basic functionality of Windows PowerShell.
 
 The table below also shows the latest published version of the Help for each module. The Help is available in the TechNet Library by using the links below, or as Updatable Help files. Updatable Help was introduced with Windows PowerShell 3.0, and enables you to have the latest Help topics available locally on your computer. See [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx) for more information.
 

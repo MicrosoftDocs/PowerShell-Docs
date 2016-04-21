@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: caa21265-653d-4ba0-9691-b6c0310b9c3d
 ---
 # Microsoft.PowerShell.Core Module
-This section contains the help topics for the **Microsoft.PowerShell.Core** module. The **Microsoft.PowerShell.Core** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **Microsoft.PowerShell.Core** module. The **Microsoft.PowerShell.Core** module is installed with Windows PowerShell.
 
 ## Help topics
 [Windows PowerShell Core Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245857)

@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ---
 # Accessibility in Windows PowerShell ISE
-This topic describes the accessibility features of [!INCLUDE[ise_1](../Token/ise_1_md.md)] that you might find helpful.
+This topic describes the accessibility features of Windows PowerShellÂ® Integrated Scripting Environment (ISE) that you might find helpful.
 
 * [How to change the size and location of the Console and Script Panes](#bkmk_1)
 * [Keyboard shortcuts for editing text](#bkmk_2)
@@ -18,9 +18,9 @@ This topic describes the accessibility features of [!INCLUDE[ise_1](../Token/ise
 * [Keyboard shortcuts for Windows PowerShell tabs](#bkmk_6)
 * [Keyboard shortcuts for starting and exiting](#bkmk_7)
 
-Microsoft is committed to making its products and services easier for everyone to use. The following topics provide information about the features, products, and services that make [!INCLUDE[ise_2](../Token/ise_2_md.md)] more accessible for people with disabilities.
+Microsoft is committed to making its products and services easier for everyone to use. The following topics provide information about the features, products, and services that make Windows PowerShell ISE more accessible for people with disabilities.
 
-[!INCLUDE[ise_2](../Token/ise_2_md.md)] supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see “How to manage breakpoints” in [How to Debug Scripts in the Windows PowerShell ISE](../Topic/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
+Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see “How to manage breakpoints” in [How to Debug Scripts in the Windows PowerShell ISE](../Topic/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
 
 -   Keyboard Shortcuts
 
@@ -29,7 +29,7 @@ Microsoft is committed to making its products and services easier for everyone t
 -   Text Size Change
 
 ## <a name="bkmk_1"></a>How to change the size and location of the Console and Script Panes
-You can use the following steps to change the size and location of the Console Pane and the Script Pane. When you open the [!INCLUDE[ise_2](../Token/ise_2_md.md)] again, the size and location changes you made will be retained.
+You can use the following steps to change the size and location of the Console Pane and the Script Pane. When you open the Windows PowerShell ISE again, the size and location changes you made will be retained.
 
 ### To resize the Script Pane and Console Pane
 
@@ -81,7 +81,7 @@ You can use the following keyboard shortcuts when you run scripts in the Script 
 |**Tab** (to previous script)|CTRL\+SHIFT\+TAB **Note:** Tab to previous script works when you have only one PowerShell tab open, or if you have more  than one PowerShell tab open, and the focus is in the Script Pane.|
 
 ## <a name="bkmk_4"></a>Keyboard shortcuts for customizing the view
-You can use the following keyboard shortcuts to customize the view in [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)]. They are accessible from all the panes in the application.
+You can use the following keyboard shortcuts to customize the view in Windows PowerShell ISE. They are accessible from all the panes in the application.
 
 |Action|Keyboard Shortcut|
 |----------|---------------------|
@@ -138,12 +138,12 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 |**Next Windows PowerShell tab**|CTRL\+TAB. This shortcut works only when no files are open on any PowerShell tab.|
 
 ## <a name="bkmk_7"></a>Keyboard shortcuts for starting and exiting
-You can use the following keyboard shortcuts to start the Windows PowerShell console (PowerShell.exe) or to exit [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)].
+You can use the following keyboard shortcuts to start the Windows PowerShell console (PowerShell.exe) or to exit Windows PowerShell ISE.
 
 |Action|Keyboard Shortcut|
 |----------|---------------------|
 |**Exit**|ALT\+F4|
-|**Start PowerShell.exe** ([!INCLUDE[psconsole](../Token/psconsole_md.md)])|CTRL\+SHIFT\+P|
+|**Start PowerShell.exe** (Windows PowerShell console)|CTRL\+SHIFT\+P|
 
 ## See Also
 [Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)

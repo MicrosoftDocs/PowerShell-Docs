@@ -8,10 +8,10 @@ ms.topic: article
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 ---
 # The ISE Object Model Hierarchy
-  This topic shows the hierarchy of objects that are part of [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)]. [!INCLUDE[ise_2](../Token/ise_2_md.md)] is included in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0 and in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 4.0. Click an object to take you to the reference documentation for the class that defines the object.
+  This topic shows the hierarchy of objects that are part of Windows PowerShell Integrated Scripting Environment (ISE). Windows PowerShell ISE is included in Windows PowerShell 3.0 and in Windows PowerShell 4.0. Click an object to take you to the reference documentation for the class that defines the object.
 
 ##  <a name="psISE"></a> **$psISE Object**
- The **$psISE** object is the [root object](../Topic/The-ObjectModelRoot-Object.md) of the [!INCLUDE[ise_2](../Token/ise_2_md.md)] object hierarchy. Located at the top level, it makes the following objects available for scripting:
+ The **$psISE** object is the [root object](../Topic/The-ObjectModelRoot-Object.md) of the Windows PowerShell ISE object hierarchy. Located at the top level, it makes the following objects available for scripting:
 
 -   **[$psISE.CurrentFile](#currentfile)**
 
@@ -114,7 +114,7 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](../Topic/The-ISEAddOnToolCollection-Object.md)**
 
 ##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the top edge of the [!INCLUDE[ise_2](../Token/ise_2_md.md)] window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](../Topic/The-ISEAddOnTool-Object.md#control)**
 
@@ -123,7 +123,7 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](../Topic/The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the right\-hand edge of the [!INCLUDE[ise_2](../Token/ise_2_md.md)] window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the right\-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](../Topic/The-ISEAddOnTool-Object.md#control)**
 
@@ -205,7 +205,7 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.Options.Zoom](../Topic/The-ISEOptions-Object.md#z)**
 
 ##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](../Topic/The-PowerShellTabCollection-Object.md)**
- The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](../Topic/The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available [!INCLUDE[wps_2](../Token/wps_2_md.md)] run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](../Topic/The-PowerShellTab-Object.md) class.
+ The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](../Topic/The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](../Topic/The-PowerShellTab-Object.md) class.
 
 ## See Also
  [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 

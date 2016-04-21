@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 ---
 # PSWorkflow Module
-This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with Windows PowerShell.
 
 ## Help Topics
 [Workflow Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245865)

@@ -13,7 +13,7 @@ ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 ## Properties
 
 ###  <a name="DisplayName"></a> DisplayName
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the display name of the menu item.
 
@@ -26,7 +26,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
 ###  <a name="Action"></a> Action
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the block of script. It invokes the action when you click the menu item.
 
@@ -41,7 +41,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
 ###  <a name="Shortcut"></a> Shortcut
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the Windows input keyboard shortcut for the menu item.
 
@@ -53,7 +53,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
 ###  <a name="Submenus"></a> Submenus
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the [list of submenus](../Topic/The-ISEMenuItemCollection-Object.md) of the menu item.
 

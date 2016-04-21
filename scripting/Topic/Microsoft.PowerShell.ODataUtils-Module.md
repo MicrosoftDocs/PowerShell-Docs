@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: bd5f47f0-428e-4be6-b02f-2b5609111ee9
 ---
 # Microsoft.PowerShell.ODataUtils Module
-This section contains the help topics for the **Microsoft.PowerShell.ODataUtils** module. The **Microsoft.PowerShell.ODataUtils** module is installed with [!INCLUDE[wps_2](../Token/wps_2_md.md)] 5.0.
+This section contains the help topics for the **Microsoft.PowerShell.ODataUtils** module. The **Microsoft.PowerShell.ODataUtils** module is installed with Windows PowerShell 5.0.
 
 ## Help Topics
 [OData Utility Cmdlets](http://technet.microsoft.com/library/dn818506(v=wps.640).aspx)

@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: b02f675c-4029-49d9-bafb-cef172cccfe3
 ---
 # Microsoft.PowerShell.Security Module
-This section contains the help topics for the **Microsoft.PowerShell.Security** module. The **Microsoft.PowerShell.Security** module contains the [Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d) and cmdlets that manage the security features of [!INCLUDE[mshshort](../Token/mshshort_md.md)], including execution policies. The **Microsoft.PowerShell.Security** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **Microsoft.PowerShell.Security** module. The **Microsoft.PowerShell.Security** module contains the [Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d) and cmdlets that manage the security features of Windows PowerShell, including execution policies. The **Microsoft.PowerShell.Security** module is installed with Windows PowerShell.
 
 ## Help Topics
 [Windows PowerShell Security Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245860)

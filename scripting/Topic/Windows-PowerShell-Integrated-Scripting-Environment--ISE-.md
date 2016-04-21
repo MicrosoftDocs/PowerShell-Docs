@@ -34,7 +34,7 @@ Here are some of the features that have been added to the ISE in the most recent
 
 -   **XML syntax coloring**. The ISE editor now colors XML syntax in the same way as it colors Windows PowerShell code syntax.
 
--   **Brace matching**. The ISE[!INCLUDE[ise_2](../Token/ise_2_md.md)] highlights matching braces to help you ensure you have the right number of closing braces to match your opening ones. Use CTRL\-\[ to locate the closing brace that matches the opening brace that the cursor is on.
+-   **Brace matching**. The ISEWindows PowerShell ISE highlights matching braces to help you ensure you have the right number of closing braces to match your opening ones. Use CTRL\-\[ to locate the closing brace that matches the opening brace that the cursor is on.
 
 -   **Outline view**. You can collapse or expand sections of your code by clicking the plus and minus signs in the left margin. This makes it easier to find the code you’re looking for in a long script.
 
@@ -55,7 +55,7 @@ The ISE was introduced with PowerShell v2.0.
 The ISE is available on any computer that can run Windows PowerShell v2.0 or later. Each version of Windows and Windows Server includes a version of Windows PowerShell and the ISE, but you can upgrade to the latest available by installing the Windows Management Framework. Run this search to find the latest version available: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Note that any entries labelled "Preview" are pre\-release code and are not feature complete.
 
 > [!NOTE]
-> Because [!INCLUDE[ise_2](../Token/ise_2_md.md)] requires a graphical user interface, you can’t run it on the Server Core option of Windows Server.
+> Because Windows PowerShell ISE requires a graphical user interface, you can’t run it on the Server Core option of Windows Server.
 
 ## <a name="BKMK_LINKS"></a>See also
 [Using the Windows PowerShell Integrated Scripting Environment](http://technet.microsoft.com/library/cc732148.aspx)

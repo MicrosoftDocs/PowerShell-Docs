@@ -13,7 +13,7 @@ ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ## Methods
 
 ### Clear\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Clears the text in the editor.
 
@@ -24,7 +24,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
 ### EnsureVisible\(int lineNumber\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value is visible. It throws an exception if the specified line number is outside the range of 1,last line number, which defines the valid line numbers.
 
@@ -38,7 +38,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 ```
 
 ### Focus\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Sets the focus to the editor.
 
@@ -48,7 +48,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
 ### GetLineLength\(int lineNumber \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Gets the line length as an integer for the line that is specified by the line number.
 
@@ -64,7 +64,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### GoToMatch\(\)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace \- \(,\[,{ \- or immediately after a closing parenthesis, bracket, or brace \- \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch](#cangotomatch).
 
@@ -73,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### InsertText\( text \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Replaces the selection with text or inserts text at the current caret position.
 
@@ -83,7 +83,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  See the [Scripting Example](#example) later in this topic.
 
 ### Select\( startLine, startColumn, endLine, endColumn \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Selects the text from the **startLine**, **startColumn**, **endLine**, and **endColumn** parameters.
 
@@ -102,7 +102,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  See the  [Scripting Example](#example) later in this topic.
 
 ### SelectCaretLine\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Selects the entire line of text that currently contains the caret.
 
@@ -115,7 +115,7 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 ```
 
 ### SetCaretPosition\( lineNumber, columnNumber \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
 
@@ -131,7 +131,7 @@ $psIse.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
 ### ToggleOutliningExpansion\(\)
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  Causes all the outline sections to expand or collapse.
 
@@ -144,7 +144,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ## Properties
 
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace – \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
 
@@ -155,7 +155,7 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 ```
 
 ###  <a name="CaretColumn"></a> CaretColumn
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the column number that corresponds to the position of the caret.
 
@@ -166,7 +166,7 @@ $psIse.CurrentFile.Editor.CaretColumn
 ```
 
 ###  <a name="CaretLine"></a> CaretLine
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the number of the line that contains the caret.
 
@@ -177,7 +177,7 @@ $psIse.CurrentFile.Editor.CaretLine
 ```
 
 ###  <a name="caretlinetext"></a> CaretLineText
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the complete line of text that contains the caret.
 
@@ -188,7 +188,7 @@ $psIse.CurrentFile.Editor.CaretLineText
 ```
 
 ###  <a name="LineCount"></a> LineCount
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the line count from the editor.
 
@@ -199,14 +199,14 @@ $psIse.CurrentFile.Editor.LineCount
 ```
 
 ###  <a name="SelectedText"></a> SelectedText
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the selected text from the editor.
 
  See the  [Scripting Example](#example) later in this topic.
 
 ###  <a name="Text"></a> Text
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\/write property that gets or sets the text in the editor.
 

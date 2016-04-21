@@ -8,14 +8,14 @@ ms.topic: article
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 ---
 # Starting Windows PowerShell on Earlier Versions of Windows
-This section explains how to start [!INCLUDE[wps_2](../Token/wps_2_md.md)] and [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] on [!INCLUDE[win7_client_firstref](../Token/win7_client_firstref_md.md)], [!INCLUDE[win7_server_firstref](../Token/win7_server_firstref_md.md)], and [!INCLUDE[lserver](../Token/lserver_md.md)]. It also explains how to enable the optional feature for [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] in [!INCLUDE[psversion2](../Token/psversion2_md.md)] on [!INCLUDE[win7_server_firstref](../Token/win7_server_firstref_md.md)] and [!INCLUDE[lserver](../Token/lserver_md.md)].
+This section explains how to start Windows PowerShell and Windows PowerShell Integrated Scripting Environment (ISE) on WindowsÂ® 7, Windows ServerÂ® 2008 R2, and Windows Server 2008. It also explains how to enable the optional feature for Windows PowerShell ISE in Windows PowerShell 2.0 on Windows ServerÂ® 2008 R2 and Windows Server 2008.
 
-To install [!INCLUDE[psversion4](../Token/psversion4_md.md)] on supported systems, download and install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). For more information, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
+To install Windows PowerShell 4.0 on supported systems, download and install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). For more information, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
 
-To install [!INCLUDE[psversion3](../Token/psversion3_md.md)] on supported systems, download and install [Windows Management Framework 3.0](http://go.microsoft.com/fwlink/?LinkID=240290). For more information, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
+To install Windows PowerShell 3.0 on supported systems, download and install [Windows Management Framework 3.0](http://go.microsoft.com/fwlink/?LinkID=240290). For more information, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
 
-## How to Start [!INCLUDE[mshshort](../Token/mshshort_md.md)] on Earlier Versions of Windows
-Use any of the following methods to start the installed version of [!INCLUDE[psversion3](../Token/psversion3_md.md)], or [!INCLUDE[psversion4](../Token/psversion4_md.md)], where applicable.
+## How to Start Windows PowerShell on Earlier Versions of Windows
+Use any of the following methods to start the installed version of Windows PowerShell 3.0, or Windows PowerShell 4.0, where applicable.
 
 #### From the Start Menu
 
@@ -25,7 +25,7 @@ Use any of the following methods to start the installed version of [!INCLUDE[psv
 
 #### At the Command Prompt
 
--   In Cmd.exe, [!INCLUDE[wps_2](../Token/wps_2_md.md)], or [!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE, to start [!INCLUDE[wps_2](../Token/wps_2_md.md)], type:
+-   In Cmd.exe, Windows PowerShell, or Windows PowerShell ISE, to start Windows PowerShell, type:
 
     ```
     PowerShell
@@ -37,8 +37,8 @@ Use any of the following methods to start the installed version of [!INCLUDE[psv
 
 1.  Click **Start**, type **PowerShell**, right\-click **Windows PowerShell**, and then click **Run as administrator**.
 
-## How to Start [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] on Earlier Releases of Windows
-Use any of the following methods to start [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)].
+## How to Start Windows PowerShell ISE on Earlier Releases of Windows
+Use any of the following methods to start Windows PowerShell ISE.
 
 #### From the Start Menu
 
@@ -48,7 +48,7 @@ Use any of the following methods to start [!INCLUDE[mshgraphicalhostshort](../To
 
 #### At the Command Prompt
 
--   In Cmd.exe, [!INCLUDE[wps_2](../Token/wps_2_md.md)], or [!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE, to start [!INCLUDE[wps_2](../Token/wps_2_md.md)], type:
+-   In Cmd.exe, Windows PowerShell, or Windows PowerShell ISE, to start Windows PowerShell, type:
 
     ```
     PowerShell_ISE
@@ -64,18 +64,18 @@ Use any of the following methods to start [!INCLUDE[mshgraphicalhostshort](../To
 
 1.  Click **Start**, type **ISE**, right\-click **Windows PowerShell ISE**, and then click **Run as administrator**.
 
-## How to Enable [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] on Earlier Releases of Windows
-In [!INCLUDE[psversion4](../Token/psversion4_md.md)] and [!INCLUDE[psversion3](../Token/psversion3_md.md)], [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] is enabled by default on all versions of Windows. If it is not already enabled, Windows Management Framework 4.0 or [!INCLUDE[ps_wmf_3.0](../Token/ps_wmf_3.0_md.md)] enables it.
+## How to Enable Windows PowerShell ISE on Earlier Releases of Windows
+In Windows PowerShell 4.0 and Windows PowerShell 3.0, Windows PowerShell ISE is enabled by default on all versions of Windows. If it is not already enabled, Windows Management Framework 4.0 or Windows Management Framework 3.0 enables it.
 
-In [!INCLUDE[psversion2](../Token/psversion2_md.md)], [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] is enabled by default on [!INCLUDE[win7_client_secondref](../Token/win7_client_secondref_md.md)]. However, on [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] and [!INCLUDE[lserver](../Token/lserver_md.md)], it is an optional feature.
+In Windows PowerShell 2.0, Windows PowerShell ISE is enabled by default on Windows 7. However, on Windows Server 2008 R2 and Windows Server 2008, it is an optional feature.
 
-To enable [!INCLUDE[mshgraphicalhostshort](../Token/mshgraphicalhostshort_md.md)] in [!INCLUDE[psversion2](../Token/psversion2_md.md)] on [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] or [!INCLUDE[lserver](../Token/lserver_md.md)], use the following procedure.
+To enable Windows PowerShell ISE in Windows PowerShell 2.0 on Windows Server 2008 R2 or Windows Server 2008, use the following procedure.
 
-#### To enable [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)]
+#### To enable Windows PowerShell Integrated Scripting Environment (ISE)
 
 1.  Start Server Manager.
 
 2.  Click **Features** and then click **Add Features**.
 
-3.  In Select Features, click [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)].
+3.  In Select Features, click Windows PowerShell Integrated Scripting Environment (ISE).
 

@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
 ---
 # PSScheduledJob Module
-This section contains the help topics for the **PSScheduledJob** module, which manages scheduled jobs in [!INCLUDE[mshshort](../Token/mshshort_md.md)]. This module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **PSScheduledJob** module, which manages scheduled jobs in Windows PowerShell. This module is installed with Windows PowerShell.
 
 ## Help Topics
 [Windows PowerShell Scheduled Job Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245864)

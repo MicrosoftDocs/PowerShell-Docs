@@ -13,7 +13,7 @@ ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ## Methods
 
 ### Add\(\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Adds a new PowerShell tab to the collection. It returns the newly added tab.
 
@@ -23,7 +23,7 @@ $newTab.DisplayName="Brand New Tab"
 ```
 
 ### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Removes the tab that is specified by the **psTab** parameter.
 
@@ -40,7 +40,7 @@ $psISE.PowerShellTabs.Remove($newTab)
 ```
 
 ### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.
 

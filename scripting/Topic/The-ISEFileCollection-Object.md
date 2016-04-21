@@ -13,7 +13,7 @@ ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 ## Methods
 
 ### Add\( \[fullPath\] \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Creates and returns a new untitled file and adds it to the collection. The **IsUntitled** property of the newly created file is **$true**.
 
@@ -30,7 +30,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
 ### Remove\( File, \[Force\] \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Removes a specified file from the current PowerShell tab.
 
@@ -52,7 +52,7 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
 ### SetSelectedFile\( selectedFile \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Selects the file that is specified by the **selectedFile** parameter.
 

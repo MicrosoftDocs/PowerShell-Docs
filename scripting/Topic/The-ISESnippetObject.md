@@ -13,7 +13,7 @@ ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ## Properties
 
 ###  <a name="DisplayName"></a> Author
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only property that gets the name of the author of the snippet.
 
@@ -24,7 +24,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
 ###  <a name="Action"></a> CodeFragment
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only property that gets the code fragment to be inserted into the editor.
 
@@ -35,7 +35,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
 ###  <a name="Shortcut"></a> Shortcut
- [!INCLUDE[support_ise_3up](../Token/support_ise_3up_md.md)]
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read\-only property that gets the Windows keyboard shortcut for the menu item.
 

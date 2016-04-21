@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: c62a363a-caa2-4b6e-a079-d6e8543bc4c6
 ---
 # PSWorkflowUtility Module
-This section contains the help topics for the **PSWorkflowUtility** module, which includes commands that manage the Windows PowerShell Workflow feature. The **PSWorkflowUtility** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **PSWorkflowUtility** module, which includes commands that manage the Windows PowerShell Workflow feature. The **PSWorkflowUtility** module is installed with Windows PowerShell.
 
 ## Help Topics
 [Workflow Utility Cmdlets](http://go.microsoft.com/fwlink/?LinkId=254141)

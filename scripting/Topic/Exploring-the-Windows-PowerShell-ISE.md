@@ -8,19 +8,19 @@ ms.topic: article
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ---
 # Exploring the Windows PowerShell ISE
-You can use the [!INCLUDE[ise_1](../Token/ise_1_md.md)] to create, run, and debug commands and scripts. The [!INCLUDE[ise_2](../Token/ise_2_md.md)] consists of the menu bar, Windows PowerShell tabs, the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text\-size slider and context\-sensitive Help.
+You can use the Windows PowerShellÂ® Integrated Scripting Environment (ISE) to create, run, and debug commands and scripts. The Windows PowerShell ISE consists of the menu bar, Windows PowerShell tabs, the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text\-size slider and context\-sensitive Help.
 
 > [!NOTE]
-> Beginning with [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0 the Command and Output Panes were combined into a single Console Pane.
+> Beginning with Windows PowerShell ISE 3.0 the Command and Output Panes were combined into a single Console Pane.
 
 ## Menu Bar
-The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the [!INCLUDE[ise_2](../Token/ise_2_md.md)]. Additionally, an [Add-ons menu](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1).
+The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the Windows PowerShell ISE. Additionally, an [Add-ons menu](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1).
 
 > [!NOTE]
-> In [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0, The **Tools** and **Add\-ons** menus were not present.
+> In Windows PowerShell ISE 2.0, The **Tools** and **Add\-ons** menus were not present.
 
 ## Windows PowerShell Tabs
-A Windows PowerShell tab is the environment in which a Windows PowerShell script runs. You can open new Windows PowerShell tabs in the [!INCLUDE[ise_2](../Token/ise_2_md.md)] to create separate environments on your local computer or on remote computers. You may have a maximum of eight PowerShell tabs simultaneously open.
+A Windows PowerShell tab is the environment in which a Windows PowerShell script runs. You can open new Windows PowerShell tabs in the Windows PowerShell ISE to create separate environments on your local computer or on remote computers. You may have a maximum of eight PowerShell tabs simultaneously open.
 
 ## Toolbar
 The following buttons are located on the toolbar.
@@ -66,7 +66,7 @@ Allows you to see whether the commands and scripts that you run are complete. Th
 Increases or decreases the size of the text on the screen.
 
 ## Help
-Help for [!INCLUDE[ise_2](../Token/ise_2_md.md)] is available on the Web in the TechNet Library. You can open the Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the F1 key anywhere except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane. From the **Help** menu you can also run the Update\-Help cmdlet, and display the Command Window which assists you in constructing commands by showing you all of the parameters for a cmdlet and enabling you to fill in the parameters in an easy\-to\-use form.
+Help for Windows PowerShell ISE is available on the Web in the TechNet Library. You can open the Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the F1 key anywhere except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane. From the **Help** menu you can also run the Update\-Help cmdlet, and display the Command Window which assists you in constructing commands by showing you all of the parameters for a cmdlet and enabling you to fill in the parameters in an easy\-to\-use form.
 
 ## See Also
 [Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)

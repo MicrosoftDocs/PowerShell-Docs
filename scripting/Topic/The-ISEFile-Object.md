@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ---
 # The ISEFile Object
-  An **ISEFile** object represents a file in [!INCLUDE[ise_1](../Token/ise_1_md.md)]. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class. This topic lists its member methods and member properties. The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.
+  An **ISEFile** object represents a file in Windows PowerShellÂ® Integrated Scripting Environment (ISE). It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class. This topic lists its member methods and member properties. The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.
 
 ## Methods
 
 ###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Saves the file to disk.
 
@@ -37,7 +37,7 @@ $myfile.Encoding
 ```
 
 ###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  Saves the file with the specified file name and encoding.
 
@@ -66,7 +66,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ## Properties
 
 ###  <a name="Displayname"></a> DisplayName
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the string that contains the display name of this file. The name is shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.
 
@@ -77,7 +77,7 @@ $psIse.CurrentFile.DisplayName
 ```
 
 ###  <a name="Editor"></a> Editor
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the [editor object](../Topic/The-ISEEditor-Object.md) that is used for the specified file.
 
@@ -88,7 +88,7 @@ $psIse.CurrentFile.Editor.Text
 ```
 
 ###  <a name="Encoding"></a> Encoding
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the original file encoding. This is a **System.Text.Encoding** object.
 
@@ -99,7 +99,7 @@ $psIse.CurrentFile.Encoding
 ```
 
 ###  <a name="FullPath"></a> FullPath
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that gets the string that specifies the full path of the opened file.
 
@@ -110,7 +110,7 @@ $psIse.CurrentFile.FullPath
 ```
 
 ###  <a name="IsSaved"></a> IsSaved
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only Boolean property that returns **$true** if the file has been saved after it was last modified.
 
@@ -122,7 +122,7 @@ $myfile.IsSaved
 ```
 
 ###  <a name="IsUntitled"></a> IsUntitled
- [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+  Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\-only property that returns **$true** if the file has never been given a title.
 

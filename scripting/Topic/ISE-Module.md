@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: fd03c995-4cdb-4d14-a315-9cfbd1e81b10
 ---
 # ISE Module
-This section contains the help topics for the **ISE** module, which includes commands that you can use in Windows PowerShell Integrated Scripting Environment (ISE). The **ISE** module is installed with [!INCLUDE[mshshort](../Token/mshshort_md.md)].
+This section contains the help topics for the **ISE** module, which includes commands that you can use in Windows PowerShell Integrated Scripting Environment (ISE). The **ISE** module is installed with Windows PowerShell.
 
 ## Help Topics
 [ISE Cmdlets](http://go.microsoft.com/fwlink/?LinkID=254686)

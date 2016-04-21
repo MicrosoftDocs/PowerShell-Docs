@@ -17,10 +17,10 @@ This topic describes how to create, edit, run, and save scripts in the Script Pa
 -   [How to save a script](#bkmk_3)
 
 ## <a name="bkmk_1"></a>How to create and run scripts
-You can open and edit [!INCLUDE[wps_1](../Token/wps_1_md.md)] files in the Script Pane. Specific file types of interest in [!INCLUDE[wps_1](../Token/wps_1_md.md)] are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
+You can open and edit Windows PowerShellÂ® files in the Script Pane. Specific file types of interest in Windows PowerShellÂ® are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
 
 > [!NOTE]
-> The [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policy determines whether you can run scripts and load Windows PowerShell profiles and configuration files. The default execution policy, Restricted, prevents all scripts from running, and prevents loading profiles. To change the execution policy to allow profiles to load and be used, see [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) and [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> The Windows PowerShell execution policy determines whether you can run scripts and load Windows PowerShell profiles and configuration files. The default execution policy, Restricted, prevents all scripts from running, and prevents loading profiles. To change the execution policy to allow profiles to load and be used, see [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) and [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### To create a new script file
 On the toolbar, click **New** , or on the **File** menu, click **New**. The created file appears in a new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible when there are more than one. By default a file of type script (.ps1) is created, but it can be saved with a new name and extension. Multiple script files can be created in the same PowerShell tab.
@@ -59,7 +59,7 @@ Use the following steps to edit text in the Script Pane. You can copy, cut, past
 
 1.  Move the cursor to the Script Pane by clicking anywhere in the Script Pane, or by clicking **Go to Script Pane** in the **View** menu.
 
-2.  Create a script. Syntax coloring and tab completion make this a richer experience in [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+2.  Create a script. Syntax coloring and tab completion make this a richer experience in Windows PowerShell ISE.
 
 3.  See [How to Use Tab Completion in the Script Pane and Console Pane](../Topic/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for details about using the tab completion feature to help in typing.
 
@@ -118,7 +118,7 @@ Press **CTRL\+S** or, on the toolbar, click the **Save** icon, or on the **File*
 4.  Click **Save**.
 
 ### To save a script in ASCII encoding
-By default, [!INCLUDE[ise_2](../Token/ise_2_md.md)] saves new script files (.ps1), script data files (.psd1), and script module files (.psm1) as Unicode (BigEndianUnicode) by default. To save a script in another encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) object.
+By default, Windows PowerShell ISE saves new script files (.ps1), script data files (.psd1), and script module files (.psm1) as Unicode (BigEndianUnicode) by default. To save a script in another encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) object.
 
 The following command saves a new script as MyScript.ps1 with ASCII encoding.
 
@@ -138,9 +138,9 @@ The following command gets the encoding of the current file.
 $psise.CurrentFile.encoding
 ```
 
-[!INCLUDE[ise_2](../Token/ise_2_md.md)] supports the following encoding options: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 and Default. The value of the Default option varies with the system.
+Windows PowerShell ISE supports the following encoding options: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 and Default. The value of the Default option varies with the system.
 
-[!INCLUDE[ise_2](../Token/ise_2_md.md)] does not change the encoding of scripts that were created by in other editors, even when you use the Save or Save As commands in [!INCLUDE[ise_2](../Token/ise_2_md.md)].
+Windows PowerShell ISE does not change the encoding of scripts that were created by in other editors, even when you use the Save or Save As commands in Windows PowerShell ISE.
 
 ## See Also
 [Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
