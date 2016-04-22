@@ -1,7 +1,7 @@
 # Direct access to DSC resource methods
 
 
-The `Invoke-DscResource` cmdlet has been added to allow direct access to DSC resources and there methods (Get, Set or Test). It can be used by third-parties that want to take advantage of DSC resources. This cmdlet is typically used in combination with `refreshMode = ‘Disabled’` but can be used no matter what refreshMode is set to. Below are some examples of how to use the new cmdlet:
+The `Invoke-DscResource` cmdlet has been added to allow direct access to DSC resources and their methods (Get, Set or Test). It can be used by third-parties that want to take advantage of DSC resources. This cmdlet is typically used in combination with `refreshMode = ‘Disabled’` but can be used no matter what refreshMode is set to. Below are some examples of how to use the new cmdlet:
 
 ## Ensure a file is present
 
