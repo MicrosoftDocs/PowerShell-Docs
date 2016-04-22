@@ -2,11 +2,13 @@
 
 # [Configurations](configurations.md)
 ## [Enacting configurations](enactingConfigurations.md)
+## [Specifying cross-node dependencies](crossNodeDependencies.md)
 ## [Configuration data](configData.md)
 ### [Credential options in configuration data](configDataCredentials.md)
 ### [Running DSC with user credentials](runAsUser.md)
 ## [Securing the configuration MOF file](secureMOF.md)
 ## [Partial Configurations](partialConfigs.md)
+
 # [Resources](resources.md)
 ## [Built-in resources](builtInResource.md)
 ### [Archive Resource](archiveResource.md)
@@ -27,6 +29,7 @@
 ### [Class-based custom resouces](authoringResourceClass.md)
 ### [Composite resources](authoringResourceComposite.md)
 ### [Debugging DSC resources](debugResource.md)
+### [Calling DSC resource methods directly](directCallResource.md)
 ### [Writing a single-instance DSC resource (best practice)](singleInstance.md)
 ### [Resource authoring checklist](resourceAuthoringChecklist.md)
 
