@@ -2,6 +2,7 @@
 
 # [Configurations](configurations.md)
 ## [Enacting configurations](enactingConfigurations.md)
+## [Using resources with multiple versions](sxsResource.md)
 ## [Specifying cross-node dependencies](crossNodeDependencies.md)
 ## [Configuration data](configData.md)
 ### [Credential options in configuration data](configDataCredentials.md)
