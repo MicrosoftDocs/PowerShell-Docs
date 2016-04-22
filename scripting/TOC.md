@@ -68,7 +68,7 @@
 #### [Working with Registry Entries](Topic/Working-with-Registry-Entries.md)
 #### [Running Remote Commands](Topic/Running-Remote-Commands.md)
 ## Windows PowerShell Security
-### [PowerShell Remoting Security Considerations](WinRMSecurity.md)
+### [PowerShell Remoting Security Considerations](Topic/WinRMSecurity.md)
 ## [What's New in Windows PowerShell 5](Topic/What-s-New-in-Windows-PowerShell.md)
 ### [Compatibility Aliases](Topic/Appendix-1---Compatibility-Aliases.md)
 ### [Creating a Custom PowerShell Shortcut](Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
