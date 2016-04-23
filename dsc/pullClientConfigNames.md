@@ -113,6 +113,7 @@ configuration PullClientConfigID
         ReportServerWeb CONTOSO-ReportSrv
         {
             ServerURL = 'https://CONTOSO-ReportSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = '6b392c6a-818c-4b24-bf38-47124f1e2f14'
         }
     }
 }

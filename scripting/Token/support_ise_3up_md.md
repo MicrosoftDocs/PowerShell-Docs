@@ -1,0 +1,1 @@
+ Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 

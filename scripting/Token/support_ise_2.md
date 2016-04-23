@@ -1,0 +1,1 @@
+<Token xmlns:xlink="http://www.w3.org/1999/xlink">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</Token>

@@ -20,11 +20,11 @@ This Getting Started guide provides an introduction to Windows PowerShell: the l
 
 In this topic:
 
--   [Windows PowerShell System Requirements](../Topic/Windows-PowerShell-System-Requirements.md)
+-   [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)
 
--   [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
+-   [Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
 
--   [Starting Windows PowerShell](../Topic/Starting-Windows-PowerShell.md)
+-   [Starting Windows PowerShell](Topic/Starting-Windows-PowerShell.md)
 
--   [Getting Ready to Use Windows PowerShell](../Topic/Getting-Ready-to-Use-Windows-PowerShell.md)
+-   [Getting Ready to Use Windows PowerShell](Topic/Getting-Ready-to-Use-Windows-PowerShell.md)
 

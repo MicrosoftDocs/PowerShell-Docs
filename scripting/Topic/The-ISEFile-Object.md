@@ -1,0 +1,143 @@
+---
+title: The ISEFile Object
+ms.custom: na
+ms.reviewer: na
+ms.suite: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+---
+# The ISEFile Object
+  An **ISEFile** object represents a file in [!INCLUDE[ise_1](../Token/ise_1_md.md)]. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class. This topic lists its member methods and member properties. The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.
+
+## Methods
+
+###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ Saves the file to disk.
+
+ **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
+
+ **Exceptions**
+ -   **System.IO.IOException**: The file could not be saved.
+
+```
+# Save the file using the default encoding (UTF8)
+$psIse.CurrentFile.Save()
+
+# Save the file as ASCII.
+$psIse.CurrentFile.Save( [System.Text.Encoding]::ASCII )
+
+# Gets the current encoding.
+$myfile=$psIse.CurrentFile
+$myfile.Encoding
+
+```
+
+###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ Saves the file with the specified file name and encoding.
+
+ **filename** \- String
+ The name to be used to save the file.
+
+ **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
+
+ **Exceptions**
+ -   **System.ArgumentNullException**: The **filename** parameter is null.
+
+-   **System.ArgumentException**: The **filename** parameter is empty.
+
+-   **System.IO.IOException**: The file could not be saved.
+
+```
+# Save the file with a full path and name. 
+$fullpath = "c:\temp\newname.txt"
+$psIse.CurrentFile.SaveAs($fullPath) 
+# Save the file with a full path and name and explicitly as UTF8. 
+$psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
+
+```
+
+## Properties
+
+###  <a name="Displayname"></a> DisplayName
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only property that gets the string that contains the display name of this file. The name is shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.
+
+```
+# Shows the display name of the file.
+$psIse.CurrentFile.DisplayName
+
+```
+
+###  <a name="Editor"></a> Editor
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only property that gets the [editor object](../Topic/The-ISEEditor-Object.md) that is used for the specified file.
+
+```
+# Gets the editor and the text.
+$psIse.CurrentFile.Editor.Text
+
+```
+
+###  <a name="Encoding"></a> Encoding
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only property that gets the original file encoding. This is a **System.Text.Encoding** object.
+
+```
+# Shows the encoding for the file. 
+$psIse.CurrentFile.Encoding
+
+```
+
+###  <a name="FullPath"></a> FullPath
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only property that gets the string that specifies the full path of the opened file.
+
+```
+# Shows the full path for the file. 
+$psIse.CurrentFile.FullPath
+
+```
+
+###  <a name="IsSaved"></a> IsSaved
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only Boolean property that returns **$true** if the file has been saved after it was last modified.
+
+```
+# Determines whether the file has been saved since it was last modified.
+$myfile=$psIse.CurrentFile
+$myfile.IsSaved
+
+```
+
+###  <a name="IsUntitled"></a> IsUntitled
+ [!INCLUDE[support_ise_2up](../Token/support_ise_2up_md.md)]
+
+ The read\-only property that returns **$true** if the file has never been given a title.
+
+```
+# Determines whether the file has never been given a title.
+$psISE.CurrentFile.IsUntitled
+$psISE.CurrentFile.SaveAs("temp.txt")
+$psISE.CurrentFile.IsUntitled
+
+```
+
+## See Also
+ [The ISEFileCollectionObject](../Topic/The-ISEFileCollection-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+
+  

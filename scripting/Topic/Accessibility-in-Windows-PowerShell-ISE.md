@@ -10,13 +10,14 @@ ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 # Accessibility in Windows PowerShell ISE
 This topic describes the accessibility features of [!INCLUDE[ise_1](../Token/ise_1_md.md)] that you might find helpful.
 
-[How to change the size and location of the Console and Script Panes](#bkmk_1)
-[Keyboard shortcuts for editing text](#bkmk_2)
-[Keyboard shortcuts for running scripts](#bkmk_3)
-[Keyboard shortcuts for customizing the view](#bkmk_4)
-[Keyboard shortcuts for debugging scripts](#bkmk_5)
-[Keyboard shortcuts for Windows PowerShell tabs](#bkmk_6)
-[Keyboard shortcuts for starting and exiting](#bkmk_7)
+* [How to change the size and location of the Console and Script Panes](#bkmk_1)
+* [Keyboard shortcuts for editing text](#bkmk_2)
+* [Keyboard shortcuts for running scripts](#bkmk_3)
+* [Keyboard shortcuts for customizing the view](#bkmk_4)
+* [Keyboard shortcuts for debugging scripts](#bkmk_5)
+* [Keyboard shortcuts for Windows PowerShell tabs](#bkmk_6)
+* [Keyboard shortcuts for starting and exiting](#bkmk_7)
+
 Microsoft is committed to making its products and services easier for everyone to use. The following topics provide information about the features, products, and services that make [!INCLUDE[ise_2](../Token/ise_2_md.md)] more accessible for people with disabilities.
 
 [!INCLUDE[ise_2](../Token/ise_2_md.md)] supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see “How to manage breakpoints” in [How to Debug Scripts in the Windows PowerShell ISE](../Topic/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
