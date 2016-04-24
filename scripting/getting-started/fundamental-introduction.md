@@ -149,7 +149,7 @@ cmdlet with input: `say-something "JP"`. The results are shown in the next image
 Clearly, there is a way to communicate with cmdlets and that is via parameters.
 Good to know, parameters can be used in any of the three execution parts of the
 cmdlet; you just mention the parameter wherever you need it. In this case it
-was only used in the process section.
+was only used in the *process* section.
 
 Before the next cmdlet is dissected; a neat trick needs to be presented, to be
 able to maintain focus on the cmdlet later.
@@ -209,15 +209,20 @@ once, we could add two counters: (a) one to count the number of times the
 *process* section is invoked and (b) one to sum the numbers received from the
 previous command.
 
-Similarly, if *end* is, also, a function that's executed at the end it's only
-executed one, we could use it to show some results after everything has been
-greeted, well more like, processed.
+Similarly, if *end* is, also, a function that's executed at the end and it's
+only executed once; we could use the *end* section to show some results after
+everything has been greeted, well more like, processed.
 
 Last, but not least, let's rename the cmdlet to something more accurate, like
 *sum-value*; and, make sure we're receiving the right input from the previous
-cmdlet. Don't panic if you feel you don't know the syntax or all the details
-of it; the whole idea is to get a conceptual on how PowerShell works from the
-inside out. Look at the tweaked code and this explanation will continue
+cmdlet by making the input parameter of type *int*. Don't panic if you feel you
+don't know the syntax or all the details of it; the whole idea is to get a
+conceptual on how PowerShell works from the inside out, not to stop and analyze
+every bit of the code (there are other sections in this
+[Getting Started with PowerShell](Getting-Started-with-Windows-PowerShell.md))
+guide that will take care of the details of the syntax).
+
+Now, let's look at the tweaked code and this explanation will continue
 afterwards.
 
 ```
