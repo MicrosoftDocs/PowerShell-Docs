@@ -5,7 +5,7 @@
     )
 
     begin { 
-        [int]$total = 0;
+        [int]$total = 1000;
         [int]$items = 0;
     }
     process {

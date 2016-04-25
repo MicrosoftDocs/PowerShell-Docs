@@ -60,13 +60,15 @@ cmdlet and see: what's it made of and how are the pieces laid out.
 > Open your PowerShell ISE environment to better follow the rest of this section.
 >If you don't remember how to open ISE, check the [learners setup guide](basic-setup.md)
 
-
 >Note  
 >We're about to open a cmdlet; but, worry not if you don't understand everything
->you're seeing here; you'll be guided to look into the relevant parts first and
->helped to make all connections.  
->In the end you should have a full conceptual understanding of what is a cmdlet,
->how is that objects are handled and something new called pipeline.
+>you're seeing in here; you'll be guided to look into the relevant parts first
+>and helped to make all connections.  
+
+In the end you should have a full conceptual understanding of what is a cmdlet,
+how is that objects are handled and something new called pipeline.
+
+### *do-nothing*: the internals of a cmdlet
 
 ```                    
 function do-nothing {  
@@ -207,7 +209,9 @@ parts.
 If *begin* is a function that's executed at the beginning and it's only executed
 once, we could add two counters: (a) one to count the number of times the
 *process* section is invoked and (b) one to sum the numbers received from the
-previous command.
+previous command. To be sure this section is executed at the beginning and only
+once, let's set the value of the sum accumulator to 1,000; this way it will be
+easy to follow the initialization and the running sum.
 
 Similarly, if *end* is, also, a function that's executed at the end and it's
 only executed once; we could use the *end* section to show some results after
@@ -233,7 +237,7 @@ function sum-value {
     )
 
     begin {
-        [int]$total = 0;
+        [int]$total = 1000;
         [int]$items = 0;
     }
     process {
@@ -259,9 +263,59 @@ with *$total* and saving the result in *$total*; another way to say this, is
 to say that we have incremented *$total* by *$number*. Next, we incremented
 *$items* by 1. Finally, a message is written to show progress.
 
-In the *end* section we close with a written message of how many items where
+In the *end* section we close with a written message of how many items were
 received.
 
 Let's look at the execution.
 
 ![Sum-value executed portraying full usage of begin, process and end sections](sum-value-execution.png)
+
+The execution confirms what we guessed about the behavior of the cmdlet.
+
+The *begin* section was executed only one time, before any *process*; as the
+first run of the *process* shows the result of adding '*5*' gives '*1005*',
+which could only be true if *$total* was initialized to 1,000.
+
+Next, all subsequent invocations of *process* do not trigger the execution of
+*begin* because the running sum is a continuation of the previous value shown.
+
+Finally, the *end* section was invoked after all items from the range cmdlet
+were processed.
+
+So far, we have seen the anatomy of every cmdlet in PowerShell; regardless of
+how it was created, either compiled code or advanced function script. We have
+seen that cmdlets are command oriented instructions, that can take input from
+the script (in the form of parameters) or from the results of the execution of
+a previous cmdlet. Every cmdlet is a small program (function) tailored to execute
+a specific task; usually the name of the cmdlet '*verb-noun*' expresses the
+action and the subject upon which the action is taken, as in Get-Process.
+
+In scripting shell languages, the name of the place where results are placed for
+the next command to take them is ***pipeline***. This comes from the visualization
+of data being funneled from one command to the next through a plumbers pipe. The
+pipeline (as an object in shell scripting languages) is represented by the
+vertical bar symbol '**|**'. So, when we wrote `5..11 | sum-value`, we have
+explicitly connected the 'range' command to the 'sum-value' cmdlet through the
+pipeline.
+
+In PowerShell writing to the output is placing data in the pipeline. It is the
+responsibility of each cmdlet to put data in the pipeline; this can be
+done in any of the three (3) parts of the cmdlet (*begin*, *process*, *end*).
+
+Let's think a little bit about the last statement: "writing to the output is
+placing data in the pipeline". This means that our created cmdlet 'sum-value' is
+taking input from the pipeline and placing data in the pipeline for another
+command !? Is this right?
+
+Let's see it!!  
+If we write the following instructions in the *Console* pane and pressed **Enter**  
+>`5..11 | sum-value | Add-Content "C:\tmp\output.txt"`  
+
+We should be able to add content to the file 'output.txt' in the 'C:\\tmp'
+folder.
+
+![Combining three cmdlets through pipeline](Combining-three-cmdlets-through-pipeline.png)
+
+As shown in the image, the result of executing the Add-Content returns no
+results because the content taken from the pipeline is sent to the file. We had
+to restore to the "*type*" command to see the contents of the file.   
