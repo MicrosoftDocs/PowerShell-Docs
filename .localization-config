@@ -1,31 +1,8 @@
-{  
-   "locales":[  
-      "de-de",
-      "fr-fr"
-   ],
-   "filters":[  
-      {  
-         "files":[  
-            "albina/exclude.md"
-         ],
-         "priorities":[  
-            {  
-               "priority":"ht",
-               "locales":[  
-                  "pt-br"
-               ]
-            },
-            {  
-               "priority":"High",
-               "locales":[  
-                  "zh-cn"
-               ]
-            }
-         ]
-      }
-   ],
-   "includeDependencies":true,
-   "autoPush":true,
-   "xliffVersion":"1.2"
-}
+{   
+   "locales": ["de-de", "zh-cn" ], 
+   "files":["**/*.md", "**/**/*.md"], 
+    "includeDependencies":true, 
+    "autoPush":true, 
+    "xliffVersion":"1.2" 
+ }
 
