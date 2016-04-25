@@ -1,19 +1,23 @@
-{  
-   "filters":[  
-      {  
-         "files":[  
+{  
+   "locales":[  
+      "de-de",
+      "fr-fr"
+   ],
+   "filters":[  
+      {  
+         "files":[  
             "albina/exclude.md"
          ],
-         "priorities":[  
-            {  
+         "priorities":[  
+            {  
                "priority":"ht",
-               "locales":[  
+               "locales":[  
                   "pt-br"
                ]
             },
-            {  
+            {  
                "priority":"High",
-               "locales":[  
+               "locales":[  
                   "zh-cn"
                ]
             }
