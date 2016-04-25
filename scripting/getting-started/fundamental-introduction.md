@@ -3,8 +3,8 @@
 PowerShell is a scripting language based in commands. As a language it is
 oriented to give orders to a computer; so, the structure of the language is
 action -_verb_- first and subject -_noun_- last; ie. `Get-Process` commands the
-computer to give you the information on all processes. As in all languages, you
-also have the option to further qualify your command; like specifying which
+computer to give you the information about all processes. As in all languages,
+you also have the option to further qualify your command; like specifying which
 processes are you interested in, ie. `Get-Process -Id 0` commands the computer
 to return the information for the process with Id 0.
 
@@ -14,10 +14,10 @@ commands. Also, you can open PowerShell and start writing commands and see how
 they get executed.
 
 Shell languages are scripting languages that allow to connect two or more
-commands in a chain, where the results of one command is the input to the next
-command, and so on. One can also say that it's a shell scripting language
-because it allows to connect the results from one execution into the next
-execution; as in `Get-Process  Where-Object { $_.Name -like "*host*"}` that
+commands in a chain, where the results of one command are the input to the next
+command, and so on. One can also say that PowerShell is a shell scripting
+language because it allows to connect the results from one execution into the
+next execution; as in `Get-Process | Where-Object { $_.Name -like "*host*"}` that
 filters the results of the `Get-Process` to retrieve only those processes with
 names that have 'host' anywhere in the name. As you can imagine, 'Get-Process'
 and 'Where-Object' are two different commands; and, 'Where-Object' is taking
@@ -37,9 +37,11 @@ the best scripting language for computers under the Windows operating system.
 What makes PowerShell one of the best shells to work with is the fact that
 PowerShell uses objects instead of text when passing the results of one command
 to the next. This ability of working with objects gives an incredible power to
-PowerShell; now you have access to all the properties, of one instance of the object, at the same time you're processing one result from the previous
+PowerShell; now you have access to all the properties, of one instance of the
+object, at the same time you're processing one result from the previous
 command. In other shells what you have is text flowing between commands and you
-guess (it might be an educated guess, but guessing it is) what is each piece of data you process.
+guess (it might be an educated guess, but guessing it is) what is each piece of
+data you process.
 
 Before going any further let's summarize what we have up to here; PowerShell is:
 * A scripting language because it allows you to write commands to a file for
@@ -51,7 +53,7 @@ given in an action-subject style; **all instructions in PowerShell** have the
 form of **verb-noun**.
 * An object based scripting language.
 
-## Getting Inside PowerShell Cmdlets
+# Getting Inside PowerShell Cmdlets
 Sometimes to get a better understand of something, one needs to crack it open up
 to see what's inside and to figure out how it works. So, let's get inside of a
 cmdlet and see: what's it made of and how are the pieces laid out.
@@ -68,9 +70,9 @@ cmdlet and see: what's it made of and how are the pieces laid out.
 In the end you should have a full conceptual understanding of what is a cmdlet,
 how is that objects are handled and something new called pipeline.
 
-### *do-nothing*: the internals of a cmdlet
+## *do-nothing*: the internals of a cmdlet
 
-```                    
+```powershell                    
 function do-nothing {  
 
     begin { }         
@@ -104,7 +106,9 @@ in that order.
 Let's modify the `do-nothing` into something that greets; like a 'say-hello'
 kind of function:
 
-```                    
+## *say-hello*: *process* in action
+
+```powershell                    
 function say-hello {
 
     begin { }
@@ -119,15 +123,19 @@ message similar to this:
 
 ![The term 'say-hello' is not recognized as the name of a cmdlet](say-hello-not-recognized.png)
 
-If `say-hello` is successfully executed, the console pane should look like the following image.
+If `say-hello` is successfully executed, the console pane should look like the
+following image.
 
 ![Say Hello successfully executed says hello](say-hello-execution.png)
 
-In a few words, since `begin` and `end` are empty they bring nothing to this execution. Now, `process` only has one command with an obvious behavior: write
+In a few words, since `begin` and `end` are empty they bring nothing to this
+execution. Now, `process` only has one command with an obvious behavior: write
 to the output (wherever output is located; in this case is the same console
 where the command is executed). Nothing very surprising.
 
 Let's crack open another cmdlet to see how input can be taken in account.
+
+## *say-something*: taking input
 
 ```                    
 function say-something {
@@ -168,6 +176,8 @@ to this in a minute).
 
 Now, that the wow is subsiding, we'll dissect the next cmdlet.
 
+## *greet-everything*: using results as input
+
 ```                    
 function greet-everything {
     [CmdletBinding()]
@@ -198,12 +208,15 @@ being processed and mixed with the '*Hello* ' greet in `greet-everything`.
 This now requires some illustration to understand what's really happening here.
 
 Let's take a closer look at some relevant points:
-* A parameter was defined here that states that wants to use whatever is in the pipeline.
+* A parameter was defined here that states that wants to use whatever is in the
+*pipeline* (this we'll be explained shortly).
 * The *process* section seems to be executed once for each number coming from
 the range command.  
 
+## Tying everything up together, full cmdlet explained
+
 Now that the *greet-everything* cmdlet is crack-opened in the dissection table,
-let's try some tweaking to see if we can get better understanding of all the
+let's try some tweaking to see if we can get a better understanding of all the
 parts.
 
 If *begin* is a function that's executed at the beginning and it's only executed
@@ -260,11 +273,12 @@ sum of the numbers and the count of items sent from the previous cmdlet.
 
 Now, looking at the *process* section you can see that we're adding *$number*
 with *$total* and saving the result in *$total*; another way to say this, is
-to say that we have incremented *$total* by *$number*. Next, we incremented
-*$items* by 1. Finally, a message is written to show progress.
+to say that we have incremented *$total* by *$number*.  
+Next, we incremented *$items* by 1.  
+To close the *process* section, a message is written to show progress.
 
-In the *end* section we close with a written message of how many items were
-received.
+Finally, in the *end* section we finish with a written message of how many items
+were received.
 
 Let's look at the execution.
 
@@ -303,19 +317,34 @@ responsibility of each cmdlet to put data in the pipeline; this can be
 done in any of the three (3) parts of the cmdlet (*begin*, *process*, *end*).
 
 Let's think a little bit about the last statement: "writing to the output is
-placing data in the pipeline". This means that our created cmdlet 'sum-value' is
-taking input from the pipeline and placing data in the pipeline for another
-command !? Is this right?
+placing data in the pipeline". This means that our created cmdlet 'sum-value',
+that is taking input from the pipeline, by just writing to the output is placing
+data in the pipeline for another command !? Is this right?
 
 Let's see it!!  
-If we write the following instructions in the *Console* pane and pressed **Enter**  
+If we write the following instructions in the *Console* pane and press **Enter**  
 >`5..11 | sum-value | Add-Content "C:\tmp\output.txt"`  
 
-We should be able to add content to the file 'output.txt' in the 'C:\\tmp'
-folder.
+We should be able to add content to the file 'output.txt' (in the 'C:\\tmp'
+folder) by appending everything it was written by *sum-value*.
 
 ![Combining three cmdlets through pipeline](Combining-three-cmdlets-through-pipeline.png)
 
-As shown in the image, the result of executing the Add-Content returns no
-results because the content taken from the pipeline is sent to the file. We had
-to restore to the "*type*" command to see the contents of the file.   
+As shown in the image, the execution of the Add-Content cmdlet returns no
+results; this is because the content taken from the pipeline is sent to the file,
+nothing is sent to the pipeline. We had to restore to the "*type*" command to
+verify the contents is in the file.   
+
+# To summarize what was covered here
+
+PowerShell is:
+* A scripting language because it allows you to write commands to a file for
+later execution.
+* A shell scripting language because it allows to connect commands in a
+chain of results-input.
+* A language meant to command a computer and for this all instructions are
+given in an action-subject style; this means that **all instructions in PowerShell**
+follow the standard form of **verb-noun**.
+* All PowerShell cmdlets are functions made of three sections: *begin*,
+*process*, *end*. The *process* section is executed once for each item in the
+*pipeline*.
