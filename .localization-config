@@ -1,5 +1,5 @@
 {  
-  "locales": ["de-de", "zh-cn", "zh-tw", "pt-br", "vi-vn", "fr-fr", "es-es", "ko-kr", "ja-jp" ],
+  "locales": ["de-de", "zh-cn" ],
   "files":[ "**/*.md", "**/**/*.md"],
    "includeDependencies":true,
    "autoPush":true,
