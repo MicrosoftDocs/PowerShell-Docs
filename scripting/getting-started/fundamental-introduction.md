@@ -337,14 +337,15 @@ verify the contents is in the file.
 
 # To summarize what was covered here
 
-PowerShell is:
-* A scripting language because it allows you to write commands to a file for
-later execution.
-* A shell scripting language because it allows to connect commands in a
-chain of results-input.
-* A language meant to command a computer and for this all instructions are
-given in an action-subject style; this means that **all instructions in PowerShell**
-follow the standard form of **verb-noun**.
+* PowerShell is a scripting language because it allows you to write commands to
+a file for later execution.
+* PowerShell is a shell scripting language because it allows to connect commands
+in a chain of results-input.
+* PowerShell is a language to command a computer. And, for this purpose, all
+instructions are given in an action-subject format; this means that **all
+instructions in PowerShell** follow the standard form of **verb-noun**.
 * All PowerShell cmdlets are functions made of three sections: *begin*,
 *process*, *end*. The *process* section is executed once for each item in the
 *pipeline*.
+* In PowerShell everything written to the output is placed in the *pipeline* for
+the next cmdlet to pick it up.
