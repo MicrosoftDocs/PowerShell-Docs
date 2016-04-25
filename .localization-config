@@ -2,7 +2,7 @@
    "filters":[  
       {  
          "files":[  
-            "**/exclude.md"
+            "albina/exclude.md"
          ],
          "priorities":[  
             {  
