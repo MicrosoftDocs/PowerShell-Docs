@@ -14,7 +14,7 @@ pictures in the folder and folders below. If we use the CMD console window to
 look for all 'jpg' files in current folder and subfolders issuing `dir /s *.jpg`,
 we would get something like the next image.
 
-![command prompt list all jpg files](command-prompt-list-all-jpgs.png)
+![command prompt list all jpg files](img/command-prompt-list-all-jpgs.png)
 
 But, the only thing we need are the file sizes. If what we receive is text,
 extracting the sizes and adding them it's going to be an interesting challenge;
@@ -27,7 +27,7 @@ Now, can we prove the output is all text?
 Let's look at what happens when we issue the following command
 `dir /s *.jpg | sort`.
 
-![command prompt list all jpg files sorted](command-prompt-list-all-jpgs-sorted.png)
+![command prompt list all jpg files sorted](img/command-prompt-list-all-jpgs-sorted.png)
 
 Well, the output is neatly sorted in alphabetical order, line by line; so, it is
 text. We don't want to spend much time here talking about the CMD shell and the
@@ -64,7 +64,7 @@ Let's try the 'dir' command with some adjustments to PowerShell syntax:
 As you can imagine the '*-recurse*' parameter is the equivalent of '/s' for
 searching subdirectories.
 
-![Powershell list all jpgs compared](Powershell-list-all-jpgs-compared.png)
+![Powershell list all jpgs compared](img/Powershell-list-all-jpgs-compared.png)
 
 This is disappointing! There are no differences, what's wrong?  
 (actually there's a tiny difference, but not what we were expecting; so, for the
@@ -77,7 +77,7 @@ expects to know the property we want to sort on.
 
 Let's try a small tweak here: `dir "*.jpg" -recurse | sort -property length`
 
-![powershell list all jpgs length sort](powershell-list-all-jpgs-length-sort.png)
+![powershell list all jpgs length sort](img/powershell-list-all-jpgs-length-sort.png)
 
 As you can see in the image above, pictures are sorted by length.  
 This has to mean the pipeline is receiving something of the kind of a filesystem
@@ -88,7 +88,7 @@ In PowerShell you can always examine the objects in the pipeline using the
 objects are laid in the pipeline for the '*dir*' cmdlet:  
 `dir "*.jpg" -recurse | Get-Member`.
 
-![Get-Member for Dir cmdlet](Get-Member-for-Dir-cmdlet.png)
+![Get-Member for Dir cmdlet](img/Get-Member-for-Dir-cmdlet.png)
 
 As you can see, the '*Dir*' cmdlet is throwing into the pipeline standard '.Net'
 FileInfo objects, with very little additions: like the NoteProperties and the
@@ -132,3 +132,41 @@ Writing in the ISE console pane the following command
 `dir  -recurse | Report-SizeByFileType`  
 should produce the similar results (if you're located in your pictures folder or
 similar folder with some nested subfolders).
+
+```
+¶ >dir "C:\tmp\Pictures" -recurse | Report-SizeByFileType
+
+Name                           Value                                                     
+----                           -----                                                     
+.png                           1379623                                                   
+.jpg                           22111247                                                  
+
+```
+
+This is exactly what we wanted!!
+
+A list type of report where the extensions are matched to the total size of space used by.
+
+Let's take a closer look at what's happening here.
+
+1.  A parameter *$pipeobject* is defined, to pick up whatever is placed in the
+pipeline.
+
+2.  In the *begin* section a dictionary object is defined as variable *$dict*.  
+A dictionary object allows to store data in Key -> Value pairs; for each key
+there is a corresponding value.  
+In our case the file extension is the key and the file length is accumulated
+onto the value.  
+>Geek Note:  
+In PowerShell a dictionary is called hashtable; because, that's how the
+dictionary is implemented.  
+
+3.  In the *process* section we check to see whether the object received is a
+'FileInfo' object; if that's the case, we update the dictionary, for the
+extension at hand, incrementing the value by the 'FileInfo' length.
+
+4.  Once all input from the pipeline has been processed, in the *end* section we
+write the dictionary to the output; which is the same as saying we placed the
+dictionary in the pipeline.
+
+A few interesting thoughts about what we have seen:

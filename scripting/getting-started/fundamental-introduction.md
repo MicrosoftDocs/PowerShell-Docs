@@ -85,7 +85,7 @@ Write the above sample in ISE; then, either press the green 'run script' button
 or press the **F5** key; finally, in the 'Console' window type `do-nothing` and
 press **Enter**. You should have something similar to the next image:
 
-![An empty execution is a successful execution](do-nothing-execution.png)
+![An empty execution is a successful execution](img/do-nothing-execution.png)
 
 Nothing had happened, as expected from a 'do-nothing' instruction or command.
 
@@ -121,12 +121,12 @@ Again, after writing the code in the ISE remember to execute the script before
 using the cmdlet; if you don't execute the script before, you'll get an error
 message similar to this:
 
-![The term 'say-hello' is not recognized as the name of a cmdlet](say-hello-not-recognized.png)
+![The term 'say-hello' is not recognized as the name of a cmdlet](img/say-hello-not-recognized.png)
 
 If `say-hello` is successfully executed, the console pane should look like the
 following image.
 
-![Say Hello successfully executed says hello](say-hello-execution.png)
+![Say Hello successfully executed says hello](img/say-hello-execution.png)
 
 In a few words, since `begin` and `end` are empty they bring nothing to this
 execution. Now, `process` only has one command with an obvious behavior: write
@@ -154,7 +154,7 @@ The first thing to do here is to execute the script and then, at the Console
 pane, execute the cmdlet: `say-something` with no input. Then we execute the
 cmdlet with input: `say-something "JP"`. The results are shown in the next image.
 
-![say-something without and with input](say-something-execution.png)
+![say-something without and with input](img/say-something-execution.png)
 
 Clearly, there is a way to communicate with cmdlets and that is via parameters.
 Good to know, parameters can be used in any of the three execution parts of the
@@ -167,7 +167,7 @@ able to maintain focus on the cmdlet later.
 In the Console pane of the ISE type the following line: `5..11`and press
 **Enter**. You should have something similar to the next image.
 
-![Range 5 to 11 executed](range-5-to-11-execution.png)
+![Range 5 to 11 executed](img/range-5-to-11-execution.png)
 
 A full sequence of numbers has been generated, starting at 5 and finishing in 11
 (as was expected, somehow). Note that every element in the sequence is generated
@@ -200,7 +200,7 @@ If we pass the results of range operator `..` to the newly created
 
 You should see results similar to the next image.
 
-![greet-everything executed with results from range](greet-everything-execution.png)
+![greet-everything executed with results from range](img/greet-everything-execution.png)
 
 Please notice how the results from the range operator, `5..11`, are
 being processed and mixed with the '*Hello* ' greet in `greet-everything`.   
@@ -236,7 +236,7 @@ cmdlet by making the input parameter of type *int*. Don't panic if you feel you
 don't know the syntax or all the details of it; the whole idea is to get a
 conceptual on how PowerShell works from the inside out, not to stop and analyze
 every bit of the code (there are other sections in this
-[Getting Started with PowerShell](Getting-Started-with-Windows-PowerShell.md))
+[Getting Started with PowerShell](img/Getting-Started-with-Windows-PowerShell.md))
 guide that will take care of the details of the syntax).
 
 Now, let's look at the tweaked code and this explanation will continue
@@ -282,7 +282,7 @@ were received.
 
 Let's look at the execution.
 
-![Sum-value executed portraying full usage of begin, process and end sections](sum-value-execution.png)
+![Sum-value executed portraying full usage of begin, process and end sections](img/sum-value-execution.png)
 
 The execution confirms what we guessed about the behavior of the cmdlet.
 
@@ -328,7 +328,7 @@ If we write the following instructions in the *Console* pane and press **Enter**
 We should be able to add content to the file 'output.txt' (in the 'C:\\tmp'
 folder) by appending everything it was written by *sum-value*.
 
-![Combining three cmdlets through pipeline](Combining-three-cmdlets-through-pipeline.png)
+![Combining three cmdlets through pipeline](img/Combining-three-cmdlets-through-pipeline.png)
 
 As shown in the image, the execution of the Add-Content cmdlet returns no
 results; this is because the content taken from the pipeline is sent to the file,
