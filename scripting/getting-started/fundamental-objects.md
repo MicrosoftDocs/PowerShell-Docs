@@ -105,7 +105,7 @@ under it.
 >following lines seem too intimidating to continue...  
 >read the Introduction and you'll feel ready.
 
-```
+```powershell                    
 function Report-SizeByFileType {
     [CmdletBinding()]
     Param(

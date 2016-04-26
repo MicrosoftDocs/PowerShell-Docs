@@ -137,7 +137,7 @@ Let's crack open another cmdlet to see how input can be taken in account.
 
 ## *say-something*: taking input
 
-```                    
+```powershell                    
 function say-something {
 
     Param(
@@ -178,7 +178,7 @@ Now, that the wow is subsiding, we'll dissect the next cmdlet.
 
 ## *greet-everything*: using results as input
 
-```                    
+```powershell                    
 function greet-everything {
     [CmdletBinding()]
     Param(
@@ -242,7 +242,7 @@ guide that will take care of the details of the syntax).
 Now, let's look at the tweaked code and this explanation will continue
 afterwards.
 
-```
+```powershell                    
 function sum-value {
     [CmdletBinding()]
     Param(
