@@ -48,6 +48,8 @@
 
 # [Troubleshooting DSC](troubleshooting.md)
 
+# [Using DSC on Nano Server](nanoDsc.md)
+
 # DSC on Linux
 ## [Getting started with DSC for Linux](lnxGettingStarted.md)
 ## [Built-in resorces for Linux](lnxBuiltInResources.md)
