@@ -14,7 +14,7 @@ For information about installing and using Nano Server, as well as how to manage
 [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx).
 
 
-## DSC on Nano Server available features
+## DSC features available on Nano Server
 
  Because Nano Server supports only a limited set of APIs compared to a full version of Windows Server, DSC on Nano Server does not have full functional parity with DSC running on 
  full SKUs for the time being. DSC on Nano Server is in active development and is not yet feature complete.
@@ -83,7 +83,7 @@ For information about installing and using Nano Server, as well as how to manage
   * WaitForAny (see [Specifying cross-node dependencies](crossNodeDependencies.md))
   * WaitForSome (see [Specifying cross-node dependencies](crossNodeDependencies.md))
 
-## DSC on Nano unavailalbe features
+## DSC features not available on Nano Server
 
 The following DSC features are not currently available on Nano Server:
 
