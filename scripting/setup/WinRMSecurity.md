@@ -30,7 +30,7 @@ Remoting connections only from within the same subnet. You have to explicitly ch
 
 ## Process isolation
 
-PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426).aspx) for communication between computers. 
+PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) for communication between computers. 
 WinRM runs as a service under the Network Service account, and spawns isolated processes running as user accounts to host PowerShell instances. An instance of PowerShell running as one
 user has no access to a process running an instance of PowerShell as another user.
 
