@@ -5,10 +5,11 @@
 ### [PowerShell 5.0 ISE](whats-new/What-s-New-in-the-PowerShell-50-ISE.md)
 
 ## [Setup](setup/setup-reference.md)
-### [Windows PowerShell System Requirements](setup/Windows-PowerShell-System-Requirements.md)
-### [Installing Windows PowerShell](setup/Installing-Windows-PowerShell.md)
-### [Starting Windows PowerShell](setup/Starting-Windows-PowerShell.md)
-#### [Starting the 32-Bit Version of Windows PowerShell](setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+### [PowerShell System Requirements](setup/Windows-PowerShell-System-Requirements.md)
+### [Installing  PowerShell](setup/Installing-Windows-PowerShell.md)
+### [Starting PowerShell](setup/Starting-Windows-PowerShell.md)
+#### [Starting the 32-Bit Version of PowerShell](setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+#### [Starting PowerShell on Earlier Versions of Windows](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 ### [Installing the Windows PowerShell 2.0 Engine](setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Starting the Windows PowerShell 2.0 Engine](setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
 ### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
@@ -35,6 +36,7 @@
 ####  [Using Familiar Command Names](getting-started/fundamental/Using-Familiar-Command-Names.md)
 ####  [Object Pipeline](getting-started/fundamental/Object-Pipeline.md)
 ####  [Scripting with Windows PowerShell](getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+####  [Using Windows PowerShell](getting-started/fundamental/Using-Windows-PowerShell.md)
 
 ### [Basic Cookbooks](getting-started/basic-cookbooks.md)
 ####  [Changing Computer State](getting-started/cookbooks/Changing-Computer-State.md)
@@ -67,6 +69,7 @@
 ####  [Working with Files and Folders](getting-started/cookbooks/Working-with-Files-and-Folders.md)
 ####  [Working with Objects](getting-started/cookbooks/Working-with-Objects.md)
 ####  [Working with Printers](getting-started/cookbooks/Working-with-Printers.md)
+####  [Working with Registry Entries](getting-started/cookbooks/Working-with-Registry-Entries.md)
 ####  [Working with Registry Keys](getting-started/cookbooks/Working-with-Registry-Keys.md)
 ####  [Working with Software Installations](getting-started/cookbooks/Working-with-Software-Installations.md)
 
