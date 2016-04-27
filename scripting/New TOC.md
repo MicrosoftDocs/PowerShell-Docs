@@ -81,6 +81,16 @@
 ### [Integrated Scripting Environment -ISE-](core-powershell/ise-guide.md)
 ####  [ISE Object Model Reference](core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
 ####  [ISE Scripting Object Model](core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+####  [Using the Windows PowerShell ISE](core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+####  [The ISE File Object](core-powershell/ise/The-ISEFile-Object.md)
+####  [The ISE Options Object](core-powershell/ise/The-ISEOptions-Object.md)
+####  [The ISE Snippet Collection Object](core-powershell/ise/The-ISESnippetCollection-Object.md)
+####  [The ISE Snippet Object](core-powershell/ise/The-ISESnippetObject.md)
+####  [The ISO Object Model Root-Object](core-powershell/ise/The-ObjectModelRoot-Object.md)
+####  [How to Create a PowerShell Tab in  PowerShell ISE](core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+####  [How to Debug Scripts in PowerShell ISE](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+####  [How to Use Profiles in  PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+####  [How to Use the Console Pane in the  PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 
 
 ### [Console](core-powershell/console-guide.md)
