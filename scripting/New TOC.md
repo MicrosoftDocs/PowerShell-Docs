@@ -18,10 +18,10 @@
 #### [Accessibility in Windows PowerShell ISE.md](setup/Accessibility-in-Windows-PowerShell-ISE.md)
 
 ## [Getting Started](Getting-Started-with-Windows-PowerShell.md)
-### [Basic Setup](basic-setup.md)
-### [Fundamental Concepts](fundamental-concepts.md)
-### [Basic Cookbooks](basic-cookbooks.md)
-### [Where can I go for more learning?](more-basic-learning.md)
+### [Basic setup for learning PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)
+### [Fundamental Concepts](getting-started/fundamental-concepts.md)
+### [Basic Cookbooks](getting-started/basic-cookbooks.md)
+### [Where can I go for more learning?](getting-started/more-powershell-learning.md)
 
 ## [Core PowerShell](core-powershell.md)
 ### [Scripting Guide](scripting-guide.md)
