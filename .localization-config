@@ -1,5 +1,5 @@
 {   
-   "locales": ["de-de", "zh-cn" ], 
+   "locales": ["de-de", "zh-cn", "ar-sa" ], 
    "files":[ "!albina/*.md", "**/*.md", "**/**/*.md"], 
     "includeDependencies":true, 
     "autoPush":true, 
