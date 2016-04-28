@@ -132,9 +132,9 @@
 
 ### [Running Remote Commands](core-powershell/Running-Remote-Commands.md)
 
-### [Workflows](core-powershell/workflows.md)
-####  [Workflow-Module](core-powershell/remote/PSWorkflow-Module.md)
-####  [Workflow Utility Module](core-powershell/remote/PSWorkflowUtility-Module.md)
+### [Workflows](core-powershell/workflows-guide.md)
+####  [Workflow-Module](core-powershell/workflows/PSWorkflow-Module.md)
+####  [Workflow Utility Module](core-powershell/workflows/PSWorkflowUtility-Module.md)
 
 ### [Web Access](core-powershell/web-access.md)
 
