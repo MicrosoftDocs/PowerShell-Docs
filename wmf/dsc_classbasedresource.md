@@ -60,7 +60,7 @@ NOTE: This property is required because [DscProperty(Mandatory)] is set.
 [string] $SourcePath
 
 <#
-This property reports the file's creation timestamp.
+This property reports the file creation timestamp.
 
 [DscProperty(NotConfigurable)] attribute indicates the property is not configurable in a DSC configuration. Properties marked this way are populated by the Get() method to report additional details about the resource when it is present.
 #>
@@ -212,13 +212,13 @@ class FileResource : BaseFileResource
     [bool] $IsReadOnly
 
     <#
-    This property reports the file's LastAccessTime timestamp.
+    This property reports the file LastAccessTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastAccessTime
 
     <#
-    This property reports the file's LastWriteTime timestamp.
+    This property reports the file LastWriteTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastWriteTime
