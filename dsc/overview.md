@@ -35,5 +35,5 @@ DSC also includes a number of new language keywords, cmdlets and tools that allo
 ## See Also
 * [DSC Configurations](configurations.md)
 * [DSC Resources](resources.md)
-* [Configuring The Local Configuration Manager](metaconfig.md)
+* [Configuring The Local Configuration Manager](metaConfig.md)
 
