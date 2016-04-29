@@ -78,7 +78,6 @@
 ### [Scripting Guide](core-powershell/scripting-guide.md)
 ### [PowerShell Gallery](core-powershell/gallery/gallery-reference.md)
 ### [Language Guide](core-powershell/language-guide.md)
-### [Language Reference](core-powershell/language-reference.md)
 ### [Core Modules](core-powershell/core-modules.md)
 ####  [Archive Module](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Core Module](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
