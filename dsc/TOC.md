@@ -9,6 +9,7 @@
 ### [Running DSC with user credentials](runAsUser.md)
 ## [Securing the configuration MOF file](secureMOF.md)
 ## [Partial Configurations](partialConfigs.md)
+## [Writing help for DSC configurations](configHelp.md)
 
 # [Resources](resources.md)
 ## [Built-in resources](builtInResource.md)
