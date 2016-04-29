@@ -192,12 +192,6 @@ $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-Note: If your target node is a _Nano Server_, you should use the CertOC.exe application to import the private key certificate because the ```Import-PfxCertificate``` cmdlet is not available.
-```powershell
-# Import to the root store so that it is trusted
-certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
-```
-
 ## Configuration data
 
 The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](configData.md).
