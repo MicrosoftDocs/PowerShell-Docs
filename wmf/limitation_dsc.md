@@ -209,3 +209,9 @@ VERBOSE: [WIN-3B576EM3669]: LCM: [ End Set ] in 0.4807 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
+ModuleVersion does not work as expected with Import-DscResource
+----------------------------------------------------------------------
+Both the ModuleVersion parameter as well as the ModuleVersion key within the ModuleSepecification for the Import-DscResource cmdlet do not specify the exact version of the module as you would expect and as was the case in Production Preview. Due to a bug introduced in WMF 5.0 RTM using either of these will result in an error because DSC is looking for the latest version of the module and then failing because there are multiple versions. To work around the issue you must use the **RequiredVersion** key in the ModuleSpecification instead as follows:
+``` PowerShell
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
+```
