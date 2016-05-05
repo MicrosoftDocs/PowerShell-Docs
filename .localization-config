@@ -1,7 +1,7 @@
 {
 	"locales": ["ja-jp", "de-de", "fr-fr", "zh-cn", "zh-tw", "ko-kr", "es-es", "it-it", "ru-ru", "pt-br"],
 	"files": ["!/*.md", "**/**/*.md", "**/*.md"],
-	"includeDependencies": true,
+	"includeDependencies": false,
 	"autoPush": true,
 	"useJavascriptMarkdownTransformer": true
 }
