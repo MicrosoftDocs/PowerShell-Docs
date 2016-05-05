@@ -173,45 +173,21 @@ WindowsOptionalFeature is not available in Windows 7
 
 The WindowsOptionalFeature DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
 
+For Class-based DSC resources, Import-DscResource -ModuleVersion may not work as expected   
+------------------------------------------------------------------------------------------
+If the compilation node has multiple version of a class-based DSC resource module, `Import-DscResource -ModuleVersion` does not pick the specified version and results in following compilation error.
 
-Running Set-DscLocalConfigurationManager to set Meta Configuration against WMF 4.0 or WMF 5.0 Production Preview builds will not work
----------------------------------------------------------------------------------------------------------------------------------------
-
-There is a backward compatibility issue when running Set-DscLocalConfiguration against previous WMFs. You will see this error complaining about newly added -Force parameter not being available on the target machine.
-```powershell
-Set-DscLocalConfigurationManager -Path . -Verbose -ComputerName WIN-3B576EM3669
-VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT_DSCLocalConfigurationManager".
-VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendMetaConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
-The WinRM client cannot process the request. The object contains an unrecognized argument: "Force". Verify that the spelling of the argument name is correct.
-+ CategoryInfo : MetadataError: (root/Microsoft/...gurationManager:String) [], CimException
-+ FullyQualifiedErrorId : HRESULT 0x803381e1
-+ PSComputerName : WIN-3B576EM3669
-VERBOSE: Operation 'Invoke CimMethod' complete.
-VERBOSE: Set-DscLocalConfigurationManager finished in 0.121 seconds.
 ```
-**Resolution:** Follow these steps to use Invoke-CimMethod to call underlying CIM method directly to set meta configuration.
-```powershell
-$computerName = "WIN-3B576EM3669"
-$mofPath = "C:\$computerName.meta.mof"
-$configurationData = [Byte[]][System.IO.File]::ReadAllBytes($mofPath)
-$totalSize = [System.BitConverter]::GetBytes($configurationData.Length + 4 )
-$configurationData = $totalSize + $configurationData
-Invoke-CimMethod -Namespace root/microsoft/windows/desiredstateconfiguration -Class MSFT_DSCLocalConfigurationManager -Name SendMetaConfigurationApply -Arguments @{ConfigurationData = [Byte[]]$configurationData} -Verbose -ComputerName $computerName
-VERBOSE: Performing the operation "Invoke-CimMethod: SendMetaConfigurationApply" on target "MSFT_DSCLocalConfigurationManager".
-VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendMetaConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/microsoft/windows/desiredstateconfiguration'.
-VERBOSE: An LCM method call arrived from computer WIN-3B576EM3669 with user sid S-1-5-21-2127521184-1604012920-1887927527-5557045.
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Set ]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Resource ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Set ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Set ] [MSFT_DSCMetaConfiguration] in 0.4060 seconds.
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Resource ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Set ] in 0.4807 seconds.
-VERBOSE: Operation 'Invoke CimMethod' complete.
+ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
+At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:2035 char:35
++ ... rcesFound = ImportClassResourcesFromModule -Module $mod -Resources $r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [ImportClassResourcesFromModule], MethodInvocationException
+    + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-ModuleVersion does not work as expected with Import-DscResource
-----------------------------------------------------------------------
-Both the ModuleVersion parameter as well as the ModuleVersion key within the ModuleSepecification for the Import-DscResource cmdlet do not specify the exact version of the module as you would expect and as was the case in Production Preview. Due to a bug introduced in WMF 5.0 RTM using either of these will result in an error because DSC is looking for the latest version of the module and then failing because there are multiple versions. To work around the issue you must use the **RequiredVersion** key in the ModuleSpecification instead as follows:
-``` PowerShell
-Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
-```
+**Resolution:** Import the required version by defining the *ModuleSpecification* object to the `-ModuleName` with `RequiredVersion` key specified as follows:
+``` PowerShell  
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
+```  
+
