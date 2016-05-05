@@ -15,7 +15,7 @@ Resources in this section help you learn about Windows PowerShell, features that
 ## What’s In This Section
 Content in this section can help you learn more about Windows PowerShell, how to use Windows PowerShell, and what is new in Windows PowerShell in the most current releases.
 
--   [What's New in Windows PowerShell](../Topic/What-s-New-in-Windows-PowerShell.md). This topic describes changes to Windows PowerShell 3.0 and Windows PowerShell 4.0.
+-   [What's New in Windows PowerShell](../whats-new/What-s-New-in-Windows-PowerShell-50.md). This topic describes changes to Windows PowerShell 3.0 and Windows PowerShell 4.0.
 
 -   [Getting Started with Windows PowerShell](../Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
 
@@ -71,4 +71,3 @@ The following topics describe how you can get the latest Help for Windows PowerS
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) cmdlet. A Windows PowerShell cmdlet that you can use to learn about the cmdlets and providers that are installed on your system.
 
 -   You can get notifications about any updates to published Help files by subscribing to the following RSS feed: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
-

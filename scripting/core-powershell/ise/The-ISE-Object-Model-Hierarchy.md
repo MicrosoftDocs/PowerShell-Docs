@@ -138,11 +138,11 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**
 
--   **[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#cptfc)**
+-   **[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**
 
--   **[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#cptbc)**
+-   **[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**
 
--   **[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#ctc)**
+-   **[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**
 
 -   **[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**
 
@@ -186,9 +186,9 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**
 
--   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetscpi)**
+-   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
 
--   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsspi)**
+-   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
 
 -   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
 
@@ -208,7 +208,5 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
  The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](../console/The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](../console/The-PowerShellTab-Object.md) class.
 
 ## See Also
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
  [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-  
