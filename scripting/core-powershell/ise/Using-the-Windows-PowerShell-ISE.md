@@ -10,7 +10,7 @@ ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 # Using the Windows PowerShell ISE
 This topics in this document describe how you can use features of the Windows PowerShellÂ® Integrated Scripting Environment (ISE) to be more productive.
 
-[How to Use Tab Completion in the Script Pane and Console Pane](../console/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+[How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 Provides the steps to perform tab completion in both the Script Pane and the Console Pane.
 
 [How to Create a PowerShell Tab in Windows PowerShell ISE](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)

@@ -37,10 +37,10 @@ ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
  [The ObjectModelRoot Object](The-ObjectModelRoot-Object.md)
  Example: The root $psISE object.
 
- [The PowerShellTab Object](../console/The-PowerShellTab-Object.md)
+ [The PowerShellTab Object](The-PowerShellTab-Object.md)
  Examples: $psISE.CurrentPowerShellTab, $psISE.PowerShellTabs\[0\].
 
- [The PowerShellTabCollection Object](../console/The-PowerShellTabCollection-Object.md)
+ [The PowerShellTabCollection Object](The-PowerShellTabCollection-Object.md)
  Example: $psISE.PowerShellTabs.
 
 ## See Also

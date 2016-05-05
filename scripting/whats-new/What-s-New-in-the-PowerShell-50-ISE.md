@@ -220,9 +220,8 @@ Show\-Command is new Windows PowerShell ISE 3.0.
 ## <a name="BKMK_LINKS"></a>See also
 For more information about using Windows PowerShell ISE in Windows PowerShell, see the following links.
 
--   [Using the Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
+-   [Using the Windows PowerShell Integrated Scripting Environment](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 -   [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 
 -   [Script Center](http://technet.microsoft.com/scriptcenter/default)
-

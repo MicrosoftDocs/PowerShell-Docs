@@ -12,7 +12,7 @@ ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 
  Each add\-on tool can be associated with either the vertical pane or the horizontal pane. The vertical pane is docked to the right edge of Windows PowerShell ISE. The horizontal pane is docked to the bottom edge.
 
- Each PowerShell tab in Windows PowerShell ISE can have its own set of add\-on tools installed. See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md) and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md) to access the collection of tools available to the currently selected tab or the same properties on any of the **PowerShellTab** objects in the [$psISE.PowerShellTabs](../console/The-PowerShellTabCollection-Object.md) collection object.
+ Each PowerShell tab in Windows PowerShell ISE can have its own set of add\-on tools installed. See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md) and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md) to access the collection of tools available to the currently selected tab or the same properties on any of the **PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) collection object.
 
 ## Methods
  There are no Windows PowerShell ISE\-specific methods available for objects of this class.

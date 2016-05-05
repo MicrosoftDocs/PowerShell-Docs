@@ -124,9 +124,9 @@
 
 ### [Console](core-powershell/console-guide.md)
 ####  [Console Command Line Reference](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/console/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [The PowerShell Tab Object](core-powershell/console/The-PowerShellTab-Object.md)
-####  [The PowerShell Tab Collection Object](core-powershell/console/The-PowerShellTabCollection-Object.md)
+####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+####  [The PowerShell Tab Object](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [The PowerShell Tab Collection Object](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Using Tab Expansion](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Running Remote Commands](core-powershell/Running-Remote-Commands.md)

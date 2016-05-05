@@ -56,8 +56,8 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](../console/The-PowerShellTab-Object.md)**
- The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](../console/The-PowerShellTab-Object.md) class and makes the following objects available for scripting:
+##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+ The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class and makes the following objects available for scripting:
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)**  This object is an instance of the [ISEMenuItem](The-ISEMenuItem-Object.md) class and makes the following objects available for scripting:
 
@@ -69,7 +69,7 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
     -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.CanInvoke](../console/The-PowerShellTab-Object.md#CanExecute)**
+-   **[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:
 
@@ -87,27 +87,27 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
     -   **[Text](The-ISEEditor-Object.md#Text)**
 
--   **[$psISE.CurrentPowerShellTab.DisplayName](../console/The-PowerShellTab-Object.md#Displayname)**
+-   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
 
--   **[$psISE.CurrentPowerShellTab.ExpandedScript](../console/The-PowerShellTab-Object.md#ExpandedScript)**
+-   **[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**
 
 -   **[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**
 
 -   **[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](../console/The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
 
--   **[$psISE.CurrentPowerShellTab.Prompt](../console/The-PowerShellTab-Object.md#Prompt)**
+-   **[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**
 
--   **[$psISE.CurrentPowerShellTab.ShowCommands](../console/The-PowerShellTab-Object.md#ShowCommands)**
+-   **[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**
 
 -   **[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.StatusText](../console/The-PowerShellTab-Object.md#StatusText)**
+-   **[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**
 
 -   **[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](../console/The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
 
 -   **[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
@@ -204,8 +204,8 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](../console/The-PowerShellTabCollection-Object.md)**
- The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](../console/The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](../console/The-PowerShellTab-Object.md) class.
+##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+ The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.
 
 ## See Also
  [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)

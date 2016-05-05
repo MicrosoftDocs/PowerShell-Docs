@@ -10,7 +10,7 @@ ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 # How to Use the Console Pane in the Windows PowerShell ISE
 The Console pane in the Windows PowerShellÂ® Integrated Scripting Environment (ISE) operates exactly like the stand\-alone Windows PowerShell ISE console window.
 
-To run a command in the Console Pane, type a command, and then press ENTER. To enter multiple commands that you want to execute in sequence, type SHIFT\+ENTER between commands. See [How to Use Tab Completion in the Script Pane and Console Pane](../console/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for help in typing commands.
+To run a command in the Console Pane, type a command, and then press ENTER. To enter multiple commands that you want to execute in sequence, type SHIFT\+ENTER between commands. See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for help in typing commands.
 
 To stop a command, on the toolbar, click **Stop Operation**, or press CTRL\+BREAK. You can also use CTRL\+C to stop a command if the context is unambiguous. For example, if some text has been selected in the current Pane, then CTRL\+C maps to the copy operation.
 
