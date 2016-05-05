@@ -186,7 +186,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Resolution:** Import the required version by defining the *ModuleSpecification* object to the `-ModuleName` with **RequiredVersion** key specified as follows:
+**Resolution:** Import the required version by defining the *ModuleSpecification* object to the `-ModuleName` with `RequiredVersion` key specified as follows:
 ``` PowerShell  
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
 ```  
