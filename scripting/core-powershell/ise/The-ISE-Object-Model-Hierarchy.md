@@ -50,8 +50,6 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[FullPath](The-ISEFile-Object.md#FullPath)**
 
--   **[$psISE.CurrentFile.IsRecovered](The-ISEFile-Object.md#IsRecovered)**
-
 -   **[IsSaved](The-ISEFile-Object.md#IsSaved)**
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**

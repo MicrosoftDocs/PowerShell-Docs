@@ -19,8 +19,6 @@ Content in this section can help you learn more about Windows PowerShell, how to
 
 -   [Getting Started with Windows PowerShell](../Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
 
--   [Windows PowerShell User's Guide](../Topic/Windows-PowerShell-User-s-Guide.md). A detailed introduction, including real\-world scripts and scenarios to get you started.
-
 -   [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md). Documentation for Windows PowerShell ISE, a graphical Windows PowerShell script editor and console.
 
 -   [Windows PowerShell Desired State Configuration (DSC) Overview](https://technet.microsoft.com/en-us/library/04c9e716-822c-40f0-8fdf-f2dda8abd888). An introduction to a new feature for Windows PowerShell 4.0, Windows PowerShell Desired State Configuration (DSC). DSC can help administrators achieve consistent configurations in Windows environments, and on devices such as network switches.
@@ -52,8 +50,6 @@ To begin learning Windows PowerShell, start with the following resources:
 -   [Microsoft Virtual Academy: Advanced Tools & Scripting with PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277). IT pros, take this advanced Windows PowerShell course to find out how to turn your real time management and automation scripts into useful reusable tools and cmdlets. You’ll learn the best patterns and practices for building and maintaining tools and you’ll pick up some special tips and tricks along the way from the architect and inventor of Windows PowerShell, Distinguished Engineer Jeffrey Snover, and IT pro, Jason Helmick.
 
 -   [Getting Started with Windows PowerShell](../Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
-
--   [Windows PowerShell User's Guide](../Topic/Windows-PowerShell-User-s-Guide.md). A detailed introduction, including real\-world scripts and scenarios to get you started.
 
 -   [Windows PowerShell Core Module Reference](http://technet.microsoft.com/library/hh847741(v=wps.630).aspx). An alphabetized list of help topics for the language features and cmdlets included as part of the Windows PowerShell engine.
 

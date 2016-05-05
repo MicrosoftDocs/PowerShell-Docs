@@ -20,7 +20,7 @@ and management, workflows, and web access.
 This section is for users new to PowerShell to get all the information needed
 to start using the product.  
 Find in this section:
--   The [basic setup guide for learning](getting-started/basic-setup-for-learning.md)
+-   The [Getting Ready to Use Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)
 that explains the necessary steps needed to setup PowerShell to execute and try
 all code and command snippets presented in the 'Getting Started with PowerShell'
 section.
@@ -39,11 +39,10 @@ This section contains all reference material and in-depth guides for PowerShell.
 Find in this section:
 -  The [PowerShell Scripting Guide](core-powershell/scripting-guide.md)
 -  The [PowerShell Language Guide](core-powershell/language-guide.md)
--  The [PowerShell Language Reference](core-powershell/language-reference.md)
 -  The [PowerShell Core Modules Guide](core-powershell/core-modules.md)
 -  The [PowerShell Integrated Scripting Environment -ISE- Guide](core-powershell/ise-guide.md)
 -  The [PowerShell Console Window Guide](core-powershell/console-guide.md)
--  The [PowerShell Remote Management Guide](core-powershell/remote-management-guide.md)
+-  The [PowerShell Remote Management Guide](core-powershell/Running-Remote-Commands.md)
 -  The [PowerShell Workflows Guide](core-powershell/workflows-guide.md)
--  The [PowerShell Web Access Guide](core-powershell/web-access-guide.md)
--  The [PowerShell Glossary](core-powershell/glossary.md)
+-  The [PowerShell Web Access Guide](core-powershell/web-access.md)
+-  The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
