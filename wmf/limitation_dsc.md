@@ -173,3 +173,11 @@ WindowsOptionalFeature is not available in Windows 7
 
 The WindowsOptionalFeature DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
 
+ModuleVersion does not work as expected with Import-DscResource  
+ -----------------------------------------------------------------------  
+Both the ModuleVersion parameter as well as the ModuleVersion key within the ModuleSepecification for the Import-DscResource cmdlet do not specify the exact version of the module as you would expect and as was the case in Production Preview. Due to a bug introduced in WMF 5.0 RTM using either of these will result in an error because DSC is looking for the latest version of the module and then failing because there are multiple versions. To work around the issue you must use the **RequiredVersion** key in the ModuleSpecification instead as follows:  
+
+``` PowerShell  
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
+```  
+
