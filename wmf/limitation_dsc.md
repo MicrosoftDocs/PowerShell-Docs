@@ -173,10 +173,20 @@ WindowsOptionalFeature is not available in Windows 7
 
 The WindowsOptionalFeature DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
 
-ModuleVersion does not work as expected with Import-DscResource  
- -----------------------------------------------------------------------  
-Both the ModuleVersion parameter as well as the ModuleVersion key within the ModuleSepecification for the Import-DscResource cmdlet do not specify the exact version of the module as you would expect and as was the case in Production Preview. Due to a bug introduced in WMF 5.0 RTM using either of these will result in an error because DSC is looking for the latest version of the module and then failing because there are multiple versions. To work around the issue you must use the **RequiredVersion** key in the ModuleSpecification instead as follows:  
+For Class-based DSC resources, Import-DscResource -ModuleVersion does not work as expected   
+------------------------------------------------------------------------------------------
+If the compilation node has multiple version of a class-based DSC resource module, `Import-DscResource -ModuleVersion` does not pick the specified version and results in following compilation error.
 
+```
+ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
+At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:2035 char:35
++ ... rcesFound = ImportClassResourcesFromModule -Module $mod -Resources $r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [ImportClassResourcesFromModule], MethodInvocationException
+    + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
+```
+
+**Resolution:** Import the required version by defining the *ModuleSpecification* object to the `-ModuleName` with **RequiredVersion** key specified as follows:
 ``` PowerShell  
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
 ```  
