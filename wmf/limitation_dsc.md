@@ -173,7 +173,7 @@ WindowsOptionalFeature is not available in Windows 7
 
 The WindowsOptionalFeature DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
 
-For Class-based DSC resources, Import-DscResource -ModuleVersion does not work as expected   
+For Class-based DSC resources, Import-DscResource -ModuleVersion may not work as expected   
 ------------------------------------------------------------------------------------------
 If the compilation node has multiple version of a class-based DSC resource module, `Import-DscResource -ModuleVersion` does not pick the specified version and results in following compilation error.
 
