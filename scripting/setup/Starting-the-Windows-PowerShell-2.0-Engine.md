@@ -15,9 +15,9 @@ Windows PowerShell 4.0 and Windows PowerShell 3.0 are designed to be backwards c
 Many programs that require the Windows PowerShell 2.0 Engine start it automatically. These instructions are included for the rare situations in which you need to start the engine manually.
 
 ## Installing and Enabling Required Programs
-Before starting the Windows PowerShell 2.0 Engine, enable the Windows PowerShell 2.0 Engine and Microsoft .NET Framework 3.5 with Service Pack 1. For instructions, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
+Before starting the Windows PowerShell 2.0 Engine, enable the Windows PowerShell 2.0 Engine and Microsoft .NET Framework 3.5 with Service Pack 1. For instructions, see [Installing Windows PowerShell](Installing-Windows-PowerShell.md).
 
-Systems on which [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) or Windows Management Framework 3.0 are installed have all of the required components. No further configuration is necessary. For information about installing [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) or Windows Management Framework 3.0, see [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md).
+Systems on which [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) or Windows Management Framework 3.0 are installed have all of the required components. No further configuration is necessary. For information about installing [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) or Windows Management Framework 3.0, see [Installing Windows PowerShell](Installing-Windows-PowerShell.md).
 
 ## How to start the Windows PowerShell 2.0 Engine
 When you start Windows PowerShell the newest version starts by default. To start Windows PowerShell with the Windows PowerShell 2.0 Engine, use the Version parameter of PowerShell.exe. You can run the command at any command prompt, including Windows PowerShell and Cmd.exe.

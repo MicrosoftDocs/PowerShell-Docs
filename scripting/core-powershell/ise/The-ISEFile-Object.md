@@ -79,7 +79,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the [editor object](../Topic/The-ISEEditor-Object.md) that is used for the specified file.
+ The read\-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.
 
 ```
 # Gets the editor and the text.
@@ -135,9 +135,9 @@ $psISE.CurrentFile.IsUntitled
 ```
 
 ## See Also
- [The ISEFileCollectionObject](../Topic/The-ISEFileCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

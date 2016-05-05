@@ -28,7 +28,7 @@ section.
 explains what is PowerShell and the basic concepts needed to start using it.
 -  A series of '[understanding &lt;concept&gt;](getting-started/understanding-concepts-reference.md)' topics
 that cover the basics of PowerShell.
--  A series of '[basic cookbook for &lt;usage&gt;](basic-cookbooks-reference.md)'
+-  A series of '[basic cookbook for &lt;usage&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)'
 topics that provide recipes to execute standard tasks around files, file system,
 registry, processes, services and similar day-to-day subjects.
 -  A curated guide to other sources for

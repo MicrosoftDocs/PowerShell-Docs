@@ -12,15 +12,15 @@ ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 
 ## In this document
 
--   [Purpose of the Windows PowerShell ISE Scripting Object Model](../Topic/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+-   [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
--   [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+-   [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
--   [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md)
+-   [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 
--   [Other Useful Scripting Objects](../Topic/Other-Useful-Scripting-Objects.md)
+-   [Other Useful Scripting Objects](../../getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
 
 ## See Also
- [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../Topic/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+ [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 
   

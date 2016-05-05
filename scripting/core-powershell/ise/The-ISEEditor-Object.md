@@ -8,7 +8,7 @@ ms.topic: article
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
 # The ISEEditor Object
-  An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](../Topic/The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
+  An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
 
 ## Methods
 
@@ -243,10 +243,10 @@ $myEditor.InsertText($selection.ToLower())
 ```
 
 ## See Also
- [The ISEFile Object](../Topic/The-ISEFile-Object.md) 
- [The PowerShellTab Object](../Topic/The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISEFile Object](The-ISEFile-Object.md) 
+ [The PowerShellTab Object](../console/The-PowerShellTab-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

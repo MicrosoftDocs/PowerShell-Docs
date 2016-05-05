@@ -14,13 +14,13 @@ The topics in this section explain how to start Windows PowerShell on older oper
 
 The topics include:
 
--   [Starting Windows PowerShell on Earlier Versions of Windows](../Topic/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
+-   [Starting Windows PowerShell on Earlier Versions of Windows](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 
--   [Starting the 32-Bit Version of Windows PowerShell](../Topic/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+-   [Starting the 32-Bit Version of Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 
--   [Starting the Windows PowerShell 2.0 Engine](../Topic/Starting-the-Windows-PowerShell-2.0-Engine.md)
+-   [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 ## See Also
-[Windows PowerShell System Requirements](../Topic/Windows-PowerShell-System-Requirements.md)
-[Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
+[Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 

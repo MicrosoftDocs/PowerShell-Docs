@@ -137,7 +137,7 @@ $listBox.Height = 80
 In the next section, you specify the values you want the list box to display to users.
 
 > [!NOTE]
-> The list box created by this script allows only one selection. To create a list box control that allows multiple selections, specify a value for the **SelectionMode** property, similarly to the following:  `$listBox.SelectionMode = "MultiExtended"`. For more information, see [Multiple-selection List Boxes](../Topic/Multiple-selection-List-Boxes.md).
+> The list box created by this script allows only one selection. To create a list box control that allows multiple selections, specify a value for the **SelectionMode** property, similarly to the following:  `$listBox.SelectionMode = "MultiExtended"`. For more information, see [Multiple-selection List Boxes](Multiple-selection-List-Boxes.md).
 
 ```
 [void] $listBox.Items.Add("atl-dc-001")

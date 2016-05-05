@@ -61,7 +61,7 @@ Use the following steps to edit text in the Script Pane. You can copy, cut, past
 
 2.  Create a script. Syntax coloring and tab completion make this a richer experience in Windows PowerShell ISE.
 
-3.  See [How to Use Tab Completion in the Script Pane and Console Pane](../Topic/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for details about using the tab completion feature to help in typing.
+3.  See [How to Use Tab Completion in the Script Pane and Console Pane](../console/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for details about using the tab completion feature to help in typing.
 
 ### To find text in the Script Pane
 
@@ -143,5 +143,5 @@ Windows PowerShell ISE supports the following encoding options: ASCII, BigEndian
 Windows PowerShell ISE does not change the encoding of scripts that were created by in other editors, even when you use the Save or Save As commands in Windows PowerShell ISE.
 
 ## See Also
-[Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
+[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

@@ -403,7 +403,7 @@ $psISE.Options.ScriptPaneBackgroundColor = ”yellow”
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read\/write property that gets or sets the foreground color for non\-script files in the Script pane. 
-To set the foreground color for script files, use the [TokenColors](../Topic/The-ISEOptions-Object.md#tc) property.
+To set the foreground color for script files, use the [TokenColors](The-ISEOptions-Object.md#tc) property.
 
 ```
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -622,7 +622,7 @@ $psISE.Options.Zoom = 200
 ```
 
 ## See Also
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md)
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 
   

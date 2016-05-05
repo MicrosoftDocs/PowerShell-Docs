@@ -76,5 +76,5 @@ if (!(test-path $profile.AllUsersAllHosts))
 
 ## See Also
 [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)
-[Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
+[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

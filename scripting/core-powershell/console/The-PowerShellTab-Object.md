@@ -108,7 +108,7 @@ $secondTab.CanInvoke
 ###  <a name="Commandpane"></a> Consolepane
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.  In Windows PowerShell ISE 2.0 this was named **CommandPane**.
 
- The read\-only property that gets the Console pane [editor](../Topic/The-ISEEditor-Object.md) object.
+ The read\-only property that gets the Console pane [editor](../ise/The-ISEEditor-Object.md) object.
 
 ```
 # Gets the Console Pane editor.
@@ -141,7 +141,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 ###  <a name="Files"></a> Files
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the [collection of script files](../Topic/The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
+ The read\-only property that gets the [collection of script files](../ise/The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
 
 ```
 $newFile = $psISE.CurrentPowerShellTab.Files.Add()
@@ -153,7 +153,7 @@ $newFile.Editor.LineCount
 ###  <a name="Output"></a> Output
   This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  In later versions of Windows PowerShell ISE, you can use the **ConsolePane** object for the same purposes.
 
- The read\-only property that gets the Output pane of the current [editor](../Topic/The-ISEEditor-Object.md).
+ The read\-only property that gets the Output pane of the current [editor](../ise/The-ISEEditor-Object.md).
 
 ```
 # Clears the text in the Output pane.
@@ -215,9 +215,9 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
 ## See Also
- [The PowerShellTabCollection Object](../Topic/The-PowerShellTabCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The PowerShellTabCollection Object](The-PowerShellTabCollection-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   

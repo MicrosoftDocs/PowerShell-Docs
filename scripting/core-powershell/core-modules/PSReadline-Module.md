@@ -14,6 +14,6 @@ This section contains the help topics for the **PSReadline** module. The **PSRea
 [Windows PowerShell PSReadline Cmdlets](https://technet.microsoft.com/en-us/library/ed48e832-95f9-4577-bf56-a7e5aa9630ba)
 
 ## See Also
-[Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
-[Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)
+[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

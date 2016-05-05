@@ -127,9 +127,9 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describes the cmdlets in the Microsoft.WsMan.Management module. Explains how to use them together to manage WS\-Management features, including the WSMan provider drive.|
 
 ## See Also
-[Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)
+[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
+[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)

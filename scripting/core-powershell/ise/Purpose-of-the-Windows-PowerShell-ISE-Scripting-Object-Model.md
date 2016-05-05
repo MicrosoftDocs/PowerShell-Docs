@@ -64,8 +64,8 @@ ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
  You can use the scripting object model to create keyboard shortcuts for frequent operations.
 
 ## See Also
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   

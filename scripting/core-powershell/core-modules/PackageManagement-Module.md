@@ -14,7 +14,7 @@ This section contains the help topics for the **Microsoft.PowerShell.PackageMana
 [Windows PowerShell PackageManagement Cmdlets](http://technet.microsoft.com/library/dn890706(v=wps.640).aspx)
 
 ## See Also
-[Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
+[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)
+[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

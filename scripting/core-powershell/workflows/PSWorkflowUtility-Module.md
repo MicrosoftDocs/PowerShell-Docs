@@ -13,7 +13,7 @@ This section contains the help topics for the **PSWorkflowUtility** module, whic
 ## Help Topics
 [Workflow Utility Cmdlets](http://go.microsoft.com/fwlink/?LinkId=254141)
 
-[PSWorkflow Module](../Topic/PSWorkflow-Module.md)
+[PSWorkflow Module](PSWorkflow-Module.md)
 
 [about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
@@ -22,7 +22,7 @@ This section contains the help topics for the **PSWorkflowUtility** module, whic
 ## See Also
 [Introducing Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/35b33701-fe36-4c85-a1db-3c89093cb592)
 [Writing a Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
-[Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
-[Windows PowerShell Core About Topics](../Topic/Windows-PowerShell-Core-About-Topics.md)
-[Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)
+[Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
+[Windows PowerShell Core About Topics](../core-modules/Windows-PowerShell-Core-About-Topics.md)
+[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

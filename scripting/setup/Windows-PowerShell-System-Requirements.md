@@ -83,7 +83,7 @@ However, due to a change in the runtime activation policy in Microsoft .NET Fram
 
 The Windows PowerShell 2.0 engine requires Microsoft .NET Framework 2.0.50727 at a minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5 Service Pack 1. This requirement is not fulfilled by Microsoft .NET Framework 4 and later releases of Microsoft .NET Framework.
 
-For information about adding or installing the Windows PowerShell 2.0 engine, and adding or installing the required versions of the Microsoft .NET Framework, see [Installing the Windows PowerShell 2.0 Engine](Topic/Installing-the-Windows-PowerShell-2.0-Engine.md). For information about starting the Windows PowerShell 2.0 engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
+For information about adding or installing the Windows PowerShell 2.0 engine, and adding or installing the required versions of the Microsoft .NET Framework, see [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md). For information about starting the Windows PowerShell 2.0 engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run in the Windows Preinstallation Environment (Windows PE). However, the following cmdlets are not supported.
@@ -101,7 +101,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run i
 Also, the **WinRm** service is not present on Windows PE.
 
 ## See Also
-[Getting Started with Windows PowerShell](Topic/Getting-Started-with-Windows-PowerShell.md)
-[Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
+[Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 [Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
