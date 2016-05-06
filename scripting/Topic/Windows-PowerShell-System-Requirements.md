@@ -74,7 +74,7 @@ However, some items, such as the following, require a graphical user interface. 
 
     1.  **ShowWindow** parameter of the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet.
 
-    2.  **ShowSecurityDescriptorUi** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
+    2.  **ShowSecurityDescriptorUI** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
 
 ## Windows PowerShell Engine Requirements
 [!INCLUDE[psversion4](../Token/psversion4_md.md)] is designed to be backwards compatible with [!INCLUDE[psversion3](../Token/psversion3_md.md)] and [!INCLUDE[psversion2](../Token/psversion2_md.md)]. Cmdlets, providers, snap\-ins, modules, and scripts written for [!INCLUDE[psversion2](../Token/psversion2_md.md)] and [!INCLUDE[psversion3](../Token/psversion3_md.md)] run unchanged in [!INCLUDE[psversion4](../Token/psversion4_md.md)].
@@ -92,16 +92,16 @@ For information about adding or installing the [!INCLUDE[psversion2](../Token/ps
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
 -   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
 -   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
-Also, the **WinRm** service is not present on Windows PE.
+Also, the **WinRM** service is not present on Windows PE.
 
 ## See Also
 [Getting Started with Windows PowerShell](../Topic/Getting-Started-with-Windows-PowerShell.md)
 [Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
-[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
