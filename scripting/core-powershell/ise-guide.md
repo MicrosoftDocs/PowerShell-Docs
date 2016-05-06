@@ -1,23 +1,15 @@
 # ISE Guide
 
--  [How to Create a PowerShell Tab in Windows PowerShell ISE](ise/How-to-Create-a-PowerShell-Tab-in-
-Windows-PowerShell-ISE.md)
--  [How to Debug Scripts in Windows PowerShell ISE](ise/How-to-Debug-Scripts-in-Windows-PowerShell-I
-SE.md)
--  [How to Use Profiles in Windows PowerShell ISE](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE
-.md)
--  [How to Use Tab Completion in the Script Pane and Console Pane](ise/How-to-Use-Tab-Completion-in-
-the-Script-Pane-and-Console-Pane.md)
--  [How to Use the Console Pane in the Windows PowerShell ISE](ise/How-to-Use-the-Console-Pane-in-th
-e-Windows-PowerShell-ISE.md)
--  [How to Write and Run Scripts in the Windows PowerShell ISE](ise/How-to-Write-and-Run-Scripts-in-
-the-Windows-PowerShell-ISE.md)
+-  [How to Create a PowerShell Tab in Windows PowerShell ISE](ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+-  [How to Debug Scripts in Windows PowerShell ISE](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+-  [How to Use Profiles in Windows PowerShell ISE](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+-  [How to Use Tab Completion in the Script Pane and Console Pane](ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+-  [How to Use the Console Pane in the Windows PowerShell ISE](ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+-  [How to Write and Run Scripts in the Windows PowerShell ISE](ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 -  [Introducing the Windows PowerShell ISE](ise/Introducing-the-Windows-PowerShell-ISE.md)
 -  [ISE Module](ise/ISE-Module.md)
--  [Keyboard Shortcuts for the Windows PowerShell ISE](ise/Keyboard-Shortcuts-for-the-Windows-PowerS
-hell-ISE.md)
--  [Purpose of the Windows PowerShell ISE Scripting Object Model](ise/Purpose-of-the-Windows-PowerSh
-ell-ISE-Scripting-Object-Model.md)
+-  [Keyboard Shortcuts for the Windows PowerShell ISE](ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+-  [Purpose of the Windows PowerShell ISE Scripting Object Model](ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 -  [The ISE Object Model Hierarchy](ise/The-ISE-Object-Model-Hierarchy.md)
 -  [The ISEAddOnTool Object](ise/The-ISEAddOnTool-Object.md)
 -  [The ISEAddOnToolCollection Object](ise/The-ISEAddOnToolCollection-Object.md)
@@ -32,8 +24,6 @@ ell-ISE-Scripting-Object-Model.md)
 -  [The ObjectModelRoot Object](ise/The-ObjectModelRoot-Object.md)
 -  [The PowerShellTab Object](ise/The-PowerShellTab-Object.md)
 -  [The PowerShellTabCollection Object](ise/The-PowerShellTabCollection-Object.md)
--  [The Windows PowerShell ISE Scripting Object Model](ise/The-Windows-PowerShell-ISE-Scripting-Obje
-ct-Model.md)
+-  [The Windows PowerShell ISE Scripting Object Model](ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 -  [Using the Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
--  [Windows PowerShell ISE Object Model Reference](ise/Windows-PowerShell-ISE-Object-Model-Reference
-.md)
+-  [Windows PowerShell ISE Object Model Reference](ise/Windows-PowerShell-ISE-Object-Model-Reference.md)

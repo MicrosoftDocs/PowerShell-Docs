@@ -1,13 +1,11 @@
 #  Basic Cookbooks Reference
 
-
 -  [Changing Computer State](Changing-Computer-State.md)
 -  [Collecting Information About Computers](Collecting-Information-About-Computers.md)
 -  [Compatibility Aliases](Appendix-1---Compatibility-Aliases.md)
 -  [Creating .NET and COM Objects  New Object ](Creating-.NET-and-COM-Objects--New-Object-.md)
 -  [Creating a Custom Input Box](Creating-a-Custom-Input-Box.md)
--  [Creating a Custom PowerShell Shortcut](Appendix-2---Creating-a-Custom-PowerShell-Sh
-ortcut.md)
+-  [Creating a Custom PowerShell Shortcut](Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
 -  [Creating a Graphical Date Picker](Creating-a-Graphical-Date-Picker.md)
 -  [Getting WMI Objects  Get WmiObject ](Getting-WMI-Objects--Get-WmiObject-.md)
 -  [Managing Current Location](Managing-Current-Location.md)
@@ -20,10 +18,8 @@ ortcut.md)
 -  [Performing Networking Tasks](Performing-Networking-Tasks.md)
 -  [PowerShellGet Module](PowerShellGet-Module.md)
 -  [Redirecting Data with Out   Cmdlets](Redirecting-Data-with-Out---Cmdlets.md)
--  [Removing Objects from the Pipeline  Where Object ](Removing-Objects-from-the-Pipeline--Where-Obj
-ect-.md)
--  [Repeating a Task for Multiple Objects  ForEach Object ](Repeating-a-Task-for-Multiple-Objects--F
-orEach-Object-.md)
+-  [Removing Objects from the Pipeline  Where Object ](Removing-Objects-from-the-Pipeline--Where-Object-.md)
+-  [Repeating a Task for Multiple Objects  ForEach Object ](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
 -  [Selecting Items from a List Box](Selecting-Items-from-a-List-Box.md)
 -  [Selecting Parts of Objects  Select Object ](Selecting-Parts-of-Objects--Select-Object-.md)
 -  [Sorting Objects](Sorting-Objects.md)

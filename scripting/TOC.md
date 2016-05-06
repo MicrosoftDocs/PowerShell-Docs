@@ -4,7 +4,7 @@
 ### [PowerShell v5.0](whats-new/What-s-New-in-Windows-PowerShell-50.md)
 ### [PowerShell 5.0 ISE](whats-new/What-s-New-in-the-PowerShell-50-ISE.md)
 
-## [Setup](setup/setup-reference.md)
+## Setup
 ### [PowerShell System Requirements](setup/Windows-PowerShell-System-Requirements.md)
 ### [Installing  PowerShell](setup/Installing-Windows-PowerShell.md)
 ### [Starting PowerShell](setup/Starting-Windows-PowerShell.md)
@@ -76,7 +76,6 @@
 
 ## [Core PowerShell](core-powershell/core-powershell.md)
 ### [Scripting Guide](core-powershell/scripting-guide.md)
-### [PowerShell Gallery](core-powershell/gallery/gallery-reference.md)
 ### [Language Guide](core-powershell/language-guide.md)
 ### [Core Modules](core-powershell/core-modules.md)
 ####  [Archive Module](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
