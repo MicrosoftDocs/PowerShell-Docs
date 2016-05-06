@@ -135,5 +135,10 @@
 ####  [Workflow Utility Module](core-powershell/workflows/PSWorkflowUtility-Module.md)
 
 ### [Web Access](core-powershell/web-access.md)
+####  [Authorization rules and security features of windows powershell web access](core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
+####  [Install and use windows powershell web access](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
+####  [Troubleshooting access problems in windows powershell web access](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
+####  [Uninstall windows powershell web access](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
+####  [Use the web based windows powershell console](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell Glossary](Windows-PowerShell-Glossary.md)
