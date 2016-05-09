@@ -1,5 +1,6 @@
 {
     "build_entry_point": "",
+    "git_repository_branch_open_to_public_contributors": "staging",
     "docsets_to_publish": [
         {
             "docset_name": "PowerShell_PowerShell-docs_dsc",
