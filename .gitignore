@@ -9,3 +9,4 @@ _site/
 .openpublishing.build.mdproj
 .openpublishing.buildcore.ps1
 packages.config
+**/.ignore/**
