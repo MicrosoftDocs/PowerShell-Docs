@@ -13,7 +13,7 @@ The schema defines the properties of your resource that can be configured by a D
 To implement a DSC custom resource with a MOF schema, create the following folder structure. The MOF schema is defined in the file Demo_IISWebsite.schema.mof, and the resource script is defined in Demo_IISWebsite.psm1. Optionally, you can create a module manifest (psd1) file.
 
 ```
-$env: psmodulepath (folder)
+$env:PSModulePath (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
