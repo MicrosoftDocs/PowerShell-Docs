@@ -150,6 +150,7 @@ The compiled dll file should be saved in a file structure similar to a script-ba
 ```
 $env: psmodulepath (folder)
     |- MyDscResources (folder)
+        |- MyDscResources.psd1 (file, required)	    
         |- DSCResources (folder)
             |- MSFT_XDemoFile (folder)
                 |- MSFT_XDemoFile.psd1 (file, optional)
