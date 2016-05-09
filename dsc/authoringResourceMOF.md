@@ -47,11 +47,11 @@ Note the following about the previous code:
 
 * `FriendlyName` defines the name you can use to refer to this custom resource in DSC configuration scripts. In this example, `Website` is equivalent to the friendly name `Archive` for the built-in Archive resource.
 * The class you define for your custom resource must derive from `OMI_BaseResource`.
-* The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance. A `[Key]` property is also required.
+* The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance. At least one `[Key]` property is required.
 * The `[Required]` qualifier indicates that the property is required (a value must be specified in any configuration script that uses this resource).
 * The `[write]` qualifier indicates that this property is optional when using the custom resource in a configuration script. The `[read]` qualifier indicates that a property cannot be set by a configuration, and is for reporting purposes only.
 * `Values` restricts the values that can be assigned to the property to the list of values defined in `ValueMap`. For more information, see [ValueMap and Value Qualifiers](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
-* Including a property called `Ensure` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.
+* Including a property called `Ensure` with values `Present` and `Absent` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.
 * Name the schema file for your custom resource as follows: `classname.schema.mof`, where `classname` is the identifier that follows the `class` keyword in your schema definition.
 
 ### Writing the resource script
