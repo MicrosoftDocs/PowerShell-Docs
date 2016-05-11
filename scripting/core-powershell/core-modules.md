@@ -1,3 +1,14 @@
+---
+title:  core modules
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  The PowerShell Core Modules Guide
 
 The Core PowerShell modules provide the basic functionality of PowerShell.
@@ -19,3 +30,4 @@ The main areas these modules cover are:
 -  [Scheduled Job Module](core-modules/PSScheduledJob-Module.md)
 -  [ScriptAnalyzer Module](core-modules/PSScriptAnalyzer-Module.md)
 -  [Utility Module](core-modules/Microsoft.PowerShell.Utility-Module.md)
+

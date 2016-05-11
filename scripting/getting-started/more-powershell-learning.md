@@ -1,3 +1,14 @@
+---
+title:  more powershell learning
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  More PowerShell Learning
 
 Other sources to learn PowerShell  
@@ -41,3 +52,4 @@ The following resources provide resources to help developers create their own Wi
 
 -   [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Provides reference content.
 -   [Windows PowerShell Programmer's Guide](http://go.microsoft.com/fwlink/p/?LinkID=89596). Provides tutorials. Also contains information about fundamental Windows PowerShell concepts.
+

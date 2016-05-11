@@ -1,12 +1,15 @@
 ---
-title: Managing Current Location
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
+title:  Managing Current Location
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ---
+
 # Managing Current Location
 When navigating folder systems in File Explorer, you usually have a specific working location \- namely, the current open folder. Items in the current folder can be manipulated easily by clicking them. For command\-line interfaces such as Cmd.exe, when you are in the same folder as a particular file, you can access it by specifying a relatively short name, rather than needing to specify the entire path to the file. The current directory is called the working directory.
 

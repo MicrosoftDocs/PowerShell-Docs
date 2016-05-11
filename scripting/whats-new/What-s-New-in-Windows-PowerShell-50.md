@@ -1,12 +1,15 @@
 ---
-title: What&#39;s New in Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
+title:  What s New in Windows PowerShell 50
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
 ---
+
 # What&#39;s New in Windows PowerShell
 Windows PowerShellÂ® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows\-based environments more easily and comprehensively.
 
@@ -748,3 +751,4 @@ To improve the ability of Windows PowerShell 3.0 to interpret and correctly hand
 [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
 [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
 [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+

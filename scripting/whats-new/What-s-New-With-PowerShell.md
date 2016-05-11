@@ -1,3 +1,14 @@
+---
+title:  What s New With PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # What&#39;s New With PowerShell
 Windows PowerShell® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows\-based environments more easily and comprehensively.
 
@@ -16,3 +27,4 @@ Windows PowerShell 5.0 is installed by default on Windows Server® 2016 Technica
 
 -   New features in Windows PowerShell 3.0
 -->
+

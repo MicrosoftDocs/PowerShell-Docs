@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell Basics
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
+title:  Windows PowerShell Basics
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6b3cbbc8-060c-4877-b00b-7300dbbe4e28
 ---
+
 # Windows PowerShell Basics
 Graphical user interfaces use some basic concepts that are well known to most computer users. Users rely on the familiarity of those interfaces to accomplish tasks. Operating systems present users with a graphical representation of items that can be browsed, usually with drop\-down menus for accessing specific functionality and context menus for accessing context\-specific functionality.
 

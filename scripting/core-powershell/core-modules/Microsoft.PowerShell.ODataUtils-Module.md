@@ -1,12 +1,15 @@
 ---
-title: Microsoft.PowerShell.ODataUtils Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bd5f47f0-428e-4be6-b02f-2b5609111ee9
+title:  Microsoft.PowerShell.ODataUtils Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  bd5f47f0-428e-4be6-b02f-2b5609111ee9
 ---
+
 # Microsoft.PowerShell.ODataUtils Module
 This section contains the help topics for the **Microsoft.PowerShell.ODataUtils** module. The **Microsoft.PowerShell.ODataUtils** module is installed with Windows PowerShell 5.0.
 

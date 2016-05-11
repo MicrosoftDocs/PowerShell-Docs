@@ -1,12 +1,15 @@
 ---
-title: How to Use Profiles in Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
+title:  How to Use Profiles in Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0219626a-6da5-4acc-b630-d058e8b29cc6
 ---
+
 # How to Use Profiles in Windows PowerShell ISE
 This topic explains how to use Profiles in Windows PowerShellÂ® Integrated Scripting Environment (ISE). We recommend that before performing the tasks in this section, you review [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054), or in the Console Pane, type, “get\-help about\_profiles” and press **ENTER**.
 

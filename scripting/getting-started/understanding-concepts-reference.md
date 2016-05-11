@@ -1,3 +1,14 @@
+---
+title:  understanding concepts reference
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Understanding Concepts
 
 *  Objects in PowerShell  
@@ -16,3 +27,4 @@
 *  Providers
 *  Drivers
 *  Updating help 
+

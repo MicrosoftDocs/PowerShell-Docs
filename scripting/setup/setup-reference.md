@@ -1,3 +1,14 @@
+---
+title:  setup reference
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Setup Guide
 
 -  [Accessibility in Windows PowerShell ISE](Accessibility-in-Windows-PowerShell-ISE.md)
@@ -12,3 +23,4 @@
 -  [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
 -  [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 -  [WinRMSecurity](WinRMSecurity.md)
+

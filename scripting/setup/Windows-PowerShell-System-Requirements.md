@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell System Requirements
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell System Requirements
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell System Requirements
 This topic lists the system requirements for Windows PowerShell 3.0 and Windows PowerShell 4.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.
 
@@ -104,3 +107,4 @@ Also, the **WinRM** service is not present on Windows PE.
 [Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+

@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell Core About Topics
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
+title:  Windows PowerShell Core About Topics
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8b950138-9782-4dfe-bd5f-6bdcea7060da
 ---
+
 # Windows PowerShell Core About Topics
 This section contains the conceptual ("About") help topics that apply to all Windows PowerShell modules. For the About topics for other modules, see the help topics for the particular module.
 

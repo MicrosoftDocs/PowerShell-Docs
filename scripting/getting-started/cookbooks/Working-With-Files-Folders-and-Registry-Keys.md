@@ -1,12 +1,15 @@
 ---
-title: Working With Files, Folders and Registry Keys
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
+title:  Working With Files Folders and Registry Keys
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ---
+
 # Working With Files, Folders and Registry Keys
 Windows PowerShell uses the noun **Item** to refer to items found on a Windows PowerShell drive. When dealing with the Windows PowerShell FileSystem provider, an **Item** might be a file, a folder, or the Windows PowerShell drive. Listing and working with these items is a critical basic task in most administrative settings, so we want to discuss these tasks in detail.
 

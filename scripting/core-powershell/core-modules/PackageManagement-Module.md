@@ -1,12 +1,15 @@
 ---
-title: PackageManagement Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8b632570-5739-4fab-bf09-a1d59004743d
+title:  PackageManagement Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8b632570-5739-4fab-bf09-a1d59004743d
 ---
+
 # PackageManagement Module
 This section contains the help topics for the **Microsoft.PowerShell.PackageManagement** module. The **Microsoft.PowerShell. PackageManagement** module is installed with Windows PowerShellÂ® 5.0.
 

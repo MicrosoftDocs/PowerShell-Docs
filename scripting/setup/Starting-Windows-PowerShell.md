@@ -1,12 +1,15 @@
 ---
-title: Starting Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
+title:  Starting Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  59b649a2-c90c-4cf4-bf95-a740c59148e7
 ---
+
 # Starting Windows PowerShell
 To start Windows PowerShellÂ® on Windows ServerÂ® 2012 R2, WindowsÂ® 8.1, Windows Server 2012, and Windows 8, see [Common Management Tasks and Navigation](http://technet.microsoft.com/library/hh831491.aspx).
 

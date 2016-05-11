@@ -1,12 +1,15 @@
 ---
-title: The ISEOptions Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
+title:  The ISEOptions Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
+
 # The ISEOptions Object
   The **ISEOptions** object represents various settings for Windows PowerShell ISE. It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.
 
@@ -624,3 +627,4 @@ $psISE.Options.Zoom = 200
 ## See Also
  [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
  [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
+

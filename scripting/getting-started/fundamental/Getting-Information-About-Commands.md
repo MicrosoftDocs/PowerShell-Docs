@@ -1,12 +1,15 @@
 ---
-title: Getting Information About Commands
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
+title:  Getting Information About Commands
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
+
 # Getting Information About Commands
 The Windows PowerShell **Get\-Command** cmdlet gets all commands that are available in your current session. When you type **Get\-Command** at a Windows PowerShell prompt, you will see output similar to the following:
 

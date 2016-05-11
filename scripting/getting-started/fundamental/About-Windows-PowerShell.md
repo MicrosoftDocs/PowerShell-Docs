@@ -1,12 +1,15 @@
 ---
-title: About Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+title:  About Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
 ---
+
 # About Windows PowerShell
 Windows PowerShell is designed to improve the command\-line and scripting environment by eliminating long\-standing problems and adding new features.
 
