@@ -1,4 +1,4 @@
-# Build Custom Windows PowerShell Desired State Configuration Resources Test5
+# Build Custom Windows PowerShell Desired State Configuration Resources Test6
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
