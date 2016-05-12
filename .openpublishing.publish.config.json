@@ -1,5 +1,6 @@
 {
     "build_entry_point": "",
+    " git_repository_url_open_to_public_contributors ": " https://github.com/PowerShell/PowerShell-Docs",
     "git_repository_branch_open_to_public_contributors": "staging",
     "docsets_to_publish": [
         {
