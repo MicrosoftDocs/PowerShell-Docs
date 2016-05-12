@@ -1,12 +1,15 @@
 ---
-title: Working with Printers
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+title:  Working with Printers
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
 ---
+
 # Working with Printers
 You can use Windows PowerShell to manage printers by using WMI and the WScript.Network COM object from WSH. We will use a mix of both tools to demonstrate specific tasks.
 

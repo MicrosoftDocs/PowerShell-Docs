@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell 5.0
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2ae52a0d-2eb5-4c71-971f-fb3f612d281b
+title:  Windows PowerShell 5.0
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2ae52a0d-2eb5-4c71-971f-fb3f612d281b
 ---
+
 # Windows PowerShell 5.0
 This topic lists the cmdlet and function modules that are included with Windows PowerShell. The Windows PowerShell modules in the list provide the basic functionality of Windows PowerShell.
 

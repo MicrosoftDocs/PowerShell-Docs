@@ -1,3 +1,14 @@
+---
+title:  basic cookbooks
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  [Basic Cookbooks Reference](cookbooks/basic-cookbooks-reference.md)
 
 -  [Changing Computer State](cookbooks/Changing-Computer-State.md)
@@ -33,3 +44,4 @@
 -  [Working with Registry Entries](cookbooks/Working-with-Registry-Entries.md)
 -  [Working with Registry Keys](cookbooks/Working-with-Registry-Keys.md)
 -  [Working with Software Installations](cookbooks/Working-with-Software-Installations.md)
+

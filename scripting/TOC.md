@@ -1,3 +1,14 @@
+---
+title:  TOC
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # [PowerShell Scripting](PowerShell-Scripting.md)
 
 ## [What's new with PowerShell](whats-new/What-s-New-With-PowerShell.md)
@@ -142,3 +153,4 @@
 ####  [Use the web based windows powershell console](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell Glossary](Windows-PowerShell-Glossary.md)
+

@@ -1,12 +1,15 @@
 ---
-title: Starting Windows PowerShell on Earlier Versions of Windows
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
+title:  Starting Windows PowerShell on Earlier Versions of Windows
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 ---
+
 # Starting Windows PowerShell on Earlier Versions of Windows
 This section explains how to start Windows PowerShell and Windows PowerShell Integrated Scripting Environment (ISE) on WindowsÂ® 7, Windows ServerÂ® 2008 R2, and Windows Server 2008. It also explains how to enable the optional feature for Windows PowerShell ISE in Windows PowerShell 2.0 on Windows ServerÂ® 2008 R2 and Windows Server 2008.
 

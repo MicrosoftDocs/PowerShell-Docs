@@ -1,12 +1,15 @@
 ---
-title: Other Useful Scripting Objects
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
+title:  Other Useful Scripting Objects
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  4d781196-720b-4ccc-90d2-c570e5e719f5
 ---
+
 # Other Useful Scripting Objects
   The following objects provide additional scripting functionality in Windows PowerShell ISE. They are not part of the **$psISE** hierarchy.
 

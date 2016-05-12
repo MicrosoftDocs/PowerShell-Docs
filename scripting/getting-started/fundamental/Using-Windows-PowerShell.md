@@ -1,12 +1,15 @@
 ---
-title: Using Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+title:  Using Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ---
+
 # Using Windows PowerShell
 Windows PowerShellÂ® is a task\-based command\-line shell and scripting language designed especially for system administration. Built on the .NET Framework, Windows PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows.
 
@@ -67,3 +70,4 @@ The following topics describe how you can get the latest Help for Windows PowerS
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) cmdlet. A Windows PowerShell cmdlet that you can use to learn about the cmdlets and providers that are installed on your system.
 
 -   You can get notifications about any updates to published Help files by subscribing to the following RSS feed: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
+

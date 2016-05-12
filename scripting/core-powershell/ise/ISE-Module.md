@@ -1,12 +1,15 @@
 ---
-title: ISE Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: fd03c995-4cdb-4d14-a315-9cfbd1e81b10
+title:  ISE Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  fd03c995-4cdb-4d14-a315-9cfbd1e81b10
 ---
+
 # ISE Module
 This section contains the help topics for the **ISE** module, which includes commands that you can use in Windows PowerShell Integrated Scripting Environment (ISE). The **ISE** module is installed with Windows PowerShell.
 

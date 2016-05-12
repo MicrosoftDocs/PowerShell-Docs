@@ -1,12 +1,15 @@
 ---
-title: Accessibility in Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
+title:  Accessibility in Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ---
+
 # Accessibility in Windows PowerShell ISE
 This topic describes the accessibility features of Windows PowerShellÂ® Integrated Scripting Environment (ISE) that you might find helpful.
 

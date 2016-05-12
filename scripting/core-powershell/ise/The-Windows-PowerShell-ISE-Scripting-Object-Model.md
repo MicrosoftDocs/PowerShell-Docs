@@ -1,12 +1,15 @@
 ---
-title: The Windows PowerShell ISE Scripting Object Model
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
+title:  The Windows PowerShell ISE Scripting Object Model
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  69b047d0-da79-413e-b948-8e45d05d1f85
 ---
+
 # The Windows PowerShell ISE Scripting Object Model
   The Windows PowerShellÂ® Integrated Scripting Environment (ISE) exposes its functionality through an underlying scripting object model that enables users to write Windows PowerShell scripts that manipulate the various visual and functional aspects of the Windows PowerShell ISE. Scripting objects, their properties, and their methods are defined specifically for this purpose.
 

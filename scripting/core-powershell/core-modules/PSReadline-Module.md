@@ -1,12 +1,15 @@
 ---
-title: PSReadline Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bf079dec-4d26-40e7-b7a9-154c69e485ba
+title:  PSReadline Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  bf079dec-4d26-40e7-b7a9-154c69e485ba
 ---
+
 # PSReadline Module
 This section contains the help topics for the **PSReadline** module. The **PSReadline** module contains cmdlets that let you customize the command\-line editing environment in Windows PowerShell.
 
