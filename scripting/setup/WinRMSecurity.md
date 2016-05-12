@@ -1,3 +1,14 @@
+---
+title:  WinRMSecurity
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell Remoting Security Considerations
 
 PowerShell Remoting is the recommended way to manage Windows systems. PowerShell Remoting is enabled by default in Windows Server 2012 R2. This document covers security concerns, 

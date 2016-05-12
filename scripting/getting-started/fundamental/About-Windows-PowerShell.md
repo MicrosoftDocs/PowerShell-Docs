@@ -1,12 +1,15 @@
 ---
-title: About Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+title:  About Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
 ---
+
 # About Windows PowerShell
 Windows PowerShell is designed to improve the command\-line and scripting environment by eliminating long\-standing problems and adding new features.
 
@@ -14,19 +17,18 @@ Windows PowerShell is designed to improve the command\-line and scripting enviro
 Windows PowerShell makes it easy to discover its features. For example, to find a list of cmdlets that view and change Windows services, type:
 
 ```
-get-command *-service
+Get-Command *-Service
 ```
 
 After discovering which cmdlet accomplishes a task, you can learn more about the cmdlet by using the Get\-Help cmdlet. For example, to display help about the Get\-Service cmdlet, type:
 
 ```
-get-help get-service
+Get-Help Get-Service
 ```
-
-To fully understand the output of that cmdlet, pipe its output to the Get\-Member cmdlet. For example, the following command displays information about the members of the object output by the Get\-Service cmdlet.
+Most cmdlets emit objects which can be manipulated and then rendered into text for display. To fully understand the output of that cmdlet, pipe its output to the Get\-Member cmdlet. For example, the following command displays information about the members of the object output by the Get\-Service cmdlet.
 
 ```
-get-service | get-member
+Get-Service | Get-Member
 ```
 
 ## Consistency

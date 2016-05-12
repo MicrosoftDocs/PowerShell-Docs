@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell 5.0
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2ae52a0d-2eb5-4c71-971f-fb3f612d281b
+title:  Windows PowerShell 5.0
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2ae52a0d-2eb5-4c71-971f-fb3f612d281b
 ---
+
 # Windows PowerShell 5.0
 This topic lists the cmdlet and function modules that are included with Windows PowerShell. The Windows PowerShell modules in the list provide the basic functionality of Windows PowerShell.
 
@@ -19,7 +22,7 @@ The table below also shows the latest published version of the Help for each mod
 
 |Module Name|Title and Link to Web Version|Latest Version|
 |---------------|---------------------------------|------------------|
-|Microsoft.PowerShell.Archive|[Microsoft.PowerShell.Archive Module](../Topic/Microsoft.PowerShell.Archive-Module.md)|5.0.1.0|
+|Microsoft.PowerShell.Archive|[Microsoft.PowerShell.Archive Module](Microsoft.PowerShell.Archive-Module.md)|5.0.1.0|
 |Microsoft.PowerShell.Core|[Windows PowerShell Core Cmdlet Help Topics](https://technet.microsoft.com/en-us/library/416b758e-e714-407f-bb6e-4d4e9112be95)|5.0.1.0|
 |Microsoft.PowerShell.Diagnostics|[Windows PowerShell Diagnostic Cmdlets](http://technet.microsoft.com/library/792C093D-2DAA-4A9D-96CF-A30A9A9595B4)|5.0.1.0|
 |Microsoft.PowerShell.Host|[Windows PowerShell Host Cmdlets](http://technet.microsoft.com/library/E1957183-3E3C-481F-B604-F58550D42C4C)|5.0.1.0|

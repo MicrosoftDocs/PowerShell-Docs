@@ -1,17 +1,20 @@
 ---
-title: The ISE Object Model Hierarchy
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
+title:  The ISE Object Model Hierarchy
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 ---
+
 # The ISE Object Model Hierarchy
   This topic shows the hierarchy of objects that are part of Windows PowerShell Integrated Scripting Environment (ISE). Windows PowerShell ISE is included in Windows PowerShell 3.0 and in Windows PowerShell 4.0. Click an object to take you to the reference documentation for the class that defines the object.
 
 ##  <a name="psISE"></a> **$psISE Object**
- The **$psISE** object is the [root object](../Topic/The-ObjectModelRoot-Object.md) of the Windows PowerShell ISE object hierarchy. Located at the top level, it makes the following objects available for scripting:
+ The **$psISE** object is the [root object](The-ObjectModelRoot-Object.md) of the Windows PowerShell ISE object hierarchy. Located at the top level, it makes the following objects available for scripting:
 
 -   **[$psISE.CurrentFile](#currentfile)**
 
@@ -25,190 +28,187 @@ ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](../Topic/The-ISEFile-Object.md)**
- The **$psISE.CurrentFile** object is an instance of the [ISEFile](../Topic/The-ISEFile-Object.md) class and makes the following objects available for scripting:
+##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+ The **$psISE.CurrentFile** object is an instance of the [ISEFile](The-ISEFile-Object.md) class and makes the following objects available for scripting:
 
--   **[$psISE.CurrentFile.DisplayName](../Topic/The-ISEFile-Object.md#Displayname)**
+-   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
 
--   **[$psISE.CurrentFile.Editor](../Topic/The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](../Topic/The-ISEEditor-Object.md) class and makes the following objects available for scripting:
+-   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](../Topic/The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
 
-    -   **[CaretColumn](../Topic/The-ISEEditor-Object.md#CaretColumn)**
+    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
-    -   **[CaretLine](../Topic/The-ISEEditor-Object.md#CaretLine)**
+    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
 
-    -   **[$psISE.CurrentFile.Editor.CaretLineText](../Topic/The-ISEEditor-Object.md#CaretLineText)**
+    -   **[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
 
-    -   **[LineCount](../Topic/The-ISEEditor-Object.md#LineCount)**
+    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
 
-    -   **[SelectedText](../Topic/The-ISEEditor-Object.md#SelectedText)**
+    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[Text](../Topic/The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
--   **[Encoding](../Topic/The-ISEFile-Object.md#Encoding)**
+-   **[Encoding](The-ISEFile-Object.md#Encoding)**
 
--   **[FullPath](../Topic/The-ISEFile-Object.md#FullPath)**
+-   **[FullPath](The-ISEFile-Object.md#FullPath)**
 
--   **[$psISE.CurrentFile.IsRecovered](../Topic/The-ISEFile-Object.md#IsRecovered)**
+-   **[IsSaved](The-ISEFile-Object.md#IsSaved)**
 
--   **[IsSaved](../Topic/The-ISEFile-Object.md#IsSaved)**
+-   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
--   **[IsUntitled](../Topic/The-ISEFile-Object.md#IsUntitled)**
+##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+ The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class and makes the following objects available for scripting:
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](../Topic/The-PowerShellTab-Object.md)**
- The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](../Topic/The-PowerShellTab-Object.md) class and makes the following objects available for scripting:
+-   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)**  This object is an instance of the [ISEMenuItem](The-ISEMenuItem-Object.md) class and makes the following objects available for scripting:
 
--   **[$psISE.CurrentPowerShellTab.AddOnsMenu](../Topic/The-ISEMenuItem-Object.md)**  This object is an instance of the [ISEMenuItem](../Topic/The-ISEMenuItem-Object.md) class and makes the following objects available for scripting:
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](The-ISEMenuItem-Object.md#Action)**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](../Topic/The-ISEMenuItem-Object.md#Action)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](The-ISEMenuItem-Object.md#DisplayName)**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](../Topic/The-ISEMenuItem-Object.md#DisplayName)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](The-ISEMenuItem-Object.md#Shortcut)**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](../Topic/The-ISEMenuItem-Object.md#Shortcut)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](../Topic/The-ISEMenuItemCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**
 
--   **[$psISE.CurrentPowerShellTab.CanInvoke](../Topic/The-PowerShellTab-Object.md#CanExecute)**
+-   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:
 
--   **[$psISE.CurrentPowerShellTab.ConsolePane](../Topic/The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](../Topic/The-ISEEditor-Object.md) class and makes the following objects available for scripting:
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](../Topic/The-ISEEditor-Object.md#cangotomatch)**
+    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
-    -   **[CaretColumn](../Topic/The-ISEEditor-Object.md#CaretColumn)**
+    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
 
-    -   **[CaretLine](../Topic/The-ISEEditor-Object.md#CaretLine)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](../Topic/The-ISEEditor-Object.md#CaretLineText)**
+    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
 
-    -   **[LineCount](../Topic/The-ISEEditor-Object.md#LineCount)**
+    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[SelectedText](../Topic/The-ISEEditor-Object.md#SelectedText)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
-    -   **[Text](../Topic/The-ISEEditor-Object.md#Text)**
+-   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
 
--   **[$psISE.CurrentPowerShellTab.DisplayName](../Topic/The-PowerShellTab-Object.md#Displayname)**
+-   **[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**
 
--   **[$psISE.CurrentPowerShellTab.ExpandedScript](../Topic/The-PowerShellTab-Object.md#ExpandedScript)**
+-   **[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.Files](../Topic/The-ISEFileCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](../Topic/The-ISEAddOnToolCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](../Topic/The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**
 
--   **[$psISE.CurrentPowerShellTab.Prompt](../Topic/The-PowerShellTab-Object.md#Prompt)**
+-   **[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**
 
--   **[$psISE.CurrentPowerShellTab.ShowCommands](../Topic/The-PowerShellTab-Object.md#ShowCommands)**
+-   **[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.Snippets](../Topic/The-ISESnippetCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**
 
--   **[$psISE.CurrentPowerShellTab.StatusText](../Topic/The-PowerShellTab-Object.md#StatusText)**
+-   **[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnTools](../Topic/The-ISEAddOnToolCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](../Topic/The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](../Topic/The-ISEAddOnToolCollection-Object.md)**
-
--   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](../Topic/The-ISEAddOnToolCollection-Object.md)**
+-   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
 ##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](../Topic/The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](../Topic/The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](../Topic/The-ISEAddOnTool-Object.md#name)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](../Topic/The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the right\-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the right\-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](../Topic/The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](../Topic/The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](../Topic/The-ISEAddOnTool-Object.md#name)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="Options"></a> **$psISE.Options**
  The **$psISE.Options** object makes the following objects available for scripting:
 
--   **[$psISE.Options.AutoSaveMinuteInterval](../Topic/The-ISEOptions-Object.md#asmi)**
+-   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
 
--   **[$psISE.Options.ConsolePaneBackgroundColor](../Topic/The-ISEOptions-Object.md#cpbc)**
+-   **[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**
 
--   **[$psISE.Options.ConsolePaneTextForegroundColor](../Topic/The-ISEOptions-Object.md#cptfc)**
+-   **[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**
 
--   **[$psISE.Options.ConsolePaneTextBackgroundColor](../Topic/The-ISEOptions-Object.md#cptbc)**
+-   **[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**
 
--   **[$psISE.Options.ConsoleTokenColors](../Topic/The-ISEOptions-Object.md#ctc)**
+-   **[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**
 
--   **[$psISE.Options.DebugBackgroundColor](../Topic/The-ISEOptions-Object.md#dbc)**
+-   **[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**
 
--   **[$psISE.Options.DebugForegroundColor](../Topic/The-ISEOptions-Object.md#dfc)**
+-   **[$psISE.Options.DebugForegroundColor](The-ISEOptions-Object.md#dfc)**
 
--   **[$psISE.Options.DefaultOptions](../Topic/The-ISEOptions-Object.md)**
+-   **[$psISE.Options.DefaultOptions](The-ISEOptions-Object.md)**
 
--   **[$psISE.Options.ErrorBackgroundColor](../Topic/The-ISEOptions-Object.md#ebc)**
+-   **[$psISE.Options.ErrorBackgroundColor](The-ISEOptions-Object.md#ebc)**
 
--   **[$psISE.Options.ErrorForegroundColor](../Topic/The-ISEOptions-Object.md#efc)**
+-   **[$psISE.Options.ErrorForegroundColor](The-ISEOptions-Object.md#efc)**
 
--   **[$psISE.Options.FontName](../Topic/The-ISEOptions-Object.md#fn)**
+-   **[$psISE.Options.FontName](The-ISEOptions-Object.md#fn)**
 
--   **[$psISE.Options.Fontsize](../Topic/The-ISEOptions-Object.md#fs)**
+-   **[$psISE.Options.Fontsize](The-ISEOptions-Object.md#fs)**
 
--   **[$psISE.Options.IntellisenseTimeoutInSeconds](../Topic/The-ISEOptions-Object.md#itis)**
+-   **[$psISE.Options.IntellisenseTimeoutInSeconds](The-ISEOptions-Object.md#itis)**
 
--   **[$psISE.Options.MRUCount](../Topic/The-ISEOptions-Object.md#mc)**
+-   **[$psISE.Options.MRUCount](The-ISEOptions-Object.md#mc)**
 
--   **[$psISE.Options.ScriptPaneBackgroundColor](../Topic/The-ISEOptions-Object.md#spbc)**
+-   **[$psISE.Options.ScriptPaneBackgroundColor](The-ISEOptions-Object.md#spbc)**
 
--   **[$psISE.Options.ScriptPaneForegroundColor](../Topic/The-ISEOptions-Object.md#spfc)**
+-   **[$psISE.Options.ScriptPaneForegroundColor](The-ISEOptions-Object.md#spfc)**
 
--   **[$psISE.Options.SelectedScriptPaneState](../Topic/The-ISEOptions-Object.md#ssps)**
+-   **[$psISE.Options.SelectedScriptPaneState](The-ISEOptions-Object.md#ssps)**
 
--   **[$psISE.Options.ShowDefaultSnippets](../Topic/The-ISEOptions-Object.md#sds)**
+-   **[$psISE.Options.ShowDefaultSnippets](The-ISEOptions-Object.md#sds)**
 
--   **[$psISE.Options.ShowIntellisenseInConsolePane](../Topic/The-ISEOptions-Object.md#siicp)**
+-   **[$psISE.Options.ShowIntellisenseInConsolePane](The-ISEOptions-Object.md#siicp)**
 
--   **[$psISE.Options.ShowIntellisenseInScriptPane](../Topic/The-ISEOptions-Object.md#siisp)**
+-   **[$psISE.Options.ShowIntellisenseInScriptPane](The-ISEOptions-Object.md#siisp)**
 
--   **[$psISE.Options.ShowLineNumbers](../Topic/The-ISEOptions-Object.md#sln)**
+-   **[$psISE.Options.ShowLineNumbers](The-ISEOptions-Object.md#sln)**
 
--   **[$psISE.Options.ShowOutlining](../Topic/The-ISEOptions-Object.md#so)**
+-   **[$psISE.Options.ShowOutlining](The-ISEOptions-Object.md#so)**
 
--   **[$psISE.Options.ShowToolBar](../Topic/The-ISEOptions-Object.md#stb)**
+-   **[$psISE.Options.ShowToolBar](The-ISEOptions-Object.md#stb)**
 
--   **[$psISE.Options.ShowWarningBeforeSavingOnRun](../Topic/The-ISEOptions-Object.md#swbsor)**
+-   **[$psISE.Options.ShowWarningBeforeSavingOnRun](The-ISEOptions-Object.md#swbsor)**
 
--   **[$psISE.Options.ShowWarningForDuplicateFiles](../Topic/The-ISEOptions-Object.md#swfdf)**
+-   **[$psISE.Options.ShowWarningForDuplicateFiles](The-ISEOptions-Object.md#swfdf)**
 
--   **[$psISE.Options.TokenColors](../Topic/The-ISEOptions-Object.md#tc)**
+-   **[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**
 
--   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](../Topic/The-ISEOptions-Object.md#uetscpi)**
+-   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
 
--   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](../Topic/The-ISEOptions-Object.md#uetsspi)**
+-   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
 
--   **[$psISE.Options.UseLocalHelp](../Topic/The-ISEOptions-Object.md#ulh)**
+-   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
 
--   **[$psISE.Options.VerboseBackgroundColor](../Topic/The-ISEOptions-Object.md#vbc)**
+-   **[$psISE.Options.VerboseBackgroundColor](The-ISEOptions-Object.md#vbc)**
 
--   **[$psISE.Options.VerboseForegroundColor](../Topic/The-ISEOptions-Object.md#vfc)**
+-   **[$psISE.Options.VerboseForegroundColor](The-ISEOptions-Object.md#vfc)**
 
--   **[$psISE.Options.WarningBackgroundColor](../Topic/The-ISEOptions-Object.md#wbc)**
+-   **[$psISE.Options.WarningBackgroundColor](The-ISEOptions-Object.md#wbc)**
 
--   **[$psISE.Options.WarningForegroundColor](../Topic/The-ISEOptions-Object.md#wfc)**
+-   **[$psISE.Options.WarningForegroundColor](The-ISEOptions-Object.md#wfc)**
 
--   **[$psISE.Options.XmlTokenColors](../Topic/The-ISEOptions-Object.md#xtc)**
+-   **[$psISE.Options.XmlTokenColors](The-ISEOptions-Object.md#xtc)**
 
--   **[$psISE.Options.Zoom](../Topic/The-ISEOptions-Object.md#z)**
+-   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](../Topic/The-PowerShellTabCollection-Object.md)**
- The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](../Topic/The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](../Topic/The-PowerShellTab-Object.md) class.
+##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+ The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.
 
 ## See Also
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md)
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 
-  

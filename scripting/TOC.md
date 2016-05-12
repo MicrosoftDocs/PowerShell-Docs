@@ -1,3 +1,14 @@
+---
+title:  TOC
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # [PowerShell Scripting](PowerShell-Scripting.md)
 
 ## [What's new with PowerShell](whats-new/What-s-New-With-PowerShell.md)
@@ -76,7 +87,6 @@
 
 ## [Core PowerShell](core-powershell/core-powershell.md)
 ### [Scripting Guide](core-powershell/scripting-guide.md)
-### [PowerShell Gallery](core-powershell/gallery/gallery-reference.md)
 ### [Language Guide](core-powershell/language-guide.md)
 ### [Core Modules](core-powershell/core-modules.md)
 ####  [Archive Module](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
@@ -124,9 +134,9 @@
 
 ### [Console](core-powershell/console-guide.md)
 ####  [Console Command Line Reference](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/console/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [The PowerShell Tab Object](core-powershell/console/The-PowerShellTab-Object.md)
-####  [The PowerShell Tab Collection Object](core-powershell/console/The-PowerShellTabCollection-Object.md)
+####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+####  [The PowerShell Tab Object](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [The PowerShell Tab Collection Object](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Using Tab Expansion](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Running Remote Commands](core-powershell/Running-Remote-Commands.md)
@@ -136,5 +146,11 @@
 ####  [Workflow Utility Module](core-powershell/workflows/PSWorkflowUtility-Module.md)
 
 ### [Web Access](core-powershell/web-access.md)
+####  [Authorization rules and security features of windows powershell web access](core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
+####  [Install and use windows powershell web access](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
+####  [Troubleshooting access problems in windows powershell web access](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
+####  [Uninstall windows powershell web access](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
+####  [Use the web based windows powershell console](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell Glossary](Windows-PowerShell-Glossary.md)
+

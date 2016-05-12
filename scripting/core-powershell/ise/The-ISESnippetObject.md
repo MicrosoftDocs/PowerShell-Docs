@@ -1,12 +1,15 @@
 ---
-title: The ISESnippetObject
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
+title:  The ISESnippetObject
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ---
+
 # The ISESnippetObject
   An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects. The easiest way to create a snippet is to use the [New\-IseSnippet&#91;PSITPro5\_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.
 
@@ -47,9 +50,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
 ## See Also
- [The ISESnippetCollection Object](../Topic/The-ISESnippetCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISESnippetCollection Object](The-ISESnippetCollection-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

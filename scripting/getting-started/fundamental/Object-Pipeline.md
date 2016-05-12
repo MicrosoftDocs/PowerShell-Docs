@@ -1,12 +1,15 @@
 ---
-title: Object Pipeline
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
+title:  Object Pipeline
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  523d8ae4-d743-47a4-b79a-806130ca688a
 ---
+
 # Object Pipeline
 Pipelines act like a series of connected segments of pipe. Items moving along the pipeline pass through each segment. To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|". The output of each command is used as input to the next command.
 

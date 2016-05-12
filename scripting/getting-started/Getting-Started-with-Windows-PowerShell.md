@@ -1,12 +1,15 @@
 ---
-title: Getting Started with Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
+title:  Getting Started with Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
 ---
+
 # Getting Started with Windows PowerShell
 Windows PowerShell is a new Windows command\-line shell designed especially for system administrators. Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.
 
@@ -20,11 +23,11 @@ This Getting Started guide provides an introduction to Windows PowerShell: the l
 
 In this topic:
 
--   [Windows PowerShell System Requirements](Topic/Windows-PowerShell-System-Requirements.md)
+-   [Windows PowerShell System Requirements](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
+-   [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [Starting Windows PowerShell](Topic/Starting-Windows-PowerShell.md)
+-   [Starting Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [Getting Ready to Use Windows PowerShell](Topic/Getting-Ready-to-Use-Windows-PowerShell.md)
+-   [Getting Ready to Use Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

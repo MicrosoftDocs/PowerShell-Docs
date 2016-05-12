@@ -17,7 +17,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode = 'Pull'
-            ConfigurationID = 1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
             RefreshFrequencyMins = 30 
             RebootNodeIfNeeded = $true
         }

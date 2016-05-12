@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell Core Providers
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+title:  Windows PowerShell Core Providers
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6e24bf6d-4c70-4edf-956a-1e8e4779ba10
 ---
+
 # Windows PowerShell Core Providers
 This section contains help topics that describe the Windows PowerShell providers in the **Microsoft.PowerShell.Core** module.
 
@@ -25,5 +28,5 @@ Windows PowerShell providers are .NET programs that make the data in a specializ
 [Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 [WSMan Provider [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
-[Microsoft.PowerShell.Core Module](../Topic/Microsoft.PowerShell.Core-Module.md)
+[Microsoft.PowerShell.Core Module](Microsoft.PowerShell.Core-Module.md)
 

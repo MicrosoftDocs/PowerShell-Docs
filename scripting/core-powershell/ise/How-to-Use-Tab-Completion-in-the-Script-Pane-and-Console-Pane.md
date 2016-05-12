@@ -1,12 +1,15 @@
 ---
-title: How to Use Tab Completion in the Script Pane and Console Pane
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
+title:  How to Use Tab Completion in the Script Pane and Console Pane
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ---
+
 # How to Use Tab Completion in the Script Pane and Console Pane
 Tab completion provides automatic Help when you are typing in the Script Pane or in the Command Pane. Use the following steps to take advantage of this feature:
 
@@ -22,6 +25,6 @@ In the Command Pane or Script pane, type a cmdlet followed by a dash, and then p
 For example, type `get-process -` and then press TAB multiple times to display each of the parameters for the cmdlet in turn.
 
 ## See Also
-[Using Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
-[How to Create a PowerShell Tab](https://technet.microsoft.com/en-us/library/c57fc210-19c8-47b1-9171-26a2144c907c)
+[Using Windows PowerShell ISE](using-the-windows-powershell-ise.md)
+[How to Create a PowerShell Tab](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 

@@ -1,12 +1,15 @@
 ---
-title: The ISEAddOnToolCollection Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
+title:  The ISEAddOnToolCollection Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
 ---
+
 # The ISEAddOnToolCollection Object
   The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects. An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.
 
@@ -82,9 +85,9 @@ $psISE.PowerShellTabs.Remove($newTab)
 ```
 
 ## See Also
- [The PowerShellTab Object](../Topic/The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The PowerShellTab Object](The-PowerShellTab-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

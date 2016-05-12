@@ -1,12 +1,15 @@
 ---
-title: Understanding the Windows PowerShell Pipeline
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
+title:  Understanding the Windows PowerShell Pipeline
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
+
 # Understanding the Windows PowerShell Pipeline
 Piping works virtually everywhere in Windows PowerShell. Although you see text on the screen, Windows PowerShell does not pipe text between commands. Instead, it pipes objects.
 

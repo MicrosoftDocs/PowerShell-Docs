@@ -1,12 +1,15 @@
 ---
-title: Selecting Items from a List Box
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+title:  Selecting Items from a List Box
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ---
+
 # Selecting Items from a List Box
 Use Windows PowerShell 3.0 and later releases to create a dialog box that lets users select items from a list box control.
 
@@ -137,7 +140,7 @@ $listBox.Height = 80
 In the next section, you specify the values you want the list box to display to users.
 
 > [!NOTE]
-> The list box created by this script allows only one selection. To create a list box control that allows multiple selections, specify a value for the **SelectionMode** property, similarly to the following:  `$listBox.SelectionMode = "MultiExtended"`. For more information, see [Multiple-selection List Boxes](../Topic/Multiple-selection-List-Boxes.md).
+> The list box created by this script allows only one selection. To create a list box control that allows multiple selections, specify a value for the **SelectionMode** property, similarly to the following:  `$listBox.SelectionMode = "MultiExtended"`. For more information, see [Multiple-selection List Boxes](Multiple-selection-List-Boxes.md).
 
 ```
 [void] $listBox.Items.Add("atl-dc-001")

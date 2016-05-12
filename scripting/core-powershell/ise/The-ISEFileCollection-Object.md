@@ -1,12 +1,15 @@
 ---
-title: The ISEFileCollection Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
+title:  The ISEFileCollection Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0f86a427-ea38-4bce-85f8-06c98d30d508
 ---
+
 # The ISEFileCollection Object
   The **ISEFileCollection** object is a collection of **ISEFile** objects. An example is the $psISE.CurrentPowerShellTab.Files collection.
 
@@ -68,9 +71,9 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 ```
 
 ## See Also
- [The ISEFile Object](../Topic/The-ISEFile-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISEFile Object](The-ISEFile-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

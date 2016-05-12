@@ -1,12 +1,15 @@
 ---
-title: Understanding Important Windows PowerShell Concepts
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
+title:  Understanding Important Windows PowerShell Concepts
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
 ---
+
 # Understanding Important Windows PowerShell Concepts
 The Windows PowerShell design integrates concepts from many different environments. Several of them are familiar to people with experience in specific shells or programming environments, but very few people will know about all of them. Looking at some of these concepts provides a useful overview of the shell.
 

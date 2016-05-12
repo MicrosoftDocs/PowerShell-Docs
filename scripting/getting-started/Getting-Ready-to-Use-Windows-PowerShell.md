@@ -1,12 +1,15 @@
 ---
-title: Getting Ready to Use Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
+title:  Getting Ready to Use Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6dc7052d-cc5a-4220-950f-98f963a2b587
 ---
+
 # Getting Ready to Use Windows PowerShell
 When Windows PowerShell is installed and started, consider the following setup options. You can perform these tasks at any time.
 
@@ -21,6 +24,6 @@ When Windows PowerShell is installed and started, consider the following setup o
     NOTE: If remoting is enabled on a computer that is running Windows PowerShell 2.0, remoting is still enabled after you install Windows Management Framework 3.0. However, on Windows Server 2008 (not Windows Server 2008 R2), you must re\-enable remoting after installing Windows Management Framework 3.0.
 
 ## See Also
-[Installing Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
+[Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 [Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 

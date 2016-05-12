@@ -1,12 +1,15 @@
 ---
-title: PSScheduledJob Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
+title:  PSScheduledJob Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
 ---
+
 # PSScheduledJob Module
 This section contains the help topics for the **PSScheduledJob** module, which manages scheduled jobs in Windows PowerShell. This module is installed with Windows PowerShell.
 
@@ -22,7 +25,7 @@ This section contains the help topics for the **PSScheduledJob** module, which m
 [about_Scheduled_Jobs_Troubleshooting](https://technet.microsoft.com/en-us/library/70de91e9-675f-4b5f-9179-6104b9cc4f0d)
 
 ## See Also
-[Windows PowerShell 5.0](../Topic/Windows-PowerShell-5.0.md)
+[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Scripting with Windows PowerShell](../Topic/Scripting-with-Windows-PowerShell.md)
+[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

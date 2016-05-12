@@ -1,12 +1,15 @@
 ---
-title: Using Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+title:  Using Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ---
+
 # Using Windows PowerShell
 Windows PowerShellÂ® is a task\-based command\-line shell and scripting language designed especially for system administration. Built on the .NET Framework, Windows PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows.
 
@@ -15,19 +18,17 @@ Resources in this section help you learn about Windows PowerShell, features that
 ## What’s In This Section
 Content in this section can help you learn more about Windows PowerShell, how to use Windows PowerShell, and what is new in Windows PowerShell in the most current releases.
 
--   [What's New in Windows PowerShell](../Topic/What-s-New-in-Windows-PowerShell.md). This topic describes changes to Windows PowerShell 3.0 and Windows PowerShell 4.0.
+-   [What's New in Windows PowerShell](../../whats-new/What-s-New-in-Windows-PowerShell-50.md). This topic describes changes to Windows PowerShell 3.0 and Windows PowerShell 4.0.
 
--   [Getting Started with Windows PowerShell](../Topic/Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
+-   [Getting Started with Windows PowerShell](../Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
 
--   [Windows PowerShell User's Guide](../Topic/Windows-PowerShell-User-s-Guide.md). A detailed introduction, including real\-world scripts and scenarios to get you started.
-
--   [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../Topic/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md). Documentation for Windows PowerShell ISE, a graphical Windows PowerShell script editor and console.
+-   [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md). Documentation for Windows PowerShell ISE, a graphical Windows PowerShell script editor and console.
 
 -   [Windows PowerShell Desired State Configuration (DSC) Overview](https://technet.microsoft.com/en-us/library/04c9e716-822c-40f0-8fdf-f2dda8abd888). An introduction to a new feature for Windows PowerShell 4.0, Windows PowerShell Desired State Configuration (DSC). DSC can help administrators achieve consistent configurations in Windows environments, and on devices such as network switches.
 
--   [PowerShell.exe Command-Line Help](../Topic/PowerShell.exe-Command-Line-Help.md). How to start Windows PowerShell from the Windows Command Prompt, and run basic Windows PowerShell commands.
+-   [PowerShell.exe Command-Line Help](../../core-powershell/console/PowerShell.exe-Command-Line-Help.md). How to start Windows PowerShell from the Windows Command Prompt, and run basic Windows PowerShell commands.
 
--   [Windows PowerShell Glossary](../Topic/Windows-PowerShell-Glossary.md). Learn about common terms used in Windows PowerShell and its documentation.
+-   [Windows PowerShell Glossary](../../Windows-PowerShell-Glossary.md). Learn about common terms used in Windows PowerShell and its documentation.
 
 ## Related Technologies
 Windows PowerShell is part of a family of related scripting technologies that help you automate remote management of Windows\-based computers. Links to more information about these technologies are included here for you.
@@ -47,13 +48,11 @@ Windows PowerShell is part of a family of related scripting technologies that he
 ## Learning Windows PowerShell
 To begin learning Windows PowerShell, start with the following resources:
 
--   [Microsoft Virtual Academy: Getting Started with PowerShell 3.0 Jump Start](http://www.microsoftvirtualacademy.com/training-courses/advanced-tools-scripting-with-powershell-3-0-jump-start). This Jump Start is designed to teach busy IT professionals, admins, and help desk people how to use Windows PowerShell to improve management capabilities, automate redundant tasks, and manage the environment in scale. Learn how Windows PowerShellworks and how to make Windows PowerShell work for you from the experts Jeffrey Snover, the inventor of Windows PowerShell, and Jason Helmick, Senior Technologist at Concentrated Technology.
+-   [Microsoft Virtual Academy: Getting Started with PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-us/training-courses/getting-started-with-powershell-3-0-jump-start-8276). This Jump Start is designed to teach busy IT professionals, admins, and help desk people how to use Windows PowerShell to improve management capabilities, automate redundant tasks, and manage the environment in scale. Learn how Windows PowerShellworks and how to make Windows PowerShell work for you from the experts Jeffrey Snover, the inventor of Windows PowerShell, and Jason Helmick, Senior Technologist at Concentrated Technology.
 
--   [Microsoft Virtual Academy: Advanced Tools & Scripting with PowerShell 3.0 Jump Start](http://www.microsoftvirtualacademy.com/training-courses/getting-started-with-powershell-3-0-jump-start). IT pros, take this advanced Windows PowerShell course to find out how to turn your real time management and automation scripts into useful reusable tools and cmdlets. You’ll learn the best patterns and practices for building and maintaining tools and you’ll pick up some special tips and tricks along the way from the architect and inventor of Windows PowerShell, Distinguished Engineer Jeffrey Snover, and IT pro, Jason Helmick.
+-   [Microsoft Virtual Academy: Advanced Tools & Scripting with PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277). IT pros, take this advanced Windows PowerShell course to find out how to turn your real time management and automation scripts into useful reusable tools and cmdlets. You’ll learn the best patterns and practices for building and maintaining tools and you’ll pick up some special tips and tricks along the way from the architect and inventor of Windows PowerShell, Distinguished Engineer Jeffrey Snover, and IT pro, Jason Helmick.
 
--   [Getting Started with Windows PowerShell](../Topic/Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
-
--   [Windows PowerShell User's Guide](../Topic/Windows-PowerShell-User-s-Guide.md). A detailed introduction, including real\-world scripts and scenarios to get you started.
+-   [Getting Started with Windows PowerShell](../Getting-Started-with-Windows-PowerShell.md). An introduction and tutorial, including system requirements and instructions for installing and starting Windows PowerShell on all supported operating systems.
 
 -   [Windows PowerShell Core Module Reference](http://technet.microsoft.com/library/hh847741(v=wps.630).aspx). An alphabetized list of help topics for the language features and cmdlets included as part of the Windows PowerShell engine.
 

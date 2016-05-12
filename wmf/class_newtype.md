@@ -168,7 +168,7 @@ Return type is a contract; the return value is converted to the expected type. I
 
 ## Attributes
 
-Four new attributes, **DscResource**, **DscResourceKey**, **DscResourceMandatory**, and **DscResourceOut** have been added.
+Two new attributes, **DscResource** and **DscProperty** have been added.
 
 ## Lexical scoping of variables
 

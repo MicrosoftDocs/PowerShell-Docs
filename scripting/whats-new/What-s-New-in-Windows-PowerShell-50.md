@@ -1,12 +1,15 @@
 ---
-title: What&#39;s New in Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
+title:  What s New in Windows PowerShell 50
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
 ---
+
 # What&#39;s New in Windows PowerShell
 Windows PowerShellÂ® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows\-based environments more easily and comprehensively.
 
@@ -451,59 +454,59 @@ Windows PowerShell 4.0 includes the following new features.
 ## <a name="BKMK_wps3"></a>New features in Windows PowerShell 3.0
 Windows PowerShell 3.0 includes the following new features.
 
--   [Windows PowerShell Workflow](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Workflow)
+-   [Windows PowerShell Workflow](#BKMK_Workflow)
 
--   [Windows PowerShell Web Access](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_WebAccess)
+-   [Windows PowerShell Web Access](#BKMK_WebAccess)
 
--   [New Windows PowerShell ISE Features](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_ISE)
+-   [New Windows PowerShell ISE Features](#BKMK_ISE)
 
--   [Support for Microsoft .NET Framework 4.0](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_NET4)
+-   [Support for Microsoft .NET Framework 4.0](#BKMK_NET4)
 
--   [Support for Windows Preinstallation Environment](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_WinPE)
+-   [Support for Windows Preinstallation Environment](#BKMK_WinPE)
 
--   [Disconnected Sessions](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Disconnected)
+-   [Disconnected Sessions](#BKMK_Disconnected)
 
--   [Robust Session Connectivity](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Robust)
+-   [Robust Session Connectivity](#BKMK_Robust)
 
--   [Updatable Help System](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_UpHelp)
+-   [Updatable Help System](#BKMK_UpHelp)
 
--   [Enhanced Online Help](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Online)
+-   [Enhanced Online Help](#BKMK_Online)
 
--   [CIM integration](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_CIM)
+-   [CIM integration](#BKMK_CIM)
 
--   [Session Configuration Files](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_ConfigFile)
+-   [Session Configuration Files](#BKMK_ConfigFile)
 
--   [Scheduled Jobs and Task Scheduler Integration](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_ScheduledJob)
+-   [Scheduled Jobs and Task Scheduler Integration](#BKMK_ScheduledJob)
 
--   [Windows PowerShell Language Enhancements](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Lang)
+-   [Windows PowerShell Language Enhancements](#BKMK_Lang)
 
--   [New Core Cmdlets](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Core)
+-   [New Core Cmdlets](#BKMK_Core)
 
--   [Improvements to Existing Core Cmdlets and Providers](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_Prov)
+-   [Improvements to Existing Core Cmdlets and Providers](#BKMK_Prov)
 
--   [Remote module import and discovery](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_REM)
+-   [Remote module import and discovery](#BKMK_REM)
 
--   [Enhanced Tab Completion](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_TAB)
+-   [Enhanced Tab Completion](#BKMK_TAB)
 
--   [Module Auto-Loading](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_AutoLoad)
+-   [Module Auto-Loading](#BKMK_AutoLoad)
 
--   [Module Experience Improvements](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_MOD)
+-   [Module Experience Improvements](#BKMK_MOD)
 
--   [Simplified Command Discovery](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_SIMPLE)
+-   [Simplified Command Discovery](#BKMK_SIMPLE)
 
--   [Improved Logging, Diagnostics, and Group Policy Support](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_LOG)
+-   [Improved Logging, Diagnostics, and Group Policy Support](#BKMK_LOG)
 
--   [Formatting and Output Improvements](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_OUT)
+-   [Formatting and Output Improvements](#BKMK_OUT)
 
--   [Enhanced Console Host Experience](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_HOST)
+-   [Enhanced Console Host Experience](#BKMK_HOST)
 
--   [New Cmdlet and Hosting APIs](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_API)
+-   [New Cmdlet and Hosting APIs](#BKMK_API)
 
--   [Performance Improvements](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_PERF)
+-   [Performance Improvements](#BKMK_PERF)
 
--   [RunAs and Shared Host Support](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_RUNAS)
+-   [RunAs and Shared Host Support](#BKMK_RUNAS)
 
--   [Special Character Handling Improvements](Topic/What-s-New-in-Windows-PowerShell.md#BKMK_CHAR)
+-   [Special Character Handling Improvements](#BKMK_CHAR)
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell Workflow
 Windows PowerShellÂ® Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.

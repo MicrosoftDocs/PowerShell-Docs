@@ -1,12 +1,15 @@
 ---
-title: How to Write and Run Scripts in the Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
+title:  How to Write and Run Scripts in the Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 ---
+
 # How to Write and Run Scripts in the Windows PowerShell ISE
 This topic describes how to create, edit, run, and save scripts in the Script Pane.
 
@@ -61,7 +64,7 @@ Use the following steps to edit text in the Script Pane. You can copy, cut, past
 
 2.  Create a script. Syntax coloring and tab completion make this a richer experience in Windows PowerShell ISE.
 
-3.  See [How to Use Tab Completion in the Script Pane and Console Pane](../Topic/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for details about using the tab completion feature to help in typing.
+3.  See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for details about using the tab completion feature to help in typing.
 
 ### To find text in the Script Pane
 
@@ -143,5 +146,5 @@ Windows PowerShell ISE supports the following encoding options: ASCII, BigEndian
 Windows PowerShell ISE does not change the encoding of scripts that were created by in other editors, even when you use the Save or Save As commands in Windows PowerShell ISE.
 
 ## See Also
-[Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
+[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

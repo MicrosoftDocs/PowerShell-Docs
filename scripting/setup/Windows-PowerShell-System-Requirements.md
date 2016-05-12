@@ -1,16 +1,19 @@
 ---
-title: Windows PowerShell System Requirements
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell System Requirements
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell System Requirements
 This topic lists the system requirements for Windows PowerShell 3.0 and Windows PowerShell 4.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.
 
-WindowsÂ® 8.1 and Windows ServerÂ® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
+Windows® 8.1 and Windows Server® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
 
 ## Operating System Requirements
 Windows PowerShell 4.0 runs on the following versions of Windows.
@@ -19,9 +22,9 @@ Windows PowerShell 4.0 runs on the following versions of Windows.
 
 -   Windows Server 2012 R2, installed by default
 
--   WindowsÂ® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+-   Windows® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
--   Windows ServerÂ® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+-   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
 Windows PowerShell 3.0 runs on the following versions of Windows.
 
@@ -29,9 +32,9 @@ Windows PowerShell 3.0 runs on the following versions of Windows.
 
 -   Windows Server 2012, installed by default
 
--   WindowsÂ® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+-   Windows® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
--   Windows ServerÂ® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+-   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
 -   Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
@@ -74,7 +77,7 @@ However, some items, such as the following, require a graphical user interface. 
 
     1.  **ShowWindow** parameter of the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet.
 
-    2.  **ShowSecurityDescriptorUi** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
+    2.  **ShowSecurityDescriptorUI** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
 
 ## Windows PowerShell Engine Requirements
 Windows PowerShell 4.0 is designed to be backwards compatible with Windows PowerShell 3.0 and Windows PowerShell 2.0. Cmdlets, providers, snap\-ins, modules, and scripts written for Windows PowerShell 2.0 and Windows PowerShell 3.0 run unchanged in Windows PowerShell 4.0.
@@ -83,7 +86,7 @@ However, due to a change in the runtime activation policy in Microsoft .NET Fram
 
 The Windows PowerShell 2.0 engine requires Microsoft .NET Framework 2.0.50727 at a minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5 Service Pack 1. This requirement is not fulfilled by Microsoft .NET Framework 4 and later releases of Microsoft .NET Framework.
 
-For information about adding or installing the Windows PowerShell 2.0 engine, and adding or installing the required versions of the Microsoft .NET Framework, see [Installing the Windows PowerShell 2.0 Engine](Topic/Installing-the-Windows-PowerShell-2.0-Engine.md). For information about starting the Windows PowerShell 2.0 engine, see [Starting the Windows PowerShell 2.0 Engine](Topic/Starting-the-Windows-PowerShell-2.0-Engine.md).
+For information about adding or installing the Windows PowerShell 2.0 engine, and adding or installing the required versions of the Microsoft .NET Framework, see [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md). For information about starting the Windows PowerShell 2.0 engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run in the Windows Preinstallation Environment (Windows PE). However, the following cmdlets are not supported.
@@ -92,16 +95,18 @@ Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run i
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
 -   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
 -   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
-Also, the **WinRm** service is not present on Windows PE.
+Also, the **WinRM** service is not present on Windows PE.
 
 ## See Also
-[Getting Started with Windows PowerShell](Topic/Getting-Started-with-Windows-PowerShell.md)
-[Installing Windows PowerShell](Topic/Installing-Windows-PowerShell.md)
-[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+
+[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+
+[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 

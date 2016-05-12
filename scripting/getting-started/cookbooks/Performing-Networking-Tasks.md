@@ -1,12 +1,15 @@
 ---
-title: Performing Networking Tasks
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
+title:  Performing Networking Tasks
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ---
+
 # Performing Networking Tasks
 Because TCP\/IP is the most commonly used network protocol, most low\-level network protocol administration tasks involve TCP\/IP. In this section, we use Windows PowerShell and WMI to do these tasks.
 

@@ -1,12 +1,15 @@
 ---
-title: Getting Detailed Help Information
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
+title:  Getting Detailed Help Information
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
+
 # Getting Detailed Help Information
 Windows PowerShell includes detailed Help topics that explain Windows PowerShell concepts and the Windows PowerShell language. There are also Help topics for each cmdlet and provider and Help topics for many functions and scripts.
 

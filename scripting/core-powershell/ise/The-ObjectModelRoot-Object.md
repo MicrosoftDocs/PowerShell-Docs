@@ -1,12 +1,15 @@
 ---
-title: The ObjectModelRoot Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
+title:  The ObjectModelRoot Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
 ---
+
 # The ObjectModelRoot Object
   The **$psISE** object, which is the principal root object in Windows PowerShellÂ® Integrated Scripting Environment (ISE) is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This topic describes the properties of the **ObjectModelRoot** object.
 
@@ -43,8 +46,8 @@ ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
  The read\-only property that gets the collection of the PowerShell tabs, which are open in Windows PowerShell ISE. By default, this object contains one PowerShell tab. However, you can add more PowerShell tabs to this object by using scripts or by using the menus in Windows PowerShell ISE.
 
 ## See Also
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

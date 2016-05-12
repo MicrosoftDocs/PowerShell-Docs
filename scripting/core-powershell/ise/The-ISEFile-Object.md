@@ -1,12 +1,15 @@
 ---
-title: The ISEFile Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+title:  The ISEFile Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ---
+
 # The ISEFile Object
   An **ISEFile** object represents a file in Windows PowerShellÂ® Integrated Scripting Environment (ISE). It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class. This topic lists its member methods and member properties. The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.
 
@@ -79,7 +82,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the [editor object](../Topic/The-ISEEditor-Object.md) that is used for the specified file.
+ The read\-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.
 
 ```
 # Gets the editor and the text.
@@ -135,9 +138,9 @@ $psISE.CurrentFile.IsUntitled
 ```
 
 ## See Also
- [The ISEFileCollectionObject](../Topic/The-ISEFileCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

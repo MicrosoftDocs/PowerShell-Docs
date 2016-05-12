@@ -1,12 +1,15 @@
 ---
-title: The ISEMenuItemCollection Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
+title:  The ISEMenuItemCollection Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
 ---
+
 # The ISEMenuItemCollection Object
   An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add\-On** menu in Windows PowerShellÂ® Integrated Scripting Environment (ISE).
 
@@ -47,9 +50,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ```
 
 ## See Also
- [The ISEMenuItem Object](../Topic/The-ISEMenuItem-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../Topic/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../Topic/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../Topic/The-ISE-Object-Model-Hierarchy.md)
+ [The ISEMenuItem Object](The-ISEMenuItem-Object.md) 
+ [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+ [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+ [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

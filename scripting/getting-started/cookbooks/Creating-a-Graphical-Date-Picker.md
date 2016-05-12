@@ -1,12 +1,15 @@
 ---
-title: Creating a Graphical Date Picker
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
+title:  Creating a Graphical Date Picker
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c1cb722c-41e9-4baa-be83-59b4653222e9
 ---
+
 # Creating a Graphical Date Picker
 Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar\-style control that lets users select a day of the month.
 

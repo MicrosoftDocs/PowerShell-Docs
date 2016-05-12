@@ -1,12 +1,15 @@
 ---
-title: How to Create a PowerShell Tab in Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
+title:  How to Create a PowerShell Tab in Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 ---
+
 # How to Create a PowerShell Tab in Windows PowerShell ISE
 Tabs in the Windows PowerShellÂ® Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application. Each PowerShell tab corresponds to a separate execution environment or session.
 
@@ -35,6 +38,6 @@ To close a tab, you can use any of the following techniques:
 If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save or discard them. For more information about how to save a script, see [How to Save a Script](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8).
 
 ## See Also
-[Using the Windows PowerShell ISE](../Topic/Using-the-Windows-PowerShell-ISE.md)
-[How to Use the Console Pane in the Windows PowerShell ISE](../Topic/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+[How to Use the Console Pane in the Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 
