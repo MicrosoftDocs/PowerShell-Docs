@@ -93,7 +93,7 @@ After creating the meta-configuration, you must run it to create a configuration
 ### Naming and placing the configuration documents on the pull server
 
 The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server (typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: _ConfigurationName_. _ConfigurationID_`.mof`, where _ConfigurationName_ is the name of the partial configuration and _ConfigurationID_ is the configuration ID defined in the LCM on the target node. For our example, the configuration documents should be names as follows.
-![PartialConfig names on pull server](images/Pull.png)
+![PartialConfig names on pull server](images/Pull1.png)
 
 ### Running partial configurations from a pull server
 
