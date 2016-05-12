@@ -15,7 +15,7 @@ DSC configuration resources run as `Local System` by default.
 However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.
 
 Earlier resources used a hard-coded `Credential` property name to handle this.
-WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.
+WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources. For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).
 Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.
 
 *Note that the design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.*

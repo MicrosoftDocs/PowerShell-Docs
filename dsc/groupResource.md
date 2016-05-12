@@ -23,18 +23,18 @@ Group [string] #ResourceName
 
 |  Property  |  Description   | 
 |---|---| 
-| GroupName| Indicates the name of the group for which you want to ensure a specific state.| 
-| Credential| Indicates the credentials required to access remote resources. **Note**: This account must have the appropriate Active Directory permissions to add all non-local accounts to the group; otherwise, an error will occur.
-| Description| Indicates the description of the group.| 
+| GroupName| The name of the group for which you want to ensure a specific state.| 
+| Credential| The credentials required to access remote resources. **Note**: This account must have the appropriate Active Directory permissions to add all non-local accounts to the group; otherwise, an error will occur.
+| Description| The description of the group.| 
 | Ensure| Indicates if the group exists. Set this property to "Absent" to ensure that the group does not exist. Setting it to "Present" (the default value) ensures that the group exists.| 
-| Members| Indicates that you want to ensure these members form the group.| 
-| MembersToExclude| Indicates the users who you want ensure are not members of this group.| 
-| MembersToInclude| Indicates the users who you want to ensure are members of the group.| 
+| Members| Use this property to replace the current group membership with the specified members. The value of this property is an array of strings of the form *Domain*\\*UserName*. If you set this property in a configuration, do not use either the **MembersToExclude** or **MembersToInclude** property. Doing so will generate an error. Set the value of this property to an empty string to remove all members from the group.| 
+| MembersToExclude| Use this property to remove members from the existing membership of the group. The value of this property is an array of strings of the form *Domain*\\*UserName*. If you set this property in a configuration, do not use the **Members** property. Doing so will generate an error.| 
+| MembersToInclude| Use this property to add members to the existing membership of the group. The value of this property is an array of strings of the form *Domain*\\*UserName*. If you set this property in a configuration, do not use the **Members** property. Doing so will generate an error.| 
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"``.| 
 
 ## Example 1
 
-The following example shows how to ensure that a group called TestGroup is absent. 
+The following example shows how to ensure that a group called "TestGroup" is absent. 
 
 ```powershell
 Group GroupExample
