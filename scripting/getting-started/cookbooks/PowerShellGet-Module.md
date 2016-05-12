@@ -1,12 +1,15 @@
 ---
-title: PowerShellGet Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e4d6867f-a32a-4564-9e43-409babee97a7
+title:  PowerShellGet Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e4d6867f-a32a-4564-9e43-409babee97a7
 ---
+
 # PowerShellGet Module
 This section contains the help topics for the **PowerShellGet** module. The **PowerShellGet** module is installed with Windows PowerShell 5.0 and later releases of Windows PowerShell.
 

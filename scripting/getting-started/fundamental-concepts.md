@@ -1,3 +1,14 @@
+---
+title:  fundamental concepts
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Fundamental Concepts
 
 -  [About Windows PowerShell](fundamental/About-Windows-PowerShell.md)
@@ -15,3 +26,4 @@
 -  [Using Windows PowerShell](fundamental/Using-Windows-PowerShell.md)
 -  [Windows PowerShell Basics](fundamental/Windows-PowerShell-Basics.md)
 -  [Windows PowerShell Integrated Scripting Environment  ISE ](fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+

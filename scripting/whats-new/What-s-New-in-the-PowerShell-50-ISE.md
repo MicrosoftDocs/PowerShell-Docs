@@ -1,12 +1,15 @@
 ---
-title: What&#39;s New in the Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
+title:  What s New in the PowerShell 50 ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
+
 # What&#39;s New in the Windows PowerShell ISE
 This topic explains the new and updated features that have been introduced in versions of Windows PowerShellÂ® Integrated Scripting Environment (ISE).
 
@@ -225,3 +228,4 @@ For more information about using Windows PowerShell ISE in Windows PowerShell, s
 -   [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 
 -   [Script Center](http://technet.microsoft.com/scriptcenter/default)
+

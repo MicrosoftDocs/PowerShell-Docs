@@ -1,3 +1,14 @@
+---
+title:  PowerShell Scripting
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  PowerShell Scripting
 
 This is the top page of the official PowerShell documentation set.  
@@ -46,3 +57,4 @@ Find in this section:
 -  The [PowerShell Workflows Guide](core-powershell/workflows-guide.md)
 -  The [PowerShell Web Access Guide](core-powershell/web-access.md)
 -  The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
+

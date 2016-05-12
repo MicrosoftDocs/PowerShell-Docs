@@ -1,16 +1,19 @@
 ---
-title: Windows PowerShell System Requirements
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell System Requirements
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell System Requirements
 This topic lists the system requirements for Windows PowerShell 3.0 and Windows PowerShell 4.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.
 
-WindowsÂ® 8.1 and Windows ServerÂ® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
+Windows® 8.1 and Windows Server® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
 
 ## Operating System Requirements
 Windows PowerShell 4.0 runs on the following versions of Windows.
@@ -19,9 +22,9 @@ Windows PowerShell 4.0 runs on the following versions of Windows.
 
 -   Windows Server 2012 R2, installed by default
 
--   WindowsÂ® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+-   Windows® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
--   Windows ServerÂ® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+-   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
 Windows PowerShell 3.0 runs on the following versions of Windows.
 
@@ -29,9 +32,9 @@ Windows PowerShell 3.0 runs on the following versions of Windows.
 
 -   Windows Server 2012, installed by default
 
--   WindowsÂ® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+-   Windows® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
--   Windows ServerÂ® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+-   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
 -   Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
@@ -102,5 +105,8 @@ Also, the **WinRM** service is not present on Windows PE.
 
 ## See Also
 [Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+
 [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+
 [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+

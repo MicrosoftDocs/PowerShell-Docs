@@ -1,3 +1,14 @@
+---
+title:  ise guide
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # ISE Guide
 
 -  [How to Create a PowerShell Tab in Windows PowerShell ISE](ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
@@ -27,3 +38,4 @@
 -  [The Windows PowerShell ISE Scripting Object Model](ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 -  [Using the Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
 -  [Windows PowerShell ISE Object Model Reference](ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
+

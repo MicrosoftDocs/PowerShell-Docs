@@ -1,12 +1,15 @@
 ---
-title: PSScheduledJob Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
+title:  PSScheduledJob Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
 ---
+
 # PSScheduledJob Module
 This section contains the help topics for the **PSScheduledJob** module, which manages scheduled jobs in Windows PowerShell. This module is installed with Windows PowerShell.
 

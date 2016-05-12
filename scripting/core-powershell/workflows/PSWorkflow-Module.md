@@ -1,12 +1,15 @@
 ---
-title: PSWorkflow Module
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
+title:  PSWorkflow Module
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  117316fe-2f82-4fc9-b5dc-794ae9e3f258
 ---
+
 # PSWorkflow Module
 This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with Windows PowerShell.
 

@@ -1,3 +1,14 @@
+---
+title:  scripting guide
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  PowerShell Scripting Guide
 
 This is your guide to getting started with PowerShell. Read through these pages
@@ -20,3 +31,4 @@ to get familiar with PowerShell, and soon you’ll be automating like a pro.
 ##  7  Internationalization
 
 ##  8  Documenting and help information
+

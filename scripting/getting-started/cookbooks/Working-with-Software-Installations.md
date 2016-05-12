@@ -1,12 +1,15 @@
 ---
-title: Working with Software Installations
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
+title:  Working with Software Installations
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
+
 # Working with Software Installations
 Applications that are designed to use Windows Installer can be accessed through WMI's **Win32\_Product** class, but not all applications in use today use the Windows Installer. Because the Windows Installer provides the widest range of standard techniques for working with installable applications, we will focus primarily on those applications. Applications that use alternate setup routines will generally not be managed by the Windows Installer. Specific techniques for working with those applications will depend on the installer software and decisions made by the application developer.
 

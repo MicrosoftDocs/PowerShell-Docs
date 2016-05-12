@@ -1,12 +1,15 @@
 ---
-title: The ISEMenuItem Object
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
+title:  The ISEMenuItem Object
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a16660bd-0aee-46fd-ac17-3f022165d089
 ---
+
 # The ISEMenuItem Object
   An **ISEMenuItem** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class. All menu objects on the **Add\-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.
 

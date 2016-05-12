@@ -1,12 +1,15 @@
 ---
-title: Using Static Classes and Methods
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+title:  Using Static Classes and Methods
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
+
 # Using Static Classes and Methods
 Not all .NET Framework classes can be created by using **New\-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New\-Object**, you will get the following error messages:
 

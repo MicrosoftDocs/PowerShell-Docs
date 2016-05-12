@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell Glossary
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+title:  Windows PowerShell Glossary
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 ---
+
 # Windows PowerShell Glossary
 
 

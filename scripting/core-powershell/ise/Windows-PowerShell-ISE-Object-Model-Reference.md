@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell ISE Object Model Reference
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
+title:  Windows PowerShell ISE Object Model Reference
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 ---
+
 # Windows PowerShell ISE Object Model Reference
   
 ## Object Model Reference

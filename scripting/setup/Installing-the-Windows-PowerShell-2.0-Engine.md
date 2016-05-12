@@ -1,12 +1,15 @@
 ---
-title: Installing the Windows PowerShell 2.0 Engine
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
+title:  Installing the Windows PowerShell 2.0 Engine
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ---
+
 # Installing the Windows PowerShell 2.0 Engine
 This topic explains how to install the Windows PowerShell 2.0 Engine.
 

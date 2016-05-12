@@ -1,12 +1,15 @@
 ---
-title: Selecting Parts of Objects (Select-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
+title:  Selecting Parts of Objects  Select Object 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  72e64b1a-d351-4500-9da3-24d8a71d7a92
 ---
+
 # Selecting Parts of Objects (Select-Object)
 You can use the **Select\-Object** cmdlet to create new, custom Windows PowerShell objects that contain properties selected from the objects you use to create them. Type the following command to create a new object that includes only the Name and FreeSpace properties of the Win32\_LogicalDisk WMI class:
 

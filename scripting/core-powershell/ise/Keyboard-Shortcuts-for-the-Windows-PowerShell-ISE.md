@@ -1,12 +1,15 @@
 ---
-title: Keyboard Shortcuts for the Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
+title:  Keyboard Shortcuts for the Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8328b946-0f02-4ef4-ac28-2743a1b4043b
 ---
+
 # Keyboard Shortcuts for the Windows PowerShell ISE
 Use the following keyboard shortcuts to perform actions in Windows PowerShellÂ® Integrated Scripting Environment (ISE). Windows PowerShell ISE is available as part of the Windows Server and Windows client operating systems, but can also be installed on some older Windows operating systems as part of the [Windows Management Framework 4.0 download package](http://go.microsoft.com/fwlink/?LinkID=293881).
 

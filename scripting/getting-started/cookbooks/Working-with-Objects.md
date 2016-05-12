@@ -1,12 +1,15 @@
 ---
-title: Working with Objects
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
+title:  Working with Objects
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  7ecc94a4-015c-4459-ae58-85289ea09030
 ---
+
 # Working with Objects
 We have discussed how Windows PowerShell uses objects to transfer data between cmdlets, and demonstrated a few ways to view detailed information about objects by using Get\-Member and Format cmdlets to view particular properties of objects.
 
