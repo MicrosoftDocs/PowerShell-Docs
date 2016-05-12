@@ -1,4 +1,4 @@
-I really like OpenLoc. That's why I'm updating this document.
+I really like OpenLoc.
 
 It works *exceptionally* well.
 
