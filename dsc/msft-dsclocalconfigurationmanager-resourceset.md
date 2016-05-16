@@ -1,5 +1,5 @@
 ---
-title:  
+title:  ResourceSet method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Execute Set on a provider directly.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceset'
-MSHAttr: 'PreferredLib:/library'
-title: 'ResourceSet method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # ResourceSet method of the MSFT_DSCLocalConfigurationManager class
 

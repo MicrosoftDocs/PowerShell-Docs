@@ -1,5 +1,5 @@
 ---
-title:  
+title: ResourceGet method of the MSFT_DSCLocalConfigurationManager class 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -7,14 +7,6 @@ ms.topic:  article
 author:  eslesar
 manager:  dongill
 ms.prod:  powershell
----
-
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Execute Get on a provider directly.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceget'
-MSHAttr: 'PreferredLib:/library'
-title: 'ResourceGet method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
 # ResourceGet method of the MSFT_DSCLocalConfigurationManager class

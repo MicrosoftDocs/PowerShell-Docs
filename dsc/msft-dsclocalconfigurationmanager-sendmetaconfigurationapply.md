@@ -1,5 +1,5 @@
 ---
-title:  
+title: SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -7,14 +7,6 @@ ms.topic:  article
 author:  eslesar
 manager:  dongill
 ms.prod:  powershell
----
-
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Set Local Configuration Manager settings that are used to control Configuration Agent.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendmetaconfigurationapply'
-MSHAttr: 'PreferredLib:/library'
-title: 'SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
 # SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class

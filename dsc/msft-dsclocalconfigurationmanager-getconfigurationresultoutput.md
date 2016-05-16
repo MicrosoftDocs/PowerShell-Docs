@@ -1,5 +1,5 @@
 ---
-title:  
+title:  GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -7,14 +7,6 @@ ms.topic:  article
 author:  eslesar
 manager:  dongill
 ms.prod:  powershell
----
-
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Retrieve the Configuration Agent output relating to a specific job.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationresultoutput'
-MSHAttr: 'PreferredLib:/library'
-title: 'GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
 # GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class

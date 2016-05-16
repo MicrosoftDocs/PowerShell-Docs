@@ -1,5 +1,5 @@
 ---
-title:  
+title:  SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Send the configuration document to the managed node and save it as pending.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'SendConfiguration method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
 

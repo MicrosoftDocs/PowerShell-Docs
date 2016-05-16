@@ -1,5 +1,5 @@
 ---
-title:  
+title:  TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Send the configuration document to the managed node and test it against the current configuration.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_testconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'TestConfiguration method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
 

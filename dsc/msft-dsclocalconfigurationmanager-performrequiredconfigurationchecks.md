@@ -1,5 +1,5 @@
 ---
-title:  
+title: PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Starts the consistency check.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_performrequiredconfigurationchecks'
-MSHAttr: 'PreferredLib:/library'
-title: 'PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
 

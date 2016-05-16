@@ -1,5 +1,5 @@
 ---
-title:  
+title: RollBack method of the MSFT_DSCLocalConfigurationManager class 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Rollback to previous configuration.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_rollback'
-MSHAttr: 'PreferredLib:/library'
-title: 'RollBack method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # RollBack method of the MSFT_DSCLocalConfigurationManager class
 
