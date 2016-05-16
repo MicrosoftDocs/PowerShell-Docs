@@ -1,3 +1,14 @@
+---
+title:   Authoring a DSC resource in C`
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Authoring a DSC resource in C`#`
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -163,3 +174,4 @@ $env: psmodulepath (folder)
 [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
 #### Other Resources
 [Writing a Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+

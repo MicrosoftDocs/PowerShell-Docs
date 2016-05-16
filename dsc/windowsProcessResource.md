@@ -1,3 +1,14 @@
+---
+title:   DSC WindowsProcess Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC WindowsProcess Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -33,3 +44,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| Indicates the standard input location.| 
 | StandardOutputPath| Indicates the location to write the standard output. Any existing file there will be overwritten.| 
 | WorkingDirectory| Indicates the location that will be used as the current working directory for the process.| 
+

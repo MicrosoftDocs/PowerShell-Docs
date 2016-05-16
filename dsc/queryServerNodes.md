@@ -1,3 +1,14 @@
+---
+title:   DSC function to query node information from pull server.
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC function to query node information from pull server.
 
 ```powershell
@@ -36,3 +47,4 @@ $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.
 
 $json.value | Format-Table TargetName, ConfigurationId, ServerChecksum, NodeCompliant, LastComplianceTime, StatusCode
 ```
+

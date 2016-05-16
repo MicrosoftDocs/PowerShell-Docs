@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxGroup Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxGroup Resource
 
 The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.
@@ -54,3 +65,4 @@ nxGroup GroupExample{
 }
 }
 ```
+

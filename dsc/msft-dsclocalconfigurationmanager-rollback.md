@@ -1,4 +1,15 @@
 ---
+title:  
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
+---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Rollback to previous configuration.'
 MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_rollback'

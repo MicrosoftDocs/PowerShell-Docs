@@ -1,3 +1,14 @@
+---
+title:   Composite resources: Using a DSC configuration as a resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Composite resources: Using a DSC configuration as a resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -181,3 +192,4 @@ configuration RenameVM
 ### Concepts
 * [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
 * [Get Started with Windows PowerShell Desired State Configuration](overview.md)
+

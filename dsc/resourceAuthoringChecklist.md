@@ -1,3 +1,14 @@
+---
+title:   Resource authoring checklist
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Resource authoring checklist
 This checklist is a list of best practices when authoring a new DSC Resource
 ## Resource module contains .psd1 file and schema.mof for every resource 
@@ -315,3 +326,4 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 
 This wraps up our checklist. Please keep in mind that this list is not exhaustive, but it covers many important issues which we encountered while designing, developing and testing DSC resources. Having a checklist helps to ensure we didn’t forget about any of those aspects and in fact, we use it at Microsoft when developing DSC resources ourselves. 
 If you developed guidelines and best practices which you use for writing and testing DSC resources, please share them!
+

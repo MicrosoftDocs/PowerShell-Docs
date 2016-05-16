@@ -1,3 +1,14 @@
+---
+title:   Specifying cross-node dependencies
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Specifying cross-node dependencies
 
 > Applies To: Windows PowerShell 5.0
@@ -52,3 +63,4 @@ Configuration JoinDomain
 * [DSC Configurations](configurations.md)
 * [DSC Resources](resources.md)
 * [Configuring The Local Configuration Manager](metaConfig.md)
+

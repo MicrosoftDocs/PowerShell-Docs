@@ -1,3 +1,14 @@
+---
+title:   Writing a single-instance DSC resource (best practice)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Writing a single-instance DSC resource (best practice)
 
 >**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration. Currently, there is no built-in DSC feature to do this. That might

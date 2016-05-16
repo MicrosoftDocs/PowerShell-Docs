@@ -1,3 +1,14 @@
+---
+title:   Writing a custom DSC resource with PowerShell classes
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Writing a custom DSC resource with PowerShell classes
 
 > Applies To: Windows Windows PowerShell 5.0
@@ -462,3 +473,4 @@ Start-DscConfiguration -Wait -Force Test
 ## See Also
 ### Concepts
 [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
+

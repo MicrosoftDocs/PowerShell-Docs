@@ -1,3 +1,14 @@
+---
+title:   Setting up a pull client using configuration ID
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Setting up a pull client using configuration ID
 
 > Applies To: Windows PowerShell 5.0
@@ -149,3 +160,4 @@ PullClientConfigID
 ## See Also
 
 * [Setting up a pull client with configuration names](pullClientConfigNames.md)
+

@@ -1,3 +1,14 @@
+---
+title:   Setting up a DSC SMB pull server
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Setting up a DSC SMB pull server
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0

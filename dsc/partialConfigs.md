@@ -1,3 +1,14 @@
+---
+title:   PowerShell Desired State Configuration partial configurations
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell Desired State Configuration partial configurations
 
 >Applies To: Windows PowerShell 5.0
@@ -148,3 +159,4 @@ You would name and locate the configuration documents as described above for the
 **Concepts**
 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md) 
 [Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+

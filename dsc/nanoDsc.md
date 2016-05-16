@@ -1,3 +1,14 @@
+---
+title:   Using DSC on Nano Server
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Using DSC on Nano Server
 
 > Applies To: Windows PowerShell 5.0
@@ -119,3 +130,4 @@ Complete end-to-end testing before deploying any DSC custom resources to a produ
 
 ## See Also
 - [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx)
+

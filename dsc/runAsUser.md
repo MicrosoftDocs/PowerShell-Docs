@@ -1,3 +1,14 @@
+---
+title:   Running DSC with user credentials 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Running DSC with user credentials 
 
 > Applies To: Windows PowerShell 5.0

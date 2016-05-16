@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -62,3 +73,4 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 > **Note**: For the **Path** parameter, you must specify the same path that you specified for the **OutputPath** parameter when you invoked the configuration in the previous example.
 
 To see the current Local Configuration Manager settings, you can use the **Get-DscLocalConfigurationManager** cmdlet. If you invoke this cmdlet with no parameters, by default it will get the Local Configuration Manager settings for the node on which you run it. To specify another node, use the **CimSession** parameter with this cmdlet.
+

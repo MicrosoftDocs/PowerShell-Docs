@@ -1,3 +1,14 @@
+---
+title:   DSC Resources
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC Resources
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -11,3 +22,4 @@ The following topics describe DSC resources:
 - [Built-In DSC resources](builtInResource.md)
 - [Build custom DSC resources](authoringResource.md)
 - [Built-In DSC resources for Linux](lnxBuiltInResources.md)
+
