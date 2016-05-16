@@ -1,5 +1,5 @@
 ---
-title:  
+title:  StopConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -7,14 +7,6 @@ ms.topic:  article
 author:  eslesar
 manager:  dongill
 ms.prod:  powershell
----
-
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Stopping the configuration in progress.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_stopconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'StopConfiguration method of the MSFT_DSCLocalConfigurationManager class'
 ---
 
 # StopConfiguration method of the MSFT_DSCLocalConfigurationManager class

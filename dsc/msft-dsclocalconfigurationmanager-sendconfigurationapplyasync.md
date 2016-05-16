@@ -1,5 +1,5 @@
 ---
-title:  
+title:  SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Send the configuration document to the managed node and start using the Configuration Agent to apply the configuration. Use GetConfigurationResultOutput to retrieve result output.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfigurationapplyasync'
-MSHAttr: 'PreferredLib:/library'
-title: 'SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
 
