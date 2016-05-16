@@ -1,3 +1,14 @@
+---
+title:   Setting up a DSC web pull server
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Setting up a DSC web pull server
 
 > Applies To: Windows PowerShell 5.0
@@ -168,3 +179,4 @@ The following topics describe setting up pull clients in detail:
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
 * [Enacting configurations](enactingConfigurations.md)
 * [Using a DSC report server](reportServer.md)
+

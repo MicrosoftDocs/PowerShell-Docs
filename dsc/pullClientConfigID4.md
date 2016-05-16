@@ -1,3 +1,14 @@
+---
+title:   Setting up a pull client using configuration ID in PowerShell 4.0
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Setting up a pull client using configuration ID in PowerShell 4.0
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -64,3 +75,4 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Setting up a DSC web pull server](pullServer.md)
 - [Setting up a DSC SMB pull server](pullServerSMB.md)
+

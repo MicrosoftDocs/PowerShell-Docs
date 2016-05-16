@@ -1,3 +1,14 @@
+---
+title:   Using the Resource Designer tool
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Using the Resource Designer tool
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -171,3 +182,4 @@ The Resource Designer tool exposes one more cmdlet that can be used to test the 
 
 #### Other Resources
 [xDscResourceDesigner Module](https://powershellgallery.com/packages/xDscResourceDesigner)
+

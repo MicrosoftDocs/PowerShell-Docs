@@ -1,3 +1,14 @@
+---
+title:   DSC Configurations
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC Configurations
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -119,3 +130,4 @@ Once these modules have been placed in `$env:PSModulePath` and are properly reco
 * [Windows PowerShell Desired State Configuration Overview](overview.md)
 * [DSC Resources](resources.md)
 * [Configuring The Local Configuration Manager](metaConfig.md)
+

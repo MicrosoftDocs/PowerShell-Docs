@@ -1,3 +1,14 @@
+---
+title:   Debugging DSC resources
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Debugging DSC resources
 
 > Applies To: Windows PowerShell 5.0
@@ -100,3 +111,4 @@ will result in the configuration breaking into the debugger. To allow configurat
 ## See Also
 - [Writing a custom DSC resource with MOF](authoringResourceMOF.md) 
 - [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
+

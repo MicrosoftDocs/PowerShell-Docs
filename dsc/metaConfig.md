@@ -1,3 +1,14 @@
+---
+title:   Configuring the Local Configuration Manager
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Configuring the Local Configuration Manager
 
 > Applies To: Windows PowerShell 5.0
@@ -145,3 +156,4 @@ Get Started with Windows PowerShell Desired State Configuration
 ### Other Resources
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
 [Setting up a pull client with configuration names](pullClientConfigNames.md) 
+

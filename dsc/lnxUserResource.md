@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxUser Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxUser Resource
 
 The **nxUser** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage local users on a Linux node.
@@ -61,3 +72,4 @@ nxGroup GroupExample{
 }
 }
 ```
+

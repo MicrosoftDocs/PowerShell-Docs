@@ -1,4 +1,15 @@
 ---
+title:  
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
+---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Get Local Configuration Manager settings that are used to control Configuration Agent.'
 MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getmetaconfiguration'

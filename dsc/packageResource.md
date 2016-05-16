@@ -1,3 +1,14 @@
+---
+title:   DSC Package Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC Package Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -47,3 +58,4 @@ Package PackageExample
     ProductId = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
 } 
 ```
+

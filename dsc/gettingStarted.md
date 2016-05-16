@@ -1,3 +1,14 @@
+---
+title:   Getting Started with PowerShell Desired State Configuration 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Getting Started with PowerShell Desired State Configuration #
 
 This guide describes how to begin creating PowerShell Desired State Configuration documents and apply them to machines. It assumes basic familiarity with PowerShell cmdlets, modules, and functions. 

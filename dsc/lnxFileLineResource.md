@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxFileLine Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxFileLine Resource
 
 The **nxFileLine** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage lines within a configuration file on a Linux node.

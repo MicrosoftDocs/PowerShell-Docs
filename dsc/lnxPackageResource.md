@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxPackage Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxPackage Resource
 
 The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.
@@ -48,3 +59,4 @@ nxPackage httpd
 }
 }
 ```
+

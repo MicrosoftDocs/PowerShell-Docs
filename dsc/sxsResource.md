@@ -1,3 +1,14 @@
+---
+title:   Using resources with multiple versions
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Using resources with multiple versions
 
 > Applies To: Windows PowerShell 5.0
@@ -84,3 +95,4 @@ This will also work in PowerShell 5.0, but it is recommended that you use the **
 ## See also
 * [DSC Configurations](configurations.md)
 * [DSC Resources](resources.md)
+
