@@ -1,5 +1,5 @@
 ---
-title:  WinRMSecurity
+title:  WinRMSecurityRedirect
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
 description:  
@@ -7,6 +7,7 @@ ms.topic:  article
 author:  eslesar
 manager:  dongill
 ms.prod:  powershell
+redirect_url: https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity
 ---
 
 # PowerShell Remoting Security Considerations
