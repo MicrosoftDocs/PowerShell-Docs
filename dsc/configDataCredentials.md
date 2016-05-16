@@ -1,3 +1,14 @@
+---
+title:   Credentials Options in Configuration Data
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Credentials Options in Configuration Data
 >Applies To: Windows PowerShell 5.0
 
@@ -183,3 +194,4 @@ $cd = @{
 ```
 
 Now the configuration script will generate the MOF file with no errors or warnings.
+

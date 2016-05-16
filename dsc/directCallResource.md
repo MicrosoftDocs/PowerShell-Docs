@@ -1,3 +1,14 @@
+---
+title:   Calling DSC resource methods directly
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Calling DSC resource methods directly
 
 >Applies To: Windows PowerShell 5.0
@@ -46,3 +57,4 @@ $result.ItemValue | fl
 - [Writing a custom DSC resource with MOF](authoringResourceMOF.md) 
 - [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
 - [Debugging DSC resources](debugResource.md)
+

@@ -1,4 +1,15 @@
 ---
+title:  
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
+---
 DCS.appliesToProduct: 'WindowsServer\_Dev'
 Description: 'Enable Debug DSC Configuration.'
 MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_enabledebugconfiguration'

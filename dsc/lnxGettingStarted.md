@@ -1,3 +1,14 @@
+---
+title:   Get started with Desired State Configuration (DSC) for Linux
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Get started with Desired State Configuration (DSC) for Linux
 
 This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux. For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](overview.md).
@@ -171,3 +182,4 @@ The following log files are generated for DSC for Linux messages.
 |---|---|---|
 |omiserver.log|/opt/omi/var/log/|Messages relating to the operation of the OMI CIM server.|
 |dsc.log|/opt/omi/var/log/|Messages relating to the operation of the Local Configuration Manager (LCM) and DSC resource operations.|
+

@@ -1,3 +1,14 @@
+---
+title:   Enacting configurations
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Enacting configurations
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -37,3 +48,4 @@ The following topics explain how to set up pull servers and clients:
 - [Setting up a web pull server](pullServer.md)
 - [Setting up an SMB pull server](pullServerSMB.md)
 - [Configuring a pull client](pullClientConfigID.md)
+

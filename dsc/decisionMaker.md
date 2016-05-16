@@ -1,3 +1,14 @@
+---
+title:   Desired State Configuration Overview for Decision Makers 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Desired State Configuration Overview for Decision Makers #
 
 This document describes the business benefits of using PowerShell Desired State Configuration (DSC). It is not a technical guide.
@@ -34,3 +45,4 @@ DSC can be used to manage both on-premise and off-premise deployments. For on-pr
 Although DSC was introduced in Windows Server 2012 R2, it is available for downlevel operating systems via the Windows Management Framework (WMF) package. More information about the WMF can be found on the [PowerShell homepage](https://msdn.microsoft.com/en-us/powershell/). 
 
 DSC can also be used to manage Linux. For more information, see [Getting Started with DSC for Linux](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)
+

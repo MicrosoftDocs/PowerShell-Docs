@@ -1,3 +1,14 @@
+---
+title:   Writing a custom DSC resource with MOF
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Writing a custom DSC resource with MOF
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -260,3 +271,4 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
+

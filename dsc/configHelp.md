@@ -1,3 +1,14 @@
+---
+title:   Writing help for DSC configurations
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Writing help for DSC configurations
 
 >Applies To: Windows Windows PowerShell 5.0
@@ -84,3 +95,4 @@ REMARKS
 
 ## See Also
 * [DSC Configurations](configurations.md)
+

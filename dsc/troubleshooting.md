@@ -1,3 +1,14 @@
+---
+title:   Troubleshooting DSC
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Troubleshooting DSC
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -446,3 +457,4 @@ onlyProperty                            PSComputerName
 
 ### Other Resources
 * [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+

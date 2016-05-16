@@ -1,3 +1,14 @@
+---
+title:   Built-In Windows PowerShell Desired State Configuration Resources
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Built-In Windows PowerShell Desired State Configuration Resources
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -16,3 +27,4 @@ Windows PowerShell Desired State Configuration (DSC) comes with a set of built-i
 * [User Resource](userResource.md)
 * [WindowsFeature Resource](windowsfeatureResource.md)
 * [WindowsProcess Resource](windowsProcessResource.md)
+

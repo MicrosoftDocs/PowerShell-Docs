@@ -1,3 +1,14 @@
+---
+title:   DSC WindowsFeature Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC WindowsFeature Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0

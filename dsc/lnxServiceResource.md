@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxService Resource
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxService Resource
 
 The **nxService** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on a Linux node.
@@ -48,3 +59,4 @@ Controller = "systemd"
 }
 }
 ```
+
