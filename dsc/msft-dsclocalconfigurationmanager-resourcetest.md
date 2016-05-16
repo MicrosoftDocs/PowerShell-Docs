@@ -1,5 +1,5 @@
 ---
-title:  
+title:  ResourceTest method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Execute Test on a provider directly.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourcetest'
-MSHAttr: 'PreferredLib:/library'
-title: 'ResourceTest method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # ResourceTest method of the MSFT_DSCLocalConfigurationManager class
 
