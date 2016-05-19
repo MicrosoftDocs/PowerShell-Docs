@@ -1,5 +1,5 @@
 ---
-title:  
+title:  GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Get Local Configuration Manager settings that are used to control Configuration Agent.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getmetaconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
 

@@ -1,5 +1,5 @@
 ---
-title:  
+title:  EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,6 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
----
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Enable Debug DSC Configuration.'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_enabledebugconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class'
----
 
 # EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
