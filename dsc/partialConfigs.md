@@ -143,6 +143,74 @@ Note that the **RefreshMode** specified in the Settings block is "Pull", but the
 
 You would name and locate the configuration documents as described above for their respective refresh modes. You would call **Publish-DSCConfiguration** to publish the SharePointInstall partial configuration, and either wait for the OSInstall configuration to be pulled from the pull server, or force a refresh by calling [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
+## Example OSInstall Partial Configuration
+
+```powershell
+Configuration OSInstall
+{
+    Param (
+        [Parameter(Mandatory,
+                   HelpMessage="Domain credentials required to add domain\sharepoint_svc to the local Administrators group.")]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$Credential
+    )
+
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+
+    # Either specify the partial config name with -OutputPath,
+    # change the node name in the  Node {} block
+    # or manually rename the generated MOF.
+    node OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0
+    {
+        Group LocalAdmins
+        {
+            GroupName = 'Administrators'
+            MembersToInclude = 'domain\sharepoint_svc',
+                               'admins@example.domain'
+            Ensure = 'Present'
+            Credential = $Credential
+            
+        }
+
+        WindowsFeature Telnet
+        {
+            Name = 'Telnet-Server'
+            Ensure = 'Absent'
+        }
+    }
+}
+OSInstall
+
+```
+## Example SharePointConfig Partial Configuration
+```powershell
+Configuration SharePointConfig
+{
+    Param (
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$ProductKey
+    )
+
+    Import-DscResource -ModuleName xSharePoint
+
+
+    # Either specify the partial config name with -OutputPath,
+    # change the node name in the  Node {} block
+    # or manually rename the generated MOF.
+    node SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0
+    {
+        xSPInstall SharePointDefault
+        {
+            Ensure = 'Present'
+            BinaryDir = '\\FileServer\Installers\Sharepoint\'
+            ProductKey = $ProductKey
+        }
+    }
+}
+SharePointConfig
+```
 ##See Also 
 
 **Concepts**
