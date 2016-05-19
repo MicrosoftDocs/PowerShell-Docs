@@ -11,7 +11,7 @@ The Local Configuration Manager (LCM) is the engine of Windows PowerShell Desire
 
 You use a special type of configuration to configure the LCM to specify each of these behaviors. The following sections describe how to configure the LCM.
 
-> **Note**: This topic applies to the LCM introduced in Windows PowerShell 5.0. For information about configuring the LCM in Windows PowerShell 4.0, see Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager.
+> **Note**: This topic applies to the LCM introduced in Windows PowerShell 5.0. For information about configuring the LCM in Windows PowerShell 4.0, see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaconfig4.md).
 
 ## Writing and enacting an LCM configuration
 
@@ -31,7 +31,10 @@ configuration LCMConfig
 } 
 ```
 
-You call and run the configuration to create the configuration MOF, just as you would a normal configuration (for information on creating the configuration MOF, see Get Started with Windows PowerShell Desired State Configuration). Unlike normal configurations, you do not enact an LCM configuration by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. Instead, you call the Set-DscLocalConfigurationManager cmdlet, supplying the path to the configuration MOF as a parameter. After you enact the configuration, you can see the properties of the LCM by calling the [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.
+You call and run the configuration to create the configuration MOF, just as you would a normal configuration (for information on creating the configuration MOF, see [Compiling the configuration](configurations#compiling-the-configuration)). 
+Unlike normal configurations, you do not enact an LCM configuration by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. 
+Instead, you call the [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet, supplying the path to the configuration MOF as a parameter. 
+After you enact the configuration, you can see the properties of the LCM by calling the [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.
 
 An LCM configuration can contain blocks only for a limited set of resources. In the previous example, the only resource called is **Settings**. The other available resources are:
 
@@ -138,10 +141,13 @@ To define a partial configuration, you create a **PartialConfiguration** block. 
 ## See Also 
 
 ### Concepts
-Get Started with Windows PowerShell Desired State Configuration 
+[Windows PowerShell Desired State Configuration Overview](overview.md)
+ 
 [Setting up a DSC pull server](pullServer.md) 
+
 [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md) 
 
 ### Other Resources
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
+
 [Setting up a pull client with configuration names](pullClientConfigNames.md) 
