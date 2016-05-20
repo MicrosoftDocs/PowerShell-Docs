@@ -144,9 +144,9 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
     -   A new Write\-Information cmdlet that lets you specify how Windows PowerShell handles information stream data for a command. Write\-Host is a wrapper for Write\-Information. Write\-Information is also a supported workflow activity.
 
-    -   Two new common parameters, InformationVariable and InformationAction, let you determine how information streams from a command are displayed. Valid values for InformationAction are SilentlyContinue, Stop, Continue, Inquire, Ignore, or Suspend, with Continue being the default. InformationVariable specifies a string as the name of a variable to which you want the Write\-Host data from a command saved.
+    -   Two new common parameters, InformationVariable and InformationAction, let you determine how information streams from a command are displayed. Valid values for InformationAction are SilentlyContinue, Stop, Continue, Inquire, Ignore, or Suspend, with SilentlyContinue being the default. InformationVariable specifies a string as the name of a variable to which you want the Write\-Host data from a command saved.
 
-    -   A new preference variable, InformationPreference, specifies your default preference for information stream data in a Windows PowerShell session. The default value is Continue.
+    -   A new preference variable, InformationPreference, specifies your default preference for information stream data in a Windows PowerShell session. The default value is SilentlyContinue.
 
     -   Two new workflow common parameters, PSInformation and InformationAction, have been added.
 
