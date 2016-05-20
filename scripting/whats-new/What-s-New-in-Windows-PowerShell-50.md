@@ -11,11 +11,11 @@ ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
 ---
 
 # What&#39;s New in Windows PowerShell
-Windows PowerShellÂ® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows\-based environments more easily and comprehensively.
+Windows PowerShell ® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows\-based environments more easily and comprehensively.
 
 Windows PowerShell 5.0 is backward\-compatible. Cmdlets, providers, modules, snap\-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
 
-Windows PowerShell 5.0 is installed by default on Windows ServerÂ® 2016 Technical Preview and Windows 10Â®. To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0 Preview](http://go.microsoft.com/fwlink/?LinkID=395058). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0 Preview.
+Windows PowerShell 5.0 is installed by default on Windows Server ® 2016 Technical Preview and Windows 10 ®. To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](http://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
 
 ## In this topic
 
@@ -94,7 +94,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
     -   A consistency run can now occur more often than a PULL operation, or vice\-versa.
 
-    -   Versioning support:  DSC can now recognize a document that was generated on a newer client (included with [WMF 5.0 Preview](http://go.microsoft.com/fwlink/?LinkID=395058)).
+    -   Versioning support:  DSC can now recognize a document that was generated on a newer client (included with [WMF 5.0](http://aka.ms/wmf5download)).
 
 -   Error prevention improvements
 
