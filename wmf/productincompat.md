@@ -1,6 +1,12 @@
-# Known Product Incompatibilites
+# Product Compatibility Status
 
-**Systems that are running the following server applications should not run Windows Management Framework 5.0 at this time:**
+## Compatible:
+> Systems that are running the following server applications **can now run** Windows Management Framework 5.0:
+
+- System Center 2012 Configuration Manager
+
+## Not Tested:
+> Systems that are running the following server applications **have not tested** against Windows Management Framework 5.0:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
@@ -9,6 +15,6 @@
 - System Center 2012 Virtual Machine Manager
 - System Center 2012 R2 Service Management Automation
 
-**Servers that are running the following applications can now run WMF 5.0:**
+## Incompatible:
+> Systems that are running the following server applications **should not run** Windows Management Framework 5.0 at this time:
 
-- System Center 2012 Configuration Manager
