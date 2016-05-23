@@ -13,8 +13,10 @@
 - Microsoft Exchange Server 2010 SP3
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
-- System Center 2012 R2 Service Management Automation
 
 ## Incompatible:
 > Systems that are running the following server applications **should not run** Windows Management Framework 5.0:
+
+- System Center 2012 R2 Service Management Automation
+
 
