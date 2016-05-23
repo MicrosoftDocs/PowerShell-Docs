@@ -9,14 +9,13 @@
 ## Not Tested:
 > Systems that are running the following server applications **have not tested** against Windows Management Framework 5.0:
 
-- Microsoft Exchange Server 2013
-- Microsoft Exchange Server 2010 SP3
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
 ## Incompatible:
 > Systems that are running the following server applications **should not run** Windows Management Framework 5.0:
 
+- Microsoft Exchange Server 2013
+- Microsoft Exchange Server 2010 SP3
 - System Center 2012 R2 Service Management Automation
-
 
