@@ -1,8 +1,9 @@
 # Product Compatibility Status
 
 ## Compatible:
-> Systems that are running the following server applications **can now run** Windows Management Framework 5.0:
+> Systems that are running the following server applications **can run** Windows Management Framework 5.0:
 
+- Microsoft SharePoint Server 2013
 - System Center 2012 Configuration Manager
 
 ## Not Tested:
@@ -10,11 +11,10 @@
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
-- Microsoft SharePoint Server 2013
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 - System Center 2012 R2 Service Management Automation
 
 ## Incompatible:
-> Systems that are running the following server applications **should not run** Windows Management Framework 5.0 at this time:
+> Systems that are running the following server applications **should not run** Windows Management Framework 5.0:
 
