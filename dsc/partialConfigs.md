@@ -152,7 +152,7 @@ PartialConfigDemo
 
 Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the OSInstall partial configuration is "Push".
 
-You would name and locate the configuration documents as described above for their respective refresh modes. You would call **Publish-DSCConfiguration** to publish the SharePointInstall partial configuration, and either wait for the OSInstall configuration to be pulled from the pull server, or force a refresh by calling [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
+Name and locate the configuration MOF files as described above for their respective refresh modes. Call **Publish-DSCConfiguration** to publish the `SharePointInstall` partial configuration, and either wait for the `OSInstall` configuration to be pulled from the pull server, or force a refresh by calling [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
 ## Example OSInstall Partial Configuration
 
@@ -169,10 +169,7 @@ Configuration OSInstall
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
 
-    # Either specify the partial config name with -OutputPath,
-    # change the node name in the  Node {} block
-    # or manually rename the generated MOF.
-    node OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0
+    Node localhost
     {
         Group LocalAdmins
         {
@@ -206,11 +203,7 @@ Configuration SharePointConfig
 
     Import-DscResource -ModuleName xSharePoint
 
-
-    # Either specify the partial config name with -OutputPath,
-    # change the node name in the  Node {} block
-    # or manually rename the generated MOF.
-    node SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0
+    Node localhost
     {
         xSPInstall SharePointDefault
         {

@@ -2,7 +2,7 @@
 
 # [Installation Details](requirements.md)
 
-# [Known Product Incompatibilites](productincompat.md)
+# [Product Compatibility Status](productincompat.md)
 
 # [Feedback](feedback.md)
 
