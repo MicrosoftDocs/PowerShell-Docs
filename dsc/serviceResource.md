@@ -44,11 +44,19 @@ Service [string] #ResourceName
 ## Example
 
 ```powershell
-Service ServiceExample
+configuration ServiceTest
 {
-    Name = "TermService"
-    StartupType = "Manual"
-    State = "Running"
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Node localhost
+    {
+
+        Service ServiceExample
+        {
+            Name        = "TermService"
+            StartupType = "Manual"
+            State       = "Running"
+        } 
+    }
+}
 ```
 
