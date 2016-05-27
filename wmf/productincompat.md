@@ -17,5 +17,8 @@
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
+- Skype for Business Server 2015
+- Microsoft Lync Server 2013
+- Microsoft Lync Server 2010
 - System Center 2012 R2 Service Management Automation
 
