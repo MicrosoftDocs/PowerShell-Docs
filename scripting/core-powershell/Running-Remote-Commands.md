@@ -120,7 +120,7 @@ invoke-command -session $s {$h = get-hotfix}
 Now you can use the data in the $h variable in subsequent commands, such as the following one. The results are displayed on the local computer.
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
+invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
 ```
 
 ### Advanced Remoting
