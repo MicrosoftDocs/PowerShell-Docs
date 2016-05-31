@@ -47,7 +47,7 @@ Service [string] #ResourceName
 | Description | Indicates the description of the target service.| 
 | DisplayName | Indicates the display name of the target service.| 
 | Ensure | Indicates whether the target service exists on the system. Set this property to **Absent** to ensure that the target service does not exist. Setting it to **Present** (the default value) ensures that target service exists.|
-| Path | Indicates the path to theh binary file for a new service.| 
+| Path | Indicates the path to the binary file for a new service.| 
 
 ## Example
 
