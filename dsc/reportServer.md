@@ -167,7 +167,7 @@ AdditionalData       : {}
 By default, the reports are sorted by **JobID**. To get the most recent report, you can sort the reports by descending **StartTime** property, and then get the first element of the array:
 
 ```powershell
-$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
