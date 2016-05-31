@@ -9,7 +9,7 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
-# DSC Group Resource
+# DSC GroupSet Resource
 
 > Applies To: Windows Windows PowerShell 5.0
 
@@ -45,7 +45,7 @@ Group [string] #ResourceName
 
 ## Example 1
 
-The following example shows how to ensure that a group called "TestGroup" is absent. 
+The following example shows how to ensure that two groups called "myGroup" and "myOtherGroup" are present. 
 
 ```powershell
 configuration GroupSetTest
