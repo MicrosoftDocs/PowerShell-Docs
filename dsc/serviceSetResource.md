@@ -42,9 +42,9 @@ Service [string] #ResourceName
 | Name| Indicates the service names. Note that sometimes this is different from the display names. You can get a list of the services and their current state with the [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) cmdlet.|
 | StartupType| Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**|  
 | BuiltInAccount| Indicates the sign-in account to use for the services. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.| 
-| State| Indicates the state you want to ensure for the services.| 
-| Ensure| Indicates whether the services exist on the system. Set this property to "Absent" to ensure that the services do not exist. Setting it to "Present" (the default value) ensures that the services do not exist.|
-| Credential| Indicates credentials for the account that the service will run under. This property and the **BuiltinAccount** property cannot be used together.| 
+| State| Indicates the state you want to ensure for the services: **Stopped** or **Running**.| 
+| Ensure| Indicates whether the services exist on the system. Set this property to **Absent** to ensure that the services do not exist. Setting it to **Present** (the default value) ensures that target services exist.|
+| Credential| Indicates credentials for the account that the service resource will run under. This property and the **BuiltinAccount** property cannot be used together.| 
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is *ResourceName* and its type is *ResourceType*, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
 
