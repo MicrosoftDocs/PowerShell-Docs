@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-You call and run the configuration to create the configuration MOF, just as you would a normal configuration (for information on creating the configuration MOF, see [Compiling the configuration](configurations#compiling-the-configuration)). 
+You call and run the configuration to create the configuration MOF, just as you would a normal configuration (for information on creating the configuration MOF, see [Compiling the configuration](configurations.md#compiling-the-configuration)). 
 Unlike normal configurations, you do not enact an LCM configuration by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. 
 Instead, you call the [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet, supplying the path to the configuration MOF as a parameter. 
 After you enact the configuration, you can see the properties of the LCM by calling the [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.
