@@ -236,6 +236,26 @@ $ConfigData= @{
     }
 ```
 
+**Note**: If certificate is already in the local `Cert:\` storage, you can use **CertificateId** (instead of `Thumbprint`) and omit `CertificateFile`.
+
+
+```powershell
+$ConfigData= @{ 
+    AllNodes = @(     
+            @{  
+                # The name of the node we are describing 
+                NodeName = "targetNode" 
+
+                # The thumbprint of the Encryption Certificate 
+                # used to decrypt the credentials on target node 
+                # Certificate should be imported in the local Cert:\ storage
+                CertificateId = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8" 
+            }; 
+        );    
+    }
+```
+
+
 ## Configuration script
 
 In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
