@@ -55,13 +55,13 @@ Virtual accounts belong to the local "Administrators" security group by default,
 
 ### Explore the experience guide
 Ready to create your first JEA endpoint?
-Check out the [JEA Experience Guide](./JEA Guide.md) to learn how to author, deploy, and use your own JEA endpoint.
+Check out the [JEA Experience Guide](jea-uide.md) to learn how to author, deploy, and use your own JEA endpoint.
 The guide gets you started quickly with a pre-built JEA endpoint to get an idea of how the end-user experience feels, then walks you through recreating the endpoint from scratch to help explain session configurations and Role Capabilities.
 
 ### Start authoring your own JEA endpoints
 It's easy to author a JEA endpoint -- all you need is a JEA-enabled system and a text editor (like PowerShell ISE).
 One helpful tip to get started is to create skeleton files using `New-PSRoleCapabilityFile -Path <path>` and `New-PSSessionCapabilityFile -Path <Path>` without any other arguments.
-These skeleton files contain all of the applicable configuration fields along with helpful comments to explain what each field can be used for. 
+These skeleton files contain all of the applicable configuration fields along with helpful comments to explain what each field can be used for.
 
 To make authoring JEA endpoints even easier, check out the [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx) which provides a GUI with which you can author Session Configuration and Role Capability files.
 It even supports generating Role Capabilities based on PowerShell logs to start you off with the commands your users regularly run to get their jobs done.
