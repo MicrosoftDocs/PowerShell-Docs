@@ -6,7 +6,7 @@ With JEA, you can:
 - **Better understand what your users are doing** with "over the shoulder" transcriptions that show you exactly what commands a user executed during a session.
 
 Why is this important?
-Consider the commmon scenario where your DNS servers are co-located with your Active Directory Domain Controllers.
+Consider the common scenario where your DNS servers are co-located with your Active Directory Domain Controllers.
 Your DNS administrators need to have local administrator privileges to fix issues with the DNS server, but in order to do so you have to make them members of the highly privileged "Domain Admins" security group.
 This effectively gives them control over your whole domain and access to all resources on that machine.
 
