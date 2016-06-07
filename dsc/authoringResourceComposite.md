@@ -145,7 +145,7 @@ When you are done, the folder structure should be as follows.
 $env: psmodulepath
     |- MyDscResources
            MyDscResources.psd1
-        |- DSC Resources
+        |- DSCResources
             |- xVirtualMachine
                 |- xVirtualMachine.psd1
                 |- xVirtualMachine.schema.psm1
