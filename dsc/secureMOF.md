@@ -236,6 +236,7 @@ $ConfigData= @{
     }
 ```
 
+
 ## Configuration script
 
 In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time. When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block. This code example copies a file from a share that is secured to a user.
