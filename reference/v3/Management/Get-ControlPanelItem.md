@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=219982
 schema: 2.0.0
 ---
 
@@ -49,21 +50,21 @@ This command gets all control panel items on the local computer.
 
 ### Example 2: Get control panel items by name
 ```
-PS C:\>Get-ControlPanelItem –Name *program*, *app*
+PS C:\>Get-ControlPanelItem -Name *program*, *app*
 ```
 
 This command gets control panel items that have "program" or "app"  in their names.
 
 ### Example 3: Get control panel items by category
 ```
-PS C:\>Get-ControlPanelItem –Category *security*
+PS C:\>Get-ControlPanelItem -Category *security*
 ```
 
 This command gets all control panel items in categories that have "Security" in their names.
 
 ### Example 4: Open a control panel item
 ```
-PS C:\>Get-ControlPanelItem –Name "Windows Firewall" | Show-ControlPanelItem
+PS C:\>Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
 
 This command opens the Windows Firewall control panel item on the local computer.
@@ -71,7 +72,7 @@ It uses the Get-ControlPanelItem cmdlet to get the control panel item and the Sh
 
 ### Example 5: Get control panel items on a remote computer
 ```
-PS C:\>Invoke-Command –ComputerName Server01 {Get-ControlPanelItem –Name "BitLocker*" }
+PS C:\>Invoke-Command -ComputerName Server01 {Get-ControlPanelItem -Name "BitLocker*" }
 ```
 
 This command gets the  BitLocker Drive Encryption control panel item on the Server01 remote computer.
@@ -107,7 +108,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: All control panel items
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -126,7 +127,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All control panel items
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -160,8 +161,5 @@ You can pipe a name or name pattern to the Get-ControlPanelItem cmdlet.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=219982)
-
 [Show-ControlPanelItem](0685d42c-37cc-498f-acf6-0ecfeb0cb162)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113399
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Set-Service [-ComputerName <String[]>] [-Description <String>] [-DisplayName <St
 
 ## DESCRIPTION
 The Set-Service cmdlet changes the properties of a local or remote service, including the status, description, display name, and start mode.
-You can use this cmdlet to start, stop, or suspend \(pause\) a service.
+You can use this cmdlet to start, stop, or suspend (pause) a service.
 To identify the service, enter its service name or submit a service object, or pipe a service name or service object to Set-Service.
 
 ## EXAMPLES
@@ -34,7 +35,7 @@ PS C:\>set-service -name lanmanworkstation -DisplayName "LanMan Workstation"
 ```
 
 This command changes the display name of the lanmanworkstation service to "LanMan Workstation".
-\(The default is "Workstation".\)
+(The default is "Workstation".)
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -66,11 +67,11 @@ AppMgmt                               Manual
 ...
 ```
 
-These commands get the startup type of the Performance Logs and Alerts \(SysmonLog\) service, set the start mode to automatic, and then display the result of the change.
+These commands get the startup type of the Performance Logs and Alerts (SysmonLog) service, set the start mode to automatic, and then display the result of the change.
 
 These commands use the Get-WmiObject cmdlet to get the Win32_Service object for the service, because the ServiceController object that Get-Service returns does not include the start mode.
 
-The first command uses the Get-WmiObject cmdlet to get the Windows Management Instrumentation \(WMI\) object that represents the SysmonLog service.
+The first command uses the Get-WmiObject cmdlet to get the Windows Management Instrumentation (WMI) object that represents the SysmonLog service.
 The default output of this command displays the start mode of the service.
 
 The second command uses Set-Service to change the start mode to automatic.
@@ -94,7 +95,7 @@ It identifies the service by using the service name of the service, "Schedule".
 The second command uses the Get-WmiObject cmdlet to get an instance of the WMI Win32_Service that represents the Task Scheduler service.
 The first element in the command gets all instances of the Win32_service class.
 
-The pipeline operator \(|\) passes the result to the Where-Object cmdlet, which selects instances with a value of "Schedule" in the Name property.
+The pipeline operator (|) passes the result to the Where-Object cmdlet, which selects instances with a value of "Schedule" in the Name property.
 
 Another pipeline operator sends the result to the Format-List cmdlet, which formats the output as a list with only the Name and Description properties.
 
@@ -104,7 +105,7 @@ PS C:\>set-service winrm -status Running -passthru -computername Server02
 ```
 
 This command starts the WinRM service on the Server02 computer.
-The command uses the Status parameter to specify the desired status \("running"\) and the PassThru parameter to direct Set-Service to return an object that represents the WinRM service.
+The command uses the Status parameter to specify the desired status ("running") and the PassThru parameter to direct Set-Service to return an object that represents the WinRM service.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -113,7 +114,7 @@ PS C:\>get-service schedule -computername S1, S2 | set-service -status paused
 
 This command suspends the Schedule service on the S1 and S2 remote computers.
 It uses the Get-Service cmdlet to get the service.
-A pipeline operator \(|\) sends the service to the Set-Service cmdlet, which changes its status to "Paused".
+A pipeline operator (|) sends the service to the Set-Service cmdlet, which changes its status to "Paused".
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -136,7 +137,7 @@ Specifies one or more computers.
 The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Set-Service even if your computer is not configured to run remote commands.
@@ -149,7 +150,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -168,7 +169,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -183,7 +184,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -200,7 +201,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -217,7 +218,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -233,7 +234,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -253,12 +254,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Status
-Starts, stops, or suspends \(pauses\) the services. 
+Starts, stops, or suspends (pauses) the services. 
 Valid values are:
 
 -- Running: Starts the service.
@@ -273,7 +274,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -296,8 +297,6 @@ The service names appear in the Name column and the display names appear in the 
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113399)
-
 [Get-Service](77f3c94b-6ffd-4906-8216-3debbf5ffe79)
 
 [New-Service](ad24021a-4603-4c9c-bd20-8f9bdde123fa)
@@ -311,5 +310,4 @@ The service names appear in the Name column and the display names appear in the 
 [Stop-Service](58033475-759b-42e4-9395-c077aa55934e)
 
 [Suspend-Service](5b8bd69a-0a18-4478-b257-d442ddef417c)
-
 

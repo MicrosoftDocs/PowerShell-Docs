@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210605
 schema: 2.0.0
 ---
 
@@ -34,7 +35,7 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
 ```
 
 ## DESCRIPTION
-The Disconnect-PSSession cmdlet disconnects a Windows PowerShell session \("PSSession"\), such as one started by using the New-PSSession cmdlet, from the current session.
+The Disconnect-PSSession cmdlet disconnects a Windows PowerShell session ("PSSession"), such as one started by using the New-PSSession cmdlet, from the current session.
 As a result, the PSSession is in a disconnected state.
 You can connect to the disconnected PSSession from the current session or from another session on the local computer or a different computer.
 
@@ -238,7 +239,7 @@ Values set for the session take precedence over values set in the session config
 
 ### -Id
 Disconnects from sessions with the specified session ID.
-Type one or more IDs \(separated by commas\), or use the range operator \(..\) to specify a range of IDs.
+Type one or more IDs (separated by commas), or use the range operator (..) to specify a range of IDs.
 
 To get the ID of a session, use the Get-PSSession cmdlet.
 The instance ID is stored in the ID property of the session.
@@ -258,7 +259,7 @@ Accept wildcard characters: False
 ### -IdleTimeoutSec
 Changes the idle timeout value of the disconnected PSSession.
 Enter a value in seconds.
-The minimum value is 60 \(1 minute\).
+The minimum value is 60 (1 minute).
 
 The idle timeout determines how long the disconnected PSSession is maintained on the remote computer.
 When the timeout expires, the PSSession is deleted.
@@ -266,11 +267,11 @@ When the timeout expires, the PSSession is deleted.
 Disconnected PSSessions are considered to be idle from the moment that they are disconnected, even if commands are running in the disconnected session.
 
 The default value for the idle timeout of a session is set by the value of the IdleTimeoutMs property of the session configuration.
-The default value is 7200000 milliseconds \(2 hours\).
+The default value is 7200000 milliseconds (2 hours).
 
 The value of this parameter takes precedence over the value of the IdleTimeout property of the $PSSessionOption preference variable and the default idle timeout value in the session configuration.
 However, this value cannot exceed the value of the MaxIdleTimeoutMs property of the session configuration.
-The default value of MaxIdleTimeoutMs is 12 hours \(43200000 milliseconds\).
+The default value of MaxIdleTimeoutMs is 12 hours (43200000 milliseconds).
 
 ```yaml
 Type: Int32
@@ -280,7 +281,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 60
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -361,7 +362,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 32
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -388,7 +389,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Block
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -402,8 +403,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -419,8 +420,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -439,7 +440,7 @@ The Disconnect-PSSession cmdlet works only when the local and remote computers a
 
 If you use the Disconnect-PSSession cmdlet on a disconnected session, the command has no effect on the session and it does not generate errors.
 
-Disconnected loopback sessions with interactive security tokens \(those created with the EnableNetworkAccess parameter\) can be reconnected only from the computer on which the session was created.
+Disconnected loopback sessions with interactive security tokens (those created with the EnableNetworkAccess parameter) can be reconnected only from the computer on which the session was created.
 This restriction protects the computer from malicious access.
 
 When you disconnect a PSSession, the session state is Disconnected and the availability is None.
@@ -453,13 +454,11 @@ To determine whether you can connect or reconnect to the session, use the Availa
 An Availability value of None indicates that you can connect to the session.
 A value of Busy indicates that you cannot connect to the PSSession because it is connected to another session.
 
-For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspx.
+For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspx.
 
-For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspx.
+For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210605)
 
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
@@ -488,5 +487,4 @@ For more information about the values of the Availability property of sessions, 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
 
 [about_Remote_Disconnected_Sessions](adc4b4b4-3d51-4e01-9be2-5a74f530e3f3)
-
 

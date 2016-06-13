@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113430
 schema: 2.0.0
 ---
 
@@ -32,7 +33,7 @@ PS C:\>$w = "This is only a test warning."
 PS C:\>$w | write-warning
 ```
 
-This example shows that you can use a pipeline operator \(|\) to send a string to Write-Warning.
+This example shows that you can use a pipeline operator (|) to send a string to Write-Warning.
 You can save the string in a variable, as shown in this command, or pipe the string directly to Write-Warning.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -98,7 +99,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -120,8 +121,6 @@ The resulting error message will list the valid values.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113430)
-
 [Write-Debug](fb95cfe7-8a21-4b6a-9e00-0205a6b74c41)
 
 [Write-Error](eedfea70-5aa7-4d20-b87d-f8e1147b1b42)
@@ -137,5 +136,4 @@ The resulting error message will list the valid values.
 [about_CommonParameters](aa31fbc6-792e-486b-99b1-264630079054)
 
 [about_Preference_Variables](045a7fe7-cf63-4f89-8835-d01c9579d1c8)
-
 

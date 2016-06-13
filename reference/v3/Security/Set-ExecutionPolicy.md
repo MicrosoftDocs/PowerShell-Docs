@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113394
 schema: 2.0.0
 ---
 
@@ -18,10 +19,10 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 The Set-ExecutionPolicy cmdlet changes the user preference for the Windows PowerShell execution policy.
 
 The execution policy is part of the security strategy of Windows PowerShell.
-It determines whether you can load configuration files \(including your Windows PowerShell profile\) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
-For more information, see about_Execution_Policies \(http://go.microsoft.com/fwlink/?LinkID=135170\).
+It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
+For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
-NOTE:  To change the execution policy for the default \(LocalMachine\) scope, start Windows PowerShell with the "Run as administrator" option.
+NOTE:  To change the execution policy for the default (LocalMachine) scope, start Windows PowerShell with the "Run as administrator" option.
 
 ## EXAMPLES
 
@@ -50,7 +51,7 @@ PS C:\>Invoke-Command -ComputerName Server01 -ScriptBlock {Get-ExecutionPolicy} 
 This command gets the execution policy from a remote computer and applies that execution policy to the local computer.
 
 The command uses the Invoke-Command cmdlet to send the command to the remote computer.
-Because you can pipe an ExecutionPolicy \(Microsoft.PowerShell.ExecutionPolicy\) object to Set-ExecutionPolicy, the Set-ExecutionPolicy command does not need an ExecutionPolicy parameter.
+Because you can pipe an ExecutionPolicy (Microsoft.PowerShell.ExecutionPolicy) object to Set-ExecutionPolicy, the Set-ExecutionPolicy command does not need an ExecutionPolicy parameter.
 
 The command uses the Force parameter to suppress the user prompt.
 
@@ -83,7 +84,7 @@ PS C:\>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
 ```
 
 This command uses an execution policy value of Undefined to effectively remove the execution policy that is set for the current user scope.
-As a result, the execution policy that is set in Group Policy or in the LocalMachine \(all users\) scope is effective.
+As a result, the execution policy that is set in Group Policy or in the LocalMachine (all users) scope is effective.
 
 If you set the execution policy in all scopes to Undefined and the Group Policy is not set, the default execution policy, Restricted, is effective for all users of the computer.
 
@@ -93,7 +94,7 @@ PS C:\>Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
 ```
 
 This command sets an execution policy of AllSigned for only the current Windows PowerShell session.
-This execution policy is saved in the PSExecutionPolicyPreference environment variable \($env:PSExecutionPolicyPreference\), so it does not affect the value in the registry.
+This execution policy is saved in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), so it does not affect the value in the registry.
 The variable and its value are deleted when the current session is closed.
 
 ### -------------------------- EXAMPLE 7 --------------------------
@@ -150,7 +151,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -166,7 +167,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,7 +183,7 @@ Valid values are:
 
 To remove an execution policy from a particular scope, set the execution policy for that scope to Undefined.
 
-When the value of the Scope parameter is Process, the execution policy is saved in the PSExecutionPolicyPreference environment variable \($env:PSExecutionPolicyPreference\), instead of the registry, and the variable is deleted when the process is closed.
+When the value of the Scope parameter is Process, the execution policy is saved in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and the variable is deleted when the process is closed.
 You cannot change the execution policy of the process by editing the variable.
 
 ```yaml
@@ -193,7 +194,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: LocalMachine
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -207,8 +208,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -224,8 +225,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -241,14 +242,12 @@ This cmdlet does not return any output.
 
 ## NOTES
 When you use Set-ExecutionPolicy in any scope other than Process, the new user preference is saved in the registry and remains unchanged until you change it. 
-When the value of the Scope parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable \($env:PSExecutionPolicyPreference\), instead of the registry, and it is deleted when the session in which it is effective is closed.
+When the value of the Scope parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
 
 If the "Turn on Script Execution" Group Policy is enabled for the computer or user, the user preference is saved, but it is not effective, and Windows PowerShell displays a message explaining the conflict.
 You cannot use Set-ExecutionPolicy to override a Group Policy, even if the user preference is more restrictive than the policy.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113394)
 
 [Get-AuthenticodeSignature](36e5e640-2125-476e-98d9-495977315f14)
 
@@ -259,5 +258,4 @@ You cannot use Set-ExecutionPolicy to override a Group Policy, even if the user 
 [about_Execution_Policies](2e8d33b9-6c07-4a15-a486-9388d10eb00f)
 
 [about_Signing](054e64fa-3571-40fd-a862-630b5217b4f4)
-
 

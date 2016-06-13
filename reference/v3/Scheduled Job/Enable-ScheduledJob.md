@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223926
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ Enable-ScheduledJob [-Name] <String> [-PassThru] [-Confirm] [-WhatIf]
 The Enable-ScheduledJob cmdlet re-enables scheduled jobs that are disabled, such as those that are disabled by using the Disable-ScheduledJob cmdlet.
 Enabled jobs run automatically when triggered.
 
-To enable a scheduled job, the Enable-ScheduledJob cmdlet sets the Enabled property of the scheduled job to True \($true\).
+To enable a scheduled job, the Enable-ScheduledJob cmdlet sets the Enabled property of the scheduled job to True ($true).
 
 Enabled-ScheduledJob is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
 
@@ -78,7 +79,7 @@ A pipeline operator sends the scheduled jobs to the Get-ScheduledJobOption cmdle
 Each job options object has a JobDefinition property that contains the associated scheduled job.
 The JobDefinition property is used to complete the command.
 
-The command uses a pipeline operator \(|\) to send the job options to the  Where-Object cmdlet, which selects scheduled job option objects in which the RunWithoutNetwork property has a value of True \($true\).
+The command uses a pipeline operator (|) to send the job options to the  Where-Object cmdlet, which selects scheduled job option objects in which the RunWithoutNetwork property has a value of True ($true).
 Another pipeline operator sends the selected scheduled job options objects to the ForEach-Object cmdlet which runs an Enable-ScheduledJob command on the scheduled job in the value of the JobDefinition property of each job options object.
 
 ### Example 4: Enable scheduled jobs on a remote computer
@@ -94,7 +95,7 @@ The command uses the Name parameter of Enable-ScheduledJob to enable the Invento
 ## PARAMETERS
 
 ### -Id
-Enables the scheduled job with the specified identification number \(ID\).
+Enables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
 ```yaml
@@ -105,7 +106,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -139,7 +140,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -155,7 +156,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -169,8 +170,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -186,8 +187,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -206,8 +207,6 @@ Otherwise, this cmdlet does not generate any output.
 Enable-ScheduledJob does not generate warnings or errors if you use it to enable a scheduled job that is already enabled.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223926)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -242,5 +241,4 @@ Enable-ScheduledJob does not generate warnings or errors if you use it to enable
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

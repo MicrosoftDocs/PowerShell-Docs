@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113388
 schema: 2.0.0
 ---
 
@@ -36,7 +37,7 @@ You can type "Select-String" or its alias, "sls".
 
 Select-String is based on lines of text.
 By default, Select-String finds the first match in each line and, for each match, it displays the file name, line number, and all text in the line containing the match.
-However, you can direct it to detect multiple matches per line, display text before and after the match, or display only a Boolean value \(true or false\) that indicates whether a match is found.
+However, you can direct it to detect multiple matches per line, display text before and after the match, or display only a Boolean value (true or false) that indicates whether a match is found.
 
 Select-String uses regular expression matching, but it can also perform a simple match that searches the input for the text that you specify.
 
@@ -69,10 +70,10 @@ This command searches through all files with the .xml file name extension in the
 PS C:\>select-string -path $pshome\en-US\*.txt -pattern "@"
 ```
 
-This command searches the Windows PowerShell conceptual Help files \(about_*.txt\) for information about the use of the at sign \(@\).
+This command searches the Windows PowerShell conceptual Help files (about_*.txt) for information about the use of the at sign (@).
 
 To indicate the path, this command uses the value of the $pshome automatic variable, which stores the path to the Windows PowerShell installation directory.
-In this example, the command searches the en-US subdirectory, which contains the English \(US\) language Help files for Windows PowerShell.
+In this example, the command searches the en-US subdirectory, which contains the English (US) language Help files for Windows PowerShell.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -101,7 +102,7 @@ This example searches for the string "failed" in the 100 newest events in the Ap
 The first command uses the Get-EventLog cmdlet to get the 100 most recent events from the Application event log.
 Then it stores the events in the $events variable.
 
-The second command uses a pipeline operator \(|\) to send the objects in the $events variable to Select-String.
+The second command uses a pipeline operator (|) to send the objects in the $events variable to Select-String.
 It uses the InputObject parameter to represent the input from the $events variable.
 The value of the InputObject parameter is the Message property of each object as it travels through the pipeline.
 The current object is represented by the $_ symbol.
@@ -135,7 +136,7 @@ The first command searches the Audit.Log file for the phrase "logon failed." It 
 The second command uses the Count property of object arrays to display the number of matches found, in this case, 2.
 
 The third command displays the lines stored in the Context property of the first MatchInfo object.
-It uses array notation to indicate the first match \(match 0 in a zero-based array\), and it uses the T:Microsoft.PowerShell.Commands.Format-List cmdlet to display the value of the Context property as a list.
+It uses array notation to indicate the first match (match 0 in a zero-based array), and it uses the T:Microsoft.PowerShell.Commands.Format-List cmdlet to display the value of the Context property as a list.
 
 The output consists of two MatchInfo objects, one for each match detected.
 The context lines are stored in the Context property of the MatchInfo object.
@@ -175,7 +176,7 @@ Value    : Transcript
 This example demonstrates the effect of the AllMatches parameter of Select-String.
 AllMatches finds all pattern matches in a line, instead of just finding the first match in each line.
 
-The first command in the example searches the Windows PowerShell conceptual Help files \("about" Help\) for instances of the word "transcript".
+The first command in the example searches the Windows PowerShell conceptual Help files ("about" Help) for instances of the word "transcript".
 The output of the first command is saved in the $a variable.
 
 The second command is identical, except that it uses the AllMatches parameter.
@@ -184,7 +185,7 @@ The output of the second command is saved in the $b variable.
 When you display the value of the variables, the default display is identical, as shown in the example output.
 
 However, the fifth and sixth commands display the value of the Matches property of each object.
-The Matches property of the first command contains just one match \(that is, one System.Text.RegularExpressions.Match object\), whereas the Matches property of the second command contains objects for both of the matches in the line.
+The Matches property of the first command contains just one match (that is, one System.Text.RegularExpressions.Match object), whereas the Matches property of the second command contains objects for both of the matches in the line.
 
 ## PARAMETERS
 
@@ -202,7 +203,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: First match
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -218,7 +219,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Case-insensitive
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -229,14 +230,14 @@ This allows you to view the match in context.
 If you enter one number as the value of this parameter, that number determines the number of lines captured before and after the match.
 If you enter two numbers as the value, the first number determines the number of lines before the match and the second number determines the number of lines after the match.
 
-In the default display, lines with a match are indicated by a right angle bracket \(ASCII 62\) in the first column of the display.
+In the default display, lines with a match are indicated by a right angle bracket (ASCII 62) in the first column of the display.
 Unmarked lines are the context.
 
 This parameter does not change the number of objects generated by Select-String.
-Select-String generates one MatchInfo \(Microsoft.PowerShell.Commands.MatchInfo\) object for each match.
+Select-String generates one MatchInfo (Microsoft.PowerShell.Commands.MatchInfo) object for each match.
 The context is stored as an array of strings in the Context property of the object.
 
-When you pipe the output of a Select-String command to another Select-String command, the receiving command searches only the text in the matched line \(the value of the Line property of the MatchInfo object\), not the text in the context lines.
+When you pipe the output of a Select-String command to another Select-String command, the receiving command searches only the text in the matched line (the value of the Line property of the MatchInfo object), not the text in the context lines.
 As a result, the Context parameter is not valid on the receiving Select-String command.
 
 When the context includes a match, the MatchInfo object for each match includes all of the context lines, but the overlapping lines appear only once in the display.
@@ -249,7 +250,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -269,7 +270,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: UTF8
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -287,7 +288,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -305,7 +306,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -316,7 +317,7 @@ Enter a variable that contains the text, or type a command or expression that ge
 Using the InputObject parameter is not the same as piping strings to Select-String.
 The differences are as follows:
 
--- When you pipe more than one string \(a "collection"\) to Select-String, Select-String searches for the specified text in each string and returns each string that contains the search text.
+-- When you pipe more than one string (a "collection") to Select-String, Select-String searches for the specified text in each string and returns each string that contains the search text.
 -- When you use the InputObject parameter to submit a collection of strings, Select-String treats the collection as a single combined string and returns the strings as a unit if it finds the search text in any string.
 
 ```yaml
@@ -327,7 +328,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -343,7 +344,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All matches
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -358,7 +359,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Match
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -378,7 +379,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: Local directory
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -397,12 +398,12 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Quiet
-Returns a Boolean value \(true or false\), instead of a MatchInfo object.
+Returns a Boolean value (true or false), instead of a MatchInfo object.
 The value is "true" if the pattern is found; otherwise, the value is "false".
 
 ```yaml
@@ -413,7 +414,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Returns matches
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -430,7 +431,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Regular expression match
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -449,7 +450,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -478,14 +479,14 @@ To specify the text to be searched, do the following:
 -- If the text is stored in files, use the Path parameter to specify the path to the files.
 
 By default, Select-String interprets the value of the Pattern parameter as a regular expression.
-\(For more information, see about_Regular_Expressions.\) However, you can use the SimpleMatch parameter to override the regular expression matching.
+(For more information, see about_Regular_Expressions.) However, you can use the SimpleMatch parameter to override the regular expression matching.
 The SimpleMatch parameter finds instances of the value of the Pattern parameter in the input.
 
 The default output of Select-String is a MatchInfo object, which includes detailed information about the matches.
 The information in the object is useful when you are searching for text in files, because MatchInfo objects have properties such as Filename and Line.
 When the input is not from the file, the value of these parameters is "InputStream".
 
-If you do not need the information in the MatchInfo object, use the Quiet parameter, which returns a Boolean value \(true or false\) to indicate whether it found a match, instead of a MatchInfo object.
+If you do not need the information in the MatchInfo object, use the Quiet parameter, which returns a Boolean value (true or false) to indicate whether it found a match, instead of a MatchInfo object.
 
 When matching phrases, Select-String uses the current culture that is set for the system.
 To find the current culture, use the T:Microsoft.PowerShell.Commands.Get-Culture cmdlet.
@@ -496,10 +497,7 @@ select-string -path test.txt -pattern "test" | get-member | format-list -propert
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113388)
-
 [about_Comparison_Operators](0c32654e-841e-4520-85d4-e0a87d23dc16)
 
 [about_Regular_Expressions](b87d6d20-5393-4805-9b03-383e8cf9d933)
-
 

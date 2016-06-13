@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135271
 schema: 2.0.0
 ---
 
@@ -56,7 +57,7 @@ Because the command is not part of the transaction, the change is applied immedi
 
 The fourth command uses the Use-Transaction cmdlet to add text to the string within the transaction.
 The command uses the Append method to add ", World" to the value of $TransactedString.
-The command is enclosed in braces \( {} \) to make it a script block.
+The command is enclosed in braces ( {} ) to make it a script block.
 The UseTransaction parameter is required in this command.
 
 The fifth and sixth commands use the ToString method of the TransactedString object to display the value of the TransactedString as a string.
@@ -106,7 +107,7 @@ The results show that only the changes made outside of the transaction were appl
 
 ### -TransactedScript
 Specifies the script block that is run in the transaction.
-Enter any valid script block enclosed in braces \( { } \).
+Enter any valid script block enclosed in braces ( { } ).
 This parameter is required.
 
 ```yaml
@@ -117,14 +118,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -135,8 +136,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -156,8 +157,6 @@ Because the Use-Transaction cmdlet is always used in transactions, this paramete
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135271)
-
 [Complete-Transaction](2d47d72e-f949-4aee-adf7-c8ebe1df23d5)
 
 [Get-Transaction](b1daeac4-7c84-4b5e-bdd6-04a6e1b8b491)
@@ -167,5 +166,4 @@ Because the Use-Transaction cmdlet is always used in transactions, this paramete
 [Undo-Transaction](7c00d3e9-d7b9-473f-94eb-fb04756c0335)
 
 [about_Transactions](3f9d773e-34b7-40f5-8e72-bc9c79ceb0b5)
-
 

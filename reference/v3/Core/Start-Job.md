@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113405
 schema: 2.0.0
 ---
 
@@ -125,8 +126,8 @@ Then it saves the job object that Start-Job returns in the $j variable.
 
 At this point, you can resume your other work while the job completes.
 
-The second command uses a pipeline operator \(|\) to pass the job object in $j to the Format-List cmdlet.
-The Format-List command uses the Property parameter with a value of all \(*\) to display all of the properties of the job object in a list.
+The second command uses a pipeline operator (|) to pass the job object in $j to the Format-List cmdlet.
+The Format-List command uses the Property parameter with a value of all (*) to display all of the properties of the job object in a list.
 
 The third command displays the value of the JobStateInfo property.
 This contains the status of the job.
@@ -164,7 +165,7 @@ It also uses the RunAs32 parameter to run the job in a 32-bit process even if th
 ## PARAMETERS
 
 ### -ArgumentList
-Specifies the arguments \(parameter values\) for the script that is specified by the FilePath parameter.
+Specifies the arguments (parameter values) for the script that is specified by the FilePath parameter.
 
 Because all of the values that follow the ArgumentList parameter name are interpreted as being values of ArgumentList, the ArgumentList parameter should be the last parameter in the command.
 
@@ -176,7 +177,7 @@ Aliases: Args
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,7 +190,7 @@ CredSSP authentication is available only in Windows Vista, Windows Server 2008, 
 
 For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in MSDN.
 
-CAUTION: Credential Security Support Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -201,7 +202,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,13 +239,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -InitializationScript
 Specifies commands that run before the job starts.
-Enclose the commands in braces \( { } \) to create a script block.
+Enclose the commands in braces ( { } ) to create a script block.
 
 Use this parameter to prepare the session in which the job runs.
 For example, you can use it to add functions, snap-ins, and modules to the session.
@@ -257,7 +258,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -296,7 +297,7 @@ Aliases: PSPath
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -332,7 +333,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 3.0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -350,13 +351,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
 Specifies the commands to run in the background job.
-Enclose the commands in braces \( { } \) to create a script block.
+Enclose the commands in braces ( { } ) to create a script block.
 This parameter is required.
 
 ```yaml
@@ -367,7 +368,7 @@ Aliases: Command
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -390,7 +391,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -412,7 +413,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -431,7 +432,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -451,8 +452,6 @@ To run in the background, Start-Job runs in its own session within the current s
 When you use the Invoke-Command cmdlet to run a Start-Job command in a session on a remote computer, Start-Job runs in a session within the remote session.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113405)
 
 [Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
@@ -477,5 +476,4 @@ When you use the Invoke-Command cmdlet to run a Start-Job command in a session o
 [about_Remote_Jobs](b68c635f-5ee0-44fd-8693-28f8f4ca9fa0)
 
 [about_Jobs]()
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113313
 schema: 2.0.0
 ---
 
@@ -45,7 +46,7 @@ PS C:\>Get-Date -Format g
 ```
 
 This command gets the current date and time and formats it in short-date and short-time format.
-It uses the .NET Framework "g" format specifier \(General \[short date and short time\]\) to specify the format.
+It uses the .NET Framework "g" format specifier (General \[short date and short time\]) to specify the format.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -54,7 +55,7 @@ PS C:\>Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 ```
 
 This command gets the current date and time and formats it as specified by the command.
-In this case, the format includes the full year \(%Y\), the two-digit numeric month \(%m\), the date \(%d\), the full day of the week \(%A\), and the offset from UTC \("Zulu"\).
+In this case, the format includes the full year (%Y), the two-digit numeric month (%m), the date (%d), the full day of the week (%A), and the offset from UTC ("Zulu").
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -101,21 +102,21 @@ Name     : Default System BIOS
 BIOS Age : 1345.17:31:07.1091047
 ```
 
-Windows Management Instrumentation \(WMI\) uses a different date-time object than the .NET Framework date-time object that Get-Date returns.
+Windows Management Instrumentation (WMI) uses a different date-time object than the .NET Framework date-time object that Get-Date returns.
 To use date-time information from WMI in a command with date-time information from Get-Date, you have to use the ConvertToDateTime method to convert WMI CIM_DATETIME objects to .NET Framework DateTime objects.
 
 The commands in this example display the name and age of the BIOS on a remote computer, Server01.
 
 The first command uses the Get-WmiObject cmdlet to get an instance of the Win32_BIOS class on Server01 and then stores it in the $a variable.
 
-The second command uses the pipeline operator \(|\) to send the WMI object stored in $a to the Format-List cmdlet.
+The second command uses the pipeline operator (|) to send the WMI object stored in $a to the Format-List cmdlet.
 The Property parameter of Format-List specifies two properties to display in the list, "Name" and "BIOS Age".
 The "BIOS Age" property is specified in a hash table.
 The table includes the Label key, which specifies the name of the property, and the Expression key, which contains the expression that calculates the BIOS age.
 The expression uses the ConvertToDateTime method to convert each instance of ReleaseDate to a .NET Framework DateTime object.
 Then, the value is subtracted from the value of the Get-Date cmdlet, which, without parameters, gets the current date.
 
-The backtick character \(\`\) is the line continuation character in Windows PowerShell.
+The backtick character (\`) is the line continuation character in Windows PowerShell.
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
@@ -146,10 +147,10 @@ These commands demonstrate how to use Get-Date with Add-Content and other cmdlet
 
 The first command shows that the default display from a "Get-Date" command is in long-date and long-time format.
 
-The second command shows that the default display from the ToString\(\) method of the DateTime object is in short-date and short-time format.
+The second command shows that the default display from the ToString() method of the DateTime object is in short-date and short-time format.
 
 The third command uses a pipeline operator to send the DateTime object to the Add-Content cmdlet, which adds the content to the Test.txt file.
-Because Add-Content uses the ToString\(\) method of the DateTime object, the date that is added is in short-date and short-time format.
+Because Add-Content uses the ToString() method of the DateTime object, the date that is added is in short-date and short-time format.
 
 The fourth command uses the Format parameter of Get-Date to specify the format.
 When you use the Format or UFormat parameters, Get-Date generates a string, not a DateTime object.
@@ -181,7 +182,7 @@ This example shows how to use the Get-Date cmdlet to create a timestamp and how 
 Specifies a date and time.
 By default, Get-Date gets the current system date and time.
 
-Type the date in a format that is standard for the system locale, such as dd-MM-yyyy \(German \[Germany\]\) or MM/dd/yyyy \(English \[United States\]\).
+Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German \[Germany\]) or MM/dd/yyyy (English \[United States\]).
 
 ```yaml
 Type: DateTime
@@ -211,7 +212,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current day
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -235,14 +236,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: DateTime
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Format
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
 Enter a format specifier.
-For a list of available format specifiers, see "DateTimeFormatInfo Class" in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkId=143638.
+For a list of available format specifiers, see "DateTimeFormatInfo Class" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143638.
 
 When you use the Format parameter, Windows PowerShell gets only the properties of the DateTime object that it needs to display the date in the format that you specify.
 As a result, some of the properties and methods of DateTime objects might not be available.
@@ -255,7 +256,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -272,7 +273,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current hour
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -291,7 +292,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current milliseconds
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -308,7 +309,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current minutes
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -325,7 +326,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current month
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -342,7 +343,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current seconds
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -361,7 +362,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -378,7 +379,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current year
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -397,7 +398,7 @@ Otherwise, it returns a DateTime object.
 By default, the date-time is displayed in long-date and long-time formats for the system locale.
 
 When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, Windows PowerShell converts the DateTime object to a string before adding it to the file.
-The default ToString\(\) format is short date and long time.
+The default ToString() format is short date and long time.
 To specify an alternate format, use the Format or UFormat parameters of Get-Date.
 
 Uformat Values:
@@ -415,23 +416,23 @@ Date-Time:
 
 Date and time - full
 
-\(default\) \(Friday, June 16, 2006 10:31:27 AM\)
+(default) (Friday, June 16, 2006 10:31:27 AM)
 
-c     Date and time - abbreviated \(Fri Jun 16 10:31:27 2006\)
+c     Date and time - abbreviated (Fri Jun 16 10:31:27 2006)
 
 Date:
 
-D    Date in mm/dd/yy format \(06/14/06\)
+D    Date in mm/dd/yy format (06/14/06)
 
-x    Date in standard format for locale \(09/12/07 for English-US\)
+x    Date in standard format for locale (09/12/07 for English-US)
 
 Year:
 
-C   Century \(20 for 2006\)
+C   Century (20 for 2006)
 
-Y   Year in 4-digit format \(2006\)
+Y   Year in 4-digit format (2006)
 
-y   Year in 2-digit format \(06\)
+y   Year in 2-digit format (06)
 
 G   Same as 'Y'
 
@@ -439,35 +440,35 @@ g   Same as 'y'
 
 Month:
 
-b   Month name - abbreviated \(Jan\)
+b   Month name - abbreviated (Jan)
 
-B   Month name - full \(January\)
+B   Month name - full (January)
 
 h   Same as 'b'
 
-m   Month number \(06\)
+m   Month number (06)
 
 Week:
 
-W  Week of the year \(00-52\)
+W  Week of the year (00-52)
 
-V   Week of the year \(01-53\)
+V   Week of the year (01-53)
 
 U   Same as 'W'
 
 Day:
 
-a   Day of the week - abbreviated name \(Mon\)
+a   Day of the week - abbreviated name (Mon)
 
-A   Day of the week - full name \(Monday\)
+A   Day of the week - full name (Monday)
 
-u   Day of the week - number \(Monday = 1\)
+u   Day of the week - number (Monday = 1)
 
-d   Day of the month - 2 digits \(05\)
+d   Day of the month - 2 digits (05)
 
-e   Day of the month - digit preceded by a space \( 5\)
+e   Day of the month - digit preceded by a space ( 5)
 
-j    Day of the year - \(1-366\)
+j    Day of the year - (1-366)
 
 w   Same as 'u'
 
@@ -475,46 +476,43 @@ Time:
 
 p   AM or PM
 
-r   Time in 12-hour format \(09:15:36 AM\)
+r   Time in 12-hour format (09:15:36 AM)
 
-R   Time in 24-hour format - no seconds \(17:45\)
+R   Time in 24-hour format - no seconds (17:45)
 
-T   Time in 24 hour format \(17:45:52\)
+T   Time in 24 hour format (17:45:52)
 
 X   Same as 'T'
 
-Z   Time zone offset from Universal Time Coordinate \(UTC\) \(-07\)
+Z   Time zone offset from Universal Time Coordinate (UTC) (-07)
 
 Hour:
 
-H   Hour in 24-hour format \(17\)
+H   Hour in 24-hour format (17)
 
-I    Hour in 12 hour format \(05\)
+I    Hour in 12 hour format (05)
 
 k   Same as 'H'
 
-l    Same as 'I' \(Upper-case I = Lower-case L\)
+l    Same as 'I' (Upper-case I = Lower-case L)
 
 Minutes & Seconds:
 
-M   Minutes \(35\)
+M   Minutes (35)
 
-S   Seconds \(05\)
+S   Seconds (05)
 
-s   Seconds elapsed since January 1, 1970 00:00:00 \(1150451174.95705\)
+s   Seconds elapsed since January 1, 1970 00:00:00 (1150451174.95705)
 
 Special Characters:
 
-n   newline character \(\n\)
+n   newline character (\n)
 
-t   Tab character \(\t\)
+t   Tab character (\t)
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113313)
 
 [New-TimeSpan](d0503c70-1a91-47b6-84e5-473e78fe02df)
 
 [Set-Date](cc47bba2-8350-4e25-b1f5-3a8aabf50939)
-
 

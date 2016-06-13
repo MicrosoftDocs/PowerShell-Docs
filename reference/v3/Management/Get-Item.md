@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113319
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Get-Item [-Credential <PSCredential>] [-Exclude <String[]>] [-Filter <String>] [
 
 ## DESCRIPTION
 The Get-Item cmdlet gets the item at the specified location.
-It does not get the contents of the item at the location unless you use a wildcard character \(*\) to request all the contents of the item.
+It does not get the contents of the item at the location unless you use a wildcard character (*) to request all the contents of the item.
 
 The Get-Item cmdlet is used by Windows PowerShell providers to enable you to navigate through different types of data stores.
 
@@ -40,7 +41,7 @@ d----         7/26/2006  10:01 AM            ps-test
 ```
 
 This command gets the current directory.
-The dot \(.\) represents the item at the current location \(not its contents\).
+The dot (.) represents the item at the current location (not its contents).
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -58,7 +59,7 @@ d----         7/26/2006   9:26 AM            Recs
 ```
 
 This command gets all the items in the current directory.
-The wildcard character \(*\) represents all the contents of the current item.
+The wildcard character (*) represents all the contents of the current item.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -74,9 +75,9 @@ PS C:\>get-item C:\*
 ```
 
 This command gets the items in the C: drive.
-The wildcard character \(*\) represents all the items in the container, not just the container.
+The wildcard character (*) represents all the items in the container, not just the container.
 
-In Windows PowerShell, use a single asterisk \(*\) to get contents, instead of the traditional "*.*".
+In Windows PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*".
 The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
 
 ### -------------------------- EXAMPLE 5 --------------------------
@@ -86,7 +87,7 @@ PS C:\>(get-item C:\Windows).LastAccessTime
 
 This command gets the LastAccessTime property of the C:\Windows directory.
 LastAccessTime is just one property of file system directories.
-To see all of the properties of a directory, type "\(Get-Item \<directory-name\>\) | Get-Member".
+To see all of the properties of a directory, type "(Get-Item \<directory-name\>) | Get-Member".
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -101,8 +102,8 @@ You can use Get-Item with the Windows PowerShell Registry provider to get regist
 PS C:\>get-item c:\Windows\*.* -exclude w*
 ```
 
-This command gets items in the Windows directory with names that include a dot \(.\), but do not begin with w*.
-This command works only when the path includes a wildcard character \(*\) to specify the contents of the item.
+This command gets items in the Windows directory with names that include a dot (.), but do not begin with w*.
+This command works only when the path includes a wildcard character (*) to specify the contents of the item.
 
 ## PARAMETERS
 
@@ -123,7 +124,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -161,7 +162,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -179,7 +180,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Force
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,7 +200,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -218,7 +219,7 @@ Aliases: PSPath
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -226,10 +227,10 @@ Accept wildcard characters: False
 Specifies the path to an item.
 Get-Item gets the item at the specified location.
 Wildcards are permitted.
-This parameter is required, but the parameter name \("Path"\) is optional.
+This parameter is required, but the parameter name ("Path") is optional.
 
-Use a dot \(.\) to specify the current location.
-Use the wildcard character \(*\) to specify all the items in the current location.
+Use a dot (.) to specify the current location.
+Use the wildcard character (*) to specify all the items in the current location.
 
 ```yaml
 Type: String[]
@@ -239,14 +240,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -257,8 +258,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -289,8 +290,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113319)
-
 [Clear-Item](e78220a3-d720-4347-bdbe-8f15f77f3aa1)
 
 [Copy-Item](60a19812-67ab-4b58-a6f5-34640edafbb0)
@@ -308,5 +307,4 @@ For more information, see about_Providers.
 [Set-Item](704c03fc-6fdd-46d6-9da6-6d3a2196918c)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141556
 schema: 2.0.0
 ---
 
@@ -22,7 +23,7 @@ Remove-Module [-Name] <String[]> [-Force] [-Confirm] [-WhatIf]
 ## DESCRIPTION
 The Remove-Module cmdlet removes the members of a module, such as cmdlets and functions, from the current session.
 
-If the module includes an assembly \(.dll\), all members that are implemented by the assembly are removed, but the assembly is not unloaded.
+If the module includes an assembly (.dll), all members that are implemented by the assembly are removed, but the assembly is not unloaded.
 
 This cmdlet does not uninstall the module or delete it from the computer.
 It affects only the current Windows PowerShell session.
@@ -65,12 +66,12 @@ VERBOSE: Performing operation "Remove-Module" on Target "PSDiagnostics (Path: 'C
 
 This command removes the BitsTransfer and PSDiagnostics modules from the current session.
 
-The command uses a pipeline operator \(|\) to send the module names to Remove-Module.
+The command uses a pipeline operator (|) to send the module names to Remove-Module.
 It uses the Verbose common parameter to get detailed information about the members that are removed.
 
 The Verbose messages show the items that are removed.
 The messages differ because the BitsTransfer module includes an assembly that implements its cmdlets and a nested module with its own assembly.
-The PSDiagnostics module includes a module script file \(.psm1\) that exports functions.
+The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -96,13 +97,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ModuleInfo
 Specifies the module objects to remove.
-Enter a variable that contains a module object \(PSModuleInfo\) or a command that gets a module object, such as a Get-Module command.
+Enter a variable that contains a module object (PSModuleInfo) or a command that gets a module object, such as a Get-Module command.
 You can also pipe module objects to Remove-Module.
 
 ```yaml
@@ -113,7 +114,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -130,7 +131,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
@@ -144,8 +145,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -161,15 +162,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo
-You can pipe module names \(strings\) and module objects to Remove-Module.
+You can pipe module names (strings) and module objects to Remove-Module.
 
 ## OUTPUTS
 
@@ -180,8 +181,6 @@ Remove-Module does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141556)
-
 [Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
 
 [Import-Module](af616c24-e122-4098-930e-1e3ea2080ade)
@@ -189,5 +188,4 @@ Remove-Module does not generate any output.
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
 
 [about_modules]()
-
 

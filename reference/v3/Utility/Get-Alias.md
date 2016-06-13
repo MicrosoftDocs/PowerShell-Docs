@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113306
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ Get-Alias [-Definition <String[]>] [-Exclude <String[]>] [-Scope <String>]
 ```
 
 ## DESCRIPTION
-The Get-Alias cmdlet gets the aliases \(alternate names for commands and executable files\) in the current session.
+The Get-Alias cmdlet gets the aliases (alternate names for commands and executable files) in the current session.
 This includes built-in aliases, aliases that you have set or imported, and aliases that you have added to your Windows PowerShell profile.
 
 By default, Get-Alias takes an alias and returns the command name.
@@ -117,7 +118,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -135,7 +136,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -143,7 +144,7 @@ Accept wildcard characters: True
 Specifies the aliases to retrieve.
 Wildcards are permitted.
 By default, Get-Alias retrieves all aliases defined for the current session.
-The parameter name \("Name"\) is optional.
+The parameter name ("Name") is optional.
 You can also pipe alias names to Get-Alias.
 
 ```yaml
@@ -154,13 +155,13 @@ Aliases:
 Required: False
 Position: 1
 Default value: All aliases
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -Scope
 Gets only the aliases in the specified scope.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -196,8 +197,6 @@ These are likely to be preferred substitute names for cmdlets and functions, ins
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113306)
-
 [Export-Alias](f2ebfdac-0af9-4bf1-bef9-2b612381f3e6)
 
 [Import-Alias](c4368ff1-c02a-47aa-b5c0-80503a20b4da)
@@ -209,5 +208,4 @@ These are likely to be preferred substitute names for cmdlets and functions, ins
 [Alias Provider](00000000-0000-0000-0000-000000000000)
 
 [about_Aliases]()
-
 

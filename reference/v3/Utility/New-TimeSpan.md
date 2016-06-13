@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113360
 schema: 2.0.0
 ---
 
@@ -92,7 +93,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -108,7 +109,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: Current date and time
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -124,7 +125,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,7 +141,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -156,7 +157,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -166,7 +167,7 @@ Enter a string that represents the date and time, such as "3/15/09" or a DateTim
 The default is the current date and time.
 
 You can use Start or its alias, LastWriteTime.
-The LastWriteTime alias lets you pipe objects that have a LastWriteTime property, such as files in the file system \(System.Io.FileIO\), to the Start parameter of New-TimeSpan.
+The LastWriteTime alias lets you pipe objects that have a LastWriteTime property, such as files in the file system (System.Io.FileIO), to the Start parameter of New-TimeSpan.
 
 ```yaml
 Type: DateTime
@@ -176,7 +177,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: Current date and time
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -194,10 +195,7 @@ New-TimeSpan returns an object that represents the time span.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113360)
-
 [Get-Date](277ba77f-f2be-44d7-8f15-23069faf0a4b)
 
 [Set-Date](cc47bba2-8350-4e25-b1f5-3a8aabf50939)
-
 

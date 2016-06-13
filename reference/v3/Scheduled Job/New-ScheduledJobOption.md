@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223919
 schema: 2.0.0
 ---
 
@@ -144,7 +145,7 @@ This format makes it much easier to find the WakeToRun property of the Scheduled
 ## PARAMETERS
 
 ### -ContinueIfGoingOnBattery
-Do not stop the scheduled job if the computer switches to battery power \(disconnects from AC power\) while the job is running.
+Do not stop the scheduled job if the computer switches to battery power (disconnects from AC power) while the job is running.
 By default, scheduled jobs stop when the computer disconnects from AC power.
 
 The ContinueIfGoingOnBattery parameter sets the value of the StopIfGoingOnBatteries property of scheduled jobs to True.
@@ -157,7 +158,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,7 +179,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,7 +200,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -221,7 +222,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 10 minutes (00:10:00)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -243,7 +244,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1 hour (1:00:00)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -269,7 +270,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: IgnoreNew
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -288,13 +289,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RestartOnIdleResume
 Restarts a scheduled job when the computer becomes idle.
-This parameter works with the StopIfGoingOffIdle parameter, which suspends a running scheduled job if the computer becomes active \(leaves the idle state\).
+This parameter works with the StopIfGoingOffIdle parameter, which suspends a running scheduled job if the computer becomes active (leaves the idle state).
 
 The RestartOnIdleResume parameter sets the value of the RestartOnIdleResume property of scheduled jobs to True.
 
@@ -306,7 +307,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -325,7 +326,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -334,7 +335,7 @@ Starts the scheduled job if the computer has been idle for the time specified by
 
 By default, the IdleDuration and IdleTimeout parameters are ignored and the job starts at the scheduled start time even if the computer is busy.
 
-If you specify this parameter and the computer is busy \(not idle\) at the scheduled start time, the job does not run until the next scheduled start time, if any.
+If you specify this parameter and the computer is busy (not idle) at the scheduled start time, the job does not run until the next scheduled start time, if any.
 
 The StartIfIdle parameter sets the value of the StartIfNotIdle property of scheduled jobs to False.
 
@@ -346,7 +347,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -364,12 +365,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -StopIfGoingOffIdle
-Suspends a running scheduled job if the computer becomes active \(not idle\) while the job is running.
+Suspends a running scheduled job if the computer becomes active (not idle) while the job is running.
 
 By default, a scheduled job that is suspended when the computer becomes active resumes when the computer becomes idle again.
 To change this default behavior, use the RestartOnIdleResume parameter.
@@ -384,7 +385,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -402,7 +403,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -424,8 +425,6 @@ However, the ScheduledJobOption parameter can also take a hash table value that 
 For more information, see Register-ScheduledJob.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223919)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -460,5 +459,4 @@ For more information, see Register-ScheduledJob.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

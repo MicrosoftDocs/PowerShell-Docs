@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135247
 schema: 2.0.0
 ---
 
@@ -62,7 +63,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -79,7 +80,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -93,8 +94,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -110,8 +111,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -131,8 +132,6 @@ If you close the current session, the event queue is discarded and the event sub
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135247)
-
 [Get-Event](4ac85bbe-2abd-4e86-a313-edae6a08e435)
 
 [New-Event](d5f16c15-8a98-4221-8f96-0867578f5430)
@@ -148,5 +147,4 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](313e8361-8646-4b0d-b72f-f76987c49591)
 
 [Wait-Event](bd2e7d77-2642-4628-b937-0a7d52033399)
-
 

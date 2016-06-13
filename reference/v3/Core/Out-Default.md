@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113362
 schema: 2.0.0
 ---
 
@@ -38,7 +39,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -50,8 +51,6 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113362)
-
 [Format-Custom](http://technet.microsoft.com/library/hh849966.aspx)
 
 [Format-List](http://technet.microsoft.com/library/hh849957.aspx)
@@ -61,5 +60,4 @@ Accept wildcard characters: False
 [Format-Wide](http://technet.microsoft.com/library/hh849918.aspx)
 
 [about_Format.ps1.xml](http://technet.microsoft.com/library/hh847831.aspx)
-
 

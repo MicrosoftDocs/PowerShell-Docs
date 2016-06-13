@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141463
 schema: 2.0.0
 ---
 
@@ -14,7 +15,7 @@ Set-WSManQuickConfig [-Force] [-SkipNetworkProfileCheck] [-UseSSL]
 ```
 
 ## DESCRIPTION
-The Set-WSManQuickConfig cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the Web Services for Management \(WS-Management\) technology.
+The Set-WSManQuickConfig cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the Web Services for Management (WS-Management) technology.
 
 The cmdlet performs the following:
 
@@ -56,7 +57,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -79,12 +80,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Specifies that the Secure Sockets Layer \(SSL\) protocol should be used to establish a connnection to the remote computer.
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connnection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
@@ -99,7 +100,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,8 +117,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141463)
 
 [Enable-PSRemoting](00000000-0000-0000-0000-000000000000)
 
@@ -142,5 +141,4 @@ This cmdlet does not generate any output.
 [New-WSManSessionOption](b8d84d86-a913-4aa6-8c72-80fe7938d782)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

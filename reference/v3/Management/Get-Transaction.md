@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135220
 schema: 2.0.0
 ---
 
 # Get-Transaction
 ## SYNOPSIS
-Gets the current \(active\) transaction.
+Gets the current (active) transaction.
 
 ## SYNTAX
 
@@ -17,7 +18,7 @@ Get-Transaction
 The Get-Transaction cmdlet gets an object that represents the current transaction in the session.
 
 This cmdlet never returns more than one object, because only one transaction is active at a time.
-If you start one or more independent transactions \(by using the Independent parameter of Start-Transaction\), the most recently started transaction is active, and that is the transaction that Get-Transaction returns.
+If you start one or more independent transactions (by using the Independent parameter of Start-Transaction), the most recently started transaction is active, and that is the transaction that Get-Transaction returns.
 
 When all active transactions have either been rolled back or committed, Get-Transaction shows the transaction that was most recently active in the session.
 
@@ -187,8 +188,6 @@ Get-Transaction returns an object that represents the current transaction.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135220)
-
 [Complete-Transaction](2d47d72e-f949-4aee-adf7-c8ebe1df23d5)
 
 [Start-Transaction](29d9ba55-2f90-49cd-bdb0-36c064721f2b)
@@ -200,5 +199,4 @@ Get-Transaction returns an object that represents the current transaction.
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
 
 [about_Transactions](3f9d773e-34b7-40f5-8e72-bc9c79ceb0b5)
-
 

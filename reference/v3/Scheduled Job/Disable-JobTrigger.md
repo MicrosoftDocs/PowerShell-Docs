@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223918
 schema: 2.0.0
 ---
 
@@ -20,8 +21,8 @@ Disabling preserves all job trigger properties, but it prevents the job trigger 
 To use this cmdlet, use the  Get-JobTrigger cmdlet to get the job triggers.
 Then pipe the job triggers to Disable-JobTrigger or use its InputObject parameter.
 
-To disable a job trigger, the Disable-JobTrigger cmdlet sets the Enabled property of the job trigger to False \($false\).
-To re-enable the job trigger, use the Enable-JobTrigger cmdlet, which sets the Enabled property of the job trigger to True \($true\).
+To disable a job trigger, the Disable-JobTrigger cmdlet sets the Enabled property of the job trigger to False ($false).
+To re-enable the job trigger, use the Enable-JobTrigger cmdlet, which sets the Enabled property of the job trigger to True ($true).
 Disabling a job trigger does not disable the scheduled job, such as is done by the Disable-ScheduledJob cmdlet, but if you disable all job triggers, the effect is the same as disabling the scheduled job.
 
 If you disable a scheduled job or disable all job triggers of a scheduled job, you can still start the job by using the Start-Job cmdlet or use the disabled scheduled job as a template.
@@ -40,7 +41,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 PS C:\>Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Disable-JobTrigger
 ```
 
-This command disables the first trigger \(ID=1\) of the Backup-Archives scheduled job on the local computer.
+This command disables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
 
 The command uses the Get-JobTrigger cmdlet to get the job trigger.
 A pipeline operator sends the job trigger to the Disable-JobTrigger cmdlet, which disables it.
@@ -103,8 +104,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -120,8 +121,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -139,8 +140,6 @@ This cmdlet does not generate any output.
 Disable-JobTrigger does not generate errors or warnings if you disable a job trigger that is already disabled.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223918)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -175,5 +174,4 @@ Disable-JobTrigger does not generate errors or warnings if you disable a job tri
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

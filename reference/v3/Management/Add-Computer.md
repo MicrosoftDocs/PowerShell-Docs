@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135194
 schema: 2.0.0
 ---
 
@@ -26,7 +27,7 @@ Add-Computer [-WorkGroupName] <String> [-ComputerName <String[]>] [-Credential <
 The Add-Computer cmdlet adds the local computer or remote computers to a domain or workgroup, or moves them from one domain to another.
 It also creates a domain account if the computer is added to the domain without an account.
 
-You can use the parameters of this cmdlet to specify an organizational unit \(OU\) and domain controller or to perform an unsecure join.
+You can use the parameters of this cmdlet to specify an organizational unit (OU) and domain controller or to perform an unsecure join.
 
 To get the results of the command, use the Verbose and PassThru parameters.
 
@@ -109,8 +110,8 @@ The Restart parameter restarts all of the newly added computers after the join o
 Specifies the computers to add to a domain or workgroup.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of each of the  remote computers.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of each of the  remote computers.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Add-Computer even if your computer is not configured to run remote commands.
@@ -147,7 +148,7 @@ Aliases: DomainCredential
 Required: True
 Position: Named
 Default value: Current User Account Credentials
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -159,7 +160,7 @@ Aliases: DomainCredential
 Required: False
 Position: Named
 Default value: Current User Account Credentials
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -175,7 +176,7 @@ Aliases: DN,Domain
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -193,7 +194,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -217,7 +218,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -240,7 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -OUPath
-Specifies an organizational unit \(OU\) for the domain account.
+Specifies an organizational unit (OU) for the domain account.
 Enter the full distinguished name of the OU in quotation marks. 
 The default value is the default OU for machine objects in the domain.
 
@@ -252,7 +253,7 @@ Aliases: OU
 Required: False
 Position: Named
 Default value: The default OU for machine objects for in the domain
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -268,7 +269,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -286,7 +287,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -303,7 +304,7 @@ Aliases: DC
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -328,7 +329,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -344,7 +345,7 @@ Aliases: WGN
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -360,15 +361,15 @@ Valid values are:
 
 -- UnsecuredJoin: Performs an unsecured join. To request an unsecured join, use the Unsecure parameter or this option.
 
--- PasswordPass: Sets the machine password to the value of the Credential \(DomainCredential\) parameter after performing an unsecured join. This option also indicates that the value of the Credential \(DomainCredential\) parameter is a machine password, not a user password. This option is valid only when the UnsecuredJoin option is specified.
+-- PasswordPass: Sets the machine password to the value of the Credential (DomainCredential) parameter after performing an unsecured join. This option also indicates that the value of the Credential (DomainCredential) parameter is a machine password, not a user password. This option is valid only when the UnsecuredJoin option is specified.
 
  -- JoinWithNewName: Renames the computer name in the new domain to the name specified by the NewName parameter. When you use the NewName parameter, this option is set automatically. This option is designed to be used with the Rename-Computer cmdlet. If you use the Rename-Computer cmdlet to rename the computer, but do not restart the computer to make the change effective, you can use this parameter to join the computer to a domain with its new name.
 
 -- JoinReadOnly: Uses an existing machine account to join the computer to a read-only domain controller. The machine account must be added to the allowed list for password replication policy and the account password must be replicated to the read-only domain controller prior to the join operation.
 
--- InstallInvoke: Sets the create \(0x2\) and delete \(0x4\) flags of the FJoinOptions parameter of the JoinDomainOrWorkgroup method. For more information about the JoinDomainOrWorkgroup method, see "JoinDomainOrWorkgroup Method of the Win32_ComputerSystem Class" in MSDN at http://msdn.microsoft.com/library/aa392154\(VS.85\).aspx.
+-- InstallInvoke: Sets the create (0x2) and delete (0x4) flags of the FJoinOptions parameter of the JoinDomainOrWorkgroup method. For more information about the JoinDomainOrWorkgroup method, see "JoinDomainOrWorkgroup Method of the Win32_ComputerSystem Class" in MSDN at http://msdn.microsoft.com/library/aa392154(VS.85).aspx.
 
-For more information about these options, see "NetJoinDomain" in MSDN at http://msdn.microsoft.com/library/aa370433\(VS.85\).aspx.
+For more information about these options, see "NetJoinDomain" in MSDN at http://msdn.microsoft.com/library/aa370433(VS.85).aspx.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -380,7 +381,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -395,7 +396,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -409,8 +410,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -426,8 +427,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -448,8 +449,6 @@ In Windows PowerShell 3.0, the implementation of the Server parameter is changed
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135194)
-
 [Checkpoint-Computer](9ef7dd97-dbd9-43de-8988-9ab85e7827ad)
 
 [Remove-Computer](89871167-713a-4f43-af35-e2891b8849e6)
@@ -463,5 +462,4 @@ In Windows PowerShell 3.0, the implementation of the Server parameter is changed
 [Stop-Computer](bae0484a-418a-432c-a172-34b5165dd0b1)
 
 [Test-Connection](7c54e3a1-8d8c-44ad-9056-ef0514c158d6)
-
 

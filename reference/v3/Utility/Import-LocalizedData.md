@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113342
 schema: 2.0.0
 ---
 
@@ -26,7 +27,7 @@ You can use the parameters of Import-LocalizedData to specify an alternate UI cu
 
 The Import-LocalizedData cmdlet supports the script internationalization initiative that was introduced in Windows PowerShell 2.0.
 This initiative aims to better serve users worldwide by making it easy for scripts to display user messages in the UI language of the current user. 
-For more information about this and about the format of the .psd1 files, see about_Script_Internationalization \(http://go.microsoft.com/fwlink/?LinkID=113262\).
+For more information about this and about the format of the .psd1 files, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## EXAMPLES
 
@@ -176,13 +177,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: Script directory
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -BindingVariable
 Specifies the variable into which the text strings are imported.
-Enter a variable name without a dollar sign \($\).
+Enter a variable name without a dollar sign ($).
 
 In Windows PowerShell 2.0, this parameter is required.
 In Windows PowerShell 3.0, this parameter is optional.
@@ -201,12 +202,12 @@ Aliases: Variable
 Required: False
 Position: 1
 Default value: Return text strings
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -FileName
-Specifies the name of the data file \(.psd1\) to be imported.
+Specifies the name of the data file (.psd1) to be imported.
 Enter a file name.
 You can specify a file name that does not include its .psd1 file name extension, or you can specify the file name including the .psd1 file name extension.
 
@@ -224,7 +225,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Base name of the script
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -242,7 +243,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -251,7 +252,7 @@ Specifies an alternate UI culture.
 The default is the value of the $PsUICulture automatic variable.
 Enter a UI culture in "\<language\>-\<region\>" format, such as en-US, de-DE, or ar-SA.
 
-The value of the UICulture parameter determines the language-specific subdirectory \(within the base directory\) from which Import-LocalizedData gets the .psd1 file for the script.
+The value of the UICulture parameter determines the language-specific subdirectory (within the base directory) from which Import-LocalizedData gets the .psd1 file for the script.
 
 The cmdlet searches for a subdirectory with the same name as the value of  the UICulture parameter or the $PsUICulture automatic variable, such as "de-DE" or "ar-SA".
 If it cannot find the directory, or the directory does not contain a .psd1 file for the script, it searches for a subdirectory with the name of the language code, such as "de" or "ar".
@@ -265,7 +266,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: $PsUICulture
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -281,7 +282,7 @@ Import-LocalizedData saves the hash table in the variable that is specified by t
 
 ## NOTES
 Before using Import-LocalizedData, localize your user messages.
-Format the messages for each locale \(UI culture\) in a hash table of key/value pairs, and save the hash table in a file with the same name as the script and a .psd1 file name extension.
+Format the messages for each locale (UI culture) in a hash table of key/value pairs, and save the hash table in a file with the same name as the script and a .psd1 file name extension.
 Create a directory under the script directory for each supported UI culture, and then save the .psd1 file for each UI culture in the directory with the UI culture name.
 
 For example, localize your user messages for the de-DE locale and format them in a hash table.
@@ -291,9 +292,9 @@ Repeat this method for each locale that you support.
 
 Import-LocalizedData performs a structured search for the localized user messages for a script.
 
-Import-LocalizedData begins the search in the directory where the script file is located \(or the value of the BaseDirectory parameter\).
-It then searches within the base directory for a subdirectory with the same name as the value of the $PsUICulture variable \(or the value of the UICulture parameter\), such as "de-DE" or "ar-SA".
-Then, it searches in that subdirectory for a .psd1 file with the same name as the script \(or the value of the FileName parameter\).
+Import-LocalizedData begins the search in the directory where the script file is located (or the value of the BaseDirectory parameter).
+It then searches within the base directory for a subdirectory with the same name as the value of the $PsUICulture variable (or the value of the UICulture parameter), such as "de-DE" or "ar-SA".
+Then, it searches in that subdirectory for a .psd1 file with the same name as the script (or the value of the FileName parameter).
 
 If Import-LocalizedData cannot find a subdirectory with the name of the UI culture, or the subdirectory does not contain a .psd1 file for the script, it searches for a .psd1 file for the script in a subdirectory with the name of the language code, such as "de" or "ar".
 If it cannot find the subdirectory or .psd1 file, the command fails, the data is displayed in the default language in the script, and an error message is displayed explaining that the data could not be imported.
@@ -302,12 +303,9 @@ To suppress the message and fail gracefully, use the ErrorAction common paramete
 If Import-LocalizedData finds the subdirectory and the .psd1 file, it imports the hash table of user messages into the value of the BindingVariable parameter in the command.
 Then, when you display a message from the hash table in the variable, the localized message is displayed.
 
-For more information, see about_Script_Internationalization \(http://go.microsoft.com/fwlink/?LinkID=113262\).
+For more information, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113342)
-
 [about_Script_Internationalization](9213d013-0972-4ab8-8588-ffa99b5e5cd6)
-
 

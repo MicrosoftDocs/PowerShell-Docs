@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113310
 schema: 2.0.0
 ---
 
@@ -46,8 +47,8 @@ PS C:\>Get-Content c:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
 
 This command gets the first 50 lines of the Log060912.txt file and stores them in the Sample.txt file.
 The command uses the Get-Content cmdlet to get the text in the file.
-\(The name of Path parameter, which is optional, is omitted.\) The TotalCount parameter limits the content retrieved to the first 50 lines.
-The pipeline operator \(|\) sends the result to the Set-Content cmdlet, which places it in the Sample.txt file.
+(The name of Path parameter, which is optional, is omitted.) The TotalCount parameter limits the content retrieved to the first 50 lines.
+The pipeline operator (|) sends the result to the Set-Content cmdlet, which places it in the Sample.txt file.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -55,7 +56,7 @@ PS C:\>(Get-Content Cmdlets.txt -TotalCount 5)[-1]
 ```
 
 This command gets the fifth line of the Cmdlets.txt text file.
-It uses the TotalCount parameter to get the first five lines and then uses array notation to get the last line \(indicated by "-1"\) of the resulting set.
+It uses the TotalCount parameter to get the first five lines and then uses array notation to get the last line (indicated by "-1") of the resulting set.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -84,7 +85,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -102,7 +103,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -120,7 +121,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -136,7 +137,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -154,7 +155,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -173,7 +174,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -181,7 +182,7 @@ Accept wildcard characters: False
 Specifies the path to an item.
 Get-Content gets the content of the item.
 Wildcards are permitted.
-The parameter name \("Path" or "FilePath"\) is optional.
+The parameter name ("Path" or "FilePath") is optional.
 
 ```yaml
 Type: String[]
@@ -191,14 +192,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -ReadCount
 Specifies how many lines of content are sent through the pipeline at a time.
 The default value is 1.
-A value of 0 \(zero\) sends all of the content at one time.
+A value of 0 (zero) sends all of the content at one time.
 
 This parameter does not change the content displayed, but it does affect the time it takes to display the content.
 As the value of ReadCount increases, the time it takes to return the first line increases, but the total time for the operation decreases.
@@ -212,13 +213,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -TotalCount
 Gets the specified number of lines from the beginning of a file or other item.
-The default is -1 \(all lines\).
+The default is -1 (all lines).
 
 You can use the "TotalCount" parameter name or its aliases, "First" or "Head".
 
@@ -230,7 +231,7 @@ Aliases: First, Head
 Required: False
 Position: Named
 Default value: -1
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -249,14 +250,14 @@ Aliases: Last
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -267,8 +268,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -286,11 +287,9 @@ The output type depends upon the content that it gets.
 ## NOTES
 The Get-Content cmdlet is designed to work with the data exposed by any provider.
 To get the providers in your session, use the Get-PsProvider cmdlet.
-For more information, see about_Providers \(http://go.microsoft.com/fwlink/?LinkID=113250\).
+For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113310)
 
 [Add-Content](fcff151c-88d1-4b84-a9a9-8e3b1a155413)
 
@@ -299,5 +298,4 @@ For more information, see about_Providers \(http://go.microsoft.com/fwlink/?Link
 [Set-Content](a8b56d7e-cebd-4049-9184-62926ef448e2)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

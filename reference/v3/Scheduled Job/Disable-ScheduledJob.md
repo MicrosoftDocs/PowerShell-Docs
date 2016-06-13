@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223927
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ The Disable-ScheduledJob cmdlet temporarily disables scheduled jobs.
 Disabling preserves all job properties and does not disable the job triggers, but it prevents the scheduled jobs from starting automatically when triggered.
 You can start a disabled scheduled job by using the Start-Job cmdlet or use a disabled scheduled job as a template.
 
-To disable a scheduled job, the Disable-ScheduledJob cmdlet sets the Enabled property of the scheduled job to False \($false\).
+To disable a scheduled job, the Disable-ScheduledJob cmdlet sets the Enabled property of the scheduled job to False ($false).
 To re-enable the scheduled job, use the Enable-ScheduledJob cmdlet.
 
 Disable-ScheduledJob is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
@@ -80,7 +81,7 @@ Jobs without credentials run with the permission of the user who created them.
 
 The command uses the Get-ScheduledJob cmdlet to get all scheduled jobs on the computer.
 A pipeline operator sends the scheduled jobs to the Where-Object cmdlet, which selects scheduled jobs that do not have credentials.
-The command uses the not \(!\) operator and references the Credential property of the scheduled job.
+The command uses the not (!) operator and references the Credential property of the scheduled job.
 Another pipeline operator sends the selected scheduled jobs to the Disable-ScheduledJob cmdlet, which disables them.
 
 ### Example 4: Disable scheduled jobs on a remote computer
@@ -110,13 +111,13 @@ PS C:\>Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc
 ```
 
 This examples shows how to disable a scheduled job by using its global identifier.
-The value of the GlobalID property of a scheduled job is a unique identifier \(GUID\).
+The value of the GlobalID property of a scheduled job is a unique identifier (GUID).
 Use the GlobalID value when precision is required, such as when you are disabling scheduled jobs on multiple computers.
 
 ## PARAMETERS
 
 ### -Id
-Disables the scheduled job with the specified identification number \(ID\).
+Disables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
 ```yaml
@@ -127,7 +128,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -161,7 +162,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -177,7 +178,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -191,8 +192,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,8 +209,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -228,8 +229,6 @@ Otherwise, this cmdlet does not generate any output.
 Disable-ScheduledJob does not generate warnings or errors if you use it to disable a scheduled job that is already disabled.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223927)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -264,5 +263,4 @@ Disable-ScheduledJob does not generate warnings or errors if you use it to disab
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

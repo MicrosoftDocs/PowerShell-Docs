@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135200
 schema: 2.0.0
 ---
 
@@ -51,7 +52,7 @@ This example shows the effect of using the Complete-Transaction cmdlet to commit
 The Start-Transaction command starts the transaction.
 The New-Item command uses the UseTransaction parameter to include the command in the transaction.
 
-The first "dir" \(Get-ChildItem\) command shows that the new item has not yet been added to the registry.
+The first "dir" (Get-ChildItem) command shows that the new item has not yet been added to the registry.
 
 The Complete-Transaction command commits the transaction, which makes the registry change effective.
 As a result, the second "dir" command shows that the registry is changed.
@@ -123,7 +124,7 @@ Again, the command returns a value, but the registry is not changed.
 
 The first Complete-Transaction command reduces the subscriber count by 1.
 This is confirmed by a Get-Transaction command.
-However, no data is changed, as evidenced by a "dir m*" \(Get-ChildItem\) command.
+However, no data is changed, as evidenced by a "dir m*" (Get-ChildItem) command.
 
 The second Complete-Transaction command commits the entire transaction and changes the data in the registry.
 This is confirmed by a second "dir m*" command, which shows the changes.
@@ -158,7 +159,7 @@ This allows you to preview the changes in the transaction before the changes are
 In this example, a transaction is started.
 A New-Item command with the UseTransaction parameter adds a new key to the registry as part of the transaction.
 
-Because the new registry key is not added to the registry until the Complete-Transaction command is run, a simple "dir" \(Get-ChildItem\) command shows the registry without the new key.
+Because the new registry key is not added to the registry until the Complete-Transaction command is run, a simple "dir" (Get-ChildItem) command shows the registry without the new key.
 
 However, when you add the UseTransaction parameter to the "dir" command, the command becomes part of the transaction, and it gets the items in the transaction even if they are not yet added to the data.
 
@@ -174,8 +175,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -191,8 +192,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -216,8 +217,6 @@ By default, if any part of a transaction cannot be committed, such as when a com
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135200)
-
 [Get-Transaction](b1daeac4-7c84-4b5e-bdd6-04a6e1b8b491)
 
 [Start-Transaction](29d9ba55-2f90-49cd-bdb0-36c064721f2b)
@@ -227,5 +226,4 @@ By default, if any part of a transaction cannot be committed, such as when a com
 [Use-Transaction](8e5ddcb5-32ef-42f9-9dd0-4153094a2f67)
 
 [about_Transactions](3f9d773e-34b7-40f5-8e72-bc9c79ceb0b5)
-
 

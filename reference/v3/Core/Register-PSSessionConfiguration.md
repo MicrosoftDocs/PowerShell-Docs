@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144306
 schema: 2.0.0
 ---
 
@@ -47,18 +48,18 @@ Register-PSSessionConfiguration [-Name] <String> [-AccessMode <PSSessionConfigur
 The Register-PSSessionConfiguration cmdlet creates and registers a  new session configuration on the local computer.
 This is an advanced cmdlet that is designed to be used by system administrators to create custom sessions for remote users.
 
-Every Windows PowerShell session \(PSSession\) uses a session configuration, also known as an "endpoint." When users create a session that connects to the computer, they can select a session configuration or use the default session configuration that is registered when you enable Windows PowerShell remoting.
+Every Windows PowerShell session (PSSession) uses a session configuration, also known as an "endpoint." When users create a session that connects to the computer, they can select a session configuration or use the default session configuration that is registered when you enable Windows PowerShell remoting.
 Users can also set the $PSSessionConfigurationName preference variable, which specifies a default configuration for remote sessions created in the current session.
 
 The session configuration defines the environment for the remote session.
 The configuration can determine which commands and language elements are available in the session, and it can include settings that protect the computer, such as those that limit the amount of data that the session can receive remotely in a single object or command. 
-The security descriptor \(ACL\) of the session configuration determines which users have permission to use the session configuration.
+The security descriptor (ACL) of the session configuration determines which users have permission to use the session configuration.
 
 You can define the elements of configuration by using an assembly that implements a new configuration class and by using a script that runs in the session.
 Beginning in Windows PowerShell 3.0, you can also use a session configuration file to define the session configuration.
 
-For information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
-For information about session configuration files, see about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 ## EXAMPLES
 
@@ -224,12 +225,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Remote
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ApplicationBase
-Specifies the path to the assembly file \(*.dll\) that is specified in the value of the AssemblyName parameter.
+Specifies the path to the assembly file (*.dll) that is specified in the value of the AssemblyName parameter.
 Use this parameter when the value of the AssemblyName parameter does not include a path.
 The default is the current directory.
 
@@ -241,12 +242,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current directory
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AssemblyName
-Specifies the name of an assembly file \(*.dll\) in which the configuration type is defined.
+Specifies the name of an assembly file (*.dll) in which the configuration type is defined.
 You can specify the path to the .dll in this parameter or in the value of the ApplicationBase parameter.
 
 This parameter is required when the ConfigurationTypeName parameter is specified.
@@ -259,7 +260,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -267,7 +268,7 @@ Accept wildcard characters: False
 Specifies the fully qualified name of the Microsoft .NET Framework type that is used for this configuration.
 The type that you specify must implement the System.Management.Automation.Remoting.PSSessionConfiguration class.
 
-To specify the assembly file \(.dll\) that implements the configuration type, use the AssemblyName and ApplicationBase parameters.
+To specify the assembly file (.dll) that implements the configuration type, use the AssemblyName and ApplicationBase parameters.
 
 Creating a type allows you to control more aspects of the session configuration, such as exposing or hiding certain parameters of cmdlets, or setting data size and object size limits that users cannot override.
 
@@ -281,7 +282,7 @@ Aliases:
 Required: True
 Position: 3
 Default value: System.Management.Automation.Remoting.PSSessionConfiguration
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -299,13 +300,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedDataSizePerCommandMB
 Limits the amount of data that can be sent to this computer in any single remote command.
-Enter the data size in megabytes \(MB\).
+Enter the data size in megabytes (MB).
 The default is 50 MB.
 
 If a data size limit is defined in the configuration type that is specified in the ConfigurationTypeName parameter, the limit in the configuration type is used and the value of this parameter is ignored.
@@ -318,13 +319,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 50
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedObjectSizeMB
 Limits the amount of data that can be sent to this computer in any single object.
-Enter the data size in megabytes \(MB\).
+Enter the data size in megabytes (MB).
 The default is 10 MB.
 
 If an object size limit is defined in the configuration type that is specified in the ConfigurationTypeName parameter, the limit in the configuration type is used and the value of this parameter is ignored.
@@ -337,7 +338,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 10
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -374,12 +375,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path and file name of a session configuration file \(.pssc\), such as one created by the New-PSSessionConfigurationFile cmdlet.
+Specifies the path and file name of a session configuration file (.pssc), such as one created by the New-PSSessionConfigurationFile cmdlet.
 If you omit the path, the default is the current directory.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -392,13 +393,13 @@ Aliases:
 Required: True
 Position: Named
 Default value: Current directory
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
 Determines whether a 32-bit or 64-bit version of the Windows PowerShell process is started in sessions that use this session configuration.
-Valid values are x86 \(32-bit\) and AMD64 \(64-bit\).
+Valid values are x86 (32-bit) and AMD64 (64-bit).
 The default value is determined by the processor architecture of the computer that hosts the session configuration.
 
 You can use this parameter to create a 32-bit session on a 64-bit computer.
@@ -412,7 +413,7 @@ Aliases: PA
 Required: False
 Position: Named
 Default value: The processor architecture of the host computer.
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -431,7 +432,7 @@ Aliases: PowerShellVersion
 Required: False
 Position: Named
 Default value: 3.0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -449,15 +450,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SecurityDescriptorSddl
-Specifies a Security Descriptor Definition Language \(SDDL\) string for the configuration.
+Specifies a Security Descriptor Definition Language (SDDL) string for the configuration.
 
 This string determines the permissions that are required to use the new session configuration.
-To use a session configuration in a session, users must have at least "Execute\(Invoke\)" permission for the configuration.
+To use a session configuration in a session, users must have at least "Execute(Invoke)" permission for the configuration.
 
 If the security descriptor is complex, consider using the ShowSecurityDescriptorUI parameter instead of this parameter.
 You cannot use both parameters in the same command.
@@ -475,7 +476,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: The value of the root SDDL
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -500,7 +501,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -522,7 +523,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -530,7 +531,7 @@ Accept wildcard characters: False
 Displays a property sheet that helps you to create the SDDL for the session configuration.
 The property sheet appears after you enter the Register-PSSessionConfiguration command and then restart the WinRM service.
 
-When setting the permissions for the configuration, remember that users must have at least "Execute\(Invoke\)" permission to use the session configuration in a session.
+When setting the permissions for the configuration, remember that users must have at least "Execute(Invoke)" permission to use the session configuration in a session.
 
 You cannot use the SecurityDescriptorSDDL parameter and this parameter in the same command.
 
@@ -542,7 +543,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -551,7 +552,7 @@ Specifies the fully qualified path to a Windows PowerShell script.
 The specified script runs in the new session that uses the session configuration.
 
 You can use the script to further configure the session.
-If the script generates an error \(even a non-terminating error\), the session is not created and the user's New-PSSession command fails.
+If the script generates an error (even a non-terminating error), the session is not created and the user's New-PSSession command fails.
 
 ```yaml
 Type: String
@@ -561,7 +562,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -578,7 +579,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Unknown
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -597,7 +598,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: UseCurrentThread
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -612,7 +613,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -630,7 +631,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -639,7 +640,7 @@ Specifies the modules and snap-ins that are automatically imported into sessions
 
 By default, only the Microsoft.PowerShell.Core snap-in is imported into sessions, but unless the cmdlets are excluded, users can use the Import-Module and Add-PSSnapin cmdlets to add modules and snap-ins to the session.
 
-The modules specified in this parameter value are imported in additions to modules that are specified by the SessionType parameter and those listed in the ModulesToImport key in the session configuration file \(New-PSSessionConfigurationFile\).
+The modules specified in this parameter value are imported in additions to modules that are specified by the SessionType parameter and those listed in the ModulesToImport key in the session configuration file (New-PSSessionConfigurationFile).
 However, settings in the session configuration file can hide the commands exported by modules or prevent users from using them.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -652,7 +653,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Microsoft.PowerShell.Core
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -666,8 +667,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -683,8 +684,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -700,14 +701,12 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
 
-This cmdlet generates XML that represents a Web Services for Management \(WS-Management\) plug-in configuration and sends the XML to WS-Management, which registers the plug-in on the local computer \("new-item wsman:\localhost\plugin"\).
+This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in configuration and sends the XML to WS-Management, which registers the plug-in on the local computer ("new-item wsman:\localhost\plugin").
 
 The properties of a session configuration object vary with the options set for the session configuration and the values of those options.
 Also, session configurations that use a session configuration file have additional properties.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144306)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -732,5 +731,4 @@ Also, session configurations that use a session configuration file have addition
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

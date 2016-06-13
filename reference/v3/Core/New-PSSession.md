@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135237
 schema: 2.0.0
 ---
 
@@ -30,13 +31,13 @@ New-PSSession [[-Session] <PSSession[]>] [-EnableNetworkAccess] [-Name <String[]
 ```
 
 ## DESCRIPTION
-The New-PSSession cmdlet creates a Windows PowerShell session \(PSSession\) on a local or remote computer. 
+The New-PSSession cmdlet creates a Windows PowerShell session (PSSession) on a local or remote computer. 
 When you create a PSSession, Windows PowerShell establishes a persistent connection to the remote computer.
 
 Use a PSSession to run multiple commands that share data, such as a function or the value of a variable.
 To run commands in a PSSession, use the Invoke-Command cmdlet.
 To use the PSSession to interact directly with a remote computer, use the Enter-PSSession cmdlet.
-For more information, see about_PSSessions \(http://go.microsoft.com/fwlink/?LinkID=135181\).
+For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
 
 You can run commands on a remote computer without creating a PSSession by using the ComputerName parameters of Enter-PSSession or Invoke-Command.
 When you use the ComputerName parameter, Windows PowerShell creates a temporary connection that is used for the command and is then closed.
@@ -69,12 +70,12 @@ PS C:\>$s1, $s2, $s3 = New-PSSession -ComputerName Server1,Server2,Server3
 
 This command creates three new PSSessions, one on each of the computers specified by the ComputerName parameter.
 
-The command uses the assignment operator \(=\) to assign the new PSSessions to an array of variables: $s1, $s2, $s3.
+The command uses the assignment operator (=) to assign the new PSSessions to an array of variables: $s1, $s2, $s3.
 It assigns the Server01 PSSession to $s1, the Server02 PSSession to $s2, and the Server03 PSSession to $s3.
 
 When you assign multiple objects to an array of variables, Windows PowerShell assigns each object to a variable in the array respectively.
 If there are more objects than variables, all remaining objects are assigned to the last variable.
-If there are more variables than objects, the remaining variables are empty \(null\).
+If there are more variables than objects, the remaining variables are empty (null).
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -149,7 +150,7 @@ The command saves the PSSessions in the $s variable.
 
 The second command uses the AsJob parameter of the Invoke-Command cmdlet to start a background job that runs a "Get-Process PowerShell" command in each of the PSSessions in $s.
 
-For more information about background jobs, see about_Jobs \(http://go.microsoft.com/fwlink/?LinkID=113251\) and about_Remote_Jobs \(http://go.microsoft.com/fwlink/?LinkID=135184\).
+For more information about background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
@@ -176,7 +177,7 @@ The value of the SessionOption parameter is the SessionOption object in the $so 
 ## PARAMETERS
 
 ### -AllowRedirection
-Allows redirection of this connection to an alternate Uniform Resource Identifier \(URI\).
+Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the ConnectionURI parameter, the remote destination can return an instruction to redirect to a different URI.
 By default, Windows PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
@@ -193,7 +194,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -204,7 +205,7 @@ Use this parameter to specify the application name when you are not using the Co
 The default value is the value of the $PSSessionApplicationName preference variable on the local computer.
 If this preference variable is not defined, the default value is "WSMAN".
 This value is appropriate for most uses.
-For more information, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the URLPrefix property of a listener on the remote computer.
@@ -226,9 +227,9 @@ Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "Default", "Basic", "Credssp", "Digest", "Kerberos", "Negotiate", and "NegotiateWithImplicitCredential". 
 The default value is "Default".
 
-For more information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For more information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkID=144382.
 
-Caution: Credential Security Support Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -240,12 +241,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action.
+Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication.
@@ -261,23 +262,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Creates a persistent connection \(PSSession\) to the specified computer.
+Creates a persistent connection (PSSession) to the specified computer.
 If you enter multiple computer names, New-PSSession creates multiple PSSessions, one for each computer.
 The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote computers.
-To specify the local computer, type the computer name, "localhost", or a dot \(.\).
+To specify the local computer, type the computer name, "localhost", or a dot (.).
 When the computer is in a different domain than the user, the fully qualified domain name is required.
-You can also pipe a computer name \(in quotes\) to New-PSSession.
+You can also pipe a computer name (in quotes) to New-PSSession.
 
 To use an IP address in the value of the ComputerName parameter, the command must include the Credential parameter.
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
-For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting \(http://go.microsoft.com/fwlink/?LinkID=135188\).
+For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting (http://go.microsoft.com/fwlink/?LinkID=135188).
 
 Note:  To include the local computer in the value of the ComputerName parameter, start Windows PowerShell with the "Run as administrator" option.
 
@@ -296,7 +297,7 @@ Accept wildcard characters: False
 ### -ConfigurationName
 Specifies the session configuration that is used for the new PSSession.
 
-Enter a configuration name or the fully qualified resource Uniform Resource Identifier \(URI\) for a session configuration.
+Enter a configuration name or the fully qualified resource Uniform Resource Identifier (URI) for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:  http://schemas.microsoft.com/PowerShell.
 
 The session configuration for a session is located on the remote computer.
@@ -304,7 +305,7 @@ If the specified session configuration does not exist on the remote computer, th
 
 The default value is the value of the $PSSessionConfigurationName preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ```yaml
 Type: String
@@ -319,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
-Specifies a Uniform Resource Identifier \(URI\) that defines the connection endpoint for the session.
+Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the session.
 The URI must be fully qualified. 
 The format of this string is as follows:
 
@@ -344,7 +345,7 @@ Aliases: URI,CU
 
 Required: True
 Position: 1
-Default value: http://localhost:5985/WSMAN
+Default value: Http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -384,7 +385,7 @@ If you use the EnableNetworkAccess parameter when creating a session on a remote
 
 You can also allow remote access in a loopback session by using the CredSSP value of the Authentication parameter, which delegates the session credentials to other computers.
 
-To protect the computer from malicious access, disconnected loopback sessions that have interactive tokens \(those created with the EnableNetworkAccess parameter\) can be reconnected only from the computer on which the session was created.
+To protect the computer from malicious access, disconnected loopback sessions that have interactive tokens (those created with the EnableNetworkAccess parameter) can be reconnected only from the computer on which the session was created.
 Disconnected sessions that use CredSSP authentication can be reconnected from other computers.
 For more information, see Disconnect-PSSession.
 
@@ -398,7 +399,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -416,14 +417,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Session<n>
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Port
 Specifies the network port on the remote computer that is used for this connection. 
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
-The default ports are 5985 \(the WinRM port for HTTP\) and 5986 \(the WinRM port for HTTPS\).
+The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 Use the following commands to configure the listener:
@@ -446,7 +447,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 80
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -456,7 +457,7 @@ This parameter creates new PSSessions with the same properties as the specified 
 
 Enter a variable that contains the PSSessions or a command that creates or gets the PSSessions, such as a New-PSSession or Get-PSSession command.
 
-The resulting PSSessions have the same computer name, application name, connection URI, port, configuration name, throttle limit, and Secure Sockets Layer \(SSL\) value as the originals, but they have a different display name, ID, and instance ID \(GUID\).
+The resulting PSSessions have the same computer name, application name, connection URI, port, configuration name, throttle limit, and Secure Sockets Layer (SSL) value as the originals, but they have a different display name, ID, and instance ID (GUID).
 
 ```yaml
 Type: PSSession[]
@@ -481,8 +482,8 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
 Type: PSSessionOption
@@ -492,13 +493,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0  \(zero\), the default value, 32, is used.
+If you omit this parameter or enter a value of 0  (zero), the default value, 32, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -510,12 +511,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 32
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Uses the Secure Sockets Layer \(SSL\) protocol to establish a connection to the remote computer.
+Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
@@ -531,14 +532,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
-You can pipe a computer name \(string\), ConnectionURI \(URI\), or session \(PSSession\) object to New-PSSession.
+You can pipe a computer name (string), ConnectionURI (URI), or session (PSSession) object to New-PSSession.
 
 ## OUTPUTS
 
@@ -547,15 +548,13 @@ You can pipe a computer name \(string\), ConnectionURI \(URI\), or session \(PSS
 ## NOTES
 This cmdlet uses the Windows PowerShell remoting infrastructure.
 To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting.
-For more information, see about_Remote_Requirements \(http://go.microsoft.com/fwlink/?LinkID=135187\).
+For more information, see about_Remote_Requirements (http://go.microsoft.com/fwlink/?LinkID=135187).
 
 To create a PSSession on the local computer, start Windows PowerShell with the "Run as administrator" option.
 
 When you are finished with the PSSession, use the Remove-PSSession cmdlet to delete the PSSession and release its resources.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135237)
 
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
@@ -576,5 +575,4 @@ When you are finished with the PSSession, use the Remove-PSSession cmdlet to del
 [about_PSSessions](7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-
 

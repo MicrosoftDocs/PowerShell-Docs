@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223913
 schema: 2.0.0
 ---
 
@@ -63,7 +64,7 @@ PS C:\>Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
 
 This command adds an AtStartup job trigger to all scheduled jobs on the local computer.
 It uses the Get-ScheduledJob to get all of the scheduled jobs on the computer.
-It uses a pipeline operator \(|\) to send the jobs to the Add-JobTrigger cmdlet, which adds the job trigger to each of the scheduled jobs.
+It uses a pipeline operator (|) to send the jobs to the Add-JobTrigger cmdlet, which adds the job trigger to each of the scheduled jobs.
 The value of the Trigger parameter is a New-JobTrigger command that creates the AtStartup job trigger.
 
 ### Example 3: Copy a job trigger
@@ -96,7 +97,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -113,7 +114,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -132,7 +133,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -149,7 +150,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -166,8 +167,6 @@ This cmdlet does not return any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223913)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -202,5 +201,4 @@ This cmdlet does not return any output.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

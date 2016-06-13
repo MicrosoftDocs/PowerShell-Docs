@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113317
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Beginning in Windows PowerShell 3.0, the default value is 4096.
 You can save the session history in XML or CSV format.
 By default, history files are saved in the home directory, but you can save the file in any location.
 
-For more information about the history features in Windows PowerShell, see about_History \(http://go.microsoft.com/fwlink/?LinkID=113233\).
+For more information about the history features in Windows PowerShell, see about_History (http://go.microsoft.com/fwlink/?LinkID=113233).
 
 ## EXAMPLES
 
@@ -42,7 +43,7 @@ PS C:\>Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 
 This command gets entries in the command history that include "service".
 The first command gets all entries in the session history.
-The pipeline operator \(|\) passes the results to the Where-Object cmdlet, which selects only the commands that include "service".
+The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects only the commands that include "service".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -50,7 +51,7 @@ PS C:\>Get-History -ID 7 -Count 5 | Export-Csv History.csv
 ```
 
 This command gets the five most recent history entries ending with entry 7.
-The pipeline operator \(|\) passes the result to the Export-Csv cmdlet, which formats the history as comma-separated text and saves it in the History.csv file.
+The pipeline operator (|) passes the result to the Export-Csv cmdlet, which formats the history as comma-separated text and saves it in the History.csv file.
 The file includes the data that is displayed when you format the history as a list, including the status and start and end times of the command.
 
 ### -------------------------- EXAMPLE 4 --------------------------
@@ -58,7 +59,7 @@ The file includes the data that is displayed when you format the history as a li
 PS C:\>Get-History -Count 1
 ```
 
-This command gets the last \(most recently entered\) command in the command history.
+This command gets the last (most recently entered) command in the command history.
 It uses the Count parameter to display just one command.
 By default, Get-History gets the most recent commands.
 This command can be abbreviated to "h -c 1" and is equivalent to pressing the up-arrow key.
@@ -69,7 +70,7 @@ PS C:\>Get-History | Format-List -Property *
 ```
 
 This command displays all of the properties of entries in the session history.
-The pipeline operator \(|\) passes the results of a Get-History command to the Format-List cmdlet, which displays all of the properties of each history entry, including the ID, status, and start and end times of the command.
+The pipeline operator (|) passes the results of a Get-History command to the Format-List cmdlet, which displays all of the properties of each history entry, including the ID, status, and start and end times of the command.
 
 ## PARAMETERS
 
@@ -88,7 +89,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -105,7 +106,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -123,15 +124,13 @@ Get-History returns a history object for each history item that it gets.
 The session history is a list of the commands entered during the session.
 The session history represents the order of execution, the status, and the start and end times of the command.
 As you enter each command, Windows PowerShell adds it to the history so that you can reuse it.
-For more information about the command history, see about_History \(http://go.microsoft.com/fwlink/?LinkID=113233\).
+For more information about the command history, see about_History (http://go.microsoft.com/fwlink/?LinkID=113233).
 
 Beginning in Windows PowerShell 3.0, the default value of the $MaximumHistoryCount preference variable is 4096.
 In Windows PowerShell 2.0, the default value is 64.
-For more information about the $MaximumHistoryCount variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about the $MaximumHistoryCount variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113317)
 
 [Add-History](cf476753-0b6d-405d-aab5-9b4488f18390)
 
@@ -140,5 +139,4 @@ For more information about the $MaximumHistoryCount variable, see about_Preferen
 [Invoke-History](cc0f7984-a1f9-445c-99ba-be39a502fe01)
 
 [about_History](46fa1b2e-c079-4e94-a87e-511ee50b347a)
-
 

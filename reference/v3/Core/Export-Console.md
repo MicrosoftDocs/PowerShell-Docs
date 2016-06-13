@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113298
 schema: 2.0.0
 ---
 
@@ -14,10 +15,10 @@ Export-Console [[-Path] <String>] [-Force] [-NoClobber] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
-The Export-Console cmdlet exports the names of the Windows PowerShell snap-ins in the current session to a Windows PowerShell console file \(.psc1\).
+The Export-Console cmdlet exports the names of the Windows PowerShell snap-ins in the current session to a Windows PowerShell console file (.psc1).
 You can use this cmdlet to save the snap-ins for use in future sessions.
 
-To add the snap-ins in the .psc1 console file to a session, start Windows PowerShell \(Powershell.exe\) at the command line by using Cmd.exe or another Windows PowerShell session, and then use the PSConsoleFile parameter of Powershell.exe to specify the console file.
+To add the snap-ins in the .psc1 console file to a session, start Windows PowerShell (Powershell.exe) at the command line by using Cmd.exe or another Windows PowerShell session, and then use the PSConsoleFile parameter of Powershell.exe to specify the console file.
 
 For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 
@@ -114,12 +115,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Will not overwrite \(replace the contents of\) an existing console file.
+Will not overwrite (replace the contents of) an existing console file.
 By default, if a file exists in the specified path, Export-Console overwrites the file without warning.
 
 ```yaml
@@ -130,13 +131,13 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies a path and file name for the console file \(*.psc1\).
-Enter a path \(optional\) and name.
+Specifies a path and file name for the console file (*.psc1).
+Enter a path (optional) and name.
 Wildcards are not permitted.
 
 If you type only a file name, Export-Console creates a file with that name and the ".psc1" file name extension in the current directory.
@@ -144,7 +145,7 @@ If you type only a file name, Export-Console creates a file with that name and t
 This parameter is required unless you have opened Windows PowerShell with the PSConsoleFile parameter or exported a console file during the current session.
 It is also required when you use the NoClobber parameter to prevent the current console file from being overwritten.
 
-If you omit this parameter, Export-Console overwrites \(replaces the content of\) the console file that was used most recently in this session.
+If you omit this parameter, Export-Console overwrites (replaces the content of) the console file that was used most recently in this session.
 The path to the most recently used console file is stored in the value of the $ConsoleFileName automatic variable.
 For more information, see about_Automatic_Variables.
 
@@ -156,7 +157,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -170,8 +171,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -187,8 +188,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -203,9 +204,9 @@ You can pipe a path string to Export-Console.
 Export-Console creates a file that contains the exported aliases.
 
 ## NOTES
-When a console file \(.psc1\) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. 
+When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. 
 The value of $ConsoleFileName is updated when you use the Path parameter of Export-Console to specify a new console file.
-When no console file is used, $ConsoleFileName has no value \($null\).
+When no console file is used, $ConsoleFileName has no value ($null).
 
 To use a Windows PowerShell console file in a new session, use the following syntax to start Windows PowerShell:
 
@@ -216,12 +217,9 @@ For more information, see about_Profiles.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113298)
-
 [Add-PSSnapin](4125e0dc-d3c1-494f-87e1-4918df7d0f84)
 
 [Get-PSSnapin](f2561ac4-9ef9-4b8b-95ca-8bfc5f51784d)
 
 [Remove-PSSnapin](4f10ad2d-8da1-49b7-ad20-7bbc254042f2)
-
 

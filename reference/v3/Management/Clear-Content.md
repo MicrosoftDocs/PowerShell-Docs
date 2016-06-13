@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113282
 schema: 2.0.0
 ---
 
@@ -42,7 +43,7 @@ PS C:\>clear-content -path * -filter *.log -force
 ```
 
 This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.
-The asterisk \(*\) in the path represents all items in the current directory.
+The asterisk (*) in the path represents all items in the current directory.
 The Force parameter makes the command effective on read-only files.
 Using a filter to restrict the command to files with the ".log" file name extension instead of specifying "*.log" in the path makes the operation faster.
 
@@ -74,7 +75,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -92,7 +93,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -110,7 +111,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -128,7 +129,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -146,7 +147,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -165,7 +166,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -175,7 +176,7 @@ Wildcards are permitted.
 The paths must be paths to items, not to containers.
 For example, you must specify a path to one or more files, not a path to a directory.
 Wildcards are permitted.
-This parameter is required, but the parameter name \("Path"\) is optional.
+This parameter is required, but the parameter name ("Path") is optional.
 
 ```yaml
 Type: String[]
@@ -185,7 +186,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -199,8 +200,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -216,15 +217,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -235,8 +236,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -267,8 +268,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113282)
-
 [Add-Content](fcff151c-88d1-4b84-a9a9-8e3b1a155413)
 
 [Get-Content](4d594e54-2c28-4052-b3f8-1c27ea724561)
@@ -278,5 +277,4 @@ For more information, see about_Providers.
 [Set-Content](a8b56d7e-cebd-4049-9184-62926ef448e2)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

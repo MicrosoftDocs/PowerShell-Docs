@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113386
 schema: 2.0.0
 ---
 
 # Resume-Service
 ## SYNOPSIS
-Resumes one or more suspended \(paused\) services.
+Resumes one or more suspended (paused) services.
 
 ## SYNTAX
 
@@ -37,7 +38,7 @@ You can specify the services by their service names or display names, or you can
 PS C:\>resume-service sens
 ```
 
-This command resumes the System Event Notification service \(the service name is represented in the command by "sens"\) on the local computer.
+This command resumes the System Event Notification service (the service name is represented in the command by "sens") on the local computer.
 The command uses the Name parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.
 
 ### -------------------------- EXAMPLE 2 --------------------------
@@ -45,9 +46,9 @@ The command uses the Name parameter to specify the service name of the service, 
 PS C:\>get-service | where-object {$_.Status -eq "Paused"} | resume-service
 ```
 
-This command resumes all of the suspended \(paused\) services on the computer.
+This command resumes all of the suspended (paused) services on the computer.
 The first command gets all of the services on the computer.
-The pipeline operator \(|\) passes the results to the Where-Object cmdlet, which selects the services with a Status property of "Paused".
+The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects the services with a Status property of "Paused".
 The next pipeline operator sends the results to Resume-Service, which resumes the paused services.
 
 In practice, you would use the WhatIf parameter to determine the effect of the command before running it without WhatIf.
@@ -66,7 +67,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -84,7 +85,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -102,7 +103,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -118,7 +119,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -136,7 +137,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName, ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -179,8 +180,6 @@ The service names appear in the Name column, and the display names appear in the
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113386)
-
 [Get-Service](77f3c94b-6ffd-4906-8216-3debbf5ffe79)
 
 [New-Service](ad24021a-4603-4c9c-bd20-8f9bdde123fa)
@@ -194,5 +193,4 @@ The service names appear in the Name column, and the display names appear in the
 [Stop-Service](58033475-759b-42e4-9395-c077aa55934e)
 
 [Suspend-Service](5b8bd69a-0a18-4478-b257-d442ddef417c)
-
 

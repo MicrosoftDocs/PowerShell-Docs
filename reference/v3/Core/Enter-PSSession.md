@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135210
 schema: 2.0.0
 ---
 
@@ -97,7 +98,7 @@ PS C:\>Enter-PSSession -Session $s
 [Server01]: PS C:\>
 ```
 
-These commands use the Session parameter of Enter-PSSession to run the interactive session in an existing Windows PowerShell session \(PSSession\).
+These commands use the Session parameter of Enter-PSSession to run the interactive session in an existing Windows PowerShell session (PSSession).
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -125,7 +126,7 @@ Exit-PSSession and Exit have the same effect.
 ## PARAMETERS
 
 ### -AllowRedirection
-Allows redirection of this connection to an alternate Uniform Resource Identifier \(URI\).
+Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 By default, redirection is not allowed.
 
 When you use the ConnectionURI parameter, the remote destination can return an instruction to redirect to a different URI.
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,9 +179,9 @@ The default value is "Default".
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkId=144382.
+For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=144382.
 
-Caution: Credential Security Support Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -192,12 +193,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action.
+Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication.
@@ -213,7 +214,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -269,7 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
-Specifies a Uniform Resource Identifier \(URI\) that defines the connection endpoint for the session.
+Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the session.
 The URI must be fully qualified. 
 The format of this string is as follows:
 
@@ -294,7 +295,7 @@ Aliases: URI,CU
 
 Required: False
 Position: 2
-Default value: http://localhost:80/WSMAN
+Default value: Http://localhost:80/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -344,7 +345,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -412,7 +413,7 @@ Accept wildcard characters: False
 ### -Port
 Specifies the network port  on the remote computer used for this command.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
-The default ports are 5985 \(the WinRM port for HTTP\) and 5986 \(the WinRM port for HTTPS\).
+The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 Use the following commands to configure the listener:
@@ -435,12 +436,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5985, 5986
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Session
-Specifies a Windows PowerShell session \(PSSession\) to use for the interactive session.
+Specifies a Windows PowerShell session (PSSession) to use for the interactive session.
 This parameter takes a session object.
 You can also use the Name, InstanceID, or ID parameters to specify a PSSession.
 
@@ -474,8 +475,8 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
 Type: PSSessionOption
@@ -485,12 +486,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Uses the Secure Sockets Layer \(SSL\) protocol to establish a connection to the remote computer.
+Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
@@ -506,14 +507,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String or System.Management.Automation.Runspaces.PSSession
-You can pipe a computer name \(a string\) or a session object to Enter-PSSession.
+You can pipe a computer name (a string) or a session object to Enter-PSSession.
 
 ## OUTPUTS
 
@@ -542,8 +543,6 @@ To cancel the Enter-PSSession command, press CTRL+C.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135210)
-
 [Exit-PSSession](f13cbf38-6bd1-4db3-9ef8-52388237adc7)
 
 [Get-PSSession](b2b10531-d0df-4746-b877-e75c09955cb6)
@@ -563,5 +562,4 @@ To cancel the Enter-PSSession command, press CTRL+C.
 [about_PSSessions](7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-
 

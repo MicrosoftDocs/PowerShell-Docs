@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113368
 schema: 2.0.0
 ---
 
@@ -27,7 +28,7 @@ PS C:\>get-content C:\test1\testfile2.txt | out-string
 
 This command sends the content of the Testfile2.txt file to the console as a single string.
 It uses the Get-Content cmdlet to get the content of the file.
-The pipeline operator \(|\) sends the content to Out-String, which sends the content to the console as a string.
+The pipeline operator (|) sends the content to Out-String, which sends the content to the console as a string.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -47,9 +48,9 @@ PS C:\>get-alias | out-string -stream | select-string "Get-Command"
 
 This example demonstrates the difference between working with objects and working with strings.
 The command displays aliases that include the phrase "Get-Command".
-It uses the Get-Alias cmdlet to get a set of AliasInfo objects \(one for each alias in the current session\).
+It uses the Get-Alias cmdlet to get a set of AliasInfo objects (one for each alias in the current session).
 
-The pipeline operator \(|\) sends the output of the Get-Alias cmdlet to the Out-String cmdlet, which converts the objects to a series of strings.
+The pipeline operator (|) sends the output of the Get-Alias cmdlet to the Out-String cmdlet, which converts the objects to a series of strings.
 It uses the Stream parameter of Out-String to send each string individually, instead of concatenating them into a single string.
 Another pipeline operator sends the strings to the Select-String cmdlet, which selects the strings that include "Get-Command" anywhere in the string.
 
@@ -69,7 +70,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -87,7 +88,7 @@ Aliases: ost
 Required: False
 Position: Named
 Default value: Single string
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -95,7 +96,7 @@ Accept wildcard characters: False
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
 If you omit this parameter, the width is determined by the characteristics of the host program.
-The default value for the Windows PowerShell console is 80 \(characters\).
+The default value for the Windows PowerShell console is 80 (characters).
 
 ```yaml
 Type: Int32
@@ -105,7 +106,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 80
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -120,17 +121,15 @@ You can pipe objects to Out-String.
 Out-String returns the string that it creates from the input object.
 
 ## NOTES
-The cmdlets that contain the Out verb \(the Out cmdlets\) do not format objects; they just render them and send them to the specified display destination.
+The cmdlets that contain the Out verb (the Out cmdlets) do not format objects; they just render them and send them to the specified display destination.
 If you send an unformatted object to an Out cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
 The Out cmdlets do not have parameters that take  names or file paths.
-To send data to an Out cmdlet, use a pipeline operator \(|\) to send the output of a Windows PowerShell command to the cmdlet.
+To send data to an Out cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet.
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For more information, see the examples.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113368)
 
 [Out-Default](00000000-0000-0000-0000-000000000000)
 
@@ -141,5 +140,4 @@ For more information, see the examples.
 [Out-Null](00000000-0000-0000-0000-000000000000)
 
 [Out-Printer](22e377d5-b533-442f-987e-b3166bddcd6b)
-
 

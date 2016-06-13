@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113366
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ This is useful for deleting output that you do not need.
 ## PARAMETERS
 
 ### -InputObject
-Specifies the object that was sent to null \(deleted\).
+Specifies the object that was sent to null (deleted).
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
@@ -40,7 +41,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -55,8 +56,8 @@ You can pipe any object to Out-Null.
 Out-Null does not generate any output.
 
 ## NOTES
-The cmdlets that contain the Out verb \(the Out cmdlets\) do not have parameters for names or file paths.
-To send data to an Out cmdlet, use a pipeline operator \(|\) to send the output of a Windows PowerShell command to the cmdlet.
+The cmdlets that contain the Out verb (the Out cmdlets) do not have parameters for names or file paths.
+To send data to an Out cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet.
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For more information, see the examples.
 
@@ -64,8 +65,6 @@ Out-Null does not return any output objects.
 If you pipe the output of Out-Null to the Get-Member cmdlet, Get-Member reports that no objects have been specified.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113366)
 
 [Out-Default](9848a107-ddc0-40a1-b759-5ac181c1d0cf)
 
@@ -76,5 +75,4 @@ If you pipe the output of Out-Null to the Get-Member cmdlet, Get-Member reports 
 [Out-Printer](00000000-0000-0000-0000-000000000000)
 
 [Out-String](00000000-0000-0000-0000-000000000000)
-
 

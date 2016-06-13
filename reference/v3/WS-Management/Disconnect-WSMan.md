@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141439
 schema: 2.0.0
 ---
 
@@ -46,13 +47,13 @@ Those connections will not appear in the ComputerName list.
 ### -ComputerName
 Specifies the computer from which you want to disconnect.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
-Use the local computer name, use localhost, or use a dot \(.\) to specify the local computer.
+Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
 The local computer is the default.
 When the remote computer is in a different domain from the user, you must use a fully qualified domain name must be used.
 You can pipe a value for this parameter to the cmdlet.
 
-Note: You cannot disconnect from the local host \(the default connection to the local computer\).
-However, if a separate connection is made to the local computer \(for example, by using the computer name\), you can remove that connection by using the Disconnect-WSMan cmdlet .
+Note: You cannot disconnect from the local host (the default connection to the local computer).
+However, if a separate connection is made to the local computer (for example, by using the computer name), you can remove that connection by using the Disconnect-WSMan cmdlet .
 
 ```yaml
 Type: String
@@ -61,8 +62,8 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: localhost
-Accept pipeline input: false
+Default value: Localhost
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -79,8 +80,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141439)
 
 [Connect-WSMan](74e46714-497f-4306-be84-109ab5b654cc)
 
@@ -105,5 +104,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

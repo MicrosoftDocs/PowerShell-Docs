@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113449
 schema: 2.0.0
 ---
 
@@ -65,7 +66,7 @@ ScriptName : C:\ps-test\sample.ps1
 This command sets a breakpoint at line 5 in the Sample.ps1 script.
 As a result, when the script runs, execution stops immediately before line 5 would execute.
 
-When you set a new breakpoint by line number, the Set-PSBreakpoint cmdlet generates a line breakpoint object \(System.Management.Automation.LineBreakpoint\) that includes the breakpoint ID and hit count, as shown in the following sample output.
+When you set a new breakpoint by line number, the Set-PSBreakpoint cmdlet generates a line breakpoint object (System.Management.Automation.LineBreakpoint) that includes the breakpoint ID and hit count, as shown in the following sample output.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -112,7 +113,7 @@ It uses the Set-PSBreakpoint cmdlet to set a command breakpoint on the DiskTest 
 The value of the action is a script block that tests the value of the $disk variable in the function.
 
 The action uses the BREAK keyword to stop execution if the condition is met.
-The alternative \(and the default\) is CONTINUE.
+The alternative (and the default) is CONTINUE.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -198,7 +199,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Stop at the breakpoint
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -211,7 +212,7 @@ The Column value is used with the value of the Line parameter to specify the bre
 If the Line parameter specifies multiple lines, the Column parameter sets a breakpoint at the specified column on each of the specified lines.
 Windows PowerShell stops executing before the statement or expression that includes the character at the specified line and column position.
 
-Columns are counted from the top left margin beginning with column number 1 \(not 0\).
+Columns are counted from the top left margin beginning with column number 1 (not 0).
 If you specify a column that does not exist in the script, an error is not declared, but the breakpoint is never executed.
 
 ```yaml
@@ -222,7 +223,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -242,7 +243,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -251,7 +252,7 @@ Sets a line breakpoint in a script.
 Enter one or more line numbers, separated by commas.
 Windows PowerShell stops immediately before executing the statement that begins on each of the specified lines.
 
-Lines are counted from the top left margin of the script file beginning with line number 1 \(not 0\).
+Lines are counted from the top left margin of the script file beginning with line number 1 (not 0).
 If you specify a blank line, execution stops before the next non-blank line.
 If the line is out of range, the breakpoint is never hit.
 
@@ -263,7 +264,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -288,7 +289,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Write
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -309,7 +310,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -321,13 +322,13 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -Variable
 Sets a variable breakpoint.
-Enter a comma-separated list of variables without dollar signs \($\).
+Enter a comma-separated list of variables without dollar signs ($).
 
 Use the Mode parameters to determine the mode of access that triggers the breakpoints.
 The default mode, Write, stops execution just before a new value is written to the variable.
@@ -340,7 +341,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -364,8 +365,6 @@ When setting a breakpoint on a function or variable at the command prompt, you c
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113449)
-
 [Disable-PSBreakpoint](d4974e9b-0aaa-4e20-b87f-f599a413e4e8)
 
 [Enable-PSBreakpoint](739e1091-3b3f-405f-a428-bec7543e5df0)
@@ -377,5 +376,4 @@ When setting a breakpoint on a function or variable at the command prompt, you c
 [Remove-PSBreakpoint](4c877a80-0ea0-4790-9281-88c08ef0ddd6)
 
 [about_Debuggers]()
-
 

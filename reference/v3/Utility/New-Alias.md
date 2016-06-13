@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113352
 schema: 2.0.0
 ---
 
@@ -54,7 +55,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -69,7 +70,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -85,7 +86,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -94,7 +95,7 @@ Sets the value of the Options property of the alias.
 
 Valid values are:
 
--- None: Sets no options. \("None" is the default.\)
+-- None: Sets no options. ("None" is the default.)
 -- ReadOnly: Can be deleted. Cannot be not changed, except by using the Force parameter.
 -- Constant: Cannot be deleted or changed.
 -- Private: The alias is available only in the current scope.
@@ -110,7 +111,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -126,13 +127,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies the scope of the new alias.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -144,7 +145,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -159,7 +160,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -173,8 +174,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -190,8 +191,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -213,8 +214,6 @@ To delete an alias, use Remove-Item.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113352)
-
 [Export-Alias](f2ebfdac-0af9-4bf1-bef9-2b612381f3e6)
 
 [Get-Alias](c5703118-f617-4535-afc3-e6e64f333856)
@@ -222,5 +221,4 @@ To delete an alias, use Remove-Item.
 [Import-Alias](c4368ff1-c02a-47aa-b5c0-80503a20b4da)
 
 [Set-Alias](b77236fb-e34f-4ac9-b8f7-9682dcb08593)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141557
 schema: 2.0.0
 ---
 
@@ -14,12 +15,12 @@ Test-ModuleManifest [-Path] <String>
 ```
 
 ## DESCRIPTION
-The Test-ModuleManifest cmdlet verifies that the files that are listed in the module manifest \(.psd1\) file actually exist in the specified paths.
+The Test-ModuleManifest cmdlet verifies that the files that are listed in the module manifest (.psd1) file actually exist in the specified paths.
 
 This cmdlet is designed to help module authors test their manifest files.
 Module users can also use this cmdlet in scripts and commands to detect errors before running scripts that depend on the module.
 
-The Test-ModuleManifest cmdlet returns an object that represents the module \(the same type of object that Get-Module returns\).
+The Test-ModuleManifest cmdlet returns an object that represents the module (the same type of object that Get-Module returns).
 If any files are not in the locations specified in the manifest, the cmdlet also generates an error for each missing file.
 
 ## EXAMPLES
@@ -58,7 +59,7 @@ ExportedVariables : {}
 NestedModules     : {}
 ```
 
-This command uses a pipeline operator \(|\) to send a path string to Test-ModuleManifest.
+This command uses a pipeline operator (|) to send a path string to Test-ModuleManifest.
 
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
 
@@ -70,13 +71,13 @@ PS C:\>function Test-ManifestBool ($path)
 
 This function is like Test-ModuleManifest, but it returns a Boolean value;  it returns "True" if the manifest passed the test and "False" otherwise.
 
-The function uses the Get-ChildItem cmdlet \(alias = dir\) to get the module manifest specified by the $path variable.
-It uses a pipeline operator \(|\) to pass the file object to the Test-ModuleManifest cmdlet.
+The function uses the Get-ChildItem cmdlet (alias = dir) to get the module manifest specified by the $path variable.
+It uses a pipeline operator (|) to pass the file object to the Test-ModuleManifest cmdlet.
 
 The Test-ModuleManifest command uses the ErrorAction common parameter with a value of SilentlyContinue to suppress the display of any errors that the command generates.
 It also saves the PSModuleInfo object that Test-ModuleManifest returns in the $a variable, so the object is not displayed.
 
-Then, in a separate command \(the semi-colon \[;\] is the command separator\), it displays the value of the $?
+Then, in a separate command (the semi-colon \[;\] is the command separator), it displays the value of the $?
 automatic variable, which returns "True" if the previous command generated no error and "False" otherwise.
 
 You can use this function in conditional statements, such as those that might precede an Import-Module command or a command that uses the module.
@@ -85,11 +86,11 @@ You can use this function in conditional statements, such as those that might pr
 
 ### -Path
 Specifies the path to the module manifest file. 
-Enter a path \(optional\) and the name of the module manifest file with the .psd1 file name extension.
+Enter a path (optional) and the name of the module manifest file with the .psd1 file name extension.
 The default location is the current directory.
 Wildcards are supported, but must resolve to a single module manifest file.
 This parameter is required.
-The parameter name \("Path"\) is optional.
+The parameter name ("Path") is optional.
 You can also pipe a path to Test-ModuleManifest.
 
 ```yaml
@@ -100,7 +101,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -119,8 +120,6 @@ It returns this object even if the manifest has errors.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141557)
-
 [Export-ModuleMember](cbad7943-ded7-4311-9956-da867ad7233c)
 
 [Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
@@ -134,5 +133,4 @@ It returns this object even if the manifest has errors.
 [Remove-Module](c0968566-4d7e-49e9-82b9-e4df1f489267)
 
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
-
 

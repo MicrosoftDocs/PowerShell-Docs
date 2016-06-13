@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113288
 schema: 2.0.0
 ---
 
@@ -22,7 +23,7 @@ When used in a DATA section, the contents of the string must conform to the rule
 For more information, see about_Data_Sections.
 
 ConvertFrom-StringData supports escape character sequences that are allowed by conventional machine translation tools.
-That is, the cmdlet can interpret backslashes \(\\\) as escape characters in the string data by using the Regex.Unescape Methodhttp://msdn.microsoft.com/library/vstudio/system.text.regularexpressions.regex.unescape\(v=vs.100\).aspx, instead of the Windows PowerShell backtick character \(\`\) that would normally signal the end of a line in a script.
+That is, the cmdlet can interpret backslashes (\\) as escape characters in the string data by using the Regex.Unescape Methodhttp://msdn.microsoft.com/library/vstudio/system.text.regularexpressions.regex.unescape(v=vs.100).aspx, instead of the Windows PowerShell backtick character (\`) that would normally signal the end of a line in a script.
 Inside the here-string, the backtick character does not work.
 You can also preserve a literal backslash in your results by escaping it with a preceding backslash, like this:  \\\\.
 Unescaped backslash characters, such as those that are commonly used in file paths, can render as illegal escape sequences in your results.
@@ -78,14 +79,14 @@ These commands demonstrate that ConvertFrom-StringData actually converts a here-
 
 The first command creates a double-quoted here-string that includes one key/value" pair and saves it in the $p variable.
 
-The second command uses a pipeline operator \(|\) to send the $p variable to the Get-Member cmdlet.
-The result shows that $p is a string \(System.String\).
+The second command uses a pipeline operator (|) to send the $p variable to the Get-Member cmdlet.
+The result shows that $p is a string (System.String).
 
 The third command uses the ConvertFrom-StringData cmdlet to convert the here-string in $p to a hash table.
 The command stores the result in the $hash variable.
 
-The final command uses a pipeline operator \(|\) to send the $hash variable to the Get-Member cmdlet.
-The result shows that the content of the $hash variable is a hash table \(System.Collections.Hashtable\).
+The final command uses a pipeline operator (|) to send the $hash variable to the Get-Member cmdlet.
+The result shows that the content of the $hash variable is a hash table (System.Collections.Hashtable).
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -122,9 +123,9 @@ PS C:\>"Bottom = " + $a.Bottom
 Bottom = Blue
 ```
 
-This example converts a regular double-quoted string \(not a here-string\) into a hash table and saves it in the $a variable.
+This example converts a regular double-quoted string (not a here-string) into a hash table and saves it in the $a variable.
 
-To satisfy the condition that each key/value pair must be on a separate line, it uses the Windows PowerShell newline character \(\`n\) to separate the pairs.
+To satisfy the condition that each key/value pair must be on a separate line, it uses the Windows PowerShell newline character (\`n) to separate the pairs.
 
 The result is a hash table of the input.
 The remaining commands display the output.
@@ -166,10 +167,10 @@ Msg2     Credentials are required for this command.
 Msg1     The string parameter is required.
 ```
 
-This example shows that you can use a pipeline operator \(|\) to send a string to ConvertFrom-StringData.
+This example shows that you can use a pipeline operator (|) to send a string to ConvertFrom-StringData.
 
 The first command saves a here-string in the $here variable.
-The second command uses a pipeline operator \(|\) to send the $here variable to ConvertFrom-StringData.
+The second command uses a pipeline operator (|) to send the $here variable to ConvertFrom-StringData.
 The command saves the result in the $hash variable.
 
 The final command displays the contents of the $hash variable.
@@ -195,7 +196,7 @@ Value : Heaven doth with us as we with torches do,
 ```
 
 This example shows the use of escape characters to create new lines and return characters in ConvertFrom-StringData.
-In this example, the escape sequence \n is used to create new lines within a block of text \(the value, in the resulting hash table\) that is associated with a name or item \(the name, in the resulting hash table\).
+In this example, the escape sequence \n is used to create new lines within a block of text (the value, in the resulting hash table) that is associated with a name or item (the name, in the resulting hash table).
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
@@ -215,8 +216,8 @@ Specifies the string to be converted.
 You can use this parameter or pipe a string to ConvertFrom-StringData.
 The parameter name is optional.
 
-The value of this parameter must be a string that is enclosed in single quotation marks \(a single-quoted string\) or a string that is enclosed in double quotation marks \(a double-quoted string\) or a here-string containing one or more key/value pairs.
-Each key/value pair must be on a separate line, or each pair must be separated by newline characters \(\`n\).
+The value of this parameter must be a string that is enclosed in single quotation marks (a single-quoted string) or a string that is enclosed in double quotation marks (a double-quoted string) or a here-string containing one or more key/value pairs.
+Each key/value pair must be on a separate line, or each pair must be separated by newline characters (\`n).
 
 You can include comments in the string, but the comments cannot be on the same line as a key/value pair.
 The comments are not included in the hash table.
@@ -232,7 +233,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -255,12 +256,9 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113288)
-
 [about_Quoting_Rules](2cda5fbb-b54b-49b6-838a-a37ff97c525d)
 
 [about_Script_Internationalization](9213d013-0972-4ab8-8588-ffa99b5e5cd6)
 
 [about_Data_Sections]()
-
 

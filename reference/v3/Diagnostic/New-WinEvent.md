@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Diagnostic.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217469
 schema: 2.0.0
 ---
 
@@ -14,7 +15,7 @@ New-WinEvent [-ProviderName] <String> [-Id] <Int32> [[-Payload] <Object[]>] [-Ve
 ```
 
 ## DESCRIPTION
-The New-WinEvent cmdlet creates an Event Tracing for Windows \(ETW\) event for an event provider.
+The New-WinEvent cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
 You can use this cmdlet to add events to ETW channels from Windows PowerShell.
 
 ## EXAMPLES
@@ -39,7 +40,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -57,7 +58,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -73,7 +74,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -92,7 +93,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -113,8 +114,5 @@ For information about Event Tracing for Windows, see "Improve Debugging And Perf
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217469)
-
 [Get-WinEvent](5fe94870-ed6b-4ce2-9500-93846cc65c95)
-
 

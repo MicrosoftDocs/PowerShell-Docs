@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223922
 schema: 2.0.0
 ---
 
@@ -58,7 +59,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a scheduled job
 ```
-PS C:\>Register-ScheduledJob –Name Archive-Scripts -ScriptBlock { dir $home\*.ps1 -Recurse | Copy-Item -Destination \\Server\Share\PSScriptArchive }
+PS C:\>Register-ScheduledJob -Name Archive-Scripts -ScriptBlock { dir $home\*.ps1 -Recurse | Copy-Item -Destination \\Server\Share\PSScriptArchive }
 ```
 
 This command creates the Archive-Scripts scheduled job.
@@ -70,21 +71,21 @@ You can use add job triggers later, use the Start-Job cmdlet to start the job on
 ### Example 2: Create a scheduled job with triggers and custom options
 ```
 The first command uses the New-ScheduledJobOption cmdlet to create a job option object, which it saves in the $o parameter. The options start the scheduled job even if the computer is not idle, wake the computer to run the job, if necessary, and allows multiple instances of the job to run in a series.
-PS C:\>$o = New-ScheduledJobOption –WakeToRun –StartIfNotIdle –MultipleInstancesPolicy Queue
+PS C:\>$o = New-ScheduledJobOption -WakeToRun -StartIfNotIdle -MultipleInstancesPolicy Queue
 
 
 The second command uses the New-JobTrigger cmdlet to create job trigger that starts a job every other Monday at 9:00 p.m.
-PS C:\>$t = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday –WeeksInterval 2
+PS C:\>$t = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
 
 This command creates the UpdateVersion scheduled job, which runs the UpdateVersion.ps1 script every Monday at 9:00 p.m. The command uses the FilePath parameter to specify the script that the job runs. It uses the Trigger parameter to specify the job triggers in the $t variable and the ScheduledJobOption parameter to specify the option object in the $o variable.
-PS C:\>Register-ScheduledJob –Name UpdateVersion –FilePath \\Srv01\Scripts\UpdateVersion.ps1 –Trigger $t –ScheduledJobOption $o
+PS C:\>Register-ScheduledJob -Name UpdateVersion -FilePath \\Srv01\Scripts\UpdateVersion.ps1 -Trigger $t -ScheduledJobOption $o
 ```
 
 This example shows how to create a scheduled job that has a job trigger and custom job options.
 
 ### Example 3: Use hash tables to specify a trigger and job options
 ```
-PS C:\>Register-ScheduledJob –FilePath \\Srv01\Scripts\Update-Version.ps1 –Trigger @{Frequency=Weekly; At="9:00PM"; DaysOfWeek="Monday"; Interval=2} –ScheduledJobOption @{WakeToRun; StartIfNotIdle; MultipleInstancesPolicy="Queue"}
+PS C:\>Register-ScheduledJob -FilePath \\Srv01\Scripts\Update-Version.ps1 -Trigger @{Frequency=Weekly; At="9:00PM"; DaysOfWeek="Monday"; Interval=2} -ScheduledJobOption @{WakeToRun; StartIfNotIdle; MultipleInstancesPolicy="Queue"}
 ```
 
 This command is has the same effect as the command in Example 2.
@@ -92,7 +93,7 @@ It creates a scheduled job, but it uses hash tables to specify the values of the
 
 ### Example 4: Create scheduled jobs on remote computers
 ```
-PS C:\>Invoke-Command –ComputerName (Get-Content Servers.txt) –ScriptBlock {Register-ScheduledJob -Name Get-EnergyData -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -ScheduledJobOption $o –Trigger $t } -Credential $cred
+PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Register-ScheduledJob -Name Get-EnergyData -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -ScheduledJobOption $o -Trigger $t } -Credential $cred
 ```
 
 This command creates the EnergyData scheduled job on multiple remote computers.
@@ -107,7 +108,7 @@ The script is located on a file server that is available to all participating co
 
 ### Example 5: Create a scheduled job that runs a script on remote computers
 ```
-PS C:\>Register-ScheduledJob –Name CollectEnergyData –Trigger $t –MaxResultCount 99 –ScriptBlock { Invoke-Command –AsJob –ComputerName (Servers.txt) –FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" –Credential $Admin -Authentication CredSSP }
+PS C:\>Register-ScheduledJob -Name CollectEnergyData -Trigger $t -MaxResultCount 99 -ScriptBlock { Invoke-Command -AsJob -ComputerName (Servers.txt) -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
 ```
 
 This command uses the Register-ScheduledJob cmdlet to create the CollectEnergyData scheduled job on the local computer.
@@ -130,7 +131,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,7 +141,7 @@ Valid values are Default, Basic, Credssp, Digest, Kerberos, Negotiate, and Negot
 The default value is Default.
 For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in MSDN.
 
-CAUTION: Credential Security Service Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+CAUTION: Credential Security Service Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -171,7 +172,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,18 +190,18 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -InitializationScript
-Specifies the fully qualified path to a Windows PowerShell script \(.ps1\).
+Specifies the fully qualified path to a Windows PowerShell script (.ps1).
 The initialization script runs in the session that is created for the background job before the commands that are specified by the ScriptBlock parameter or the script that is specified by the FilePath parameter .
 You can use the initialization script to configure the session, such as adding files, functions, or aliases, creating directories, or checking for prerequisites.
 
 To specify a script that runs the primary job commands, use the FilePath parameter.
 
-If the initialization script generates an error \(even a non-terminating error\), the current instance of the scheduled job does not run and its status is "Failed."
+If the initialization script generates an error (even a non-terminating error), the current instance of the scheduled job does not run and its status is "Failed."
 
 ```yaml
 Type: ScriptBlock
@@ -210,7 +211,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,7 +239,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 32
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -256,7 +257,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -271,7 +272,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -298,13 +299,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
 Specifies the commands that the scheduled job runs.
-Enclose the commands in braces \( { } \) to create a script block.
+Enclose the commands in braces ( { } ) to create a script block.
 To specify default values for command parameters, use the ArgumentList parameter.
 
 Every Register-ScheduledJob command must use either the ScriptBlock or FilePath parameters.
@@ -317,7 +318,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -334,11 +335,11 @@ You can also create and maintain a scheduled job without a trigger that is used 
 
 To submit a hash table, use the following keys.
 
-@{Frequency="Once" \(or Daily, Weekly, AtStartup, AtLogon\);At="3am" \(or any valid time string\);
-DaysOfWeek="Monday", "Wednesday" \(or any combination of day names\);
-Interval=2 \(or any valid frequency interval\);
-RandomDelay="30minutes" \(or any valid timespan string\);
-User="Domain1\User01 \(or any valid user; used only with the AtLogon frequency value\)
+@{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am" (or any valid time string);
+DaysOfWeek="Monday", "Wednesday" (or any combination of day names);
+Interval=2 (or any valid frequency interval);
+RandomDelay="30minutes" (or any valid timespan string);
+User="Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
 }
 
 ```yaml
@@ -349,7 +350,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -363,8 +364,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -380,8 +381,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -420,8 +421,6 @@ For more information, see about_Scheduled_Jobs_Troubleshooting.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223922)
-
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
 [Add-JobTrigger](d0ab1b5d-ca22-4518-a3dc-88ffb4578b62)
@@ -455,5 +454,4 @@ For more information, see about_Scheduled_Jobs_Troubleshooting.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

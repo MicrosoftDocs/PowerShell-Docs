@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144300
 schema: 2.0.0
 ---
 
@@ -66,7 +67,7 @@ It uses the Force parameter to suppress the user prompts.
 ```
 PS C:\>Enable-PSRemoting -SkipNetworkProfileCheck -Force
 
-PS C:\>Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+PS C:\>Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
 This example shows how to allow remote access from public networks on client versions of Windows.
@@ -96,7 +97,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -120,7 +121,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -134,8 +135,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,8 +152,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -174,7 +175,7 @@ On server versions of Windows, Enable-PSRemoting creates firewall rules  for pri
 On client versions of Windows, Enable-PSRemoting in Windows PowerShell 3.0 creates firewall rules for private and domain networks that allow unrestricted remote access.
 To create a firewall rule for public networks that allows remote access from the same local subnet, use the SkipNetworkProfileCheck parameter.
 
-On client or server versions of Windows, to create a firewall rule for public networks that removes the local subnet restriction and allows remote access , use the Set-NetFirewallRule cmdlet in the NetSecurity module to run the following command: Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+On client or server versions of Windows, to create a firewall rule for public networks that removes the local subnet restriction and allows remote access , use the Set-NetFirewallRule cmdlet in the NetSecurity module to run the following command: Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 In Windows PowerShell 2.0, Enable-PSRemoting creates the following firewall exceptions for WS-Management communications.
 
@@ -184,14 +185,12 @@ On client versions of Windows, Enable-PSRemoting in Windows PowerShell 2.0 creat
 To minimize security risks, Enable-PSRemoting does not create a firewall rule for public networks on client versions of Windows.
 When the current network location is public, Enable-PSRemoting returns the following message: "Unable to check the status of the firewall."
 
-Beginning in Windows PowerShell 3.0, Enable-PSRemoting enables all session configurations by setting the value of the Enabled property of all session configurations \(WSMan:\\\<ComputerName\>\Plugin\\\<SessionConfigurationName\>\Enabled\) to True \($true\).
+Beginning in Windows PowerShell 3.0, Enable-PSRemoting enables all session configurations by setting the value of the Enabled property of all session configurations (WSMan:\\\<ComputerName\>\Plugin\\\<SessionConfigurationName\>\Enabled) to True ($true).
 
 In Windows PowerShell 2.0, Enable-PSRemoting removes the Deny_All setting from the security descriptor of session configurations.
 In Windows PowerShell 3.0, Enable-PSRemoting removes the Deny_All and Network_Deny_All settings, thereby providing remote access to session configurations that were reserved for local use.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144300)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -210,5 +209,4 @@ In Windows PowerShell 3.0, Enable-PSRemoting removes the Deny_All and Network_De
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
 
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
-
 

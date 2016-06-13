@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135234
 schema: 2.0.0
 ---
 
@@ -45,13 +46,13 @@ PS C:\>function Enable-ProcessCreationEvent
    $identifier = "WMI.ProcessCreated"
    Register-ObjectEvent $processWatcher "EventArrived" -SupportEvent $identifier -Action 
    {
-      [void] (New-Event -sourceID "PowerShell.ProcessCreated" -Sender $args[0] –EventArguments $args[1].SourceEventArgs.NewEvent.TargetInstance)
+      [void] (New-Event -sourceID "PowerShell.ProcessCreated" -Sender $args[0] -EventArguments $args[1].SourceEventArgs.NewEvent.TargetInstance)
    }
 }
 ```
 
 This sample function uses the New-Event cmdlet to raise an event in response to another event.
-The command uses the Register-ObjectEvent cmdlet to subscribe to the Windows Management Instrumentation \(WMI\) event that is raised when a new process is created.
+The command uses the Register-ObjectEvent cmdlet to subscribe to the Windows Management Instrumentation (WMI) event that is raised when a new process is created.
 The command uses the Action parameter of the cmdlet to call the New-Event cmdlet, which creates the new event.
 
 Because the events that New-Event raises are automatically added to the Windows PowerShell event queue, you do not need to register for that event.
@@ -69,7 +70,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -85,7 +86,7 @@ Aliases:
 Required: False
 Position: 4
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -101,7 +102,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: Windows PowerShell engine
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -119,7 +120,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -138,8 +139,6 @@ If you close the current session, the event queue is discarded and the event sub
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135234)
-
 [Get-Event](4ac85bbe-2abd-4e86-a313-edae6a08e435)
 
 [Register-EngineEvent](f5c43ecf-b8ef-44d2-b586-0480121c397c)
@@ -153,5 +152,4 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](313e8361-8646-4b0d-b72f-f76987c49591)
 
 [Wait-Event](bd2e7d77-2642-4628-b937-0a7d52033399)
-
 

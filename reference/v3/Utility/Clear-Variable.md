@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113285
 schema: 2.0.0
 ---
 
@@ -16,7 +17,7 @@ Clear-Variable [-Name] <String[]> [-Exclude <String[]>] [-Force] [-Include <Stri
 
 ## DESCRIPTION
 The Clear-Variable cmdlet deletes the data stored in a variable, but it does not delete the variable.
-As a result, the value of the variable is NULL \(empty\).
+As a result, the value of the variable is NULL (empty).
 If the variable has a specified data or object type, Clear-Variable preserves the type of the object stored in the variable.
 
 ## EXAMPLES
@@ -38,8 +39,8 @@ PS C:\>$a
 
 These commands demonstrate that clearing a variable in a child scope does not clear the value in the parent scope.
 The first command sets the value of the variable $a to "3".
-The second command uses the invoke operator \(&\) to run a Clear-Variable command in a new scope.
-The variable is cleared in the child scope \(although it did not exist\), but it is not cleared in the local scope.
+The second command uses the invoke operator (&) to run a Clear-Variable command in a new scope.
+The variable is cleared in the child scope (although it did not exist), but it is not cleared in the local scope.
 The third command, which gets the value of $a, shows that the value "3" is unaffected.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -66,7 +67,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -82,7 +83,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -100,14 +101,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -Name
 Specifies the name of the variable to be cleared.
 Wildcards are permitted.
-This parameter is required, but the parameter name \("Name"\) is optional.
+This parameter is required, but the parameter name ("Name") is optional.
 
 ```yaml
 Type: String[]
@@ -117,7 +118,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -133,13 +134,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies the scope in which this alias is valid.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -151,7 +152,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -165,8 +166,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,8 +183,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -211,8 +212,6 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113285)
-
 [Get-Variable](385002f8-2406-42f9-843b-9cb16aec927f)
 
 [New-Variable](5c7c621f-c086-4286-8f9b-86cadecb8c0b)
@@ -220,5 +219,4 @@ For more information, see about_Aliases.
 [Remove-Variable](a58fb01b-6bb4-48e9-a07c-5ad907dc4791)
 
 [Set-Variable](a961f6e3-12d2-4210-a039-62f502623a8c)
-
 

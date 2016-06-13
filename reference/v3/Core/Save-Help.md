@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210612
 schema: 2.0.0
 ---
 
@@ -32,13 +33,13 @@ Without parameters, a Save-Help command downloads the newest help for all module
 Modules that do not support Updatable Help are skipped without warning.
 
 The Save-Help cmdlet checks the version of any help files in the destination directory and, if newer help files are available, it downloads the newest help files from the Internet and saves them in the directory.
-The Save-Help cmdlet works just like the Update-Help cmdlet, except that it saves the downloaded cabinet \(.cab\) files in a directory, instead of extracting the help files from the cabinet files and installing them on the computer.
+The Save-Help cmdlet works just like the Update-Help cmdlet, except that it saves the downloaded cabinet (.cab) files in a directory, instead of extracting the help files from the cabinet files and installing them on the computer.
 
-The saved help for each module consists of  one help information \(HelpInfo XML\) file and one cabinet \(.cab\) file for the help files each UI culture.
+The saved help for each module consists of  one help information (HelpInfo XML) file and one cabinet (.cab) file for the help files each UI culture.
 You do not need to extract the help files from the cabinet file.
 The Update-Help cmdlet extracts the help files, validates the XML for safety, and then installs the help files and the help information file in a language-specific subdirectory of the module directory.
 
-To save the help files for modules in the Windows PowerShell installation directory \($pshome\Modules\), start Windows PowerShell with the "Run as administrator" option.
+To save the help files for modules in the Windows PowerShell installation directory ($pshome\Modules), start Windows PowerShell with the "Run as administrator" option.
 You must be a member of the Administrators group on the computer to download the help files for these modules.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
@@ -47,7 +48,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Save help for all modules
 ```
-PS C:\>Save-Help –DestinationPath \\Server01\FileShare01
+PS C:\>Save-Help -DestinationPath \\Server01\FileShare01
 ```
 
 This command downloads the newest help files for all modules in the UI culture set for Windows on the local computer.
@@ -55,7 +56,7 @@ It saves the help files in the \\\\Server01\Fileshare01 directory.
 
 ### Example 2: Save help for a module on the computer
 ```
-PS C:\>Save-Help –Module ServerManager -DestinationPath \\Server01\FileShare01 -Credential Domain01/Admin01
+PS C:\>Save-Help -Module ServerManager -DestinationPath \\Server01\FileShare01 -Credential Domain01/Admin01
 ```
 
 This command downloads the newest help files for the ServerManager module and saves them in the \\\\Server01\Fileshare01 directory.
@@ -66,7 +67,7 @@ The command uses the Credential parameter to supply the credentials of a user wh
 
 ### Example 3: Save help for a module on a different computer
 ```
-PS C:\>Invoke-Command –ComputerName Server02 {Get-Module –Name CustomSQL –ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
+PS C:\>Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
 ```
 
 These commands download the newest help files for the CustomSQL module and save them in the \\\\Server01\Fileshare01 directory.
@@ -77,7 +78,7 @@ When a module is not installed on the computer, Save-Help needs the module objec
 
 ### Example 4: Save help for a module in multiple languages
 ```
-PS C:\>Save-Help –Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath D:\Help
+PS C:\>Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath D:\Help
 ```
 
 This command saves help for the Windows PowerShell Core modules in four different UI cultures.
@@ -87,7 +88,7 @@ Save-Help can download help files for modules in different UI cultures only when
 
 ### Example 5: Save help more than once each day
 ```
-PS C:\>Save-Help –Force –DestinationPath \\Server3\AdminShare\Help
+PS C:\>Save-Help -Force -DestinationPath \\Server3\AdminShare\Help
 ```
 
 This command saves help for all modules that are installed on the computer.
@@ -115,7 +116,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -132,7 +133,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -153,7 +154,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -193,7 +194,7 @@ If the module is not installed on the computer, you must enter a module object, 
 The Module parameter of the Save-Help cmdlet does not accept the full path to a module file or module manifest file.
 To save help for a module that is not in a PSModulePath location, import the module into the current session before running the Save-Help command.
 
-A value of "*" \(all\) attempts to update help for all modules that are installed on the computer, including modules that do not support Updatable Help.
+A value of "*" (all) attempts to update help for all modules that are installed on the computer, including modules that do not support Updatable Help.
 This value might generate errors as the command encounters modules that do not support Updatable Help.
 
 ```yaml
@@ -204,7 +205,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: All (*)
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -225,7 +226,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: Current UI culture
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -243,7 +244,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -261,7 +262,7 @@ Save-Help does not generate any output.
 To save help for modules in the $pshome\Modules directory, start Windows PowerShell with the "Run as administrator" option.
 Only  members of the Administrators group on the computer can download help for the for modules in the $pshome\Modules directory.
 
-The saved help for each module consists of  one help information \(HelpInfo XML\) file and one cabinet \(.cab\) file for the help files each UI culture.
+The saved help for each module consists of  one help information (HelpInfo XML) file and one cabinet (.cab) file for the help files each UI culture.
 You do not need to extract the help files from the cabinet file.
 The Update-Help cmdlet extracts the help files, validates the XML, and then installs the help files and the help information file in a language-specific subdirectory of the module directory.
 
@@ -273,18 +274,16 @@ To see which files were saved by the command, use the Verbose parameter.
 
 Modules are the smallest unit of updatable help.
 You cannot save help for a particular cmdlet; only for all cmdlets in module.
-To find the module that contains a particular cmdlet, use the ModuleName property of the Get-Command cmdlet, for example, \(Get-Command \<cmdlet-name\>\).ModuleName
+To find the module that contains a particular cmdlet, use the ModuleName property of the Get-Command cmdlet, for example, (Get-Command \<cmdlet-name\>).ModuleName
 
 Save-Help supports all modules and the Windows PowerShell Core snap-ins.
 It does not support any other snap-ins.
 
 The Update-Help and Save-Help cmdlets use the following ports to download help files: Port 80 for HTTP and port 443 for HTTPS.
 
-The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallation Environment \(Windows PE\).
+The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallation Environment (Windows PE).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210612)
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
@@ -297,5 +296,4 @@ The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallati
 [Get-UICulture](00000000-0000-0000-0000-000000000000)
 
 [Update-Help](93e1d870-ace6-432b-8778-8920291d7545)
-
 

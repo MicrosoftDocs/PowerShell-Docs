@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113302
 schema: 2.0.0
 ---
 
@@ -16,7 +17,7 @@ Format-List [[-Property] <Object[]>] [-DisplayError] [-Expand <String>] [-Force]
 
 ## DESCRIPTION
 The Format-List cmdlet formats the output of a command as a list of properties in which each property is displayed on a separate line.
-You can use Format-List to format and display all or selected properties of an object as a list \(format-list *\).
+You can use Format-List to format and display all or selected properties of an object as a list (format-list *).
 
 Because more space is available for each item in a list than in a table, Windows PowerShell displays more properties of the object in the list, and the property values are less likely to be truncated.
 
@@ -30,7 +31,7 @@ PS C:\>get-service | format-list
 This command formats information about services on the computer as a list.
 By default, the services are formatted as a table.
 The Get-Service cmdlet gets objects representing the services on the computer.
-The pipeline operator \(|\) passes the results through the pipeline to Format-List.
+The pipeline operator (|) passes the results through the pipeline to Format-List.
 Then, the Format-List command formats the service information in a list and sends it to the default output cmdlet for display.
 
 ### -------------------------- EXAMPLE 2 --------------------------
@@ -53,7 +54,7 @@ PS C:\>get-process | format-list -property name, basepriority, priorityclass
 
 This command displays the name, base priority, and priority class of each process on the computer.
 It uses the Get-Process cmdlet to get an object representing each process.
-The pipeline operator \(|\) passes the process objects through the pipeline to Format-List.
+The pipeline operator (|) passes the process objects through the pipeline to Format-List.
 Format-List formats the processes as a list of the specified properties.
 The "Property" parameter name is optional, so you can omit it.
 
@@ -64,7 +65,7 @@ PS C:\>get-process winlogon | format-list -property *
 
 This command displays all of the properties of the Winlogon process.
 It uses the Get-Process cmdlet to get an object representing the Winlogon process.
-The pipeline operator \(|\) passes the Winlogon process object through the pipeline to Format-List.
+The pipeline operator (|) passes the Winlogon process object through the pipeline to Format-List.
 The command uses the Property parameter to specify the properties and the * to indicate all properties.
 Because the name of the Property parameter is optional, you can omit it and type the command as: "format-list *".
 Format-List automatically sends the results to the default output cmdlet for display.
@@ -77,7 +78,7 @@ This parameter is rarely used, but can be used as a debugging aid when you are f
 The following shows an example of the results of adding the DisplayError parameter with an expression.
 
 PS \> Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
+DayOfWeek  $_ / $null
 --------- ------------
 Wednesday #ERR
 
@@ -89,13 +90,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Expand
 Formats the collection object, as well as the objects in the collection.
-This parameter is designed to format objects that support the ICollection \(System.Collections\) interface.
+This parameter is designed to format objects that support the ICollection (System.Collections) interface.
 The default value is EnumOnly.
 
 Valid values are:
@@ -112,7 +113,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -129,7 +130,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -141,7 +142,7 @@ The value of the GroupBy parameter can be a new calculated property.
 To create a calculated property, use a hash table.
 Valid keys are:
 
--- Name \(or Label\) \<string\>
+-- Name (or Label) \<string\>
 -- Expression \<string\> or \<script block\>
 -- FormatString \<string\>
 
@@ -153,7 +154,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -169,7 +170,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -178,14 +179,14 @@ Specifies the object properties that appear in the display and the order in whic
 Wildcards are permitted.
 
 If you omit this parameter, the properties that appear in the display depend on the object being displayed.
-The parameter name \("Property"\) is optional.
+The parameter name ("Property") is optional.
 You cannot use the Property and View parameters in the same command.
 
 The value of the Property parameter can be a new calculated property.
 To create a calculated property, use a hash table.
 Valid keys are:
 
--- Name \(or Label\) \<string\>
+-- Name (or Label) \<string\>
 -- Expression \<string\> or \<script block\>
 -- FormatString \<string\>
 
@@ -197,7 +198,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -212,7 +213,7 @@ DayOfWeek  $_ / $null
 Wednesday
 
 Failed to evaluate expression " $_ / $null ".
-    + CategoryInfo          : InvalidArgument: \(10/30/2013 2:28:07 PM:PSObject\) \[\], RuntimeException
+    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
     + FullyQualifiedErrorId : mshExpressionError
 
 ```yaml
@@ -223,7 +224,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,7 +239,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -257,7 +258,7 @@ You can also refer to Format-List by its built-in alias, "FL".
 For more information, see about_Aliases.
 
 The format cmdlets, such as Format-List, arrange the data to be displayed but do not display it.
-The data is displayed by the output features of Windows PowerShell and by the cmdlets that contain the Out verb \(the Out cmdlets\), such as Out-Host, Out-File, and Out-Printer.
+The data is displayed by the output features of Windows PowerShell and by the cmdlets that contain the Out verb (the Out cmdlets), such as Out-Host, Out-File, and Out-Printer.
 
 If you do not use a format cmdlet, Windows PowerShell applies that default format for each object that it displays.
 
@@ -272,7 +273,4 @@ If the alternate view is a table, use Format-Table.
 If the alternate view is neither a list nor a table, use Format-Custom.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113302)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113334
 schema: 2.0.0
 ---
 
 # Get-UICulture
 ## SYNOPSIS
-Gets the current user interface \(UI\) culture settings in the operating system.
+Gets the current user interface (UI) culture settings in the operating system.
 
 ## SYNTAX
 
@@ -51,7 +52,7 @@ PS C:\>(get-uiculture).datetimeformat.shortdatepattern
 ```
 
 This command displays the short date pattern for the current UI culture.
-To see all of the subproperties of the DateTimeFormat property of the UI culture, type "\(get-uiculture\).datetimeformat | gm".
+To see all of the subproperties of the DateTimeFormat property of the UI culture, type "(get-uiculture).datetimeformat | gm".
 
 ## PARAMETERS
 
@@ -72,7 +73,4 @@ You can also use the $PsCulture and $PsUICulture variables.
 The $PsCulture variable stores the name of the current culture, and the $PsUICulture variable stores the name of the current UI culture.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113334)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ISE.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=238787
 schema: 2.0.0
 ---
 
@@ -41,7 +42,7 @@ PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy
 This command copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
 
 The command uses the Invoke-Command cmdlet to run a Get-ISESnippet command on the computers in the Servers.txt file.
-A pipeline operator \(|\) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the Destination parameter.
+A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the Destination parameter.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -90,7 +91,7 @@ The $psISE variable represents the Windows PowerShell ISE host program.
 The CurrentPowerShellTab property of $psISE represent the current session.
 The Snippets property represents snippets in the current session.
 
-The $psISE.CurrentPowerShellTab.Snippets command returns a  Microsoft.PowerShell.Host.ISE.ISESnippet object that represents a snippet, unlike the Get-IseSnippet cmdlet, which returns a file object \(System.Io.FileInfo\) that represents a snippet file.
+The $psISE.CurrentPowerShellTab.Snippets command returns a  Microsoft.PowerShell.Host.ISE.ISESnippet object that represents a snippet, unlike the Get-IseSnippet cmdlet, which returns a file object (System.Io.FileInfo) that represents a snippet file.
 
 The command also uses the Format-Table cmdlet to display the DisplayTitle and Description properties of the snippets in a table.
 
@@ -114,10 +115,7 @@ For more information about Windows PowerShell execution policies, see about_Exec
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=238787)
-
 [New-IseSnippet](0a6339a3-2683-4a8e-8929-90ad9a95c3e0)
 
 [Import-IseSnippet](8733eecd-5e80-4289-afa4-a86973959f0e)
-
 

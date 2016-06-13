@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135206
 schema: 2.0.0
 ---
 
@@ -26,7 +27,7 @@ Debug-Process -InputObject <Process[]> [-Confirm] [-WhatIf]
 
 ## DESCRIPTION
 The Debug-Process cmdlet attaches a debugger to one or more running processes on a local computer.
-You can specify the processes by their process name or process ID \(PID\), or you can pipe process objects to Debug-Process.
+You can specify the processes by their process name or process ID (PID), or you can pipe process objects to Debug-Process.
 
 Debug-Process attaches the debugger that is currently registered for the process.
 Before using this cmdlet, verify that a debugger is downloaded and correctly configured.
@@ -67,7 +68,7 @@ PS C:\>get-process powershell | debug-process
 ```
 
 This command attaches a debugger to the PowerShell processes on the computer.
-It uses the Get-Process cmdlet to get the PowerShell processes on the computer, and it uses a pipeline operator \(|\) to send the processes to the Debug-Process cmdlet.
+It uses the Get-Process cmdlet to get the PowerShell processes on the computer, and it uses a pipeline operator (|) to send the processes to the Debug-Process cmdlet.
 
 To specify a particular PowerShell process, use the ID parameter of Get-Process.
 
@@ -79,7 +80,7 @@ PS C:\>$pid | debug-process
 This command attaches a debugger to the current PowerShell processes on the computer.
 
 It uses the $pid automatic variable, which contains the process ID of the current PowerShell process.
-Then, it uses a pipeline operator \(|\) to send the process ID to the Debug-Process cmdlet.
+Then, it uses a pipeline operator (|) to send the process ID to the Debug-Process cmdlet.
 
 For more information about the $pid automatic variable, see about_Automatic_Variables.
 
@@ -110,7 +111,7 @@ The second command uses the InputObject parameter of Debug-Process to submit the
 
 ### -Id
 Specifies the process IDs of the processes to be debugged.
-The parameter name \("-Id"\) is optional.
+The parameter name ("-Id") is optional.
 
 To find the process ID of a process, type "get-process".
 
@@ -122,7 +123,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -139,14 +140,14 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
 Specifies the names of the processes to be debugged.
 If there is more than one process with the same name, Debug-Process attaches a debugger to all processes with that name. 
-The parameter name \("Name"\) is optional.
+The parameter name ("Name") is optional.
 
 ```yaml
 Type: String[]
@@ -156,7 +157,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -170,8 +171,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -187,15 +188,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.Int32, System.Diagnostics.Process, System.String
-You can pipe a process ID \(Int32\), a process object \(System.Diagnostics.Process\), or a process name \(String\) to Debug-Process.
+You can pipe a process ID (Int32), a process object (System.Diagnostics.Process), or a process name (String) to Debug-Process.
 
 ## OUTPUTS
 
@@ -203,12 +204,10 @@ You can pipe a process ID \(Int32\), a process object \(System.Diagnostics.Proce
 This cmdlet does not generate any output.
 
 ## NOTES
-This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation \(WMI\) Win32_Process class.
-For more information about this method, see "AttachDebugger Method" in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkId=143640.
+This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class.
+For more information about this method, see "AttachDebugger Method" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143640.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135206)
 
 [Debug-Process](ba768230-a5ed-4b80-8e1f-3cba8413aa78)
 
@@ -219,5 +218,4 @@ For more information about this method, see "AttachDebugger Method" in the MSDN 
 [Stop-Process](3864dc3d-34ec-4ebd-8132-776346c00871)
 
 [Wait-Process](861eb7b3-a18e-4445-9a69-2c65c420866f)
-
 

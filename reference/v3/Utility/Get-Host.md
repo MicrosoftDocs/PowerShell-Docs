@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113318
 schema: 2.0.0
 ---
 
@@ -68,8 +69,8 @@ This command gets detailed information about the version of Windows PowerShell r
 You can view, but not change, these values.
 
 The Version property of Get-Host contains a System.Version object.
-This command uses a pipeline operator \(|\) to send the version object to the Format-List cmdlet.
-The Format-List command uses the Property parameter with a value of all \(*\) to display all of the properties and property values of the version object.
+This command uses a pipeline operator (|) to send the version object to the Format-List cmdlet.
+The Format-List command uses the Property parameter with a value of all (*) to display all of the properties and property values of the version object.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -101,11 +102,11 @@ IsReadOnly                     : False
 This command gets detailed information about the current culture set for Windows PowerShell running in the host.
 This is the same information that is returned by the Get-Culture cmdlet.
 
-\(Similarly, the CurrentUICulture property returns the same object that Get-UICulture returns.\)
+(Similarly, the CurrentUICulture property returns the same object that Get-UICulture returns.)
 
 The CurrentCulture property of the host object contains a  System.Globalization.CultureInfo object.
-This command uses a pipeline operator \(|\) to send the CultureInfo object to the Format-List cmdlet.
-The Format-List command uses the Property parameter with a value of all \(*\) to display all of the properties and property values of the CultureInfo object.
+This command uses a pipeline operator (|) to send the CultureInfo object to the Format-List cmdlet.
+The Format-List command uses the Property parameter with a value of all (*) to display all of the properties and property values of the CultureInfo object.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -213,8 +214,6 @@ For more information, see about_Automatic_Variables.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113318)
-
 [Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
 
 [Out-Host](00000000-0000-0000-0000-000000000000)
@@ -222,5 +221,4 @@ For more information, see about_Automatic_Variables.
 [Read-Host](bfefe7c9-eed2-4ef7-bf62-367cca89322f)
 
 [Write-Host](023e670a-cfda-4e8c-af8f-c2b2d9ee5612)
-
 

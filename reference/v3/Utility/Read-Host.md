@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113371
 schema: 2.0.0
 ---
 
@@ -34,15 +35,15 @@ PS C:\>$pwd_secure_string = read-host "Enter a Password" -assecurestring
 ```
 
 This command displays the string "Enter a Password:" as a prompt.
-As a value is being entered, asterisks \(*\) appear on the console in place of the input.
+As a value is being entered, asterisks (*) appear on the console in place of the input.
 When the Enter key is pressed, the value is stored as a SecureString object in the $pwd_secure_string variable.
 
 ## PARAMETERS
 
 ### -AsSecureString
-Displays asterisks \(*\) in place of the characters that the user types as input.
+Displays asterisks (*) in place of the characters that the user types as input.
 
-When you use this parameter, the output of the Read-Host cmdlet is a SecureString object \(System.Security.SecureString\).
+When you use this parameter, the output of the Read-Host cmdlet is a SecureString object (System.Security.SecureString).
 
 ```yaml
 Type: SwitchParameter
@@ -52,7 +53,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -60,7 +61,7 @@ Accept wildcard characters: False
 Specifies the text of the prompt.
 Type a string.
 If the string includes spaces, enclose it in quotation marks.
-Windows PowerShell appends a colon \(:\) to the text that you enter.
+Windows PowerShell appends a colon (:) to the text that you enter.
 
 ```yaml
 Type: Object
@@ -70,7 +71,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -89,8 +90,6 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113371)
-
 [Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
 
 [ConvertFrom-SecureString](00000000-0000-0000-0000-000000000000)
@@ -100,5 +99,4 @@ Otherwise, it returns a string.
 [Out-Host](00000000-0000-0000-0000-000000000000)
 
 [Write-Host](023e670a-cfda-4e8c-af8f-c2b2d9ee5612)
-
 

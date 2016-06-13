@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135235
 schema: 2.0.0
 ---
 
@@ -18,7 +19,7 @@ New-EventLog [-LogName] <String> [-Source] <String[]> [[-ComputerName] <String[]
 This cmdlet creates a new classic event log on a local or remote computer.
 It can also register an event source that writes to the new log or to an existing log.
 
-The cmdlets that contain the EventLog noun \(the Event log cmdlets\) work only on classic event logs.
+The cmdlets that contain the EventLog noun (the Event log cmdlets) work only on classic event logs.
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 
 ## EXAMPLES
@@ -57,7 +58,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -65,8 +66,8 @@ Accept wildcard characters: False
 Creates the new event logs on the specified computers.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Get-EventLog even if your computer is not configured to run remote commands.
@@ -79,7 +80,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: Local computer
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -97,7 +98,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,7 +117,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -135,7 +136,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,7 +152,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -177,8 +178,6 @@ The file name is the first eight characters of the Log property with an .evt fil
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135235)
-
 [Clear-EventLog](525ef611-6484-4088-887c-e084f3f5763b)
 
 [Get-EventLog](b4985b11-82bf-487d-928d-becd96fc0419)
@@ -194,5 +193,4 @@ The file name is the first eight characters of the Log property with an .evt fil
 [Show-EventLog](a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
 [Write-EventLog](c93c4cd3-028f-4343-bfe6-b70f8f249290)
-
 

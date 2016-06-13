@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113326
 schema: 2.0.0
 ---
 
@@ -72,10 +73,10 @@ The second command uses the Set-PSBreakpoint cmdlet to set a breakpoint on the M
 The third command uses the My-Alias function to get all of the aliases in the current session for the Get-Content cmdlet.
 
 The debugger breaks in at the function call.
-Two consecutive step-into \(s\) commands begin executing the function line by line.
+Two consecutive step-into (s) commands begin executing the function line by line.
 Then, a Get-PSCallStack command is used to retrieve the call stack.
 
-The final command is a Step-Out command \(o\) that exits the debugger and continues executing the script to completion.
+The final command is a Step-Out command (o) that exits the debugger and continues executing the script to completion.
 
 ## PARAMETERS
 
@@ -93,8 +94,6 @@ Get-PSCallStack returns an object that represents the items in the call stack.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113326)
-
 [Disable-PSBreakpoint](d4974e9b-0aaa-4e20-b87f-f599a413e4e8)
 
 [Enable-PSBreakpoint](739e1091-3b3f-405f-a428-bec7543e5df0)
@@ -106,5 +105,4 @@ Get-PSCallStack returns an object that represents the items in the call stack.
 [Set-PSBreakpoint](6afd5d2c-a285-4796-8607-3cbf49471420)
 
 [about_Debuggers]()
-
 

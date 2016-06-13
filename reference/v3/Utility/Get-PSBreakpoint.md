@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113325
 schema: 2.0.0
 ---
 
@@ -89,8 +90,8 @@ These commands show how to get a breakpoint by piping a breakpoint ID to Get-PSB
 The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the Increment function in the Sample.ps1 script.
 It saves the breakpoint object in the $b variable.
 
-The second command uses the dot operator \(.\) to get the Id property of the breakpoint object in the $b variable.
-It uses a pipeline operator \(|\) to send the ID to the Get-PSBreakpoint cmdlet.
+The second command uses the dot operator (.) to get the Id property of the breakpoint object in the $b variable.
+It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
 
 As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
 
@@ -165,7 +166,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,13 +183,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Script
 Gets only the breakpoints in the specified scripts.
-Enter the  path \(optional\) and names of one or more script files.
+Enter the  path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
 ```yaml
@@ -199,7 +200,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -211,7 +212,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -229,7 +230,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: All types
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -245,7 +246,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -264,8 +265,6 @@ You can use Get-PSBreakpoint or its alias, "gbp".
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113325)
-
 [Disable-PSBreakpoint](d4974e9b-0aaa-4e20-b87f-f599a413e4e8)
 
 [Enable-PSBreakpoint](739e1091-3b3f-405f-a428-bec7543e5df0)
@@ -277,5 +276,4 @@ You can use Get-PSBreakpoint or its alias, "gbp".
 [Set-PSBreakpoint](6afd5d2c-a285-4796-8607-3cbf49471420)
 
 [about_Debuggers]()
-
 

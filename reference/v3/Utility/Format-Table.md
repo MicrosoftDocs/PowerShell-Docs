@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113303
 schema: 2.0.0
 ---
 
@@ -31,7 +32,7 @@ PS C:\>get-pssnapin | format-table -auto
 This command formats information about Windows PowerShell snap-ins in a table.
 By default, they are formatted in a list.
 The Get-PSSnapin cmdlet gets objects representing the snap-ins.
-The pipeline operator \(|\) passes the object to the Format-Table command.
+The pipeline operator (|) passes the object to the Format-Table command.
 Format-Table formats the objects in a table.
 The Autosize parameter adjusts the column widths to minimize truncation.
 
@@ -43,7 +44,7 @@ PS C:\>get-process | sort-object -property basepriority | format-table -groupby 
 This command displays the processes on the computer in groups with the same base priority.
 
 The Get-Process cmdlet gets objects representing each process on the computer.
-The pipeline operator \(|\) passes the object to the Sort-Object cmdlet, which sorts the objects in order of their base priority.
+The pipeline operator (|) passes the object to the Sort-Object cmdlet, which sorts the objects in order of their base priority.
 
 Another pipeline operator passes the results to the Format-Table cmdlet.
 The GroupBy parameter arranges the data about the processes into groups based on the value of their BasePriority property.
@@ -56,7 +57,7 @@ PS C:\>get-process | sort-object starttime | format-table -view starttime
 
 This command displays information about the processes on the computer in group based on the start date of the process.
 It uses the Get-Process cmdlet to get objects representing the processes on the computer.
-The pipeline operator \(|\) sends the output of Get-Process to the Sort-Object cmdlet, which sorts it based on the StartTime property.
+The pipeline operator (|) sends the output of Get-Process to the Sort-Object cmdlet, which sorts it based on the StartTime property.
 Another pipeline operator sends the sorted results to Format-Table.
 
 The View parameter is used to select the StartTime view that is defined in the DotNetTypes.format.ps1xml formatting file for System.Diagnostics.Process objects, such as those returned by Get-Process.
@@ -71,9 +72,9 @@ PS C:\>get-service | format-table -property Name, DependentServices
 
 This command displays all of the services on the computer in a table with two columns, Name and DependentServices.
 The command uses the Get-Service cmdlet to get all of the services on the computer.
-The pipeline operator \(|\) sends the results to the Format-Table cmdlet, which formats the output in a table.
+The pipeline operator (|) sends the results to the Format-Table cmdlet, which formats the output in a table.
 The Property parameter specifies the properties that appear in the table as columns.
-The name of the Property parameter is optional, so you can omit it \("format-table name, dependentservices"\).
+The name of the Property parameter is optional, so you can omit it ("format-table name, dependentservices").
 
 Property and DependentServices are just two of the properties of service objects.
 To view all of the properties, type "get-service | get-member".
@@ -88,12 +89,12 @@ The command displays a table with the process name and total running time of all
 The total running time is calculated by subtracting the start time of each process from the current time.
 
 The command uses the Get-Process cmdlet to get all processes named "Notepad" on the local computer.
-The pipeline operator \(|\) sends the results to Format-Table, which displays a table with two columns: ProcessName, a standard property of processes, and TotalRunningTime, a calculated property.
+The pipeline operator (|) sends the results to Format-Table, which displays a table with two columns: ProcessName, a standard property of processes, and TotalRunningTime, a calculated property.
 
 The TotalRunningTime property is specified by a hash table with two keys, Label and Expression.
 The name of the property is assigned to the Label key.
 The calculation is assigned to the Expression key.
-The expression gets the StartTime property of each process object and subtracts it from the result of a Get-Date command, which gets the current date \(and time\).
+The expression gets the StartTime property of each process object and subtracts it from the result of a Get-Date command, which gets the current date (and time).
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -103,10 +104,10 @@ PS C:\>$processes | format-table ProcessName, @{ Label = "Total  Running Time"; 
 
 These commands are similar to the previous command, except that these commands use the Get-WmiObject cmdlet and the Win32_Process class to display information about Notepad processes on a remote computer.
 
-The first command uses the Get-WmiObject cmdlet to get instances of the Windows Management Instrumentation \(WMI\) Win32_Process class that describes all of the processes on the Server01 computer that are named Notepad.exe.
+The first command uses the Get-WmiObject cmdlet to get instances of the Windows Management Instrumentation (WMI) Win32_Process class that describes all of the processes on the Server01 computer that are named Notepad.exe.
 The command stores the process information in the $processes variable.
 
-The second command uses a pipeline operator \(|\) to send the process information in the $processes variable to the Format-Table cmdlet, which displays the ProcessName of each process along with a new calculated property.
+The second command uses a pipeline operator (|) to send the process information in the $processes variable to the Format-Table cmdlet, which displays the ProcessName of each process along with a new calculated property.
 
 The command assigns the name of the new calculated property, Total Running Time, to the Label key.
 The script block that is assigned to the Expression key calculates how long the process has been running by subtracting the creation date of the process from the current date.
@@ -129,7 +130,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -139,7 +140,7 @@ This parameter is rarely used, but can be used as a debugging aid when you are f
 The following shows an example of the results of adding the DisplayError parameter with an expression.
 
 PS \> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
+DayOfWeek  $_ / $null
 --------- ------------
 Wednesday #ERR
 
@@ -151,13 +152,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Expand
 Formats the collection object, as well as the objects in the collection.
-This parameter is designed to format objects that support the ICollection \(System.Collections\) interface.
+This parameter is designed to format objects that support the ICollection (System.Collections) interface.
 The default value is EnumOnly.
 
 Valid values are:
@@ -174,7 +175,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: EnumOnly
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -191,7 +192,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -206,7 +207,7 @@ The value of the GroupBy parameter can be a new calculated property.
 To create a calculated, property, use a hash table.
 Valid keys are:
 
--- Name \(or Label\) \<string\>
+-- Name (or Label) \<string\>
 -- Expression \<string\> or \<script block\>
 -- FormatString \<string\>
 
@@ -218,7 +219,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -233,7 +234,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -249,28 +250,28 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Property
 Specifies the object properties that appear in the display and the order in which they appear.
-Type one or more property names \(separated by commas\), or use a hash table to display a calculated property.
+Type one or more property names (separated by commas), or use a hash table to display a calculated property.
 Wildcards are permitted.
 
 If you omit this parameter, the properties that appear in the display depend on the object being displayed.
-The parameter name \("Property"\) is optional.
+The parameter name ("Property") is optional.
 You cannot use the Property and View parameters in the same command.
 
 The value of the Property parameter can be a new calculated property.
 To create a calculated, property, use a hash table.
 Valid keys are:
 
--- Name \(or Label\) \<string\>
+-- Name (or Label) \<string\>
 -- Expression \<string\> or \<script block\>
 -- FormatString \<string\>
 -- Width \<int32\>
--- Alignment  \(value can be "Left", "Center", or "Right"\)
+-- Alignment  (value can be "Left", "Center", or "Right")
 
 ```yaml
 Type: Object[]
@@ -280,7 +281,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -295,7 +296,7 @@ DayOfWeek  $_ / $null
 Wednesday
 
 Failed to evaluate expression " $_ / $null ".
-    + CategoryInfo          : InvalidArgument: \(10/30/2013 2:28:07 PM:PSObject\) \[\], RuntimeException
+    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
     + FullyQualifiedErrorId : mshExpressionError
 
 ```yaml
@@ -306,7 +307,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -321,7 +322,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -337,7 +338,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Truncate
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -365,12 +366,9 @@ If the alternate view is neither a list nor a table, use the T:Microsoft.PowerSh
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113303)
-
 [Format-Custom](f45e1921-dc98-4d7e-a938-e7a503284c61)
 
 [Format-List](dec7f080-d85c-46c4-ade4-5aef22c1bf18)
 
 [Format-Wide](6e24fa8c-30b4-440c-a84a-54b517933cb2)
-
 

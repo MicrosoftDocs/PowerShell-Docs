@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113380
 schema: 2.0.0
 ---
 
@@ -43,7 +44,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -59,7 +60,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -77,13 +78,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -Name
 Specifies the name of the variable to be removed.
-The parameter name \("Name"\) is optional.
+The parameter name ("Name") is optional.
 
 ```yaml
 Type: String[]
@@ -93,13 +94,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies the scope in which this alias is valid.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -111,7 +112,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -125,8 +126,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,8 +143,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -166,8 +167,6 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113380)
-
 [Clear-Variable](e8e9af2f-e5c9-4ab8-8518-b305b1c4494a)
 
 [Get-Variable](385002f8-2406-42f9-843b-9cb16aec927f)
@@ -177,5 +176,4 @@ For more information, see about_Aliases.
 [Set-Variable](a961f6e3-12d2-4210-a039-62f502623a8c)
 
 [about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
-
 

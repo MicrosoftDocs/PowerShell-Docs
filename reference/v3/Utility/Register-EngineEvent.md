@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135243
 schema: 2.0.0
 ---
 
@@ -39,7 +40,7 @@ PS C:\>Invoke-Command -Session $s { Register-EngineEvent -SourceIdentifier ([Sys
 
 This command registers for a Windows PowerShell engine event on two remote computers.
 
-The first command creates a user-managed session \("PSSession"\) on each of the remote computers.
+The first command creates a user-managed session ("PSSession") on each of the remote computers.
 
 The second command uses the Invoke-Command cmdlet to run the Register-EngineEvent command in the remote sessions.
 
@@ -57,7 +58,7 @@ PS C:\>Unregister-Event PowerShell.ProcessCreated
 This command shows how to use the Job cmdlets to manage the event job object that Register-EngineEvent returns when you use the Action parameter.
 
 An event job is managed just like any other Windows PowerShell job.
-For more information, see about_Jobs \(http://go.microsoft.com/fwlink/?LinkID=113251\).
+For more information, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251).
 In this example, the Receive-Job cmdlet is used to get the results of the job.
 
 To delete the job from the session, use Remove-Job.
@@ -69,10 +70,10 @@ To delete the events in the event queue, use Remove-Event.
 ### -Action
 Specifies commands to handle the events.
 The commands in the Action run when an event is raised, instead of sending the event to the event queue.
-Enclose the commands in braces \( { } \) to create a script block.
+Enclose the commands in braces ( { } ) to create a script block.
 
 The value of the Action parameter can include the $Event, $EventSubscriber, $Sender, $EventArgs, and $Args automatic variables, which provide information about the event to the Action script block.
-For more information, see about_Automatic_Variables \(http://go.microsoft.com/fwlink/?LinkID=113212\).
+For more information, see about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
 
 When you specify an action, Register-EngineEvent returns an event job object that represents that action.
 You can use the Job cmdlets to manage the event job.
@@ -85,7 +86,7 @@ Aliases:
 Required: False
 Position: 102
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -101,7 +102,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -117,7 +118,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -136,7 +137,7 @@ Aliases:
 Required: True
 Position: 101
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -154,13 +155,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxTriggerCount
 Specifies the maximum number of times that an event is raised before users who are registered as event subscribers are automatically unsubscribed.
-The default value, zero \(0\), means that there is no maximum.
+The default value, zero (0), means that there is no maximum.
 Users are not automatically unsubscribed, regardless of the number of times the event is raised.
 
 ```yaml
@@ -171,7 +172,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -191,8 +192,6 @@ Events, event subscriptions, and the event queue exist only in the current sessi
 If you close the current session, the event queue is discarded and the event subscription is canceled.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135243)
 
 [Get-Event](4ac85bbe-2abd-4e86-a313-edae6a08e435)
 
@@ -215,5 +214,4 @@ If you close the current session, the event queue is discarded and the event sub
 [Wait-Event](bd2e7d77-2642-4628-b937-0a7d52033399)
 
 [Wait-Job](00000000-0000-0000-0000-000000000000)
-
 

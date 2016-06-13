@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113428
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ PS C:\>for ($i = 1; $i -le 100; $i++ )
 ```
 
 This command displays the progress of a For loop that counts from 1 to 100.
-The Write-Progress command includes a status bar heading \("activity"\), a status line, and the variable $i \(the counter in the For loop\), which indicates the relative completeness of the task.
+The Write-Progress command includes a status bar heading ("activity"), a status line, and the variable $i (the counter in the For loop), which indicates the relative completeness of the task.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -73,7 +74,7 @@ If the string is found, the message is added to $out.
 Then, the $i counter variable is incremented to record that another event has been examined.
 
 The fourth line uses the Write-Progress cmdlet with values for the Activity and Status text fields that create the first and second lines of the progress bar heading, respectively.
-The PercentComplete parameter value is calculated by dividing the number of events that have been processed \($i\) by the total number of events retrieved \($events.count\) and then multiplying that result by 100.
+The PercentComplete parameter value is calculated by dividing the number of events that have been processed ($i) by the total number of events retrieved ($events.count) and then multiplying that result by 100.
 
 In the last line, the End parameter of the ForEach-Object cmdlet is used to display the messages that are stored in the $out variable.
 
@@ -91,7 +92,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -107,7 +108,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -123,7 +124,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,7 +141,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -156,7 +157,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -188,7 +189,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -203,7 +204,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,12 +239,10 @@ If the progress bar does not appear, check the value of the $ProgressPreference 
 If the value is set to SilentlyContinue, the progress bar is not displayed.
 For more information about Windows PowerShell preferences, see about_Preference_Variables.
 
-The parameters of the cmdlet correspond to the properties of the ProgressRecord class \(System.Management.Automation.ProgressRecord\).
-For more information, see the ProgressRecord topic in the Windows PowerShell Software Development Kit \(SDK\).
+The parameters of the cmdlet correspond to the properties of the ProgressRecord class (System.Management.Automation.ProgressRecord).
+For more information, see the ProgressRecord topic in the Windows PowerShell Software Development Kit (SDK).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113428)
 
 [Write-Debug](fb95cfe7-8a21-4b6a-9e00-0205a6b74c41)
 
@@ -256,5 +255,4 @@ For more information, see the ProgressRecord topic in the Windows PowerShell Sof
 [Write-Verbose](d17c2519-dae0-4142-a506-9acfb79b72e7)
 
 [Write-Warning](8e53946e-1762-40e6-ab70-5307f6fc2a98)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113337
 schema: 2.0.0
 ---
 
 # Get-WmiObject
 ## SYNOPSIS
-Gets instances of Windows Management Instrumentation \(WMI\) classes or information about the available classes.
+Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.
 
 ## SYNTAX
 
@@ -53,7 +54,7 @@ Starting in Windows PowerShell 3.0, this cmdlet has been superseded by Get-CimIn
 The Get-WmiObject cmdlet gets instances of WMI classes or information about the available WMI classes.
 To specify a remote computer, use the ComputerName parameter.
 If the List parameter is specified, the cmdlet gets information about the WMI classes that are available in a specified namespace.
-If the Query parameter is specified, the cmdlet runs a WMI query language \(WQL\) statement.
+If the Query parameter is specified, the cmdlet runs a WMI query language (WQL) statement.
 
 The Get-WmiObject cmdlet does not use Windows PowerShell remoting to perform remote operations.
 You can use the ComputerName parameter of the Get-WmiObject cmdlet even if your computer does not meet the requirements for Windows PowerShell remoting or is not configured for remoting in Windows PowerShell.
@@ -76,7 +77,7 @@ PS C:\>Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 ```
 
 This command gets the services on a remote computer.
-It uses the ComputerName parameter to specify the Internet Protocol \(IP\) address, 127.0.0.1.
+It uses the ComputerName parameter to specify the Internet Protocol (IP) address, 127.0.0.1.
 By default, the current account must be a member of the Administrators group on the remote computer.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -125,7 +126,7 @@ Status         : OK
 
 This command gets the WinRM service on the computers that are specified by the value of the ComputerName parameter.
 
-A pipeline operator \(|\) sends the output to the Format-List cmdlet, which adds the PSComputerName property to the default output.
+A pipeline operator (|) sends the output to the Format-List cmdlet, which adds the PSComputerName property to the default output.
 This makes it easy to see the computer on which the service resides.
 
 PSComputerName is an alias of the __Server property of the objects that Get-WmiObject returns.
@@ -239,8 +240,8 @@ Container             :
 ```
 
 This command gets the BIOS on the local computer.
-The command uses a value of all \(*\) for the Property parameter of the Format-List cmdlet to display all properties of the returned object in a list.
-By default, only a subset \(defined in the Types.ps1xml configuration file\) are displayed.
+The command uses a value of all (*) for the Property parameter of the Format-List cmdlet to display all properties of the returned object in a list.
+By default, only a subset (defined in the Types.ps1xml configuration file) are displayed.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
@@ -265,7 +266,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -293,7 +294,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -305,17 +306,17 @@ Valid values are:
 
 0: Default
 
-1: None \(No authentication in performed.\)
+1: None (No authentication in performed.)
 
-2: Connect \(Authentication is performed only when the client establishes a relationship with the application.\)
+2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
 
-3: Call \(Authentication is performed only at the beginning of each call when the application receives the request.\)
+3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
 
-4: Packet \(Authentication is performed on all the data that is received from the client.\)
+4: Packet (Authentication is performed on all the data that is received from the client.)
 
-5: PacketIntegrity \(All the data that is transferred between the client  and the application is authenticated and verified.\)
+5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
 
-6: PacketPrivacy \(The properties of the other authentication levels are used, and all the data is encrypted.\)
+6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
 
 ```yaml
 Type: AuthenticationLevel
@@ -325,7 +326,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -344,7 +345,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -360,7 +361,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -372,7 +373,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -382,7 +383,7 @@ Enter a fully qualified domain name, a NetBIOS name, or an IP address.
 When the remote computer is in a different domain than the local computer, the fully qualified domain name is required.
 
 The default is the local computer.
-To specify the local computer, such as in a list of computer names, use "localhost", the local computer name, or a dot \(.\).
+To specify the local computer, such as in a list of computer names, use "localhost", the local computer name, or a dot (.).
 
 This parameter does not rely on Windows PowerShell remoting, which uses WS-Management.
 You can use the ComputerName parameter of Get-WmiObject even if your computer is not configured to run WS-Management remote commands.
@@ -395,7 +396,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -414,7 +415,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -429,7 +430,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -444,13 +445,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Filter
 Specifies a Where clause to use as a filter.
-Uses the syntax of the WMI Query Language \(WQL\).
+Uses the syntax of the WMI Query Language (WQL).
 
 Important: Do not include the Where keyword in the value of the parameter.
 For example, the following commands return only the logical disks that have a DeviceID of 'c:' and services that have the name 'WinRM' without using the Where keyword.
@@ -467,7 +468,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -499,7 +500,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -517,7 +518,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -533,7 +534,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -549,7 +550,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -565,12 +566,12 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Query
-Runs the specified WMI Query Language \(WQL\) statement.
+Runs the specified WMI Query Language (WQL) statement.
 This parameter does not support event queries.
 
 ```yaml
@@ -581,7 +582,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -596,7 +597,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -612,7 +613,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -637,8 +638,6 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113337)
-
 [Invoke-WmiMethod](0073127c-698e-4e74-b433-3263d159c9fe)
 
 [Remove-WmiObject](9307b527-42c9-4429-ab22-9335bca4204a)
@@ -652,5 +651,4 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 [New-WSManInstance](00000000-0000-0000-0000-000000000000)
 
 [Remove-WSManInstance](00000000-0000-0000-0000-000000000000)
-
 

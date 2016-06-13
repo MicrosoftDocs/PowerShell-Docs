@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210611
 schema: 2.0.0
 ---
 
@@ -107,7 +108,7 @@ This command resumes all suspended jobs on the Srv01 remote computer.
 
 The command uses the Invoke-Command cmdlet to run a command on the Srv01 computer.
 The remote command uses the State parameter of the Get-Job cmdlet to get all suspended jobs on the computer.
-A pipeline operator \(|\) sends the suspended jobs to the Resume-Job cmdlet, which resumes them.
+A pipeline operator (|) sends the suspended jobs to the Resume-Job cmdlet, which resumes them.
 
 ### Example 4: Wait for jobs to resume
 ```
@@ -200,7 +201,7 @@ Resumes the jobs with the specified IDs.
 
 The ID is an integer that uniquely identifies the job within the current session.
 It is easier to remember and to type than the instance ID, but it is unique only within the current session.
-You can type one or more IDs \(separated by commas\).
+You can type one or more IDs (separated by commas).
 To find the ID of a job, use the Get-Job cmdlet.
 
 ```yaml
@@ -272,7 +273,7 @@ Accept wildcard characters: False
 Resumes only those jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, and Stopping, but Resume-Job resumes only jobs in the Suspended state.
 
-For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspx
+For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx
 
 ```yaml
 Type: JobState
@@ -297,8 +298,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -312,8 +313,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -329,8 +330,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -351,7 +352,7 @@ Resume-Job can only resume jobs that are suspended.
 If you submit a job in a different state, Resume-Job runs the resume operation on the job, but generates a warning to notify you that the job could not be resumed.
 To suppress the warning, use the WarningAction common parameter with a value of SilentlyContinue.
 
-If a job is not of a type that supports resuming, such as a workflow job \(PSWorkflowJob\), Resume-Job throws a terminating error.
+If a job is not of a type that supports resuming, such as a workflow job (PSWorkflowJob), Resume-Job throws a terminating error.
 
 The mechanism and location for saving a suspended job might vary depending on the job type.
 For example, suspended workflow jobs are saved in a flat file store by default, but can also be saved in a SQL database.
@@ -363,8 +364,6 @@ Some job types have options or properties that prevent Windows PowerShell from s
 If attempts to suspend the job fail, verify that the job options and properties allow suspending.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210611)
 
 [Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
@@ -381,5 +380,4 @@ If attempts to suspend the job fail, verify that the job options and properties 
 [Suspend-Job](3496f930-2c84-4a90-9c65-ad562f0dc4cf)
 
 [Wait-Job](cb8a2c67-f8a5-45a8-a27f-2ec028c9da8f)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135198
 schema: 2.0.0
 ---
 
@@ -17,7 +18,7 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-Confirm] [-W
 The Clear-EventLog cmdlet deletes all of the entries from the specified event logs on the local computer or on remote computers.
 To use Clear-EventLog, you must be a member of the Administrators group on the affected computer.
 
-The cmdlets that contain the EventLog noun \(the EventLog cmdlets\) work only on classic event logs.
+The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on classic event logs.
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 
 ## EXAMPLES
@@ -34,7 +35,7 @@ This command deletes the entries from the "Windows PowerShell" event log on the 
 PS C:\>clear-eventlog -logname ODiag, OSession -computername localhost, Server02
 ```
 
-This command deletes all of the entries in the Microsoft Office Diagnostics \(ODiag\) and Microsoft Office Sessions \(OSession\) logs on the local computer and the Server02 remote computer.
+This command deletes all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -79,8 +80,8 @@ Notice that a few entries were added to the System and Security logs after the l
 Specifies a remote computer.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Get-EventLog even if your computer is not configured to run remote commands.
@@ -93,13 +94,13 @@ Aliases:
 Required: False
 Position: 2
 Default value: Local computer
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -LogName
 Specifies the event logs.
-Enter the log name \(the value of the Log property; not the LogDisplayName\) of one or more event logs, separated by commas. 
+Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas. 
 Wildcard characters are not permitted.
 This parameter is required.
 
@@ -111,7 +112,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -125,8 +126,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,8 +143,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -162,8 +163,6 @@ To use Clear-EventLog on Windows Vista and later versions of Windows, start Wind
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135198)
-
 [Get-EventLog](b4985b11-82bf-487d-928d-becd96fc0419)
 
 [Get-WinEvent](00000000-0000-0000-0000-000000000000)
@@ -177,5 +176,4 @@ To use Clear-EventLog on Windows Vista and later versions of Windows, start Wind
 [Show-EventLog](a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
 [Write-EventLog](c93c4cd3-028f-4343-bfe6-b70f8f249290)
-
 

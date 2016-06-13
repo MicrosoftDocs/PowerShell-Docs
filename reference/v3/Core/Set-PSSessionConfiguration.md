@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144307
 schema: 2.0.0
 ---
 
@@ -45,18 +46,18 @@ The Set-PSSessionConfiguration cmdlet changes the properties of the session conf
 
 Use the Name parameter to identify the session configuration that you want to change.
 Use the other parameters to specify new values for the properties of the session configuration.
-To delete a property value from the configuration \(and use the default value\), enter an empty string \(""\) or a value of $null for the corresponding parameter.
+To delete a property value from the configuration (and use the default value), enter an empty string ("") or a value of $null for the corresponding parameter.
 
 Beginning in Windows PowerShell 3.0, you can use a session configuration file to define a session configuration.
 This feature provides a simple and discoverable method for setting and changing the properties of sessions that use the session configuration.
 To specify a session configuration file, use the Path parameter of Set-PSSessionConfiguration.
-For information about session configuration files, see about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 For information about creating and editing a session configuration file, see New-PSSessionConfigurationFile.
 
-Session configurations define the environment of remote sessions \(PSSessions\) that connect to the local computer.
+Session configurations define the environment of remote sessions (PSSessions) that connect to the local computer.
 Every PSSession uses a session configuration.
 The session configuration determines the features of the PSSession, such as the modules that are available in the session, the cmdlets that are permitted to run, the language mode, quotas, and timeouts.
-The security descriptor \(SDDL\) of the session configuration determines who can use the session configuration to connect to the local computer.
+The security descriptor (SDDL) of the session configuration determines who can use the session configuration to connect to the local computer.
 For more information about session configurations, see about_Session_Configurations.
 
 To see the properties of a session configuration, use the Get-PSSessionConfiguration cmdlet or the WSMan Provider.
@@ -153,7 +154,7 @@ This example shows different ways of viewing the results of a Set-PSSessionConfi
 ## PARAMETERS
 
 ### -ApplicationBase
-Specifies the path to the assembly file \(*.dll\) that is specified in the value of the AssemblyName parameter.
+Specifies the path to the assembly file (*.dll) that is specified in the value of the AssemblyName parameter.
 
 ```yaml
 Type: String
@@ -163,14 +164,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AssemblyName
 Creates a session configuration based on a class that is defined in an assembly.
 
-Enter the path \(optional\) and file name of an assembly \(a .dll file\) that defines a session configuration.
+Enter the path (optional) and file name of an assembly (a .dll file) that defines a session configuration.
 If you enter only the name, you can enter the path in the value of the ApplicationBase parameter.
 
 ```yaml
@@ -181,7 +182,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,7 +200,7 @@ Aliases:
 Required: True
 Position: 3
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -217,13 +218,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedDataSizePerCommandMB
 Changes the limit on the amount of data that can be sent to this computer in any single remote command.
-Enter the data size in megabytes \(MB\).
+Enter the data size in megabytes (MB).
 The default is 50 MB.
 
 If a data size limit is defined in the configuration type that is specified in the ConfigurationTypeName parameter, the limit in the configuration type is used and the value of this parameter is ignored.
@@ -236,13 +237,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 50
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedObjectSizeMB
 Changes the limits on the amount of data that can be sent to this computer in any single object.
-Enter the data size in megabytes \(MB\).
+Enter the data size in megabytes (MB).
 The default is 10 MB.
 
 If an object size limit is defined in the configuration type that is specified in the ConfigurationTypeName parameter, the limit in the configuration type is used and the value of this parameter is ignored.
@@ -255,7 +256,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 10
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -293,7 +294,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -312,7 +313,7 @@ Aliases: PowerShellVersion
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -330,17 +331,17 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SecurityDescriptorSddl
-Specifies a different Security Descriptor Definition Language \(SDDL\) string for the configuration.
+Specifies a different Security Descriptor Definition Language (SDDL) string for the configuration.
 
 This string determines the permissions that are required to use the new session configuration.
-To use a session configuration in a session, users must have at least "Execute\(Invoke\)" permission for the configuration.
+To use a session configuration in a session, users must have at least "Execute(Invoke)" permission for the configuration.
 
-To use the default security descriptor for the configuration, enter an empty string \(""\) or a value of $null.
+To use the default security descriptor for the configuration, enter an empty string ("") or a value of $null.
 The default is the root SDDL in the WSMan: drive.
 
 If the security descriptor is complex, consider using the ShowSecurityDescriptorUI parameter instead of this one.
@@ -354,7 +355,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -362,7 +363,7 @@ Accept wildcard characters: False
 Displays a property sheet that helps you to create a new SDDL for the session configuration.
 The property sheet appears after you enter the Set-PSSessionConfiguration command and then restart the WinRM service.
 
-When setting the permissions to the configuration, remember that users must have at least "Execute\(Invoke\)" permission to use the session configuration in a session.
+When setting the permissions to the configuration, remember that users must have at least "Execute(Invoke)" permission to use the session configuration in a session.
 
 You cannot use the SecurityDescriptorSDDL parameter and this parameter in the same command.
 
@@ -374,7 +375,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -383,10 +384,10 @@ Adds or changes the startup script for the configuration.
 Enter the fully qualified path to a Windows PowerShell script.
 The specified script runs in the new session that uses the session configuration.
 
-To delete a startup script from a session configuration, enter an empty string \(""\) or a value of $null.
+To delete a startup script from a session configuration, enter an empty string ("") or a value of $null.
 
 You can use a startup script to further configure the user's session.
-If the script generates an error \(even a non-terminating error\), the session is not created and the user's New-PSSession command fails.
+If the script generates an error (even a non-terminating error), the session is not created and the user's New-PSSession command fails.
 
 ```yaml
 Type: String
@@ -396,7 +397,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -413,7 +414,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: ApartmentState.Unknown
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -433,7 +434,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: PSThreadOptions.UserCurrentThread
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -451,7 +452,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -461,7 +462,7 @@ Remote is the default.
 
 Valid values are:
 
---  Disabled: Disables the session configuration. It cannot be used for remote or local access to the computer. This value sets the Enabled property of the session configuration \(WSMan:\\\<ComputerName\>\PlugIn\\\<SessionConfigurationName\>\Enabled\) to False.
+--  Disabled: Disables the session configuration. It cannot be used for remote or local access to the computer. This value sets the Enabled property of the session configuration (WSMan:\\\<ComputerName\>\PlugIn\\\<SessionConfigurationName\>\Enabled) to False.
 --  Local: Adds a Network_Deny_All entry to security descriptor of the session configuration. Users of the local computer can use the session configuration to create a local "loopback" session on the same computer, but remote users are denied access.
 --  Remote: Removes Deny_All and Network_Deny_All entries from the security descriptors of the session configuration. Users of local and remote computers can use the session configuration to create sessions and run commands on this computer.
 
@@ -478,7 +479,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Remote
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -500,7 +501,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -522,12 +523,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
-Adds or replaces a session configuration file \(.pssc\), such as one created by the New-PSSessionConfigurationFile cmdlet.
+Adds or replaces a session configuration file (.pssc), such as one created by the New-PSSessionConfigurationFile cmdlet.
 If you omit the path, the default is the current directory.
 
 For information about editing a session configuration file, see the help topic for the New-PSSessionConfigurationFile cmdlet.
@@ -542,7 +543,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -552,7 +553,7 @@ Enter the module and snap-in names.
 
 By default, only the Microsoft.PowerShell.Core snap-in is imported into sessions, but unless the cmdlets are excluded, users can use the Import-Module and Add-PSSnapin cmdlets to add modules and snap-ins to the session.
 
-The modules specified in this parameter value are imported in additions to modules specified in the session configuration file \(New-PSSessionConfigurationFile\).
+The modules specified in this parameter value are imported in additions to modules specified in the session configuration file (New-PSSessionConfigurationFile).
 However, settings in the session configuration file can hide the commands exported by modules or prevent users from using them.
 
 The modules specified in this parameter value replace the list of modules specified by using the ModulesToImport parameter of the Register-PSSessionConfiguration cmdlet.
@@ -567,7 +568,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Microsoft.PowerShell.Core
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -581,8 +582,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -598,8 +599,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -632,8 +633,6 @@ To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144307)
-
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
 [Enable-PSSessionConfiguration](58d537b4-8735-437d-a573-aa5744725b4a)
@@ -661,5 +660,4 @@ To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

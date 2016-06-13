@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113324
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ Get-Process [-ComputerName <String[]>] [-FileVersionInfo] [-Module] -InputObject
 The Get-Process cmdlet gets the processes on a local or remote computer.
 
 Without parameters, Get-Process gets all of the processes on the local computer.
-You can also specify a particular process by process name or process ID \(PID\) or pass a process object through the pipeline to Get-Process.
+You can also specify a particular process by process name or process ID (PID) or pass a process object through the pipeline to Get-Process.
 
 By default, Get-Process returns a process object that has detailed information about the process and supports methods that let you start and stop the process.
 You can also use the parameters of Get-Process to get file version information for the program that runs in the process and to get the modules that the process loaded.
@@ -50,7 +51,7 @@ PS C:\>Get-Process winword, explorer | format-list *
 
 This command gets all available data about the Winword and Explorer processes on the computer.
 It uses the Name parameter to specify the processes, but it omits the optional parameter name.
-The pipeline operator \(|\) passes the data to the Format-List cmdlet, which displays all available properties \(*\) of the Winword and Explorer process objects.
+The pipeline operator (|) passes the data to the Format-List cmdlet, which displays all available properties (*) of the Winword and Explorer process objects.
 
 You can also identify the processes by their process IDs.
 For example, "get-process -id 664, 2060".
@@ -62,7 +63,7 @@ PS C:\>get-process | where-object {$_.WorkingSet -gt 20000000}
 
 This command gets all processes that have a working set greater than 20 MB.
 It uses the Get-Process cmdlet to get all running processes.
-The pipeline operator \(|\) passes the process objects to the Where-Object cmdlet, which selects only the object with a value greater than 20,000,000 bytes for the WorkingSet property.
+The pipeline operator (|) passes the process objects to the Where-Object cmdlet, which selects only the object with a value greater than 20,000,000 bytes for the WorkingSet property.
 
 WorkingSet is one of many properties of process objects.
 To see all of the properties, type "Get-Process | Get-Member".
@@ -78,7 +79,7 @@ The first command gets all the processes on the computer and then stores them in
 
 The second command uses the InputObject parameter to pass the process objects that are stored in the $a variable to the Get-Process cmdlet.
 The pipeline operator passes the objects to the Format-Table cmdlet, which formats the processes by using the Priority view.
-The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory \($pshome\).
+The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -91,7 +92,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 27 54572 54520   576        4428 localhost   powershell
 ```
 
-This example provides a Format-Table \(alias = ft\) command that adds the MachineName property to the standard Get-Process output display.
+This example provides a Format-Table (alias = ft) command that adds the MachineName property to the standard Get-Process output display.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -114,7 +115,7 @@ PS C:\>get-process sql* -module
 This command uses the Module parameter to get the modules that have been loaded by the process.
 This command gets the modules for the processes that have names that begin with "sql".
 
-To run this command on Windows Vista \(and later versions of Windows\) with processes that you do not own, you must start Windows PowerShell with the "Run as administrator" option.
+To run this command on Windows Vista (and later versions of Windows) with processes that you do not own, you must start Windows PowerShell with the "Run as administrator" option.
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
@@ -174,7 +175,7 @@ PS C:\>get-process | where {$_.mainWindowTitle} | format-table id, name, mainwin
 This command gets all the processes that have a main window title, and it displays them in a table with the process ID and the process name.
 
 The mainWindowTitle property is just one of many useful properties of the System.Diagnostics.Process object that Get-Process returns.
-To view all of the properties, pipe the results of a Get-Process command to the T:Microsoft.PowerShell.Commands.Get-Member cmdlet \(get-process | get-member\).
+To view all of the properties, pipe the results of a Get-Process command to the T:Microsoft.PowerShell.Commands.Get-Member cmdlet (get-process | get-member).
 
 ## PARAMETERS
 
@@ -183,7 +184,7 @@ Gets the processes running on the specified computers.
 The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Get-Process even if your computer is not configured to run remote commands.
@@ -196,7 +197,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -209,7 +210,7 @@ You cannot use the FileVersionInfo and ComputerName parameters of the Get-Proces
 To get file version information for a process on a remote computer, use the Invoke-Command cmdlet.
 
 Using this parameter is equivalent to getting the MainModule.FileVersionInfo property of each process object.
-When you use this parameter, Get-Process returns a FileVersionInfo object \(System.Diagnostics.FileVersionInfo\), not a process object.
+When you use this parameter, Get-Process returns a FileVersionInfo object (System.Diagnostics.FileVersionInfo), not a process object.
 So, you cannot pipe the output of the command to a cmdlet that expects a process object, such as Stop-Process.
 
 ```yaml
@@ -220,12 +221,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Id
-Specifies one or more processes by process ID \(PID\).
+Specifies one or more processes by process ID (PID).
 To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type "get-process".
 
@@ -237,7 +238,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -253,7 +254,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -266,7 +267,7 @@ You cannot use the Module and ComputerName parameters of the Get-Process cmdlet 
 To get the modules that have been loaded by a process on a remote computer, use the Invoke-Command cmdlet.
 
 This parameter is equivalent to getting the Modules property of each process object.
-When you use this parameter, Get-Process returns a ProcessModule object \(System.Diagnostics.ProcessModule\), not a process object.
+When you use this parameter, Get-Process returns a ProcessModule object (System.Diagnostics.ProcessModule), not a process object.
 So, you cannot pipe the output of the command to a cmdlet that expects a process object, such as Stop-Process.
 
 When you use both the Module and FileVersionInfo parameters in the same command, Get-Process returns a FileVersionInfo object with information about the file version of all modules.
@@ -279,14 +280,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
 Specifies one or more processes by process name.
-You can type multiple process names \(separated by commas\) and use wildcard characters.
-The parameter name \("Name"\) is optional.
+You can type multiple process names (separated by commas) and use wildcard characters.
+The parameter name ("Name") is optional.
 
 ```yaml
 Type: String[]
@@ -296,7 +297,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -310,7 +311,7 @@ You can pipe a process object to Get-Process.
 ### System.Diagnostics.Process, System.Diagnotics.FileVersionInfo, System.Diagnostics.ProcessModule
 By default, Get-Process returns a System.Diagnostics.Process object.
 If you use the FileVersionInfo parameter, it returns a System.Diagnotics.FileVersionInfo object. 
-If you use the Module parameter \(without the FileVersionInfo parameter\), it returns a System.Diagnostics.ProcessModule object.
+If you use the Module parameter (without the FileVersionInfo parameter), it returns a System.Diagnostics.ProcessModule object.
 
 ## NOTES
 You can also refer to Get-Process by its built-in aliases, "ps" and "gps".
@@ -319,18 +320,18 @@ For more information, see about_Aliases.
 On computers that are running a 64-bit version of Windows, the 64-bit version of Windows PowerShell gets only 64-bit process modules and the 32-bit version of Windows PowerShell gets only 32-bit process modules.
 
 You can use the properties and methods of the WMI Win32_Process object in Windows PowerShell.
-For information, see T:Microsoft.PowerShell.Commands.Get-WmiObject and the Windows Management Instrumentation \(WMI\) SDK.
+For information, see T:Microsoft.PowerShell.Commands.Get-WmiObject and the Windows Management Instrumentation (WMI) SDK.
 
 The default display of a process is a table that includes the following columns.
 For a description of all of the properties of process objects, see "Process Properties" in MSDN at http://go.microsoft.com/fwlink/?LinkId=204482http://go.microsoft.com/fwlink/?LinkId=204482
 
 -- Handles: The number of handles that the process has opened.
--- NPM\(K\): The amount of non-paged memory that the process is using, in kilobytes.
--- PM\(K\): The amount of pageable memory that the process is using, in kilobytes.
--- WS\(K\): The size of the working set of the process, in kilobytes. The working set consists of the pages of memory that were recently referenced by the process.
--- VM\(M\): The amount of virtual memory that the process is using, in megabytes. Virtual memory includes storage in the paging files on disk.
--- CPU\(s\): The amount of processor time that the process has used on all processors, in seconds.
--- ID: The process ID \(PID\) of the process.
+-- NPM(K): The amount of non-paged memory that the process is using, in kilobytes.
+-- PM(K): The amount of pageable memory that the process is using, in kilobytes.
+-- WS(K): The size of the working set of the process, in kilobytes. The working set consists of the pages of memory that were recently referenced by the process.
+-- VM(M): The amount of virtual memory that the process is using, in megabytes. Virtual memory includes storage in the paging files on disk.
+-- CPU(s): The amount of processor time that the process has used on all processors, in seconds.
+-- ID: The process ID (PID) of the process.
 -- ProcessName: The name of the process.
 
 For explanations of the concepts related to processes, see the Glossary in Help and Support Center and the Help for Task Manager.
@@ -339,8 +340,6 @@ You can also use the built-in alternate views of the processes available with Fo
 For more information, see T:Microsoft.PowerShell.Commands.Format-Table.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113324)
 
 [Debug-Process](ba768230-a5ed-4b80-8e1f-3cba8413aa78)
 
@@ -351,5 +350,4 @@ For more information, see T:Microsoft.PowerShell.Commands.Format-Table.
 [Stop-Process](3864dc3d-34ec-4ebd-8132-776346c00871)
 
 [Wait-Process](861eb7b3-a18e-4445-9a69-2c65c420866f)
-
 

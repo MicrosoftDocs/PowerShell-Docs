@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113381
 schema: 2.0.0
 ---
 
 # Remove-WmiObject
 ## SYNOPSIS
-Deletes an instance of an existing Windows Management Instrumentation \(WMI\) class.
+Deletes an instance of an existing Windows Management Instrumentation (WMI) class.
 
 ## SYNTAX
 
@@ -96,13 +97,13 @@ Runs the command as a background job.
 Use this parameter to run commands that take a long time to finish.
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
-The CIM cmdlets comply with WS-Management \(WSMan\) standards and with the Common Information Model \(CIM\) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
+The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
 Instead of using Remove-WmiObject, consider using the Remove-CimInstancehttp://go.microsoft.com/fwlink/?LinkId=227964 cmdlet.
 
 When you use the AsJob parameter, the command returns an object that represents the background job and then displays the command prompt.
 You can continue to work in the session while the job finishes.
 If Remove-WmiObject is used against a remote computer, the job is created on the local computer, and the results from remote computers are automatically returned to the local computer.
-To manage the job, use the cmdlets that contain the Job noun \(the Job cmdlets\).
+To manage the job, use the cmdlets that contain the Job noun (the Job cmdlets).
 To get the job results, use the Receive-Job cmdlet.
 
 Note: To use this parameter with remote computers, the local and remote computers must be configured for remoting.
@@ -119,7 +120,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -131,17 +132,17 @@ Valid values are:
 
 0: Default
 
-1: None \(No authentication in performed.\)
+1: None (No authentication in performed.)
 
-2: Connect \(Authentication is performed only when the client establishes a relationship with the application.\)
+2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
 
-3: Call \(Authentication is performed only at the beginning of each call when the application receives the request.\)
+3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
 
-4: Packet \(Authentication is performed on all the data that is received from the client.\)
+4: Packet (Authentication is performed on all the data that is received from the client.)
 
-5: PacketIntegrity \(All the data that is transferred between the client  and the application is authenticated and verified.\)
+5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
 
-6: PacketPrivacy \(The properties of the other authentication levels are used, and all the data is encrypted.\)
+6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
 
 ```yaml
 Type: AuthenticationLevel
@@ -151,7 +152,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -170,7 +171,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -185,7 +186,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -194,7 +195,7 @@ Runs the command on the specified computers.
 The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter even if your computer is not configured to run remote commands.
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -226,7 +227,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -241,7 +242,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -249,15 +250,15 @@ Accept wildcard characters: False
 Specifies the impersonation level to use.
 Valid values are:
 
-0: Default \(Reads the local registry for the default impersonation level, which is usually set to "3: Impersonate".\)
+0: Default (Reads the local registry for the default impersonation level, which is usually set to "3: Impersonate".)
 
-1: Anonymous \(Hides the credentials of the caller.\)
+1: Anonymous (Hides the credentials of the caller.)
 
-2: Identify \(Allows objects to query the credentials of the caller.\)
+2: Identify (Allows objects to query the credentials of the caller.)
 
-3: Impersonate \(Allows objects to use the credentials of the caller.\)
+3: Impersonate (Allows objects to use the credentials of the caller.)
 
-4: Delegate \(Allows objects to permit other objects to use the credentials of the caller.\)
+4: Delegate (Allows objects to permit other objects to use the credentials of the caller.)
 
 ```yaml
 Type: ImpersonationLevel
@@ -267,7 +268,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -283,7 +284,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -299,7 +300,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -314,7 +315,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -329,7 +330,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -346,7 +347,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -360,8 +361,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -377,8 +378,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -397,8 +398,6 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113381)
-
 [Get-WmiObject](a3470de7-e427-4bd1-8a97-6e9d22a01da6)
 
 [Invoke-WmiMethod](0073127c-698e-4e74-b433-3263d159c9fe)
@@ -412,5 +411,4 @@ Otherwise, it does not generate any output.
 [New-WSManInstance](00000000-0000-0000-0000-000000000000)
 
 [Remove-WSManInstance](00000000-0000-0000-0000-000000000000)
-
 

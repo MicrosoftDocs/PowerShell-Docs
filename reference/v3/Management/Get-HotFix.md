@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135217
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ Get-HotFix [-ComputerName <String[]>] [-Credential <PSCredential>] [-Description
 ```
 
 ## DESCRIPTION
-The Get-Hotfix cmdlet gets hotfixes \(also called updates\) that have been installed on either the local computer \(or on specified remote computers\) by Windows Update, Microsoft Update, or Windows Server Update Services; the cmdlet also gets hotfixes or updates that have been installed manually by users.
+The Get-Hotfix cmdlet gets hotfixes (also called updates) that have been installed on either the local computer (or on specified remote computers) by Windows Update, Microsoft Update, or Windows Server Update Services; the cmdlet also gets hotfixes or updates that have been installed manually by users.
 
 ## EXAMPLES
 
@@ -65,7 +66,7 @@ It gets the hotfixes, sorts them by the value of the InstalledOn property, and t
 Specifies a remote computer.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of a remote computer.
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Get-Hotfix even if your computer is not configured to run remote commands.
@@ -78,7 +79,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -97,7 +98,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -114,7 +115,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All hotfixes
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -130,7 +131,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All hotfixes
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -146,16 +147,13 @@ Get-Hotfix returns objects that represent the hotfixes on the computer.
 
 ## NOTES
 This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system.
-Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer \(MSI\), Windows Update, Microsoft Update, or Windows Server Update Services.
-It does not include updates that are supplied by Component Based Servicing \(CBS\), or other non-hotfix programs or apps.
+Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer (MSI), Windows Update, Microsoft Update, or Windows Server Update Services.
+It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps.
 For more information, see the Win32_QuickFixEngineering class topic in the Microsoft .NET Framework SDK at http://go.microsoft.com/fwlink/?LinkID=145071.
 
 The output of this cmdlet might be different on different operating systems.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135217)
-
 [Get-ComputerRestorePoint](3afe67e8-56bd-4505-b7f6-b822143a28d5)
-
 

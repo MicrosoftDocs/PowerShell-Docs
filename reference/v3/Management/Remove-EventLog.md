@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135248
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-Confirm] [-W
 The Remove-EventLog cmdlet deletes an event log file from a local or remote computer and unregisters all of its event sources for the log.
 You can also use this cmdlet to unregister event sources without deleting any event logs.
 
-The cmdlets that contain the EventLog noun \(the EventLog cmdlets\) work only on classic event logs.
+The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on classic event logs.
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 
 CAUTION:  This cmdlet can delete operating system event logs, which might result in application failures and unexpected system behavior.
@@ -42,7 +43,7 @@ This command deletes the MyLog event log from the local computer and unregisters
 PS C:\>remove-eventlog -logname MyLog, TestLog -computername Server01, Server02, localhost
 ```
 
-This command deletes the MyLog and TestLog event logs from the local computer \("localhost"\) and the Server01 and Server02 remote computers.
+This command deletes the MyLog and TestLog event logs from the local computer ("localhost") and the Server01 and Server02 remote computers.
 The command also unregisters the event sources for these logs.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -118,8 +119,8 @@ It shows that the MyApp event source was deleted.
 Specifies a remote computer.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Remove-EventLog even if your computer is not configured to run remote commands.
@@ -132,13 +133,13 @@ Aliases:
 Required: False
 Position: 2
 Default value: Local computer
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -LogName
 Specifies the event logs.
-Enter the log name \(the value of the Log property; not the LogDisplayName\) of one or more event logs , separated by commas. 
+Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs , separated by commas. 
 Wildcard characters are not permitted.
 This parameter is required.
 
@@ -150,13 +151,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Source
 Unregisters the specified event sources.
-Enter the source names \(not the executable name\), separated by commas.
+Enter the source names (not the executable name), separated by commas.
 
 ```yaml
 Type: String[]
@@ -166,7 +167,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -180,8 +181,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -197,8 +198,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -222,8 +223,6 @@ When you unregister an event source for a particular log, the event source might
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135248)
-
 [Clear-EventLog](525ef611-6484-4088-887c-e084f3f5763b)
 
 [Get-EventLog](b4985b11-82bf-487d-928d-becd96fc0419)
@@ -239,5 +238,4 @@ When you unregister an event source for a particular log, the event source might
 [Show-EventLog](a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
 [Write-EventLog](c93c4cd3-028f-4343-bfe6-b70f8f249290)
-
 

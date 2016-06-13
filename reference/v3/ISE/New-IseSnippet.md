@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ISE.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=225298
 schema: 2.0.0
 ---
 
@@ -48,7 +49,7 @@ PS C:\>New-IseSnippet -Title Comment-BasedHelp -Description "A template for comm
 ```
 
 This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE.
-It creates a file named "Comment-BasedHelp.snippets.ps1xml" in the user's Snippets directory \($home\Documents\WindowsPowerShell\Snippets\).
+It creates a file named "Comment-BasedHelp.snippets.ps1xml" in the user's Snippets directory ($home\Documents\WindowsPowerShell\Snippets).
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -76,7 +77,7 @@ PS C:\>Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.p
 
 This command uses the Copy-Item cmdlet to copy the Mandatory snippet from the folder where New-ISESnippet places it to the Server\Share file share.
 
-Because the Snippets.ps1xml files that New-ISESnippet creates are text \(XML\) files, you can use the Item cmdlets to get, changes, move, rename, and copy them.
+Because the Snippets.ps1xml files that New-ISESnippet creates are text (XML) files, you can use the Item cmdlets to get, changes, move, rename, and copy them.
 
 ## PARAMETERS
 
@@ -92,14 +93,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: None (no value)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CaretOffset
 Places the cursor on the specified character of the snippet text. 
 Enter an integer that represents the cursor position, with "1" representing the first character of text.
-The default value, 0 \(zero\), places the cursor immediately before the first character of text.
+The default value, 0 (zero), places the cursor immediately before the first character of text.
 This parameter does not indent the snippet text.
 
 ```yaml
@@ -110,7 +111,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -127,7 +128,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -160,7 +161,7 @@ Aliases:
 Required: True
 Position: 3
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -177,7 +178,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -197,7 +198,7 @@ As such, Windows PowerShell cannot add them to a session in which the execution 
 In a Restricted or AllSigned session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
 
 If you use the New-IseSnippet cmdlet in a  Restricted or AllSigned session, the snippet is created, but an error message appears when Windows PowerShell tries to add the newly created snippet to the session.
-To use the new snippet \(and other unsigned user-created snippets\), change the execution policy, and then restart Windows PowerShell ISE.
+To use the new snippet (and other unsigned user-created snippets), change the execution policy, and then restart Windows PowerShell ISE.
 
 For more information about Windows PowerShell execution policies, see about_Execution_Policies.
 
@@ -211,10 +212,7 @@ For more information about Windows PowerShell execution policies, see about_Exec
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=225298)
-
 [Get-IseSnippet](07d37d38-bfe9-4d1f-9b4f-a4334b3b3170)
 
 [Import-IseSnippet](8733eecd-5e80-4289-afa4-a86973959f0e)
-
 

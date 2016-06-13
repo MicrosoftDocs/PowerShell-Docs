@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113355
 schema: 2.0.0
 ---
 
@@ -53,7 +54,7 @@ This command is the equivalent of the following:
 
 $ie = New-Object -COMObject InternetExplorer.Application
 
-$ie.Navigate2\("www.microsoft.com"\)
+$ie.Navigate2("www.microsoft.com")
 
 $ie.Visible = $true
 
@@ -171,7 +172,7 @@ This example shows how to create and use a COM object to manage your Windows des
 
 ### -ArgumentList
 Specifies a list of arguments to pass to the constructor of the .NET Framework class.
-Separate elements in the list by using commas \(,\).
+Separate elements in the list by using commas (,).
 The alias for ArgumentList is Args.
 
 ```yaml
@@ -182,12 +183,12 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComObject
-Specifies the programmatic identifier \(ProgID\) of the COM object.
+Specifies the programmatic identifier (ProgID) of the COM object.
 
 ```yaml
 Type: String
@@ -197,7 +198,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -218,7 +219,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -234,7 +235,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -250,7 +251,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -266,13 +267,11 @@ New-Object returns the object that is created.
 
 ## NOTES
 New-Object provides the most commonly-used functionality of the VBScript CreateObject function.
-A statement like Set objShell = CreateObject\("Shell.Application"\) in VBScript can be translated to $objShell = New-Object -COMObject "Shell.Application" in Windows PowerShell.
+A statement like Set objShell = CreateObject("Shell.Application") in VBScript can be translated to $objShell = New-Object -COMObject "Shell.Application" in Windows PowerShell.
 
 New-Object expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113355)
 
 [Compare-Object](bdc20eac-bff6-44bc-b130-1a986c79fb78)
 
@@ -289,5 +288,4 @@ New-Object expands upon the functionality available in the Windows Script Host e
 [Tee-Object](ae5c403c-6a21-430e-a94a-74a1edee149a)
 
 [Where-Object](00000000-0000-0000-0000-000000000000)
-
 

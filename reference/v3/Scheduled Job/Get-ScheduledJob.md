@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223923
 schema: 2.0.0
 ---
 
@@ -72,7 +73,7 @@ It uses the Get-ScheduledJob cmdlet to get the scheduled jobs and the Get-JobTri
 ## PARAMETERS
 
 ### -Id
-Gets only the scheduled jobs with the specified identification number \(ID\).
+Gets only the scheduled jobs with the specified identification number (ID).
 Enter one or more IDs of scheduled jobs on the computer.
 By default, Get-ScheduledJob gets all scheduled jobs on the computer.
 
@@ -84,7 +85,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All jobs
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -102,7 +103,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: All jobs
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -127,8 +128,6 @@ You can use Task Scheduler, the SchTasks.exe command-line tool, and the Task Sch
 However, you cannot use the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223923)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -163,5 +162,4 @@ However, you cannot use the Scheduled Job cmdlets to manage tasks that you creat
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

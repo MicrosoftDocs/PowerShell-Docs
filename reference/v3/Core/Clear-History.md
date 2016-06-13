@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135199
 schema: 2.0.0
 ---
 
@@ -75,7 +76,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -95,7 +96,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -112,7 +113,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -128,7 +129,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,8 +143,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -159,8 +160,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -183,8 +184,6 @@ Deleting a command from the history does not change the history IDs of the remai
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135199)
-
 [Add-History](cf476753-0b6d-405d-aab5-9b4488f18390)
 
 [Get-History](023a54f7-7e13-4699-8b0a-5f348b2a8125)
@@ -192,5 +191,4 @@ Deleting a command from the history does not change the history IDs of the remai
 [Invoke-History](cc0f7984-a1f9-445c-99ba-be39a502fe01)
 
 [about_History](cb632285-e50b-428e-8d7d-7583f8880b70)
-
 

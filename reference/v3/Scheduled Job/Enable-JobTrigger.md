@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223917
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ Enabled and re-enabled job triggers can start scheduled jobs immediately; there 
 To use this cmdlet, use the  Get-JobTrigger cmdlet to get the job triggers.
 Then pipe the job triggers to Enable-JobTrigger or use its InputObject parameter.
 
-To enable a job trigger, the Enable-JobTrigger cmdlet sets the Enabled property of the job trigger to True \($true\).
+To enable a job trigger, the Enable-JobTrigger cmdlet sets the Enabled property of the job trigger to True ($true).
 
 Enable-ScheduledJob is one of a collection of job scheduling cmdlets in the PSScheduledJob module that is included in Windows PowerShell.
 
@@ -36,7 +37,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 PS C:\>Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
 ```
 
-This command enables the first trigger \(ID=1\) of the Backup-Archives scheduled job on the local computer.
+This command enables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
 
 The command uses the Get-JobTrigger cmdlet to get the job trigger.
 A pipeline operator sends the job trigger to the Enable-JobTrigger cmdlet, which enables it.
@@ -47,7 +48,7 @@ PS C:\>Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
 ```
 
 The command uses the Get-ScheduledJob cmdlet to get  the scheduled jobs on the local computer.
-A pipeline operator \(|\) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs.
+A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs.
 Another pipeline operator sends the job triggers to the Enable-JobTrigger cmdlet, which enables them.
 
 ### Example 3: Enable the job trigger of a scheduled job on a remote computer.
@@ -77,8 +78,8 @@ This command displays all disabled job triggers of all scheduled jobs in a table
 You can use a command like this one to discover job triggers that might need to be enabled.
 
 The command uses the Get-ScheduledJob cmdlet to get  the scheduled jobs on the local computer.
-A pipeline operator \(|\) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs.
-Another pipeline operator sends the job triggers to the Where-Object cmdlet, which returns only job triggers that are disabled, that is, where the value of the Enabled property of the job trigger is not \(!\) true.
+A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs.
+Another pipeline operator sends the job triggers to the Where-Object cmdlet, which returns only job triggers that are disabled, that is, where the value of the Enabled property of the job trigger is not (!) true.
 
 Another pipeline operator sends the disabled job triggers to the Format-Table cmdlet, which displays the selected properties of the job triggers in a table.
 The properties include a new JobName property that displays the name of the scheduled job in the JobDefinition property of the job trigger.
@@ -112,8 +113,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -129,8 +130,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -148,8 +149,6 @@ This cmdlet does not generate any output.
 Enable-JobTrigger does not generate errors or warnings if you enable a job trigger that is already enabled.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223917)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -184,5 +183,4 @@ Enable-JobTrigger does not generate errors or warnings if you enable a job trigg
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

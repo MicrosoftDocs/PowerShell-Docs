@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113416
 schema: 2.0.0
 ---
 
 # Suspend-Service
 ## SYNOPSIS
-Suspends \(pauses\) one or more running services.
+Suspends (pauses) one or more running services.
 
 ## SYNTAX
 
@@ -38,7 +39,7 @@ You can specify the services by their service names or display names, or you can
 PS C:\>suspend-service -displayname "Telnet"
 ```
 
-This command suspends the Telnet service \(Tlntsvr\) service on the local computer.
+This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -53,8 +54,8 @@ To suspend the services, rerun the command without the WhatIf parameter.
 PS C:\>get-service schedule | suspend-service
 ```
 
-This command uses the Get-Service cmdlet to get an object that represents the Task Scheduler \(Schedule\) service on the computer.
-The pipeline operator \(|\) passes the result to the Suspend-Service cmdlet, which suspends the service.
+This command uses the Get-Service cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
+The pipeline operator (|) passes the result to the Suspend-Service cmdlet, which suspends the service.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -63,7 +64,7 @@ PS C:\>get-service | where-object {$_.canpauseandcontinue -eq "True"} | suspend-
 
 This command suspends all of the services on the computer that can be suspended.
 It uses the Get-Service cmdlet to get objects representing the services on the computer.
-The pipeline operator \(|\) passes the results to the Where-Object cmdlet, which selects only the services that have a value of "True" for the CanPauseAndContinue property.
+The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects only the services that have a value of "True" for the CanPauseAndContinue property.
 Another pipeline operator passes the results to the Suspend-Service cmdlet.
 The Confirm parameter prompts you for confirmation before suspending each of the services.
 
@@ -81,7 +82,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -99,7 +100,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -117,7 +118,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -133,7 +134,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName, ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
@@ -168,7 +169,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,8 +183,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,8 +200,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -229,8 +230,6 @@ The service names appear in the Name column, and the display names appear in the
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113416)
-
 [Get-Service](77f3c94b-6ffd-4906-8216-3debbf5ffe79)
 
 [New-Service](ad24021a-4603-4c9c-bd20-8f9bdde123fa)
@@ -244,5 +243,4 @@ The service names appear in the Name column, and the display names appear in the
 [Start-Service](a3abab52-805c-4054-a41a-82cd81dc7fd3)
 
 [Stop-Service](58033475-759b-42e4-9395-c077aa55934e)
-
 

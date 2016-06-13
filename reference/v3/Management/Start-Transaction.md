@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135262
 schema: 2.0.0
 ---
 
@@ -16,7 +17,7 @@ Start-Transaction [-Independent] [-RollbackPreference <RollbackSeverity>] [-Time
 
 ## DESCRIPTION
 The Start-Transaction cmdlet starts a transaction, which is a series of commands that are managed as a unit.
-A transaction can be completed \("committed"\), or it can be completely undone \("rolled back"\) so that any data changed by the transaction is restored to its original state.
+A transaction can be completed ("committed"), or it can be completely undone ("rolled back") so that any data changed by the transaction is restored to its original state.
 Because the commands in a transaction are managed as a unit, either all commands are committed or all commands are rolled back.
 
 By default, transactions are rolled back automatically if any command in the transaction generates an error, but you can use the RollbackPreference parameter to change this behavior.
@@ -29,7 +30,7 @@ You can also use the Microsoft.PowerShell.Commands.Management.TransactedString c
 Other Windows PowerShell providers can also support transactions.
 
 Only one transaction can be active at a time.
-If you start a new, independent transaction while a transaction is in progress \(neither completed nor undone\), the new transaction becomes the active transaction, and you must commit or roll back the new transaction before making any changes to the original transaction.
+If you start a new, independent transaction while a transaction is in progress (neither completed nor undone), the new transaction becomes the active transaction, and you must commit or roll back the new transaction before making any changes to the original transaction.
 
 The Start-Transaction cmdlet is one of a set of cmdlets that support the transactions feature in Windows PowerShell.
 For more information, see about_Transactions.
@@ -106,8 +107,8 @@ PS HKCU:\Software> complete-transaction
 This example demonstrates the effect of changing the RollbackPreference parameter value.
 
 In the first set of commands, the Start-Transaction command does not use the RollbackPreference parameter.
-As a result, the default value \("Error"\) is used.
-When an error occurs in a transaction command \(the specified path does not exist\), the transaction is automatically rolled back.
+As a result, the default value ("Error") is used.
+When an error occurs in a transaction command (the specified path does not exist), the transaction is automatically rolled back.
 
 In the second set of commands, the Start-Transaction command uses the RollbackPreference parameter with a value of "Never".
 As a result, when an error occurs in a transaction command, the transaction is still active and can be completed successfully.
@@ -185,7 +186,7 @@ The first set of commands starts a transaction.
 The New-Item command is part of the first transaction.
 
 In the second set of commands, the Start-Transaction command uses the Independent parameter.
-The Get-Transaction command that follows shows the transaction object for the active transaction \(the newest one\).
+The Get-Transaction command that follows shows the transaction object for the active transaction (the newest one).
 The subscriber count is equal to 1, showing that the transactions are unrelated.
 
 When the active transaction is rolled back by using an Undo-Transaction command, the original transaction becomes active again.
@@ -288,7 +289,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Reuse the original transaction object.
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -310,7 +311,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Error
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -329,7 +330,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No timeout (infinite)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -343,8 +344,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -360,8 +361,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -379,8 +380,6 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135262)
-
 [Complete-Transaction](2d47d72e-f949-4aee-adf7-c8ebe1df23d5)
 
 [Get-Transaction](b1daeac4-7c84-4b5e-bdd6-04a6e1b8b491)
@@ -390,5 +389,4 @@ This cmdlet does not generate any output.
 [Use-Transaction](8e5ddcb5-32ef-42f9-9dd0-4153094a2f67)
 
 [about_Transactions](3f9d773e-34b7-40f5-8e72-bc9c79ceb0b5)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ISE.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=242050
 schema: 2.0.0
 ---
 
@@ -22,12 +23,12 @@ Import-IseSnippet [-ListAvailable] [-Recurse] -Module <String>
 ## DESCRIPTION
 The Import-IseSnippet cmdlet imports reusable text "snippets" from a module or a directory into the current session.
 The snippets are immediately available for use in Windows PowerShell ISE.
-This cmdlet works only in Windows PowerShell® Integrated Scripting Environment \(ISE\).
+This cmdlet works only in Windows PowerShell® Integrated Scripting Environment (ISE).
 
 To view and use the imported snippets, from the Windows PowerShell ISEEdit menu, click Start Snippets or press Ctrl + J.
 
 Imported snippets are available only in the current session.
-To import the snippets into all Windows PowerShell ISE sessions, add an Import-IseSnippet command to your Windows PowerShell profile or copy the snippet files to your local snippets directory \($home\Documents\WindowsPowershell\Snippets\).
+To import the snippets into all Windows PowerShell ISE sessions, add an Import-IseSnippet command to your Windows PowerShell profile or copy the snippet files to your local snippets directory ($home\Documents\WindowsPowershell\Snippets).
 
 To be imported, the snippets must be properly formatted in the snippet XML for Windows PowerShell ISE snippets and saved in Snippet.ps1xml files.
 To create eligible snippets, use the New-IseSnippet cmdlet.
@@ -95,7 +96,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,7 +117,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -132,7 +133,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -147,7 +148,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -166,7 +167,7 @@ You cannot use the Get-IseSnippet cmdlet to get imported snippets.
 Get-IseSnippet gets only snippets in the $home\Documents\WindowsPowerShell\Snippets directory.
 
 Import-IseSnippet uses the Load static method of Microsoft.PowerShell.Host.ISE.ISESnippetCollection objects.
-You can also use the Load method of snippets in the Windows PowerShell ISE object model: $psISE.CurrentPowerShellTab.Snippets.Load\(\)
+You can also use the Load method of snippets in the Windows PowerShell ISE object model: $psISE.CurrentPowerShellTab.Snippets.Load()
 
 The New-IseSnippet cmdlet stores new user-created snippets in unsigned .ps1xml files.
 As such, Windows PowerShell cannot load them into a session in which the execution policy is AllSigned or Restricted.
@@ -178,10 +179,7 @@ For more information about Windows PowerShell execution policies, see about_Exec
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=242050)
-
 [Get-IseSnippet](07d37d38-bfe9-4d1f-9b4f-a4334b3b3170)
 
 [New-IseSnippet](0a6339a3-2683-4a8e-8929-90ad9a95c3e0)
-
 

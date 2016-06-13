@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135195
 schema: 2.0.0
 ---
 
 # Add-Type
 ## SYNOPSIS
-Adds a Microsoft .NET Framework type \(a class\) to a Windows PowerShell session.
+Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 ## SYNTAX
 
@@ -43,15 +44,15 @@ Add-Type [-Path] <String[]> [-CompilerParameters <CompilerParameters>] [-IgnoreW
 
 ## DESCRIPTION
 The Add-Type cmdlet lets you define a .NET Framework class in your Windows PowerShell session.
-You can then instantiate objects \(by using the New-Object cmdlet\) and use the objects, just as you would use any .NET Framework object.
+You can then instantiate objects (by using the New-Object cmdlet) and use the objects, just as you would use any .NET Framework object.
 If you add an Add-Type command to your Windows PowerShell profile, the class is available in all Windows PowerShell sessions.
 
 You can specify the type by specifying an existing assembly or source code files, or you can specify the source code inline or saved in a variable.
 You can even specify only a method and Add-Type will define and generate the class.
-You can use this feature to make Platform Invoke \(P/Invoke\) calls to unmanaged functions in Windows PowerShell.
+You can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in Windows PowerShell.
 If you specify source code, Add-Type compiles the specified source code and generates an in-memory assembly that contains the new .NET Framework types.
 
-You can use the parameters of Add-Type to specify an alternate language and compiler \(CSharp is the default\), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
+You can use the parameters of Add-Type to specify an alternate language and compiler (CSharp is the default), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
 
 ## EXAMPLES
 
@@ -87,7 +88,7 @@ Because it is using inline source code, the command uses the TypeDefinition para
 The remaining commands use the new class.
 
 The third command calls the Add static method of the BasicTest class.
-It uses the double-colon characters \(::\) to specify a static member of the class.
+It uses the double-colon characters (::) to specify a static member of the class.
 
 The fourth command uses the New-Object cmdlet to instantiate an instance of the BasicTest class.
 It saves the new object in the $basicTestObject variable.
@@ -196,10 +197,10 @@ $showWindowAsync::ShowWindowAsync((Get-Process -Id $pid).MainWindowHandle, 4)
 ```
 
 The commands in this example demonstrate how to call native Windows APIs in Windows PowerShell.
-Add-Type uses the Platform Invoke \(P/Invoke\) mechanism to call a function in User32.dll from Windows PowerShell.
+Add-Type uses the Platform Invoke (P/Invoke) mechanism to call a function in User32.dll from Windows PowerShell.
 
 The first command stores the C# signature of the ShowWindowAsync function in the $signature variable.
-\(For more information, see "ShowWindowAsync Function" in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=143643.\) To ensure that the resulting method will be visible in a Windows PowerShell session, the "public" keyword has been added to the standard signature.
+(For more information, see "ShowWindowAsync Function" in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=143643.) To ensure that the resulting method will be visible in a Windows PowerShell session, the "public" keyword has been added to the standard signature.
 
 The second command uses the Add-Type cmdlet to add the ShowWindowAsync function to the Windows PowerShell session as a static method of a class that Add-Type creates.
 The command uses the MemberDefinition parameter to specify the method definition saved in the $signature variable.
@@ -215,7 +216,7 @@ It uses the Get-Process cmdlet with the $pid automatic variable to get the proce
 Then it uses the MainWindowHandle property of the current process and a value of "2", which represents the SW_MINIMIZE value.
 
 To restore the window, the fourth command use a value of "4" for the window position, which represents the SW_RESTORE value.
-\(SW_MAXIMIZE is 3.\)
+(SW_MAXIMIZE is 3.)
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -260,7 +261,7 @@ The fourth command uses the Add-Type cmdlet to save the public types defined in 
 The TypeDefinition parameter specifies the source code that defines the types.
 The CodeDomProvider parameter specifies the source code compiler.
 
-The PassThru parameter directs Add-Type to return a Runtime object that represents the types and a pipeline operator \(|\) sends the Runtime object to the Where-Object cmdlet, which returns only the public types.
+The PassThru parameter directs Add-Type to return a Runtime object that represents the types and a pipeline operator (|) sends the Runtime object to the Where-Object cmdlet, which returns only the public types.
 The Where-Object cmdlet is used because the FSharp provider generates non-public types to support the resulting public type.
 
 The fifth command calls the Loop method as a static method of the type stored in the $fSharpType variable.
@@ -272,12 +273,12 @@ Specifies the name of an assembly that includes the types.
 Add-Type takes the types from the specified assembly.
 This parameter is required when you are creating types based on an assembly name.
 
-Enter the full or simple name \(also known as the "partial name"\) of an assembly.
+Enter the full or simple name (also known as the "partial name") of an assembly.
 Wildcard characters are permitted in the assembly name.
 If you enter a simple or partial name, Add-Type resolves it to the full name, and then uses the full name to load the assembly.
 
 This parameter does not accept a path or file name.
-To enter the path to the assembly dynamic-link library \(DLL\) file, use the Path parameter.
+To enter the path to the assembly dynamic-link library (DLL) file, use the Path parameter.
 
 ```yaml
 Type: String[]
@@ -287,7 +288,7 @@ Aliases: AN
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -306,7 +307,7 @@ Aliases: Provider
 Required: False
 Position: Named
 Default value: CSharp compiler
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -315,7 +316,7 @@ Specifies the options for the source code compiler.
 These options are sent to the compiler without revision.
 
 This parameter allows you to direct the compiler to generate an executable file, embed resources, or set command-line options, such as the "/unsafe" option.
-This parameter implements the CompilerParameters class \(System.CodeDom.Compiler.CompilerParameters\).
+This parameter implements the CompilerParameters class (System.CodeDom.Compiler.CompilerParameters).
 
 You cannot use the CompilerParameters and ReferencedAssemblies parameters in the same command.
 
@@ -327,7 +328,7 @@ Aliases: CP
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -343,7 +344,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -361,7 +362,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -380,7 +381,7 @@ Aliases: PSPath
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -388,7 +389,7 @@ Accept wildcard characters: False
 Specifies new properties or methods for the class.
 Add-Type generates the template code that is required to support the properties or methods.
 
-You can use this feature to make Platform Invoke \(P/Invoke\) calls to unmanaged functions in Windows PowerShell.
+You can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in Windows PowerShell.
 For more information, see the examples.
 
 ```yaml
@@ -399,7 +400,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -420,7 +421,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -438,13 +439,13 @@ Aliases: NS
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -OutputAssembly
 Generates a DLL file for the assembly with the specified name in the location.
-Enter a path \(optional\) and file name.
+Enter a path (optional) and file name.
 Wildcard characters are permitted.
 By default, Add-Type generates the assembly only in memory.
 
@@ -456,7 +457,7 @@ Aliases: OA
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -477,7 +478,7 @@ Aliases: OT
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -493,7 +494,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -514,7 +515,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -533,14 +534,14 @@ Aliases: RA
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TypeDefinition
 Specifies the source code that contains the type definitions.
 Enter the source code in a string or here-string, or enter a variable that contains the source code.
-For more information about here-strings, see about_Quoting_Rules \(http://go.microsoft.com/fwlink/?LinkID=113253\).
+For more information about here-strings, see about_Quoting_Rules (http://go.microsoft.com/fwlink/?LinkID=113253).
 
 Include a namespace declaration in your type definition.
 If you omit the namespace declaration, your type might have the same name as another type or the shortcut for another type, causing an unintentional overwrite.
@@ -554,7 +555,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -574,7 +575,7 @@ Aliases: Using
 Required: False
 Position: Named
 Default value: System
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -592,9 +593,9 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 The types that you add exist only in the current session. 
 To use the types in all sessions, add them to your Windows PowerShell profile.
-For more information about the profile, see about_Profiles \(http://go.microsoft.com/fwlink/?LinkID=113729\).
+For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
-Type names \(and namespaces\) must be unique within a session. 
+Type names (and namespaces) must be unique within a session. 
 You cannot unload a type or change it.
 If you need to change the code for a type, you must change the name or start a new Windows PowerShell session.
 Otherwise, the command fails.
@@ -607,10 +608,7 @@ For more information about this class, see the Microsoft .NET Framework SDK.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135195)
-
 [Add-Member](03ff5662-d4d0-4c67-9ea8-72c76ec4cb3f)
 
 [New-Object](1d5cac3b-9cd0-4efe-be3e-1ee8d4675f51)
-
 

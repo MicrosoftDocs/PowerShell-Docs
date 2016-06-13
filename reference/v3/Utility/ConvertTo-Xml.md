@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135204
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ ConvertTo-XML returns the XML, so you can continue to process it in Windows Powe
 PS C:\>get-date | convertto-xml
 ```
 
-This command converts the current date \(a DateTime object\) to XML.
+This command converts the current date (a DateTime object) to XML.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -59,7 +60,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Document
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -80,7 +81,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -97,7 +98,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
@@ -112,7 +113,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -130,8 +131,6 @@ The value of the As parameter determines the type of object that ConvertTo-XML r
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135204)
-
 [ConvertTo-Csv](02cf7085-f243-45ed-b803-da0466fd6085)
 
 [ConvertTo-Html](bfe17e25-d90c-4fca-bfb4-0ef3928067d8)
@@ -139,5 +138,4 @@ The value of the As parameter determines the type of object that ConvertTo-XML r
 [Export-Clixml](685168d4-9831-4f08-9452-2478a98172fb)
 
 [Import-Clixml](467b491a-3e6e-4e10-8853-0fae970b10c5)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135246
 schema: 2.0.0
 ---
 
@@ -75,8 +76,8 @@ It uses the Force parameter to suppress the confirmation prompt for each compute
 Specifies the computers to be removed from their domains.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or a fully qualified domain name of the remote computers.
-To specify the local computer, type the computer name, a dot \(.\), or "localhost".
+Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of the remote computers.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
 You can use the ComputerName parameter of Remove-Computer even if your computer is not configured to run remote commands.
@@ -91,7 +92,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: LLocal computer
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -107,7 +108,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -130,7 +131,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -146,7 +147,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -164,7 +165,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -188,7 +189,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -200,7 +201,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: WORKGROUP
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -239,8 +240,6 @@ This cmdlet does not remove computers from workgroups.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135246)
-
 [Add-Computer](712f3460-c5d0-4af8-8de6-6d06e4a1a838)
 
 [Checkpoint-Computer](9ef7dd97-dbd9-43de-8988-9ab85e7827ad)
@@ -256,5 +255,4 @@ This cmdlet does not remove computers from workgroups.
 [Stop-Computer](bae0484a-418a-432c-a172-34b5165dd0b1)
 
 [Test-Connection](7c54e3a1-8d8c-44ad-9056-ef0514c158d6)
-
 

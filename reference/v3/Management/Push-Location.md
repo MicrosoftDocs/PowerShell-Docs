@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113370
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-UseTra
 ```
 
 ## DESCRIPTION
-The Push-Location cmdlet adds \("pushes"\) the current location onto a location stack. 
+The Push-Location cmdlet adds ("pushes") the current location onto a location stack. 
 If you specify a path, Push-Location pushes the current location onto a location stack and then changes the current location to the location specified by the path.
 You can use the Pop-Location cmdlet to get locations from the location stack.
 
@@ -44,7 +45,7 @@ PS C:\>push-location HKLM:\Software\Policies -stackname RegFunction
 ```
 
 This command pushes the current location onto the RegFunction stack and changes the current location to the HKLM:\Software\Policies location.
-You can use the Location cmdlets in any Windows PowerShell drive \(PSDrive\).
+You can use the Location cmdlets in any Windows PowerShell drive (PSDrive).
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -63,10 +64,10 @@ PS C:\>
 
 These commands show how to create and use a named location stack.
 
-The first command pushes the current location onto a new stack named Stack2, and then changes the current location to the home directory \(%USERPROFILE%\), which is represented in the command by the tilde symbol \(~\) or $home.
+The first command pushes the current location onto a new stack named Stack2, and then changes the current location to the home directory (%USERPROFILE%), which is represented in the command by the tilde symbol (~) or $home.
 If Stack2 does not already exist in the session, Push-Location creates it.
 
-The second command uses the Pop-Location cmdlet to pop the original location \(PS C:\\\>\) from the Stack2 stack.
+The second command uses the Pop-Location cmdlet to pop the original location (PS C:\\\>) from the Stack2 stack.
 Without the StackName parameter, Pop-Location would pop the location from the unnamed default stack.
 
 For more information about location stacks, see the Notes.
@@ -88,7 +89,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -104,15 +105,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
-Changes your location to the location specified by this path after it adds \(pushes\) the current location onto the top of the stack.
+Changes your location to the location specified by this path after it adds (pushes) the current location onto the top of the stack.
 Enter a path to any location whose provider supports this cmdlet.
 Wildcards are permitted.
-The parameter name \("Path"\) is optional.
+The parameter name ("Path") is optional.
 
 ```yaml
 Type: String
@@ -122,7 +123,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -146,14 +147,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default stack
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -164,15 +165,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path \(but not a literal path\) to Push-Location.
+You can pipe a string that contains a path (but not a literal path) to Push-Location.
 
 ## OUTPUTS
 
@@ -199,7 +200,7 @@ To manage location stacks, use the Windows PowerShell Location cmdlets, as follo
 
 The unnamed default location stack is fully accessible only when it is the current location stack.
 If you make a named location stack the current location stack, you cannot no longer use Push-Location or Pop-Location cmdlets add or get items from the default stack or use Get-Location command to display the locations in the unnamed stack.
-To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string \(""\).
+To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string ("").
 
 You can also refer to Push-Location by its built-in alias, "pushd".
 For more information, see about_Aliases.
@@ -210,8 +211,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113370)
-
 [Get-Location](b4c8d674-ba23-4bdf-8322-1f08acdc0ca9)
 
 [Pop-Location](c36cf84e-1380-4964-b986-01b4cc1489a5)
@@ -219,5 +218,4 @@ For more information, see about_Providers.
 [Set-Location](d7f353cd-ebd7-462a-bd57-1498dc8b88a6)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

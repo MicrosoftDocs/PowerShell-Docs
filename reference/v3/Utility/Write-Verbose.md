@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113429
 schema: 2.0.0
 ---
 
@@ -60,7 +61,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -76,19 +77,16 @@ Write-Verbose writes only to the verbose message stream.
 
 ## NOTES
 Verbose messages are returned only when the command uses the Verbose common parameter.
-For more information, see about_CommonParameters \(http://go.microsoft.com/fwlink/?LinkID=113216\).
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 In Windows PowerShell background jobs and remote commands, the $VerbosePreference variable in the job session and remote session determine whether the verbose message is displayed by default.
-For more information about the $VerbosePreference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about the $VerbosePreference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113429)
 
 [Write-Error](eedfea70-5aa7-4d20-b87d-f8e1147b1b42)
 
 [Write-Warning](8e53946e-1762-40e6-ab70-5307f6fc2a98)
 
 [about_Preference_Variables](045a7fe7-cf63-4f89-8835-d01c9579d1c8)
-
 

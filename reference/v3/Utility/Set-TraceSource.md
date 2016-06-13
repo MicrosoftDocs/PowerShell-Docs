@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113400
 schema: 2.0.0
 ---
 
@@ -63,7 +64,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -80,7 +81,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -96,7 +97,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -115,7 +116,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -132,7 +133,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -144,9 +145,9 @@ All is the default.
 
 The following values are combinations of other values:
 
--- ExecutionFlow: \(Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope\)
--- Data: \(Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine\)
--- Errors: \(Error and Exception\).
+-- ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope)
+-- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
+-- Errors: (Error and Exception).
 
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
 
@@ -158,7 +159,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: All
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -174,7 +175,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -190,7 +191,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -206,7 +207,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -215,7 +216,7 @@ Stops the trace by removing the trace listener.
 
 Use the following values with RemoveListener:
 
---To remove PSHost \(console\), type "Host".
+--To remove PSHost (console), type "Host".
 --To remove Debugger, type "Debug".
 --To remove all trace listeners, type "*".
 
@@ -229,7 +230,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -257,7 +258,7 @@ To trace a component, you identify its trace source.
 A "trace listener" receives the output of the trace and displays it to the user.
 You can elect to send the trace data to a user-mode or kernel-mode debugger, to the console, to a file, or to a custom listener derived from the System.Diagnostics.TraceListener class.
 
-To start a trace, use the Name parameter to specify a trace source \(the component to be traced\) and the FilePath, Debugger, or PSHost parameters to specify a listener \(a destination for the output\).
+To start a trace, use the Name parameter to specify a trace source (the component to be traced) and the FilePath, Debugger, or PSHost parameters to specify a listener (a destination for the output).
 Use the Options parameter to determine the types of events that are traced and the ListenerOptions parameter to configure the trace output.
 
 To change the configuration of a trace, enter a Set-TraceSource command as you would to start a trace.
@@ -265,7 +266,7 @@ Windows PowerShell recognizes that the trace source is already being traced.
 It stops the trace, adds the new configuration, and starts or restarts the trace.
 
 To stop a trace, use the RemoveListener parameter.
-To stop a trace that uses the file listener \(a trace started by using the -FilePath parameter\), use the RemoveFileListener parameter.
+To stop a trace that uses the file listener (a trace started by using the -FilePath parameter), use the RemoveFileListener parameter.
 When you remove the listener, the trace stops.
 
 To determine which components can be traced, use Get-TraceSource.
@@ -273,12 +274,9 @@ The trace sources for each module are loaded automatically when the component is
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113400)
-
 [Get-TraceSource](9fc7c044-56ed-4606-a11a-595ca532e99b)
 
 [Set-PSDebug](00000000-0000-0000-0000-000000000000)
 
 [Trace-Command](db7c9374-998e-44c3-ad94-e0445176cf7b)
-
 

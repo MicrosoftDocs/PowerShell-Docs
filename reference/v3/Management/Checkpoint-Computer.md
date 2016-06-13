@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135197
 schema: 2.0.0
 ---
 
@@ -51,7 +52,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -69,7 +70,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: APPLICATION_INSTALL
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -94,8 +95,6 @@ Please try again later.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135197)
-
 [Disable-ComputerRestore](06c5d9de-8a14-449c-b13b-c6793297e3fe)
 
 [Enable-ComputerRestore](47fd013a-d03b-487d-8c7b-17e93f038d1f)
@@ -103,5 +102,4 @@ Please try again later.
 [Get-ComputerRestorePoint](3afe67e8-56bd-4505-b7f6-b822143a28d5)
 
 [Restore-Computer](c570f18d-f1dd-462a-b00b-3eb1d2a81dfc)
-
 

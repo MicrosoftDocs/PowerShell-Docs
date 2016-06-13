@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113395
 schema: 2.0.0
 ---
 
@@ -75,7 +76,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -93,7 +94,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -111,7 +112,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -130,7 +131,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -148,7 +149,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -167,7 +168,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -183,7 +184,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,7 +200,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -214,7 +215,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -228,8 +229,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -245,15 +246,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -264,8 +265,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -287,7 +288,7 @@ For more information, see about_Aliases.
 The Set-Item cmdlet is not supported by the Windows PowerShell FileSystem provider.
 To change the values of items in the file system, use Set-Content.
 
-In the Registry drives, HKLM: and HKCU:, Set-Item changes the data in the \(Default\) value of a registry key.
+In the Registry drives, HKLM: and HKCU:, Set-Item changes the data in the (Default) value of a registry key.
 To create and change the names of registry keys, use New-Item and Rename-Item.
 To change the names and data in registry values, use New-ItemProperty, Set-ItemProperty, and Rename-ItemProperty.
 
@@ -296,8 +297,6 @@ To list the providers available in your session, type "Get-PsProvider".
 For more information, see about_Providers.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113395)
 
 [Clear-Item](e78220a3-d720-4347-bdbe-8f15f77f3aa1)
 
@@ -316,5 +315,4 @@ For more information, see about_Providers.
 [Rename-Item](0f4879db-7cb4-4b2b-82f4-61f7b9c0dc24)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113321
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction]
 ```
 
 ## DESCRIPTION
-The Get-Location cmdlet gets an object that represents the current directory, much like the pwd \(print working directory\) command.
+The Get-Location cmdlet gets an object that represents the current directory, much like the pwd (print working directory) command.
 
 When you move between Windows PowerShell drives, Windows PowerShell retains your location in each drive.
 You can use Get-Location to find your location in each drive.
@@ -127,7 +128,7 @@ To see the current prompt function, type the following command:
 get-content function:prompt
 
 The command begins with the "function" keyword followed by the function name, "prompt".
-The function body appears within braces \( {} \).
+The function body appears within braces ( {} ).
 
 This command defines a new prompt that begins with the string "PowerShell: ".
 To append the current location, it uses a Get-Location command, which runs when the prompt function is called.
@@ -148,7 +149,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -167,7 +168,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -185,7 +186,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -207,14 +208,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -225,8 +226,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -267,11 +268,9 @@ To manage location stacks, use the Windows PowerShell Location cmdlets, as follo
 
 The unnamed default location stack is fully accessible only when it is the current location stack.
 If you make a named location stack the current location stack, you cannot no longer use Push-Location or Pop-Location cmdlets add or get items from the default stack or use Get-Location command to display the locations in the unnamed stack.
-To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string \(""\).
+To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string ("").
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113321)
 
 [Pop-Location](c36cf84e-1380-4964-b986-01b4cc1489a5)
 
@@ -280,5 +279,4 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 [Set-Location](d7f353cd-ebd7-462a-bd57-1498dc8b88a6)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

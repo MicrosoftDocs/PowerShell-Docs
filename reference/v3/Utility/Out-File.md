@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113363
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Out-File [[-Encoding] <String>] [-Append] [-Force] [-InputObject <PSObject>] [-N
 
 ## DESCRIPTION
 The Out-File cmdlet sends output to a file.
-You can use this cmdlet instead of the redirection operator \(\>\) when you need to use its parameters.
+You can use this cmdlet instead of the redirection operator (\>) when you need to use its parameters.
 
 ## EXAMPLES
 
@@ -78,7 +79,7 @@ These commands show how to use the Out-File cmdlet when you are not in a FileSys
 The first command sets the current location to the HKLM:\Software registry key.
 
 The second and third commands have the same effect.
-They use the Get-Acl cmdlet to get the security descriptor of the MyKey registry subkey \(HKLM\Software\MyCompany\MyKey\).
+They use the Get-Acl cmdlet to get the security descriptor of the MyKey registry subkey (HKLM\Software\MyCompany\MyKey).
 A pipeline operator passes the result to the Out-File cmdlet, which sends it to the Acl.txt file.
 
 Because Out-File is not supported by the Windows PowerShell Registry provider, you must specify either the file system drive name, such as "c:", or the name of the provider followed by two colons, "FileSystem::", in the value of the FilePath parameter.
@@ -97,7 +98,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Replace
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -118,7 +119,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: Unicode
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -133,7 +134,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -149,7 +150,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -165,12 +166,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Will not overwrite \(replace the contents\) of an existing file.
+Will not overwrite (replace the contents) of an existing file.
 By default, if a file exists in the specified path, Out-File overwrites the file without warning.
 If both Append and NoClobber are used, the output is appended to the existing file.
 
@@ -182,7 +183,7 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: Overwrite
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -190,7 +191,7 @@ Accept wildcard characters: False
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
 If you omit this parameter, the width is determined by the characteristics of the host.
-The default for the Windows PowerShell console is 80 \(characters\).
+The default for the Windows PowerShell console is 80 (characters).
 
 ```yaml
 Type: Int32
@@ -200,7 +201,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 80
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -233,8 +234,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -250,8 +251,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -270,7 +271,7 @@ The Out cmdlets do not format objects; they just render them and send them to th
 If you send an unformatted object to an Out cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
 The Out cmdlets do not have parameters for names or file paths.
-To send data to a cmdlet that contains the Out verb \(an Out cmdlet\), use a pipeline operator \(|\) to send the output of a Windows PowerShell command to the cmdlet.
+To send data to a cmdlet that contains the Out verb (an Out cmdlet), use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet.
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For help, see the examples.
 
@@ -278,8 +279,6 @@ Out-File sends data, but it does not emit any output objects.
 If you pipe the output of Out-File to Get-Member, Get-Member reports that no objects have been specified.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113363)
 
 [Out-Default](00000000-0000-0000-0000-000000000000)
 
@@ -292,5 +291,4 @@ If you pipe the output of Out-File to Get-Member, Get-Member reports that no obj
 [Out-String](d4502a29-2351-4580-b456-fb75280fedb4)
 
 [Tee-Object](ae5c403c-6a21-430e-a94a-74a1edee149a)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223914
 schema: 2.0.0
 ---
 
@@ -55,7 +56,7 @@ This command deletes all job triggers from scheduled job that have names that be
 PS C:\>Remove-JobTrigger -Name BackupArchive -TriggerID 3
 ```
 
-This command deletes only the third trigger \(ID = 3\) from the BackupArchive scheduled job.
+This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
 
 ### Example 3: Delete AtStartup job triggers from all scheduled jobs
 ```
@@ -71,7 +72,7 @@ To use the function, run the function in your session and then type "Delete-AtSt
 
 The Delete-AtStartup function contains a single command.
 The command uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the local computer.
-A pipeline operator \(|\) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all of the job triggers from each of the scheduled jobs.
+A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all of the job triggers from each of the scheduled jobs.
 A pipeline operator sends the job triggers to the Where-Object cmdlet, which selects job triggers where the value of the Frequency property of the job trigger equals "AtStartup."
 
 Job trigger objects have a JobDefinition property that contains the scheduled job that they trigger.
@@ -108,7 +109,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -125,7 +126,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -144,7 +145,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -164,7 +165,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All triggers
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -181,8 +182,6 @@ The cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223914)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -217,5 +216,4 @@ The cmdlet does not generate any output.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141442
 schema: 2.0.0
 ---
 
 # Enable-WSManCredSSP
 ## SYNOPSIS
-Enables Credential Security Support Provider \(CredSSP\) authentication on a client or on a server computer.
+Enables Credential Security Support Provider (CredSSP) authentication on a client or on a server computer.
 
 ## SYNTAX
 
@@ -91,7 +92,7 @@ PS C:\>enable-wsmancredssp -role server
 ```
 
 This command allows a computer to act as a delegate for another.
-The Enable-WSManCredSSP cmdlet \(shown in the earlier examples\) only enables CredSSP authentication on the client, and specifies the remote computers that can act on it's behalf.
+The Enable-WSManCredSSP cmdlet (shown in the earlier examples) only enables CredSSP authentication on the client, and specifies the remote computers that can act on it's behalf.
 In order for the remote computer to act as a delegate for the client, the CredSSP item in the Service node of WSMan must be set to true.
 This example sets the the CredSSP item in the Service node of WSMan to true.
 
@@ -127,7 +128,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,7 +143,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -169,7 +170,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -186,8 +187,6 @@ If CredSSP authentication is successfully enabled, this cmdlet generates an XMLE
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141442)
 
 [Connect-WSMan](74e46714-497f-4306-be84-109ab5b654cc)
 
@@ -212,5 +211,4 @@ If CredSSP authentication is successfully enabled, this cmdlet generates an XMLE
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113305
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ Get-Acl [-AllCentralAccessPolicies] [-Audit] [-Exclude <String[]>] [-Filter <Str
 
 ## DESCRIPTION
 The Get-Acl cmdlet gets objects that represent the security descriptor of a file or resource.
-The security descriptor contains the access control lists \(ACLs\) of the resource.
+The security descriptor contains the access control lists (ACLs) of the resource.
 The ACL specifies the permissions that users and user groups have to access the resource.
 
 Beginning in Windows PowerShell 3.0, you can use the InputObject parameter of Get-Acl to get the security descriptor of objects that do not have a path.
@@ -51,7 +52,7 @@ PS C:\>Get-Acl C:\Windows\k*.log | Format-List -Property PSPath, Sddl
 This command gets the Windows PowerShell path and SDDL for all of the .log files in the C:\Windows directory whose names begin with "k."
 
 The command uses the Get-Acl cmdlet to get objects representing the security descriptors of each log file.
-It uses a pipeline operator \(|\) to send the results to the Format-List cmdlet.
+It uses a pipeline operator (|) to send the results to the Format-List cmdlet.
 The command uses the Property parameter of Format-List to display only the PsPath and SDDL properties of each security descriptor object.
 
 Lists are often used in Windows PowerShell, because long values appear truncated in tables.
@@ -73,10 +74,10 @@ The result is a list of numbers representing the number of audit records for eac
 PS C:\>Get-Acl -Path HKLM:\System\CurrentControlSet\Control | Format-List
 ```
 
-This command uses the Get-Acl cmdlet to get the security descriptor of the Control subkey \(HKLM\SYSTEM\CurrentControlSet\Control\) of the registry.
+This command uses the Get-Acl cmdlet to get the security descriptor of the Control subkey (HKLM\SYSTEM\CurrentControlSet\Control) of the registry.
 
 The Path parameter specifies the Control subkey.
-The pipeline operator \(|\) passes the security descriptor that Get-Acl gets to the Format-List command, which formats the properties of the security descriptor as a list so that they are easy to read.
+The pipeline operator (|) passes the security descriptor that Get-Acl gets to the Format-List command, which formats the properties of the security descriptor as a list so that they are easy to read.
 
 ### Example 5
 ```
@@ -88,7 +89,7 @@ This command uses the InputObject parameter of Get-Acl to get the security descr
 ## PARAMETERS
 
 ### -Audit
-Gets the audit data for the security descriptor from the system access control list \(SACL\).
+Gets the audit data for the security descriptor from the system access control list (SACL).
 
 ```yaml
 Type: SwitchParameter
@@ -98,7 +99,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,7 +117,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -134,7 +135,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -162,7 +163,7 @@ Get-Acl gets the security descriptor of the resource indicated by the path.
 Wildcards are permitted.
 If you omit the Path parameter, Get-Acl gets the security descriptor of the current directory.
 
-The parameter name \("Path"\) is optional.
+The parameter name ("Path") is optional.
 
 ```yaml
 Type: String[]
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -192,7 +193,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -213,7 +214,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -234,14 +235,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -252,8 +253,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -269,21 +270,18 @@ Get-Acl returns an object that represents the ACLs that it gets.
 The object type depends upon the ACL type.
 
 ## NOTES
-By default, Get-Acl displays the Windows PowerShell path to the resource \(\<provider\>::\<resource-path\>\), the owner of the resource, and "Access", a list \(array\) of the access control entries in the discretionary access control list \(DACL\) for the resource.
+By default, Get-Acl displays the Windows PowerShell path to the resource (\<provider\>::\<resource-path\>), the owner of the resource, and "Access", a list (array) of the access control entries in the discretionary access control list (DACL) for the resource.
 The DACL list is controlled by the resource owner.
 
-When you format the result as a list, \("Get-Acl | Format-List"\), in addition to the path, owner, and access list, Windows PowerShell displays the following properties and property values:
+When you format the result as a list, ("Get-Acl | Format-List"), in addition to the path, owner, and access list, Windows PowerShell displays the following properties and property values:
 
 -- Group: The security group of the owner.
--- Audit:  A list \(array\) of entries in the system access control list \(SACL\). The SACL specifies the types of access attempts for which Windows generates audit records.
+-- Audit:  A list (array) of entries in the system access control list (SACL). The SACL specifies the types of access attempts for which Windows generates audit records.
 -- Sddl: The security descriptor of the resource displayed in a single text string in Security Descriptor Definition Language format. Windows PowerShell uses the GetSddlForm method of security descriptors to get this data.
 
 Because Get-Acl is supported by the file system and registry providers, you can use Get-Acl to view the ACL of file system objects, such as files and directories, and registry objects, such as registry keys and entries.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113305)
-
 [Set-Acl](52e7305d-030f-4f33-b436-898787875a7b)
-
 

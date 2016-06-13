@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113364
 schema: 2.0.0
 ---
 
@@ -35,7 +36,7 @@ You can use the following features of the table to examine your data:
 -- Sort. To sort the data, click a column header. Click again to toggle from ascending to descending order.
 -- Quick Filter. Use the "Filter" box at the top of the window to search the text in the table. You can search for text in a particular column, search for literals, and search for multiple words.
 -- Criteria Filter. Use the "Add criteria" drop-down menu to create rules to filter the data. This is very useful for very large data sets, such as event logs.
--- Copy and paste. To copy rows of data from Out-GridView, press CTRL+C \(copy\). You can paste the data into any text or spreadsheet program.
+-- Copy and paste. To copy rows of data from Out-GridView, press CTRL+C (copy). You can paste the data into any text or spreadsheet program.
 
 For instructions for using these features, type "Get-Help Out-GridView -Full" and see "How to Use the Grid View Window Features" in the NOTES section.
 
@@ -69,12 +70,12 @@ This command displays a formatted table in a grid view window.
 
 It uses the Get-Process cmdlet to get the processes on the computer.
 
-Then, it uses a pipeline operator \(|\) to send the process objects to the Select-Object cmdlet.
+Then, it uses a pipeline operator (|) to send the process objects to the Select-Object cmdlet.
 The command uses the Property parameter of Select-Object to select the Name, WorkingSet, and PeakWorkingSet properties to be displayed in the table.
 
 Another pipeline operator sends the filtered objects to the Sort-Object cmdlet, which sorts them in descending order by the value of the WorkingSet property.
 
-The final part of the command uses a pipeline operator \(|\) to send the formatted table to Out-GridView.
+The final part of the command uses a pipeline operator (|) to send the formatted table to Out-GridView.
 
 You can now use the features of the grid view to search, sort, and filter the data.
 
@@ -88,7 +89,7 @@ This command saves its output in a variable and sends it to Out-GridView.
 The command uses the Get-ChildItem cmdlet to get the files in the Windows PowerShell installation directory and its subdirectories.
 The path to the installation directory is saved in the $pshome automatic variable.
 
-The command uses the assignment operator \(=\) to save the output in the $a variable and the pipeline operator \(|\) to send the output to Out-GridView.
+The command uses the assignment operator (=) to save the output in the $a variable and the pipeline operator (|) to send the output to Out-GridView.
 
 The parentheses in the command establish the order of operations.
 As a result, the output from the Get-ChildItem command is saved in the $a variable before it is sent to Out-GridView.
@@ -128,7 +129,7 @@ The PassThru parameter is equivalent to using the Multiple value of the OutputMo
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Powershell.exe –Command "Get-Service | Out-GridView –Wait"
+PS C:\>Powershell.exe -Command "Get-Service | Out-GridView -Wait"
 ```
 
 This command shows how to use the Wait parameter of Out-GridView to create a Windows shortcut to the Out-GridView window.
@@ -139,8 +140,8 @@ Without the Wait parameter, Windows PowerShell would exit as soon as the Out-Gri
 ### -InputObject
 Accepts input for Out-GridView.
 
-When you use the InputObject parameter to send a collection \(more than one\) of objects to Out-GridView, Out-GridView treats the collection as one collection object, and it displays one row that represents the collection. 
-To display the each object in the collection, use a pipeline operator \(|\) to send objects to Out-GridView.
+When you use the InputObject parameter to send a collection (more than one) of objects to Out-GridView, Out-GridView treats the collection as one collection object, and it displays one row that represents the collection. 
+To display the each object in the collection, use a pipeline operator (|) to send objects to Out-GridView.
 
 ```yaml
 Type: PSObject
@@ -167,7 +168,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: The current command
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -192,7 +193,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -214,7 +215,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No pipeline output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -235,7 +236,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -284,7 +285,7 @@ RIGHT ARROW       In column header row, move right one column.
 
 CONTEXT MENU KEY  In column header row, displays the "Select Columns" option.
 
-ENTER or SPACEBAR In column header row, sort column data \(toggle A-Z, Z-A\).
+ENTER or SPACEBAR In column header row, sort column data (toggle A-Z, Z-A).
 
 HOW TO USE THE GRID VIEW WINDOW FEATURES
 
@@ -327,7 +328,7 @@ How to Select Table Data
 
 ------------------------
 -- To select a row, click the row or use the up or down arrow to navigate to the row.
--- To select all rows \(except for the header row\), press CTRL+A.
+-- To select all rows (except for the header row), press CTRL+A.
 -- To select consecutive rows, press and hold the SHIFT key while clicking the rows or using the arrow keys.
 -- To select nonconsecutive rows, press the CTRL key and click to add a row to the selection.
 
@@ -341,7 +342,7 @@ How to Copy Rows
 You can paste the data into any text or spreadsheet program.
 You cannot copy columns or parts of rows and you cannot copy the column header row.
 
-How to Search in the Table  \(Quick Filter\)
+How to Search in the Table  (Quick Filter)
 
 ---------------------------------
 
@@ -349,7 +350,7 @@ Use the "Filter" box to search for data in the table.
 When you type in the box, only items that include the typed text appear in the table.
 
 -- Search for text. To search for text in the table, in the "Filter" box, type the text to find.
--- Search for multiple words. To search for multiple words in the table, type the words separated by spaces. Out-GridView displays rows that include all of the words \(logical AND\).
+-- Search for multiple words. To search for multiple words in the table, type the words separated by spaces. Out-GridView displays rows that include all of the words (logical AND).
 -- Search for literal phrases. To search for phrases that include spaces or special characters, enclose the phrase in quotation marks. Out-GridView displays rows that include an exact match for the phrase.
 -- Search in columns. To search for text in one or more columns, use the following format:
 
@@ -395,7 +396,7 @@ To display the "Add criteria" menu button, in the upper right corner of the wind
 Click the "Add Criteria" menu button.
 
 3.
-Click to select columns \(properties\).
+Click to select columns (properties).
 You can select one or many properties.
 
 4.
@@ -424,7 +425,4 @@ How to Delete Criteria
 -- To delete all criteria, click the "Clear All" button.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113364)
-
 

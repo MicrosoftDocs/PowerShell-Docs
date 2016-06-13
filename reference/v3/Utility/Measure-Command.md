@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113348
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ This command measures the time it takes to run a Get-EventLog command that gets 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
 The first command measures the time it takes to process a recursive Get-ChildItem command that uses the Path parameter to get only .txt files in the C:\Windows directory and its subdirectories.
-PS C:\>Measure-Command {Get-ChildItem –Path C:\Windows\*.txt -Recurse}
+PS C:\>Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 
 Days              : 0
 Hours             : 0
@@ -65,8 +66,8 @@ These commands show the value of using a provider-specific filter in Windows Pow
 
 ### -Expression
 Specifies the expression that is being timed.
-Enclose the expression in braces \({}\).
-The parameter name \("Expression"\) is optional.
+Enclose the expression in braces ({}).
+The parameter name ("Expression") is optional.
 
 ```yaml
 Type: ScriptBlock
@@ -76,7 +77,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -92,7 +93,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -115,10 +116,7 @@ For example, "\<parameter-name\> \<value1\>, \<value2\>".
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113348)
-
 [Invoke-Command](00000000-0000-0000-0000-000000000000)
 
 [Trace-Command](db7c9374-998e-44c3-ad94-e0445176cf7b)
-
 

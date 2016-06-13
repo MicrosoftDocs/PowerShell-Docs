@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Host.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113415
 schema: 2.0.0
 ---
 
@@ -43,8 +44,5 @@ If a transcript has not been started, the command fails.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113415)
-
 [Start-Transcript](05b8f72c-ae3b-45d5-95e0-86aa1ca1908a)
-
 

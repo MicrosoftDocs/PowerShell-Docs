@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113323
 schema: 2.0.0
 ---
 
@@ -51,7 +52,7 @@ When the .pfx certificate file is not password-protected, the value of the Authe
 
 ### -FilePath
 The full path to the .pfx file of the secured file.
-The parameter name \("FilePath"\) is optional.
+The parameter name ("FilePath") is optional.
 
 ```yaml
 Type: String[]
@@ -61,7 +62,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -80,7 +81,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -99,12 +100,9 @@ When using the Invoke-Command cmdlet to run a Get-PfxCertificate command remotel
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113323)
-
 [Get-AuthenticodeSignature](36e5e640-2125-476e-98d9-495977315f14)
 
 [Set-AuthenticodeSignature](f3c13299-4463-48af-83ea-86de4a239509)
 
 [about_Signing](054e64fa-3571-40fd-a862-630b5217b4f4)
-
 

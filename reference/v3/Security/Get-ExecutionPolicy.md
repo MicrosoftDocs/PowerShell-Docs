@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113315
 schema: 2.0.0
 ---
 
@@ -22,7 +23,7 @@ The default value is "Restricted."
 Without parameters, Get-ExecutionPolicy gets the execution policy that is effective in the session.
 You can use the List parameter to get all execution policies that affect the session or the Scope parameter to get the execution policy for a particular scope.
 
-For more information, see about_Execution_Policies \(http://go.microsoft.com/fwlink/?LinkID=135170\).
+For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 ## EXAMPLES
 
@@ -42,7 +43,7 @@ RemoteSigned
 ```
 
 These commands set a new user preference for the execution policy and then display the effective execution policy.
-The commands are separated by a semicolon \(;\).
+The commands are separated by a semicolon (;).
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -112,7 +113,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -136,7 +137,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: Effective execution policy
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -151,16 +152,14 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 The execution policy is part of the security strategy of Windows PowerShell.
-It determines whether you can load configuration files \(including your Windows PowerShell profile\) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
+It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
 
 The effective execution policy is determined by the policies that you set by using the Set-ExecutionPolicy cmdlet and the "Turn on Script Execution" group policies for computers and users.
-The precedence order is Computer Group Policy \> User Group Policy \> Process \(session\) execution policy \> User execution policy \> Computer execution policy.
+The precedence order is Computer Group Policy \> User Group Policy \> Process (session) execution policy \> User execution policy \> Computer execution policy.
 
-For more information about Windows PowerShell execution policy, including definitions of the Windows PowerShell policies, see about_Execution_Policies \(http://go.microsoft.com/fwlink/?LinkID=135170\).
+For more information about Windows PowerShell execution policy, including definitions of the Windows PowerShell policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113315)
 
 [Get-AuthenticodeSignature](36e5e640-2125-476e-98d9-495977315f14)
 
@@ -173,5 +172,4 @@ For more information about Windows PowerShell execution policy, including defini
 [about_Execution_Policies](2e8d33b9-6c07-4a15-a486-9388d10eb00f)
 
 [about_Signing](054e64fa-3571-40fd-a862-630b5217b4f4)
-
 

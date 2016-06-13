@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113397
 schema: 2.0.0
 ---
 
@@ -52,7 +53,7 @@ PS Env:\>
 ```
 
 This command sets the current location to the root of the Env: drive.
-It uses the Passthru parameter to direct Windows PowerShell to return a PathInfo \(System.Management.Automation.PathInfo\) object that represents the Env: location.
+It uses the Passthru parameter to direct Windows PowerShell to return a PathInfo (System.Management.Automation.PathInfo) object that represents the Env: location.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -88,7 +89,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -104,7 +105,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -119,14 +120,14 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -StackName
 Makes the specified location stack the current location stack.
 Enter a location stack name.
-To indicate the unnamed default location stack, type "$null" or an empty string \(""\).
+To indicate the unnamed default location stack, type "$null" or an empty string ("").
 
 The Location cmdlets act on the current stack unless you use the StackName parameter to specify a different stack.
 
@@ -138,7 +139,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -155,14 +156,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path \(but not a literal path\) to Set-Location.
+You can pipe a string that contains a path (but not a literal path) to Set-Location.
 
 ## OUTPUTS
 
@@ -192,11 +193,9 @@ To manage location stacks, use the Windows PowerShell Location cmdlets, as follo
 
 The unnamed default location stack is fully accessible only when it is the current location stack.
 If you make a named location stack the current location stack, you cannot no longer use Push-Location or Pop-Location cmdlets add or get items from the default stack or use Get-Location command to display the locations in the unnamed stack.
-To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string \(""\).
+To make the unnamed stack the current stack, use the StackName parameter of the Set-Location cmdlet with a value of $null or an empty string ("").
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113397)
 
 [Get-Location](b4c8d674-ba23-4bdf-8322-1f08acdc0ca9)
 
@@ -205,5 +204,4 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 [Push-Location](ea5cd71a-bfe2-459d-9b9c-d3b7ad3070f4)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

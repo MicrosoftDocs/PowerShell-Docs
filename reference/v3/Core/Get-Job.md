@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113328
 schema: 2.0.0
 ---
 
@@ -103,7 +104,7 @@ PS C:\>Get-Job -Command "*get-process*"
 
 This command gets the jobs on the system that include a Get-Process command.
 The command uses the Command parameter of Get-Job to limit the jobs retrieved.
-The command uses wildcard characters \(*\) to get jobs that include a Get-Process command anywhere within the command string.
+The command uses wildcard characters (*) to get jobs that include a Get-Process command anywhere within the command string.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -111,7 +112,7 @@ PS C:\>"*get-process*" | Get-Job
 ```
 
 Like the command in the  previous example, this command gets the jobs on the system that include a Get-Process command.
-The command uses a pipeline operator \(|\) to send a string \(in quotation marks\) to the Get-Job cmdlet.
+The command uses a pipeline operator (|) to send a string (in quotation marks) to the Get-Job cmdlet.
 It is the equivalent of the previous command.
 
 ### -------------------------- EXAMPLE 5 --------------------------
@@ -314,7 +315,7 @@ This example shows the effect of using the IncludeChildJob and ChildJobState par
 ### -Command
 Gets the jobs that include the specified command.
 The default is all jobs.
-Enter a command \(as a string\).
+Enter a command (as a string).
 You can use wildcards to specify a command pattern.
 
 ```yaml
@@ -356,7 +357,7 @@ Gets only jobs with the specified IDs.
 
 The ID is an integer that uniquely identifies the job within the current session.
 It is easier to remember and to type than the instance ID, but it is unique only within the current session.
-You can type one or more IDs \(separated by commas\).
+You can type one or more IDs (separated by commas).
 To find the ID of a job, type "Get-Job" without parameters.
 
 ```yaml
@@ -386,7 +387,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -431,7 +432,7 @@ Gets only jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 By default, Get-Job gets all the jobs in the current session.
 
-For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspx
+For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx
 
 ```yaml
 Type: JobState
@@ -463,7 +464,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -485,7 +486,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -507,7 +508,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -519,8 +520,8 @@ To get jobs that do not have more results, type -HaveMoreData:$false.
 
 To get the results of a job, use the Receive-Job cmdlet.
 
-When you use the Receive-Job cmdlet, it deletes from its in-memory \(session-specific\) storage the results that it returned.
-When it has returned all results of the job in the current session, it sets the value of the HasMoreData property of the job to False \($false\) to indicate that it has no more results for the job in the current session.
+When you use the Receive-Job cmdlet, it deletes from its in-memory (session-specific) storage the results that it returned.
+When it has returned all results of the job in the current session, it sets the value of the HasMoreData property of the job to False ($false) to indicate that it has no more results for the job in the current session.
 Use the Keep parameter of Receive-Job to prevent Receive-Job from deleting results and changing the value of the HasMoreData property.
 For more information, type "Get-Help Receive-Job".
 
@@ -538,7 +539,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -559,7 +560,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -583,8 +584,6 @@ The following list shows common job types.
 -- PSWorkflowJob: Job started by using the AsJob common parameter of workflows.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113328)
 
 [Invoke-Command](906b4b41-7da8-4330-9363-e7164e5e6970)
 
@@ -611,5 +610,4 @@ The following list shows common job types.
 [about_Remote_Jobs](b68c635f-5ee0-44fd-8693-28f8f4ca9fa0)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
-
 

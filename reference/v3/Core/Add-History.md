@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113279
 schema: 2.0.0
 ---
 
@@ -41,11 +42,11 @@ PS C:\>import-clixml c:\temp\history.xml | add-history -passthru | foreach-objec
 This command imports commands from the History.xml file, adds them to the current session history, and then executes the commands in the combined history.
 
 The first command uses the Import-Clixml cmdlet to import a command history that was exported to the History.xml file.
-The pipeline operator \(|\) passes the commands to the Add-History parameter, which adds the commands to the current session history.
+The pipeline operator (|) passes the commands to the Add-History parameter, which adds the commands to the current session history.
 The PassThru parameter passes the objects representing the added commands down the pipeline.
 
 The command then uses the ForEach-Object cmdlet to apply the Invoke-History command to each of the commands in the combined history.
-The Invoke-History command is formatted as a script block \(enclosed in braces\) as required by the Process parameter of the ForEach-Object cmdlet.
+The Invoke-History command is formatted as a script block (enclosed in braces) as required by the Process parameter of the ForEach-Object cmdlet.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -54,7 +55,7 @@ PS C:\>get-history -id 5 -count 5 | add-history
 
 This command adds the first five commands in the history to the end of the history list.
 It uses the Get-History cmdlet to get the five commands ending in command 5.
-The pipeline operator \(|\) passes them to the Add-History cmdlet, which appends them to the current history.
+The pipeline operator (|) passes them to the Add-History cmdlet, which appends them to the current history.
 The Add-History command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the InputObject parameter of  Add-History.
 
 ### -------------------------- EXAMPLE 4 --------------------------
@@ -93,7 +94,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -109,7 +110,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -146,8 +147,6 @@ To edit the session history, export the session to a CSV or XML file, edit the f
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113279)
-
 [Clear-History](c6500716-f5ec-4a09-b7dc-fd412af6a050)
 
 [Get-History](023a54f7-7e13-4699-8b0a-5f348b2a8125)
@@ -155,5 +154,4 @@ To edit the session history, export the session to a CSV or XML file, edit the f
 [Invoke-History](cc0f7984-a1f9-445c-99ba-be39a502fe01)
 
 [about_History](cb632285-e50b-428e-8d7d-7583f8880b70)
-
 

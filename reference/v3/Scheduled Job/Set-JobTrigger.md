@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223916
 schema: 2.0.0
 ---
 
@@ -160,7 +161,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -176,7 +177,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -191,7 +192,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -224,19 +225,19 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -DaysOfWeek
 Specifies the days of the week on which a weekly scheduled job runs.
-Enter day names, such as '"Monday", "Thursday"', integers 0-6, where 0 represents Sunday, or an asterisk \(*\) to represent every day.
+Enter day names, such as '"Monday", "Thursday"', integers 0-6, where 0 represents Sunday, or an asterisk (*) to represent every day.
 This parameter is required in the Weekly parameter set.
 
 NOTE: Day names are converted to their integer values in the job trigger.
 When you enclose day names in quotation marks in a command, enclose each day name in separate quotation marks, such as "Monday", "Tuesday".
 If you enclose multiple day names in a single quotation mark pair, the corresponding integer values are summed.
-For example, "Monday, Tuesday" \(1, 2\) results in a value of "Wednesday" \(3\).
+For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday" (3).
 
 ```yaml
 Type: DayOfWeek[]
@@ -246,7 +247,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -265,12 +266,12 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Once
-Specifies a non-recurring \(one time\) schedule.
+Specifies a non-recurring (one time) schedule.
 
 ```yaml
 Type: SwitchParameter
@@ -280,7 +281,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -296,14 +297,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RandomDelay
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time specified by the value of this parameter.
-The default value, zero \(00:00:00\), disables the random delay.
+The default value, zero (00:00:00), disables the random delay.
 
 Enter a timespan object, such as one returned by the New-TimeSpan cmdlet, or enter a value in \<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a timespan object.
 
@@ -315,7 +316,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 00:00:00
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -328,7 +329,7 @@ Enter a timespan object, such as one that the New-TimeSpan cmdlet returns or a s
 
 To run a job indefinitely, set the value of the RepetitionDuration parameter to \[TimeSpan\]::MaxValue.
 
-To stop a job before the job trigger repetition duration expires, set the RepetitionDuration value to zero \(0\).
+To stop a job before the job trigger repetition duration expires, set the RepetitionDuration value to zero (0).
 
 To change the repetition duration or repetition interval of a Once job trigger, the command must include both the RepetitionInterval and RepetitionDuration parameters.
 To change the repetition duration or repetition intervals of other types of job triggers, the command must include the Once, At, RepetitionInterval and RepetitionDuration parameters.
@@ -341,7 +342,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -363,13 +364,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -User
 Specifies the users who trigger an AtLogon start of a scheduled job.
-Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk \(*\) to represent all users.
+Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (*) to represent all users.
 The default value is all users.
 
 ```yaml
@@ -380,7 +381,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All users
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -396,7 +397,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -413,7 +414,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -434,8 +435,6 @@ When you change the job trigger of a scheduled job, the job is changed.
 You do not need to use a Set-ScheduledJob command to apply the changed trigger to the scheduled job.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223916)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -470,5 +469,4 @@ You do not need to use a Set-ScheduledJob command to apply the changed trigger t
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

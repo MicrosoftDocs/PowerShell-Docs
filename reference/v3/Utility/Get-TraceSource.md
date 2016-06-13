@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113333
 schema: 2.0.0
 ---
 
@@ -41,7 +42,7 @@ This command gets all of the Windows PowerShell components that can be traced.
 ### -Name
 Gets only the specified trace sources.
 Wildcards are permitted.
-The parameter name \("Name"\) is optional.
+The parameter name ("Name") is optional.
 
 ```yaml
 Type: String[]
@@ -51,7 +52,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -69,10 +70,7 @@ Get-TraceSource returns objects that represent the trace sources.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113333)
-
 [Set-TraceSource](442780bb-7332-4995-b583-6e07889d1e26)
 
 [Trace-Command](db7c9374-998e-44c3-ad94-e0445176cf7b)
-
 

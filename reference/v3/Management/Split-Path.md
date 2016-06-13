@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113404
 schema: 2.0.0
 ---
 
@@ -53,7 +54,7 @@ PS C:\>split-path "HKCU:\Software\Microsoft" -qualifier
 HKCU:
 ```
 
-This command returns only the qualifier \(the drive\) of the path.
+This command returns only the qualifier (the drive) of the path.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -64,7 +65,7 @@ Pass2.log
 ```
 
 This command displays the files that are referenced by the split path.
-Because this path is split to the last item \(the "leaf"\), only the file names of the paths are displayed.
+Because this path is split to the last item (the "leaf"), only the file names of the paths are displayed.
 
 The Resolve parameter tells Split-Path to display the items that the split path references, instead of displaying the split path.
 
@@ -87,7 +88,7 @@ False
 ```
 
 This command determines whether the path is relative or absolute.
-In this case, because the path is relative to the current directory, which is represented by a dot \(.\), it returns FALSE \($false\).
+In this case, because the path is relative to the current directory, which is represented by a dot (.), it returns FALSE ($false).
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -98,7 +99,7 @@ PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
 This command changes your location to the directory that contains the Windows PowerShell profile.
 
 The command in parentheses uses the Split-Path cmdlet to return only the parent of the path stored in the built-in $Profile variable.
-\(The Parent parameter is the default split location parameter, so you can omit it from the command.\) The parentheses direct Windows PowerShell to run the command first.
+(The Parent parameter is the default split location parameter, so you can omit it from the command.) The parentheses direct Windows PowerShell to run the command first.
 This is a handy way to navigate to a directory with a long path name.
 
 ### -------------------------- EXAMPLE 6 --------------------------
@@ -107,7 +108,7 @@ PS C:\>'C:\Documents and Settings\User01\My Documents\My Pictures' | split-path
 C:\Documents and Settings\User01\My Documents
 ```
 
-This command uses a pipeline operator \(|\) to send a path to the Split-Path cmdlet.
+This command uses a pipeline operator (|) to send a path to the Split-Path cmdlet.
 The path is enclosed in quotation marks to indicate that it is a single token.
 
 ## PARAMETERS
@@ -130,14 +131,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -IsAbsolute
-Returns TRUE \($True\) if the path is absolute and FALSE \($False\) if it is relative.
-An absolute path has a length greater than zero and does not use a dot \( .
-\) to indicate the current path.
+Returns TRUE ($True) if the path is absolute and FALSE ($False) if it is relative.
+An absolute path has a length greater than zero and does not use a dot ( .
+) to indicate the current path.
 
 ```yaml
 Type: SwitchParameter
@@ -147,7 +148,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -163,7 +164,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -182,7 +183,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -199,7 +200,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -216,7 +217,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: True
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -234,7 +235,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -250,7 +251,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: False
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -265,7 +266,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -282,7 +283,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -300,10 +301,10 @@ When you use the Resolve parameter, Split-Path returns a string that describes t
 When you use the IsAbsolute parameter, Split-Path returns a Boolean value.
 
 ## NOTES
-The split location parameters \(Qualifier, Parent, Leaf, and NoQualifier\) are exclusive.
+The split location parameters (Qualifier, Parent, Leaf, and NoQualifier) are exclusive.
 You can use only one in each command.
 
-The cmdlets that contain the Path noun \(the Path cmdlets\) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
+The cmdlets that contain the Path noun (the Path cmdlets) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
 They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format.
 Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
@@ -315,8 +316,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113404)
-
 [Convert-Path](f2548a68-4175-4872-961b-cd478ec0d6b3)
 
 [Join-Path](742e18e1-55c8-44ce-9c05-526bc22bf1f5)
@@ -326,5 +325,4 @@ For more information, see about_Providers.
 [Test-Path](2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

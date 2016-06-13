@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217037
 schema: 2.0.0
 ---
 
@@ -62,7 +63,7 @@ Receive-PSSession [-Name] <String> [-JobName <String>] [-OutTarget <OutTarget>] 
 ```
 
 ## DESCRIPTION
-The Receive-PSSession cmdlet gets the results of commands running in Windows PowerShell sessions \("PSSession"\) that were disconnected.
+The Receive-PSSession cmdlet gets the results of commands running in Windows PowerShell sessions ("PSSession") that were disconnected.
 If the session is currently connected, Receive-PSSession gets the results of commands that were running when the session was disconnected.
 If the session is still disconnected, Receive-PSSession connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.
 
@@ -248,7 +249,7 @@ The default value is Default.
 
 For information about the values of this parameter, see "AuthenticationMechanism enumeration" in MSDN.
 
-CAUTION: Credential Security Support Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -260,12 +261,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to connect to the disconnected session.
+Specifies the digital public key certificate (X509) of a user account that has permission to connect to the disconnected session.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication.
@@ -281,7 +282,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -292,7 +293,7 @@ The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one computer.
 Wildcards are not permitted.
-To specify the local computer, type the computer name, "localhost", or a dot \(.\)
+To specify the local computer, type the computer name, "localhost", or a dot (.)
 
 ```yaml
 Type: String
@@ -322,7 +323,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -359,7 +360,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -371,7 +372,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -395,7 +396,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Job<n>
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -410,7 +411,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -422,7 +423,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -432,7 +433,7 @@ Determines how the session results are returned.
 Valid values are:
 
 -- Job: Returns the results asynchronously in a job object. You can use the JobName parameter to specify a name or new name for the job.
--- Host: Returns the results to the command line \(synchronously\). If the command is being resumed or the results consist of a large number of objects, the response might be delayed.
+-- Host: Returns the results to the command line (synchronously). If the command is being resumed or the results consist of a large number of objects, the response might be delayed.
 
 The default value of the OutTarget parameter is Host.
 However, if the command that is being received in disconnected session was started in the current session, the default value of the OutTarget parameter is the form in which the command was started.
@@ -449,14 +450,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Host
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Port
 Specifies the network port on the remote computer that is used to reconnect to the session. 
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
-The default ports are 5985 \(the WinRM port for HTTP\) and 5986 \(the WinRM port for HTTPS\).
+The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 To configure the listener, type the following two commands at the Windows PowerShell prompt:
@@ -477,7 +478,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5985, 5986
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -498,7 +499,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Uses the Secure Sockets Layer \(SSL\) protocol to connect to the disconnected session.
+Uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
@@ -514,12 +515,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AllowRedirection
-Allows redirection of this connection to an alternate Uniform Resource Identifier \(URI\).
+Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the ConnectionURI parameter, the remote destination can return an instruction to redirect to a different URI.
 By default, Windows PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
@@ -536,7 +537,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -587,7 +588,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
-Specifies a Uniform Resource Identifier \(URI\) that defines the connection endpoint that is used to reconnect to the disconnected session.
+Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint that is used to reconnect to the disconnected session.
 
 The URI must be fully qualified. 
 The format of this string is as follows:
@@ -613,7 +614,7 @@ Aliases: URI,CU
 
 Required: True
 Position: 1
-Default value: http://localhost:5985/WSMAN
+Default value: Http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -629,8 +630,8 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
 Type: PSSessionOption
@@ -640,7 +641,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -654,8 +655,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -671,8 +672,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -699,7 +700,7 @@ Otherwise, it returns objects that represent that command results.
 
 ## NOTES
 Receive-PSSession gets results only from sessions that were disconnected.
-Only sessions that are connected to \(terminate at\) computers running Windows PowerShell 3.0 or later can be disconnected and reconnected.
+Only sessions that are connected to (terminate at) computers running Windows PowerShell 3.0 or later can be disconnected and reconnected.
 
 If the commands that were running in the disconnected session did not generate results or if the results were already returned to another session, Receive-PSSession does not generate any output.
 
@@ -712,7 +713,7 @@ You cannot change the idle timeout value of a PSSession when you connect to the 
 The SessionOption parameter of Receive-PSSession takes a SessionOption object that has an IdleTimeout value.
 However, the IdleTimeout value of the SessionOption object and the IdleTimeout value of the $PSSessionOption variable are ignored when connecting to a PSSession or receiving results.
 
-You can set and change the idle timeout of a PSSession when you create the PSSession \(by using the New-PSSession or Invoke-Command cmdlets\) and when you disconnect from the PSSession.
+You can set and change the idle timeout of a PSSession when you create the PSSession (by using the New-PSSession or Invoke-Command cmdlets) and when you disconnect from the PSSession.
 
 The IdleTimeout property of  a PSSession is critical to disconnected sessions, because it determines how long a disconnected session is maintained on the remote computer.
 Disconnected sessions are considered to be idle from the moment that they are disconnected, even if commands are running in the disconnected session.
@@ -748,13 +749,11 @@ To determine whether you can connect or reconnect to the session, use the Availa
 An Availability value of None indicates that you can connect to the session.
 A value of Busy indicates that you cannot connect to the PSSession because it is connected to another session.
 
-For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspx.
+For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspx.
 
-For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspx.
+For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217037)
 
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
@@ -781,5 +780,4 @@ For more information about the values of the Availability property of sessions, 
 [about_Remote_Disconnected_Sessions](adc4b4b4-3d51-4e01-9be2-5a74f530e3f3)
 
 [about_Session_Configurations](a2fbe12a-350c-4d04-be50-24102824e3ab)
-
 

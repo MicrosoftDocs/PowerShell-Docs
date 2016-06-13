@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113350
 schema: 2.0.0
 ---
 
@@ -49,7 +50,7 @@ The Temp directory, and all of its subdirectories and files, then appear in the 
 PS C:\>move-item -path .\*.txt -destination C:\Logs
 ```
 
-This command moves all of the text files \(*.txt\) in the current directory \(represented by a dot \(.\)\) to the C:\Logs directory.
+This command moves all of the text files (*.txt) in the current directory (represented by a dot (.)) to the C:\Logs directory.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -58,15 +59,15 @@ PS C:\>Get-ChildItem -Path .\*.txt -Recurse | Move-Item -Destination C:\TextFile
 
 This command moves all of the text files from the current directory and all subdirectories, recursively, to the C:\TextFiles directory.
 
-The command uses the Get-ChildItem cmdlet to get all of the child items in the current directory \(represented by the dot \[.\]\) and its subdirectories that have a *.txt file name extension.
+The command uses the Get-ChildItem cmdlet to get all of the child items in the current directory (represented by the dot \[.\]) and its subdirectories that have a *.txt file name extension.
 It uses the Recurse parameter to make the retrieval recursive and the Include parameter to limit the retrieval to *.txt files.
 
-The pipeline operator \(|\) sends the results of this command to Move-Item, which moves the text files to the TextFiles directory.
+The pipeline operator (|) sends the results of this command to Move-Item, which moves the text files to the TextFiles directory.
 
 If files being moved to C:\Textfiles have the same name, Move-Item displays an error and continues, but it moves only one file with each name to C:\Textfiles.
 The other files remain in their original directories.
 
-If the Textfiles directory \(or any other element of the destination path\) does not exist, the command fails.
+If the Textfiles directory (or any other element of the destination path) does not exist, the command fails.
 The missing directory is not created for you, even if you use the Force parameter.
 Move-Item moves the first item to a file called "Textfiles" and then displays an error explaining that the file already exists.
 
@@ -74,7 +75,7 @@ Also, by default, Get-ChildItem does not move hidden files.
 To move hidden files, use the Force parameter with Get-ChildItem.
 
 Note: In Windows PowerShell 2.0, when using the Recurse parameter of the Get-ChildItem cmdlet, the value of the Path parameter must be a container. 
-Use the Include parameter to specify the .txt file name extension filter \(Get-ChildItem –Path .\* -Include *.txt –Recurse | Move-Item -Destination C:\TextFiles\).
+Use the Include parameter to specify the .txt file name extension filter (Get-ChildItem -Path .\* -Include *.txt -Recurse | Move-Item -Destination C:\TextFiles).
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -82,7 +83,7 @@ PS C:\>move-item hklm:\software\mycompany\* hklm:\software\mynewcompany
 ```
 
 This command moves the registry keys and values within the MyCompany registry key in HKLM\Software to the MyNewCompany key.
-The wildcard character \(*\) indicates that the contents of the MyCompany key should be moved, not the key itself.
+The wildcard character (*) indicates that the contents of the MyCompany key should be moved, not the key itself.
 In this command, the optional Path and Destination parameter names are omitted.
 
 ### -------------------------- EXAMPLE 6 --------------------------
@@ -90,10 +91,10 @@ In this command, the optional Path and Destination parameter names are omitted.
 PS C:\>move-item -literalpath 'Logs[Sept`06]' -destination 'Logs[2006]'
 ```
 
-This command moves the Logs\[Sept\`06\] directory \(and its contents\) into the Logs\[2006\] directory.
+This command moves the Logs\[Sept\`06\] directory (and its contents) into the Logs\[2006\] directory.
 
-The LiteralPath parameter is used instead of Path, because the original directory name includes left bracket and right bracket characters \("\[" and "\]"\).
-The path is also enclosed in single quotation marks \(' '\), so that the backtick symbol \(\`\) is not misinterpreted.
+The LiteralPath parameter is used instead of Path, because the original directory name includes left bracket and right bracket characters ("\[" and "\]").
+The path is also enclosed in single quotation marks (' '), so that the backtick symbol (\`) is not misinterpreted.
 
 The Destination parameter does not require a literal path, because the Destination variable also must be enclosed in single quotation marks, because it includes brackets that can be misinterpreted.
 
@@ -116,7 +117,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -135,7 +136,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: Current directory
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -153,7 +154,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -171,7 +172,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -189,7 +190,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -226,7 +227,7 @@ Aliases: PSPath
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -242,7 +243,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -259,7 +260,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: Current directory
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -273,8 +274,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -290,15 +291,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -309,8 +310,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -339,8 +340,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113350)
-
 [Clear-Item](e78220a3-d720-4347-bdbe-8f15f77f3aa1)
 
 [Copy-Item](60a19812-67ab-4b58-a6f5-34640edafbb0)
@@ -358,5 +357,4 @@ For more information, see about_Providers.
 [Set-Item](704c03fc-6fdd-46d6-9da6-6d3a2196918c)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

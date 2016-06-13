@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135209
 schema: 2.0.0
 ---
 
@@ -18,7 +19,7 @@ The Enable-ComputerRestore cmdlet turns on the System Restore feature on one or 
 As a result, you can use tools, such as the Restore-Computer cmdlet, to restore the computer to a previous state.
 
 By default, System Restore is enabled on all eligible drives, but you can disable it, such as by using the Disable-ComputerRestore cmdlet.
-To enable \(or re-enable\) System Restore on any drive, it must be enabled on the system drive, either first or concurrently. 
+To enable (or re-enable) System Restore on any drive, it must be enabled on the system drive, either first or concurrently. 
 To find the state of System Restore for each drive, use Rstrui.exe.
 
 System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
@@ -58,7 +59,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -72,8 +73,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -89,8 +90,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -110,11 +111,9 @@ To run an Enable-ComputerRestore command on Windows Vista and later versions of 
 To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.
 To open this tab in Windows PowerShell, type "SystemPropertiesProtection".
 
-This cmdlet uses the Windows Management Instrumentation \(WMI\) SystemRestore class.
+This cmdlet uses the Windows Management Instrumentation (WMI) SystemRestore class.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135209)
 
 [Checkpoint-Computer](9ef7dd97-dbd9-43de-8988-9ab85e7827ad)
 
@@ -125,5 +124,4 @@ This cmdlet uses the Windows Management Instrumentation \(WMI\) SystemRestore cl
 [Restart-Computer](ba50f64c-866e-4315-91c7-0ce16b44c47e)
 
 [Restore-Computer](c570f18d-f1dd-462a-b00b-3eb1d2a81dfc)
-
 

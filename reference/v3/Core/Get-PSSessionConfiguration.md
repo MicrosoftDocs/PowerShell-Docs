@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144304
 schema: 2.0.0
 ---
 
@@ -17,15 +18,15 @@ Get-PSSessionConfiguration [[-Name] <String[]>]
 The Get-PSSessionConfiguration cmdlet gets the session configurations that have been registered on the local computer.
 This is an advanced cmdlet that is designed to be used by system administrators to manage customized session configurations for their users.
 
-Beginning in Windows PowerShell 3.0, you can define the properties of a session configuration by using a session configuration \(.pssc\) file.
+Beginning in Windows PowerShell 3.0, you can define the properties of a session configuration by using a session configuration (.pssc) file.
 This feature lets you create customized and restricted sessions without writing a computer program.
-For more information about session configuration files, see about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 Also, beginning in Windows PowerShell 3.0, new note properties have been added to the session configuration object that Get-PSSessionConfiguration returns.
 These properties make it easier for users and session configuration authors to examine and compare session configurations.
 
 To create and register a session configuration, use the Register-PSSessionConfiguration cmdlet.
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ## EXAMPLES
 
@@ -98,12 +99,12 @@ This example shows the properties and property values of a session configuration
 
 The command uses the Get-PSSessionConfiguration command to get the Full session configuration.
 A pipeline operator sends the Full session configuration to the Format-List cmdlet.
-The Property parameter with a value of * \(all\) directs Format-List to display all of the properties and property values of the object in a list.
+The Property parameter with a value of * (all) directs Format-List to display all of the properties and property values of the object in a list.
 
 The output of this command has very useful information, including the author of the session configuration, the session type, language mode, and execution policy of sessions that are created with this session configuration, session quotas, and the full path to the session configuration file.
 
 This view of a session configuration is used for sessions that include a session configuration file.
-For more information about session configuration files, see about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -235,10 +236,10 @@ Container       {Name=microsoft.ServerManager}      microsoft.ServerManager
 Container       {Name=WMI Provider}                 WMI Provider
 ```
 
-This command uses the Get-ChildItem cmdlet \(alias = dir\) in the WSMan: provider drive to look at the content of the Plugin node.
+This command uses the Get-ChildItem cmdlet (alias = dir) in the WSMan: provider drive to look at the content of the Plugin node.
 This is another way to look at the session configurations on the computer.
 
-The PlugIn node contains ContainerElement objects \(Microsoft.WSMan.Management.WSManConfigContainerElement\) that represent the registered Windows PowerShell session configurations, along with other plug-ins for WS-Management.
+The PlugIn node contains ContainerElement objects (Microsoft.WSMan.Management.WSManConfigContainerElement) that represent the registered Windows PowerShell session configurations, along with other plug-ins for WS-Management.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -320,7 +321,7 @@ This command is useful when setting the value of the $PSSessionConfigurationName
 
 The $PSSessionConfiguationName variable specifies the default configuration that is used when you create a session.
 This variable is set on the local computer, but it specifies a configuration on the remote computer.
-For more information about the $PSSessionConfiguration variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about the $PSSessionConfiguration variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ## PARAMETERS
 
@@ -337,7 +338,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All session configurations on the local computer
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -355,7 +356,7 @@ To run this cmdlet, start Windows PowerShell with the "Run as administrator" opt
 
 To view the session configurations on the computer, you must be a member of the Administrators group on the computer.
 
-To run a Get-PSSessionConfiguration command on a remote computer, Credential Security Service Provider \(CredSSP\) authentication must be enabled in the client settings on the local computer \(by using the Enable-WSManCredSSP cmdlet\) and in the service settings on the remote computer, and you must use the CredSSP value of the Authentication parameter when establishing the remote session.
+To run a Get-PSSessionConfiguration command on a remote computer, Credential Security Service Provider (CredSSP) authentication must be enabled in the client settings on the local computer (by using the Enable-WSManCredSSP cmdlet) and in the service settings on the remote computer, and you must use the CredSSP value of the Authentication parameter when establishing the remote session.
 Otherwise, access is denied.
 
 The note properties of the object that Get-PSSessionConfiguration returns appear on the object only when they have a value.
@@ -370,8 +371,6 @@ Windows PowerShell 2.0 commands do not generate an error, but they are ineffecti
 To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive in Windows PowerShell 3.0.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144304)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -396,5 +395,4 @@ To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

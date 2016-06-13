@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113309
 schema: 2.0.0
 ---
 
@@ -28,11 +29,11 @@ Get-Command gets the commands from Windows PowerShell modules and snap-ins and c
 To get only commands that have been imported into the current session, use the ListImported parameter.
 
 Without parameters, a "Get-Command" command gets all of the cmdlets, functions, workflows and aliases installed on the computer.
-A "Get-Command *" command gets all types of commands, including all of the non-Windows-PowerShell files in the Path environment variable \($env:path\), which it lists in the "Application" command type.
+A "Get-Command *" command gets all types of commands, including all of the non-Windows-PowerShell files in the Path environment variable ($env:path), which it lists in the "Application" command type.
 
-A Get-Command command that uses the exact name of the command \(without wildcard characters\) automatically imports the module that contains the command so you can use the command immediately.
+A Get-Command command that uses the exact name of the command (without wildcard characters) automatically imports the module that contains the command so you can use the command immediately.
 To enable, disable, and configure automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 Get-Command gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
 
@@ -82,7 +83,7 @@ It also imports the AppLocker module, which adds all of the commands in the AppL
 When a module is imported automatically, the effect is the same as using the Import-Module cmdlet.
 The module can add commands, types and formatting files, and run scripts in the session.
 To enable, disable, and configuration automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -92,7 +93,7 @@ PS C:\>Get-Command Get-Childitem -Args Cert: -Syntax
 This command uses the ArgumentList and Syntax parameters to get the syntax of the Get-ChildItem cmdlet when it is used in the Cert: drive.
 The Cert: drive is a Windows PowerShell drive that the Certificate Provider adds to the session.
 
-When you compare the syntax displayed in the output with the syntax that is displayed when you omit the Args \(ArgumentList\) parameter, you'll see that the Certificate provider adds a dynamic parameter, CodeSigningCert, to the Get-ChildItem cmdlet.
+When you compare the syntax displayed in the output with the syntax that is displayed when you omit the Args (ArgumentList) parameter, you'll see that the Certificate provider adds a dynamic parameter, CodeSigningCert, to the Get-ChildItem cmdlet.
 
 For more information about the Certificate provider, see Certificate Provider.
 
@@ -121,8 +122,8 @@ The command in the example uses the Get-DynamicParameters function to get the dy
 PS C:\>Get-Command *
 ```
 
-This command gets all commands of all types on the local computer, including executable files in the paths of the Path environment variable \($env:path\).
-It returns an ApplicationInfo object \(System.Management.Automation.ApplicationInfo\) for each file, not a FileInfo object \(System.IO.FileInfo\).
+This command gets all commands of all types on the local computer, including executable files in the paths of the Path environment variable ($env:path).
+It returns an ApplicationInfo object (System.Management.Automation.ApplicationInfo) for each file, not a FileInfo object (System.IO.FileInfo).
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
@@ -165,7 +166,7 @@ Beginning in Windows PowerShell 3.0, by default, when the session includes multi
 With the All parameter, Get-Command gets all commands with the specified name and returns them in execution precedence order.
 To run a command other than the first one in the list, type the fully qualified path to the command.
 
-For more information about command precedence, see about_Command_Precedence \(http://go.microsoft.com/fwlink/?LinkID=113214\).
+For more information about command precedence, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
 
 ### -------------------------- EXAMPLE 12 --------------------------
 ```
@@ -186,7 +187,7 @@ PS C:\>Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Propert
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
 
 The first part of the command gets all cmdlets.
-A pipeline operator \(|\) sends the cmdlets to the Where-Object cmdlet, which selects only the ones in which the OutputType property is populated.
+A pipeline operator (|) sends the cmdlets to the Where-Object cmdlet, which selects only the ones in which the OutputType property is populated.
 Another pipeline operator sends the selected cmdlet objects to the Format-List cmdlet, which displays the name and output type of each cmdlet in a list.
 
 The OutputType property of a CommandInfo object has a non-null value only when the cmdlet code defines the OutputType attribute for the cmdlet.
@@ -215,8 +216,8 @@ To get the PSTypeNames property of a net adapter, and not the PSTypeNames proper
 Gets all commands, including commands of the same type that have the same name.
 By default, Get-Command gets only the commands that run when you type the command name.
 
-For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see about_Command_Precedence \(http://go.microsoft.com/fwlink/?LinkID=113214\).
-For information about module-qualified command names and running commands that do not run by default because of a name conflict, see about_Modules \(http://go.microsoft.com/fwlink/?LinkID=144311\).
+For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For information about module-qualified command names and running commands that do not run by default because of a name conflict, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -235,14 +236,14 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
-Gets information about a cmdlet or function when it is used with the specified  parameters \("arguments"\). 
+Gets information about a cmdlet or function when it is used with the specified  parameters ("arguments"). 
 The alias for ArgumentList is Args.
 
 To detect dynamic parameters that are available only when certain other parameters are used, set the value of ArgumentList to the parameters that trigger the dynamic parameters.
 
 To detect the dynamic parameters that a provider adds to a cmdlet, set the value of the ArgumentList parameter to a path in the provider drive, such as "WSMan:", "HKLM:" or "Cert:". 
 When the command is a Windows PowerShell provider cmdlet, enter only one path in each command; the provider cmdlets return only the dynamic parameters for the first path the value of ArgumentList.
-For information about the provider cmdlets, see about_Providers \(http://go.microsoft.com/fwlink/?LinkID=113250\).
+For information about the provider cmdlets, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
 
 ```yaml
 Type: Object[]
@@ -252,7 +253,7 @@ Aliases: Args
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -266,11 +267,11 @@ Valid values are:
 
 -- Alias: Gets the aliases of all Windows PowerShell commands. For more information, see about_Aliases.
 -- All: Gets all command types. This parameter value is the equivalent of "Get-Command *".
--- Application: Gets non-Windows-PowerShell files in paths listed in the Path environment variable \($env:path\), including .txt, .exe, and .dll files. For more information about the Path environment variable, see about_Environment_Variables.
+-- Application: Gets non-Windows-PowerShell files in paths listed in the Path environment variable ($env:path), including .txt, .exe, and .dll files. For more information about the Path environment variable, see about_Environment_Variables.
 -- Cmdlet: Gets all cmdlets.
--- ExternalScript: Gets all .ps1 files in the paths listed in the Path environment variable \($env:path\).
+-- ExternalScript: Gets all .ps1 files in the paths listed in the Path environment variable ($env:path).
 -- Filter and Function: Gets all Windows PowerShell advanced and simple functions and filters.
--- Script: Gets all script blocks. To get Windows PowerShell scripts \(.ps1 files\), use the ExternalScript value.
+-- Script: Gets all script blocks. To get Windows PowerShell scripts (.ps1 files), use the ExternalScript value.
 -- Workflow: Gets all workflows. For more information about workflows, see Introducing Windows PowerShell Workflow.
 
 ```yaml
@@ -327,7 +328,7 @@ Accept wildcard characters: False
 ```
 
 ### -Noun
-Gets commands \(cmdlets, functions, workflows, and aliases\) that have names that include the specified noun.
+Gets commands (cmdlets, functions, workflows, and aliases) that have names that include the specified noun.
 Enter one or more nouns or noun patterns.
 Wildcards are permitted.
 
@@ -349,7 +350,7 @@ Gets only specified data about the command.
 * For aliases, gets the standard name.
 * For cmdlets, gets the syntax.
 * For functions and filters, gets the function definition.
-* For scripts and applications \(files\), gets the path and filename.
+* For scripts and applications (files), gets the path and filename.
 
 ```yaml
 Type: SwitchParameter
@@ -380,7 +381,7 @@ Accept wildcard characters: False
 ```
 
 ### -Verb
-Gets commands \(cmdlets, functions, workflows, and aliases\) that have names that include the specified verb.
+Gets commands (cmdlets, functions, workflows, and aliases) that have names that include the specified verb.
 Enter one or more verbs or verb patterns.
 Wildcards are permitted.
 
@@ -433,7 +434,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All parameter names
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -454,7 +455,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All parameter types
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -485,17 +486,15 @@ Represents functions and filters
 
 ## NOTES
 When more than one command with the same name is available to the session, Get-Command returns the command that runs when you type the command name.
-To get commands with the same name \(listed in execution order\), use the All parameter.
+To get commands with the same name (listed in execution order), use the All parameter.
 For more information, see about_Command_Precedence.
 
 When a module is imported automatically, the effect is the same as using the Import-Module cmdlet.
 The module can add commands, types and formatting files, and run scripts in the session.
 To enable, disable, and configuration automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113309)
 
 [Export-PSSession](00000000-0000-0000-0000-000000000000)
 
@@ -508,5 +507,4 @@ For more information, see about_Preference_Variables \(http://go.microsoft.com/f
 [Import-PSSession](00000000-0000-0000-0000-000000000000)
 
 [about_Command_Precedence](23d974c6-45fa-42c9-a478-123363d7aeac)
-
 

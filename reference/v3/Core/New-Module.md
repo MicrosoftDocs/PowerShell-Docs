@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141554
 schema: 2.0.0
 ---
 
@@ -138,7 +139,7 @@ Function        Hello                                                           
 
 This command demonstrates that you can make a dynamic module available to the Get-Module cmdlet by piping the dynamic module to the Import-Module cmdlet.
 
-The first command uses a pipeline operator \(|\) to send the module object that New-Module generates to the Import-Module cmdlet.
+The first command uses a pipeline operator (|) to send the module object that New-Module generates to the Import-Module cmdlet.
 The command uses the Name parameter of New-Module to assign a friendly name to the module.
 Because Import-Module does not return any objects by default, there is no output from this command.
 
@@ -179,7 +180,7 @@ The command saves the custom object in the $m variable.
 The second command attempts to display the value of the $m variable.
 No content appears.
 
-The third command uses a pipeline operator \(|\) to send the custom object to the Get-Member cmdlet, which displays the properties and methods of the custom object.
+The third command uses a pipeline operator (|) to send the custom object to the Get-Member cmdlet, which displays the properties and methods of the custom object.
 The output shows that the object has script methods that represent the Hello and Goodbye functions.
 
 The fourth and fifth commands use the script method format to call the Hello and Goodbye functions.
@@ -197,7 +198,7 @@ The script block in the new module defines the SayHello function and then calls 
 ## PARAMETERS
 
 ### -ArgumentList
-Specifies arguments \(parameter values\) that are passed to the script block.
+Specifies arguments (parameter values) that are passed to the script block.
 
 ```yaml
 Type: Object[]
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -226,7 +227,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -246,7 +247,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -264,7 +265,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -282,7 +283,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: "__DynamicModule_" + GUID
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -297,13 +298,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
 Specifies the contents of the dynamic module.
-Enclose the contents in braces \( { } \) to create a script block.
+Enclose the contents in braces ( { } ) to create a script block.
 This parameter is required.
 
 ```yaml
@@ -314,7 +315,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -336,8 +337,6 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141554)
-
 [Export-ModuleMember](cbad7943-ded7-4311-9956-da867ad7233c)
 
 [Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
@@ -347,5 +346,4 @@ For more information, see about_Aliases.
 [Remove-Module](c0968566-4d7e-49e9-82b9-e4df1f489267)
 
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217448
 schema: 2.0.0
 ---
 
@@ -35,7 +36,7 @@ When you're ready, you can click Copy to copy the command that you've created to
 You can also use the Passthru parameter to return the command to the host program, such as the Windows PowerShell console.
 To cancel the command selection and return to the view that displays all commands, press Ctrl and click the selected command.
 
-In the Windows PowerShell Integrated Scripting Environment \(ISE\), a variation of the Show-Command window is displayed by default.
+In the Windows PowerShell Integrated Scripting Environment (ISE), a variation of the Show-Command window is displayed by default.
 For information about using this command window, see the Windows PowerShell ISE help topics.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
@@ -77,7 +78,7 @@ This command uses the $PSDefaultParameterValues automatic variable to set new de
 Now when you run a Show-Command command, the new defaults are applied automatically.
 
 To use these default values in every Windows PowerShell session, add the $PSDefaultParameterValues variable to your Windows PowerShell profile.
-For more information, see about_Profiles \(http://go.microsoft.com/fwlink/?LinkID=113729\) and about_PSDefaultParameterValues \(http://go.microsoft.com/fwlink/?LinkID=228266\).
+For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729) and about_PSDefaultParameterValues (http://go.microsoft.com/fwlink/?LinkID=228266).
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -88,7 +89,7 @@ This command shows how to use the Show-Command and Out-GridView cmdlets together
 
 The command uses the Show-Command cmdlet to open a command window for the Get-ChildItem cmdlet.
 When you click the Run button, the Get-ChildItem command runs and generates output.
-The pipeline operator \( | \) sends the output of the Get-ChildItem command to the Out-GridView cmdlet, which displays the Get-ChildItem output in an interactive window.
+The pipeline operator ( | ) sends the output of the Get-ChildItem command to the Out-GridView cmdlet, which displays the Get-ChildItem output in an interactive window.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -161,7 +162,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 600 or 300
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -178,7 +179,7 @@ Aliases: CommandName
 Required: False
 Position: 1
 Default value: All commands
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -194,7 +195,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Show common parameters
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -212,7 +213,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Variable
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -229,7 +230,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -237,7 +238,7 @@ Accept wildcard characters: False
 Displays errors in a pop-up window, in addition to displaying them at the command line.
 By  default, when a command that is run in a Show-Command window generates an error, the error is displayed only at the command line.
 
-Also, when you run the command \(by using the Run button in the Show-Command window\), the ErrorPopup parameter returns the command results to the current command, instead of running the command and returning its output to a new command.
+Also, when you run the command (by using the Run button in the Show-Command window), the ErrorPopup parameter returns the command results to the current command, instead of running the command and returning its output to a new command.
 You can use this feature to save the command results in a variable.
 
 ```yaml
@@ -248,7 +249,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No error popup
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -261,13 +262,10 @@ You cannot pipe input to Show-Command.
 
 ### System.String, System.Object
 When you use the PassThru parameter, Show-Command returns a command string.
-When you use the ErrorPopup parameter, Show-Command returns the command output \(any object\).Otherwise, Show-Command does not generate any output.
+When you use the ErrorPopup parameter, Show-Command returns the command output (any object).Otherwise, Show-Command does not generate any output.
 
 ## NOTES
 Show-Command does not work in remote sessions.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217448)
-
 

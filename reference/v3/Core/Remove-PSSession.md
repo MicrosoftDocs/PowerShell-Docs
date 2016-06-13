@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135250
 schema: 2.0.0
 ---
 
 # Remove-PSSession
 ## SYNOPSIS
-Closes one or more Windows PowerShell sessions \(PSSessions\).
+Closes one or more Windows PowerShell sessions (PSSessions).
 
 ## SYNTAX
 
@@ -35,7 +36,7 @@ Remove-PSSession [-Session] <PSSession[]> [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
-The Remove-PSSession cmdlet closes Windows PowerShell sessions \(PSSessions\) in the current session.
+The Remove-PSSession cmdlet closes Windows PowerShell sessions (PSSessions) in the current session.
 It stops any commands that are running in the PSSessions, ends the PSSession, and releases the resources that the PSSession was using.
 If the PSSession is connected to a remote computer, Remove-PSSession also closes the connection between the local and remote computers.
 
@@ -100,11 +101,11 @@ TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 PS C:\>remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
-These commands show how to close a PSSession based on its instance ID \(RemoteRunspaceID\).
+These commands show how to close a PSSession based on its instance ID (RemoteRunspaceID).
 
 The first command uses the Get-PSsession cmdlet to get the PSSessions in the current session.
-It uses a pipeline operator \(|\) to send the PSSessions to the Format-Table cmdlet \(alias: ft\), which formats their ComputerName and InstanceID properties in a table.
-The AutoSize parameter \("auto"\) compresses the columns for display.
+It uses a pipeline operator (|) to send the PSSessions to the Format-Table cmdlet (alias: ft), which formats their ComputerName and InstanceID properties in a table.
+The AutoSize parameter ("auto") compresses the columns for display.
 
 From the resulting display, the administrator can identify the PSSession to be closed, and copy and paste the InstanceID of that PSSession into the second command.
 
@@ -125,7 +126,7 @@ Closes the PSSessions that are connected to the specified computers.
 Wildcards are permitted.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote computers.
-To specify the local computer, type the computer name, "localhost", or a dot \(.\).
+To specify the local computer, type the computer name, "localhost", or a dot (.).
 
 ```yaml
 Type: String[]
@@ -135,13 +136,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: Local computer
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -Id
 Closes the PSSessions with the specified IDs.
-Type one or more IDs \(separated by commas\) or use the range operator \(..\) to specify a range of IDs
+Type one or more IDs (separated by commas) or use the range operator (..) to specify a range of IDs
 
 An ID is an integer that uniquely identifies the PSSession in the current session.
 It is easier to remember and type than the InstanceId, but it is unique only within the current session. 
@@ -155,7 +156,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -176,7 +177,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -194,7 +195,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -211,7 +212,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -225,8 +226,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -242,8 +243,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -271,8 +272,6 @@ When you end a session, the PSSessions that you created in that session are forc
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135250)
-
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
 [Disconnect-PSSession](f8f95111-612f-4cba-9098-77904b0473d8)
@@ -292,5 +291,4 @@ When you end a session, the PSSessions that you created in that session are forc
 [about_PSSessions](7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-
 

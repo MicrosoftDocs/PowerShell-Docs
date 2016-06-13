@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113335
 schema: 2.0.0
 ---
 
@@ -37,8 +38,8 @@ PS C:\>$a.count
 These commands find the number of unique words in a text file.
 
 The first command gets the content of the File.txt file.
-It converts each line of text to lowercase letters and then splits each word onto a separate line at the space \(" "\).
-Then, it sorts the resulting list alphabetically \(the default\) and uses the Get-Unique cmdlet to eliminate any duplicate words.
+It converts each line of text to lowercase letters and then splits each word onto a separate line at the space (" ").
+Then, it sorts the resulting list alphabetically (the default) and uses the Get-Unique cmdlet to eliminate any duplicate words.
 The results are stored in the $a variable.
 
 The second command uses the Count property of the collection of strings in $a to determine how many items are in $a.
@@ -57,8 +58,8 @@ PS C:\>get-childitem | sort-object {$_.GetType()} |  unique -OnType
 ```
 
 This command uses the Get-ChildItem cmdlet to retrieve the contents of the local directory, which includes files and directories.
-The pipeline operator \(|\) sends the results to the Sort-Object cmdlet.
-The "$_.GetType\(\)" statement applies the GetType method to each file or directory.
+The pipeline operator (|) sends the results to the Sort-Object cmdlet.
+The "$_.GetType()" statement applies the GetType method to each file or directory.
 Then, Sort-Object sorts the items by type.
 Another pipeline operator sends the results to Get-Unique.
 The OnType parameter directs Get-Unique to return only one object of each type.
@@ -71,7 +72,7 @@ PS C:\>get-process | sort-object | select processname | get-unique -asstring
 This command gets the names of processes running on the computer with duplicates eliminated.
 
 The Get-Process command gets all of the processes on the computer.
-The pipeline operator \(|\) passes the result to Sort-Object, which, by default, sorts the processes alphabetically by ProcessName.
+The pipeline operator (|) passes the result to Sort-Object, which, by default, sorts the processes alphabetically by ProcessName.
 The results are piped to the Select-Object cmdlet, which selects only the values of the ProcessName property of each object.
 The results are then piped to Get-Unique to eliminate duplicates.
 
@@ -82,7 +83,7 @@ Without this parameter, Get-Unique treats the ProcessName values as objects and 
 
 ### -AsString
 Treats the data as a string.
-Without this parameter, data is treated as an object, so when you submit a collection of objects of the same type to Get-Unique, such as a collection of files, it returns just one \(the first\).
+Without this parameter, data is treated as an object, so when you submit a collection of objects of the same type to Get-Unique, such as a collection of files, it returns just one (the first).
 You can use this parameter to find the unique values of object properties, such as the file names.
 
 ```yaml
@@ -93,7 +94,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -112,7 +113,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -127,7 +128,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -150,10 +151,7 @@ You can also use the Unique parameter of Sort-Object to find the unique items in
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113335)
-
 [Select-Object](2f182056-7955-4b77-9c58-64ab4a680074)
 
 [Sort-Object](52c4a447-238d-43b4-8d3f-6aee5864b905)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113312
 schema: 2.0.0
 ---
 
@@ -18,7 +19,7 @@ The Get-Culture cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
 You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the Set-Culturehttp://go.microsoft.com/fwlink/?LinkID=242258 cmdlet in the International module.
-The user-interface \(UI\) culture determines which text strings are used for user interface elements, such as menus and messages.
+The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
 
 ## EXAMPLES
 
@@ -106,9 +107,9 @@ The first command uses the Get-Culture cmdlet to get the current culture setting
 It stores the resulting culture object in the $c variable.
 
 The second command displays all of the properties of the culture object.
-It uses a pipeline operator \(|\) to send the culture object in $c to the Format-List cmdlet.
-It uses the Property parameter to display all \(*\) properties of the object.
-\(This command can be abbreviated as "$c | fl *".\)
+It uses a pipeline operator (|) to send the culture object in $c to the Format-List cmdlet.
+It uses the Property parameter to display all (*) properties of the object.
+(This command can be abbreviated as "$c | fl *".)
 
 The remaining commands explore the properties of the culture object by using dot notation to display the values of the object properties.
 You can use this notation to display the value of any property of the object.
@@ -138,10 +139,7 @@ The $PsCulture variable stores the name of the current culture and the $PsUICult
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113312)
-
 [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258)
 
 [Get-UICulture](7a85efd9-afad-40fd-95f8-7dde6883f651)
-
 

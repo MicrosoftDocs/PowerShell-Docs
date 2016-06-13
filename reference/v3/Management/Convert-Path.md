@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113289
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ The Convert-Path cmdlet converts a path from a Windows PowerShell path to a Wind
 PS C:\>convert-path .
 ```
 
-This command converts the current working directory, which is represented by a dot \(.\), to a standard file system path.
+This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -63,7 +64,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -78,14 +79,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -96,15 +97,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String
-You can pipe a path \(but not a literal path\) to Convert-Path.
+You can pipe a path (but not a literal path) to Convert-Path.
 
 ## OUTPUTS
 
@@ -112,7 +113,7 @@ You can pipe a path \(but not a literal path\) to Convert-Path.
 Convert-Path returns a string that contains the converted path.
 
 ## NOTES
-The cmdlets that contain the Path noun \(the Path cmdlets\) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
+The cmdlets that contain the Path noun (the Path cmdlets) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
 They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format.
 Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
@@ -124,8 +125,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113289)
-
 [Join-Path](742e18e1-55c8-44ce-9c05-526bc22bf1f5)
 
 [Resolve-Path](f84dd2a9-2961-400b-8b0a-45551b886172)
@@ -135,5 +134,4 @@ For more information, see about_Providers.
 [Test-Path](2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

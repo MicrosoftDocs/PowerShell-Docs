@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217038
 schema: 2.0.0
 ---
 
@@ -31,7 +32,7 @@ This cmdlet affects only the current session and sessions that are created in th
 You can add properties and methods to objects in Windows PowerShell by defining them in  Update-TypeData commands and  Types.ps1xml files.
 Remove-TypeData deletes those extended properties and methods from the current session.
 Remove-TypeData does not delete the Types.ps1xml files or delete any extended type definitions from the Types.ps1xml files.
-For more information about Types.ps1xml files, see about_Types.ps1xml \(http://go.microsoft.com/fwlink/?LinkID=113274\).
+For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -83,7 +84,7 @@ This command uses the Path parameter of the Remove-TypeData cmdlet to remove the
 This command does not affect dynamic type data that is added by using the Update-TypeData cmdlet.
 The command succeeds only when the modules have been imported into the current session.
 
-For more information about modules, see about_Modules \(http://go.microsoft.com/fwlink/?LinkID=144311\).
+For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
 
 ### Example 5
 ```
@@ -111,14 +112,14 @@ Aliases:
 Required: True
 Position: Named
 Default value: Current directory
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TypeData
 Delete the specified type data from the session.
 This parameter is required.
-Enter a variable that contains TypeData objects \(System.Management.Automation.Runspaces.TypeData\) or a command that gets TypeData objects, such as a Get-TypeData command.
+Enter a variable that contains TypeData objects (System.Management.Automation.Runspaces.TypeData) or a command that gets TypeData objects, such as a Get-TypeData command.
 You can also pipe TypeData objects to Remove-TypeData.
 
 ```yaml
@@ -129,7 +130,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -150,7 +151,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -164,8 +165,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -181,8 +182,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -206,12 +207,9 @@ It cannot remove extended type data that is on the computer, but has not been ad
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217038)
-
 [Get-TypeData](befd382e-f567-44ab-9898-57c04e1d1b7f)
 
 [Update-TypeData](49b1dd7e-9309-428c-8acf-a917cb850b4b)
 
 [about_Types.ps1xml](bc879777-5cd6-45a9-96d8-ebe099b95456)
-
 

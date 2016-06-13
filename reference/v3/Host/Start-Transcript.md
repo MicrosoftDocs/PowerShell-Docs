@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Host.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113408
 schema: 2.0.0
 ---
 
@@ -55,7 +56,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -72,12 +73,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Will not overwrite \(replace the contents\) of an existing file.
+Will not overwrite (replace the contents) of an existing file.
 By default, if a transcript file exists in the specified path, Start-Transcript overwrites the file without warning.
 
 ```yaml
@@ -88,7 +89,7 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -110,7 +111,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -129,7 +130,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,8 +144,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -160,8 +161,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -183,8 +184,5 @@ For more information, see about_Profiles.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113408)
-
 [Stop-Transcript](71bf7425-d76b-407b-a0c8-5f0e0934abe3)
-
 

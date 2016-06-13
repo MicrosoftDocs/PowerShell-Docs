@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135268
 schema: 2.0.0
 ---
 
@@ -32,7 +33,7 @@ For more information, see about_Transactions.
 PS C:\>undo-transaction
 ```
 
-This command rolls back the current \(active\) transaction.
+This command rolls back the current (active) transaction.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -85,7 +86,7 @@ Notice that the status is Active and the subscriber count is 1.
 
 The fifth command uses the Start-Transaction command again.
 Typically, starting a transaction while another transaction is in progress occurs when a script used by the main transaction includes its own complete transaction.
-\(This example is done interactively so that you can examine it in stages.\) When you enter a Start-Transaction command while another transaction is in progress, the commands join the existing transaction as a new "subscriber" and the subscriber count is incremented.
+(This example is done interactively so that you can examine it in stages.) When you enter a Start-Transaction command while another transaction is in progress, the commands join the existing transaction as a new "subscriber" and the subscriber count is incremented.
 
 The sixth command uses the Get-Transaction cmdlet to get the active transaction.
 Notice that the subscriber count is now 2.
@@ -93,7 +94,7 @@ Notice that the subscriber count is now 2.
 The seventh command uses the Undo-Transaction cmdlet to roll back the transaction.
 This command does not return any objects.
 
-The final command is a Get-Transaction command that gets the active \(or in this case, the most recently active\) transaction.
+The final command is a Get-Transaction command that gets the active (or in this case, the most recently active) transaction.
 The results show that the transaction is rolled back, and that the subscriber count is 0, showing that the transaction was rolled back for all subscribers.
 
 ## PARAMETERS
@@ -108,8 +109,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -125,8 +126,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,8 +152,6 @@ To use a transaction again, you must start a new transaction.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135268)
-
 [Complete-Transaction](2d47d72e-f949-4aee-adf7-c8ebe1df23d5)
 
 [Get-Transaction](b1daeac4-7c84-4b5e-bdd6-04a6e1b8b491)
@@ -164,5 +163,4 @@ To use a transaction again, you must start a new transaction.
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
 
 [about_Transactions](3f9d773e-34b7-40f5-8e72-bc9c79ceb0b5)
-
 

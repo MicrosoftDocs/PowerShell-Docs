@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141555
 schema: 2.0.0
 ---
 
@@ -22,7 +23,7 @@ New-ModuleManifest [-Path] <String> [-AliasesToExport <String[]>] [-Author <Stri
 ```
 
 ## DESCRIPTION
-The New-ModuleManifest cmdlet creates a new module manifest \(.psd1\) file, populates its values, and saves the manifest file in the specified path.
+The New-ModuleManifest cmdlet creates a new module manifest (.psd1) file, populates its values, and saves the manifest file in the specified path.
 
 Module authors can use this cmdlet to create a manifest for their module.
 A module manifest is a .psd1 file that contains a hash table.
@@ -32,7 +33,7 @@ Manifests are not required for a module.
 New-ModuleManifest creates a manifest that includes all of the commonly used manifest keys, so you can use the default output as a manifest template.
 To add or change values, or to add module keys that this cmdlet does not add, open the resulting file in a text editor.
 
-Each parameter of this cmdlet \(except for Path and PassThru\) creates a module manifest key and its value.
+Each parameter of this cmdlet (except for Path and PassThru) creates a module manifest key and its value.
 In a module manifest, only the ModuleVersion key is required.
 Unless specified in the parameter description, if you omit a parameter from the command, New-ModuleManifest creates a comment string for the associated value that has no effect.
 
@@ -134,7 +135,7 @@ The command uses the HelpInfoUri parameter to create a HelpInfoUri key in the mo
 The value of the parameter and the key must begin with "http" or "https".
 This value tells the Updatable Help system where to find the HelpInfo XML updatable help information file for the module.
 
-For information about Updatable Help, see about_Updatable_Help \(http://go.microsoft.com/fwlink/?LinkID=235801\).
+For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
 
 ### Example 5
@@ -222,7 +223,7 @@ Wildcards are permitted.
 You can use this parameter to restrict the aliases that are exported by the module.
 It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
 
-If you omit this parameter, New-ModuleManifest creates an AliasesToExport key with a value of * \(all\), meaning that all aliases that are exported by the module are exported by the manifest.
+If you omit this parameter, New-ModuleManifest creates an AliasesToExport key with a value of * (all), meaning that all aliases that are exported by the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -232,7 +233,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: * (all)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -249,12 +250,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Name of the current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ClrVersion
-Specifies the minimum version of the Common Language Runtime \(CLR\) of the Microsoft .NET Framework that the module requires.
+Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework that the module requires.
 
 ```yaml
 Type: Version
@@ -264,7 +265,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -275,7 +276,7 @@ Wildcards are permitted.
 You can use this parameter to restrict the cmdlets that are exported by the module.
 It can remove cmdlets from the list of exported cmdlets, but it cannot add cmdlets to the list.
 
-If you omit this parameter, New-ModuleManifest creates a CmdletsToExport key with a value of * \(all\), meaning that all cmdlets that are exported by the module are exported by the manifest.
+If you omit this parameter, New-ModuleManifest creates a CmdletsToExport key with a value of * (all), meaning that all cmdlets that are exported by the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -285,7 +286,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: * (all)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -302,15 +303,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: "Unknown"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Copyright
 Specifies a copyright statement for the module.
 
-If you omit this parameter, New-ModuleManifest creates a Copyright key with a value of  "\(c\) \<year\> \<username\>.
-All rights reserved." where \<year\> is the current year and \<username\> is the value of the Author key \(if one is specified\) or the name of the current user.
+If you omit this parameter, New-ModuleManifest creates a Copyright key with a value of  "(c) \<year\> \<username\>.
+All rights reserved." where \<year\> is the current year and \<username\> is the value of the Author key (if one is specified) or the name of the current user.
 
 ```yaml
 Type: String
@@ -320,7 +321,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: (c) <year> <username>. All rights reserved.
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -335,7 +336,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -350,7 +351,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -368,12 +369,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -FormatsToProcess
-Specifies the formatting files \(.ps1xml\) that run when the module is imported.
+Specifies the formatting files (.ps1xml) that run when the module is imported.
 
 When you import a module, Windows PowerShell runs the Update-FormatData cmdlet with the specified files.
 Because formatting files are not scoped, they affect all session states in the session.
@@ -386,7 +387,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -397,7 +398,7 @@ Wildcards are permitted.
 You can use this parameter to restrict the functions that are exported by the module.
 It can remove functions from the list of exported aliases, but it cannot add functions to the list.
 
-If you omit this parameter, New-ModuleManifest creates an FunctionsToExport key with a value of * \(all\), meaning that all functions that are exported by the module are exported by the manifest.
+If you omit this parameter, New-ModuleManifest creates an FunctionsToExport key with a value of * (all), meaning that all functions that are exported by the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -407,7 +408,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: * (all)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -417,7 +418,7 @@ The GUID can be used to distinguish among modules with the same name.
 
 If you omit this parameter, New-ModuleManifest creates a GUID key in the manifest and generates a GUID for the value.
 
-To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid\(\)".
+To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
 
 ```yaml
 Type: Guid
@@ -427,17 +428,17 @@ Aliases:
 Required: False
 Position: Named
 Default value: A GUID generated for the module
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -HelpInfoUri
 Specifies the Internet address of the HelpInfo XML file for the module.
-Enter an Uniform Resource Identifier \(URI\) that begins with "http" or "https".
+Enter an Uniform Resource Identifier (URI) that begins with "http" or "https".
 
 The   HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell 3.0.
 It contains information about the location of downloadable help files for the module and the version numbers of the newest help files for each supported locale.
-For information about Updatable Help, see about_Updatable_Help \(http://go.microsoft.com/fwlink/?LinkID=235801\).
+For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -450,7 +451,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -473,7 +474,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -491,12 +492,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1.0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -NestedModules
-Specifies script modules \(.psm1\) and binary modules \(.dll\) that are imported into the module's session state.
+Specifies script modules (.psm1) and binary modules (.dll) that are imported into the module's session state.
 The files in the NestedModules key run in the order in which they are listed in the value.
 
 Enter each module name as a string or as a hash table with ModuleName and ModuleVersion keys.
@@ -505,11 +506,11 @@ You can combine strings and hash tables in the parameter value.
 For more information, see the examples.
 
 Typically, nested modules contain commands that the root module needs for its internal processing.
-By default, the commands in nested modules are exported from the module's session state into the caller's session state, but the root module can restrict the commands that it exports \(for example, by using an Export-ModuleMembercommand\).
+By default, the commands in nested modules are exported from the module's session state into the caller's session state, but the root module can restrict the commands that it exports (for example, by using an Export-ModuleMembercommand).
 
 Nested modules in the module session state are available to the root module, but they are not returned by a Get-Module command in the caller's session state.
 
-Scripts \(.ps1\) that are listed in the NestedModules key are run in the module's session state, not in the caller's session state.
+Scripts (.ps1) that are listed in the NestedModules key are run in the module's session state, not in the caller's session state.
 To run a script in the caller's session state, list the script file name in the value of the ScriptsToProcess key in the manifest.
 
 ```yaml
@@ -520,7 +521,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -536,7 +537,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -560,7 +561,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -579,7 +580,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -595,7 +596,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -611,7 +612,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -626,13 +627,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
 Specifies the processor architecture that the module requires.
-Valid values are x86, AMD64, IA64, and None \(unknown or unspecified\).
+Valid values are x86, AMD64, IA64, and None (unknown or unspecified).
 
 ```yaml
 Type: ProcessorArchitecture
@@ -642,12 +643,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RequiredAssemblies
-Specifies the assembly \(.dll\) files that the module requires.
+Specifies the assembly (.dll) files that the module requires.
 Enter the assembly file names.
 Windows PowerShell loads the specified assemblies before updating types or formats, importing nested modules, or importing the module file that is specified in the value of the RootModule key.
 
@@ -661,7 +662,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -686,12 +687,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ScriptsToProcess
-Specifies script \(.ps1\) files that run in the caller's session state when the module is imported.
+Specifies script (.ps1) files that run in the caller's session state when the module is imported.
 You can use these scripts to prepare an environment, just as you might use a login script.
 
 To specify scripts that run in the module's session state, use the NestedModules key.
@@ -704,12 +705,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TypesToProcess
-Specifies the type files \(.ps1xml\) that run when the module is imported.
+Specifies the type files (.ps1xml) that run when the module is imported.
 
 When you import the module, Windows PowerShell runs the Update-TypeData cmdlet with the specified files.
 Because type files are not scoped, they affect all session states in the session.
@@ -722,7 +723,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -733,7 +734,7 @@ Wildcards are permitted.
 You can use this parameter to restrict the variables that are exported by the module.
 It can remove variables from the list of exported variables, but it cannot add variables to the list.
 
-If you omit this parameter, New-ModuleManifest creates a VariablesToExport key with a value of * \(all\), meaning that all variables that are exported by the module are exported by the manifest.
+If you omit this parameter, New-ModuleManifest creates a VariablesToExport key with a value of * (all), meaning that all variables that are exported by the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -743,7 +744,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: * (all)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -764,16 +765,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RootModule
 Specifies the primary or "root" file of the module.
-Enter the file name of a script \(.ps1\), a script module \(.psm1\), a module manifest\(.psd1\), an assembly \(.dll\), a cmdlet definition XML file \(.cdxml\), or a workflow \(.xaml\).
+Enter the file name of a script (.ps1), a script module (.psm1), a module manifest(.psd1), an assembly (.dll), a cmdlet definition XML file (.cdxml), or a workflow (.xaml).
 When the module is imported, the members that are exported from the root module file are imported into the caller's session state.
 
-If a module has a manifest file and no root file has been designated in the RootModule key, the manifest becomes the primary file for the module, and the module becomes a "manifest module" \(ModuleType = Manifest\).
+If a module has a manifest file and no root file has been designated in the RootModule key, the manifest becomes the primary file for the module, and the module becomes a "manifest module" (ModuleType = Manifest).
 
 To export members from .psm1 or .dll files in a module that has a manifest, the names of those files must be specified in the values of the RootModule or NestedModules keys in the manifest.
 Otherwise, their members are not exported.
@@ -788,7 +789,7 @@ Aliases: ModuleToProcess
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -802,8 +803,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -819,8 +820,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -839,7 +840,7 @@ However, if you use the PassThru parameter, it generates a System.String object 
 Module manifests are usually optional.
 However, a module manifest is required to export an assembly that is installed in the global assembly cache.
 
-To add or change files in the $pshome\Modules directory \(%Windir%\System32\WindowsPowerShell\v1.0\Modules\), start Windows PowerShell with the "Run as administrator" option.
+To add or change files in the $pshome\Modules directory (%Windir%\System32\WindowsPowerShell\v1.0\Modules), start Windows PowerShell with the "Run as administrator" option.
 
 In Windows PowerShell 2.0, many parameters of New-ModuleManifest are mandatory, even though they are not required in a module manifest.
 In Windows PowerShell 3.0, only the Path parameter is  mandatory.
@@ -854,8 +855,6 @@ Typically, it refers to the global session state, but when a module imports nest
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141555)
-
 [Export-ModuleMember](cbad7943-ded7-4311-9956-da867ad7233c)
 
 [Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
@@ -869,5 +868,4 @@ Typically, it refers to the global session state, but when a module imports nest
 [Test-ModuleManifest](2c379e5a-53b8-4a45-abba-92fadf446685)
 
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
-
 

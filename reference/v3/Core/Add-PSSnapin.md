@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113281
 schema: 2.0.0
 ---
 
@@ -21,7 +22,7 @@ To add the snap-in to all future Windows PowerShell sessions, add an Add-PSSnapi
 For more information, see about_Profiles.
 
 Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules.
-The exception is Microsoft.PowerShell.Core, which is a snap-in \(PSSnapin\).
+The exception is Microsoft.PowerShell.Core, which is a snap-in (PSSnapin).
 By default, only the Microsoft.PowerShell.Core snap-in is added to the session.
 Modules are imported automatically on first use and you can use the Import-Module cmdlet to import them.
 
@@ -41,7 +42,7 @@ PS C:\>get-pssnapin -registered | add-pssnapin -passthru
 
 This command adds all of the registered Windows PowerShell snap-ins to the session.
 It uses the Get-PSSnapin cmdlet with the Registered parameter to get objects representing each of the registered snap-ins.
-The pipeline operator \(|\) passes the result to Add-PSSnapin, which adds them to the session.
+The pipeline operator (|) passes the result to Add-PSSnapin, which adds them to the session.
 The PassThru parameter returns objects that represent each of the added snap-ins.
 
 ### -------------------------- EXAMPLE 3 --------------------------
@@ -78,7 +79,7 @@ It uses ManagementFeatures, a fictitious snap-in implemented in a file called Ma
 
 ### -Name
 Specifies the name of the snap-in.
-\(This is the Name, not the AssemblyName or ModuleName.\) Wildcards are permitted.
+(This is the Name, not the AssemblyName or ModuleName.) Wildcards are permitted.
 
 To find the names of the registered snap-ins on your system, type: "get-pssnapin -registered".
 
@@ -90,7 +91,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -106,7 +107,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -123,14 +124,14 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules.
-In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins \("PSSnapins"\).
+In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins").
 The exception is Microsoft.PowerShell.Core, which is always a snap-in.
 Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-For information about the CreateDefault2 method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2\(v=VS.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2\(v=VS.85\).aspx.
+For information about the CreateDefault2 method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
 
 For detailed information about snap-ins in Windows PowerShell, see about_Pssnapins.
-For information about how to create a Windows PowerShell snap-in, see "How to Create a Windows PowerShell Snap-in" in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkId=144762http://go.microsoft.com/fwlink/?LinkId=144762.
+For information about how to create a Windows PowerShell snap-in, see "How to Create a Windows PowerShell Snap-in" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=144762http://go.microsoft.com/fwlink/?LinkId=144762.
 
 Add-PSSnapin adds the snap-in only to the current session.
 To add the snap-in to all Windows PowerShell sessions, add it to your Windows PowerShell profile.
@@ -146,8 +147,6 @@ If the snap-in fails the version check, Windows PowerShell reports an error.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113281)
-
 [Get-PSSnapin](f2561ac4-9ef9-4b8b-95ca-8bfc5f51784d)
 
 [Remove-PSSnapin](4f10ad2d-8da1-49b7-ad20-7bbc254042f2)
@@ -157,5 +156,4 @@ If the snap-in fails the version check, Windows PowerShell reports an error.
 [about_PSSnapins](83e7ff38-35c0-42a1-8458-3940e8ebc978)
 
 [about_Pssnapins]()
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113387
 schema: 2.0.0
 ---
 
@@ -39,11 +40,11 @@ To turn off this optimizing behavior, use the Wait parameter.
 PS C:\>Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
-This command creates objects that have the Name, ID, and working set \(WS\) properties of process objects.
+This command creates objects that have the Name, ID, and working set (WS) properties of process objects.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Process Explorer | Select-Object –Property ProcessName -ExpandProperty Modules | Format-List
+PS C:\>Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
 
 ProcessName       : 00THotkey
 Size              : 256
@@ -79,7 +80,7 @@ Handles  NPM(K)    PM(K)      WS(K) VS(M)   CPU(s)     Id ProcessName
 
 This command gets the five processes that are using the most memory.
 The Get-Process cmdlet gets the processes on the computer.
-The Sort-Object cmdlet sorts the processes according to memory \(working set\) usage, and the Select-Object cmdlet selects only the last five members of the resulting array of objects.
+The Sort-Object cmdlet sorts the processes according to memory (working set) usage, and the Select-Object cmdlet selects only the last five members of the resulting array of objects.
 
 The Wait parameter is not required in commands that include the Sort-Object cmdlet because Sort-Object processes all objects and then returns a collection.
 The Select-Object optimization is available only for commands that return objects individually as they are processed.
@@ -119,12 +120,12 @@ PS C:\>$a = Get-Eventlog -Log "Windows PowerShell"
 $a | select-object -index 0, ($a.count - 1)
 ```
 
-These commands gets the first \(newest\) and last \(oldest\) events in the Windows Powershell event log.
+These commands gets the first (newest) and last (oldest) events in the Windows Powershell event log.
 
 The command uses the Get-EventLog cmdlet to get all events in the Windows PowerShell log.
 It saves them in the $a variable.
 
-The second command uses a pipeline operator \(|\) to send the events in $a to the Select-Object cmdlet.
+The second command uses a pipeline operator (|) to send the events in $a to the Select-Object cmdlet.
 The Select-Object command uses the Index parameter to select events from the array of events in the $a variable.
 The index of the first event is 0.
 The index of the last event is the number of items in $a minus 1.
@@ -147,7 +148,7 @@ PS C:\>Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.
 This command adds a "-ro" suffix to the base names of text files that have the read-only attribute and then displays the first five files so the user can see a sample of the effect.
 
 The command uses the ReadOnly dynamic parameter of the Get-ChildItem for FileSystem cmdlet to get read-only files.
-It uses a pipeline operator \(|\) to send the files to the Rename-Item cmdlet, which renames the file.
+It uses a pipeline operator (|) to send the files to the Rename-Item cmdlet, which renames the file.
 It uses the Passthru parameter of Rename-Item to send the renamed files to the Select-Object cmdlet, which selects the first 5 for display.
 
 The Wait parameter of Select-Object prevents Windows PowerShell from stopping the Get-ChildItem cmdlet after it gets the first five read-only text files.
@@ -176,7 +177,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -195,7 +196,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -210,7 +211,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -218,7 +219,7 @@ Accept wildcard characters: False
 Selects objects from an array based on their index values.
 Enter the indexes in a comma-separated list.
 
-Indexes in an array begin with 0, where 0 represents the first value and \(n-1\) represents the last value.
+Indexes in an array begin with 0, where 0 represents the first value and (n-1) represents the last value.
 
 ```yaml
 Type: Int32[]
@@ -228,7 +229,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -236,7 +237,7 @@ Accept wildcard characters: False
 Specifies objects to send to the cmdlet through the pipeline.
 This parameter enables you to pipe objects to Select-Object.
 
-When you use the InputObject parameter with Select-Object, instead of piping command results to Select-Object, the InputObject value—even if the value is a collection that is the result of a command, such as –InputObject \(Get-Process\)—is treated as a single object.
+When you use the InputObject parameter with Select-Object, instead of piping command results to Select-Object, the InputObject value-even if the value is a collection that is the result of a command, such as -InputObject (Get-Process)-is treated as a single object.
 Because InputObject cannot return individual properties from an array or collection of objects, it is recommended that if you use Select-Object to filter a collection of objects for those objects that have specific values in defined properties, you use Select-Object in the pipeline, as shown in the examples in this topic.
 
 ```yaml
@@ -247,7 +248,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -262,7 +263,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -274,7 +275,7 @@ The value of the Property parameter can be a new calculated property.
 To create a calculated, property, use a hash table.
 Valid keys are:
 
--- Name \(or Label\) \<string\>
+-- Name (or Label) \<string\>
 -- Expression \<string\> or \<script block\>
 
 ```yaml
@@ -285,12 +286,12 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -Skip
-Skips \(does not select\) the specified number of items.
+Skips (does not select) the specified number of items.
 By default, the Skip parameter counts from the beginning of the array or list of objects, but if the command uses the Last parameter, it counts from the end of the list or array.
 
 Unlike the Index parameter, which starts counting at 0, the Skip parameter begins at 1.
@@ -303,7 +304,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -321,7 +322,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -340,7 +341,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -364,12 +365,9 @@ For more information, see "Write Single Records to the Pipeline" in "Strongly En
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113387)
-
 [Group-Object](494af40a-1315-420f-8bd6-932006576dac)
 
 [Sort-Object](52c4a447-238d-43b4-8d3f-6aee5864b905)
 
 [Where-Object](00000000-0000-0000-0000-000000000000)
-
 

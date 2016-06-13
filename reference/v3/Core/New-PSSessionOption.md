@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144305
 schema: 2.0.0
 ---
 
@@ -20,7 +21,7 @@ New-PSSessionOption [-ApplicationArguments <PSPrimitiveDictionary>] [-CancelTime
 ```
 
 ## DESCRIPTION
-The New-PSSessionOption cmdlet creates an object that contains advanced options for a user-managed session \("PSSession"\).
+The New-PSSessionOption cmdlet creates an object that contains advanced options for a user-managed session ("PSSession").
 You can use the object as the value of the SessionOption parameter of cmdlets that create a PSSession, such as New-PSSession, Enter-PSSession, and Invoke-Command.
 
 Without parameters, New-PSSessionOption generates an object that contains the default values for all of the options.
@@ -29,11 +30,11 @@ Because all of the properties can be edited, you can use the resulting object as
 You can also save a session option object in the $PSSessionOption preference variable.
 The values of this variable establish new default values for the session options.
 They effective when no session options are set for the session and they take precedence over options set in the session configuration, but you can override them by specifying session options or a session option object in a cmdlet that creates a session.
-For more information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 When you use a session option object in a cmdlet that creates a session, the session option values take precedence over default values for sessions set in the $PSSessionOption preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ## EXAMPLES
 
@@ -156,8 +157,8 @@ When the $PSSessionOption preference variable exists in the session, it establis
 
 To make the $PSSessionOption variable available in all sessions, add it to your Windows PowerShell session and to your Windows PowerShell profile.
 
-For more information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
-For more information about profiles, see about_Profiles \(http://go.microsoft.com/fwlink/?LinkID=113729\).
+For more information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -173,7 +174,7 @@ The command saves the resulting session object in the $skipCN variable.
 The second command uses the New-PSSession cmdlet to create a new session on a remote computer.
 The $skipCN check variable is used in the value of the SessionOption parameter.
 
-Because the computer is identified by its IP address, the value of the ComputerName parameter does not match any of the common names in the certificate used for Secure Sockets Layer \(SSL\).
+Because the computer is identified by its IP address, the value of the ComputerName parameter does not match any of the common names in the certificate used for Secure Sockets Layer (SSL).
 As a result, the SkipCNCheck option is required.
 
 ### -------------------------- EXAMPLE 7 --------------------------
@@ -197,7 +198,7 @@ This example shows how to use the ApplicationArguments parameter of the New-PSSe
 
 The first command creates a hash table with two keys, Team and Use.
 The command saves the hash table in the $team variable.
-\(For more information about hash tables, see about_Hash_Tables \(http://go.microsoft.com/fwlink/?LinkID=135175\).\)
+(For more information about hash tables, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175).)
 
 The second command uses the ApplicationArguments parameter of the New-PSSessionOption cmdlet to create a session option object that contains the data in the $team variable.
 The command saves the session option object in the $teamOption variable.
@@ -224,7 +225,7 @@ You can use this parameter to send data to the remote session.
 A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during Windows PowerShell remoting handshakes.
 If you enter a hash table for the value of this parameter, Windows PowerShell converts it to a primitive dictionary.
 
-For more information, see about_Hash_Tables \(http://go.microsoft.com/fwlink/?LinkID=135175\), about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\), and about_Automatic_Variables \(http://go.microsoft.com/fwlink/?LinkID=113212\).
+For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
 
 ```yaml
 Type: PSPrimitiveDictionary
@@ -234,16 +235,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CancelTimeout
-Determines how long Windows PowerShell waits for a cancel operation \(CTRL + C\)  to complete before terminating it.
+Determines how long Windows PowerShell waits for a cancel operation (CTRL + C)  to complete before terminating it.
 Enter a value in milliseconds.
 
-The default value is 60000 \(one minute\).
-A value of 0 \(zero\) means no timeout; the command continues indefinitely.
+The default value is 60000 (one minute).
+A value of 0 (zero) means no timeout; the command continues indefinitely.
 
 ```yaml
 Type: Int32
@@ -253,7 +254,7 @@ Aliases: CancelTimeoutMSec
 Required: False
 Position: Named
 Default value: 60000
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -271,7 +272,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current culture
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -283,23 +284,23 @@ The idle timeout value is of significant importance if you intend to disconnect 
 You can reconnect only if the session has not timed out.
 
 Enter a value in milliseconds.
-The minimum value is 60000 \(1 minute\).
+The minimum value is 60000 (1 minute).
 The maximum is the value of the MaxIdleTimeoutms property of the session configuration.
 The default value, -1, does not set an idle timeout.
 
 The session uses the idle timeout that is set in the session options, if any.
-If none is set \(-1\), the session uses the value of the IdleTimeoutMs property of the session configuration or the WSMan shell timeout value \(WSMan:\\\<ComputerName\>\Shell\IdleTimeout\), whichever is shortest.
+If none is set (-1), the session uses the value of the IdleTimeoutMs property of the session configuration or the WSMan shell timeout value (WSMan:\\\<ComputerName\>\Shell\IdleTimeout), whichever is shortest.
 
 If the idle timeout set in the session options exceeds the value of the MaxIdleTimeoutMs property of the session configuration, the command to create a session fails.
 
-The IdleTimeoutMs value of the default Microsoft.PowerShell session configuration is 7200000 milliseconds \(2 hours\).
-Its MaxIdleTimeoutMs value is 2147483647 milliseconds \(\>24 days\).
-The default value of the WSMan shell idle timeout \(WSMan:\\\<ComputerName\>\Shell\IdleTimeout\) is 7200000 milliseconds \(2 hours\).
+The IdleTimeoutMs value of the default Microsoft.PowerShell session configuration is 7200000 milliseconds (2 hours).
+Its MaxIdleTimeoutMs value is 2147483647 milliseconds (\>24 days).
+The default value of the WSMan shell idle timeout (WSMan:\\\<ComputerName\>\Shell\IdleTimeout) is 7200000 milliseconds (2 hours).
 
 The idle timeout value of a session can also be changed when disconnecting from a session or reconnecting to a session.
 For more information, see Disconnect-PSSession and Connect-PSSession.
 
-In Windows PowerShell 2.0, the default value of the IdleTimeout parameter is 240000 \(4 minutes\).
+In Windows PowerShell 2.0, the default value of the IdleTimeout parameter is 240000 (4 minutes).
 
 ```yaml
 Type: Int32
@@ -309,7 +310,7 @@ Aliases: IdleTimeoutMSec
 Required: False
 Position: Named
 Default value: 7200000 milliseconds
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -328,7 +329,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No limit
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -348,14 +349,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 200 MB
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumRedirection
-Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier \(URI\) before the connection fails.
+Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
-A value of 0 \(zero\) prevents all redirection.
+A value of 0 (zero) prevents all redirection.
 
 This option is used in the session only when the AllowRedirection parameter is used in the command that creates the session.
 
@@ -367,7 +368,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -383,7 +384,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -398,7 +399,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -414,7 +415,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -423,8 +424,8 @@ Determines how long the client computer waits for the session connection to be e
 When the interval expires, the command to establish the connection fails.
 Enter a value in milliseconds.
 
-The default value is 180000 \(3 minutes\).
-A value of 0 \(zero\) means no time-out; the command continues indefinitely.
+The default value is 180000 (3 minutes).
+A value of 0 (zero) means no time-out; the command continues indefinitely.
 
 ```yaml
 Type: Int32
@@ -434,7 +435,7 @@ Aliases: OpenTimeoutMSec
 Required: False
 Position: Named
 Default value: 180000
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -443,8 +444,8 @@ Determines the maximum time that any operation in the session can run.
 When the interval expires, the operation fails.
 Enter a value in milliseconds.
 
-The default value is 180000 \(3 minutes\).
-A value of 0 \(zero\) means no time-out; the operation continues indefinitely.
+The default value is 180000 (3 minutes).
+A value of 0 (zero) means no time-out; the operation continues indefinitely.
 
 ```yaml
 Type: Int32
@@ -454,7 +455,7 @@ Aliases: OperationTimeoutMSec
 Required: False
 Position: Named
 Default value: 180000
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -485,7 +486,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -494,7 +495,7 @@ Determines which mechanism is used to resolve the host name.
 Valid values are IEConfig, WinHttpConfig, AutoDetect, NoProxyServer and None.
 The default value is None.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessType enumeration in the MSDN \(Microsoft Developer Network\) Library at http://go.microsoft.com/fwlink/?LinkId=144756.
+For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessType enumeration in the MSDN (Microsoft Developer Network) Library at http://go.microsoft.com/fwlink/?LinkId=144756.
 
 ```yaml
 Type: ProxyAccessType
@@ -504,7 +505,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -523,7 +524,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Negotiate
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -540,12 +541,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SkipCACheck
-Specifies that when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority \(CA\).
+Specifies that when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
 
 Use this option only when the remote computer is trusted by using another mechanism, such as when the remote computer is part of a network that is physically secure and isolated or when the remote computer is listed as a trusted host in a WinRM configuration.
 
@@ -557,12 +558,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SkipCNCheck
-Specifies that the certificate common name \(CN\) of the server does not need to match the hostname of the server.
+Specifies that the certificate common name (CN) of the server does not need to match the hostname of the server.
 This option is used only in remote operations that use the HTTPS protocol.
 
 Use this option only for trusted computers.
@@ -575,7 +576,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -590,7 +591,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -609,7 +610,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current UI culture
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -624,18 +625,18 @@ Aliases:
 Required: False
 Position: Named
 Default value: False (UTF8 encoding)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -IncludePortInSPN
-Includes the port number in the Service Principal Name \(SPN\) used for Kerberos authentication, for example, “HTTP/\<ComputerName\>:5985”.
+Includes the port number in the Service Principal Name (SPN) used for Kerberos authentication, for example, "HTTP/\<ComputerName\>:5985".
 This option allows a client that uses a non-default SPN to authenticate against a remote computer that uses Kerberos authentication.
 
 The option is designed for enterprises where multiple services that support Kerberos authentication are running under different user accounts.
 For example, an IIS application that allows Kerberos authentication can require the default SPN to be registered to a user account that is different from the computer account.
 In such cases, Windows PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
-To resolve this problem, administrators can create different SPNs \(such as by using Setspn.exe\) that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
+To resolve this problem, administrators can create different SPNs (such as by using Setspn.exe) that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
 
 For more information about SetSPN.exe, see "SetSPN Overview" at http://go.microsoft.com/fwlink/?LinkID=189413.
 
@@ -649,7 +650,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -664,19 +665,16 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 If the SessionOption parameter is not used in a command to create a PSSession, the session options are determined by the property values of the $PSSessionOption preference variable, if it is set.
-For more information about the $PSSessionOption variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about the $PSSessionOption variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 The properties of a session configuration object vary with the options set for the session configuration and the values of those options.
 Also, session configurations that use a session configuration file have additional properties.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144305)
-
 [Enter-PSSession](4e1e012b-51df-4fea-9ff2-dc859eee13fe)
 
 [Invoke-Command](906b4b41-7da8-4330-9363-e7164e5e6970)
 
 [New-PSSession](76f6628c-054c-4eda-ba7a-a6f28daaa26f)
-
 

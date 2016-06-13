@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135203
 schema: 2.0.0
 ---
 
 # ConvertTo-Csv
 ## SYNOPSIS
-Converts objects into a series of comma-separated value \(CSV\) variable-length strings.
+Converts objects into a series of comma-separated value (CSV) variable-length strings.
 
 ## SYNTAX
 
@@ -20,11 +21,11 @@ ConvertTo-Csv [-InputObject] <PSObject> [-NoTypeInformation] [-UseCulture]
 ```
 
 ## DESCRIPTION
-The ConvertTo-CSV cmdlet returns a series of comma-separated \(CSV\) strings that represents the objects that you submit.
+The ConvertTo-CSV cmdlet returns a series of comma-separated (CSV) strings that represents the objects that you submit.
 You can then use the ConvertFrom-CSV cmdlet to re-create objects from the CSV strings.
 The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.
 
-You can also use the T:Microsoft.PowerShell.Commands.Export-Csv and T:Microsoft.PowerShell.Commands.Import-Csv cmdlets to convert objects to CSV strings \(and back\).
+You can also use the T:Microsoft.PowerShell.Commands.Export-Csv and T:Microsoft.PowerShell.Commands.Import-Csv cmdlets to convert objects to CSV strings (and back).
 Export-CSV is the same as ConvertTo-CSV, except that it saves the CSV strings in a file.
 
 You can use the parameters of the ConvertTo-CSV cmdlet to specify a delimiter other than a comma or to direct ConvertTo-CSV to use the default delimiter for the current culture.
@@ -58,7 +59,7 @@ cs.ProcessModuleCollection","21692","21692","63197184","63197184","320080","3200
 
 This command converts a single process object to CSV format.
 The command uses the Get-Process cmdlet to get the PowerShell process on the local computer.
-It uses a pipeline operator \(|\) to send the command to the ConvertTo-CSV cmdlet, which converts it to a series of comma-separated strings.
+It uses a pipeline operator (|) to send the command to the ConvertTo-CSV cmdlet, which converts it to a series of comma-separated strings.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -84,17 +85,17 @@ PS C:\>get-eventlog -log "windows powershell" | convertto-csv -useculture
 This command converts the Windows PowerShell event log on the local computer to a series of CSV strings.
 
 The command uses the Get-EventLog cmdlet to get the events in the Windows PowerShell log.
-A pipeline operator \(|\) sends the events to the ConvertTo-CSV cmdlet, which converts the events to CSV format.
+A pipeline operator (|) sends the events to the ConvertTo-CSV cmdlet, which converts the events to CSV format.
 The command uses the UseCulture parameter, which uses the list separator for the current culture as the delimiter.
 
 ## PARAMETERS
 
 ### -Delimiter
 Specifies a delimiter to separate the property values.
-The default is a comma \(,\).
-Enter a character, such as a colon \(:\).
+The default is a comma (,).
+Enter a character, such as a colon (:).
 
-To specify a semicolon \(;\), enclose it in quotation marks.
+To specify a semicolon (;), enclose it in quotation marks.
 Otherwise, it will be interpreted as the command delimiter.
 
 ```yaml
@@ -105,7 +106,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: , (comma)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -122,7 +123,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -138,16 +139,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: #TYPE <Object>
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseCulture
 Uses the list separator for the current culture as the data delimiter.
-The default is a comma \(,\).
+The default is a comma (,).
 
 This parameter is very useful in scripts that are being distributed to users worldwide.
-To find the list separator for a culture, use the following command: \(Get-Culture\).TextInfo.ListSeparator.
+To find the list separator for a culture, use the following command: (Get-Culture).TextInfo.ListSeparator.
 
 ```yaml
 Type: SwitchParameter
@@ -157,14 +158,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Comma
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
-You can pipe any object that has an Extended Type System \(ETS\) adapter to ConvertTo-CSV.
+You can pipe any object that has an Extended Type System (ETS) adapter to ConvertTo-CSV.
 
 ## OUTPUTS
 
@@ -173,7 +174,7 @@ The CSV output is returned as a collection of strings.
 
 ## NOTES
 In CSV format, each object is represented by a comma-separated list of its property value.
-The property values are converted to strings \(by using the ToString\(\) method of the object\), so they are generally represented by the name of the property value.
+The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value.
 ConvertTo-CSV does not export the methods of the object.
 
 The format of the resulting CSV strings is as follows:
@@ -188,12 +189,9 @@ If the remaining objects have additional properties, those property values are i
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135203)
-
 [ConvertFrom-Csv](2a631339-07b3-49c1-8074-6028a220c78b)
 
 [Export-Csv](99523277-b798-4e42-b2a8-61da33f45a6d)
 
 [Import-Csv](2a767ced-0fc9-4896-a8f0-2c5bdee49910)
-
 

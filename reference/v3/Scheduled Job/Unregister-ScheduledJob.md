@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223925
 schema: 2.0.0
 ---
 
@@ -27,7 +28,7 @@ Unregister-ScheduledJob [-Id] <Int32[]> [-Force] [-Confirm] [-WhatIf]
 ## DESCRIPTION
 The Unregister-ScheduledJob cmdlet deletes scheduled jobs from the local computer.
 
-When it deletes or "unregisters" a scheduled job, Unregister-ScheduledJob deletes the directory for the scheduled job \(in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory\), which contains the XML file that defines the scheduled job, the job execution history, and all job results.
+When it deletes or "unregisters" a scheduled job, Unregister-ScheduledJob deletes the directory for the scheduled job (in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory), which contains the XML file that defines the scheduled job, the job execution history, and all job results.
 This action also deletes the job from Task Scheduler.
 
 Unregister-ScheduledJob deletes only the scheduled jobs that are created by using the Register-ScheduledJob cmdlet.
@@ -62,9 +63,9 @@ PS C:\>Unregistered-ScheduledJob -Name * -Force
 This examples shows two different commands that delete all scheduled jobs on the local computer.
 
 The first command uses the Get-ScheduledJob cmdlet to get all scheduled jobs on the local computer.
-A pipeline operator \(|\) sends the scheduled jobs to Unregister-ScheduleJob, which deletes them.
+A pipeline operator (|) sends the scheduled jobs to Unregister-ScheduleJob, which deletes them.
 
-The second command uses the Name parameter of Unregister-ScheduledJob with a value of all \(*\) to delete all scheduled jobs.
+The second command uses the Name parameter of Unregister-ScheduledJob with a value of all (*) to delete all scheduled jobs.
 
 Both commands use the Force parameter, which deletes a scheduled job even if an instance of the job is running.
 
@@ -90,12 +91,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Id
-Deletes the scheduled jobs with the specified identification numbers \(ID\).
+Deletes the scheduled jobs with the specified identification numbers (ID).
 Enter the IDs of scheduled jobs on the computer.
 
 ```yaml
@@ -106,7 +107,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,7 +141,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -154,8 +155,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -171,8 +172,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,8 +190,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223925)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -225,5 +224,4 @@ This cmdlet does not generate any output.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135219
 schema: 2.0.0
 ---
 
@@ -55,7 +56,7 @@ Get-PSSession [-InstanceId <Guid[]>]
 ```
 
 ## DESCRIPTION
-The Get-PSSession cmdlet gets the user-managed Windows PowerShell sessions \("PSSessions"\) on local and remote computers.
+The Get-PSSession cmdlet gets the user-managed Windows PowerShell sessions ("PSSessions") on local and remote computers.
 
 Beginning in Windows PowerShell 3.0, sessions are stored on the computers at the remote end of each connection. 
 You can use the ComputerName or ConnectionUri parameters of Get-PSSession to get the sessions that connect to the local computer or remote computers, even if they were not created in the current session.
@@ -69,7 +70,7 @@ Use the remaining parameters to configure the temporary connection in which the 
 NOTE: In Windows PowerShell 2.0, without parameters, Get-PSSession gets all sessions that were created in the current session.
 The ComputerName  parameter gets sessions that were created in the current session and connect to the specified computer.
 
-For more information about Windows PowerShell sessions, see about_PSSessions \(http://go.microsoft.com/fwlink/?LinkID=135181\).
+For more information about Windows PowerShell sessions, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
 
 ## EXAMPLES
 
@@ -87,7 +88,7 @@ PS C:\>Get-PSSession -ComputerName localhost
 ```
 
 This command gets the PSSessions that are connected to the local computer.
-To indicate the local computer, type the computer name, "localhost" or a dot \(.\)
+To indicate the local computer, type the computer name, "localhost" or a dot (.)
 
 The command returns all of the sessions on the local computer, even if they were created in different sessions or on different computers.
 
@@ -184,7 +185,7 @@ The default value is Default.
 
 For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in MSDN.
 
-CAUTION: Credential Security Support Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -198,12 +199,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to create the session in which the Get-PSSession command runs.
+Specifies the digital public key certificate (X509) of a user account that has permission to create the session in which the Get-PSSession command runs.
 Enter the certificate thumbprint of the certificate.
 
 This parameter configures the temporary connection that is created to run a Get-PSSession command with the ComputerName or ConnectionUri parameter.
@@ -223,7 +224,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -236,7 +237,7 @@ Beginning in Windows PowerShell 3.0, PSSessions are stored on the computers at t
 To get the sessions on the specified computers, Windows PowerShell creates a temporary connection to each computer and runs a Get-PSSession command.
 
 Type the NetBIOS name, an IP address, or a fully-qualified domain name of one or more computers.
-To specify the local computer, type the computer name, "localhost", or a dot \(.\).
+To specify the local computer, type the computer name, "localhost", or a dot (.).
 
 Note: This parameter gets sessions only from computers running Windows PowerShell 3.0 or later versions of Windows PowerShell.
 Earlier versions do not store sessions.
@@ -272,16 +273,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Id
 Gets only the sessions with the specified IDs.
-Type one or more IDs \(separated by commas\), or use the range operator \(..\) to specify a range of IDs.
+Type one or more IDs (separated by commas), or use the range operator (..) to specify a range of IDs.
 You cannot use the ID parameter with the ComputerName parameter.
 
-An ID is an integer that uniquely identifies the user-managed sessions \(PSSessions\) in the current session.
+An ID is an integer that uniquely identifies the user-managed sessions (PSSessions) in the current session.
 It is easier to remember and type than the InstanceId, but it is unique only within the current session. 
 The ID of a session is stored in the ID property of the session.
 
@@ -313,7 +314,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: All sessions
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -325,7 +326,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All sessions
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -362,7 +363,7 @@ Accept wildcard characters: False
 ### -Port
 Specifies the specified network port that is used for the temporary connection in which the Get-PSSession command runs.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
-The default ports are 5985 \(the WinRM port for HTTP\) and 5986 \(the WinRM port for HTTPS\).
+The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 To configure the listener, type the following two commands at the Windows PowerShell prompt:
@@ -388,7 +389,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5985, 5986
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -412,13 +413,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: All
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run the Get-PSSession command.
-If you omit this parameter or enter a value of 0 \(zero\), the default value, 32, is used.
+If you omit this parameter or enter a value of 0 (zero), the default value, 32, is used.
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -431,12 +432,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 32
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Uses the Secure Sockets Layer \(SSL\) protocol to establish the connection in which the Get-PSSession command runs.
+Uses the Secure Sockets Layer (SSL) protocol to establish the connection in which the Get-PSSession command runs.
 By default, SSL is not used.
 If you use this parameter, but SSL is not available on the port used for the command, the command fails.
 
@@ -452,12 +453,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AllowRedirection
-Allows redirection of this connection to an alternate Uniform Resource Identifier \(URI\).
+Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 By default, Windows PowerShell does not redirect connections.
 
 This  parameter configures the temporary connection that is created to run a Get-PSSession command with the ConnectionUri parameter.
@@ -472,7 +473,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -523,7 +524,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
-Specifies a Uniform Resource Identifier \(URI\) that defines the connection endpoint for the temporary session in which the Get-PSSession command runs.
+Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the temporary session in which the Get-PSSession command runs.
 The URI must be fully qualified.
 
 This  parameter configures the temporary connection that is created to run a Get-PSSession command with the ConnectionUri parameter.
@@ -551,7 +552,7 @@ Aliases: URI,CU
 
 Required: True
 Position: 1
-Default value: http://localhost:5985/WSMAN
+Default value: Http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -567,8 +568,8 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
 Type: PSSessionOption
@@ -578,7 +579,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -613,13 +614,11 @@ To determine whether you can connect or reconnect to the PSSession from the curr
 An Availability value of None indicates that you can connect to the session.
 A value of Busy indicates that you cannot connect to the PSSession because it is connected to another session.
 
-For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate\(v=VS.85\).aspx.
+For more information about the values of the State property of sessions, see "RunspaceState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspx.
 
-For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspxhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspaceavailability\(v=vs.85\).aspx.
+For more information about the values of the Availability property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspxhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135219)
 
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
@@ -640,5 +639,4 @@ For more information about the values of the Availability property of sessions, 
 [about_PSSessions](7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135256
 schema: 2.0.0
 ---
 
@@ -45,7 +46,7 @@ It specifies a priority value of "High" and requests a delivery notification by 
 PS C:\>send-mailmessage -to "User01 <user01@example.com>" -from "ITGroup <itdept@example.com>" -cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -subject "Don't forget today's meeting!" -credential domain01\admin01 -useSSL
 ```
 
-This command sends an e-mail message from User01 to the ITGroup mailing list with a copy \(CC\) to User02 and a blind carbon copy \(BCC\) to the IT manager \(ITMgr\).
+This command sends an e-mail message from User01 to the ITGroup mailing list with a copy (CC) to User02 and a blind carbon copy (BCC) to the IT manager (ITMgr).
 
 The command uses the credentials of a domain administrator and the UseSSL parameter.
 
@@ -63,13 +64,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Bcc
 Specifies the e-mail addresses that receive a copy of the mail but are not listed as recipients of the message.
-Enter names \(optional\) and the e-mail address, such as "Name \<someone@example.com\>".
+Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
 
 ```yaml
 Type: String[]
@@ -79,12 +80,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Body
-Specifies the body \(content\) of the e-mail message.
+Specifies the body (content) of the e-mail message.
 
 ```yaml
 Type: String
@@ -94,7 +95,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -109,13 +110,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Cc
-Specifies the e-mail addresses to which a carbon copy \(CC\) of the e-mail message is sent.
-Enter names \(optional\) and the e-mail address, such as "Name \<someone@example.com\>".
+Specifies the e-mail addresses to which a carbon copy (CC) of the e-mail message is sent.
+Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
 
 ```yaml
 Type: String[]
@@ -125,7 +126,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -144,7 +145,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,13 +190,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: ASCII
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -From
 Specifies the address from which the mail is sent.
-Enter a name \(optional\) and e-mail address, such as "Name \<someone@example.com\>".
+Enter a name (optional) and e-mail address, such as "Name \<someone@example.com\>".
 This parameter is required.
 
 ```yaml
@@ -206,7 +207,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -223,7 +224,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 25
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -240,7 +241,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Normal.
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -258,7 +259,7 @@ Aliases:
 Required: False
 Position: 4
 Default value: $PSEmailServer
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -274,13 +275,13 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -To
 Specifies the addresses to which the mail is sent.
-Enter names \(optional\) and the e-mail address, such as "Name \<someone@example.com\>".
+Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
 This parameter is required.
 
 ```yaml
@@ -291,12 +292,12 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSsl
-Uses the Secure Sockets Layer \(SSL\) protocol to establish a connection to the remote computer to send mail.
+Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer to send mail.
 By default, SSL is not used.
 
 ```yaml
@@ -307,7 +308,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,7 +325,4 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135256)
-
 

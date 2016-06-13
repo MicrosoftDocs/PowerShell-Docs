@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210614
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ This feature enables you to install help files for modules that do not include t
 The Update-Help cmdlet checks the version of the help files on your computer.
 If you do not have help files for a module or do not have the newest help files for a module, Update-Help downloads the newest help files from the Internet or a file share and installs them on your computer in the correct module folder.
 
-Without parameters, Update-Help updates the help for modules in the session and for all installed  modules \(in a PSModulePath location\) that support Updatable Help, even if the module is not in the current session.
+Without parameters, Update-Help updates the help for modules in the session and for all installed  modules (in a PSModulePath location) that support Updatable Help, even if the module is not in the current session.
 You can also use the Module parameter to update help for a particular module and use the UICulture parameter to download help files in multiple languages and locales.
 
 You can use Update-Help even on computers that are not connected to the Internet.
@@ -40,10 +41,10 @@ You can even automate the running of Update-Help by adding an Update-Help comman
 By default, Update-Help runs only once per day on each computer.
 To override the once-per-day limit, use the Force parameter.
 
-To download or update the help files for modules in the Windows PowerShell installation directory \($pshome\Modules\), including the Windows PowerShell Core modules, start Windows PowerShell with the "Run as administrator" option.
+To download or update the help files for modules in the Windows PowerShell installation directory ($pshome\Modules), including the Windows PowerShell Core modules, start Windows PowerShell with the "Run as administrator" option.
 You must be a member of the Administrators group on the computer to update the help files for these modules.
 
-You can also update help files by using the "Update Windows PowerShell Help" menu item in the Help menu in Windows PowerShell Integrated Scripting Environment \(ISE\).
+You can also update help files by using the "Update Windows PowerShell Help" menu item in the Help menu in Windows PowerShell Integrated Scripting Environment (ISE).
 The "Update Windows PowerShell Help" item runs an Update-Help command without parameters.
 To update help for modules in the $PSHome directory, start Windows PowerShell ISE with the "Run as administrator" option.
 
@@ -58,7 +59,7 @@ PS C:\>Update-Help
 
 This command updates help for all installed modules that support Updatable Help in the language specified by the UI culture that is set for Windows.
 
-To run this command, start Windows PowerShell with the "Run as administrator" option \(Start-Process PowerShell -Verb RunAs\).
+To run this command, start Windows PowerShell with the "Run as administrator" option (Start-Process PowerShell -Verb RunAs).
 
 ### Example 2: Update help for specified modules
 ```
@@ -71,7 +72,7 @@ Because these modules are in the $pshome\Modules directory, to run this command,
 
 ### Example 3: Update help in different  languages
 ```
-PS C:\>Update-Help –UICulture ja-JP, en-US
+PS C:\>Update-Help -UICulture ja-JP, en-US
 Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} : 
 The specified culture is not supported: ja-JP. Specify a culture from the following list: {en-US}.
 ```
@@ -105,10 +106,10 @@ You can also view and manage the scheduled job in Task Scheduler in the followin
 ### Example 5: Update help on multiple computers from a file share
 ```
 The first command uses the Save-Help cmdlet to download the newest help files for all modules that support Updatable Help. The command saves the downloaded help files in the \\Server01\Share\PSHelp file share.The command uses the Credential parameter of the Save-Help cmdlet to specify the credentials of a user who has permission to access the remote file share. By default, the command does not run with explicit credentials and attempts to access the file share might fail.
-PS C:\>Save-Help –DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
+PS C:\>Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
 
 The second command uses the Invoke-Command cmdlet to run Update-Help commands on many computers remotely.The Invoke-Command command gets the list of computers from the Servers.txt file. The Update-Help command installs the help files from the file share on all of the remote computers. The remote computer must be able to access the file share at the specified path.The Update-Help command uses the SourcePath parameter to get the updated help files from the file share, instead of the Internet, and the Credential parameter to run the command with explicit credentials. By default, the command runs with network token privileges and attempts to access the file share from each remote computer (a "second hop") might fail.
-PS C:\>Invoke-Command –ComputerName (Get-Content Servers.txt) –ScriptBlock {Update-Help –SourcePath \\Server01\Share\Help -Credential Domain01\Admin01}
+PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Update-Help -SourcePath \\Server01\Share\Help -Credential Domain01\Admin01}
 ```
 
 These commands download updated help files for system modules from the Internet and save them in file share.
@@ -119,7 +120,7 @@ All of the commands in this example were run in a Windows PowerShell session tha
 
 ### Example 6: Get a List of Updated Help Files
 ```
-PS C:\>Update-Help –Module BestPractices, ServerManager -Verbose
+PS C:\>Update-Help -Module BestPractices, ServerManager -Verbose
 ```
 
 This command updates help for two modules.
@@ -195,7 +196,7 @@ The Get-UpdateHelpVersion.ps1 script creates an inventory of the Updatable Help 
 Copy the script and paste it in a text file.
 
 The script identifies modules that support Updatable Help by using the HelpInfoUri property of modules.
-For modules that support Updatable Help, the script looks for and parses the help information file \(HelpInfo XML\) to find the latest version number.
+For modules that support Updatable Help, the script looks for and parses the help information file (HelpInfo XML) to find the latest version number.
 
 The script uses the PSCustomObject class and a hash table to create a custom output object.
 
@@ -216,7 +217,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -237,7 +238,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -260,7 +261,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -273,7 +274,7 @@ You can also pipe modules from the Get-Module cmdlet, to the Update-Help cmdlet.
 The modules that you specify must be installed on the computer, but they do not need to be imported into the current session.
 You can specify any module in the session or any module that is installed in a location listed in the PSModulePath environment variable.
 
-A value of "*" \(all\) attempts to update help for all modules that are installed on the computer, including modules that do not support Updatable Help.
+A value of "*" (all) attempts to update help for all modules that are installed on the computer, including modules that do not support Updatable Help.
 This value might generate errors as the command encounters modules that do not support Updatable Help.
 Instead, run an Update-Help command without parameters.
 
@@ -288,7 +289,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All modules in the current session
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -303,8 +304,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -319,7 +320,7 @@ Use this parameter when you have used the Save-Help cmdlet to download  updated 
 
 Administrators can use the "Set the default source path for Update-Help" Group Policy setting under Computer Configuration to specify a default value for the SourcePath parameter.
 This Group Policy setting prevents users from using Update-Help to download help files from the Internet.
-For more information, see about_Group_Policy_Settings \(http://go.microsoft.com/fwlink/?LinkId=251696\).
+For more information, see about_Group_Policy_Settings (http://go.microsoft.com/fwlink/?LinkId=251696).
 
 ```yaml
 Type: String[]
@@ -329,7 +330,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -352,7 +353,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: Current UI culture
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -370,7 +371,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -388,15 +389,15 @@ You can pipe a module object from the Get-Module cmdlet to  Update-Help.
 Update-Help does not generate any output.
 
 ## NOTES
-To update help for the Windows PowerShell Core modules \(which contain the commands that are installed with Windows PowerShell\) or any module in the $pshome\Modules directory, start Windows PowerShell with the "Run as administrator" option.
+To update help for the Windows PowerShell Core modules (which contain the commands that are installed with Windows PowerShell) or any module in the $pshome\Modules directory, start Windows PowerShell with the "Run as administrator" option.
 
-Only  members of the Administrators group on the computer can update help for the for the Windows PowerShell Core modules \(the commands that are installed with Windows PowerShell\) and for modules in the $pshome\Modules directory.
+Only  members of the Administrators group on the computer can update help for the for the Windows PowerShell Core modules (the commands that are installed with Windows PowerShell) and for modules in the $pshome\Modules directory.
 If you do not have permission to update help files, you might be able to read the help topics online. 
-To open the online version of any cmdlet help topic, type "Get-Help \<cmdlet-name\> –Online ".
+To open the online version of any cmdlet help topic, type "Get-Help \<cmdlet-name\> -Online ".
 
 Modules are the smallest unit of updatable help.
 You cannot update help for a particular cmdlet; only for all cmdlets in module.
-To find the module that contains a particular cmdlet, use the ModuleName property of the Get-Command cmdlet, for example, \(Get-Command \<cmdlet-name\>\).ModuleName
+To find the module that contains a particular cmdlet, use the ModuleName property of the Get-Command cmdlet, for example, (Get-Command \<cmdlet-name\>).ModuleName
 
 Because help files are installed in the module directory, the Update-Help cmdlet can install updated help file only for modules that are installed on the computer.
 However, the Save-Help cmdlet can save help for modules that are not installed on the computer.
@@ -421,11 +422,9 @@ The Module parameter of the Update-Help and Save-Help cmdlets does not accept th
 Any module can support Updatable Help.
 For instructions for supporting Updatable Help in the modules that you author, see "Supporting Updatable Help" in the MSDN Library at http://go.microsoft.com/fwlink/?LinkID=242129.
 
-The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallation Environment \(Windows PE\).
+The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallation Environment (Windows PE).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210614)
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
@@ -444,5 +443,4 @@ The Update-Help and Save-Help cmdlets are not supported on Windows Preinstallati
 [Start-Job](2bc04935-0deb-4ec0-b856-d7290cca6442)
 
 [Save-Help](aed94f90-b73f-4e25-a25d-7c18d9f161fa)
-
 

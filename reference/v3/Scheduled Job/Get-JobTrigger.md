@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223915
 schema: 2.0.0
 ---
 
@@ -97,7 +98,7 @@ Id Frequency At                    DaysOfWeek Enabled ScheduledJob
 
 This command gets all job triggers of all scheduled jobs on the local computer.
 
-The command uses the Get-ScheduledJob to get the scheduled jobs on the local computer and pipes them to Get-JobTrigger, which gets the job trigger of each scheduled job \(if any\).
+The command uses the Get-ScheduledJob to get the scheduled jobs on the local computer and pipes them to Get-JobTrigger, which gets the job trigger of each scheduled job (if any).
 
 To add the name of the scheduled job to the job trigger display, the command uses the "calculated property" feature of the Format-Table cmdlet.
 In addition to the job trigger properties that are displayed by default, the command creates a new "ScheduledJob" property that displays the name of the scheduled job.
@@ -155,7 +156,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -191,7 +192,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -208,7 +209,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -224,8 +225,6 @@ You can pipe a scheduled job from Get-ScheduledJob to Get-JobTrigger.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223915)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -260,5 +259,4 @@ You can pipe a scheduled job from Get-ScheduledJob to Get-JobTrigger.
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

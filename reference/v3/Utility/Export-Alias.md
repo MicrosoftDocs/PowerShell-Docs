@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113296
 schema: 2.0.0
 ---
 
@@ -86,7 +87,7 @@ The first command exports the aliases in the session to the Alias.ps1 file.
 It uses the As parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
 
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
-\(The path to the profile is saved in the $profile variable.\) The command uses the Get-Content cmdlet to get the aliases from the Alias.ps1 file and the Add-Content cmdlet to add them to the profile.
+(The path to the profile is saved in the $profile variable.) The command uses the Get-Content cmdlet to get the aliases from the Alias.ps1 file and the Add-Content cmdlet to add them to the profile.
 For more information, see about_Profiles.
 
 The third and fourth commands add the aliases in the Alias.ps1 file to a  remote session on the Server01 computer.
@@ -106,7 +107,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -116,7 +117,7 @@ CSV is the default.
 
 Valid values are:
 
--- CSV: Comma-separated value \(CSV\) format.
+-- CSV: Comma-separated value (CSV) format.
 -- Script: Creates a Set-Alias command for each exported alias. If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
 
 ```yaml
@@ -127,7 +128,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -163,7 +164,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -220,7 +221,7 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -236,7 +237,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -253,14 +254,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies the scope from which the aliases should be exported.
 
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -272,7 +273,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -286,8 +287,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -303,8 +304,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,8 +325,6 @@ You can only Export-Aliases to a file.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113296)
-
 [Get-Alias](c5703118-f617-4535-afc3-e6e64f333856)
 
 [Import-Alias](c4368ff1-c02a-47aa-b5c0-80503a20b4da)
@@ -333,5 +332,4 @@ You can only Export-Aliases to a file.
 [New-Alias](e77672bd-900b-4267-a07d-dab0d7957208)
 
 [Set-Alias](b77236fb-e34f-4ac9-b8f7-9682dcb08593)
-
 

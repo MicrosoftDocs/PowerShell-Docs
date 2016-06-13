@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141443
 schema: 2.0.0
 ---
 
@@ -15,7 +16,7 @@ Get-WSManCredSSP
 
 ## DESCRIPTION
 The Get-WSManCredSSP cmdlet gets the Credential Security Support Provider-related configuration of the client and the server.
-The output indicates whether Credential Security Support Provider \(CredSSP\) authentication is enabled or disabled.
+The output indicates whether Credential Security Support Provider (CredSSP) authentication is enabled or disabled.
 It also displays configuration information for the AllowFreshCredentials policy of CredSSP.
 When you use CredSSP authentication, the user's credentials are passed to a remote computer to be authenticated.
 This type of authentication is designed for commands that create a remote session from within another remote session.
@@ -23,9 +24,9 @@ For example, you use this type of authentication if you want to run a background
 
 The cmdlet performs the following actions:
 
-- Gets the WS-Management CredSSP setting on the client \(\<localhost|computername\>\Client\Auth\CredSSP\).
+- Gets the WS-Management CredSSP setting on the client (\<localhost|computername\>\Client\Auth\CredSSP).
 - Gets the Windows CredSSP policy setting AllowFreshCredentials.
-- Gets the WS-Management CredSSP setting on the server \(\<localhost|computername\>\Service\Auth\CredSSP\).
+- Gets the WS-Management CredSSP setting on the server (\<localhost|computername\>\Service\Auth\CredSSP).
 
 Caution: CredSSP authentication delegates the user's credentials from the local computer to a remote computer.
 This practice increases the security risk of the remote operation.
@@ -47,7 +48,7 @@ The output identifies that this computer is or is not configured for CredSSP.
 
 If the computer is configured for CredSSP, this is the output:
 
-"The machine is configured to allow delegating fresh credentials to the following target\(s\): wsman/server02.accounting.fabrikam.com"
+"The machine is configured to allow delegating fresh credentials to the following target(s): wsman/server02.accounting.fabrikam.com"
 
 If the computer is not configured for CredSSP, this is the output:
 
@@ -68,8 +69,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141443)
 
 [Connect-WSMan](74e46714-497f-4306-be84-109ab5b654cc)
 
@@ -94,5 +93,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

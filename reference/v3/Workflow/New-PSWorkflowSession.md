@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WFFunctions.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=238268
 schema: 2.0.0
 ---
 
@@ -16,13 +17,13 @@ New-PSWorkflowSession [[-ComputerName] <String[]>] [-ApplicationName <String>] [
 ```
 
 ## DESCRIPTION
-The New-PSWorkflowSession cmdlet creates a user-managed session \("PSSession"\) that is especially designed for running Windows PowerShell workflows.
+The New-PSWorkflowSession cmdlet creates a user-managed session ("PSSession") that is especially designed for running Windows PowerShell workflows.
 It uses the Microsoft.PowerShell.Workflow session configuration, which includes scripts, type and formatting files, and options that are required for workflows.
 
 You can use "New-PSWorkflowSession" or its alias, nwsn.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719\(v=wps.620\).aspx.
+For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.620).aspx.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -79,9 +80,9 @@ The default value is "Default".
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN \(Microsoft Developer Network\) library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For more information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkID=144382.
 
-Caution: Credential Security Service Provider \(CredSSP\) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+Caution: Credential Security Service Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
 If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
 
@@ -94,18 +95,18 @@ Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Cre
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action.
+Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item cmdlet or the Get-ChildItem cmdlet in the Windows PowerShell Cert: drive \(http://go.microsoft.com/fwlink/?LinkID=251065\).
+To get a certificate thumbprint, use the Get-Item cmdlet or the Get-ChildItem cmdlet in the Windows PowerShell Cert: drive (http://go.microsoft.com/fwlink/?LinkID=251065).
 
 ```yaml
 Type: String
@@ -115,23 +116,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Creates a persistent connection \(PSSession\) to the specified computer.
+Creates a persistent connection (PSSession) to the specified computer.
 If you enter multiple computer names, Windows PowerShell creates multiple PSSessions, one for each computer.
 The default is the local computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote computers.
-To specify the local computer, type the computer name, "localhost", or a dot \(.\).
+To specify the local computer, type the computer name, "localhost", or a dot (.).
 When the computer is in a different domain than the user, the fully qualified domain name is required.
-You can also pipe a computer name \(in quotes\) to New-PSWorkflowSession.
+You can also pipe a computer name (in quotes) to New-PSWorkflowSession.
 
 To use an IP address in the value of the ComputerName parameter, the command must include the Credential parameter.
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
-For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting \(http://go.microsoft.com/fwlink/?LinkID=135188\).
+For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting (http://go.microsoft.com/fwlink/?LinkID=135188).
 
 ```yaml
 Type: String[]
@@ -180,7 +181,7 @@ If you use the EnableNetworkAccess parameter when creating a session on a remote
 
 You can also allow remote access in a loopback session by using the CredSSP value of the Authentication parameter, which delegates the session credentials to other computers.
 
-To protect the computer from malicious access, disconnected loopback sessions that have interactive tokens \(those created with the EnableNetworkAccess parameter\) can be reconnected only from the computer on which the session was created.
+To protect the computer from malicious access, disconnected loopback sessions that have interactive tokens (those created with the EnableNetworkAccess parameter) can be reconnected only from the computer on which the session was created.
 Disconnected sessions that use CredSSP authentication can be reconnected from other computers.
 For more information, see Disconnect-PSSession.
 
@@ -194,7 +195,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -212,14 +213,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: Session#
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Port
 Specifies the network port on the remote computer that is used for this connection. 
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
-The default ports are 5985 \(the WinRM port for HTTP\) and 5986 \(the WinRM port for HTTPS\).
+The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 Use the following commands to configure the listener:
@@ -242,7 +243,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5985, 5986
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -255,10 +256,10 @@ Otherwise, the default values are established by options set in the session conf
 
 The session option values take precedence over default values for sessions set in the $PSSessionOption preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
 ```yaml
 Type: PSSessionOption
@@ -268,13 +269,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0  \(zero\), the default value for the Microsoft.PowerShellWorkflow session configuration, 100, is used.
+If you omit this parameter or enter a value of 0  (zero), the default value for the Microsoft.PowerShellWorkflow session configuration, 100, is used.
 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
@@ -286,12 +287,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 100
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Uses the Secure Sockets Layer \(SSL\) protocol to establish a connection to the remote computer.
+Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
@@ -306,8 +307,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,8 +325,6 @@ You can pipe a session or a computer name to New-PSWorkflowSession.
 A New-PSWorkflowSession command is equivalent to the following command: New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=238268)
 
 [New-PSSession](00000000-0000-0000-0000-000000000000)
 
@@ -344,5 +343,4 @@ A New-PSWorkflowSession command is equivalent to the following command: New-PSSe
 [PSWorkflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
 
 [PSWorkflowUtility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
 

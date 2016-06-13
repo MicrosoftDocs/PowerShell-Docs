@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113403
 schema: 2.0.0
 ---
 
@@ -17,7 +18,7 @@ Sort-Object [[-Property] <Object[]>] [-CaseSensitive] [-Culture <String>] [-Desc
 ## DESCRIPTION
 The Sort-Object cmdlet sorts objects in ascending or descending order based on the values of properties of the object.
 
-You can specify a single property or multiple properties \(for a multi-key sort\), and you can select a case-sensitive or case-insensitive sort.
+You can specify a single property or multiple properties (for a multi-key sort), and you can select a case-sensitive or case-insensitive sort.
 You can also direct Sort-Object to display only the objects with a unique value for a particular property.
 
 ## EXAMPLES
@@ -84,7 +85,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 This command displays the five processes on the computer with the greatest memory use based on the size of their working sets.
 
 The command uses the Get-Process cmdlet to get a list of processes.
-It uses a pipeline operator \(|\) to send the results to the Sort-Object cmdlet, which sorts the objects in working-set order.
+It uses a pipeline operator (|) to send the results to the Sort-Object cmdlet, which sorts the objects in working-set order.
 
 Another pipeline operator sends the results to the Select-Object, which displays only the last five items in the list.
 
@@ -131,13 +132,13 @@ Stopped  ClipSrv            ClipBook
 This command displays the services on the computer in descending Status order and ascending DisplayName order.
 
 The command uses the Get-Service cmdlet to get the services on the computer.
-It uses a pipeline operator \(|\) to send services to the Sort-Object cmdlet.
+It uses a pipeline operator (|) to send services to the Sort-Object cmdlet.
 
 To sort one property in ascending order and another property in descending order, the command uses a hash table for the value of the Property parameter.
 The hash table uses an Expression key to specify the property name and an Ascending or Descending key to specify the sort order.
 
 The resulting display, which sorts the Status values in descending order, lists properties with a Status value of "Running" before those with a Status value of "Stopped".
-When sorted in ascending order, "Stopped" appears before "Running", because Status is an enumerated property in which the value of "Stopped" \(1\) is less than the value of "Running" \(4\).
+When sorted in ascending order, "Stopped" appears before "Running", because Status is an enumerated property in which the value of "Stopped" (1) is less than the value of "Running" (4).
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
@@ -192,7 +193,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Case-insensitive
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -229,7 +230,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Ascending
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -249,7 +250,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -281,7 +282,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: Default properties
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -290,7 +291,7 @@ Eliminates duplicates and returns only the unique members of the collection.
 You can use this parameter instead of using the Get-Unique cmdlet.
 
 This parameter is case-insensitive.
-As a result, strings that differ only in character casing are considered to be the same \(not unique\).
+As a result, strings that differ only in character casing are considered to be the same (not unique).
 
 ```yaml
 Type: SwitchParameter
@@ -300,7 +301,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -329,8 +330,5 @@ For example, if you sort services by status, services with a status of "Stopped"
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113403)
-
 [Group-Object](494af40a-1315-420f-8bd6-932006576dac)
-
 

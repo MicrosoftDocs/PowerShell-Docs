@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210608
 schema: 2.0.0
 ---
 
@@ -33,7 +34,7 @@ If you omit a parameter, the object has a null value for the property that the p
 A null value has no effect on the session configuration.
 
 For more information about session options, see New-PSSessionOption.
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -139,10 +140,10 @@ The user can reconnect only if the session has not timed out.
 The IdleTimeoutSec parameter corresponds to the IdleTimeoutMs property of a session configuration.
 
 Enter a value in seconds.
-The default value is 7200 \(2 hours\).
-The minimum value is 60 \(1 minute\).
-The maximum is the value of the IdleTimeout property of Shell objects in the WSMan configuration \(WSMan:\\\<ComputerName\>\Shell\IdleTimeout\).
-The default value is 7200000 milliseconds \(2 hours\).
+The default value is 7200 (2 hours).
+The minimum value is 60 (1 minute).
+The maximum is the value of the IdleTimeout property of Shell objects in the WSMan configuration (WSMan:\\\<ComputerName\>\Shell\IdleTimeout).
+The default value is 7200000 milliseconds (2 hours).
 
 If an idle timeout value is set in the session options and in the session configuration, value set in the session options takes precedence, but it cannot exceed the value of the MaxIdleTimeoutMs property of the session configuration.
 To set the value of the MaxIdleTimeoutMs property, use the MaxIdleTimeoutSec parameter.
@@ -195,7 +196,7 @@ Accept wildcard characters: False
 
 ### -MaxIdleTimeoutSec
 Limits the idle timeout set for each session to the specified value.
-The default value is \[Int\]::MaxValue \(~25 days\).
+The default value is \[Int\]::MaxValue (~25 days).
 
 The idle timeout value is of significant importance when the user intends to disconnect and reconnect to a session.
 The user can reconnect only if the session has not timed out.
@@ -217,7 +218,7 @@ Accept wildcard characters: False
 ### -MaxMemoryPerSessionMB
 Limits the memory used by each session to the specified value.
 Enter a value in megabytes.
-The default value is 1024 megabytes \(1 GB\).
+The default value is 1024 megabytes (1 GB).
 
 The MaxMemoryPerSessionMB parameter corresponds to the MaxMemoryPerShellMB property of a session configuration.
 
@@ -317,7 +318,7 @@ Limits the timeout for each host process to the specified value.
 The default value, 0, means that there is no timeout value for the process.
 
 Other session configurations have per-process timeout values.
-For example, the Microsoft.PowerShell.Workflow session configuration has a per-process timeout value of 28800 seconds \(8 hours\).
+For example, the Microsoft.PowerShell.Workflow session configuration has a per-process timeout value of 28800 seconds (8 hours).
 
 ```yaml
 Type: Int32
@@ -346,8 +347,6 @@ Also, session configurations that use a session configuration file have addition
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210608)
-
 [about_Session_Configurations](a2fbe12a-350c-4d04-be50-24102824e3ab)
 
 [New-PSSession](76f6628c-054c-4eda-ba7a-a6f28daaa26f)
@@ -357,5 +356,4 @@ Also, session configurations that use a session configuration file have addition
 [Register-PSSessionConfiguration](e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 
 [Set-PSSessionConfiguration](b21fbad3-1759-4260-b206-dcb8431cd6ea)
-
 

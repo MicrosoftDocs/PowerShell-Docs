@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113421
 schema: 2.0.0
 ---
 
@@ -42,7 +43,7 @@ This feature is particularly useful when you are developing types and want to lo
 Beginning in Windows PowerShell 3.0, you can use Update-TypeData to add and replace extended type data in the session without using a Types.ps1xml file.
 Type data that is added dynamically, that is, without a file, is added only to the current session.
 To add the type data to all sessions, add an Update-TypeData command to your Windows PowerShell profile.
-For more information, see about_Profiles \(http://go.microsoft.com/fwlink/?LinkID=113729\).
+For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
 Also, beginning in Windows PowerShell 3.0, you can use the Get-TypeData cmdlet to get the extended types in the current session and the Remove-TypeData cmdlet to delete extended types from the current session.
 
@@ -50,12 +51,12 @@ Exceptions that occur in properties, or from adding properties to an Update-Type
 This is to suppress exceptions that would occur in many common types during formatting and outputting.
 If you are getting .NET Framework properties, you can work around the suppression of exceptions by using method syntax instead, as shown in the following example:
 
-"hello".get_Length\(\)
+"hello".get_Length()
 
 Note that method syntax can only be used with .NET Framework properties.
 Properties that are added by running the Update-TypeData cmdlet cannot use method syntax.
 
-For more information about the *types.ps1xml files in Windows PowerShell, see about_Types.ps1xml \(http://go.microsoft.com/fwlink/?LinkID=113274\).
+For more information about the *types.ps1xml files in Windows PowerShell, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
 
 ## EXAMPLES
 
@@ -93,7 +94,7 @@ The Update-TypeData command uses the TypeName parameter to specify the System.Da
 
 The value of the Value property is a script that calculates the current annual quarter.
 The script block the $this automatic variable to represent the current instance of the object and the In operator to determine whether the month value appears in each integer array.
-For more information about the In operator, see about_Comparison_Operators \(http://go.microsoft.com/fwlink/?LinkID=113217\).
+For more information about the In operator, see about_Comparison_Operators (http://go.microsoft.com/fwlink/?LinkID=113217).
 
 The second command gets the new Quarter property of the current date.
 
@@ -115,7 +116,7 @@ The command uses the TypeName parameter to specify the type and the DefaultDispl
 The selected properties include the new Quarter script property that was added in a previous example.
 
 The second command uses the Get-Date cmdlet to get a System.DateTime object that represents the current date.
-The command uses a pipeline operator \(|\) to send the DateTime object to the Format-List cmdlet.
+The command uses a pipeline operator (|) to send the DateTime object to the Format-List cmdlet.
 Because the Format-List command does not specify the properties to display in the list, Windows PowerShell uses the default values that were established by the Update-TypeData command.
 
 ### -------------------------- EXAMPLE 5 --------------------------
@@ -166,7 +167,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -182,7 +183,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -204,7 +205,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -227,7 +228,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -248,7 +249,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -265,7 +266,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -294,7 +295,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: $Null
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -313,7 +314,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,7 +325,7 @@ Use this parameter with the TypeName, MemberType, Value and SecondValue paramete
 
 The valid values for this parameter are: AliasProperty, CodeMethod, CodeProperty, Noteproperty, ScriptMethod, and ScriptProperty.
 
-For information about these values, see "PSMemberTypes Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.psmembertypes\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.psmembertypes\(v=vs.85\).aspx.
+For information about these values, see "PSMemberTypes Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.psmembertypes(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.psmembertypes(v=vs.85).aspx.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -336,7 +337,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -352,7 +353,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -362,7 +363,7 @@ Specifies additional values for AliasProperty, ScriptProperty, CodeProperty, or 
 Use this parameter with the TypeName, MemberType, Value and SecondValue parameters to add or change a property or method of a type.
 
 When the value of the MemberType parameter is AliasProperty, the value of the SecondValue parameter must be a data type.
-Windows PowerShell converts \("casts"\) the value of the alias property to the specified type.
+Windows PowerShell converts ("casts") the value of the alias property to the specified type.
 For example, if you add an alias property that provides an alternate name for a string property, you can also specify a SecondValue of System.Int32 to convert the aliased string value to an integer.
 
 When the value of the MemberType parameter is ScriptProperty, you can use the SecondValue parameter to specify an additional script block.
@@ -379,7 +380,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -399,7 +400,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -425,7 +426,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -442,7 +443,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -459,7 +460,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -477,7 +478,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -497,7 +498,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -516,7 +517,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -542,7 +543,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -563,7 +564,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -577,8 +578,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -594,8 +595,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -613,12 +614,9 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113421)
-
 [about_Types.ps1xml](bc879777-5cd6-45a9-96d8-ebe099b95456)
 
 [Get-TypeData](befd382e-f567-44ab-9898-57c04e1d1b7f)
 
 [Remove-TypeData](2effc965-1fc3-4970-85b6-59dabea81ede)
-
 

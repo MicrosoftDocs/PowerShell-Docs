@@ -2,7 +2,7 @@
 Module Name: \Scheduled Job
 Module Guid: 00000000-0000-0000-0000-000000000000
 Download Help Link: n/a
-Help Version: 3.0.3.0
+Help Version: 0.0.0.0
 Locale: en-US
 ---
 
@@ -58,5 +58,4 @@ Locale: en-US
 
 ### [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
 {{Manually Enter Unregister-ScheduledJob Description Here}}
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113375
 schema: 2.0.0
 ---
 
@@ -50,7 +51,7 @@ The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the
 Then, it saves the breakpoint object in the $b variable.
 
 The second command uses the Remove-PSBreakpoint cmdlet to delete the new breakpoint.
-It uses a pipeline operator \(|\) to send the breakpoint object in the $b variable to the Remove-PSBreakpoint cmdlet.
+It uses a pipeline operator (|) to send the breakpoint object in the $b variable to the Remove-PSBreakpoint cmdlet.
 
 As a result of this command, if you run the script, it runs to completion without stopping.
 Also, the Get-PSBreakpoint cmdlet does not return this breakpoint.
@@ -69,7 +70,7 @@ PS C:\>function del-psb { get-psbreakpoint | remove-psbreakpoint }
 
 This simple function deletes all of the breakpoints in the current console.
 It uses the Get-PSBreakpoint cmdlet to get the breakpoints.
-Then, it uses a pipeline operator \(|\) to send the breakpoints to the Remove-PSBreakpoint cmdlet, which deletes them.
+Then, it uses a pipeline operator (|) to send the breakpoints to the Remove-PSBreakpoint cmdlet, which deletes them.
 
 As a result, you can type "del-psb" instead of the longer command.
 
@@ -90,7 +91,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -105,7 +106,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -119,8 +120,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -136,8 +137,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -155,8 +156,6 @@ The cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113375)
-
 [Disable-PSBreakpoint](d4974e9b-0aaa-4e20-b87f-f599a413e4e8)
 
 [Enable-PSBreakpoint](739e1091-3b3f-405f-a428-bec7543e5df0)
@@ -168,5 +167,4 @@ The cmdlet does not generate any output.
 [Set-PSBreakpoint](6afd5d2c-a285-4796-8607-3cbf49471420)
 
 [about_Debuggers]()
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113424
 schema: 2.0.0
 ---
 
@@ -87,7 +88,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -106,8 +107,6 @@ It does not return any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113424)
-
 [Write-Error](eedfea70-5aa7-4d20-b87d-f8e1147b1b42)
 
 [Write-Host](023e670a-cfda-4e8c-af8f-c2b2d9ee5612)
@@ -119,5 +118,4 @@ It does not return any output.
 [Write-Verbose](d17c2519-dae0-4142-a506-9acfb79b72e7)
 
 [Write-Warning](8e53946e-1762-40e6-ab70-5307f6fc2a98)
-
 

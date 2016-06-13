@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144298
 schema: 2.0.0
 ---
 
@@ -18,14 +19,14 @@ The Disable-PSRemoting cmdlet prevents users on other computers from running com
 
 Disable-PSRemoting blocks remote access to all session configurations on the local computer.
 This prevents remote users from creating temporary or persistent sessions to the local computer.
-Disable-PSRemoting does not prevent users of the local computer from creating sessions \("PSSessions"\) on the local computer or remote computers.
+Disable-PSRemoting does not prevent users of the local computer from creating sessions ("PSSessions") on the local computer or remote computers.
 
 To re-enable remote access to all session configurations, use the Enable-PSRemoting cmdlet.
 To enable remote access to selected session configurations, use the AccessMode parameter of the Set-PSSessionConfiguration cmdlet.
 You can also use the Enable-PSSessionConfiguration and Disable-PSSessionConfiguration cmdlets to enable and disable session configurations for all users.
-For more information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
+For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
-In Windows PowerShell 2.0, Disable-PSRemoting prevents all users from creating user-managed sessions \("PSSessions"\) to the local computer.
+In Windows PowerShell 2.0, Disable-PSRemoting prevents all users from creating user-managed sessions ("PSSessions") to the local computer.
 In Windows PowerShell 3.0, Disable-PSRemoting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed "loopback" sessions.
 
 To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
@@ -75,7 +76,7 @@ To run this command sequence, start Windows PowerShell with the "Run as administ
 
 The first command uses the Disable-PSRemoting cmdlet to disable all registered session configurations on the Server01 computer.
 
-The second command uses the New-PSSession cmdlet to create a remote session to the local computer \(also known as a "loopback"\).
+The second command uses the New-PSSession cmdlet to create a remote session to the local computer (also known as a "loopback").
 The command succeeds.
 
 The third command is run on the Server02 remote computer.
@@ -235,7 +236,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -249,8 +250,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -266,8 +267,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -302,7 +303,7 @@ Every session that connects to the computer must use one of the session configur
 By denying remote access to all session configurations, you effectively prevent remote users from establishing sessions that connect to the computer.
 
 In Windows PowerShell 2.0, Disable-PSRemoting adds a "Deny_All" entry to the security descriptors of all session configurations.
-This setting prevents all users from creating user-managed sessions \("PSSessions"\) to the local computer.
+This setting prevents all users from creating user-managed sessions ("PSSessions") to the local computer.
 In Windows PowerShell 3.0, Disable-PSRemoting adds a "Network_Deny_All" entry to the security descriptors of all session configurations.
 This setting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed "loopback" sessions.
 
@@ -313,8 +314,6 @@ In Windows PowerShell 2.0, Disable-PSRemoting is a function.
 Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144298)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -329,5 +328,4 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 [Unregister-PSSessionConfiguration](f8d6efd7-be65-42ea-9ed5-02453f5201c4)
 
 [WSMan Provider](00000000-0000-0000-0000-000000000000)
-
 

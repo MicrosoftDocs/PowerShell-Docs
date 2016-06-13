@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217031
 schema: 2.0.0
 ---
 
@@ -14,7 +15,7 @@ ConvertFrom-Json [-InputObject] <String>
 ```
 
 ## DESCRIPTION
-The ConvertFrom-Json cmdlet converts a JSON-formatted string to a custom object \(PSCustomObject\) that has a property for each field in the JSON string.
+The ConvertFrom-Json cmdlet converts a JSON-formatted string to a custom object (PSCustomObject) that has a property for each field in the JSON string.
 JSON is commonly used by web sites to provide a textual representation of objects.
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
@@ -80,7 +81,7 @@ PS C:\>(Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
 This example shows how to use the ConvertFrom-Json cmdlet to convert a JSON file to a Windows PowerShell custom object.
 
 The command uses Get-Content cmdlet to get the strings in a JSON file.
-It uses the Join operator to join the strings in the file into a single string that is delimited by newline characters \(\`n\).
+It uses the Join operator to join the strings in the file into a single string that is delimited by newline characters (\`n).
 Then it uses the pipeline operator to send the delimited string to the ConvertFrom-Json cmdlet, which converts it to a custom object.
 
 The Join operator is required, because the ConvertFrom-Json cmdlet expects a single string.
@@ -94,7 +95,7 @@ You can also pipe a string to ConvertFrom-Json.
 
 The InputObject parameter is required, but its value can be an empty string.
 When the input object is an empty string, ConvertFrom-Json does not generate any output.
-The InputObject value cannot be null \($null\).
+The InputObject value cannot be null ($null).
 
 ```yaml
 Type: String
@@ -104,7 +105,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -118,11 +119,9 @@ You can pipe a JSON string to ConvertFrom-Json.
 ### PSCustomObject
 
 ## NOTES
-The ConvertFrom-Json cmdlet is implemented by using the JavaScriptSerializer class \(http://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer\(VS.100\).aspx\).
+The ConvertFrom-Json cmdlet is implemented by using the JavaScriptSerializer class (http://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer(VS.100).aspx).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217031)
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/library/bb299886.aspx)
 
@@ -131,5 +130,4 @@ The ConvertFrom-Json cmdlet is implemented by using the JavaScriptSerializer cla
 [Invoke-WebRequest](3e3dac17-3373-4d22-a54a-9d56a4a556c3)
 
 [Invoke-RestMethod](ff5e372e-cf12-4647-9055-58c2190b9534)
-
 

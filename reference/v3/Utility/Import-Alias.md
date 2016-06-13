@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113339
 schema: 2.0.0
 ---
 
@@ -52,7 +53,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -68,7 +69,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -84,13 +85,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -Scope
 Specifies the scope into which the aliases are imported.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -102,7 +103,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -121,7 +122,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -135,8 +136,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -152,8 +153,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,8 +173,6 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113339)
-
 [Export-Alias](f2ebfdac-0af9-4bf1-bef9-2b612381f3e6)
 
 [Get-Alias](c5703118-f617-4535-afc3-e6e64f333856)
@@ -181,5 +180,4 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](e77672bd-900b-4267-a07d-dab0d7957208)
 
 [Set-Alias](b77236fb-e34f-4ac9-b8f7-9682dcb08593)
-
 

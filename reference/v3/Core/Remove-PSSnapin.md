@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113378
 schema: 2.0.0
 ---
 
@@ -37,7 +38,7 @@ PS C:\>get-PSSnapIn smp* | remove-PSSnapIn
 This command removes the Windows PowerShell snap-ins that have names beginning with "smp" from the current session.
 
 The command uses the Get-PSSnapin cmdlet to get objects representing the snap-ins.
-The pipeline operator \(|\) sends the results to the Remove-PSSnapin cmdlet, which removes them from the session.
+The pipeline operator (|) sends the results to the Remove-PSSnapin cmdlet, which removes them from the session.
 The providers and cmdlets that this snap-in supports are no longer available in the session.
 
 When you pipe objects to Remove-PSSnapin, the names of the objects are associated with the Name parameter, which accepts objects from the pipeline that have a Name property.
@@ -54,7 +55,7 @@ This command specifies the "Name" parameter name, but the parameter name can be 
 
 ### -Name
 Specifies the names of Windows PowerShell snap-ins to remove from the current session.
-The parameter name \("Name"\) is optional, and wildcard characters \(*\) are permitted in the value.
+The parameter name ("Name") is optional, and wildcard characters (*) are permitted in the value.
 
 ```yaml
 Type: String[]
@@ -64,7 +65,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -80,7 +81,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -94,8 +95,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -111,8 +112,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,12 +141,9 @@ For instructions, see about_Profiles.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113378)
-
 [Add-PSSnapin](4125e0dc-d3c1-494f-87e1-4918df7d0f84)
 
 [Get-PSSnapin](f2561ac4-9ef9-4b8b-95ca-8bfc5f51784d)
 
 [about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
-
 

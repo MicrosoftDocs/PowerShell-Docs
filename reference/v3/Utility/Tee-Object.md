@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113417
 schema: 2.0.0
 ---
 
@@ -25,7 +26,7 @@ Tee-Object [-InputObject <PSObject>] -Variable <String>
 ```
 
 ## DESCRIPTION
-The Tee-Object cmdlet redirects output, that is, it sends the output of a command in two directions \(like the letter "T"\).
+The Tee-Object cmdlet redirects output, that is, it sends the output of a command in two directions (like the letter "T").
 It stores the output in a file or variable and also sends it down the pipeline.
 If Tee-Object is the last command in the pipeline, the command output is displayed at the prompt.
 
@@ -65,13 +66,13 @@ Note that the $proc variable includes the default information returned by Get-Pr
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-childitem –path D: –file –system –recurse | tee-object –file c:\test\AllSystemFiles.txt –append | out-file c:\test\NewSystemFiles.txt
+PS C:\>get-childitem -path D: -file -system -recurse | tee-object -file c:\test\AllSystemFiles.txt -append | out-file c:\test\NewSystemFiles.txt
 ```
 
 This command saves a list of system files in a two log files, a cumulative file and a current file.
 
 The command uses the Get-ChildItem cmdlet to do a recursive search for system files on the D: drive.
-A pipeline operator \(|\) sends the list to Tee-Object, which appends the list to the AllSystemFiles.txt file and passes the list down the pipeline to the Out-File cmdlet, which saves the list in the NewSystemFiles.txt file.
+A pipeline operator (|) sends the list to Tee-Object, which appends the list to the AllSystemFiles.txt file and passes the list down the pipeline to the Out-File cmdlet, which saves the list in the NewSystemFiles.txt file.
 
 ## PARAMETERS
 
@@ -89,7 +90,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Replace
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -105,7 +106,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -114,7 +115,7 @@ Specifies the object to be saved and displayed.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 You can also pipe an object to Tee-Object.
 
-When you use the InputObject parameter with Tee-Object, instead of piping command results to Tee-Object, the InputObject value—even if the value is a collection that is the result of a command, such as –InputObject \(Get-Process\)—is treated as a single object.
+When you use the InputObject parameter with Tee-Object, instead of piping command results to Tee-Object, the InputObject value-even if the value is a collection that is the result of a command, such as -InputObject (Get-Process)-is treated as a single object.
 Because InputObject cannot return individual properties from an array or collection of objects, it is recommended that if you use Tee-Object to perform operations on a collection of objects for those objects that have specific values in defined properties, you use Tee-Object in the pipeline, as shown in the examples in this topic.
 
 ```yaml
@@ -125,13 +126,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Variable
 Saves the object in the specified variable.
-Enter a variable name without the preceding dollar sign \($\).
+Enter a variable name without the preceding dollar sign ($).
 
 ```yaml
 Type: String
@@ -141,7 +142,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -160,7 +161,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -183,10 +184,7 @@ To specify the encoding, use the Out-File cmdlet.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113417)
-
 [Select-Object](2f182056-7955-4b77-9c58-64ab4a680074)
 
 [about_Redirection](3f416f82-e815-439a-965c-68f1ee2e7a2b)
-
 

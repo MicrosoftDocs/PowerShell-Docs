@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Diagnostic.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=138337
 schema: 2.0.0
 ---
 
@@ -15,7 +16,7 @@ Export-Counter [-Path] <String> [-Circular] [-FileFormat <String>] [-Force] [-Ma
 ```
 
 ## DESCRIPTION
-The Export-Counter cmdlet exports performance counter data \(PerformanceCounterSampleSet objects\) to log files in binary performance log \(.blg\), comma-separated value \(.csv\), or tab-separated value \(.tsv\) format. 
+The Export-Counter cmdlet exports performance counter data (PerformanceCounterSampleSet objects) to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value (.tsv) format. 
 You can use this cmdlet to log or relog performance counter data.
 
 Export-Counter is designed to export data that is returned by the Get-Counter and Import-Counter cmdlets.
@@ -32,7 +33,7 @@ PS C:\>Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home
 This command exports counter data to a .blg file.
 
 The command uses the Get-Counter cmdlet to collect processor time data.
-It uses a pipeline operator \(|\) to send the data to the Export-Counter cmdlet.
+It uses a pipeline operator (|) to send the data to the Export-Counter cmdlet.
 The Export-Counter command uses the Path variable to specify the output file.
 
 Because the data set might be very large, this command sends the data to Export-Counter through the pipeline.
@@ -77,7 +78,7 @@ This example shows how to use the Import-Counter and Export-Counter cmdlets to r
 ## PARAMETERS
 
 ### -Circular
-Indicates that output file should be a circular log with first in, first out \(FIFO\) format.
+Indicates that output file should be a circular log with first in, first out (FIFO) format.
 When you include this parameter, the MaxSize parameter is required.
 
 ```yaml
@@ -88,7 +89,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -105,7 +106,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: BLG
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -120,7 +121,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -136,7 +137,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -154,13 +155,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
 Specifies the path and file name of the output file.
-Enter a relative or absolute path on the local computer, or a Uniform Naming Convention \(UNC\) path to a remote computer, such as \\\\Computer\Share\file.blg.
+Enter a relative or absolute path on the local computer, or a Uniform Naming Convention (UNC) path to a remote computer, such as \\\\Computer\Share\file.blg.
 This parameter is required.
 
 Note: The file format is determined by the value of the FileFormat parameter, not by the file name extension in the path.
@@ -173,7 +174,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -201,10 +202,7 @@ However, if the computer is configured for Windows PowerShell remoting, you can 
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=138337)
-
 [Get-Counter](963e9e51-4232-4ccf-881d-c2048ff35c2a)
 
 [Import-Counter](b1e3833d-f67c-4a63-b1fe-228fd8f25b30)
-
 

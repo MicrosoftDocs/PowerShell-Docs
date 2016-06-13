@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113357
 schema: 2.0.0
 ---
 
@@ -20,13 +21,13 @@ The New-PSDrive cmdlet creates temporary and persistent drives that are "mapped"
 Temporary drives exist only in the current Windows PowerShell session and in sessions that you create in the current session.
 They can have any name that is valid in Windows PowerShell and can be mapped to any local or remote resource.
 You can use temporary Windows PowerShell drives to access data in the associated data store, just like you would do with any mapped network drive.
-You can change locations into the drive \(using "set-location", "cd", or "chdir"\) and access the contents of the drive \(using "get-item", "get-childitem", or "dir"\).
+You can change locations into the drive (using "set-location", "cd", or "chdir") and access the contents of the drive (using "get-item", "get-childitem", or "dir").
 
-However, because temporary drives are known only to Windows PowerShell, you cannot access them by using File Explorer, Windows Management Instrumentation \(WMI\), Component Object Model \(COM\), or the Microsoft .NET Framework, or by using tools such as Net Use.
+However, because temporary drives are known only to Windows PowerShell, you cannot access them by using File Explorer, Windows Management Instrumentation (WMI), Component Object Model (COM), or the Microsoft .NET Framework, or by using tools such as Net Use.
 
 New features are added to New-PSDrive in Windows PowerShell 3.0.
 
--- Mapped network drives: You can use the Persist parameter of New-PSDrive to create Windows mapped network drives. Unlike temporary Windows PowerShell drives, Windows mapped network drives are not session-specific; they are saved in Windows and they can be managed by using standard Windows tools, such as File Explorer and Net Use. Mapped network drives must have a drive-letter name and be connected to a remote file system location. When your command is scoped locally \(no dot-sourcing\), the Persist parameter doesn’t persist the creation of a PSDrive beyond the scope in which the command is running. If you are running New-PSDrive inside of a script, and you want the drive to persist indefinitely, you must dot-source the script. For best results, to force a new drive to persist indefinitely, add the Scope parameter to your command, and set its value to Global.
+-- Mapped network drives: You can use the Persist parameter of New-PSDrive to create Windows mapped network drives. Unlike temporary Windows PowerShell drives, Windows mapped network drives are not session-specific; they are saved in Windows and they can be managed by using standard Windows tools, such as File Explorer and Net Use. Mapped network drives must have a drive-letter name and be connected to a remote file system location. When your command is scoped locally (no dot-sourcing), the Persist parameter doesn't persist the creation of a PSDrive beyond the scope in which the command is running. If you are running New-PSDrive inside of a script, and you want the drive to persist indefinitely, you must dot-source the script. For best results, to force a new drive to persist indefinitely, add the Scope parameter to your command, and set its value to Global.
 -- External drives: When an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive. You do not need to restart Windows PowerShell. Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
 -- Credentials for UNC Paths: When the value of the Root parameter is a UNC path, such as \\\\Server\Share, the credential specified in the value of the Credential parameter is used to create the PSDrive. Otherwise, the Credential parameter is not effective when creating new file system drives.
 
@@ -177,7 +178,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -186,7 +187,7 @@ Specifies a brief text description of the drive.
 Type any string.
 
 To see the descriptions of all of the drives in the session, type "Get-PSDrive | Format-Table Name, Description".
-To see the description of a particular drives, type "\(Get-PSDrive \<DriveName\>\).Description".
+To see the description of a particular drives, type "(Get-PSDrive \<DriveName\>).Description".
 
 ```yaml
 Type: String
@@ -196,7 +197,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -213,7 +214,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -222,7 +223,7 @@ Creates a Windows mapped network drive.
 Mapped network drives are saved in Windows on the local computer.
 They are persistent, not session-specific, and can be viewed and managed in File Explorer and other tools.
 
-When you scope the command locally \(that is, without dot-sourcing\), the Persist parameter won’t persist the creation of a PSDrive beyond the scope in which you run the command.
+When you scope the command locally (that is, without dot-sourcing), the Persist parameter won't persist the creation of a PSDrive beyond the scope in which you run the command.
 If you run the New-PSDrive cmdlet inside of a script, and you want the new drive to persist indefinitely, you must dot-source the script.
 For best results, to force a new drive to persist, specify Global as the value of the Scope parameter, as well as adding the Persist parameter to your command.
 
@@ -244,7 +245,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -267,14 +268,14 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Root
 Specifies the data store location to which a Windows PowerShell drive is mapped.
 
-For example, specify a network share \(such as \\\\Server01\Public\), a local directory \(such as C:\Program Files\), or a registry key \(such as HKLM:\Software\Microsoft\).
+For example, specify a network share (such as \\\\Server01\Public), a local directory (such as C:\Program Files), or a registry key (such as HKLM:\Software\Microsoft).
 
 Temporary Windows PowerShell drives can be associated with a local or remote location on any supported provider drive.
 Mapped network drives can be associated only with a file system location on a remote computer.
@@ -287,15 +288,15 @@ Aliases:
 Required: True
 Position: 3
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies a scope for the drive.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
-For more information, see about_Scopes \(http://go.microsoft.com/fwlink/?LinkID=113260\).
+For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=113260).
 
 ```yaml
 Type: String
@@ -305,7 +306,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -319,8 +320,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -336,15 +337,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -355,8 +356,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -372,19 +373,16 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 The New-PSDrive cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, use the Get-PSProvider cmdlet.
-For more information about providers, see about_Providers \(http://go.microsoft.com/fwlink/?LinkID=113250\).
+For more information about providers, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
 
 Mapped network drives are specific to a user account.
 Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credential of another user are not visible in session that started without explicit credentials or with the credentials of the current user.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113357)
-
 [Get-PSDrive](6c176030-de74-40f3-8f48-7b4d871c3238)
 
 [Remove-PSDrive](0e9a8ba8-73b0-4c86-b12f-604af804592a)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

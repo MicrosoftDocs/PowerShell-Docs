@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113300
 schema: 2.0.0
 ---
 
@@ -66,8 +67,8 @@ This command takes an array of three integers and divides each one of them by 10
 PS C:\>Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; "" }}
 ```
 
-This command gets the files and directories in the Windows PowerShell installation directory \($pshome\) and passes them to the ForEach-Object cmdlet.
-If the object is not a directory \(the value of the PSISContainer property is false\), the script block gets the name of the file, divides the value of its Length property by 1024, and adds a space \(""\) to separate it from the next entry.
+This command gets the files and directories in the Windows PowerShell installation directory ($pshome) and passes them to the ForEach-Object cmdlet.
+If the object is not a directory (the value of the PSISContainer property is false), the script block gets the name of the file, divides the value of its Length property by 1024, and adds a space ("") to separate it from the next entry.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -96,7 +97,7 @@ For example, if you map the E: drive to \\\\Server\Share, there will be an E sub
 
 The command uses the Get-ItemProperty cmdlet to get all of the subkeys of the Network key and the Set-ItemProperty cmdlet to change the value of the RemotePath registry entry in each key.
 In the Set-ItemProperty command, the path is the value of the PSPath property of the registry key.
-\(This is a property of the Microsoft .NET Framework object that represents the registry key; it is not a registry entry.\) The command uses the ToUpper\(\) method of the RemotePath value, which is a string \(REG_SZ\).
+(This is a property of the Microsoft .NET Framework object that represents the registry key; it is not a registry entry.) The command uses the ToUpper() method of the RemotePath value, which is a string (REG_SZ).
 
 Because Set-ItemProperty is changing the property of each key, the ForEach-Object cmdlet is required to access the property.
 
@@ -146,10 +147,10 @@ These commands split two dot-separated module names into their component names.
 The commands call the Split method of strings.
 The three commands use different syntax, but they are equivalent and interchangeable.
 
-The first command uses the traditional syntax, which includes a script block and the current object operator \($_\).
+The first command uses the traditional syntax, which includes a script block and the current object operator ($_).
 It uses the dot syntax to specify the method and parentheses to enclose the delimiter argument.
 
-The second command uses the MemberName parameter to specify the Split method and the ArgumentName parameter to identify the dot \("."\) as the split delimiter.
+The second command uses the MemberName parameter to specify the Split method and the ArgumentName parameter to identify the dot (".") as the split delimiter.
 
 The third command  uses the Foreach alias of the Foreach-Object cmdlet and omits the names of the MemberName and ArgumentList parameters, which are optional.
 
@@ -171,7 +172,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -186,7 +187,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -195,7 +196,7 @@ Specifies the input objects.
 ForEach-Object runs the script block or operation statement on each input object.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
-When you use the InputObject parameter with ForEach-Object, instead of piping command results to ForEach-Object, the InputObject value—even if the value is a collection that is the result of a command, such as –InputObject \(Get-Process\)—is treated as a single object.
+When you use the InputObject parameter with ForEach-Object, instead of piping command results to ForEach-Object, the InputObject value-even if the value is a collection that is the result of a command, such as -InputObject (Get-Process)-is treated as a single object.
 Because InputObject cannot return individual properties from an array or collection of objects, it is recommended that if you use ForEach-Object to perform operations on a collection of objects for those objects that have specific values in defined properties, you use ForEach-Object in the pipeline, as shown in the examples in this topic.
 
 ```yaml
@@ -206,7 +207,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -222,7 +223,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -239,7 +240,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -256,14 +257,14 @@ Aliases: Args
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MemberName
 Specifies the property to get or the method to call.
 Wildcard characters are permitted, but work only if the resulting string resolves to a unique value.
-If, for example, you run Get-Process | ForEach –MemberName *Name, and more than one member exists with a name that contains the string Name--such as the ProcessName and Name properties--the command fails.
+If, for example, you run Get-Process | ForEach -MemberName *Name, and more than one member exists with a name that contains the string Name--such as the ProcessName and Name properties--the command fails.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -275,7 +276,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -289,8 +290,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -306,8 +307,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -323,10 +324,7 @@ The objects that ForEach-Object returns are determined by the input.
 
 ## NOTES
 The ForEach-Object cmdlet works much like the Foreach statement, except that you cannot pipe input to a Foreach statement.
-For more information about the Foreach statement, see about_Foreach \(http://go.microsoft.com/fwlink/?LinkID=113229\).
+For more information about the Foreach statement, see about_Foreach (http://go.microsoft.com/fwlink/?LinkID=113229).
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113300)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141438
 schema: 2.0.0
 ---
 
 # Disable-WSManCredSSP
 ## SYNOPSIS
-Disables Credential Security Support Provider \(CredSSP\) authentication on a client computer.
+Disables Credential Security Support Provider (CredSSP) authentication on a client computer.
 
 ## SYNTAX
 
@@ -75,7 +76,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -93,8 +94,6 @@ This cmdlet does not generate any output.
 To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141438)
 
 [Connect-WSMan](74e46714-497f-4306-be84-109ab5b654cc)
 
@@ -119,5 +118,4 @@ To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217036
 schema: 2.0.0
 ---
 
@@ -30,14 +31,14 @@ The file has a .pssc file name extension.
 All parameters of New-PSSessionConfigurationFile are optional, except for the Path parameter.
 If you omit a parameter, the corresponding key in the session configuration file is commented-out, except where noted in the parameter description.
 
-A "session configuration" also known as an "endpoint" is a collection of settings on the local computer that define the environment for Windows PowerShell sessions \(PSSessions\) that connect to \(terminate at\) the computer.
+A "session configuration" also known as an "endpoint" is a collection of settings on the local computer that define the environment for Windows PowerShell sessions (PSSessions) that connect to (terminate at) the computer.
 All PSSessions use a session configuration.
 To specify a particular session configuration, use the ConfigurationName parameter of cmdlets that create a session, such as the New-PSSession cmdlet.
 
 A session configuration file makes it easy to define a session configuration without complex scripts or code assemblies.
 The settings in the file are used in addition to the optional startup script and any assemblies in the session configuration.
 
-For more information about session configurations and session configuration files, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\) and about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For more information about session configurations and session configuration files, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152) and about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -281,7 +282,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -296,7 +297,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -313,7 +314,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -330,7 +331,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "Unknown"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -348,7 +349,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: '(c) 2012 <User> All rights reserved.
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -364,7 +365,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -382,14 +383,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ExecutionPolicy
 Specifies the execution policy of sessions that use the session configuration.
 If you omit this parameter, the value of the ExecutionPolicy key in the session configuration file is "Restricted".
-For information about execution policies in Windows PowerShell, see about_Execution_Policies \(http://go.microsoft.com/fwlink/?LinkID=135170\).
+For information about execution policies in Windows PowerShell, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 ```yaml
 Type: ExecutionPolicy
@@ -399,12 +400,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Restricted
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -FormatsToProcess
-Specifies the formatting files \(.ps1xml\) that run in sessions that use the session configuration.
+Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
 The value of this parameter must be a full or absolute path to the formatting files.
 
 ```yaml
@@ -415,7 +416,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -437,14 +438,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Guid
 Specifies a unique identifier for the session configuration file.
 If you omit this parameter, New-PSSessionConfigurationFile generates a GUID for the file.
-To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid\(\)".
+To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
 
 ```yaml
 Type: Guid
@@ -454,7 +455,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: GUID generated for the session configuration
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -467,7 +468,7 @@ Valid values are:
 -- FullLanguage: All language elements are permitted.
 -- ConstrainedLanguage: Commands that contain scripts to be evaluated are not allowed. The ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or methods.
 -- NoLanguage: Users may run cmdlets and functions, but are not permitted to use any language elements, such as script blocks, variables, or operators.
--- RestrictedLanguage: Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: $PSCulture, $PSUICulture, $True, $False, and  $Null. Users may use only the basic comparison operators \(-eq, -gt, -lt\). Assignment statements, property references, and method calls are not permitted.
+-- RestrictedLanguage: Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: $PSCulture, $PSUICulture, $True, $False, and  $Null. Users may use only the basic comparison operators (-eq, -gt, -lt). Assignment statements, property references, and method calls are not permitted.
 
 The default value of the LanguageMode parameter depends on the value of the SessionType parameter.
 
@@ -483,7 +484,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: FullLanguage or NoLanguage
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -512,7 +513,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -528,7 +529,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -547,7 +548,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -563,7 +564,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1.0.0.0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -580,7 +581,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -601,12 +602,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TypesToProcess
-Adds the specified type files \(.ps1xml\) to sessions that use the session configuration.
+Adds the specified type files (.ps1xml) to sessions that use the session configuration.
 Enter the type file names.
 The value of this parameter must be a full or absolute path to type file names.
 
@@ -618,7 +619,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -640,7 +641,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -661,7 +662,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -682,7 +683,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -703,7 +704,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -724,7 +725,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -754,8 +755,6 @@ Before using an edited session configuration file, use the Test-PSSessionConfigu
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217036)
-
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
 [Enable-PSSessionConfiguration](58d537b4-8735-437d-a573-aa5744725b4a)
@@ -779,5 +778,4 @@ Before using an edited session configuration file, use the Test-PSSessionConfigu
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

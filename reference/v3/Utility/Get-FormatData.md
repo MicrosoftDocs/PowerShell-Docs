@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144303
 schema: 2.0.0
 ---
 
@@ -16,10 +17,10 @@ Get-FormatData [[-TypeName] <String[]>]
 ## DESCRIPTION
 The Get-FormatData cmdlet gets the formatting data in the current session.
 
-The formatting data in the session includes formatting data from Format.ps1xml formatting files \(such as those in the $pshome directory\), formatting data for modules that you import into the session, and formatting data for commands that you import into your session by using the Import-PSSession cmdlet.
+The formatting data in the session includes formatting data from Format.ps1xml formatting files (such as those in the $pshome directory), formatting data for modules that you import into the session, and formatting data for commands that you import into your session by using the Import-PSSession cmdlet.
 
 You can use this cmdlet to examine the formatting data.
-Then, you can use the Export-FormatData cmdlet to serialize the objects \(convert them to XML\) and save them in Format.ps1xml files.
+Then, you can use the Export-FormatData cmdlet to serialize the objects (convert them to XML) and save them in Format.ps1xml files.
 
 For more information about formatting files in Windows PowerShell, see about_Format.ps1xml.
 
@@ -89,7 +90,7 @@ This example shows how to use Get-FormatData and Export-FormatData to export the
 The first four commands use the Get-FormatData, Import-Module, and Compare-Object cmdlets to identify the format type that the BitsTransfer module adds to the session.
 
 The fifth command uses the Get-FormatData cmdlet to get the format type that the BitsTransfer module adds.
-It uses a pipeline operator \(|\) to send the format type object to the Export-FormatData cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
+It uses a pipeline operator (|) to send the format type object to the Export-FormatData cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
 
 The final command shows an excerpt of the format.ps1xml file content.
 
@@ -108,7 +109,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -125,10 +126,7 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144303)
-
 [Export-FormatData](3226ac28-fcc3-4f5e-8ef8-71bc8d3c8f29)
 
 [Update-FormatData](166535eb-9cdd-4269-b612-f936f6740b79)
-
 

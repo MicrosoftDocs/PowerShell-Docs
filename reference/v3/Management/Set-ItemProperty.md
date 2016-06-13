@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113396
 schema: 2.0.0
 ---
 
@@ -91,7 +92,7 @@ NoOfEmployees : 824
 This example shows how to use Set-ItemProperty to create a new registry entry and to assign a value to the entry.
 It creates the NoOfEmployees entry in the MyCompany key in HKLM\Software key and sets its value to 823.
 
-Because registry entries are considered to be properties of the registry keys \(which are items\), you use Set-ItemProperty to create registry entries, and to establish and change their values.
+Because registry entries are considered to be properties of the registry keys (which are items), you use Set-ItemProperty to create registry entries, and to establish and change their values.
 
 The first command uses the Set-ItemProperty cmdlet to create the registry entry.
 It uses the Path parameter to specify the path to the HKLM: drive and the Software\MyCompany key.
@@ -112,7 +113,7 @@ For more information about using Windows PowerShell to manage the registry, type
 PS C:\>get-childitem weekly.txt | set-itemproperty -name IsReadOnly -value $true
 ```
 
-These commands show how to use a pipeline operator \(|\) to send an item to Set-ItemProperty.
+These commands show how to use a pipeline operator (|) to send an item to Set-ItemProperty.
 
 The first part of the command uses the Get-ChildItem cmdlet to get an object that represents the Weekly.txt file.
 The command uses a pipeline operator to send the file object to Set-ItemProperty.
@@ -139,7 +140,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -154,7 +155,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -189,7 +190,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -204,7 +205,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -220,7 +221,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName, ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -239,7 +240,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -254,7 +255,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -270,7 +271,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -285,13 +286,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Type
 Establishes or changes the data type of a registry value.
-The default is String \(REG_SZ\).
+The default is String (REG_SZ).
 Valid values for this parameter include the following:
 
 -- String. Specifies a null-terminated string. Equivalent to REG_SZ.
@@ -312,7 +313,7 @@ Aliases:
 
 Required: True
 Position: 3
-Default value: string
+Default value: String
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -324,7 +325,7 @@ Aliases:
 
 Required: False
 Position: 3
-Default value: string
+Default value: String
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -340,7 +341,7 @@ Aliases:
 Required: True
 Position: 3
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -354,8 +355,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -371,15 +372,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -390,8 +391,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -413,8 +414,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113396)
-
 [Clear-ItemProperty](f49c0340-d5cd-4099-8494-24b961ab4f7e)
 
 [Copy-ItemProperty](c5baceb8-7348-412c-9593-e7f36a5380ad)
@@ -430,5 +429,4 @@ For more information, see about_Providers.
 [Rename-ItemProperty](07be82e9-597b-4a41-b9b8-1b192c5f0322)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

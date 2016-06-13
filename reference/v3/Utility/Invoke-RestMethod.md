@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217034
 schema: 2.0.0
 ---
 
@@ -19,11 +20,11 @@ Invoke-RestMethod [-Uri] <Uri> [-Body <Object>] [-Certificate <X509Certificate>]
 ```
 
 ## DESCRIPTION
-The Invoke-RestMethod cmdlet sends HTTP and HTTPS requests to Representational State Transfer \(REST\) web services that returns richly structured data.
+The Invoke-RestMethod cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 Windows PowerShell formats the response based to the data type.
 For an RSS or ATOM feed, Windows PowerShell returns the Item or Entry XML nodes.
-For JavaScript Object Notation \(JSON\) or XML, Windows PowerShell converts \(or deserializes\) the content into objects.
+For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or deserializes) the content into objects.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -89,7 +90,7 @@ Supply values for the following parameters:
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
 
-In the following example, a user runs Invoke-RestMethod to perform a POST request on an intranet website in the user’s organization.
+In the following example, a user runs Invoke-RestMethod to perform a POST request on an intranet website in the user's organization.
 
 ## PARAMETERS
 
@@ -100,8 +101,8 @@ You can also pipe a body value to Invoke-RestMethod.
 
 The Body parameter can be used to specify a list of query parameters or specify the content of the response.
 
-When the input is a GET request, and the body is an IDictionary \(typically, a hash table\), the body is added to the URI as query parameters.
-For other request types \(such as POST\), the body is set as the value of the request body in the standard name=value format.
+When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters.
+For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
 
 When the body is a form, or it is the output of another Invoke-WebRequest call, Windows PowerShell sets the request content to the form fields.
 
@@ -132,7 +133,7 @@ Accept wildcard characters: False
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
-To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate \(Cert:\) drive.
+To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
 
 ```yaml
@@ -143,12 +144,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to send the request.
+Specifies the digital public key certificate (X509) of a user account that has permission to send the request.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication.
@@ -164,7 +165,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,7 +183,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -200,7 +201,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -217,7 +218,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: KeepAlive
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -236,7 +237,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -254,14 +255,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaximumRedirection
-Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier \(URI\) before the connection fails.
+Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
-A value of 0 \(zero\) prevents all redirection.
+A value of 0 (zero) prevents all redirection.
 
 ```yaml
 Type: Int32
@@ -271,7 +272,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -287,7 +288,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -307,7 +308,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -323,7 +324,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -339,7 +340,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -360,7 +361,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -378,13 +379,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SessionVariable
 Creates a web request session and saves it in the value of the specified variable.
-Enter a variable name without the dollar sign \($\) symbol.
+Enter a variable name without the dollar sign ($) symbol.
 
 When you specify a session variable, Invoke-RestMethod creates a web request session object and assigns it to a variable with the specified name in your Windows PowerShell session.
 You can use the variable in your session as soon as the command completes.
@@ -408,7 +409,7 @@ Aliases: SV
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -417,7 +418,7 @@ Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
 The default value, 0, specifies an indefinite time-out.
 
-A Domain Name System \(DNS\) query can take up to 15 seconds to return or time out.
+A Domain Name System (DNS) query can take up to 15 seconds to return or time out.
 If your request contains a host name that requires resolution, and you set TimeoutSec to a value greater than zero, but less than 15 seconds, it can take 15 seconds or more before a WebException is thrown, and your request times out.
 
 ```yaml
@@ -428,7 +429,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -444,16 +445,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Uri
-Specifies the Uniform Resource Identifier \(URI\) of the Internet resource to which the web request is sent.
+Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent.
 This parameter supports HTTP, HTTPS, FTP, and FILE values.
 
 This parameter is required.
-The parameter name \(-Uri\) is optional.
+The parameter name (-Uri) is optional.
 
 ```yaml
 Type: Uri
@@ -463,7 +464,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -478,20 +479,20 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UserAgent
 Specifies a user agent string for the web request.
 
-The default user agent is similar to "Mozilla/5.0 \(Windows NT; Windows NT 6.1; en-US\) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
+The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the PSUserAgenthttp://msdn.microsoft.com/library/windows/desktop/hh484857\(v=vs.85\).aspx class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the PSUserAgenthttp://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet
 
-Invoke-WebRequest -Uri http://website.com/ -UserAgent \(\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer\)
+Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
 
 ```yaml
 Type: String
@@ -501,13 +502,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WebSession
 Specifies a web request session.
-Enter the variable name, including the dollar sign \($\).
+Enter the variable name, including the dollar sign ($).
 
 To override a value in the web request session, use a cmdlet parameter, such as UserAgent or Credential.
 Parameter values take precedence over values in the web request session.
@@ -516,7 +517,7 @@ Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
 You can use it to share state and data among web requests.
 
-To create a web request session, enter a variable name \(without a dollar sign\) in the value of the SessionVariable parameter of an Invoke-RestMethod command.
+To create a web request session, enter a variable name (without a dollar sign) in the value of the SessionVariable parameter of an Invoke-RestMethod command.
 Invoke-RestMethod creates the session and saves it in the variable.
 In subsequent commands, use the variable as the value of the WebSession parameter.
 
@@ -530,7 +531,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -551,12 +552,9 @@ If the request returns JSON strings, Invoke-RestMethod returns a PSObject that r
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217034)
-
 [ConvertTo-Json](7375c4e6-b767-41cc-9c0d-37db1bbcf7bf)
 
 [ConvertFrom-Json](3612c3f9-2153-4a1e-aebc-3092d707d567)
 
 [Invoke-WebRequest](3e3dac17-3373-4d22-a54a-9d56a4a556c3)
-
 

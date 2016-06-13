@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113390
 schema: 2.0.0
 ---
 
 # Set-Alias
 ## SYNOPSIS
-Creates or changes an alias \(alternate name\) for a cmdlet or other command element in the current Windows PowerShell session.
+Creates or changes an alias (alternate name) for a cmdlet or other command element in the current Windows PowerShell session.
 
 ## SYNTAX
 
@@ -15,7 +16,7 @@ Set-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Force] [-
 ```
 
 ## DESCRIPTION
-The Set-Alias cmdlet creates or changes an alias \(alternate name\) for a cmdlet or for a command element, such as a function, a script, a file, or other executable.
+The Set-Alias cmdlet creates or changes an alias (alternate name) for a cmdlet or for a command element, such as a function, a script, a file, or other executable.
 You can also use Set-Alias to reassign a current alias to a new command, or to change any of the properties of an alias, such as its description.
 Unless you add the alias to the Windows PowerShell profile, the changes to an alias are lost when you exit the session or close Windows PowerShell.
 
@@ -39,7 +40,7 @@ If "list" is an alias for another cmdlet, this command changes its association s
 
 This command uses the same format as the command in the previous example, but it omits the optional parameter names, -Name and -Value.
 When you omit parameter names, the values of those parameters must appear in the specified order in the command.
-In this case, the value of -Name \("list"\) must be the first parameter and the value of -Value \("get-location"\) must be the second parameter.
+In this case, the value of -Name ("list") must be the first parameter and the value of -Value ("get-location") must be the second parameter.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -50,7 +51,7 @@ This command associates the alias "scrub" with the Remove-Item cmdlet.
 It uses the "ReadOnly" option to prevent the alias from being deleted or assigned to another cmdlet.
 
 The PassThru parameter directs Windows PowerShell to pass an object that represents the new alias through the pipeline to the Format-List cmdlet.
-If the PassThru parameter were omitted, there would be no output from this cmdlet to display \(in a list or otherwise\).
+If the PassThru parameter were omitted, there would be no output from this cmdlet to display (in a list or otherwise).
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -62,7 +63,7 @@ After the command completes, to open Notepad from the Windows PowerShell command
 
 This example demonstrates that you can create aliases for executable files and elements other than cmdlets.
 
-To make the command more generic, you can use the "Windir" environment variable \(${env:windir}\) to represent the C\Windows directory.
+To make the command more generic, you can use the "Windir" environment variable (${env:windir}) to represent the C\Windows directory.
 The generic version of the command is "set-alias np ${env:windir}\notepad.exe".
 
 ### -------------------------- EXAMPLE 5 --------------------------
@@ -98,7 +99,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -115,7 +116,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -131,7 +132,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -140,7 +141,7 @@ Sets the value of the Options property of the alias.
 
 Valid values are:
 
--- None: Sets no options. \("None" is the default.\)
+-- None: Sets no options. ("None" is the default.)
 -- ReadOnly: Can be deleted. Cannot be not changed, except by using the Force parameter.
 -- Constant: Cannot be deleted or changed.
 -- Private: The alias is available only in the current scope.
@@ -156,7 +157,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -172,13 +173,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: No output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Specifies the scope in which this alias is valid.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -190,7 +191,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -205,7 +206,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -219,8 +220,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -236,8 +237,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -279,8 +280,6 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113390)
-
 [Export-Alias](f2ebfdac-0af9-4bf1-bef9-2b612381f3e6)
 
 [Get-Alias](c5703118-f617-4535-afc3-e6e64f333856)
@@ -288,5 +287,4 @@ For more information, see about_Aliases.
 [Import-Alias](c4368ff1-c02a-47aa-b5c0-80503a20b4da)
 
 [New-Alias](e77672bd-900b-4267-a07d-dab0d7957208)
-
 

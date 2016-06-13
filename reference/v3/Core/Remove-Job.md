@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113377
 schema: 2.0.0
 ---
 
@@ -69,7 +70,7 @@ PS C:\>$batch | Remove-Job
 
 These commands delete a background job named BatchJob from the current session.
 The first command uses the Get-Job cmdlet to get an object representing the job, and then it saves the job in the $batch variable.
-The second command uses a pipeline operator \(|\) to send the job to the Remove-Job cmdlet.
+The second command uses a pipeline operator (|) to send the job to the Remove-Job cmdlet.
 
 This command is equivalent to using the Job parameter of Remove-Job, for example, "remove-job -job $batch".
 
@@ -111,7 +112,7 @@ Because the command used the AsJob parameter, the job object is created on the l
 As a result, you use local commands to manage the job.
 
 The second command uses the Remove-Job cmdlet to remove the job.
-It uses a pipeline operator \(|\) to send the job in $j to Remove-Job.
+It uses a pipeline operator (|) to send the job in $j to Remove-Job.
 Note that this is a local command.
 A remote command is not required to remove a job that was started by using the AsJob parameter.
 
@@ -213,7 +214,7 @@ Aliases: F
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -222,7 +223,7 @@ Deletes background jobs with the specified IDs.
 
 The ID is an integer that uniquely identifies the job within the current session.
 It is easier to remember and type than the instance ID, but it is unique only within the current session.
-You can type one or more IDs \(separated by commas\).
+You can type one or more IDs (separated by commas).
 To find the ID of a job, type "Get-Job" without parameters.
 
 ```yaml
@@ -317,8 +318,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -334,8 +335,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -352,8 +353,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113377)
 
 [Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
@@ -376,5 +375,4 @@ This cmdlet does not generate any output.
 [about_Remote_Jobs](b68c635f-5ee0-44fd-8693-28f8f4ca9fa0)
 
 [about_Jobs]()
-
 

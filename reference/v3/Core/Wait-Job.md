@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113422
 schema: 2.0.0
 ---
 
@@ -75,14 +76,14 @@ Both the Start-Job and Wait-Job commands are submitted to the remote computer by
 
 This example uses Wait-Job to determine whether a Get-Date command running as a background job on three different computers is complete.
 
-The first command creates a Windows PowerShell session \(PSSession\) on each of the three remote computers and stores them in the $s variable.
+The first command creates a Windows PowerShell session (PSSession) on each of the three remote computers and stores them in the $s variable.
 
 The second command uses the Invoke-Command cmdlet to run a Start-Job command in each of the three sessions in $s.
 All of the jobs are named Date1.
 
 The third command uses the Invoke-Command cmdlet to run a Wait-Job command.
 This command waits for the Date1 jobs on each computer to complete.
-It stores the resulting collection \(array\) of job objects in the $done variable.
+It stores the resulting collection (array) of job objects in the $done variable.
 
 The fourth command uses the Count property of the array of job objects in the $done variable to determine how many of the jobs are complete.
 
@@ -101,14 +102,14 @@ The first command creates a PSSession on each of the computers listed in the Mac
 The command uses the Get-Content cmdlet to get the contents of the file.
 The Get-Content command is enclosed in parentheses to ensure that it runs before the New-PSSession command.
 
-The second command stores a Get-EventLog command string \(in quotation marks\) in the $c variable.
+The second command stores a Get-EventLog command string (in quotation marks) in the $c variable.
 
 The third command uses the Invoke-Command cmdlet to run a Start-Job command in each of the sessions in $s.
 The Start-Job command starts a background job that runs the Get-EventLog command in the $c variable.
 
 The command uses the Using scope modifier to indicate that the $c variable was defined on the local computer.
 The Using scope modifier is introduced in Windows PowerShell 3.0.
-For more information about the Using scope modifier, see about_Remote_Variables \(http://go.microsoft.com/fwlink/?LinkID=252653\).
+For more information about the Using scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
 
 The fourth command uses the Invoke-Command cmdlet to run a Wait-Job command in the sessions.
 It uses the Any parameter to wait until the first job on the remote computers is complete.
@@ -122,14 +123,14 @@ PS C:\>$done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
 
 This example shows how to use the Timeout parameter of Wait-Job to set a maximum wait time for the jobs running on remote computers.
 
-The first command creates a PSSession on each of three remote computers \(Server01, Server02, and Server03\), and it saves the PSSessions in the $s variable.
+The first command creates a PSSession on each of three remote computers (Server01, Server02, and Server03), and it saves the PSSessions in the $s variable.
 
 The second command uses the Invoke-Command cmdlet to run a Start-Job command in each of the PSSessions in $s.
 It saves the resulting job objects in the $jobs variable.
 
 The third command uses the Invoke-Command cmdlet to run a Wait-Job command in each of the PSSessions in $s.
 The Wait-Job command determines whether all of the commands have completed within 30 seconds.
-It uses the Timeout parameter with a value of 30 \(seconds\) to establish the maximum wait time and saves the results of the command in the $done variable.
+It uses the Timeout parameter with a value of 30 (seconds) to establish the maximum wait time and saves the results of the command in the $done variable.
 
 In this case, after 30 seconds, only the command on the Server02 computer has completed.
 Wait-Job ends the wait, displays the command prompt, and returns the object that represents the job that was completed.
@@ -149,7 +150,7 @@ The command prompt returns when the first job completes.
 PS C:\>Wait-Job -Name DailyLog -Timeout 120
 ```
 
-This command waits 120 seconds \(two minutes\) for the DailyLog job to complete.
+This command waits 120 seconds (two minutes) for the DailyLog job to complete.
 If the job does not complete in the next two minutes, the command prompt returns anyway, and the job continues to run in the background.
 
 ### -------------------------- EXAMPLE 7 --------------------------
@@ -193,7 +194,7 @@ The second command uses the Invoke-Command cmdlet to run a Get-Process command i
 The command uses the AsJob parameter to run the command asynchronously as a background job.
 The command returns a job object, just like the jobs started by using Start-Job, and the job object is stored in the $j variable.
 
-The third command uses a pipeline operator \(|\) to send the job object in $j to the Wait-Job cmdlet.
+The third command uses a pipeline operator (|) to send the job object in $j to the Wait-Job cmdlet.
 Notice that an Invoke-Command command is not required in this case, because the job resides on the local computer.
 
 ### -------------------------- EXAMPLE 10 --------------------------
@@ -213,7 +214,7 @@ This command waits for the job with an ID value of 1.
 ## PARAMETERS
 
 ### -Any
-Displays the command prompt \(and returns the job object\) when any job completes.
+Displays the command prompt (and returns the job object) when any job completes.
 By default, Wait-Job waits until all of the specified jobs are complete before displaying the prompt.
 
 ```yaml
@@ -224,7 +225,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -255,7 +256,7 @@ Waits for jobs with the specified IDs.
 
 The ID is an integer that uniquely identifies the job within the current session.
 It is easier to remember and type than the InstanceId, but it is unique only within the current session.
-You can type one or more IDs \(separated by commas\).
+You can type one or more IDs (separated by commas).
 To find the ID of a job, type "Get-Job" without parameters.
 
 ```yaml
@@ -326,7 +327,7 @@ Accept wildcard characters: False
 Waits only for jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 
-For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate\(v=vs.85\).aspx
+For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx
 
 ```yaml
 Type: JobState
@@ -356,13 +357,13 @@ Aliases: TimeoutSec
 Required: False
 Position: Named
 Default value: -1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Force
 Continues waiting if jobs are in the Suspended or Disconnected state.
-By default, Wait-Job returns \(terminates the wait\) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
+By default, Wait-Job returns (terminates the wait) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -374,7 +375,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -390,12 +391,10 @@ Wait-Job returns job objects that represent the completed jobs.
 If the wait ends because the value of the Timeout parameter is exceeded, Wait-Job does not return any objects.
 
 ## NOTES
-By default, Wait-Job returns \(terminates the wait\) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
+By default, Wait-Job returns (terminates the wait) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
 To direct Wait-Job to continue waiting for Suspended and Disconnected jobs, use the Force parameter.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113422)
 
 [Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
@@ -420,5 +419,4 @@ To direct Wait-Job to continue waiting for Suspended and Disconnected jobs, use 
 [about_Remote_Jobs](b68c635f-5ee0-44fd-8693-28f8f4ca9fa0)
 
 [about_Remote_Variables](a31e2e7f-7c66-492c-86ef-d588912feb7d)
-
 

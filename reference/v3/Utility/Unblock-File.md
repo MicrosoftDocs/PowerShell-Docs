@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217450
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ Before using the Unblock-File cmdlet, review the file and its source and verify 
 
 Internally, the Unblock-File cmdlet removes the Zone.Identifier alternate data stream, which has a value of "3" to indicate that it was downloaded from the Internet.
 
-For more information about Windows PowerShell execution policies, see about_Execution_Policies \(http://go.microsoft.com/fwlink/?LinkID=135170\).
+For more information about Windows PowerShell execution policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -94,7 +95,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -110,7 +111,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -124,8 +125,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -141,8 +142,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -165,12 +166,9 @@ If you use the Unblock-File cmdlet on a file that is not blocked, the command ha
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217450)
-
 [about_Execution_Policies](347708dc-1515-4d74-978b-8334603472e6)
 
 [Get-Item](00000000-0000-0000-0000-000000000000)
 
 [FileSystem Provider](0e494537-dfdf-437a-8b27-c21e30aa1f9f)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113453
 schema: 2.0.0
 ---
 
@@ -78,8 +79,8 @@ This example shows how to get events by using properties other than SourceIdenti
 
 The first command gets all events in the event queue and saves them in the $events variable.
 
-The second command uses array notation to get the first \(0-index\) event in the array in the $events variable.
-The command uses a pipeline operator \(|\) to send the event to the Format-List command, which displays all properties of the event in a list.
+The second command uses array notation to get the first (0-index) event in the array in the $events variable.
+The command uses a pipeline operator (|) to send the event to the Format-List command, which displays all properties of the event in a list.
 This allows you to examine the properties of the event object.
 
 The third command shows how to use the Where-Object cmdlet to get an event
@@ -106,7 +107,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -123,7 +124,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All events
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -142,11 +143,11 @@ To see a description of this object, type "get-help get-event -full" and see the
 Events, event subscriptions, and the event queue exist only in the current session.
 If you close the current session, the event queue is discarded and the event subscription is canceled.
 
-The Get-Event cmdlet returns a PSEventArgs object \(System.Management.Automation.PSEventArgs\) with the following properties.
+The Get-Event cmdlet returns a PSEventArgs object (System.Management.Automation.PSEventArgs) with the following properties.
 
 -- ComputerName:  The name of the computer on which the event occurred. This property value is populated only when the event is forwarded from a remote computer.
 -- RunspaceId:  A GUID that uniquely identifies the session in which the event occurred. This property value is populated only when the event is forwarded from a remote computer.
--- EventIdentifier: An integer \(Int32\) that uniquely identifies the event notification in the current session.
+-- EventIdentifier: An integer (Int32) that uniquely identifies the event notification in the current session.
 -- Sender: The object that generated the event. In the value of the Action parameter, the $Sender automatic variable contains the sender object.
 -- SourceEventArgs: The first parameter that derives from EventArgs, if it exists. For example, in a timer elapsed event in which the  signature has the form "Object sender, Timers.ElapsedEventArgs e", the SourceEventArgs property would contain the Timers.ElapsedEventArgs. In the value of the Action parameter, the $EventArgs automatic variable contains this value.
 -- SourceArgs: All parameters of the original event signature. For a standard event signature, $Args\[0\] represents the sender, and $Args\[1\] represents the SourceEventArgs. In the value of the Action parameter, the $Args automatic variable contains this value.
@@ -155,8 +156,6 @@ The Get-Event cmdlet returns a PSEventArgs object \(System.Management.Automation
 --MessageData: Data associated with the event subscription. Users specify this data when they register an event. In the value of the Action parameter, the MessageData property of the $Event automatic variable contains this value.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113453)
 
 [New-Event](d5f16c15-8a98-4221-8f96-0867578f5430)
 
@@ -171,5 +170,4 @@ The Get-Event cmdlet returns a PSEventArgs object \(System.Management.Automation
 [Unregister-Event](313e8361-8646-4b0d-b72f-f76987c49591)
 
 [Wait-Event](bd2e7d77-2642-4628-b937-0a7d52033399)
-
 

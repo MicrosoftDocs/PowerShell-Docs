@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113320
 schema: 2.0.0
 ---
 
@@ -63,7 +64,7 @@ PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -n
 This command gets the value name and data of the ProgramFilesDir registry entry in the CurrentVersion registry subkey.
 The command uses the Path parameter to specify the subkey and the Name parameter to specify the value name of the entry.
 
-The command uses a back tick or "grave accent" \(\`\), the Windows PowerShell continuation character, to continue the command on the second line.
+The command uses a back tick or "grave accent" (\`), the Windows PowerShell continuation character, to continue the command on the second line.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
@@ -110,8 +111,8 @@ The output shows that there are two registry entries, Path and ExecutionPolicy.
 When a registry key contains fewer than five entries, by default it is displayed in a table, but it is often easier to view in a list.
 
 The second command uses the same Get-ItemProperty command.
-However, this time, the command uses a pipeline operator \(|\) to send the results of the command to the Format-List cmdlet.
-The Format-List command uses the Property parameter with a value of * \(all\) to display all of the properties of the objects in a list. 
+However, this time, the command uses a pipeline operator (|) to send the results of the command to the Format-List cmdlet.
+The Format-List command uses the Property parameter with a value of * (all) to display all of the properties of the objects in a list. 
 The results are shown in the following sample output.
 
 The resulting display shows the Path and ExecutionPolicy registry entries, along with several less familiar properties of the registry key object.
@@ -136,7 +137,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -170,7 +171,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -185,7 +186,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -204,7 +205,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -234,14 +235,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -252,8 +253,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -276,8 +277,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113320)
-
 [Clear-ItemProperty](f49c0340-d5cd-4099-8494-24b961ab4f7e)
 
 [Copy-ItemProperty](c5baceb8-7348-412c-9593-e7f36a5380ad)
@@ -293,5 +292,4 @@ For more information, see about_Providers.
 [Set-ItemProperty](c51196c2-f42a-4f92-8bee-d79336a7edc7)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

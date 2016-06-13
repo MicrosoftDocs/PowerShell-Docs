@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113307
 schema: 2.0.0
 ---
 
@@ -50,9 +51,9 @@ This command lists all of the files in the $pshome directory that have a valid A
 The $pshome automatic variable contains the path to the Windows PowerShell installation directory.
 
 The command uses the Get-ChildItem cmdlet to get the files in the $pshome directory.
-It uses a pattern of *.* to exclude directories \(although it also excludes files without a dot in the filename\).
+It uses a pattern of *.* to exclude directories (although it also excludes files without a dot in the filename).
 
-The command uses a pipeline operator \(|\) to send the files in $pshome to the Foreach-Object cmdlet, where Get-AuthenticodeSignature is called for each file.
+The command uses a pipeline operator (|) to send the files in $pshome to the Foreach-Object cmdlet, where Get-AuthenticodeSignature is called for each file.
 
 The results of the Get-AuthenticodeSignature command are sent to a Where-Object command that selects only the signature objects with a status of "Valid".
 
@@ -61,7 +62,7 @@ The results of the Get-AuthenticodeSignature command are sent to a Where-Object 
 ### -FilePath
 Specifies the path to the file being examined.
 Wildcards are permitted, but they must lead to a single file.
-The parameter name \("FilePath"\) is optional.
+The parameter name ("FilePath") is optional.
 
 ```yaml
 Type: String[]
@@ -71,7 +72,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -90,7 +91,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -109,8 +110,6 @@ For information about Authenticode signatures in Windows PowerShell, see about_S
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113307)
-
 [Get-ExecutionPolicy](f9f34cdc-63fb-47fc-adf7-6dcdafcc7431)
 
 [Set-AuthenticodeSignature](f3c13299-4463-48af-83ea-86de4a239509)
@@ -120,5 +119,4 @@ For information about Authenticode signatures in Windows PowerShell, see about_S
 [about_Execution_Policies](2e8d33b9-6c07-4a15-a486-9388d10eb00f)
 
 [about_Signing](054e64fa-3571-40fd-a862-630b5217b4f4)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Diagnostic.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=138338
 schema: 2.0.0
 ---
 
 # Import-Counter
 ## SYNOPSIS
-Imports performance counter log files \(.blg, .csv, .tsv\) and creates the objects that represent each counter sample in the log.
+Imports performance counter log files (.blg, .csv, .tsv) and creates the objects that represent each counter sample in the log.
 
 ## SYNTAX
 
@@ -29,8 +30,8 @@ Import-Counter [-Path] <String[]> [-Summary]
 The Import-Counter cmdlet imports performance counter data from performance counter log files and creates objects for each counter sample in the file.
 The PerformanceCounterSampleSet objects that it creates are identical to the objects that Get-Counter returns when it collects performance counter data.
 
-You can import data from comma-separated value \(.csv\), tab-separated value \( .tsv\), and binary performance log \(.blg\) performance log files.
-If you are using .blg files, you can import multiple files \(up to 32 different files\) in each command.
+You can import data from comma-separated value (.csv), tab-separated value ( .tsv), and binary performance log (.blg) performance log files.
+If you are using .blg files, you can import multiple files (up to 32 different files) in each command.
 And, you can use the parameters of Import-Counter to filter the data that you import.
 
 Along with Get-Counter and Export-Counter, this feature lets you collect, export, import, combine, filter, manipulate, and re-export performance counter data within Windows PowerShell.
@@ -49,7 +50,7 @@ This command imports all of the counter data from the ProcessorData.csv file int
 PS C:\>$i = Import-Counter -Path ProcessorData.blg -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
 ```
 
-This command imports only the "Processor\(_total\)\Interrupts/sec" counter data from the ProcessorData.blg file into the $i variable.
+This command imports only the "Processor(_total)\Interrupts/sec" counter data from the ProcessorData.blg file into the $i variable.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -87,7 +88,7 @@ The sixth command uses the Export-Counter cmdlet to export the data to the Inter
 PS C:\>$i | Export-Counter -Path .\Interrupts.csv -Format CSV
 ```
 
-This example shows how to select data from a performance counter log file \(.blg\) and then export the selected data to a .csv file.
+This example shows how to select data from a performance counter log file (.blg) and then export the selected data to a .csv file.
 The first four commands get the counter paths from the file and save them in a variable.
 The last two commands import selected data and then export only the selected data.
 
@@ -132,7 +133,7 @@ This example shows how to display all the counter paths in a group of imported c
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
 The first command lists in a table the time stamps of all of the data in the ProcessorData.blg file.
-PS C:\>Import-Counter -Path .\disk.blg | Format-Table –Property Timestamp
+PS C:\>Import-Counter -Path .\disk.blg | Format-Table -Property Timestamp
 
 The second command saves particular time stamps in the $Start and $End variables. The strings are cast to DateTime objects.
 PS C:\>$Start = [datetime]"7/9/2008 3:47:00 PM"; $End = [datetime]"7/9/2008 3:47:59 PM"
@@ -199,13 +200,13 @@ Wildcards are permitted in the Instance part of the path.
 Each counter path has the following format.
 Notice that the ComputerName value is required in the path, even on the local computer.
 
-"\\\\\<ComputerName\>\\\<CounterSet\>\(\<Instance\>\)\\\<CounterName\>"
+"\\\\\<ComputerName\>\\\<CounterSet\>(\<Instance\>)\\\<CounterName\>"
 
 For example:
 
-"\\\\Server01\Processor\(2\)\% User Time"
+"\\\\Server01\Processor(2)\% User Time"
 
-"\\\\Server01\Processor\(*\)\% Processor Time
+"\\\\Server01\Processor(*)\% Processor Time
 
 ```yaml
 Type: String[]
@@ -215,7 +216,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All counter
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
@@ -232,7 +233,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No end time
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -252,7 +253,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -268,7 +269,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No maximum
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -277,8 +278,8 @@ Specifies the file paths of the files to be imported.
 This parameter is required.
 
 Enter the path and file name of a, .csv,, .tsv, or .blg file that you exported by using the Export-Counter cmdlet.
-You can specify only one .csv or .tsv file, but you can specify multiple .blg files \(up to 32\) in each command.
-You can also pipe file path strings \(in quotation marks\) to Import-Counter.
+You can specify only one .csv or .tsv file, but you can specify multiple .blg files (up to 32) in each command.
+You can also pipe file path strings (in quotation marks) to Import-Counter.
 
 ```yaml
 Type: String[]
@@ -288,7 +289,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -305,7 +306,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: No start time
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -320,7 +321,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -342,10 +343,7 @@ However, if the computer is configured for Windows PowerShell remoting, you can 
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=138338)
-
 [Export-Counter](641c0fce-3bb1-4274-8b69-6e4cf596f471)
 
 [Get-Counter](963e9e51-4232-4ccf-881d-c2048ff35c2a)
-
 

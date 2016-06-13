@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=144301
 schema: 2.0.0
 ---
 
@@ -21,8 +22,8 @@ This is an advanced cmdlet that is designed to be used by system administrators 
 Without parameters, Enable-PSSessionConfiguration enables the Microsoft.PowerShell configuration, which is the default configuration that is used for sessions.
 
 Enable-PSSessionConfiguration removes the "Deny_All" setting from the security descriptor of the affected session configurations, turns on the listener that accepts requests on any IP address, and restarts the WinRM service.
-Beginning in Windows PowerShell 3.0, Enable-PSSessionConfiguration also sets the value of the Enabled property of the session configuration \(WSMan:\\\<computer\>\PlugIn\\\<SessionConfigurationName\>\Enabled\) to "True".
-However,  Enable-PSSessionConfiguration does not remove or change the "Network_Deny_All" \(AccessMode=Local\) security descriptor setting that allows only users of the local computer to use to the session configuration.
+Beginning in Windows PowerShell 3.0, Enable-PSSessionConfiguration also sets the value of the Enabled property of the session configuration (WSMan:\\\<computer\>\PlugIn\\\<SessionConfigurationName\>\Enabled) to "True".
+However,  Enable-PSSessionConfiguration does not remove or change the "Network_Deny_All" (AccessMode=Local) security descriptor setting that allows only users of the local computer to use to the session configuration.
 
 The Enable-PSSessionConfiguration cmdlet calls the Set-WSManQuickConfig cmdlet.
 However, it should not be used to enable remoting on the computer.
@@ -78,7 +79,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -99,7 +100,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -116,7 +117,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,7 +143,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -156,8 +157,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -173,8 +174,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -192,8 +193,6 @@ This cmdlet does not return any objects.
 To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, you must start Windows PowerShell with the "Run as administrator" option.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=144301)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -218,5 +217,4 @@ To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of 
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

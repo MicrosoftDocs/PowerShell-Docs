@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113311
 schema: 2.0.0
 ---
 
@@ -51,7 +52,7 @@ PS C:\>$c = Get-Credential
 PS C:\>Get-WmiObject Win32_DiskDrive -ComputerName Server01 -Credential $c
 ```
 
-These commands use a credential object that the Get-Credential cmdlet returns to authenticate a user on a remote computer so they can use Windows Management Instrumentation \(WMI\) to manage the computer.
+These commands use a credential object that the Get-Credential cmdlet returns to authenticate a user on a remote computer so they can use Windows Management Instrumentation (WMI) to manage the computer.
 
 The first command gets a credential object and saves it in the $c variable.
 The second command uses the credential object in a Get-WmiObject command.
@@ -102,7 +103,7 @@ This example shows how to modify the registry so that the user is prompted at th
 The command creates the ConsolePrompting registry entry and sets its value to True.
 To run this command, start Windows PowerShell with the "Run as administrator" option.
 
-To use a dialog box for prompting, set the value of the ConsolePrompting to false \($false\) or use the Remove-ItemProperty cmdlet to delete it.
+To use a dialog box for prompting, set the value of the ConsolePrompting to false ($false) or use the Remove-ItemProperty cmdlet to delete it.
 
 The ConsolePrompting registry entry works in some host programs, such as the Windows PowerShell console.
 It might not work in all host programs.
@@ -113,10 +114,10 @@ The first command saves the user account name in the $User parameter. The value 
 PS C:\>$User = "Domain01\User01"
 
 The second command uses the ConvertTo-SecureString cmdlet to create a secure string from a plain text password. The command uses the AsPlainText parameter to indicate that the string is plain text and the Force parameter to confirm that you understand the risks of using plain text.
-PS C:\>$PWord = ConvertTo-SecureString –String "P@sSwOrd" –AsPlainText -Force
+PS C:\>$PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
 
 The third command uses the New-Object cmdlet to create a PSCredential object from the values in the $User and $PWord variables.
-PS C:\>$Credential = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $User, $PWord
+PS C:\>$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
 ```
 
 This example shows how to create a credential object that is identical to the object that Get-Credential returns without prompting the user.
@@ -162,7 +163,7 @@ The output shows the remote security message that Get-Credential includes in the
 
 ### -Credential
 Specifies a user name for the credential, such as "User01" or "Domain01\User01".
-The parameter name \("Credential"\) is optional.
+The parameter name ("Credential") is optional.
 
 When you submit the command, you will be prompted for a password.
 
@@ -178,7 +179,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -198,7 +199,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -221,7 +222,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: None (blank)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -239,19 +240,16 @@ Get-Credential returns a credential object.
 You can use the PSCredential object that Get-Credential creates in cmdlets that request user authentication, such as those with a Credential parameter.
 
 By default, the authentication prompt appears in a dialog box.
-To display the authentication prompt at the command line, add the ConsolePrompting registry entry \(HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\ConsolePrompting\) and set its value to True.
+To display the authentication prompt at the command line, add the ConsolePrompting registry entry (HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\ConsolePrompting) and set its value to True.
 If the ConsolePrompting registry entry does not exist or if its value is False, the authentication prompt appears in a dialog box.
 For instructions, see the examples.
 
 The ConsolePrompting registry entry works in the Windows PowerShell console, but it does not work in all host programs.
-For example, it has no effect in the Windows PowerShell Integrated Scripting Environment \(ISE\).
+For example, it has no effect in the Windows PowerShell Integrated Scripting Environment (ISE).
 For information about the effect of the ConsolePrompting registry entry, see the help topics for the host program.
 
 The Credential parameter is not supported by all providers that are installed with Windows PowerShell.
 Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the Get-WmiObject and New-PSDrive cmdlets.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113311)
-
 

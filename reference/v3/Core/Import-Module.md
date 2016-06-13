@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141553
 schema: 2.0.0
 ---
 
@@ -53,10 +54,10 @@ The modules that you import must be installed on the local computer or a remote 
 
 Beginning in Windows PowerShell 3.0, installed modules are automatically imported to the session when you use any commands or providers in the module.
 However, you can still use the Import-Module command to import a module and you can enable and disable automatic module importing by using the $PSModuleAutoloadingPreference preference variable.
-For more information about modules, see about_Modules \(http://go.microsoft.com/fwlink/?LinkID=144311\).
-For more information about the $PSModuleAutoloadingPreference variable, see about_Preference_Variables \(http://go.microsoft.com/fwlink/?LinkID=113248\).
+For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
+For more information about the $PSModuleAutoloadingPreference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 
-A module is a package that contains members \(such as cmdlets, providers, scripts, functions, variables, and other tools and files\) that can be used in Windows PowerShell.
+A module is a package that contains members (such as cmdlets, providers, scripts, functions, variables, and other tools and files) that can be used in Windows PowerShell.
 After a module is imported, you can use the module members in your session.
 
 To import a module, use the Name, Assembly,  ModuleInfo, MinimumVersion and RequiredVersion parameters to identify the module to import.
@@ -65,9 +66,9 @@ You can also use the NoClobber parameter to prevent Import-Module from importing
 
 Import-Module imports a module only into the current session.
 To import the module into all sessions, add an Import-Module command to your Windows PowerShell profile.
-For more information about profiles, see about_Profiles \(http://go.microsoft.com/fwlink/?LinkID=113729\).
+For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
-Also, beginning in Windows PowerShell 3.0, you can use Import-Module to import Common Information Model \(CIM\) modules, in which the cmdlets are defined in Cmdlet Definition XML \(CDXML\) files.
+Also, beginning in Windows PowerShell 3.0, you can use Import-Module to import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files.
 This feature allows you to use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
 
 With these new features, Import-Module cmdlet becomes a primary tool for managing heterogeneous enterprises that include Windows computers and computers that are running other operating systems.
@@ -78,7 +79,7 @@ You can use this strategy to manage the remote computer.
 
 You can use a similar strategy to manage computers that do not have Windows PowerShell remoting enabled, including computers that are not running a Windows operating system, and Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
 
-Begin by creating a "CIM session" on the remote computer; a connection to Windows Management Instrumentation \(WMI\) on the remote computer.
+Begin by creating a "CIM session" on the remote computer; a connection to Windows Management Instrumentation (WMI) on the remote computer.
 Then use the CIMSession parameter of Import-Module to import CIM modules from the remote computer.
 When you import a CIM module and then run the imported commands, the commands run implicitly on the remote computer.
 You can use this WMI and CIM strategy to manage the remote computer.
@@ -92,7 +93,7 @@ PS C:\>Import-Module -Name BitsTransfer
 
 This command imports the members of the BitsTransfer module into the current session.
 
-The Name parameter name \(-Name\) is optional and can be omitted.
+The Name parameter name (-Name) is optional and can be omitted.
 
 By default, Import-Module does not generate any output when it imports a module.
 To request output, use the PassThru or AsCustomObject parameter, or the Verbose common parameter.
@@ -102,7 +103,7 @@ To request output, use the PassThru or AsCustomObject parameter, or the Verbose 
 PS C:\>Get-Module -ListAvailable | Import-Module
 ```
 
-This command imports all available modules in the path specified by the PSModulePath environment variable \($env:PSModulePath\) into the current session.
+This command imports all available modules in the path specified by the PSModulePath environment variable ($env:PSModulePath) into the current session.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -118,7 +119,7 @@ The ListAvailable parameter is required when you are getting modules that are no
 
 The second command uses the ModuleInfo parameter of Import-Module to import the modules into the current session.
 
-These commands are equivalent to using a pipeline operator \(|\) to send the output of a Get-Module command to Import-Module.
+These commands are equivalent to using a pipeline operator (|) to send the output of a Get-Module command to Import-Module.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -263,7 +264,7 @@ Using the script method of an object is equivalent to specifying the fully quali
 The AsCustomObject parameter can be used only when importing a script module, so the first task is to determine which of the available modules is a script module.
 
 The first command uses the Get-Module cmdlet to get the available modules.
-The command uses a pipeline operator \(|\) to pass the module objects to the Format-Tablee cmdlet, which lists the Name and ModuleType of each module in a table.
+The command uses a pipeline operator (|) to pass the module objects to the Format-Tablee cmdlet, which lists the Name and ModuleType of each module in a table.
 
 The second command uses the Import-Module cmdlet to import the PSDiagnostics script module.
 The command uses the AsCustomObject parameter to request a custom object and the PassThru parameter to return the  object.
@@ -326,7 +327,7 @@ The results show that there are two Get-Date commands in the session, a function
 
 The fifth command runs the hidden cmdlet by qualifying the command name with the module name.
 
-For more information about command precedence in Windows PowerShell, see about_Command_Precedence \(http://go.microsoft.com/fwlink/?LinkID=113214\).
+For more information about command precedence in Windows PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
@@ -334,7 +335,7 @@ PS C:\>Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
 ```
 
 This command imports the PSWorkflow module.
-It uses the MinimumVersion \(alias=Version\) parameter of Import-Module to import only version 3.0.0.0 or greater of the module.
+It uses the MinimumVersion (alias=Version) parameter of Import-Module to import only version 3.0.0.0 or greater of the module.
 
 You can also use the RequiredVersion parameter to import a particular version of a module, or use the Module and Version parameters of the #Requires keyword to require a particular version of a module in a script.
 
@@ -424,12 +425,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -ArgumentList
-Specifies arguments \(parameter values\) that are passed to a script module during the Import-Module command. 
+Specifies arguments (parameter values) that are passed to a script module during the Import-Module command. 
 This parameter is valid only when you are importing a script module.
 
 You can also refer to ArgumentList by its alias, "args".
@@ -443,7 +444,7 @@ Aliases: Args
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -462,7 +463,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -483,7 +484,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -503,7 +504,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -523,7 +524,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -543,7 +544,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -567,7 +568,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -582,7 +583,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -602,7 +603,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -621,7 +622,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -638,7 +639,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -649,7 +650,7 @@ File paths are optional.
 Wildcards are not permitted.
 You can also pipe module names and file names to Import-Module.
 
-If you omit a path, Import-Module looks for the module in the paths saved in the PSModulePath environment variable \($env:PSModulePath\).
+If you omit a path, Import-Module looks for the module in the paths saved in the PSModulePath environment variable ($env:PSModulePath).
 
 Specify only the module name whenever possible.
 When you specify a file name, only the members that are implemented in that file are imported.
@@ -663,7 +664,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
@@ -685,7 +686,7 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -701,7 +702,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -709,7 +710,7 @@ Accept wildcard characters: False
 Adds the specified prefix to the nouns in the names of imported module members.
 
 Use this parameter to avoid name conflicts that might occur when different members in the session have the same name.
-This parameter does not change the module, and it does not affect files that the module imports for its own use \(known as "nested modules"\).
+This parameter does not change the module, and it does not affect files that the module imports for its own use (known as "nested modules").
 It affects only the names of members in the current session.
 
 For example, if you specify the prefix "UTC" and then import a Get-Date cmdlet, the cmdlet is known in the session as Get-UTCDate, and it is not confused with the original Get-Date cmdlet.
@@ -724,7 +725,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -744,7 +745,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All variables
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -767,7 +768,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -792,12 +793,12 @@ Aliases: Version
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PSSession
-Imports modules from the specified Windows PowerShell user-managed session \("PSSession"\) into the current session.
+Imports modules from the specified Windows PowerShell user-managed session ("PSSession") into the current session.
 Enter a variable that contains a PSSession or a command that gets a PSSession, such as a Get-PSSession command.
 
 When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
@@ -819,7 +820,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -845,7 +846,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -869,7 +870,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current scope
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -887,7 +888,7 @@ If you use the AsCustomObject parameter, it generates a PSCustomObject object.
 
 ## NOTES
 Before you can import a module, the module must be installed on the local computer, that is, the module directory must be copied to a directory that is accessible to your local computer.
-For more information, see about_Modules \(http://go.microsoft.com/fwlink/?LinkID=144311\).
+For more information, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
 
 You can also use the PSSession and CIMSession parameters to import modules that are installed on remote computers.
 However, commands that use the cmdlets in these modules actually run in the remote session on the remote computer.
@@ -902,11 +903,11 @@ If the formatting file for a module changes, you can run an Update-FormatData co
 You do not need to import the module again.
 
 Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules.
-In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins \("PSSnapins"\).
+In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins").
 The exception is Microsoft.PowerShell.Core, which is always a snap-in.
 Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-For information about the CreateDefault2 method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2\(v=VS.85\).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2\(v=VS.85\).aspx.
+For information about the CreateDefault2 method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
 
 Import-Module cannot import Windows PowerShell Core modules from another session.
 The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
@@ -924,7 +925,7 @@ To import a module that contains mixed-mode assemblies, start Windows PowerShell
 
 PowerShell.exe -Version 2.0
 
-To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation \(WMI\), which is the Microsoft implementation of the Common Information Model \(CIM\) standard.
+To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information Model (CIM) standard.
 The computer must also have the Module Discovery WMI provider or an alternate CIM provider that has the same basic features.
 
 You can use the CIM session feature on computers that are not running a Windows operating system and on Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
@@ -933,8 +934,6 @@ You can also use the CIM parameters to get CIM modules from computers that have 
 When you create a CIM session on the local computer, Windows PowerShell uses DCOM, instead of WMI, to create the session.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141553)
 
 [Export-ModuleMember](cbad7943-ded7-4311-9956-da867ad7233c)
 
@@ -947,5 +946,4 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [Get-Verb](00000000-0000-0000-0000-000000000000)
 
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
-
 

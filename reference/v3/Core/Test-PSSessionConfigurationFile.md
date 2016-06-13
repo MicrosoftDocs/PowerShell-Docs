@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217036
 schema: 2.0.0
 ---
 
@@ -17,12 +18,12 @@ Test-PSSessionConfigurationFile [-Path] <String>
 The Test-PSSessionConfigurationFile cmdlet verifies that a session configuration file contains valid keys and the values are of the correct type.
 For enumerated values, the cmdlet verifies that the specified values are valid.
 
-By default, Test-PSSessionConfigurationFile returns "True" \($true\) if the file passes all tests and "False" \($false\) if it does not.
+By default, Test-PSSessionConfigurationFile returns "True" ($true) if the file passes all tests and "False" ($false) if it does not.
 To find any errors, use the Verbose common parameter.
 
 Test-PSSessionConfigurationFile verifies the session configuration files, such as those created by the New-PSSessionConfigurationFile cmdlet.
-For information about session configurations, see about_Session_Configurations \(http://go.microsoft.com/fwlink/?LinkID=145152\).
-For information about session configuration files, see about_Session_Configuration_Files \(http://go.microsoft.com/fwlink/?LinkID=236023\).
+For information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -66,14 +67,14 @@ The command pipes the session configuration to the ForEach-Object cmdlet, which 
 
 The ConfigFilePath property of a session configuration contains the path to the session configuration file that is used in the session configuration, if any.
 
-If the value of the ConfigFilePath property is populated \(is true\), the command gets \(prints\) the ConfigFilePath property value.
+If the value of the ConfigFilePath property is populated (is true), the command gets (prints) the ConfigFilePath property value.
 Then it uses the Test-PSSessionConfigurationFile cmdlet to test the file in the ConfigFilePath value.
 The Verbose parameter returns the file error when the file fails the test.
 
 ## PARAMETERS
 
 ### -Path
-Specifies the path and file name of a session configuration file \(.pssc\).
+Specifies the path and file name of a session configuration file (.pssc).
 If you omit the path, the default is the current directory.
 Wildcards are supported, but they must resolve to a single file.
 You can also pipe a session configuration file path to Test-PSSessionConfigurationFile.
@@ -86,7 +87,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -102,8 +103,6 @@ You can pipe a session configuration file path to Test-PSSessionConfigurationFil
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217036)
 
 [Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
@@ -128,5 +127,4 @@ You can pipe a session configuration file path to Test-PSSessionConfigurationFil
 [about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
 [about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
-
 

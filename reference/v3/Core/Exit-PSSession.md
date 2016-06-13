@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135212
 schema: 2.0.0
 ---
 
@@ -41,9 +42,9 @@ Id Name            ComputerName    State    ConfigurationName
 1  Session1        Server01        Opened   Microsoft.PowerShell
 ```
 
-These commands start and stop an interactive session with the Server01 computer that uses a Windows PowerShell session \(PSSession\).
+These commands start and stop an interactive session with the Server01 computer that uses a Windows PowerShell session (PSSession).
 
-Because the interactive session was started by using a Windows PowerShell session \(PSSession\), the PSSession is still available when the interactive session ends.
+Because the interactive session was started by using a Windows PowerShell session (PSSession), the PSSession is still available when the interactive session ends.
 If you use the ComputerName parameter, Enter-PSSession creates a temporary session that it closes when the interactive session ends.
 
 The first command uses the New-PSSession cmdlet to create a PSSession on the Server01 computer.
@@ -83,8 +84,6 @@ This cmdlet takes only the common parameters.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135212)
-
 [Connect-PSSession](b803dd29-f208-4079-80d4-db04d778f060)
 
 [Disconnect-PSSession](f8f95111-612f-4cba-9098-77904b0473d8)
@@ -104,5 +103,4 @@ This cmdlet takes only the common parameters.
 [about_PSSessions](7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 
 [about_Remote](9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-
 

@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113299
 schema: 2.0.0
 ---
 
 # Export-Csv
 ## SYNOPSIS
-Converts objects into a series of comma-separated \(CSV\) strings and saves the strings in a CSV file.
+Converts objects into a series of comma-separated (CSV) strings and saves the strings in a CSV file.
 
 ## SYNTAX
 
@@ -51,7 +52,7 @@ __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,po
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
-Because it does not specify a delimiter, a comma \(,\) is used to separate the fields in the file.
+Because it does not specify a delimiter, a comma (,) is used to separate the fields in the file.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -63,7 +64,7 @@ __NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... Process;po
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
-It uses the Delimiter parameter to specify the semicolon \(;\).
+It uses the Delimiter parameter to specify the semicolon (;).
 As a result, the fields in the file are separated by semicolons.
 
 ### -------------------------- EXAMPLE 4 --------------------------
@@ -89,13 +90,13 @@ It uses the NoTypeInformation parameter to suppress the type information in the 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first command uses the Get-ChildItem cmdlet to do a recursive search in the D: drive for files with the .ps1 file name extension. It uses a pipeline operator to sends the results to the Where-Object cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the ScriptFiles variable. 
-PS C:\>$scriptFiles = Get-ChildItem D:\* -include *.ps1 –recurse | where-object {$_.creationtime –gt "01/01/2011"}
+PS C:\>$scriptFiles = Get-ChildItem D:\* -include *.ps1 -recurse | where-object {$_.creationtime -gt "01/01/2011"}
 
 The second command uses the Select-Object cmdlet to select  the relevant properties of the script files. It saves the revised results in the ScriptFiles variable.
-PS C:\>$scriptFiles = $scriptFiles | select-object –property Name, CreationTime, LastWriteTime, IsReadOnly
+PS C:\>$scriptFiles = $scriptFiles | select-object -property Name, CreationTime, LastWriteTime, IsReadOnly
 
 The third command uses a pipeline operator (|) to send the script file information in the ScriptFiles variable to the Export-CSV cmdlet. The command uses the Path parameter to specify the output file and the Append parameter to add the new script data to the end of the output file, instead of replacing the existing file contents.
-PS C:\>$scriptFiles | export-csv –append –path \\Archive01\Scripts\Scripts.csv
+PS C:\>$scriptFiles | export-csv -append -path \\Archive01\Scripts\Scripts.csv
 ```
 
 These commands add information about new Windows PowerShell scripts to a script inventory file.
@@ -103,12 +104,12 @@ These commands add information about new Windows PowerShell scripts to a script 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
 The first command shows how to select properties of an object and export them to a CSV file. This command uses the Get-Date cmdlet to get the current date and time. It uses the Select-Object cmdlet to select the desired properties, and the Export-CSV cmdlet to export the object and its properties to the Date.csv file. The output shows the expected content in the Date.csv file.
-PS C:\>get-date | select-object –property DateTime, Day, DayOfWeek, DayOfYear | export-csv –path Date.csv
+PS C:\>get-date | select-object -property DateTime, Day, DayOfWeek, DayOfYear | export-csv -path Date.csv
 
 #In Date.csv:"DateTime","Day","DayOfWeek","DayOfYear""Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
 
 The second command shows that when you use the Format-Table cmdlet to format your data before exporting it, the output is not useful. 
-PS C:\>get-date | format-table –property DateTime, Day, DayOfWeek, DayOfYear | export-csv –path Date.csv
+PS C:\>get-date | format-table -property DateTime, Day, DayOfWeek, DayOfYear | export-csv -path Date.csv
 
 #In Date.csv: "ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry""033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo","9e210fe47d09416682b841769c78b8a3",,,,,"27c87ef9bbda4f709f6b4002fa4af63c",,,,,"4ec4f0187cb04f4cb6973460dfe252df",,,,,"cf522b78d86c486691226b40aa69e95c",,,,,
 ```
@@ -140,15 +141,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Delimiter
 Specifies a delimiter to separate the property values.
-The default is a comma \(,\).
-Enter a character, such as a colon \(:\).
-To specify a semicolon \(;\), enclose it in quotation marks.
+The default is a comma (,).
+Enter a character, such as a colon (:).
+To specify a semicolon (;), enclose it in quotation marks.
 
 ```yaml
 Type: Char
@@ -158,7 +159,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: , (comma)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -175,7 +176,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: ASCII
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -190,7 +191,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -207,12 +208,12 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Do not overwrite \(replace the contents\) of an existing file.
+Do not overwrite (replace the contents) of an existing file.
 By default, if a file exists in the specified path, Export-CSV overwrites the file without warning.
 
 ```yaml
@@ -223,7 +224,7 @@ Aliases: NoOverwrite
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,8 +239,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -255,16 +256,16 @@ Aliases:
 Required: False
 Position: 1
 Default value: Current location
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseCulture
 Use the list separator for the current culture as the item delimiter.
-The default is a comma \(,\).
+The default is a comma (,).
 
 This parameter is very useful in scripts that are being distributed to users worldwide.
-To find the list separator for a culture, use the following command: \(Get-Culture\).TextInfo.ListSeparator.
+To find the list separator for a culture, use the following command: (Get-Culture).TextInfo.ListSeparator.
 
 ```yaml
 Type: SwitchParameter
@@ -274,7 +275,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Comma
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -293,7 +294,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -307,8 +308,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,15 +325,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
-You can pipe any object with an Extended Type System \(ETS\) adapter to Export-CSV.
+You can pipe any object with an Extended Type System (ETS) adapter to Export-CSV.
 
 ## OUTPUTS
 
@@ -344,7 +345,7 @@ The Export-CSV cmdlet converts the objects that you submit into a series of CSV 
 You can use Export-CSV to save objects in a CSV file and then use the Import-CSV cmdlet to create objects from the text in the CSV file.
 
 In the CSV file, each object is represented by a comma-separated list of the property values of the object.
-The property values are converted to strings \(by using the ToString\(\) method of the object\), so they are generally represented by the name of the property value.
+The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value.
 Export-CSV does not export the methods of the object.
 
 The format of an exported file is as follows:
@@ -360,12 +361,10 @@ If the remaining objects have additional properties, those property values are n
 You can use the Import-Csv cmdlet to re-create objects from the CSV strings in the files.
 The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.
 
-The ConvertTo-Csv and ConvertFrom-Csv cmdlets to convert objects to CSV strings \(and back\).
+The ConvertTo-Csv and ConvertFrom-Csv cmdlets to convert objects to CSV strings (and back).
 Export-CSV is the same as ConvertTo-CSV, except that it saves the CSV strings in a file.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113299)
 
 [ConvertFrom-Csv](2a631339-07b3-49c1-8074-6028a220c78b)
 
@@ -376,5 +375,4 @@ Export-CSV is the same as ConvertTo-CSV, except that it saves the CSV strings in
 [Import-Csv](2a767ced-0fc9-4896-a8f0-2c5bdee49910)
 
 [Select-Object](2f182056-7955-4b77-9c58-64ab4a680074)
-
 

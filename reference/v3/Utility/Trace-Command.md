@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113419
 schema: 2.0.0
 ---
 
@@ -70,7 +71,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -85,7 +86,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -102,13 +103,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Expression
 Specifies the expression that is being processed during the trace.
-Enclose the expression in braces \({}\).
+Enclose the expression in braces ({}).
 
 ```yaml
 Type: ScriptBlock
@@ -118,7 +119,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -134,7 +135,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,7 +152,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -168,7 +169,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -187,7 +188,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -205,7 +206,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -217,9 +218,9 @@ The valid values are None, Constructor, Dispose, Finalizer, Method, Property, De
 
 The following values are combinations of other values:
 
--- ExecutionFlow: \(Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope\)
--- Data: \(Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine\)
--- Errors: \(Error and Exception\).
+-- ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope)
+-- Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
+-- Errors: (Error and Exception).
 
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "Constructor,Dispose".
 
@@ -231,7 +232,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: All
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -247,7 +248,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -285,10 +286,7 @@ If you include the parameter names, the parameters can appear in any order.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113419)
-
 [Get-TraceSource](9fc7c044-56ed-4606-a11a-595ca532e99b)
 
 [Set-TraceSource](442780bb-7332-4995-b583-6e07889d1e26)
-
 

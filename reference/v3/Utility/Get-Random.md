@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113446
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Get-Random [-InputObject] <Object[]> [-Count <Int32>] [-SetSeed <Int32>]
 The Get-Random cmdlet gets a randomly selected number.
 If you submit a collection of objects to Get-Random, it gets one or more randomly selected objects from the collection.
 
-Without parameters or input, a Get-Random command returns a randomly selected 32-bit unsigned integer between 0 \(zero\) and Int32.MaxValue \(0x7FFFFFFF, 2,147,483,647\).
+Without parameters or input, a Get-Random command returns a randomly selected 32-bit unsigned integer between 0 (zero) and Int32.MaxValue (0x7FFFFFFF, 2,147,483,647).
 
 You can use the parameters of Get-Random to specify a seed number, minimum and maximum values, and the number of objects returned from a submitted collection.
 
@@ -35,7 +36,7 @@ PS C:\>Get-Random
 3951433
 ```
 
-This command gets a random integer between 0 \(zero\) and Int32.MaxValue.
+This command gets a random integer between 0 (zero) and Int32.MaxValue.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -43,7 +44,7 @@ PS C:\>Get-Random -Maximum 100
 47
 ```
 
-This command gets a random integer between 0 \(zero\) and 99.
+This command gets a random integer between 0 (zero) and 99.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
@@ -214,7 +215,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -232,24 +233,24 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Maximum
 Specifies a maximum value for the random number.
-Get-Random returns a value that is less than the maximum \(not equal\).
-Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string \("100"\).
+Get-Random returns a value that is less than the maximum (not equal).
+Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string ("100").
 On a 64-bit computer, you can also enter a 64-bit integer.
 
-The value of Maximum must be greater than \(not equal to\) the value of Minimum.
+The value of Maximum must be greater than (not equal to) the value of Minimum.
 
 If the value of Maximum or Minimum is a floating-point number, Get-Random returns a randomly selected floating-point number.
-If the value of Minimum is a double \(a floating-point number\), the default value of Maximum is Double.MaxValue.
+If the value of Minimum is a double (a floating-point number), the default value of Maximum is Double.MaxValue.
 Otherwise, the default value is Int32.MaxValue.
 
 On a 64-bit computer, if the value of Minimum is a 32-bit integer, the  default value of Maximum is Int32.MaxValue.
-If the value of Minimum is a double \(a floating-point number\), the default value of Maximum is Double.MaxValue.
+If the value of Minimum is a double (a floating-point number), the default value of Maximum is Double.MaxValue.
 Otherwise, the default value is Int64.MaxValue.
 
 ```yaml
@@ -260,17 +261,17 @@ Aliases:
 Required: False
 Position: 1
 Default value: Int32.MaxValue, Double.MaxValue, Int64.MaxValue
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Minimum
 Specifies a minimum value for the random number.
-Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string \("100"\).
+Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string ("100").
 On a 64-bit computer, you can enter a 64-bit integer.
-The default value is 0 \(zero\).
+The default value is 0 (zero).
 
-The value of Minimum must be less than \(not equal to\) the value of Maximum.
+The value of Minimum must be less than (not equal to) the value of Maximum.
 If the value of Maximum or Minimum is a floating-point number, Get-Random returns a randomly selected floating-point number.
 
 ```yaml
@@ -281,7 +282,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -302,7 +303,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: System clock
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,7 +325,4 @@ Beginning in Windows PowerShell 3.0, Get-Random supports 64-bit integers.
 In Windows PowerShell 2.0, all values are cast to System.Int32.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113446)
-
 

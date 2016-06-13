@@ -1,11 +1,12 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=135201
 schema: 2.0.0
 ---
 
 # ConvertFrom-Csv
 ## SYNOPSIS
-Converts object properties in comma-separated value \(CSV\) format into CSV versions of the original objects.
+Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.
 
 ## SYNTAX
 
@@ -28,7 +29,7 @@ The objects that ConvertFrom-CSV creates are CSV versions of the original object
 The property values of the CSV objects are string versions of the property values of the original objects.
 The CSV versions of the objects do not have any methods.
 
-You can also use the Export-CSV and Import-CSV cmdlets to convert objects to CSV strings in a file \(and back\).
+You can also use the Export-CSV and Import-CSV cmdlets to convert objects to CSV strings in a file (and back).
 These cmdlets are the same as the ConvertTo-CSV and ConvertFrom-CSV cmdlets, except that they save the CSV strings in a file.
 
 ## EXAMPLES
@@ -42,7 +43,7 @@ PS C:\>$p | convertfrom-csv
 These commands convert the processes on the local computer into CSV format and then restore them to object form.
 
 The first command uses the Get-Process cmdlet to get the processes on the local computer.
-A pipeline operator \(|\) sends them to the ConvertTo-CSV cmdlet, which converts the process object to CSV format.
+A pipeline operator (|) sends them to the ConvertTo-CSV cmdlet, which converts the process object to CSV format.
 The CSV strings are saved in the $p variable.
 
 The second command uses a pipeline operator to send the CSV strings in the $p variable to the ConvertFrom-CSV cmdlet.
@@ -57,7 +58,7 @@ PS C:\>convertfrom-csv -inputobject $date -delimiter ";"
 These commands convert a data object to CSV format and then to CSV object format.
 
 The first command uses the Get-Date cmdlet to get the current date and time.
-A pipeline object \(|\) sends the date to the ConvertTo-CSV cmdlets, which converts the date object to a series of CSV strings.
+A pipeline object (|) sends the date to the ConvertTo-CSV cmdlets, which converts the date object to a series of CSV strings.
 The command uses the Delimiter parameter to specify a semicolon delimiter.
 The strings are saved in the $date variable.
 
@@ -94,13 +95,13 @@ StateChanged  :
 This example shows how to use the Header parameter of ConvertFrom-Csv to change the names of properties in the resulting imported object.
 
 The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer.
-A pipeline operator \(|\) sends the resulting job object to the ConvertTo-CSV cmdlet, which converts the job object to CSV format.
-An assignment operator \(=\) saves the resulting CSV in the $j variable.
+A pipeline operator (|) sends the resulting job object to the ConvertTo-CSV cmdlet, which converts the job object to CSV format.
+An assignment operator (=) saves the resulting CSV in the $j variable.
 
 The second command saves a header in the $header variable.
 Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
 
-The third command deletes the original header \(the second line\) from the CSV strings and returns it to the $j variable.
+The third command deletes the original header (the second line) from the CSV strings and returns it to the $j variable.
 
 The fourth command uses the ConvertFrom-CSV cmdlet to convert the CSV strings to a CSV version of the job object.
 The command uses a pipeline operator to send the content in $j to ConvertFrom-CSV.
@@ -113,7 +114,7 @@ PS C:\>ConvertFrom-Csv -inputobject $services -UseCulture
 ```
 
 The command uses the ConvertFrom-CSV cmdlet to convert CSV strings of service objects that had been converted by the ConvertTo-CSV cmdlet.
-The command uses the UseCulture parameter to direct ConvertFrom-CSV to use the delimiter \(list separator\) of the current culture.
+The command uses the UseCulture parameter to direct ConvertFrom-CSV to use the delimiter (list separator) of the current culture.
 
 When using the UseCulture parameter, be sure that the list separator of the current culture matches the delimiter used in the CSV strings.
 Otherwise, ConvertFrom-CSV cannot generate objects from the CSV strings.
@@ -124,9 +125,9 @@ In this example, a Get-Culture command was used to verify the list separator, be
 
 ### -Delimiter
 Specifies the delimiter that separates the property values in the CSV strings.
-The default is a comma \(,\).
-Enter a character, such as a colon \(:\).
-To specify a semicolon \(;\), enclose it in quotation marks.
+The default is a comma (,).
+Enter a character, such as a colon (:).
+To specify a semicolon (;), enclose it in quotation marks.
 
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-CSV cannot create objects from the CSV strings.
 Instead, it returns the strings.
@@ -139,7 +140,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: "," (comma)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -148,7 +149,7 @@ Specifies an alternate column header row for the imported string.
 The column header determines the names of the properties of the object that ConvertFrom-CSV creates.
 
 Enter a comma-separated list of the column headers.
-Enclose each item in quotation marks \(single or double\).
+Enclose each item in quotation marks (single or double).
 Do not enclose the header string in quotation marks.
 If you enter fewer column headers than there are columns, the remaining columns will have no headers.
 If you enter more headers than there are columns, the extra headers are ignored.
@@ -164,7 +165,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -181,15 +182,15 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UseCulture
 Use the list separator for the current culture as the string delimiter.
-The default is a comma \(,\).
+The default is a comma (,).
 
-To find the list separator for a culture, use the following command: \(Get-Culture\).TextInfo.ListSeparator.
+To find the list separator for a culture, use the following command: (Get-Culture).TextInfo.ListSeparator.
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-CSV cannot create objects from the CSV strings.
 Instead, it returns the strings.
 
@@ -201,7 +202,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: "," (Comma)
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -219,17 +220,14 @@ ConvertFrom-CSV returns the objects described by the properties in the CSV strin
 Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the Windows PowerShell type formatting entries that format the non-CSV versions of the object type.
 
 In CSV format, each object is represented by a comma-separated list of the property values of the object.
-The property values are converted to strings \(by using the ToString\(\) method of the object\), so they are generally represented by the name of the property value.
+The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value.
 ConvertTo-Csv does not export the methods of the object.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=135201)
 
 [ConvertTo-Csv](02cf7085-f243-45ed-b803-da0466fd6085)
 
 [Export-Csv](99523277-b798-4e42-b2a8-61da33f45a6d)
 
 [Import-Csv](2a767ced-0fc9-4896-a8f0-2c5bdee49910)
-
 

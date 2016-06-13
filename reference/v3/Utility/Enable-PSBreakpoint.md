@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113295
 schema: 2.0.0
 ---
 
@@ -80,11 +81,11 @@ The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the
 Then, it saves the breakpoint object in the $b variable.
 
 The second command uses the Disable-PSBreakpoint cmdlet to disable the new breakpoint.
-It uses a pipeline operator \(|\) to send the breakpoint object in $b to the Disable-PSBreakpoint cmdlet, and it uses the PassThru parameter of Disable-PSBreakpoint to display the disabled breakpoint object.
+It uses a pipeline operator (|) to send the breakpoint object in $b to the Disable-PSBreakpoint cmdlet, and it uses the PassThru parameter of Disable-PSBreakpoint to display the disabled breakpoint object.
 This lets you verify that the value of the Enabled property of the breakpoint object is False.
 
 The third command uses the Enable-PSBreakpoint cmdlet to re-enable the breakpoint.
-It uses a pipeline operator \(|\) to send the breakpoint object in $b to the Enable-PSBreakpoint cmdlet, and it uses the PassThru parameter of Enable-PSBreakpoint to display the breakpoint object.
+It uses a pipeline operator (|) to send the breakpoint object in $b to the Enable-PSBreakpoint cmdlet, and it uses the PassThru parameter of Enable-PSBreakpoint to display the breakpoint object.
 This lets you verify that the value of the Enabled property of the breakpoint object is True.
 
 The results are shown in the following sample output.
@@ -118,7 +119,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None.
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -126,7 +127,7 @@ Accept wildcard characters: False
 Enables breakpoints that have the specified breakpoint IDs.
 The default value is all breakpoints.
 Enter the IDs or a variable that contains the IDs.
-\(You cannot pipe IDs to Enable-PSBreakpoint.\) To find the ID of a breakpoint, use the Get-PSBreakpoint cmdlet.
+(You cannot pipe IDs to Enable-PSBreakpoint.) To find the ID of a breakpoint, use the Get-PSBreakpoint cmdlet.
 
 ```yaml
 Type: Int32[]
@@ -136,7 +137,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: All breakpoints
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -176,8 +177,6 @@ You do not need to enable newly created breakpoints.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113295)
-
 [Disable-PSBreakpoint](d4974e9b-0aaa-4e20-b87f-f599a413e4e8)
 
 [Get-PSBreakpoint](0bf48936-00ab-411c-b5e0-9b10a812a3c6)
@@ -189,5 +188,4 @@ You do not need to enable newly created breakpoints.
 [Set-PSBreakpoint](6afd5d2c-a285-4796-8607-3cbf49471420)
 
 [about_Debuggers]()
-
 

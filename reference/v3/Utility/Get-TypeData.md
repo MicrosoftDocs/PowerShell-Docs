@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=217033
 schema: 2.0.0
 ---
 
@@ -23,7 +24,7 @@ Extended type data adds properties and methods to objects in Windows PowerShell.
 You can use the added properties and methods in the same ways that you would use the properties and methods that are defined in the object type.
 However, when writing scripts, be aware that the added properties and methods might not be present in every Windows PowerShell session.
 
-For more information about Types.ps1xml files, see about_Types.ps1xml \(http://go.microsoft.com/fwlink/?LinkID=113274\).
+For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
 For more information about dynamic type data that the Update-TypeData cmdlet adds, see Update-TypeData.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
@@ -101,7 +102,7 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\types.ps1xml:433:
 ```
 
 This command finds the Types.ps1xml file that added extended type data for the EventLogEntry type to the session.
-This command uses the Get-ChildItem cmdlet \(alias = "dir"\) to perform a recursive search for Types.ps1xml files in the Windows PowerShell installation directory \($pshome\) and its subdirectories.
+This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursive search for Types.ps1xml files in the Windows PowerShell installation directory ($pshome) and its subdirectories.
 The command sends the Types.ps1xml files to the Select-String cmdlet, which does a full-text search for the "EventLogEntry" type name in the files and returns the matches.
 
 ## PARAMETERS
@@ -111,8 +112,8 @@ Gets type data only for the types with the specified names.
 By default, Get-TypeData gets all types in the session.
 
 Enter type names or a name patterns.
-Full names \(or name patterns with wildcard characters\) are required, even for types in the System namespace.
-Wildcards are supported and the parameter name \(-TypeName\) is optional.
+Full names (or name patterns with wildcard characters) are required, even for types in the System namespace.
+Wildcards are supported and the parameter name (-TypeName) is optional.
 You can also pipe type names to Get-TypeData.
 
 ```yaml
@@ -123,7 +124,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: All types
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
@@ -142,12 +143,9 @@ It does not get extended type data that is on the computer, but has not been add
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=217033)
-
 [about_Types.ps1xml](bc879777-5cd6-45a9-96d8-ebe099b95456)
 
 [Remove-TypeData](2effc965-1fc3-4970-85b6-59dabea81ede)
 
 [Update-TypeData](49b1dd7e-9309-428c-8acf-a917cb850b4b)
-
 

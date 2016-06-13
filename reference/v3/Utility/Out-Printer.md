@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113367
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ This example shows you how to print a file, even though Out-Printer does not hav
 
 The command uses the Get-Content cmdlet to get the contents of the Help topic.
 The path includes $pshome, a built-in variable that stores the installation directory for Windows PowerShell.
-A pipeline operator \(|\) passes the results to Out-Printer, which sends it to the default printer.
+A pipeline operator (|) passes the results to Out-Printer, which sends it to the default printer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -64,13 +65,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
 Specifies the  alternate printer.
-The parameter name \("Name"\) is optional.
+The parameter name ("Name") is optional.
 
 ```yaml
 Type: String
@@ -80,7 +81,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -98,11 +99,11 @@ Out-Printer does not return any objects.
 You can also refer to Out-Printer by its built-in alias, "lp".
 For more information, see about_Aliases.
 
-The cmdlets that contain the Out verb \(the Out cmdlets\) do not format objects; they just render them and send them to the specified display destination.
+The cmdlets that contain the Out verb (the Out cmdlets) do not format objects; they just render them and send them to the specified display destination.
 If you send an unformatted object to an Out cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
 The Out cmdlets do not have parameters for names or file paths.
-To send data to an Out cmdlet, use a pipeline operator \(|\) to send the output of a Windows PowerShell command to the cmdlet.
+To send data to an Out cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet.
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For more information, see the examples.
 
@@ -110,8 +111,6 @@ Out-Printer sends data, but it does not emit any output objects.
 If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no objects have been specified.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113367)
 
 [Out-Default](00000000-0000-0000-0000-000000000000)
 
@@ -122,5 +121,4 @@ If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no 
 [Out-Null](00000000-0000-0000-0000-000000000000)
 
 [Out-String](d4502a29-2351-4580-b456-fb75280fedb4)
-
 

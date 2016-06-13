@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Utility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113361
 schema: 2.0.0
 ---
 
@@ -19,7 +20,7 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Forc
 The New-Variable cmdlet creates a new variable in Windows PowerShell.
 You can assign a value to the variable while creating it or assign or change the value after it is created.
 
-You can use the parameters of New-Variable to set the properties of the variable \(such as those that create read-only or constant variables\), set the scope of a variable, and determine whether variables are public or private.
+You can use the parameters of New-Variable to set the properties of the variable (such as those that create read-only or constant variables), set the scope of a variable, and determine whether variables are public or private.
 
 Typically, you create a new variable by typing the variable name and its value, such as "$var = 3", but you can use the New-Variable cmdlet to use its parameters.
 
@@ -110,7 +111,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -128,7 +129,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,7 +144,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Sets the value of the Options property of the variable.
 
 Valid values are:
 
--- None: Sets no options. \("None" is the default.\)
+-- None: Sets no options. ("None" is the default.)
 -- ReadOnly: Can be deleted. Cannot be not changed, except by using the Force parameter.
 -- Constant: Cannot be deleted or changed.  "Constant" is valid only when you are creating a variable. You cannot change the options of an existing variable to "Constant".
 -- Private: The variable is available only in the current scope.
@@ -168,7 +169,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: "None"
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -184,13 +185,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: No output
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Determines the scope of the new variable.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see about_Scopes.
 
@@ -202,7 +203,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -217,7 +218,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -227,7 +228,7 @@ This parameter is designed for  use in scripts and commands that will be deliver
 
 Valid values are:
 
--- Public:  The variable is visible. \("Public" is the default.\)
+-- Public:  The variable is visible. ("Public" is the default.)
 -- Private: The variable is not visible.
 
 When a variable is private, it does not appear in lists of variables, such as those returned by Get-Variable, or in displays of the Variable: drive.
@@ -242,7 +243,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Public
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -256,8 +257,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -273,8 +274,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -293,8 +294,6 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113361)
-
 [Clear-Variable](e8e9af2f-e5c9-4ab8-8518-b305b1c4494a)
 
 [Get-Variable](385002f8-2406-42f9-843b-9cb16aec927f)
@@ -302,5 +301,4 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-Variable](a58fb01b-6bb4-48e9-a07c-5ad907dc4791)
 
 [Set-Variable](a961f6e3-12d2-4210-a039-62f502623a8c)
-
 

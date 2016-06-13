@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_ScheduledJob.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=223912
 schema: 2.0.0
 ---
 
@@ -56,7 +57,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Once Schedule
 ```
-PS C:\>New-JobTrigger –Once –At "1/20/2012 3:00 AM"
+PS C:\>New-JobTrigger -Once -At "1/20/2012 3:00 AM"
 ```
 
 This command uses the New-JobTrigger cmdlet to create a job trigger that starts a scheduled job only one time.
@@ -66,7 +67,7 @@ If the date were omitted, the trigger would be created with the current date and
 
 ### Example 2: Daily Schedule
 ```
-PS C:\>New-JobTrigger –Daily –At "4:15 AM" –DaysInterval 3
+PS C:\>New-JobTrigger -Daily -At "4:15 AM" -DaysInterval 3
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 0          Daily           9/21/2012 4:15:00 AM                           True
@@ -79,13 +80,13 @@ If the date and time is in the past, the scheduled job is started at the next oc
 
 ### Example 3: Weekly Schedule
 ```
-PS C:\>New-JobTrigger –Weekly –DaysOfWeek Monday, Wednesday, Friday –At "23:00" –WeeksInterval 4
+PS C:\>New-JobTrigger -Weekly -DaysOfWeek Monday, Wednesday, Friday -At "23:00" -WeeksInterval 4
 Id Frequency Time                  DaysOfWeek                  Enabled
 -- --------- ----                  ----------                  -------
 0  Weekly    9/21/2012 11:00:00 PM {Monday, Wednesday, Friday} True
 ```
 
-This command creates a job trigger that starts a scheduled job every 4 weeks on Monday, Wednesday, and Friday at 2300 hours \(11:00 PM\).
+This command creates a job trigger that starts a scheduled job every 4 weeks on Monday, Wednesday, and Friday at 2300 hours (11:00 PM).
 
 You can also enter the DaysOfWeek parameter value in integers, such as "-DaysOfWeek 1, 5".
 
@@ -98,7 +99,7 @@ This command creates a job trigger that starts a scheduled job whenever the doma
 
 ### Example 5: Using a Random Delay
 ```
-PS C:\>New-JobTrigger –Daily –At 1:00 –RandomDelay 00:20:00
+PS C:\>New-JobTrigger -Daily -At 1:00 -RandomDelay 00:20:00
 ```
 
 This command creates a job trigger that starts a scheduled job every day at 1:00 in the morning.
@@ -111,7 +112,7 @@ When setting the delay value, review the effective and default values of the New
 ### Example 6: Create a Job Trigger for a New Scheduled Job
 ```
 The first command uses the New-JobTrigger cmdlet to create a job trigger that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The command saves the job trigger in the $t variable.
-PS C:\>$t = New-JobTrigger –Weekly –DaysOfWeek 1,3,5 –At 12:01AM
+PS C:\>$t = New-JobTrigger -Weekly -DaysOfWeek 1,3,5 -At 12:01AM
 
 
 The second command uses the Register-ScheduledJob cmdlet to create a scheduled job that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The value of the Trigger parameter is the trigger that is stored in the $t variable.
@@ -142,12 +143,12 @@ This command creates a job trigger that runs a job every 60 minutes for 48 hours
 
 ### Example 9: Stop a repeating job trigger
 ```
-PS C:\>Get-JobTrigger -Name SecurityCheck | Set-JobTrigger –RepetitionInterval 0:00 –RepetitionDuration 0:00
+PS C:\>Get-JobTrigger -Name SecurityCheck | Set-JobTrigger -RepetitionInterval 0:00 -RepetitionDuration 0:00
 ```
 
 This command forcibly stops the SecurityCheck job, which is triggered to run every 60 minutes until its job trigger expires.
 
-To prevent the job from repeating, the command uses the Get-JobTrigger to get the job trigger of the SecurityCheck job and the Set-JobTrigger cmdlet to change the repetition interval and repetition duration of the job trigger to zero \(0\).
+To prevent the job from repeating, the command uses the Get-JobTrigger to get the job trigger of the SecurityCheck job and the Set-JobTrigger cmdlet to change the repetition interval and repetition duration of the job trigger to zero (0).
 
 ### Example 10: Create an hourly job trigger
 ```
@@ -155,7 +156,7 @@ PS C:\>New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpa
 ```
 
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an indefinite period of time.
-The schedule begins tomorrow \(9/21/2012\) at midnight \(0:00 AM\).
+The schedule begins tomorrow (9/21/2012) at midnight (0:00 AM).
 
 ## PARAMETERS
 
@@ -177,7 +178,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -193,7 +194,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,7 +209,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -224,7 +225,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -241,7 +242,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -253,7 +254,7 @@ This parameter is required in the Weekly parameter set.
 NOTE: Day names are converted to their integer values in the job trigger.
 When you enclose day names in quotation marks in a command, enclose each day name in separate quotation marks, such as "Monday", "Tuesday".
 If you enclose multiple day names in a single quotation mark pair, the corresponding integer values are summed.
-For example, "Monday, Tuesday" \(1, 2\) results in a value of "Wednesday" \(3\).
+For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday" (3).
 
 ```yaml
 Type: DayOfWeek[]
@@ -263,12 +264,12 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Once
-Specifies a non-recurring \(one time\) or custom repeating schedule.
+Specifies a non-recurring (one time) or custom repeating schedule.
 To create a repeating schedule, use the Once parameter with the RepetitionDuration and RepetitionInterval parameters.
 
 ```yaml
@@ -279,14 +280,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RandomDelay
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time specified by the value of this parameter.
-The default value, zero \(00:00:00\), disables the random delay.
+The default value, zero (00:00:00), disables the random delay.
 
 Enter a timespan object, such as one returned by the New-TimeSpan cmdlet, or enter a value in \<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a timespan object.
 
@@ -298,7 +299,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 00:00:00
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -311,7 +312,7 @@ Enter a timespan object, such as one that the New-TimeSpan cmdlet returns or a s
 
 To run a job indefinitely, set the value of the RepetitionDuration parameter to \[TimeSpan\]::MaxValue.
 
-To stop a job before the job trigger repetition duration expires, use the Set-JobTrigger cmdlet to set the RepetitionDuration value to zero \(0\).
+To stop a job before the job trigger repetition duration expires, use the Set-JobTrigger cmdlet to set the RepetitionDuration value to zero (0).
 
 This parameter is valid only when the Once, At and RepetitionInterval parameters are used in the command.
 
@@ -323,7 +324,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -344,13 +345,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -User
 Specifies the users who trigger an AtLogon start of a scheduled job.
-Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk \(*\) to represent all users.
+Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (*) to represent all users.
 The default value is all users.
 
 ```yaml
@@ -361,7 +362,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: All users
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -377,7 +378,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -394,7 +395,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -417,16 +418,14 @@ The Register-ScheduledJob cmdlet accepts a ScheduledJobTrigger object, such as o
 
 To submit a hash table, use the following keys.
 
-@{Frequency="Once" \(or Daily, Weekly, AtStartup, AtLogon\);At="3am" \(or any valid time string\);
-DaysOfWeek="Monday", "Wednesday" \(or any combination of day names\);
-Interval=2 \(or any valid frequency interval\);
-RandomDelay="30minutes" \(or any valid timespan string\);
-User="Domain1\User01 \(or any valid user; used only with the AtLogon frequency value\)
+@{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am" (or any valid time string);
+DaysOfWeek="Monday", "Wednesday" (or any combination of day names);
+Interval=2 (or any valid frequency interval);
+RandomDelay="30minutes" (or any valid timespan string);
+User="Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
 }
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=223912)
 
 [about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 
@@ -461,5 +460,4 @@ User="Domain1\User01 \(or any valid user; used only with the AtLogon frequency v
 [Set-ScheduledJobOption](5fe666db-ceed-4261-89ec-376dd01712f9)
 
 [Unregister-ScheduledJob](a76ff3d0-1496-46a8-885a-b54552eda897)
-
 

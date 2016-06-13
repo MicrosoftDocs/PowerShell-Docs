@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Security.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113389
 schema: 2.0.0
 ---
 
@@ -49,7 +50,7 @@ These commands copy the values from the security descriptor of the Dog.txt file 
 When the commands complete, the security descriptors of the Dog.txt and Cat.txt files are identical.
 
 The first command uses the Get-Acl cmdlet to get the security descriptor of the Dog.txt file.
-The assignment operator \(=\) stores the security descriptor in the value of the $DogACL variable.
+The assignment operator (=) stores the security descriptor in the value of the $DogACL variable.
 
 The second command uses Set-Acl to change the values in the ACL of Cat.txt to the values in $DogACL.
 
@@ -64,7 +65,7 @@ PS C:\>Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
 This command is almost the same as the command in the previous example, except that it uses a pipeline operator to send the security descriptor from a Get-Aclcommand to a Set-Acl command.
 
 The first command uses the Get-Acl cmdlet to get the security descriptor of the Dog.txt file.
-The pipeline operator \(|\) passes an object that represents the Dog.txt security descriptor to the Set-Acl cmdlet.
+The pipeline operator (|) passes an object that represents the Dog.txt security descriptor to the Set-Acl cmdlet.
 
 The second command uses Set-Acl to apply the security descriptor of  Dog.txt to Cat.txt.
 When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
@@ -77,15 +78,15 @@ PS C:\>Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject
 
 These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.
 
-The first command gets the security descriptor of the File0.txt file in the current directory and uses the assignment operator \(=\) to store it in the $NewACL variable.
+The first command gets the security descriptor of the File0.txt file in the current directory and uses the assignment operator (=) to store it in the $NewACL variable.
 
 The first command in the pipeline uses the Get-ChildItem cmdlet to get all of the text files in the C:\Temp directory.
 The Recurse parameter extends the command to all subdirectories of C:\temp.
 The Include parameter limits the files retrieved to those with the ".txt" file name extension.
 The Force parameter gets hidden files, which would otherwise be excluded.
-\(You cannot use "c:\temp\*.txt", because the Recurse parameter works on directories, not on files.\)
+(You cannot use "c:\temp\*.txt", because the Recurse parameter works on directories, not on files.)
 
-The pipeline operator \(|\) sends the objects representing the retrieved files to the Set-Acl cmdlet, which applies the security descriptor in the AclObject parameter to all of the files in the pipeline.
+The pipeline operator (|) sends the objects representing the retrieved files to the Set-Acl cmdlet, which applies the security descriptor in the AclObject parameter to all of the files in the pipeline.
 
 In practice, it is best to use the Whatif parameter with all Set-Acl commands that can affect more than one item.
 In this case, the second command in the pipeline would be "Set-Acl -AclObject $NewAcl -WhatIf".
@@ -108,7 +109,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -126,7 +127,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -144,7 +145,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -162,7 +163,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -178,7 +179,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -187,7 +188,7 @@ Changes the security descriptor of the specified item.
 Enter the path to an item, such as a path to a file or registry key.
 Wildcards are permitted.
 
-If you pass a security object to Set-Acl \(either by using the  AclObject or SecurityDescriptor parameters or by passing a security object from Get-Acl to Set-Acl\), and you omit the Path parameter \(name and value\), Set-Acl uses the path that is included in the security object.
+If you pass a security object to Set-Acl (either by using the  AclObject or SecurityDescriptor parameters or by passing a security object from Get-Acl to Set-Acl), and you omit the Path parameter (name and value), Set-Acl uses the path that is included in the security object.
 
 ```yaml
 Type: String[]
@@ -197,7 +198,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -218,7 +219,7 @@ Aliases:
 Required: False
 Position: 3
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -238,7 +239,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -259,7 +260,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -280,7 +281,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -294,8 +295,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -311,15 +312,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
+For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see
 
@@ -330,8 +331,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: false
-Accept pipeline input: false
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -353,8 +354,5 @@ As such, you can use it to change the security descriptors of files, directories
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113389)
-
 [Get-Acl](1c510ef4-abb0-4064-9460-d894624f736c)
-
 

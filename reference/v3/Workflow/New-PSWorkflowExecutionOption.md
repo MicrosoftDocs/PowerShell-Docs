@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WFFunctions.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=210609
 schema: 2.0.0
 ---
 
@@ -29,7 +30,7 @@ If you omit a parameter, the cmdlet creates the object with a default value for 
 The New-PSWorkflowExecutionOption cmdlet is part of the Windows PowerShell Workflow feature.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719\(v=wps.620\).aspx.
+For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.620).aspx.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -182,7 +183,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 60
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -201,7 +202,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: PSDefaultActivities
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
@@ -219,7 +220,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: True
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -235,13 +236,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxConnectedSessions
 Specifies the maximum number of remote sessions that are in an operational state.
-This quota is applied to sessions connected to all remote nodes \(target computers\).
+This quota is applied to sessions connected to all remote nodes (target computers).
 The default value is 100.
 
 ```yaml
@@ -252,13 +253,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: 100
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxDisconnectedSessions
 Specifies the maximum number of remote sessions that are in a disconnected state.
-This quota is applied to sessions connected to all remote nodes \(target computers\).
+This quota is applied to sessions connected to all remote nodes (target computers).
 The default value is 1000.
 
 ```yaml
@@ -269,7 +270,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1000
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -289,7 +290,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 10
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -305,12 +306,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 30
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxSessionsPerRemoteNode
-Specifies the maximum number of sessions that can be connected to each remote node \(target computer\).
+Specifies the maximum number of sessions that can be connected to each remote node (target computer).
 The default value is 5
 
 ```yaml
@@ -321,7 +322,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -337,12 +338,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 5
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -OutOfProcessActivity
-Determines which allowed activities \(specified by the AllowedActivities parameter\) run out-of-process.
+Determines which allowed activities (specified by the AllowedActivities parameter) run out-of-process.
 The default value is InlineScript.
 
 ```yaml
@@ -353,7 +354,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: InlineScript
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -371,7 +372,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -388,12 +389,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RemoteNodeSessionIdleTimeoutSec
-Specifies how long a session that is connected to a remote node \(target computer\) is maintained if it is idle.
+Specifies how long a session that is connected to a remote node (target computer) is maintained if it is idle.
 
 Enter a value in seconds.
 The default value is 60.
@@ -406,7 +407,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 60
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -422,7 +423,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 100
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -441,7 +442,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 500
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -457,7 +458,7 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 When the maximum value set by an option is exceeded, the command to create another instance in the session fails, unless noted in the parameter description.
 For example, if the value of MaxConnectedSessions is 100.
-The command to create the 101st session to a remote node \(target computer\) fails.
+The command to create the 101st session to a remote node (target computer) fails.
 
 The properties of a session configuration object vary with the options set for the session configuration and the values of those options.
 Also, session configurations that use a session configuration file have additional properties.
@@ -468,8 +469,6 @@ Otherwise, it does not.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=210609)
-
 [New-PSWorkflowSession](http://go.microsoft.com/fwlink/?LinkID=135237)
 
 [about_Workflows](f2897bdd-1b9d-4679-8b19-09840bd40a22)
@@ -479,5 +478,4 @@ Otherwise, it does not.
 [PSWorkflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
 
 [PSWorkflowUtility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
 

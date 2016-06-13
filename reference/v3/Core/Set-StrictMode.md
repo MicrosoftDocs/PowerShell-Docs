@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113450
 schema: 2.0.0
 ---
 
@@ -20,14 +21,14 @@ Set-StrictMode [-Off]
 ```
 
 ## DESCRIPTION
-The Set-StrictMode cmdlet configures strict mode for the current scope \(and all child scopes\) and turns it on and off.
+The Set-StrictMode cmdlet configures strict mode for the current scope (and all child scopes) and turns it on and off.
 When strict mode is on, Windows PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.
 
 Use the Version parameter to determine which coding rules are enforced.
 
 Unlike the Set-PSDebug cmdlet, Set-StrictMode affects only the current scope and its child scopes, so you can use it in a script or function without affecting the global scope.
 
-When Set-StrictMode is off, uninitialized variables \(Version 1\) are assumed to have a value of 0 \(zero\) or $null, depending on type.
+When Set-StrictMode is off, uninitialized variables (Version 1) are assumed to have a value of 0 (zero) or $null, depending on type.
 References to non-existent properties return $null, and the results of function syntax that is not valid vary with the error.
 Unnamed variables are not permitted.
 
@@ -86,11 +87,11 @@ At line:1 char:9
 ```
 
 This command turns strict mode on and sets it to version 2.0.
-As a result, Windows PowerShell throws an error if you use method syntax \(parentheses and commas\) for a function call or reference uninitialized variables or non-existent properties.
+As a result, Windows PowerShell throws an error if you use method syntax (parentheses and commas) for a function call or reference uninitialized variables or non-existent properties.
 
 The sample output shows the effect of version 2.0 strict mode.
 
-Without version 2.0 strict mode, the "\(3,4\)" value is interpreted as a single array object to which nothing is added.
+Without version 2.0 strict mode, the "(3,4)" value is interpreted as a single array object to which nothing is added.
 With version 2.0 strict mode, it is correctly interpreted as faulty syntax for submitting two values.
 
 Without version 2.0, the reference to the non-existent Month property of a string returns only null.
@@ -110,7 +111,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -127,14 +128,14 @@ The following list shows the effect of each value.
 
 2.0
 
--- Prohibits references to uninitialized variables \(including uninitialized variables in strings\).
+-- Prohibits references to uninitialized variables (including uninitialized variables in strings).
 -- Prohibits references to non-existent properties of an object.
 -- Prohibits function calls that use the syntax for calling methods.
--- Prohibits a variable without a name \(${}\).
+-- Prohibits a variable without a name (${}).
 
 Latest:
 
---Selects the latest \(most strict\) version available.  Use this value to assure that scripts use the strictest available version, even when new versions are added to Windows PowerShell.
+--Selects the latest (most strict) version available.  Use this value to assure that scripts use the strictest available version, even when new versions are added to Windows PowerShell.
 
 ```yaml
 Type: Version
@@ -144,7 +145,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -166,12 +167,9 @@ For more information about scopes in Windows PowerShell, see about_Scopes.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113450)
-
 [Set-PSDebug](2517a4da-2468-4148-aca3-50a6d7df4a10)
 
 [about_Scopes](b71febbe-2769-4e5d-a754-8373ab1a848e)
 
 [about_Debuggers]()
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WFUtility.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=238267
 schema: 2.0.0
 ---
 
@@ -27,7 +28,7 @@ Workflows are designed for long-running commands that collect critical data, but
 For more information, see about_Workflows.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719\(v=wps.620\).aspx.
+For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.620).aspx.
 
 This workflow is introduced in Windows PowerShell 3.0.
 
@@ -59,7 +60,7 @@ It uses the PSComputerName workflow common parameter to specify the computers on
 The value of the PSComputerName parameter is a Get-Content command that gets a list of computer names from the Servers.txt file.
 The parameter value is enclosed in parentheses to direct Windows PowerShell to run the Get-Command command before using the value.
 
-As with all remote commands, if the command runs on the local computer, \(if the value of the PSComputerName parameter includes the local computer\), you must start Windows PowerShell with the "Run as administrator" option.
+As with all remote commands, if the command runs on the local computer, (if the value of the PSComputerName parameter includes the local computer), you must start Windows PowerShell with the "Run as administrator" option.
 
 ### Example 2: Run a cmdlet with parameters
 ```
@@ -88,11 +89,11 @@ Id     Name          PSJobTypeName   State         HasMoreData   Location       
 This command uses the Invoke-AsWorkflow workflow to run an Ipconfig command as a workflow job on the computers listed in the DomainControllers.txt file.
 
 The command uses the Expression parameter to specify the expression to run.
-It uses the PSComputerName workflow common parameter to specify the names of the remote nodes \(target computers\).
+It uses the PSComputerName workflow common parameter to specify the names of the remote nodes (target computers).
 
 The command also uses the AsJob and JobName workflow common parameters to run the workflow as a background job on each computer with the "Ipconfig" job name.
 
-The command returns a ContainerParentJob object \(System.Management.Automation.ContainerParentJob\) that contains the workflow jobs on each computer.
+The command returns a ContainerParentJob object (System.Management.Automation.ContainerParentJob) that contains the workflow jobs on each computer.
 
 ## PARAMETERS
 
@@ -108,7 +109,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -125,7 +126,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -133,7 +134,7 @@ Accept wildcard characters: False
 Specifies the parameters and parameter values of the command that is specified in the CommandName parameter.
 Enter a hash table in which each key is a parameter name and its value is the parameter value, such as @{ExecutionPolicy="AllSigned"}.
 
-For information about hash tables, see about_Hash_Tables \(http://go.microsoft.com/fwlink/?LinkID=135175\).
+For information about hash tables, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175).
 
 ```yaml
 Type: Hashtable
@@ -143,7 +144,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -151,7 +152,7 @@ Accept wildcard characters: False
 
 ### System.Object
 You can pipe any object to the InputObject workflow common parameter.
-For information, see about_WorkflowCommonParameters \(http://go.microsoft.com/fwlink/?LinkID=222527\).
+For information, see about_WorkflowCommonParameters (http://go.microsoft.com/fwlink/?LinkID=222527).
 
 ## OUTPUTS
 
@@ -162,8 +163,6 @@ However, it runs the workflow, which might generate output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=238267)
 
 [New-PSWorkflowExecutionOption](00000000-0000-0000-0000-000000000000)
 
@@ -176,5 +175,4 @@ However, it runs the workflow, which might generate output.
 [Windows PowerShell Workflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
 
 [Windows PowerShell Workflow Utility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
 

@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141446
 schema: 2.0.0
 ---
 
@@ -115,7 +116,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -130,10 +131,10 @@ For example:
 
 http://server01:8080/WSMAN
 
-Internet Information Services \(IIS\), which hosts the session, forwards requests with this endpoint to the specified application.
+Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of "WSMAN" is appropriate for most uses.
 This parameter is designed to be used when numerous computers establish remote connections to one computer running Windows PowerShell.
-In this case, IIS hosts Web Services for Management \(WS-Management\) for efficiency.
+In this case, IIS hosts Web Services for Management (WS-Management) for efficiency.
 
 ```yaml
 Type: String
@@ -142,8 +143,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: wsman
-Accept pipeline input: false
+Default value: Wsman
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -156,7 +157,7 @@ Possible values are:
 - Digest: Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Kerberos: The client computer and the server mutually authenticate by using Kerberos certificates.
 - Negotiate: Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine the scheme to use for authentication. For example, this parameter value allows negotiation to determine whether the Kerberos protocol or NTLM is used.
-- CredSSP: Use Credential Security Support Provider \(CredSSP\) authentication, which allows the user to delegate credentials. This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
+- CredSSP: Use Credential Security Support Provider (CredSSP) authentication, which allows the user to delegate credentials. This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
 
 Caution: CredSSP delegates the user's credentials from the local computer to a remote computer.
 This practice increases the security risk of the remote operation.
@@ -170,12 +171,12 @@ Aliases: auth,am
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action.
+Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. 
@@ -191,14 +192,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComputerName
 Specifies the computer against which you want to run the management operation.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
-Use the local computer name, use localhost, or use a dot \(.\) to specify the local computer.
+Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
 The local computer is the default.
 When the remote computer is in a different domain from the user, you must use a fully qualified domain name must be used.
 You can pipe a value for this parameter to the cmdlet.
@@ -210,8 +211,8 @@ Aliases: cn
 
 Required: False
 Position: Named
-Default value: localhost
-Accept pipeline input: false
+Default value: Localhost
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -235,7 +236,7 @@ Aliases: CURI,CU
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -278,7 +279,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -307,7 +308,7 @@ Accept wildcard characters: False
 Specifies the port to use when the client connects to the WinRM service.
 When the transport is HTTP, the default port is 80.
 When the transport is HTTPS, the default port is 443.
-When you use HTTPS as the transport, the value of the ComputerName parameter must match the server's certificate common name \(CN\).
+When you use HTTPS as the transport, the value of the ComputerName parameter must match the server's certificate common name (CN).
 However, if the SkipCNCheck parameter is specified as part of the SessionOption parameter, then the certificate common name of the server does not have to match the host name of the server.
 The SkipCNCheck parameter should be used only for trusted machines.
 
@@ -319,12 +320,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceURI
-Contains the Uniform Resource Identifier \(URI\) of the resource class or instance.
+Contains the Uniform Resource Identifier (URI) of the resource class or instance.
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
@@ -380,12 +381,12 @@ Aliases: so
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Specifies that the Secure Sockets Layer \(SSL\) protocol should be used to establish a connection to the remote computer.
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all the Windows PowerShell content  that is transmitted over the network.
@@ -400,7 +401,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -417,7 +418,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -434,8 +435,6 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141446)
 
 [Invoke-WmiMethod](00000000-0000-0000-0000-000000000000)
 
@@ -462,5 +461,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 

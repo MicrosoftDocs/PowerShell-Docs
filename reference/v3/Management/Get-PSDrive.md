@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113327
 schema: 2.0.0
 ---
 
@@ -26,7 +27,7 @@ You can get a particular drive or all drives in the session.
 Get-PSDrive gets the following types of drives:
 
 -- Windows logical drives on the computer, including drives mapped to network shares.
--- Drives exposed by Windows PowerShell providers \(such as the Certificate:, Function:, and Alias: drives\) and the HKLM: and HKCU: drives that are exposed by the Windows PowerShell Registry provider.
+-- Drives exposed by Windows PowerShell providers (such as the Certificate:, Function:, and Alias: drives) and the HKLM: and HKCU: drives that are exposed by the Windows PowerShell Registry provider.
 -- Session-specified temporary drives and persistent mapped network drives that you create by using the New-PSDrivecmdlet.
 
 Beginning in Windows PowerShell 3.0, the Persist parameter of the New-PSDrive cmdlet can create mapped network drives that are saved on the local computer and are available in other sessions.
@@ -58,7 +59,7 @@ X          FileSystem    X:\
 
 This command gets the drives in the current session.
 
-The output shows the hard drive \(C:\) and CD-ROM drive \(D:\) on the computer, the drives exposed by the Windows PowerShell providers \(Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:\), and a drive mapped to a network share \(X:\).
+The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -178,7 +179,7 @@ This example compares the types of file system drives that are displayed by Get-
 This example demonstrates different ways to display drives in Windows PowerShell, and it shows that temporary, session-specific drives created by using the New-PSDrive cmdlet are accessible only in Windows PowerShell.
 
 The first command uses Get-PSDrive to get all of the file system drives in the session.
-This includes the fixed drives \(C: and D:\), a mapped network drive \(X:\) that was created by using the Persist parameter of New-PSDrive, and two temporary Windows PowerShell drives \(Y: and Z:\) that were created by using New-PSDrive  without the Persist parameter.
+This includes the fixed drives (C: and D:), a mapped network drive (X:) that was created by using the Persist parameter of New-PSDrive, and two temporary Windows PowerShell drives (Y: and Z:) that were created by using New-PSDrive  without the Persist parameter.
 
 A "net use" command, which displays Windows mapped network drives, displays only the X drive.
 It does not display the Y: and Z: drives that were created by New-PSDrive.
@@ -211,13 +212,13 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
 Gets only the specified drives.
-Type the drive name or letter without a colon \(:\).
+Type the drive name or letter without a colon (:).
 
 ```yaml
 Type: String[]
@@ -227,7 +228,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -243,15 +244,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Scope
 Gets only drives in the specified scope.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope \(0 through the number of scopes, where 0 is the current scope and 1 is its parent\).
+Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
-For more information, see about_Scopes \(http://go.microsoft.com/fwlink/?LinkID=113260\).
+For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=113260).
 
 ```yaml
 Type: String
@@ -261,7 +262,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Local
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -278,7 +279,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -295,14 +296,12 @@ Get-PSDrive returns objects that represent the drives in the session.
 ## NOTES
 The Get-PSDrive cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, use the Get-PSProvider cmdlet.
-For more information, see about_Providers \(http://go.microsoft.com/fwlink/?LinkID=113250\).
+For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
 
 Mapped network drives that are created by using the Persist parameter of the New-PSDrive cmdlet are specific to a user account.
 Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credentials of another user are not visible in sessions that are started without explicit credentials or with  the credentials of the current user.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113327)
 
 [Get-Command](00000000-0000-0000-0000-000000000000)
 
@@ -315,5 +314,4 @@ Mapped network drives that you create in sessions that are started with the "Run
 [Remove-PSDrive](0e9a8ba8-73b0-4c86-b12f-604af804592a)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

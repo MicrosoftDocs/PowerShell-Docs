@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113365
 schema: 2.0.0
 ---
 
@@ -27,7 +28,7 @@ PS C:\>Get-Process | Out-Host -Paging
 
 This command displays the processes on the system one page at a time.
 It uses the Get-Process cmdlet to get the processes on the system.
-The pipeline operator \(|\) sends the results to Out-Host, which displays them at the console.
+The pipeline operator (|) sends the results to Out-Host, which displays them at the console.
 The Paging parameter displays one page of data at a time.
 
 The same command format is used for the Help function that is built into Windows PowerShell.
@@ -57,7 +58,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -74,7 +75,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -90,11 +91,11 @@ Out-Host does not generate any output.
 However, the host might display the objects that Out-Host sends to it.
 
 ## NOTES
-The cmdlets that contain the Out verb \(the Out cmdlets\) do not format objects; they just render them and send them to the specified display destination.
+The cmdlets that contain the Out verb (the Out cmdlets) do not format objects; they just render them and send them to the specified display destination.
 If you send an unformatted object to an Out cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
 The Out cmdlets do not have parameters for names or file paths.
-To send data to an Out cmdlet, use a pipeline operator \(|\) to send the output of a Windows PowerShell command to the cmdlet.
+To send data to an Out cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet.
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For help, see the examples.
 
@@ -102,8 +103,6 @@ Out-Host sends data, but it does not emit any output objects.
 If you pipe the output of Out-Host to the Get-Member cmdlet, Get-Member reports that no objects have been specified.
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113365)
 
 [Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
 
@@ -118,5 +117,4 @@ If you pipe the output of Out-Host to the Get-Member cmdlet, Get-Member reports 
 [Out-String](00000000-0000-0000-0000-000000000000)
 
 [Write-Host](00000000-0000-0000-0000-000000000000)
-
 

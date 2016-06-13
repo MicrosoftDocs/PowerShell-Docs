@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=141551
 schema: 2.0.0
 ---
 
@@ -14,7 +15,7 @@ Export-ModuleMember [[-Function] <String[]>] [-Alias <String[]>] [-Cmdlet <Strin
 ```
 
 ## DESCRIPTION
-The Export-ModuleMember cmdlet specifies the module members \(such as cmdlets, functions, variables, and aliases\) that are exported from a script module \(.psm1\) file, or from a dynamic module created by using the New-Module cmdlet.
+The Export-ModuleMember cmdlet specifies the module members (such as cmdlets, functions, variables, and aliases) that are exported from a script module (.psm1) file, or from a dynamic module created by using the New-Module cmdlet.
 This cmdlet can be used only in a script module file or a dynamic module.
 
 If a script module does not include an Export-ModuleMember command, the functions in the script module are exported, but the variables and aliases are not.
@@ -53,7 +54,7 @@ PS C:\>Export-ModuleMember
 This command specifies that no members defined in the script module are exported.
 
 This command prevents the module members from being exported, but it does not hide the members.
-Users can read and copy module members or use the call operator \(&\) to invoke module members that are not exported.
+Users can read and copy module members or use the call operator (&) to invoke module members that are not exported.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
@@ -79,7 +80,7 @@ set-alias stt start-test
 export-modulemember -function *-test -alias stt
 ```
 
-These commands show how multiple Export-ModuleMember commands are interpreted in a script module \(.psm1\) file.
+These commands show how multiple Export-ModuleMember commands are interpreted in a script module (.psm1) file.
 
 These commands create three functions and one alias, and then they export two of the functions and the alias.
 
@@ -153,7 +154,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -172,7 +173,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -190,13 +191,13 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -Variable
 Specifies the variables that are exported from the script module file.
-Enter the variable names \(without a dollar sign\).
+Enter the variable names (without a dollar sign).
 Wildcards are permitted.
 
 ```yaml
@@ -207,7 +208,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -226,8 +227,6 @@ To exclude a member from the list of exported members, add an Export-ModuleMembe
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=141551)
-
 [Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
 
 [Import-Module](af616c24-e122-4098-930e-1e3ea2080ade)
@@ -235,5 +234,4 @@ To exclude a member from the list of exported members, add an Export-ModuleMembe
 [Remove-Module](c0968566-4d7e-49e9-82b9-e4df1f489267)
 
 [about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
-
 

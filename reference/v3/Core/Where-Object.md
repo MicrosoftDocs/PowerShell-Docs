@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Core.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113423
 schema: 2.0.0
 ---
 
@@ -179,7 +180,7 @@ For example, the following command gets processes in the Normal priority class, 
 Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}
 
 All Windows PowerShell comparison operators are valid in the script block format.
-For more information about comparison operators, see about_Comparison_Operators \(http://go.microsoft.com/fwlink/?LinkID=113217\).
+For more information about comparison operators, see about_Comparison_Operators (http://go.microsoft.com/fwlink/?LinkID=113217).
 
 Comparison statement.
 You can also write a comparison statement, which is much more like natural language.
@@ -217,7 +218,7 @@ PS C:\>Get-Process | Where-Object {$_.WorkingSet -gt 25000*1024}
 PS C:\>Get-Process | Where-Object WorkingSet -gt (25000*1024)
 ```
 
-This command lists processes that have a working set greater than 25,000 kilobytes \(KB\).
+This command lists processes that have a working set greater than 25,000 kilobytes (KB).
 Because the value of the WorkingSet property is stored in bytes, the value of 25,000 is multiplied by 1,024.
 
 The first command uses the script block format.
@@ -285,8 +286,8 @@ The example uses the script block command format.
 Logical operators, such as -And and -Or, are valid only in script blocks.
 You cannot use them in the comparison statement format of a Where-Object command.
 
-For more information about Windows PowerShell logical operators, see about_Logical_Operators \(http://go.microsoft.com/fwlink/?LinkID=113238\).
-For more information about the Updatable Help feature, see about_Updatable_Help \(http://go.microsoft.com/fwlink/?LinkID=235801\).
+For more information about Windows PowerShell logical operators, see about_Logical_Operators (http://go.microsoft.com/fwlink/?LinkID=113238).
+For more information about the Updatable Help feature, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
 
 ## PARAMETERS
 
@@ -307,7 +308,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -324,15 +325,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -FilterScript
 Specifies the script block that is used to filter the objects.
-Enclose the script block in braces \( {} \).
+Enclose the script block in braces ( {} ).
 
-The parameter name \(-FilterScript\) is optional.
+The parameter name (-FilterScript) is optional.
 
 ```yaml
 Type: ScriptBlock
@@ -342,7 +343,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -359,7 +360,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -376,7 +377,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -400,7 +401,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -416,7 +417,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: true (ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -436,7 +437,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -455,7 +456,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -472,7 +473,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -489,7 +490,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -508,7 +509,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -528,7 +529,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -545,7 +546,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -567,7 +568,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -591,7 +592,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -610,7 +611,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -630,14 +631,14 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Property
 Specifies the name of an object property.
 
-The parameter name \(-Property\) is optional.
+The parameter name (-Property) is optional.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -649,14 +650,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Value
 Specifies a property value.
 
-The parameter name \(-Value\) is optional.
+The parameter name (-Value) is optional.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -668,7 +669,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -690,7 +691,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -707,7 +708,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -724,7 +725,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -741,7 +742,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -767,7 +768,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -784,7 +785,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -801,7 +802,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -820,7 +821,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -840,7 +841,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -857,7 +858,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -879,7 +880,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -903,7 +904,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -922,7 +923,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -942,7 +943,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -959,8 +960,6 @@ Where-Object returns selected items from the input object set.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113423)
 
 [Compare-Object](00000000-0000-0000-0000-000000000000)
 
@@ -979,5 +978,4 @@ Where-Object returns selected items from the input object set.
 [Tee-Object](00000000-0000-0000-0000-000000000000)
 
 [Where-Object](6a70160b-cf62-48df-ae5b-0a9b173013b4)
-
 

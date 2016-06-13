@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Management.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=113347
 schema: 2.0.0
 ---
 
@@ -69,7 +70,7 @@ The output shows that the Windows PowerShell drives on the computer included a d
 ### -ChildPath
 Specifies the elements to append to the value of Path.
 Wildcards are permitted.
-The ChildPath parameter is required, although the parameter name \("ChildPath"\) is optional.
+The ChildPath parameter is required, although the parameter name ("ChildPath") is optional.
 
 ```yaml
 Type: String
@@ -79,7 +80,7 @@ Aliases:
 Required: True
 Position: 2
 Default value: 
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -101,16 +102,16 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: true (ByPropertyName)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the main path \(or paths\) to which the child-path is appended.
+Specifies the main path (or paths) to which the child-path is appended.
 Wildcards are permitted.
 
 The value of Path determines which provider joins the paths and adds the path delimiters.
-The Path parameter is required, although the parameter name \("Path"\) is optional.
+The Path parameter is required, although the parameter name ("Path") is optional.
 
 ```yaml
 Type: String[]
@@ -120,7 +121,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -135,7 +136,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -152,7 +153,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -167,7 +168,7 @@ You can pipe a string that contains a path to Join-Path.
 Join-Path returns a string that contains the resulting path.
 
 ## NOTES
-The cmdlets that contain the Path noun \(the Path cmdlets\) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
+The cmdlets that contain the Path noun (the Path cmdlets) manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret.
 They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format.
 Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
@@ -179,8 +180,6 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=113347)
-
 [Convert-Path](f2548a68-4175-4872-961b-cd478ec0d6b3)
 
 [Resolve-Path](f84dd2a9-2961-400b-8b0a-45551b886172)
@@ -190,5 +189,4 @@ For more information, see about_Providers.
 [Test-Path](2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
 
 [about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
-
 

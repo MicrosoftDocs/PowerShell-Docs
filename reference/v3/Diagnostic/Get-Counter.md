@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_Diagnostic.xml
+online version: http://go.microsoft.com/fwlink/?LinkID=138335
 schema: 2.0.0
 ---
 
@@ -37,7 +38,7 @@ PS C:\>Get-Counter -ListSet *
 
 This command gets all of the counter sets on the local computer.
 
-Because many of the counter sets are protected by access control lists \(ACLs\), to see all counter sets, open Windows PowerShell with the "Run as administrator" option before using the Get-Counter command.
+Because many of the counter sets are protected by access control lists (ACLs), to see all counter sets, open Windows PowerShell with the "Run as administrator" option before using the Get-Counter command.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -139,7 +140,7 @@ The second command uses the Get-Counter cmdlet to get one sample of the counter 
 PS C:\>$Data = Get-Counter $Counter
 
 The third command uses the Format-List cmdlet to display all the properties of the CounterSamples property of the sample set object as a list.
-PS C:\>$Data.CounterSamples | Format-List –Property *
+PS C:\>$Data.CounterSamples | Format-List -Property *
 
 Path             : \\SERVER01\process(idle)\% processor time
 InstanceName     : idle
@@ -283,7 +284,7 @@ To stop the command, press CTRL + C.
 
 ### -ComputerName
 Gets data from the specified computers.
-Type the NetBIOS name, an Internet Protocol \(IP\) address, or the fully qualified domain names of the computers.
+Type the NetBIOS name, an Internet Protocol (IP) address, or the fully qualified domain names of the computers.
 The default value is the local computer.
 
 Note:  Get-Counter does not rely on Windows PowerShell remoting.
@@ -297,7 +298,7 @@ Aliases: Cn
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -314,7 +315,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -326,11 +327,11 @@ You can also pipe counter path strings to Get-Counter.
 
 Each counter path has the following format:
 
-"\[\\\\\<ComputerName\>\]\\\<CounterSet\>\(\<Instance\>\)\\\<CounterName\>"
+"\[\\\\\<ComputerName\>\]\\\<CounterSet\>(\<Instance\>)\\\<CounterName\>"
 
 For example:
 
-"\\\\Server01\Processor\(2\)\% User Time"
+"\\\\Server01\Processor(2)\% User Time"
 
 The \<ComputerName\> element is optional.
 If you omit it, Get-Counter uses the value of the ComputerName parameter.
@@ -348,7 +349,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -366,14 +367,14 @@ Aliases:
 Required: True
 Position: 1
 Default value: 
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: True
 ```
 
 ### -MaxSamples
 Specifies the number of samples to get from each counter.
 The default is 1 sample.
-To get samples continuously \(no maximum sample size\), use the Continuous parameter.
+To get samples continuously (no maximum sample size), use the Continuous parameter.
 
 To collect a very large data set, consider running a Get-Counter command as a Windows PowerShell background job.
 For more information, see about_Jobs and Start-Job.
@@ -386,7 +387,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -402,14 +403,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1
-Accept pipeline input: true (ByValue, ByPropertyName)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ## INPUTS
 
 ### System.String[]
-You can pipe counter paths and counter set \(ListSet\) names to Get-Counter.
+You can pipe counter paths and counter set (ListSet) names to Get-Counter.
 
 ## OUTPUTS
 
@@ -419,7 +420,7 @@ The Counter parameter gets Microsoft.PowerShell.Commands.GetCounter.PerformanceC
 Each counter value is a Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample object.
 
 ## NOTES
-Performance counters are often protected by access control lists \(ACLs\).
+Performance counters are often protected by access control lists (ACLs).
 To get all available performance counters, open Windows PowerShell with the "Run as administrator" option.
 
 By default, Get-Counter gets one sample during a one-second sample interval.
@@ -430,10 +431,7 @@ To set different values for different counters, enter separate Get-Counter comma
 
 ## RELATED LINKS
 
-[Online Version:](http://go.microsoft.com/fwlink/?LinkID=138335)
-
 [Export-Counter](641c0fce-3bb1-4274-8b69-6e4cf596f471)
 
 [Import-Counter](b1e3833d-f67c-4a63-b1fe-228fd8f25b30)
-
 

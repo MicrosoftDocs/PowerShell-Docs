@@ -1,5 +1,6 @@
 ---
 external help file: PSITPro3_WSMan.xml
+online version: http://go.microsoft.com/fwlink/?LinkId=141444
 schema: 2.0.0
 ---
 
@@ -28,7 +29,7 @@ Get-WSManInstance [-ResourceURI] <Uri> [-ApplicationName <String>] [-Association
 
 ## DESCRIPTION
 The Get-WSManInstance cmdlet retrieves an instance of a management resource that is specified by a resource URI.
-The information that is retrieved can be a complex XML information set  \(an object\) or a simple value.
+The information that is retrieved can be a complex XML information set  (an object) or a simple value.
 This cmdlet is the equivalent to the standard WS-Management Get command.
 
 This cmdlet uses the WS-Management connection/transport layer to retrieve information.
@@ -80,7 +81,7 @@ TagId                   : 0
 WaitHint                : 0
 ```
 
-This command returns all of the information that Windows Management Instrumentation \(WMI\) exposes about the WinRM service on the remote server01 computer.
+This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the WinRM service on the remote server01 computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
@@ -335,7 +336,7 @@ SystemName              : SERVER01
 TagId                   : 0
 ```
 
-This command gets the associated instances that are related to the specified instance \(winrm\).
+This command gets the associated instances that are related to the specified instance (winrm).
 
 Important: You must enclose the filter in quotation marks, as shown in the example.
 
@@ -344,7 +345,7 @@ Important: You must enclose the filter in quotation marks, as shown in the examp
 PS C:\>Get-WSManInstance -Enumerate -Dialect association -Associations -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 ```
 
-This command gets association instances that are related to the specified instance \(winrm\).
+This command gets association instances that are related to the specified instance (winrm).
 Because the Dialect parameter is set to "association" and the Associations parameter is used, this command returns association instances, not associated instances.
 
 Important: You must enclose the filter in quotation marks, as shown in the example.
@@ -362,10 +363,10 @@ For example:
 
 http://server01:8080/WSMAN
 
-Internet Information Services \(IIS\), which hosts the session, forwards requests with this endpoint to the specified application.
+Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of "WSMAN" is appropriate for most uses.
 This parameter is designed to be used when numerous computers establish remote connections to one computer that is running Windows PowerShell.
-In this case, IIS hosts Web Services for Management \(WS-Management\) for efficiency.
+In this case, IIS hosts Web Services for Management (WS-Management) for efficiency.
 
 ```yaml
 Type: String
@@ -374,13 +375,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: wsman
-Accept pipeline input: false
+Default value: Wsman
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Associations
-Indicates that association instances \(not associated instances\) should be retrieved.
+Indicates that association instances (not associated instances) should be retrieved.
 You can use this parameter only when the Dialect parameter is set to a value of "Association".
 
 ```yaml
@@ -391,7 +392,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -404,7 +405,7 @@ Possible values are:
 - Digest: Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Kerberos: The client computer and the server mutually authenticate by using Kerberos certificates.
 - Negotiate: Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine the scheme to use for authentication. For example, this parameter value allows negotiation to determine whether the Kerberos protocol or NTLM is used.
-- CredSSP: Use Credential Security Support Provider \(CredSSP\) authentication, which allows the user to delegate credentials. This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
+- CredSSP: Use Credential Security Support Provider (CredSSP) authentication, which allows the user to delegate credentials. This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
 
 Caution: CredSSP delegates the user's credentials from the local computer to a remote computer.
 This practice increases the security risk of the remote operation.
@@ -418,7 +419,7 @@ Aliases: auth,am
 Required: False
 Position: Named
 Default value: Default
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -434,12 +435,12 @@ Aliases: UBPO,Base
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action.
+Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. 
@@ -455,14 +456,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComputerName
 Specifies the computer against which you want to run the management operation.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
-Use the local computer name, use localhost, or use a dot \(.\) to specify the local computer.
+Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
 The local computer is the default.
 When the remote computer is in a different domain from the user, you must use a fully qualified domain name must be used.
 You can pipe a value for this parameter to the cmdlet.
@@ -474,8 +475,8 @@ Aliases: CN
 
 Required: False
 Position: Named
-Default value: localhost
-Accept pipeline input: false
+Default value: Localhost
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -499,7 +500,7 @@ Aliases: CURI,CU
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -538,8 +539,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: http://schemas.microsoft.com/wbem/wsman/1/WQL
-Accept pipeline input: false
+Default value: Http://schemas.microsoft.com/wbem/wsman/1/WQL
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -554,7 +555,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -579,7 +580,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -595,7 +596,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -624,7 +625,7 @@ Accept wildcard characters: False
 Specifies the port to use when the client connects to the WinRM service.
 When the transport is HTTP, the default port is 80.
 When the transport is HTTPS, the default port is 443.
-When you use HTTPS as the transport, the value of the ComputerName parameter must match the server's certificate common name \(CN\).
+When you use HTTPS as the transport, the value of the ComputerName parameter must match the server's certificate common name (CN).
 However, if the SkipCNCheck parameter is specified as part of the SessionOption parameter, then the certificate common name of the server does not have to match the host name of the server.
 The SkipCNCheck parameter should be used only for trusted computers.
 
@@ -636,12 +637,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceURI
-Contains the Uniform Resource Identifier \(URI\) of the resource class or instance.
+Contains the Uniform Resource Identifier (URI) of the resource class or instance.
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
@@ -667,14 +668,14 @@ Accept wildcard characters: False
 Specifies the type of data to be returned.
 The valid values are:
 
-Object \(the default\)
+Object (the default)
 
 EPR
 
 ObjectAndEPR
 
 If Object is specified or if this parameter is not used, only objects are returned.
-If EPR \(endpoint reference\) is specified, only the endpoint references of the objects are returned.
+If EPR (endpoint reference) is specified, only the endpoint references of the objects are returned.
 Endpoint references contain information about the resource URI and the selectors for the instance.
 If ObjectAndEPR is specified, both the object and its associated endpoint references are returned.
 
@@ -686,7 +687,7 @@ Aliases: RT
 Required: False
 Position: Named
 Default value: Object
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -707,7 +708,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -724,7 +725,7 @@ Aliases: SO
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -740,12 +741,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Specifies that the Secure Sockets Layer \(SSL\) protocol should be used to establish a connection to the remote computer.
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all the Windows PowerShell content  that is transmitted over the network.
@@ -760,7 +761,7 @@ Aliases: SSL
 Required: False
 Position: Named
 Default value: 
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -777,8 +778,6 @@ The Get-WSManInstance cmdlet generates an XMLElement object.
 ## NOTES
 
 ## RELATED LINKS
-
-[Online Version:](http://go.microsoft.com/fwlink/?LinkId=141444)
 
 [Connect-WSMan](74e46714-497f-4306-be84-109ab5b654cc)
 
@@ -803,5 +802,4 @@ The Get-WSManInstance cmdlet generates an XMLElement object.
 [Set-WSManQuickConfig](6a0e74db-94a7-445a-8485-f64ca1a4948a)
 
 [Test-WSMan](b8c6fb53-48fb-411b-a989-618a74a68067)
-
 
