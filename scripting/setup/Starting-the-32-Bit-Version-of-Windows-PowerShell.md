@@ -25,6 +25,8 @@ To start a 32\-bit version of Windows PowerShell, use any of the following proce
 
 -   On the desktop, move the cursor to the upper right corner, click **Search**, type **PowerShell x86** and then click **Windows PowerShell (x86)**.
 
+-   Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+
 #### In Windows Server 2012
 
 -   On the **Start** screen, type **PowerShell** and then click **Windows PowerShell (x86)**.
@@ -33,6 +35,8 @@ To start a 32\-bit version of Windows PowerShell, use any of the following proce
 
 -   On the desktop, move the cursor to the upper right corner, click **Search**, type **PowerShell** and then click **Windows PowerShell (x86)**.
 
+-   Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+
 #### In Windows 8.1
 
 -   On the **Start** screen, type **Windows PowerShell (x86)**. Click the **Windows PowerShell x86** tile.
@@ -40,6 +44,8 @@ To start a 32\-bit version of Windows PowerShell, use any of the following proce
 -   If you are running [Remote Server Administration Tools](http://go.microsoft.com/fwlink/?LinkID=304145) for Windows 8.1, you can also open Windows PowerShell x86 from the **Server ManagerTools** menu. Select **Windows PowerShell (x86)**.
 
 -   On the desktop, move the cursor to the upper right corner, click **Search**, type **PowerShell x86** and then click **Windows PowerShell (x86)**.
+   
+-   Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### In Windows 8
 
@@ -49,3 +55,4 @@ To start a 32\-bit version of Windows PowerShell, use any of the following proce
 
 -   On the **Start** screen or the desktop, type **PowerShell (x86)** and then click **Windows PowerShell (x86)**.
 
+-   Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
