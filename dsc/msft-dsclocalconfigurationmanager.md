@@ -28,7 +28,7 @@ class MSFT_DSCLocalConfigurationManager
 ## Members
 -------
 
-The **MSFT_DSCLocalConfigurationManager** class has the follwing members:
+The **MSFT_DSCLocalConfigurationManager** class has the following members:
 
 -   [Methods][]
 
@@ -51,7 +51,7 @@ The **MSFT_DSCLocalConfigurationManager** class has these methods.
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Directly calls the **Set** method of a DSC resource.| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Directly calls the **Test** method of a DSC resource.| 
 | [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Rolls back to a previous configuration.| 
-| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Send the configuration document to the managed node and save it as pendingSends the configuration document to the managed node and saves it as a pending change.| 
+| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Sends the configuration document to the managed node and saves it as a pending change.| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Sends the configuration document to the managed node and uses the Configuration Agent to apply the configuration.| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Send the configuration document to the managed node and start using the Configuration Agent to apply the configuration. Use GetConfigurationResultOutput to retrieve result output.| 
 | [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| Sets the LCM settings that are used to control the Configuration Agent.| 
