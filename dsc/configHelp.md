@@ -17,7 +17,7 @@ You can use comment-based help in DSC configurations. Users can access the help 
 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet. For more information about PowerShell comment-based help, see 
 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
 
-The following example shows a script that contains two configurations and comment-based help for each configuration:
+The following example shows a script that contains a configuration and comment-based help for it:
 
 ```powershell
 <#
