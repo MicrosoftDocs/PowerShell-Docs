@@ -1,17 +1,16 @@
 ---
 external help file: PSITPro4_ISE.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=287355
 schema: 2.0.0
+online version: http://go.microsoft.com/fwlink/p/?linkid=287355
 ---
 
 # Get-IseSnippet
 ## SYNOPSIS
 Gets snippets that the user created.
-
 ## SYNTAX
 
 ```
-Get-IseSnippet
+Get-IseSnippet [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,7 +23,6 @@ Get-ISESnippet gets the snippet files in the Snippets directory.
 Get-IseSnippet does not get built-in snippets or snippets that are imported from modules by using the Import-IseSnippet cmdlet.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
-
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
@@ -33,7 +31,6 @@ PS C:\>Get-ISESnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
-
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
 PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
@@ -43,7 +40,6 @@ This command copies all of the user-created snippets from a group of remote comp
 
 The command uses the Invoke-Command cmdlet to run a Get-ISESnippet command on the computers in the Servers.txt file.
 A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the Destination parameter.
-
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
 PS C:\>#Parse-Snippet Function
@@ -78,7 +74,6 @@ Text:  (c) Fabrikam, Inc. 2012
 ```
 
 This function uses the Get-ISESnippet and Select-Xml cmdlets to display the Title and Text of each snippet on the local computer.
-
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 PS C:\>$psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
@@ -94,28 +89,25 @@ The Snippets property represents snippets in the current session.
 The $psISE.CurrentPowerShellTab.Snippets command returns a  Microsoft.PowerShell.Host.ISE.ISESnippet object that represents a snippet, unlike the Get-IseSnippet cmdlet, which returns a file object (System.Io.FileInfo) that represents a snippet file.
 
 The command also uses the Format-Table cmdlet to display the DisplayTitle and Description properties of the snippets in a table.
-
 ## PARAMETERS
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
 
 ## OUTPUTS
 
 ### System.IO.FileInfo
 Get-ISESnippet returns a file object that represents the snippet file.
-
 ## NOTES
-The New-IseSnippet cmdlet stores new user-created snippets in unsigned .ps1xml files.
-As such, Windows PowerShell cannot add them to a session in which the execution policy is AllSigned or Restricted.
-In a Restricted or AllSigned session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
+* The New-IseSnippet cmdlet stores new user-created snippets in unsigned .ps1xml files. As such, Windows PowerShell cannot add them to a session in which the execution policy is AllSigned or Restricted. In a Restricted or AllSigned session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
 
-To use unsigned user-created snippets that the Get-IseSnippet cmdlet returns, change the execution policy, and then restart Windows PowerShell ISE.
+  To use unsigned user-created snippets that the Get-IseSnippet cmdlet returns, change the execution policy, and then restart Windows PowerShell ISE.
 
-For more information about Windows PowerShell execution policies, see about_Execution_Policies.
-
+  For more information about Windows PowerShell execution policies, see about_Execution_Policies.
 ## RELATED LINKS
 
-[New-IseSnippet](0a6339a3-2683-4a8e-8929-90ad9a95c3e0)
+[New-IseSnippet](New-IseSnippet.md)
 
-[Import-IseSnippet](8733eecd-5e80-4289-afa4-a86973959f0e)
+[Import-IseSnippet](Import-IseSnippet.md)
 
