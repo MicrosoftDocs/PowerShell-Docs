@@ -13,7 +13,7 @@ $NonAdminCred = Get-Credential
 ```
 
 Enter the credentials for your non-administrator account when prompted.
-If you followed the [Set Up Users and Groups](set-up-users-and-groups.md) section, they will be:
+If you followed the [Set Up Users and Groups](creating-a-domain-controller.md#set-up-users-and-groups) section, they will be:
 -	Username = "OperatorUser"
 -	Password = "pa$$w0rd"
 
