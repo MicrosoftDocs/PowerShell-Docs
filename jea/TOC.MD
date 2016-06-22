@@ -1,4 +1,4 @@
-# [Just Enough Administration -**JEA**-](README.md)
+# [Just Enough Administration -JEA-](README.md)
 ##  [Introduction](introduction.md)
 ##  [Prerequisites](prerequisites.md)
 ##  [Using JEA](using-jea.md)
