@@ -7,4 +7,9 @@
 ##  [End to End - Active Directory](end-to-end---active-directory.md)
 ##  [Multi-machine Deployment and Maintenance](multi-machine-deployment-and-maintenance.md)
 ##  [Reporting on JEA](reporting-on-jea.md)
-##  [Appendixes](appendix.md)
+##  Appendixes
+###  [Key Concepts Used Throughout This Guide](key-concepts-used-throughout-this-guide.md)  
+###  [Creating a Domain Controller](creating-a-domain-controller.md)  
+###  [On Blacklisting](on-blacklisting.md)  
+###  [Considerations When Limiting Commands](considerations-when-limiting-commands.md)  
+###  [Common Role Capability Pitfalls](common-role-capability-pitfalls.md)

@@ -26,7 +26,7 @@ You will give these non-administrators access to JEA.
 Anytime you see the `$NonAdministrator` variable in a top of a script, assign it to your selected non-administrator users or groups.
 
 If you created a new domain from scratch, it's much easier.
-Please use the [Set Up Users and Groups](#set-up-users-and-groups) section in the appendix to create a non-administrator users and groups.
+Please use the [Set Up Users and Groups](creating-a-domain-controller.md#set-up-users-and-groups) section in the appendix to create a non-administrator users and groups.
 The default values of `$NonAdministrator` will be the groups created in that section.
 
 ## Set Up Maintenance Role Capability File

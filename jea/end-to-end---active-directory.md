@@ -218,7 +218,7 @@ Get your non-administrator user credentials:
 ```PowerShell
 $HelpDeskCred = Get-Credential
 ```
-If you followed the Set Up Users and Groups section, the credentials will be:
+If you followed the [Set Up Users and Groups](creating-a-domain-controller.md#set-up-users-and-groups) section, the credentials will be:
 -	Username = "HelpDeskUser"
 -	Password = "pa$$w0rd"
 
