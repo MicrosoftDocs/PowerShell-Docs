@@ -30,10 +30,10 @@
 #### [MOF-based resource in C#](authoringResourceMofCS.md)
 ### [Class-based custom resouces](authoringResourceClass.md)
 ### [Composite resources](authoringResourceComposite.md)
-### [Debugging DSC resources](debugResource.md)
-### [Calling DSC resource methods directly](directCallResource.md)
 ### [Writing a single-instance DSC resource (best practice)](singleInstance.md)
 ### [Resource authoring checklist](resourceAuthoringChecklist.md)
+## [Debugging DSC resources](debugResource.md)
+## [Calling DSC resource methods directly](directCallResource.md)
 
 # [Configuring the Local Configuration Manager (LCM)](metaConfig.md)
 ## [Configuring the LCM in PowerShell 4.0](metaConfig4.md)
