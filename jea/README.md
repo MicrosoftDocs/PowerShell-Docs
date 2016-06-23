@@ -23,7 +23,7 @@ Your DNS administrators need to have local administrator privileges to fix issue
 This approach effectively gives DNS Administrators control over your whole domain and access to all resources on that machine.
 
 With JEA in place, you can configure a role for your DNS administrators that gives them access to all the commands they need to get their job done, but nothing more.
-This means provide the appropriate access to repair a poisoned DNS cache without unintentionally giving them rights to Active Directory, or to browse the file system, or run potentially dangerous scripts.
+This means you can provide the appropriate access to repair a poisoned DNS cache without unintentionally giving them rights to Active Directory, or to browse the file system, or run potentially dangerous scripts.
 Better yet, when the JEA session is configured to use one-time privileged virtual accounts, your DNS adminstrators can connect to the server using *unprivileged* credentials and still be able to run privileged commands.
 
 ## Availability
