@@ -11,7 +11,7 @@ ms.technology:  powershell
 ---
 
 # Just Enough Administration
-Just Enough Administration -JEA- is security technology that enables delegated administration for anything that can be managed with PowerShell.
+Just Enough Administration (JEA) is a security technology that enables delegated administration for anything that can be managed with PowerShell.
 With JEA, you can:
 - **Reduce the number of administrators on your machines** by leveraging virtual accounts that perform privileged actions on behalf of regular users.
 - **Limit what users can do** by specifying which cmdlets, functions, and external commands they can run.
@@ -20,14 +20,14 @@ With JEA, you can:
 **Why is this important?**  
 Consider the common scenario where your DNS servers are co-located with your Active Directory Domain Controllers.
 Your DNS administrators need to have local administrator privileges to fix issues with the DNS server, but in order to do so you have to make them members of the highly privileged "Domain Admins" security group.
-This effectively gives them control over your whole domain and access to all resources on that machine.
+This approach effectively gives DNS Administrators control over your whole domain and access to all resources on that machine.
 
-With JEA in place, you can configure a role for your DNS admins that gives them access to all the commands they need to get their job done, but nothing more.
-This means they can easily repair a poisoned DNS cache without having rights to Active Directory, browse the file system, or run potentially dangerous scripts.
-Better yet, when the JEA session is configured to use one-time privileged virtual accounts, your DNS admins can connect to the server using *unprivileged* credentials and still be able to run privileged commands.
+With JEA in place, you can configure a role for your DNS administrators that gives them access to all the commands they need to get their job done, but nothing more.
+This means provide the appropriate access to repair a poisoned DNS cache without unintentionally giving them rights to Active Directory, or to browse the file system, or run potentially dangerous scripts.
+Better yet, when the JEA session is configured to use one-time privileged virtual accounts, your DNS adminstrators can connect to the server using *unprivileged* credentials and still be able to run privileged commands.
 
 ## Availability
-JEA is being developed alongside the upcoming Windows Server 2016 release, and is available on older versions of Windows through Windows Management Framework updates.
+JEA is being developed in parallel to Windows Server 2016, and is available on older versions of Windows through Windows Management Framework updates.
 The current release of JEA is available on the following platforms:
 
 **Windows Server**
@@ -42,9 +42,9 @@ The current release of JEA is available on the following platforms:
 
 
 ## Explore the experience guide
-Ready to create your first JEA endpoint?
-Learn how to author, deploy, and use your own JEA endpoint.
-This guide gets you started quickly with a pre-built JEA endpoint to get an idea of how the end-user experience feels, then walks you through recreating the endpoint from scratch to help explain session configurations and Role Capabilities.
+Ready to learn how to author, deploy, and use your own JEA endpoint?
+
+This guide gets you started quickly with a pre-built JEA endpoint to get an idea of what the end-user experience is like, then walks you through recreating an endpoint from scratch to help demonstrate concepts like session configurations and Role Capabilities.
 1.	[Introduction](introduction.md)   
 Briefly review why you should care about JEA
 
