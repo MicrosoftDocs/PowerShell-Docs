@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  reporting on jea
+ms.technology:  powershell
+---
+
 # Reporting on JEA
 Because JEA allows non-privileged users to run in a privileged context, logging and auditing are extremely important.
 In this section, we'll run through the tools you can use to help you with logging and reporting.
@@ -42,3 +54,4 @@ To test this out, run the following command from an administrator PowerShell pro
 ```PowerShell
 Get-PSSessionCapability -Username 'CONTOSO\OperatorUser' -ConfigurationName JEADemo
 ```
+

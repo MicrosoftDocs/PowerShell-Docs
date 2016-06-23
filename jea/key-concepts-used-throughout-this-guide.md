@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  key concepts used throughout this guide
+ms.technology:  powershell
+---
+
 # Key Concepts Used Throughout This Guide
 **What exactly is JEA?**
 
@@ -40,3 +52,4 @@ Additionally, if an allowed command/script tries to access resources outside of 
 **"Connected" User**:
 The non-administrator user who connects to the JEA endpoint and to whom roles are assigned.
 Any commands this user runs are run under the context of the RunAs User or virtual account.
+

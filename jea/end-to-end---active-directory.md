@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  end to end   active directory
+ms.technology:  powershell
+---
+
 # End to End - Active Directory
 Imagine the scope of your program has increased.
 You are now responsible for adding JEA to Domain Controllers to perform Active Directory actions.
@@ -256,3 +268,4 @@ For more information, run `Get-Help about_Functions`.
 When exposing a command, you can restrict valid arguments for specific parameters.
 A ValidateSet is a specific list of valid commands.
 A ValidatePattern is a regular expression that the arguments for that parameter must match.
+

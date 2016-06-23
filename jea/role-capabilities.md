@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  role capabilities
+ms.technology:  powershell
+---
+
 # Role Capabilities
 
 ## Overview
@@ -127,3 +139,4 @@ In order for PowerShell to detect Role Capabilities, you must put them in a "Rol
 A package of PowerShell functionality.
 It can contain PowerShell functions, cmdlets, DSC Resources, Role Capabilities, and more.
 In order to be automatically loaded, PowerShell modules must be located under a path in `$env:PSModulePath`.
+

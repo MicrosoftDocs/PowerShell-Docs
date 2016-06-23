@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  prerequisites
+ms.technology:  powershell
+---
+
 # Prerequisites
 
 ## Initial State
@@ -109,3 +121,4 @@ You don't need to enable this for JEA to work, but it will be useful in the [Rep
 Note: you can also enable system-wide PowerShell transcription through Group Policy.
 
 **Congratulations, you have now configured your computer with the demo endpoint and are ready to get started with JEA!**
+

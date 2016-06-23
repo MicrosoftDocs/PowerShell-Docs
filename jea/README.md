@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  README
+ms.technology:  powershell
+---
+
 # Just Enough Administration
 Just Enough Administration -JEA- is security technology that enables delegated administration for anything that can be managed with PowerShell.
 With JEA, you can:
@@ -71,3 +83,4 @@ These skeleton files contain all of the applicable configuration fields along wi
 
 To make authoring JEA endpoints even easier, check out the [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx) which provides a GUI with which you can author Session Configuration and Role Capability files.
 It even supports generating Role Capabilities based on PowerShell logs to start you off with the commands your users regularly run to get their jobs done.
+

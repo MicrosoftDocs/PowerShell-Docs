@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  remake the demo endpoint
+ms.technology:  powershell
+---
+
 # Remake the Demo Endpoint
 In this section, you will learn how to generate an exact replica of the demo endpoint you used in the above section.
 This will introduce core concepts that are necessary to understand JEA, including PowerShell Session Configurations and Role Capabilities.
@@ -138,3 +150,4 @@ For JEA endpoints, this must be set to RestrictedRemoteServer.
 A file containing an "over-the-shoulder" view of a PowerShell session.
 You can set PowerShell to generate transcripts for JEA sessions using the TranscriptDirectory field.
 For more information on transcripts, check out this [blog post](https://technet.microsoft.com/en-us/magazine/ff687007.aspx).
+

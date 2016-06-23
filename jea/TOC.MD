@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  TOC
+ms.technology:  powershell
+---
+
 # [Just Enough Administration -JEA-](README.md)
 ##  [Introduction](introduction.md)
 ##  [Prerequisites](prerequisites.md)
@@ -13,3 +25,4 @@
 ###  [On Blacklisting](on-blacklisting.md)  
 ###  [Considerations When Limiting Commands](considerations-when-limiting-commands.md)  
 ###  [Common Role Capability Pitfalls](common-role-capability-pitfalls.md)
+

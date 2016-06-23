@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  on blacklisting
+ms.technology:  powershell
+---
+
 ### On Blacklisting
 After playing around with JEA, you may be wondering if it is possible to blacklist commands.
 This is an understandable request, but it is not currently planned for JEA for the following reasons:
@@ -16,3 +28,4 @@ You must understand the capabilities of the commands you exposing through JEA.
 Unless you understand all of the commands that you are exposing, it is impossible for you to guarantee that a certain action is not possible.
 The burden is on you to understand what commands you are exposing, whether they are using a whitelist or a blacklist.
 The number of commands a blacklist would expose is unmanageable, so JEA is implemented using whitelists instead.
+

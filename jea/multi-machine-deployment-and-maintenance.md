@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  multi machine deployment and maintenance
+ms.technology:  powershell
+---
+
 # Multi-machine Deployment and Maintenance
 At this point, you have deployed JEA to local systems several times.
 Because your production environment probably consists of more than one machine, it's important to walk through the critical steps in the deployment process that must be repeated on each machine.
@@ -49,3 +61,4 @@ To remove your JEA configuration from your systems, use the following command on
 ```PowerShell
 Unregister-PSSessionConfiguration -Name JEADemo
 ```
+

@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  introduction
+ms.technology:  powershell
+---
+
 # Introduction
 
 ##  **Motivation**  
@@ -15,3 +27,4 @@ For example, in Windows, privileged access is largely a binary switch, forcing y
 Provides a role-based access control -RBAC- platform through PowerShell Remoting.
 *It allows specific users to perform specific administrative tasks on servers without giving them administrator rights.*
 This allows you to fill in the gaps between your existing RBAC solutions, and simplifies management of those settings.
+

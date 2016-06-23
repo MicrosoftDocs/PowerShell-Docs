@@ -1,3 +1,15 @@
+---
+description:  
+manager:  dongill
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,jea
+ms.date:  2016-06-22
+title:  using jea
+ms.technology:  powershell
+---
+
 # Using JEA
 This section focuses on understanding the end user experience of *using JEA*.
 In the prerequisites section, you created a demo JEA endpoint.
@@ -77,3 +89,4 @@ Exit-PSSession
 ```
 
 This disconnects you from the remote PowerShell session.
+
