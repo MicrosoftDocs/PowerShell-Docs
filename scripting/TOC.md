@@ -75,8 +75,6 @@
 ### [Where can I go for more learning?](getting-started/more-powershell-learning.md)
 
 ## [Core PowerShell](core-powershell/core-powershell.md)
-### [Scripting Guide](core-powershell/scripting-guide.md)
-### [Language Guide](core-powershell/language-guide.md)
 ### [Core Modules](core-powershell/core-modules.md)
 ####  [Archive Module](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Core Module](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
@@ -112,6 +110,8 @@
 ####  [Introducing the  PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE Module](core-powershell/ise/ISE-Module.md)
 ####  [Keyboard Shortcuts for the  PowerShell ISE](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+####  [The PowerShell Tab Object](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [The PowerShell Tab Collection Object](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Purpose of the PowerShell ISE Scripting Object Model](core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 ####  [The ISE Object Model Hierarchy](core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
 ####  [The ISE Add On Tool Object](core-powershell/ise/The-ISEAddOnTool-Object.md)
@@ -124,8 +124,6 @@
 ### [Console](core-powershell/console-guide.md)
 ####  [Console Command Line Reference](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
 ####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [The PowerShell Tab Object](core-powershell/ise/The-PowerShellTab-Object.md)
-####  [The PowerShell Tab Collection Object](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Using Tab Expansion](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Running Remote Commands](core-powershell/Running-Remote-Commands.md)
