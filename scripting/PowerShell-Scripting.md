@@ -45,8 +45,6 @@ registry, processes, services and similar day-to-day subjects.
 ##  [Core PowerShell](core-powershell/core-powershell.md)
 This section contains all reference material and in-depth guides for PowerShell.  
 Find in this section:
--  The [PowerShell Scripting Guide](core-powershell/scripting-guide.md)
--  The [PowerShell Language Guide](core-powershell/language-guide.md)
 -  The [PowerShell Core Modules Guide](core-powershell/core-modules.md)
 -  The [PowerShell Integrated Scripting Environment -ISE- Guide](core-powershell/ise-guide.md)
 -  The [PowerShell Console Window Guide](core-powershell/console-guide.md)
