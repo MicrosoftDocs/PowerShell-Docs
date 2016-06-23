@@ -81,7 +81,9 @@ You can type Set\-Location or use any of the built\-in Windows PowerShell aliase
 cd -Path C:\Windows
 ```
 
-`chdir -Path .. -PassThru`
+```
+chdir -Path .. -PassThru
+```
 
 ```
 sl -Path HKLM:\SOFTWARE -PassThru
