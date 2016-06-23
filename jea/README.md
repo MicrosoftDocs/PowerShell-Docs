@@ -70,11 +70,11 @@ Discover how deployment and authoring changes with scale
 Discover how to audit and report on all JEA actions and infrastructure
 
 9.	Appendixes
->  [Key Concepts Used Throughout This Guide](key-concepts-used-throughout-this-guide.md)  
->  [Creating a Domain Controller](creating-a-domain-controller.md)  
->  [On Blacklisting](on-blacklisting.md)  
->  [Considerations When Limiting Commands](considerations-when-limiting-commands.md)  
->  [Common Role Capability Pitfalls](common-role-capability-pitfalls.md)
+  - [Key Concepts Used Throughout This Guide](key-concepts-used-throughout-this-guide.md)  
+  -  [Creating a Domain Controller](creating-a-domain-controller.md)  
+  -  [On Blacklisting](on-blacklisting.md)  
+  -  [Considerations When Limiting Commands](considerations-when-limiting-commands.md)  
+  -  [Common Role Capability Pitfalls](common-role-capability-pitfalls.md)
 
 ## Start authoring your own JEA endpoints
 It's easy to author a JEA endpoint -- all you need is a JEA-enabled system and a text editor (like PowerShell ISE).
