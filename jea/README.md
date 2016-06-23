@@ -45,6 +45,7 @@ The current release of JEA is available on the following platforms:
 Ready to learn how to author, deploy, and use your own JEA endpoint?
 
 This guide gets you started quickly with a pre-built JEA endpoint to get an idea of what the end-user experience is like, then walks you through recreating an endpoint from scratch to help demonstrate concepts like session configurations and Role Capabilities.
+
 1.	[Introduction](introduction.md)   
 Briefly review why you should care about JEA
 
