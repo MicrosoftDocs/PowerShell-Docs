@@ -11,26 +11,23 @@ ms.prod:  powershell
 
 #  PowerShell Scripting
 
-This is the top page of the official PowerShell documentation set.  
-From here you'll be able to find the information you need about PowerShell.
-
 The documentation collection is organized around 4 main sections:
 
-##  1.  [What's new with PowerShell](whats-new/What-s-New-With-PowerShell.md)
+##  [What's new with PowerShell](whats-new/What-s-New-With-PowerShell.md)
 In this section you'll find all announcements about the product (version by
 version and release by release).
 
-##  2.  [PowerShell Setup](setup/setup-reference.md)
+##  [PowerShell Setup](setup/setup-reference.md)
 In this section you'll find all you need to know to install all
 versions of PowerShell, in all supported environments.  
 
 You will also find how to configure for: security, accessibility, remote access
 and management, workflows, and web access.
 
-##  3.  [Getting started with PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
+##  [Getting started with PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
 This section is for users new to PowerShell to get all the information needed
 to start using the product.  
-Find in this section:
+In this section:
 -   The [Getting Ready to Use Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)
 that explains the necessary steps needed to setup PowerShell to execute and try
 all code and command snippets presented in the 'Getting Started with PowerShell'
@@ -45,7 +42,7 @@ registry, processes, services and similar day-to-day subjects.
 -  A curated guide to other sources for
 [learning PowerShell](getting-started/more-powershell-learning.md).
 
-##  4.  [Core PowerShell](core-powershell/core-powershell.md)
+##  [Core PowerShell](core-powershell/core-powershell.md)
 This section contains all reference material and in-depth guides for PowerShell.  
 Find in this section:
 -  The [PowerShell Scripting Guide](core-powershell/scripting-guide.md)
