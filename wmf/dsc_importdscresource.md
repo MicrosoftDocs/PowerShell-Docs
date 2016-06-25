@@ -1,6 +1,7 @@
 # Import-DscResource keyword supports -ModuleVersion parameter
 
-We have added a new parameter to the `Import-DscResource` dynamic keyword available when authoring DSC configurations. Configuration authors can now specify exactly which module version to load the DSC resources from. The new syntax of the keyword is:
+We have added a new parameter to the `Import-DscResource` dynamic keyword available when authoring DSC configurations. Configuration authors can now specify exactly which module version to 
+load the DSC resources from. The new syntax of the keyword is:
 
 ```powershell
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
