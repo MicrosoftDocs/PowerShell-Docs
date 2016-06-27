@@ -1,0 +1,214 @@
+---
+title: about_Parameters
+ms.custom: na
+ms.reviewer: na
+ms.suite: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 5a921ebf-e676-4984-affe-bba0b2118290
+---
+# about_Parameters
+```  
+TOPIC  
+    about_Parameters  
+  
+SHORT DESCRIPTION  
+    Describes how to work with command parameters in Windows PowerShell.   
+  
+LONG DESCRIPTION  
+    Most Windows PowerShell commands, such as cmdlets, functions, and scripts,  
+    rely on parameters to allow users to select options or provide input. The  
+    parameters follow the command name and have the following form:  
+  
+        -<parameter_name> <parameter_value>  
+  
+    The name of the parameter is preceded by a hyphen (-), which signals to   
+    Windows PowerShell that the word following the hyphen is a parameter name.  
+    Some parameters do not require or accept a parameter value. Other parameters   
+    require a value, but do not require the parameter name in the command.  
+  
+    The type of parameters and the requirements for those parameters vary. To  
+    find information about the parameters of a command, use the Get-Help cmdlet.   
+    For example, to find information about the parameters of the Get-ChildItem  
+    cmdlet, type:  
+  
+        Get-Help Get-ChildItem  
+  
+    To find information about the parameters of a script, use the full path to  
+    the script file. For example:  
+  
+        Get-Help $home\Documents\Scripts\Get-Function.ps1  
+  
+    The Get-Help cmdlet returns various details about the command, including a  
+    description, the command syntax, information about the parameters, and examples  
+    showing how to use the parameters in a command.  
+  
+    You can also use the Parameter parameter of the Get-Help cmdlet to find  
+    information about a particular parameter. Or, you can use the Parameter parameter  
+    with the wildcard character (*) value to find information about all parameters  
+    of the command. For example, the following command gets information about all   
+    parameters of the Get-Member cmdlet:  
+  
+        Get-Help Get-Member -Parameter *  
+  
+ DEFAULT PARAMETER VALUES  
+    Optional parameters have a default value, which is the value that is used  
+    or assumed when the parameter is not specified in the command.   
+  
+    For example, the default value of the ComputerName parameter of many cmdlets  
+    is the name of the local computer. As a result, the local computer name is   
+    used in the command unless the ComputerName parameter is specified.  
+  
+    To find the default parameter value, see help topic for the cmdlet. The   
+    parameter description should include the default value.  
+  
+    You can also set a custom default value for any parameter of a cmdlet or   
+    advanced function. For information about setting custom default values, see  
+    about_Parameters_Default_Values.  
+  
+ PARAMETER ATTRIBUTE TABLE  
+  
+    When you use the Full, Parameter, or Online parameters of the Get-Help cmdlet,  
+    Get-Help displays a parameter attribute table with detailed information  
+    about the parameter.  
+  
+    This information includes the details you need to know to use the   
+    parameter. For example, the help topic for the Get-ChildItem cmdlet   
+    includes the following details about its Path parameter:  
+  
+        -path <string[]>  
+            Specifies a path of one or more locations. Wildcard characters are  
+            permitted. The default location is the current directory (.).  
+  
+        Required?                    false  
+        Position?                    1  
+        Default value                Current directory  
+        Accept pipeline input?       true (ByValue, ByPropertyName)  
+        Accept wildcard characters?  true  
+  
+    The parameter information includes the parameter syntax,  
+    a description of the parameter, and the parameter attributes.  
+    The following sections describe the parameter attributes.  
+  
+  Parameter Required?  
+    This setting indicates whether the parameter is mandatory, that  
+    is, whether all commands that use this cmdlet must include this  
+    parameter. When the value is "True" and the parameter is missing  
+    from the command, Windows PowerShell prompts you for a value for  
+    the parameter.  
+  
+  Parameter Position?  
+    This setting indicates whether you can supply a parameter's value   
+    without preceding it with the parameter name. If set to "0" or "named,"   
+    a parameter name is required. This type of parameter is referred to as  
+    a named parameter. A named parameter can be listed in any position   
+    after the cmdlet name.  
+  
+    If the "Parameter position?" setting is set to an integer other than 0,   
+    the parameter name is not required. This type of parameter is referred   
+    to as a positional parameter, and the number indicates the position   
+    in which the parameter must appear in relation to other positional   
+    parameters. If you include the parameter name for a positional   
+    parameter, the parameter can be listed in any position after the  
+    cmdlet name.  
+  
+    For example, the Get-ChildItem cmdlet has Path and Exclude parameters.   
+    The "Parameter position?" setting for Path is 1, which means that it  
+    is a positional parameter. The "Parameter position?" setting for Exclude  
+    is 0, which means that it is a named parameter.  
+  
+    This means that Path does not require the parameter name, but its  
+    parameter value must be the first or only unnamed parameter value  
+    in the command. However, because the Exclude parameter is a named   
+    parameter, you can place it in any position in the command.  
+  
+    As a result of the "Parameter position?" settings for these two   
+    parameters, you can use any of the following commands:  
+  
+        Get-ChildItem -path c:\techdocs -exclude *.ppt  
+        Get-ChildItem c:\techdocs -exclude *.ppt  
+        Get-ChildItem -exclude *.ppt -path c:\techdocs  
+        Get-ChildItem -exclude *.ppt c:\techdocs  
+  
+    If you were to include another positional parameter without including   
+    the parameter name, that parameter would have to be placed in the order   
+    specified by the "Parameter position?" setting.  
+  
+  Parameter Type  
+    This setting specifies the Microsoft .NET Framework type of the parameter   
+    value. For example, if the type is Int32, the parameter value must be an  
+    integer. If the type is string, the parameter value must be a   
+    character string. If the string contains spaces, the value must be   
+    enclosed in quotation marks, or the spaces must be preceded by the   
+    escape character (`).  
+  
+  Default Value  
+    This setting specifies the value that the parameter will assume  
+    if no other value is provided. For example, the default value of  
+    the Path parameter is often the current directory. Required  
+    parameters never have a default value. For many optional parameters,  
+    there is no default because the parameter has no effect if it is  
+    not used.  
+  
+  Accepts Multiple Values?  
+    This setting indicates whether a parameter accepts multiple  
+    parameter values. When a parameter accepts multiple values,  
+    you can type a comma-separated list as the value of the parameter  
+    in the command, or save a comma-separated list (an array) in a  
+    variable, and then specify the variable as the parameter value.  
+  
+    For example, the ServiceName parameter of the Get-Service  
+    cmdlet accepts multiple values. The following commands are both valid:  
+  
+        get-service -servicename winrm, netlogon  
+  
+        $s = "winrm", "netlogon"  
+        get-service -servicename $s  
+  
+  Accepts Pipeline Input?  
+    This setting indicates whether you can use the pipeline operator  
+    (|) to send a value to the parameter.  
+  
+    Value                    Description  
+    -----                    -----------  
+    False                    Indicates that you cannot pipe a value to the   
+                             parameter.  
+  
+    True (by Value)          Indicates that you can pipe any value to the   
+                             parameter, just so the value has the .NET   
+                             Framework type specified for the parameter or the  
+                             value can be converted to the specified .NET   
+                             Framework type.  
+  
+                             When a parameter is "True (by Value)", Windows   
+                             PowerShell tries to associate any piped values   
+                             with that parameter before it tries other methods  
+                             to interpret the command.  
+  
+    True (by Property Name)  Indicates that you can pipe a value to the   
+                             parameter, but the .NET Framework type of the   
+                             parameter must include a property with the same  
+                             name as the parameter.  
+  
+                             For example, you can pipe a value to a Name   
+                             parameter only when the value has a property   
+                             called "Name".  
+  
+  Accepts Wildcard Characters?  
+    This setting indicates whether the parameter's value can contain   
+    wildcard characters so that the parameter value can be matched to more   
+    than one existing item in the target container.  
+  
+  Common Parameters  
+    Common parameters are parameters that you can use with any cmdlet.  
+    For more information about common parameters, see about_CommonParameters  
+  
+SEE ALSO  
+    about_Command_syntax  
+    about_Comment_Based_Help  
+    about_Functions_Advanced  
+    about_Parameters_Default_Values  
+    about_Pipelines  
+    about_Wildcards  
+  
+```

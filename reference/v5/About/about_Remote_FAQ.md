@@ -1,0 +1,316 @@
+---
+title: about_Remote_FAQ
+ms.custom: na
+ms.reviewer: na
+ms.suite: na
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: edc95793-eabe-4996-8278-17f6347512ca
+---
+# about_Remote_FAQ
+## TOPIC  
+ about\_Remote\_FAQ  
+  
+## SHORT DESCRIPTION  
+ Contains questions and answers about running remote commands in [!INCLUDE[wps_1](../Token/wps_1_md.md)].  
+  
+## LONG DESCRIPTION  
+ When you work remotely, you type commands in [!INCLUDE[wps_2](../Token/wps_2_md.md)] on one computer \(known as the "local computer"\), but the commands run on another computer \(known as the "remote computer"\). The experience of working remotely should be as much like working directly at the remote computer as possible.  
+  
+```  
+Note: To use Windows PowerShell remoting, the remote computer  
+      must be configured for remoting. For more information, see  
+      about_Remote_Requirements.  
+  
+```  
+  
+### MUST BOTH COMPUTERS HAVE WINDOWS POWERSHELL INSTALLED?  
+ Yes. To work remotely, the local and remote computers must have [!INCLUDE[wps_2](../Token/wps_2_md.md)], the Microsoft .NET Framework, and the Web Services for Management \(WS\-Management\) protocol. Any files and other resources that are needed to execute a particular command must be on the remote computer.  
+  
+ Computers running [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0 and computers running [!INCLUDE[wps_2](../Token/wps_2_md.md)] 2.0 can connect to each other remotely and run remote commands. However, some features, such as the ability to disconnect from a session and reconnect to it, work only when both computers are running [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0.  
+  
+ You must have permission to connect to the remote computer, permission to run [!INCLUDE[wps_2](../Token/wps_2_md.md)], and permission to access data stores \(such as files and folders\), and the registry on the remote computer.  
+  
+ For more information, see about\_Remote\_Requirements.  
+  
+### HOW DOES REMOTING WORK?  
+ When you submit a remote command, the command is transmitted across the network to the [!INCLUDE[wps_2](../Token/wps_2_md.md)] engine on the remote computer, and it runs in the [!INCLUDE[wps_2](../Token/wps_2_md.md)] client on the remote computer. The command results are sent back to the local computer and appear in the [!INCLUDE[wps_2](../Token/wps_2_md.md)] session on the local computer.  
+  
+ To transmit the commands and receive the output, [!INCLUDE[wps_2](../Token/wps_2_md.md)] uses the WS\-Management protocol. For information about the WS\-Management protocol, see "WS\-Management Protocol" in the MSDN \(Microsoft Developer Network\) library at http:\/\/go.microsoft.com\/fwlink\/?LinkId\=144634.  
+  
+ Beginning in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0, remote sessions are stored on the remote computer. This enables you to disconnect from the session and reconnect from a different session or a different computer without interrupting the commands or losing state.  
+  
+### IS WINDOWS POWERSHELL REMOTING SECURE?  
+ When you connect to a remote computer, the system uses the user name and password credentials on the local computer or the credentials that you supply in the command to log you in to the remote computer. The credentials and the rest of the transmission are encrypted.  
+  
+ To add additional protection, you can configure the remote computer to use Secure Sockets Layer \(SSL\) instead of HTTP to listen for Windows Remote Management \(WinRM\) requests. Then, users can use the UseSSL parameters of the Invoke\-Command, New\-PSSession, and Enter\-PSSession cmdlets when establishing a connection. This option uses the more secure HTTPS channel instead of HTTP.  
+  
+### DO ALL REMOTE COMMANDS REQUIRE WINDOWS POWERSHELL REMOTING?  
+ No. Several cmdlets have a ComputerName parameter that lets you get objects from the remote computer.  
+  
+ These cmdlets do not use [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting. So, you can use them on any computer that is running [!INCLUDE[wps_2](../Token/wps_2_md.md)], even if the computer is not configured for [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting or if the computer does not meet the requirements for [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting.  
+  
+ These cmdlets include the following cmdlets:  
+  
+```  
+Get-Process  
+Get-Service  
+Get-WinEvent  
+Get-EventLog  
+Get-WmiObject  
+Test-Connection  
+  
+```  
+  
+ To find all the cmdlets with a ComputerName parameter, type:  
+  
+```  
+Get-Help * -Parameter ComputerName  
+or   
+Get-Command -ParameterName ComputerName     
+```  
+  
+ To determine whether the ComputerName parameter of a particular cmdlet requires [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting, see the parameter description. To display the parameter description, type:  
+  
+```  
+Get-Help <cmdlet-name> -Parameter ComputerName  
+```  
+  
+ For example:  
+  
+```  
+Get-Help Get-Process -Parameter Computername  
+```  
+  
+ For all other commands, use the Invoke\-Command cmdlet.  
+  
+### HOW DO I RUN A COMMAND ON A REMOTE COMPUTER?  
+ To run a command on a remote computer, use the Invoke\-Command cmdlet.  
+  
+ Enclose your command in braces \( {} \) to make it a script block. Use the ScriptBlock parameter of Invoke\-Command to specify the command.  
+  
+ You can use the ComputerName parameter of Invoke\-Command to specify a remote computer. Or, you can create a persistent connection to a remote computer \(a session\) and then use the Session parameter of Invoke\-Command to run the command in the session.  
+  
+ For example, the following commands run a Get\-Process command remotely.  
+  
+```  
+Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-Process}  
+  
+  - OR -  
+  
+Invoke-Command -Session $s -ScriptBlock {Get-Process}  
+  
+```  
+  
+ To interrupt a remote command, type CTRL\+C. The interruption request is passed to the remote computer, where it terminates the remote command.  
+  
+ For more information about remote commands, see about\_Remote and the Help topics for the cmdlets that support remoting.  
+  
+### CAN I JUST "TELNET INTO" A REMOTE COMPUTER?  
+ You can use the Enter\-PSSession cmdlet to start an interactive session with a remote computer.  
+  
+ At the Windows PowerShell prompt, type:  
+  
+```  
+Enter-PSSession <ComputerName>  
+```  
+  
+ The command prompt changes to show that you are connected to the remote computer.  
+  
+```  
+<ComputerName>\C:>  
+```  
+  
+ Now, the commands that you type run on the remote computer just as though you typed them directly on the remote computer.  
+  
+ To end the interactive session, type:  
+  
+```  
+Exit-PSSession  
+```  
+  
+ An interactive session is a persistent session that uses the WS\-Management protocol. It is not the same as using Telnet, but it provides a similar experience.  
+  
+ For more information, see Enter\-PSSession.  
+  
+### CAN I CREATE A PERSISTENT CONNECTION?  
+ Yes. You can run remote commands by specifying the name of the remote computer, its NetBIOS name, or its IP address. Or, you can run remote commands by specifying a [!INCLUDE[wps_2](../Token/wps_2_md.md)] session \(PSSession\) that is connected to the remote computer.  
+  
+ When you use the ComputerName parameter of Invoke\-Command or Enter\-PSSession, [!INCLUDE[wps_2](../Token/wps_2_md.md)] establishes a temporary connection. [!INCLUDE[wps_2](../Token/wps_2_md.md)] uses the connection to run only the current command, and then it closes the connection. This is a very efficient method for running a single command or several unrelated commands, even on many remote computers.  
+  
+ When you use the New\-PSSession cmdlet to create a PSSession, [!INCLUDE[wps_2](../Token/wps_2_md.md)] establishes a persistent connection for the PSSession. Then, you can run multiple commands in the PSSession, including commands that share data.  
+  
+ Typically, you create a PSSession to run a series of related commands that share data. Otherwise, the temporary connection created by the ComputerName parameter is sufficient for most commands.  
+  
+ For more information about sessions, see about\_PSSessions.  
+  
+### CAN I RUN COMMANDS ON MORE THAN ONE COMPUTER AT A TIME?  
+ Yes. The ComputerName parameter of the Invoke\-Command cmdlet accepts multiple computer names, and the Session parameter accepts multiple PSSessions.  
+  
+ When you run an Invoke\-Command command, [!INCLUDE[wps_2](../Token/wps_2_md.md)] runs the commands on all of the specified computers or in all of the specified PSSessions.  
+  
+ [!INCLUDE[wps_2](../Token/wps_2_md.md)] can manage hundreds of concurrent remote connections. However, the number of remote commands that you can send might be limited by the resources of your computer and its capacity to establish and maintain multiple network connections.  
+  
+ For more information, see the example in the Invoke\-Command Help topic.  
+  
+### WHERE ARE MY PROFILES?  
+ [!INCLUDE[wps_2](../Token/wps_2_md.md)] profiles are not run automatically in remote sessions, so the commands that the profile adds are not present in the session. In addition, the $profile automatic variable is not populated in remote sessions.  
+  
+ To run a profile in a session, use the Invoke\-Command cmdlet.  
+  
+ For example, the following command runs the CurrentUserCurrentHost profile from the local computer in the session in $s.  
+  
+```  
+Invoke-Command -Session $s -FilePath $profile  
+```  
+  
+ The following command runs the CurrentUserCurrentHost profile from the remote computer in the session in $s. Because the $profile variable is not populated, the command uses the explicit path to the profile.  
+  
+```  
+Invoke-Command -Session $s {. "$home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}  
+```  
+  
+ After running this command, the commands that the profile adds to the session are available in $s.  
+  
+ You can also use a startup script in a session configuration to run a profile in every remote session that uses the session configuration.  
+  
+ For more information about [!INCLUDE[wps_2](../Token/wps_2_md.md)] profiles, see about\_Profiles. For more information about session configurations, see Register\-PSSessionConfiguration.  
+  
+### HOW DOES THROTTLING WORK ON REMOTE COMMANDS?  
+ To help you manage the resources on your local computer, [!INCLUDE[wps_2](../Token/wps_2_md.md)] includes a per\-command throttling feature that lets you limit the number of concurrent remote connections that are established for each command.  
+  
+ The default is 32 concurrent connections, but you can use the ThrottleLimit parameters of the cmdlets to set a custom throttle limit for particular commands.  
+  
+ When you use the throttling feature, remember that it is applied to each command, not to the entire session or to the computer. If you are running commands concurrently in several sessions or PSSessions, the number of concurrent connections is the sum of the concurrent connections in all the sessions.  
+  
+ To find cmdlets with a ThrottleLimit parameter, type:  
+  
+```  
+Get-Help * -Parameter ThrottleLimit  
+-or-  
+Get-Command -ParameterName ThrottleLimit  
+```  
+  
+### IS THE OUTPUT OF REMOTE COMMANDS DIFFERENT FROM LOCAL OUTPUT?  
+ When you use [!INCLUDE[wps_2](../Token/wps_2_md.md)] locally, you send and receive "live" .NET Framework objects; "live" objects are objects that are associated with actual programs or system components. When you invoke the methods or change the properties of live objects, the changes affect the actual program or  component. And, when the properties of a program or component change, the properties of the object that represent them also change.  
+  
+ However, because most live objects cannot be transmitted over the network, [!INCLUDE[wps_2](../Token/wps_2_md.md)] "serializes" most of the objects sent in remote commands, that is, it converts each object into a series of XML \(Constraint Language in XML \[CLiXML\]\) data elements for transmission.  
+  
+ When [!INCLUDE[wps_2](../Token/wps_2_md.md)] receives a serialized object, it converts the XML into a deserialized object type. The deserialized object is an accurate record of the properties of the program or component at a previous time, but it is no longer "live", that is, it is no longer directly associated with the component. And, the methods are removed because they are no longer effective.  
+  
+ Typically, you can use deserialized objects just as you would use live objects, but you must be aware of their limitations. Also, the objects that are returned by the Invoke\-Command cmdlet have additional properties that help you to determine the origin of the command.  
+  
+ Some object types, such as DirectoryInfo objects and GUIDs, are converted back into live objects when they are received. These objects do not need any special handling or formatting.  
+  
+ For information about interpreting and formatting remote output, see about\_Remote\_Output.  
+  
+### CAN I RUN BACKGROUND JOBS REMOTELY?  
+ Yes. A [!INCLUDE[wps_2](../Token/wps_2_md.md)] background job is a [!INCLUDE[wps_2](../Token/wps_2_md.md)] command that runs asynchronously without interacting with the session. When you start a background job, the command prompt returns immediately, and you can continue to work in the session while the job runs even if it runs for an extended period of time.  
+  
+ You can start a background job even while other commands are running because  background jobs always run asynchronously in a temporary session.  
+  
+ You can run background jobs on a local or remote computer. By default, a background job runs on the local computer. However, you can use the AsJob parameter of the Invoke\-Command cmdlet to run any remote command as a background job. And, you can use Invoke\-Command to run a Start\-Job command remotely.  
+  
+ For more information about background jobs in [!INCLUDE[wps_2](../Token/wps_2_md.md)] , see about\_Jobs and about\_Remote\_Jobs.  
+  
+### CAN I RUN WINDOWS PROGRAMS ON A REMOTE COMPUTER?  
+ You can use [!INCLUDE[wps_2](../Token/wps_2_md.md)] remote commands to run Windows\-based programs on remote computers. For example, you can run Shutdown.exe or Ipconfig on a remote computer.  
+  
+ However, you cannot use [!INCLUDE[wps_2](../Token/wps_2_md.md)] commands to open the user interface for any program on a remote computer.  
+  
+ When you start a Windows program on a remote computer, the command is not completed, and the [!INCLUDE[wps_2](../Token/wps_2_md.md)] command prompt does not return, until the program is finished or until you press CTRL\+C to interrupt the command. For example, if you run the IpConfig program on a remote computer, the command prompt does not return until IpConfig is completed.  
+  
+ If you use remote commands to start a program that has a user interface, the program process starts, but the user interface does not appear. The [!INCLUDE[wps_2](../Token/wps_2_md.md)] command is not completed, and the command prompt does not return until you stop the program process or until you press CTRL\+C, which interrupts the command and stops the process.  
+  
+ For example, if you use a [!INCLUDE[wps_2](../Token/wps_2_md.md)] command to run Notepad on a remote computer, the Notepad process starts on the remote computer, but the Notepad user interface does not appear. To interrupt the command and restore the command prompt, press CTRL\+C.  
+  
+### CAN I LIMIT THE COMMANDS THAT USERS CAN RUN REMOTELY ON MY COMPUTER?  
+ Yes. Every remote session must use one of the session configurations on the remote computer. You can manage the session configurations on your computer \(and the permissions to those session configurations\) to determine who can run commands remotely on your computer and which commands they can run.  
+  
+ A session configuration configures the environment for the session. You can define the configuration by using an assembly that implements a new configuration class or by using a script that runs in the session. The configuration can determine the commands that are available in the session. And, the configuration can include settings that protect the computer, such as settings that limit the amount of data that the session can receive remotely in a single object or command. You can also specify a security descriptor that determines the permissions that are required to use the configuration.  
+  
+ The Enable\-PSRemoting cmdlet creates the default session configurations on your computer: Microsoft.PowerShell, Microsoft.PowerShell.Workflow, and Microsoft.PowerShell32 \(64\-bit operating systems only\). Enable\-PSRemoting sets the security descriptor for the configuration to allow only members of the Administrators group on your computer to use them.  
+  
+ You can use the session configuration cmdlets to edit the default session configurations, to create new session configurations, and to change the security descriptors of all the session configurations.  
+  
+ Beginning in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0, the New\-SessionConfigurationFile cmdlet lets you create custom session configurations by using a text file. The file includes options for setting the language mode and for specifying the cmdlets and modules that are available in sessions that use the session configuration.  
+  
+ When users use the Invoke\-Command, New\-PSSession, or Enter\-PSSession cmdlets, they can use the ConfigurationName parameter to indicate the session configuration that is used for the session. And, they can change the default configuration that their sessions use by changing the value of the $PSSessionConfigurationName preference variable in the session.  
+  
+ For more information about session configurations, see the Help for the session configuration cmdlets. To find the session configuration cmdlets, type:  
+  
+```  
+Get-Command *PSSessionConfiguration  
+```  
+  
+### WHAT ARE FAN\-IN AND FAN OUT CONFIGURATIONS?  
+ The most common [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting scenario involving multiple computers is the one\-to\-many configuration, in which one local computer \(the administrator's computer\) runs [!INCLUDE[wps_2](../Token/wps_2_md.md)] commands on numerous remote computers. This is known as the "fan\-out" scenario.  
+  
+ However, in some enterprises, the configuration is many\-to\-one, where many client computers connect to a single remote computer that is running [!INCLUDE[wps_2](../Token/wps_2_md.md)], such as a file server or a kiosk. This is known as the "fan\-in" configuration.  
+  
+ [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting supports both fan\-out and fan\-in configurations.  
+  
+ For the fan\-out configuration, [!INCLUDE[wps_2](../Token/wps_2_md.md)] uses the Web Services for Management \(WS\-Management\) protocol and the WinRM service that supports the Microsoft implementation of WS\-Management. When a local computer connects to a remote computer, WS\-Management establishes a connection and uses a plug\-in for [!INCLUDE[wps_2](../Token/wps_2_md.md)] to start the [!INCLUDE[wps_2](../Token/wps_2_md.md)] host process \(Wsmprovhost.exe\) on the remote computer. The user can specify an alternate port, an alternate session configuration, and other features to customize the remote connection.  
+  
+ To support the "fan\-in" configuration, [!INCLUDE[wps_2](../Token/wps_2_md.md)] uses Internet Information Services \(IIS\) to host WS\-Management, to load the [!INCLUDE[wps_2](../Token/wps_2_md.md)] plug\-in, and to start [!INCLUDE[wps_2](../Token/wps_2_md.md)]. In this scenario, instead of starting each [!INCLUDE[wps_2](../Token/wps_2_md.md)] session in a separate process, all [!INCLUDE[wps_2](../Token/wps_2_md.md)] sessions run in the same host process.  
+  
+ IIS hosting and fan\-in remote management is not supported in Windows XP or in Windows Server 2003.  
+  
+ In a fan\-in configuration, the user can specify a connection URI and an HTTP endpoint, including the transport, computer name, port, and application name. IIS forwards all the requests with a specified application name to the application. The default is WS\-Management, which can host Windows PowerShell.  
+  
+ You can also specify an authentication mechanism and prohibit or allow redirection from HTTP and HTTPS endpoints.  
+  
+### CAN I TEST REMOTING ON A SINGLE COMPUTER \(NOT IN A DOMAIN\)?  
+ Yes. [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting is available even when the local computer is not in a domain. You can use the remoting features to connect to sessions and to create sessions on the same computer. The features work the same as they do when you connect to a remote computer.  
+  
+ To run remote commands on a computer in a workgroup, change the following Windows settings on the computer.  
+  
+ Caution: These settings affect all users on the system and they can make the system more vulnerable to a malicious attack. Use caution when making these changes.  
+  
+ \-\-  Windows XP with SP2:  
+  
+ Use Local Security Settings \(Secpol.msc\) to change the setting of the "Network Access: Sharing and security model for local accounts" policy in Security Settings\\Local Policies\\Security Options to "Classic".  
+  
+ \-\-  Windows Vista, Windows 7, Windows 8:  
+  
+ Create the following registry entry, and then set its value to 1: LocalAccountTokenFilterPolicy in HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System  
+  
+ You can use the following [!INCLUDE[wps_2](../Token/wps_2_md.md)] command to add this entry:  
+  
+ New\-ItemProperty \` –Path HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System \` –Name LocalAccountTokenFilterPolicy –propertyType DWord –Value 1  
+  
+ \-\-  Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2012 R2:  
+  
+ No changes are needed because the default setting of the "Network Access: Sharing and security model for local accounts" policy is "Classic". Verify the setting in case it has changed.  
+  
+### CAN I RUN REMOTE COMMANDS ON A COMPUTER IN ANOTHER DOMAIN?  
+ Yes. Typically, the commands run without error, although you might need to use the Credential parameter of the Invoke\-Command, New\-PSSession, or Enter\-PSSession cmdlets to provide the credentials of a member of the Administrators group on the remote computer. This is sometimes required even when the current user is a member of the Administrators group on the local and remote computers.  
+  
+ However, if the remote computer is not in a domain that the local computer trusts, the remote computer might not be able to authenticate the user's credentials.  
+  
+ To enable authentication, use the following command to add the remote computer to the list of trusted hosts for the local computer in WinRM. Type the command at the Windows PowerShell prompt.  
+  
+```  
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value <Remote-computer-name>  
+```  
+  
+ For example, to add the Server01 computer to the list of trusted hosts on the local computer, type the following command at the [!INCLUDE[wps_2](../Token/wps_2_md.md)] prompt:  
+  
+```  
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01  
+```  
+  
+## SEE ALSO  
+ about\_Remote  
+  
+ about\_Profiles  
+  
+ about\_PSSessions  
+  
+ about\_Remote\_Jobs  
+  
+ about\_Remote\_Variables  
+  
+ Invoke\-Command  
+  
+ New\-PSSession
