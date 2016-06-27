@@ -2,6 +2,7 @@
 
 The new Update-DscConfiguration cmdlet triggers a pull from the pull server(s) defined in the meta-configuration. The behavior is often referred to as 'Pull Now'. 
 
+
 Once triggered, the pull behaves exactly the same as it would have when triggered during the regular frequency:
 
 1. The checksum for current configuration is compared to the checksum for the configuration on the pull server. 
