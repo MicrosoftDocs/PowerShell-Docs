@@ -1,6 +1,8 @@
 # Allowing for Identical Duplicate Resources in a Configuration
 
-DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we support having multiple resource instances that have identical definitions:
+DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more 
+utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we 
+support having multiple resource instances that have identical definitions:
 
 ```powershell
 Configuration IIS_FrontEnd
