@@ -2,6 +2,8 @@
 
 Modules containing DSC resources can be installed side-by-side, and DSC configurations can use a specific version of the resource that is installed on the system.
 
+For more information, see [Using resources with multiple versions](../dsc/sxsResource.md).
+
 ## Known issues
 
 In this release, the following are known issues of side-by-side installation:
