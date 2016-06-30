@@ -18,9 +18,9 @@ New-Item -Address <string> -Transport <string> [-Hostname <string>] [-Enabled] [
 ```  
   
 ## Description  
- The [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) is used to create files and folders. In the registry, [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) creates registry keys and entries.  
+ The [New-Item](New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New-Item](New-Item.md) is used to create files and folders. In the registry, [New-Item](New-Item.md) creates registry keys and entries.  
   
- New\-Item can also set the value of the items that it creates. For example, when creating a new file, [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) can add initial content to the file.  
+ New\-Item can also set the value of the items that it creates. For example, when creating a new file, [New-Item](New-Item.md) can add initial content to the file.  
   
 ## Parameters  
   
@@ -88,7 +88,7 @@ New-Item -Address <string> -Transport <string> [-Hostname <string>] [-Enabled] [
 ### \-CertificateThumbprint \<string\>  
  Specifies the thumbprint of the service certificate.  
   
- This value represents the string of two\-digit hexadecimal values in the Thumbprint field of the certificate. It specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action. Certificates are used in client certificate\-based authentication. They can be mapped only to local user accounts, and they do not work with domain accounts. To get a certificate thumbprint, use the [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19) or [Get\-ChildItem](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlets in the Windows PowerShell Cert: drive.  
+ This value represents the string of two\-digit hexadecimal values in the Thumbprint field of the certificate. It specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action. Certificates are used in client certificate\-based authentication. They can be mapped only to local user accounts, and they do not work with domain accounts. To get a certificate thumbprint, use the [Get-Item](Get-Item.md) or [Get-ChildItem](Get-ChildItem.md) cmdlets in the Windows PowerShell Cert: drive.  
   
 |||  
 |-|-|  
@@ -132,7 +132,7 @@ New-Item -Address <string> -Transport <string> [-Hostname <string>] [-Enabled] [
 |Outputs|Any|  
   
 ## Notes  
- The [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get\-PsProvider". For more information, see About\_Providers.  
+ The [New-Item](New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get\-PsProvider". For more information, see About\_Providers.  
   
 ## Example 1  
   
@@ -145,11 +145,11 @@ This command creates an HTTP listener on any IP address on the computer.
   
 ## See Also  
  [about\_Providers](assetId:///55e2974f-3314-48d2-8b1b-abdea6b303cb)   
- [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)   
- [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)   
- [Remove\-Item](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd)   
- [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)   
- [Invoke\-Item](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204)   
- [Rename\-Item](assetId:///cf036d63-7739-4f1c-ba54-d1049fbcf21d)   
- [Move\-Item](assetId:///c52264a4-b567-453b-89d5-1ead1289f21b)   
- [Copy\-Item](assetId:///2c819aec-96c0-49e9-ae3e-9a57559ec99a)
+ [Get-Item](Get-Item.md)   
+ [Set-Item](Set-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Clear-Item](Clear-Item.md)   
+ [Invoke-Item](Invoke-Item.md)   
+ [Rename-Item](Rename-Item.md)   
+ [Move-Item](Move-Item.md)   
+ [Copy-Item](Copy-Item.md)

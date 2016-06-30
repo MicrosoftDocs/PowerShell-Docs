@@ -20,7 +20,7 @@ ms.assetid: 7dfc92f4-9a88-4399-978d-6d5d224b3e76
 ## DETAILED DESCRIPTION  
  The Windows PowerShell Function provider lets you get, add, change, clear, and delete the functions and filters in Windows PowerShell.  
   
- A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where\-Object](assetId:///f4c69467-d5ce-4da2-87d5-d2ae74be8acb) command.  
+ A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where-Object](Where-Object.md) command.  
   
  In the Function: drive, functions are preceded by the label "Function" and filters are preceded by the label "Filter", but they operate properly when used in the correct context regardless of the label.  
   
@@ -32,9 +32,9 @@ ms.assetid: 7dfc92f4-9a88-4399-978d-6d5d224b3e76
   
  The Function provider exposes its data store in the Function: drive. To work with functions, you can change your location to the Function: drive \("set\-location function:"\). Or, you can work from another Windows PowerShell drive. To reference a function from another location, use the drive name \(Function:\) in the path.  
   
- The Function provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke\-Item](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204). And, it supports the [Get\-Content](assetId:///86d8b4af-af2c-4a27-9519-2c9fd420be3d) and [Set\-Content](assetId:///6fff9b86-86df-4440-b7b7-8124b22088fc) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
+ The Function provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke-Item](Invoke-Item.md). And, it supports the [Get-Content](Get-Content.md) and [Set-Content](Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
   
- All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export\-Console](assetId:///0858eece-ddcb-4525-89d1-4732c5f54c48) to save the current console.  
+ All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](Export-Console.md) to save the current console.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -202,14 +202,14 @@ copy-item -path function:prompt -destination function:oldPrompt
 |None|No options. "None" is the default.|  
 |Constant|The function cannot be deleted, and its properties cannot be changed. Constant is available only when you are creating a function. You cannot change the option of an existing function to Constant.|  
 |Private|The function is visible only in the current scope \(not in child scopes\).|  
-|ReadOnly|The properties of the function cannot be changed except by using the Force parameter. You can use [Remove\-Item](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd) to delete the function.|  
+|ReadOnly|The properties of the function cannot be changed except by using the Force parameter. You can use [Remove-Item](Remove-Item.md) to delete the function.|  
 |AllScope|The function is copied to any new scopes that are created.|  
   
 #### Cmdlets supported:  
   
--   [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106)  
+-   [New-Item](New-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ## See Also  
  [about\_Functions](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)   

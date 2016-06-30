@@ -18,9 +18,9 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
   
 ## Description  
- In file system drives, the [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
+ In file system drives, the [Add-Content](Add-Content.md) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
   
- Note: This custom cmdlet help file explains how the [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet works in a file system drive. For information about the [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet in all drives, type "[Get\-Help&#91;PSITPro3\_Core&#93;](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) \-Path $null" or see [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113278.  
+ Note: This custom cmdlet help file explains how the [Add-Content](Add-Content.md) cmdlet works in a file system drive. For information about the [Add-Content](Add-Content.md) cmdlet in all drives, type "[Get-Help](Get-Help.md)[Add-Content](Add-Content.md) \-Path $null" or see [Add-Content](Add-Content.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113278.  
   
 ## Parameters  
   
@@ -45,7 +45,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
   
  \-\- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
   
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Add-Content](Add-Content.md) cmdlet. This parameter works only in file system drives.  
   
 |||  
 |-|-|  
@@ -67,9 +67,9 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
   
 ### \-Stream \<string\>  
- Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) creates it. Enter the stream name. Wildcards are not supported.  
+ Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add-Content](Add-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Add\-Content&#91;PSITPro3\_Management&#93;](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Add-Content](Add-Content.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -194,11 +194,11 @@ The command uses the Force parameter so that the command is successful even if t
   
 ## See Also  
  [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content&#91;PSITPro3\_Management&#93;](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path&#91;PSITPro3\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [Clear-Content](Clear-Content.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-Item](Get-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Set-Content](Set-Content.md)   
+ [Test-Path](Test-Path.md)

@@ -84,5 +84,5 @@ This command uses the CLS alias of Clear-Host to clear the current display.
 ```  
   
 ## See Also  
- [Get\-Host&#91;PSITPro3\_Utility&#93;](assetId:///c06266da-6241-4680-b883-c77b31f51f9d)   
- [Out\-Host](assetId:///d170cdb8-6594-40e4-a7a5-8f56f1c4db8e)
+ [Get-Host](Get-Host.md)   
+ [Out-Host](Out-Host.md)

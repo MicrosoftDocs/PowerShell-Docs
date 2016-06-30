@@ -102,7 +102,7 @@ ms.assetid: 4c3d8d36-4f7a-4211-996f-64110e4b2eb7
   
  \-\-\- ClientCertificate  
   
- The directory hierarchy of the WSMan provider for a remote computer is the same as a local computer. However, in order to access the configuration settings of a remote computer, you need to make a connection to the remote computer using [Connect\-WSMan](assetId:///26fd4551-e1e9-4ea3-b0ed-3b468b139230). Once a connection is made to a remote computer, the name of the remote computer shows up in the provider.  
+ The directory hierarchy of the WSMan provider for a remote computer is the same as a local computer. However, in order to access the configuration settings of a remote computer, you need to make a connection to the remote computer using [Connect-WSMan](Connect-WSMan.md). Once a connection is made to a remote computer, the name of the remote computer shows up in the provider.  
   
  WSMan:\\\<Remote\_Computer\_Name\>  
   
@@ -148,7 +148,7 @@ ms.assetid: 4c3d8d36-4f7a-4211-996f-64110e4b2eb7
   
  \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-  
   
- The Listener, Plugin \(IntitializationParameters, Resources, Security\) and ClientCertificate provider paths provide specific [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) support.  Type "[get\-help](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2)[New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106)" in the relevant path for custom help.  
+ The Listener, Plugin \(IntitializationParameters, Resources, Security\) and ClientCertificate provider paths provide specific [New-Item](New-Item.md) support.  Type "[get-help](get-help.md)[New-Item](New-Item.md)" in the relevant path for custom help.  
   
 ## EXAMPLES  
   
@@ -270,43 +270,43 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### AllowRemoteShellAccess \<Boolean\>  
  Enables access to remote shells. If you set this parameter to False, new remote shell connections will be rejected by the server. The default is True.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### AllowUnEncrypted \<Boolean\>  
  Allows the client computer to request unencrypted traffic. By default, the client computer requires encrypted network traffic.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Arguments \<String\>  
  Specifies the argument string and the command\-line arguments that you want to pass to the custom shell. This parameter is optional.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Basic \<Boolean\>  
  Allows the client computer to use Basic authentication. Basic authentication is a scheme in which the user name and password are sent in clear text to the server or proxy. This method is the least secure method of authentication.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Capability \<Enumeration\>  
  Specifies an operation that is supported on this Uniform Resource Identifier \(URI\). You have to create one entry for each type of operation that the URI supports. The following are valid values:  
@@ -329,13 +329,13 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106)  
+-   [New-Item](New-Item.md)  
   
--   [Remove\-Item](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd)  
+-   [Remove-Item](Remove-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### CbtHardeningLevel \<String\>  
  Sets the policy for channel\-binding token requirements in authentication requests. The following are valid values:  
@@ -350,31 +350,31 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### CertificateThumbprint \<String\>  
  Specifies the thumbprint of the service certificate.  
   
- This value represents the string of two\-digit hexadecimal values in the Thumbprint field of the certificate. It specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action. Certificates are used in client certificate\-based authentication. They can be mapped only to local user accounts, and they do not work with domain accounts. To get a certificate thumbprint, use the [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19) or [Get\-ChildItem](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlets in the Windows PowerShell Cert: drive.  
+ This value represents the string of two\-digit hexadecimal values in the Thumbprint field of the certificate. It specifies the digital public key certificate \(X509\) of a user account that has permission to perform this action. Certificates are used in client certificate\-based authentication. They can be mapped only to local user accounts, and they do not work with domain accounts. To get a certificate thumbprint, use the [Get-Item](Get-Item.md) or [Get-ChildItem](Get-ChildItem.md) cmdlets in the Windows PowerShell Cert: drive.  
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Certificate \<Boolean\>  
  Allows the client to be used for certificate authentication. The WS\-Management client will try to find the certificate in the computer store. If the client cannot find the certificate in the computer store, the client tries to find it in the current user store. If no matching certificate is found, the user receives an error message.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### CredSSP \<Boolean\>  
  Allows the client to use Credential Security Service Provider \(CredSSP\) authentication.  
@@ -385,27 +385,27 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### HTTP \<Unsigned Short Integer\>  
  Specifies the port that the client will use when HTTP is used. By default, HTTP uses port 80. You can specify any value from 1 through 65535.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### HTTPS \<Unsigned Short Integer\>  
  Specifies the port that the client will use when HTTPS is used. By default, HTTPS uses port 443. You can specify any value from 1 through 65535.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Digest \<Boolean\>  
  Allows the client to use Digest authentication. Digest authentication is a challenge\-response scheme that uses a server\-specified data string for the challenge.  Only the client computer can initiate a Digest authentication request. The client computer sends a request to the server to authenticate and receives a token string from the server. Then, the client computer sends the resource request, including the user name and a cryptographic hash of the password combined with the token string. Digest authentication is supported for HTTP and for HTTPS. WinRM Shell client scripts and applications can specify Digest authentication, but the WS\-Management service does not accept Digest authentication.  
@@ -414,45 +414,45 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Enabled \<Boolean\>  
  Specifies whether the listener is enabled or disabled. The default is True.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### ExactMatch \<Boolean\>  
  Specifies how to use the security settings that are specified in the Sddl parameter. If the ExactMatch parameter is set to True, the security settings in Sddl are used only to authorize access attempts to the URI exactly as specified by the URI. If ExactMatch is set to false, the security settings in Sddl are used to authorize access attempts to the URIs that begin with the string specified in the URI.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### FileName \<String\>  
  Specifies an input file to use to update the management resource specified by the ResourceURI and SelectorSet.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### FileName \(Plugin\) \<String\>  
  Specifies the file name of the operations plug\-in. Any environment variables that are put in this entry will be expanded in the users' context when a request is received. Because each user could have a different version of the same environment variable, each user could have a different plug\-in. This entry cannot be blank and must point to a valid plug\-in.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### HostName \<String\>  
  Specifies the host name of the computer on which the WS\-Management \(WinRM\) service is running.  
@@ -461,20 +461,20 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### IdleTimeOut \<Unsigned Long Integer\>  
  Specifies the maximum time, in milliseconds, that the remote shell will remain open when there is no user activity in the remote shell. The remote shell is automatically deleted after the time that is specified. You can specify any values from 0 through 2147483647. A value of 0 indicates an infinite time\-out. The default is 900000 \(15 minutes\).  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### IPv4Filter \<String\>  
  Specifies the IPv4 addresses that listeners can use. The following are valid values:  
@@ -489,11 +489,11 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### IPv6Filter \<String\>  
  Specifies the IPv6 addresses that listeners can use. The following are valid values:  
@@ -508,29 +508,29 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Issuer \<String\>  
  Specifies the name of the certification authority that issued the certificate.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Kerberos \<Boolean\>  
  Allows the client to use Kerberos authentication. Kerberos authentication is a scheme in which the client and server mutually authenticate by using Kerberos certificates.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### ListeningOn \<String\>  
  Specifies the IP address or all the IP addresses on which the service is actually listening. This is derived from the Address element based upon the actual IPs associated with the listener. The value of the IP address must be in IPv4 dotted\-decimal notation or in IPv6 colon\-delimited hexadecimal notation. Multiple ListeningOn entries exist, each entry starting with ListeningOn\_. For example:  
@@ -545,52 +545,52 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### MaxBatchItems \<Unsigned Long Integer\>  
  Specifies the maximum number of elements that can be used in a Pull response. You can specify any value from 1 through 4294967295.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxConcurrentUsers \<Unsigned Long Integer\>  
  Specifies the maximum number of users who can concurrently perform remote operations on the same computer through a remote shell. New shell connections  will be rejected if they exceed the specified limit. You can specify any value from 1 through 100.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxEnvelopeSizekb \<Unsigned Long Integer\>  
  Specifies the maximum SOAP data in kilobytes. You can specify any value from 32 through 4294967295.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxMemoryPerShellMB \<Unsigned Long Integer\>  
  Specifies the maximum total amount of memory that can be allocated by an active remote shell and all its child processes. You can specify any value from 0 through 2147483647. A value of 0 means that the ability of the remote operations  to allocate memory is limited only by the available virtual memory. The default value is 0.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxProcessesPerShell \<Unsigned Long Integer\>  
  Specifies the maximum number of processes that any shell operation is allowed to start. You can specify any number from 0 through 2147483647. A value of 0 allows for an unlimited number of processes. By default, the limit is five processes per shell.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxProviderRequests \<Unsigned Long Integer\>  
  Specifies the maximum number of concurrent requests that are allowed by the service. You can specify any value from 1 through 4294967295. The limit is applied per provider.  
@@ -599,61 +599,61 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### MaxShellsPerUser \<Unsigned Long Integer\>  
  Specifies the maximum number of concurrent shells that any user can remotely open on the same system. If this policy setting is enabled, the user will not be able to open new remote shells  if the count exceeds the specified limit. If this policy setting is disabled or is not configured, by default, the limit will be set to two remote shells per user. You can specify any number from 0 through 2147483647. A value of 0 allows for an unlimited number of shells.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxTimeoutMs \<Unsigned Long Integer\>  
  Specifies the maximum time\-out in milliseconds that can be used for any request except for Pull requests. You can specify any number from  500 to 4294967295.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Name \<String\>  
- Specifies a display name for the WS\-Management session . You can use the name to refer to the session when using other cmdlets, such as [Get\-PSSession](assetId:///2992644d-5357-48a4-b61f-d8f30799f0d7) and [Enter\-PSSession](assetId:///f4fd89b4-80e9-434e-bd46-952aa8d40d4c). The name does not have to be unique to the computer or to the current session.  
+ Specifies a display name for the WS\-Management session . You can use the name to refer to the session when using other cmdlets, such as [Get-PSSession](Get-PSSession.md) and [Enter-PSSession](Enter-PSSession.md). The name does not have to be unique to the computer or to the current session.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Name \(Plugin\) \<String\>  
  Specifies the display name to use for the plug\-in. If an error is returned by the plug\-in, the display name will be put in the error XML that is returned to the client application. The name is not locale specific.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Negotiate \<Boolean\>  
  Allows the client to use Negotiate authentication. Negotiate authentication is a scheme in which the client sends a request to the server to authenticate. The server determines whether to use the Kerberos protocol or NTLM. The Kerberos protocol is selected to authenticate a domain account, and NTLM is selected for local computer accounts. The user name must be specified in the domain\\user\_name form for a domain user. The user name must be specified in the server\_name\\user\_name format for a local user on a server computer.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### NetworkDelayMs \<Unsigned Long Integer\>  
  Specifies the extra time in milliseconds that the client computer waits to accommodate for network delay time. You can specify any value from 500 through 4294967295.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Password \<String\>  
  Specifies the password for a local or a domain account. It cannot be NULL.  
@@ -664,27 +664,27 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Plugin \<\>  
  WS\-Management  plug\-ins are native dynamic link libraries \(DLLs\) that plug in to and extend the functionality of WS\-Management . The WSW\-Management Plug\-in API  provides functionality that enables a user to write plug\-ins by implementing certain APIs for supported resource URIs and operations. After the plug\-ins are configured for either the WS\-Management \(WinRM\) service or for Internet Information Services \(IIS\), the plug\-ins are loaded in the WS\-Management host or in the IIS host, respectively. Remote requests are routed to these plug\-in entry points to perform operations.  
   
 #### Cmdlets supported:  
   
--   [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106)  
+-   [New-Item](New-Item.md)  
   
--   [Remove\-Item](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd)  
+-   [Remove-Item](Remove-Item.md)  
   
 ### Port \<Unsigned Short Integer\>  
  Specifies the TCP port for which this listener is created. You can specify any value from 1 through 65535.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Resource \<String\>  
  Specifies an endpoint that represents a distinct type of management operation or value. A service exposes one or more resources, and some resources can have more than one instance. A management resource is similar to a WMI class or to a database table, and an instance is similar to an instance of the class or to a row in the table. For example, the Win32\_LogicalDisk class represents a resource. Win32\_LogicalDisk\="C:\\" is a specific instance of the resource.  
@@ -697,9 +697,9 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### ResourceURI \<String\>  
  Specifies the Uniform Resource Identifier \(URI\) that identifies a specific type of resource, such as a disk or a process, on a computer.  
@@ -712,59 +712,59 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### RootSDDL \<String\>  
  Specifies the Security Descriptor Definition Language \(SDDL\) for the access control entry. This identifies the security settings that are used to authorize access to a specified resource URI.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### SDKVersion \<String\>  
  Specifies the version of the WS\-Management plug\-in SDK.  The only valid value is 1.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Shell \<String\>  
  Specifies the process string for the custom shell. You can specify environment variables.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### ShellTimeout \<Unsigned Long Integer\>  
  Specifies the length of time before the shell times out due to inactivity.  Specify the time\-out value in milliseconds.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Subject \<String\>  
  Specifies the entity that is identified by the certificate.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### SupportsOptions \<Boolean\>  
  Specifies whether the plug\-in supports the use of options, which are passed within the wsman:OptionSet header in a request message.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Transport \<String\>  
  Specifies the transport to use to send and receive WS\-Management protocol requests and responses. The value must be either HTTP or HTTPS.  
@@ -773,7 +773,7 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### TrustedHosts \<String\>  
  List of remote computers that are connected to the local computer through a trusted network connection.  Requests are allowed to be sent to computers specified in this list when using an authentication scheme and transport that does not allow the client to authenticate the service, such as Basic authentication over HTTP.  
@@ -796,35 +796,35 @@ ClientCertificate                     Container
   
  \-\- A string without the wildcard character \(\*\): The host named by the string is trusted.  
   
- Note: When the TrustedHosts value is set with the [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3) cmdlet, the [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3) cmdlet supports an additional parameter \-Concatenate.  The following example will append a new value \(\*.domain2.com\) to the old value stored in TrustedHost:  
+ Note: When the TrustedHosts value is set with the [Set-Item](Set-Item.md) cmdlet, the [Set-Item](Set-Item.md) cmdlet supports an additional parameter \-Concatenate.  The following example will append a new value \(\*.domain2.com\) to the old value stored in TrustedHost:  
   
- [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3) .\\TrustedHosts \*.domain2.com \-Concatenate \-Force  
+ [Set-Item](Set-Item.md) .\\TrustedHosts \*.domain2.com \-Concatenate \-Force  
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### URI \<String\>  
  Identifies the URI for which access is authorized based on the value of the Sddl parameter.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
 ### URLPrefix \<String\>  
  A URL prefix on which to accept HTTP or HTTPS requests. This is a string containing only the characters a\-z, A\-Z, 9\-0, underscore \(\_\) and backslash \(\/\). The string must not start with or end with a backslash \(\/\). For example, if the computer name is SampleComputer, the WS\-Management client would specify http:\/\/SampleMachine\/URLPrefix in the destination address.  
   
 #### Cmdlets supported:  
   
--   [Clear\-Item](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)  
+-   [Clear-Item](Clear-Item.md)  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### UserName \<String\>  
  Specifies the user name for a local account or for a domain account. It cannot have a value of NULL.  
@@ -835,18 +835,18 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### Value \<String\>  
  Specifies the value of an initialization parameter, which is a plug\-in\-specific value that is used to specify configuration options.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### XMLRenderingType \<String\>  
  Specifies the format in which XML is passed to plug\-ins through the WSMAN\_DATA object. The following are valid values:  
@@ -857,56 +857,56 @@ ClientCertificate                     Container
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### xmlns \<String\>  
  A string that specifies specifies a Uniform Resource Name \(URN\) that uniquely identifies the namespace.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### lang \<String\>  
  A string that specifies a language, or a language\-region with language and region separated by a hyphen.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### HTTP \<Unsigned Short Integer\>  
  Specifies the port that the client will use when HTTP is used. By default, HTTP uses port 80. You can specify any value from 1 through 65535.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ### HTTPS \<Unsigned Short Integer\>  
  Specifies the port that the client will use when HTTPS is used. By default, HTTPS uses port 443. You can specify any value from 1 through 65535.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Get-Item](Get-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
-  
-### MaxShellRunTime \<Unsigned Long Integer\>  
- Note: This value is deprecated and the value is no longer used.  
-  
-#### Cmdlets supported:  
-  
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)  
+-   [Set-Item](Set-Item.md)  
   
 ### MaxShellRunTime \<Unsigned Long Integer\>  
  Note: This value is deprecated and the value is no longer used.  
   
 #### Cmdlets supported:  
   
--   [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)
+-   [Get-Item](Get-Item.md)  
+  
+### MaxShellRunTime \<Unsigned Long Integer\>  
+ Note: This value is deprecated and the value is no longer used.  
+  
+#### Cmdlets supported:  
+  
+-   [Get-Item](Get-Item.md)

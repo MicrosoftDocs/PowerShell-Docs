@@ -18,11 +18,11 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ```  
   
 ## Description  
- In a file system drive, the [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
+ In a file system drive, the [Get-ChildItem](Get-ChildItem.md) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
   
- By [default](../Topic/default.md), [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets non\-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
+ By [default](../Topic/default.md), [Get-ChildItem](Get-ChildItem.md) gets non\-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get-ChildItem](Get-ChildItem.md) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
   
- Note: This custom cmdlet help file explains how the [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet works in a file system drive. For information about the [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet in all drives, type "[Get\-Help&#91;PSITPro3\_Core&#93;](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \-Path $null" or see [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113308.  
+ Note: This custom cmdlet help file explains how the [Get-ChildItem](Get-ChildItem.md) cmdlet works in a file system drive. For information about the [Get-ChildItem](Get-ChildItem.md) cmdlet in all drives, type "[Get-Help](Get-Help.md)[Get-ChildItem](Get-ChildItem.md) \-Path $null" or see [Get-ChildItem](Get-ChildItem.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113308.  
   
 ## Parameters  
   
@@ -31,7 +31,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
   
  For example, to get non\-system files \(not directories\) that are encrypted or compressed, type:  
   
- [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \-Attributes \!Directory\+\!System\+Encrypted, \!Directory\+\!System\+Compressed  
+ [Get-ChildItem](Get-ChildItem.md) \-Attributes \!Directory\+\!System\+Encrypted, \!Directory\+\!System\+Compressed  
   
  To find files and folders with commonly used attributes, you can use the Attributes parameter, or the Directory, File, Hidden, ReadOnly, and System switch parameters.  
   
@@ -96,7 +96,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|  
   
 ### \-Hidden  
- Gets only hidden files and directories \(folders\).  By [default](../Topic/default.md), [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets only non\-hidden items, but you can use the Force parameter to include hidden items in the results.  
+ Gets only hidden files and directories \(folders\).  By [default](../Topic/default.md), [Get-ChildItem](Get-ChildItem.md) gets only non\-hidden items, but you can use the Force parameter to include hidden items in the results.  
   
  To get only hidden items, use the Hidden parameter, its "h" or "ah" aliases, or the Hidden value of the Attributes parameter. To exclude hidden items, omit the Hidden parameter or use the Attributes parameter.  
   
@@ -282,11 +282,11 @@ This command retrieves only the names of items in the current directory.
   
 ## See Also  
  [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content&#91;PSITPro3\_Management&#93;](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path&#91;PSITPro3\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [Clear-Content](Clear-Content.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-Item](Get-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Set-Content](Set-Content.md)   
+ [Test-Path](Test-Path.md)

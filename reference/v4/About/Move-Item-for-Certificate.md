@@ -18,11 +18,11 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 ```  
   
 ## Description  
- In the Cert: drive, [Move\-Item&#91;PSITPro4\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466) moves certificates from one certificate store to another certificate store. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, [Move-Item](Move-Item.md) moves certificates from one certificate store to another certificate store. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting by enabling you to use the [Move\-Item&#91;PSITPro4\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466) cmdlet to move certificates between certificate stores.  You cannot use this feature to move a certificate to a different certificate store location, such as a move from LocalMachine to CurrentUser, or to move certificate stores. Also, [Move\-Item&#91;PSITPro4\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466) does not move private keys.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting by enabling you to use the [Move-Item](Move-Item.md) cmdlet to move certificates between certificate stores.  You cannot use this feature to move a certificate to a different certificate store location, such as a move from LocalMachine to CurrentUser, or to move certificate stores. Also, [Move-Item](Move-Item.md) does not move private keys.  
   
- NOTE: In the Cert: drive, only the Path, Destination, WhatIf, and Confirm parameters of the [Move\-Item&#91;PSITPro4\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466) cmdlet are effective. All other parameter and parameter values are ignored.  
+ NOTE: In the Cert: drive, only the Path, Destination, WhatIf, and Confirm parameters of the [Move-Item](Move-Item.md) cmdlet are effective. All other parameter and parameter values are ignored.  
   
 ## Parameters  
   
@@ -86,7 +86,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Outputs|None<br /><br /> This cmdlet does not generate any output.|  
   
 ## Notes  
- \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module&#91;PSITPro4\_Core&#93;](assetId:///af616c24-e122-4098-930e-1e3ea2080ade) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location&#91;PSITPro4\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6) Cert:" command.  
+ \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](Set-Location.md) Cert:" command.  
   
 ## Example 1  
   
@@ -116,9 +116,9 @@ It uses a pipeline operator to send the certificates to the Move-Item cmdlet, wh
   
 ## See Also  
  [Certificate Provider](../Topic/Certificate-Provider.md)   
- [Get\-ChildItem&#91;PSITPro4\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Item&#91;PSITPro4\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Get\-PfxCertificate&#91;PSITPro4\_Security&#93;](assetId:///2f08fac8-2872-4a11-930e-af03a8c4a00d)   
- [Get\-PSDrive&#91;PSITPro4\_Management&#93;](assetId:///6c176030-de74-40f3-8f48-7b4d871c3238)   
- [New\-Item&#91;PSITPro4\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe)   
- [Remove\-Item&#91;PSITPro4\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Item](Get-Item.md)   
+ [Get-PfxCertificate](Get-PfxCertificate.md)   
+ [Get-PSDrive](Get-PSDrive.md)   
+ [New-Item](New-Item.md)   
+ [Remove-Item](Remove-Item.md)

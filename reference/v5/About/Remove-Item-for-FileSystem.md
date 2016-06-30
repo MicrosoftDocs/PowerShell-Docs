@@ -18,20 +18,20 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 ```  
   
 ## Description  
- In file system drives, the [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet deletes files and folders.  
+ In file system drives, the [Remove-Item](Remove-Item.md) cmdlet deletes files and folders.  
   
  If you use the Stream dynamic parameter, it deletes the specified alternate data stream, but does not delete the file.  
   
- Note: This custom cmdlet help file explains how the [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet works in a file system drive. For information about the [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet in all drives, type "[Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) \-Path $null" or see [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113373.  
+ Note: This custom cmdlet help file explains how the [Remove-Item](Remove-Item.md) cmdlet works in a file system drive. For information about the [Remove-Item](Remove-Item.md) cmdlet in all drives, type "[Get-Help](Get-Help.md)[Remove-Item](Remove-Item.md) \-Path $null" or see [Remove-Item](Remove-Item.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113373.  
   
 ## Parameters  
   
 ### \-Stream \<string\>  
  Deletes the specified alternate data stream from a file, but does not delete the file. Enter the stream name. Wildcards are supported. This parameter is not valid on folders.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Remove-Item](Remove-Item.md) cmdlet. This parameter works only in file system drives.  
   
- You can use the [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet to delete an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
+ You can use the [Remove-Item](Remove-Item.md) cmdlet to delete an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -151,11 +151,11 @@ If you try to specify the file type in the path, such as "-path *.csv", the cmdl
   
 ## See Also  
  [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [Clear-Content](Clear-Content.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-Item](Get-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Set-Content](Set-Content.md)   
+ [Test-Path](Test-Path.md)

@@ -44,19 +44,19 @@ ms.assetid: 0e494537-dfdf-437a-8b27-c21e30aa1f9f
   
  .\\Shell.dll  
   
- To use the FileSystem provider to view and manage files and folders, use the provider cmdlets, such as [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \("dir", "ls"\) and [Set\-Location](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6) \("cd"\). Windows PowerShell also includes a "mkdir" function \(alias \= "md"\) that uses the [New\-Item](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe) cmdlet to create a new directory.  
+ To use the FileSystem provider to view and manage files and folders, use the provider cmdlets, such as [Get-ChildItem](Get-ChildItem.md) \("dir", "ls"\) and [Set-Location](Set-Location.md) \("cd"\). Windows PowerShell also includes a "mkdir" function \(alias \= "md"\) that uses the [New-Item](New-Item.md) cmdlet to create a new directory.  
   
  Beginning in Windows PowerShell 3.0, you can get customized help topics for provider cmdlets that explain how those cmdlets behave in a file system drive.  
   
- To get the help topics that are customized for the file system drive, run a [Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a) command in a file system drive or use the Path parameter of [Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a) to specify a file system drive.  
+ To get the help topics that are customized for the file system drive, run a [Get-Help](Get-Help.md) command in a file system drive or use the Path parameter of [Get-Help](Get-Help.md) to specify a file system drive.  
   
  For example,  
   
- PS C:\\\> [Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a) get\-childitem  
+ PS C:\\\> [Get-Help](Get-Help.md) get\-childitem  
   
- PS HKLM:\\\> [Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \-path c:  
+ PS HKLM:\\\> [Get-Help](Get-Help.md)[Get-ChildItem](Get-ChildItem.md) \-path c:  
   
- Also, beginning in Windows PowerShell 3.0, the FileSystem provider supports credentials for the [New\-PSDrive](assetId:///a90ffe5f-a576-4c4a-b392-822bcec17ffd) cmdlet. For more information, see the help topic for the [New\-PSDrive](assetId:///a90ffe5f-a576-4c4a-b392-822bcec17ffd) cmdlet.  
+ Also, beginning in Windows PowerShell 3.0, the FileSystem provider supports credentials for the [New-PSDrive](New-PSDrive.md) cmdlet. For more information, see the help topic for the [New-PSDrive](New-PSDrive.md) cmdlet.  
   
 ## CAPABILITIES  
  Filter, ShouldProcess  
@@ -394,37 +394,37 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413)  
+-   [Add-Content](Add-Content.md)  
   
--   [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)  
+-   [Get-Content](Get-Content.md)  
   
--   [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)  
+-   [Set-Content](Set-Content.md)  
   
 ### Delimiter \<System.String\>  
- Specifies the delimiter that [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) uses to divide the file into objects while it reads.  
+ Specifies the delimiter that [Get-Content](Get-Content.md) uses to divide the file into objects while it reads.  
   
  The default is "\\n", the end\-of\-line character.  
   
- Therefore, by default, when reading a text file, [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) returns a collection of string objects, each of which ends with an end\-of\-line character.  
+ Therefore, by default, when reading a text file, [Get-Content](Get-Content.md) returns a collection of string objects, each of which ends with an end\-of\-line character.  
   
- When you enter a delimiter that does not exist in the file, [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) returns the entire file as a single, undelimited object.  
+ When you enter a delimiter that does not exist in the file, [Get-Content](Get-Content.md) returns the entire file as a single, undelimited object.  
   
  You can use this parameter to split a large file into smaller files by specifying a file separator, such as "End of Example", as the delimiter. The delimiter is preserved \(not discarded\) and becomes the last item in each file section.  
   
- Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) does not return anything. This is a known issue. To force [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
+ Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get-Content](Get-Content.md) does not return anything. This is a known issue. To force [Get-Content](Get-Content.md) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
   
 #### Cmdlets supported:  
   
--   [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)  
+-   [Get-Content](Get-Content.md)  
   
 ### Wait \<System.Management.Automation.SwitchParameter\>  
  Waits for content to be appended to the file. If content is appended, it returns the appended content. If the content has changed, it returns the entire file.  
   
- When waiting, [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561) checks the file once each second until you interrupt it, such as by pressing CTRL\+C.  
+ When waiting, [Get-Content](Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL\+C.  
   
 #### Cmdlets supported:  
   
--   [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)  
+-   [Get-Content](Get-Content.md)  
   
 ### Attributes \<FlagsExpression\[System.IO.FileAttributes\]\>  
  Gets files and folders with the specified attributes.  This parameter supports all attributes and lets you specify complex combinations of attributes.  
@@ -445,7 +445,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### Directory \<System.Management.Automation.SwitchParameter\>  
  Gets directories \(folders\).  
@@ -456,7 +456,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### File \<System.Management.Automation.SwitchParameter\>  
  Gets files.  
@@ -467,10 +467,10 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### Hidden \<System.Management.Automation.SwitchParameter\>  
- Gets only hidden files and directories \(folders\). By default, [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets only non\-hidden items.  
+ Gets only hidden files and directories \(folders\). By default, [Get-ChildItem](Get-ChildItem.md) gets only non\-hidden items.  
   
  The Hidden parameter was introduced in Windows PowerShell 3.0.  
   
@@ -478,7 +478,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### ReadOnly \<System.Management.Automation.SwitchParameter\>  
  Gets only read\-only files and directories \(folders\).  
@@ -489,7 +489,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### System \<System.Management.Automation.SwitchParameter\>  
  Gets only system files and directories \(folders\).  
@@ -500,49 +500,49 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### NewerThan \<System.DateTime\>  
  Returns "True" \($True\) when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False" \($False\).  
   
- Enter a DateTime object, such as one that the [Get\-Date](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Enter a DateTime object, such as one that the [Get-Date](Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
 #### Cmdlets supported:  
   
--   [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)  
+-   [Test-Path](Test-Path.md)  
   
 ### OlderThan \<System.DateTime\>  
  Returns "True" \($True\) when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False" \($False\).  
   
- Enter a DateTime object, such as one that the [Get\-Date](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Enter a DateTime object, such as one that the [Get-Date](Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
 #### Cmdlets supported:  
   
--   [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)  
+-   [Test-Path](Test-Path.md)  
   
 ### Stream \<System.String \[\]\>  
  Manages alternate data streams. Enter the stream name. Wildcards are permitted only in [Get\-Item for FileSystem](../Topic/Get-Item-for-FileSystem.md) and [Remove\-Item for FileSystem](../Topic/Remove-Item-for-FileSystem.md) commands in a file system drive.  
   
 #### Cmdlets supported:  
   
--   [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413)  
+-   [Add-Content](Add-Content.md)  
   
--   [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)  
+-   [Clear-Content](Clear-Content.md)  
   
--   [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)  
+-   [Get-Item](Get-Item.md)  
   
--   [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)  
+-   [Get-Content](Get-Content.md)  
   
--   [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)  
+-   [Remove-Item](Remove-Item.md)  
   
--   [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)  
+-   [Set-Content](Set-Content.md)  
   
 ### Raw \<SwitchParameter\>  
  Ignores newline characters. Returns contents as a single item.  
   
 #### Cmdlets supported:  
   
--   [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)  
+-   [Get-Content](Get-Content.md)  
   
 ## See Also  
  [about\_Providers](../Topic/about_Providers.md)

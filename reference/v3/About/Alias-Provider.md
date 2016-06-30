@@ -28,7 +28,7 @@ ms.assetid: dce3f872-aeff-4eb2-8b38-876cd612fc29
   
  The Alias provider exposes its data store in the Alias: drive. To work with aliases, you can change your location to the Alias: drive by using the following command:  
   
- [set\-location](assetId:///31d25e13-f05e-48ad-ae8d-9fd097ca18e8) alias:  
+ [set-location](set-location.md) alias:  
   
  Or, you can work from any other Windows PowerShell drive. To reference an alias from another location, use the Alias: drive name in the path.  
   
@@ -46,9 +46,9 @@ ms.assetid: dce3f872-aeff-4eb2-8b38-876cd612fc29
   
  When you use these cmdlets, you do not need to specify the Alias: drive in the name.  
   
- The Alias provider supports all the cmdlets that have the Item noun except for the [Invoke\-Item](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204) cmdlet. And, it supports the [Get\-Content](assetId:///86d8b4af-af2c-4a27-9519-2c9fd420be3d) and [Set\-Content](assetId:///6fff9b86-86df-4440-b7b7-8124b22088fc) cmdlets. The Alias provider does not support the cmdlets that have the ItemProperty noun. And, the Alias provider does not support the Filter parameter in any cmdlet.  
+ The Alias provider supports all the cmdlets that have the Item noun except for the [Invoke-Item](Invoke-Item.md) cmdlet. And, it supports the [Get-Content](Get-Content.md) and [Set-Content](Set-Content.md) cmdlets. The Alias provider does not support the cmdlets that have the ItemProperty noun. And, the Alias provider does not support the Filter parameter in any cmdlet.  
   
- All changes to the aliases affect the current session only. To save the changes, add the changes to the Windows PowerShell profile. Or, use the [Export\-Alias](assetId:///ea3f16e3-e8dc-48e7-9ae7-96808b8a941e) and [Import\-Alias](assetId:///b8b08aac-9069-43cb-a224-1cf8a663aad4) cmdlets.  
+ All changes to the aliases affect the current session only. To save the changes, add the changes to the Windows PowerShell profile. Or, use the [Export-Alias](Export-Alias.md) and [Import-Alias](Import-Alias.md) cmdlets.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -245,14 +245,14 @@ remove-item alias:* -force
 |None|No options. This value is the default.|  
 |Constant|The alias cannot be deleted and its properties cannot be changed. Constant is available only when you create an alias. You cannot change the option of an existing alias to Constant.|  
 |Private|The alias is visible only in the current scope, not in the child scopes.|  
-|ReadOnly|The properties of the alias cannot be changed except by using the Force parameter. You can use [Remove\-Item](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd) to delete the alias.|  
+|ReadOnly|The properties of the alias cannot be changed except by using the Force parameter. You can use [Remove-Item](Remove-Item.md) to delete the alias.|  
 |AllScope|The alias is copied to any new scopes that are created.|  
   
 #### Cmdlets supported:  
   
--   [New\-Item](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106)  
+-   [New-Item](New-Item.md)  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
 ## See Also  
  [about\_Aliases](assetId:///4b175fd4-37ef-4fe1-8e75-06205d4cea12)   

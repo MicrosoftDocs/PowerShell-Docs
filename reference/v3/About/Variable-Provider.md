@@ -42,11 +42,11 @@ ms.assetid: 78dbcbbd-7946-4b9b-b75b-146f247f821c
   
  When you use these cmdlets, you do not need to specify the Variable: drive in the name.  
   
- The Variable provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke\-Item](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204). The Variable provider supports the [Get\-Content](assetId:///86d8b4af-af2c-4a27-9519-2c9fd420be3d) and [Set\-Content](assetId:///6fff9b86-86df-4440-b7b7-8124b22088fc) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
+ The Variable provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke-Item](Invoke-Item.md). The Variable provider supports the [Get-Content](Get-Content.md) and [Set-Content](Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
   
- You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign \($\) to identify the name as a variable and the assignment operator \(\=\) to establish and change its value. For example, "$p \= [get\-process](assetId:///27a05dbd-4b69-48a3-8d55-b295f6225f15)" creates the "p" variable and stores the results of a "[get\-process](assetId:///27a05dbd-4b69-48a3-8d55-b295f6225f15)" command in it.  
+ You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign \($\) to identify the name as a variable and the assignment operator \(\=\) to establish and change its value. For example, "$p \= [get-process](get-process.md)" creates the "p" variable and stores the results of a "[get-process](get-process.md)" command in it.  
   
- All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export\-Console](assetId:///0858eece-ddcb-4525-89d1-4732c5f54c48) to save the current console.  
+ All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](Export-Console.md) to save the current console.  
   
 ## CAPABILITIES  
  ShouldProcess  

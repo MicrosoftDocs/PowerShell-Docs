@@ -22,7 +22,7 @@ Get-Verb [[-Verb] <string[]>] [<CommonParameters>]
   
  Windows PowerShell recommends that cmdlet and function names have the Verb\-Noun format and include an approved verb. This practice makes command names more consistent and predictable, and easier to use, especially for users who do not speak English as a first language.  
   
- Commands that use unapproved verbs run in Windows PowerShell. However, when you import a module that includes a command with an unapproved verb in its name, the [Import\-Module](assetId:///af616c24-e122-4098-930e-1e3ea2080ade) command displays a warning message.  
+ Commands that use unapproved verbs run in Windows PowerShell. However, when you import a module that includes a command with an unapproved verb in its name, the [Import-Module](Import-Module.md) command displays a warning message.  
   
  NOTE:   The verb list that Get\-Verb returns might not be complete. For an updated list of approved Windows PowerShell verbs with descriptions, see "Cmdlet Verbs" in MSDN at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=160773.  
   
@@ -71,7 +71,7 @@ Get-Verb [[-Verb] <string[]>] [<CommonParameters>]
   
  \-\- Other: Define other types of actions.  
   
- Some of the cmdlets that are installed with Windows PowerShell, such as [Tee\-Object](assetId:///ae5c403c-6a21-430e-a94a-74a1edee149a) and [Where\-Object](assetId:///6a70160b-cf62-48df-ae5b-0a9b173013b4), use unapproved verbs. These cmdlets are considered to be historic exceptions and their verbs are classified as "reserved."  
+ Some of the cmdlets that are installed with Windows PowerShell, such as [Tee-Object](Tee-Object.md) and [Where-Object](Where-Object.md), use unapproved verbs. These cmdlets are considered to be historic exceptions and their verbs are classified as "reserved."  
   
 ## Example 1  
   
@@ -161,4 +161,4 @@ These commands detect unapproved verbs in a module and tell which unapproved ver
 ```  
   
 ## See Also  
- [Import\-Module](assetId:///af616c24-e122-4098-930e-1e3ea2080ade)
+ [Import-Module](Import-Module.md)

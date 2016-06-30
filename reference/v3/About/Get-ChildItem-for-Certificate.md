@@ -18,15 +18,15 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 ```  
   
 ## Description  
- In the Cert: drive, the [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, the [Get-ChildItem](Get-ChildItem.md) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage \(EKU\) properties.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get-ChildItem](Get-ChildItem.md) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage \(EKU\) properties.  
   
  Also, new script properties, DnsNameList and EnhancedKeyUsageList, and SendAsTrustedIssuer, have been added to the x509Certificate2 object that represents the certificates to make it easy to search and manage the certificates.  
   
  To populate the DnsNameList property, the Certificate provider copies the content from the DNSName entry in the SubjectAlternativeName \(SAN\) extension. If the SAN extension is empty, the property is populated with content from the Subject field of the certificate. To populate the EnhancedKeyUsageList property, the Certificate provider copies the content from the Friendly Name and OID properties of the EnhancedKeyUsage \(EKU\) field in the certificate.  
   
- NOTE:  The Name parameter of [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) is not supported in the Cert: drive. To indicate items in the Cert: drive, use the Path parameter.  
+ NOTE:  The Name parameter of [Get-ChildItem](Get-ChildItem.md) is not supported in the Cert: drive. To indicate items in the Cert: drive, use the Path parameter.  
   
 ## Parameters  
   
@@ -121,7 +121,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 |Outputs|Microsoft.PowerShell.Commands.X509StoreLocation, System.Security.Cryptography.X509Certificates.X509Store, System.Security.Cryptography.X509Certificates.X509Certificate2,  System.String<br /><br /> In the Cert: drive, Get\-ChildItem returns objects that represent certificate store locations, certificate stores, and certificates. When you use the Name parameter, it returns the object name as a string.|  
   
 ## Notes  
- \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module&#91;PSITPro3\_Core&#93;](assetId:///af616c24-e122-4098-930e-1e3ea2080ade) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location&#91;PSITPro3\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6) Cert:" command.  
+ \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](Set-Location.md) Cert:" command.  
   
  \-\- The CodeSigningCert, DnsName, EKU, and ExpiringInParameter parameters are valid in all subdirectories of the Certificate provider, but they are effective only on certificates.  
   
@@ -311,9 +311,9 @@ This command gets all certificates in the LocalMachine store location that have 
   
 ## See Also  
  [Certificate Provider](../Topic/Certificate-Provider.md)   
- [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Get\-PfxCertificate&#91;PSITPro3\_Security&#93;](assetId:///2f08fac8-2872-4a11-930e-af03a8c4a00d)   
- [Get\-PSDrive&#91;PSITPro3\_Management&#93;](assetId:///6c176030-de74-40f3-8f48-7b4d871c3238)   
- [Move\-Item&#91;PSITPro3\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466)   
- [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe)   
- [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)
+ [Get-Item](Get-Item.md)   
+ [Get-PfxCertificate](Get-PfxCertificate.md)   
+ [Get-PSDrive](Get-PSDrive.md)   
+ [Move-Item](Move-Item.md)   
+ [New-Item](New-Item.md)   
+ [Remove-Item](Remove-Item.md)

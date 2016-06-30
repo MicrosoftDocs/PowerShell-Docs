@@ -24,11 +24,11 @@ ms.assetid: d3c8013c-8caa-48d7-9feb-bfef0d95926e
   
  The Registry provider lets you access a hierarchical namespace that consists of registry keys and subkeys. Registry entries and values are not components of that hierarchy. Instead, they are properties of each of the keys.  
   
- The Registry provider supports all the cmdlets that contain the Item noun \(the Item cmdlets\), such as [Get\-Item](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19), [Copy\-Item](assetId:///2c819aec-96c0-49e9-ae3e-9a57559ec99a), and [Rename\-Item](assetId:///cf036d63-7739-4f1c-ba54-d1049fbcf21d), except for the [Invoke\-Item](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204) cmdlet. Use the Item cmdlets when you work with registry keys and subkeys.  
+ The Registry provider supports all the cmdlets that contain the Item noun \(the Item cmdlets\), such as [Get-Item](Get-Item.md), [Copy-Item](Copy-Item.md), and [Rename-Item](Rename-Item.md), except for the [Invoke-Item](Invoke-Item.md) cmdlet. Use the Item cmdlets when you work with registry keys and subkeys.  
   
  The Registry provider also supports the cmdlets that contain the ItemProperty noun \(the ItemProperty cmdlets\). Use the ItemProperty cmdlets when you work with registry entries. You cannot use the cmdlets that contain the Content noun \(the Content cmdlets\) with the Registry provider.  
   
- Each registry key is protected by a security descriptor. You can use [Get\-Acl](assetId:///2a7eb90d-0ece-4fbe-bb33-f452d1af621d) to view the security descriptor of a key.  
+ Each registry key is protected by a security descriptor. You can use [Get-Acl](Get-Acl.md) to view the security descriptor of a key.  
   
 ## CAPABILITIES  
  ShouldProcess, UseTransactions  
@@ -216,7 +216,7 @@ set\-item \-path hkcu:\\environment\\testnew \-value "another default value"
 ### Type \<Microsoft.Win32.RegistryValueKind\>  
  Establishes or changes the data type of a registry value. The default is String \(REG\_SZ\).  
   
- This parameter works as designed on the [Set\-ItemProperty](assetId:///e8b394a3-e87c-42e5-ad9e-5a1576da6701) cmdlet. It is also available on the [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3) cmdlet in the registry drives, but it has no effect.  
+ This parameter works as designed on the [Set-ItemProperty](Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](Set-Item.md) cmdlet in the registry drives, but it has no effect.  
   
 |Value|Description|  
 |-----------|-----------------|  
@@ -230,9 +230,9 @@ set\-item \-path hkcu:\\environment\\testnew \-value "another default value"
   
 #### Cmdlets supported:  
   
--   [Set\-Item](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)  
+-   [Set-Item](Set-Item.md)  
   
--   [Set\-ItemProperty](assetId:///e8b394a3-e87c-42e5-ad9e-5a1576da6701)  
+-   [Set-ItemProperty](Set-ItemProperty.md)  
   
 ## See Also  
  [about\_Providers](assetId:///55e2974f-3314-48d2-8b1b-abdea6b303cb)

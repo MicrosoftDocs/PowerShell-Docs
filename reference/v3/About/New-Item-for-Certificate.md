@@ -20,11 +20,11 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```  
   
 ## Description  
- In the Cert: drive, the [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe) cmdlet creates new certificate stores in the LocalMachine certificate store location. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, the [New-Item](New-Item.md) cmdlet creates new certificate stores in the LocalMachine certificate store location. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enables you to use the [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe) cmdlet to create new certificate stores. You can also use the [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlet to delete the certificate stores that you create.  You cannot use the [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe) cmdlet to create certificates or certificate store locations, or to create certificate stores in the CurrentUser certficate store location.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enables you to use the [New-Item](New-Item.md) cmdlet to create new certificate stores. You can also use the [Remove-Item](Remove-Item.md) cmdlet to delete the certificate stores that you create.  You cannot use the [New-Item](New-Item.md) cmdlet to create certificates or certificate store locations, or to create certificate stores in the CurrentUser certficate store location.  
   
- Note:  In the Cert: drive, only the Name, Path, WhatIf, and Confirm parameters of [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe) are effective. All other parameter and parameter values are ignored.  
+ Note:  In the Cert: drive, only the Name, Path, WhatIf, and Confirm parameters of [New-Item](New-Item.md) are effective. All other parameter and parameter values are ignored.  
   
 ## Parameters  
   
@@ -84,7 +84,7 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |Outputs|System.Security.Cryptography.X509Certificates.X509Store<br /><br /> New\-Item returns an X509Store object that represents the new certificate store.|  
   
 ## Notes  
- \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module&#91;PSITPro3\_Core&#93;](assetId:///af616c24-e122-4098-930e-1e3ea2080ade) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location&#91;PSITPro3\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6) Cert:" command.  
+ \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](Set-Location.md) Cert:" command.  
   
  \-\- In the Cert: drive, the ItemType parameter is ignored. You do not need to specify an item type to create a certificate store.  
   
@@ -129,8 +129,8 @@ This command creates the TestStore certificate store on the Server01 remote comp
   
 ## See Also  
  [Certificate Provider](../Topic/Certificate-Provider.md)   
- [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Get\-PSDrive&#91;PSITPro3\_Management&#93;](assetId:///6c176030-de74-40f3-8f48-7b4d871c3238)   
- [Move\-Item&#91;PSITPro3\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466)   
- [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Item](Get-Item.md)   
+ [Get-PSDrive](Get-PSDrive.md)   
+ [Move-Item](Move-Item.md)   
+ [Remove-Item](Remove-Item.md)

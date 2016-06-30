@@ -18,9 +18,9 @@ New-Item [-ParamName <string>] [-ParamValue <string>] [-Confirm] [-WhatIf] [<Com
 ```  
   
 ## Description  
- The [New\-Item &#91;m2&#93;](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New\-Item &#91;m2&#93;](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) is used to create files and folders. In the registry, [New\-Item &#91;m2&#93;](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) creates registry keys and entries.  
+ The [New-Item](New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New-Item](New-Item.md) is used to create files and folders. In the registry, [New-Item](New-Item.md) creates registry keys and entries.  
   
- In the InitializationParameters directory, you can use the [New\-Item &#91;m2&#93;](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) cmdlet to create and configure Plugin initialization parameters.  
+ In the InitializationParameters directory, you can use the [New-Item](New-Item.md) cmdlet to create and configure Plugin initialization parameters.  
   
 ## Parameters  
   
@@ -80,7 +80,7 @@ New-Item [-ParamName <string>] [-ParamValue <string>] [-Confirm] [-WhatIf] [<Com
 |Outputs|Any|  
   
 ## Notes  
- The [New\-Item &#91;m2&#93;](assetId:///005a0eae-0d1b-4fd0-a8f8-135487794106) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get\-PsProvider". For more information, see About\_Providers.  
+ The [New-Item](New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get\-PsProvider". For more information, see About\_Providers.  
   
 ## Example 1  
   
@@ -93,11 +93,11 @@ This command creates an Initialization parameter named testparametername in the 
   
 ## See Also  
  [about\_Providers](assetId:///55e2974f-3314-48d2-8b1b-abdea6b303cb)   
- [Get\-Item &#91;m2&#93;](assetId:///0650f666-6d85-4b5f-ab57-34fd9b3d6f19)   
- [Set\-Item &#91;m2&#93;](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3)   
- [Remove\-Item &#91;m2&#93;](assetId:///f98b4219-60df-408b-bdc8-994f920fc7bd)   
- [Clear\-Item &#91;m2&#93;](assetId:///b5937fc5-533c-4ac2-9885-61db6df3067d)   
- [Invoke\-Item &#91;m2&#93;](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204)   
- [Rename\-Item &#91;m2&#93;](assetId:///cf036d63-7739-4f1c-ba54-d1049fbcf21d)   
- [Move\-Item &#91;m2&#93;](assetId:///c52264a4-b567-453b-89d5-1ead1289f21b)   
- [Copy\-Item &#91;m2&#93;](assetId:///2c819aec-96c0-49e9-ae3e-9a57559ec99a)
+ [Get-Item](Get-Item.md)   
+ [Set-Item](Set-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Clear-Item](Clear-Item.md)   
+ [Invoke-Item](Invoke-Item.md)   
+ [Rename-Item](Rename-Item.md)   
+ [Move-Item](Move-Item.md)   
+ [Copy-Item](Copy-Item.md)

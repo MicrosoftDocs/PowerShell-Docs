@@ -18,14 +18,14 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ```  
   
 ## Description  
- In a file system drive, [Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
+ In a file system drive, [Test-Path](Test-Path.md) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
   
- Note: This custom cmdlet help file explains how the [Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) cmdlet works in a file system drive. For information about the [Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) cmdlet in all drives, type "[Get\-Help&#91;PSITPro4\_Core&#93;](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) \-Path $null" or see [Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113418.  
+ Note: This custom cmdlet help file explains how the [Test-Path](Test-Path.md) cmdlet works in a file system drive. For information about the [Test-Path](Test-Path.md) cmdlet in all drives, type "[Get-Help](Get-Help.md)[Test-Path](Test-Path.md) \-Path $null" or see [Test-Path](Test-Path.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113418.  
   
 ## Parameters  
   
 ### \-OlderThan \<DateTime\>  
- Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get\-Date&#91;PSITPro4\_Utility&#93;](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
  OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
   
@@ -38,7 +38,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|  
   
 ### \-NewerThan \<DateTime\>  
- Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get\-Date&#91;PSITPro4\_Utility&#93;](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
  NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
   
@@ -152,11 +152,11 @@ The NewerThan parameter works only in file system drives.
   
 ## See Also  
  [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content&#91;PSITPro4\_Management&#93;](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content&#91;PSITPro4\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem&#91;PSITPro4\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content&#91;PSITPro4\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item&#91;PSITPro4\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item&#91;PSITPro4\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content&#91;PSITPro4\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path&#91;PSITPro4\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [Clear-Content](Clear-Content.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-Item](Get-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Set-Content](Set-Content.md)   
+ [Test-Path](Test-Path.md)

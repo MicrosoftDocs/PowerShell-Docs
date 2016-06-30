@@ -20,11 +20,11 @@ ms.assetid: 3f743541-d0c6-4670-809a-b16fb01f7c4d
 ## DETAILED DESCRIPTION  
  The Windows PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. It also lets you open the Certificates snap\-in for the Microsoft Management Console \(MMC\).  
   
- NOTE: Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](../Topic/Certificate-Provider.md) is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module&#91;PSITPro3\_Core&#93;](assetId:///af616c24-e122-4098-930e-1e3ea2080ade) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location&#91;PSITPro3\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6) Cert:" command.  
+ NOTE: Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](../Topic/Certificate-Provider.md) is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](Set-Location.md) Cert:" command.  
   
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting by adding support for cmdlets and new dynamic parameters that create and delete certificate stores in the LocalMachine certificate store location, and find, move, and delete certificates.  
   
- New dynamic parameters, DnsName, EKU, SSLServerAuthentication, and ExpiringInDays have been added to the [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet in the Cert: drive. Also, a DeleteKey dynamic parameter has been added to [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) in the Cert: drive.  
+ New dynamic parameters, DnsName, EKU, SSLServerAuthentication, and ExpiringInDays have been added to the [Get-ChildItem](Get-ChildItem.md) cmdlet in the Cert: drive. Also, a DeleteKey dynamic parameter has been added to [Remove-Item](Remove-Item.md) in the Cert: drive.  
   
  New script properties, DnsNameList, EnhancedKeyUsageList, and SendAsTrustedIssuer, have been added to the x509Certificate2 object that represents the certificates to make it easy to search and manage the certificates.  
   
@@ -44,11 +44,11 @@ ms.assetid: 3f743541-d0c6-4670-809a-b16fb01f7c4d
   
  \-\- X.509 certificates \(System.Security.Cryptography.X509Certificates.X509Certificate2\), each of which represent an X.509 certificate on the computer. Certificates are identified by their thumbprints.  
   
- In Windows PowerShell 3.0, the Certificate provider supports the [Get\-Location&#91;PSITPro3\_Management&#93;](assetId:///b4c8d674-ba23-4bdf-8322-1f08acdc0ca9), [Set\-Location&#91;PSITPro3\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6), [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa), [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190), [Invoke\-Item&#91;PSITPro3\_Management&#93;](assetId:///61bc0652-39d8-44fe-9ff4-476ae75c38c8), [Move\-Item&#91;PSITPro3\_Management&#93;](assetId:///de1b4217-de99-45cd-a12c-35e87b0c8466), [New\-Item&#91;PSITPro3\_Management&#93;](assetId:///67038d02-6598-49c6-b5bd-77b59d445abe), and [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) cmdlets.  
+ In Windows PowerShell 3.0, the Certificate provider supports the [Get-Location](Get-Location.md), [Set-Location](Set-Location.md), [Get-Item](Get-Item.md), [Get-ChildItem](Get-ChildItem.md), [Invoke-Item](Invoke-Item.md), [Move-Item](Move-Item.md), [New-Item](New-Item.md), and [Remove-Item](Remove-Item.md) cmdlets.  
   
- In Windows PowerShell 2.0, the Certificate provider supports the [Get\-Location&#91;PSITPro3\_Management&#93;](assetId:///b4c8d674-ba23-4bdf-8322-1f08acdc0ca9), [Set\-Location&#91;PSITPro3\_Management&#93;](assetId:///d7f353cd-ebd7-462a-bd57-1498dc8b88a6), [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa), [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190), and [Invoke\-Item&#91;PSITPro3\_Management&#93;](assetId:///61bc0652-39d8-44fe-9ff4-476ae75c38c8) cmdlets.  
+ In Windows PowerShell 2.0, the Certificate provider supports the [Get-Location](Get-Location.md), [Set-Location](Set-Location.md), [Get-Item](Get-Item.md), [Get-ChildItem](Get-ChildItem.md), and [Invoke-Item](Invoke-Item.md) cmdlets.  
   
- In addition, Windows PowerShell Security module \(Microsoft.PowerShell.Security\), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get\-Command&#91;PSITPro3\_Core&#93;](assetId:///59c6d302-6e8c-48b7-a6f6-f0172df936ad) \-module \*security".  
+ In addition, Windows PowerShell Security module \(Microsoft.PowerShell.Security\), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get-Command](Get-Command.md) \-module \*security".  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -341,9 +341,9 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)  
+-   [Get-Item](Get-Item.md)  
   
--   [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### DnsName \<Microsoft.PowerShell.Commands.DnsNameRepresentation\>  
  Gets certificates that have the specified domain name or name pattern in the DNSNameList property of the certificate.  
@@ -356,7 +356,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### EKU \<System.String\>  
  Gets certificates that have the specified text or text pattern in the EnhancedKeyUsageList property of the certificate. Wildcard characters \(\*\) are permitted. The EnhancedKeyUsageList property contains the friendly name and the OID fields of the EKU.  
@@ -369,7 +369,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### ExpiringInDays \<System.Int32\>  
  Gets certificates that are expiring in or before the specified number of days. Enter an integer. A value of 0 \(zero\) gets certificates that have expired.  
@@ -380,7 +380,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### SSLServerAuthentication \<System.Management.Automation.SwitchParameter\>  
  Gets only server certificates for SSL web hosting. This parameter gets certificates that have "Server Authentication" in their EnhancedKeyUsageList property value.  
@@ -393,12 +393,12 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)  
+-   [Get-ChildItem](Get-ChildItem.md)  
   
 ### DeleteKey \<System.Management.Automation.SwitchParameter\>  
  Deletes the associated private key when it deletes the certificate.  
   
- To delete a private key that is associated with a user certificate in the Cert:\\CurrentUser store on a remote computer, you must use delegated credentials. When using the [Invoke\-Command&#91;PSITPro3\_Core&#93;](assetId:///906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet to run a [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395) command remotely, after considering the security risks, use the CredSSP parameter to enable delegation.  
+ To delete a private key that is associated with a user certificate in the Cert:\\CurrentUser store on a remote computer, you must use delegated credentials. When using the [Invoke-Command](Invoke-Command.md) cmdlet to run a [Remove-Item](Remove-Item.md) command remotely, after considering the security risks, use the CredSSP parameter to enable delegation.  
   
  This parameter is valid in all subdirectories of the Certificate provider, but it is effective only on certificates.  
   
@@ -406,11 +406,11 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
   
 #### Cmdlets supported:  
   
--   [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)  
+-   [Remove-Item](Remove-Item.md)  
   
 ## See Also  
  [about\_Providers](../Topic/about_Providers.md)   
  [about\_Signing](../Topic/about_Signing.md)   
- [Get\-AuthenticodeSignature&#91;PSITPro3\_Security&#93;](assetId:///36e5e640-2125-476e-98d9-495977315f14)   
- [Set\-AuthenticodeSignature&#91;PSITPro3\_Security&#93;](assetId:///f3c13299-4463-48af-83ea-86de4a239509)   
- [Get\-PfxCertificate&#91;PSITPro3\_Security&#93;](assetId:///2f08fac8-2872-4a11-930e-af03a8c4a00d)
+ [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)   
+ [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)   
+ [Get-PfxCertificate](Get-PfxCertificate.md)

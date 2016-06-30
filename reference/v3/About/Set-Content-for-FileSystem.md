@@ -18,9 +18,9 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
   
 ## Description  
- In file system drives, the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
+ In file system drives, the [Set-Content](Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
   
- Note: This custom cmdlet help file explains how the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet works in a file system drive. For information about the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet in all drives, type "[Get\-Help&#91;PSITPro3\_Core&#93;](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) \-Path $null" or see [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113392.  
+ Note: This custom cmdlet help file explains how the [Set-Content](Set-Content.md) cmdlet works in a file system drive. For information about the [Set-Content](Set-Content.md) cmdlet in all drives, type "[Get-Help](Get-Help.md)[Set-Content](Set-Content.md) \-Path $null" or see [Set-Content](Set-Content.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113392.  
   
 ## Parameters  
   
@@ -45,7 +45,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
   
  \-\- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
   
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Set-Content](Set-Content.md) cmdlet. This parameter works only in file system drives.  
   
 |||  
 |-|-|  
@@ -67,11 +67,11 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
   
 ### \-Stream \<string\>  
- Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) creates it. Enter the stream name. Wildcards are not supported.  
+ Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set-Content](Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](Set-Content.md) cmdlet. This parameter works only in file system drives.  
   
- You can use the [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
+ You can use the [Set-Content](Set-Content.md) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -183,11 +183,11 @@ The command uses the Force parameter so that the command is successful even if t
   
 ## See Also  
  [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content&#91;PSITPro3\_Management&#93;](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem&#91;PSITPro3\_Management&#93;](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content&#91;PSITPro3\_Management&#93;](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item&#91;PSITPro3\_Management&#93;](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item&#91;PSITPro3\_Management&#93;](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content&#91;PSITPro3\_Management&#93;](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path&#91;PSITPro3\_Management&#93;](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [Clear-Content](Clear-Content.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-ChildItem](Get-ChildItem.md)   
+ [Get-Content](Get-Content.md)   
+ [Get-Item](Get-Item.md)   
+ [Remove-Item](Remove-Item.md)   
+ [Set-Content](Set-Content.md)   
+ [Test-Path](Test-Path.md)

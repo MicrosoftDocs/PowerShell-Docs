@@ -216,7 +216,7 @@ set\-item \-path hkcu:\\environment\\testnew \-value "another default value"
 ### Type \<Microsoft.Win32.RegistryValueKind\>  
  Establishes or changes the data type of a registry value. The default is String \(REG\_SZ\).  
   
- This parameter works as designed on the [Set\-ItemProperty &#91;m2&#93;](assetId:///e8b394a3-e87c-42e5-ad9e-5a1576da6701) cmdlet. It is also available on the [Set\-Item &#91;m2&#93;](assetId:///2ae0f9bc-105b-4363-8410-7f94a3c12fa3) cmdlet in the registry drives, but it has no effect.  
+ This parameter works as designed on the [Set-ItemProperty](Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](Set-Item.md) cmdlet in the registry drives, but it has no effect.  
   
 |Value|Description|  
 |-----------|-----------------|  
