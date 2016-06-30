@@ -1,6 +1,6 @@
 ---
 title: example template of a feature or scenario writeup
-author:  
+contributor:  
 ---
 
 >Note: provide a proposed descriptive title and a brief description
