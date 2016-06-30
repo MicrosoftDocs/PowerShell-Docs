@@ -1,6 +1,6 @@
 # Set-DscLocalConfigurationManager cmdlet supports -force parameter
 
-We have added a support for new parameter to Set-DscLocalConfigurationManager mdlet. This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.
+We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet. This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.
 
 The experience looks like this when trying to set meta configuration without –Force parameter.
 ```powershell
