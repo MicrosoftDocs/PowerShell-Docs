@@ -27,19 +27,37 @@ Starting with version 5.1, PowerShell is available in different editions which d
 - [Prevent script execution unless run on a comaptible edition of PowerShell]()
 
 ## Module Analysis Cache ##
-Starting with version 5.1, PowerShell provides the following control
-over the file that is used to cache data about a module like the commands it exports.
-
-`TODO` need to either provide a better description of analysis cache and the 'control' options beyond turning it off/on unless that is the limits to the changes introduced.
+Starting with WMF 5.1, PowerShell provides control
+over the file that is used to cache data about a module, such as the commands it exports.
 
 By default, this cache is stored in the file `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 The cache is typically read at startup while searching for a command
 and is written on a background thread sometime after a module is imported.
 
-**Learn more about controlling module analysis cache**
-- [Change the default location of the cache]()
-- [Enable or disable file cache]()
-- [Enable or disable cache cleanup]()
+To change the default location of the cache, set the environment variable PSModuleAnalysisCachePath
+before starting PowerShell. Changes to this environment variable will only affect children processes.
+The value should name a full path (including filename) that PowerShell has permission to create and write files.
+To disable the file cache, set this value to an invalid location, for example:
+
+```PowerShell
+$env:PSModuleAnalysisCachePath = 'nul'
+```
+
+This sets the path to an invalid device. Iff PowerShell can't write to the path, no error is returned, but you can see error reporting via a tracer:
+
+```PowerShell
+Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
+```
+
+When writing out the cache, PowerShell will check for modules that no longer exist
+to avoid an unnecessarily large cache.
+Sometimes these checks are not desirable, in which case you can turn them off by setting
+
+```PowerShell
+$env:PSDisableModuleAnalysisCacheCleanup = 1
+```
+
+Setting this environment variable will take effect immediately in the current process.
 
 ## PowerShell console improvements
 
@@ -64,7 +82,7 @@ else
 }
 ```
 Here is a complete [example](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) that can be used to highlight matches from Select-String.
-Save the example in a file named `MatchInfo.format.ps1xml`, the to use it, in your profile or elsewhere, run `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
+Save the example in a file named `MatchInfo.format.ps1xml`, then to use it, in your profile or elsewhere, run `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
 Note that VT100 escape sequences are only supported starting with the Windows 10 Anniversary update; they are not supported on earlier systems.   
 
