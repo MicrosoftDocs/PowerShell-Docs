@@ -1,0 +1,26 @@
+# PowerShell Gallery Dispute Resolution
+
+This document is a recommended dispute resolution process for community members to help resolve disputes with other PowerShell Gallery publishers.
+
+## Process
+
+1. Contact the owners of the item you have the dispute with using the **Contact Owners** link on the item details page.  Explain your issue in a kind and direct manner.
+2. Send a copy of your message to [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) so that PowerShell Gallery Administrators are aware of your dispute.
+3. Wait a maximum of 30 days and if you don’t have resolution notify [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) again.  The PowerShellGallery.com support team will get involved and try to work this out.
+
+
+## Prohibited Use
+
+The following things are not allowed on the public PowerShell Gallery and will be immediately removed without discussion.  Item owners will be notified if their item is removed.
+
+- Malware, adware, or any kind of spyware
+- Items that are designed to harm the user systems;
+- Copyright infringement or license violation;
+- Illegal content;
+- "Squatting" on item names that you plan to use but are not actually using. This also includes publishing items that have zero productive content. Either publish code and get going or concede the name to someone who actually has a product to ship; and
+- Attempting to make the gallery do something that it is not explicitly designed to do.
+
+
+If you find a item that is in violation of any of these items, click the ‘Report Abuse’ link on the item details page and submit a report.
+
+**This policy is subject to change at the discretion of the PowerShell Gallery.**
