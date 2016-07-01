@@ -1,6 +1,6 @@
 ---
 title: PackageManagement (aka. OneGet) Improvements
-author:  jianyunt, quoctruong
+contributor:  jianyunt, quoctruong
 ---
 
 >Note: provide a proposed descriptive title and a brief description

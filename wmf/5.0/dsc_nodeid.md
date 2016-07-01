@@ -13,5 +13,5 @@ These features are as follows:
 **Note:** These features and functionality have been added and do not replace the existing pull features and concepts. You can use these new features or the older ones with the new pull 
 server shipping in this release.
 
-For more information, see [Setting up a pull client using configuration names](../dsc/pullClientConfigNames.md)
+For more information, see [Setting up a pull client using configuration names](../../dsc/pullClientConfigNames.md)
 

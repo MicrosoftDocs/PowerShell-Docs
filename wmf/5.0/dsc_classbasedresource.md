@@ -9,4 +9,4 @@ The major differences between a class-based DSC resource and a cmdlet DSC resour
 * A **DSCResource** subfolder in the module folder is not required.
 * A PowerShell module file can contain multiple DSC resource classes.
 
-For more information, see [Writing a custom DSC resource with PowerShell classes](../dsc/authoringResourceClass.md).
+For more information, see [Writing a custom DSC resource with PowerShell classes](../../dsc/authoringResourceClass.md).
