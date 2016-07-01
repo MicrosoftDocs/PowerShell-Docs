@@ -124,7 +124,7 @@ At the PowerShell cmdlet layer, [Install-Module](http://go.microsoft.com/fwlink/
 
 At the PackageManagement package provider layer, the PSModule package provider actually calls into other PackageManagement package providers. For example, when you are working with NuGet-based galleries (such as the PowerShell Gallery), the PSModule package provider uses the NuGet Package Provider to work with the repository.
 
-![PowerShellGet Architecture](images\powershellgetArchitecture.png)
+![PowerShellGet Architecture](Images/powershellgetArchitecture.png)
 
 Figure 1: PowerShellGet Architecture
 
