@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289607
 schema: 2.0.0
 ---
@@ -10,19 +10,19 @@ Removes modules from the current session.
 
 ## SYNTAX
 
-### name
+### UNNAMED_PARAMETER_SET_1
 ```
-Remove-Module [-Name] <String[]> [-Force] [-WhatIf] [-Confirm]
-```
-
-### FullyQualifiedName
-```
-Remove-Module [-FullyQualifiedName] <ModuleSpecification[]> [-Force] [-WhatIf] [-Confirm]
+Remove-Module [-ModuleInfo] <PSModuleInfo[]> [-Force] [-Confirm] [-WhatIf]
 ```
 
-### ModuleInfo
+### UNNAMED_PARAMETER_SET_2
 ```
-Remove-Module [-ModuleInfo] <PSModuleInfo[]> [-Force] [-WhatIf] [-Confirm]
+Remove-Module [-Name] <String[]> [-Force] [-Confirm] [-WhatIf]
+```
+
+### UNNAMED_PARAMETER_SET_3
+```
+Remove-Module [-FullyQualifiedName] <ModuleSpecification[]> [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
@@ -35,21 +35,21 @@ It affects only the current Windows PowerShell session.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Remove a module
 ```
-PS C:\>Remove-Module -Name BitsTransfer
+PS C:\>Remove-Module -Name "BitsTransfer"
 ```
 
 This command removes the BitsTransfer module from the current session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Remove all modules
 ```
 PS C:\>Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Remove modules by using the pipeline
 ```
 PS C:\>"FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
@@ -78,10 +78,10 @@ The Verbose messages show the items that are removed.
 The messages differ because the BitsTransfer module includes an assembly that implements its cmdlets and a nested module with its own assembly.
 The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Remove a module by using ModuleInfo
 ```
 PS C:\>$a = Get-Module BitsTransfer
-PS C:\>Remove-Module -ModuleInfo $a
+PS C:\> Remove-Module -ModuleInfo $a
 ```
 
 This command uses the ModuleInfo parameter to remove the BitsTransfer module.
@@ -89,14 +89,14 @@ This command uses the ModuleInfo parameter to remove the BitsTransfer module.
 ## PARAMETERS
 
 ### -Force
-Removes read-only modules.
+Indicates that this cmdlet removes read-only modules.
 By default, Remove-Module removes only read-write modules.
 
 The ReadOnly and ReadWrite values are stored in AccessMode property of a module.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UNNAMED_PARAMETER_SET_1, UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: False
@@ -107,17 +107,17 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedName
-The ReadOnly and ReadWrite values are stored in AccessMode property of a module.
+Specifies the fully qualified names of modules to remove.
 
 ```yaml
 Type: ModuleSpecification[]
-Parameter Sets: FullyQualifiedName
+Parameter Sets: UNNAMED_PARAMETER_SET_3
 Aliases: 
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True(ByValue)
 Accept wildcard characters: False
 ```
 
@@ -128,7 +128,7 @@ You can also pipe module objects to Remove-Module.
 
 ```yaml
 Type: PSModuleInfo[]
-Parameter Sets: ModuleInfo
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: True
@@ -145,7 +145,7 @@ You can also pipe name strings to Remove-Module.
 
 ```yaml
 Type: String[]
-Parameter Sets: name
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -161,7 +161,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -178,7 +178,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -190,20 +190,20 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo
-You can pipe module names (strings) and module objects to Remove-Module.
+You can pipe module names and module objects to Remove-Module.
 
 ## OUTPUTS
 
 ### None
-Remove-Module does not generate any output.
+This cmdlet does not generate any output.
 
 ## NOTES
 
 ## RELATED LINKS
 
-[Get-Module]()
+[Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
 
-[Import-Module]()
+[Import-Module](af616c24-e122-4098-930e-1e3ea2080ade)
 
-[about_Modules]()
+[about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
 

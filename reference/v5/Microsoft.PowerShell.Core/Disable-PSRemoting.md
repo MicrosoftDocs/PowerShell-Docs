@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289573
 schema: 2.0.0
 ---
@@ -11,7 +11,7 @@ Prevents remote users from running commands on the local computer.
 ## SYNTAX
 
 ```
-Disable-PSRemoting [-Force] [-WhatIf] [-Confirm]
+Disable-PSRemoting [-Force] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
@@ -19,17 +19,17 @@ The Disable-PSRemoting cmdlet prevents users on other computers from running com
 
 Disable-PSRemoting blocks remote access to all session configurations on the local computer.
 This prevents remote users from creating temporary or persistent sessions to the local computer.
-Disable-PSRemoting does not prevent users of the local computer from creating sessions ("PSSessions") on the local computer or remote computers.
+Disable-PSRemoting does not prevent users of the local computer from creating sessions (PSSessions) on the local computer or remote computers.
 
 To re-enable remote access to all session configurations, use the Enable-PSRemoting cmdlet.
 To enable remote access to selected session configurations, use the AccessMode parameter of the Set-PSSessionConfiguration cmdlet.
 You can also use the Enable-PSSessionConfiguration and Disable-PSSessionConfiguration cmdlets to enable and disable session configurations for all users.
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
-In Windows PowerShell 2.0, Disable-PSRemoting prevents all users from creating user-managed sessions ("PSSessions") to the local computer.
-In Windows PowerShell 3.0, Disable-PSRemoting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed "loopback" sessions.
+In Windows PowerShell 2.0, Disable-PSRemoting prevents all users from creating user-managed sessions to the local computer.
+In Windows PowerShell 3.0, Disable-PSRemoting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed loopback sessions.
 
-To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
+To run this cmdlet, start Windows PowerShell with the Run as administrator option.
 
 CAUTION: On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine, do not use Windows PowerShell 2.0 to run the Enable-PSRemoting and Disable-PSRemoting cmdlets.
 The commands might appear to succeed, but the remoting is not configured correctly.
@@ -37,21 +37,21 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Prevent remote access to all session configurations
 ```
 PS C:\>Disable-PSRemoting
 ```
 
 This command prevents remote access to all session configurations on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Prevent remote access to all session configurations without confirmation prompt
 ```
 PS C:\>Disable-PSRemoting -Force
 ```
 
 This command prevents remote access all session configurations on the computer without prompting.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Effects of running this cmdlet
 ```
 PS C:\>Disable-PSRemoting -Force
 
@@ -72,7 +72,7 @@ message : Access is denied. For more information, see the about_Remote_Troublesh
 ```
 
 This example shows the effect of using the Disable-PSRemoting cmdlet.
-To run this command sequence, start Windows PowerShell with the "Run as administrator" option.
+To run this command sequence, start Windows PowerShell with the Run as administrator option.
 
 The first command uses the Disable-PSRemoting cmdlet to disable all registered session configurations on the Server01 computer.
 
@@ -83,7 +83,7 @@ The third command is run on the Server02 remote computer.
 The command uses the New-PSSession cmdlet to create a session to the Server01 remote computer.
 Because remote access is disabled, the command fails.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Effects of running this cmdlet and Enable-PSRemoting
 ```
 PS C:\>Disable-PSRemoting -force
 
@@ -123,15 +123,15 @@ The command uses a pipeline operator to send the results to a Format-Table comma
 
 The output shows that only remote users are denied access to the configurations.
 Members of the Administrators group on the local computer are allowed to use the session configurations.
-The output also shows that the command affects all session configurations, including the user-created "WithProfile" session configuration.
+The output also shows that the command affects all session configurations that includes the user-created WithProfile session configuration.
 
 The third command uses the Enable-PSRemoting cmdlet to re-enable remote access to all session configurations on the computer.
 The command uses the Force parameter to suppress all user prompts and to restart the WinRM service without prompting.
 
 The fourth command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display the names and permissions of the session configurations.
-The results show that the "AccessDenied" security descriptors have been removed from all session configurations.
+The results show that the AccessDenied security descriptors have been removed from all session configurations.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Prevent remote access to session configurations that have custom security descriptors
 ```
 PS C:\>Register-PSSessionConfiguration -Name Test -FilePath .\TestEndpoint.pssc -ShowSecurityDescriptorUI
 
@@ -163,7 +163,7 @@ ote_Troubleshooting Help topic.
 + FullyQualifiedErrorId : PSSessionOpenFailed
 ```
 
-This example demonstrates that the Disable-PSRemoting cmdlet disables remote access to all session configurations, including session configurations with custom security descriptors.
+This example demonstrates that the Disable-PSRemoting cmdlet disables remote access to all session configurations that include session configurations with custom security descriptors.
 
 The first command uses the Register-PSSessionConfiguration cmdlet to create the Test session configuration.
 The command uses the FilePath parameter to specify a session configuration file that customizes the session and the ShowSecurityDescriptorUI parameter to display a dialog box that sets permissions for the session configuration.
@@ -175,12 +175,12 @@ The output shows that the Test session configuration allows interactive access a
 The third command uses the Disable-PSRemoting cmdlet to disable remote access to all session configurations.
 
 The fourth command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display the session configurations and their properties.
-The output shows that an AccessDenied security descriptor for all network users is added to all session configurations, including the Test session configuration.
-Although the other security desriptors are not changed, the "network_deny_all" security descriptor takes precedence.
+The output shows that an AccessDenied security descriptor for all network users is added to all session configurations that includes the Test session configuration.
+Although the other security descriptors are not changed, the "network_deny_all" security descriptor takes precedence.
 
-The fifth command shows that the Disable-PSRemoting command prevents even the Domain01\User01 user with special permissions to the Test session configuration from using the Test session configuration to connect to the computer remotely.
+The fifth command shows that the Disable-PSRemoting command prevents even the Domain01\User01 user who has special permissions to the Test session configuration from using the Test session configuration to connect to the computer remotely.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6: Re-enable remote access to selected session configurations
 ```
 PS C:\>Disable-PSRemoting -Force
 
@@ -225,8 +225,7 @@ The output shows that the AccessDenied security descriptor for all network users
 ## PARAMETERS
 
 ### -Force
-Suppresses all user prompts.
-By default, you are prompted to confirm each operation.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -246,7 +245,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -263,7 +262,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -283,7 +282,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any object.
 
 ## NOTES
-Disabling the session configurations does not undo all the changes made by the Enable-PSRemoting or Enable-PSSessionConfiguration cmdlets.
+Disabling the session configurations does not undo all the changes that were made by the Enable-PSRemoting or Enable-PSSessionConfiguration cmdlets.
 You might have to undo the following changes manually.
 
 1.
@@ -302,30 +301,30 @@ A session configuration is a group of settings that define the environment for a
 Every session that connects to the computer must use one of the session configurations that are registered on the computer.
 By denying remote access to all session configurations, you effectively prevent remote users from establishing sessions that connect to the computer.
 
-In Windows PowerShell 2.0, Disable-PSRemoting adds a "Deny_All" entry to the security descriptors of all session configurations.
-This setting prevents all users from creating user-managed sessions ("PSSessions") to the local computer.
-In Windows PowerShell 3.0, Disable-PSRemoting adds a "Network_Deny_All" entry to the security descriptors of all session configurations.
-This setting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed "loopback" sessions.
+In Windows PowerShell 2.0, Disable-PSRemoting adds a Deny_All entry to the security descriptors of all session configurations.
+This setting prevents all users from creating user-managed sessions to the local computer.
+In Windows PowerShell 3.0, Disable-PSRemoting adds a Network_Deny_All entry to the security descriptors of all session configurations.
+This setting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed loopback sessions.
 
-In Windows PowerShell 2.0, Disable-PSRemoting is the equivalent of "Disable-PSSessionConfiguration -name *".
-In Windows PowerShell 3.0 and later releases, Disable-PSRemoting is the equivalent of "Set-PSSessionConfiguration -Name \<Configuration name\> -AccessMode Local"
+In Windows PowerShell 2.0, Disable-PSRemoting is the equivalent of Disable-PSSessionConfiguration -Name *.
+In Windows PowerShell 3.0 and later releases, Disable-PSRemoting is the equivalent of Set-PSSessionConfiguration -Name \<Configuration name\> -AccessMode Local
 
 In Windows PowerShell 2.0, Disable-PSRemoting is a function.
 Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration]()
+[Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
-[Enable-PSRemoting]()
+[Enable-PSRemoting](19437c28-33b8-4ac1-9113-8439cc8beffb)
 
-[Get-PSSessionConfiguration]()
+[Get-PSSessionConfiguration](a71f9e56-0de4-4ffc-a40d-7c3c38cea22a)
 
-[Register-PSSessionConfiguration]()
+[Register-PSSessionConfiguration](e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 
-[Set-PSSessionConfiguration]()
+[Set-PSSessionConfiguration](b21fbad3-1759-4260-b206-dcb8431cd6ea)
 
-[Unregister-PSSessionConfiguration]()
+[Unregister-PSSessionConfiguration](f8d6efd7-be65-42ea-9ed5-02453f5201c4)
 
-[WSMan Provider]()
+[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 

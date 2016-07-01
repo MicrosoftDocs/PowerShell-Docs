@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/?LinkID=403736
 schema: 2.0.0
 ---
@@ -10,28 +10,28 @@ Connects to and enters into an interactive session with a local process.
 
 ## SYNTAX
 
-### ProcessIdParameterSet (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
 Enter-PSHostProcess [-Id] <Int32> [[-AppDomainName] <String>]
 ```
 
-### ProcessParameterSet
+### UNNAMED_PARAMETER_SET_2
 ```
 Enter-PSHostProcess [-Process] <Process> [[-AppDomainName] <String>]
 ```
 
-### ProcessNameParameterSet
-```
-Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>]
-```
-
-### PSHostProcessInfoParameterSet
+### UNNAMED_PARAMETER_SET_3
 ```
 Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>]
 ```
 
+### UNNAMED_PARAMETER_SET_4
+```
+Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>]
+```
+
 ## DESCRIPTION
-Enter-PSHostProcess connects to and enters into an interactive session with a local process.
+The Enter-PSHostProcess cmdlet connects to and enters into an interactive session with a local process.
 
 Instead of creating a new process to host Windows PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running Windows PowerShell.
 When you are interacting with a remote session on a specified process, you can enumerate running runspaces, and then select a runspace to debug by running either Debug-Runspace or Enable-RunspaceDebug.
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: PSHostProcessInfo
-Parameter Sets: PSHostProcessInfoParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_3
 Aliases: 
 
 Required: True
@@ -133,7 +133,7 @@ To get a process ID, run the Get-Process cmdlet.
 
 ```yaml
 Type: Int32
-Parameter Sets: ProcessIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: True
@@ -150,7 +150,7 @@ You can also get process names from the Properties dialog box of a process in Ta
 
 ```yaml
 Type: String
-Parameter Sets: ProcessNameParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_4
 Aliases: 
 
 Required: True
@@ -166,7 +166,7 @@ The simplest way to use this parameter is to save the results of a Get-Process c
 
 ```yaml
 Type: Process
-Parameter Sets: ProcessParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -186,19 +186,20 @@ Accept wildcard characters: False
 Enter-PSHostProcess cannot enter the process of the Windows PowerShell session in which you are running the command.
 You can, however, enter the process of another Windows PowerShell session, or a Windows PowerShell ISE session that is running at the same time as the session in which you are running Enter-PSHostProcess.
 
-Enter-PSHostProcess can enter only those processes that are hosting Windows PowerShell; that is, they have loaded the Windows PowerShell engine.
+Enter-PSHostProcess can enter only those processes that are hosting Windows PowerShell.
+That is, they have loaded the Windows PowerShell engine.
 
 To exit a process from within the process, type exit, and then press Enter.
 
 ## RELATED LINKS
 
-[Get-Process]()
+[Get-Process](b30db241-c0f6-40d3-ab3b-ab86342b36c1)
 
-[Exit-PSHostProcess]()
+[Exit-PSHostProcess](71c9ec3c-14bc-4f67-9394-e2fe6cf3c7ba)
 
-[Debug-Runspace]()
+[Debug-Runspace](108d65fa-016c-4f80-af83-f2aa7ec000c3)
 
-[Enable-RunspaceDebug]()
+[Enable-RunspaceDebug](e4b83556-564c-4bc2-9e30-265e5a45a300)
 
-[about_Debuggers]()
+[about_Debuggers](2b2ce8b3-f881-4528-bd30-f453dea06755)
 

@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/?LinkId=512991
 schema: 2.0.0
 ---
@@ -10,32 +10,32 @@ Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 ## SYNTAX
 
-### JobParameterSet (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
-Debug-Job [-Job] <Job> [-WhatIf] [-Confirm]
-```
-
-### JobNameParameterSet
-```
-Debug-Job [-Name] <String> [-WhatIf] [-Confirm]
+Debug-Job [-Job] <Job> [-Confirm] [-WhatIf]
 ```
 
-### JobIdParameterSet
+### UNNAMED_PARAMETER_SET_2
 ```
-Debug-Job [-Id] <Int32> [-WhatIf] [-Confirm]
+Debug-Job [-Id] <Int32> [-Confirm] [-WhatIf]
 ```
 
-### JobInstanceIdParameterSet
+### UNNAMED_PARAMETER_SET_3
 ```
-Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm]
+Debug-Job [-InstanceId] <Guid> [-Confirm] [-WhatIf]
+```
+
+### UNNAMED_PARAMETER_SET_4
+```
+Debug-Job [-Name] <String> [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
 The Debug-Job cmdlet lets you debug scripts that are running within jobs.
 The cmdlet is designed to debug Windows PowerShell Workflow jobs, background jobs, and jobs running in remote sessions.
-Debug-Job accepts a running job object, name, ID, or InstanceId as input, and starts a debugging session on the script it is running.
+Debug-Job accepts a running job object, name, ID, or instance ID as input, and starts a debugging session on the script it is running.
 The debugger quit command stops the job and running script.
-Starting in Windows PowerShell 5.0, the exit command detaches the debugger, and allows the job to continue running.
+Starting in Windows PowerShell 5.0, the exit command detaches the debugger, and allows the job to continue to run.
 
 ## EXAMPLES
 
@@ -72,7 +72,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
              18:  SampleWorkflowTest -MyOutput "Hello"
 ```
 
-In this example, the debugger breaks into a running job with an ID of 3.
+This command breaks into a running job with an ID of 3.
 
 ## PARAMETERS
 
@@ -82,7 +82,7 @@ To get the ID number of a job, run the Get-Job cmdlet.
 
 ```yaml
 Type: Int32
-Parameter Sets: JobIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -93,12 +93,14 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Specifies the InstanceId GUID of a running job.
-To get the InstanceId of a job, run the Get-Job cmdlet, piping the results into a Format-* cmdlet, as shown in this example:  Get-Job | Format-List -Property Id,Name,InstanceId,State.
+Specifies the instance ID GUID of a running job.
+To get the InstanceId of a job, run the Get-Job cmdlet, piping the results into a Format-* cmdlet, as shown in the following example: 
+
+Get-Job | Format-List -Property Id,Name,InstanceId,State
 
 ```yaml
 Type: Guid
-Parameter Sets: JobInstanceIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_3
 Aliases: 
 
 Required: True
@@ -114,23 +116,23 @@ The simplest way to use this parameter is to save the results of a Get-Job comma
 
 ```yaml
 Type: Job
-Parameter Sets: JobParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True(ByValue,ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies a job by the job's friendly name.
+Specifies a job by the friendly name of the job.
 When you start a job, you can specify a job name by adding the JobName parameter, in cmdlets such as Invoke-Command and Start-Job.
 
 ```yaml
 Type: String
-Parameter Sets: JobNameParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_4
 Aliases: 
 
 Required: True
@@ -146,7 +148,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -163,7 +165,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -182,29 +184,29 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Get-Job]()
+[Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
-[Receive-Job]()
+[Receive-Job](78fcc10b-5cde-4bf2-a901-33f8237f87fe)
 
-[Remove-Job]()
+[Remove-Job](eaa911ae-3a84-4279-a9db-fead1dfdb8bb)
 
-[Resume-Job]()
+[Resume-Job](3a22c75a-f0bd-4afd-ac3c-da7ccd22ec45)
 
-[Start-Job]()
+[Start-Job](2bc04935-0deb-4ec0-b856-d7290cca6442)
 
-[Stop-Job]()
+[Stop-Job](b998b518-121a-48f4-b062-2b388069de18)
 
-[Suspend-Job]()
+[Suspend-Job](3496f930-2c84-4a90-9c65-ad562f0dc4cf)
 
-[Wait-Job]()
+[Wait-Job](cb8a2c67-f8a5-45a8-a27f-2ec028c9da8f)
 
-[about_Debuggers]()
+[about_Debuggers](2b2ce8b3-f881-4528-bd30-f453dea06755)
 
-[about_Jobs]()
+[about_Jobs](7362512a-8a4e-4575-b2ea-a740e5c4f002)
 
-[about_Job_Details]()
+[about_Job_Details](87511f90-984f-44d1-b869-8671b4181717)
 
-[about_Remote_Jobs]()
+[about_Remote_Jobs](b68c635f-5ee0-44fd-8693-28f8f4ca9fa0)
 
-[about_Scheduled_Jobs]()
+[about_Scheduled_Jobs](3b546629-703c-4939-b44f-52dd567bce92)
 

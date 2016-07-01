@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289581
 schema: 2.0.0
 ---
@@ -11,11 +11,12 @@ Specifies the module members that are exported.
 ## SYNTAX
 
 ```
-Export-ModuleMember [[-Function] <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>]
+Export-ModuleMember [[-Function] <String[]>] [-Alias <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>]
 ```
 
 ## DESCRIPTION
-The Export-ModuleMember cmdlet specifies the module members (such as cmdlets, functions, variables, and aliases) that are exported from a script module (.psm1) file, or from a dynamic module created by using the New-Module cmdlet.
+The Export-ModuleMember cmdlet specifies the module members that are exported from a script module (.psm1) file, or from a dynamic module created by using the New-Module cmdlet.
+Module members include cmdlets, functions, variables, and aliases.
 This cmdlet can be used only in a script module file or a dynamic module.
 
 If a script module does not include an Export-ModuleMember command, the functions in the script module are exported, but the variables and aliases are not.
@@ -27,26 +28,26 @@ Even if the command confirms the default values, it demonstrates the intention o
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Export aliases and functions in a script module
 ```
-PS C:\>Export-ModuleMember -function * -alias *
+PS C:\>Export-ModuleMember -Function * -Alias *
 ```
 
-This command exports the aliases defined in the script module, along with the functions defined in the script module.
+This command exports the aliases defined in the script module, together with the functions defined in the script module.
 
 To export the aliases, which are not exported by default, you must also explicitly specify the functions.
-Otherwise, only the aliases will be exported.
+Otherwise, the cmdlet exports only the aliases.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Export specific aliases and functions
 ```
-PS C:\>Export-ModuleMember -function Get-Test, New-Test, Start-Test -alias gtt, ntt, stt
+PS C:\>Export-ModuleMember -Function Get-Test, New-Test, Start-Test -Alias gtt, ntt, stt
 ```
 
 This command exports three aliases and three functions defined in the script module.
 
 You can use this command format to specify the names of module members.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Export no members
 ```
 PS C:\>Export-ModuleMember
 ```
@@ -56,9 +57,9 @@ This command specifies that no members defined in the script module are exported
 This command prevents the module members from being exported, but it does not hide the members.
 Users can read and copy module members or use the call operator (&) to invoke module members that are not exported.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Export a specific variable
 ```
-PS C:\>Export-ModuleMember -variable increment
+PS C:\>Export-ModuleMember -Variable increment
 ```
 
 This command exports only the $increment variable from the script module.
@@ -66,7 +67,7 @@ No other members are exported.
 
 If you want to export a variable, in addition to exporting the functions in a module, the Export-ModuleMember command must include the names of all of the functions and the name of the variable.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Multiple export commands
 ```
 PS C:\># From TestModule.psm1
 function new-test
@@ -87,16 +88,16 @@ These commands create three functions and one alias, and then they export two of
 Without the Export-ModuleMember commands, all three of the functions would be exported, but the alias would not be exported.
 With the Export-ModuleMember commands, only the Get-Test and Start-Test functions and the STT alias are exported.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6: Export members in a dynamic module
 ```
-PS C:\>new-module -script {function SayHello {"Hello!"}; set-alias Hi SayHello; Export-ModuleMember -alias Hi -function SayHello}
+PS C:\>New-Module -Script {function SayHello {"Hello!"}; Set-Alias Hi SayHello; Export-ModuleMember -Alias Hi -Function SayHello}
 ```
 
 This command shows how to use Export-ModuleMember in a dynamic module that is created by using the New-Module cmdlet.
 
-In this example, Export-ModuleMember is used to export both the "Hi" alias and the "SayHello" function in the dynamic module.
+In this example, Export-ModuleMember is used to export both the Hi alias and the SayHello function in the dynamic module.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7: Declare and export a function in a single command
 ```
 PS C:\>function export
 {
@@ -126,11 +127,11 @@ export variable interval 0
 $interval = 2
 ```
 
-This example includes a function named Export that declares a function or creates a variable, and then writes an Export-ModuleMember command for the function or variable.
+This example includes a function named export that declares a function or creates a variable, and then writes an Export-ModuleMember command for the function or variable.
 This lets you declare and export a function or variable in a single command.
 
-To use the Export function, include it in your script module.
-To export a function, type "Export" before the Function keyword.
+To use the export function, include it in your script module.
+To export a function, type export before the Function keyword.
 
 To export a variable, use the following format to declare the variable and set its value:
 
@@ -144,7 +145,7 @@ In this example, only the New-Test function and the $Interval variable are expor
 ### -Alias
 Specifies the aliases that are exported from the script module file.
 Enter the alias names.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -161,7 +162,7 @@ Accept wildcard characters: False
 ### -Cmdlet
 Specifies the cmdlets that are exported from the script module file.
 Enter the cmdlet names.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 You cannot create cmdlets in a script module file, but you can import cmdlets from a binary module into a script module and re-export them from the script module.
 
@@ -180,7 +181,7 @@ Accept wildcard characters: False
 ### -Function
 Specifies the functions that are exported from the script module file.
 Enter the function names.
-Wildcards are permitted.
+Wildcard characters are permitted.
 You can also pipe function name strings to Export-ModuleMember.
 
 ```yaml
@@ -191,14 +192,14 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Variable
 Specifies the variables that are exported from the script module file.
-Enter the variable names (without a dollar sign).
-Wildcards are permitted.
+Enter the variable names, without a dollar sign.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -215,7 +216,7 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### System.String
-You can pipe function name strings to Export-ModuleMember.
+You can pipe function name strings to this cmdlet.
 
 ## OUTPUTS
 
@@ -227,11 +228,11 @@ To exclude a member from the list of exported members, add an Export-ModuleMembe
 
 ## RELATED LINKS
 
-[Get-Module]()
+[Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
 
-[Import-Module]()
+[Import-Module](af616c24-e122-4098-930e-1e3ea2080ade)
 
-[Remove-Module]()
+[Remove-Module](c0968566-4d7e-49e9-82b9-e4df1f489267)
 
-[about_Modules]()
+[about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
 

@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289569
 schema: 2.0.0
 ---
@@ -22,57 +22,61 @@ You can use this cmdlet to add specific commands to the history or to create a s
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Add commands to the history of a different session
 ```
-PS C:\>get-history | export-csv c:\testing\history.csv
-PS C:\>import-csv history.csv | add-history
+PS C:\>Get-History | Export-Csv c:\testing\history.csv
+PS C:\> Import-Csv history.csv | Add-History
 ```
 
 These commands add the commands typed in one Windows PowerShell session to the history of a different Windows PowerShell session.
+
 The first command gets objects representing the commands in the history and exports them to the History.csv file.
+
 The second command is typed at the command line of a different session.
 It uses the Import-Csv cmdlet to import the objects in the History.csv file.
-The pipeline operator passes the objects to the Add-History cmdlet, which adds the objects representing the commands in the History.csv file to the current session history.
+The pipeline operator (|) passes the objects to the Add-History cmdlet, which adds the objects representing the commands in the History.csv file to the current session history.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Import and turn commands
 ```
-PS C:\>import-clixml c:\temp\history.xml | add-history -passthru | foreach-object -process {invoke-history}
+PS C:\>Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
 ```
 
-This command imports commands from the History.xml file, adds them to the current session history, and then executes the commands in the combined history.
+This command imports commands from the History.xml file, adds them to the current session history, and then runs the commands in the combined history.
 
 The first command uses the Import-Clixml cmdlet to import a command history that was exported to the History.xml file.
-The pipeline operator (|) passes the commands to the Add-History parameter, which adds the commands to the current session history.
+The pipeline operator passes the commands to the Add-History cmdlet, which adds the commands to the current session history.
 The PassThru parameter passes the objects representing the added commands down the pipeline.
 
 The command then uses the ForEach-Object cmdlet to apply the Invoke-History command to each of the commands in the combined history.
-The Invoke-History command is formatted as a script block (enclosed in braces) as required by the Process parameter of the ForEach-Object cmdlet.
+The Invoke-History command is formatted as a script block, enclosed in braces, as required by the Process parameter of the ForEach-Object cmdlet.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Add commands in the history to the end of the history
 ```
-PS C:\>get-history -id 5 -count 5 | add-history
+PS C:\>Get-History -Id 5 -Count 5 | Add-History
 ```
 
 This command adds the first five commands in the history to the end of the history list.
 It uses the Get-History cmdlet to get the five commands ending in command 5.
-The pipeline operator (|) passes them to the Add-History cmdlet, which appends them to the current history.
-The Add-History command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the InputObject parameter of  Add-History.
+The pipeline operator passes them to the Add-History cmdlet, which appends them to the current history.
+The Add-History command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the InputObject parameter of Add-History.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Add commands in a .csv file to the current history
 ```
-PS C:\>$a = import-csv c:\testing\history.csv
-PS C:\>add-history -inputobject $a -passthru
+PS C:\>$a = Import-Csv c:\testing\history.csv
+PS C:\> Add-History -InputObject $a -PassThru
 ```
 
 These commands add the commands in the History.csv file to the current session history.
+
 The first command uses the Import-Csv cmdlet to import the commands in the History.csv file and store its contents in the variable $a.
+
 The second command uses the Add-History cmdlet to add the commands from History.csv to the current session history.
 It uses the InputObject parameter to specify the $a variable and the PassThru parameter to generate an object to display at the command line.
 Without the PassThru parameter, the Add-History cmdlet does not generate any output.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Add commands in an .xml file to the current history
 ```
-PS C:\>add-history -inputobject (import-clixml c:\temp\history01.xml)
+PS C:\>Add-History -InputObject (Import-Clixml c:\temp\history01.xml)
 ```
 
 This command adds the commands in the History01.xml file to the current session history.
@@ -83,7 +87,7 @@ The Add-History cmdlet then adds the commands in the file to the session history
 ## PARAMETERS
 
 ### -InputObject
-Adds the specified HistoryInfo object to the session history.
+Specifies an array of entries to add to the history as HistoryInfo object to the session history.
 You can use this parameter to submit a HistoryInfo object, such as the ones that are returned by the Get-History, Import-Clixml, or Import-Csv cmdlets, to Add-History.
 
 ```yaml
@@ -99,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -Passthru
-Returns a history object for each history entry.
+Indicates that this cmdlet returns a history object for each history entry.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -117,18 +121,18 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### Microsoft.PowerShell.Commands.HistoryInfo
-You can pipe a HistoryInfo object to Add-History.
+You can pipe a HistoryInfo object to this cmdlet.
 
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.Commands.HistoryInfo
-When you use the PassThru parameter, Add-History returns a HistoryInfo object.
+This cmdlet returns a HistoryInfo object if you specify the PassThru parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-The session history is a list of the commands entered during the session along with the ID.
+The session history is a list of the commands entered during the session together with the ID.
 The session history represents the order of execution, the status, and the start and end times of the command.
-As you enter each command, Windows PowerShell adds it to the history so that you can reuse it. 
+As you enter each command, Windows PowerShell adds it to the history so that you can reuse it.
 For more information about the session history, see about_History.
 
 To specify the commands to add to the history, use the InputObject parameter.
@@ -143,15 +147,15 @@ For more information, see the examples.
 The file of HistoryInfo objects that you pass to the Add-History cmdlet must include the type information, column headings, and all of the properties of the HistoryInfo objects.
 If you intend to pass the objects back to Add-History, do not use the NoTypeInformation parameter of the Export-Csv cmdlet and do not delete the type information, column headings, or any fields in the file.
 
-To edit the session history, export the session to a CSV or XML file, edit the file, import the file, and use Add-History to append it to the current session history.
+To modify the session history, export the session to a CSV or XML file, modify the file, import the file, and use Add-History to append it to the current session history.
 
 ## RELATED LINKS
 
-[Clear-History]()
+[Clear-History](c6500716-f5ec-4a09-b7dc-fd412af6a050)
 
-[Get-History]()
+[Get-History](023a54f7-7e13-4699-8b0a-5f348b2a8125)
 
-[Invoke-History]()
+[Invoke-History](cc0f7984-a1f9-445c-99ba-be39a502fe01)
 
-[about_History]()
+[about_History](cb632285-e50b-428e-8d7d-7583f8880b70)
 

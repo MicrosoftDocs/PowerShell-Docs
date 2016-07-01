@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: 
 schema: 2.0.0
 ---
@@ -9,19 +9,19 @@ schema: 2.0.0
 
 ## SYNTAX
 
-### ProcessNameParameterSet (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
 Get-PSHostProcessInfo [[-Name] <String[]>]
 ```
 
-### ProcessParameterSet
-```
-Get-PSHostProcessInfo [-Process] <Process[]>
-```
-
-### ProcessIdParameterSet
+### UNNAMED_PARAMETER_SET_2
 ```
 Get-PSHostProcessInfo [-Id] <Int32[]>
+```
+
+### UNNAMED_PARAMETER_SET_3
+```
+Get-PSHostProcessInfo [-Process] <Process[]>
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\>
 
 ```yaml
 Type: Int32[]
-Parameter Sets: ProcessIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String[]
-Parameter Sets: ProcessNameParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: False
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Process[]
-Parameter Sets: ProcessParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_3
 Aliases: 
 
 Required: True

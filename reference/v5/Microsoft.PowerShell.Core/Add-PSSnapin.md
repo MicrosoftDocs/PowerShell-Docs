@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289570
 schema: 2.0.0
 ---
@@ -28,16 +28,16 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Add snap-ins
 ```
-PS C:\>add-PSSnapIn Microsoft.Exchange, Microsoft.Windows.AD
+PS C:\>Add-PSSnapIn -Name Microsoft.Exchange, Microsoft.Windows.AD
 ```
 
 This command adds the Microsoft Exchange and Active Directory snap-ins to the current session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Add all the registered snap-ins
 ```
-PS C:\>get-pssnapin -registered | add-pssnapin -passthru
+PS C:\>Get-PSSnapin -Registered | Add-PSSnapin -Passthru
 ```
 
 This command adds all of the registered Windows PowerShell snap-ins to the session.
@@ -45,43 +45,44 @@ It uses the Get-PSSnapin cmdlet with the Registered parameter to get objects rep
 The pipeline operator (|) passes the result to Add-PSSnapin, which adds them to the session.
 The PassThru parameter returns objects that represent each of the added snap-ins.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Register a snap-in and add it
 ```
-The first command gets snap-ins that have been added to the current session, including the snap-ins that are installed with Windows PowerShell. In this example, ManagementFeatures is not returned. This indicates that it has not been added to the session.
-PS C:\>get-pssnapin
+The first command gets snap-ins that have been added to the current session that include the snap-ins that are installed with Windows PowerShell. In this example, ManagementFeatures is not returned. This indicates that it has not been added to the session.
+PS C:\>Get-PSSnapin
 
-The second command gets snap-ins that have been registered on your system (including those that have already been added to the session). It does not include the snap-ins that are installed with Windows PowerShell.In this case, the command does not return any snap-ins. This indicates that the ManagementFeatures snapin has not been registered on the system.
-PS C:\>get-pssnapin -registered
+The second command gets snap-ins that have been registered on your system, which includes those that have already been added to the session. It does not include the snap-ins that are installed with Windows PowerShell. In this case, the command does not return any snap-ins. This indicates that the ManagementFeatures snapin has not been registered on the system.
+PS C:\>Get-PSSnapin -Registered
 
-The third command creates an alias, "installutil", for the path to the InstallUtil tool in .NET Framework.
-PS C:\>set-alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
+The third command creates an alias, installutil, for the path of the InstallUtil tool in .NET Framework.
+PS C:\>Set-Alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
 
-The fourth command uses the InstallUtil tool to register the snap-in. The command specifies the path to ManagementCmdlets.dll, the file name or "module name" of the snap-in.
+The fourth command uses the InstallUtil tool to register the snap-in. The command specifies the path of ManagementCmdlets.dll, the file name or module name of the snap-in.
 PS C:\>installutil C:\Dev\Management\ManagementCmdlets.dll
 
 The fifth command is the same as the second command. This time, you use it to verify that the ManagementCmdlets snap-in is registered.
-PS C:\>get-pssnapin -registered
+PS C:\>Get-PSSnapin -Registered
 
 The sixth command uses the Add-PSSnapin cmdlet to add the ManagementFeatures snap-in to the session. It specifies the name of the snap-in, ManagementFeatures, not the file name.
 PS C:\>add-pssnapin ManagementFeatures
 
 To verify that the snap-in is added to the session, the seventh command uses the Module parameter of the Get-Command cmdlet. It displays the items that were added to the session by a snap-in or module.
-PS C:\>get-command -module ManagementFeatures
+PS C:\>Get-Command -Module ManagementFeatures
 
 You can also use the PSSnapin property of the object that the Get-Command cmdlet returns to find the snap-in or module in which a cmdlet originated. The eighth command uses dot notation to find the value of the PSSnapin property of the Set-Alias cmdlet.
-PS C:\>(get-command set-alias).pssnapin
+PS C:\>(Get-Command Set-Alias).pssnapin
 ```
 
 This example demonstrates the process of registering a snap-in on your system and then adding it to your session.
-It uses ManagementFeatures, a fictitious snap-in implemented in a file called ManagementCmdlets.dll.
+It uses ManagementFeatures, a fictitious snap-in implemented in a file that is named ManagementCmdlets.dll.
 
 ## PARAMETERS
 
 ### -Name
 Specifies the name of the snap-in.
-(This is the Name, not the AssemblyName or ModuleName.) Wildcards are permitted.
+This is the Name, not the AssemblyName or ModuleName.
+Wildcards are permitted.
 
-To find the names of the registered snap-ins on your system, type: "get-pssnapin -registered".
+To find the names of the registered snap-ins on your system, type Get-PSSnapin -Registered.
 
 ```yaml
 Type: String[]
@@ -96,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns an object representing each added snap-in.
+Indicates that this cmdlet returns an object that represents each added snap-in.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -114,44 +115,44 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### None
-You cannot pipe objects to Add-PSSnapin.
+You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.PSSnapInInfo
-When you use the PassThru parameter, Add-PSSnapin returns a PSSnapInInfo object that represents the snap-in.
+This cmdlet returns a PSSnapInInfo object that represents the snap-in if you specify the PassThru parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules.
-In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins").
+In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (PSSnapins).
 The exception is Microsoft.PowerShell.Core, which is always a snap-in.
 Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-For information about the CreateDefault2 method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
+For information about the CreateDefault2 method that creates newer-style sessions with core modules, see CreateDefault2 Methodhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx) in the Microsoft Developer Network (MSDN) library.
 
-For detailed information about snap-ins in Windows PowerShell, see about_Pssnapins.
-For information about how to create a Windows PowerShell snap-in, see "How to Create a Windows PowerShell Snap-in" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=144762http://go.microsoft.com/fwlink/?LinkId=144762.
+For detailed information about snap-ins in Windows PowerShell, see about_PSSnapins.
+For information about how to create a Windows PowerShell snap-in, see How to Create a Windows PowerShell Snap-inhttp://go.microsoft.com/fwlink/?LinkId=144762http://go.microsoft.com/fwlink/?LinkId=144762 (http://go.microsoft.com/fwlink/?LinkId=144762http://go.microsoft.com/fwlink/?LinkId=144762) in the MSDN library.
 
 Add-PSSnapin adds the snap-in only to the current session.
 To add the snap-in to all Windows PowerShell sessions, add it to your Windows PowerShell profile.
 For more information, see about_Profiles.
 
 You can add any Windows PowerShell snap-in that has been registered by using the Microsoft .NET Framework install utility.
-For more information, see "How to Register Cmdlets, Providers, and Host Applications" in the MSDN library at http://go.microsoft.com/fwlink/?LinkID=143619http://go.microsoft.com/fwlink/?LinkID=143619.
+For more information, see How to Register Cmdlets, Providers, and Host Applicationshttp://go.microsoft.com/fwlink/?LinkID=143619http://go.microsoft.com/fwlink/?LinkID=143619 (http://go.microsoft.com/fwlink/?LinkID=143619http://go.microsoft.com/fwlink/?LinkID=143619) in the MSDN library.
 
-To get a list of snap-ins that are registered on your computer, type get-pssnapin -registered.
+To get a list of snap-ins that are registered on your computer, type Get-PSSnapin -Registered.
 
 Before adding a snap-in, Add-PSSnapin checks the version of the snap-in to verify that it is compatible with the current version of Windows PowerShell.
 If the snap-in fails the version check, Windows PowerShell reports an error.
 
 ## RELATED LINKS
 
-[Get-PSSnapin]()
+[Get-PSSnapin](f2561ac4-9ef9-4b8b-95ca-8bfc5f51784d)
 
-[Remove-PSSnapin]()
+[Remove-PSSnapin](4f10ad2d-8da1-49b7-ad20-7bbc254042f2)
 
-[about_Profiles]()
+[about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
 
-[about_PSSnapins]()
+[about_PSSnapins](83e7ff38-35c0-42a1-8458-3940e8ebc978)
 

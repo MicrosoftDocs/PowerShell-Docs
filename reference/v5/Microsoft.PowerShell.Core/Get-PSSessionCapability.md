@@ -1,6 +1,6 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
-online version: 
+external help file: PSITPro5_Core.xml
+online version: https://technet.microsoft.com/en-us/library/mt631423.aspx
 schema: 2.0.0
 ---
 
@@ -16,37 +16,38 @@ Get-PSSessionCapability [-ConfigurationName] <String> [-Username] <String> [-Ful
 
 ## DESCRIPTION
 The Get-PSSessionCapability cmdlet gets the capabilities of a specific user on a constrained session configuration.
-This cmdlet is used by system administrators to audit customized session configurations for their users.
+Use this cmdlet to audit customized session configurations for users.
 
-Beginning in Windows PowerShell 5.0, you can use the RoleDefinitions property in a session configuration (.pssc) file.
-Using this property allows you to grant users different capabilities on a single constrained endpoint based on group membership.
-The Get-PSSessionCapability cmdlet reduces complexity when auditing these endpoints by allowing you to determine the exact capabilities granted to a user.
+Starting in Windows PowerShell 5.0, you can use the RoleDefinitions property in a session configuration (.pssc) file.
+Using this property lets you grant users different capabilities on a single constrained endpoint based on group membership.
+The Get-PSSessionCapability cmdlet reduces complexity when auditing these endpoints by letting you determine the exact capabilities granted to a user.
 
 By default, the Get-PSSessionCapability cmdlet returns a list of commands the specified user can run in the specified endpoint.
 This is equivalent to the user running Get-Command in the specified endpoint.
-When run with the Full parameter, an InitialSessionState object is returned.
-This object contains details about the PowerShell runspace the specified user would interact with for the specified endpoint, including information such as Language Mode, Execution Policy, and Environmental Variables.
+When run with the Full parameter, this cmdlet returns an InitialSessionState object.
+This object contains details about the Windows PowerShell runspace the specified user would interact with for the specified endpoint.
+It includes information such as Language Mode, Execution Policy, and Environmental Variables.
 
 ## EXAMPLES
 
-### 1: ====== EXAMPLE 1 ========
+### Example 1: Get commands available for a user
 ```
 PS C:\>Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
 ```
 
-This example returns the commands available to the user "CONTOSO\User" when connecting to the "Endpoint1" constrained endpoint on the local computer.
+This example returns the commands available to the user CONTOSO\User when connecting to the Endpoint1 constrained endpoint on the local computer.
 
-### 2: ====== EXAMPLE 2 ========
+### Example 2: Get details about a runspace for a user
 ```
 PS C:\>Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
 ```
 
-This example returns details about the runspace the user "CONTOSO\User" would interact with when connecting to the "Endpoint1" constrained endpoint.
+This example returns details about the runspace the user CONTOSO\User would interact with when connecting to the Endpoint1 constrained endpoint.
 
 ## PARAMETERS
 
 ### -ConfigurationName
-Specifies the constrained session configuration (endpoint) you are inspecting.
+Specifies the constrained session configuration (endpoint) that you are inspecting.
 
 ```yaml
 Type: String
@@ -61,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Full
-Returns the entire initial session state for the specified user at the specified constrained endpoint.
+Indicates that this cmdlet returns the entire initial session state for the specified user at the specified constrained endpoint.
 
 ```yaml
 Type: SwitchParameter
@@ -104,5 +105,5 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[New-PSRoleCapabilityFile]()
+[New-PSRoleCapabilityFile](7df9943a-73bf-47a0-920b-5aae3ee48b63)
 

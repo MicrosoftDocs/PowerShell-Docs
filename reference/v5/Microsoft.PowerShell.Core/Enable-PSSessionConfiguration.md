@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289577
 schema: 2.0.0
 ---
@@ -11,8 +11,8 @@ Enables the session configurations on the local computer.
 ## SYNTAX
 
 ```
-Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-SecurityDescriptorSddl <String>]
- [-SkipNetworkProfileCheck] [-NoServiceRestart] [-WhatIf] [-Confirm]
+Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart]
+ [-SecurityDescriptorSddl <String>] [-SkipNetworkProfileCheck] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
@@ -21,9 +21,9 @@ This is an advanced cmdlet that is designed to be used by system administrators 
 
 Without parameters, Enable-PSSessionConfiguration enables the Microsoft.PowerShell configuration, which is the default configuration that is used for sessions.
 
-Enable-PSSessionConfiguration removes the "Deny_All" setting from the security descriptor of the affected session configurations, turns on the listener that accepts requests on any IP address, and restarts the WinRM service.
-Beginning in Windows PowerShell 3.0, Enable-PSSessionConfiguration also sets the value of the Enabled property of the session configuration (WSMan:\\\<computer\>\PlugIn\\\<SessionConfigurationName\>\Enabled) to "True".
-However,  Enable-PSSessionConfiguration does not remove or change the "Network_Deny_All" (AccessMode=Local) security descriptor setting that allows only users of the local computer to use to the session configuration.
+Enable-PSSessionConfiguration removes the Deny_All setting from the security descriptor of the affected session configurations, turns on the listener that accepts requests on any IP address, and restarts the WinRM service.
+Beginning in Windows PowerShell 3.0, Enable-PSSessionConfiguration also sets the value of the Enabled property of the session configuration (WSMan:\\\<computer\>\PlugIn\\\<SessionConfigurationName\>\Enabled) to True.
+However, Enable-PSSessionConfiguration does not remove or change the Network_Deny_All (AccessMode=Local) security descriptor setting that allows only users of the local computer to use to the session configuration.
 
 The Enable-PSSessionConfiguration cmdlet calls the Set-WSManQuickConfig cmdlet.
 However, it should not be used to enable remoting on the computer.
@@ -31,34 +31,35 @@ Instead, use the more comprehensive cmdlet, Enable-PSRemoting.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Re-enable the default session
 ```
 PS C:\>Enable-PSSessionConfiguration
 ```
 
 This command re-enables the Microsoft.PowerShell default session configuration on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Re-enable specified sessions
 ```
-PS C:\>Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
+PS C:\>Enable-PSSessionConfiguration -Name MaintenanceShell, AdminShell
 ```
 
 This command re-enables the MaintenanceShell and AdminShell session configurations on the computer.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Re-enable the all sessions
 ```
-PS C:\>Enable-PSSessionConfiguration -name *
-PS C:\>Get-PSSessionConfiguration | Enable-PSSessionConfiguration
+PS C:\>Enable-PSSessionConfiguration -Name *
+PS C:\> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
 ```
 
 These commands re-enable all session configurations on the computer.
-The commands are equivalent, so you can use either one.
+The commands are equivalent.
+Therefore, you can use either.
 
 Enable-PSSessionConfiguration does not generate an error if you enable a session configuration that is already enabled.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Re-enable a session and specify a new security descriptor
 ```
-PS C:\>Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
+PS C:\>Enable-PSSessionConfiguration -Name MaintenanceShell -SecurityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
 ```
 
 This command re-enables the MaintenanceShell session configuration and specifies a new security descriptor for the configuration.
@@ -66,7 +67,7 @@ This command re-enables the MaintenanceShell session configuration and specifies
 ## PARAMETERS
 
 ### -Force
-Suppresses all user prompts, and restarts the WinRM service without prompting.
+Indicates that the cmdlet does not prompt you for confirmation, and restarts the WinRM service without prompting.
 Restarting the service makes the configuration change effective.
 
 To prevent a restart and suppress the restart prompt, use the NoServiceRestart parameter.
@@ -86,7 +87,7 @@ Accept wildcard characters: False
 ### -Name
 Specifies the names of session configurations to enable.
 Enter one or more configuration names.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 You can also pipe a string that contains a configuration name or a session configuration object to Enable-PSSessionConfiguration.
 
@@ -100,12 +101,12 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
-To prevent a restart and suppress the restart prompt, use the NoServiceRestart parameter.
+Indicates that the cmdlet does not restart the service.
 
 ```yaml
 Type: SwitchParameter
@@ -120,9 +121,9 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityDescriptorSddl
-Replaces the security descriptor on the session configuration with the specified security descriptor.
+Specifies a security descriptor with which this cmdlet replaces the security descriptor on the session configuration.
 
-If you omit this parameter, Enable-PSSessionConfiguration just deletes the "deny all" item from the security descriptor.
+If you omit this parameter, Enable-PSSessionConfiguration only deletes the deny all item from the security descriptor.
 
 ```yaml
 Type: String
@@ -137,18 +138,18 @@ Accept wildcard characters: False
 ```
 
 ### -SkipNetworkProfileCheck
-Enables the session configuration when the computer is on a public network.
+Indicates that this cmdlet enables the session configuration when the computer is on a public network.
 This parameter enables a firewall rule for public networks that allows remote access only from computers in the same local subnet.
 By default, Enable-PSSessionConfiguration fails on a public network.
 
-This parameter is designed for client versions of Windows.
-Server versions of Windows have a local subnet firewall rule for public networks by default.
-However, if the local subnet firewall rule is disabled on a server version of Windows, this parameter re-enables it.
+This parameter is designed for client versions of the Windows operating system.
+By default, server versions of the Windows operating system have a local subnet firewall rule for public networks.
+However, if the local subnet firewall rule is disabled on a server version of the Windows operating system, this parameter re-enables it.
 
 To remove the local subnet restriction and enable remote access from all locations on public networks, use the Set-NetFirewallRule cmdlet in the NetSecurity module.
 For more information, see Enable-PSRemoting.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -168,7 +169,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -185,7 +186,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -197,7 +198,7 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration, System.String
-You can pipe a session configuration object or a string that contains the name of a session configuration to Enable-PSSessionConfiguration.
+You can pipe a session configuration object or a string that contains the name of a session configuration to this cmdlet.
 
 ## OUTPUTS
 
@@ -205,31 +206,29 @@ You can pipe a session configuration object or a string that contains the name o
 This cmdlet does not return any objects.
 
 ## NOTES
-To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, you must start Windows PowerShell with the "Run as administrator" option.
+To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, you must start Windows PowerShell by using the Run as administrator option.
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration]()
+[Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
-[Enable-PSSessionConfiguration]()
+[Get-PSSessionConfiguration](a71f9e56-0de4-4ffc-a40d-7c3c38cea22a)
 
-[Get-PSSessionConfiguration]()
+[New-PSSessionConfigurationFile](5f3e3633-6e90-479c-aea9-ba45a1954866)
 
-[New-PSSessionConfigurationFile]()
+[New-PSSessionOption](3d4e81aa-8030-4ce4-a5ea-92bcef62d182)
 
-[New-PSSessionOption]()
+[Register-PSSessionConfiguration](e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 
-[Register-PSSessionConfiguration]()
+[Set-PSSessionConfiguration](b21fbad3-1759-4260-b206-dcb8431cd6ea)
 
-[Set-PSSessionConfiguration]()
+[Test-PSSessionConfigurationFile](5f4a016a-f962-4cb5-9fa9-53b173b70056)
 
-[Test-PSSessionConfigurationFile]()
+[Unregister-PSSessionConfiguration](f8d6efd7-be65-42ea-9ed5-02453f5201c4)
 
-[Unregister-PSSessionConfiguration]()
+[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 
-[WSMan Provider]()
+[about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
-[about_Session_Configurations]()
-
-[about_Session_Configuration_Files]()
+[about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
 

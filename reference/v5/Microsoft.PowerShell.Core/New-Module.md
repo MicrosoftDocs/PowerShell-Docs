@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289594
 schema: 2.0.0
 ---
@@ -10,16 +10,16 @@ Creates a new dynamic module that exists only in memory.
 
 ## SYNTAX
 
-### ScriptBlock (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
-New-Module [-ScriptBlock] <ScriptBlock> [-Function <String[]>] [-Cmdlet <String[]>] [-ReturnResult]
- [-AsCustomObject] [-ArgumentList <Object[]>]
+New-Module [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsCustomObject] [-Cmdlet <String[]>]
+ [-Function <String[]>] [-ReturnResult]
 ```
 
-### Name
+### UNNAMED_PARAMETER_SET_2
 ```
-New-Module [-Name] <String> [-ScriptBlock] <ScriptBlock> [-Function <String[]>] [-Cmdlet <String[]>]
- [-ReturnResult] [-AsCustomObject] [-ArgumentList <Object[]>]
+New-Module [-Name] <String> [-ScriptBlock] <ScriptBlock> [-ArgumentList <Object[]>] [-AsCustomObject]
+ [-Cmdlet <String[]>] [-Function <String[]>] [-ReturnResult]
 ```
 
 ## DESCRIPTION
@@ -29,10 +29,10 @@ The members of the dynamic module, such as functions and variables, are immediat
 Like static modules, by default, the cmdlets and functions in a dynamic module are exported and the variables and aliases are not.
 However, you can use the Export-ModuleMember cmdlet and the parameters of New-Module to override the defaults.
 
-You can also use the AsCustomObject parameter of the New-Module cmdlet to return the dynamic module as a custom object.
+You can also use the AsCustomObject parameter of New-Module to return the dynamic module as a custom object.
 The members of the modules, such as functions, are implemented as script methods of the custom object instead of being imported into the session.
 
-Dynamic modules  exist only in memory, not on disk.
+Dynamic modules exist only in memory, not on disk.
 Like all modules, the members of dynamic modules run in a private module scope that is a child of the global scope.
 Get-Module cannot get a dynamic module, but Get-Command can get the exported members.
 
@@ -41,9 +41,9 @@ This action adds the dynamic module to the Get-Module list, but it does not save
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Create a dynamic module
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}}
+PS C:\>New-Module -ScriptBlock {function Hello {"Hello!"}}
 
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
@@ -61,10 +61,10 @@ ExportedVariables : {}
 NestedModules     : {}
 ```
 
-This command creates a new dynamic module with a function called "Hello".
+This command creates a new dynamic module with a function called Hello.
 The command returns a module object that represents the new dynamic module.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Working with dynamic modules and Get-Module and Get-Command
 ```
 PS C:\>new-module -scriptblock {function Hello {"Hello!"}}
 
@@ -82,26 +82,27 @@ ExportedCmdlets   : {}
 ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
-PS C:\>get-module
+PS C:\> Get-Module
 PS C:\>
-PS C:\>get-command Hello
+PS C:\> Get-Command Hello
 
 CommandType     Name   Definition
 -----------     ----   ----------
 Function        Hello  "Hello!"
 ```
 
-This example demonstrates that dynamic modules are not returned by the Get-Module cmdlet, but the members that they export are returned by the Get-Command cmdlet.
+This example demonstrates that dynamic modules are not returned by the Get-Module cmdlet.
+The members that they export are returned by the Get-Command cmdlet.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Export a variable into the current session
 ```
-PS C:\>New-Module -scriptblock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+PS C:\>New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
 
-PS C:\>$SayHelloHelp
+PS C:\> $SayHelloHelp
 
 Type 'SayHello', a space, and a name.
 
-PS C:\>SayHello Jeffrey
+PS C:\> SayHello Jeffrey
 Hello, Jeffrey
 ```
 
@@ -110,10 +111,10 @@ Without the Export-ModuleMember command, only the function is exported.
 
 The output shows that both the variable and the function were exported into the session.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Make a dynamic module available to Get-Module
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}} -name GreetingModule | import-module
-PS C:\>get-module
+PS C:\>New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
+PS C:\> Get-Module
 
 Name              : GreetingModule
 Path              : d54dfdac-4531-4db2-9dec-0b4b9c57a1e5
@@ -130,29 +131,29 @@ ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
 
-PS C:\>get-command hello
+PS C:\> Get-Command hello
 
 CommandType     Name                                                               Definition
 -----------     ----                                                               ----------
 Function        Hello                                                              "Hello!"
 ```
 
-This command demonstrates that you can make a dynamic module available to the Get-Module cmdlet by piping the dynamic module to the Import-Module cmdlet.
+This command demonstrates that you can make a dynamic module available to Get-Module by piping the dynamic module to Import-Module.
 
 The first command uses a pipeline operator (|) to send the module object that New-Module generates to the Import-Module cmdlet.
 The command uses the Name parameter of New-Module to assign a friendly name to the module.
 Because Import-Module does not return any objects by default, there is no output from this command.
 
-The second command uses the Get-Module cmdlet to get the modules in the session.
+The second command uses Get-Module to get the modules in the session.
 The result shows that Get-Module can get the new dynamic module.
 
 The third command uses the Get-Command cmdlet to get the Hello function that the dynamic module exports.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Generate a custom object that has exported functions
 ```
-PS C:\>$m = new-module -scriptblock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
-PS C:\>$m
-PS C:\>$m | get-member
+PS C:\>$m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; functionn Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
+PS C:\> $m
+PS C:\> $m | Get-Member
 TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType   Definition
@@ -171,7 +172,7 @@ PS C:\ps-test> $m.hello("Manoj")
 Hello, Manoj
 ```
 
-This example shows how to use the AsCustomObject parameter of New-Module to generate a custom object with script methods that represent the exported functions.
+This example shows how to use the AsCustomObject parameter of New-Module to generate a custom object that has script methods that represent the exported functions.
 
 The first command uses the New-Module cmdlet to generate a dynamic module with two functions, Hello and Goodbye.
 The command uses the AsCustomObject parameter to generate a custom object instead of the PSModuleInfo object that New-Module generates by default.
@@ -180,14 +181,14 @@ The command saves the custom object in the $m variable.
 The second command attempts to display the value of the $m variable.
 No content appears.
 
-The third command uses a pipeline operator (|) to send the custom object to the Get-Member cmdlet, which displays the properties and methods of the custom object.
+The third command uses a pipeline operator to send the custom object to the Get-Member cmdlet, which displays the properties and methods of the custom object.
 The output shows that the object has script methods that represent the Hello and Goodbye functions.
 
 The fourth and fifth commands use the script method format to call the Hello and Goodbye functions.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6: Get the results of the script block
 ```
-PS C:\>new-module -scriptblock {function SayHello {"Hello, World!"}; SayHello} -returnResult
+PS C:\>New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnResult
 Hello, World!
 ```
 
@@ -198,7 +199,7 @@ The script block in the new module defines the SayHello function and then calls 
 ## PARAMETERS
 
 ### -ArgumentList
-Specifies arguments (parameter values) that are passed to the script block.
+Specifies an array of arguments which are parameter values that are passed to the script block.
 
 ```yaml
 Type: Object[]
@@ -213,11 +214,11 @@ Accept wildcard characters: False
 ```
 
 ### -AsCustomObject
-Returns a custom object that represents the dynamic module.
+Indicates that this cmdlet returns a custom object that represents the dynamic module.
 The module members are implemented as script methods of the custom object, but they are not imported into the session.
 You can save the custom object in a variable and use dot notation to invoke the members.
 
-If the module has multiple members with the same name, such as a function and a variable that are both named "A," only one member with each name is accessible from the custom object.
+If the module has multiple members with the same name, such as a function and a variable that are both named A, only one member with each name can be accessed from the custom object.
 
 ```yaml
 Type: SwitchParameter
@@ -232,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -Cmdlet
-Exports only the specified cmdlets from the module into the current session.
+Specifies an array of cmdlets that this cmdlet exports from the module into the current session.
 Enter a comma-separated list of cmdlets.
 Wildcard characters are permitted.
 By default, all cmdlets in the module are exported.
@@ -252,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -Function
-Exports only the specified functions from the module into the current session.
+Specifies an array of functions that this cmdlet exports from the module into the current session.
 Enter a comma-separated list of functions.
 Wildcard characters are permitted.
 By default, all functions defined in a module are exported.
@@ -273,11 +274,11 @@ Accept wildcard characters: False
 Specifies a name for the new module.
 You can also pipe a module name to New-Module.
 
-The default value is an autogenerated name that begins with "__DynamicModule_" and is followed by a GUID that specifies the path to the dynamic module.
+The default value is an autogenerated name that starts with __DynamicModule_ and is followed by a GUID that specifies the path of the dynamic module.
 
 ```yaml
 Type: String
-Parameter Sets: Name
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -288,7 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReturnResult
-Runs the script block and returns the script block results instead of returning a module object.
+Indicates that this cmdlet runs the script block and returns the script block results instead of returning a module object.
 
 ```yaml
 Type: SwitchParameter
@@ -322,28 +323,28 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### System.String
-You can pipe a module name string to New-Module.
+You can pipe a module name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo, System.Management.Automation.PSCustomObject, or None
-By default, New-Module generates a PSModuleInfo object.
+This cmdlet generates a PSModuleInfo object, by default.
 If you use the AsCustomObject parameter, it generates a PSCustomObject object.
 If you use the ReturnResult parameter, it returns the result of evaluating the script block in the dynamic module.
 
 ## NOTES
-You can also refer to New-Module by its alias, "nmo".
+You can also refer to New-Module by its alias, nmo.
 For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Export-ModuleMember]()
+[Export-ModuleMember](cbad7943-ded7-4311-9956-da867ad7233c)
 
-[Get-Module]()
+[Get-Module](2cccd4c4-9a21-4c77-b691-984ee57242e1)
 
-[Import-Module]()
+[Import-Module](af616c24-e122-4098-930e-1e3ea2080ade)
 
-[Remove-Module]()
+[Remove-Module](c0968566-4d7e-49e9-82b9-e4df1f489267)
 
-[about_Modules]()
+[about_Modules](3be86334-7efa-4ccd-952e-54afe47977a2)
 

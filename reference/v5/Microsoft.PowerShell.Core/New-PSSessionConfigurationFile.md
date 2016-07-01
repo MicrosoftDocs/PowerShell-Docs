@@ -1,6 +1,6 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=289597
+external help file: PSITPro5_Core.xml
+online version: https://technet.microsoft.com/en-us/library/hh849712.aspx
 schema: 2.0.0
 ---
 
@@ -11,20 +11,21 @@ Creates a file that defines a session configuration.
 ## SYNTAX
 
 ```
-New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>] [-Author <String>]
- [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-SessionType <SessionType>]
- [-TranscriptDirectory <String>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
- [-ScriptsToProcess <String[]>] [-RoleDefinitions <IDictionary>] [-LanguageMode <PSLanguageMode>]
- [-ExecutionPolicy <ExecutionPolicy>] [-PowerShellVersion <Version>] [-ModulesToImport <Object[]>]
- [-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>]
- [-VisibleExternalCommands <String[]>] [-VisibleProviders <String[]>] [-AliasDefinitions <IDictionary[]>]
- [-FunctionDefinitions <IDictionary[]>] [-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>]
- [-TypesToProcess <String[]>] [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full]
+New-PSSessionConfigurationFile [-Path] <String> [-AliasDefinitions <IDictionary[]>]
+ [-AssembliesToLoad <String[]>] [-Author <String>] [-CompanyName <String>] [-Copyright <String>]
+ [-Description <String>] [-EnforceInputParameterValidation] [-EnvironmentVariables <IDictionary>]
+ [-ExecutionPolicy] [-FormatsToProcess <String[]>] [-Full] [-FunctionDefinitions <IDictionary[]>]
+ [-Guid <Guid>] [-LanguageMode] [-ModulesToImport <Object[]>] [-MountUserDrive] [-PowerShellVersion <Version>]
+ [-RoleDefinitions <IDictionary>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
+ [-SchemaVersion <Version>] [-ScriptsToProcess <String[]>] [-SessionType] [-TranscriptDirectory <String>]
+ [-TypesToProcess <String[]>] [-UserDriveMaximumSize <Int64>] [-VariableDefinitions <Object>]
+ [-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleExternalCommands <String[]>]
+ [-VisibleFunctions <Object[]>] [-VisibleProviders <String[]>]
 ```
 
 ## DESCRIPTION
 The New-PSSessionConfigurationFile cmdlet creates a file of settings that define a session configuration and the environment of sessions that are created by using the session configuration.
-To use the file in a session configuration, use the Path parameters of the Register-PSSessionConfiguration or Set-PSSessionConfiguration cmdlets.
+To use the file in a session configuration, use the Path parameter of the Register-PSSessionConfiguration or Set-PSSessionConfiguration cmdlets.
 
 The session configuration file that New-PSSessionConfigurationFile creates is a human-readable text file that contains a hash table of the session configuration properties and values.
 The file has a .pssc file name extension.
@@ -32,7 +33,7 @@ The file has a .pssc file name extension.
 All parameters of New-PSSessionConfigurationFile are optional, except for the Path parameter.
 If you omit a parameter, the corresponding key in the session configuration file is commented-out, except where noted in the parameter description.
 
-A "session configuration" also known as an "endpoint" is a collection of settings on the local computer that define the environment for Windows PowerShell sessions (PSSessions) that connect to (terminate at) the computer.
+A session configuration, also known as an endpoint, is a collection of settings on the local computer that define the environment for Windows PowerShell sessions (PSSessions) that connect to, or terminate at, the computer.
 All PSSessions use a session configuration.
 To specify a particular session configuration, use the ConfigurationName parameter of cmdlets that create a session, such as the New-PSSession cmdlet.
 
@@ -41,7 +42,7 @@ The settings in the file are used in addition to the optional startup script and
 
 For more information about session configurations and session configuration files, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152) and about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
-This cmdlet is introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -60,21 +61,15 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 ### Example 2: Restricting Language in a Session
 ```
 The first pair of commands uses the New-PSSessionConfigurationFile cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the LanguageMode parameter, the session configuration files are equivalent.
-PS C:\>New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
- 
-                        
+PS C:\>New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage 
 PS C:\>New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 
 The second pair of commands uses the configuration files to create session configurations on the local computer.
-PS C:\>Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
- 
-                        
+PS C:\>Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force 
 PS C:\>Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
-PS C:\>$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
- 
-                        
+PS C:\>$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage 
 PS C:\>$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
@@ -93,7 +88,7 @@ Before
 The commands in this example compare a no-language session to a restricted-language session.
 The example shows the effect of using the LanguageMode parameter of New-PSSessionConfigurationFile to limit the types of commands and statements that users can run in a session that uses a custom session configuration.
 
-To run the commands in this example, start Windows PowerShell with the "Run as administrator" option.
+To run the commands in this example, start Windows PowerShell by using the Run as administrator option.
 This option is required to run the Register-PSSessionConfiguration cmdlet.
 
 ### Example 3: Changing a Session Configuration File
@@ -101,24 +96,24 @@ This option is required to run the Register-PSSessionConfiguration cmdlet.
 The first command uses the New-PSSessionConfigurationFile cmdlet to create a session configuration file that imports the required modules.
 PS C:\>New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 
-The second command uses the Set-PSSessionConfiguration cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change completes.
-PS C:\>Set-PSSessionConfiguration -Name  ITTasks -Path .\New-ITTasks.pssc
+The second command uses the Set-PSSessionConfiguration cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change is completed.
+PS C:\>Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
 ```
 
 This example shows how to change the session configuration file that is used in a session configuration.
-In this scenario, the administrator wants to add the PSScheduledJob module to sessions created with the ITTasks session configuration.
+In this scenario, the administrator wants to add the PSScheduledJob module to sessions created by using the ITTasks session configuration.
 Previously, these sessions had only the core modules and an internal "ITTasks" module.
 
 ### Example 4: Editing a Session Configuration File
 ```
-The first command uses the Get-PSSessionConfiguration command to get the path to the configuration file for the ITConfig session configuration. The path is stored in the ConfigFilePath property of the session configuration.
+The first command uses the Get-PSSessionConfiguration command to get the path of the configuration file for the ITConfig session configuration. The path is stored in the ConfigFilePath property of the session configuration.
 PS C:\>(Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
 
-To edit the session configuration copy of the configuration file, you might need to edit the file permissions.In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can edit the file. A new "slst" alias for the Select-String cmdlet is added to the file.
+To modify the session configuration copy of the configuration file, you might have to change the file permissions.In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
 PS C:\>AliasDefinitions = @(@{Name='slst';Value='Select-String'})
 
-The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the Verbose parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns True ($true), which indicates that it did not detect any errors in the file.
+The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the Verbose parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns $True, which indicates that it did not detect any errors in the file.
 PS C:\>Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 True
 ```
@@ -154,9 +149,7 @@ PS C:\>New-PSSessionConfigurationFile
 -RunAsVirtualAccount
 -RunAsVirtualAccountGroups "Backup Operators"
 
- 
-                      
-@{
+                       @{
 # Version number of the schema used for this configuration file
 SchemaVersion = '1.0.0.0'
 
@@ -265,12 +258,22 @@ The resulting SampleFile.pssc is displayed in the output.
 
 ### -AliasDefinitions
 Adds the specified aliases to sessions that use the session configuration.
-Enter a hash table with the following keys:
+Enter a hash table with the following keys: 
 
--- Name: Name of the alias. This key is required.
--- Value: The command that the alias represents. This key is required.
--- Description: A text string that describes the alias. This key is optional.
--- Options: Alias options. This key is optional. The default value is None. Valid values are None, ReadOnly, Constant, Private, or AllScope.
+-- Name.
+Name of the alias.
+This key is required. 
+-- Value.
+The command that the alias represents.
+This key is required. 
+-- Description.
+A text string that describes the alias.
+This key is optional. 
+-- Options.
+Alias options.
+This key is optional.
+The default value is None.
+The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example: @{Name="hlp";Value="Get-Help";Description="Gets help";Options="ReadOnly"}
 
@@ -302,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -Author
-Identifies the author of the session configuration or the configuration file.
+Specifies the author of the session configuration or the configuration file.
 The default is the current user.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
@@ -319,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
-Identifies the company that created the session configuration or the configuration file.
-The default value is "Unknown".
+Specifies the company that created the session configuration or the configuration file.
+The default value is Unknown.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
 ```yaml
@@ -336,7 +339,7 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
-Adds a copyright to the session configuration file.
+Specifies a copyright the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
 If you omit this parameter, New-PSSessionConfigurationFile generates a copyright statement by using the value of the Author parameter.
@@ -354,11 +357,26 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Describes the session configuration or the session configuration file.
+Specifies a description of the session configuration or the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnforceInputParameterValidation
+@{Text=}
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 
@@ -389,11 +407,11 @@ Accept wildcard characters: False
 
 ### -ExecutionPolicy
 Specifies the execution policy of sessions that use the session configuration.
-If you omit this parameter, the value of the ExecutionPolicy key in the session configuration file is "Restricted".
+If you omit this parameter, the value of the ExecutionPolicy key in the session configuration file is Restricted.
 For information about execution policies in Windows PowerShell, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 ```yaml
-Type: ExecutionPolicy
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: Unrestricted, RemoteSigned, AllSigned, Restricted, Default, Bypass, Undefined
@@ -407,7 +425,7 @@ Accept wildcard characters: False
 
 ### -FormatsToProcess
 Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
-The value of this parameter must be a full or absolute path to the formatting files.
+The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
 Type: String[]
@@ -438,11 +456,20 @@ Accept wildcard characters: False
 
 ### -FunctionDefinitions
 Adds the specified functions to sessions that use the session configuration.
-Enter a hash table with the following keys:
+Enter a hash table with the following keys: 
 
--- Name: Name of the function. This key is required.
--- ScriptBlock: Function body. Enter a script block. This key is required.
--- Options: Function options. This key is optional. The default value is None. Valid values are None, ReadOnly, Constant, Private, or AllScope.
+-- Name.
+Name of the function.
+This key is required. 
+-- ScriptBlock.
+Function body.
+Enter a script block.
+This key is required. 
+-- Options.
+Function options.
+This key is optional.
+The default value is None.
+The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example: @{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell};Options="AllScope"}
 
@@ -460,8 +487,7 @@ Accept wildcard characters: False
 
 ### -Guid
 Specifies a unique identifier for the session configuration file.
-If you omit this parameter, New-PSSessionConfigurationFile generates a GUID for the file.
-To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
+If you omit this parameter, New-PSSessionConfigurationFile generates a GUID for the file.To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
 
 ```yaml
 Type: Guid
@@ -479,21 +505,28 @@ Accept wildcard characters: False
 Determines which elements of the Windows PowerShell language are permitted in sessions that use this session configuration.
 You can use this parameter to restrict the commands that particular users can run on the computer.
 
-Valid values are:
+The acceptable values for this parameter are:
 
--- FullLanguage: All language elements are permitted.
--- ConstrainedLanguage: Commands that contain scripts to be evaluated are not allowed. The ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or methods.
--- NoLanguage: Users may run cmdlets and functions, but are not permitted to use any language elements, such as script blocks, variables, or operators.
--- RestrictedLanguage: Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: $PSCulture, $PSUICulture, $True, $False, and  $Null. Users may use only the basic comparison operators (-eq, -gt, -lt). Assignment statements, property references, and method calls are not permitted.
+-- FullLanguage.
+All language elements are permitted. 
+-- ConstrainedLanguage.
+Commands that contain scripts to be evaluated are not allowed.
+The ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or methods. 
+-- NoLanguage.
+Users may run cmdlets and functions, but are not permitted to use any language elements, such as script blocks, variables, or operators. 
+-- RestrictedLanguage.
+Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: $PSCulture, $PSUICulture, $True, $False, and $Null.
+Users may use only the basic comparison operators (-eq, -gt, -lt).
+Assignment statements, property references, and method calls are not permitted.
 
 The default value of the LanguageMode parameter depends on the value of the SessionType parameter.
 
--- Empty                            :  NoLanguage
--- RestrictedRemoteServer  :  NoLanguage
--- Default                          :  FullLanguage
+-- Empty. NoLanguage
+-- RestrictedRemoteServer. NoLanguage
+-- Default. FullLanguage
 
 ```yaml
-Type: PSLanguageMode
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: FullLanguage, RestrictedLanguage, NoLanguage, ConstrainedLanguage
@@ -534,6 +567,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MountUserDrive
+@{Text=}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies the path and file name of the session configuration file.
 The file must have a .pssc file name extension.
@@ -552,7 +600,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 Specifies the version of the Windows PowerShell engine in sessions that use the session configuration.
-Valid values are 2.0 and 3.0.
+The acceptable values for this parameter are: 2.0 and 3.0.
 If you omit this parameter, the PowerShellVersion key is commented-out and newest version of Windows PowerShell runs in the session.
 
 The value of the PSVersion parameter of the Register-PSSessionConfiguration cmdlet takes precedence over the value of the PowerShellVersion key in the session configuration file.
@@ -570,9 +618,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitions
-Specifies the role capabilities that should be applied to user roles (security groups) when connected to a session using this session configuration.
+Specifies the role capabilities that should be applied to user roles.
+or security groups, when connected to a session using this session configuration.
 
-Enter a hash table in which the keys are the name of the security group and the values are hash tables containing a list of role capabilities that should be made available to the security group.
+Enter a hash table in which the keys are the name of the security group and the values are hash tables that contain a list of role capabilities that should be made available to the security group.
 
 For example: @{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}
 
@@ -605,7 +654,7 @@ Accept wildcard characters: False
 
 ### -RunAsVirtualAccountGroups
 Specifies the security groups to be associated with the virtual account when a session that uses the session configuration is run as a virtual account.
-If omitted, the virtual account will belong to "Domain Admins" on domain controllers and "Administrators" on all other computers.
+If omitted, the virtual account belongs to Domain Admins on domain controllers and Administrators on all other computers.
 
 ```yaml
 Type: String[]
@@ -638,7 +687,7 @@ Accept wildcard characters: False
 ### -ScriptsToProcess
 Adds the specified scripts to sessions that use the session configuration.
 Enter the path and file names of the scripts.
-The value of this parameter must be a full or absolute path to script file names.
+The value of this parameter must be a full or absolute path of script file names.
 
 ```yaml
 Type: String[]
@@ -655,14 +704,22 @@ Accept wildcard characters: False
 ### -SessionType
 Specifies the type of session that is created by using the session configuration.
 The default value is Default.
-Valid values are:
+The acceptable values for this parameter are:
 
--- Empty: No modules or snap-ins are added to session by default. Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session. This option is designed for you to create custom sessions by adding selected command. If you do not add commands to an empty session, the session is limited to expressions and might not be usable.
--- Default: Adds the Microsoft.PowerShell.Core snap-in to the session. This snap-in includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets.
--- RestrictedRemoteServer: Includes only the following proxy functions:  Exit-PSSession,Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, and Select-Object. Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
+-- Empty.
+No modules or snap-ins are added to session by default.
+Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
+This option is designed for you to create custom sessions by adding selected command.
+If you do not add commands to an empty session, the session is limited to expressions and might not be usable. 
+-- Default.
+Adds the Microsoft.PowerShell.Core snap-in to the session.
+This snap-in includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets. 
+-- RestrictedRemoteServer.
+Includes only the following proxy functions:  Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, and Select-Object.
+Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
 
 ```yaml
-Type: SessionType
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: Empty, RestrictedRemoteServer, Default
@@ -692,7 +749,7 @@ Accept wildcard characters: False
 ### -TypesToProcess
 Adds the specified type files (.ps1xml) to sessions that use the session configuration.
 Enter the type file names.
-The value of this parameter must be a full or absolute path to type file names.
+The value of this parameter must be a full or absolute path of type file names.
 
 ```yaml
 Type: String[]
@@ -706,13 +763,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserDriveMaximumSize
+@{Text=}
+
+```yaml
+Type: Int64
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VariableDefinitions
 Adds the specified variables to sessions that use the session configuration.
-Enter a hash table with the following keys:
+Enter a hash table with the following keys: 
 
--- Name: Name of the variable. This key is required.
--- Value: Variable value. This key is required.
--- Options: Variable options. This key is optional. The default value is None. Valid values are None, ReadOnly, Constant, Private, or AllScope.
+-- Name.
+Name of the variable.
+This key is required. 
+-- Value.
+Variable value.
+This key is required. 
+-- Options.
+Variable options.
+This key is optional.
+The default value is None.
+The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example: @{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}
 
@@ -730,12 +810,12 @@ Accept wildcard characters: False
 
 ### -VisibleAliases
 Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the AliasDefinition parameter.
-Wildcards are supported.
+Wildcard characters are supported.
 By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
 
 For example: VisibleAliases="gcm", "gp"
 
-When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its "ipmo" alias from the session.
+When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]
@@ -751,13 +831,13 @@ Accept wildcard characters: False
 
 ### -VisibleCmdlets
 Limits the cmdlets in the session to those specified in the value of this parameter.
-Wildcards and Module Qualified Names are supported.
+Wildcard characters and Module Qualified Names are supported.
 
 By default, all cmdlets that modules in the session export are visible in the session.
 Use the SessionType and ModulesToImport parameters to determine which modules and snap-ins are imported into the session.
 If no modules in ModulesToImport expose the cmdlet, the appropriate module will attempt to be autoloaded.
 
-When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its "ipmo" alias from the session.
+When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: Object[]
@@ -773,16 +853,11 @@ Accept wildcard characters: False
 
 ### -VisibleExternalCommands
 Limits the external binaries, scripts, and commands that can be executed in the session to those specified in the value of this parameter.
-Wildcards are supported.
+Wildcard characters are supported.
 
 By default, no external commands are visible in the session.
 
 When any Visible parameter is included in the session configuration file, Windows PowerShell, removes the Import-Module cmdlet and its ipmo alias from the session.
-
--- Description: A text string that describes the alias. This key is optional.
--- Options: Alias options. This key is optional. The default value is None. Valid values are None, ReadOnly, Constant, Private, or AllScope.
-
-For example: @{Name="hlp";Value="Get-Help";Description="Gets help";Options="ReadOnly"}
 
 ```yaml
 Type: String[]
@@ -798,12 +873,12 @@ Accept wildcard characters: False
 
 ### -VisibleFunctions
 Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the FunctionDefinition parameter.
-Wildcards are supported.
+Wildcard characters are supported.
 
 By default, all functions that modules in the session export are visible in the session.
 Use the SessionType and ModulesToImport parameters to determine which modules and snap-ins are imported into the session.
 
-When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its "ipmo" alias from the session.
+When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: Object[]
@@ -819,12 +894,12 @@ Accept wildcard characters: False
 
 ### -VisibleProviders
 Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
-Wildcards are supported.
+Wildcard characters are supported.
 
 By default, all providers that modules in the session export are visible in the session.
 Use the SessionType and ModulesToImport parameters to determine which modules and snap-ins are imported into the session.
 
-When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its "ipmo" alias from the session.
+When any Visible parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]
@@ -841,7 +916,7 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### None
-This cmdlet does not take input from the pipeline.
+You cannot pipe any objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -851,38 +926,36 @@ This cmdlet does not generate any output.
 ## NOTES
 The Visible parameters, such as VisibleCmdlets and VisibleProviders, do not import items into the session.
 Instead, they select from among the items imported into the session.
-For example, if the value of the VisibleProviders parameter is the Certificate provider, but the ModulesToImport parameter doesn't specify the Microsoft.PowerShell.Security module that contains the Certificate provider, the Certificate provider is not visible in the session.
+For example, if the value of the VisibleProviders parameter is the Certificate provider, but the ModulesToImport parameter does not specify the Microsoft.PowerShell.Security module that contains the Certificate provider, the Certificate provider is not visible in the session.
 
-New-PSSessionConfigurationFile creates a session configuration file with a .pssc file name extension in the path that you specify in the Path parameter.
+New-PSSessionConfigurationFile creates a session configuration file that has a .pssc file name extension in the path that you specify in the Path parameter.
 When you use the session configuration file to create a session configuration, the Register-PSSessionConfiguration cmdlet copies the configuration file and saves an active copy of the file in the SessionConfig subdirectory of the $pshome directory.
 
-The ConfigFilePath property of the session configuration contains the fully qualified path to the active session configuration file.
-You can edit the active configuration file in the $pshome directory at any time, either by using Windows PowerShell ISE or any text editor.
+The ConfigFilePath property of the session configuration contains the fully qualified path of the active session configuration file.
+You can modify the active configuration file in the $pshome directory at any time, either by using Windows PowerShell ISE or any text editor.
 The changes that you make affect all new sessions that use the session configuration, but not existing sessions.
 
 Before using an edited session configuration file, use the Test-PSSessionConfigurationFile cmdlet to verify that the configuration file entries are valid.
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration]()
+[Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
-[Enable-PSSessionConfiguration]()
+[Enable-PSSessionConfiguration](58d537b4-8735-437d-a573-aa5744725b4a)
 
-[Get-PSSessionConfiguration]()
+[Get-PSSessionConfiguration](a71f9e56-0de4-4ffc-a40d-7c3c38cea22a)
 
-[New-PSSessionConfigurationFile]()
+[Register-PSSessionConfiguration](e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 
-[Register-PSSessionConfiguration]()
+[Set-PSSessionConfiguration](b21fbad3-1759-4260-b206-dcb8431cd6ea)
 
-[Set-PSSessionConfiguration]()
+[Test-PSSessionConfigurationFile](5f4a016a-f962-4cb5-9fa9-53b173b70056)
 
-[Test-PSSessionConfigurationFile]()
+[Unregister-PSSessionConfiguration](f8d6efd7-be65-42ea-9ed5-02453f5201c4)
 
-[Unregister-PSSessionConfiguration]()
+[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 
-[WSMan Provider]()
+[about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
-[about_Session_Configurations]()
-
-[about_Session_Configuration_Files]()
+[about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
 

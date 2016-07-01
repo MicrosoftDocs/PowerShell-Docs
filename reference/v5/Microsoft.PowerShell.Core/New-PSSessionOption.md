@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289598
 schema: 2.0.0
 ---
@@ -11,17 +11,17 @@ Creates an object that contains advanced options for a PSSession.
 ## SYNTAX
 
 ```
-New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile] [-Culture <CultureInfo>]
- [-UICulture <CultureInfo>] [-MaximumReceivedDataSizePerCommand <Int32>] [-MaximumReceivedObjectSize <Int32>]
- [-OutputBufferingMode <OutputBufferingMode>] [-MaxConnectionRetryCount <Int32>]
- [-ApplicationArguments <PSPrimitiveDictionary>] [-OpenTimeout <Int32>] [-CancelTimeout <Int32>]
- [-IdleTimeout <Int32>] [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <AuthenticationMechanism>]
+New-PSSessionOption [-ApplicationArguments <PSPrimitiveDictionary>] [-CancelTimeout <Int32>]
+ [-Culture <CultureInfo>] [-IdleTimeout <Int32>] [-IncludePortInSPN] [-MaxConnectionRetryCount <Int32>]
+ [-MaximumReceivedDataSizePerCommand <Int32>] [-MaximumReceivedObjectSize <Int32>]
+ [-MaximumRedirection <Int32>] [-NoCompression] [-NoEncryption] [-NoMachineProfile] [-OpenTimeout <Int32>]
+ [-OperationTimeout <Int32>] [-OutputBufferingMode] [-ProxyAccessType] [-ProxyAuthentication]
  [-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
- [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN]
+ [-UICulture <CultureInfo>] [-UseUTF16]
 ```
 
 ## DESCRIPTION
-The New-PSSessionOption cmdlet creates an object that contains advanced options for a user-managed session ("PSSession").
+The New-PSSessionOption cmdlet creates an object that contains advanced options for a user-managed session (PSSession).
 You can use the object as the value of the SessionOption parameter of cmdlets that create a PSSession, such as New-PSSession, Enter-PSSession, and Invoke-Command.
 
 Without parameters, New-PSSessionOption generates an object that contains the default values for all of the options.
@@ -38,35 +38,34 @@ For more information about session configurations, see about_Session_Configurati
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Create a default session option
 ```
 PS C:\>New-PSSessionOption
-
 MaximumConnectionRedirectionCount : 5
 NoCompression                     : False
 NoMachineProfile                  : False
 ProxyAccessType                   : IEConfig
 ProxyAuthentication               : Negotiate
-ProxyCredential                   :
+ProxyCredential                   : 
 SkipCACheck                       : False
 SkipCNCheck                       : False
 SkipRevocationCheck               : False
 OperationTimeout                  : 00:03:00
 NoEncryption                      : False
 UseUTF16                          : False
-Culture                           :
-UICulture                         :
-MaximumReceivedDataSizePerCommand :
-MaximumReceivedObjectSize         :
-ApplicationArguments              :
+Culture                           : 
+UICulture                         : 
+MaximumReceivedDataSizePerCommand : 
+MaximumReceivedObjectSize         : 
+ApplicationArguments              : 
 OpenTimeout                       : 00:03:00
 CancelTimeout                     : 00:01:00
 IdleTimeout                       : 00:04:00
 ```
 
-This command creates a session option object with all of the default values.
+This command creates a session option object that has all of the default values.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Configure a session by using a session option object
 ```
 PS C:\>$pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
 PS C:\>New-PSSession -ComputerName Server01 -SessionOption $pso
@@ -79,17 +78,17 @@ The first command creates a new session option object and saves it in the value 
 The second command uses the New-PSSession cmdlet to create a session on the Server01 remote computer.
 The command uses the session option object in the value of the $pso variable as the value of the SessionOption parameter of the command.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Start an interactive session
 ```
 PS C:\>Enter-PSSession -ComputerName Server01 -SessionOption (New-PSSessionOption -NoEncryption -NoCompression)
 ```
 
 This command uses the Enter-PSSession cmdlet to start an interactive session with the Server01 computer.
-The value of the SessionOption parameter is a New-PSSessionOption command with the NoEncryption and NoCompression switch parameters.
+The value of the SessionOption parameter is a New-PSSessionOption command that has the NoEncryption and NoCompression parameters.
 
 The New-PSSessionOption command is enclosed in parentheses to make sure that it runs before the Enter-PSSession command.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Modify a session option object
 ```
 PS C:\>$a = New-PSSessionOption
 
@@ -114,10 +113,10 @@ OpenTimeout                       : 00:03:00
 CancelTimeout                     : 00:01:00
 IdleTimeout                       : 00:04:00
 
-PS C:\>$a.UICulture = (Get-UICulture)
-PS C:\>$a.OpenTimeout = (New-Timespan -Minutes 4)
-PS C:\>$a.MaximumConnectionRedirectionCount = 1
-PS C:\>$a
+PS C:\> $a.UICulture = (Get-UICulture)
+PS C:\> $a.OpenTimeout = (New-Timespan -Minutes 4)
+PS C:\> $a.MaximumConnectionRedirectionCount = 1
+PS C:\> $a
 
 MaximumConnectionRedirectionCount : 1
 NoCompression                     : False
@@ -141,26 +140,26 @@ CancelTimeout                     : 00:01:00
 IdleTimeout                       : 00:04:00
 ```
 
-This example demonstrates that you can edit the session option object.
+This example demonstrates that you can modify the session option object.
 All properties have read/write values.
 
 Use this method to create a standard session object for your enterprise, and then create customized versions of it for particular uses.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Create a preference variable
 ```
 PS C:\>$PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
 
 This command creates a $PSSessionOption preference variable.
 
-When the $PSSessionOption preference variable exists in the session, it establishes default values for options in the sessions that are created by using the New-PSSession, Enter-PSSession, and Invoke-Command cmdlets.
+When the $PSSessionOption preference variable occurs in the session, it establishes default values for options in the sessions that are created by using the New-PSSession, Enter-PSSession, and Invoke-Command cmdlets.
 
 To make the $PSSessionOption variable available in all sessions, add it to your Windows PowerShell session and to your Windows PowerShell profile.
 
 For more information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6: Fulfill the requirements for a remote session configuration
 ```
 PS C:\>$skipCN = New-PSSessionOption -SkipCNCheck
 PS C:\>New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
@@ -168,16 +167,17 @@ PS C:\>New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\Us
 
 This example shows how to use a SessionOption object to fulfill the requirements for a remote session configuration.
 
-The first command uses the New-PSSessionOption cmdlet to create a session option object with the SkipCNCheck property.
+The first command uses the New-PSSessionOption cmdlet to create a session option object that has the SkipCNCheck property.
 The command saves the resulting session object in the $skipCN variable.
 
-The second command uses the New-PSSession cmdlet to create a new session on a remote computer.
+The second command uses the 
+ cmdlet to create a new session on a remote computer.
 The $skipCN check variable is used in the value of the SessionOption parameter.
 
-Because the computer is identified by its IP address, the value of the ComputerName parameter does not match any of the common names in the certificate used for Secure Sockets Layer (SSL).
+Because the computer is identified by its IP address, the value of the ComputerName parameter does not match any of the common names in the certificate that is used for Secure Sockets Layer (SSL).
 As a result, the SkipCNCheck option is required.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7: Make arguments available to a remote session
 ```
 PS C:\>$team = @{Team="IT"; Use="Testing"}
 PS C:\>$TeamOption = New-PSSessionOption -ApplicationArguments $team
@@ -198,7 +198,7 @@ This example shows how to use the ApplicationArguments parameter of the New-PSSe
 
 The first command creates a hash table with two keys, Team and Use.
 The command saves the hash table in the $team variable.
-(For more information about hash tables, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175).)
+For more information about hash tables, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175).
 
 The second command uses the ApplicationArguments parameter of the New-PSSessionOption cmdlet to create a session option object that contains the data in the $team variable.
 The command saves the session option object in the $teamOption variable.
@@ -212,8 +212,8 @@ The fourth command demonstrates that the data in the $team variable is available
 The data appears in the ApplicationArguments property of the $PSSenderInfo automatic variable.
 
 The fifth command shows how the data might be used.
-The command uses the Invoke-Command cmdlet to run a script only when the value of the Use property is not "Testing".
-When the value of Use is "Testing", the command returns "Just testing."
+The command uses the Invoke-Command cmdlet to run a script only when the value of the Use property is not Testing.
+When the value of Use is Testing, the command returns Just testing.
 
 ## PARAMETERS
 
@@ -240,11 +240,11 @@ Accept wildcard characters: False
 ```
 
 ### -CancelTimeout
-Determines how long Windows PowerShell waits for a cancel operation (CTRL + C)  to complete before terminating it.
+Determines how long Windows PowerShell waits for a cancel operation (CTRL + C) to finish before ending it.
 Enter a value in milliseconds.
 
 The default value is 60000 (one minute).
-A value of 0 (zero) means no timeout; the command continues indefinitely.
+A value of 0 (zero) means no time-out; the command continues indefinitely.
 
 ```yaml
 Type: Int32
@@ -260,9 +260,9 @@ Accept wildcard characters: False
 
 ### -Culture
 Specifies the culture to use for the session.
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format, such as "ja-jP",  a variable that contains a CultureInfo object, or a command that gets a CultureInfo object, such as "get-culture".
+Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format, such as ja-jP, a variable that contains a CultureInfo object, or a command that gets a CultureInfo object, such as Get-Culture.
 
-The default value is $null, and the culture that is set in the operating system  is used in the session.
+The default value is $Null, and the culture that is set in the operating system is used in the session.
 
 ```yaml
 Type: CultureInfo
@@ -277,27 +277,28 @@ Accept wildcard characters: False
 ```
 
 ### -IdleTimeout
-Determines how long the session stays open if the remote computer does not receive any communication from the local computer, including the heartbeat signal.
+Determines how long the session stays open if the remote computer does not receive any communication from the local computer.
+This includes the heartbeat signal.
 When the interval expires, the session closes.
 
-The idle timeout value is of significant importance if you intend to disconnect and reconnect to a session.
+The idle time-out value is of significant importance if you intend to disconnect and reconnect to a session.
 You can reconnect only if the session has not timed out.
 
 Enter a value in milliseconds.
 The minimum value is 60000 (1 minute).
 The maximum is the value of the MaxIdleTimeoutms property of the session configuration.
-The default value, -1, does not set an idle timeout.
+The default value, -1, does not set an idle time-out.
 
-The session uses the idle timeout that is set in the session options, if any.
-If none is set (-1), the session uses the value of the IdleTimeoutMs property of the session configuration or the WSMan shell timeout value (WSMan:\\\<ComputerName\>\Shell\IdleTimeout), whichever is shortest.
+The session uses the idle time-out that is set in the session options, if any.
+If none is set (-1), the session uses the value of the IdleTimeoutMs property of the session configuration or the WSMan shell time-out value (WSMan:\\\<ComputerName\>\Shell\IdleTimeout), whichever is shortest.
 
 If the idle timeout set in the session options exceeds the value of the MaxIdleTimeoutMs property of the session configuration, the command to create a session fails.
 
 The IdleTimeoutMs value of the default Microsoft.PowerShell session configuration is 7200000 milliseconds (2 hours).
 Its MaxIdleTimeoutMs value is 2147483647 milliseconds (\>24 days).
-The default value of the WSMan shell idle timeout (WSMan:\\\<ComputerName\>\Shell\IdleTimeout) is 7200000 milliseconds (2 hours).
+The default value of the WSMan shell idle time-out (WSMan:\\\<ComputerName\>\Shell\IdleTimeout) is 7200000 milliseconds (2 hours).
 
-The idle timeout value of a session can also be changed when disconnecting from a session or reconnecting to a session.
+The idle time-out value of a session can also be changed when disconnecting from a session or reconnecting to a session.
 For more information, see Disconnect-PSSession and Connect-PSSession.
 
 In Windows PowerShell 2.0, the default value of the IdleTimeout parameter is 240000 (4 minutes).
@@ -315,10 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConnectionRetryCount
-A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during Windows PowerShell remoting handshakes.
-If you enter a hash table for the value of this parameter, Windows PowerShell converts it to a primitive dictionary.
-
-For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+@{Text=}
 
 ```yaml
 Type: Int32
@@ -485,19 +483,22 @@ Users can also change the output buffering mode when disconnecting the session.
 
 If you omit this parameter, the value of the OutputBufferingMode of the session option object is None.
 A value of Block or Drop overrides the output buffering mode transport option set in the session configuration.
+The acceptable values for this parameter are:
 
-Valid values are:
-
--- Block: When the output buffer is full, execution is suspended until the buffer is clear.
--- Drop: When the output buffer is full, execution continues. As new output is saved, the oldest output is discarded.
--- None: No output buffering mode is specified.
+-- Block.
+When the output buffer is full, execution is suspended until the buffer is clear. 
+-- Drop.
+When the output buffer is full, execution continues.
+As new output is saved, the oldest output is discarded. 
+-- None.
+No output buffering mode is specified.
 
 For more information about the output buffering mode transport option, see New-PSTransportOption.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: OutputBufferingMode
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: None, Drop, Block
@@ -511,13 +512,20 @@ Accept wildcard characters: False
 
 ### -ProxyAccessType
 Determines which mechanism is used to resolve the host name.
-Valid values are IEConfig, WinHttpConfig, AutoDetect, NoProxyServer and None.
+The acceptable values for this parameter are:
+
+-- IEConfig 
+-- WinHttpConfig 
+-- AutoDetect 
+-- NoProxyServer 
+-- None 
+
 The default value is None.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessType enumeration in the MSDN (Microsoft Developer Network) Library at http://go.microsoft.com/fwlink/?LinkId=144756.
+For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessTypehttp://go.microsoft.com/fwlink/?LinkId=144756 (http://go.microsoft.com/fwlink/?LinkId=144756) enumeration in the Microsoft Developer Network (MSDN) library.
 
 ```yaml
-Type: ProxyAccessType
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: None, IEConfig, WinHttpConfig, AutoDetect, NoProxyServer
@@ -531,13 +539,13 @@ Accept wildcard characters: False
 
 ### -ProxyAuthentication
 Specifies the authentication method that is used for proxy resolution.
-Valid values are Basic, Digest, and Negotiate.
+The acceptable values for this parameter are: Basic,  Digest, and Negotiate.
 The default value is Negotiate.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanismhttp://go.microsoft.com/fwlink/?LinkID=144382 enumeration (http://go.microsoft.com/fwlink/?LinkID=144382) in the MSDN library.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -567,7 +575,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCACheck
-Specifies that when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
+Specifies that when it connects over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
 
 Use this option only when the remote computer is trusted by using another mechanism, such as when the remote computer is part of a network that is physically secure and isolated or when the remote computer is listed as a trusted host in a WinRM configuration.
 
@@ -584,7 +592,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCNCheck
-Specifies that the certificate common name (CN) of the server does not need to match the hostname of the server.
+Specifies that the certificate common name (CN) of the server does not have to match the host name of the server.
 This option is used only in remote operations that use the HTTPS protocol.
 
 Use this option only for trusted computers.
@@ -619,9 +627,9 @@ Accept wildcard characters: False
 ### -UICulture
 Specifies the UI culture to use for the session.
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format, such as "ja-jP",  a variable that contains a CultureInfo object, or a command that gets a CultureInfo object, such as a Get-Culture command.
+Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format, such as ja-jP, a variable that contains a CultureInfo object, or a command that gets a CultureInfo object, such as Get-Culture.
 
-The default value is $null, and the UI culture that is set in the operating system when the session is created is used in the session.
+The default value is $Null, and the UI culture that is set in the operating system when the session is created is used in the session.
 
 ```yaml
 Type: CultureInfo
@@ -636,7 +644,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseUTF16
-Encode the request in UTF16 format rather than UTF8 format.
+Indicates that this cmdlet encodes the request in UTF16 format instead of UTF8 format.
 
 ```yaml
 Type: SwitchParameter
@@ -651,17 +659,17 @@ Accept wildcard characters: False
 ```
 
 ### -IncludePortInSPN
-Includes the port number in the Service Principal Name (SPN) used for Kerberos authentication, for example, "HTTP/\<ComputerName\>:5985".
+Includes the port number in the Service Principal Name (SPN) used for Kerberos authentication, for example, HTTP/\<ComputerName\>:5985.
 This option allows a client that uses a non-default SPN to authenticate against a remote computer that uses Kerberos authentication.
 
 The option is designed for enterprises where multiple services that support Kerberos authentication are running under different user accounts.
-For example, an IIS application that allows Kerberos authentication can require the default SPN to be registered to a user account that is different from the computer account.
+For example, an IIS application that allows for Kerberos authentication can require the default SPN to be registered to a user account that differs from the computer account.
 In such cases, Windows PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
-To resolve this problem, administrators can create different SPNs (such as by using Setspn.exe) that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
+To resolve this problem, administrators can create different SPNs, such as by using Setspn.exe, that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
 
-For more information about SetSPN.exe, see "SetSPN Overview" at http://go.microsoft.com/fwlink/?LinkID=189413.
+For more information about SetSPN.exe, see SetSPN Overviewhttp://go.microsoft.com/fwlink/?LinkID=189413 (http://go.microsoft.com/fwlink/?LinkID=189413).
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -693,9 +701,9 @@ Also, session configurations that use a session configuration file have addition
 
 ## RELATED LINKS
 
-[Enter-PSSession]()
+[Enter-PSSession](4e1e012b-51df-4fea-9ff2-dc859eee13fe)
 
-[Invoke-Command]()
+[Invoke-Command](906b4b41-7da8-4330-9363-e7164e5e6970)
 
-[New-PSSession]()
+[New-PSSession](76f6628c-054c-4eda-ba7a-a6f28daaa26f)
 

@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289600
 schema: 2.0.0
 ---
@@ -11,7 +11,7 @@ Sends the output to the default formatter and to the default output cmdlet.
 ## SYNTAX
 
 ```
-Out-Default [-Transcript] [-InputObject <PSObject>]
+Out-Default [-InputObject <PSObject>] [-Transcript]
 ```
 
 ## DESCRIPTION
@@ -66,13 +66,13 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Format-Custom]()
+[Format-Custom](f45e1921-dc98-4d7e-a938-e7a503284c61)
 
-[Format-List]()
+[Format-List](dec7f080-d85c-46c4-ade4-5aef22c1bf18)
 
-[Format-Table]()
+[Format-Table](2b56a2d0-c067-40e4-b744-979fbaf847e2)
 
-[Format-Wide]()
+[Format-Wide](6e24fa8c-30b4-440c-a84a-54b517933cb2)
 
-[about_Format.ps1.xml]()
+[about_Format.ps1xml](be0f25ff-0a2a-49d8-b0d4-c035b9434ea8)
 

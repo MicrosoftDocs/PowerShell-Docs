@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289571
 schema: 2.0.0
 ---
@@ -10,14 +10,14 @@ Deletes entries from the command history.
 
 ## SYNTAX
 
-### IDParameter (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
-Clear-History [[-Id] <Int32[]>] [[-Count] <Int32>] [-Newest] [-WhatIf] [-Confirm]
+Clear-History [[-Id] <Int32[]>] [[-Count] <Int32>] [-Newest] [-Confirm] [-WhatIf]
 ```
 
-### CommandLineParameter
+### UNNAMED_PARAMETER_SET_2
 ```
-Clear-History [-CommandLine <String[]>] [[-Count] <Int32>] [-Newest] [-WhatIf] [-Confirm]
+Clear-History [[-Count] <Int32>] [-CommandLine <String[]>] [-Newest] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
@@ -27,50 +27,50 @@ Without parameters, Clear-History deletes all commands from the session history,
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Delete all commands
 ```
-PS C:\>clear-history
-```
-
-Deletes all commands from the session history.
-
-### -------------------------- EXAMPLE 2 --------------------------
-```
-PS C:\>clear-history -id 23, 25
+PS C:\>Clear-History
 ```
 
-Deletes the commands with history IDs 23 and 25.
+This command deletes all commands from the session history.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 2: Delete commands by using history IDs
 ```
-PS C:\>clear-history -command *help*, *command
-```
-
-Deletes commands that include "help" or end in "command".
-
-### -------------------------- EXAMPLE 4 --------------------------
-```
-PS C:\>clear-history -count 10 -newest
+PS C:\>Clear-History -Id 23, 25
 ```
 
-Deletes the 10 newest commands from the history.
+This command deletes the commands that have history IDs 23 and 25.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 3: Delete specific commands
 ```
-PS C:\>clear-history -id 10 -count 3
+PS C:\>Clear-History -Command *help*, *command
 ```
 
-Deletes the three oldest commands, beginning with the entry with ID 10.
+This command deletes commands that include "help" or end in "command".
+
+### Example 4: Delete the newest commands
+```
+PS C:\>Clear-History -Count 10 -Newest
+```
+
+This command deletes the 10 newest commands from the history.
+
+### Example 5: Delete the oldest commands
+```
+PS C:\>Clear-History -Id 10 -Count 3
+```
+
+This command deletes the three oldest commands, starting with the entry with ID 10.
 
 ## PARAMETERS
 
 ### -CommandLine
-Deletes commands with the specified text strings.
-If you enter more than one string, Clear-History deletes commands with any of the strings.
+Specifies commands that this cmdlet deletes.
+If you enter more than one string, Clear-History deletes commands that have any of the strings.
 
 ```yaml
 Type: String[]
-Parameter Sets: CommandLineParameter
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: False
@@ -81,12 +81,12 @@ Accept wildcard characters: False
 ```
 
 ### -Count
-Clears the specified number of  history entries, beginning with the oldest entry in the history.
+Specifies the number of history entries that this cmdlet clears, starting with the oldest entry in the history.
 
-If you use the Count and Id parameters in the same command, the cmdlet clears the number of entries specified by the Count parameter, beginning with the entry specified by the Id parameter. 
+If you use the Count and Id parameters in the same command, the cmdlet clears the number of entries specified by the Count parameter, starting with the entry specified by the Id parameter.
 For example, if Count is 10 and Id is 30, Clear-History clears items 21 through 30 inclusive.
 
-If you use the Count and CommandLine parameters in the same command, Clear-History clears the number of entries specified by the Count parameter, beginning with the entry specified by the CommandLine parameter.
+If you use the Count and CommandLine parameters in the same command, Clear-History clears the number of entries specified by the Count parameter, starting with the entry specified by the CommandLine parameter.
 
 ```yaml
 Type: Int32
@@ -101,13 +101,13 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Deletes commands with the specified history IDs.
+Specifies the history IDs of commands that this cmdlet deletes.
 
-To find the history ID of a command, use Get-History.
+To find the history ID of a command, use the Get-History cmdlet.
 
 ```yaml
 Type: Int32[]
-Parameter Sets: IDParameter
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: False
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -Newest
-Deletes the newest entries in the history.
+Indicates that this cmdlet deletes the newest entries in the history.
 By default, Clear-History deletes the oldest entries in the history.
 
 ```yaml
@@ -139,7 +139,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -156,7 +156,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### None
-You cannot pipe objects to Clear-History.
+You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -184,11 +184,11 @@ Deleting a command from the history does not change the history IDs of the remai
 
 ## RELATED LINKS
 
-[Add-History]()
+[Add-History](cf476753-0b6d-405d-aab5-9b4488f18390)
 
-[Get-History]()
+[Get-History](023a54f7-7e13-4699-8b0a-5f348b2a8125)
 
-[Invoke-History]()
+[Invoke-History](cc0f7984-a1f9-445c-99ba-be39a502fe01)
 
-[about_History]()
+[about_History](cb632285-e50b-428e-8d7d-7583f8880b70)
 

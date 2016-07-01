@@ -1,48 +1,49 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289610
 schema: 2.0.0
 ---
 
 # Resume-Job
 ## SYNOPSIS
-Restarts a suspended job
+Restarts a suspended job.
 
 ## SYNTAX
 
-### SessionIdParameterSet (Default)
+### UNNAMED_PARAMETER_SET_1
 ```
-Resume-Job [-Wait] [-Id] <Int32[]> [-WhatIf] [-Confirm]
-```
-
-### JobParameterSet
-```
-Resume-Job [-Job] <Job[]> [-Wait] [-WhatIf] [-Confirm]
+Resume-Job [-Id] <Int32[]> [-Wait] [-Confirm] [-WhatIf]
 ```
 
-### NameParameterSet
+### UNNAMED_PARAMETER_SET_2
 ```
-Resume-Job [-Wait] [-Name] <String[]> [-WhatIf] [-Confirm]
-```
-
-### InstanceIdParameterSet
-```
-Resume-Job [-Wait] [-InstanceId] <Guid[]> [-WhatIf] [-Confirm]
+Resume-Job [-Filter] <Hashtable> [-Wait] [-Confirm] [-WhatIf]
 ```
 
-### StateParameterSet
+### UNNAMED_PARAMETER_SET_3
 ```
-Resume-Job [-Wait] [-State] <JobState> [-WhatIf] [-Confirm]
+Resume-Job [-InstanceId] <Guid[]> [-Wait] [-Confirm] [-WhatIf]
 ```
 
-### FilterParameterSet
+### UNNAMED_PARAMETER_SET_4
 ```
-Resume-Job [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm]
+Resume-Job [-Job] <Job[]> [-Wait] [-Confirm] [-WhatIf]
+```
+
+### UNNAMED_PARAMETER_SET_5
+```
+Resume-Job [-Name] <String[]> [-Wait] [-Confirm] [-WhatIf]
+```
+
+### UNNAMED_PARAMETER_SET_6
+```
+Resume-Job [-State] [-Wait] [-Confirm] [-WhatIf]
 ```
 
 ## DESCRIPTION
 The Resume-Job cmdlet resumes a workflow job that was suspended, such as by using the Suspend-Job cmdlet or the about_Suspend-Workflow activity.
-When a workflow job is resumed, the job engine reconstructs the state, metadata, and output from saved resources, such as checkpoints, so the job is restarted without any loss of state or data.
+When a workflow job resumes, the job engine reconstructs the state, metadata, and output from saved resources, such as checkpoints.
+The job is restarted without any loss of state or data.
 The job state is changed from Suspended to Running.
 
 Use the parameters of Resume-Job to select jobs by name, ID, instance ID or pipe a job object, such as one returned by the Get-Job cmdlet, to Resume-Job.
@@ -58,9 +59,9 @@ If you submit a job of an unsupported type, Resume-Job generates a terminating e
 To identify a workflow job, look for a value of PSWorkflowJob in the PSJobTypeName property of the job.
 To determine whether a particular custom job type supports the Resume-Job cmdlet, see the help topics for the custom job type.
 
-NOTE: Before using a Job cmdlet on a custom job type, import the module that supports the custom job type, either by using the Import-Module cmdlet or getting or using a cmdlet in the module.
+Before using a Job cmdlet on a custom job type, import the module that supports the custom job type, either by using the Import-Module cmdlet or getting or using a cmdlet in the module.
 
-This cmdlet is introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -113,7 +114,7 @@ PS C:\>Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
 This command uses the Wait parameter to direct Resume-Job to return only after all specified jobs are resumed.
 The Wait parameter is especially useful in scripts that assume that jobs are resumed before the script continues.
 
-### Example 5: Resume a Workflow that Suspends Itself
+### Example 5: Resume a workflow that suspends itself
 ```
 This code sample shows the Suspend-Workflow activity in a workflow.
 #SampleWorkflow
@@ -124,16 +125,14 @@ Workflow Test-Suspend
     (Get-Date)- $a
 }
 
-The following command runs the Test-Suspend workflow on the Server01 computer.When you run the workflow, the workflow runs the Get-Date activity and saves the result in the $a variable. Then it runs the Suspend-Workflow activity. In response, it takes a checkpoint, suspends the workflow, and returns a workflow job object. Suspend-Workflow returns a workflow job object even if the workflow is not explicitly run as a job.
+The following command runs the Test-Suspend workflow on the Server01 computer.When you run the workflow, the workflow runs the Get-Date activity and stores the result in the $a variable. Then it runs the Suspend-Workflow activity. In response, it takes a checkpoint, suspends the workflow, and returns a workflow job object.  Suspend-Workflow returns a workflow job object even if the workflow is not explicitly run as a job.
 PS C:\>Test-Suspend -PSComputerName Server01
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
-
 --     ----            -------------   -----         -----------     --------             -------
-
 8      Job8            PSWorkflowJob   Suspended     True            Server01             Test-Suspend
 
 The following command resumes the Test-Suspend workflow in Job8. It uses the Wait parameter to hold the command prompt until the job is resumed.
-PS C:\>Resume-Job -Name Job8 -Wait
+PS C:\>Resume-Job -Name "Job8" -Wait
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 
 --     ----            -------------   -----         -----------     --------             -------
@@ -143,27 +142,16 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 This command uses the Receive-Job cmdlet to get the results of the Test-Suspend workflow. The final command in the workflow returns a TimeSpan object that represents the elapsed time between the current date and time and the date and time that was saved in the $a variable before the workflow was suspended.
 PS C:\>Receive-Job -Name Job8
         Days              : 0
-
         Hours             : 0
-
         Minutes           : 0
-
         Seconds           : 19
-
         Milliseconds      : 823
-
         Ticks             : 198230041
-
         TotalDays         : 0.000229432917824074
-
         TotalHours        : 0.00550639002777778
-
         TotalMinutes      : 0.330383401666667
-
         TotalSeconds      : 19.8230041
-
         TotalMilliseconds : 19823.0041
-
         PSComputerName    : Server01
 ```
 
@@ -176,12 +164,13 @@ For information about the Suspend-Workflow, see about_Suspend-Workflow.
 ## PARAMETERS
 
 ### -Filter
-Resumes only jobs that satisfy all of the conditions established in the associated hash table.
+Specifies a hash table of conditions.
+This cmdlet resumes jobs that satisfy all of the conditions in the hash table.
 Enter a hash table where the keys are job properties and the values are job property values.
 
 ```yaml
 Type: Hashtable
-Parameter Sets: FilterParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_2
 Aliases: 
 
 Required: True
@@ -192,16 +181,16 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Resumes the jobs with the specified IDs.
+Specifies an array of IDs for jobs that this cmdlet resumes.
 
-The ID is an integer that uniquely identifies the job within the current session.
-It is easier to remember and to type than the instance ID, but it is unique only within the current session.
-You can type one or more IDs (separated by commas).
-To find the ID of a job, use the Get-Job cmdlet.
+The ID is an integer that uniquely identifies the job in the current session.
+It is easier to remember and to type than the instance ID, but it is unique only in the current session.
+You can type one or more IDs, separated by commas.
+To find the ID of a job, run Get-Job.
 
 ```yaml
 Type: Int32[]
-Parameter Sets: SessionIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_1
 Aliases: 
 
 Required: True
@@ -212,15 +201,15 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Resumes jobs with the specified instance IDs.
+Specifies an array of instance IDs of jobs that this cmdlet resumes.
 The default is all jobs.
 
 An instance ID is a GUID that uniquely identifies the job on the computer.
-To find the instance ID of a job, use the Get-Job cmdlet.
+To find the instance ID of a job, run Get-Job.
 
 ```yaml
 Type: Guid[]
-Parameter Sets: InstanceIdParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_3
 Aliases: 
 
 Required: True
@@ -237,24 +226,24 @@ You can also pipe jobs to the Resume-Job cmdlet.
 
 ```yaml
 Type: Job[]
-Parameter Sets: JobParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_4
 Aliases: 
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByValue, ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-Resumes jobs with the specified friendly names.
+Specifies an array of friendly names of jobs that this cmdlet resumes.
 Enter one or more job names.
-Wildcards are supported.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
-Parameter Sets: NameParameterSet
+Parameter Sets: UNNAMED_PARAMETER_SET_5
 Aliases: 
 
 Required: True
@@ -265,14 +254,27 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Resumes only those jobs in the specified state.
-Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, and Stopping, but Resume-Job resumes only jobs in the Suspended state.
+Specifies the state of jobs to resume.
+The acceptable values for this parameter are:
 
-For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx
+-- NotStarted 
+-- Running 
+-- Completed 
+-- Failed 
+-- Stopped 
+-- Blocked 
+-- Suspended 
+-- Disconnected 
+-- Suspending 
+-- Stopping
+
+This cmdlet resumes only jobs in the Suspended state.
+
+For more information about job states, see JobState Enumerationhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx) in the Microsoft Developer Network (MSDN) library.
 
 ```yaml
-Type: JobState
-Parameter Sets: StateParameterSet
+Type: SwitchParameter
+Parameter Sets: UNNAMED_PARAMETER_SET_6
 Aliases: 
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
@@ -284,7 +286,8 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
-@{Text=}
+Indicates that this cmdlet suppresses the command prompt until all job results are restarted.
+By default, this cmdlet immediately returns the available results.
 
 ```yaml
 Type: SwitchParameter
@@ -304,7 +307,7 @@ Prompts you for confirmation before running the cmdlet.Prompts you for confirmat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
@@ -321,7 +324,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: 
 
 Required: False
 Position: Named
@@ -333,13 +336,13 @@ Accept wildcard characters: False
 ## INPUTS
 
 ### System.Management.Automation.Job
-You can pipe all types of jobs to Resume-Job.
-However, if Resume-Job gets a job of an unsupported type, it throws a terminating error.
+You can pipe all types of jobs to this cmdlet.
+If Resume-Job gets a job of an unsupported type, it returns a terminating error.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.Job
-If you use the PassThru parameter, Resume-Job returns the jobs that it tried to resume.
+### None, System.Management.Automation.Job
+This cmdlet returns the jobs that it tries to resume, if you use the PassThru parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
@@ -347,7 +350,7 @@ Resume-Job can only resume jobs that are suspended.
 If you submit a job in a different state, Resume-Job runs the resume operation on the job, but generates a warning to notify you that the job could not be resumed.
 To suppress the warning, use the WarningAction common parameter with a value of SilentlyContinue.
 
-If a job is not of a type that supports resuming, such as a workflow job (PSWorkflowJob), Resume-Job throws a terminating error.
+If a job is not of a type that supports resuming, such as a workflow job (PSWorkflowJob), Resume-Job returns a terminating error.
 
 The mechanism and location for saving a suspended job might vary depending on the job type.
 For example, suspended workflow jobs are saved in a flat file store by default, but can also be saved in a SQL database.
@@ -356,23 +359,21 @@ When you resume a job, the job state changes from Suspended to Running.
 To find the jobs that are running, including those that were resumed by this cmdlet, use the State parameter of the Get-Job cmdlet to get jobs in the Running state.
 
 Some job types have options or properties that prevent Windows PowerShell from suspending the job.
-If attempts to suspend the job fail, verify that the job options and properties allow suspending.
+If attempts to suspend the job fail, verify that the job options and properties allow for suspending.
 
 ## RELATED LINKS
 
-[Get-Job]()
+[Get-Job](1352c534-7193-46ca-9ab1-0c5219a661ad)
 
-[Receive-Job]()
+[Receive-Job](78fcc10b-5cde-4bf2-a901-33f8237f87fe)
 
-[Remove-Job]()
+[Remove-Job](eaa911ae-3a84-4279-a9db-fead1dfdb8bb)
 
-[Resume-Job]()
+[Start-Job](2bc04935-0deb-4ec0-b856-d7290cca6442)
 
-[Start-Job]()
+[Stop-Job](b998b518-121a-48f4-b062-2b388069de18)
 
-[Stop-Job]()
+[Suspend-Job](3496f930-2c84-4a90-9c65-ad562f0dc4cf)
 
-[Suspend-Job]()
-
-[Wait-Job]()
+[Wait-Job](cb8a2c67-f8a5-45a8-a27f-2ec028c9da8f)
 

@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
+external help file: PSITPro5_Core.xml
 online version: http://go.microsoft.com/fwlink/p/?linkid=289589
 schema: 2.0.0
 ---
@@ -16,13 +16,13 @@ Get-PSSessionConfiguration [[-Name] <String[]>] [-Force]
 
 ## DESCRIPTION
 The Get-PSSessionConfiguration cmdlet gets the session configurations that have been registered on the local computer.
-This is an advanced cmdlet that is designed to be used by system administrators to manage customized session configurations for their users.
+This is an advanced cmdlet is designed for system administrators to manage customized session configurations your users.
 
-Beginning in Windows PowerShell 3.0, you can define the properties of a session configuration by using a session configuration (.pssc) file.
+Starting in Windows PowerShell 3.0, you can define the properties of a session configuration by using a session configuration (.pssc) file.
 This feature lets you create customized and restricted sessions without writing a computer program.
 For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
-Also, beginning in Windows PowerShell 3.0, new note properties have been added to the session configuration object that Get-PSSessionConfiguration returns.
+Starting in Windows PowerShell 3.0, new note properties have been added to the session configuration object that Get-PSSessionConfiguration returns.
 These properties make it easier for users and session configuration authors to examine and compare session configurations.
 
 To create and register a session configuration, use the Register-PSSessionConfiguration cmdlet.
@@ -30,17 +30,16 @@ For more information about session configurations, see about_Session_Configurati
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1: Get session configurations for the local computer
 ```
 PS C:\>Get-PSSessionConfiguration
 ```
 
 This command gets the session configurations on the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2: Get default session configurations
 ```
 PS C:\>Get-PSSessionConfiguration -Name Microsoft*
-
 Name                      PSVersion  StartupScript        Permission
 ----                      ---------  -------------        ----------
 microsoft.powershell      2.0                             BUILTIN\Administrators AccessAll...
@@ -50,11 +49,9 @@ microsoft.powershell32    2.0                             BUILTIN\Administrators
 This command gets the two default session configurations that come with Windows PowerShell.
 The command uses the Name parameter of Get-PSSessionConfiguration to get only the session configurations with names that begin with "Microsoft".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3: Display properties of a session configuration created from a file
 ```
-PS C:\>Get-PSSessionConfiguration -Name Full  | Format-List -Property *
- 
-                      
+PS C:\>Get-PSSessionConfiguration -Name Full | Format-List -Property *
 Copyright                     : (c) 2011 User01. All rights reserved.
 AliasDefinitions              : {System.Collections.Hashtable}
 SessionType                   : Default
@@ -101,119 +98,69 @@ The command uses the Get-PSSessionConfiguration command to get the Full session 
 A pipeline operator sends the Full session configuration to the Format-List cmdlet.
 The Property parameter with a value of * (all) directs Format-List to display all of the properties and property values of the object in a list.
 
-The output of this command has very useful information, including the author of the session configuration, the session type, language mode, and execution policy of sessions that are created with this session configuration, session quotas, and the full path to the session configuration file.
+The output of this command has very useful information.
+This includes the author of the session configuration, the session type, language mode, and execution policy of sessions that are created by using this session configuration, session quotas, and the full path of the session configuration file.
 
 This view of a session configuration is used for sessions that include a session configuration file.
 For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4: Get and sort properties of a session configuration
 ```
 PS C:\>(Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
 
 Name                                                                                                              Value
-
 ----                                                                                                              -----
-
 ActivityProcessIdleTimeoutSec                                                                                        60
-
 AllowedActivity                                                                                   {PSDefaultActivities}
-
 Architecture                                                                                                         64
-
 AssemblyName                                                ...licKeyToken=31bf3856ad364e35, processorArchitecture=MSIL
-
 AutoRestart                                                                                                       false
-
 Capability                                                                                                      {Shell}
-
 Enabled                                                                                                            true
-
 EnableValidation                                                                                                   true
-
 ExactMatch                                                                                                        False
-
 Filename                                                                              %windir%\system32\pwrshplugin.dll
-
 IdleTimeoutms                                                                                                   7200000
-
 lang                                                                                                              en-US
-
 MaxActivityProcesses                                                                                                  5
-
 MaxConcurrentCommandsPerShell                                                                                      1000
-
 MaxConcurrentUsers                                                                                                    5
-
 MaxConnectedSessions                                                                                                100
-
 MaxDisconnectedSessions                                                                                            1000
-
 MaxIdleTimeoutms                                                                                             2147483647
-
 MaxMemoryPerShellMB                                                                                                1024
-
 MaxPersistenceStoreSizeGB                                                                                            10
-
 MaxProcessesPerShell                                                                                                 15
-
 MaxRunningWorkflows                                                                                                  30
-
 MaxSessionsPerRemoteNode                                                                                              5
-
 MaxSessionsPerWorkflow                                                                                                5
 
 MaxShells                                                                                                            25
-
 MaxShellsPerUser                                                                                                     25
-
 ModulesToImport                                             %windir%\system32\windowspowershell\v1.0\Modules\PSWorkflow
-
 Name                                                                                      microsoft.powershell.workflow
-
 OutOfProcessActivity                                                                                     {InlineScript}
-
 OutputBufferingMode                                                                                               Block
-
 ParentResourceUri                                           ...s.microsoft.com/powershell/microsoft.powershell.workflow
-
 Permission                                                  ...ssAllowed, BUILTIN\Remote Management Users AccessAllowed
-
 PersistencePath                                             ...s\juneb\AppData\Local\Microsoft\Windows\PowerShell\WF\PS
-
 PersistWithEncryption                                                                                             False
-
 ProcessIdleTimeoutSec                                                                                             28800
-
 PSSessionConfigurationTypeName                              ...osoft.PowerShell.Workflow.PSWorkflowSessionConfiguration
-
 PSVersion                                                                                                           3.0
-
 RemoteNodeSessionIdleTimeoutSec                                                                                      60
-
 ResourceUri                                                 ...s.microsoft.com/powershell/microsoft.powershell.workflow
-
 RunAsPassword
-
 RunAsUser
-
 SDKVersion                                                                                                            2
-
 SecurityDescriptorSddl                                      ...;GA;;;BA)(A;;GA;;;RM)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
-
 SessionConfigurationData                                    ...    </SessionConfigurationData>
-
 SessionThrottleLimit                                                                                                100
-
 SupportsOptions                                                                                                    true
-
 Uri                                                         ...s.microsoft.com/powershell/microsoft.powershell.workflow
-
 UseSharedProcess                                                                                                   true
-
 WorkflowShutdownTimeoutMSec                                                                                         500
-
 xmlns                                                       ...as.microsoft.com/wbem/wsman/1/config/PluginConfiguration
-
 XmlRenderingType                                                                                                   text
 ```
 
@@ -222,7 +169,7 @@ You can use this command format in a function to get this display for any sessio
 
 This example was contributed by Shay Levy, a Windows PowerShell MVP from Sderot, Israel.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5: Examine the contents of the Plugin node
 ```
 PS C:\>dir wsman:\localhost\plugin
 Type            Keys                                Name
@@ -236,17 +183,17 @@ Container       {Name=microsoft.ServerManager}      microsoft.ServerManager
 Container       {Name=WMI Provider}                 WMI Provider
 ```
 
-This command uses the Get-ChildItem cmdlet (alias = dir) in the WSMan: provider drive to look at the content of the Plugin node.
-This is another way to look at the session configurations on the computer.
+This command uses the dir alias of the Get-ChildItem cmdlet in the WSMan: provider drive to examine the content of the Plugin node.
+This is another way to view the session configurations on the computer.
 
-The PlugIn node contains ContainerElement objects (Microsoft.WSMan.Management.WSManConfigContainerElement) that represent the registered Windows PowerShell session configurations, along with other plug-ins for WS-Management.
+The PlugIn node contains ContainerElement objects (Microsoft.WSMan.Management.WSManConfigContainerElement) that represent the registered Windows PowerShell session configurations, together with other plug-ins for WS-Management.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6: View session configuration on a remote computer
 ```
 The first command uses the Connect-WSMan cmdlet to connect to the WinRM service on the Server01 remote computer.
 PS C:\>Connect-WSMan -ComputerName Server01
 
-The second command uses the Get-ChildItem cmdlet ("dir") in the WSMan: drive to get the items in the Server01\Plugin path.The output shows the items in the Plugin directory on the Server01 computer. The items include the session configurations, which are a type of WSMan plug-in, along with other types of plug-ins on the computer.
+The second command uses dir in the WSMan: drive to get the items in the Server01\Plugin path.The output shows the items in the Plugin directory on the Server01 computer. The items include the session configurations, which are a type of WSMan plug-in, together with other types of plug-ins on the computer.
 PS C:\>dir WSMan:\Server01\Plugin
    WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
@@ -281,14 +228,14 @@ WithProfile
 ```
 
 This example shows how to use the WSMan provider to view the session configurations on a remote computer.
-This method does not provide as much information as a Get-PSSessionConfiguration command, but the user does not need to be a member of the Administrators group to run this command.
+This method does not provide as much information as a Get-PSSessionConfiguration command, but the user does not have to be a member of the Administrators group to run this command.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7: Run this cmdlet on a remote computer
 ```
 The first command uses the Enable-WSManCredSSP cmdlet to enable CredSSP delegation from the Server01 local computer to the Server02 remote computer. This configures the CredSSP client setting on the local computer.
 PS C:\>Enable-WSManCredSSP -Delegate Server02
 
-The second command uses the Connect-WSMan cmdlet to connect to the Server02 computer. This action adds a node for the Server02 computer to the WSMan: drive on the local computer, allowing you to view and change the WS-Management settings on the Server02 computer.
+The second command uses the Connect-WSMan cmdlet to connect to the Server02 computer. This action adds a node for the Server02 computer to the WSMan: drive on the local computer. This lets you view and change the WS-Management settings on the Server02 computer.
 PS C:\>Connect-WSMan Server02
 
 The third command uses the Set-Item cmdlet to change the value of the CredSSP item in the Service node of the Server02 computer to True. This configures the service settings on the remote computer.
@@ -296,7 +243,6 @@ PS C:\>Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $true
 
 The fourth command uses the Invoke-Command cmdlet to run a Get-PSSessionConfiguration command on the Server02 computer. The command uses the Credential parameter, and it uses the Authentication parameter with a value of CredSSP.The output shows the session configurations on the Server02 remote computer.
 PS C:\>Invoke-Command -ScriptBlock {Get-PSSessionConfiguration} -ComputerName Server02 -Authentication CredSSP -Credential Domain01\Admin01
-
 Name                      PSVersion  StartupScript        Permission                          PSComputerName
 ----                      ---------  -------------        ----------                          --------------
 microsoft.powershell      2.0                             BUILTIN\Administrators AccessAll... server02.corp.fabrikam.com
@@ -307,17 +253,17 @@ MyX86Shell                2.0        c:\test\x86Shell.ps1 BUILTIN\Administrators
 This example shows how to run a Get-PSSessionConfiguration command on a remote computer.
 The command requires that CredSSP delegation be enabled in the client settings on the local computer and in the service settings on the remote computer.
 
-To run the commands in this example, you must be a member of the Administrators group on the local computer and the remote computer and you must start Windows PowerShell with the "Run as administrator" option.
+To run the commands in this example, you must be a member of the Administrators group on the local computer and the remote computer and you must start Windows PowerShell by using the Run as administrator option.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8: Get the resource URI of a session configuration
 ```
 PS C:\>(Get-PSSessionConfiguration -Name CustomShell).resourceURI
 http://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 
-This command uses the Get-PSSessionConfiguration cmdlet to get the resource URI of a session configuration.
+This command uses the Get-PSSessionConfiguration cmdlet to get the resource Uniform Resource Identifier (URI) of a session configuration.
 
-This command is useful when setting the value of the $PSSessionConfigurationName preference variable, which takes a resource URI.
+This command is useful when you set the value of the $PSSessionConfigurationName preference variable, which takes a resource URI.
 
 The $PSSessionConfiguationName variable specifies the default configuration that is used when you create a session.
 This variable is set on the local computer, but it specifies a configuration on the remote computer.
@@ -326,9 +272,10 @@ For more information about the $PSSessionConfiguration variable, see about_Prefe
 ## PARAMETERS
 
 ### -Name
-Gets only the session configurations with the specified name or name pattern.
+Specifies an array of names.
+This cmdlet gets the session configurations with the specified name or name pattern.
 Enter one or more session configuration names.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -367,11 +314,12 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
 ## NOTES
-To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
+To run this cmdlet, start Windows PowerShell by using the Run as administrator option.
 
 To view the session configurations on the computer, you must be a member of the Administrators group on the computer.
 
-To run a Get-PSSessionConfiguration command on a remote computer, Credential Security Service Provider (CredSSP) authentication must be enabled in the client settings on the local computer (by using the Enable-WSManCredSSP cmdlet) and in the service settings on the remote computer, and you must use the CredSSP value of the Authentication parameter when establishing the remote session.
+To run a Get-PSSessionConfiguration command on a remote computer, Credential Security Service Provider (CredSSP) authentication must be enabled in the client settings on the local computer by using the Enable-WSManCredSSP cmdlet, and in the service settings on the remote computer.
+You must also use the CredSSP value of the Authentication parameter when establishing the remote session.
 Otherwise, access is denied.
 
 The note properties of the object that Get-PSSessionConfiguration returns appear on the object only when they have a value.
@@ -387,25 +335,23 @@ To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration]()
+[Disable-PSSessionConfiguration](63ca7455-b2bc-42ba-b127-d0f1c0babc6a)
 
-[Enable-PSSessionConfiguration]()
+[Enable-PSSessionConfiguration](58d537b4-8735-437d-a573-aa5744725b4a)
 
-[Get-PSSessionConfiguration]()
+[New-PSSessionConfigurationFile](5f3e3633-6e90-479c-aea9-ba45a1954866)
 
-[New-PSSessionConfigurationFile]()
+[Register-PSSessionConfiguration](e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 
-[Register-PSSessionConfiguration]()
+[Set-PSSessionConfiguration](b21fbad3-1759-4260-b206-dcb8431cd6ea)
 
-[Set-PSSessionConfiguration]()
+[Test-PSSessionConfigurationFile](5f4a016a-f962-4cb5-9fa9-53b173b70056)
 
-[Test-PSSessionConfigurationFile]()
+[Unregister-PSSessionConfiguration](f8d6efd7-be65-42ea-9ed5-02453f5201c4)
 
-[Unregister-PSSessionConfiguration]()
+[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 
-[WSMan Provider]()
+[about_Session_Configurations](d7c44f7f-a63b-4aeb-9081-1b64585b1259)
 
-[about_Session_Configurations]()
-
-[about_Session_Configuration_Files]()
+[about_Session_Configuration_Files](c7217447-1ebf-477b-a8ef-4dbe9a1473b8)
 
