@@ -1,4 +1,4 @@
-# [Windows Management Framework (WMF) Overview](wmf-overview.md)
+# [Windows Management Framework (WMF) Overview](README.md)
 
 # [WMF 5.1](5.1/release-notes.md)
 ## [New Scenarios and Features](5.1/scenarios-features.md)
