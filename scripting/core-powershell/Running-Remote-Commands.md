@@ -14,7 +14,7 @@ ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 You can run commands on one or hundreds of computers with a single Windows PowerShell command. Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS\-Management.
 
 ## Remoting Without Configuration
-Many Windows PowerShell cmdlets have a ComputerName parameter that enables you to collect data and change settings one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
+Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
 
 These cmdlets include:
 
@@ -26,7 +26,7 @@ These cmdlets include:
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -38,10 +38,10 @@ These cmdlets include:
 
 -   [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
 
-Typically, cmdlets that support remoting without special configuration have a ComputerName parameter and do not have a Session parameter. To find these cmdlets in your session, type:
+Typically, cmdlets that support remoting without special configuration have the ComputerName parameter and do not have the Session parameter. To find these cmdlets in your session, type:
 
 ```
-get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
 ## Windows PowerShell Remoting
@@ -56,7 +56,7 @@ After you have configured Windows PowerShell remoting, many remoting strategies 
 To start an interactive session with a single remote computer, use the [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet. For example, to start an interactive session with the Server01 remote computer, type:
 
 ```
-enter-pssession Server01
+Enter-PSSession Server01
 ```
 
 The command prompt changes to display the name of the computer to which you are connected. From then on, any commands that you type at the prompt run on the remote computer and the results are displayed on the local computer.
@@ -64,7 +64,7 @@ The command prompt changes to display the name of the computer to which you are 
 To end the interactive session, type:
 
 ```
-exit-pssession
+Exit-PSSession
 ```
 
 For more information about the Enter\-PSSession and Exit\-PSSession cmdlets, see [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
@@ -75,7 +75,7 @@ To run any command on one or many remote computers, use the [Invoke-Command](htt
  For example, to run a [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) command on the Server01 and Server02 remote computers, type:
 
 ```
-invoke-command -computername Server01, Server02 {get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
 ```
 
 The output is returned to your computer.
@@ -95,7 +95,7 @@ To run a script on one or many remote computers, use the FilePath parameter of t
 For example, the following command runs the DiskCollect.ps1 script on the Server01 and Server02 remote computers.
 
 ```
-invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
 For more information about the Invoke\-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
@@ -106,21 +106,21 @@ To run a series of related commands that share data, create a session on the rem
 For example, the following command creates a remote session on the Server01 computer and another remote session on the Server02 computer. It saves the session objects in the $s variable.
 
 ```
-$s = new-pssession -computername Server01, Server02
+$s = New-PSSession -ComputerName Server01, Server02
 ```
 
 Now that the sessions are established, you can run any command in them. And because the sessions are persistent, you can collect data in one command and use it in a subsequent command.
 
-For example, the following command runs a Get\-Hotfix command in the sessions in the $s variable and it saves the results in the $h variable. The $h variable is created in each of the sessions in $s, but it does not exist in the local session.
+For example, the following command runs a Get\-HotFix command in the sessions in the $s variable and it saves the results in the $h variable. The $h variable is created in each of the sessions in $s, but it does not exist in the local session.
 
 ```
-invoke-command -session $s {$h = get-hotfix}
+Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
 Now you can use the data in the $h variable in subsequent commands, such as the following one. The results are displayed on the local computer.
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
+Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### Advanced Remoting
@@ -128,7 +128,7 @@ Windows PowerShell remote management just begins here. By using the cmdlets inst
 
 To facilitate remote configuration, Windows PowerShell includes a WSMan provider. The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers.
  For more information about the WSMan provider, see  [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) and
-  [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "get\-help wsman".
+  [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "Get\-Help wsman".
 
 For more information, see:
 - [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
