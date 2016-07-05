@@ -53,7 +53,8 @@ If no one seems to be working on what you have planned:
 
 * Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization) or add "in progress" as a comment to tell others what you're working on
 * Follow the same workflow as described above for making major edits to existing topics.
-* Edit the `TOC.md` topic (located in the top-level folder for each documentation set) to add your new topics to the table of contents. 
+* Edit the `TOC.md` topic (located in the top-level folder for each documentation set) to add your new topics to the table of contents. Determine where your new topic belongs in the table of contents, and add a heading of the appropriate level, with a link
+    to your topic (`[My topic title](relative path to my topic)`).
 
 ## Markdown editors
 
@@ -97,3 +98,6 @@ to get this output:
 * **Bulleted lists:** Bulleted (unordered) lists are almost identical to ordered lists except that the `1. ` is replaced with either `* `, `- `, or `+ `. 
 Multiple element lists work the same way as with ordered lists.
 * **Links:** The syntax for a hyperlink is `[visible link text](link url)`.
+* **Link to another topic within this repository:** The syntax for a hyperlink to a topic within the 
+    repository is 
+    `[topic title](relative path to topic)`. For more information, see [Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/).
