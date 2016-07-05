@@ -60,8 +60,8 @@
     },
     {
       "docset_name": "PowerShell_reference",
-      "build_source_folder": "PowerShell_reference",
-      "build_output_subfolder": "Powershell/reference",
+      "build_source_folder": "reference",
+      "build_output_subfolder": "reference",
       "locale": "en-us",
       "version": 0,
       "open_to_public_contributors": true,
