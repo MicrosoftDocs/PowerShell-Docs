@@ -11,6 +11,5 @@ topics installed locally on your computer. For more information, see
 about_Updatable_Help.
 
 **PowerShell Reference by version**
--  [PowerShell V5.0](v5/README.md)
--  [PowerShell V4.0](v4/README.md)
--  [PowerShell V3.0](v3/README.md)
+-  [PowerShell V4.0](v4.0/README.md)
+-  [PowerShell V3.0](v3.0/README.md)

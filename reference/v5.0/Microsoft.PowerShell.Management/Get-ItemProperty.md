@@ -1,0 +1,317 @@
+---
+external help file: PSITPro5_Management.xml
+online version: http://go.microsoft.com/fwlink/p/?linkid=290496
+schema: 2.0.0
+---
+
+# Get-ItemProperty
+## SYNOPSIS
+Gets the properties of a specified item.
+
+## SYNTAX
+
+### UNNAMED_PARAMETER_SET_1
+```
+Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Credential <PSCredential>] [-Exclude <String[]>]
+ [-Filter <String>] [-Include <String[]>] [-UseTransaction]
+```
+
+### UNNAMED_PARAMETER_SET_2
+```
+Get-ItemProperty [[-Name] <String[]>] [-Credential <PSCredential>] [-Exclude <String[]>] [-Filter <String>]
+ [-Include <String[]>] -LiteralPath <String[]> [-UseTransaction]
+```
+
+## DESCRIPTION
+The Get-ItemProperty cmdlet gets the properties of the specified items.
+For example, you can use this cmdlet to get the value of the LastAccessTime property of a file object.
+You can also use this cmdlet to view registry entries and their values.
+
+## EXAMPLES
+
+### Example 1: Get information about a specific directory
+```
+PS C:\>Get-ItemProperty C:\Windows
+```
+
+This command gets information about the C:\Windows directory.
+
+### Example 2: Get the properties of a specific file
+```
+PS C:\>Get-ItemProperty C:\Test\Weather.xls | Format-List
+```
+
+This command gets the properties of the C:\Test\Weather.xls file.
+The result is piped to the Format-List cmdlet to display the output as a list.
+
+### Example 3: Display the value name and data of registry entries in a registry subkey
+```
+PS C:\>Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
+```
+
+This command displays the value name and data of each of the registry entries contained in the CurrentVersion registry subkey.
+Note that the command requires that there is a Windows PowerShell drive named HKLM: that is mapped to the HKEY_LOCAL_MACHINE hive of the registry.
+A drive with that name and mapping is available in Windows PowerShell by default.
+Alternatively, the path to this registry subkey can be specified by using the following alternative path that begins with the provider name followed by two colons:
+
+Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion.
+
+### Example 4: Get the value name and data of a registry entry in a registry subkey
+```
+PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -name "ProgramFilesDir"
+```
+
+This command gets the value name and data of the ProgramFilesDir registry entry in the CurrentVersion registry subkey.
+The command uses the Path parameter to specify the subkey and the Name parameter to specify the value name of the entry.
+
+The command uses a back tick or grave accent (\`), the Windows PowerShell continuation character, to continue the command on the second line.
+
+### Example 5: Get the value names and data of registry entries in a registry key
+```
+PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
+
+
+
+
+
+
+
+ApplicationBase         : C:\Windows\system32\WindowsPowerShell\v1.0\
+ConsoleHostAssemblyName : Microsoft.PowerShell.ConsoleHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=msil
+PowerShellVersion       : 2.0
+RuntimeVersion          : v2.0.50727
+CTPVersion              : 5
+PSCompatibleVersion     : 1.0,2.0
+```
+
+This command gets the value names and data of the registry entries in the PowerShellEngine registry key.
+The results are shown in the following sample output.
+
+### Example 6: Get, format, and display the results of registry values and data
+```
+PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Path                                                        ExecutionPolicy
+----                                                        ---------------
+C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe   RemoteSigned
+
+PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell | Format-List -property *
+
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\PowerShell\1\ShellIds\Micro
+soft.PowerShell
+PSParentPath    : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\PowerShell\1\ShellIds
+PSChildName     : Microsoft.PowerShell
+PSDrive         : HKLM
+PSProvider      : Microsoft.PowerShell.Core\Registry
+Path            : C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe
+ExecutionPolicy : RemoteSigned
+```
+
+This example shows how to format the output of a Get-ItemProperty command in a list to make it easy to see the registry values and data and to make it easy to interpret the results.
+
+The first command uses the Get-ItemProperty cmdlet to get the registry entries in the Microsoft.PowerShell subkey.
+This subkey stores options for the default shell for Windows PowerShell.
+The results are shown in the following sample output.
+
+The output shows that there are two registry entries, Path and ExecutionPolicy.
+When a registry key contains fewer than five entries, by default it is displayed in a table, but it is often easier to view in a list.
+
+The second command uses the same Get-ItemProperty command.
+However, this time, the command uses a pipeline operator (|) to send the results of the command to the Format-List cmdlet.
+The Format-List command uses the Property parameter with a value of * (all) to display all of the properties of the objects in a list. 
+The results are shown in the following sample output.
+
+The resulting display shows the Path and ExecutionPolicy registry entries, along with several less familiar properties of the registry key object.
+The other properties, prefixed with PS, are properties of Windows PowerShell custom objects, such as the objects that represent the registry keys.
+
+## PARAMETERS
+
+### -Credential
+Specifies a user account that has permission to perform this action.
+The default is the current user.
+
+Type a user name, such as User01 or Domain01\User01, or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
+If you type a user name, you will be prompted for a password.
+
+This parameter is not supported by any providers installed with Windows PowerShell.
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+Specifies, as a string array, an item or items that this cmdlet excludes from the operation.
+Wildcards are permitted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Specifies a filter in the provider's format or language.
+The value of this parameter qualifies the Path parameter.
+The syntax of the filter, including the use of wildcards, depends on the provider.
+Filters are more efficient than other parameters, because the provider applies them when this cmdlet gets the objects rather than having Windows PowerShell filter the objects after they are retrieved.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Include
+Specifies, as a string array, an item or items that this cmdlet includes in the operation.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+Specifies a path to the item property.
+The value of LiteralPath is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: UNNAMED_PARAMETER_SET_2
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True(ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name
+Specifies the name of the property or properties to retrieve.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: PSProperty
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Specifies the path to the item or items.
+
+```yaml
+Type: String[]
+Parameter Sets: UNNAMED_PARAMETER_SET_1
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue, ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UseTransaction
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+## INPUTS
+
+### System.String
+You can pipe a string that contains a path to Get-ItemProperty.
+
+## OUTPUTS
+
+### System.Boolean, System.String, System.DateTime
+Get-ItemProperty returns an object for each item property that it gets.
+The object type depends on the object that is retrieved.
+For example, in a file system drive, it might return a file or folder.
+
+## NOTES
+* The Get-ItemProperty cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PSProvider". For more information, see about_Providers.
+
+*
+
+## RELATED LINKS
+
+[Clear-ItemProperty](f49c0340-d5cd-4099-8494-24b961ab4f7e)
+
+[Copy-ItemProperty](c5baceb8-7348-412c-9593-e7f36a5380ad)
+
+[Move-ItemProperty](0f2182c7-a28b-4b81-91fb-82022b3c14a8)
+
+[New-ItemProperty](774ad4a6-deea-4c34-afb6-7274e18552e5)
+
+[Remove-ItemProperty](28c7ecd8-5030-41f9-8478-5d7a06201a5f)
+
+[Rename-ItemProperty](07be82e9-597b-4a41-b9b8-1b192c5f0322)
+
+[Set-ItemProperty](c51196c2-f42a-4f92-8bee-d79336a7edc7)
+
+[Format-List](dec7f080-d85c-46c4-ade4-5aef22c1bf18)
+
+[about_Providers](55e2974f-3314-48d2-8b1b-abdea6b303cb)
+
