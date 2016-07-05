@@ -5,10 +5,7 @@
         "files": [
           "**/*.md"
         ],
-        "exclude": [
-          "**/obj/**",
-          "Powershell/reference/**"
-        ]
+        "exclude": ["**/obj/**"]
       }
     ],
     "resource": [
@@ -17,10 +14,7 @@
           "**/*.png",
           "**/*.jpg"
         ],
-        "exclude": [
-          "**/obj/**",
-          "Powershell/reference/**"
-        ]
+        "exclude": ["**/obj/**"]
       }
     ],
     "overwrite": [],
@@ -30,6 +24,6 @@
     "template": [
       null
     ],
-    "dest": "Powershell/reference"
+    "dest": "reference"
   }
 }
