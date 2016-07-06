@@ -4,7 +4,7 @@ ms.date:  2016-07-06
 keywords:  PowerShell, DSC, WMF
 description:  
 ms.topic:  article
-author:  keithb, jaimeo
+author:  keithb
 manager:  dongill
 ms.prod:  powershell
 ms.technology: WMF
