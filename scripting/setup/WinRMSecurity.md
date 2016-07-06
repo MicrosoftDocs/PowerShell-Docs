@@ -17,7 +17,7 @@ recommendations, and best practices when using PowerShell Remoting.
 ## What is PowerShell Remoting?
 
 PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), which is the Microsoft implementation of the
-[Web Services for Managment (WS-Managment)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, to allow users to run PowerShell commands on remote
+[Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, to allow users to run PowerShell commands on remote
 computers. You can find more information about using PowerShell Remoting at [Running Remote Commands](https://technet.microsoft.com/en-us/library/dd819505.aspx).
 
 PowerShell Remoting is not the same as using the **ComputerName** parameter of a cmdlet to run it on a remote computer, which uses Remote Procedure Call (RPC)
@@ -73,7 +73,7 @@ the domain controller, which does know the user's password and calculates the se
 The NTLM protocol does not, however, guarantee server identity. As with all protocols that use NTLM for authentication, an attacker with access to a domain-joined computer's machine
 account could invoke the domain controller to compute an NTLM session-key and thereby impersonate the server.
 
-NTLM-based authentication is disabled by default, but may be permitted by either configuring SSL on the target server, or by configuring the WinRM TrustedHosts setting.
+NTLM-based authentication is disabled by default, but may be permitted by either configuring SSL on the target server, or by configuring the WinRM TrustedHosts setting on the client.
     
 #### Using SSL certificates to validate server identity during NTLM-based connections
 
