@@ -46,7 +46,7 @@ Get-Command
 ```
 
 As you can tell, this is a very limited subset of the commands available in a normal PowerShell window (which can often include several thousand commands).
-Specifically, it only shows the 7 default JEA cmdlets (Clear-Host, Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, Select-Object) and the two commands explicitly included in the maintenance Role Capability file.
+Specifically, it only shows the 8 default JEA commands (Clear-Host, Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, Select-Object) and the two commands explicitly included in the maintenance Role Capability file.
 
 Next, let's take a look at the user context this session is operating under by invoking the custom function included in the maintenance Role Capability file:
 

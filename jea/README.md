@@ -50,7 +50,7 @@ This guide gets you started quickly with a pre-built JEA endpoint to get an idea
 Briefly review why you should care about JEA
 
 2.	[Prerequisites](prerequisites.md)  
-Explains how to Set up your environment
+Explains how to set up your environment
 
 3.	[Using JEA](using-jea.md)  
 Helps you start by understanding the operator experience of using JEA

@@ -60,7 +60,7 @@ Open the file in PowerShell ISE, or your favorite text editor.
 ise "$env:ProgramData\JEAConfiguration\JEADemo2.pssc"
 ```
 
-Update the following fields in the file with the values below (remember to substitue in your own non-administrator security group):
+Update the following fields in the file with the values below (remember to substitute in your own non-administrator security group):
 
 ```PowerShell
 # OLD: SessionType = 'Default'
@@ -88,7 +88,7 @@ The net effect of these settings is a secure and minimal starting point for conf
 It defines who can do what as a privileged account.
 With this field, you can specify the functionality available to any connecting user based on group membership.
 This is the core of JEA's RBAC functionality.
-In this example, you are exposing the pre-made "Demo" RoleCapability to members of the "Contoso\JEA_NonAdmin_Operator" group.
+In this example, you are exposing the pre-made "Maintenance" RoleCapability to members of the "Contoso\JEA_NonAdmin_Operator" group.
 
 3.	The *RunAsVirtualAccount* field indicates that PowerShell should "run as" a Virtual Account at this endpoint.
 By default, the Virtual Account is a member of the built in Administrators group.
@@ -121,7 +121,7 @@ Congratulations! You have set up your JEA endpoint.
 
 ## Test Out Your Endpoint
 Re-run the steps listed in the [Using JEA](using-jea.md) section against your new endpoint to confirm it is operating as intended.
-Be sure to use the new endpoint name (JEADemo2) when providing the configuration name to Enter-PSSession.
+Be sure to use the new endpoint name (JEADemo2) when providing the configuration name to `Enter-PSSession`.
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
