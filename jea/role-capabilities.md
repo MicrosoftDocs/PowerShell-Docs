@@ -59,9 +59,9 @@ If you wanted to, you could also restrict the arguments using a regular expressi
 Because "Get" commands typically don't change system state, this is a relatively safe action.
 That being said, it is strongly encouraged to closely examinine every command you expose through JEA.
 
-3.	You have expose an executable (ipconfig) using VisibleExternalCommands.
+3.	You have exposed an executable (ipconfig) using VisibleExternalCommands.
 You can also expose full PowerShell scripts with this field.
-It is important to always provide the full path to external commands to ensure a similarly named (and potentially malicous) program placed in the user's path does not get executed instead.
+It is important to always provide the full path to external commands to ensure a similarly named (and potentially malicious) program placed in the user's path does not get executed instead.
 
 Save the file, then connect to the demo endpoint again to confirm the changes worked.
 
@@ -119,7 +119,7 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_
 # Create a blank script module. You'll use this for custom functions in the next section.
 New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1' -ItemType File
 
-# Create a RoleCapabilities folder in the AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
+# Create a RoleCapabilities folder in the Contoso_AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
 New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities' -ItemType Directory
 
 # Create a blank Role Capability in your RoleCapabilities folder. Running this command without any additional parameters just creates a blank template.
@@ -131,7 +131,7 @@ It will be used in the next section.
 
 ## Key Concepts
 **Role Capability (.psrc)**:
-A file that define "what" a user can do at a JEA endpoint.
+A file that defines "what" a user can do at a JEA endpoint.
 It details a whitelist of things like visible commands, visible console applications, and more.
 In order for PowerShell to detect Role Capabilities, you must put them in a "RoleCapabilities" folder in a valid PowerShell module.
 

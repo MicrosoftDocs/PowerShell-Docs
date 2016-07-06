@@ -67,7 +67,7 @@ Keep in mind this is simply an example, your organizations requirements may be d
 Now that you have your list of actions, you need to think through the capabilities of each command.
 There are two important reasons to do this:
 
-1.	It is easy to expose give users more capabilities than you intend.
+1.	It is easy to give users more capabilities than you intend.
 For example, `Set-ADUser` is an incredibly powerful and flexible command.
 You may not want to expose everything it can do to help desk users.  
 
@@ -79,25 +79,25 @@ For more discussion on this topic, check out the Considerations When Restricting
 
 After reviewing each command, you decide to restrict the following:
 
-1.	`Set-ADUser` should only be allowed to run with the "-Title" parameter
+1.	`Set-ADUser` should only be allowed to run with the -Title parameter
 
 2.	`Add-ADGroupMember` and `Remove-ADGroupMember` should only work with certain groups
 
 ### Step 3: Confirm the Tasks Work with JEA
 Actually using those cmdlets may not be straightforward in the restricted JEA environment.
-JEA runs in *No Language* mode which, among other things, prevents users from using variables.
+JEA runs in *NoLanguage* mode which, among other things, prevents users from using variables.
 In order to ensure that end users have a smooth experience, it's important to check for a few things.
 
 As an example, consider `Set-ADAccountPassword`.
-The "-NewPassword" parameter requires a secure string.
+The -NewPassword parameter requires a secure string.
 Often, users create a secure string and pass it in as a variable (as below):
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-However, No Language mode prevents the usage of variables.
+However, *NoLanguage* mode prevents the usage of variables.
 You can get around this restriction in two ways:
 
 1.	You can require users run the command without assigning variables.
@@ -121,7 +121,7 @@ We will put it in the Contoso_AD_Module module you made in the last section.
 
 1. In PowerShell ISE, open "Contoso_AD_Module.psm1"
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. Press Crtl+J to open the snippets menu.
@@ -162,7 +162,7 @@ Now, your users can simply call `Reset-ContosoUserPassword` and not have to reme
 In the [Role Capability Creation](#role-capability-creation) section, you created a blank Role Capability file.
 In this section, you will fill in the values in that file.
 
-Start by opening the role capability file in ISE.
+Start by opening the role capability file in PowerShell ISE.
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -190,7 +190,7 @@ There are a few things to note about the above:
 1.	PowerShell will attempt to auto-load the modules needed for your Role Capability.
 You may need to explicitly list module names in the "ModulesToImport" field if you notice problems with a module not being autoloaded.
 
-2.	If you aren't sure if a command is a cmdlet or a function, run `Get-Command` and look at the "CommandType"
+2.	If you aren't sure if a command is a cmdlet or a function, run `Get-Command` and look at the "CommandType" property
 
 3.	The ValidatePattern allows you to use a regular expression to restrict parameter arguments if it is not easy to define a set of allowable values.
 You cannot define both a ValidatePattern and ValidateSet for a single parameter.
@@ -207,7 +207,7 @@ Modify the following fields in the PSSC file.
 If you are working in your own environment, you should replace "CONTOSO\JEA_NonAdmins_Helpdesk" with your own non-administrator user or group.
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -234,7 +234,7 @@ If you followed the [Set Up Users and Groups](creating-a-domain-controller.md#se
 -	Username = "HelpDeskUser"
 -	Password = "pa$$w0rd"
 
-Remote into the AD Helpdesk endpoint using the non-admin credential:
+Remote into the ADHelpdesk endpoint using the non-admin credential:
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName ADHelpDesk -Credential $HelpDeskCred
 ```
@@ -266,6 +266,6 @@ For more information, run `Get-Help about_Functions`.
 
 **ValidateSet/ValidatePattern**:
 When exposing a command, you can restrict valid arguments for specific parameters.
-A ValidateSet is a specific list of valid commands.
+A ValidateSet is a specific list of valid arguments.
 A ValidatePattern is a regular expression that the arguments for that parameter must match.
 
