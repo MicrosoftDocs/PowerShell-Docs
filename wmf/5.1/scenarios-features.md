@@ -1,10 +1,10 @@
 ---
 title:   New Scenarios and Features in WMF 5.1 (Preview)
-ms.date:  2016-05-16
+ms.date:  2016-07-06
 keywords:  PowerShell, DSC, WMF
 description:  
 ms.topic:  article
-author:  keithb
+author:  keithb, jaimeo
 manager:  dongill
 ms.prod:  powershell
 ms.technology: WMF
@@ -58,6 +58,20 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
 Setting this environment variable will take effect immediately in the current process.
+
+##Specifying module version
+
+In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell. Previously, you had no way to specify a particular module version; if there were multiple versions present, this resulted in an error.
+
+
+In WMF 5.1:
+
+* You can use `ModuleSpecification` [hashtable](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx). 
+This hashtable has the same format as `Get-Module -FullyQualifiedName`.
+
+**Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+
+* If there are multiple versions of the module, PowerShell uses the **same resolution logic** as `Import-Module` and doesn't return an error--the same behavior as `Import-Module` and `Import-DscResource`.
 
 ## PowerShell console improvements
 
@@ -134,21 +148,6 @@ modules that are installed on a system. Previous, this cache was stored in the d
 file `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 See [analysis_cache.md]() for more details.
 
-
-
-## Long Filename Support ##
-
-Andrew...
-
-
-## Modules ##
-
-Chunqing...
-
-
-## PSEdition ##
-
-Mani...
 
 
 ## Bug fixes ##
