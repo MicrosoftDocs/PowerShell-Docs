@@ -1,6 +1,6 @@
 ---
 title: FullyQuilifiedModuleName for 'using module'
-author: sevoroby
+author: vors
 ---
 
 FullyQuilifiedModuleName for 'using module'
