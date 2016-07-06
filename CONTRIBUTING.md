@@ -98,6 +98,7 @@ to get this output:
 * **Bulleted lists:** Bulleted (unordered) lists are almost identical to ordered lists except that the `1. ` is replaced with either `* `, `- `, or `+ `. 
 Multiple element lists work the same way as with ordered lists.
 * **Links:** The syntax for a hyperlink is `[visible link text](link url)`.
-* **Link to another topic within this repository:** The syntax for a hyperlink to a topic within the 
-    repository is 
-    `[topic title](relative path to topic)`. For more information, see [Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/).
+* **Link to another topic within the same docset:** A docset is a top-level folder in this repository 
+    (for example, "dsc", "scripting")The syntax for a hyperlink to a topic within the same docset is 
+    `[topic title](relative path to topic)`. For more information, see [Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/). To link to a topic in a different top-level folder,
+    use the URL of the published page, as described above.
