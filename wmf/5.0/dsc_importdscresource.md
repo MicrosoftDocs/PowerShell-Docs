@@ -13,7 +13,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 In the Windows PowerShell ISE, it shows up with IntelliSense:
 
-![](images/Import-DscResource-Modversion.jpg)
+![](../images/Import-DscResource-Modversion.jpg)
 
 **Note**: the `–ModuleVersion` parameter can only be used in combination with the `–ModuleName` parameter. It cannot be used with resource names using only the `–Name` parameter.
 
