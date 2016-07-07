@@ -24,10 +24,10 @@ This command immediately locks the workstation. It uses *rundll32.exe*, which ru
 
 When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the computer displays the user logon screen rather than starting the current user's screensaver.
 
-To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command line tool.
+To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command\-line tool.
 
 ### Logging Off the Current Session
-You can use several different techniques to log off of a session on the local system. The simplest way is to use the Remote Desktop\/Terminal Services command\-line tool, **logoff.exe** (For details, at the Windows PowerShell prompt, type **logoff \/?**). To log off the current active session, type **logoff** with no arguments.
+You can use several different techniques to log off of a session on the local system. The simplest way is to use the Remote Desktop/Terminal Services command\-line tool, **logoff.exe** (For details, at the Windows PowerShell prompt, type **logoff /?**). To log off the current active session, type **logoff** with no arguments.
 
 You can also use the **shutdown.exe** tool with its logoff option:
 
@@ -44,7 +44,7 @@ A third option is to use WMI. The Win32\_OperatingSystem class has a Win32Shutdo
 For more information, and to find other features of the Win32Shutdown method, see "Win32Shutdown Method of the Win32\_OperatingSystem Class" in MSDN.
 
 ### Shutting Down or Restarting a Computer
-Shutting down and restarting computers are generally the same types of task. Tools that shut down a computer will generally restart it as well—and vice versa. There are two straightforward options for restarting a computer from Windows PowerShell. Use either Tsshutdn.exe or Shutdown.exe with appropriate arguments. You can get detailed usage information from **tsshutdn.exe \/?** or **shutdown.exe \/?**.
+Shutting down and restarting computers are generally the same types of task. Tools that shut down a computer will generally restart it as well—and vice versa. There are two straightforward options for restarting a computer from Windows PowerShell. Use either Tsshutdn.exe or Shutdown.exe with appropriate arguments. You can get detailed usage information from **tsshutdn.exe /?** or **shutdown.exe /?**.
 
 You can also perform shutdown and restart operations by using **Win32\_OperatingSystem** directly from Windows PowerShell as well.
 
