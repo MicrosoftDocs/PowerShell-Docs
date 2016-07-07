@@ -18,7 +18,7 @@ ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 |binary module|A Windows PowerShell module whose root module is a binary module file (.dll). A binary module may or may not include a module manifest.|
 |common parameter|A parameter that is added to all cmdlets and advanced functions by the Windows PowerShell engine.|
 |dot source|In Windows PowerShell, to start a command by typing a dot and a space before the command. Commands that are dot sourced run in the current scope instead of in a new scope. Any variables, aliases, functions, or drives that command creates are created in the current scope and are available to users when the command is completed.|
-|dynamic module|A module that exists only in memory. The Import\-PSSession cmdlet creates dynamic modules.|
+|dynamic module|A module that exists only in memory. The New-Module and Import-PSSession cmdlets create dynamic modules.|
 |dynamic parameter|A parameter that is added to a Windows PowerShell cmdlet, function, or script under certain conditions. Cmdlets, functions, providers, and scripts can add dynamic parameters.|
 |formatting file|A Windows PowerShell XML file that has the .format.ps1xml extension and that defines how Windows PowerShell displays an object based on its .NET Framework type.|
 |global session state|The session state that contains the data that is accessible to the user of a Windows PowerShell session.|
