@@ -11,7 +11,7 @@ ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ---
 
 # Accessibility in Windows PowerShell ISE
-This topic describes the accessibility features of Windows PowerShellÂ® Integrated Scripting Environment (ISE) that you might find helpful.
+This topic describes the accessibility features of Windows PowerShell® Integrated Scripting Environment (ISE) that you might find helpful.
 
 * [How to change the size and location of the Console and Script Panes](#bkmk_1)
 * [Keyboard shortcuts for editing text](#bkmk_2)
@@ -43,7 +43,7 @@ You can use the following steps to change the size and location of the Console P
 ### To move the Script Pane and Console Pane
 Do one of the following:
 
--   To move the Script Pane above the Command and Output Panes, press **CTRL\+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
+-   To move the Script Pane above the Console Pane, press **CTRL\+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
 
 -   To move the Script Pane to the right of the Console Pane, press **CTRL\+2** or, on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show Script Pane Right**.
 
@@ -58,17 +58,17 @@ You can use the following keyboard shortcuts when you edit text.
 
 |Action|Keyboard Shortcuts|Use in|
 |----------|----------------------|----------|
-|**Copy**|CTRL\+C|Script Pane, Command Pane, Output Pane|
-|**Cut**|CTRL\+X|Script Pane, Command Pane|
+|**Copy**|CTRL\+C|Script Pane, Console Pane|
+|**Cut**|CTRL\+X|Script Pane, Console Pane|
 |**Find in Script**|CTRL\+F|Script Pane|
 |**Find Next in Script**|F3|Script Pane|
 |**Find Previous in Script**|SHIFT\+F3|Script Pane|
-|**Paste**|CTRL\+V|Script Pane, Command Pane|
-|**Redo**|CTRL\+Y|Script Pane, Command Pane|
+|**Paste**|CTRL\+V|Script Pane, Console Pane|
+|**Redo**|CTRL\+Y|Script Pane, Console Pane|
 |**Replace in Script**|CTRL\+H|Script Pane|
 |**Save**|CTRL\+S|Script Pane|
-|**Select All**|CTRL\+A|Script Pane, Command Pane, Output Pane|
-|**Undo**|CTRL\+Z|Script Pane, Command Pane|
+|**Select All**|CTRL\+A|Script Pane, Console Pane|
+|**Undo**|CTRL\+Z|Script Pane, Console Pane|
 
 ## <a name="bkmk_3"></a>Keyboard shortcuts for running scripts
 You can use the following keyboard shortcuts when you run scripts in the Script Pane.
@@ -88,8 +88,7 @@ You can use the following keyboard shortcuts to customize the view in Windows Po
 
 |Action|Keyboard Shortcut|
 |----------|---------------------|
-|**Go to Command Pane**|CTRL\+D|
-|**Go to Output Pane**|CTRL\+SHIFT\+O|
+|**Go to Console Pane**|CTRL\+D|
 |**Go to Script Pane**|CTRL\+I|
 |**Show Script Pane**|CTRL\+R|
 |**Hide Script Pane**|CTRL\+R|
@@ -105,7 +104,7 @@ You can use the following keyboard shortcuts when you debug scripts.
 
 |Action|Keyboard Shortcut|Use in|
 |----------|---------------------|----------|
-|**Run\/Continue**|F5|Script Pane, when debugging a script|
+|**Run/Continue**|F5|Script Pane, when debugging a script|
 |**Step Into**|F11|Script Pane, when debugging a script|
 |**Step Over**|F10|Script Pane, when debugging a script|
 |**Step Out**|SHIFT\+F11|Script Pane, when debugging a script|
@@ -116,19 +115,19 @@ You can use the following keyboard shortcuts when you debug scripts.
 |**Stop Debugger**|SHIFT\+F5|Script Pane, when debugging a script|
 
 > [!NOTE]
-> You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the Command Pane and press ENTER.
+> You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the Console Pane and press ENTER.
 
 |Action|Keyboard Shortcut|Use in|
 |----------|---------------------|----------|
-|**Continue**|C|Command Pane, when debugging a script|
-|**Step Into**|S|Command Pane, when debugging a script|
-|**Step Over**|V|Command Pane, when debugging a script|
-|**Step Out**|O|Command Pane, when debugging a script|
-|**Repeat Last Command** (for Step Into or Step Over)|ENTER|Command Pane, when debugging a script|
-|**Display Call Stack**|K|Command Pane, when debugging a script|
-|**Stop Debugging**|Q|Command Pane, when debugging a script|
-|**List the Script**|L|Command Pane, when debugging a script|
-|**Display Console Debugging Commands**|H or ?|Command Pane, when debugging a script|
+|**Continue**|C|Console Pane, when debugging a script|
+|**Step Into**|S|Console Pane, when debugging a script|
+|**Step Over**|V|Console Pane, when debugging a script|
+|**Step Out**|O|Console Pane, when debugging a script|
+|**Repeat Last Command** (for Step Into or Step Over)|ENTER|Console Pane, when debugging a script|
+|**Display Call Stack**|K|Console Pane, when debugging a script|
+|**Stop Debugging**|Q|Console Pane, when debugging a script|
+|**List the Script**|L|Console Pane, when debugging a script|
+|**Display Console Debugging Commands**|H or ?|Console Pane, when debugging a script|
 
 ## <a name="bkmk_6"></a>Keyboard shortcuts for Windows PowerShell tabs
 You can use the following keyboard shortcuts when you use Windows PowerShell tabs.
