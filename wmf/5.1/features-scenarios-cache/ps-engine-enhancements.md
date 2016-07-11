@@ -22,7 +22,7 @@ Some example improvements (resuls may vary depending your your hardware):
 | `powershell -command "echo 1"` | 900 | 250 |
 | First ever PowerShell run: `powershell -command "Unknown-Command"` | 30000 | 13000 |
 | Command analysis cache built: `powershell -command "Unknown-Command"` | 7000 | 520 |
-| `1..1000000 | % { }` | 1400 | 750 |
+| `1..1000000 - OR - % { }` | 1400 | 750 |
   
 One change related to startup may impact some (unsupported) scenarios. PowerShell no longer
 reads the files `$pshome\*.ps1xml` - these files have been converted to C# to avoid some file
