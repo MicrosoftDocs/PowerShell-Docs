@@ -1,6 +1,6 @@
 ---
 title:   Resource authoring checklist
-ms.date:  2016-05-16
+ms.date:  2016-07-11
 keywords:  powershell,DSC
 description:  
 ms.topic:  article
@@ -10,10 +10,10 @@ ms.prod:  powershell
 ---
 
 # Resource authoring checklist
-This checklist is a list of best practices when authoring a new DSC Resource
+This checklist is a list of best practices when authoring a new DSC Resource.
 ## Resource module contains .psd1 file and schema.mof for every resource 
-The first thing you should do is to check that your resource has correct structure and contains all required files. Every resource module should contain a .psd1 file and every non-composite resource should have schema.mof file. Resources that do not contain schema will not be listed by **Get-DscResource** and users will not be able to use the intellisense when writing code against those modules in ISE. 
-The sample directory structure for xRemoteFile resource, which is part of the xPSDesiredStateConfiguration resource module, could look as follows:
+Check that your resource has correct structure and contains all required files. Every resource module should contain a .psd1 file and every non-composite resource should have schema.mof file. Resources that do not contain schema will not be listed by **Get-DscResource** and users will not be able to use the intellisense when writing code against those modules in ISE. 
+The directory structure for xRemoteFile resource, which is part of the [xPSDesiredStateConfiguration resource module](https://github.com/PowerShell/xPSDesiredStateConfiguration), looks as follows:
 
 
 ```
@@ -31,49 +31,30 @@ xPSDesiredStateConfiguration
 	xPSDesiredStateConfiguration.psd1
 ```
 
-## Resource and schema are correct and have been verified using DscResourceDesigner cmdlets ##
-Another important aspect is verifying the resource schema (*.schema.mof) file. 
+## Resource and schema are correct##
+Verify the resource schema (*.schema.mof) file. You can use the [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) to help develop and test your schema. 
 Make sure that:
--	Property types are correct (e.g. don’t use String for properties which accept numeric values, you should use UInt32 or other numeric types instead)
--	Property attributes are specified correctly ([key], [required], [write], [read])
-
-
+- Property types are correct (e.g. don’t use String for properties which accept numeric values, you should use UInt32 or other numeric types instead)
+- Property attributes are specified correctly as: ([key], [required], [write], [read])
 - At least one parameter in the schema has to be marked as [key]
-
-
-- [read] property cannot coexist together with any of: [required], [key], [write]
-
-
+- [read] property does not coexist together with any of: [required], [key], [write]
 - If multiple qualifiers are specified except [read], then [key] takes precedence
-If [write] and [required] are specified, then [required] takes precedence
--	ValueMap is specified where appropriate
+- If [write] and [required] are specified, then [required] takes precedence
+- ValueMap is specified where appropriate
 
 Example:
 ```
 [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
 ```
 
--	Friendly name is specified and confirms to DSC naming conventions
+- Friendly name is specified and confirms to DSC naming conventions
 
 Example: 
 ```[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]```
 
--	Every field has meaningful description
+- Every field has meaningful description. The PowerShell GitHub repository has good examples, such as [the .schema.mof for xRemoteFile](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
 
-Below you can find a good example of the resource schema file (this is the actual schema of xRemoteFile resource from the DSC Resource Kit)
-```
-[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]
-class MSFT_xRemoteFile : OMI_BaseResource
-{
-	[Key, Description("Path under which downloaded or copied file should be accessible after operation.")] String DestinationPath;
-	[Required, Description("Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.")] String Uri;
-	[Write, Description("User agent for the web request.")] String UserAgent;
-	[Write, EmbeddedInstance("MSFT_KeyValuePair"), Description("Headers of the web request.")] String Headers[];
-	[Write, EmbeddedInstance("MSFT_Credential"), Description("Specifies a user account that has permission to send the request.")] String Credential;
-  	[Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
-}; 
-```
-Additionally, you should use **Test-xDscResource** and **Test-xDscSchema** cmdlets from Dsc Resource Designer to automatically verify the resource and schema:
+Additionally, you should use **Test-xDscResource** and **Test-xDscSchema** cmdlets from [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) to automatically verify the resource and schema:
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
@@ -85,8 +66,8 @@ Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
 ## Resource loads without errors ##
-Once you verified that resource contains all necessary files and verified them using DSC Resource Designer, it’s time to check whether resource module can be successfully loaded.
-You can do it either manually, by running `Import-Module <resource_module> -force ` and confirming that no errors occurred, or by writing test automation. In case of the latter, you can follow this structure in your test case:
+Check whether the resource module can be successfully loaded.
+This can be achieved manually, by running `Import-Module <resource_module> -force ` and confirming that no errors occurred, or by writing test automation. In case of the latter, you can follow this structure in your test case:
 ```powershell
 $error = $null
 Import-Module <resource_module> –force
@@ -94,8 +75,8 @@ If ($error.count –ne 0) {
 	Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-4	Resource is idempotent in the positive case 
-One of the fundamental characteristics of every DSC resource should be idempotence. It means that we can apply a DSC configuration containing that resource multiple times without changing the result beyond the initial application. For example, if we create a configuration which contains the following File resource:
+## Resource is idempotent in the positive case 
+One of the fundamental characteristics of DSC resources is be idempotence. It means that applying a DSC configuration containing that resource multiple times will always achieve the same result. For example, if we create a configuration which contains the following File resource:
 ```powershell
 File file {
     DestinationPath = "C:\test\test.txt"
@@ -103,15 +84,15 @@ File file {
 } 
 ```
 After applying it for the first time, file test.txt should appear in C:\test folder. However, subsequent runs of the same configuration should not change the state of the machine (e.g. no copies of the test.txt file should be created).
-To ensure our resource is idempotent we can repeatedly call **Set-TargetResource** when testing the resource directly, or call **Start-DscConfiguration** multiple times when doing end to end testing. The result should be the same after every run. 
+To ensure a resource is idempotent you can repeatedly call **Set-TargetResource** when testing the resource directly, or call **Start-DscConfiguration** multiple times when doing end to end testing. The result should be the same after every run. 
 
 
-## User modification scenario was tested ##
-User modification is another common scenario worth testing out. It helps you verify that **Set-TargetResource** and **Test-TargetResource** function properly. Here are steps you should take to test it:
+## Test user modification scenario ##
+By changing the state of the machine and then rerunning DSC, you can verify that **Set-TargetResource** and **Test-TargetResource** function properly. Here are steps you should take:
 1.	Start with the resource not in the desired state.
 2.	Run configuration with your resource
 3.	Verify **Test-DscConfiguration** returns True
-4.	Modify the resource out of the desired state
+4.	Modify the configured item to be out of the desired state
 5.	Verify **Test-DscConfiguration** returns false
 Here’s a more concrete example using Registry resource:
 1.	Start with registry key not in the desired state
