@@ -22,7 +22,7 @@ Some example improvements (resuls may vary depending your your hardware):
 | `powershell -command "echo 1"` | 900 | 250 |
 | First ever PowerShell run: `powershell -command "Unknown-Command"` | 30000 | 13000 |
 | Command analysis cache built: `powershell -command "Unknown-Command"` | 7000 | 520 |
-| `1..1000000 | % { }` | 1400 | 750 |
+| <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
 One change related to startup may impact some (unsupported) scenarios. PowerShell no longer
 reads the files `$pshome\*.ps1xml` - these files have been converted to C# to avoid some file
@@ -38,20 +38,6 @@ See [analysis_cache.md]() for more details.
 
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
-
-## Long Filename Support ##
-
-Andrew...
-
-
-## Modules ##
-
-Chunqing...
-
-
-## PSEdition ##
-
-Mani...
 
 
 ## Bug Fixes ##

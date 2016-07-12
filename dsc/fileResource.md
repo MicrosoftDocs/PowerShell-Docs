@@ -15,6 +15,10 @@ ms.prod:  powershell
 
 The File resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage files and folders on the target node.
 
+>**Note:** If the **MatchSource** property is set to **$false** (which is the default value), the contents to be copied are cached the first time the configuration is applied. 
+>Subsequent applications of the configuration will not check for updated files and/or folders in the path specified by **SourcePath**. If you want to check for updates to the files and/or 
+>folders in **SourcePath** every time the configuration is applied, set **MatchSource** to **$true**. 
+
 ## Syntax
 ```
 File [string] #ResourceName
@@ -49,7 +53,7 @@ File [string] #ResourceName
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 | SourcePath| Indicates the path from which to copy the file or folder resource.| 
 | Type| Indicates if the resource being configured is a directory or a file. Set this property to "Directory" to indicate that the resource is a directory. Set it to "File" to indicate that the resource is a file. The default value is “File”.| 
-| MatchSource| If set to the default value of __$false__, then any files on the source (say, files A, B, and C) will be added to the destination the first time the configuration is applied. If a new file (D) is added to the source, it will not be added to the destination, even when the configuration is re-applied later. If the value is __$true__, then each time the configuration is applied, new files subsequently found on the source (such as file D in this example) are added to the destination.| 
+| MatchSource| If set to the default value of __$false__, then any files on the source (say, files A, B, and C) will be added to the destination the first time the configuration is applied. If a new file (D) is added to the source, it will not be added to the destination, even when the configuration is re-applied later. If the value is __$true__, then each time the configuration is applied, new files subsequently found on the source (such as file D in this example) are added to the destination. The default value is **$false**.| 
 
 ## Example
 

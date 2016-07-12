@@ -219,6 +219,7 @@ $x = Get-COMDictionary
 In the above example, WMF 5.0 incorrectly wrote the Scripting.Dictionary to the pipeline
 instead of enumerating the key value pairs.
 
+This change also addresses [issues 1752224 on Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
 ### `[ordered]` was not allowed inside classes ###
 
