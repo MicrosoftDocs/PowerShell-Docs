@@ -66,7 +66,7 @@ The following script is an example of how to remove all breakpoints from the Con
 
 ```
 # This command deletes all of the breakpoints in the current session.
-get-breakpoint | remove-breakpoint
+get-psbreakpoint | remove-psbreakpoint
 ```
 
 ### <a name="bkmk_disable"></a>Disable a Breakpoint
