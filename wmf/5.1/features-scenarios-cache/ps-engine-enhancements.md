@@ -39,20 +39,6 @@ See [analysis_cache.md]() for more details.
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
 
-## Long Filename Support ##
-
-Andrew...
-
-
-## Modules ##
-
-Chunqing...
-
-
-## PSEdition ##
-
-Mani...
-
 
 ## Bug Fixes ##
 
