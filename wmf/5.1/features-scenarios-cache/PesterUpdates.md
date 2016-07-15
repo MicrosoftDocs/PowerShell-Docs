@@ -1,6 +1,7 @@
 ---
 title: Pester updated to version 3.4.0 
-author:  jkeithb
+author:jaimeo
+contributor: jkeithb
 contributor: Keith Bankston (expert is Jim Truher)
 ---
 
