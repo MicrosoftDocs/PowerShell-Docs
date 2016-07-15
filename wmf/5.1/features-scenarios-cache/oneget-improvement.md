@@ -33,9 +33,9 @@ $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies
 **Scenario**: For the enterprise scenario, people are working under an environment where there is no internet access but Intranet only. OneGet did not support this case in WMF 5.0.
 
 **Solution**:
-- You can download the NuGet provider using another machine with Internet connection with the command Install-PackageProvider NuGet.
+- You can download the NuGet provider on another machine with Internet connection by using the command "Install-PackageProvider -Name NuGet".
 
-- Find the NuGet provider under either  $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget  or  $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget. 
+- Find the NuGet provider you just installed under either  $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget  or  $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget. 
 
 - Copy the binaries over to a folder or network share location that your machine (the one without Internet) have access too and install NuGet provider with "Install-PackageProvider NuGet -Source <Path to folder>".
 
