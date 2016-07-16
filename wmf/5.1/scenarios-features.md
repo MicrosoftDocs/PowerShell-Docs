@@ -40,13 +40,13 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 ```
 Catalog versions 1 and 2 are supported. Version 1 uses the SHA1 hashing algorithm to create file hashes; version 2 uses SHA256. Catalog version 2 is not supported on *Windows Server 2008 R2* or *Windows 7*. You should use catalog version 2 on *Windows 8*, *Windows Server 2012*, and later operating systems.  
 
-![](../../images/NewFileCatalog.jpg)
+![](../images/NewFileCatalog.jpg)
 
 This creates the catalog file. 
 
-![](../../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)  
 
-![](../../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg) 
 
 To verify the integrity of catalog file (Pester.cat in above exmaple), sign it using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
 
@@ -60,7 +60,7 @@ Test File catalog validates the catalog representing a set of folders.
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-![](../../images/TestFileCatalog.jpg)
+![](../images/TestFileCatalog.jpg)
 
 This cmdlet compares all the files hashes and their relative paths found in *catalog* with ones on *disk*. If it detects any mismatch between file hashes and paths it returns the status as *ValidationFailed*. Users can retrieve all this information by using the *-Detailed* flag. It also displays signing status of catalog in *Signature* filed which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file. 
 Users can also skip any file during validation by using the *-FilesToSkip* parameter. 
