@@ -32,7 +32,7 @@ Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS conn
 
 ## Improved pull server registration ##
 
-In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull perver while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server will have the error "Instance Name already in use."
+In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server will have the error "Instance Name already in use."
 This was due to an incorrect pattern being used to access the ESENT database in a multi-threaded scenario. In WMF 5.1, this issue has been fixed. Concurrent registrations or reporting (involving ESENT database) will work fine in WMF 5.1. This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
 ##Pull partial configuration naming convention
@@ -172,7 +172,7 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
-##DSC module and onfiguration signing validations
+##DSC module and configuration signing validations
 In DSC, configurations and modules are distributed to managed computers from the pull server. If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them. 
 
  In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files. This feature will prevent nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer. 
