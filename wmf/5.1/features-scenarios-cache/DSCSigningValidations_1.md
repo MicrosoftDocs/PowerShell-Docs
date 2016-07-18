@@ -5,9 +5,9 @@ contributor: berheabra
 ---
 
 ##DSC Module and Configuration Signing validations
-In DSC, configuration and modules are distributed to managed machines from the pull server. If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed machines. Thus compromising even more machines of the customer. 
+In DSC, configuration documents and modules are distributed to managed machines from the pull server or pull server (in the case of Azure Automation pull service). If the pull server/service is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed machines, thus compromising even more machines of the customer. 
 
- This is addressed in WMF 5.1. DSC supports validating the digital signatures on catalog and configuration (.MOF) files. This feature will prevent nodes from executing a configuration or module files which are not signed by trusted signer or which are tempered after they have been signed by trusted signer. 
+ This threat is addressed in WMF 5.1. DSC supports validating the digital signatures on modules and configuration (.MOF) files. This feature will prevent nodes from executing a configuration or module files that are not signed by trusted signer or that have been tampered with after they have been signed by trusted signer. 
 
 
 
@@ -18,7 +18,7 @@ The existing PowerShell cmdlet [Set-AuthenticodeSignature](https://technet.micro
 2. Modules:-
 Signing of modules is done by signing the corresponding module catalog using the following steps:- 
     * Create a catalog file: A catalog file contains a collection of cryptographic hashes, or thumbprints. Each thumbprint corresponds to a file that is included in the module.  A new cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx),
-has been added to enable users create a catalog file for their module.
+has been added to enable users create a catalog file for their module. Please refer to the catalog cmdlets [a relative link](catalog-cmdlets.md) to create catalog files. 
     * Sign the catalog file: 
 using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) sign the catalog file.
     * Place the catalog file inside the module folder.
