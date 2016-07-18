@@ -59,17 +59,17 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules. 
 The localconfigurationmanager will perform the following steps to verify the digital signatures.
 * Verify the signature on a configuration file (.MOF) is valid. It uses the powershell cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), which is extended in 5.1 to support MOF sigature validation.
-* Verify the certificate authority that autherized the signer is trusted.
+* Verify the certificate authority that authorized the signer is trusted.
 * Download module/resource dependencies of the configuration to a temp location.
 * Verify the signature of the catalog included inside the module.
     * Find a <moduleName>.cat file and verify its signature using the cmdlet  [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
     * Verify the certification authority that authenticated the signer is trusted.
-    * Verify the content of the modules has not been tempered using the new cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).
+    * Verify the content of the modules has not been tampered using the new cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).
 * Install-module to $env:ProgramFiles\WindowsPowerShell\Modules\
 * Process configuration.
 
 Note: - Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed. Consistency run does not validate signature of Current.mof or its module dependencies.
-If verification has failed at any stage, for instance if the configuration pulled from the pullserver is unsigned, then processing of the configuration will be terminate with the error shown below. and all tempoarary files will be deleted.
+If verification has failed at any stage, for instance if the configuration pulled from the pullserver is unsigned, then processing of the configuration will be terminated with the error shown below and all temporary files will be deleted.
 
 ![Sample Error Output Configuration](../../images/PullUnsignedConfigFail.png)
 
@@ -78,7 +78,7 @@ Similarily, Pulling a module whose catalog is not signed will result in the foll
 ![Sample Error Output Module](../../images/PullUnisgnedCatalog.png)
 
 ####PUSH
-A configuration delivered via push might be tempered at its source before it delivered to the node. The Local configuration manager will perform similar signature validation steps for pushed or published configuration(s).
+A configuration delivered via push might be tampered at its source before it is delivered to the node. The Local configuration manager will perform similar signature validation steps for pushed or published configuration(s).
 Below is a complete example of signature validation for push.
 
 * Enable signature validation on the node.
