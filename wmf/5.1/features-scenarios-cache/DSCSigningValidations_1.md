@@ -71,11 +71,11 @@ The localconfigurationmanager will perform the following steps to verify the dig
 Note: - Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed. Consistency run does not validate signature of Current.mof or its module dependencies.
 If verification has failed at any stage, for instance if the configuration pulled from the pullserver is unsigned, then processing of the configuration will be terminated with the error shown below and all temporary files will be deleted.
 
-![Sample Error Output Configuration](../../images/PullUnsignedConfigFail.png)
+![Sample Error Output Configuration](../../images/PullUnsignedConfigFail.PNG)
 
 Similarily, Pulling a module whose catalog is not signed will result in the following error:-
 
-![Sample Error Output Module](../../images/PullUnisgnedCatalog.png)
+![Sample Error Output Module](../../images/PullUnisgnedCatalog.PNG)
 
 ####PUSH
 A configuration delivered via push might be tampered at its source before it is delivered to the node. The Local configuration manager will perform similar signature validation steps for pushed or published configuration(s).
@@ -120,13 +120,13 @@ Test
 ```Powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
-![ErrorUnsignedMofPushed](../../images/PushUnsignedMof.png)
+![ErrorUnsignedMofPushed](../../images/PushUnsignedMof.PNG)
 
 * Sign the configurtion file using code-signing cert.
 
-![SignMofFile](../../images/SignMofFile.png)
+![SignMofFile](../../images/SignMofFile.PNG)
 
 * Try pushing the signed mof file.
 
-![SignMofFile](../../images/PushSignedMof.png)
+![SignMofFile](../../images/PushSignedMof.PNG)
 
