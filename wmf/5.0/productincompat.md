@@ -1,24 +1,1 @@
-# Product Compatibility Status
-
-## Compatible:
-> Systems that are running the following server applications **can run** Windows Management Framework 5.0:
-
-- Microsoft SharePoint Server 2013
-- System Center 2012 Configuration Manager
-
-## Not Tested:
-> Systems that are running the following server applications **have not tested** against Windows Management Framework 5.0:
-
-- Microsoft SharePoint Server 2010
-- System Center 2012 Virtual Machine Manager
-
-## Incompatible:
-> Systems that are running the following server applications **should not run** Windows Management Framework 5.0:
-
-- Microsoft Exchange Server 2013
-- Microsoft Exchange Server 2010 SP3
-- Skype for Business Server 2015
-- Microsoft Lync Server 2013
-- Microsoft Lync Server 2010
-- System Center 2012 R2 Service Management Automation
-
+# Product Compatibility Status## Compatible:> Systems that are running the following server applications **can run** Windows Management Framework 5.0:- Microsoft SharePoint Server 2013- System Center 2012 Configuration Manager## Not Tested:> The following server applications **have not tested** against Windows Management Framework 5.0. For details, and to ask about future plans of support for WMF 5.0, contact the product groups directly. - Microsoft SharePoint Server 2010- System Center 2012 Virtual Machine Manager## Incompatible:> The following Microsoft products do not support the use of WMF 5.0 at this time, and systems running these applications **should not use** WMF 5.0. For details, and to ask about future plans of support for WMF 5.0, contact those product groups directly.- Microsoft Exchange Server 2013- Microsoft Exchange Server 2010 SP3- Skype for Business Server 2015- Microsoft Lync Server 2013- Microsoft Lync Server 2010- System Center 2012 R2 Service Management Automation
