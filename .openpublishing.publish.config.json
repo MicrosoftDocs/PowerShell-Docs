@@ -42,6 +42,7 @@
             "type_mapping": {
                 "Conceptual": "Content"
             }
+<<<<<<< HEAD
         },
         {
             "docset_name": "PowerShell_PowerShell-docs_gallery",
@@ -52,6 +53,8 @@
             "type_mapping": {
                 "Conceptual": "Content"
             }
+=======
+>>>>>>> refs/remotes/origin/staging
         }
     ],
     "notification_subscribers": [""]
