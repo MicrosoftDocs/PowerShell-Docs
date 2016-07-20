@@ -1,0 +1,51 @@
+# [Overview](readme.md)
+## Gallery
+### [Getting started](psgallery/psgallery_gettingstarted.md)
+### [Gallery FAQs](psgallery/psgallery_faqs.md)
+### [Gallery Items tab](psgallery/psgallery_items_tab.md)
+### [Gallery search syntax](psgallery/psgallery_search_syntax.md)
+### [FileList view](psgallery/psgallery_filelist_feature.md)
+### [Deploy to Azure Automation](psgallery/psgallery_deploy_to_azure_automation.md)
+### [Unlisting items](psgallery/psgallery_unlist_items.md)
+### [Deleting items](psgallery/Deleting-Items.md)
+### [Managing item owners](psgallery/Managing-Item-Owners.md)
+### [Report Abuse](psgallery/psgallery_report_abuse.md)
+### [Dispute resolution](psgallery/psgallery_dispute_resolution.md)
+### [Contacting item owners](psgallery/psgallery_contacting_item_owners.md)
+### [Contacting administrators](psgallery/psgallery_contacting_administrators.md)
+
+# [PowerShellGet](psget/overview.md)
+## Module
+### [Find Modules](psget/module/psget_find-module.md)
+### [Find DSC Resources](psget/module/psget_find-dscresource.md)
+### [Find Role Capabilities](psget/module/psget_find-rolecapability.md)
+### [Find Commands](psget/module/psget_find-command.md)
+### [Save](psget/module/psget_save-module.md)
+### [Install](psget/module/psget_install-module.md)
+### [Update](psget/module/psget_update-module.md)
+### [Uninstall](psget/module/psget_uninstall-module.md)
+### [Get installed modules](psget/module/psget_get-installedmodule.md)
+### [Update module manifest](psget/module/psget_update-modulemanifest.md)
+### [Publish](psget/module/psget_publish-module.md)
+	
+## Script
+### [Find](psget/script/psget_find-script.md)
+### [Save](psget/script/psget_save-script.md)
+### [Install](psget/script/psget_install-script.md)
+### [Update](psget/script/psget_update-script.md)
+### [Uninstall](psget/script/psget_uninstall-script.md)
+### [Get installed scipts](psget/script/psget_get-installedscript.md)
+### [Create script file with metadata](psget/script/psget_new-scriptfileinfo.md)
+### [Test script file metadata](psget/script/psget_test-scriptfileinfo.md)
+### [Update script file metadata](psget/script/psget_update-scriptfileinfo.md)
+### [Publish](psget/script/psget_publish-module.md)
+
+## Repository management
+### [Bootstrapping NuGet provider and NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
+### [Registering repository](psget/repository/psget_register-psrepository.md)
+### [Listing registered repository](psget/repository/ppsget_get-psrepository.md)
+### [Modifying registered repository](psget/repository/psget_set-psrepository.md)
+### [Unregistering repository](psget/repository/psget_unregister-psrepository.md)
+
+##[PackageManagement cmdlets](psget/oneget/PackageManagement_cmdlets.md)
+
