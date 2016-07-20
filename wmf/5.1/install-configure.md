@@ -50,6 +50,7 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 Installation of WMF 5.1 on either Windows Server 2008 SP1 or Windows 7 SP1, require the installation of:
 - Latest service pack.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929). This is needed to use new PowerShell cmdlets for windows catalog files. 
 
 > **WinRM Dependency** - Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7. To enable WinRM, in a Windows PowerShell elevated session, run `Set-WSManQuickConfig`.
 
