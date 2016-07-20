@@ -44,8 +44,8 @@
             }
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_reference",
-            "build_output_subfolder": "reference",
+            "docset_name": "PowerShell_PowerShell-docs_gallery",
+            "build_output_subfolder": "gallery",
             "locale": "en-us",
             "version": 0,
             "open_to_public_contributors": "true",
