@@ -20,6 +20,6 @@
             }
         ],
         "template": "op.html",
-        "dest": "reference"
+        "dest": "gallery"
     }
 }
