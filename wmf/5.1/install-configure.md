@@ -12,7 +12,7 @@ ms.technology: WMF
 
 # Install and Configure WMF 5.1 (Preview) #
 
-> Note: This content is placeholder. The download links will be added when WMF 5.1 Preview will be released.
+> Note: This content is placeholder. Download links will be added when WMF 5.1 Preview will be released.
 
 Download the WMF 5.1 package for the operating system and architecture you wish to install it on:
 
