@@ -31,7 +31,7 @@ Some example improvements (your results may vary depending your your hardware):
 | Command analysis cache built: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | `1..1000000 | % { }` | 1400 | 750 |
   
-> [!NOTE]  
+> Note 
 > One change related to startup might impact some unsupported scenarios. PowerShell no longer
 reads the files `$pshome\*.ps1xml` - these files have been converted to C# to avoid some file
 and CPU overhead of processing the XML files. The files still exist to support V2 side-by-side,

@@ -32,7 +32,7 @@ Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS conn
 
 ## Improved pull server registration ##
 
-In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull perver while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server will have the error "Instance Name already in use."
+In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server will have the error "Instance Name already in use."
 This was due to an incorrect pattern being used to access the ESENT database in a multi-threaded scenario. In WMF 5.1, this issue has been fixed. Concurrent registrations or reporting (involving ESENT database) will work fine in WMF 5.1. This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
 ##Pull partial configuration naming convention
@@ -41,7 +41,7 @@ In the previous release, the naming convention for a partial configuration was t
 See the snapshots below:-
 •	Local configuration settings which defines a partial configuration that a node is allowed to receive.
 
-![Sample metaconfiguration](../../images/MetaConfigPartialOne.png)
+![Sample metaconfiguration](../images/MetaConfigPartialOne.png)
 
 •	Sample partial configuration definition 
 
@@ -62,11 +62,11 @@ PartialOne
 
 •	‘ConfigurationName’ embedded in the generated MOF file.
 
-![Sample generated mof file](../../images/PartialGeneratedMof.png)
+![Sample generated mof file](../images/PartialGeneratedMof.png)
 
 •	FileName in the pull configuration repository 
 
-![FileName in Configuration Repository](../../images/PartialInConfigRepository.png)
+![FileName in Configuration Repository](../images/PartialInConfigRepository.png)
 
 Azure Automation service name generated mof files as <ConfigurationName>.<NodeName>.mof. So the configuration below will compile to PartialOne.Localhost.mof.
 
@@ -172,7 +172,7 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
-##DSC module and onfiguration signing validations
+##DSC module and configuration signing validations
 In DSC, configurations and modules are distributed to managed computers from the pull server. If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them. 
 
  In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files. This feature will prevent nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer. 
@@ -239,11 +239,11 @@ The Local Configuration Manager will perform the following steps to verify the d
 > Note: Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed. Consistency runs do not validate the signature of Current.mof or its module dependencies.
 If verification has failed at any stage, for instance if the configuration pulled from the pull server is unsigned, then processing of the configuration will terminate with the error shown below and all tempoarary files will be deleted.
 
-![Sample Error Output Configuration](../../images/PullUnsignedConfigFail.png)
+![Sample Error Output Configuration](../images/PullUnsignedConfigFail.png)
 
 Similarily, pulling a module whose catalog is not signed will result in the following error:-
 
-![Sample Error Output Module](../../images/PullUnisgnedCatalog.png)
+![Sample Error Output Module](../images/PullUnisgnedCatalog.png)
 
 ####Push
 A configuration delivered via push might be tampered with at its source before it delivered to the node. The Local Configuration Manager will perform similar signature validation steps for pushed or published configuration(s).
@@ -288,13 +288,13 @@ Test
 ```Powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
-![ErrorUnsignedMofPushed](../../images/PushUnsignedMof.png)
+![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
 * Sign the configurtion file using code-signing cert.
 
-![SignMofFile](../../images/SignMofFile.png)
+![SignMofFile](../images/SignMofFile.png)
 
 * Try pushing the signed mof file.
 
-![SignMofFile](../../images/PushSignedMof.png)
+![SignMofFile](../images/PushSignedMof.png)
 

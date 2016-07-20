@@ -1,11 +1,11 @@
 ---
 title: Pull Partial Configuration Naming Convention
 author:  jaimeo
-contributor: ?
+contributor: berheabrha
 ---
 
 ##Pull Partial Configuration Naming Convention
-In the previous release, the naming convention for a partial configuration was the mof file name in the pull server /service should match the partial configuration name specified in the local configuration manger settings that in turn has to match the configuration name embedded in the MOF file. 
+In the previous releases, the naming convention for a partial configuration was the mof file name in the pull server /service should match the partial configuration name specified in the local configuration manger settings that in turn has to match the configuration name embedded in the MOF file. 
 See the snapshots below:-
 •	Local configuration settings which defines a partial configuration that a node is allowed to receive.
 
@@ -36,8 +36,8 @@ PartialOne
 
 ![FileName in Configuration Repository](../../images/PartialInConfigRepository.png)
 
-Azure Automation service name generated mof files as <ConfigurationName>.<NodeName>.mof. So the configuration below will compile to PartialOne.Localhost.mof.  
-This made it impossible to pull one of your partial configuration from Azure automation service.
+Azure Automation service name generated mof files as ``<ConfigurationName>.<NodeName>.mof``. So the configuration below will compile to PartialOne.Localhost.mof.  
+This made it impossible to pull a partial configuration from Azure automation service.
 
 ```Powershell
 Configuration PartialOne
@@ -54,7 +54,7 @@ Configuration PartialOne
 PartialOne
 ```
 
-In WMF 5.1, partial configuration in the pull server/service can be named as <ConfigurationName>.<NodeName>.mof. Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name. is naming flexibility allow you to manage your nodes are partially by Azure Automation Service, where some configuration for your node is coming from Azure Automation DSC and you have a partial configuration that you wanted to manage locally.
+In WMF 5.1, partial configuration in the pull server/service can be named as ``<ConfigurationName>.<NodeName>.mof``. Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration document on the pull server configuration repository can have any name. This naming flexibility enables managing partial configuration of a node using both onprem and Azure Automation pull service. For example, you can have 'base' partial configuration that gets pushed locally and another partial configuration that gets pulled from Azure Automation Service.
 
 The metaconfiguration below will setup a node to be managed both locally as well as by Azure Automation Service.
 
