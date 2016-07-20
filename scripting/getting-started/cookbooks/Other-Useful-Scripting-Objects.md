@@ -33,7 +33,7 @@ psUnsupportedConsoleApplications
 
 ```
 # See the local help map
-$psLocalHelp |Format-List
+$psLocalHelp | Format-List
 
 ```
 
@@ -54,7 +54,7 @@ $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57
  This is a dictionary object that maintains a context\-sensitive mapping between topic titles of Help topics and their associated external URLs. It is used to locate the Help for a particular topic on the web. You can add or delete topics from this list.
 
 ```
-$psOnlineHelp |format-list
+$psOnlineHelp | Format-List
 
 ```
 

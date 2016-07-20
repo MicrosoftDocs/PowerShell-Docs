@@ -16,7 +16,7 @@ ms.prod:  powershell
 
 The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes. The `Script` resource has `GetScript`, `SetScript`, and `TestScript` properties. These properties should be set to script blocks that will run on each target node. 
 
-The `GetScript` script block should return a hashtable representing the state of the current node. It is not required to return anything. DSC doesn't do anything with the output of this script block.
+The `GetScript` script block should return a hashtable representing the state of the current node. The hashtable must only contain one key `Result` and the value must be of type `String`. It is not required to return anything. DSC doesn't do anything with the output of this script block.
 
 The `TestScript` script block should determine if the current node needs to be modified. It should return `$true` if the node is up-to-date. It should return `$false` if the node's configuration is out-of-date and should be updated by the `SetScript` script block. The `TestScript` script block is called by DSC.
 
@@ -42,7 +42,7 @@ Script [string] #ResourceName
 
 |  Property  |  Description   | 
 |---|---| 
-| GetScript| Provides a block of Windows PowerShell script that runs when you invoke the [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet. This block must return a hash table.| 
+| GetScript| Provides a block of Windows PowerShell script that runs when you invoke the [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet. This block must return a hashtable. The hashtable must only contain one key **Result** and the value must be of type **String**.| 
 | SetScript| Provides a block of Windows PowerShell script. When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, the **TestScript** block runs first. If the **TestScript** block returns **$false**, the **SetScript** block will run. If the **TestScript** block returns **$true**, the **SetScript** block will not run.| 
 | TestScript| Provides a block of Windows PowerShell script. When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, this block runs. If it returns **$false**, the SetScript block will run. If it returns **$true**, the SetScript block will not run. The **TestScript** block also runs when you invoke the [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. However, in this case, the **SetScript** block will not run, no matter what value the TestScript block returns. The **TestScript** block must return True if the actual configuration matches the current desired state configuration, and False if it does not match. (The current desired state configuration is the last configuration enacted on the node that is using DSC.)| 
 | Credential| Indicates the credentials to use for running this script, if credentials are required.| 
@@ -58,7 +58,7 @@ Script ScriptExample
         $sw.Close()
     }
     TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-    GetScript = { <# This must return a hash table #> }          
+    GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
 }
 ```
 
@@ -69,7 +69,7 @@ Script UpdateConfigurationVersion
 {
     GetScript = { 
         $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-        return @{ 'Version' = $currentVersion }
+        return @{ 'Result' = "Version: $currentVersion" }
     }          
     TestScript = { 
         $state = GetScript
