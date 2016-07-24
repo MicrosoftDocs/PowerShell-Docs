@@ -24,7 +24,7 @@ This approach effectively gives DNS Administrators control over your whole domai
 
 With JEA in place, you can configure a role for your DNS administrators that gives them access to all the commands they need to get their job done, but nothing more.
 This means you can provide the appropriate access to repair a poisoned DNS cache without unintentionally giving them rights to Active Directory, or to browse the file system, or run potentially dangerous scripts.
-Better yet, when the JEA session is configured to use one-time privileged virtual accounts, your DNS adminstrators can connect to the server using *unprivileged* credentials and still be able to run privileged commands.
+Better yet, when the JEA session is configured to use one-time privileged virtual accounts, your DNS administrators can connect to the server using *unprivileged* credentials and still be able to run privileged commands.
 
 ## Availability
 JEA is being developed in parallel to Windows Server 2016, and is available on older versions of Windows through Windows Management Framework updates.
