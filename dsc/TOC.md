@@ -8,6 +8,7 @@
 ## [Configuration data](configData.md)
 ### [Credential options in configuration data](configDataCredentials.md)
 ## [Securing the configuration MOF file](secureMOF.md)
+### [Credential Encryption](credentialEncryption.md)
 ## [Partial Configurations](partialConfigs.md)
 ## [Writing help for DSC configurations](configHelp.md)
 
