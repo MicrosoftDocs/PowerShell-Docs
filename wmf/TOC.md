@@ -5,7 +5,7 @@
 ### [Improvements in Desired State Configuration (DSC)](5.1/DSC-improvements.md)
 ### [Improvements in the PowerShell Console](5.1/console-improvements.md)
 ### [Improvements in the PowerShell Engine](5.1/engine-improvements.md)
-### [Improvements in Package Management] (5/1/package-management-improvements.md)
+### [Improvements in Package Management](5/1/package-management-improvements.md)
 ### [Bugs Fixed in WMF 5.1](5.1/bugfixes.md)
 ## [Install and Configure](5.1/install-configure.md)
 ## [Known Issues](5.1/known-issues.md)
