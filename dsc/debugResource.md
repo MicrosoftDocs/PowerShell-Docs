@@ -88,7 +88,7 @@ At this point, the LCM has called the resource, and come to the first break poin
 
 ## Debugging the resource script
 
-Start a new instance of the PowerShell ISE. In the console pane, enter the last three lines of output from the `Start-DscConifiguration` output as commands, replacing `<credentials>` with
+Start a new instance of the PowerShell ISE. In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with
 valid user credentials. You should now see a prompt that looks similar to:
 
 ```powershell
