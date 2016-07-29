@@ -29,7 +29,7 @@ Some example improvements (your results may vary depending your your hardware):
 | `powershell -command "echo 1"` | 900 | 250 |
 | First ever PowerShell run: `powershell -command "Unknown-Command"` | 30000 | 13000 |
 | Command analysis cache built: `powershell -command "Unknown-Command"` | 7000 | 520 |
-| `1..1000000 | % { }` | 1400 | 750 |
+| <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
 > Note 
 > One change related to startup might impact some unsupported scenarios. PowerShell no longer

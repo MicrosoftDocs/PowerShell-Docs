@@ -61,7 +61,7 @@ Configuration PSWebAccess
 PSWebAccess
 ```
 After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). The configuration will stop when the
-Local Configuration Manager (LCM) calls into the first resoure in the configuration. If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter
+Local Configuration Manager (LCM) calls into the first resource in the configuration. If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter
 to start debugging.
 
 ```powershell
@@ -88,7 +88,7 @@ At this point, the LCM has called the resource, and come to the first break poin
 
 ## Debugging the resource script
 
-Start a new instance of the PowerShell ISE. In the console pane, enter the last three lines of output from the `Start-DscConifiguration` output as commands, replacing `<credentials>` with
+Start a new instance of the PowerShell ISE. In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with
 valid user credentials. You should now see a prompt that looks similar to:
 
 ```powershell
