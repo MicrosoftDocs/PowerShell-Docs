@@ -1,1 +1,3 @@
-# Index test file for Open Publishing
+---
+redirect_url: /powershell/gallery/readme
+---
