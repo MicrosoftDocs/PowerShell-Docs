@@ -19,19 +19,18 @@ The following notable bugs are fixed in WMF 5.1:
 ### Module auto-discovery fully honors `$env:PSModulePath` ###
 
 Module auto-discovery (loading modules automatically without an explicit Import-Module when calling a command)
-was introduced in WMF 3. When introduced, PowerShell checked for commands in `$PSHome\Modules` before
-using `$env:PSModulePath`.
+was introduced in WMF 3. 
+When introduced, PowerShell checked for commands in `$PSHome\Modules` before using `$env:PSModulePath`.
 
-WMF 5.1 changes this behavior to honor `$env:PSModulePath` completely. This allows for a user-authored module 
-that defines commands provided by PowerShell (e.g. `Get-ChildItem`) to be auto-loaded and correctly overriding
-the built-in command.
+WMF 5.1 changes this behavior to honor `$env:PSModulePath` completely. 
+This allows for a user-authored module that defines commands provided by PowerShell (e.g. `Get-ChildItem`) to be auto-loaded and correctly overriding the built-in command.
 
 ### File redirection no longer hard-codes `-Encoding Unicode` ###
 
 In all previous versions of PowerShell, it was impossible to control the file encoding used by the file
-redirection operator, e.g. `get-childitem > out.txt` because PowerShell added `-Encoding Unicode`.
+redirection operator, e.g. `Get-ChildItem > out.txt` because PowerShell added `-Encoding Unicode`.
 
-Starting with WMF 5.1, you can now change the file encoding of redirection by setting `$PSDefaultParameterValues`, e.g.
+Starting with WMF 5.1, you can now change the file encoding of redirection by setting `$PSDefaultParameterValues`:
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -40,20 +39,20 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### Fixed a regression in accessing members of `System.Reflection.TypeInfo` ###
 
 A regression introduced in WMF 5.0 broke accessing members of `System.Reflection.RuntimeType`, e.g. `[int].ImplementedInterfaces`.
-This bug has been fixed in WMF5.1.
+This bug has been fixed in WMF 5.1.
 
 
 ### Fixed some issues with COM objects ###
 
-WMF 5.0 introduced a new COM binder for invoking methods on COM objects and accessing properties of COM objects.
-This new binder improved performance significantly but also introduced some bugs which have been fixed in WMF5.1.
+WMF 5.0 introduced a new COM binder for invoking methods on COM objects and accessing properties of COM objects. 
+This new binder improved performance significantly but also introduced some bugs which have been fixed in WMF 5.1.
 
 #### Argument conversions were not always performed correctly ####
 
 In the following example:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -78,15 +77,15 @@ function Get-COMDictionary
 $x = Get-COMDictionary
 ```
 
-In the above example, WMF 5.0 incorrectly wrote the Scripting.Dictionary to the pipeline
-instead of enumerating the key value pairs.
+In the above example, WMF 5.0 incorrectly wrote the Scripting.Dictionary to the pipeline instead of enumerating the key/value pairs.
 
-This change also addresses [issues 1752224 on Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
+This change also addresses [issue 1752224 on Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
 ### `[ordered]` was not allowed inside classes ###
 
-WMF5 introduced classes with validation of type literals used in classes.  `[ordered]` looks like a type
-literal but is not a true .Net type.  WMF5 incorrectly reported an error on `[ordered]` inside a class:
+WMF 5.0 introduced classes with validation of type literals used in classes.  
+`[ordered]` looks like a type literal but is not a true .NET type. 
+WMF 5.0 incorrectly reported an error on `[ordered]` inside a class:
 
 ```
 class CThing
@@ -107,5 +106,5 @@ to view the real help.
 
 WMF 5.1 fixes this by returning the help for the latest version of the topic.
 
-Get-Help does not provide a way to specify which version you want help for. To work around this,
-navigate to the modules directory and view the help directly with a tool like your favorite editor. 
+`Get-Help` does not provide a way to specify which version you want help for. 
+To work around this, navigate to the modules directory and view the help directly with a tool like your favorite editor. 
