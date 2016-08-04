@@ -25,7 +25,8 @@ Log [string] #ResourceName
 }
 ```
 
-NOTE: before the Analytic log will be available or visible, it must be enabled.
+NOTE: By default only the Operational logs for DSC are enabled.
+Before the Analytic log will be available or visible, it must be enabled.
 See the following article.
 
 [Where are DSC Event Logs?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
