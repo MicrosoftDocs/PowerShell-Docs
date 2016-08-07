@@ -16,11 +16,13 @@ The following topic describes how to install the PowerShell SDK on different ver
 
 ## Installing Windows PowerShell 3.0 SDK for Windows 8 and Windows Server 2012
 
-Windows PowerShell 3.0 is automatically installed with Windows 8 and Windows Server 2012. In addition, you can download and install the reference assemblies for Windows PowerShell 3.0 as part of the Windows 8 SDK.
+Windows PowerShell 3.0 is automatically installed with Windows 8 and Windows Server 2012.
+In addition, you can download and install the reference assemblies for Windows PowerShell 3.0 as part of the Windows 8 SDK.
 These assemblies allow you to write cmdlets, providers, and host programs for Windows PowerShell 3.0.
 When you install the Windows SDK for Windows 8, the Windows PowerShell assemblies are automatically installed in the reference assembly folder, in \Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0.
 For more information, see the [Windows 8 SDK download site](http://msdn.microsoft.com/windows/hardware/hh852363.aspx).
-Windows PowerShell code samples are also available on the Development Center. For more information, see the Desktop code sample page on the [Dev center site](http://code.msdn.microsoft.com/windowsdesktop/). 
+Windows PowerShell code samples are also available on the Development Center.
+For more information, see the Desktop code sample page on the [Dev center site](http://code.msdn.microsoft.com/windowsdesktop/).
 
 In addition, Windows PowerShell 3.0 is backwards-compatible with the Windows PowerShell 2.0 SDK, which includes a number of code samples.
 For more information on how to download the Windows PowerShell 2.0 SDK, see below.
@@ -43,7 +45,7 @@ To install this SDK, see [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fw
 
 Reference assemblies are installed in the following location by default: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
-> **Note**: Code that is compiled against the Windows PowerShell 2.0 assemblies cannot be loaded into Windows PowerShell 1.0 installations. 
+> **Note**: Code that is compiled against the Windows PowerShell 2.0 assemblies cannot be loaded into Windows PowerShell 1.0 installations.
 >However, code that is compiled against the Windows PowerShell 1.0 assemblies can be loaded into Windows PowerShell 2.0 installations.
 
 ## Samples
@@ -186,7 +188,8 @@ Shows how to create a default initial session state, how to add a cmdlet to the 
 
 **Runspace11**
 
-Shows how to use the [ProxyCommand](https://technet.microsoft.com/library/system.management.automation.proxycommand.aspx) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command is then added to an initial session state that is used to create a constrained runspace.
+Shows how to use the [ProxyCommand](https://technet.microsoft.com/library/system.management.automation.proxycommand.aspx) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.
+The proxy command is then added to an initial session state that is used to create a constrained runspace.
 This means that the user can access the functionality of the cmdlet only through the proxy command.
 
 **PowerShell01**
