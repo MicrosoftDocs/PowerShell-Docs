@@ -38,12 +38,12 @@
 ### [Create script file with metadata](psget/script/psget_new-scriptfileinfo.md)
 ### [Test script file metadata](psget/script/psget_test-scriptfileinfo.md)
 ### [Update script file metadata](psget/script/psget_update-scriptfileinfo.md)
-### [Publish](psget/script/psget_publish-module.md)
+### [Publish](psget/module/psget_publish-module.md)
 
 ## Repository management
 ### [Bootstrapping NuGet provider and NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Registering repository](psget/repository/psget_register-psrepository.md)
-### [Listing registered repository](psget/repository/ppsget_get-psrepository.md)
+### [Listing registered repository](psget/repository/psget_get-psrepository.md)
 ### [Modifying registered repository](psget/repository/psget_set-psrepository.md)
 ### [Unregistering repository](psget/repository/psget_unregister-psrepository.md)
 
