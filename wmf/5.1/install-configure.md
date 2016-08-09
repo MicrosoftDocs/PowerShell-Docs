@@ -13,14 +13,14 @@ ms.technology: WMF
 # Install and Configure WMF 5.1 (Preview) #
 
 ## Install .Net 4.6
-You must install the .Net Framework 4.6 to use WMF 5.1. 
-This is require to enable the new catalog-signing features, which impacts several areas of module and script loading in WMF 5.1. 
+You must install the .NET Framework 4.6 to use WMF 5.1. 
+This is required to enable the new catalog-signing features, which impacts several areas of module and script loading in WMF 5.1. 
 
-The [.Net Framework 4.6 is available as KB 3045560](https://support.microsoft.com/en-us/kb/3045560). 
+The [.NET Framework 4.6 is available as KB 3045560](https://support.microsoft.com/en-us/kb/3045560). 
 Install instructions are available at the download location.
 
-> **Note:** It is a known issue that .NET 4.6 requirement is not detected by the WMF 5.1 Preview installer, so you will be able to install WMF 5.1 Preview before installing .Net 4.6. 
-Our testing has shown that you can install .Net 4.6 after installing the WMF 5.1 Preview. 
+> **Note:** It is a known issue that .NET 4.6 requirement is not detected by the WMF 5.1 Preview installer, so you will be able to install WMF 5.1 Preview before installing .NET 4.6. 
+Our testing has shown that you can install .NET 4.6 after installing the WMF 5.1 Preview. 
 The final version of WMF 5.1 will correctly check this prerequisite requirement before installing. 
 
 ## Download and install the WMF 5.1 Preview
@@ -42,9 +42,9 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 
 2. Double-click the MSU to run it.
 
-## Install WMF 5.1 from the command prompt##
+## Install WMF 5.1 from the Command Prompt##
 
-1. After downloading the correct package for your computer's architecture, open a Command Prompt window with elevated user rights (Run as Administrator). On the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012 or Windows Server 2008 R2 SP1, Command Prompt opens with elevated user rights by default.
+1. After downloading the correct package for your computer's architecture, open a Command Prompt window with elevated user rights (Run as Administrator). On the Server Core installation options of Windows Server 2012 R2, Windows Server 2012, or Windows Server 2008 R2 SP1, Command Prompt opens with elevated user rights by default.
 
 2. Change directories to the folder into which you have downloaded or copied the WMF 5.1 installation package.
 
@@ -61,7 +61,7 @@ Installation of WMF 5.1 on either Windows Server 2008 SP1 or Windows 7 SP1, requ
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 - WMF 5.1 requires [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560). 
 You can install Microsoft .NET Framework 4.6 by following the instructions at the download location.
-- Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929). This is needed to use new PowerShell cmdlets for windows catalog files. 
+- Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929). This is needed to use new PowerShell cmdlets for Windows catalog files. 
 
-> **WinRM Dependency** - Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7. To enable WinRM, in a Windows PowerShell elevated session, run `Set-WSManQuickConfig`.
+> **WinRM Dependency** - Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7. Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.
 
