@@ -5,7 +5,7 @@ keywords:  PowerShell, DSC, WMF
 description:  
 ms.topic:  article
 author:  jaimeo
-contributor: contributor:  jianyunt, quoctruong
+contributor: jianyunt, quoctruong
 manager:  dongill
 ms.prod:  powershell
 ms.technology: WMF
