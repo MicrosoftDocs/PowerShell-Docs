@@ -103,7 +103,7 @@ Configuration PartialConfigDemoConfigNames
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
         }     
         
-        PartialConfiguration Part1 
+        PartialConfiguration ServiceAccountConfig 
         {
             Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
@@ -284,9 +284,9 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the ServiceAccountConfig partial configuration is "Push".
+Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the SharePointConfig partial configuration is "Push".
 
-Name and locate the configuration MOF files as described above for their respective refresh modes. Call **Publish-DSCConfiguration** to publish the `SharePointInstall` 
+Name and locate the configuration MOF files as described above for their respective refresh modes. Call **Publish-DSCConfiguration** to publish the `SharePointConfig` 
 partial configuration, and either wait for the `ServiceAccountConfig` configuration to be pulled from the pull server, or force a refresh by calling 
 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
@@ -355,5 +355,6 @@ SharePointConfig
 
 **Concepts**
 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md) 
+
 [Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
