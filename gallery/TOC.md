@@ -27,7 +27,8 @@
 ### [Get installed modules](psget/module/psget_get-installedmodule.md)
 ### [Update module manifest](psget/module/psget_update-modulemanifest.md)
 ### [Publish](psget/module/psget_publish-module.md)
-	
+### [Troubleshooting](psget/psget_cmdlets_troubleshooting.md)
+
 ## Script
 ### [Find](psget/script/psget_find-script.md)
 ### [Save](psget/script/psget_save-script.md)
@@ -48,4 +49,3 @@
 ### [Unregistering repository](psget/repository/psget_unregister-psrepository.md)
 
 ##[PackageManagement cmdlets](psget/oneget/PackageManagement_cmdlets.md)
-
