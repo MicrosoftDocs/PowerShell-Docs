@@ -1,4 +1,4 @@
-## How to solve "WARNING:Package 'name of your package' failed to download" issue?
+## How to resolve "WARNING: Package 'your package name' failed to download" issue?
 
 
 
@@ -7,7 +7,7 @@ It is reported that Install-Module or Update-Module sometimes fails on some mach
 Based on our investigation, it is something to do with the networking connection.
 Recently we updated NuGet provider so that it can reliably download packages.
 You can follow the instructions below to install the latest build of NuGet provider and then install or update your module.
-Let's use 'Azure' as an example below.
+Let's use 'Azure' module as an example below.
 
 - Install-PackageProvider NuGet -RequiredVersion 2.8.5.206 -Force
 - Launch new PowerShell Console
