@@ -17,7 +17,7 @@ You can use the Windows PowerShellÂ® Integrated Scripting Environment (ISE) to
 > Beginning with Windows PowerShell ISE 3.0 the Command and Output Panes were combined into a single Console Pane.
 
 ## Menu Bar
-The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the Windows PowerShell ISE. Additionally, an [add-on tool](../../core-powershell/ise/The-ISEAddOnTool-Object.md) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md).
+The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add\-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the Windows PowerShell ISE. Additionally, an [add-on tool](../../guides/ise/The-ISEAddOnTool-Object.md) may be placed on the menu bar by running scripts that use the [Windows PowerShell ISE Scripting Object Model](../../guides/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md).
 
 > [!NOTE]
 > In Windows PowerShell ISE 2.0, The **Tools** and **Add\-ons** menus were not present.
@@ -72,5 +72,5 @@ Increases or decreases the size of the text on the screen.
 Help for Windows PowerShell ISE is available on the Web in the TechNet Library. You can open the Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the F1 key anywhere except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane. From the **Help** menu you can also run the Update\-Help cmdlet, and display the Command Window which assists you in constructing commands by showing you all of the parameters for a cmdlet and enabling you to fill in the parameters in an easy\-to\-use form.
 
 ## See Also
-[Using the Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+[Using the Windows PowerShell ISE](../../guides/ise/Using-the-Windows-PowerShell-ISE.md)
 

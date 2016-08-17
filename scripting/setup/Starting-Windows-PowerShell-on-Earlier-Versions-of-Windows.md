@@ -34,7 +34,7 @@ Use any of the following methods to start the installed version of Windows Power
     PowerShell
     ```
 
-    You can also use the parameters of the PowerShell.exe program to customize the session. For more information, see [PowerShell.exe Command-Line Help](../core-powershell/console/PowerShell.exe-Command-Line-Help.md).
+    You can also use the parameters of the PowerShell.exe program to customize the session. For more information, see [PowerShell.exe Command-Line Help](../guides/console/PowerShell.exe-Command-Line-Help.md).
 
 #### With Administrative privileges ("Run as administrator")
 

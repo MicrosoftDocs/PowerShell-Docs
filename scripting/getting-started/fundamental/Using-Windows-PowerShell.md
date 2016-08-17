@@ -26,7 +26,7 @@ Content in this section can help you learn more about Windows PowerShell, how to
 
 -   [Windows PowerShell Desired State Configuration (DSC) Overview](https://technet.microsoft.com/en-us/library/04c9e716-822c-40f0-8fdf-f2dda8abd888). An introduction to a new feature for Windows PowerShell 4.0, Windows PowerShell Desired State Configuration (DSC). DSC can help administrators achieve consistent configurations in Windows environments, and on devices such as network switches.
 
--   [PowerShell.exe Command-Line Help](../../core-powershell/console/PowerShell.exe-Command-Line-Help.md). How to start Windows PowerShell from the Windows Command Prompt, and run basic Windows PowerShell commands.
+-   [PowerShell.exe Command-Line Help](../../guides/console/PowerShell.exe-Command-Line-Help.md). How to start Windows PowerShell from the Windows Command Prompt, and run basic Windows PowerShell commands.
 
 -   [Windows PowerShell Glossary](../../Windows-PowerShell-Glossary.md). Learn about common terms used in Windows PowerShell and its documentation.
 
