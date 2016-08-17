@@ -42,13 +42,13 @@ registry, processes, services and similar day-to-day subjects.
 -  A curated guide to other sources for
 [learning PowerShell](getting-started/more-powershell-learning.md).
 
-##  [Windows PowerShell standard modules and reference guides](standard-modules/readme.md)
+##  [Windows PowerShell standard modules and reference guides](guides/readme.md)
 This section contains all reference material and in-depth guides for PowerShell.  
 Find in this section:
--  The [PowerShell Standard Modules Guide](standard-modules/core-modules.md)
--  The [PowerShell Integrated Scripting Environment -ISE- Guide](standard-modules/ise-guide.md)
--  The [PowerShell Console Window Guide](standard-modules/console-guide.md)
--  The [PowerShell Remote Management Guide](standard-modules/Running-Remote-Commands.md)
--  The [PowerShell Workflows Guide](standard-modules/workflows-guide.md)
--  The [PowerShell Web Access Guide](standard-modules/web-access.md)
+-  The [PowerShell Standard Modules Guide](guides/standard-modules.md)
+-  The [PowerShell Integrated Scripting Environment -ISE- Guide](guides/ise-guide.md)
+-  The [PowerShell Console Window Guide](guides/console-guide.md)
+-  The [PowerShell Remote Management Guide](guides/Running-Remote-Commands.md)
+-  The [PowerShell Workflows Guide](guides/workflows-guide.md)
+-  The [PowerShell Web Access Guide](guides/web-access.md)
 -  The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
