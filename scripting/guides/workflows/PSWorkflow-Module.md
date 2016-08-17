@@ -39,7 +39,7 @@ This section contains the help topics for the **PSWorkflow** module, which inclu
 ## See Also
 [Getting Started with Windows PowerShell Workflow](http://go.microsoft.com/fwlink/?LinkID=252592)
 [Writing a Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
-[Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
-[Windows PowerShell Core About Topics](../core-modules/Windows-PowerShell-Core-About-Topics.md)
+[Windows PowerShell 5.0](../standard-modules/Windows-PowerShell-5.0.md)
+[Windows PowerShell Core About Topics](../standard-modules/Windows-PowerShell-Core-About-Topics.md)
 [Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
