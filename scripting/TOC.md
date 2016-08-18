@@ -74,8 +74,8 @@
 
 ### [Where can I go for more learning?](getting-started/more-powershell-learning.md)
 
-## [Core PowerShell](core-powershell/core-powershell.md)
-### [Core Modules](core-powershell/core-modules.md)
+## [Common PowerShell](core-powershell/core-powershell.md)
+### [Common Modules](core-powershell/core-modules.md)
 ####  [Archive Module](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Core Module](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [Core Modules Reference list](core-powershell/core-modules/Windows-PowerShell-5.0.md)
