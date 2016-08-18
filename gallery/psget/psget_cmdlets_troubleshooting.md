@@ -10,7 +10,7 @@ You can follow the instructions below to install the latest build of NuGet provi
 Let's use 'Azure' module as an example below.
 
 ```powershell
-Install-PackageProvider NuGet -RequiredVersion 2.8.5.206 -Force
+Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
 Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```

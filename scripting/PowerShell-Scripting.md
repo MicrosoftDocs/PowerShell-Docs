@@ -42,14 +42,13 @@ registry, processes, services and similar day-to-day subjects.
 -  A curated guide to other sources for
 [learning PowerShell](getting-started/more-powershell-learning.md).
 
-##  [Core PowerShell](core-powershell/core-powershell.md)
-This section contains all reference material and in-depth guides for PowerShell.  
+##  [Common PowerShell](core-powershell/core-powershell.md)
+This section contains all reference material PowerShell.  
 Find in this section:
--  The [PowerShell Core Modules Guide](core-powershell/core-modules.md)
--  The [PowerShell Integrated Scripting Environment -ISE- Guide](core-powershell/ise-guide.md)
--  The [PowerShell Console Window Guide](core-powershell/console-guide.md)
--  The [PowerShell Remote Management Guide](core-powershell/Running-Remote-Commands.md)
--  The [PowerShell Workflows Guide](core-powershell/workflows-guide.md)
--  The [PowerShell Web Access Guide](core-powershell/web-access.md)
+-  The [PowerShell Common Modules](core-powershell/core-modules.md)
+-  The [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
+-  The [PowerShell Console Window](core-powershell/console-guide.md)
+-  The [PowerShell Remote Management](core-powershell/Running-Remote-Commands.md)
+-  The [PowerShell Workflows](core-powershell/workflows-guide.md)
+-  The [PowerShell Web Access](core-powershell/web-access.md)
 -  The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
-
