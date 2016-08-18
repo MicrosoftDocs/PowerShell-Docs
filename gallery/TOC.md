@@ -4,6 +4,7 @@
 ### [Gallery FAQs](psgallery/psgallery_faqs.md)
 ### [Gallery Items tab](psgallery/psgallery_items_tab.md)
 ### [Gallery search syntax](psgallery/psgallery_search_syntax.md)
+### [Items with Compatible PSEditions](psgallery/psgallery_pseditions.md)
 ### [FileList view](psgallery/psgallery_filelist_feature.md)
 ### [Deploy to Azure Automation](psgallery/psgallery_deploy_to_azure_automation.md)
 ### [Unlisting items](psgallery/psgallery_unlist_items.md)
@@ -27,6 +28,7 @@
 ### [Get installed modules](psget/module/psget_get-installedmodule.md)
 ### [Update module manifest](psget/module/psget_update-modulemanifest.md)
 ### [Publish](psget/module/psget_publish-module.md)
+### [Modules with PSEditions](psget/module/modulewithpseditionsupport.md)
 ### [Troubleshooting](psget/psget_cmdlets_troubleshooting.md)
 
 ## Script
@@ -39,7 +41,8 @@
 ### [Create script file with metadata](psget/script/psget_new-scriptfileinfo.md)
 ### [Test script file metadata](psget/script/psget_test-scriptfileinfo.md)
 ### [Update script file metadata](psget/script/psget_update-scriptfileinfo.md)
-### [Publish](psget/module/psget_publish-module.md)
+### [Publish](psget/script/psget_publish-script.md)
+### [Scripts with PSEditions](psget/script/scriptwithpseditionsupport.md)
 
 ## Repository management
 ### [Bootstrapping NuGet provider and NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
