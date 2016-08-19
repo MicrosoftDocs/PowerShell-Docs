@@ -30,7 +30,7 @@ nxScript <string> #ResourceName
 
 ## Example
 
-The following example demonstrates the use of the **nxScript** resource to perform additional configuration management.
+The following example demonstrates the use of the **nxScript** resource to perform additional configuration management...
 
 ```
 Import-DSCResource -Module nx 
