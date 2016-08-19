@@ -121,7 +121,7 @@ nxFile resolvConf
 
 ## Example
 
-The following example ensures that the directory `/opt/mydir` exists, and that a file with specified contents exists this directory.
+The following example ensures that the directory `/opt/mydir` exists, and that a file with specified contents exists this directory..
 
 ```
 Import-DSCResource -Module nx 
