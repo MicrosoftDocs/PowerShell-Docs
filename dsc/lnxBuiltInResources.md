@@ -1,6 +1,6 @@
 # Built-In Desired State Configuration Resources for Linux
 
-Resources are building blocks that you can use to write a PowerShell Desired State Configuration (DSC) script. DSC for Linux comes with a set of built-in functionality for configuring resources such as files and folders, packages, environment variables, and services and processes.
+Resources are building blocks that you can use to write a PowerShell Desired State Configuration (DSC) script. DSC for Linux comes with a set of built-in functionality for configuring resources such as files and folders, packages, environment variables, and services and processes...
 
 ## Built-in resources 
 
