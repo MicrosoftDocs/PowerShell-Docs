@@ -29,7 +29,7 @@ nxArchive <string> #ResourceName
 
 ## Example
 
-The following example shows how to use the **nxArchive** resource to ensure that the contents of an archive file called `website.tar` exist and are extracted at a given destination.
+The following example shows how to use the **nxArchive** resource to ensure that the contents of an archive file called `website.tar` exist and are extracted at a given destination..
 
 ```
 Import-DSCResource -Module nx 
