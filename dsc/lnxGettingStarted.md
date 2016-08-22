@@ -180,6 +180,6 @@ The following log files are generated for DSC for Linux messages.
 
 |Log file|Directory|Description|
 |---|---|---|
-|omiserver.log|/opt/omi/var/log/|Messages relating to the operation of the OMI CIM server.|
-|dsc.log|/opt/omi/var/log/|Messages relating to the operation of the Local Configuration Manager (LCM) and DSC resource operations.|
+|omiserver.log|/var/opt/omi/log|Messages relating to the operation of the OMI CIM server.|
+|dsc.log|/var/opt/omi/log|Messages relating to the operation of the Local Configuration Manager (LCM) and DSC resource operations.|
 
