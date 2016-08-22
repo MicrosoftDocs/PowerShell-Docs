@@ -9,7 +9,27 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
-#  PowerShell Scripting
+#  PowerShell
+
+Built on the .NET Framework,
+Windows PowerShell is a task-based command-line shell and scripting language;
+it is designed specifically for system administrators and power-users,
+to rapidly automate the administration of multiple operating systems
+(Linux, OSX, Unix, and Windows)
+and the processes related to the applications that run on those operating systems.
+
+###  PowerShell is now open source
+
+PowerShell base source code is now available in GitHub and open to community
+contributions, see [PowerShell](https://github.com/powershell/powershell).
+
+You can start with the bits you need at [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
+Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
+
+>  **Note:**  
+>  All links about PowerShell in GitHub will take you to GitHub.
+
+#  Documentation
 
 The documentation collection is organized around 4 main sections:
 
