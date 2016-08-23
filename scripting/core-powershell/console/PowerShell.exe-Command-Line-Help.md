@@ -38,62 +38,62 @@ PowerShell[.exe] -Help | -? | /?
 
 ## Parameters
 
-### \-EncodedCommand <Base64EncodedCommand>
-Accepts a base\-64\-encoded string version of a command. Use this parameter to submit commands to Windows PowerShell that require complex quotation marks or curly braces.
+### -EncodedCommand <Base64EncodedCommand>
+Accepts a base-64-encoded string version of a command. Use this parameter to submit commands to Windows PowerShell that require complex quotation marks or curly braces.
 
-### \-ExecutionPolicy <ExecutionPolicy>
-Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the Windows PowerShell execution policy that is set in the registry. For information about Windows PowerShell execution policies, including a list of valid values, see about\_Execution\_Policies (http:\/\/go.microsoft.com\/fwlink\/?LinkID\=135170).
+### -ExecutionPolicy <ExecutionPolicy>
+Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the Windows PowerShell execution policy that is set in the registry. For information about Windows PowerShell execution policies, including a list of valid values, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
-### \-File <FilePath> \[<Parameters>]
-Runs the specified script in the local scope ("dot\-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command, because all characters typed after the **File** parameter name are interpreted as the script file path followed by the script parameters and their values.
+### -File <FilePath> \[<Parameters>]
+Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command, because all characters typed after the **File** parameter name are interpreted as the script file path followed by the script parameters and their values.
 
 You can include the parameters of a script, and parameter values, in the value of the **File** parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
 
-Typically, the switch parameters of a script are either included or omitted. For example, the following command uses the **All** parameter of the Get\-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
+Typically, the switch parameters of a script are either included or omitted. For example, the following command uses the **All** parameter of the Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a Boolean value for a switch parameter. To provide a Boolean value for a switch parameter in the value of the **File** parameter, enclose the parameter name and value in curly braces, such as the following: `-File .\Get-Script.ps1 {-All:$False}`
 
-### \-InputFormat {Text | XML}
+### -InputFormat {Text | XML}
 Describes the format of data sent to Windows PowerShell. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
 
-### \-Mta
-Starts Windows PowerShell using a multi\-threaded apartment. This parameter is introduced in Windows PowerShell 3.0. In Windows PowerShell 3.0, single\-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi\-threaded apartment (MTA) is the default.
+### -Mta
+Starts Windows PowerShell using a multi-threaded apartment. This parameter is introduced in Windows PowerShell 3.0. In Windows PowerShell 3.0, single-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi-threaded apartment (MTA) is the default.
 
-### \-NoExit
+### -NoExit
 Does not exit after running startup commands.
 
-### \-NoLogo
+### -NoLogo
 Hides the copyright banner at startup.
 
-### \-NonInteractive
+### -NonInteractive
 Does not present an interactive prompt to the user.
 
-### \-NoProfile
+### -NoProfile
 Does not load the Windows PowerShell profile.
 
-### \-OutputFormat {Text | XML}
+### -OutputFormat {Text | XML}
 Determines how output from Windows PowerShell is formatted. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
 
-### \-PSConsoleFile <FilePath>
+### -PSConsoleFile <FilePath>
 Loads the specified Windows PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet in Windows PowerShell.
 
-### \-Sta
-Starts Windows PowerShell using a single\-threaded apartment. In Windows PowerShell 3.0, single\-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi\-threaded apartment (MTA) is the default.
+### -Sta
+Starts Windows PowerShell using a single-threaded apartment. In Windows PowerShell 3.0, single-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi-threaded apartment (MTA) is the default.
 
-### \-Version <Windows PowerShell Version>
+### -Version <Windows PowerShell Version>
 Starts the specified version of Windows PowerShell. The version that you specify must be installed on the system. If Windows PowerShell 3.0 is installed on the computer, valid values are "2.0" and "3.0". The default value is "3.0".
 
 If Windows PowerShell 3.0 is not installed, the only valid value is "2.0". Other values are ignored.
 
 For more information, see "Installing Windows PowerShell" in the [Getting Started with Windows PowerShell [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
-### \-WindowStyle <Window style>
+### -WindowStyle <Window style>
 Sets the window style for the session. Valid values are Normal, Minimized, Maximized and Hidden.
 
-### \-Command
+### -Command
 Executes the specified commands (and any parameters) as though they were typed at the Windows PowerShell command prompt, and then exits, unless the NoExit parameter is specified.
 
-The value of Command can be "\-", a string. or a script block. If the value of Command is "\-", the command text is read from standard input.
+The value of Command can be "-", a string. or a script block. If the value of Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block only when running PowerShell.exe in Windows PowerShell. The results of the script are returned to the parent shell as deserialized XML objects, not live objects.
 
@@ -107,8 +107,8 @@ To write a string that runs a Windows PowerShell command, use the format:
 
 where the quotation marks indicate a string and the invoke operator (&) causes the command to be executed.
 
-### \-Help, \-?, \/?
-Shows this message. If you are typing a PowerShell.exe command in Windows PowerShell, prepend the command parameters with a hyphen (\-), not a forward slash (\/). You can use either a hyphen or forward slash in Cmd.exe.
+### -Help, -?, /?
+Shows this message. If you are typing a PowerShell.exe command in Windows PowerShell, prepend the command parameters with a hyphen (-), not a forward slash (/). You can use either a hyphen or forward slash in Cmd.exe.
 
 > [!NOTE]
 > Troubleshooting Note: In Windows PowerShell 2.0, starting some programs in the Windows PowerShell console fails with a LastExitCode of 0xc0000142.

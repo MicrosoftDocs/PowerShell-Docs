@@ -11,7 +11,7 @@ ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
 
 # Working with Software Installations
-Applications that are designed to use Windows Installer can be accessed through WMI's **Win32\_Product** class, but not all applications in use today use the Windows Installer. Because the Windows Installer provides the widest range of standard techniques for working with installable applications, we will focus primarily on those applications. Applications that use alternate setup routines will generally not be managed by the Windows Installer. Specific techniques for working with those applications will depend on the installer software and decisions made by the application developer.
+Applications that are designed to use Windows Installer can be accessed through WMI's **Win32_Product** class, but not all applications in use today use the Windows Installer. Because the Windows Installer provides the widest range of standard techniques for working with installable applications, we will focus primarily on those applications. Applications that use alternate setup routines will generally not be managed by the Windows Installer. Specific techniques for working with those applications will depend on the installer software and decisions made by the application developer.
 
 > [!NOTE]
 > Applications that are installed by copying the application files to the computer usually cannot be managed by using techniques discussed here. You can manage these applications as files and folders by using the techniques discussed in the "Working With Files and Folders" section.
@@ -28,7 +28,7 @@ Version           : 2.0.50727
 Caption           : Microsoft .NET Framework 2.0
 ```
 
-To display all of the properties of the Win32\_Product object to the display, use the Properties parameter of the formatting cmdlets, such as the Format\-List cmdlet, with a value of \* (all).
+To display all of the properties of the Win32_Product object to the display, use the Properties parameter of the formatting cmdlets, such as the Format-List cmdlet, with a value of \* (all).
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
@@ -46,7 +46,7 @@ SKUNumber         :
 Vendor            : Microsoft Corporation
 ```
 
-Or, you could use the **Get\-WmiObject Filter** parameter to select only Microsoft .NET Framework 2.0. Because the filter used in this command is a WMI filter, it uses WMI Query Language (WQL) syntax, not Windows PowerShell syntax. Instead,:
+Or, you could use the **Get-WmiObject Filter** parameter to select only Microsoft .NET Framework 2.0. Because the filter used in this command is a WMI filter, it uses WMI Query Language (WQL) syntax, not Windows PowerShell syntax. Instead,:
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
@@ -73,7 +73,7 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 ...
 ```
 
-Finally, to find only the names of installed applications, a simple **Format\-Wide** statement simplifies the output:
+Finally, to find only the names of installed applications, a simple **Format-Wide** statement simplifies the output:
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
@@ -84,7 +84,7 @@ Although we now have several ways to look at applications that used the Windows 
 ### Listing All Uninstallable Applications
 Although there is no guaranteed way to find every application on a system, it is possible to find all programs with listings displayed in the Add or Remove Programs dialog box. Add or Remove Programs finds these applications in the following registry key:
 
-**HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
 
 We can also examine this key to find applications. To make it easier to view the Uninstall key, we can map a Windows PowerShell drive to this registry location:
 
@@ -97,7 +97,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
 
 > [!NOTE]
-> The **HKLM:** drive is mapped to the root of **HKEY\_LOCAL\_MACHINE**, so we used that drive in the path to the Uninstall key. Instead of **HKLM:** we could have specified the registry path by using either **HKLM** or **HKEY\_LOCAL\_MACHINE**. The advantage of using an existing registry drive is that we can use tab\-completion to fill in the keys names, so we do not need to type them.
+> The **HKLM:** drive is mapped to the root of **HKEY_LOCAL_MACHINE**, so we used that drive in the path to the Uninstall key. Instead of **HKLM:** we could have specified the registry path by using either **HKLM** or **HKEY_LOCAL_MACHINE**. The advantage of using an existing registry drive is that we can use tab-completion to fill in the keys names, so we do not need to type them.
 
 We now have a drive named "Uninstall" that can be used to quickly and conveniently look for application installations. We can find the number of installed applications by counting the number of registry keys in the Uninstall: Windows PowerShell drive:
 
@@ -106,14 +106,14 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
-We can search this list of applications further by using a variety of techniques, beginning with **Get\-ChildItem**. To get a list of applications and save them in the **$UninstallableApplications** variable, use the following command:
+We can search this list of applications further by using a variety of techniques, beginning with **Get-ChildItem**. To get a list of applications and save them in the **$UninstallableApplications** variable, use the following command:
 
 ```
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> We are using a lengthy variable name here for clarity. In actual use, there is no reason to use long names. Although you can use tab\-completion for variable names, you can also use 1–2 character names for speed. Longer, descriptive names are most useful when you are developing code for reuse.
+> We are using a lengthy variable name here for clarity. In actual use, there is no reason to use long names. Although you can use tab-completion for variable names, you can also use 1–2 character names for speed. Longer, descriptive names are most useful when you are developing code for reuse.
 
 To display the values of the registry entries in the registry keys under Uninstall, use the GetValue method of the registry keys. The value of the method is the name of the registry entry.
 
@@ -138,7 +138,7 @@ SKC  VC Name                           Property
 ```
 
 ### Installing Applications
-You can use the **Win32\_Product** class to install Windows Installer packages, remotely or locally.
+You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.
 
 > [!NOTE]
 > On Windows Vista, Windows Server 2008, and later versions of Windows, to install an application, you must start Windows PowerShell with the "Run as administrator" option.
@@ -149,7 +149,7 @@ When installing remotely, use a Universal Naming Convention (UNC) network path t
 (Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
 ```
 
-Applications that do not use Windows Installer technology may have application\-specific methods available for automated deployment. To determine whether there is a method for deployment automation, check the documentation for the application or consult the application vendor's support system. In some cases, even if the application vendor did not specifically design the application for installation automation, the installer software manufacturer may have some techniques for automation.
+Applications that do not use Windows Installer technology may have application-specific methods available for automated deployment. To determine whether there is a method for deployment automation, check the documentation for the application or consult the application vendor's support system. In some cases, even if the application vendor did not specifically design the application for installation automation, the installer software manufacturer may have some techniques for automation.
 
 ### Removing Applications
 Removing a Windows Installer package by using Windows PowerShell works in approximately the same way as installing a package. Here is an example that selects the package to uninstall based on its name; in some cases it may be easier to filter with the **IdentifyingNumber**:

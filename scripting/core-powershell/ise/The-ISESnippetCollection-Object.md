@@ -18,7 +18,7 @@ ms.assetid:  ae974955-4282-4cbc-8c42-0fff1904ef32
 ### Load\( FilePathName \)
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Loads a .snippets.ps1xml file that contains user\-defined snippets. The easiest way to create snippets is to use the New\-IseSnippet cmdlet, which automatically stores them in your profile folder so that they are loaded every time that you start Windows PowerShell ISE.
+ Loads a .snippets.ps1xml file that contains user-defined snippets. The easiest way to create snippets is to use the New-IseSnippet cmdlet, which automatically stores them in your profile folder so that they are loaded every time that you start Windows PowerShell ISE.
 
  **FilePathName** – String
  The path and file name to a .snippets.ps1xml file that contains snippet definitions.

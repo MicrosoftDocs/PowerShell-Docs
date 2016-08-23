@@ -15,15 +15,15 @@ The following procedure describes how to create a shortcut to Windows PowerShell
 
 1.  Create a shortcut that points to Powershell.exe.
 
-2.  Right\-click the shortcut, and then click **Properties**.
+2.  Right-click the shortcut, and then click **Properties**.
 
 3.  Click the **Options** tab.
 
 4.  In the **Edit Options** section, select the **QuickEdit** check box.
 
-    This setting lets you select text in the Windows PowerShell console window by dragging the left mouse button, and it lets you copy text to the clipboard by pressing ENTER or by right\-clicking the mouse.
+    This setting lets you select text in the Windows PowerShell console window by dragging the left mouse button, and it lets you copy text to the clipboard by pressing ENTER or by right-clicking the mouse.
 
-5.  In the **Edit Options** section, select the **Insert Mode** check box. This setting lets you right\-click in the console window to automatically paste text from the clipboard.
+5.  In the **Edit Options** section, select the **Insert Mode** check box. This setting lets you right-click in the console window to automatically paste text from the clipboard.
 
 6.  In the **Command History** section, type or select a number between 1 and 999 in the **Buffer Size** box. This sets the number of typed commands that will be kept in the console buffer.
 

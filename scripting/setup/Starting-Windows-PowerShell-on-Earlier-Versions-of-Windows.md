@@ -38,7 +38,7 @@ Use any of the following methods to start the installed version of Windows Power
 
 #### With Administrative privileges ("Run as administrator")
 
-1.  Click **Start**, type **PowerShell**, right\-click **Windows PowerShell**, and then click **Run as administrator**.
+1.  Click **Start**, type **PowerShell**, right-click **Windows PowerShell**, and then click **Run as administrator**.
 
 ## How to Start Windows PowerShell ISE on Earlier Releases of Windows
 Use any of the following methods to start Windows PowerShell ISE.
@@ -65,7 +65,7 @@ Use any of the following methods to start Windows PowerShell ISE.
 
 #### With Administrative privileges ("Run as administrator")
 
-1.  Click **Start**, type **ISE**, right\-click **Windows PowerShell ISE**, and then click **Run as administrator**.
+1.  Click **Start**, type **ISE**, right-click **Windows PowerShell ISE**, and then click **Run as administrator**.
 
 ## How to Enable Windows PowerShell ISE on Earlier Releases of Windows
 In Windows PowerShell 4.0 and Windows PowerShell 3.0, Windows PowerShell ISE is enabled by default on all versions of Windows. If it is not already enabled, Windows Management Framework 4.0 or Windows Management Framework 3.0 enables it.

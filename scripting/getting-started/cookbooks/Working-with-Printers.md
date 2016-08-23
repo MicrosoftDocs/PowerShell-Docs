@@ -14,7 +14,7 @@ ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
 You can use Windows PowerShell to manage printers by using WMI and the WScript.Network COM object from WSH. We will use a mix of both tools to demonstrate specific tasks.
 
 ### Listing Printer Connections
-The simplest way to list the printers installed on a computer is to use the WMI **Win32\_Printer** class:
+The simplest way to list the printers installed on a computer is to use the WMI **Win32_Printer** class:
 
 ```
 Get-WmiObject -Class Win32_Printer -ComputerName
@@ -36,7 +36,7 @@ To add a new network printer, use **WScript.Network**:
 ```
 
 ### Setting a Default Printer
-To use WMI to set the default printer, find the printer in the **Win32\_Printer** collection and then invoke the **SetDefaultPrinter** method:
+To use WMI to set the default printer, find the printer in the **Win32_Printer** collection and then invoke the **SetDefaultPrinter** method:
 
 ```
 (Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()

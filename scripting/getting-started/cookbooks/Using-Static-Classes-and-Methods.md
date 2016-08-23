@@ -11,7 +11,7 @@ ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
 
 # Using Static Classes and Methods
-Not all .NET Framework classes can be created by using **New\-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New\-Object**, you will get the following error messages:
+Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:
 
 ```
 PS> New-Object System.Environment
@@ -29,7 +29,7 @@ At line:1 char:11
 These errors occur because there is no way to create a new object from these classes. These classes are reference libraries of methods and properties that do not change state. You don't need to create them, you simply use them. Classes and methods such as these are called *static classes* because they are not created, destroyed, or changed. To make this clear we will provide examples that use static classes.
 
 ### Getting Environment Data with System.Environment
-Usually, the first step in working with an object in Windows PowerShell is to use Get\-Member to find out what members it contains. With static classes, the process is a little different because the actual class is not an object.
+Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find out what members it contains. With static classes, the process is a little different because the actual class is not an object.
 
 #### Referring to the Static System.Environment Class
 You can refer to a static class by surrounding the class name with square brackets. For example, you can refer to **System.Environment** by typing the name within brackets. Doing so displays some generic type information:
@@ -43,11 +43,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> As we mentioned previously, Windows PowerShell automatically prepends '**System.**' to type names when you use **New\-Object**. The same thing happens when using a bracketed type name, so you can specify **\[System.Environment]** as **\[Environment]**.
+> As we mentioned previously, Windows PowerShell automatically prepends '**System.**' to type names when you use **New-Object**. The same thing happens when using a bracketed type name, so you can specify **\[System.Environment]** as **\[Environment]**.
 
 The **System.Environment** class contains general information about the working environment for the current process, which is powershell.exe when working within Windows PowerShell.
 
-If you try to view details of this class by typing **\[System.Environment] | Get\-Member**, the object type is reported as being **System.RuntimeType** , not **System.Environment**:
+If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the object type is reported as being **System.RuntimeType** , not **System.Environment**:
 
 ```
 PS> [System.Environment] | Get-Member
@@ -55,7 +55,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-To view static members with Get\-Member, specify the **Static** parameter:
+To view static members with Get-Member, specify the **Static** parameter:
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -114,7 +114,7 @@ False
 ```
 
 ### Doing Math with System.Math
-The System.Math static class is useful for performing some mathematical operations. The important members of **System.Math** are mostly methods, which we can display by using **Get\-Member**.
+The System.Math static class is useful for performing some mathematical operations. The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
 
 > [!NOTE]
 > System.Math has several methods with the same name, but they are distinguished by the type of their parameters.

@@ -21,10 +21,10 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_Assignment_Operators [v4]](https://technet.microsoft.com/en-us/library/ac2e399d-9cdc-422c-8b44-7746d93d1db5)|Describes the operators that assign values to variables.|
 |[about_Automatic_Variables [v4]](https://technet.microsoft.com/en-us/library/68bc622f-eb7e-4cf5-9c56-a289737efc99)|Describes the automatic variables, which that store state information for Windows PowerShell.|
 |[about_Break [v4]](https://technet.microsoft.com/en-us/library/fb810374-761e-46f2-8748-eac12557cf54)|Explains how to use the **Break** statement, a statement that immediately exits **Foreach**, **For**, **While**, **Do**, and **Switch** statements.|
-|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|Describes that Checkpoint\-Workflow activity, which takes a checkpoint in a workflow.|
+|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|Describes that Checkpoint-Workflow activity, which takes a checkpoint in a workflow.|
 |[about_Command_Precedence [v4]](https://technet.microsoft.com/en-us/library/fb14a05e-d461-432d-a253-e9371b54bd2e)|Describes how Windows PowerShell determines which command to run.|
 |[about_Command_Syntax [v4]](https://technet.microsoft.com/en-us/library/f39782e8-fe76-46ea-b8b5-b50bbee8da4b)|Explains the command format in Windows PowerShell.|
-|[about_Comment_Based_Help [v4]](https://technet.microsoft.com/en-us/library/c270e198-6da2-4825-b6eb-35d5c8a5cf3d)|Explains how to write comment\-based help topics for functions and scripts.|
+|[about_Comment_Based_Help [v4]](https://technet.microsoft.com/en-us/library/c270e198-6da2-4825-b6eb-35d5c8a5cf3d)|Explains how to write comment-based help topics for functions and scripts.|
 |[about_CommonParameters [v4]](https://technet.microsoft.com/en-us/library/c3f5e229-8bfb-498e-bb84-b84444a323c4)|Describes parameters that can be used with any cmdlet.|
 |[about_Comparison_Operators [v4]](https://technet.microsoft.com/en-us/library/007cf70d-f090-4720-a282-77c6ecbfa711)|Describes the operators that compare values in Windows PowerShell.|
 |[about_Continue [v4]](https://technet.microsoft.com/en-us/library/a7d1e707-f9c7-4a15-9f92-bc530a40a91a)|Describes the **Continue** statement, which immediately returns to top of a program loop.|
@@ -69,8 +69,8 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_Parsing [v4]](https://technet.microsoft.com/en-us/library/df040a15-fb2c-461d-acdd-2a62a0a4d14d)|Explains how Windows PowerShell parses commands.|
 |[about_Path_Syntax [v4]](https://technet.microsoft.com/en-us/library/4d2789b0-8c37-4227-acf3-717a0bc155bc)|Describes full and relative path name formats in Windows PowerShell.|
 |[about_Pipelines [v4]](https://technet.microsoft.com/en-us/library/f39a6658-4309-42a7-afe8-871bd4c6b01a)|Explains how to combine commands into pipelines in Windows PowerShell.|
-|[about_PowerShell.exe](https://technet.microsoft.com/en-us/library/d5548671-5362-4b0b-b22c-4360c71d7f26)|Displays help for the PowerShell.exe command\-line tool.|
-|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|Displays help for the PowerShell\_ISE.exe command\-line tool.|
+|[about_PowerShell.exe](https://technet.microsoft.com/en-us/library/d5548671-5362-4b0b-b22c-4360c71d7f26)|Displays help for the PowerShell.exe command-line tool.|
+|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|Displays help for the PowerShell_ISE.exe command-line tool.|
 |[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b)|Describes the preference variables that customize Windows PowerShell.|
 |[about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)|Explains how to create and use a Windows PowerShell profile.|
 |[about_Prompts [v4]](https://technet.microsoft.com/en-us/library/251843dc-4db3-4e21-aac6-acd3135b3ef6)|Explains how to create and use a Windows PowerShell profile.|
@@ -78,8 +78,8 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)|Describes the Windows PowerShell providers and explains how to use the data that they expose.|
 |[about_PSSessions [v4]](https://technet.microsoft.com/en-us/library/747682ac-6499-4031-8dcc-5f22e831b549)|Describes Windows PowerShell sessions (PSSessions) and explains how to use them to run remote commands.|
 |[about_PSSession_Details [v4]](https://technet.microsoft.com/en-us/library/d2c594e8-bcf6-4db5-8335-6487adcaf7eb)|Provides detailed information about Windows PowerShell sessions.|
-|[about_PSSnapins [v4]](https://technet.microsoft.com/en-us/library/87afc358-9075-4264-a94e-3edf39eb52aa)|Describes Windows PowerShell snap\-ins and explains how to use them to extend Windows PowerShell.|
-|[about_Quoting_Rules [v4]](https://technet.microsoft.com/en-us/library/295e444a-4219-40c6-b16f-3685c7c7bc52)|Explains the rules for using single and double quotation marks in Windows PowerShell, including here\-strings.|
+|[about_PSSnapins [v4]](https://technet.microsoft.com/en-us/library/87afc358-9075-4264-a94e-3edf39eb52aa)|Describes Windows PowerShell snap-ins and explains how to use them to extend Windows PowerShell.|
+|[about_Quoting_Rules [v4]](https://technet.microsoft.com/en-us/library/295e444a-4219-40c6-b16f-3685c7c7bc52)|Explains the rules for using single and double quotation marks in Windows PowerShell, including here-strings.|
 |[about_Redirection [v4]](https://technet.microsoft.com/en-us/library/328167e4-1247-4f7e-a179-b5bb15cf617c)|Explains how to redirect output to variables and text files. Includes redirection operators.|
 |[about_Ref [v4]](https://technet.microsoft.com/en-us/library/2e015309-2833-48f9-b9cd-bc176317de22)|Explains how to create and use a reference variable type.|
 |[about_Regular_Expressions [v4]](https://technet.microsoft.com/en-us/library/b8dfae27-fb64-4d24-b065-fbc9bee88ae3)|Explains how to use regular expressions in Windows PowerShell.|
@@ -91,10 +91,10 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_Remote_Requirements [v4]](https://technet.microsoft.com/en-us/library/e4642458-4ac7-4643-af1b-78d3e7594c42)|System requirements and configuration requirements for running remote commands in Windows PowerShell.|
 |[about_Remote_Troubleshooting [v4]](https://technet.microsoft.com/en-us/library/81b8bd3d-73f6-4e1b-a6a0-d03cd575029b)|Troubleshooting remote operations in Windows PowerShell.|
 |[about_Remote_Variables](https://technet.microsoft.com/en-us/library/a31e2e7f-7c66-492c-86ef-d588912feb7d)|Explains how to use local and remote variables in remote commands.|
-|[about_Requires [v4]](https://technet.microsoft.com/en-us/library/0f9a5a00-f64c-4305-b2e7-076aab68ca6f)|Describes the **Requires** statement, which prevents a script from running without required snap\-ins and versions.|
+|[about_Requires [v4]](https://technet.microsoft.com/en-us/library/0f9a5a00-f64c-4305-b2e7-076aab68ca6f)|Describes the **Requires** statement, which prevents a script from running without required snap-ins and versions.|
 |[about_Reserved_Words [v4]](https://technet.microsoft.com/en-us/library/f3dc2da5-d6c3-4a28-8a13-51fbc61c4e51)|Lists words that are reserved to Windows PowerShell.|
 |[about_Return [v4]](https://technet.microsoft.com/en-us/library/5c4e116d-a8be-4e13-906c-c4f74bb06f46)|Exits the current scope, which can be a function, script, or script block.|
-|[about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)|Explains how to use the "Run with PowerShell" feature to run a script by right\-clicking its entry in File Explorer.|
+|[about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)|Explains how to use the "Run with PowerShell" feature to run a script by right-clicking its entry in File Explorer.|
 |[about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)|Describes scheduled jobs and explains how to use and manage scheduled jobs in Windows PowerShell and in Task Scheduler.|
 |[about_Scheduled_Jobs_Basics](https://technet.microsoft.com/en-us/library/859d8bfd-e655-4dc3-ab65-19813301eb57)|Explains how to create and manage scheduled jobs.|
 |[about_Scheduled_Jobs_Advanced](https://technet.microsoft.com/en-us/library/6aea5423-fb96-461c-a1cb-1fb705930eee)|Explains advanced scheduled job topics, including the file structure that underlies scheduled jobs.|
@@ -124,10 +124,10 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Describes Windows PowerShellÂ® Integrated Scripting Environment (ISE).|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Provides a brief introduction to the Windows PowerShell Workflow feature.|
 |[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|Describes the parameters that are valid on all Windows PowerShell workflow commands.|
-|[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Describes Windows Management Instrumentation (WMI), which is Microsoft’s implementation of the Web\-Based Enterprise Management (WBEM) industry standard.|
+|[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Describes Windows Management Instrumentation (WMI), which is Microsoft’s implementation of the Web-Based Enterprise Management (WBEM) industry standard.|
 |[about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)|Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell.|
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.|
-|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describes the cmdlets in the Microsoft.WsMan.Management module. Explains how to use them together to manage WS\-Management features, including the WSMan provider drive.|
+|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Describes the cmdlets in the Microsoft.WsMan.Management module. Explains how to use them together to manage WS-Management features, including the WSMan provider drive.|
 
 ## See Also
 [Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)

@@ -13,7 +13,7 @@ ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 # Managing Windows PowerShell Drives
 A *Windows PowerShell drive* is a data store location that you can access like a file system drive in Windows PowerShell. The Windows PowerShell providers create some drives for you, such as the file system drives (including C: and D:), the registry drives (HKCU: and HKLM:), and the certificate drive (Cert:), and you can create your own Windows PowerShell drives. These drives are very useful, but they are available only within Windows PowerShell. You cannot access them by using other Windows tools, such as File Explorer or Cmd.exe.
 
-Windows PowerShell uses the noun, **PSDrive**, for commands that work with Windows PowerShell drives. For a list of the Windows PowerShell drives in your Windows PowerShell session, use the **Get\-PSDrive** cmdlet.
+Windows PowerShell uses the noun, **PSDrive**, for commands that work with Windows PowerShell drives. For a list of the Windows PowerShell drives in your Windows PowerShell session, use the **Get-PSDrive** cmdlet.
 
 ```
 PS> Get-PSDrive
@@ -32,11 +32,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Although the drives in the display vary with the drives on your system, the listing will look similar to the output of the **Get\-PSDrive** command shown above.
+Although the drives in the display vary with the drives on your system, the listing will look similar to the output of the **Get-PSDrive** command shown above.
 
 File system drives are a subset of the Windows PowerShell drives. You can identify the file system drives by the FileSystem entry in the Provider column. (The file system drives in Windows PowerShell are supported by the Windows PowerShell FileSystem provider.)
 
-To see the syntax of the **Get\-PSDrive** cmdlet, type a **Get\-Command** command with the **Syntax** parameter:
+To see the syntax of the **Get-PSDrive** cmdlet, type a **Get-Command** command with the **Syntax** parameter:
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -45,7 +45,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-The **PSProvider** parameter lets you display only the Windows PowerShell drives that are supported by a particular provider. For example, to display only the Windows PowerShell drives that are supported by the Windows PowerShell FileSystem provider, type a **Get\-PSDrive** command with the **PSProvider** parameter and the **FileSystem** value:
+The **PSProvider** parameter lets you display only the Windows PowerShell drives that are supported by a particular provider. For example, to display only the Windows PowerShell drives that are supported by the Windows PowerShell FileSystem provider, type a **Get-PSDrive** command with the **PSProvider** parameter and the **FileSystem** value:
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -74,8 +74,8 @@ Path
 ----
 HKLM:\SOFTWARE\Microsoft</pre>
 
-### Adding New Windows PowerShell Drives (New\-PSDrive)
-You can add your own Windows PowerShell drives by using the **New\-PSDrive** command. To get the syntax for the **New\-PSDrive** command, enter the **Get\-Command** command with the **Syntax** parameter:
+### Adding New Windows PowerShell Drives (New-PSDrive)
+You can add your own Windows PowerShell drives by using the **New-PSDrive** command. To get the syntax for the **New-PSDrive** command, enter the **Get-Command** command with the **Syntax** parameter:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -105,11 +105,11 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
 > [!NOTE]
-> In general, paths are not case\-sensitive.
+> In general, paths are not case-sensitive.
 
-You refer to the new Windows PowerShell drive as you do all Windows PowerShell drives \-\- by its name followed by a colon (**:**).
+You refer to the new Windows PowerShell drive as you do all Windows PowerShell drives -- by its name followed by a colon (**:**).
 
-A Windows PowerShell drive can make many tasks much simpler. For example, some of the most important keys in the Windows registry have extremely long paths, making them cumbersome to access and difficult to remember. Critical configuration information resides under **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. To view and change items in the CurrentVersion registry key, you can create a Windows PowerShell drive that is rooted in that key by typing:
+A Windows PowerShell drive can make many tasks much simpler. For example, some of the most important keys in the Windows registry have extremely long paths, making them cumbersome to access and difficult to remember. Critical configuration information resides under **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. To view and change items in the CurrentVersion registry key, you can create a Windows PowerShell drive that is rooted in that key by typing:
 
 <pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
 indows\CurrentVersion
@@ -128,18 +128,18 @@ Path
 ----
 cvkey:\</pre>
 
-The New\-PsDrive cmdlet adds the new drive only to the current Windows PowerShell session. If you close the Windows PowerShell window, the new drive is lost. To save a Windows PowerShell drive, use the Export\-Console cmdlet to export the current Windows PowerShell session, and then use the PowerShell.exe **PSConsoleFile** parameter to import it. Or, add the new drive to your Windows PowerShell profile.
+The New-PsDrive cmdlet adds the new drive only to the current Windows PowerShell session. If you close the Windows PowerShell window, the new drive is lost. To save a Windows PowerShell drive, use the Export-Console cmdlet to export the current Windows PowerShell session, and then use the PowerShell.exe **PSConsoleFile** parameter to import it. Or, add the new drive to your Windows PowerShell profile.
 
-### Deleting Windows PowerShell Drives (Remove\-PSDrive)
-You can delete drives from Windows PowerShell by using the **Remove\-PSDrive** cmdlet. The **Remove\-PSDrive** cmdlet is easy to use; to delete a specific Windows PowerShell drive, you just supply the Windows PowerShell drive name.
+### Deleting Windows PowerShell Drives (Remove-PSDrive)
+You can delete drives from Windows PowerShell by using the **Remove-PSDrive** cmdlet. The **Remove-PSDrive** cmdlet is easy to use; to delete a specific Windows PowerShell drive, you just supply the Windows PowerShell drive name.
 
-For example, if you added the **Office:** Windows PowerShell drive, as shown in the **New\-PSDrive** topic, you can delete it by typing:
+For example, if you added the **Office:** Windows PowerShell drive, as shown in the **New-PSDrive** topic, you can delete it by typing:
 
 ```
 PS> Remove-PSDrive -Name Office
 ```
 
-To delete the **cvkey:** Windows PowerShell drive, also shown in the **New\-PSDrive** topic, use the following command:
+To delete the **cvkey:** Windows PowerShell drive, also shown in the **New-PSDrive** topic, use the following command:
 
 ```
 PS> Remove-PSDrive -Name cvkey
