@@ -26,7 +26,7 @@ ms.assetid:  d176a131-ab0c-43ee-80c1-f824ab8e4a05
 
 -   You can configure warnings. This setting includes warnings that are issued when a file is opened in multiple PowerShell tabs or when a script in the file is run before the file has been saved.
 
--   You can switch between a view where the Script pane and the Output pane are side\-by\-side and a view where the Script pane is on top of the Output pane. You can dock the Command pane to the bottom or the top of the Output pane.
+-   You can switch between a view where the Script pane and the Output pane are side-by-side and a view where the Script pane is on top of the Output pane. You can dock the Command pane to the bottom or the top of the Output pane.
 
 ## Enhancing the functionality of Windows PowerShell ISE
  You can use the object model to enhance the functionality of Windows PowerShell ISE. For example, you can:

@@ -11,10 +11,10 @@ ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
 ---
 
 # Managing Services
-There are eight core Service cmdlets, designed for a wide range of service tasks . We will look only at listing and changing running state for services, but you can get a list Service cmdlets by using **Get\-Help \&#42;\-Service**, and you can find information about each Service cmdlet by using **Get\-Help<Cmdlet\-Name>**, such as **Get\-Help New\-Service**.
+There are eight core Service cmdlets, designed for a wide range of service tasks . We will look only at listing and changing running state for services, but you can get a list Service cmdlets by using **Get-Help \&#42;-Service**, and you can find information about each Service cmdlet by using **Get-Help<Cmdlet-Name>**, such as **Get-Help New-Service**.
 
 ## Getting Services
-You can get the services on a local or remote computer by using the **Get\-Service** cmdlet. As with **Get\-Process**, using the **Get\-Service** command without parameters returns all services. You can filter by name, even using an asterisk as a wildcard:
+You can get the services on a local or remote computer by using the **Get-Service** cmdlet. As with **Get-Process**, using the **Get-Service** command without parameters returns all services. You can filter by name, even using an asterisk as a wildcard:
 
 ```
 PS> Get-Service -Name se*
@@ -43,16 +43,16 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-You can use the ComputerName parameter of the Get\-Service cmdlet to get the services on remote computers. The ComputerName parameter accepts multiple values and wildcard characters, so you can get the services on multiple computers with a single command. For example, the following command gets the services on the Server01 remote computer.
+You can use the ComputerName parameter of the Get-Service cmdlet to get the services on remote computers. The ComputerName parameter accepts multiple values and wildcard characters, so you can get the services on multiple computers with a single command. For example, the following command gets the services on the Server01 remote computer.
 
 ```
 Get-Service -ComputerName Server01
 ```
 
 ## Getting Required and Dependent Services
-The Get\-Service cmdlet has two parameters that are very useful in service administration. The DependentServices parameter gets services that depend on the service. The RequiredServices parameter gets services upon which this service depends.
+The Get-Service cmdlet has two parameters that are very useful in service administration. The DependentServices parameter gets services that depend on the service. The RequiredServices parameter gets services upon which this service depends.
 
-These parameters just display the values of the DependentServices and ServicesDependedOn (alias\=RequiredServices) properties of the System.ServiceProcess.ServiceController object that Get\-Service returns, but they simplify commands and make getting this information much simpler.
+These parameters just display the values of the DependentServices and ServicesDependedOn (alias=RequiredServices) properties of the System.ServiceProcess.ServiceController object that Get-Service returns, but they simplify commands and make getting this information much simpler.
 
 The following command gets the services that the LanmanWorkstation service requires.
 
@@ -78,7 +78,7 @@ Stopped  Browser            Computer Browser
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-You can even get all services that have dependencies. The following command does just that, and then it uses the Format\-Table cmdlet to display the Status, Name, RequiredServices and DependentServices properties of the services on the computer.
+You can even get all services that have dependencies. The following command does just that, and then it uses the Format-Table cmdlet to display the Status, Name, RequiredServices and DependentServices properties of the services on the computer.
 
 ```
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
@@ -103,7 +103,7 @@ To suspend the print spooler, use:
 Suspend-Service -Name spooler
 ```
 
-The **Restart\-Service** cmdlet works in the same manner as the other Service cmdlets, but we will show some more complex examples for it. In the simplest use, you specify the name of the service:
+The **Restart-Service** cmdlet works in the same manner as the other Service cmdlets, but we will show some more complex examples for it. In the simplest use, you specify the name of the service:
 
 ```
 PS> Restart-Service -Name spooler
@@ -128,16 +128,16 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 ```
 
-These Service cmdlets do not have a ComputerName parameter, but you can run them on a remote computer by using the Invoke\-Command cmdlet. For example, the following command restarts the Spooler service on the Server01 remote computer.
+These Service cmdlets do not have a ComputerName parameter, but you can run them on a remote computer by using the Invoke-Command cmdlet. For example, the following command restarts the Spooler service on the Server01 remote computer.
 
 ```
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## Setting Service Properties
-The Set\-Service cmdlet changes the properties of a service on a local or remote computer. Because the service status is a property, you can use this cmdlet to start, stop, and suspend a service. The Set\-Service cmdlet also has a StartupType parameter that lets you change the service startup type.
+The Set-Service cmdlet changes the properties of a service on a local or remote computer. Because the service status is a property, you can use this cmdlet to start, stop, and suspend a service. The Set-Service cmdlet also has a StartupType parameter that lets you change the service startup type.
 
-To use Set\-Service on Windows Vista and later versions of Windows, open Windows PowerShell with the "Run as administrator" option.
+To use Set-Service on Windows Vista and later versions of Windows, open Windows PowerShell with the "Run as administrator" option.
 
 For more information, see [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 

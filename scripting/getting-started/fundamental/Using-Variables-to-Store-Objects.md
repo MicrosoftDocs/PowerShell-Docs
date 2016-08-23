@@ -11,7 +11,7 @@ ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
 
 # Using Variables to Store Objects
-Windows PowerShell works with objects. Windows PowerShell lets you create variables \- essentially named objects \- to preserve output to use later. If you are used to working with variables in other shells, remember that Windows PowerShell variables are objects, not text.
+Windows PowerShell works with objects. Windows PowerShell lets you create variables - essentially named objects - to preserve output to use later. If you are used to working with variables in other shells, remember that Windows PowerShell variables are objects, not text.
 
 Variables are always specified with the initial character $, and can include any alphanumeric characters or the underscore in their names.
 
@@ -39,7 +39,7 @@ Path
 C:\temp
 ```
 
-You can use **Get\-Member** to display information about the contents of variables. Piping $loc to Get\-Member will show you that it is a **PathInfo** object, just like the output from Get\-Location:
+You can use **Get-Member** to display information about the contents of variables. Piping $loc to Get-Member will show you that it is a **PathInfo** object, just like the output from Get-Location:
 
 ```
 PS> $loc | Get-Member -MemberType Property
@@ -61,7 +61,7 @@ Windows PowerShell provides several commands to manipulate variables. You can se
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-In addition to the variables you create in your current Windows PowerShell session, there are several system\-defined variables. You can use the **Remove\-Variable** cmdlet to clear out all of the variables which are not controlled by Windows PowerShell. Type the following command to clear all variables:
+In addition to the variables you create in your current Windows PowerShell session, there are several system-defined variables. You can use the **Remove-Variable** cmdlet to clear out all of the variables which are not controlled by Windows PowerShell. Type the following command to clear all variables:
 
 ```
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
@@ -77,7 +77,7 @@ Performing operation "Remove Variable" on Target "Name: Error".
 (default is "Y"):A
 ```
 
-If you then run the **Get\-Variable** cmdlet, you will see the remaining Windows PowerShell variables. Since there is also a variable Windows PowerShell drive, you can also display all Windows PowerShell variables by typing:
+If you then run the **Get-Variable** cmdlet, you will see the remaining Windows PowerShell variables. Since there is also a variable Windows PowerShell drive, you can also display all Windows PowerShell variables by typing:
 
 ```
 Get-ChildItem variable:
@@ -90,7 +90,7 @@ Although Windows PowerShell is not Cmd.exe, it runs in a command shell environme
 Get-ChildItem env:
 ```
 
-Although the standard variable cmdlets are not designed to work with **env:** variables, you can still use them by specifying the **env:** prefix. For example, to see the operating system root directory, you can use the command\-shell **%SystemRoot%** variable from within Windows PowerShell by typing:
+Although the standard variable cmdlets are not designed to work with **env:** variables, you can still use them by specifying the **env:** prefix. For example, to see the operating system root directory, you can use the command-shell **%SystemRoot%** variable from within Windows PowerShell by typing:
 
 ```
 PS> $env:SystemRoot

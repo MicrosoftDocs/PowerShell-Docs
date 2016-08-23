@@ -11,14 +11,14 @@ ms.assetid:  98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ---
 
 # The ISESnippetObject
-  An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects. The easiest way to create a snippet is to use the [New\-IseSnippet&#91;PSITPro5\_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.
+  An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects. The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.
 
 ## Properties
 
 ###  <a name="DisplayName"></a> Author
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read\-only property that gets the name of the author of the snippet.
+ The read-only property that gets the name of the author of the snippet.
 
 ```
 # Get the author of the first snippet item
@@ -29,7 +29,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ###  <a name="Action"></a> CodeFragment
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read\-only property that gets the code fragment to be inserted into the editor.
+ The read-only property that gets the code fragment to be inserted into the editor.
 
 ```
 # Get the code fragment associated with the first snippet item.
@@ -40,7 +40,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ###  <a name="Shortcut"></a> Shortcut
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read\-only property that gets the Windows keyboard shortcut for the menu item.
+ The read-only property that gets the Windows keyboard shortcut for the menu item.
 
 ```
 # Get the shortcut for the first submenu item.

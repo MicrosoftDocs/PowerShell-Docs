@@ -11,7 +11,7 @@ ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
 
 # Running Remote Commands
-You can run commands on one or hundreds of computers with a single Windows PowerShell command. Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS\-Management.
+You can run commands on one or hundreds of computers with a single Windows PowerShell command. Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS-Management.
 
 ## Remoting Without Configuration
 Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
@@ -45,7 +45,7 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ```
 
 ## Windows PowerShell Remoting
-Windows PowerShell remoting, which uses the WS\-Management protocol, lets you run any Windows PowerShell command on one or many remote computers. It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.
+Windows PowerShell remoting, which uses the WS-Management protocol, lets you run any Windows PowerShell command on one or many remote computers. It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management. For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx).
 
@@ -67,7 +67,7 @@ To end the interactive session, type:
 Exit-PSSession
 ```
 
-For more information about the Enter\-PSSession and Exit\-PSSession cmdlets, see [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
+For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
 and [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
 
 ### Run a Remote Command
@@ -87,10 +87,10 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-For more information about the Invoke\-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
+For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### Run a Script
-To run a script on one or many remote computers, use the FilePath parameter of the Invoke\-Command cmdlet. The script must be on or accessible to your local computer. The results are returned to your local computer.
+To run a script on one or many remote computers, use the FilePath parameter of the Invoke-Command cmdlet. The script must be on or accessible to your local computer. The results are returned to your local computer.
 
 For example, the following command runs the DiskCollect.ps1 script on the Server01 and Server02 remote computers.
 
@@ -98,10 +98,10 @@ For example, the following command runs the DiskCollect.ps1 script on the Server
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-For more information about the Invoke\-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
+For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
 
 ### Establish a Persistent Connection
-To run a series of related commands that share data, create a session on the remote computer and then use the Invoke\-Command cmdlet to run commands in the session that you create. To create a remote session, use the New\-PSSession cmdlet.
+To run a series of related commands that share data, create a session on the remote computer and then use the Invoke-Command cmdlet to run commands in the session that you create. To create a remote session, use the New-PSSession cmdlet.
 
 For example, the following command creates a remote session on the Server01 computer and another remote session on the Server02 computer. It saves the session objects in the $s variable.
 
@@ -111,7 +111,7 @@ $s = New-PSSession -ComputerName Server01, Server02
 
 Now that the sessions are established, you can run any command in them. And because the sessions are persistent, you can collect data in one command and use it in a subsequent command.
 
-For example, the following command runs a Get\-HotFix command in the sessions in the $s variable and it saves the results in the $h variable. The $h variable is created in each of the sessions in $s, but it does not exist in the local session.
+For example, the following command runs a Get-HotFix command in the sessions in the $s variable and it saves the results in the $h variable. The $h variable is created in each of the sessions in $s, but it does not exist in the local session.
 
 ```
 Invoke-Command -Session $s {$h = Get-HotFix}
@@ -128,7 +128,7 @@ Windows PowerShell remote management just begins here. By using the cmdlets inst
 
 To facilitate remote configuration, Windows PowerShell includes a WSMan provider. The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers.
  For more information about the WSMan provider, see  [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) and
-  [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "Get\-Help wsman".
+  [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "Get-Help wsman".
 
 For more information, see:
 - [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)

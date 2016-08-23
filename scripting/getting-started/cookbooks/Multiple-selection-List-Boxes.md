@@ -11,7 +11,7 @@ ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ---
 
 # Multiple-selection List Boxes
-Use Windows PowerShell 3.0 and later releases to create a multiple\-selection list box control in a custom Windows Form.
+Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.
 
 ## Create list box controls that allow multiple selections
 Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).

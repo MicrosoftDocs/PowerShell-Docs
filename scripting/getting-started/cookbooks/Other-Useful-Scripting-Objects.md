@@ -29,7 +29,7 @@ psUnsupportedConsoleApplications
 ```
 
 ### $psLocalHelp
- This is a dictionary object that maintains a context\-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file. It is used to locate the local Help for a particular topic. You can add or delete topics from this list. The following code example shows some example key\-value pairs that are contained in **$psLocalHelp**.
+ This is a dictionary object that maintains a context-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file. It is used to locate the local Help for a particular topic. You can add or delete topics from this list. The following code example shows some example key-value pairs that are contained in **$psLocalHelp**.
 
 ```
 # See the local help map
@@ -41,8 +41,8 @@ $psLocalHelp | Format-List
 
 |||
 |-|-|
-|Key : Add\-Computer|Value : WindowsPowerShellHelp.chm::\/html\/093f660c\-b8d5\-43cf\-aa0c\-54e5e54e76f9.htm|
-|Key : Add\-Content|Value : WindowsPowerShellHelp.chm::\/html\/0c836a1b\-f389\-4e9a\-9325\-0f415686d194.htm|
+|Key : Add-Computer|Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
+|Key : Add-Content|Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
 
  The following script adds an entry to the list.
 
@@ -51,7 +51,7 @@ $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57
 ```
 
 ### $psOnlineHelp
- This is a dictionary object that maintains a context\-sensitive mapping between topic titles of Help topics and their associated external URLs. It is used to locate the Help for a particular topic on the web. You can add or delete topics from this list.
+ This is a dictionary object that maintains a context-sensitive mapping between topic titles of Help topics and their associated external URLs. It is used to locate the Help for a particular topic on the web. You can add or delete topics from this list.
 
 ```
 $psOnlineHelp | Format-List
@@ -62,8 +62,8 @@ $psOnlineHelp | Format-List
 
 |||
 |-|-|
-|Key : Add\-Computer|Value : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=135194|
-|Key : Add\-Content|Value : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=113278|
+|Key : Add-Computer|Value : http://go.microsoft.com/fwlink/p/?LinkID=135194|
+|Key : Add-Content|Value : http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
  The following script adds an entry to the list.
 

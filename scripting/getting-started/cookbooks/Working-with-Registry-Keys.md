@@ -11,10 +11,10 @@ ms.assetid:  91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ---
 
 # Working with Registry Keys
-Because registry keys are items on Windows PowerShell drives, working with them is very similar to working with files and folders. One critical difference is that every item on a registry\-based Windows PowerShell drive is a container, just like a folder on a file system drive. However, registry entries and their associated values are properties of the items, not distinct items.
+Because registry keys are items on Windows PowerShell drives, working with them is very similar to working with files and folders. One critical difference is that every item on a registry-based Windows PowerShell drive is a container, just like a folder on a file system drive. However, registry entries and their associated values are properties of the items, not distinct items.
 
 ### Listing All Subkeys of a Registry Key
-You can show all items directly within a registry key by using **Get\-ChildItem**. Add the optional **Force** parameter to display hidden or system items. For example, this command displays the items directly within Windows PowerShell drive HKCU:, which corresponds to the HKEY\_CURRENT\_USER registry hive:
+You can show all items directly within a registry key by using **Get-ChildItem**. Add the optional **Force** parameter to display hidden or system items. For example, this command displays the items directly within Windows PowerShell drive HKCU:, which corresponds to the HKEY_CURRENT_USER registry hive:
 
 ```
 PS> Get-ChildItem -Path hkcu:\
@@ -32,7 +32,7 @@ SKC  VC Name                           Property
 ...
 ```
 
-These are the top\-level keys visible under HKEY\_CURRENT\_USER in the Registry Editor (Regedit.exe).
+These are the top-level keys visible under HKEY_CURRENT_USER in the Registry Editor (Regedit.exe).
 
 You can also specify this registry path by specifying the registry provider's name, followed by "**::**". The registry provider's full name is **Microsoft.PowerShell.Core\\Registry**, but this can be shortened to just **Registry**. Any of the following commands will list the contents directly under HKCU:
 
@@ -50,20 +50,20 @@ These commands list only the directly contained items, much like using Cmd.exe's
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get\-ChildItem** can perform complex filtering capabilities through its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those parameters are typically based only on name. You can perform complex filtering based on other properties of items by using the **Where\-Object**cmdlet. The following command finds all keys within HKCU:\\Software that have no more than one subkey and also have exactly four values:
+**Get-ChildItem** can perform complex filtering capabilities through its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those parameters are typically based only on name. You can perform complex filtering based on other properties of items by using the **Where-Object**cmdlet. The following command finds all keys within HKCU:\\Software that have no more than one subkey and also have exactly four values:
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
 ### Copying Keys
-Copying is done with **Copy\-Item**. The following command copies HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion and all of its properties to HKCU:\\, creating a new key named "CurrentVersion":
+Copying is done with **Copy-Item**. The following command copies HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion and all of its properties to HKCU:\\, creating a new key named "CurrentVersion":
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu:
 ```
 
-If you examine this new key in the registry editor or by using **Get\-ChildItem**, you will notice that you do not have copies of the contained subkeys in the new location. In order to copy all of the contents of a container, you need to specify the **Recurse** parameter. To make the preceding copy command recursive, you would use this command:
+If you examine this new key in the registry editor or by using **Get-ChildItem**, you will notice that you do not have copies of the contained subkeys in the new location. In order to copy all of the contents of a container, you need to specify the **Recurse** parameter. To make the preceding copy command recursive, you would use this command:
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu: -Recurse
@@ -75,25 +75,25 @@ You can still use other tools you already have available to perform filesystem c
 Creating new keys in the registry is simpler than creating a new item in a file system. Because all registry keys are containers, you do not need to specify the item type; you simply supply an explicit path, such as:
 
 ```
-New-Item -Path hkcu:\software\_DeleteMe
+New-Item -Path hkcu:\software_DeleteMe
 ```
 
-You can also use a provider\-based path to specify a key:
+You can also use a provider-based path to specify a key:
 
 ```
-New-Item -Path Registry::HKCU\_DeleteMe
+New-Item -Path Registry::HKCU_DeleteMe
 ```
 
 ### Deleting Keys
 Deleting items is essentially the same for all providers. The following commands will silently remove items:
 
 ```
-Remove-Item -Path hkcu:\Software\_DeleteMe
+Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
 ### Removing All Keys Under a Specific Key
-You can remove contained items by using **Remove\-Item**, but you will be prompted to confirm the removal if the item contains anything else. For example, if we attempt to delete the HKCU:\\CurrentVersion subkey we created, we see this:
+You can remove contained items by using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else. For example, if we attempt to delete the HKCU:\\CurrentVersion subkey we created, we see this:
 
 ```
 Remove-Item -Path hkcu:\CurrentVersion
@@ -106,7 +106,7 @@ parameter was not specified. If you continue, all children will be removed with
 (default is "Y"):
 ```
 
-To delete contained items without prompting, specify the **\-Recurse** parameter:
+To delete contained items without prompting, specify the **-Recurse** parameter:
 
 ```
 Remove-Item -Path HKCU:\CurrentVersion -Recurse

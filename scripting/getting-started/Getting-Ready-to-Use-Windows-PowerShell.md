@@ -21,7 +21,7 @@ When Windows PowerShell is installed and started, consider the following setup o
 
 -   **Enable remoting.** The system is already configured for you to run remote commands on other computers. On Windows Server 2012 R2 and Windows Server 2012, the system is also configured to receive remote commands, that is, to allow other computers to run remote commands on the local computer. To enable computers running other versions of Windows to receive remote commands, run the [Enable-PSRemoting](https://technet.microsoft.com/en-us/library/19437c28-33b8-4ac1-9113-8439cc8beffb) cmdlet on the computer that you want to manage remotely. Only members of the Administrators group on the computer can run this cmdlet. For more information, see [about_Remote](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970).
 
-    NOTE: If remoting is enabled on a computer that is running Windows PowerShell 2.0, remoting is still enabled after you install Windows Management Framework 3.0. However, on Windows Server 2008 (not Windows Server 2008 R2), you must re\-enable remoting after installing Windows Management Framework 3.0.
+    NOTE: If remoting is enabled on a computer that is running Windows PowerShell 2.0, remoting is still enabled after you install Windows Management Framework 3.0. However, on Windows Server 2008 (not Windows Server 2008 R2), you must re-enable remoting after installing Windows Management Framework 3.0.
 
 ## See Also
 [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)

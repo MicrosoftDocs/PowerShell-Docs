@@ -115,7 +115,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
 ##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 
@@ -124,7 +124,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
- The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add\-on tool that is currently docked to the right\-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
+ The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add-on tool that is currently docked to the right-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 

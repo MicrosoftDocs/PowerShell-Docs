@@ -11,7 +11,7 @@ ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565
 ---
 
 # Creating a Custom Input Box
-Script a graphical custom input box by using Microsoft .NET Framework form\-building features in Windows PowerShell 3.0 and later releases.
+Script a graphical custom input box by using Microsoft .NET Framework form-building features in Windows PowerShell 3.0 and later releases.
 
 ## Create a custom, graphical input box
 Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).

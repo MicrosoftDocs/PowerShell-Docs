@@ -43,12 +43,12 @@ Windows PowerShell 4.0 requires the full installation of Microsoft .NET Framewor
 
 Windows PowerShell 3.0 requires the full installation of Microsoft .NET Framework 4. Windows 8 and Windows Server 2012 include Microsoft .NET Framework 4.5 by default, which fulfills this requirement.
 
-To install Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe), see [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) on the Microsoft Download Center.
+To install Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), see [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) on the Microsoft Download Center.
 
-To install the full installation of Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe), see [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931) on the Microsoft Download Center.
+To install the full installation of Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), see [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931) on the Microsoft Download Center.
 
-## WS\-Management 3.0
-Windows PowerShell 3.0 and Windows PowerShell 4.0 require WS\-Management 3.0, which supports the WinRM service and WSMan protocol. This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0.
+## WS-Management 3.0
+Windows PowerShell 3.0 and Windows PowerShell 4.0 require WS-Management 3.0, which supports the WinRM service and WSMan protocol. This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0.
 
 ## Windows Management Instrumentation 3.0
 Windows PowerShell 3.0 and Windows PowerShell 4.0 require Windows Management Instrumentation 3.0 (WMI). This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0. If this program is not installed on the computer, features that require WMI, such as CIM commands, do not run.
@@ -57,7 +57,7 @@ Windows PowerShell 3.0 and Windows PowerShell 4.0 require Windows Management Ins
 Windows PowerShell 3.0 and Windows PowerShell 4.0 are compiled against Common Language Runtime (CLR) 4.0.
 
 ## Graphical User Interface Requirements
-Windows PowerShell is a console\-based application that does not require a graphical user interface. As such, is it well suited to computers that do not have screens or monitors, or a user interface, such as the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012.
+Windows PowerShell is a console-based application that does not require a graphical user interface. As such, is it well suited to computers that do not have screens or monitors, or a user interface, such as the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012.
 
 However, some items, such as the following, require a graphical user interface. For details, see the help topic for each item.
 
@@ -80,7 +80,7 @@ However, some items, such as the following, require a graphical user interface. 
     2.  **ShowSecurityDescriptorUI** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) and [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
 
 ## Windows PowerShell Engine Requirements
-Windows PowerShell 4.0 is designed to be backwards compatible with Windows PowerShell 3.0 and Windows PowerShell 2.0. Cmdlets, providers, snap\-ins, modules, and scripts written for Windows PowerShell 2.0 and Windows PowerShell 3.0 run unchanged in Windows PowerShell 4.0.
+Windows PowerShell 4.0 is designed to be backwards compatible with Windows PowerShell 3.0 and Windows PowerShell 2.0. Cmdlets, providers, snap-ins, modules, and scripts written for Windows PowerShell 2.0 and Windows PowerShell 3.0 run unchanged in Windows PowerShell 4.0.
 
 However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for Windows PowerShell 2.0 and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in Windows PowerShell 3.0, which is compiled with CLR 4.0.
 
