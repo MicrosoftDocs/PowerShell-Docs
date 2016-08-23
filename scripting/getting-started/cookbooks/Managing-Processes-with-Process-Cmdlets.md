@@ -13,8 +13,8 @@ ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
 # Managing Processes with Process Cmdlets
 You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in Windows PowerShell.
 
-## Getting Processes (Get\-Process)
-To get the processes running on the local computer, run a **Get\-Process** with no parameters.
+## Getting Processes (Get-Process)
+To get the processes running on the local computer, run a **Get-Process** with no parameters.
 
 You can get particular processes by specifying their process names or process IDs. The following command gets the Idle process:
 
@@ -25,7 +25,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-Although it is normal for cmdlets to return no data in some situations, when you specify a process by its ProcessId, **Get\-Process** generates an error if it finds no matches, because the usual intent is to retrieve a known running process. If there is no process with that Id, it is likely that the Id is incorrect or that the process of interest has already exited:
+Although it is normal for cmdlets to return no data in some situations, when you specify a process by its ProcessId, **Get-Process** generates an error if it finds no matches, because the usual intent is to retrieve a known running process. If there is no process with that Id, it is likely that the Id is incorrect or that the process of interest has already exited:
 
 ```
 PS> Get-Process -Id 99
@@ -34,7 +34,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-You can use the Name parameter of the Get\-Process cmdlet to specify a subset of processes based on the process name. The Name parameter can take multiple names in a comma\-separated list and it supports the use of wildcards, so you can type name patterns.
+You can use the Name parameter of the Get-Process cmdlet to specify a subset of processes based on the process name. The Name parameter can take multiple names in a comma-separated list and it supports the use of wildcards, so you can type name patterns.
 
 For example, the following command gets process whose names begin with "ex."
 
@@ -48,7 +48,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Because the .NET System.Diagnostics.Process class is the foundation for Windows PowerShell processes, it follows some of the conventions used by System.Diagnostics.Process. One of those conventions is that the process name for an executable never includes the ".exe" at the end of the executable name.
 
-**Get\-Process** also accepts multiple values for the Name parameter.
+**Get-Process** also accepts multiple values for the Name parameter.
 
 ```
 PS> Get-Process -Name exp*,power* 
@@ -58,7 +58,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-You can use the ComputerName parameter of Get\-Process to get processes on remote computers. For example, the following command gets the PowerShell processes on the local computer (represented by "localhost") and on two remote computers.
+You can use the ComputerName parameter of Get-Process to get processes on remote computers. For example, the following command gets the PowerShell processes on the local computer (represented by "localhost") and on two remote computers.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -69,7 +69,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-The computer names are not evident in this display, but they are stored in the MachineName property of the process objects that Get\-Process returns. The following command uses the Format\-Table cmdlet to display the process ID, ProcessName and MachineName (ComputerName) properties of the process objects.
+The computer names are not evident in this display, but they are stored in the MachineName property of the process objects that Get-Process returns. The following command uses the Format-Table cmdlet to display the process ID, ProcessName and MachineName (ComputerName) properties of the process objects.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
@@ -80,7 +80,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-This more complex command adds the MachineName property to the standard Get\-Process display. The backtick (\`)(ASCII 96) is the Windows PowerShell continuation character.
+This more complex command adds the MachineName property to the standard Get-Process display. The backtick (\`)(ASCII 96) is the Windows PowerShell continuation character.
 
 ```
 get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
@@ -99,10 +99,10 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## Stopping Processes (Stop\-Process)
+## Stopping Processes (Stop-Process)
 Windows PowerShell gives you flexibility for listing processes, but what about stopping a process?
 
-The **Stop\-Process** cmdlet takes a Name or Id to specify a process you want to stop. Your ability to stop processes depends on your permissions. Some processes cannot be stopped. For example, if you try to stop the idle process, you get an error:
+The **Stop-Process** cmdlet takes a Name or Id to specify a process you want to stop. Your ability to stop processes depends on your permissions. Some processes cannot be stopped. For example, if you try to stop the idle process, you get an error:
 
 ```
 PS> Stop-Process -Name Idle
@@ -134,13 +134,13 @@ Complex process manipulation is possible by using some of the object filtering c
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-You can use the same approach in other situations. For example, suppose a secondary notification area application automatically runs when users start another application. You may find that this does not work correctly in Terminal Services sessions, but you still want to keep it in sessions that run on the physical computer console. Sessions connected to the physical computer desktop always have a session ID of 0, so you can stop all instances of the process that are in other sessions by using **Where\-Object** and the process, **SessionId**:
+You can use the same approach in other situations. For example, suppose a secondary notification area application automatically runs when users start another application. You may find that this does not work correctly in Terminal Services sessions, but you still want to keep it in sessions that run on the physical computer console. Sessions connected to the physical computer desktop always have a session ID of 0, so you can stop all instances of the process that are in other sessions by using **Where-Object** and the process, **SessionId**:
 
 ```
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-The Stop\-Process cmdlet does not have a ComputerName parameter. Therefore, to run a stop process command on a remote computer, you need to use the Invoke\-Command cmdlet. For example, to stop the PowerShell process on the Server01 remote computer, type:
+The Stop-Process cmdlet does not have a ComputerName parameter. Therefore, to run a stop process command on a remote computer, you need to use the Invoke-Command cmdlet. For example, to stop the PowerShell process on the Server01 remote computer, type:
 
 ```
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}

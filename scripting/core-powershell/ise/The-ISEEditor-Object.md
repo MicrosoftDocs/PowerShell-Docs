@@ -69,7 +69,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace \- \(,\[,{ \- or immediately after a closing parenthesis, bracket, or brace \- \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch](#cangotomatch).
+ Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch](#cangotomatch).
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -80,7 +80,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Replaces the selection with text or inserts text at the current caret position.
 
- **text** \- String
+ **text** - String
  The text to insert.
 
  See the [Scripting Example](#example) later in this topic.
@@ -90,16 +90,16 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Selects the text from the **startLine**, **startColumn**, **endLine**, and **endColumn** parameters.
 
- **startLine** \- Integer
+ **startLine** - Integer
  The line where the selection starts.
 
- **startColumn** \- Integer
+ **startColumn** - Integer
  The column within the start line where the selection starts.
 
- **endLine** \- Integer
+ **endLine** - Integer
  The line where the selection ends.
 
- **endColumn** \- Integer
+ **endColumn** - Integer
  The column within the end line where the selection ends.
 
  See the  [Scripting Example](#example) later in this topic.
@@ -122,10 +122,10 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
 
- **lineNumber** \- Integer
+ **lineNumber** - Integer
  The caret line number.
 
- **columnNumber** \- Integer
+ **columnNumber** - Integer
  The caret column number.
 
 ```
@@ -149,7 +149,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read\-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace – \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
+ The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace – \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -160,7 +160,7 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 ###  <a name="CaretColumn"></a> CaretColumn
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the column number that corresponds to the position of the caret.
+ The read-only property that gets the column number that corresponds to the position of the caret.
 
 ```
 # Get the CaretColumn.
@@ -171,7 +171,7 @@ $psIse.CurrentFile.Editor.CaretColumn
 ###  <a name="CaretLine"></a> CaretLine
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the number of the line that contains the caret.
+ The read-only property that gets the number of the line that contains the caret.
 
 ```
 # Get the CaretLine.
@@ -182,7 +182,7 @@ $psIse.CurrentFile.Editor.CaretLine
 ###  <a name="caretlinetext"></a> CaretLineText
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the complete line of text that contains the caret.
+ The read-only property that gets the complete line of text that contains the caret.
 
 ```
 # Get all of the text on the line that contains the caret.
@@ -193,7 +193,7 @@ $psIse.CurrentFile.Editor.CaretLineText
 ###  <a name="LineCount"></a> LineCount
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the line count from the editor.
+ The read-only property that gets the line count from the editor.
 
 ```
 # Get the LineCount.
@@ -204,14 +204,14 @@ $psIse.CurrentFile.Editor.LineCount
 ###  <a name="SelectedText"></a> SelectedText
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\-only property that gets the selected text from the editor.
+ The read-only property that gets the selected text from the editor.
 
  See the  [Scripting Example](#example) later in this topic.
 
 ###  <a name="Text"></a> Text
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read\/write property that gets or sets the text in the editor.
+ The read/write property that gets or sets the text in the editor.
 
  See the [Scripting Example](#example) later in this topic.
 

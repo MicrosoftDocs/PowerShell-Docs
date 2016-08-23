@@ -53,7 +53,7 @@ On the toolbar, click **Run Script**, or on the **File** menu, click **Run**.
 2.  On the **File** menu, click **Run Selection**, or on the toolbar, click **Run Selection**.
 
 ### To stop a running script
-On the toolbar, click **Stop Operation**, press CTRL\+BREAK, or on the **File** menu, click **Stop Operation**. Pressing **CTRL\+C** also works unless some text is currently selected, in which case **CTRL\+C** maps to the copy function for the selected text.
+On the toolbar, click **Stop Operation**, press CTRL+BREAK, or on the **File** menu, click **Stop Operation**. Pressing **CTRL+C** also works unless some text is currently selected, in which case **CTRL+C** maps to the copy function for the selected text.
 
 ## <a name="bkmk_2"></a>How to write and edit text in the Script Pane
 Use the following steps to edit text in the Script Pane. You can copy, cut, paste, find, and replace text. You can also undo and redo the last action you just performed. The keyboard shortcuts for performing these actions are the same as those used for all Windows applications.
@@ -68,18 +68,18 @@ Use the following steps to edit text in the Script Pane. You can copy, cut, past
 
 ### To find text in the Script Pane
 
-1.  To find text anywhere, press **CTRL\+F** or, on the **Edit** menu, click **Find in Script**.
+1.  To find text anywhere, press **CTRL+F** or, on the **Edit** menu, click **Find in Script**.
 
 2.  To find text after the cursor, press **F3** or, on the **Edit** menu, click **Find Next in Script**.
 
-3.  To find text before the cursor, press **SHIFT\+F3** or, on the **Edit** menu, click **Find Previous in Script**.
+3.  To find text before the cursor, press **SHIFT+F3** or, on the **Edit** menu, click **Find Previous in Script**.
 
 ### To find and replace text in the Script Pane
-Press **CRTL\+H** or, on the **Edit** menu, click **Replace in Script**. Enter both the text you want to find and the text with which you want to replace it, and then press **ENTER**.
+Press **CRTL+H** or, on the **Edit** menu, click **Replace in Script**. Enter both the text you want to find and the text with which you want to replace it, and then press **ENTER**.
 
 ### To go to a particular line of text in the Script Pane
 
-1.  In the Script Pane, press **CTRL\+G** or, on the **Edit** menu, click **Go to Line**.
+1.  In the Script Pane, press **CTRL+G** or, on the **Edit** menu, click **Go to Line**.
 
 2.  Enter a line number.
 
@@ -87,28 +87,28 @@ Press **CRTL\+H** or, on the **Edit** menu, click **Replace in Script**. Enter b
 
 1.  In the Script Pane, select the text that you want to copy.
 
-2.  Press **CTRL\+C** or, on the toolbar, click the **Copy** icon, or on the **Edit** menu, click **Copy**.
+2.  Press **CTRL+C** or, on the toolbar, click the **Copy** icon, or on the **Edit** menu, click **Copy**.
 
 ### To cut text in the Script Pane
 
 1.  In the Script Pane, select the text that you want to cut.
 
-2.  Press **CTRL\+X** or, on the toolbar, click the **Cut** icon, or on the **Edit** menu, click **Cut**.
+2.  Press **CTRL+X** or, on the toolbar, click the **Cut** icon, or on the **Edit** menu, click **Cut**.
 
 ### To paste text into the Script Pane
-Press **CTRL\+V** or, on the toolbar, click the **Paste** icon, or on the **Edit** menu, click **Paste**.
+Press **CTRL+V** or, on the toolbar, click the **Paste** icon, or on the **Edit** menu, click **Paste**.
 
 ### To undo an action in the Script Pane
-Press **CTRL\+Z** or, on the toolbar, click the **Undo** icon, or on the **Edit** menu, click **Undo**.
+Press **CTRL+Z** or, on the toolbar, click the **Undo** icon, or on the **Edit** menu, click **Undo**.
 
 ### To redo an action in the Script Pane
-Press **CTRL\+Y** or, on the toolbar, click the **Redo** icon, or on the **Edit** menu, click **Redo**.
+Press **CTRL+Y** or, on the toolbar, click the **Redo** icon, or on the **Edit** menu, click **Redo**.
 
 ## <a name="bkmk_3"></a>How to save a script
 Use the following steps to save and name a script. An asterisk appears next to the script name to mark a file that has not been saved since it was altered. The asterisk disappears when the file is saved.
 
 ### To save a script
-Press **CTRL\+S** or, on the toolbar, click the **Save** icon, or on the **File** menu, click **Save**.
+Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File** menu, click **Save**.
 
 ### To save and name a script
 

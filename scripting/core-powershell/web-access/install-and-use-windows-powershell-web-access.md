@@ -159,7 +159,7 @@ You can install the Windows PowerShell Web Access gateway on a server that is ru
     </tbody>
     </table>
 
-2.  Type the following, and then press **Enter**, where *computer\_name* represents a remote computer on which you want to install Windows PowerShell Web Access, if applicable. The <span class="code">Restart</span> parameter automatically restarts destination servers if required.
+2.  Type the following, and then press **Enter**, where *computer_name* represents a remote computer on which you want to install Windows PowerShell Web Access, if applicable. The <span class="code">Restart</span> parameter automatically restarts destination servers if required.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "Copy to clipboard.")
 
@@ -200,7 +200,7 @@ You can install the Windows PowerShell Web Access gateway on a server that is ru
 
 The **Install-PswaWebApplication** cmdlet is a quick way to get Windows PowerShell Web Access configured. Although you can add the <span class="code">UseTestCertificate</span> parameter to the <span class="code">Install-PswaWebApplication</span> cmdlet to install a self-signed SSL certificate for test purposes, this is not secure; for a secure production environment, always use a valid SSL certificate that has been signed by a certification authority (CA). Administrators can replace the test certificate with a signed certificate of their choice by using the IIS Manager console.
 
-You can complete Windows PowerShell Web Access web application configuration either by running the <span class="code">Install-PswaWebApplication</span> cmdlet or by performing GUI-based configuration steps in IIS Manager. By default, the cmdlet installs the web application, **pswa** (and an application pool for it, **pswa\_pool**), in the **Default Web Site** container, as shown in IIS Manager; if desired, you can instruct the cmdlet to change the default site container of the web application. IIS Manager offers configuration options that are available for web applications, such as changing the port number or the Secure Sockets Layer (SSL) certificate.
+You can complete Windows PowerShell Web Access web application configuration either by running the <span class="code">Install-PswaWebApplication</span> cmdlet or by performing GUI-based configuration steps in IIS Manager. By default, the cmdlet installs the web application, **pswa** (and an application pool for it, **pswa_pool**), in the **Default Web Site** container, as shown in IIS Manager; if desired, you can instruct the cmdlet to change the default site container of the web application. IIS Manager offers configuration options that are available for web applications, such as changing the port number or the Secure Sockets Layer (SSL) certificate.
 
 <table>
 <colgroup>
@@ -250,13 +250,13 @@ You can complete Windows PowerShell Web Access web application configuration eit
     </tbody>
     </table>
 
-    Running the cmdlet installs the Windows PowerShell Web Access web application within the IIS Default Web Site container. The cmdlet creates the infrastructure required to run Windows PowerShell Web Access on the default website, https://&lt;server\_name&gt;/pswa. To install the web application in a different website, provide the website name by adding the <span class="code">WebSiteName</span> parameter. To change the name of the web application (the default is <span class="code">pswa</span>), add the <span class="code">WebApplicationName</span> parameter.
+    Running the cmdlet installs the Windows PowerShell Web Access web application within the IIS Default Web Site container. The cmdlet creates the infrastructure required to run Windows PowerShell Web Access on the default website, https://&lt;server_name&gt;/pswa. To install the web application in a different website, provide the website name by adding the <span class="code">WebSiteName</span> parameter. To change the name of the web application (the default is <span class="code">pswa</span>), add the <span class="code">WebApplicationName</span> parameter.
 
     The following settings are configured by running the cmdlet. You can change these manually in the IIS Manager console, if desired.
 
     -   Path: /pswa
 
-    -   ApplicationPool: pswa\_pool
+    -   ApplicationPool: pswa_pool
 
     -   EnabledProtocols: http
 
@@ -264,7 +264,7 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
     <span class="label">Example:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
 
-    In this example, the resulting website for Windows PowerShell Web Access is https://&lt; *server\_name*&gt;/myWebApp.
+    In this example, the resulting website for Windows PowerShell Web Access is https://&lt; *server_name*&gt;/myWebApp.
 
     <table>
     <colgroup>
@@ -298,7 +298,7 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
     -   Path: /pswa
 
-    -   ApplicationPool: pswa\_pool
+    -   ApplicationPool: pswa_pool
 
     -   EnabledProtocols: http
 
@@ -320,7 +320,7 @@ You can complete Windows PowerShell Web Access web application configuration eit
 
 8.  In the **SSL certificate** field, select your signed certificate from the drop-down menu. Click **OK**. See [To configure an SSL certificate in IIS Manager](#BKMK_cert) in this topic for more information about how to obtain a certificate.
 
-    The Windows PowerShell Web Access web application is now configured to use your signed SSL certificate. You can access Windows PowerShell Web Access by opening https://&lt;server\_name&gt;/pswa in a browser window.
+    The Windows PowerShell Web Access web application is now configured to use your signed SSL certificate. You can access Windows PowerShell Web Access by opening https://&lt;server_name&gt;/pswa in a browser window.
 
     <table>
     <colgroup>
@@ -357,7 +357,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
     -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
+2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
 3.  Type the following, and then press **Enter**.
 
@@ -365,13 +365,13 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso\_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
+    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 After you have configured an authorization rule, you are ready for authorized users to sign in to the web-based console and begin using Windows PowerShell Web Access.
 
@@ -453,13 +453,13 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 2.  Create a new application pool for Windows PowerShell Web Access. Expand the node of the gateway server in the IIS Manager tree pane, select **Application Pools**, and click **Add Application Pool** in the **Actions** pane.
 
-3.  Add a new application pool with the name **pswa\_pool**, or provide another name. Click **OK**.
+3.  Add a new application pool with the name **pswa_pool**, or provide another name. Click **OK**.
 
 4.  In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
 
 5.  Right-click the website (for example, **Default Web Site**) to which you would like to add the Windows PowerShell Web Access website, and then click **Add Application**.
 
-6.  In the **Alias** field, type pswa, or provide another alias. The alias becomes the virtual directory name. For example, **pswa** in the following URL represents the alias specified in this step: https://&lt;server\_name&gt;/pswa.
+6.  In the **Alias** field, type pswa, or provide another alias. The alias becomes the virtual directory name. For example, **pswa** in the following URL represents the alias specified in this step: https://&lt;server_name&gt;/pswa.
 
 7.  In the **Application pool** field, select the application pool that you created in step 3.
 
@@ -471,7 +471,7 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 11. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#BKMK_browser) in this topic.
 
-12. Open the new Windows PowerShell Web Access website, https://&lt; *gateway\_server\_name*&gt;/pswa.
+12. Open the new Windows PowerShell Web Access website, https://&lt; *gateway_server_name*&gt;/pswa.
 
     The browser should display the Windows PowerShell Web Access console sign-in page.
 
@@ -491,7 +491,7 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
     </tbody>
     </table>
 
-13. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application\_pool\_name* represents the name of the application pool that you created in step 3, to give the application pool access rights to the authorization file.
+13. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application_pool_name* represents the name of the application pool that you created in step 3, to give the application pool access rights to the authorization file.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c1a80a93-8fcf-4beb-a025-5f81bfb8bdae'); "Copy to clipboard.")
 
@@ -535,7 +535,7 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 11. Click **OK** to close the **Add Website** dialog box.
 
-12. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application\_pool\_name* represents the name of the application pool that you created in step 4, to give the application pool access rights to the authorization file.
+12. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application_pool_name* represents the name of the application pool that you created in step 4, to give the application pool access rights to the authorization file.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_35ae9944-ca44-4af7-9c96-616083b3e3db'); "Copy to clipboard.")
 
@@ -555,7 +555,7 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 15. Open the new Windows PowerShell Web Access website.
 
-    Because the root website points to the Windows PowerShell Web Access folder, the browser should display the Windows PowerShell Web Access sign-in page when you open https://&lt; *gateway\_server\_name*&gt;. You should not need to add **/pswa** to the URL.
+    Because the root website points to the Windows PowerShell Web Access folder, the browser should display the Windows PowerShell Web Access sign-in page when you open https://&lt; *gateway_server_name*&gt;. You should not need to add **/pswa** to the URL.
 
     <table>
     <colgroup>
@@ -591,7 +591,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
     -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
+2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
 3.  Type the following, and then press **Enter**.
 
@@ -599,13 +599,13 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso\_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
+    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 After you have configured an authorization rule, you are ready for authorized users to sign in to the web-based console and begin using Windows PowerShell Web Access.
 

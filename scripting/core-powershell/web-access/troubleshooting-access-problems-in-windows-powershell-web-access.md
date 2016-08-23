@@ -139,7 +139,7 @@ The following table identifies some common problems that users might experience 
 
 [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-[about\_Remote\_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
+[about_Remote_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
 
 <span>Show:</span> Inherited Protected
 

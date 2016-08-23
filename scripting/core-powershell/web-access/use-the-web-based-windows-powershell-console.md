@@ -85,7 +85,7 @@ To use the Windows PowerShell Web Access web-based console, browsers must do the
 
 ------------------------------------------------------------------------
 
-Your Windows PowerShell Web Access administrator should provide you with a URL that is the address of your organization’s Windows PowerShell Web Access gateway website. By default, this website address is https://&lt;server\_name&gt;/pswa. Before you sign in to Windows PowerShell Web Access, be sure that you have the name or IP address of the remote computer that you want to manage. You must be an authorized user on the remote computer, and it must be configured to allow remote management. For more information about configuring your computer to allow remote management, see [Enable and Use Remote Commands in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). The simplest method of configuring your computer to allow remote management is to run the **Enable-PSRemoting -force** cmdlet on the computer, in a Windows PowerShell session that has been opened with elevated user rights (**Run as Administrator**).
+Your Windows PowerShell Web Access administrator should provide you with a URL that is the address of your organization’s Windows PowerShell Web Access gateway website. By default, this website address is https://&lt;server_name&gt;/pswa. Before you sign in to Windows PowerShell Web Access, be sure that you have the name or IP address of the remote computer that you want to manage. You must be an authorized user on the remote computer, and it must be configured to allow remote management. For more information about configuring your computer to allow remote management, see [Enable and Use Remote Commands in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). The simplest method of configuring your computer to allow remote management is to run the **Enable-PSRemoting -force** cmdlet on the computer, in a Windows PowerShell session that has been opened with elevated user rights (**Run as Administrator**).
 
 ### To sign in to Windows PowerShell Web Access
 
@@ -117,7 +117,7 @@ Your Windows PowerShell Web Access administrator should provide you with a URL t
 
     Typically, the credentials you use to pass through the Windows PowerShell Web Access gateway are the same that are recognized by the remote computer that you want to manage. However, if you want to use different credentials to manage the remote computer that you specified in step 2, expand the **Optional Connection Settings** section, and provide the alternate credentials. Otherwise, skip to step 6.
 
-4.  If the Windows PowerShell Web Access administrator has created a custom session configuration for Windows PowerShell Web Access users, type the name of the session configuration name in the **Configuration name** field. For more information about session configurations, see [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx) on the Microsoft website.
+4.  If the Windows PowerShell Web Access administrator has created a custom session configuration for Windows PowerShell Web Access users, type the name of the session configuration name in the **Configuration name** field. For more information about session configurations, see [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx) on the Microsoft website.
 
 5.  Keep the **Authentication type** set to **Default** unless you have been instructed to do otherwise by the Windows PowerShell Web Access administrator.
 

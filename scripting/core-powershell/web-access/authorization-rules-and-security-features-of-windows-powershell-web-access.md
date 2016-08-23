@@ -174,7 +174,7 @@ The following table describes the four layers of security between end users and 
 
 Administrators likely want the same authorization rule for Windows PowerShell Web Access users that is already defined in their environment for Windows PowerShell remote management. The first procedure in this section describes how to add a secure authorization rule that grants access to one user, signing in to manage one computer, and within a single session configuration. The second procedure describes how to remove an authorization rule that is no longer needed.
 
-If you plan to use custom session configurations to allow specific users to work only within restricted runspaces in Windows PowerShell Web Access, create your custom session configurations before you add authorization rules that refer to them. You cannot use the Windows PowerShell Web Access cmdlets to create custom session configurations. For more information about creating custom session configurations, see [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
+If you plan to use custom session configurations to allow specific users to work only within restricted runspaces in Windows PowerShell Web Access, create your custom session configurations before you add authorization rules that refer to them. You cannot use the Windows PowerShell Web Access cmdlets to create custom session configurations. For more information about creating custom session configurations, see [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
 Windows PowerShell Web Access cmdlets support one wildcard character, an asterisk ( \* ). Wildcard characters within strings are not supported; use a single asterisk per property (users, computers, or session configurations).
 
@@ -202,7 +202,7 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
 
     -   On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
+2.  <span class="label">Optional step for restricting user access by using session configurations:</span> Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) on MSDN.
 
 3.  Type the following, and then press **Enter**.
 
@@ -210,13 +210,13 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso\_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
+    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user’s typical scripting and cmdlet needs. In the following example, a user named <span class="code">JSmith</span> in the <span class="code">Contoso</span> domain is granted access to manage the computer <span class="code">Contoso_214</span>, and use a session configuration named <span class="code">NewAdminsOnly</span>.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Verify that the rule has been created by running either the **Get-PswaAuthorizationRule** cmdlet, or **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;. For example, **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 #### To remove an authorization rule
 
@@ -253,7 +253,7 @@ Windows PowerShell Web Access cmdlets support one wildcard character, an asteris
 
 ------------------------------------------------------------------------
 
-Every Windows PowerShell session uses a session configuration; if one is not specified for a session, Windows PowerShell uses the default, built-in Windows PowerShell session configuration, called Microsoft.PowerShell. The default session configuration includes all cmdlets that are available on a computer. Administrators can restrict access to all computers by defining a session configuration with a restricted runspace (a limited range of cmdlets and tasks that their end users could perform). A user who is granted access to one computer with either full language access or only the Windows PowerShell remote management cmdlets can connect to other computers that are connected to the first computer. Defining a restricted runspace can prevent users from accessing other computers from their allowed Windows PowerShell runspace, and improves the security of your Windows PowerShell Web Access environment. The session configuration can be distributed (by using Group Policy) to all computers that administrators want to make accessible through Windows PowerShell Web Access. For more information about session configurations, see [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx). The following are some examples of this scenario.
+Every Windows PowerShell session uses a session configuration; if one is not specified for a session, Windows PowerShell uses the default, built-in Windows PowerShell session configuration, called Microsoft.PowerShell. The default session configuration includes all cmdlets that are available on a computer. Administrators can restrict access to all computers by defining a session configuration with a restricted runspace (a limited range of cmdlets and tasks that their end users could perform). A user who is granted access to one computer with either full language access or only the Windows PowerShell remote management cmdlets can connect to other computers that are connected to the first computer. Defining a restricted runspace can prevent users from accessing other computers from their allowed Windows PowerShell runspace, and improves the security of your Windows PowerShell Web Access environment. The session configuration can be distributed (by using Group Policy) to all computers that administrators want to make accessible through Windows PowerShell Web Access. For more information about session configurations, see [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). The following are some examples of this scenario.
 
 -   An administrator creates an endpoint, called **PswaEndpoint**, with a restricted runspace. Then, the administrator creates a rule, **\*,\*,PswaEndpoint**, and distributes the endpoint to other computers. The rule allows all users to access all computers with the endpoint **PswaEndpoint**. If this is the only authorization rule defined in the rule set, computers without that endpoint would not be accessible.
 
@@ -289,7 +289,7 @@ Every Windows PowerShell session uses a session configuration; if one is not spe
 
     In the preceding scenario, Windows PowerShell Web Access establishes a successful connection to the target computer only after the following have been successful, and allowed by at least one authorization rule.
 
-    1.  Authentication on the workgroup gateway server by adding a user name in the format *server\_name*\\*user\_name* to the authorization rule
+    1.  Authentication on the workgroup gateway server by adding a user name in the format *server_name*\\*user_name* to the authorization rule
 
     2.  Authentication on the target computer by using alternate credentials provided on the sign-in page, in the **Optional connection settings** area
 
@@ -369,7 +369,7 @@ If the gateway server is running Windows Server 2012 R2, Windows PowerShell Web 
 ------------------------------------------------------------------------
 
 [Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
 
 <span>Show:</span> Inherited Protected

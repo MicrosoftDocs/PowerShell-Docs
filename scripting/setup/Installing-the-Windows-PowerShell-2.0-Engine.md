@@ -13,9 +13,9 @@ ms.assetid:  82928f2b-f96a-4ae6-a0d0-6e7b181da308
 # Installing the Windows PowerShell 2.0 Engine
 This topic explains how to install the Windows PowerShell 2.0 Engine.
 
-Windows PowerShell 3.0 is designed to be backwards compatible with Windows PowerShell 2.0. Cmdlets, providers, snap\-ins, modules, and scripts written for Windows PowerShell 2.0 run unchanged in Windows PowerShell 3.0 and Windows PowerShell 4.0. However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for Windows PowerShell 2.0 and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in later releases of Windows PowerShell, which is compiled with CLR 4.0.
+Windows PowerShell 3.0 is designed to be backwards compatible with Windows PowerShell 2.0. Cmdlets, providers, snap-ins, modules, and scripts written for Windows PowerShell 2.0 run unchanged in Windows PowerShell 3.0 and Windows PowerShell 4.0. However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for Windows PowerShell 2.0 and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in later releases of Windows PowerShell, which is compiled with CLR 4.0.
 
-To maintain backward compatibility with commands and host programs that are affected by these changes, the Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 engines are designed to run side\-by\-side. Also, the Windows PowerShell 2.0 Engine is included in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012, and Windows Management Framework 3.0. The Windows PowerShell 2.0 Engine is intended to be used only when an existing script or host program cannot run because it is incompatible with Windows PowerShell 3.0, Windows PowerShell 4.0, or Microsoft .NET Framework 4. Such cases are expected to be rare.
+To maintain backward compatibility with commands and host programs that are affected by these changes, the Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 engines are designed to run side-by-side. Also, the Windows PowerShell 2.0 Engine is included in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012, and Windows Management Framework 3.0. The Windows PowerShell 2.0 Engine is intended to be used only when an existing script or host program cannot run because it is incompatible with Windows PowerShell 3.0, Windows PowerShell 4.0, or Microsoft .NET Framework 4. Such cases are expected to be rare.
 
 The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1, WindowsÂ® 8 and Windows ServerÂ® 2012. On earlier versions of Windows, when you install Windows Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows PowerShell 2.0 Engine is retained.
 
@@ -49,9 +49,9 @@ Use the following procedures to add the Windows PowerShell 2.0 Engine and Micros
 
 1.  In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
-    Or in **Server Manager**, click **All Servers**, right\-click a server name, and then select **Add Roles and Features**.
+    Or in **Server Manager**, click **All Servers**, right-click a server name, and then select **Add Roles and Features**.
 
-2.  On the **Installation Type** page, select **Role\-based or feature\-based installation**.
+2.  On the **Installation Type** page, select **Role-based or feature-based installation**.
 
 3.  On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET Framework 3.5 (includes .NET 2.0 and 3.0)**.
 
@@ -61,9 +61,9 @@ Use the following procedures to add the Windows PowerShell 2.0 Engine and Micros
 
 -   In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
-    Or **Server Manager**, click **All Servers**, right\-click a server name, and then select **Add Roles and Features**.
+    Or **Server Manager**, click **All Servers**, right-click a server name, and then select **Add Roles and Features**.
 
--   On the **Installation Type** page, select **Role\-based or feature\-based installation**.
+-   On the **Installation Type** page, select **Role-based or feature-based installation**.
 
 -   On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.
 
