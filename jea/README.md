@@ -79,7 +79,7 @@ Discover how to audit and report on all JEA actions and infrastructure
 
 ## Start authoring your own JEA endpoints
 It's easy to author a JEA endpoint -- all you need is a JEA-enabled system and a text editor (like PowerShell ISE).
-One helpful tip to get started is to create skeleton files using `New-PSRoleCapabilityFile -Path <path>` and `New-PSSessionCapabilityFile -Path <Path>` without any other arguments.
+One helpful tip to get started is to create skeleton files using [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) and [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) without any other arguments.
 These skeleton files contain all of the applicable configuration fields along with helpful comments to explain what each field can be used for.
 
 To make authoring JEA endpoints even easier, check out the [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx) which provides a GUI with which you can author Session Configuration and Role Capability files.
