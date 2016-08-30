@@ -109,9 +109,6 @@ Below logic loads the required assemblies depending on the current edition or ve
 #
 # Script module for module 'PSScriptAnalyzer'
 #
-
-# Clear PSDefaultParameterValues in the module scope and enable strict mode
-$PSDefaultParameterValues.Clear()
 Set-StrictMode -Version Latest
 
 # Set up some helper variables to make it easier to work with the module
