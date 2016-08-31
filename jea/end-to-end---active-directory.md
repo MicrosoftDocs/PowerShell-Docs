@@ -23,7 +23,7 @@ This section will walk through authoring a Session Configuration and Role Capabi
 To follow this section step-by-step, you'll need to be operating on a domain controller.
 If you don't have access to your domain controller, don't worry.
 Try to follow along with by working against some other scenario or role with which you are familiar.
-If you want to quickly set up a new domain controller, check out the [Creating a Domain Controller appendix](#creating-a-domain-controller).
+If you want to quickly set up a new domain controller, check out the [Creating a Domain Controller appendix](.\creating-a-domain-controller.md).
 
 ## Steps to Make a new Role Capability and Session Configuration
 
@@ -159,7 +159,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 Now, your users can simply call `Reset-ContosoUserPassword` and not have to remember the syntax to create a secure string inline.
 
 ## Step 4: Edit the Role Capability File
-In the [Role Capability Creation](#role-capability-creation) section, you created a blank Role Capability file.
+In the [Role Capability Creation](./role-capabilities.md#role-capability-creation) section, you created a blank Role Capability file.
 In this section, you will fill in the values in that file.
 
 Start by opening the role capability file in PowerShell ISE.
