@@ -1,6 +1,7 @@
 # [Overview](readme.md)
 ## Gallery
 ### [Getting started](psgallery/psgallery_gettingstarted.md)
+### [Health Status](psgallery/psgallery_status.md)
 ### [Gallery FAQs](psgallery/psgallery_faqs.md)
 ### [Gallery Items tab](psgallery/psgallery_items_tab.md)
 ### [Gallery search syntax](psgallery/psgallery_search_syntax.md)
@@ -51,4 +52,4 @@
 ### [Modifying registered repository](psget/repository/psget_set-psrepository.md)
 ### [Unregistering repository](psget/repository/psget_unregister-psrepository.md)
 
-##[PackageManagement cmdlets](psget/oneget/PackageManagement_cmdlets.md)
+## [PackageManagement cmdlets](psget/oneget/PackageManagement_cmdlets.md)
