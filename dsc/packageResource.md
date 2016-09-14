@@ -50,12 +50,15 @@ Package [string] #ResourceName
 This example runs the .msi installer that is located at the specified path and has the specified product ID.
 
 ```powershell
-Package PackageExample
+Configuration PackageTest
 {
-    Ensure = "Present"  # You can also set Ensure to "Absent"
-    Path  = "$Env:SystemDrive\TestFolder\TestProject.msi"
-    Name = "TestPackage"
-    ProductId = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-} 
+    Package PackageExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
+        Name        = "TestPackage"
+        ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
+    } 
+}
 ```
 
