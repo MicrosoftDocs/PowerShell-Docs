@@ -50,39 +50,53 @@ Script [string] #ResourceName
 
 ## Example 1
 ```powershell
-Script ScriptExample
+$version = Get-Content 'version.txt'
+
+Configuration ScriptTest
 {
-    SetScript = { 
-        $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-        $sw.WriteLine("Some sample string")
-        $sw.Close()
+    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+
+    Script ScriptExample
+    {
+        SetScript = 
+        { 
+            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+            $sw.WriteLine("Some sample string")
+            $sw.Close()
+        }
+        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
     }
-    TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-    GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
 }
 ```
 
 ## Example 2
 ```powershell
 $version = Get-Content 'version.txt'
-Script UpdateConfigurationVersion
+
+Configuration ScriptTest
 {
-    GetScript = { 
-        $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-        return @{ 'Result' = "Version: $currentVersion" }
-    }          
-    TestScript = { 
-        $state = GetScript
-        if( $state['Version'] -eq $using:version )
-        {
-            Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
-            return $true
+    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+
+    Script UpdateConfigurationVersion
+    {
+        GetScript = { 
+            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            return @{ 'Result' = "Version: $currentVersion" }
+        }          
+        TestScript = { 
+            $state = $GetScript
+            if( $state['Version'] -eq $using:version )
+            {
+                Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+                return $true
+            }
+            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+            return $false
         }
-        Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-        return $false
-    }
-    SetScript = { 
-        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+        SetScript = { 
+            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+        }
     }
 }
 ```
