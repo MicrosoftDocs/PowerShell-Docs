@@ -164,7 +164,7 @@ Configuration InstallWindowsFeature
             Name = @("Telnet-Client","SNMP-Service")  
             Ensure = "Present"  
             IncludeAllSubFeature = $true  
-	    PsDscRunAsCredential = Get-Credential   
+            PsDscRunAsCredential = Get-Credential   
         }  
     }
 
@@ -262,7 +262,7 @@ If verification has failed at any stage, for instance, if the configuration pull
 
 ![Sample Error Output Configuration](../images/PullUnsignedConfigFail.png)
 
-Similarily, pulling a module whose catalog is not signed will result in the following error:
+Similarly, pulling a module whose catalog is not signed will result in the following error:
 
 ![Sample Error Output Module](../images/PullUnisgnedCatalog.png)
 
