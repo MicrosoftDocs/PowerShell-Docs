@@ -29,11 +29,10 @@ ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
  **\[IsVisible\]** – optional Boolean
  If set to **$true**, the add-on tool is immediately visible in the associated tool pane.
 
-```
+```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
-
 ```
 
 ### Remove\( Item \)
@@ -44,11 +43,10 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
  **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool
  Specifies the object to be removed from Windows PowerShell ISE.
 
-```
+```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
-
 ```
 
 ### SetSelectedPowerShellTab\( psTab \)
@@ -59,12 +57,10 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
  **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
  The PowerShell tab to select.
 
-```
-
+```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
 # Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="Brand New Tab"
-
 ```
 
 ### Remove\( psTab \)
@@ -75,8 +71,7 @@ $newTab.DisplayName="Brand New Tab"
  **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
  The PowerShell tab to remove.
 
-```
-
+```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
 Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="This tab will go away in 5 seconds" 
@@ -85,9 +80,9 @@ $psISE.PowerShellTabs.Remove($newTab)
 ```
 
 ## See Also
- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   
