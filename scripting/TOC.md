@@ -106,6 +106,7 @@
 ####  [How to Debug Scripts in PowerShell ISE](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
 ####  [How to Use Profiles in  PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 ####  [How to Use the Console Pane in the  PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [How to Write and Run Scripts in the Windows PowerShell ISE](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 ####  [Introducing the  PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE Module](core-powershell/ise/ISE-Module.md)
@@ -123,7 +124,6 @@
 
 ### [Console](core-powershell/console-guide.md)
 ####  [Console Command Line Reference](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [How to Use Tab Completion in the Script Pane and Console Pane](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Using Tab Expansion](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Running Remote Commands](core-powershell/Running-Remote-Commands.md)
