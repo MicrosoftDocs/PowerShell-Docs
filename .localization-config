@@ -4,5 +4,7 @@
     "includeDependencies":true, 
     "autoPush":true, 
     "xliffVersion":"1.2" 
+    "markdownTransformerOptions": {
+                "linkifyHeaders": true }
  }
 
