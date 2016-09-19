@@ -18,7 +18,7 @@ Try these features in Windows PowerShell ISE.
 
 -   Multiline editing: To insert a blank line under the current line in the Command pane, press SHIFT+ENTER.
 
--   Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button. Or, press F5.
+-   Selective execution: To run part of a script, select the text you want to run, and then click the **Run Selection** button. Or, press F8.
 
 -   Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the Help topic for the **Invoke-Item** cmdlet.
 
