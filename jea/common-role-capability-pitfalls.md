@@ -11,12 +11,12 @@ ms.technology:  powershell
 ---
 
 ### Common Role Capability Pitfalls
-You may run into a few common pitfalls into you go through this process yourself.
+You may run into a few common pitfalls if you go through this process yourself.
 Here is a quick guide explaining how to identify and remediate these issues when modifying or creating a new endpoint:
 
 #### Functions vs. Cmdlets
-PowerShell commands written in PowerShell are PowerShell Functions.
-PowerShell commands written as specialized .NET classes are PowerShell Cmdlets.
+PowerShell commands written in PowerShell are PowerShell functions.
+PowerShell commands written as specialized .NET classes are PowerShell cmdlets.
 You can check the command type by running `Get-Command`.
 
 #### VisibleProviders

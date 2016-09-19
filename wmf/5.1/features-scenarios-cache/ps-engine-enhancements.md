@@ -15,7 +15,7 @@ Performance has improved in some important areas:
 1. Startup
 2. Pipelining to cmdlets like ForEach-Object and Where-Object is approximately 50% faster 
 
-Some example improvements (resuls may vary depending your your hardware): 
+Some example improvements (results may vary depending on your hardware): 
 
 | Scenario | 5.0 Time (ms) | 5.1 Time (ms) |
 | -------- | :---------------: | :---------------: |
@@ -26,7 +26,7 @@ Some example improvements (resuls may vary depending your your hardware):
   
 One change related to startup may impact some (unsupported) scenarios. PowerShell no longer
 reads the files `$pshome\*.ps1xml` - these files have been converted to C# to avoid some file
-and cpu overhead of processing the xml files. The files still exist to support V2 side-by-side,
+and CPU overhead of processing the XML files. The files still exist to support V2 side-by-side,
 so if you change the file contents, it will not have any effect to V5, only V2. Note that changing
 the contents of these files was never a supported scenario.
 
@@ -57,7 +57,7 @@ the built-in command.
 ### File redirection no longer hard-codes `-Encoding Unicode` ###
 
 In all previous versions of PowerShell, it was impossible to control the file encoding used by the file
-redirection operator, e.g. `get-childitem > out.txt` because PowerShell added `-Encoding Unicode`.
+redirection operator, e.g. `Get-ChildItem > out.txt` because PowerShell added `-Encoding Unicode`.
 
 Starting with WMF 5.1, you can now change the file encoding of redirection by setting `$PSDefaultParameterValues`, e.g.
 
@@ -68,20 +68,20 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### Fixed a regression in accessing members of `System.Reflection.TypeInfo` ###
 
 A regression introduced in WMF5 broke accessing members of `System.Reflection.RuntimeType`, e.g. `[int].ImplementedInterfaces`.
-This bug has been fixed in WMF5.1.
+This bug has been fixed in WMF 5.1.
 
 
 ### Fixed some issues with COM objects ###
 
 WMF5 introduced a new COM binder for invoking methods on COM objects and accessing properties of COM objects.
-This new binder improved performance significantly but also introduced some bugs which have been fixed in WMF5.1.
+This new binder improved performance significantly but also introduced some bugs which have been fixed in WMF 5.1.
 
 #### Argument conversions were not always performed correctly ####
 
 In the following example:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -113,7 +113,7 @@ instead of enumerating the key value pairs.
 ### `[ordered]` was not allowed inside classes ###
 
 WMF5 introduced classes with validation of type literals used in classes.  `[ordered]` looks like a type
-literal but is not a true .Net type.  WMF5 incorrectly reported an error on `[ordered]` inside a class:
+literal but is not a true .NET type.  WMF5 incorrectly reported an error on `[ordered]` inside a class:
 
 ```
 class CThing

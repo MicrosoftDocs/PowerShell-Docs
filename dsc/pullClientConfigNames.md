@@ -18,7 +18,7 @@ Configuration Manager (LCM) with the necessary information.To configure the LCM,
 attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
 
 > **Note**: This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in 
-PowerShell 4.0](PullClientConfigNames4.md)
+PowerShell 4.0](pullClientConfigID4.md)
 
 The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv":
 
@@ -89,8 +89,6 @@ configuration PullClientConfigNames
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
         
-        
-
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
@@ -99,7 +97,6 @@ configuration PullClientConfigNames
 }
 PullClientConfigNames
 ```
-
 
 You can also specify different pull servers for resources and reporting. To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a 
 **ResourceRepositoryShare** block (for an SMB pull server).
