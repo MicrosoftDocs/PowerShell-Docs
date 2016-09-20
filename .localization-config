@@ -1,6 +1,6 @@
 {   
    "locales": ["de-de", "zh-cn", "ar-sa" ], 
-   "files":[ "!albina/*.md", "!Sonja/*.md", "**/*.md", "**/**/*.md"], 
+   "files":[ "!albina/*.md", "Sonja/*.md", "**/*.md", "**/**/*.md"], 
     "includeDependencies":true, 
     "autoPush":true, 
     "xliffVersion":"1.2" 
