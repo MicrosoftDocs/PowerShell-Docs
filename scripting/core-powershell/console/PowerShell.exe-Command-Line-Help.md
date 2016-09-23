@@ -120,6 +120,9 @@ PowerShell -PSConsoleFile sqlsnapin.psc1
 
 PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 
+PowerShell -Command "Get-EventLog -LogName security"
+
+# in an existing PowerShell session that understands the curly braces mean a script block
 PowerShell -Command {Get-EventLog -LogName security}
 
 PowerShell -Command "& {Get-EventLog -LogName security}"
