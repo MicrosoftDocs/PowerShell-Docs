@@ -19,7 +19,7 @@ ms.prod:  powershell
 *  Operators
 *  Variables and assignment
 *  Command or cmdlet execution
-*  Native apps execution and parameter passing.
+*  Native apps execution and parameter passing
 *  Implicit and explicit output formatting
 *  Developing a Formatting File
 *  Scripting language elements
