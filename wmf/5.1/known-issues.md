@@ -14,6 +14,10 @@ ms.technology: WMF
 
 > Note: This information is preliminary and subject to change.
 
+##Starting PowerShell shortcut as Administrator
+Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.
+Reopen the shortcut as non-administrator and the shortcut will now work even as administrator.
+
 ##Pester
 In this release, there are two issues you should be aware of when using Pester on Nano Server:
 
