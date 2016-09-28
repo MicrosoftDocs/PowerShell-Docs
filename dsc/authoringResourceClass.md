@@ -26,7 +26,7 @@ For more information about DSC resources, see [Build Custom Windows PowerShell D
 To implement a DSC custom resource with a PowerShell class, create the following folder structure. The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.
 
 ```
-$env: psmodulepath (folder)
+$env: ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
