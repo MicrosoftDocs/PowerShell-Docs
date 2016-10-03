@@ -5,7 +5,7 @@ PowerShell 'Common' modules provide the basic functionality of PowerShell.
 The following table shows the evolution of common modules by release version:
 
 3.0 | 4.0 | 5.0 | 5.1
--|-|
+- | -
 ISE|ISE|ISE|ISE
  | |Microsoft.PowerShell.Archive|Microsoft.PowerShell.Archive
 Microsoft.PowerShell.Core|Microsoft.PowerShell.Core|Microsoft.PowerShell.Core|Microsoft.PowerShell.Core
