@@ -11,22 +11,22 @@ Inside each version, material is organized by namespace
 and a distinct folder for the about topics.
 Namespaces, over time, are:
 
-- ISE
-- Microsoft.PowerShell.Archive
-- Microsoft.PowerShell.Core
-- Microsoft.PowerShell.Diagnostics
-- Microsoft.PowerShell.Host
-- Microsoft.PowerShell.LocalAccounts
-- Microsoft.PowerShell.Management
-- Microsoft.PowerShell.ODataUtils
-- Microsoft.PowerShell.Security
-- Microsoft.PowerShell.Utility
-- Microsoft.WSMan.Management
-- PackageManagement
-- PowerShellGet
-- PSDesiredStateConfiguration
-- PSReadline
-- PSScheduledJob
-- PSScriptAnalyzer
-- PSWorkflow
-- PSWorkflowUtility
+- ISE, introduced in 3.0
+- Microsoft.PowerShell.Archive, introduced in 5.0
+- Microsoft.PowerShell.Core, introduced in 3.0
+- Microsoft.PowerShell.Diagnostics, introduced in 3.0
+- Microsoft.PowerShell.Host, introduced in 3.0
+- Microsoft.PowerShell.LocalAccounts, introduced in 5.0
+- Microsoft.PowerShell.Management, introduced in 3.0
+- Microsoft.PowerShell.ODataUtils, introduced in 5.0
+- Microsoft.PowerShell.Security, introduced in 3.0
+- Microsoft.PowerShell.Utility, introduced in 3.0
+- Microsoft.WSMan.Management, introduced in 3.0
+- PackageManagement, introduced in 5.0
+- PowerShellGet, introduced in 5.0
+- PSDesiredStateConfiguration, introduced in 4.0
+- PSReadline, introduced in 3.0
+- PSScheduledJob, introduced in 5.0
+- PSScriptAnalyzer, introduced in 3.0 
+- PSWorkflow, introduced in 3.0
+- PSWorkflowUtility, introduced in 3.0
