@@ -7,9 +7,10 @@ Reference material is organized into release versions.
 - [5.0](5.0/ToC.md)
 - [5.1](5.1/ToC.md)
 
-Inside each version, material is organized by namespace
+The content for each version is organized by namespace,
 and a distinct folder for the about topics.
-Namespaces, over time, are:
+
+Over time, namespaces appeared as:
 
 - ISE, introduced in 3.0
 - Microsoft.PowerShell.Archive, introduced in 5.0
@@ -27,6 +28,6 @@ Namespaces, over time, are:
 - PSDesiredStateConfiguration, introduced in 4.0
 - PSReadline, introduced in 3.0
 - PSScheduledJob, introduced in 5.0
-- PSScriptAnalyzer, introduced in 3.0 
+- PSScriptAnalyzer, introduced in 3.0
 - PSWorkflow, introduced in 3.0
 - PSWorkflowUtility, introduced in 3.0
