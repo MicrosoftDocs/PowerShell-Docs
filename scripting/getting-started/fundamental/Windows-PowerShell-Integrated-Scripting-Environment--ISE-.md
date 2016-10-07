@@ -1,4 +1,4 @@
----
+﻿---
 title:  Windows PowerShell Integrated Scripting Environment  ISE 
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -31,7 +31,7 @@ Here are some of the features that have been added to the ISE in the most recent
 
 **Merged Console pane**. In previous versions of the ISE there were separate Command and Output panes. They are now combined into a single pane that more directly mimics what you see in the Windows Powershell Console.
 
-**Command-line switches**. Several new command-line switches give you more control over the way the ISE works. –NoProfile starts the ISE without running a profile script. –Help opens up a help window with the ISE. –mta starts the ISE in “multi-threaded apartment mode”. The default is single-threaded.
+**Command-line switches**. Several new command-line switches give you more control over the way the ISE works. -NoProfile starts the ISE without running a profile script. -Help opens up a help window with the ISE. -mta starts the ISE in “multi-threaded apartment mode”. The default is single-threaded.
 
 **New editor features** make it easier to create and read your code:
 

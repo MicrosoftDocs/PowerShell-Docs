@@ -1,4 +1,4 @@
----
+﻿---
 title:  The ISEMenuItem Object
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -79,7 +79,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
 # Add an Add-ons menu item with an shortcut and fast access key.
 # Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P") 
-# Add a nested menu – a parent and a child submenu item. 
+# Add a nested menu - a parent and a child submenu item. 
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("Parent",$null,$null) 
 $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 

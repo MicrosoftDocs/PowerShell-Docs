@@ -1,4 +1,4 @@
----
+﻿---
 title:  more powershell learning
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -23,7 +23,7 @@ In addition to the Help available at the command line, the following resources p
 -   [The Learn PowerShell page](http://www.scriptingguys.com/learnpowershell) is the Windows PowerShell hub on the TechNet Script Center. This page hosts a series of beginner video sessions conducted by the Microsoft Scripting Guy Ed Wilson. It also contains Windows PowerShell quizzes, links to community content, and more.
 -   Have questions about using Windows PowerShell? Connect with hundreds of other people who have similar interests on the [Official Scripting Guys forum](http://social.technet.microsoft.com/forums/itcg/threads/).
 -   [The Microsoft Script Center](https://technet.microsoft.com/scriptcenter). A portal to many useful Windows PowerShell resources, including the [Script Center Repository](http://gallery.technet.microsoft.com/scriptcenter/). One of the best ways to learn scripting is to see examples in action. Search through thousands of Windows PowerShell scripts, all ready for you to evaluate and adapt to meet your needs.
--   Get involved in the Windows PowerShell user community. See the [Script Center Community page](https://technet.microsoft.com/scriptcenter/hh182567.aspx) for locations of dozens of Windows PowerShell user groups – there is probably one near you. Also keep current with the community activities of the Microsoft Scripting Guy.
+-   Get involved in the Windows PowerShell user community. See the [Script Center Community page](https://technet.microsoft.com/scriptcenter/hh182567.aspx) for locations of dozens of Windows PowerShell user groups - there is probably one near you. Also keep current with the community activities of the Microsoft Scripting Guy.
 
 ## Video Training
 

@@ -1,4 +1,4 @@
----
+﻿---
 title:  The ISEFileCollection Object
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -20,7 +20,7 @@ ms.assetid:  0f86a427-ea38-4bce-85f8-06c98d30d508
 
  Creates and returns a new untitled file and adds it to the collection. The **IsUntitled** property of the newly created file is **$true**.
 
- **\[fullPath\]** – Optional string
+ **\[fullPath\]** - Optional string
  The fully specified path of the file. An exception is generated if you include the **fullPath** parameter and a relative path, or if you use a file name instead of the full path.
 
 ```
@@ -37,10 +37,10 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
  Removes a specified file from the current PowerShell tab.
 
- **File** – String
+ **File** - String
  The ISEFile file that you want to remove from the collection. If the file has not been saved, this method throws an exception. Use the **Force** switch parameter to force the removal of an unsaved file.
 
- **\[Force\]** – optional Boolean
+ **\[Force\]** - optional Boolean
  If set to **$true**, grants permission to remove the file even if it has not been saved after last use. The default is **$false**.
 
 ```
@@ -59,7 +59,7 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
  Selects the file that is specified by the **selectedFile** parameter.
 
- **selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile
+ **selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile
  The ISEFile file that you want to select.
 
 ```
