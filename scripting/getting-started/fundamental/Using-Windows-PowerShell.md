@@ -1,4 +1,4 @@
----
+﻿---
 title:  Using Windows PowerShell
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -41,9 +41,9 @@ Windows PowerShell is part of a family of related scripting technologies that he
 
 -   [Get Started with Windows PowerShell Desired State Configuration](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0). Windows PowerShell Desired State Configuration (DSC), introduced in Windows PowerShell 4.0, is a new management platform in Windows PowerShell that enables the deployment and management of configuration data for software services and the environment on which these services run. DSC provides a set of Windows PowerShell language extensions, new cmdlets, and resources that you can use to declaratively specify how you want the state of your software environment to be configured.
 
--   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), the Server Manager WMI provider, and a new feature for 4.0, Windows PowerShell Desired State Configuration (DSC). Windows Management Framework 4.0 Preview allows you to install and use these technologies on computers that are running Windows Server 2012, WindowsÂ® 7 SP1, and Windows Server 2008 R2 SP1.
+-   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), the Server Manager WMI provider, and a new feature for 4.0, Windows PowerShell Desired State Configuration (DSC). Windows Management Framework 4.0 Preview allows you to install and use these technologies on computers that are running Windows Server 2012, Windows® 7 SP1, and Windows Server 2008 R2 SP1.
 
--   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), and the Server Manager WMI provider. Windows Management Framework 3.0 allows you to install and use these technologies on computers that are running WindowsÂ® 7 SP1, Windows Server 2008 SP2, and Windows Server 2008 R2 SP1.
+-   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), and the Server Manager WMI provider. Windows Management Framework 3.0 allows you to install and use these technologies on computers that are running Windows® 7 SP1, Windows Server 2008 SP2, and Windows Server 2008 R2 SP1.
 
 ## Learning Windows PowerShell
 To begin learning Windows PowerShell, start with the following resources:

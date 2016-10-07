@@ -1,4 +1,4 @@
----
+﻿---
 title:  Working with Software Installations
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -113,7 +113,7 @@ $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> We are using a lengthy variable name here for clarity. In actual use, there is no reason to use long names. Although you can use tab-completion for variable names, you can also use 1–2 character names for speed. Longer, descriptive names are most useful when you are developing code for reuse.
+> We are using a lengthy variable name here for clarity. In actual use, there is no reason to use long names. Although you can use tab-completion for variable names, you can also use 1-2 character names for speed. Longer, descriptive names are most useful when you are developing code for reuse.
 
 To display the values of the registry entries in the registry keys under Uninstall, use the GetValue method of the registry keys. The value of the method is the name of the registry entry.
 
