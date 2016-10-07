@@ -1,4 +1,4 @@
----
+﻿---
 title:  Windows PowerShell Core About Topics
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -121,7 +121,7 @@ This section contains the conceptual ("About") help topics that apply to all Win
 |[about_While [v4]](https://technet.microsoft.com/en-us/library/3a1a1329-2501-4e4e-8660-a2ca68c68541)|Describes **While** loops in Windows PowerShell.|
 |[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|Explains how to use the wildcard character (\*) in Windows PowerShell.|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|Describes features and changes that are new to Windows PowerShell 4.0.|
-|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Describes Windows PowerShellÂ® Integrated Scripting Environment (ISE).|
+|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Describes Windows PowerShell® Integrated Scripting Environment (ISE).|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Provides a brief introduction to the Windows PowerShell Workflow feature.|
 |[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|Describes the parameters that are valid on all Windows PowerShell workflow commands.|
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Describes Windows Management Instrumentation (WMI), which is Microsoft’s implementation of the Web-Based Enterprise Management (WBEM) industry standard.|

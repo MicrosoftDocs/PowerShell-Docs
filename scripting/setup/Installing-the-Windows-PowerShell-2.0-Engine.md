@@ -1,4 +1,4 @@
----
+﻿---
 title:  Installing the Windows PowerShell 2.0 Engine
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -17,7 +17,7 @@ Windows PowerShell 3.0 is designed to be backwards compatible with Windows Power
 
 To maintain backward compatibility with commands and host programs that are affected by these changes, the Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 engines are designed to run side-by-side. Also, the Windows PowerShell 2.0 Engine is included in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012, and Windows Management Framework 3.0. The Windows PowerShell 2.0 Engine is intended to be used only when an existing script or host program cannot run because it is incompatible with Windows PowerShell 3.0, Windows PowerShell 4.0, or Microsoft .NET Framework 4. Such cases are expected to be rare.
 
-The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1, WindowsÂ® 8 and Windows ServerÂ® 2012. On earlier versions of Windows, when you install Windows Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows PowerShell 2.0 Engine is retained.
+The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1, Windows® 8 and Windows Server® 2012. On earlier versions of Windows, when you install Windows Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows PowerShell 2.0 Engine is retained.
 
 For information about starting the Windows PowerShell 2.0 Engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
