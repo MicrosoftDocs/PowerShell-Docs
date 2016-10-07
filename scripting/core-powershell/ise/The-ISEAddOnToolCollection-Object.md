@@ -1,4 +1,4 @@
----
+﻿---
 title:  The ISEAddOnToolCollection Object
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -20,13 +20,13 @@ ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
 
  Adds a new add-on tool to the collection. It returns the newly added add-on tool. Before you run this command, you must install the add-on tool on the local computer and load the assembly.
 
- **Name** – String
+ **Name** - String
  Specifies the display name of the add-on tool that is added to Windows PowerShell ISE.
 
- **ControlType** –Type
+ **ControlType** -Type
  Specifies the control that is added.
 
- **\[IsVisible\]** – optional Boolean
+ **\[IsVisible\]** - optional Boolean
  If set to **$true**, the add-on tool is immediately visible in the associated tool pane.
 
 ```PowerShell
@@ -40,7 +40,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  Removes the specified add-on tool from the collection.
 
- **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool
+ **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool
  Specifies the object to be removed from Windows PowerShell ISE.
 
 ```PowerShell
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  Selects the PowerShell tab that the **psTab** parameter specifies.
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab
  The PowerShell tab to select.
 
 ```PowerShell
@@ -68,7 +68,7 @@ $newTab.DisplayName="Brand New Tab"
 
  Removes the PowerShell tab that the **psTab** parameter specifies.
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab
  The PowerShell tab to remove.
 
 ```PowerShell

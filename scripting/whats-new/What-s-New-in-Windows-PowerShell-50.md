@@ -34,7 +34,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) is faster (especially in ISE).
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) has a new parameter, –UseExisting, which reapplies the last applied configuration.
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) has a new parameter, -UseExisting, which reapplies the last applied configuration.
 
     -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force has been fixed.
 
@@ -166,9 +166,9 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   New-Item, Remove-Item, and Get-ChildItem have been enhanced to support creating and managing [symbolic links](http://en.wikipedia.org/wiki/Symbolic_link). The **-ItemType** parameter for New-Item accepts a new value, **SymbolicLink**. Now you can create symbolic links in a single line by running the New-Item cmdlet.
 
--   Get-ChildItem also has a new –Depth parameter, which you use with the –Recurse parameter to limit the recursion. For example, Get-ChildItem –Recurse –Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
+-   Get-ChildItem also has a new -Depth parameter, which you use with the -Recurse parameter to limit the recursion. For example, Get-ChildItem -Recurse -Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
 
--   Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add –Path and –Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+-   Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
 -   Windows PowerShell transcription has been improved to apply to all hosting applications (such as Windows PowerShell ISE) in addition to the console host (**powershell.exe**). Transcription options (including enabling a system-wide transcript) can be configured by enabling the **Turn on PowerShell Transcription** Group Policy setting, found in Administrative Templates/Windows Components/Windows PowerShell.
 
@@ -186,7 +186,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   A new cmdlet, New-TemporaryFile, lets you create a temporary file as part of scripting. By default, the new temporary file is created in ```C:\Users\<user name>\AppData\Local\Temp```.
 
--   The Out-File, Add-Content, and Set-Content cmdlets now have a new –NoNewline parameter, which omits a new line after the output.
+-   The Out-File, Add-Content, and Set-Content cmdlets now have a new -NoNewline parameter, which omits a new line after the output.
 
 -   The New-Guid cmdlet leverages the .NET Framework Guid class to generate a GUID, useful when you are writing scripts or DSC resources.
 
@@ -208,7 +208,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   Results of the Get-Command cmdlet now display a Version column; a new Version property has been added to the CommandInfo class. Get-Command shows commands from multiple versions of the same module. The Version property is also part of derived classes of CmdletInfo: CmdletInfo and ApplicationInfo.
 
--   Get-Command has a new parameter, -ShowCommandInfo, that returns ShowCommand information as PSObjects. This is especially useful functionality for when Show-Command is run in Windows PowerShell ISE by using Windows PowerShell remoting. The –ShowCommandInfo parameter replaces the existing Get-SerializedCommand function in the Microsoft.PowerShell.Utility module, but the Get-SerializedCommand script is still available to support downlevel scripting.
+-   Get-Command has a new parameter, -ShowCommandInfo, that returns ShowCommand information as PSObjects. This is especially useful functionality for when Show-Command is run in Windows PowerShell ISE by using Windows PowerShell remoting. The -ShowCommandInfo parameter replaces the existing Get-SerializedCommand function in the Microsoft.PowerShell.Utility module, but the Get-SerializedCommand script is still available to support downlevel scripting.
 
 -   A new Get-ItemPropertyValue cmdlet lets you get the value of a property without using dot notation. For example, in older releases of Windows PowerShell, you can run the following command to get the value of the Application Base property of the PowerShellEngine registry key: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. Starting in Windows PowerShell 5.0, you can run **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
 
@@ -363,7 +363,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   The value of **$PSVersionTable.PSVersion** has been updated to 4.0.
 
--   **Where()** operator behavior has changed. `Collection.Where('property –match name')` accepting a string expression in the format `"Property –CompareOperator Value"` is no longer supported. However, the **Where()** operator accepts string expressions in the format of a scriptblock; this is still supported.
+-   **Where()** operator behavior has changed. `Collection.Where('property -match name')` accepting a string expression in the format `"Property -CompareOperator Value"` is no longer supported. However, the **Where()** operator accepts string expressions in the format of a scriptblock; this is still supported.
 
 ### <a name="BKMK_ise"></a>New features in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -429,7 +429,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   **Get-Module** now displays module versions in a **Version** column.
 
--   Remove-Item –Recurse now removes items from subfolders as expected.
+-   Remove-Item -Recurse now removes items from subfolders as expected.
 
 -   A **UserName** property has been added to **Get-Process** output objects.
 
@@ -437,7 +437,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   **Add-Member** now takes effect on hashtables, even if the hashtables have not yet been accessed.
 
--   **Select-Object –Expand** no longer fails or generates an exception if the value of the property is null or empty.
+-   **Select-Object -Expand** no longer fails or generates an exception if the value of the property is null or empty.
 
 -   **Get-Process** can now be used in a pipeline with other commands that get the **ComputerName** property from objects.
 

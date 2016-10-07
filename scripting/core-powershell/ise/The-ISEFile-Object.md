@@ -20,7 +20,7 @@ ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
  Saves the file to disk.
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ **\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
  An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
  **Exceptions**
@@ -47,7 +47,7 @@ $myfile.Encoding
  **filename** - String
  The name to be used to save the file.
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ **\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
  An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
  **Exceptions**

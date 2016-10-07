@@ -1,4 +1,4 @@
----
+﻿---
 title:  Getting Information About Commands
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -23,7 +23,7 @@ Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
 ...
 ```
 
-This output looks a lot like the Help output of Cmd.exe: a tabular summary of internal commands. In the excerpt of the **Get-Command** command output shown above, every command shown has a CommandType of Cmdlet. A cmdlet is Windows PowerShell's intrinsic command type – a type that corresponds roughly to the **dir** and **cd** commands of Cmd.exe and to built-ins in UNIX shells such as BASH.
+This output looks a lot like the Help output of Cmd.exe: a tabular summary of internal commands. In the excerpt of the **Get-Command** command output shown above, every command shown has a CommandType of Cmdlet. A cmdlet is Windows PowerShell's intrinsic command type - a type that corresponds roughly to the **dir** and **cd** commands of Cmd.exe and to built-ins in UNIX shells such as BASH.
 
 In the output of the **Get-Command** command, all the definitions end with ellipses (...) to indicate that PowerShell cannot display all the content in the available space. When Windows PowerShell displays output, it formats the output as text and then arranges it to make the data fit cleanly into the window. We will talk about this later in the section on formatters.
 
