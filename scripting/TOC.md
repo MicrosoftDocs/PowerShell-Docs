@@ -12,7 +12,7 @@
 #### [Starting PowerShell on Earlier Versions of Windows](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 ### [Installing the Windows PowerShell 2.0 Engine](setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Starting the Windows PowerShell 2.0 Engine](setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
-### [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+### [Installing the Windows PowerShell SDK](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [Security](setup/security.md)
 #### [PowerShell Remoting Security Considerations](setup/WinRMSecurity.md)
 ### [Accessibility](setup/Accessibility-in-Windows-PowerShell-ISE.md)
