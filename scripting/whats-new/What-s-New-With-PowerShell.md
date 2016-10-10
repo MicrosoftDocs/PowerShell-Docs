@@ -14,7 +14,7 @@ Windows PowerShell® 5.0 includes significant new features that extend its use, 
 
 Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
 
-Windows PowerShell 5.0 is installed by default on Windows Server® 2016 Technical Preview and Windows 10®. To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0 Preview](http://go.microsoft.com/fwlink/?LinkID=395058). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0 Preview.
+Windows PowerShell 5.0 is installed by default on Windows Server® 2016 and Windows 10®. To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0 Preview](http://go.microsoft.com/fwlink/?LinkID=395058). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0 Preview.
 
 ## In this topic
 
