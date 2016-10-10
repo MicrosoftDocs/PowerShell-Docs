@@ -941,7 +941,7 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [Remove-Module](.\Remove-Module.md)
 
-[Get-Verb](00000000-0000-0000-0000-000000000000)
+[Get-Verb](Get-Verb.md)
 
 [about_Modules](.\About\about_Modules.md)
 

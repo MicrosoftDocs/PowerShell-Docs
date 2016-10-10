@@ -211,7 +211,7 @@ This cmdlet does not return any objects.
 
 [New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](00000000-0000-0000-0000-000000000000)
+[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
 
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
@@ -221,7 +221,7 @@ This cmdlet does not return any objects.
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](00000000-0000-0000-0000-000000000000)
+[WSMan Provider](WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 

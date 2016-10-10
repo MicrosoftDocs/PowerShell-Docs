@@ -760,7 +760,7 @@ The changes that you make affect all new sessions that use the session configura
 
 [New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](00000000-0000-0000-0000-000000000000)
+[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
 
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
@@ -770,7 +770,7 @@ The changes that you make affect all new sessions that use the session configura
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](00000000-0000-0000-0000-000000000000)
+[WSMan Provider](WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 

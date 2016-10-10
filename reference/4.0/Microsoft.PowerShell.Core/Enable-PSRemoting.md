@@ -215,7 +215,7 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 [Disable-PSRemoting](.\Disable-PSRemoting.md)
 
-[WSMan Provider](00000000-0000-0000-0000-000000000000)
+[WSMan Provider](WSMan-Provider.md)
 
 [about_Remote](.\About\about_Remote.md)
 
