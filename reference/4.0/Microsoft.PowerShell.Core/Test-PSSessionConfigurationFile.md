@@ -125,7 +125,7 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 
 [New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](00000000-0000-0000-0000-000000000000)
+[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
 
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
@@ -135,7 +135,7 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](00000000-0000-0000-0000-000000000000)
+[WSMan Provider](WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 

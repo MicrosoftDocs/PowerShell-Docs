@@ -215,7 +215,7 @@ Get-Alias returns the same object for every alias, but Windows PowerShell uses a
 
 [Set-Alias](.\Set-Alias.md)
 
-[Alias Provider](00000000-0000-0000-0000-000000000000)
+[Alias Provider](Alias-Provider.md)
 
 [about_Aliases]()
 
