@@ -20,7 +20,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 ## Description  
  In the Cert: drive, the [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage \(EKU\) properties. The new dynamic parameters work in 'Windows PowerShell®' 3.0 and newer releases of 'Windows PowerShell®', running on [!INCLUDE[win8_client_2](../Token/win8_client_2_md.md)], [!INCLUDE[win8_server_2](../Token/win8_server_2_md.md)] and newer releases of the Windows operating system.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage \(EKU\) properties. The new dynamic parameters work in 'Windows PowerShell®' 3.0 and newer releases of 'Windows PowerShell®', running on 'Windows 8®', 'Windows Server 2012®' and newer releases of the Windows operating system.  
   
  Also, new script properties, DnsNameList and EnhancedKeyUsageList, and SendAsTrustedIssuer, have been added to the x509Certificate2 object that represents the certificates to make it easy to search and manage the certificates.  
   
@@ -95,7 +95,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
   
  The ExpiringInDays parameter uses the value of the NotAfter property of the certificate, which stores the expiration date of the certificate. The effective date is stored in the NotBefore property of the certificate.  
   
- This parameter was introduced in 'Windows PowerShell®' 3.0. It runs on [!INCLUDE[win8_client_2](../Token/win8_client_2_md.md)], [!INCLUDE[win8_server_2](../Token/win8_server_2_md.md)], and newer releases of the Windows operating system.  
+ This parameter was introduced in 'Windows PowerShell®' 3.0. It runs on 'Windows 8®', 'Windows Server 2012®', and newer releases of the Windows operating system.  
   
 |||  
 |-|-|  
