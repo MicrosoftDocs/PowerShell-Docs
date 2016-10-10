@@ -5,7 +5,6 @@ Reference material is organized into release versions.
 - [3.0](3.0/ToC.md)
 - [4.0](4.0/ToC.md)
 - [5.0](5.0/ToC.md)
-- [5.1](5.1/ToC.md)
 
 The content for each version is organized by namespace,
 and a distinct folder for the about topics.
