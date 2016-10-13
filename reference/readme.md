@@ -1,10 +1,23 @@
+---
+author: jpjofre
+description: 
+keywords: powershell, cmdlet
+manager: carolz
+ms.date: 2016-10-12
+ms.prod: powershell
+ms.technology: powershell
+ms.topic: conceptual
+title: PowerShell Reference
+---
+
 #  PowerShell Reference
 
 Reference material is organized into release versions.
 
-- [3.0](3.0/ToC.md)
-- [4.0](4.0/ToC.md)
-- [5.0](5.0/ToC.md)
+- 3.0
+- 4.0
+- 5.0
+- 5.1
 
 The content for each version is organized by namespace,
 and a distinct folder for the about topics.
