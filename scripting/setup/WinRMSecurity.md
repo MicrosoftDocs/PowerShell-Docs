@@ -103,11 +103,6 @@ This is known as the "Double-Hop" problem.
 
 There are several ways to avoid this problem:
 
-### Kerberos Constrained Delegation
-
-For highly trusted servers, you can enable [Kerberos Constrained Delegation](https://technet.microsoft.com/en-us/library/cc995228.aspx). This allows the remote server to impersonate the
-authenticated user to a specified list of computers and services.
-
 ### Trust between remote computers
 
 If you trust users connected remotely to *Server1* to resources on *Server2*, you can explicitly grant *Server1* access to those resources.

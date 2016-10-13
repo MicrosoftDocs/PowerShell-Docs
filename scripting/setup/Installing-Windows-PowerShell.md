@@ -99,4 +99,5 @@ On Windows Server 2008 systems, Windows Management Framework (Windows PowerShell
 
 ## See Also
 [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+
+[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
