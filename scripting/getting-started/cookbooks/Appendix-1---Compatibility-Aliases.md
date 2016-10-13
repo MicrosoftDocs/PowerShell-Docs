@@ -24,7 +24,7 @@ Alias           cls                             Clear-Host
 |CMD Command|UNIX Command|PS Command|PS Alias|
 |---------------|----------------|--------------|------------|
 |**dir**|**ls**|**Get-ChildItem**|**gci**|
-|**cls**|**clear**|**Clear-Host** (function)|N/A|
+|**cls**|**clear**|**Clear-Host** (function)|**cls**|
 |**del, erase, rmdir**|**rm**|**Remove-Item**|**ri**|
 |**copy**|**cp**|**Copy-Item**|**ci**|
 |**move**|**mv**|**Move-Item**|**mi**|
@@ -32,6 +32,6 @@ Alias           cls                             Clear-Host
 |**type**|**cat**|**Get-Content**|**gc**|
 |**cd**|**cd**|**Set-Location**|**sl**|
 |**md**|**mkdir**|**New-Item**|**ni**|
-|N/A|**pushd**|**Push-Location**|N/A|
-|N/A|**popd**|**Pop-Location**|N/A|
+|**pushd**|**pushd**|**Push-Location**|**pushd**|
+|**popd**|**popd**|**Pop-Location**|**popd**|
 
