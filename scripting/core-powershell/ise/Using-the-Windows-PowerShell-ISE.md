@@ -32,7 +32,7 @@ Provides steps for debugging scripts in Windows PowerShell ISE
 Provides information about and steps for creating and using profiles in Windows PowerShell ISE.
 
 ## See Also
-[Exploring the Windows PowerShell ISE](../../getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
-[Accessibility in Windows PowerShell ISE](../../setup/Accessibility-in-Windows-PowerShell-ISE.md)
-[The Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
+- [Exploring the Windows PowerShell ISE](../../getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
+- [Accessibility in Windows PowerShell ISE](../../setup/Accessibility-in-Windows-PowerShell-ISE.md)
+- [The Windows PowerShell ISE Scripting Object Model](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
 

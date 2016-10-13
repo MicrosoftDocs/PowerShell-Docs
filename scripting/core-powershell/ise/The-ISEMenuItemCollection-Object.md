@@ -50,9 +50,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ```
 
 ## See Also
- [The ISEMenuItem Object](The-ISEMenuItem-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISEMenuItem Object](The-ISEMenuItem-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

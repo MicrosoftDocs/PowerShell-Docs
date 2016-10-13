@@ -24,6 +24,6 @@ ms.assetid:  69b047d0-da79-413e-b948-8e45d05d1f85
 -   [Other Useful Scripting Objects](../../getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
 
 ## See Also
- [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+- [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 
   

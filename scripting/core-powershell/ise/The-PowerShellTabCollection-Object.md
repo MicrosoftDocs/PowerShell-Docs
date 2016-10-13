@@ -62,9 +62,9 @@ $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
 ```
 
 ## See Also
- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../ise/The-ISE-Object-Model-Hierarchy.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
