@@ -112,5 +112,5 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 |**Start PowerShell.exe** (Windows PowerShell console)|CTRL+SHIFT+P|
 
 ## See Also
-[PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 
