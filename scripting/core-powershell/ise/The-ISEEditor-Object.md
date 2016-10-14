@@ -1,4 +1,4 @@
----
+﻿---
 title:  The ISEEditor Object
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -145,7 +145,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace – \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
+ The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
 
 ```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

@@ -1,4 +1,4 @@
----
+﻿---
 title:  What s New in Windows PowerShell 50
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -15,7 +15,10 @@ Windows PowerShell ® 5.0 includes significant new features that extend its use,
 
 Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
 
-Windows PowerShell 5.0 is installed by default on Windows Server ® 2016 Technical Preview and Windows 10 ®. To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](http://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
+# Installing Windows PowerShell
+Windows PowerShell 5.0 is installed by default on Windows Server ® 2016 Technical Preview and Windows 10 ®. 
+
+To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](http://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
 
 ## In this topic
 
@@ -34,7 +37,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) is faster (especially in ISE).
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) has a new parameter, –UseExisting, which reapplies the last applied configuration.
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) has a new parameter, -UseExisting, which reapplies the last applied configuration.
 
     -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force has been fixed.
 
@@ -166,9 +169,9 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   New-Item, Remove-Item, and Get-ChildItem have been enhanced to support creating and managing [symbolic links](http://en.wikipedia.org/wiki/Symbolic_link). The **-ItemType** parameter for New-Item accepts a new value, **SymbolicLink**. Now you can create symbolic links in a single line by running the New-Item cmdlet.
 
--   Get-ChildItem also has a new –Depth parameter, which you use with the –Recurse parameter to limit the recursion. For example, Get-ChildItem –Recurse –Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
+-   Get-ChildItem also has a new -Depth parameter, which you use with the -Recurse parameter to limit the recursion. For example, Get-ChildItem -Recurse -Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
 
--   Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add –Path and –Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+-   Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
 -   Windows PowerShell transcription has been improved to apply to all hosting applications (such as Windows PowerShell ISE) in addition to the console host (**powershell.exe**). Transcription options (including enabling a system-wide transcript) can be configured by enabling the **Turn on PowerShell Transcription** Group Policy setting, found in Administrative Templates/Windows Components/Windows PowerShell.
 
@@ -186,7 +189,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   A new cmdlet, New-TemporaryFile, lets you create a temporary file as part of scripting. By default, the new temporary file is created in ```C:\Users\<user name>\AppData\Local\Temp```.
 
--   The Out-File, Add-Content, and Set-Content cmdlets now have a new –NoNewline parameter, which omits a new line after the output.
+-   The Out-File, Add-Content, and Set-Content cmdlets now have a new -NoNewline parameter, which omits a new line after the output.
 
 -   The New-Guid cmdlet leverages the .NET Framework Guid class to generate a GUID, useful when you are writing scripts or DSC resources.
 
@@ -208,7 +211,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   Results of the Get-Command cmdlet now display a Version column; a new Version property has been added to the CommandInfo class. Get-Command shows commands from multiple versions of the same module. The Version property is also part of derived classes of CmdletInfo: CmdletInfo and ApplicationInfo.
 
--   Get-Command has a new parameter, -ShowCommandInfo, that returns ShowCommand information as PSObjects. This is especially useful functionality for when Show-Command is run in Windows PowerShell ISE by using Windows PowerShell remoting. The –ShowCommandInfo parameter replaces the existing Get-SerializedCommand function in the Microsoft.PowerShell.Utility module, but the Get-SerializedCommand script is still available to support downlevel scripting.
+-   Get-Command has a new parameter, -ShowCommandInfo, that returns ShowCommand information as PSObjects. This is especially useful functionality for when Show-Command is run in Windows PowerShell ISE by using Windows PowerShell remoting. The -ShowCommandInfo parameter replaces the existing Get-SerializedCommand function in the Microsoft.PowerShell.Utility module, but the Get-SerializedCommand script is still available to support downlevel scripting.
 
 -   A new Get-ItemPropertyValue cmdlet lets you get the value of a property without using dot notation. For example, in older releases of Windows PowerShell, you can run the following command to get the value of the Application Base property of the PowerShellEngine registry key: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. Starting in Windows PowerShell 5.0, you can run **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
 
@@ -309,7 +312,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 ## <a name="BKMK_wps4"></a>New features in Windows PowerShell 4.0
 Windows PowerShell 4.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 3.0 and Windows PowerShell 2.0 work in Windows PowerShell 4.0 without changes.
 
-Windows PowerShell 4.0 is installed by default on WindowsÂ® 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
+Windows PowerShell 4.0 is installed by default on Windows® 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
 
 -   [New features in Windows PowerShell](#BKMK_core)
 
@@ -363,7 +366,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   The value of **$PSVersionTable.PSVersion** has been updated to 4.0.
 
--   **Where()** operator behavior has changed. `Collection.Where('property –match name')` accepting a string expression in the format `"Property –CompareOperator Value"` is no longer supported. However, the **Where()** operator accepts string expressions in the format of a scriptblock; this is still supported.
+-   **Where()** operator behavior has changed. `Collection.Where('property -match name')` accepting a string expression in the format `"Property -CompareOperator Value"` is no longer supported. However, the **Where()** operator accepts string expressions in the format of a scriptblock; this is still supported.
 
 ### <a name="BKMK_ise"></a>New features in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -429,7 +432,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   **Get-Module** now displays module versions in a **Version** column.
 
--   Remove-Item –Recurse now removes items from subfolders as expected.
+-   Remove-Item -Recurse now removes items from subfolders as expected.
 
 -   A **UserName** property has been added to **Get-Process** output objects.
 
@@ -437,7 +440,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   **Add-Member** now takes effect on hashtables, even if the hashtables have not yet been accessed.
 
--   **Select-Object –Expand** no longer fails or generates an exception if the value of the property is null or empty.
+-   **Select-Object -Expand** no longer fails or generates an exception if the value of the property is null or empty.
 
 -   **Get-Process** can now be used in a pipeline with other commands that get the **ComputerName** property from objects.
 
@@ -509,7 +512,7 @@ Windows PowerShell 3.0 includes the following new features.
 -   [Special Character Handling Improvements](#BKMK_CHAR)
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell Workflow
-Windows PowerShellÂ® Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.
+Windows PowerShell® Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.
 
 Workflows are sequences of multicomputer management activities that are long-running, repeatable, frequent, parallelizable, interruptible, suspendable, and restartable. Workflows can be resumed from an intentional or accidental interruption, such as a network outage, a Windows restart, or a power failure.
 
@@ -536,12 +539,12 @@ The following are the benefits of Windows PowerShell Workflow
 -   **Workflow and Connection Throttling.** Workflow execution and connections to nodes can be throttled, thus enabling scalability and high-availability scenarios.
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web Access
-Windows PowerShellÂ® Web Access is a Windows Server 2012 feature that lets users run Windows PowerShell commands and scripts in a web-based console. Devices that use the web-based console do not require Windows PowerShell, remote management software, or browser plug-in installations. All that is required is a properly-configured Windows PowerShell Web Access gateway and a client device browser that supports JavaScript® and accepts cookies.
+Windows PowerShell® Web Access is a Windows Server 2012 feature that lets users run Windows PowerShell commands and scripts in a web-based console. Devices that use the web-based console do not require Windows PowerShell, remote management software, or browser plug-in installations. All that is required is a properly-configured Windows PowerShell Web Access gateway and a client device browser that supports JavaScript® and accepts cookies.
 
 For more information, see [Deploy Windows PowerShell Web Access](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### <a name="BKMK_ISE"></a>New Windows PowerShell ISE Features
-For Windows PowerShell 3.0, Windows PowerShellÂ® Integrated Scripting Environment (ISE) has many new features, including IntelliSense, Show-Command window, a unified Console Pane, snippets, brace-matching, expand-collapse sections, auto-save, recent items list, rich copy, block copy, and full support for writing Windows PowerShell script workflows. For more information, see [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+For Windows PowerShell 3.0, Windows PowerShell® Integrated Scripting Environment (ISE) has many new features, including IntelliSense, Show-Command window, a unified Console Pane, snippets, brace-matching, expand-collapse sections, auto-save, recent items list, rich copy, block copy, and full support for writing Windows PowerShell script workflows. For more information, see [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="BKMK_NET4"></a>Support for Microsoft .NET Framework 4
 Windows PowerShell is built against the Common Language Runtime 4.0. Cmdlet, script, and workflow authors can use the new Microsoft .NET Framework 4 classes in Windows PowerShell, with features that include Application Compatibility and Deployment, Managed Extensibility Framework, Parallel Computing, Networking, Windows Communication Foundation and Windows Workflow Foundation.

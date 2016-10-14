@@ -1,4 +1,4 @@
----
+﻿---
 title:  The ISEMenuItemCollection Object
 ms.date:  2016-05-11
 keywords:  powershell,cmdlet
@@ -11,7 +11,7 @@ ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
 ---
 
 # The ISEMenuItemCollection Object
-  An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add-On** menu in Windows PowerShellÂ® Integrated Scripting Environment (ISE).
+  An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add-On** menu in Windows PowerShell® Integrated Scripting Environment (ISE).
 
 ## Method
 

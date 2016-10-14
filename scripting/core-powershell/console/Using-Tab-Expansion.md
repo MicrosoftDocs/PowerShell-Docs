@@ -14,7 +14,7 @@ ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 Command-line shells often provide a way to complete the names of long files or commands automatically, speeding up command entry and providing hints. Windows PowerShell allows you to fill in file names and cmdlet names by pressing the **Tab** key.
 
 > [!NOTE]
-> Tab expansion is controlled by the internal function TabExpansion. Since this function can be modified or overridden, this discussion is a guide to the behavior of the default Windows PowerShell configuration.
+> Tab expansion is controlled by the internal function TabExpansion or TabExpansion2. Since this function can be modified or overridden, this discussion is a guide to the behavior of the default Windows PowerShell configuration.
 
 To fill in a filename or path from the available choices automatically, type part of the name and press the **Tab** key. Windows PowerShell will automatically expand the name to the first match that it finds. Pressing the **Tab** key repeatedly will cycle through all of the available choices.
 
