@@ -52,23 +52,23 @@ There are two workarounds for this issue depending on the version of Windows Ser
 
 **Resolution:**
 - For systems running **Windows Server 2008 R2**
-  1.	Open Powershell as an administrator
-  2.	Run the following command
-   
-   ```powershell
+  1. Open Powershell as an administrator
+  2. Run the following command 
+  
+  ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
-   ```
-  3.	Run the command and ignore the error, as they are expected.
-   
-   ```powershell
+  ```
+  3. Run the command and ignore the error, as they are expected.
+  
+  ```powershell
     Publish-SilData
    ```
-  4.	Delete the files in  \Windows\System32\Logfiles\SIL\ directory
+  4. Delete the files in  \Windows\System32\Logfiles\SIL\ directory
   
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
-  5.	Install all available important Windows Updates, and begin Sysyprep operation normally.
+  5. Install all available important Windows Updates, and begin Sysyprep operation normally.
   
 - For systems running **Windows Server 2012**
   1.	After installing WMF 5.0 on the server to be Sysprep’d, login as administrator.
@@ -86,24 +86,23 @@ There are two workarounds for this issue depending on the version of Windows Ser
   7.	Run the following command to take ownership of the Generalize.xml file in system32 folder:
 
     ```
-      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
     ```
 
   8.	Run the following command to set appropriate permission on the file:
 
     ```
-      Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
     ```
       * Answer Yes at the prompt for confirmation. 
       * Note that `<AdministratorUserName>` should be replaced by the username who is administrator on the machine. For example, "Administrator".
       
   9.	Copy the file you edited and saved over to the Sysprep directory using the following command:
 
-      ```
-      xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
-      ```
+    ```
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    ```
       * Answer Yes to overwrite (note that if there is no prompt to overwrite, double check the path entered).
       * Assumes your edited copy of Generalize.xml was copied to C:\ .
 
   10.	Generalize.xml is now updated with the workaround. Please run Sysprep with the generalize option enabled.
-
