@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_pseditions
+ms.technology:  powershell
+---
+
 # Items with compatible PowerShell Editions
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
@@ -21,3 +34,4 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 ## More details on authoring and finding the items with compatible PowerShell Editions
 ### [Modules with PSEditions](../psget/module/modulewithpseditionsupport.md)
 ### [Scripts with PSEditions](../psget/script/scriptwithpseditionsupport.md)
+

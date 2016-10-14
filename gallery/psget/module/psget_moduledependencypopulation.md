@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_moduledependencypopulation
+ms.technology:  powershell
+---
+
 # Logic for preparing the module dependencies during Publish operation
 1.	Modules listed as part of RequiredModules are considered as dependencies.
 2.	Modules listed as part of NestedModules, whose module base is not under the specified module base, are considered as dependencies.
@@ -17,3 +30,4 @@
 *During the module installation, above prepared dependencies list is used for installing the dependencies.*
 
 *Please ensure that your module’s dependencies are available under $env:PSModulePath on your system during publish operation.*
+

@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_update scriptfileinfo
+ms.technology:  powershell
+---
+
 # Update-ScriptFileInfo
 
 Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.
@@ -176,3 +189,4 @@ Function foo
 Foo
 
 ```
+

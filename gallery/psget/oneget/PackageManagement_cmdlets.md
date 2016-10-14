@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  PackageManagement_cmdlets
+ms.technology:  powershell
+---
+
 # PackageManagement Cmdlets
 This is the core of PackageManagement to support software discovery, installation, and inventory (SDII). Try out the cmdlets for these operations:
 -   Find-Package
