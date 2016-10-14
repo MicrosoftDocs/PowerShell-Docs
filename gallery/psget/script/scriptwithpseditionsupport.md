@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  scriptwithpseditionsupport
+ms.technology:  powershell
+---
+
 # Script with compatible PowerShell Editions
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 

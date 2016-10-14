@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  bootstrapping_nuget_proivder_and_exe
+ms.technology:  powershell
+---
+
 # Bootstrap both NuGet provider and NuGet.exe for publish-operations with single prompt message and bootstrap only NuGet provider for non-publish operations
 
 NuGet.exe is removed from the latest NuGet provider. 
@@ -85,3 +98,4 @@ VERBOSE: Installing NuGet provider.
 VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
+

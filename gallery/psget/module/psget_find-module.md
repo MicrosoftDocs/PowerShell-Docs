@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_find module
+ms.technology:  powershell
+---
+
 # Find-Module
 Finds modules from an online gallery that match specified criteria.
 
@@ -127,3 +140,4 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
+

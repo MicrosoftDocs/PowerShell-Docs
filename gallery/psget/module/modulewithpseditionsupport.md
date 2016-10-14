@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  modulewithpseditionsupport
+ms.technology:  powershell
+---
+
 # Modules with compatible PowerShell Editions
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
@@ -230,3 +243,4 @@ Find-Module -Tag PSEditon_Core
 ### [Scripts with PSEditions](../script/scriptwithpseditionsupport.md)
 ### [PSEditions support on PowerShellGallery](../../psgallery/psgallery_pseditions.md)
 ### [Update module manifest] (./psget_update-modulemanifest.md)
+

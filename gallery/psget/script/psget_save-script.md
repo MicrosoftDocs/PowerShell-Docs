@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_save script
+ms.technology:  powershell
+---
+
 # Save-Script
 
 Save-Script cmdlet lets you to review the script file by saving it to a specified location.
@@ -38,3 +51,4 @@ Version Name Author Description
 ------- ---- ------ -----------
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
+

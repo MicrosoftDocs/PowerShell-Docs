@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_publish script
+ms.technology:  powershell
+---
+
 # Publish-Script
 
 The Publish-Script cmdlet publishes the specified script to the online gallery.
@@ -64,3 +77,4 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
+
