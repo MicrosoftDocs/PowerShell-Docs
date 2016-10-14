@@ -1,3 +1,17 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  Deleting Items
+ms.technology:  powershell
+---
+
+
 # Deleting items
 
 The PowerShell Gallery does not support permanent deletion of items, because that would break anyone who is depending on it remaining available.
@@ -9,3 +23,4 @@ However, it remains downloadable by specifying its exact version, which is what 
 If you run into an exceptional situation where you think one of your items must be deleted, this can be handled manually by the PowerShell Gallery team. 
 For example, if there is a copyright infringement issue, or potentially harmful content, that could be a valid reason to delete it. 
 You should submit a support request through [PowerShell Gallery] (http://www.PowerShellGallery.com) in that case.
+

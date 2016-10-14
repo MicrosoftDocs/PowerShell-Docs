@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_register psrepository
+ms.technology:  powershell
+---
+
 # Register-PSRepository
 
 Gets the registered repositories on a computer.
@@ -103,3 +116,4 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
+

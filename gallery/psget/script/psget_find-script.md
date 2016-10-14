@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_find script
+ms.technology:  powershell
+---
+
 # Find-Script
 
 Finds the PowerShell script files from an online gallery that match specified criteria.
@@ -140,3 +153,4 @@ Cmdlet                         {}
 
 
 ```
+

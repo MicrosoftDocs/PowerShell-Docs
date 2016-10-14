@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_cmdlets_reference
+ms.technology:  powershell
+---
+
 # PowerShellGet cmdlet reference
 
 - [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
@@ -25,3 +38,4 @@
 - [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 - [Update-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619793)
 - [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
+

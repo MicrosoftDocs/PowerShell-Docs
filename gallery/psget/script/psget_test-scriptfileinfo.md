@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_test scriptfileinfo
+ms.technology:  powershell
+---
+
 # Test-ScriptFileInfo
 
 Validates the metadata comment block of a script file.
@@ -62,3 +75,4 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
+
