@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_set psrepository
+ms.technology:  powershell
+---
+
 # Set-PSRepository
 
 Set-PSRepository sets values for a registered repository.
@@ -57,3 +70,4 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
+

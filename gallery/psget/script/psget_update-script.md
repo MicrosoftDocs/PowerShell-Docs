@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_update script
+ms.technology:  powershell
+---
+
 # Update-Script
 
 Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.

@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_contacting_administrators
+ms.technology:  powershell
+---
+
 # Contact Gallery Administrators
 
 ## When to Contact Gallery Administrators
@@ -15,3 +28,4 @@ You should contact gallery administrators when:
 1. Send us an email: cgadmin@microsoft.com.
 2. If you are reporting abuse of an item, you can find Report Abuse link below the item information on the left panel.
 3. For any other general questions regarding the Gallery, please submit your question to [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
+

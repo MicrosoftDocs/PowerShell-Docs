@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_gettingstarted
+ms.technology:  powershell
+---
+
 # Get Started with the PowerShell Gallery
 
 ## What is the PowerShell Gallery?
@@ -213,3 +226,4 @@ PowerShell Gallery, run the
 [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 cmdlet. This command lists all of the scripts you have on your system
 that were installed directly from the PowerShell Gallery.
+

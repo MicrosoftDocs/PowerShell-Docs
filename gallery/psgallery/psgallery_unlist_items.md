@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_unlist_items
+ms.technology:  powershell
+---
+
 # Unlisting items
 
 **Why is removing an item from PowerShell Gallery not exposed as an option?**
