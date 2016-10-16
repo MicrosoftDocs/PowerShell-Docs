@@ -148,5 +148,5 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 |**Start PowerShell.exe** (Windows PowerShell console)|CTRL+SHIFT+P|
 
 ## See Also
-[Using the Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Using the Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

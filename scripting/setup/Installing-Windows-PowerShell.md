@@ -98,6 +98,5 @@ On Windows Server 2008 systems, Windows Management Framework (Windows PowerShell
 5.  Install Windows Management Framework 3.0 from the Microsoft Download Center at [http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290).
 
 ## See Also
-[Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-
-[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+- [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)

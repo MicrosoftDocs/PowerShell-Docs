@@ -15,7 +15,7 @@ The Windows PowerShell Integrated Scripting Environment (ISE) is one of two host
 
 The ISE lets you run commands in a console pane, but it also supports panes that you can use to simultaneously view the source code of your script and other tools that can plug into the ISE. You can even open up multiple script windows at the same time, which is especially helpful when you are debugging a script that uses functions defined in other scripts or modules.
 
-## <a name="BKMK_NEW"></a>What’s New
+## What’s New
 Here are some of the features that have been added to the ISE in the most recent releases of PowerShell.
 
 ### Added in PowerShell 3.0 (Windows Server 2012, Windows 8)
@@ -60,6 +60,6 @@ The ISE is available on any computer that can run Windows PowerShell v2.0 or lat
 > [!NOTE]
 > Because Windows PowerShell ISE requires a graphical user interface, you can’t run it on the Server Core option of Windows Server.
 
-## <a name="BKMK_LINKS"></a>See also
-[Using the Windows PowerShell Integrated Scripting Environment](http://technet.microsoft.com/library/cc732148.aspx)
+## See also
+- [Using the Windows PowerShell Integrated Scripting Environment](http://technet.microsoft.com/library/cc732148.aspx)
 

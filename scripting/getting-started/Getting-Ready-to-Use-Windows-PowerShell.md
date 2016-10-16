@@ -24,6 +24,6 @@ When Windows PowerShell is installed and started, consider the following setup o
     NOTE: If remoting is enabled on a computer that is running Windows PowerShell 2.0, remoting is still enabled after you install Windows Management Framework 3.0. However, on Windows Server 2008 (not Windows Server 2008 R2), you must re-enable remoting after installing Windows Management Framework 3.0.
 
 ## See Also
-[Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
-[Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [Starting Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
