@@ -75,11 +75,8 @@ The [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=29
 The Windows Management Framework 3.0 package that installs Windows PowerShell 3.0 on Windows 7, Windows Server 2008 R2, and Windows Server 2008, includes the Windows PowerShell 2.0 Engine. The Windows PowerShell 2.0 Engine is enabled and ready to use, if necessary, without additional installation, setup, or configuration.
 
 ## See Also
-[Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-
-[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
-
-[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-[Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+- [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+- [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
 

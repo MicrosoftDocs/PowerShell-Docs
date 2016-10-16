@@ -26,7 +26,6 @@ The topics include:
 -   [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 ## See Also
-[Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-
-[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+- [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+- [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 

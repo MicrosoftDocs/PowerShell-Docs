@@ -104,9 +104,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run i
 Also, the **WinRM** service is not present on Windows PE.
 
 ## See Also
-[Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
-
-[Installing Windows PowerShell](Installing-Windows-PowerShell.md)
-
-[Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+- [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
+- [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
