@@ -173,5 +173,5 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## See Also
-[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

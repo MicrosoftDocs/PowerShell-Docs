@@ -218,9 +218,9 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
 ## See Also
- [The PowerShellTabCollection Object](The-PowerShellTabCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](../ise/The-ISE-Object-Model-Hierarchy.md)
+- [The PowerShellTabCollection Object](The-PowerShellTabCollection-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   

@@ -25,11 +25,8 @@ Windows PowerShell providers are .NET programs that make the data in a specializ
 |[Variable Provider [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|Provides access to Windows PowerShell variables and their values.|
 
 ## See Also
-[Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
-
-[WSMan Provider [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
-
-[about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
-
-[Microsoft.PowerShell.Core Module](Microsoft.PowerShell.Core-Module.md)
+- [Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
+- [WSMan Provider [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+- [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
+- [Microsoft.PowerShell.Core Module](Microsoft.PowerShell.Core-Module.md)
 

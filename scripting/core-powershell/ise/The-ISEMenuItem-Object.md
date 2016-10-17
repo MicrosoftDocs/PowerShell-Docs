@@ -86,9 +86,9 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ```
 
 ## See Also
- [The ISEMenuItemCollection Object](The-ISEMenuItemCollection-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISEMenuItemCollection Object](The-ISEMenuItemCollection-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   
