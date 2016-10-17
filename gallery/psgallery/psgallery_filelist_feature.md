@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_filelist_feature
+ms.technology:  powershell
+---
+
 # FileList Feature in the Gallery
 
 You are able to view the contents in all items published in the gallery. 
@@ -8,3 +21,4 @@ This feature includes two parts: listing the files within the item, and displayi
 On each individual item page, you will be able to find FileList section and a **Show** link. Click on the Show and you will find a complete list of items contained in the item.
 
 Each supported file type is displayed as a hyperlink, and clicking it will take you to a new page with file contents displayed in PowerShell syntax highlighting. Clicking on the title or the version of the item, which is displayed at the top of the screen, will bring you back to item detail page.
+

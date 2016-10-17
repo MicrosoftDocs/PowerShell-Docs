@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psget_cmdlets_troubleshooting
+ms.technology:  powershell
+---
+
 ## How to resolve "WARNING: Package 'your package name' failed to download" issue?
 
 
@@ -14,3 +27,4 @@ Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
 Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
+

@@ -236,10 +236,10 @@ $myEditor.InsertText($selection.ToLower())
 ```
 
 ## See Also
- [The ISEFile Object](The-ISEFile-Object.md) 
- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISEFile Object](The-ISEFile-Object.md) 
+- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
+- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
   

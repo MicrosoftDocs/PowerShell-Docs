@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  Managing Item Owners
+ms.technology:  powershell
+---
+
 # Managing Item Owners
 
 Ownership of an item in the PowerShell Gallery is defined by who published the item to the gallery.
@@ -68,3 +81,4 @@ We will then follow a process to verify your ownership of the item.
 If we determine you should be an owner of the item, we will use the 'Manage Owners' link for the item ourselves and send you the invite to become an owner.
 We will only do this after verifying that you should be an owner and the process for this varies by circumstances.
 Often times, we will use the item's Project URL to find a way to contact the project owner, but we may also use Twitter, Email, or other means for contacting the project owner.
+

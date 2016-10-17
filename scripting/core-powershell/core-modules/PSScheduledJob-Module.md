@@ -25,10 +25,7 @@ This section contains the help topics for the **PSScheduledJob** module, which m
 [about_Scheduled_Jobs_Troubleshooting](https://technet.microsoft.com/en-us/library/70de91e9-675f-4b5f-9179-6104b9cc4f0d)
 
 ## See Also
-
-[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-
-[Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-
-[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

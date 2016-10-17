@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_dispute_resolution
+ms.technology:  powershell
+---
+
 # Dispute Resolution
 
 This document is a recommended dispute resolution process for community members to help resolve disputes with other PowerShell Gallery publishers.
@@ -27,3 +40,4 @@ Either publish code and get going or concede the name to someone who actually ha
 If you find a item that is in violation of any of these items, click the ‘Report Abuse’ link on the item details page and submit a report.
 
 **This policy is subject to change at the discretion of the PowerShell Gallery.**
+

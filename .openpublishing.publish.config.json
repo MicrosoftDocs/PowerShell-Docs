@@ -38,6 +38,20 @@
       }
     },
     {
+      "docset_name": "PowerShell_PowerShell-docs_reference",
+      "build_source_folder": "reference",
+      "build_output_subfolder": "reference",
+      "locale": "en-us",
+      "version": 0,
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "op"
+    },
+    {
       "docset_name": "PowerShell_PowerShell-docs_scripting",
       "build_source_folder": "scripting",
       "build_output_subfolder": "scripting",
@@ -58,26 +72,14 @@
       "type_mapping": {
         "Conceptual": "Content"
       }
-    },
-    {
-      "docset_name": "PowerShell_PowerShell-docs_reference",
-      "build_source_folder": "reference",
-      "build_output_subfolder": "reference",
-      "locale": "en-us",
-      "version": 0,
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "build_entry_point": "op"
     }
   ],
   "notification_subscribers": [
     ""
   ],
-  "branches_to_filter": [],
+  "branches_to_filter": [
+    ""
+  ],
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,

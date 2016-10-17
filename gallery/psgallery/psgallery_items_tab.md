@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_items_tab
+ms.technology:  powershell
+---
+
 Items Tab
 ==========
 
@@ -34,3 +47,4 @@ The Sort By drop down allows users to sort the results by:
 ##Search Box##
 The Search Box allows users to search the items on keywords.  
 See [Search Syntax](./psgallery_search_syntax.md) for more details.
+

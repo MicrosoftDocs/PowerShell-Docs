@@ -1,3 +1,16 @@
+---
+description:  
+manager:  carolz
+ms.topic:  article
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet,gallery
+ms.date:  2016-10-14
+contributor:  manikb
+title:  psgallery_status
+ms.technology:  powershell
+---
+
 PowerShell Gallery Status
 =========================
 
@@ -58,3 +71,4 @@ Microsoft.PowerShell.PackageManagement.Cmdlets.SavePackage
 __Preliminary root cause__: Engineers identified an outage in the underlying provider of Azure Content Deliver Network (CDN), which was deployed to the PowerShell Gallery on 5/17/2016.  
 __Mitigation__: Engineers disabled Azure CDN in the PowerShell Gallery.  
 __Next Steps__: Investigate the underlying root cause and developing a solution to prevent future occurrences.
+
