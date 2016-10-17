@@ -26,5 +26,5 @@ Beginning in Windows PowerShell v3, the Output pane was combined with the Consol
 -   Clear all the text in the Console pane. To clear the Console pane, you can click the **Clear Console Pane** icon on the toolbar, or run the command **Clear-Host** or its alias, **cls**.
 
 ## See Also
-[Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
