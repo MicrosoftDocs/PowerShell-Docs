@@ -37,13 +37,9 @@ This section contains the help topics for the **PSWorkflow** module, which inclu
 [about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 ## See Also
-[Getting Started with Windows PowerShell Workflow](http://go.microsoft.com/fwlink/?LinkID=252592)
-
-[Writing a Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
-
-[Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
-
-[Windows PowerShell Core About Topics](../core-modules/Windows-PowerShell-Core-About-Topics.md)
-
-[Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Getting Started with Windows PowerShell Workflow](http://go.microsoft.com/fwlink/?LinkID=252592)
+- [Writing a Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
+- [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
+- [Windows PowerShell Core About Topics](../core-modules/Windows-PowerShell-Core-About-Topics.md)
+- [Scripting with Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

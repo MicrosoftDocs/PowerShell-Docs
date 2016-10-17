@@ -21,5 +21,5 @@ This section contains the help topics for the cmdlets that are installed with th
 |[Expand-Archive](http://technet.microsoft.com/library/dn841359.aspx)|Extracts the contents of archive (or ZIP) files to a specified destination.|
 
 ## See Also
-[Core Modules in Windows PowerShell](http://technet.microsoft.com/library/hh847741.aspx)
+- [Core Modules in Windows PowerShell](http://technet.microsoft.com/library/hh847741.aspx)
 

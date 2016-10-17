@@ -47,6 +47,6 @@ ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
  Example: $psISE.PowerShellTabs.
 
 ## See Also
- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
