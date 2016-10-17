@@ -43,7 +43,9 @@ if (<test1>)
 ```
 
 
-When you run an If statement,  Windows PowerShell evaluates the <test1> conditional expression as true or false. If <test1> is true, <statement list 1> runs, and  Windows PowerShell exits the If statement. If <test1> is false,  Windows PowerShell evaluates the condition specified by the <test2> conditional statement.
+When you run an If statement,  Windows PowerShell evaluates the <test1> conditional expression as true or false.
+If <test1> is true, <statement list 1> runs, and  Windows PowerShell exits the If statement.
+If <test1> is false,  Windows PowerShell evaluates the condition specified by the <test2> conditional statement.
 
 If <test2> is true, <statement list 2> runs, and  Windows PowerShell exits the If statement. If both <test1> and <test2> evaluate to false, the <statement list 3> code block runs, and  Windows PowerShell exits the If statement.
 
