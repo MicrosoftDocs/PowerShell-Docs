@@ -17,9 +17,7 @@ ms.topic: article
 ms.assetid: b8ece39a-6774-4c28-9507-2c925e11c789
 ---
 # About If
-## about_If
 about_If
-
 
 ## SHORT DESCRIPTION
 Describes a language command you can use to run statement lists based on the results of one or more conditional tests.
