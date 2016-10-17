@@ -1,6 +1,6 @@
 ---
 title: about_Arithmetic_Operators
-description: 
+description:
 keywords: powershell, cmdlet
 author: jpjofre
 manager: carolz
@@ -16,9 +16,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e471f288-0182-4474-a2de-aa8353c3b09b
 ---
-# About Arithmetic Operators
-## about_Arithmetic_Operators
 
+# About Arithmetic Operators
 
 about_Arithmetic_Operators
 
@@ -28,12 +27,11 @@ Describes the operators that perform arithmetic in Windows PowerShell.
 
 # LONG DESCRIPTION
 
-
 Arithmetic operators calculate numeric values. You can use one or
 more arithmetic operators to add, subtract, multiply, and divide
 values, and to calculate the remainder (modulus) of a division operation.
 
-In addition, the addition operator (+) and multiplication operator (*)
+In addition, the addition operator (+) and multiplication operator (\*)
 also operate on strings, arrays, and hash tables. The addition operator
 concatenates the input. The multiplication operator returns multiple copies
 of the input. You can even mix object types in an arithmetic statement.
@@ -51,78 +49,70 @@ Windows PowerShell supports the following arithmetic operators:
 
 Operator  Description                             Example
 --------  -----------                             -------
-+         Adds integers; concatenates strings,    6+2
-arrays, and hash tables.                "file" + "name"
+\+         Adds integers; concatenates strings,   6 + 2  
+           concatenates strings,                  "file" + "name"  
+           concatenates arrays,                   @(1, "one") + @(2.0, "two")  
+           and hash tables.                       @{"one" = 1} + @{"two" = 2}  
 
--         Subtracts one value from another        6-2
-value.                                  (get-date).date - 1
+\-         Subtracts one value from another        6-2  
+           value.                                  (get-date).date - 1  
 
--         Makes a number a negative number.       -6+2
-# -4
+\-         Makes a number a negative number.       -6  
 
+\*         Multiplies numbers,                    6 * 2  
+           copies strings and arrays the          "!" * 3  
+           specified number of times.             @("!") * 4  
 
-Multiplies integers; copies strings     62
-and arrays the specified number of      "w" * 3
-times.
+/         Divides two values.                     6 / 2
 
-/         Divides two values.                     6/2
+%         Returns the remainder of a division     7 % 2  
+          operation.  
 
-%         Returns the remainder of a division     7%2
-operation.
+-shl      Shifts bits to the left the specified   100 -shl 2  
+          number of times. Available only on  
+          integer types.
 
--shl      Shift-left                              100 -shl 2
-
--shr      Shift-right                             100 -shr 1
+-shr      Shifts bits to the right the            100 -shr 2  
+          specified  number of times.  
+          Available only on integer  
+          types.
 
 # OPERATOR PRECEDENCE
 
 Windows PowerShell processes arithmetic operators in the following order:
 
-Parentheses ()
-- (for a negative number)
-# *, /, %
-
-+, - (for subtraction)
+1.  () parentheses   
+2.  \- (for a negative number)
+3.  \*, /, %
+4.  +, - (for subtraction)
 
 Windows PowerShell processes the expressions from left to right according
 to the precedence rules. The following examples show the effect of the
 precedence rules:
 
-# C:\PS> 3+6/3*4
+- C:\\PS> 3+6/3*4
+  - 11
 
-# 11
+- C:\\PS> 3+6/(3*4)  
+  - 3.5
 
-
-# C:\PS> 10+4/2
-
-# 12
-
-
-# C:\PS> (10+4)/2
-
-# 7
-
-
-# C:\PS> (3+3)/ (1+1)
-
-# 3
-
+- C:\\PS> (3+6)/3*4  
+    - 12
 
 The order in which Windows PowerShell evaluates expressions might differ
 from other programming and scripting languages that you have used. The
 following example shows a complicated assignment statement.
 
-C:\PS> $a = 0
-C:\PS> $b = 1,2
-C:\PS> $c = -1,-2
+```powershell
+C:\\PS> $a = 0
+C:\\PS> $b = 1,2
+C:\\PS> $c = -1,-2
 
-C:\PS> $b[$a] = $c[$a++]
+C:\\PS> $b[$a] = $c[$a++]
 
 C:\PS> $b
-# 1
-
-# -1
-
+1
+```
 
 In this example, the expression $a++ is evaluated before $c[$a++].
 Evaluating $a++ changes the value of $a. The variable $a in $b[$a]
@@ -652,6 +642,3 @@ about_operators
 about_variables
 Get-Date
 New-TimeSpan
-
-
-

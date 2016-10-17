@@ -1,6 +1,6 @@
 ---
 title: about_Aliases
-description: 
+description:
 keywords: powershell, cmdlet
 author: jpjofre
 manager: carolz
@@ -16,13 +16,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cdea5a41-39ec-4147-a781-fdc1ba8a360c
 ---
+
 # About Aliases
-## about_Aliases
+
 about_aliases
 
 
 ## SHORT DESCRIPTION
-Describes how to use alternate names for cmdlets and commands in  Windows PowerShell®.
+Describes how to use alternate names for cmdlets and commands in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -299,5 +300,3 @@ about_functions
 about_profiles
 
 about_providers
-
-
