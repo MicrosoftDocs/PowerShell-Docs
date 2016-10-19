@@ -11,6 +11,7 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=113327
 schema: 2.0.0
 title: Get-PSDrive
+ms.assetid: 6C176030-DE74-40F3-8F48-7B4D871C3238
 ---
 
 # Get-PSDrive
@@ -313,5 +314,6 @@ You cannot pipe objects to **Get-PSDrive**.
 [Remove-PSDrive](.\Remove-PSDrive.md)
 
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+
 
 
