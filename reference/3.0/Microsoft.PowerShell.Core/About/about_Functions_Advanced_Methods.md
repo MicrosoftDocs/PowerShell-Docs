@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Functions_Advanced_Methods
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 1982e85f-1132-4390-b899-b3dcc9456f84
 ---
 # About Functions Advanced Methods
 ## about_Functions_Advanced_Methods
@@ -219,5 +218,4 @@ about_Functions_Advanced
 about_Functions_Advanced_Parameters
 about_Functions_CmdletBindingAttribute
 about_Functions_OutputTypeAttribute
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822458
 schema: 2.0.0
 title: Select-String
-ms.assetid: 43D70212-90E0-4A89-A148-04D7DB9A7AB1
 ---
 
 # Select-String
@@ -509,5 +508,4 @@ If you use the *Quiet* parameter, the output is a Boolean value indicating wheth
   `Select-String -Path test.txt -Pattern "test" | Get-Member | Format-List -Property *`
 
 ## RELATED LINKS
-
 

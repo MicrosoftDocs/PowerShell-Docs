@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Quoting_Rules
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6c0cdbc7-d7a3-48b6-9970-14157ef26d66
 ---
 # About Quoting Rules
 ## about_Quoting_Rules
@@ -22,7 +21,7 @@ about_Quoting_Rules
 
 
 ## SHORT DESCRIPTION
-Describes rules for using single and double quotation marks in  Windows PowerShell®.
+Describes rules for using single and double quotation marks in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -360,5 +359,4 @@ about_Quotation_Marks
 about_Escape_Characters
 
 ConvertFrom-StringData
-
 

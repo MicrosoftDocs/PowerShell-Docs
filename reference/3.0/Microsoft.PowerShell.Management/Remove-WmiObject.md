@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -417,5 +417,4 @@ Otherwise, it does not generate any output.
 [New-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
 
 [Remove-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
-
 

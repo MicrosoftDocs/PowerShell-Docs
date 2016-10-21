@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -189,5 +189,4 @@ This cmdlet does not generate any output.
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
 

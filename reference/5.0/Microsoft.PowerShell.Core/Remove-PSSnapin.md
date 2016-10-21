@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -150,6 +150,5 @@ By default, **Remove-PSSnapin** does not generate any output.
 
 [Get-PSSnapin](.\Get-PSSnapin.md)
 
-[about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
-
+[about_Profiles](.\About\about_Profiles.md)
 

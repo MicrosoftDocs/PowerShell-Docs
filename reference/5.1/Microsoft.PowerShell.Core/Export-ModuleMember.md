@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822051
 schema: 2.0.0
 title: Export-ModuleMember
-ms.assetid: CBAD7943-DED7-4311-9956-DA867AD7233C
 ---
 
 # Export-ModuleMember
@@ -250,6 +249,4 @@ This cmdlet does not generate any output.
 [Import-Module](.\Import-Module.md)
 
 [Remove-Module](.\Remove-Module.md)
-
-
 

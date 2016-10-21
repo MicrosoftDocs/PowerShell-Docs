@@ -1,11 +1,10 @@
----
+﻿---
 title: Get-ChildItem for FileSystem
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e41726fc-44e6-445f-a47a-8201f1affc6e
 ---
 # Get-ChildItem for FileSystem
 Gets the files and folders in a file system drive.  
@@ -18,28 +17,28 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ```  
   
 ## Description  
- In a file system drive, the [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
+ In a file system drive, the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
   
- By default, [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets non\-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
+ By default, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets non-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
   
- Note: This custom cmdlet help file explains how the [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet works in a file system drive. For information about the [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) cmdlet in all drives, type "[Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \-Path $null" or see [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113308.  
+ Note: This custom cmdlet help file explains how the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet works in a file system drive. For information about the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) -Path $null" or see [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) at http://go.microsoft.com/fwlink/?LinkID=113308.  
   
 ## Parameters  
   
-### \-Attributes \<FileAttributes\]\>  
+### -Attributes <FileAttributes]>  
  Gets files and folders with the specified attributes. This parameter supports all attributes and lets you specify complex combinations of attributes.  
   
- For example, to get non\-system files \(not directories\) that are encrypted or compressed, type:  
+ For example, to get non-system files (not directories) that are encrypted or compressed, type:  
   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) \-Attributes \!Directory\+\!System\+Encrypted, \!Directory\+\!System\+Compressed  
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed  
   
  To find files and folders with commonly used attributes, you can use the Attributes parameter, or the Directory, File, Hidden, ReadOnly, and System switch parameters.  
   
- The Attributes parameter supports the following attributes: Archive, Compressed, Device, Directory, Encrypted, Hidden, Normal, NotContentIndexed, Offline, ReadOnly, ReparsePoint, SparseFile, System, and Temporary. For a description of these attributes, see the FileAttributes enumeration at http:\/\/go.microsoft.com\/fwlink\/?LinkId\=201508.  
+ The Attributes parameter supports the following attributes: Archive, Compressed, Device, Directory, Encrypted, Hidden, Normal, NotContentIndexed, Offline, ReadOnly, ReparsePoint, SparseFile, System, and Temporary. For a description of these attributes, see the FileAttributes enumeration at http://go.microsoft.com/fwlink/?LinkId=201508.  
   
  Use the following operators to combine attributes.  
   
- \!    NOT  
+ !    NOT  
   
  \+    AND  
   
@@ -53,7 +52,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
   
  H    Hidden  
   
- R    Read\-only  
+ R    Read-only  
   
  S     System  
   
@@ -65,8 +64,8 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Directory  
- Gets directories \(folders\).  
+### -Directory  
+ Gets directories (folders).  
   
  To get only directories, use the Directory parameter and omit the File parameter. To exclude directories, use the File parameter and omit the Directory parameter, or use the Attributes parameter.  
   
@@ -80,7 +79,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-File  
+### -File  
  Gets files.  
   
  To get only files, use the File parameter and omit the Directory parameter. To exclude files, use the Directory parameter and omit the File parameter, or use the Attributes parameter.  
@@ -95,8 +94,8 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Hidden  
- Gets only hidden files and directories \(folders\).  By default, [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190) gets only non\-hidden items, but you can use the Force parameter to include hidden items in the results.  
+### -Hidden  
+ Gets only hidden files and directories (folders).  By default, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets only non-hidden items, but you can use the Force parameter to include hidden items in the results.  
   
  To get only hidden items, use the Hidden parameter, its "h" or "ah" aliases, or the Hidden value of the Attributes parameter. To exclude hidden items, omit the Hidden parameter or use the Attributes parameter.  
   
@@ -108,10 +107,10 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-ReadOnly  
- Gets only read\-only files and directories \(folders\).  
+### -ReadOnly  
+ Gets only read-only files and directories (folders).  
   
- To get only read\-only items, use the ReadOnly parameter, its "ar" alias, or the ReadOnly value of the Attributes parameter. To exclude read\-only items, use the Attributes parameter.  
+ To get only read-only items, use the ReadOnly parameter, its "ar" alias, or the ReadOnly value of the Attributes parameter. To exclude read-only items, use the Attributes parameter.  
   
 |||  
 |-|-|  
@@ -121,8 +120,8 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-System  
- Gets only system files and directories \(folders\).  
+### -System  
+ Gets only system files and directories (folders).  
   
  To get only system files and folders, use the System parameter, its "as" alias, or the System value of the Attributes parameter. To exclude system files and folders, use the Attributes parameter.  
   
@@ -134,7 +133,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Force  
+### -Force  
  Gets hidden files and folders. By default, hidden files and folder are excluded. You can also get hidden files and folders by using the Hidden parameter or the Hidden value of the Attributes parameter.  
   
 |||  
@@ -145,8 +144,8 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about\_Transactions](../Topic/about_Transactions.md).  
+### -UseTransaction  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](..\..\About\about_Transactions.md).  
   
 |||  
 |-|-|  
@@ -156,15 +155,15 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.String\[\]<br /><br /> You can pipe a file system path \(in quotation marks\) to Get\-ChildItem.|  
+|Inputs|System.String[]<br /><br /> You can pipe a file system path (in quotation marks) to Get-ChildItem.|  
 |Outputs|System.IO.DirectoryInfo, System.IO.FileInfo, System.String|  
   
 ## Notes  
@@ -172,11 +171,11 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
   
  are effective only in file system drives.  
   
- Get\-ChildItem Alias Reference:  
+ Get-ChildItem Alias Reference:  
   
- \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-  
+ --------------------------------\-  
   
- Get\-ChildItem     dir  
+ Get-ChildItem     dir  
   
  Directory         d, ad  
   
@@ -281,12 +280,13 @@ This command retrieves only the names of items in the current directory.
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

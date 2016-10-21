@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822053
 schema: 2.0.0
 title: Get-Command
-ms.assetid: 59C6D302-6E8C-48B7-A6F6-F0172DF936AD
 ---
 
 # Get-Command
@@ -562,6 +561,4 @@ Represents workflows.
 ## RELATED LINKS
 
 [Get-Help](.\Get-Help.md)
-
-
 

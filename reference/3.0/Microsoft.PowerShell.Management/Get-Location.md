@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -287,5 +287,4 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 [Set-Location](.\Set-Location.md)
 
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
-
 

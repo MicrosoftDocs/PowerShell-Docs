@@ -1,4 +1,4 @@
----
+﻿---
 external help file: System.Management.Automation.dll-help.xml
 online version: http://technet.microsoft.com/library/hh852689(v=wps.630).aspx
 schema: 2.0.0

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -90,5 +90,4 @@ This cmdlet returns a **FileInfo** object that represents the temporary file.
 ## RELATED LINKS
 
 [about_Environment_Variables](..\Microsoft.PowerShell.Core\About\about_Environment_Variables.md)
-
 

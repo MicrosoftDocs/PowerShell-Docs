@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822421
 schema: 2.0.0
 title: Get-RunspaceDebug
-ms.assetid: 943A2A54-0255-4397-A7FA-CBCDBEF1D857
 ---
 
 # Get-RunspaceDebug
@@ -167,6 +166,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Disable-RunspaceDebug](.\Disable-RunspaceDebug.md)
 
 [Enable-RunspaceDebug](.\Enable-RunspaceDebug.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Scheduled_Jobs
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 3b546629-703c-4939-b44f-52dd567bce92
 ---
 # About Scheduled Jobs
 ## about_Scheduled_Jobs
@@ -285,6 +284,4 @@ Set-ScheduledJob
 Set-ScheduledJobOption
 Start-Job
 Unregister-ScheduledJob
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -649,5 +649,4 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 [New-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
 
 [Remove-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822504
 schema: 2.0.0
 title: Set-WSManQuickConfig
-ms.assetid: 6A0E74DB-94A7-445A-8485-F64CA1A4948A
 ---
 
 # Set-WSManQuickConfig
@@ -153,6 +152,4 @@ This cmdlet does not generate any output.
 [New-WSManSessionOption](.\New-WSManSessionOption.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

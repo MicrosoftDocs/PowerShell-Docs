@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
@@ -52,5 +52,4 @@ Stop-Transcript returns a string that contains a status message and the path to 
 ## RELATED LINKS
 
 [Start-Transcript](.\Start-Transcript.md)
-
 

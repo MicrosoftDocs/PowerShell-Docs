@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Job_Details
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 87511f90-984f-44d1-b869-8671b4181717
 ---
 # About Job Details
 ## about_Job_Details
@@ -350,7 +349,4 @@ Enter-PSSession
 Exit-PSSession
 Register-ScheduledJob
 Get-ScheduleJob
-
-
-
 

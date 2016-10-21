@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -486,5 +486,4 @@ You cannot pipe input to this cmdlet.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
 

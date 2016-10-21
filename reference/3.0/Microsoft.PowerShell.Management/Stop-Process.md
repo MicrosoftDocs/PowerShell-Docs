@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -267,5 +267,4 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
 

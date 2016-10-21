@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -149,6 +149,5 @@ For instructions, see about_Profiles.
 
 [Get-PSSnapin](.\Get-PSSnapin.md)
 
-[about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
-
+[about_Profiles](about_Profiles.md)
 

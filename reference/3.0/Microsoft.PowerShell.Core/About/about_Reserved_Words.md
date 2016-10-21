@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Reserved_Words
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f3dc2da5-d6c3-4a28-8a13-51fbc61c4e51
 ---
 # About Reserved Words
 ## about_Reserved_Words
@@ -73,5 +72,4 @@ about_Parsing
 about_Quoting_Rules
 about_Script_Blocks
 about_Special_Characters
-
 

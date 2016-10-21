@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822093
 schema: 2.0.0
 title: Suspend-Job
-ms.assetid: 3496F930-2C84-4A90-9C65-AD562F0DC4CF
 ---
 
 # Suspend-Job
@@ -394,6 +393,4 @@ This cmdlet returns the jobs that it suspended.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

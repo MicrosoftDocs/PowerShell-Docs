@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -405,5 +405,4 @@ This cmdlet does not generate any output.
 [Undo-Transaction](.\Undo-Transaction.md)
 
 [Use-Transaction](.\Use-Transaction.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -164,5 +164,4 @@ You can pipe a name or name pattern to the Get-ControlPanelItem cmdlet.
 ## RELATED LINKS
 
 [Show-ControlPanelItem](.\Show-ControlPanelItem.md)
-
 

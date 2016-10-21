@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -156,5 +156,4 @@ Get-Culture returns an object that represents the current culture.
 [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258)
 
 [Get-UICulture](.\Get-UICulture.md)
-
 

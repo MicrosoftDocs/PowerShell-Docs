@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -402,5 +402,4 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-ItemProperty](.\Remove-ItemProperty.md)
 
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
-
 

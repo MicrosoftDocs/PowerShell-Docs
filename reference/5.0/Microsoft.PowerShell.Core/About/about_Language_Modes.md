@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Language_Modes
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: fadcbd90-cddc-433e-8032-ca73f9e8a9ff
 ---
 # About Language Modes
 ## about_Language_Modes
@@ -272,5 +271,4 @@ about_RestrictedLanguage
 about_Session_ConfigurationFiles
 about_Session_Configurations
 about_Windows_RT
-
 

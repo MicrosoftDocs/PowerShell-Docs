@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
@@ -142,5 +142,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](.\Start-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
 

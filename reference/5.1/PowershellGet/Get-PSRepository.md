@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822325
 schema: 2.0.0
 title: Get-PSRepository
-ms.assetid: DFB7769F-BF99-4B43-8A83-8303B95AF330
 ---
 
 # Get-PSRepository
@@ -98,6 +97,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PSRepository](.\Set-PSRepository.md)
 
 [Unregister-PSRepository](.\Unregister-PSRepository.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822250
 schema: 2.0.0
 title: New-Item
-ms.assetid: 67038D02-6598-49C6-B5BD-77B59D445ABE
 ---
 
 # New-Item
@@ -305,6 +304,4 @@ This cmdlet returns the item that it creates.
 [Rename-Item](.\Rename-Item.md)
 
 [Set-Item](.\Set-Item.md)
-
-
 

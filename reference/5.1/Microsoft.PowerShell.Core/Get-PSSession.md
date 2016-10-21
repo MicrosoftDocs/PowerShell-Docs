@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822059
 schema: 2.0.0
 title: Get-PSSession
-ms.assetid: B2B10531-D0DF-4746-B877-E75C09955CB6
 ---
 
 # Get-PSSession
@@ -746,6 +745,4 @@ A value of **Busy** indicates that you cannot connect to the **PSSession** becau
 [New-PSSession](.\New-PSSession.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

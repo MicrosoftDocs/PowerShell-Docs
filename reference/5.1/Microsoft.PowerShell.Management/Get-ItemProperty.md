@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822233
 schema: 2.0.0
 title: Get-ItemProperty
-ms.assetid: D9774A6A-780F-4B5F-946B-02A54F9DEF80
 ---
 
 # Get-ItemProperty
@@ -324,6 +323,4 @@ For example, in a file system drive, it might return a file or folder.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
-
-
 

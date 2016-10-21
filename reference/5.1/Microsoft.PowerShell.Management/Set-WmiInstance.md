@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822280
 schema: 2.0.0
 title: Set-WmiInstance
-ms.assetid: B4533E81-AF2B-4E65-AE00-AECDF5BA5813
 ---
 
 # Set-WmiInstance
@@ -561,6 +560,4 @@ This cmdlet does not generate output.
 [Invoke-WmiMethod](.\Invoke-WmiMethod.md)
 
 [Remove-WmiObject](.\Remove-WmiObject.md)
-
-
 

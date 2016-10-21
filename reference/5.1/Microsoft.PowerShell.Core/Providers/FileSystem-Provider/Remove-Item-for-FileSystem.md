@@ -1,4 +1,4 @@
----
+﻿---
 title: "Remove-Item for FileSystem"
 ms.custom: na
 ms.date: 09/30/2014
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: bafc8a1e-748e-4079-be5c-7dd0724e822f
 caps.latest.revision: 10
 manager: stevenka
 ---
@@ -167,3 +166,4 @@ If you try to specify the file type in the path, such as "-path *.csv", the cmdl
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

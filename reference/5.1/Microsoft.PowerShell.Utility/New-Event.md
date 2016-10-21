@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822440
 schema: 2.0.0
 title: New-Event
-ms.assetid: D5F16C15-8A98-4221-8F96-0867578F5430
 ---
 
 # New-Event
@@ -165,6 +164,4 @@ You cannot pipe input to this cmdlet.
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

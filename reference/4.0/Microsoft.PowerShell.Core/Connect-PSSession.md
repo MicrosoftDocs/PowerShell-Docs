@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -656,5 +656,4 @@ Disconnected sessions are considered to be idle from the moment that they are di
 [about_Remote_Disconnected_Sessions](.\About\about_Remote_Disconnected_Sessions.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
-
 

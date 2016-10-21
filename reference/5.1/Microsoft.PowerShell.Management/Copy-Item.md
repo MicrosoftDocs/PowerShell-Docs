@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822212
 schema: 2.0.0
 title: Copy-Item
-ms.assetid: 60A19812-67AB-4B58-A6F5-34640EDAFBB0
 ---
 
 # Copy-Item
@@ -470,6 +469,4 @@ For more information, see about_Providers.
 [Set-Item](.\Set-Item.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

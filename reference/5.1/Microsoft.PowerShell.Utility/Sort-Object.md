@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822467
 schema: 2.0.0
 title: Sort-Object
-ms.assetid: 52C4A447-238D-43B4-8D3F-6AEE5864B905
 ---
 
 # Sort-Object
@@ -336,6 +335,4 @@ You can pipe the objects to be sorted to **Sort-Object**.
 [Select-Object](.\Select-Object.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

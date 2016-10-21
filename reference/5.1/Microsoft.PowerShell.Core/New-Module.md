@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822067
 schema: 2.0.0
 title: New-Module
-ms.assetid: E4D0486E-3235-441B-8D9B-4485985EFD04
 ---
 
 # New-Module
@@ -360,6 +359,4 @@ If you use the *ReturnResult* parameter, it returns the result of evaluating the
 [Import-Module](.\Import-Module.md)
 
 [Remove-Module](.\Remove-Module.md)
-
-
 

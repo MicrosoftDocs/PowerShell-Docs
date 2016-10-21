@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -120,5 +120,4 @@ Get-PfxCertificate returns an object for each certificate that it gets.
 [Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
 
 [about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
-
 

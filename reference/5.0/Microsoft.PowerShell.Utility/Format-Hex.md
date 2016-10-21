@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -178,5 +178,4 @@ If you specify the *Path* or *LiteralPath* parameter, the object also contains t
 [Format-Table](.\Format-Table.md)
 
 [Format-Wide](.\Format-Wide.md)
-
 

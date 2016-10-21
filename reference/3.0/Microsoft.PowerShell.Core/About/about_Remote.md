@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ef0d14ce-0263-4458-a987-c89e47784d27
 ---
 # About Remote
 ## about_Remote
@@ -241,5 +240,4 @@ about_Remote_Variables
 Enter-PSSession
 Invoke-Command
 New-PSSession
-
 

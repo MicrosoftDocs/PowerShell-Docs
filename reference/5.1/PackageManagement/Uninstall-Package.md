@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822312
 schema: 2.0.0
 title: Uninstall-Package
-ms.assetid: 0290E116-7753-4990-A29E-48F8166EF72D
 ---
 
 # Uninstall-Package
@@ -511,6 +510,4 @@ This cmdlet does not generate any output.
 [Install-Package](.\Install-Package.md)
 
 [Save-Package](.\Save-Package.md)
-
-
 

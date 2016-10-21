@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSDesiredStateConfiguration-help.xml
@@ -252,6 +252,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShellGet Module](cafc3706-104d-46ca-96af-f6f3482d3d1e)
-
+[Windows PowerShellGet Module](.\PowershellGet.md)
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -27,7 +27,7 @@ Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<Com
 ## DESCRIPTION
 The **Enable-PSRemoting** cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the WS-Management technology.
 
-By default, on Windows ServerÂ® 2012, Windows PowerShell remoting is enabled.
+By default, on Windows Server® 2012, Windows PowerShell remoting is enabled.
 You can use **Enable-PSRemoting** to enable Windows PowerShell remoting on other supported versions of Windows and to re-enable remoting on Windows Server 2012 if it becomes disabled.
 
 You have to run this command only one time on each computer that will receive commands.
@@ -213,10 +213,9 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 [Disable-PSRemoting](.\Disable-PSRemoting.md)
 
-[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+[WSMan Provider](..\Microsoft.WsMan.Management\Providers\WSMan-Provider.md)
 
 [about_Remote](.\About\about_Remote.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
-
 

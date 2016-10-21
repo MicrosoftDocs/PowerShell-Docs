@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822239
 schema: 2.0.0
 title: Get-Service
-ms.assetid: 77F3C94B-6FFD-4906-8216-3DEBBF5FFE79
 ---
 
 # Get-Service
@@ -399,6 +398,4 @@ The sort is based on the integer value, not the name.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

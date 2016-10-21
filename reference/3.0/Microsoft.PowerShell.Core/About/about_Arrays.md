@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Arrays
 description:
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: beca4530-77f9-4c0f-817b-ec7a48cdcf9d
 ---
 # About Arrays
 
@@ -301,3 +300,4 @@ about_Operators
 about_For
 about_Foreach
 about_While
+

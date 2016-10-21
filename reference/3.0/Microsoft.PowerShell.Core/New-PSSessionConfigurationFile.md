@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -775,5 +775,4 @@ The changes that you make affect all new sessions that use the session configura
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
-
 

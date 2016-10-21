@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822264
 schema: 2.0.0
 title: Rename-Computer
-ms.assetid: 60054009-A41F-468D-91D9-815B63DBDF48
 ---
 
 # Rename-Computer
@@ -314,6 +313,4 @@ Otherwise, it does not return any output.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
-
 

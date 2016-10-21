@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Data_Sections
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: d2d76c2d-ad7c-41fb-b745-7bdda8df131e
 ---
 # About Data Sections
 ## about_Data_Sections
@@ -207,5 +206,4 @@ about_Quoting_Rules
 about_Script_Internationalization
 ConvertFrom-StringData
 Import-LocalizedData
-
 

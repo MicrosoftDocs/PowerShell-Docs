@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Windows_PowerShell_ISE
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: dfa54d47-60c6-4fff-8197-c747e8d411bb
 ---
 # About Windows PowerShell ISE
 ## about_Windows_PowerShell_ISE
@@ -235,7 +234,4 @@ New-IseSnippet
 Save-Help
 Show-Command
 Update-Help
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/p/?linkid=290501
 schema: 2.0.0
 title: Get-PSProvider
-ms.assetid: 0FF66609-F423-43D0-AAED-B603080F2F22
 ---
 
 # Get-PSProvider
@@ -129,5 +128,4 @@ This cmdlet returns objects that represent the Windows PowerShell providers in t
 ## NOTES
 
 ## RELATED LINKS
-
 

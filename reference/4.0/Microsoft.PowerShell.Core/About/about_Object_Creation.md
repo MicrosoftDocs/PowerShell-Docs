@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Object_Creation
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 5726c203-961a-4945-8f08-344823d6fd01
 ---
 # About Object Creation
 ## about_Object_Creation
@@ -22,7 +21,7 @@ about_Object_Creation
 
 
 ## SHORT DESCRIPTION
-Explains how to create objects in  Windows PowerShell®.
+Explains how to create objects in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -258,5 +257,4 @@ Get-Member
 Import-Csv
 
 New-Object
-
 

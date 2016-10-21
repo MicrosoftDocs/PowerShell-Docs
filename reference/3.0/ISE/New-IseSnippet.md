@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: ISE-help.xml
@@ -218,5 +218,4 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 [Get-IseSnippet](.\Get-IseSnippet.md)
 
 [Import-IseSnippet](.\Import-IseSnippet.md)
-
 

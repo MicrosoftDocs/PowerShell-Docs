@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822430
 schema: 2.0.0
 title: Import-Csv
-ms.assetid: 2A767CED-0FC9-4896-A8F0-2C5BDEE49910
 ---
 
 # Import-Csv
@@ -395,6 +394,4 @@ This cmdlet returns the objects described by the content in the CSV file.
 [ConvertTo-Csv](.\ConvertTo-Csv.md)
 
 [Export-Csv](.\Export-Csv.md)
-
-
 

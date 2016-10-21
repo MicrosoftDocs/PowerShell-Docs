@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -235,5 +235,4 @@ To see the current settings of the event log properties, type "get-eventlog -lis
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
 

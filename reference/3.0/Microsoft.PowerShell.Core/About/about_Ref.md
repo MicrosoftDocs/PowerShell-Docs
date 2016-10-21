@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Ref
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f8e9ee14-4154-4977-8351-9519051694d4
 ---
 # About Ref
 ## about_Ref
@@ -87,5 +86,4 @@ about_Environment_Variables
 about_Functions
 
 about_Script_Blocks
-
 

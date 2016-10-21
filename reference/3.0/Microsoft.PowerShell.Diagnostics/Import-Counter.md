@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -344,5 +344,4 @@ If you use the Summary parameter, Import-Command returns a Microsoft.PowerShell.
 [Export-Counter](.\Export-Counter.md)
 
 [Get-Counter](.\Get-Counter.md)
-
 

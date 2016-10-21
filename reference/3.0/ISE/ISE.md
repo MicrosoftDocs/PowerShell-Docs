@@ -1,4 +1,4 @@
----
+﻿---
 title: ISE
 description: 
 keywords: powershell, cmdlet
@@ -21,15 +21,13 @@ This section contains the help topics for the cmdlets that are installed with th
 
 ## ISE Cmdlets
 ### [Get-IseSnippet](Get-IseSnippet.md)
-Gets snippets that the user created.
+Gets snippets that the user created.
+
 
 ### [Import-IseSnippet](Import-IseSnippet.md)
-Imports ISE snippets into the current session
+Imports ISE snippets into the current session
+
 
 ### [New-IseSnippet](New-IseSnippet.md)
-Creates a Windows PowerShell ISE code snippet.
-
-
-
-
+Creates a Windows PowerShell ISE code snippet.
 

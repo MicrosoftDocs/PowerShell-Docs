@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -347,5 +347,4 @@ If you use the ReturnResult parameter, it returns the result of evaluating the s
 [Remove-Module](.\Remove-Module.md)
 
 [about_Modules](.\About\about_Modules.md)
-
 

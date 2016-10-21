@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -292,5 +292,4 @@ For example, in a file system drive, it might return a file or folder.
 [Set-ItemProperty](.\Set-ItemProperty.md)
 
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822515
 schema: 2.0.0
 title: New-LocalGroup
-ms.assetid: 32B49632-D2CA-4F43-AF76-ED2FD25F90D7
 ---
 
 # New-LocalGroup
@@ -135,6 +134,4 @@ This cmdlet returns a security group.
 [Rename-LocalGroup](.\Rename-LocalGroup.md)
 
 [Set-LocalGroup](.\Set-LocalGroup.md)
-
-
 

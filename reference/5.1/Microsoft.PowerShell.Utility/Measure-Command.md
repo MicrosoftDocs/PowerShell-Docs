@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822437
 schema: 2.0.0
 title: Measure-Command
-ms.assetid: 4AF58DCE-FB25-4969-AAA8-463E7BE342DB
 ---
 
 # Measure-Command
@@ -132,6 +131,4 @@ For example, \<parameter-name\> \<value1\>, \<value2\>.
 ## RELATED LINKS
 
 [Trace-Command](.\Trace-Command.md)
-
-
 

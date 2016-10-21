@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote_Disconnected_Sessions
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: adc4b4b4-3d51-4e01-9be2-5a74f530e3f3
 ---
 # About Remote Disconnected Sessions
 ## about_Remote_Disconnected_Sessions
@@ -650,6 +649,4 @@ Connect-PSSession
 Get-PSSession
 Receive-PSSession
 Invoke-Command
-
-
 

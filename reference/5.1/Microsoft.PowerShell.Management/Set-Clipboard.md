@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822273
 schema: 2.0.0
 title: Set-Clipboard
-ms.assetid: 4D8308CD-FBDD-4F94-B34B-AB8FF6FFFAA3
 ---
 
 # Set-Clipboard
@@ -188,6 +187,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-Clipboard](.\Get-Clipboard.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822195
 schema: 2.0.0
 title: Stop-Transcript
-ms.assetid: 71BF7425-D76B-407B-A0C8-5F0E0934ABE3
 ---
 
 # Stop-Transcript
@@ -61,6 +60,4 @@ This cmdlet returns a string that contains a status message and the path to the 
 ## RELATED LINKS
 
 [Start-Transcript](.\Start-Transcript.md)
-
-
 

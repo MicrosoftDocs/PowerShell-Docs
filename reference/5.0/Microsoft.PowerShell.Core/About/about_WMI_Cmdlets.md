@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_WMI_Cmdlets
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: a5eb2977-2c7b-46df-9dab-9be581fda473
 ---
 # About WMI Cmdlets
 ## about_WMI_Cmdlets
@@ -22,7 +21,7 @@ about_WMI_cmdlets
 
 
 ## SHORT DESCRIPTION
-Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell®.
+Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -234,5 +233,4 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
-
 

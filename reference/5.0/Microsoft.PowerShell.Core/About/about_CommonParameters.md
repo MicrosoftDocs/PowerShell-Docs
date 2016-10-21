@@ -1,4 +1,4 @@
----
+﻿---
 title: about_CommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c3f5e229-8bfb-498e-bb84-b84444a323c4
 ---
 # About CommonParameters
 ## about_CommonParameters
@@ -525,6 +524,4 @@ Write-Debug
 Write-Warning
 Write-Error
 Write-Verbose
-
-
 

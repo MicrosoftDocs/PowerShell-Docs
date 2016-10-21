@@ -1,4 +1,4 @@
----
+﻿---
 title: about_For
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c6a9aadd-fcca-4869-b2f9-47e4b5f98e17
 ---
 # About For
 ## about_For
@@ -138,5 +137,4 @@ for ($i = 0; $i -ile 20; $i += 2) {Write-Host $i}
 about_Comparison_Operators
 
 about_Foreach
-
 

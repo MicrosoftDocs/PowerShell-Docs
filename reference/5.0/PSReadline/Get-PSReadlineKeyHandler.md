@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -156,5 +156,4 @@ This cmdlet returns one entry for each key binding, or chord, for bound function
 [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
 

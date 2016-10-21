@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822082
 schema: 2.0.0
 title: Remove-Job
-ms.assetid: EAA911AE-3A84-4279-A9DB-FEAD1DFDB8BB
 ---
 
 # Remove-Job
@@ -402,6 +401,4 @@ This cmdlet does not generate any output.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

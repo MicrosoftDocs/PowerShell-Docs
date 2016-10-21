@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Archive
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822314
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: 60C897B6-826F-4A9D-A11C-E8DD7457602B
 ---
 
 # Microsoft.PowerShell.Archive Module
@@ -27,10 +26,4 @@ Creates an archive, or zipped file, from specified files and folders.
 
 ### [Expand-Archive](.\Expand-Archive.md)
 Extracts files from a specified archive (zipped) file.
-
-
-
-
-
-
 

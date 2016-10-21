@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -365,5 +365,4 @@ Format-Table returns format objects that represent the table.
 [Format-List](.\Format-List.md)
 
 [Format-Wide](.\Format-Wide.md)
-
 

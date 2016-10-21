@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: ISE-help.xml
@@ -119,5 +119,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-IseSnippet](.\New-IseSnippet.md)
 
 [Import-IseSnippet](.\Import-IseSnippet.md)
-
 

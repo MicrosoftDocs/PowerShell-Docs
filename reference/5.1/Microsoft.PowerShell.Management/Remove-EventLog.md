@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822259
 schema: 2.0.0
 title: Remove-EventLog
-ms.assetid: 487325E7-2A78-49FE-9126-C56222A8FA58
 ---
 
 # Remove-EventLog
@@ -247,6 +246,4 @@ Applications that used the events sources to write entries to the original log w
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

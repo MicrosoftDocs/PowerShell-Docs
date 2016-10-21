@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_PSSessions
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: cb29f897-de6c-4a57-a698-a1e089511247
 ---
 # About PSSessions
 ## about_PSSessions
@@ -22,7 +21,7 @@ about_PSSessions
 
 
 ## SHORT DESCRIPTION
-Describes  Windows PowerShell® sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
+Describes  Windows PowerShell?sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 
 ## LONG DESCRIPTION
@@ -255,5 +254,4 @@ Invoke-Command
 New-PSSession
 
 Remove-PSSession
-
 

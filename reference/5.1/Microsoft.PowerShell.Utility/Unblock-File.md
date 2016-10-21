@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822471
 schema: 2.0.0
 title: Unblock-File
-ms.assetid: 7904D73A-AACC-4324-8C86-7329B24B0D6D
 ---
 
 # Unblock-File
@@ -179,6 +178,4 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Out-File](.\Out-File.md)
-
-
 

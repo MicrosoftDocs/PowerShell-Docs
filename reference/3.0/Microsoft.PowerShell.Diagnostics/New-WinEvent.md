@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -120,5 +120,4 @@ This cmdlet does to generate any output.
 ## RELATED LINKS
 
 [Get-WinEvent](.\Get-WinEvent.md)
-
 

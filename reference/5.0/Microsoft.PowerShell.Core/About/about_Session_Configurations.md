@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Session_Configurations
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: a2fbe12a-350c-4d04-be50-24102824e3ab
 ---
 # About Session Configurations
 ## about_session_configurations
@@ -334,5 +333,4 @@ Set-PSSessionConfiguration
 Test-PSSessionConfigurationFile
 Unregister-PSSessionConfiguration
 Windows Server Resources
-
 

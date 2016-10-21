@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Switch
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 8d1029fc-56f8-4cbc-b2ea-91c17a796053
 ---
 # About Switch
 ## about_Switch
@@ -241,5 +240,4 @@ about_Continue
 about_If
 
 about_Script_Blocks
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822276
 schema: 2.0.0
 title: Set-ItemProperty
-ms.assetid: C51196C2-F42A-4F92-8BEE-D79336A7EDC7
 ---
 
 # Set-ItemProperty
@@ -403,6 +402,4 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-ItemProperty](.\Remove-ItemProperty.md)
 
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
-
-
 

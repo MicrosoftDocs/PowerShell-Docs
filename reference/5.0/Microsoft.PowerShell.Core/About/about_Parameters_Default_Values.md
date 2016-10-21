@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Parameters_Default_Values
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f9e98218-b6c2-4341-9420-6b6f2c1f7915
 ---
 # About Parameters Default Values
 ## about_Parameters_Default_Values
@@ -34,7 +33,7 @@ This feature is especially useful when you must specify the same alternate param
 
 If the desired default value varies predictably, you can specify a script block that provides different default values for a parameter under different conditions.
 
-$PSDefaultParameterValues was introduced in  Windows PowerShell® 3.0.
+$PSDefaultParameterValues was introduced in  Windows PowerShell?3.0.
 
 
 ### SYNTAX
@@ -469,5 +468,4 @@ about_Preference_Variables
 about_Profiles
 
 about_Script_Blocks
-
 

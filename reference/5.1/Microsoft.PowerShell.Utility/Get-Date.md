@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822410
 schema: 2.0.0
 title: Get-Date
-ms.assetid: 277BA77F-F2BE-44D7-8F15-23069FAF0A4B
 ---
 
 # Get-Date
@@ -534,6 +533,4 @@ The format for the command is:
 [New-TimeSpan](.\New-TimeSpan.md)
 
 [Set-Date](.\Set-Date.md)
-
-
 

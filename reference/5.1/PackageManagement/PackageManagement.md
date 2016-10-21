@@ -1,4 +1,4 @@
----
+﻿---
 title: PackageManagement
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822298
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: DE62A74F-3CA9-41FA-89ED-DEABC48298FA
 ---
 
 # PackageManagement Module
@@ -71,10 +70,4 @@ Uninstalls one or more software packages.
 
 ### [Unregister-PackageSource](.\Unregister-PackageSource.md)
 Removes a registered package source.
-
-
-
-
-
-
 

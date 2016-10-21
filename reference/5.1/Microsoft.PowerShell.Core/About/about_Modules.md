@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Modules
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 94f57429-a539-4aee-bb0d-205cd7e801f9
 ---
 # About Modules
 ## about_Modules
@@ -496,7 +495,4 @@ Get-Help
 Get-Module
 Import-Module
 Remove-Module
-
-
-
 

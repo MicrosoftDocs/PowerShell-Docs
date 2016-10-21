@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -110,8 +110,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Debug-Runspace](.\Debug-Runspace.md)
 
-[New-Runspace](a62aaa44-222c-4e4a-b1e0-e6038e43a6eb)
+New-Runspace
 
-[Remove-Runspace](9705ada0-e39c-4b61-a633-e37c70d89c57)
-
+Remove-Runspace
 

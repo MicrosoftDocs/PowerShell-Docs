@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822275
 schema: 2.0.0
 title: Set-Item
-ms.assetid: 704C03FC-6FDD-46D6-9DA6-6D3A2196918C
 ---
 
 # Set-Item
@@ -329,6 +328,4 @@ For more information, see about_Providers.
 [Remove-Item](.\Remove-Item.md)
 
 [Rename-Item](.\Rename-Item.md)
-
-
 

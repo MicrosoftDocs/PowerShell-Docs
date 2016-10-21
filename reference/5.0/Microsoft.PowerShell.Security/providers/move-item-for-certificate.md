@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 8c439d82-f43a-44fc-aa47-19e032557f98
 caps.latest.revision: 9
 manager: stevenka
 ---
@@ -128,3 +127,4 @@ It uses a pipeline operator to send the certificates to the Move-Item cmdlet, wh
  [Get-PSDrive](..\..\Microsoft.PowerShell.Management\Get-PSDrive.md)   
  [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)   
  [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md)
+

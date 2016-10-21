@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -190,7 +190,7 @@ Accept wildcard characters: True
 ### -AllCentralAccessPolicies
 Gets information about all central access policies that are enabled on the computer.
 
-Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see "Central Access Policies" at http://go.microsoft.com/fwlink/?LinkId=238408http://go.microsoft.com/fwlink/?LinkId=238408.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -302,5 +302,4 @@ Windows PowerShell uses the GetSddlForm method of security descriptors to get th
 ## RELATED LINKS
 
 [Set-Acl](.\Set-Acl.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSDesiredStateConfiguration-help.xml
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ### -Syntax
 Indicates that the cmdlet returns the syntax view of the specified Desired State Configuration resources.
-The returned syntax shows how to use the resources in a Windows PowerShellÂ® script.
+The returned syntax shows how to use the resources in a Windows PowerShell® script.
 
 ```yaml
 Type: SwitchParameter
@@ -112,5 +112,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
-
 

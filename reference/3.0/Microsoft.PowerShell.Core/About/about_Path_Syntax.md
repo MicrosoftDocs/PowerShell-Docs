@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Path_Syntax
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: dcd25fa1-5e4c-43b8-a7c7-f555e1ce84e8
 ---
 # About Path Syntax
 ## about_Path_Syntax
@@ -22,7 +21,7 @@ about_Path_Syntax
 
 
 ## SHORT DESCRIPTION
-Describes the full and relative path name formats in  Windows PowerShell®.
+Describes the full and relative path name formats in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -92,5 +91,4 @@ For instance, suppose that you have two files that are each named Results.txt. T
 
 ## SEE ALSO
 about_Locations
-
 

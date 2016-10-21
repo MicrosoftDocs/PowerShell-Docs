@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Script_Internationalization
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: df55f2dc-7baa-4f8a-ae5c-edd8471ff473
 ---
 # About Script Internationalization
 ## about_Script_Internationalization
@@ -205,6 +204,4 @@ The remaining commands load the strings into an array and display
 them.
 
 $Day = DATA {
-
-
 

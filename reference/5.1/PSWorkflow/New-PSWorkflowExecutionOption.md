@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Workflow.ServiceCore.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821721
 schema: 2.0.0
 title: New-PSWorkflowExecutionOption
-ms.assetid: 99201F27-25EB-4779-B107-955D256CBEA5
 ---
 
 # New-PSWorkflowExecutionOption
@@ -428,6 +427,4 @@ Otherwise, it does not.
 ## RELATED LINKS
 
 [New-PSWorkflowSession](.\New-PSWorkflowSession.md)
-
-
 

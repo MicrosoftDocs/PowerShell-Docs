@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -186,8 +186,7 @@ This cmdlet does not return any output.
 
 [Set-PSDebug](.\Set-PSDebug.md)
 
-[about_Scopes](b71febbe-2769-4e5d-a754-8373ab1a848e)
+[about_Scopes](about_Scopes.md)
 
 [about_Debuggers](.\About\about_Debuggers.md)
-
 

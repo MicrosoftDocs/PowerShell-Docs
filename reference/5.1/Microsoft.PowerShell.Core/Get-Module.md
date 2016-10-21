@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822057
 schema: 2.0.0
 title: Get-Module
-ms.assetid: 2CCCD4C4-9A21-4C77-B691-984EE57242E1
 ---
 
 # Get-Module
@@ -561,6 +560,4 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [New-PSSession](.\New-PSSession.md)
 
 [Remove-Module](.\Remove-Module.md)
-
-
 

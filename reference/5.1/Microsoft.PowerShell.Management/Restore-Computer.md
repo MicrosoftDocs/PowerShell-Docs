@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822271
 schema: 2.0.0
 title: Restore-Computer
-ms.assetid: C570F18D-F1DD-462A-B00B-3EB1D2A81DFC
 ---
 
 # Restore-Computer
@@ -149,6 +148,4 @@ This cmdlet does not generate any output.
 [Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
 
 [Restart-Computer](.\Restart-Computer.md)
-
-
 

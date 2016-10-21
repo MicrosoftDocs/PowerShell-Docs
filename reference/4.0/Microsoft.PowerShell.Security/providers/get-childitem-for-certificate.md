@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 5f4c36ce-5c95-413a-87ad-eab0ee9e3e14
 caps.latest.revision: 10
 manager: stevenka
 ---
@@ -336,3 +335,4 @@ This command gets all certificates in the LocalMachine store location that have 
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)   
  [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md)
+

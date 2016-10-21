@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Functions_Advanced
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 95513aa6-a8e9-48a5-aa8a-677ad6fc5762
 ---
 # About Functions Advanced
 ## about_Functions_Advanced
@@ -99,5 +98,4 @@ about_Functions_Advanced_Parameters
 about_Functions_CmdletBindingAttribute
 about_Functions_OutputTypeAttribute
 Windows PowerShell Cmdlets (http://go.microsoft.com/fwlink/?LinkID=135279)
-
 

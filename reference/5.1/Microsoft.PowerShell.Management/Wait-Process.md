@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822296
 schema: 2.0.0
 title: Wait-Process
-ms.assetid: 861EB7B3-A18E-4445-9A69-2C65C420866F
 ---
 
 # Wait-Process
@@ -183,6 +182,4 @@ This cmdlet does not generate any output.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
-
 

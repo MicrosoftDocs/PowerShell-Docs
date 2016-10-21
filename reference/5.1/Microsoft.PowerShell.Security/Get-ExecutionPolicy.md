@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822371
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.assetid: F9F34CDC-63FB-47FC-ADF7-6DCDAFCC7431
 ---
 
 # Get-ExecutionPolicy
@@ -180,6 +179,4 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 [Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
-
-
 

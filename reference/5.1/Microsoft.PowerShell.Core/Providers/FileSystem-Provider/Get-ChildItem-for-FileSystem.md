@@ -1,4 +1,4 @@
----
+﻿---
 title: "Get-ChildItem for FileSystem"
 ms.custom: na
 ms.date: 07/31/2015
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: e41726fc-44e6-445f-a47a-8201f1affc6e
 caps.latest.revision: 10
 manager: stevenka
 ---
@@ -298,3 +297,4 @@ This command retrieves only the names of items in the current directory.
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

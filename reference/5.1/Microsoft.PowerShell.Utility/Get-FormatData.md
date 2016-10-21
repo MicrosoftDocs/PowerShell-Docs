@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822414
 schema: 2.0.0
 title: Get-FormatData
-ms.assetid: 1644B550-D90B-4C96-9E6A-659BB924969D
 ---
 
 # Get-FormatData
@@ -147,6 +146,4 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](.\Export-FormatData.md)
 
 [Update-FormatData](.\Update-FormatData.md)
-
-
 

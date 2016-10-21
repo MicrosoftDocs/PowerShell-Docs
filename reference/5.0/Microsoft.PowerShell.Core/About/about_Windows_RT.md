@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Windows_RT
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: effdf754-1a4b-45fb-9cb2-910389751e7d
 ---
 # About Windows RT
 ## about_Windows_RT
@@ -22,7 +21,7 @@ about_Windows_RT
 
 
 ## SHORT DESCRIPTION
-Explains limitations of  Windows PowerShell® 4.0 on Windows RT 8.1.
+Explains limitations of  Windows PowerShell?4.0 on Windows RT 8.1.
 
 
 ## LONG DESCRIPTION
@@ -73,5 +72,4 @@ about_Workflows
 Windows PowerShell System Requirements:
 
 (http:\/\/technet.microsoft.com\/library\/hh857337.aspx)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822413
 schema: 2.0.0
 title: Get-FileHash
-ms.assetid: 8161EF3C-C552-4755-B163-26419A72E0DC
 ---
 
 # Get-FileHash
@@ -178,6 +177,4 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](.\Format-List.md)
-
-
 

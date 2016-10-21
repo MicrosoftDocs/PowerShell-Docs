@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822048
 schema: 2.0.0
 title: Exit-PSHostProcess
-ms.assetid: 71C9EC3C-14BC-4F67-9394-E2FE6CF3C7BA
 ---
 
 # Exit-PSHostProcess
@@ -55,6 +54,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Enter-PSHostProcess](.\Enter-PSHostProcess.md)
-
-
 

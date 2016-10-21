@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822456
 schema: 2.0.0
 title: Select-Object
-ms.assetid: 2F182056-7955-4B77-9C58-64AB4A680074
 ---
 
 # Select-Object
@@ -390,6 +389,4 @@ You can pipe any object to **Select-Object**.
 [Group-Object](.\Group-Object.md)
 
 [Sort-Object](.\Sort-Object.md)
-
-
 

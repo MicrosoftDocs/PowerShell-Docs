@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -108,5 +108,4 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
 

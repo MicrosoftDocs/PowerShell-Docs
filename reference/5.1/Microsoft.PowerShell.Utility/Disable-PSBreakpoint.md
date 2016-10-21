@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822394
 schema: 2.0.0
 title: Disable-PSBreakpoint
-ms.assetid: D4974E9B-0AAA-4E20-B87F-F599A413E4E8
 ---
 
 # Disable-PSBreakpoint
@@ -203,6 +202,4 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](.\Set-PSBreakpoint.md)
-
-
 

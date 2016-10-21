@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -127,5 +127,4 @@ This cmdlet returns a string.
 [Out-String](.\Out-String.md)
 
 [Select-Object](.\Select-Object.md)
-
 

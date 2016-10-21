@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Script_Blocks
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: d9468e4c-abe0-494e-a684-a74363042b9f
 ---
 # About Script Blocks
 ## about_Script_Blocks
@@ -126,5 +125,4 @@ For more information about the call operator, see about_Operators.
 about_Functions
 about_Functions_Advanced
 about_Operators
-
 

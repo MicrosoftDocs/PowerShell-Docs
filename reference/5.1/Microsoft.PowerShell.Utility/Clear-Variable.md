@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822381
 schema: 2.0.0
 title: Clear-Variable
-ms.assetid: E8E9AF2F-E5C9-4AB8-8518-B305B1C4494A
 ---
 
 # Clear-Variable
@@ -242,6 +241,4 @@ For more information, see about_Aliases.
 [Remove-Variable](.\Remove-Variable.md)
 
 [Set-Variable](.\Set-Variable.md)
-
-
 

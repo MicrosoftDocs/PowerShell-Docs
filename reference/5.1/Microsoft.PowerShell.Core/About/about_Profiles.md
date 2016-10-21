@@ -1,11 +1,10 @@
----
+﻿---
 title: about_Profiles
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e1d9e30a-70cc-4f36-949f-fc7cd96b4054
 ---
 # About Profiles
 ## about_Profiles
@@ -326,6 +325,4 @@ about_Execution_Policies
 about_Signing
 about_Remote
 Set-ExecutionPolicy
-
-
 

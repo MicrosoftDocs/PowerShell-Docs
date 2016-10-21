@@ -1,4 +1,4 @@
----
+﻿---
 title: "FileSystem Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 0e494537-dfdf-437a-8b27-c21e30aa1f9f
 caps.latest.revision: 9
 manager: stevenka
 ---
@@ -552,3 +551,4 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 ## See Also  
  [about_Providers](..\About\about_Providers.md)
+

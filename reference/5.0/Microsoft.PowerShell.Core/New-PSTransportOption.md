@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -373,5 +373,4 @@ You cannot pipe input to this cmdlet.
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
-
 

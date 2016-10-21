@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822306
 schema: 2.0.0
 title: Import-PackageProvider
-ms.assetid: 9127EC5E-3B20-46CF-81A9-991080C02B40
 ---
 
 # Import-PackageProvider
@@ -175,6 +174,4 @@ You can pipe a **PackageProvider** object returned by **Get-PackageProvider** in
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Get-PackageProvider](.\Get-PackageProvider.md)
-
-
 

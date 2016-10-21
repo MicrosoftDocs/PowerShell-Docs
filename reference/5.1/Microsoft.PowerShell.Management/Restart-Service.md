@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822270
 schema: 2.0.0
 title: Restart-Service
-ms.assetid: 9FA33BC1-264E-40AA-8731-607CA99CC805
 ---
 
 # Restart-Service
@@ -254,6 +253,4 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

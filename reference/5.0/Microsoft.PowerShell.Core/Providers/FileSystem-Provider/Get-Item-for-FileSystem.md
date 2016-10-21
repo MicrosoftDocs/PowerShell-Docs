@@ -1,11 +1,10 @@
----
+﻿---
 title: Get-Item for FileSystem
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 0f6c1a5f-b0ee-4d6c-9c04-fbfd470aa7c1
 ---
 # Get-Item for FileSystem
 Gets files and folders.  
@@ -18,16 +17,16 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 ```  
   
 ## Description  
- In the file system, the [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) cmdlet gets files and folders.  
+ In the file system, the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet gets files and folders.  
   
- Note: This custom cmdlet help file explains how the [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) cmdlet works in a file system drive. For information about the [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) cmdlet in all drives, type "[Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) \-Path $null" or see [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113319.  
+ Note: This custom cmdlet help file explains how the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet works in a file system drive. For information about the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) -Path $null" or see [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) at http://go.microsoft.com/fwlink/?LinkID=113319.  
   
 ## Parameters  
   
-### \-Stream \<string\>  
- Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk \(\*\). This parameter is not valid on folders.  
+### -Stream <string\>  
+ Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk (*). This parameter is not valid on folders.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -39,16 +38,16 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.String\[ \]<br /><br /> You can pipe a path to the Get\-Item cmdlet.|  
-|Outputs|System.IO.FileInfo, System.IO.DirectoryInfo, Microsoft.PowerShell.Commands.AlternateStreamData<br /><br /> In the file system, Get\-Item returns files and folders. If you use the Stream parameter, it returns AlternateStreamData objects.|  
+|Inputs|System.String[ ]<br /><br /> You can pipe a path to the Get-Item cmdlet.|  
+|Outputs|System.IO.FileInfo, System.IO.DirectoryInfo, Microsoft.PowerShell.Commands.AlternateStreamData<br /><br /> In the file system, Get-Item returns files and folders. If you use the Stream parameter, it returns AlternateStreamData objects.|  
   
 ## Example 1  
   
@@ -170,13 +169,14 @@ This command gets items in the Windows directory with names that include a dot (
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413)   
- [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

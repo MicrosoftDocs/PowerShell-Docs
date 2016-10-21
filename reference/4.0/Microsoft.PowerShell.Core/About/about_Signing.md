@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Signing
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d
 ---
 # About Signing
 ## about_Signing
@@ -335,6 +334,4 @@ New-SelfSignedCertificate
 Set-ExecutionPolicy
 Set-AuthenticodeSignature
 "Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)
-
-
 

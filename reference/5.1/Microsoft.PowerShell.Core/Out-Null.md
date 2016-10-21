@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822077
 schema: 2.0.0
 title: Out-Null
-ms.assetid: 75391CA1-066E-402F-92C8-A41095D2854C
 ---
 
 # Out-Null
@@ -79,6 +78,4 @@ This cmdlet does not generate any output.
 [Out-Default](.\Out-Default.md)
 
 [Out-Host](.\Out-Host.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -630,5 +630,4 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 [Sort-Object](..\Microsoft.PowerShell.Utility\Sort-Object.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

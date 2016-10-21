@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822441
 schema: 2.0.0
 title: New-Guid
-ms.assetid: D8FFC643-16F6-4BB4-A5D3-8760C624C885
 ---
 
 # New-Guid
@@ -59,6 +58,4 @@ This cmdlet returns a GUID.
 ## RELATED LINKS
 
 [Windows PowerShelll Utility Module](.\Microsoft.PowerShell.Utility.md)
-
-
 

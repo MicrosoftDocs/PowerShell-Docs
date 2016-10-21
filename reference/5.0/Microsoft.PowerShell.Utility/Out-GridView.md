@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -444,5 +444,4 @@ To remove it, change the value.
 [Out-Printer](.\Out-Printer.md)
 
 [Out-String](.\Out-String.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822207
 schema: 2.0.0
 title: Clear-Item
-ms.assetid: E78220A3-D720-4347-BDBE-8F15F77F3AA1
 ---
 
 # Clear-Item
@@ -294,6 +293,4 @@ For more information, see about_Providers.
 [Rename-Item](.\Rename-Item.md)
 
 [Set-Item](.\Set-Item.md)
-
-
 

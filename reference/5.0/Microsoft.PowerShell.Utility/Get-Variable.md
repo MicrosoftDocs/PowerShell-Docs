@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -182,5 +182,4 @@ The object type depends on the variable.
 [Remove-Variable](.\Remove-Variable.md)
 
 [Set-Variable](.\Set-Variable.md)
-
 

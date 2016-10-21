@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822406
 schema: 2.0.0
 title: Format-Table
-ms.assetid: 2B56A2D0-C067-40E4-B744-979FBAF847E2
 ---
 
 # Format-Table
@@ -382,6 +381,4 @@ You can pipe any object to **Format-Table**.
 [Format-List](.\Format-List.md)
 
 [Format-Wide](.\Format-Wide.md)
-
-
 

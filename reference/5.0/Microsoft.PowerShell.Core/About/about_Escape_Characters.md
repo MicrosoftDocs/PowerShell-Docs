@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Escape_Characters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 576ca013-c4ca-4ade-bf46-b0d1ce2c778f
 ---
 # About Escape Characters
 ## about_Escape_Characters
@@ -133,5 +132,4 @@ see about_Parsing.
 # SEE ALSO
 
 about_Quoting_Rules
-
 

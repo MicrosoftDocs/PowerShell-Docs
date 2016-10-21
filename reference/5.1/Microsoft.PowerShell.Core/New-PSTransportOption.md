@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822074
 schema: 2.0.0
 title: New-PSTransportOption
-ms.assetid: F2684D55-E18D-40B8-A8F0-9FD683467DD0
 ---
 
 # New-PSTransportOption
@@ -372,6 +371,4 @@ You cannot pipe input to this cmdlet.
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
-
-
 

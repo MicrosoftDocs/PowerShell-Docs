@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822255
 schema: 2.0.0
 title: Pop-Location
-ms.assetid: C36CF84E-1380-4964-B986-01B4CC1489A5
 ---
 
 # Pop-Location
@@ -161,6 +160,4 @@ Otherwise, this cmdlet does not generate any output.
 [Push-Location](.\Push-Location.md)
 
 [Set-Location](.\Set-Location.md)
-
-
 

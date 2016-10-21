@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822369
 schema: 2.0.0
 title: Get-CmsMessage
-ms.assetid: EDC1DA07-533F-4B29-93E8-2AEC60AB3B85
 ---
 
 # Get-CmsMessage
@@ -149,6 +148,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Protect-CmsMessage](.\Protect-CmsMessage.md)
 
 [Unprotect-CmsMessage](.\Unprotect-CmsMessage.md)
-
-
 

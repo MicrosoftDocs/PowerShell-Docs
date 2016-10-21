@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -151,5 +151,4 @@ Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 digit
 [ConvertTo-SecureString](.\ConvertTo-SecureString.md)
 
 [Read-Host](..\Microsoft.PowerShell.Utility\Read-Host.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822063
 schema: 2.0.0
 title: Import-Module
-ms.assetid: AF616C24-E122-4098-930E-1E3EA2080ADE
 ---
 
 # Import-Module
@@ -992,6 +991,4 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [New-Module](.\New-Module.md)
 
 [Remove-Module](.\Remove-Module.md)
-
-
 

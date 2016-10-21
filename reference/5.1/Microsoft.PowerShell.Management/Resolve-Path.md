@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822268
 schema: 2.0.0
 title: Resolve-Path
-ms.assetid: F84DD2A9-2961-400B-8B0A-45551B886172
 ---
 
 # Resolve-Path
@@ -211,6 +210,4 @@ Otherwise, it returns a **PathInfo** object.
 [Split-Path](.\Split-Path.md)
 
 [Test-Path](.\Test-Path.md)
-
-
 

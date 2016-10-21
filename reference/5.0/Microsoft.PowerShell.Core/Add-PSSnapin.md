@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -153,8 +153,7 @@ Otherwise, this cmdlet does not generate any output.
 
 [Remove-PSSnapin](.\Remove-PSSnapin.md)
 
-[about_Profiles](c555334d-3000-4fc4-a076-1486c3ed27ec)
+[about_Profiles](.\About\about_Profiles.md)
 
 [about_PSSnapins](.\About\about_PSSnapins.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -653,5 +653,4 @@ You cannot pipe input to this cmdlet.
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
-
 

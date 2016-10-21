@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822055
 schema: 2.0.0
 title: Get-History
-ms.assetid: 023A54F7-7E13-4699-8B0A-5F348B2A8125
 ---
 
 # Get-History
@@ -148,6 +147,4 @@ This cmdlet returns a history object for each history item that it gets.
 [Clear-History](.\Clear-History.md)
 
 [Invoke-History](.\Invoke-History.md)
-
-
 

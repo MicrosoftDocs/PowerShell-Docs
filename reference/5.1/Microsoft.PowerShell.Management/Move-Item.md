@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822247
 schema: 2.0.0
 title: Move-Item
-ms.assetid: DE1B4217-DE99-45CD-A12C-35E87B0C8466
 ---
 
 # Move-Item
@@ -372,6 +371,4 @@ For more information, see about_Providers.
 [Set-Item](.\Set-Item.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822322
 schema: 2.0.0
 title: Find-Script
-ms.assetid: BA918F1E-1606-4CFD-B0FF-2C2EB821F586
 ---
 
 # Find-Script
@@ -415,6 +414,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Script](.\Uninstall-Script.md)
 
 [Update-Script](.\Update-Script.md)
-
-
 

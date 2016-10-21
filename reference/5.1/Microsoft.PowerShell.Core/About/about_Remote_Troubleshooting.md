@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote_Troubleshooting
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 81b8bd3d-73f6-4e1b-a6a0-d03cd575029b
 ---
 # About Remote Troubleshooting
 ## about_Remote_Troubleshooting
@@ -783,6 +782,4 @@ Online version: http://technet.microsoft.com/library/hh847850(v=wps.630).aspx
 about_Remote
 about_Remote_Requirements
 about_Remote_Variables
-
-
 

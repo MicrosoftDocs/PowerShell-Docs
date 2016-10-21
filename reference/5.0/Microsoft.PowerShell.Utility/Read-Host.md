@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -103,7 +103,7 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
 
 [ConvertFrom-SecureString](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
 
@@ -112,5 +112,4 @@ Otherwise, it returns a string.
 [Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
 
 [Write-Host](.\Write-Host.md)
-
 

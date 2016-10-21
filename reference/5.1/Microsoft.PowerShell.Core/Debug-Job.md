@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822040
 schema: 2.0.0
 title: Debug-Job
-ms.assetid: A4FAC35B-B92F-49FD-9658-3D39CAEEC9B4
 ---
 
 # Debug-Job
@@ -213,6 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

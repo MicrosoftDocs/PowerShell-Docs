@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822498
 schema: 2.0.0
 title: Get-WSManInstance
-ms.assetid: 06DAE292-BD46-4F6A-A246-C7C7C057DB90
 ---
 
 # Get-WSManInstance
@@ -827,6 +826,4 @@ This cmdlet generates an **XMLElement** object.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

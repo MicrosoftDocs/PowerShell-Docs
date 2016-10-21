@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822270
 schema: 2.0.0
 title: Set-Content
-ms.assetid: A8B56D7E-CEBD-4049-9184-62926EF448E2
 ---
 
 # Set-Content
@@ -403,6 +402,4 @@ For more information, see about_Providers.
 [Clear-Content](.\Clear-Content.md)
 
 [Get-Content](.\Get-Content.md)
-
-
 

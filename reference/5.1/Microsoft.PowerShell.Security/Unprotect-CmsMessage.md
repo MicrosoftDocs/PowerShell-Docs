@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822377
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.assetid: C3D662BF-E6F4-4F43-A75E-F58BF8C9A4CB
 ---
 
 # Unprotect-CmsMessage
@@ -191,6 +190,4 @@ You can pipe an object containing encrypted content to **Unprotect-CmsMessage**.
 [Get-CmsMessage](.\Get-CmsMessage.md)
 
 [Protect-CmsMessage](.\Protect-CmsMessage.md)
-
-
 

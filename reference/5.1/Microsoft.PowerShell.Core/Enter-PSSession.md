@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822047
 schema: 2.0.0
 title: Enter-PSSession
-ms.assetid: 4E1E012B-51DF-4FEA-9FF2-DC859EEE13FE
 ---
 
 # Enter-PSSession
@@ -662,6 +661,4 @@ The cmdlet does not return any output.
 [Disconnect-PSSession](.\Disconnect-PSSession.md)
 
 [Receive-PSSession](.\Receive-PSSession.md)
-
-
 

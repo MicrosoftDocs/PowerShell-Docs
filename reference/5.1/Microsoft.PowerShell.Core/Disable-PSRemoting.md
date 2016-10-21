@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822041
 schema: 2.0.0
 title: Disable-PSRemoting
-ms.assetid: 01EC8114-10A2-4698-810A-BC1B991F29CE
 ---
 
 # Disable-PSRemoting
@@ -338,6 +337,4 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 [Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Diagnostics
 description: 
 keywords: powershell, cmdlet
@@ -21,21 +21,21 @@ This section contains the help topics for the cmdlets that are installed with Wi
 
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 ### [Export-Counter](Export-Counter.md)
-The Export-Counter cmdlet takes PerformanceCounterSampleSet objects and exports them as counter log files.
+The Export-Counter cmdlet takes PerformanceCounterSampleSet objects and exports them as counter log files.
+
 
 ### [Get-Counter](Get-Counter.md)
-Gets performance counter data from local and remote computers.
+Gets performance counter data from local and remote computers.
+
 
 ### [Get-WinEvent](Get-WinEvent.md)
-Gets events from event logs and event tracing log files on local and remote computers.
+Gets events from event logs and event tracing log files on local and remote computers.
+
 
 ### [Import-Counter](Import-Counter.md)
-Imports performance counter log files (.blg, .csv, .tsv) and creates the objects that represent each counter sample in the log.
+Imports performance counter log files (.blg, .csv, .tsv) and creates the objects that represent each counter sample in the log.
+
 
 ### [New-WinEvent](New-WinEvent.md)
-Creates a new Windows event for the specified event provider.
-
-
-
-
+Creates a new Windows event for the specified event provider.
 

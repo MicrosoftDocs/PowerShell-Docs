@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822282
 schema: 2.0.0
 title: Show-EventLog
-ms.assetid: A3B0F5AD-0438-42C7-915B-D1B4793A431C
 ---
 
 # Show-EventLog
@@ -106,6 +105,4 @@ This cmdlet does not generate any output.
 [Remove-EventLog](.\Remove-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

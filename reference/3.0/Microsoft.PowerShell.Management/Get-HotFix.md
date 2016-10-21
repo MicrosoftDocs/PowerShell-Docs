@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -158,5 +158,4 @@ Get-Hotfix returns objects that represent the hotfixes on the computer.
 ## RELATED LINKS
 
 [Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Get-DSCLocalConfigurationManager.cdxml-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822023
 schema: 2.0.0
 title: Get-DscLocalConfigurationManager
-ms.assetid: 4BE1B1DF-DC85-4508-9C90-67155F248888
 ---
 
 # Get-DscLocalConfigurationManager
@@ -117,6 +116,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
 [Set-DscLocalConfigurationManager](.\Set-DscLocalConfigurationManager.md)
-
-
 

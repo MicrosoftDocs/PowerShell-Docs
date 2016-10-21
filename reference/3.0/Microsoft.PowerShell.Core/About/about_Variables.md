@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Variables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 525d1c2b-0852-4363-ac5a-721f0bb24aea
 ---
 # About Variables
 ## about_Variables
@@ -22,7 +21,7 @@ about_Variables
 
 
 ## SHORT DESCRIPTION
-Describes how variables store values that can be used in  Windows PowerShell®.
+Describes how variables store values that can be used in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -358,5 +357,4 @@ about_Profiles
 about_Quoting_Rules
 
 about_Scopes
-
 

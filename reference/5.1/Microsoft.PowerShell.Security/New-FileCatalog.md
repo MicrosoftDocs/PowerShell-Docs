@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822569
 schema: 2.0.0
 title: New-FileCatalog
-ms.assetid: D52E5E95-0A82-48E6-9CB7-22E87404DB50
 ---
 
 # New-FileCatalog
@@ -117,5 +116,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

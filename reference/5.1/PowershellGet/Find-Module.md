@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822320
 schema: 2.0.0
 title: Find-Module
-ms.assetid: D70909CA-B3BD-4859-81F4-5B68731C8FEB
 ---
 
 # Find-Module
@@ -396,6 +395,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
-
 

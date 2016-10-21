@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822392
 schema: 2.0.0
 title: ConvertTo-Xml
-ms.assetid: 2A4A0F4D-707B-4751-BD08-5DA69FC81C98
 ---
 
 # ConvertTo-Xml
@@ -159,6 +158,4 @@ The value of the *As* parameter determines the type of object that **ConvertTo-X
 [Get-Date](.\Get-Date.md)
 
 [Import-Clixml](.\Import-Clixml.md)
-
-
 

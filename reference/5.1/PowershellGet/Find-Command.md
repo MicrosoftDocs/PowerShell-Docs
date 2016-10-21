@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822318
 schema: 2.0.0
 title: Find-Command
-ms.assetid: C0383A4F-695E-4041-9255-B31C3960411F
 ---
 
 # Find-Command
@@ -268,5 +267,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

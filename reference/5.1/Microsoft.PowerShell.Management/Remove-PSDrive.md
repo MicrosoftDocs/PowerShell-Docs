@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822262
 schema: 2.0.0
 title: Remove-PSDrive
-ms.assetid: 0E9A8BA8-73B0-4C86-B12F-604AF804592A
 ---
 
 # Remove-PSDrive
@@ -220,6 +219,4 @@ This cmdlet does not return any output.
 [Get-PSDrive](.\Get-PSDrive.md)
 
 [New-PSDrive](.\New-PSDrive.md)
-
-
 

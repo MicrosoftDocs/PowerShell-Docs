@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822401
 schema: 2.0.0
 title: Export-FormatData
-ms.assetid: 3226AC28-FCC3-4F5E-8EF8-71BC8D3C8F29
 ---
 
 # Export-FormatData
@@ -232,6 +231,4 @@ It generates a file and saves it in the specified path.
 [Get-FormatData](.\Get-FormatData.md)
 
 [Update-FormatData](.\Update-FormatData.md)
-
-
 

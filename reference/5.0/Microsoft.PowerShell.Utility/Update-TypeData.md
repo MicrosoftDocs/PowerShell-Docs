@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -66,7 +66,7 @@ If you are getting .NET Framework properties, you can work around the suppressio
 Note that method syntax can only be used with .NET Framework properties.
 Properties that are added by running the **Update-TypeData** cmdlet cannot use method syntax.
 
-For more information about the *types.ps1xml files in Windows PowerShell, see about_Types.ps1xml (http://technet.microsoft.com/library/hh847881.aspx).
+For more information about the *types.ps1xml files in Windows PowerShell, see about_Types.ps1xml (..\Microsoft.PowerShell.Core\About\about_Types.ps1xml.md).
 
 ## EXAMPLES
 
@@ -639,10 +639,9 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[about_Types.ps1xml](http://technet.microsoft.com/library/hh847881.aspx)
+[about_Types.ps1xml](..\Microsoft.PowerShell.Core\About\about_Types.ps1xml.md)
 
 [Get-TypeData](.\Get-TypeData.md)
 
 [Remove-TypeData](.\Remove-TypeData.md)
-
 

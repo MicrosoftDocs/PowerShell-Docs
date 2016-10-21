@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -130,6 +130,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Core Cmdlets](1ce19f56-8359-408e-addd-d5635e52a1f5#VerbList)
-
+[Core Cmdlets](.\Microsoft.PowerShell.Core.md)
 

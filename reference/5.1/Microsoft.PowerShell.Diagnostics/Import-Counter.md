@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822109
 schema: 2.0.0
 title: Import-Counter
-ms.assetid: B1E3833D-F67C-4A63-B1FE-228FD8F25B30
 ---
 
 # Import-Counter
@@ -354,6 +353,4 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 [Export-Counter](.\Export-Counter.md)
 
 [Get-Counter](.\Get-Counter.md)
-
-
 

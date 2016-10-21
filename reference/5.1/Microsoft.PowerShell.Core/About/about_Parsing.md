@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Parsing
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: df040a15-fb2c-461d-acdd-2a62a0a4d14d
 ---
 # About Parsing
 ## about_Parsing
@@ -120,5 +119,4 @@ X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 # SEE ALSO
 
 about_Command_Syntax
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Utility
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822378
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: 76BFD646-9D65-49D4-AB67-337EBF05A6EB
 ---
 
 # Microsoft.PowerShell.Utility Module
@@ -447,10 +446,4 @@ Writes text to the verbose message stream.
 
 ### [Write-Warning](.\Write-Warning.md)
 Writes a warning message.
-
-
-
-
-
-
 

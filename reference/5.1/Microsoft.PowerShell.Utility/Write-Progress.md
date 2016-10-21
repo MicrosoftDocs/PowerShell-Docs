@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822483
 schema: 2.0.0
 title: Write-Progress
-ms.assetid: 3E78A07F-87AE-4BC2-AC28-B0163831FD80
 ---
 
 # Write-Progress
@@ -271,6 +270,4 @@ You cannot pipe input to this cmdlet.
 [Write-Verbose](.\Write-Verbose.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

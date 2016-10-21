@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822436
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.assetid: 3E3DAC17-3373-4D22-A54A-9D56A4A556C3
 ---
 
 # Invoke-WebRequest
@@ -622,6 +621,4 @@ You can pipe the body of a web request to **Invoke-WebRequest**.
 [ConvertFrom-Json](.\ConvertFrom-Json.md)
 
 [ConvertTo-Json](.\ConvertTo-Json.md)
-
-
 

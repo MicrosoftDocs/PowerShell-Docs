@@ -1,4 +1,4 @@
----
+﻿---
 title: PSScheduledJob
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 50cdb55f-5ab7-489f-9e94-4ec21ff51e59
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822344
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: DE2215F0-B525-4F65-A059-480B786C6B11
 ---
 
 # PSScheduledJob Module
@@ -83,10 +82,4 @@ Changes scheduled jobs.
 
 ### [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
 Deletes scheduled jobs on the local computer.
-
-
-
-
-
-
 

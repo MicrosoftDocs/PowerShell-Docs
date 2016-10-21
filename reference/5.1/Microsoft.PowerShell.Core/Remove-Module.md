@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822083
 schema: 2.0.0
 title: Remove-Module
-ms.assetid: C0968566-4D7E-49E9-82B9-E4DF1F489267
 ---
 
 # Remove-Module
@@ -218,6 +217,4 @@ This cmdlet does not generate any output.
 [Get-Module](.\Get-Module.md)
 
 [Import-Module](.\Import-Module.md)
-
-
 

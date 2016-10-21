@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822258
 schema: 2.0.0
 title: Remove-Computer
-ms.assetid: 89871167-713A-4F43-AF35-E2891B8849E6
 ---
 
 # Remove-Computer
@@ -303,6 +302,4 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Computer](.\Stop-Computer.md)
 
 [Test-Connection](.\Test-Connection.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822448
 schema: 2.0.0
 title: Out-Printer
-ms.assetid: 22E377D5-B533-442F-987E-B3166BDDCD6B
 ---
 
 # Out-Printer
@@ -130,6 +129,4 @@ If you pipe the output of **Out-Printer** to Get-Member, **Get-Member** reports 
 [Out-File](.\Out-File.md)
 
 [Out-String](.\Out-String.md)
-
-
 

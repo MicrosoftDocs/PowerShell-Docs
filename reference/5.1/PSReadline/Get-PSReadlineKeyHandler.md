@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822010
 schema: 2.0.0
 title: Get-PSReadlineKeyHandler
-ms.assetid: 6E71A157-C79A-400C-86B9-A99306B4B7DE
 ---
 
 # Get-PSReadlineKeyHandler
@@ -157,6 +156,4 @@ This cmdlet returns one entry for each key binding, or chord, for bound function
 [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
-
 

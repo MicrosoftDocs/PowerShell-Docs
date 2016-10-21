@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -386,5 +386,4 @@ The sort is based on the integer value, not the name.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
 

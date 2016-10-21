@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: ac8b67d5-2728-4ada-8b4d-6190cf2c9092
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -120,3 +119,4 @@ This command creates a security entry in the Security directory of Resource_5967
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

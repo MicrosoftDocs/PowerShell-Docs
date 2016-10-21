@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822054
 schema: 2.0.0
 title: Get-Help
-ms.assetid: 1F46EEB4-49D7-4BEC-BB29-395D9B42F54A
 ---
 
 # Get-Help
@@ -634,6 +633,4 @@ Indicates whether the value of a parameter can include wildcard characters, such
 [about_Command_Syntax](.\About\about_Command_Syntax.md)
 
 [Get-Command](.\Get-Command.md)
-
-
 

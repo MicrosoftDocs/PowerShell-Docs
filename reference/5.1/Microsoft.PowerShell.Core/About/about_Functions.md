@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Functions
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: b29b6f17-2469-4047-a875-ce0e79c30ab2
 ---
 # About Functions
 ## about_Functions
@@ -499,7 +498,4 @@ about_Profiles
 about_Scopes
 about_Script_Blocks
 Function (provider)
-
-
-
 

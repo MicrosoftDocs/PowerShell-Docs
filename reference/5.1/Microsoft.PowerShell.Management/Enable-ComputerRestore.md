@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822216
 schema: 2.0.0
 title: Enable-ComputerRestore
-ms.assetid: 47FD013A-D03B-487D-8C7B-17E93F038D1F
 ---
 
 # Enable-ComputerRestore
@@ -140,6 +139,4 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Restore-Computer](.\Restore-Computer.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822319
 schema: 2.0.0
 title: Find-DscResource
-ms.assetid: ECF1C489-F9D2-4E45-809C-86367A39BFD6
 ---
 
 # Find-DscResource
@@ -297,5 +296,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

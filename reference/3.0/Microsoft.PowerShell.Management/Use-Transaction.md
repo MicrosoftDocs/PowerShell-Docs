@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -171,5 +171,4 @@ Use-Transaction returns the result of the transaction.
 [Undo-Transaction](.\Undo-Transaction.md)
 
 [about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
-
 

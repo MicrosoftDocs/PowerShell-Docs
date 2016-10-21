@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -814,10 +814,9 @@ The changes that you make affect all new sessions that use the session configura
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+[WSMan Provider](..\Microsoft.WsMan.Management\Providers\WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
-
 

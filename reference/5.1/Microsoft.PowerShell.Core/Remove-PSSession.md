@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822084
 schema: 2.0.0
 title: Remove-PSSession
-ms.assetid: A48E762A-80D9-4545-92E3-745F4E992E22
 ---
 
 # Remove-PSSession
@@ -363,6 +362,4 @@ This cmdlet does not return any objects.
 [New-PSSession](.\New-PSSession.md)
 
 [Receive-PSSession](.\Receive-PSSession.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Run_With_PowerShell
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c9d9ca5f-eff9-4409-be9d-e43b5b4087eb
 ---
 # About Run With PowerShell
 ## about_Run_With_PowerShell
@@ -74,5 +73,4 @@ about_Execution_Policies
 about_Group_Policy_Settings
 about_Scripts
 "Running Scripts" (http://go.microsoft.com/fwlink/?LinkId=257680)
-
 

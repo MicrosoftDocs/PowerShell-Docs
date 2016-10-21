@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822341
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.assetid: C20E0845-6F75-4175-9158-9DB514D8061F
 ---
 
 # Update-ModuleManifest
@@ -764,5 +763,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
@@ -245,5 +245,4 @@ For more information, see about_Profiles.
 ## RELATED LINKS
 
 [Stop-Transcript](.\Stop-Transcript.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822481
 schema: 2.0.0
 title: Write-Information
-ms.assetid: 1D2D8F6A-8EF0-457B-9695-AEF946994973
 ---
 
 # Write-Information
@@ -171,6 +170,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Write-Warning](.\Write-Warning.md)
 
 [Write-Output](.\Write-Output.md)
-
-
 

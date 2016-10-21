@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822079
 schema: 2.0.0
 title: Receive-PSSession
-ms.assetid: B8EC9E88-AAB5-4DB8-A4A3-216338D1C9B6
 ---
 
 # Receive-PSSession
@@ -795,6 +794,4 @@ A value of Busy indicates that you cannot connect to the **PSSession** because i
 [New-PSSessionOption](.\New-PSSessionOption.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822474
 schema: 2.0.0
 title: Update-List
-ms.assetid: DDB81B18-2EFD-49DB-A5B3-24572D82AF2E
 ---
 
 # Update-List
@@ -209,6 +208,4 @@ You can pipe the objects to be updated to **Update-List**.
 [Format-List](.\Format-List.md)
 
 [Select-Object](.\Select-Object.md)
-
-
 

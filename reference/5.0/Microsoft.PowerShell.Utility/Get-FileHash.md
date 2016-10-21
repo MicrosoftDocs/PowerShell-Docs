@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -177,5 +177,4 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](.\Format-List.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: hhttp://go.microsoft.com/fwlink/?LinkId=822464
 schema: 2.0.0
 title: Set-TraceSource
-ms.assetid: 442780BB-7332-4995-B583-6E07889D1E26
 ---
 
 # Set-TraceSource
@@ -316,6 +315,4 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 [Get-TraceSource](.\Get-TraceSource.md)
 
 [Trace-Command](.\Trace-Command.md)
-
-
 

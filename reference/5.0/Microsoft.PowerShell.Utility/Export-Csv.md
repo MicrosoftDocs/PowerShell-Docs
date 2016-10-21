@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -395,5 +395,4 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Select-Object](.\Select-Object.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

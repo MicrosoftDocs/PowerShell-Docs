@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822450
 schema: 2.0.0
 title: Read-Host
-ms.assetid: BFEFE7C9-EED2-4EF7-BF62-367CCA89322F
 ---
 
 # Read-Host
@@ -109,6 +108,4 @@ Otherwise, it returns a string.
 [Get-Host](.\Get-Host.md)
 
 [Write-Host](.\Write-Host.md)
-
-
 

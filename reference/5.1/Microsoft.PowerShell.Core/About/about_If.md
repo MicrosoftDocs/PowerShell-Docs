@@ -1,10 +1,10 @@
----
+﻿---
 title: about_If
 description:
 keywords: powershell, cmdlet
 author: jpjofre
 manager: carolz
-ms.date: 2016-09-27
+ms.date: 2016-10-11
 ms.topic: reference
 ms.prod: powershell
 ms.technology: powershell
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: b8ece39a-6774-4c28-9507-2c925e11c789
 ---
 # About If
 about_If
@@ -120,3 +119,4 @@ or initialized."
 about_Comparison_Operators
 
 about_Switch
+

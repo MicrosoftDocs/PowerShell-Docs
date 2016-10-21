@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -560,5 +560,4 @@ This cmdlet does not generate output.
 [Invoke-WmiMethod](.\Invoke-WmiMethod.md)
 
 [Remove-WmiObject](.\Remove-WmiObject.md)
-
 

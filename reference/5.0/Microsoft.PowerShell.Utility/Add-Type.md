@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -618,6 +618,5 @@ Otherwise, this cmdlet does not generate any output.
 
 [about_Quoting_Rules](..\Microsoft.PowerShell.Core\About\about_Quoting_Rules.md)
 
-[about_Profiles](e1d9e30a-70cc-4f36-949f-fc7cd96b4054)
-
+[about_Profiles](..\Microsoft.PowerShell.Core\About\about_Profiles.md)
 

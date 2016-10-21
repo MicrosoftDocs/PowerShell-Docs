@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822231
 schema: 2.0.0
 title: Get-HotFix
-ms.assetid: B7F61040-29EF-4C54-BA0C-B73D7EF550CD
 ---
 
 # Get-HotFix
@@ -174,6 +173,4 @@ This cmdlet returns objects that represent the hotfixes on the computer.
 [Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
 
 [Add-Content](.\Add-Content.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822415
 schema: 2.0.0
 title: Get-Host
-ms.assetid: C06266DA-6241-4680-B883-C77B31F51F9D
 ---
 
 # Get-Host
@@ -229,6 +228,4 @@ You cannot pipe input to this cmdlet.
 [Read-Host](.\Read-Host.md)
 
 [Write-Host](.\Write-Host.md)
-
-
 

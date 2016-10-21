@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822454
 schema: 2.0.0
 title: Remove-PSBreakpoint
-ms.assetid: 4C877A80-0EA0-4790-9281-88C08EF0DDD6
 ---
 
 # Remove-PSBreakpoint
@@ -179,6 +178,4 @@ The cmdlet does not generate any output.
 [Get-PSCallStack](.\Get-PSCallStack.md)
 
 [Set-PSBreakpoint](.\Set-PSBreakpoint.md)
-
-
 

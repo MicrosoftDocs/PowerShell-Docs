@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822446
 schema: 2.0.0
 title: Out-File
-ms.assetid: 13D09DC8-2398-4D73-9449-1D01EB4E7808
 ---
 
 # Out-File
@@ -330,6 +329,4 @@ If you pipe the output of **Out-File** to Get-Member, **Get-Member** reports tha
 [Out-String](.\Out-String.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -125,5 +125,4 @@ However, the host might display the objects that **Out-Host** sends to it.
 [Out-String](..\Microsoft.PowerShell.Utility\Out-File.md)
 
 [Write-Host](..\Microsoft.PowerShell.Utility\Out-File.md)
-
 

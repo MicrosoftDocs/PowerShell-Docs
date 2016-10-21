@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -284,5 +284,4 @@ The trace sources for each module are loaded automatically when the component is
 [Set-PSDebug](..\Microsoft.PowerShell.Core\Set-PSDebug.md)
 
 [Trace-Command](.\Trace-Command.md)
-
 

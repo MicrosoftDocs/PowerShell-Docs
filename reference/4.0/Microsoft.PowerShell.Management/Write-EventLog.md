@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -221,5 +221,4 @@ Write-EventLog returns objects that represents the events in the logs.
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
 

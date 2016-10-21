@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Updatable_Help
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe
 ---
 # About Updatable Help
 ## about_Updatable_Help
@@ -499,7 +498,4 @@ Save-Help
 Update-Help
 Updatable Help Status Table
 (http://go.microsoft.com/fwlink/?LinkID=270007)
-
-
-
 

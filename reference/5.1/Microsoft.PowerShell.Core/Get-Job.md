@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822056
 schema: 2.0.0
 title: Get-Job
-ms.assetid: 1352C534-7193-46CA-9AB1-0C5219A661AD
 ---
 
 # Get-Job
@@ -625,6 +624,4 @@ Job started by using the *AsJob* common parameter of workflows.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

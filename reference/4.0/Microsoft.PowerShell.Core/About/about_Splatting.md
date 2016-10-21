@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Splatting
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 94639e7b-25ee-424b-9a51-bda2891d8882
 ---
 # About Splatting
 ## about_Splatting
@@ -272,7 +271,4 @@ about_Arrays
 about_Automatic_Variables
 about_Hash_Tables
 about_Parameters
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -88,5 +88,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Format-Wide](http://technet.microsoft.com/library/hh849918.aspx)
 
 [about_Format.ps1.xml](http://technet.microsoft.com/library/hh847831.aspx)
-
 

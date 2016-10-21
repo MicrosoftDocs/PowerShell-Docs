@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -359,5 +359,4 @@ This cmdlet does not take input from the pipeline.
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
-
 

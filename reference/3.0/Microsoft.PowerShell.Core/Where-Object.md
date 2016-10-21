@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -986,5 +986,4 @@ Where-Object returns selected items from the input object set.
 [Tee-Object](..\Microsoft.PowerShell.Utility\Compare-Object.md)
 
 [Where-Object](.\Where-Object.md)
-
 

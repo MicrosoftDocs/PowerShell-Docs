@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Wildcards
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 9fe09a23-afce-4547-9e2f-c38090f77636
 ---
 # About Wildcards
 ## about_Wildcards
@@ -88,5 +87,4 @@ foreach ($point in $p)
 about_Language_Keywords
 about_If
 about_Script_Blocks
-
 

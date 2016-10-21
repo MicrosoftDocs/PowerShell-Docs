@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822076
 schema: 2.0.0
 title: Out-Host
-ms.assetid: D572E893-EF19-42E6-8D00-2E90FA013750
 ---
 
 # Out-Host
@@ -118,6 +117,4 @@ However, the host might display the objects that **Out-Host** sends to it.
 [Out-Default](.\Out-Default.md)
 
 [Out-Null](.\Out-Null.md)
-
-
 

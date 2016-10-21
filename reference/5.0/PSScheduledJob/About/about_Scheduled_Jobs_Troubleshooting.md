@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Scheduled_Jobs_Troubleshooting
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 70de91e9-675f-4b5f-9179-6104b9cc4f0d
 ---
 # About Scheduled Jobs Troubleshooting
 ## about_Scheduled_Jobs_Troubleshooting
@@ -484,7 +483,4 @@ imports the PSScheduledJob module, and then runs the command.
 about_Scheduled_Jobs
 about_Scheduled_Jobs_Basics
 about_Scheduled_Jobs_Advanced
-
-
-
 

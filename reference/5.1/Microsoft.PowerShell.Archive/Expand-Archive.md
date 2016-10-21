@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Archive-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822316
 schema: 2.0.0
 title: Expand-Archive
-ms.assetid: 917AE9E1-129F-439E-AF70-C62DD723CFA2
 ---
 
 # Expand-Archive
@@ -167,5 +166,4 @@ You can pipe a string that contains a path to an existing archive file.
 ## NOTES
 
 ## RELATED LINKS
-
 

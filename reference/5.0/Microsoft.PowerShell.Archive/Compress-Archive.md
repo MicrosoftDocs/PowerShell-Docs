@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Archive-help.xml
@@ -264,5 +264,4 @@ You can pipe a string that contains a path to one or more files.
 ## RELATED LINKS
 
 [Expand-Archive](.\Expand-Archive.md)
-
 

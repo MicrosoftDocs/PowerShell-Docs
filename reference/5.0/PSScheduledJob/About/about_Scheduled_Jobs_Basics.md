@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Scheduled_Jobs_Basics
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 859d8bfd-e655-4dc3-ab65-19813301eb57
 ---
 # About Scheduled Jobs Basics
 ## about_Scheduled_Jobs_Basics
@@ -291,7 +290,4 @@ PowerShell session. To start a new Windows PowerShell session, type
 about_Scheduled_Jobs
 about_Scheduled_Jobs_Advanced
 about_Scheduled_Jobs_Troubleshooting
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822379
 schema: 2.0.0
 title: Add-Member
-ms.assetid: 03FF5662-D4D0-4C67-9EA8-72C76EC4CB3F
 ---
 
 # Add-Member
@@ -514,6 +513,4 @@ For more information about the $this variable, see about_Automatic_Variables.
 [Import-Clixml](.\Import-Clixml.md)
 
 [New-Object](.\New-Object.md)
-
-
 

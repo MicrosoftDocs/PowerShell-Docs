@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822425
 schema: 2.0.0
 title: Get-Unique
-ms.assetid: 0A73921B-FFBF-4F32-B49B-C4C0BD2A570E
 ---
 
 # Get-Unique
@@ -169,6 +168,4 @@ You can also use the *Unique* parameter of **Sort-Object** to find the unique it
 [Select-Object](.\Select-Object.md)
 
 [Sort-Object](.\Sort-Object.md)
-
-
 

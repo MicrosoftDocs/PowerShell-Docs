@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822330
 schema: 2.0.0
 title: Publish-Module
-ms.assetid: 074815A6-779E-4E5F-A291-6677550C6F45
 ---
 
 # Publish-Module
@@ -330,6 +329,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
-
 

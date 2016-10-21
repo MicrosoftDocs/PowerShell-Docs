@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822087
 schema: 2.0.0
 title: Save-Help
-ms.assetid: AED94F90-B73F-4E25-A25D-7C18D9F161FA
 ---
 
 # Save-Help
@@ -369,6 +368,4 @@ This cmdlet does not generate any output.
 [Get-Module](.\Get-Module.md)
 
 [Update-Help](.\Update-Help.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822370
 schema: 2.0.0
 title: Get-Credential
-ms.assetid: 9CF2BB69-3CB4-4E97-8211-F91F81367CA3
 ---
 
 # Get-Credential
@@ -265,5 +264,4 @@ For information about the effect of the **ConsolePrompting** registry entry, see
 * The *Credential* parameter is not supported by all providers that are installed with Windows PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlets, such as Get-WmiObject and New-PSDrive.
 
 ## RELATED LINKS
-
 

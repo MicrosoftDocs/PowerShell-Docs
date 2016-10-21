@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822072
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.assetid: 5F3E3633-6E90-479C-AEA9-BA45A1954866
 ---
 
 # New-PSSessionConfigurationFile
@@ -978,6 +977,4 @@ The changes that you make affect all new sessions that use the session configura
 [Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

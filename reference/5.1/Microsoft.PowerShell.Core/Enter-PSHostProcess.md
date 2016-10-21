@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822046
 schema: 2.0.0
 title: Enter-PSHostProcess
-ms.assetid: 606C328C-BB4B-4666-AEBE-311515C92D59
 ---
 
 # Enter-PSHostProcess
@@ -207,6 +206,4 @@ That is, they have loaded the Windows PowerShell engine.
 ## RELATED LINKS
 
 [Exit-PSHostProcess](.\Exit-PSHostProcess.md)
-
-
 

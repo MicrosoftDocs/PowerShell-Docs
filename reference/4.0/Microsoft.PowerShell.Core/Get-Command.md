@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -516,5 +516,4 @@ Represents functions and filters
 [Import-PSSession](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
 
 [about_Command_Precedence](.\About\about_Command_Precedence.md)
-
 

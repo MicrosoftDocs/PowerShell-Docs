@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822496
 schema: 2.0.0
 title: Enable-WSManCredSSP
-ms.assetid: AFFB7D94-EDF1-41A4-9257-5E0E1B736ADD
 ---
 
 # Enable-WSManCredSSP
@@ -234,6 +233,4 @@ If CredSSP authentication is successfully enabled, this cmdlet generates an **XM
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

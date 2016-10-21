@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822495
 schema: 2.0.0
 title: Disconnect-WSMan
-ms.assetid: 6D7EF9F8-AC28-46B1-A3AB-E0820C440C01
 ---
 
 # Disconnect-WSMan
@@ -119,6 +118,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

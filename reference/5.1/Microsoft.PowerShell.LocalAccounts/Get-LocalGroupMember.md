@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822512
 schema: 2.0.0
 title: Get-LocalGroupMember
-ms.assetid: CF519F3C-1257-43C3-99DE-066FDD207C89
 ---
 
 # Get-LocalGroupMember
@@ -150,6 +149,4 @@ This cmdlet returns local principals.
 [New-LocalGroup](.\New-LocalGroup.md)
 
 [Remove-LocalGroupMember](.\Remove-LocalGroupMember.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -149,5 +149,4 @@ You can pipe type names to **Get-TypeData**.
 [Remove-TypeData](.\Remove-TypeData.md)
 
 [Update-TypeData](.\Update-TypeData.md)
-
 

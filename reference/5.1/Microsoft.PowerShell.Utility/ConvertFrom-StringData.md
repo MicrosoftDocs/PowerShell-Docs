@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822387
 schema: 2.0.0
 title: ConvertFrom-StringData
-ms.assetid: 3CD6CB09-999A-4AE5-94FE-20C95BF1567B
 ---
 
 # ConvertFrom-StringData
@@ -263,5 +262,4 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 *
 
 ## RELATED LINKS
-
 

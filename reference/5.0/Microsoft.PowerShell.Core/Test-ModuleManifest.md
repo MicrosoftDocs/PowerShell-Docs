@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -147,5 +147,4 @@ It returns this object even if the manifest has errors.
 [Remove-Module](.\Remove-Module.md)
 
 [about_Modules](.\About\about_Modules.md)
-
 

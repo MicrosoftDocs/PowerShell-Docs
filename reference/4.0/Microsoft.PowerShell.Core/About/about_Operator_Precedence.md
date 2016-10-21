@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Operator_Precedence
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ce3badd8-dd8d-4c75-b698-bf07304228ce
 ---
 # About Operator Precedence
 ## about_Operator_Precedence
@@ -195,5 +194,4 @@ about_Redirection
 about_Scopes
 about_Split
 about_Type_Operators
-
 

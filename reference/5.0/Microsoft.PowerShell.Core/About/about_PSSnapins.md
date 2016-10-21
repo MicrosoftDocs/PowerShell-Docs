@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_PSSnapins
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e2b2fc34-9762-41ba-bbf9-ccd9f1763968
 ---
 # About PSSnapins
 ## about_PSSnapins
@@ -22,7 +21,7 @@ about_PSSnapins
 
 
 ## SHORT DESCRIPTION
-Describes  Windows PowerShell® snap-ins and shows how to use and manage them.
+Describes  Windows PowerShell?snap-ins and shows how to use and manage them.
 
 
 ## LONG DESCRIPTION
@@ -189,5 +188,4 @@ about_Modules
 
 ## KEYWORDS:
 about_Snapins, about_Snap_ins, about_Snap-ins
-
 

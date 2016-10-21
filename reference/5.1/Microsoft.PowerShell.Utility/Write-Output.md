@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822482
 schema: 2.0.0
 title: Write-Output
-ms.assetid: 72E7F802-C08C-435E-88AD-B2B77FAEA1A7
 ---
 
 # Write-Output
@@ -137,6 +136,4 @@ You can pipe objects to **Write-Output**.
 [Write-Verbose](.\Write-Verbose.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

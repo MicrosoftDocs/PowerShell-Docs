@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822408
 schema: 2.0.0
 title: Get-Alias
-ms.assetid: C5703118-F617-4535-AFC3-E6E64F333856
 ---
 
 # Get-Alias
@@ -212,6 +211,4 @@ You can pipe alias names to **Get-Alias**.
 [New-Alias](.\New-Alias.md)
 
 [Set-Alias](.\Set-Alias.md)
-
-
 

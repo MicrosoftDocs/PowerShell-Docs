@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822400
 schema: 2.0.0
 title: Export-Csv
-ms.assetid: 99523277-B798-4E42-B2A8-61DA33F45A6D
 ---
 
 # Export-Csv
@@ -395,6 +394,4 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Import-Csv](.\Import-Csv.md)
 
 [Select-Object](.\Select-Object.md)
-
-
 

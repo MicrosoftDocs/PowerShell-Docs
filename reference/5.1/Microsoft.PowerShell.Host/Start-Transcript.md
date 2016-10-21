@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822194
 schema: 2.0.0
 title: Start-Transcript
-ms.assetid: 05B8F72C-AE3B-45D5-95E0-86AA1CA1908A
 ---
 
 # Start-Transcript
@@ -246,6 +245,4 @@ For more information, see about_Profiles.
 ## RELATED LINKS
 
 [Stop-Transcript](.\Stop-Transcript.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822217
 schema: 2.0.0
 title: Get-ChildItem
-ms.assetid: 75CF79BB-4DB6-4A67-8C36-3D20754E2190
 ---
 
 # Get-ChildItem
@@ -424,6 +423,4 @@ For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkI
 [Get-Process](.\Get-Process.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

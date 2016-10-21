@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 2eba8487-1d71-49e2-bcc3-e885d2a06438
 caps.latest.revision: 8
 manager: stevenka
 ---
@@ -140,3 +139,4 @@ This command creates the TestStore certificate store on the Server01 remote comp
  [Get-PSDrive](..\..\Microsoft.PowerShell.Management\Get-PSDrive.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md)
+

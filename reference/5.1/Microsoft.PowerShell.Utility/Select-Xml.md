@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822459
 schema: 2.0.0
 title: Select-Xml
-ms.assetid: F90EF4AD-D745-46A0-8CCF-A55CCD1BA6C5
 ---
 
 # Select-Xml
@@ -315,6 +314,4 @@ You can pipe a path or XML node to this cmdlet.
 ## RELATED LINKS
 
 [ConvertTo-Xml](.\ConvertTo-Xml.md)
-
-
 

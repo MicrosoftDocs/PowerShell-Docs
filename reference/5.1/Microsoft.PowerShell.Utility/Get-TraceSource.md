@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822422
 schema: 2.0.0
 title: Get-TraceSource
-ms.assetid: 9FC7C044-56ED-4606-A11A-595CA532E99B
 ---
 
 # Get-TraceSource
@@ -88,6 +87,4 @@ You can pipe a string that contains the name of a trace source to **Get-TraceSou
 [Set-TraceSource](.\Set-TraceSource.md)
 
 [Trace-Command](.\Trace-Command.md)
-
-
 

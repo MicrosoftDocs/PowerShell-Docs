@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822418
 schema: 2.0.0
 title: Get-PSCallStack
-ms.assetid: E91A17DC-DB39-4C90-AE0E-6EEED3C0EFEF
 ---
 
 # Get-PSCallStack
@@ -112,6 +111,4 @@ You cannot pipe objects to this cmdlet.
 [Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](.\Set-PSBreakpoint.md)
-
-
 

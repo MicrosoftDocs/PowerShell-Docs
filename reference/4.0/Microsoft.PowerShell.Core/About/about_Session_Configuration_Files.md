@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Session_Configuration_Files
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c7217447-1ebf-477b-a8ef-4dbe9a1473b8
 ---
 # About Session Configuration Files
 ## about_Session_Configuration_Files
@@ -389,7 +388,4 @@ Test-PSSessionConfigurationFile
 Unregister-PSSessionConfiguration
 Get-PSSessionCapability
 New-PSRoleCapabilityFile
-
-
-
 

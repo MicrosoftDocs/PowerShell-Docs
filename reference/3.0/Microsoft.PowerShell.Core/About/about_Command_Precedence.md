@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Command_Precedence
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: fb14a05e-d461-432d-a253-e9371b54bd2e
 ---
 # About Command Precedence
 ## about_Command_Precedence
@@ -272,6 +271,4 @@ Function (provider)
 Get-Command
 Import-Module
 Import-PSSession
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822342
 schema: 2.0.0
 title: Update-Script
-ms.assetid: AA68486D-6AD6-495F-A1BB-67752CA8ED79
 ---
 
 # Update-Script
@@ -206,6 +205,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Script](.\Save-Script.md)
 
 [Uninstall-Script](.\Uninstall-Script.md)
-
-
 

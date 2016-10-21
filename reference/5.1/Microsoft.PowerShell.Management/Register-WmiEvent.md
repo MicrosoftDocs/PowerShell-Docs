@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822257
 schema: 2.0.0
 title: Register-WmiEvent
-ms.assetid: BC569C33-EE85-4A13-82C1-7D5F117F23F4
 ---
 
 # Register-WmiEvent
@@ -333,5 +332,4 @@ If you close the current session, the event queue is discarded and the event sub
 *
 
 ## RELATED LINKS
-
 

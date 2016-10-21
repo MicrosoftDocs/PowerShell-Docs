@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822429
 schema: 2.0.0
 title: Import-Clixml
-ms.assetid: 467B491A-3E6E-4E10-8853-0FAE970B10C5
 ---
 
 # Import-Clixml
@@ -181,6 +180,4 @@ You can pipe a string that contains a path to **Import-Clixml**.
 [Securely Store Credentials on Disk](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
 [Export-Clixml](.\Export-Clixml.md)
-
-
 

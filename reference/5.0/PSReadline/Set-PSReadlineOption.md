@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -597,5 +597,4 @@ This cmdlet does not generate output.
 [Get-PSReadlineOption](.\Get-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
 

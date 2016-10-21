@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822375
 schema: 2.0.0
 title: Set-AuthenticodeSignature
-ms.assetid: F3C13299-4463-48AF-83EA-86DE4A239509
 ---
 
 # Set-AuthenticodeSignature
@@ -314,6 +313,4 @@ You can pipe a string that contains the file path to **Set-AuthenticodeSignature
 [Get-PfxCertificate](.\Get-PfxCertificate.md)
 
 [Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
-
-
 

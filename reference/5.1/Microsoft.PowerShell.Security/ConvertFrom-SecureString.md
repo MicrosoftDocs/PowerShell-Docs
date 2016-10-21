@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822365
 schema: 2.0.0
 title: ConvertFrom-SecureString
-ms.assetid: 82C65EE1-A382-4649-AC71-AD716211D53D
 ---
 
 # ConvertFrom-SecureString
@@ -150,6 +149,4 @@ Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 digit
 ## RELATED LINKS
 
 [ConvertTo-SecureString](.\ConvertTo-SecureString.md)
-
-
 

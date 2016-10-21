@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822321
 schema: 2.0.0
 title: Find-RoleCapability
-ms.assetid: 09D559DC-EAA1-4FB0-870C-A3BA1D39A7B0
 ---
 
 # Find-RoleCapability
@@ -271,5 +270,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

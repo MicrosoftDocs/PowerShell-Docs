@@ -1,4 +1,4 @@
----
+﻿---
 title: about_History
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 46fa1b2e-c079-4e94-a87e-511ee50b347a
 ---
 # About History
 ## about_History
@@ -107,5 +106,4 @@ about_Line_Editing
 about_Preference_Variables
 about_Profiles
 about_Variables
-
 

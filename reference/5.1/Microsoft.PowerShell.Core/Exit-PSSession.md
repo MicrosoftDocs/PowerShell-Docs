@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822049
 schema: 2.0.0
 title: Exit-PSSession
-ms.assetid: F13CBF38-6BD1-4DB3-9EF8-52388237ADC7
 ---
 
 # Exit-PSSession
@@ -115,6 +114,4 @@ This cmdlet does not return any output.
 [Receive-PSSession](.\Receive-PSSession.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

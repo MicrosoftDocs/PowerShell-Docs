@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -57,6 +57,5 @@ This cmdlet returns a GUID.
 
 ## RELATED LINKS
 
-[Windows PowerShell Utility Cmdlets](76bfd646-9d65-49d4-ab67-337ebf05a6eb)
-
+[Windows PowerShell Utility Cmdlets](.\Microsoft.PowerShell.Utility.md)
 

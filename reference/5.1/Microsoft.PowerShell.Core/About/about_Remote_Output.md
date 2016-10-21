@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote_Output
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e2ff1468-fc6d-4913-9188-8a9bac0f3185
 ---
 # About Remote Output
 ## about_Remote_Output
@@ -216,5 +215,4 @@ Get-WmiObject
 Invoke-Command
 Out-GridView
 Select-Object
-
 

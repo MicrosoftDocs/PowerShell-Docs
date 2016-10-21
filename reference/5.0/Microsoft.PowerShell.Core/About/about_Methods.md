@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Methods
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c4ad7be5-85c2-4cc4-bcd3-b39244fc54d9
 ---
 # About methods
 ## about_methods
@@ -22,7 +21,7 @@ about_methods
 
 
 ## SHORT DESCRIPTION
-Describes how to use methods to perform actions on objects in  Windows PowerShell®.
+Describes how to use methods to perform actions on objects in  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -201,5 +200,4 @@ about_Objects
 about_Properties
 
 Get-Member
-
 

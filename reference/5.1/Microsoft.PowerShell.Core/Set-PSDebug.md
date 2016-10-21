@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822088
 schema: 2.0.0
 title: Set-PSDebug
-ms.assetid: 2517A4DA-2468-4148-ACA3-50A6D7DF4A10
 ---
 
 # Set-PSDebug
@@ -186,6 +185,4 @@ This cmdlet does not return any output.
 ## RELATED LINKS
 
 [Set-StrictMode](.\Set-StrictMode.md)
-
-
 

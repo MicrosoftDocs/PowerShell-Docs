@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Remove-DscConfigurationDocument.cdxml-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822028
 schema: 2.0.0
 title: Remove-DscConfigurationDocument
-ms.assetid: E59D9354-2BCF-4F8B-AA7B-A54973F6F140
 ---
 
 # Remove-DscConfigurationDocument
@@ -178,6 +177,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-DscConfiguration](.\Get-DscConfiguration.md)
 
 [Get-DscConfigurationStatus](.\Get-DscConfigurationStatus.md)
-
-
 

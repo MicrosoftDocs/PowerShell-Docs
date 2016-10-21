@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822278
 schema: 2.0.0
 title: Set-Service
-ms.assetid: D4A1BD34-7122-4C01-83B0-EC4CA78371D7
 ---
 
 # Set-Service
@@ -364,6 +363,4 @@ This cmdlet does not return any objects.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

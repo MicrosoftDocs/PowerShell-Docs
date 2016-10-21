@@ -1,4 +1,4 @@
----
+﻿---
 title: "New-Item for InitializationParameters"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 92f03160-ae7d-420f-ae66-bfa33215af48
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -107,3 +106,4 @@ This command creates an Initialization parameter named testparametername in the 
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822045
 schema: 2.0.0
 title: Enable-PSSessionConfiguration
-ms.assetid: 58D537B4-8735-437D-A573-AA5744725B4A
 ---
 
 # Enable-PSSessionConfiguration
@@ -241,6 +240,4 @@ This cmdlet does not return any objects.
 [Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

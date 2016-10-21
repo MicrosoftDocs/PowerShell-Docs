@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822261
 schema: 2.0.0
 title: Remove-ItemProperty
-ms.assetid: 28C7ECD8-5030-41F9-8478-5D7A06201A5F
 ---
 
 # Remove-ItemProperty
@@ -311,6 +310,4 @@ This cmdlet does not return any output.
 [Set-ItemProperty](.\Set-ItemProperty.md)
 
 [Set-Location](.\Set-Location.md)
-
-
 

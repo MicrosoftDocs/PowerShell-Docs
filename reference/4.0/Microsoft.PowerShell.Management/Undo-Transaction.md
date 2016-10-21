@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -178,5 +178,4 @@ To use a transaction again, you must start a new transaction.
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
 
 [about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -381,5 +381,4 @@ You can pipe any object to **Format-Table**.
 [Format-List](.\Format-List.md)
 
 [Format-Wide](.\Format-Wide.md)
-
 

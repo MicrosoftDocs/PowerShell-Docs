@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822455
 schema: 2.0.0
 title: Remove-TypeData
-ms.assetid: 2EFFC965-1FC3-4970-85B6-59DABEA81EDE
 ---
 
 # Remove-TypeData
@@ -222,6 +221,4 @@ This cmdlet does not generate any output.
 [Get-TypeData](.\Get-TypeData.md)
 
 [Update-TypeData](.\Update-TypeData.md)
-
-
 

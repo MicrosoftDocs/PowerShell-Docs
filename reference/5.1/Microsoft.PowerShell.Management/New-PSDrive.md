@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822252
 schema: 2.0.0
 title: New-PSDrive
-ms.assetid: A90FFE5F-A576-4C4A-B392-822BCEC17FFD
 ---
 
 # New-PSDrive
@@ -408,6 +407,4 @@ You cannot pipe input to this cmdlet.
 [Get-PSDrive](.\Get-PSDrive.md)
 
 [Remove-PSDrive](.\Remove-PSDrive.md)
-
-
 

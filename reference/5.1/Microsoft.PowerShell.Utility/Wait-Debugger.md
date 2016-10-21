@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822476
 schema: 2.0.0
 title: Wait-Debugger
-ms.assetid: CE760263-F7F0-45C1-AB4D-1B18D9AC9A60
 ---
 
 # Wait-Debugger
@@ -52,5 +51,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Throw
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 68594cdb-67cd-4f8d-bd15-a0bd20a6ba7f
 ---
 # About Throw
 ## about_Throw
@@ -156,5 +155,4 @@ about_Continue
 about_Scope
 about_Trap
 about_Try_Catch_Finally
-
 

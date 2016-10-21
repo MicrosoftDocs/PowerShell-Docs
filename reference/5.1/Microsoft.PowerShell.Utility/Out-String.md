@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822449
 schema: 2.0.0
 title: Out-String
-ms.assetid: D4502A29-2351-4580-B456-FB75280FEDB4
 ---
 
 # Out-String
@@ -147,6 +146,4 @@ You can pipe objects to **Out-String**.
 [Out-GridView](.\Out-GridView.md)
 
 [Out-Printer](.\Out-Printer.md)
-
-
 

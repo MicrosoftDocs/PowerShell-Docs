@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Parallel
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 392ce9ea-1cee-48a3-8297-fa6d1074d069
 ---
 # About Parallel
 ## about_Parallel
@@ -26,7 +25,7 @@ Describes the Parallel keyword, which runs the activities in a workflow in paral
 
 
 ## LONG DESCRIPTION
-The Parallel keyword runs workflow activities in parallel. This keyword is valid only in  Windows PowerShell® Workflow.
+The Parallel keyword runs workflow activities in parallel. This keyword is valid only in  Windows PowerShellï¿½ Workflow.
 
 
 ### SYNTAX
@@ -83,5 +82,4 @@ about_Language_Keywords
 about_Sequence
 
 about_Workflows
-
 

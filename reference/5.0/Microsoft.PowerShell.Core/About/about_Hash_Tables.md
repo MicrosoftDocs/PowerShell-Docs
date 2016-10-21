@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Hash_Tables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 71c60e5b-4283-46a4-b5af-3190c05e8b12
 ---
 # About Hash Tables
 ## about_Hash_Tables
@@ -497,5 +496,4 @@ ConvertFrom-StringData
 Import-LocalizedData
 
 "System.Collections.Hashtable" on MSDN
-
 

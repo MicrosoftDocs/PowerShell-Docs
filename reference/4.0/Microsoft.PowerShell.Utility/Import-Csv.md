@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -364,5 +364,4 @@ Export-CSV does not export the methods of the object.
 [ConvertTo-Csv](.\ConvertTo-Csv.md)
 
 [Export-Csv](.\Export-Csv.md)
-
 

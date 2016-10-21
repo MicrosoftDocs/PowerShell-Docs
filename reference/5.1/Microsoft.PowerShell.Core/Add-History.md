@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822036
 schema: 2.0.0
 title: Add-History
-ms.assetid: CF476753-0B6D-405D-AAB5-9B4488F18390
 ---
 
 # Add-History
@@ -169,6 +168,4 @@ If you intend to pass the objects back to **Add-History**, do not use the *NoTyp
 [Get-History](.\Get-History.md)
 
 [Invoke-History](.\Invoke-History.md)
-
-
 

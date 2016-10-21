@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822058
 schema: 2.0.0
 title: Get-PSHostProcessInfo
-ms.assetid: A97442C0-F8D8-472F-9EF2-6CCD41B303B7
 ---
 
 # Get-PSHostProcessInfo
@@ -106,5 +105,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

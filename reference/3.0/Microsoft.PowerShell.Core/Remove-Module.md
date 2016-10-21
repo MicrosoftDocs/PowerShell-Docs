@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -191,5 +191,4 @@ Remove-Module does not generate any output.
 [about_Modules](.\About\about_Modules.md)
 
 [about_modules]()
-
 

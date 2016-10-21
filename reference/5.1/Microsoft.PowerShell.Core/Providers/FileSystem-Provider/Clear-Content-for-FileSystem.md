@@ -1,4 +1,4 @@
----
+﻿---
 title: "Clear-Content for FileSystem"
 ms.custom: na
 ms.date: 09/30/2014
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: 9ad3020a-e472-41ec-b1e2-c57711bdb87c
 caps.latest.revision: 10
 manager: stevenka
 ---
@@ -130,3 +129,4 @@ This command requests a prediction of what would happen if you submitted the com
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

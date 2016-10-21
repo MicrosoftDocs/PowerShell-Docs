@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Providers
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 2d9b3f32-be78-49ad-a547-21231c803242
 ---
 # About Providers
 ## about_Providers
@@ -289,5 +288,4 @@ get-help * -category provider
 
 about_Locations
 about_Path_Syntax
-
 

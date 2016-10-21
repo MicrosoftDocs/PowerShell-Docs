@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Security
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: a94c8c7e-9810-47c0-b8af-65089c13a35a
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822364
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: 3D94A738-3A83-4BD3-8937-E518890D576F
 ---
 
 # Microsoft.PowerShell.Security Module
@@ -79,10 +78,4 @@ Changes the user preference for the Windows PowerShell execution policy.
 
 ### [Unprotect-CmsMessage](.\Unprotect-CmsMessage.md)
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
-
-
-
-
-
-
 

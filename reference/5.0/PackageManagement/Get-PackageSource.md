@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -198,12 +198,11 @@ Specifies one or more package sources.
 
 ## RELATED LINKS
 
-[about_PackageManagement](http://technet.microsoft.com/library/dn927162.aspx)
+[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
 
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Set-PackageSource](.\Set-PackageSource.md)
 
 [Unregister-PackageSource](.\Unregister-PackageSource.md)
-
 

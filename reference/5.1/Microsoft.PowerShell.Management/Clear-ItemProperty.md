@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822208
 schema: 2.0.0
 title: Clear-ItemProperty
-ms.assetid: F49C0340-D5CD-4099-8494-24B961AB4F7E
 ---
 
 # Clear-ItemProperty
@@ -300,6 +299,4 @@ For more information, see about_Providers.
 [New-ItemProperty](.\New-ItemProperty.md)
 
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
-
-
 

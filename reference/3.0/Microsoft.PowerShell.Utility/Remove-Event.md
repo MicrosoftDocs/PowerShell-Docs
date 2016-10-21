@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -151,5 +151,4 @@ The cmdlet does not generate any output.
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Line_Editing
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ada97e03-cbe4-477e-8817-98850fa5911f
 ---
 # About Line Editing
 ## about_Line_Editing
@@ -63,5 +62,4 @@ is displayed is not what you want, press the TAB key again.
 
 about_Command_Syntax
 about_Path_Syntax
-
 

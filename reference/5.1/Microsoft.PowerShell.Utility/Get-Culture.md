@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822409
 schema: 2.0.0
 title: Get-Culture
-ms.assetid: 8AA0D5EF-3428-4769-A1A0-36CAFED3CC2B
 ---
 
 # Get-Culture
@@ -148,6 +147,4 @@ You cannot pipe input to this cmdlet.
 Set-Culture
 
 [Get-UICulture](.\Get-UICulture.md)
-
-
 

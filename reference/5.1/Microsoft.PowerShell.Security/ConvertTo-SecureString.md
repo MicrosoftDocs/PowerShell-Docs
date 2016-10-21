@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822366
 schema: 2.0.0
 title: ConvertTo-SecureString
-ms.assetid: D3B995C9-722C-4CA3-B4F0-A8B44F373FAC
 ---
 
 # ConvertTo-SecureString
@@ -215,6 +214,4 @@ ConvertTo-SecureString returns a **SecureString** object.
 ## RELATED LINKS
 
 [ConvertFrom-SecureString](.\ConvertFrom-SecureString.md)
-
-
 

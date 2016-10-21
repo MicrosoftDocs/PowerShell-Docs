@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Special_Characters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6eeb395a-cdab-4323-9466-537254a64fb8
 ---
 # About Special Characters
 ## about_Special_Characters
@@ -156,5 +155,4 @@ about_Symbols
 
 about_Quoting_Rules
 about_Escape_Characters
-
 

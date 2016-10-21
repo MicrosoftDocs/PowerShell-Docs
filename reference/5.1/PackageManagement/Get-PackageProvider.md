@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822304
 schema: 2.0.0
 title: Get-PackageProvider
-ms.assetid: B76E7285-804B-476A-A5D6-4D6EE4DE0259
 ---
 
 # Get-PackageProvider
@@ -143,6 +142,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Unregister-PackageSource](.\Unregister-PackageSource.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: PSWorkflowUtility
 description: 
 keywords: powershell, cmdlet
@@ -20,10 +20,6 @@ Locale: en-US
 This section contains the help topics for the commands that the Windows PowerShell PSWorkflowUtility module exports. This module contains a workflow that supports the Windows PowerShell Workflow feature.
 
 ## PSWorkflowUtility Cmdlets
-### [Invoke-AsWorkflow](Invoke-AsWorkflow.md)
-Runs a command or expression as a Windows PowerShell Workflow.
-
-
-
-
+### [Invoke-AsWorkflow](.\Invoke-AsWorkflow.md)
+Runs a command or expression as a Windows PowerShell Workflow.
 

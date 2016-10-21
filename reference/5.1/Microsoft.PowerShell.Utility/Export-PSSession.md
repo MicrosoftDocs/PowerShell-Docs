@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822402
 schema: 2.0.0
 title: Export-PSSession
-ms.assetid: BF3D70A2-59D8-465F-9004-1D4B270052C3
 ---
 
 # Export-PSSession
@@ -450,6 +449,4 @@ If the command does not import formatting data, any formatting files that are cr
 ## RELATED LINKS
 
 [Import-PSSession](.\Import-PSSession.md)
-
-
 

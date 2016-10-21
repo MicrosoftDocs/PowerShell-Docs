@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -187,5 +187,4 @@ Tee-Object returns the object that it redirects.
 [Select-Object](.\Select-Object.md)
 
 [about_Redirection](..\Microsoft.PowerShell.Core\About\about_Redirection.md)
-
 

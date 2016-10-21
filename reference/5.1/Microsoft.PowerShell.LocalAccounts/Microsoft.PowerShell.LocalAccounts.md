@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.LocalAccounts
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 8e362604-2c0b-448f-a414-a6a690a644e2
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822506
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: A3DB50C8-B608-44A0-A759-2C0255DD23F7
 ---
 
 # Microsoft.PowerShell.LocalAccounts Module
@@ -79,10 +78,4 @@ Changes a local security group.
 
 ### [Set-LocalUser](.\Set-LocalUser.md)
 Modifies a local user account.
-
-
-
-
-
-
 

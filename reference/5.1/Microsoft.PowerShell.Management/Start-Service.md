@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822285
 schema: 2.0.0
 title: Start-Service
-ms.assetid: A3ABAB52-805C-4054-A41A-82CD81DC7FD3
 ---
 
 # Start-Service
@@ -281,6 +280,4 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

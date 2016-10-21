@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -213,7 +213,7 @@ You can pipe alias names to **Get-Alias**.
 
 ## RELATED LINKS
 
-[About Aliases](https://technet.microsoft.com/en-us/library/hh847830.aspx)
+[About Aliases](..\Microsoft.PowerShell.Core\About\about_Aliases.md)
 
 [Export-Alias](.\Export-Alias.md)
 
@@ -223,6 +223,5 @@ You can pipe alias names to **Get-Alias**.
 
 [Set-Alias](.\Set-Alias.md)
 
-[Alias Provider](dce3f872-aeff-4eb2-8b38-876cd612fc29)
-
+[Alias Provider](..\Microsoft.PowerShell.Core\Providers\Alias-Provider.md)
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822235
 schema: 2.0.0
 title: Get-Location
-ms.assetid: B4C8D674-BA23-4BDF-8322-1F08ACDC0CA9
 ---
 
 # Get-Location
@@ -324,6 +323,4 @@ To make the unnamed stack the current stack, use the *StackName* parameter of th
 [Push-Location](.\Push-Location.md)
 
 [Set-Location](.\Set-Location.md)
-
-
 

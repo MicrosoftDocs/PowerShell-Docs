@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822300
 schema: 2.0.0
 title: Find-Package
-ms.assetid: 7E47FEC3-2B59-4724-989E-E594CE4869D6
 ---
 
 # Find-Package
@@ -585,6 +584,4 @@ This cmdlet does not produce any output.
 [Save-Package](.\Save-Package.md)
 
 [Uninstall-Package](.\Uninstall-Package.md)
-
-
 

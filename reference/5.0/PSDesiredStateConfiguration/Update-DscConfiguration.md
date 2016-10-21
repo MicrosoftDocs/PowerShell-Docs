@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
@@ -36,7 +36,7 @@ Update-DscConfiguration [-Wait] [-JobName <String>] [-ThrottleLimit <Int32>] -Ci
 The **Update-DscConfiguration** cmdlet connects to a pull server, downloads the configuration if it differs from what is current on the node, and then applies the configuration to the computer.
 
 This cmdlet is available only as part of the November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2http://support.microsoft.com/en-us/kb/3000850 (http://support.microsoft.com/en-us/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
+Before you use this cmdlet, review the information in [What's New in Windows PowerShell](http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
 
@@ -58,7 +58,7 @@ The console does not accept additional commands until the current command finish
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a New-CimSessionhttp://go.microsoft.com/fwlink/p/?LinkId=227967 or Get-CimSessionhttp://go.microsoft.com/fwlink/p/?LinkId=227966 cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](http://go.microsoft.com/fwlink/p/?LinkId=227967] or [Get-CimSession](http://go.microsoft.com/fwlink/p/?LinkId=227966) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShellÂ® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
@@ -216,5 +216,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-DscConfiguration](.\Stop-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
 

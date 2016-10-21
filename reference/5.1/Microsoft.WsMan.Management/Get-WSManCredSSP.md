@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822497
 schema: 2.0.0
 title: Get-WSManCredSSP
-ms.assetid: 985673C4-EB15-47BE-A2A2-22F2080D3242
 ---
 
 # Get-WSManCredSSP
@@ -106,6 +105,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822288
 schema: 2.0.0
 title: Stop-Process
-ms.assetid: 3864DC3D-34EC-4EBD-8132-776346C00871
 ---
 
 # Stop-Process
@@ -281,6 +280,4 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
-
 

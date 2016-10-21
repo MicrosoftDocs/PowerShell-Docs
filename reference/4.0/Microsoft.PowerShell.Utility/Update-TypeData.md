@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -632,5 +632,4 @@ This cmdlet does not return any output.
 [Get-TypeData](.\Get-TypeData.md)
 
 [Remove-TypeData](.\Remove-TypeData.md)
-
 

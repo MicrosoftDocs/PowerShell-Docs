@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Stop-DscConfiguration.cdxml-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822030
 schema: 2.0.0
 title: Stop-DscConfiguration
-ms.assetid: 8CD4FA07-4976-4931-98A4-5F52D737AE44
 ---
 
 # Stop-DscConfiguration
@@ -172,6 +171,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
 
 [Update-DscConfiguration](.\Update-DscConfiguration.md)
-
-
 

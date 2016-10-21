@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822106
 schema: 2.0.0
 title: Export-Counter
-ms.assetid: 641C0FCE-3BB1-4274-8B69-6E4CF596F471
 ---
 
 # Export-Counter
@@ -227,6 +226,4 @@ However, if the computer is configured for remote Windows PowerShell Windows Pow
 [Get-Counter](.\Get-Counter.md)
 
 [Import-Counter](.\Import-Counter.md)
-
-
 

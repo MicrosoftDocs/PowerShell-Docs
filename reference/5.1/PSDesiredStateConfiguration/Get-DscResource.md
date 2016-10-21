@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSDesiredStateConfiguration-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822024
 schema: 2.0.0
 title: Get-DscResource
-ms.assetid: BD707D0F-714F-480D-A702-01A0FE20FACF
 ---
 
 # Get-DscResource
@@ -146,6 +145,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
 [Invoke-DscResource](.\Invoke-DscResource.md)
-
-
 

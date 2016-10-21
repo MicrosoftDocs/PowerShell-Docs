@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822331
 schema: 2.0.0
 title: Publish-Script
-ms.assetid: E8BDC076-6514-4E00-B16D-23E7D5FD4D13
 ---
 
 # Publish-Script
@@ -260,6 +259,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Script](.\Save-Script.md)
 
 [Update-Script](.\Update-Script.md)
-
-
 

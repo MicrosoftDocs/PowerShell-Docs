@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822438
 schema: 2.0.0
 title: Measure-Object
-ms.assetid: F40A7DE5-95A8-47A8-BB7C-8B2A4CDD2DAF
 ---
 
 # Measure-Object
@@ -286,6 +285,4 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Sort-Object](.\Sort-Object.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

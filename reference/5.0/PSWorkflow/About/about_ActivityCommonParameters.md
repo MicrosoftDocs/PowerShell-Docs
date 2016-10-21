@@ -1,4 +1,4 @@
----
+﻿---
 title: about_ActivityCommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 8ca60664-37c6-4257-a723-e3c41dd10122
 ---
 # About ActivityCommonParameters
 ## about_ActivityCommonParameters
@@ -664,6 +663,4 @@ about_ActivityParameters
 
 about_Workflows
 about_WorkflowCommonParameters
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822086
 schema: 2.0.0
 title: Resume-Job
-ms.assetid: 3A22C75A-F0BD-4AFD-AC3C-DA7CCD22EC45
 ---
 
 # Resume-Job
@@ -381,6 +380,4 @@ Otherwise, this cmdlet does not generate any output.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

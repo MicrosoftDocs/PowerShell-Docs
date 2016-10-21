@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822251
 schema: 2.0.0
 title: New-ItemProperty
-ms.assetid: 774AD4A6-DEEA-4C34-AFB6-7274E18552E5
 ---
 
 # New-ItemProperty
@@ -361,6 +360,4 @@ You cannot pipe input to this cmdlet.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
-
-
 

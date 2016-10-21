@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822404
 schema: 2.0.0
 title: Format-Hex
-ms.assetid: 2F642F68-4B89-41C9-A11D-0B24A5098C5F
 ---
 
 # Format-Hex
@@ -194,6 +193,4 @@ If you specify the *Path* or *LiteralPath* parameter, the object also contains t
 [Format-Table](.\Format-Table.md)
 
 [Format-Wide](.\Format-Wide.md)
-
-
 

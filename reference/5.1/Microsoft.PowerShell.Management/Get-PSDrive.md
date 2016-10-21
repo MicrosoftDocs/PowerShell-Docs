@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/p/?linkid=290500
 schema: 2.0.0
 title: Get-PSDrive
-ms.assetid: 6C176030-DE74-40F3-8F48-7B4D871C3238
 ---
 
 # Get-PSDrive
@@ -233,6 +232,4 @@ This cmdlet returns objects that represent the drives in the session.
 [Get-WmiObject](.\Get-WmiObject.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

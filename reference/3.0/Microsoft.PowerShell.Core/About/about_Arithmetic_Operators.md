@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Arithmetic_Operators
 description:
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e471f288-0182-4474-a2de-aa8353c3b09b
 ---
 
 # About Arithmetic Operators
@@ -642,3 +641,4 @@ about_operators
 about_variables
 Get-Date
 New-TimeSpan
+

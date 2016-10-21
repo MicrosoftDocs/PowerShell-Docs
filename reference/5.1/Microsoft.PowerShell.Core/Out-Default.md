@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822075
 schema: 2.0.0
 title: Out-Default
-ms.assetid: 9848A107-DDC0-40A1-B759-5AC181C1D0CF
 ---
 
 # Out-Default
@@ -79,5 +78,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Get-Item for FileSystem"
 ms.custom: na
 ms.date: 09/30/2014
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: 0f6c1a5f-b0ee-4d6c-9c04-fbfd470aa7c1
 caps.latest.revision: 9
 manager: stevenka
 ---
@@ -188,3 +187,4 @@ This command gets items in the Windows directory with names that include a dot (
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -203,5 +203,4 @@ In the value of the Action parameter, the MessageData property of the $Event aut
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
 

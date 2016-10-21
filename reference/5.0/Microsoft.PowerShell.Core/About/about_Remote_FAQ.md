@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Remote_FAQ
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: edc95793-eabe-4996-8278-17f6347512ca
 ---
 # About Remote FAQ
 ## about_Remote_FAQ
@@ -22,7 +21,7 @@ about_Remote_FAQ
 
 
 ## SHORT DESCRIPTION
-Contains questions and answers about running remote commands in  Windows PowerShell®.
+Contains questions and answers about running remote commands in  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -370,5 +369,4 @@ about_Remote_Variables
 Invoke-Command
 
 New-PSSession
-
 

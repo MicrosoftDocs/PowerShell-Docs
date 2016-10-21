@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Disable-DscDebug.cdxml-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822018
 schema: 2.0.0
 title: Disable-DscDebug
-ms.assetid: 4B8F5592-884B-4928-8A8D-47B6AB5DF5D2
 ---
 
 # Disable-DscDebug
@@ -97,7 +96,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShellÂ® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
@@ -153,6 +152,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](.\Start-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
-
 

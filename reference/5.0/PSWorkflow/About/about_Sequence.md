@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Sequence
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: bda3f81a-be8a-43be-b0df-12bb7e193b9b
 ---
 # About Sequence
 ## about_Sequence
@@ -129,5 +128,4 @@ about_ForEach-Parallel
 about_Language_Keywords
 about_Parallel
 about_Workflows
-
 

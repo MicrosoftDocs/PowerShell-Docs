@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Join
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e5350998-a07e-47a7-baa2-cc667a2b2374
 ---
 # About join
 ## about_join
@@ -125,5 +124,4 @@ about_Operators
 about_Comparison_Operators
 
 about_Split
-
 

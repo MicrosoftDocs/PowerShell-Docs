@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Execution_Policies
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 347708dc-1515-4d74-978b-8334603472e6
 ---
 # About Execution Policies
 ## about_Execution_Policies
@@ -393,6 +392,4 @@ Unblock-File
 (http://go.microsoft.com/fwlink/?LinkId=131786)
 "PowerShell.exe Console Help"
 (http://go.microsoft.com/fwlink/?LinkID=113439)
-
-
 

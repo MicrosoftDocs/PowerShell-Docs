@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Environment_Variables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 998c8863-3794-42a8-8971-a5cadef72772
 ---
 # About Environment Variables
 ## about_Environment_Variables
@@ -275,7 +274,4 @@ For more information, see about_Modules.
 
 Environment (provider)
 about_Modules
-
-
-
 

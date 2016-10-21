@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Properties
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6833affa-3c9a-4863-978d-8d7053066bc0
 ---
 # About Properties
 ## about_Properties
@@ -22,7 +21,7 @@ about_Properties
 
 
 ## SHORT DESCRIPTION
-Describes how to use object properties in  Windows PowerShell®.
+Describes how to use object properties in  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -291,5 +290,4 @@ Get-Member
 Select-Object
 
 Format-List
-
 

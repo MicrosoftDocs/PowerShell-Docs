@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Diagnostics
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822105
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: 792C093D-2DAA-4A9D-96CF-A30A9A9595B4
 ---
 
 # Microsoft.PowerShell.Diagnostics Module
@@ -39,10 +38,4 @@ Imports performance counter log files and creates the objects that represent eac
 
 ### [New-WinEvent](.\New-WinEvent.md)
 Creates an ETW event for the specified event provider.
-
-
-
-
-
-
 

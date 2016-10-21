@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822064
 schema: 2.0.0
 title: Invoke-Command
-ms.assetid: 906B4B41-7DA8-4330-9363-E7164E5E6970
 ---
 
 # Invoke-Command
@@ -1176,6 +1175,4 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 [New-PSSession](.\New-PSSession.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

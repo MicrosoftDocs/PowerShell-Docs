@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -124,5 +124,4 @@ Get-AuthenticodeSignature returns a signature object for each signature that it 
 [about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
 
 [about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
-
 

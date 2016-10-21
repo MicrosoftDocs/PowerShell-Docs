@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -335,5 +335,4 @@ If you pipe the output of **Out-File** to Get-Member, **Get-Member** reports tha
 [Out-String](.\Out-String.md)
 
 [Tee-Object](.\Tee-Object.md)
-
 

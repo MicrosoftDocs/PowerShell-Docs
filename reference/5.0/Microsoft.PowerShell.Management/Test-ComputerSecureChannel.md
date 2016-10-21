@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -201,5 +201,4 @@ This cmdlet returns $True if the connection is working correctly and $False if i
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
 

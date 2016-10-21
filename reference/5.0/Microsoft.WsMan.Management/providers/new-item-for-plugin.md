@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: b5b0d0c2-2784-4c01-90cf-b63407c5888b
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -212,3 +211,4 @@ This command creates (registers) a plug-in for the WS-Management service.
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

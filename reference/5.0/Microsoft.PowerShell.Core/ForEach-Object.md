@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -358,5 +358,4 @@ This cmdlet returns objects that are determined by the input.
 [Select-Object](..\Microsoft.PowerShell.Utility\Select-Object.md)
 
 [Set-ItemProperty](..\Microsoft.PowerShell.Management\Set-ItemProperty.md)
-
 

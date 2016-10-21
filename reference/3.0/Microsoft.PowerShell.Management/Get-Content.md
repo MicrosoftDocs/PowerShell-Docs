@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -406,5 +406,4 @@ The output type depends upon the content that it gets.
 [Set-Content](.\Set-Content.md)
 
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822095
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
-ms.assetid: 5F4A016A-F962-4CB5-9FA9-53B173B70056
 ---
 
 # Test-PSSessionConfigurationFile
@@ -128,6 +127,4 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 [Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

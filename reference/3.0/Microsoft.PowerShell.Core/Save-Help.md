@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -282,5 +282,4 @@ You can pipe a module object from the Get-Module cmdlet to the **Module** parame
 [Get-UICulture](..\Microsoft.PowerShell.Utility\Get-Culture.md)
 
 [Update-Help](.\Update-Help.md)
-
 

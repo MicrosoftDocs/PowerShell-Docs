@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSWorkflow-help.xml
@@ -346,8 +346,7 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 [about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
+[PSWorkflow Module](PSWorkflow-Module.md)
 
-[PSWorkflowUtility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
+[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
 

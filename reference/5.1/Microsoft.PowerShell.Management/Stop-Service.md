@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822289
 schema: 2.0.0
 title: Stop-Service
-ms.assetid: 58033475-759B-42E4-9395-C077AA55934E
 ---
 
 # Stop-Service
@@ -283,6 +282,4 @@ The service names appear in the **Name** column and the display names appear in 
 [Start-Service](.\Start-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

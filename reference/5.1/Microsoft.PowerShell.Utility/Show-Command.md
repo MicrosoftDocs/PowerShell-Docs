@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822466
 schema: 2.0.0
 title: Show-Command
-ms.assetid: 65BBA50B-91A8-49D5-80A2-A30FC684BA41
 ---
 
 # Show-Command
@@ -295,5 +294,4 @@ When you use the *ErrorPopup* parameter, **Show-Command** returns the command ou
 * **Show-Command** does not work in remote sessions.
 
 ## RELATED LINKS
-
 

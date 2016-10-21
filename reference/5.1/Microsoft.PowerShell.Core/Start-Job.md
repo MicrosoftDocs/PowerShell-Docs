@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822091
 schema: 2.0.0
 title: Start-Job
-ms.assetid: 2BC04935-0DEB-4EC0-B856-D7290CCA6442
 ---
 
 # Start-Job
@@ -493,6 +492,4 @@ This cmdlet returns an object that represents the job that it started.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822279
 schema: 2.0.0
 title: Set-TimeZone
-ms.assetid: 904D8606-0D11-48B7-852E-FB708BF95E6B
 ---
 
 # Set-TimeZone
@@ -157,6 +156,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-TimeZone](.\Get-TimeZone.md)
-
-
 

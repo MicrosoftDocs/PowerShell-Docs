@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822089
 schema: 2.0.0
 title: Set-PSSessionConfiguration
-ms.assetid: B21FBAD3-1759-4260-B206-DCB8431CD6EA
 ---
 
 # Set-PSSessionConfiguration
@@ -666,6 +665,4 @@ You cannot pipe input to this cmdlet.
 [Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

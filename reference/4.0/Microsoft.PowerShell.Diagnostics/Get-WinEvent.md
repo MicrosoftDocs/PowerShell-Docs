@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -620,5 +620,4 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 [Get-EventLog](..\Microsoft.PowerShell.Management\Get-EventLog.md)
 
 [about_EventLogs]()
-
 

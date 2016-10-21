@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -304,5 +304,4 @@ New-Item returns the item that it creates.
 [Set-Item](.\Set-Item.md)
 
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
-
 

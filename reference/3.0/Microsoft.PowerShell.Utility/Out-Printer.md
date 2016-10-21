@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -125,5 +125,4 @@ If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no 
 [Out-Null](..\Microsoft.PowerShell.Core\Out-Default.md)
 
 [Out-String](.\Out-String.md)
-
 

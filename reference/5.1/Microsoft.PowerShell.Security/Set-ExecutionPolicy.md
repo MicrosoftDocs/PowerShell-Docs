@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822376
 schema: 2.0.0
 title: Set-ExecutionPolicy
-ms.assetid: 5690A0E1-495B-4E63-8280-65EAD7BF01AB
 ---
 
 # Set-ExecutionPolicy
@@ -283,6 +282,4 @@ You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the u
 [Get-ExecutionPolicy](.\Get-ExecutionPolicy.md)
 
 [Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
-
-
 

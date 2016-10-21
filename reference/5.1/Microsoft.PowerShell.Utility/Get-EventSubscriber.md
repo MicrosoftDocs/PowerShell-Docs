@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822412
 schema: 2.0.0
 title: Get-EventSubscriber
-ms.assetid: F03C3F66-0472-40D1-B971-CE4AF6EA7C02
 ---
 
 # Get-EventSubscriber
@@ -220,6 +219,4 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

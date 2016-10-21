@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822073
 schema: 2.0.0
 title: New-PSSessionOption
-ms.assetid: 3D4E81AA-8030-4CE4-A5EA-92BCEF62D182
 ---
 
 # New-PSSessionOption
@@ -719,6 +718,4 @@ You cannot pipe input to this cmdlet.
 [Invoke-Command](.\Invoke-Command.md)
 
 [New-PSSession](.\New-PSSession.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822294
 schema: 2.0.0
 title: Undo-Transaction
-ms.assetid: 7C00D3E9-D7B9-473F-94EB-FB04756C0335
 ---
 
 # Undo-Transaction
@@ -174,6 +173,4 @@ To use a transaction again, you must start a new transaction.
 [Start-Transaction](.\Start-Transaction.md)
 
 [Use-Transaction](.\Use-Transaction.md)
-
-
 

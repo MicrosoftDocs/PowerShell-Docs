@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -245,5 +245,4 @@ To roll back a different transaction, you must first commit or roll back the act
 [New-Item](.\New-Item.md)
 
 [New-ItemProperty](.\New-ItemProperty.md)
-
 

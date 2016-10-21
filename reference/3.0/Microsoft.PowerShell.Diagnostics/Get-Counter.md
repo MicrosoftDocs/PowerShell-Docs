@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -426,5 +426,4 @@ To set different values for different counters, enter separate Get-Counter comma
 [Export-Counter](.\Export-Counter.md)
 
 [Import-Counter](.\Import-Counter.md)
-
 

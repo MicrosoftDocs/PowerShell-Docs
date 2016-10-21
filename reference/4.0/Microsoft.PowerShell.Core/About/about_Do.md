@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Do
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: d1f65c4e-6231-44e2-b21c-78a91845ad6c
 ---
 # About Do
 ## about_Do
@@ -97,5 +96,4 @@ about_Assignment_Operators
 about_Comparison_Operators
 about_Break
 about_Continue
-
 

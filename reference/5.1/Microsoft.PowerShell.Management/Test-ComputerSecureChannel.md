@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822291
 schema: 2.0.0
 title: Test-ComputerSecureChannel
-ms.assetid: 0C276C91-2C1E-4767-B34E-D53F22541845
 ---
 
 # Test-ComputerSecureChannel
@@ -202,6 +201,4 @@ This cmdlet returns $True if the connection is working correctly and $False if i
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
-
 

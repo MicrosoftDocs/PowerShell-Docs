@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822428
 schema: 2.0.0
 title: Import-Alias
-ms.assetid: C4368FF1-C02A-47AA-B5C0-80503A20B4DA
 ---
 
 # Import-Alias
@@ -201,6 +200,4 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](.\New-Alias.md)
 
 [Set-Alias](.\Set-Alias.md)
-
-
 

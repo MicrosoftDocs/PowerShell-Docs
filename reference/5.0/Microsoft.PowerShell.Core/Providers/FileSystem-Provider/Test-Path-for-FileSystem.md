@@ -1,11 +1,10 @@
----
+﻿---
 title: Test-Path for FileSystem
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6050b853-c96d-49fd-93a8-4970b0e7d1f4
 ---
 # Test-Path for FileSystem
 Determines whether all elements of a file or directory path exist.  
@@ -18,14 +17,14 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ```  
   
 ## Description  
- In a file system drive, [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
+ In a file system drive, [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
   
- Note: This custom cmdlet help file explains how the [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) cmdlet works in a file system drive. For information about the [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) cmdlet in all drives, type "[Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) \-Path $null" or see [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113418.  
+ Note: This custom cmdlet help file explains how the [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md) cmdlet works in a file system drive. For information about the [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md) -Path $null" or see [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md) at http://go.microsoft.com/fwlink/?LinkID=113418.  
   
 ## Parameters  
   
-### \-OlderThan \<DateTime\>  
- Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get\-Date](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+### -OlderThan <DateTime\>  
+ Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](..\..\..\Microsoft.PowerShell.Utility\Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
  OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
   
@@ -37,8 +36,8 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-NewerThan \<DateTime\>  
- Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get\-Date](assetId:///277ba77f-f2be-44d7-8f15-23069faf0a4b) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+### -NewerThan <DateTime\>  
+ Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](..\..\..\Microsoft.PowerShell.Utility\Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
  NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
   
@@ -50,15 +49,15 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.String<br /><br /> You can pipe a string that contains a path \(but not a literal path\) to Test\-Path.|  
+|Inputs|System.String<br /><br /> You can pipe a string that contains a path (but not a literal path) to Test-Path.|  
 |Outputs|System.Boolean|  
   
 ## Example 1  
@@ -151,12 +150,13 @@ The NewerThan parameter works only in file system drives.
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

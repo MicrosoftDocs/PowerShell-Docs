@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822442
 schema: 2.0.0
 title: New-Object
-ms.assetid: 1D5CAC3B-9CD0-4EFE-BE3E-1EE8D4675F51
 ---
 
 # New-Object
@@ -298,6 +297,4 @@ You cannot pipe input to this cmdlet.
 [Sort-Object](.\Sort-Object.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

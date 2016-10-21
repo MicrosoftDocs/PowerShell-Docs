@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822209
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.assetid: A410FA78-D8F2-4AD9-9FE8-693338887BAA
 ---
 
 # Clear-RecycleBin
@@ -103,5 +102,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

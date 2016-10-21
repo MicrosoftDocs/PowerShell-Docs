@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -155,8 +155,7 @@ This cmdlet does not generate any output.
 
 [New-WSManSessionOption](.\New-WSManSessionOption.md)
 
-[Set-NetFirewallRule](cbd6cc37-2ee3-42e7-a062-9beabeb3db88)
+[Set-NetFirewallRule](Set-NetFirewallRule.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -230,5 +230,4 @@ The cmdlet does not generate any output.
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

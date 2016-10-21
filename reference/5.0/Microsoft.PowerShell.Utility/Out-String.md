@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -152,5 +152,4 @@ You can pipe objects to **Out-String**.
 [Out-Null](..\Microsoft.PowerShell.Core\Out-Null.md)
 
 [Out-Printer](.\Out-Printer.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822101
 schema: 2.0.0
 title: Update-Help
-ms.assetid: 93E1D870-ACE6-432B-8778-8920291D7545
 ---
 
 # Update-Help
@@ -478,6 +477,4 @@ To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-nam
 [Start-Job](.\Start-Job.md)
 
 [Save-Help](.\Save-Help.md)
-
-
 

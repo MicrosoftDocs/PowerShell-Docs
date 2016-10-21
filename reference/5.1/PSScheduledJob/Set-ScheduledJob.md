@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822358
 schema: 2.0.0
 title: Set-ScheduledJob
-ms.assetid: F759D9FF-6807-45D5-AF98-7E56EFD9615C
 ---
 
 # Set-ScheduledJob
@@ -500,6 +499,4 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

@@ -1,11 +1,10 @@
----
+﻿---
 title: Variable Provider
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 78dbcbbd-7946-4b9b-b75b-146f247f821c
 ---
 # Variable Provider
 ## PROVIDER NAME  
@@ -42,11 +41,11 @@ ms.assetid: 78dbcbbd-7946-4b9b-b75b-146f247f821c
   
  When you use these cmdlets, you do not need to specify the Variable: drive in the name.  
   
- The Variable provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke\-Item &#91;m2&#93;](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204). The Variable provider supports the [Get\-Content &#91;m2&#93;](assetId:///86d8b4af-af2c-4a27-9519-2c9fd420be3d) and [Set\-Content &#91;m2&#93;](assetId:///6fff9b86-86df-4440-b7b7-8124b22088fc) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
+ The Variable provider supports all of the cmdlets whose names contain the Item noun \(the Item cmdlets\), except for [Invoke\-Item &#91;m2&#93;](Invoke-Item.md). The Variable provider supports the [Get\-Content &#91;m2&#93;](Get-Content.md) and [Set\-Content &#91;m2&#93;](Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun \(the ItemProperty cmdlets\), and it does not support the Filter parameter in any cmdlet.  
   
- You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign \($\) to identify the name as a variable and the assignment operator \(\=\) to establish and change its value. For example, "$p \= [Get\-Process &#91;m2&#93;](assetId:///27a05dbd-4b69-48a3-8d55-b295f6225f15)" creates the "p" variable and stores the results of a "[Get\-Process &#91;m2&#93;](assetId:///27a05dbd-4b69-48a3-8d55-b295f6225f15)" command in it.  
+ You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign \($\) to identify the name as a variable and the assignment operator \(\=\) to establish and change its value. For example, "$p \= [Get\-Process &#91;m2&#93;](Get-Process.md)" creates the "p" variable and stores the results of a "[Get\-Process &#91;m2&#93;](Get-Process.md)" command in it.  
   
- All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export\-Console &#91;m2&#93;](assetId:///0858eece-ddcb-4525-89d1-4732c5f54c48) to save the current console.  
+ All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export\-Console &#91;m2&#93;](Export-Console.md) to save the current console.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -243,6 +242,7 @@ $processes = $null
 ```  
   
 ## See Also  
- [about\_Variables](assetId:///2faf9754-ad9e-4fe4-a937-49cfb75e7816)   
- [about\_Automatic\_Variables &#91;m2&#93;](assetId:///622a7dda-b90f-44d8-9f69-d7b50d40130a)   
- [about\_Providers](assetId:///55e2974f-3314-48d2-8b1b-abdea6b303cb)
+ [about\_Variables](about_Variables.md)   
+ [about\_Automatic\_Variables &#91;m2&#93;](about_Automatic_Variables.md)   
+ [about\_Providers](about_Providers.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822484
 schema: 2.0.0
 title: Write-Verbose
-ms.assetid: D17C2519-DAE0-4142-A506-9ACFB79B72E7
 ---
 
 # Write-Verbose
@@ -108,6 +107,4 @@ You can pipe a string that contains the message to **Write-Verbose**.
 [Write-Progress](.\Write-Progress.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

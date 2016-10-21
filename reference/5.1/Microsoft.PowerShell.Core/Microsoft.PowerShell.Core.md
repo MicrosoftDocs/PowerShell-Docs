@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Core
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 00000000-0000-0000-0000-000000000000
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822035
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: 1CE19F56-8359-408E-ADDD-D5635E52A1F5
 ---
 
 # Microsoft.PowerShell.Core Module
@@ -267,10 +266,4 @@ Suppresses the command prompt until one or all of the Windows PowerShell backgro
 
 ### [Where-Object](.\Where-Object.md)
 Selects objects from a collection based on their property values.
-
-
-
-
-
-
 

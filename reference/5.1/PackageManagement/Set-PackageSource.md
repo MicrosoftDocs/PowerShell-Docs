@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822311
 schema: 2.0.0
 title: Set-PackageSource
-ms.assetid: BE1D9F0D-6C92-4554-8ED1-F4509E1B12AF
 ---
 
 # Set-PackageSource
@@ -409,6 +408,4 @@ This cmdlet does not generate any output.
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Unregister-PackageSource](.\Unregister-PackageSource.md)
-
-
 

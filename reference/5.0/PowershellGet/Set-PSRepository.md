@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSGet-help.xml
@@ -141,5 +141,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](.\Register-PSRepository.md)
 
 [Unregister-PSRepository](.\Unregister-PSRepository.md)
-
 

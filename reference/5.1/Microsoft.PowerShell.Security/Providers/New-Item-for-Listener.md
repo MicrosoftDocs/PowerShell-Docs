@@ -1,4 +1,4 @@
----
+﻿---
 title: "New-Item for Listener"
 ms.custom: na
 ms.date: 07/31/2015
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 1e38dfa6-6707-4698-aad8-963d60c268c4
 caps.latest.revision: 5
 manager: stevenka
 ---
@@ -159,3 +158,4 @@ This command creates an HTTP listener on any IP address on the computer.
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

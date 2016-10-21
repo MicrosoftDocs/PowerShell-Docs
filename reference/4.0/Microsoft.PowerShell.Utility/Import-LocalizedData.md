@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -319,5 +319,4 @@ Then, when you display a message from the hash table in the variable, the locali
 ## RELATED LINKS
 
 [about_Script_Internationalization](..\Microsoft.PowerShell.Core\About\about_Script_Internationalization.md)
-
 

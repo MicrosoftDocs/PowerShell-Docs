@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -174,5 +174,4 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 [about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
 
 [about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
-
 

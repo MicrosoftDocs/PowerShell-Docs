@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -200,10 +200,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_Providers](http://technet.microsoft.com/library/hh847791.aspx)
+[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
 
 [Get-CmsMessage](.\Get-CmsMessage.md)
 
 [Unprotect-CmsMessage](.\Unprotect-CmsMessage.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -439,5 +439,4 @@ For more information about the $this variable, see about_Automatic_Variables.
 [about_Methods]()
 
 [about_Objects]()
-
 

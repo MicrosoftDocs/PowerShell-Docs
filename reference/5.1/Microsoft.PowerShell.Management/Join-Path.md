@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822245
 schema: 2.0.0
 title: Join-Path
-ms.assetid: 742E18E1-55C8-44CE-9C05-526BC22BF1F5
 ---
 
 # Join-Path
@@ -210,6 +209,4 @@ For more information, see about_Providers.
 [Get-ChildItem](.\Get-ChildItem.md)
 
 [Get-PSDrive](.\Get-PSDrive.md)
-
-
 

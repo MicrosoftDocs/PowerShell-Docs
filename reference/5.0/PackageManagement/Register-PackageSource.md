@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -245,12 +245,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](http://technet.microsoft.com/library/dn927162.aspx)
+[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
 
 [Get-PackageSource](.\Get-PackageSource.md)
 
 [Set-PackageSource](.\Set-PackageSource.md)
 
 [Unregister-PackageSource](.\Unregister-PackageSource.md)
-
 

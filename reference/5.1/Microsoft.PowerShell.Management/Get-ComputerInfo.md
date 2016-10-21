@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822226
 schema: 2.0.0
 title: Get-ComputerInfo
-ms.assetid: 4700EA8F-7300-490D-ACF6-8D37F12807BD
 ---
 
 # Get-ComputerInfo
@@ -75,5 +74,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

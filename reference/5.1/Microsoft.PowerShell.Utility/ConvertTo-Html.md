@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822390
 schema: 2.0.0
 title: ConvertTo-Html
-ms.assetid: BFE17E25-D90C-4FCA-BFB4-0EF3928067D8
 ---
 
 # ConvertTo-Html
@@ -385,6 +384,4 @@ For example, if you use *InputObject* to submit the processes on a computer to *
 [Export-Clixml](.\Export-Clixml.md)
 
 [Import-Clixml](.\Import-Clixml.md)
-
-
 

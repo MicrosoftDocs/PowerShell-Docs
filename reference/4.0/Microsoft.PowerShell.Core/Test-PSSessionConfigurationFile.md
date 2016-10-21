@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -140,5 +140,4 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
-
 

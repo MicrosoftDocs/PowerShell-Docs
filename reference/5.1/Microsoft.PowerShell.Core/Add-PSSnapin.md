@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822037
 schema: 2.0.0
 title: Add-PSSnapin
-ms.assetid: 4125E0DC-D3C1-494F-87E1-4918DF7D0F84
 ---
 
 # Add-PSSnapin
@@ -153,6 +152,4 @@ Otherwise, this cmdlet does not generate any output.
 [Get-PSSnapin](.\Get-PSSnapin.md)
 
 [Remove-PSSnapin](.\Remove-PSSnapin.md)
-
-
 

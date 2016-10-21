@@ -1,4 +1,4 @@
----
+﻿---
 title: PSDesiredStateConfiguration
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822017
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: EEE354BF-2159-4554-8240-88983EF807BD
 ---
 
 # PSDesiredStateConfiguration Module
@@ -83,10 +82,4 @@ Tests whether the actual configuration on the nodes matches the desired configur
 
 ### [Update-DscConfiguration](.\Update-DscConfiguration.md)
 Checks the pull server for an updated configuration and applies it.
-
-
-
-
-
-
 

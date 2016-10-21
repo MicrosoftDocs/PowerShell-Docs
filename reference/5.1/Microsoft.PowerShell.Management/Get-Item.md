@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822232
 schema: 2.0.0
 title: Get-Item
-ms.assetid: 4ED2B1E1-FDE4-4425-90A0-87774477FEFA
 ---
 
 # Get-Item
@@ -355,6 +354,4 @@ For more information, see about_Providers.
 [Get-ItemProperty](.\Get-ItemProperty.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

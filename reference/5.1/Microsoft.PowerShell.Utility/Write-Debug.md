@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822478
 schema: 2.0.0
 title: Write-Debug
-ms.assetid: FB95CFE7-8A21-4B6A-9E00-0205A6B74C41
 ---
 
 # Write-Debug
@@ -130,6 +129,4 @@ It does not return any output.
 [Write-Verbose](.\Write-Verbose.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

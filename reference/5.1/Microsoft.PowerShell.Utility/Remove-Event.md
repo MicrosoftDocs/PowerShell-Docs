@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822453
 schema: 2.0.0
 title: Remove-Event
-ms.assetid: 7F3788EE-44AF-407F-8F7B-9F1B4A262C71
 ---
 
 # Remove-Event
@@ -160,6 +159,4 @@ The cmdlet does not generate any output.
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

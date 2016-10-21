@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -168,5 +168,4 @@ You can also use the *Unique* parameter of **Sort-Object** to find the unique it
 [Select-Object](.\Select-Object.md)
 
 [Sort-Object](.\Sort-Object.md)
-
 

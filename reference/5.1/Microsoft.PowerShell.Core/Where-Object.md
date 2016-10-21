@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822103
 schema: 2.0.0
 title: Where-Object
-ms.assetid: 6A70160B-CF62-48DF-AE5B-0A9B173013B4
 ---
 
 # Where-Object
@@ -1016,6 +1015,4 @@ This cmdlet returns selected items from the input object set.
 ## RELATED LINKS
 
 [ForEach-Object](.\ForEach-Object.md)
-
-
 

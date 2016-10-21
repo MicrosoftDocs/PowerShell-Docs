@@ -1,11 +1,10 @@
----
+﻿---
 title: about_Scopes
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 807a5b29-3f02-4b97-8eed-854869936017
 ---
 # About Scopes
 ## about_Scopes
@@ -488,5 +487,4 @@ about_Variables
 about_Environment_Variables
 about_Functions
 about_Script_Blocks
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822473
 schema: 2.0.0
 title: Update-FormatData
-ms.assetid: 166535EB-9CDD-4269-B612-F936F6740B79
 ---
 
 # Update-FormatData
@@ -180,6 +179,4 @@ The cmdlet does not return any output.
 [Get-FormatData](.\Get-FormatData.md)
 
 [Export-FormatData](.\Export-FormatData.md)
-
-
 

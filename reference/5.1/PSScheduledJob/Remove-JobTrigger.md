@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822356
 schema: 2.0.0
 title: Remove-JobTrigger
-ms.assetid: 46CC6C3A-D929-40D7-BF3F-0EB38D203879
 ---
 
 # Remove-JobTrigger
@@ -227,6 +226,4 @@ The cmdlet does not generate any output.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

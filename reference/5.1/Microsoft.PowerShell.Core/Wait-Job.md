@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822102
 schema: 2.0.0
 title: Wait-Job
-ms.assetid: CB8A2C67-F8A5-45A8-A27F-2EC028C9DA8F
 ---
 
 # Wait-Job
@@ -450,6 +449,4 @@ If the wait ends because the value of the *Timeout* parameter is exceeded, **Wai
 [Stop-Job](.\Stop-Job.md)
 
 [Suspend-Job](.\Suspend-Job.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -196,5 +196,4 @@ This cmdlet does not return any output.
 [Write-Debug](..\Microsoft.PowerShell.Management\Debug-Process.md)
 
 [about_Debuggers]()
-
 

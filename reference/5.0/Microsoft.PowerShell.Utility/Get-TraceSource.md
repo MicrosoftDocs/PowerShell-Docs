@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -87,5 +87,4 @@ You can pipe a string that contains the name of a trace source to **Get-TraceSou
 [Set-TraceSource](.\Set-TraceSource.md)
 
 [Trace-Command](.\Trace-Command.md)
-
 

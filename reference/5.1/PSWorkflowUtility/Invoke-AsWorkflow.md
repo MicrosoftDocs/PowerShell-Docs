@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSWorkflowUtility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822490
 schema: 2.0.0
 title: Invoke-AsWorkflow
-ms.assetid: A5A32019-0D68-4041-935F-1B1CACAF6D3D
 ---
 
 # Invoke-AsWorkflow
@@ -184,5 +183,4 @@ However, it runs the workflow, which might generate output.
 ## NOTES
 
 ## RELATED LINKS
-
 

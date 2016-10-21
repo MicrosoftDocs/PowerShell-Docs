@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822200
 schema: 2.0.0
 title: Add-Computer
-ms.assetid: 712F3460-C5D0-4AF8-8DE6-6D06E4A1A838
 ---
 
 # Add-Computer
@@ -478,6 +477,4 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Computer](.\Stop-Computer.md)
 
 [Test-Connection](.\Test-Connection.md)
-
-
 

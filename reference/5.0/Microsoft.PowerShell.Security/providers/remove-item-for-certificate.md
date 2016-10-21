@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 8a32a6b7-2e9c-4001-ae6b-18422ced8a32
 caps.latest.revision: 9
 manager: stevenka
 ---
@@ -168,3 +167,4 @@ This command deletes all certificates that have a DNS name that contains "Fabrik
  [Get-PSDrive](..\..\Microsoft.PowerShell.Management\Get-PSDrive.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)
+

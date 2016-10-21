@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Workflows
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f2897bdd-1b9d-4679-8b19-09840bd40a22
 ---
 # About Workflows
 ## about_Workflows
@@ -296,7 +295,4 @@ about_WorkflowCommonParameters
 
 "Writing a Windows PowerShell Workflow"
 (http://go.microsoft.com/fwlink/?LinkID=246399)
-
-
-
 

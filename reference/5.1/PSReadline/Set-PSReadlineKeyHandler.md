@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822013
 schema: 2.0.0
 title: Set-PSReadlineKeyHandler
-ms.assetid: 42FFD1A5-E642-4765-A505-57781C145A51
 ---
 
 # Set-PSReadlineKeyHandler
@@ -188,6 +187,4 @@ You cannot pipe objects to this cmdlet.
 [Get-PSReadlineOption](.\Get-PSReadlineOption.md)
 
 [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
-
-
 

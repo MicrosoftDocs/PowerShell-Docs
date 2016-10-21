@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Transactions
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e6902e15-3a8c-4fd2-818a-d662de083deb
 ---
 # About Transactions
 ## about_Transactions
@@ -780,7 +779,4 @@ Registry (provider)
 about_Providers
 Get-PSProvider
 Get-ChildItem
-
-
-
 

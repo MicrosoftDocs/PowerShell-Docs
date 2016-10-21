@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822039
 schema: 2.0.0
 title: Connect-PSSession
-ms.assetid: B803DD29-F208-4079-80D4-DB04D778F060
 ---
 
 # Connect-PSSession
@@ -659,6 +658,4 @@ Disconnected sessions are considered to be idle from the moment that they are di
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

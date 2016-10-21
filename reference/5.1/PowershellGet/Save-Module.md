@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822333
 schema: 2.0.0
 title: Save-Module
-ms.assetid: 5E9256CC-0654-40C5-93B8-3206D25B8C7C
 ---
 
 # Save-Module
@@ -337,6 +336,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
-
 

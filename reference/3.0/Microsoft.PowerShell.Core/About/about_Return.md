@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Return
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 8118c910-1c5a-47d4-9187-04b153507953
 ---
 # About Return
 ## about_Return
@@ -30,7 +29,7 @@ The Return keyword exits a function, script, or script block. It can be used to 
 
 Users who are familiar with languages like C or C\# might want to use the Return keyword to make the logic of leaving a scope explicit.
 
-In  Windows PowerShell®, the results of each statement are returned as output, even without a statement that contains the Return keyword. Languages like C or C\# return only the value or values that are specified by the Return keyword.
+In  Windows PowerShellï¿½, the results of each statement are returned as output, even without a statement that contains the Return keyword. Languages like C or C\# return only the value or values that are specified by the Return keyword.
 
 
 ### SYNTAX
@@ -131,5 +130,4 @@ about_Functions
 about_Scopes
 
 about_Script_Blocks
-
 

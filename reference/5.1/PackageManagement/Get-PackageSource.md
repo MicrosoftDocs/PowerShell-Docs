@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822305
 schema: 2.0.0
 title: Get-PackageSource
-ms.assetid: 3FA76858-9E0B-4DB6-B67D-F40702D41659
 ---
 
 # Get-PackageSource
@@ -258,6 +257,4 @@ Specifies one or more package sources.
 [Set-PackageSource](.\Set-PackageSource.md)
 
 [Unregister-PackageSource](.\Unregister-PackageSource.md)
-
-
 

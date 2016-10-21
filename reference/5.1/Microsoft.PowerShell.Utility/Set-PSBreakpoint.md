@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822463
 schema: 2.0.0
 title: Set-PSBreakpoint
-ms.assetid: 6AFD5D2C-A285-4796-8607-3CBF49471420
 ---
 
 # Set-PSBreakpoint
@@ -387,6 +386,4 @@ You cannot pipe input to **Set-PSBreakpoint**.
 [Get-PSCallStack](.\Get-PSCallStack.md)
 
 [Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
-
-
 

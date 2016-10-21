@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822078
 schema: 2.0.0
 title: Receive-Job
-ms.assetid: 78FCC10B-5CDE-4BF2-A901-33F8237F87FE
 ---
 
 # Receive-Job
@@ -459,6 +458,4 @@ This cmdlet returns the results of the commands in the job.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

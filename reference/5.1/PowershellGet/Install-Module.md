@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822326
 schema: 2.0.0
 title: Install-Module
-ms.assetid: 6BC4ADA5-D4E0-4D64-ACC0-42A67628BB4B
 ---
 
 # Install-Module
@@ -372,6 +371,4 @@ As a security best practice, evaluate module code before running any cmdlets or 
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
-
 

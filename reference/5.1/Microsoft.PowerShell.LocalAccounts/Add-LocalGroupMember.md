@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822507
 schema: 2.0.0
 title: Add-LocalGroupMember
-ms.assetid: E583C784-A9E0-4A9A-90E1-2CDC89D16450
 ---
 
 # Add-LocalGroupMember
@@ -183,6 +182,4 @@ This cmdlet does not generate any output.
 [New-LocalGroup](.\New-LocalGroup.md)
 
 [Remove-LocalGroupMember](.\Remove-LocalGroupMember.md)
-
-
 

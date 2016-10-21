@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -151,11 +151,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_CommonParameters](http://technet.microsoft.com/library/hh847884.aspx)
+[about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md)
 
-[about_Preference_Variables](http://technet.microsoft.com/library/hh847796.aspx)
+[about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
 
-[about_Redirection](http://technet.microsoft.com/library/hh847746.aspx)
+[about_Redirection](..\Microsoft.PowerShell.Core\About\about_Redirection.md)
 
 [Write-Debug](.\Write-Debug.md)
 
@@ -172,5 +172,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Write-Warning](.\Write-Warning.md)
 
 [Write-Output](.\Write-Output.md)
-
 

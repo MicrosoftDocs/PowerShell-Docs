@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822347
 schema: 2.0.0
 title: Disable-ScheduledJob
-ms.assetid: 0F633D57-FE67-4FB8-B6F1-875395C76042
 ---
 
 # Disable-ScheduledJob
@@ -276,6 +275,4 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

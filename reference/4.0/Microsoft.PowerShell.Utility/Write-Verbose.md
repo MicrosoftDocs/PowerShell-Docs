@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -99,5 +99,4 @@ You can pipe a string that contains the message to **Write-Verbose**.
 [Write-Warning](.\Write-Warning.md)
 
 [about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
-
 

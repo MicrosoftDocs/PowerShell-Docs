@@ -1,4 +1,4 @@
----
+﻿---
 title: "Get-Content for FileSystem"
 ms.custom: na
 ms.date: 07/31/2015
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: 7d7e2953-8996-4cce-9e7e-98d4cf8aa2a9
 caps.latest.revision: 13
 manager: stevenka
 ---
@@ -318,3 +317,4 @@ The fourth command uses the Set-Content cmdlet to write the bytes in the $b vari
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

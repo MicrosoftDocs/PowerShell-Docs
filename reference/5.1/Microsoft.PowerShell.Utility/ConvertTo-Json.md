@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822391
 schema: 2.0.0
 title: ConvertTo-Json
-ms.assetid: 7375C4E6-B767-41CC-9C0D-37DB1BBCF7BF
 ---
 
 # ConvertTo-Json
@@ -212,6 +211,4 @@ You can pipe any object to **ConvertTo-Json**.
 [Invoke-WebRequest](.\Invoke-WebRequest.md)
 
 [Invoke-RestMethod](.\Invoke-RestMethod.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Regular_Expressions
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: b8dfae27-fb64-4d24-b065-fbc9bee88ae3
 ---
 # About Regular Expressions
 ## about_Regular_Expressions
@@ -154,5 +153,4 @@ at http://go.microsoft.com/fwlink/?LinkId=133231.
 
 about_Comparison_Operators
 about_Operators
-
 

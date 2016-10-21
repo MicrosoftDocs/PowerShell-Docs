@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Break
 description:
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: fb810374-761e-46f2-8748-eac12557cf54
 ---
 # About Break
 
@@ -219,3 +218,4 @@ about_Throw
 about_Trap
 about_Try_Catch_Finally
 about_While
+

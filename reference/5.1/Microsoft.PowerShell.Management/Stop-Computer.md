@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822287
 schema: 2.0.0
 title: Stop-Computer
-ms.assetid: BAE0484A-418A-432C-A172-34B5165DD0B1
 ---
 
 # Stop-Computer
@@ -383,6 +382,4 @@ Otherwise, it does not generate any output.
 [Restore-Computer](.\Restore-Computer.md)
 
 [Test-Connection](.\Test-Connection.md)
-
-
 

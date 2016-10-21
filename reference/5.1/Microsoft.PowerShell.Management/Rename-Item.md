@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822265
 schema: 2.0.0
 title: Rename-Item
-ms.assetid: 0F4879DB-7CB4-4B2B-82F4-61F7B9C0DC24
 ---
 
 # Rename-Item
@@ -304,6 +303,4 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-Item](.\Set-Item.md)
-
-
 

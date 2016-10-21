@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822246
 schema: 2.0.0
 title: Limit-EventLog
-ms.assetid: C3C3797C-E5D2-494B-B9C8-170999440385
 ---
 
 # Limit-EventLog
@@ -245,6 +244,4 @@ To see the current settings of the event log properties, type `Get-EventLog -Lis
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

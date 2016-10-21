@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -786,5 +786,4 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 [about_Remote_Disconnected_Sessions](.\About\about_Remote_Disconnected_Sessions.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
-
 

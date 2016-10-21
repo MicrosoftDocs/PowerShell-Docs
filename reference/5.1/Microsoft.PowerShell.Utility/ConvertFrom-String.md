@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822386
 schema: 2.0.0
 title: ConvertFrom-String
-ms.assetid: CD730EB5-BAF5-4624-A255-97652E67C821
 ---
 
 # ConvertFrom-String
@@ -246,6 +245,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [ConvertFrom-Csv](.\ConvertFrom-Csv.md)
 
 [ConvertTo-Xml](.\ConvertTo-Xml.md)
-
-
 

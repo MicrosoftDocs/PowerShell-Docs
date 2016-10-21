@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -424,5 +424,4 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](.\Invoke-WmiMethod.md)
 
 [Set-WmiInstance](.\Set-WmiInstance.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822432
 schema: 2.0.0
 title: Import-PowerShellDataFile
-ms.assetid: 504CBF4D-6AA9-4E0C-A965-8EB82CFE27A9
 ---
 
 # Import-PowerShellDataFile
@@ -77,5 +76,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

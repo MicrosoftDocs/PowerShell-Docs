@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -302,5 +302,4 @@ New-Object returns the object that is created.
 [Tee-Object](.\Tee-Object.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
-
 

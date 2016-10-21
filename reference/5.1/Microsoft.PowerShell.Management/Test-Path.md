@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822293
 schema: 2.0.0
 title: Test-Path
-ms.assetid: 2E9DF935-45E8-44BA-A66A-2DE2DD61F3F5
 ---
 
 # Test-Path
@@ -344,6 +343,4 @@ For more information, see about_Providers.
 [Resolve-Path](.\Resolve-Path.md)
 
 [Split-Path](.\Split-Path.md)
-
-
 

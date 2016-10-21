@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822465
 schema: 2.0.0
 title: Set-Variable
-ms.assetid: A961F6E3-12D2-4210-A039-62F502623A8C
 ---
 
 # Set-Variable
@@ -346,6 +345,4 @@ Otherwise, this cmdlet does not generate any output.
 [New-Variable](.\New-Variable.md)
 
 [Remove-Variable](.\Remove-Variable.md)
-
-
 

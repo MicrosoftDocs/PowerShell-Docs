@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822107
 schema: 2.0.0
 title: Get-Counter
-ms.assetid: 963E9E51-4232-4CCF-881D-C2048FF35C2A
 ---
 
 # Get-Counter
@@ -443,6 +442,4 @@ To set different values for different counters, enter separate **Get-Counter** c
 [Export-Counter](.\Export-Counter.md)
 
 [Import-Counter](.\Import-Counter.md)
-
-
 

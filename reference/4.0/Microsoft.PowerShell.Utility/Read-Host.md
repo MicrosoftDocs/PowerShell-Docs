@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -112,5 +112,4 @@ Otherwise, it returns a string.
 [Out-Host](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
 
 [Write-Host](.\Write-Host.md)
-
 

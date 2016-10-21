@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -313,5 +313,4 @@ Otherwise, it does not return any output.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
 

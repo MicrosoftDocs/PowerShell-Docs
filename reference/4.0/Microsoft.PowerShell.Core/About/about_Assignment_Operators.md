@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Assignment_Operators
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ac2e399d-9cdc-422c-8b44-7746d93d1db5
 ---
 # About Assignment Operators
 ## about_Assignment_Operators
@@ -678,6 +677,4 @@ about_Variables
 Clear-Variable
 Remove-Variable
 Set-Variable
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822433
 schema: 2.0.0
 title: Import-PSSession
-ms.assetid: FD5E8E29-A49A-4BC5-98AE-291B31C7755B
 ---
 
 # Import-PSSession
@@ -530,6 +529,4 @@ To create a permanent module on disk, use the Export-PSSession cmdlet.
 ## RELATED LINKS
 
 [Export-PSSession](.\Export-PSSession.md)
-
-
 

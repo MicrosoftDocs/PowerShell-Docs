@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Split
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 9deec016-d841-4758-acf1-82b1652cd61b
 ---
 # About Split
 ## about_Split
@@ -437,6 +436,4 @@ Split-Path
 about_Operators
 about_Comparison_Operators
 about_Join
-
-
 

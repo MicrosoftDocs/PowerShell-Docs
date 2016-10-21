@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822229
 schema: 2.0.0
 title: Get-ControlPanelItem
-ms.assetid: 32022669-448F-408A-A0E7-9ECC8AC7BB93
 ---
 
 # Get-ControlPanelItem
@@ -177,6 +176,4 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Show-ControlPanelItem](.\Show-ControlPanelItem.md)
-
-
 

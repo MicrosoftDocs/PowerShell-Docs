@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -86,5 +86,4 @@ Get-TraceSource returns objects that represent the trace sources.
 [Set-TraceSource](.\Set-TraceSource.md)
 
 [Trace-Command](.\Trace-Command.md)
-
 

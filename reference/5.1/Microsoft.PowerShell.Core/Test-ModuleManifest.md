@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822094
 schema: 2.0.0
 title: Test-ModuleManifest
-ms.assetid: 2C379E5A-53B8-4A45-ABBA-92FADF446685
 ---
 
 # Test-ModuleManifest
@@ -146,6 +145,4 @@ It returns this object even if the manifest has errors.
 [New-ModuleManifest](.\New-ModuleManifest.md)
 
 [Remove-Module](.\Remove-Module.md)
-
-
 

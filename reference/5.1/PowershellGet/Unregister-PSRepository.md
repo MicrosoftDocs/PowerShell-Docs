@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822339
 schema: 2.0.0
 title: Unregister-PSRepository
-ms.assetid: 0566904D-FA61-41FF-87D4-6471FE449D9B
 ---
 
 # Unregister-PSRepository
@@ -78,6 +77,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](.\Register-PSRepository.md)
 
 [Set-PSRepository](.\Set-PSRepository.md)
-
-
 

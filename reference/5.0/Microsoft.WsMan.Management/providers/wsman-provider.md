@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 4c3d8d36-4f7a-4211-996f-64110e4b2eb7
 caps.latest.revision: 6
 manager: stevenka
 ---
@@ -916,3 +915,4 @@ ClientCertificate                     Container
 #### Cmdlets supported:  
   
 -   [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md)
+

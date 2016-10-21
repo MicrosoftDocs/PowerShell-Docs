@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Functions_CmdletBindingAttribute
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: a7c70343-cc8e-4556-8a28-2e61e85c2801
 ---
 # About Functions CmdletBindingAttribute
 ## about_Functions_CmdletBindingAttribute
@@ -195,5 +194,4 @@ about_Functions_Advanced
 about_Functions_Advanced_Methods
 about_Functions_Advanced_Parameters
 about_Functions_OutputTypeAttribute
-
 

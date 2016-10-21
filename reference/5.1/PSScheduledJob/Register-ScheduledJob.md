@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822355
 schema: 2.0.0
 title: Register-ScheduledJob
-ms.assetid: 47E8F0DE-6A42-447B-A024-9A20DA5A852F
 ---
 
 # Register-ScheduledJob
@@ -501,6 +500,4 @@ For more information, see about_Scheduled_Jobs_Troubleshooting.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

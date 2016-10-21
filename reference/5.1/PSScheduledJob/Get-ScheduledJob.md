@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822351
 schema: 2.0.0
 title: Get-ScheduledJob
-ms.assetid: FF366CBF-5E3B-49FB-B987-D1A8D9822172
 ---
 
 # Get-ScheduledJob
@@ -168,6 +167,4 @@ You cannot pipe input to **Get-ScheduledJob**.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

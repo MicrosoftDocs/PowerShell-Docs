@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -357,5 +357,4 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 [Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
 
 [Get-Date](..\Microsoft.PowerShell.Utility\Get-Date.md)
-
 

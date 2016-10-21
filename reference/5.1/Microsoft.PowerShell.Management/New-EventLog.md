@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822249
 schema: 2.0.0
 title: New-EventLog
-ms.assetid: 21E8F496-8F5B-4B79-9393-F16C86287E67
 ---
 
 # New-EventLog
@@ -207,6 +206,4 @@ The file name is the first eight characters of the Log property that has an .evt
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

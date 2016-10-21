@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822050
 schema: 2.0.0
 title: Export-Console
-ms.assetid: 4BAB1C02-9E61-4AAF-9957-11D1934EF4EF
 ---
 
 # Export-Console
@@ -237,6 +236,4 @@ For more information, see about_Profiles.
 [Get-PSSnapin](.\Get-PSSnapin.md)
 
 [Remove-PSSnapin](.\Remove-PSSnapin.md)
-
-
 

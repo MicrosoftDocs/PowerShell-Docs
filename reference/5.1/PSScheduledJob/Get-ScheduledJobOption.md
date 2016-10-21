@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822352
 schema: 2.0.0
 title: Get-ScheduledJobOption
-ms.assetid: 00B922BF-0816-4817-BD07-0534538E5D68
 ---
 
 # Get-ScheduledJobOption
@@ -270,6 +269,4 @@ You can pipe a scheduled job from Get-ScheduledJob to **Get-ScheduledJobOption**
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

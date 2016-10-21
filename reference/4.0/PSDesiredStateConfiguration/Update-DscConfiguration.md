@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 Specifies a friendly name for a job.
 If you specify this parameter, the cmdlet runs as a job, and it returns a **Job** object.
 
-By default, Windows PowerShellÂ® assigns the name JobN where N is an integer.
+By default, Windows PowerShell® assigns the name JobN where N is an integer.
 
 If you specify the **Wait** parameter, do not specify this parameter.
 
@@ -195,5 +195,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-DscConfiguration](.\Stop-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
 

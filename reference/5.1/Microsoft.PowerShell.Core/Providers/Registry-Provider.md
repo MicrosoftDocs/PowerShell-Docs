@@ -1,4 +1,4 @@
----
+﻿---
 title: "Registry Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: d3c8013c-8caa-48d7-9feb-bfef0d95926e
 caps.latest.revision: 5
 manager: stevenka
 ---
@@ -242,3 +241,4 @@ set-item -path hkcu:\environment\testnew -value "another default value"
   
 ## See Also  
  [about_Providers](..\About\about_Providers.md)
+

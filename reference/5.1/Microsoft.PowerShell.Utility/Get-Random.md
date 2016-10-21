@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822419
 schema: 2.0.0
 title: Get-Random
-ms.assetid: 45AD20DC-3459-42F8-B364-0F29EB81F481
 ---
 
 # Get-Random
@@ -335,5 +334,4 @@ You can pipe one or more objects to **Get-Random**.
 * Beginning in Windows PowerShell 3.0, **Get-Random** supports 64-bit integers. In Windows PowerShell 2.0, all values are cast to System.Int32.
 
 ## RELATED LINKS
-
 

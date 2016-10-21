@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822313
 schema: 2.0.0
 title: Unregister-PackageSource
-ms.assetid: 2E179DCB-D825-4329-B001-EB1579ECEB67
 ---
 
 # Unregister-PackageSource
@@ -338,6 +337,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Set-PackageSource](.\Set-PackageSource.md)
-
-
 

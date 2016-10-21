@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822468
 schema: 2.0.0
 title: Start-Sleep
-ms.assetid: BCC6DDE8-1FE1-42B1-8342-C32C0E1EE15A
 ---
 
 # Start-Sleep
@@ -104,5 +103,4 @@ This cmdlet does not return any output.
 *
 
 ## RELATED LINKS
-
 

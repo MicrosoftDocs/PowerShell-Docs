@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -398,5 +398,4 @@ Otherwise, this cmdlet returns a Win32_PingStatus object for each ping.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822479
 schema: 2.0.0
 title: Write-Error
-ms.assetid: EEDFEA70-5AA7-4D20-B87D-F8E1147B1B42
 ---
 
 # Write-Error
@@ -349,6 +348,4 @@ It does not return any objects.
 [Write-Verbose](.\Write-Verbose.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

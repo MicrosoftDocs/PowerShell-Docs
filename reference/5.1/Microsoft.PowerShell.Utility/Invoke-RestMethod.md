@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822435
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.assetid: FF5E372E-CF12-4647-9055-58C2190B9534
 ---
 
 # Invoke-RestMethod
@@ -624,6 +623,4 @@ If the request returns JSON strings, **Invoke-RestMethod** returns a **PSObject*
 [ConvertFrom-Json](.\ConvertFrom-Json.md)
 
 [Invoke-WebRequest](.\Invoke-WebRequest.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822570
 schema: 2.0.0
 title: Test-FileCatalog
-ms.assetid: A33195DF-4C39-4D70-A1DA-6011F145216C
 ---
 
 # Test-FileCatalog
@@ -130,5 +129,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822092
 schema: 2.0.0
 title: Stop-Job
-ms.assetid: B998B518-121A-48F4-B062-2B388069DE18
 ---
 
 # Stop-Job
@@ -389,6 +388,4 @@ Otherwise, this cmdlet does not generate any output.
 [Suspend-Job](.\Suspend-Job.md)
 
 [Wait-Job](.\Wait-Job.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822431
 schema: 2.0.0
 title: Import-LocalizedData
-ms.assetid: 6EE55B18-63AE-41C9-80ED-677966F29AD6
 ---
 
 # Import-LocalizedData
@@ -321,6 +320,4 @@ Then, when you display a message from the hash table in the variable, the locali
 ## RELATED LINKS
 
 [Write-Host](.\Write-Host.md)
-
-
 

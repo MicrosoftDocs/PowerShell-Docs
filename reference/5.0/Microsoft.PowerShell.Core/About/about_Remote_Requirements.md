@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote_Requirements
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: e4642458-4ac7-4643-af1b-78d3e7594c42
 ---
 # About Remote Requirements
 ## about_Remote_Requirements
@@ -259,6 +258,4 @@ about_PSSessions
 Invoke-Command
 Enter-PSSession
 New-PSSession
-
-
 

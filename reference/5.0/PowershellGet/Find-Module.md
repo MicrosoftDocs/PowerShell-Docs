@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSGet-help.xml
@@ -334,5 +334,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
 

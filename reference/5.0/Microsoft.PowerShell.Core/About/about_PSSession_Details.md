@@ -1,4 +1,4 @@
----
+﻿---
 title: about_PSSession_Details
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: d2c594e8-bcf6-4db5-8335-6487adcaf7eb
 ---
 # About PSSession Details
 ## about_PSSession_Details
@@ -299,6 +298,4 @@ Get-PSSession
 Remove-PSSession
 Enter-PSSession
 Exit-PSSession
-
-
 

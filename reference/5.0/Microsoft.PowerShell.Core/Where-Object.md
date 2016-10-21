@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -1029,5 +1029,4 @@ This cmdlet returns selected items from the input object set.
 [Sort-Object](..\Microsoft.PowerShell.Utility\Sort-Object.md)
 
 [Tee-Object](..\Microsoft.PowerShell.Utility\Tee-Object.md)
-
 

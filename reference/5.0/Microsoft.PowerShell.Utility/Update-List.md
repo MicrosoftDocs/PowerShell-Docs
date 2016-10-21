@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -208,5 +208,4 @@ You can pipe the objects to be updated to **Update-List**.
 [Format-List](.\Format-List.md)
 
 [Select-Object](.\Select-Object.md)
-
 

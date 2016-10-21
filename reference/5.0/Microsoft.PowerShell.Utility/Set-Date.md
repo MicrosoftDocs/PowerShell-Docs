@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -196,5 +196,4 @@ You can pipe a date to **Set-Date**.
 [Get-Date](.\Get-Date.md)
 
 [New-TimeSpan](.\New-TimeSpan.md)
-
 

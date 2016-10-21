@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822295
 schema: 2.0.0
 title: Use-Transaction
-ms.assetid: 8E5DDCB5-32EF-42F9-9DD0-4153094A2F67
 ---
 
 # Use-Transaction
@@ -181,6 +180,4 @@ This cmdlet returns the result of the transaction.
 [Start-Transaction](.\Start-Transaction.md)
 
 [Undo-Transaction](.\Undo-Transaction.md)
-
-
 

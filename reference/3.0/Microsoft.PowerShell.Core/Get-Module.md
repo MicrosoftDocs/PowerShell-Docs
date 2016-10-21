@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -545,5 +545,4 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [New-PSSession](.\New-PSSession.md)
 
 [Remove-Module](.\Remove-Module.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Environment Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 94fcd05d-e702-4706-9b7d-ad7e5fd0ec09
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -179,3 +178,4 @@ clear-item -path env:USERROLE
   
 ## See Also  
  [about_Providers](..\About\about_Providers.md)
+

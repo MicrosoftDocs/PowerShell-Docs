@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -337,5 +337,4 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](..\Microsoft.PowerShell.Utility\Get-Event.md)
 
 [Wait-Event](..\Microsoft.PowerShell.Utility\Get-Event.md)
-
 

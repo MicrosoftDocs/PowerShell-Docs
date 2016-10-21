@@ -1,11 +1,10 @@
----
+﻿---
 title: Add-Content for FileSystem
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 1c166158-8abf-4c66-980d-1ae7961aa35d
 ---
 # Add-Content for FileSystem
 Appends content, such as words or data, to a file.  
@@ -18,34 +17,34 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
   
 ## Description  
- In file system drives, the [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
+ In file system drives, the [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
   
- Note: This custom cmdlet help file explains how the [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet works in a file system drive. For information about the [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet in all drives, type "[Get\-Help](assetId:///1f46eeb4-49d7-4bec-bb29-395d9b42f54a)[Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) \-Path $null" or see [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113278.  
+ Note: This custom cmdlet help file explains how the [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) cmdlet works in a file system drive. For information about the [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) -Path $null" or see [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113278.  
   
 ## Parameters  
   
-### \-Encoding \<FileSystemCmdletProviderEncoding\>  
- Specifies the file encoding. The [default](../Topic/default.md) is ASCII.  
+### -Encoding <FileSystemCmdletProviderEncoding\>  
+ Specifies the file encoding. The default is ASCII.  
   
  Valid values are:  
   
- \-\- ASCII:  Uses the encoding for the ASCII \(7\-bit\) character set.  
+ -- ASCII:  Uses the encoding for the ASCII (7-bit) character set.  
   
- \-\- BigEndianUnicode:  Encodes in UTF\-16 format using the big\-endian byte order.  
+ -- BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.  
   
- \-\- Byte:   Encodes a set of characters into a sequence of bytes.  
+ -- Byte:   Encodes a set of characters into a sequence of bytes.  
   
- \-\- String:  Uses the encoding type for a string.  
+ -- String:  Uses the encoding type for a string.  
   
- \-\- Unicode:  Encodes in UTF\-16 format using the little\-endian byte order.  
+ -- Unicode:  Encodes in UTF-16 format using the little-endian byte order.  
   
- \-\- UTF7:   Encodes in UTF\-7 format.  
+ -- UTF7:   Encodes in UTF-7 format.  
   
- \-\- UTF8:  Encodes in UTF\-8 format.  
+ -- UTF8:  Encodes in UTF-8 format.  
   
- \-\- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
+ -- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
   
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) cmdlet. This parameter works only in file system drives.  
   
 |||  
 |-|-|  
@@ -55,8 +54,8 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Force  
- Adds contents to files even if they are read\-only. Without this parameter, read\-only files are not affected.  
+### -Force  
+ Adds contents to files even if they are read-only. Without this parameter, read-only files are not affected.  
   
 |||  
 |-|-|  
@@ -66,10 +65,10 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Stream \<string\>  
- Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) creates it. Enter the stream name. Wildcards are not supported.  
+### -Stream <string\>  
+ Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Add\-Content](assetId:///fcff151c-88d1-4b84-a9a9-8e3b1a155413) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -81,7 +80,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Confirm  
+### -Confirm  
  Prompts you for confirmation before executing the command.  
   
 |||  
@@ -92,7 +91,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-WhatIf  
+### -WhatIf  
  Describes what would happen if you executed the command without actually executing the command.  
   
 |||  
@@ -103,8 +102,8 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about\_Transactions](../Topic/about_Transactions.md).  
+### -UseTransaction  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](..\..\About\about_Transactions.md).  
   
 |||  
 |-|-|  
@@ -114,16 +113,16 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|Sytem.Object\[\], System.String\[\], System.Management.Automation.PSCredential<br /><br /> You can pipe the value \(object\), a path, or a credential object to Add\-Contnet.|  
-|Outputs|None or System.String<br /><br /> When you use the Passthru parameter, Add\-Content generates a System.String object representing the content. Otherwise, this cmdlet does not generate any output.|  
+|Inputs|Sytem.Object[], System.String[], System.Management.Automation.PSCredential<br /><br /> You can pipe the value (object), a path, or a credential object to Add-Contnet.|  
+|Outputs|None or System.String<br /><br /> When you use the Passthru parameter, Add-Content generates a System.String object representing the content. Otherwise, this cmdlet does not generate any output.|  
   
 ## Example 1  
   
@@ -193,12 +192,13 @@ The command uses the Force parameter so that the command is successful even if t
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](assetId:///dee5f65f-eae2-42de-b369-5bed1a38ac21)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-ChildItem](assetId:///75cf79bb-4db6-4a67-8c36-3d20754e2190)   
- [Get\-Content](assetId:///4d594e54-2c28-4052-b3f8-1c27ea724561)   
- [Get\-Item](assetId:///4ed2b1e1-fde4-4425-90a0-87774477fefa)   
- [Remove\-Item](assetId:///0fe3ff11-a1f7-43b9-8c85-f92d52641395)   
- [Set\-Content](assetId:///a8b56d7e-cebd-4049-9184-62926ef448e2)   
- [Test\-Path](assetId:///2e9df935-45e8-44ba-a66a-2de2dd61f3f5)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822284
 schema: 2.0.0
 title: Start-Process
-ms.assetid: CD3A57DB-5549-47B3-92D7-5BFC9009E785
 ---
 
 # Start-Process
@@ -405,6 +404,4 @@ Otherwise, this cmdlet does not return any output.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822085
 schema: 2.0.0
 title: Remove-PSSnapin
-ms.assetid: 4F10AD2D-8DA1-49B7-AD20-7BBC254042F2
 ---
 
 # Remove-PSSnapin
@@ -150,6 +149,4 @@ By default, **Remove-PSSnapin** does not generate any output.
 [Add-PSSnapin](.\Add-PSSnapin.md)
 
 [Get-PSSnapin](.\Get-PSSnapin.md)
-
-
 

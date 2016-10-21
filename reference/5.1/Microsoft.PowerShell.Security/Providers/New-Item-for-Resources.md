@@ -1,4 +1,4 @@
----
+﻿---
 title: "New-Item for Resources"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 43a1f104-9084-472b-a74a-bd56591e47fa
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -153,3 +152,4 @@ This command creates a resource entry in the Resources directory of TestPlugin.
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

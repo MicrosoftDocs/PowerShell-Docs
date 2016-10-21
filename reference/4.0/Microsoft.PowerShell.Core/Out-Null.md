@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -87,5 +87,4 @@ If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** 
 [Out-Printer](..\Microsoft.PowerShell.Utility\Out-File.md)
 
 [Out-String](..\Microsoft.PowerShell.Utility\Out-File.md)
-
 

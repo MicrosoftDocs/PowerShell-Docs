@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSDesiredStateConfiguration-help.xml
@@ -263,5 +263,4 @@ This cmdlet returns an object that encapsulates the resource name, module name, 
 [Start-DscConfiguration](.\Start-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
 

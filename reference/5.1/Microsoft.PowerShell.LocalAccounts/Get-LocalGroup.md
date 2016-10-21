@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822511
 schema: 2.0.0
 title: Get-LocalGroup
-ms.assetid: 2D41ABD4-2797-4239-897E-110768AC66A2
 ---
 
 # Get-LocalGroup
@@ -113,6 +112,4 @@ This cmdlet returns a local group.
 [Rename-LocalGroup](.\Rename-LocalGroup.md)
 
 [Set-LocalGroup](.\Set-LocalGroup.md)
-
-
 

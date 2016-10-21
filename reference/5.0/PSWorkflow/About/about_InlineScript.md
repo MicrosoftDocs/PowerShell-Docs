@@ -1,4 +1,4 @@
----
+﻿---
 title: about_InlineScript
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f88ed5a9-02d6-4bf0-a031-61198e1e7291
 ---
 # About InlineScript
 ## about_InlineScript
@@ -151,5 +150,4 @@ $ie
 }
 $ie
 }
-
 

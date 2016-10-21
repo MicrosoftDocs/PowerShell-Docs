@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Group_Policy_Settings
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 2fa263de-6bb2-406e-b660-cd5a934c7bb6
 ---
 # About Group Policy Settings
 ## about_Group_Policy_Settings
@@ -178,5 +177,4 @@ Set-ExecutionPolicy
 Get-Module
 Update-Help
 Save-Help
-
 

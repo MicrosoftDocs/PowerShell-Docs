@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822079
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.assetid: 258F0C88-F5F3-4FC1-B7B3-B1D42D696524
 ---
 
 # Register-ArgumentCompleter
@@ -149,5 +148,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

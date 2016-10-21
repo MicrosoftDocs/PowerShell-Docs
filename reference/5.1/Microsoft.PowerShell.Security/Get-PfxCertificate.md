@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822372
 schema: 2.0.0
 title: Get-PfxCertificate
-ms.assetid: 2F08FAC8-2872-4A11-930E-AF03A8C4A00D
 ---
 
 # Get-PfxCertificate
@@ -119,6 +118,4 @@ You can pipe a string that contains a file path to **Get-PfxCertificate**.
 [Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
 
 [Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
-
-
 

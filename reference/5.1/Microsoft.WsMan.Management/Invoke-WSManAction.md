@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822499
 schema: 2.0.0
 title: Invoke-WSManAction
-ms.assetid: 2B565381-48A7-4B3E-B0A5-61A53D320A9A
 ---
 
 # Invoke-WSManAction
@@ -475,6 +474,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

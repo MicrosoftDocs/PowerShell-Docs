@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822234
 schema: 2.0.0
 title: Get-ItemPropertyValue
-ms.assetid: EF4E67A9-DCAB-4CC3-9700-7252B9A1B9BC
 ---
 
 # Get-ItemPropertyValue
@@ -276,6 +275,4 @@ For example, in a file system drive, the cmdlet might return a file or folder.
 [Set-ItemProperty](.\Set-ItemProperty.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

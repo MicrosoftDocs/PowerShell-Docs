@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822443
 schema: 2.0.0
 title: New-TemporaryFile
-ms.assetid: 2B0AF66B-986F-4461-9DE8-950A3618E83D
 ---
 
 # New-TemporaryFile
@@ -89,5 +88,4 @@ This cmdlet returns a **FileInfo** object that represents the temporary file.
 ## NOTES
 
 ## RELATED LINKS
-
 

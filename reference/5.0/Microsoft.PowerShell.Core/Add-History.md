@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -170,5 +170,4 @@ If you intend to pass the objects back to **Add-History**, do not use the *NoTyp
 [Invoke-History](.\Invoke-History.md)
 
 [about_History](.\About\about_History.md)
-
 

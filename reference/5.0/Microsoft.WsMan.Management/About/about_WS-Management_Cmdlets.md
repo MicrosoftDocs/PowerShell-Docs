@@ -1,4 +1,4 @@
----
+﻿---
 title: about_WS-Management_Cmdlets
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 22738d36-4d49-472c-ae51-9365b9bbd7c2
 ---
 # About WS-Management Cmdlets
 ## about_WS-Management_Cmdlets
@@ -204,5 +203,4 @@ Test-WSMan
 # KEYWORDS
 
 about_WSMAN about_WinRM
-
 

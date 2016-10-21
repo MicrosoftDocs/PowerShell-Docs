@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -303,5 +303,4 @@ For example, in a file system drive, it might return a file or folder.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
-
 

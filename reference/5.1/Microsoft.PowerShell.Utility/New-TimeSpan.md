@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822444
 schema: 2.0.0
 title: New-TimeSpan
-ms.assetid: D0503C70-1A91-47B6-84E5-473E78FE02DF
 ---
 
 # New-TimeSpan
@@ -210,6 +209,4 @@ You can pipe a **DateTime** object that represents that start time to **New-Time
 [Get-Date](.\Get-Date.md)
 
 [Set-Date](.\Set-Date.md)
-
-
 

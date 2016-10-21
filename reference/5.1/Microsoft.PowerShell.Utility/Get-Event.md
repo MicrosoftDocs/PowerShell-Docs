@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822411
 schema: 2.0.0
 title: Get-Event
-ms.assetid: 4AC85BBE-2ABD-4E86-A313-EDAE6A08E435
 ---
 
 # Get-Event
@@ -205,6 +204,4 @@ In the value of the *Action* parameter, the MessageData property of the $Event a
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

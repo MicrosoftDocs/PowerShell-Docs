@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822066
 schema: 2.0.0
 title: Invoke-History
-ms.assetid: CC0F7984-A1F9-445C-99BA-BE39A502FE01
 ---
 
 # Invoke-History
@@ -155,6 +154,4 @@ For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=
 [Clear-History](.\Clear-History.md)
 
 [Get-History](.\Get-History.md)
-
-
 

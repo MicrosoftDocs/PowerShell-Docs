@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822517
 schema: 2.0.0
 title: Remove-LocalGroup
-ms.assetid: FBF424F6-A716-46F6-A254-63F822204462
 ---
 
 # Remove-LocalGroup
@@ -185,6 +184,4 @@ This cmdlet does not generate any output.
 [Rename-LocalGroup](.\Rename-LocalGroup.md)
 
 [Set-LocalGroup](.\Set-LocalGroup.md)
-
-
 

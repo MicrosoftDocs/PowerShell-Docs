@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -1134,7 +1134,7 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
 [Remove-PSSession](.\Remove-PSSession.md)
 
-[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+[WSMan Provider](..\Microsoft.WsMan.Management\Providers\WSMan-Provider.md)
 
 [about_PSSessions](.\About\about_PSSessions.md)
 
@@ -1144,6 +1144,5 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
 [about_Remote_Variables](.\About\about_Remote_Variables.md)
 
-[about_Scopes](807a5b29-3f02-4b97-8eed-854869936017)
-
+[about_Scopes](.\About\about_Scopes.md)
 

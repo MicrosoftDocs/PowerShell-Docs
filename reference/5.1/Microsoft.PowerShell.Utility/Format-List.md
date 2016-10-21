@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822405
 schema: 2.0.0
 title: Format-List
-ms.assetid: DEC7F080-D85C-46C4-ADE4-5AEF22C1BF18
 ---
 
 # Format-List
@@ -299,6 +298,4 @@ If the alternate view is neither a list nor a table, use Format-Custom.
 [Format-Table](.\Format-Table.md)
 
 [Format-Wide](.\Format-Wide.md)
-
-
 

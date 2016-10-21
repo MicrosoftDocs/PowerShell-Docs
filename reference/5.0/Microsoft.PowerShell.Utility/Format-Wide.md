@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -297,5 +297,4 @@ If the alternate view is neither a list nor a table, use Format-Custom.
 [Format-List](.\Format-List.md)
 
 [Format-Table](.\Format-Table.md)
-
 

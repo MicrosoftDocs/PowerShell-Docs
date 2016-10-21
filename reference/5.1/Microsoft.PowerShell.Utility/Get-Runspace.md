@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822420
 schema: 2.0.0
 title: Get-Runspace
-ms.assetid: 183E52E7-1F25-4E27-95A4-0085A1DD92FA
 ---
 
 # Get-Runspace
@@ -110,6 +109,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Debug-Runspace](.\Debug-Runspace.md)
-
-
 

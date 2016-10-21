@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -227,5 +227,4 @@ Otherwise, it does not generate any output.
 [Wait-Event](.\Wait-Event.md)
 
 [Wait-Job](..\Microsoft.PowerShell.Core\Wait-Job.md)
-
 

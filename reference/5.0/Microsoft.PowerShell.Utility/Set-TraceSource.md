@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -318,5 +318,4 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 [Set-PSDebug](..\Microsoft.PowerShell.Core\Set-PSDebug.md)
 
 [Trace-Command](.\Trace-Command.md)
-
 

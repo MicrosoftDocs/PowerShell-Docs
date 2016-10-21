@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822062
 schema: 2.0.0
 title: Get-PSSnapin
-ms.assetid: F2561AC4-9EF9-4B8B-95CA-8BFC5F51784D
 ---
 
 # Get-PSSnapin
@@ -124,6 +123,4 @@ Get-PSSnapin returns an object for each snap-in that it gets.
 [Add-PSSnapin](.\Add-PSSnapin.md)
 
 [Remove-PSSnapin](.\Remove-PSSnapin.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822368
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.assetid: 36E5E640-2125-476E-98D9-495977315F14
 ---
 
 # Get-AuthenticodeSignature
@@ -166,6 +165,4 @@ You can pipe a string that contains a file path to **Get-AuthenticodeSignature**
 [Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
-
-
 

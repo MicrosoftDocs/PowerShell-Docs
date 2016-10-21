@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -338,6 +338,5 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
-
+[WSMan Provider](..\Microsoft.WsMan.Management\Providers\WSMan-Provider.md)
 

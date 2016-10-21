@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Types.ps1xml
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: bc879777-5cd6-45a9-96d8-ebe099b95456
 ---
 # About Types.ps1xml
 ## about_Types.ps1xml
@@ -571,7 +570,4 @@ Get-Member (http://go.microsoft.com/fwlink/?LinkID=113322)
 Get-TypeData (http://go.microsoft.com/fwlink/?LinkID=217033)
 Remove-TypeData (http://go.microsoft.com/fwlink/?LinkID=217038)
 Update-TypeData (http://go.microsoft.com/fwlink/?LinkID=113421)
-
-
-
 

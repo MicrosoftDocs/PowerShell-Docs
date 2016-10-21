@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSGet-help.xml
@@ -293,5 +293,4 @@ As a security best practice, evaluate module code before running any cmdlets or 
 [Uninstall-Module](.\Uninstall-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
 

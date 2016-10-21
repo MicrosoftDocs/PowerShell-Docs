@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Jobs
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 7362512a-8a4e-4575-b2ea-a740e5c4f002
 ---
 # About Jobs
 ## about_Jobs
@@ -325,6 +324,4 @@ Stop-Job
 Wait-Job
 Remove-Job
 Invoke-Command
-
-
 

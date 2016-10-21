@@ -1,4 +1,4 @@
----
+﻿---
 title: "Add-Content for FileSystem"
 ms.custom: na
 ms.date: 09/30/2014
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: 1c166158-8abf-4c66-980d-1ae7961aa35d
 caps.latest.revision: 11
 manager: stevenka
 ---
@@ -210,3 +209,4 @@ The command uses the Force parameter so that the command is successful even if t
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

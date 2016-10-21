@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822416
 schema: 2.0.0
 title: Get-Member
-ms.assetid: 8201DB21-0FA7-4862-A181-10B89D17D680
 ---
 
 # Get-Member
@@ -433,6 +432,4 @@ For more information about the $This variable, see about_Automatic_Variables.
 ## RELATED LINKS
 
 [Add-Member](.\Add-Member.md)
-
-
 

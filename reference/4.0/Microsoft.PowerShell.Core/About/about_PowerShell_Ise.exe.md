@@ -1,4 +1,4 @@
----
+﻿---
 title: about_PowerShell_Ise.exe
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f78d2891-de05-4403-8c91-e856abbd4fb6
 ---
 # About PowerShell Ise.exe
 ## about_PowerShell_Ise.exe
@@ -116,5 +115,4 @@ PS C:>ISE -help
 about_PowerShell.exe
 about_Windows_PowerShell_ISE
 Windows PowerShell 3.0 Integrated Scripting Environment (ISE)
-
 

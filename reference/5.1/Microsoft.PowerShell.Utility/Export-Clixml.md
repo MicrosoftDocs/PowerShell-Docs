@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822399
 schema: 2.0.0
 title: Export-Clixml
-ms.assetid: 685168D4-9831-4F08-9452-2478A98172FB
 ---
 
 # Export-Clixml
@@ -280,6 +279,4 @@ You can pipe any object to **Export-Clixml**.
 [Export-Csv](.\Export-Csv.md)
 
 [Import-Clixml](.\Import-Clixml.md)
-
-
 

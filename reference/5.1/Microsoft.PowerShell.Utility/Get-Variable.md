@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822426
 schema: 2.0.0
 title: Get-Variable
-ms.assetid: 385002F8-2406-42F9-843B-9CB16AEC927F
 ---
 
 # Get-Variable
@@ -182,6 +181,4 @@ The object type depends on the variable.
 [Remove-Variable](.\Remove-Variable.md)
 
 [Set-Variable](.\Set-Variable.md)
-
-
 

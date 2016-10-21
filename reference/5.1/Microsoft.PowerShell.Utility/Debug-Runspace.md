@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822393
 schema: 2.0.0
 title: Debug-Runspace
-ms.assetid: 108D65FA-016C-4F80-AF83-F2AA7EC000C3
 ---
 
 # Debug-Runspace
@@ -208,6 +207,4 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 [about_Debuggers](..\Microsoft.PowerShell.Core\About\about_Debuggers.md)
 
 [Get-Runspace](.\Get-Runspace.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822384
 schema: 2.0.0
 title: ConvertFrom-Json
-ms.assetid: 3612C3F9-2153-4A1E-AEBC-3092D707D567
 ---
 
 # ConvertFrom-Json
@@ -129,6 +128,4 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 [Invoke-WebRequest](.\Invoke-WebRequest.md)
 
 [Invoke-RestMethod](.\Invoke-RestMethod.md)
-
-
 

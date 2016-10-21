@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822110
 schema: 2.0.0
 title: New-WinEvent
-ms.assetid: 1867EDBF-8180-4B79-92C3-0B9D42EED728
 ---
 
 # New-WinEvent
@@ -121,6 +120,4 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Get-WinEvent](.\Get-WinEvent.md)
-
-
 

@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Requires
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 391781e3-b11e-40b6-aeb7-af98302e19b9
 ---
 # About Requires
 ## about_Requires
@@ -26,7 +25,7 @@ Prevents a script from running without the required elements.
 
 
 ## LONG DESCRIPTION
-The \#Requires statement prevents a script from running unless the  Windows PowerShell® version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
+The \#Requires statement prevents a script from running unless the  Windows PowerShellï¿½ version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
 
 You can use \#Requires statements in any script. You cannot use them in functions, cmdlets, or snap-ins.
 
@@ -156,5 +155,4 @@ about_Language_Keywords
 about_PSSnapins
 
 get-PSSnapin
-
 

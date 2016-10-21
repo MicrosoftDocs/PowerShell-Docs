@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822417
 schema: 2.0.0
 title: Get-PSBreakpoint
-ms.assetid: 0BF48936-00AB-411C-B5E0-9B10A812A3C6
 ---
 
 # Get-PSBreakpoint
@@ -261,6 +260,4 @@ You can pipe breakpoint IDs and breakpoint types to **Get-PSBreakPoint**.
 [Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](.\Set-PSBreakpoint.md)
-
-
 

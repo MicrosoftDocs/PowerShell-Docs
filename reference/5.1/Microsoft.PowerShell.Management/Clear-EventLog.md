@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822206
 schema: 2.0.0
 title: Clear-EventLog
-ms.assetid: 525EF611-6484-4088-887C-E084F3F5763B
 ---
 
 # Clear-EventLog
@@ -181,6 +180,4 @@ This cmdlet does not generate any output.
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

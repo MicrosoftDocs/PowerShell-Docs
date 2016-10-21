@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -467,6 +467,5 @@ This cmdlet returns the results of the commands in the job.
 
 [about_Remote_Variables](.\About\about_Remote_Variables.md)
 
-[about_Scopes](807a5b29-3f02-4b97-8eed-854869936017)
-
+[about_Scopes](.\About\about_Scopes.md)
 

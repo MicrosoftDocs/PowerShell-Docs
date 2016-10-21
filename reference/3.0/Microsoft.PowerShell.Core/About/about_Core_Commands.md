@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Core_Commands
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 9e4b0317-37b5-49d4-a5f6-0d2bd6100c3c
 ---
 # About Core Commands
 ## about_Core_Commands
@@ -92,5 +91,4 @@ For more information about a cmdlet, type "get-help <cmdlet-name>".
 
 ## SEE ALSO
 about_Providers
-
 

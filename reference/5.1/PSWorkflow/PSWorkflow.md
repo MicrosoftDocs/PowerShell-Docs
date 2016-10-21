@@ -1,4 +1,4 @@
----
+﻿---
 title: PSWorkflow
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 3b6cc51d-c096-4b38-b78d-0fed6277096a
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822486
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: C6D4DF7C-24DE-4AF6-ACEA-C0615878AD0D
 ---
 
 # PSWorkflow Module
@@ -27,10 +26,4 @@ Creates an object that contains session configuration options for workflow sessi
 
 ### [New-PSWorkflowSession](.\New-PSWorkflowSession.md)
 Creates a workflow session.
-
-
-
-
-
-
 

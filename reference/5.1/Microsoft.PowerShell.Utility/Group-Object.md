@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822427
 schema: 2.0.0
 title: Group-Object
-ms.assetid: 494AF40A-1315-420F-8BD6-932006576DAC
 ---
 
 # Group-Object
@@ -378,6 +377,4 @@ Ungroupable objects appear in the final **GroupInfo** object output in a group n
 [Sort-Object](.\Sort-Object.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

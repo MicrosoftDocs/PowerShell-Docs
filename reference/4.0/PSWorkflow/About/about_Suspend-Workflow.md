@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Suspend-Workflow
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: be2ded75-1eca-493e-96c1-758f92b5f199
 ---
 # About Suspend-Workflow
 ## about_Suspend-Workflow
@@ -131,5 +130,4 @@ PSComputerName    : localhost
 
 about_Workflows
 Getting Started with Windows PowerShell Workflow (http://go.microsoft.com/fwlink/?LinkID=252592)
-
 

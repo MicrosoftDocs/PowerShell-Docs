@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -198,5 +198,4 @@ Update-List returns the updated object, or it returns an object that represents 
 ## RELATED LINKS
 
 [Select-Object](.\Select-Object.md)
-
 

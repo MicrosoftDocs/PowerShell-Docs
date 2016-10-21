@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -211,5 +211,4 @@ This cmdlet returns an object that represents the current transaction.
 [Use-Transaction](.\Use-Transaction.md)
 
 [New-Item](.\New-Item.md)
-
 

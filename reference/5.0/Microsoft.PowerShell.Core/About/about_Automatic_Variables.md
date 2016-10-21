@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Automatic_Variables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: b06a53af-3d45-4a55-b1f2-d996fc42a554
 ---
 # About Automatic Variables
 ## about_Automatic_Variables
@@ -22,7 +21,7 @@ about_Automatic_Variables
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell®. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShell? These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -430,5 +429,4 @@ about_Hash_Tables
 about_Preference_Variables
 
 about_Variables
-
 

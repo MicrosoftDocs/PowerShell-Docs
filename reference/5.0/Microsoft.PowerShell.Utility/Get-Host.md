@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -223,12 +223,11 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
 
 [Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
 
 [Read-Host](.\Read-Host.md)
 
 [Write-Host](.\Write-Host.md)
-
 

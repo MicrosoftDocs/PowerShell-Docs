@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822424
 schema: 2.0.0
 title: Get-UICulture
-ms.assetid: 7A85EFD9-AFAD-40FD-95F8-7DDE6883F651
 ---
 
 # Get-UICulture
@@ -88,5 +87,4 @@ In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 *
 
 ## RELATED LINKS
-
 

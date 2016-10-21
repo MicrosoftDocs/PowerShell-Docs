@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Comment_Based_Help
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: c270e198-6da2-4825-b6eb-35d5c8a5cf3d
 ---
 # About Comment Based Help
 ## about_Comment_Based_Help
@@ -878,6 +877,4 @@ about_Functions
 about_Functions_Advanced_Parameters
 about_Scripts
 "How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)
-
-
 

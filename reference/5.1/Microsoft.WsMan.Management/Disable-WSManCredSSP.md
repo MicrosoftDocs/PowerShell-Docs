@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822494
 schema: 2.0.0
 title: Disable-WSManCredSSP
-ms.assetid: 01C110D4-056E-48D2-B9A0-EA62C85A2C0E
 ---
 
 # Disable-WSManCredSSP
@@ -131,6 +130,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

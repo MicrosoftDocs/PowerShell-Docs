@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822070
 schema: 2.0.0
 title: New-PSSession
-ms.assetid: 76F6628C-054C-4EDA-BA7A-A6F28DAAA26F
 ---
 
 # New-PSSession
@@ -699,6 +698,4 @@ You can pipe a string, URI, or session object to this cmdlet.
 [Receive-PSSession](.\Receive-PSSession.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -295,5 +295,4 @@ If you include the parameter names, the parameters can appear in any order.
 [Get-TraceSource](.\Get-TraceSource.md)
 
 [Set-TraceSource](.\Set-TraceSource.md)
-
 

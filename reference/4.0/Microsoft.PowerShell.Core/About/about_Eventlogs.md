@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Eventlogs
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 8b5279cd-daf1-4ed1-8575-2df4baf7042d
 ---
 # About Eventlogs
 ## about_Eventlogs
@@ -219,5 +218,4 @@ Get-EventLog
 Get-WmiObject
 about_Group_Policy_Settings
 about_Preference_Variables
-
 

@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Prompts
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6117d7b4-bdb5-48ee-821a-6e92f7c3db8a
 ---
 # About Prompts
 ## about_Prompts
@@ -26,7 +25,7 @@ Describes the Prompt function and demonstrates how to create a custom Prompt fun
 
 
 ## LONG DESCRIPTION
-The  Windows PowerShell® command prompt indicates that  Windows PowerShell is ready to run a command:
+The  Windows PowerShell?command prompt indicates that  Windows PowerShell is ready to run a command:
 
 
 ```
@@ -329,5 +328,4 @@ about_Scopes
 about_Debuggers
 
 about_Automatic_Variables
-
 

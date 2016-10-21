@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822388
 schema: 2.0.0
 title: Convert-String
-ms.assetid: 38BD979A-65C9-4A47-9E87-94083518C6C3
 ---
 
 # Convert-String
@@ -126,6 +125,4 @@ This cmdlet returns a string.
 [Out-String](.\Out-String.md)
 
 [Select-Object](.\Select-Object.md)
-
-
 

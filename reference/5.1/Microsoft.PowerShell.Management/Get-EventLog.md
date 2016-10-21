@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822230
 schema: 2.0.0
 title: Get-EventLog
-ms.assetid: B4985B11-82BF-487D-928D-BECD96FC0419
 ---
 
 # Get-EventLog
@@ -480,6 +479,4 @@ If both the *List* and *AsString* parameters are specified, the output is a coll
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

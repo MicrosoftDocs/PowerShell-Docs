@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822204
 schema: 2.0.0
 title: Checkpoint-Computer
-ms.assetid: 9EF7DD97-DBD9-43DE-8988-9AB85E7827AD
 ---
 
 # Checkpoint-Computer
@@ -121,6 +120,4 @@ Please try again later."`
 [Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
 
 [Restore-Computer](.\Restore-Computer.md)
-
-
 

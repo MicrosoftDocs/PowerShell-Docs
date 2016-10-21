@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822043
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.assetid: F8F95111-612F-4CBA-9098-77904B0473D8
 ---
 
 # Disconnect-PSSession
@@ -495,6 +494,4 @@ A value of **Busy** indicates that you cannot connect to the **PSSession** becau
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
 [Remove-PSSession](.\Remove-PSSession.md)
-
-
 

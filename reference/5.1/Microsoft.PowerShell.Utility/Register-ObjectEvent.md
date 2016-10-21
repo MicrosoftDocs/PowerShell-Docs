@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822452
 schema: 2.0.0
 title: Register-ObjectEvent
-ms.assetid: 896CBB3F-F415-481E-985B-1999E95C7407
 ---
 
 # Register-ObjectEvent
@@ -333,6 +332,4 @@ This cmdlet does not generate any output.
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

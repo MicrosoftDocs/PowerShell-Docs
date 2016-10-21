@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Archive-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822315
 schema: 2.0.0
 title: Compress-Archive
-ms.assetid: 6C125055-083F-46D6-ABED-D8278D2E0507
 ---
 
 # Compress-Archive
@@ -263,5 +262,4 @@ You can pipe a string that contains a path to one or more files.
 ## NOTES
 
 ## RELATED LINKS
-
 

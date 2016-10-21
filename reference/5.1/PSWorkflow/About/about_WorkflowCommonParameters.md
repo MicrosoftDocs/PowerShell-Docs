@@ -1,4 +1,4 @@
----
+﻿---
 title: about_WorkflowCommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 119f968e-618e-439c-b76c-cdd17e6df27c
 ---
 # About WorkflowCommonParameters
 ## about_WorkflowCommonParameters
@@ -343,7 +342,4 @@ about_Workflows
 Invoke-AsWorkflow
 New-PSWorkflowExecutionOption
 New-PSWorkflowSession
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -231,5 +231,4 @@ To roll back a different transaction, you must first commit or roll back the act
 [Use-Transaction](.\Use-Transaction.md)
 
 [about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
-
 

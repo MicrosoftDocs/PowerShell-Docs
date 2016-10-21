@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -173,5 +173,4 @@ This cmdlet returns objects that represent the hotfixes on the computer.
 [Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
 
 [Add-Content](.\Add-Content.md)
-
 

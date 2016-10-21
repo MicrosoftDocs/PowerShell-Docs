@@ -1,4 +1,4 @@
----
+﻿---
 title: PSReadline
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822009
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: ED48E832-95F9-4577-BF56-A7E5AA9630BA
 ---
 
 # PSReadline Module
@@ -39,10 +38,4 @@ Binds keys to user-defined or PSReadline-provided key handlers.
 
 ### [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
 Customizes the behavior of command line editing in PSReadline.
-
-
-
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Objects
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 9b8efc90-9b83-4acf-ae57-69002afb1a0a
 ---
 # About Objects
 ## about_Objects
@@ -95,5 +94,4 @@ about_Object_Creation
 about_Properties
 about_Pipelines
 Get-Member
-
 

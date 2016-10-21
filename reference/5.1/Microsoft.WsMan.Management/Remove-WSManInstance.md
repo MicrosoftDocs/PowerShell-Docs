@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822502
 schema: 2.0.0
 title: Remove-WSManInstance
-ms.assetid: 8061EFBD-5747-4E33-952B-EC3E2D07F20F
 ---
 
 # Remove-WSManInstance
@@ -365,6 +364,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
-
 

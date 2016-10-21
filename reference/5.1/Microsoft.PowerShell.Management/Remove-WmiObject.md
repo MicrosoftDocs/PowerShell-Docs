@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822263
 schema: 2.0.0
 title: Remove-WmiObject
-ms.assetid: 9307B527-42C9-4429-AB22-9335BCA4204A
 ---
 
 # Remove-WmiObject
@@ -417,6 +416,4 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](.\Invoke-WmiMethod.md)
 
 [Set-WmiInstance](.\Set-WmiInstance.md)
-
-
 

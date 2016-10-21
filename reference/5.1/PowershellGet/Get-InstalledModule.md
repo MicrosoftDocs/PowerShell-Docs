@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822323
 schema: 2.0.0
 title: Get-InstalledModule
-ms.assetid: 3AE41C50-7025-4D55-A3B2-D8E6278B9E45
 ---
 
 # Get-InstalledModule
@@ -143,5 +142,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

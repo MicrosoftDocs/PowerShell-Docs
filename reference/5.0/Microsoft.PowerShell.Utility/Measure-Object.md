@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -289,5 +289,4 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Tee-Object](.\Tee-Object.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

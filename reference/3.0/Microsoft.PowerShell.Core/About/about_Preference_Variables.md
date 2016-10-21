@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Preference_Variables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 31344314-be29-4286-b039-afa5460cbe8b
 ---
 # About Preference Variables
 ## about_preference_variables

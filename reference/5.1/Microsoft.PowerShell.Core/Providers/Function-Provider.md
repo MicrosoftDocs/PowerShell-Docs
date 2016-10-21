@@ -1,4 +1,4 @@
----
+﻿---
 title: "Function Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 7dfc92f4-9a88-4399-978d-6d5d224b3e76
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -220,3 +219,4 @@ copy-item -path function:prompt -destination function:oldPrompt
 ## See Also  
  [about_Functions](..\About\about_Functions.md)   
  [about_Providers](..\About\about_Providers.md)
+

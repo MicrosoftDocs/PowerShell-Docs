@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -343,5 +343,4 @@ For more information, see about_Providers.
 [Resolve-Path](.\Resolve-Path.md)
 
 [Split-Path](.\Split-Path.md)
-
 

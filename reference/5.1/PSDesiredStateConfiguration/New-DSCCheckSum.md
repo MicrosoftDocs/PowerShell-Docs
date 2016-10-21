@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSDesiredStateConfiguration-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822026
 schema: 2.0.0
 title: New-DSCCheckSum
-ms.assetid: 5331DD14-D4D3-4F1B-A372-D6EA21F2C50F
 ---
 
 # New-DscChecksum
@@ -140,6 +139,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
-
-
 

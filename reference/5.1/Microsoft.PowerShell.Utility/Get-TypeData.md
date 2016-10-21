@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822423
 schema: 2.0.0
 title: Get-TypeData
-ms.assetid: BEFD382E-F567-44AB-9898-57C04E1D1B7F
 ---
 
 # Get-TypeData
@@ -163,6 +162,4 @@ You can pipe type names to **Get-TypeData**.
 [Remove-TypeData](.\Remove-TypeData.md)
 
 [Update-TypeData](.\Update-TypeData.md)
-
-
 

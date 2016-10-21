@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -399,7 +399,7 @@ This cmdlet does not produce any output.
 
 ## RELATED LINKS
 
-[about_PackageManagement](http://technet.microsoft.com/library/dn927162.aspx)
+[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
 
 [Get-Package](.\Get-Package.md)
 
@@ -408,5 +408,4 @@ This cmdlet does not produce any output.
 [Save-Package](.\Save-Package.md)
 
 [Uninstall-Package](.\Uninstall-Package.md)
-
 

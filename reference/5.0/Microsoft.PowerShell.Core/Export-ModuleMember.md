@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -251,5 +251,4 @@ This cmdlet does not generate any output.
 [Remove-Module](.\Remove-Module.md)
 
 [about_Modules](.\About\about_Modules.md)
-
 

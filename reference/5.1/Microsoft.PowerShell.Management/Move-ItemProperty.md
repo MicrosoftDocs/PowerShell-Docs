@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822248
 schema: 2.0.0
 title: Move-ItemProperty
-ms.assetid: 0F2182C7-A28B-4B81-91FB-82022B3C14A8
 ---
 
 # Move-ItemProperty
@@ -314,6 +313,4 @@ For more information, see about_Providers.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
-
-
 

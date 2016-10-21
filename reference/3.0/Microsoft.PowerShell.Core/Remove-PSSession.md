@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -291,5 +291,4 @@ When you end a session, the PSSessions that you created in that session are forc
 [about_PSSessions](.\About\about_PSSessions.md)
 
 [about_Remote](.\About\about_Remote.md)
-
 

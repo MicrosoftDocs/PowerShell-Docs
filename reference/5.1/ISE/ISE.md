@@ -1,4 +1,4 @@
----
+﻿---
 title: ISE
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: bae93d8e-782c-4a23-b87f-8699bfc17ee0
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822196
 Help Version: 5.1.0.3
 Locale: en-US
-ms.assetid: 7F6F1CD2-2409-47C0-8BED-72FFC88DE104
 ---
 
 # ISE Module
@@ -32,11 +31,4 @@ Imports ISE snippets into the current session
 
 ### [New-IseSnippet](.\New-IseSnippet.md)
 Creates a Windows PowerShell ISE code snippet.
-
-
-
-
-
-
-
 

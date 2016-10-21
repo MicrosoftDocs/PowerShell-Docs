@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Parameters
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ce803148-00c3-4a81-97e5-030cf10d32ad
 ---
 # About Parameters
 ## about_Parameters
@@ -22,7 +21,7 @@ about_Parameters
 
 
 ## SHORT DESCRIPTION
-Describes how to work with command parameters in  Windows PowerShell®.
+Describes how to work with command parameters in  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -222,5 +221,4 @@ about_Parameters_Default_Values
 about_Pipelines
 
 about_Wildcards
-
 

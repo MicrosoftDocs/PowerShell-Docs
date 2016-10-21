@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822480
 schema: 2.0.0
 title: Write-Host
-ms.assetid: 023E670A-CFDA-4E8C-AF8F-C2B2D9EE5612
 ---
 
 # Write-Host
@@ -217,6 +216,4 @@ However, the host might display the objects that **Write-Host** sends to it.
 [Write-Verbose](.\Write-Verbose.md)
 
 [Write-Warning](.\Write-Warning.md)
-
-
 

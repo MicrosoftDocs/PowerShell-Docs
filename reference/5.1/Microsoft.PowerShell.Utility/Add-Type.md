@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822380
 schema: 2.0.0
 title: Add-Type
-ms.assetid: 5CF4D98B-FF0A-4EAD-AA3A-C842D892AB9B
 ---
 
 # Add-Type
@@ -610,6 +609,4 @@ Otherwise, this cmdlet does not generate any output.
 [Add-Member](.\Add-Member.md)
 
 [New-Object](.\New-Object.md)
-
-
 

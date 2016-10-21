@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -140,5 +140,4 @@ Out-String returns the string that it creates from the input object.
 [Out-Null](..\Microsoft.PowerShell.Core\Out-Default.md)
 
 [Out-Printer](.\Out-Printer.md)
-
 

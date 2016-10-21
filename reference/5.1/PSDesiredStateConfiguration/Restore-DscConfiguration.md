@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Restore-DSCConfiguration.cdxml-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822029
 schema: 2.0.0
 title: Restore-DscConfiguration
-ms.assetid: 90622A92-B11C-4D3D-9F40-A74603B00E62
 ---
 
 # Restore-DscConfiguration
@@ -158,6 +157,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](.\Start-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
-
 

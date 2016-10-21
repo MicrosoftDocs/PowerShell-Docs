@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -210,5 +210,4 @@ Otherwise, it returns a **PathInfo** object.
 [Split-Path](.\Split-Path.md)
 
 [Test-Path](.\Test-Path.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822508
 schema: 2.0.0
 title: Disable-LocalUser
-ms.assetid: C249E869-6CBC-4241-9C86-A2252A929816
 ---
 
 # Disable-LocalUser
@@ -174,6 +173,4 @@ This cmdlet does not generate any output.
 [Rename-LocalUser](.\Rename-LocalUser.md)
 
 [Set-LocalUser](.\Set-LocalUser.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822253
 schema: 2.0.0
 title: New-Service
-ms.assetid: AD24021A-4603-4C9C-BD20-8F9BDDE123FA
 ---
 
 # New-Service
@@ -264,6 +263,4 @@ This cmdlet returns an object that represents the new service.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -146,5 +146,4 @@ Get-History returns a history object for each history item that it gets.
 [Invoke-History](.\Invoke-History.md)
 
 [about_History](.\About\about_History.md)
-
 

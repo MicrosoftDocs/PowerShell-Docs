@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822292
 schema: 2.0.0
 title: Test-Connection
-ms.assetid: 7C54E3A1-8D8C-44AD-9056-EF0514C158D6
 ---
 
 # Test-Connection
@@ -460,6 +459,4 @@ Otherwise, this cmdlet returns a **Win32_PingStatus** object for each ping.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Stop-Computer](.\Stop-Computer.md)
-
-
 

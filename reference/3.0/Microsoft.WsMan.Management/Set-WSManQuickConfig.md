@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.WSMan.Management.dll-Help.xml
@@ -146,5 +146,4 @@ This cmdlet does not generate any output.
 [New-WSManSessionOption](.\New-WSManSessionOption.md)
 
 [Test-WSMan](.\Test-WSMan.md)
-
 

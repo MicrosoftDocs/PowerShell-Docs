@@ -1,4 +1,4 @@
----
+﻿---
 title: about_PowerShell.exe
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: d5548671-5362-4b0b-b22c-4360c71d7f26
 ---
 # About PowerShell.exe
 ## about_PowerShell.exe
@@ -189,7 +188,4 @@ PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 PowerShell -Command {Get-EventLog -LogName security}
 
 PowerShell -Command "& {Get-EventLog -LogName security}"
-
-
-
 

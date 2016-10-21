@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Language_Keywords
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 36178a87-8055-4daf-b902-7880bb1b3490
 ---
 # About Language Keywords
 ## about_Language_Keywords
@@ -636,7 +635,4 @@ TechNet Library.
 about_Escape_Characters
 about_Special_Characters
 about_Wildcards
-
-
-
 

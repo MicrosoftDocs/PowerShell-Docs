@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822068
 schema: 2.0.0
 title: New-ModuleManifest
-ms.assetid: 512ADCED-F42F-4E88-BA7C-834FC9E5D047
 ---
 
 # New-ModuleManifest
@@ -987,6 +986,4 @@ Typically, it refers to the global session state, but when a module imports nest
 [Remove-Module](.\Remove-Module.md)
 
 [Test-ModuleManifest](.\Test-ModuleManifest.md)
-
-
 

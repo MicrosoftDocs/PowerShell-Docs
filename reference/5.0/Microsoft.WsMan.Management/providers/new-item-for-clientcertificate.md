@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 53f75701-e89d-445d-a933-bd9b22fa741a
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -140,3 +139,4 @@ This command creates ClientCertificate entry that can be used by the WS-Manageme
  [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md)   
  [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
  [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -144,8 +144,7 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258)
+Set-Culture
 
 [Get-UICulture](.\Get-UICulture.md)
-
 

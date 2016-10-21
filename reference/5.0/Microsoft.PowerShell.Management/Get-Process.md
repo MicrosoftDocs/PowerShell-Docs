@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -422,5 +422,4 @@ Virtual memory includes storage in the paging files on disk.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
 

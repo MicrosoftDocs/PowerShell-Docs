@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822213
 schema: 2.0.0
 title: Copy-ItemProperty
-ms.assetid: C5BACEB8-7348-412C-9593-E7F36A5380AD
 ---
 
 # Copy-ItemProperty
@@ -300,6 +299,4 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ItemProperty](.\Set-ItemProperty.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

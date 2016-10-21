@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822038
 schema: 2.0.0
 title: Clear-History
-ms.assetid: C6500716-F5EC-4A09-B7DC-FD412AF6A050
 ---
 
 # Clear-History
@@ -202,6 +201,4 @@ This cmdlet does not generate any output.
 [Get-History](.\Get-History.md)
 
 [Invoke-History](.\Invoke-History.md)
-
-
 

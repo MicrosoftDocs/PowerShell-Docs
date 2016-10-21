@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -360,5 +360,4 @@ You cannot pipe input to this cmdlet.
 [Rename-ItemProperty](.\Rename-ItemProperty.md)
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
-
 

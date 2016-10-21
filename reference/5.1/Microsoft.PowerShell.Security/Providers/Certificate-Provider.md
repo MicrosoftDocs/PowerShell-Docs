@@ -1,4 +1,4 @@
----
+﻿---
 title: "Certificate Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 3f743541-d0c6-4670-809a-b16fb01f7c4d
 caps.latest.revision: 12
 manager: stevenka
 ---
@@ -420,3 +419,4 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
  [Get-AuthenticodeSignature](..\Get-AuthenticodeSignature.md)   
  [Set-AuthenticodeSignature](..\Set-AuthenticodeSignature.md)   
  [Get-PfxCertificate](..\Get-PfxCertificate.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -84,5 +84,4 @@ This cmdlet does not generate any output.
 [Out-Printer](..\Microsoft.PowerShell.Utility\Out-Printer.md)
 
 [Out-String](..\Microsoft.PowerShell.Utility\Out-String.md)
-
 

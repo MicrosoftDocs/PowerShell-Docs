@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822025
 schema: 2.0.0
 title: Invoke-DscResource
-ms.assetid: 2C929D1F-7FF2-43CE-A857-B58E7C056348
 ---
 
 # Invoke-DscResource
@@ -141,6 +140,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](.\Start-DscConfiguration.md)
 
 [Test-DscConfiguration](.\Test-DscConfiguration.md)
-
-
 

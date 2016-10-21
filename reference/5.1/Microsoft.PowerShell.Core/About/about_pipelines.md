@@ -1,4 +1,4 @@
----
+﻿---
 title: about_pipelines
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f39a6658-4309-42a7-afe8-871bd4c6b01a
 ---
 # About Pipelines
 ## about_Pipelines
@@ -459,6 +458,4 @@ about_objects
 about_parameters
 about_command_syntax
 about_foreach
-
-
 

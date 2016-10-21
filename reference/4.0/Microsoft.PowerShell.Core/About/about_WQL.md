@@ -1,4 +1,4 @@
----
+﻿---
 title: about_WQL
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 820b2d23-3473-46f5-a188-5910704c7905
 ---
 # About WQL
 ## about_WQL
@@ -744,7 +743,4 @@ about_Escape_Characters
 about_Quoting_Rules
 about_WMI
 about_WMI_Cmdlets
-
-
-
 

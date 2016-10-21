@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822254
 schema: 2.0.0
 title: New-WebServiceProxy
-ms.assetid: C04AAE09-2EA7-4B9F-AE60-E22EDA071114
 ---
 
 # New-WebServiceProxy
@@ -234,6 +233,4 @@ The default is generated from the input URI.
 ## RELATED LINKS
 
 [New-Service](.\New-Service.md)
-
-
 

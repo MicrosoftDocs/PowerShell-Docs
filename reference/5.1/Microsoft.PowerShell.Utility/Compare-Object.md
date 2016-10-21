@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822382
 schema: 2.0.0
 title: Compare-Object
-ms.assetid: BDC20EAC-BFF6-44BC-B130-1A986C79FB78
 ---
 
 # Compare-Object
@@ -243,6 +242,4 @@ Otherwise, this cmdlet does not generate any output.
 [Sort-Object](.\Sort-Object.md)
 
 [Tee-Object](.\Tee-Object.md)
-
-
 

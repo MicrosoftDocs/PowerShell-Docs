@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822469
 schema: 2.0.0
 title: Tee-Object
-ms.assetid: AE5C403C-6A21-430E-A94A-74A1EDEE149A
 ---
 
 # Tee-Object
@@ -203,6 +202,4 @@ You can pipe objects to **Tee-Object**.
 [Select-Object](.\Select-Object.md)
 
 [Sort-Object](.\Sort-Object.md)
-
-
 

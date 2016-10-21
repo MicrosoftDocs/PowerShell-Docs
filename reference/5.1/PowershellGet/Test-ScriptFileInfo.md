@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822336
 schema: 2.0.0
 title: Test-ScriptFileInfo
-ms.assetid: EA033033-3E11-4D25-A3E0-8137C586E5D1
 ---
 
 # Test-ScriptFileInfo
@@ -145,6 +144,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Publish-Script](.\Publish-Script.md)
 
 [Update-ScriptFileInfo](.\Update-ScriptFileInfo.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822042
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
-ms.assetid: 63CA7455-B2BC-42BA-B127-D0F1C0BABC6A
 ---
 
 # Disable-PSSessionConfiguration
@@ -235,6 +234,4 @@ This cmdlet does not return any objects.
 [Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
-
-
 

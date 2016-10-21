@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822269
 schema: 2.0.0
 title: Restart-Computer
-ms.assetid: BA50F64C-866E-4315-91C7-0CE16B44C47E
 ---
 
 # Restart-Computer
@@ -498,6 +497,4 @@ Otherwise, it does not generate any output.
 [Stop-Computer](.\Stop-Computer.md)
 
 [Test-Connection](.\Test-Connection.md)
-
-
 

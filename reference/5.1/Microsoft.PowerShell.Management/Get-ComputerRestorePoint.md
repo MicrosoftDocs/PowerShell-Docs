@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822227
 schema: 2.0.0
 title: Get-ComputerRestorePoint
-ms.assetid: 3AFE67E8-56BD-4505-B7F6-B822143A28D5
 ---
 
 # Get-ComputerRestorePoint
@@ -160,6 +159,4 @@ When you use the *LastStatus* parameter, this cmdlet returns a string.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Restore-Computer](.\Restore-Computer.md)
-
-
 

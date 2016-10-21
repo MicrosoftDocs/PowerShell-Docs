@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822052
 schema: 2.0.0
 title: ForEach-Object
-ms.assetid: BEA187C1-37B5-4FC7-9422-D29820643A4D
 ---
 
 # ForEach-Object
@@ -345,5 +344,4 @@ This cmdlet returns objects that are determined by the input.
 * The **ForEach-Object** cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see about_Foreach (http://go.microsoft.com/fwlink/?LinkID=113229) in the Microsoft TechNet library.
 
 ## RELATED LINKS
-
 

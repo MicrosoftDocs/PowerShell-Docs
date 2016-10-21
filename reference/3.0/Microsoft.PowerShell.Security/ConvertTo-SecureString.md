@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -210,5 +210,4 @@ ConvertTo-SecureString returns a SecureString object.
 [ConvertFrom-SecureString](.\ConvertFrom-SecureString.md)
 
 [Read-Host](..\Microsoft.PowerShell.Utility\Read-Host.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.PowerShell.Host
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 56d66100-99a0-4ffc-a12d-eee9a6718aef
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822193
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: E1957183-3E3C-481F-B604-F58550D42C4C
 ---
 
 # Microsoft.PowerShell.Host Module
@@ -27,10 +26,4 @@ Creates a record of all or part of a Windows PowerShell session to a text file.
 
 ### [Stop-Transcript](.\Stop-Transcript.md)
 Stops a transcript.
-
-
-
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Functions_OutputTypeAttribute
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 200b76bc-f1b6-4900-b2b8-c7617bacdb23
 ---
 # About Functions OutputTypeAttribute
 ## about_Functions_OutputTypeAttribute
@@ -210,5 +209,4 @@ about_Functions_Advanced
 about_Functions_Advanced_Methods
 about_Functions_Advanced_Parameters
 about_Functions_CmdletBindingAttribute
-
 

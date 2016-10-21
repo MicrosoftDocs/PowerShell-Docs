@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822267
 schema: 2.0.0
 title: Reset-ComputerMachinePassword
-ms.assetid: 0366ABD4-DFAD-45AD-B17C-299A2414BD7A
 ---
 
 # Reset-ComputerMachinePassword
@@ -146,5 +145,4 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
 

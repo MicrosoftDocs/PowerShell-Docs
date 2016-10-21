@@ -1,4 +1,4 @@
----
+﻿---
 title: PowershellGet
 description: 
 keywords: powershell, cmdlet
@@ -13,7 +13,6 @@ Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822317
 Help Version: 5.1.0.2
 Locale: en-US
-ms.assetid: CAFC3706-104D-46CA-96AF-F6F3482D3D1E
 ---
 
 # PowershellGet Module
@@ -119,10 +118,4 @@ Updates information for a script.
 
 ### [Update-Script](.\Update-Script.md)
 Updates a script.
-
-
-
-
-
-
 

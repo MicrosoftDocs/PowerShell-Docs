@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Remote_Variables
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: a31e2e7f-7c66-492c-86ef-d588912feb7d
 ---
 # About Remote Variables
 ## about_Remote_Variables
@@ -128,5 +127,4 @@ about_Scopes
 Enter-PSSession
 Invoke-Command
 New-PSSession
-
 

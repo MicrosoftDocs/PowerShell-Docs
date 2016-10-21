@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -414,5 +414,4 @@ If the wait ends because the value of the Timeout parameter is exceeded, Wait-Jo
 [about_Remote_Jobs](.\About\about_Remote_Jobs.md)
 
 [about_Remote_Variables](.\About\about_Remote_Variables.md)
-
 

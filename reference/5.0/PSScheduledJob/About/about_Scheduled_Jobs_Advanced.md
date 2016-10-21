@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Scheduled_Jobs_Advanced
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6aea5423-fb96-461c-a1cb-1fb705930eee
 ---
 # About Scheduled Jobs Advanced
 ## about_Scheduled_Jobs_Advanced
@@ -248,7 +247,4 @@ Get-ScheduledJob | Format-Table -Property Name, ExecutionHistoryLength -AutoSize
 about_Scheduled_Jobs
 about_Scheduled_Jobs_Troubleshooting
 about_Jobs
-
-
-
 

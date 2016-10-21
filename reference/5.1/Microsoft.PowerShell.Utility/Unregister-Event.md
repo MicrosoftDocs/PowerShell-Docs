@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822472
 schema: 2.0.0
 title: Unregister-Event
-ms.assetid: 313E8361-8646-4B0D-B72F-F76987C49591
 ---
 
 # Unregister-Event
@@ -194,6 +193,4 @@ To delete a custom event from the session, you must remove it programmatically o
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 

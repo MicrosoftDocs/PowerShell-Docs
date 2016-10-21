@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSGet-help.xml
@@ -190,5 +190,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Module](.\Save-Module.md)
 
 [Update-Module](.\Update-Module.md)
-
 

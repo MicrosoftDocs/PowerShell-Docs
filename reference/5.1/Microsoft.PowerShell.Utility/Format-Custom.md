@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822403
 schema: 2.0.0
 title: Format-Custom
-ms.assetid: F45E1921-DC98-4D7E-A938-E7A503284C61
 ---
 
 # Format-Custom
@@ -275,6 +274,4 @@ Before using **Format-Custom** to group the objects, use Sort-Object to sort the
 [Format-Table](.\Format-Table.md)
 
 [Format-Wide](.\Format-Wide.md)
-
-
 

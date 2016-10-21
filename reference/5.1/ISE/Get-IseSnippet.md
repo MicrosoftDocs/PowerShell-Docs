@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: ISE-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822196
 schema: 2.0.0
 title: Get-IseSnippet
-ms.assetid: 07D37D38-BFE9-4D1F-9B4F-A4334B3B3170
 ---
 
 # Get-IseSnippet
@@ -130,6 +129,4 @@ This cmdlet returns a file object that represents the snippet file.
 [New-IseSnippet](.\New-IseSnippet.md)
 
 [Import-IseSnippet](.\Import-IseSnippet.md)
-
-
 

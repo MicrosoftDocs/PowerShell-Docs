@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -112,7 +112,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](.\Functions\Clear-Host.md)
 
 [Out-Default](.\Out-Default.md)
 
@@ -125,5 +125,4 @@ However, the host might display the objects that **Out-Host** sends to it.
 [Out-String](..\Microsoft.PowerShell.Utility\Out-String.md)
 
 [Write-Host](..\Microsoft.PowerShell.Utility\Write-Host.md)
-
 

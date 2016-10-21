@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822307
 schema: 2.0.0
 title: Install-Package
-ms.assetid: 6FA3AA2C-0817-408A-A7FF-01CD990AA869
 ---
 
 # Install-Package
@@ -824,6 +823,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Package](.\Save-Package.md)
 
 [Uninstall-Package](.\Uninstall-Package.md)
-
-
 

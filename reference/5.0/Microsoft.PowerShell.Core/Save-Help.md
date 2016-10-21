@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -372,5 +372,4 @@ This cmdlet does not generate any output.
 [Get-UICulture](..\Microsoft.PowerShell.Utility\Get-UICulture.md)
 
 [Update-Help](.\Update-Help.md)
-
 

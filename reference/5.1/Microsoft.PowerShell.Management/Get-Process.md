@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/p/?linkid=290498
 schema: 2.0.0
 title: Get-Process
-ms.assetid: B30DB241-C0F6-40D3-AB3B-AB86342B36C1
 ---
 
 # Get-Process
@@ -423,6 +422,4 @@ Virtual memory includes storage in the paging files on disk.
 [Stop-Process](.\Stop-Process.md)
 
 [Wait-Process](.\Wait-Process.md)
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Variable Provider"
 ms.custom: na
 ms.date: 09/30/2014
@@ -9,7 +9,6 @@ ms.topic: article
 applies_to: 
   - Windows PowerShell 4.0
   - Windows PowerShell 5.0
-ms.assetid: 78dbcbbd-7946-4b9b-b75b-146f247f821c
 caps.latest.revision: 4
 manager: stevenka
 ---
@@ -252,3 +251,4 @@ $processes = $null
  [about_Variables](..\About\about_Variables.md)   
  [about_Automatic_Variables](..\About\about_Automatic_Variables.md)   
  [about_Providers](..\About\about_Providers.md)
+

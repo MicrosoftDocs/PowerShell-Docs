@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -200,5 +200,4 @@ Get-Transaction returns an object that represents the current transaction.
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
 
 [about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -183,6 +183,5 @@ This cmdlet does not generate any output.
 
 [Out-File](.\Out-File.md)
 
-[FileSystem Provider](0e494537-dfdf-437a-8b27-c21e30aa1f9f)
-
+[FileSystem Provider](..\Microsoft.PowerShell.Core\Providers\FileSystem-Provider.md)
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822272
 schema: 2.0.0
 title: Resume-Service
-ms.assetid: 84AC7B53-A313-4617-B983-097C33792A6B
 ---
 
 # Resume-Service
@@ -235,6 +234,4 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](.\Stop-Service.md)
 
 [Suspend-Service](.\Suspend-Service.md)
-
-
 

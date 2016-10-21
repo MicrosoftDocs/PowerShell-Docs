@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822353
 schema: 2.0.0
 title: New-JobTrigger
-ms.assetid: 605EB27A-E8FF-4167-B94C-988B2B893696
 ---
 
 # New-JobTrigger
@@ -485,6 +484,4 @@ You cannot pipe input to this cmdlet.
 [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
-
-
 

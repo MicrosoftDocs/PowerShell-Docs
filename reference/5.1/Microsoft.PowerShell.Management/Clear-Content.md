@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822205
 schema: 2.0.0
 title: Clear-Content
-ms.assetid: DEE5F65F-EAE2-42DE-B369-5BED1A38AC21
 ---
 
 # Clear-Content
@@ -296,6 +295,4 @@ For more information, see about_Providers.
 [Get-Item](.\Get-Item.md)
 
 [Set-Content](.\Set-Content.md)
-
-
 

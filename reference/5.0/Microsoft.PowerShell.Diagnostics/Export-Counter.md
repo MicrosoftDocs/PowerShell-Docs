@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -230,5 +230,4 @@ However, if the computer is configured for remote Windows PowerShell Windows Pow
 [Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822514
 schema: 2.0.0
 title: Get-LocalUser
-ms.assetid: 2FBB66F5-A741-465D-AEAD-65A7FFDD9B03
 ---
 
 # Get-LocalUser
@@ -137,6 +136,4 @@ This cmdlet returns local user accounts.
 [Rename-LocalUser](.\Rename-LocalUser.md)
 
 [Set-LocalUser](.\Set-LocalUser.md)
-
-
 

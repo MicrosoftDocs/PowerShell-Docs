@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Scripts
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: cb4e4184-cec0-462b-925d-e23bc1857eb7
 ---
 # About Scripts
 ## about_Scripts
@@ -22,7 +21,7 @@ about_Scripts
 
 
 ## SHORT DESCRIPTION
-Describes how to run and write scripts in  Windows PowerShell®.
+Describes how to run and write scripts in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -362,5 +361,4 @@ about_Script_Blocks
 about_Signing
 
 Invoke-Command
-
 

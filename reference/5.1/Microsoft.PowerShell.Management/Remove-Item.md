@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822260
 schema: 2.0.0
 title: Remove-Item
-ms.assetid: 0FE3FF11-A1F7-43B9-8C85-F92D52641395
 ---
 
 # Remove-Item
@@ -360,6 +359,4 @@ This cmdlet does not return any output.
 [Rename-Item](.\Rename-Item.md)
 
 [Set-Item](.\Set-Item.md)
-
-
 

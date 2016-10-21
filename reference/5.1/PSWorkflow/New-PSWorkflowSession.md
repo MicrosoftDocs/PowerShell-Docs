@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSWorkflow-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822488
 schema: 2.0.0
 title: New-PSWorkflowSession
-ms.assetid: 1AB612C9-3B1F-4E50-AA3C-E673FF66D323
 ---
 
 # New-PSWorkflowSession
@@ -346,5 +345,4 @@ You can pipe a session or a computer name to this cmdlet.
 * A **New-PSWorkflowSession** command is equivalent to the following command: `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
 
 ## RELATED LINKS
-
 

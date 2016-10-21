@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=398576
 schema: 2.0.0
 title: Update-Module
-ms.assetid: 7557593D-D028-4E42-8E65-6180F88D7FB9
 ---
 
 # Update-Module
@@ -249,6 +248,4 @@ You can only run **Update-Module** on modules that you installed from the online
 [Publish-Module](.\Publish-Module.md)
 
 [Uninstall-Module](.\Uninstall-Module.md)
-
-
 

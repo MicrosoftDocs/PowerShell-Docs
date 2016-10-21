@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822324
 schema: 2.0.0
 title: Get-InstalledScript
-ms.assetid: 7BD4AAE4-CB60-4CA0-8C6F-7517848C665B
 ---
 
 # Get-InstalledScript
@@ -135,6 +134,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Install-Script](.\Install-Script.md)
 
 [Uninstall-Script](.\Uninstall-Script.md)
-
-
 

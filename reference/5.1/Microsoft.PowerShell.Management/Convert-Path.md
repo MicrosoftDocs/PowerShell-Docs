@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822211
 schema: 2.0.0
 title: Convert-Path
-ms.assetid: F2548A68-4175-4872-961B-CD478EC0D6B3
 ---
 
 # Convert-Path
@@ -148,6 +147,4 @@ For more information, see about_Providers.
 [Test-Path](.\Test-Path.md)
 
 [Get-PSProvider](.\Get-PSProvider.md)
-
-
 

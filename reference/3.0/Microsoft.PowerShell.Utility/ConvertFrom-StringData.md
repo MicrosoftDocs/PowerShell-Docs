@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -260,5 +260,4 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 [about_Script_Internationalization](..\Microsoft.PowerShell.Core\About\about_Script_Internationalization.md)
 
 [about_Data_Sections]()
-
 

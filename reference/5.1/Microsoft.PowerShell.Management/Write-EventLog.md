@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822297
 schema: 2.0.0
 title: Write-EventLog
-ms.assetid: C93C4CD3-028F-4343-BFE6-B70F8F249290
 ---
 
 # Write-EventLog
@@ -224,6 +223,4 @@ This cmdlet returns objects that represents the events in the logs.
 [Show-EventLog](.\Show-EventLog.md)
 
 [Write-EventLog](.\Write-EventLog.md)
-
-
 

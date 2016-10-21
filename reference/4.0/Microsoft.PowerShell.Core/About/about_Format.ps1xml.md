@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Format.ps1xml
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: be0f25ff-0a2a-49d8-b0d4-c035b9434ea8
 ---
 # About Format.ps1xml
 ## about_Format.ps1xml
@@ -415,6 +414,4 @@ get-help about_signing
 Update-FormatData
 Trace-Command
 Get-TraceSource
-
-
 

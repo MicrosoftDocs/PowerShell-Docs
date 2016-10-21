@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822521
 schema: 2.0.0
 title: Rename-LocalUser
-ms.assetid: C9E02140-61CE-4C67-8857-9F3351D4BF9D
 ---
 
 # Rename-LocalUser
@@ -179,6 +178,4 @@ This cmdlet does not generate any output.
 [Remove-LocalUser](.\Remove-LocalUser.md)
 
 [Set-LocalUser](.\Set-LocalUser.md)
-
-
 

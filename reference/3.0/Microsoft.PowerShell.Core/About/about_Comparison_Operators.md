@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Comparison_Operators
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 007cf70d-f090-4720-a282-77c6ecbfa711
 ---
 # About Comparison Operators
 ## about_Comparison_Operators
@@ -715,7 +714,4 @@ about_Wildcards
 Compare-Object
 Foreach-Object
 Where-Object
-
-
-
 

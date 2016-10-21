@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822447
 schema: 2.0.0
 title: Out-GridView
-ms.assetid: 70915A86-D753-464E-8349-CBA02316154C
 ---
 
 # Out-GridView
@@ -439,6 +438,4 @@ To remove it, change the value.
 [Out-Printer](.\Out-Printer.md)
 
 [Out-String](.\Out-String.md)
-
-
 

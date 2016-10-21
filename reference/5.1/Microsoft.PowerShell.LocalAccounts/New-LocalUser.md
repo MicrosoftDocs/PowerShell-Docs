@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822516
 schema: 2.0.0
 title: New-LocalUser
-ms.assetid: CF929DD8-4016-4295-9128-FE0D13B8A458
 ---
 
 # New-LocalUser
@@ -319,6 +318,4 @@ This object provides information about the user account.
 [Rename-LocalUser](.\Rename-LocalUser.md)
 
 [Set-LocalUser](.\Set-LocalUser.md)
-
-
 

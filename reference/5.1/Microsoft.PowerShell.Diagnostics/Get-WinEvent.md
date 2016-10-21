@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822108
 schema: 2.0.0
 title: Get-WinEvent
-ms.assetid: 5FE94870-ED6B-4CE2-9500-93846CC65C95
 ---
 
 # Get-WinEvent
@@ -617,6 +616,4 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 ## RELATED LINKS
 
 [Get-Counter](.\Get-Counter.md)
-
-
 

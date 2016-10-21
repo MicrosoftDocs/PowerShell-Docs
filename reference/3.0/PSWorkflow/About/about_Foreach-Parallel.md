@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Foreach-Parallel
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: cf6b2c0d-f551-47c6-91f8-b8741071fff1
 ---
 # About Foreach-Parallel
 ## about_Foreach-Parallel
@@ -22,7 +21,7 @@ about_ForEach-Parallel
 
 
 ## SHORT DESCRIPTION
-Describes the ForEach -Parallel language construct in  Windows PowerShell® Workflow
+Describes the ForEach -Parallel language construct in  Windows PowerShellï¿½ Workflow
 
 
 ## LONG DESCRIPTION
@@ -110,5 +109,4 @@ about_Language_Keywords
 about_Parallel
 
 about_Workflows
-
 

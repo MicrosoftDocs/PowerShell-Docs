@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSWorkflowUtility-help.xml
@@ -198,10 +198,9 @@ However, it runs the workflow, which might generate output.
 
 [about_Workflows](..\PSWorkflow\About\about_Workflows.md)
 
-[about_Workflow_Common_Parameters](119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_Workflow_Common_Parameters](about_WorkflowCommonParameters.md)
 
-[Windows PowerShell Workflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
+[PSWorkflow Module](PSWorkflow-Module.md)
 
-[Windows PowerShell Workflow Utility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
+[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
 

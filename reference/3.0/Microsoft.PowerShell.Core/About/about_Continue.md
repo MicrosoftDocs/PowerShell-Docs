@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Continue
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: a7d1e707-f9c7-4a15-9f92-bc530a40a91a
 ---
 # About Continue
 ## about_Continue
@@ -58,5 +57,4 @@ about_Comparison_Operators
 about_Throw
 about_Trap
 about_Try_Catch_Finally
-
 

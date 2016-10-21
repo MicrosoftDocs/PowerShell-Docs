@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSGet-help.xml
@@ -202,5 +202,4 @@ You can only run **Update-Module** on modules that you installed from the online
 [Publish-Module](.\Publish-Module.md)
 
 [Uninstall-Module](.\Uninstall-Module.md)
-
 

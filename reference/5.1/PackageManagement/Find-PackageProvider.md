@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822299
 schema: 2.0.0
 title: Find-PackageProvider
-ms.assetid: 862E42A9-6E0F-416E-942A-483AC41C34B6
 ---
 
 # Find-PackageProvider
@@ -272,6 +271,4 @@ A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to i
 [Register-PackageSource](.\Register-PackageSource.md)
 
 [Install-PackageProvider](.\Install-PackageProvider.md)
-
-
 

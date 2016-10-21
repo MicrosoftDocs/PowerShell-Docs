@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Command_Syntax
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f39782e8-fe76-46ea-b8b5-b50bbee8da4b
 ---
 # About Command Syntax
 ## about_Command_Syntax
@@ -291,6 +290,4 @@ about_Help_Syntax
 about_Parameters
 Get-Command
 Get-Help
-
-
 

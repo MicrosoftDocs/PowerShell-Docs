@@ -1,11 +1,10 @@
----
+﻿---
 title: Environment Provider
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 94fcd05d-e702-4706-9b7d-ad7e5fd0ec09
 ---
 # Environment Provider
 ## PROVIDER NAME  
@@ -26,11 +25,11 @@ ms.assetid: 94fcd05d-e702-4706-9b7d-ad7e5fd0ec09
   
  The Environment provider exposes its data store in the Env: drive. To work with environment variables, change your location to the Env: drive \("set\-location env:"\), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the Env: drive name in the path.  
   
- The Environment provider supports all the cmdlets that contain the Item noun except for [Invoke\-Item &#91;m2&#93;](assetId:///38a9887b-ce1a-4bde-be4e-98012efae204). And, it supports the [Get\-Content &#91;m2&#93;](assetId:///86d8b4af-af2c-4a27-9519-2c9fd420be3d) and [Set\-Content &#91;m2&#93;](assetId:///6fff9b86-86df-4440-b7b7-8124b22088fc) cmdlets. However, it does not support the cmdlets that contain the ItemProperty noun, and it does not support the Filter parameter in any cmdlet.  
+ The Environment provider supports all the cmdlets that contain the Item noun except for [Invoke\-Item &#91;m2&#93;](Invoke-Item.md). And, it supports the [Get\-Content &#91;m2&#93;](Get-Content.md) and [Set\-Content &#91;m2&#93;](Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the ItemProperty noun, and it does not support the Filter parameter in any cmdlet.  
   
  Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign \(\=\).  
   
- Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export\-Console &#91;m2&#93;](assetId:///0858eece-ddcb-4525-89d1-4732c5f54c48) to save the current session.  
+ Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export\-Console &#91;m2&#93;](Export-Console.md) to save the current session.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -172,4 +171,5 @@ clear-item -path env:USERROLE
 ```  
   
 ## See Also  
- [about\_Providers](assetId:///55e2974f-3314-48d2-8b1b-abdea6b303cb)
+ [about\_Providers](about_Providers.md)
+

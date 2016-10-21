@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: PSWorkflowUtility-help.xml
@@ -54,7 +54,7 @@ Server01                           77b1cdf8-8226-4662-9067-cd2fa5c3b711    AllSi
 Server02                           a33542d7-3cdd-4339-ab99-0e7cd8e59462    Unrestricted
 Server03                           279bac28-066a-4646-9497-8fcdcfe9757e    AllSigned
 localhost                          0d858009-2cc4-47a4-a2e0-da17dc2883d0    RemoteSigned
-â€¦
+a�|
 ```
 
 This command runs the Get-ExecutionPolicy cmdlet as a workflow on hundreds of computers.
@@ -190,10 +190,9 @@ However, it runs the workflow, which might generate output.
 
 [about_Workflows](..\PSWorkflow\About\about_Workflows.md)
 
-[about_Workflow_Common_Parameters](119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_Workflow_Common_Parameters](..\PSWorkflow\About\about_WorkflowCommonParameters.md)
 
-[Windows PowerShell Workflow Module](117316fe-2f82-4fc9-b5dc-794ae9e3f258)
+[Windows PowerShell Workflow Module](..\PSWorkflow\PSWorkflow.md)
 
-[Windows PowerShell Workflow Utility Module](c62a363a-caa2-4b6e-a079-d6e8543bc4c6)
-
+[Windows PowerShell Workflow Utility Module](.\PSWorkflowUtility.md)
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -379,5 +379,4 @@ You can pipe any object to Select-Object.
 [Sort-Object](.\Sort-Object.md)
 
 [Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
-
 

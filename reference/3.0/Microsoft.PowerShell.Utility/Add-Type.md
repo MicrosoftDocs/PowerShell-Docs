@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -610,5 +610,4 @@ For more information about this class, see the Microsoft .NET Framework SDK.
 [Add-Member](.\Add-Member.md)
 
 [New-Object](.\New-Object.md)
-
 

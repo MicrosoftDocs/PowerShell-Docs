@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822283
 schema: 2.0.0
 title: Split-Path
-ms.assetid: 844E6307-86CC-4D08-A82F-991414D582E9
 ---
 
 # Split-Path
@@ -348,6 +347,4 @@ For more information, see about_Providers.
 [Resolve-Path](.\Resolve-Path.md)
 
 [Test-Path](.\Test-Path.md)
-
-
 

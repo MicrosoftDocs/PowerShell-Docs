@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.ODataUtils-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822008
 schema: 2.0.0
 title: Export-ODataEndpointProxy
-ms.assetid: A8A5D9C5-9BAF-4A47-A270-C4B0C764C144
 ---
 
 # Export-ODataEndpointProxy
@@ -319,6 +318,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [OData Library](http://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
 
 [What is the OData Protocol?](http://www.odata.org/)
-
-
 

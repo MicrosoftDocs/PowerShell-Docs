@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822210
 schema: 2.0.0
 title: Complete-Transaction
-ms.assetid: 2D47D72E-F949-4AEE-ADF7-C8EBE1DF23D5
 ---
 
 # Complete-Transaction
@@ -246,6 +245,4 @@ To roll back a different transaction, you must first commit or roll back the act
 [New-Item](.\New-Item.md)
 
 [New-ItemProperty](.\New-ItemProperty.md)
-
-
 

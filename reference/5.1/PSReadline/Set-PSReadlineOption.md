@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822015
 schema: 2.0.0
 title: Set-PSReadlineOption
-ms.assetid: BF46911B-3F0B-4D76-BAEE-5BD7F7D4F79C
 ---
 
 # Set-PSReadlineOption
@@ -614,6 +613,4 @@ This cmdlet does not generate output.
 [Get-PSReadlineOption](.\Get-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
-
 

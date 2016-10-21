@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822485
 schema: 2.0.0
 title: Write-Warning
-ms.assetid: 8E53946E-1762-40E6-AB70-5307F6FC2A98
 ---
 
 # Write-Warning
@@ -142,6 +141,4 @@ It does not generate any other output.
 [Write-Progress](.\Write-Progress.md)
 
 [Write-Verbose](.\Write-Verbose.md)
-
-
 

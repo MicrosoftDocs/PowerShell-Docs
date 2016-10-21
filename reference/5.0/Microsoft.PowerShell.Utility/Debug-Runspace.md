@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -204,7 +204,7 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
 ## RELATED LINKS
 
-[about_Debuggers](http://technet.microsoft.com/library/hh847790.aspx)
+[about_Debuggers](..\Microsoft.PowerShell.Core\About\about_Debuggers.md)
 
 [Debug-Job](..\Microsoft.PowerShell.Core\Debug-Job.md)
 
@@ -215,5 +215,4 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 [Enter-PSHostProcess](..\Microsoft.PowerShell.Core\Enter-PSHostProcess.md)
 
 [Enter-PSSession](..\Microsoft.PowerShell.Core\Enter-PSSession.md)
-
 

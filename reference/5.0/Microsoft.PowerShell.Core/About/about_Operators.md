@@ -1,4 +1,4 @@
----
+ï»¿---
 title: about_Operators
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 4d3d5783-6c59-4c83-bf85-50a7f0b1c766
 ---
 # About Operators
 ## about_Operators
@@ -22,7 +21,7 @@ about_Operators
 
 
 ## SHORT DESCRIPTION
-Describes the operators that are supported by  Windows PowerShell®.
+Describes the operators that are supported by  Windows PowerShell?
 
 
 ## LONG DESCRIPTION
@@ -276,5 +275,4 @@ about_Split
 about_Join
 
 about_Redirection
-
 

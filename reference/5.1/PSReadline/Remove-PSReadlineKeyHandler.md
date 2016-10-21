@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822012
 schema: 2.0.0
 title: Remove-PSReadlineKeyHandler
-ms.assetid: EA5BE246-EF11-41C3-A6D9-158C23C31115
 ---
 
 # Remove-PSReadlineKeyHandler
@@ -100,6 +99,4 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadlineOption](.\Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
-
-
 

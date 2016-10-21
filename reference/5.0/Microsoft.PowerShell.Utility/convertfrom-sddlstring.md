@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821754
 schema: 2.0.0
 title: ConvertFrom-SddlString
-ms.assetid: E81D7512-C5DF-40CE-94D6-208BF9EFBA5A
 ---
 
 # ConvertFrom-SddlString
@@ -72,5 +71,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
 

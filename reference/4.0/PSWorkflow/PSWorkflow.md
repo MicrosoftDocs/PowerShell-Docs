@@ -1,4 +1,4 @@
----
+﻿---
 title: PSWorkflow
 description: 
 keywords: powershell, cmdlet
@@ -21,12 +21,9 @@ This section contains the help topics for the cmdlets that are installed with Wi
 
 ## PSWorkflow Cmdlets
 ### [New-PSWorkflowExecutionOption](New-PSWorkflowExecutionOption.md)
-Creates an object that contains session configuration options for workflow sessions.
+Creates an object that contains session configuration options for workflow sessions.
+
 
 ### [New-PSWorkflowSession](New-PSWorkflowSession.md)
-Creates a workflow session.
-
-
-
-
+Creates a workflow session.
 

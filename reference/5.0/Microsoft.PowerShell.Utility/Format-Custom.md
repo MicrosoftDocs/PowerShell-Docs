@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -276,5 +276,4 @@ Before using **Format-Custom** to group the objects, use Sort-Object to sort the
 [Format-Wide](.\Format-Wide.md)
 
 [Get-Process](..\Microsoft.PowerShell.Management\Get-Process.md)
-
 

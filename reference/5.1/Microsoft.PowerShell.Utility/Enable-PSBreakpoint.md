@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822396
 schema: 2.0.0
 title: Enable-PSBreakpoint
-ms.assetid: 739E1091-3B3F-405F-A428-BEC7543E5DF0
 ---
 
 # Enable-PSBreakpoint
@@ -230,6 +229,4 @@ You do not need to enable newly created breakpoints.
 [Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](.\Set-PSBreakpoint.md)
-
-
 

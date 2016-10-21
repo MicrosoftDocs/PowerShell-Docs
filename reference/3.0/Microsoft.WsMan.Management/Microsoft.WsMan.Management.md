@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft.WsMan.Management
 description: 
 keywords: powershell, cmdlet
@@ -21,45 +21,53 @@ This section contains the help topics for the cmdlets that are installed with Wi
 
 ## Microsoft.WsMan.Management Cmdlets
 ### [Connect-WSMan](Connect-WSMan.md)
-Connects to the WinRM service on a remote computer.
+Connects to the WinRM service on a remote computer.
+
 
 ### [Disable-WSManCredSSP](Disable-WSManCredSSP.md)
-Disables Credential Security Support Provider (CredSSP) authentication on a client computer.
+Disables Credential Security Support Provider (CredSSP) authentication on a client computer.
+
 
 ### [Disconnect-WSMan](Disconnect-WSMan.md)
-Disconnects the client from the WinRM service on a remote computer.
+Disconnects the client from the WinRM service on a remote computer.
+
 
 ### [Enable-WSManCredSSP](Enable-WSManCredSSP.md)
-Enables Credential Security Support Provider (CredSSP) authentication on a client or on a server computer.
+Enables Credential Security Support Provider (CredSSP) authentication on a client or on a server computer.
+
 
 ### [Get-WSManCredSSP](Get-WSManCredSSP.md)
-Gets the Credential Security Support Provider-related configuration for the client.
+Gets the Credential Security Support Provider-related configuration for the client.
+
 
 ### [Get-WSManInstance](Get-WSManInstance.md)
-Displays management information for a resource instance specified by a Resource URI.
+Displays management information for a resource instance specified by a Resource URI.
+
 
 ### [Invoke-WSManAction](Invoke-WSManAction.md)
-Invokes an action on the object that is specified by the Resource URI and by the selectors.
+Invokes an action on the object that is specified by the Resource URI and by the selectors.
+
 
 ### [New-WSManInstance](New-WSManInstance.md)
-Creates a new instance of a management resource.
+Creates a new instance of a management resource.
+
 
 ### [New-WSManSessionOption](New-WSManSessionOption.md)
-Creates a WS-Management session option hash table to use as input parameters to the following WS-Management cmdlets: Get-WSManInstance Set-WSManInstance Invoke-WSManAction Connect-WSMan
+Creates a WS-Management session option hash table to use as input parameters to the following WS-Management cmdlets: Get-WSManInstance Set-WSManInstance Invoke-WSManAction Connect-WSMan
+
 
 ### [Remove-WSManInstance](Remove-WSManInstance.md)
-Deletes a management resource instance.
+Deletes a management resource instance.
+
 
 ### [Set-WSManInstance](Set-WSManInstance.md)
-Modifies the management information that is related to a resource.
+Modifies the management information that is related to a resource.
+
 
 ### [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
-Configures the local computer for remote management.
+Configures the local computer for remote management.
+
 
 ### [Test-WSMan](Test-WSMan.md)
-Tests whether the WinRM service is running on a local or remote computer.
-
-
-
-
+Tests whether the WinRM service is running on a local or remote computer.
 

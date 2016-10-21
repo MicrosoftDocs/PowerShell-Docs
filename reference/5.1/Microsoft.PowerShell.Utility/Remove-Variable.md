@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822456
 schema: 2.0.0
 title: Remove-Variable
-ms.assetid: A58FB01B-6BB4-48E9-A07C-5AD907DC4791
 ---
 
 # Remove-Variable
@@ -195,6 +194,4 @@ For more information, see about_Aliases.
 [New-Variable](.\New-Variable.md)
 
 [Set-Variable](.\Set-Variable.md)
-
-
 

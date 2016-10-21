@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822215
 schema: 2.0.0
 title: Disable-ComputerRestore
-ms.assetid: 06C5D9DE-8A14-449C-B13B-C6793297E3FE
 ---
 
 # Disable-ComputerRestore
@@ -142,6 +141,4 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 [Restart-Computer](.\Restart-Computer.md)
 
 [Restore-Computer](.\Restore-Computer.md)
-
-
 

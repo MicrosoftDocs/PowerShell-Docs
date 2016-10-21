@@ -1,4 +1,4 @@
----
+﻿---
 title: "Test-Path for FileSystem"
 ms.custom: na
 ms.date: 09/30/2014
@@ -11,7 +11,6 @@ applies_to:
   - Windows PowerShell 5.0
   - Windows PowerShell 3.0
   - Windows PowerShell 2.0
-ms.assetid: 6050b853-c96d-49fd-93a8-4970b0e7d1f4
 caps.latest.revision: 10
 manager: stevenka
 ---
@@ -168,3 +167,4 @@ The NewerThan parameter works only in file system drives.
  [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
  [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
  [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 title: about_Foreach
 description: 
 keywords: powershell, cmdlet
@@ -14,7 +14,6 @@ ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 50b1bd2b-d061-4d60-84d9-33e422dba357
 ---
 # About ForEach
 ## about_ForEach
@@ -340,7 +339,4 @@ throw
 about_Automatic_Variables
 about_If
 Foreach-Object
-
-
-
 

@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -513,18 +513,17 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-WSManInstance](http://technet.microsoft.com/library/hh849864.aspx)
+[Get-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
 
-[Invoke-WSManAction](http://technet.microsoft.com/library/hh849865.aspx)
+[Invoke-WSManAction](..\Microsoft.WsMan.Management\Invoke-WSManAction.md)
 
-[New-WSManInstance](http://technet.microsoft.com/library/hh849866.aspx)
+[New-WSManInstance](..\Microsoft.WsMan.Management\New-WSManInstance.md)
 
-[Remove-WSManInstance](http://technet.microsoft.com/library/hh849870.aspx)
+[Remove-WSManInstance](..\Microsoft.WsMan.Management\Remove-WSManInstance.md)
 
 [Get-WmiObject](.\Get-WmiObject.md)
 
 [Remove-WmiObject](.\Remove-WmiObject.md)
 
 [Set-WmiInstance](.\Set-WmiInstance.md)
-
 

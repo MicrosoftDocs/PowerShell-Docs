@@ -1,4 +1,4 @@
----
+﻿---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -11,7 +11,6 @@ ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822451
 schema: 2.0.0
 title: Register-EngineEvent
-ms.assetid: F5C43ECF-B8EF-44D2-B586-0480121C397C
 ---
 
 # Register-EngineEvent
@@ -218,6 +217,4 @@ Otherwise, it does not generate any output.
 [Unregister-Event](.\Unregister-Event.md)
 
 [Wait-Event](.\Wait-Event.md)
-
-
 
