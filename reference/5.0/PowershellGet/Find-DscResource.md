@@ -1,7 +1,7 @@
 ﻿---
 author: jpjofre
 description: 
-external help file: PSDesiredStateConfiguration-help.xml
+external help file: PSGet-help.xml
 keywords: powershell, cmdlet
 manager: carolz
 ms.date: 2016-09-30
