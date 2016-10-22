@@ -1,5 +1,5 @@
 
-DSC uses <b>DSCAutomationHostEnabled </b>registry key under <b>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</b> to automatically configure the machine at initial boot-up.
+DSC uses <b>DSCAutomationHostEnabled</b>registry key under <b>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies</b> to automatically configure the machine at initial boot-up.
 DSCAutomationHostEnabled supports three modes:
 
 |  DSCAutomationHostEnabled Value  |  Description   | 
