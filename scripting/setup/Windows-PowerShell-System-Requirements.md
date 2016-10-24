@@ -16,6 +16,20 @@ This topic lists the system requirements for Windows PowerShell 3.0 and Windows 
 Windows® 8.1 and Windows Server® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
 
 ## Operating System Requirements
+Windows PowerShell 5.0 runs on the following versions of Windows.
+
+-   Windows Server 2016, installed by default
+
+-   Windows Server 2012 R2
+
+-   Windows Server 2012
+
+-   Windows Server 2008 R2 with Service Pack 1, install [Windows Management Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 4.0
+
+-   Windows 8.1
+
+-   Windows 7 with Service Pack 1, install [Windows Management Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 4.0
+
 Windows PowerShell 4.0 runs on the following versions of Windows.
 
 -   Windows 8.1, installed by default
