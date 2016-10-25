@@ -120,9 +120,9 @@ If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no 
 
 [Out-File](Out-File.md)
 
-[Out-Host](../Microsoft.PowerShell.Core/Out-Default.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Null](../Microsoft.PowerShell.Core/Out-Default.md)
+[Out-Null](../Microsoft.PowerShell.Core/Out-Null.md)
 
 [Out-String](Out-String.md)
 

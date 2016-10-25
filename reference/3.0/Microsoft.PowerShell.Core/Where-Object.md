@@ -973,17 +973,17 @@ Where-Object returns selected items from the input object set.
 
 [ForEach-Object](ForEach-Object.md)
 
-[Group-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Group-Object](../Microsoft.PowerShell.Utility/Group-Object.md)
 
-[Measure-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Measure-Object](../Microsoft.PowerShell.Utility/Measure-Object.md)
 
-[New-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[New-Object](../Microsoft.PowerShell.Utility/New-Object.md)
 
-[Select-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Sort-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
-[Tee-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 
 [Where-Object](Where-Object.md)
 

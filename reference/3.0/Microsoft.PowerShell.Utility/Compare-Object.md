@@ -236,5 +236,5 @@ Otherwise, this cmdlet does not generate any output.
 
 [Tee-Object](Tee-Object.md)
 
-[Where-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 

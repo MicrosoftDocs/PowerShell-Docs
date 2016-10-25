@@ -101,7 +101,7 @@ Otherwise, it returns a string.
 
 [Get-Host](Get-Host.md)
 
-[Out-Host](../Microsoft.PowerShell.Security/ConvertFrom-SecureString.md)
+[Out-Host](../Microsoft.PowerShell.Security/Out-Host.md)
 
 [Write-Host](Write-Host.md)
 

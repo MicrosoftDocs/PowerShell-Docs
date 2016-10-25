@@ -125,7 +125,7 @@ This cmdlet does not generate any output.
 
 [Enable-PSRemoting](../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
 
-[New-PSSession](../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
 [Connect-WSMan](Connect-WSMan.md)
 

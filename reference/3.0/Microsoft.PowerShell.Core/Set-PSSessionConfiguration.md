@@ -638,7 +638,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSTransportOption](New-PSTransportOption.md)
 
-[New-PSWorkflowExecutionOption](../Microsoft.WsMan.Management/Provider/WSMan-Provider.md)
+[New-PSWorkflowExecutionOption](../Microsoft.WsMan.Management/Provider/New-PSWorkflowExecutionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
