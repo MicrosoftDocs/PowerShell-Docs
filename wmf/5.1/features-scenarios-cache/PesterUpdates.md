@@ -5,6 +5,8 @@ contributor: jkeithb
 contributor: Keith Bankston (expert is Jim Truher)
 ---
 
+<!-- Loc Comment: Please fix the metadata above as it is not rendering correctly in live page and blocking localization. -->
+
 In version 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0, with the addition of commit https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, which enables better behavior for Pester on Nano. 
 
 
