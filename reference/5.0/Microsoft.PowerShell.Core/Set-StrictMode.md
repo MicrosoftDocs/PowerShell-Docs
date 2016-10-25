@@ -184,9 +184,9 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Set-PSDebug](.\Set-PSDebug.md)
+[Set-PSDebug](Set-PSDebug.md)
 
 [about_Scopes](about_Scopes.md)
 
-[about_Debuggers](.\About\about_Debuggers.md)
+[about_Debuggers](About/about_Debuggers.md)
 

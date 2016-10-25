@@ -363,13 +363,13 @@ This cmdlet does not generate any output.
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
-[Get-Culture](..\Microsoft.PowerShell.Utility\Get-Culture.md)
+[Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
-[Get-Help](.\Get-Help.md)
+[Get-Help](Get-Help.md)
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[Get-UICulture](..\Microsoft.PowerShell.Utility\Get-UICulture.md)
+[Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 
-[Update-Help](.\Update-Help.md)
+[Update-Help](Update-Help.md)
 

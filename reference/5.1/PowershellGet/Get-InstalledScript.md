@@ -131,7 +131,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Install-Script](.\Install-Script.md)
+[Install-Script](Install-Script.md)
 
-[Uninstall-Script](.\Uninstall-Script.md)
+[Uninstall-Script](Uninstall-Script.md)
 

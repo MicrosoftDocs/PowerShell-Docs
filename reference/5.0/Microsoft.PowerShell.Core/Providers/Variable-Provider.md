@@ -41,11 +41,11 @@ ms.topic: article
   
  When you use these cmdlets, you do not need to specify the Variable: drive in the name.  
   
- The Variable provider supports all of the cmdlets whose names contain the Item noun (the Item cmdlets), except for [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md). The Variable provider supports the [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) and [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun (the ItemProperty cmdlets), and it does not support the Filter parameter in any cmdlet.  
+ The Variable provider supports all of the cmdlets whose names contain the Item noun (the Item cmdlets), except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). The Variable provider supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun (the ItemProperty cmdlets), and it does not support the Filter parameter in any cmdlet.  
   
- You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign ($) to identify the name as a variable and the assignment operator (=) to establish and change its value. For example, "$p = [Get-Process](..\..\Microsoft.PowerShell.Management\Get-Process.md)" creates the "p" variable and stores the results of a "[Get-Process](..\..\Microsoft.PowerShell.Management\Get-Process.md)" command in it.  
+ You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign ($) to identify the name as a variable and the assignment operator (=) to establish and change its value. For example, "$p = [Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)" creates the "p" variable and stores the results of a "[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)" command in it.  
   
- All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](..\Export-Console.md) to save the current console.  
+ All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current console.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -242,7 +242,7 @@ $processes = $null
 ```  
   
 ## See Also  
- [about_Variables](..\About\about_Variables.md)   
- [about_Automatic_Variables](..\About\about_Automatic_Variables.md)   
- [about_Providers](..\About\about_Providers.md)
+ [about_Variables](../About/about_Variables.md)   
+ [about_Automatic_Variables](../About/about_Automatic_Variables.md)   
+ [about_Providers](../About/about_Providers.md)
 

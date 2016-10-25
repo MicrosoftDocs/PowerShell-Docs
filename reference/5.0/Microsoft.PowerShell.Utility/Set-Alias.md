@@ -291,11 +291,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Export-Alias](.\Export-Alias.md)
+[Export-Alias](Export-Alias.md)
 
-[Get-Alias](.\Get-Alias.md)
+[Get-Alias](Get-Alias.md)
 
-[Import-Alias](.\Import-Alias.md)
+[Import-Alias](Import-Alias.md)
 
-[New-Alias](.\New-Alias.md)
+[New-Alias](New-Alias.md)
 

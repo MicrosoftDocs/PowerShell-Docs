@@ -332,21 +332,21 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 * A **New-PSWorkflowSession** command is equivalent to the following command: `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
 ## RELATED LINKS
 
-[New-PSSession](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[New-PSTransportOption](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSTransportOption](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[Register-PSSessionConfiguration](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[Register-PSSessionConfiguration](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[about_PSSessions](..\Microsoft.PowerShell.Core\About\about_PSSessions.md)
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
-[about_Session_Configurations](..\Microsoft.PowerShell.Core\About\about_Session_Configurations.md)
+[about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)
 
-[about_Workflows](.\About\about_Workflows.md)
+[about_Workflows](About/about_Workflows.md)
 
-[about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
+[about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](.\PSWorkflow.md)
+[PSWorkflow Module](PSWorkflow.md)
 
-[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
+[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
 

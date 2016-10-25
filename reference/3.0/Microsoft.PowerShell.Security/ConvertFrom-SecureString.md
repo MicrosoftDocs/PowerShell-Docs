@@ -138,7 +138,7 @@ Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 digit
 *
 ## RELATED LINKS
 
-[ConvertTo-SecureString](.\ConvertTo-SecureString.md)
+[ConvertTo-SecureString](ConvertTo-SecureString.md)
 
-[Read-Host](..\Microsoft.PowerShell.Utility\Read-Host.md)
+[Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 

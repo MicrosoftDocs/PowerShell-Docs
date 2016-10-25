@@ -324,15 +324,15 @@ You can pipe the objects to be sorted to **Sort-Object**.
 
 ## RELATED LINKS
 
-[Compare-Object](.\Compare-Object.md)
+[Compare-Object](Compare-Object.md)
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[Measure-Object](.\Measure-Object.md)
+[Measure-Object](Measure-Object.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 

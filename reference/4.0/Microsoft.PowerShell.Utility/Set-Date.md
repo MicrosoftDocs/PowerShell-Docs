@@ -208,7 +208,7 @@ For more information, see "DateTime Methods" and "TimeSpan Methods."
 
 ## RELATED LINKS
 
-[Get-Date](.\Get-Date.md)
+[Get-Date](Get-Date.md)
 
-[New-TimeSpan](.\New-TimeSpan.md)
+[New-TimeSpan](New-TimeSpan.md)
 

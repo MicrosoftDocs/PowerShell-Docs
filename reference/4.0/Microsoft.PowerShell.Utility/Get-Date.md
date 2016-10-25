@@ -530,7 +530,7 @@ The format for the command is:
 
 ## RELATED LINKS
 
-[New-TimeSpan](.\New-TimeSpan.md)
+[New-TimeSpan](New-TimeSpan.md)
 
-[Set-Date](.\Set-Date.md)
+[Set-Date](Set-Date.md)
 

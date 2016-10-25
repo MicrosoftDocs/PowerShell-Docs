@@ -477,19 +477,19 @@ This cmdlet returns an object that represents the job that it started.
 
 ## RELATED LINKS
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Receive-Job](.\Receive-Job.md)
+[Receive-Job](Receive-Job.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Stop-Job](.\Stop-Job.md)
+[Stop-Job](Stop-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
-[Wait-Job](.\Wait-Job.md)
+[Wait-Job](Wait-Job.md)
 

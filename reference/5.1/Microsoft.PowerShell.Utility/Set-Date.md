@@ -192,7 +192,7 @@ You can pipe a date to **Set-Date**.
 
 ## RELATED LINKS
 
-[Get-Date](.\Get-Date.md)
+[Get-Date](Get-Date.md)
 
-[New-TimeSpan](.\New-TimeSpan.md)
+[New-TimeSpan](New-TimeSpan.md)
 

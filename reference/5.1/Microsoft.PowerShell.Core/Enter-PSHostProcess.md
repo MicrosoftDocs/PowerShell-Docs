@@ -205,5 +205,5 @@ That is, they have loaded the Windows PowerShell engine.
 
 ## RELATED LINKS
 
-[Exit-PSHostProcess](.\Exit-PSHostProcess.md)
+[Exit-PSHostProcess](Exit-PSHostProcess.md)
 

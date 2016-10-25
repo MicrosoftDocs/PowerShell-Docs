@@ -360,13 +360,13 @@ For more information, see about_Providers.
 *
 ## RELATED LINKS
 
-[Clear-Content](.\Clear-Content.md)
+[Clear-Content](Clear-Content.md)
 
-[Get-Content](.\Get-Content.md)
+[Get-Content](Get-Content.md)
 
-[Get-Item](.\Get-Item.md)
+[Get-Item](Get-Item.md)
 
-[Set-Content](.\Set-Content.md)
+[Set-Content](Set-Content.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

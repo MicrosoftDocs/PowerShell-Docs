@@ -120,7 +120,7 @@ Get-PSSnapin returns an object for each snap-in that it gets.
 
 ## RELATED LINKS
 
-[Add-PSSnapin](.\Add-PSSnapin.md)
+[Add-PSSnapin](Add-PSSnapin.md)
 
-[Remove-PSSnapin](.\Remove-PSSnapin.md)
+[Remove-PSSnapin](Remove-PSSnapin.md)
 

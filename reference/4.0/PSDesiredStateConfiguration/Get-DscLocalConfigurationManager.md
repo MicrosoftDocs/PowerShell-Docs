@@ -119,5 +119,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
-[Set-DscLocalConfigurationManager](.\Set-DscLocalConfigurationManager.md)
+[Set-DscLocalConfigurationManager](Set-DscLocalConfigurationManager.md)
 

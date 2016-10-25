@@ -221,15 +221,15 @@ You do not need to enable newly created breakpoints.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Get-PSBreakpoint](.\Get-PSBreakpoint.md)
+[Get-PSBreakpoint](Get-PSBreakpoint.md)
 
-[Get-PSCallStack](.\Get-PSCallStack.md)
+[Get-PSCallStack](Get-PSCallStack.md)
 
-[Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
+[Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[Set-PSBreakpoint](.\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers]()
 

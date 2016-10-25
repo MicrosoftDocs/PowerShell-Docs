@@ -256,15 +256,15 @@ You can pipe a string that contains the file path to Set-AuthenticodeSignature.
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Get-ExecutionPolicy](.\Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
-[Get-PfxCertificate](.\Get-PfxCertificate.md)
+[Get-PfxCertificate](Get-PfxCertificate.md)
 
-[Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
-[about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

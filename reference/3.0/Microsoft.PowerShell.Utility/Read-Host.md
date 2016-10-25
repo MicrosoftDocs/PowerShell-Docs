@@ -95,13 +95,13 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
 
-[ConvertFrom-SecureString](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
+[ConvertFrom-SecureString](../Microsoft.PowerShell.Security/ConvertFrom-SecureString.md)
 
-[Get-Host](.\Get-Host.md)
+[Get-Host](Get-Host.md)
 
-[Out-Host](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
+[Out-Host](../Microsoft.PowerShell.Security/ConvertFrom-SecureString.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 

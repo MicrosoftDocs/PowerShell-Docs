@@ -306,5 +306,5 @@ You can pipe a path or XML node to Select-Xml.
 
 ## RELATED LINKS
 
-[ConvertTo-Xml](.\ConvertTo-Xml.md)
+[ConvertTo-Xml](ConvertTo-Xml.md)
 

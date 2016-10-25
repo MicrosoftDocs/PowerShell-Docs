@@ -128,7 +128,7 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Export-FormatData](.\Export-FormatData.md)
+[Export-FormatData](Export-FormatData.md)
 
-[Update-FormatData](.\Update-FormatData.md)
+[Update-FormatData](Update-FormatData.md)
 

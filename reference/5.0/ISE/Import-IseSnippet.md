@@ -184,9 +184,9 @@ This cmdlet does not generate output.
 
 ## RELATED LINKS
 
-[Get-IseSnippet](.\Get-IseSnippet.md)
+[Get-IseSnippet](Get-IseSnippet.md)
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 

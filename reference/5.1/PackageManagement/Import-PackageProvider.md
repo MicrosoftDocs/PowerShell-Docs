@@ -165,13 +165,13 @@ You can pipe a **PackageProvider** object returned by **Get-PackageProvider** in
 
 ## RELATED LINKS
 
-[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Unregister-PackageSource](.\Unregister-PackageSource.md)
+[Unregister-PackageSource](Unregister-PackageSource.md)
 
-[Get-PackageSource](.\Get-PackageSource.md)
+[Get-PackageSource](Get-PackageSource.md)
 
-[Register-PackageSource](.\Register-PackageSource.md)
+[Register-PackageSource](Register-PackageSource.md)
 
-[Get-PackageProvider](.\Get-PackageProvider.md)
+[Get-PackageProvider](Get-PackageProvider.md)
 

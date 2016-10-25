@@ -433,13 +433,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Find-Package](.\Find-Package.md)
+[Find-Package](Find-Package.md)
 
-[Install-Package](.\Install-Package.md)
+[Install-Package](Install-Package.md)
 
-[Save-Package](.\Save-Package.md)
+[Save-Package](Save-Package.md)
 
-[Uninstall-Package](.\Uninstall-Package.md)
+[Uninstall-Package](Uninstall-Package.md)
 

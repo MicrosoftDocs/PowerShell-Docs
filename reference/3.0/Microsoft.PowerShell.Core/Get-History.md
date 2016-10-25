@@ -127,11 +127,11 @@ Get-History returns a history object for each history item that it gets.
 * Beginning in Windows PowerShell 3.0, the default value of the **$MaximumHistoryCount** preference variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the **$MaximumHistoryCount** variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 ## RELATED LINKS
 
-[Add-History](.\Add-History.md)
+[Add-History](Add-History.md)
 
-[Clear-History](.\Clear-History.md)
+[Clear-History](Clear-History.md)
 
-[Invoke-History](.\Invoke-History.md)
+[Invoke-History](Invoke-History.md)
 
-[about_History](.\About\about_History.md)
+[about_History](About/about_History.md)
 

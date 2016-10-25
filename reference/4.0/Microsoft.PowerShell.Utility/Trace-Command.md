@@ -301,7 +301,7 @@ If you include the parameter names, the parameters can appear in any order.
 
 ## RELATED LINKS
 
-[Get-TraceSource](.\Get-TraceSource.md)
+[Get-TraceSource](Get-TraceSource.md)
 
-[Set-TraceSource](.\Set-TraceSource.md)
+[Set-TraceSource](Set-TraceSource.md)
 

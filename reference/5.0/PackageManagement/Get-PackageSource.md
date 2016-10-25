@@ -198,11 +198,11 @@ Specifies one or more package sources.
 
 ## RELATED LINKS
 
-[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Register-PackageSource](.\Register-PackageSource.md)
+[Register-PackageSource](Register-PackageSource.md)
 
-[Set-PackageSource](.\Set-PackageSource.md)
+[Set-PackageSource](Set-PackageSource.md)
 
-[Unregister-PackageSource](.\Unregister-PackageSource.md)
+[Unregister-PackageSource](Unregister-PackageSource.md)
 

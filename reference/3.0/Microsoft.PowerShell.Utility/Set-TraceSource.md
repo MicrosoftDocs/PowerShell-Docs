@@ -279,9 +279,9 @@ The trace sources for each module are loaded automatically when the component is
 *
 ## RELATED LINKS
 
-[Get-TraceSource](.\Get-TraceSource.md)
+[Get-TraceSource](Get-TraceSource.md)
 
-[Set-PSDebug](..\Microsoft.PowerShell.Core\Set-PSDebug.md)
+[Set-PSDebug](../Microsoft.PowerShell.Core/Set-PSDebug.md)
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

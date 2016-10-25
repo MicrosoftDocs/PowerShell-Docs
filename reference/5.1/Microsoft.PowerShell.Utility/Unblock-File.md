@@ -177,5 +177,5 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 

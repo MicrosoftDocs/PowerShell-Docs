@@ -112,17 +112,17 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](.\Functions\Clear-Host.md)
+[Clear-Host](Functions/Clear-Host.md)
 
-[Out-Default](.\Out-Default.md)
+[Out-Default](Out-Default.md)
 
-[Out-File](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-File](../Microsoft.PowerShell.Utility/Out-File.md)
 
-[Out-Null](.\Out-Null.md)
+[Out-Null](Out-Null.md)
 
-[Out-Printer](..\Microsoft.PowerShell.Utility\Out-Printer.md)
+[Out-Printer](../Microsoft.PowerShell.Utility/Out-Printer.md)
 
-[Out-String](..\Microsoft.PowerShell.Utility\Out-String.md)
+[Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 
-[Write-Host](..\Microsoft.PowerShell.Utility\Write-Host.md)
+[Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)
 

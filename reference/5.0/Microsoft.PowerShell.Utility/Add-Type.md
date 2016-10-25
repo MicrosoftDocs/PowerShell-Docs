@@ -610,13 +610,13 @@ Otherwise, this cmdlet does not generate any output.
 
 [OutputAssemblyType Enumeration](https://msdn.microsoft.com/en-us/library/microsoft.powershell.commands.outputassemblytype(v=vs.85).aspx)
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 
-[about_Quoting_Rules](..\Microsoft.PowerShell.Core\About\about_Quoting_Rules.md)
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
-[about_Profiles](..\Microsoft.PowerShell.Core\About\about_Profiles.md)
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)
 

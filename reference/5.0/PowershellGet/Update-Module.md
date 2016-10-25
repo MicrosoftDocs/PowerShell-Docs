@@ -195,11 +195,11 @@ You can only run **Update-Module** on modules that you installed from the online
 
 ## RELATED LINKS
 
-[Find-Module](.\Find-Module.md)
+[Find-Module](Find-Module.md)
 
-[Install-Module](.\Install-Module.md)
+[Install-Module](Install-Module.md)
 
-[Publish-Module](.\Publish-Module.md)
+[Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](.\Uninstall-Module.md)
+[Uninstall-Module](Uninstall-Module.md)
 

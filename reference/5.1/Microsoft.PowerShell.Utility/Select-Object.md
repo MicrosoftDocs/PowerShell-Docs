@@ -386,7 +386,7 @@ You can pipe any object to **Select-Object**.
 
 ## RELATED LINKS
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 

@@ -176,5 +176,5 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 
 ## RELATED LINKS
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 

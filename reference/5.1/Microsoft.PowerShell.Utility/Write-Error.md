@@ -337,15 +337,15 @@ It does not return any objects.
 
 ## RELATED LINKS
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 

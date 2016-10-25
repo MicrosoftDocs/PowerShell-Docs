@@ -174,11 +174,11 @@ The object type depends on the variable.
 
 ## RELATED LINKS
 
-[Clear-Variable](.\Clear-Variable.md)
+[Clear-Variable](Clear-Variable.md)
 
-[New-Variable](.\New-Variable.md)
+[New-Variable](New-Variable.md)
 
-[Remove-Variable](.\Remove-Variable.md)
+[Remove-Variable](Remove-Variable.md)
 
-[Set-Variable](.\Set-Variable.md)
+[Set-Variable](Set-Variable.md)
 

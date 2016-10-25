@@ -202,9 +202,9 @@ It contains a comma-separated list of the names of all the properties of the fir
 
 ## RELATED LINKS
 
-[ConvertFrom-Csv](.\ConvertFrom-Csv.md)
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](.\Export-Csv.md)
+[Export-Csv](Export-Csv.md)
 
-[Import-Csv](.\Import-Csv.md)
+[Import-Csv](Import-Csv.md)
 

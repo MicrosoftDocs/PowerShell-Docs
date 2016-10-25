@@ -252,15 +252,15 @@ This cmdlet returns an object that encapsulates the resource name, module name, 
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
-[Get-DscResource](.\Get-DscResource.md)
+[Get-DscResource](Get-DscResource.md)
 
-[Get-DscConfigurationStatus](.\Get-DscConfigurationStatus.md)
+[Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
 
-[Invoke-DscResource](.\Invoke-DscResource.md)
+[Invoke-DscResource](Invoke-DscResource.md)
 
-[Restore-DscConfiguration](.\Restore-DscConfiguration.md)
+[Restore-DscConfiguration](Restore-DscConfiguration.md)
 
-[Start-DscConfiguration](.\Start-DscConfiguration.md)
+[Start-DscConfiguration](Start-DscConfiguration.md)
 
-[Test-DscConfiguration](.\Test-DscConfiguration.md)
+[Test-DscConfiguration](Test-DscConfiguration.md)
 

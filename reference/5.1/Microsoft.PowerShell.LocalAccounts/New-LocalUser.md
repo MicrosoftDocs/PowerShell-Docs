@@ -307,15 +307,15 @@ This object provides information about the user account.
 
 ## RELATED LINKS
 
-[Disable-LocalUser](.\Disable-LocalUser.md)
+[Disable-LocalUser](Disable-LocalUser.md)
 
-[Enable-LocalUser](.\Enable-LocalUser.md)
+[Enable-LocalUser](Enable-LocalUser.md)
 
-[Get-LocalUser](.\Get-LocalUser.md)
+[Get-LocalUser](Get-LocalUser.md)
 
-[Remove-LocalUser](.\Remove-LocalUser.md)
+[Remove-LocalUser](Remove-LocalUser.md)
 
-[Rename-LocalUser](.\Rename-LocalUser.md)
+[Rename-LocalUser](Rename-LocalUser.md)
 
-[Set-LocalUser](.\Set-LocalUser.md)
+[Set-LocalUser](Set-LocalUser.md)
 

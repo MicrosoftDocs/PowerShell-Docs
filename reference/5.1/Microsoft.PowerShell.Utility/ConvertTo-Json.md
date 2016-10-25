@@ -204,11 +204,11 @@ You can pipe any object to **ConvertTo-Json**.
 
 ## RELATED LINKS
 
-[ConvertFrom-Json](.\ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
-[Get-UICulture](.\Get-UICulture.md)
+[Get-UICulture](Get-UICulture.md)
 
-[Invoke-WebRequest](.\Invoke-WebRequest.md)
+[Invoke-WebRequest](Invoke-WebRequest.md)
 
-[Invoke-RestMethod](.\Invoke-RestMethod.md)
+[Invoke-RestMethod](Invoke-RestMethod.md)
 

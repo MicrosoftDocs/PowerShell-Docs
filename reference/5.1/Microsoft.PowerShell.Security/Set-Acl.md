@@ -368,5 +368,5 @@ The type of the security object depends on the type of the item.
 
 ## RELATED LINKS
 
-[Get-Acl](.\Get-Acl.md)
+[Get-Acl](Get-Acl.md)
 

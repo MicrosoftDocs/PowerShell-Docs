@@ -608,7 +608,7 @@ For more information about this class, see the Microsoft .NET Framework SDK.
 
 ## RELATED LINKS
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 

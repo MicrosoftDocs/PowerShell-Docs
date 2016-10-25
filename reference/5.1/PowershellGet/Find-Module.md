@@ -386,13 +386,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Install-Module](.\Install-Module.md)
+[Install-Module](Install-Module.md)
 
-[Publish-Module](.\Publish-Module.md)
+[Publish-Module](Publish-Module.md)
 
-[Save-Module](.\Save-Module.md)
+[Save-Module](Save-Module.md)
 
-[Uninstall-Module](.\Uninstall-Module.md)
+[Uninstall-Module](Uninstall-Module.md)
 
-[Update-Module](.\Update-Module.md)
+[Update-Module](Update-Module.md)
 

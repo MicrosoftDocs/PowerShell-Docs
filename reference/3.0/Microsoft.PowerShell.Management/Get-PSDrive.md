@@ -302,15 +302,15 @@ You cannot pipe objects to **Get-PSDrive**.
 * Mapped network drives that are created by using the **Persist** parameter of the New-PSDrive cmdlet are specific to a user account. Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credentials of another user are not visible in sessions that are started without explicit credentials or with  the credentials of the current user.
 ## RELATED LINKS
 
-[Get-Command](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Command](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[Get-Help](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Help](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[Get-Member](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Member](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[New-PSDrive](.\New-PSDrive.md)
+[New-PSDrive](New-PSDrive.md)
 
-[Remove-PSDrive](.\Remove-PSDrive.md)
+[Remove-PSDrive](Remove-PSDrive.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

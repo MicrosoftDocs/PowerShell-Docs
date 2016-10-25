@@ -198,7 +198,7 @@ New-TimeSpan returns an object that represents the time span.
 
 ## RELATED LINKS
 
-[Get-Date](.\Get-Date.md)
+[Get-Date](Get-Date.md)
 
-[Set-Date](.\Set-Date.md)
+[Set-Date](Set-Date.md)
 

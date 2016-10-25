@@ -25,7 +25,7 @@ manager: stevenka
 ## DETAILED DESCRIPTION  
  The Windows PowerShell Function provider lets you get, add, change, clear, and delete the functions and filters in Windows PowerShell.  
   
- A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where-Object](..\Where-Object.md) command.  
+ A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where-Object](../Where-Object.md) command.  
   
  In the Function: drive, functions are preceded by the label "Function" and filters are preceded by the label "Filter", but they operate properly when used in the correct context regardless of the label.  
   
@@ -37,9 +37,9 @@ manager: stevenka
   
  The Function provider exposes its data store in the Function: drive. To work with functions, you can change your location to the Function: drive ("set-location function:"). Or, you can work from another Windows PowerShell drive. To reference a function from another location, use the drive name (Function:) in the path.  
   
- The Function provider supports all of the cmdlets whose names contain the Item noun (the Item cmdlets), except for [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md). And, it supports the [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) and [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun (the ItemProperty cmdlets), and it does not support the Filter parameter in any cmdlet.  
+ The Function provider supports all of the cmdlets whose names contain the Item noun (the Item cmdlets), except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun (the ItemProperty cmdlets), and it does not support the Filter parameter in any cmdlet.  
   
- All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](..\Export-Console.md) to save the current console.  
+ All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current console.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -207,16 +207,16 @@ copy-item -path function:prompt -destination function:oldPrompt
 |None|No options. "None" is the default.|  
 |Constant|The function cannot be deleted, and its properties cannot be changed. Constant is available only when you are creating a function. You cannot change the option of an existing function to Constant.|  
 |Private|The function is visible only in the current scope (not in child scopes).|  
-|ReadOnly|The properties of the function cannot be changed except by using the Force parameter. You can use [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md) to delete the function.|  
+|ReadOnly|The properties of the function cannot be changed except by using the Force parameter. You can use [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) to delete the function.|  
 |AllScope|The function is copied to any new scopes that are created.|  
   
 #### Cmdlets supported:  
   
--   [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)  
+-   [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)  
   
--   [Set-Item](..\..\Microsoft.PowerShell.Management\Set-Item.md)  
+-   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
   
 ## See Also  
- [about_Functions](..\About\about_Functions.md)   
- [about_Providers](..\About\about_Providers.md)
+ [about_Functions](../About/about_Functions.md)   
+ [about_Providers](../About/about_Providers.md)
 

@@ -118,11 +118,11 @@ This cmdlet returns a string.
 
 ## RELATED LINKS
 
-[ConvertFrom-String](.\ConvertFrom-String.md)
+[ConvertFrom-String](ConvertFrom-String.md)
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 

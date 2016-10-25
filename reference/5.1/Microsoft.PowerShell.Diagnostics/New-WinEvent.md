@@ -119,5 +119,5 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-WinEvent](.\Get-WinEvent.md)
+[Get-WinEvent](Get-WinEvent.md)
 

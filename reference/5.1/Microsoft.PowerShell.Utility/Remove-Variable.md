@@ -187,11 +187,11 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Clear-Variable](.\Clear-Variable.md)
+[Clear-Variable](Clear-Variable.md)
 
-[Get-Variable](.\Get-Variable.md)
+[Get-Variable](Get-Variable.md)
 
-[New-Variable](.\New-Variable.md)
+[New-Variable](New-Variable.md)
 
-[Set-Variable](.\Set-Variable.md)
+[Set-Variable](Set-Variable.md)
 

@@ -357,7 +357,7 @@ If you use the Summary parameter, Import-Command returns a Microsoft.PowerShell.
 
 ## RELATED LINKS
 
-[Export-Counter](.\Export-Counter.md)
+[Export-Counter](Export-Counter.md)
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 

@@ -644,13 +644,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Get-Package](.\Get-Package.md)
+[Get-Package](Get-Package.md)
 
-[Install-Package](.\Install-Package.md)
+[Install-Package](Install-Package.md)
 
-[Save-Package](.\Save-Package.md)
+[Save-Package](Save-Package.md)
 
-[Uninstall-Package](.\Uninstall-Package.md)
+[Uninstall-Package](Uninstall-Package.md)
 

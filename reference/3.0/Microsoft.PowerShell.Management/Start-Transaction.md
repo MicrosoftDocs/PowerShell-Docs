@@ -380,13 +380,13 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Complete-Transaction](.\Complete-Transaction.md)
+[Complete-Transaction](Complete-Transaction.md)
 
-[Get-Transaction](.\Get-Transaction.md)
+[Get-Transaction](Get-Transaction.md)
 
-[Undo-Transaction](.\Undo-Transaction.md)
+[Undo-Transaction](Undo-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 

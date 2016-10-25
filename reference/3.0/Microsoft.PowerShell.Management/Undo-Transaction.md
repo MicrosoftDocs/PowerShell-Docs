@@ -157,15 +157,15 @@ To use a transaction again, you must start a new transaction.
 *
 ## RELATED LINKS
 
-[Complete-Transaction](.\Complete-Transaction.md)
+[Complete-Transaction](Complete-Transaction.md)
 
-[Get-Transaction](.\Get-Transaction.md)
+[Get-Transaction](Get-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 

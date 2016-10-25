@@ -448,17 +448,17 @@ Otherwise, this cmdlet does not generate any output.
 * In Windows PowerShell 2.0, the **Server** parameter of **Add-Computer** fails even when the server is present. In Windows PowerShell 3.0, the implementation of the **Server** parameter is changed so that it works reliably.
 ## RELATED LINKS
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Remove-Computer](.\Remove-Computer.md)
+[Remove-Computer](Remove-Computer.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Rename-Computer](.\Rename-Computer.md)
+[Rename-Computer](Rename-Computer.md)
 
-[Restore-Computer](.\Restore-Computer.md)
+[Restore-Computer](Restore-Computer.md)
 
-[Stop-Computer](.\Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 
-[Test-Connection](.\Test-Connection.md)
+[Test-Connection](Test-Connection.md)
 

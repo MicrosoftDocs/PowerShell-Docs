@@ -114,23 +114,23 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](..\Microsoft.WsMan.Management\Providers\WSMan-Provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
 
-[about_Session_Configurations](.\About\about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
-[about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
 

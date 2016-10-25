@@ -224,7 +224,7 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 
 ## RELATED LINKS
 
-[Get-IseSnippet](.\Get-IseSnippet.md)
+[Get-IseSnippet](Get-IseSnippet.md)
 
-[Import-IseSnippet](.\Import-IseSnippet.md)
+[Import-IseSnippet](Import-IseSnippet.md)
 

@@ -138,9 +138,9 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 
 [An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/library/bb299886.aspx)
 
-[ConvertTo-Json](.\ConvertTo-Json.md)
+[ConvertTo-Json](ConvertTo-Json.md)
 
-[Invoke-WebRequest](.\Invoke-WebRequest.md)
+[Invoke-WebRequest](Invoke-WebRequest.md)
 
-[Invoke-RestMethod](.\Invoke-RestMethod.md)
+[Invoke-RestMethod](Invoke-RestMethod.md)
 

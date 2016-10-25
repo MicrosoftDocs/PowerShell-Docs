@@ -393,9 +393,9 @@ Otherwise, this cmdlet returns a Win32_PingStatus object for each ping.
 
 ## RELATED LINKS
 
-[Add-Computer](.\Add-Computer.md)
+[Add-Computer](Add-Computer.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Stop-Computer](.\Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 

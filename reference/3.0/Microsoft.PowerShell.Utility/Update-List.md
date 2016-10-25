@@ -197,5 +197,5 @@ Update-List returns the updated object, or it returns an object that represents 
 
 ## RELATED LINKS
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 

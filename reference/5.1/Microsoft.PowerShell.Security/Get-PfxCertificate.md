@@ -115,7 +115,7 @@ You can pipe a string that contains a file path to **Get-PfxCertificate**.
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 

@@ -648,21 +648,21 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionOption](.\New-PSSessionOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
-[New-PSTransportOption](.\New-PSTransportOption.md)
+[New-PSTransportOption](New-PSTransportOption.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 

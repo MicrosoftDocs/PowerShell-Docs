@@ -218,7 +218,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-TypeData](.\Get-TypeData.md)
+[Get-TypeData](Get-TypeData.md)
 
-[Update-TypeData](.\Update-TypeData.md)
+[Update-TypeData](Update-TypeData.md)
 

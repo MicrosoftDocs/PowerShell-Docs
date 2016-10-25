@@ -448,5 +448,5 @@ If the command does not import formatting data, any formatting files that are cr
 
 ## RELATED LINKS
 
-[Import-PSSession](.\Import-PSSession.md)
+[Import-PSSession](Import-PSSession.md)
 

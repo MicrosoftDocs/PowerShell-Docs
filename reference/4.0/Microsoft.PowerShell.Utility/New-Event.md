@@ -153,17 +153,17 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Get-Event](.\Get-Event.md)
+[Get-Event](Get-Event.md)
 
-[Register-EngineEvent](.\Register-EngineEvent.md)
+[Register-EngineEvent](Register-EngineEvent.md)
 
-[Register-ObjectEvent](.\Register-ObjectEvent.md)
+[Register-ObjectEvent](Register-ObjectEvent.md)
 
-[Register-WmiEvent](..\Microsoft.PowerShell.Management\Register-WmiEvent.md)
+[Register-WmiEvent](../Microsoft.PowerShell.Management/Register-WmiEvent.md)
 
-[Remove-Event](.\Remove-Event.md)
+[Remove-Event](Remove-Event.md)
 
-[Unregister-Event](.\Unregister-Event.md)
+[Unregister-Event](Unregister-Event.md)
 
-[Wait-Event](.\Wait-Event.md)
+[Wait-Event](Wait-Event.md)
 

@@ -479,15 +479,15 @@ Represents functions and filters
 * When a module is imported automatically, the effect is the same as using the Import-Module cmdlet. The module can add commands, types and formatting files, and run scripts in the session. To enable, disable, and configuration automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable. For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 ## RELATED LINKS
 
-[Export-PSSession](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
+[Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-[Get-Help](.\Get-Help.md)
+[Get-Help](Get-Help.md)
 
-[Get-Member](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
+[Get-Member](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-[Get-PSDrive](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
+[Get-PSDrive](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-[Import-PSSession](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
+[Import-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-[about_Command_Precedence](.\About\about_Command_Precedence.md)
+[about_Command_Precedence](About/about_Command_Precedence.md)
 

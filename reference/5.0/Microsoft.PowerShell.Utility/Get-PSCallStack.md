@@ -100,19 +100,19 @@ You cannot pipe objects to this cmdlet.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Enable-PSBreakpoint](.\Enable-PSBreakpoint.md)
+[Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Get-PSBreakpoint](.\Get-PSBreakpoint.md)
+[Get-PSBreakpoint](Get-PSBreakpoint.md)
 
-[Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
+[Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[Set-PSBreakpoint](.\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 
-[about_Debuggers](..\Microsoft.PowerShell.Core\About\about_Debuggers.md)
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 

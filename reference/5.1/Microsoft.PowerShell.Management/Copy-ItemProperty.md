@@ -286,17 +286,17 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Clear-ItemProperty](.\Clear-ItemProperty.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
 
-[Get-ItemProperty](.\Get-ItemProperty.md)
+[Get-ItemProperty](Get-ItemProperty.md)
 
-[Move-ItemProperty](.\Move-ItemProperty.md)
+[Move-ItemProperty](Move-ItemProperty.md)
 
-[New-ItemProperty](.\New-ItemProperty.md)
+[New-ItemProperty](New-ItemProperty.md)
 
-[Rename-ItemProperty](.\Rename-ItemProperty.md)
+[Rename-ItemProperty](Rename-ItemProperty.md)
 
-[Set-ItemProperty](.\Set-ItemProperty.md)
+[Set-ItemProperty](Set-ItemProperty.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 

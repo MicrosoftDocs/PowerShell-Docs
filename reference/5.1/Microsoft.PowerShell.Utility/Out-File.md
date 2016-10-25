@@ -322,11 +322,11 @@ If you pipe the output of **Out-File** to Get-Member, **Get-Member** reports tha
 
 ## RELATED LINKS
 
-[Out-GridView](.\Out-GridView.md)
+[Out-GridView](Out-GridView.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 

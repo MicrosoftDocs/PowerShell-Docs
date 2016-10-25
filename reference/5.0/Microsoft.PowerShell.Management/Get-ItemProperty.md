@@ -290,17 +290,17 @@ For example, in a file system drive, it might return a file or folder.
 
 ## RELATED LINKS
 
-[Clear-ItemProperty](.\Clear-ItemProperty.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
 
-[Copy-ItemProperty](.\Copy-ItemProperty.md)
+[Copy-ItemProperty](Copy-ItemProperty.md)
 
-[Move-ItemProperty](.\Move-ItemProperty.md)
+[Move-ItemProperty](Move-ItemProperty.md)
 
-[New-ItemProperty](.\New-ItemProperty.md)
+[New-ItemProperty](New-ItemProperty.md)
 
-[Remove-ItemProperty](.\Remove-ItemProperty.md)
+[Remove-ItemProperty](Remove-ItemProperty.md)
 
-[Rename-ItemProperty](.\Rename-ItemProperty.md)
+[Rename-ItemProperty](Rename-ItemProperty.md)
 
-[Set-ItemProperty](.\Set-ItemProperty.md)
+[Set-ItemProperty](Set-ItemProperty.md)
 

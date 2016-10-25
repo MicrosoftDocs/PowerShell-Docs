@@ -145,13 +145,13 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Disable-ComputerRestore](.\Disable-ComputerRestore.md)
+[Disable-ComputerRestore](Disable-ComputerRestore.md)
 
-[Enable-ComputerRestore](.\Enable-ComputerRestore.md)
+[Enable-ComputerRestore](Enable-ComputerRestore.md)
 
-[Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
+[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 

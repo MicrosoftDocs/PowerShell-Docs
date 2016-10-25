@@ -440,17 +440,17 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 ## RELATED LINKS
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 
-[Get-Command](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Command](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[Get-Help](..\Microsoft.PowerShell.Core\Get-Help.md)
+[Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
 
-[Get-PSDrive](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-PSDrive](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[about_Automatic_Variables](..\Microsoft.PowerShell.Core\About\about_Automatic_Variables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[about_Properties](..\Microsoft.PowerShell.Core\About\about_Properties.md)
+[about_Properties](../Microsoft.PowerShell.Core/About/about_Properties.md)
 
 [about_Methods]()
 

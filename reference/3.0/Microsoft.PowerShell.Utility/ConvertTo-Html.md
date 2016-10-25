@@ -358,7 +358,7 @@ For example, if you use InputObject to submit the processes on a computer to Con
 *
 ## RELATED LINKS
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[ConvertTo-Xml](.\ConvertTo-Xml.md)
+[ConvertTo-Xml](ConvertTo-Xml.md)
 

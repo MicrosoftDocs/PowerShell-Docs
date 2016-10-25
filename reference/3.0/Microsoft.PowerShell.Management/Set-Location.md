@@ -205,11 +205,11 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 *
 ## RELATED LINKS
 
-[Get-Location](.\Get-Location.md)
+[Get-Location](Get-Location.md)
 
-[Pop-Location](.\Pop-Location.md)
+[Pop-Location](Pop-Location.md)
 
-[Push-Location](.\Push-Location.md)
+[Push-Location](Push-Location.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

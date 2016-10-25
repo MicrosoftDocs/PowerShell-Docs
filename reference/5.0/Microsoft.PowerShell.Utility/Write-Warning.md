@@ -128,23 +128,23 @@ It does not generate any other output.
 
 ## RELATED LINKS
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-EventLog](..\Microsoft.PowerShell.Management\Write-EventLog.md)
+[Write-EventLog](../Microsoft.PowerShell.Management/Write-EventLog.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Information](.\Write-Information.md)
+[Write-Information](Write-Information.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md)
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
-[about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

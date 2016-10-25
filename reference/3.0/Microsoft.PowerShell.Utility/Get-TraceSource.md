@@ -75,7 +75,7 @@ Get-TraceSource returns objects that represent the trace sources.
 
 ## RELATED LINKS
 
-[Set-TraceSource](.\Set-TraceSource.md)
+[Set-TraceSource](Set-TraceSource.md)
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

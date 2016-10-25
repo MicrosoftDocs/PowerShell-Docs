@@ -144,7 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
-[Find-DscResource](..\PowershellGet\Find-DscResource.md)
+[Find-DscResource](../PowershellGet/Find-DscResource.md)
 
-[Invoke-DscResource](.\Invoke-DscResource.md)
+[Invoke-DscResource](Invoke-DscResource.md)
 

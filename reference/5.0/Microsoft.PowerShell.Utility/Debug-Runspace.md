@@ -204,15 +204,15 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
 ## RELATED LINKS
 
-[about_Debuggers](..\Microsoft.PowerShell.Core\About\about_Debuggers.md)
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 
-[Debug-Job](..\Microsoft.PowerShell.Core\Debug-Job.md)
+[Debug-Job](../Microsoft.PowerShell.Core/Debug-Job.md)
 
-[Get-Runspace](.\Get-Runspace.md)
+[Get-Runspace](Get-Runspace.md)
 
-[Get-Process](..\Microsoft.PowerShell.Management\Get-Process.md)
+[Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
 
-[Enter-PSHostProcess](..\Microsoft.PowerShell.Core\Enter-PSHostProcess.md)
+[Enter-PSHostProcess](../Microsoft.PowerShell.Core/Enter-PSHostProcess.md)
 
-[Enter-PSSession](..\Microsoft.PowerShell.Core\Enter-PSSession.md)
+[Enter-PSSession](../Microsoft.PowerShell.Core/Enter-PSSession.md)
 

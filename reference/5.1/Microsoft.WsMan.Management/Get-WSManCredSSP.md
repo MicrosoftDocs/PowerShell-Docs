@@ -82,27 +82,27 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Connect-WSMan](.\Connect-WSMan.md)
+[Connect-WSMan](Connect-WSMan.md)
 
-[Disable-WSManCredSSP](.\Disable-WSManCredSSP.md)
+[Disable-WSManCredSSP](Disable-WSManCredSSP.md)
 
-[Disconnect-WSMan](.\Disconnect-WSMan.md)
+[Disconnect-WSMan](Disconnect-WSMan.md)
 
-[Enable-WSManCredSSP](.\Enable-WSManCredSSP.md)
+[Enable-WSManCredSSP](Enable-WSManCredSSP.md)
 
-[Get-WSManInstance](.\Get-WSManInstance.md)
+[Get-WSManInstance](Get-WSManInstance.md)
 
-[Invoke-WSManAction](.\Invoke-WSManAction.md)
+[Invoke-WSManAction](Invoke-WSManAction.md)
 
-[New-WSManInstance](.\New-WSManInstance.md)
+[New-WSManInstance](New-WSManInstance.md)
 
-[New-WSManSessionOption](.\New-WSManSessionOption.md)
+[New-WSManSessionOption](New-WSManSessionOption.md)
 
-[Remove-WSManInstance](.\Remove-WSManInstance.md)
+[Remove-WSManInstance](Remove-WSManInstance.md)
 
-[Set-WSManInstance](.\Set-WSManInstance.md)
+[Set-WSManInstance](Set-WSManInstance.md)
 
-[Set-WSManQuickConfig](.\Set-WSManQuickConfig.md)
+[Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
-[Test-WSMan](.\Test-WSMan.md)
+[Test-WSMan](Test-WSMan.md)
 

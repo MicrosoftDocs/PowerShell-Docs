@@ -378,9 +378,9 @@ You cannot pipe input to this cmdlet.
 * Mapped network drives are specific to a user account. Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credential of another user are not visible in session that started without explicit credentials or with the credentials of the current user.
 ## RELATED LINKS
 
-[Get-PSDrive](.\Get-PSDrive.md)
+[Get-PSDrive](Get-PSDrive.md)
 
-[Remove-PSDrive](.\Remove-PSDrive.md)
+[Remove-PSDrive](Remove-PSDrive.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

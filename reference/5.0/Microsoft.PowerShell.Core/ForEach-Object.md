@@ -345,17 +345,17 @@ This cmdlet returns objects that are determined by the input.
 
 ## RELATED LINKS
 
-[about_Automatic_Variables](.\About\about_Automatic_Variables.md)
+[about_Automatic_Variables](About/about_Automatic_Variables.md)
 
-[about_ForEach](.\About\about_Foreach.md)
+[about_ForEach](About/about_Foreach.md)
 
-[about_Script_Blocks](.\About\about_Script_Blocks.md)
+[about_Script_Blocks](About/about_Script_Blocks.md)
 
-[Get-ItemProperty](..\Microsoft.PowerShell.Management\Get-ItemProperty.md)
+[Get-ItemProperty](../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 
-[Get-Member](..\Microsoft.PowerShell.Utility\Get-Member.md)
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Select-Object](..\Microsoft.PowerShell.Utility\Select-Object.md)
+[Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Set-ItemProperty](..\Microsoft.PowerShell.Management\Set-ItemProperty.md)
+[Set-ItemProperty](../Microsoft.PowerShell.Management/Set-ItemProperty.md)
 

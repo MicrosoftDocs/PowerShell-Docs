@@ -309,9 +309,9 @@ To make the unnamed stack the current stack, use the *StackName* parameter of th
 
 ## RELATED LINKS
 
-[Pop-Location](.\Pop-Location.md)
+[Pop-Location](Pop-Location.md)
 
-[Push-Location](.\Push-Location.md)
+[Push-Location](Push-Location.md)
 
-[Set-Location](.\Set-Location.md)
+[Set-Location](Set-Location.md)
 

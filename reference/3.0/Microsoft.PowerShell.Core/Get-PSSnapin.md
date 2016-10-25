@@ -112,7 +112,7 @@ Get-PSSnapin returns an object for each snap-in that it gets.
   For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
 ## RELATED LINKS
 
-[Add-PSSnapin](.\Add-PSSnapin.md)
+[Add-PSSnapin](Add-PSSnapin.md)
 
-[Remove-PSSnapin](.\Remove-PSSnapin.md)
+[Remove-PSSnapin](Remove-PSSnapin.md)
 

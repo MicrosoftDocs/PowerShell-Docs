@@ -608,23 +608,23 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
   For more information about the values of the **Availability** property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspxhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx.
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Disconnect-PSSession](.\Disconnect-PSSession.md)
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-[Receive-PSSession](.\Receive-PSSession.md)
+[Receive-PSSession](Receive-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 
-[about_PSSessions](.\About\about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 

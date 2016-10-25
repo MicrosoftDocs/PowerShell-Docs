@@ -151,23 +151,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md)
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
-[about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
-[about_Redirection](..\Microsoft.PowerShell.Core\About\about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Information](.\Write-Information.md)
+[Write-Information](Write-Information.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 

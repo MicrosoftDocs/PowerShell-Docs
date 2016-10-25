@@ -155,9 +155,9 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Location](.\Get-Location.md)
+[Get-Location](Get-Location.md)
 
-[Push-Location](.\Push-Location.md)
+[Push-Location](Push-Location.md)
 
-[Set-Location](.\Set-Location.md)
+[Set-Location](Set-Location.md)
 

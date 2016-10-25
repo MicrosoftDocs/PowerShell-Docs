@@ -552,23 +552,23 @@ You can pipe a computer name (string), ConnectionURI (URI), or session (PSSessio
 *
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Disconnect-PSSession](.\Disconnect-PSSession.md)
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Receive-PSSession](.\Receive-PSSession.md)
+[Receive-PSSession](Receive-PSSession.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 
-[about_PSSessions](.\About\about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 

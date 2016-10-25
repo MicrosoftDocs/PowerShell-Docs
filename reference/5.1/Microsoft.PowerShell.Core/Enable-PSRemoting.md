@@ -201,15 +201,15 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Disable-PSRemoting](.\Disable-PSRemoting.md)
+[Disable-PSRemoting](Disable-PSRemoting.md)
 

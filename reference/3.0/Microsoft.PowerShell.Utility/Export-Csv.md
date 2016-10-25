@@ -363,13 +363,13 @@ It contains a comma-separated list of the names of all the properties of the fir
 * The ConvertTo-Csv and ConvertFrom-Csv cmdlets to convert objects to CSV strings (and back). Export-CSV is the same as ConvertTo-CSV, except that it saves the CSV strings in a file.
 ## RELATED LINKS
 
-[ConvertFrom-Csv](.\ConvertFrom-Csv.md)
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Import-Csv](.\Import-Csv.md)
+[Import-Csv](Import-Csv.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 

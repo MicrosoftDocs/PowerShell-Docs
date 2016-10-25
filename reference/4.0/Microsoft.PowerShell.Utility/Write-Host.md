@@ -165,19 +165,19 @@ However, the host might display the objects that Write-Host sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 

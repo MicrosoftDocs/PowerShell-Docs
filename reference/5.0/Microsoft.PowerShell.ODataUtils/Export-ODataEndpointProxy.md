@@ -319,5 +319,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [What is the OData Protocol?](http://www.odata.org/)
 
-[Invoke-RestMethod](..\Microsoft.PowerShell.Utility\Invoke-RestMethod.md)
+[Invoke-RestMethod](../Microsoft.PowerShell.Utility/Invoke-RestMethod.md)
 

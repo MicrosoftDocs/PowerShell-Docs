@@ -20,6 +20,6 @@ Locale: en-US
 This section contains the help topics for the Microsoft.PowerShell.ODataUtils module. The Microsoft.PowerShell.ODataUtils module is installed with Windows PowerShell 5.1.
 
 ## Microsoft.PowerShell.ODataUtils Cmdlets
-### [Export-ODataEndpointProxy](.\Export-ODataEndpointProxy.md)
+### [Export-ODataEndpointProxy](Export-ODataEndpointProxy.md)
 Generates a module that contains cmdlets to manage an OData endpoint.
 

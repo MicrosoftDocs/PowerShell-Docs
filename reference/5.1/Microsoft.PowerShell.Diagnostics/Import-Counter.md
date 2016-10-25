@@ -350,7 +350,7 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 
 ## RELATED LINKS
 
-[Export-Counter](.\Export-Counter.md)
+[Export-Counter](Export-Counter.md)
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 

@@ -175,5 +175,5 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Show-ControlPanelItem](.\Show-ControlPanelItem.md)
+[Show-ControlPanelItem](Show-ControlPanelItem.md)
 

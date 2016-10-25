@@ -589,9 +589,9 @@ You can pipe the body of a web request to Invoke-WebRequest
 * In Windows PowerShell 3.0, running the **Invoke-WebRequest** cmdlet in Windows PowerShell ISE can use too much system memory. This is a bug that has been fixed in Windows PowerShell 4.0. We recommend that you do not run **Invoke-WebRequest** in Windows PowerShell ISE 3.0; run the cmdlet in the Windows PowerShell 3.0 console instead.
 ## RELATED LINKS
 
-[Invoke-RestMethod](.\Invoke-RestMethod.md)
+[Invoke-RestMethod](Invoke-RestMethod.md)
 
-[ConvertFrom-Json](.\ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
-[ConvertTo-Json](.\ConvertTo-Json.md)
+[ConvertTo-Json](ConvertTo-Json.md)
 

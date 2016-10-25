@@ -203,11 +203,11 @@ Otherwise, it returns a **PathInfo** object.
 
 ## RELATED LINKS
 
-[Convert-Path](.\Convert-Path.md)
+[Convert-Path](Convert-Path.md)
 
-[Join-Path](.\Join-Path.md)
+[Join-Path](Join-Path.md)
 
-[Split-Path](.\Split-Path.md)
+[Split-Path](Split-Path.md)
 
-[Test-Path](.\Test-Path.md)
+[Test-Path](Test-Path.md)
 

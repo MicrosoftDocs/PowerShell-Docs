@@ -186,5 +186,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-Clipboard](.\Get-Clipboard.md)
+[Get-Clipboard](Get-Clipboard.md)
 

@@ -247,15 +247,15 @@ For more information, see the ProgressRecord topic in the Windows PowerShell Sof
 *
 ## RELATED LINKS
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 

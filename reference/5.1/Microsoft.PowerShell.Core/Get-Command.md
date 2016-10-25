@@ -560,5 +560,5 @@ Represents workflows.
 
 ## RELATED LINKS
 
-[Get-Help](.\Get-Help.md)
+[Get-Help](Get-Help.md)
 

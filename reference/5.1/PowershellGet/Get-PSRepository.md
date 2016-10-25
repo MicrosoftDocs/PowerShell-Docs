@@ -92,9 +92,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Register-PSRepository](.\Register-PSRepository.md)
+[Register-PSRepository](Register-PSRepository.md)
 
-[Set-PSRepository](.\Set-PSRepository.md)
+[Set-PSRepository](Set-PSRepository.md)
 
-[Unregister-PSRepository](.\Unregister-PSRepository.md)
+[Unregister-PSRepository](Unregister-PSRepository.md)
 

@@ -121,19 +121,19 @@ You can pipe objects to **Write-Output**.
 
 ## RELATED LINKS
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Information](.\Write-Information.md)
+[Write-Information](Write-Information.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Verbose](.\Write-Verbose.md)
+[Write-Verbose](Write-Verbose.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 

@@ -174,5 +174,5 @@ You can pipe a name or name pattern to the Get-ControlPanelItem cmdlet.
 
 ## RELATED LINKS
 
-[Show-ControlPanelItem](.\Show-ControlPanelItem.md)
+[Show-ControlPanelItem](Show-ControlPanelItem.md)
 

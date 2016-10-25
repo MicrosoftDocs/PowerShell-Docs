@@ -162,15 +162,15 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Enable-LocalUser](.\Enable-LocalUser.md)
+[Enable-LocalUser](Enable-LocalUser.md)
 
-[Get-LocalUser](.\Get-LocalUser.md)
+[Get-LocalUser](Get-LocalUser.md)
 
-[New-LocalUser](.\New-LocalUser.md)
+[New-LocalUser](New-LocalUser.md)
 
-[Remove-LocalUser](.\Remove-LocalUser.md)
+[Remove-LocalUser](Remove-LocalUser.md)
 
-[Rename-LocalUser](.\Rename-LocalUser.md)
+[Rename-LocalUser](Rename-LocalUser.md)
 
-[Set-LocalUser](.\Set-LocalUser.md)
+[Set-LocalUser](Set-LocalUser.md)
 

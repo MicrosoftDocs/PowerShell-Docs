@@ -349,19 +349,19 @@ However, if **Suspend-Job** gets a job of an unsupported type, it throws a termi
 * Some job types have options or properties that prevent Windows PowerShell from suspending the job. If attempts to suspend the job fail, verify that the job options and properties allow suspending.
 ## RELATED LINKS
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Receive-Job](.\Receive-Job.md)
+[Receive-Job](Receive-Job.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Stop-Job](.\Stop-Job.md)
+[Stop-Job](Stop-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
-[Wait-Job](.\Wait-Job.md)
+[Wait-Job](Wait-Job.md)
 

@@ -202,13 +202,13 @@ This cmdlet returns an object that represents the current transaction.
 
 ## RELATED LINKS
 
-[Complete-Transaction](.\Complete-Transaction.md)
+[Complete-Transaction](Complete-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Undo-Transaction](.\Undo-Transaction.md)
+[Undo-Transaction](Undo-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[New-Item](.\New-Item.md)
+[New-Item](New-Item.md)
 

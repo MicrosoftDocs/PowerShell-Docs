@@ -975,15 +975,15 @@ Typically, it refers to the global session state, but when a module imports nest
 
 ## RELATED LINKS
 
-[Export-ModuleMember](.\Export-ModuleMember.md)
+[Export-ModuleMember](Export-ModuleMember.md)
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[Import-Module](.\Import-Module.md)
+[Import-Module](Import-Module.md)
 
-[New-Module](.\New-Module.md)
+[New-Module](New-Module.md)
 
-[Remove-Module](.\Remove-Module.md)
+[Remove-Module](Remove-Module.md)
 
-[Test-ModuleManifest](.\Test-ModuleManifest.md)
+[Test-ModuleManifest](Test-ModuleManifest.md)
 

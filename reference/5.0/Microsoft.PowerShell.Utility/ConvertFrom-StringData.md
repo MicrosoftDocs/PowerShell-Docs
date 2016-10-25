@@ -262,9 +262,9 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 
 ## RELATED LINKS
 
-[about_Data_Sections](..\Microsoft.PowerShell.Core\About\about_Data_Sections.md)
+[about_Data_Sections](../Microsoft.PowerShell.Core/About/about_Data_Sections.md)
 
-[about_Quoting_Rules](..\Microsoft.PowerShell.Core\About\about_Quoting_Rules.md)
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
-[about_Script_Internationalization](..\Microsoft.PowerShell.Core\About\about_Script_Internationalization.md)
+[about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
 

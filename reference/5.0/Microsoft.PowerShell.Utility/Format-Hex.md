@@ -171,11 +171,11 @@ If you specify the *Path* or *LiteralPath* parameter, the object also contains t
 
 ## RELATED LINKS
 
-[Format-Custom](.\Format-Custom.md)
+[Format-Custom](Format-Custom.md)
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Format-Wide](.\Format-Wide.md)
+[Format-Wide](Format-Wide.md)
 

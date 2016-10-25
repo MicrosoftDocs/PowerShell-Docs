@@ -279,23 +279,23 @@ This cmdlet does not return any objects.
 
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Disconnect-PSSession](.\Disconnect-PSSession.md)
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Receive-PSSession](.\Receive-PSSession.md)
+[Receive-PSSession](Receive-PSSession.md)
 
-[about_PSSessions](.\About\about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 

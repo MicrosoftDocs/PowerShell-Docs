@@ -231,9 +231,9 @@ For more information, see about_Profiles.
 
 ## RELATED LINKS
 
-[Add-PSSnapin](.\Add-PSSnapin.md)
+[Add-PSSnapin](Add-PSSnapin.md)
 
-[Get-PSSnapin](.\Get-PSSnapin.md)
+[Get-PSSnapin](Get-PSSnapin.md)
 
-[Remove-PSSnapin](.\Remove-PSSnapin.md)
+[Remove-PSSnapin](Remove-PSSnapin.md)
 

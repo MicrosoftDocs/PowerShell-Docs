@@ -669,9 +669,9 @@ You cannot pipe input to this cmdlet.
 * The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 ## RELATED LINKS
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 

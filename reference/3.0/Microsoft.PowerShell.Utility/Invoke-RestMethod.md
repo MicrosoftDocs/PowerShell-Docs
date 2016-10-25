@@ -556,9 +556,9 @@ If the request returns JSON strings, Invoke-RestMethod returns a PSObject that r
 
 ## RELATED LINKS
 
-[ConvertTo-Json](.\ConvertTo-Json.md)
+[ConvertTo-Json](ConvertTo-Json.md)
 
-[ConvertFrom-Json](.\ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
-[Invoke-WebRequest](.\Invoke-WebRequest.md)
+[Invoke-WebRequest](Invoke-WebRequest.md)
 

@@ -198,19 +198,19 @@ Write-EventLog returns objects that represents the events in the logs.
 *
 ## RELATED LINKS
 
-[Clear-EventLog](.\Clear-EventLog.md)
+[Clear-EventLog](Clear-EventLog.md)
 
-[Get-EventLog](.\Get-EventLog.md)
+[Get-EventLog](Get-EventLog.md)
 
-[Get-WinEvent](..\Microsoft.PowerShell.Diagnostics\Get-WinEvent.md)
+[Get-WinEvent](../Microsoft.PowerShell.Diagnostics/Get-WinEvent.md)
 
-[Limit-EventLog](.\Limit-EventLog.md)
+[Limit-EventLog](Limit-EventLog.md)
 
-[New-EventLog](.\New-EventLog.md)
+[New-EventLog](New-EventLog.md)
 
-[Remove-EventLog](.\Remove-EventLog.md)
+[Remove-EventLog](Remove-EventLog.md)
 
-[Show-EventLog](.\Show-EventLog.md)
+[Show-EventLog](Show-EventLog.md)
 
-[Write-EventLog](.\Write-EventLog.md)
+[Write-EventLog](Write-EventLog.md)
 

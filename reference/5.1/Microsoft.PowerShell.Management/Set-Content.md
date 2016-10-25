@@ -397,9 +397,9 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Add-Content](.\Add-Content.md)
+[Add-Content](Add-Content.md)
 
-[Clear-Content](.\Clear-Content.md)
+[Clear-Content](Clear-Content.md)
 
-[Get-Content](.\Get-Content.md)
+[Get-Content](Get-Content.md)
 

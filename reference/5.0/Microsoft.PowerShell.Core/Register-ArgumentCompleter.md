@@ -130,5 +130,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Core Cmdlets](.\Microsoft.PowerShell.Core.md)
+[Core Cmdlets](Microsoft.PowerShell.Core.md)
 

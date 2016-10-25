@@ -289,5 +289,5 @@ Windows PowerShell uses the GetSddlForm method of security descriptors to get th
 *
 ## RELATED LINKS
 
-[Set-Acl](.\Set-Acl.md)
+[Set-Acl](Set-Acl.md)
 

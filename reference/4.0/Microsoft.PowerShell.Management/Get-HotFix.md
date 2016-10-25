@@ -168,5 +168,5 @@ Get-Hotfix returns objects that represent the hotfixes on the computer.
 
 ## RELATED LINKS
 
-[Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
+[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 

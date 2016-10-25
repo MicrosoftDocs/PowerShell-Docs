@@ -139,9 +139,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-ScriptFileInfo](.\New-ScriptFileInfo.md)
+[New-ScriptFileInfo](New-ScriptFileInfo.md)
 
-[Publish-Script](.\Publish-Script.md)
+[Publish-Script](Publish-Script.md)
 
-[Update-ScriptFileInfo](.\Update-ScriptFileInfo.md)
+[Update-ScriptFileInfo](Update-ScriptFileInfo.md)
 

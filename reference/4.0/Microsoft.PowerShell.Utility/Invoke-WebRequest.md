@@ -597,9 +597,9 @@ You can pipe the body of a web request to Invoke-WebRequest
 
 ## RELATED LINKS
 
-[Invoke-RestMethod](.\Invoke-RestMethod.md)
+[Invoke-RestMethod](Invoke-RestMethod.md)
 
-[ConvertFrom-Json](.\ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
-[ConvertTo-Json](.\ConvertTo-Json.md)
+[ConvertTo-Json](ConvertTo-Json.md)
 

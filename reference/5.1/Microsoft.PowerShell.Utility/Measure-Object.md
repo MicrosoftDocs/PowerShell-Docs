@@ -274,15 +274,15 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 
 ## RELATED LINKS
 
-[Compare-Object](.\Compare-Object.md)
+[Compare-Object](Compare-Object.md)
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 

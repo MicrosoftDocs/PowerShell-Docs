@@ -223,9 +223,9 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
 
-[Read-Host](.\Read-Host.md)
+[Read-Host](Read-Host.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 

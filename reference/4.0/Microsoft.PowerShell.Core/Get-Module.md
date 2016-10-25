@@ -584,15 +584,15 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967)
 
-[about_Modules](.\About\about_Modules.md)
+[about_Modules](About/about_Modules.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Import-Module](.\Import-Module.md)
+[Import-Module](Import-Module.md)
 
-[Import-PSSession](..\Microsoft.PowerShell.Utility\Import-PSSession.md)
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Remove-Module](.\Remove-Module.md)
+[Remove-Module](Remove-Module.md)
 

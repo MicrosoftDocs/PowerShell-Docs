@@ -222,19 +222,19 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[ForEach-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
+[ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[Measure-Object](.\Measure-Object.md)
+[Measure-Object](Measure-Object.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

@@ -281,13 +281,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Find-Module](.\Find-Module.md)
+[Find-Module](Find-Module.md)
 
-[Import-Module](..\Microsoft.PowerShell.Core\Import-Module.md)
+[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
 
-[Publish-Module](.\Publish-Module.md)
+[Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](.\Uninstall-Module.md)
+[Uninstall-Module](Uninstall-Module.md)
 
-[Update-Module](.\Update-Module.md)
+[Update-Module](Update-Module.md)
 

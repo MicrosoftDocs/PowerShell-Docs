@@ -249,11 +249,11 @@ Export-Clixml creates a file that contains the XML.
 
 [Securely Store Credentials on Disk](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
-[ConvertTo-Html](.\ConvertTo-Html.md)
+[ConvertTo-Html](ConvertTo-Html.md)
 
-[ConvertTo-Xml](.\ConvertTo-Xml.md)
+[ConvertTo-Xml](ConvertTo-Xml.md)
 
-[Export-Csv](.\Export-Csv.md)
+[Export-Csv](Export-Csv.md)
 
-[Import-Clixml](.\Import-Clixml.md)
+[Import-Clixml](Import-Clixml.md)
 

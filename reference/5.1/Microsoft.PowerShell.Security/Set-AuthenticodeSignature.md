@@ -306,11 +306,11 @@ You can pipe a string that contains the file path to **Set-AuthenticodeSignature
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Get-ExecutionPolicy](.\Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
-[Get-PfxCertificate](.\Get-PfxCertificate.md)
+[Get-PfxCertificate](Get-PfxCertificate.md)
 
-[Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 

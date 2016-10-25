@@ -433,9 +433,9 @@ To remove it, change the value.
 
 ## RELATED LINKS
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 

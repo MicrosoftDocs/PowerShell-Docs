@@ -125,13 +125,13 @@ You can pipe a string that contains a file path to **Get-AuthenticodeSignature**
 
 ## RELATED LINKS
 
-[Get-ExecutionPolicy](.\Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
-[about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

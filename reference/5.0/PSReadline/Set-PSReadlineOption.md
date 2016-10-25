@@ -590,11 +590,11 @@ This cmdlet does not generate output.
 
 ## RELATED LINKS
 
-[Get-PSReadlineKeyHandler](.\Get-PSReadlineKeyHandler.md)
+[Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)
 
-[Remove-PSReadlineKeyHandler](.\Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
 
-[Get-PSReadlineOption](.\Get-PSReadlineOption.md)
+[Get-PSReadlineOption](Get-PSReadlineOption.md)
 
-[Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
+[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
 

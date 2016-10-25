@@ -167,5 +167,5 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## RELATED LINKS
 
-[Compress-Archive](.\Compress-Archive.md)
+[Compress-Archive](Compress-Archive.md)
 

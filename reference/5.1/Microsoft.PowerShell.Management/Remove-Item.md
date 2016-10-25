@@ -342,21 +342,21 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Clear-Item](.\Clear-Item.md)
+[Clear-Item](Clear-Item.md)
 
-[Copy-Item](.\Copy-Item.md)
+[Copy-Item](Copy-Item.md)
 
-[Get-Item](.\Get-Item.md)
+[Get-Item](Get-Item.md)
 
-[Invoke-Item](.\Invoke-Item.md)
+[Invoke-Item](Invoke-Item.md)
 
-[Move-Item](.\Move-Item.md)
+[Move-Item](Move-Item.md)
 
-[New-Item](.\New-Item.md)
+[New-Item](New-Item.md)
 
-[Remove-ItemProperty](.\Remove-ItemProperty.md)
+[Remove-ItemProperty](Remove-ItemProperty.md)
 
-[Rename-Item](.\Rename-Item.md)
+[Rename-Item](Rename-Item.md)
 
-[Set-Item](.\Set-Item.md)
+[Set-Item](Set-Item.md)
 

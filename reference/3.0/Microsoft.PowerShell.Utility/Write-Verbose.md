@@ -85,9 +85,9 @@ You can pipe a string that contains the message to **Write-Verbose**.
 * In Windows PowerShell background jobs and remote commands, the **$VerbosePreference** variable in the job session and remote session determine whether the verbose message is displayed by default. For more information about the **$VerbosePreference** variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 ## RELATED LINKS
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 
-[about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

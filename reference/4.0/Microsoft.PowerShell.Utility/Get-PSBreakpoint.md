@@ -279,15 +279,15 @@ Get-PSBreakPoint returns objects that represent the breakpoints in the session.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Enable-PSBreakpoint](.\Enable-PSBreakpoint.md)
+[Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 
-[Get-PSCallStack](.\Get-PSCallStack.md)
+[Get-PSCallStack](Get-PSCallStack.md)
 
-[Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
+[Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[Set-PSBreakpoint](.\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers]()
 

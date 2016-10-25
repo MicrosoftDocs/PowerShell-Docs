@@ -360,9 +360,9 @@ You can pipe any object to Select-Object.
 * The optimization feature of **Select-Object** is available only for commands that write objects to the pipeline as they are processed. It has no effect on commands that buffer processed objects and write them as a collection. Writing objects immediately is a cmdlet design best practice. For more information, see "Write Single Records to the Pipeline" in "Strongly Encouraged Development Guidelines" at http://go.microsoft.com/fwlink/?LinkId=223385http://go.microsoft.com/fwlink/?LinkId=223385
 ## RELATED LINKS
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 

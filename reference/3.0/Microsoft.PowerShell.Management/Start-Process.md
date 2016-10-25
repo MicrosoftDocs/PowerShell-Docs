@@ -380,13 +380,13 @@ Otherwise, this cmdlet does not return any output.
 *
 ## RELATED LINKS
 
-[Debug-Process](.\Debug-Process.md)
+[Debug-Process](Debug-Process.md)
 
-[Get-Process](.\Get-Process.md)
+[Get-Process](Get-Process.md)
 
-[Start-Service](.\Start-Service.md)
+[Start-Service](Start-Service.md)
 
-[Stop-Process](.\Stop-Process.md)
+[Stop-Process](Stop-Process.md)
 
-[Wait-Process](.\Wait-Process.md)
+[Wait-Process](Wait-Process.md)
 

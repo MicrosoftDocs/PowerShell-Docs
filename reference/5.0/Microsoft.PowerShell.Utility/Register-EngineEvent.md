@@ -206,25 +206,25 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Event](.\Get-Event.md)
+[Get-Event](Get-Event.md)
 
-[Get-Job](..\Microsoft.PowerShell.Core\Get-Job.md)
+[Get-Job](../Microsoft.PowerShell.Core/Get-Job.md)
 
-[New-Event](.\New-Event.md)
+[New-Event](New-Event.md)
 
-[Receive-Job](..\Microsoft.PowerShell.Core\Receive-Job.md)
+[Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
 
-[Register-ObjectEvent](.\Register-ObjectEvent.md)
+[Register-ObjectEvent](Register-ObjectEvent.md)
 
-[Register-WmiEvent](..\Microsoft.PowerShell.Management\Register-WmiEvent.md)
+[Register-WmiEvent](../Microsoft.PowerShell.Management/Register-WmiEvent.md)
 
-[Remove-Event](.\Remove-Event.md)
+[Remove-Event](Remove-Event.md)
 
-[Remove-Job](..\Microsoft.PowerShell.Core\Remove-Job.md)
+[Remove-Job](../Microsoft.PowerShell.Core/Remove-Job.md)
 
-[Unregister-Event](.\Unregister-Event.md)
+[Unregister-Event](Unregister-Event.md)
 
-[Wait-Event](.\Wait-Event.md)
+[Wait-Event](Wait-Event.md)
 
-[Wait-Job](..\Microsoft.PowerShell.Core\Wait-Job.md)
+[Wait-Job](../Microsoft.PowerShell.Core/Wait-Job.md)
 

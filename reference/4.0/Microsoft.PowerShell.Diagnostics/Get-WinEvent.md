@@ -615,9 +615,9 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Get-EventLog](..\Microsoft.PowerShell.Management\Get-EventLog.md)
+[Get-EventLog](../Microsoft.PowerShell.Management/Get-EventLog.md)
 
 [about_EventLogs]()
 

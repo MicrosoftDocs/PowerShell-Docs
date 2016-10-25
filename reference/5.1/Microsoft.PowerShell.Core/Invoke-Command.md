@@ -1166,13 +1166,13 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
 ## RELATED LINKS
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 

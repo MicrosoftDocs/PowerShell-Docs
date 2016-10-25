@@ -75,13 +75,13 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Out-Default](.\Out-Default.md)
+[Out-Default](Out-Default.md)
 
-[Out-File](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-File](../Microsoft.PowerShell.Utility/Out-File.md)
 
-[Out-Host](.\Out-Host.md)
+[Out-Host](Out-Host.md)
 
-[Out-Printer](..\Microsoft.PowerShell.Utility\Out-Printer.md)
+[Out-Printer](../Microsoft.PowerShell.Utility/Out-Printer.md)
 
-[Out-String](..\Microsoft.PowerShell.Utility\Out-String.md)
+[Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 

@@ -79,13 +79,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Format-Custom](..\Microsoft.PowerShell.Utility\Format-Custom.md)
+[Format-Custom](../Microsoft.PowerShell.Utility/Format-Custom.md)
 
-[Format-List](..\Microsoft.PowerShell.Utility\Format-List.md)
+[Format-List](../Microsoft.PowerShell.Utility/Format-List.md)
 
-[Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
+[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
-[Format-Wide](..\Microsoft.PowerShell.Utility\Format-Wide.md)
+[Format-Wide](../Microsoft.PowerShell.Utility/Format-Wide.md)
 
-[about_Format.ps1.xml](.\About\about_Format.ps1xml.md)
+[about_Format.ps1.xml](About/about_Format.ps1xml.md)
 

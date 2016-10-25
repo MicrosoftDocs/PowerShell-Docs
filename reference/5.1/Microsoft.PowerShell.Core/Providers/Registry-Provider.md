@@ -29,11 +29,11 @@ manager: stevenka
   
  The Registry provider lets you access a hierarchical namespace that consists of registry keys and subkeys. Registry entries and values are not components of that hierarchy. Instead, they are properties of each of the keys.  
   
- The Registry provider supports all the cmdlets that contain the Item noun (the Item cmdlets), such as [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md), [Copy-Item](..\..\Microsoft.PowerShell.Management\Copy-Item.md), and [Rename-Item](..\..\Microsoft.PowerShell.Management\Rename-Item.md), except for the [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md) cmdlet. Use the Item cmdlets when you work with registry keys and subkeys.  
+ The Registry provider supports all the cmdlets that contain the Item noun (the Item cmdlets), such as [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md), and [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md), except for the [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet. Use the Item cmdlets when you work with registry keys and subkeys.  
   
  The Registry provider also supports the cmdlets that contain the ItemProperty noun (the ItemProperty cmdlets). Use the ItemProperty cmdlets when you work with registry entries. You cannot use the cmdlets that contain the Content noun (the Content cmdlets) with the Registry provider.  
   
- Each registry key is protected by a security descriptor. You can use [Get-Acl](..\..\Microsoft.PowerShell.Security\Get-Acl.md) to view the security descriptor of a key.  
+ Each registry key is protected by a security descriptor. You can use [Get-Acl](../../Microsoft.PowerShell.Security/Get-Acl.md) to view the security descriptor of a key.  
   
 ## CAPABILITIES  
  ShouldProcess, UseTransactions  
@@ -221,7 +221,7 @@ set-item -path hkcu:\environment\testnew -value "another default value"
 ### Type <Microsoft.Win32.RegistryValueKind>  
  Establishes or changes the data type of a registry value. The default is String (REG_SZ).  
   
- This parameter works as designed on the [Set-ItemProperty](..\..\Microsoft.PowerShell.Management\Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](..\..\Microsoft.PowerShell.Management\Set-Item.md) cmdlet in the registry drives, but it has no effect.  
+ This parameter works as designed on the [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet in the registry drives, but it has no effect.  
   
 |Value|Description|  
 |-----------|-----------------|  
@@ -235,10 +235,10 @@ set-item -path hkcu:\environment\testnew -value "another default value"
   
 #### Cmdlets supported:  
   
--   [Set-Item](..\..\Microsoft.PowerShell.Management\Set-Item.md)  
+-   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
   
--   [Set-ItemProperty](..\..\Microsoft.PowerShell.Management\Set-ItemProperty.md)  
+-   [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)  
   
 ## See Also  
- [about_Providers](..\About\about_Providers.md)
+ [about_Providers](../About/about_Providers.md)
 

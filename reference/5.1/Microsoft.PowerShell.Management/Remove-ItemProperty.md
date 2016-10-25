@@ -291,23 +291,23 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Get-Item](.\Get-Item.md)
+[Get-Item](Get-Item.md)
 
-[Clear-ItemProperty](.\Clear-ItemProperty.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
 
-[Copy-ItemProperty](.\Copy-ItemProperty.md)
+[Copy-ItemProperty](Copy-ItemProperty.md)
 
-[Get-ItemProperty](.\Get-ItemProperty.md)
+[Get-ItemProperty](Get-ItemProperty.md)
 
-[Move-ItemProperty](.\Move-ItemProperty.md)
+[Move-ItemProperty](Move-ItemProperty.md)
 
-[New-ItemProperty](.\New-ItemProperty.md)
+[New-ItemProperty](New-ItemProperty.md)
 
-[Remove-Item](.\Remove-Item.md)
+[Remove-Item](Remove-Item.md)
 
-[Rename-ItemProperty](.\Rename-ItemProperty.md)
+[Rename-ItemProperty](Rename-ItemProperty.md)
 
-[Set-ItemProperty](.\Set-ItemProperty.md)
+[Set-ItemProperty](Set-ItemProperty.md)
 
-[Set-Location](.\Set-Location.md)
+[Set-Location](Set-Location.md)
 

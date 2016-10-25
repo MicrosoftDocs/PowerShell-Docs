@@ -146,5 +146,5 @@ Get-Culture returns an object that represents the current culture.
 
 Set-Culture
 
-[Get-UICulture](.\Get-UICulture.md)
+[Get-UICulture](Get-UICulture.md)
 

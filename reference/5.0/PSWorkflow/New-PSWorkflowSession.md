@@ -346,23 +346,23 @@ You can pipe a session or a computer name to this cmdlet.
 
 ## RELATED LINKS
 
-[Disconnect-PSSession](..\Microsoft.PowerShell.Core\Disconnect-PSSession.md)
+[Disconnect-PSSession](../Microsoft.PowerShell.Core/Disconnect-PSSession.md)
 
-[New-PSSession](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[New-PSTransportOption](..\Microsoft.PowerShell.Core\New-PSTransportOption.md)
+[New-PSTransportOption](../Microsoft.PowerShell.Core/New-PSTransportOption.md)
 
-[Register-PSSessionConfiguration](..\Microsoft.PowerShell.Core\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](../Microsoft.PowerShell.Core/Register-PSSessionConfiguration.md)
 
-[about_PSSessions](..\Microsoft.PowerShell.Core\About\about_PSSessions.md)
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
-[about_Session_Configurations](..\Microsoft.PowerShell.Core\About\about_Session_Configurations.md)
+[about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)
 
-[about_Workflows](.\About\about_Workflows.md)
+[about_Workflows](About/about_Workflows.md)
 
-[about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
+[about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](.\PSWorkflow.md)
+[PSWorkflow Module](PSWorkflow.md)
 
-[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
+[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
 

@@ -338,11 +338,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Clear-Variable](.\Clear-Variable.md)
+[Clear-Variable](Clear-Variable.md)
 
-[Get-Variable](.\Get-Variable.md)
+[Get-Variable](Get-Variable.md)
 
-[New-Variable](.\New-Variable.md)
+[New-Variable](New-Variable.md)
 
-[Remove-Variable](.\Remove-Variable.md)
+[Remove-Variable](Remove-Variable.md)
 

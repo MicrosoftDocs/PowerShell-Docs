@@ -127,5 +127,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShellGet Module](.\PowershellGet.md)
+[Windows PowerShellGet Module](PowershellGet.md)
 

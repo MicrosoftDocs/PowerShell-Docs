@@ -404,17 +404,17 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Get-WmiObject](.\Get-WmiObject.md)
+[Get-WmiObject](Get-WmiObject.md)
 
-[Invoke-WmiMethod](.\Invoke-WmiMethod.md)
+[Invoke-WmiMethod](Invoke-WmiMethod.md)
 
-[Set-WmiInstance](.\Set-WmiInstance.md)
+[Set-WmiInstance](Set-WmiInstance.md)
 
-[Get-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
+[Get-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 
-[Invoke-WSManAction](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
+[Invoke-WSManAction](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 
-[New-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
+[New-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 
-[Remove-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
+[Remove-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 

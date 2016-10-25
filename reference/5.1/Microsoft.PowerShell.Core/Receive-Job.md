@@ -443,19 +443,19 @@ This cmdlet returns the results of the commands in the job.
 
 ## RELATED LINKS
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Stop-Job](.\Stop-Job.md)
+[Stop-Job](Stop-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
-[Wait-Job](.\Wait-Job.md)
+[Wait-Job](Wait-Job.md)
 

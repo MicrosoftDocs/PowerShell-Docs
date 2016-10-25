@@ -377,13 +377,13 @@ You cannot pipe input to **Set-PSBreakpoint**.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Enable-PSBreakpoint](.\Enable-PSBreakpoint.md)
+[Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 
-[Get-PSBreakpoint](.\Get-PSBreakpoint.md)
+[Get-PSBreakpoint](Get-PSBreakpoint.md)
 
-[Get-PSCallStack](.\Get-PSCallStack.md)
+[Get-PSCallStack](Get-PSCallStack.md)
 
-[Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
+[Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 

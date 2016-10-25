@@ -184,5 +184,5 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Set-StrictMode](.\Set-StrictMode.md)
+[Set-StrictMode](Set-StrictMode.md)
 

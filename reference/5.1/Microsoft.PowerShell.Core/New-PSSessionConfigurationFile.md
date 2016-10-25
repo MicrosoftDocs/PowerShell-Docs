@@ -964,17 +964,17 @@ The changes that you make affect all new sessions that use the session configura
 
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 

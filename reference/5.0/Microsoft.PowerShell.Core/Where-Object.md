@@ -1014,19 +1014,19 @@ This cmdlet returns selected items from the input object set.
 
 ## RELATED LINKS
 
-[Compare-Object](..\Microsoft.PowerShell.Utility\Compare-Object.md)
+[Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 
-[ForEach-Object](.\ForEach-Object.md)
+[ForEach-Object](ForEach-Object.md)
 
-[Group-Object](..\Microsoft.PowerShell.Utility\Group-Object.md)
+[Group-Object](../Microsoft.PowerShell.Utility/Group-Object.md)
 
-[Measure-Object](..\Microsoft.PowerShell.Utility\Measure-Object.md)
+[Measure-Object](../Microsoft.PowerShell.Utility/Measure-Object.md)
 
-[New-Object](..\Microsoft.PowerShell.Utility\New-Object.md)
+[New-Object](../Microsoft.PowerShell.Utility/New-Object.md)
 
-[Select-Object](..\Microsoft.PowerShell.Utility\Select-Object.md)
+[Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Sort-Object](..\Microsoft.PowerShell.Utility\Sort-Object.md)
+[Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
-[Tee-Object](..\Microsoft.PowerShell.Utility\Tee-Object.md)
+[Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 

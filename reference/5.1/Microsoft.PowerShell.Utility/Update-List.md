@@ -205,7 +205,7 @@ You can pipe the objects to be updated to **Update-List**.
 
 ## RELATED LINKS
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 

@@ -277,9 +277,9 @@ You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the u
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Get-ExecutionPolicy](.\Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 

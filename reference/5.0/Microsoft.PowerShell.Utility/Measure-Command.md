@@ -130,7 +130,7 @@ For example, \<parameter-name\> \<value1\>, \<value2\>.
 
 ## RELATED LINKS
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

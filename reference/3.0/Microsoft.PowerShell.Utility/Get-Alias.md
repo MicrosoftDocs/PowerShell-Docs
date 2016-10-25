@@ -195,15 +195,15 @@ Get-Alias returns the same object for every alias, but Windows PowerShell uses a
 * The arrow-based alias name format is not used for aliases that include a hyphen. These are likely to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or nicknames.
 ## RELATED LINKS
 
-[Export-Alias](.\Export-Alias.md)
+[Export-Alias](Export-Alias.md)
 
-[Import-Alias](.\Import-Alias.md)
+[Import-Alias](Import-Alias.md)
 
-[New-Alias](.\New-Alias.md)
+[New-Alias](New-Alias.md)
 
-[Set-Alias](.\Set-Alias.md)
+[Set-Alias](Set-Alias.md)
 
 [Alias Provider](Alias-Provider.md)
 
-[about_Aliases](..\Microsoft.PowerShell.Core\About\about_Aliases.md)
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

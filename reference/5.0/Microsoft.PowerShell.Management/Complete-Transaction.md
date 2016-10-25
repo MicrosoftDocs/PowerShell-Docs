@@ -232,17 +232,17 @@ To roll back a different transaction, you must first commit or roll back the act
 
 ## RELATED LINKS
 
-[Get-Transaction](.\Get-Transaction.md)
+[Get-Transaction](Get-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Undo-Transaction](.\Undo-Transaction.md)
+[Undo-Transaction](Undo-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[Get-ChildItem](.\Get-ChildItem.md)
+[Get-ChildItem](Get-ChildItem.md)
 
-[New-Item](.\New-Item.md)
+[New-Item](New-Item.md)
 
-[New-ItemProperty](.\New-ItemProperty.md)
+[New-ItemProperty](New-ItemProperty.md)
 

@@ -106,9 +106,9 @@ Get-PfxCertificate returns an object for each certificate that it gets.
 *
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

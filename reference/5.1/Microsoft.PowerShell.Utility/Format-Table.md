@@ -374,11 +374,11 @@ You can pipe any object to **Format-Table**.
 
 ## RELATED LINKS
 
-[Format-Custom](.\Format-Custom.md)
+[Format-Custom](Format-Custom.md)
 
-[Format-Hex](.\Format-Hex.md)
+[Format-Hex](Format-Hex.md)
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 
-[Format-Wide](.\Format-Wide.md)
+[Format-Wide](Format-Wide.md)
 

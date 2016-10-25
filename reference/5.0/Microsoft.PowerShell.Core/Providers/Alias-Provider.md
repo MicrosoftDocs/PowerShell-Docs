@@ -27,7 +27,7 @@ ms.topic: article
   
  The Alias provider exposes its data store in the Alias: drive. To work with aliases, you can change your location to the Alias: drive by using the following command:  
   
- [Set-Location](..\..\Microsoft.PowerShell.Management\Set-Location.md) alias:  
+ [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) alias:  
   
  Or, you can work from any other Windows PowerShell drive. To reference an alias from another location, use the Alias: drive name in the path.  
   
@@ -45,9 +45,9 @@ ms.topic: article
   
  When you use these cmdlets, you do not need to specify the Alias: drive in the name.  
   
- The Alias provider supports all the cmdlets that have the Item noun except for the [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md) cmdlet. And, it supports the [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) and [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlets. The Alias provider does not support the cmdlets that have the ItemProperty noun. And, the Alias provider does not support the Filter parameter in any cmdlet.  
+ The Alias provider supports all the cmdlets that have the Item noun except for the [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet. And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. The Alias provider does not support the cmdlets that have the ItemProperty noun. And, the Alias provider does not support the Filter parameter in any cmdlet.  
   
- All changes to the aliases affect the current session only. To save the changes, add the changes to the Windows PowerShell profile. Or, use the [Export-Alias](..\..\Microsoft.PowerShell.Utility\Export-Alias.md) and [Import-Alias](..\..\Microsoft.PowerShell.Utility\Import-Alias.md) cmdlets.  
+ All changes to the aliases affect the current session only. To save the changes, add the changes to the Windows PowerShell profile. Or, use the [Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md) and [Import-Alias](../../Microsoft.PowerShell.Utility/Import-Alias.md) cmdlets.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -244,16 +244,16 @@ remove-item alias:* -force
 |None|No options. This value is the default.|  
 |Constant|The alias cannot be deleted and its properties cannot be changed. Constant is available only when you create an alias. You cannot change the option of an existing alias to Constant.|  
 |Private|The alias is visible only in the current scope, not in the child scopes.|  
-|ReadOnly|The properties of the alias cannot be changed except by using the Force parameter. You can use [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md) to delete the alias.|  
+|ReadOnly|The properties of the alias cannot be changed except by using the Force parameter. You can use [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) to delete the alias.|  
 |AllScope|The alias is copied to any new scopes that are created.|  
   
 #### Cmdlets supported:  
   
--   [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)  
+-   [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)  
   
--   [Set-Item](..\..\Microsoft.PowerShell.Management\Set-Item.md)  
+-   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
   
 ## See Also  
- [about_Aliases](..\About\about_Aliases.md)   
- [about_Providers](..\About\about_Providers.md)
+ [about_Aliases](../About/about_Aliases.md)   
+ [about_Providers](../About/about_Providers.md)
 

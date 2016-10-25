@@ -173,15 +173,15 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 
-[Unblock-File](..\Microsoft.PowerShell.Utility\Unblock-File.md)
+[Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
-[about_Signing](..\Microsoft.PowerShell.Core\About\about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

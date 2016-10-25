@@ -49,19 +49,19 @@ manager: stevenka
   
  .\Shell.dll  
   
- To use the FileSystem provider to view and manage files and folders, use the provider cmdlets, such as [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) ("dir", "ls") and [Set-Location](..\..\Microsoft.PowerShell.Management\Set-Location.md) ("cd"). Windows PowerShell also includes a "mkdir" function (alias = "md") that uses the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet to create a new directory.  
+ To use the FileSystem provider to view and manage files and folders, use the provider cmdlets, such as [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) ("dir", "ls") and [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) ("cd"). Windows PowerShell also includes a "mkdir" function (alias = "md") that uses the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create a new directory.  
   
  Beginning in Windows PowerShell 3.0, you can get customized help topics for provider cmdlets that explain how those cmdlets behave in a file system drive.  
   
- To get the help topics that are customized for the file system drive, run a [Get-Help](..\Get-Help.md) command in a file system drive or use the Path parameter of [Get-Help](..\Get-Help.md) to specify a file system drive.  
+ To get the help topics that are customized for the file system drive, run a [Get-Help](../Get-Help.md) command in a file system drive or use the Path parameter of [Get-Help](../Get-Help.md) to specify a file system drive.  
   
  For example,  
   
- PS C:\\> [Get-Help](..\Get-Help.md) get-childitem  
+ PS C:\\> [Get-Help](../Get-Help.md) get-childitem  
   
- PS HKLM:\\> [Get-Help](..\Get-Help.md)[Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) -path c:  
+ PS HKLM:\\> [Get-Help](../Get-Help.md)[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) -path c:  
   
- Also, beginning in Windows PowerShell 3.0, the FileSystem provider supports credentials for the [New-PSDrive](..\..\Microsoft.PowerShell.Management\New-PSDrive.md) cmdlet. For more information, see the help topic for the [New-PSDrive](..\..\Microsoft.PowerShell.Management\New-PSDrive.md) cmdlet.  
+ Also, beginning in Windows PowerShell 3.0, the FileSystem provider supports credentials for the [New-PSDrive](../../Microsoft.PowerShell.Management/New-PSDrive.md) cmdlet. For more information, see the help topic for the [New-PSDrive](../../Microsoft.PowerShell.Management/New-PSDrive.md) cmdlet.  
   
 ## CAPABILITIES  
  Filter, ShouldProcess  
@@ -399,37 +399,37 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Add-Content](..\..\Microsoft.PowerShell.Management\Add-Content.md)  
+-   [Add-Content](../../Microsoft.PowerShell.Management/Add-Content.md)  
   
--   [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md)  
+-   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
   
--   [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md)  
+-   [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)  
   
 ### Delimiter <System.String>  
- Specifies the delimiter that [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) uses to divide the file into objects while it reads.  
+ Specifies the delimiter that [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) uses to divide the file into objects while it reads.  
   
  The default is "\n", the end-of-line character.  
   
- Therefore, by default, when reading a text file, [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) returns a collection of string objects, each of which ends with an end-of-line character.  
+ Therefore, by default, when reading a text file, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) returns a collection of string objects, each of which ends with an end-of-line character.  
   
- When you enter a delimiter that does not exist in the file, [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) returns the entire file as a single, undelimited object.  
+ When you enter a delimiter that does not exist in the file, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) returns the entire file as a single, undelimited object.  
   
  You can use this parameter to split a large file into smaller files by specifying a file separator, such as "End of Example", as the delimiter. The delimiter is preserved (not discarded) and becomes the last item in each file section.  
   
- Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) does not return anything. This is a known issue. To force [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
+ Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) does not return anything. This is a known issue. To force [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
   
 #### Cmdlets supported:  
   
--   [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md)  
+-   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
   
 ### Wait <System.Management.Automation.SwitchParameter>  
  Waits for content to be appended to the file. If content is appended, it returns the appended content. If the content has changed, it returns the entire file.  
   
- When waiting, [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL+C.  
+ When waiting, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL+C.  
   
 #### Cmdlets supported:  
   
--   [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md)  
+-   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
   
 ### Attributes <FlagsExpression[System.IO.FileAttributes]>  
  Gets files and folders with the specified attributes.  This parameter supports all attributes and lets you specify complex combinations of attributes.  
@@ -450,7 +450,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### Directory <System.Management.Automation.SwitchParameter>  
  Gets directories (folders).  
@@ -461,7 +461,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### File <System.Management.Automation.SwitchParameter>  
  Gets files.  
@@ -472,10 +472,10 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### Hidden <System.Management.Automation.SwitchParameter>  
- Gets only hidden files and directories (folders). By default, [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets only non-hidden items.  
+ Gets only hidden files and directories (folders). By default, [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden items.  
   
  The Hidden parameter was introduced in Windows PowerShell 3.0.  
   
@@ -483,7 +483,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### ReadOnly <System.Management.Automation.SwitchParameter>  
  Gets only read-only files and directories (folders).  
@@ -494,7 +494,7 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### System <System.Management.Automation.SwitchParameter>  
  Gets only system files and directories (folders).  
@@ -505,50 +505,50 @@ Get-ChildItem -attributes Compressed,Encrypted
   
 #### Cmdlets supported:  
   
--   [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
   
 ### NewerThan <System.DateTime>  
  Returns "True" ($True) when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False" ($False).  
   
- Enter a DateTime object, such as one that the [Get-Date](..\..\Microsoft.PowerShell.Utility\Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Enter a DateTime object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
 #### Cmdlets supported:  
   
--   [Test-Path](..\..\Microsoft.PowerShell.Management\Test-Path.md)  
+-   [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)  
   
 ### OlderThan <System.DateTime>  
  Returns "True" ($True) when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False" ($False).  
   
- Enter a DateTime object, such as one that the [Get-Date](..\..\Microsoft.PowerShell.Utility\Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Enter a DateTime object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
   
 #### Cmdlets supported:  
   
--   [Test-Path](..\..\Microsoft.PowerShell.Management\Test-Path.md)  
+-   [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)  
   
 ### Stream <System.String []>  
- Manages alternate data streams. Enter the stream name. Wildcards are permitted only in [Get-Item for FileSystem](.\FileSystem-Provider\Get-Item-for-FileSystem.md) and [Remove-Item for FileSystem](.\FileSystem-Provider\Remove-Item-for-FileSystem.md) commands in a file system drive.  
+ Manages alternate data streams. Enter the stream name. Wildcards are permitted only in [Get-Item for FileSystem](FileSystem-Provider/Get-Item-for-FileSystem.md) and [Remove-Item for FileSystem](FileSystem-Provider/Remove-Item-for-FileSystem.md) commands in a file system drive.  
   
 #### Cmdlets supported:  
   
--   [Add-Content](..\..\Microsoft.PowerShell.Management\Add-Content.md)  
+-   [Add-Content](../../Microsoft.PowerShell.Management/Add-Content.md)  
   
--   [Clear-Content](..\..\Microsoft.PowerShell.Management\Clear-Content.md)  
+-   [Clear-Content](../../Microsoft.PowerShell.Management/Clear-Content.md)  
   
--   [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md)  
+-   [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)  
   
--   [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md)  
+-   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
   
--   [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md)  
+-   [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)  
   
--   [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md)  
+-   [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)  
   
 ### Raw <SwitchParameter\>  
  Ignores newline characters. Returns contents as a single item.  
   
 #### Cmdlets supported:  
   
--   [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md)  
+-   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
   
 ## See Also  
- [about_Providers](..\About\about_Providers.md)
+ [about_Providers](../About/about_Providers.md)
 

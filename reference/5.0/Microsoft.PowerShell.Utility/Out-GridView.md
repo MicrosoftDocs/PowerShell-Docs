@@ -433,15 +433,15 @@ To remove it, change the value.
 
 ## RELATED LINKS
 
-[Out-Default](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Null](..\Microsoft.PowerShell.Core\Out-Null.md)
+[Out-Null](../Microsoft.PowerShell.Core/Out-Null.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 

@@ -145,9 +145,9 @@ For instructions, see about_Profiles.
 *
 ## RELATED LINKS
 
-[Add-PSSnapin](.\Add-PSSnapin.md)
+[Add-PSSnapin](Add-PSSnapin.md)
 
-[Get-PSSnapin](.\Get-PSSnapin.md)
+[Get-PSSnapin](Get-PSSnapin.md)
 
 [about_Profiles](about_Profiles.md)
 

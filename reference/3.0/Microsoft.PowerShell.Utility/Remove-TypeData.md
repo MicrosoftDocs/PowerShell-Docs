@@ -206,9 +206,9 @@ This cmdlet does not generate any output.
 * **Remove-TypeData** can remove only the extended type data in the current session. It cannot remove extended type data that is on the computer, but has not been added to the current session, such as extended types that are defined in modules that have not been imported into the current session.
 ## RELATED LINKS
 
-[Get-TypeData](.\Get-TypeData.md)
+[Get-TypeData](Get-TypeData.md)
 
-[Update-TypeData](.\Update-TypeData.md)
+[Update-TypeData](Update-TypeData.md)
 
-[about_Types.ps1xml](..\Microsoft.PowerShell.Core\About\about_Types.ps1xml.md)
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 

@@ -154,7 +154,7 @@ You can also use the Unique parameter of Sort-Object to find the unique items in
 *
 ## RELATED LINKS
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 

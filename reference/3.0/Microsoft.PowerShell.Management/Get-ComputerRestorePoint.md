@@ -132,13 +132,13 @@ When you use the LastStatus parameter, this cmdlet returns a string.
 *
 ## RELATED LINKS
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Disable-ComputerRestore](.\Disable-ComputerRestore.md)
+[Disable-ComputerRestore](Disable-ComputerRestore.md)
 
-[Enable-ComputerRestore](.\Enable-ComputerRestore.md)
+[Enable-ComputerRestore](Enable-ComputerRestore.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Restore-Computer](.\Restore-Computer.md)
+[Restore-Computer](Restore-Computer.md)
 

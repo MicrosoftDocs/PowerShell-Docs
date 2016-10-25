@@ -17,11 +17,11 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ```  
   
 ## Description  
- In a file system drive, the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
+ In a file system drive, the [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.  
   
- By default, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets non-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
+ By default, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets non-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.  
   
- Note: This custom cmdlet help file explains how the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet works in a file system drive. For information about the [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) -Path $null" or see [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) at http://go.microsoft.com/fwlink/?LinkID=113308.  
+ Note: This custom cmdlet help file explains how the [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet works in a file system drive. For information about the [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) -Path $null" or see [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) at http://go.microsoft.com/fwlink/?LinkID=113308.  
   
 ## Parameters  
   
@@ -30,7 +30,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
   
  For example, to get non-system files (not directories) that are encrypted or compressed, type:  
   
- [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed  
+ [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed  
   
  To find files and folders with commonly used attributes, you can use the Attributes parameter, or the Directory, File, Hidden, ReadOnly, and System switch parameters.  
   
@@ -95,7 +95,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|  
   
 ### -Hidden  
- Gets only hidden files and directories (folders).  By default, [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) gets only non-hidden items, but you can use the Force parameter to include hidden items in the results.  
+ Gets only hidden files and directories (folders).  By default, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden items, but you can use the Force parameter to include hidden items in the results.  
   
  To get only hidden items, use the Hidden parameter, its "h" or "ah" aliases, or the Hidden value of the Attributes parameter. To exclude hidden items, omit the Hidden parameter or use the Attributes parameter.  
   
@@ -145,7 +145,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|  
   
 ### -UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](..\..\About\about_Transactions.md).  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).  
   
 |||  
 |-|-|  
@@ -156,7 +156,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|  
   
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -280,13 +280,13 @@ This command retrieves only the names of items in the current directory.
 ```  
   
 ## See Also  
- [FileSystem Provider](..\FileSystem-Provider.md)   
- [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
- [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
- [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
- [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
- [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
- [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
- [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
- [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
+ [FileSystem Provider](../FileSystem-Provider.md)   
+ [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
+ [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
 

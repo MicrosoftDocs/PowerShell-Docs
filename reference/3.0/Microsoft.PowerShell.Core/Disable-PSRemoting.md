@@ -314,17 +314,17 @@ In Windows PowerShell 3.0, **Disable-PSRemoting** is the equivalent of "`Set-PSS
 Beginning in Windows PowerShell 3.0, it is a cmdlet.
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSRemoting](.\Enable-PSRemoting.md)
+[Enable-PSRemoting](Enable-PSRemoting.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](WSMan-Provider.md)
 

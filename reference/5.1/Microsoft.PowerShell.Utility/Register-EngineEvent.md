@@ -206,15 +206,15 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Event](.\Get-Event.md)
+[Get-Event](Get-Event.md)
 
-[New-Event](.\New-Event.md)
+[New-Event](New-Event.md)
 
-[Register-ObjectEvent](.\Register-ObjectEvent.md)
+[Register-ObjectEvent](Register-ObjectEvent.md)
 
-[Remove-Event](.\Remove-Event.md)
+[Remove-Event](Remove-Event.md)
 
-[Unregister-Event](.\Unregister-Event.md)
+[Unregister-Event](Unregister-Event.md)
 
-[Wait-Event](.\Wait-Event.md)
+[Wait-Event](Wait-Event.md)
 

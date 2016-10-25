@@ -464,17 +464,17 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Add-Computer](.\Add-Computer.md)
+[Add-Computer](Add-Computer.md)
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Rename-Computer](.\Rename-Computer.md)
+[Rename-Computer](Rename-Computer.md)
 
-[Remove-Computer](.\Remove-Computer.md)
+[Remove-Computer](Remove-Computer.md)
 
-[Restore-Computer](.\Restore-Computer.md)
+[Restore-Computer](Restore-Computer.md)
 
-[Stop-Computer](.\Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 
-[Test-Connection](.\Test-Connection.md)
+[Test-Connection](Test-Connection.md)
 

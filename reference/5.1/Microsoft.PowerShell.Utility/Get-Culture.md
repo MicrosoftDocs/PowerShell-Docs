@@ -146,5 +146,5 @@ You cannot pipe input to this cmdlet.
 
 Set-Culture
 
-[Get-UICulture](.\Get-UICulture.md)
+[Get-UICulture](Get-UICulture.md)
 

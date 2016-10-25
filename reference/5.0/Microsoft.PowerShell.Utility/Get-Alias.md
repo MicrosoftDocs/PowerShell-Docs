@@ -213,15 +213,15 @@ You can pipe alias names to **Get-Alias**.
 
 ## RELATED LINKS
 
-[About Aliases](..\Microsoft.PowerShell.Core\About\about_Aliases.md)
+[About Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 
-[Export-Alias](.\Export-Alias.md)
+[Export-Alias](Export-Alias.md)
 
-[Import-Alias](.\Import-Alias.md)
+[Import-Alias](Import-Alias.md)
 
-[New-Alias](.\New-Alias.md)
+[New-Alias](New-Alias.md)
 
-[Set-Alias](.\Set-Alias.md)
+[Set-Alias](Set-Alias.md)
 
-[Alias Provider](..\Microsoft.PowerShell.Core\Providers\Alias-Provider.md)
+[Alias Provider](../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
 

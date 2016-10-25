@@ -174,7 +174,7 @@ This cmdlet does not generate output.
   For more information about Windows PowerShell execution policies, see about_Execution_Policies.
 ## RELATED LINKS
 
-[Get-IseSnippet](.\Get-IseSnippet.md)
+[Get-IseSnippet](Get-IseSnippet.md)
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 

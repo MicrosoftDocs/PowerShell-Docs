@@ -126,7 +126,7 @@ If you pipe the output of **Out-Printer** to Get-Member, **Get-Member** reports 
 
 ## RELATED LINKS
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 

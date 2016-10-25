@@ -616,9 +616,9 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[about_Types.ps1xml](..\Microsoft.PowerShell.Core\About\about_Types.ps1xml.md)
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 
-[Get-TypeData](.\Get-TypeData.md)
+[Get-TypeData](Get-TypeData.md)
 
-[Remove-TypeData](.\Remove-TypeData.md)
+[Remove-TypeData](Remove-TypeData.md)
 

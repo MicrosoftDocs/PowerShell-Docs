@@ -145,5 +145,5 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Get-ControlPanelItem](.\Get-ControlPanelItem.md)
+[Get-ControlPanelItem](Get-ControlPanelItem.md)
 

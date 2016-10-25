@@ -207,7 +207,7 @@ However, if the computer is configured for Windows PowerShell remoting, you can 
 *
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Import-Counter](.\Import-Counter.md)
+[Import-Counter](Import-Counter.md)
 

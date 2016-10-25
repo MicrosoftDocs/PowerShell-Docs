@@ -149,11 +149,11 @@ This cmdlet returns one entry for each key binding, or chord, for bound function
 
 ## RELATED LINKS
 
-[Remove-PSReadlineKeyHandler](.\Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
 
-[Get-PSReadlineOption](.\Get-PSReadlineOption.md)
+[Get-PSReadlineOption](Get-PSReadlineOption.md)
 
-[Set-PSReadlineOption](.\Set-PSReadlineOption.md)
+[Set-PSReadlineOption](Set-PSReadlineOption.md)
 
-[Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
+[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
 

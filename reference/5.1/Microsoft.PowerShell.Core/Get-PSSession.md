@@ -730,19 +730,19 @@ A value of **Busy** indicates that you cannot connect to the **PSSession** becau
 
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Disconnect-PSSession](.\Disconnect-PSSession.md)
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-[Receive-PSSession](.\Receive-PSSession.md)
+[Receive-PSSession](Receive-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 

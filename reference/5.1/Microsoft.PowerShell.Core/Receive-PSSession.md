@@ -779,19 +779,19 @@ A value of Busy indicates that you cannot connect to the **PSSession** because i
 
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[New-PSSessionOption](.\New-PSSessionOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 

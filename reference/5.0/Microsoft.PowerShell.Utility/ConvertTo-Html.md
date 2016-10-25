@@ -375,13 +375,13 @@ For example, if you use *InputObject* to submit the processes on a computer to *
 
 ## RELATED LINKS
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[ConvertTo-Json](.\ConvertTo-Json.md)
+[ConvertTo-Json](ConvertTo-Json.md)
 
-[ConvertTo-Xml](.\ConvertTo-Xml.md)
+[ConvertTo-Xml](ConvertTo-Xml.md)
 
-[Export-Clixml](.\Export-Clixml.md)
+[Export-Clixml](Export-Clixml.md)
 
-[Import-Clixml](.\Import-Clixml.md)
+[Import-Clixml](Import-Clixml.md)
 

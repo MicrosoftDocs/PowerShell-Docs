@@ -555,9 +555,9 @@ This cmdlet does not generate output.
 
 ## RELATED LINKS
 
-[Get-WmiObject](.\Get-WmiObject.md)
+[Get-WmiObject](Get-WmiObject.md)
 
-[Invoke-WmiMethod](.\Invoke-WmiMethod.md)
+[Invoke-WmiMethod](Invoke-WmiMethod.md)
 
-[Remove-WmiObject](.\Remove-WmiObject.md)
+[Remove-WmiObject](Remove-WmiObject.md)
 

@@ -396,15 +396,15 @@ If the command does not import formatting data, any formatting files that are cr
 *
 ## RELATED LINKS
 
-[Import-Module](..\Microsoft.PowerShell.Core\Import-Module.md)
+[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
 
-[Import-PSSession](.\Import-PSSession.md)
+[Import-PSSession](Import-PSSession.md)
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Import-Module.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Import-Module.md)
 
-[New-PSSession](..\Microsoft.PowerShell.Core\Import-Module.md)
+[New-PSSession](../Microsoft.PowerShell.Core/Import-Module.md)
 
-[about_Command_Precedence](..\Microsoft.PowerShell.Core\About\about_Command_Precedence.md)
+[about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 
-[about_PSSessions](..\Microsoft.PowerShell.Core\About\about_PSSessions.md)
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 

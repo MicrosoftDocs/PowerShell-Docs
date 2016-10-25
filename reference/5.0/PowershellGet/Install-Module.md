@@ -286,11 +286,11 @@ As a security best practice, evaluate module code before running any cmdlets or 
 
 ## RELATED LINKS
 
-[Find-Module](.\Find-Module.md)
+[Find-Module](Find-Module.md)
 
-[Publish-Module](.\Publish-Module.md)
+[Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](.\Uninstall-Module.md)
+[Uninstall-Module](Uninstall-Module.md)
 
-[Update-Module](.\Update-Module.md)
+[Update-Module](Update-Module.md)
 

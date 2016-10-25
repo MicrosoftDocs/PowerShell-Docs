@@ -381,11 +381,11 @@ The output type depends upon the content that it gets.
 
 ## RELATED LINKS
 
-[Add-Content](.\Add-Content.md)
+[Add-Content](Add-Content.md)
 
-[Clear-Content](.\Clear-Content.md)
+[Clear-Content](Clear-Content.md)
 
-[Set-Content](.\Set-Content.md)
+[Set-Content](Set-Content.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 

@@ -234,13 +234,13 @@ For more information, see about_Aliases.
 
 ## RELATED LINKS
 
-[Get-Variable](.\Get-Variable.md)
+[Get-Variable](Get-Variable.md)
 
-[New-Variable](.\New-Variable.md)
+[New-Variable](New-Variable.md)
 
-[Remove-Variable](.\Remove-Variable.md)
+[Remove-Variable](Remove-Variable.md)
 
-[Set-Variable](.\Set-Variable.md)
+[Set-Variable](Set-Variable.md)
 
-[about_Aliases](..\Microsoft.PowerShell.Core\About\about_Aliases.md)
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

@@ -193,21 +193,21 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 * In Windows PowerShell 2.0, **Enable-PSRemoting** removes the Deny_All setting from the security descriptor of session configurations. In Windows PowerShell 3.0, **Enable-PSRemoting** removes the Deny_All and Network_Deny_All settings, thereby providing remote access to session configurations that were reserved for local use.
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Disable-PSRemoting](.\Disable-PSRemoting.md)
+[Disable-PSRemoting](Disable-PSRemoting.md)
 
 [WSMan Provider](WSMan-Provider.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Session_Configurations](.\About\about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 

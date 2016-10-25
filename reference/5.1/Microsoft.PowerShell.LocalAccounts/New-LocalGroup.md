@@ -127,11 +127,11 @@ This cmdlet returns a security group.
 
 ## RELATED LINKS
 
-[Get-LocalGroup](.\Get-LocalGroup.md)
+[Get-LocalGroup](Get-LocalGroup.md)
 
-[Remove-LocalGroup](.\Remove-LocalGroup.md)
+[Remove-LocalGroup](Remove-LocalGroup.md)
 
-[Rename-LocalGroup](.\Rename-LocalGroup.md)
+[Rename-LocalGroup](Rename-LocalGroup.md)
 
-[Set-LocalGroup](.\Set-LocalGroup.md)
+[Set-LocalGroup](Set-LocalGroup.md)
 

@@ -1014,5 +1014,5 @@ This cmdlet returns selected items from the input object set.
 
 ## RELATED LINKS
 
-[ForEach-Object](.\ForEach-Object.md)
+[ForEach-Object](ForEach-Object.md)
 

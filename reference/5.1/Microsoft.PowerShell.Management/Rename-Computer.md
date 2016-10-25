@@ -304,13 +304,13 @@ Otherwise, it does not return any output.
 
 ## RELATED LINKS
 
-[Add-Computer](.\Add-Computer.md)
+[Add-Computer](Add-Computer.md)
 
-[Remove-Computer](.\Remove-Computer.md)
+[Remove-Computer](Remove-Computer.md)
 
-[Reset-ComputerMachinePassword](.\Reset-ComputerMachinePassword.md)
+[Reset-ComputerMachinePassword](Reset-ComputerMachinePassword.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Stop-Computer](.\Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 

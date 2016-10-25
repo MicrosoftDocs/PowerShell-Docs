@@ -1043,27 +1043,27 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 ## RELATED LINKS
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Invoke-Item](..\Microsoft.PowerShell.Management\Invoke-Item.md)
+[Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 
 [WSMan Provider](WSMan-Provider.md)
 
-[about_PSSessions](.\About\about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](.\About\about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Variables](.\About\about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
 [about_Scopes](about_Scopes.md)
 

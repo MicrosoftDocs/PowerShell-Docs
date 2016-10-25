@@ -263,5 +263,5 @@ You can pipe a string that contains a path to one or more files.
 
 ## RELATED LINKS
 
-[Expand-Archive](.\Expand-Archive.md)
+[Expand-Archive](Expand-Archive.md)
 

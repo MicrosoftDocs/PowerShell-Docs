@@ -113,11 +113,11 @@ Please try again later."`
 
 ## RELATED LINKS
 
-[Disable-ComputerRestore](.\Disable-ComputerRestore.md)
+[Disable-ComputerRestore](Disable-ComputerRestore.md)
 
-[Enable-ComputerRestore](.\Enable-ComputerRestore.md)
+[Enable-ComputerRestore](Enable-ComputerRestore.md)
 
-[Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
+[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
-[Restore-Computer](.\Restore-Computer.md)
+[Restore-Computer](Restore-Computer.md)
 

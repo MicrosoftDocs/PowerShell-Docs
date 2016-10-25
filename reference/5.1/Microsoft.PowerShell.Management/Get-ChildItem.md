@@ -416,11 +416,11 @@ For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkI
 
 ## RELATED LINKS
 
-[Get-Item](.\Get-Item.md)
+[Get-Item](Get-Item.md)
 
-[Get-Location](.\Get-Location.md)
+[Get-Location](Get-Location.md)
 
-[Get-Process](.\Get-Process.md)
+[Get-Process](Get-Process.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 

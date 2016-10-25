@@ -207,7 +207,7 @@ ConvertTo-SecureString returns a SecureString object.
 
 ## RELATED LINKS
 
-[ConvertFrom-SecureString](.\ConvertFrom-SecureString.md)
+[ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 
-[Read-Host](..\Microsoft.PowerShell.Utility\Read-Host.md)
+[Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 

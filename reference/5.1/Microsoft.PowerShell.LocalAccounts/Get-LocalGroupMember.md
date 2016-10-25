@@ -144,9 +144,9 @@ This cmdlet returns local principals.
 
 ## RELATED LINKS
 
-[Add-LocalGroupMember](.\Add-LocalGroupMember.md)
+[Add-LocalGroupMember](Add-LocalGroupMember.md)
 
-[New-LocalGroup](.\New-LocalGroup.md)
+[New-LocalGroup](New-LocalGroup.md)
 
-[Remove-LocalGroupMember](.\Remove-LocalGroupMember.md)
+[Remove-LocalGroupMember](Remove-LocalGroupMember.md)
 

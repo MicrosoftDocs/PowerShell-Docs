@@ -190,17 +190,17 @@ In the value of the Action parameter, the MessageData property of the $Event aut
 
 ## RELATED LINKS
 
-[New-Event](.\New-Event.md)
+[New-Event](New-Event.md)
 
-[Register-EngineEvent](.\Register-EngineEvent.md)
+[Register-EngineEvent](Register-EngineEvent.md)
 
-[Register-ObjectEvent](.\Register-ObjectEvent.md)
+[Register-ObjectEvent](Register-ObjectEvent.md)
 
-[Register-WmiEvent](..\Microsoft.PowerShell.Management\Register-WmiEvent.md)
+[Register-WmiEvent](../Microsoft.PowerShell.Management/Register-WmiEvent.md)
 
-[Remove-Event](.\Remove-Event.md)
+[Remove-Event](Remove-Event.md)
 
-[Unregister-Event](.\Unregister-Event.md)
+[Unregister-Event](Unregister-Event.md)
 
-[Wait-Event](.\Wait-Event.md)
+[Wait-Event](Wait-Event.md)
 

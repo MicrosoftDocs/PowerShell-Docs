@@ -389,9 +389,9 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Get-PSDrive](.\Get-PSDrive.md)
+[Get-PSDrive](Get-PSDrive.md)
 
-[Remove-PSDrive](.\Remove-PSDrive.md)
+[Remove-PSDrive](Remove-PSDrive.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

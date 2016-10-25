@@ -291,11 +291,11 @@ If the alternate view is neither a list nor a table, use Format-Custom.
 
 ## RELATED LINKS
 
-[Format-Custom](.\Format-Custom.md)
+[Format-Custom](Format-Custom.md)
 
-[Format-Hex](.\Format-Hex.md)
+[Format-Hex](Format-Hex.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Format-Wide](.\Format-Wide.md)
+[Format-Wide](Format-Wide.md)
 

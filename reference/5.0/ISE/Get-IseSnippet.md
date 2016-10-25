@@ -126,13 +126,13 @@ This cmdlet returns a file object that represents the snippet file.
 
 ## RELATED LINKS
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 
-[Import-IseSnippet](.\Import-IseSnippet.md)
+[Import-IseSnippet](Import-IseSnippet.md)
 
-[Select-Xml](..\Microsoft.PowerShell.Utility\Select-Xml.md)
+[Select-Xml](../Microsoft.PowerShell.Utility/Select-Xml.md)
 
-[Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
+[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 

@@ -439,7 +439,7 @@ To set different values for different counters, enter separate **Get-Counter** c
 
 ## RELATED LINKS
 
-[Export-Counter](.\Export-Counter.md)
+[Export-Counter](Export-Counter.md)
 
-[Import-Counter](.\Import-Counter.md)
+[Import-Counter](Import-Counter.md)
 

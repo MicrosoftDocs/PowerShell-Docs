@@ -20,66 +20,66 @@ Locale: en-US
 Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks. 
 
 ## PSDesiredStateConfiguration Cmdlets
-### [Disable-DscDebug](.\Disable-DscDebug.md)
+### [Disable-DscDebug](Disable-DscDebug.md)
 Stops debugging of DSC resources.
 
 
-### [Enable-DscDebug](.\Enable-DscDebug.md)
+### [Enable-DscDebug](Enable-DscDebug.md)
 Starts debugging of all DSC resources.
 
 
-### [Get-DscConfigurationStatus](.\Get-DscConfigurationStatus.md)
+### [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
 Retrieves data about completed configuration runs.
 
 
-### [Get-DscConfiguration](.\Get-DscConfiguration.md)
+### [Get-DscConfiguration](Get-DscConfiguration.md)
 Gets the current configuration of the nodes.
 
 
-### [Get-DscLocalConfigurationManager](.\Get-DscLocalConfigurationManager.md)
+### [Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager.md)
 Gets LCM settings and states for the node.
 
 
-### [Get-DscResource](.\Get-DscResource.md)
+### [Get-DscResource](Get-DscResource.md)
 Gets the DSC resources present on the computer.
 
 
-### [Invoke-DscResource](.\Invoke-DscResource.md)
+### [Invoke-DscResource](Invoke-DscResource.md)
 Runs a method of a specified DSC resource.
 
 
-### [New-DSCCheckSum](.\New-DSCCheckSum.md)
+### [New-DSCCheckSum](New-DSCCheckSum.md)
 Creates checksum files for DSC documents and DSC resources.
 
 
-### [Publish-DscConfiguration](.\Publish-DscConfiguration.md)
+### [Publish-DscConfiguration](Publish-DscConfiguration.md)
 Publishes a DSC configuration to a set of computers.
 
 
-### [Remove-DscConfigurationDocument](.\Remove-DscConfigurationDocument.md)
+### [Remove-DscConfigurationDocument](Remove-DscConfigurationDocument.md)
 Removes a configuration document from the DSC configuration store.
 
 
-### [Restore-DscConfiguration](.\Restore-DscConfiguration.md)
+### [Restore-DscConfiguration](Restore-DscConfiguration.md)
 Reapplies the previous configuration for the node.
 
 
-### [Set-DscLocalConfigurationManager](.\Set-DscLocalConfigurationManager.md)
+### [Set-DscLocalConfigurationManager](Set-DscLocalConfigurationManager.md)
 Applies LCM settings to nodes.
 
 
-### [Start-DscConfiguration](.\Start-DscConfiguration.md)
+### [Start-DscConfiguration](Start-DscConfiguration.md)
 Applies configuration to nodes.
 
 
-### [Stop-DscConfiguration](.\Stop-DscConfiguration.md)
+### [Stop-DscConfiguration](Stop-DscConfiguration.md)
 Stops a running configuration.
 
 
-### [Test-DscConfiguration](.\Test-DscConfiguration.md)
+### [Test-DscConfiguration](Test-DscConfiguration.md)
 Tests whether the actual configuration on the nodes matches the desired configuration.
 
 
-### [Update-DscConfiguration](.\Update-DscConfiguration.md)
+### [Update-DscConfiguration](Update-DscConfiguration.md)
 Checks the pull server for an updated configuration and applies it.
 

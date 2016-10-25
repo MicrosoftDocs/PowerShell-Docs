@@ -426,5 +426,5 @@ Otherwise, it does not.
 
 ## RELATED LINKS
 
-[New-PSWorkflowSession](.\New-PSWorkflowSession.md)
+[New-PSWorkflowSession](New-PSWorkflowSession.md)
 

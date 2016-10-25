@@ -331,5 +331,5 @@ For example, if you sort services by status, services with a status of "Stopped"
 *
 ## RELATED LINKS
 
-[Group-Object](.\Group-Object.md)
+[Group-Object](Group-Object.md)
 

@@ -251,13 +251,13 @@ You can pipe breakpoint IDs and breakpoint types to **Get-PSBreakPoint**.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Enable-PSBreakpoint](.\Enable-PSBreakpoint.md)
+[Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 
-[Get-PSCallStack](.\Get-PSCallStack.md)
+[Get-PSCallStack](Get-PSCallStack.md)
 
-[Remove-PSBreakpoint](.\Remove-PSBreakpoint.md)
+[Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[Set-PSBreakpoint](.\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](Set-PSBreakpoint.md)
 

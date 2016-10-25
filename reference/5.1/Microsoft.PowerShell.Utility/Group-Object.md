@@ -366,15 +366,15 @@ Ungroupable objects appear in the final **GroupInfo** object output in a group n
 
 ## RELATED LINKS
 
-[Compare-Object](.\Compare-Object.md)
+[Compare-Object](Compare-Object.md)
 
-[Measure-Object](.\Measure-Object.md)
+[Measure-Object](Measure-Object.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[Sort-Object](.\Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 

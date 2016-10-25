@@ -177,11 +177,11 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-LocalGroup](.\Get-LocalGroup.md)
+[Get-LocalGroup](Get-LocalGroup.md)
 
-[New-LocalGroup](.\New-LocalGroup.md)
+[New-LocalGroup](New-LocalGroup.md)
 
-[Rename-LocalGroup](.\Rename-LocalGroup.md)
+[Rename-LocalGroup](Rename-LocalGroup.md)
 
-[Set-LocalGroup](.\Set-LocalGroup.md)
+[Set-LocalGroup](Set-LocalGroup.md)
 

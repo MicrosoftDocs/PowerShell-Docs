@@ -227,11 +227,11 @@ Get-Host returns a System.Management.Automation.Internal.Host.InternalHost objec
 
 ## RELATED LINKS
 
-[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Read-Host](.\Read-Host.md)
+[Read-Host](Read-Host.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 

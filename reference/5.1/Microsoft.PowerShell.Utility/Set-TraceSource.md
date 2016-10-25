@@ -312,7 +312,7 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 
 ## RELATED LINKS
 
-[Get-TraceSource](.\Get-TraceSource.md)
+[Get-TraceSource](Get-TraceSource.md)
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

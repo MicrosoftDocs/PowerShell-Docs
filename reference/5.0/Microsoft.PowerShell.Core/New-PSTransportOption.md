@@ -364,13 +364,13 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[about_Session_Configurations](.\About\about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[New-PSSessionOption](.\New-PSSessionOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 

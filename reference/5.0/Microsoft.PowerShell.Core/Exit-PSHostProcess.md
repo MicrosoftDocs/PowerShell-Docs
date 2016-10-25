@@ -53,13 +53,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-Process](..\Microsoft.PowerShell.Management\Get-Process.md)
+[Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
 
-[Enter-PSHostProcess](.\Enter-PSHostProcess.md)
+[Enter-PSHostProcess](Enter-PSHostProcess.md)
 
-[Debug-Runspace](..\Microsoft.PowerShell.Utility\Debug-Runspace.md)
+[Debug-Runspace](../Microsoft.PowerShell.Utility/Debug-Runspace.md)
 
-[Enable-RunspaceDebug](..\Microsoft.PowerShell.Utility\Enable-RunspaceDebug.md)
+[Enable-RunspaceDebug](../Microsoft.PowerShell.Utility/Enable-RunspaceDebug.md)
 
-[about_Debuggers](.\About\about_Debuggers.md)
+[about_Debuggers](About/about_Debuggers.md)
 

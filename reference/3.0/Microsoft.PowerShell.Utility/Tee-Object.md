@@ -184,7 +184,7 @@ Tee-Object returns the object that it redirects.
 * Tee-Object uses Unicode encoding when it writes to files. As a result, the output might not be formatted properly in files with a different encoding. To specify the encoding, use the Out-File cmdlet.
 ## RELATED LINKS
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 
-[about_Redirection](..\Microsoft.PowerShell.Core\About\about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 

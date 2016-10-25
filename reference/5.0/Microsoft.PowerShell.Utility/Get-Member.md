@@ -431,19 +431,19 @@ For more information about the $This variable, see about_Automatic_Variables.
 
 ## RELATED LINKS
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 
-[Get-Command](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Command](../Microsoft.PowerShell.Core/Get-Command.md)
 
-[Get-Help](..\Microsoft.PowerShell.Core\Get-Help.md)
+[Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
 
-[Get-PSDrive](..\Microsoft.PowerShell.Management\Get-PSDrive.md)
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
-[about_Automatic_Variables](..\Microsoft.PowerShell.Core\About\about_Automatic_Variables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[about_Properties](..\Microsoft.PowerShell.Core\About\about_Properties.md)
+[about_Properties](../Microsoft.PowerShell.Core/About/about_Properties.md)
 
-[about_Methods](..\Microsoft.PowerShell.Core\About\about_Methods.md)
+[about_Methods](../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[about_Objects](..\Microsoft.PowerShell.Core\About\about_Objects.md)
+[about_Objects](../Microsoft.PowerShell.Core/About/about_Objects.md)
 

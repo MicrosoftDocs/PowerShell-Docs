@@ -181,13 +181,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Find-Module](.\Find-Module.md)
+[Find-Module](Find-Module.md)
 
-[Get-InstalledModule](.\Get-InstalledModule.md)
+[Get-InstalledModule](Get-InstalledModule.md)
 
-[Publish-Module](.\Publish-Module.md)
+[Publish-Module](Publish-Module.md)
 
-[Save-Module](.\Save-Module.md)
+[Save-Module](Save-Module.md)
 
-[Update-Module](.\Update-Module.md)
+[Update-Module](Update-Module.md)
 

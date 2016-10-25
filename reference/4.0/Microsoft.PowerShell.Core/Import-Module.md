@@ -933,15 +933,15 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 ## RELATED LINKS
 
-[Export-ModuleMember](.\Export-ModuleMember.md)
+[Export-ModuleMember](Export-ModuleMember.md)
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[New-Module](.\New-Module.md)
+[New-Module](New-Module.md)
 
-[Remove-Module](.\Remove-Module.md)
+[Remove-Module](Remove-Module.md)
 
 [Get-Verb](Get-Verb.md)
 
-[about_Modules](.\About\about_Modules.md)
+[about_Modules](About/about_Modules.md)
 

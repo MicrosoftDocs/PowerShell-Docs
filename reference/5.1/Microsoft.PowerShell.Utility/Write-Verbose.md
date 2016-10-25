@@ -94,17 +94,17 @@ You can pipe a string that contains the message to **Write-Verbose**.
 
 ## RELATED LINKS
 
-[Write-Debug](.\Write-Debug.md)
+[Write-Debug](Write-Debug.md)
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Host](.\Write-Host.md)
+[Write-Host](Write-Host.md)
 
-[Write-Information](.\Write-Information.md)
+[Write-Information](Write-Information.md)
 
-[Write-Output](.\Write-Output.md)
+[Write-Output](Write-Output.md)
 
-[Write-Progress](.\Write-Progress.md)
+[Write-Progress](Write-Progress.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 

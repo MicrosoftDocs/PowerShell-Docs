@@ -330,11 +330,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Alias](.\Get-Alias.md)
+[Get-Alias](Get-Alias.md)
 
-[Import-Alias](.\Import-Alias.md)
+[Import-Alias](Import-Alias.md)
 
-[New-Alias](.\New-Alias.md)
+[New-Alias](New-Alias.md)
 
-[Set-Alias](.\Set-Alias.md)
+[Set-Alias](Set-Alias.md)
 

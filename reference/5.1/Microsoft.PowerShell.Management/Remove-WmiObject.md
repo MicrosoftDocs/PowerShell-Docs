@@ -411,9 +411,9 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Get-WmiObject](.\Get-WmiObject.md)
+[Get-WmiObject](Get-WmiObject.md)
 
-[Invoke-WmiMethod](.\Invoke-WmiMethod.md)
+[Invoke-WmiMethod](Invoke-WmiMethod.md)
 
-[Set-WmiInstance](.\Set-WmiInstance.md)
+[Set-WmiInstance](Set-WmiInstance.md)
 

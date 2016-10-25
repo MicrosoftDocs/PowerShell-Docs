@@ -391,27 +391,27 @@ If the wait ends because the value of the Timeout parameter is exceeded, Wait-Jo
 * By default, **Wait-Job** returns (terminates the wait) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected. To direct **Wait-Job** to continue waiting for **Suspended** and **Disconnected** jobs, use the **Force** parameter.
 ## RELATED LINKS
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Receive-Job](.\Receive-Job.md)
+[Receive-Job](Receive-Job.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Stop-Job](.\Stop-Job.md)
+[Stop-Job](Stop-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
 [about_Jobs]()
 
-[about_Job_Details](.\About\about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](.\About\about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Remote_Variables](.\About\about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 

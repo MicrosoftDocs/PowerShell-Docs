@@ -149,11 +149,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-PSSnapin](.\Get-PSSnapin.md)
+[Get-PSSnapin](Get-PSSnapin.md)
 
-[Remove-PSSnapin](.\Remove-PSSnapin.md)
+[Remove-PSSnapin](Remove-PSSnapin.md)
 
-[about_Profiles](.\About\about_Profiles.md)
+[about_Profiles](About/about_Profiles.md)
 
-[about_PSSnapins](.\About\about_PSSnapins.md)
+[about_PSSnapins](About/about_PSSnapins.md)
 

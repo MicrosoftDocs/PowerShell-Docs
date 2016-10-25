@@ -169,13 +169,13 @@ The cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Disable-PSBreakpoint](.\Disable-PSBreakpoint.md)
+[Disable-PSBreakpoint](Disable-PSBreakpoint.md)
 
-[Enable-PSBreakpoint](.\Enable-PSBreakpoint.md)
+[Enable-PSBreakpoint](Enable-PSBreakpoint.md)
 
-[Get-PSBreakpoint](.\Get-PSBreakpoint.md)
+[Get-PSBreakpoint](Get-PSBreakpoint.md)
 
-[Get-PSCallStack](.\Get-PSCallStack.md)
+[Get-PSCallStack](Get-PSCallStack.md)
 
-[Set-PSBreakpoint](.\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](Set-PSBreakpoint.md)
 

@@ -606,7 +606,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 

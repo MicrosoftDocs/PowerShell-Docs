@@ -232,13 +232,13 @@ To roll back a different transaction, you must first commit or roll back the act
 
 ## RELATED LINKS
 
-[Get-Transaction](.\Get-Transaction.md)
+[Get-Transaction](Get-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Undo-Transaction](.\Undo-Transaction.md)
+[Undo-Transaction](Undo-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 

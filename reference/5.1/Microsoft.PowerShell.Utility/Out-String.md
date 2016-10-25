@@ -141,9 +141,9 @@ You can pipe objects to **Out-String**.
 
 ## RELATED LINKS
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-GridView](.\Out-GridView.md)
+[Out-GridView](Out-GridView.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 

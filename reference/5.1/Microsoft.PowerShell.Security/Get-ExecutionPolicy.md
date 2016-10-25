@@ -174,9 +174,9 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 
 ## RELATED LINKS
 
-[Get-AuthenticodeSignature](.\Get-AuthenticodeSignature.md)
+[Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
-[Set-AuthenticodeSignature](.\Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[Set-ExecutionPolicy](.\Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 

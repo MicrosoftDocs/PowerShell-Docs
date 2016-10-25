@@ -223,11 +223,11 @@ However, if the computer is configured for remote Windows PowerShell Windows Pow
 
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Import-Counter](.\Import-Counter.md)
+[Import-Counter](Import-Counter.md)
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 

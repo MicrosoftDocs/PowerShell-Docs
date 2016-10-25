@@ -31,11 +31,11 @@ manager: stevenka
   
  The Environment provider exposes its data store in the Env: drive. To work with environment variables, change your location to the Env: drive ("set-location env:"), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the Env: drive name in the path.  
   
- The Environment provider supports all the cmdlets that contain the Item noun except for [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md). And, it supports the [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md) and [Set-Content](..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the ItemProperty noun, and it does not support the Filter parameter in any cmdlet.  
+ The Environment provider supports all the cmdlets that contain the Item noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the ItemProperty noun, and it does not support the Filter parameter in any cmdlet.  
   
  Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign (=).  
   
- Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](..\Export-Console.md) to save the current session.  
+ Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current session.  
   
 ## CAPABILITIES  
  ShouldProcess  
@@ -177,5 +177,5 @@ clear-item -path env:USERROLE
 ```  
   
 ## See Also  
- [about_Providers](..\About\about_Providers.md)
+ [about_Providers](../About/about_Providers.md)
 

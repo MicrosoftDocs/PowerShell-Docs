@@ -323,13 +323,13 @@ For more information, see about_Providers.
 *
 ## RELATED LINKS
 
-[Convert-Path](.\Convert-Path.md)
+[Convert-Path](Convert-Path.md)
 
-[Join-Path](.\Join-Path.md)
+[Join-Path](Join-Path.md)
 
-[Resolve-Path](.\Resolve-Path.md)
+[Resolve-Path](Resolve-Path.md)
 
-[Test-Path](.\Test-Path.md)
+[Test-Path](Test-Path.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

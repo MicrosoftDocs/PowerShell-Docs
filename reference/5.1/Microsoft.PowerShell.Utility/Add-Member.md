@@ -506,11 +506,11 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 ## RELATED LINKS
 
-[Export-Clixml](.\Export-Clixml.md)
+[Export-Clixml](Export-Clixml.md)
 
-[Get-Member](.\Get-Member.md)
+[Get-Member](Get-Member.md)
 
-[Import-Clixml](.\Import-Clixml.md)
+[Import-Clixml](Import-Clixml.md)
 
-[New-Object](.\New-Object.md)
+[New-Object](New-Object.md)
 

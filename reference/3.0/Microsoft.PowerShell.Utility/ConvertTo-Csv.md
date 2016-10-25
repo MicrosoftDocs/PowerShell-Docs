@@ -192,9 +192,9 @@ It contains a comma-separated list of the names of all the properties of the fir
 * When you submit multiple objects to ConvertTo-CSV, ConvertTo-CSV orders the strings based on the properties of the first object that you submit. If the remaining objects do not have one of the specified properties, the property value of that object is null, as represented by two consecutive commas. If the remaining objects have additional properties, those property values are ignored.
 ## RELATED LINKS
 
-[ConvertFrom-Csv](.\ConvertFrom-Csv.md)
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](.\Export-Csv.md)
+[Export-Csv](Export-Csv.md)
 
-[Import-Csv](.\Import-Csv.md)
+[Import-Csv](Import-Csv.md)
 

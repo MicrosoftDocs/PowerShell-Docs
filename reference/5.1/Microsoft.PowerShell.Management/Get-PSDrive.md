@@ -225,11 +225,11 @@ This cmdlet returns objects that represent the drives in the session.
 
 ## RELATED LINKS
 
-[New-PSDrive](.\New-PSDrive.md)
+[New-PSDrive](New-PSDrive.md)
 
-[Remove-PSDrive](.\Remove-PSDrive.md)
+[Remove-PSDrive](Remove-PSDrive.md)
 
-[Get-WmiObject](.\Get-WmiObject.md)
+[Get-WmiObject](Get-WmiObject.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 

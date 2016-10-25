@@ -330,11 +330,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](..\Microsoft.PowerShell.Core\About\about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[Get-PackageSource](.\Get-PackageSource.md)
+[Get-PackageSource](Get-PackageSource.md)
 
-[Register-PackageSource](.\Register-PackageSource.md)
+[Register-PackageSource](Register-PackageSource.md)
 
-[Set-PackageSource](.\Set-PackageSource.md)
+[Set-PackageSource](Set-PackageSource.md)
 

@@ -196,17 +196,17 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Convert-Path](.\Convert-Path.md)
+[Convert-Path](Convert-Path.md)
 
-[Resolve-Path](.\Resolve-Path.md)
+[Resolve-Path](Resolve-Path.md)
 
-[Split-Path](.\Split-Path.md)
+[Split-Path](Split-Path.md)
 
-[Test-Path](.\Test-Path.md)
+[Test-Path](Test-Path.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 
-[Get-ChildItem](.\Get-ChildItem.md)
+[Get-ChildItem](Get-ChildItem.md)
 
-[Get-PSDrive](.\Get-PSDrive.md)
+[Get-PSDrive](Get-PSDrive.md)
 

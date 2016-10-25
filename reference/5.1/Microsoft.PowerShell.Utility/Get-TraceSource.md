@@ -84,7 +84,7 @@ You can pipe a string that contains the name of a trace source to **Get-TraceSou
 
 ## RELATED LINKS
 
-[Set-TraceSource](.\Set-TraceSource.md)
+[Set-TraceSource](Set-TraceSource.md)
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

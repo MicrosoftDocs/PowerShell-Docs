@@ -126,7 +126,7 @@ This cmdlet returns a file object that represents the snippet file.
 
 ## RELATED LINKS
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 
-[Import-IseSnippet](.\Import-IseSnippet.md)
+[Import-IseSnippet](Import-IseSnippet.md)
 

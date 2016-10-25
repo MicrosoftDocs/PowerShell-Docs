@@ -615,5 +615,5 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 

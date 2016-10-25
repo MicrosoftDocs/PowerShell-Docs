@@ -350,11 +350,11 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 
 ## RELATED LINKS
 
-[Export-Counter](.\Export-Counter.md)
+[Export-Counter](Export-Counter.md)
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Format-Table](..\Microsoft.PowerShell.Utility\Format-Table.md)
+[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
-[Get-Date](..\Microsoft.PowerShell.Utility\Get-Date.md)
+[Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md)
 

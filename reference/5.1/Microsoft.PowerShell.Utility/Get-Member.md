@@ -431,5 +431,5 @@ For more information about the $This variable, see about_Automatic_Variables.
 
 ## RELATED LINKS
 
-[Add-Member](.\Add-Member.md)
+[Add-Member](Add-Member.md)
 

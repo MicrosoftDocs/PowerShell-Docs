@@ -282,15 +282,15 @@ For more information, see about_Providers.
 *
 ## RELATED LINKS
 
-[Copy-ItemProperty](.\Copy-ItemProperty.md)
+[Copy-ItemProperty](Copy-ItemProperty.md)
 
-[Get-ItemProperty](.\Get-ItemProperty.md)
+[Get-ItemProperty](Get-ItemProperty.md)
 
-[Move-ItemProperty](.\Move-ItemProperty.md)
+[Move-ItemProperty](Move-ItemProperty.md)
 
-[New-ItemProperty](.\New-ItemProperty.md)
+[New-ItemProperty](New-ItemProperty.md)
 
-[Rename-ItemProperty](.\Rename-ItemProperty.md)
+[Rename-ItemProperty](Rename-ItemProperty.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

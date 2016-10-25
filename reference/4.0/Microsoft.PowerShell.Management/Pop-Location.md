@@ -179,11 +179,11 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Get-Location](.\Get-Location.md)
+[Get-Location](Get-Location.md)
 
-[Push-Location](.\Push-Location.md)
+[Push-Location](Push-Location.md)
 
-[Set-Location](.\Set-Location.md)
+[Set-Location](Set-Location.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

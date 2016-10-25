@@ -502,7 +502,7 @@ If you use the Quiet parameter, the output is a Boolean value indicating whether
 
 ## RELATED LINKS
 
-[about_Comparison_Operators](..\Microsoft.PowerShell.Core\About\about_Comparison_Operators.md)
+[about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md)
 
-[about_Regular_Expressions](..\Microsoft.PowerShell.Core\About\about_Regular_Expressions.md)
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md)
 

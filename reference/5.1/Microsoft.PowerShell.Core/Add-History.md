@@ -163,9 +163,9 @@ If you intend to pass the objects back to **Add-History**, do not use the *NoTyp
 
 ## RELATED LINKS
 
-[Clear-History](.\Clear-History.md)
+[Clear-History](Clear-History.md)
 
-[Get-History](.\Get-History.md)
+[Get-History](Get-History.md)
 
-[Invoke-History](.\Invoke-History.md)
+[Invoke-History](Invoke-History.md)
 

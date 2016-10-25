@@ -471,13 +471,13 @@ For example, if the session configuration includes a **PSWorkflowExecutionOption
 Otherwise, it does not.
 ## RELATED LINKS
 
-[New-PSWorkflowSession](.\New-PSWorkflowSession.md)
+[New-PSWorkflowSession](New-PSWorkflowSession.md)
 
-[about_Workflows](.\About\about_Workflows.md)
+[about_Workflows](About/about_Workflows.md)
 
-[about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
+[about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](.\PSWorkflow.md)
+[PSWorkflow Module](PSWorkflow.md)
 
-[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
+[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
 

@@ -176,7 +176,7 @@ The cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Get-FormatData](.\Get-FormatData.md)
+[Get-FormatData](Get-FormatData.md)
 
-[Export-FormatData](.\Export-FormatData.md)
+[Export-FormatData](Export-FormatData.md)
 

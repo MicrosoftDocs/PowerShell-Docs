@@ -385,13 +385,13 @@ It contains a comma-separated list of the names of all the properties of the fir
 
 ## RELATED LINKS
 
-[ConvertFrom-Csv](.\ConvertFrom-Csv.md)
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Import-Csv](.\Import-Csv.md)
+[Import-Csv](Import-Csv.md)
 
-[Select-Object](.\Select-Object.md)
+[Select-Object](Select-Object.md)
 

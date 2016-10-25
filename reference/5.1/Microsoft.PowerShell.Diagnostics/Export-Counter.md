@@ -223,7 +223,7 @@ However, if the computer is configured for remote Windows PowerShell Windows Pow
 
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Import-Counter](.\Import-Counter.md)
+[Import-Counter](Import-Counter.md)
 

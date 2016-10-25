@@ -138,13 +138,13 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Join-Path](.\Join-Path.md)
+[Join-Path](Join-Path.md)
 
-[Resolve-Path](.\Resolve-Path.md)
+[Resolve-Path](Resolve-Path.md)
 
-[Split-Path](.\Split-Path.md)
+[Split-Path](Split-Path.md)
 
-[Test-Path](.\Test-Path.md)
+[Test-Path](Test-Path.md)
 
-[Get-PSProvider](.\Get-PSProvider.md)
+[Get-PSProvider](Get-PSProvider.md)
 

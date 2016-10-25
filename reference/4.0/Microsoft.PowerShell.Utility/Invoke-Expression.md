@@ -138,5 +138,5 @@ In general, it is best to design your script with predefined input options, rath
 
 ## RELATED LINKS
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 

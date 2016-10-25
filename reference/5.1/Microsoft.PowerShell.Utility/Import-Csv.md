@@ -389,9 +389,9 @@ This cmdlet returns the objects described by the content in the CSV file.
 
 ## RELATED LINKS
 
-[ConvertFrom-Csv](.\ConvertFrom-Csv.md)
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[Export-Csv](.\Export-Csv.md)
+[Export-Csv](Export-Csv.md)
 

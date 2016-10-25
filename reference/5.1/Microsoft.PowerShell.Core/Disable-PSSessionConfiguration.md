@@ -221,17 +221,17 @@ This cmdlet does not return any objects.
 
 ## RELATED LINKS
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 

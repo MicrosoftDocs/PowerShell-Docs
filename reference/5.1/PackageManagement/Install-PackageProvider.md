@@ -359,9 +359,9 @@ Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped 
 
 ## RELATED LINKS
 
-[Find-PackageProvider](.\Find-PackageProvider.md)
+[Find-PackageProvider](Find-PackageProvider.md)
 
-[Get-PackageProvider](.\Get-PackageProvider.md)
+[Get-PackageProvider](Get-PackageProvider.md)
 
-[Import-PackageProvider](.\Import-PackageProvider.md)
+[Import-PackageProvider](Import-PackageProvider.md)
 

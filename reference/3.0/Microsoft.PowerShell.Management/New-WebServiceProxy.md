@@ -221,5 +221,5 @@ The default is generated from the input Uniform Resource Identifier (URI).
 *
 ## RELATED LINKS
 
-[New-Service](.\New-Service.md)
+[New-Service](New-Service.md)
 

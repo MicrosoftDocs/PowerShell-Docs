@@ -126,7 +126,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 
-[Import-IseSnippet](.\Import-IseSnippet.md)
+[Import-IseSnippet](Import-IseSnippet.md)
 

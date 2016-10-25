@@ -70,13 +70,13 @@ You can pipe any object to **Out-Null**.
 If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 ## RELATED LINKS
 
-[Out-Default](.\Out-Default.md)
+[Out-Default](Out-Default.md)
 
-[Out-File](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-File](../Microsoft.PowerShell.Utility/Out-File.md)
 
-[Out-Host](.\Out-Host.md)
+[Out-Host](Out-Host.md)
 
-[Out-Printer](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-Printer](../Microsoft.PowerShell.Utility/Out-File.md)
 
-[Out-String](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-String](../Microsoft.PowerShell.Utility/Out-File.md)
 

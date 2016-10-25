@@ -149,15 +149,15 @@ The value of the *As* parameter determines the type of object that **ConvertTo-X
 
 ## RELATED LINKS
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[ConvertTo-Html](.\ConvertTo-Html.md)
+[ConvertTo-Html](ConvertTo-Html.md)
 
-[Export-Clixml](.\Export-Clixml.md)
+[Export-Clixml](Export-Clixml.md)
 
-[Get-Date](.\Get-Date.md)
+[Get-Date](Get-Date.md)
 
-[Get-Process](..\Microsoft.PowerShell.Management\Get-Process.md)
+[Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
 
-[Import-Clixml](.\Import-Clixml.md)
+[Import-Clixml](Import-Clixml.md)
 

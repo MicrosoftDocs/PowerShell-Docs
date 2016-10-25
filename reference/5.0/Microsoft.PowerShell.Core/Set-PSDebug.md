@@ -184,13 +184,13 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Debug-Process](..\Microsoft.PowerShell.Management\Debug-Process.md)
+[Debug-Process](../Microsoft.PowerShell.Management/Debug-Process.md)
 
-[Set-PSBreakpoint](..\Microsoft.PowerShell.Utility\Set-PSBreakpoint.md)
+[Set-PSBreakpoint](../Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
 
-[Set-StrictMode](.\Set-StrictMode.md)
+[Set-StrictMode](Set-StrictMode.md)
 
-[Write-Debug](..\Microsoft.PowerShell.Utility\Write-Debug.md)
+[Write-Debug](../Microsoft.PowerShell.Utility/Write-Debug.md)
 
-[about_Debuggers](.\About\about_Debuggers.md)
+[about_Debuggers](About/about_Debuggers.md)
 

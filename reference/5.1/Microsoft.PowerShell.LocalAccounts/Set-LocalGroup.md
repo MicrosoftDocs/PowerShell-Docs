@@ -168,11 +168,11 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-LocalGroup](.\Get-LocalGroup.md)
+[Get-LocalGroup](Get-LocalGroup.md)
 
-[New-LocalGroup](.\New-LocalGroup.md)
+[New-LocalGroup](New-LocalGroup.md)
 
-[Remove-LocalGroup](.\Remove-LocalGroup.md)
+[Remove-LocalGroup](Remove-LocalGroup.md)
 
-[Rename-LocalGroup](.\Rename-LocalGroup.md)
+[Rename-LocalGroup](Rename-LocalGroup.md)
 

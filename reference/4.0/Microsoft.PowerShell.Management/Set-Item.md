@@ -313,21 +313,21 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Clear-Item](.\Clear-Item.md)
+[Clear-Item](Clear-Item.md)
 
-[Copy-Item](.\Copy-Item.md)
+[Copy-Item](Copy-Item.md)
 
-[Get-Item](.\Get-Item.md)
+[Get-Item](Get-Item.md)
 
-[Invoke-Item](.\Invoke-Item.md)
+[Invoke-Item](Invoke-Item.md)
 
-[Move-Item](.\Move-Item.md)
+[Move-Item](Move-Item.md)
 
-[New-Item](.\New-Item.md)
+[New-Item](New-Item.md)
 
-[Remove-Item](.\Remove-Item.md)
+[Remove-Item](Remove-Item.md)
 
-[Rename-Item](.\Rename-Item.md)
+[Rename-Item](Rename-Item.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

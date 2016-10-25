@@ -214,7 +214,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[Import-Module](.\Import-Module.md)
+[Import-Module](Import-Module.md)
 

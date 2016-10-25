@@ -130,5 +130,5 @@ For example, \<parameter-name\> \<value1\>, \<value2\>.
 
 ## RELATED LINKS
 
-[Trace-Command](.\Trace-Command.md)
+[Trace-Command](Trace-Command.md)
 

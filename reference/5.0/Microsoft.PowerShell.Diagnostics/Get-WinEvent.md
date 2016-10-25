@@ -615,19 +615,19 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Get-EventLog](..\Microsoft.PowerShell.Management\Get-EventLog.md)
+[Get-EventLog](../Microsoft.PowerShell.Management/Get-EventLog.md)
 
-[about_Eventlogs](..\Microsoft.PowerShell.Core\About\about_Eventlogs.md)
+[about_Eventlogs](../Microsoft.PowerShell.Core/About/about_Eventlogs.md)
 
-[ForEach-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
+[ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
-[Get-Date](..\Microsoft.PowerShell.Utility\Get-Date.md)
+[Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md)
 
-[Select-Object](..\Microsoft.PowerShell.Utility\Select-Object.md)
+[Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Sort-Object](..\Microsoft.PowerShell.Utility\Sort-Object.md)
+[Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
 

@@ -382,11 +382,11 @@ The output type depends upon the content that it gets.
 
 ## RELATED LINKS
 
-[Add-Content](.\Add-Content.md)
+[Add-Content](Add-Content.md)
 
-[Clear-Content](.\Clear-Content.md)
+[Clear-Content](Clear-Content.md)
 
-[Set-Content](.\Set-Content.md)
+[Set-Content](Set-Content.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

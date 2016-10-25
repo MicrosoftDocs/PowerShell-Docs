@@ -184,7 +184,7 @@ This cmdlet does not generate output.
 
 ## RELATED LINKS
 
-[Get-IseSnippet](.\Get-IseSnippet.md)
+[Get-IseSnippet](Get-IseSnippet.md)
 
-[New-IseSnippet](.\New-IseSnippet.md)
+[New-IseSnippet](New-IseSnippet.md)
 

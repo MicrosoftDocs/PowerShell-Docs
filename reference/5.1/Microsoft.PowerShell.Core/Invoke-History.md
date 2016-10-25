@@ -149,9 +149,9 @@ For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=
 
 ## RELATED LINKS
 
-[Add-History](.\Add-History.md)
+[Add-History](Add-History.md)
 
-[Clear-History](.\Clear-History.md)
+[Clear-History](Clear-History.md)
 
-[Get-History](.\Get-History.md)
+[Get-History](Get-History.md)
 

@@ -108,5 +108,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Debug-Runspace](.\Debug-Runspace.md)
+[Debug-Runspace](Debug-Runspace.md)
 

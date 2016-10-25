@@ -373,29 +373,29 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Receive-Job](.\Receive-Job.md)
+[Receive-Job](Receive-Job.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
-[Wait-Job](.\Wait-Job.md)
+[Wait-Job](Wait-Job.md)
 
-[about_Job_Details](.\About\about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](.\About\about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Remote_Variables](.\About\about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Jobs](.\About\about_Jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
 [about_Scopes](about_Scopes.md)
 

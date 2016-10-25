@@ -163,7 +163,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Disable-RunspaceDebug](.\Disable-RunspaceDebug.md)
+[Disable-RunspaceDebug](Disable-RunspaceDebug.md)
 
-[Enable-RunspaceDebug](.\Enable-RunspaceDebug.md)
+[Enable-RunspaceDebug](Enable-RunspaceDebug.md)
 

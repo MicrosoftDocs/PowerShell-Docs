@@ -294,15 +294,15 @@ If you pipe the output of Out-File to Get-Member, Get-Member reports that no obj
 
 ## RELATED LINKS
 
-[Out-Default](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Default](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Null](..\Microsoft.PowerShell.Core\Out-Host.md)
+[Out-Null](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 
-[Out-String](.\Out-String.md)
+[Out-String](Out-String.md)
 
-[Tee-Object](.\Tee-Object.md)
+[Tee-Object](Tee-Object.md)
 

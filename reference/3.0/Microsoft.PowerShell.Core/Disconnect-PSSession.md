@@ -459,31 +459,31 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
   For more information about the values of the **Availability** property of sessions, see RunspaceAvailability Enumeration at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx.
 ## RELATED LINKS
 
-[Connect-PSSession](.\Connect-PSSession.md)
+[Connect-PSSession](Connect-PSSession.md)
 
-[Enter-PSSession](.\Enter-PSSession.md)
+[Enter-PSSession](Enter-PSSession.md)
 
-[Exit-PSSession](.\Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
-[Get-PSSession](.\Get-PSSession.md)
+[Get-PSSession](Get-PSSession.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[New-PSSession](.\New-PSSession.md)
+[New-PSSession](New-PSSession.md)
 
-[New-PSSessionOption](.\New-PSSessionOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
-[New-PSTransportOption](.\New-PSTransportOption.md)
+[New-PSTransportOption](New-PSTransportOption.md)
 
-[Receive-PSSession](.\Receive-PSSession.md)
+[Receive-PSSession](Receive-PSSession.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Remove-PSSession](.\Remove-PSSession.md)
+[Remove-PSSession](Remove-PSSession.md)
 
-[about_PSSessions](.\About\about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](.\About\about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](.\About\about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 

@@ -94,9 +94,9 @@ You can pipe a string that contains the message to **Write-Verbose**.
 
 ## RELATED LINKS
 
-[Write-Error](.\Write-Error.md)
+[Write-Error](Write-Error.md)
 
-[Write-Warning](.\Write-Warning.md)
+[Write-Warning](Write-Warning.md)
 
-[about_Preference_Variables](..\Microsoft.PowerShell.Core\About\about_Preference_Variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

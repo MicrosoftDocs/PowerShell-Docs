@@ -215,9 +215,9 @@ To make the unnamed stack the current stack, use the *StackName* parameter of **
 
 ## RELATED LINKS
 
-[Get-Location](.\Get-Location.md)
+[Get-Location](Get-Location.md)
 
-[Pop-Location](.\Pop-Location.md)
+[Pop-Location](Pop-Location.md)
 
-[Push-Location](.\Push-Location.md)
+[Push-Location](Push-Location.md)
 

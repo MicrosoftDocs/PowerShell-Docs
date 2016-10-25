@@ -177,9 +177,9 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[about_Execution_Policies](..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
-[Get-Item](..\Microsoft.PowerShell.Management\Get-Item.md)
+[Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)
 
-[FileSystem Provider](..\Microsoft.PowerShell.Core\Providers\FileSystem-Provider.md)
+[FileSystem Provider](../Microsoft.PowerShell.Core/Providers/FileSystem-Provider.md)
 

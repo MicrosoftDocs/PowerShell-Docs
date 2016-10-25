@@ -144,9 +144,9 @@ You can pipe type names to **Get-TypeData**.
 * **Get-TypeData** gets only the extended type data in the current session. It does not get extended type data that is on the computer, but has not been added to the current session, such as extended types that are defined in modules that have not been imported into the current session.
 ## RELATED LINKS
 
-[about_Types.ps1xml](..\Microsoft.PowerShell.Core\About\about_Types.ps1xml.md)
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 
-[Remove-TypeData](.\Remove-TypeData.md)
+[Remove-TypeData](Remove-TypeData.md)
 
-[Update-TypeData](.\Update-TypeData.md)
+[Update-TypeData](Update-TypeData.md)
 

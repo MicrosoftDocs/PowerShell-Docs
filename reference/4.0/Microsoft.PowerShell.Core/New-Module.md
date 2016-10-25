@@ -351,13 +351,13 @@ If you use the ReturnResult parameter, it returns the result of evaluating the s
 
 ## RELATED LINKS
 
-[Export-ModuleMember](.\Export-ModuleMember.md)
+[Export-ModuleMember](Export-ModuleMember.md)
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[Import-Module](.\Import-Module.md)
+[Import-Module](Import-Module.md)
 
-[Remove-Module](.\Remove-Module.md)
+[Remove-Module](Remove-Module.md)
 
-[about_Modules](.\About\about_Modules.md)
+[about_Modules](About/about_Modules.md)
 

@@ -294,13 +294,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
 
-[Get-DscConfiguration](.\Get-DscConfiguration.md)
+[Get-DscConfiguration](Get-DscConfiguration.md)
 
-[Restore-DscConfiguration](.\Restore-DscConfiguration.md)
+[Restore-DscConfiguration](Restore-DscConfiguration.md)
 
-[Stop-DscConfiguration](.\Stop-DscConfiguration.md)
+[Stop-DscConfiguration](Stop-DscConfiguration.md)
 
-[Test-DscConfiguration](.\Test-DscConfiguration.md)
+[Test-DscConfiguration](Test-DscConfiguration.md)
 
-[Update-DscConfiguration](.\Update-DscConfiguration.md)
+[Update-DscConfiguration](Update-DscConfiguration.md)
 

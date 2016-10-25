@@ -340,13 +340,13 @@ Virtual memory includes storage in the paging files on disk.
 * You can also use the built-in alternate views of the processes available with Format-Table, such as "StartTime" and "Priority", and you can design your own views. For more information, see T:Microsoft.PowerShell.Commands.Format-Table.
 ## RELATED LINKS
 
-[Debug-Process](.\Debug-Process.md)
+[Debug-Process](Debug-Process.md)
 
-[Get-Process](.\Get-Process.md)
+[Get-Process](Get-Process.md)
 
-[Start-Process](.\Start-Process.md)
+[Start-Process](Start-Process.md)
 
-[Stop-Process](.\Stop-Process.md)
+[Stop-Process](Stop-Process.md)
 
-[Wait-Process](.\Wait-Process.md)
+[Wait-Process](Wait-Process.md)
 

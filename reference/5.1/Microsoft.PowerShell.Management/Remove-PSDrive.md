@@ -216,7 +216,7 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[Get-PSDrive](.\Get-PSDrive.md)
+[Get-PSDrive](Get-PSDrive.md)
 
-[New-PSDrive](.\New-PSDrive.md)
+[New-PSDrive](New-PSDrive.md)
 

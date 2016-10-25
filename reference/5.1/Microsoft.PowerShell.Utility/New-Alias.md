@@ -240,11 +240,11 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Export-Alias](.\Export-Alias.md)
+[Export-Alias](Export-Alias.md)
 
-[Get-Alias](.\Get-Alias.md)
+[Get-Alias](Get-Alias.md)
 
-[Import-Alias](.\Import-Alias.md)
+[Import-Alias](Import-Alias.md)
 
-[Set-Alias](.\Set-Alias.md)
+[Set-Alias](Set-Alias.md)
 

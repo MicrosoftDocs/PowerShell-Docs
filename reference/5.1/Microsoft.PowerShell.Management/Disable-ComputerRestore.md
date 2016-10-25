@@ -132,13 +132,13 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 
 ## RELATED LINKS
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Enable-ComputerRestore](.\Enable-ComputerRestore.md)
+[Enable-ComputerRestore](Enable-ComputerRestore.md)
 
-[Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
+[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Restore-Computer](.\Restore-Computer.md)
+[Restore-Computer](Restore-Computer.md)
 

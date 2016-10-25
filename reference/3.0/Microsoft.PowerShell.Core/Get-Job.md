@@ -580,29 +580,29 @@ You cannot pipe input to this cmdlet.
   - **PSWorkflowJob**: Job started by using the **AsJob** common parameter of workflows.
 ## RELATED LINKS
 
-[Invoke-Command](.\Invoke-Command.md)
+[Invoke-Command](Invoke-Command.md)
 
-[Get-Job](.\Get-Job.md)
+[Get-Job](Get-Job.md)
 
-[Receive-Job](.\Receive-Job.md)
+[Receive-Job](Receive-Job.md)
 
-[Remove-Job](.\Remove-Job.md)
+[Remove-Job](Remove-Job.md)
 
-[Resume-Job](.\Resume-Job.md)
+[Resume-Job](Resume-Job.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Stop-Job](.\Stop-Job.md)
+[Stop-Job](Stop-Job.md)
 
-[Suspend-Job](.\Suspend-Job.md)
+[Suspend-Job](Suspend-Job.md)
 
-[Wait-Job](.\Wait-Job.md)
+[Wait-Job](Wait-Job.md)
 
-[about_Jobs](.\About\about_Jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
-[about_Job_Details](.\About\about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](.\About\about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Scheduled_Jobs](..\PSScheduledJob\About\about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
 

@@ -170,7 +170,7 @@ This cmdlet returns objects that represent the hotfixes on the computer.
 
 [Win32_QuickFixEngineering](http://go.microsoft.com/fwlink/?LinkID=145071)
 
-[Get-ComputerRestorePoint](.\Get-ComputerRestorePoint.md)
+[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
-[Add-Content](.\Add-Content.md)
+[Add-Content](Add-Content.md)
 

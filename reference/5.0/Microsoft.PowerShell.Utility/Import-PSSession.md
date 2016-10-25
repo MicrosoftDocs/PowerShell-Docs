@@ -528,13 +528,13 @@ To create a permanent module on disk, use the Export-PSSession cmdlet.
 
 ## RELATED LINKS
 
-[Export-PSSession](.\Export-PSSession.md)
+[Export-PSSession](Export-PSSession.md)
 
-[New-PSSession](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[about_Command_Precedence](..\Microsoft.PowerShell.Core\About\about_Command_Precedence.md)
+[about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 
-[about_PSSessions](..\Microsoft.PowerShell.Core\About\about_PSSessions.md)
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
-[about_Jobs](..\Microsoft.PowerShell.Core\About\about_Jobs.md)
+[about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
 

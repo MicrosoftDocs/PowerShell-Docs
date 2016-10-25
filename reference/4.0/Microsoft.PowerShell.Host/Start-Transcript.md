@@ -237,5 +237,5 @@ For more information, see about_Profiles.
 
 ## RELATED LINKS
 
-[Stop-Transcript](.\Stop-Transcript.md)
+[Stop-Transcript](Stop-Transcript.md)
 

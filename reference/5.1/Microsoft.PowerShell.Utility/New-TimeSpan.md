@@ -206,7 +206,7 @@ You can pipe a **DateTime** object that represents that start time to **New-Time
 
 ## RELATED LINKS
 
-[Get-Date](.\Get-Date.md)
+[Get-Date](Get-Date.md)
 
-[Set-Date](.\Set-Date.md)
+[Set-Date](Set-Date.md)
 

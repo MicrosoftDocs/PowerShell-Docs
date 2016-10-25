@@ -142,9 +142,9 @@ This cmdlet returns a history object for each history item that it gets.
 
 ## RELATED LINKS
 
-[Add-History](.\Add-History.md)
+[Add-History](Add-History.md)
 
-[Clear-History](.\Clear-History.md)
+[Clear-History](Clear-History.md)
 
-[Invoke-History](.\Invoke-History.md)
+[Invoke-History](Invoke-History.md)
 

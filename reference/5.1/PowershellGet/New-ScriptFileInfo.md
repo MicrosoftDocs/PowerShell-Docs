@@ -478,7 +478,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Test-ScriptFileInfo](.\Test-ScriptFileInfo.md)
+[Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 
-[Update-ScriptFileInfo](.\Update-ScriptFileInfo.md)
+[Update-ScriptFileInfo](Update-ScriptFileInfo.md)
 

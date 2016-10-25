@@ -240,17 +240,17 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-Service](.\Get-Service.md)
+[Get-Service](Get-Service.md)
 
-[New-Service](.\New-Service.md)
+[New-Service](New-Service.md)
 
-[Resume-Service](.\Resume-Service.md)
+[Resume-Service](Resume-Service.md)
 
-[Set-Service](.\Set-Service.md)
+[Set-Service](Set-Service.md)
 
-[Start-Service](.\Start-Service.md)
+[Start-Service](Start-Service.md)
 
-[Stop-Service](.\Stop-Service.md)
+[Stop-Service](Stop-Service.md)
 
-[Suspend-Service](.\Suspend-Service.md)
+[Suspend-Service](Suspend-Service.md)
 

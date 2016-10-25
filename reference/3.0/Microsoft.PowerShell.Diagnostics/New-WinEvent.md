@@ -119,5 +119,5 @@ This cmdlet does to generate any output.
 * For information about Event Tracing for Windows, see "Improve Debugging And Performance Tuning With ETW" in MSDN Magazine at http://msdn.microsoft.com/magazine/cc163437.aspx.
 ## RELATED LINKS
 
-[Get-WinEvent](.\Get-WinEvent.md)
+[Get-WinEvent](Get-WinEvent.md)
 

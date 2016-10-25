@@ -448,11 +448,11 @@ If the command does not import formatting data, any formatting files that are cr
 
 ## RELATED LINKS
 
-[Import-Module](..\Microsoft.PowerShell.Core\Import-Module.md)
+[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
 
-[Import-PSSession](.\Import-PSSession.md)
+[Import-PSSession](Import-PSSession.md)
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[New-PSSession](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 

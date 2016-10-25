@@ -420,7 +420,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-ScriptFileInfo](.\New-ScriptFileInfo.md)
+[New-ScriptFileInfo](New-ScriptFileInfo.md)
 
-[Test-ScriptFileInfo](.\Test-ScriptFileInfo.md)
+[Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 

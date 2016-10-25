@@ -196,13 +196,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Find-Script](.\Find-Script.md)
+[Find-Script](Find-Script.md)
 
-[Install-Script](.\Install-Script.md)
+[Install-Script](Install-Script.md)
 
-[Publish-Script](.\Publish-Script.md)
+[Publish-Script](Publish-Script.md)
 
-[Save-Script](.\Save-Script.md)
+[Save-Script](Save-Script.md)
 
-[Uninstall-Script](.\Uninstall-Script.md)
+[Uninstall-Script](Uninstall-Script.md)
 

@@ -75,7 +75,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Out-Default](.\Out-Default.md)
+[Out-Default](Out-Default.md)
 
-[Out-Host](.\Out-Host.md)
+[Out-Host](Out-Host.md)
 

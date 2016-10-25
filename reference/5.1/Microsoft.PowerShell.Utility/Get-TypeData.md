@@ -159,7 +159,7 @@ You can pipe type names to **Get-TypeData**.
 
 ## RELATED LINKS
 
-[Remove-TypeData](.\Remove-TypeData.md)
+[Remove-TypeData](Remove-TypeData.md)
 
-[Update-TypeData](.\Update-TypeData.md)
+[Update-TypeData](Update-TypeData.md)
 

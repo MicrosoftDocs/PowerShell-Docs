@@ -166,11 +166,11 @@ To use a transaction again, you must start a new transaction.
 
 ## RELATED LINKS
 
-[Complete-Transaction](.\Complete-Transaction.md)
+[Complete-Transaction](Complete-Transaction.md)
 
-[Get-Transaction](.\Get-Transaction.md)
+[Get-Transaction](Get-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 

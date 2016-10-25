@@ -101,11 +101,11 @@ You cannot pipe objects to this cmdlet.
 
 ## RELATED LINKS
 
-[Remove-PSReadlineKeyHandler](.\Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
 
-[Get-PSReadlineKeyHandler](.\Get-PSReadlineKeyHandler.md)
+[Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)
 
-[Set-PSReadlineOption](.\Set-PSReadlineOption.md)
+[Set-PSReadlineOption](Set-PSReadlineOption.md)
 
-[Set-PSReadlineKeyHandler](.\Set-PSReadlineKeyHandler.md)
+[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
 

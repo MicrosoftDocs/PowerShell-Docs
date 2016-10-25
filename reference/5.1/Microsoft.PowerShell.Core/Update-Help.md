@@ -470,11 +470,11 @@ To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-nam
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
-[Get-Help](.\Get-Help.md)
+[Get-Help](Get-Help.md)
 
-[Get-Module](.\Get-Module.md)
+[Get-Module](Get-Module.md)
 
-[Start-Job](.\Start-Job.md)
+[Start-Job](Start-Job.md)
 
-[Save-Help](.\Save-Help.md)
+[Save-Help](Save-Help.md)
 

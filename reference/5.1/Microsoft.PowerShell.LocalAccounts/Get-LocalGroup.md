@@ -105,11 +105,11 @@ This cmdlet returns a local group.
 
 ## RELATED LINKS
 
-[New-LocalGroup](.\New-LocalGroup.md)
+[New-LocalGroup](New-LocalGroup.md)
 
-[Remove-LocalGroup](.\Remove-LocalGroup.md)
+[Remove-LocalGroup](Remove-LocalGroup.md)
 
-[Rename-LocalGroup](.\Rename-LocalGroup.md)
+[Rename-LocalGroup](Rename-LocalGroup.md)
 
-[Set-LocalGroup](.\Set-LocalGroup.md)
+[Set-LocalGroup](Set-LocalGroup.md)
 

@@ -229,7 +229,7 @@ It generates a file and saves it in the specified path.
 
 ## RELATED LINKS
 
-[Get-FormatData](.\Get-FormatData.md)
+[Get-FormatData](Get-FormatData.md)
 
-[Update-FormatData](.\Update-FormatData.md)
+[Update-FormatData](Update-FormatData.md)
 

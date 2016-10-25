@@ -185,11 +185,11 @@ This cmdlet does not generate any output.
 *
 ## RELATED LINKS
 
-[Add-History](.\Add-History.md)
+[Add-History](Add-History.md)
 
-[Get-History](.\Get-History.md)
+[Get-History](Get-History.md)
 
-[Invoke-History](.\Invoke-History.md)
+[Invoke-History](Invoke-History.md)
 
-[about_History](.\About\about_History.md)
+[about_History](About/about_History.md)
 

@@ -267,13 +267,13 @@ Before using **Format-Custom** to group the objects, use Sort-Object to sort the
 
 ## RELATED LINKS
 
-[Format-Hex](.\Format-Hex.md)
+[Format-Hex](Format-Hex.md)
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 
-[Format-Table](.\Format-Table.md)
+[Format-Table](Format-Table.md)
 
-[Format-Wide](.\Format-Wide.md)
+[Format-Wide](Format-Wide.md)
 
-[Get-Process](..\Microsoft.PowerShell.Management\Get-Process.md)
+[Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
 

@@ -360,9 +360,9 @@ Format-Table returns format objects that represent the table.
 * The alternate views for the View parameter must use the table format. If it does not, the command fails. If the alternate view is a list, use the T:Microsoft.PowerShell.Commands.Format-List cmdlet. If the alternate view is neither a list nor a table, use the T:Microsoft.PowerShell.Commands.Format-Custom cmdlet.
 ## RELATED LINKS
 
-[Format-Custom](.\Format-Custom.md)
+[Format-Custom](Format-Custom.md)
 
-[Format-List](.\Format-List.md)
+[Format-List](Format-List.md)
 
-[Format-Wide](.\Format-Wide.md)
+[Format-Wide](Format-Wide.md)
 

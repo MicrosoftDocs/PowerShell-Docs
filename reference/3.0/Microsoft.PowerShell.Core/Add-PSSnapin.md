@@ -138,13 +138,13 @@ Otherwise, this cmdlet does not generate any output.
 * Before adding a snap-in, Add-PSSnapin checks the version of the snap-in to verify that it is compatible with the current version of Windows PowerShell. If the snap-in fails the version check, Windows PowerShell reports an error.
 ## RELATED LINKS
 
-[Get-PSSnapin](.\Get-PSSnapin.md)
+[Get-PSSnapin](Get-PSSnapin.md)
 
-[Remove-PSSnapin](.\Remove-PSSnapin.md)
+[Remove-PSSnapin](Remove-PSSnapin.md)
 
 [about_Profiles](about_Profiles.md)
 
-[about_PSSnapins](.\About\about_PSSnapins.md)
+[about_PSSnapins](About/about_PSSnapins.md)
 
 [about_Pssnapins]()
 

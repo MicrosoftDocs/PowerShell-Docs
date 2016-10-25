@@ -560,15 +560,15 @@ Represents workflows.
 
 ## RELATED LINKS
 
-[Export-PSSession](..\Microsoft.PowerShell.Utility\Export-PSSession.md)
+[Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-[Get-Help](.\Get-Help.md)
+[Get-Help](Get-Help.md)
 
-[Get-Member](..\Microsoft.PowerShell.Utility\Get-Member.md)
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Get-PSDrive](..\Microsoft.PowerShell.Management\Get-PSDrive.md)
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
-[Import-PSSession](..\Microsoft.PowerShell.Utility\Import-PSSession.md)
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
-[about_Command_Precedence](.\About\about_Command_Precedence.md)
+[about_Command_Precedence](About/about_Command_Precedence.md)
 

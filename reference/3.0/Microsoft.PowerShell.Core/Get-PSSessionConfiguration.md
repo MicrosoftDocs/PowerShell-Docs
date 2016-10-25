@@ -360,27 +360,27 @@ You cannot pipe input to this cmdlet.
 * You can use commands in the WSMan: drive to change the properties of session configurations. However, you cannot use the WSMan: drive in Windows PowerShell 2.0 to change session configuration properties that are introduced in Windows PowerShell 3.0, such as **OutputBufferingMode**. Windows PowerShell 2.0 commands do not generate an error, but they are ineffective. To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive in Windows PowerShell 3.0.
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](.\Disable-PSSessionConfiguration.md)
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-[Enable-PSSessionConfiguration](.\Enable-PSSessionConfiguration.md)
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-[Get-PSSessionConfiguration](.\Get-PSSessionConfiguration.md)
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-[New-PSSessionConfigurationFile](.\New-PSSessionConfigurationFile.md)
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
 [New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
 
-[Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-[Set-PSSessionConfiguration](.\Set-PSSessionConfiguration.md)
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-[Test-PSSessionConfigurationFile](.\Test-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
-[Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](WSMan-Provider.md)
 
-[about_Session_Configurations](.\About\about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
-[about_Session_Configuration_Files](.\About\about_Session_Configuration_Files.md)
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
 

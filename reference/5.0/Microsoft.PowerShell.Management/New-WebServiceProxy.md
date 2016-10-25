@@ -232,5 +232,5 @@ The default is generated from the input URI.
 
 ## RELATED LINKS
 
-[New-Service](.\New-Service.md)
+[New-Service](New-Service.md)
 

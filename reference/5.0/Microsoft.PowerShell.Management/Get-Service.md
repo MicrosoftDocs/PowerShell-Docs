@@ -385,17 +385,17 @@ The sort is based on the integer value, not the name.
 
 ## RELATED LINKS
 
-[New-Service](.\New-Service.md)
+[New-Service](New-Service.md)
 
-[Restart-Service](.\Restart-Service.md)
+[Restart-Service](Restart-Service.md)
 
-[Resume-Service](.\Resume-Service.md)
+[Resume-Service](Resume-Service.md)
 
-[Set-Service](.\Set-Service.md)
+[Set-Service](Set-Service.md)
 
-[Start-Service](.\Start-Service.md)
+[Start-Service](Start-Service.md)
 
-[Stop-Service](.\Stop-Service.md)
+[Stop-Service](Stop-Service.md)
 
-[Suspend-Service](.\Suspend-Service.md)
+[Suspend-Service](Suspend-Service.md)
 

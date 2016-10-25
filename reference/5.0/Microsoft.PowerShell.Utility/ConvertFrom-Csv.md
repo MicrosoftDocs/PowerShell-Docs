@@ -241,9 +241,9 @@ This cmdlet does not export the methods of the object.
 
 ## RELATED LINKS
 
-[ConvertTo-Csv](.\ConvertTo-Csv.md)
+[ConvertTo-Csv](ConvertTo-Csv.md)
 
-[Export-Csv](.\Export-Csv.md)
+[Export-Csv](Export-Csv.md)
 
-[Import-Csv](.\Import-Csv.md)
+[Import-Csv](Import-Csv.md)
 

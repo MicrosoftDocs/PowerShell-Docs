@@ -592,9 +592,9 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 * The **Get-WinEvent** and  Get-EventLog cmdlets are not supported in Windows Preinstallation Environment (Windows PE).
 ## RELATED LINKS
 
-[Get-Counter](.\Get-Counter.md)
+[Get-Counter](Get-Counter.md)
 
-[Get-EventLog](..\Microsoft.PowerShell.Management\Get-EventLog.md)
+[Get-EventLog](../Microsoft.PowerShell.Management/Get-EventLog.md)
 
 [about_EventLogs]()
 

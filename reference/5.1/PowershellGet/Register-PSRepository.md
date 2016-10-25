@@ -244,9 +244,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-PSRepository](.\Get-PSRepository.md)
+[Get-PSRepository](Get-PSRepository.md)
 
-[Set-PSRepository](.\Set-PSRepository.md)
+[Set-PSRepository](Set-PSRepository.md)
 
-[Unregister-PSRepository](.\Unregister-PSRepository.md)
+[Unregister-PSRepository](Unregister-PSRepository.md)
 

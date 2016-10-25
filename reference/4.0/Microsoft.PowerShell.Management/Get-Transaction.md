@@ -201,15 +201,15 @@ Get-Transaction returns an object that represents the current transaction.
 
 ## RELATED LINKS
 
-[Complete-Transaction](.\Complete-Transaction.md)
+[Complete-Transaction](Complete-Transaction.md)
 
-[Start-Transaction](.\Start-Transaction.md)
+[Start-Transaction](Start-Transaction.md)
 
-[Undo-Transaction](.\Undo-Transaction.md)
+[Undo-Transaction](Undo-Transaction.md)
 
-[Use-Transaction](.\Use-Transaction.md)
+[Use-Transaction](Use-Transaction.md)
 
-[about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Transactions](..\Microsoft.PowerShell.Core\About\about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 

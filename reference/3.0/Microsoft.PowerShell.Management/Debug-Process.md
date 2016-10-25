@@ -208,13 +208,13 @@ This cmdlet does not generate any output.
 *
 ## RELATED LINKS
 
-[Debug-Process](.\Debug-Process.md)
+[Debug-Process](Debug-Process.md)
 
-[Get-Process](.\Get-Process.md)
+[Get-Process](Get-Process.md)
 
-[Start-Process](.\Start-Process.md)
+[Start-Process](Start-Process.md)
 
-[Stop-Process](.\Stop-Process.md)
+[Stop-Process](Stop-Process.md)
 
-[Wait-Process](.\Wait-Process.md)
+[Wait-Process](Wait-Process.md)
 

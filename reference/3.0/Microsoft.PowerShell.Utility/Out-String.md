@@ -131,13 +131,13 @@ Out-String returns the string that it creates from the input object.
 *
 ## RELATED LINKS
 
-[Out-Default](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[Out-File](.\Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[Out-Null](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Null](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[Out-Printer](.\Out-Printer.md)
+[Out-Printer](Out-Printer.md)
 

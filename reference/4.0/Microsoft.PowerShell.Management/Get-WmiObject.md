@@ -591,17 +591,17 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 
 ## RELATED LINKS
 
-[Get-WSManInstance](..\Microsoft.WsMan.Management\Get-WSManInstance.md)
+[Get-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 
-[Invoke-WSManAction](..\Microsoft.WsMan.Management\Invoke-WSManAction.md)
+[Invoke-WSManAction](../Microsoft.WsMan.Management/Invoke-WSManAction.md)
 
-[New-WSManInstance](..\Microsoft.WsMan.Management\New-WSManInstance.md)
+[New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
-[Remove-WSManInstance](..\Microsoft.WsMan.Management\Remove-WSManInstance.md)
+[Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
 
-[Invoke-WmiMethod](.\Invoke-WmiMethod.md)
+[Invoke-WmiMethod](Invoke-WmiMethod.md)
 
-[Remove-WmiObject](.\Remove-WmiObject.md)
+[Remove-WmiObject](Remove-WmiObject.md)
 
-[Set-WmiInstance](.\Set-WmiInstance.md)
+[Set-WmiInstance](Set-WmiInstance.md)
 

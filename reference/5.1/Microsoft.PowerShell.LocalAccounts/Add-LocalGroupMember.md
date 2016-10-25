@@ -177,9 +177,9 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Get-LocalGroupMember](.\Get-LocalGroupMember.md)
+[Get-LocalGroupMember](Get-LocalGroupMember.md)
 
-[New-LocalGroup](.\New-LocalGroup.md)
+[New-LocalGroup](New-LocalGroup.md)
 
-[Remove-LocalGroupMember](.\Remove-LocalGroupMember.md)
+[Remove-LocalGroupMember](Remove-LocalGroupMember.md)
 

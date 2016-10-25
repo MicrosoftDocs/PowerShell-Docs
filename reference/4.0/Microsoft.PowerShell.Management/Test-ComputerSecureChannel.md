@@ -197,11 +197,11 @@ The cmdlet returns "True" when the connection is working correctly and "False" w
 
 ## RELATED LINKS
 
-[Checkpoint-Computer](.\Checkpoint-Computer.md)
+[Checkpoint-Computer](Checkpoint-Computer.md)
 
-[Reset-ComputerMachinePassword](.\Reset-ComputerMachinePassword.md)
+[Reset-ComputerMachinePassword](Reset-ComputerMachinePassword.md)
 
-[Restart-Computer](.\Restart-Computer.md)
+[Restart-Computer](Restart-Computer.md)
 
-[Stop-Computer](.\Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 
