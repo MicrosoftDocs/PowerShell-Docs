@@ -335,17 +335,17 @@ If you close the current session, the event queue is discarded and the event sub
 
 ## RELATED LINKS
 
-[Get-Event](http://technet.microsoft.com/library/hh849909.aspx)
+[Get-Event](..\Microsoft.PowerShell.Utility\Get-Event.md)
 
-[New-Event](http://technet.microsoft.com/library/hh849954.aspx)
+[New-Event](..\Microsoft.PowerShell.Utility\New-Event.md)
 
-[Register-EngineEvent](http://technet.microsoft.com/library/hh849967.aspx)
+[Register-EngineEvent](..\Microsoft.PowerShell.Utility\Register-EngineEvent.md)
 
-[Register-ObjectEvent](http://technet.microsoft.com/library/hh849929.aspx)
+[Register-ObjectEvent](..\Microsoft.PowerShell.Utility\Register-ObjectEvent.md)
 
-[Remove-Event](http://technet.microsoft.com/library/hh849927.aspx)
+[Remove-Event](..\Microsoft.PowerShell.Utility\Remove-Event.md)
 
-[Unregister-Event](http://technet.microsoft.com/library/hh849896.aspx)
+[Unregister-Event](..\Microsoft.PowerShell.Utility\Unregister-Event.md)
 
-[Wait-Event](http://technet.microsoft.com/library/hh849940.aspx)
+[Wait-Event](..\Microsoft.PowerShell.Utility\Wait-Event.md)
 

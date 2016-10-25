@@ -1,6 +1,7 @@
 ﻿---
 title: Remove-Item for Certificate
 ms.custom: na
+ms.date: 09/30/2014
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -17,18 +18,18 @@ Remove-Item [-Path] <string[]> [-DeleteKey] [-Confirm] [-WhatIf] [<CommonParamet
 ```  
   
 ## Description  
- In the Cert: drive, the Remove\-Item cmdlet deletes certificates and their associated private keys. It also deletes certificate stores in the LocalMachine certificate store location that you create by using the [New\-Item](New-Item.md) cmdlet. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, the Remove-Item cmdlet deletes certificates and their associated private keys. It also deletes certificate stores in the LocalMachine certificate store location that you create by using the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet. The Windows PowerShell [Certificate Provider](.\Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer \(SSL\) certificates for web hosting by enabling you to use the Remove\-Item cmdlet to delete certificates and private keys, and to delete user\-created certificate stores in the LocalMachine certificate store location. However, you cannot use this feature to delete certificate store locations, such as CurrentUser or LocalMachine, or certificate stores that Windows creates.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by enabling you to use the Remove-Item cmdlet to delete certificates and private keys, and to delete user-created certificate stores in the LocalMachine certificate store location. However, you cannot use this feature to delete certificate store locations, such as CurrentUser or LocalMachine, or certificate stores that Windows creates.  
   
- Note:  In the Cert: drive, only the DeleteKey, Path, WhatIf, and Confirm parameters of Remove\-Item are effective. All other parameter and parameter values are ignored.  
+ Note:  In the Cert: drive, only the DeleteKey, Path, WhatIf, and Confirm parameters of Remove-Item are effective. All other parameter and parameter values are ignored.  
   
 ## Parameters  
   
-### \-DeleteKey  
+### -DeleteKey  
  Deletes the associated private key when it deletes the certificate.  
   
- To delete a private key that is associated with a user certificate in the Cert:\\CurrentUser store location on a remote computer, you must use delegated credentials. When using the [Invoke\-Command](Invoke-Command.md) cmdlet to run a Remove\-Item command remotely, after considering the security risks, use the CredSSP parameter to enable delegation. This parameter is valid in all subdirectories of the Certificate provider, but it is effective only on certificates.  
+ To delete a private key that is associated with a user certificate in the Cert:\CurrentUser store location on a remote computer, you must use delegated credentials. When using the [Invoke-Command](..\..\Microsoft.PowerShell.Core\Invoke-Command.md) cmdlet to run a Remove-Item command remotely, after considering the security risks, use the CredSSP parameter to enable delegation. This parameter is valid in all subdirectories of the Certificate provider, but it is effective only on certificates.  
   
  This parameter was introduced in Windows PowerShell 3.0.  
   
@@ -40,18 +41,18 @@ Remove-Item [-Path] <string[]> [-DeleteKey] [-Confirm] [-WhatIf] [<CommonParamet
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Path \<string\[\]\>  
- Specifies the path to the certificates and certificate stores that are being deleted. Wildcards are permitted. The parameter name \("\-Path"\) is optional.  
+### -Path <string[]>  
+ Specifies the path to the certificates and certificate stores that are being deleted. Wildcards are permitted. The parameter name ("-Path") is optional.  
   
 |||  
 |-|-|  
 |Required?|true|  
 |Position?|1|  
 |Default Value||  
-|Accept Pipeline Input?|true \(ByValue, ByPropertyName\)|  
+|Accept Pipeline Input?|true (ByValue, ByPropertyName)|  
 |Accept Wildcard Characters?|false|  
   
-### \-Confirm  
+### -Confirm  
  Prompts you for confirmation before executing the command.  
   
 |||  
@@ -62,7 +63,7 @@ Remove-Item [-Path] <string[]> [-DeleteKey] [-Confirm] [-WhatIf] [<CommonParamet
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-WhatIf  
+### -WhatIf  
  Describes what would happen if you executed the command without actually executing the command.  
   
 |||  
@@ -73,19 +74,19 @@ Remove-Item [-Path] <string[]> [-DeleteKey] [-Confirm] [-WhatIf] [<CommonParamet
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.String<br /><br /> You can pipe a path to the Remove\-Item cmdlet in the Cert: drive.|  
+|Inputs|System.String<br /><br /> You can pipe a path to the Remove-Item cmdlet in the Cert: drive.|  
 |Outputs|None<br /><br /> This cmdlet does not generate any output.|  
   
 ## Notes  
- \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location](Set-Location.md) Cert:" command.  
+ -- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](..\..\Microsoft.PowerShell.Core\Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](..\..\Microsoft.PowerShell.Management\Set-Location.md) Cert:" command.  
   
 ## Example 1  
   
@@ -154,11 +155,11 @@ This command deletes all certificates that have a DNS name that contains "Fabrik
 ```  
   
 ## See Also  
- [Certificate Provider](../Topic/Certificate-Provider.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Item](Get-Item.md)   
- [Get\-PfxCertificate&#91;PSITPro5\_Security&#93;](Get-PfxCertificate.md)   
- [Get\-PSDrive](Get-PSDrive.md)   
- [Move\-Item](Move-Item.md)   
- [New\-Item](New-Item.md)
+ [Certificate Provider](.\Certificate-Provider.md)   
+ [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Get-PfxCertificate](..\Get-PfxCertificate.md)   
+ [Get-PSDrive](..\..\Microsoft.PowerShell.Management\Get-PSDrive.md)   
+ [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
+ [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md)
 

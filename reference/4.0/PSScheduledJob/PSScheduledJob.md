@@ -20,66 +20,66 @@ Locale: en-US
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell PSScheduledJob module. The PSScheduledJob module contains cmdlets and providers that manage scheduled jobs in Windows PowerShell.
 
 ## PSScheduledJob Cmdlets
-### [Add-JobTrigger](Add-JobTrigger.md)
+### [Add-JobTrigger](.\Add-JobTrigger.md)
 Adds job triggers to scheduled jobs
 
 
-### [Disable-JobTrigger](Disable-JobTrigger.md)
+### [Disable-JobTrigger](.\Disable-JobTrigger.md)
 Disables the job triggers of scheduled jobs
 
 
-### [Disable-ScheduledJob](Disable-ScheduledJob.md)
+### [Disable-ScheduledJob](.\Disable-ScheduledJob.md)
 Disables a scheduled job
 
 
-### [Enable-JobTrigger](Enable-JobTrigger.md)
+### [Enable-JobTrigger](.\Enable-JobTrigger.md)
 Enables the job triggers of scheduled jobs
 
 
-### [Enable-ScheduledJob](Enable-ScheduledJob.md)
+### [Enable-ScheduledJob](.\Enable-ScheduledJob.md)
 Enables a scheduled job
 
 
-### [Get-JobTrigger](Get-JobTrigger.md)
+### [Get-JobTrigger](.\Get-JobTrigger.md)
 Gets the job triggers of scheduled jobs.
 
 
-### [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
+### [Get-ScheduledJobOption](.\Get-ScheduledJobOption.md)
 Gets the job options of scheduled jobs.
 
 
-### [Get-ScheduledJob](Get-ScheduledJob.md)
+### [Get-ScheduledJob](.\Get-ScheduledJob.md)
 Gets scheduled jobs on the local computer.
 
 
-### [New-JobTrigger](New-JobTrigger.md)
+### [New-JobTrigger](.\New-JobTrigger.md)
 Creates a job trigger for a scheduled job
 
 
-### [New-ScheduledJobOption](New-ScheduledJobOption.md)
+### [New-ScheduledJobOption](.\New-ScheduledJobOption.md)
 Creates an object that contains advanced options for a scheduled job.
 
 
-### [Register-ScheduledJob](Register-ScheduledJob.md)
+### [Register-ScheduledJob](.\Register-ScheduledJob.md)
 Creates a new scheduled job.
 
 
-### [Remove-JobTrigger](Remove-JobTrigger.md)
+### [Remove-JobTrigger](.\Remove-JobTrigger.md)
 Delete job triggers from scheduled jobs
 
 
-### [Set-JobTrigger](Set-JobTrigger.md)
+### [Set-JobTrigger](.\Set-JobTrigger.md)
 Changes the job trigger of a scheduled job.
 
 
-### [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
+### [Set-ScheduledJobOption](.\Set-ScheduledJobOption.md)
 Changes the job options of a scheduled job.
 
 
-### [Set-ScheduledJob](Set-ScheduledJob.md)
+### [Set-ScheduledJob](.\Set-ScheduledJob.md)
 Changes scheduled jobs
 
 
-### [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
+### [Unregister-ScheduledJob](.\Unregister-ScheduledJob.md)
 Deletes scheduled jobs on the local computer.
 

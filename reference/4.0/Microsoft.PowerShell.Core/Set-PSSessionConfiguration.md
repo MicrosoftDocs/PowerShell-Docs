@@ -661,7 +661,7 @@ You cannot pipe input to this cmdlet.
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](..\PSWorkflow\New-PSWorkflowExecutionOption.md)
+[WSMan Provider](..\Microsoft.WsMan.Management\Provider\WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 

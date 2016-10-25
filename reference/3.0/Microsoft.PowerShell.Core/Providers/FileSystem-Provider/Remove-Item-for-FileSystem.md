@@ -1,6 +1,7 @@
 ﻿---
 title: Remove-Item for FileSystem
 ms.custom: na
+ms.date: 09/30/2014
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -17,20 +18,20 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 ```  
   
 ## Description  
- In file system drives, the [Remove\-Item](Remove-Item.md) cmdlet deletes files and folders.  
+ In file system drives, the [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet deletes files and folders.  
   
  If you use the Stream dynamic parameter, it deletes the specified alternate data stream, but does not delete the file.  
   
- Note: This custom cmdlet help file explains how the [Remove\-Item](Remove-Item.md) cmdlet works in a file system drive. For information about the [Remove\-Item](Remove-Item.md) cmdlet in all drives, type "[Get\-Help](Get-Help.md)[Remove\-Item](Remove-Item.md) \-Path $null" or see [Remove\-Item](Remove-Item.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113373.  
+ Note: This custom cmdlet help file explains how the [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet works in a file system drive. For information about the [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) -Path $null" or see [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) at http://go.microsoft.com/fwlink/?LinkID=113373.  
   
 ## Parameters  
   
-### \-Stream \<string\>  
+### -Stream <string\>  
  Deletes the specified alternate data stream from a file, but does not delete the file. Enter the stream name. Wildcards are supported. This parameter is not valid on folders.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Remove\-Item](Remove-Item.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet. This parameter works only in file system drives.  
   
- You can use the [Remove\-Item](Remove-Item.md) cmdlet to delete an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
+ You can use the [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet to delete an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -42,8 +43,8 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -149,13 +150,13 @@ If you try to specify the file type in the path, such as "-path *.csv", the cmdl
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](Clear-Content.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-Item](Get-Item.md)   
- [Remove\-Item](Remove-Item.md)   
- [Set\-Content](Set-Content.md)   
- [Test\-Path](Test-Path.md)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
 

@@ -444,7 +444,7 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 [Get-Command](..\Microsoft.PowerShell.Core\Get-Command.md)
 
-[Get-Help](..\Microsoft.PowerShell.Core\Get-Command.md)
+[Get-Help](..\Microsoft.PowerShell.Core\Get-Help.md)
 
 [Get-PSDrive](..\Microsoft.PowerShell.Core\Get-Command.md)
 

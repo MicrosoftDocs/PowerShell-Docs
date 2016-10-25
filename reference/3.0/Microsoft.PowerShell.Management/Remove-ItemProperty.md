@@ -304,7 +304,5 @@ For more information, see about_Providers.
 
 [Set-ItemProperty](.\Set-ItemProperty.md)
 
-[00000000-0000-0000-0000-000000000000.md](00000000-0000-0000-0000-000000000000.md)
-
 [about_Providers](..\Microsoft.PowerShell.Core\About\about_Providers.md)
 

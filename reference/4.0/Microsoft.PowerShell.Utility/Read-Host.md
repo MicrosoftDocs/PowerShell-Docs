@@ -103,13 +103,13 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
 
 [ConvertFrom-SecureString](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
 
 [Get-Host](.\Get-Host.md)
 
-[Out-Host](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
+[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
 
 [Write-Host](.\Write-Host.md)
 

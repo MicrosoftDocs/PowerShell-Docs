@@ -638,7 +638,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSTransportOption](.\New-PSTransportOption.md)
 
-[New-PSWorkflowExecutionOption](..\PSWorkflow\New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowExecutionOption](..\Microsoft.WsMan.Management\Provider\WSMan-Provider.md)
 
 [Register-PSSessionConfiguration](.\Register-PSSessionConfiguration.md)
 
@@ -648,7 +648,7 @@ You cannot pipe input to this cmdlet.
 
 [Unregister-PSSessionConfiguration](.\Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](..\PSWorkflow\New-PSWorkflowExecutionOption.md)
+[WSMan Provider](..\Microsoft.WsMan.Management\Provider\WSMan-Provider.md)
 
 [about_Session_Configurations](.\About\about_Session_Configurations.md)
 

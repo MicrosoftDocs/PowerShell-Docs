@@ -60,7 +60,7 @@ Server03                           279bac28-066a-4646-9497-8fcdcfe9757e    AllSi
 
 localhost                          0d858009-2cc4-47a4-a2e0-da17dc2883d0    RemoteSigned
 
-â€¦
+…
 ```
 
 This command runs the Get-ExecutionPolicy cmdlet as a workflow on hundreds of computers.
@@ -192,15 +192,15 @@ However, it runs the workflow, which might generate output.
 
 ## RELATED LINKS
 
-[New-PSWorkflowExecutionOption](..\PSWorkflow\New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowExecutionOption](..\PSWorkflow\New-PSWorkflowSession.md)
 
-[New-PSWorkflowSession](..\PSWorkflow\New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowSession](..\PSWorkflow\New-PSWorkflowSession.md)
 
 [about_Workflows](..\PSWorkflow\About\about_Workflows.md)
 
-[about_Workflow_Common_Parameters](about_WorkflowCommonParameters.md)
+[about_Workflow_Common_Parameters](..\PSWorkflow\About\about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](PSWorkflow-Module.md)
+[Windows PowerShell Workflow Module](..\PSWorkflow\PSWorkflow.md)
 
-[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
+[Windows PowerShell Workflow Utility Module](.\PSWorkflowUtility.md)
 

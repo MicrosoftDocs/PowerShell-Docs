@@ -346,7 +346,7 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 [about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](PSWorkflow-Module.md)
+[PSWorkflow Module](.\PSWorkflow.md)
 
-[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
+[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
 

@@ -153,7 +153,7 @@ Get-Culture returns an object that represents the current culture.
 
 ## RELATED LINKS
 
-[Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258)
+Set-Culture
 
 [Get-UICulture](.\Get-UICulture.md)
 

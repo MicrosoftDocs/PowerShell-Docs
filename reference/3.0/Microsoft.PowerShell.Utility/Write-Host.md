@@ -155,7 +155,7 @@ However, the host might display the objects that Write-Host sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
 
 [Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
 

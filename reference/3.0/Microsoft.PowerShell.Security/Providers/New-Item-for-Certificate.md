@@ -1,6 +1,7 @@
 ﻿---
 title: New-Item for Certificate
 ms.custom: na
+ms.date: 09/30/2014
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -19,15 +20,15 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```  
   
 ## Description  
- In the Cert: drive, the [New\-Item](New-Item.md) cmdlet creates new certificate stores in the LocalMachine certificate store location. The Windows PowerShell [Certificate Provider](../Topic/Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet creates new certificate stores in the LocalMachine certificate store location. The Windows PowerShell [Certificate Provider](.\Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enables you to use the [New\-Item](New-Item.md) cmdlet to create new certificate stores. You can also use the [Remove\-Item](Remove-Item.md) cmdlet to delete the certificate stores that you create.  You cannot use the [New\-Item](New-Item.md) cmdlet to create certificates or certificate store locations, or to create certificate stores in the CurrentUser certficate store location.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enables you to use the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet to create new certificate stores. You can also use the [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md) cmdlet to delete the certificate stores that you create.  You cannot use the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet to create certificates or certificate store locations, or to create certificate stores in the CurrentUser certficate store location.  
   
- Note:  In the Cert: drive, only the Name, Path, WhatIf, and Confirm parameters of [New\-Item](New-Item.md) are effective. All other parameter and parameter values are ignored.  
+ Note:  In the Cert: drive, only the Name, Path, WhatIf, and Confirm parameters of [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) are effective. All other parameter and parameter values are ignored.  
   
 ## Parameters  
   
-### \-Name \<string\>  
+### -Name <string\>  
  Specifies the name the new certificate store. You can use the Name parameter or include the name in the value of the Path parameter.  
   
 |||  
@@ -35,10 +36,10 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |Required?|false|  
 |Position?|named|  
 |Default Value||  
-|Accept Pipeline Input?|true \(ByPropertyName\)|  
+|Accept Pipeline Input?|true (ByPropertyName)|  
 |Accept Wildcard Characters?|false|  
   
-### \-Path \<string\[\]\>  
+### -Path <string[]>  
  Specifies the full or relative path to the new certificate store. You can include the name of the certificate store in the path or use the Name parameter to specify the name.  
   
 |||  
@@ -46,10 +47,10 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |Required?|true|  
 |Position?|1|  
 |Default Value||  
-|Accept Pipeline Input?|true \(ByPropertyName\)|  
+|Accept Pipeline Input?|true (ByPropertyName)|  
 |Accept Wildcard Characters?|false|  
   
-### \-Confirm  
+### -Confirm  
  Prompts you for confirmation before executing the command.  
   
 |||  
@@ -60,7 +61,7 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-WhatIf  
+### -WhatIf  
  Describes what would happen if you executed the command without actually executing the command.  
   
 |||  
@@ -71,8 +72,8 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -80,12 +81,12 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 |||  
 |-|-|  
 |Inputs||  
-|Outputs|System.Security.Cryptography.X509Certificates.X509Store<br /><br /> New\-Item returns an X509Store object that represents the new certificate store.|  
+|Outputs|System.Security.Cryptography.X509Certificates.X509Store<br /><br /> New-Item returns an X509Store object that represents the new certificate store.|  
   
 ## Notes  
- \-\- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import\-Module](Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set\-Location](Set-Location.md) Cert:" command.  
+ -- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](..\..\Microsoft.PowerShell.Core\Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](..\..\Microsoft.PowerShell.Management\Set-Location.md) Cert:" command.  
   
- \-\- In the Cert: drive, the ItemType parameter is ignored. You do not need to specify an item type to create a certificate store.  
+ -- In the Cert: drive, the ItemType parameter is ignored. You do not need to specify an item type to create a certificate store.  
   
 ## Example 1  
   
@@ -127,10 +128,10 @@ This command creates the TestStore certificate store on the Server01 remote comp
 ```  
   
 ## See Also  
- [Certificate Provider](../Topic/Certificate-Provider.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Item](Get-Item.md)   
- [Get\-PSDrive](Get-PSDrive.md)   
- [Move\-Item](Move-Item.md)   
- [Remove\-Item](Remove-Item.md)
+ [Certificate Provider](.\Certificate-Provider.md)   
+ [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Get-PSDrive](..\..\Microsoft.PowerShell.Management\Get-PSDrive.md)   
+ [Move-Item](..\..\Microsoft.PowerShell.Management\Move-Item.md)   
+ [Remove-Item](..\..\Microsoft.PowerShell.Management\Remove-Item.md)
 

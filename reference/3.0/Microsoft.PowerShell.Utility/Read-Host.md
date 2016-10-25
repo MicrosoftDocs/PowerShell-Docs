@@ -95,7 +95,7 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](..\Microsoft.PowerShell.Core\Functions\Clear-Host.md)
 
 [ConvertFrom-SecureString](..\Microsoft.PowerShell.Security\ConvertFrom-SecureString.md)
 

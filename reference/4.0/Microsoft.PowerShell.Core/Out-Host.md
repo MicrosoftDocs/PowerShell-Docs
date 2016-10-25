@@ -112,7 +112,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](http://go.microsoft.com/fwlink/?LinkID=225747)
+[Clear-Host](.\Functions\Clear-Host.md)
 
 [Out-Default](.\Out-Default.md)
 
@@ -120,7 +120,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 [Out-Null](.\Out-Null.md)
 
-[Out-Printer](..\Microsoft.PowerShell.Utility\Out-File.md)
+[Out-Printer](..\Microsoft.PowerShell.Utility\Out-Printer.md)
 
 [Out-String](..\Microsoft.PowerShell.Utility\Out-File.md)
 

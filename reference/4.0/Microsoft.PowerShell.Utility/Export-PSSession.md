@@ -412,7 +412,7 @@ If the command does not import formatting data, any formatting files that are cr
 
 [Import-PSSession](.\Import-PSSession.md)
 
-[Invoke-Command](..\Microsoft.PowerShell.Core\Import-Module.md)
+[Invoke-Command](..\Microsoft.PowerShell.Core\Invoke-Command.md)
 
 [New-PSSession](..\Microsoft.PowerShell.Core\Import-Module.md)
 

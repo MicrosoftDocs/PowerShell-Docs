@@ -1,6 +1,7 @@
 ﻿---
 title: Get-Item for FileSystem
 ms.custom: na
+ms.date: 09/30/2014
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -17,16 +18,16 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 ```  
   
 ## Description  
- In the file system, the [Get\-Item](Get-Item.md) cmdlet gets files and folders.  
+ In the file system, the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet gets files and folders.  
   
- Note: This custom cmdlet help file explains how the [Get\-Item](Get-Item.md) cmdlet works in a file system drive. For information about the [Get\-Item](Get-Item.md) cmdlet in all drives, type "[Get\-Help](Get-Help.md)[Get\-Item](Get-Item.md) \-Path $null" or see [Get\-Item](Get-Item.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113319.  
+ Note: This custom cmdlet help file explains how the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet works in a file system drive. For information about the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) -Path $null" or see [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) at http://go.microsoft.com/fwlink/?LinkID=113319.  
   
 ## Parameters  
   
-### \-Stream \<string\>  
- Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk \(\*\). This parameter is not valid on folders.  
+### -Stream <string\>  
+ Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk (*). This parameter is not valid on folders.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Get\-Item](Get-Item.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -38,16 +39,16 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.String\[ \]<br /><br /> You can pipe a path to the Get\-Item cmdlet.|  
-|Outputs|System.IO.FileInfo, System.IO.DirectoryInfo, Microsoft.PowerShell.Commands.AlternateStreamData<br /><br /> In the file system, Get\-Item returns files and folders. If you use the Stream parameter, it returns AlternateStreamData objects.|  
+|Inputs|System.String[ ]<br /><br /> You can pipe a path to the Get-Item cmdlet.|  
+|Outputs|System.IO.FileInfo, System.IO.DirectoryInfo, Microsoft.PowerShell.Commands.AlternateStreamData<br /><br /> In the file system, Get-Item returns files and folders. If you use the Stream parameter, it returns AlternateStreamData objects.|  
   
 ## Example 1  
   
@@ -169,14 +170,14 @@ This command gets items in the Windows directory with names that include a dot (
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Add\-Content](Add-Content.md)   
- [Clear\-Content](Clear-Content.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-Item](Get-Item.md)   
- [Remove\-Item](Remove-Item.md)   
- [Set\-Content](Set-Content.md)   
- [Test\-Path](Test-Path.md)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Add-Content](..\..\..\Microsoft.PowerShell.Management\Add-Content.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
 

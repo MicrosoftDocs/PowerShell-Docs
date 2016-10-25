@@ -189,7 +189,7 @@ This cmdlet does not return any output.
 
 [Debug-Process](..\Microsoft.PowerShell.Management\Debug-Process.md)
 
-[Set-PSBreakpoint](..\Microsoft.PowerShell.Management\Debug-Process.md)
+[Set-PSBreakpoint](..\Microsoft.PowerShell.Utility\Set-PSBreakpoint.md)
 
 [Set-StrictMode](.\Set-StrictMode.md)
 

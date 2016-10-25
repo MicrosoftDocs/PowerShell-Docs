@@ -424,7 +424,7 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 
 [Get-ChildItem](..\Microsoft.PowerShell.Management\Get-ChildItem.md)
 
-[Get-Culture](..\Microsoft.PowerShell.Management\Get-ChildItem.md)
+[Get-Culture](..\Microsoft.PowerShell.Utility\Get-Culture.md)
 
 [Get-Help](.\Get-Help.md)
 
@@ -432,7 +432,7 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 
 [Get-Module](.\Get-Module.md)
 
-[Get-UICulture](..\Microsoft.PowerShell.Management\Get-ChildItem.md)
+[Get-UICulture](..\Microsoft.PowerShell.Utility\Get-Culture.md)
 
 [Start-Job](.\Start-Job.md)
 

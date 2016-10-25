@@ -603,7 +603,7 @@ When the parameter name is used, the parameter can appear anywhere in the comman
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
-[about_Command_Syntax](http://technet.microsoft.com/library/hh847867.aspx)
+[about_Command_Syntax](.\About\about_Command_Syntax.md)
 
 [Get-Command](.\Get-Command.md)
 

@@ -382,7 +382,7 @@ Otherwise, this cmdlet does not generate any output.
 
 [about_Remote_Variables](.\About\about_Remote_Variables.md)
 
-[about_Jobs]()
+[about_Jobs](.\About\about_Jobs.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](.\About\about_Scopes.md)
 

@@ -1,6 +1,7 @@
 ﻿---
 title: Set-Content for FileSystem
 ms.custom: na
+ms.date: 09/30/2014
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -17,34 +18,34 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
   
 ## Description  
- In file system drives, the [Set\-Content](Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
+ In file system drives, the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
   
- Note: This custom cmdlet help file explains how the [Set\-Content](Set-Content.md) cmdlet works in a file system drive. For information about the [Set\-Content](Set-Content.md) cmdlet in all drives, type "[Get\-Help](Get-Help.md)[Set\-Content](Set-Content.md) \-Path $null" or see [Set\-Content](Set-Content.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113392.  
+ Note: This custom cmdlet help file explains how the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet works in a file system drive. For information about the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) -Path $null" or see [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113392.  
   
 ## Parameters  
   
-### \-Encoding \<FileSystemCmdletProviderEncoding\>  
+### -Encoding <FileSystemCmdletProviderEncoding\>  
  Specifies the file encoding. The default is ASCII.  
   
  Valid values are:  
   
- \-\- ASCII:  Uses the encoding for the ASCII \(7\-bit\) character set.  
+ -- ASCII:  Uses the encoding for the ASCII (7-bit) character set.  
   
- \-\- BigEndianUnicode:  Encodes in UTF\-16 format using the big\-endian byte order.  
+ -- BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.  
   
- \-\- Byte:   Encodes a set of characters into a sequence of bytes.  
+ -- Byte:   Encodes a set of characters into a sequence of bytes.  
   
- \-\- String:  Uses the encoding type for a string.  
+ -- String:  Uses the encoding type for a string.  
   
- \-\- Unicode:  Encodes in UTF\-16 format using the little\-endian byte order.  
+ -- Unicode:  Encodes in UTF-16 format using the little-endian byte order.  
   
- \-\- UTF7:   Encodes in UTF\-7 format.  
+ -- UTF7:   Encodes in UTF-7 format.  
   
- \-\- UTF8:  Encodes in UTF\-8 format.  
+ -- UTF8:  Encodes in UTF-8 format.  
   
- \-\- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
+ -- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
   
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Set\-Content](Set-Content.md) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet. This parameter works only in file system drives.  
   
 |||  
 |-|-|  
@@ -54,8 +55,8 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Force  
- Replaces the contents of a file, even if the file is read\-only. Without this parameter, read\-only files are not changed.  
+### -Force  
+ Replaces the contents of a file, even if the file is read-only. Without this parameter, read-only files are not changed.  
   
 |||  
 |-|-|  
@@ -65,12 +66,12 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Stream \<string\>  
- Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set\-Content](Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
+### -Stream <string\>  
+ Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Set\-Content](Set-Content.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet. This parameter works only in file system drives.  
   
- You can use the [Set\-Content](Set-Content.md) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock\-File cmdlet.  
+ You can use the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -82,7 +83,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Confirm  
+### -Confirm  
  Prompts you for confirmation before executing the command.  
   
 |||  
@@ -93,7 +94,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-WhatIf  
+### -WhatIf  
  Describes what would happen if you executed the command without actually executing the command.  
   
 |||  
@@ -104,8 +105,8 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about\_Transactions](../Topic/about_Transactions.md).  
+### -UseTransaction  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](..\..\About\about_Transactions.md).  
   
 |||  
 |-|-|  
@@ -115,16 +116,16 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.Object\[\], System.String\[\], System.Management.Automation.PSCredential<br /><br /> You can pipe a value \(object\), a path, or a credential object to Set\-Content|  
-|Outputs|None or System.String<br /><br /> When you use the Passthru parameter, Set\-Content generates a System.String object representing the content. Otherwise, this cmdlet does not generate any output.|  
+|Inputs|System.Object[], System.String[], System.Management.Automation.PSCredential<br /><br /> You can pipe a value (object), a path, or a credential object to Set-Content|  
+|Outputs|None or System.String<br /><br /> When you use the Passthru parameter, Set-Content generates a System.String object representing the content. Otherwise, this cmdlet does not generate any output.|  
   
 ## Example 1  
   
@@ -181,13 +182,13 @@ The command uses the Force parameter so that the command is successful even if t
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](Clear-Content.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-Item](Get-Item.md)   
- [Remove\-Item](Remove-Item.md)   
- [Set\-Content](Set-Content.md)   
- [Test\-Path](Test-Path.md)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
 

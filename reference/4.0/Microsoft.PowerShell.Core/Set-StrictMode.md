@@ -181,7 +181,7 @@ This cmdlet does not return any output.
 
 [Set-PSDebug](.\Set-PSDebug.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](.\About\about_Scopes.md)
 
-[about_Debuggers]()
+[about_Debuggers](.\About\about_Debuggers.md)
 

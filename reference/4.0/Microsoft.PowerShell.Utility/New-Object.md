@@ -301,5 +301,5 @@ New-Object returns the object that is created.
 
 [Tee-Object](.\Tee-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
+[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
 

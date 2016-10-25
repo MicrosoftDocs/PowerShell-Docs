@@ -479,13 +479,13 @@ Otherwise, it does not.
 
 ## RELATED LINKS
 
-[New-PSWorkflowSession](http://go.microsoft.com/fwlink/?LinkID=135237)
+[New-PSWorkflowSession](.\New-PSWorkflowSession.md)
 
 [about_Workflows](.\About\about_Workflows.md)
 
 [about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](PSWorkflow-Module.md)
+[PSWorkflow Module](.\PSWorkflow.md)
 
-[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
+[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
 

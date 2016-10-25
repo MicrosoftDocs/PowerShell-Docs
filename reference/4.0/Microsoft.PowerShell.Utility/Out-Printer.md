@@ -126,13 +126,13 @@ If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no 
 
 ## RELATED LINKS
 
-[Out-Default](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Default](..\Microsoft.PowerShell.Core\Out-Host.md)
 
 [Out-File](.\Out-File.md)
 
-[Out-Host](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Host](..\Microsoft.PowerShell.Core\Out-Host.md)
 
-[Out-Null](..\Microsoft.PowerShell.Core\Out-Default.md)
+[Out-Null](..\Microsoft.PowerShell.Core\Out-Host.md)
 
 [Out-String](.\Out-String.md)
 

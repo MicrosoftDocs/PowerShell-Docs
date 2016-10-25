@@ -1,6 +1,7 @@
 ﻿---
 title: Get-Content for FileSystem
 ms.custom: na
+ms.date: 07/31/2015
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -17,36 +18,36 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 ```  
   
 ## Description  
- In file system drives, you can use the [Get\-Content](Get-Content.md) cmdlet to get content that you display at the command line, save in a variable for processing, or write to another file. It is not valid on folders.  
+ In file system drives, you can use the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet to get content that you display at the command line, save in a variable for processing, or write to another file. It is not valid on folders.  
   
- Note: This custom cmdlet help file explains how the [Get\-Content](Get-Content.md) cmdlet works in a file system drive. For information about the [Get\-Content](Get-Content.md) cmdlet in all drives, type "[Get\-Help](Get-Help.md)[Get\-Content](Get-Content.md) \-Path $null" or see [Get\-Content](Get-Content.md) at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113310.  
+ Note: This custom cmdlet help file explains how the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet works in a file system drive. For information about the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet in all drives, type "[Get-Help](..\..\Get-Help.md)[Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) -Path $null" or see [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113310.  
   
 ## Parameters  
   
-### \-Encoding \<FileSystemCmdletProviderEncoding\>  
+### -Encoding <FileSystemCmdletProviderEncoding\>  
  Specifies the file encoding. The default is ASCII.  
   
  Valid values are:  
   
- \-\- ASCII:  Uses the encoding for the ASCII \(7\-bit\) character set.  
+ -- ASCII:  Uses the encoding for the ASCII (7-bit) character set.  
   
- \-\- BigEndianUnicode:  Encodes in UTF\-16 format using the big\-endian byte order.  
+ -- BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.  
   
- \-\- Byte:   Encodes a set of characters into a sequence of bytes.  
+ -- Byte:   Encodes a set of characters into a sequence of bytes.  
   
- \-\- String:  Uses the encoding type for a string.  
+ -- String:  Uses the encoding type for a string.  
   
- \-\- Unicode:  Encodes in UTF\-16 format using the little\-endian byte order.  
+ -- Unicode:  Encodes in UTF-16 format using the little-endian byte order.  
   
- \-\- UTF7:   Encodes in UTF\-7 format.  
+ -- UTF7:   Encodes in UTF-7 format.  
   
- \-\- UTF8:  Encodes in UTF\-8 format.  
+ -- UTF8:  Encodes in UTF-8 format.  
   
- \-\- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
+ -- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
   
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Get\-Content](Get-Content.md) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet. This parameter works only in file system drives.  
   
- When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object \(PSObject\).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the [Set\-Content](Set-Content.md) cmdlet to write the bytes to a file. For more information, see the examples.  
+ When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object (PSObject).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md) cmdlet to write the bytes to a file. For more information, see the examples.  
   
 |||  
 |-|-|  
@@ -56,31 +57,31 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Delimiter \<string\>  
- Specifies the delimiter that [Get\-Content](Get-Content.md) uses to divide the file into objects while it reads.  
+### -Delimiter <string\>  
+ Specifies the delimiter that [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) uses to divide the file into objects while it reads.  
   
- The default is "\\n", the end\-of\-line character.  
+ The default is "\n", the end-of-line character.  
   
- Therefore, by default, when reading a text file, [Get\-Content](Get-Content.md) returns a collection of string objects, each of which ends with an end\-of\-line character.  
+ Therefore, by default, when reading a text file, [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) returns a collection of string objects, each of which ends with an end-of-line character.  
   
- When you enter a delimiter that does not exist in the file, [Get\-Content](Get-Content.md) returns the entire file as a single, undelimited object.  
+ When you enter a delimiter that does not exist in the file, [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) returns the entire file as a single, undelimited object.  
   
- You can use this parameter to split a large file into smaller files by specifying a file separator, such as "End of Example", as the delimiter. The delimiter is preserved \(not discarded\) and becomes the last item in each file section.  
+ You can use this parameter to split a large file into smaller files by specifying a file separator, such as "End of Example", as the delimiter. The delimiter is preserved (not discarded) and becomes the last item in each file section.  
   
- Delimiter is a dynamic parameter that the FileSystem provider adds to the [Get\-Content](Get-Content.md) cmdlet. This parameter works only in file system drives.  
+ Delimiter is a dynamic parameter that the FileSystem provider adds to the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet. This parameter works only in file system drives.  
   
- Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get\-Content](Get-Content.md) does not return anything. This is a known issue. To force [Get\-Content](Get-Content.md) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
+ Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) does not return anything. This is a known issue. To force [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) to return the entire file as a single, undelimited string, enter a value that does not exist in the file.  
   
 |||  
 |-|-|  
 |Required?|false|  
 |Position?|named|  
-|Default Value|End\-of\-line character|  
+|Default Value|End-of-line character|  
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Force  
- Gets the contents of all files, including hidden files. By default, [Get\-Content](Get-Content.md) does not get the contents of hidden files unless you specify the hidden file by name.  
+### -Force  
+ Gets the contents of all files, including hidden files. By default, [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) does not get the contents of hidden files unless you specify the hidden file by name.  
   
 |||  
 |-|-|  
@@ -90,10 +91,10 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Raw \<switch\>  
+### -Raw <switch\>  
  Ignores newline characters and returns the entire contents of a file in one string. By default, the contents of a file is returned as a array of strings that is delimited by the newline character.  
   
- Raw is a dynamic parameter that the FileSystem provider adds to the [Get\-Content](Get-Content.md) cmdlet. This parameter works only in file system drives.  
+ Raw is a dynamic parameter that the FileSystem provider adds to the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -105,10 +106,10 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Wait  
- Waits for the cmdlet to get the content before returning the command prompt. While waiting, [Get\-Content](Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL\+C.  
+### -Wait  
+ Waits for the cmdlet to get the content before returning the command prompt. While waiting, [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL+C.  
   
- Wait is a dynamic parameter that the FileSystem provider adds to the [Get\-Content](Get-Content.md) cmdlet. This parameter works only in file system drives.  
+ Wait is a dynamic parameter that the FileSystem provider adds to the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet. This parameter works only in file system drives.  
   
 |||  
 |-|-|  
@@ -118,10 +119,10 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-Stream \<string\>  
+### -Stream <string\>  
  Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are not supported.  
   
- Stream is a dynamic parameter that the FileSystem provider adds to the [Get\-Content](Get-Content.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md) cmdlet. This parameter works only in file system drives.  
   
  This parameter is introduced in Windows PowerShell 3.0.  
   
@@ -133,8 +134,8 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \-UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about\_Transactions](../Topic/about_Transactions.md).  
+### -UseTransaction  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](..\..\About\about_Transactions.md).  
   
 |||  
 |-|-|  
@@ -144,16 +145,16 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Pipeline Input?|false|  
 |Accept Wildcard Characters?|false|  
   
-### \<CommonParameters\>  
- This cmdlet supports the common parameters: \-Debug, \-ErrorAction, \-ErrorVariable, \-OutBuffer, \-OutVariable,  \-Verbose, \-WarningAction, and \-WarningVariable. For more information, see [about\_CommonParameters](../Topic/about_CommonParameters.md).  
+### <CommonParameters\>  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](..\..\About\about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
   
 |||  
 |-|-|  
-|Inputs|System.Int64, System.String\[\], System.Management.Automation.PSCredential<br /><br /> You can pipe the read count, total count, paths, or credentials to Get\-Content.|  
-|Outputs|System.Object, System.String<br /><br /> Get\-Content returns objects that represent the content that it gets. The object type depends on the content type. If you use the Stream parameter, the cmdlet returns the alternate data stream contents as a string.|  
+|Inputs|System.Int64, System.String[], System.Management.Automation.PSCredential<br /><br /> You can pipe the read count, total count, paths, or credentials to Get-Content.|  
+|Outputs|System.Object, System.String<br /><br /> Get-Content returns objects that represent the content that it gets. The object type depends on the content type. If you use the Stream parameter, the cmdlet returns the alternate data stream contents as a string.|  
   
 ## Example 1  
   
@@ -232,7 +233,7 @@ C:\PS>$Hash
   
 Name                           Value  
 ----                           -----  
-Copyright                      © Microsoft Corporation. All rights reserved.  
+Copyright                      ? Microsoft Corporation. All rights reserved.  
 ModuleToProcess                Microsoft.PowerShell.ScheduledJob.dll  
 FormatsToProcess               PSScheduledJob.Format.ps1xml  
 PowerShellVersion              3.0  
@@ -300,13 +301,13 @@ The fourth command uses the Set-Content cmdlet to write the bytes in the $b vari
 ```  
   
 ## See Also  
- [FileSystem Provider](../Topic/FileSystem-Provider.md)   
- [Clear\-Content](Clear-Content.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-ChildItem](Get-ChildItem.md)   
- [Get\-Content](Get-Content.md)   
- [Get\-Item](Get-Item.md)   
- [Remove\-Item](Remove-Item.md)   
- [Set\-Content](Set-Content.md)   
- [Test\-Path](Test-Path.md)
+ [FileSystem Provider](..\FileSystem-Provider.md)   
+ [Clear-Content](..\..\..\Microsoft.PowerShell.Management\Clear-Content.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-ChildItem](..\..\..\Microsoft.PowerShell.Management\Get-ChildItem.md)   
+ [Get-Content](..\..\..\Microsoft.PowerShell.Management\Get-Content.md)   
+ [Get-Item](..\..\..\Microsoft.PowerShell.Management\Get-Item.md)   
+ [Remove-Item](..\..\..\Microsoft.PowerShell.Management\Remove-Item.md)   
+ [Set-Content](..\..\..\Microsoft.PowerShell.Management\Set-Content.md)   
+ [Test-Path](..\..\..\Microsoft.PowerShell.Management\Test-Path.md)
 

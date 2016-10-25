@@ -289,5 +289,5 @@ Otherwise, it returns a GenericMeasureInfo object.
 
 [Tee-Object](.\Tee-Object.md)
 
-[Where-Object](..\Microsoft.PowerShell.Core\ForEach-Object.md)
+[Where-Object](..\Microsoft.PowerShell.Core\Where-Object.md)
 

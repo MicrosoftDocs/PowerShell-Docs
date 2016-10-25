@@ -340,11 +340,11 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 ## RELATED LINKS
 
-[New-PSSession](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSSession](..\Microsoft.PowerShell.Core\New-PSTransportOption.md)
 
-[New-PSTransportOption](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[New-PSTransportOption](..\Microsoft.PowerShell.Core\New-PSTransportOption.md)
 
-[Register-PSSessionConfiguration](..\Microsoft.PowerShell.Core\New-PSSession.md)
+[Register-PSSessionConfiguration](..\Microsoft.PowerShell.Core\New-PSTransportOption.md)
 
 [about_PSSessions](..\Microsoft.PowerShell.Core\About\about_PSSessions.md)
 
@@ -354,7 +354,7 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 [about_WorkflowCommonParameters](.\About\about_WorkflowCommonParameters.md)
 
-[PSWorkflow Module](PSWorkflow-Module.md)
+[PSWorkflow Module](.\PSWorkflow.md)
 
-[PSWorkflowUtility Module](PSWorkflowUtility-Module.md)
+[PSWorkflowUtility Module](..\PSWorkflowUtility\PSWorkflowUtility.md)
 

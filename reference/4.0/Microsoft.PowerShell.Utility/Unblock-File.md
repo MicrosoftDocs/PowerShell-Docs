@@ -181,5 +181,5 @@ This cmdlet does not generate any output.
 
 [Get-Item](..\Microsoft.PowerShell.Management\Get-Item.md)
 
-[FileSystem Provider](FileSystem-Provider.md)
+[FileSystem Provider](..\Microsoft.PowerShell.Core\Providers\FileSystem-Provider.md)
 

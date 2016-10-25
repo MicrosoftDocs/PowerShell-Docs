@@ -174,5 +174,5 @@ This cmdlet does not return any output.
 
 [about_Scopes](about_Scopes.md)
 
-[about_Debuggers]()
+[about_Debuggers](.\About\about_Debuggers.md)
 
