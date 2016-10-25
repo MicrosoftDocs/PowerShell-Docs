@@ -10,6 +10,8 @@
 ## [Securing the configuration MOF file](secureMOF.md)
 ## [Partial Configurations](partialConfigs.md)
 ## [Writing help for DSC configurations](configHelp.md)
+## [Configure a virtual machines at initial boot-up by using DSC](bootstrapDsc.md)
+### [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md)
 
 # [Resources](resources.md)
 ## [Built-in resources](builtInResource.md)
