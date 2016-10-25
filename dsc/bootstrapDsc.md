@@ -27,38 +27,22 @@ To run these examples, you will need:
 - A host computer that has Hyper-V enabled. For information, see [Hyper-V overview](https://technet.microsoft.com/library/hh831531.aspx).
 
 By using DSC, you can automate software installation and configuration for a computer at initial boot-up. You do this by either injecting a configuration MOF document 
-or a metaconfiguration into bootable media (such as a VHD) so that they are run during the initial boot-up process. You also have to set the value of the 
-[DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** to 1 to enable DSC to run at
-initial boot-up.
+or a metaconfiguration into bootable media (such as a VHD) so that they are run during the initial boot-up process. This behavior is specified by the 
+[DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies**. By default, the 
+value of this key is 2, which allows DSC to run at boot time.
 
-- [Set the DSCAutomationHostEnabled registry key](##Set-the-DSCAutomationHostEnabled-registry-key)
+If you do not want DSC to run at boot time, set the value of the [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key to 0.
+
+
 - [Inject a configuration MOF document into a VHD](##Inject-a-configuration-MOF-document-into-a-VHD)
 - [Inject a DSC metaconfiguration into a VHD](##Inject-a-DSC-metaconfiguration-into-a-VHD)
+- [Disable DSC at boot time](##Disable-DSC-at-boot-time)
 
-## Set the DSCAutomationHostEnabled registry key
-
-By default, the value of the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** key is set to 2,
-which allows a DSC configuration to run only if the computer is in pending or current state. To allow a configuration to run at initial boot-up, you need
-so set the value of this key to 1:
-
-1. Mount the VHD by calling the [Mount-VHD]() cmdlet. For example:
-    `Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd`
-2. Load the registry **HKLM\Software** subkey from the VHD by calling `reg load`. For example, if the 
-    `reg load HKLM\Vhd E:\Windows\System32\Config\Software`
-3. Navigate to the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*** by using the PowerShell Registry provider. For example:
-    `Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
-4. Change the value of `DSCAutomationHostEnabled` to 1:
-    `Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 1`
-5. Unload the registry by running the following commands:
-    ```powershell
-    [gc]::Collect()
-    reg unload HKLM\Vhd
-    ```
 
 ## Inject a configuration MOF document into a VHD
 
 To enact a configuration at initial boot-up, you can inject a compiled configuration MOF document into the VHD as its `Pending.mof` file. If the
-**DSCAutomationHostEnabled** registry key is set to 1, as described above, DSC will apply the configuration defined by `Pending.mof` when the 
+**DSCAutomationHostEnabled** registry key is set to 2 (the default value), DSC will apply the configuration defined by `Pending.mof` when the 
 computer boots up for the first time.
 
 For this example, we will use the following configuration, which will install IIS on the new computer:
@@ -102,7 +86,7 @@ Configuration SampleIISInstall
 ## Inject a DSC metaconfiguration into a VHD
 
 You can also configure a computer to pull a configuration at intial boot-up by injecting a metaconfiguration (see [Configuring the Local Configuration Manager (LCM)](metaConfig.md))
-into the VHD as its `MetaConfig.mof` file. If the **DSCAutomationHostEnabled** registry key is set to 1, as described above, DSC will apply the metaconfiguration defined 
+into the VHD as its `MetaConfig.mof` file. If the **DSCAutomationHostEnabled** registry key is set to 2 (the default value),  DSC will apply the metaconfiguration defined 
 by `MetaConfig.mof` to the LCM when the computer boots up for the first time. If the metaconfiguration specifies that the LCM should pull configurations from a pull server, the
 computer will attempt to pull a configuration from that pull server at inital boot-up. For information about setting up a DSC pull server, see [Setting up a DSC web pull server](pullServer.md).
 
@@ -151,7 +135,25 @@ configuration PullClientBootstrap
 1. Create a VM by using the VHD where you installed the DSC MOF document. AFter intial boot-up and operating system installation, DSC will pull the configuration from the 
     pull server, and IIS will be installed. You can verify this by calling the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
 
+## Disable DSC at boot time.
 
+By default, the value of the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** key is set to 2,
+which allows a DSC configuration to run if the computer is in pending or current state. If you do not want a configuration to run at initial boot-up, you need
+so set the value of this key to 0:
+
+1. Mount the VHD by calling the [Mount-VHD]() cmdlet. For example:
+    `Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd`
+2. Load the registry **HKLM\Software** subkey from the VHD by calling `reg load`. For example, if the 
+    `reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+3. Navigate to the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*** by using the PowerShell Registry provider. For example:
+    `Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+4. Change the value of `DSCAutomationHostEnabled` to 0:
+    `Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0`
+5. Unload the registry by running the following commands:
+    ```powershell
+    [gc]::Collect()
+    reg unload HKLM\Vhd
+    ```
 ## See Also
 
 - [DSC Configurations](configurations.md)
