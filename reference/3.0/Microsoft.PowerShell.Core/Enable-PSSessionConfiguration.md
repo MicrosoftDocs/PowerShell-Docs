@@ -216,7 +216,7 @@ This cmdlet does not return any objects.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](WSMan-Provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/provider/WSMan-Provider.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
