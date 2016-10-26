@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -462,5 +462,5 @@ You can pipe job objects to **Receive-Job**.
 
 [about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](about/about_scopes.md)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -181,5 +181,5 @@ For more information, see about_Aliases.
 
 [Set-Variable](Set-Variable.md)
 
-[about_Profiles](about_Profiles.md)
+[about_Profiles](../microsoft.powershell.core/about/about_profiles.md)
 

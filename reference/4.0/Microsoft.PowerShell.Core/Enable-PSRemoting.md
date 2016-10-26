@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -215,7 +215,7 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 [Disable-PSRemoting](Disable-PSRemoting.md)
 
-[WSMan Provider](WSMan-Provider.md)
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
 [about_Remote](About/about_Remote.md)
 

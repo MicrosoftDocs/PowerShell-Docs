@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -408,7 +408,7 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
-[Get-Culture](../Microsoft.PowerShell.Management/Get-Culture.md)
+[Get-Culture](../microsoft.powershell.utility/get-culture.md)
 
 [Get-Help](Get-Help.md)
 
@@ -416,7 +416,7 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 
 [Get-Module](Get-Module.md)
 
-[Get-UICulture](../Microsoft.PowerShell.Management/Get-UICulture.md)
+[Get-UICulture](../microsoft.powershell.utility/get-uiculture.md)
 
 [Start-Job](Start-Job.md)
 

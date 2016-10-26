@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -921,7 +921,7 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [Remove-Module](Remove-Module.md)
 
-[Get-Verb](Get-Verb.md)
+[Get-Verb](functions/get-verb.md)
 
 [about_Modules](About/about_Modules.md)
 

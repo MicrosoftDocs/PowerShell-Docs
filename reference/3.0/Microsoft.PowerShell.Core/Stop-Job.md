@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -370,5 +370,5 @@ Otherwise, this cmdlet does not generate any output.
 
 [about_Jobs](About/about_Jobs.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](about/about_scopes.md)
 

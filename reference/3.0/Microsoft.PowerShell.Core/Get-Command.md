@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -485,7 +485,7 @@ Represents functions and filters
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Get-PSDrive](../Microsoft.PowerShell.Utility/Get-PSDrive.md)
+[Get-PSDrive](../microsoft.powershell.management/get-psdrive.md)
 
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 

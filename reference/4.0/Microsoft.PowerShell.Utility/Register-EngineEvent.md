@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -215,7 +215,7 @@ Otherwise, it does not generate any output.
 
 [Register-ObjectEvent](Register-ObjectEvent.md)
 
-[Register-WmiEvent](../Microsoft.PowerShell.Core/Register-WmiEvent.md)
+[Register-WmiEvent](../microsoft.powershell.management/register-wmievent.md)
 
 [Remove-Event](Remove-Event.md)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -216,7 +216,7 @@ This cmdlet does not return any objects.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](WSMan-Provider.md)
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
 

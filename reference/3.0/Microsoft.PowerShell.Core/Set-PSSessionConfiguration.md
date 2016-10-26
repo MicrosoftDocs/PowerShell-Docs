@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -638,7 +638,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSTransportOption](New-PSTransportOption.md)
 
-[New-PSWorkflowExecutionOption](../Microsoft.WsMan.Management/Provider/New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowExecutionOption](../psworkflow/new-psworkflowexecutionoption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

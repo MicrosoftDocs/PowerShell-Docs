@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -203,7 +203,7 @@ Get-Alias returns the same object for every alias, but Windows PowerShell uses a
 
 [Set-Alias](Set-Alias.md)
 
-[Alias Provider](Alias-Provider.md)
+[Alias Provider](../microsoft.powershell.core/providers/alias-provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 

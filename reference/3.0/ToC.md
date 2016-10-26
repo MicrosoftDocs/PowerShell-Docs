@@ -1,4 +1,4 @@
-﻿
+
 # [ISE](ISE/ISE.md)
 ## [Get-IseSnippet](ISE/Get-IseSnippet.md)
 ## [Import-IseSnippet](ISE/Import-IseSnippet.md)
@@ -386,8 +386,7 @@
 ## [Write-Progress](Microsoft.PowerShell.Utility/Write-Progress.md)
 ## [Write-Verbose](Microsoft.PowerShell.Utility/Write-Verbose.md)
 ## [Write-Warning](Microsoft.PowerShell.Utility/Write-Warning.md)
-# [Microsoft.WsMan.Management](Microsoft.WsMan.Management/Microsoft.WsMan.Management.md)
-# [Microsoft.WsMan.Management](Microsoft.WsMan.Management.md)
+# [Microsoft.WsMan.Management](microsoft.wsman.management/microsoft.wsman.management.md)
 ## About
 ### [about_WS-Management_Cmdlets](Microsoft.WsMan.Management/About/about_WS-Management_Cmdlets.md)
 ## [Connect-WSMan](Microsoft.WsMan.Management/Connect-WSMan.md)
@@ -449,4 +448,3 @@
 ## [New-PSWorkflowSession](PSWorkflow/New-PSWorkflowSession.md)
 # [PSWorkflowUtility](PSWorkflowUtility/PSWorkflowUtility.md)
 ## [Invoke-AsWorkflow](PSWorkflowUtility/Invoke-AsWorkflow.md)
-

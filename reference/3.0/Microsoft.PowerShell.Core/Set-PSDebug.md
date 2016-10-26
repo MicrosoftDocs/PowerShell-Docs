@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -179,11 +179,11 @@ This cmdlet does not return any output.
 
 [Debug-Process](../Microsoft.PowerShell.Management/Debug-Process.md)
 
-[Set-PSBreakpoint](../Microsoft.PowerShell.Management/Set-PSBreakpoint.md)
+[Set-PSBreakpoint](../microsoft.powershell.utility/set-psbreakpoint.md)
 
 [Set-StrictMode](Set-StrictMode.md)
 
-[Write-Debug](../Microsoft.PowerShell.Management/Write-Debug.md)
+[Write-Debug](../microsoft.powershell.utility/write-debug.md)
 
 [about_Debuggers]()
 
