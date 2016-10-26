@@ -585,7 +585,7 @@ When the parameter name is used, the parameter can appear anywhere in the comman
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Get-PSDrive](../Microsoft.PowerShell.Utility/Get-PSDrive.md)
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
 [about_Comment_Based_Help](About/about_Comment_Based_Help.md)
 

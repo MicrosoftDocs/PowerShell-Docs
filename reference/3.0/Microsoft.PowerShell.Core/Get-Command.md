@@ -485,7 +485,7 @@ Represents functions and filters
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Get-PSDrive](../Microsoft.PowerShell.Utility/Get-PSDrive.md)
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 

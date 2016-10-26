@@ -142,9 +142,7 @@ Otherwise, this cmdlet does not generate any output.
 
 [Remove-PSSnapin](Remove-PSSnapin.md)
 
-[about_Profiles](about_Profiles.md)
+[about_Profiles](About/about_Profiles.md)
 
 [about_PSSnapins](About/about_PSSnapins.md)
-
-[about_Pssnapins]()
 
