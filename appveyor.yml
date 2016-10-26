@@ -19,3 +19,8 @@ build_script:
 
 artifacts:
   - path: out_cab
+
+only_commits:
+  files:
+    - reference/**/*
+    - appveyor.*
