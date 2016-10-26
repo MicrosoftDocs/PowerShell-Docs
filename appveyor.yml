@@ -4,7 +4,8 @@
 version: 1.0.{build}
 branches:
   only:
-    - joey-ci
+    - staging
+    - live
 
 install:
   - git clone https://github.com/PowerShell/PowerShell-Docs
@@ -12,9 +13,9 @@ install:
       Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
       Install-Module -Name platyPS -Repository PSGallery -Force
 
-build_script: 
+build_script:
   - ps: |
-      PowerShell-Docs/appveyor.ps1
+      ./appveyor.ps1
 
 artifacts:
-  - path: PowerShell-Docs/out_cab
+  - path: out_cab
