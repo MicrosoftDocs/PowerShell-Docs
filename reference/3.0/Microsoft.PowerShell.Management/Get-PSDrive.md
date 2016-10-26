@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -306,7 +306,7 @@ You cannot pipe objects to **Get-PSDrive**.
 
 [Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
 
-[Get-Member](../Microsoft.PowerShell.Core/Get-Member.md)
+[Get-Member](../microsoft.powershell.utility/get-member.md)
 
 [New-PSDrive](New-PSDrive.md)
 

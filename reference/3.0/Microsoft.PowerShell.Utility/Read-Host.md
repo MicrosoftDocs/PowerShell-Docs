@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -101,7 +101,7 @@ Otherwise, it returns a string.
 
 [Get-Host](Get-Host.md)
 
-[Out-Host](../Microsoft.PowerShell.Security/Out-Host.md)
+[Out-Host](../microsoft.powershell.core/out-host.md)
 
 [Write-Host](Write-Host.md)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -998,21 +998,21 @@ Where-Object returns selected items from the input object set.
 
 ## RELATED LINKS
 
-[Compare-Object](Compare-Object.md)
+[Compare-Object](../microsoft.powershell.utility/compare-object.md)
 
 [ForEach-Object](ForEach-Object.md)
 
-[Group-Object](Group-Object.md)
+[Group-Object](../microsoft.powershell.utility/group-object.md)
 
-[Measure-Object](Measure-Object.md)
+[Measure-Object](../microsoft.powershell.utility/measure-object.md)
 
-[New-Object](New-Object.md)
+[New-Object](../microsoft.powershell.utility/new-object.md)
 
-[Select-Object](Select-Object.md)
+[Select-Object](../microsoft.powershell.utility/select-object.md)
 
-[Sort-Object](Sort-Object.md)
+[Sort-Object](../microsoft.powershell.utility/sort-object.md)
 
-[Tee-Object](Tee-Object.md)
+[Tee-Object](../microsoft.powershell.utility/tee-object.md)
 
 [Where-Object](Where-Object.md)
 

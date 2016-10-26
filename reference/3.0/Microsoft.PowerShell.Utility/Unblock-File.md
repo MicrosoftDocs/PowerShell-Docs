@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -171,5 +171,5 @@ This cmdlet does not generate any output.
 
 [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)
 
-[FileSystem Provider](FileSystem-Provider.md)
+[FileSystem Provider](../microsoft.powershell.core/providers/filesystem-provider.md)
 

@@ -1,4 +1,4 @@
-﻿
+
 # [ISE](ISE/ISE.md)
 ## [Get-IseSnippet](ISE/Get-IseSnippet.md)
 ## [Import-IseSnippet](ISE/Import-IseSnippet.md)
@@ -455,13 +455,13 @@
 ## [Test-WSMan](Microsoft.WsMan.Management/Test-WSMan.md)
 ## About
 ### [about_WS-Management_Cmdlets](Microsoft.WsMan.Management/About/about_WS-Management_Cmdlets.md)
-## [WSMan Provider](Microsoft.WsMan.Management/Provider/WSMan-Provider.md)
-### [New-Item-for-ClientCertificate](Microsoft.WsMan.Management/Provider/New-Item-for-ClientCertificate.md)
-### [New-Item-for-InitializationParameters](Microsoft.WsMan.Management/Provider/New-Item-for-InitializationParameters.md)
-### [New-Item-for-Listener](Microsoft.WsMan.Management/Provider/New-Item-for-Listener.md)
-### [New-Item-for-Plugin](Microsoft.WsMan.Management/Provider/New-Item-for-Plugin.md)
-### [New-Item-for-Resources](Microsoft.WsMan.Management/Provider/New-Item-for-Resources.md)
-### [New-Item-for-Security](Microsoft.WsMan.Management/Provider/New-Item-for-Security.md)
+## [WSMan Provider](microsoft.wsman.management/providers/wsman-provider.md)
+### [New-Item-for-ClientCertificate](microsoft.wsman.management/providers/new-item-for-clientcertificate.md)
+### [New-Item-for-InitializationParameters](microsoft.wsman.management/providers/new-item-for-initializationparameters.md)
+### [New-Item-for-Listener](microsoft.wsman.management/providers/new-item-for-listener.md)
+### [New-Item-for-Plugin](microsoft.wsman.management/providers/new-item-for-plugin.md)
+### [New-Item-for-Resources](microsoft.wsman.management/providers/new-item-for-resources.md)
+### [New-Item-for-Security](microsoft.wsman.management/providers/new-item-for-security.md)
 # [PackageManagement](PackageManagement/PackageManagement.md)
 ## [Find-Package](PackageManagement/Find-Package.md)
 ## [Get-Package](PackageManagement/Get-Package.md)

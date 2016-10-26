@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -1031,7 +1031,7 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [Remove-PSSession](Remove-PSSession.md)
 
-[WSMan Provider](WSMan-Provider.md)
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
 [about_PSSessions](About/about_PSSessions.md)
 
@@ -1041,5 +1041,5 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](about/about_scopes.md)
 
