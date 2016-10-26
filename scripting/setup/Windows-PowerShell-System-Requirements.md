@@ -11,11 +11,25 @@ ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
 
 # Windows PowerShell System Requirements
-This topic lists the system requirements for Windows PowerShell 3.0 and Windows PowerShell 4.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.
+This topic lists the system requirements for Windows PowerShell 3.0, Windows PowerShell 4.0 and Windows PowerShell 5.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.
 
 Windows® 8.1 and Windows Server® 2012 R2 include all required programs. This topic is designed for users of earlier releases of Windows.
 
 ## Operating System Requirements
+Windows PowerShell 5.0 runs on the following versions of Windows.
+
+-   Windows Server 2016, installed by default
+
+-   Windows Server 2012 R2, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+
+-   Windows Server 2012, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+
+-   Windows Server 2008 R2 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+
+-   Windows 8.1
+
+-   Windows 7 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+
 Windows PowerShell 4.0 runs on the following versions of Windows.
 
 -   Windows 8.1, installed by default
@@ -39,6 +53,8 @@ Windows PowerShell 3.0 runs on the following versions of Windows.
 -   Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
 ## Microsoft .NET Framework Requirements
+Windows PowerShell 5.0 requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.
+
 Windows PowerShell 4.0 requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.
 
 Windows PowerShell 3.0 requires the full installation of Microsoft .NET Framework 4. Windows 8 and Windows Server 2012 include Microsoft .NET Framework 4.5 by default, which fulfills this requirement.
@@ -47,6 +63,9 @@ To install Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), see [Micros
 
 To install the full installation of Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), see [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931) on the Microsoft Download Center.
 
+## Windows Management Framework 4.0
+Windows PowerShell 5.0 requires Windows Management Framework 4.0 to be preinstalled on Windows Server 2008 R2 SP1 and Windows 7 SP1.
+
 ## WS-Management 3.0
 Windows PowerShell 3.0 and Windows PowerShell 4.0 require WS-Management 3.0, which supports the WinRM service and WSMan protocol. This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0.
 
@@ -54,7 +73,7 @@ Windows PowerShell 3.0 and Windows PowerShell 4.0 require WS-Management 3.0, whi
 Windows PowerShell 3.0 and Windows PowerShell 4.0 require Windows Management Instrumentation 3.0 (WMI). This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0. If this program is not installed on the computer, features that require WMI, such as CIM commands, do not run.
 
 ## Common Language Runtime 4.0
-Windows PowerShell 3.0 and Windows PowerShell 4.0 are compiled against Common Language Runtime (CLR) 4.0.
+Windows PowerShell 3.0, Windows PowerShell 4.0, and Windows PowerShell 5.0 are compiled against Common Language Runtime (CLR) 4.0.
 
 ## Graphical User Interface Requirements
 Windows PowerShell is a console-based application that does not require a graphical user interface. As such, is it well suited to computers that do not have screens or monitors, or a user interface, such as the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012.
