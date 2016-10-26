@@ -131,7 +131,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[Enable-PSRemoting](../Microsoft.PowerShell.Core/New-PSSession.md)
+[Enable-PSRemoting](../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
 
 [New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 

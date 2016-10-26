@@ -400,9 +400,9 @@ If the command does not import formatting data, any formatting files that are cr
 
 [Import-PSSession](Import-PSSession.md)
 
-[Invoke-Command](../Microsoft.PowerShell.Core/Import-Module.md)
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[New-PSSession](../Microsoft.PowerShell.Core/Import-Module.md)
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 

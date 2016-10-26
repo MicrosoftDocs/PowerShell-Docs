@@ -122,7 +122,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 [Out-Printer](../Microsoft.PowerShell.Utility/Out-Printer.md)
 
-[Out-String](../Microsoft.PowerShell.Utility/Out-File.md)
+[Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 
-[Write-Host](../Microsoft.PowerShell.Utility/Out-File.md)
+[Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)
 

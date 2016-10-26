@@ -135,9 +135,9 @@ Out-String returns the string that it creates from the input object.
 
 [Out-File](Out-File.md)
 
-[Out-Host](../Microsoft.PowerShell.Core/Out-Default.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[Out-Null](../Microsoft.PowerShell.Core/Out-Default.md)
+[Out-Null](../Microsoft.PowerShell.Core/Out-Null.md)
 
 [Out-Printer](Out-Printer.md)
 

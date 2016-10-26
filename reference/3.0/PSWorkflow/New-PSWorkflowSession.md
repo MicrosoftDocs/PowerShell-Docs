@@ -334,9 +334,9 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 [New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[New-PSTransportOption](../Microsoft.PowerShell.Core/New-PSSession.md)
+[New-PSTransportOption](../Microsoft.PowerShell.Core/New-PSTransportOption.md)
 
-[Register-PSSessionConfiguration](../Microsoft.PowerShell.Core/New-PSSession.md)
+[Register-PSSessionConfiguration](../Microsoft.PowerShell.Core/Register-PSSessionConfiguration.md)
 
 [about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 

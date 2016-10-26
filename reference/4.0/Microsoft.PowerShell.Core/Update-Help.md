@@ -428,11 +428,11 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 
 [Get-Help](Get-Help.md)
 
-[Get-Item](../Microsoft.PowerShell.Management/Get-ChildItem.md)
+[Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)
 
 [Get-Module](Get-Module.md)
 
-[Get-UICulture](../Microsoft.PowerShell.Utility/Get-Culture.md)
+[Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 
 [Start-Job](Start-Job.md)
 

@@ -185,7 +185,7 @@ However, it runs the workflow, which might generate output.
 
 [New-PSWorkflowExecutionOption](../PSWorkflow/New-PSWorkflowExecutionOption.md)
 
-[New-PSWorkflowSession](../PSWorkflow/New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowSession](../PSWorkflow/New-PSWorkflowSession.md)
 
 [about_Workflows](../PSWorkflow/About/about_Workflows.md)
 

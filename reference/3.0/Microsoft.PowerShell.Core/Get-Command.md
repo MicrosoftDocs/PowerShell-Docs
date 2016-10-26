@@ -483,11 +483,11 @@ Represents functions and filters
 
 [Get-Help](Get-Help.md)
 
-[Get-Member](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Get-PSDrive](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+[Get-PSDrive](../Microsoft.PowerShell.Utility/Get-PSDrive.md)
 
-[Import-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
 

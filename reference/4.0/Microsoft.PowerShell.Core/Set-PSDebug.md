@@ -193,7 +193,7 @@ This cmdlet does not return any output.
 
 [Set-StrictMode](Set-StrictMode.md)
 
-[Write-Debug](../Microsoft.PowerShell.Management/Debug-Process.md)
+[Write-Debug](../Microsoft.PowerShell.Management/Write-Debug.md)
 
 [about_Debuggers]()
 
