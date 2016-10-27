@@ -29,7 +29,6 @@ Title and link to Web version | Latest Version
 [Microsoft.WSMan.Management](Microsoft.WSMan.Management/Microsoft.WSMan.Management.md) |5.0.1.0
 [PackageManagement](PackageManagement/PackageManagement.md) |5.0.1.0
 [PowerShellGet](PowerShellGet/PowerShellGet.md) |5.0.1.0
-[PSDesiredStateConfiguration](PSDesiredStateConfiguration/PSDesiredStateConfiguration.md) |5.0.1.0
 [PSReadline](PSReadline/PSReadline.md) |5.0.1.0
 [PSScheduledJob](PSScheduledJob/PSScheduledJob.md) |5.0.1.0
 [PSScriptAnalyzer](PSScriptAnalyzer/PSScriptAnalyzer.md) |5.0.1.0

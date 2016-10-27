@@ -13,17 +13,18 @@ See about_Updatable_Help for more information.
 
 Title and link to Web version | Latest Version
 ----------------------------- | --------------
-[ISE](ISE/ISE.md) | 3.1.0.0
-[Microsoft.PowerShell.Core](Microsoft.PowerShell.Core/Microsoft.PowerShell.Core.md) | 3.3.0.0
-[Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics\Microsoft.PowerShell.Diagnostics.md) | 3.1.0.0
-[Microsoft.PowerShell.Host](Microsoft.PowerShell.Host/Microsoft.PowerShell.Host.md) | 3.1.0.0
-[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.md) | 3.2.0.0
-[Microsoft.PowerShell.Security](Microsoft.PowerShell.Security/Microsoft.PowerShell.Security.md) | 3.1.0.0
-[Microsoft.PowerShell.Utility](Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility.md) | 3.3.0.0
-[Microsoft.WSMan.Management](Microsoft.WSMan.Management/Microsoft.WSMan.Management.md) | 3.2.0.0
-[PSScheduledJob](PSScheduledJob/PSScheduledJob.md) | 3.3.0.0
-[PSWorkflow](PSWorkflow/PSWorkflow.md) | 3.4.0.0
-[PSWorkflowUtility](PSWorkflowUtility/PSWorkflowUtility.md) | 3.3.0.0
+[ISE](ISE/ISE.md) |4.0.3.0
+[Microsoft.PowerShell.Core](Microsoft.PowerShell.Core/Microsoft.PowerShell.Core.md) |4.0.4.0
+[Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics/Microsoft.PowerShell.Diagnostics.md) |4.0.3.0
+[Microsoft.PowerShell.Host](Microsoft.PowerShell.Host/Microsoft.PowerShell.Host.md) |4.0.3.0
+[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.md) |4.0.3.0
+[Microsoft.PowerShell.Security](Microsoft.PowerShell.Security/Microsoft.PowerShell.Security.md) |4.0.3.0
+[Microsoft.PowerShell.Utility](Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility.md) |4.0.3.0
+[Microsoft.WSMan.Management](Microsoft.WSMan.Management/Microsoft.WSMan.Management.md) |4.0.3.0
+[PSDesiredStateConfiguration](PSDesiredStateConfiguration/PSDesiredStateConfiguration.md) |4.0.3.0
+[PSScheduledJob](PSScheduledJob/PSScheduledJob.md) |4.0.3.0
+[PSWorkflow](PSWorkflow/PSWorkflow.md) |4.0.3.0
+[PSWorkflowUtility](PSWorkflowUtility/PSWorkflowUtility.md) |4.0.3.0
 
 ##  See Also
 ###  Concepts
