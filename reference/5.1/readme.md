@@ -15,7 +15,7 @@ The Help is available through the links below, or as Updatable Help files.
 Updatable Help was introduced with Windows PowerShell 3.0 and enables you to have the latest Help topics available locally on your computer.
 See about_Updatable_Help for more information.
 
-Title and link to Web version | Latest Version
+Module | Latest Version
 ----------------------------- | --------------
 [[ISE](ISE/ISE.md) |5.1.0.0
 [Microsoft.PowerShell.Archive](Microsoft.PowerShell.Archive/Microsoft.PowerShell.Archive.md) |5.1.0.0
@@ -30,7 +30,6 @@ Title and link to Web version | Latest Version
 [Microsoft.WSMan.Management](Microsoft.WSMan.Management/Microsoft.WSMan.Management.md) |5.1.0.0
 [PackageManagement](PackageManagement/PackageManagement.md) |5.1.0.0
 [PowerShellGet](PowerShellGet/PowerShellGet.md) |5.1.0.0
-[PSDesiredStateConfiguration](PSDesiredStateConfiguration/PSDesiredStateConfiguration.md) |5.1.0.0
 [PSReadline](PSReadline/PSReadline.md) |5.1.0.0
 [PSScheduledJob](PSScheduledJob/PSScheduledJob.md) |5.1.0.0
 [PSWorkflow](PSWorkflow/PSWorkflow.md) |5.1.0.0

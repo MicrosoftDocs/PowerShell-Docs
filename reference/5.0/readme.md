@@ -14,14 +14,13 @@ The Help is available through the links below, or as Updatable Help files.
 Updatable Help was introduced with Windows PowerShell 3.0 and enables you to have the latest Help topics available locally on your computer.
 See about_Updatable_Help for more information.
 
-Title and link to Web version | Latest Version
+Module | Latest Version
 ----------------------------- | --------------
 [ISE](ISE/ISE.md) |5.0.1.0
 [Microsoft.PowerShell.Archive](Microsoft.PowerShell.Archive/Microsoft.PowerShell.Archive.md) |5.0.1.0
 [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core/Microsoft.PowerShell.Core.md) |5.0.1.0
 [Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics/Microsoft.PowerShell.Diagnostics.md) |5.0.1.0
 [Microsoft.PowerShell.Host](Microsoft.PowerShell.Host/Microsoft.PowerShell.Host.md) |5.0.1.0
-[Microsoft.PowerShell.LocalAccounts](Microsoft.PowerShell.LocalAccounts/Microsoft.PowerShell.LocalAccounts.md) |5.0.1.0
 [Microsoft.PowerShell.Management](Microsoft.PowerShell.Management/Microsoft.PowerShell.Management.md) |5.0.1.0
 [Microsoft.PowerShell.ODataUtils](Microsoft.PowerShell.ODataUtils/Microsoft.PowerShell.ODataUtils.md) |5.0.1.0
 [Microsoft.PowerShell.Security](Microsoft.PowerShell.Security/Microsoft.PowerShell.Security.md) |5.0.1.0
@@ -31,7 +30,6 @@ Title and link to Web version | Latest Version
 [PowerShellGet](PowerShellGet/PowerShellGet.md) |5.0.1.0
 [PSReadline](PSReadline/PSReadline.md) |5.0.1.0
 [PSScheduledJob](PSScheduledJob/PSScheduledJob.md) |5.0.1.0
-[PSScriptAnalyzer](PSScriptAnalyzer/PSScriptAnalyzer.md) |5.0.1.0
 [PSWorkflow](PSWorkflow/PSWorkflow.md) |5.0.1.0
 [PSWorkflowUtility](PSWorkflowUtility/PSWorkflowUtility.md) |5.0.1.0
 
