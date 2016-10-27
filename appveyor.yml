@@ -1,0 +1,26 @@
+# clone repo
+# Convert MD to MAML
+
+version: 1.0.{build}
+branches:
+  only:
+    - staging
+    - live
+
+install:
+  - git clone https://github.com/PowerShell/PowerShell-Docs
+  - ps: |
+      Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+      Install-Module -Name platyPS -Repository PSGallery -Force
+
+build_script:
+  - ps: |
+      ./appveyor.ps1
+
+artifacts:
+  - path: out_cab
+
+only_commits:
+  files:
+    - reference/**/*
+    - appveyor.*

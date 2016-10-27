@@ -5,8 +5,13 @@ obj/
 _site/
 Tools/NuGet/
 _site/
+out_cab/
+out_maml/
+
 
 .openpublishing.build.mdproj
 .openpublishing.buildcore.ps1
 packages.config
 **/.ignore/**
+*.orig
+
