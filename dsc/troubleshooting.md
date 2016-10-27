@@ -298,7 +298,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### Getting details of DSC events
 
-The `Trace-xDscOperation1` cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation. Typically, when you find a failure in any of the operations using `Get-xDscOperation`, you would trace that operation to find out which of the events caused a failure.
+The `Trace-xDscOperation` cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation. Typically, when you find a failure in any of the operations using `Get-xDscOperation`, you would trace that operation to find out which of the events caused a failure.
 
 Use the  `SequenceID` parameter to get the events for a specific operation for a specific computer. For example, if you specify a `SequenceID` of 9, `Trace-xDscOperaion` get the 
 trace for the DSC operation that was 9th from the last operation:
