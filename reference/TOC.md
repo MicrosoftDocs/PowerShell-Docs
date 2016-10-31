@@ -1,5 +1,5 @@
 #  [Windows PowerShell Reference](readme.md)
-﻿##  [Windows PowerShell 3.0](3.0)
+##  [Windows PowerShell 3.0](3.0)
 ###  [ISE](3.0/ISE/ISE.md)
 ####  [Get-IseSnippet](3.0/ISE/Get-IseSnippet.md)
 ####  [Import-IseSnippet](3.0/ISE/Import-IseSnippet.md)
