@@ -47,7 +47,7 @@ PS C:\>Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
             Where-Object { $_ -like "$wordToComplete*" } |
             Sort-Object |
             ForEach-Object {
-                New-CompletionResult $_
+                [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_))
             }
 }
 PS C:\> Register-ArgumentCompleter -CommandName Get-Command -ParameterName Verb -ScriptBlock {
@@ -143,7 +143,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+You cannot pipe objects to this cmdlet.
+
 ## OUTPUTS
+
+This cmdlet returns no output.
 
 ## NOTES
 
