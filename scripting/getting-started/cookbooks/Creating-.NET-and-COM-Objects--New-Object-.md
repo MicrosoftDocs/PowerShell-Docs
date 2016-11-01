@@ -151,6 +151,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 
 **Get-Member** has an optional **InputObject** parameter you can use instead of piping to provide input to **Get-Member**. You would get the same output as shown above if you instead used the command **Get-Member -InputObject $WshShell**. If you use **InputObject**, it treats its argument as a single item. This means that if you have several objects in a variable, **Get-Member** treats them as an array of objects. For example:
 
+
 ```
 PS> $a = 1,2,"three"
 PS> Get-Member -InputObject $a
@@ -178,7 +179,8 @@ $Home\Desktop\PSHome.lnk
 
 We now have a variable named **$lnk** that contains a new shortcut reference. If you want to see its members, you can pipe it to **Get-Member**. The output below shows the members we need to use to finish creating our shortcut:
 
-<pre>PS> $lnk | Get-Member
+```
+PS> $lnk | Get-Member
 TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
 Name             MemberType   Definition
 ----             ----------   ----------
@@ -186,12 +188,14 @@ Name             MemberType   Definition
 Save             Method       void Save ()
 ...
 TargetPath       Property     string TargetPath () {get} {set}
-...</pre>
+```
 
 We need to specify the **TargetPath**, which is the application folder for Windows PowerShell, and then save the shortcut **$lnk** by calling the **Save** method. The Windows PowerShell application folder path is stored in the variable **$PSHome**, so we can do this by typing:
 
-<pre>$lnk.TargetPath = $PSHome
-$lnk.Save()</pre>
+```
+$lnk.TargetPath = $PSHome
+$lnk.Save()
+```
 
 ### Using Internet Explorer from Windows PowerShell
 Many applications (including the Microsoft Office family of applications and Internet Explorer) can be automated by using COM. Internet Explorer illustrates some of the typical techniques and issues involved in working with COM-based applications.
