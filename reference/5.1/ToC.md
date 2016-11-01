@@ -456,12 +456,12 @@
 ## About
 ### [about_WS-Management_Cmdlets](Microsoft.WsMan.Management/About/about_WS-Management_Cmdlets.md)
 ## [WSMan Provider](microsoft.wsman.management/providers/wsman-provider.md)
-### [New-Item-for-ClientCertificate](Microsoft.WsMan.Management/Provider/New-Item-for-ClientCertificate.md)
-### [New-Item-for-InitializationParameters](Microsoft.WsMan.Management/Provider/New-Item-for-InitializationParameters.md)
-### [New-Item-for-Listener](Microsoft.WsMan.Management/Provider/New-Item-for-Listener.md)
-### [New-Item-for-Plugin](Microsoft.WsMan.Management/Provider/New-Item-for-Plugin.md)
-### [New-Item-for-Resources](Microsoft.WsMan.Management/Provider/New-Item-for-Resources.md)
-### [New-Item-for-Security](Microsoft.WsMan.Management/Provider/New-Item-for-Security.md)
+### [New-Item-for-ClientCertificate](Microsoft.WsMan.Management/Providers/New-Item-for-ClientCertificate.md)
+### [New-Item-for-InitializationParameters](Microsoft.WsMan.Management/Providers/New-Item-for-InitializationParameters.md)
+### [New-Item-for-Listener](Microsoft.WsMan.Management/Providers/New-Item-for-Listener.md)
+### [New-Item-for-Plugin](Microsoft.WsMan.Management/Providers/New-Item-for-Plugin.md)
+### [New-Item-for-Resources](Microsoft.WsMan.Management/Providers/New-Item-for-Resources.md)
+### [New-Item-for-Security](Microsoft.WsMan.Management/Providers/New-Item-for-Security.md)
 
 # [PackageManagement](PackageManagement/PackageManagement.md)
 ## [Find-Package](PackageManagement/Find-Package.md)
