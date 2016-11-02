@@ -358,7 +358,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: '(c) 2012 <User> All rights reserved.
+Default value: '(c) 2012 <User> All rights reserved.'
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -775,7 +775,7 @@ The changes that you make affect all new sessions that use the session configura
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

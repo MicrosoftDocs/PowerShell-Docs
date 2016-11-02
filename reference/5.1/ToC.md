@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #  [Windows PowerShell 5.1](readme.md)
 ##  [ISE](ISE/ISE.md)
 ###  [Get-IseSnippet](ISE/Get-IseSnippet.md)
