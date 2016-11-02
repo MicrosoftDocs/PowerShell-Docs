@@ -1,6 +1,6 @@
 ﻿---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -27,13 +27,13 @@ Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParam
 ## DESCRIPTION
 The **Set-WSManQuickConfig** cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the Web Services for Management (WS-Management) technology.
 
-This cmdlet performs the following actions: 
+This cmdlet performs the following actions:
 
 - Checks whether the WinRM service is running.
-If the WinRM service is not running, the service is started. 
-- Sets the WinRM service startup type to automatic. 
+If the WinRM service is not running, the service is started.
+- Sets the WinRM service startup type to automatic.
 - Creates a listener to accept requests on any IP address.
-By default, the transport is HTTP. 
+By default, the transport is HTTP.
 - Enables a firewall exception for WinRM traffic .
 
 To run this cmdlet, start Windows PowerShell by using the Run as administrator option.
@@ -64,7 +64,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -87,7 +87,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -107,7 +107,7 @@ If SSL is not available on the port that is used for the connection, and you spe
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -155,7 +155,4 @@ This cmdlet does not generate any output.
 
 [New-WSManSessionOption](New-WSManSessionOption.md)
 
-[Set-NetFirewallRule](Set-NetFirewallRule.md)
-
 [Test-WSMan](Test-WSMan.md)
-
