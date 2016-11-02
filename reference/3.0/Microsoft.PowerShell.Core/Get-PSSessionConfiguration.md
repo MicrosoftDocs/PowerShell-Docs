@@ -368,7 +368,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

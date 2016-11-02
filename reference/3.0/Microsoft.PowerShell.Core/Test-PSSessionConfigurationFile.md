@@ -117,7 +117,7 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

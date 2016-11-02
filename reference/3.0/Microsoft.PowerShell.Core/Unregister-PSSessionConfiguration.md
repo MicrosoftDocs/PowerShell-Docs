@@ -211,7 +211,7 @@ This cmdlet does not return any objects.
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

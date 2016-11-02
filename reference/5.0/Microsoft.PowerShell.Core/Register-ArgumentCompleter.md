@@ -36,10 +36,31 @@ The **Register-ArgumentCompleter** cmdlet registers a custom argument completer.
 
 ## EXAMPLES
 
-### 1:
+### Example 1: Register a custom argument completer
 ```
-PS C:\>
+PS C:\>Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+
+        echo -- -PSConsoleFile -Version -NoLogo -NoExit -Sta -NoProfile -NonInteractive `
+            -InputFormat -OutputFormat -WindowStyle -EncodedCommand -File -ExecutionPolicy `
+            -Command |
+            Where-Object { $_ -like "$wordToComplete*" } |
+            Sort-Object |
+            ForEach-Object {
+                [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_))
+            }
+}
+PS C:\> Register-ArgumentCompleter -CommandName Get-Command -ParameterName Verb -ScriptBlock {
+    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+    Get-Verb "$wordToComplete*" |
+        ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_.Verb, $_.Verb, 'ParameterValue', ("Group: " + $_.Group))
+        }
+}
 ```
+
+
 
 ## PARAMETERS
 
@@ -124,7 +145,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+You cannot pipe objects to this cmdlet.
+
 ## OUTPUTS
+
+This cmdlet returns no output.
 
 ## NOTES
 

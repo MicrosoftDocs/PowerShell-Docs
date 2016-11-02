@@ -62,8 +62,10 @@ Set-Alias -Name gcm -Value Get-Command
 
 Internally, Windows PowerShell uses commands like these during startup, but these aliases are not changeable. If you attempt to actually execute one of these commands, you will get an error explaining that the alias cannot be modified. For example:
 
-<pre>PS> Set-Alias -Name gi -Value Get-Item
+```
+PS> Set-Alias -Name gi -Value Get-Item
 Set-Alias : Alias is not writeable because alias gi is read-only or constant and cannot be written to.
 At line:1 char:10
-+ Set-Alias  <<<< -Name gi -Value Get-Item</pre>
++ Set-Alias  <<<< -Name gi -Value Get-Item
+```
 
