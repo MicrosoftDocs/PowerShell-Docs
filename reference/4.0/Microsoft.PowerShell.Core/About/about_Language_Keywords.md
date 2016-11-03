@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Language_Keywords
 description:
 keywords: powershell, cmdlet
@@ -464,8 +464,8 @@ workflow <verb>-<noun>
 }
 ```
 
-For more information, see: [about_Parallel](../PSWorkflow/About/about_Parallel.md),
-[about_ForEach-Parallel](../PSWorkflow/About/about_ForEach-Parallel)
+For more information, see: [about_Parallel](../../psworkflow/about/about_parallel.md),
+[about_ForEach-Parallel](../../psworkflow/about/about_foreach-parallel.md)
 
 **Process**
 -------
@@ -521,7 +521,7 @@ The Sequence keyword creates a sequence block within a Parallel
 script block. The commands in the Sequence script block run
 sequentially and in the order defined.
 
-For more information, see: [about_Sequence](../PSWorkflow/About/about_Sequence.md)
+For more information, see: [about_Sequence](../../psworkflow/about/about_sequence.md)
 
 **Switch**
 ------
@@ -667,7 +667,7 @@ workflow <verb-noun>
 }
 ```
 
-For more information about workflows, see [about_Workflows](../PSWorkflow/About/about_Workflows.md)
+For more information about workflows, see [about_Workflows](../../psworkflow/about/about_workflows.md)
 and "Getting Started with Windows PowerShell Workflow"
 (http://go.microsoft.com/fwlink/?LinkID=252592) in the
 TechNet Library.
