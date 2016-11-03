@@ -1,10 +1,10 @@
 ﻿---
 title: about_Operator_Precedence
-description: 
+description:
 keywords: powershell, cmdlet
 author: jpjofre
 manager: carolz
-ms.date: 2016-09-27
+ms.date: 2016-09-20
 ms.topic: reference
 ms.prod: powershell
 ms.technology: powershell
@@ -60,9 +60,9 @@ $()  @()                         about_Operators
 
 . (dereference) :: (static)      about_Operators
 
-[0] (index operator)             about_Operators
+\[0] (index operator)             about_Operators
 
-[int] (cast operators)           about_Operators
+\[int] (cast operators)           about_Operators
 
 -split (unary) -join (unary)     about_Split, about_Join
 
@@ -76,9 +76,9 @@ $()  @()                         about_Operators
 
 -f (format operator)             about_Operators
 
-* / %                            about_Arithmetic_Operators
+\* / %                            about_Arithmetic_Operators
 
-+ -                              about_Arithmetic_Operators
+\+ -                              about_Arithmetic_Operators
 
 The following group of operators have equal precedence. Their
 case-sensitive and explicitly case-insensitive variants have
@@ -105,9 +105,9 @@ order:
 
 | (pipeline operator)            about_Operators
 
->  >>  2>  2>>  2>&1             about_Redirection
+\>  >>  2>  2>>  2>&1             about_Redirection
 
-=  +=  -=  *=  /= %=             about_Assignment_Operators
+=  +=  -=  \*=  /= %=             about_Assignment_Operators
 
 # EXAMPLES
 
@@ -115,25 +115,26 @@ order:
 The following two commands show the arithmetic operators and
 the effect of using parentheses to force Windows PowerShell to
 evaluate the enclosed part of the expression first.
+```
+C:\PS> 2 + 3 * 4
 
-# C:\PS> 2 + 3 * 4
-
-# 14
+14
 
 
-# C:\PS> (2 + 3) * 4
+C:\PS> (2 + 3) * 4
 
-# 20
-
+20
+```
 
 The following example gets the read-only text files from the local
 directory and saves them in the $read_only variable.
-
+```
 $read_only = get-childitem *.txt | where-object {$_.isReadOnly}
 
 It is equivalent to the following example.
 
 $read_only = ( get-childitem *.txt | where-object {$_.isReadOnly} )
+```
 
 Because the pipeline operator (|) has a higher precedence than the
 assignment operator (=), the files that the Get-ChildItem cmdlet
@@ -147,35 +148,39 @@ The first expression creates an array of three strings. Then, it
 uses the index operator with a value of 0 to select the first object
 in the array, which is the first string. Finally, it casts the
 selected object as a string. In this case, the cast has no effect.
-
+```
 C:\PS> [string]@('Windows','PowerShell','2.0')[0]
 Windows
+```
 
 The second expression uses parentheses to force the cast operation
 to occur before the index selection. As a result, the entire array
 is cast as a (single) string. Then, the index operator selects
 the first item in the string array, which is the first character.
-
+```
 C:\PS> ([string]@('Windows','PowerShell','2.0'))[0]
-# W
-
+W
+```
 
 In the following example, because the -gt (greater-than) operator
 has a higher precedence than the -and (logical AND) operator, the
 result of the expression is FALSE.
-
+```
 C:\PS> 2 -gt 4 -and 1
 False
+```
 
 It is equivalent to the following expression.
-
+```
 C:\PS> (2 -gt 4) -and 1
 False
+```
 
 If the -and operator had higher precedence, the answer would be TRUE.
-
+```
 C:\PS> 2 -gt (4 -and 1)
 True
+```
 
 However, this example demonstrates an important principle of managing
 operator precedence. When an expression is difficult for people to
@@ -185,13 +190,11 @@ intentions clear to people who are reading and maintaining your scripts.
 
 # SEE ALSO
 
-about_Assignment_Operators
-about_Comparison_Operators
-about_Join
-about_Logical_Operators
-about_Operators
-about_Redirection
-about_Scopes
-about_Split
-about_Type_Operators
-
+- [about_Assignment_Operators](about_Assignment_Operators.md)
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Join](about_Join.md)
+- [about_Operators](about_Operators.md)
+- [about_Redirection](about_Redirection.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Split](about_Split.md)
+- [about_Type_Operators](about_Type_Operators.md)

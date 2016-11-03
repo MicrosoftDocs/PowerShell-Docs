@@ -92,9 +92,9 @@ use commands on the Debug menu.
 Note: For information about how to use the debugger in other host
 applications, see the host application documentation.
 
-s, Step-into        Executes the next statement and then stops.
+s, StepInto        Executes the next statement and then stops.
 
-v, Step-over        Executes the next statement, but skips functions
+v, StepOver        Executes the next statement, but skips functions
 and invocations. The skipped statements are
 executed, but not stepped through.
 
@@ -105,7 +105,7 @@ Note that Ctrl+Break in Windows PowerShell 2.0, 3.0,
 and 4.0 closes the program. Break All works on both
 local and remote interactively-running scripts.
 
-o, Step-out         Steps out of the current function; up one level
+o, StepOut         Steps out of the current function; up one level
 if nested. If in the main body, it continues to
 the end or the next breakpoint. The skipped
 statements are executed, but not stepped through.
@@ -133,7 +133,7 @@ running.
 k, Get-PsCallStack  Displays the current call stack.
 
 <Enter>             Repeats the last command if it was Step (s),
-Step-over (v), or List (l). Otherwise, represents a
+StepOver (v), or List (l). Otherwise, represents a
 submit action.
 
 ?, h                Displays the debugger command Help.
@@ -585,7 +585,7 @@ test.ps1:2       "Windows PowerShell " + $psversiontable.psversion
 
 The debug message includes a preview of the statement in the function.
 To execute this statement and to preview the next statement in the
-function, you can use a Step command. But, in this case, use a Step-Out
+function, you can use a Step command. But, in this case, use a StepOut
 command (o). It completes the execution of the function (unless it
 reaches a breakpoint) and steps to the next statement in the script.
 
@@ -594,14 +594,14 @@ Windows PowerShell 2.0
 Have you run a background job today (start-job)?
 test.ps1:13  "Done $scriptname"
 
-Because we are on the last statement in the script, the Step, Step-Out,
+Because we are on the last statement in the script, the Step, StepOut,
 and Continue commands have the same effect. In this case, use
-Step-Out (o).
+StepOut (o).
 
 Done C:\ps-test\test.ps1
 PS C:\ps-test>
 
-The Step-Out command executes the last command. The standard command
+The StepOut command executes the last command. The standard command
 prompt indicates that the debugger has exited and returned control to the
 command processor.
 
@@ -661,8 +661,8 @@ DBG> s
 test.ps1:12  psversion
 
 The next statement is a call to the PsVersion function. To skip the
-function but still execute it, use a Step-Over command (v). If you are
-already in the function when you use Step-Over, it is not effective. The
+function but still execute it, use a StepOver command (v). If you are
+already in the function when you use StepOver, it is not effective. The
 function call is displayed, but it is not executed.
 
 DBG> v
@@ -670,7 +670,7 @@ Windows PowerShell 2.0
 Have you run a background job today (start-job)?
 test.ps1:13  "Done $scriptname"
 
-The Step-Over command executes the function, and it previews the next
+The StepOver command executes the function, and it previews the next
 statement in the script, which prints the final line.
 
 Use a Stop command (t) to exit the debugger. The command prompt
