@@ -59,10 +59,10 @@ MyDscConfiguration -ConfigurationData $MyData
 ```
 
 The last line in this script compiles the configuration into MOF documents, passing `$MyData` as the value **ConfigurationData** parameter. `$MyData` specifies two different nodes, each with
-its own `NodeName` and `Role`. The actual configuration creates **Node** blocks dynamically by filtering the collection of nodes it gets from `$MyData` (a special variable named
-**$AllNodes**) by their `Role` properties.
+its own `NodeName` and `Role`. The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the 
+`Role` property..
 
-Now let's look at how this works in more detal.
+Now let's look at how this works in more detail.
 
 ## The ConfigurationData parameter
 
@@ -356,7 +356,8 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 
 }
-   
+```
+
 ## See Also
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)
