@@ -26,7 +26,7 @@ setting the -Path parameter of the cmdlet to the path where the configuration MO
 you would apply it to the local machine with the following command: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the 
->[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) with the __-Wait__ parameter.
+>[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) with the __-Wait__ parameter.
 
 
 ## Pull mode
