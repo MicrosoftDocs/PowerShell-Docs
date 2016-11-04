@@ -17,7 +17,7 @@ See about_Updatable_Help for more information.
 
 Module | Latest Version
 ----------------------------- | --------------
-[[ISE](ISE/ISE.md) |5.1.0.0
+[ISE](ISE/ISE.md) |5.1.0.0
 [Microsoft.PowerShell.Archive](Microsoft.PowerShell.Archive/Microsoft.PowerShell.Archive.md) |5.1.0.0
 [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core/Microsoft.PowerShell.Core.md) |5.1.0.0
 [Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics/Microsoft.PowerShell.Diagnostics.md) |5.1.0.0
