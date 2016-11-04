@@ -59,8 +59,8 @@ MyDscConfiguration -ConfigurationData $MyData
 ```
 
 The last line in this script compiles the configuration into MOF documents, passing `$MyData` as the value **ConfigurationData** parameter. `$MyData` specifies two different nodes, each with
-its own `NodeName` and `Role`. The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the 
-`Role` property..
+its own `NodeName` and `Role`. The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection 
+against the `Role` property..
 
 Now let's look at how this works in more detail.
 
