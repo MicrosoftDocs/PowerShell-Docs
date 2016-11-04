@@ -1,10 +1,10 @@
-﻿---
+---
 title: about_Language_Keywords
-description: 
+description:
 keywords: powershell, cmdlet
 author: jpjofre
 manager: carolz
-ms.date: 2016-09-30
+ms.date: 2016-11-02
 ms.topic: reference
 ms.prod: powershell
 ms.technology: powershell
@@ -69,7 +69,7 @@ Workflow           about_Workflows
 
 Language Keywords
 
-Begin
+**Begin**
 -----
 
 Specifies one part of the body of a function, along with the
@@ -77,32 +77,34 @@ DynamicParam, Process, and End keywords. The Begin statement list runs
 one time before any objects are received from the pipeline.
 
 Syntax:
-
+```
 function <name> {
 DynamicParam {<statement list>}
 begin {<statement list>}
 process {<statement list>}
 end {<statement list>}
 }
+```
 
-Break
+**Break**
 -----
 
 Causes a script to exit a loop.
 
 Syntax:
-
+```
 while (<condition>) {
-<statements>
-# ...
+   <statements>
+   ...
 
-break
-# ...
+   break
+   ...
 
-<statements>
+   <statements>
 }
+```
 
-Catch
+**Catch**
 -----
 
 Specifies a statement list to run if an error occurs in the
@@ -110,89 +112,99 @@ accompanying Try statement list. An error type requires brackets. The
 second pair of brackets indicates that the error type is optional.
 
 Syntax:
-
+```
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
+```
 
-Continue
+**Continue**
 --------
 
 Causes a script to stop running a loop and to go back to the condition.
 If the condition is met, the script begins the loop again.
 
 Syntax:
-
+```
 while (<condition>) {
-<statements>
-# ...
+   <statements>
+   ...
 
-continue
-# ...
+   continue
+   ...
 
-<statements>
+   <statements>
 }
+```
 
-Data
+**Data**
 ----
 
 In a script, defines a section that isolates data from the script logic.
 Can also include If statements and some limited commands.
 
 Syntax:
-
+```
 data <variable> [-supportedCommand <cmdlet-name>] {<permitted content>}
+```
 
-Do
+**Do**
 --
 
 Used with the While or Until keyword as a looping construct. Windows
 PowerShell runs the statement list at least one time, unlike a loop that
 uses While.
 
-Syntax:
-
+Syntax for _While_:
+```
 do {<statement list>} while (<condition>)
+```
 
+Syntax for _Until_:
+```
 do {<statement list>} until (<condition>)
+```
 
-DynamicParam
+**DynamicParam**
 ------------
 
 Specifies one part of the body of a function, along with the Begin,
 Process, and End keywords. Dynamic parameters are added at run time.
 
 Syntax:
-
+```
 function <name> {
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
 }
+```
 
-Else
+**Else**
 ----
 
 Used with the If keyword to specify the default statement list.
 
 Syntax:
-
+```
 if (<condition>) {<statement list>}
 else {<statement list>}
+```
 
-Elseif
+**Elseif**
 ------
 
 Used with the If and Else keywords to specify additional conditionals.
 The Else keyword is optional.
 
 Syntax:
-
+```
 if (<condition>) {<statement list>}
 elseif (<condition>) {<statement list>}
 else {<statement list>}
+```
 
-End
+**End**
 ---
 
 Specifies one part of the body of a function, along with the
@@ -200,15 +212,16 @@ DynamicParam, Begin, and End keywords. The End statement list runs one
 time after all the objects have been received from the pipeline.
 
 Syntax:
-
+```
 function <name> {
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
 }
+```
 
-Exit
+**Exit**
 ----
 
 Causes Windows PowerShell to exit a script or a Windows PowerShell
@@ -217,28 +230,29 @@ instance.
 When you run 'powershell.exe –File <path to a script>', you can only
 set the %ERRORLEVEL% variable to a value other than zero by using the
 exit statement. In the following example, the user sets the error level
-variable value to 4 by typing 'exit 4'.
+variable value to 4 by adding 'exit 4' to the script file _test.ps1_.
 
+```
 C:\Users\bruce\documents\test>type test.ps1
-# 1
+1
 
-# 2
+2
 
-# 3
+3
 
 exit 4
 
 C:\Users\bruce\documents\test>powershell -file ./test.ps1
-# 1
+1
 
-# 2
+2
 
-# 3
+3
 
 
 C:\Users\bruce\documents\test>echo %ERRORLEVEL%
-# 4
-
+4
+```
 
 When you use powershell.exe with the File parameter, the .ps1 (script)
 file itself should include instructions for handling any errors or
@@ -246,11 +260,12 @@ exceptions that occur while the script is running. You should only use
 the exit statement to indicate the post-execution status of the script.
 
 Syntax:
-
+```
 exit
 exit <exit code>
+```
 
-Filter
+**Filter**
 ------
 
 Specifies a function in which the statement list runs one time for each
@@ -258,10 +273,11 @@ input object. It has the same effect as a function that contains only a
 Process block.
 
 Syntax:
-
+```
 filter <name> {<statement list>}
+```
 
-Finally
+**Finally**
 -------
 
 Defines a statement list that runs after statements that are associated
@@ -269,35 +285,38 @@ with Try and Catch. A Finally statement list runs even if you press
 CTRL+C to leave a script or if you use the Exit keyword in the script.
 
 Syntax:
-
+```
 try {<statement list>}
 catch [<error type] {<statement list>}
 finally {<statement list>}
+```
 
-For
+**For**
 ---
 
 Defines a loop by using a condition.
 
 Syntax:
+```
+for (<initialize>; <condition>; <iterate>) { <statement list> }
+```
 
-for (<initialize>; <condition>; <iterate>) {<statement list>}
-
-ForEach
+**ForEach**
 -------
 
 Defines a loop by using each member of a collection.
 
 Syntax:
+```
+ForEach (<item> in <collection>) { <statement list> }
+```
 
-ForEach (<item> in <collection>){<statement list>}
-
-From
+**From**
 -----
 
 Reserved for future use.
 
-Function
+**Function**
 --------
 
 Creates a named statement list of reusable code. You can name the scope a
@@ -306,72 +325,77 @@ using the Param keyword. Within the function statement list, you can
 include DynamicParam, Begin, Process, and End statement lists.
 
 Syntax:
-
+```
 function [<scope:>]<name> {
-param ([type]<$pname1> [, [type]<$pname2>])
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+   param ([type]<$pname1> [, [type]<$pname2>])
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
 }
-
+```
 You also have the option of defining one or more parameters outside the
 statement list after the function name.
 
 Syntax:
-
+```
 function [<scope:>]<name> [([type]<$pname1>, [[type]<$pname2>])] {
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
 }
+```
 
-If
+**If**
 --
 
 Defines a conditional.
 
 Syntax:
-
+```
 if (<condition>) {<statement list>}
+```
 
-Hidden
+**Hidden**
 ------
 
 Hides class members from the default results of the Get-Member cmdlet, and
 from IntelliSense and tab completion results.
 
 Syntax:
-
+```
 Hidden [data type] $member_name
+```
 
-In
+**In**
 --
 
 Used in a ForEach statement to create a loop that uses each member of a
 collection.
 
 Syntax:
-
+```
 ForEach (<item> in <collection>){<statement list>}
+```
 
-InlineScript
+**InlineScript**
 ------------
 Runs workflow commands in a shared Windows PowerShell session.
 This keyword is valid only in a Windows PowerShell Workflow.
 
 Syntax:
-
+```
 workflow <verb>-<noun>
 {
-InlineScript
-{
-<Command/Expression>
-# ...
+   InlineScript
+   {
+      <Command/Expression>
+      ...
 
+   }
 }
-}
+```
 
 The InlineScript keyword indicates an InlineScript activity,
 which runs commands in a shared standard (non-workflow)
@@ -381,22 +405,22 @@ that share data. By default, the commands in an InlineScript
 script block run in a separate process.
 
 For more information, see about_InlineScript and
-Running Windows PowerShell Commands in a Workflow
-(http://technet.microsoft.com/library/jj574197.aspx).
+[Running Windows PowerShell Commands in a Workflow](http://technet.microsoft.com/library/jj574197.aspx).
 
-Param
+**Param**
 -----
 
 Defines the parameters in a function.
 
 Syntax:
-
+```
 function [<scope:>]<name> {
-param ([type]<$pname1>[, [[type]<$pname2>]])
-<statement list>
+   param ([type]<$pname1>[, [[type]<$pname2>]])
+   <statement list>
 }
+```
 
-Parallel
+**Parallel**
 --------
 Runs workflow commands concurrently and in an undefined order.
 This keyword is valid only in a Windows PowerShell Workflow.
@@ -407,17 +431,18 @@ in any order. This feature significantly improves the performance
 of a workflow.
 
 Syntax:
-
+```
 workflow <verb>-<noun>
 {
-Parallel
-{
-<Activity>
-<Activity>
-# …
+   Parallel
+   {
+      <Activity>
+      <Activity>
+      …
 
+   }
 }
-}
+```
 
 The Parallel parameter of the ForEach keyword processes the
 items in a collection in parallel. The activities in the script
@@ -426,21 +451,23 @@ run on multiple items at the same time and the items are
 processed in an undefined order.
 
 Syntax:
-
+```
 workflow <verb>-<noun>
 {
-ForEach -Parallel (<item> in <collection>)
-{
-<Activity>
-<Activity>
-# ...
+   ForEach -Parallel (<item> in <collection>)
+   {
+      <Activity>
+      <Activity>
+      ...
 
+   }
 }
-}
+```
 
-For more information, see about_Parallel, about_ForEach-Parallel
+For more information, see: [about_Parallel](../../psworkflow/about/about_parallel.md),
+[about_ForEach-Parallel](../../psworkflow/about/about_foreach-parallel.md)
 
-Process
+**Process**
 -------
 
 Specifies a part of the body of a function, along with the DynamicParam,
@@ -451,87 +478,92 @@ Process statement list does not run. If the command is the first command
 in the pipeline, the Process statement list runs one time.
 
 Syntax:
-
+```
 function <name> {
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
 }
+```
 
-Return
+**Return**
 ------
 
 Causes Windows PowerShell to leave the current scope, such as a script or
 function, and writes the optional expression to the output.
 
 Syntax:
-
+```
 return [<expression>]
+```
 
-Sequence
+**Sequence**
 --------
 Runs workflow commands sequentially in a Parallel script block.
 This keyword is valid only in a Windows PowerShell Workflow.
 
 Syntax:
-
+```
 workflow <verb>-<noun>
 {
-Parallel
-{
-Sequence
-{
-<Activity>
+   Parallel
+   {
+      Sequence
+      {
+         <Activity>
+      }
+   }
 }
-}
-}
+```
 
 The Sequence keyword creates a sequence block within a Parallel
 script block. The commands in the Sequence script block run
 sequentially and in the order defined.
 
-For more information, see about_Sequence
+For more information, see: [about_Sequence](../../psworkflow/about/about_sequence.md)
 
-Switch
+**Switch**
 ------
 
 Specifies a variety of actions to be performed on items from the pipeline
 or from a file. You can use either of the following syntax models.
 
 Syntax 1:
-
+```
 switch [-regex|-wildcard|-exact][-casesensitive] ( pipeline )
-
 {
-<string>|<number>|<variable>|{ <expression> } {<statement list>}
-<string>|<number>|<variable>|{ <expression> } {<statement list>}
-# ...
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   ...
 
-default {<statement list>}
+   default {<statement list>}
 }
+```
 
 Syntax 2:
-
+```
 switch [-regex|-wildcard|-exact][-casesensitive] -file filename
 {
-<string>|<number>|<variable>|{ <expression> } {<statement list>}
-<string>|<number>|<variable>|{ <expression> } {<statement list>}
-# ...
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   ...
 
-default {<statement list>}
+   default {<statement list>}
 }
+```
 
-Throw
+**Throw**
 -----
 
 Throws an object as an error.
 
 Syntax:
-
+```
 throw [<object>]
+```
 
-Trap
+**Trap**
 ----
 
 Defines a statement list to be run if an error is encountered. An error
@@ -539,10 +571,11 @@ type requires brackets. The second pair of brackets indicates that the
 error type is optional.
 
 Syntax:
-
+```
 trap [[<error type>]] {<statement list>}
+```
 
-Try
+**Try**
 ---
 
 Defines a statement list to be checked for errors while the statements
@@ -551,32 +584,35 @@ or Finally statement. An error type requires brackets. The second pair of
 brackets indicates that the error type is optional.
 
 Syntax:
-
+```
 try {<statement list>}
 catch [[<error type]] {<statement list>}
 finally {<statement list>}
+```
 
-Until
+**Until**
 -----
 
 Used in a Do statement as a looping construct where the statement list is
 executed at least one time.
 
 Syntax:
-
+```
 do {<statement list>} until (<condition>)
+```
 
-While
+**While**
 -----
 
 Used in a Do statement as a looping construct where the statement list is
 executed at least one time.
 
 Syntax:
-
+```
 do {<statement list>} while (<condition>)
+```
 
-Workflow
+**Workflow**
 --------
 Creates a script-based Windows PowerShell workflow, that
 is, a workflow written in the Windows PowerShell language.
@@ -607,32 +643,37 @@ parameters that are added by Windows PowerShell when you use the
 Workflow keyword.
 
 Syntax:
-workflow <Verb-Noun> {
-param ([type]<$pname1> [, [type]<$pname2>])
-<statement list>
+```
+workflow <verb-noun>
+{
+   param
+   (
+        [type]<$pname1>
+        [, [type]<$pname2>]
+    )
+   <statement list>
 }
 
 workflow <verb-noun>
 {
-[CmdletBinding(<Attributes>)]
-Param
-# (
+   [CmdletBinding(<Attributes>)]
+   Param
+   (
+      [Parameter(<Arguments>)] $Param1
+      ...
+   )
 
-[Parameter(<Arguments>)]
-$Param1
-# )
-
-<statement list>
+   <statement list>
 }
+```
 
-For more information about workflows, see about_Workflows
+For more information about workflows, see [about_Workflows](../../psworkflow/about/about_workflows.md)
 and "Getting Started with Windows PowerShell Workflow"
 (http://go.microsoft.com/fwlink/?LinkID=252592) in the
 TechNet Library.
 
 # SEE ALSO
 
-about_Escape_Characters
-about_Special_Characters
-about_Wildcards
-
+-  [about_Escape_Characters](about_Escape_Characters.md)
+-  [about_Special_Characters](about_Special_Characters.md)
+-  [about_Wildcards](about_Wildcards.md)
