@@ -55,8 +55,8 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 	- On computers that are running Windows 8.1 x86, run `Win8.1-KB3156422-x86.msu /quiet`.
 	- On computers that are running Windows 7 SP1 x86, run `Win7-KB3156424-x86.msu /quiet`.
 
-## Additional Installation Notes for Windows Server 2008 SP1 and Windows 7 SP1##
-Installation of WMF 5.1 on either Windows Server 2008 SP1 or Windows 7 SP1, require the installation of:
+## Additional Installation Notes for Windows Server 2008 R2 SP1 and Windows 7 SP1##
+Installation of WMF 5.1 on either Windows Server 2008 R2 SP1 or Windows 7 SP1, require the installation of:
 - Latest service pack.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 - WMF 5.1 requires [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560). 
