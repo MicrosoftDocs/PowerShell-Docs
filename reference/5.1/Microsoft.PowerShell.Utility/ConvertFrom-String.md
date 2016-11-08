@@ -53,29 +53,95 @@ The cmdlet also supports automatically-generated, example-driven parsing based o
 ## EXAMPLES
 
 ### Example 1: Generate an object with default property names
+
+```PowerShell
+"Hello World" | ConvertFrom-String
+```
 ```
 PS C:\>"Hello World" | ConvertFrom-String
+
+P1    P2
+--    --
+Hello World
+
+
+PS C:\>
 ```
 
 This command generates an object with default property names, P1 and P2.
-The results are P1=Hello and P2=World.
+The results are P1="Hello" and P2="World".
+
+#### Example 1A: Get to know the generated object
+
+```PowerShell
+"Hello World" | ConvertFrom-String | Get-Member
+```
+```
+PS C:\>"Hello World" | ConvertFrom-String | Get-Member
+
+
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType   Definition
+----        ----------   ----------
+Equals      Method       bool Equals(System.Object obj)
+GetHashCode Method       int GetHashCode()
+GetType     Method       type GetType()
+ToString    Method       string ToString()
+P1          NoteProperty string P1=Hello
+P2          NoteProperty string P2=World
+
+
+PS C:\>
+```
+
+The command generates one object with properties P1, P2;
+both properties are 'string' type, by default.
 
 ### Example 2: Generate an object with default property names using a delimiter
+
+```PowerShell
+"Hello World" | ConvertFrom-String -Delimiter "ll"
 ```
-PS C:\>"Hello World" | ConvertFrom-String -Delimiter "ll"
+```
+¶ >"Hello World" | ConvertFrom-String -Delimiter "ll"
+
+P1 P2
+-- --
+He o World
+
+
+¶ >
 ```
 
 This command generates an object with P1="He" and P2="o World", by specifying the 'll' in Hello  as the delimiter.
 
-### Example 3: Use an expression as the value of the TemplateContent parameter
-```
-PS C:\>"Phoebe Cat" | ConvertFrom-String -TemplateContent {PersonInfo*:{Name:First Last}}
+### Example 3: Use an expression as the value of the TemplateContent parameter, save the results in a variable.
 
-PS C:\>$Template = {PersonInfo*:{Name:First Last}}
-"Phoebe Cat" | ConvertFrom-String -TemplateContent $Template
+```
+$template = @'
+{Name*:Phoebe Cat}, {phone:425-123-6789}, {age:6}
+{Name*:Lucky Shot}, {phone:(206) 987-4321}, {age:12}
+'@
+
+$testText = @'
+Phoebe Cat, 425-123-6789, 6
+Lucky Shot, (206) 987-4321, 12
+Elephant Wise, 425-888-7766, 87
+Wild Shrimp, (111)  222-3333, 1
+'@
+
+$testText  |
+    ConvertFrom-String -TemplateContent $template -OutVariable PersonalData | Out-Null
+
+Write-output ("Pet items found: " + ($PersonalData.Count))
+$PersonalData
 ```
 
-This command uses an expression as the value of the *TemplateContent* parameter to instruct Windows PowerShell that the string that is used on the pipeline to **ConvertFrom-String** has a property of **Name**.
+This command uses an expression as the value of the *TemplateContent* parameter to instruct Windows PowerShell that the string that is used on the pipeline to **ConvertFrom-String** has three properties:
+-  **Name**
+-  **phone**
+-  **age**
 
 You can also save the expression in a variable, then use the variable as the value of the *TemplateContent* parameter, as shown here.
 
