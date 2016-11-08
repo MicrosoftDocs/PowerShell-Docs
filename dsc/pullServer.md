@@ -49,7 +49,8 @@ configuration Sample_xDscPullServer
      ) 
  
  
-     Import-DSCResource -ModuleName xPSDesiredStateConfiguration 
+     Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+     Import-DSCResource –ModuleName PSDesiredStateConfiguration
 
      Node $NodeName 
      { 
