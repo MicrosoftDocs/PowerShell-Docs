@@ -1,6 +1,6 @@
 ﻿---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -16,7 +16,7 @@ title: ConvertFrom-String
 # ConvertFrom-String
 
 ## SYNOPSIS
-Extracts and parses structured objects from string content.
+Extracts and parses structured properties from string content.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-In
 ```
 
 ## DESCRIPTION
-The **ConvertFrom-String** cmdlet extracts and parses structured objects from string content.
+The **ConvertFrom-String** cmdlet extracts and parses structured properties from string content.
 This cmdlet generates an object by parsing text from a traditional text stream.
 For each string in the pipeline, the cmdlet splits the input by either a delimiter or a parse expression, and then assigns property names to each of the resulting split elements.
 You can provide these property names; if you do not, they are automatically generated for you.
@@ -48,7 +48,7 @@ This cmdlet supports two modes: basic delimited parsing, and automatically-gener
 Delimited parsing, by default, splits the input at white space, and assigns property names to the resulting groups.
 You can customize the delimiter by piping the **ConvertFrom-String** results into one of the Format-* cmdlets, or you can use the *Delimiter* parameter.
 
-The cmdlet also supports automatically-generated, example-driven parsing based on the **FlashExtract** research work by Microsoft Researchhttp://research.microsoft.com/.
+The cmdlet also supports automatically-generated, example-driven parsing based on the [FlashExtract, research work by Microsoft Research](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html).
 
 ## EXAMPLES
 
@@ -65,11 +65,13 @@ The results are P1=Hello and P2=World.
 PS C:\>"Hello World" | ConvertFrom-String -Delimiter "ll"
 ```
 
-This command generates an object with P1=He and P2=o World, by specifying the ll in Hello  as the delimiter.
+This command generates an object with P1="He" and P2="o World", by specifying the 'll' in Hello  as the delimiter.
 
 ### Example 3: Use an expression as the value of the TemplateContent parameter
 ```
-PS C:\>"Phoebe Cat" | ConvertFrom-String -TemplateContent {PersonInfo*:{Name:Phoebe Cat}} PS C:\>$Template = {PersonInfo*:{Name:Phoebe Cat}}
+PS C:\>"Phoebe Cat" | ConvertFrom-String -TemplateContent {PersonInfo*:{Name:First Last}}
+
+PS C:\>$Template = {PersonInfo*:{Name:First Last}}
 "Phoebe Cat" | ConvertFrom-String -TemplateContent $Template
 ```
 
@@ -134,7 +136,7 @@ Specifies strings received from the pipeline, or a variable that contains a stri
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -245,4 +247,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
-
