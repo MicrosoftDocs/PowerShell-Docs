@@ -1,6 +1,6 @@
 ﻿---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -76,6 +76,53 @@ Path      : C:\Users\Andris\Downloads\Contoso8_1_ENT.iso
 This command uses the **Get-FileHash** cmdlet and the SHA384 algorithm to compute the hash value for an ISO file that an administrator has downloaded from the Internet.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
+### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
+
+```PowerShell
+¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+
+## open $testfile as a stream
+$testfilestream = [System.IO.File]::Open(
+    $testfile,
+    [System.IO.FileMode]::Open,
+    [System.IO.FileAccess]::Read)
+
+$hashFromStream = Get-FileHash -InputStream $testfilestream -Algorithm MD5
+
+$testfilestream.Close()
+
+$hashFromFile = Get-FileHash -Path $testfile -Algorithm MD5
+
+## check both hashes are the same
+if(($hashFromStream.Hash) -ne ($hashFromFile.Hash)) {
+    Write-Error "Get-FileHash results are inconsistent!!"
+}
+else {
+    Write-Output "Results from File:"
+    Write-Output "=================="
+    $hashFromFile | Format-List
+    Write-Output " "
+    Write-Output "Results from Stream:"
+    Write-Output "===================="
+    $hashFromStream | Format-List
+}
+
+
+Results from File:
+==================
+Algorithm : MD5
+Hash      : 097CE5761C89434367598B34FE32893B
+Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+
+Results from Stream:
+====================
+Algorithm : MD5
+Hash      : 097CE5761C89434367598B34FE32893B
+Path      :
+
+¶ >
+```
+
 ## PARAMETERS
 
 ### -Algorithm
@@ -99,7 +146,7 @@ For security reasons, MD5 and SHA1, which are no longer considered secure, shoul
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: SHA1, SHA256, SHA384, SHA512, MACTripleDES, MD5, RIPEMD160
 
 Required: False
@@ -115,7 +162,7 @@ Specifies the input stream.
 ```yaml
 Type: Stream
 Parameter Sets: Stream
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -150,7 +197,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -177,4 +224,3 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
-
