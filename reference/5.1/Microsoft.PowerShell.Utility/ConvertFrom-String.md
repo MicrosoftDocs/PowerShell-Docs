@@ -326,12 +326,14 @@ Accept wildcard characters: False
 ### -PropertyNames
 Specifies an array of property names to which to assign split values in the resulting object.
 Every line of text that you split or parse generates elements that represent property values.
-If the element is the result of a capture group, and that capture group is named (for example, (?\<name\>) or (?'name') ), then the name of that capture group is assigned to the property.
+If the element is the result of a capture group, and that capture group is named (for example, (?<name>) or (?'name') ),
+then the name of that capture group is assigned to the property.
 
 If you provide any elements in the *PropertyName* array, those names are assigned to properties that have not yet been named.
 
 If you provide more property names than there are fields, Windows PowerShell ignores the extra property names.
-If you do not specify enough property names to name all fields, Windows PowerShell automatically assigns numerical property names to any properties that are not named: P1, P2, etc.
+If you do not specify enough property names to name all fields,
+Windows PowerShell automatically assigns numerical property names to any properties that are not named: P1, P2, etc.
 
 ```yaml
 Type: String[]
@@ -347,7 +349,7 @@ Accept wildcard characters: False
 
 ### -TemplateContent
 Specifies an expression, or an expression saved as a variable, that describes the properties to which this cmdlet assigns strings.
-The syntax of a template field specification is the following: {\[optional-typecast\]name(sequence-spec, for example *):example-value}.
+The syntax of a template field specification is the following: {\[optional-typecast\]name(sequence-spec, for example \*):example-value}.
 An example is {PersonInfo*:{Name:Patti Fuller}.
 
 ```yaml
@@ -365,9 +367,11 @@ Accept wildcard characters: False
 ### -TemplateFile
 Specifies a file, as an array, that contains a template for the desired parsing of the string.
 In the template file, properties and their values are enclosed in brackets, as shown in the following example.
-If a property, such as the Name property and its associated other properties, appears multiple times, you can add an asterisk (*) to indicate that this results in multiple records.
+If a property, such as the Name property and its associated other properties,
+appears multiple times, you can add an asterisk (\*) to indicate that this results in multiple records.
 This avoids extracting multiple properties into a single record.
 
+```
 {Name*:David Chew}
 
 {City:Redmond}, {State:WA}
@@ -375,6 +379,7 @@ This avoids extracting multiple properties into a single record.
 {Name*:Evan Narvaez}    {Name*:Antonio Moreno}
 
 {City:Issaquah}, {State:WA}
+```
 
 ```yaml
 Type: String[]
@@ -407,7 +412,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters:
--Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+-Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable,
+-OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction,
+and -WarningVariable.
 For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
@@ -420,10 +427,7 @@ For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/
 
 ## RELATED LINKS
 
-[ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
-
-[ConvertFrom-StringData](ConvertFrom-StringData.md)
-
-[ConvertFrom-Csv](ConvertFrom-Csv.md)
-
-[ConvertTo-Xml](ConvertTo-Xml.md)
+-  [ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
+-  [ConvertFrom-StringData](ConvertFrom-StringData.md)
+-  [ConvertFrom-Csv](ConvertFrom-Csv.md)
+-  [ConvertTo-Xml](ConvertTo-Xml.md)
