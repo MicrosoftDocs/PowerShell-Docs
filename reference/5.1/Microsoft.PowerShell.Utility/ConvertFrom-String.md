@@ -185,6 +185,7 @@ values are extracted and passed to the output variable defined.
 The sample data, *$template*, provides two different phone formats:
 -  425-123-6789
 -  (206) 987-4321
+
 And, two different age formats:
 -  6
 -  12
