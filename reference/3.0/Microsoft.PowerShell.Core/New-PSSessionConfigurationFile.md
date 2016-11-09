@@ -760,7 +760,7 @@ The changes that you make affect all new sessions that use the session configura
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionConfigurationOption](New-PSSessionConfigurationOption.md)
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

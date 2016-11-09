@@ -4,11 +4,11 @@ description:
 external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell, cmdlet
 manager: carolz
-ms.date: 2016-09-30
+ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821788
+online version: http://go.microsoft.com/fwlink/?LinkId=822413
 schema: 2.0.0
 title: Get-FileHash
 ---
@@ -76,6 +76,53 @@ Path      : C:\Users\Andris\Downloads\Contoso8_1_ENT.iso
 This command uses the **Get-FileHash** cmdlet and the SHA384 algorithm to compute the hash value for an ISO file that an administrator has downloaded from the Internet.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
+### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
+
+```PowerShell
+¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+
+## open $testfile as a stream
+$testfilestream = [System.IO.File]::Open(
+    $testfile,
+    [System.IO.FileMode]::Open,
+    [System.IO.FileAccess]::Read)
+
+$hashFromStream = Get-FileHash -InputStream $testfilestream -Algorithm MD5
+
+$testfilestream.Close()
+
+$hashFromFile = Get-FileHash -Path $testfile -Algorithm MD5
+
+## check both hashes are the same
+if(($hashFromStream.Hash) -ne ($hashFromFile.Hash)) {
+    Write-Error "Get-FileHash results are inconsistent!!"
+}
+else {
+    Write-Output "Results from File:"
+    Write-Output "=================="
+    $hashFromFile | Format-List
+    Write-Output " "
+    Write-Output "Results from Stream:"
+    Write-Output "===================="
+    $hashFromStream | Format-List
+}
+
+
+Results from File:
+==================
+Algorithm : MD5
+Hash      : 097CE5761C89434367598B34FE32893B
+Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+
+Results from Stream:
+====================
+Algorithm : MD5
+Hash      : 097CE5761C89434367598B34FE32893B
+Path      :
+
+¶ >
+```
+
 ## PARAMETERS
 
 ### -Algorithm
@@ -125,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies the path to a file as an array.
+Specifies the path to a file.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose the path in single quotation marks.
