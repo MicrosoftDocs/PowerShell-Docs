@@ -21,7 +21,8 @@ Subscribes to a Windows Management Instrumentation (WMI) event.
 ## SYNTAX
 
 ### class (Default)
-```Register-WmiEvent [-Namespace <String>] [-Credential <PSCredential>] [-ComputerName <String>] [-Class] <String>
+```
+Register-WmiEvent [-Namespace <String>] [-Credential <PSCredential>] [-ComputerName <String>] [-Class] <String>
  [-Timeout <Int64>] [[-SourceIdentifier] <String>] [[-Action] <ScriptBlock>] [-MessageData <PSObject>]
  [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>] [<CommonParameters>]
 ```
