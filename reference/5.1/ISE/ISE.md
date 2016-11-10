@@ -10,7 +10,7 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: ISE
 Module Guid: bae93d8e-782c-4a23-b87f-8699bfc17ee0
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822196
+Download Help Link: http://go.microsoft.com/fwlink/?LinkId=821534
 Help Version: 5.1.0.3
 Locale: en-US
 ---

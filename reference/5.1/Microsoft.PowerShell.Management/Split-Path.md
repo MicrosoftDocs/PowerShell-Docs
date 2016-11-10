@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822283
+online version: http://go.microsoft.com/fwlink/?LinkId=821637
 schema: 2.0.0
 title: Split-Path
 ---
