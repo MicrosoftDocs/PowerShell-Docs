@@ -1,6 +1,6 @@
 ﻿---
 external help file: System.Management.Automation.dll-help.xml
-online version: http://technet.microsoft.com/library/hh852689(v=wps.630).aspx
+online version: http://go.microsoft.com/fwlink/?LinkId=834941
 schema: 2.0.0
 ---
 
@@ -94,4 +94,3 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 [Out-Host]()
 
 [Read-Host. Write-Host]()
-

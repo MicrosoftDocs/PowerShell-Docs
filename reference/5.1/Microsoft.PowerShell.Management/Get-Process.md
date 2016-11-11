@@ -1,6 +1,6 @@
 ﻿---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290498
+online version: http://go.microsoft.com/fwlink/?linkid=821590
 schema: 2.0.0
 title: Get-Process
 ---
@@ -171,14 +171,14 @@ PS C:\>$P.getowner()
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 3
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 Domain           : DOMAIN01
 ReturnValue      : 0
 User             : user01
@@ -300,7 +300,7 @@ Indicates that the UserName value of the **Process** object is returned with res
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NameWithUserName, IdWithUserName, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -316,7 +316,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -342,7 +342,7 @@ When you use both the *Module* and *FileVersionInfo* parameters in the same comm
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Name, Id, InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -380,7 +380,7 @@ You can pipe a process object to this cmdlet.
 
 ### System.Diagnostics.Process, System.Diagnotics.FileVersionInfo, System.Diagnostics.ProcessModule
 By default, this cmdlet returns a **System.Diagnostics.Process** object.
-If you use the *FileVersionInfo* parameter, it returns a **System.Diagnotics.FileVersionInfo** object. 
+If you use the *FileVersionInfo* parameter, it returns a **System.Diagnotics.FileVersionInfo** object.
 If you use the *Module* parameter, without the *FileVersionInfo* parameter, it returns a **System.Diagnostics.ProcessModule** object.
 
 ## NOTES
@@ -422,4 +422,3 @@ Virtual memory includes storage in the paging files on disk.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

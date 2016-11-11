@@ -12,6 +12,7 @@ online version:
 schema: 2.0.0
 title: Invoke-OperationValidation
 ms.assetid: C66EF231-7E55-4866-8938-9FEE8E577E10
+online version: http://go.microsoft.com/fwlink/?LinkId=834966
 ---
 
 # Invoke-OperationValidation
