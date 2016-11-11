@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822442
+online version: http://go.microsoft.com/fwlink/?LinkId=821835
 schema: 2.0.0
 title: New-Object
 ---

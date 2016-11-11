@@ -1,6 +1,6 @@
 ﻿---
 author: jpjofre
-description: 
+description:
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -11,6 +11,7 @@ ms.topic: reference
 online version: 1ce19f56-8359-408e-addd-d5635e52a1f5#VerbList
 schema: 2.0.0
 title: Register-ArgumentCompleter
+online version: http://go.microsoft.com/fwlink/?LinkId=822079
 ---
 
 # Register-ArgumentCompleter
@@ -71,7 +72,7 @@ If the command line uses  an alias, this value is the actual command, not the al
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -83,7 +84,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -98,7 +99,7 @@ Indicates that custom argument handlers are dispatched based on the command name
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +115,7 @@ If the command line uses a parameter alias, this value is the actual parameter, 
 ```yaml
 Type: String
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -131,7 +132,7 @@ This parameter is required.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -156,4 +157,3 @@ This cmdlet returns no output.
 ## RELATED LINKS
 
 [Core Cmdlets](Microsoft.PowerShell.Core.md)
-
