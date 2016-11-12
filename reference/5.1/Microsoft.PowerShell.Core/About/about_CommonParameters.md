@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_CommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -203,7 +203,7 @@ running.
 Suspend:            Automatically suspends a workflow job after a
 Write-Information command is carried out, to allow
 users to see the messages before continuing.
-The workflow can be resumed at the user’s
+The workflow can be resumed at the userâ€™s
 discretion.
 
 SilentlyContinue:   No effect. The informational messages are not

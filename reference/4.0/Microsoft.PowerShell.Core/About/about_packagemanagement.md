@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PackageManagement
 ms.custom: na
 ms.reviewer: na

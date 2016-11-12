@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Command_Syntax
 description: 
 keywords: powershell, cmdlet

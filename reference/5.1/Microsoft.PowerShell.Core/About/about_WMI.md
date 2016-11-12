@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WMI
 description: 
 keywords: powershell, cmdlet
@@ -25,9 +25,9 @@ Windows Management Instrumentation (WMI) uses the Common Information Model (CIM)
 
 
 ## LONG DESCRIPTION
-Windows Management Instrumentation (WMI) is Microsoft’s implementation of Web-Based Enterprise Management (WBEM), the industry standard.
+Windows Management Instrumentation (WMI) is Microsoftâ€™s implementation of Web-Based Enterprise Management (WBEM), the industry standard.
 
-Classic WMI uses DCOM to communicate with networked devices to manage remote systems.  Windows PowerShell� 3.0 introduces a CIM provider model that uses WinRM to remove the dependency on DCOM. This CIM provider model also uses new WMI provider APIs that enable developers to write  Windows PowerShell cmdlets in native code (C\+\+).
+Classic WMI uses DCOM to communicate with networked devices to manage remote systems.  Windows PowerShellï¿½ 3.0 introduces a CIM provider model that uses WinRM to remove the dependency on DCOM. This CIM provider model also uses new WMI provider APIs that enable developers to write  Windows PowerShell cmdlets in native code (C\+\+).
 
 Do not confuse WMI providers with  Windows PowerShell providers. Many Windows features have an associated WMI provider that exposes their management capabilities. To get WMI providers, run a WMI query that gets instances of the __Provider WMI class, such as the following query.
 
@@ -41,7 +41,7 @@ Get-WmiObject -Class __Provider
 ## THREE COMPONENTS OF WMI
 The following three components of WMI interact with  Windows PowerShell: Namespaces, Providers, and Classes.
 
-WMI Namespaces organize WMI providers and WMI classes into groups of related components. In this way, they are similar to .NET Framework namespaces. Namespaces are not physical locations, but are more like logical databases. All WMI namespaces are instances of the __Namespace system class. The default WMI namespace is Root\/CIMV2 (since Microsoft Windows 2000). To use  Windows PowerShell to get WMI namespaces in the current session, use a command with the following format.
+WMI Namespaces organize WMI providers and WMI classes into groups of related components. In this way, they are similar to .NET Framework namespaces. Namespaces are not physical locations, but are more like logical databases. All WMI namespaces are instances of the __Namespace system class. The default WMI namespace is Root\/CIMV2 (since Microsoft WindowsÂ 2000). To use  Windows PowerShell to get WMI namespaces in the current session, use a command with the following format.
 
 
 ```
@@ -64,7 +64,7 @@ WMI Providers expose information about Windows manageable objects. A provider re
 
 
 ## FINDING WMI CLASSES
-In a default installation of Windows 8, there are more than 1,100 WMI classes in Root\/Cimv2. With this many WMI classes, the challenge becomes identifying the appropriate WMI class to use to perform a specific task.  Windows PowerShell 3.0 provides two ways to find WMI classes that are related to a specific topic.
+In a default installation of WindowsÂ 8, there are more than 1,100 WMI classes in Root\/Cimv2. With this many WMI classes, the challenge becomes identifying the appropriate WMI class to use to perform a specific task.  Windows PowerShell 3.0 provides two ways to find WMI classes that are related to a specific topic.
 
 For example,to find WMI classes in the root\CIMV2 WMI namespace that are related to disks, you can use a query such as the one shown here.
 

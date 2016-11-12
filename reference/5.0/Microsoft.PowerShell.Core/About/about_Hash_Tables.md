@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Hash_Tables
 description: 
 keywords: powershell, cmdlet

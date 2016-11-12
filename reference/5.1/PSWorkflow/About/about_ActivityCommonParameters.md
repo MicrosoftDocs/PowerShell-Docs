@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_ActivityCommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -382,7 +382,7 @@ saved when a checkpoint is taken.
 Applies the equivalent of the PSDisableSerialization
 parameter to the entire workflow, not just the activity.
 Adding this parameter is generally not recommended, because
-a workflow that doesn’t serialize its objects cannot be resumed
+a workflow that doesnâ€™t serialize its objects cannot be resumed
 or persisted.
 
 Valid values:

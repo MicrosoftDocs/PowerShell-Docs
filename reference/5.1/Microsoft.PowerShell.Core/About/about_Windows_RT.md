@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Windows_RT
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Windows_RT
 
 
 ## SHORT DESCRIPTION
-Explains limitations of  Windows PowerShell� 4.0 on Windows RT 8.1.
+Explains limitations of  Windows PowerShellï¿½ 4.0 on Windows RT 8.1.
 
 
 ## LONG DESCRIPTION
@@ -35,7 +35,7 @@ Because Windows RT 8.1 does not include all Windows features, some  Windows Powe
 
 --  Windows PowerShell remoting and the WinRM service are disabled by default. To enable remoting, run the Enable-PSRemoting cmdlet. Also, run the Set-Service cmdlet to set the startup type of the WinRM service to Automatic, or Automatic (Delayed Start).
 
-While remoting is disabled, you can use  Windows PowerShell remoting to run commands on other computers, but other computers cannot run commands on the Windows RT device. Also, implicit remoting—that is, remoting that is built in to a cmdlet or script, and not explicitly requested with added parameters—does not work in  Windows PowerShell running on Windows RT 8.1.
+While remoting is disabled, you can use  Windows PowerShell remoting to run commands on other computers, but other computers cannot run commands on the Windows RT device. Also, implicit remotingâ€”that is, remoting that is built in to a cmdlet or script, and not explicitly requested with added parametersâ€”does not work in  Windows PowerShell running on Windows RT 8.1.
 
 -- Domain-joined computing and Kerberos authentication are not supported on Windows RT 8.1. You cannot use  Windows PowerShell to add or manage these features.
 

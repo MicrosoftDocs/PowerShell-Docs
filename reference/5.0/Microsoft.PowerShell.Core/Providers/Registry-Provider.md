@@ -1,4 +1,4 @@
-﻿---
+---
 title: Registry Provider
 ms.custom: na
 ms.reviewer: na

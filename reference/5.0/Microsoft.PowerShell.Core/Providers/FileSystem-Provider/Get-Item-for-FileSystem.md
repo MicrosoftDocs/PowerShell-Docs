@@ -1,4 +1,4 @@
-﻿---
+---
 title: Get-Item for FileSystem
 ms.custom: na
 ms.reviewer: na

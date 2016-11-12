@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
@@ -149,9 +149,9 @@ __GENUS               : 2
 __CLASS               : Win32_BIOS
 __SUPERCLASS          : CIM_BIOSElement
 __DYNASTY             : CIM_ManagedSystemElement
-__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 â€¦
+__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 Ã¢â‚¬Â¦
 __PROPERTY_COUNT      : 27
-__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,â€¦
+__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,Ã¢â‚¬Â¦
 __SERVER              : Server01
 __NAMESPACE           : root\cimv2
 __PATH                : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Environment Provider
 ms.custom: na
 ms.reviewer: na

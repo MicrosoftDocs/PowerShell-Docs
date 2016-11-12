@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Foreach
 description: 
 keywords: powershell, cmdlet

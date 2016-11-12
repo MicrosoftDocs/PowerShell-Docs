@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Path_Syntax
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Path_Syntax
 
 
 ## SHORT DESCRIPTION
-Describes the full and relative path name formats in  Windows PowerShell�.
+Describes the full and relative path name formats in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

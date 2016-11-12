@@ -1,4 +1,4 @@
-﻿---
+---
 title: PSReadline
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,7 @@ Locale: en-US
 
 # PSReadline Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with the Windows PowerShell® PSReadline module. The PSReadline module contains cmdlets that let you customize the command-line editing environment in Windows PowerShell.
+This section contains the help topics for the cmdlets that are installed with the Windows PowerShellÂ® PSReadline module. The PSReadline module contains cmdlets that let you customize the command-line editing environment in Windows PowerShell.
 
 ## PSReadline Cmdlets
 ### [Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)

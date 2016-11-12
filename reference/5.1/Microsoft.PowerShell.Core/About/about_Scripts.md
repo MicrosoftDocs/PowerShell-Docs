@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Scripts
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Scripts
 
 
 ## SHORT DESCRIPTION
-Describes how to run and write scripts in  Windows PowerShell�.
+Describes how to run and write scripts in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

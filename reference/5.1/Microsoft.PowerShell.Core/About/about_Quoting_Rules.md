@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Quoting_Rules
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Quoting_Rules
 
 
 ## SHORT DESCRIPTION
-Describes rules for using single and double quotation marks in  Windows PowerShell�.
+Describes rules for using single and double quotation marks in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

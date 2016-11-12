@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Get-ChildItem for FileSystem"
 ms.custom: na
 ms.date: 07/31/2015

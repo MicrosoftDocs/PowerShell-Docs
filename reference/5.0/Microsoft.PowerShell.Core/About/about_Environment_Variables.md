@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Environment_Variables
 description: 
 keywords: powershell, cmdlet

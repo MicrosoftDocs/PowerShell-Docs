@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parsing
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description:
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -269,7 +269,7 @@ age         NoteProperty int age=6
 Name        NoteProperty string Name=Phoebe Cat        
 phone       NoteProperty string phone=425-123-6789     
 
-¶ >
+Â¶ >
 ```
 
 Get-Member shows age is of integer type.

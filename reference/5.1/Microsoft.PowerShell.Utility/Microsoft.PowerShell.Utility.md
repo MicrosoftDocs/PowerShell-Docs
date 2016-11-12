@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Utility
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,7 @@ Locale: en-US
 
 # Microsoft.PowerShell.Utility Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell® Utility module, Microsoft.PowerShell.Utility. The Utility module contains cmdlets that manage the basic features of Windows PowerShell.
+This section contains the help topics for the cmdlets that are installed with Windows PowerShellÂ® Utility module, Microsoft.PowerShell.Utility. The Utility module contains cmdlets that manage the basic features of Windows PowerShell.
 
 ## Microsoft.PowerShell.Utility Cmdlets
 ### [Add-Member](Add-Member.md)

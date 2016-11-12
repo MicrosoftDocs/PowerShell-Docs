@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Session_Configuration_Files
 description: 
 keywords: powershell, cmdlet

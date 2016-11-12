@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Remove-DscConfigurationDocument.cdxml-help.xml

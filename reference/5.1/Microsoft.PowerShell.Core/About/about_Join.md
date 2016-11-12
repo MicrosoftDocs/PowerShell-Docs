@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Join
 description: 
 keywords: powershell, cmdlet

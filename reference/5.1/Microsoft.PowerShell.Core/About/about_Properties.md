@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Properties
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Properties
 
 
 ## SHORT DESCRIPTION
-Describes how to use object properties in  Windows PowerShell�.
+Describes how to use object properties in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -125,7 +125,7 @@ VersionInfo       : File:             C:\Windows\system32\WindowsPowerShell\v1.0
                     OriginalFilename: PowerShell.EXE.MUI  
                     File Version:      6.1.6570.1 (fbl_srv_PowerShell(nigels).070711-0102)  
                     FileDescription:  PowerShell.EXE  
-                    Product:          Microsoft® Windows® Operating System  
+                    Product:          MicrosoftÂ® WindowsÂ® Operating System  
                     ProductVersion:   6.1.6570.1  
                     Debug:            False  
                     Patched:          False  

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_OutputTypeAttribute
 description: 
 keywords: powershell, cmdlet

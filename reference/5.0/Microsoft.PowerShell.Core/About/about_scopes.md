@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Scopes
 ms.custom: na
 ms.reviewer: na

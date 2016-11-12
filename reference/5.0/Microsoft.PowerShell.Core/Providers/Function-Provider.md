@@ -1,4 +1,4 @@
-﻿---
+---
 title: Function Provider
 ms.custom: na
 ms.reviewer: na

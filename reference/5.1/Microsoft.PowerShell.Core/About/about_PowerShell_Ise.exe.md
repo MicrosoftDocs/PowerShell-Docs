@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PowerShell_Ise.exe
 description: 
 keywords: powershell, cmdlet
@@ -39,8 +39,8 @@ or ISE.
 PowerShell_Ise[.exe]
 PowerShell_ISE[.exe]
 ISE[.exe]
-[–File]<FilePath[]> [–NoProfile] [–MTA]
-–Help | ? | -? | /?
+[â€“File]<FilePath[]> [â€“NoProfile] [â€“MTA]
+â€“Help | ? | -? | /?
 Displays the syntax and describes the command-line switches.
 
 # PARAMETERS

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_FAQ
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Remote_FAQ
 
 
 ## SHORT DESCRIPTION
-Contains questions and answers about running remote commands in  Windows PowerShell�.
+Contains questions and answers about running remote commands in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION
@@ -326,7 +326,7 @@ Create the following registry entry, and then set its value to 1: LocalAccountTo
 
 You can use the following  Windows PowerShell command to add this entry:
 
-New-ItemProperty ` –Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` –Name LocalAccountTokenFilterPolicy –propertyType DWord –Value 1
+New-ItemProperty ` â€“Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` â€“Name LocalAccountTokenFilterPolicy â€“propertyType DWord â€“Value 1
 
 --  Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2012 R2:
 

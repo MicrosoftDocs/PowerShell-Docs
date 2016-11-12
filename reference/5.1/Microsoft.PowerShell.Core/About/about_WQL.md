@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WQL
 description: 
 keywords: powershell, cmdlet
@@ -124,14 +124,14 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO â€“ 1360
 
 You can also save the WQL statement in a variable
 and then use the variable as the value of the Query
 parameter, as shown in the following command.
 
 PS C:> $query = "Select * from Win32_Bios"
-PS C:> Get-WmiObject –Query $query
+PS C:> Get-WmiObject â€“Query $query
 
 You can use either format with any WQL statement.
 The following command uses the query in the
@@ -168,7 +168,7 @@ example, the following command also gets the values
 of the Name and Version properties of instances of
 the Win32_Bios WMI class.
 
-PS C:> Get-WmiObject –Class Win32_Bios -Property Name, Version
+PS C:> Get-WmiObject â€“Class Win32_Bios -Property Name, Version
 
 # __GENUS          : 2
 
@@ -219,7 +219,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO â€“ 1360
 
 Get-CimInstance returns a CimInstance object, instead of
 the ManagementObject that Get-WmiObject returns, but
@@ -264,7 +264,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO â€“ 1360
 
 NOTE: Only selected object properties are displayed
 by default. These properties are defined in the
@@ -282,7 +282,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO â€“ 1360
 
 When you use the [wmisearcher] type accelerator, it
 changes the query string into a ManagementObjectSearcher

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_CommonParameters
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_InlineScript
 description: 
 keywords: powershell, cmdlet

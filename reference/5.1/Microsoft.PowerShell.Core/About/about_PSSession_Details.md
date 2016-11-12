@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PSSession_Details
 description: 
 keywords: powershell, cmdlet

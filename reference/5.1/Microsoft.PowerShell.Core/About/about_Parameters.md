@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parameters
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Parameters
 
 
 ## SHORT DESCRIPTION
-Describes how to work with command parameters in  Windows PowerShell�.
+Describes how to work with command parameters in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

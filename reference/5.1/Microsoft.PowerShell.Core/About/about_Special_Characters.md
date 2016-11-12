@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Special_Characters
 description: 
 keywords: powershell, cmdlet

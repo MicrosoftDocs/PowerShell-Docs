@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Arithmetic_Operators
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Troubleshooting
 description: 
 keywords: powershell, cmdlet
@@ -184,7 +184,7 @@ and creates a firewall rule that allows traffic from the same local subnet.
 To remove the local subnet restriction on public networks and allow
 remote access from any location, run the following command:
 
-Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+Set-NetFirewallRule â€“Name "WINRM-HTTP-In-TCP-PUBLIC" â€“RemoteAddress Any
 
 The Set-NetFirewallRule cmdlet is exported by the NetSecurity module.
 
@@ -772,7 +772,7 @@ the command again.
 1. Start Windows PowerShell with the "Run as administrator" option.
 2. Run the following command:
 
-         Start-Service WinRM
+Â Â Â Â Â Â Â Â  Start-Service WinRM
 
 3. Re-run the command that generated the error.
 

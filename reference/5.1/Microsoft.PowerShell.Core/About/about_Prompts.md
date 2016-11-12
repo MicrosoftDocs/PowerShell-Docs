@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Prompts
 description: 
 keywords: powershell, cmdlet
@@ -25,7 +25,7 @@ Describes the Prompt function and demonstrates how to create a custom Prompt fun
 
 
 ## LONG DESCRIPTION
-The  Windows PowerShell� command prompt indicates that  Windows PowerShell is ready to run a command:
+The  Windows PowerShellï¿½ command prompt indicates that  Windows PowerShell is ready to run a command:
 
 
 ```
