@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Object_Creation
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Object_Creation
 
 
 ## SHORT DESCRIPTION
-Explains how to create objects in  Windows PowerShell�.
+Explains how to create objects in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

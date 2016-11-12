@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Aliases
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_aliases
 
 
 ## SHORT DESCRIPTION
-Describes how to use alternate names for cmdlets and commands in  Windows PowerShell�.
+Describes how to use alternate names for cmdlets and commands in  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

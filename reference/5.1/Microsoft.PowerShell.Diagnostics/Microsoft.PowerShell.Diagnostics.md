@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Diagnostics
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Throw
 description: 
 keywords: powershell, cmdlet

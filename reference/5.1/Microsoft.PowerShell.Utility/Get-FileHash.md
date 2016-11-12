@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description:
 external help file: Microsoft.PowerShell.Utility-help.xml
@@ -79,7 +79,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
 
 ```PowerShell
-¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+Â¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## open $testfile as a stream
 $testfilestream = [System.IO.File]::Open(
@@ -120,7 +120,7 @@ Algorithm : MD5
 Hash      : 097CE5761C89434367598B34FE32893B
 Path      :
 
-¶ >
+Â¶ >
 ```
 
 ## PARAMETERS

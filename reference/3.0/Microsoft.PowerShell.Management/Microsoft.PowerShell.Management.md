@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Management
 description: 
 keywords: powershell, cmdlet

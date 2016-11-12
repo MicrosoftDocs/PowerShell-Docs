@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Operator_Precedence
 description:
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Comparison_Operators
 description: 
 keywords: powershell, cmdlet

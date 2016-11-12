@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Script_Blocks
 description: 
 keywords: powershell, cmdlet

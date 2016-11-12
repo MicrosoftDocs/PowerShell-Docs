@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Disconnected_Sessions
 description: 
 keywords: powershell, cmdlet

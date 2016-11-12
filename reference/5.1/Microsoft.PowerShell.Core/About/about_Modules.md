@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Modules
 description: 
 keywords: powershell, cmdlet
@@ -58,7 +58,7 @@ in the session, so you can find a command and use it without importing.
 
 Any of the following commands will import a module into your session.
 #Run the command
-Get-Mailbox –Identity Chris
+Get-Mailbox â€“Identity Chris
 
 #Get the command
 Get-Command Get-Mailbox
@@ -185,7 +185,7 @@ Get-Help <command-name> -Online
 
 To download and install the help files for the commands in a module,
 type:
-Update-Help –Module <module-name>
+Update-Help â€“Module <module-name>
 
 For more information, see Get-Help and Update-Help.
 

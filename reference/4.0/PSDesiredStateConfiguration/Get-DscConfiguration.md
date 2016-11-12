@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Get-DSCConfiguration.cdxml-help.xml

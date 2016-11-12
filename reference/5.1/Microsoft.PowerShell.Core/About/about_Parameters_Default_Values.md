@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parameters_Default_Values
 description: 
 keywords: powershell, cmdlet
@@ -33,7 +33,7 @@ This feature is especially useful when you must specify the same alternate param
 
 If the desired default value varies predictably, you can specify a script block that provides different default values for a parameter under different conditions.
 
-$PSDefaultParameterValues was introduced in  Windows PowerShell� 3.0.
+$PSDefaultParameterValues was introduced in  Windows PowerShellï¿½ 3.0.
 
 
 ### SYNTAX
@@ -108,7 +108,7 @@ The following command sets the default value of the Autosize parameter of the Fo
 
 
 ```
-$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name –eq "ConsoleHost"){$true}}}
+$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name â€“eq "ConsoleHost"){$true}}}
 ```
 
 
@@ -118,7 +118,7 @@ The following command sets the default value of the ScriptBlock parameter of Inv
 
 
 ```
-$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog –Log System}}}
+$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog â€“Log System}}}
 ```
 
 

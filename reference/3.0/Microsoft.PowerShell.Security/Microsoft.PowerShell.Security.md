@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Security
 description: 
 keywords: powershell, cmdlet

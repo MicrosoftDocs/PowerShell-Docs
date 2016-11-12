@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Script_Internationalization
 description: 
 keywords: powershell, cmdlet

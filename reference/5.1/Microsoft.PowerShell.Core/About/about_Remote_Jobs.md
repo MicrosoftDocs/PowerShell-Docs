@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Jobs
 description: 
 keywords: powershell, cmdlet
@@ -49,7 +49,7 @@ The procedure for starting a background job in an interactive session is almost 
 
 
 #### STEP 1: ENTER-PSSESSION
-Use the Enter-PSSession cmdlet to start an interactive session with a remote computer. You can use the ComputerName parameter of Enter-PSSession to establish a temporary connection for the interactive session. Or, you can use the Session parameter to run the interactive session in a  Windows PowerShell� session (PSSession).
+Use the Enter-PSSession cmdlet to start an interactive session with a remote computer. You can use the ComputerName parameter of Enter-PSSession to establish a temporary connection for the interactive session. Or, you can use the Session parameter to run the interactive session in a  Windows PowerShellï¿½ session (PSSession).
 
 The following command starts an interactive session on the Server01 computer.
 

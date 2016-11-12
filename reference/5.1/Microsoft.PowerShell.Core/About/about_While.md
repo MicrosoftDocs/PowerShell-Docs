@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_While
 description: 
 keywords: powershell, cmdlet
@@ -35,7 +35,7 @@ while (<condition>){<statement list>}
 ```
 
 
-When you run a While statement,  Windows PowerShell� evaluates the <condition> section of the statement before entering the <statement list> section. The condition portion of the statement resolves to either true or false. As long as the condition remains true,  Windows PowerShell reruns the <statement list> section.
+When you run a While statement,  Windows PowerShellï¿½ evaluates the <condition> section of the statement before entering the <statement list> section. The condition portion of the statement resolves to either true or false. As long as the condition remains true,  Windows PowerShell reruns the <statement list> section.
 
 The <statement list> section of the statement contains one or more commands that are run each time the loop is entered or repeated.
 

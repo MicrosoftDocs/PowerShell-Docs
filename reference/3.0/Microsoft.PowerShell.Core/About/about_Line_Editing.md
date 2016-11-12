@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Line_Editing
 description: 
 keywords: powershell, cmdlet

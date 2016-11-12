@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Automatic_Variables
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Automatic_Variables
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell�. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShellï¿½. These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -162,7 +162,7 @@ However, because  Windows PowerShell treats the $null variable as a placeholder,
 
 
 ```
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)  
+$calendar = @($null, $null, â€œMeetingâ€, $null, $null, â€œTeam Lunchâ€, $null)  
 $days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"  
 $currentDay = 0
 ```
@@ -172,7 +172,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day â€“ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  

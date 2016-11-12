@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Redirection
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Redirection
 
 
 ## SHORT DESCRIPTION
-Explains how to redirect output from  Windows PowerShell� to text files.
+Explains how to redirect output from  Windows PowerShellï¿½ to text files.
 
 
 ## LONG DESCRIPTION

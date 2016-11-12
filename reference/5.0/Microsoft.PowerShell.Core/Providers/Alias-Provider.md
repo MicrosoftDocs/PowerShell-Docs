@@ -1,4 +1,4 @@
-﻿---
+---
 title: Alias Provider
 ms.custom: na
 ms.reviewer: na

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions
 description: 
 keywords: powershell, cmdlet
@@ -174,7 +174,7 @@ defined for the parameter.
 
 To use this function, type the following command:
 
-C:\PS> function Get-SmallFiles –Size 50
+C:\PS> function Get-SmallFiles â€“Size 50
 
 You can also enter a value for a named parameter without the parameter
 name. For example, the following command gives the same result as a

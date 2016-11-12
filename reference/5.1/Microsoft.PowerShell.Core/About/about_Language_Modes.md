@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Language_Modes
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Splatting
 description: 
 keywords: powershell, cmdlet
@@ -95,7 +95,7 @@ PS C:>Copy-Item @HashArguments
 
 Note: In the first command, the At symbol (@) indicates a hash table, not
 a splatted value. The syntax for hash tables in Windows PowerShell is:
-@{ <name>=<value>; <name>=<value>; …}
+@{ <name>=<value>; <name>=<value>; â€¦}
 
 # SPLATTING WITH ARRAYS
 

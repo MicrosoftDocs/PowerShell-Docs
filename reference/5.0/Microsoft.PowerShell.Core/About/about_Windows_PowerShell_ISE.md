@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Windows_PowerShell_ISE
 description: 
 keywords: powershell, cmdlet

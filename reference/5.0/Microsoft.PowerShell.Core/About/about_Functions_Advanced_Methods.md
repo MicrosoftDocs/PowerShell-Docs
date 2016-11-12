@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_Advanced_Methods
 description: 
 keywords: powershell, cmdlet

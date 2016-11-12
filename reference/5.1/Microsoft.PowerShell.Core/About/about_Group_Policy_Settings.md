@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Group_Policy_Settings
 description: 
 keywords: powershell, cmdlet

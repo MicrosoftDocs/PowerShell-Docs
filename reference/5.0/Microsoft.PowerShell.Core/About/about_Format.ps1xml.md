@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Format.ps1xml
 description: 
 keywords: powershell, cmdlet

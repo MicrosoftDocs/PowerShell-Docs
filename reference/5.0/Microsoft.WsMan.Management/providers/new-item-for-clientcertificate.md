@@ -1,4 +1,4 @@
-﻿---
+---
 title: "New-Item for ClientCertificate"
 ms.custom: na
 ms.date: 09/30/2014

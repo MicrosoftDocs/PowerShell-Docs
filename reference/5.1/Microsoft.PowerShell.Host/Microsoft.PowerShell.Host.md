@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Host
 description: 
 keywords: powershell, cmdlet

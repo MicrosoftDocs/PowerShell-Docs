@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Operators
 description: 
 keywords: powershell, cmdlet
@@ -21,7 +21,7 @@ about_Operators
 
 
 ## SHORT DESCRIPTION
-Describes the operators that are supported by  Windows PowerShell�.
+Describes the operators that are supported by  Windows PowerShellï¿½.
 
 
 ## LONG DESCRIPTION

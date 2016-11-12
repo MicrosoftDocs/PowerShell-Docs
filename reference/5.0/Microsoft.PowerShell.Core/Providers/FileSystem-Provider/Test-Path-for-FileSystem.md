@@ -1,4 +1,4 @@
-﻿---
+---
 title: Test-Path for FileSystem
 ms.custom: na
 ms.reviewer: na

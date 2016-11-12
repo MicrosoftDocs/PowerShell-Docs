@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Regular_Expressions
 description: 
 keywords: powershell, cmdlet
@@ -41,7 +41,7 @@ characters in the brackets.
 
 [range]  Matches at least one of the      "and" -match "[a-e]nd"
 characters within the range.
-The use of a hyphen (–) allows
+The use of a hyphen (â€“) allows
 you to specify an adjacent
 character.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Updatable_Help
 description: 
 keywords: powershell, cmdlet
@@ -307,8 +307,8 @@ DHCP Server module on a computer that does not have network access.
 First, run Export-CliXml to export the PSModuleInfo object to
 a shared folder or to removable media.
 
-$m = Get-Module -Name DhcpServer –ListAvailable
-Export-CliXml –Path E:\UsbFlashDrive\DhcpModule.xml –InputObject $m
+$m = Get-Module -Name DhcpServer â€“ListAvailable
+Export-CliXml â€“Path E:\UsbFlashDrive\DhcpModule.xml â€“InputObject $m
 
 Next, transport the removable media to a computer that has
 Internet access, and then import the PSModuleInfo object with
@@ -316,14 +316,14 @@ Import-CliXml. Run Save-Help to save the Help for the imported
 DhcpServer module PSModuleInfo object.
 
 $deserialized_m = Import-CliXml E:\UsbFlashDrive\DhcpModule.xml
-Save-Help -Module $deserialized_m –DestinationPath
+Save-Help -Module $deserialized_m â€“DestinationPath
 E:\UsbFlashDrive\SavedHelp
 
 Finally, transport the removable media back to the computer that
 does not have network access, and then install the help by running
 Update-Help.
 
-Update-Help –Module DhcpServer –SourcePath
+Update-Help â€“Module DhcpServer â€“SourcePath
 E:\UsbFlashDrive\SavedHelp
 
 # NOTES:

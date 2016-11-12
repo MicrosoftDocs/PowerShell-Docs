@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Variables
 description: 
 keywords: powershell, cmdlet

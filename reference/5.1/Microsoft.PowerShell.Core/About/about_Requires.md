@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Requires
 description: 
 keywords: powershell, cmdlet
@@ -25,7 +25,7 @@ Prevents a script from running without the required elements.
 
 
 ## LONG DESCRIPTION
-The \#Requires statement prevents a script from running unless the  Windows PowerShell� version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
+The \#Requires statement prevents a script from running unless the  Windows PowerShellï¿½ version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
 
 You can use \#Requires statements in any script. You cannot use them in functions, cmdlets, or snap-ins.
 
@@ -35,9 +35,9 @@ You can use \#Requires statements in any script. You cannot use them in function
 
 ```
 #Requires -Version <N>[.<n>]   
-#Requires –PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
+#Requires â€“PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
 #Requires -Modules { <Module-Name> | <Hashtable> }   
-#Requires –ShellId <ShellId>  
+#Requires â€“ShellId <ShellId>  
 #Requires -RunAsAdministrator
 ```
 
@@ -72,7 +72,7 @@ For example:
 
 
 ```
-#Requires –PSSnapin DiskSnapin -Version 1.2
+#Requires â€“PSSnapin DiskSnapin -Version 1.2
 ```
 
 
@@ -108,7 +108,7 @@ For example,
 
 
 ```
-#Requires –ShellId MyLocalShell
+#Requires â€“ShellId MyLocalShell
 ```
 
 
@@ -130,8 +130,8 @@ The following script has two \#Requires statements. If the requirements specifie
 
 
 ```
-#Requires –Modules PSWorkflow  
- #Requires –Version 3  
+#Requires â€“Modules PSWorkflow  
+ #Requires â€“Version 3  
  Param  
 (  
     [parameter(Mandatory=$true)]  

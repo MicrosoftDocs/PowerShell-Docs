@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WMI
 description: 
 keywords: powershell, cmdlet

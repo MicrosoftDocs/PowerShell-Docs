@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Foreach-Parallel
 description: 
 keywords: powershell, cmdlet

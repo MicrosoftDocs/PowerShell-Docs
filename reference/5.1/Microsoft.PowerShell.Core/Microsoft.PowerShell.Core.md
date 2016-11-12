@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Core
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,7 @@ Locale: en-US
 
 # Microsoft.PowerShell.Core Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell® Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of Windows PowerShell.
+This section contains the help topics for the cmdlets that are installed with Windows PowerShellÂ® Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of Windows PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
 ### [Add-History](Add-History.md)

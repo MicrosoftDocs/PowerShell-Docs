@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Escape_Characters
 description: 
 keywords: powershell, cmdlet
