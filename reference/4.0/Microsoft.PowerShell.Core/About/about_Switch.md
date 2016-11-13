@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Switch
 description: 
 keywords: powershell, cmdlet

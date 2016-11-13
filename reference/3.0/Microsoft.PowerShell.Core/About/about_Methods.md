@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Methods
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Clear-Content for FileSystem
 ms.custom: na
 ms.reviewer: na

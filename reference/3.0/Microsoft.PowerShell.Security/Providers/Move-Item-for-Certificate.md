@@ -1,4 +1,4 @@
-﻿---
+---
 title: Move-Item for Certificate
 ms.custom: na
 ms.date: 09/30/2014

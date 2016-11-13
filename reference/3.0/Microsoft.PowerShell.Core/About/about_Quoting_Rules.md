@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Quoting_Rules
 description: 
 keywords: powershell, cmdlet

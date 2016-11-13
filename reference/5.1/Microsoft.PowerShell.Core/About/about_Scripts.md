@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Scripts
 description: 
 keywords: powershell, cmdlet

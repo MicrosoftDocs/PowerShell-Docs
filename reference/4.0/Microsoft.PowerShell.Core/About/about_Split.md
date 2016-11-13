@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Split
 description: 
 keywords: powershell, cmdlet

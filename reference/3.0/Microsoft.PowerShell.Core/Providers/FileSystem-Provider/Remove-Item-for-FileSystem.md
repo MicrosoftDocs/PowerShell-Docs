@@ -1,4 +1,4 @@
-﻿---
+---
 title: Remove-Item for FileSystem
 ms.custom: na
 ms.date: 09/30/2014

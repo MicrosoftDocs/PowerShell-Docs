@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Regular_Expressions
 description: 
 keywords: powershell, cmdlet

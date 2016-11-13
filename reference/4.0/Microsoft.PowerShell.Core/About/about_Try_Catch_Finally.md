@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Try_Catch_Finally
 description: 
 keywords: powershell, cmdlet

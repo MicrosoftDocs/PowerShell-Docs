@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Assignment_Operators
 description: 
 keywords: powershell, cmdlet

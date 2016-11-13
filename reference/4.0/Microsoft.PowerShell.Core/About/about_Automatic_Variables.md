@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Automatic_Variables
 description: 
 keywords: powershell, cmdlet

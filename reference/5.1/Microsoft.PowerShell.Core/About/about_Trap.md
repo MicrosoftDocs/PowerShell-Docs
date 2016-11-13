@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Trap
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Windows_RT
 description: 
 keywords: powershell, cmdlet

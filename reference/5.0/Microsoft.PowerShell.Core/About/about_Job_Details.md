@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Job_Details
 description: 
 keywords: powershell, cmdlet

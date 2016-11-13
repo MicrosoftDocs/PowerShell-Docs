@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Operators
 description: 
 keywords: powershell, cmdlet

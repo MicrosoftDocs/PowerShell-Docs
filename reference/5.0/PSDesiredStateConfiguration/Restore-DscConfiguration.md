@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Restore-DSCConfiguration.cdxml-help.xml

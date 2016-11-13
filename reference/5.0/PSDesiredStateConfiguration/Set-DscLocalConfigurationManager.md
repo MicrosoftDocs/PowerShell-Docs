@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml

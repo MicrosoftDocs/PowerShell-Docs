@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Transactions
 description: 
 keywords: powershell, cmdlet

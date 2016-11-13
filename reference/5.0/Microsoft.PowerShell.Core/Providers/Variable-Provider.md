@@ -1,4 +1,4 @@
-﻿---
+---
 title: Variable Provider
 ms.custom: na
 ms.reviewer: na

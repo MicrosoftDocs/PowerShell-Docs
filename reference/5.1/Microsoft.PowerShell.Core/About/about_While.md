@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_While
 description: 
 keywords: powershell, cmdlet

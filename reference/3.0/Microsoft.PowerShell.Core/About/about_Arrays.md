@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Arrays
 description:
 keywords: powershell, cmdlet
