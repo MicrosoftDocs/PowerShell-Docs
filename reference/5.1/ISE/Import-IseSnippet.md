@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: ISE-help.xml
@@ -35,7 +35,7 @@ The **Import-IseSnippet** cmdlet imports reusable text "snippets" from a module 
 The snippets are immediately available for use in Windows PowerShell ISE.
 This cmdlet works only in Windows PowerShell® Integrated Scripting Environment (ISE).
 
-To view and use the imported snippets, from the Windows PowerShell ISEEdit menu, click Start Snippets or press Ctrl + J.
+To view and use the imported snippets, from the Windows PowerShell ISE Edit menu, click Start Snippets or press Ctrl + J.
 
 Imported snippets are available only in the current session.
 To import the snippets into all Windows PowerShell ISE sessions, add an **Import-IseSnippet** command to your Windows PowerShell profile or copy the snippet files to your local snippets directory ($home\Documents\WindowsPowershell\Snippets).
@@ -56,8 +56,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 PS C:\>Import-IseSnippet -Path "\\Server01\Public\Snippets" -Recurse
 ```
 
-This command imports the snippets from the \\\\Server01\Public\Snippets directory into the current session.
-It uses the Recurse parameter to get snippets from all subdirectories of the Snippets directory.
+This command imports the snippets from the \\Server01\Public\Snippets directory into the current session.
+It uses the **Recurse** parameter to get snippets from all subdirectories of the Snippets directory.
 
 ### Example 2: Import snippets from a module
 ```
@@ -69,14 +69,14 @@ The command uses the **ListAvailable** parameter to import the snippets even if 
 
 ### Example 3: Find snippets in modules
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$_.fullname}
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$_.fullname}
 ```
 
 This command gets snippets in all installed modules in the PSModulePath environment variable.
 
 ### Example 4: Import all module snippets
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$psise.CurrentPowerShellTab.Snippets.Load($_)}
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$psise.CurrentPowerShellTab.Snippets.Load($_)}
 ```
 
 This command imports all snippets from all installed modules into the current session.
@@ -84,7 +84,7 @@ Typically, you don't need to run a command like this because modules that have s
 
 ### Example 5: Copy all module snippets
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
 ```
 
 This command copies the snippet files from all installed modules into the Snippets directory of the current user.
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Recurse
-Indicate that this cmdlet imports snippets from all subdirectories of the value of the *Path* parameter.
+Indicate that this cmdlet imports snippets from all subdirectories of the value of the **Path** parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -144,9 +144,9 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 Indicates that this cmdlet gets snippets from modules that are installed on the computer, even if the modules are not imported into the current session.
-If this parameter is omitted, and the module that is specified by the *Module* parameter is not imported into the current session, the attempt to get the snippets from the module will fail.
+If this parameter is omitted, and the module that is specified by the **Module** parameter is not imported into the current session, the attempt to get the snippets from the module will fail.
 
-This parameter is valid only when the *Module* parameter is used in the command.
+This parameter is valid only when the **Module** parameter is used in the command.
 
 ```yaml
 Type: SwitchParameter
@@ -174,9 +174,9 @@ This cmdlet does not take input from the pipeline.
 This cmdlet does not generate output.
 
 ## NOTES
-* You cannot use the Get-IseSnippet cmdlet to get imported snippets. **Get-IseSnippet** gets only snippets in the $home\Documents\WindowsPowerShell\Snippets directory.
+* You cannot use the **Get-IseSnippet** cmdlet to get imported snippets. **Get-IseSnippet** gets only snippets in the $home\Documents\WindowsPowerShell\Snippets directory.
 * **Import-IseSnippet** uses the **Load** static method of **Microsoft.PowerShell.Host.ISE.ISESnippetCollection** objects. You can also use the **Load** method of snippets in the Windows PowerShell ISE object model: $psISE.CurrentPowerShellTab.Snippets.Load()
-* The New-IseSnippet cmdlet stores new user-created snippets in unsigned .ps1xml files. As such, Windows PowerShelll cannot load them into a session in which the execution policy is **AllSigned** or **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
+* The **New-IseSnippet** cmdlet stores new user-created snippets in unsigned .ps1xml files. As such, Windows PowerShelll cannot load them into a session in which the execution policy is **AllSigned** or **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
 
   To use unsigned user-created snippets that the **Import-IseSnippet** cmdlet returns, change the execution policy, and then restart Windows PowerShell ISE.
 
