@@ -1,4 +1,4 @@
-﻿---
+---
 title: ISE
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,7 @@ Locale: en-US
 
 # ISE Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with the Windows PowerShell? Integrated Scripting Environment (ISE) module. 
+This section contains the help topics for the cmdlets that are installed with the Windows PowerShell® Integrated Scripting Environment (ISE) module. 
 The Windows PowerShell ISE module contains cmdlets that add features to Windows PowerShell ISE.
 
 ## ISE Cmdlets
@@ -26,7 +26,7 @@ Gets snippets that the user created.
 
 
 ### [Import-IseSnippet](Import-IseSnippet.md)
-Imports ISE snippets into the current session
+Imports ISE snippets into the current session.
 
 
 ### [New-IseSnippet](New-IseSnippet.md)
