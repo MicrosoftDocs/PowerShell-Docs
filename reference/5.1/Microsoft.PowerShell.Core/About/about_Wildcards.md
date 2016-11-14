@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Wildcards
 description: 
 keywords: powershell, cmdlet

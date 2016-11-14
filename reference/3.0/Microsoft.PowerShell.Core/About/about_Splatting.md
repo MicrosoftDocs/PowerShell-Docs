@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Splatting
 description: 
 keywords: powershell, cmdlet

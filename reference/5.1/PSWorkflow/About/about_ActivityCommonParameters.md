@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_ActivityCommonParameters
 description: 
 keywords: powershell, cmdlet

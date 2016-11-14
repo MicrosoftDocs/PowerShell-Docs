@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Core
 description: 
 keywords: powershell, cmdlet

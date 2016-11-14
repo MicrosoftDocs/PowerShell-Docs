@@ -1,4 +1,4 @@
-﻿---
+---
 title: "New-Item for Resources"
 ms.custom: na
 ms.date: 09/30/2014

@@ -1,5 +1,5 @@
 ---
-title: PowerShellGet
+title: PowershellGet
 description: 
 keywords: powershell, cmdlet
 author: jpjofre

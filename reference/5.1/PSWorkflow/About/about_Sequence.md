@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Sequence
 description: 
 keywords: powershell, cmdlet

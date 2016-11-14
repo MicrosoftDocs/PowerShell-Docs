@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description:
 external help file: System.Management.Automation.dll-Help.xml

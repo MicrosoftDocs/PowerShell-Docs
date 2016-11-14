@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Types.ps1xml
 description: 
 keywords: powershell, cmdlet

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WQL
 description: 
 keywords: powershell, cmdlet

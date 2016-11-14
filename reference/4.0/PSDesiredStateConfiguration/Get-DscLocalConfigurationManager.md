@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Get-DSCLocalConfigurationManager.cdxml-help.xml

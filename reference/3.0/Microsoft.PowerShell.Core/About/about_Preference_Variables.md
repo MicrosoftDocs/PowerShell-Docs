@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Preference_Variables
 description: 
 keywords: powershell, cmdlet

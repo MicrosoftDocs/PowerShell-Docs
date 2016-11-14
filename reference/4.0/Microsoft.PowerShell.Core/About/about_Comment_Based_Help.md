@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Comment_Based_Help
 description: 
 keywords: powershell, cmdlet

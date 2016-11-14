@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Profiles
 ms.custom: na
 ms.reviewer: na

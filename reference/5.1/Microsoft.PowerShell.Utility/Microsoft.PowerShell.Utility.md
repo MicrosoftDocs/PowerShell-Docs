@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft.PowerShell.Utility
 description: 
 keywords: powershell, cmdlet

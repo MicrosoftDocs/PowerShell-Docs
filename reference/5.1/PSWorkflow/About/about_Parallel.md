@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parallel
 description: 
 keywords: powershell, cmdlet

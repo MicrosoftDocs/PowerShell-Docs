@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parameters_Default_Values
 description: 
 keywords: powershell, cmdlet

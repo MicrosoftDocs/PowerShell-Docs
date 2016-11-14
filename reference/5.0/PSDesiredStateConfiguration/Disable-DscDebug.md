@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Disable-DscDebug.cdxml-help.xml

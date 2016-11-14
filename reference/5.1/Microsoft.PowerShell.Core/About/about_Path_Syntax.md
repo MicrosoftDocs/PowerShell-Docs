@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Path_Syntax
 description: 
 keywords: powershell, cmdlet

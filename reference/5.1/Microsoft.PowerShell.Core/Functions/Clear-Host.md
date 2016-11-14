@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: System.Management.Automation.dll-help.xml
 online version: http://go.microsoft.com/fwlink/?LinkId=834941
 schema: 2.0.0

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PowerShell.exe
 description: 
 keywords: powershell, cmdlet

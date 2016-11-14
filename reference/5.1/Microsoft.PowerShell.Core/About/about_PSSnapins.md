@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PSSnapins
 description: 
 keywords: powershell, cmdlet
