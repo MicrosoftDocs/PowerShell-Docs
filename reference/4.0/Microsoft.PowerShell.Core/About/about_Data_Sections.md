@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Data Sections
 ## about_Data_Sections
-# TOPIC
 
 
 # SHORT DESCRIPTION

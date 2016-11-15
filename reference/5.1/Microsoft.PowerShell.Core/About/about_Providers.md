@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Providers
 ## about_Providers
-# TOPIC
 
 
 # SHORT DESCRIPTION

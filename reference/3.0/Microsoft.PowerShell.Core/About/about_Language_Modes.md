@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Language Modes
 ## about_Language_Modes
-# TOPIC
 
 
 # SHORT DESCRIPTION

@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Group Policy Settings
 ## about_Group_Policy_Settings
-# TOPIC
 
 
 # SHORT DESCRIPTION

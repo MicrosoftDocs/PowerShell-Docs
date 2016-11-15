@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Line Editing
 ## about_Line_Editing
-# TOPIC
 
 
 # SHORT DESCRIPTION

@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Functions Advanced Methods
 ## about_Functions_Advanced_Methods
-# TOPIC
 
 
 # SHORT DESCRIPTION

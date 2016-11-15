@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About History
 ## about_History
-# TOPIC
 
 
 # SHORT DESCRIPTION

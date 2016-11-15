@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Throw
 ## about_Throw
-# TOPIC
 
 
 # SHORT DESCRIPTION

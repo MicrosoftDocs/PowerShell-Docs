@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Continue
 ## about_Continue
-# TOPIC
 
 
 # SHORT DESCRIPTION

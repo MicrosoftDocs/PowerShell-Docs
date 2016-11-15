@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About PowerShell.exe
 ## about_PowerShell.exe
-# TOPIC
 
 
 # SHORT DESCRIPTION
