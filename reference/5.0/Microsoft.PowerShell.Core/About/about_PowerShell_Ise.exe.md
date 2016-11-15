@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About PowerShell Ise.exe
 ## about_PowerShell_Ise.exe
-# TOPIC
 
-about_PowerShell_Ise.exe
 
 # SHORT DESCRIPTION
 

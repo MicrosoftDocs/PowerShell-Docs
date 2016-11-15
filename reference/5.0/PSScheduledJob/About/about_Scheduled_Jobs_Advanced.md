@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Scheduled_Jobs_Advanced
 
 
-about_Scheduled_Jobs_Advanced
 
 # SHORT DESCRIPTION
 

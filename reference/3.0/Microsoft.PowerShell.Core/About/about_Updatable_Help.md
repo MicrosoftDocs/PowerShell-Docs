@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Updatable_Help
 
 
-About_Updatable_Help
 
 # SHORT DESCRIPTION
 

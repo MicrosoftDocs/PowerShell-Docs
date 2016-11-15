@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About PSSnapins
 ## about_PSSnapins
-about_PSSnapins
 
 
 ## SHORT DESCRIPTION

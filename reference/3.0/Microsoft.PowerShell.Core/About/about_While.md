@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About While
 ## about_While
-about_While
 
 
 ## SHORT DESCRIPTION

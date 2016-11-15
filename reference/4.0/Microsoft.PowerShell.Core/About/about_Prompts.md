@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Prompts
 ## about_Prompts
-about_Prompts
 
 
 ## SHORT DESCRIPTION

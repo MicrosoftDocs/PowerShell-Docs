@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Transactions
 
 
-about_Transactions
 
 # SHORT DESCRIPTION
 

@@ -19,7 +19,6 @@ ms.topic: article
 ## about_ForEach
 
 
-about_Foreach
 
 # SHORT DESCRIPTION
 

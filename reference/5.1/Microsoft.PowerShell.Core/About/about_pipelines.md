@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Pipelines
 
 
-about_pipelines
 
 # SHORT DESCRIPTION
 

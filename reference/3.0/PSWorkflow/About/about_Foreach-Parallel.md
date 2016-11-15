@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Foreach-Parallel
 ## about_Foreach-Parallel
-about_ForEach-Parallel
 
 
 ## SHORT DESCRIPTION

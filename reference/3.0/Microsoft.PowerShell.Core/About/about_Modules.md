@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Modules
 
 
-about_Modules
 
 # SHORT DESCRIPTION
 

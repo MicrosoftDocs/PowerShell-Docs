@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About WMI Cmdlets
 ## about_WMI_Cmdlets
-about_WMI_cmdlets
 
 
 ## SHORT DESCRIPTION

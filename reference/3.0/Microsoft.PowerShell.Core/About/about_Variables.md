@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Variables
 ## about_Variables
-about_Variables
 
 
 ## SHORT DESCRIPTION

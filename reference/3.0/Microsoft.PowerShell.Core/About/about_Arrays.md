@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Arrays
 
-about_Arrays
 
 # SHORT DESCRIPTION
 

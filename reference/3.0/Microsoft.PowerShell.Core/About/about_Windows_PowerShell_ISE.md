@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Windows_PowerShell_ISE
 
 
-about_Windows_PowerShell_ISE
 
 # SHORT DESCRIPTION
 

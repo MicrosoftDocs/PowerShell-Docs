@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Remote Variables
 ## about_Remote_Variables
-# TOPIC
 
-about_Remote_Variables
 
 # SHORT DESCRIPTION
 

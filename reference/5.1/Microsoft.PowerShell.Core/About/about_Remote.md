@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Remote
 ## about_Remote
-# TOPIC
 
-about_Remote
 
 # SHORT DESCRIPTION
 

@@ -18,7 +18,6 @@ ms.topic: article
 
 # About Aliases
 
-about_aliases
 
 
 ## SHORT DESCRIPTION

@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Checkpoint-Workflow
 ## about_Checkpoint-Workflow
-about_Checkpoint-Workflow
 
 
 ## SHORT DESCRIPTION

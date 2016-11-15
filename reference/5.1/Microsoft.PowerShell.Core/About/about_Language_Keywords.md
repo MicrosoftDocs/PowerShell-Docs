@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Language_Keywords
 
 
-about_Language_Keywords
 
 # SHORT DESCRIPTION
 

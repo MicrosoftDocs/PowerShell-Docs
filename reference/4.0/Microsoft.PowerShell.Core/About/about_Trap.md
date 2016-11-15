@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Trap
 ## about_Trap
-about_Trap
 
 
 ## SHORT DESCRIPTION

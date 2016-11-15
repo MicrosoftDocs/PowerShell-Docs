@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About WMI
 ## about_WMI
-about_WMI
 
 
 ## SHORT DESCRIPTION

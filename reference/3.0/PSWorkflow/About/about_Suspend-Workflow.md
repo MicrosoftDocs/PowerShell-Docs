@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Suspend-Workflow
 ## about_Suspend-Workflow
-# TOPIC
 
-about_Suspend-Workflow
 
 # SHORT DESCRIPTION
 

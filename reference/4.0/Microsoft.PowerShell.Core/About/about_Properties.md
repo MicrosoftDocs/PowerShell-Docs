@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Properties
 ## about_Properties
-about_Properties
 
 
 ## SHORT DESCRIPTION

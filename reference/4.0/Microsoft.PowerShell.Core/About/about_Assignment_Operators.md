@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Assignment_Operators
 
 
-about_assignment_operators
 
 # SHORT DESCRIPTION
 

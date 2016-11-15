@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Comment_Based_Help
 
 
-about_Comment_Based_Help
 
 # SHORT DESCRIPTION
 

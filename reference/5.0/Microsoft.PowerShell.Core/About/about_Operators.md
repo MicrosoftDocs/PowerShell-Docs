@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Operators
 ## about_Operators
-about_Operators
 
 
 ## SHORT DESCRIPTION

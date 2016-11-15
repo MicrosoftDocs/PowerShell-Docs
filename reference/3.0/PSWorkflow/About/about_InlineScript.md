@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About InlineScript
 ## about_InlineScript
-# TOPIC
 
-about_InlineScript
 
 # SHORT DESCRIPTION
 

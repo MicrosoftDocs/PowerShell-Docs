@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Remote Output
 ## about_Remote_Output
-# TOPIC
 
-about_Remote_Output
 
 # SHORT DESCRIPTION
 

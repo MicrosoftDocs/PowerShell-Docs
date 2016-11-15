@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Script Blocks
 ## about_Script_Blocks
-# TOPIC
 
-about_Script_Blocks
 
 # SHORT DESCRIPTION
 

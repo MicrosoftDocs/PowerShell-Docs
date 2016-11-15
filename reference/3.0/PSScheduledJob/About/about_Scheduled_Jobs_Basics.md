@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Scheduled_Jobs_Basics
 
 
-about_Scheduled_Jobs_Basics
 
 # SHORT DESCRIPTION
 

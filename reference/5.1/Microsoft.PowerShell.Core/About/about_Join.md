@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About join
 ## about_join
-about_join
 
 
 ## SHORT DESCRIPTION
