@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Do
 # TOPIC
 
-about_Do
 
 # SHORT DESCRIPTION
 

@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Command_Syntax
 
 
-about_Command_Syntax
 
 # SHORT DESCRIPTION
 

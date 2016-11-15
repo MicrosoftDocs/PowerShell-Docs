@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About methods
 ## about_methods
-about_methods
 
 
 ## SHORT DESCRIPTION

@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Regular_Expressions
 # TOPIC
 
-about_Regular_Expressions
 
 # SHORT DESCRIPTION
 

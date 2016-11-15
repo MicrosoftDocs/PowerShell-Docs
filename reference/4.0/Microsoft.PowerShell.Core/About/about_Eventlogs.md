@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Eventlogs
 # TOPIC
 
-about_EventLogs
 
 # SHORT DESCRIPTION
 

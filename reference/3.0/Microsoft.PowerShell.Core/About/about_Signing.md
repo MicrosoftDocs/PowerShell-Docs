@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Signing
 
 
-about_Signing
 
 # SHORT DESCRIPTION
 

@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Automatic Variables
 ## about_Automatic_Variables
-about_Automatic_Variables
 
 
 ## SHORT DESCRIPTION

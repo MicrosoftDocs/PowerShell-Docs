@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Splatting
 
 
-about_Splatting
 
 # SHORT DESCRIPTION
 

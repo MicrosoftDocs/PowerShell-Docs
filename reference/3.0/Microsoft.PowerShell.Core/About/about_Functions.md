@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions
 
 
-about_Functions
 
 # SHORT DESCRIPTION
 

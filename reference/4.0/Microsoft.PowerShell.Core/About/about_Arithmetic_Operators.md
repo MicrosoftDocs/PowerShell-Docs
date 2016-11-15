@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Arithmetic_Operators
 
 
-about_Arithmetic_Operators
 
 # SHORT DESCRIPTION
 

@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions_OutputTypeAttribute
 # TOPIC
 
-about_Functions_OutputTypeAttribute
 
 # SHORT DESCRIPTION
 

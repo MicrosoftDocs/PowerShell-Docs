@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions_CmdletBindingAttribute
 # TOPIC
 
-about_Functions_CmdletBindingAttribute
 
 # SHORT DESCRIPTION
 

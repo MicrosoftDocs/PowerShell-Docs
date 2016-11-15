@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Special_Characters
 # TOPIC
 
-about_Special_Characters
 
 # SHORT DESCRIPTION
 

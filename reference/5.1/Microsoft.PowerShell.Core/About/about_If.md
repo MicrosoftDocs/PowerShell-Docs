@@ -16,7 +16,6 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ---
 # About If
-about_If
 
 ## SHORT DESCRIPTION
 Describes a language command you can use to run statement lists based on the results of one or more conditional tests.

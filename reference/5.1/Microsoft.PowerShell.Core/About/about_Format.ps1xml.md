@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Format.ps1xml
 
 
-about_Format.ps1xml
 
 # SHORT DESCRIPTION
 

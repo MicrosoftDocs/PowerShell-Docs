@@ -19,7 +19,6 @@ ms.topic: article
 ## about_WQL
 
 
-about_WQL
 
 # SHORT DESCRIPTION
 

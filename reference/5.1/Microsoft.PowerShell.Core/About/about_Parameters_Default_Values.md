@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Parameters Default Values
 ## about_Parameters_Default_Values
-about_Parameters_Default_Values
 
 
 ## SHORT DESCRIPTION

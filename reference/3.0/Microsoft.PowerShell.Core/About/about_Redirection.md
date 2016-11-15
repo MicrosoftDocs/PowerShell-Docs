@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Redirection
 ## about_Redirection
-about_Redirection
 
 
 ## SHORT DESCRIPTION

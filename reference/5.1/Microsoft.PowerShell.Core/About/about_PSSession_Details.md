@@ -19,7 +19,6 @@ ms.topic: article
 ## about_PSSession_Details
 
 
-about_PSSession_Details
 
 # SHORT DESCRIPTION
 

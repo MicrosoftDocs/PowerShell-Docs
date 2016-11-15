@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Group_Policy_Settings
 # TOPIC
 
-about_Group_Policy_Settings
 
 # SHORT DESCRIPTION
 

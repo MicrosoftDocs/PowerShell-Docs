@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Ref
 ## about_Ref
-about_Ref
 
 
 ## SHORT DESCRIPTION

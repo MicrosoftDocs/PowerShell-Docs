@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Wildcards
 # TOPIC
 
-about_Wildcards
 
 # SHORT DESCRIPTION
 

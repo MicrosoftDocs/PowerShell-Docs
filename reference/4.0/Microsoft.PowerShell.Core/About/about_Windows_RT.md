@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Windows RT
 ## about_Windows_RT
-about_Windows_RT
 
 
 ## SHORT DESCRIPTION

@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Remote
 # TOPIC
 
-about_Remote
 
 # SHORT DESCRIPTION
 

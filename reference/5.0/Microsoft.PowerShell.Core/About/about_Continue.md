@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Continue
 # TOPIC
 
-about_Continue
 
 # SHORT DESCRIPTION
 

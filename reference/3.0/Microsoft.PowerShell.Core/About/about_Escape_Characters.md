@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Escape_Characters
 # TOPIC
 
-about_Escape_Characters
 
 # SHORT DESCRIPTION
 

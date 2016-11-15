@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions_Advanced
 # TOPIC
 
-about_Functions_Advanced
 
 # SHORT DESCRIPTION
 

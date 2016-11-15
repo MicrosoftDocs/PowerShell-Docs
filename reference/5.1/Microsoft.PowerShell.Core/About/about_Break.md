@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Break
 
-about_Break
 
 # SHORT DESCRIPTION
 

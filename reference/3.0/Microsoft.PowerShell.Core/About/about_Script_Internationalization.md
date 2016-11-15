@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Script_Internationalization
 # TOPIC
 
-about_Script_Internationalization
 
 # SHORT DESCRIPTION
 

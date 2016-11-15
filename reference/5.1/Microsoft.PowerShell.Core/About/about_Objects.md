@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Objects
 # TOPIC
 
-about_Objects
 
 # SHORT DESCRIPTION
 

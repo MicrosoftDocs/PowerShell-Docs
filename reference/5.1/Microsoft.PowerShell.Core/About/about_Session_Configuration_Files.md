@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Session_Configuration_Files
 
 
-about_Session_Configuration_Files
 
 # SHORT DESCRIPTION
 

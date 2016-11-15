@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About PSSessions
 ## about_PSSessions
-about_PSSessions
 
 
 ## SHORT DESCRIPTION

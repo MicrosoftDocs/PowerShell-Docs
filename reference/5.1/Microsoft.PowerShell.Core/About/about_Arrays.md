@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Arrays
 # TOPIC
 
-about_Arrays
 
 # SHORT DESCRIPTION
 

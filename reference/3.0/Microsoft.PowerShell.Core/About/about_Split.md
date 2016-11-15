@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Split
 
 
-about_Split
 
 # SHORT DESCRIPTION
 

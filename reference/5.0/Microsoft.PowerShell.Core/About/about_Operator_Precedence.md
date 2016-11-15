@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Operator_Precedence
 # TOPIC
 
-about_Operator_Precedence
 
 # SHORT DESCRIPTION
 

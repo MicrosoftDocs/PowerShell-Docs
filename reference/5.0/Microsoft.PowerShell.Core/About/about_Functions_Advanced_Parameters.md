@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions_Advanced_Parameters
 
 
-about_Functions_Advanced_Parameters
 
 # SHORT DESCRIPTION
 

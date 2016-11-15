@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Sequence
 # TOPIC
 
-about_Sequence
 
 # SHORT DESCRIPTION
 

@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Switch
 ## about_Switch
-about_Switch
 
 
 ## SHORT DESCRIPTION

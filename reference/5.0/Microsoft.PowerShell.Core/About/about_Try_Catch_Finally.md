@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Try Catch Finally
 ## about_Try_Catch_Finally
-about_Try_Catch_Finally
 
 
 ## SHORT DESCRIPTION

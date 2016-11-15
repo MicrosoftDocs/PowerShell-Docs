@@ -19,7 +19,6 @@ ms.topic: article
 ## about_WS-Management_Cmdlets
 # TOPIC
 
-about_WS-Management_Cmdlets
 
 # SHORT DESCRIPTION
 

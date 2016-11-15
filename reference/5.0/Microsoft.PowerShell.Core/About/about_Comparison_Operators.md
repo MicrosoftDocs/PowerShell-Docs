@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Comparison_Operators
 
 
-about_Comparison_Operators
 
 # SHORT DESCRIPTION
 

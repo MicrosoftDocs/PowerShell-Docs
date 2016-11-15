@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Run_With_PowerShell
 # TOPIC
 
-about_Run_With_PowerShell
 
 # SHORT DESCRIPTION
 

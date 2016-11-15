@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Path Syntax
 ## about_Path_Syntax
-about_Path_Syntax
 
 
 ## SHORT DESCRIPTION
