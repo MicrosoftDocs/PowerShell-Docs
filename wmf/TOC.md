@@ -7,6 +7,7 @@
 ### [Improvements in the PowerShell Engine](5.1/engine-improvements.md)
 ### [Improvements in Package Management](5.1/package-management-improvements.md)
 ### [Improvements in JEA](5.1/jea-improvements.md)
+### [Catalog cmdlets](5.1/catalog-cmdlets.md)
 ### [Bugs Fixed in WMF 5.1](5.1/bugfixes.md)
 ## [Install and Configure](5.1/install-configure.md)
 ## [Known Issues](5.1/known-issues.md)
