@@ -68,7 +68,7 @@ PS C:\>
 This command generates an object with default property names, P1 and P2.
 The results are P1="Hello" and P2="World".
 
-#### Example 1A: Get to know the generated object
+### Example 1A: Get to know the generated object
 
 ```
 PS C:\>"Hello World" | ConvertFrom-String | Get-Member
@@ -222,7 +222,7 @@ This is the same example as No. 4, above;
 the only differences are in the pattern string that includes a data type for each desired property.
 Notice the difference in alignment for the age column between both examples.
 
-#### Example 5A: Get to know the generated object
+### Example 5A: Get to know the generated object
 
  ```
  $template = @'
