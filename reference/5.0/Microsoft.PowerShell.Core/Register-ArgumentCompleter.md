@@ -151,6 +151,7 @@ You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
+### None
 This cmdlet returns no output.
 
 ## NOTES
