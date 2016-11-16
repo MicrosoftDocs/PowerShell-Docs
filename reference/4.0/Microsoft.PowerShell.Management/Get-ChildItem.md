@@ -1,5 +1,5 @@
 ---
-author: jpjofre
+author: jpjofre,andrePKI
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell, cmdlet
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
-{{Fill Hidden Description}}
+Allows the cmdlet to get hidden files items that cannot otherwise be accessed by the user. Valid for the FileSystem provider. See also the **Force** parameter.
 
 ```yaml
 Type: SwitchParameter
