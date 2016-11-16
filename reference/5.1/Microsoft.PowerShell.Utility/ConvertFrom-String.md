@@ -54,9 +54,6 @@ The cmdlet also supports automatically-generated, example-driven parsing based o
 
 ### Example 1: Generate an object with default property names
 
-```PowerShell
-"Hello World" | ConvertFrom-String
-```
 ```
 PS C:\>"Hello World" | ConvertFrom-String
 
@@ -71,11 +68,8 @@ PS C:\>
 This command generates an object with default property names, P1 and P2.
 The results are P1="Hello" and P2="World".
 
-#### Example 1A: Get to know the generated object
+### Example 1A: Get to know the generated object
 
-```PowerShell
-"Hello World" | ConvertFrom-String | Get-Member
-```
 ```
 PS C:\>"Hello World" | ConvertFrom-String | Get-Member
 
@@ -100,9 +94,6 @@ both properties are of 'string' type, by default.
 
 ### Example 2: Generate an object with default property names using a delimiter
 
-```PowerShell
-"Hello World" | ConvertFrom-String -Delimiter "ll"
-```
 ```
 PS C:\>"Hello World" | ConvertFrom-String -Delimiter "ll"
 
@@ -118,9 +109,6 @@ This command generates an object with P1="He" and P2="o World" properties, by sp
 
 ### Example 3: Generate an object that contains two named properties
 
-```
-"Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
-```
 ```
 PS C:\>"Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
 
@@ -138,7 +126,7 @@ This command generates an object that contains two properties:
 
 ### Example 4: Use an expression as the value of the TemplateContent parameter, save the results in a variable.
 
-```PowerShell
+```
 $template = @'
 {Name*:Phoebe Cat}, {phone:425-123-6789}, {age:6}
 {Name*:Lucky Shot}, {phone:(206) 987-4321}, {age:12}
@@ -157,8 +145,8 @@ $testText  |
 
 Write-output ("Pet items found: " + ($PersonalData.Count))
 $PersonalData
-```
-```
+
+
 Pet items found: 4
 
 Name          phone           age
@@ -196,7 +184,7 @@ because there's no sample data that matches that pattern
 Similar with 3 or more digit ages, they will not be recognized.
 
 ### Example 5: Specifying data types to the generated properties
-```PowerShell
+```
 $template = @'
 {[string]Name*:Phoebe Cat}, {[string]phone:425-123-6789}, {[int]age:6}
 {[string]Name*:Lucky Shot}, {[string]phone:(206) 987-4321}, {[int]age:12}
@@ -214,8 +202,8 @@ $testText  |
 
 Write-output ("Pet items found: " + ($PersonalData.Count))
 $PersonalData
-```
-```
+
+
 Pet items found: 4
 
 Name          phone           age
@@ -234,9 +222,9 @@ This is the same example as No. 4, above;
 the only differences are in the pattern string that includes a data type for each desired property.
 Notice the difference in alignment for the age column between both examples.
 
-#### Example 5A: Get to know the generated object
+### Example 5A: Get to know the generated object
 
- ```PowerShell
+ ```
  $template = @'
  {[string]Name*:Phoebe Cat}, {[string]phone:425-123-6789}, {[int]age:6}
  {[string]Name*:Lucky Shot}, {[string]phone:(206) 987-4321}, {[int]age:12}
@@ -254,8 +242,8 @@ Notice the difference in alignment for the age column between both examples.
      Out-Null
 
  $PersonalData | Get-Member
- ```
-```
+
+
 
    TypeName: System.Management.Automation.PSCustomObject
 
@@ -269,7 +257,7 @@ age         NoteProperty int age=6
 Name        NoteProperty string Name=Phoebe Cat        
 phone       NoteProperty string phone=425-123-6789     
 
-¶ >
+C:\ >
 ```
 
 Get-Member shows age is of integer type.
