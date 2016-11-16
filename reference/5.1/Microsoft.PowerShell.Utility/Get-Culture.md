@@ -28,7 +28,7 @@ Get-Culture [<CommonParameters>]
 The **Get-Culture** cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
-You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the Set-Culturehttp://go.microsoft.com/fwlink/?LinkID=242258 cmdlet in the International module.
+You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
 The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
 
 ## EXAMPLES
@@ -144,7 +144,7 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-Set-Culture
+[Set-Culture]()
 
 [Get-UICulture](Get-UICulture.md)
 
