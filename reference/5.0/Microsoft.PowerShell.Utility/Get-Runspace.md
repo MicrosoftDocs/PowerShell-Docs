@@ -110,7 +110,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Debug-Runspace](Debug-Runspace.md)
 
-New-Runspace
+[New-Runspace]()
 
-Remove-Runspace
+[Remove-Runspace]()
 
