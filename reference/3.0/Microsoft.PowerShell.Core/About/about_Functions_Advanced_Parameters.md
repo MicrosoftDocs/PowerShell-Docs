@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_Advanced_Parameters
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Functions_Advanced_Parameters
 
 
-about_Functions_Advanced_Parameters
 
 # SHORT DESCRIPTION
 

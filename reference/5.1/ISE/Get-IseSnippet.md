@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: ISE-help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822196
+online version: http://go.microsoft.com/fwlink/?LinkId=821534
 schema: 2.0.0
 title: Get-IseSnippet
 ---
@@ -25,11 +25,11 @@ Get-IseSnippet [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-ISESnippet** cmdlet gets the PS1XML files that contain reusable text snippets that the user created.
+The **Get-IseSnippet** cmdlet gets the PS1XML files that contain reusable text snippets that the user created.
 It works only in Windows PowerShell Integrated Scripting Environment (ISE).
 
 When you use the New-IseSnippet cmdlet to create a snippet, New-IseSnippet creates a \<SnippetTitle\>.Snippets.ps1xml file in the $home\Documents\WindowsPowerShell\Snippets directory.
-**Get-ISESnippet** gets the snippet files in the Snippets directory.
+**Get-IseSnippet** gets the snippet files in the Snippets directory.
 
 This cmdlet does not get built-in snippets or snippets that are imported from modules through the Import-IseSnippet cmdlet.
 
@@ -39,19 +39,19 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get all user-defined snippets
 ```
-PS C:\>Get-ISESnippet
+PS C:\>Get-IseSnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
 
 ### Example 2: Copy all user-defined snippets from remote computers to a shared directory
 ```
-PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
+PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
 ```
 
 This command copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
 
-The command uses the Invoke-Command cmdlet to run a **Get-ISESnippet** command on the computers in the Servers.txt file.
+The command uses the Invoke-Command cmdlet to run a **Get-IseSnippet** command on the computers in the Servers.txt file.
 A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the **Destination** parameter.
 
 ### Example 3: Display the title and text of each snippet on a local computer
@@ -60,9 +60,9 @@ PS C:\>#Parse-Snippet Function
 
 function Parse-Snippet
 {
-  $A = Get-ISESnippet
+  $SnippetFiles = Get-IseSnippet
   $SnippetNamespace = @{x="http://schemas.microsoft.com/PowerShell/Snippets"}
-  foreach ($SnippetFile in $A)
+  foreach ($SnippetFile in $SnippetFiles)
    {
      Write-Host ""
      $Title = Select-Xml -Path $SnippetFile.FullName -Namespace $SnippetNamespace -XPath "//x:Title" | foreach {$_.Node.InnerXML}
@@ -87,7 +87,7 @@ Title: Copyright
 Text:  (c) Fabrikam, Inc. 2012
 ```
 
-This example uses the **Get-ISESnippet** and Select-Xml cmdlets to display the title and text of each snippet on the local computer.
+This example uses the **Get-IseSnippet** and Select-Xml cmdlets to display the title and text of each snippet on the local computer.
 
 ### Example 4: Display the title and description of all snippets in the session
 ```

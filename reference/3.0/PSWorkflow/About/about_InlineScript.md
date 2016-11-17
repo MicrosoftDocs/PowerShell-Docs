@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_InlineScript
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About InlineScript
 ## about_InlineScript
-# TOPIC
 
-about_InlineScript
 
 # SHORT DESCRIPTION
 

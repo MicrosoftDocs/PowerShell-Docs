@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: PSModule-help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822319
+online version: http://go.microsoft.com/fwlink/?LinkId=821657
 schema: 2.0.0
 title: Find-DscResource
 ---

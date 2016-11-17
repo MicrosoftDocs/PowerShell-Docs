@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Object_Creation
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Object Creation
 ## about_Object_Creation
-about_Object_Creation
 
 
 ## SHORT DESCRIPTION

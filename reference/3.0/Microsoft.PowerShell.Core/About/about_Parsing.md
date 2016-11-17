@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parsing
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Parsing
 ## about_Parsing
-# TOPIC
 
-about_Parsing
 
 # SHORT DESCRIPTION
 

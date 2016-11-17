@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Trap
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Trap
 ## about_Trap
-about_Trap
 
 
 ## SHORT DESCRIPTION

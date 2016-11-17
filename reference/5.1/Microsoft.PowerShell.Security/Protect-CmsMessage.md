@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822373
+online version: http://go.microsoft.com/fwlink/?LinkId=821716
 schema: 2.0.0
 title: Protect-CmsMessage
 ---

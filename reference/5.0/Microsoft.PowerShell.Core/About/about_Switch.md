@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Switch
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Switch
 ## about_Switch
-about_Switch
 
 
 ## SHORT DESCRIPTION

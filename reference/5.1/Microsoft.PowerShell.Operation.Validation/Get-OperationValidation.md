@@ -11,7 +11,7 @@ ms.topic: reference
 online version:
 schema: 2.0.0
 title: Get-OperationValidation
-ms.assetid: 44E093A6-C001-4903-8E96-6D22C9347E93
+online version: http://go.microsoft.com/fwlink/?LinkId=834963
 ---
 
 # Get-OperationValidation

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_While
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About While
 ## about_While
-about_While
 
 
 ## SHORT DESCRIPTION

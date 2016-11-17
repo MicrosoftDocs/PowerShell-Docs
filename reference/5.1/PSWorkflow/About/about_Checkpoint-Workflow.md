@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Checkpoint-Workflow
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Checkpoint-Workflow
 ## about_Checkpoint-Workflow
-about_Checkpoint-Workflow
 
 
 ## SHORT DESCRIPTION

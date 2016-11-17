@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Special_Characters
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Special Characters
 ## about_Special_Characters
-# TOPIC
 
-about_Special_Characters
 
 # SHORT DESCRIPTION
 

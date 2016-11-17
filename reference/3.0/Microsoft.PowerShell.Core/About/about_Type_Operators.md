@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Type_Operators
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Type Operators
 ## about_Type_Operators
-about_Type_Operators
 
 
 ## SHORT DESCRIPTION

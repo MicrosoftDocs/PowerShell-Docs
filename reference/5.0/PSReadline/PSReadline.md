@@ -1,4 +1,4 @@
-﻿---
+---
 title: PSReadline
 description: 
 keywords: powershell, cmdlet

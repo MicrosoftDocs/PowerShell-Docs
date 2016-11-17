@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Debuggers
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Debuggers
 
 
-about_Debuggers
 
 # SHORT DESCRIPTION
 

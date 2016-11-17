@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WorkflowCommonParameters
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_WorkflowCommonParameters
 
 
-about_Workflow_Common_Parameters
 
 # SHORT DESCRIPTION
 
@@ -332,7 +331,6 @@ is not available on the port used for the command, the command fails.
 
 # KEYWORDS
 
-about_Workflow_Common_Parameters
 about_Workflow_CommonParameters
 
 # SEE ALSO

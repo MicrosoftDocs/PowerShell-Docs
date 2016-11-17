@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822300
+online version: http://go.microsoft.com/fwlink/?LinkID=517132
 schema: 2.0.0
 title: Find-Package
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Eventlogs
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Eventlogs
 ## about_Eventlogs
-# TOPIC
 
-about_EventLogs
 
 # SHORT DESCRIPTION
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Core_Commands
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Core Commands
 ## about_Core_Commands
-about_Core_Commands
 
 
 ## SHORT DESCRIPTION

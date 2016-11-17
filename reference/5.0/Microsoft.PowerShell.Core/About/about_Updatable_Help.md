@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Updatable_Help
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Updatable_Help
 
 
-About_Updatable_Help
 
 # SHORT DESCRIPTION
 

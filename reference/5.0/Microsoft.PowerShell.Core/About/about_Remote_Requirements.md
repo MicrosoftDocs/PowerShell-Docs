@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Requirements
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Remote_Requirements
 
 
-about_Remote_Requirements
 
 # SHORT DESCRIPTION
 

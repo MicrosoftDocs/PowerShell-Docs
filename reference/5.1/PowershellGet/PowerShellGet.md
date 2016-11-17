@@ -1,4 +1,4 @@
-﻿---
+---
 title: PowershellGet
 description: 
 keywords: powershell, cmdlet
@@ -8,18 +8,18 @@ ms.date: 2016-10-11
 ms.topic: reference
 ms.prod: powershell
 ms.technology: powershell
-Module Name: PowershellGet
+Module Name: PowerShellGet
 Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
 Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822317
 Help Version: 5.1.0.2
 Locale: en-US
 ---
 
-# PowershellGet Module
+# PowerShellGet Module
 ## Description
 Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks. 
 
-## PowershellGet Cmdlets
+## PowerShellGet Cmdlets
 ### [Find-Command](Find-Command.md)
 Finds PowerShell commands in modules.
 
@@ -69,7 +69,7 @@ Publishes a specified module from the local computer to an online gallery.
 
 
 ### [Publish-Script](Publish-Script.md)
-Publishes a script.
+Publishes a script from the local computer to an online gallery.
 
 
 ### [Register-PSRepository](Register-PSRepository.md)

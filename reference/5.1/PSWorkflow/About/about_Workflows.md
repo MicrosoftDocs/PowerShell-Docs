@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Workflows
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Workflows
 
 
-about_Workflows
 
 # SHORT DESCRIPTION
 

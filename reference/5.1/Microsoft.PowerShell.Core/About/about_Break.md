@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Break
 description:
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Break
 
-about_Break
 
 # SHORT DESCRIPTION
 

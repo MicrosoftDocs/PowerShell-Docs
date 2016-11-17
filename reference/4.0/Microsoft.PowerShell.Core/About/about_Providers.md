@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Providers
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Providers
 ## about_Providers
-# TOPIC
 
-about_Providers
 
 # SHORT DESCRIPTION
 

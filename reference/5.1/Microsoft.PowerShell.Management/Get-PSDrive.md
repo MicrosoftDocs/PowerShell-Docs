@@ -1,6 +1,6 @@
-﻿---
+---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290500
+online version: http://go.microsoft.com/fwlink/?linkid=821591
 schema: 2.0.0
 title: Get-PSDrive
 ---
@@ -121,7 +121,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String[]
 Parameter Sets: LiteralName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -137,7 +137,7 @@ Type the drive name or letter without a colon (:).
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -154,7 +154,7 @@ Type the name of a provider, such as FileSystem, Registry, or Certificate.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -178,7 +178,7 @@ For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -232,4 +232,3 @@ This cmdlet returns objects that represent the drives in the session.
 [Get-WmiObject](Get-WmiObject.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-

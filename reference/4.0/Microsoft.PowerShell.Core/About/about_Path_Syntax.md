@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Path_Syntax
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Path Syntax
 ## about_Path_Syntax
-about_Path_Syntax
 
 
 ## SHORT DESCRIPTION

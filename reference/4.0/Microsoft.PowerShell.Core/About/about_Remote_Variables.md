@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Variables
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Remote Variables
 ## about_Remote_Variables
-# TOPIC
 
-about_Remote_Variables
 
 # SHORT DESCRIPTION
 

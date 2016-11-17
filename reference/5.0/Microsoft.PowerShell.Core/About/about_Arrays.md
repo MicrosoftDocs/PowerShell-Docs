@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Arrays
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Arrays
 ## about_Arrays
-# TOPIC
 
-about_Arrays
 
 # SHORT DESCRIPTION
 

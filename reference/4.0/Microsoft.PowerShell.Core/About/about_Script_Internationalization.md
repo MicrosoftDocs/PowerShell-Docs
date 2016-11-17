@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Script_Internationalization
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Script Internationalization
 ## about_Script_Internationalization
-# TOPIC
 
-about_Script_Internationalization
 
 # SHORT DESCRIPTION
 

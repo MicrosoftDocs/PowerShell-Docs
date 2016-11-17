@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Quoting_Rules
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Quoting Rules
 ## about_Quoting_Rules
-about_Quoting_Rules
 
 
 ## SHORT DESCRIPTION

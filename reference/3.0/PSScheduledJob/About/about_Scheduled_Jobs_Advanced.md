@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Scheduled_Jobs_Advanced
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Scheduled_Jobs_Advanced
 
 
-about_Scheduled_Jobs_Advanced
 
 # SHORT DESCRIPTION
 

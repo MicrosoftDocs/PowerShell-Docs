@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Types.ps1xml
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Types.ps1xml
 
 
-about_Types.ps1xml
 
 # SHORT DESCRIPTION
 

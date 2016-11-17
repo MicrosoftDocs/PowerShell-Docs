@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Transactions
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Transactions
 
 
-about_Transactions
 
 # SHORT DESCRIPTION
 

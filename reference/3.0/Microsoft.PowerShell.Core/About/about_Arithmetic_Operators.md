@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Arithmetic_Operators
 description:
 keywords: powershell, cmdlet
@@ -18,7 +18,6 @@ ms.topic: article
 
 # About Arithmetic Operators
 
-about_Arithmetic_Operators
 
 # SHORT DESCRIPTION
 

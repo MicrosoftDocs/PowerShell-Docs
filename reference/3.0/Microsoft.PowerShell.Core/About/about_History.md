@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_History
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About History
 ## about_History
-# TOPIC
 
-about_History
 
 # SHORT DESCRIPTION
 

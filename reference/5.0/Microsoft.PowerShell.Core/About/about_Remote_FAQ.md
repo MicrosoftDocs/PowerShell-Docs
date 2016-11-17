@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_FAQ
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Remote FAQ
 ## about_Remote_FAQ
-about_Remote_FAQ
 
 
 ## SHORT DESCRIPTION

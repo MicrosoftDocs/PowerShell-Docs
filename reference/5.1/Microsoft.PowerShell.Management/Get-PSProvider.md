@@ -1,6 +1,6 @@
-﻿---
+---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290501
+online version: http://go.microsoft.com/fwlink/?linkid=821592
 schema: 2.0.0
 title: Get-PSProvider
 ---
@@ -103,7 +103,7 @@ Specifies the name or names of the Windows PowerShell providers about which this
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -128,4 +128,3 @@ This cmdlet returns objects that represent the Windows PowerShell providers in t
 ## NOTES
 
 ## RELATED LINKS
-

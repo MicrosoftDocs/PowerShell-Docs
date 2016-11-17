@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Redirection
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Redirection
 ## about_Redirection
-about_Redirection
 
 
 ## SHORT DESCRIPTION

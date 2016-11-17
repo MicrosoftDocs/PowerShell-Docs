@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Requires
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Requires
 ## about_Requires
-about_Requires
 
 
 ## SHORT DESCRIPTION

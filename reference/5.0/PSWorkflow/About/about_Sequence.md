@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Sequence
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Sequence
 ## about_Sequence
-# TOPIC
 
-about_Sequence
 
 # SHORT DESCRIPTION
 

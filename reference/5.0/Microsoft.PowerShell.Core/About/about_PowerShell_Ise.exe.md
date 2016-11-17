@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PowerShell_Ise.exe
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About PowerShell Ise.exe
 ## about_PowerShell_Ise.exe
-# TOPIC
 
-about_PowerShell_Ise.exe
 
 # SHORT DESCRIPTION
 

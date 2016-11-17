@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_Advanced
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Functions Advanced
 ## about_Functions_Advanced
-# TOPIC
 
-about_Functions_Advanced
 
 # SHORT DESCRIPTION
 

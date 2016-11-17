@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WMI_Cmdlets
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About WMI Cmdlets
 ## about_WMI_Cmdlets
-about_WMI_cmdlets
 
 
 ## SHORT DESCRIPTION

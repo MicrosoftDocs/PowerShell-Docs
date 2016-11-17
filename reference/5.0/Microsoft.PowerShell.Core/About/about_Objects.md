@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Objects
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Objects
 ## about_Objects
-# TOPIC
 
-about_Objects
 
 # SHORT DESCRIPTION
 

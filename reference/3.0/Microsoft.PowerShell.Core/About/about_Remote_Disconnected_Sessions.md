@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Remote_Disconnected_Sessions
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Remote_Disconnected_Sessions
 
 
-about_Remote_Disconnected_Session
 
 # SHORT DESCRIPTION
 

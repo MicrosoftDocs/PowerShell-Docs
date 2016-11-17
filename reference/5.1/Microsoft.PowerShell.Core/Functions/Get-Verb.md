@@ -1,6 +1,6 @@
-﻿---
+---
 external help file: System.Management.Automation.dll-help.xml
-online version: http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
+online version: http://go.microsoft.com/fwlink/?LinkId=834942
 schema: 2.0.0
 ---
 
@@ -17,11 +17,11 @@ Get-Verb [[-verb] <String[]>]
 
 ## DESCRIPTION
 The Get-Verb function gets verbs that are approved for use in Windows PowerShell commands.
- 
+
 
 Windows PowerShell recommends that cmdlet and function names have the Verb-Noun format and include an approved verb.
 This practice makes command names more consistent and predictable, and easier to use, especially for users who do not speak English as a first language.
- 
+
 
 Commands that use unapproved verbs run in Windows PowerShell.
 However, when you import a module that includes a command with an unapproved verb in its name, the Import-Module command displays a warning message.
@@ -128,7 +128,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -156,7 +156,7 @@ Windows PowerShell verbs are assigned to a group based on their most common use.
 The groups are designed to make the verbs easy to find and compare, not to restrict their use.
 You can use any approved verb for any type of command.
 
-Each Windows PowerShell verb is assigned to one of the following groups. 
+Each Windows PowerShell verb is assigned to one of the following groups.
 -- Common: Define generic actions that can apply to almost any cmdlet, such as Add.
 -- Communications:  Define actions that apply to communications, such as Connect.
 -- Data:  Define actions that apply to data handling, such as Backup.
@@ -171,4 +171,3 @@ These cmdlets are considered to be historic exceptions and their verbs are class
 ## RELATED LINKS
 
 [Import-Module]()
-

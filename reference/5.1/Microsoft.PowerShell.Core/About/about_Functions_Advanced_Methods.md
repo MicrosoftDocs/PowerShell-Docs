@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_Advanced_Methods
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Functions Advanced Methods
 ## about_Functions_Advanced_Methods
-# TOPIC
 
-about_Functions_Advanced_Methods
 
 # SHORT DESCRIPTION
 

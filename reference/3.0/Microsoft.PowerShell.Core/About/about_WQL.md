@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_WQL
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_WQL
 
 
-about_WQL
 
 # SHORT DESCRIPTION
 

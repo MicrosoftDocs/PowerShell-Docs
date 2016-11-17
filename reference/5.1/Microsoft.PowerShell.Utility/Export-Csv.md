@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822400
+online version: http://go.microsoft.com/fwlink/?LinkId=821769
 schema: 2.0.0
 title: Export-Csv
 ---
@@ -96,11 +96,13 @@ It uses the *NoTypeInformation* parameter to suppress the type information in th
 ### Example 6: Export and append script properties
 ```
 PS C:\>$ScriptFiles = Get-ChildItem D:\* -Include *.ps1 -Recurse | Where-Object {$_.creationtime -gt "01/01/2011"}
-
+```
 The second command uses the Select-Object cmdlet to select the relevant properties of the script files. It saves the revised results in the ScriptFiles variable.
+```
 PS C:\>$ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
-
+```
 The third command uses a pipeline operator (|) to send the script file information in the ScriptFiles variable to the **Export-CSV** cmdlet. The command uses the Path parameter to specify the output file and the *Append* parameter to add the new script data to the end of the output file, instead of replacing the existing file contents.
+```
 PS C:\>$ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
 ```
 
@@ -110,12 +112,14 @@ The first command uses the Get-ChildItem cmdlet to do a recursive search in the 
 It uses a pipeline operator to sends the results to the Where-Object cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the $ScriptFiles variable.
 
 ### Example 7: Select properties to export
-```
+
 The first command shows how to select properties of an object and export them to a CSV file. This command uses the Get-Date cmdlet to get the current date and time. It uses the **Select-Object** cmdlet to select the desired properties, and the **Export-CSV** cmdlet to export the object and its properties to the Date.csv file. The output shows the expected content in the Date.csv file.
+```
 PS C:\>Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
 #In Date.csv:"DateTime","Day","DayOfWeek","DayOfYear""Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
-
+```
 The second command shows that when you use the **Format-Table** cmdlet to format your data before exporting it, the output is not useful. 
+```
 PS C:\>Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
 #In Date.csv: "ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry"
 "033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo","9e210fe47d09416682b841769c78b8a3"

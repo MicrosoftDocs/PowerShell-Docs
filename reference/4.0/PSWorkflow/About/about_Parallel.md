@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Parallel
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Parallel
 ## about_Parallel
-about_Parallel
 
 
 ## SHORT DESCRIPTION

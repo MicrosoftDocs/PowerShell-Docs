@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Foreach
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_ForEach
 
 
-about_Foreach
 
 # SHORT DESCRIPTION
 

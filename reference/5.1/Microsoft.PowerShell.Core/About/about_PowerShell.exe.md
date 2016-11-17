@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PowerShell.exe
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About PowerShell.exe
 ## about_PowerShell.exe
-# TOPIC
 
-about_PowerShell.exe
 
 # SHORT DESCRIPTION
 

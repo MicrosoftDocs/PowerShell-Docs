@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Throw
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Throw
 ## about_Throw
-# TOPIC
 
-about_Throw
 
 # SHORT DESCRIPTION
 

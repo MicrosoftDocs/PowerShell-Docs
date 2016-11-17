@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Modules
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Modules
 
 
-about_Modules
 
 # SHORT DESCRIPTION
 

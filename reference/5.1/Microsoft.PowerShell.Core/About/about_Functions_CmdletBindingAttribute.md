@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_CmdletBindingAttribute
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Functions CmdletBindingAttribute
 ## about_Functions_CmdletBindingAttribute
-# TOPIC
 
-about_Functions_CmdletBindingAttribute
 
 # SHORT DESCRIPTION
 

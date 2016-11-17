@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Methods
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About methods
 ## about_methods
-about_methods
 
 
 ## SHORT DESCRIPTION

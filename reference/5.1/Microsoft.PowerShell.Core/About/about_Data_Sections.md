@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Data_Sections
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Data Sections
 ## about_Data_Sections
-# TOPIC
 
-about_Data_Sections
 
 # SHORT DESCRIPTION
 

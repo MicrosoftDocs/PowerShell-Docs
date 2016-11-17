@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Continue
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Continue
 ## about_Continue
-# TOPIC
 
-about_Continue
 
 # SHORT DESCRIPTION
 

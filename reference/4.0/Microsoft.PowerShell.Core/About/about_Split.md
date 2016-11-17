@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Split
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Split
 
 
-about_Split
 
 # SHORT DESCRIPTION
 

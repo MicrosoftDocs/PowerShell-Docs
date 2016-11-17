@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Functions_OutputTypeAttribute
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Functions OutputTypeAttribute
 ## about_Functions_OutputTypeAttribute
-# TOPIC
 
-about_Functions_OutputTypeAttribute
 
 # SHORT DESCRIPTION
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jpjofre
 description: 
 external help file: System.Management.Automation.dll-Help.xml
@@ -8,7 +8,7 @@ ms.date: 2016-10-11
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822079
+online version: http://go.microsoft.com/fwlink/?LinkId=821506
 schema: 2.0.0
 title: Register-ArgumentCompleter
 ---
@@ -143,10 +143,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
+### None
 This cmdlet returns no output.
 
 ## NOTES

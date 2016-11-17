@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Scripts
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Scripts
 ## about_Scripts
-about_Scripts
 
 
 ## SHORT DESCRIPTION

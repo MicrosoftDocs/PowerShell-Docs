@@ -71,7 +71,7 @@ configuration Sample_xDscPullServer
              ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
              State                    = 'Started'
              DependsOn                = '[WindowsFeature]DSCServiceFeature'     
-             UseSecurityBestPractices = $true
+             UseSecurityBestPractices = $false
          } 
 
         File RegistrationKeyFile

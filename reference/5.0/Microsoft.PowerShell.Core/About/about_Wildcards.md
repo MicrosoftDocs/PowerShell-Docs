@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Wildcards
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Wildcards
 ## about_Wildcards
-# TOPIC
 
-about_Wildcards
 
 # SHORT DESCRIPTION
 

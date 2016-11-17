@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Signing
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Signing
 
 
-about_Signing
 
 # SHORT DESCRIPTION
 

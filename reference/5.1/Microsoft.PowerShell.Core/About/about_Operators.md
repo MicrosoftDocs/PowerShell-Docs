@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Operators
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Operators
 ## about_Operators
-about_Operators
 
 
 ## SHORT DESCRIPTION

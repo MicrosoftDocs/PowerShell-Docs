@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Line_Editing
 description: 
 keywords: powershell, cmdlet
@@ -17,9 +17,7 @@ ms.topic: article
 ---
 # About Line Editing
 ## about_Line_Editing
-# TOPIC
 
-about_Line_Editing
 
 # SHORT DESCRIPTION
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Jobs
 description: 
 keywords: powershell, cmdlet
@@ -19,7 +19,6 @@ ms.topic: article
 ## about_Jobs
 
 
-about_Jobs
 
 # SHORT DESCRIPTION
 

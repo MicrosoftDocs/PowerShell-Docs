@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_Return
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About Return
 ## about_Return
-about_Return
 
 
 ## SHORT DESCRIPTION

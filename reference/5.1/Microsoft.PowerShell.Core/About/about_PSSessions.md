@@ -1,4 +1,4 @@
-﻿---
+---
 title: about_PSSessions
 description: 
 keywords: powershell, cmdlet
@@ -17,7 +17,6 @@ ms.topic: article
 ---
 # About PSSessions
 ## about_PSSessions
-about_PSSessions
 
 
 ## SHORT DESCRIPTION
