@@ -1,5 +1,5 @@
 ---
-author: jpjofre,andrePKI
+author: jpjofre
 description: 
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell, cmdlet
