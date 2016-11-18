@@ -29,7 +29,7 @@ In this release, there are two issues you should be aware of when using Pester o
 * Update-Help will fail for Microsoft.PowerShell.Operation.Validation module due to non-working help URI
 
 ## DSC after uninstall WMF 
-* Uninstalling WMF does not delete DSC MOF documents from the configuration folder. DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems. In this case you can use the following script to clean up your DSC states.
+* Uninstalling WMF does not delete DSC MOF documents from the configuration folder. DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems. In this case you can use the following script to clean up the DSC states.
  ```PowerShell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
