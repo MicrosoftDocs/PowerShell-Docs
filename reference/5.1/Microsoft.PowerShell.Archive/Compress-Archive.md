@@ -92,7 +92,7 @@ PS C:\>Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archive
 This command updates an existing archive file, Draft.Zip, in the C:\Archives folder.
 The command is run to update Draft.Zip with newer versions of existing files that came from the C:\Reference folder, and also to add new files that have been added to C:\Reference since Draft.Zip was initially created.
 
-### Example 4: Create an archive from an entire folder
+#### Example 4: Create an archive from an entire folder
 ```
 PS C:\>Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 ```
@@ -100,7 +100,7 @@ PS C:\>Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 This command creates an archive from an entire folder, C:\Reference.
 Note that though the file name extension .zip was not added to the value of the *DestinationPath* parameter, Windows PowerShell appends this to the specified archive file name automatically.
 
-## PARAMETERS
+### PARAMETERS
 
 ### -CompressionLevel
 Specifies how much compression to apply when you are creating the archive file.
