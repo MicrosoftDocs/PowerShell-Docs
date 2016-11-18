@@ -66,6 +66,8 @@
 ### [nxSshAuthorizedKeys Resource](lnxSshAuthorizedKeysResource.md)
 ### [nxUser Resource](lnxUserResource.md)
 
+# [Using DSC on Microsoft Azure](azureDsc.md)
+
 # DSC MOF Reference
 ## [MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager.md)
 ### [ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager-applyconfiguration.md)

@@ -353,9 +353,9 @@ Configuration MyWebApp
 
     }
 
-MyWebApp -ConfigurationData DevProdEnvData.psd1
-
 }
+
+MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
 ## See Also

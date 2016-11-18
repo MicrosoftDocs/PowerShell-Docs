@@ -415,7 +415,10 @@ For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/
 
 ## RELATED LINKS
 
--  [ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
--  [ConvertFrom-StringData](ConvertFrom-StringData.md)
--  [ConvertFrom-Csv](ConvertFrom-Csv.md)
--  [ConvertTo-Xml](ConvertTo-Xml.md)
+[ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
+
+[ConvertFrom-StringData](ConvertFrom-StringData.md)
+
+[ConvertFrom-Csv](ConvertFrom-Csv.md)
+
+[ConvertTo-Xml](ConvertTo-Xml.md)
