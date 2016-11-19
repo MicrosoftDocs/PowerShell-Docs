@@ -51,7 +51,7 @@
 ###  [about_Parsing](About/about_Parsing.md)
 ###  [about_Path_Syntax](About/about_Path_Syntax.md)
 ###  [about_pipelines](About/about_pipelines.md)
-###  [about_PowerShell.exe](About/about_PowerShell.exe.md)
+###  [about_PowerShell.exe](About/about_PowerShell_exe.md)
 ###  [about_PowerShell_Ise.exe](About/about_PowerShell_Ise.exe.md)
 ###  [about_Preference_Variables](About/about_Preference_Variables.md)
 ###  [about_profiles](About/about_profiles.md)
