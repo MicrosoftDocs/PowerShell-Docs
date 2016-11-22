@@ -41,7 +41,7 @@ Clear-Item is similar to Clear-Content, but it works on aliases and variables, i
 ```
 PS C:\>Clear-Item Variable:TestVar1
 -or-
-PS C:>Set-location Variable:PS Variable:\> Clear-Item Testvar1
+PS C:> Set-location Variable:PS Variable:\> Clear-Item Testvar1
 ```
 
 This command deletes the value of the variable, Testvar1.

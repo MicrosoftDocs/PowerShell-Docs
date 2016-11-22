@@ -1,31 +1,33 @@
 # Network Switch Management with PowerShell
 
 The **Get-NetworkSwitchEthernetPort** cmdlet now returns the following additional information with instances:
--   IPAddress – the IP address associated with the port
--   PortMode – the port mode: access, route, or trunk
--   AccessVLAN – the ID of the VLAN associated with this port in access mode
--   TrunkedVLANList – a list of IDs of VLANs associated with this port in trunk mode
+
+- IPAddress – the IP address associated with the port
+- PortMode – the port mode: access, route, or trunk
+- AccessVLAN – the ID of the VLAN associated with this port in access mode
+- TrunkedVLANList – a list of IDs of VLANs associated with this port in trunk mode
 
 ## Fundamental network switch management with Windows PowerShell
-The Network Switch cmdlets, introduced in the first WMF 5.0 Preview, enable you to apply switch, virtual LAN (VLAN), and basic Layer 2 network switch port configuration to Windows Server 2012 R2 logo-certified network switches. Microsoft remains committed to supporting the [Datacenter Abstraction](http://technet.microsoft.com/en-us/cloud/dal.aspx) Layer (DAL) vision, and to show value for our customers and partners in this space. Using these cmdlets you can perform:
 
--   Global switch configuration, such as:
-    -   Set host name
-    -   Set switch banner
-    -   Persist configuration
-    -   Enable or disable feature
+The Network Switch cmdlets, introduced in WMF 5.0, enable you to apply switch, virtual LAN (VLAN), and basic Layer 2 network switch port configuration to Windows Server 2012 R2 logo-certified network switches. Microsoft remains committed to supporting the [Datacenter Abstraction](http://technet.microsoft.com/en-us/cloud/dal.aspx) Layer (DAL) vision, and to show value for our customers and partners in this space. Using these cmdlets you can perform:
 
--   VLAN configuration:
-    -   Create or remove VLAN
-    -   Enable or disable VLAN
-    -   Enumerate VLAN
-    -   Set friendly name to a VLAN
+- Global switch configuration, such as:
+    - Set host name
+    - Set switch banner
+    - Persist configuration
+    - Enable or disable feature
 
--   Layer 2 port configuration:
-    -   Enumerate ports
-    -   Enable or disable ports
-    -   Set port modes and properties
-    -   Add or associate VLAN to Trunk or Access on the port
+- VLAN configuration:
+    - Create or remove VLAN
+    - Enable or disable VLAN
+    - Enumerate VLAN
+    - Set friendly name to a VLAN
+
+- Layer 2 port configuration:
+    - Enumerate ports
+    - Enable or disable ports
+    - Set port modes and properties
+    - Add or associate VLAN to Trunk or Access on the port
 
 Start exploring by looking for all of the NetworkSwitch cmdlets!
 

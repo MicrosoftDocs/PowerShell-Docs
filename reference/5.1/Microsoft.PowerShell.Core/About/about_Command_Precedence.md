@@ -176,7 +176,7 @@ ModuleName property of commands.
 
 For example, to find the source of the Get-Date cmdlet, type:
 
-PS C:>(Get-Command Get-Date).ModuleName
+PS C:> (Get-Command Get-Date).ModuleName
 Microsoft.PowerShell.Utility
 
 # CALL OPERATOR

@@ -172,7 +172,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="caretlinetext"></a> CaretLineText
+###  <a name="CaretLineText"></a> CaretLineText
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the complete line of text that contains the caret.

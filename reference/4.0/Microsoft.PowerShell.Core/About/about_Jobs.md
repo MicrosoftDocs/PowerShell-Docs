@@ -94,7 +94,7 @@ returns all of the jobs that were started in the current session.
 
 For example, the following command gets the jobs in the current session.
 
-PS C:>Get-Job
+PS C:> Get-Job
 
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
 --  ----  ------------- -----      -----------  --------   -------

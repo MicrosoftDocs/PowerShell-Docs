@@ -279,7 +279,7 @@ You can use all of the parameters of Get-Command when you call
 the Get-MyCommand function. The parameters and parameter values
 are passed to the command using @Args.
 
-PS C:>Get-MyCommand -Name Get-ChildItem
+PS C:> Get-MyCommand -Name Get-ChildItem
 CommandType     Name                ModuleName
 -----------     ----                ----------
 Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
