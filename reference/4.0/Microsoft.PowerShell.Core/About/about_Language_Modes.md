@@ -214,7 +214,7 @@ configuration file, the session configuration has a LanguageMode
 property. You can find the language mode by getting the value
 of the LanguageMode property.
 
-PS C:>(Get-PSSessionConfiguration -Name Test).LanguageMode
+PS C:> (Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 
 On other session configurations, you can find the language

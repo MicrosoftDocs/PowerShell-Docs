@@ -224,9 +224,9 @@ Get-CimInstance returns a CimInstance object, instead of
 the ManagementObject that Get-WmiObject returns, but
 the objects are quite similar.
 
-PS C:>(Get-CimInstance -Query "Select * from Win32_Bios").GetType().FullName
+PS C:> (Get-CimInstance -Query "Select * from Win32_Bios").GetType().FullName
 Microsoft.Management.Infrastructure.CimInstance
-PS C:>(Get-WmiObject -Query "Select * from Win32_Bios").GetType().FullName
+PS C:> (Get-WmiObject -Query "Select * from Win32_Bios").GetType().FullName
 System.Management.ManagementObject
 
 USING THE [wmisearcher] TYPE ACCELERATOR
