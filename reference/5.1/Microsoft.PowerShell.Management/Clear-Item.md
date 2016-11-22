@@ -44,7 +44,7 @@ This cmdlet is similar to Clear-Content, but it works on aliases and variables, 
 ```
 PS C:\>Clear-Item Variable:TestVar1
 -or-
-PS C:>Set-location Variable:
+PS C:> Set-location Variable:
 PS Variable:\> Clear-Item TestVar1
 ```
 

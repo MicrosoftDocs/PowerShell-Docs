@@ -72,7 +72,7 @@ Suspend-Workflow
 (Get-Date)- $a
 }
 
-PS C:>Test-Suspend
+PS C:> Test-Suspend
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -89,13 +89,13 @@ To wait for the job to be resumed, use the Wait
 parameter, or use the Get-Job cmdlet to get the current
 job object.
 
-PS C:>Resume-Job -Name Job8
+PS C:> Resume-Job -Name Job8
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 8      Job8            PSWorkflowJob   Suspended     True            localhost            Test-Suspend
 
-PS C:>Get-Job -Name Job8
+PS C:> Get-Job -Name Job8
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -109,7 +109,7 @@ command that followed the Suspend-Workflow cmdlet. The value
 of the $a variable, which was populated before the suspension,
 is available to the workflow when it resumes.
 
-PS C:>Get-Job -Name Job8 | Receive-Job
+PS C:> Get-Job -Name Job8 | Receive-Job
 
 Days              : 0
 Hours             : 0

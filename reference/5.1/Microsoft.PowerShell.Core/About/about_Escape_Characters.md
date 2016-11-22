@@ -46,11 +46,11 @@ being substituted for the variable.
 
 For example:
 
-PS C:>$a = 5
+PS C:> $a = 5
 PS C:>"The value is stored in $a."
 The value is stored in 5.
 
-PS C:>$a = 5
+PS C:> $a = 5
 PS C:>"The value is stored in `$a."
 The value is stored in $a.
 

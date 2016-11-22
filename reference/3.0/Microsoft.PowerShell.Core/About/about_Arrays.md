@@ -90,13 +90,13 @@ The syntax of the array operator is as follows:
 You can use the array operator to create an array of zero or
 one object.
 
-PS C:>$a = @("One")
-PS C:>$a.Count
+PS C:> $a = @("One")
+PS C:> $a.Count
 # 1
 
 
-PS C:>$b = @()
-PS C:>$b.Count
+PS C:> $b = @()
+PS C:> $b.Count
 # 0
 
 
