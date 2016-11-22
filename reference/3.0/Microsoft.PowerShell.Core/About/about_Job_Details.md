@@ -179,7 +179,7 @@ When you display the Name and ChildJob properties of the job in $j, it
 shows that the command returned a job object with three child jobs, one for
 each computer.
 
-CPS C:> $j | Format-List Name, ChildJobs
+PS C:> $j | Format-List Name, ChildJobs
 
 Name      : Job3
 ChildJobs : {Job4, Job5, Job6}
