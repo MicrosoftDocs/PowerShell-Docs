@@ -228,7 +228,7 @@ ConstrainedLanguage session by getting the value of the
 LanguageMode property of the session state.
 
 For example:
-PS C:>$ExecutionContext.SessionState.LanguageMode
+PS C:> $ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 
 However, in sessions with  RestrictedLanguage and

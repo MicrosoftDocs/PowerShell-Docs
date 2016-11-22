@@ -50,7 +50,7 @@ PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell";
 Similarly, when the command runs in a persistent session (PSSession),
 the remote variable must be defined in the same PSSession.
 
-PS C:>$s = New-PSSession -ComputerName S1
+PS C:> $s = New-PSSession -ComputerName S1
 
 PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
 
@@ -74,14 +74,14 @@ In the following example, the $ps variable is created in the local
 session, but is used in the session in which the command runs. The
 Using scope modifier identifies $ps as a local variable.
 
-PS C:>$ps = "Windows PowerShell"
+PS C:> $ps = "Windows PowerShell"
 PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 
 You can also use the Using scope modifier in PSSessions.
 
-PS C:>$s = New-PSSession -ComputerName S1
+PS C:> $s = New-PSSession -ComputerName S1
 
-PS C:>$ps = "Windows PowerShell"
+PS C:> $ps = "Windows PowerShell"
 
 PS C:> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 
