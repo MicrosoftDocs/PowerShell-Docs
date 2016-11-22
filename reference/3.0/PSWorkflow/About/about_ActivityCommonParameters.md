@@ -584,7 +584,7 @@ workflow Test-Workflow
 Get-Service -UseDefaultInput $True
 }
 
-PS C:>Test-Workflow -InputObject WinRm
+PS C:> Test-Workflow -InputObject WinRm
 
 Status   Name               DisplayName                            PSComputerName
 ------   ----               -----------                            --------------

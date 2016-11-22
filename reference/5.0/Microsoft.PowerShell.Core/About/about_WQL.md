@@ -512,7 +512,7 @@ properties, and the Sort-Object cmdlet sorts the
 results in alphabetical order by name.
 
 PS C:>$query = "Select * from win32_Process where name LIKE '[A-P]%'"
-PS C:>Get-WmiObject -Query $query |
+PS C:> Get-WmiObject -Query $query |
 Select-Object -Property Name, ProcessID |
 Sort-Object -Property Name
 
@@ -524,7 +524,7 @@ do not begin with any of the following letters:
 and followed zero or more letters.
 
 PS C:>$query = "Select * from win32_Process where name LIKE '[^ASWPRCUN]%'"
-PS C:>Get-WmiObject -Query $query |
+PS C:> Get-WmiObject -Query $query |
 Select-Object -Property Name, ProcessID |
 Sort-Object -Property Name
 
@@ -589,7 +589,7 @@ of the Win32_Process WMI class but returns them
 only if the process name is winword.exe or excel.exe.
 
 PS C:>$q = "Select * from Win32_Process where Name = 'winword.exe' or Name = 'excel.exe'"
-PS C:>Get-WmiObject -Query $q
+PS C:> Get-WmiObject -Query $q
 
 The Or statement can be used with more than two
 conditions. In the following query, the Or statement
@@ -658,7 +658,7 @@ that have a null value for the IntallDate property.
 The commands return many processes.
 
 PS C:>$q = "Select * from Win32_Process where InstallDate is null"
-PS C:>Get-WmiObject -Query $q
+PS C:> Get-WmiObject -Query $q
 
 In contrast, the following command, gets user
 accounts that have a null value for the Description
@@ -667,7 +667,7 @@ accounts, even though most user accounts do not have
 any value for the Description property.
 
 PS C:>$q = "Select * from Win32_UserAccount where Description is null"
-PS C:>Get-WmiObject -Query $q
+PS C:> Get-WmiObject -Query $q
 
 To find the user accounts that have no value for
 the Description property, use the equality operator
@@ -686,13 +686,13 @@ The following WQL query returns only local user
 accounts from a domain joined computer.
 
 PS C:>$q = "Select * from Win32_UserAccount where LocalAccount = True"
-PS C:>Get-CimInstance -Query $q
+PS C:> Get-CimInstance -Query $q
 
 To find domain accounts, use a value of False,
 as shown in the following example.
 
 PS C:>$q = "Select * from Win32_UserAccount where LocalAccount = False"
-PS C:>Get-CimInstance -Query $q
+PS C:> Get-CimInstance -Query $q
 
 # USING THE ESCAPE CHARACTER
 

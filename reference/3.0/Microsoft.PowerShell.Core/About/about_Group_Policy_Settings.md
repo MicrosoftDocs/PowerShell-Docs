@@ -108,7 +108,7 @@ To turn on module logging for a module, use the following command format.
 The module must be imported into the session and the setting is effective
 only in the current session.
 
-PS C:>Import-Module <Module-Name>
+PS C:> Import-Module <Module-Name>
 PS C:>(Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
 
 To turn on module logging for all sessions on a particular computer,

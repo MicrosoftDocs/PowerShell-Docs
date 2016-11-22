@@ -197,7 +197,7 @@ are not subject to job options or affected by job triggers -- and
 their output is not saved in the Output directory of the scheduled
 job directory.
 
-PS C:>Start-Job -DefinitionName ProcessJob
+PS C:> Start-Job -DefinitionName ProcessJob
 
 The following command deletes the ProcessJob scheduled job and all
 saved results of its job instances.

@@ -90,7 +90,7 @@ replaces the dollar sign ($HashArguments) in the command.
 To provide a value for the WhatIf switch parameter, use $True or $False.
 
 PS C:>$HashArguments = @{ Path = "test.txt"; Destination = "test2.txt"; WhatIf = $true }
-PS C:>Copy-Item @HashArguments
+PS C:> Copy-Item @HashArguments
 
 Note: In the first command, the At symbol (@) indicates a hash table, not
 a splatted value. The syntax for hash tables in Windows PowerShell is:
@@ -116,7 +116,7 @@ $ArrayArguments variable in a command in splatting. The At symbol
 (@ArrayArguments) replaces the dollar sign ($ArrayArguments) in the command.
 
 PS C:>$ArrayArguments = "test.txt", "test2.txt"
-PS C:>Copy-Item @ArrayArguments -WhatIf
+PS C:> Copy-Item @ArrayArguments -WhatIf
 
 # EXAMPLES
 
