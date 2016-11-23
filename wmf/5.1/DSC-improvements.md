@@ -1,5 +1,5 @@
 ---
-title:   DSC Improvements in WMF 5.1 (Preview)
+title:   DSC Improvements in WMF 5.1
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
