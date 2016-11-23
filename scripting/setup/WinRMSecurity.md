@@ -101,11 +101,15 @@ By default, PowerShell Remoting uses Kerberos (if available) or NTLM for authent
 This is the most secure way to authenticate, but because the remote machine does not have the user's credentials, it cannot access other computers and services on the user's behalf. 
 This is known as the "Double-Hop" problem.
 
-There are several ways to avoid this problem:
+There are several ways to avoid this problem. For descriptions of these methods, and the pros and cons of each, see [Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md).
 
-### Trust between remote computers
+### Resource-based Kerberos constrained delegation
 
-If you trust users connected remotely to *Server1* to resources on *Server2*, you can explicitly grant *Server1* access to those resources.
+
+
+### Kerberos constrained delegation
+
+
 
 ### Use explicit credentials when accessing remote resources
 
