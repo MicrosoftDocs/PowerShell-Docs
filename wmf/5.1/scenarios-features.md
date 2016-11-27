@@ -1,5 +1,5 @@
 ---
-title:   New Scenarios and Features in WMF 5.1 (Preview)
+title:   New Scenarios and Features in WMF 5.1
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -10,7 +10,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-# New Scenarios and Features in WMF 5.1 (Preview) #
+# New Scenarios and Features in WMF 5.1 #
 
 > Note: This information is preliminary and subject to change.
 
