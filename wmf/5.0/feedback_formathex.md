@@ -11,7 +11,7 @@ View the contents of a string in hexadecimal format.
 
 Outputs
 ```
-PS C:\>This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
+PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 
 
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
