@@ -1,10 +1,10 @@
 ---
 author: jpjofre
-description: 
+description:
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell, cmdlet
 manager: carolz
-ms.date: 2016-09-27
+ms.date: 2016-11-29
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
@@ -40,23 +40,35 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get the PowerShell RSS feed
+```PowerShell
+Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
+    Format-Table -Property Title, PubDate
 ```
-PS C:\>Invoke-RestMethod -Uri http://blogs.msdn.com/powershell/rss.aspx | Format-Table -Property Title, pubDate
-Title                                                                 pubDate-----------
-Another Holiday Gift from the PowerShell Team: PowerShell 3.0 CTP2... Thu, 22 Dec 2011 00:46:00 GMT
-More Videos from the First PowerShell Deep Dive                       Mon, 10 Oct 2011 19:59:00 GMT
-PowerShell Deep Dive Lineup                                           Thu, 06 Oct 2011 00:42:00 GMT
-Windows Management Framework 3.0 Community Technology Preview (CTP... Mon, 19 Sep 2011 23:56:26 GMT
-Get-Help -Online Fails in German                                      Tue, 23 Aug 2011 15:02:00 GMT
-PowerShell Deep Dive Registration Info & Call for Session Proposals   Wed, 20 Jul 2011 00:25:00 GMT
-Invoke-Expression considered harmful                                  Fri, 03 Jun 2011 15:43:00 GMT
-PowerShell at TechEd 2011                                             Thu, 28 Apr 2011 16:58:36 GMT
-PowerShell Language now licensed under the Community Promise          Sat, 16 Apr 2011 00:13:00 GMT
-Scaling and Queuing PowerShell Background Jobs                        Mon, 04 Apr 2011 20:30:58 GMT
-More Deep Dive Info, Including Abstracts from the PowerShell Team     Sun, 13 Mar 2011 01:35:42 GMT
-A Few Deep Dive Abstracts                                             Sat, 05 Mar 2011 00:26:00 GMT
-Reminder: Register for the PowerShell Deep Dive Conference & submi... Wed, 23 Feb 2011 17:55:45 GMT
+- **Output**
+
+```
+PS C:\ >Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
+    Format-Table -Property Title, PubDate
+
+
+
+title                                                                pubDate                        
+-----                                                                -------                        
+Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
+DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
+PSScriptAnalyzer Community Call – Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
+New Home for In-Box DSC Resources                                    Sat, 08 Oct 2016 07:13:10 +0000
+New Social Features on Gallery                                       Fri, 30 Sep 2016 23:04:34 +0000
+PowerShellGet and PackageManagement in PowerShell Gallery and GitHub Thu, 29 Sep 2016 22:21:42 +0000
+PowerShell Security at DerbyCon                                      Wed, 28 Sep 2016 01:13:19 +0000
+DSC Resource Kit September Release                                   Thu, 22 Sep 2016 00:25:37 +0000
+PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug 2016 15:07:50 +0000
+PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
+
+
+
+PS C:\ >
 ```
 
 This command uses the **Invoke-RestMethod** cmdlet to get information from the Windows PowerShell Blog RSS feed.
@@ -90,7 +102,7 @@ $body = @{
 Invoke-RestMethod -Method Post -Uri $url -Credential $cred -Body $body -OutFile output.csv
 cmdlet Get-Credential at command pipeline position 1
 
-Supply values for the following parameters: 
+Supply values for the following parameters:
 {"preview":true,"offset":0,"result":{"sourcetype":"contoso1","count":"9624"}}
 
 {"preview":true,"offset":1,"result":{"sourcetype":"contoso2","count":"152"}}
@@ -130,7 +142,7 @@ For example:
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,7 +161,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -170,7 +182,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -188,7 +200,7 @@ Otherwise, the content type is not specified in the call.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -206,7 +218,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredenti
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -223,7 +235,7 @@ By default, **KeepAlive** is True.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +254,7 @@ You cannot use this parameter to specify UserAgent or cookie headers.
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -260,7 +272,7 @@ If you omit the path, the default is the current location.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +289,7 @@ A value of 0 (zero) prevents all redirection.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -293,7 +305,7 @@ Valid values are Default, Delete, Get, Head, Merge, Options, Patch, Post, Put, a
 ```yaml
 Type: WebRequestMethod
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -313,7 +325,7 @@ To send the results to a file and to the pipeline, use the **Passthru** paramete
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -329,7 +341,7 @@ This parameter is valid only when the **OutFile** parameter is also used in the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -345,7 +357,7 @@ Enter the URI of a network proxy server.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +378,7 @@ You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parame
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -384,7 +396,7 @@ You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -434,7 +446,7 @@ If your request contains a host name that requires resolution, and you set Timeo
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -450,7 +462,7 @@ Valid values are Chunked, Compress, Deflate, GZip and Identity.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -469,7 +481,7 @@ The parameter name (-Uri) is optional.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -484,7 +496,7 @@ Uses the credentials of the current user to send the web request.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -507,7 +519,7 @@ For example, the following command uses the user agent string for Internet.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -536,7 +548,7 @@ You cannot use the **SessionVariable** and **WebSession** parameters in the same
 ```yaml
 Type: WebRequestSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -570,4 +582,3 @@ If the request returns JSON strings, Invoke-RestMethod returns a PSObject that r
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
-
