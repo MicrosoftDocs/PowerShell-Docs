@@ -14,9 +14,9 @@ ms.technology: WMF
 
 > Note: This information is preliminary and subject to change.
 
->TODO: Add links to specific WMF DLC on the column header
+>TODO: Add links to WMF 5.1 DLC on the column header
 
-| Operating System Version | [WMF 5.1]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF 2.0]() |
+| Operating System Version | [WMF 5.1]() | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Ships in-box* |  |  |  |  |
 | Windows 10 | Ships in-box* | Ships in-box*  | | | |  
