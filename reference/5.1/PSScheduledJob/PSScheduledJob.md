@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PSScheduledJob
 Module Guid: 50cdb55f-5ab7-489f-9e94-4ec21ff51e59
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822344
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390816
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
