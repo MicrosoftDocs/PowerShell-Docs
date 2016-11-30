@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PSDesiredStateConfiguration
 Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822017
-Help Version: 5.1.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390814
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
