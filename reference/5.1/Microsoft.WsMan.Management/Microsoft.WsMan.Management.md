@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.WsMan.Management
 Module Guid: 766204A6-330E-4263-A7AB-46C87AFC366C
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822491
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390788
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
