@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.ODataUtils
 Module Guid: fa1606d1-94cb-4264-bfb6-def714420084
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822007
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?LinkId=509916
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
