@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PSReadline
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822009
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?LinkId=528806
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
