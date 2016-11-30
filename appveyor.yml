@@ -23,4 +23,5 @@ artifacts:
 only_commits:
   files:
     - reference/**/*
-    - appveyor.*
+    - 'appveyor.ps1'
+    - 'appveyor.yml'
