@@ -99,7 +99,7 @@ with a per-session AES-256 symmetric key.
 
 By default, PowerShell Remoting uses Kerberos (if available) or NTLM for authentication. Both of these protocols authenticate to the remote machine without sending credentials to it.
 This is the most secure way to authenticate, but because the remote machine does not have the user's credentials, it cannot access other computers and services on the user's behalf. 
-This is known as the "Double-Hop" problem.
+This is known as the "second hop problem".
 
 There are several ways to avoid this problem. For descriptions of these methods, and the pros and cons of each, see [Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md).
 
