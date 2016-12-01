@@ -39,7 +39,7 @@ To learn about various enhancements in PowerShell and other components of a give
 
 >TODO: Add links to specific WMF DLC on the column header
 
-| Operating System Version | [WMF 5.1 Preview*]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF (2.0)]() |
+| Operating System Version | [WMF 5.1 Preview*]() | [WMF 5.0](https://go.microsoft.com/fwlink/?linkid=830436) | [WMF 4.0]() |  [WMF 3.0]() | [WMF (2.0)]() |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Ships in-box* | Ships in-box* |  |  |  |
 | Windows 10 | Ships in-box* | Ships in-box*  | | | |  
