@@ -91,6 +91,10 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 You can use legacy constrained delegation (not resource-based) to make the second hop. 
 
+>**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
+>[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
+>and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+
 ### Pros
 
 - Requires no special coding
@@ -105,6 +109,10 @@ You can use legacy constrained delegation (not resource-based) to make the secon
 ## Kerberos delegation (unconstrained)
 
 You can also used Kerberos unconstrained delegation to make the second hop. However, this method provides no control of where delegated credentials are used.
+
+>**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
+>[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
+>and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### Pros
 
@@ -136,7 +144,11 @@ For information about using PSSessionConfiguration and RunAs to solve the second
 ## Resource-based Kerberos constrained delegation
 
 Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you configure credential delegation on the server object where resources reside.
-In the second hop scenario described above, you configure _ServerC_ to specify from where it will accept delegated credentials. 
+In the second hop scenario described above, you configure _ServerC_ to specify from where it will accept delegated credentials.
+
+>**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
+>[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
+>and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### Pros
 
