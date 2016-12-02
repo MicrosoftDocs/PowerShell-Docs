@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies, as a string arrya, a path to one or more locations.
+Specifies, as a string array, a path to one or more locations.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
