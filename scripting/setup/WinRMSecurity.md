@@ -103,35 +103,7 @@ This is known as the "second hop problem".
 
 There are several ways to avoid this problem. For descriptions of these methods, and the pros and cons of each, see [Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md).
 
-### Resource-based Kerberos constrained delegation
 
-
-
-### Kerberos constrained delegation
-
-
-
-### Use explicit credentials when accessing remote resources
-
-You can explicitly pass your credentials to a remote resource by using the **Credential** parameter of a cmdlet. For example:
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### CredSSP
-
-You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication (by specifying "CredSSP" as the 
-value of the `Authentication` parameter of a call to the [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) cmdlet. CredSSP passes credentials in plain text to the server,
-so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by default on both client and 
-server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller because the domain controller is 
-highly trusted.
-
-For more information about security concerns when using CredSSP for PowerShell Remoting, see 
-[Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
-
-For more information about credential theft attacks, see [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
 
 
