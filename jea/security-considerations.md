@@ -114,7 +114,7 @@ Users need at least *Invoke* rights to access the JEA endpoint.
 
 If additional users are granted access to the JEA endpoint but do not fall into any of the roles defined in the session configuration file, they will be able to start a JEA session but only have access to the default cmdlets.
 You can audit user permissions in a JEA endpoint by running `Get-PSSessionCapability`.
-Check out the [Auditing User Access](report-audit-access.md) article for more information about auditing which commands a user has access to in a JEA endpoint.
+Check out the [Auditing and Reporting on JEA](audit-and-report.md) article for more information about auditing which commands a user has access to in a JEA endpoint.
 
 ## Least privilege roles
 
@@ -143,7 +143,7 @@ A more secure version of this same role capability would look like:
 }
 ```
 
-Avoid using wildcards in role capabilities, and be sure to [audit effective user permissions](report-audit-access.md) regularly to understand which commands a user has access to.
+Avoid using wildcards in role capabilities, and be sure to [audit effective user permissions](audit-and-report.md#check-effective-rights-for-a-specific-user) regularly to understand which commands a user has access to.
 
 ## JEA does not protect against admins
 

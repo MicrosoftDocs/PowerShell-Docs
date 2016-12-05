@@ -36,7 +36,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
 ```
 
 The effective rights for the endpoint are listed in the "Permission" property.
-These users have the right to connect to the JEA endpoint, but which roles (and, by extension, commands) they have access to is determined by the "RoleDefinitions" field in the [session configuration file](session-configuraitons.md) that was used to register the endpoint.
+These users have the right to connect to the JEA endpoint, but which roles (and, by extension, commands) they have access to is determined by the "RoleDefinitions" field in the [session configuration file](session-configurations.md) that was used to register the endpoint.
 
 You can evaluate the role mappings in a registered JEA endpoint by expanding the data in the "RoleDefinitions" property.
 
@@ -150,5 +150,5 @@ The details of that object are printed a few lines below, closely mimicking what
 
 ## See also
 
-- [Audit user actions in a JEA session](audit-user-actions.md)
+- [Audit user actions in a JEA session](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

@@ -140,7 +140,7 @@ VisibleProviders = 'Registry'
 
 For simple tasks that require access to the file system, registry, certificate store, or other sensitive providers, you can also consider writing a custom function that works with the provider on the user's behalf.
 Functions, cmdlets, and external programs that are available in a JEA session are not subject to the same constraints as JEA -- they can access any provider by default.
-Also consider using the [user drive](scenarios-user-drive.md) when copying files to/from a JEA endpoint is required.
+Also consider using the [user drive](session-configurations.md#user-drive) when copying files to/from a JEA endpoint is required.
 
 ### Creating custom functions
 
