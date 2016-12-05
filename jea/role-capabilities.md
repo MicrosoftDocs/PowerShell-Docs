@@ -248,7 +248,7 @@ Any command, alias, provider, or script available in one role capability will be
 
 Be careful to ensure that the combined set of providers from one role capability and cmdlets/functions/commands from another do not allow connecting users unintentional access to system resources.
 For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem` provider, you are at risk of a JEA user deleting arbitrary files on your computer.
-Additional information about identifying users' effective permissions can be found in the [auditing JEA topic](audit-jea.md).
+Additional information about identifying users' effective permissions can be found in the [auditing JEA topic](audit-and-report.md).
 
 ## Next steps
 
