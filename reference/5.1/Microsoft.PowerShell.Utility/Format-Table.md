@@ -281,8 +281,11 @@ The value of the *Property* parameter can be a new calculated property.
 To create a calculated property, use a hash table.
 Valid keys are: 
 
+- Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
-- Depth \<int32\>
+- FormatString \<string\>
+- Width \<int32\>
+- Alignment  (value can be "Left", "Center", or "Right")
 
 ```yaml
 Type: Object[]
