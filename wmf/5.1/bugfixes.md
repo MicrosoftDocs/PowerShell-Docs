@@ -1,5 +1,5 @@
 ---
-title:   Bug Fixes in WMF 5.1 (Preview)
+title:   Bug Fixes in WMF 5.1 
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -10,7 +10,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-# Bug Fixes in WMF 5.1 (Preview)#
+# Bug Fixes in WMF 5.1#
 
 ## Bug fixes ##
 

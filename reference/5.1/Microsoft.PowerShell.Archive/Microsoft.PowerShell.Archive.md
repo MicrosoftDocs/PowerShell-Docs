@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Archive
 Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822314
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?LinkID=393254
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

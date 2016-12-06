@@ -580,6 +580,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleDefinitions
+Specifies the mapping between security groups (or users) and role capabilities.
+Users will be granted access to all role capabilities which apply to their group membership at the time the session is created.
+
+Enter a hash table in which the keys are the name of the security group and the values are hash tables that contain a list of role capabilities that should be made available to the security group.
+
+For example: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`
+
+```yaml
+Type: IDictionary
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RunAsVirtualAccount
+Configures sessions using this session configuration to be run as the computer's (virtual) administrator account.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RunAsVirtualAccountGroups
+Specifies the security groups to be associated with the virtual account when a session that uses the session configuration is run as a virtual account.
+If omitted, the virtual account belongs to Domain Admins on domain controllers and Administrators on all other computers.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SchemaVersion
 Specifies the version of the session configuration file schema.
 The default value is "1.0.0.0".

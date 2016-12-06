@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Core
 Module Guid: 00000000-0000-0000-0000-000000000000
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822035
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390782
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

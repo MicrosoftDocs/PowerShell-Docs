@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PowerShellGet
 Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822317
-Help Version: 5.1.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=393271
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

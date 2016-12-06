@@ -53,8 +53,8 @@ By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any 
 ## EXAMPLES
 
 ### Example 1: Compute the hash value for a PowerShell.exe file
-```
-PS C:\>Get-FileHash $pshome\powershell.exe | Format-List
+```powershell
+PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
 Algorithm : SHA256
 Hash      : 6A785ADC0263238DAB3EB37F4C185C8FBA7FEB5D425D034CA9864F1BE1C1B473
 Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
@@ -64,8 +64,8 @@ This command uses the **Get-FileHash** cmdlet to compute the hash value for the 
 The hash algorithm used is the default, SHA256.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
-### Example 2: Compute the has value for an ISO file
-```
+### Example 2: Compute the hash value for an ISO file
+```powershell
 PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 
 Algorithm : SHA384
@@ -79,7 +79,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
 
 ```PowerShell
-¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+PS C:\> $testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## open $testfile as a stream
 $testfilestream = [System.IO.File]::Open(
@@ -119,8 +119,6 @@ Results from Stream:
 Algorithm : MD5
 Hash      : 097CE5761C89434367598B34FE32893B
 Path      :
-
-¶ >
 ```
 
 ## PARAMETERS

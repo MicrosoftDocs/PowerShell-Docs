@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PSWorkflow
 Module Guid: 3b6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822486
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390817
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

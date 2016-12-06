@@ -55,16 +55,22 @@ The module is not installed.
 ## EXAMPLES
 
 ### Example 1: Find modules and save them locally
-```
-PS C:\>Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery"
+
+```powershell
+PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets PS C:\>Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" -IncludeDependencies
+1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets
+
+PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" -IncludeDependencies
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets
 1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
-1.0.1      AzureRM.profile                     Module     PSGallery            Microsoft Azure PowerShell - Profile credential management cmdlets for Azure Resource Manager PS C:\>Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" | Save-Module -Path "C:\MyLocalModules\"
+1.0.1      AzureRM.profile                     Module     PSGallery            Microsoft Azure PowerShell - Profile credential management cmdlets for Azure Resource Manager
+
+PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" | Save-Module -Path "C:\MyLocalModules\"
+
 PS C:\> dir C:\MyLocalModules\
     Directory: C:\MyLocalModules
 
@@ -73,7 +79,9 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 d-----       12/14/2015  11:20 AM                AzureAutomationDebug
 d-----       12/14/2015  11:20 AM                AzureRM.Automation
-d-----       12/14/2015  11:20 AM                AzureRM.profile PS C:\>Save-Module -LiteralPath "C:\MyLocalModules\" -Name "xPSDesiredStateConfiguration" -Repository "PSGallery" -MinimumVersion 2.0 -MaximumVersion 3.5.0
+d-----       12/14/2015  11:20 AM                AzureRM.profile
+
+PS C:\> Save-Module -LiteralPath "C:\MyLocalModules\" -Name "xPSDesiredStateConfiguration" -Repository "PSGallery" -MinimumVersion 2.0 -MaximumVersion 3.5.0
 PS C:\> dir C:\MyLocalModules
    Directory: C:\MyLocalModules
 

@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Diagnostics
 Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822105
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=285754
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

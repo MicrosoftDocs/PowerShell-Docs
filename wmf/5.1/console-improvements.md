@@ -1,5 +1,5 @@
 ---
-title:   Console Improvements in WMF 5.1 (Preview)
+title:   Console Improvements in WMF 5.1
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -10,7 +10,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-# Console Improvements in WMF 5.1 (Preview)#
+# Console Improvements in WMF 5.1#
 
 ## PowerShell console improvements
 

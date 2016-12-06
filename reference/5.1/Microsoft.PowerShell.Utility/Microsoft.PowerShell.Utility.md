@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Utility
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822378
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390818
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

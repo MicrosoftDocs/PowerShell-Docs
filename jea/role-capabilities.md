@@ -1,142 +1,255 @@
 ---
-description:  
-manager:  dongill
+manager:  carmonm
 ms.topic:  article
-author:  jpjofre
+author:  rpsqrd
+ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-06-22
-title:  role capabilities
+ms.date:  2016-12-05
+title:  JEA Role Capabilities
 ms.technology:  powershell
 ---
 
-# Role Capabilities
+# JEA Role Capabilities
 
-## Overview
-In the above section, you learned that the "RoleDefinitions" field defined which groups had access to which Role Capabilities.
-You may have wondered, "What are Role Capabilities?"
-This section will answer that question.  
+> Applies to: Windows PowerShell 5.0
 
-## Introducing PowerShell Role Capabilities
-PowerShell Role Capabilities define "what" a user can do at a JEA endpoint.
-They detail a whitelist of things like visible commands, visible applications, and more.
-Role Capabilities are defined by files with a ".psrc" extension.
+When creating a JEA endpoint, you will need to define one or more "role capabilities" which describe *what* someone can do in a JEA session.
+A role capability is a PowerShell data file with the .psrc extension that lists all the cmdlets, functions, providers, and external programs that should be made available to connecting users.
 
-## Role Capability Contents
-We will start by examining and modifying the demo Role Capability file you used before.
-Imagine you have deployed your Session Configuration across your environment, but you have gotten feedback that you need to change the capabilities exposed to users.
-Operators need the ability to restart machines, and they also want to be able to get information about network settings.
-In addition, the security team has told you that allowing users to run "Restart-Service" without any restrictions is not acceptable.
-You need to restrict the services that operators can restart.
+This topic describes how to create a PowerShell role capability file for your JEA users.
 
-To make these changes, start by running PowerShell ISE as an Administrator and open the following file:
+## Determine which commands to allow
 
-```
-C:\Program Files\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc
-```
+The first step when creating a role capability file is to consider what the users who are assigned the role will need access to.
+This requirements gathering process can take a while, but it is a very important process.
+Giving users access to too few cmdlets and functions can prevent them from getting their job done.
+Allowing access to too many cmdlets and functions can lead to users doing more than you intended with their implicit admin privileges, weakening your security stance.
 
-Now find and update the following lines in the file:
+How you go about this process will depend on your organization and goals, however the following tips can help ensure you're on the right path.
 
-```PowerShell
-# OLD: VisibleCmdlets = 'Restart-Service'
-VisibleCmdlets = 'Restart-Computer',
-                 @{
-                     Name = 'Restart-Service'
-                     Parameters = @{ Name = 'Name'; ValidateSet = 'Spooler' }
-                 },
-                 'NetTCPIP\Get-*'
+1. **Identify** the commands users are using to get their jobs done. This may involve surveying IT staff, checking automation scripts, or analyzing PowerShell session transcripts or logs.
+2. **Update** use of command line tools to PowerShell equivalents, where possible, for the best auditing and JEA customization experience. External programs cannot be constrained as granularly as native PowerShell cmdlets and functions in JEA.
+3. **Restrict** the scope of the cmdlets if necessary to only allow specific parameters or parameter values. This is particularly important if users should only be able to manage part of a system.
+4. **Create** custom functions to replace complex commands or commands which are difficult to constrain in JEA. A simple function that wraps a complex command or applies additional validation logic can offer additional control for admins and end-user simplicity.
+5. **Test** the scoped list of allowable commands with your users and/or automation services and adjust as necessary.
 
-# OLD: VisibleExternalCommands = 'Item1', 'Item2'
-VisibleExternalCommands = 'C:\Windows\system32\ipconfig.exe'
-```
+It is important to remember that commands in a JEA session are often run with admin (or otherwise elevated) privileges.
+Careful selection of available commands is important to ensure the JEA endpoint does not allow the connecting user to elevate their permissions.
+Below are some examples of commands that can be used maliciously if allowed in an unconstrained state.
+Note that this is not an exhaustive list and should only be used as a cautionary starting point.
 
-This contains a few interesting examples:
+### Examples of potentially dangerous commands
 
-1.	You have restricted Restart-Service such that operators will only be able to use Restart-Service with the -Name parameter, and they will only be allowed to provide "Spooler" as an argument to that parameter.
-If you wanted to, you could also restrict the arguments using a regular expression using "ValidatePattern" instead of "ValidateSet".
+Risk | Example | Related commands
+-----|---------|-----------------
+Granting the connecting user admin privileges to bypass JEA | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
+Running arbitrary code, such as malware, exploits, or custom scripts to bypass protections | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-2.	You have exposed all commands with the "Get" verb from the NetTCPIP module.
-Because "Get" commands typically don't change system state, this is a relatively safe action.
-That being said, it is strongly encouraged to closely examinine every command you expose through JEA.
 
-3.	You have exposed an executable (ipconfig) using VisibleExternalCommands.
-You can also expose full PowerShell scripts with this field.
-It is important to always provide the full path to external commands to ensure a similarly named (and potentially malicious) program placed in the user's path does not get executed instead.
 
-Save the file, then connect to the demo endpoint again to confirm the changes worked.
+## Create a role capability file
 
-```PowerShell
-Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
-Get-Command
-```
-Because you only modified the Role Capability file, you do not need to re-register the Session Configuration.
-PowerShell will automatically find your updated Role Capability when a user connects.
-Since Role Capabilities are loaded when the session starts, existing sessions are not affected by updates to Role Capability files.
+You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) cmdlet.
 
-Now, confirm that you can restart the computer by running Restart-Computer with the -WhatIf parameter (unless you actually want to restart the computer).
-
-```PowerShell
-Restart-Computer -WhatIf
+```powershell
+New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-Confirm that you can run "ipconfig"
+The resulting role capability file can be opened in a text editor and modified to allow the desired commands for the role.
+The PowerShell help documentation contains several examples of how you can configure the file.
 
-```PowerShell
-ipconfig
+### Allowing PowerShell cmdlets and functions
+
+To authorize users to run PowerShell cmdlets or functions, add the cmdlet or function name to the VisbibleCmdlets or VisibleFunctions fields.
+If you aren't sure whether a command is a cmdlet or function, you can run `Get-Command <name>` and check the "CommandType" property in the output.
+
+```powershell
+VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-And finally, confirm that Restart-Service only works for the Spooler service.
+Sometimes the scope of a specific cmdlet or function is too broad for your users' needs.
+A DNS admin, for example, probably only needs access to restart the DNS service.
+In a multi-tenant environment where tenants are granted access to self-service management tools, tenants should be limited to managing with their own resources.
+For these cases, you can restrict which parameters are exposed from the cmdlet or function.
 
-```PowerShell
-Restart-Service Spooler # This should work
-Restart-Service WSearch # This should fail
+```powershell
+VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name'; ValidateSet = }}
 ```
 
-Exit the session when you are finished.
+In more advanced scenarios, you may also need to restrict which values someone can supply to these parameters.
+Role capabilities let you define a set of allowed values or a regular expression pattern that is evaluated to determine if a given input is allowed.
 
-```PowerShell
-Exit-PSSession
+```powershell
+VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
+                 @{ Name = 'Start-Website'; Parameters = @{ Name = 'Name'; ValidatePattern = 'HR_*' }}
 ```
 
-## Role Capability Creation
-In the next section, you will create a JEA endpoint for AD help desk users.
-To prepare, we will create a blank Role Capability file to fill in for that section.
-Role Capabilities must be created inside a "RoleCapabilities" folder inside a valid PowerShell module in order to be resolved when a session starts.
+> [!NOTE]
+> The [common PowerShell parameters](https://technet.microsoft.com/en-us/library/hh847884.aspx) are always allowed, even if you restrict the available parameters.
+> You should not explicitly list them in the Parameters field.
 
-PowerShell Modules are essentially packages of PowerShell functionality.
-They can contain PowerShell functions, cmdlets, DSC Resources, Role Capabilities, and more.
-You can find information about modules by running `Get-Help about_Modules` in a PowerShell console.
+The table below describes the various ways you can customize a visible cmdlet or function.
+You can mix and match any of the below in the VisibleCmdlets field.
 
-To create a new PowerShell module with a blank Role Capability file, run the following commands:  
+Example                                                                                     | Use case
+--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
+`'My-Func'` or `@{ Name = 'My-Func' }`                                                      | Allows the user to run `My-Func` without any restrictions on the parameters.
+`'MyModule\My-Func'`                                                                        | Allows the user to run `My-Func` from the module `MyModule` without any restrictions on the parameters.
+`'My-*'`                                                                                    | Allows the user to run any cmdlet or function with the verb `My`.
+`'*-Func'`                                                                                  | Allows the user to run any cmdlet or function with the noun `Func`.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Allows the user to run `My-Func` with the `Param1` and/or `Param2` parameters. Any value can be supplied to the parameters.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Allows the user to run `My-Func` with the `Param1` parameter. Only "Value1" and "Value2" can be supplied to the parameter.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with 'contoso' can be supplied to the parameter.
 
-```PowerShell
-# Create a new folder for the module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module' -ItemType Directory
+> [!WARNING]
+> For best security practices, it is not recommended to use wildcards when defining visible cmdlets or functions.
+> Instead, you should explicitly list each trusted command to ensure no other commands that share the same naming scheme are unintentionally authorized.
 
-# Add a module manifest to contain metadata for this module.
-New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psd1' -RootModule Contoso_AD_Module.psm1
+You cannot apply both a ValidatePattern and ValidateSet to the same cmdlet or function.
+If you do, the ValidatePattern will be used and the ValidateSet will be ignored.
+For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](https://technet.microsoft.com/en-us/library/hh847880.aspx) reference content.
 
-# Create a blank script module. You'll use this for custom functions in the next section.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1' -ItemType File
+### Allowing external commands and PowerShell scripts
 
-# Create a RoleCapabilities folder in the Contoso_AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities' -ItemType Directory
+To allow users to run executables and PowerShell scripts (.ps1) in a JEA session, you have to add the full path to each program in the VisibleExternalCommands field.
 
-# Create a blank Role Capability in your RoleCapabilities folder. Running this command without any additional parameters just creates a blank template.
-New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
+```powershell
+VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-Congratulations, you have created a blank Role Capability File.
-It will be used in the next section.
+It is advised, where possible, to use PowerShell cmdlet/function equivalents of any external executables you authorize since you have control over which parameters are allowed with PowerShell cmdlets/functions.
+Many executables allow you to both read the current state and then change it just by changing the parameters you provide.
+For example, consider the role of a file server admin who wants to check which network shares are hosted by the local machine.
+One way to check is to use `net share`.
+However, allowing net.exe is very dangerous becuase the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
+A better approach is to allow [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) which achieves the same result but has a much more limited scope.
 
-## Key Concepts
-**Role Capability (.psrc)**:
-A file that defines "what" a user can do at a JEA endpoint.
-It details a whitelist of things like visible commands, visible console applications, and more.
-In order for PowerShell to detect Role Capabilities, you must put them in a "RoleCapabilities" folder in a valid PowerShell module.
+When making external commands available to users in a JEA session, always specify the complete path to the executable to ensure a similarly named (and potentially malicous) program placed in the user's path does not get executed instead.
 
-**PowerShell Module**:
-A package of PowerShell functionality.
-It can contain PowerShell functions, cmdlets, DSC Resources, Role Capabilities, and more.
-In order to be automatically loaded, PowerShell modules must be located under a path in `$env:PSModulePath`.
+### Allowing access to PowerShell providers
 
+By default, no PowerShell providers are available in JEA sessions.
+This is primarily to reduce the risk of information disclosure by a connecting user finding information and configuration settings on the machine.
+When necessary, you can allow access to the PowerShell providers using the `VisibleProviders` command.
+For a full list of providers, run `Get-PSProvider`.
+
+```powershell
+VisibleProviders = 'Registry'
+```
+
+For simple tasks that require access to the file system, registry, certificate store, or other sensitive providers, you can also consider writing a custom function that works with the provider on the user's behalf.
+Functions, cmdlets, and external programs that are available in a JEA session are not subject to the same constraints as JEA -- they can access any provider by default.
+Also consider using the [user drive](session-configurations.md#user-drive) when copying files to/from a JEA endpoint is required.
+
+### Creating custom functions
+
+You can author custom functions in a role capability file to simplify complex tasks for your end users and/or provide additional validation logic for cmdlet parameters.
+You can write simple functions in the **FunctionDefinitions** field:
+
+```powershell
+VisibleFunctions = 'Get-TopProcessesByCPU'
+
+FunctionDefinitions = @{
+    Name = 'Get-TopProcessesByCPU'
+    ScriptBlock = {
+        param($Count = 10)
+
+        Get-Process | Sort-Object -Property CPU -Descending | Microsoft.PowerShell.Utility\Select-Object -First $Count
+    }
+}
+```
+
+> [!IMPORTANT]
+> Don't forget to add the name of your custom functions to the **VisibleFunctions** field so they can be run by the JEA users.
+
+The body (script block) of custom functions run in the default language mode for the system and are not subject to JEA's constraints.
+This means that functions can access the file system and registry, and run commands that were not made visible in the role capability file.
+Take care to avoid allowing arbitrary code to be run when using parameters and avoid piping user input directly into cmdlets like `Invoke-Expression`.
+
+In the above example, you will notice that the fully qualified module name `Microsoft.PowerShell.Utility\Select-Object` was used instead of the shorthand `Select-Object`.
+Functions defined in role capability files are subject to the scope of JEA sessions, which includes the proxy functions JEA creates to constrain existing commands.
+Select-Object is a default, constrained cmdlet in all JEA sessions that doesn't allow you to select arbitrary properties on objects.
+To use the unconstrained Select-Object in functions, you must explicitly request the full implementation by specifying the FQMN.
+Any constrained cmdlet in a JEA session will exhibit the same behavior when invoked from a function, in line with PowerShell's [command precedence](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+
+If you are writing a lot of custom functions, it may be easier to put them in a [PowerShell Script Module](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx).
+You can then make those functions visible in the JEA session using the VisibleFunctions field like you would with built-in and third party modules.
+
+## Place role capabilities in a module
+
+In order for PowerShell to find a role capability file, it must be stored in a "RoleCapabilities" folder in a PowerShell module.
+The module can be stored in any folder included in the `$env:PSModulePath` environment variable, however you should not place it in System32 (reserved for built-in modules) or a folder where the untrusted, connecting users could modify the files.
+Below is an example of creating a basic PowerShell script module called *ContosoJEA* in the "Program Files" path.
+
+```powershell
+# Create a folder for the module
+$modulePath = Join-Path $env:ProgramFiles "WindowsPowerShell\Modules\ContosoJEA"
+New-Item -ItemType Directory -Path $modulePath
+
+# Create an empty script module and module manifest. At least one file in the module folder must have the same name as the folder itself.
+New-Item -ItemType File -Path (Join-Path $modulePath "ContosoJEAFunctions.psm1")
+New-ModuleManifest -Path (Join-Path $modulePath "ContosoJEA.psd1") -RootModule "ContosoJEAFunctions.psm1"
+
+# Create the RoleCapabilities folder and copy in the PSRC file
+$rcFolder = Join-Path $modulePath "RoleCapabilities"
+New-Item -ItemType Directory $rcFolder
+Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
+```
+
+See [Understanding a PowerShell Module](https://msdn.microsoft.com/en-us/library/dd878324.aspx) for more information about PowerShell modules, module manifests, and the PSModulePath environment variable.
+
+## Updating role capabilities
+
+You can update a role capability file at any time by simply changing the role capability file.
+Any new JEA sessions started after the role capability has been updated will reflect the revised capabilities.
+It is for this reason that controlling access to the role capabilities folder is so important.
+Only highly trusted administrators should be able to change role capability files.
+
+For administrators looking to lock down access to the role capabilities, ensure Local System has read access to the role capability files and containing modules.
+
+## How role capabilities are merged
+
+Users can be granted access to multiple role capabilities when they enter a JEA session depending on the role mappings in the [session configuration file](session-configurations.md).
+When this happens, JEA tries to give the user the *most permissive* set of commands allowed by any of the roles.
+
+**VisibleCmdlets and VisibleFunctions**
+
+The most complex merge logic affects cmdlets and functions, which can have their parameters and parameter values limited in JEA.
+The rules can be summed up as follows:
+
+1. If a cmdlet is only made visible in one role, it will be visible to the user with any applicable parameter constraints.
+2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the cmdlet, the cmdlet will be visible to the user with those constraints.
+3. If a cmdlet is made visible in more than one role, and each role allows a different set of parameters, the cmdlet and all of the parameters defined across every role will be visible to the user. If one role doesn't have constraints on the parameters, all parameters will be allowed.
+4. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role allows the parameter but does not constrain the parameter values, the validate set or pattern will be ignored.
+5. If a validate set is defined for the same cmdlet parameter in more than one role, all values from all validate sets will be allowed.
+6. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values that match any of the patterns will be allowed.
+7. If a validate set is defined in one or more roles, and a validate pattern is defined in another role for the same cmdlet parameter, the validate set is ignored and rule (6) applies to the remaining validate patterns.
+
+The table below shows some examples of this logic in practice using two roles, A and B, which are both assigned to a user in a JEA session.
+
+Rule | Role A VisibleCmdlets                                                                          | Role B VisibleCmdlets                                                                             | Effective user permissions
+-----|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
+1    | `Get-Service`                                                                                  |                                                                                                   | `Get-Service`
+1    |                                                                                                | `Get-Service`                                                                                     | `Get-Service`
+2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service` becuase role B allows all parameters
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
+4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
+5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
+6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)|(contoso.*)' }}`
+7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)|(contoso.*)' }}`
+
+
+**VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
+
+All other fields in the role capability file are simply added to a cumulative set of allowable external commands, aliases, providers, and startup scripts.
+Any command, alias, provider, or script available in one role capability will be available to the JEA user.
+
+Be careful to ensure that the combined set of providers from one role capability and cmdlets/functions/commands from another do not allow connecting users unintentional access to system resources.
+For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem` provider, you are at risk of a JEA user deleting arbitrary files on your computer.
+Additional information about identifying users' effective permissions can be found in the [auditing JEA topic](audit-and-report.md).
+
+## Next steps
+
+- [Create a session configuration file](session-configurations.md)

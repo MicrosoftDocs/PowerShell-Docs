@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Management
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822199
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390785
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

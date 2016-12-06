@@ -482,7 +482,9 @@ Accept wildcard characters: False
 ```
 
 ### -GroupManagedServiceAccount
-For example: `@{Name="hlp";Value="Get-Help";Description="Gets help";Options="ReadOnly"}`
+Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.
+The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.
+This field cannot be used in conjunction with the `-RunAsVirtualAccount` parameter.
 
 ```yaml
 Type: String
@@ -579,7 +581,13 @@ Accept wildcard characters: False
 ```
 
 ### -MountUserDrive
-@{Text=}
+Configures sessions that use this session configuration to expose the "User:" PSDrive.
+User drives are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even if the File System provider is not exposed.
+User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
+
+Contents in the user drive persist across user sessions and are not automatically removed.
+By default, users can only store up to 50MB of data in the user drive.
+This can be customized with the `-UserDriveMaximumSize` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -629,7 +637,13 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredGroups
-For example: `@{Name="hlp";Value="Get-Help";Description="Gets help";Options="ReadOnly"}`
+Specifies conditional access rules for users connecting to sessions that use this session configuration.
+
+Enter a hashtable to compose your list of rules using only 1 key per hashtable, 'And' or 'Or', and set the value to an array of security group names or additional hashtables.
+
+Example requiring connecting users to be members of a single group: `@{ And = 'MyRequiredGroup' }`
+
+Example requiring users to belong to group A, or both groups B and C, to access the endpoint: `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`
 
 ```yaml
 Type: IDictionary
@@ -644,8 +658,8 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitions
-Specifies the role capabilities that should be applied to user roles.
-or security groups, when connected to a session using this session configuration.
+Specifies the mapping between security groups (or users) and role capabilities.
+Users will be granted access to all role capabilities which apply to their group membership at the time the session is created.
 
 Enter a hash table in which the keys are the name of the security group and the values are hash tables that contain a list of role capabilities that should be made available to the security group.
 
@@ -665,6 +679,7 @@ Accept wildcard characters: False
 
 ### -RunAsVirtualAccount
 Configures sessions using this session configuration to be run as the computer's (virtual) administrator account.
+This field cannot be used in conjunction with the `-GroupManagedServiceAccount` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -790,7 +805,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserDriveMaximumSize
-@{Text=}
+Specifies the maximum size for user drives exposed in sessions that use this session configuration.
+When omitted, the default size of each User: drive root is 50MB.
+
+This parameter should be used in conjunction with `-MountUserDrive`.
 
 ```yaml
 Type: Int64

@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Security
 Module Guid: a94c8c7e-9810-47c0-b8af-65089c13a35a
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822364
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390786
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

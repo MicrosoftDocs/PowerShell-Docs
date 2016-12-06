@@ -1,5 +1,5 @@
 ---
-title:   Known Issues in WMF 5.1 (Preview)
+title:   Known Issues in WMF 5.1 
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -10,9 +10,9 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-# Known Issues in WMF 5.1 (Preview) #
+# Known Issues in WMF 5.1 #
 
-> Note: This information is preliminary and subject to change.
+> Note: This information is subject to change.
 
 ## Starting PowerShell shortcut as Administrator
 Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.

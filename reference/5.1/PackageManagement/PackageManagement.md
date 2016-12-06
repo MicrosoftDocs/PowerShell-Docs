@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: PackageManagement
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822298
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=392040
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 

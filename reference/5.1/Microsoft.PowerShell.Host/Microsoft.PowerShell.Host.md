@@ -10,8 +10,8 @@ ms.prod: powershell
 ms.technology: powershell
 Module Name: Microsoft.PowerShell.Host
 Module Guid: 56d66100-99a0-4ffc-a12d-eee9a6718aef
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822193
-Help Version: 5.1.0.2
+Download Help Link: http://go.microsoft.com/fwlink/?linkid=390784
+Help Version: 5.1.1.0
 Locale: en-US
 ---
 
