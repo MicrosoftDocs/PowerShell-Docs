@@ -480,5 +480,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-PSSessionCapability](Get-PSSessionCapability.md)
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
+[Get-PSSessionCapability](Get-PSSessionCapability.md)
