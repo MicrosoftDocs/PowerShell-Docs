@@ -53,7 +53,7 @@ By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any 
 ## EXAMPLES
 
 ### Example 1: Compute the hash value for a PowerShell.exe file
-```
+```powershell
 PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
 
 Algorithm : SHA256
@@ -65,8 +65,8 @@ This command uses the **Get-FileHash** cmdlet to compute the hash value for the 
 The hash algorithm used is the default, SHA256.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
-### Example 2: Compute the has value for an ISO file
-```
+### Example 2: Compute the hash value for an ISO file
+```powershell
 PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 
 Algorithm : SHA384
