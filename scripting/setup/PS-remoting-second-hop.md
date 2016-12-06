@@ -22,8 +22,7 @@ There are several ways to address this problem. In this topic, we'll look at sev
 
 ## CredSSP
 
-You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication (by specifying "CredSSP" as the 
-value of the `Authentication` parameter of a call to the [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) cmdlet. CredSSP passes credentials in plain text to the server,
+You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication. CredSSP passes credentials in plain text to the server,
 so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by default on both client and 
 server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller because the domain controller is 
 highly trusted.
@@ -33,6 +32,9 @@ For more information about security concerns when using CredSSP for PowerShell R
 
 For more information about credential theft attacks, see [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
+For an example of how to enable and use CredSSP for PowerShell remoting, see 
+[Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+
 ### Pros
 
 - It works for all servers with Windows Server 2008 or later.
@@ -41,70 +43,6 @@ For more information about credential theft attacks, see [Mitigating Pass-the-Ha
 
 - Has security vulnerabilities.
 - Requires configuration of both client and server roles.
-
-## Just Enough Administration (JEA)
-
-JEA allows you to restrict what commands an administrator can run during a PowerShell session. It can be used to solve the second hop problem.
-
-For information about JEA, see [Just Enough Administration](https://msdn.microsoft.com/powershell/jea/readme).
-
-### Pros
-
-- No password maintenance when using a virtual account.
-
-### Cons
-
-- Requires WMF 5.0 or later.
-- Requires password maintenance when using a domain **RunAs** account.
-- Requires configuration on every intermediate server (_ServerB_).
-
-## Pass credentials inside an Invoke-Command script block
-
-You can pass credentials inside the **ScriptBlock** parameter of a call to the 
-[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
-
-### Pros
-
-- Does not require special server configuration.
-- Works on any server running WMF 2.0 or later.
-
-## Cons
-
-- Requires an awkward code technique.
-- If running WMF 2.0, requires different syntax for passing arguments to a remote session.
-
-## Example
-
-The following example shows how to pass credentials in an **Invoke-Command** script block:
-
-```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
-}
-```
-
-## Kerberos constrained delegation
-
-You can use legacy constrained delegation (not resource-based) to make the second hop. 
-
->**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
->[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
->and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
-
-### Pros
-
-- Requires no special coding
-
-### Cons
-
-- Must be configured at the front end.
-- Limited to one domain. Cannot cross domains or forests.
-- Requires domain administrator rights to update objects and Service Principal Names (SPNs).
-- Not currently documented for PowerShell remoting.
 
 ## Kerberos delegation (unconstrained)
 
@@ -120,26 +58,29 @@ You can also used Kerberos unconstrained delegation to make the second hop. Howe
 
 ### Cons
 
+- Does not support the second hop for WinRM.
 - Has security vulnerabilities.
 - Provides no control over where credentials are used.
 
-## PSSessionConfiguration using RunAs
+## Kerberos constrained delegation
 
-You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.
+You can use legacy constrained delegation (not resource-based) to make the second hop. 
 
-For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see 
-[Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+>**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
+>[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
+>and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### Pros
 
-- Works with any server with WMF 3.0 or later.
+- Requires no special coding
 
 ### Cons
 
-- Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server (_ServerB_).
-
-
-
+- Does not support the second hop for WinRM.
+- Must be configured at the front end.
+- Limited to one domain. Cannot cross domains or forests.
+- Requires domain administrator rights to update objects and Service Principal Names (SPNs).
+- Not currently documented for PowerShell remoting.
 
 ## Resource-based Kerberos constrained delegation
 
@@ -161,6 +102,7 @@ In the second hop scenario described above, you configure _ServerC_ to specify f
 ### Cons
 
 - Requires Windows Server 2012 or later.
+- Does not support the second hop for WinRM. 
 
 ### Example
 
@@ -294,7 +236,66 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
+## PSSessionConfiguration using RunAs
 
+You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.
+
+For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see 
+[Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+
+### Pros
+
+- Works with any server with WMF 3.0 or later.
+
+### Cons
+
+- Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server (_ServerB_).
+- Requires password maintenance when using a domain **RunAs** account
+
+## Just Enough Administration (JEA)
+
+JEA allows you to restrict what commands an administrator can run during a PowerShell session. It can be used to solve the second hop problem.
+
+For information about JEA, see [Just Enough Administration](https://msdn.microsoft.com/powershell/jea/readme).
+
+### Pros
+
+- No password maintenance when using a virtual account.
+
+### Cons
+
+- Requires WMF 5.0 or later.
+- Requires password maintenance when using a domain **RunAs** account.
+- Requires configuration on every intermediate server (_ServerB_).
+
+## Pass credentials inside an Invoke-Command script block
+
+You can pass credentials inside the **ScriptBlock** parameter of a call to the 
+[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+
+### Pros
+
+- Does not require special server configuration.
+- Works on any server running WMF 2.0 or later.
+
+## Cons
+
+- Requires an awkward code technique.
+- If running WMF 2.0, requires different syntax for passing arguments to a remote session.
+
+## Example
+
+The following example shows how to pass credentials in an **Invoke-Command** script block:
+
+```powershell
+# This works without delegation, passing fresh creds            
+# Note $Using:Cred in nested request            
+$cred = Get-Credential Contoso\Administrator            
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
+    hostname            
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+}
+```
 
 ## See also
 
