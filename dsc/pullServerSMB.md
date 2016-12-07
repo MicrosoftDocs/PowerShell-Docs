@@ -141,7 +141,12 @@ setting up pull clients, see [Setting up a pull client using configuration ID](p
 
 >**Note:** You must use configuration IDs if you are using an SMB pull server. Configuration names are not supported for SMB.
 
-Any resources needed by the client must be placed in the SMB share folder as archived `.zip` files.  
+Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
+of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
+file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
+pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
+'{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes 
+'{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the SMB share folder. 
 
 ## Creating the MOF checksum
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. 
@@ -152,6 +157,64 @@ If there are more than one configuration MOF files in the specified folder, a ch
 The checksum file must be present in the same directory as the configuration MOF file (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` by default), and have the same name with the `.checksum` extension appended.
 
 >**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.
+
+## Setting up a pull client for SMB
+
+To set up a client that pulls configurations and/or resources from an SMB share, you configure the Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and 
+**ResourceRepositoryShare** blpcks that specify the share from which to pull.
+
+For more information about 
+
+```powershell
+$secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential (“TestUser”, $secpasswd)
+
+[DSCLocalConfigurationManager()]
+configuration SmbCredTest
+{
+    Node $AllNodes.NodeName
+    {
+        Settings
+        {
+            RefreshMode = 'Push'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+            ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
+        }
+         
+         ConfigurationRepositoryShare SmbConfigShare      
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+        }
+
+        ResourceRepositoryShare SmbResourceShare
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+            
+        }      
+    }
+}
+
+$ConfigurationData = @{
+
+    AllNodes = @(
+
+        @{
+
+            #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
+
+            NodeName="localhost"
+
+            PSDscAllowPlainTextPassword = $true
+
+        })
+
+        
+
+}
+```
 
 ## Acknowledgements
 
