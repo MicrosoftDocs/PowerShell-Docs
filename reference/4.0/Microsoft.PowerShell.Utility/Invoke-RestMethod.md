@@ -41,11 +41,12 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
+Get the latest feeds from the PowerShell team's blog.
+
 ```PowerShell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
     Format-Table -Property Title, PubDate
 ```
-- **Output**
 
 ```
 PS C:\ >Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
@@ -75,23 +76,28 @@ This command uses the **Invoke-RestMethod** cmdlet to get information from the W
 The command uses the Format-Table cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
 
 ### Example 2
-```
-PS C:\>$cred = Get-Credential
+In the following example,
+a user runs **Invoke-RestMethod**
+to perform a POST request on an intranet website in the user's organization.
+
+```PowerShell
+$Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
 
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True }
 
-# Create variables to store the values consumed by the Invoke-RestMethod command. The search variable contents are later embedded in the body variable.
+# Create variables to store the values consumed by the Invoke-RestMethod command.
+# The search variable contents are later embedded in the body variable.
 
-$server = 'server.contoso.com'
-$url = "https://${server}:8089/services/search/jobs/export"
-$search = "search index=_internal | reverse | table index,host,source,sourcetype,_raw"
+$Server = 'server.contoso.com'
+$Url = "https://${server}:8089/services/search/jobs/export"
+$Search = "search index=_internal | reverse | table index,host,source,sourcetype,_raw"
 
 # The cmdlet handles URL encoding. The body variable describes the search criteria, specifies CSV as the output mode, and specifies a time period for returned data that starts two days ago and ends one day ago. The body variable specifies values for parameters that apply to the particular REST API with which Invoke-RestMethod is communicating.
 
-$body = @{
-    search = $search
+$Body = @{
+    search = $Search
     output_mode = "csv"
     earliest_time = "-2d@d"
     latest_time = "-1d@d"
@@ -99,7 +105,10 @@ $body = @{
 
 # Now, run the Invoke-RestMethod command with all variables in place, specifying a path and file name for the resulting CSV output file.
 
-Invoke-RestMethod -Method Post -Uri $url -Credential $cred -Body $body -OutFile output.csv
+Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile output.csv
+```
+
+```
 cmdlet Get-Credential at command pipeline position 1
 
 Supply values for the following parameters:
@@ -111,8 +120,6 @@ Supply values for the following parameters:
 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
-
-In the following example, a user runs **Invoke-RestMethod** to perform a POST request on an intranet website in the user's organization.
 
 ## PARAMETERS
 

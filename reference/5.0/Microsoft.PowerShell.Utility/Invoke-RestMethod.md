@@ -42,11 +42,12 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
+Get the latest feeds from the PowerShell team's blog.
+
 ```PowerShell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
     Format-Table -Property Title, PubDate
 ```
-- **Output**
 
 ```
 PS C:\ >Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
@@ -72,18 +73,25 @@ PowerShell on Linux and Open Source!                                 Thu, 18 Aug
 PS C:\ >
 ```
 
-This command uses the **Invoke-RestMethod** cmdlet to get information from the Windows PowerShell Blog RSS feed.
-The command uses the Format-Table cmdlet to display the values of the Title and pubDate properties of each blog in a table.
+This command uses the **Invoke-RestMethod** cmdlet
+to get information from the Windows PowerShell Blog RSS feed.
+The command uses the Format-Table cmdlet
+to display the values of the Title and pubDate properties of each blog in a table.
 
 ### Example 2: Perform a POST request
-```
-PS C:\>$Cred = Get-Credential
+In the following example,
+a user runs **Invoke-RestMethod**
+to perform a POST request on an intranet website in the user's organization.
+
+```PowerShell
+$Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
 
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True }
 
-# Create variables to store the values consumed by the Invoke-RestMethod command. The search variable contents are later embedded in the body variable.
+# Create variables to store the values consumed by the Invoke-RestMethod command.
+# The search variable contents are later embedded in the body variable.
 
 $Server = 'server.contoso.com'
 $Url = "https://${server}:8089/services/search/jobs/export"
@@ -101,6 +109,9 @@ $Body = @{
 # Now, run the Invoke-RestMethod command with all variables in place, specifying a path and file name for the resulting CSV output file.
 
 Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile output.csv
+```
+
+```
 cmdlet Get-Credential at command pipeline position 1
 
 Supply values for the following parameters:
@@ -112,8 +123,6 @@ Supply values for the following parameters:
 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
-
-In the following example, a user runs **Invoke-RestMethod** to perform a POST request on an intranet website in the user's organization.
 
 ## PARAMETERS
 
