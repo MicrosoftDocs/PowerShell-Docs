@@ -1,6 +1,6 @@
 ---
 title:   Windows Management Framework (WMF)
-ms.date:  2016-05-16
+ms.date:  2016-12-07
 keywords:  PowerShell, WMF
 description:  
 ms.topic:  article
@@ -28,30 +28,28 @@ WMF installation adds and/or updates the following features:
 - Server Manager CIM Provider
 
 ## WMF Release Notes
-To learn about various enhancements in PowerShell and other components of a given WMF, please refer to the links below to review the release notes:
 
+To learn about various enhancements in PowerShell and other components of a given WMF, please refer to the links below to review the release notes:
 
 - [WMF 5.1 (Preview)](5.1/release-notes.md)
 - [WMF 5.0](5.0/releasenotes.md)
 
-
 ## WMF Availability Across Windows Operating Systems
 
->TODO: Add links to specific WMF DLC on the column header
-
-| Operating System Version | [WMF 5.1 Preview*]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF (2.0)]() |
+| Operating System Version | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | Ships in-box* | Ships in-box* |  |  |  |
-| Windows 10 | Ships in-box* | Ships in-box*  | | | |  
-| Windows Server 2012 R2| ?? | Yes | Ships in-box |  |  |
-| Windows 8.1 | ?? | Yes |  Ships in-box |  |  |
-| Windows Server 2012 | ?? | Yes | Yes |  Ships in-box | |
+| Windows Server 2016 | Ships in-box |  |  |  |  |
+| Windows Server 2012 R2| Yes | Yes | Ships in-box |  |  |
+| Windows 8.1 | Yes | Yes |  Ships in-box |  |  |
+| Windows Server 2012 | Yes | Yes | Yes |  Ships in-box | |
 | Windows 8 |  |  |  | Ships in-box | |
-| Windows Server 2008 R2 SP1 | ?? | Yes | Yes |  Yes| Ships in-box |
-| Windows 7 SP1  | ?? | Yes | Yes | Yes | Ships in-box |
+| Windows Server 2008 R2 SP1 | Yes | Yes | Yes |  Yes| Ships in-box |
+| Windows 7 SP1  | Yes | Yes | Yes | Yes | Ships in-box |
 | Windows Server 2008 SP2 | | | | Yes | Yes |
 | Windows Vista | | | | | Yes |
 | Windows Server 2003| | | |  | Yes |
 | Windows XP | | | |  | Yes |
 
->TODO: Explain * in the above table
+**"Ships in-box"**: 
+The features of the `given WMF` were shipped in the indicated version of  Windows and Windows Server.
+Hence, the `given WMF` doesn't need to be installed on the indicated operating system versions.
