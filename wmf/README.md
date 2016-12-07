@@ -39,6 +39,7 @@ To learn about various enhancements in PowerShell and other components of a give
 | Operating System Version | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Ships in-box |  |  |  |  |
+| Windows 10 | Ships in-box | Ships in-box  | | | |  
 | Windows Server 2012 R2| Yes | Yes | Ships in-box |  |  |
 | Windows 8.1 | Yes | Yes |  Ships in-box |  |  |
 | Windows Server 2012 | Yes | Yes | Yes |  Ships in-box | |
