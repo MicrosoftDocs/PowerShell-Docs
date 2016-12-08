@@ -82,7 +82,7 @@ The following properties are configurable using the DSC resource:
 The syntax for each of these properties in a DSC configuration is consistent with the PowerShell session configuration file.
 
 Below is a sample DSC configuration for a general server maintenance module.
-It assumes that a valid PowerShell module containing role capabilities in a 'RoleCapabilities' subfolder is located on the '\\myfileshare\JEA' file share.
+It assumes that a valid PowerShell module containing role capabilities in a 'RoleCapabilities' subfolder is located on the '\\\\myfileshare\\JEA' file share.
 
 ```powershell
 Configuration JEAMaintenance

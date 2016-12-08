@@ -49,7 +49,7 @@ Sessions configured this way will operate in [NoLanguage mode](https://technet.m
 - Out-Default
 - Select-Object (select)
 
-No PowerShell providers are available, nor are any external programs (cmd.exe programs).
+No PowerShell providers are available, nor are any external programs (executables, scripts, etc.).
 
 There are several other fields you will want to configure for the JEA session.
 They are covered in the following sections.
@@ -59,7 +59,8 @@ They are covered in the following sections.
 Behind the scenes, JEA needs an identity (account) to use when running a connected user's commands.
 You decide which identity JEA will use in the session configuration file.
 
-**Local Virtual Account**
+#### Local Virtual Account
+
 If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands succesfully, you should configure JEA to use a local virtual account.
 Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.
 On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group, and have access to most system resources.
@@ -72,7 +73,7 @@ RunAsVirtualAccount = $true
 
 If the roles supported by the session configuration do not require such broad privileges, you can optionally specify the security groups to which the virtual account will belong.
 On a member server or workstation, the specified security groups must be local groups, not groups from a domain.
-When one or more security groups is specified, the virtual account will not belong to the local or domain administrators group.
+When one or more security groups is specified, the virtual account will no longer belong to the local or domain administrators group.
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -80,7 +81,8 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
-**Group Managed Service Account**
+#### Group Managed Service Account
+
 For scenarios requiring the JEA user to access network resources such as other machines or web services, a group managed service account (gMSA) is a more appropriate identity to use.
 gMSA accounts give you a domain identity which can be used to authenticate against resources on any machine within the domain.
 The rights the gMSA account gives you is determined by the resources you are accessing.
@@ -92,13 +94,14 @@ GroupManagedServiceAccount = 'MyJEAgMSA'
 ```
 
 gMSA accounts should only be used when access to network resources are required for a few reasons:
-- It is harder to trace back actions to a user when using a gMSA account since every user shares the same run-as identity. You will need to consult PowerShell session transcripts to correlate users with their actions.
+- It is harder to trace back actions to a user when using a gMSA account since every user shares the same run-as identity. You will need to consult PowerShell session transcripts and logs to correlate users with their actions.
 - The gMSA account may have access to many network resources which the connecting user does not need access to. Always try to limit effective permissions in a JEA session to follow the principle of least privilege.
 
 > [!NOTE]
 > Group managed service accounts are only available in Windows PowerShell 5.1 or newer and on domain-joined machines.
 
-**More information about run as users**
+#### More information about run as users
+
 Additional information about run as identities and how they factor into the security of a JEA session can be found in the [security considerations](security-considerations.md) article.
 
 ### Session transcripts
@@ -170,6 +173,7 @@ The default module path in PowerShell is the following:
 
 ```powershell
 PS C:\> $env:PSModulePath
+
 C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
 ```
 
@@ -205,7 +209,7 @@ To help illustrate this precedence, consider the following example where the plu
 There are several role capability files installed on this system.
 What happens if a session configuration file gives a user access to the "DnsAdmin" role?
 
-The effective role capability file will be the one located at "C:\Program Files\WindowsPowerShell\Modules\ContosoMaintenance\RoleCapabilities\DnsAdmin.psrc".
+The effective role capability file will be the one located at "C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc".
 If you're wondering why, remember the 2 orders of precedence:
 
 1. The `$env:PSModulePath` variable has the Program Files folder listed before the System32 folder, so it will prefer files from the Program Files folder.
