@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes how to use alternate names for cmdlets and commands in  Windows PowerShell�.
+Describes how to use alternate names for cmdlets and commands in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

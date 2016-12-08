@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell�.
+Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -211,7 +211,7 @@ http://go.microsoft.com/fwlink/?LinkId=142213
 ```
 
 
-And, see "Secrets of Windows Management Instrumentation – Troubleshooting and Tips" in the Microsoft TechNet Script Center:
+And, see "Secrets of Windows Management Instrumentation - Troubleshooting and Tips" in the Microsoft TechNet Script Center:
 
 
 ```
