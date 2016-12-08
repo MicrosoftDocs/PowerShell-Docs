@@ -163,7 +163,12 @@ The checksum file must be present in the same directory as the configuration MOF
 To set up a client that pulls configurations and/or resources from an SMB share, you configure the Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and 
 **ResourceRepositoryShare** blpcks that specify the share from which to pull.
 
-For more information about 
+For more information about configuring the LCM, see [Setting up a pull client using configuration ID](pullClientConfigID.md).
+
+>**Note:** For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a plaintext password to the **Credential** parameter. For information
+>about passing credentials more securely, see [Credentials Options in Configuration Data](configDataCredentials.md).
+
+>**Note:** You must specify a **ConfigurationID** in the **Settings** block of a metaconfiguration for an SMB pull server, even if you are only pulling resources.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -176,7 +181,7 @@ configuration SmbCredTest
     {
         Settings
         {
-            RefreshMode = 'Push'
+            RefreshMode = 'Pull'
             RefreshFrequencyMins = 30 
             RebootNodeIfNeeded = $true
             ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
