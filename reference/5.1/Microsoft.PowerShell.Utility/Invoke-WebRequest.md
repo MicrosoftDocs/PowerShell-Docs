@@ -557,7 +557,7 @@ The default user agent is similar to Mozilla/5.0 (Windows NT; Windows NT 6.1; en
 
 To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](<http://msdn.microsoft.com/en-us/library/windows/desktop/hh484857(v=vs.85).aspx>) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet
+For example, the following command uses the user agent string for Internet Explorer
 
 ```
 Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
