@@ -52,5 +52,5 @@ To learn about various enhancements in PowerShell and other components of a give
 | Windows XP | | | |  | Yes |
 
 **"Ships in-box"**: 
-The features of the `given WMF` were shipped in the indicated version of  Windows and Windows Server.
-Hence, the `given WMF` doesn't need to be installed on the indicated operating system versions.
+The features of the `specified WMF` were shipped in the indicated version of  Windows and Windows Server.
+Hence, the `specified WMF` doesn't need to be installed on the indicated operating system versions.
