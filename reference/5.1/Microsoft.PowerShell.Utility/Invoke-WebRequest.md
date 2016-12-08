@@ -136,14 +136,16 @@ When the body is a form, or it is the output of an **Invoke-WebRequest** call, W
 
 For example:
 
-`$R = Invoke-WebRequest http://website.com/login.aspx`
-`$R.Forms\[0\].Name = "MyName"`
-`$R.Forms\[0\].Password = "MyPassword"`
-`Invoke-RestMethod http://website.com/service.aspx -Body $R`
-
+```
+$R = Invoke-WebRequest http://website.com/login.aspx
+$R.Forms[0].Name = "MyName"
+$R.Forms[0].Password = "MyPassword"
+Invoke-RestMethod http://website.com/service.aspx -Body $R
+```
 - or -
-
-`Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]`
+```
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+```
 
 ```yaml
 Type: Object
@@ -553,11 +555,13 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0 with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the PSUserAgenthttp://msdn.microsoft.com/en-us/library/windows/desktop/hh484857(v=vs.85).aspx class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](<http://msdn.microsoft.com/en-us/library/windows/desktop/hh484857(v=vs.85).aspx>) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet
 
-`Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)`
+```
+Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+```
 
 ```yaml
 Type: String
