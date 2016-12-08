@@ -1,6 +1,11 @@
 param(
-    [switch]$SkipCabs
+    [switch]$SkipCabs,
+    [switch]$ShowProgress
 )
+
+# Turning off the progress display, by default
+$global:ProgressPreference = 'SilentlyContinue'
+if($ShowProgress){$ProgressPreference = 'Continue'}   
 
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 $allErrors = @()
@@ -19,7 +24,10 @@ Get-ChildItem $ReferenceDocset -Directory | ForEach-Object -Process {
         try {
             New-ExternalHelp -Path $ModulePath -OutputPath $MamlOutputFolder -Force
             if (-not $SkipCabs) {
-                New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
+                $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
+
+                # Only output the cab fileinfo object
+                if($cabInfo.Count -eq 8){$cabInfo[-1]}  
             }
         } catch {
             $allErrors += $_
