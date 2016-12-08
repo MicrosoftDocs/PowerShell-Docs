@@ -82,31 +82,31 @@ PS C:\>$R=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable f
 
 # Use the session variable that you created in Example 1. Output displays values for Headers, Cookies, Credentials, etc. 
 
-PS C:\>$FB
+$FB
 
 # Gets the first form in the Forms property of the HTTP response object in the $R variable, and saves it in the $Form variable. 
 
-PS C:\>$Form = $R.Forms[0]
+$Form = $R.Forms[0]
 
 # Pipes the form properties that are stored in the $Forms variable into the Format-List cmdlet, to display those properties in a list. 
 
-PS C:\>$Form | Format-List
+$Form | Format-List
 
 # Displays the keys and values in the hash table (dictionary) object in the Fields property of the form.
 
-PS C:\>$Form.fields
+$Form.fields
 
 # The next two commands populate the values of the "email" and "pass" keys of the hash table in the Fields property of the form. Of course, you can replace the email and password with values that you want to use. 
 
-PS C:\>$Form.Fields["email"] = "User01@Fabrikam.com"
-PS C:\>$Form.Fields["pass"] = "P@ssw0rd"
+$Form.Fields["email"] = "User01@Fabrikam.com"
+$Form.Fields["pass"] = "P@ssw0rd"
 
 # The final command uses the Invoke-WebRequest cmdlet to sign in to the Facebook web service. 
 
-PS C:\>$R=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
+$R=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
 
 # When the command finishes, the **StatusDescription** property of the web response object in the $R variable indicates that the user is signed in successfully.
-PS C:\>$R.StatusDescription
+$R.StatusDescription
 ```
 
 This example shows how to use the **Invoke-WebRequest** cmdlet with a stateful web service, such as Facebook.
@@ -138,9 +138,9 @@ For example:
 
 ```
 PS C:\>$R = Invoke-WebRequest http://website.com/login.aspx
-PS C:\>$R.Forms[0].Name = "MyName"
-PS C:\>$R.Forms[0].Password = "MyPassword"
-PS C:\>Invoke-RestMethod http://website.com/service.aspx -Body $R
+$R.Forms[0].Name = "MyName"
+$R.Forms[0].Password = "MyPassword"
+Invoke-RestMethod http://website.com/service.aspx -Body $R
 ```
 - or -
 ```
