@@ -1,13 +1,15 @@
 ---
-title:  PowerShell Scripting
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  PowerShell Scripting
+ms.technology:  powershell
 ---
+
 
 #  PowerShell
 
@@ -72,3 +74,4 @@ Find in this section:
 -  The [PowerShell Workflows](core-powershell/workflows-guide.md)
 -  The [PowerShell Web Access](core-powershell/web-access.md)
 -  The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
+

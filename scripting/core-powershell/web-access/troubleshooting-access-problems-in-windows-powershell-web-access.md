@@ -1,13 +1,15 @@
-﻿---
-title:  troubleshooting access problems in windows powershell web access
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
+---
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  troubleshooting access problems in windows powershell web access
+ms.technology:  powershell
 ---
+
 
 #  Troubleshooting Access Problems in Windows PowerShell Web Access
 

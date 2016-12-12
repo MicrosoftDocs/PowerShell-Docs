@@ -1,3 +1,15 @@
+---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Push Location
+ms.technology:  powershell
+---
+
  ---
 author: jpjofre
 description: 

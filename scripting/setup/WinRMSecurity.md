@@ -1,13 +1,15 @@
 ---
-title:  WinRMSecurity
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
-author:  eslesar
-manager:  dongill
+author:  jpjofre
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  WinRMSecurity
+ms.technology:  powershell
 ---
+
 
 # PowerShell Remoting Security Considerations
 

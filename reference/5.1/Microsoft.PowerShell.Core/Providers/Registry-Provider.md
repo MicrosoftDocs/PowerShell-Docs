@@ -1,18 +1,16 @@
 ---
-title: "Registry Provider"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 5
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=821468
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Registry Provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=821468
 ---
+
 # Registry Provider
 ## PROVIDER NAME  
  Registry  
@@ -242,3 +240,4 @@ set-item -path hkcu:\environment\testnew -value "another default value"
 
 ## See Also  
  [about_Providers](../About/about_Providers.md)
+

@@ -1,19 +1,20 @@
 ---
-title: Microsoft.PowerShell.Archive
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.Archive
-Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
-Download Help Link: http://go.microsoft.com/fwlink/?LinkID=393254
-Help Version: 5.1.1.0
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Archive
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.Archive
+Download Help Link:   http://go.microsoft.com/fwlink/?LinkID=393254
+Help Version:   5.1.1.0
+Module Guid:   eb74e8da-9ae2-482a-a648-e96550fb8733
 ---
+
 
 # Microsoft.PowerShell.Archive Module
 ## Description

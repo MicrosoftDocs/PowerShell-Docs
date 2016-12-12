@@ -1,18 +1,16 @@
 ---
-title: "New-Item for Certificate"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 8
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=834971
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  new item for certificate
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834971
 ---
+
 # New-Item for Certificate
 Creates new certificate stores in the LocalMachine store location.  
 
@@ -140,3 +138,4 @@ This command creates the TestStore certificate store on the Server01 remote comp
  [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)   
  [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
  [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description:
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-11-29
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=217034
-schema: 2.0.0
-title: Invoke-RestMethod
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke RestMethod
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=217034
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Invoke-RestMethod
 ## SYNOPSIS
@@ -579,3 +580,4 @@ If the request returns JSON strings, Invoke-RestMethod returns a PSObject that r
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
+

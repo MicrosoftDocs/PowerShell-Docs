@@ -1,18 +1,16 @@
 ---
-title: "Remove-Item for Certificate"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 9
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=834972
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  remove item for certificate
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834972
 ---
+
 # Remove-Item for Certificate
 Deletes certificate stores, certificates, and private keys.  
 
@@ -168,3 +166,4 @@ This command deletes all certificates that have a DNS name that contains "Fabrik
  [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)   
  [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
  [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+

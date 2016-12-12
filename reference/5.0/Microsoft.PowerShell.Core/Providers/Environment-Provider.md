@@ -1,12 +1,16 @@
 ---
-title: Environment Provider
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: https://go.microsoft.com/fwlink/?linkid=834944
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Environment Provider
+ms.technology:  powershell
+online version:   https://go.microsoft.com/fwlink/?linkid=834944
 ---
+
 # Environment Provider
 ## PROVIDER NAME  
  Environment  
@@ -173,3 +177,4 @@ clear-item -path env:USERROLE
 
 ## See Also  
  [about_Providers](../About/about_Providers.md)
+

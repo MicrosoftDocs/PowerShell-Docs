@@ -1,14 +1,16 @@
 ---
-title:  Learning Windows PowerShell Names
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Learning Windows PowerShell Names
+ms.technology:  powershell
+ms.assetid:    b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
+
 
 # Learning Windows PowerShell Names
 Learning names of commands and command parameters is a significant time investment with most command-line interfaces. The issue is that there are very few patterns, so the only way to learn is by memorizing each command and each parameter that you need to use on a regular basis.

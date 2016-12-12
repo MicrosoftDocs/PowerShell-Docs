@@ -1,12 +1,16 @@
 ---
-title: Function Provider
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=834961
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Function Provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834961
 ---
+
 # Function Provider
 ## PROVIDER NAME  
  Function  
@@ -214,3 +218,4 @@ copy-item -path function:prompt -destination function:oldPrompt
 ## See Also  
  [about_Functions](../About/about_Functions.md)   
  [about_Providers](../About/about_Providers.md)
+
