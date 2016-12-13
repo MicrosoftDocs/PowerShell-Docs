@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes the full and relative path name formats in  Windows PowerShell�.
+Describes the full and relative path name formats in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

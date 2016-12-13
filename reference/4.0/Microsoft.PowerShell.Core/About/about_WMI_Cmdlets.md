@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell�.
+Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

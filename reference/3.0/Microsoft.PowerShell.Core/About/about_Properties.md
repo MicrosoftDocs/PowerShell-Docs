@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes how to use object properties in  Windows PowerShell�.
+Describes how to use object properties in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

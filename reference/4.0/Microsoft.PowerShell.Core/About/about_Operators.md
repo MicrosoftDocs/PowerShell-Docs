@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes the operators that are supported by  Windows PowerShell�.
+Describes the operators that are supported by  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

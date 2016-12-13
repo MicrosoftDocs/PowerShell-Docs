@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes  Windows PowerShell� sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
+Describes  Windows PowerShell® sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 
 ## LONG DESCRIPTION

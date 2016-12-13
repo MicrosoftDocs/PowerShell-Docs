@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Explains how to create objects in  Windows PowerShell�.
+Explains how to create objects in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
