@@ -1,14 +1,16 @@
 ---
-title:  Microsoft.WSMan.Management Module
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  687cb04d-541c-44f6-a896-75c9686cb04e
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.WSMan.Management Module
+ms.technology:  powershell
+ms.assetid:    687cb04d-541c-44f6-a896-75c9686cb04e
 ---
+
 
 # Microsoft.WSMan.Management Module
 This section contains the help topics for the **Microsoft.WSMan.Management** module, which contains the [WSMan Provider [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7) and cmdlets that manage Web Services for Management (WS-Management) and Windows Remote Management (WinRM). The **Microsoft.WSMan.Management** module is installed with Windows PowerShell.

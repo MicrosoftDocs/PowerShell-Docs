@@ -1,14 +1,16 @@
 ---
-title:  Using Variables to Store Objects
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Using Variables to Store Objects
+ms.technology:  powershell
+ms.assetid:    b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
+
 
 # Using Variables to Store Objects
 Windows PowerShell works with objects. Windows PowerShell lets you create variables - essentially named objects - to preserve output to use later. If you are used to working with variables in other shells, remember that Windows PowerShell variables are objects, not text.

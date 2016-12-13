@@ -1,14 +1,16 @@
 ---
-title:  Using Tab Expansion
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Using Tab Expansion
+ms.technology:  powershell
+ms.assetid:    c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ---
+
 
 # Using Tab Expansion
 Command-line shells often provide a way to complete the names of long files or commands automatically, speeding up command entry and providing hints. Windows PowerShell allows you to fill in file names and cmdlet names by pressing the **Tab** key.

@@ -1,13 +1,15 @@
 ---
-title:  workflows guide
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  workflows guide
+ms.technology:  powershell
 ---
+
 
 # PSWorkflow Module
 This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with Windows PowerShell.

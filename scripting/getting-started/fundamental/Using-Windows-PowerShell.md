@@ -1,14 +1,16 @@
-﻿---
-title:  Using Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
+---
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  cf06f1e5-3945-47e4-98be-412f5a1f43fe
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Using Windows PowerShell
+ms.technology:  powershell
+ms.assetid:    cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ---
+
 
 # Using Windows PowerShell
 Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. Built on the .NET Framework, Windows PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows.

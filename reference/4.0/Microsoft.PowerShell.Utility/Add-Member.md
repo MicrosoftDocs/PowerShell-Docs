@@ -1,17 +1,18 @@
 ---
-title: Add-Member
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-external help file: PSITPro4_Utility.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=293942
-schema: 2.0.0
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Member
+ms.technology:  powershell
+external help file:   PSITPro4_Utility.xml
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293942
+schema:   2.0.0
 ---
+
 
 # Add-Member
 

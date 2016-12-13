@@ -1,12 +1,15 @@
 ---
-title: Clear-Content for FileSystem
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Content for FileSystem
+ms.technology:  powershell
 ---
+
 # Clear-Content for FileSystem
 Deletes the contents of an item, but does not delete the item.  
   

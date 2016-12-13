@@ -1,12 +1,15 @@
 ---
-title: Test-Path for FileSystem
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test Path for FileSystem
+ms.technology:  powershell
 ---
+
 # Test-Path for FileSystem
 Determines whether all elements of a file or directory path exist.  
   

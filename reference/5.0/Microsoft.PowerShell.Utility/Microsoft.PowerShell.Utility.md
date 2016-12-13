@@ -1,19 +1,20 @@
 ---
-title: Microsoft.PowerShell.Utility
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-05
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.Utility
-Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=390787
-Help Version: 5.0.4.2
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Utility
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.Utility
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390787
+Help Version:   5.0.4.2
+Module Guid:   1da87e53-152b-403e-98dc-74d7b4d63d59
 ---
+
 
 # Microsoft.PowerShell.Utility Module
 ## Description

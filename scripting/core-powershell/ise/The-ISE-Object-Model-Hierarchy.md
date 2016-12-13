@@ -1,14 +1,16 @@
 ---
-title:  The ISE Object Model Hierarchy
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The ISE Object Model Hierarchy
+ms.technology:  powershell
+ms.assetid:    bc3300e4-9c17-4f00-a621-c8867126e3b3
 ---
+
 
 # The ISE Object Model Hierarchy
   This topic shows the hierarchy of objects that are part of Windows PowerShell Integrated Scripting Environment (ISE). Windows PowerShell ISE is included in Windows PowerShell 3.0 and in Windows PowerShell 4.0. Click an object to take you to the reference documentation for the class that defines the object.

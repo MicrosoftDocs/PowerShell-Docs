@@ -1,14 +1,16 @@
 ---
-title:  Using Format Commands to Change Output View
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  63515a06-a6f7-4175-a45e-a0537f4f6d05
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Using Format Commands to Change Output View
+ms.technology:  powershell
+ms.assetid:    63515a06-a6f7-4175-a45e-a0537f4f6d05
 ---
+
 
 # Using Format Commands to Change Output View
 Windows PowerShell has a set of cmdlets that allow you to control which properties are displayed for particular objects. The names of all the cmdlets begin with the verb **Format**. They let you select one or more properties to show.
