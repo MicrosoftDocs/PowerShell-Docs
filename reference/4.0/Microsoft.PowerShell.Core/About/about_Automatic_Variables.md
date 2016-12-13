@@ -171,7 +171,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day -ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  
@@ -428,4 +428,5 @@ about_Hash_Tables
 about_Preference_Variables
 
 about_Variables
+
 

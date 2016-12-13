@@ -34,9 +34,9 @@ You can use \#Requires statements in any script. You cannot use them in function
 
 ```
 #Requires -Version <N>[.<n>]   
-#Requires –PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
+#Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
 #Requires -Modules { <Module-Name> | <Hashtable> }   
-#Requires –ShellId <ShellId>  
+#Requires -ShellId <ShellId>  
 #Requires -RunAsAdministrator
 ```
 
@@ -71,7 +71,7 @@ For example:
 
 
 ```
-#Requires –PSSnapin DiskSnapin -Version 1.2
+#Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
 
@@ -107,7 +107,7 @@ For example,
 
 
 ```
-#Requires –ShellId MyLocalShell
+#Requires -ShellId MyLocalShell
 ```
 
 
@@ -129,8 +129,8 @@ The following script has two \#Requires statements. If the requirements specifie
 
 
 ```
-#Requires –Modules PSWorkflow  
- #Requires –Version 3  
+#Requires -Modules PSWorkflow  
+ #Requires -Version 3  
  Param  
 (  
     [parameter(Mandatory=$true)]  
@@ -154,4 +154,5 @@ about_Language_Keywords
 about_PSSnapins
 
 get-PSSnapin
+
 
