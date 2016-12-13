@@ -78,8 +78,8 @@ For information about a particular custom job type, see the documentation of the
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$job = Start-Job -ScriptBlock {Get-Process}
-PS C:\>Receive-Job -Job $job
+PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
+PS C:\> Receive-Job -Job $job
 ```
 
 These commands use the **Job** parameter of **Receive-Job** to get the results of a particular job.
@@ -91,8 +91,8 @@ The second command uses the **Receive-Job** cmdlet to get the results of the job
 It uses the **Job** parameter to specify the job.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$job = Start-Job -ScriptBlock {Get-Process}
-PS C:\>$job | Receive-Job
+PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
+PS C:\> $job | Receive-Job
 ```
 
 This example is the same as Example 2, except that the command uses a pipeline operator (|) to send the job object to **Receive-Job**.
@@ -103,10 +103,10 @@ The first command uses the Invoke-Command cmdlet to start a background job that 
 PS C:\>
 
 
-PS C:\>$j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
+PS C:\> $j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
 
 The second command uses the dot method to display the value of the **ChildJobs** property of the job object in $j. The display shows that the command created three child jobs, one for the job on each remote computer.
-PS C:\>$j.ChildJobs
+PS C:\> $j.ChildJobs
 
 Id   Name     State      HasMoreData   Location       Command
 --   ----     -----      -----------   --------       -------
@@ -115,7 +115,7 @@ Id   Name     State      HasMoreData   Location       Command
 4    Job4     Completed  True          Server03       Get-Service
 
 The third command uses the **Receive-Job** cmdlet to get the results of the Job3 child job that ran on the Server02 computer. It uses the Name parameter to specify the name of the child job and the Keep parameter to save the job results even after they are received.
-PS C:\>Receive-Job -Name Job3 -Keep
+PS C:\> Receive-Job -Name Job3 -Keep
 
 Status  Name        DisplayName                        PSComputerName
 ------  ----------- -----------                        --------------
@@ -129,13 +129,13 @@ These commands get the results of one of several background jobs run on remote c
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command uses the New-PSSession cmdlet to create three user-managed sessions ("PSSessions), one on each of the servers specified in the command. It saves the sessions in the $s variable.
-PS C:\>$s = new-pssession -computername Server01, Server02, Server03
+PS C:\> $s = new-pssession -computername Server01, Server02, Server03
 
 The second command uses the Invoke-Command cmdlet to run a Start-Job command in each of the PSSessions in the $s variable. The job runs a Get-Eventlog command that gets the events in the System log. The command saves the results in the $j variable.Because the command used Invoke-Command to run the Start-Job command, the command actually started three independent jobs on each of the three computers. As a result, the command returned three job objects representing three jobs run locally on three different computers.
-PS C:\>$j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
+PS C:\> $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
 
 The third command displays the three job objects in $j.
-PS C:\>$j
+PS C:\> $j
 
 Id   Name     State      HasMoreData   Location   Command
 --   ----     -----      -----------   --------   -------
@@ -145,7 +145,7 @@ Id   Name     State      HasMoreData   Location   Command
 
 
 The fourth command uses Invoke-Command to run a **Receive-Job** command in each of the sessions in $s and save the results in the $Results variable.Because $j is a local variable, the script block uses the **Using** scope modifier to identify the $j variable. For more information about the **Using** scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
-PS C:\>$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+PS C:\> $results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
 ```
 
 This example shows how to get the results of background jobs run on three remote computers.

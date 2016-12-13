@@ -35,7 +35,7 @@ You can also use this  cmdlet to customize features of the host program user int
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-host
+PS C:\> get-host
 
 Name             : ConsoleHost
 Version          : 2.0
@@ -56,18 +56,18 @@ Later examples examine these properties.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$h = get-host
-PS C:\>$win = $h.ui.rawui.windowsize
-PS C:\>$win.height = 10
-PS C:\>$win.width  = 10
-PS C:\>$h.ui.rawui.set_windowsize($win)
+PS C:\> $h = get-host
+PS C:\> $win = $h.ui.rawui.windowsize
+PS C:\> $win.height = 10
+PS C:\> $win.width  = 10
+PS C:\> $h.ui.rawui.set_windowsize($win)
 ```
 
 This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>(get-host).version | format-list -property *
+PS C:\> (get-host).version | format-list -property *
 Major         : 2
 Minor         : 0
 Build         : -1
@@ -85,7 +85,7 @@ The Format-List command uses the Property parameter with a value of all (*) to d
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(get-host).currentculture | format-list -property *
+PS C:\> (get-host).currentculture | format-list -property *
 
 Parent                         : en
 LCID                           : 1033
@@ -121,7 +121,7 @@ The Format-List command uses the Property parameter with a value of all (*) to d
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>(get-host).currentculture.DateTimeFormat | format-list -property *
+PS C:\> (get-host).currentculture.DateTimeFormat | format-list -property *
 
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
@@ -161,7 +161,7 @@ To display the property values of the object, use the Format-List cmdlet.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>(get-host).ui.rawui | format-list -property *
+PS C:\> (get-host).ui.rawui | format-list -property *
 
 ForegroundColor       : DarkYellow
 BackgroundColor       : DarkBlue
@@ -181,8 +181,8 @@ By changing these values, you can change the appearance of the host program.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>(get-host).ui.rawui.backgroundcolor = "Black"
-PS C:\>cls
+PS C:\> (get-host).ui.rawui.backgroundcolor = "Black"
+PS C:\> cls
 ```
 
 These commands change the background color of the Windows PowerShell console to black.
@@ -193,7 +193,7 @@ To change the background color of the console for all sessions, add the command 
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$host.privatedata.errorbackgroundcolor = "white"
+PS C:\> $host.privatedata.errorbackgroundcolor = "white"
 ```
 
 This command changes the background color of error messages to white.

@@ -54,7 +54,7 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Get drives in the current session
 ```
-PS C:\>Get-PSDriveName       Provider      Root----       --------      ----Alias      AliasC          FileSystem    C:\cert       Certificate   \D          FileSystem    D:\Env        EnvironmentFunction   FunctionHKCU       Registry      HKEY_CURRENT_USERHKLM       Registry      HKEY_LOCAL_MACHINEVariable   VariableX          FileSystem    X:\
+PS C:\> Get-PSDriveName       Provider      Root----       --------      ----Alias      AliasC          FileSystem    C:\cert       Certificate   \D          FileSystem    D:\Env        EnvironmentFunction   FunctionHKCU       Registry      HKEY_CURRENT_USERHKLM       Registry      HKEY_LOCAL_MACHINEVariable   VariableX          FileSystem    X:\
 ```
 
 This command gets the drives in the current session.
@@ -63,7 +63,7 @@ The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the 
 
 ### Example 2: Get a drive on the computer
 ```
-PS C:\>Get-PSDrive DName       Provider      Root----       --------      ----D          FileSystem    D:\
+PS C:\> Get-PSDrive DName       Provider      Root----       --------      ----D          FileSystem    D:\
 ```
 
 This command gets the D: drive on the computer.
@@ -71,7 +71,7 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32
+PS C:\> Get-PSDrive -PSProvider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32
 ```
 
 This command gets all of the drives that are supported by the Windows PowerShell FileSystem provider.
@@ -79,7 +79,7 @@ This includes fixed drives, logical partitions, mapped network drives, and tempo
 
 ### Example 4: Check to see if a drive is in use as a Windows PowerShell drive name
 ```
-PS C:\>if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}else { Write-Host "The X: drive is already in use." }
+PS C:\> if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}else { Write-Host "The X: drive is already in use." }
 ```
 
 This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
@@ -87,7 +87,7 @@ If it is not, the command uses the New-PSDrive cmdlet to create a temporary driv
 
 ### Example 5: Compare the types of files system drives
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystemPS C:\>Get-PSDrive -provider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32PS C:\>net useNew connections will be remembered.Status       Local     Remote                    Network-------------------------------------------------------------------------------X:        \\Server01\Public         Microsoft Windows NetworkPS C:\>[System.IO.DriveInfo]::getdrives()Name               : C:\DriveType          : FixedDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 39831498752TotalFreeSpace     : 39831498752TotalSize          : 79900368896RootDirectory      : C:\VolumeLabel        :Name               : D:\DriveType          : CDRomDriveFormat        :IsReady            : FalseAvailableFreeSpace :TotalFreeSpace     :TotalSize          :RootDirectory      : D:\VolumeLabel        :Name               : X:\DriveType          : NetworkDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 36340559872TotalFreeSpace     : 36340559872TotalSize          : 36413280256RootDirectory      : X:\VolumeLabel        : D_DrivePS C:\>get-wmiobject win32_logicaldiskDeviceID     : C:DriveType    : 3ProviderName :FreeSpace    : 39831252992Size         : 79900368896VolumeName   :DeviceID     : D:DriveType    : 5ProviderName :FreeSpace    :Size         :VolumeName   :DeviceID     : X:DriveType    : 4ProviderName : \\server01\publicFreeSpace    : 36340559872Size         : 36413280256VolumeName   : D_DrivePS C:\>get-wmiobject win32_networkconnectionLocalName                     RemoteName--------------               ------------x:                            \\server01\public
+PS C:\> Get-PSDrive -PSProvider FileSystemPS C:\> Get-PSDrive -provider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32PS C:\> net useNew connections will be remembered.Status       Local     Remote                    Network-------------------------------------------------------------------------------X:        \\Server01\Public         Microsoft Windows NetworkPS C:\> [System.IO.DriveInfo]::getdrives()Name               : C:\DriveType          : FixedDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 39831498752TotalFreeSpace     : 39831498752TotalSize          : 79900368896RootDirectory      : C:\VolumeLabel        :Name               : D:\DriveType          : CDRomDriveFormat        :IsReady            : FalseAvailableFreeSpace :TotalFreeSpace     :TotalSize          :RootDirectory      : D:\VolumeLabel        :Name               : X:\DriveType          : NetworkDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 36340559872TotalFreeSpace     : 36340559872TotalSize          : 36413280256RootDirectory      : X:\VolumeLabel        : D_DrivePS C:\> get-wmiobject win32_logicaldiskDeviceID     : C:DriveType    : 3ProviderName :FreeSpace    : 39831252992Size         : 79900368896VolumeName   :DeviceID     : D:DriveType    : 5ProviderName :FreeSpace    :Size         :VolumeName   :DeviceID     : X:DriveType    : 4ProviderName : \\server01\publicFreeSpace    : 36340559872Size         : 36413280256VolumeName   : D_DrivePS C:\> get-wmiobject win32_networkconnectionLocalName                     RemoteName--------------               ------------x:                            \\server01\public
 ```
 
 This example compares the types of file system drives that are displayed by **Get-PSDrive** to those displayed by using other methods.

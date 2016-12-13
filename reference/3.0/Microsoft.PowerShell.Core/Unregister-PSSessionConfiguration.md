@@ -37,42 +37,42 @@ For more information, see about_Session_Configurations.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>unregister-pssessionconfiguration -name MaintenanceShell
+PS C:\> unregister-pssessionconfiguration -name MaintenanceShell
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>unregister-pssessionconfiguration -name MaintenanceShell -force
+PS C:\> unregister-pssessionconfiguration -name MaintenanceShell -force
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
 The command uses the Force parameter to suppress all user messages and to restart the WinRM service without prompting.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>unregister-pssessionconfiguration -name *
-PS C:\>get-pssessionconfiguration -name * | unregister-pssessionconfiguration
+PS C:\> unregister-pssessionconfiguration -name *
+PS C:\> get-pssessionconfiguration -name * | unregister-pssessionconfiguration
 ```
 
 These commands delete all of the session configurations on the computer.
 The commands have the same effect and can be used interchangeably.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>unregister-pssessionconfiguration -name maintenanceShell -noServiceRestart
-PS C:\>get-pssessionconfiguration -name maintenanceShell
+PS C:\> unregister-pssessionconfiguration -name maintenanceShell -noServiceRestart
+PS C:\> get-pssessionconfiguration -name maintenanceShell
 
 Get-PSSessionConfiguration -name maintenanceShell : No Session Configuration matches criteria "maintenanceShell".
 + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 
-PS C:\>new-pssession -configurationName MaintenanceShell
+PS C:\> new-pssession -configurationName MaintenanceShell
 
 Id Name      ComputerName    State    Configuration         Availability
 -- ----      ------------    -----    -------------         ------------
 1 Session1  localhost       Opened   MaintenanceShell      Available
 
-PS C:\>restart-service winrm
-PS C:\>new-pssession -configurationName MaintenanceShell
+PS C:\> restart-service winrm
+PS C:\> new-pssession -configurationName MaintenanceShell
 
 [localhost] Connecting to remote server failed with the following error message : The WS-Management service cannot process the request. The resource URI (http://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog. The catalog contains the metadata that describes resources, or logical endpoints. For more information, see the about_Remote_Troubleshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException

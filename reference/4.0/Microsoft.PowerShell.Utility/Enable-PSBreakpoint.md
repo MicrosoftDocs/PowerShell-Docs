@@ -47,7 +47,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-psbreakpoint | enable-psbreakpoint
+PS C:\> get-psbreakpoint | enable-psbreakpoint
 ```
 
 This command enables all breakpoints in the current console.
@@ -55,15 +55,15 @@ You can abbreviate the command as "gbp | ebp".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>enable-psbreakpoint -id 0, 1, 5
+PS C:\> enable-psbreakpoint -id 0, 1, 5
 ```
 
 This command enables breakpoints with breakpoint IDs 0, 1, and 5.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -variable Name
-PS C:\>$b | disable-psbreakpoint -passthru
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
+PS C:\> $b | disable-psbreakpoint -passthru
 
 AccessMode : Write
 Variable   : Name
@@ -74,7 +74,7 @@ Id         : 0
 Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1
 
-PS C:\>$b | enable-psbreakpoint -passthru
+PS C:\> $b | enable-psbreakpoint -passthru
 
 AccessMode : Write
 Variable   : Name
@@ -103,8 +103,8 @@ The results are shown in the following sample output.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$b = get-psbreakpoint -id 3, 5
-PS C:\>enable-psbreakpoint -breakpoint $b
+PS C:\> $b = get-psbreakpoint -id 3, 5
+PS C:\> enable-psbreakpoint -breakpoint $b
 ```
 
 These commands enable a set of breakpoints by specifying their breakpoint objects.

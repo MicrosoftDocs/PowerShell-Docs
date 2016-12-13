@@ -41,7 +41,7 @@ To cancel an event subscription, delete the event subscriber by using the Unregi
 
 ### Example 1: Get the event subscriber for a timer event
 ```
-PS C:\>$Timer = New-Object Timers.Timer
+PS C:\> $Timer = New-Object Timers.Timer
 PS C:\> $Timer | Get-Member -Type Event
 PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
 PS C:\> Get-EventSubscriber
@@ -51,7 +51,7 @@ TypeName: System.Timers.Timer
 Name     MemberType Definition
 ----     ---------- ----------
 Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs) 
-Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs) PS C:\>Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs) PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
 PS C:\> Get-EventSubscriber
 SubscriptionId   : 4
 SourceObject     : System.Timers.Timer
@@ -77,15 +77,15 @@ The fourth command uses the **Get-EventSubscriber** cmdlet to get the event subs
 
 ### Example 2: Use the dynamic module in PSEventJob in the Action property of the event subscriber
 ```
-PS C:\>$Timer = New-Object Timers.Timer
+PS C:\> $Timer = New-Object Timers.Timer
 PS C:\> $Timer.Interval = 500
 PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Random -Action { $Random = Get-Random -Min 0 -Max 100 }
 Id  Name           State      HasMoreData  Location  Command
 --  ----           -----      -----------  --------  -------
-3   Timer.Random   NotStarted False                  $Random = Get-Random ... PS C:\>$Timer.Enabled = $True
+3   Timer.Random   NotStarted False                  $Random = Get-Random ... PS C:\> $Timer.Enabled = $True
 PS C:\> $Subscriber = Get-EventSubcriber -SourceIdentifer Timer.Random
 PS C:\> ($Subscriber.action).gettype().fullname
-PSEventJob PS C:\>$Subscriber.action | Format-List -Property *
+PSEventJob PS C:\> $Subscriber.action | Format-List -Property *
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
 StatusMessage : 
@@ -98,8 +98,8 @@ InstanceId    : 88944290-133d-4b44-8752-f901bd8012e2
 Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
-... PS C:\>& $Subscriber.action.module {$Random}
-96 PS C:\>& $Subscriber.action.module {$Random}
+... PS C:\> & $Subscriber.action.module {$Random}
+96 PS C:\> & $Subscriber.action.module {$Random}
 23
 ```
 

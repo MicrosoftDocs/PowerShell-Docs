@@ -39,7 +39,7 @@ Typically, you create a new variable by typing the variable name and its value, 
 
 ### Example 1: Create a variable
 ```
-PS C:\>New-Variable days
+PS C:\> New-Variable days
 ```
 
 This command creates a new variable named days.
@@ -47,21 +47,21 @@ You are not required to type the *Name* parameter.
 
 ### Example 2: Create a variable and assign it a value
 ```
-PS C:\>New-Variable -Name "zipcode" -Value 98033
+PS C:\> New-Variable -Name "zipcode" -Value 98033
 ```
 
 This command creates a variable named zipcode and assigns it the value 98033.
 
 ### Example 3: Create a variable with the ReadOnly option
 ```
-PS C:\>New-Variable -Name Max -Value 256 -Option ReadOnly
-PS C:\>New-Variable -Name max -Value 1024
+PS C:\> New-Variable -Name Max -Value 256 -Option ReadOnly
+PS C:\> New-Variable -Name max -Value 1024
 
 New-Variable : A variable with name 'max' already exists.
 At line:1 char:13
 + new-variable <<<<  -name max -value 1024
 
-PS C:\>New-Variable -Name max -Value 1024 -Force
+PS C:\> New-Variable -Name max -Value 1024 -Force
 ```
 
 This example shows how to use the ReadOnly option of **New-Variable** to protect a variable from being overwritten.
@@ -77,11 +77,11 @@ In this case, the command to create a new variable with the same name succeeds.
 
 ### Example 4: Create a private variable
 ```
-PS C:\>New-Variable -Name counter -Visibility private
+PS C:\> New-Variable -Name counter -Visibility private
 
 #Effect of private variable in a module.
 
-PS C:\>Get-Variable c*
+PS C:\> Get-Variable c*
 
 
 
@@ -90,8 +90,8 @@ Name                           Value
 Culture                        en-US
 ConsoleFileName
 ConfirmPreference              High
-CommandLineParameters          {} PS C:\>$counter
-"Cannot access the variable '$counter' because it is a private variable" PS C:\>Get-Counter
+CommandLineParameters          {} PS C:\> $counter
+"Cannot access the variable '$counter' because it is a private variable" PS C:\> Get-Counter
 Name         Value
 ----         -----
 Counter1     3.1415

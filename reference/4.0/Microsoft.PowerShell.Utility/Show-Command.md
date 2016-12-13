@@ -56,7 +56,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Show-Command
+PS C:\> Show-Command
 ```
 
 This command displays the default view of the **Show-Command** window.
@@ -64,7 +64,7 @@ The command window displays a list of all commands in all modules that are insta
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Show-Command -Name Invoke-Command
+PS C:\> Show-Command -Name Invoke-Command
 ```
 
 This command opens the Invoke-Command cmdlet display in the **Show-Command** window.
@@ -72,7 +72,7 @@ You can use the Invoke-Command display to run **Invoke-Command** commands.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Show-Command -Name Connect-PSSession -Height 700 -Width 1000 -ErrorPopup
+PS C:\> Show-Command -Name Connect-PSSession -Height 700 -Width 1000 -ErrorPopup
 ```
 
 This command opens a **Show-Command** window for the Connect-PSSession cmdlet.
@@ -82,7 +82,7 @@ When you click **Run**, the **Connect-PSSession** command runs, just as would if
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$PSDefaultParameterValues = @{"Show-Command:Height" = 700; "Show-Command:Width" = 1000; "Show-Command:ErrorPopup" = $True}
+PS C:\> $PSDefaultParameterValues = @{"Show-Command:Height" = 700; "Show-Command:Width" = 1000; "Show-Command:ErrorPopup" = $True}
 ```
 
 This command uses the **$PSDefaultParameterValues** automatic variable to set new default values for the **Height**, **Width**, and **ErrorPopup** parameters of the **Show-Command** cmdlet.
@@ -93,7 +93,7 @@ For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Show-Command Get-ChildItem | Out-GridView
+PS C:\> Show-Command Get-ChildItem | Out-GridView
 ```
 
 This command shows how to use the **Show-Command** and Out-GridView cmdlets together.
@@ -104,7 +104,7 @@ The pipeline operator ( | ) sends the output of the **Get-ChildItem** command to
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Show-Command -Passthru
+PS C:\> Show-Command -Passthru
 Get-EventLog -LogName "Windows PowerShell" -Newest 5
 ```
 
@@ -118,16 +118,16 @@ Viewing the command string helps you to learn Windows PowerShell.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
 The first command uses the **PassThru** parameter of the **Show-Command** cmdlet. It saves the results of the command in the $c variable.The command opens a Show-Command window. In this case, we use the **Show-Command** window to create a Get-EventLog command that gets the five newest events in the Windows PowerShell event log. When you click **OK**, **Show-Command** returns the command string, which is saved in the $c variable.
-PS C:\>$c = Show-Command -Passthru
+PS C:\> $c = Show-Command -Passthru
 
 This command displays the command string in the $c variable.
-PS C:\>$c
+PS C:\> $c
 Get-EventLog -LogName "Windows PowerShell" -Newest 5
 
 These commands use the Invoke-Expression cmdlet to run the string in the $c variable. The first command uses the full cmdlet name. The second command uses the "iex" alias for the Invoke-Expression cmdlet. These commands are equivalent and you can use them interchangeably.The output shows the five newest events in the Windows PowerShell event log.
-PS C:\>Invoke-Expression $c
+PS C:\> Invoke-Expression $c
                          
-PS C:\>iex $c
+PS C:\> iex $c
    Index Time          EntryType   Source                 InstanceID Message
    ----- ----          ---------   ------                 ---------- -------
    11520 Dec 16 16:37  Information PowerShell                    400 Engine state is changed from None to Available....
@@ -143,10 +143,10 @@ This strategy lets you see the command and use it.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
 The first command runs the **Show-Command** cmdlet with the **ErrorPopup** parameter. In addition to displaying errors in a window, **ErrorPopup** returns command output to the current command, instead of creating a new command.When you run this command, the **Show-Command** window opens. You can use the window features to set parameter values. To run the command, click the **Run** button in the **Show-Command** window. 
-PS C:\>$p = Show-Command Get-Process -ErrorPopup
+PS C:\> $p = Show-Command Get-Process -ErrorPopup
 
 The second command displays the value in the $p variable.
-PS C:\>$p
+PS C:\> $p
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 -------  ------    -----      ----- -----   ------     -- -----------

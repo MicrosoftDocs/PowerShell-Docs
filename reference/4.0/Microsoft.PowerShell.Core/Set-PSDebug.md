@@ -42,7 +42,7 @@ If the Step parameter is specified, you are prompted before each line of the scr
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-psdebug -trace 2; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -trace 2; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
 DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
@@ -57,7 +57,7 @@ This command sets the trace level to 2, and then runs a script that displays the
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-psdebug -step; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -step; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
 Continue with this operation?
@@ -76,7 +76,7 @@ runs a script that displays the numbers 1, 2, and 3.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-psdebug -off; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -off; foreach ($i in 1..3) {$i}
 1
 2
 3
@@ -86,7 +86,7 @@ This command turns off all debugging features, and then runs a script that displ
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-psdebug -strict; $NewVar
+PS C:\> set-psdebug -strict; $NewVar
 The variable $NewVar cannot be retrieved because it has not been set yet.
 At line:1 char:28
 + Set-PsDebug -strict;$NewVar <<<<

@@ -74,7 +74,7 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Manag
 
 ### Example 1: Close all instances of a Win32 process
 ```
-PS C:\>notepad
+PS C:\> notepad
 PS C:\> $np = Get-WmiObject -Query "select * from win32_process where name='notepad.exe'"
 PS C:\> $np | Remove-WmiObject
 ```
@@ -89,7 +89,7 @@ The third command passes the object in the $np variable to **Remove-WmiObject**,
 
 ### Example 2: Delete a folder
 ```
-PS C:\>$a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
+PS C:\> $a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
 PS C:\> $a | Remove-WMIObject
 ```
 

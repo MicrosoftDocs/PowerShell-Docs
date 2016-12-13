@@ -36,13 +36,13 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>enable-computerrestore -drive "C:\"
+PS C:\> enable-computerrestore -drive "C:\"
 ```
 
 This command enables System Restore on the C: drive of the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>enable-computerrestore -drive "C:\", "D:\"
+PS C:\> enable-computerrestore -drive "C:\", "D:\"
 ```
 
 This command enables System Restore on the C: and D: drives of the local computer.

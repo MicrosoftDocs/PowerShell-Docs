@@ -39,7 +39,7 @@ Connect-WSMan
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$a = New-WSManSessionOption -operationtimeout 30000
+PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>

@@ -127,7 +127,7 @@ Before using **Invoke-Command** to run commands on a remote computer, read about
 
 ### Example 1: Run a script on a server
 ```
-PS C:\>Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
+PS C:\> Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
 ```
 
 This command runs the Test.ps1 script on the Server01 computer.
@@ -137,7 +137,7 @@ The script runs on the remote computer and the results are returned to the local
 
 ### Example 2: Run a command on a remote server
 ```
-PS C:\>Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
+PS C:\> Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
 ```
 
 This command runs a Get-Culture command on the Server01 remote computer.
@@ -150,7 +150,7 @@ It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3: Run a command in a persistent connection
 ```
-PS C:\>$s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
+PS C:\> $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Culture}
 ```
 
@@ -167,7 +167,7 @@ In response, Windows PowerShell runs the command in the session on the Server02 
 
 ### Example 4: Use a session to run a series of commands that share data
 ```
-PS C:\>Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
+PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
 PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p.VirtualMemorySize}
 PS C:\>
 PS C:\> $s = New-PSSession -ComputerName Server02
@@ -198,7 +198,7 @@ In this case, because both commands run in the same session, the commands succee
 
 ### Example 5: Enter a command stored in a local variable
 ```
-PS C:\>$command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
+PS C:\> $command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
 PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
@@ -214,7 +214,7 @@ The second command uses **Invoke-Command** to run the command in $command on the
 
 ### Example 6: Run a single command on several computers
 ```
-PS C:\>Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
+PS C:\> Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
 ```
 
 This example demonstrates how to use **Invoke-Command** to run a single command on multiple computers.
@@ -229,7 +229,7 @@ In this example, the command in the script block gets the events in the Windows 
 
 ### Example 7: Get the version of the host program on multiple computers
 ```
-PS C:\>$version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
+PS C:\> $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
 
 This command gets the version of the Windows PowerShell host program running on 200 remote computers.
@@ -248,7 +248,7 @@ The output includes the name of the computer from which the data originated.
 
 ### Example 8: Run a background job on several remote computers
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01, Server02
+PS C:\> $s = New-PSSession -ComputerName Server01, Server02
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-EventLog system} -AsJob
 
 Id   Name    State      HasMoreData   Location           Command
@@ -298,7 +298,7 @@ It pipes the job object in $j to the Receive-Job cmdlet and stores the results i
 
 ### Example 9: Include local variables in a command run on a remote computer
 ```
-PS C:\>$MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
+PS C:\> $MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
 PS C:\> Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName $Using:MWFO_Log -Newest 10}
 ```
 
@@ -315,14 +315,14 @@ The value of the *LogName* parameter is the $MWFO_Log variable, which is prefixe
 
 ### Example 10: Hide the computer name
 ```
-PS C:\>Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
+PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 
 PSComputerName    Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 --------------    -------  ------    -----      ----- -----   ------     --   -----------
 S1                575      15        45100      40988   200     4.68     1392 PowerShell
 S2                777      14        35100      30988   150     3.68     67   PowerShell
 
-PS C:\>Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell} -HideComputerName
+PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell} -HideComputerName
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 -------  ------    -----      ----- -----   ------     --   -----------
@@ -342,7 +342,7 @@ You can still use the **Format** cmdlets to display the **PsComputerName** prope
 
 ### Example 11: Run a script on all the computers listed in a text file
 ```
-PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
+PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
 ```
 
 This example uses the **Invoke-Command** cmdlet to run the Sample.ps1 script on all of the computers listed in the Servers.txt file.
@@ -354,8 +354,8 @@ This procedure is equivalent to using the *ScriptBlock* parameter to submit the 
 
 ### Example 12: Run a command on a remote computer by using a URI
 ```
-PS C:\>$LiveCred = Get-Credential
-PS C:\>Invoke-Command -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.exchangelabs.com/PowerShell -Credential $LiveCred -Authentication Basic -ScriptBlock {Set-Mailbox Dan -DisplayName "Dan Park"}
+PS C:\> $LiveCred = Get-Credential
+PS C:\> Invoke-Command -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.exchangelabs.com/PowerShell -Credential $LiveCred -Authentication Basic -ScriptBlock {Set-Mailbox Dan -DisplayName "Dan Park"}
 ```
 
 This example shows how to run a command on a remote computer that is identified by a URI.
@@ -375,9 +375,9 @@ The *ScriptBlock* parameter specifies a script block that contains the command.
 
 ### Example 13: Manage URI redirection in a remote command
 ```
-PS C:\>$max = New-PSSessionOption -MaximumRedirection 1
+PS C:\> $max = New-PSSessionOption -MaximumRedirection 1
 
-PS C:\>Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -ScriptBlock {Get-Mailbox dan} -AllowRedirection -SessionOption $max
+PS C:\> Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -ScriptBlock {Get-Mailbox dan} -AllowRedirection -SessionOption $max
 ```
 
 This command shows how to use the *AllowRedirection* and *SessionOption* parameters to manage URI redirection in a remote command.
@@ -393,8 +393,8 @@ As a result, if the remote computer specified by *ConnectionURI* returns a redir
 
 ### Example 14: Use a session option
 ```
-PS C:\>$so = New-PSSessionOption -SkipCACheck
-PS C:\>Invoke-Command -Session $s -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
+PS C:\> $so = New-PSSessionOption -SkipCACheck
+PS C:\> Invoke-Command -Session $s -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a *SessionOption* parameter.
@@ -407,7 +407,7 @@ The value of the *SessionOption* parameter is the **SessionOption** object in th
 
 ### Example 15: Access a network share in a remote session
 ```
-PS C:\>Enable-WSManCredSSP -Delegate Server02
+PS C:\> Enable-WSManCredSSP -Delegate Server02
 PS C:\> Connect-WSMan Server02
 PS C:\> Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $True
 PS C:\> $s = New-PSSession Server02
@@ -437,7 +437,7 @@ The command uses the *Credential* parameter and it uses the *Authentication* par
 
 ### Example 16: Start scripts on many remote computers
 ```
-PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
+PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
 ```
 
 This command runs a script on more than a hundred computers.

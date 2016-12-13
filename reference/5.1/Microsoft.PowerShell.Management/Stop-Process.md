@@ -48,7 +48,7 @@ Also, you are prompted for confirmation unless you specify the *Force* parameter
 
 ### Example 1: Stop all instances of a process
 ```
-PS C:\>Stop-Process -Name "notepad"
+PS C:\> Stop-Process -Name "notepad"
 ```
 
 This command stops all instances of the Notepad process on the computer.
@@ -58,7 +58,7 @@ If you were to use the *Id* parameter to stop the same processes, you would have
 
 ### Example 2: Stop a specific instance of a process
 ```
-PS C:\>Stop-Process -Id 3952 -Confirm -PassThru
+PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
 Confirm
 Are you sure you want to perform this action? 
 Performing operation "Stop-Process" on Target "notepad (3952)". 
@@ -78,7 +78,7 @@ Without this parameter, there would be no display after a **Stop-Process** comma
 
 ### Example 3: Stop a process and detect that it has stopped
 ```
-PS C:\>calc
+PS C:\> calc
 PS C:\> $p = Get-Crocess -Name "calc"
 PS C:\> Stop-Process -InputObject $p
 PS C:\> Get-Process | Where-Object {$_.HasExited}
@@ -101,7 +101,7 @@ To find all the properties, type `Get-Process | Get-Member`.
 
 ### Example 4: Stop a process not owned by the current user
 ```
-PS C:\>Get-Process -Name "lsass" | Stop-Process
+PS C:\> Get-Process -Name "lsass" | Stop-Process
 
 Stop-Process : Cannot stop process 'lsass (596)' because of the following error: Access is denied
 At line:1 char:34

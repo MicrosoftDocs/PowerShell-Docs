@@ -70,13 +70,13 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Change the script that a job runs
 ```
-PS C:\>Get-ScheduledJob -Name "Inventory"
+PS C:\> Get-ScheduledJob -Name "Inventory"
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          Inventory       {1}             C:\Scripts\Get-Inventory.ps1             True
 
 The second command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. A pipeline operator (|) sends the scheduled job to the **Set-ScheduledJob** cmdlet. The **Set-ScheduledJob** cmdlet uses the *Script* parameter to specify a new script, Get-FullInventory.ps1. The command uses the *Passthru* parameter to return the scheduled job after the change.
-PS C:\>Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -Passthru
+PS C:\> Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          Inventory       {1}             C:\Scripts\Get-FullInventory.ps1         True
@@ -91,7 +91,7 @@ This command is not required; it is included only to show the effect of the scri
 
 ### Example 2: Delete the execution history of a scheduled job
 ```
-PS C:\>Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
+PS C:\> Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
 ```
 
 This command deletes the current execution history and saved job results for the BackupArchive scheduled job.
@@ -104,7 +104,7 @@ For more information about the execution history and saved job results of schedu
 
 ### Example 3: Change scheduled jobs on a remote computer
 ```
-PS C:\>Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
+PS C:\> Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
 
 This command changes the initialization script in all scheduled jobs on the Server01 and Server02 computers.

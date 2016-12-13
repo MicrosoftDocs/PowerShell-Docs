@@ -44,7 +44,7 @@ It can also tell whether the path syntax is valid and whether the path leads to 
 
 ### Example 1: Test a path
 ```
-PS C:\>Test-Path -Path "C:\Documents and Settings\DavidC"
+PS C:\> Test-Path -Path "C:\Documents and Settings\DavidC"
 ```
 
 This command checks whether all elements in the path exist, that is, the C: directory, the Documents and Settings directory, and the DavidC directory.
@@ -53,7 +53,7 @@ Otherwise, it returns $True.
 
 ### Example 2: Test the path of a profile
 ```
-PS C:\>Test-Path -Path $profile
+PS C:\> Test-Path -Path $profile
 PS C:\> Test-Path -Path $profile -IsValid
 ```
 
@@ -68,7 +68,7 @@ For more information about automatic variables, see about_Automatic_Variables.
 
 ### Example 3: Check whether there are any files besides a specified type
 ```
-PS C:\>Test-Path -Path "C:\CAD\Commercial Buildings\*" -Exclude *.dwg
+PS C:\> Test-Path -Path "C:\CAD\Commercial Buildings\*" -Exclude *.dwg
 ```
 
 This command checks whether there are any files in the Commercial Buildings directory other than .dwg files.
@@ -84,7 +84,7 @@ In this case, because the directory contains only .dwg files, the result is $Fal
 
 ### Example 4: Check for a file
 ```
-PS C:\>Test-Path -Path $profile -PathType leaf
+PS C:\> Test-Path -Path $profile -PathType leaf
 ```
 
 This command checks whether the path stored in the $profile variable leads to a file.
@@ -92,7 +92,7 @@ In this case, because the Windows PowerShell profile is a .ps1 file, the cmdlet 
 
 ### Example 5: Check paths in the Registry
 ```
-PS C:\>Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell"
+PS C:\> Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell"
 True
 PS C:\> Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy"
 False

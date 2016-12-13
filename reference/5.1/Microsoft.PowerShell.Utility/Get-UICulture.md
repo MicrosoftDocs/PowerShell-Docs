@@ -36,21 +36,21 @@ The culture determines the display format of items such as numbers, currency, an
 
 ### Example 1: Get the UI culture
 ```
-PS C:\>Get-UICulture
+PS C:\> Get-UICulture
 ```
 
 This command gets the current UI culture information.
 
 ### Example 2: Get the UI culture and format the results
 ```
-PS C:\>Get-UICulture | Format-List *
+PS C:\> Get-UICulture | Format-List *
 ```
 
 This command displays the values of all of the properties of the current UI culture in a list.
 
 ### Example 3: Get the value of the Calendar property
 ```
-PS C:\>(Get-UICulture).Calendar
+PS C:\> (Get-UICulture).Calendar
 ```
 
 This command displays the current values for the Calendar property of the current UI culture.
@@ -59,7 +59,7 @@ To see all of the properties, type `Get-UICulture | Get-Member`.
 
 ### Example 4: Get the short date pattern
 ```
-PS C:\>(Get-UICulture).DateTimeFormat.ShortDatePattern
+PS C:\> (Get-UICulture).DateTimeFormat.ShortDatePattern
 ```
 
 This command displays the short date pattern for the current UI culture.

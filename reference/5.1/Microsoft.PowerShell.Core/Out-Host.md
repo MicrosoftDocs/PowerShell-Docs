@@ -34,7 +34,7 @@ Because **Out-Host** is the default, you do not have to specify it unless you wa
 
 ### Example 1: Display system processes one page at a time
 ```
-PS C:\>Get-Process | Out-Host -Paging
+PS C:\> Get-Process | Out-Host -Paging
 ```
 
 This command displays the processes on the system one page at a time.
@@ -47,7 +47,7 @@ That function gets data from the Get-Help cmdlet and then uses the *Paging* para
 
 ### Example 2: Display session history
 ```
-PS C:\>$a = Get-History
+PS C:\> $a = Get-History
 PS C:\> Out-Host -InputObject $a
 ```
 

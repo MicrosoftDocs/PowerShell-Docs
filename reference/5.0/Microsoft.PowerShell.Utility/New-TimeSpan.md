@@ -41,7 +41,7 @@ Without parameters, a **New-Timespan** command returns a timespan object that re
 
 ### Example 1: Create a TimeSpan object for a specified duration
 ```
-PS C:\>$TimeSpan = New-TimeSpan -Hour 1 -Minute 25
+PS C:\> $TimeSpan = New-TimeSpan -Hour 1 -Minute 25
 ```
 
 This command creates a **TimeSpan** object with a duration of 1 hour and 25 minutes and stores it in a variable named $TimeSpan.
@@ -49,7 +49,7 @@ It displays a representation of the **TimeSpan** object.
 
 ### Example 2: Create a TimeSpan object for a time interval
 ```
-PS C:\>new-timespan -end (get-date -year 2010 -month 1 -day 1)
+PS C:\> new-timespan -end (get-date -year 2010 -month 1 -day 1)
 ```
 
 This example creates a new **TimeSpan** object that represents the interval between the time that the command is run and January 1, 2010.
@@ -58,15 +58,15 @@ This command does not require the *Start* parameter, because the default value o
 
 ### Example 3: Get the date 90 days from the current date
 ```
-PS C:\>$90days = New-TimeSpan -Days 90
-PS C:\>(Get-Date) + $90days
+PS C:\> $90days = New-TimeSpan -Days 90
+PS C:\> (Get-Date) + $90days
 ```
 
 These commands return the date that is 90 days after the current date.
 
 ### Example 4: Discover the TimeSpan since a file was updated
 ```
-PS C:\>dir $pshome\en-us\about_remote.help.txt | New-TimeSpan
+PS C:\> dir $pshome\en-us\about_remote.help.txt | New-TimeSpan
 Days              : 321
 Hours             : 21
 Minutes           : 59
@@ -77,9 +77,9 @@ TotalDays         : 321.916230471907
 TotalHours        : 7725.98953132578
 TotalMinutes      : 463559.371879547
 TotalSeconds      : 27813562.3127728
-TotalMilliseconds : 27813562312.7728 PS C:\># Equivalent to:
+TotalMilliseconds : 27813562312.7728 PS C:\> # Equivalent to:
 
-PS C:\>New-TimeSpan -Start (dir $pshome\en-us\about_remote.help.txt).lastwritetime
+PS C:\> New-TimeSpan -Start (dir $pshome\en-us\about_remote.help.txt).lastwritetime
 ```
 
 This command tells you how long it has been since the about_remote.help.txt file was last updated.

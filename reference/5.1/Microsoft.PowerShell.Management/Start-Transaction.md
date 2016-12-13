@@ -52,7 +52,7 @@ For more information, see about_Transactions.
 
 ### Example 1: Start and roll back a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item "ContosoCompany" -UseTransaction
 PS HKCU:\software> New-ItemProperty "ContosoCompany" -Name "MyKey" -Value 123 -UseTransaction
@@ -64,7 +64,7 @@ Because the transaction is rolled back, no changes are made to the registry.
 
 ### Example 2: Start and complete a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item "ContosoCompany" -UseTransaction
 PS HKCU:\software> New-ItemProperty "ContosoCompany" -Name "MyKey" -Value 123 -UseTransaction
@@ -76,7 +76,7 @@ No changes are made to the registry until the **Complete-Transaction** command i
 
 ### Example 3: Use different rollback preferences
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item -Path "NoPath" -Name "ContosoCompany" -UseTransaction
 PS HKCU:\software> New-Item -Path . -Name "ContosoCompany" -UseTransaction
@@ -130,7 +130,7 @@ Because most transactions must be performed without error, the default value of 
 
 ### Example 4: Use this cmdlet while a transaction is in progress
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item "ContosoCompany" -UseTransaction
 PS HKCU:\software> Start-Transaction
@@ -162,7 +162,7 @@ If you were to roll back the transaction at any point, all the transaction would
 
 ### Example 5: Start an independent transaction while one is in progress
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item "ContosoCompany" -UseTransaction
 PS HKCU:\software> Start-Transaction -Independent
@@ -208,7 +208,7 @@ As a result, the registry is changed.
 
 ### Example 6: Run commands that are not part of a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item "ContosoCompany1" -UseTransaction
 PS HKCU:\software> New-Item "ContosoCompany2"
@@ -249,23 +249,23 @@ As a result, the second dir command shows that all of the new items are added to
 
 ### Example 7: Roll back a transaction that does not finish in a specified time
 ```
-PS C:\>Start-Transaction -Timeout 2
+PS C:\> Start-Transaction -Timeout 2
 
 # Wait two minutes...
 
-PS C:\>Get-Transaction
-PS C:\>New-Item HKCU:\Software\ContosoCompany -UseTransaction
-PS C:\>Start-Transaction -Timeout 2
+PS C:\> Get-Transaction
+PS C:\> New-Item HKCU:\Software\ContosoCompany -UseTransaction
+PS C:\> Start-Transaction -Timeout 2
 
 # Wait two minutes...
 
-PS C:\>> Get-Transaction
+PS C:\> > Get-Transaction
 
 RollbackPreference   SubscriberCount   Status
 ------------------   ---------------   -----------
 Error                1                 RolledBack
 
-PS C:\>New-Item HKCU:\Software\ContosoCompany -UseTransaction
+PS C:\> New-Item HKCU:\Software\ContosoCompany -UseTransaction
 
 New-Item : Cannot use transaction. The transaction has been rolled back or has timed out.
 At line:1 char:9

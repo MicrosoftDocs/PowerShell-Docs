@@ -37,14 +37,14 @@ The parameters of this cmdlet let you set the display name, description, startup
 
 ### Example 1: Create a service
 ```
-PS C:\>New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+PS C:\> New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
 ```
 
 This command creates a service named TestService.
 
 ### Example 2: Create a service that includes description, startup type, and display name
 ```
-PS C:\>New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -DependsOn NetLogon -DisplayName "Test Service" -StartupType Manual -Description "This is a test service."
+PS C:\> New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -DependsOn NetLogon -DisplayName "Test Service" -StartupType Manual -Description "This is a test service."
 ```
 
 This command creates a service named TestService.
@@ -52,7 +52,7 @@ It uses the parameters of **New-Service** to specify a description, startup type
 
 ### Example 3: View the new service
 ```
-PS C:\>Get-WmiObject win32_service -Filter "name='testservice'"
+PS C:\> Get-WmiObject win32_service -Filter "name='testservice'"
 ExitCode  : 0
 Name      : testservice
 ProcessId : 0
@@ -66,7 +66,7 @@ This object includes the start mode and the service description.
 
 ### Example 4: Delete a service
 ```
-PS C:\>sc.exe delete TestService
+PS C:\> sc.exe delete TestService
 - or -
 PS C:\> (Get-WmiObject win32_service -Filter "name='TestService'").delete()
 ```

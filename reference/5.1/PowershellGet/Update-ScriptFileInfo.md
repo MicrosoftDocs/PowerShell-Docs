@@ -46,11 +46,11 @@ The **Update-ScriptFileInfo** cmdlet updates information for a script.
 
 ### Example 1: Update the version of a script file
 ```
-PS C:\>New-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "my test script file description goes here"
+PS C:\> New-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "my test script file description goes here"
 PS C:\> Test-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------
-1.0        temp-scriptfile           manikb@microsoft.com my test script file description goes here PS C:\>Update-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 2.0 -PassThru
+1.0        temp-scriptfile           manikb@microsoft.com my test script file description goes here PS C:\> Update-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 2.0 -PassThru
 <#PSScriptInfo
 
 .VERSION 2.0

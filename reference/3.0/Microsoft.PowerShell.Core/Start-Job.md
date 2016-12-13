@@ -65,7 +65,7 @@ For information about using **Start-Job** to start jobs with custom types, see t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-job -scriptblock {get-process}
+PS C:\> start-job -scriptblock {get-process}
 
 Id    Name  State    HasMoreData  Location   Command
 ---   ----  -----    -----------  --------   -------
@@ -77,7 +77,7 @@ The command returns a job object with information about the job.
 The command prompt returns immediately so that you can work in the session while the job runs in the background.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
+PS C:\> $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
 ```
 
 This command uses the Invoke-Command cmdlet and its AsJob parameter to start a background job that runs a "get-service winrm" command on numerous computers.
@@ -89,8 +89,8 @@ The value of the ComputerName parameter is a Get-Content command that gets the t
 The command uses the ScriptBlock parameter to specify the command and the JobName parameter to specify a friendly name for the job.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
-PS C:\>$j | format-list -property *
+PS C:\> $j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
+PS C:\> $j | format-list -property *
 
 HasMoreData   : True
 StatusMessage :
@@ -110,10 +110,10 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-PS C:\>$j.JobStateInfo.state
+PS C:\> $j.JobStateInfo.state
 Completed
-PS C:\>$results = receive-job -job $j
-PS C:\>$results
+PS C:\> $results = receive-job -job $j
+PS C:\> $results
 
 Index Time          Type        Source                EventID Message
 ----- ----          ----        ------                ------- -------
@@ -144,13 +144,13 @@ It stores the results in the $results variable.
 The final command displays the contents of the $results variable.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>start-job -filepath c:\scripts\sample.ps1
+PS C:\> start-job -filepath c:\scripts\sample.ps1
 ```
 
 This command runs the Sample.ps1 script as a background job.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>start-job -name WinRm -scriptblock {get-process winrm}
+PS C:\> start-job -name WinRm -scriptblock {get-process winrm}
 ```
 
 This command runs a background job that gets the WinRM process on the local computer.
@@ -158,7 +158,7 @@ The command uses the ScriptBlock parameter to specify the command that runs in t
 It uses the Name parameter to specify a friendly name for the new job.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
+PS C:\> start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
 ```
 
 This command starts a job that collects a large amount of data and saves it in a .tif file.

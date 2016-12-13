@@ -40,14 +40,14 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get all user-defined snippets
 ```
-PS C:\>Get-IseSnippet
+PS C:\> Get-IseSnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
 
 ### Example 2: Copy all user-defined snippets from remote computers to a shared directory
 ```
-PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
+PS C:\> Invoke-Command -Computer (Get-Content Servers.txt) {Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
 ```
 
 This command copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
@@ -57,7 +57,7 @@ A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which c
 
 ### Example 3: Display the title and text of each snippet on a local computer
 ```
-PS C:\>#Parse-Snippet Function
+PS C:\> #Parse-Snippet Function
 
 function Parse-Snippet
 {
@@ -92,7 +92,7 @@ This example uses the **Get-IseSnippet** and Select-Xml cmdlets to display the t
 
 ### Example 4: Display the title and description of all snippets in the session
 ```
-PS C:\>$PSISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
+PS C:\> $PSISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
 ```
 
 This command displays the title and description of all snippets in the session, including built-in snippets, user-defined snippets, and imported snippets.

@@ -44,14 +44,14 @@ CAUTION: This cmdlet can delete operating system event logs, which might cause a
 
 ### Example 1: Remove an event log from the local computer
 ```
-PS C:\>Remove-EventLog -LogName "MyLog"
+PS C:\> Remove-EventLog -LogName "MyLog"
 ```
 
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
 ### Example 2: Remove an event log from several computers
 ```
-PS C:\>Remove-EventLog -LogName "MyLog", "TestLog" -ComputerName "Server01", "Server02", "localhost"
+PS C:\> Remove-EventLog -LogName "MyLog", "TestLog" -ComputerName "Server01", "Server02", "localhost"
 ```
 
 This command deletes the MyLog and TestLog event logs from the local computer and the Server01 and Server02 remote computers.
@@ -59,7 +59,7 @@ The command also unregisters the event sources for these logs.
 
 ### Example 3: Delete an event source
 ```
-PS C:\>Remove-EventLog -Source "MyApp"
+PS C:\> Remove-EventLog -Source "MyApp"
 ```
 
 This command deletes the MyApp event source from the logs on the local computer.
@@ -68,7 +68,7 @@ When the command finishes, the MyApp program cannot write to any event logs.
 ### Example 4: Remove an event log and confirm the action
 ```
 The first command lists the event logs on the local computer.
-PS C:\>Get-EventLog -List
+PS C:\> Get-EventLog -List
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
 15,168      0 OverwriteAsNeeded      22,923 Application
@@ -82,10 +82,10 @@ Max(K) Retain OverflowAction        Entries Log
 15,168      7 OverwriteAsNeeded          12 ZapLog
 
 The second command deletes the ZapLog event log.
-PS C:\>Remove-EventLog -LogName "ZapLog"
+PS C:\> Remove-EventLog -LogName "ZapLog"
 
 The third command lists the event logs again. The ZapLog event log no longer appears in the list.
-PS C:\>Get-EventLog -List
+PS C:\> Get-EventLog -List
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
 15,168      0 OverwriteAsNeeded      22,923 Application
@@ -102,7 +102,7 @@ These commands show how to list the event logs on a computer and verify that a *
 
 ### Example 5: Remove an event source and confirm the action
 ```
-PS C:\>Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
+PS C:\> Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp
 TestApp
 PS C:\> Remove-Eventlog -Source "MyApp"

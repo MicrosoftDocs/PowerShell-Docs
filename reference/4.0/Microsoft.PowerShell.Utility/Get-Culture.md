@@ -36,15 +36,15 @@ The user-interface (UI) culture determines which text strings are used for user 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-culture
+PS C:\> get-culture
 ```
 
 This command displays information about the regional settings on the computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$c = get-culture
-PS C:\>$c | format-list -property *
+PS C:\> $c = get-culture
+PS C:\> $c | format-list -property *
 
 Parent                         : en
 LCID                           : 1033
@@ -68,7 +68,7 @@ OptionalCalendars              : {System.Globalization.GregorianCalendar, System
 UseUserOverride                : True
 IsReadOnly                     : False
 
-PS C:\>$c.calendar
+PS C:\> $c.calendar
 
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
@@ -78,7 +78,7 @@ Eras                 : {1}
 TwoDigitYearMax      : 2029
 IsReadOnly           : False
 
-PS C:\>$c.datetimeformat
+PS C:\> $c.datetimeformat
 
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
@@ -107,7 +107,7 @@ NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
 MonthGenitiveNames               : {January, February, March, April...}
 
-PS C:\>$c.datetimeformat.firstdayofweek
+PS C:\> $c.datetimeformat.firstdayofweek
 Sunday
 ```
 

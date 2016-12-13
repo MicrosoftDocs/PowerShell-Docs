@@ -57,7 +57,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get job options
 ```
-PS C:\>Get-ScheduledJobOption -Name *Backup*
+PS C:\> Get-ScheduledJobOption -Name *Backup*
 StartIfOnBatteries     : False
 
 StopIfGoingOnBatteries : True
@@ -92,7 +92,7 @@ The results show the job options object that **Get-ScheduledJobOption** returned
 
 ### Example 2: Get all job options
 ```
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOptions
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOptions
 ```
 
 This command gets the job options of all scheduled jobs on the local computer.
@@ -103,7 +103,7 @@ A pipeline operator (|) sends the scheduled jobs to the **Get-ScheduledJobOption
 ### Example 3: Get selected job options
 ```
 The first command gets job options in which the **RunElevated** property has a value of "True" ($true) and the **RunWithoutNetwork** property has a value of "False" ($false) The output shows the job options object that was selected.
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun}
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun}
 StartIfOnBatteries     : False
 
 StopIfGoingOnBatteries : True
@@ -133,7 +133,7 @@ MultipleInstancePolicy : Ignore
 NewJobDefinition       : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 The second command shows how to find to which scheduled job the job options belong. This command uses a pipeline operator (|) to send the selected job options to the ForEach-Object cmdlet which gets the **JobDefinition** property of each options object. The **JobDefinition** property contains the originating job object. The results show that the selected options came from the "DeployPkg" scheduled job.
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun} | ForEach-Object {$_.JobDefinition}
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun} | ForEach-Object {$_.JobDefinition}
 Id         Name            Triggers        Command                                  Enabled
 
 --         ----            --------        -------                                  -------
@@ -145,9 +145,9 @@ This example shows how to find job options object with particular values.
 
 ### Example 4: Use job options to create a new job
 ```
-PS C:\>$Opts = Get-ScheduledJobOption -Name BackupTestLogs
+PS C:\> $Opts = Get-ScheduledJobOption -Name BackupTestLogs
 
-PS C:\>Register-ScheduledJob -Name Archive-Scripts -FilePath \\Srv01\Scripts\ArchiveScripts.ps1 -ScheduledJobOption $Opts
+PS C:\> Register-ScheduledJob -Name Archive-Scripts -FilePath \\Srv01\Scripts\ArchiveScripts.ps1 -ScheduledJobOption $Opts
 ```
 
 This example shows how to use the job options that Get-ScheduledJobOptions gets in a new scheduled job.
@@ -160,7 +160,7 @@ The value of the **ScheduledJobOption** parameter is the options object in the $
 
 ### Example 5: Get job options from a remote computer
 ```
-PS C:\>$o = Invoke-Command -ComputerName Srv01 -ScriptBlock {Get-ScheduledJob -Name DataDemon }
+PS C:\> $o = Invoke-Command -ComputerName Srv01 -ScriptBlock {Get-ScheduledJob -Name DataDemon }
 ```
 
 This command uses the Invoke-Command cmdlet to get the scheduled job options of the DataDemon job on the Srv01 computer.

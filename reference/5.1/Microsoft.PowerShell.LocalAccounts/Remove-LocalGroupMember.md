@@ -45,7 +45,7 @@ The **Remove-LocalGroupMember** cmdlet removes users or groups from a local grou
 
 ### Example 1: Remove members from the Administrators group
 ```
-PS C:\>Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```
 
 This command removes several members from the local Administrators group.

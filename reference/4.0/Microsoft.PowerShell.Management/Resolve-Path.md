@@ -39,7 +39,7 @@ The Resolve-Path cmdlet interprets the wildcard characters in a path and display
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>resolve-path ~
+PS C:\> resolve-path ~
 C:\Users\User01
 ```
 
@@ -47,7 +47,7 @@ This command resolves the path represented by the tilde character (~), which rep
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>resolve-path windows
+PS C:\> resolve-path windows
 C:\Windows
 ```
 
@@ -55,7 +55,7 @@ When run from the root of the C: drive, this command returns the path to the Win
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>"C:\windows\*" | resolve-path
+PS C:\> "C:\windows\*" | resolve-path
 ```
 
 This command returns all of the directories in the C:\Windows directory.
@@ -63,14 +63,14 @@ The command uses a pipeline operator (|) to send a path string to Resolve-Path.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>resolve-path \\Server01\public
+PS C:\> resolve-path \\Server01\public
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>resolve-path c:\prog* -relative
+PS C:\> resolve-path c:\prog* -relative
 ..\Program Files
 ..\Program Files (x86)
 ..\programs.txt
@@ -80,7 +80,7 @@ This command returns relative paths for the directories at the root of the C: dr
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>resolve-path -literalPath test[xml]
+PS C:\> resolve-path -literalPath test[xml]
 ```
 
 This command resolves the path to the Test\[xml\] subdirectory of the current directory.

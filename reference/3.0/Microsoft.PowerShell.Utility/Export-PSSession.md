@@ -42,8 +42,8 @@ When you import commands into the current session, they run implicitly  in the o
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$s = new-pssession -computerName Server01
-PS C:\>export-pssession -session $s -outputModule Server01
+PS C:\> $s = new-pssession -computerName Server01
+PS C:\> export-pssession -session $s -outputModule Server01
 ```
 
 The commands in this example export all commands from a PSSession on the Server01 computer to the Server01 module on the local computer except for commands that have the same names as commands in the current session.
@@ -53,8 +53,8 @@ The first command creates a PSSession on the Server01 computer.
 The second command exports the commands and formatting data from the session into the Server01 module.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$s = new-pssession -ConnectionUri http://exchange.microsoft.com/mailbox -credential exchangeadmin01@hotmail.com -authentication negotiate
-PS C:\>export-pssession -session $r -module exch* -commandname get-*, set-* -formattypename * -outputModule $pshome\Modules\Exchange -encoding ASCII
+PS C:\> $s = new-pssession -ConnectionUri http://exchange.microsoft.com/mailbox -credential exchangeadmin01@hotmail.com -authentication negotiate
+PS C:\> export-pssession -session $r -module exch* -commandname get-*, set-* -formattypename * -outputModule $pshome\Modules\Exchange -encoding ASCII
 ```
 
 These commands export the Get and Set commands from a Microsoft Exchange Server snap-in on a remote computer to an Exchange module in the $pshome\Modules directory on the local computer.
@@ -62,12 +62,12 @@ These commands export the Get and Set commands from a Microsoft Exchange Server 
 Placing the module in the $pshome\Module directory makes it accessible to all users of the computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$s = new-pssession -computerName Server01 -credential Server01\User01
-PS C:\>export-pssession -session $s -outputModule TestCmdlets -type cmdlet -commandname *test* -formattypename *
-PS C:\>remove-pssession $s
-PS C:\>import-module TestCmdlets
-PS C:\>get-help test*
-PS C:\>test-files
+PS C:\> $s = new-pssession -computerName Server01 -credential Server01\User01
+PS C:\> export-pssession -session $s -outputModule TestCmdlets -type cmdlet -commandname *test* -formattypename *
+PS C:\> remove-pssession $s
+PS C:\> import-module TestCmdlets
+PS C:\> get-help test*
+PS C:\> test-files
 ```
 
 These commands export cmdlets from a PSSession on a remote computer and save them in a module on the local computer.
@@ -90,19 +90,19 @@ Although it is not evident, the Test-Files command actually runs in a remote ses
 Windows PowerShell creates a session from information that is stored in the module.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>export-pssession -session $s -AllowClobber -outputModule AllCommands
+PS C:\> export-pssession -session $s -AllowClobber -outputModule AllCommands
 ```
 
 This command exports all commands and all formatting data from the PSSession in the $s variable into the current session.
 The command uses the AllowClobber parameter to include commands with the same names as commands in the current session.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$options = New-PSSessionOption -NoMachineProfile
-PS C:\>$s = new-pssession -computername Server01 -sessionoption $options
-PS C:\>export-pssession -session $s -outputModule Server01
-PS C:\>remove-pssession $s
-PS C:\>new-pssession -computername Server01 -sessionoption $options
-PS C:\>import-module Server01
+PS C:\> $options = New-PSSessionOption -NoMachineProfile
+PS C:\> $s = new-pssession -computername Server01 -sessionoption $options
+PS C:\> export-pssession -session $s -outputModule Server01
+PS C:\> remove-pssession $s
+PS C:\> new-pssession -computername Server01 -sessionoption $options
+PS C:\> import-module Server01
 ```
 
 This example shows how to run the exported commands in a session with particular options when the PSSession from which the commands were exported is closed.

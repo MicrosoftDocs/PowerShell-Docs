@@ -35,13 +35,13 @@ If any files are not in the locations specified in the manifest, the cmdlet also
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>test-ModuleManifest -path $pshome\Modules\TestModule.psd1
+PS C:\> test-ModuleManifest -path $pshome\Modules\TestModule.psd1
 ```
 
 This command tests the TestModule.psd1 module manifest.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>"$pshome\Modules\TestModule.psd1" | test-modulemanifest
+PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
 
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
@@ -71,7 +71,7 @@ This command uses a pipeline operator (|) to send a path string to Test-ModuleMa
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>function Test-ManifestBool ($path)
+PS C:\> function Test-ManifestBool ($path)
 {$a = dir $path | test-modulemanifest -erroraction SilentlyContinue; $?}
 ```
 

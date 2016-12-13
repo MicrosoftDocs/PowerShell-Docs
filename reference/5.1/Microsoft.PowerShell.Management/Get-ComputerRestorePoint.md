@@ -43,21 +43,21 @@ System restore points and the Get-ComputerRestorePoint cmdlet are supported only
 
 ### Example 1: Get all System Restore points from the local computer
 ```
-PS C:\>Get-ComputerRestorePoint
+PS C:\> Get-ComputerRestorePoint
 ```
 
 This command gets all of the System Restore points on the local computer.
 
 ### Example 2: Get all System Restore points with the specified sequence numbers
 ```
-PS C:\>Get-ComputerRestorePoint -RestorePoint 232, 240, 245
+PS C:\> Get-ComputerRestorePoint -RestorePoint 232, 240, 245
 ```
 
 This command gets the System Restore points with sequence numbers 232, 240, and 245.
 
 ### Example 3: Display the status of the most recent system restore operation on the local computer
 ```
-PS C:\>Get-ComputerRestorePoint -LastStatus
+PS C:\> Get-ComputerRestorePoint -LastStatus
 
 The last restore failed.
 ```
@@ -66,7 +66,7 @@ This command displays the status of the most recent System Restore operation on 
 
 ### Example 4: Display all the System Restore points in a table
 ```
-PS C:\>Get-ComputerRestorePoint | Format-Table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -Auto
+PS C:\> Get-ComputerRestorePoint | Format-Table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -Auto
 
 
 
@@ -87,7 +87,7 @@ The Format-Table cmdlet includes a calculated property that uses the **ConvertTo
 
 ### Example 5: Get the sequence number of the most recent System Restore point
 ```
-PS C:\>((Get-ComputerRestorePoint)[-1]).sequencenumber
+PS C:\> ((Get-ComputerRestorePoint)[-1]).sequencenumber
 ```
 
 This command gets the sequence number of the most recently created restore point on the computer.

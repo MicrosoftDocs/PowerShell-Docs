@@ -59,8 +59,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Add a job trigger to a scheduled job
 ```
-PS C:\>$Daily = New-JobTrigger -Daily -At 3AMPS 
-PS C:\>Add-JobTrigger -Trigger $Daily -Name "TestJob"
+PS C:\> $Daily = New-JobTrigger -Daily -At 3AMPS 
+PS C:\> Add-JobTrigger -Trigger $Daily -Name "TestJob"
 ```
 
 These commands add the Daily job trigger to the TestJob scheduled job.
@@ -72,7 +72,7 @@ The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in 
 
 ### Example 2: Add a job trigger to several scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
+PS C:\> Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
 ```
 
 This command adds an AtStartup job trigger to all scheduled jobs on the local computer.
@@ -82,8 +82,8 @@ The value of the *Trigger* parameter is a New-JobTrigger command that creates th
 
 ### Example 3: Copy a job trigger
 ```
-PS C:\>$T = Get-JobTrigger -Name "BackupArchives"
-PS C:\>Add-JobTrigger -Name "TestBackup,BackupLogs" -Trigger $T
+PS C:\> $T = Get-JobTrigger -Name "BackupArchives"
+PS C:\> Add-JobTrigger -Name "TestBackup,BackupLogs" -Trigger $T
 ```
 
 These commands copy the job trigger from the BackupArchives scheduled job and add it to the TestBackup and BackupLogs scheduled jobs.

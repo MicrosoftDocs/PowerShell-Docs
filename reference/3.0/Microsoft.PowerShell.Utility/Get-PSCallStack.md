@@ -33,7 +33,7 @@ To run a Get-PSCallStack command while in the debugger,  type "k" or "get-pscall
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>function my-alias {
+PS C:\> function my-alias {
 $p = $args[0]
 get-alias | where {$_.definition -like "*$p"} | ft definition, name -auto
 }

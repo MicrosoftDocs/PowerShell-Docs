@@ -37,14 +37,14 @@ System restore points and **Restore-Computer** are supported only on client oper
 
 ### Example 1: Restore the local computer
 ```
-PS C:\>Restore-Computer -RestorePoint 253
+PS C:\> Restore-Computer -RestorePoint 253
 ```
 
 This command restores the local computer to the restore point that has sequence number 253.
 
 ### Example 2: Restore the local computer with confirmation
 ```
-PS C:\>Restore-Computer -RestorePoint 255 -Confirm
+PS C:\> Restore-Computer -RestorePoint 255 -Confirm
 Confirm
 Are you sure you want to perform this action? 
 Performing operation "Restore-Computer" . 
@@ -56,7 +56,7 @@ It uses the *Confirm* parameter to prompt the user before actually performing th
 
 ### Example 3: Restore a computer and check the status
 ```
-PS C:\>Get-ComputerRestorePoint
+PS C:\> Get-ComputerRestorePoint
 PS C:\> Restore-Computer -RestorePoint 255
 PS C:\> Get-ComputerRestorePoint -LastStatus
 ```

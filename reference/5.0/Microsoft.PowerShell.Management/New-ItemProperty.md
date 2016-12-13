@@ -47,7 +47,7 @@ To add a property to all objects of a particular type, modify the Types.ps1xml f
 
 ### Example 1: Add a registry entry
 ```
-PS C:\>New-ItemProperty -Path "HKLM:\Software\MyCompany" -Name "NoOfEmployees" -Value 822
+PS C:\> New-ItemProperty -Path "HKLM:\Software\MyCompany" -Name "NoOfEmployees" -Value 822
 PS C:\> Get-ItemProperty "HKLM:\Software\MyCompany" 
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
@@ -68,7 +68,7 @@ The second command uses the Get-ItemProperty cmdlet to see the new registry entr
 
 ### Example 2: Add a registry entry to a key
 ```
-PS C:\>Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
+PS C:\> Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
 ```
 
 This command adds a new registry entry to a registry key.

@@ -46,14 +46,14 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### Example 1: Reload previously loaded formatting files
 ```
-PS C:\>Update-FormatData
+PS C:\> Update-FormatData
 ```
 
 This command reloads the formatting files that it loaded previously.
 
 ### Example 2: Reload formatting files and trace and log formatting files
 ```
-PS C:\>Update-FormatData -AppendPath "trace.format.ps1xml, log.format.ps1xml"
+PS C:\> Update-FormatData -AppendPath "trace.format.ps1xml, log.format.ps1xml"
 ```
 
 This command reloads the formatting files into the session, including two new files, Trace.format.ps1xml and Log.format.ps1xml.
@@ -64,7 +64,7 @@ The *AppendPath* parameter is used because the new files contain formatting data
 
 ### Example 3: Edit a formatting file and reload it
 ```
-PS C:\>Update-FormatData -PrependPath "c:\test\NewFiles.format.ps1xml"
+PS C:\> Update-FormatData -PrependPath "c:\test\NewFiles.format.ps1xml"
 
 # Edit the NewFiles.format.ps1 file.
 

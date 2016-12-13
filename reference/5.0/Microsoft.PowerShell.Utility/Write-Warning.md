@@ -33,15 +33,15 @@ The response to the warning depends on the value of the user's $WarningPreferenc
 
 ### Example 1: Write a warning message
 ```
-PS C:\>Write-Warning "This is only a test warning."
+PS C:\> Write-Warning "This is only a test warning."
 ```
 
 This command displays the message "WARNING: This is only a test warning."
 
 ### Example 2: Pass a string to Write-Warning
 ```
-PS C:\>$w = "This is only a test warning."
-PS C:\>$w | Write-Warning
+PS C:\> $w = "This is only a test warning."
+PS C:\> $w | Write-Warning
 ```
 
 This command shows that you can use a pipeline operator (|) to send a string to **Write-Warning**.
@@ -49,13 +49,13 @@ You can save the string in a variable, as shown in this command, or pipe the str
 
 ### Example 3: Set the $WarningPreference variable and write a warning
 ```
-PS C:\>$warningpreference
-Continue PS C:\>Write-Warning "This is only a test warning."
-This is only a test warning. PS C:\>$warningpreference = "SilentlyContinue"
-PS C:\>Write-Warning "This is only a test warning."
+PS C:\> $warningpreference
+Continue PS C:\> Write-Warning "This is only a test warning."
+This is only a test warning. PS C:\> $warningpreference = "SilentlyContinue"
+PS C:\> Write-Warning "This is only a test warning."
 PS C:\>
-PS C:\>$warningpreference = "Stop"
-PS C:\>Write-Warning "This is only a test warning."
+PS C:\> $warningpreference = "Stop"
+PS C:\> Write-Warning "This is only a test warning."
 WARNING: This is only a test message. 
 Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop. 
 At line:1 char:14
@@ -75,7 +75,7 @@ For more information about the $WarningPreference variable, see about_Preference
 
 ### Example 4: Set the WarningAction parameter and write a warning
 ```
-PS C:\>Write-Warning "This is only a test warning." -WarningAction Inquire
+PS C:\> Write-Warning "This is only a test warning." -WarningAction Inquire
 WARNING: This is only a test warning. 
 Confirm
 Continue with this operation? 

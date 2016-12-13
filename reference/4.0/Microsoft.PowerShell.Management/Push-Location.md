@@ -45,14 +45,14 @@ For more information about location stacks, see the Notes.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>push-location C:\Windows
+PS C:\> push-location C:\Windows
 ```
 
 This command pushes the current location onto the default location stack and then changes the location to C:\Windows.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>push-location HKLM:\Software\Policies -stackname RegFunction
+PS C:\> push-location HKLM:\Software\Policies -stackname RegFunction
 ```
 
 This command pushes the current location onto the RegFunction stack and changes the current location to the HKLM:\Software\Policies location.
@@ -60,7 +60,7 @@ You can use the Location cmdlets in any Windows PowerShell drive (PSDrive).
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>push-location
+PS C:\> push-location
 ```
 
 This command pushes the current location onto the default stack.
@@ -68,7 +68,7 @@ It does not change the location.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>push-location ~ -stackname Stack2
+PS C:\> push-location ~ -stackname Stack2
 PS C:\Users\User01> pop-location -stackname Stack2
 PS C:\>
 ```

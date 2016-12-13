@@ -39,14 +39,14 @@ Clear-Content is similar to Clear-Item, but it works on items with contents, ins
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-content ..\SmpUsers\*\init.txt
+PS C:\> clear-content ..\SmpUsers\*\init.txt
 ```
 
 This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
 The files are not deleted, but they are empty.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-content -path * -filter *.log -force
+PS C:\> clear-content -path * -filter *.log -force
 ```
 
 This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.
@@ -55,7 +55,7 @@ The Force parameter makes the command effective on read-only files.
 Using a filter to restrict the command to files with the ".log" file name extension instead of specifying "*.log" in the path makes the operation faster.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-content c:\Temp\* -Include Smp* -Exclude *2* -whatif
+PS C:\> clear-content c:\Temp\* -Include Smp* -Exclude *2* -whatif
 ```
 
 This command requests a prediction of what would happen if you submitted the command: "clear-content c:\temp\* -include smp* -exclude *2*".

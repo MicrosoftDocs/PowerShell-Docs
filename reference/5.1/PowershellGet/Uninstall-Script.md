@@ -39,7 +39,7 @@ The **Uninstall-Script** cmdlet uninstalls the specified script files from the o
 
 ### Example 1: Uninstall a script file
 ```
-PS C:\>Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
+PS C:\> Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
 ```
 
 This command uninstalls version 2.5 of the script file named MyScript.

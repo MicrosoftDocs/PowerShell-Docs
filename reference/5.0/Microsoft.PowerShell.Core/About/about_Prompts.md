@@ -62,7 +62,7 @@ For example:
 
 
 ```
-PS C:\>Get-Command Prompt  
+PS C:\> Get-Command Prompt  
   
 CommandType     Name                                               ModuleName  
 -----------     ----                                               ----------  
@@ -76,7 +76,7 @@ For example:
 
 
 ```
-PS C:\>(Get-Command Prompt).ScriptBlock  
+PS C:\> (Get-Command Prompt).ScriptBlock  
   
 "PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "  
 # .Link  

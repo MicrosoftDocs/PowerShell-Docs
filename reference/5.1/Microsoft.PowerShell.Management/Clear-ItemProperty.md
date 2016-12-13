@@ -43,7 +43,7 @@ You can use this cmdlet to delete the data from a registry value.
 
 ### Example 1: Clear the value of registry key
 ```
-PS C:\>Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
+PS C:\> Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
 ```
 
 This command clear the data in the Options registry value in the MyApp subkey of HKEY_LOCAL_MACHINE\Software\MyCompany.

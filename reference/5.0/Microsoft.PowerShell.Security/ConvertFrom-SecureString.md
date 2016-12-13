@@ -44,7 +44,7 @@ If no key is specified, the Windows Data Protection API (DPAPI) is used to encry
 
 ### Example 1: Create a secure string
 ```
-PS C:\>$SecureString = Read-Host -AsSecureString
+PS C:\> $SecureString = Read-Host -AsSecureString
 ```
 
 This command creates a secure string from characters that you type at the command prompt.
@@ -53,7 +53,7 @@ An asterisk (*) is displayed to represent each character that you type.
 
 ### Example 2: Convert a secure string to an encrypted standard string
 ```
-PS C:\>$StandardString = ConvertFrom-SecureString $SecureString
+PS C:\> $StandardString = ConvertFrom-SecureString $SecureString
 ```
 
 This command converts the secure string in the $SecureString variable to an encrypted standard string.
@@ -61,8 +61,8 @@ The resulting encrypted standard string is stored in the $StandardString variabl
 
 ### Example 3: Convert a secure string to an encrypted standard string with a 192-bit key
 ```
-PS C:\>$Key = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
-PS C:\>$StandardString = ConvertFrom-SecureString $SecureString -Key $Key
+PS C:\> $Key = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
+PS C:\> $StandardString = ConvertFrom-SecureString $SecureString -Key $Key
 ```
 
 These commands use the AES algorithm to convert the secure string stored in the $SecureString variable to an encrypted standard string with a 192-bit key.

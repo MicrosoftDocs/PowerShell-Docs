@@ -56,7 +56,7 @@ For an example of a certificate that would work for document encryption, see Exa
 
 ### Example 1: Create a certificate for encrypting content
 ```
-PS C:\>[Version]
+PS C:\> [Version]
 Signature = "$Windows NT$"
 
 [Strings]
@@ -79,7 +79,7 @@ ValidityPeriodUnits = "1000"
 %szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_DOCUMENT_ENCRYPTION%"
 
 After you have created your certificate file, run the following command to add the certificate file to the certificate store.Now you are ready to encrypt and decrypt content with the next two examples.
-PS C:\>Certreq -new DocumentEncryption.inf DocumentEncryption.cer
+PS C:\> Certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
 Before you can run the **Protect-CmsMessage** cmdlet, you must create an encryption certificate.
@@ -87,7 +87,7 @@ Using the following text, change the name in the Subject line to your name, emai
 
 ### Example 2: Encrypt a message sent by email
 ```
-PS C:\>$Protected = "Hello World" | Protect-CmsMessage -To "*youralias@emailaddress.com*"
+PS C:\> $Protected = "Hello World" | Protect-CmsMessage -To "*youralias@emailaddress.com*"
 ```
 
 In the following example, you encrypt a message, Hello World, by saving the message in a variable, and then piping it to the **Protect-CmsMessage** cmdlet.
@@ -95,7 +95,7 @@ The *To* parameter uses the value of the Subject line in the certificate.
 
 ### Example 3: View document encryption certificates
 ```
-PS C:\>58 [Cert:\currentuser\my]
+PS C:\> 58 [Cert:\currentuser\my]
 >> Get-ChildItem -DocumentEncryptionCert
 ```
 

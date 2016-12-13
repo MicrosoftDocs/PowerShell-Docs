@@ -49,7 +49,7 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-wsmaninstance wmicimv2/win32_service -selectorset @{name="winrm"} -computername server01
+PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="winrm"} -computername server01
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -96,7 +96,7 @@ This command returns all of the information that Windows Management Instrumentat
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-wsmaninstance wmicimv2/win32_service -selectorset @{name="spooler"} -fragment status -computername server01
+PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="spooler"} -fragment status -computername server01
 XmlFragment=OK
 ```
 
@@ -104,7 +104,7 @@ This command returns only the status of the Spooler service on the remote server
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-wsmaninstance -enumerate wmicimv2/win32_service -returntype epr
+PS C:\> get-wsmaninstance -enumerate wmicimv2/win32_service -returntype epr
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -144,7 +144,7 @@ This command returns endpoint references that correspond to all the services on 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-WSManInstance -Enumerate wmicimv2/* -filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -computername server01
+PS C:\> Get-WSManInstance -Enumerate wmicimv2/* -filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -computername server01
 
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
@@ -187,7 +187,7 @@ This command lists all of the services that meet the following criteria on the r
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"}
+PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"}
 
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
@@ -206,7 +206,7 @@ This command lists the WS-Management listener configuration on the local compute
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"} -computername server01
+PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"} -computername server01
 
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
@@ -225,7 +225,7 @@ This command lists the WS-Management listener configuration on the remote server
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-WSManInstance -Enumerate -Dialect association -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
+PS C:\> Get-WSManInstance -Enumerate -Dialect association -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
 p                         : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
@@ -353,7 +353,7 @@ Important: You must enclose the filter in quotation marks, as shown in the examp
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-WSManInstance -Enumerate -Dialect association -Associations -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
+PS C:\> Get-WSManInstance -Enumerate -Dialect association -Associations -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 ```
 
 This command gets association instances that are related to the specified instance (winrm).

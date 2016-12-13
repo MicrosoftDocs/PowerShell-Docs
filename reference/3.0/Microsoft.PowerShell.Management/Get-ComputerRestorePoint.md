@@ -40,26 +40,26 @@ System restore points and the Get-ComputerRestorePoint cmdlet are supported only
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-computerrestorepoint
+PS C:\> get-computerrestorepoint
 ```
 
 This command gets all of the restore points on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-computerrestorepoint -restorepoint 232, 240, 245
+PS C:\> get-computerrestorepoint -restorepoint 232, 240, 245
 ```
 
 This command gets the restore points with sequence numbers 232, 240, and 245.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-computerrestorepoint -laststatus
+PS C:\> get-computerrestorepoint -laststatus
 The last restore failed.
 ```
 
 This command displays the status of the most recent system restore operation on the local computer.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-computerrestorepoint | format-table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -auto
+PS C:\> get-computerrestorepoint | format-table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -auto
 
 SequenceNumber Date                  Description
 -------------- ----                  -----------
@@ -74,7 +74,7 @@ This command displays the restore points in a table for easy reading.
 The Format-Table command includes a calculated property that uses the ConvertToDateTime method to convert the value of the CreationTime property from WMI format to a DateTime object.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>((get-computerrestorepoint)[-1]).sequencenumber
+PS C:\> ((get-computerrestorepoint)[-1]).sequencenumber
 ```
 
 This command gets the sequence number of the most recently created restore point on the computer.

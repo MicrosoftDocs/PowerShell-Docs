@@ -61,7 +61,7 @@ For example, you can add a new registry entry to a key and establish or change i
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-itemproperty -path c:\GroupFiles\final.doc -name IsReadOnly -value $true
+PS C:\> set-itemproperty -path c:\GroupFiles\final.doc -name IsReadOnly -value $true
 ```
 
 This command sets the value of the IsReadOnly property of the final.doc file to true.
@@ -79,8 +79,8 @@ For example, "final.doc | get-member".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 823
-PS C:\>get-itemproperty -path HKLM:\Software\MyCompany
+PS C:\> set-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 823
+PS C:\> get-itemproperty -path HKLM:\Software\MyCompany
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
@@ -89,8 +89,8 @@ PSDrive       : HKLM
 PSProvider    : Microsoft.PowerShell.Core\Registry
 NoOfLocations : 2
 NoOfEmployees : 823
-PS C:\>set-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 824
-PS C:\>get-itemproperty -path HKLM:\Software\MyCompany
+PS C:\> set-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 824
+PS C:\> get-itemproperty -path HKLM:\Software\MyCompany
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : mycompany
@@ -121,7 +121,7 @@ For more information about using Windows PowerShell to manage the registry, type
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-childitem weekly.txt | set-itemproperty -name IsReadOnly -value $true
+PS C:\> get-childitem weekly.txt | set-itemproperty -name IsReadOnly -value $true
 ```
 
 These commands show how to use a pipeline operator (|) to send an item to Set-ItemProperty.

@@ -43,8 +43,8 @@ If a OneGet provider is not specified during registration, PowerShellGet attempt
 
 ### Example 1: Register a repository
 ```
-PS C:\>Register-PSRepository -Name "myNuGetSource" -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -PublishLocation "https://www.myget.org/F/powershellgetdemo/api/v2/Packages" -InstallationPolicy Trusted
-PS C:\>Get-PSRepository
+PS C:\> Register-PSRepository -Name "myNuGetSource" -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -PublishLocation "https://www.myget.org/F/powershellgetdemo/api/v2/Packages" -InstallationPolicy Trusted
+PS C:\> Get-PSRepository
 Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
 ----                                     --------------                                     --------------       ------------------
 PSGallery                                http://go.micro...                                 NuGet                Untrusted

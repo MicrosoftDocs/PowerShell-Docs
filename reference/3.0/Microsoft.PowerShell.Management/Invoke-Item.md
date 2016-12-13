@@ -39,14 +39,14 @@ The default action depends on the type of item and is determined by the Windows 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>invoke-item C:\Test\aliasApr04.doc
+PS C:\> invoke-item C:\Test\aliasApr04.doc
 ```
 
 This command opens the file aliasApr04.doc in Microsoft Office Word.
 In this case, opening in Word is the default action for .doc files.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
+PS C:\> invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
 ```
 
 This command opens all of the Microsoft Office Excel spreadsheets in the C:\Documents and Settings\Lister\My Documents folder.

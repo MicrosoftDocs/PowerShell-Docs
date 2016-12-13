@@ -39,7 +39,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Convert a Calendar object to a JSON string
 ```
-PS C:\>(Get-UICulture).Calendar | ConvertTo-Json
+PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 {
     "MinSupportedDateTime":  "\/Date(-62135568000000)\/", 
     "MaxSupportedDateTime":  "\/Date(253402300799999)\/", 
@@ -57,7 +57,7 @@ This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar o
 
 ### Example 2: Compress the JSON output
 ```
-PS C:\>@{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
+PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
@@ -66,7 +66,7 @@ The compression affects only the appearance of the string, not its validity.
 
 ### Example 3: Convert an object to a JSON string and JSON object
 ```
-PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 {
 
     "DisplayHint":  2,  
@@ -128,7 +128,7 @@ The second command uses **ConvertFrom-Json** to convert the JSON string to a JSO
 
 ### Example 4: Convert a PowerShell Help file to JSON format
 ```
-PS C:\>$JsonSecurityHelp = Get-Content $Pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
+PS C:\> $JsonSecurityHelp = Get-Content $Pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a Windows PowerShell Help file from XML format to JSON format.

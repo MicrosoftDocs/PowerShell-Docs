@@ -45,8 +45,8 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ### Example 1: Register a PowerShell engine event on remote computers
 ```
-PS C:\>$S = New-PSSession -ComputerName "Server01, Server02"
-PS C:\>Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+PS C:\> $S = New-PSSession -ComputerName "Server01, Server02"
+PS C:\> Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
 ```
 
 This command registers for a Windows PowerShell engine event on two remote computers.
@@ -60,7 +60,7 @@ It uses the *Forward* parameter to forward the events from the remote session to
 
 ### Example 2: Take a specified action when the Exiting event occurs
 ```
-PS C:\>Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
+PS C:\> Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
      Get-History | Export-Clixml $Home\history.clixml
 }
 ```

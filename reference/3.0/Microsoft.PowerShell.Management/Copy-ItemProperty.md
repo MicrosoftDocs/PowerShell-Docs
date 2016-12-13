@@ -40,7 +40,7 @@ For example, you can use Copy-ItemProperty to copy one or more registry entries 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>copy-itemproperty -path MyApplication -destination HKLM:\Software\MyApplicationRev2 -name MyProperty
+PS C:\> copy-itemproperty -path MyApplication -destination HKLM:\Software\MyApplicationRev2 -name MyProperty
 ```
 
 This command copies the property named MyProperty from the MyApplication registry key to the MyApplicationRev2 registry key.

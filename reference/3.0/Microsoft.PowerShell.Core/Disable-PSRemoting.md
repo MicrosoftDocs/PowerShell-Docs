@@ -62,14 +62,14 @@ This command prevents remote access all session configurations on the computer w
 C:\PS>Disable-PSRemoting -Force
 
 
-[ADMIN] PS C:\>New-PSSession -ComputerName localhost
+[ADMIN] PS C:\> New-PSSession -ComputerName localhost
 
 
 Id Name       ComputerName    State    Configuration         Availability
 -- ----       ------------    -----    -------------         ------------
 1 Session1   Server02...     Opened   Microsoft.PowerShell     Available
 # On Server02 remote computer:
-PS C:\>New-PSSession -ComputerName Server01
+PS C:\> New-PSSession -ComputerName Server01
 
 [SERVER01] Connecting to remote server failed with the following error
 message : Access is denied. For more information, see the about_Remote_Troubleshooting Help topic.
@@ -92,7 +92,7 @@ Because remote access is disabled, the command fails.
 ```
 C:\PS>Disable-PSRemoting -force
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                          Permission
 ----                          ----------
@@ -103,11 +103,11 @@ microsoft.ServerManager       NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Adminis
 WithProfile                   NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 
 
-[ADMIN] PS C:\>Enable-PSRemoting -Force
+[ADMIN] PS C:\> Enable-PSRemoting -Force
 WinRM already is set up to receive requests on this machine.
 WinRM already is set up for remote management on this machine.
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                          Permission
 ----                          ----------
@@ -139,7 +139,7 @@ The results show that the "AccessDenied" security descriptors have been removed 
 ```
 C:\PS>Register-PSSessionConfiguration -Name Test -FilePath .\TestEndpoint.pssc -ShowSecurityDescriptorUI
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
 
 Name                          Permission
 ----                          ----------
@@ -147,10 +147,10 @@ microsoft.powershell          BUILTIN\Administrators AccessAllowed
 Test                          NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed,
 DOMAIN01\User01 AccessAllowed
 
-[ADMIN] PS C:\>Disable-PSRemoting -Force
+[ADMIN] PS C:\> Disable-PSRemoting -Force
 
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
 
 Name                          Permission
 ----                          ----------
@@ -160,7 +160,7 @@ BUILTIN\Administrators AccessAllowed, DOMAIN01\User01 AccessAllowed
 
 # Domain01\User01
 
-PS C:\>New-PSSession -ComputerName Server01 -ConfigurationName Test
+PS C:\> New-PSSession -ComputerName Server01 -ConfigurationName Test
 [Server01] Connecting to remote server failed with the following error message : Access is denied. For more information, see the about_Rem
 ote_Troubleshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
@@ -188,7 +188,7 @@ The fifth command shows that the **Disable-PSRemoting** command prevents even th
 C:\PS>Disable-PSRemoting -Force
 
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                          Permission
 ----                          ----------
@@ -198,9 +198,9 @@ microsoft.powershell32        NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Adminis
 microsoft.ServerManager       NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 WithProfile                   NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 
-[ADMIN] PS C:\>Set-PSSessionConfiguration -Name Microsoft.ServerManager -AccessMode Remote -Force
+[ADMIN] PS C:\> Set-PSSessionConfiguration -Name Microsoft.ServerManager -AccessMode Remote -Force
 
-[ADMIN] PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                          Permission
 ----                          ----------

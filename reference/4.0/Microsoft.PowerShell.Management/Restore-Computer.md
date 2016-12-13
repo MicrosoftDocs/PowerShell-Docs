@@ -37,7 +37,7 @@ System restore points and the Restore-Computer cmdlet are supported only on clie
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>restore-computer -RestorePoint 253
+PS C:\> restore-computer -RestorePoint 253
 ```
 
 This command restores the local computer to the restore point with sequence number 253.
@@ -46,7 +46,7 @@ Because the RestorePoint parameter is positional, you can omit the parameter nam
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>restore-computer 255 -confirm
+PS C:\> restore-computer 255 -confirm
 
 Confirm
 Are you sure you want to perform this action?
@@ -59,9 +59,9 @@ It uses the Confirm parameter to prompt the user before actually performing the 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-ComputerRestorePoint
-PS C:\>Restore-Computer -RestorePoint 255
-PS C:\>Get-ComputerRestorePoint -LastStatus
+PS C:\> Get-ComputerRestorePoint
+PS C:\> Restore-Computer -RestorePoint 255
+PS C:\> Get-ComputerRestorePoint -LastStatus
 ```
 
 These commands run a system restore and then check its status.

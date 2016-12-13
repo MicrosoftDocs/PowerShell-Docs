@@ -45,15 +45,15 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### Example 1: Remove all breakpoints
 ```
-PS C:\>Get-PSBreakpoint | Remove-PSBreakpoint
+PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 This command deletes all of the breakpoints in the current console.
 
 ### Example 2: Remove a specified breakpoint
 ```
-PS C:\>$B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
-PS C:\>$B | Remove-PSBreakpoint
+PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
+PS C:\> $B | Remove-PSBreakpoint
 ```
 
 This command deletes a breakpoint.
@@ -69,14 +69,14 @@ Also, the **Get-PSBreakpoint** cmdlet does not return this breakpoint.
 
 ### Example 3: Remove a breakpoint by ID
 ```
-PS C:\>Remove-PSBreakpoint -Id 2
+PS C:\> Remove-PSBreakpoint -Id 2
 ```
 
 This command deletes the breakpoint with breakpoint ID 2.
 
 ### Example 4: Use a function to remove all breakpoints
 ```
-PS C:\>function del-psb { get-psbreakpoint | remove-psbreakpoint }
+PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```
 
 This simple function deletes all of the breakpoints in the current console.

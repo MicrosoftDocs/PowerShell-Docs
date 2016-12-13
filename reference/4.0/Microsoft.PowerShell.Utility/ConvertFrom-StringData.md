@@ -43,12 +43,12 @@ Unescaped backslash characters, such as those that are commonly used in file pat
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$here = @'
+PS C:\> $here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
 Msg3 = The specified variable does not exist.
 '@
-PS C:\>convertfrom-stringdata -stringdata $here
+PS C:\> convertfrom-stringdata -stringdata $here
 
 Name                           Value
 ----                           -----
@@ -66,18 +66,18 @@ The second command uses the ConvertFrom-StringData cmdlet to convert the here-st
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$p = @"
+PS C:\> $p = @"
 ISE = Windows PowerShell Integrated Scripting Environment
 "@
-PS C:\>$p | get-member
+PS C:\> $p | get-member
 TypeName: System.String
 
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
 ...
-PS C:\>$hash = convertfrom-stringdata -stringdata $p
-PS C:\>$hash | get-member
+PS C:\> $hash = convertfrom-stringdata -stringdata $p
+PS C:\> $hash | get-member
 TypeName: System.Collections.Hashtable
 
 Name              MemberType            Definition
@@ -101,7 +101,7 @@ The result shows that the content of the $hash variable is a hash table (System.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>convertfrom-stringdata -stringdata @'
+PS C:\> convertfrom-stringdata -stringdata @'
 Name = Disks.ps1
 
 # Category is optional.
@@ -127,10 +127,10 @@ Comments are valid in strings, provided that the comment is on a different line 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = convertfrom-stringdata -stringdata "Top = Red `n Bottom = Blue"
-PS C:\>"Top = " + $a.Top
+PS C:\> $a = convertfrom-stringdata -stringdata "Top = Red `n Bottom = Blue"
+PS C:\> "Top = " + $a.Top
 Top = Red
-PS C:\>"Bottom = " + $a.Bottom
+PS C:\> "Bottom = " + $a.Bottom
 Bottom = Blue
 ```
 
@@ -143,15 +143,15 @@ The remaining commands display the output.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$TextMsgs = DATA {
+PS C:\> $TextMsgs = DATA {
 ConvertFrom-StringData @'
 Text001 = The $Notebook variable contains the name of the user's system notebook.
 Text002 = The $MyNotebook variable contains the name of the user's private notebook.
 '@
 }
-PS C:\>$TextMsgs.Text001
+PS C:\> $TextMsgs.Text001
 The $Notebook variable contains the name of the user's system notebook.
-PS C:\>$TextMsgs.Text002
+PS C:\> $TextMsgs.Text002
 The $MyNotebook variable contains the name of the user's private notebook.
 ```
 
@@ -163,13 +163,13 @@ Variables are not permitted in the DATA section.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$here = @'
+PS C:\> $here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
 Msg3 = The specified variable does not exist.
 '@
-PS C:\>$hash = $here | convertfrom-stringdata
-PS C:\>$hash
+PS C:\> $hash = $here | convertfrom-stringdata
+PS C:\> $hash
 
 Name     Value
 ----     -----
@@ -188,7 +188,7 @@ The final command displays the contents of the $hash variable.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>ConvertFrom-StringData @"
+PS C:\> ConvertFrom-StringData @"
 Vincentio = Heaven doth with us as we with torches do,\nNot light them for themselves; for if our virtues\nDid not go forth of us, 'twere all alike\nAs if we had them not.
 Angelo = Let there be some more test made of my metal,\nBefore so noble and so great a figure\nBe stamp'd upon it.
 "@ | Format-List
@@ -211,7 +211,7 @@ In this example, the escape sequence **\n** is used to create new lines within a
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
+PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
 Name                           Value                                                                                                                                     
 ----                           -----                                                                                                                                     
 Message                        Look in c:\Windows\System32
