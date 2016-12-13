@@ -37,8 +37,8 @@ or ISE.
 PowerShell_Ise[.exe]
 PowerShell_ISE[.exe]
 ISE[.exe]
-[–File]<FilePath[]> [–NoProfile] [–MTA]
-–Help | ? | -? | /?
+[-File]<FilePath[]> [-NoProfile] [-MTA]
+-Help | ? | -? | /?
 Displays the syntax and describes the command-line switches.
 
 # PARAMETERS

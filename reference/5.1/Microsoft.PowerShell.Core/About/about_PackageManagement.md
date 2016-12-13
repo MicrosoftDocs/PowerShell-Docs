@@ -82,7 +82,7 @@ if the specified provider is not available, PackageManagement prompts you to boo
 Chocolatey provider is not already installed, PackageManagement bootstrapping installs
 the provider.
 
-Find-Package –Provider Chocolatey <PackageName>
+Find-Package -Provider Chocolatey <PackageName>
 
 If the Chocolatey provider is not already installed, when you run the
 preceding command, you are prompted to install it.

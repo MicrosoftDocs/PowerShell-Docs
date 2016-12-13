@@ -26,7 +26,7 @@ Windows Management Instrumentation (WMI) uses the Common Information Model (CIM)
 ## LONG DESCRIPTION
 Windows Management Instrumentation (WMI) is Microsoft’s implementation of Web-Based Enterprise Management (WBEM), the industry standard.
 
-Classic WMI uses DCOM to communicate with networked devices to manage remote systems.  Windows PowerShell� 3.0 introduces a CIM provider model that uses WinRM to remove the dependency on DCOM. This CIM provider model also uses new WMI provider APIs that enable developers to write  Windows PowerShell cmdlets in native code (C\+\+).
+Classic WMI uses DCOM to communicate with networked devices to manage remote systems.  Windows PowerShell 3.0 introduces a CIM provider model that uses WinRM to remove the dependency on DCOM. This CIM provider model also uses new WMI provider APIs that enable developers to write  Windows PowerShell cmdlets in native code (C\+\+).
 
 Do not confuse WMI providers with  Windows PowerShell providers. Many Windows features have an associated WMI provider that exposes their management capabilities. To get WMI providers, run a WMI query that gets instances of the __Provider WMI class, such as the following query.
 
