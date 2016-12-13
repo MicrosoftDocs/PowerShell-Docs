@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell�. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShell®. These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

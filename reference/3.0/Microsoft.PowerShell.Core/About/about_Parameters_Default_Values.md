@@ -32,7 +32,7 @@ This feature is especially useful when you must specify the same alternate param
 
 If the desired default value varies predictably, you can specify a script block that provides different default values for a parameter under different conditions.
 
-$PSDefaultParameterValues was introduced in  Windows PowerShell� 3.0.
+$PSDefaultParameterValues was introduced in  Windows PowerShell® 3.0.
 
 
 ### SYNTAX

@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Contains questions and answers about running remote commands in  Windows PowerShell�.
+Contains questions and answers about running remote commands in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

@@ -24,7 +24,7 @@ Prevents a script from running without the required elements.
 
 
 ## LONG DESCRIPTION
-The \#Requires statement prevents a script from running unless the  Windows PowerShell� version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
+The \#Requires statement prevents a script from running unless the  Windows PowerShell® version, modules, snap-ins, and module and snap-in version prerequisites are met. If the prerequisites are not met,  Windows PowerShell does not run the script.
 
 You can use \#Requires statements in any script. You cannot use them in functions, cmdlets, or snap-ins.
 
