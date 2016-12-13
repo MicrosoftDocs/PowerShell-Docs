@@ -122,7 +122,7 @@ To define an SMB-based resource server, you create a **ResourceRepositoryShare**
 
 |Property|Type|Description|
 |---|---|---|
-|Credential|MSFT_Credential|The credential used to authenticate to the SMB share.|
+|Credential|MSFT_Credential|The credential used to authenticate to the SMB share. For an example of passing credentials, see [Setting up a DSC SMB pull server](pullServerSMB.md)|
 |SourcePath|string|The path of the SMB share.|
 
 ## Report server blocks
