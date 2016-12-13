@@ -20,7 +20,7 @@ ms.topic: article
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell�. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShell. These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -171,7 +171,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day -ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  
@@ -341,46 +341,21 @@ Contains a read-only hash table that displays details about the version of  Wind
 
 
 ```
-CLRVersion:            The version of the common language runtime (CLR)
-```
+CLRVersion:                 The version of the common language runtime (CLR)
 
+BuildVersion:               The build number of the current version
 
+PSVersion:                  The Windows PowerShell version number
 
-```
-BuildVersion:          The build number of the current version
-```
+WSManStackVersion:          The version number of the WS-Management stack
 
+PSCompatibleVersions:       Versions of Windows PowerShell that are  
+                              compatible with the current version
 
+SerializationVersion        The version of the serialization method
 
-```
-PSVersion:             The Windows PowerShell version number
-```
-
-
-
-```
-WSManStackVersion:     The version number of the WS-Management stack
-```
-
-
-
-```
-PSCompatibleVersions:  Versions of Windows PowerShell that are  
-                             compatible with the current version
-```
-
-
-
-```
-SerializationVersion   The version of the serialization method
-```
-
-
-
-```
-PSRemotingProtocolVersion  
-                             The version of the Windows PowerShell remote  
-                             management protocol
+PSRemotingProtocolVersion   The version of the Windows PowerShell remote  
+                              management protocol
 ```
 
 

@@ -24,7 +24,7 @@ Describes the Prompt function and demonstrates how to create a custom Prompt fun
 
 
 ## LONG DESCRIPTION
-The  Windows PowerShell� command prompt indicates that  Windows PowerShell is ready to run a command:
+The  Windows PowerShell command prompt indicates that  Windows PowerShell is ready to run a command:
 
 
 ```

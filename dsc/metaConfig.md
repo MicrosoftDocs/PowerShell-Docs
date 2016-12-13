@@ -67,7 +67,7 @@ Other than specifying pull servers and partial configurations, all of the proper
 | ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. Possible values are __"ApplyOnly"__,__"ApplyandMonitior"(default)__, and __"ApplyandAutoCorrect"__. <ul><li>__ApplyOnly__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a server. After initial application of a new configuration, DSC does not check for drift from a previously configured state. Note that DSC will attempt to apply the configuration until it is successful before __ApplyOnly__ takes effect. </li><li> __ApplyAndMonitor__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs. Note that DSC will attempt to apply the configuration until it is successful before __ApplyAndMonitor__ takes effect.</li><li>__ApplyAndAutoCorrect__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.</li></ul>| 
 | ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are __"ContinueConfiguration(default)"__ and __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Continue applying the current configuration after machine reboot.</li><li>__StopConfiguration__: Stop the current configuration after machine reboot.</li></ul>| 
 | RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push(default)"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull server. If this property is set to __Pull__, you must specify a pull server in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).</li></ul>| 
-| CertificateID| string| A GUID that specifies a certificate used to secure credentials for access to the configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?.| 
+| CertificateID| string| The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?.| 
 | ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull sever if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull server by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
 | RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull server to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.<br> __Note:__  Either the value of this property must be a multiple of the value of the __ConfigurationModeFrequencyMins__ property, or the value of the __ConfigurationModeFrequencyMins__ property must be a multiple of the value of this property.| 
 | AllowModuleOverwrite| bool| __$TRUE__ if new configurations downloaded from the configuration server are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.| 
@@ -95,7 +95,7 @@ To define a web-based configuration sever, you create a **ConfigurationRepositor
 |Property|Type|Description|
 |---|---|---| 
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
-|CertificateID|string|A GUID that represents the certificate used to authenticate to the server.|
+|CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull server by using a **RegistrationKey**. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
 |RegistrationKey|string|A GUID that registers the node with the pull server. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
 |ServerURL|string|The URL of the configuration server.|
@@ -114,7 +114,7 @@ To define a web-based resource sever, you create a **ResourceRepositoryWeb** blo
 |Property|Type|Description|
 |---|---|---|
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
-|CertificateID|string|A GUID that represents the certificate used to authenticate to the server.|
+|CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |RegistrationKey|string|A GUID that identifies the node to the pull server. For more information, see How to register a node with a DSC pull server.|
 |ServerURL|string|The URL of the configuration server.|
  
@@ -122,7 +122,7 @@ To define an SMB-based resource server, you create a **ResourceRepositoryShare**
 
 |Property|Type|Description|
 |---|---|---|
-|Credential|MSFT_Credential|The credential used to authenticate to the SMB share.|
+|Credential|MSFT_Credential|The credential used to authenticate to the SMB share. For an example of passing credentials, see [Setting up a DSC SMB pull server](pullServerSMB.md)|
 |SourcePath|string|The path of the SMB share.|
 
 ## Report server blocks
@@ -132,7 +132,7 @@ A report server must be an OData web service. To define a report server, you cre
 |Property|Type|Description|
 |---|---|---| 
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
-|CertificateID|string|A GUID that represents the certificate used to authenticate to the server.|
+|CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |RegistrationKey|string|A GUID that identifies the node to the pull server. For more information, see How to register a node with a DSC pull server.|
 |ServerURL|string|The URL of the configuration server.|
 

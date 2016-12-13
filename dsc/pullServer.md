@@ -138,20 +138,34 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ```
 > **Note**: The **ReportServerWeb** section allows reporting data to be sent to the pull server. 
 
-The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration is required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
+The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration 
+is required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
 
->**Note**: In a PUSH scenario, a bug exists in the current relase that makes it necessary to define a ConfigurationID property in the metaconfiguration file for nodes that have never registered with a pull server. This will force the V1 Pull Server protocol and avoid registration failure messages.
+>**Note**: In a PUSH scenario, a bug exists in the current relase that makes it necessary to define a ConfigurationID property in the metaconfiguration file for nodes that have never 
+registered with a pull server. This will force the V1 Pull Server protocol and avoid registration failure messages.
 
 ## Placing configurations and resources
-After the pull server setup completes, the folders defined by the **ConfigurationPath** and **ModulePath** properties in the pull server configuration are where you will place modules and configurations that will be available for target nodes to pull. These files need to be in a specific format in order for the pull server to correctly process them. 
+
+After the pull server setup completes, the folders defined by the **ConfigurationPath** and **ModulePath** properties in the pull server configuration are where you will place modules and 
+configurations that will be available for target nodes to pull. These files need to be in a specific format in order for the pull server to correctly process them. 
 
 ### DSC resource module package format
-Each resource module needs to be zipped and named according the the following pattern **{Module Name}_{Module Version}.zip**. For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes '{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the **ModulePath** folder.
+
+Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
+of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
+file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
+pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
+'{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes 
+'{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the **ModulePath** folder.
 
 Use `new-dscchecksum {module zip file}` to create a checksum file for the newly-added module.
 
 ### Configuration MOF format 
-A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder. Place the MOF files and their associated checksum files in the the **ConfigurationPath** folder.
+A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the 
+[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is 
+located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than 
+one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder. Place the MOF files and their associated checksum files in the 
+the **ConfigurationPath** folder.
 
 >**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.
 
