@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes rules for using single and double quotation marks in  Windows PowerShell�.
+Describes rules for using single and double quotation marks in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

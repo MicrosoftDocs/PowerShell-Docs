@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Explains how to redirect output from  Windows PowerShell� to text files.
+Explains how to redirect output from  Windows PowerShell to text files.
 
 
 ## LONG DESCRIPTION

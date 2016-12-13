@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes how to use methods to perform actions on objects in  Windows PowerShell�.
+Describes how to use methods to perform actions on objects in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

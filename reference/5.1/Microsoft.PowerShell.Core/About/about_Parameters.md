@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes how to work with command parameters in  Windows PowerShell�.
+Describes how to work with command parameters in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

@@ -221,7 +221,7 @@ function <name> {
 Causes Windows PowerShell to exit a script or a Windows PowerShell
 instance.
 
-When you run 'powershell.exe –File <path to a script>', you can only
+When you run 'powershell.exe -File <path to a script>', you can only
 set the %ERRORLEVEL% variable to a value other than zero by using the
 exit statement. In the following example, the user sets the error level
 variable value to 4 by adding 'exit 4' to the script file _test.ps1_.

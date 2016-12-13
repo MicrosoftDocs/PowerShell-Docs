@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell�. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShell. These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -166,7 +166,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day -ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  

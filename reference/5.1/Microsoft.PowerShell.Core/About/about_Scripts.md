@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes how to run and write scripts in  Windows PowerShell�.
+Describes how to run and write scripts in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

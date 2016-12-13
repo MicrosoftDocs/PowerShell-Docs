@@ -130,7 +130,7 @@ access from all locations on client and server versions of Windows, use
 the Set-NetFirewallRule cmdlet in the NetSecurity module. Run the following
 command:
 
-Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 In Windows PowerShell 2.0, on server versions of Windows, Enable-PSRemoting
 creates firewall rules that permit remote access on all networks.

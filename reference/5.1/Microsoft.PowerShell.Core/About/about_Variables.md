@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes how variables store values that can be used in  Windows PowerShell�.
+Describes how variables store values that can be used in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION

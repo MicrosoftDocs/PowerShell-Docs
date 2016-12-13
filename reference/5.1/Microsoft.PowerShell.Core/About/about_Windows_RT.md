@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Explains limitations of  Windows PowerShell� 4.0 on Windows RT 8.1.
+Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1.
 
 
 ## LONG DESCRIPTION
