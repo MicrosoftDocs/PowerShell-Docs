@@ -22,10 +22,10 @@ There are several ways to address this problem. In this topic, we'll look at sev
 
 ## CredSSP
 
-You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication. CredSSP passes credentials in plain text to the server,
-so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by default on both client and 
-server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller because the domain controller is 
-highly trusted.
+You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication. CredSSP caches credentials 
+on the remote server (_ServerB_), so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by 
+default on both client and server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller 
+because the domain controller is highly trusted.
 
 For more information about security concerns when using CredSSP for PowerShell Remoting, see 
 [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
@@ -59,8 +59,7 @@ You can also used Kerberos unconstrained delegation to make the second hop. Howe
 ### Cons
 
 - Does not support the second hop for WinRM.
-- Has security vulnerabilities.
-- Provides no control over where credentials are used.
+- Provides no control over where credentials are used, creating a security vulnerability.
 
 ## Kerberos constrained delegation
 
@@ -77,10 +76,9 @@ You can use legacy constrained delegation (not resource-based) to make the secon
 ### Cons
 
 - Does not support the second hop for WinRM.
-- Must be configured at the front end.
+- Must be configured on the Active Directory object of the remote server (_ServerB_).
 - Limited to one domain. Cannot cross domains or forests.
-- Requires domain administrator rights to update objects and Service Principal Names (SPNs).
-- Not currently documented for PowerShell remoting.
+- Requires rights to update objects and Service Principal Names (SPNs).
 
 ## Resource-based Kerberos constrained delegation
 
@@ -102,7 +100,8 @@ In the second hop scenario described above, you configure _ServerC_ to specify f
 ### Cons
 
 - Requires Windows Server 2012 or later.
-- Does not support the second hop for WinRM. 
+- Does not support the second hop for WinRM.
+- Requires rights to update objects and Service Principal Names (SPNs). 
 
 ### Example
 
@@ -265,7 +264,6 @@ For information about JEA, see [Just Enough Administration](https://msdn.microso
 ### Cons
 
 - Requires WMF 5.0 or later.
-- Requires password maintenance when using a domain **RunAs** account.
 - Requires configuration on every intermediate server (_ServerB_).
 
 ## Pass credentials inside an Invoke-Command script block
