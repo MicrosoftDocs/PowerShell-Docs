@@ -32,14 +32,14 @@ You can later use Import-Alias to retrieve that saved alias information.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-alias list get-childitem
+PS C:\> new-alias list get-childitem
 ```
 
 This command creates an alias named "list" to represent the Get-ChildItem cmdlet.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-alias -name w -value get-wmiobject -description "quick wmi alias" -option ReadOnly
-PS C:\>get-alias -name w | format-list *
+PS C:\> new-alias -name w -value get-wmiobject -description "quick wmi alias" -option ReadOnly
+PS C:\> get-alias -name w | format-list *
 ```
 
 This command creates an alias named "w" to represent the Get-WMIObject cmdlet.

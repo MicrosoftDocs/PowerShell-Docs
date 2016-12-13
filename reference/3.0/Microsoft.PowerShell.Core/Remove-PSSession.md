@@ -55,43 +55,43 @@ If you have saved the PSSession in a variable, the session object remains in the
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-pssession -id 1, 2
+PS C:\> remove-pssession -id 1, 2
 ```
 
 This command removes the PSSessions that have IDs 1 and 2.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-pssession | remove-pssession
+PS C:\> get-pssession | remove-pssession
 
 - or -
 
-PS C:\>remove-pssession -session (get-pssession)
+PS C:\> remove-pssession -session (get-pssession)
 
 - or -
 
-PS C:\>$s = get-pssession
-PS C:\>remove-pssession -session $s
+PS C:\> $s = get-pssession
+PS C:\> remove-pssession -session $s
 ```
 
 These commands remove all of the PSSessions in the current session.
 Although the three command formats look different, they have the same effect.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$r = get-pssession -computername Serv*
+PS C:\> $r = get-pssession -computername Serv*
 $r | remove-pssession
 ```
 
 These commands close the PSSessions that are connected to computers that have names that begin with "Serv".
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-pssession | where {$_.port -eq 90} | remove-pssession
+PS C:\> get-pssession | where {$_.port -eq 90} | remove-pssession
 ```
 
 This command closes the PSSessions that are connected to port 90.
 You can use this command format to identify PSSessions by properties other than ComputerName, Name, InstanceID, and ID.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-pssession | ft computername, instanceID  -auto
+PS C:\> get-pssession | ft computername, instanceID  -auto
 
 ComputerName InstanceId
 ------------ ----------------
@@ -101,7 +101,7 @@ Server02     4699cdbc-61d5-4e0d-b916-84f82ebede1f
 Server03     4e5a3245-4c63-43e4-88d0-a7798bfc2414
 TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 
-PS C:\>remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
+PS C:\> remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
 These commands show how to close a PSSession based on its instance ID (RemoteRunspaceID).
@@ -115,7 +115,7 @@ From the resulting display, the administrator can identify the PSSession to be c
 The second command uses the Remove-PSSession cmdlet to remove the PSSession with the specified instance ID.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>function EndPSS { get-pssession | remove-pssession }
+PS C:\> function EndPSS { get-pssession | remove-pssession }
 ```
 
 This function deletes all of the PSSessions in the current session.

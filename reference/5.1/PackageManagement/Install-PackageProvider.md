@@ -68,14 +68,14 @@ Then use `Import-PackageProvider -Name -RequiredVersion 2.8.5.201` to import the
 
 ### Example 1: Install a package provider from the PowerShell Gallery
 ```
-PS C:\>Install-PackageProvider -Name "Gistprovider" -Verbose
+PS C:\> Install-PackageProvider -Name "Gistprovider" -Verbose
 ```
 
 This command installs the Gistprovider from the PowerShell Gallery.
 
 ### Example 2: Install a specified version of a package provider
 ```
-PS C:\>Find-PackageProvider -Name "Nuget" -AllVersions
+PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 PS C:\> Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.216" -Force
 ```
 
@@ -86,14 +86,14 @@ The second command installs a specified version of the Nuget package provider.
 
 ### Example 3: Find a provider and install it
 ```
-PS C:\>Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Verbose
+PS C:\> Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Verbose
 ```
 
 This command uses **Find-PackageProvider** and the pipeline to search for the Gist provider and install it.
 
 ### Example 4: Install a provider to the current user's module folder
 ```
-PS C:\>Install-PackageProvider -Name Gistprovider -Verbose -Scope CurrentUser
+PS C:\> Install-PackageProvider -Name Gistprovider -Verbose -Scope CurrentUser
 ```
 
 This command installs a package provider to $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies so that only the current user can use it.

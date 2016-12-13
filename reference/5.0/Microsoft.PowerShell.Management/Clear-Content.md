@@ -41,7 +41,7 @@ The **Clear-Content** is similar to Clear-Item, but it works on items with conte
 
 ### Example 1: Delete all content from a directory
 ```
-PS C:\>Clear-Content "..\SmpUsers\*\init.txt"
+PS C:\> Clear-Content "..\SmpUsers\*\init.txt"
 ```
 
 This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
@@ -49,7 +49,7 @@ The files are not deleted, but they are empty.
 
 ### Example 2: Delete content of all files with a wildcard
 ```
-PS C:\>Clear-Content -Path "*" -Filter "*.log" -Force
+PS C:\> Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
 This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.

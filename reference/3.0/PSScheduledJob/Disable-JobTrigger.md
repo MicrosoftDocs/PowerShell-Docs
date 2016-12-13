@@ -45,7 +45,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Disable a job trigger
 ```
-PS C:\>Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Disable-JobTrigger
+PS C:\> Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Disable-JobTrigger
 ```
 
 This command disables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
@@ -55,10 +55,10 @@ A pipeline operator sends the job trigger to the **Disable-JobTrigger** cmdlet, 
 ### Example 2: Disable all job triggers
 ```
 The first command uses the Get-ScheduledJob cmdlet to get the Backup-Archives and Inventory scheduled jobs. A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs. Another pipeline operator sends the job triggers to the **Disable-JobTrigger** cmdlet, which disables them.The first command uses the **Get-ScheduledJob** cmdlet to get the jobs, because its **Name** parameter takes multiple names.
-PS C:\>Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Disable-JobTrigger
+PS C:\> Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Disable-JobTrigger
 
 The second command displays the results. The command repeats the **Get-ScheduledJob** and **Get-JobTrigger** command. A pipeline operator sends the job triggers to the Format-Table cmdlet, which displays the job triggers in a table. The **Format-Table** command adds a **JobName** property that displays the value of the **Name** property of the scheduled job in the **JobDefinition** property of the job trigger object. 
-PS C:\>Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
+PS C:\> Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
 Id Frequency At                     DaysOfWeek Enabled JobName
 -- --------- --                     ---------- ------- ------- 
 1  Weekly    9/28/2011 3:00:00 AM   {Monday}   False   Backup-Archive
@@ -70,7 +70,7 @@ Id Frequency At                     DaysOfWeek Enabled JobName
 These commands disable all job triggers on two scheduled jobs and display the results.
 ### Example 3: Disable job trigger of a scheduled job on a remote computer.
 ```
-PS C:\>Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "Daily"} | Disable-JobTrigger}
+PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "Daily"} | Disable-JobTrigger}
 ```
 
 This command disables the daily job triggers on the DeployPackage scheduled job on the Server01 remote computer.

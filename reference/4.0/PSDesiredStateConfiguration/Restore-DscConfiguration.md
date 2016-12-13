@@ -42,7 +42,7 @@ This command restores the configuration for the local computer.
 ### Example 2: Restore configuration for a specified computer
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
-PS C:\>Restore-DscConfiguration -CimSession $Session
+PS C:\> Restore-DscConfiguration -CimSession $Session
 ```
 
 This example restores configuration on a computer specified by a CIM session.

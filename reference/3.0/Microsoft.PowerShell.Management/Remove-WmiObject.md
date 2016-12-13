@@ -70,9 +70,9 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing WMI class.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>notepad
-PS C:\>$np = get-wmiobject -query "select * from win32_process where name='notepad.exe'"
-PS C:\>$np | remove-wmiobject
+PS C:\> notepad
+PS C:\> $np = get-wmiobject -query "select * from win32_process where name='notepad.exe'"
+PS C:\> $np | remove-wmiobject
 ```
 
 This command closes all the instances of Notepad.exe.
@@ -84,8 +84,8 @@ The second command uses the Get-WmiObject cmdlet to retrieve the instances of th
 The third command passes the object in the $np variable to the Remove-WmiObject cmdlet, which deletes all the instances of Notepad.exe.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = Get-WMIObject -query "Select * From Win32_Directory Where Name ='C:\\Test'"
-PS C:\>$a | Remove-WMIObject
+PS C:\> $a = Get-WMIObject -query "Select * From Win32_Directory Where Name ='C:\\Test'"
+PS C:\> $a | Remove-WMIObject
 ```
 
 This command deletes the C:\Test directory.

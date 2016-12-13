@@ -67,7 +67,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Once Schedule
 ```
-PS C:\>New-JobTrigger -Once -At "1/20/2012 3:00 AM"
+PS C:\> New-JobTrigger -Once -At "1/20/2012 3:00 AM"
 ```
 
 This command uses the **New-JobTrigger** cmdlet to create a job trigger that starts a scheduled job only one time.
@@ -77,7 +77,7 @@ If the date were omitted, the trigger would be created with the current date and
 
 ### Example 2: Daily Schedule
 ```
-PS C:\>New-JobTrigger -Daily -At "4:15 AM" -DaysInterval 3
+PS C:\> New-JobTrigger -Daily -At "4:15 AM" -DaysInterval 3
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 0          Daily           9/21/2012 4:15:00 AM                           True
@@ -90,7 +90,7 @@ If the date and time is in the past, the scheduled job is started at the next oc
 
 ### Example 3: Weekly Schedule
 ```
-PS C:\>New-JobTrigger -Weekly -DaysOfWeek Monday, Wednesday, Friday -At "23:00" -WeeksInterval 4
+PS C:\> New-JobTrigger -Weekly -DaysOfWeek Monday, Wednesday, Friday -At "23:00" -WeeksInterval 4
 Id Frequency Time                  DaysOfWeek                  Enabled
 -- --------- ----                  ----------                  -------
 0  Weekly    9/21/2012 11:00:00 PM {Monday, Wednesday, Friday} True
@@ -102,14 +102,14 @@ You can also enter the *DaysOfWeek* parameter value in integers, such as `-DaysO
 
 ### Example 4: Logon Schedule
 ```
-PS C:\>New-JobTrigger -AtLogOn -User Domain01\Admin01
+PS C:\> New-JobTrigger -AtLogOn -User Domain01\Admin01
 ```
 
 This command creates a job trigger that starts a scheduled job whenever the domain administrator logs onto the computer.
 
 ### Example 5: Using a Random Delay
 ```
-PS C:\>New-JobTrigger -Daily -At 1:00 -RandomDelay 00:20:00
+PS C:\> New-JobTrigger -Daily -At 1:00 -RandomDelay 00:20:00
 ```
 
 This command creates a job trigger that starts a scheduled job every day at 1:00 in the morning.
@@ -122,18 +122,18 @@ When setting the delay value, review the effective and default values of the New
 ### Example 6: Create a Job Trigger for a New Scheduled Job
 ```
 The first command uses the **New-JobTrigger** cmdlet to create a job trigger that starts a job every Monday, Wednesday, and Friday at 12:01 AM. The command saves the job trigger in the $T variable.
-PS C:\>$T = New-JobTrigger -Weekly -DaysOfWeek 1,3,5 -At 12:01AM
+PS C:\> $T = New-JobTrigger -Weekly -DaysOfWeek 1,3,5 -At 12:01AM
 
 
 The second command uses the Register-ScheduledJob cmdlet to create a scheduled job that starts a job every Monday, Wednesday, and Friday at 12:01 AM. The value of the *Trigger* parameter is the trigger that is stored in the $T variable.
-PS C:\>Register-ScheduledJob -Name Test-HelpFiles -FilePath C:\Scripts\Test-HelpFiles.ps1 -Trigger $T
+PS C:\> Register-ScheduledJob -Name Test-HelpFiles -FilePath C:\Scripts\Test-HelpFiles.ps1 -Trigger $T
 ```
 
 These commands use a job trigger to create a new scheduled job.
 
 ### Example 7: Add a Job Trigger to a Scheduled Job
 ```
-PS C:\>Add-JobTrigger -Name SynchronizeApps -Trigger (New-JobTrigger -Daily -At 3:10AM)
+PS C:\> Add-JobTrigger -Name SynchronizeApps -Trigger (New-JobTrigger -Daily -At 3:10AM)
 ```
 
 This example shows how to add a job trigger to an existing scheduled job.
@@ -146,14 +146,14 @@ When the command completes, SynchronizeApps is a scheduled job that runs at the 
 
 ### Example 8: Create a repeating job trigger
 ```
-PS C:\>New-JobTrigger -Once -At "09/12/2013 1:00:00" -RepetitionInterval (New-TimeSpan -Hours 1) -RepetitionDuration (New-Timespan -Hours 48)
+PS C:\> New-JobTrigger -Once -At "09/12/2013 1:00:00" -RepetitionInterval (New-TimeSpan -Hours 1) -RepetitionDuration (New-Timespan -Hours 48)
 ```
 
 This command creates a job trigger that runs a job every 60 minutes for 48 hours beginning on September 12, 2013 at 1:00 AM.
 
 ### Example 9: Stop a repeating job trigger
 ```
-PS C:\>Get-JobTrigger -Name SecurityCheck | Set-JobTrigger -RepetitionInterval 0:00 -RepetitionDuration 0:00
+PS C:\> Get-JobTrigger -Name SecurityCheck | Set-JobTrigger -RepetitionInterval 0:00 -RepetitionDuration 0:00
 ```
 
 This command forcibly stops the SecurityCheck job, which is triggered to run every 60 minutes until its job trigger expires.
@@ -162,7 +162,7 @@ To prevent the job from repeating, the command uses the Get-JobTrigger to get th
 
 ### Example 10: Create an hourly job trigger
 ```
-PS C:\>New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour 12) -RepetitionDuration ([TimeSpan]::MaxValue)
+PS C:\> New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour 12) -RepetitionDuration ([TimeSpan]::MaxValue)
 ```
 
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an indefinite period of time.

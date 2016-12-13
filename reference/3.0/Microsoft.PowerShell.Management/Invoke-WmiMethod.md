@@ -74,7 +74,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
 __CLASS           : __PARAMETERS
 __SUPERCLASS      :
@@ -98,7 +98,7 @@ To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires tha
 This command lists the required order of the objects.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
 __CLASS                   : __PARAMETERS
 __SUPERCLASS              : 
@@ -112,7 +112,7 @@ __PATH                    :
 CommandLine               : 
 CurrentDirectory          : 
 ProcessStartupInformation : 
-PSComputerName            : PS C:\>invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe
+PSComputerName            : PS C:\> invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 
@@ -133,7 +133,7 @@ The following two commands start an instance of Notepad by calling the Create me
 Note: The ReturnValue property is populated with a 0, and the ProcessId property is populated with an integer (the next process ID number) if the command is completed.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>invoke-wmimethod -path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+PS C:\> invoke-wmimethod -path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 

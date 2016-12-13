@@ -38,14 +38,14 @@ You can use it for many tasks, such as waiting for an operation to complete or p
 
 ### Example 1: Sleep all commands for 15 seconds
 ```
-PS C:\>Start-Sleep -s 15
+PS C:\> Start-Sleep -s 15
 ```
 
 This command makes all commands in the session sleep for 15 seconds.
 
 ### Example 2: Sleep all commands
 ```
-PS C:\>Start-Sleep -m 500
+PS C:\> Start-Sleep -m 500
 ```
 
 This command makes all the commands in the session sleep for one-half of a second (500 milliseconds).

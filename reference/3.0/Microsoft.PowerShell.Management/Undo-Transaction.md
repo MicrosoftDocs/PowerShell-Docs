@@ -37,13 +37,13 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>undo-transaction
+PS C:\> undo-transaction
 ```
 
 This command rolls back the current (active) transaction.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> start-transaction
 PS HKCU:\Software> new-item MyCompany -usetransaction
 PS HKCU:\Software> undo-transaction
@@ -53,7 +53,7 @@ This command starts a transaction and then rolls it back.
 As a result, no changes are made to the registry.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> start-transaction
 PS HKCU:\Software> new-item MyCompany -usetransaction
 PS HKCU:\Software> get-transaction

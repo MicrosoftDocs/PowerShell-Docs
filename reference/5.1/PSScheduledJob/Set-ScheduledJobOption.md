@@ -54,7 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Change job options
 ```
-PS C:\>Get-ScheduledJobOption -Name "DeployPackage"
+PS C:\> Get-ScheduledJobOption -Name "DeployPackage"
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -71,7 +71,7 @@ MultipleInstancePolicy : IgnoreNew
 JobDefinition          :
 
 The second command uses the **Set-ScheduledJobOpton** cmdlet to change the job options so the values of the WakeToRun and RunWithoutNetwork properties are $True. The command uses the *Passthru* parameter to return the trigger after the change.
-PS C:\>Get-ScheduledJobOption -Name "DeployPackage" | Set-ScheduledJobOption -WakeToRun -RequireNetwork:$False -Passthru
+PS C:\> Get-ScheduledJobOption -Name "DeployPackage" | Set-ScheduledJobOption -WakeToRun -RequireNetwork:$False -Passthru
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : True
@@ -96,7 +96,7 @@ This command is not required; it is included only to show the effect of the opti
 
 ### Example 2: Change an option on all remote scheduled jobs
 ```
-PS C:\>Invoke-Command -Computer "Server01" -ScriptBlock {Get-ScheduledJob | Get-ScheduledJobOption | Set-ScheduledJobOption -IdleTimeout 2:00:00}
+PS C:\> Invoke-Command -Computer "Server01" -ScriptBlock {Get-ScheduledJob | Get-ScheduledJobOption | Set-ScheduledJobOption -IdleTimeout 2:00:00}
 ```
 
 This command changes the value of the *IdleTimeout* from one hour (the default value) to two hours on all scheduled jobs on the Server01 computer.

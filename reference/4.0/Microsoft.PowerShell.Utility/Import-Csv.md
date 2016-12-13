@@ -50,13 +50,13 @@ In previous versions of Windows PowerShell, if a header row entry in a CSV file 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
 This example shows how to export and then import a CSV file of objects.The first command uses the Get-Process cmdlet to get the process on the local computer. It uses a pipeline operator (|) to send the process objects to the Export-CSV cmdlet, which exports the process objects to the Processes.csv file in the current directory.
-PS C:\>get-process | export-csv processes.csv
+PS C:\> get-process | export-csv processes.csv
 
 The second command uses the Import-Csv cmdlet to import the processes in the Import-Csv file. Then it saves the resulting process objects in the $p variable.
-PS C:\>$p = Import-Csv processes.csv
+PS C:\> $p = Import-Csv processes.csv
 
 The third command uses a pipeline operator to pipe the imported objects to the Get-Member cmdlets. The result shows that they are CSV:System.Diagnostic.Process objects, not the System.Diagnostic.Process objects that Get-Process returns.Also, because there is no entry type in the formatting files for the CSV version of the process objects, these objects are not formatted in the same way that standard process objects are formatted.To display the objects, use the formatting cmdlets, such as Format-Table and Format-List, or pipe the objects to Out-GridView.
-PS C:\>$p | get-member
+PS C:\> $p | get-member
 TypeName: CSV:System.Diagnostics.Process
 Name                       MemberType   Definition
 ----                       ----------   ----------
@@ -67,15 +67,15 @@ ToString                   Method       System.String ToString()
 BasePriority               NoteProperty System.String BasePriority=8
 Company                    NoteProperty System.String Company=Microsoft Corporation
 ...
-PS C:\>$p | out-gridview
+PS C:\> $p | out-gridview
 ```
 
 This example shows how to export and then import a CSV file of objects.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-process | export-csv processes.csv -Delimiter :
-PS C:\>$p = Import-Csv processes.csv -Delimiter :
+PS C:\> get-process | export-csv processes.csv -Delimiter :
+PS C:\> $p = Import-Csv processes.csv -Delimiter :
 ```
 
 This example shows how to use the *Delimiter* parameter of the Import-Csv cmdlet.
@@ -85,8 +85,8 @@ When importing, the Import-Csv file uses the *Delimiter* parameter to indicate t
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$p = Import-Csv processes.csv -UseCulture
-PS C:\>(get-culture).textinfo.listseparator
+PS C:\> $p = Import-Csv processes.csv -UseCulture
+PS C:\> (get-culture).textinfo.listseparator
 ,
 ```
 
@@ -103,23 +103,23 @@ In this example, the command returns a comma.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer. A pipeline operator (|) sends the resulting job object to the Export-CSV cmdlet, which converts the job object to CSV format. An assignment operator (=) saves the resulting CSV in the Jobs.csv file.
-PS C:\>start-job -scriptblock { get-process } | export-csv jobs.csv
+PS C:\> start-job -scriptblock { get-process } | export-csv jobs.csv
 
 The second command saves a header in the $header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
-PS C:\>$header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
+PS C:\> $header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
 
 The next three commands delete the original header (the second line) from the Jobs.csv file.
-PS C:\># Delete header from file
+PS C:\> # Delete header from file
 
-PS C:\>$a = (get-content jobs.csv)
-PS C:\>$a = $a[0], $a[2..($a.count - 1)]
-PS C:\>$a > jobs.csv
+PS C:\> $a = (get-content jobs.csv)
+PS C:\> $a = $a[0], $a[2..($a.count - 1)]
+PS C:\> $a > jobs.csv
 
 The sixth command uses the Import-Csv cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the Header parameter to submit the alternate header. The results are stored in the $j variable.
-PS C:\>$j = Import-Csv jobs.csv -header $header
+PS C:\> $j = Import-Csv jobs.csv -header $header
 
 The seventh command displays the object in the $j variable. The resulting object has "MoreData" and "State" properties, as shown in the command output.
-PS C:\>$j
+PS C:\> $j
 
 MoreData      : True
 StatusMessage :
@@ -145,17 +145,17 @@ This example shows how to use the Header parameter of Import-Csv to change the n
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
 The first command uses the Get-Content cmdlet to get the Links.csv file.
-PS C:\>Get-Content .\Links.csv
+PS C:\> Get-Content .\Links.csv
 113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212, 
 about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309, 
 about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219, 
 about_Core_Commands113220,about_Data_Sectionâ€¦
 
 The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the **Header** parameter to specify **LinkId** and **TopicTitle** as property names for the new custom objects. The command saves the imported objects in the $a variable.
-PS C:\>$a = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
+PS C:\> $a = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
 
 The third command uses the Get-Member cmdlet to get the type and members of the custom objects in the $a variable.The output shows that **Import-Csv** returns a collection of custom objects (PSCustomObject). In addition to some default properties, the custom objects have **LinkID** and **TopicTitle** note properties.
-PS C:\>$a | Get-Member
+PS C:\> $a | Get-Member
    TypeName: System.Management.Automation.PSCustomObject
 Name                      MemberType   Definition
 ----                      ----------   ----------
@@ -169,7 +169,7 @@ LinkID=113207TopicTitle  NoteProperty System.String
 TopicTitle=about_Aliases
 
 This command shows that you can use the custom object like you would any object in Windows PowerShell.The command pipes the custom objects in the $a variable to the **Where-Object** cmdlet, which gets only objects with a **TopicTitle** property that includes "alias".The **Where-Object** command uses the new simplified command format that does not require symbols, script blocks, or curly braces.
-PS C:\>$a | Where-Object TopicTitle -like "*alias*"
+PS C:\> $a | Where-Object TopicTitle -like "*alias*"
 LinkID            TopicTitle
 ------            ----------
 113207            about_Aliases
@@ -186,12 +186,12 @@ This example shows how to create a custom object in Windows PowerShell by using 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
-PS C:\>Get-Content "\\Server2\c$\Test\Projects.csv"
+PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"
 ProjectID, ProjectName,,Completed13, Inventory, Redmond, True440, , FarEast, True469, Marketing, Europe, False
 
 The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.The output shows that Import-Csv generates a warning and substitutes a default name, H1, for the missing header row value. H1 is also used for the name of the object property.
-PS C:\>Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\>WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers. 
+PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
+PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers. 
 ProjectID     ProjectName       H1               Completed
 ---------     -----------       --               ---------
 13            Inventory         Redmond          True
@@ -199,7 +199,7 @@ ProjectID     ProjectName       H1               Completed
 469           Marketing         Europe           False
 
 The third command uses the dot method to get the value of the H1 property of the object that **Import-Csv** creates.
-PS C:\>(Import-Csv "\\Server2\c$\Test\Projects.csv").H1
+PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
 RedmondFarEastEurope
 ```
 

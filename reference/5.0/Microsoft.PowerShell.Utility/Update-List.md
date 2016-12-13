@@ -50,7 +50,7 @@ To determine whether a cmdlet supports **Update-List**, see the cmdlet Help topi
 
 ### Example 1: Add and remove items from a property value
 ```
-PS C:\>Get-MailBox | Update-List -Property aliases -Add "A","B" -Remove "X","Y" | Set-MailBox
+PS C:\> Get-MailBox | Update-List -Property aliases -Add "A","B" -Remove "X","Y" | Set-MailBox
 ```
 
 This command adds A and B and removes X and Y from the Aliases property of a mailbox.
@@ -65,8 +65,8 @@ The **Update-List** cmdlet returns the updated mailbox, which is piped to the **
 
 ### Example 2: Add and remove items from a property value in a variable
 ```
-PS C:\>$M = Get-MailBox
-PS C:\>Update-List -InputObject $M -Property aliases -Add "A","B" -Remove "X", "Y" | Set-MailBox
+PS C:\> $M = Get-MailBox
+PS C:\> Update-List -InputObject $M -Property aliases -Add "A","B" -Remove "X", "Y" | Set-MailBox
 ```
 
 This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
@@ -81,7 +81,7 @@ The command uses a pipeline operator (|) to send the updated mailbox object to t
 
 ### Example 3: Add and remove items from a property value
 ```
-PS C:\>Get-MailBox | Set-MailBox -Alias (Update-List -Add "A", "B" -Remove "X","Y")
+PS C:\> Get-MailBox | Set-MailBox -Alias (Update-List -Add "A", "B" -Remove "X","Y")
 ```
 
 This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
@@ -100,7 +100,7 @@ When the **Set-Mailbox** command completes, the mailbox is changed.
 
 ### Example 4: Replace a property collection
 ```
-PS C:\>Update-List -InputObject $A -Property aliases -Replace "A", "B" | Set-MailBox
+PS C:\> Update-List -InputObject $A -Property aliases -Replace "A", "B" | Set-MailBox
 ```
 
 This command uses the Replace operator of **Update-List** to replace the collection in the Aliases property of the object in $A with a new collection.

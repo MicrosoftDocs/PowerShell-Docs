@@ -38,7 +38,7 @@ You can use it to delete registry values and the data that they store.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
+PS C:\> remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
 ```
 
 This command deletes the SmpProperty registry value, and its data, from the SmpApplication subkey of the HKEY_LOCAL_MACHINE\Software registry key.
@@ -48,7 +48,7 @@ Because the command is issued from a file system drive (PS C:\\\>), it includes 
 It uses the Name parameter to identify the registry value that is being deleted.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-location HKCU:\Software\MyCompany\MyApp
+PS C:\> set-location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> remove-itemproperty -path . -Name Options -confirm
 ```
 
@@ -62,7 +62,7 @@ It uses the Name parameter to specify which registry value to delete.
 It uses the Confirm parameter to request a user prompt before deleting the value.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
+PS C:\> get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
 ```
 
 This command deletes the NoOfEmployees registry value, and its data, from the HKLM\Software\MyCompany registry key.

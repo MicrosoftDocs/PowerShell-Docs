@@ -223,7 +223,7 @@ For example, each service has a DisplayName property. The following command gets
 
 
 ```
-PS C:\>(Get-Service Audiosrv).DisplayName  
+PS C:\> (Get-Service Audiosrv).DisplayName  
 Windows Audio
 ```
 
@@ -232,7 +232,7 @@ However, a collection or array of services does not have a DisplayName. The foll
 
 
 ```
-PS C:\>(Get-Service).DisplayName  
+PS C:\> (Get-Service).DisplayName  
 PS C:\>
 ```
 
@@ -241,7 +241,7 @@ Beginning in  Windows PowerShell 3.0, the same command returns the value of the 
 
 
 ```
-PS C:\>(Get-Service).DisplayName  
+PS C:\> (Get-Service).DisplayName  
 Application Experience  
 Application Layer Gateway Service  
 Windows All-User Install Agent  
@@ -255,7 +255,7 @@ Conversely, a collection of two or more services has a Count property, which con
 
 
 ```
-PS C:\>(Get-Service).Count  
+PS C:\> (Get-Service).Count  
 176
 ```
 
@@ -264,7 +264,7 @@ Individual services do not have a Count or Length property, as shown in this com
 
 
 ```
-PS C:\>(Get-Service Audiosrv).Count  
+PS C:\> (Get-Service Audiosrv).Count  
 PS C:\>
 ```
 
@@ -273,7 +273,7 @@ Beginning in  Windows PowerShell 3.0, the command returns the correct Count valu
 
 
 ```
-PS C:\>(Get-Service Audiosrv).Count  
+PS C:\> (Get-Service Audiosrv).Count  
 1
 ```
 

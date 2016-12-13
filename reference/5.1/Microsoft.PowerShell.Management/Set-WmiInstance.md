@@ -79,7 +79,7 @@ Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://g
 
 ### Example 1: Set WMI logging level
 ```
-PS C:\>Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2}
+PS C:\> Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2}
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting
 __SUPERCLASS                   : CIM_Setting
@@ -127,7 +127,7 @@ The class information that is returned reflects the new value.
 
 ### Example 2: Create an environment variable and its value
 ```
-PS C:\>Set-WmiInstance -Class win32_environment -Argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
+PS C:\> Set-WmiInstance -Class win32_environment -Argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 __GENUS          : 2
 __CLASS          : Win32_Environment
 __SUPERCLASS     : CIM_SystemResource
@@ -154,7 +154,7 @@ This operation requires appropriate credentials and that you may have to restart
 
 ### Example 3: Set WMI logging level for several remote computers
 ```
-PS C:\>Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2} -Computername "system01", "system02", "system03"
+PS C:\> Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2} -Computername "system01", "system02", "system03"
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting
 __SUPERCLASS                   : CIM_Setting

@@ -40,7 +40,7 @@ You can use this cmdlet instead of the redirection operator (\>) when you need t
 
 ### Example 1: Send output to a file
 ```
-PS C:\>Get-Process | Out-File -filepath C:\Test1\process.txt
+PS C:\> Get-Process | Out-File -filepath C:\Test1\process.txt
 ```
 
 This command sends a list of processes on the computer to the Process.txt file.
@@ -49,7 +49,7 @@ Because the name of the *FilePath* parameter is optional, you can omit it and su
 
 ### Example 2: Send output to a file without overwriting
 ```
-PS C:\>Get-Process | Out-File C:\Test1\process.txt -NoClobber
+PS C:\> Get-Process | Out-File C:\Test1\process.txt -NoClobber
 
 Out-File : File C:\Test1\process.txt already exists and NoClobber was specified.
 At line:1 char:23
@@ -61,8 +61,8 @@ The output shows the error message that appears when *NoClobber* is used with an
 
 ### Example 3: Send output to a file in ASCII format
 ```
-PS C:\>$A = Get-Process
-PS C:\>Out-File -FilePath C:\Test1\process.txt -InputObject $A -Encoding ASCII -Width 50
+PS C:\> $A = Get-Process
+PS C:\> Out-File -FilePath C:\Test1\process.txt -InputObject $A -Encoding ASCII -Width 50
 ```
 
 These commands send a list of processes on the computer to the Process.txt file.
@@ -79,9 +79,9 @@ Because the lines of output are truncated at 50 characters, the rightmost column
 
 ### Example 4: Send output from outside a file system drive
 ```
-PS C:\>Set-Location hklm:\software
-PS C:\>Get-Acl mycompany\mykey | Out-File -FilePath c:\ps\acl.txt
-PS C:\>Get-Acl mycompany\mykey | Out-File -FilePath filesystem::acl.txt
+PS C:\> Set-Location hklm:\software
+PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath c:\ps\acl.txt
+PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath filesystem::acl.txt
 ```
 
 These commands show how to use the **Out-File** cmdlet when you are not in a FileSystem drive.

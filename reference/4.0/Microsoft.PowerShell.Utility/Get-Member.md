@@ -36,7 +36,7 @@ To get only certain types of members, such as NoteProperties, use the MemberType
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-service | get-member
+PS C:\> get-service | get-member
 TypeName: System.ServiceProcess.ServiceController
 
 Name                      MemberType    Definition
@@ -82,8 +82,8 @@ As such, it gets all member types, but it does not get static members and does n
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-service | get-member -force
-PS C:\>(get-service -schedule).psbase
+PS C:\> get-service | get-member -force
+PS C:\> (get-service -schedule).psbase
 ```
 
 This example gets all of the members (properties and methods) of the service objects (System.ServiceProcess.ServiceController) retrieved by the Get-Service cmdlet, including the intrinsic members, such as PSBase and PSObject, and the get_ and set_ methods.
@@ -99,7 +99,7 @@ The second command shows how to display the value of the PSBase property of the 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-service| get-member -view extended
+PS C:\> get-service| get-member -view extended
 TypeName: System.ServiceProcess.ServiceController
 
 Name MemberType    Definition
@@ -114,7 +114,7 @@ In this case, the extended member is the Name property, which is an alias proper
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-eventlog -log system | gm -membertype scriptproperty
+PS C:\> get-eventlog -log system | gm -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
 
 Name    MemberType     Definition
@@ -127,7 +127,7 @@ In this case, the only script property is the EventID.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-eventlog -log system | get-member -membertype scriptproperty
+PS C:\> get-eventlog -log system | get-member -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
 
 Name    MemberType     Definition
@@ -143,8 +143,8 @@ The command returns the EventID property of the EventLog object.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$a = "get-process", "get-service", "get-culture", "get-psdrive", "get-executionpolicy"
-PS C:\>foreach ($cmdlet in $a) {invoke-command $cmdlet | get-member -name machinename}
+PS C:\> $a = "get-process", "get-service", "get-culture", "get-psdrive", "get-executionpolicy"
+PS C:\> foreach ($cmdlet in $a) {invoke-command $cmdlet | get-member -name machinename}
 TypeName: System.Diagnostics.Process
 
 Name        MemberType Definition
@@ -168,10 +168,10 @@ The results show that only process objects (System.Diagnostics.Process) and serv
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>$a = get-member -inputobject @(1)
-PS C:\>$a.count
+PS C:\> $a = get-member -inputobject @(1)
+PS C:\> $a.count
 1
-PS C:\>$a = get-member -inputobject 1,2,3
+PS C:\> $a = get-member -inputobject 1,2,3
 TypeName: System.Object[]
 
 Name               MemberType    Definition
@@ -180,7 +180,7 @@ Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS C:\>$a.count
+PS C:\> $a.count
 1
 ```
 
@@ -196,8 +196,8 @@ The fourth command uses the Count property of the array to find the number of ob
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$file = get-item c:\test\textFile.txt
-PS C:\>$file.psobject.properties | where-object {$_.issettable} | format-table -property name
+PS C:\> $file = get-item c:\test\textFile.txt
+PS C:\> $file.psobject.properties | where-object {$_.issettable} | format-table -property name
 
 Name
 ----
@@ -216,7 +216,7 @@ LastWriteTime
 LastWriteTimeUtc
 Attributes
 
-PS C:\>[appdomain]::CurrentDomain.GetAssemblies() | foreach-object { $_.getexportedtypes() } | foreach-object {$_.getproperties() | where-object {$_.canwrite }} | select-object reflectedtype, name
+PS C:\> [appdomain]::CurrentDomain.GetAssemblies() | foreach-object { $_.getexportedtypes() } | foreach-object {$_.getproperties() | where-object {$_.canwrite }} | select-object reflectedtype, name
 ```
 
 This example shows how to determine which properties of an object can be changed.
@@ -230,8 +230,8 @@ The third command gets the changeable properties of all objects in your Windows 
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>$s = get-service
-PS C:\>$s | get-member
+PS C:\> $s = get-service
+PS C:\> $s | get-member
 TypeName: System.ServiceProcess.ServiceController
 
 Name                      MemberType    Definition
@@ -244,7 +244,7 @@ Continue                  Method        System.Void Continue()
 CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(type requestedTy
 Dispose                   Method        System.Void Dispose()
 ...
-PS C:\>get-member -inputObject $s
+PS C:\> get-member -inputObject $s
 TypeName: System.Object[]
 
 Name           MemberType    Definition

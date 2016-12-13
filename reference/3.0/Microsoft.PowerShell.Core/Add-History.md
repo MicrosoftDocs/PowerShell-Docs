@@ -31,8 +31,8 @@ You can use this cmdlet to add specific commands to the history or to create a s
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-history | export-csv c:\testing\history.csv
-PS C:\>import-csv history.csv | add-history
+PS C:\> get-history | export-csv c:\testing\history.csv
+PS C:\> import-csv history.csv | add-history
 ```
 
 These commands add the commands typed in one Windows PowerShell session to the history of a different Windows PowerShell session.
@@ -42,7 +42,7 @@ It uses the Import-Csv cmdlet to import the objects in the History.csv file.
 The pipeline operator passes the objects to the **Add-History** cmdlet, which adds the objects representing the commands in the History.csv file to the current session history.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>import-clixml c:\temp\history.xml | add-history -passthru | foreach-object -process {invoke-history}
+PS C:\> import-clixml c:\temp\history.xml | add-history -passthru | foreach-object -process {invoke-history}
 ```
 
 This command imports commands from the History.xml file, adds them to the current session history, and then executes the commands in the combined history.
@@ -55,7 +55,7 @@ The command then uses the ForEach-Object cmdlet to apply the Invoke-History comm
 The **Invoke-History** command is formatted as a script block (enclosed in braces) as required by the **Process** parameter of the **ForEach-Object** cmdlet.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-history -id 5 -count 5 | add-history
+PS C:\> get-history -id 5 -count 5 | add-history
 ```
 
 This command adds the first five commands in the history to the end of the history list.
@@ -64,8 +64,8 @@ The pipeline operator (|) passes them to the **Add-History** cmdlet, which appen
 The **Add-History** command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the **InputObject** parameter of ** Add-History**.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = import-csv c:\testing\history.csv
-PS C:\>add-history -inputobject $a -passthru
+PS C:\> $a = import-csv c:\testing\history.csv
+PS C:\> add-history -inputobject $a -passthru
 ```
 
 These commands add the commands in the History.csv file to the current session history.
@@ -75,7 +75,7 @@ It uses the **InputObject** parameter to specify the $a variable and the **PassT
 Without the **PassThru** parameter, the **Add-History** cmdlet does not generate any output.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>add-history -inputobject (import-clixml c:\temp\history01.xml)
+PS C:\> add-history -inputobject (import-clixml c:\temp\history01.xml)
 ```
 
 This command adds the commands in the History01.xml file to the current session history.

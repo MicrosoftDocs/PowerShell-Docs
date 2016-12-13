@@ -43,7 +43,7 @@ For more information about this and about the format of the .psd1 files, see abo
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Import-LocalizedData -BindingVariable Messages
+PS C:\> Import-LocalizedData -BindingVariable Messages
 ```
 
 This command imports text strings into the $Messages variable.
@@ -53,7 +53,7 @@ If the command is included in the Archives.ps1 script in the C:\Test directory, 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Import-LocalizedData -FileName Test.psd1 -UICulture en-US
+PS C:\> Import-LocalizedData -FileName Test.psd1 -UICulture en-US
 
 Name                           Value
 ----                           -----
@@ -71,7 +71,7 @@ Import-LocalizedData returns a hash table that contains the localized data strin
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Import-LocalizedData -BindingVariable msgTbl -UICulture ar-SA -FileName Simple -BaseDirectory C:\Data\Localized
+PS C:\> Import-LocalizedData -BindingVariable msgTbl -UICulture ar-SA -FileName Simple -BaseDirectory C:\Data\Localized
 ```
 
 This command imports text strings into the $msgTbl  variable of a script.
@@ -80,7 +80,7 @@ It uses the **UICulture** parameter to direct the cmdlet to import data from the
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\># In C:\Test\en-US\Test.psd1:
+PS C:\> # In C:\Test\en-US\Test.psd1:
 
 ConvertFrom-StringData @'
 
@@ -116,7 +116,7 @@ The output shows that it displays the correct user message in the UI language se
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\># In TestScript.ps1$UserMessages = DATA 
+PS C:\> # In TestScript.ps1$UserMessages = DATA 
 
 {    ConvertFrom-StringData @'
 
@@ -144,19 +144,19 @@ If the command fails for any reason, the command displays the default text strin
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\># In Day1.ps1
+PS C:\> # In Day1.ps1
 
-PS C:\>Import-LocalizedData -BindingVariable DayDay.MessageDate
+PS C:\> Import-LocalizedData -BindingVariable DayDay.MessageDate
 
 # In Day2.ps1
 
-PS C:\>Import-LocalizedData -BindingVariable Day -ErrorAction:SilentlyContinue
+PS C:\> Import-LocalizedData -BindingVariable Day -ErrorAction:SilentlyContinue
 Day.MessageDate
-PS C:\>.\Day1.ps1
+PS C:\> .\Day1.ps1
 Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories. 
 At C:\ps-test\Day1.ps1:17 char:21+ Import-LocalizedData <<<<  Day
 Today is Tuesday
-PS C:\>.\Day2.ps1
+PS C:\> .\Day2.ps1
 Today is Tuesday
 ```
 

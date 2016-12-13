@@ -43,13 +43,13 @@ You can specify the services by their service names or display names, or you can
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>stop-service sysmonlog
+PS C:\> stop-service sysmonlog
 ```
 
 This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-service -displayname telnet | stop-service
+PS C:\> get-service -displayname telnet | stop-service
 ```
 
 This command stops the Telnet service on the local computer.
@@ -57,8 +57,8 @@ The command uses the Get-Service cmdlet to get an object representing the Telnet
 The pipeline operator (|) pipes the object to the Stop-Service cmdlet, which stops the service.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-service iisadmin | format-list -property name, dependentservices
-PS C:\>stop-service iisadmin -force -confirm
+PS C:\> get-service iisadmin | format-list -property name, dependentservices
+PS C:\> stop-service iisadmin -force -confirm
 ```
 
 The Stop-Service command stops the IISAdmin service on the local computer.

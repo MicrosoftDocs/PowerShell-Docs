@@ -55,22 +55,22 @@ For example, if you are working in a PowerShell.exe session, you can't enter the
 
 ### Example 1: Debug a remote runspace
 ```
-PS C:\>Get-Process -ComputerName "WS10TestServer" -Name "*powershell*"
+PS C:\> Get-Process -ComputerName "WS10TestServer" -Name "*powershell*"
 Handles      WS(K)   VM(M)      CPU(s)    Id  ProcessName
 -------      -----   -----      ------    --  -----------
     377      69912     63     2.09      2420  powershell
-    399     123396    829     4.48      1152  powershell_ise PS C:\>Enter-PSSession -ComputerName "WS10TestServer"
+    399     123396    829     4.48      1152  powershell_ise PS C:\> Enter-PSSession -ComputerName "WS10TestServer"
 [WS10TestServer]:PS C:\> Enter-PSHostProcess -Id 1152
 [WS10TestServer:][Process:1152]: PS C:\Users\Test\Documents> Get-Runspace
 Id Name            ComputerName    Type          State         Availability
 -- ----            ------------    ----          -----         ------------
  1 Runspace1       WS10TestServer  Remote        Opened        Available
- 2 RemoteHost      WS10TestServer  Remote        Opened        Busy PS C:\>[WS10TestServer][Process:1152]: PS C:\Users\Test\Documents> Debug-Runspace -Id 2
+ 2 RemoteHost      WS10TestServer  Remote        Opened        Busy PS C:\> [WS10TestServer][Process:1152]: PS C:\Users\Test\Documents> Debug-Runspace -Id 2
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 At C:\TestWFVar1.ps1:83 char:1
 + $scriptVar = "Script Variable"
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[Process:1152]: [RSDBG: 2]: PS C:\>>
+[Process:1152]: [RSDBG: 2]: PS C:\> >
 ```
 
 In this example, you debug a runspace that is open on a remote computer, WS10TestServer.

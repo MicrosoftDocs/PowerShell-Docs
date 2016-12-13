@@ -48,14 +48,14 @@ The **Set-PSReadlineOption** cmdlet customizes the behavior of the PSReadline mo
 
 ### Example 1: Set values for Comment type
 ```
-PS C:\>Set-PSReadlineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
+PS C:\> Set-PSReadlineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
 ```
 
 This command sets tokens of the type Comment to be displayed in PSReadline in green text on a gray background.
 
 ### Example 2: Set bell style
 ```
-PS C:\>Set-PSReadlineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
+PS C:\> Set-PSReadlineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
 ```
 
 This cmdlet instructs PSReadline to respond to errors and other conditions that require user input by emitting an audible beep or sound at 1221 Hz for 60 ms.

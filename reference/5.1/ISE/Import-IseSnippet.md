@@ -53,7 +53,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Import snippets from a directory
 ```
-PS C:\>Import-IseSnippet -Path "\\Server01\Public\Snippets" -Recurse
+PS C:\> Import-IseSnippet -Path "\\Server01\Public\Snippets" -Recurse
 ```
 
 This command imports the snippets from the \\Server01\Public\Snippets directory into the current session.
@@ -61,7 +61,7 @@ It uses the **Recurse** parameter to get snippets from all subdirectories of the
 
 ### Example 2: Import snippets from a module
 ```
-PS C:\>Import-IseSnippet -Module "SnippetModule" -ListAvailable
+PS C:\> Import-IseSnippet -Module "SnippetModule" -ListAvailable
 ```
 
 This command imports the snippets from the SnippetModule module.

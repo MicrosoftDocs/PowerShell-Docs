@@ -43,7 +43,7 @@ You can type the content in the command or send content through the pipeline to 
 
 ### Example 1: Replace the contents of multiple files in a folder
 ```
-PS C:\>Set-Content -Path "C:\Test1\test*.txt" -Value "Hello, World"
+PS C:\> Set-Content -Path "C:\Test1\test*.txt" -Value "Hello, World"
 ```
 
 This command replaces the contents of all files in the Test1 folder that have names that start with "test" with "Hello, World".
@@ -51,7 +51,7 @@ This example shows how to specify content by typing it in the command.
 
 ### Example 2: Send content to a file
 ```
-PS C:\>Get-Date | Set-Content -Path "C:\Test1\date.csv"
+PS C:\> Get-Date | Set-Content -Path "C:\Test1\date.csv"
 ```
 
 This command creates a comma separated variable length (csv) file that contains only the current date and time.
@@ -62,7 +62,7 @@ If the Test1 directory does not exist, the command fails, but if the file does n
 
 ### Example 3: Replace text in a file
 ```
-PS C:\>(Get-Content -Path "Notice.txt") | ForEach-Object {$_ -Replace "Warning", "Caution"} | Set-Content -Path "Notice.txt"
+PS C:\> (Get-Content -Path "Notice.txt") | ForEach-Object {$_ -Replace "Warning", "Caution"} | Set-Content -Path "Notice.txt"
 ```
 
 This command replaces all instances of Warning with Caution in the Notice.txt file.

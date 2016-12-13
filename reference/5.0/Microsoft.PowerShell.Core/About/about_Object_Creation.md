@@ -52,8 +52,8 @@ For example, the following command creates a Version object.
 
 
 ```
-PS C:\>$v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1  
-PS C:\>$v
+PS C:\> $v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1  
+PS C:\> $v
 ```
 
 
@@ -67,7 +67,7 @@ Major  Minor  Build  Revision
 
 
 ```
-PS C:\>$v | Get-Member  
+PS C:\> $v | Get-Member  
   
     TypeName: System.Version
 ```
@@ -117,7 +117,7 @@ The output of this function is a collection of custom objects formatted as a tab
 
 
 ```
-PS C:\>Test-Object  
+PS C:\> Test-Object  
   
 ModuleName        UICulture      Version  
 ---------         ---------      -------  
@@ -130,7 +130,7 @@ Users can manage the properties of the custom objects just as they do with stand
 
 
 ```
-PS C:\>(Test-Object).ModuleName  
+PS C:\> (Test-Object).ModuleName  
  PSScheduledJob  
  PSWorkflow
 ```
@@ -187,8 +187,8 @@ AssetID, Name, OS, Department
 
 
 ```
-PS C:\>$a = Import-Csv Servers.csv  
-PS C:\>$a  
+PS C:\> $a = Import-Csv Servers.csv  
+PS C:\> $a  
   
 AssetID        Name           OS                    Department  
 -------        ----           --                    ----------  
@@ -202,7 +202,7 @@ Use the Get-Member cmdlet to confirm the object type.
 
 
 ```
-PS C:\>$a | Get-Member
+PS C:\> $a | Get-Member
 ```
 
 
@@ -227,7 +227,7 @@ You can use the custom objects just as you would standard objects.
 
 
 ```
-PS C:\>$a | where {$_.OS -eq "Windows 8"}
+PS C:\> $a | where {$_.OS -eq "Windows 8"}
 ```
 
 

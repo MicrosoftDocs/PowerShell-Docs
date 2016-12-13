@@ -32,14 +32,14 @@ You can pop a location from the default stack or from a stack that you create by
 
 ### Example 1: Change to most recent location
 ```
-PS C:\>Pop-Location
+PS C:\> Pop-Location
 ```
 
 This command changes your location to the location most recently added to the current stack.
 
 ### Example 2: Change to most recent location in a named stack
 ```
-PS C:\>Pop-Location -StackName "Stack2"
+PS C:\> Pop-Location -StackName "Stack2"
 ```
 
 This command changes your location to the location most recently added to the Stack2 location stack.
@@ -48,7 +48,7 @@ For more information about location stacks, see the Notes.
 
 ### Example 3: Move between locations for different providers
 ```
-PS C:\>pushd HKLM:\Software\Microsoft\PowerShell
+PS C:\> pushd HKLM:\Software\Microsoft\PowerShell
 PS HKLM:\Software\Microsoft\PowerShell> pushd Cert:\LocalMachine\TrustedPublisher
 PS cert:\LocalMachine\TrustedPublisher> popd
 PS HKLM:\Software\Microsoft\PowerShell> popd

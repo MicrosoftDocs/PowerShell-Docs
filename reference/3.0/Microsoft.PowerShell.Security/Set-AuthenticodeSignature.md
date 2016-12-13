@@ -41,8 +41,8 @@ If there is a signature in the file when this cmdlet runs, that signature is rem
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$cert=Get-ChildItem -Path cert:\CurrentUser\my -CodeSigningCert
-PS C:\>Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -certificate $cert
+PS C:\> $cert=Get-ChildItem -Path cert:\CurrentUser\my -CodeSigningCert
+PS C:\> Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -certificate $cert
 ```
 
 These commands retrieve a code-signing certificate from the Windows PowerShell certificate provider and use it to sign a Windows PowerShell script.
@@ -55,8 +55,8 @@ The second command uses the Set-AuthenticodeSignature cmdlet to sign the PSTestI
 It uses the FilePath parameter to specify the name of the script and the Certificate parameter to specify that the certificate is stored in the $cert variable.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$cert = Get-PfxCertificate C:\Test\Mysign.pfx
-PS C:\>Set-AuthenticodeSignature -Filepath ServerProps.ps1 -Cert $cert
+PS C:\> $cert = Get-PfxCertificate C:\Test\Mysign.pfx
+PS C:\> Set-AuthenticodeSignature -Filepath ServerProps.ps1 -Cert $cert
 ```
 
 These commands use the Get-PfxCertificate cmdlet to find a code signing certificate.
@@ -70,7 +70,7 @@ The FilePath parameter of Set-AuthenticodeSignature specifies the path to the sc
 If the certificate file is password protected, Windows PowerShell prompts you for the password.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Set-AuthenticodeSignature -filepath c:\scripts\Remodel.ps1 -certificate $cert -IncludeChain All -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
+PS C:\> Set-AuthenticodeSignature -filepath c:\scripts\Remodel.ps1 -certificate $cert -IncludeChain All -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
 ```
 
 This command adds a digital signature that includes the root authority in the trust chain, and it is signed by a third-party timestamp server.

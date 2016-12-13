@@ -30,21 +30,21 @@ You can use it to reset the password of the local computer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Reset-ComputerMachinePassword
+PS C:\> Reset-ComputerMachinePassword
 ```
 
 This command resets the machine password for the local computer.
 The command runs with the credentials of the current user.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Reset-ComputerMachinePassword -Server DC01 -Credential Domain01\Admin01
+PS C:\> Reset-ComputerMachinePassword -Server DC01 -Credential Domain01\Admin01
 ```
 
 This command resets the machine password of the local computer using the DC01 domain controller.
 It uses the **Credential** parameter to specify a user account that has permission to reset a machine password in the domain.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Invoke-Command -ComputerName Server01 -ScriptBlock {Reset-ComputerMachinePassword}
+PS C:\> Invoke-Command -ComputerName Server01 -ScriptBlock {Reset-ComputerMachinePassword}
 ```
 
 This command uses theInvoke-Command cmdlet to run a **Reset-ComputerMachinePassword** command on the Server01 remote computer.

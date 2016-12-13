@@ -36,13 +36,13 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ISESnippet
+PS C:\> Get-ISESnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
+PS C:\> Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
 ```
 
 This command copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
@@ -51,7 +51,7 @@ The command uses the Invoke-Command cmdlet to run a **Get-ISESnippet** command o
 A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the **Destination** parameter.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>#Parse-Snippet Function
+PS C:\> #Parse-Snippet Function
 
 function Parse-Snippet
 {
@@ -85,7 +85,7 @@ Text:  (c) Fabrikam, Inc. 2012
 This function uses the **Get-ISESnippet** and Select-Xml cmdlets to display the Title and Text of each snippet on the local computer.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
+PS C:\> $psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
 ```
 
 This command displays the title and description of all snippets in the session, including built-in snippets, user-defined snippets, and imported snippets.

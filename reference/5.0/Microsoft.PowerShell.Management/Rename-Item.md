@@ -43,7 +43,7 @@ To move and rename an item, use the Move-Item cmdlet.
 
 ### Example 1: Rename a file
 ```
-PS C:\>Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
+PS C:\> Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
 ```
 
 This command renames the file daily_file.txt to monday_file.txt.
@@ -51,7 +51,7 @@ This command renames the file daily_file.txt to monday_file.txt.
 ### Example 2: Rename and move an item
 ```
 The first command attempts to rename the project.txt file in the current directory to old-project.txt in the D:\Archive directory. The result is the error shown in the output.
-PS C:\>Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
+PS C:\> Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
 Rename-Item : Cannot rename because the target specified represents a path or device name. 
 At line:1 char:12
 + rename-item <<<<  -path project.txt -newname d:\archive\old-project.txt
@@ -59,7 +59,7 @@ At line:1 char:12
 + FullyQualifiedErrorId : Argument,Microsoft.PowerShell.Commands.RenameItemCommand
 
 The second command shows the correct way to move and rename a file by using **Move-Item**. The **Move-Item** cmdlet lets you specify both a new path and a new name in the value of its *Destination* parameter.
-PS C:\>Move-Item -Path "project.txt" -Destination "d:\archive\old-project.txt"
+PS C:\> Move-Item -Path "project.txt" -Destination "d:\archive\old-project.txt"
 ```
 
 This example shows that you cannot use **Rename-Item** to both rename and move an item.
@@ -68,7 +68,7 @@ Otherwise, only a new name is permitted.
 
 ### Example 3: Rename a registry key
 ```
-PS C:\>Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
+PS C:\> Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
 ```
 
 This command renames a registry key from Advertising to Marketing.
@@ -76,7 +76,7 @@ When the command is complete, the key is renamed, but the registry entries in th
 
 ### Example 4: Rename multiple files
 ```
-PS C:\>Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt','.log' }
+PS C:\> Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt','.log' }
 ```
 
 This example shows how to use the **Replace** operator to rename multiple files, even though the *NewName* parameter does not accept wildcard characters.

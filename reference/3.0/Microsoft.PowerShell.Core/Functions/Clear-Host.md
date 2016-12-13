@@ -34,7 +34,7 @@ cls
 
 # Before
 
-PS C:\>Get-Process
+PS C:\> Get-Process
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------

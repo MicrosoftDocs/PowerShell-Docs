@@ -37,7 +37,7 @@ For more information, see about_Transactions.
 
 ### Example 1: Commit a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 PS HKCU:\software> dir m*
@@ -69,7 +69,7 @@ As a result, the second dir command shows that the registry is changed.
 
 ### Example 2: Commit a transaction that has more than one subscriber
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 Hive: HKEY_CURRENT_USER\Software
@@ -141,7 +141,7 @@ This is confirmed by a second dir m* command, which shows the changes.
 
 ### Example 3: Perform a transaction that does not change any data
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 PS HKCU:\software> dir m*

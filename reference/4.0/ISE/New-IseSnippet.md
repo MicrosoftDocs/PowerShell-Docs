@@ -47,7 +47,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
+PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS             
     .DESCRIPTION            
     .PARAMETER  <Parameter-Name>
@@ -63,7 +63,7 @@ It creates a file named "Comment-BasedHelp.snippets.ps1xml" in the user's Snippe
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$m = @'
+PS C:\> $m = @'
 Param
 (
   [parameter(Mandatory=$true)]
@@ -72,7 +72,7 @@ Param
 )
 '@
 
-PS C:\>New-ISESnippet -Text $m -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Kim Akers, Fabrikam Corp." -Force
+PS C:\> New-ISESnippet -Text $m -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Kim Akers, Fabrikam Corp." -Force
 ```
 
 These commands create a Mandatory snippet for Windows PowerShell ISE.
@@ -82,7 +82,7 @@ The command uses the **Force** parameter to overwrite a previous snippet with th
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml -Destination \\Server\Share
+PS C:\> Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml -Destination \\Server\Share
 ```
 
 This command uses the Copy-Item cmdlet to copy the Mandatory snippet from the folder where **New-ISESnippet** places it to the Server\Share file share.

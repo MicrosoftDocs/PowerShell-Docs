@@ -46,14 +46,14 @@ The Microsoft .NET Framework provides Web service proxy objects that represent t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WSDL
+PS C:\> $zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WSDL
 ```
 
 This command uses the **New-WebServiceProxy** command to create a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$URI = "http://www.webservicex.net/uszip.asmx?WSDL"
-PS C:\>$zip = New-WebServiceProxy -Uri $URI -Namespace WebServiceProxy -Class USZip
+PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
+PS C:\> $zip = New-WebServiceProxy -Uri $URI -Namespace WebServiceProxy -Class USZip
 ```
 
 This command uses the **New-WebServiceProxy** cmdlet to create a .NET Framework proxy of the US Zip Web service.
@@ -64,7 +64,7 @@ The second command creates the Web service proxy.
 The command uses the **URI** parameter to specify the URI and the **Namespace** and **Class** parameters to specify the namespace and class of the object.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$zip | get-member -type method
+PS C:\> $zip | get-member -type method
 
 TypeName: WebServiceProxy.USZip
 Name                      MemberType Definition
@@ -99,7 +99,7 @@ We will use these methods in the following example.
 Notice that the TypeName of the proxy object, WebServiceProxy, reflects the namespace and class names that were specified in the previous example.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$zip.getinfobyzip(20500).table
+PS C:\> $zip.getinfobyzip(20500).table
 CITY      : Washington
 STATE     : DC
 ZIP       : 20500

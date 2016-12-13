@@ -67,14 +67,14 @@ For information about a particular custom job type, see the documentation of the
 
 ### Example 1: Wait for all jobs
 ```
-PS C:\>Get-Job | Wait-Job
+PS C:\> Get-Job | Wait-Job
 ```
 
 This command waits for all of the background jobs running in the session to finish.
 
 ### Example 2: Wait for jobs started on remote computers by using Start-Job
 ```
-PS C:\>$s = New-PSSession Server01, Server02, Server03
+PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -Name Date1 -ScriptBlock {Get-Date}}
 PS C:\> $done = Invoke-Command -Session $s -Command {Wait-Job -Name Date1}
 PS C:\> $done.Count
@@ -99,7 +99,7 @@ The fourth command uses the **Count** property of the array of job objects in th
 
 ### Example 3: Determine when the first background job finishes
 ```
-PS C:\>$s = New-PSSession (Get-Content Machines.txt)
+PS C:\> $s = New-PSSession (Get-Content Machines.txt)
 PS C:\> $c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$Using:c}
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Wait-Job -Any}
@@ -126,7 +126,7 @@ It uses the *Any* parameter to wait until the first job on the remote computers 
 
 ### Example 4: Set a wait time for jobs on remote computers
 ```
-PS C:\>$s = New-PSSession Server01, Server02, Server03
+PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
 PS C:\> $done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
 ```
@@ -149,7 +149,7 @@ The $done variable contains a job object that represents the job that ran on Ser
 
 ### Example 5: Wait until one of several jobs finishes
 ```
-PS C:\>Wait-Job -id 1,2,5 -Any
+PS C:\> Wait-Job -id 1,2,5 -Any
 ```
 
 This command identifies three jobs by their IDs and waits until any one of them are completed.
@@ -157,7 +157,7 @@ The command prompt returns when the first job finishes.
 
 ### Example 6: Wait for a period, then allow job to continue in background
 ```
-PS C:\>Wait-Job -Name "DailyLog" -Timeout 120
+PS C:\> Wait-Job -Name "DailyLog" -Timeout 120
 ```
 
 This command waits 120 seconds (two minutes) for the DailyLog job to finish.
@@ -165,15 +165,15 @@ If the job does not finish in the next two minutes, the command prompt returns a
 
 ### Example 7: Wait for a job by name
 ```
-PS C:\>Wait-Job -Name "Job3"
+PS C:\> Wait-Job -Name "Job3"
 ```
 
 This command uses the job name to identify the job for which to wait.
 
 ### Example 8: Wait for jobs on local computer started with Start-Job
 ```
-PS C:\>$j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
-PS C:\>$j | Wait-Job
+PS C:\> $j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+PS C:\> $j | Wait-Job
 ```
 
 This example shows how to use the **Wait-Job** cmdlet with jobs started on the local computer by using **Start-Job**.
@@ -188,7 +188,7 @@ When the job finishes, the command displays the job object, which contains infor
 
 ### Example 9: Wait for jobs started on remote computers by using Invoke-Command
 ```
-PS C:\>$s = New-PSSession Server01, Server02, Server03
+PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
 PS C:\> $j | Wait-Job
 ```
@@ -209,7 +209,7 @@ An **Invoke-Command** command is not required in this case, because the job resi
 
 ### Example 10: Wait for a job that has an ID
 ```
-PS C:\>Get-Job
+PS C:\> Get-Job
 
 Id   Name     State      HasMoreData     Location             Command
 --   ----     -----      -----------     --------             -------

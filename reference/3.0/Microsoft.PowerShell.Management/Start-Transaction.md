@@ -46,7 +46,7 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> new-itemproperty MyCompany -name MyKey -value 123 -UseTransaction
@@ -57,7 +57,7 @@ These commands start and then roll back a transaction.
 Because the transaction is rolled back, no changes are made to the registry.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> new-itemproperty MyCompany -name MyKey -value 123 -UseTransaction
@@ -68,7 +68,7 @@ These commands start and then complete a transaction.
 No changes are made to the registry until the Complete-Transaction command is used.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item -path NoPath -name MyCompany -UseTransaction
 PS HKCU:\software> new-item -path . -name MyCompany -UseTransaction
@@ -121,7 +121,7 @@ As a result, when an error occurs in a transaction command, the transaction is s
 Because most transactions must be performed without error, the default value of the RollbackPreference parameter is typically preferred.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> start-transaction
@@ -153,7 +153,7 @@ To complete the transaction, you must enter two Complete-Transaction commands, o
 If you were to roll back the transaction at any point, the entire transaction would be rolled back for both subscribers.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>cd HKCU:\software
+PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> start-transaction -independent
@@ -198,7 +198,7 @@ The New-ItemProperty command, which is part of the original transaction, complet
 As a result, the registry is changed.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany1 -UseTransaction
 PS HKCU:\software> new-item MyCompany2
@@ -238,23 +238,23 @@ The Complete-Transaction command commits the transaction.
 As a result, the second "dir" command shows that all of the new items are added to the registry.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>start-transaction -timeout 2
+PS C:\> start-transaction -timeout 2
 
 # Wait two minutes...
 
-PS C:\>get-transaction
-PS C:\>new-item HKCU:\Software\MyCompany -UseTransaction
-PS C:\>start-transaction -timeout 2
+PS C:\> get-transaction
+PS C:\> new-item HKCU:\Software\MyCompany -UseTransaction
+PS C:\> start-transaction -timeout 2
 
 # Wait two minutes...
 
-PS C:\>> get-transaction
+PS C:\> > get-transaction
 
 RollbackPreference   SubscriberCount   Status
 ------------------   ---------------   -----------
 Error                1                 RolledBack
 
-PS C:\>new-item HKCU:\Software\MyCompany -UseTransaction
+PS C:\> new-item HKCU:\Software\MyCompany -UseTransaction
 
 New-Item : Cannot use transaction. The transaction has been rolled back or has timed out.
 At line:1 char:9

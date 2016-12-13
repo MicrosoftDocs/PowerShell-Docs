@@ -46,7 +46,7 @@ For more information about location stacks, see the Notes.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-location HKLM:
+PS C:\> set-location HKLM:
 PS HKLM:\>
 ```
 
@@ -54,7 +54,7 @@ This command sets the current location to the root of the HKLM: drive.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-location env: -passthru
+PS C:\> set-location env: -passthru
 
 Path
 ----
@@ -67,14 +67,14 @@ It uses the Passthru parameter to direct Windows PowerShell to return a PathInfo
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-location C:
+PS C:\> set-location C:
 ```
 
 This command sets the current location C: drive in the file system provider.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-location -stackName WSManPaths
+PS C:\> set-location -stackName WSManPaths
 ```
 
 This command makes the WSManPaths location stack the current location stack.

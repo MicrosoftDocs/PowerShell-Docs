@@ -34,7 +34,7 @@ For each module that this cmdlet finds, **Find-DscResource** returns a **PSGetDs
 
 ### Example 1: Find all DSC resources
 ```
-PS C:\>Find-DscResource
+PS C:\> Find-DscResource
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xJeaEndPoint                        0.2.16.6   xJea                                PSGallery
@@ -49,7 +49,7 @@ This command returns all DSC resources from all registered galleries.
 
 ### Example 2: Find a DSC resource by name
 ```
-PS C:\>Find-DscResource -Name "xWebsite"
+PS C:\> Find-DscResource -Name "xWebsite"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xWebsite                            1.7.0.0    xWebAdministration                  PSGallery
@@ -59,7 +59,7 @@ This command finds the DSC resource named xWebsite.
 
 ### Example 3: Find a DSC resource and install it
 ```
-PS C:\>Find-DscResource -Name "MyResource" | Install-Module
+PS C:\> Find-DscResource -Name "MyResource" | Install-Module
 ```
 
 This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator.
@@ -69,7 +69,7 @@ If you pipe multiple resources to the **Install-Module** cmdlet from the same mo
 
 ### Example 4: Find all DSC resources in a module
 ```
-PS C:\>Find-DscResource -ModuleName "xWebAdministration"
+PS C:\> Find-DscResource -ModuleName "xWebAdministration"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xIisFeatureDelegation               1.7.0.0    xWebAdministration                  PSGallery
@@ -89,14 +89,14 @@ This command finds all the DSC resources contained in a specified module by spec
 
 ### Example 5: Find a DSC resource by tag and required version
 ```
-PS C:\>Find-DscResource -Tag "Credentials" -RequiredVersion "1.5"
+PS C:\> Find-DscResource -Tag "Credentials" -RequiredVersion "1.5"
 ```
 
 This command finds a resource by its tag and required version.
 
 ### Example 6: Find a resource by using a filter
 ```
-PS C:\>Find-DscResource -Filter "Domain"
+PS C:\> Find-DscResource -Filter "Domain"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xComputer                           1.3.0      xComputerManagement                 PSGallery

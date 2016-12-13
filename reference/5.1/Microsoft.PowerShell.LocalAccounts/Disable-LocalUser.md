@@ -44,14 +44,14 @@ When a user account is enabled, the user can log on.
 
 ### Example 1: Disable an account by specifying a name
 ```
-PS C:\>Disable-LocalUser -Name "Admin02"
+PS C:\> Disable-LocalUser -Name "Admin02"
 ```
 
 This command disables the user account named Admin02.
 
 ### Example 2: Disable an account by using the pipeline
 ```
-PS C:\>Get-LocalUser Guest | Disable-LocalUser
+PS C:\> Get-LocalUser Guest | Disable-LocalUser
 ```
 
 This command gets the built-in Guest account by using **Get-LocalUser**, and then passes it to the current cmdlet by using the pipeline operator.

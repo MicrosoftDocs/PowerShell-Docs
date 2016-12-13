@@ -72,7 +72,7 @@ Package sources are always managed by a package provider.
 
 ### Example 1: Change a package source
 ```
-PS C:\>Set-PackageSource -Name "PsRep" -NewName "PS-Feature-Rep" -Trusted -ProviderName "PSModule"
+PS C:\> Set-PackageSource -Name "PsRep" -NewName "PS-Feature-Rep" -Trusted -ProviderName "PSModule"
 ```
 
 This command changes the friendly name of a package source for the PSModule provider.

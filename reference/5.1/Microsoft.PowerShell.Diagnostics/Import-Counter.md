@@ -50,14 +50,14 @@ Along with the Get-Counter and Export-Counter cmdlets, this feature lets you col
 
 ### -------------------------- EXAMPLE xample 1: Import all counter data from a file --------------------------xample : Import all counter data from a file
 ```
-PS C:\>$Data = Import-Counter -Path ProcessorData.csv
+PS C:\> $Data = Import-Counter -Path ProcessorData.csv
 ```
 
 This command imports all counter data from the ProcessorData.csv file into the $Data variable.
 
 ### Example 2: Import specific counter data from a file
 ```
-PS C:\>$I = Import-Counter -Path "ProcessorData.blg" -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
+PS C:\> $I = Import-Counter -Path "ProcessorData.blg" -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
 ```
 
 This command imports only the **"Processor(_total)\Interrupts/sec"** counter data from the ProcessorData.blg file into the $I variable.
@@ -65,10 +65,10 @@ This command imports only the **"Processor(_total)\Interrupts/sec"** counter dat
 ### Example 3: Select data from a performance counter then export it to a file
 ```
 The first command uses **Import-Counter** to import all of the performance counter data from the ProcessorData.blg files. The command saves the data in the $Data variable.
-PS C:\>$Data = Import-Counter .\ProcessorData.blg
+PS C:\> $Data = Import-Counter .\ProcessorData.blg
 
 The second command displays the counter paths in the $Data variable. To get the display shown in the command output, the example uses the Format-Table cmdlet to format as a table the counter paths of the first counter in the $Data variable.
-PS C:\>$Data[0].CounterSamples | Format-Table -Property Path
+PS C:\> $Data[0].CounterSamples | Format-Table -Property Path
 
 Path
 ----
@@ -82,20 +82,20 @@ Path
 \\SERVER01\Processor(1)\% C3 Time
 
 The third command gets the counter paths that end in "Interrupts/sec" and saves the paths in the $IntCtrs variable. It uses the Where-Object cmdlet to filter the counter paths and the ForEach-Object cmdlet to get only the value of the **Path** property of each selected path object.
-PS C:\>$IntCtrs = $Data[0].Countersamples | Where-Object {$_.Path -like "*Interrupts/sec"} | ForEach-Object {$_.Path}
+PS C:\> $IntCtrs = $Data[0].Countersamples | Where-Object {$_.Path -like "*Interrupts/sec"} | ForEach-Object {$_.Path}
 
 The fourth command displays the selected counter paths in the $IntCtrs variable.
-PS C:\>$IntCtrs
+PS C:\> $IntCtrs
 
 \\SERVER01\Processor(_Total)\Interrupts/sec
 \\SERVER01\Processor(1)\Interrupts/sec
 \\SERVER01\Processor(0)\Interrupts/sec
 
 The fifth command uses the **Import-Counter** cmdlet to import the data. It uses the $IntCtrs variable as the value of the *Counter* parameter to import only data for the counter paths in $IntCtrs.
-PS C:\>$I = Import-Counter -Path .\ProcessorData.blg -Counter $intCtrs
+PS C:\> $I = Import-Counter -Path .\ProcessorData.blg -Counter $intCtrs
 
 The sixth command uses the Export-Counter cmdlet to export the data to the Interrupts.csv file.
-PS C:\>$I | Export-Counter -Path .\Interrupts.csv -Format CSV
+PS C:\> $I | Export-Counter -Path .\Interrupts.csv -Format CSV
 ```
 
 This example shows how to select data from a performance counter log file (.blg) and then export the selected data to a .csv file.
@@ -105,7 +105,7 @@ The last two commands import selected data and then export only the selected dat
 ### Example 4: Display all counter paths in a group of imported counter sets
 ```
 The first command uses the *ListSet* parameter of the **Import-Counter** cmdlet to get all of the counter sets that are represented in a counter data file.
-PS C:\>Import-Counter -Path ProcessorData.csv -ListSet *
+PS C:\> Import-Counter -Path ProcessorData.csv -ListSet *
 
 CounterSetName     : Processor
 MachineName        : \\SERVER01
@@ -119,7 +119,7 @@ Counter            : {\\SERVER01\Processor(*)\DPC Rate, \\SERVER01\Processor(*)\
 \Processor(*)\% C3 Time, \\SERVER01\Processor(*)\% Interrupt Time...}
 
 The second command gets all of the counter paths from the list set.
-PS C:\>Import-Counter -Path ProcessorData.csv -ListSet * | ForEach-Object {$_.Paths}
+PS C:\> Import-Counter -Path ProcessorData.csv -ListSet * | ForEach-Object {$_.Paths}
 
 \\SERVER01\Processor(*)\DPC Rate
 \\SERVER01\Processor(*)\% Idle Time
@@ -143,13 +143,13 @@ This example shows how to display all the counter paths in a group of imported c
 ### Example 5: Import counter data from a range of time stamps
 ```
 The first command lists in a table the time stamps of all of the data in the ProcessorData.blg file.
-PS C:\>Import-Counter -Path ".\disk.blg" | Format-Table -Property Timestamp
+PS C:\> Import-Counter -Path ".\disk.blg" | Format-Table -Property Timestamp
 
 The second command saves particular time stamps in the $Start and $End variables. The strings are cast to **DateTime** objects.
-PS C:\>$Start = [datetime]"7/9/2008 3:47:00 PM"; $End = [datetime]"7/9/2008 3:47:59 PM"
+PS C:\> $Start = [datetime]"7/9/2008 3:47:00 PM"; $End = [datetime]"7/9/2008 3:47:59 PM"
 
 The third command uses the **Import-Counter** cmdlet to get only counter data that has a time stamp between the start and end times (inclusive). The command uses the *StartTime* and *EndTime* parameters of **Import-Counter** to specify the range.
-PS C:\>Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
+PS C:\> Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
 ```
 
 This example imports only the counter data that has a time stamp between the starting an ending ranges specified in the command.
@@ -157,17 +157,17 @@ This example imports only the counter data that has a time stamp between the sta
 ### Example 6: Import a specified number of the oldest samples from a performance counter log file
 ```
 The first command uses the **Import-Counter** cmdlet to import the first (oldest) five samples from the Disk.blg file. The command uses the *MaxSamples* parameter to limit the import to five counter samples.
-PS C:\>Import-Counter -Path "Disk.blg" -MaxSamples 5
+PS C:\> Import-Counter -Path "Disk.blg" -MaxSamples 5
 
 The second command uses array notation and the Windows PowerShell range operator (..) to get the last five counter samples from the file. These are the five newest samples.
-PS C:\>(Import-Counter -Path Disk.blg)[-1 .. -5]
+PS C:\> (Import-Counter -Path Disk.blg)[-1 .. -5]
 ```
 
 This example shows how to import the five oldest and five newest samples from a performance counter log file.
 
 ### Example 7: Get a summary of counter data from a file
 ```
-PS C:\>Import-Counter "D:\Samples\Memory.blg" -Summary
+PS C:\> Import-Counter "D:\Samples\Memory.blg" -Summary
 
 OldestRecord            NewestRecord            SampleCount
 ------------            ------------            -----------
@@ -179,17 +179,17 @@ This command uses the *Summary* parameter of the **Import-Counter** cmdlet to ge
 ### Example 8: Update a performance counter log file
 ```
 The first command uses the *ListSet* parameter of **Import-Counter** to get the counters in OldData.blg, an existing counter log file. The command uses a pipeline operator (|) to send the data to a ForEach-Object command that gets only the values of the **PathsWithInstances** property of each object
-PS C:\>$Counters = Import-Counter OldData.blg -ListSet * | ForEach-Object {$_.PathsWithInstances}
+PS C:\> $Counters = Import-Counter OldData.blg -ListSet * | ForEach-Object {$_.PathsWithInstances}
 
 The second command gets updated data for the counters in the $Counters variable. It uses the Get-Counter cmdlet to get a current sample, and then export the results to the NewData.blg file.
-PS C:\>Get-Counter -Counter $Counters -MaxSamples 20 | Export-Counter C:\Logs\NewData.blg
+PS C:\> Get-Counter -Counter $Counters -MaxSamples 20 | Export-Counter C:\Logs\NewData.blg
 ```
 
 This example updates a performance counter log file.
 
 ### Example 9: Import performance log data from multiple files and then save it
 ```
-PS C:\>$Counters = "D:\test\pdata.blg", "D:\samples\netlog.blg" | Import-Counter
+PS C:\> $Counters = "D:\test\pdata.blg", "D:\samples\netlog.blg" | Import-Counter
 ```
 
 This command imports performance log data from two logs and saves the data in the $Counters variable.

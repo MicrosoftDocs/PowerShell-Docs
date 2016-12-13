@@ -33,7 +33,7 @@ You can retrieve just the values of the variables by specifying the **ValueOnly*
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Variable m*
+PS C:\> Get-Variable m*
 ```
 
 This command gets variables with names that begin with the letter "m".
@@ -41,22 +41,22 @@ The command also gets the value of the variables.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Variable m* -Valueonly
+PS C:\> Get-Variable m* -Valueonly
 ```
 
 This command gets only the values of the variables that have names that begin with "m".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Variable -Include M*,P*
+PS C:\> Get-Variable -Include M*,P*
 ```
 
 This command gets information about the variables that begin with either the letter "M" or the letter "P".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Variable -Scope 0
-PS C:\>Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
+PS C:\> Get-Variable -Scope 0
+PS C:\> Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
 ```
 
 The first command gets only the variables that are defined in the local scope.

@@ -31,7 +31,7 @@ The **Out-Printer** cmdlet sends output to the default printer or to an alternat
 
 ### Example 1: Print the content of a help topic to the default printer
 ```
-PS C:\>Get-Content $pshome\about_signing.help.txt | Out-Printer
+PS C:\> Get-Content $pshome\about_signing.help.txt | Out-Printer
 ```
 
 This command prints the content of the about_Signing Help topic to the default printer.
@@ -43,7 +43,7 @@ A pipeline operator (|) passes the results to **Out-Printer**, which sends it to
 
 ### Example 2: Print text to an alternative printer
 ```
-PS C:\>"Hello, World" | Out-Printer -Name "\\Server01\Prt-6B Color"
+PS C:\> "Hello, World" | Out-Printer -Name "\\Server01\Prt-6B Color"
 ```
 
 This command prints Hello, World to the Prt-6B Color printer on Server01.
@@ -52,8 +52,8 @@ Because the parameter name is optional, you can omit it.
 
 ### Example 3: Print the full version of a help topic to the default printer
 ```
-PS C:\>$H = Get-Help -Full Get-WmiObject
-PS C:\>Out-Printer -InputObject $H
+PS C:\> $H = Get-Help -Full Get-WmiObject
+PS C:\> Out-Printer -InputObject $H
 ```
 
 These commands print the full version of the Help topic for Get-WmiObject.

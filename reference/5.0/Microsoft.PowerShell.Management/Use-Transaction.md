@@ -38,7 +38,7 @@ For more information, see about_Transactions.
 
 ### Example 1: Script by using a transaction-enabled object
 ```
-PS C:\>Start-Transaction
+PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
 PS C:\> $transactedString.Append("Hello")
 PS C:\> Use-Transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
@@ -87,12 +87,12 @@ The final command uses the **ToString** method to display the resulting value of
 
 ### Example 2: Roll back a transaction
 ```
-PS C:\>Start-Transaction
+PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
 PS C:\> $transactedString.Append("Hello")
 PS C:\> Use-Transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
 PS C:\> Undo-Transaction
-PS C:\>$transactedString.ToString()
+PS C:\> $transactedString.ToString()
 Hello
 ```
 

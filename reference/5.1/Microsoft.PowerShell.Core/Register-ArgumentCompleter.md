@@ -38,7 +38,7 @@ The **Register-ArgumentCompleter** cmdlet registers a custom argument completer.
 
 ### Example 1: Register a custom argument completer
 ```
-PS C:\>Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
+PS C:\> Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
 
         echo -- -PSConsoleFile -Version -NoLogo -NoExit -Sta -NoProfile -NonInteractive `

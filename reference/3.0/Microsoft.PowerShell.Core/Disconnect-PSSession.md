@@ -64,7 +64,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>Disconnect-PSSession -Name UpdateSession
+PS C:\> Disconnect-PSSession -Name UpdateSession
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------ 
 1  UpdateSession   Server01        Disconnected  Microsoft.PowerShell          None
@@ -77,7 +77,7 @@ The output shows that the attempt to disconnect was successful.
 The session state is Disconnected and the Availability is None, which indicates that the session is not busy and can be reconnected.
 ### Example 2
 ```
-PS C:\>Get-PSSession -ComputerName Server12 -Name ITTask | Disconnect-PSSession -OutputBufferingMode Drop -IdleTimeoutSec 86400
+PS C:\> Get-PSSession -ComputerName Server12 -Name ITTask | Disconnect-PSSession -OutputBufferingMode Drop -IdleTimeoutSec 86400
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------ 
 1  ITTask          Server12        Disconnected  ITTasks               None
@@ -96,18 +96,18 @@ This setting allows time for this administrator or other administrators to recon
 ### Example 3
 ```
 The technician begins by creating sessions on several remote computers and running a script in each session.The first command uses the New-PSSession cmdlet to create the ITTask session on three remote computers. The command saves the sessions in the $s variable. The second command uses the **FilePath** parameter of the Invoke-Command cmdlet to run a script in the sessions in the $s variable.
-PS C:\>$s = New-PSSession -ComputerName Srv1, Srv2, Srv30 -Name ITTask
+PS C:\> $s = New-PSSession -ComputerName Srv1, Srv2, Srv30 -Name ITTask
 
-PS C:\>Invoke-Command $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
+PS C:\> Invoke-Command $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
 
 The script running on the Srv1 computer generates unexpected errors. The technician contacts his manager and asks for assistance. The manager directs the technician to disconnect from the session so he can investigate.The second command uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer and the **Disconnect-PSSession** cmdlet to disconnect it. This command does not affect the ITTask sessions on  the other computers.
-PS C:\>Get-PSSession -Name ITTask -ComputerName Srv1 | Disconnect-PSSession
+PS C:\> Get-PSSession -Name ITTask -ComputerName Srv1 | Disconnect-PSSession
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------ 
 1 ITTask           Srv1            Disconnected  Microsoft.PowerShell          None
 
 The third  command uses the **Get-PSSession** cmdlet to get the ITTask sessions. The output shows that the ITTask sessions on the Srv2 and Srv30 computers were not affected by the command to disconnect.
-PS C:\>Get-PSSession -ComputerName Srv1, Srv2, Srv30 -Name ITTask
+PS C:\> Get-PSSession -ComputerName Srv1, Srv2, Srv30 -Name ITTask
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Srv1            Disconnected  Microsoft.PowerShell          None
@@ -115,22 +115,22 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  3 ITTask          Srv30           Opened        Microsoft.PowerShell     Available
 
 The manager logs on to his home computer, connects to his corporate network, starts Windows PowerShell, and uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer. He uses the credentials of the technician to access the session.
-PS C:\>Get-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
+PS C:\> Get-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Srv1            Disconnected  Microsoft.PowerShell          None
 
 Next, the manager uses the  Connect-PSSession cmdlet to connect to the ITTask session on the Srv1 computer. The command saves the session in the $s variable.
-PS C:\>$s = Connect-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
+PS C:\> $s = Connect-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
 
 The manager uses the Invoke-Command cmdlet to run some diagnostic commands in the session in the $s variable. He recognizes that the script failed because it did not find a required directory. The manager uses the MkDir function to create the directory, and then he restarts the Get-PatchStatus.ps1 script and disconnects from the session.The manager reports his findings to the technician, suggests that he reconnect to the session to complete the tasks, and asks him to add a command to the Get-PatchStatus.ps1 script that creates the required directory if it does not exist.
-PS C:\>Invoke-Command -Session $s {dir $home\Scripts\PatchStatusOutput.ps1}
+PS C:\> Invoke-Command -Session $s {dir $home\Scripts\PatchStatusOutput.ps1}
 
-PS C:\>Invoke-Command -Session $s {mkdir $home\Scripts\PatchStatusOutput}
+PS C:\> Invoke-Command -Session $s {mkdir $home\Scripts\PatchStatusOutput}
 
-PS C:\>Invoke-Command -Session $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
+PS C:\> Invoke-Command -Session $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
 
-PS C:\>Disconnect-PSSession -Session $s
+PS C:\> Disconnect-PSSession -Session $s
 ```
 
 This series of commands shows how the **Disconnect-PSSession** cmdlet might be used in an enterprise scenario.
@@ -139,20 +139,20 @@ The technician disconnects from the session so that a more experienced manager c
 ### Example 4
 ```
 The first command uses the New-PSSessionOption cmdlet to create a session option object. It uses the **IdleTimeout** parameter to set an idle timeout of 48 hours (172800000 milliseconds). The command saves the session option object in the $Timeout variable.
-PS C:\>$Timeout = New-PSSessionOption -IdleTimeout 172800000
+PS C:\> $Timeout = New-PSSessionOption -IdleTimeout 172800000
 
 The second command uses the New-PSSession cmdlet to create the ITTask session on the Server01 computer. The command save the session in the $s variable. The value of the **SessionOption** parameter is the 48-hour idle timeout in the $Timeout variable.
-PS C:\>$s = New-PSSession -Computer Server01 -Name ITTask -SessionOption $Timeout
+PS C:\> $s = New-PSSession -Computer Server01 -Name ITTask -SessionOption $Timeout
 
 The third command disconnects the ITTask session in the $s variable. The command fails because the idle timeout value of the session exceeds the **MaxIdleTimeoutMs** quota in the session configuration. Because the idle timeout is not used until the session is disconnected, this violation can go undetected while the session is in use.
-PS C:\>Disconnect-PSSession -Session $s
+PS C:\> Disconnect-PSSession -Session $s
 Disconnect-PSSession : The session ITTask cannot be disconnected because the specified
 idle timeout value 172800(seconds) is either greater than the server maximum allowed
 43200 (seconds) or less that the minimum allowed60(seconds).  Choose an idle time out
 value that is within the allowed range and try again.
 
 The fourth command uses the Invoke-Command cmdlet to run a Get-PSSessionConfiguration command for the Microsoft.PowerShell session configuration on the Server01 computer. The command uses the Format-List cmdlet to display all properties of the session configuration in a list.The output shows that the  **MaxIdleTimeoutMS** property, which establishes the maximum permitted **IdleTimeout** value for sessions that use the session configuration, is 43200000 milliseconds (12 hours).
-PS C:\>Invoke-Command -ComputerName Server01 {Get-PSSessionConfiguration Microsoft.PowerShell} | Format-List -Property *
+PS C:\> Invoke-Command -ComputerName Server01 {Get-PSSessionConfiguration Microsoft.PowerShell} | Format-List -Property *
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
 ResourceUri                   : http://schemas.microsoft.com/powershell/microsoft.powershell
@@ -190,7 +190,7 @@ PSShowComputerName            : True
 
 
 The fifth command gets the session option values of the session in the $s variable. The values of many session options are properties of the **ConnectionInfo** property of the **Runspace** property of the session.The output shows that the value of the **IdleTimeout** property of the session is 172800000 milliseconds (48 hours), which violates the **MaxIdleTimeoutMs** quota of 12 hours in the session configuration.To resolve this conflict, you can use the **ConfigurationName** parameter to select a different session configuration or use the **IdleTimeout** parameter to reduce the idle timeout of the session.
-PS C:\>$s.Runspace.ConnectionInfo
+PS C:\> $s.Runspace.ConnectionInfo
 ConnectionUri                     : http://Server01/wsman
 ComputerName                      : Server01
 Scheme                            : http
@@ -223,13 +223,13 @@ OperationTimeout                  : 180000
 IdleTimeout                       : 172800000
 
 The sixth command disconnects the session. It uses the **IdleTimeoutSec** parameter to set the idle timeout to the 12-hour maximum.
-PS C:\>Disconnect-PSSession $s -IdleTimeoutSec 43200
+PS C:\> Disconnect-PSSession $s -IdleTimeoutSec 43200
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  4 ITTask          Server01        Disconnected  Microsoft.PowerShell          None
 
 The seventh command gets the value of the **IdleTimeout** property of the disconnected session, which is measured in milliseconds. The output confirms that the command was successful.
-PS C:\>$s.Runspace.ConnectionInfo.IdleTimeout
+PS C:\> $s.Runspace.ConnectionInfo.IdleTimeout
 43200000
 ```
 

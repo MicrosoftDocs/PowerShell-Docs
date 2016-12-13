@@ -35,27 +35,27 @@ Typically, you create a new variable by typing the variable name and its value, 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-variable days
+PS C:\> new-variable days
 ```
 
 This command creates a new variable named "days".
 It has no value immediately following the command.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-variable zipcode -value 98033
+PS C:\> new-variable zipcode -value 98033
 ```
 
 This command creates a variable named "zipcode" and assigns it the value "98033".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>new-variable -name max -value 256 -option readonly
-PS C:\>new-variable -name max -value 1024
+PS C:\> new-variable -name max -value 256 -option readonly
+PS C:\> new-variable -name max -value 1024
 
 New-Variable : A variable with name 'max' already exists.
 At line:1 char:13
 + new-variable <<<<  -name max -value 1024
 
-PS C:\>new-variable -name max -value 1024 -force
+PS C:\> new-variable -name max -value 1024 -force
 ```
 
 This example shows how to use the ReadOnly option of New-Variable to protect a variable from being overwritten.
@@ -70,11 +70,11 @@ The third command uses the Force parameter to override the read-only protection 
 In this case, the command to create a new variable with the same name succeeds.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>new-variable -name counter -visibility private
+PS C:\> new-variable -name counter -visibility private
 
 #Effect of private variable in a module.
 
-PS C:\>get-variable c*
+PS C:\> get-variable c*
 
 Name                           Value
 ----                           -----
@@ -83,11 +83,11 @@ ConsoleFileName
 ConfirmPreference              High
 CommandLineParameters          {}
 
-PS C:\>$counter
+PS C:\> $counter
 
 "Cannot access the variable '$counter' because it is a private variable"
 
-PS C:\>Get-Counter
+PS C:\> Get-Counter
 
 Name         Value
 ----         -----

@@ -31,7 +31,7 @@ You can select the indicators that the bar reflects and the text that appears ab
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>for ($i = 1; $i -le 100; $i++ )
+PS C:\> for ($i = 1; $i -le 100; $i++ )
 {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i;}
 ```
 
@@ -39,7 +39,7 @@ This command displays the progress of a For loop that counts from 1 to 100.
 The Write-Progress command includes a status bar heading ("activity"), a status line, and the variable $i (the counter in the For loop), which indicates the relative completeness of the task.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>for($i = 1; $i -lt 101; $i++ )
+PS C:\> for($i = 1; $i -lt 101; $i++ )
 {write-progress -activity Updating -status 'Progress->' -percentcomplete $i -currentOperation OuterLoop; `
 for($j = 1; $j -lt 101; $j++ )
 {write-progress -id  1 -activity Updating -status 'Progress' -percentcomplete $j -currentOperation InnerLoop} }
@@ -60,8 +60,8 @@ The Write-Progress command for the second progress bar includes the Id parameter
 Without the Id parameter, the progress bars would be superimposed on each other instead of being displayed one below the other.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname system
-PS C:\>$events | foreach-object -begin {clear-host;$i=0;$out=""} `
+PS C:\> $events = get-eventlog -logname system
+PS C:\> $events | foreach-object -begin {clear-host;$i=0;$out=""} `
 -process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $i = $i+1;
 write-progress -activity "Searching Events" -status "Progress:" -percentcomplete ($i/$events.count*100)} `
 -end {$out}

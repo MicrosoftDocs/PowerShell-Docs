@@ -47,7 +47,7 @@ You can specify the services by their service names or display names, or you can
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-service -name eventlog
+PS C:\> start-service -name eventlog
 ```
 
 This command starts the EventLog service on the local computer.
@@ -55,7 +55,7 @@ It uses the Name parameter to identify the service by its service name.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-service -displayname *remote* -whatif
+PS C:\> start-service -displayname *remote* -whatif
 ```
 
 This command tells what would happen if you started the services with a display name that includes "remote".
@@ -64,8 +64,8 @@ And, it uses the WhatIf parameter to tell what would happen if the command were 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$s = get-service wmi
-PS C:\>start-service -InputObject $s -passthru | format-list >> services.txt
+PS C:\> $s = get-service wmi
+PS C:\> start-service -InputObject $s -passthru | format-list >> services.txt
 ```
 
 These commands start the Windows Management Instrumentation (WMI) service on the computer and add a record of the action to the services.txt file.
@@ -81,17 +81,17 @@ The append redirection operator (\>\>) redirects the output to the services.txt 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>start-service tlntsvr
+PS C:\> start-service tlntsvr
 Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the    following error: Cannot start service TlntSvr on computer '.'.
 At line:1 char:14
-+ start-service  <<<< tlntsvr PS C:\>get-wmiobject win32_service | where-object {$_.Name -eq "tlntsvr"}
++ start-service  <<<< tlntsvr PS C:\> get-wmiobject win32_service | where-object {$_.Name -eq "tlntsvr"}
 
 ExitCode  : 0
 Name      : TlntSvr
 ProcessId : 0
 StartMode : Disabled
 State     : Stopped
-Status    : OK PS C:\>set-service tlntsvr -startuptype manual PS C:\>start-service tlntsvr
+Status    : OK PS C:\> set-service tlntsvr -startuptype manual PS C:\> start-service tlntsvr
 ```
 
 This series of commands shows how to start a service when the start type of the service is "Disabled".

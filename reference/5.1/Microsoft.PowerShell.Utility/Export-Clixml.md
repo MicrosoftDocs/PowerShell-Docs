@@ -46,14 +46,14 @@ For an example of how to do this, see Example 3.
 
 ### Example 1: Export a string to an XML file
 ```
-PS C:\>"This is a test" | Export-Clixml sample.xml
+PS C:\> "This is a test" | Export-Clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
 
 ### Example 2: Export an object to an XML file
 ```
-PS C:\>Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
+PS C:\> Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
 PS C:\> $Fileacl = Import-Clixml "fileacl.xml"
 ```
 
@@ -67,10 +67,10 @@ Then, it saves the object in the $FileAcl variable.
 
 ### Example 3: Encrypt an exported credential object
 ```
-PS C:\>$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$credential | Export-CliXml $CredPath
-PS C:\>$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$Credential = Import-CliXml $CredXmlPath
+PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $credential | Export-CliXml $CredPath
+PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $Credential = Import-CliXml $CredXmlPath
 ```
 
 The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.

@@ -34,7 +34,7 @@ The effect is the same as using **Exit-PSSession**.
 
 ### Example 1: Start and stop an interactive session
 ```
-PS C:\>Enter-PSSession -computername Server01
+PS C:\> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
 PS C:\>
 ```
@@ -43,10 +43,10 @@ These commands start and then stop an interactive session with the Server01 remo
 
 ### Example 2: Start and stop an interactive session by using a PSSession object
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
+PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
-PS C:\>$s
+PS C:\> $s
 Id Name            ComputerName    State    ConfigurationName
 -- ----            ------------    -----    -----------------
 1  Session1        Server01        Opened   Microsoft.PowerShell
@@ -69,7 +69,7 @@ The **State** property shows the **PSSession** is still open and available for u
 
 ### Example 3: Use the Exit keyword to stop a session
 ```
-PS C:\>Enter-PSSession -computername Server01
+PS C:\> Enter-PSSession -computername Server01
 Server01\PS> exit
 PS C:\>
 ```

@@ -38,14 +38,14 @@ ConvertTo-XML returns the XML, so you can continue to process it in Windows Powe
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-date | convertto-xml
+PS C:\> get-date | convertto-xml
 ```
 
 This command converts the current date (a DateTime object) to XML.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>convertto-xml -as Document -inputObject (get-process) -depth 3
+PS C:\> convertto-xml -as Document -inputObject (get-process) -depth 3
 ```
 
 This command converts the process objects that represent all of the processes on the computer into an XML document.

@@ -42,12 +42,12 @@ Unescaped backslash characters, such as those that are commonly used in file pat
 
 ### Example 1: Convert a single-quoted here-string to a hash table
 ```
-PS C:\>$Here = @'
+PS C:\> $Here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
 Msg3 = The specified variable does not exist.
 '@
-PS C:\>ConvertFrom-StringData -StringData $Here
+PS C:\> ConvertFrom-StringData -StringData $Here
 Name                           Value
 ----                           -----
 Msg3                           The specified variable does not exist. 
@@ -64,18 +64,18 @@ The second command uses the **ConvertFrom-StringData** cmdlet to convert the her
 
 ### Example 2: Convert a double-quoted here-string to a hash table
 ```
-PS C:\>$P = @"
+PS C:\> $P = @"
 ISE = Windows PowerShell Integrated Scripting Environment
 "@
-PS C:\>$P | Get-Member
+PS C:\> $P | Get-Member
 TypeName: System.String
 
 
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
-... PS C:\>$Hash = ConvertFrom-StringData -StringData $P
-PS C:\>$Hash | Get-Member
+... PS C:\> $Hash = ConvertFrom-StringData -StringData $P
+PS C:\> $Hash | Get-Member
 TypeName: System.Collections.Hashtable
 Name              MemberType            Definition
 ----              ----------            ----------
@@ -98,7 +98,7 @@ The result shows that the content of the $Hash variable is a hash table (System.
 
 ### Example 3: Convert a here-string to a hash table
 ```
-PS C:\>ConvertFrom-StringData -StringData @'
+PS C:\> ConvertFrom-StringData -StringData @'
 Name = Disks.ps1
 
 # Category is optional.
@@ -123,9 +123,9 @@ Comments are valid in strings, provided that the comment is on a different line 
 
 ### Example 4: Convert a string to a hash table
 ```
-PS C:\>$A = ConvertFrom-StringData -StringData "Top = Red `n Bottom = Blue"
-PS C:\>"Top = " + $A.Top
-Top = Red PS C:\>"Bottom = " + $A.Bottom
+PS C:\> $A = ConvertFrom-StringData -StringData "Top = Red `n Bottom = Blue"
+PS C:\> "Top = " + $A.Top
+Top = Red PS C:\> "Bottom = " + $A.Bottom
 Bottom = Blue
 ```
 
@@ -138,14 +138,14 @@ The remaining commands display the output.
 
 ### Example 5: Use ConvertFrom-StringData in the DATA section of a script
 ```
-PS C:\>$TextMsgs = DATA {
+PS C:\> $TextMsgs = DATA {
 ConvertFrom-StringData @'
 Text001 = The $Notebook variable contains the name of the user's system notebook.
 Text002 = The $MyNotebook variable contains the name of the user's private notebook.
 '@
 }
-PS C:\>$TextMsgs.Text001
-The $Notebook variable contains the name of the user's system notebook. PS C:\>$TextMsgs.Text002
+PS C:\> $TextMsgs.Text001
+The $Notebook variable contains the name of the user's system notebook. PS C:\> $TextMsgs.Text002
 The $MyNotebook variable contains the name of the user's private notebook.
 ```
 
@@ -157,13 +157,13 @@ Variables are not permitted in the DATA section.
 
 ### Example 6: Use the pipeline operator to pass a string
 ```
-PS C:\>$Here = @'
+PS C:\> $Here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
 Msg3 = The specified variable does not exist.
 '@
-PS C:\>$Hash = $Here | ConvertFrom-StringData
-PS C:\>$Hash
+PS C:\> $Hash = $Here | ConvertFrom-StringData
+PS C:\> $Hash
 Name     Value
 ----     -----
 Msg3     The specified variable does not exist. 
@@ -181,7 +181,7 @@ The final command displays the contents of the $Hash variable.
 
 ### Example 7: Use escape characters to add new lines and return characters
 ```
-PS C:\>ConvertFrom-StringData @"
+PS C:\> ConvertFrom-StringData @"
 Vincentio = Heaven doth with us as we with torches do,\nNot light them for themselves; for if our virtues\nDid not go forth of us, 'twere all alike\nAs if we had them not.
 Angelo = Let there be some more test made of my metal,\nBefore so noble and so great a figure\nBe stamp'd upon it.
 "@ | Format-List
@@ -203,7 +203,7 @@ In this example, the escape sequence **\n** is used to create new lines within a
 
 ### Example 8: Use backslash escape character to correctly render a file path
 ```
-PS C:\>ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
+PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
 Name                           Value                                                                                                                                     
 ----                           -----                                                                                                                                     
 Message                        Look in c:\Windows\System32

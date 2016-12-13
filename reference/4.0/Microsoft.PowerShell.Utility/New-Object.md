@@ -41,7 +41,7 @@ To create an instance of a COM object, use the ComObject parameter and specify t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
+PS C:\> New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
 Major  Minor  Build  Revision
 
 -----  -----  -----  --------
@@ -54,7 +54,7 @@ It uses a "1.2.3.4" string as the constructor.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$ie = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
+PS C:\> $ie = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
 ```
 
 This command creates an instance of the COM object that represents the Internet Explorer application.
@@ -70,7 +70,7 @@ This command is the equivalent of the following:
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a=New-Object -COMObject Word.Application -Strict -Property @{Visible=$true}
+PS C:\> $a=New-Object -COMObject Word.Application -Strict -Property @{Visible=$true}
 New-Object : The object written to the pipeline is an instance of the type
 "Microsoft.Office.Interop.Word.ApplicationClass" from the component's primary
 interop assembly. If this type exposes different members than the IDispatch
@@ -86,10 +86,10 @@ This example demonstrates that adding the **Strict** parameter causes the **New-
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command uses the **ComObject** parameter of the **New-Object** cmdlet to create a COM object with the "Shell.Application" ProgID. It stores the resulting object in the $objShell variable.
-PS C:\>$objshell = New-Object -COMObject "Shell.Application"
+PS C:\> $objshell = New-Object -COMObject "Shell.Application"
 
 The second command pipes the $objShell variable to the **Get-Member** cmdlet, which displays the properties and methods of the COM object. Among the methods is the ToggleDesktop method.
-PS C:\>$objshell | Get-Member
+PS C:\> $objshell | Get-Member
    TypeName: System.__ComObject#{866738b9-6cf2-4de8-8767-f794ebe74f4e}
 
 
@@ -173,7 +173,7 @@ Application          Property   IDispatch Application () {get}
 Parent               Property   IDispatch Parent () {get}
 
 The third command calls the **ToggleDesktop** method of the object to minimize the open windows on your desktop.
-PS C:\>$objshell.ToggleDesktop()
+PS C:\> $objshell.ToggleDesktop()
 ```
 
 This example shows how to create and use a COM object to manage your Windows desktop.

@@ -44,7 +44,7 @@ Also, you are prompted for confirmation unless you use the Force parameter.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>stop-process -name notepad
+PS C:\> stop-process -name notepad
 ```
 
 This command stops all instances of the Notepad process on the computer.
@@ -52,7 +52,7 @@ This command stops all instances of the Notepad process on the computer.
 If you were to use the ID parameter to stop the same processes, you would have to list the process IDs of each instance of Notepad.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>stop-process -id 3952 -confirm -passthru
+PS C:\> stop-process -id 3952 -confirm -passthru
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Stop-Process" on Target "notepad (3952)".
@@ -71,10 +71,10 @@ The PassThru parameter passes the process object to the formatter for display.
 Without this parameter, there would be no display after a Stop-Process command.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>calc
-PS C:\>$p = get-process calc
-PS C:\>stop-process -inputobject $p
-PS C:\>get-process | where-object {$_.HasExited}
+PS C:\> calc
+PS C:\> $p = get-process calc
+PS C:\> stop-process -inputobject $p
+PS C:\> get-process | where-object {$_.HasExited}
 ```
 
 This series of commands starts and stops the Calc process and then detects processes that have stopped.
@@ -91,19 +91,19 @@ HasExited is just one property of process objects.
 To find all the properties, type "get-process | get-member".
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-process lsass | stop-process
+PS C:\> get-process lsass | stop-process
 
 Stop-Process : Cannot stop process 'lsass (596)' because of the following error: Access is denied
 At line:1 char:34
 + get-process lsass  | stop-process <<<<
 
-[ADMIN]: PS C:\>get-process lsass | stop-process
+[ADMIN]: PS C:\> get-process lsass | stop-process
 
 Warning!
 Are you sure you want to perform this action?
 Performing operation 'Stop-Process' on Target 'lsass(596)'
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
-[ADMIN]: PS C:\>get-process lsass | stop-process -force
+[ADMIN]: PS C:\> get-process lsass | stop-process -force
 [ADMIN]: PS C:\>
 ```
 

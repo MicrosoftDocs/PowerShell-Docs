@@ -42,7 +42,7 @@ Export-Alias can export the aliases in a particular scope or all scopes, it can 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>export-alias -path alias.csv
+PS C:\> export-alias -path alias.csv
 ```
 
 Description
@@ -53,7 +53,7 @@ This command exports current alias information to a file named Alias.csv in the 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>export-alias -path alias.csv -noclobber
+PS C:\> export-alias -path alias.csv -noclobber
 ```
 
 Description
@@ -66,7 +66,7 @@ Because the NoClobber parameter is specified, the command will fail if an Alias.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>export-alias -path alias.csv -append -description "Appended Aliases" -force
+PS C:\> export-alias -path alias.csv -append -description "Appended Aliases" -force
 ```
 
 Description
@@ -81,7 +81,7 @@ The command also uses the Force parameter to overwrite any existing Alias.csv fi
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>export-alias -path alias.ps1 -as script
+PS C:\> export-alias -path alias.ps1 -as script
 PS C:\> add-content -path $profile -value (get-content alias.ps1)
 PS C:\> $s = new-pssession -computername Server01
 PS C:\> invoke-command -session $s -filepath .\alias.ps1

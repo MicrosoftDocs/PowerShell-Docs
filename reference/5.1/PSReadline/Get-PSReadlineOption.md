@@ -33,7 +33,7 @@ This provides a slightly simpler way to set syntax coloring options for multiple
 
 ### Example 1: Get options and their values
 ```
-PS C:\>Get-PSReadlineOption
+PS C:\> Get-PSReadlineOption
 EditMode                               : Windows
 ContinuationPrompt                     : >>>
 ContinuationPromptForegroundColor      : DarkYellow

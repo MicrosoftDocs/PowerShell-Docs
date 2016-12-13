@@ -42,21 +42,21 @@ Otherwise, the command returns all package sources that are registered with Pack
 
 ### Example 1: Get all package sources
 ```
-PS C:\>Get-PackageSource
+PS C:\> Get-PackageSource
 ```
 
 This command gets all package sources that are registered with Package Management on the local computer.
 
 ### Example 2: Get all package sources for a specific provider
 ```
-PS C:\>Get-PackageSource -ProviderName "PSModule"
+PS C:\> Get-PackageSource -ProviderName "PSModule"
 ```
 
 This command gets all package sources that are registered for the PSModule provider.
 
 ### Example 3: Get all package sources for a specific provider
 ```
-PS C:\>Get-PackageProvider "PSModule" | Get-PackageSource
+PS C:\> Get-PackageProvider "PSModule" | Get-PackageSource
 ```
 
 This command gets all package sources for the PSModule provider by piping the results of the **Get-PackageProvider** cmdlet to **Get-PackageSource**.

@@ -44,7 +44,7 @@ You can use it to specify which components will be traced and where the tracing 
 
 ### Example 1: Trace the ParameterBinding component
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
 ```
 
 This command starts tracing for the ParameterBinding component of Windows PowerShell.
@@ -53,7 +53,7 @@ The *ListenerOption* parameter adds the ProcessID and TimeStamp values to the tr
 
 ### Example 2: Stop a trace
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
 ```
 
 This command stops the trace of the ParameterBinding component of Windows PowerShell.

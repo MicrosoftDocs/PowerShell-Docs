@@ -33,7 +33,7 @@ To find the identification number of a command, use the Get-History cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Invoke-History
+PS C:\> Invoke-History
 ```
 
 This command runs the last (most recent) command in the session history.
@@ -41,7 +41,7 @@ You can abbreviate this command as "r" (think "repeat" or "rerun"), the alias fo
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Invoke-History -Id 132
+PS C:\> Invoke-History -Id 132
 ```
 
 This command runs the command in the session history with ID 132.
@@ -49,7 +49,7 @@ Because the name of the **Id** parameter is optional, you can abbreviate this co
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Invoke-History get-pr
+PS C:\> Invoke-History get-pr
 ```
 
 This command runs the most recent **Get-Process** command in the session history.
@@ -58,7 +58,7 @@ This command uses the **Id** parameter, but it omits the optional parameter name
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>16..24 | ForEach {Invoke-History -Id $_ }
+PS C:\> 16..24 | ForEach {Invoke-History -Id $_ }
 ```
 
 This command runs commands 16 through 24.
@@ -66,7 +66,7 @@ Because you can list only one ID value, the command uses the ForEach-Object cmdl
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-History -Id 255 -Count 7 | Invoke-History
+PS C:\> Get-History -Id 255 -Count 7 | Invoke-History
 ```
 
 This command runs the 7 commands in the history that end with command 255 (typically 249 through 255).

@@ -34,8 +34,8 @@ You can use this cmdlet to add specific commands to the history or to create a s
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-history | export-csv c:\testing\history.csv
-PS C:\>import-csv history.csv | add-history
+PS C:\> get-history | export-csv c:\testing\history.csv
+PS C:\> import-csv history.csv | add-history
 ```
 
 These commands add the commands typed in one Windows PowerShell session to the history of a different Windows PowerShell session.
@@ -46,7 +46,7 @@ The pipeline operator passes the objects to the **Add-History** cmdlet, which ad
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>import-clixml c:\temp\history.xml | add-history -passthru | foreach-object -process {invoke-history}
+PS C:\> import-clixml c:\temp\history.xml | add-history -passthru | foreach-object -process {invoke-history}
 ```
 
 This command imports commands from the History.xml file, adds them to the current session history, and then executes the commands in the combined history.
@@ -60,7 +60,7 @@ The **Invoke-History** command is formatted as a script block (enclosed in brace
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-history -id 5 -count 5 | add-history
+PS C:\> get-history -id 5 -count 5 | add-history
 ```
 
 This command adds the first five commands in the history to the end of the history list.
@@ -70,8 +70,8 @@ The **Add-History** command does not include any parameters, but Windows PowerSh
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = import-csv c:\testing\history.csv
-PS C:\>add-history -inputobject $a -passthru
+PS C:\> $a = import-csv c:\testing\history.csv
+PS C:\> add-history -inputobject $a -passthru
 ```
 
 These commands add the commands in the History.csv file to the current session history.
@@ -82,7 +82,7 @@ Without the **PassThru** parameter, the **Add-History** cmdlet does not generate
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>add-history -inputobject (import-clixml c:\temp\history01.xml)
+PS C:\> add-history -inputobject (import-clixml c:\temp\history01.xml)
 ```
 
 This command adds the commands in the History01.xml file to the current session history.

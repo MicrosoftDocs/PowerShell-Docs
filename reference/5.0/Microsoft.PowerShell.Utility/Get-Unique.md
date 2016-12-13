@@ -41,8 +41,8 @@ As a result, strings that differ only in character casing are considered to be u
 
 ### Example 1: Get unique words in a text file
 ```
-PS C:\>$A = $(foreach ($line in Get-Content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | Get-Unique
-PS C:\>$A.count
+PS C:\> $A = $(foreach ($line in Get-Content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | Get-Unique
+PS C:\> $A.count
 ```
 
 These commands find the number of unique words in a text file.
@@ -56,7 +56,7 @@ The second command uses the Count property of the collection of strings in $A to
 
 ### Example 2: Get unique integers in an array
 ```
-PS C:\>1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
+PS C:\> 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
 ```
 
 This command finds the unique members of the set of integers.
@@ -64,7 +64,7 @@ The first command takes an array of integers typed at the command line, pipes th
 
 ### Example 3: Get unique object types in a directory
 ```
-PS C:\>Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
+PS C:\> Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
 ```
 
 This command uses the Get-ChildItem cmdlet to retrieve the contents of the local directory, which includes files and directories.
@@ -76,7 +76,7 @@ The *OnType* parameter directs **Get-Unique** to return only one object of each 
 
 ### Example 4: Get unique processes
 ```
-PS C:\>Get-Process | Sort-Object | Select-Object processname | Get-Unique -AsString
+PS C:\> Get-Process | Sort-Object | Select-Object processname | Get-Unique -AsString
 ```
 
 This command gets the names of processes running on the computer with duplicates eliminated.

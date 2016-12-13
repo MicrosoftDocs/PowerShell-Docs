@@ -57,14 +57,14 @@ You can run **Get-Package** on remote computers by running it as part of an Invo
 
 ### Example 1: Get all installed packages
 ```
-PS C:\>Get-Package
+PS C:\> Get-Package
 ```
 
 This command gets all packages that are installed on the local computer.
 
 ### Example 2: Get packages that are installed on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName "server01" -Credential "CONTOSO\TestUser" -ScriptBlock {Get-Package}
+PS C:\> Invoke-Command -ComputerName "server01" -Credential "CONTOSO\TestUser" -ScriptBlock {Get-Package}
 ```
 
 This command gets a list of packages that were installed on a remote computer, server01, by using Package Management.
@@ -72,14 +72,14 @@ When you run this command, you are prompted to provide credentials for the user 
 
 ### Example 3: Get packages for a specified provider
 ```
-PS C:\>Get-Package -Provider "ARP"
+PS C:\> Get-Package -Provider "ARP"
 ```
 
 This command gets Add or Remove Programs software packages from the local computer.
 
 ### Example 4: Get an exact version of a specific package
 ```
-PS C:\>Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2"
+PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2"
 ```
 
 This command gets version 2.1.2 of a package named DSCAccelerator.
@@ -87,7 +87,7 @@ Although only part of the package name has been specified, **Get-Package** shoul
 
 ### Example 5: Uninstall a package
 ```
-PS C:\>Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1" | Uninstall-Package
+PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1" | Uninstall-Package
 ```
 
 This command pipes the results of a **Get-Package** command to the Uninstall-Package cmdlet.

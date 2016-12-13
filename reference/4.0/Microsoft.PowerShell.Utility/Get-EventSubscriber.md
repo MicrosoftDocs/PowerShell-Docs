@@ -40,12 +40,12 @@ To cancel an event subscription, delete the event subscriber by using the Unregi
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$timer = New-Object Timers.Timer
-PS C:\>$timer | Get-Member -Type Event
-PS C:\>Register-ObjectEvent -inputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
-PS C:\>Get-EventSubscriber
-PS C:\>$timer = New-Object Timers.Timer
-PS C:\>$timer | Get-Member -Type Event
+PS C:\> $timer = New-Object Timers.Timer
+PS C:\> $timer | Get-Member -Type Event
+PS C:\> Register-ObjectEvent -inputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+PS C:\> Get-EventSubscriber
+PS C:\> $timer = New-Object Timers.Timer
+PS C:\> $timer | Get-Member -Type Event
 TypeName: System.Timers.Timer
 
 Name     MemberType Definition
@@ -53,8 +53,8 @@ Name     MemberType Definition
 Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs)
 Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs)
 
-PS C:\>Register-ObjectEvent -InputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
-PS C:\>Get-EventSubscriber
+PS C:\> Register-ObjectEvent -InputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+PS C:\> Get-EventSubscriber
 
 SubscriptionId   : 4
 SourceObject     : System.Timers.Timer
@@ -80,20 +80,20 @@ The fourth command uses the Get-EventSubscriber cmdlet to get the event subscrib
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$timer  = New-Object Timers.Timer
-PS C:\>$timer.Interval = 500
-PS C:\>Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action { $random = Get-Random -Min 0 -Max 100 }
+PS C:\> $timer  = New-Object Timers.Timer
+PS C:\> $timer.Interval = 500
+PS C:\> Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action { $random = Get-Random -Min 0 -Max 100 }
 
 Id  Name           State      HasMoreData  Location  Command
 --  ----           -----      -----------  --------  -------
 3   Timer.Random   NotStarted False                  $random = Get-Random ...
 
-PS C:\>$timer.Enabled = $true
-PS C:\>$subscriber = Get-EventSubcriber -sourceIdentifer Timer.Random
-PS C:\>($subscriber.action).gettype().fullname
+PS C:\> $timer.Enabled = $true
+PS C:\> $subscriber = Get-EventSubcriber -sourceIdentifer Timer.Random
+PS C:\> ($subscriber.action).gettype().fullname
 PSEventJob
 
-PS C:\>$subscriber.action | format-list -property *
+PS C:\> $subscriber.action | format-list -property *
 
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
@@ -108,10 +108,10 @@ Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
 ...
-PS C:\>& $subscriber.action.module {$random}
+PS C:\> & $subscriber.action.module {$random}
 96
 
-PS C:\>& $subscriber.action.module {$random}
+PS C:\> & $subscriber.action.module {$random}
 23
 ```
 

@@ -34,8 +34,8 @@ By default, the verbose message stream is not displayed, but you can display it 
 
 ### Example 1: Write a status message
 ```
-PS C:\>Write-Verbose -Message "Searching the Application Event Log."
-PS C:\>Write-Verbose -Message "Searching the Application Event Log." -Verbose
+PS C:\> Write-Verbose -Message "Searching the Application Event Log."
+PS C:\> Write-Verbose -Message "Searching the Application Event Log." -Verbose
 ```
 
 These commands use the **Write-Verbose** cmdlet to display a status message.
@@ -45,8 +45,8 @@ The second command uses the *Verbose* common parameter, which displays any verbo
 
 ### Example 2: Set $VerbosePreference and write a status message
 ```
-PS C:\>$VerbosePreference = "Continue"
-PS C:\>Write-Verbose "Copying file $filename"
+PS C:\> $VerbosePreference = "Continue"
+PS C:\> Write-Verbose "Copying file $filename"
 ```
 
 These commands use the **Write-Verbose** cmdlet to display a status message.

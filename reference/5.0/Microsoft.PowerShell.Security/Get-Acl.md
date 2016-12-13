@@ -49,7 +49,7 @@ Beginning with Windows PowerShell 3.0, you can use the *InputObject* parameter o
 
 ### Example 1: Get the security descriptor for a folder
 ```
-PS C:\>Get-Acl C:\Windows
+PS C:\> Get-Acl C:\Windows
 ```
 
 This command gets the security descriptor of the C:\Windows directory.
@@ -57,7 +57,7 @@ The folder C:\Windows is understood as the value for the *Path* parameter, so it
 
 ### Example 2: Get security descriptors for a filtered list of files
 ```
-PS C:\>Get-Acl -Path "C:\Windows\k*.log" | Format-List -Property PSPath, Sddl
+PS C:\> Get-Acl -Path "C:\Windows\k*.log" | Format-List -Property PSPath, Sddl
 ```
 
 This command gets the Windows PowerShell path and SDDL for all of the .log files in the C:\Windows directory whose names begin with k.
@@ -73,7 +73,7 @@ As such, they are easy to pass and store, and they can be parsed when needed.
 
 ### Example 3: Get security descriptors and audit data for a filtered list of files
 ```
-PS C:\>Get-Acl -Path "C:/Windows/k*.log" -Audit | ForEach-Object { $_.Audit.Count }
+PS C:\> Get-Acl -Path "C:/Windows/k*.log" -Audit | ForEach-Object { $_.Audit.Count }
 ```
 
 This command gets the security descriptors of the .log files in the C:\Windows directory whose names begin with k.
@@ -83,7 +83,7 @@ The result is a list of numbers representing the number of audit records for eac
 
 ### Example 4: Get the security descriptor for a registry subkey
 ```
-PS C:\>Get-Acl -Path "HKLM:\System\CurrentControlSet\Control" | Format-List
+PS C:\> Get-Acl -Path "HKLM:\System\CurrentControlSet\Control" | Format-List
 ```
 
 This command uses the **Get-Acl** cmdlet to get the security descriptor of the Control subkey (HKLM\SYSTEM\CurrentControlSet\Control) of the registry.
@@ -93,7 +93,7 @@ The pipeline operator (|) passes the security descriptor that **Get-Acl** gets t
 
 ### Example 5: Get the security descriptor for a storage subsystem object
 ```
-PS C:\>Get-Acl -InputObject (Get-StorageSubsystem -Name S087)
+PS C:\> Get-Acl -InputObject (Get-StorageSubsystem -Name S087)
 ```
 
 This command uses the *InputObject* parameter of **Get-Acl** to get the security descriptor of a storage subsystem object.

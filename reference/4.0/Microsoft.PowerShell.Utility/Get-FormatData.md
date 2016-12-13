@@ -38,34 +38,34 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-formatdata
+PS C:\> get-formatdata
 ```
 
 This command gets all the formatting data in the session.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-formatdata -typename Microsoft.Wsman*
+PS C:\> get-formatdata -typename Microsoft.Wsman*
 ```
 
 This command gets the formatting data items whose names begin with "Microsoft.Wsman".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$f = get-formatdata -typename helpinfoshort
-PS C:\>$f
+PS C:\> $f = get-formatdata -typename helpinfoshort
+PS C:\> $f
 
 TypeName        FormatViewDefinition
 --------        --------------------
 HelpInfoShort   {help , TableControl}
 
-PS C:\>$f.FormatViewDefinition[0].control
+PS C:\> $f.FormatViewDefinition[0].control
 
 Headers                                                                    Rows
 -------                                                                    ----
 {System.Management.Automation.TableControlColumnHeader, System.Manageme... {System.Management.Automation.TableControlRow}
 
-PS C:\>$f.FormatViewDefinition[0].control.headers
+PS C:\> $f.FormatViewDefinition[0].control.headers
 
 Label         Alignment      Width
 -----         ---------      -----
@@ -78,17 +78,17 @@ This example shows how to get a formatting data object and examine its propertie
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = get-formatdata
-PS C:\>import-module bitstransfer
-PS C:\>$b = get-formatdata
-PS C:\>compare-object $a $b
+PS C:\> $a = get-formatdata
+PS C:\> import-module bitstransfer
+PS C:\> $b = get-formatdata
+PS C:\> compare-object $a $b
 
 InputObject                                                SideIndicator
 -----------                                                -------------
 Microsoft.BackgroundIntelligentTransfer.Management.BitsJob =>
 
-PS C:\>get-formatdata *bits* | export-formatdata -filepath c:\test\bits.format.ps1xml
-PS C:\>get-content c:\test\bits.format.ps1xml
+PS C:\> get-formatdata *bits* | export-formatdata -filepath c:\test\bits.format.ps1xml
+PS C:\> get-content c:\test\bits.format.ps1xml
 
 <?xml version="1.0" encoding="utf-8"?><Configuration><ViewDefinitions>
 <View><Name>Microsoft.BackgroundIntelligentTransfer.Management.BitsJob</Name>

@@ -42,7 +42,7 @@ It works like Set-TraceSource, except that it applies only to the specified comm
 
 ### Example 1: Trace metadata processing, parameter binding, and an expression
 ```
-PS C:\>Trace-Command -Name metadata,parameterbinding,cmdlet -Expression {Get-Process Notepad} -PSHost
+PS C:\> Trace-Command -Name metadata,parameterbinding,cmdlet -Expression {Get-Process Notepad} -PSHost
 ```
 
 This command starts a trace of metadata processing, parameter binding, and cmdlet creation and destruction of the `Get-Process Notepad` expression.
@@ -51,8 +51,8 @@ Because it does not specify any tracing options or listener options, the command
 
 ### Example 2: Trace the actions of ParameterBinding operations
 ```
-PS C:\>$A = "i*"
-PS C:\>Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
+PS C:\> $A = "i*"
+PS C:\> Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
 ```
 
 These commands trace the actions of the ParameterBinding operations of Windows PowerShell while it processes a Get-Alias expression that takes input from the pipeline.

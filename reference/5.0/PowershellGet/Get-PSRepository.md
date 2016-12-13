@@ -31,7 +31,7 @@ The **Get-PSRepository** cmdlet gets PowerShell module repositories that are reg
 
 ### Example 1: Get all module repositories
 ```
-PS C:\>Get-PSRepository
+PS C:\> Get-PSRepository
 Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
 ----                                     --------------                                     --------------       ------------------
 PSGallery                                http://go.micro...                                 NuGet                Untrusted
@@ -42,14 +42,14 @@ This command gets all module repositories registered for the current user.
 
 ### Example 2: Get module repositories by name
 ```
-PS C:\>Get-PSRepository -Name "*NuGet*"
+PS C:\> Get-PSRepository -Name "*NuGet*"
 ```
 
 This command gets all module repositories that include NuGet in their names.
 
 ### Example 3: Get a module repository and format the output
 ```
-PS C:\>Get-PSRepository -Name "Local01" | Format-List * -Force
+PS C:\> Get-PSRepository -Name "Local01" | Format-List * -Force
 Name                      : local01
 SourceLocation            : http://manikb-dev:8765/api/v2/
 Trusted                   : True

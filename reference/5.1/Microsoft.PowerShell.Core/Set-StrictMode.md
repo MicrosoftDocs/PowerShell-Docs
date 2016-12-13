@@ -47,7 +47,7 @@ Unnamed variables are not permitted.
 
 ### Example 1: Turn on strict mode as version 1.0
 ```
-PS C:\>Set-StrictMode -Version 1.0
+PS C:\> Set-StrictMode -Version 1.0
 PS C:\> $a -gt 5
 False
 
@@ -69,7 +69,7 @@ The sample output shows the effect of version 1.0 strict mode.
 
 ### Example 2: Turn on strict mode as version 2.0
 ```
-PS C:\># Set-StrictMode -Version 2.0
+PS C:\> # Set-StrictMode -Version 2.0
 # Strict mode is off by default.
 
 PS C:\> function add ($a, $b) {$a + $b}

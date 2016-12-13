@@ -42,7 +42,7 @@ The **Rename-LocalUser** cmdlet renames a local user account.
 
 ### Example 1: Rename a user account
 ```
-PS C:\>Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
+PS C:\> Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
 ```
 
 This command renames the user account named Admin02.

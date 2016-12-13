@@ -33,7 +33,7 @@ You cannot use this cmdlet to delete variables that are set as constants or thos
 
 ### Example 1: Remove a variable
 ```
-PS C:\>Remove-Variable Smp
+PS C:\> Remove-Variable Smp
 ```
 
 This command deletes the $Smp variable.

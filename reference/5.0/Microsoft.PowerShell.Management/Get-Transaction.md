@@ -39,8 +39,8 @@ For more information, see about_Transactions.
 
 ### Example 1: Get the current transaction
 ```
-PS C:\>Start-Transaction
-PS C:\>Get-Transaction
+PS C:\> Start-Transaction
+PS C:\> Get-Transaction
 
 RollbackPreference   SubscriberCount   Status
 ------------------   ---------------   ------
@@ -51,7 +51,7 @@ This command uses the Get-Transaction cmdlet to get the current transaction.
 
 ### Example 2: Show the properties and methods of the transaction object
 ```
-PS C:\>Get-Transaction | Get-Member
+PS C:\> Get-Transaction | Get-Member
 
 Name               MemberType Definition
 ----               ---------- ----------
@@ -70,7 +70,7 @@ This command uses the Get-Member cmdlet to show the properties and methods of th
 
 ### Example 3: Show the property values of a rolled back transaction
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Undo-Transaction
@@ -85,7 +85,7 @@ This command shows the property values of a transaction object for a transaction
 
 ### Example 4: Show the property values of a committed transaction
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Complete-Transaction
@@ -100,7 +100,7 @@ This command shows the property values of a transaction object for a transaction
 
 ### Example 5: Start a transaction while another is in progress
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Start-Transaction

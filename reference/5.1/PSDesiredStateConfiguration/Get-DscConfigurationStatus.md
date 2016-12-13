@@ -34,21 +34,21 @@ This cmdlet is useful for finding historical information about configuration run
 
 ### Example 1: Get information on the last configuration run
 ```
-PS C:\>Get-DscConfigurationStatus
+PS C:\> Get-DscConfigurationStatus
 ```
 
 This command gets information on the last configuration run.
 
 ### Example 2: Get information on all configurations
 ```
-PS C:\>Get-DscConfigurationStatus -All
+PS C:\> Get-DscConfigurationStatus -All
 ```
 
 This command gets information about all the configurations that were run on the system, including the Windows PowerShell Desired State Configuration (DSC) consistency check.
 
 ### Example 3: Get information on the configuration run on a remote computer
 ```
-PS C:\>Get-DscConfigurationStaus -CimSession "Server01"
+PS C:\> Get-DscConfigurationStaus -CimSession "Server01"
 ```
 
 This command gets the configuration run details of the remote computer named Server01.

@@ -37,7 +37,7 @@ To add a calculated property, use the *Property* or *GroupBy* parameter.
 
 ### Example 1: Format PowerShell snap-ins
 ```
-PS C:\>Get-PSSnapin | Format-Table -Auto
+PS C:\> Get-PSSnapin | Format-Table -Auto
 ```
 
 This command formats information about Windows PowerShell snap-ins in a table.
@@ -49,7 +49,7 @@ The *Autosize* parameter adjusts the column widths to minimize truncation.
 
 ### Example 2: Format processes by BasePriority
 ```
-PS C:\>Get-Process | Sort-Object -Property basepriority | Format-Table -GroupBy basepriority -Wrap
+PS C:\> Get-Process | Sort-Object -Property basepriority | Format-Table -GroupBy basepriority -Wrap
 ```
 
 This command displays the processes on the computer in groups with the same base priority.
@@ -63,7 +63,7 @@ The *Wrap* parameter ensures that data is not truncated.
 
 ### Example 3: Format processes by start date
 ```
-PS C:\>Get-Process | Sort-Object starttime | Format-Table -View starttime
+PS C:\> Get-Process | Sort-Object starttime | Format-Table -View starttime
 ```
 
 This command displays information about the processes on the computer in group based on the start date of the process.
@@ -78,7 +78,7 @@ The DotNetTypes.format.ps1xml formatting file also contains a Priority view for 
 
 ### Example 4: Format services
 ```
-PS C:\>Get-Service | Format-Table -Property Name, DependentServices
+PS C:\> Get-Service | Format-Table -Property Name, DependentServices
 ```
 
 This command displays all of the services on the computer in a table with two columns, Name and DependentServices.
@@ -92,7 +92,7 @@ To view all of the properties, type `get-service | get-member`.
 
 ### Example 5: Format a process and calculate its running time
 ```
-PS C:\>Get-Process Notepad | Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
+PS C:\> Get-Process Notepad | Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
 ```
 
 This command shows how to use a calculated property in a table.
@@ -109,8 +109,8 @@ The expression gets the StartTime property of each process object and subtracts 
 
 ### Example 6: Format Notepad processes
 ```
-PS C:\>$Processes = Get-WmiObject -ComputerName "Server01" -Class win32_process -Filter "name='notepad.exe'"
-PS C:\>$Processes | Format-Table ProcessName, @{ Label = "Total  Running Time"; Expression={(get-date) - $_.ConvertToDateTime($_.CreationDate)}}
+PS C:\> $Processes = Get-WmiObject -ComputerName "Server01" -Class win32_process -Filter "name='notepad.exe'"
+PS C:\> $Processes | Format-Table ProcessName, @{ Label = "Total  Running Time"; Expression={(get-date) - $_.ConvertToDateTime($_.CreationDate)}}
 ```
 
 These commands are similar to the previous command, except that these commands use the Get-WmiObject cmdlet and the Win32_Process class to display information about Notepad processes on a remote computer.

@@ -33,7 +33,7 @@ You can use the Property parameter to determine which property is displayed.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem | format-wide -column 3
+PS C:\> get-childitem | format-wide -column 3
 ```
 
 This command displays the names of files in the current directory in three columns across the screen.
@@ -43,7 +43,7 @@ The Column parameter specifies the number of columns.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
+PS C:\> get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
 ```
 
 This command displays the names of registry keys in the HKEY_CURRENT_USER\Software\Microsoft key.

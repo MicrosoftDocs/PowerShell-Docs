@@ -30,7 +30,7 @@ You can use this cmdlet to add events to ETW channels from Windows PowerShell.
 
 ### Example 1
 ```
-PS C:\>New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Payload @("Workflow", "Running")
+PS C:\> New-WinEvent -ProviderName Microsoft-Windows-PowerShell -Id 45090 -Payload @("Workflow", "Running")
 ```
 
 This command uses the **New-WinEvent** cmdlet to create event 45090 for the Microsoft-Windows-PowerShell provider.

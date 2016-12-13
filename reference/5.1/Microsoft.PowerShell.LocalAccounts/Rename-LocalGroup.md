@@ -42,7 +42,7 @@ The **Rename-LocalGroup** cmdlet renames a local security group.
 
 ### Example 1: Change the name of a group
 ```
-PS C:\>Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
+PS C:\> Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
 ```
 
 This command renames a security group named SecurityGroup.

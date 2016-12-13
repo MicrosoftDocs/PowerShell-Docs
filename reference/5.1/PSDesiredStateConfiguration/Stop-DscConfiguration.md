@@ -39,7 +39,7 @@ This cmdlet does not support the *Confirm* parameter.
 
 ### Example 1: Stop a configuration job
 ```
-PS C:\>$Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Stop-DscConfiguration -CimSession $Session
 ```
 

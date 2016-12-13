@@ -61,7 +61,7 @@ Otherwise, *Credential* is not effective when you are creating new file system d
 
 ### Example 1: Create a drive mapped to a network share
 ```
-PS C:\>New-PSDrive -Name "P" -PSProvider "FileSystem" -Root "\\Server01\Public"
+PS C:\> New-PSDrive -Name "P" -PSProvider "FileSystem" -Root "\\Server01\Public"
 
 Name       Provider      Root
 ----       --------      ----
@@ -77,7 +77,7 @@ To see them, type: `dir P:`.
 
 ### Example 2: Create a temporary drive
 ```
-PS C:\>New-PSDrive -Name MyDocs -PSProvider FileSystem -Root "C:\Documents and Settings\User01\My Documents" -Description "Maps to my My Documents folder."
+PS C:\> New-PSDrive -Name MyDocs -PSProvider FileSystem -Root "C:\Documents and Settings\User01\My Documents" -Description "Maps to my My Documents folder."
 
 Name       Provider      Root
 ----       --------      ----
@@ -94,7 +94,7 @@ To see them, type: `dir MyDocs:`.
 
 ### Example 3: Create a drive for a registry key
 ```
-PS C:\>New-PSDrive -Name "MyCompany" -PSProvider "Registry" -Root "HKLM:\Software\MyCompany"
+PS C:\> New-PSDrive -Name "MyCompany" -PSProvider "Registry" -Root "HKLM:\Software\MyCompany"
 
 Name       Provider      Root
 ----       --------      ----
@@ -111,7 +111,7 @@ To see them, type: `dir MyCompany:`.
 
 ### Example 4: Create a persisted mapped network drive
 ```
-PS C:\>New-PSDrive -Name "S" -Root "\\Server01\Scripts" -Persist -PSProvider "FileSystem"
+PS C:\> New-PSDrive -Name "S" -Root "\\Server01\Scripts" -Persist -PSProvider "FileSystem"
 PS C:\> Net Use
 Status       Local     Remote                    Network
 ---------------------------------------------------------
@@ -132,13 +132,13 @@ The resulting drive can be viewed in other Windows PowerShell sessions on the lo
 ### Example 5: Create persistent and temporary drives
 ```
 The first command uses the **New-PSDrive** cmdlet to create a temporary Windows PowerShell drive called PSDrive: that is mapped to the \\Server01\Public network share.
-PS C:\>New-PSDrive -Name "PSDrive" -PSProvider "FileSystem" -Root "\\Server01\Public"
+PS C:\> New-PSDrive -Name "PSDrive" -PSProvider "FileSystem" -Root "\\Server01\Public"
 
 The second command uses the *Persist* parameter of **New-PSDrive** to create the X: mapped network drive, which is also mapped to the \\Server01\Public network share.
-PS C:\>New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public"
+PS C:\> New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public"
 
 Now, you can use the **Get-PSDrive** drive cmdlet to examine the two drives. The drives appear to be the same, although the network share name appears only in the root of the PSDrive: drive.
-PS C:\>Get-PSDrive -Name "PSDrive", "X"
+PS C:\> Get-PSDrive -Name "PSDrive", "X"
 Name       Provider      Root
 ----       --------      ----
 
@@ -146,7 +146,7 @@ PsDrive    FileSystem    \\Server01\public
 X          FileSystem    X:\
 
 The output of the Get-Member cmdlet shows that the drives have the same object type, System.Management.Automation.PSDriveInfo.
-PS C:\>Get-PSDrive "PSDrive", "x" | Get-Member
+PS C:\> Get-PSDrive "PSDrive", "x" | Get-Member
 TypeName: System.Management.Automation.PSDriveInfo
  
 
@@ -160,13 +160,13 @@ GetHashCode         Method     System.Int32 GetHashCode()
 
 
 However, a Net Use command, a Get-WmiObject command for the Win32_LogicalDisk class, and a **Get-WmiObject** command for the Win32_NetworkConnection class find only the persistent X: drive because Windows PowerShell temporary drives are known only to Windows PowerShell.If you close the Windows PowerShell session and then open a new one, the PSDrive: drive is gone, and the X: drive persists. Therefore, when deciding which method to use to map network drives, consider how you will use the drive, whether it has to be persistent, and whether the drive has to be visible to other Windows features.
-PS C:\>Net Use
+PS C:\> Net Use
 
 Status       Local     Remote                    Network
 --------------------------------------------------------
 OK           X:        \\contoso-pc\data            Microsoft Windows Network
 
-PS C:\>Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
+PS C:\> Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
 
 deviceid
 --------
@@ -174,7 +174,7 @@ C:
 D:
 X:
 
-PS C:\>Get-WmiObject Win32_NetworkConnection
+PS C:\> Get-WmiObject Win32_NetworkConnection
 
 LocalName                  RemoteName                 ConnectionState            Status
 ---------                  ----------              ---------------               ------

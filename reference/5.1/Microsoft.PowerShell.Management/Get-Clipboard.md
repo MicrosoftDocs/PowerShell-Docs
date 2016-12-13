@@ -31,7 +31,7 @@ The **Get-Clipboard** cmdlet gets the current Windows clipboard entry.
 
 ### Example 1: Get the content of the clipboard and display it to the command-line
 ```
-PS C:\>Get-Clipboard
+PS C:\> Get-Clipboard
 This is a test string.
 ```
 
@@ -39,7 +39,7 @@ This command displays the contents of the clipboard to the command-line.
 
 ### Example 2: Get the content of the clipboard and display it to the command-line
 ```
-PS C:\>Get-Clipboard
+PS C:\> Get-Clipboard
 http://upload.wikimedia.org/wikipedia/en/7/7f/Windows_PowerShell_icon.png
 ```
 

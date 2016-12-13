@@ -43,7 +43,7 @@ When you move an item property, it is added to the new location and deleted from
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>move-itemproperty HKLM:\Software\MyCompany\MyApp -Name `
+PS C:\> move-itemproperty HKLM:\Software\MyCompany\MyApp -Name `
 Version -Destination HKLM:\Software\MyCompany\NewApp
 ```
 

@@ -42,7 +42,7 @@ The **Set-TimeZone** cmdlet sets the system time zone to a specified time zone.
 
 ### Example 1: Set the time zone on the computer
 ```
-PS C:\>Set-TimeZone -Name "Pacific Standard Time"
+PS C:\> Set-TimeZone -Name "Pacific Standard Time"
 ```
 
 This command sets the time zone on the local computer to Pacific Standard Time.

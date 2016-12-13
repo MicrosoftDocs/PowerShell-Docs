@@ -43,7 +43,7 @@ For example, you can use Rename-ItemProperty to change the name of a registry en
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>rename-itemproperty -path HKLM:\Software\SmpApplication -name config -newname oldconfig
+PS C:\> rename-itemproperty -path HKLM:\Software\SmpApplication -name config -newname oldconfig
 ```
 
 This command renames the config registry entry contained in the HKEY_LOCAL_MACHINE\Software\SmpApplication key to oldconfig.

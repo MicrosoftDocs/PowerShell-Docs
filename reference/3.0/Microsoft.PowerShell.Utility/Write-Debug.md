@@ -30,18 +30,18 @@ By default, debug messages are not displayed in the console, but you can display
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Write-Debug "Cannot open file."
+PS C:\> Write-Debug "Cannot open file."
 ```
 
 This command writes a debug message.
 Because the value of $DebugPreference is "SilentlyContinue", the message is not displayed in the console.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$DebugPreference
+PS C:\> $DebugPreference
 SilentlyContinue
-PS C:\>Write-Debug "Cannot open file."
+PS C:\> Write-Debug "Cannot open file."
 PS C:\>
-PS C:\>Write-Debug "Cannot open file." -debug
+PS C:\> Write-Debug "Cannot open file." -debug
 DEBUG: Cannot open file.
 ```
 
@@ -59,12 +59,12 @@ As a result, even though the value of $DebugPreference is "SilentlyContinue", th
 For more information about the Debug common parameter, see about_CommonParameters.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$DebugPreference
+PS C:\> $DebugPreference
 SilentlyContinue
-PS C:\>Write-Debug "Cannot open file."
+PS C:\> Write-Debug "Cannot open file."
 PS C:\>
-PS C:\>$DebugPreference = "Continue"
-PS C:\>Write-Debug "Cannot open file."
+PS C:\> $DebugPreference = "Continue"
+PS C:\> Write-Debug "Cannot open file."
 DEBUG: Cannot open file.
 ```
 

@@ -35,21 +35,21 @@ The culture determines the display format of items such as numbers, currency, an
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-uiculture
+PS C:\> get-uiculture
 ```
 
 This command gets the current UI culture information.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-uiculture | format-list *
+PS C:\> get-uiculture | format-list *
 ```
 
 This command displays the values of all of the properties of the current UI culture in a list.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>(get-uiculture).calendar
+PS C:\> (get-uiculture).calendar
 ```
 
 This command displays the current values for the Calendar property of the current UI culture.
@@ -58,7 +58,7 @@ To see all of the properties, type "get-uiculture | get-member".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(get-uiculture).datetimeformat.shortdatepattern
+PS C:\> (get-uiculture).datetimeformat.shortdatepattern
 ```
 
 This command displays the short date pattern for the current UI culture.

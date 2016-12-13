@@ -42,7 +42,7 @@ The **Get-LocalGroupMember** cmdlet gets members from a local group.
 
 ### Example 1: Get all members of the Administrators group
 ```
-PS C:\>Get-LocalGroupMember -Group "Administrators"
+PS C:\> Get-LocalGroupMember -Group "Administrators"
 ObjectClass Name                    PrincipalSource
 ----------- ----                    ---------------
 User        CONTOSOPC\Administrator Local

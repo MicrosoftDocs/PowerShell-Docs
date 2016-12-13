@@ -46,7 +46,7 @@ Run this cmdlet, and then inspect the results for file information.
 
 ### Example 1: Get the hexadecimal representation of a string
 ```
-PS C:\>"Hello World" | Format-Hex
+PS C:\> "Hello World" | Format-Hex
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
@@ -56,7 +56,7 @@ This command returns the hexadecimal representation of the string Hello World.
 
 ### Example 2: Investigate a file type
 ```
-PS C:\>Format-Hex -Path "C:\temp\temp.t7f"
+PS C:\> Format-Hex -Path "C:\temp\temp.t7f"
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????. 

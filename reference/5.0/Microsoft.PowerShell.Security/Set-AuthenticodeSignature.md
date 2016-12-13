@@ -44,7 +44,7 @@ If there is a signature in the file when this cmdlet runs, that signature is rem
 
 ### Example 1: Get a code-signing certificate and sign a script
 ```
-PS C:\>$Cert = Get-ChildItem -Path "Cert:\CurrentUser\My" -CodeSigningCert
+PS C:\> $Cert = Get-ChildItem -Path "Cert:\CurrentUser\My" -CodeSigningCert
 PS C:\> Set-AuthenticodeSignature -FilePath "PsTestInternet2.ps1" -Certificate $Cert
 ```
 
@@ -59,8 +59,8 @@ It uses the *FilePath* parameter to specify the name of the script and the *Cert
 
 ### Example 2: Get a code-signing certificate and sign a script
 ```
-PS C:\>$Cert = Get-PfxCertificate -FilePath "C:\Test\Mysign.pfx"
-PS C:\>Set-AuthenticodeSignature -FilePath "ServerProps.ps1" -Certificate $Cert
+PS C:\> $Cert = Get-PfxCertificate -FilePath "C:\Test\Mysign.pfx"
+PS C:\> Set-AuthenticodeSignature -FilePath "ServerProps.ps1" -Certificate $Cert
 ```
 
 These commands use the Get-PfxCertificate cmdlet to find a code signing certificate.
@@ -75,7 +75,7 @@ If the certificate file is password protected, Windows PowerShell prompts you fo
 
 ### Example 3: Add a digital signature with the root authority
 ```
-PS C:\>Set-AuthenticodeSignature -FilePath "C:\scripts\Remodel.ps1" -Certificate $Cert -IncludeChain "All" -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
+PS C:\> Set-AuthenticodeSignature -FilePath "C:\scripts\Remodel.ps1" -Certificate $Cert -IncludeChain "All" -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
 ```
 
 This command adds a digital signature that includes the root authority in the trust chain, and it is signed by a third-party timestamp server.

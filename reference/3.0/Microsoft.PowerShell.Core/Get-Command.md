@@ -53,32 +53,32 @@ To limit **Get-Command** in Windows PowerShell 3.0 and later to commands in the 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Command
+PS C:\> Get-Command
 ```
 
 This command gets the Windows PowerShell cmdlets, functions, and aliases that are installed on the computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Command -ListImported
+PS C:\> Get-Command -ListImported
 ```
 
 This command uses the **ListImported** parameter to get only the commands in the current session.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Command -Type Cmdlet | Sort-Object -Property Noun | Format-Table -GroupBy Noun
+PS C:\> Get-Command -Type Cmdlet | Sort-Object -Property Noun | Format-Table -GroupBy Noun
 ```
 
 This command gets all of the cmdlets, sorts them alphabetically by the noun in the cmdlet name, and then displays them in noun-based groups.
 This display can help you find the cmdlets for a task.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
+PS C:\> Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
 ```
 
 This command uses the **Module** parameter to get the commands in the Microsoft.PowerShell.Security and  PSScheduledJob modules.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Command Get-AppLockerPolicy
+PS C:\> Get-Command Get-AppLockerPolicy
 ```
 
 This command gets information about the **Get-AppLockerPolicy** cmdlet.
@@ -90,7 +90,7 @@ To enable, disable, and configuration automatic importing of modules, use the **
 For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Get-Command Get-Childitem -Args Cert: -Syntax
+PS C:\> Get-Command Get-Childitem -Args Cert: -Syntax
 ```
 
 This command uses the **ArgumentList** and **Syntax** parameters to get the syntax of the Get-ChildItem cmdlet when it is used in the Cert: drive.
@@ -101,7 +101,7 @@ When you compare the syntax displayed in the output with the syntax that is disp
 For more information about the Certificate provider, see Certificate Provider.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>function Get-DynamicParameters
+PS C:\> function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
     (Get-Command $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
@@ -120,14 +120,14 @@ Dynamic parameter can be added to a cmdlet by another cmdlet or a provider.
 The command in the example uses the **Get-DynamicParameters** function to get the dynamic parameters that the Certificate provider adds to the Get-ChildItem cmdlet when it is used in the Cert: drive.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-Command *
+PS C:\> Get-Command *
 ```
 
 This command gets all commands of all types on the local computer, including executable files in the paths of the **Path** environment variable ($env:path).
 It returns an **ApplicationInfo** object (System.Management.Automation.ApplicationInfo) for each file, not a **FileInfo** object (System.IO.FileInfo).
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
+PS C:\> Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 ```
 
 This command gets cmdlets that have a parameter whose name includes "Auth" and whose type is **AuthenticationMechanism**.
@@ -136,7 +136,7 @@ You can use a command like this one to find cmdlets that let you specify the met
 The **ParameterType** parameter distinguishes parameters that take an **AuthenticationMechanism** value from those that take an **AuthenticationLevel** parameter, even when they have similar names.
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>Get-Command dir
+PS C:\> Get-Command dir
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Alias           dir -> Get-ChildItem
@@ -149,7 +149,7 @@ The output of the command shows the special view of the **Name** property value 
 The view shows the alias and the full command name.
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>Get-Command Notepad -All | Format-Table CommandType, Name, Definition
+PS C:\> Get-Command Notepad -All | Format-Table CommandType, Name, Definition
 
 CommandType     Name           Definition
 -----------     ----           ----------
@@ -167,7 +167,7 @@ To run a command other than the first one in the list, type the fully qualified 
 For more information about command precedence, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
 ### -------------------------- EXAMPLE 12 --------------------------
 ```
-PS C:\>(Get-Command Get-Date).ModuleName
+PS C:\> (Get-Command Get-Date).ModuleName
 Microsoft.PowerShell.Utility
 ```
 
@@ -177,7 +177,7 @@ The command uses the **ModuleName** property of all commands.
 This command format works on commands in Windows PowerShell modules and snap-ins, even if they are not imported into the session.
 ### -------------------------- EXAMPLE 13 --------------------------
 ```
-PS C:\>Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
+PS C:\> Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
 ```
 
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
@@ -189,7 +189,7 @@ Another pipeline operator sends the selected cmdlet objects to the Format-List c
 The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet code defines the **OutputType** attribute for the cmdlet.
 ### -------------------------- EXAMPLE 14 --------------------------
 ```
-PS C:\>Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
+PS C:\> Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Disable-NetAdapter                                 NetAdapter

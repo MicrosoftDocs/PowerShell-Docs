@@ -34,16 +34,16 @@ If the variable has a specified data or object type, Clear-Variable preserves th
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Clear-Variable my* -Scope Global
+PS C:\> Clear-Variable my* -Scope Global
 ```
 
 This command deletes the value of global variables that have names that begin with "my".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a=3
-PS C:\>&{ Clear-Variable a }
-PS C:\>$a
+PS C:\> $a=3
+PS C:\> &{ Clear-Variable a }
+PS C:\> $a
 3
 ```
 
@@ -55,7 +55,7 @@ The third command, which gets the value of $a, shows that the value "3" is unaff
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Clear-variable -Name Processes
+PS C:\> Clear-variable -Name Processes
 ```
 
 This command deletes the value of the $processes variable.

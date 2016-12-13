@@ -38,7 +38,7 @@ If the reference set or the difference set is null, this cmdlet generates a term
 
 ### Example 1: Compare the content of two text files
 ```
-PS C:\>Compare-Object -ReferenceObject $(Get-Content C:\test\testfile1.txt) -DifferenceObject $(Get-Content C:\test\testfile2.txt)
+PS C:\> Compare-Object -ReferenceObject $(Get-Content C:\test\testfile1.txt) -DifferenceObject $(Get-Content C:\test\testfile2.txt)
 ```
 
 This command compares the contents of two text files.
@@ -46,7 +46,7 @@ It displays only the lines that appear in one file or in the other file, not lin
 
 ### Example 2: Compare each line of content in two text files
 ```
-PS C:\>Compare-Object -ReferenceObject $(Get-Content C:\Test\testfile1.txt) -DifferenceObject $(Get-Content C:\Test\testfile2.txt) -IncludeEqual
+PS C:\> Compare-Object -ReferenceObject $(Get-Content C:\Test\testfile1.txt) -DifferenceObject $(Get-Content C:\Test\testfile2.txt) -IncludeEqual
 ```
 
 This command compares each line of content in two text files.
@@ -54,10 +54,10 @@ It displays all lines of content from both files, indicating whether each line a
 
 ### Example 3: Compare two sets of process objects
 ```
-PS C:\>$Processes_Before = Get-Process
-PS C:\>notepad
-PS C:\>$Processes_After = Get-Process
-PS C:\>Compare-Object -ReferenceObject $Processes_Before -DifferenceObject $Processes_After
+PS C:\> $Processes_Before = Get-Process
+PS C:\> notepad
+PS C:\> $Processes_After = Get-Process
+PS C:\> Compare-Object -ReferenceObject $Processes_Before -DifferenceObject $Processes_After
 ```
 
 These commands compare two sets of process objects.

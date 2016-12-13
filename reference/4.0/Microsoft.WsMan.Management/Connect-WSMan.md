@@ -48,7 +48,7 @@ For information about how to disconnect from the WinRM service on a remote compu
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Connect-WSMan -computer server01
+PS C:\> Connect-WSMan -computer server01
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
 PS WSMan:\> dir
@@ -68,7 +68,7 @@ Those connections will appear in the ComputerName list.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$cred = Get-Credential Administrator
+PS C:\> $cred = Get-Credential Administrator
 Connect-WSMan -computer server01 -credential $cred
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
@@ -97,7 +97,7 @@ However, the cmdlet can be used establish connections to remote computers before
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Connect-WSMan -computer server01 -port 80
+PS C:\> Connect-WSMan -computer server01 -port 80
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
 PS WSMan:\> dir
@@ -116,7 +116,7 @@ Those connections will appear in the ComputerName list.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = New-WSManSessionOption -operationtimeout 30000
+PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>

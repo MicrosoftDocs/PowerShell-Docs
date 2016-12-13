@@ -41,31 +41,31 @@ For text objects, it can count and calculate the number of lines, words, and cha
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem | measure-object
+PS C:\> get-childitem | measure-object
 ```
 
 This command counts the files and folders in the current directory.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem | measure-object -property length -minimum -maximum -average
+PS C:\> get-childitem | measure-object -property length -minimum -maximum -average
 ```
 
 This command displays the minimum, maximum, and sum of the sizes of all files in the current directory, and the average size of a file in the directory.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-content C:\test.txt | measure-object -character -line -word
+PS C:\> get-content C:\test.txt | measure-object -character -line -word
 ```
 
 This command displays the number of characters, words, and lines in the Text.txt file.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-process | measure-object -property workingset -minimum -maximum -average
+PS C:\> get-process | measure-object -property workingset -minimum -maximum -average
 ```
 
 This command displays the minimum, maximum, and average sizes of the working sets of the processes on the computer.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>import-csv d:\test\serviceyrs.csv | measure-object -property years -minimum -maximum -average
+PS C:\> import-csv d:\test\serviceyrs.csv | measure-object -property years -minimum -maximum -average
 ```
 
 This command calculates the average years of service of the employees of a company.
@@ -77,7 +77,7 @@ When you use Import-Csv to import the file, the result is a PSCustomObject with 
 You can use Measure-Object to calculate the values of these properties, just like any other property of an object.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-childitem | measure-object -property psiscontainer -max -sum -min -average
+PS C:\> get-childitem | measure-object -property psiscontainer -max -sum -min -average
 
 Count    : 126
 Average  : 0.0634920634920635

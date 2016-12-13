@@ -32,9 +32,9 @@ Without **Invoke-Expression**, a string submitted at the command line would be r
 
 ### Example 1: Evaluate an expression
 ```
-PS C:\>$Command = "Get-Process"
-PS C:\>$Command
-Get-Process PS C:\>Invoke-Expression $Command
+PS C:\> $Command = "Get-Process"
+PS C:\> $Command
+Get-Process PS C:\> Invoke-Expression $Command
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 -------  ------    -----      ----- -----   ------     --   -----------
 296       4       1572       1956    20       0.53     1348   AdtAgent
@@ -57,8 +57,8 @@ The third command uses **Invoke-Expression** to evaluate the string.
 
 ### Example 2: Run a script on the local computer
 ```
-PS C:\>Invoke-Expression -Command "C:\ps-test\testscript.ps1"
-PS C:\>"C:\ps-test\testscript.ps1" | Invoke-Expression
+PS C:\> Invoke-Expression -Command "C:\ps-test\testscript.ps1"
+PS C:\> "C:\ps-test\testscript.ps1" | Invoke-Expression
 ```
 
 These commands use **Invoke-Expression** to run a script, TestScript.ps1, on the local computer.
@@ -68,8 +68,8 @@ The second uses a pipeline operator (|) to send the command string to **Invoke-E
 
 ### Example 3: Run a command in a variable
 ```
-PS C:\>$Command = 'Get-Process | where {$_.cpu -gt 1000}'
-PS C:\>Invoke-Expression $Command
+PS C:\> $Command = 'Get-Process | where {$_.cpu -gt 1000}'
+PS C:\> Invoke-Expression $Command
 ```
 
 This example runs a command string that is saved in the $Command variable.
@@ -79,10 +79,10 @@ If it were enclosed in double quotation marks, the $_ variable would be replaced
 
 ### Example 4: Get and run a cmdlet Help example
 ```
-PS C:\>$Cmdlet_name = "Get-EventLog"
-PS C:\>$Example_number = 1
-PS C:\>$Example_code = (Get-Help $Cmdlet_name).examples.example[($Example_number-1)].code
-PS C:\>Invoke-Expression $Example_code
+PS C:\> $Cmdlet_name = "Get-EventLog"
+PS C:\> $Example_number = 1
+PS C:\> $Example_code = (Get-Help $Cmdlet_name).examples.example[($Example_number-1)].code
+PS C:\> Invoke-Expression $Example_code
 ```
 
 This command retrieves and runs the first example in the Get-EventLog cmdlet Help topic.

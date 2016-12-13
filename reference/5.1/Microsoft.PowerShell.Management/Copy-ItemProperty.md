@@ -42,7 +42,7 @@ For instance, you can use this cmdlet to copy one or more registry entries from 
 
 ### Example 1: Copy a property from a registry key to another registry key
 ```
-PS C:\>Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
+PS C:\> Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
 ```
 
 This command copies the property named MyProperty from the MyApplication registry key to the MyApplicationRev2 registry key.

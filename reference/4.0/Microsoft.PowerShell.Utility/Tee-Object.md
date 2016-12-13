@@ -44,7 +44,7 @@ If Tee-Object is the last command in the pipeline, the command output is display
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-process | tee-object -filepath C:\Test1\testfile2.txt
+PS C:\> get-process | tee-object -filepath C:\Test1\testfile2.txt
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
 -------  ------    -----      ----- -----   ------    -- -----------
@@ -60,7 +60,7 @@ Because a second path is not specified, the processes are also displayed in the 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-process notepad | tee-object -variable proc | select-object processname,handles
+PS C:\> get-process notepad | tee-object -variable proc | select-object processname,handles
 
 ProcessName                              Handles
 -----------                              -------
@@ -76,7 +76,7 @@ Note that the $proc variable includes the default information returned by Get-Pr
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-childitem -path D: -file -system -recurse | tee-object -file c:\test\AllSystemFiles.txt -append | out-file c:\test\NewSystemFiles.txt
+PS C:\> get-childitem -path D: -file -system -recurse | tee-object -file c:\test\AllSystemFiles.txt -append | out-file c:\test\NewSystemFiles.txt
 ```
 
 This command saves a list of system files in a two log files, a cumulative file and a current file.

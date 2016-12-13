@@ -55,7 +55,7 @@ You can pipe the results of **Get-CmsMessage** to Unprotect-CmsMessage to decryp
 
 ### Example 1: Get encrypted content
 ```
-PS C:\>Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
+PS C:\> Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
 -----BEGIN CMS-----
 MIIBqAYJKoZIhvcNAQcDoIIBmTCCAZUCAQAxggFQMIIBTAIBADA0MCAxHjAcBgNVBAMBFWxlZWhv
 bG1AbGljcm9zb2Z0LmNvbQIQQYHsbcXnjIJCtH+OhGmc1DANBgkqhkiG9w0BAQcwAASCAQAnkFHM
@@ -72,7 +72,7 @@ This command gets encrypted content located at C:\Users\Test\Documents\PowerShel
 
 ### Example 2: Pipe encrypted content to Unprotect-CmsMessage
 ```
-PS C:\>$Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
+PS C:\> $Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
 $Msg | Unprotect-CmsMessage -To "â€Žcn=youralias@emailaddress.com"
 Try the new Break All command
 ```

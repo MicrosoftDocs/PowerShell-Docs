@@ -34,7 +34,7 @@ You can use the views defined in the *format.PS1XML files in the Windows PowerSh
 
 ### Example 1: Format output with a custom view
 ```
-PS C:\>Get-Command Start-Transcript | Format-Custom -View "MyView"
+PS C:\> Get-Command Start-Transcript | Format-Custom -View "MyView"
 ```
 
 This command formats information about the Start-Transcript cmdlet in the format defined by the MyView view, a custom view created by the user.
@@ -42,7 +42,7 @@ To run this command successfully, you must first create a new PS1XML file, defin
 
 ### Example 2: Format output with the default view
 ```
-PS C:\>Get-Process Winlogon | Format-Custom
+PS C:\> Get-Process Winlogon | Format-Custom
 ```
 
 This command formats information about the Winlogon process in an alternate customized view.

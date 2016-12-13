@@ -39,13 +39,13 @@ You can specify the content by typing the content in the command or by specifyin
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>add-content -path *.txt -exclude help* -value "END"
+PS C:\> add-content -path *.txt -exclude help* -value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>add-content -Path file1.log, file2.log -Value (get-date) -passthru
+PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
 ```
 
 This command adds the date to the end of the File1.log and File2.log files and then displays the date at the command line.
@@ -54,7 +54,7 @@ The PassThru parameter passes an object representing the added content through t
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
+PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
 ```
 
 This command adds the contents of the Weekly.txt file to the end of the Monthly.txt file.
@@ -65,7 +65,7 @@ You can also copy the content of Weekly.txt to a variable, such as $w, and then 
 In that case, the command would be "add-content -path monthly.txt -value $w".
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
+PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
 ```
 
 This command creates a new directory and file and copies the content of an existing file to the newly created file.

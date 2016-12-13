@@ -43,8 +43,8 @@ These cmdlets are the same as the ConvertTo-CSV and ConvertFrom-CSV cmdlets, exc
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$p = get-process | convertto-csv
-PS C:\>$p | convertfrom-csv
+PS C:\> $p = get-process | convertto-csv
+PS C:\> $p | convertfrom-csv
 ```
 
 These commands convert the processes on the local computer into CSV format and then restore them to object form.
@@ -57,8 +57,8 @@ The second command uses a pipeline operator to send the CSV strings in the $p va
 The cmdlet converts the CSV strings into CSV versions of the original process objects.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$date = get-date | convertto-csv -delimiter ";"
-PS C:\>convertfrom-csv -inputobject $date -delimiter ";"
+PS C:\> $date = get-date | convertto-csv -delimiter ";"
+PS C:\> convertfrom-csv -inputobject $date -delimiter ";"
 ```
 
 These commands convert a data object to CSV format and then to CSV object format.
@@ -72,10 +72,10 @@ The second command uses the ConvertFrom-CSV cmdlet to convert the CSV strings in
 The command uses the InputObject parameter to specify the CSV strings and the Delimiter parameter to specify the semicolon delimiter.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$j = start-job -scriptblock { get-process } | convertto-csv
-PS C:\>$header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
+PS C:\> $j = start-job -scriptblock { get-process } | convertto-csv
+PS C:\> $header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
 # Delete header from $j
-PS C:\>$j = $j[0], $j[2..($j.count - 1)]
+PS C:\> $j = $j[0], $j[2..($j.count - 1)]
 $j | convertfrom-csv -header $header
 
 MoreData      : True
@@ -113,8 +113,8 @@ The command uses a pipeline operator to send the content in $j to ConvertFrom-CS
 The resulting object has "MoreData" and "State" properties, as specified by the header.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(get-culture).textinfo.listseparator
-PS C:\>ConvertFrom-Csv -inputobject $services -UseCulture
+PS C:\> (get-culture).textinfo.listseparator
+PS C:\> ConvertFrom-Csv -inputobject $services -UseCulture
 ```
 
 The command uses the ConvertFrom-CSV cmdlet to convert CSV strings of service objects that had been converted by the ConvertTo-CSV cmdlet.

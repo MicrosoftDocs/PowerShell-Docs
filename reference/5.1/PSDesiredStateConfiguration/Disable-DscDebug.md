@@ -33,14 +33,14 @@ This cmdlet has no effect if the DSC engine is not currently in debugging mode.
 
 ### Example 1: Stop resource debugging
 ```
-PS C:\>Disable-DscDebug
+PS C:\> Disable-DscDebug
 ```
 
 This command indicates to the DSC engine on the Local Configuration Manager (LCM) to stop resource debugging.
 
 ### Example 2: Check the engine state and stop debugging
 ```
-PS C:\>if((Get-DscLocalConfigurationManager).DebugMode -like '*Break*'){Disable-DscDebug}
+PS C:\> if((Get-DscLocalConfigurationManager).DebugMode -like '*Break*'){Disable-DscDebug}
 ```
 
 This command checks the DSC engine state, and stops resource debugging only if it is already in debugging mode

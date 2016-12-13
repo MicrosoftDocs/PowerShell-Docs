@@ -63,7 +63,7 @@ The DisplayHint parameter tells Windows PowerShell to display only the time, but
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
 C:\PS>$t = get-date
-PS C:\>set-date -date $t
+PS C:\> set-date -date $t
 ```
 
 Description
@@ -76,7 +76,7 @@ The second command uses the Date parameter to pass the DateTime object in $t to 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 C:\PS>$90mins = new-timespan -minutes 90
-PS C:\>set-date -adjust $90mins
+PS C:\> set-date -adjust $90mins
 ```
 
 Description

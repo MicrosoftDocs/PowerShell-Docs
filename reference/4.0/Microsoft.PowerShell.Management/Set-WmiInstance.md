@@ -78,7 +78,7 @@ Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://g
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting
@@ -127,7 +127,7 @@ The class information that is returned reflects the new value.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
+PS C:\> set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 
 __GENUS          : 2
 __CLASS          : Win32_Environment
@@ -155,7 +155,7 @@ Note that this operation requires appropriate credentials and that you may need 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting

@@ -49,7 +49,7 @@ Although most metadata is taken from the module manifest, some metadata must be 
 
 ### Example 1: Publish a module
 ```
-PS C:\>Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
+PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's online gallery account.
@@ -57,7 +57,7 @@ If MyDscModule is not a valid manifest module that specifies a name, version, de
 
 ### Example 2: Publish a module with gallery metadata
 ```
-PS C:\>Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
+PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's gallery account.

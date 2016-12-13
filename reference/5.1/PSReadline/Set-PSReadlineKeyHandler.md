@@ -40,14 +40,14 @@ Typically, you might modify the command line in a new way, but because the handl
 
 ### Example 1: Bind the arrow key to a function
 ```
-PS C:\>Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
+PS C:\> Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 ```
 
 This command binds the up arrow key to the function HistorySearchBackward, which uses the currently-entered command line as the start of the search string when it is searching through command history.
 
 ### Example 2: Bind a key to a script block
 ```
-PS C:\>Set-PSReadlineKeyHandler -Chord Shift+Ctrl+B -ScriptBlock { 
+PS C:\> Set-PSReadlineKeyHandler -Chord Shift+Ctrl+B -ScriptBlock { 
   [PSConsoleUtilities.PSConsoleReadLine]::RevertLine() 
   [PSConsoleUtilities.PSConsoleReadLine]::Insert('build')
       [PSConsoleUtilities.PSConsoleReadLine]::AcceptLine()

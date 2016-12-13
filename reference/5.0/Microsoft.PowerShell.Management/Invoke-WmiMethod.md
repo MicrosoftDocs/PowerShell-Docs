@@ -77,7 +77,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.
 
 ### Example 1: List the required order of WMI objects
 ```
-PS C:\>([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
 __CLASS           : __PARAMETERS
 __SUPERCLASS      :
@@ -102,7 +102,7 @@ To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires tha
 
 ### Example 2: Start an instance of an application
 ```
-PS C:\>([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
 __CLASS                   : __PARAMETERS
 __SUPERCLASS              : 
@@ -116,7 +116,7 @@ __PATH                    :
 CommandLine               : 
 CurrentDirectory          : 
 ProcessStartupInformation : 
-PSComputerName            : PS C:\>Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
+PSComputerName            : PS C:\> Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 
@@ -138,7 +138,7 @@ The **ReturnValue** property is populated with a 0, and the **ProcessId** proper
 
 ### Example 3: Rename a file
 ```
-PS C:\>Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+PS C:\> Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 

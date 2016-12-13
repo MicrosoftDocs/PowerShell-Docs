@@ -34,7 +34,7 @@ If you specify *Unbound*, but not *Bound*, the cmdlet returns only unbound keys.
 
 ### Example 1: Get all key mappings
 ```
-PS C:\>Get-PSReadlineKeyHandler
+PS C:\> Get-PSReadlineKeyHandler
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 
@@ -71,7 +71,7 @@ This command returns all key mappings, bound and unbound.
 
 ### Example 2: Get bound keys
 ```
-PS C:\>Get-PSReadlineKeyHandler -Bound
+PS C:\> Get-PSReadlineKeyHandler -Bound
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 

@@ -46,7 +46,7 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 
 ### Example 1: Disable a listener on the local computer
 ```
-PS C:\>set-wsmaninstance -ResourceUri winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+PS C:\> set-wsmaninstance -ResourceUri winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -72,7 +72,7 @@ This succeeds: `-ValueSet @{Enabled="False"}`
 
 ### Example 2: Set the maximum envelope size on the local computer
 ```
-PS C:\>Set-WSManInstance -ResourceUri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
+PS C:\> Set-WSManInstance -ResourceUri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
 cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
@@ -90,7 +90,7 @@ Important: *ValueSet* is case-sensitive when matching the properties specified.
 
 ### Example 3: Disable a listener on a remote computer
 ```
-PS C:\>Set-WSManInstance -ResourceUri winrm/config/listener -ComputerName "SERVER02" -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+PS C:\> Set-WSManInstance -ResourceUri winrm/config/listener -ComputerName "SERVER02" -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US

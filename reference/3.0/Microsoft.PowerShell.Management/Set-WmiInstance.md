@@ -75,7 +75,7 @@ Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://g
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting
@@ -123,7 +123,7 @@ The parameter takes a hash table that is defined by the @{property = value} cons
 The class information that is returned reflects the new value.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
+PS C:\> set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 
 __GENUS          : 2
 __CLASS          : Win32_Environment
@@ -150,7 +150,7 @@ It does this by creating a new instance of the Win32_Environment WMI class.
 Note that this operation requires appropriate credentials and that you may need to restart Windows PowerShell to see the new environment variable.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting

@@ -35,35 +35,35 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-eventlog "Windows PowerShell"
+PS C:\> clear-eventlog "Windows PowerShell"
 ```
 
 This command deletes the entries from the "Windows PowerShell" event log on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-eventlog -logname ODiag, OSession -computername localhost, Server02
+PS C:\> clear-eventlog -logname ODiag, OSession -computername localhost, Server02
 ```
 
 This command deletes all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-eventlog -log application, system -confirm
+PS C:\> clear-eventlog -log application, system -confirm
 ```
 
 This command prompts you for confirmation before deleting the entries in the specified event logs.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function clear-all-event-logs ($computerName="localhost")
+PS C:\> function clear-all-event-logs ($computerName="localhost")
 {
    $logs = get-eventlog -computername $computername -list | foreach {$_.Log}
    $logs | foreach {clear-eventlog -comp $computername -log $_ }
    get-eventlog -computername $computername -list
 }
 
-PS C:\>clear-all-event-logs -comp Server01
+PS C:\> clear-all-event-logs -comp Server01
 
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---

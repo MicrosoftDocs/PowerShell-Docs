@@ -37,7 +37,7 @@ Before you use this cmdlet, review the information in What's New in Windows Powe
 
 ### Example 1: Remove the current configuration document
 ```
-PS C:\>$Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Remove-DscConfigurationDocument -Stage Current -CimSession $Session
 ```
 

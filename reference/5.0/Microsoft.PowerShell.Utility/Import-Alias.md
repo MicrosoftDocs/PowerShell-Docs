@@ -41,7 +41,7 @@ To overwrite an existing alias, after assuring that the contents of the alias fi
 
 ### Example 1: Import aliases from a file
 ```
-PS C:\>Import-Alias test.txt
+PS C:\> Import-Alias test.txt
 ```
 
 This command imports alias information from a file named test.txt.

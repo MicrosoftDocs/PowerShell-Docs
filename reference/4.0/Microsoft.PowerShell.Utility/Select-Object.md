@@ -48,14 +48,14 @@ To turn off this optimizing behavior, use the **Wait** parameter.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Process | Select-Object -Property ProcessName, Id, WS
+PS C:\> Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
 This command creates objects that have the Name, ID, and working set (WS) properties of process objects.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
+PS C:\> Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
 
 ProcessName       : 00THotkey
 Size              : 256
@@ -78,7 +78,7 @@ The command uses the Format-List parameter to display the name and modules in of
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Process | Sort-Object -Property WS | Select-Object -Last 5
+PS C:\> Get-Process | Sort-Object -Property WS | Select-Object -Last 5
 
 Handles  NPM(K)    PM(K)      WS(K) VS(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -98,7 +98,7 @@ The **Select-Object** optimization is available only for commands that return ob
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression = {$_.StartTime.DayOfWeek}}
+PS C:\> Get-process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression = {$_.StartTime.DayOfWeek}}
 
 ProcessName  StartDay
 ----         --------
@@ -116,7 +116,7 @@ The value of the Expression key is a script blocks that gets the StartTime prope
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>"a","b","c","a","a","a" | Select-Object -Unique
+PS C:\> "a","b","c","a","a","a" | Select-Object -Unique
 
 a
 b
@@ -127,7 +127,7 @@ This command uses the Unique parameter of Select-Object to get unique characters
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$a = Get-Eventlog -Log "Windows PowerShell"
+PS C:\> $a = Get-Eventlog -Log "Windows PowerShell"
 $a | select-object -index 0, ($a.count - 1)
 ```
 
@@ -143,7 +143,7 @@ The index of the last event is the number of items in $a minus 1.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
+PS C:\> New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
 
 This command creates a new PSSession on each of the computers listed in the Servers.txt files, except for the first one.
@@ -153,7 +153,7 @@ The resulting list of computers is set as the value of the **ComputerName** para
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
+PS C:\> Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
 ```
 
 This command adds a "-ro" suffix to the base names of text files that have the read-only attribute and then displays the first five files so the user can see a sample of the effect.

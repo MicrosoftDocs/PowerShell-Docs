@@ -46,8 +46,8 @@ These cmdlets are the same as the **ConvertTo-CSV** and **ConvertFrom-CSV** cmdl
 
 ### Example 1: Convert processes on the local computer to CSV format
 ```
-PS C:\>$P = Get-Process | ConvertTo-Csv
-PS C:\>$P | ConvertFrom-Csv
+PS C:\> $P = Get-Process | ConvertTo-Csv
+PS C:\> $P | ConvertFrom-Csv
 ```
 
 These commands convert the processes on the local computer into CSV format and then restore them to object form.
@@ -61,7 +61,7 @@ The cmdlet converts the CSV strings into CSV versions of the original process ob
 
 ### Example 2: Convert a data object to CSV format and then to CSV object format
 ```
-PS C:\>$Date = Get-Date | ConvertTo-Csv -Delimiter ";"
+PS C:\> $Date = Get-Date | ConvertTo-Csv -Delimiter ";"
 PS C:\> ConvertFrom-Csv -InputObject $Date -Delimiter ";"
 ```
 
@@ -77,7 +77,7 @@ The command uses the InputObject parameter to specify the CSV strings and the De
 
 ### Example 3: Use the header parameter to change the names of properties
 ```
-PS C:\>$J = Start-Job -ScriptBlock {Get-Process } | ConvertTo-Csv
+PS C:\> $J = Start-Job -ScriptBlock {Get-Process } | ConvertTo-Csv
 PS C:\> $Header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
 # Delete header from $J
 PS C:\> $J = $J[0], $J[2..($J.count - 1)]
@@ -120,8 +120,8 @@ The resulting object has MoreData and State properties, as specified by the head
 
 ### Example 4: Convert CSV strings of service objects
 ```
-PS C:\>(Get-Culture).textinfo.listseparator
-PS C:\>ConvertFrom-Csv -InputObject $Services -UseCulture
+PS C:\> (Get-Culture).textinfo.listseparator
+PS C:\> ConvertFrom-Csv -InputObject $Services -UseCulture
 ```
 
 The command uses the **ConvertFrom-CSV** cmdlet to convert CSV strings of service objects that had been converted by the **ConvertTo-CSV** cmdlet.

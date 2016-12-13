@@ -41,7 +41,7 @@ You can use it to delete registry values and the data that they store.
 
 ### Example 1: Delete a registry value
 ```
-PS C:\>Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
+PS C:\> Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
 ```
 
 This command deletes the SmpProperty registry value, and its data, from the SmpApplication subkey of the HKEY_LOCAL_MACHINE\Software registry key.
@@ -52,7 +52,7 @@ It uses the *Name* parameter to identify the registry value that is being delete
 
 ### Example 2: Delete a registry value from the HKCU location
 ```
-PS C:\>Set-Location HKCU:\Software\MyCompany\MyApp
+PS C:\> Set-Location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> Remove-ItemProperty -Path . -Name "Options" -Confirm
 ```
 
@@ -67,7 +67,7 @@ It uses the *Confirm* parameter to request a user prompt before deleting the val
 
 ### Example 3: Remove a registry value by using the pipeline
 ```
-PS C:\>Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
+PS C:\> Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
 ```
 
 This command deletes the NoOfEmployees registry value, and its data, from the HKLM\Software\MyCompany registry key.

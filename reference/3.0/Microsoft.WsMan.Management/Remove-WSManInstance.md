@@ -41,7 +41,7 @@ This cmdlet uses the WinRM connection/transport layer to delete the management r
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Remove-WSManInstance winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
+PS C:\> Remove-WSManInstance winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
 ```
 
 Deletes the WS-Management HTTP listener on a computer.

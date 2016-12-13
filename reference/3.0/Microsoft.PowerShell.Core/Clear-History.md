@@ -36,31 +36,31 @@ Without parameters, Clear-History deletes all commands from the session history,
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-history
+PS C:\> clear-history
 ```
 
 Deletes all commands from the session history.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-history -id 23, 25
+PS C:\> clear-history -id 23, 25
 ```
 
 Deletes the commands with history IDs 23 and 25.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-history -command *help*, *command
+PS C:\> clear-history -command *help*, *command
 ```
 
 Deletes commands that include "help" or end in "command".
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>clear-history -count 10 -newest
+PS C:\> clear-history -count 10 -newest
 ```
 
 Deletes the 10 newest commands from the history.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>clear-history -id 10 -count 3
+PS C:\> clear-history -id 10 -count 3
 ```
 
 Deletes the three oldest commands, beginning with the entry with ID 10.

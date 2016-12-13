@@ -31,7 +31,7 @@ The **New-LocalGroup** cmdlet creates a local security group in the Security Acc
 
 ### Example 1: Create a security group
 ```
-PS C:\>New-LocalGroup -Name "SecurityGroup04"
+PS C:\> New-LocalGroup -Name "SecurityGroup04"
 ```
 
 This command creates a group named SecurityGroup04.

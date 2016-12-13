@@ -61,7 +61,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Update help for all modules
 ```
-PS C:\>Update-Help
+PS C:\> Update-Help
 ```
 
 This command updates help for all installed modules that support Updatable Help in the language specified by the UI culture that is set for Windows.
@@ -69,7 +69,7 @@ This command updates help for all installed modules that support Updatable Help 
 To run this command, start Windows PowerShell with the "Run as administrator" option (`Start-Process PowerShell -Verb RunAs`).
 ### Example 2: Update help for specified modules
 ```
-PS C:\>Update-Help -Module ServerManager, Microsoft.PowerShell*
+PS C:\> Update-Help -Module ServerManager, Microsoft.PowerShell*
 ```
 
 This command updates help only for the **ServerManager** module and for modules that have names that begin with "Microsoft.PowerShell".
@@ -77,7 +77,7 @@ This command updates help only for the **ServerManager** module and for modules 
 Because these modules are in the $pshome\Modules directory, to run this command, start Windows PowerShell with the "Run as administrator" option.
 ### Example 3: Update help in different  languages
 ```
-PS C:\>Update-Help -UICulture ja-JP, en-US
+PS C:\> Update-Help -UICulture ja-JP, en-US
 Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} : 
 The specified culture is not supported: ja-JP. Specify a culture from the following list: {en-US}.
 ```
@@ -88,7 +88,7 @@ If a module currently does not provide help files for the specified UI culture, 
 In this example, the error message indicates that the ServerManager module currently provides help files only in en-US.
 ### Example 4: Update help automatically
 ```
-PS C:\>Register-ScheduledJob -Name UpdateHelpJob -Credential Domain01\User01 -ScriptBlock {Update-Help} -Trigger (New-JobTrigger -Daily -At "3 AM")
+PS C:\> Register-ScheduledJob -Name UpdateHelpJob -Credential Domain01\User01 -ScriptBlock {Update-Help} -Trigger (New-JobTrigger -Daily -At "3 AM")
 Id         Name            JobTriggers     Command                                  Enabled
 --         ----            -----------     -------                                  -------
 1          UpdateHelpJob   1               Update-Help                              True
@@ -109,10 +109,10 @@ You can also view and manage the scheduled job in Task Scheduler in the followin
 ### Example 5: Update help on multiple computers from a file share
 ```
 The first command uses the Save-Help cmdlet to download the newest help files for all modules that support Updatable Help. The command saves the downloaded help files in the \\Server01\Share\PSHelp file share.The command uses the **Credential** parameter of the **Save-Help** cmdlet to specify the credentials of a user who has permission to access the remote file share. By default, the command does not run with explicit credentials and attempts to access the file share might fail.
-PS C:\>Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
+PS C:\> Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
 
 The second command uses the Invoke-Command cmdlet to run **Update-Help** commands on many computers remotely.The **Invoke-Command** command gets the list of computers from the Servers.txt file. The **Update-Help** command installs the help files from the file share on all of the remote computers. The remote computer must be able to access the file share at the specified path.The **Update-Help** command uses the **SourcePath** parameter to get the updated help files from the file share, instead of the Internet, and the **Credential** parameter to run the command with explicit credentials. By default, the command runs with network token privileges and attempts to access the file share from each remote computer (a "second hop") might fail.
-PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Update-Help -SourcePath \\Server01\Share\Help -Credential Domain01\Admin01}
+PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Update-Help -SourcePath \\Server01\Share\Help -Credential Domain01\Admin01}
 ```
 
 These commands download updated help files for system modules from the Internet and save them in file share.
@@ -122,7 +122,7 @@ You can use a strategy like the one shown here to update the help files on numer
 All of the commands in this example were run in a Windows PowerShell session that was started with the "Run as administrator" option.
 ### Example 6: Get a List of Updated Help Files
 ```
-PS C:\>Update-Help -Module BestPractices, ServerManager -Verbose
+PS C:\> Update-Help -Module BestPractices, ServerManager -Verbose
 ```
 
 This command updates help for two modules.
@@ -132,7 +132,7 @@ Without the **Verbose** parameter, Update-Help does not display the results of t
 The **Verbose** parameter is especially useful when you need to verify that you have updated help files for a particular module or a particular locale.
 ### Example 7: Find modules that support Updatable Help
 ```
-PS C:\>Get-Module -ListAvailable | Where HelpInfoUri
+PS C:\> Get-Module -ListAvailable | Where HelpInfoUri
 ```
 
 This command gets modules that support Updatable Help.

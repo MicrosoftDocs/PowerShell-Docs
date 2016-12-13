@@ -47,7 +47,7 @@ The **Invoke-OperationValidation** cmdlet invokes Operation Validation Framework
 
 ### Example 1: Invoke an Operation Validation test
 ```
-PS C:\>Get-OperationValidation -ModuleName "OperationValidation" | Invoke-OperationValidation -IncludePesterOutput
+PS C:\> Get-OperationValidation -ModuleName "OperationValidation" | Invoke-OperationValidation -IncludePesterOutput
 Describing Simple Test Suite
  [+] first Operational test 20ms
  [+] second Operational test 19ms

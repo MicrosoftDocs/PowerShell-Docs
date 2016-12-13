@@ -45,7 +45,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### Example 1: Export session format data
 ```
-PS C:\>Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
+PS C:\> Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
@@ -59,7 +59,7 @@ The **Export-FormatData** command uses the *IncludeScriptBlock* parameter to inc
 
 ### Example 2: Export format data for a type
 ```
-PS C:\>$F = Get-FormatData -TypeName "helpinfoshort"
+PS C:\> $F = Get-FormatData -TypeName "helpinfoshort"
 PS C:\> Export-FormatData -InputObject $F -Path "c:\test\help.format.ps1xml" -IncludeScriptBlock
 ```
 
@@ -72,7 +72,7 @@ It also uses the *IncludeScriptBlock* parameter to include script blocks in the 
 
 ### Example 3: Export format data without a script block
 ```
-PS C:\>Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
+PS C:\> Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
 PS C:\> Update-FormatData -PrependPath ".\process.format.ps1xml"
 PS C:\> Get-Process p*
 Handles  NPM(K)  PM(K)  WS(K) VM(M)   CPU(s)    Id ProcessName

@@ -36,14 +36,14 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### Example 1: Create an event log and register its source
 ```
-PS C:\>New-EventLog -Source "TestApp" -LogName "TestLog" -MessageResourceFile "C:\Test\TestApp.dll"
+PS C:\> New-EventLog -Source "TestApp" -LogName "TestLog" -MessageResourceFile "C:\Test\TestApp.dll"
 ```
 
 This command creates the TestLog event log on the local computer and registers a new source for it.
 
 ### Example 2: Add an event source to the Application log
 ```
-PS C:\>$file = "C:\Program Files\TestApps\NewTestApp.dll"
+PS C:\> $file = "C:\Program Files\TestApps\NewTestApp.dll"
 PS C:\> New-EventLog -ComputerName "Server01" -Source "NewTestApp" -LogName "Application" -MessageResourceFile $file -CategoryResourceFile $file
 ```
 

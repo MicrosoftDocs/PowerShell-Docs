@@ -35,15 +35,15 @@ If the variable does not exist, the cmdlet creates it.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-variable -name desc -value "A description"
-PS C:\>get-variable -name desc
+PS C:\> set-variable -name desc -value "A description"
+PS C:\> get-variable -name desc
 ```
 
 These commands set the value of the "desc" variable to "A description", and then get the value of the variable.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-variable -name processes -value (Get-Process) -option constant -scope global -description "All processes" -passthru | format-list -property *
+PS C:\> set-variable -name processes -value (Get-Process) -option constant -scope global -description "All processes" -passthru | format-list -property *
 ```
 
 This command creates a global, read-only variable that contains all processes on the system, and then it displays all properties of the variable.
@@ -57,11 +57,11 @@ Otherwise, the variable contains the words "Get-Process".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\># set-variable -name counter -visibility private
-PS C:\>new-variable -name counter -visibility public -value 26
-PS C:\>$counter
+PS C:\> # set-variable -name counter -visibility private
+PS C:\> new-variable -name counter -visibility public -value 26
+PS C:\> $counter
 26
-PS C:\>get-variable c*
+PS C:\> get-variable c*
 
 Name Value
 ---- -----
@@ -71,8 +71,8 @@ ConfirmPreference High
 CommandLineParameters {}
 Counter 26
 
-PS C:\>set-variable -name counter -visibility private
-PS C:\>get-variable c*
+PS C:\> set-variable -name counter -visibility private
+PS C:\> get-variable c*
 
 Name Value
 ---- -----
@@ -80,11 +80,11 @@ Culture en-US
 ConsoleFileName
 ConfirmPreference High
 CommandLineParameters {}
-PS C:\>$counter
+PS C:\> $counter
 
 "Cannot access the variable '$counter' because it is a private variable"
 
-PS C:\>.\use-counter.ps1
+PS C:\> .\use-counter.ps1
 #Commands completed successfully.
 ```
 

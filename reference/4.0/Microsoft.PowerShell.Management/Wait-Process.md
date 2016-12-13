@@ -46,9 +46,9 @@ Wait-Process works only on processes running on the local computer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$nid = (get-process notepad).id
-PS C:\>stop-process -id $nid
-PS C:\>wait-process -id $nid
+PS C:\> $nid = (get-process notepad).id
+PS C:\> stop-process -id $nid
+PS C:\> wait-process -id $nid
 ```
 
 These commands stop the Notepad process and then wait for the process to be stopped before proceeding with the next command.
@@ -63,10 +63,10 @@ It uses the ID parameter of Wait-Process to identify the process.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$p = get-process notepad
-PS C:\>wait-process -id $p.id
-PS C:\>wait-process -name notepad
-PS C:\>wait-process -inputobject $p
+PS C:\> $p = get-process notepad
+PS C:\> wait-process -id $p.id
+PS C:\> wait-process -name notepad
+PS C:\> wait-process -inputobject $p
 ```
 
 These commands show three different methods of specifying a process to the Wait-Process cmdlet.
@@ -78,7 +78,7 @@ These commands have the same results and can be used interchangeably.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>wait-process -name outlook, winword -timeout 30
+PS C:\> wait-process -name outlook, winword -timeout 30
 ```
 
 This command waits 30 seconds for the Outlook and Winword processes to stop.

@@ -32,19 +32,19 @@ For information about Windows PowerShell providers, see about_Providers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-psprovider
+PS C:\> get-psprovider
 ```
 
 This command displays a list of all available Windows PowerShell providers.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-psprovider f*, r* | format-list
+PS C:\> get-psprovider f*, r* | format-list
 ```
 
 This command displays a list of all Windows PowerShell providers with names that begin with the letter "f" or "r".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-psprovider | format-table name, module, pssnapin -auto
+PS C:\> get-psprovider | format-table name, module, pssnapin -auto
 
 Name        Module       PSSnapIn
 ----        ------       --------
@@ -58,7 +58,7 @@ Registry                 Microsoft.PowerShell.Core
 Variable                 Microsoft.PowerShell.Core
 Certificate              Microsoft.PowerShell.Security
 
-PS C:\>get-psprovider | where {$_.pssnapin -eq "Microsoft.PowerShell.Security"}
+PS C:\> get-psprovider | where {$_.pssnapin -eq "Microsoft.PowerShell.Security"}
 
 Name            Capabilities      Drives
 ----            ------------      ------
@@ -76,13 +76,13 @@ The first command gets all of the providers in the session and formats them in a
 The second command uses the Where-Object cmdlet to get the providers that come from the Microsoft.PowerShell.Security snap-in.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>resolve-path ~
+PS C:\> resolve-path ~
 
 Path
 ----
 C:\Users\User01
 
-PS C:\>(get-psprovider FileSystem).home
+PS C:\> (get-psprovider FileSystem).home
 C:\Users\User01
 ```
 

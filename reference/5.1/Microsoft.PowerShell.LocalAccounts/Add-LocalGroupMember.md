@@ -50,7 +50,7 @@ If the computer is joined to a domain, you can add user accounts, computer accou
 
 ### Example 1: Add members to the Administrators group
 ```
-PS C:\>Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+PS C:\> Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```
 
 This command adds several members to the local Administrators group.

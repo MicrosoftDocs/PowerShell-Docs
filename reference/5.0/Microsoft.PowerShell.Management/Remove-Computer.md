@@ -54,7 +54,7 @@ It includes credential parameters that specify alternate credentials for connect
 
 ### Example 1: Remove the local computer from its domain
 ```
-PS C:\>Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -PassThru -Verbose -Restart
+PS C:\> Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -PassThru -Verbose -Restart
 ```
 
 This command removes the local computer from the domain to which it is joined.
@@ -66,7 +66,7 @@ Because the command does not specify a workgroup name, the local computer is mov
 
 ### Example 2: Move several computers to a legacy workgroup
 ```
-PS C:\>Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName "Legacy" -Force -Restart
+PS C:\> Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName "Legacy" -Force -Restart
 ```
 
 This command removes all of the computers that are listed in the OldServers.txt file from their domains and includes them in the Legacy workgroup.
@@ -76,7 +76,7 @@ It uses the *Force* parameter to suppress the confirmation prompts for each comp
 
 ### Example 3: Remove computers from a workgroup without confirmation
 ```
-PS C:\>Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName "Local" -Restart -Force
+PS C:\> Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName "Local" -Restart -Force
 ```
 
 This command removes the Server01 remote computer and the local computer from their domains and adds them to the Local workgroup.

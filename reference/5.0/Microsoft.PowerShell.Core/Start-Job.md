@@ -87,7 +87,7 @@ For information about how to use **Start-Job** to start jobs with custom types, 
 
 ### Example 1: Start a background job
 ```
-PS C:\>Start-Job -ScriptBlock {Get-Process}
+PS C:\> Start-Job -ScriptBlock {Get-Process}
 Id    Name  State    HasMoreData  Location   Command
 ---   ----  -----    -----------  --------   -------
 1     Job1  Running  True         localhost  get-process
@@ -99,7 +99,7 @@ The command prompt returns immediately so that you can work in the session while
 
 ### Example 2: Start a job by using Invoke-Command
 ```
-PS C:\>$jobWRM = Invoke-Command -ComputerName (Get-Content servers.txt) -ScriptBlock {Get-Service winrm} -JobName "WinRM" -ThrottleLimit 16 -AsJob
+PS C:\> $jobWRM = Invoke-Command -ComputerName (Get-Content servers.txt) -ScriptBlock {Get-Service winrm} -JobName "WinRM" -ThrottleLimit 16 -AsJob
 ```
 
 This command uses the **Invoke-Command** cmdlet and its *AsJob* parameter to start a background job that runs a command on many computers.
@@ -112,7 +112,7 @@ The command uses the *ScriptBlock* parameter to specify the command and the *Job
 
 ### Example 3: Get events from the System log on the local computer
 ```
-PS C:\>$j = Start-Job -ScriptBlock {Get-EventLog -Log system} -Credential domain01\user01
+PS C:\> $j = Start-Job -ScriptBlock {Get-EventLog -Log system} -Credential domain01\user01
 PS C:\> $j | Format-List -Property *
 
 HasMoreData   : True
@@ -168,14 +168,14 @@ The final command displays the contents of the $results variable.
 
 ### Example 4: Run a script as a background job
 ```
-PS C:\>Start-Job -FilePath "c:\scripts\sample.ps1"
+PS C:\> Start-Job -FilePath "c:\scripts\sample.ps1"
 ```
 
 This command runs the Sample.ps1 script as a background job.
 
 ### Example 5: Get a process by name by using a background job
 ```
-PS C:\>Start-Job -Name "WinRm" -ScriptBlock {Get-Process winrm}
+PS C:\> Start-Job -Name "WinRm" -ScriptBlock {Get-Process winrm}
 ```
 
 This command runs a background job that gets the **WinRM** process on the local computer.
@@ -184,7 +184,7 @@ It uses the *Name* parameter to specify a friendly name for the new job.
 
 ### Example 6: Collect and save data by using a background job
 ```
-PS C:\>Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {Get-Map -Name * | Set-Content D:\Maps.tif} -RunAs32
+PS C:\> Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {Get-Map -Name * | Set-Content D:\Maps.tif} -RunAs32
 ```
 
 This command starts a job that collects lots of data, and then saves it in a .tif file.

@@ -47,7 +47,7 @@ You can direct Get-Service to get only particular services by specifying the ser
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-service
+PS C:\> get-service
 ```
 
 This command retrieves all of the services on the system.
@@ -56,14 +56,14 @@ The default display shows the status, service name, and display name of each ser
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-service wmi*
+PS C:\> get-service wmi*
 ```
 
 This command retrieves services with service names that begin with "WMI" (the acronym for Windows Management Instrumentation).
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-service -displayname *network*
+PS C:\> get-service -displayname *network*
 ```
 
 This command displays services with a display name that includes the word "network".
@@ -71,14 +71,14 @@ Searching the display name finds network-related services even when the service 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-service -name win* -exclude winrm
+PS C:\> get-service -name win* -exclude winrm
 ```
 
 These commands get only the services with service names that begin with "win", except for the WinRM service.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-service | where-object {$_.Status -eq "Running"}
+PS C:\> get-service | where-object {$_.Status -eq "Running"}
 ```
 
 This command displays only the services that are currently running.
@@ -90,7 +90,7 @@ To see all of the properties, type "get-service | get-member".
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-service -computername Server02
+PS C:\> get-service -computername Server02
 ```
 
 This command gets the services on the Server02 remote computer.
@@ -99,7 +99,7 @@ Because the ComputerName parameter of Get-Service does not use Windows PowerShel
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-service | where-object {$_.DependentServices} | format-list -property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
+PS C:\> get-service | where-object {$_.DependentServices} | format-list -property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
 Name                  : AudioEndpointBuilder
 DependentServices     : {AudioSrv}
@@ -120,7 +120,7 @@ The command uses its Property parameter to display the name of the service, the 
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>get-service s* | sort-object status
+PS C:\> get-service s* | sort-object status
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -138,7 +138,7 @@ Running  SharedAccess       Windows Firewall/Internet Connectio...
 Running  SENS               System Event Notification
 Running  seclogon           Secondary Logon
 
-PS C:\>get-service s* | sort-object status -descending
+PS C:\> get-service s* | sort-object status -descending
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -164,7 +164,7 @@ To list running services first, use the Descending parameter of the Sort-Object 
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>get-service -name winrm -computername localhost, Server01, Server02 | format-table -property MachineName, Status, Name, DisplayName -auto
+PS C:\> get-service -name winrm -computername localhost, Server01, Server02 | format-table -property MachineName, Status, Name, DisplayName -auto
 
 MachineName    Status  Name  DisplayName
 ------------   ------  ----  -----------
@@ -181,7 +181,7 @@ The Format-Table command uses the Property parameter to specify the properties d
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>get-service winrm -requiredServices
+PS C:\> get-service winrm -requiredServices
 ```
 
 This command gets the services that the WinRM service requires.
@@ -190,7 +190,7 @@ The command returns the value of the ServicesDependedOn property of the service.
 
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>"winrm" | get-service
+PS C:\> "winrm" | get-service
 ```
 
 This command gets the WinRM service on the local computer.

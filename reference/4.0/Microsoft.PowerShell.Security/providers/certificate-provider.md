@@ -242,11 +242,11 @@ Remove-Item -Path cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
  The fifth command uses the Invoke-Command cmdlet to run a Remove-Item command in the session in the $s variable. The Remove-Item command uses the DeleteKey parameter to remove the private key along with the specified certificate.  
   
 ```  
-PS C:\>Enable-WSManCredSSP -Role Client -DelegateComputer S1   
+PS C:\> Enable-WSManCredSSP -Role Client -DelegateComputer S1   
   
-PS C:\>Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
+PS C:\> Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
   
-PS C:\>Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
+PS C:\> Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
   
 PS C:\> $s  = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01  
   

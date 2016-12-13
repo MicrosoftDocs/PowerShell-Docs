@@ -45,7 +45,7 @@ Information streams also work for **PowerShell.Streams**, jobs, scheduled jobs, 
 
 ### Example 1: Write information for Get- results
 ```
-PS C:\>Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
+PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -67,7 +67,7 @@ The *InformationAction* value is Continue, which means that your message is show
 
 ### Example 2: Write information and tag it
 ```
-PS C:\>Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
+PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -89,7 +89,7 @@ After running this command, if you search the information stream for messages ta
 
 ### Example 3: Write information to a file
 ```
-PS C:\>function Test-Info
+PS C:\> function Test-Info
        { 
          Get-Process P*
          Write-Information "Here you go"

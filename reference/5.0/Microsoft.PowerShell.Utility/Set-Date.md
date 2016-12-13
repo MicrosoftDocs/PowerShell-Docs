@@ -40,7 +40,7 @@ To specify a change interval, use the *Adjust* parameter.
 
 ### Example 1: Add three days to the system date
 ```
-PS C:\>Set-Date -Date (Get-Date).AddDays(3)
+PS C:\> Set-Date -Date (Get-Date).AddDays(3)
 ```
 
 This command adds three days to the current system date.
@@ -50,7 +50,7 @@ It uses the Get-Date cmdlet to get the current date and time and applies the Add
 
 ### Example 2: Set the system clock back 10 minutes
 ```
-PS C:\>Set-Date -Adjust -0:10:0 -DisplayHint Time
+PS C:\> Set-Date -Adjust -0:10:0 -DisplayHint Time
 ```
 
 This command sets the current system time back by 10 minutes.
@@ -59,8 +59,8 @@ The *DisplayHint* parameter tells Windows PowerShell to display only the time, b
 
 ### Example 3: Set the date and time to a variable value
 ```
-PS C:\>$T = Get-Date
-PS C:\>Set-Date -Date $T
+PS C:\> $T = Get-Date
+PS C:\> Set-Date -Date $T
 ```
 
 These commands change the system date and time on the computer to the date and time saved in the variable $T.
@@ -69,8 +69,8 @@ The second command uses the *Date* parameter to pass the **DateTime** object in 
 
 ### Example 4: Add 90 minutes to the system clock
 ```
-PS C:\>$90mins = New-TimeSpan -Minutes 90
-PS C:\>Set-Date -Adjust $90mins
+PS C:\> $90mins = New-TimeSpan -Minutes 90
+PS C:\> Set-Date -Adjust $90mins
 ```
 
 These commands advance the system time on the local computer by 90 minutes.

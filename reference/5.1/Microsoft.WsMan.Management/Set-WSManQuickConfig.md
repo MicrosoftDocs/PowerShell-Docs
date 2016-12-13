@@ -42,7 +42,7 @@ To run this cmdlet, start Windows PowerShell by using the Run as administrator o
 
 ### Example 1: Enable remote management of the local computer over HTTP
 ```
-PS C:\>Set-WSManQuickConfig
+PS C:\> Set-WSManQuickConfig
 ```
 
 This command sets the required configuration to enable remote management of the local computer.
@@ -50,7 +50,7 @@ By default, this command creates a WS-Management listener on HTTP.
 
 ### Example 2: Enable remote management of the local computer over HTTPS
 ```
-PS C:\>Set-WSManQuickConfig -UseSSL
+PS C:\> Set-WSManQuickConfig -UseSSL
 ```
 
 The command sets the required configuration to enable remote management of the local computer.

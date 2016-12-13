@@ -33,7 +33,7 @@ You can use the *Property* parameter to determine which property is displayed.
 
 ### Example 1: Format names of files in the current directory
 ```
-PS C:\>Get-ChildItem | Format-Wide -Column 3
+PS C:\> Get-ChildItem | Format-Wide -Column 3
 ```
 
 This command displays the names of files in the current directory in three columns across the screen.
@@ -43,7 +43,7 @@ The *Column* parameter specifies the number of columns.
 
 ### Example 2: Format names of registry keys
 ```
-PS C:\>Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildname -AutoSize
+PS C:\> Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildname -AutoSize
 ```
 
 This command displays the names of registry keys in the HKEY_CURRENT_USER\Software\Microsoft key.

@@ -39,8 +39,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>$r = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
-PS C:\>$r.AllElements | where {$_.innerhtml -like "*=*"} | Sort { $_.InnerHtml.Length } | Select InnerText -First 5
+PS C:\> $r = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
+PS C:\> $r.AllElements | where {$_.innerhtml -like "*=*"} | Sort { $_.InnerHtml.Length } | Select InnerText -First 5
 innerText---------1 =5280 feet1 mile
 ```
 
@@ -54,29 +54,29 @@ Sorting by the shortest HTML value often helps you find the most specific elemen
 ### Example 2
 ```
 The first command uses the **Invoke-WebRequest** cmdlet to send a sign-in request. The command specifies a value of "fb" for the value of the **SessionVariable** parameter, and saves the result in the $r variable.When the command completes, the $r variable contains an **HtmlWebResponseObject** and the $fb variable contains a **WebRequestSession** object.
-PS C:\>$r=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
+PS C:\> $r=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
 
 The second command shows the **WebRequestSession** object in the $fb variable.
-PS C:\>$fb
+PS C:\> $fb
 
 The third command gets the first form in the Forms property of the HTTP response object in the $r variable, and saves it in the $form variable.
-PS C:\>$form = $r.Forms[0]
+PS C:\> $form = $r.Forms[0]
 
 The fourth command pipes the properties of the form in the $form variable into a list by using the Format-List cmdlet.
-PS C:\>$form | Format-List
+PS C:\> $form | Format-List
 
 The fifth command displays the keys and values in the hash table (dictionary) object in the Fields property of the form.
-PS C:\>$form.fields
+PS C:\> $form.fields
 
 The sixth and seventh commands populate the values of the "email" and "pass" keys of the hash table in the Fields property of the form. You can replace the email and password with values that you want to use.
-PS C:\>$form.Fields["email"]="User01@Fabrikam.com"
+PS C:\> $form.Fields["email"]="User01@Fabrikam.com"
 $form.Fields["pass"]="P@ssw0rd"
 
 The eighth command uses the **Invoke-WebRequest** cmdlet to sign into the Facebook web service.The value of the **Uri** parameter is the value of the **Action** property of the form. The **WebRequestSession** object in the $fb variable (the session variable specified in the first command) is now the value of the **WebSession** parameter. The value of the **Body** parameter is the hash table in the Fields property of the form and the value of the Method parameter is POST. The command saves the output in the $r variable.
-PS C:\>$r=Invoke-WebRequest -Uri ("https://www.facebook.com" + $form.Action) -WebSession $fb -Method POST -Body $form.Fields
+PS C:\> $r=Invoke-WebRequest -Uri ("https://www.facebook.com" + $form.Action) -WebSession $fb -Method POST -Body $form.Fields
 
 The full script, then, is as follows.
-PS C:\># Sends a sign-in request by running the Invoke-WebRequest cmdlet. The command specifies a value of "fb" for the SessionVariable parameter, and saves the results in the $r variable.
+PS C:\> # Sends a sign-in request by running the Invoke-WebRequest cmdlet. The command specifies a value of "fb" for the SessionVariable parameter, and saves the results in the $r variable.
 
 $r=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
 
@@ -106,14 +106,14 @@ $form.Fields["pass"] = "P@ssw0rd"
 $r=Invoke-WebRequest -Uri ("https://www.facebook.com" + $form.Action) -WebSession $fb -Method POST -Body $form.Fields
 
 When the command finishes, the **StatusDescription** property of the web response object in the $r variable indicates that the user is signed in successfully.
-PS C:\>$r.StatusDescription
+PS C:\> $r.StatusDescription
 ```
 
 This example shows how to use the **Invoke-WebRequest** cmdlet with a stateful web service, such as Facebook.
 
 ### Example 3
 ```
-PS C:\>(Invoke-WebRequest -Uri "http://msdn.microsoft.com/library/aa973757(v=vs.85).aspx").Links.Href
+PS C:\> (Invoke-WebRequest -Uri "http://msdn.microsoft.com/library/aa973757(v=vs.85).aspx").Links.Href
 ```
 
 This command gets the links in a web page.

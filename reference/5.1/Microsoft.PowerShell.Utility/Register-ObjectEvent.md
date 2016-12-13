@@ -43,9 +43,9 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ### Example 1: Subscribe to events when a new process starts
 ```
-PS C:\>$Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
-PS C:\>$ProcessWatcher = New-Object System.Management.ManagementEventWatcher $Query
-PS C:\>Register-ObjectEvent -InputObject $ProcessWatcher -EventName "EventArrived"
+PS C:\> $Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
+PS C:\> $ProcessWatcher = New-Object System.Management.ManagementEventWatcher $Query
+PS C:\> Register-ObjectEvent -InputObject $ProcessWatcher -EventName "EventArrived"
 ```
 
 This example subscribes to events generated when a new process starts.
@@ -55,10 +55,10 @@ A query object specifies that the events are instance creation events for the Wi
 
 ### Example 2: Specify an action to respond to an event
 ```
-PS C:\>$Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
-PS C:\>$ProcessWatcher = New-Object System.Management.ManagementEventWatcher $query
-PS C:\>$Action = { New-Event "PowerShell.ProcessCreated" -Sender $Sender -EventArguments $EventArgs.NewEvent.TargetInstance }
-PS C:\>register-objectEvent -InputObject $ProcessWatcher -EventName "EventArrived" -Action $Action
+PS C:\> $Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
+PS C:\> $ProcessWatcher = New-Object System.Management.ManagementEventWatcher $query
+PS C:\> $Action = { New-Event "PowerShell.ProcessCreated" -Sender $Sender -EventArguments $EventArgs.NewEvent.TargetInstance }
+PS C:\> register-objectEvent -InputObject $ProcessWatcher -EventName "EventArrived" -Action $Action
 Id    Name            State      HasMoreData     Location             Command
 --    ----            -----      -----------     --------             -------
 2     422cfe5a-65e... Running    True                                 New-Event "PowerShe...
@@ -79,7 +79,7 @@ For more information, see about_Jobs.
 
 ### Example 3: Subscribe to object events on remote computers
 ```
-PS C:\>$S = New-PSSession -ComputerName "Server01, Server02"
+PS C:\> $S = New-PSSession -ComputerName "Server01, Server02"
 PS C:\> Invoke-Command -Session $S -FilePath ProcessCreationEvent.ps1
 PS C:\> Invoke-Command -Session $S { get-event }# ProcessCreationEvent.ps1function Enable-ProcessCreationEvent{   $Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", `
    (New-Object TimeSpan 0,0,1), `
@@ -97,11 +97,11 @@ The script includes a **Register-ObjectEvent** command that subscribes to instan
 
 ### Example 4: Use the dynamic module in the PSEventJob object
 ```
-PS C:\>$Timer = New-Object Timers.Timer
-PS C:\>$Timer.Interval = 500
-PS C:\>$Job = Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Random -Action {$Random = Get-Random -Min 0 -Max 100}
-PS C:\>$Job.gettype().fullnameSystem.Management.Automation.PSEventJob
-PS C:\>$Job | Format-List -Property *
+PS C:\> $Timer = New-Object Timers.Timer
+PS C:\> $Timer.Interval = 500
+PS C:\> $Job = Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Random -Action {$Random = Get-Random -Min 0 -Max 100}
+PS C:\> $Job.gettype().fullnameSystem.Management.Automation.PSEventJob
+PS C:\> $Job | Format-List -Property *
 State         : 
 RunningModule        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
 StatusMessage : 
@@ -113,9 +113,9 @@ Finished      : System.Threading.ManualResetEvent
 InstanceId    : 88944290-133d-4b44-8752-f901bd8012e2
 Id            : 1
 Name          : Timer.Random
-ChildJobs     : {}... PS C:\>$Timer.Enabled = $True
-PS C:\>& $Job.module {$Random}60
-PS C:\>& $Job.module {$Random}47
+ChildJobs     : {}... PS C:\> $Timer.Enabled = $True
+PS C:\> & $Job.module {$Random}60
+PS C:\> & $Job.module {$Random}47
 ```
 
 This example shows how to use the dynamic module in the **PSEventJob** object that is created when you include an Action in an event registration.

@@ -37,7 +37,7 @@ You can pass a **PSGetCommandInfo** object to the Install-Module cmdlet to insta
 
 ### Example 1: Find all commands in a specified repository
 ```
-PS C:\>Find-Command -Repository "INT" | Select-Object -First 10
+PS C:\> Find-Command -Repository "INT" | Select-Object -First 10
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 Get-RequiredModule4                 2.5        RequiredModule4                     INT
@@ -56,7 +56,7 @@ This command finds commands in modules in the INT repository, and uses the pipel
 
 ### Example 2: Find a command by name
 ```
-PS C:\>Find-Command -Repository "INT" -Name "Get-ContosoClient"
+PS C:\> Find-Command -Repository "INT" -Name "Get-ContosoClient"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 Get-ContosoClient                   2.5        ContosoClient                       INT
@@ -67,7 +67,7 @@ The command is contained in the ContosoClient module.
 
 ### Example 3: Find commands by name and install them
 ```
-PS C:\>Find-Command -Repository "INT" -Name "Get-ContosoClient,Get-ContosoServer" | Install-Module
+PS C:\> Find-Command -Repository "INT" -Name "Get-ContosoClient,Get-ContosoServer" | Install-Module
 PS C:\> Get-InstalledModule
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
@@ -81,7 +81,7 @@ The second command uses Get-InstalledModule to verify the modules from the prior
 
 ### Example 4: Find a command and save its module
 ```
-PS C:\>Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -Path "C:\temp\" -Verbose
+PS C:\> Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -Path "C:\temp\" -Verbose
 ```
 
 This command finds the specified command, and then passes it to Save-Module to save it to the C:\temp folder.

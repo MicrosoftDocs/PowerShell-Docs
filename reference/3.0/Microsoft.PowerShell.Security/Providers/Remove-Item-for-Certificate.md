@@ -110,15 +110,15 @@ This series of commands enables delegation and then deletes the certificate and 
   
 The first command uses the Enable-WSManCredSSP cmdlet to enable Credential Security Service Provider (CredSSP) authentication on a client on the S1 remote computer. CredSSP permits delegated authentication.  
   
-PS C:\>Enable-WSManCredSSP -Role Client -DelegateComputer S1  
+PS C:\> Enable-WSManCredSSP -Role Client -DelegateComputer S1  
   
 The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in Windows PowerShell.  
   
-PS C:\>Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
+PS C:\> Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
   
 The third command uses the Set-Item cmdlet in the WSMan: drive to enable the CredSSP attribute for the WinRM service.  
   
-PS C:\>Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
+PS C:\> Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
   
 The fourth command uses the New-PSSession cmdlet to start a remote session on the S1 computer with CredSSP authentication. It saves the session in the $s variable.  
   

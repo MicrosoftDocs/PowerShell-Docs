@@ -51,14 +51,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get all scheduled jobs
 ```
-PS C:\>Get-ScheduledJob
+PS C:\> Get-ScheduledJob
 ```
 
 This command gets all scheduled jobs on the local computer.
 
 ### Example 2: Get scheduled jobs by name
 ```
-PS C:\>Get-ScheduledJob -Name *Backup*, *Archive*
+PS C:\> Get-ScheduledJob -Name *Backup*, *Archive*
 ```
 
 This command gets all scheduled jobs on the computer that have names that include "Backup" or "Archive".
@@ -66,7 +66,7 @@ This command format lets you search for particular jobs.
 
 ### Example 3: Get scheduled jobs on remote computers
 ```
-PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) {Get-ScheduledJob}
+PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) {Get-ScheduledJob}
 ```
 
 This command gets all scheduled jobs on the computers that are listed in the Servers.txt file.
@@ -74,7 +74,7 @@ The command uses the Invoke-Command cmdlet to run a **Get-ScheduleJob** command 
 
 ### Example 4: Pipe scheduled jobs to other cmdlets
 ```
-PS C:\>Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
+PS C:\> Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
 ```
 
 This command gets the job triggers of the DailyBackup and WeeklyBackup scheduled jobs.

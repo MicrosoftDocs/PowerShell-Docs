@@ -49,14 +49,14 @@ This cmdlet can reset the password of a local user account.
 
 ### Example 1: Change a description of a user account
 ```
-PS C:\>Set-LocalUser -Name "Admin07" -Description "Description of this account."
+PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account."
 ```
 
 This command changes the description of a user account named Admin07.
 
 ### Example 2: Change the password on an account
 ```
-PS C:\>$Password = Read-Host -AsSecureString
+PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> $UserAccount = Get-LocalUser -Name "User02"
 PS C:\> $UserAccount | Set-LocalUser -Password $Password
 ```

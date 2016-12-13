@@ -46,14 +46,14 @@ The transcript includes all command that the user types and all output that appe
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-transcript
+PS C:\> start-transcript
 ```
 
 This command starts a transcript in the default file location.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-transcript -path c:\transcripts\transcript0.txt -noclobber
+PS C:\> start-transcript -path c:\transcripts\transcript0.txt -noclobber
 ```
 
 This command starts a transcript in the Transcript0.txt file in C:\transcripts.

@@ -44,7 +44,7 @@ It works only on Windows 8 and Windows Server 2012.
 
 ### Example 1: Get all control panel items
 ```
-PS C:\>Get-ControlPanelItem
+PS C:\> Get-ControlPanelItem
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
 Action Center                 Microsoft.ActionCenter        {System and Security}         Review recent messages and... 
@@ -60,21 +60,21 @@ This command gets all control panel items on the local computer.
 
 ### Example 2: Get control panel items by name
 ```
-PS C:\>Get-ControlPanelItem -Name *program*, *app*
+PS C:\> Get-ControlPanelItem -Name *program*, *app*
 ```
 
 This command gets control panel items that have "program" or "app"  in their names.
 
 ### Example 3: Get control panel items by category
 ```
-PS C:\>Get-ControlPanelItem -Category *security*
+PS C:\> Get-ControlPanelItem -Category *security*
 ```
 
 This command gets all control panel items in categories that have "Security" in their names.
 
 ### Example 4: Open a control panel item
 ```
-PS C:\>Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
 
 This command opens the Windows Firewall control panel item on the local computer.
@@ -82,7 +82,7 @@ It uses the **Get-ControlPanelItem** cmdlet to get the control panel item and th
 
 ### Example 5: Get control panel items on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName Server01 {Get-ControlPanelItem -Name "BitLocker*" }
+PS C:\> Invoke-Command -ComputerName Server01 {Get-ControlPanelItem -Name "BitLocker*" }
 ```
 
 This command gets the  BitLocker Drive Encryption control panel item on the Server01 remote computer.
@@ -90,7 +90,7 @@ It uses the Invoke-Command cmdlet to run the Get-ControlPanelItem cmdlet remotel
 
 ### Example 6: Search the descriptions of control panel items
 ```
-PS C:\>Get-ControlPanelItem | Where-Object {$_.Description -like "*device*"}
+PS C:\> Get-ControlPanelItem | Where-Object {$_.Description -like "*device*"}
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
 AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo... 

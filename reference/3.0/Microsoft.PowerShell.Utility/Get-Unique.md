@@ -38,8 +38,8 @@ As a result, strings that differ only in character casing are considered to be u
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$a = $(foreach ($line in get-content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | get-unique
-PS C:\>$a.count
+PS C:\> $a = $(foreach ($line in get-content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | get-unique
+PS C:\> $a.count
 ```
 
 These commands find the number of unique words in a text file.
@@ -52,14 +52,14 @@ The results are stored in the $a variable.
 The second command uses the Count property of the collection of strings in $a to determine how many items are in $a.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | sort-object | Get-Unique
+PS C:\> 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | sort-object | Get-Unique
 ```
 
 This command finds the unique members of the set of integers.
 The first command takes an array of integers typed at the command line, pipes them to the Sort-Object cmdlet to be sorted, and then pipes them to Get-Unique, which eliminates duplicate entries.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-childitem | sort-object {$_.GetType()} |  unique -OnType
+PS C:\> get-childitem | sort-object {$_.GetType()} |  unique -OnType
 ```
 
 This command uses the Get-ChildItem cmdlet to retrieve the contents of the local directory, which includes files and directories.
@@ -70,7 +70,7 @@ Another pipeline operator sends the results to Get-Unique.
 The OnType parameter directs Get-Unique to return only one object of each type.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-process | sort-object | select processname | get-unique -asstring
+PS C:\> get-process | sort-object | select processname | get-unique -asstring
 ```
 
 This command gets the names of processes running on the computer with duplicates eliminated.

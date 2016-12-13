@@ -33,7 +33,7 @@ By default, all resource instances break into the debugger.
 
 ### Example 1: Start debugging
 ```
-PS C:\>Enable-DscDebug -BreakAll
+PS C:\> Enable-DscDebug -BreakAll
 ```
 
 This command indicates to the DSC engine or LCM to start resource debugging.
@@ -41,7 +41,7 @@ The next time the configuration is run, the process enters the debugger.
 
 ### Example 2: Start remote debugging
 ```
-PS C:\>Enable-DscDebug -BreakAll -CimSession DeploymentServer
+PS C:\> Enable-DscDebug -BreakAll -CimSession DeploymentServer
 ```
 
 This command indicates to the DSC engine of the remote computer to start resource debugging.

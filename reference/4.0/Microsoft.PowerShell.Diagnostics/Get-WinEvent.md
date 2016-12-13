@@ -78,7 +78,7 @@ And, you can combine events from multiple sources in a single command.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-WinEvent -ListLog  *
+PS C:\> Get-WinEvent -ListLog  *
 ```
 
 This command gets all the logs on the local computer.
@@ -91,7 +91,7 @@ To get all the logs, use *.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-WinEvent -ListLog Setup | Format-List -Property *
+PS C:\> Get-WinEvent -ListLog Setup | Format-List -Property *
 
 FileSize                       : 69632
 IsLogFull                      : False
@@ -125,7 +125,7 @@ The object includes useful information about the log, including its size, event 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-WinEvent -ListLog * -ComputerName Server01 |Where-Object {$_.RecordCount}
+PS C:\> Get-WinEvent -ListLog * -ComputerName Server01 |Where-Object {$_.RecordCount}
 ```
 
 This command gets only event logs on the Server01 computer that contain events.
@@ -135,8 +135,8 @@ The command uses the **RecordCount** property of the **EventLogConfiguration** o
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$s = "Server01", "Server02", "Server03"
-PS C:\>Foreach ($Server in $S) {$Server; Get-WinEvent -ListLog "Windows PowerShell" -Computername $Server}
+PS C:\> $s = "Server01", "Server02", "Server03"
+PS C:\> Foreach ($Server in $S) {$Server; Get-WinEvent -ListLog "Windows PowerShell" -Computername $Server}
 ```
 
 The commands in this example get objects that represent the Windows PowerShell event logs on the Server01, Server02, and Server03 computers.
@@ -151,28 +151,28 @@ Then, it runs a **Get-WinEvent** command to get an object that represents the Wi
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-WinEvent -ListProvider *
+PS C:\> Get-WinEvent -ListProvider *
 ```
 
 This command gets the event log providers on the local computer and the logs to which they write, if any.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>(Get-WinEvent -ListLog Application).ProviderNames
+PS C:\> (Get-WinEvent -ListLog Application).ProviderNames
 ```
 
 This command gets all of the providers that write to the Application log on the local computer.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-WinEvent -ListProvider *policy*
+PS C:\> Get-WinEvent -ListProvider *policy*
 ```
 
 This command gets the event log providers whose names include the word "policy."
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table ID, Description -AutoSize
+PS C:\> (Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table ID, Description -AutoSize
 ```
 
 This command lists the event IDs that the Microsoft-Windows-GroupPolicy event provider generates along with the event description.
@@ -182,14 +182,14 @@ It uses the **Events** property of the object that **Get-WinEvent** returns when
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
 The first command uses the **Get-WinEvent** cmdlet to get all of the events in the Windows PowerShell event log. Then, it saves them in the $Events variable. The log name is enclosed in quotation marks because it contains a space.
-PS C:\>$Events = Get-WinEvent -LogName "Windows PowerShell"
+PS C:\> $Events = Get-WinEvent -LogName "Windows PowerShell"
 
 The second command uses the **Count** property of object collections to find the number of entries in the event log.
-PS C:\>$Events.Count
+PS C:\> $Events.Count
 195
 
 The third command displays the incidence of each event in the log, with the most frequent events first. In this example, event ID 600 is the most frequent event.
-PS C:\>$Events | Group-Object -Property Id -NoElement | Sort-Object -Property Count -Descending
+PS C:\> $Events | Group-Object -Property Id -NoElement | Sort-Object -Property Count -Descending
 
 Count Name
 ----- ----
@@ -200,7 +200,7 @@ Count Name
 2 103
 
 The fourth command groups the items by the value of their **LevelDisplayName** property to show how many Error, Warning, and Information events are in the log.
-PS C:\>$Events | Group-Object -Property LevelDisplayName -NoElement
+PS C:\> $Events | Group-Object -Property LevelDisplayName -NoElement
 
 Count Name
 ----- ----
@@ -212,14 +212,14 @@ This example shows how to use the properties of the event objects that **Get-Win
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>Get-WinEvent -LogName *disk*, Microsoft-Windows-Kernel-WHEA
+PS C:\> Get-WinEvent -LogName *disk*, Microsoft-Windows-Kernel-WHEA
 ```
 
 This command gets the error events whose names include "disk" from all of the event logs on the computer and from the Microsoft-Windows-Kernel-WHEA event log.
 
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>Get-WinEvent -Path 'c:\ps-test\Windows PowerShell.evtx'
+PS C:\> Get-WinEvent -Path 'c:\ps-test\Windows PowerShell.evtx'
 ```
 
 This command gets events from a copy of the Windows PowerShell event log file in a test directory.
@@ -228,17 +228,17 @@ The path is enclosed in quotation marks because the log name includes a space.
 ### -------------------------- EXAMPLE 12 --------------------------
 ```
 The first command gets the 100 oldest events in the log. It uses the **Get-WinEvent** cmdlet to get events from the Tracelog.etl file. It uses the **MaxEvents** parameter to limit the retrieval to 100 events. Because the events are listed in the order in which they are written to the log (oldest first), the **Oldest** parameter is required.
-PS C:\>Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -MaxEvents 100 -Oldest
+PS C:\> Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -MaxEvents 100 -Oldest
 
 The second command gets the 100 newest events in the log. It uses the **Get-WinEvent** cmdlet to get all the events from the Tracing.etl file. It pipes the events to the **Sort-Object** cmdlet, which sorts them in descending order by the value of the **TimeCreated** property. Then, it pipes the sorted events to the **Select-Object** cmdlet to select the newest 100 events.
-PS C:\>Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest | Sort-Object -Property TimeCreated -Descending | Select-Object -First 100
+PS C:\> Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest | Sort-Object -Property TimeCreated -Descending | Select-Object -First 100
 ```
 
 These commands get the first 100 events from an Event Tracing for Windows (ETW) event trace log file.
 
 ### -------------------------- EXAMPLE 13 --------------------------
 ```
-PS C:\>Get-WinEvent -Path "C:\Tracing\TraceLog.etl", "c:\Logs\Windows PowerShell.evtx" -Oldest | Where-Object {$_.ID -eq "103"}
+PS C:\> Get-WinEvent -Path "C:\Tracing\TraceLog.etl", "c:\Logs\Windows PowerShell.evtx" -Oldest | Where-Object {$_.ID -eq "103"}
 ```
 
 This example shows how to get the events from an event trace log file (.etl) and from a copy of the Windows PowerShell log file (.evtx) that was saved to a test directory.
@@ -250,23 +250,23 @@ The command requires the **Oldest** parameter because it is reading from an .etl
 
 ### -------------------------- EXAMPLE 14 --------------------------
 ```
-PS C:\># Use the Where-Object cmdlet
+PS C:\> # Use the Where-Object cmdlet
 
-PS C:\>$yesterday = (Get-Date) - (New-TimeSpan -Day 1)
-PS C:\>Get-WinEvent -LogName "Windows PowerShell" | Where-Object {$_.TimeCreated -ge $yesterday}
+PS C:\> $yesterday = (Get-Date) - (New-TimeSpan -Day 1)
+PS C:\> Get-WinEvent -LogName "Windows PowerShell" | Where-Object {$_.TimeCreated -ge $yesterday}
 
 # Uses FilterHashTable
 
-PS C:\>$yesterday = (Get-Date) - (New-TimeSpan -Day 1)
-PS C:\>Get-WinEvent -FilterHashTable @{LogName='Windows PowerShell'; Level=3; StartTime=$yesterday}
+PS C:\> $yesterday = (Get-Date) - (New-TimeSpan -Day 1)
+PS C:\> Get-WinEvent -FilterHashTable @{LogName='Windows PowerShell'; Level=3; StartTime=$yesterday}
 
 # Use FilterXML
 
-PS C:\>Get-WinEvent -FilterXML "<QueryList><Query><Select Path='Windows PowerShell'>*[System[Level=3 and TimeCreated[timediff(@SystemTime)&lt;= 86400000]]]</Select></Query></QueryList>"
+PS C:\> Get-WinEvent -FilterXML "<QueryList><Query><Select Path='Windows PowerShell'>*[System[Level=3 and TimeCreated[timediff(@SystemTime)&lt;= 86400000]]]</Select></Query></QueryList>"
 
 # Use FilterXPath
 
-PS C:\>Get-WinEvent -LogName "Windows Powershell" -FilterXPath "*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]"
+PS C:\> Get-WinEvent -LogName "Windows Powershell" -FilterXPath "*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]"
 ```
 
 This example shows different filtering methods for selecting events from an event log.
@@ -279,8 +279,8 @@ For more information about this feature, see Event Viewer Help.
 
 ### -------------------------- EXAMPLE 15 --------------------------
 ```
-PS C:\>$date = (Get-Date).AddDays(-2)
-PS C:\>$events = Get-WinEvent -FilterHashTable @{ LogName = "Microsoft-Windows-Diagnostics-Performance/Operational"; StartTime = $date; ID = 100 }
+PS C:\> $date = (Get-Date).AddDays(-2)
+PS C:\> $events = Get-WinEvent -FilterHashTable @{ LogName = "Microsoft-Windows-Diagnostics-Performance/Operational"; StartTime = $date; ID = 100 }
 ```
 
 This example uses a filter hash table to get events from the performance log.
@@ -295,8 +295,8 @@ The **LogName** key specifies the event log, the **StartTime** key specifies the
 
 ### -------------------------- EXAMPLE 16 --------------------------
 ```
-PS C:\>$StartTime = (Get-Date).AddDays(-7)
-PS C:\>$IE_Error = Get-WinEvent -FilterHashtable @{Logname="Application"; ProviderName="Application Error"; Data="iexplore.exe"; StartTime=$StartTime}
+PS C:\> $StartTime = (Get-Date).AddDays(-7)
+PS C:\> $IE_Error = Get-WinEvent -FilterHashtable @{Logname="Application"; ProviderName="Application Error"; Data="iexplore.exe"; StartTime=$StartTime}
 ```
 
 This example uses a filter hash table to find Internet Explorer application errors that occurred within the last week.

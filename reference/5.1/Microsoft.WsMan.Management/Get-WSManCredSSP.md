@@ -47,7 +47,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 ### Example 1: Display CredSSP configuration
 ```
-PS C:\>Get-WSManCredSSP
+PS C:\> Get-WSManCredSSP
 ```
 
 This command displays CredSSP configuration information for both the client and server.

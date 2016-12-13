@@ -41,7 +41,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-event -sourceidentifier Timer -sender windows.timer  -messagedata "Test"
+PS C:\> new-event -sourceidentifier Timer -sender windows.timer  -messagedata "Test"
 ```
 
 This command creates a new event in the Windows PowerShell event queue.
@@ -49,7 +49,7 @@ It uses a Windows.Timer object to send the event.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>function Enable-ProcessCreationEvent
+PS C:\> function Enable-ProcessCreationEvent
 {
    $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
    $processWatcher = New-Object System.Management.ManagementEventWatcher $query

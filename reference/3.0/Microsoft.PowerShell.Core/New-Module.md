@@ -50,7 +50,7 @@ This action adds the dynamic module to the Get-Module list, but it does not save
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}}
+PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
@@ -72,7 +72,7 @@ This command creates a new dynamic module with a function called "Hello".
 The command returns a module object that represents the new dynamic module.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}}
+PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
@@ -88,9 +88,9 @@ ExportedCmdlets   : {}
 ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
-PS C:\>get-module
+PS C:\> get-module
 PS C:\>
-PS C:\>get-command Hello
+PS C:\> get-command Hello
 
 CommandType     Name   Definition
 -----------     ----   ----------
@@ -100,13 +100,13 @@ Function        Hello  "Hello!"
 This example demonstrates that dynamic modules are not returned by the Get-Module cmdlet, but the members that they export are returned by the Get-Command cmdlet.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>New-Module -scriptblock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+PS C:\> New-Module -scriptblock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
 
-PS C:\>$SayHelloHelp
+PS C:\> $SayHelloHelp
 
 Type 'SayHello', a space, and a name.
 
-PS C:\>SayHello Jeffrey
+PS C:\> SayHello Jeffrey
 Hello, Jeffrey
 ```
 
@@ -116,8 +116,8 @@ Without the Export-ModuleMember command, only the function is exported.
 The output shows that both the variable and the function were exported into the session.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}} -name GreetingModule | import-module
-PS C:\>get-module
+PS C:\> new-module -scriptblock {function Hello {"Hello!"}} -name GreetingModule | import-module
+PS C:\> get-module
 
 Name              : GreetingModule
 Path              : d54dfdac-4531-4db2-9dec-0b4b9c57a1e5
@@ -134,7 +134,7 @@ ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
 
-PS C:\>get-command hello
+PS C:\> get-command hello
 
 CommandType     Name                                                               Definition
 -----------     ----                                                               ----------
@@ -153,9 +153,9 @@ The result shows that Get-Module can get the new dynamic module.
 The third command uses the Get-Command cmdlet to get the Hello function that the dynamic module exports.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$m = new-module -scriptblock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
-PS C:\>$m
-PS C:\>$m | get-member
+PS C:\> $m = new-module -scriptblock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
+PS C:\> $m
+PS C:\> $m | get-member
 TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType   Definition
@@ -189,7 +189,7 @@ The output shows that the object has script methods that represent the Hello and
 The fourth and fifth commands use the script method format to call the Hello and Goodbye functions.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>new-module -scriptblock {function SayHello {"Hello, World!"}; SayHello} -returnResult
+PS C:\> new-module -scriptblock {function SayHello {"Hello, World!"}; SayHello} -returnResult
 Hello, World!
 ```
 

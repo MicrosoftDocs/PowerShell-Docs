@@ -42,7 +42,7 @@ To identify the service, enter its service name or submit a service object, or p
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-service -name lanmanworkstation -DisplayName "LanMan Workstation"
+PS C:\> set-service -name lanmanworkstation -DisplayName "LanMan Workstation"
 ```
 
 This command changes the display name of the lanmanworkstation service to "LanMan Workstation".
@@ -50,7 +50,7 @@ This command changes the display name of the lanmanworkstation service to "LanMa
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-wmiobject win32_service -filter "name = 'SysmonLog'"
+PS C:\> get-wmiobject win32_service -filter "name = 'SysmonLog'"
 
 ExitCode  : 0
 Name      : SysmonLog
@@ -58,8 +58,8 @@ ProcessId : 0
 StartMode : Manual
 State     : Stopped
 Status    : OK
-PS C:\>set-service sysmonlog -startuptype automatic
-PS C:\>get-wmiobject win32_service -filter "name = 'SysmonLog'"
+PS C:\> set-service sysmonlog -startuptype automatic
+PS C:\> get-wmiobject win32_service -filter "name = 'SysmonLog'"
 ExitCode  : 0
 Name      : SysmonLog
 ProcessId : 0
@@ -67,7 +67,7 @@ StartMode : Auto
 State     : Stopped
 Status    : OK
 
-PS C:\>get-wmiobject win32_service | format-table Name, StartMode -auto
+PS C:\> get-wmiobject win32_service | format-table Name, StartMode -auto
 
 Name                                  StartMode
 ----                                  ---------
@@ -92,8 +92,8 @@ The final command displays the start mode of all services on the computer.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-service -name Schedule -computername S1 -description "Configures and schedules tasks."
-PS C:\>get-wmiobject win32_service -computername s1 | where-object {$_.Name -eq "Schedule"} | format-list Name, Description
+PS C:\> set-service -name Schedule -computername S1 -description "Configures and schedules tasks."
+PS C:\> get-wmiobject win32_service -computername s1 | where-object {$_.Name -eq "Schedule"} | format-list Name, Description
 ```
 
 These commands change the description of the Task Scheduler service on the S1 remote computer and then display the result.
@@ -112,7 +112,7 @@ Another pipeline operator sends the result to the Format-List cmdlet, which form
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-service winrm -status Running -passthru -computername Server02
+PS C:\> set-service winrm -status Running -passthru -computername Server02
 ```
 
 This command starts the WinRM service on the Server02 computer.
@@ -120,7 +120,7 @@ The command uses the Status parameter to specify the desired status ("running") 
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-service schedule -computername S1, S2 | set-service -status paused
+PS C:\> get-service schedule -computername S1, S2 | set-service -status paused
 ```
 
 This command suspends the Schedule service on the S1 and S2 remote computers.
@@ -129,8 +129,8 @@ A pipeline operator (|) sends the service to the Set-Service cmdlet, which chang
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$s = get-service schedule
-PS C:\>set-service -inputobject $s -status stopped
+PS C:\> $s = get-service schedule
+PS C:\> set-service -inputobject $s -status stopped
 ```
 
 These commands stop the Schedule service on the local computer.

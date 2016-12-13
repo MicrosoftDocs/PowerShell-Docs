@@ -38,7 +38,7 @@ This cmdlet gets default built-in groups and local security groups that you crea
 
 ### Example 1: Get the Administrators group
 ```
-PS C:\>Get-LocalGroup -Name "Administrators"
+PS C:\> Get-LocalGroup -Name "Administrators"
 Name           Description
 ----           -----------
 Administrators Administrators have complete and unrestricted access to the computer/domain

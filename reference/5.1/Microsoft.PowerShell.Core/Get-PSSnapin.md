@@ -41,7 +41,7 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ### Example 1: Get snap-ins that are currently loaded
 ```
-PS C:\>Get-PSSnapIn
+PS C:\> Get-PSSnapIn
 ```
 
 This command gets the Windows PowerShell snap-ins that are currently loaded in the session.
@@ -49,7 +49,7 @@ This includes the snap-ins that are installed with Windows PowerShell and those 
 
 ### Example 2: Get snap-ins that have been registered
 ```
-PS C:\>get-PSSnapIn -Registered
+PS C:\> get-PSSnapIn -Registered
 ```
 
 This command gets the Windows PowerShell snap-ins that have been registered on the computer, including those that have already been added to the session.
@@ -57,7 +57,7 @@ The output does not include snap-ins that are installed with Windows PowerShell 
 
 ### Example 3: Get current snap-ins that match a string
 ```
-PS C:\>Get-PSSnapIn -Name smp*
+PS C:\> Get-PSSnapIn -Name smp*
 ```
 
 This command gets the Windows PowerShell snap-ins in the current session that have names that begin with smp.

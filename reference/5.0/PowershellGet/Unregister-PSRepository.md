@@ -31,14 +31,14 @@ The **Unregister-PSRepository** cmdlet unregisters a repository for the current 
 
 ### Example 1: Unregister a repository
 ```
-PS C:\>Unregister-PSRepository -Name "myNuGetSource"
+PS C:\> Unregister-PSRepository -Name "myNuGetSource"
 ```
 
 This command unregisters the repository named myNuGetSource.
 
 ### Example 2: Unregister all repositories
 ```
-PS C:\>Get-PSRepository | Unregister-PSRepository
+PS C:\> Get-PSRepository | Unregister-PSRepository
 ```
 
 This command uses Get-PSRepository to get all registered repositories, and uses the pipeline operator to pass them to **Unregister-PSRepository** to unregister them.

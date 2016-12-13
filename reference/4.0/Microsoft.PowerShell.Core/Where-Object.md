@@ -218,8 +218,8 @@ Prior to Windows PowerShell 3.0, the comparison operators in the Windows PowerSh
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Service | Where-Object {$_.Status -eq "Stopped"}
-PS C:\>Get-Service | where Status -eq "Stopped"
+PS C:\> Get-Service | Where-Object {$_.Status -eq "Stopped"}
+PS C:\> Get-Service | where Status -eq "Stopped"
 ```
 
 This command gets a list of all services that are currently stopped.
@@ -231,8 +231,8 @@ The commands are equivalent and can be used interchangeably.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Process | Where-Object {$_.WorkingSet -gt 25000*1024}
-PS C:\>Get-Process | Where-Object WorkingSet -gt (25000*1024)
+PS C:\> Get-Process | Where-Object {$_.WorkingSet -gt 25000*1024}
+PS C:\> Get-Process | Where-Object WorkingSet -gt (25000*1024)
 ```
 
 This command lists processes that have a working set greater than 25,000 kilobytes (KB).
@@ -244,8 +244,8 @@ The commands are equivalent and can be used interchangeably.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}
-PS C:\>Get-Process | Where-Object ProcessName -Match "^p.*"
+PS C:\> Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}
+PS C:\> Get-Process | Where-Object ProcessName -Match "^p.*"
 ```
 
 This command gets the processes that have a **ProcessName** property value that begins with the letter "p".
@@ -257,8 +257,8 @@ The commands are equivalent and can be used interchangeably.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Process | Where-Object -Property Handles -ge -Value 1000
-PS C:\>Get-Process | where Handles -ge 1000
+PS C:\> Get-Process | Where-Object -Property Handles -ge -Value 1000
+PS C:\> Get-Process | where Handles -ge 1000
 ```
 
 This example shows how to use the new comparison statement  format of the **Where-Object** cmdlet.
@@ -272,16 +272,16 @@ The "where" alias is substituted for the "Where-Object" cmdlet name and all opti
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first pair of commands gets commands that have any value for the **OutputType** property of the command. They omit commands that do not have an **OutputType** property and those that have an **OutputType** property, but no property value.
-PS C:\>Get-Command | where OutputType
-PS C:\>Get-Command | where {$_.OutputType}
+PS C:\> Get-Command | where OutputType
+PS C:\> Get-Command | where {$_.OutputType}
 
 The second pair of commands gets objects that are containers. It gets objects that have the **PSIsContainer** property with a value of True ($true) and excludes all others.The "equals $True" (-eq $true) part of the command is assumed by the language. You do not need to specify it explicitly.
-PS C:\>Get-ChildItem | where PSIsContainer
-PS C:\>Get-ChildItem | where {$_.PSIsContainer}
+PS C:\> Get-ChildItem | where PSIsContainer
+PS C:\> Get-ChildItem | where {$_.PSIsContainer}
 
 The third pair of commands uses the Not operator (!) to get objects that are not containers. It gets objects that do have the **PSIsContainer** property and those that have a value of False ($false) for the **PSIsContainer** property.You cannot use the Not operator (!) in the comparison statement format of the command.
-PS C:\>Get-ChildItem | where {!$_.PSIsContainer}
-PS C:\>Get-ChildItem | where  PSIsContainer -eq $false
+PS C:\> Get-ChildItem | where {!$_.PSIsContainer}
+PS C:\> Get-ChildItem | where  PSIsContainer -eq $false
 ```
 
 This example shows how to write commands that return items that are true or false or have any value for a specified property.
@@ -289,7 +289,7 @@ The example shows both the script block and comparison statement formats for the
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-Module -ListAvailable | where {($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri}
+PS C:\> Get-Module -ListAvailable | where {($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri}
 ```
 
 This example shows how to create a **Where-Object** command with multiple conditions.

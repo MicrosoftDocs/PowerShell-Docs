@@ -36,7 +36,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 
@@ -76,7 +76,7 @@ It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JS
 
 ### Example 2
 ```
-PS C:\>$j = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
+PS C:\> $j = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
 ```
 
 This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be  managed in Windows PowerShell.
@@ -85,7 +85,7 @@ You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON
 
 ### Example 3
 ```
-PS C:\>(Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
+PS C:\> (Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
 ```
 
 This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a Windows PowerShell custom object.

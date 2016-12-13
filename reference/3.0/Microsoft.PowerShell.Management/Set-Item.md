@@ -37,25 +37,25 @@ The Set-Item cmdlet changes the value of an item, such as a variable or registry
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-item -path alias:np -value c:\windows\notepad.exe
+PS C:\> set-item -path alias:np -value c:\windows\notepad.exe
 ```
 
 This command creates an alias of "np" for Notepad.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-item -path env:UserRole -value Administrator
+PS C:\> set-item -path env:UserRole -value Administrator
 ```
 
 This command uses the Set-Item cmdlet to change the value of the "UserRole" environment variable to "Administrator".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Get-Location) + '> '}
+PS C:\> set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Get-Location) + '> '}
 ```
 
 This command uses the Set-Item cmdlet to change the "prompt" function so that it displays the time before the path.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-item -path function:prompt -options "AllScope,ReadOnly"
+PS C:\> set-item -path function:prompt -options "AllScope,ReadOnly"
 ```
 
 This command sets the AllScope and ReadOnly options for the "prompt" function.

@@ -43,7 +43,7 @@ Beginning in Windows PowerShell 3.0, **Get-Content** can also get a specified nu
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Content -Path C:\Chapters\Chapter1.txt
+PS C:\> Get-Content -Path C:\Chapters\Chapter1.txt
 ```
 
 This command gets the content of the Chapter1.txt file.
@@ -51,7 +51,7 @@ It uses the **Path** parameter to specify the name of the item.
 **Get-Content** actually passes the content down the pipeline, but because there are no other pipeline elements, the content is formatted by default and displayed at the command line.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Content c:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
+PS C:\> Get-Content c:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
 ```
 
 This command gets the first 50 lines of the Log060912.txt file and stores them in the Sample.txt file.
@@ -60,14 +60,14 @@ The command uses the **Get-Content** cmdlet to get the text in the file.
 The pipeline operator (|) sends the result to the Set-Content cmdlet, which places it in the Sample.txt file.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>(Get-Content Cmdlets.txt -TotalCount 5)[-1]
+PS C:\> (Get-Content Cmdlets.txt -TotalCount 5)[-1]
 ```
 
 This command gets the fifth line of the Cmdlets.txt text file.
 It uses the **TotalCount** parameter to get the first five lines and then uses array notation to get the last line (indicated by "-1") of the resulting set.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>dir .\*.txt | ForEach {Get-Content $_ -Head 1; Get-Content $_ -Tail 1}
+PS C:\> dir .\*.txt | ForEach {Get-Content $_ -Head 1; Get-Content $_ -Tail 1}
 ```
 
 This command gets the first and last lines of each text file in the current directory.

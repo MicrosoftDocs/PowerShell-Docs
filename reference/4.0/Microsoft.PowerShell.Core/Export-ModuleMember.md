@@ -40,7 +40,7 @@ Even if the command confirms the default values, it demonstrates the intention o
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Export-ModuleMember -function * -alias *
+PS C:\> Export-ModuleMember -function * -alias *
 ```
 
 This command exports the aliases defined in the script module, along with the functions defined in the script module.
@@ -50,7 +50,7 @@ Otherwise, only the aliases will be exported.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Export-ModuleMember -function Get-Test, New-Test, Start-Test -alias gtt, ntt, stt
+PS C:\> Export-ModuleMember -function Get-Test, New-Test, Start-Test -alias gtt, ntt, stt
 ```
 
 This command exports three aliases and three functions defined in the script module.
@@ -59,7 +59,7 @@ You can use this command format to specify the names of module members.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Export-ModuleMember
+PS C:\> Export-ModuleMember
 ```
 
 This command specifies that no members defined in the script module are exported.
@@ -69,7 +69,7 @@ Users can read and copy module members or use the call operator (&) to invoke mo
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Export-ModuleMember -variable increment
+PS C:\> Export-ModuleMember -variable increment
 ```
 
 This command exports only the $increment variable from the script module.
@@ -79,7 +79,7 @@ If you want to export a variable, in addition to exporting the functions in a mo
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\># From TestModule.psm1
+PS C:\> # From TestModule.psm1
 function new-test
    { <function code> }
 export-modulemember -function new-test
@@ -100,7 +100,7 @@ With the Export-ModuleMember commands, only the Get-Test and Start-Test function
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>new-module -script {function SayHello {"Hello!"}; set-alias Hi SayHello; Export-ModuleMember -alias Hi -function SayHello}
+PS C:\> new-module -script {function SayHello {"Hello!"}; set-alias Hi SayHello; Export-ModuleMember -alias Hi -function SayHello}
 ```
 
 This command shows how to use Export-ModuleMember in a dynamic module that is created by using the New-Module cmdlet.
@@ -109,7 +109,7 @@ In this example, Export-ModuleMember is used to export both the "Hi" alias and t
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>function export
+PS C:\> function export
 {
   param ([parameter(mandatory=$true)] [validateset("function","variable")] $type,
   [parameter(mandatory=$true)] $name,

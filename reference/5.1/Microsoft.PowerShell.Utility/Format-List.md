@@ -35,7 +35,7 @@ Because more space is available for each item in a list than in a table, Windows
 
 ### Example 1: Format computer services
 ```
-PS C:\>Get-Service | Format-List
+PS C:\> Get-Service | Format-List
 ```
 
 This command formats information about services on the computer as a list.
@@ -46,7 +46,7 @@ Then, the **Format-List** command formats the service information in a list and 
 
 ### Example 2: Format PS1XML files
 ```
-PS C:\>$A = Get-ChildItem $pshome\*.ps1xml
+PS C:\> $A = Get-ChildItem $pshome\*.ps1xml
 PS C:\> Format-List -InputObject $A
 ```
 
@@ -59,7 +59,7 @@ This command uses the *InputObject* parameter to pass the variable to **Format-L
 
 ### Example 3: Format process properties by name
 ```
-PS C:\>Get-Process | Format-List -Property name, basepriority, priorityclass
+PS C:\> Get-Process | Format-List -Property name, basepriority, priorityclass
 ```
 
 This command displays the name, base priority, and priority class of each process on the computer.
@@ -70,7 +70,7 @@ The *Property* parameter name is optional, so you can omit it.
 
 ### Example 4: Format all properties for a process
 ```
-PS C:\>Get-Process winlogon | Format-List -Property *
+PS C:\> Get-Process winlogon | Format-List -Property *
 ```
 
 This command displays all of the properties of the Winlogon process.

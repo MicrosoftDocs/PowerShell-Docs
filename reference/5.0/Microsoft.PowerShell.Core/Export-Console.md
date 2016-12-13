@@ -36,14 +36,14 @@ For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 
 ### Example 1: Export the names of snap-ins in the current session
 ```
-PS C:\>Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
+PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
 ```
 
 This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles folder of the Windows PowerShell installation folder, $pshome.
 
 ### Example 2: Export the names of snap-ins to the most recent console file
 ```
-PS C:\>Export-Console
+PS C:\> Export-Console
 ```
 
 This command exports the names of Windows PowerShell snap-ins from current session to the Windows PowerShell console file that was most recently used in the current session.
@@ -53,7 +53,7 @@ If you have not exported a console file during the current session, you are prom
 
 ### Example 3: Add a snap-in and export the names of snap-ins
 ```
-PS C:\>Add-PSSnapin NewPSSnapin
+PS C:\> Add-PSSnapin NewPSSnapin
 PS C:\> Export-Console -path NewPSSnapinConsole.psc1
 PS C:\> powershell.exe -PsConsoleFile NewPsSnapinConsole.psc1
 ```
@@ -70,7 +70,7 @@ Because the console file includes the Windows PowerShell snap-in name, the cmdle
 
 ### Example 4: Export names of snap-ins to a specified location
 ```
-PS C:\>export-console -path Console01
+PS C:\> export-console -path Console01
 PS C:\> notepad console01.psc1
 <?xml version="1.0" encoding="utf-8"?>
 <PSConsoleFile ConsoleSchemaVersion="1.0">
@@ -87,7 +87,7 @@ The second command displays the contents of the Console01.psc1 file in Notepad.
 
 ### Example 5: Determine the console file to update
 ```
-PS C:\>powershell.exe -PSConsoleFile Console01.psc1
+PS C:\> powershell.exe -PSConsoleFile Console01.psc1
 PS C:\> Add-PSSnapin MySnapin
 PS C:\> Export-Console NewConsole.psc1
 PS C:\> $ConsoleFileName

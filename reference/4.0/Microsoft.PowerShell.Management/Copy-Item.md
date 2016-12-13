@@ -50,7 +50,7 @@ To rename an item without copying it, use the Rename-Item cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Copy-Item C:\Wabash\Logfiles\mar1604.log.txt -Destination C:\Presentation
+PS C:\> Copy-Item C:\Wabash\Logfiles\mar1604.log.txt -Destination C:\Presentation
 ```
 
 This command copies the mar1604.log.txt file to the C:\Presentation directory.
@@ -58,7 +58,7 @@ The command does not delete the original file.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Copy-Item C:\Logfiles -Destination C:\Drawings -Recurse
+PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings -Recurse
 ```
 
 This command copies the entire contents of the Logfiles directory into the Drawings directory.
@@ -68,7 +68,7 @@ This preserves the directory structure.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
+PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
 ```
 
 This command copies the contents of the C:\Logfiles directory to the C:\Drawings\Logs directory.
@@ -76,7 +76,7 @@ It creates the \Logs subdirectory if it does not already exist.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Copy-Item \\Server01\Share\Get-Widget.ps1 -Destination \\Server12\ScriptArchive\Get-Widget.ps1.txt
+PS C:\> Copy-Item \\Server01\Share\Get-Widget.ps1 -Destination \\Server12\ScriptArchive\Get-Widget.ps1.txt
 ```
 
 This command uses the **Copy-Item** cmdlet to copy the Get-Widget.ps1 script from the \\\\Server01\Share directory to the \\\\Server12\ScriptArchive directory.

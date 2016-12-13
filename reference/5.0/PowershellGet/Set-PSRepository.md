@@ -32,14 +32,14 @@ The **Set-PSRepository** cmdlet sets values for a registered module repository.
 
 ### Example 1: Set the installation policy for a repository
 ```
-PS C:\>Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
+PS C:\> Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
 ```
 
 This command sets the installation policy for the myInternalSource repository to Trusted, so that users are not prompted before installing modules from that source.
 
 ### Example 2: Set the source and publish locations for a repository
 ```
-PS C:\>Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNuGetUrl.com/api/v2' -PublishLocation 'http://someNuGetUrl.com/api/v2/packages'
+PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNuGetUrl.com/api/v2' -PublishLocation 'http://someNuGetUrl.com/api/v2/packages'
 ```
 
 This command sets the source location and publish location for myInternalSource to the specified URIs.
