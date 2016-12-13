@@ -16,7 +16,7 @@ title: Set-Acl
 # Set-Acl
 
 ## SYNOPSIS
-Changes the security descriptor of a specified item, such as a file or a registry key.
+Changes the security descriptor of a specified item. The ability to manage a security descriptor can be extended to additional providers that support Powershell Objects.
 
 ## SYNTAX
 
@@ -86,17 +86,17 @@ PS C:\>$NewAcl = Get-Acl File0.txt
 PS C:\>Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
 ```
 
-These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.
+These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all its subdirectories.
 
 The first command gets the security descriptor of the File0.txt file in the current directory and uses the assignment operator (=) to store it in the $NewACL variable.
 
-The first command in the pipeline uses the Get-ChildItem cmdlet to get all of the text files in the C:\Temp directory.
+The first command in the pipeline uses the Get-ChildItem cmdlet to get all the text files in the C:\Temp directory.
 The *Recurse* parameter extends the command to all subdirectories of C:\temp.
 The *Include* parameter limits the files retrieved to those with the ".txt" file name extension.
 The *Force* parameter gets hidden files, which would otherwise be excluded.
 (You cannot use "c:\temp\*.txt", because the *Recurse* parameter works on directories, not on files.)
 
-The pipeline operator (|) sends the objects representing the retrieved files to the **Set-Acl** cmdlet, which applies the security descriptor in the *AclObject* parameter to all of the files in the pipeline.
+The pipeline operator (|) sends the objects representing the retrieved files to the **Set-Acl** cmdlet, which applies the security descriptor in the *AclObject* parameter to all the files in the pipeline.
 
 In practice, it is best to use the *WhatIf* parameter with all **Set-Acl** commands that can affect more than one item.
 In this case, the second command in the pipeline would be `Set-Acl -AclObject $NewAcl -WhatIf`.
@@ -184,6 +184,8 @@ Omits the specified items.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
+Note: Not all providers may support this parameter.
+
 
 ```yaml
 Type: String[]
@@ -201,8 +203,8 @@ Accept wildcard characters: False
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the *Path* parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
-
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved. 
+Note: Not all providers may support this parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -220,7 +222,7 @@ Changes only the specified items.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
-
+Note: Not all providers may support this parameter.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -363,8 +365,7 @@ The type of the security object depends on the type of the item.
 ## NOTES
 * The **Set-Acl** cmdlet is supported by the Windows PowerShell file system and registry providers. As such, you can use it to change the security descriptors of files, directories, and registry keys.
 
-*
-
+* There may be additional providers that also support this interface, or extend it. For example, the Active Directory Provider defines a new ActiveDirectoryAccessRule class to implement the security descriptor extensions used by Active Directory.
 ## RELATED LINKS
 
 [Get-Acl](Get-Acl.md)
