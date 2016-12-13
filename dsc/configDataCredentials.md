@@ -20,6 +20,8 @@ To suppress these error and warning messages use the DSC configuration data keyw
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
+>**Note:** Using plaintext passwords is not secure. Securing credentials by using the techniques covered later in this topic is recommended.
+
 The following is an example of passing plain text credentials:
 
 ```powershell
