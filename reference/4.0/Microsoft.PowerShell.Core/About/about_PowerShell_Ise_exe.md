@@ -37,8 +37,8 @@ or ISE.
 PowerShell_Ise[.exe]
 PowerShell_ISE[.exe]
 ISE[.exe]
-[–File]<FilePath[]> [–NoProfile] [–MTA]
-–Help | ? | -? | /?
+[-File]<FilePath[]> [-NoProfile] [-MTA]
+-Help | ? | -? | /?
 Displays the syntax and describes the command-line switches.
 
 # PARAMETERS
@@ -113,4 +113,5 @@ PS C:> ISE -help
 about_PowerShell.exe
 about_Windows_PowerShell_ISE
 Windows PowerShell 3.0 Integrated Scripting Environment (ISE)
+
 

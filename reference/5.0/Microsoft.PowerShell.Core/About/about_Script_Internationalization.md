@@ -103,7 +103,7 @@ the same name as the script and the .psd1 file name extension. Store the files
 in subdirectories of the script directory with names of cultures in the following
 format:
 
-<language>–<region>
+<language>-<region>
 
 Examples: de-DE, ar-SA, and zh-Hans
 
@@ -202,4 +202,5 @@ The remaining commands load the strings into an array and display
 them.
 
 $Day = DATA {
+
 

@@ -271,7 +271,7 @@ setting workflow variables from within the debugger is not supported.
 available.
 -- Workflow debugging works only with synchronous running of workflows from
 a Windows PowerShell script. You cannot debug workflows if they are
-running as a job (with the –AsJob parameter).
+running as a job (with the -AsJob parameter).
 -- Other nested debugging scenarios--such as a workflow calling another
 workflow, or a workflow calling a script--are not implemented.
 
@@ -809,4 +809,5 @@ Set-PsDebug
 Set-Strictmode
 Write-Debug
 Write-Verbose
+
 

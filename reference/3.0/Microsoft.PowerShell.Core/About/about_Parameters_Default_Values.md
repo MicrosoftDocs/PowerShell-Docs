@@ -107,7 +107,7 @@ The following command sets the default value of the Autosize parameter of the Fo
 
 
 ```
-$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name –eq "ConsoleHost"){$true}}}
+$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name -eq "ConsoleHost"){$true}}}
 ```
 
 
@@ -117,7 +117,7 @@ The following command sets the default value of the ScriptBlock parameter of Inv
 
 
 ```
-$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog –Log System}}}
+$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog -Log System}}}
 ```
 
 
@@ -467,4 +467,5 @@ about_Preference_Variables
 about_Profiles
 
 about_Script_Blocks
+
 

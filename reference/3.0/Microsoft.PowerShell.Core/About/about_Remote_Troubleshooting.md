@@ -183,7 +183,7 @@ and creates a firewall rule that allows traffic from the same local subnet.
 To remove the local subnet restriction on public networks and allow
 remote access from any location, run the following command:
 
-Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 The Set-NetFirewallRule cmdlet is exported by the NetSecurity module.
 
@@ -781,4 +781,5 @@ Online version: http://technet.microsoft.com/library/hh847850(v=wps.630).aspx
 about_Remote
 about_Remote_Requirements
 about_Remote_Variables
+
 

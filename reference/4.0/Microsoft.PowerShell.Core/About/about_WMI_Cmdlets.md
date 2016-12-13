@@ -211,7 +211,7 @@ http://go.microsoft.com/fwlink/?LinkId=142213
 ```
 
 
-And, see "Secrets of Windows Management Instrumentation – Troubleshooting and Tips" in the Microsoft TechNet Script Center:
+And, see "Secrets of Windows Management Instrumentation - Troubleshooting and Tips" in the Microsoft TechNet Script Center:
 
 
 ```
@@ -232,4 +232,5 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
+
 
