@@ -130,6 +130,7 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 If you are building a C# app, you can create a PowerShell runspace that connects to a JEA session by specifying the configuration name in a [WSManConnectionInfo](https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) object.
 
 ```csharp
+
 // using System.Management.Automation;
 
 var computerName = "SERVER01";
@@ -171,6 +172,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 ## Using JEA with PowerShell Direct
 
 Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession), a feature which allows Hyper-V administrators to manage virtual machines with PowerShell even if the VM is on a different network.
+
 You can use PowerShell Direct with JEA to give a Hyper-V administrator limited access to your VM, which can be useful if you lose network connectivity to your VM and need a datacenter admin to fix the network settings.
 
 No additional configuration is required to use JEA over PowerShell Direct, however the operating system running inside the virtual machine must be Windows 10 or Windows Server 2016.
