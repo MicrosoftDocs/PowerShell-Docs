@@ -1,18 +1,16 @@
 ---
-title: "New-Item for Plugin"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 4
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=834977
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Item for Plugin
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834977
 ---
+
 # New-Item for Plugin
 Creates a new item.  
 
@@ -212,3 +210,4 @@ This command creates (registers) a plug-in for the WS-Management service.
  [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)   
  [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
  [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
+

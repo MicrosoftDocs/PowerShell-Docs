@@ -1,20 +1,15 @@
 ---
-title: about_Requires
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Requires
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Requires
+ms.technology:  powershell
 ---
+
 # About Requires
 ## about_Requires
 
@@ -34,9 +29,9 @@ You can use \#Requires statements in any script. You cannot use them in function
 
 ```
 #Requires -Version <N>[.<n>]   
-#Requires –PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
+#Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
 #Requires -Modules { <Module-Name> | <Hashtable> }   
-#Requires –ShellId <ShellId>  
+#Requires -ShellId <ShellId>  
 #Requires -RunAsAdministrator
 ```
 
@@ -71,7 +66,7 @@ For example:
 
 
 ```
-#Requires –PSSnapin DiskSnapin -Version 1.2
+#Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
 
@@ -107,7 +102,7 @@ For example,
 
 
 ```
-#Requires –ShellId MyLocalShell
+#Requires -ShellId MyLocalShell
 ```
 
 
@@ -129,8 +124,8 @@ The following script has two \#Requires statements. If the requirements specifie
 
 
 ```
-#Requires –Modules PSWorkflow  
- #Requires –Version 3  
+#Requires -Modules PSWorkflow  
+ #Requires -Version 3  
  Param  
 (  
     [parameter(Mandatory=$true)]  
@@ -154,4 +149,5 @@ about_Language_Keywords
 about_PSSnapins
 
 get-PSSnapin
+
 

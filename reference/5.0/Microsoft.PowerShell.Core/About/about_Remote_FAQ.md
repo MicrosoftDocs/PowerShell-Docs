@@ -1,20 +1,15 @@
 ---
-title: about_Remote_FAQ
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_FAQ
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_FAQ
+ms.technology:  powershell
 ---
+
 # About Remote FAQ
 ## about_Remote_FAQ
 
@@ -325,7 +320,7 @@ Create the following registry entry, and then set its value to 1: LocalAccountTo
 
 You can use the following  Windows PowerShell command to add this entry:
 
-New-ItemProperty ` –Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` –Name LocalAccountTokenFilterPolicy –propertyType DWord –Value 1
+New-ItemProperty ` -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` -Name LocalAccountTokenFilterPolicy -propertyType DWord -Value 1
 
 --  Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2012 R2:
 
@@ -368,4 +363,5 @@ about_Remote_Variables
 Invoke-Command
 
 New-PSSession
+
 

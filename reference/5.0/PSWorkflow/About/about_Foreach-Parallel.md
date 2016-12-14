@@ -1,20 +1,15 @@
 ---
-title: about_Foreach-Parallel
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Foreach-Parallel
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Foreach Parallel
+ms.technology:  powershell
 ---
+
 # About Foreach-Parallel
 ## about_Foreach-Parallel
 
@@ -46,7 +41,7 @@ ForEach -Parallel ($<item> in $<collection>)
 
 
 ### DETAILED DESCRIPTION
-Like the ForEach statement in  Windows PowerShell, the variable that contains collection ($<Collection>) must be defined before the ForEach -Parallel statement, but the variable that represents the current item ($<item>) is defined in the ForEach –Parallel statement.
+Like the ForEach statement in  Windows PowerShell, the variable that contains collection ($<Collection>) must be defined before the ForEach -Parallel statement, but the variable that represents the current item ($<item>) is defined in the ForEach -Parallel statement.
 
 The ForEach -Parallel construct is different from the ForEach keyword and the Parallel keyword. The ForEach keyword processes the items in the collection in sequence. The Parallel keyword runs commands in a script block in parallel. You can enclose a Parallel script block in a ForEach -Parallel script block.
 
@@ -108,4 +103,5 @@ about_Language_Keywords
 about_Parallel
 
 about_Workflows
+
 

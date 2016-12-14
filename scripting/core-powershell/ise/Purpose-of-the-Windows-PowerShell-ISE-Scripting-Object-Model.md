@@ -1,14 +1,16 @@
 ---
-title:  Purpose of the Windows PowerShell ISE Scripting Object Model
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  d176a131-ab0c-43ee-80c1-f824ab8e4a05
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Purpose of the Windows PowerShell ISE Scripting Object Model
+ms.technology:  powershell
+ms.assetid:    d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ---
+
 
 # Purpose of the Windows PowerShell ISE Scripting Object Model
   Objects are associated with the form and function of Windows PowerShell Integrated Scripting Environment (ISE). The object model reference provides details about the member properties and methods that these objects expose. Examples are provided to show how you can use scripts to directly access these methods and properties. The scripting object model makes the following range of tasks easier.

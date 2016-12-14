@@ -1,19 +1,20 @@
 ---
-title: PowershellGet
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: PowerShellGet
-Module Guid: 1d73a601-4a6c-43c5-ba3f-619b18bbb404
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=393271
-Help Version: 5.1.1.0
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  PowerShellGet
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   PowerShellGet
+Download Help Link:    http://go.microsoft.com/fwlink/?LinkId=393271
+Help Version:   5.1.1.0
+Module Guid:   1d73a601-4a6c-43c5-ba3f-619b18bbb404
 ---
+
 
 # PowerShellGet Module
 ## Description

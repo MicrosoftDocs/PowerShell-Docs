@@ -1,20 +1,15 @@
 ---
-title: about_Functions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Functions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Functions
+ms.technology:  powershell
 ---
+
 # About Functions
 ## about_Functions
 
@@ -173,7 +168,7 @@ defined for the parameter.
 
 To use this function, type the following command:
 
-C:\PS> function Get-SmallFiles –Size 50
+C:\PS> function Get-SmallFiles -Size 50
 
 You can also enter a value for a named parameter without the parameter
 name. For example, the following command gives the same result as a
@@ -497,4 +492,5 @@ about_Profiles
 about_Scopes
 about_Script_Blocks
 Function (provider)
+
 

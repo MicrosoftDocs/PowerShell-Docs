@@ -1,13 +1,15 @@
 ---
-title:  core powershell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  core powershell
+ms.technology:  powershell
 ---
+
 
 #  Common PowerShell
 This section contains all reference material and in-depth guides for PowerShell.  
@@ -19,3 +21,4 @@ Find in this section:
 -  The [PowerShell Workflows](workflows-guide.md)
 -  The [PowerShell Web Access](web-access.md)
 -  The [PowerShell Glossary](../Windows-PowerShell-Glossary.md)
+

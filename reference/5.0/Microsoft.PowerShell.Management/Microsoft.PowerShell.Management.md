@@ -1,19 +1,20 @@
 ---
-title: Microsoft.PowerShell.Management
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.Management
-Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=390785
-Help Version: 5.0.8.3
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Management
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.Management
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390785
+Help Version:   5.0.8.3
+Module Guid:   eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 ---
+
 
 # Microsoft.PowerShell.Management Module
 ## Description

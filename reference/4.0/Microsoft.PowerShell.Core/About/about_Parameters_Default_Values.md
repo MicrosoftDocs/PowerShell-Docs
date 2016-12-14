@@ -1,20 +1,15 @@
 ---
-title: about_Parameters_Default_Values
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Parameters_Default_Values
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Parameters_Default_Values
+ms.technology:  powershell
 ---
+
 # About Parameters Default Values
 ## about_Parameters_Default_Values
 
@@ -32,7 +27,7 @@ This feature is especially useful when you must specify the same alternate param
 
 If the desired default value varies predictably, you can specify a script block that provides different default values for a parameter under different conditions.
 
-$PSDefaultParameterValues was introduced in  Windows PowerShell� 3.0.
+$PSDefaultParameterValues was introduced in  Windows PowerShell® 3.0.
 
 
 ### SYNTAX
@@ -107,7 +102,7 @@ The following command sets the default value of the Autosize parameter of the Fo
 
 
 ```
-$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name –eq "ConsoleHost"){$true}}}
+$PSDefaultParameterValues=@{"Format-Table:AutoSize"={if ($host.Name -eq "ConsoleHost"){$true}}}
 ```
 
 
@@ -117,7 +112,7 @@ The following command sets the default value of the ScriptBlock parameter of Inv
 
 
 ```
-$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog –Log System}}}
+$PSDefaultParameterValues=@{"Invoke-Command:ScriptBlock"={{Get-EventLog -Log System}}}
 ```
 
 
@@ -467,4 +462,5 @@ about_Preference_Variables
 about_Profiles
 
 about_Script_Blocks
+
 

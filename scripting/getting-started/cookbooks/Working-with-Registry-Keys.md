@@ -1,14 +1,16 @@
 ---
-title:  Working with Registry Keys
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  91bfaecd-8684-48b4-ad86-065dfe6dc90a
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Working with Registry Keys
+ms.technology:  powershell
+ms.assetid:    91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ---
+
 
 # Working with Registry Keys
 Because registry keys are items on Windows PowerShell drives, working with them is very similar to working with files and folders. One critical difference is that every item on a registry-based Windows PowerShell drive is a container, just like a folder on a file system drive. However, registry entries and their associated values are properties of the items, not distinct items.

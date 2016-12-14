@@ -1,12 +1,15 @@
 ---
-title: Get-ChildItem for Certificate
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ChildItem for Certificate
+ms.technology:  powershell
 ---
+
 # Get-ChildItem for Certificate
 Gets certificate store locations, certificate stores, and certificates in the Windows PowerShell Cert: drive.  
   

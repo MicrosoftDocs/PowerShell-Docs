@@ -1,14 +1,16 @@
-﻿---
-title:  The ISEAddOnToolCollection Object
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
+---
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The ISEAddOnToolCollection Object
+ms.technology:  powershell
+ms.assetid:    634eab89-0845-4016-974b-361b09bb8f7b
 ---
+
 
 # The ISEAddOnToolCollection Object
   The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects. An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.

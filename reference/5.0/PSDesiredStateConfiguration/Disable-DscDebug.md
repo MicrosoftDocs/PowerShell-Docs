@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Disable-DscDebug.cdxml-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=627546
-schema: 2.0.0
-title: Disable-DscDebug
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable DscDebug
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=627546
+external help file:   Disable-DscDebug.cdxml-help.xml
 ---
+
 
 # Disable-DscDebug
 

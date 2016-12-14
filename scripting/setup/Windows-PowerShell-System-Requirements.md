@@ -1,14 +1,16 @@
 ---
-title:  Windows PowerShell System Requirements
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Windows PowerShell System Requirements
+ms.technology:  powershell
+ms.assetid:    6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 
 # Windows PowerShell System Requirements
 This topic lists the system requirements for Windows PowerShell 3.0, Windows PowerShell 4.0 and Windows PowerShell 5.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.

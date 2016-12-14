@@ -1,14 +1,16 @@
 ---
-title:  Getting Started with Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Getting Started with Windows PowerShell
+ms.technology:  powershell
+ms.assetid:    b0e2ad92-875f-421d-b612-f624e644aa69
 ---
+
 
 # Getting Started with Windows PowerShell
 Windows PowerShell is a Windows command-line shell designed especially for system administrators. Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.

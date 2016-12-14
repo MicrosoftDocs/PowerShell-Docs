@@ -1,14 +1,16 @@
 ---
-title:  The ISEOptions Object
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The ISEOptions Object
+ms.technology:  powershell
+ms.assetid:    75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
+
 
 # The ISEOptions Object
   The **ISEOptions** object represents various settings for Windows PowerShell ISE. It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.

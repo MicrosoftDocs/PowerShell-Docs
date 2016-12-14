@@ -1,26 +1,21 @@
 ---
-title: about_Methods
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_methods
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Methods
+ms.technology:  powershell
 ---
+
 # About methods
 ## about_methods
 
 
 ## SHORT DESCRIPTION
-Describes how to use methods to perform actions on objects in  Windows PowerShell�.
+Describes how to use methods to perform actions on objects in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

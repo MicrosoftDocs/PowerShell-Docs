@@ -1,12 +1,16 @@
 ---
-title: Alias Provider
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=834943
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Alias Provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834943
 ---
+
 # Alias Provider
 ## PROVIDER NAME  
  Alias  
@@ -257,3 +261,4 @@ remove-item alias:* -force
 ## See Also  
  [about_Aliases](../About/about_Aliases.md)   
  [about_Providers](../About/about_Providers.md)
+

@@ -1,12 +1,16 @@
 ---
-title: Variable Provider
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=834963
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Variable Provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834963
 ---
+
 # Variable Provider
 ## PROVIDER NAME  
  Variable  
@@ -246,3 +250,4 @@ $processes = $null
  [about_Variables](../About/about_Variables.md)   
  [about_Automatic_Variables](../About/about_Automatic_Variables.md)   
  [about_Providers](../About/about_Providers.md)
+

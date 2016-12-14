@@ -1,14 +1,16 @@
 ---
-title:  Using Familiar Command Names
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  021e2424-c64e-4fa5-aa98-aa6405758d5d
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Using Familiar Command Names
+ms.technology:  powershell
+ms.assetid:    021e2424-c64e-4fa5-aa98-aa6405758d5d
 ---
+
 
 # Using Familiar Command Names
 Using a mechanism called *aliasing*, Windows PowerShell allows users to refer to commands by alternate names. Aliasing allows users with experience in other shells to reuse common command names that they already know to perform similar operations in Windows PowerShell. Although we will not discuss Windows PowerShell aliases in detail, you can still use them as you get started with Windows PowerShell.

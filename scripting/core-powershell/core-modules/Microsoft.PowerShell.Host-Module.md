@@ -1,14 +1,16 @@
 ---
-title:  Microsoft.PowerShell.Host Module
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Host Module
+ms.technology:  powershell
+ms.assetid:    580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
 ---
+
 
 # Microsoft.PowerShell.Host Module
 This section contains the help topics for the **Microsoft.PowerShell.Host** module. The **Microsoft.PowerShell.Host** module contains cmdlets that manage the feature of programs that host Windows PowerShell. It is installed with Windows PowerShell.

@@ -1,20 +1,15 @@
 ---
-title: about_Language_Keywords
-description:
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-11-02
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Language_Keywords
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Language_Keywords
+ms.technology:  powershell
 ---
+
 # About Language Keywords
 ## about_Language_Keywords
 
@@ -226,7 +221,7 @@ function <name> {
 Causes Windows PowerShell to exit a script or a Windows PowerShell
 instance.
 
-When you run 'powershell.exe –File <path to a script>', you can only
+When you run 'powershell.exe -File <path to a script>', you can only
 set the %ERRORLEVEL% variable to a value other than zero by using the
 exit statement. In the following example, the user sets the error level
 variable value to 4 by adding 'exit 4' to the script file _test.ps1_.
@@ -676,3 +671,4 @@ TechNet Library.
 -  [about_Escape_Characters](about_Escape_Characters.md)
 -  [about_Special_Characters](about_Special_Characters.md)
 -  [about_Wildcards](about_Wildcards.md)
+

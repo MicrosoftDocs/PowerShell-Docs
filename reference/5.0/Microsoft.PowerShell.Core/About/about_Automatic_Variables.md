@@ -1,20 +1,15 @@
 ---
-title: about_Automatic_Variables
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Automatic_Variables
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Automatic_Variables
+ms.technology:  powershell
 ---
+
 # About Automatic Variables
 ## about_Automatic_Variables
 
@@ -171,7 +166,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day -ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  
@@ -428,4 +423,5 @@ about_Hash_Tables
 about_Preference_Variables
 
 about_Variables
+
 

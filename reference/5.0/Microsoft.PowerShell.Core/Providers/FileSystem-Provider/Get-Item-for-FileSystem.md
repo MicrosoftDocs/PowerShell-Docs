@@ -1,12 +1,16 @@
 ---
-title: Get-Item for FileSystem
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=821468
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Item for FileSystem
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=821468
 ---
+
 # Get-Item for FileSystem
 Gets files and folders.  
 
@@ -180,3 +184,4 @@ This command gets items in the Windows directory with names that include a dot (
  [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
  [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
  [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
+

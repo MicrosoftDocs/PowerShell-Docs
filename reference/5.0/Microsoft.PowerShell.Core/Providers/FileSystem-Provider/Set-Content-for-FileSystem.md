@@ -1,12 +1,16 @@
 ---
-title: Set-Content for FileSystem
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=834955
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Content for FileSystem
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834955
 ---
+
 # Set-Content for FileSystem
 Replaces the contents of a file with contents that you specify.  
 
@@ -191,3 +195,4 @@ The command uses the Force parameter so that the command is successful even if t
  [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
  [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
  [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
+

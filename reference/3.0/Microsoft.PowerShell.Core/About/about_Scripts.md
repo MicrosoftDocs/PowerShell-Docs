@@ -1,26 +1,21 @@
 ---
-title: about_Scripts
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Scripts
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Scripts
+ms.technology:  powershell
 ---
+
 # About Scripts
 ## about_Scripts
 
 
 ## SHORT DESCRIPTION
-Describes how to run and write scripts in  Windows PowerShell�.
+Describes how to run and write scripts in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

@@ -1,19 +1,20 @@
 ---
-title: PSWorkflow
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: PSWorkflow
-Module Guid: 3b6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=390817
-Help Version: 5.0.4.2
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  PSWorkflow
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   PSWorkflow
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390817
+Help Version:   5.0.4.2
+Module Guid:   3b6cc51d-c096-4b38-b78d-0fed6277096a
 ---
+
 
 # PSWorkflow Module
 ## Description
