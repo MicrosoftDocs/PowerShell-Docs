@@ -15,12 +15,12 @@ PowerShell Gallery Status
 =========================
 
 
-## 12/13/2016 - Unable to send emails via PowerShellGallery website
+## 12/15/2016 - Unable to send emails via PowerShellGallery website
 
-__Summary of Impact__: Starting 12/13/2016, any messages sent via Contact Owners, Contact Support, or Report Abuse are not being received by the PowerShell Gallery Administrators.  
-__Root Cause__: Engineers identified the cause as an outage in the Office 365 SMTP server.  
-__Resolution__: Engineers are working with Azure to resolve the server outage.  
-__Next Steps__: If you used the Contact Owners, Contact Support, or Report Abuse links to send mail to cgadmin@microsoft.com during this time and we have not responded, please send your request directly to cgadmin@microsoft.com. We apologize for the inconvenience.  
+__Summary of Impact__: Between 12/13/2016 and 12/15/2016, any messages sent via Contact Owners, Manage Owners, Contact Support, or Report Abuse were not received by the PowerShell Gallery Administrators.  
+__Root Cause__: Engineers identified the cause as an authentication issue with the SMTP server.  
+__Resolution__: Engineers were able to resolve the authentication issue and restore connection to the SMTP server.  
+__Next Steps__: If you used the Contact Owners, Manage Owners, Contact Support, or Report Abuse links to send mail to cgadmin@microsoft.com during this time and we have not responded, please try again. We apologize for the inconvenience.  
 
 
 
