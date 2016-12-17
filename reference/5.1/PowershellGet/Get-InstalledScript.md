@@ -33,7 +33,7 @@ The **Get-InstalledScript** cmdlet gets installed scripts for CurrentUser and Al
 
 ### Example 1: Get all installed scripts
 ```
-PS C:\>Get-InstalledScript
+PS C:\> Get-InstalledScript
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
@@ -46,7 +46,7 @@ This command gets all installed scripts.
 
 ### Example 2: Get installed scripts by name
 ```
-PS C:\>Get-InstalledScript -Name "Required-Scri*" 
+PS C:\> Get-InstalledScript -Name "Required-Scri*" 
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script

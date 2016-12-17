@@ -51,34 +51,34 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Import snippets from a directory
 ```
-PS C:\>Import-IseSnippet -Path \\Server01\Public\Snippets -Recurse
+PS C:\> Import-IseSnippet -Path \\Server01\Public\Snippets -Recurse
 ```
 
 This command imports the snippets from the \\\\Server01\Public\Snippets directory into the current session.
 It uses the Recurse parameter to get snippets from all subdirectories of the Snippets directory.
 ### Example 2: Import snippets from a module
 ```
-PS C:\>Import-IseSnippet -Module SnippetModule -ListAvailable
+PS C:\> Import-IseSnippet -Module SnippetModule -ListAvailable
 ```
 
 This command imports the snippets from the SnippetModule module.
 The command uses the **ListAvailable** parameter to import the snippets even if the SnippetModule module is not imported into the user's session when the command runs.
 ### Example 3: Find snippets in modules
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$_.fullname}
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$_.fullname}
 ```
 
 This command gets snippets in all installed modules in the PSModulePath environment variable.
 ### Example 4: Import all module snippets
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$psise.CurrentPowerShellTab.Snippets.Load($_)}
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | foreach {$psise.CurrentPowerShellTab.Snippets.Load($_)}
 ```
 
 This command imports all snippets from all installed modules into the current session.
 Typically, you don't need to run a command like this because modules that have snippets will use the **Import-IseSnippet** cmdlet to import them for you when the module is imported.
 ### Example 5: Copy all module snippets
 ```
-PS C:\>($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
+PS C:\> ($env:PSModulePath).split(";") | foreach {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} | Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
 ```
 
 This command copies the snippet files from all installed modules into the Snippets directory of the current user.

@@ -43,7 +43,7 @@ You can use the parameters of **Get-Random** to specify a seed number, minimum a
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Random
+PS C:\> Get-Random
 3951433
 ```
 
@@ -51,7 +51,7 @@ This command gets a random integer between 0 (zero) and Int32.MaxValue.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 47
 ```
 
@@ -59,7 +59,7 @@ This command gets a random integer between 0 (zero) and 99.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Random -Minimum -100 -Maximum 100
+PS C:\> Get-Random -Minimum -100 -Maximum 100
 56
 ```
 
@@ -67,7 +67,7 @@ This command gets a random integer between -100 and 99.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Random -Minimum 10.7 -Maximum 20.93
+PS C:\> Get-Random -Minimum 10.7 -Maximum 20.93
 18.08467273887
 ```
 
@@ -75,7 +75,7 @@ This command gets a random floating-point number greater than or equal to 10.7 a
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Random -InputObject 1, 2, 3, 5, 8, 13
+PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13
 8
 ```
 
@@ -83,7 +83,7 @@ This command gets a randomly selected number from the specified array.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
+PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
 3
 1
 13
@@ -93,7 +93,7 @@ This command gets three randomly selected numbers in random order from the array
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
+PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
 2
 3
 5
@@ -109,7 +109,7 @@ To return an entire collection in random order, enter any number that is greater
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-Random -InputObject "red", "yellow", "blue"
+PS C:\> Get-Random -InputObject "red", "yellow", "blue"
 yellow
 ```
 
@@ -117,7 +117,7 @@ This command returns a random value from a non-numeric collection.
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>get-process | Get-Random
+PS C:\> get-process | Get-Random
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -128,50 +128,50 @@ This command gets a randomly selected process from the collection of processes o
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>Get-Content Servers.txt | Get-Random -Count (Get-Content Servers.txt).Count | foreach {Invoke-Command -ComputerName $_ -Command 'Get-Process PowerShell'}
+PS C:\> Get-Content Servers.txt | Get-Random -Count (Get-Content Servers.txt).Count | foreach {Invoke-Command -ComputerName $_ -Command 'Get-Process PowerShell'}
 ```
 
 This command runs a command on a series of remote computers in random order.
 
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 
 # Commands with the default seed are pseudorandom
 
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 59
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 65
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 21
 
 # Commands with the same seed are not random
 
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 74
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 74
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 74
 
 # SetSeed results in a repeatable series
 
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 74
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 56
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 84
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 46
-PS C:\>Get-Random -Maximum 100 -SetSeed 23
+PS C:\> Get-Random -Maximum 100 -SetSeed 23
 74
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 56
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 84
-PS C:\>Get-Random -Maximum 100
+PS C:\> Get-Random -Maximum 100
 46
 ```
 
@@ -180,15 +180,15 @@ Because **SetSeed** produces non-random behavior, it is typically used only to r
 
 ### -------------------------- EXAMPLE 12 --------------------------
 ```
-PS C:\>$files = dir -Path C:\* -Recurse
-PS C:\>$sample = $files | Get-Random -Count 50
+PS C:\> $files = dir -Path C:\* -Recurse
+PS C:\> $sample = $files | Get-Random -Count 50
 ```
 
 These commands get a randomly selected sample of 50 files from the C: drive of the local computer.
 
 ### -------------------------- EXAMPLE 13 --------------------------
 ```
-PS C:\>Get-Random 10001
+PS C:\> Get-Random 10001
 7600
 ```
 
@@ -197,8 +197,8 @@ Because the Maximum parameter has position 1, you can omit the parameter name wh
 
 ### -------------------------- EXAMPLE 14 --------------------------
 ```
-PS C:\>Get-Random -Minimum ([Int64]::MinValue)3738173363251507200
-PS C:\>Get-Random -Minimum ([Int32]::MaxValue)
+PS C:\> Get-Random -Minimum ([Int64]::MinValue)3738173363251507200
+PS C:\> Get-Random -Minimum ([Int32]::MaxValue)
 
 Minimum (2147483647) cannot be greater than or equal to Maximum (2147483647).
     + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException

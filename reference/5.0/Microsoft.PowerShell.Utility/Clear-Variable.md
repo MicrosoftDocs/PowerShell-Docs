@@ -35,14 +35,14 @@ If the variable has a specified data or object type, this cmdlet preserves the t
 
 ### Example 1: Remove the value of global variables that begin with a search string
 ```
-PS C:\>Clear-Variable "my*" -Scope Global
+PS C:\> Clear-Variable "my*" -Scope Global
 ```
 
 This command removes the value of global variables that have names that begin with my.
 
 ### Example 2: Clear a variable in a child scope but not the parent scope
 ```
-PS C:\>$A = 3
+PS C:\> $A = 3
 PS C:\> &{ Clear-Variable A }
 PS C:\> $A
 3
@@ -56,7 +56,7 @@ The third command, which gets the value of $A, shows that the value 3 is unaffec
 
 ### Example 3: Delete the value of the specified variable
 ```
-PS C:\>Clear-Variable -Name "Processes"
+PS C:\> Clear-Variable -Name "Processes"
 ```
 
 This command deletes the value of the variable named Processes.

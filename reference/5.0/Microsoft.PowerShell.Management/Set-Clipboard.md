@@ -48,14 +48,14 @@ The **Set-Clipboard** cmdlet sets the current Windows clipboard entry.
 
 ### Example 1: Copy text to the clipboard
 ```
-PS C:\>Set-Clipboard -Value "This is a test string"
+PS C:\> Set-Clipboard -Value "This is a test string"
 ```
 
 This command copies a string to the clipboard.
 
 ### Example 2: Copy the contents of a directory to the clipboard
 ```
-PS C:\>Set-Clipboard -Path "C:\Staging\"
+PS C:\> Set-Clipboard -Path "C:\Staging\"
 ```
 
 This command copies the content of the specified folder to the clipboard.

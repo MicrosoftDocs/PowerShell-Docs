@@ -35,7 +35,7 @@ After you remove a snap-in from the current session, the snap-in is still loaded
 
 ### Example 1: Remove a snap-in
 ```
-PS C:\>remove-pssnapin -Name Microsoft.Exchange
+PS C:\> remove-pssnapin -Name Microsoft.Exchange
 ```
 
 This command removes the **Microsoft.Exchange** snap-in from the current session.
@@ -43,7 +43,7 @@ When the command is complete, the cmdlets and providers that the snap-in support
 
 ### Example 2: Remove snap-ins by using names with the pipeline
 ```
-PS C:\>Get-PSSnapIn smp* | Remove-PSSnapIn
+PS C:\> Get-PSSnapIn smp* | Remove-PSSnapIn
 ```
 
 This command removes the Windows PowerShell snap-ins that have names that start with smp from the current session.
@@ -56,7 +56,7 @@ When you pipe objects to **Remove-PSSnapin**, the names of the objects are assoc
 
 ### Example 3: Remove snap-ins by using names
 ```
-PS C:\>Remove-PSSnapin -Name *event*
+PS C:\> Remove-PSSnapin -Name *event*
 ```
 
 This command removes all Windows PowerShell snap-ins that have names that include event.

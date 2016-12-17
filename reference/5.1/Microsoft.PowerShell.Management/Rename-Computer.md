@@ -37,14 +37,14 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Rename the local computer
 ```
-PS C:\>Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 -Restart
+PS C:\> Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 -Restart
 ```
 
 This command renames the local computer to Server044 and then restarts it to make the change effective.
 
 ### Example 2: Rename a remote computer
 ```
-PS C:\>Rename-Computer -ComputerName "Srv01" -NewName "Server001" -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
+PS C:\> Rename-Computer -ComputerName "Srv01" -NewName "Server001" -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
 ```
 
 This command renames the Srv01 computer to Server001 and then restarts it to make the change effective.
@@ -53,7 +53,7 @@ It uses the *Force* parameter to suppress the confirmation prompt and the *PassT
 
 ### Example 3: Rename multiple computers
 ```
-PS C:\>$a = Import-Csv ServerNames.csv -Header OldName, NewName
+PS C:\> $a = Import-Csv ServerNames.csv -Header OldName, NewName
 PS C:\> Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}
 ```
 

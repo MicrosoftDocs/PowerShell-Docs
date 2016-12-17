@@ -68,7 +68,7 @@ For more information, see the *PassThru* parameter description.
 
 ### Example 1: Add a note property to a PSObject
 ```
-PS C:\>$A = dir c:\ps-test\test.txt
+PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 PS C:\> $A | Add-Member Status Done
 PS C:\> $A.Status
@@ -89,7 +89,7 @@ As the output shows, the value is "Done".
 
 ### Example 2: Add an alias property to a PSObject
 ```
-PS C:\>$A = dir c:\ps-test\test.txt
+PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
 PS C:\> $A.FileLength
 2394
@@ -106,7 +106,7 @@ The third command uses dot notation to get the value of the new FileLength prope
 
 ### Example 3: Add a StringUse note property to a string
 ```
-PS C:\>$A = "A string"
+PS C:\> $A = "A string"
 PS C:\> $A = $A | Add-Member @{StringUse="Display"} -PassThru
 PS C:\> $A.StringUse
 Display
@@ -122,9 +122,9 @@ The key is the note property name, StringUse, and the value is the note property
 
 ### Example 4: Add a script method to a string object
 ```
-PS C:\>$A = "This is a string."
-PS C:\>$A = Add-Member -InputObject $A -MemberType ScriptMethod -Name "PadBoth" -Value {$P = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
-PS C:\>$A.Padboth()
+PS C:\> $A = "This is a string."
+PS C:\> $A = Add-Member -InputObject $A -MemberType ScriptMethod -Name "PadBoth" -Value {$P = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
+PS C:\> $A.Padboth()
 This is a string.
 ```
 
@@ -146,8 +146,8 @@ The third command uses dot notation to call the new PadBoth script method on the
 
 ### Example 5: Add an alias property to an event
 ```
-PS C:\>$Event = Get-EventLog -LogName System -Newest 1
-PS C:\>$Event.TimeWritten | Get-Member
+PS C:\> $Event = Get-EventLog -LogName System -Newest 1
+PS C:\> $Event.TimeWritten | Get-Member
 TypeName: System.DateTime
 Name                 MemberType     Definition
 ----                 ----------     ----------
@@ -158,8 +158,8 @@ AddMilliseconds      Method         System.DateTime AddMilliseconds(double value
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
 
 
-PS C:\>Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
-PS C:\>$Event.When | Get-Member
+PS C:\> Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
+PS C:\> $Event.When | Get-Member
 TypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
@@ -189,7 +189,7 @@ The command pipes the method value to the **Get-Member** cmdlet to confirm that 
 
 ### Example 6: Copy all properties of an object to another
 ```
-PS C:\>function Copy-Property ($From, $To)
+PS C:\> function Copy-Property ($From, $To)
 {     foreach ($p in Get-Member -InputObject $From -MemberType Property)
   {     Add-Member -InputObject $To -MemberType NoteProperty -Name $p.Name
      -Value $From.$($p.Name) -Force     $To.$($p.Name) = $From.$($p.Name)
@@ -211,10 +211,10 @@ The last command in the function gives the new property the same name as the ori
 
 ### Example 7: Create a custom object
 ```
-PS C:\>$Asset = New-Object -TypeName PSObject
-PS C:\>$d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
-PS C:\>$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-PS C:\>$Asset | Get-Member
+PS C:\> $Asset = New-Object -TypeName PSObject
+PS C:\> $d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
+PS C:\> $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
+PS C:\> $Asset | Get-Member
    TypeName: Asset
 
 Name        MemberType   Definition

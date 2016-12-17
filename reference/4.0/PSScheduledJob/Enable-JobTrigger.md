@@ -45,7 +45,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Enable a job trigger
 ```
-PS C:\>Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
+PS C:\> Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
 ```
 
 This command enables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
@@ -55,7 +55,7 @@ A pipeline operator sends the job trigger to the **Enable-JobTrigger** cmdlet, w
 
 ### Example 2: Enable all job triggers
 ```
-PS C:\>Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
+PS C:\> Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
 ```
 
 The command uses the Get-ScheduledJob cmdlet to get  the scheduled jobs on the local computer.
@@ -64,7 +64,7 @@ Another pipeline operator sends the job triggers to the **Enable-JobTrigger** cm
 
 ### Example 3: Enable the job trigger of a scheduled job on a remote computer.
 ```
-PS C:\>Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "AtLogon"} | Enable-JobTrigger}
+PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "AtLogon"} | Enable-JobTrigger}
 ```
 
 This command re-enables the AtLogon job triggers on the DeployPackage scheduled job on the Server01 remote computer.
@@ -76,7 +76,7 @@ A pipeline operator sends the AtLogon job triggers to the **Enable-JobTrigger** 
 
 ### Example 4: Display disabled job triggers
 ```
-PS C:\>Get-ScheduledJob | Get-JobTrigger | where {!$_.Enabled} | Format-Table Id, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}}
+PS C:\> Get-ScheduledJob | Get-JobTrigger | where {!$_.Enabled} | Format-Table Id, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}}
 Id Frequency At                     DaysOfWeek Enabled JobName
 -- --------- --                     ---------- ------- -------
  1    Weekly 9/28/2011 3:00:00 AM   {Monday}     False Backup-Archive

@@ -77,14 +77,14 @@ This makes it easier to include the source computer name in output and reports.
 
 ### Example 1: Get processes on the local computer
 ```
-PS C:\>Get-WmiObject -Class Win32_Process
+PS C:\> Get-WmiObject -Class Win32_Process
 ```
 
 This command get the processes on the local computer.
 
 ### Example 2: Gets services on a remote computer
 ```
-PS C:\>Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
+PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 ```
 
 This command gets the services on a remote computer.
@@ -93,14 +93,14 @@ By default, the current account must be a member of the Administrators group on 
 
 ### Example 3: Get WMI classes in the root or default namespace of the local computer
 ```
-PS C:\>Get-WmiObject -Namespace "root/default" -List
+PS C:\> Get-WmiObject -Namespace "root/default" -List
 ```
 
 This command gets the WMI classes in the root or default namespace of the local computer.
 
 ### Example 4: Get a named service on multiple computers
 ```
-PS C:\>Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
 PSComputerName : SERVER01
 Name           : WinRM
 ExitCode       : 0
@@ -130,7 +130,7 @@ This alias is introduced in Windows PowerShell 3.0.
 
 ### Example 5: Stop a service on a remote computer
 ```
-PS C:\>(Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
+PS C:\> (Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
 ```
 
 This command stops the WinRM service on the Server01 remote computer.
@@ -141,7 +141,7 @@ This command is an alternative to using the Stop-Service cmdlet.
 
 ### Example 6: Get the BIOS on the local computer
 ```
-PS C:\>Get-WmiObject -Class Win32_Bios | Format-List -Property
+PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
 Status                : OK
 Name                  : Phoenix ROM BIOS PLUS Version 1.10 A05
 Caption               : Phoenix ROM BIOS PLUS Version 1.10 A05
@@ -195,7 +195,7 @@ By default, only a subset (defined in the Types.ps1xml configuration file) are d
 
 ### Example 7: Get the services on a remote computer
 ```
-PS C:\>Get-WmiObject Win32_Service -Credential FABRIKAM\administrator -Computer Fabrikam
+PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator -Computer Fabrikam
 ```
 
 This command uses the *Credential* parameter of the **Get-WmiObject** cmdlet to get the services on a remote computer.

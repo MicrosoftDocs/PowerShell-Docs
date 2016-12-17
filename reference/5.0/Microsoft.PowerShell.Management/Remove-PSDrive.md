@@ -48,14 +48,14 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Remove a file system drive
 ```
-PS C:\>Remove-PSDrive -Name smp
+PS C:\> Remove-PSDrive -Name smp
 ```
 
 This command removes a temporary file system drive named smp.
 
 ### Example 2: Remove mapped network drives
 ```
-PS C:\>Get-PSDrive X, S | Remove-PSDrive
+PS C:\> Get-PSDrive X, S | Remove-PSDrive
 ```
 
 This command disconnects the X: mapped network drive that was created in File Explorer and the S: mapped network drive that was created by using the *Persist* parameter of the New-PSDrive cmdlet.

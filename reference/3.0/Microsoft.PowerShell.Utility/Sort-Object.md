@@ -33,7 +33,7 @@ You can also direct Sort-Object to display only the objects with a unique value 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem | sort-object
+PS C:\> get-childitem | sort-object
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -59,7 +59,7 @@ This command sorts the subdirectories and files in the current directory.
 Because no properties are specified, the files and directories are sorted in ascending alphabetical order by their default sort property, Name.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem | sort-object -property length
+PS C:\> get-childitem | sort-object -property length
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -77,7 +77,7 @@ Mode                LastWriteTime     Length Name
 This command displays the files in the current directory in ascending order by file length.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-process | sort-object -property WS | select-object -last 5
+PS C:\> get-process | sort-object -property WS | select-object -last 5
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -96,7 +96,7 @@ It uses a pipeline operator (|) to send the results to the Sort-Object cmdlet, w
 Another pipeline operator sends the results to the Select-Object, which displays only the last five items in the list.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-history | sort-object -descending
+PS C:\> get-history | sort-object -descending
 
 Id CommandLine
 -- -----------
@@ -115,7 +115,7 @@ Id CommandLine
 This command sorts HistoryInfo objects using the Id property as the default key.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-service | sort-object -property @{Expression="Status";Descending=$true}, @{Expression="DisplayName";Descending=$false}
+PS C:\> get-service | sort-object -property @{Expression="Status";Descending=$true}, @{Expression="DisplayName";Descending=$false}
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -145,7 +145,7 @@ The resulting display, which sorts the Status values in descending order, lists 
 When sorted in ascending order, "Stopped" appears before "Running", because Status is an enumerated property in which the value of "Stopped" (1) is less than the value of "Running" (4).
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-childitem *.txt | sort-object -property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending=$false} | Format-Table LastWriteTime, CreationTime
+PS C:\> get-childitem *.txt | sort-object -property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending=$false} | Format-Table LastWriteTime, CreationTime
 
 LastWriteTime                           CreationTime
 -------------                           ------------
@@ -161,7 +161,7 @@ LastWriteTime                           CreationTime
 This command sorts text files in descending order by the time span between CreationTime and LastWriteTime.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-content servers.txt
+PS C:\> get-content servers.txt
 
 localhost
 test01
@@ -170,7 +170,7 @@ server02
 localhost
 server01
 
-PS C:\>get-content servers.txt | sort-object -unique
+PS C:\> get-content servers.txt | sort-object -unique
 
 localhost
 server01

@@ -32,7 +32,7 @@ If the tested computer is running the service, the cmdlet displays the WS-Manage
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>test-wsman
+PS C:\> test-wsman
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -43,7 +43,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 This command determines whether the WinRM service is running on the local computer or on a remote computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>test-wsman -computername server01
+PS C:\> test-wsman -computername server01
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -54,7 +54,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 This command determines whether the WinRM service is running on the server01 computer named.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>test-wsman -authentication default
+PS C:\> test-wsman -authentication default
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -67,7 +67,7 @@ This command tests to see if the WS-Management (WinRM) service is running on the
 Using the authentication parameter allows the Test-WSMan cmdlet to return the Operating System version.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>test-wsman -computername server01 -authentication default
+PS C:\> test-wsman -computername server01 -authentication default
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd

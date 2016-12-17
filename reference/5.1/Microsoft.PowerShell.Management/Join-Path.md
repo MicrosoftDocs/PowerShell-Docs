@@ -34,7 +34,7 @@ The provider supplies the path delimiters.
 
 ### Example 1: Combine a path with a child path
 ```
-PS C:\>Join-Path -Path "C:\win*" -ChildPath "System*"
+PS C:\> Join-Path -Path "C:\win*" -ChildPath "System*"
 ```
 
 This command uses **Join-Path** to combine the C:\Win* path with the System* child path.
@@ -42,7 +42,7 @@ The Windows PowerShell file system provider, FileSystem joins the path and adds 
 
 ### Example 2: Display files and folders by joining a path with a child path
 ```
-PS C:\>Join-Path "C:\win*" "System*" -Resolve
+PS C:\> Join-Path "C:\win*" "System*" -Resolve
 ```
 
 This command displays the files and folders that are referenced by joining the C:\Win* path and the System* child path.
@@ -60,14 +60,14 @@ The command shows how to use **Join-Path** with the Windows PowerShell registry 
 
 ### Example 4: Combine multiple path roots with a child path
 ```
-PS C:\>Join-Path -Path C:, D:, E:, F: -ChildPath New
+PS C:\> Join-Path -Path C:, D:, E:, F: -ChildPath New
 ```
 
 This command uses **Join-Path** to combine multiple path roots with a child path.
 
 ### Example 5: Combine the roots of a file system drive with a child path
 ```
-PS C:\>Get-PSDrive -PSProvider filesystem | ForEach {$_.root} | Join-Path -ChildPath "Subdir"
+PS C:\> Get-PSDrive -PSProvider filesystem | ForEach {$_.root} | Join-Path -ChildPath "Subdir"
 ```
 
 This command combines the roots of each Windows PowerShell file system drive in the console with the Subdir child path.

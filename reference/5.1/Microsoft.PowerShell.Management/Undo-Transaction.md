@@ -41,14 +41,14 @@ For more information, see about_Transactions.
 
 ### Example 1: Roll back the current transaction
 ```
-PS C:\>Undo-Transaction
+PS C:\> Undo-Transaction
 ```
 
 This command rolls back the current, active, transaction.
 
 ### Example 2: Start and roll back a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
 PS HKCU:\Software> New-Item -Path "ContosoCompany" -UseTransaction
 PS HKCU:\Software> Undo-Transaction
@@ -59,7 +59,7 @@ As a result, no changes are made to the registry.
 
 ### Example 3: Roll back a transaction for all subscribers
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
 PS HKCU:\Software> New-Item -Path "ContosoCompany" -UseTransaction
 PS HKCU:\Software> Get-Transaction

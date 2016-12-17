@@ -43,7 +43,7 @@ The **Set-LocalGroup** cmdlet changes a local security group.
 
 ### Example 1: Change a group description
 ```
-PS C:\>Set-LocalGroup -Name "SecurityGroup04" -Description "This is a sample description."
+PS C:\> Set-LocalGroup -Name "SecurityGroup04" -Description "This is a sample description."
 ```
 
 This command changes the description of a local group.

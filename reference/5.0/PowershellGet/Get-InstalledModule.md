@@ -33,7 +33,7 @@ The **Get-InstalledModule** cmdlet gets Windows PowerShell modules that are inst
 
 ### Example 1: Get all installed modules
 ```
-PS C:\>Get-InstalledModule
+PS C:\> Get-InstalledModule
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.0.0      PSGTEST-UploadMultipleVersionOfP... Module     GalleryINT           Module for DAC functionality
@@ -45,7 +45,7 @@ This command gets all installed modules.
 
 ### Example 2: Get specific versions of a module
 ```
-PS C:\>Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersion 2.0
+PS C:\> Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersion 2.0
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager

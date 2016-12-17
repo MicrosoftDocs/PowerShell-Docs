@@ -32,7 +32,7 @@ The Send-MailMessage cmdlet sends an e-mail message from within Windows PowerShe
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>send-mailmessage -to "User01 <user01@example.com>" -from "User02 <user02@example.com>" -subject "Test mail"
+PS C:\> send-mailmessage -to "User01 <user01@example.com>" -from "User02 <user02@example.com>" -subject "Test mail"
 ```
 
 This command sends an e-mail message from User01 to User02.
@@ -41,7 +41,7 @@ The mail message has a subject, which is required, but it does not have a body, 
 Also, because the SmtpServer parameter is not specified, Send-MailMessage uses the value of the $PSEmailServer preference variable for the SMTP server.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>send-mailmessage -from "User01 <user01@example.com>" -to "User02 <user02@example.com>", "User03 <user03@example.com>" -subject "Sending the Attachment" -body "Forgot to send the attachment. Sending now." -Attachments "data.csv" -priority High -dno onSuccess, onFailure -smtpServer smtp.fabrikam.com
+PS C:\> send-mailmessage -from "User01 <user01@example.com>" -to "User02 <user02@example.com>", "User03 <user03@example.com>" -subject "Sending the Attachment" -body "Forgot to send the attachment. Sending now." -Attachments "data.csv" -priority High -dno onSuccess, onFailure -smtpServer smtp.fabrikam.com
 ```
 
 This command sends an e-mail message with an attachment from User01 to two other users.
@@ -49,7 +49,7 @@ This command sends an e-mail message with an attachment from User01 to two other
 It specifies a priority value of "High" and requests a delivery notification by e-mail when the e-mail messages are delivered or when they fail.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>send-mailmessage -to "User01 <user01@example.com>" -from "ITGroup <itdept@example.com>" -cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -subject "Don't forget today's meeting!" -credential domain01\admin01 -useSSL
+PS C:\> send-mailmessage -to "User01 <user01@example.com>" -from "ITGroup <itdept@example.com>" -cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -subject "Don't forget today's meeting!" -credential domain01\admin01 -useSSL
 ```
 
 This command sends an e-mail message from User01 to the ITGroup mailing list with a copy (CC) to User02 and a blind carbon copy (BCC) to the IT manager (ITMgr).

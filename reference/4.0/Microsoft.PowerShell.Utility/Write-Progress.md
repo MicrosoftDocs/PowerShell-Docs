@@ -35,7 +35,7 @@ You can select the indicators that the bar reflects and the text that appears ab
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>for ($i = 1; $i -le 100; $i++ )
+PS C:\> for ($i = 1; $i -le 100; $i++ )
 {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i;}
 ```
 
@@ -44,7 +44,7 @@ The Write-Progress command includes a status bar heading ("activity"), a status 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>for($i = 1; $i -lt 101; $i++ )
+PS C:\> for($i = 1; $i -lt 101; $i++ )
 {write-progress -activity Updating -status 'Progress->' -percentcomplete $i -currentOperation OuterLoop; `
 for($j = 1; $j -lt 101; $j++ )
 {write-progress -id  1 -activity Updating -status 'Progress' -percentcomplete $j -currentOperation InnerLoop} }
@@ -66,8 +66,8 @@ Without the Id parameter, the progress bars would be superimposed on each other 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname system
-PS C:\>$events | foreach-object -begin {clear-host;$i=0;$out=""} `
+PS C:\> $events = get-eventlog -logname system
+PS C:\> $events | foreach-object -begin {clear-host;$i=0;$out=""} `
 -process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $i = $i+1;
 write-progress -activity "Searching Events" -status "Progress:" -percentcomplete ($i/$events.count*100)} `
 -end {$out}

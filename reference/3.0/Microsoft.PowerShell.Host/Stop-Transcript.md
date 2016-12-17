@@ -30,7 +30,7 @@ You can also stop a transcript by ending the session.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>stop-transcript
+PS C:\> stop-transcript
 ```
 
 This command stops any running transcripts.

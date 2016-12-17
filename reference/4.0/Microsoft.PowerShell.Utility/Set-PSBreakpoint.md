@@ -64,7 +64,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-psbreakpoint -script sample.ps1 -line 5
+PS C:\> set-psbreakpoint -script sample.ps1 -line 5
 Column     : 0
 Line       : 5
 Action     :
@@ -82,7 +82,7 @@ When you set a new breakpoint by line number, the Set-PSBreakpoint cmdlet genera
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-psbreakpoint -command Increment -script sample.ps1
+PS C:\> set-psbreakpoint -command Increment -script sample.ps1
 Command    : Increment
 Action     :
 Enabled    : True
@@ -100,7 +100,7 @@ Before the script runs, the value of the HitCount property is 0.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-psbreakpoint -script sample.ps1 -variable Server -Mode ReadWrite
+PS C:\> set-psbreakpoint -script sample.ps1 -variable Server -Mode ReadWrite
 ```
 
 This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -108,14 +108,14 @@ It uses the Mode parameter with a value of ReadWrite to stop execution when the 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-psbreakpoint -script Sample.ps1 -command "write*"
+PS C:\> set-psbreakpoint -script Sample.ps1 -command "write*"
 ```
 
 This command sets a breakpoint on every command in the Sample.ps1 script that begins with "write", such as "write-host".
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>set-psbreakpoint -script test.ps1 -command DiskTest `
+PS C:\> set-psbreakpoint -script test.ps1 -command DiskTest `
 -action { if ($disk -gt 2) { break } }
 ```
 
@@ -129,7 +129,7 @@ The alternative (and the default) is CONTINUE.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>set-psbreakpoint -command checklog
+PS C:\> set-psbreakpoint -command checklog
 
 Id       : 0
 Command  : checkkog
@@ -137,15 +137,15 @@ Enabled  : True
 HitCount : 0
 Action   :
 
-PS C:\>function CheckLog {
+PS C:\> function CheckLog {
 >> get-eventlog -log Application |
 >> where {($_.source -like "TestApp") -and ($_.Message -like "*failed*")}
 >>}
 >>
-PS C:\>Checklog
+PS C:\> Checklog
 DEBUG: Hit breakpoint(s)
 DEBUG:  Function breakpoint on 'prompt:Checklog'
-PS C:\>>>
+PS C:\> >>
 ```
 
 This command sets a breakpoint on the CheckLog function.
@@ -154,7 +154,7 @@ The debugger breaks when the function is called, not when it is declared.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>set-psbreakpoint -script sample.ps1 -line 1, 14, 19 -column 2 -action {&(log.ps1)}
+PS C:\> set-psbreakpoint -script sample.ps1 -line 1, 14, 19 -column 2 -action {&(log.ps1)}
 
 Column     : 2
 Line       : 1

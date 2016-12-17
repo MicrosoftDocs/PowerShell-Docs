@@ -43,7 +43,7 @@ For more information about this registry entry, see the notes and examples.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$c = Get-Credential
+PS C:\> $c = Get-Credential
 ```
 
 This command gets a credential object and saves it in the $c variable.
@@ -55,8 +55,8 @@ You can use the object as input to cmdlets that request user authentication, suc
 However, some providers that are installed with Windows PowerShell do not support the **Credential** parameter.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$c = Get-Credential
-PS C:\>Get-WmiObject Win32_DiskDrive -ComputerName Server01 -Credential $c
+PS C:\> $c = Get-Credential
+PS C:\> Get-WmiObject Win32_DiskDrive -ComputerName Server01 -Credential $c
 ```
 
 These commands use a credential object that the **Get-Credential** cmdlet returns to authenticate a user on a remote computer so they can use Windows Management Instrumentation (WMI) to manage the computer.
@@ -66,7 +66,7 @@ The second command uses the credential object in a Get-WmiObject command.
 This command gets information about the disk drives on the Server01 computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-WmiObject Win32_BIOS -ComputerName Server01 -Credential (Get-Credential -Credential Domain01\User01)
+PS C:\> Get-WmiObject Win32_BIOS -ComputerName Server01 -Credential (Get-Credential -Credential Domain01\User01)
 ```
 
 This command shows how to include a **Get-Credential** command in a  **Get-WmiObject** command.
@@ -75,8 +75,8 @@ This command uses the  Get-WmiObject cmdlet to get information about the BIOS on
 It uses the **Credential** parameter to authenticate the user, Domain01\User01, and a **Get-Credential** command as the value of the **Credential** parameter.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$c = Get-Credential -credential User01
-PS C:\>$c.Username
+PS C:\> $c = Get-Credential -credential User01
+PS C:\> $c.Username
 \User01
 ```
 
@@ -88,7 +88,7 @@ The first command gets a credential with the user name User01 and stores it in t
 The second command displays the value of the **Username** property of the resulting credential object.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
+PS C:\> $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
 
 This command uses the **PromptForCredential** method to prompt the user for their user name and password.
@@ -98,7 +98,7 @@ The **PromptForCredential** method is an alternative to using the **Get-Credenti
 When you use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the message box.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name ConsolePrompting -Value $true
+PS C:\> Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name ConsolePrompting -Value $true
 ```
 
 This example shows how to modify the registry so that the user is prompted at the command line, instead of by using a dialog box.
@@ -113,20 +113,20 @@ It might not work in all host programs.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
 The first command saves the user account name in the $User parameter. The value must have the "Domain\User" or "ComputerName\User" format.
-PS C:\>$User = "Domain01\User01"
+PS C:\> $User = "Domain01\User01"
 
 The second command uses the ConvertTo-SecureString cmdlet to create a secure string from a plain text password. The command uses the **AsPlainText** parameter to indicate that the string is plain text and the **Force** parameter to confirm that you understand the risks of using plain text.
-PS C:\>$PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
+PS C:\> $PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
 
 The third command uses the New-Object cmdlet to create a **PSCredential** object from the values in the $User and $PWord variables.
-PS C:\>$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+PS C:\> $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
 ```
 
 This example shows how to create a credential object that is identical to the object that **Get-Credential** returns without prompting the user.
 This method requires a plain text password, which might violate the security standards in some enterprises.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUsers
+PS C:\> Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUsers
 Windows PowerShell Credential Request
 Credential are required for access to the \\Server1\Scripts file share.
 Password for user ntdev\juneb:
@@ -137,7 +137,7 @@ This command format is designed for shared scripts and functions.
 In this case, the message tells the user why credentials are needed and gives them confidence that the request is legitimate.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
+PS C:\> Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
 
 Windows PowerShell Credential Request : Windows PowerShell Credential Request
 Warning: This credential is being requested by a script or application on the SERVER01 remote computer. Enter your credentials only if you

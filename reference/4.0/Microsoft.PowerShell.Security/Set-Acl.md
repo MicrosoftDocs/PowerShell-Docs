@@ -53,8 +53,8 @@ It uses the value of the **AclObject** parameter as a model and changes the valu
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$DogACL = Get-Acl C:\Dog.txt
-PS C:\>Set-Acl -Path C:\Cat.txt -AclObject $DogACL
+PS C:\> $DogACL = Get-Acl C:\Dog.txt
+PS C:\> Set-Acl -Path C:\Cat.txt -AclObject $DogACL
 ```
 
 These commands copy the values from the security descriptor of the Dog.txt file to the security descriptor of the Cat.txt file.
@@ -70,7 +70,7 @@ The value of the **AclObject** parameter is the model ACL, in this case, the ACL
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
+PS C:\> Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
 ```
 
 This command is almost the same as the command in the previous example, except that it uses a pipeline operator to send the security descriptor from a Get-Aclcommand to a **Set-Acl** command.
@@ -83,8 +83,8 @@ When the command completes, the ACLs of the Dog.txt and Cat.txt files are identi
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$NewAcl = Get-Acl File0.txt
-PS C:\>Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject $NewAcl
+PS C:\> $NewAcl = Get-Acl File0.txt
+PS C:\> Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject $NewAcl
 ```
 
 These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.

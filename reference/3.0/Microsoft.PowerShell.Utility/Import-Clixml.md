@@ -39,17 +39,17 @@ For an example of how to do this, see Example 2 in this topic.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-process | export-clixml pi.xml
-PS C:\>$processes = import-clixml pi.xml
+PS C:\> get-process | export-clixml pi.xml
+PS C:\> $processes = import-clixml pi.xml
 ```
 
 This command uses the Export-Clixml cmdlet to save a serialized copy of the process information returned by Get-Process.
 It then uses Import-Clixml to retrieve the contents of the serialized file and re-create an object that is stored in the $processes variable.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential | Export-CliXml $credxmlpath PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential = Import-CliXml $credxmlpath
+PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential | Export-CliXml $credxmlpath PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential = Import-CliXml $credxmlpath
 ```
 
 The Export-CliXml cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.

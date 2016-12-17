@@ -36,7 +36,7 @@ Beginning in Windows 8, **Checkpoint-Computer** cannot create more than one chec
 
 ### Example 1: Create a system restore point
 ```
-PS C:\>Checkpoint-Computer -Description "Install MyApp"
+PS C:\> Checkpoint-Computer -Description "Install MyApp"
 ```
 
 This command creates a system restore point called Install MyApp.
@@ -44,7 +44,7 @@ It uses the default APPLICATION_INSTALL restore point type.
 
 ### Example 2: Create a system MODIFY_SETTINGS restore point
 ```
-PS C:\>Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
+PS C:\> Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
 ```
 
 This command creates a MODIFY_SETTINGS system restore point called "ChangeNetSettings".

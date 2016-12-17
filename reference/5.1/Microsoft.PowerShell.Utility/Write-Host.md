@@ -36,7 +36,7 @@ The particular result depends on the program that is hosting Windows PowerShell.
 
 ### Example 1: Write to the console without adding a new line
 ```
-PS C:\>Write-Host "no newline test " -NoNewline
+PS C:\> Write-Host "no newline test " -NoNewline
 no newline test PS C:\>
 ```
 
@@ -44,7 +44,7 @@ This command displays the input to the console, but because of the *NoNewline* p
 
 ### Example 2: Write to the console and include a separator
 ```
-PS C:\>Write-Host (2,4,6,8,10,12) -Separator ", +2= "
+PS C:\> Write-Host (2,4,6,8,10,12) -Separator ", +2= "
 2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
 ```
 
@@ -53,7 +53,7 @@ The *Separator* parameter is used to add the string ", +2= (comma, space, +, 2, 
 
 ### Example 3: Write with different text and background colors
 ```
-PS C:\>Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -BackgroundColor white
+PS C:\> Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -BackgroundColor white
 ```
 
 This command displays the even numbers from 2 through 12.
@@ -61,7 +61,7 @@ It uses the *ForegroundColor* parameter to output dark green text and the *Backg
 
 ### Example 4: Write with different text and background colors
 ```
-PS C:\>Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
+PS C:\> Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
 Red on white text.
 ```
 

@@ -46,7 +46,7 @@ When multiple configuration documents fragments are delivered, they overwrite th
 
 ### Example 1: Publish a configuration to a remote computer
 ```
-PS C:\>Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
+PS C:\> Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
 This command publishes a configuration to a remote computer.

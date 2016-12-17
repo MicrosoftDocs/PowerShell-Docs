@@ -36,15 +36,15 @@ The user-interface (UI) culture determines which text strings are used for user 
 
 ### Example 1: Get culture settings
 ```
-PS C:\>Get-Culture
+PS C:\> Get-Culture
 ```
 
 This command displays information about the regional settings on the computer.
 
 ### Example 2: Format the properties of a culture object
 ```
-PS C:\>$C = Get-Culture
-PS C:\>$C | Format-List -Property *
+PS C:\> $C = Get-Culture
+PS C:\> $C | Format-List -Property *
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -65,14 +65,14 @@ DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
 Calendar                       : System.Globalization.GregorianCalendar
 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : False PS C:\>$C.Calendar
+IsReadOnly                     : False PS C:\> $C.Calendar
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
 AlgorithmType        : SolarCalendar
 CalendarType         : Localized
 Eras                 : {1}
 TwoDigitYearMax      : 2029
-IsReadOnly           : False PS C:\>$C.DateTimeFormat
+IsReadOnly           : False PS C:\> $C.DateTimeFormat
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -98,7 +98,7 @@ MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...} 
-MonthGenitiveNames               : {January, February, March, April...} PS C:\>$C.DateTimeFormat.FirstDayOfWeek
+MonthGenitiveNames               : {January, February, March, April...} PS C:\> $C.DateTimeFormat.FirstDayOfWeek
 Sunday
 ```
 

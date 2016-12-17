@@ -43,7 +43,7 @@ Before you use this cmdlet, review the information in [What's New in Windows Pow
 
 ### Example 1: Update a configuration
 ```
-PS C:\>$Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
+PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Update-DscConfiguration -CimSession $Session -Wait
 ```
 

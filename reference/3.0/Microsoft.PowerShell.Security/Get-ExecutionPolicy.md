@@ -37,15 +37,15 @@ For more information, see about_Execution_Policies (http://go.microsoft.com/fwli
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ExecutionPolicy
+PS C:\> Get-ExecutionPolicy
 Restricted
 ```
 
 This command gets the current execution policy for the computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Set-ExecutionPolicy RemoteSigned
-PS C:\>Get-ExecutionPolicy
+PS C:\> Set-ExecutionPolicy RemoteSigned
+PS C:\> Get-ExecutionPolicy
 RemoteSigned
 ```
 
@@ -54,7 +54,7 @@ The commands are separated by a semicolon (;).
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-ExecutionPolicy -list
+PS C:\> Get-ExecutionPolicy -list
 
 Scope  ExecutionPolicy
 -----  ---------------
@@ -64,7 +64,7 @@ Process  Undefined
 CurrentUser  AllSigned
 LocalMachine  RemoteSigned
 
-PS C:\>Get-ExecutionPolicy
+PS C:\> Get-ExecutionPolicy
 AllSigned
 ```
 
@@ -77,11 +77,11 @@ The second command gets only the effective execution policy, which is the one se
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command uses the **Get-ExecutionPolicy** cmdlet to get the effective execution policy in the current session.
-PS C:\>Get-ExecutionPolicy
+PS C:\> Get-ExecutionPolicy
 RemoteSigned
 
 The second command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is **RemoteSigned**. The **RemoteSigned** policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
-PS C:\>.\Start-ActivityTracker.ps1
+PS C:\> .\Start-ActivityTracker.ps1
 
 .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 is not digitally signed. The script will not execute on the system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
@@ -92,12 +92,12 @@ At line:1 char:1
 
 
 The third command uses the Unblock-File cmdlet to unblock the script so it can run in the session.Before running an **Unblock-File** command, read the script contents and verify that it is safe.
-PS C:\>Unblock-File -Path Start-ActivityTracker.ps1
+PS C:\> Unblock-File -Path Start-ActivityTracker.ps1
 
 This command shows the effect of the **Unblock-File** command. The command does not change the execution policy. However, it unblocks the script so it will run in Windows PowerShell.
-PS C:\>Get-ExecutionPolicy
+PS C:\> Get-ExecutionPolicy
 RemoteSigned
-PS C:\>Start-ActivityTracker.ps1
+PS C:\> Start-ActivityTracker.ps1
 Task 1:
 ```
 

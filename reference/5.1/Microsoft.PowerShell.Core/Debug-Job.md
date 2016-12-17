@@ -52,7 +52,7 @@ Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, 
 
 ### Example 1: Debug a job by job ID
 ```
-PS C:\>Debug-Job -ID 3
+PS C:\> Debug-Job -ID 3
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 3      Job3            RemoteJob       Running       True            PowerShellIx         TestWFDemo1.ps1
@@ -63,7 +63,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
           At C:\TestWFDemo1.ps1:8 char:5
           +     Write-Output -InputObject "Now writing output:" 
           +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          [DBG:PowerShellIx]: PS C:\>> list
+          [DBG:PowerShellIx]: PS C:\> > list
 
               3: 
               4:  workflow SampleWorkflowTest

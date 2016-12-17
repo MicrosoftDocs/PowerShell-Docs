@@ -42,14 +42,14 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-breakpoint | remove-breakpoint
+PS C:\> get-breakpoint | remove-breakpoint
 ```
 
 This command deletes all of the breakpoints in the current console.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -variable Name
-PS C:\>$b | remove-psbreakpoint
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
+PS C:\> $b | remove-psbreakpoint
 ```
 
 This command deletes a breakpoint.
@@ -64,13 +64,13 @@ As a result of this command, if you run the script, it runs to completion withou
 Also, the Get-PSBreakpoint cmdlet does not return this breakpoint.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-psbreakpoint -id 2
+PS C:\> remove-psbreakpoint -id 2
 ```
 
 This command deletes the breakpoint with breakpoint ID 2.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function del-psb { get-psbreakpoint | remove-psbreakpoint }
+PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```
 
 This simple function deletes all of the breakpoints in the current console.

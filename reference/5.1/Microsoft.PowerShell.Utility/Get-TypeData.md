@@ -44,14 +44,14 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get all extended type data
 ```
-PS C:\>Get-TypeData
+PS C:\> Get-TypeData
 ```
 
 This command gets all extended type data in the current session.
 
 ### Example 2: Get types by name
 ```
-PS C:\>"*Eventing*" | Get-TypeData
+PS C:\> "*Eventing*" | Get-TypeData
 TypeName                                                              Members
 --------                                                              -------
 System.Diagnostics.Eventing.Reader.EventLogConfiguration              {}System.Diagnostics.Eventing.Reader.EventLogRecord
@@ -63,7 +63,7 @@ This command gets all types in the current session that have names that contain 
 
 ### Example 3: Get the script block that creates a property value
 ```
-PS C:\>(Get-TypeData *EventLogEntry*).Members.EventID
+PS C:\> (Get-TypeData *EventLogEntry*).Members.EventID
 GetScriptBlock                     SetScriptBlock                                               IsHidden Name
 
 --------------                     --------------                                               -------- ----
@@ -74,7 +74,7 @@ This command gets the script block that creates the value of the EventID propert
 
 ### Example 4: Get the script block that defines a property for a specified object
 ```
-PS C:\>(Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
+PS C:\> (Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
 if ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq  "Date")                    
 {                        
     "{0}" -f $this.ToLongDateString()                    
@@ -103,7 +103,7 @@ The output shows the script block that creates the value of the DateTime propert
 
 ### Example 5: Find the file that adds extended data types to the session
 ```
-PS C:\>dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
+PS C:\> dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:180: 
 <Name>System.Diagnostics.EventLogEntry</Name>
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:182: 

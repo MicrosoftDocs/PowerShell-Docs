@@ -46,7 +46,7 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 
 ### Example 1: Invoke a method
 ```
-PS C:\>Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Authentication default
+PS C:\> Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Authentication default
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -62,7 +62,7 @@ A return value of 5 indicates that the service is already started.
 
 ### Example 2: Invoke a method by using input from a file
 ```
-PS C:\>Invoke-WSManAction -Action "StopService" -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
+PS C:\> Invoke-WSManAction -Action "StopService" -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -77,7 +77,7 @@ The file, Input.xml, contains the following content:
 
 ### Example 3: Invoke a method with specified parameter values
 ```
-PS C:\>Invoke-WSManAction -Action "Create" -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
+PS C:\> Invoke-WSManAction -Action "Create" -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Process
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -92,7 +92,7 @@ As a result, a new process is created to run Notepad, and the current directory 
 
 ### Example 4: Invoke a method on a remote computer
 ```
-PS C:\>Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -ComputerName "server01" -Authentication default
+PS C:\> Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -ComputerName "server01" -Authentication default
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service

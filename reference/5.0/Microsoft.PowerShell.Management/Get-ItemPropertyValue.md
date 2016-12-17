@@ -40,7 +40,7 @@ The **Get-ItemPropertyValue** gets the current value for a property that you spe
 
 ### Example 1: Get the value of the ProductID property
 ```
-PS C:\>Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
+PS C:\> Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
 94253-50000-11141-AA785
 ```
 
@@ -48,7 +48,7 @@ This command gets the value of the ProductID property of the \SOFTWARE\Microsoft
 
 ### Example 2: Get the last write time of a file or folder
 ```
-PS C:\>Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
+PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
 Wednesday, September 3, 2014 2:53:22 PM
 ```
 
@@ -56,7 +56,7 @@ This command gets the value of the LastWriteTime property, or the last time a fi
 
 ### Example 3: Get multiple property values of a file or folder
 ```
-PS C:\>Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
+PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
 
 
 

@@ -53,14 +53,14 @@ Additionally in Windows PowerShell 5.0, the Start-Transcript cmdlet works in Win
 
 ### Example 1: Start a transcript file with default settings
 ```
-PS C:\>Start-Transcript
+PS C:\> Start-Transcript
 ```
 
 This command starts a transcript in the default file location.
 
 ### Example 2: Start a transcript file at a specific location
 ```
-PS C:\>Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
+PS C:\> Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
 This command starts a transcript in the Transcript0.txt file in C:\transcripts.

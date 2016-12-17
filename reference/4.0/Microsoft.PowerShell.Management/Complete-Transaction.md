@@ -38,7 +38,7 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> dir m*
@@ -70,7 +70,7 @@ As a result, the second "dir" command shows that the registry is changed.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 Hive: HKEY_CURRENT_USER\Software
@@ -142,7 +142,7 @@ This is confirmed by a second "dir m*" command, which shows the changes.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> dir m*

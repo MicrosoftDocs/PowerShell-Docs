@@ -39,14 +39,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Test a session configuration file
 ```
-PS C:\>Test-PSSessionConfigurationFile -Path FullLanguage.pssc
+PS C:\> Test-PSSessionConfigurationFile -Path FullLanguage.pssc
 True
 ```
 
 This command uses the **Test-PSSessionConfigurationFile** cmdlet to test a new session configuration file before using it in a session configuration.
 ### Example 2: Test the session configuration file of a session configuration
 ```
-PS C:\>Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name Restricted).ConfigFilePath
+PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name Restricted).ConfigFilePath
 ```
 
 This command uses the **Test-PSSessionConfigurationFile** cmdlet to test the session configuration file that is being used to in the Restricted session configuration.

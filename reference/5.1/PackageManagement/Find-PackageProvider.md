@@ -39,7 +39,7 @@ Use the bootstrapper provider to find and install them.
 
 ### Example 1: Find all available package providers
 ```
-PS C:\>Find-PackageProvider
+PS C:\> Find-PackageProvider
 ```
 
 This command gets a list of all package providers that are available on the repositories supported by Package Management.
@@ -47,14 +47,14 @@ By default, those package providers are available on the PowerShell Gallery and 
 
 ### Example 2: Find all versions of a provider
 ```
-PS C:\>Find-PackageProvider -Name "Nuget" -AllVersions
+PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 ```
 
 This command finds all versions of the package provider named Nuget.
 
 ### Example 3: Find a provider from a specified source
 ```
-PS C:\>Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
+PS C:\> Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
 This command finds a package provider available by using a specified package source.

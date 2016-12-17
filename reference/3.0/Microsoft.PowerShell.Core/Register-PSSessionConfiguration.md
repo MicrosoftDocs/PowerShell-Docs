@@ -73,7 +73,7 @@ For information about session configuration files, see about_Session_Configurati
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Register-PSSessionConfiguration -Name NewShell -ApplicationBase c:\MyShells\ -AssemblyName MyShell.dll -ConfigurationTypeName MyClass
+PS C:\> Register-PSSessionConfiguration -Name NewShell -ApplicationBase c:\MyShells\ -AssemblyName MyShell.dll -ConfigurationTypeName MyClass
 ```
 
 This command registers the NewShell session configuration.
@@ -83,7 +83,7 @@ It also uses the **ConfigurationTypeName** parameter to specify a new class that
 To use this configuration, type "new-pssession -configurationname newshell".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+PS C:\> Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
 ```
 
 This command registers the MaintenanceShell configuration on the local computer.
@@ -94,8 +94,8 @@ The script can configure the session, including importing modules, adding Window
 If the script generates any errors, including non-terminating errors, the **New-PSSession** command fails.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
-PS C:\>Register-PSSessionConfiguration -name AdminShell -SecurityDescriptorSDDL $sddl -MaximumReceivedObjectSizeMB 20 -StartupScript C:\scripts\AdminShell.ps1
+PS C:\> $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
+PS C:\> Register-PSSessionConfiguration -name AdminShell -SecurityDescriptorSDDL $sddl -MaximumReceivedObjectSizeMB 20 -StartupScript C:\scripts\AdminShell.ps1
 ```
 
 This example registers the AdminShell session configuration.
@@ -111,10 +111,10 @@ When you click "OK" in the property sheet, the tool generates an SDDL for the se
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command uses the **Register-PSSessionConfiguration** cmdlet to register the MaintenanceShell configuration. It saves the object that the cmdlet returns in the $s variable.
-PS C:\>$s = Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+PS C:\> $s = Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
 
 The second command displays the contents of the $s variable.
-PS C:\>$s
+PS C:\> $s
 
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 Name                      Type                 Keys
@@ -123,13 +123,13 @@ MaintenanceShell          Container            {Name=MaintenanceShell}
 
 
 The third command uses the **GetType** method and its **FullName** property to display the type name of the object that **Register-PSSessionConfiguration** returns.
-PS C:\>$s.GetType().FullName
+PS C:\> $s.GetType().FullName
 
 TypeName: Microsoft.WSMan.Management.WSManConfigContainerElement
 
 
 The fourth command uses the Format-List cmdlet to display all the properties of the object that Register-PSSessionConfiguration returns in a list. The **PSPath** property shows that the object is stored in a directory of the WSMan: drive.
-PS C:\>$s | Format-List -Property *
+PS C:\> $s | Format-List -Property *
 
 PSPath            : Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell
 PSParentPath      : Microsoft.WSMan.Management\WSMan::localhost\Plugin
@@ -143,7 +143,7 @@ TypeNameOfElement : Container
 
 
 The fifth command uses the Get-ChildItem cmdlet to display the items in the WSMan:\LocalHost\PlugIn path. These include the new MaintenanceShell configuration and the two default configurations that come with Windows PowerShell.
-PS C:\>dir WSMan:\LocalHost\Plugin
+PS C:\> dir WSMan:\LocalHost\Plugin
 
 Name                      Type                 Keys
 ----                      ----                 ----
@@ -156,7 +156,7 @@ This example shows that a Register-PSSessionConfiguration command returns a WSMa
 It also shows how to find the container elements in the WSMan: drive.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
+PS C:\> Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
 
 # Add-Profile.ps1
 . c:\users\admin01\documents\windowspowershell\profile.ps1
@@ -173,19 +173,19 @@ For more information about dot sourcing, see about_Scopes.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first pair of commands use the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-Language file. The second command creates a restricted-language file. Other than the value of the **LanguageMode** parameter, the session configuration files are equivalent.
-PS C:\>New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
-PS C:\>New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode Restricted
+PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
+PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode Restricted
 
 The second pair of commands use the configuration files to create session configurations on the local computer.
-PS C:\>Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
-PS C:\>Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
+PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
+PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of command creates two sessions, each of which uses one of the session configurations that was created in the previous command pair.
-PS C:\>$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
-PS C:\>$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
+PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
-PS C:\>Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS C:\> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
@@ -193,7 +193,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
 
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session. Because these language elements are permitted in the restricted-language session, the command succeeds.
-PS C:\>Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS C:\> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 Before
 ```
 

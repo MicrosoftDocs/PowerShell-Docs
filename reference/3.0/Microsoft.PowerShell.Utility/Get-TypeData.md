@@ -41,20 +41,20 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>Get-TypeData
+PS C:\> Get-TypeData
 ```
 
 This command gets all extended type data in the current session.
 ### Example 2
 ```
-PS C:\>"*Eventing*" | Get-TypeData
+PS C:\> "*Eventing*" | Get-TypeData
 TypeName                                                              Members--------                                                              -------System.Diagnostics.Eventing.Reader.EventLogConfiguration              {}System.Diagnostics.Eventing.Reader.EventLogRecord                    {}System.Diagnostics.Eventing.Reader.ProviderMetadata                   {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
 ```
 
 This command gets all types in the current session that have names that contain "Eventing".
 ### 1:
 ```
-PS C:\>(Get-TypeData *EventLogEntry*).Members.EventID
+PS C:\> (Get-TypeData *EventLogEntry*).Members.EventID
 GetScriptBlock                     SetScriptBlock                                               IsHidden Name
 
 --------------                     --------------                                               -------- ----
@@ -64,7 +64,7 @@ $this.get_EventID() -band 0xFFFF                                                
 This command gets the script block that creates the value of the **EventID** property of **EventLogEntry** objects.
 ### Example 3
 ```
-PS C:\>(Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
+PS C:\> (Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
 if ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq  "Date")                    
 {                        
     "{0}" -f $this.ToLongDateString()                    
@@ -92,7 +92,7 @@ The command gets the **DateTime** key in Members and its **GetScriptBlock** prop
 The output shows the script block that creates the value of the **DateTime** property of every **System.DateTime** object in Windows PowerShell.
 ### Example 4
 ```
-PS C:\>dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
+PS C:\> dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:180: 
 <Name>System.Diagnostics.EventLogEntry</Name>
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:182: 

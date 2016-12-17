@@ -38,14 +38,14 @@ For more information about location stacks, see the Notes.
 
 ### Example 1: Change location
 ```
-PS C:\>Push-Location -Path "C:\Windows"
+PS C:\> Push-Location -Path "C:\Windows"
 ```
 
 This command pushes the current location onto the default location stack and then changes the location to C:\Windows.
 
 ### Example 2: Change location in a named stack
 ```
-PS C:\>Push-Location -Path "HKLM:\Software\Policies" -StackName RegFunction
+PS C:\> Push-Location -Path "HKLM:\Software\Policies" -StackName RegFunction
 ```
 
 This command pushes the current location onto the RegFunction stack and changes the current location to the HKLM:\Software\Policies location.
@@ -53,7 +53,7 @@ You can use the **Location** cmdlets in any Windows PowerShell drive (PSDrive).
 
 ### Example 3: Push the current location onto the default stack
 ```
-PS C:\>Push-Location
+PS C:\> Push-Location
 ```
 
 This command pushes the current location onto the default stack.
@@ -61,7 +61,7 @@ It does not change the location.
 
 ### Example 4: Create and use a named stack
 ```
-PS C:\>Push-Location ~ -StackName "Stack2"
+PS C:\> Push-Location ~ -StackName "Stack2"
 PS C:\Users\User01> Pop-Location -StackName "Stack2"
 PS C:\>
 ```
@@ -76,7 +76,7 @@ Without *StackName*, **Pop-Location** would pop the location from the unnamed de
 
 ### Example 5: Show the current stack
 ```
-PS C:\>Get-Location -Stack
+PS C:\> Get-Location -Stack
 ```
 
 This commmand shows the current location stack.

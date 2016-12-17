@@ -33,7 +33,7 @@ Create a key binding by running the Set-PSReadlineKeyHandler cmdlet.
 
 ### Example 1: Remove a binding
 ```
-PS C:\>Remove-PSReadlineKeyHandler -Chord "Shift+Ctrl+B"
+PS C:\> Remove-PSReadlineKeyHandler -Chord "Shift+Ctrl+B"
 ```
 
 This command removes the binding from the key combination, or chord, Ctrl+Shift+B.

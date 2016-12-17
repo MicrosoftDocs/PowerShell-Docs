@@ -59,17 +59,17 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Delete a scheduled job
 ```
-PS C:\>Unregister-ScheduledJob TestJob
+PS C:\> Unregister-ScheduledJob TestJob
 ```
 
 This command deletes the TestJob scheduled job on the local computer.
 
 ### Example 2: Delete all scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Unregister-ScheduledJob -Force
+PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
  
                       
-PS C:\>Unregistered-ScheduledJob -Name * -Force
+PS C:\> Unregistered-ScheduledJob -Name * -Force
 ```
 
 This examples shows two different commands that delete all scheduled jobs on the local computer.
@@ -83,7 +83,7 @@ Both commands use the **Force** parameter, which deletes a scheduled job even if
 
 ### Example 3: Delete a scheduled job on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName Server01 { Unregister-ScheduledJob -Name Test*}
+PS C:\> Invoke-Command -ComputerName Server01 { Unregister-ScheduledJob -Name Test*}
 ```
 
 This command deletes scheduled jobs with names that begin with "Test" on the Server01 remote computer.
