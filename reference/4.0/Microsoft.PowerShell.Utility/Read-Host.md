@@ -34,7 +34,7 @@ Because you can save the input as a secure string, you can use this cmdlet to pr
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$age = read-host "Please enter your age"
+PS C:\> $age = read-host "Please enter your age"
 ```
 
 This command displays the string "Please enter your age:" as a prompt.
@@ -42,7 +42,7 @@ When a value is entered and the Enter key is pressed, the value is stored in the
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$pwd_secure_string = read-host "Enter a Password" -assecurestring
+PS C:\> $pwd_secure_string = read-host "Enter a Password" -assecurestring
 ```
 
 This command displays the string "Enter a Password:" as a prompt.

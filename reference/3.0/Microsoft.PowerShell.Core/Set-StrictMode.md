@@ -44,8 +44,8 @@ Unnamed variables are not permitted.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-strictmode -version 1.0
-PS C:\>$a -gt 5
+PS C:\> set-strictmode -version 1.0
+PS C:\> $a -gt 5
 False
 The variable $a cannot be retrieved because it has not been set yet.
 At line:1 char:3
@@ -60,17 +60,17 @@ As a result, attempts to reference variables that are not initialized will fail.
 The sample output shows the effect of version 1.0 strict mode.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\># set-strictmode -version 2.0
+PS C:\> # set-strictmode -version 2.0
 # Strict mode is off by default.
 
-PS C:\>function add ($a, $b) {$a + $b}
-PS C:\>add 3 4
+PS C:\> function add ($a, $b) {$a + $b}
+PS C:\> add 3 4
 7
-PS C:\>add(3,4)
+PS C:\> add(3,4)
 3
 4
-PS C:\>set-strictmode -version 2.0
-PS C:\>add(3,4)
+PS C:\> set-strictmode -version 2.0
+PS C:\> add(3,4)
 
 The function or command was called like a method. Parameters should be separated by spaces, as described in 'Get-Help about_Parameter.'
 At line:1 char:4
@@ -78,13 +78,13 @@ At line:1 char:4
 + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
 + FullyQualifiedErrorId : StrictModeFunctionCallWithParens
 
-PS C:\>set-strictmode -off
-PS C:\>$string = "This is a string."
-PS C:\>$string.Month
+PS C:\> set-strictmode -off
+PS C:\> $string = "This is a string."
+PS C:\> $string.Month
 PS C:\>
-PS C:\>set-strictmode -version 2.0
-PS C:\>$string = "This is a string."
-PS C:\>$string.Month
+PS C:\> set-strictmode -version 2.0
+PS C:\> $string = "This is a string."
+PS C:\> $string.Month
 
 Property 'month' cannot be found on this object; make sure it exists.
 At line:1 char:9

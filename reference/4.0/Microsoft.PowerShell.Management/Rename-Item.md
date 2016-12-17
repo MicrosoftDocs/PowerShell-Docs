@@ -44,14 +44,14 @@ To move and rename an item, use the Move-Item cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
+PS C:\> rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
 ```
 
 This command renames the file daily_file.txt to monday_file.txt.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>rename-item -path project.txt -newname d:\archive\old-project.txt
+PS C:\> rename-item -path project.txt -newname d:\archive\old-project.txt
 
 Rename-Item : Cannot rename because the target specified represents a path or device name.
 At line:1 char:12
@@ -59,7 +59,7 @@ At line:1 char:12
 + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PSArgumentException
 + FullyQualifiedErrorId : Argument,Microsoft.PowerShell.Commands.RenameItemCommand
 
-PS C:\>move-item -path project.txt -destination d:\archive\old-project.txt
+PS C:\> move-item -path project.txt -destination d:\archive\old-project.txt
 # Command succeeds
 ```
 
@@ -75,7 +75,7 @@ The Move-Item cmdlet lets you specify both a new path and a new name in the valu
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
+PS C:\> rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
 ```
 
 This command uses the Rename-Item cmdlet to rename a registry key from Advertising to Marketing.
@@ -83,7 +83,7 @@ When the command is complete, the key is renamed, but the registry entries in th
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt','.log' }
+PS C:\> get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt','.log' }
 ```
 
 This example shows how to use the Replace operator to rename multiple files, even though the NewName parameter does not accept wildcard characters.

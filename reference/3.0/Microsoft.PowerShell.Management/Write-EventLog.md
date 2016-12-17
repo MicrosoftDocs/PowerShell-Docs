@@ -35,13 +35,13 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>write-eventlog -logname Application -source MyApp -eventID 3001 -entrytype Information -message "MyApp added a user-requested feature to the display." -category 1 -rawdata 10,20
+PS C:\> write-eventlog -logname Application -source MyApp -eventID 3001 -entrytype Information -message "MyApp added a user-requested feature to the display." -category 1 -rawdata 10,20
 ```
 
 This command writes an event from the MyApp source to the Application event log.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>write-eventlog -computername Server01 -logname Application -source MyApp -eventID 3001 -message "MyApp added a user-requested feature to the display."
+PS C:\> write-eventlog -computername Server01 -logname Application -source MyApp -eventID 3001 -message "MyApp added a user-requested feature to the display."
 ```
 
 This command writes an event from the MyApp source to the Application event log on the Server01 remote computer.

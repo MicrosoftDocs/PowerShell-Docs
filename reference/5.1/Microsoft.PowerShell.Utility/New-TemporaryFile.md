@@ -36,7 +36,7 @@ This cmdlet creates temporary files that you can use in scripts.
 
 ### Example 1: Create a temporary file
 ```
-PS C:\>$TempFile = New-TemporaryFile
+PS C:\> $TempFile = New-TemporaryFile
 ```
 
 This command generates a .tmp file in your temporary folder, and then stores a reference to the file in the $TempFile variable.

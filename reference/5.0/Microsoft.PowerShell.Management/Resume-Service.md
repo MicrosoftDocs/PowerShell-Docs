@@ -49,7 +49,7 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Resume a service on the local computer
 ```
-PS C:\>Resume-Service "sens"
+PS C:\> Resume-Service "sens"
 ```
 
 This command resumes the System Event Notification service  on the local computer.
@@ -58,7 +58,7 @@ The command uses the *Name* parameter to specify the service name of the service
 
 ### Example 2: Resume all suspended services
 ```
-PS C:\>Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
+PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
 This command resumes all of the suspended  services on the computer.

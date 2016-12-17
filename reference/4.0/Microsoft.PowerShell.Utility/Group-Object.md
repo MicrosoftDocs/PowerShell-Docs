@@ -36,14 +36,14 @@ If you specify more than one property, Group-Object first groups them by the val
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem *.doc | group-object -property length
+PS C:\> get-childitem *.doc | group-object -property length
 ```
 
 This command gets the files in the current location that have a .doc extension and groups them by size.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem | sort-object -property extension | group-object -property extension
+PS C:\> get-childitem | sort-object -property extension | group-object -property extension
 ```
 
 This command gets the files in the current location, sorts them by file name extension, and then groups them by file name extension.
@@ -51,7 +51,7 @@ Note that the files are sorted before they are grouped.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>1..35 | group-object -property {$_ % 2},{$_ % 3}
+PS C:\> 1..35 | group-object -property {$_ % 2},{$_ % 3}
 ```
 
 This example shows how to use script blocks as the value of the Property parameter.
@@ -60,8 +60,8 @@ This command displays the integers from 1 to 35, grouped by the remainder left w
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname system -newest 1000
-PS C:\>$events | group-object -property eventID
+PS C:\> $events = get-eventlog -logname system -newest 1000
+PS C:\> $events | group-object -property eventID
 
 Count Name                      Group
 ----- ----                      -----
@@ -81,7 +81,7 @@ In the output, the Count column represents the number of entries in each group, 
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-process | group-object -property priorityclass
+PS C:\> get-process | group-object -property priorityclass
 
 Count Name                Group
 ----- ----                -----
@@ -90,7 +90,7 @@ Count Name                Group
 3 High                {System.Diagnostics.Process (Newproc), System.Diagnostics.Process (winlogon), System.D...
 2 BelowNormal         {System.Diagnostics.Process (winperf),
 
-PS C:\>get-process | group-object -property company -noelement
+PS C:\> get-process | group-object -property company -noelement
 
 Count Name
 ----- ----
@@ -113,7 +113,7 @@ The results are shown in the following sample output.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-eventlog -logname system -newest 1000 | group-object -property {$_.TimeWritten - $_.TimeGenerated}
+PS C:\> get-eventlog -logname system -newest 1000 | group-object -property {$_.TimeWritten - $_.TimeGenerated}
 ```
 
 This command demonstrates how to provide the value of the Property parameter as a script block.
@@ -128,7 +128,7 @@ That value is used to group the 1,000 most recent events.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-childitem | group-object extension -noelement
+PS C:\> get-childitem | group-object extension -noelement
 
 Count Name
 ----- ----
@@ -153,19 +153,19 @@ The results are shown in the following sample output.
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>"a", "b", "c", "c", "d" | get-unique
+PS C:\> "a", "b", "c", "c", "d" | get-unique
 a
 b
 c
 d
 
-PS C:\>"a", "b", "c", "c", "d" | group-object -noelement | where {$_.Count -gt 1}
+PS C:\> "a", "b", "c", "c", "d" | group-object -noelement | where {$_.Count -gt 1}
 
 Count Name
 ----- ----
 2 c
 
-PS C:\>get-process | group-object -property Name -noelement | where {$_.count -gt 1}
+PS C:\> get-process | group-object -property Name -noelement | where {$_.count -gt 1}
 
 Count Name
 ----- ----
@@ -190,15 +190,15 @@ The results are shown in the following sample output.
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>$a = get-command get-*, set-* -type cmdlet | group-object -property verb -ashashtable -asstring
-PS C:\>$a
+PS C:\> $a = get-command get-*, set-* -type cmdlet | group-object -property verb -ashashtable -asstring
+PS C:\> $a
 
 Name    Value
 ----    -----
 Get     {Get-PSCallStack, Get-PSBreakpoint, Get-PSDrive, Get-PSSession...}
 Set     {Set-Service, Set-StrictMode, Set-PSDebug, Set-PSSessionConfiguration...}
 
-PS C:\>$a.get
+PS C:\> $a.get
 
 CommandType     Name                 Definition
 -----------     ----                 ----------

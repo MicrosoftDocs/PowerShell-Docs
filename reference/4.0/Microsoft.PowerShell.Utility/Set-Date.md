@@ -41,7 +41,7 @@ To specify a change interval, use the Adjust parameter.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Set-Date -Date (Get-Date).AddDays(3)
+PS C:\> Set-Date -Date (Get-Date).AddDays(3)
 ```
 
 Description
@@ -55,7 +55,7 @@ It uses the Get-Date cmdlet to get the current date and time and applies the Add
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-date -adjust -0:10:0 -displayHint time
+PS C:\> set-date -adjust -0:10:0 -displayHint time
 ```
 
 Description
@@ -68,8 +68,8 @@ The DisplayHint parameter tells Windows PowerShell to display only the time, but
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$t = get-date
-PS C:\>set-date -date $t
+PS C:\> $t = get-date
+PS C:\> set-date -date $t
 ```
 
 Description
@@ -82,8 +82,8 @@ The second command uses the Date parameter to pass the DateTime object in $t to 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$90mins = new-timespan -minutes 90
-PS C:\>set-date -adjust $90mins
+PS C:\> $90mins = new-timespan -minutes 90
+PS C:\> set-date -adjust $90mins
 ```
 
 Description

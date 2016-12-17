@@ -40,7 +40,7 @@ You cannot uninstall a module if it has other modules as dependencies.
 
 ### Example 1: Get a module and uninstall it
 ```
-PS C:\>Get-InstalledModule -Name "xPSDesiredStateConfiguration" -RequiredVersion 3.6.0.0 | Uninstall-Module
+PS C:\> Get-InstalledModule -Name "xPSDesiredStateConfiguration" -RequiredVersion 3.6.0.0 | Uninstall-Module
 ```
 
 This command gets version 3.6.0.0 of the module named xPSDesiredStateConfiguration, and then uses the pipeline operator to pass it to the **Uninstall-Module** cmdlet, which uninstalls it.

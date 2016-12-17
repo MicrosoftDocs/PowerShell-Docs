@@ -48,7 +48,7 @@ A location can be a file system location, such as a directory, or a location exp
 
 ### Example 1: Get child items in the current directory
 ```
-PS C:\>Get-ChildItem
+PS C:\> Get-ChildItem
 ```
 
 This command gets the child items in the current location.
@@ -60,7 +60,7 @@ The valid values for mode are d (directory), a (archive), r (read-only), h (hidd
 
 ### Example 2: Get all files with the specified file extension in the current directory and subdirectories
 ```
-PS C:\>Get-ChildItem -Path "*.txt" -Recurse -Force
+PS C:\> Get-ChildItem -Path "*.txt" -Recurse -Force
 ```
 
 This command gets all of the .txt files in the current directory and its subdirectories.
@@ -73,7 +73,7 @@ For instance, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 
 ### Example 3: Get all child items using an inclusion and exclusion
 ```
-PS C:\>Get-ChildItem -Path "C:\Windows\Logs\*" -Include "*.txt" -Exclude "A*"
+PS C:\> Get-ChildItem -Path "C:\Windows\Logs\*" -Include "*.txt" -Exclude "A*"
 ```
 
 This command lists the .txt files in the Logs subdirectory, except for those whose names start with the letter A.
@@ -82,22 +82,22 @@ Because the command does not include the *Recurse* parameter, the command does n
 
 ### Example 4: Get all registry keys in a specific key
 ```
-PS C:\>Get-ChildItem -Path "HKLM:\Software"
+PS C:\> Get-ChildItem -Path "HKLM:\Software"
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 
 ### Example 5: Get the name of items in the current directory
 ```
-PS C:\>Get-ChildItem -Name
+PS C:\> Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
 
 ### Example 6: Get all certificates in a certification drive that have code-signing authority
 ```
-PS C:\>Import-Module Microsoft.PowerShell.Security
-PS C:\>Get-ChildItem -Path "Cert:\*" -Recurse -CodeSigningCert
+PS C:\> Import-Module Microsoft.PowerShell.Security
+PS C:\> Get-ChildItem -Path "Cert:\*" -Recurse -CodeSigningCert
 ```
 
 This command gets all of the certificates in the Windows PowerShell Cert: drive that have code-signing authority.
@@ -115,7 +115,7 @@ For more information about the Certificate provider and the Cert: drive, go to h
 
 ### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
 ```
-PS C:\>Get-ChildItem -Path C:\Windows -Include "*mouse*" -Exclude "*.png"
+PS C:\> Get-ChildItem -Path C:\Windows -Include "*mouse*" -Exclude "*.png"
 ```
 
 This command gets all of the items in the C:\Windows directory and its subdirectories that have mouse in the file name, except for those with a .png file name extension.

@@ -44,7 +44,7 @@ To identify the service, enter its service name or submit a service object, or p
 
 ### Example 1: Change a display name
 ```
-PS C:\>Set-Service -Name "lanmanworkstation" -DisplayName "LanMan Workstation"
+PS C:\> Set-Service -Name "lanmanworkstation" -DisplayName "LanMan Workstation"
 ```
 
 This command changes the display name of the lanmanworkstation service to LanMan Workstation.
@@ -52,7 +52,7 @@ The default is Workstation.
 
 ### Example 2: Change the startup type of services
 ```
-PS C:\>Get-WMIObject win32_service -Filter "name = 'SysmonLog'"
+PS C:\> Get-WMIObject win32_service -Filter "name = 'SysmonLog'"
 
 ExitCode  : 0
 Name      : SysmonLog
@@ -94,7 +94,7 @@ The final command displays the start mode of all services on the computer.
 
 ### Example 3: Change the description of a service
 ```
-PS C:\>Set-Service -Name "Schedule" -ComputerName "S1" -Description "Configures and schedules tasks."
+PS C:\> Set-Service -Name "Schedule" -ComputerName "S1" -Description "Configures and schedules tasks."
 PS C:\> Get-WMIObject win32_service -ComputerName "s1" | Where-Object {$_.Name -eq "Schedule"} | Format-List Name, Description
 ```
 
@@ -114,7 +114,7 @@ Another pipeline operator sends the result to the Format-List cmdlet, which form
 
 ### Example 4: Start a service on a remote computer
 ```
-PS C:\>Set-Service -Name "winrm" -Status Running -PassThru -ComputerName "Server02"
+PS C:\> Set-Service -Name "winrm" -Status Running -PassThru -ComputerName "Server02"
 ```
 
 This command starts the WinRM service on the Server02 computer.
@@ -122,7 +122,7 @@ The command uses the Status parameter to specify the desired status, which is ru
 
 ### Example 5: Suspend a service on remote computers
 ```
-PS C:\>Get-Service -Name "schedule" -ComputerName "S1", "S2" | Set-Service -Status paused
+PS C:\> Get-Service -Name "schedule" -ComputerName "S1", "S2" | Set-Service -Status paused
 ```
 
 This command suspends the Schedule service on the S1 and S2 remote computers.
@@ -131,7 +131,7 @@ A pipeline operator (|) sends the service to **Set-Service**, which changes its 
 
 ### Example 6: Stop a service on the local computer
 ```
-PS C:\>$s = Get-Service -Name "schedule"
+PS C:\> $s = Get-Service -Name "schedule"
 PS C:\> Set-Service -InputObject $s -Status stopped
 ```
 

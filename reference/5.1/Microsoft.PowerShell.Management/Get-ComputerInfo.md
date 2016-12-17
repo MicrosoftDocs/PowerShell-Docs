@@ -32,14 +32,14 @@ The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operati
 
 ### Example 1: Get all computer properties
 ```
-PS C:\>Get-ComputerInfo
+PS C:\> Get-ComputerInfo
 ```
 
 This command gets all system and operating system properties from the computer.
 
 ### Example 2: Get all computer operating system properties
 ```
-PS C:\>Get-ComputerInfo -Property "os*"
+PS C:\> Get-ComputerInfo -Property "os*"
 ```
 
 This command gets all operating system properties from the computer.

@@ -34,7 +34,7 @@ Modules that include a Diagnostics folder are inspected for Pester tests in the 
 
 ### Example 1: Get Operation Validation tests
 ```
-PS C:\>Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
+PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
     Type:     Simple
     File:     addnum.tests.ps1
     FilePath: C:\temp\modules\AddNumbers\Diagnostics\Simple\addnum.tests.ps1

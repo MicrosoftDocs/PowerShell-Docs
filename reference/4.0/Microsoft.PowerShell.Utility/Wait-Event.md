@@ -37,23 +37,23 @@ It also allows you to determine the response to an event in two different ways: 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>wait-event
+PS C:\> wait-event
 ```
 
 This command waits for the next event that is raised.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>wait-event -sourceIdentifier "ProcessStarted"
+PS C:\> wait-event -sourceIdentifier "ProcessStarted"
 ```
 
 This command waits for the next event that is raised and that has a source identifier of "ProcessStarted".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$timer.Interval = 2000
-PS C:\>$timer.Autoreset = $false
-PS C:\>$timer.Enabled = $true; Wait-Event Timer.Elapsed
+PS C:\> $timer.Interval = 2000
+PS C:\> $timer.Autoreset = $false
+PS C:\> $timer.Enabled = $true; Wait-Event Timer.Elapsed
 
 # After 2 seconds
 
@@ -71,7 +71,7 @@ This command uses the Wait-Event cmdlet to wait for a timer event on a timer tha
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>wait-event -sourceIdentifier "ProcessStarted" -timeout 90
+PS C:\> wait-event -sourceIdentifier "ProcessStarted" -timeout 90
 ```
 
 This command waits up to 90 seconds for the next event that is raised and that has a source identifier of "ProcessStarted".

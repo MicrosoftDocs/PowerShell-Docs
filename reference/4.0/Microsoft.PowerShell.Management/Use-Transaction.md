@@ -39,16 +39,16 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-transaction
-PS C:\>$transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
-PS C:\>$transactedString.Append("Hello")
-PS C:\>use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
-PS C:\>$transactedString.ToString()
+PS C:\> start-transaction
+PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
+PS C:\> $transactedString.Append("Hello")
+PS C:\> use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
+PS C:\> $transactedString.ToString()
 Hello
-PS C:\>use-transaction -transactedScript { $transactedString.ToString() } -UseTransaction
+PS C:\> use-transaction -transactedScript { $transactedString.ToString() } -UseTransaction
 Hello, World
-PS C:\>complete-transaction
-PS C:\>$transactedString.ToString()
+PS C:\> complete-transaction
+PS C:\> $transactedString.ToString()
 Hello, World
 ```
 
@@ -86,12 +86,12 @@ The final command uses the ToString method to display the resulting value of the
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-transaction
-PS C:\>$transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
-PS C:\>$transactedString.Append("Hello")
-PS C:\>use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
-PS C:\>undo-transaction
-PS C:\>$transactedString.ToString()
+PS C:\> start-transaction
+PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
+PS C:\> $transactedString.Append("Hello")
+PS C:\> use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
+PS C:\> undo-transaction
+PS C:\> $transactedString.ToString()
 Hello
 ```
 

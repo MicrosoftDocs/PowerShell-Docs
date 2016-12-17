@@ -56,7 +56,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 ### Example 1: Delegate client credentials
 ```
-PS C:\>Enable-WSManCredSSP -Role "Client" -DelegateComputer "server02.accounting.fabrikam.com"
+PS C:\> Enable-WSManCredSSP -Role "Client" -DelegateComputer "server02.accounting.fabrikam.com"
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
@@ -71,7 +71,7 @@ This command allows the client credentials to be delegated to the server02 compu
 
 ### Example 2: Delegate client credentials to all computers in a domain
 ```
-PS C:\>Enable-WSManCredSSP -Role "Client" -DelegateComputer "*.accounting.fabrikam.com"
+PS C:\> Enable-WSManCredSSP -Role "Client" -DelegateComputer "*.accounting.fabrikam.com"
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
@@ -86,7 +86,7 @@ This command allows the client credentials to be delegated to all the computers 
 
 ### Example 3: Delegate client credentials to multiple computers
 ```
-PS C:\>Enable-WSManCredSSP -Role "Client" -DelegateComputer "server02.accounting.fabrikam.com", "server03.accounting.fabrikam.com", "server04.accounting.fabrikam.com"
+PS C:\> Enable-WSManCredSSP -Role "Client" -DelegateComputer "server02.accounting.fabrikam.com", "server03.accounting.fabrikam.com", "server04.accounting.fabrikam.com"
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
@@ -101,7 +101,7 @@ This command allows the client credentials to be delegated to multiple computers
 
 ### Example 4: Allow a computer to act as a delegate
 ```
-PS C:\>Enable-WSManCredSSP -Role "Server"
+PS C:\> Enable-WSManCredSSP -Role "Server"
 ```
 
 This command allows a computer to act as a delegate for another.
@@ -111,7 +111,7 @@ This example sets the CredSSP item in the Service node of WSMan to true.
 
 ### Example 5: Allow a computer to act as a delegate by using Set-Item
 ```
-PS C:\>Connect-WSMan -ComputerName "server02"
+PS C:\> Connect-WSMan -ComputerName "server02"
 PS C:\> Set-Item -Path "wsman:\server02\service\auth\credSSP" -Value $True
 ```
 

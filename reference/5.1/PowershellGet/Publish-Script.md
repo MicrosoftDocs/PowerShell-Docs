@@ -40,7 +40,7 @@ The **Publish-Script** cmdlet publishes the specified script to the online galle
 
 ### Example 1: Create a script file, add content to it, and publish it
 ```
-PS C:\>New-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Version 1.0 -Author "pattif@microsoft.com" -Description "my test script file description goes here"
+PS C:\> New-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Version 1.0 -Author "pattif@microsoft.com" -Description "my test script file description goes here"
 PS C:\> Get-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
 <#PSScriptInfo
 
@@ -77,7 +77,7 @@ PS C:\> Get-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
  my test script file description goes here 
 
 #> 
-Param() PS C:\>Add-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Value @"
+Param() PS C:\> Add-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Value @"
 
 Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
 
@@ -89,7 +89,7 @@ Demo-ScriptWorkflow
 PS C:\> Test-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
 Version    Name                      Author               Description                                                                                
 -------    ----                      ------               -----------                                                                                
-1.0        Demo-Script               pattif@microsoft.com my test script file description goes here PS C:\>Publish-Script -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Repository "LocalRepo1"
+1.0        Demo-Script               pattif@microsoft.com my test script file description goes here PS C:\> Publish-Script -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Repository "LocalRepo1"
 PS C:\> Find-Script -Repository "LocalRepo1" -Name "Demo-Script"
 Version    Name                                Type       Repository           Description                                                           
 -------    ----                                ----       ----------           -----------                                                           

@@ -39,7 +39,7 @@ If the file is not signed, the information is retrieved, but the fields are blan
 
 ### Example 1: Get the Authenticode signature for a file
 ```
-PS C:\>Get-AuthenticodeSignature -FilePath "C:\Test\NewScript.ps1"
+PS C:\> Get-AuthenticodeSignature -FilePath "C:\Test\NewScript.ps1"
 ```
 
 This command gets information about the Authenticode signature in the NewScript.ps1 file.
@@ -47,7 +47,7 @@ It uses the *FilePath* parameter to specify the file.
 
 ### Example 2: Get the Authenticode signature for multiple files
 ```
-PS C:\>Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
+PS C:\> Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
 
 This command gets information about the Authenticode signature for the four files listed at the command line.
@@ -55,7 +55,7 @@ In this example, the name of the *FilePath* parameter, which is optional, is omi
 
 ### Example 3: Get only valid Authenticode signatures for multiple files
 ```
-PS C:\>Get-ChildItem $pshome\*.* | ForEach-object {Get-AuthenticodeSignature $_} | where {$_.status -eq "Valid"}
+PS C:\> Get-ChildItem $pshome\*.* | ForEach-object {Get-AuthenticodeSignature $_} | where {$_.status -eq "Valid"}
 ```
 
 This command lists all of the files in the $pshome directory that have a valid Authenticode signature.

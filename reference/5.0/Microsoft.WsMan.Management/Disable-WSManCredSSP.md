@@ -48,14 +48,14 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 ### Example 1: Disable CredSSP on a client
 ```
-PS C:\>Disable-WSManCredSSP -Role Client
+PS C:\> Disable-WSManCredSSP -Role Client
 ```
 
 This command disables CredSSP on the client, which prevents delegation to servers.
 
 ### Example 2: Disable CredSSP on a server
 ```
-PS C:\>Disable-WSManCredSSP -Role Server
+PS C:\> Disable-WSManCredSSP -Role Server
 ```
 
 This command disables CredSSP on the server, which prevents delegation from clients.

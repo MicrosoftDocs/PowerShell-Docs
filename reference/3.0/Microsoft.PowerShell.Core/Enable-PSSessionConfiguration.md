@@ -41,20 +41,20 @@ Instead, use the more comprehensive cmdlet, Enable-PSRemoting.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Enable-PSSessionConfiguration
+PS C:\> Enable-PSSessionConfiguration
 ```
 
 This command re-enables the Microsoft.PowerShell default session configuration on the computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
+PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
 ```
 
 This command re-enables the MaintenanceShell and AdminShell session configurations on the computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Enable-PSSessionConfiguration -name *
-PS C:\>Get-PSSessionConfiguration | Enable-PSSessionConfiguration
+PS C:\> Enable-PSSessionConfiguration -name *
+PS C:\> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
 ```
 
 These commands re-enable all session configurations on the computer.
@@ -63,7 +63,7 @@ The commands are equivalent, so you can use either one.
 Enable-PSSessionConfiguration does not generate an error if you enable a session configuration that is already enabled.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
+PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
 ```
 
 This command re-enables the MaintenanceShell session configuration and specifies a new security descriptor for the configuration.

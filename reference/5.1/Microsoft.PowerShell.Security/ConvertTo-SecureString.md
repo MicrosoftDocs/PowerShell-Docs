@@ -52,14 +52,14 @@ If the standard string being converted was encrypted with **ConvertFrom-SecureSt
 
 ### Example 1: Convert a secure string to an encrypted string
 ```
-PS C:\>$Secure = Read-Host -AsSecureString
-PS C:\>$Secure
-System.Security.SecureString PS C:\>$Encrypted = ConvertFrom-SecureString -SecureString $Secure
-PS C:\>$Encrypted
+PS C:\> $Secure = Read-Host -AsSecureString
+PS C:\> $Secure
+System.Security.SecureString PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure
+PS C:\> $Encrypted
 01000000d08c9ddf0115d1118c7a00c04fc297eb010000001a114d45b8dd3f4aa11ad7c0abdae9800000000002000000000003660000a8000000100000005df63cea84bfb7d70bd6842e7
 efa79820000000004800000a000000010000000f10cd0f4a99a8d5814d94e0687d7430b100000008bf11f1960158405b2779613e9352c6d14000000e6b7bf46a9d485ff211b9b2a2df3bd
-6eb67aae41 PS C:\>$Secure2 = ConvertTo-SecureString -String $Encrypted
-PS C:\>$Secure2
+6eb67aae41 PS C:\> $Secure2 = ConvertTo-SecureString -String $Encrypted
+PS C:\> $Secure2
 System.Security.SecureString
 ```
 
@@ -83,10 +83,10 @@ The SecureString type indicates that the command was successful.
 
 ### Example 2: Create a secure string from an encrypted string in a file
 ```
-PS C:\>$Secure = Read-Host -AsSecureString
-PS C:\>$Encrypted = ConvertFrom-SecureString -SecureString $Secure -Key (1..16)
-PS C:\>$Encrypted | Set-Content Encrypted.txt
-PS C:\>$Secure2 = Get-Content Encrypted.txt | ConvertTo-SecureString -Key (1..16)
+PS C:\> $Secure = Read-Host -AsSecureString
+PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure -Key (1..16)
+PS C:\> $Encrypted | Set-Content Encrypted.txt
+PS C:\> $Secure2 = Get-Content Encrypted.txt | ConvertTo-SecureString -Key (1..16)
 ```
 
 This example shows how to create a secure string from an encrypted standard string that is saved in a file.
@@ -105,7 +105,7 @@ The results are saved in the $Secure2 variable.
 
 ### Example 3: Convert a plain text string to a secure string
 ```
-PS C:\>$Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
+PS C:\> $Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
 ```
 
 This command converts the plain text string P@ssW0rD!

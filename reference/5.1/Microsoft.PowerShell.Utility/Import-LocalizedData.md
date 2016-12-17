@@ -44,7 +44,7 @@ For more information about this and about the format of the .psd1 files, see abo
 
 ### Example 1: Import text strings
 ```
-PS C:\>Import-LocalizedData -BindingVariable "Messages"
+PS C:\> Import-LocalizedData -BindingVariable "Messages"
 ```
 
 This command imports text strings into the $Messages variable.
@@ -54,7 +54,7 @@ If the command is included in the Archives.ps1 script in the C:\Test directory, 
 
 ### Example 2: Import localized data strings
 ```
-PS C:\>Import-LocalizedData -FileName "Test.psd1" -UICulture "en-US"
+PS C:\> Import-LocalizedData -FileName "Test.psd1" -UICulture "en-US"
 
 Name                           Value
 ----                           -----
@@ -72,7 +72,7 @@ The command uses the *UICulture* parameter to specify the en-US culture.
 
 ### Example 3: Import UI culture strings
 ```
-PS C:\>Import-LocalizedData -BindingVariable "MsgTbl" -UICulture "ar-SA" -FileName "Simple" -BaseDirectory "C:\Data\Localized"
+PS C:\> Import-LocalizedData -BindingVariable "MsgTbl" -UICulture "ar-SA" -FileName "Simple" -BaseDirectory "C:\Data\Localized"
 ```
 
 This command imports text strings into the $MsgTbl variable of a script.
@@ -81,7 +81,7 @@ It uses the *UICulture* parameter to direct the cmdlet to import data from the S
 
 ### Example 4: Import localized data into a script
 ```
-PS C:\># In C:\Test\en-US\Test.psd1:
+PS C:\> # In C:\Test\en-US\Test.psd1:
 
 ConvertFrom-StringData @'
 
@@ -118,7 +118,7 @@ The output shows that it displays the correct user message in the UI language se
 
 ### Example 5: Replace default text strings in a script
 ```
-PS C:\># In TestScript.ps1
+PS C:\> # In TestScript.ps1
 $UserMessages = DATA 
 
 {    ConvertFrom-StringData @'
@@ -147,7 +147,7 @@ If the command fails for any reason, the command displays the default text strin
 
 ### Example 6: Suppress error messages if the UI culture is not found
 ```
-PS C:\># In Day1.ps1
+PS C:\> # In Day1.ps1
 
 Import-LocalizedData -BindingVariable "Day"
 
@@ -158,7 +158,7 @@ Import-LocalizedData -BindingVariable "Day" -ErrorAction:SilentlyContinue
 PS C:\> .\Day1.ps1
 Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories. 
 At C:\ps-test\Day1.ps1:17 char:21+ Import-LocalizedData <<<<  Day
-Today is Tuesday PS C:\>.\Day2.ps1
+Today is Tuesday PS C:\> .\Day2.ps1
 Today is Tuesday
 ```
 

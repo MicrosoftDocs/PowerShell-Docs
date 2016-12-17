@@ -33,13 +33,13 @@ The tracing cmdlets were designed for Windows PowerShell developers, but they ar
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-traceSource  *provider*
+PS C:\> get-traceSource  *provider*
 ```
 
 This command gets all of the trace sources that have names that include "provider".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-tracesource
+PS C:\> get-tracesource
 ```
 
 This command gets all of the Windows PowerShell components that can be traced.

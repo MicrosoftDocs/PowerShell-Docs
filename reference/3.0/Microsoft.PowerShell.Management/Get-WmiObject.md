@@ -74,13 +74,13 @@ This makes it easier to include the source computer name in output and reports.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-WmiObject -Class Win32_Process
+PS C:\> Get-WmiObject -Class Win32_Process
 ```
 
 This command get the processes on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
+PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 ```
 
 This command gets the services on a remote computer.
@@ -88,13 +88,13 @@ It uses the ComputerName parameter to specify the Internet Protocol (IP) address
 By default, the current account must be a member of the Administrators group on the remote computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-WmiObject -Namespace "root/default" -List
+PS C:\> Get-WmiObject -Namespace "root/default" -List
 ```
 
 This command gets the WMI classes in the root or default namespace of the local computer.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
 PSComputerName : SERVER01
 
 Name           : WinRM
@@ -138,7 +138,7 @@ This makes it easy to see the computer on which the service resides.
 This alias is introduced in Windows PowerShell 3.0.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>(Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
+PS C:\> (Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
 ```
 
 This command stops the WinRM service on the Server01 remote computer.
@@ -148,7 +148,7 @@ Then, it invokes the **StopService** method of the Win32_Service WMI class on th
 This command is an alternative to using the Stop-Service cmdlet.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Get-WmiObject -Class Win32_Bios | Format-List -Property
+PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
 
 Status                : OK
 
@@ -247,7 +247,7 @@ The command uses a value of all (*) for the Property parameter of the Format-Lis
 By default, only a subset (defined in the Types.ps1xml configuration file) are displayed.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-WmiObject Win32_Service -Credential FABRIKAM\administrator Computer Fabrikam
+PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator Computer Fabrikam
 ```
 
 This command uses the **Credential** parameter of the **Get-WmiObject** cmdlet to get the services on a remote computer.

@@ -56,7 +56,7 @@ The cmdlet also supports automatically-generated, example-driven parsing based o
 ### Example 1: Generate an object with default property names
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String
+PS C:\> "Hello World" | ConvertFrom-String
 
 P1    P2
 --    --
@@ -72,7 +72,7 @@ The results are P1="Hello" and P2="World".
 ### Example 1A: Get to know the generated object
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String | Get-Member
+PS C:\> "Hello World" | ConvertFrom-String | Get-Member
 
 
    TypeName: System.Management.Automation.PSCustomObject
@@ -96,7 +96,7 @@ both properties are of 'string' type, by default.
 ### Example 2: Generate an object with default property names using a delimiter
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String -Delimiter "ll"
+PS C:\> "Hello World" | ConvertFrom-String -Delimiter "ll"
 
 P1 P2
 -- --
@@ -111,7 +111,7 @@ This command generates an object with P1="He" and P2="o World" properties, by sp
 ### Example 3: Generate an object that contains two named properties
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
+PS C:\> "Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
 
 FirstWord SecondWord
 --------- ----------

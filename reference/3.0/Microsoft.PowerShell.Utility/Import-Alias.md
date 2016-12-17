@@ -39,7 +39,7 @@ To overwrite an existing alias, after assuring that the contents of the alias fi
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>import-alias test.txt
+PS C:\> import-alias test.txt
 ```
 
 This command imports alias information from a file named test.txt.

@@ -78,27 +78,27 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ### Example 1: Resume a job by ID
 ```
 The first command uses the **Get-Job** cmdlet to get the job. The output shows that the job is a suspended workflow job.
-PS C:\>Get-Job EventJob
+PS C:\> Get-Job EventJob
 Id     Name            PSJobTypeName   State         HasMoreData     Location   Command
 --     ----            -------------   -----         -----------     --------   -------
 4      EventJob        PSWorkflowJob   Suspended     True            Server01   \\Script\Share\Event.ps1
 
 The second command uses the **Id** parameter of the **Resume-Job** cmdlet to resume the job with an **Id** value of 4.
-PS C:\>Resume-Job -Id 4
+PS C:\> Resume-Job -Id 4
 ```
 
 The commands in this example verify that the job is a suspended workflow job and then resume the job.
 
 ### Example 2: Resume a job by name
 ```
-PS C:\>Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest*
+PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest*
 ```
 
 This command uses the **Name** parameter to resume several workflow jobs on the local computer.
 
 ### Example 3: Use custom property values
 ```
-PS C:\>Resume-Job -Filter @{CustomID="T091291"} -State Suspended
+PS C:\> Resume-Job -Filter @{CustomID="T091291"} -State Suspended
 ```
 
 This command uses the value of a custom property to identify the workflow job to resume.
@@ -107,7 +107,7 @@ It also uses the **State** parameter to verify that the workflow job is suspende
 
 ### Example 4: Resume all suspended jobs on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName Srv01 -ScriptBlock {Get-Job -State Suspended | Resume-Job}
+PS C:\> Invoke-Command -ComputerName Srv01 -ScriptBlock {Get-Job -State Suspended | Resume-Job}
 ```
 
 This command resumes all suspended jobs on the Srv01 remote computer.
@@ -118,7 +118,7 @@ A pipeline operator (|) sends the suspended jobs to the **Resume-Job** cmdlet, w
 
 ### Example 4: Wait for jobs to resume
 ```
-PS C:\>Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
+PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
 ```
 
 This command uses the **Wait** parameter to direct Resume-Job to return only after all specified jobs are resumed.
@@ -136,7 +136,7 @@ Workflow Test-Suspend
 }
 
 The following command runs the Test-Suspend workflow on the Server01 computer.When you run the workflow, the workflow runs the Get-Date activity and saves the result in the $a variable. Then it runs the **Suspend-Workflow** activity. In response, it takes a checkpoint, suspends the workflow, and returns a workflow job object. **Suspend-Workflow** returns a workflow job object even if the workflow is not explicitly run as a job.
-PS C:\>Test-Suspend -PSComputerName Server01
+PS C:\> Test-Suspend -PSComputerName Server01
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 
 --     ----            -------------   -----         -----------     --------             -------
@@ -144,7 +144,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 8      Job8            PSWorkflowJob   Suspended     True            Server01             Test-Suspend
 
 The following command resumes the Test-Suspend workflow in Job8. It uses the **Wait** parameter to hold the command prompt until the job is resumed.
-PS C:\>Resume-Job -Name Job8 -Wait
+PS C:\> Resume-Job -Name Job8 -Wait
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 
 --     ----            -------------   -----         -----------     --------             -------
@@ -152,7 +152,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 8      Job8            PSWorkflowJob   Running       True            Server01             Test-Suspend
 
 This command uses the **Receive-Job** cmdlet to get the results of the Test-Suspend workflow. The final command in the workflow returns a TimeSpan object that represents the elapsed time between the current date and time and the date and time that was saved in the $a variable before the workflow was suspended.
-PS C:\>Receive-Job -Name Job8
+PS C:\> Receive-Job -Name Job8
         Days              : 0
 
         Hours             : 0

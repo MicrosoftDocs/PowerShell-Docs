@@ -33,7 +33,7 @@ If you need a unique ID in a script, you can create a GUID, as needed.
 
 ### Example 1: Create a GUID
 ```
-PS C:\>New-Guid
+PS C:\> New-Guid
 Guid
 ----
 0352cf0f-2e7a-4aee-801d-7f27f8344c77

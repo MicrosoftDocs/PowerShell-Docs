@@ -52,7 +52,7 @@ If the package provider cannot add or replace a package source, the provider gen
 
 ### Example 1: Register a package source for the NuGet provider
 ```
-PS C:\>Register-PackageSource -Name "MyRep" -Location "http://contoso/psmodule/Features/api/v3" -ProviderName "PsModule"
+PS C:\> Register-PackageSource -Name "MyRep" -Location "http://contoso/psmodule/Features/api/v3" -ProviderName "PsModule"
 ```
 
 This command registers a package source, a web-based location for the **PSModule** provider.

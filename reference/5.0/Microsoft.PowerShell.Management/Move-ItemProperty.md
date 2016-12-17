@@ -44,7 +44,7 @@ When you move an item property, it is added to the new location and deleted from
 
 ### Example 1: Move a registry value and its data to another key
 ```
-PS C:\>Move-ItemProperty "HKLM:\Software\MyCompany\MyApp" -Name "Version" -Destination "HKLM:\Software\MyCompany\NewApp"
+PS C:\> Move-ItemProperty "HKLM:\Software\MyCompany\MyApp" -Name "Version" -Destination "HKLM:\Software\MyCompany\NewApp"
 ```
 
 This command moves the Version registry value, and its data, from the MyApp subkey to the NewApp subkey of the HKLM\Software\MyCompany registry key.

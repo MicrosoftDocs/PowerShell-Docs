@@ -57,7 +57,7 @@ You can use the *Quiet* parameter to force it to return only a **Boolean** value
 
 ### Example 1: Send echo requests to a remote computer
 ```
-PS C:\>Test-Connection "Server01"
+PS C:\> Test-Connection "Server01"
 
 Source        Destination     IPV4Address     IPV6Address  Bytes    Time(ms)
 ------        -----------     -----------     -----------  -----    --------
@@ -72,14 +72,14 @@ This command uses the *ComputerName* parameter to specify the Server01 computer,
 
 ### Example 2: Send echo requests to several computers
 ```
-PS C:\>Test-Connection -ComputerName "Server01", "Server02", "Server12"
+PS C:\> Test-Connection -ComputerName "Server01", "Server02", "Server12"
 ```
 
 This command sends pings from the local computer to several remote computers.
 
 ### Example 3: Send echo requests from several computers to a computer
 ```
-PS C:\>Test-Connection -Source "Server02", "Server12", "localhost" -ComputerName "Server01" -Credential Domain01\Admin01
+PS C:\> Test-Connection -Source "Server02", "Server12", "localhost" -ComputerName "Server01" -Credential Domain01\Admin01
 ```
 
 This command sends pings from different source computers to a single remote computer, Server01.
@@ -88,7 +88,7 @@ Use this command format to test the latency of connections from multiple points.
 
 ### Example 4: Customize the test command
 ```
-PS C:\>Test-Connection -ComputerName "Server01" -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
+PS C:\> Test-Connection -ComputerName "Server01" -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
 ```
 
 This command sends three pings from the local computer to the Server01 computer.
@@ -98,7 +98,7 @@ Use this command format when the ping response is expected to take longer than u
 
 ### Example 5: Run a test as a background job
 ```
-PS C:\>$job = Test-Connection -ComputerName (Get-Content "Servers.txt") -AsJob
+PS C:\> $job = Test-Connection -ComputerName (Get-Content "Servers.txt") -AsJob
 PS C:\> if ($job.JobStateInfo.State -ne "Running") {$Results = Receive-Job $job}
 ```
 
@@ -112,7 +112,7 @@ The second command checks to see that the job is not still running, and if it is
 
 ### Example 6: Ping a remote computer with credentials
 ```
-PS C:\>Test-Connection "Server55" -Credential Domain55\User01 -Impersonation Identify
+PS C:\> Test-Connection "Server55" -Credential Domain55\User01 -Impersonation Identify
 ```
 
 This command uses the **Test-Connection** cmdlet to ping a remote computer.
@@ -120,7 +120,7 @@ The command uses the *Credential* parameter to specify a user account that has p
 
 ### Example 7: Create a session only if a connection test succeeds
 ```
-PS C:\>if (Test-Connection -ComputerName "Server01" -Quiet) {New-PSSession Server01}
+PS C:\> if (Test-Connection -ComputerName "Server01" -Quiet) {New-PSSession Server01}
 ```
 
 This command creates a session on the Server01 computer only if at least one of the pings sent to the computer succeeds.

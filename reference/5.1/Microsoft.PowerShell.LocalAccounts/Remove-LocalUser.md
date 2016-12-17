@@ -43,7 +43,7 @@ The **Remove-LocalUser** cmdlet deletes local user accounts.
 
 ### Example 1: Delete a user account
 ```
-PS C:\>Remove-LocalUser -Name "AdminContoso02"
+PS C:\> Remove-LocalUser -Name "AdminContoso02"
 ```
 
 This command deletes the user account named AdminContoso02.

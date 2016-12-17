@@ -38,13 +38,13 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>add-PSSnapIn Microsoft.Exchange, Microsoft.Windows.AD
+PS C:\> add-PSSnapIn Microsoft.Exchange, Microsoft.Windows.AD
 ```
 
 This command adds the Microsoft Exchange and Active Directory snap-ins to the current session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-pssnapin -registered | add-pssnapin -passthru
+PS C:\> get-pssnapin -registered | add-pssnapin -passthru
 ```
 
 This command adds all of the registered Windows PowerShell snap-ins to the session.
@@ -54,28 +54,28 @@ The PassThru parameter returns objects that represent each of the added snap-ins
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
 The first command gets snap-ins that have been added to the current session, including the snap-ins that are installed with Windows PowerShell. In this example, ManagementFeatures is not returned. This indicates that it has not been added to the session.
-PS C:\>get-pssnapin
+PS C:\> get-pssnapin
 
 The second command gets snap-ins that have been registered on your system (including those that have already been added to the session). It does not include the snap-ins that are installed with Windows PowerShell.In this case, the command does not return any snap-ins. This indicates that the ManagementFeatures snapin has not been registered on the system.
-PS C:\>get-pssnapin -registered
+PS C:\> get-pssnapin -registered
 
 The third command creates an alias, "installutil", for the path to the InstallUtil tool in .NET Framework.
-PS C:\>set-alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
+PS C:\> set-alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
 
 The fourth command uses the InstallUtil tool to register the snap-in. The command specifies the path to ManagementCmdlets.dll, the file name or "module name" of the snap-in.
-PS C:\>installutil C:\Dev\Management\ManagementCmdlets.dll
+PS C:\> installutil C:\Dev\Management\ManagementCmdlets.dll
 
 The fifth command is the same as the second command. This time, you use it to verify that the ManagementCmdlets snap-in is registered.
-PS C:\>get-pssnapin -registered
+PS C:\> get-pssnapin -registered
 
 The sixth command uses the Add-PSSnapin cmdlet to add the ManagementFeatures snap-in to the session. It specifies the name of the snap-in, ManagementFeatures, not the file name.
-PS C:\>add-pssnapin ManagementFeatures
+PS C:\> add-pssnapin ManagementFeatures
 
 To verify that the snap-in is added to the session, the seventh command uses the Module parameter of the Get-Command cmdlet. It displays the items that were added to the session by a snap-in or module.
-PS C:\>get-command -module ManagementFeatures
+PS C:\> get-command -module ManagementFeatures
 
 You can also use the PSSnapin property of the object that the Get-Command cmdlet returns to find the snap-in or module in which a cmdlet originated. The eighth command uses dot notation to find the value of the PSSnapin property of the Set-Alias cmdlet.
-PS C:\>(get-command set-alias).pssnapin
+PS C:\> (get-command set-alias).pssnapin
 ```
 
 This example demonstrates the process of registering a snap-in on your system and then adding it to your session.

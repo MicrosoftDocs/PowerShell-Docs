@@ -56,7 +56,7 @@ The **Save-Script** cmdlet saves the specified script.
 
 ### Example 1: Save a script and validate it
 ```
-PS C:\>Save-Script -Name "Fabrikam-ClientScript" -Repository "Local01" -Path "D:\ScriptSharingDemo"
+PS C:\> Save-Script -Name "Fabrikam-ClientScript" -Repository "Local01" -Path "D:\ScriptSharingDemo"
 PS C:\> Test-ScriptFileInfo -Path "D:\ScriptSharingDemo\Fabrikam-ClientScript.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------

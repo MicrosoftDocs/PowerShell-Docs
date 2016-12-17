@@ -38,21 +38,21 @@ The **Convert-Path** cmdlet converts a path from a Windows PowerShell path to a 
 
 ### Example 1: Convert the working directory to a standard file system path
 ```
-PS C:\>Convert-Path .
+PS C:\> Convert-Path .
 ```
 
 This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
 ### Example 2: Convert a provider path to a standard registry path
 ```
-PS C:\>Convert-Path HKLM:\Software\Microsoft
+PS C:\> Convert-Path HKLM:\Software\Microsoft
 ```
 
 This command converts the Windows PowerShell provider path to a standard registry path.
 
 ### Example 3: Convert a path to a string
 ```
-PS C:\>Convert-Path ~
+PS C:\> Convert-Path ~
 C:\Users\User01
 ```
 

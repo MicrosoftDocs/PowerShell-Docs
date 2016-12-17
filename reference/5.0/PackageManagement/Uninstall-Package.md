@@ -79,14 +79,14 @@ The **Uninstall-Package** cmdlet uninstalls one or more software packages from t
 
 ### Example 1: Uninstall a package
 ```
-PS C:\>Uninstall-Package -Name "DSCAccelerator"
+PS C:\> Uninstall-Package -Name "DSCAccelerator"
 ```
 
 This command uninstalls a package named DSCAccelerator.
 
 ### Example 2: Uninstall a package by piping results of Get-Package
 ```
-PS C:\>Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Uninstall-Package -Force
+PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Uninstall-Package -Force
 ```
 
 This command uninstalls a package named DSCAccelerator by first locating the exact package with the **Get-Package** cmdlet, then piping the results of **Get-Package** to the **Uninstall-Package** cmdlet.

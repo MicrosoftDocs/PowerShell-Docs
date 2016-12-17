@@ -30,31 +30,31 @@ The response to the warning depends on the value of the user's $WarningPreferenc
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>write-warning "This is only a test warning."
+PS C:\> write-warning "This is only a test warning."
 ```
 
 This command displays the message "WARNING: This is only a test warning."
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$w = "This is only a test warning."
-PS C:\>$w | write-warning
+PS C:\> $w = "This is only a test warning."
+PS C:\> $w | write-warning
 ```
 
 This example shows that you can use a pipeline operator (|) to send a string to Write-Warning.
 You can save the string in a variable, as shown in this command, or pipe the string directly to Write-Warning.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$warningpreference
+PS C:\> $warningpreference
 Continue
 
-PS C:\>write-warning "This is only a test warning."
+PS C:\> write-warning "This is only a test warning."
 This is only a test warning.
 
-PS C:\>$warningpreference = "SilentlyContinue"
-PS C:\>write-warning "This is only a test warning."
+PS C:\> $warningpreference = "SilentlyContinue"
+PS C:\> write-warning "This is only a test warning."
 PS C:\>
-PS C:\>$warningpreference = "Stop"
-PS C:\>write-warning "This is only a test warning."
+PS C:\> $warningpreference = "Stop"
+PS C:\> write-warning "This is only a test warning."
 
 WARNING: This is only a test message.
 Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop.
@@ -74,7 +74,7 @@ A value of "Stop" displays the warning and then stops execution of the command.
 For more information about the $WarningPreference variable, see about_Preference_Variables.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>write-warning "This is only a test warning." -warningaction Inquire
+PS C:\> write-warning "This is only a test warning." -warningaction Inquire
 
 WARNING: This is only a test warning.
 Confirm

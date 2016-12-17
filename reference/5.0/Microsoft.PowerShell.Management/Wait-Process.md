@@ -47,7 +47,7 @@ You can specify a process by process name or process ID (PID), or pipe a process
 
 ### Example 1: Stop a process and wait
 ```
-PS C:\>$nid = (Get-Process notepad).id
+PS C:\> $nid = (Get-Process notepad).id
 PS C:\> Stop-Process -Id $nid
 PS C:\> Wait-Process -Id $nid
 ```
@@ -64,7 +64,7 @@ It uses the *Id* parameter of **Wait-Process** to identify the process.
 
 ### Example 2: Specifying a process
 ```
-PS C:\>$p = Get-Process notepad
+PS C:\> $p = Get-Process notepad
 PS C:\> Wait-Process -Id $p.id
 PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
@@ -79,7 +79,7 @@ These commands have the same results and can be used interchangeably.
 
 ### Example 3: Wait for processes for a specified time
 ```
-PS C:\>Wait-Process -Name outlook, winword -Timeout 30
+PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
 
 This command waits 30 seconds for the Outlook and Winword processes to stop.

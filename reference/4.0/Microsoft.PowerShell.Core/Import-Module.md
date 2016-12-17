@@ -99,7 +99,7 @@ You can use this WMI and CIM strategy to manage the remote computer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Import-Module -Name BitsTransfer
+PS C:\> Import-Module -Name BitsTransfer
 ```
 
 This command imports the members of the **BitsTransfer** module into the current session.
@@ -111,15 +111,15 @@ To request output, use the **PassThru** or **AsCustomObject** parameter, or the 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Module -ListAvailable | Import-Module
+PS C:\> Get-Module -ListAvailable | Import-Module
 ```
 
 This command imports all available modules in the path specified by the PSModulePath environment variable ($env:PSModulePath) into the current session.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$m = Get-Module -ListAvailable BitsTransfer, ServerManager
-PS C:\>Import-Module -ModuleInfo $m
+PS C:\> $m = Get-Module -ListAvailable BitsTransfer, ServerManager
+PS C:\> Import-Module -ModuleInfo $m
 ```
 
 These commands import the members of the **BitsTransfer** and **ServerManager** modules into the current session.
@@ -134,7 +134,7 @@ These commands are equivalent to using a pipeline operator (|) to send the outpu
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Import-Module -Name c:\ps-test\modules\test -Verbose
+PS C:\> Import-Module -Name c:\ps-test\modules\test -Verbose
 VERBOSE: Loading module from path 'C:\ps-test\modules\Test\Test.psm1'.
 VERBOSE: Exporting function 'my-parm'.
 VERBOSE: Exporting function 'Get-Parameter'.
@@ -149,8 +149,8 @@ Without the **Verbose**, **PassThru**, or **AsCustomObject** parameter, **Import
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Import-Module BitsTransfer -cmdlet Add-BitsTransferFile, Get-BitsTransfer
-PS C:\>Get-Module BitsTransfer
+PS C:\> Import-Module BitsTransfer -cmdlet Add-BitsTransferFile, Get-BitsTransfer
+PS C:\> Get-Module BitsTransfer
 
 Name              : BitsTransfer
 Path              : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1
@@ -168,7 +168,7 @@ ExportedFunctions : {}
 ExportedVariables : {}
 NestedModules     : {Microsoft.BackgroundIntelligentTransfer.Management}
 
-PS C:\>Get-Command -Module BitsTransfer
+PS C:\> Get-Command -Module BitsTransfer
 
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
@@ -196,13 +196,13 @@ The results confirm that only the **Add-BitsTransfer** and **Get-BitsTransfer** 
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Import-Module BitsTransfer -Prefix PS -PassThru
+PS C:\> Import-Module BitsTransfer -Prefix PS -PassThru
 
 ModuleType Name                                ExportedCommands
 ---------- ----                                ----------------
 Manifest   bitstransfer                        {Add-BitsFile, Complete-...
 
-PS C:\>Get-Command -Module BitsTransfer
+PS C:\> Get-Command -Module BitsTransfer
 
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
@@ -238,7 +238,7 @@ It does not change the module.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
+PS C:\> Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
 
 Name          ModuleType
 ----          ----------
@@ -247,9 +247,9 @@ BitsTransfer    Manifest
 PSDiagnostics   Manifest
 TestCmdlets       Script
 
-PS C:\>$a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+PS C:\> $a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
 
-PS C:\>$a | Get-Member
+PS C:\> $a | Get-Member
 
     TypeName: System.Management.Automation.PSCustomObject
 Name          MemberType   Definition
@@ -260,7 +260,7 @@ GetType       Method       type GetType()
 ToString      Method       string ToString()
 Show-Calendar ScriptMethod System.Object Show-Calendar();
 
-PS C:\>$a."Show-Calendar"()
+PS C:\> $a."Show-Calendar"()
 ```
 
 These commands demonstrate how to get and use the custom object that **Import-Module** returns.
@@ -289,8 +289,8 @@ The method name must be enclosed in quotation marks, because it includes a hyphe
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Import-Module BitsTransfer
-PS C:\>Import-Module BitsTransfer -force -Prefix PS
+PS C:\> Import-Module BitsTransfer
+PS C:\> Import-Module BitsTransfer -force -Prefix PS
 ```
 
 This example shows how to use the **Force** parameter of **Import-Module** when you are re-importing a module into the same session.
@@ -303,22 +303,22 @@ Without this parameter, the session would include two copies of each **BitsTrans
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>Get-Date
+PS C:\> Get-Date
 Thursday, March 15, 2012 6:47:04 PM
 
-PS C:\>Import-Module TestModule
+PS C:\> Import-Module TestModule
 
-PS C:\>Get-Date
+PS C:\> Get-Date
 12075
 
-PS C:\>Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
+PS C:\> Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
 
 CommandType     Name         ModuleName
 -----------     ----         ----------
 Function        Get-Date     TestModule
 Cmdlet          Get-Date     Microsoft.PowerShell.Utility
 
-PS C:\>Microsoft.PowerShell.Utility\Get-Date
+PS C:\> Microsoft.PowerShell.Utility\Get-Date
 Saturday, September 12, 2009 6:33:23 PM
 ```
 
@@ -342,7 +342,7 @@ For more information about command precedence in Windows PowerShell, see about_C
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
+PS C:\> Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
 ```
 
 This command imports the PSWorkflow module.
@@ -353,19 +353,19 @@ You can also use the **RequiredVersion** parameter to import a particular versio
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
 The first command uses the New-PSSession cmdlet to create a remote session (PSSession) to the Server01 computer. The command saves the PSSession in the $s variable
-PS C:\>$s = New-PSSession -ComputerName Server01
+PS C:\> $s = New-PSSession -ComputerName Server01
 
 The second command uses the **PSSession** parameter of the Get-Module cmdlet to get the **NetSecurity** module in the session in the $s variable.This command is equivalent to using the Invoke-Command cmdlet to run a **Get-Module** command in the session in $s ([CODE_Snippit]Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity[CODE_Snippit]).The output shows that the **NetSecurity** module is installed on the computer and is available to the session in the $s variable.
-PS C:\>Get-Module -PSSession $s -ListAvailable -Name NetSecurity
+PS C:\> Get-Module -PSSession $s -ListAvailable -Name NetSecurity
 ModuleType Name                                ExportedCommands
 ---------- ----                                ----------------
 Manifest   NetSecurity                         {New-NetIPsecAuthProposal, New-NetIPsecMainModeCryptoProposal, New-Ne...
 
 The third command uses the **PSSession** parameter of the **Import-Module** cmdlet to import the **NetSecurity** module from the session in the $s variable into the current session.
-PS C:\>Import-Module -PSSession $s -Name NetSecurity
+PS C:\> Import-Module -PSSession $s -Name NetSecurity
 
 The fourth command uses the **Get-Command** cmdlet to get commands that begin with "Get" and include "Firewall" from the Net-Security module.The output gets the commands and confirms that the module and its cmdlets were imported into the current session.
-PS C:\>Get-Command -Module NetSecurity -Name Get-*Firewall*
+PS C:\> Get-Command -Module NetSecurity -Name Get-*Firewall*
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Get-NetFirewallAddressFilter                       NetSecurity
@@ -380,7 +380,7 @@ Function        Get-NetFirewallServiceFilter                       NetSecurity
 Function        Get-NetFirewallSetting                             NetSecurity
 
 The fifth command uses the **Get-NetFirewallRule** cmdlet to get Windows Remote Management firewall rules on the Server01 computer. This command is equivalent to using the Invoke-Command cmdlet to run a **Get-NetFirewallRule** command on the session in the $s variable ([CODE_Snippit]Invoke-Command -Session $s {Get-NetFirewallRule -DisplayName "Windows Remote Management*"[CODE_Snippit]}).
-PS C:\>Get-NetFirewallRule -DisplayName "Windows Remote Management*" | Format-Table -Property DisplayName, Name -AutoSize
+PS C:\> Get-NetFirewallRule -DisplayName "Windows Remote Management*" | Format-Table -Property DisplayName, Name -AutoSize
 DisplayName                                              Name
 -----------                                              ----
 Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP
@@ -397,19 +397,19 @@ However, commands that use the cmdlets actually run in the remote session.
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-PS C:\>$cs = New-CimSession -ComputerName RSDGF03
+PS C:\> $cs = New-CimSession -ComputerName RSDGF03
 
 The second command uses the CIM session in the $cs variable to run an **Import-Module** command on the RSDGF03 computer. The command uses the **Name** parameter to specify the **Storage** CIM module.
-PS C:\>Import-Module -CimSession $cs -Name Storage
+PS C:\> Import-Module -CimSession $cs -Name Storage
 
 The third command runs the a **Get-Command** command on the **Get-Disk** command in the Storage module.When you import a CIM module into the local session, Windows PowerShell converts the CDXML files for each command into Windows PowerShell scripts, which appear as functions in the local session.
-PS C:\>Get-Command Get-Disk
+PS C:\> Get-Command Get-Disk
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
 
 The fourth command runs the **Get-Disk** command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported.The command gets objects from the remote computer and returns them to the local session.
-PS C:\>Get-Disk
+PS C:\> Get-Disk
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 ------ -------------              -----------------          ---------- ---------------
 0      Virtual HD ATA Device      Online                          40 GB MBR

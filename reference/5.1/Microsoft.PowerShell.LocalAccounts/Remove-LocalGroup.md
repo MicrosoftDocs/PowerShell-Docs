@@ -49,7 +49,7 @@ The new group does not inherit the permissions that were assigned to the group.
 
 ### Example 1: Delete a security group
 ```
-PS C:\>Remove-LocalGroup -Name "SecurityGroup04"
+PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
 ```
 
 This command deletes the group named SecurityGroup04.

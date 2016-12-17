@@ -34,7 +34,7 @@ The **Update-Script** cmdlet updates the specified script from the repository fr
 
 ### Example 1: Update the specified script
 ```
-PS C:\>Update-Script -Name "Fabrikam-Script" -RequiredVersion 1.5
+PS C:\> Update-Script -Name "Fabrikam-Script" -RequiredVersion 1.5
 PS C:\> Get-InstalledScript -Name "Fabrikam-Script"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------

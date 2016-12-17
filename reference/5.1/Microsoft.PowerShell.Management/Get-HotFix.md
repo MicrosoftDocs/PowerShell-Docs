@@ -39,22 +39,22 @@ The **Get-Hotfix** cmdlet gets hotfixes (also called updates) that have been ins
 
 ### Example 1: Get all hotfixes on the local computer
 ```
-PS C:\>Get-HotFix
+PS C:\> Get-HotFix
 ```
 
 This command gets all hotfixes on the local computer.
 
 ### Example 2: Get all hotfixes on multiple computers that start with a search string
 ```
-PS C:\>Get-HotFix -Description "Security*" -ComputerName "Server01", "Server02" -Cred "Server01\admin01"
+PS C:\> Get-HotFix -Description "Security*" -ComputerName "Server01", "Server02" -Cred "Server01\admin01"
 ```
 
 This command gets all hotfixes on the Server01 and Server02 computers that have a description that begins with Security.
 
 ### Example 3: Create a text file that contain the computer names that are missing a security update
 ```
-PS C:\>$A = Get-Content "servers.txt"
-PS C:\>$A | ForEach { if (!(Get-HotFix -Id "KB957095" -ComputerName $_)) { Add-Content $_ -Path "Missing-kb953631.txt" }}
+PS C:\> $A = Get-Content "servers.txt"
+PS C:\> $A | ForEach { if (!(Get-HotFix -Id "KB957095" -ComputerName $_)) { Add-Content $_ -Path "Missing-kb953631.txt" }}
 ```
 
 The commands in this example create a text file listing the names of computers that are missing a security update.
@@ -65,7 +65,7 @@ If a computer does not have the update, the Add-Content cmdlet writes the comput
 
 ### Example 4: Get the most recent hotfix on the local computer
 ```
-PS C:\>(Get-HotFix | sort installedon)[-1]
+PS C:\> (Get-HotFix | sort installedon)[-1]
 ```
 
 This command gets the most recent hotfix on the computer.

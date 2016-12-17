@@ -52,14 +52,14 @@ Because this cmdlet requires a user interface, it does not work on Server Core i
 
 ### Example 1: Show a control panel item
 ```
-PS C:\>Show-ControlPanelItem -Name "AutoPlay"
+PS C:\> Show-ControlPanelItem -Name "AutoPlay"
 ```
 
 This command shows the AutoPlay item.
 
 ### Example 2: Pipe a control panel item to this cmldet
 ```
-PS C:\>Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
 
 This command opens the Windows Firewall control panel item on the local computer.
@@ -67,7 +67,7 @@ It uses the Get-ControlPanelItem cmdlet to get the control panel item and the **
 
 ### Example 3: Use a file name to open a control panel item
 ```
-PS C:\>appwiz
+PS C:\> appwiz
 ```
 
 This command opens the Programs and Features control panel item by using its application name.

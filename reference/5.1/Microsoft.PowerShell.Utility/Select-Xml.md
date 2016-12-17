@@ -50,8 +50,8 @@ Enter an XPath query, and use the *Content*, *Path*, or *Xml* parameter to speci
 ### Example 1: Select AliasProperty nodes
 ```
 PS C:\> $Path = "$Pshome\Types.ps1xml"
-PS C:\>$XPath = "/Types/Type/Members/AliasProperty"
-PS C:\>Select-Xml -Path $Path -XPath $Xpath | Select-Object -ExpandProperty Node
+PS C:\> $XPath = "/Types/Type/Members/AliasProperty"
+PS C:\> Select-Xml -Path $Path -XPath $Xpath | Select-Object -ExpandProperty Node
 Name                 ReferencedMemberName
 ----                 --------------------
 Count                Length
@@ -88,8 +88,8 @@ For example, there is a **Count** property that is an alias of the **Length** pr
 
 ### Example 2: Input an XML document
 ```
-PS C:\>[xml]$Types = Get-Content $Pshome\Types.ps1xml
-PS C:\>Select-Xml -Xml $Types -XPath "//MethodName"
+PS C:\> [xml]$Types = Get-Content $Pshome\Types.ps1xml
+PS C:\> Select-Xml -Xml $Types -XPath "//MethodName"
 ```
 
 This example shows how to use the *XML* parameter to provide an XML document to the **Select-Xml** cmdlet.
@@ -102,16 +102,16 @@ The command uses the *Xml* parameter to specify the XML content in the $Types va
 
 ### Example 3: Search PowerShell Help files
 ```
-PS C:\>$Namespace = @{command = "http://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "http://schemas.microsoft.com/maml/2004/10"; dev = "http://schemas.microsoft.com/maml/dev/2004/10"}
+PS C:\> $Namespace = @{command = "http://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "http://schemas.microsoft.com/maml/2004/10"; dev = "http://schemas.microsoft.com/maml/dev/2004/10"}
 
 The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkId=235801).
-PS C:\>$Path = "$Pshome\en-us\*dll-Help.xml"
+PS C:\> $Path = "$Pshome\en-us\*dll-Help.xml"
 
 The third command uses the **Select-Xml** cmdlet to search the XML for cmdlet names by finding Command:Name element anywhere in the files. It saves the results in the $Xml variable.**Select-Xml** returns a **SelectXmlInfo** object that has a Node property, which is a **System.Xml.XmlElement** object. The Node property has an InnerXML property, which contains the actual XML that is retrieved.
-PS C:\>$Xml = Select-Xml -Path $Path -Namespace $Namespace -XPath "//command:name"
+PS C:\> $Xml = Select-Xml -Path $Path -Namespace $Namespace -XPath "//command:name"
 
 The fourth command sends the XML in the $Xml variable to the Format-Table cmdlet. The **Format-Table** command uses a calculated property to get the Node.InnerXML property of each object in the $Xml variable, trim the white space before and after the text, and display it in the table, along with the path to the source file.
-PS C:\>$Xml | Format-Table @{Label="Name"; Expression= {($_.node.innerxml).trim()}}, Path -AutoSize
+PS C:\> $Xml | Format-Table @{Label="Name"; Expression= {($_.node.innerxml).trim()}}, Path -AutoSize
 
 Name                    Path
 ----                    ----
@@ -132,7 +132,7 @@ The first command creates a hash table that represents the XML namespace that is
 
 ### Example 4: Different ways to input XML
 ```
-PS C:\>$Xml = @"
+PS C:\> $Xml = @"
 <?xml version="1.0" encoding="utf-8"?>
 <Book>
   <projects>
@@ -149,7 +149,7 @@ PS C:\>$Xml = @"
 "@
 
 The second command uses the *Content* parameter of **Select-Xml** to specify the XML in the $Xml variable.
-PS C:\>Select-Xml -Content $Xml -XPath "//edition" | foreach {$_.node.InnerXML}
+PS C:\> Select-Xml -Content $Xml -XPath "//edition" | foreach {$_.node.InnerXML}
 
 En.Book1.com
 Ge.Book1.Com
@@ -157,7 +157,7 @@ Fr.Book1.com
 Pl.Book1.com
 
 The third command is equivalent to the second. It uses a pipeline operator (|) to send the XML in the $Xml variable to the **Select-Xml** cmdlet.
-PS C:\>$Xml | Select-Xml -XPath "//edition" | foreach {$_.node.InnerXML}
+PS C:\> $Xml | Select-Xml -XPath "//edition" | foreach {$_.node.InnerXML}
 
 En.Book1.com
 Ge.Book1.Com
@@ -172,10 +172,10 @@ The first command saves a here-string that contains XML in the $Xml variable.
 
 ### Example 5: Use the default xmlns namespace
 ```
-PS C:\>$SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
+PS C:\> $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
 The second command uses the **Select-Xml** cmdlet to get the content of the Title element of each snippet. It uses the *Path* parameter to specify the Snippets directory and the *Namespace* parameter to specify the namespace in the $SnippetNamespace variable. The value of the *XPath* parameter is the "snip" namespace key, a colon (:), and the name of the Title element.The command uses a pipeline operator (|) to send each **Node** property that **Select-Xml** returns to the ForEach-Object cmdlet, which gets the title in the value of the **InnerXml** property of the node.
-PS C:\>Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" | foreach {$_.Node.Innerxml}
+PS C:\> Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" | foreach {$_.Node.Innerxml}
 ```
 
 This example shows how to use the **Select-Xml** cmdlet with XML documents that use the default xmlns namespace.

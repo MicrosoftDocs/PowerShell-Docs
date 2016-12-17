@@ -43,7 +43,7 @@ This cmdlet creates a local user account or a local user account that is connect
 
 ### Example 1: Create a user account
 ```
-PS C:\>New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
+PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
 Name    Enabled  Description
 ----    -------  -----------
 User02  True     Description of this account.
@@ -55,7 +55,7 @@ Therefore, the account does not expire.
 
 ### Example 2: Create a user account that has a password
 ```
-PS C:\>$Password = Read-Host -AsSecureString
+PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."
 Name    Enabled  Description
 ----    -------  -----------
@@ -70,7 +70,7 @@ The command specifies a user name, full name, and description for the user accou
 
 ### Example 3: Create a user account that is connected to a Microsoft account
 ```
-PS C:\>New-LocalUser -Name "MicrosoftAccount\usr name@Outlook.com" -Description "Description of this account."
+PS C:\> New-LocalUser -Name "MicrosoftAccount\usr name@Outlook.com" -Description "Description of this account."
 ```
 
 This command creates a local user account that is connected to a Microsoft account.

@@ -36,15 +36,15 @@ If the variable does not exist, the cmdlet creates it.
 
 ### Example 1: Set a variable and get its value
 ```
-PS C:\>Set-Variable -Name "desc" -Value "A description"
-PS C:\>Get-Variable -Name "desc"
+PS C:\> Set-Variable -Name "desc" -Value "A description"
+PS C:\> Get-Variable -Name "desc"
 ```
 
 These commands set the value of the desc variable to A description, and then gets the value of the variable.
 
 ### Example 2: Set a global, read-only variable
 ```
-PS C:\>Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru | Format-List -Property *
+PS C:\> Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru | Format-List -Property *
 ```
 
 This command creates a global, read-only variable that contains all processes on the system, and then it displays all properties of the variable.
@@ -58,25 +58,25 @@ Otherwise, the variable contains the words "Get-Process".
 
 ### Example 3: Understand public vs. private variables
 ```
-PS C:\># Set-Variable -Name "counter" -Visibility Private
-PS C:\>New-Variable -Name "counter" -Visibility Public -Value 26
-PS C:\>$Counter
-26 PS C:\>Get-Variable c*
+PS C:\> # Set-Variable -Name "counter" -Visibility Private
+PS C:\> New-Variable -Name "counter" -Visibility Public -Value 26
+PS C:\> $Counter
+26 PS C:\> Get-Variable c*
 Name Value
 ---- -----
 Culture en-US
 ConsoleFileName
 ConfirmPreference High
 CommandLineParameters {}
-Counter 26 PS C:\>Set-Variable -Name "counter" -Visibility Private
-PS C:\>Get-Variable c*
+Counter 26 PS C:\> Set-Variable -Name "counter" -Visibility Private
+PS C:\> Get-Variable c*
 Name Value
 ---- -----
 Culture en-US
 ConsoleFileName
 ConfirmPreference High
-CommandLineParameters {} PS C:\>$counter
-"Cannot access the variable '$counter' because it is a private variable" PS C:\>.\use-counter.ps1
+CommandLineParameters {} PS C:\> $counter
+"Cannot access the variable '$counter' because it is a private variable" PS C:\> .\use-counter.ps1
 #Commands completed successfully.
 ```
 

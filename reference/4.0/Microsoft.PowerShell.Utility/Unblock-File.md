@@ -48,14 +48,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Unblock a file
 ```
-PS C:\>Unblock-File -Path C:\Users\User01\Documents\Downloads\PowerShellTips.chm
+PS C:\> Unblock-File -Path C:\Users\User01\Documents\Downloads\PowerShellTips.chm
 ```
 
 This command unblocks the PowerShellTips.chm file.
 
 ### Example 2: Unblock multiple files
 ```
-PS C:\>dir C:\Downloads\*PowerShell* | Unblock-File
+PS C:\> dir C:\Downloads\*PowerShell* | Unblock-File
 ```
 
 This command unblocks all of the files in the C:\Downloads directory whose names include "PowerShell".
@@ -64,7 +64,7 @@ Do not run a command like this one until you have verified that all files are sa
 ### Example 3: Find and unblock scripts
 ```
 The first command uses the **Stream** parameter of the Get-Item cmdlet get files with the Zone.Identifier stream.Although you could pipe the output directly to the **Unblock-File** cmdlet (Get-Item * -Stream "Zone.Identifier" -ErrorAction SilentlyContinue | ForEach {Unblock-File $_.FileName}), it is prudent to review the file and confirm that it is safe before unblocking.
-PS C:\>Get-Item * -Stream "Zone.Identifier" -ErrorAction SilentlyContinue
+PS C:\> Get-Item * -Stream "Zone.Identifier" -ErrorAction SilentlyContinue
    FileName: C:\ps-test\Start-ActivityTracker.ps1
 
 Stream                   Length
@@ -72,7 +72,7 @@ Stream                   Length
 Zone.Identifier              26
 
 The second command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is **RemoteSigned**. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
-PS C:\>C:\ps-test\Start-ActivityTracker.ps1
+PS C:\> C:\ps-test\Start-ActivityTracker.ps1
 c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
 be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
 will not execute on the system. For more information, see about_Execution_Policies at
@@ -84,7 +84,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : UnauthorizedAccess
 
 The third command uses the **Unblock-File** cmdlet to unblock the script so it can run in the session.
-PS C:\>Get-Item C:\ps-test\Start-ActivityTracker.ps1 | Unblock-File
+PS C:\> Get-Item C:\ps-test\Start-ActivityTracker.ps1 | Unblock-File
 ```
 
 This command shows how to find and unblock Windows PowerShell scripts.

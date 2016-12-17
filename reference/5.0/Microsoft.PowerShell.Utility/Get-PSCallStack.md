@@ -36,7 +36,7 @@ To run a **Get-PSCallStack** command while in the debugger, type `k` or `Get-PSC
 
 ### Example 1: Get the call stack for a function
 ```
-PS C:\>function my-Alias {
+PS C:\> function my-Alias {
 $p = $args[0]
 Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -auto
 }
@@ -46,7 +46,7 @@ Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
-Script     : prompt PS C:\>my-alias Get-Content
+Script     : prompt PS C:\> my-alias Get-Content
 
 Entering debug mode. Use h or ? for help.
 Hit Command breakpoint on 'prompt:my-alias'
@@ -62,7 +62,7 @@ Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
 my-alias    {}                            {get-content}                 prompt
-prompt      {}                            {}                            prompt PS C:\>[DBG]: PS C:\ps-test> o
+prompt      {}                            {}                            prompt PS C:\> [DBG]: PS C:\ps-test> o
 Definition  Name
 ----------  ----
 Get-Content gc

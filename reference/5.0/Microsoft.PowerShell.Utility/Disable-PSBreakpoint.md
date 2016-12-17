@@ -47,8 +47,8 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### Example 1: Set a breakpoint and disable it
 ```
-PS C:\>$B = Set-PSBreakpoint -Script "sample.ps1" -Variable "name"
-PS C:\>$B | Disable-PSBreakpoint
+PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "name"
+PS C:\> $B | Disable-PSBreakpoint
 ```
 
 These commands disable a newly-created breakpoint.
@@ -63,14 +63,14 @@ As a result of this command, the value of the Enabled property of the breakpoint
 
 ### Example 2: Disable a breakpoint
 ```
-PS C:\>Disable-PSBreakpoint -Id 0
+PS C:\> Disable-PSBreakpoint -Id 0
 ```
 
 This command disables the breakpoint with breakpoint ID 0.
 
 ### Example 3: Create a disabled breakpoint
 ```
-PS C:\>Disable-PSBreakpoint -Breakpoint ($B = Set-PSBreakpoint -Script "sample.ps1" -Line 5)
+PS C:\> Disable-PSBreakpoint -Breakpoint ($B = Set-PSBreakpoint -Script "sample.ps1" -Line 5)
 PS C:\> $B
 ```
 
@@ -86,7 +86,7 @@ The second command displays the breakpoint object in the value of the $B variabl
 
 ### Example 4: Disable all breakpoints in the current console
 ```
-PS C:\>Get-PSBreakpoint | Disable-PSBreakpoint
+PS C:\> Get-PSBreakpoint | Disable-PSBreakpoint
 ```
 
 This command disables all breakpoints in the current console.

@@ -61,14 +61,14 @@ Remote commands and later attempts to enable and disable remoting, are likely to
 
 ### Example 1: Configure a computer to receive remote commands
 ```
-PS C:\>Enable-PSRemoting
+PS C:\> Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
 
 ### Example 2: Configure a computer to receive remote commands without a confirmation prompt
 ```
-PS C:\>Enable-PSRemoting -Force
+PS C:\> Enable-PSRemoting -Force
 ```
 
 This command configures the computer to receive remote commands.
@@ -76,7 +76,7 @@ It uses the *Force* parameter to suppress the user prompts.
 
 ### Example 3: Allow remote access on clients
 ```
-PS C:\>Enable-PSRemoting -SkipNetworkProfileCheck -Force
+PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
 PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 

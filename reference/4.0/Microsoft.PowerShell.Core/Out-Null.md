@@ -32,7 +32,7 @@ The **Out-Null** cmdlet sends output to NULL, in effect, deleting it.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ChildItem | Out-Null
+PS C:\> Get-ChildItem | Out-Null
 ```
 
 This command gets the items in the local directory, but then it deletes them instead of passing them through the pipeline or displaying them at the command line.

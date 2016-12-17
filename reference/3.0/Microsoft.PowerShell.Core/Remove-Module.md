@@ -40,19 +40,19 @@ It affects only the current Windows PowerShell session.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Remove-Module -Name BitsTransfer
+PS C:\> Remove-Module -Name BitsTransfer
 ```
 
 This command removes the BitsTransfer module from the current session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Module | Remove-Module
+PS C:\> Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>"FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
+PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
 VERBOSE: Performing operation "Remove-Module" on Target "Microsoft.BackgroundIntelligentTransfer.Management (Path: 'C:\Windows\assembly\GAC_MSIL\Microsoft.BackgroundIntelligentTransfer.Management\1.0.0.0__31bf3856ad364e35\Microsoft.BackgroundIntelligentTransfe
 r.Management.dll')".
@@ -80,8 +80,8 @@ The messages differ because the BitsTransfer module includes an assembly that im
 The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = Get-Module BitsTransfer
-PS C:\>Remove-Module -ModuleInfo $a
+PS C:\> $a = Get-Module BitsTransfer
+PS C:\> Remove-Module -ModuleInfo $a
 ```
 
 This command uses the ModuleInfo parameter to remove the BitsTransfer module.

@@ -57,14 +57,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Delete all job triggers
 ```
-PS C:\>Remove-JobTrigger -Name Test*
+PS C:\> Remove-JobTrigger -Name Test*
 ```
 
 This command deletes all job triggers from scheduled job that have names that begin with "Test".
 
 ### Example 2: Delete selected job triggers
 ```
-PS C:\>Remove-JobTrigger -Name BackupArchive -TriggerID 3
+PS C:\> Remove-JobTrigger -Name BackupArchive -TriggerID 3
 ```
 
 This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
@@ -95,7 +95,7 @@ The value of the **TriggerID** parameter is the identifier in the **ID** propert
 
 ### Example 4: Delete a job trigger from a remote scheduled job
 ```
-PS C:\>Invoke-Command -ComputerName Server01 { Remove-JobTrigger -ID 38 -TriggerID 1 }
+PS C:\> Invoke-Command -ComputerName Server01 { Remove-JobTrigger -ID 38 -TriggerID 1 }
 ```
 
 This command deletes the first job trigger from the Inventory job on the Server01 computer.

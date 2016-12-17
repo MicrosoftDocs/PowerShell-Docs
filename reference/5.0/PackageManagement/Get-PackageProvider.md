@@ -34,21 +34,21 @@ You can filter the results based on all or part of one or more provider names.
 
 ### Example 1: Get all currently loaded package providers
 ```
-PS C:\>Get-PackageProvider
+PS C:\> Get-PackageProvider
 ```
 
 This command gets a list of all the package providers that are currently loaded on the local computer.
 
 ### Example 2: Get all available package providers
 ```
-PS C:\>Get-PackageProvider -ListAvailable
+PS C:\> Get-PackageProvider -ListAvailable
 ```
 
 This command gets a list of all package providers that are available on the local computer.
 
 ### Example 3: Dynamically get a package provider
 ```
-PS C:\>Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
+PS C:\> Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
 ```
 
 This command automatically installs the Chocolatey provider if your computer does not have the Chocolatey provider installed.
