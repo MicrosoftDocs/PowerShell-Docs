@@ -136,19 +136,24 @@ The *Body* parameter can be used to specify a list of query parameters or specif
 
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters.
 For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
+**Warning:** The verbose output of a POST body will end with `with -1-byte payload`, even though the size of the body is both known and sent in the `Content-Length` HTTP header.
 
 When the body is a form, or it is the output of another **Invoke-WebRequest** call, Windows PowerShell sets the request content to the form fields.
 
 For example:
 
-`$R = Invoke-WebRequest http://website.com/login.aspx`
-`$R.Forms\[0\].Name = "MyName"`
-`$R.Forms\[0\].Password = "MyPassword"`
-`Invoke-RestMethod http://website.com/service.aspx -Body $R`
+```
+$R = Invoke-WebRequest http://website.com/login.aspx
+$R.Forms[0].Name = "MyName"
+$R.Forms[0].Password = "MyPassword"
+Invoke-RestMethod http://website.com/service.aspx -Body $R
+```
 
 - or -
 
-`Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]`
+```
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+```
 
 ```yaml
 Type: Object
