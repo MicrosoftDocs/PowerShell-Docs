@@ -145,7 +145,7 @@ $R.Forms[0].Password = "MyPassword"
 Invoke-RestMethod http://website.com/service.aspx -Body $R
 ```
 
-or -
+or
 
 ```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
