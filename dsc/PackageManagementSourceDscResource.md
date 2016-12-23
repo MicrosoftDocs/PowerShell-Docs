@@ -13,7 +13,7 @@ ms.prod:  powershell
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-The **PackageManagementSource** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to register or unregister Package Management sources on a target node. This resource requires the **PackageManagement** module, available from http://PowerShellGallery.com.
+The **PackageManagementSource** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to register or unregister Package Management sources on a target node. **Package Management sources registered in this way are registered under the System context, usable by the System account or by the DSC engine.** This resource requires the **PackageManagement** module, available from http://PowerShellGallery.com.
 
 ## Syntax
 
