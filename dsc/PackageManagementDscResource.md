@@ -4,7 +4,7 @@ ms.date:
 keywords:  powershell,DSC
 description:  
 ms.topic:  article
-author:  jianyunt,brywang,keithb
+author:  brywang-msft
 manager:  kriscv
 ms.prod:  powershell
 ---
