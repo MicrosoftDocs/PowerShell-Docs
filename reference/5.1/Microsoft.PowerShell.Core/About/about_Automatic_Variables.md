@@ -15,15 +15,15 @@ ms.technology:  powershell
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for Windows PowerShell. These variables are created and maintained by Windows PowerShell.
 
 
 ## LONG DESCRIPTION
-Here is a list of the automatic variables in  Windows PowerShell:
+Here is a list of the automatic variables in Windows PowerShell:
 
 
 ### $$
-Contains the last token in the last line received by the session.
+Contains the last token in the last line received by the current session.
 
 
 ### $?
@@ -45,13 +45,13 @@ In an event action, the $Args variable contains objects that represent the event
 
 
 ### $CONSOLEFILENAME
-Contains the path of the console file (.psc1) that was most recently used in the session. This variable is populated when you start  Windows PowerShell with the PSConsoleFile parameter or when you use the Export-Console cmdlet to export snap-in names to a console file.
+Contains the path of the console file (.psc1) that was most recently used in the session. This variable is populated when you start Windows PowerShell with the PSConsoleFile parameter or when you use the Export-Console cmdlet to export snap-in names to a console file.
 
 When you use the Export-Console cmdlet without parameters, it automatically updates the console file that was most recently used in the session. You can use this automatic variable to determine which file will be updated.
 
 
 ### $ERROR
-Contains an array of error objects that represent the most recent errors. The most recent error is the first error object in the array ($Error[0]).
+Contains an array of error objects that represent the most recent errors in the current PowerShell session. The most recent error is the first error object in the array ($Error[0]).
 
 To prevent an error from being added to the $Error array, use the ErrorAction common parameter with a value of Ignore. For more information, see about_CommonParameters (http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113216).
 
@@ -69,7 +69,7 @@ Contains a PSEventSubscriber object that represents the event subscriber of the 
 
 
 ### $EXECUTIONCONTEXT
-Contains an EngineIntrinsics object that represents the execution context of the  Windows PowerShell host. You can use this variable to find the execution objects that are available to cmdlets.
+Contains an EngineIntrinsics object that represents the execution context of the Windows PowerShell host. You can use this variable to find the execution objects that are available to cmdlets.
 
 
 ### $FALSE
@@ -85,7 +85,7 @@ Contains the full path of the user's home directory. This variable is the equiva
 
 
 ### $HOST
-Contains an object that represents the current host application for  Windows PowerShell. You can use this variable to represent the current host in commands or to display or change the properties of the host, such as $Host.version or $Host.CurrentCulture, or $host.ui.rawui.setbackgroundcolor("Red").
+Contains an object that represents the current host application for Windows PowerShell. You can use this variable to represent the current host in commands or to display or change the properties of the host, such as $Host.version or $Host.CurrentCulture, or $host.ui.rawui.setbackgroundcolor("Red").
 
 
 ### $INPUT
@@ -105,7 +105,7 @@ Contains an information about the current command, such as the name, parameters,
 
 $MyInvocation is populated only for scripts, function, and script blocks. You can use the information in the System.Management.Automation.InvocationInfo object that $MyInvocation returns in the current script, such as the path and file name of the script ($MyInvocation.MyCommand.Path) or the name of a function ($MyInvocation.MyCommand.Name) to identify the current command. This is particularly useful for finding the name of the current script.
 
-Beginning in  Windows PowerShell 3.0, $MyInvocation has the following new properties.
+Beginning in Windows PowerShell 3.0, $MyInvocation has the following new properties.
 
 -- PSScriptRoot: Contains the full path to the script that invoked the current command. The value of this property is populated only when the caller is a script.
 
@@ -117,11 +117,11 @@ Unlike the $PSScriptRoot and $PSCommandPath automatic variables, the PSScriptRoo
 ### $NESTEDPROMPTLEVEL
 Contains the current prompt level. A value of 0 indicates the original prompt level. The value is incremented when you enter a nested level and decremented when you exit it.
 
-For example,  Windows PowerShell presents a nested command prompt when you use the $Host.EnterNestedPrompt method.  Windows PowerShell also presents a nested command prompt when you reach a breakpoint in the  Windows PowerShell debugger.
+For example, Windows PowerShell presents a nested command prompt when you use the $Host.EnterNestedPrompt method. Windows PowerShell also presents a nested command prompt when you reach a breakpoint in the Windows PowerShell debugger.
 
-When you enter a nested prompt,  Windows PowerShell pauses the current command, saves the execution context, and increments the value of the $NestedPromptLevel variable. To create additional nested command prompts (up to 128 levels) or to return to the original command prompt, complete the command, or type "exit".
+When you enter a nested prompt, Windows PowerShell pauses the current command, saves the execution context, and increments the value of the $NestedPromptLevel variable. To create additional nested command prompts (up to 128 levels) or to return to the original command prompt, complete the command, or type "exit".
 
-The $NestedPromptLevel variable helps you track the prompt level. You can create an alternative  Windows PowerShell command prompt that includes this value so that it is always visible.
+The $NestedPromptLevel variable helps you track the prompt level. You can create an alternative Windows PowerShell command prompt that includes this value so that it is always visible.
 
 
 ### $NULL
@@ -131,16 +131,13 @@ Windows PowerShell treats $null as an object with a value, that is, as an explic
 
 For example, when $null is included in a collection, it is counted as one of the objects.
 
-
 ```
 C:\PS> $a = ".dir", $null, ".pdf"  
 C:\PS> $a.count  
 3
 ```
 
-
 If you pipe the $null variable to the ForEach-Object cmdlet, it generates a value for $null, just as it does for the other objects
-
 
 ```
 PS C:\ps-test> ".dir", "$null, ".pdf" | Foreach {"Hello"}  
@@ -149,19 +146,15 @@ Hello
 Hello
 ```
 
-
 As a result, you cannot use $null to mean "no parameter value." A parameter value of $null overrides the default parameter value.
 
-However, because  Windows PowerShell treats the $null variable as a placeholder, you can use it scripts like the following one, which would not work if $null were ignored.
-
+However, because Windows PowerShell treats the $null variable as a placeholder, you can use it scripts like the following one, which would not work if $null were ignored.
 
 ```
 $calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)  
 $days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"  
 $currentDay = 0
 ```
-
-
 
 ```
 foreach($day in $calendar)  
@@ -175,18 +168,14 @@ foreach($day in $calendar)
 }
 ```
 
-
-
 ```
 Appointment on Tuesday: Meeting  
 Appointment on Friday: Team lunch
 ```
 
 
-
 ### $OFS
 $OFS is a special variable that stores a string that you want to use as an output field separator. Use this variable when you are converting an array to a string. By default, the value of $OFS is " ", but you can change the value of $OFS in your session, by typing $OFS\="<value>". If you are expecting the default value of " " in your script, module, or configuration output, be careful that the $OFS default value has not been changed elsewhere in your code.
-
 
 ```
 Examples:  
@@ -198,8 +187,6 @@ Examples:
     4
 ```
 
-
-
 ```
 PS> [string]$a  
 1 2 3 4  
@@ -207,14 +194,10 @@ PS> $OFS="";[string]$a
 1234
 ```
 
-
-
 ```
 PS> $OFS=",";[string]$a  
 1,2,3,4
 ```
-
-
 
 ```
 PS> $OFS="--PowerShellRocks--";[string]$a  
@@ -230,42 +213,34 @@ PS> $OFS="`n`n";[string]$a
 ```
 
 
-
 ### $PID
-Contains the process identifier (PID) of the process that is hosting the current  Windows PowerShell session.
+Contains the process identifier (PID) of the process that is hosting the current Windows PowerShell session.
 
 
 ### $PROFILE
-Contains the full path of the  Windows PowerShell profile for the current user and the current host application. You can use this variable to represent the profile in commands. For example, you can use it in a command to determine whether a profile has been created:
-
+Contains the full path of the Windows PowerShell profile for the current user and the current host application. You can use this variable to represent the profile in commands. For example, you can use it in a command to determine whether a profile has been created:
 
 ```
-test-path $profile
+Test-Path $Profile
 ```
-
 
 Or, you can use it in a command to create a profile:
 
-
 ```
-new-item -type file -path $pshome -force
+New-Item -Name $PROFILE -Type File -Path $PSHOME -Force
 ```
-
 
 You can also use it in a command to open the profile in Notepad:
 
-
 ```
-notepad $profile
+Notepad $PROFILE
 ```
-
 
 
 ### $PSBOUNDPARAMETERS
 Contains a dictionary of the parameters that are passed to a script or function and their current values. This variable has a value only in a scope where parameters are declared, such as a script or function. You can use it to display or change the current values of parameters or to pass parameter values to another script or function.
 
 For example:
-
 
 ```
 function Test {  
@@ -278,7 +253,6 @@ function Test {
    test1 @PSBoundParameters  
 }
 ```
-
 
 
 ### $PSCMDLET
@@ -302,13 +276,12 @@ While debugging, this variable contains information about the debugging environm
 
 
 ### $PSHOME
-Contains the full path of the installation directory for  Windows PowerShell, typically, %windir%\System32\ Windows PowerShell\v1.0. You can use this variable in the paths of  Windows PowerShell files. For example, the following command searches the conceptual Help topics for the word "variable":
+Contains the full path of the installation directory for Windows PowerShell, typically, %windir%\System32\Windows PowerShell\v1.0. You can use this variable in the paths of Windows PowerShell files. For example, the following command searches the conceptual Help topics for the word "variable":
 
 
 ```
 Select-String -Pattern Variable -Path $pshome\*.txt
 ```
-
 
 
 ### $PSITEM
@@ -318,7 +291,7 @@ Same as $_. Contains the current object in the pipeline object. You can use this
 ### $PSSCRIPTROOT
 Contains the directory from which a script is being run.
 
-In  Windows PowerShell 2.0, this variable is valid only in script modules (.psm1). Beginning in  Windows PowerShell 3.0, it is valid in all scripts.
+In Windows PowerShell 2.0, this variable is valid only in script modules (.psm1). Beginning in Windows PowerShell 3.0, it is valid in all scripts.
 
 
 ### $PSSENDERINFO
@@ -332,31 +305,36 @@ Contains the name of the user interface (UI) culture that is currently in use in
 
 
 ### $PSVERSIONTABLE
-Contains a read-only hash table that displays details about the version of  Windows PowerShell that is running in the current session. The table includes the following items:
-
+Contains a read-only hash table that displays details about the version of Windows PowerShell that is running in the current session. The table contains the following properties
 
 ```
-CLRVersion:                 The version of the common language runtime (CLR)
+CLRVersion                 The version of the common language runtime (CLR)
 
-BuildVersion:               The build number of the current version
+BuildVersion               The build number of the current version
 
-PSVersion:                  The Windows PowerShell version number
+PSVersion                  The Windows PowerShell version number
 
-WSManStackVersion:          The version number of the WS-Management stack
+WSManStackVersion          The version number of the WS-Management stack
 
-PSCompatibleVersions:       Versions of Windows PowerShell that are  
+PSCompatibleVersions       Versions of Windows PowerShell that are  
                               compatible with the current version
 
-SerializationVersion        The version of the serialization method
+SerializationVersion       The version of the serialization method
 
-PSRemotingProtocolVersion   The version of the Windows PowerShell remote  
+PSRemotingProtocolVersion  The version of the Windows PowerShell remote  
                               management protocol
 ```
 
+In PowerShell 5.1, a new property was added to this automatic variable:
+
+```
+PSEdition                  The edition of PowerShell (Desktop for Windows server and clients)
+
+```
 
 
 ### $PWD
-Contains a path object that represents the full path of the current directory.
+Contains a path object that represents the full path of the current working directory.
 
 
 ### $REPORTERRORSHOWEXCEPTIONCLASS
@@ -369,7 +347,7 @@ Contains a path object that represents the full path of the current directory.
 
 
 ### $REPORTERRORSHOWSTACKTRACE
-The "ReportErrorShow" variables are defined in  Windows PowerShell, but they are not implemented. Get-Variable gets them, but they do not contain valid data.
+The "ReportErrorShow" variables are defined in Windows PowerShell, but they are not implemented. Get-Variable gets them, but they do not contain valid data.
 
 
 ### $SENDER
