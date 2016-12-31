@@ -230,10 +230,10 @@ Or, you can use it in a command to create a profile:
 New-Item -Name $PROFILE -Type File -Path $PSHOME -Force
 ```
 
-You can also use it in a command to open the profile in Notepad:
+You can also use it in a command to open the profile in notepad:
 
 ```
-Notepad $PROFILE
+notepad $PROFILE
 ```
 
 
@@ -328,8 +328,10 @@ PSRemotingProtocolVersion  The version of the Windows PowerShell remote
 In PowerShell 5.1, a new property was added to this automatic variable:
 
 ```
-PSEdition                  The edition of PowerShell (Desktop for Windows server and clients)
-
+PSEdition                  The edition of PowerShell (Desktop for Windows server and clients). This property 
+                               has the value of 'Desktop', for WIndows Server and Windows client versions. This
+                               property has the value of 'Core' for PowerShell running under Nan Server or Windows IOT.
+                               
 ```
 
 
