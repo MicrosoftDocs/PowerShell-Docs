@@ -28,7 +28,7 @@ Export-Counter [-Path] <String> [-FileFormat <String>] [-MaxSize <UInt32>]
 
 ## DESCRIPTION
 The **Export-Counter** cmdlet exports performance counter data (PerformanceCounterSampleSet objects) to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value (.tsv) format.
-You can use this cmdlet to log performance counter data.
+You use this cmdlet to log performance counter data.
 
 The **Export-Counter** cmdlet is designed to export data that is returned by the Get-Counter and Import-Counter cmdlets.
 
@@ -36,7 +36,7 @@ This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions o
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE xample 1: Export counter data to a file --------------------------xample : Export counter data to a file
+### EXAMPLE 1: Export counter data to a file
 ```
 PS C:\> Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
 ```
@@ -47,19 +47,19 @@ The command uses the Get-Counter cmdlet to collect processor time data.
 It uses a pipeline operator (|) to send the data to the **Export-Counter** cmdlet.
 The **Export-Counter** command uses the **Path** variable to specify the output file.
 
-Because the data set might be very large, this command sends the data to **Export-Counter** through the pipeline.
-If the data were saved in a variable, the command might use a disproportionate amount of memory.
+Because the data set might be very large, this example sends the data to **Export-Counter** through the pipeline.
+If the data were saved in a variable, you might use a disproportionate amount of memory.
 
 ### Example 2: Export a file to a counter file format
 ```
-The first command uses the built-in Windows PowerShell conversion feature to store the value of 1 gigabyte (GB) in bytes in the $1GBInBytes variable. When you type a value followed by K (kilobyte), MB (megabyte), or GB, Windows PowerShell returns the value in bytes.
+The first command uses the built-in Windows PowerShell conversion feature to store the value of 1 gigabyte (GB) in bytes in the $1GBInBytes variable. When you type a value followed by KB (kilobyte), MB (megabyte), GB (gigabyte), TB (terabyte), and PB (Petabyte), Windows PowerShell returns the value in bytes.
 PS C:\> $1GBInBytes = 1GB
 
 The second command uses the Import-Counter cmdlet to import performance counter data from the Threads.csv file. The example presumes that this file was previously exported by using the **Export-Counter** cmdlet. A pipeline operator (|) sends the imported data to the **Export-Counter** cmdlet. The command uses the *Path* parameter to specify the location of the output file. It uses the *Circular* and *MaxSize* parameters to direct the **Export-Counter** cmdlet to create a circular log that wraps at 1 GB.
 PS C:\> Import-Counter Threads.csv | Export-Counter -Path ThreadTest.blg -Circular -MaxSize $1GBinBytes
 ```
 
-This example convert a CSV file to a counter data BLG format.
+This example converts a CSV file to a counter data BLG format.
 
 ### Example 3: Get counter data from a remote computer and save the data to a file
 ```
