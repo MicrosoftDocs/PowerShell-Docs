@@ -48,6 +48,7 @@ Sessions configured this way will operate in [NoLanguage mode](https://technet.m
 - Measure-Object (measure)
 - Out-Default
 - Select-Object (select)
+
 No PowerShell providers are available, nor are any external programs (executables, scripts, etc.).
 
 There are several other fields you will want to configure for the JEA session.
