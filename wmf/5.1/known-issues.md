@@ -16,7 +16,7 @@ ms.technology: WMF
 
 ## Starting PowerShell shortcut as Administrator
 Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.
-Reopen the shortcut as non-administrator and the shortcut will now work even as administrator.
+Reopen the shortcut as non-administrator and the shortcut now works even as administrator.
 
 ## Pester
 In this release, there are two issues you should be aware of when using Pester on Nano Server:
@@ -26,7 +26,7 @@ In this release, there are two issues you should be aware of when using Pester o
 
 ## Operation Validation 
 
-* Update-Help will fail for Microsoft.PowerShell.Operation.Validation module due to non-working help URI
+* Update-Help fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI
 
 ## DSC after uninstall WMF 
 * Uninstalling WMF does not delete DSC MOF documents from the configuration folder. DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems. In this case, run the following script from elevated PowerShell console to to clean up the DSC states.
