@@ -11,7 +11,7 @@ ms.prod:  powershell
 
 # Running DSC with user credentials 
 
-> Applies To: Windows PowerShell 5.0
+> Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1
 
 You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration. 
 By default, DSC runs each resource as the system account. 
