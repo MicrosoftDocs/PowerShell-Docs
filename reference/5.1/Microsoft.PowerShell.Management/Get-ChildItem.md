@@ -40,7 +40,7 @@ Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>]
 ## DESCRIPTION
 The **Get-ChildItem** cmdlet gets the items in one or more specified locations.
 If the item is a container, it gets the items inside the container, known as child items.
-You can use the *Recurse* parameter to get items in all child containers.
+You can use the *Recurse* parameter to get items in all child containers and use the -Depth parameter to limit the number of levels to recurse.
 
 A location can be a file system location, such as a directory, or a location exposed by a different Windows PowerShell provider, such as a registry hive or a certificate store.
 
@@ -120,10 +120,15 @@ PS C:\> Get-ChildItem -Path C:\Windows -Include "*mouse*" -Exclude "*.png"
 
 This command gets all of the items in the C:\Windows directory and its subdirectories that have mouse in the file name, except for those with a .png file name extension.
 
+### Example 8: Get all items in the specified directory and its subdirectories limited by the Depth parameter
+```
+PS C:\> Get-ChildItem -Path C:\Windows -Depth 2
+```
+
 ## PARAMETERS
 
 ### -Attributes
-{{Fill Attributes Description}}
+Specifies, as a string arrry, the attribute or attributess an item must posess in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
@@ -139,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
-{{Fill Depth Description}}
+This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the -Recurse and the -Depth parameter to limit the recursion.
 
 ```yaml
 Type: UInt32
@@ -154,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
-{{Fill Directory Description}}
+Specifies that an item must posess the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -183,11 +188,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -File
-{{Fill File Description}}
+Specifies that an item must not posses the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -202,10 +207,9 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the *Path* parameter.
+Specifies a filter in the provider's format or language. The value of this parameter qualifies the *Path* parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved from the provider.
 
 ```yaml
 Type: String
@@ -235,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
-{{Fill Hidden Description}}
+Specifies that an item must posess the Hidden attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -255,7 +259,7 @@ The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as *.txt.
 Wildcards are permitted.
 
-The *Include* parameter is effective only when the command includes the *Recurse* parameter or the path leads to the contents of a directory, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+The *Include* parameter is effective only when either the command includes the *Recurse* parameter or the path leads to the contents of a directory, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
 
 ```yaml
 Type: String[]
@@ -266,7 +270,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath
@@ -305,9 +309,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies a path to one or more locations.
+Specifies a path to one or more locations. The default location is the current directory (.).
 Wildcards are permitted.
-The default location is the current directory (.).
 
 ```yaml
 Type: String[]
@@ -318,11 +321,12 @@ Required: False
 Position: 0
 Default value: Current directory
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ReadOnly
-{{Fill ReadOnly Description}}
+Specifies that an item must posess the ReadOnly attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
+
 
 ```yaml
 Type: SwitchParameter
@@ -354,7 +358,8 @@ Accept wildcard characters: False
 ```
 
 ### -System
-{{Fill System Description}}
+Specifies that an item must posess the System attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
+
 
 ```yaml
 Type: SwitchParameter
@@ -407,7 +412,7 @@ If you use the *Name* parameter, **Get-ChildItem** returns the object names as s
 * You can also refer to **Get-ChildItem** by its built-in aliases, ls, dir, and gci. For more information, see about_Aliases.
 
   This cmdlet does not get hidden items by default.
-To get hidden items, use the *Force* parameter.
+To get hidden items, use the *Force* parameter or use the *Attributes* parameter and include 'hidden'.
 
   The **Get-ChildItem** cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
