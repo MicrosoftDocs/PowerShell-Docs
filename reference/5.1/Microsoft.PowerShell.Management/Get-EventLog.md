@@ -37,21 +37,20 @@ Get-EventLog [-ComputerName <String[]>] [-List] [-AsString] [<CommonParameters>]
 The **Get-EventLog** cmdlet gets events and event logs on the local and remote computers.
 
 You can use the parameters of this cmdlet to search for events by using their property values.
-This cmdlet gets only the events that match all of the specified property values.
+This cmdlet gets only the events that match the specified property values.
 
-The cmdlets that contain the EventLog noun work only on classic event logs.
-To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
+The cmdlets that contain the EventLog noun work only on classic event logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 
 ## EXAMPLES
 
-### Example 1: Get event logs on a computer
+### Example 1: Get event logs on the local computer
 ```
 PS C:\> Get-EventLog -List
 ```
 
-This command gets the event logs on the computer.
+This command gets the event logs on the local computer.
 
-### Example 2: Get the five most recent entries from a specific event log
+### Example 2: Get the five most recent entries from a specific event log on the local computer
 ```
 PS C:\> Get-EventLog -Newest 5 -LogName "Application"
 ```
@@ -62,16 +61,6 @@ This command gets the five most recent entries from the Application event log.
 ```
 PS C:\> $Events = Get-Eventlog -LogName system -Newest 1000
 PS C:\> $Events | Group-Object -Property source -noelement | Sort-Object -Property count -Descending
-
-
-
-
-
-
-
-
-
-
 
 Count Name
 ----- ----
@@ -89,8 +78,7 @@ This example shows how to find all of the sources that are represented in the 10
 
 The first command gets the 1,000 most recent entries from the System event log and stores them in the $Events variable.
 
-The second command uses a pipeline operator (|) to send the events in $Events to the Group-Object cmdlet, which groups the entries by the value of the Source property.
-The command uses a second pipeline operator to send the grouped events to the Sort-Object cmdlet, which sorts them in descending order, so the most frequently appearing source is listed first.
+The second command uses a pipeline operator (|) to send the events in $Events to the Group-Object cmdlet, which groups the entries by the value of the Source property sends the grouped events to the Sort-Object cmdlet, which sorts them in descending order, so the most frequently appearing source is listed first.
 
 Source is just one property of event log entries.
 To see all of the properties of an event log entry, pipe the event log entries to the Get-Member cmdlet.
@@ -128,22 +116,6 @@ This command gets all the events in the Windows PowerShell event log that have a
 PS C:\> $A = Get-EventLog -Log System -Newest 1
 PS C:\> $A | Format-List -Property *
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 EventID            : 7036
 MachineName        : Server01
 Data               : {}
@@ -176,14 +148,9 @@ PS C:\> Get-EventLog -Log "Application" -Source "Outlook" | where {$_.eventID -e
 This command gets events in the Application event log where the source is Outlook and the event ID is 34.
 Even though this cmdlet does not have an *EventID* parameter, you can use the Where-Object cmdlet to select events based on the value of any event property.
 
-### Example 10: Get event in an event log that is grouped by a property
+### Example 10: Get events in an event log, grouped by a property
 ```
 PS C:\> Get-EventLog -Log System -UserName "NT*" | Group-Object -Property "UserName" -noelement | Format-Table Count, Name -Auto
-
-
-
-
-
 
 Count Name
 ----- ----
@@ -465,7 +432,7 @@ If only the *List* parameter is specified, the output is a collection of **Syste
 If both the *List* and *AsString* parameters are specified, the output is a collection of **System.String** objects.
 
 ## NOTES
-* This cmdlet and the Get-WinEvent cmdlet are not supported in Windows Preinstallation Environment (Windows PE).
+* This cmdlet and the **Get-WinEvent** cmdlet are not supported in Windows Preinstallation Environment (Windows PE).
 
 ## RELATED LINKS
 
@@ -480,4 +447,3 @@ If both the *List* and *AsString* parameters are specified, the output is a coll
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
