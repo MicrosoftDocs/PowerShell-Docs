@@ -96,6 +96,14 @@ The Replace operator replaces the ".txt" file name extension of each file with "
 Because the Replace operator works with regular expressions, the dot preceding "txt" is interpreted to match any character.
 To ensure that it matches only a dot (.), it is escaped with a backslash character (\\).
 The backslash character is not required in ".log" because it is a string, not a regular expression.
+
+### -------------------------- EXAMPLE 5 --------------------------
+```
+Get-ChildItem -Filter "*.MARKUP" -Recurse | Rename-Item -NewName {"2017-01-10-" + $_.name}
+```
+
+This command shows how to prefix ( or suffix for that matter; use your imagination) a specific string to each entry supplied to Rename-Item commandlet.
+
 ## PARAMETERS
 
 ### -Credential
