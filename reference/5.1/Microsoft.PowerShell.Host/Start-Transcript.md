@@ -51,7 +51,7 @@ Additionally in Windows PowerShell 5.0, the Start-Transcript cmdlet works in Win
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLExample 1: Start a transcript file with default settings --------------------------xample: Start a transcript file with default settings
+### Example 1: Start a transcript file with default settings
 ```
 PS C:\> Start-Transcript
 ```
