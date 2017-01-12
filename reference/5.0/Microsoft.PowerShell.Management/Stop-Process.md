@@ -79,7 +79,7 @@ Without this parameter, there would be no display after a **Stop-Process** comma
 ### Example 3: Stop a process and detect that it has stopped
 ```
 PS C:\> calc
-PS C:\> $p = Get-Crocess -Name "calc"
+PS C:\> $p = Get-Process -Name "calc"
 PS C:\> Stop-Process -InputObject $p
 PS C:\> Get-Process | Where-Object {$_.HasExited}
 ```
