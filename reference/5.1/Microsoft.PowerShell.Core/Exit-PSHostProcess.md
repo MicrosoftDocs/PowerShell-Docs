@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=403737
-schema: 2.0.0
-title: Exit-PSHostProcess
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Exit PSHostProcess
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=403737
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Exit-PSHostProcess
 
@@ -32,7 +33,7 @@ You run the **Exit-PSHostProcess** cmdlet from within the process, when you are 
 
 ### Example 1: Exit a process
 ```
-PS C:\>[Process:1520]: PS C:\> Exit-PSHostProcess
+PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 

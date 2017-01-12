@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821499
-schema: 2.0.0
-title: New-PSSessionConfigurationFile
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSSessionConfigurationFile
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821499
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # New-PSSessionConfigurationFile
 
@@ -56,7 +57,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Designing a specialized session
 ```
-PS C:\>New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
+PS C:\> New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
 ```
 
 The following command creates a session configuration file for IT technical sessions on a cloud-based document management server.
@@ -69,19 +70,19 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 ### Example 2: Restricting Language in a Session
 ```
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
-PS C:\>New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage 
-PS C:\>New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
+PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage 
+PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 
 The second pair of commands uses the configuration files to create session configurations on the local computer.
-PS C:\>Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force 
-PS C:\>Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
+PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force 
+PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
-PS C:\>$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage 
-PS C:\>$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage 
+PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
-PS C:\>Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS C:\> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
@@ -89,7 +90,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
 
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session. Because these language elements are permitted in the restricted-language session, the command succeeds.
-PS C:\>Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS C:\> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 Before
 ```
 
@@ -102,10 +103,10 @@ This option is required to run the Register-PSSessionConfiguration cmdlet.
 ### Example 3: Changing a Session Configuration File
 ```
 The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules.
-PS C:\>New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
+PS C:\> New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 
 The second command uses the **Set-PSSessionConfiguration** cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change is completed.
-PS C:\>Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
+PS C:\> Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
 ```
 
 This example shows how to change the session configuration file that is used in a session configuration.
@@ -115,14 +116,14 @@ Previously, these sessions had only the core modules and an internal "ITTasks" m
 ### Example 4: Editing a Session Configuration File
 ```
 The first command uses the Get-PSSessionConfiguration command to get the path of the configuration file for the ITConfig session configuration. The path is stored in the **ConfigFilePath** property of the session configuration.
-PS C:\>(Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+PS C:\> (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
 
 To modify the session configuration copy of the configuration file, you might have to change the file permissions.In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
-PS C:\>AliasDefinitions = @(@{Name='slst';Value='Select-String'})
+PS C:\> AliasDefinitions = @(@{Name='slst';Value='Select-String'})
 
 The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the *Verbose* parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns $True, which indicates that it did not detect any errors in the file.
-PS C:\>Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 True
 ```
 
@@ -130,7 +131,7 @@ This example shows how to change a session configuration by editing the active s
 
 ### Example 5: Sample Configuration File
 ```
-PS C:\>New-PSSessionConfigurationFile
+PS C:\> New-PSSessionConfigurationFile
 -Path .\SampleFile.pssc
 -Schema "1.0.0.0"
 -Author "User01"

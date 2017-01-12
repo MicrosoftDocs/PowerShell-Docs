@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517137
-schema: 2.0.0
-title: Get-PackageSource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PackageSource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517137
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
+
 
 # Get-PackageSource
 
@@ -34,21 +35,21 @@ Otherwise, the command returns all package sources that are registered with Pack
 
 ### Example 1: Get all package sources
 ```
-PS C:\>Get-PackageSource
+PS C:\> Get-PackageSource
 ```
 
 This command gets all package sources that are registered with Package Management on the local computer.
 
 ### Example 2: Get all package sources for a specific provider
 ```
-PS C:\>Get-PackageSource -ProviderName "PSModule"
+PS C:\> Get-PackageSource -ProviderName "PSModule"
 ```
 
 This command gets all package sources that are registered for the PSModule provider.
 
 ### Example 3: Get all package sources for a specific provider
 ```
-PS C:\>Get-PackageProvider "PSModule" | Get-PackageSource
+PS C:\> Get-PackageProvider "PSModule" | Get-PackageSource
 ```
 
 This command gets all package sources for the PSModule provider by piping the results of the **Get-PackageProvider** cmdlet to **Get-PackageSource**.

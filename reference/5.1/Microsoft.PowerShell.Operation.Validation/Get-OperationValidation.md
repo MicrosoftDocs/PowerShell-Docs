@@ -1,18 +1,18 @@
 ---
-author: jpjofre
-description:
-external help file: Microsoft.PowerShell.Operation.Validation-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-11-08
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version:
-schema: 2.0.0
-title: Get-OperationValidation
-online version: http://go.microsoft.com/fwlink/?LinkId=834963
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get OperationValidation
+ms.technology:  powershell
+external help file:   Microsoft.PowerShell.Operation.Validation-help.xml
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=834963
 ---
+
 
 # Get-OperationValidation
 
@@ -34,7 +34,7 @@ Modules that include a Diagnostics folder are inspected for Pester tests in the 
 
 ### Example 1: Get Operation Validation tests
 ```
-PS C:\>Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
+PS C:\> Get-OperationValidation -ModuleName "C:\temp\modules\AddNumbers"
     Type:     Simple
     File:     addnum.tests.ps1
     FilePath: C:\temp\modules\AddNumbers\Diagnostics\Simple\addnum.tests.ps1
@@ -106,3 +106,4 @@ The **PSCustomObject** describes the validation.
 ## RELATED LINKS
 
 [Invoke-OperationValidation](Invoke-OperationValidation.md)
+

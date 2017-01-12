@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821684
-schema: 2.0.0
-title: Enable-ScheduledJob
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable ScheduledJob
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821684
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
+
 
 # Enable-ScheduledJob
 
@@ -53,7 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Enable a scheduled job
 ```
-PS C:\>Enable-ScheduledJob -ID 2 -Passthru
+PS C:\> Enable-ScheduledJob -ID 2 -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 2          Inventory       {1, 2}          \\Srv01\Scripts\Get-FullInventory.ps1    True
@@ -64,7 +65,7 @@ The output shows the effect of the command.
 
 ### Example 2: Enable all scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Enable-ScheduledJob -Passthru
+PS C:\> Get-ScheduledJob | Enable-ScheduledJob -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          ArchiveProje... {}              C:\Scripts\Archive-DxProjects.ps1        True
@@ -80,7 +81,7 @@ It uses the Get-ScheduledJob cmdlet to get all scheduled job and the **Enable-Sc
 
 ### Example 3: Enable selected scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} | ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} | ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
 ```
 
 This command enables scheduled jobs that do not require a network connection.
@@ -95,7 +96,7 @@ Another pipeline operator sends the selected scheduled job options objects to th
 
 ### Example 4: Enable scheduled jobs on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName "Srv01,Srv10" -ScriptBlock {Enable-ScheduledJob -Name "Inventory"}
+PS C:\> Invoke-Command -ComputerName "Srv01,Srv10" -ScriptBlock {Enable-ScheduledJob -Name "Inventory"}
 ```
 
 This command enables scheduled jobs that have "test" in their names on two remote computers, Srv01 and Srv10.

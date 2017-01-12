@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821593
-schema: 2.0.0
-title: Get-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821593
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-Service
 
@@ -47,7 +48,7 @@ You can direct this cmdlet to get only particular services by specifying the ser
 
 ### Example 1: Get all services on the computer
 ```
-PS C:\>Get-Service
+PS C:\> Get-Service
 ```
 
 This command gets all of the services on the computer.
@@ -56,14 +57,14 @@ The default display shows the status, service name, and display name of each ser
 
 ### Example 2: Get services that begin with a search string
 ```
-PS C:\>Get-Service "wmi*"
+PS C:\> Get-Service "wmi*"
 ```
 
 This command retrieves services with service names that begin with WMI (the acronym for Windows Management Instrumentation).
 
 ### Example 3: Display services that include a search string
 ```
-PS C:\>Get-Service -Displayname "*network*"
+PS C:\> Get-Service -Displayname "*network*"
 ```
 
 This command displays services with a display name that includes the word network.
@@ -71,14 +72,14 @@ Searching the display name finds network-related services even when the service 
 
 ### Example 4: Get services that begin with a search string and an exclusion
 ```
-PS C:\>Get-Service -Name "win*" -Exclude "WinRM"
+PS C:\> Get-Service -Name "win*" -Exclude "WinRM"
 ```
 
 These commands get only the services with service names that begin with win, except for the WinRM service.
 
 ### Example 5: Display services that are currently active
 ```
-PS C:\>Get-Service | Where-Object {$_.Status -eq "Running"}
+PS C:\> Get-Service | Where-Object {$_.Status -eq "Running"}
 ```
 
 This command displays only the services that are currently active.
@@ -90,7 +91,7 @@ To see all of the properties, type `Get-Service | Get-Member`.
 
 ### Example 6: Get the services on a remote computer
 ```
-PS C:\>Get-Service -ComputerName "Server02"
+PS C:\> Get-Service -ComputerName "Server02"
 ```
 
 This command gets the services on the Server02 remote computer.
@@ -99,7 +100,7 @@ Because the *ComputerName* parameter of **Get-Service** does not use Windows Pow
 
 ### Example 7: List the services on the local computer that have dependent services
 ```
-PS C:\>Get-Service | Where-Object {$_.DependentServices} | Format-List -Property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
+PS C:\> Get-Service | Where-Object {$_.DependentServices} | Format-List -Property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
 
 
@@ -127,7 +128,7 @@ The command uses its *Property* parameter to display the name of the service, th
 
 ### Example 8: Sort services by property value
 ```
-PS C:\>Get-Service "s*" | Sort-Object status
+PS C:\> Get-Service "s*" | Sort-Object status
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -145,7 +146,7 @@ Running  SharedAccess       Windows Firewall/Internet Connectio...
 Running  SENS               System Event Notification
 Running  seclogon           Secondary Logon
 
-PS C:\>Get-Service "s*" | Sort-Object status -Descending
+PS C:\> Get-Service "s*" | Sort-Object status -Descending
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -171,7 +172,7 @@ To list running services first, use the *Descending* parameter of the Sort-Objec
 
 ### Example 9: Get services on multiple computers
 ```
-PS C:\>Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
+PS C:\> Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
 
 
 
@@ -193,7 +194,7 @@ The **Format-Table** command uses the *Property* parameter to specify the proper
 
 ### Example 10: Get the dependent services of a service
 ```
-PS C:\>Get-Service "WinRM" -RequiredServices
+PS C:\> Get-Service "WinRM" -RequiredServices
 ```
 
 This command gets the services that the WinRM service requires.
@@ -202,7 +203,7 @@ The command returns the value of the **ServicesDependedOn** property of the serv
 
 ### Example 11: Get a service through the pipeline operator
 ```
-PS C:\>"WinRM" | Get-Service
+PS C:\> "WinRM" | Get-Service
 ```
 
 This command gets the WinRM service on the local computer.
@@ -281,7 +282,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Include
@@ -299,7 +300,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject

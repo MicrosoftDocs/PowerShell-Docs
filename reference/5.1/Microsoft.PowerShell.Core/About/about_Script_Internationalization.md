@@ -1,20 +1,15 @@
 ---
-title: about_Script_Internationalization
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Script_Internationalization
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Script_Internationalization
+ms.technology:  powershell
 ---
+
 # About Script Internationalization
 ## about_Script_Internationalization
 
@@ -103,7 +98,7 @@ the same name as the script and the .psd1 file name extension. Store the files
 in subdirectories of the script directory with names of cultures in the following
 format:
 
-<language>–<region>
+<language>-<region>
 
 Examples: de-DE, ar-SA, and zh-Hans
 

@@ -1,12 +1,15 @@
 ---
-title: New-Item for Certificate
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Item for Certificate
+ms.technology:  powershell
 ---
+
 # New-Item for Certificate
 Creates new certificate stores in the LocalMachine store location.  
   

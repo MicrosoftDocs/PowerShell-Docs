@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821622
-schema: 2.0.0
-title: Rename-ItemProperty
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Rename ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821622
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Rename-ItemProperty
 
@@ -43,7 +44,7 @@ For example, you can use **Rename-ItemProperty** to change the name of a registr
 
 ### Example 1: Rename a registry entry
 ```
-PS C:\>Rename-ItemProperty -Path HKLM:\Software\SmpApplication -Name config -NewName oldconfig
+PS C:\> Rename-ItemProperty -Path HKLM:\Software\SmpApplication -Name config -NewName oldconfig
 ```
 
 This command renames the config registry entry that is contained in the HKEY_LOCAL_MACHINE\Software\SmpApplication key to oldconfig.

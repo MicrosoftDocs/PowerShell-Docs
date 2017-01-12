@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821810
-schema: 2.0.0
-title: Group-Object
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Group Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821810
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Group-Object
 
@@ -35,14 +36,14 @@ If you specify more than one property, **Group-Object** first groups them by the
 
 ### Example 1: Group files by size
 ```
-PS C:\>Get-ChildItem *.doc | Group-Object -Property length
+PS C:\> Get-ChildItem *.doc | Group-Object -Property length
 ```
 
 This command gets the files in the current location that have a .doc extension and groups them by size.
 
 ### Example 2: Group files by extension
 ```
-PS C:\>Get-ChildItem | Sort-Object -Property extension | Group-Object -Property extension
+PS C:\> Get-ChildItem | Sort-Object -Property extension | Group-Object -Property extension
 ```
 
 This command gets the files in the current location, sorts them by file name extension, and then groups them by file name extension.
@@ -50,7 +51,7 @@ Note that the files are sorted before they are grouped.
 
 ### Example 3: Group integers by remainder
 ```
-PS C:\>1..35 | Group-Object -Property {$_ % 2},{$_ % 3}
+PS C:\> 1..35 | Group-Object -Property {$_ % 2},{$_ % 3}
 ```
 
 This example shows how to use script blocks as the value of the *Property* parameter.
@@ -59,8 +60,8 @@ This command displays the integers from 1 to 35, grouped by the remainder left w
 
 ### Example 4: Group event log events by ID
 ```
-PS C:\>$Events = Get-EventLog -LogName "system" -Newest 1000
-PS C:\>$Events | Group-Object -Property eventID
+PS C:\> $Events = Get-EventLog -LogName "system" -Newest 1000
+PS C:\> $Events | Group-Object -Property eventID
 Count Name                      Group
 ----- ----                      -----
 44    Information               {System.Diagnostics.EventLogEntry, 
@@ -79,13 +80,13 @@ In the output, the Count column represents the number of entries in each group, 
 
 ### Example 5: Group processes by priority class
 ```
-PS C:\>Get-Process | Group-Object -Property PriorityClass
+PS C:\> Get-Process | Group-Object -Property PriorityClass
 Count Name                Group
 ----- ----                -----
 55 Normal              {System.Diagnostics.Process (AdtAgent), System.Diagnostics.Process (alg), System.Dia... 
 1                     {System.Diagnostics.Process (Idle)} 
 3 High                {System.Diagnostics.Process (Newproc), System.Diagnostics.Process (winlogon), System.D... 
-2 BelowNormal         {System.Diagnostics.Process (winperf), PS C:\>Get-Process | Group-Object -Property company -NoElement
+2 BelowNormal         {System.Diagnostics.Process (winperf), PS C:\> Get-Process | Group-Object -Property company -NoElement
 Count Name
 ----- ----
 55 Normal
@@ -107,7 +108,7 @@ The results are shown in the following sample output.
 
 ### Example 6: Group events by time
 ```
-PS C:\>Get-EventLog -LogName system -Newest 1000 | Group-Object -Property {$_.TimeWritten - $_.TimeGenerated}
+PS C:\> Get-EventLog -LogName system -Newest 1000 | Group-Object -Property {$_.TimeWritten - $_.TimeGenerated}
 ```
 
 This command demonstrates how to provide the value of the *Property* parameter as a script block.
@@ -122,7 +123,7 @@ That value is used to group the 1,000 most recent events.
 
 ### Example 7: Group items by file name extension
 ```
-PS C:\>Get-ChildItem | Group-Object extension -NoElement
+PS C:\> Get-ChildItem | Group-Object extension -NoElement
 Count Name
 ----- ----
 21
@@ -146,14 +147,14 @@ The results are shown in the following sample output.
 
 ### Example 8: Group objects by value
 ```
-PS C:\>"a", "b", "c", "c", "d" | Get-Unique
+PS C:\> "a", "b", "c", "c", "d" | Get-Unique
 a
 b
 c
-d PS C:\>"a", "b", "c", "c", "d" | Group-Object -NoElement | Where {$_.Count -gt 1}
+d PS C:\> "a", "b", "c", "c", "d" | Group-Object -NoElement | Where {$_.Count -gt 1}
 Count Name
 ----- ----
-2     c PS C:\>Get-Process | Group-Object -Property Name -NoElement | Where {$_.count -gt 1}
+2     c PS C:\> Get-Process | Group-Object -Property Name -NoElement | Where {$_.count -gt 1}
 Count Name
 ----- ----
 2     csrss
@@ -177,12 +178,12 @@ The results are shown in the following sample output.
 
 ### Example 9: Group objects in a hash table
 ```
-PS C:\>$A = Get-Command get-*, set-* -Type cmdlet | Group-Object -Property verb -AsHashTable -AsString
-PS C:\>$A
+PS C:\> $A = Get-Command get-*, set-* -Type cmdlet | Group-Object -Property verb -AsHashTable -AsString
+PS C:\> $A
 Name    Value
 ----    -----
 Get     {Get-PSCallStack, Get-PSBreakpoint, Get-PSDrive, Get-PSSession...} 
-Set     {Set-Service, Set-StrictMode, Set-PSDebug, Set-PSSessionConfiguration...} PS C:\>$A.get
+Set     {Set-Service, Set-StrictMode, Set-PSDebug, Set-PSSessionConfiguration...} PS C:\> $A.get
 CommandType     Name                 Definition
 -----------     ----                 ----------
 Cmdlet          Get-PSCallStack      Get-PSCallStack [-Verbose] [-Debug] [-ErrorAction <ActionPrefer... 

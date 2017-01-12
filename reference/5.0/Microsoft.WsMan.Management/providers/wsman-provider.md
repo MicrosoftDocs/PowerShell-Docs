@@ -1,18 +1,16 @@
 ---
-title: "WSMan Provider"
-ms.custom: na
-ms.date: 07/31/2015
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 6
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=834980
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  wsman provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834980
 ---
+
 # WSMan Provider
 ## PROVIDER NAME  
  WSMan  
@@ -916,3 +914,4 @@ ClientCertificate                     Container
 #### Cmdlets supported:  
 
 -   [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+

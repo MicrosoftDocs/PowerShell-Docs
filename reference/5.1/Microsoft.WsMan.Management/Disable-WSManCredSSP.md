@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821725
-schema: 2.0.0
-title: Disable-WSManCredSSP
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable WSManCredSSP
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821725
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Disable-WSManCredSSP
 
@@ -47,14 +48,14 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 ### Example 1: Disable CredSSP on a client
 ```
-PS C:\>Disable-WSManCredSSP -Role Client
+PS C:\> Disable-WSManCredSSP -Role Client
 ```
 
 This command disables CredSSP on the client, which prevents delegation to servers.
 
 ### Example 2: Disable CredSSP on a server
 ```
-PS C:\>Disable-WSManCredSSP -Role Server
+PS C:\> Disable-WSManCredSSP -Role Server
 ```
 
 This command disables CredSSP on the server, which prevents delegation from clients.

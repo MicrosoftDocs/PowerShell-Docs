@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113360
-schema: 2.0.0
-title: New-TimeSpan
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New TimeSpan
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113360
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # New-TimeSpan
 ## SYNOPSIS
@@ -36,14 +37,14 @@ Without parameters, a "New-Timespan" command returns a timespan object that repr
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$timespan = new-timespan -hour 1 -minute 25
+PS C:\> $timespan = new-timespan -hour 1 -minute 25
 ```
 
 This command creates a TimeSpan object with a duration of 1 hour and 25 minutes and stores it in a variable named $timespan.
 It displays a representation of the TimeSpan object.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-timespan -end (get-date -year 2010 -month 1 -day 1)
+PS C:\> new-timespan -end (get-date -year 2010 -month 1 -day 1)
 ```
 
 This example creates a new TimeSpan object that represents the interval between the time that the command is run and January 1, 2010.
@@ -51,14 +52,14 @@ This example creates a new TimeSpan object that represents the interval between 
 This command does not require the Start parameter, because the default value of the Start parameter is the current date and time.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$90days = new-timespan -days 90
-PS C:\>(get-date) + $90days
+PS C:\> $90days = new-timespan -days 90
+PS C:\> (get-date) + $90days
 ```
 
 These commands return the date that is 90 days after the current date.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>dir $pshome\en-us\about_remote.help.txt | new-timespan
+PS C:\> dir $pshome\en-us\about_remote.help.txt | new-timespan
 
 Days              : 321
 Hours             : 21
@@ -74,7 +75,7 @@ TotalMilliseconds : 27813562312.7728
 
 # Equivalent to:
 
-PS C:\>new-timespan -start (dir $pshome\en-us\about_remote.help.txt).lastwritetime
+PS C:\> new-timespan -start (dir $pshome\en-us\about_remote.help.txt).lastwritetime
 ```
 
 This command tells you how long it has been since the about_remote.help.txt file was last updated.

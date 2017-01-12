@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821630
-schema: 2.0.0
-title: Set-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821630
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Set-Item
 
@@ -40,28 +41,28 @@ The **Set-Item** cmdlet changes the value of an item, such as a variable or regi
 
 ### Example 1: Create an alias
 ```
-PS C:\>Set-Item -Path alias:np -Value "c:\windows\notepad.exe"
+PS C:\> Set-Item -Path alias:np -Value "c:\windows\notepad.exe"
 ```
 
 This command creates an alias of np for Notepad.
 
 ### Example 2: Change the value of an environment variable
 ```
-PS C:\>Set-Item -Path env:UserRole -Value "Administrator"
+PS C:\> Set-Item -Path env:UserRole -Value "Administrator"
 ```
 
 This command changes the value of the UserRole environment variable to Administrator.
 
 ### Example 3: Modify your prompt function
 ```
-PS C:\>Set-Item -Path function:prompt -Value {'PS '+ $(Get-Date -Format t) + " " + $(Get-Location) + '> '}
+PS C:\> Set-Item -Path function:prompt -Value {'PS '+ $(Get-Date -Format t) + " " + $(Get-Location) + '> '}
 ```
 
 This command changes the prompt function so that it displays the time before the path.
 
 ### Example 4: Set options for your prompt function
 ```
-PS C:\>Set-Item -Path function:prompt -Options "AllScope,ReadOnly"
+PS C:\> Set-Item -Path function:prompt -Options "AllScope,ReadOnly"
 ```
 
 This command sets the AllScope and ReadOnly options for the prompt function.

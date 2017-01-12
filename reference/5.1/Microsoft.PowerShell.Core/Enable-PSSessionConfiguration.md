@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821476
-schema: 2.0.0
-title: Enable-PSSessionConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable PSSessionConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821476
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Enable-PSSessionConfiguration
 
@@ -43,21 +44,21 @@ Instead, use the more comprehensive cmdlet, Enable-PSRemoting.
 
 ### Example 1: Re-enable the default session
 ```
-PS C:\>Enable-PSSessionConfiguration
+PS C:\> Enable-PSSessionConfiguration
 ```
 
 This command re-enables the Microsoft.PowerShell default session configuration on the computer.
 
 ### Example 2: Re-enable specified sessions
 ```
-PS C:\>Enable-PSSessionConfiguration -Name MaintenanceShell, AdminShell
+PS C:\> Enable-PSSessionConfiguration -Name MaintenanceShell, AdminShell
 ```
 
 This command re-enables the MaintenanceShell and AdminShell session configurations on the computer.
 
 ### Example 3: Re-enable the all sessions
 ```
-PS C:\>Enable-PSSessionConfiguration -Name *
+PS C:\> Enable-PSSessionConfiguration -Name *
 PS C:\> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
 ```
 
@@ -69,7 +70,7 @@ Therefore, you can use either.
 
 ### Example 4: Re-enable a session and specify a new security descriptor
 ```
-PS C:\>Enable-PSSessionConfiguration -Name MaintenanceShell -SecurityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
+PS C:\> Enable-PSSessionConfiguration -Name MaintenanceShell -SecurityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
 ```
 
 This command re-enables the MaintenanceShell session configuration and specifies a new security descriptor for the configuration.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=144305
-schema: 2.0.0
-title: New-PSSessionOption
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSSessionOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=144305
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # New-PSSessionOption
 ## SYNOPSIS
@@ -47,7 +48,7 @@ For more information about session configurations, see about_Session_Configurati
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-PSSessionOption
+PS C:\> New-PSSessionOption
 
 MaximumConnectionRedirectionCount : 5
 NoCompression                     : False
@@ -74,8 +75,8 @@ IdleTimeout                       : 00:04:00
 This command creates a session option object with all of the default values.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
-PS C:\>New-PSSession -ComputerName Server01 -SessionOption $pso
+PS C:\> $pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
+PS C:\> New-PSSession -ComputerName Server01 -SessionOption $pso
 ```
 
 This example shows how to use a session option object to configure a session.
@@ -86,7 +87,7 @@ The second command uses the New-PSSession cmdlet to create a session on the Serv
 The command uses the session option object in the value of the $pso variable as the value of the SessionOption parameter of the command.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Enter-PSSession -ComputerName Server01 -SessionOption (New-PSSessionOption -NoEncryption -NoCompression)
+PS C:\> Enter-PSSession -ComputerName Server01 -SessionOption (New-PSSessionOption -NoEncryption -NoCompression)
 ```
 
 This command uses the Enter-PSSession cmdlet to start an interactive session with the Server01 computer.
@@ -95,7 +96,7 @@ The value of the **SessionOption** parameter is a **New-PSSessionOption** comman
 The **New-PSSessionOption** command is enclosed in parentheses to make sure that it runs before the **Enter-PSSession** command.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = New-PSSessionOption
+PS C:\> $a = New-PSSessionOption
 
 MaximumConnectionRedirectionCount : 5
 NoCompression                     : False
@@ -118,10 +119,10 @@ OpenTimeout                       : 00:03:00
 CancelTimeout                     : 00:01:00
 IdleTimeout                       : 00:04:00
 
-PS C:\>$a.UICulture = (Get-UICulture)
-PS C:\>$a.OpenTimeout = (New-Timespan -Minutes 4)
-PS C:\>$a.MaximumConnectionRedirectionCount = 1
-PS C:\>$a
+PS C:\> $a.UICulture = (Get-UICulture)
+PS C:\> $a.OpenTimeout = (New-Timespan -Minutes 4)
+PS C:\> $a.MaximumConnectionRedirectionCount = 1
+PS C:\> $a
 
 MaximumConnectionRedirectionCount : 1
 NoCompression                     : False
@@ -151,7 +152,7 @@ All properties have read/write values.
 Use this method to create a standard session object for your enterprise, and then create customized versions of it for particular uses.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
+PS C:\> $PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
 
 This command creates a **$PSSessionOption** preference variable.
@@ -164,8 +165,8 @@ For more information about the **$PSSessionOption** preference variable, see abo
 For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$skipCN = New-PSSessionOption -SkipCNCheck
-PS C:\>New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
+PS C:\> $skipCN = New-PSSessionOption -SkipCNCheck
+PS C:\> New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
 ```
 
 This example shows how to use a **SessionOption** object to fulfill the requirements for a remote session configuration.
@@ -180,10 +181,10 @@ Because the computer is identified by its IP address, the value of the **Compute
 As a result, the **SkipCNCheck** option is required.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>$team = @{Team="IT"; Use="Testing"}
-PS C:\>$TeamOption = New-PSSessionOption -ApplicationArguments $team
-PS C:\>$s = New-PSSession -ComputerName Server01 -SessionOption $TeamOption
-PS C:\>Invoke-Command -Session $s {$PSSenderInfo.SpplicationArguments}
+PS C:\> $team = @{Team="IT"; Use="Testing"}
+PS C:\> $TeamOption = New-PSSessionOption -ApplicationArguments $team
+PS C:\> $s = New-PSSession -ComputerName Server01 -SessionOption $TeamOption
+PS C:\> Invoke-Command -Session $s {$PSSenderInfo.SpplicationArguments}
 
 Name                 Value
 ----                 -----
@@ -191,7 +192,7 @@ Team                 IT
 Use                  Testing
 PSVersionTable       {CLRVersion, BuildVersion, PSVersion, WSManStackVersion...}
 
-PS C:\>Invoke-Command -Session $s {if ($PSSenderInfo.ApplicationArguments.Use -ne "Testing") {.\logFiles.ps1} else {"Just testing."}}
+PS C:\> Invoke-Command -Session $s {if ($PSSenderInfo.ApplicationArguments.Use -ne "Testing") {.\logFiles.ps1} else {"Just testing."}}
 Just testing.
 ```
 

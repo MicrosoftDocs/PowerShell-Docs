@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822518
-schema: 2.0.0
-title: Remove-LocalGroupMember
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove LocalGroupMember
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822518
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
+
 
 # Remove-LocalGroupMember
 
@@ -44,7 +45,7 @@ The **Remove-LocalGroupMember** cmdlet removes users or groups from a local grou
 
 ### Example 1: Remove members from the Administrators group
 ```
-PS C:\>Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
+PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```
 
 This command removes several members from the local Administrators group.

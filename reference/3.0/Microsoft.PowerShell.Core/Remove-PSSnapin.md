@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113378
-schema: 2.0.0
-title: Remove-PSSnapin
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSSnapin
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113378
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Remove-PSSnapin
 ## SYNOPSIS
@@ -31,14 +32,14 @@ After a snap-in is removed from the current session, it is still loaded, but the
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-pssnapin -name Microsoft.Exchange
+PS C:\> remove-pssnapin -name Microsoft.Exchange
 ```
 
 This command removes the Microsoft.Exchange snap-in from the current session.
 When the command is complete, the cmdlets and providers that the snap-in supported are not available in the session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-PSSnapIn smp* | remove-PSSnapIn
+PS C:\> get-PSSnapIn smp* | remove-PSSnapIn
 ```
 
 This command removes the Windows PowerShell snap-ins that have names beginning with "smp" from the current session.
@@ -50,7 +51,7 @@ The providers and cmdlets that this snap-in supports are no longer available in 
 When you pipe objects to Remove-PSSnapin, the names of the objects are associated with the Name parameter, which accepts objects from the pipeline that have a Name property.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-pssnapin -name *event*
+PS C:\> remove-pssnapin -name *event*
 ```
 
 This command removes all Windows PowerShell snap-ins that have names that include "event".

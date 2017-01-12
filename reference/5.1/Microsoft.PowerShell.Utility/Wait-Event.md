@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821873
-schema: 2.0.0
-title: Wait-Event
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Wait Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821873
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Wait-Event
 
@@ -36,23 +37,23 @@ It also allows you to determine the response to an event in two different ways: 
 
 ### Example 1: Wait for the next event
 ```
-PS C:\>Wait-Event
+PS C:\> Wait-Event
 ```
 
 This command waits for the next event that is raised.
 
 ### Example 2: Wait for an event with a specified source identifier
 ```
-PS C:\>Wait-Event -SourceIdentifier "ProcessStarted"
+PS C:\> Wait-Event -SourceIdentifier "ProcessStarted"
 ```
 
 This command waits for the next event that is raised and that has a source identifier of ProcessStarted.
 
 ### Example 3: Wait for a timer elapsed event
 ```
-PS C:\>$Timer.Interval = 2000
-PS C:\>$Timer.Autoreset = $False
-PS C:\>$Timer.Enabled = $True; Wait-Event Timer.Elapsed
+PS C:\> $Timer.Interval = 2000
+PS C:\> $Timer.Autoreset = $False
+PS C:\> $Timer.Enabled = $True; Wait-Event Timer.Elapsed
 # After 2 seconds
 
 
@@ -70,7 +71,7 @@ This command uses the **Wait-Event** cmdlet to wait for a timer event on a timer
 
 ### Example 4: Wait for an event after a specified timeout
 ```
-PS C:\>Wait-Event -SourceIdentifier "ProcessStarted" -Timeout 90
+PS C:\> Wait-Event -SourceIdentifier "ProcessStarted" -Timeout 90
 ```
 
 This command waits up to 90 seconds for the next event that is raised and that has a source identifier of "ProcessStarted".

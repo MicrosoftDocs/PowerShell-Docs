@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821523
-schema: 2.0.0
-title: Unregister-PSSessionConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister PSSessionConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821523
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Unregister-PSSessionConfiguration
 
@@ -39,14 +40,14 @@ For more information, see about_Session_Configurations.
 
 ### Example 1: Delete a session configuration
 ```
-PS C:\>Unregister-PSSessionConfiguration -Name "MaintenanceShell"
+PS C:\> Unregister-PSSessionConfiguration -Name "MaintenanceShell"
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
 
 ### Example 2: Delete a session configuration and restart the WinRM service
 ```
-PS C:\>Unregister-PSSessionConfiguration -Name MaintenanceShell -Force
+PS C:\> Unregister-PSSessionConfiguration -Name MaintenanceShell -Force
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
@@ -54,7 +55,7 @@ The command specifies the *Force* parameter to suppress all user messages, and t
 
 ### Example 3: Delete all session configurations
 ```
-PS C:\>Unregister-PSSessionConfiguration -Name *
+PS C:\> Unregister-PSSessionConfiguration -Name *
 PS C:\> Get-PSSessionConfiguration -Name * | Unregister-PSSessionConfiguration
 ```
 
@@ -63,7 +64,7 @@ The commands have the same effect and can be used interchangeably.
 
 ### Example 4: Unregister without a restart
 ```
-PS C:\>Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
+PS C:\> Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
 PS C:\> Get-PSSessionConfiguration -Name "MaintenanceShell"
 
 Get-PSSessionConfiguration -Name MaintenanceShell : No Session Configuration matches criteria "MaintenanceShell".

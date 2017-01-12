@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821519
-schema: 2.0.0
-title: Stop-Job
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Job
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821519
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Stop-Job
 
@@ -69,7 +70,7 @@ For information about a particular custom job type, see the documentation of the
 
 ### Example 1: Stop a job on a remote computer by using Invoke-Command
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01 -Credential Domain01\Admin02
+PS C:\> $s = New-PSSession -ComputerName Server01 -Credential Domain01\Admin02
 PS C:\> $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
 PS C:\> Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 ```
@@ -96,14 +97,14 @@ When the command finishes, the job is stopped and the **PSSession** in $s is ava
 
 ### Example 2: Stop a background job
 ```
-PS C:\>Stop-Job -Name "Job1"
+PS C:\> Stop-Job -Name "Job1"
 ```
 
 This command stops the Job1 background job.
 
 ### Example 3: Stop several background jobs
 ```
-PS C:\>Stop-Job -Id 1, 3, 4
+PS C:\> Stop-Job -Id 1, 3, 4
 ```
 
 This command stops three jobs.
@@ -111,21 +112,21 @@ It identifies them by their IDs.
 
 ### Example 4: Stop all background jobs
 ```
-PS C:\>Get-Job | Stop-Job
+PS C:\> Get-Job | Stop-Job
 ```
 
 This command stops all of the background jobs in the current session.
 
 ### Example 5: Stop all blocked background jobs
 ```
-PS C:\>Stop-Job -State Blocked
+PS C:\> Stop-Job -State Blocked
 ```
 
 This command stops all the jobs that are blocked.
 
 ### Example 6: Stop a job by using an instance ID
 ```
-PS C:\>Get-Job | Format-Table ID, Name, Command, @{Label="State";Expression={$_.JobStateInfo.State}},
+PS C:\> Get-Job | Format-Table ID, Name, Command, @{Label="State";Expression={$_.JobStateInfo.State}},
 InstanceID -Auto
 
 Id Name Command                 State  InstanceId
@@ -148,7 +149,7 @@ The second command uses a **Stop-Job** command that has the *InstanceID* paramet
 
 ### Example 7: Stop a job on a remote computer
 ```
-PS C:\>$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog System} -AsJob
+PS C:\> $j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog System} -AsJob
 PS C:\> $j | Stop-Job -PassThru
 Id    Name    State      HasMoreData     Location         Command
 

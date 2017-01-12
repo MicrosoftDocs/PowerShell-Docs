@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294035
-schema: 2.0.0
-title: Disable-WSManCredSSP
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable WSManCredSSP
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294035
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Disable-WSManCredSSP
 
@@ -51,14 +52,14 @@ To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Disable-WSManCredSSP -Role Client
+PS C:\> Disable-WSManCredSSP -Role Client
 ```
 
 This command disables CredSSP on the client, which prevents delegation to servers.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Disable-WSManCredSSP -Role Server
+PS C:\> Disable-WSManCredSSP -Role Server
 ```
 
 This command disables CredSSP on the server, which prevents delegation from clients.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822516
-schema: 2.0.0
-title: New-LocalUser
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New LocalUser
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822516
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
+
 
 # New-LocalUser
 
@@ -42,7 +43,7 @@ This cmdlet creates a local user account or a local user account that is connect
 
 ### Example 1: Create a user account
 ```
-PS C:\>New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
+PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
 Name    Enabled  Description
 ----    -------  -----------
 User02  True     Description of this account.
@@ -54,7 +55,7 @@ Therefore, the account does not expire.
 
 ### Example 2: Create a user account that has a password
 ```
-PS C:\>$Password = Read-Host -AsSecureString
+PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."
 Name    Enabled  Description
 ----    -------  -----------
@@ -69,7 +70,7 @@ The command specifies a user name, full name, and description for the user accou
 
 ### Example 3: Create a user account that is connected to a Microsoft account
 ```
-PS C:\>New-LocalUser -Name "MicrosoftAccount\usr name@Outlook.com" -Description "Description of this account."
+PS C:\> New-LocalUser -Name "MicrosoftAccount\usr name@Outlook.com" -Description "Description of this account."
 ```
 
 This command creates a local user account that is connected to a Microsoft account.

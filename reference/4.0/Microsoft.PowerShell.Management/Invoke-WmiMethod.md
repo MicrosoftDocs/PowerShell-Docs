@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290507
-schema: 2.0.0
-title: Invoke-WmiMethod
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke WmiMethod
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290507
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Invoke-WmiMethod
 
@@ -77,7 +78,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
 __CLASS           : __PARAMETERS
 __SUPERCLASS      :
@@ -102,7 +103,7 @@ This command lists the required order of the objects.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
 __CLASS                   : __PARAMETERS
 __SUPERCLASS              : 
@@ -116,7 +117,7 @@ __PATH                    :
 CommandLine               : 
 CurrentDirectory          : 
 ProcessStartupInformation : 
-PSComputerName            : PS C:\>invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe
+PSComputerName            : PS C:\> invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 
@@ -138,7 +139,7 @@ Note: The ReturnValue property is populated with a 0, and the ProcessId property
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>invoke-wmimethod -path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+PS C:\> invoke-wmimethod -path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 

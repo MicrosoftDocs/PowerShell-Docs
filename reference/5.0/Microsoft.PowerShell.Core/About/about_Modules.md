@@ -1,20 +1,15 @@
 ---
-title: about_Modules
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Modules
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Modules
+ms.technology:  powershell
 ---
+
 # About Modules
 ## about_Modules
 
@@ -57,7 +52,7 @@ in the session, so you can find a command and use it without importing.
 
 Any of the following commands will import a module into your session.
 #Run the command
-Get-Mailbox –Identity Chris
+Get-Mailbox -Identity Chris
 
 #Get the command
 Get-Command Get-Mailbox
@@ -184,7 +179,7 @@ Get-Help <command-name> -Online
 
 To download and install the help files for the commands in a module,
 type:
-Update-Help –Module <module-name>
+Update-Help -Module <module-name>
 
 For more information, see Get-Help and Update-Help.
 
@@ -494,4 +489,5 @@ Get-Help
 Get-Module
 Import-Module
 Remove-Module
+
 

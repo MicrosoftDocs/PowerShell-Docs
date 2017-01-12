@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113418
-schema: 2.0.0
-title: Test-Path
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113418
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Test-Path
 ## SYNOPSIS
@@ -40,7 +41,7 @@ It can also tell whether the path syntax is valid and whether the path leads to 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>test-path -path "C:\Documents and Settings\NicoleH"
+PS C:\> test-path -path "C:\Documents and Settings\NicoleH"
 ```
 
 This command tells whether all elements in the path exist, that is, the C: directory, the Documents and Settings directory, and the NicoleH directory.
@@ -48,8 +49,8 @@ If any are missing, the cmdlet returns FALSE.
 Otherwise, it returns TRUE.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>test-path -path $profile
-PS C:\>test-path -path $profile -IsValid
+PS C:\> test-path -path $profile
+PS C:\> test-path -path $profile -IsValid
 ```
 
 These commands test the path to the Windows PowerShell profile.
@@ -62,7 +63,7 @@ These commands use $profile, the automatic variable that points to the location 
 For more information about automatic variables, see about_Automatic_Variables.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>test-path -path "C:\CAD\Commercial Buildings\*" -exclude *.dwg
+PS C:\> test-path -path "C:\CAD\Commercial Buildings\*" -exclude *.dwg
 ```
 
 This command tells whether there are any files in the Commercial Buildings directory other than .dwg files.
@@ -77,16 +78,16 @@ The command uses the Exclude parameter to specify files that will be omitted fro
 In this case, because the directory contains only .dwg files, the result is FALSE.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>test-path -path $profile -pathtype leaf
+PS C:\> test-path -path $profile -pathtype leaf
 ```
 
 This command tells whether the path stored in the $profile variable leads to a file.
 In this case, because the Windows PowerShell profile is a .ps1 file, the cmdlet returns TRUE.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+PS C:\> test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 TRUE
-PS C:\>test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy
+PS C:\> test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy
 FALSE
 ```
 

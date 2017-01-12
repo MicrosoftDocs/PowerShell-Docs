@@ -1,19 +1,20 @@
 ---
-title: PSDesiredStateConfiguration
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: PSDesiredStateConfiguration
-Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390814
-Help Version: 5.1.1.0
-Locale: en-US
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  PSDesiredStateConfiguration
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   PSDesiredStateConfiguration
+Download Help Link:    http://go.microsoft.com/fwlink/?linkid=390814
+Help Version:   5.1.1.0
+Module Guid:   94b905ff-74b5-437e-89ed-7df44386533c
 ---
+
 
 # PSDesiredStateConfiguration Module
 ## Description

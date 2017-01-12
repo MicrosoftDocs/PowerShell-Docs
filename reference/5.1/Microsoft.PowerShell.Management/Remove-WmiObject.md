@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821619
-schema: 2.0.0
-title: Remove-WmiObject
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove WmiObject
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821619
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Remove-WmiObject
 
@@ -73,7 +74,7 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Manag
 
 ### Example 1: Close all instances of a Win32 process
 ```
-PS C:\>notepad
+PS C:\> notepad
 PS C:\> $np = Get-WmiObject -Query "select * from win32_process where name='notepad.exe'"
 PS C:\> $np | Remove-WmiObject
 ```
@@ -88,7 +89,7 @@ The third command passes the object in the $np variable to **Remove-WmiObject**,
 
 ### Example 2: Delete a folder
 ```
-PS C:\>$a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
+PS C:\> $a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
 PS C:\> $a | Remove-WMIObject
 ```
 

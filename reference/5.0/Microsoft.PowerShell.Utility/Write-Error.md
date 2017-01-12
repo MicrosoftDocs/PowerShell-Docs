@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821875
-schema: 2.0.0
-title: Write-Error
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Error
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821875
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Error
 
@@ -57,14 +58,14 @@ For more information, see about_Throw (http://go.microsoft.com/fwlink/?LinkID=14
 
 ### Example 1: Write an error for RegistryKey object
 ```
-PS C:\>Get-ChildItem | ForEach-Object { if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey") {Write-Error "Invalid object" -ErrorID B1 -Targetobject $_ } else {$_ } }
+PS C:\> Get-ChildItem | ForEach-Object { if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey") {Write-Error "Invalid object" -ErrorID B1 -Targetobject $_ } else {$_ } }
 ```
 
 This command declares a non-terminating error when the Get-ChildItem cmdlet returns a Microsoft.Win32.RegistryKey object, such as the objects in the HKLM: or HKCU: drives of the Windows PowerShell Registry provider.
 
 ### Example 2: Write an error message to the console
 ```
-PS C:\>Write-Error "Access denied."
+PS C:\> Write-Error "Access denied."
 ```
 
 This command declares a non-terminating error and writes an "Access denied" error.
@@ -72,14 +73,14 @@ The command uses the *Message* parameter to specify the message, but omits the o
 
 ### Example 3: Write an error to the console and specify the category
 ```
-PS C:\>Write-Error -Message "Error: Too many input values." -Category InvalidArgument
+PS C:\> Write-Error -Message "Error: Too many input values." -Category InvalidArgument
 ```
 
 This command declares a non-terminating error and specifies an error category.
 
 ### Example 4: Write an error using an Exception object
 ```
-PS C:\>$E = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+PS C:\> $E = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
 PS C:\> Write-Error $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 

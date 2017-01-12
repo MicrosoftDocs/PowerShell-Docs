@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821574
-schema: 2.0.0
-title: Copy-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Copy Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821574
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Copy-Item
 
@@ -50,7 +51,7 @@ To rename an item and not copy it, use the Rename-Item cmdlet.
 
 ### Example 1: Copy a file to the specified directory
 ```
-PS C:\>Copy-Item "C:\Wabash\Logfiles\mar1604.log.txt" -Destination "C:\Presentation"
+PS C:\> Copy-Item "C:\Wabash\Logfiles\mar1604.log.txt" -Destination "C:\Presentation"
 ```
 
 This command copies the mar1604.log.txt file to the C:\Presentation directory.
@@ -58,7 +59,7 @@ The command does not delete the original file.
 
 ### Example 2: Copy the contents of a directory to another directory
 ```
-PS C:\>Copy-Item "C:\Logfiles" -Destination "C:\Drawings" -Recurse
+PS C:\> Copy-Item "C:\Logfiles" -Destination "C:\Drawings" -Recurse
 ```
 
 This command copies the entire contents of the Logfiles directory into the Drawings directory.
@@ -68,7 +69,7 @@ This preserves the directory structure.
 
 ### Example 3: Copy the contents of a directory to another directory and create the destination directory if it does not exist
 ```
-PS C:\>Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
+PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
 ```
 
 This command copies the contents of the C:\Logfiles directory to the C:\Drawings\Logs directory.
@@ -76,7 +77,7 @@ It creates the \Logs subdirectory if it does not already exist.
 
 ### Example 4: Copy a file to the specified directory and rename the file
 ```
-PS C:\>Copy-Item "\\Server01\Share\Get-Widget.ps1" -Destination "\\Server12\ScriptArchive\Get-Widget.ps1.txt"
+PS C:\> Copy-Item "\\Server01\Share\Get-Widget.ps1" -Destination "\\Server12\ScriptArchive\Get-Widget.ps1.txt"
 ```
 
 This command uses the **Copy-Item** cmdlet to copy the Get-Widget.ps1 script from the \\\\Server01\Share directory to the \\\\Server12\ScriptArchive directory.
@@ -84,7 +85,7 @@ As part of the copy operation, the command also changes the item name from Get-W
 
 ### Example 5: Copy a file to a remote computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder001\test.log" -Destination "C:\Folder001_Copy\" -ToSession $Session
 ```
 
@@ -95,7 +96,7 @@ This command does not delete the original file.
 
 ### Example 6: Copy the entire contents of a folder to a remote computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server02" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server02" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder002\" -Destination "C:\Folder002_Copy\" -ToSession $Session
 ```
 
@@ -106,7 +107,7 @@ The subfolders will be copied with their file trees intact.
 
 ### Example 7: Recursively copy the entire contents of a folder to a remote computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder003\" -Destination "C:\Folder003_Copy\" -ToSession $Session -Recurse
 ```
 
@@ -118,7 +119,7 @@ Since this command uses the *Recurse* parameter, the operation will create the F
 
 ### Example 8: Copy a file to a remote computer and then rename the file
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder004\scriptingexample.ps1" -Destination "C:\Folder004_Copy\scriptingexample_copy.ps1" -ToSession $Session
 ```
 
@@ -130,7 +131,7 @@ This command does not delete the original file.
 
 ### Example 9: Copy a remote file to the local computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "C:\MyRemoteData\test.log" -Destination "D:\MyLocalData\" -FromSession $Session
 ```
 
@@ -141,7 +142,7 @@ This command does not delete the original file.
 
 ### Example 10: Copy the entire contents of a remote folder to the local computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\" -FromSession $Session
 ```
 
@@ -152,7 +153,7 @@ If the scripts folder contains files in subfolders, those subfolders will be cop
 
 ### Example 11: Recursively copy the entire contents of a remote folder to the local computer
 ```
-PS C:\>$Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
+PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromSession $Session
 ```
 

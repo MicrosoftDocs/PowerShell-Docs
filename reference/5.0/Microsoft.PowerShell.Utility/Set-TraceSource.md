@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821860
-schema: 2.0.0
-title: Set-TraceSource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set TraceSource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821860
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Set-TraceSource
 
@@ -44,7 +45,7 @@ You can use it to specify which components will be traced and where the tracing 
 
 ### Example 1: Trace the ParameterBinding component
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
 ```
 
 This command starts tracing for the ParameterBinding component of Windows PowerShell.
@@ -53,7 +54,7 @@ The *ListenerOption* parameter adds the ProcessID and TimeStamp values to the tr
 
 ### Example 2: Stop a trace
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
 ```
 
 This command stops the trace of the ParameterBinding component of Windows PowerShell.

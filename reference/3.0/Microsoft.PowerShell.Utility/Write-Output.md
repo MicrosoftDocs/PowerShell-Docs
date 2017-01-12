@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113427
-schema: 2.0.0
-title: Write-Output
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Output
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113427
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Output
 ## SYNOPSIS
@@ -36,15 +37,15 @@ For example, "get-process | write-output" is equivalent to "get-process".
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$p = get-process
-PS C:\>write-output $p
-PS C:\>$p
+PS C:\> $p = get-process
+PS C:\> write-output $p
+PS C:\> $p
 ```
 
 These commands get objects representing the processes running on the computer and display the objects on the console.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>write-output "test output" | get-member
+PS C:\> write-output "test output" | get-member
 ```
 
 This command pipes the "test output" string to the Get-Member cmdlet, which displays the members of the String class, demonstrating that the string was passed along the pipeline.

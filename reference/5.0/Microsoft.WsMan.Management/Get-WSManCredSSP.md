@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821728
-schema: 2.0.0
-title: Get-WSManCredSSP
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get WSManCredSSP
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821728
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Get-WSManCredSSP
 
@@ -47,7 +48,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 ### Example 1: Display CredSSP configuration
 ```
-PS C:\>Get-WSManCredSSP
+PS C:\> Get-WSManCredSSP
 ```
 
 This command displays CredSSP configuration information for both the client and server.

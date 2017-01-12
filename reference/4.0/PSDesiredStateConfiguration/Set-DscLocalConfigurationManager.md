@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=294366
-schema: 2.0.0
-title: Set-DscLocalConfigurationManager
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set DscLocalConfigurationManager
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=294366
+external help file:   Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 ---
+
 
 # Set-DscLocalConfigurationManager
 

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description:
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-11-29
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821824
-schema: 2.0.0
-title: Invoke-RestMethod
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke RestMethod
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821824
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Invoke-RestMethod
 
@@ -59,7 +60,7 @@ title                                                                pubDate
 -----                                                                -------                        
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
 DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
-PSScriptAnalyzer Community Call – Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
+PSScriptAnalyzer Community Call - Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
 New Home for In-Box DSC Resources                                    Sat, 08 Oct 2016 07:13:10 +0000
 New Social Features on Gallery                                       Fri, 30 Sep 2016 23:04:34 +0000
 PowerShellGet and PackageManagement in PowerShell Gallery and GitHub Thu, 29 Sep 2016 22:21:42 +0000
@@ -109,12 +110,7 @@ $Body = @{
 # Now, run the Invoke-RestMethod command with all variables in place, specifying a path and file name for the resulting CSV output file.
 
 Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile output.csv
-```
 
-```
-cmdlet Get-Credential at command pipeline position 1
-
-Supply values for the following parameters:
 {"preview":true,"offset":0,"result":{"sourcetype":"contoso1","count":"9624"}}
 
 {"preview":true,"offset":1,"result":{"sourcetype":"contoso2","count":"152"}}
@@ -136,18 +132,24 @@ The *Body* parameter can be used to specify a list of query parameters or specif
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters.
 For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
 
+**Warning**: *The verbose output of a POST body will end with `with -1-byte payload`, even though the size of the body is both known and sent in the `Content-Length` HTTP header.*
+
 When the body is a form, or it is the output of another **Invoke-WebRequest** call, Windows PowerShell sets the request content to the form fields.
 
 For example:
 
-`$R = Invoke-WebRequest http://website.com/login.aspx`
-`$R.Forms\[0\].Name = "MyName"`
-`$R.Forms\[0\].Password = "MyPassword"`
-`Invoke-RestMethod http://website.com/service.aspx -Body $R`
+```powershell
+$R = Invoke-WebRequest http://website.com/login.aspx
+$R.Forms[0].Name = "MyName"
+$R.Forms[0].Password = "MyPassword"
+Invoke-RestMethod http://website.com/service.aspx -Body $R
+```
 
-- or -
+or
 
-`Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]`
+```powershell
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+```
 
 ```yaml
 Type: Object
@@ -644,3 +646,4 @@ If the request returns JSON strings, **Invoke-RestMethod** returns a **PSObject*
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
+

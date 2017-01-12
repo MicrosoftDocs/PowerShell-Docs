@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517136
-schema: 2.0.0
-title: Get-PackageProvider
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PackageProvider
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517136
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
+
 
 # Get-PackageProvider
 
@@ -33,21 +34,21 @@ You can filter the results based on all or part of one or more provider names.
 
 ### Example 1: Get all currently loaded package providers
 ```
-PS C:\>Get-PackageProvider
+PS C:\> Get-PackageProvider
 ```
 
 This command gets a list of all the package providers that are currently loaded on the local computer.
 
 ### Example 2: Get all available package providers
 ```
-PS C:\>Get-PackageProvider -ListAvailable
+PS C:\> Get-PackageProvider -ListAvailable
 ```
 
 This command gets a list of all package providers that are available on the local computer.
 
 ### Example 3: Dynamically get a package provider
 ```
-PS C:\>Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
+PS C:\> Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
 ```
 
 This command automatically installs the Chocolatey provider if your computer does not have the Chocolatey provider installed.

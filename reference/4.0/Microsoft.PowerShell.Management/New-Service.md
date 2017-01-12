@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293889
-schema: 2.0.0
-title: New-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293889
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-Service
 
@@ -36,14 +37,14 @@ The parameters of this cmdlet let you set the display name, description, startup
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
 ```
 
 This command creates a new service named "TestService".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -dependson NetLogon -displayName "Test Service" -StartupType Manual -Description "This is a test service."
+PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -dependson NetLogon -displayName "Test Service" -StartupType Manual -Description "This is a test service."
 ```
 
 This command creates a new service named "TestService".
@@ -51,7 +52,7 @@ It uses the parameters of the New-Service cmdlet to specify a description, start
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-wmiobject win32_service -filter "name='testservice'"
+PS C:\> get-wmiobject win32_service -filter "name='testservice'"
 
 ExitCode  : 0
 Name      : testservice
@@ -66,9 +67,9 @@ This object includes the start mode and the service description.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>sc.exe delete TestService
+PS C:\> sc.exe delete TestService
 - or -
-PS C:\>(get-wmiobject win32_service -filter "name='TestService'").delete()
+PS C:\> (get-wmiobject win32_service -filter "name='TestService'").delete()
 ```
 
 This example shows two ways to delete the TestService service.

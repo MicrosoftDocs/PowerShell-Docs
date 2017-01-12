@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821689
-schema: 2.0.0
-title: New-ScheduledJobOption
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New ScheduledJobOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821689
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
+
 
 # New-ScheduledJobOption
 
@@ -50,7 +51,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a scheduled job option object with default values
 ```
-PS C:\>New-ScheduledJobOption
+PS C:\> New-ScheduledJobOption
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -71,7 +72,7 @@ This command creates a scheduled job option object that has all of the default v
 
 ### Example 2: Create a scheduled job option object with custom values
 ```
-PS C:\>New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
+PS C:\> New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
 StartIfOnBatteries     : True
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -95,13 +96,13 @@ The output shows that the *RequireNetwork* parameter changed the value of the Ru
 ### Example 3: Set options for a new scheduled job
 ```
 The first command creates a **ScheduledJobOptions** object with the *RunElevated* parameter. It saves the object in the $RunAsAdmin variable. 
-PS C:\>$RunAsAdmin = New-ScheduledJobOption -RunElevated
+PS C:\> $RunAsAdmin = New-ScheduledJobOption -RunElevated
 
 The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the *ScheduledJobOption* parameter is the option object in the value of the $RunAsAdmin variable.
-PS C:\>Register-ScheduledJob -Name Backup -FilePath D:\Scripts\Backup.ps1 -Trigger $Mondays -ScheduledJobOption $RunAsAdmin
+PS C:\> Register-ScheduledJob -Name Backup -FilePath D:\Scripts\Backup.ps1 -Trigger $Mondays -ScheduledJobOption $RunAsAdmin
 
 The third command uses the Get-ScheduledJobOption cmdlet to get the job options of the Backup scheduled job.The cmdlet output shows that the RunElevated property is set to $True and the JobDefinition property of the job option object is now populated with the scheduled job object for the Backup scheduled job.
-PS C:\>Get-ScheduledJobOption -Name Backup
+PS C:\> Get-ScheduledJobOption -Name Backup
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -122,7 +123,7 @@ This example shows how to use the **ScheduledJobOptions** object that **New-Sche
 
 ### Example 4: Sort the properties of a scheduled job option object
 ```
-PS C:\>$Options = New-ScheduledJobOption -WakeToRun
+PS C:\> $Options = New-ScheduledJobOption -WakeToRun
 PS C:\> $Options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
 Name                       Value
 ----                       -----

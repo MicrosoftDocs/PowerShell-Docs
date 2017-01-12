@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135203
-schema: 2.0.0
-title: ConvertTo-Csv
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertTo Csv
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135203
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # ConvertTo-Csv
 ## SYNOPSIS
@@ -43,7 +44,7 @@ For more information, see Export-CSV, and see the Notes section.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-process powershell | convertto-csv
+PS C:\> get-process powershell | convertto-csv
 #TYPE System.Diagnostics.Process
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion","Description",
 "Product","BasePriority","ExitCode","HasExited","ExitTime","Handle","HandleCount","Id","MachineName","MainWindowHandle"
@@ -69,8 +70,8 @@ The command uses the Get-Process cmdlet to get the PowerShell process on the loc
 It uses a pipeline operator (|) to send the command to the ConvertTo-CSV cmdlet, which converts it to a series of comma-separated strings.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$date = get-date
-PS C:\>convertto-csv -inputobject $date -delimiter ";" -notypeinformation
+PS C:\> $date = get-date
+PS C:\> convertto-csv -inputobject $date -delimiter ";" -notypeinformation
 ```
 
 This example converts a date object to CSV format.
@@ -84,7 +85,7 @@ It uses the Delimiter parameter to specify the delimiter that separates the obje
 It uses the NoTypeInformation parameter to suppress the #TYPE string.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-eventlog -log "windows powershell" | convertto-csv -useculture
+PS C:\> get-eventlog -log "windows powershell" | convertto-csv -useculture
 ```
 
 This command converts the Windows PowerShell event log on the local computer to a series of CSV strings.

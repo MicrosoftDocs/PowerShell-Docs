@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821503
-schema: 2.0.0
-title: Out-Host
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out Host
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821503
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Out-Host
 
@@ -33,7 +34,7 @@ Because **Out-Host** is the default, you do not have to specify it unless you wa
 
 ### Example 1: Display system processes one page at a time
 ```
-PS C:\>Get-Process | Out-Host -Paging
+PS C:\> Get-Process | Out-Host -Paging
 ```
 
 This command displays the processes on the system one page at a time.
@@ -46,7 +47,7 @@ That function gets data from the Get-Help cmdlet and then uses the *Paging* para
 
 ### Example 2: Display session history
 ```
-PS C:\>$a = Get-History
+PS C:\> $a = Get-History
 PS C:\> Out-Host -InputObject $a
 ```
 

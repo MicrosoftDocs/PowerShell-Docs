@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=389281
-schema: 2.0.0
-title: Get-ItemPropertyValue
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ItemPropertyValue
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=389281
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-ItemPropertyValue
 
@@ -39,7 +40,7 @@ The **Get-ItemPropertyValue** gets the current value for a property that you spe
 
 ### Example 1: Get the value of the ProductID property
 ```
-PS C:\>Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
+PS C:\> Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
 94253-50000-11141-AA785
 ```
 
@@ -47,7 +48,7 @@ This command gets the value of the ProductID property of the \SOFTWARE\Microsoft
 
 ### Example 2: Get the last write time of a file or folder
 ```
-PS C:\>Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
+PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime
 Wednesday, September 3, 2014 2:53:22 PM
 ```
 
@@ -55,7 +56,7 @@ This command gets the value of the LastWriteTime property, or the last time a fi
 
 ### Example 3: Get multiple property values of a file or folder
 ```
-PS C:\>Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
+PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
 
 
 

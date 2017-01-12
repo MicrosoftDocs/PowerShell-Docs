@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294003
-schema: 2.0.0
-title: Remove-Event
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294003
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Remove-Event
 
@@ -40,21 +41,21 @@ To cancel event registrations or unsubscribe, use the Unregister-Event cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-event -sourceIdentifier "ProcessStarted"
+PS C:\> remove-event -sourceIdentifier "ProcessStarted"
 ```
 
 This command deletes events with a source identifier of "Process Started" from the event queue.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>remove-event -eventIdentifier 30
+PS C:\> remove-event -eventIdentifier 30
 ```
 
 This command deletes the event with an event ID of 30 from the event queue.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-event | remove-event
+PS C:\> get-event | remove-event
 ```
 
 This command deletes all events from the event queue.

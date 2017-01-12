@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293972
-schema: 2.0.0
-title: Get-PSBreakpoint
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293972
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-PSBreakpoint
 
@@ -57,7 +58,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-psbreakpoint
+PS C:\> get-psbreakpoint
 ```
 
 Description
@@ -68,7 +69,7 @@ This command gets all breakpoints set on all scripts and functions in the curren
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-psbreakpoint -Id 2
+PS C:\> get-psbreakpoint -Id 2
 
 Function   :
 IncrementAction     :
@@ -87,7 +88,7 @@ This command gets the breakpoint with breakpoint ID 2.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -function increment
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -function increment
 PS C:\> $b.Id | get-psbreakpoint
 ```
 
@@ -107,7 +108,7 @@ As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-psbreakpoint -script Sample.ps1, SupportScript.ps1
+PS C:\> get-psbreakpoint -script Sample.ps1, SupportScript.ps1
 ```
 
 Description
@@ -120,7 +121,7 @@ This command does not get other breakpointS that might be set in other scripts o
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-psbreakpoint -command Read-Host, Write-Host -script Sample.ps1
+PS C:\> get-psbreakpoint -command Read-Host, Write-Host -script Sample.ps1
 ```
 
 Description
@@ -131,7 +132,7 @@ This command gets all Command breakpoints that are set on Read-Host or Write-Hos
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-psbreakpoint -type Command -script Sample.ps1
+PS C:\> get-psbreakpoint -type Command -script Sample.ps1
 ```
 
 Description
@@ -142,7 +143,7 @@ This command gets all Command breakpoints in the Sample.ps1 file.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-psbreakpoint -variable Index, Swap
+PS C:\> get-psbreakpoint -variable Index, Swap
 ```
 
 Description
@@ -153,7 +154,7 @@ This command gets breakpoints that are set on the $index and $swap variables in 
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>get-psbreakpoint -type line, variable -script Sample.ps1
+PS C:\> get-psbreakpoint -type line, variable -script Sample.ps1
 ```
 
 Description

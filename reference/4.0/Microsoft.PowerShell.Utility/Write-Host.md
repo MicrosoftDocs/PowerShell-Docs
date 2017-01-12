@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294029
-schema: 2.0.0
-title: Write-Host
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Host
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294029
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Host
 
@@ -35,7 +36,7 @@ The particular result depends on the program that is hosting Windows PowerShell.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>write-host "no newline test " -nonewline
+PS C:\> write-host "no newline test " -nonewline
 no newline test PS C:\>
 ```
 
@@ -43,7 +44,7 @@ This command displays the input to the console, but because of the NoNewline par
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>write-host (2,4,6,8,10,12) -Separator ", +2= "
+PS C:\> write-host (2,4,6,8,10,12) -Separator ", +2= "
 2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
 ```
 
@@ -52,7 +53,7 @@ The Separator parameter is used to add the string , +2= (comma, space, +, 2, =, 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>write-host (2,4,6,8,10,12) -Separator ", -> " -foregroundcolor DarkGreen -backgroundcolor white
+PS C:\> write-host (2,4,6,8,10,12) -Separator ", -> " -foregroundcolor DarkGreen -backgroundcolor white
 ```
 
 This command displays the even numbers from 2 through 12.
@@ -60,7 +61,7 @@ It uses the ForegroundColor parameter to output dark green text and the Backgrou
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>write-host "Red on white text." -ForegroundColor red -BackgroundColor white
+PS C:\> write-host "Red on white text." -ForegroundColor red -BackgroundColor white
 Red on white text.
 ```
 

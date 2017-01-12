@@ -1,20 +1,15 @@
 ---
-title: about_Scheduled_Jobs_Troubleshooting
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Scheduled_Jobs_Troubleshooting
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Scheduled_Jobs_Troubleshooting
+ms.technology:  powershell
 ---
+
 # About Scheduled Jobs Troubleshooting
 ## about_Scheduled_Jobs_Troubleshooting
 

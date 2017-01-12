@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113314
-schema: 2.0.0
-title: Get-EventLog
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113314
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-EventLog
 ## SYNOPSIS
@@ -42,20 +43,20 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-eventlog -list
+PS C:\> get-eventlog -list
 ```
 
 This command gets the event logs on the computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-eventlog -newest 5 -logname application
+PS C:\> get-eventlog -newest 5 -logname application
 ```
 
 This command gets the five most recent entries from the Application event log.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname system -newest 1000
-PS C:\>$events | group-object -property source -noelement | sort-object -property count -descending
+PS C:\> $events = get-eventlog -logname system -newest 1000
+PS C:\> $events | group-object -property source -noelement | sort-object -property count -descending
 
 Count Name
 ----- ----
@@ -80,32 +81,32 @@ Source is just one property of event log entries.
 To see all of the properties of an event log entry, pipe the event log entries to the Get-Member cmdlet.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-eventlog -logname System -EntryType Error
+PS C:\> get-eventlog -logname System -EntryType Error
 ```
 
 This command gets only error events from the System event log.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-eventlog -logname System -instanceID 3221235481 -Source "DCOM"
+PS C:\> get-eventlog -logname System -instanceID 3221235481 -Source "DCOM"
 ```
 
 This command gets events from the System log that have an InstanceID of 3221235481 and a Source value of "DCOM."
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-eventlog -logname "Windows PowerShell" -computername localhost, Server01, Server02
+PS C:\> get-eventlog -logname "Windows PowerShell" -computername localhost, Server01, Server02
 ```
 
 This command gets the events from the "Windows PowerShell" event log on three computers, Server01, Server02, and the local computer, known as "localhost".
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-eventlog -logname "Windows PowerShell" -message "*failed*"
+PS C:\> get-eventlog -logname "Windows PowerShell" -message "*failed*"
 ```
 
 This command gets all the events in the Windows PowerShell event log that have a message value that includes the word "failed".
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$a = get-eventlog -log System -newest 1
-PS C:\>$a | format-list -property *
+PS C:\> $a = get-eventlog -log System -newest 1
+PS C:\> $a | format-list -property *
 
 EventID            : 7036
 MachineName        : Server01
@@ -132,14 +133,14 @@ The first command gets the newest event from the System event log and saves it i
 The second command uses a pipeline operator (|) to send the event in $a to the Format-List command, which displays all (*) of the event properties.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>get-eventlog -log application -source outlook | where {$_.eventID -eq 34}
+PS C:\> get-eventlog -log application -source outlook | where {$_.eventID -eq 34}
 ```
 
 This command gets events in the Application event log where the source is Outlook and the event ID is 34.
 Even though Get-EventLog does not have an EventID parameter, you can use the Where-Object cmdlet to select events based on the value of any event property.
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>get-eventlog -log system -username NT* | group-object -property username -noelement | format-table Count, Name -auto
+PS C:\> get-eventlog -log system -username NT* | group-object -property username -noelement | format-table Count, Name -auto
 
 Count Name
 ----- ----
@@ -152,9 +153,9 @@ This command returns the events in the system log grouped by the value of  their
 The Get-EventLog command uses the UserName parameter to get only events in which the user name begins with "NT*".
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>$May31 = get-date 5/31/08
-PS C:\>$July1 = get-date 7/01/08
-PS C:\>get-eventlog -log "Windows PowerShell" -entrytype Error -after $may31 -before $july1
+PS C:\> $May31 = get-date 5/31/08
+PS C:\> $July1 = get-date 7/01/08
+PS C:\> get-eventlog -log "Windows PowerShell" -entrytype Error -after $may31 -before $july1
 ```
 
 This command gets all of the errors in the Windows PowerShell event log that occurred in June 2008.

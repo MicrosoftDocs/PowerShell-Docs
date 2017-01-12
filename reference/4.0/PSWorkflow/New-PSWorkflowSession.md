@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSWorkflow-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=287542
-schema: 2.0.0
-title: New-PSWorkflowSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSWorkflowSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=287542
+external help file:   PSWorkflow-help.xml
 ---
+
 
 # New-PSWorkflowSession
 
@@ -42,7 +43,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
+PS C:\> New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
 ```
 
 This command creates the WorkflowTests session on the ServerNode01 remote computer.
@@ -50,7 +51,7 @@ The value of the **SessionOption** parameter is a **New-PSSessionOption** comman
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>"ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
+PS C:\> "ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
 ```
 
 This command creates workflow sessions on the ServerNode01 and Server12 computers.

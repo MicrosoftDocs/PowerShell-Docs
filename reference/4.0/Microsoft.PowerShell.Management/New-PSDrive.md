@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293888
-schema: 2.0.0
-title: New-PSDrive
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSDrive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293888
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-PSDrive
 
@@ -45,7 +46,7 @@ New features are added to New-PSDrive in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-PSDrive -Name P -PSProvider FileSystem -Root \\Server01\Public
+PS C:\> New-PSDrive -Name P -PSProvider FileSystem -Root \\Server01\Public
 
 Name       Provider      Root
 ----       --------      ----
@@ -61,7 +62,7 @@ To see them, type: "`dir P:`".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>New-PSDrive -Name MyDocs -PSProvider FileSystem -Root "C:\Documents and Settings\User01\My Documents" -Description "Maps to my My Documents folder."
+PS C:\> New-PSDrive -Name MyDocs -PSProvider FileSystem -Root "C:\Documents and Settings\User01\My Documents" -Description "Maps to my My Documents folder."
 
 Name       Provider      Root
 ----       --------      ----
@@ -78,7 +79,7 @@ To see them, type: "dir MyDocs:".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>New-PSDrive -Name MyCompany -PSProvider Registry -Root HKLM:\Software\MyCompany
+PS C:\> New-PSDrive -Name MyCompany -PSProvider Registry -Root HKLM:\Software\MyCompany
 
 Name       Provider      Root
 ----       --------      ----
@@ -95,7 +96,7 @@ To see them, type: "`dir MyCompany:`".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>New-PSDrive -Name S -Root \\Server01\Scripts -Persist -PSProvider FileSystem
+PS C:\> New-PSDrive -Name S -Root \\Server01\Scripts -Persist -PSProvider FileSystem
 PS C:\> net use
 Status       Local     Remote                    Network
 ---------------------------------------------------------
@@ -116,13 +117,13 @@ The resulting drive can be viewed in other Windows PowerShell sessions on the lo
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
 The first command uses the **New-PSDrive** cmdlet to create a temporary Windows PowerShell drive called PSDrive: that is mapped to the \\Server01\Public network share.
-PS C:\>New-PSDrive -Name PSDrive -PSProvider FileSystem -Root \\Server01\Public
+PS C:\> New-PSDrive -Name PSDrive -PSProvider FileSystem -Root \\Server01\Public
 
 The second command uses the **Persist** parameter of **New-PSDrive** to create the X: mapped network drive, which is also mapped to the \\Server01\Public network share.
-PS C:\>New-PSDrive -Persist -Name X -PSProvider FileSystem -Root \\Server01\Public
+PS C:\> New-PSDrive -Persist -Name X -PSProvider FileSystem -Root \\Server01\Public
 
 Now, you can use the **Get-PSDrive** drive cmdlet to examine the two drives. The drives appear to be the same, although the network share name appears only in the root of the PSDrive: drive.
-PS C:\>Get-PSDrive -Name PSDrive, X
+PS C:\> Get-PSDrive -Name PSDrive, X
 Name       Provider      Root
 ----       --------      ----
 
@@ -130,7 +131,7 @@ PsDrive    FileSystem    \\Server01\public
 X          FileSystem    X:\
 
 The output of the Get-Member cmdlet shows that the drives have the same object type, System.Management.Automation.PSDriveInfo.
-PS C:\>Get-PSDrive PSDrive, x | Get-Member
+PS C:\> Get-PSDrive PSDrive, x | Get-Member
 TypeName: System.Management.Automation.PSDriveInfo
  
 
@@ -144,13 +145,13 @@ GetHashCode         Method     System.Int32 GetHashCode()
 
 
 However, a "net use" command, a Get-WmiObject command for the Win32_LogicalDisk class, and a **Get-WmiObject** command for the Win32_NetworkConnection class find only the persistent X: drive because Windows PowerShell temporary drives are known only to Windows PowerShell.If you close the Windows PowerShell session and then open a new one, the PSDrive: drive is gone, and the X: drive persists. Therefore, when deciding which method to use to map network drives, consider how you will use the drive, whether it needs to be persistent, and whether the drive needs to be visible to other Windows features.
-PS C:\>net use
+PS C:\> net use
 
 Status       Local     Remote                    Network
 --------------------------------------------------------
 OK           X:        \\contoso-pc\data            Microsoft Windows Network
 
-PS C:\>Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
+PS C:\> Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
 
 deviceid
 --------
@@ -158,7 +159,7 @@ C:
 D:
 X:
 
-PS C:\>Get-WmiObject Win32_NetworkConnection
+PS C:\> Get-WmiObject Win32_NetworkConnection
 
 LocalName                  RemoteName                 ConnectionState            Status
 ---------                  ----------              ---------------               ------

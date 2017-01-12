@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113429
-schema: 2.0.0
-title: Write-Verbose
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Verbose
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113429
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Verbose
 ## SYNOPSIS
@@ -31,8 +32,8 @@ By default, the verbose message stream is not displayed, but you can display it 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Write-Verbose -Message "Searching the Application Event Log."
-PS C:\>Write-Verbose -Message "Searching the Application Event Log." -verbose
+PS C:\> Write-Verbose -Message "Searching the Application Event Log."
+PS C:\> Write-Verbose -Message "Searching the Application Event Log." -verbose
 ```
 
 These commands use the **Write-Verbose** cmdlet to display a status message.
@@ -41,8 +42,8 @@ By default, the message is not displayed.
 The second command uses the Verbose common parameter, which displays any verbose messages, regardless of the value of the **$VerbosePreference** variable.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$VerbosePreference = "Continue"
-PS C:\>Write-Verbose "Copying file $filename"
+PS C:\> $VerbosePreference = "Continue"
+PS C:\> Write-Verbose "Copying file $filename"
 ```
 
 These commands use the **Write-Verbose** cmdlet to display a status message.

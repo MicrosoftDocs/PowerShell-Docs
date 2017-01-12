@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293914
-schema: 2.0.0
-title: Set-WmiInstance
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set WmiInstance
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293914
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Set-WmiInstance
 
@@ -78,7 +79,7 @@ Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://g
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting
@@ -127,7 +128,7 @@ The class information that is returned reflects the new value.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
+PS C:\> set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 
 __GENUS          : 2
 __CLASS          : Win32_Environment
@@ -155,7 +156,7 @@ Note that this operation requires appropriate credentials and that you may need 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
+PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
 
 __GENUS                        : 2
 __CLASS                        : Win32_WMISetting

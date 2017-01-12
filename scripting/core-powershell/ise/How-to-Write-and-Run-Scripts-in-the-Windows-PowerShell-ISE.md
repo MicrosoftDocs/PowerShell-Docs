@@ -1,14 +1,16 @@
-﻿---
-title:  How to Write and Run Scripts in the Windows PowerShell ISE
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
+---
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  How to Write and Run Scripts in the Windows PowerShell ISE
+ms.technology:  powershell
+ms.assetid:    62f916d9-b3a1-484a-bdfb-41f57112c22b
 ---
+
 
 # How to Write and Run Scripts in the Windows PowerShell ISE
 This topic describes how to create, edit, run, and save scripts in the Script Pane.

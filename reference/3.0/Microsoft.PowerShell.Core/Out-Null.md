@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113366
-schema: 2.0.0
-title: Out-Null
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out Null
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113366
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Out-Null
 ## SYNOPSIS
@@ -28,7 +29,7 @@ The **Out-Null** cmdlet sends output to NULL, in effect, deleting it.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ChildItem | Out-Null
+PS C:\> Get-ChildItem | Out-Null
 ```
 
 This command gets the items in the local directory, but then it deletes them instead of passing them through the pipeline or displaying them at the command line.

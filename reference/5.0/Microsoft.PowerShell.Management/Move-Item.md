@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821601
-schema: 2.0.0
-title: Move-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Move Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821601
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Move-Item
 
@@ -44,14 +45,14 @@ When you move an item, it is added to the new location and deleted from its orig
 
 ### Example 1: Move a file to another directory and rename it
 ```
-PS C:\>Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
+PS C:\> Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
 ```
 
 This command moves the Test.txt file from the C: drive to the E:\Temp directory and renames it from test.txt to tst.txt.
 
 ### Example 2: Move a directory and its contents to another directory
 ```
-PS C:\>Move-Item -Path C:\Temp -Destination C:\Logs
+PS C:\> Move-Item -Path C:\Temp -Destination C:\Logs
 ```
 
 This command moves the C:\Temp directory and its contents to the C:\Logs directory.
@@ -59,14 +60,14 @@ The Temp directory, and all of its subdirectories and files, then appear in the 
 
 ### Example 3: Move all files of a specified extension from the current directory to another directory
 ```
-PS C:\>Move-Item -Path .\*.txt -Destination C:\Logs
+PS C:\> Move-Item -Path .\*.txt -Destination C:\Logs
 ```
 
 This command moves all of the text files (*.txt) in the current directory (represented by a dot (.)) to the C:\Logs directory.
 
 ### Example 4: Recursively move all files of a specified extension from the current directory to another directory
 ```
-PS C:\>Get-ChildItem -Path ".\*.txt" -Recurse | Move-Item -Destination "C:\TextFiles"
+PS C:\> Get-ChildItem -Path ".\*.txt" -Recurse | Move-Item -Destination "C:\TextFiles"
 ```
 
 This command moves all of the text files from the current directory and all subdirectories, recursively, to the C:\TextFiles directory.
@@ -91,7 +92,7 @@ Use the **Include** parameter to specify the .txt file name extension filter (`G
 
 ### Example 5: Move registry keys and values to another key
 ```
-PS C:\>Move-Item "HKLM:\software\mycompany\*" "HKLM:\software\mynewcompany"
+PS C:\> Move-Item "HKLM:\software\mycompany\*" "HKLM:\software\mynewcompany"
 ```
 
 This command moves the registry keys and values within the MyCompany registry key in HKLM\Software to the MyNewCompany key.
@@ -100,7 +101,7 @@ In this command, the optional *Path* and *Destination* parameter names are omitt
 
 ### Example 6: Move a directory and its contents to a subdirectory of the specified directory
 ```
-PS C:\>Move-Item -LiteralPath 'Logs[Sept`06]' -Destination 'Logs[2006]'
+PS C:\> Move-Item -LiteralPath 'Logs[Sept`06]' -Destination 'Logs[2006]'
 ```
 
 This command moves the Logs\[Sept\`06\] directory (and its contents) into the Logs\[2006\] directory.

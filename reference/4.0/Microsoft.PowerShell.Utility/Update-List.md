@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294024
-schema: 2.0.0
-title: Update-List
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Update List
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294024
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Update-List
 
@@ -50,7 +51,7 @@ To determine whether a cmdlet supports Update-List, see the cmdlet Help topic.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-mailbox | update-list -Property aliases -Add "A","B" -Remove "X","Y" | set-mailbox
+PS C:\> get-mailbox | update-list -Property aliases -Add "A","B" -Remove "X","Y" | set-mailbox
 ```
 
 This command adds A and B and removes X and Y from the Aliases property of a mailbox.
@@ -67,8 +68,8 @@ For more information about Get-Mailbox, see http://go.microsoft.com/fwlink/?Link
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$m = get-mailbox
-PS C:\>update-list -InputObject $m -Property aliases -Add "A","B" -Remove "X", "Y" | set-mailbox
+PS C:\> $m = get-mailbox
+PS C:\> update-list -InputObject $m -Property aliases -Add "A","B" -Remove "X", "Y" | set-mailbox
 ```
 
 This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
@@ -83,7 +84,7 @@ The command uses a pipeline operator (|) to send the updated mailbox object to t
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-mailbox | set-mailbox -alias (update-list -Add "A", "B" -Remove "X","Y")
+PS C:\> get-mailbox | set-mailbox -alias (update-list -Add "A", "B" -Remove "X","Y")
 ```
 
 This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
@@ -102,7 +103,7 @@ When the Set-Mailbox command completes, the mailbox is changed.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>update-list -InputObject $a -Property aliases -replace "A", "B" | set-mailbox
+PS C:\> update-list -InputObject $a -Property aliases -replace "A", "B" | set-mailbox
 ```
 
 This command uses the Replace operator of Update-List to replace the collection in the Aliases property of the object in $a with a new collection.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822334
-schema: 2.0.0
-title: Save-Script
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Save Script
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822334
+external help file:   PSModule-help.xml
 ---
+
 
 # Save-Script
 
@@ -55,7 +56,7 @@ The **Save-Script** cmdlet saves the specified script.
 
 ### Example 1: Save a script and validate it
 ```
-PS C:\>Save-Script -Name "Fabrikam-ClientScript" -Repository "Local01" -Path "D:\ScriptSharingDemo"
+PS C:\> Save-Script -Name "Fabrikam-ClientScript" -Repository "Local01" -Path "D:\ScriptSharingDemo"
 PS C:\> Test-ScriptFileInfo -Path "D:\ScriptSharingDemo\Fabrikam-ClientScript.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------

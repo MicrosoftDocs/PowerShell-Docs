@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113364
-schema: 2.0.0
-title: Out-GridView
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out GridView
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113364
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Out-GridView
 ## SYNOPSIS
@@ -51,14 +52,14 @@ For instructions for using these features, type "Get-Help Out-GridView -Full" an
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Process | Out-GridView
+PS C:\> Get-Process | Out-GridView
 ```
 
 This command gets the processes running on the local computer and sends them to a grid view window.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$p = Get-Process
-PS C:\>$p | Out-GridView
+PS C:\> $p = Get-Process
+PS C:\> $p | Out-GridView
 ```
 
 This command also gets the processes running on the local computer and sends them to a grid view window.
@@ -68,7 +69,7 @@ The first command uses the Get-Process cmdlet to get the processes on the comput
 The second command uses a pipeline operator to send the $p variable to **Out-GridView**.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Process | Select-Object -Property Name, WorkingSet, PeakWorkingSet | Sort-Object -Property WorkingSet -Descending | Out-GridView
+PS C:\> Get-Process | Select-Object -Property Name, WorkingSet, PeakWorkingSet | Sort-Object -Property WorkingSet -Descending | Out-GridView
 ```
 
 This command displays a formatted table in a grid view window.
@@ -85,7 +86,7 @@ The final part of the command uses a pipeline operator (|) to send the formatted
 You can now use the features of the grid view to search, sort, and filter the data.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>($a = Get-ChildItem -Path $pshome -Recurse) | Out-GridView
+PS C:\> ($a = Get-ChildItem -Path $pshome -Recurse) | Out-GridView
 ```
 
 This command saves its output in a variable and sends it to **Out-GridView**.
@@ -99,7 +100,7 @@ The parentheses in the command establish the order of operations.
 As a result, the output from the Get-ChildItem command is saved in the $a variable before it is sent to **Out-GridView**.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Process -ComputerName Server01| ogv -Title "Processes - Server01"
+PS C:\> Get-Process -ComputerName Server01| ogv -Title "Processes - Server01"
 ```
 
 This command displays the processes that are running on the Server01 computer in a grid view window.
@@ -107,7 +108,7 @@ This command displays the processes that are running on the Server01 computer in
 The command uses "ogv," which is the built-in alias for the **Out-GridView** cmdlet, it uses the **Title** parameter to specify the window title.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Invoke-Command -ComputerName S1, S2, S3 -ScriptBlock {Get-Culture} | Out-GridView
+PS C:\> Invoke-Command -ComputerName S1, S2, S3 -ScriptBlock {Get-Culture} | Out-GridView
 ```
 
 This example shows the correct format for sending data collected from remote computers to the **Out-GridView** cmdlet.
@@ -119,7 +120,7 @@ Notice that the script block that contains the commands that are run remotely do
 If it did, the command would fail when it tried to open a grid view window on each of the remote computers.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
+PS C:\> Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
 ```
 
 This command lets you select multiple processes from the **Out-GridView** window.
@@ -129,7 +130,7 @@ The command uses the **PassThru** parameter of **Out-GridView**, which lets you 
 The **PassThru** parameter is equivalent to using the **Multiple** value of the **OutputMode** parameter.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Powershell.exe -Command "Get-Service | Out-GridView -Wait"
+PS C:\> Powershell.exe -Command "Get-Service | Out-GridView -Wait"
 ```
 
 This command shows how to use the **Wait** parameter of **Out-GridView** to create a Windows shortcut to the **Out-GridView** window.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113295
-schema: 2.0.0
-title: Enable-PSBreakpoint
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113295
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Enable-PSBreakpoint
 ## SYNOPSIS
@@ -43,21 +44,21 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-psbreakpoint | enable-psbreakpoint
+PS C:\> get-psbreakpoint | enable-psbreakpoint
 ```
 
 This command enables all breakpoints in the current console.
 You can abbreviate the command as "gbp | ebp".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>enable-psbreakpoint -id 0, 1, 5
+PS C:\> enable-psbreakpoint -id 0, 1, 5
 ```
 
 This command enables breakpoints with breakpoint IDs 0, 1, and 5.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -variable Name
-PS C:\>$b | disable-psbreakpoint -passthru
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
+PS C:\> $b | disable-psbreakpoint -passthru
 
 AccessMode : Write
 Variable   : Name
@@ -68,7 +69,7 @@ Id         : 0
 Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1
 
-PS C:\>$b | enable-psbreakpoint -passthru
+PS C:\> $b | enable-psbreakpoint -passthru
 
 AccessMode : Write
 Variable   : Name
@@ -96,8 +97,8 @@ This lets you verify that the value of the Enabled property of the breakpoint ob
 The results are shown in the following sample output.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$b = get-psbreakpoint -id 3, 5
-PS C:\>enable-psbreakpoint -breakpoint $b
+PS C:\> $b = get-psbreakpoint -id 3, 5
+PS C:\> enable-psbreakpoint -breakpoint $b
 ```
 
 These commands enable a set of breakpoints by specifying their breakpoint objects.

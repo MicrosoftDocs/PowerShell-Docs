@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821658
-schema: 2.0.0
-title: Find-Module
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Find Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821658
+external help file:   PSModule-help.xml
 ---
+
 
 # Find-Module
 
@@ -41,7 +42,7 @@ If the *RequiredVersion* parameter is specified, **Find-Module** only returns th
 
 ### Example 1: Find a module by name
 ```
-PS C:\>Find-Module -Name "ContosoServer"
+PS C:\> Find-Module -Name "ContosoServer"
 Version       DateUpdated        Name          Description
 -------       -----------        ----          -----------
 2.0.0.0       5/8/2014 10:30 AM  ContosoServer Cmdlets and DSC resources for managing Contoso Server products.
@@ -51,14 +52,14 @@ This command returns a **PSGetItemInfo** object that represents the ContosoServe
 
 ### Example 2: Find similarly named modules
 ```
-PS C:\>Find-Module -Name "Contoso*"
+PS C:\> Find-Module -Name "Contoso*"
 ```
 
 This example returns two **PSGetItemInfo** objects that represent the ContosoServer and ContosoClient modules from the online gallery.
 
 ### Example 3: Find a module by minimum version
 ```
-PS C:\>Find-Module -Name ContosoClient -MinimumVersion 3.0.0.0
+PS C:\> Find-Module -Name ContosoClient -MinimumVersion 3.0.0.0
 ```
 
 This example returns a **PSGetItemInfo** object that represents the newest version of the ContosoClient module that has a minimum version of at least 3.0.0.0.
@@ -66,7 +67,7 @@ For example, if there is a version 4.0.0.0 ContosoClient module, that is include
 
 ### Example 4: Find a module by specific version
 ```
-PS C:\>Find-Module -Name "ContosoClient" -RequiredVersion 4.5.6.7
+PS C:\> Find-Module -Name "ContosoClient" -RequiredVersion 4.5.6.7
 ```
 
 This example returns a **PSGetItemInfo** object that represents version 4.5.6.7 of the ContosoClient module.
@@ -74,7 +75,7 @@ If the specified version 4.5.6.7 isn't found, an error is returned.
 
 ### Example 5: Find a module in a specific repository
 ```
-PS C:\>Find-Module -Name "Contoso" -Repository "myNuGetRepo"
+PS C:\> Find-Module -Name "Contoso" -Repository "myNuGetRepo"
 ```
 
 This command returns a **PSGetItemInfo** object that represents the Contoso module from the myNuGetRepo module source.
@@ -82,7 +83,7 @@ If the myNuGetRepo source wasn't registered using the Register-PSRepository cmdl
 
 ### Example 6: Find a module in multiple repositories
 ```
-PS C:\>Register-PSRepository -Name "MySource" -SourceLocation "https://www.myget.org/F/powershellgetdemo/"
+PS C:\> Register-PSRepository -Name "MySource" -SourceLocation "https://www.myget.org/F/powershellgetdemo/"
 PS C:\> Find-Module -Name "Contoso" -Repository "PSGallery","MySource"
 Repository    Version   Name                 Description
 ----------    -------   ----                 -----------
@@ -94,14 +95,14 @@ This command returns **PSGetItemInfo** objects that represent modules named Cont
 
 ### Example 7: Find a module that contains a DSC resource
 ```
-PS C:\>Find-Module -Includes "DscResource"
+PS C:\> Find-Module -Includes "DscResource"
 ```
 
 This command returns **PSGetItemInfo** objects that represent modules that contain DSC resources.
 
 ### Example 8: Find a module using a filter
 ```
-PS C:\>Find-Module -Filter "App Domain" -Includes "DscResource"
+PS C:\> Find-Module -Filter "App Domain" -Includes "DscResource"
 Repository                Version      Name                                     Description                                                 
 ----------                -------      ----                                     -----------                                                 
 PSGallery                 1.0.0.0      AppDomainConfig                          Manipulate AppDomain configuration...

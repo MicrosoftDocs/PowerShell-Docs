@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822343
-schema: 2.0.0
-title: Update-ScriptFileInfo
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Update ScriptFileInfo
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822343
+external help file:   PSModule-help.xml
 ---
+
 
 # Update-ScriptFileInfo
 
@@ -45,11 +46,11 @@ The **Update-ScriptFileInfo** cmdlet updates information for a script.
 
 ### Example 1: Update the version of a script file
 ```
-PS C:\>New-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "my test script file description goes here"
+PS C:\> New-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "my test script file description goes here"
 PS C:\> Test-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------
-1.0        temp-scriptfile           manikb@microsoft.com my test script file description goes here PS C:\>Update-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 2.0 -PassThru
+1.0        temp-scriptfile           manikb@microsoft.com my test script file description goes here PS C:\> Update-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 2.0 -PassThru
 <#PSScriptInfo
 
 .VERSION 2.0

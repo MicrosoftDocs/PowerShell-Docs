@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821836
-schema: 2.0.0
-title: New-TemporaryFile
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New TemporaryFile
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821836
+external help file:   Microsoft.PowerShell.Utility-help.xml
 ---
+
 
 # New-TemporaryFile
 
@@ -35,7 +36,7 @@ This cmdlet creates temporary files that you can use in scripts.
 
 ### Example 1: Create a temporary file
 ```
-PS C:\>$TempFile = New-TemporaryFile
+PS C:\> $TempFile = New-TemporaryFile
 ```
 
 This command generates a .tmp file in your temporary folder, and then stores a reference to the file in the $TempFile variable.

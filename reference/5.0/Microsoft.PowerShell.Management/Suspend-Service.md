@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821644
-schema: 2.0.0
-title: Suspend-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Suspend Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821644
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Suspend-Service
 
@@ -47,14 +48,14 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Suspend a service
 ```
-PS C:\>Suspend-Service -DisplayName "Telnet"
+PS C:\> Suspend-Service -DisplayName "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
 ### Example 2: Display what would happen if you suspend services
 ```
-PS C:\>Suspend-Service -Name lanman* -WhatIf
+PS C:\> Suspend-Service -Name lanman* -WhatIf
 ```
 
 This command tells what would happen if you suspended the services that have a service name that starts with lanman.
@@ -62,7 +63,7 @@ To suspend the services, rerun the command without the *WhatIf* parameter.
 
 ### Example 3: Get and suspend a service
 ```
-PS C:\>Get-Service schedule | Suspend-Service
+PS C:\> Get-Service schedule | Suspend-Service
 ```
 
 This command uses the **Get-Service** cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
@@ -70,7 +71,7 @@ The pipeline operator (|) passes the result to **Suspend-Service**, which suspen
 
 ### Example 4: Suspend all services that can be suspended
 ```
-PS C:\>Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
+PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
 ```
 
 This command suspends all of the services on the computer that can be suspended.

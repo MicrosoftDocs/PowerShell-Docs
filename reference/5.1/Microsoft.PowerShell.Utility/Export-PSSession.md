@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821771
-schema: 2.0.0
-title: Export-PSSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821771
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Export-PSSession
 
@@ -45,7 +46,7 @@ When you import commands into the current session, they run implicitly in the or
 
 ### Example 1: Export commands from a PSSession
 ```
-PS C:\>$S = New-PSSession -ComputerName "Server01"
+PS C:\> $S = New-PSSession -ComputerName "Server01"
 PS C:\> Export-PSSession -Session $S -OutputModule "Server01"
 ```
 
@@ -57,7 +58,7 @@ The second command exports the commands and formatting data from the session int
 
 ### Example 2: Export Get and Set commands
 ```
-PS C:\>$S = New-PSSession -ConnectionUri http://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
+PS C:\> $S = New-PSSession -ConnectionUri http://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
 PS C:\> Export-PSSession -Session $R -Module exch* -CommandName get-*, set-* -FormatTypeName * -OutputModule $pshome\Modules\Exchange -Encoding ASCII
 ```
 
@@ -67,12 +68,12 @@ Placing the module in the $pshome\Module directory makes it accessible to all us
 
 ### Example 3: Export commands from a remote computer
 ```
-PS C:\>$S = New-PSSession -ComputerName Server01 -Credential Server01\User01
-PS C:\>Export-PSSession -Session $S -OutputModule TestCmdlets -Type cmdlet -CommandName *test* -FormatTypeName *
-PS C:\>Remove-PSSession $S
-PS C:\>Import-Module TestCmdlets
-PS C:\>Get-Help Test*
-PS C:\>Test-Files
+PS C:\> $S = New-PSSession -ComputerName Server01 -Credential Server01\User01
+PS C:\> Export-PSSession -Session $S -OutputModule TestCmdlets -Type cmdlet -CommandName *test* -FormatTypeName *
+PS C:\> Remove-PSSession $S
+PS C:\> Import-Module TestCmdlets
+PS C:\> Get-Help Test*
+PS C:\> Test-Files
 ```
 
 These commands export cmdlets from a PSSession on a remote computer and save them in a module on the local computer.
@@ -97,7 +98,7 @@ Windows PowerShell creates a session from information that is stored in the modu
 
 ### Example 4: Import and clobber commands in the current session
 ```
-PS C:\>Export-PSSession -Session $S -AllowClobber -OutputModule AllCommands
+PS C:\> Export-PSSession -Session $S -AllowClobber -OutputModule AllCommands
 ```
 
 This command exports all commands and all formatting data from the PSSession in the $S variable into the current session.
@@ -105,12 +106,12 @@ The command uses the *AllowClobber* parameter to include commands with the same 
 
 ### Example 5: Export commands from a closed PSSession
 ```
-PS C:\>$Options = New-PSSessionOption -NoMachineProfile
-PS C:\>$S = New-PSSession -ComputerName "Server01" -SessionOption $Options
-PS C:\>Export-PSSession -Session $S -OutputModule Server01
-PS C:\>Remove-PSSession $S
-PS C:\>New-PSSession -ComputerName "Server01" -SessionOption $Options
-PS C:\>Import-Module Server01
+PS C:\> $Options = New-PSSessionOption -NoMachineProfile
+PS C:\> $S = New-PSSession -ComputerName "Server01" -SessionOption $Options
+PS C:\> Export-PSSession -Session $S -OutputModule Server01
+PS C:\> Remove-PSSession $S
+PS C:\> New-PSSession -ComputerName "Server01" -SessionOption $Options
+PS C:\> Import-Module Server01
 ```
 
 This example shows how to run the exported commands in a session with particular options when the PSSession from which the commands were exported is closed.

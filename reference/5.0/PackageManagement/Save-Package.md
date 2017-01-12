@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517140
-schema: 2.0.0
-title: Save-Package
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Save Package
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517140
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
+
 
 # Save-Package
 
@@ -59,29 +60,29 @@ The *DestinationPath* and *LiteralPath* parameters are mutually exclusive, and c
 
 ### Example 1: Save a package to the local computer
 ```
-PS C:\>Save-Package -Name "DSCAccelerator" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -DestinationPath "C:\Users\TestUser\Downloads"
 ```
 
 This example saves the newest version of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 2: Save an exact version of a package
 ```
-PS C:\>Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -DestinationPath "C:\Users\TestUser\Downloads"
 ```
 
 This example saves only version 2.1.2 of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 3: Save a package by piping results of Find-Package
 ```
-PS C:\>Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -DestinationPath "C:\Users\TestUser\Downloads"
 ```
 
 This command saves a package named DSCAccelerator by first locating the exact package with the **Find-Package** cmdlet, then piping the results of **Find-Package** to the **Save-Package** cmdlet.
 
 ### Example 4: Save a package to a local folder, then install the package
 ```
-PS C:\>Save-Package "notepad2" -DestinationPath "C:\temp"
-PS C:\>Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
+PS C:\> Save-Package "notepad2" -DestinationPath "C:\temp"
+PS C:\> Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
 ```
 
 The first command saves a package to C:\temp, a folder on the local computer.

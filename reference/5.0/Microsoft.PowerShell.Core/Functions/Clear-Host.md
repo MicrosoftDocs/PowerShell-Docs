@@ -1,9 +1,18 @@
 ---
-external help file: System.Management.Automation.dll-help.xml
-online version: http://technet.microsoft.com/library/hh852689(v=wps.630).aspx
-schema: 2.0.0
-online version: https://go.microsoft.com/fwlink/?linkid=834941
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Host
+ms.technology:  powershell
+external help file:   System.Management.Automation.dll-help.xml
+online version:   https://go.microsoft.com/fwlink/?linkid=834941
+schema:   2.0.0
 ---
+
 
 # Clear-Host
 
@@ -35,7 +44,7 @@ cls
 
 # Before
 
-PS C:\>Get-Process
+PS C:\> Get-Process
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -95,3 +104,4 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 [Out-Host]()
 
 [Read-Host. Write-Host]()
+

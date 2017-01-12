@@ -1,26 +1,21 @@
 ---
-title: about_Methods
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_methods
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Methods
+ms.technology:  powershell
 ---
+
 # About methods
 ## about_methods
 
 
 ## SHORT DESCRIPTION
-Describes how to use methods to perform actions on objects in  Windows PowerShell�.
+Describes how to use methods to perform actions on objects in  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -34,7 +29,7 @@ To get the methods of any object, use the Get-Member cmdlet. Use its MemberType 
 
 
 ```
-PS C:\>Get-Process | Get-Member -MemberType Method
+PS C:\> Get-Process | Get-Member -MemberType Method
 ```
 
 
@@ -70,8 +65,8 @@ Another very useful process is the Split method of strings. The split method tak
 
 
 ```
-PS C:\>$a = "Try-Catch-Finally"  
-PS C:\>$a.Split("-")  
+PS C:\> $a = "Try-Catch-Finally"  
+PS C:\> $a.Split("-")  
 Try  
 Catch  
 Finally
@@ -147,8 +142,8 @@ The first command starts three instances of the Notepad process. The second comm
 
 
 ```
-PS C:\>Notepad; Notepad; Notepad  
-PS C:\>$p = Get-Process Notepad
+PS C:\> Notepad; Notepad; Notepad  
+PS C:\> $p = Get-Process Notepad
 ```
 
 
@@ -156,7 +151,7 @@ The third command uses the Count property of all collections to verify that ther
 
 
 ```
-PS C:\>$p.Count  
+PS C:\> $p.Count  
 3
 ```
 
@@ -167,7 +162,7 @@ This command works even though a collection of processes does not have a Kill me
 
 
 ```
-PS C:\>$p.Kill()
+PS C:\> $p.Kill()
 ```
 
 
@@ -175,7 +170,7 @@ The fifth command uses the Get-Process command to confirm that the Kill command 
 
 
 ```
-PS C:\>Get-Process Notepad  
+PS C:\> Get-Process Notepad  
 Get-Process : Cannot find a process with the name "notepad". Verify the process name and call the cmdlet again.  
 At line:1 char:12  
 + get-process <<<<  notepad  
@@ -188,7 +183,7 @@ To perform the same task on  Windows PowerShell 2.0, use the Foreach-Object cmdl
 
 
 ```
-PS C:\>$p | Foreach-Object {$_.Kill()}
+PS C:\> $p | Foreach-Object {$_.Kill()}
 ```
 
 

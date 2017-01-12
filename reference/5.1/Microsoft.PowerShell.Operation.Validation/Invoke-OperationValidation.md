@@ -1,19 +1,19 @@
 ---
-author: jpjofre
-description:
-external help file: Microsoft.PowerShell.Operation.Validation-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-11-08
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version:
-schema: 2.0.0
-title: Invoke-OperationValidation
-ms.assetid: C66EF231-7E55-4866-8938-9FEE8E577E10
-online version: http://go.microsoft.com/fwlink/?LinkId=834966
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke OperationValidation
+ms.technology:  powershell
+ms.assetid:   C66EF231-7E55-4866-8938-9FEE8E577E10
+external help file:   Microsoft.PowerShell.Operation.Validation-help.xml
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=834966
 ---
+
 
 # Invoke-OperationValidation
 
@@ -47,7 +47,7 @@ The **Invoke-OperationValidation** cmdlet invokes Operation Validation Framework
 
 ### Example 1: Invoke an Operation Validation test
 ```
-PS C:\>Get-OperationValidation -ModuleName "OperationValidation" | Invoke-OperationValidation -IncludePesterOutput
+PS C:\> Get-OperationValidation -ModuleName "OperationValidation" | Invoke-OperationValidation -IncludePesterOutput
 Describing Simple Test Suite
  [+] first Operational test 20ms
  [+] second Operational test 19ms
@@ -213,3 +213,4 @@ The **PSCustomObject** describes whether the validation was successful.
 ## RELATED LINKS
 
 [Get-OperationValidation](Get-OperationValidation.md)
+

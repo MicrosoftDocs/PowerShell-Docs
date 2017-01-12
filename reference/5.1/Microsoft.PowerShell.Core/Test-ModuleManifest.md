@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821521
-schema: 2.0.0
-title: Test-ModuleManifest
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test ModuleManifest
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821521
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Test-ModuleManifest
 
@@ -38,14 +39,14 @@ If any files are not in the locations specified in the manifest, the cmdlet also
 
 ### Example 1: Test a manifest
 ```
-PS C:\>test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
+PS C:\> test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
 ```
 
 This command tests the TestModule.psd1 module manifest.
 
 ### Example 2: Test a manifest by using the pipeline
 ```
-PS C:\>"$pshome\Modules\TestModule.psd1" | test-modulemanifest
+PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again. 
 At line:1 char:34
@@ -74,7 +75,7 @@ The command output shows that the test failed, because the TestTypes.ps1xml file
 
 ### Example 3: Write a function to test a module manifest
 ```
-PS C:\>function Test-ManifestBool ($path)
+PS C:\> function Test-ManifestBool ($path)
 {$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue $?}
 ```
 

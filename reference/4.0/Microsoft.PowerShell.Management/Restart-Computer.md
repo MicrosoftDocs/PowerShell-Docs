@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293905
-schema: 2.0.0
-title: Restart-Computer
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Restart Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293905
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Restart-Computer
 
@@ -50,14 +51,14 @@ This cmdlet requires Windows PowerShell remoting only when you use the **AsJob**
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Restart-Computer
+PS C:\> Restart-Computer
 ```
 
 This command restarts the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Restart-Computer -ComputerName Server01, Server02, localhost
+PS C:\> Restart-Computer -ComputerName Server01, Server02, localhost
 ```
 
 This command restarts two remote computers, Server01 and Server02, and the local computer, identified as "localhost".
@@ -65,20 +66,20 @@ This command restarts two remote computers, Server01 and Server02, and the local
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
 The first command uses the **AsJob** parameter to run the command as a background job. The command saves the resulting job object in the $j variable.
-PS C:\>$j = Restart-Computer -ComputerName Server01, Server02 -AsJob
+PS C:\> $j = Restart-Computer -ComputerName Server01, Server02 -AsJob
 
 The second command uses a pipeline operator to send the job object in $j to the Receive-Job cmdlet, which gets the job results. The command saves the results in the $Results variable.
-PS C:\>$Results = $j | Receive-Job
+PS C:\> $Results = $j | Receive-Job
 
 The third command displays the result saved in the $Results variable.Because the **AsJob** parameter creates the job on the local computer and automatically returns the results to the local computer, you can run the Receive-Job command as a local command.
-PS C:\>$Results
+PS C:\> $Results
 ```
 
 These commands run a **Restart-Computer** command as a background job on two remote computers, and then get the results.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Restart-Computer -ComputerName Server01 -Impersonation Anonymous -Authentication PacketIntegrity
+PS C:\> Restart-Computer -ComputerName Server01 -Impersonation Anonymous -Authentication PacketIntegrity
 ```
 
 This command restarts the Server01 remote computer.
@@ -87,21 +88,21 @@ The command uses customized impersonation and authentication settings.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
 The first command uses the Get-Content cmdlet to get a list of computers in the domain from the Domain01.txt file. It saves the list in the $s variable.
-PS C:\>$s = Get-Content Domain01.txt
+PS C:\> $s = Get-Content Domain01.txt
 
 
 The second command gets the credentials of a domain administrator and saves them in the $c variable.
-PS C:\>$c = Get-Credential Domain01\Admin01
+PS C:\> $c = Get-Credential Domain01\Admin01
 
 The third command restarts the computers. It uses the **ComputerName** parameter to submit the list of computers in the $s variable, the **Force** parameter to force an immediate restart, and the **Credential** parameter to submit the credentials saved in the $c variable. It also uses the **ThrottleLimit** parameter to limit the command to 10 concurrent connections.
-PS C:\>Restart-Computer -ComputerName $s -Force -ThrottleLimit 10 -Credential $c
+PS C:\> Restart-Computer -ComputerName $s -Force -ThrottleLimit 10 -Credential $c
 ```
 
 These commands force an immediate restart of all of the computers in Domain01.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Restart-Computer -ComputerName Server01 -Wait -For PowerShell -Timeout 300 -Delay 2
+PS C:\> Restart-Computer -ComputerName Server01 -Wait -For PowerShell -Timeout 300 -Delay 2
 ```
 
 This command restarts the Server01 remote computer and then waits up to 5 minutes (300 seconds) for Windows PowerShell to be available on the restarted computer before continuing.
@@ -111,7 +112,7 @@ It uses the **Delay** parameter to reduce the interval between queries to the re
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Restart-Computer -ComputerName Server01 -Protocol WSMan -WSManAuthentication Kerberos
+PS C:\> Restart-Computer -ComputerName Server01 -Protocol WSMan -WSManAuthentication Kerberos
 ```
 
 This command restarts the Server01 remote computer by using the WSMan protocol, instead of DCOM, which is the default.

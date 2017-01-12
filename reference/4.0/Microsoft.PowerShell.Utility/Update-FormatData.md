@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294023
-schema: 2.0.0
-title: Update-FormatData
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Update FormatData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294023
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Update-FormatData
 
@@ -45,14 +46,14 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>update-formatdata
+PS C:\> update-formatdata
 ```
 
 This command reloads the formatting files that it loaded previously.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>update-formatdata -appendpath trace.format.ps1xml, log.format.ps1xml
+PS C:\> update-formatdata -appendpath trace.format.ps1xml, log.format.ps1xml
 ```
 
 This command reloads the formatting files into the session, including two new files, Trace.format.ps1xml and Log.format.ps1xml.
@@ -63,11 +64,11 @@ The AppendPath parameter is used because the new files contain formatting data f
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>update-formatdata -prependPath c:\test\NewFiles.format.ps1xml
+PS C:\> update-formatdata -prependPath c:\test\NewFiles.format.ps1xml
 
 # Edit the NewFiles.format.ps1 file.
 
-PS C:\>update-formatdata
+PS C:\> update-formatdata
 ```
 
 This example shows how to reload a formatting file after you have edited it.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135271
-schema: 2.0.0
-title: Use-Transaction
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Use Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135271
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Use-Transaction
 ## SYNOPSIS
@@ -35,16 +36,16 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-transaction
-PS C:\>$transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
-PS C:\>$transactedString.Append("Hello")
-PS C:\>use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
-PS C:\>$transactedString.ToString()
+PS C:\> start-transaction
+PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
+PS C:\> $transactedString.Append("Hello")
+PS C:\> use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
+PS C:\> $transactedString.ToString()
 Hello
-PS C:\>use-transaction -transactedScript { $transactedString.ToString() } -UseTransaction
+PS C:\> use-transaction -transactedScript { $transactedString.ToString() } -UseTransaction
 Hello, World
-PS C:\>complete-transaction
-PS C:\>$transactedString.ToString()
+PS C:\> complete-transaction
+PS C:\> $transactedString.ToString()
 Hello, World
 ```
 
@@ -81,12 +82,12 @@ The seventh command uses the Complete-Transaction cmdlet to commit the transacti
 The final command uses the ToString method to display the resulting value of the variable as a string.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-transaction
-PS C:\>$transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
-PS C:\>$transactedString.Append("Hello")
-PS C:\>use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
-PS C:\>undo-transaction
-PS C:\>$transactedString.ToString()
+PS C:\> start-transaction
+PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
+PS C:\> $transactedString.Append("Hello")
+PS C:\> use-transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
+PS C:\> undo-transaction
+PS C:\> $transactedString.ToString()
 Hello
 ```
 

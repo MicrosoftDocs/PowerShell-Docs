@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821572
-schema: 2.0.0
-title: Complete-Transaction
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Complete Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821572
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Complete-Transaction
 
@@ -37,7 +38,7 @@ For more information, see about_Transactions.
 
 ### Example 1: Commit a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 PS HKCU:\software> dir m*
@@ -69,7 +70,7 @@ As a result, the second dir command shows that the registry is changed.
 
 ### Example 2: Commit a transaction that has more than one subscriber
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 Hive: HKEY_CURRENT_USER\Software
@@ -141,7 +142,7 @@ This is confirmed by a second dir m* command, which shows the changes.
 
 ### Example 3: Perform a transaction that does not change any data
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
 PS HKCU:\software> New-Item MyCompany -UseTransaction
 PS HKCU:\software> dir m*

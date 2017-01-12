@@ -1,14 +1,16 @@
 ---
-title:  The ISESnippetObject
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The ISESnippetObject
+ms.technology:  powershell
+ms.assetid:    98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ---
+
 
 # The ISESnippetObject
   An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects. The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.

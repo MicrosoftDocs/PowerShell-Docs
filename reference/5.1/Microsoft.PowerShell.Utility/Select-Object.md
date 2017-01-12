@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821852
-schema: 2.0.0
-title: Select-Object
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Select Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821852
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Select-Object
 
@@ -54,14 +55,14 @@ To turn off this optimizing behavior, use the *Wait* parameter.
 
 ### Example 1: Select objects by property
 ```
-PS C:\>Get-Process | Select-Object -Property ProcessName, Id, WS
+PS C:\> Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
 This command creates objects that have the Name, ID, and working set (WS) properties of process objects.
 
 ### Example 2: Select objects by property and format the results
 ```
-PS C:\>Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
+PS C:\> Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
 
 ProcessName       : 00THotkey
 Size              : 256
@@ -84,7 +85,7 @@ The command uses the Format-List cmdlet to display the name and modules of each 
 
 ### Example 3: Select processes using the most memory
 ```
-PS C:\>Get-Process | Sort-Object -Property WS | Select-Object -Last 5
+PS C:\> Get-Process | Sort-Object -Property WS | Select-Object -Last 5
 
 Handles  NPM(K)    PM(K)      WS(K) VS(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -104,7 +105,7 @@ The **Select-Object** optimization is available only for commands that return ob
 
 ### Example 4: Select the name and start day of processes
 ```
-PS C:\>Get-Process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression = {$_.StartTime.DayOfWeek}}
+PS C:\> Get-Process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression = {$_.StartTime.DayOfWeek}}
 
 ProcessName  StartDay
 ----         --------
@@ -123,7 +124,7 @@ The value of the Expression key is a script blocks that gets the **StartTime** p
 
 ### Example 5: Select unique characters from an array
 ```
-PS C:\>"a","b","c","a","a","a" | Select-Object -Unique
+PS C:\> "a","b","c","a","a","a" | Select-Object -Unique
 
 a
 b
@@ -134,8 +135,8 @@ This command uses the *Unique* parameter of **Select-Object** to get unique char
 
 ### Example 6: Select newest and oldest events in the event log
 ```
-PS C:\>$A = Get-Eventlog -Log "Windows PowerShell"
-PS C:\>$A | Select-Object -Index 0, ($A.count - 1)
+PS C:\> $A = Get-Eventlog -Log "Windows PowerShell"
+PS C:\> $A | Select-Object -Index 0, ($A.count - 1)
 ```
 
 These commands gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
@@ -150,7 +151,7 @@ The index of the last event is the number of items in $A minus 1.
 
 ### Example 7: Select all but the first object
 ```
-PS C:\>New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
+PS C:\> New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
 
 This command creates a new PSSession on each of the computers listed in the Servers.txt files, except for the first one.
@@ -160,7 +161,7 @@ The resulting list of computers is set as the value of the *ComputerName* parame
 
 ### Example 8: Rename files and select several to review
 ```
-PS C:\>Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
+PS C:\> Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
 ```
 
 This command adds a -ro suffix to the base names of text files that have the read-only attribute and then displays the first five files so the user can see a sample of the effect.

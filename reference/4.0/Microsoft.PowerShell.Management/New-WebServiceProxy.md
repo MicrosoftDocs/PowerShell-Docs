@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293890
-schema: 2.0.0
-title: New-WebServiceProxy
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New WebServiceProxy
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293890
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-WebServiceProxy
 
@@ -49,15 +50,15 @@ The Microsoft .NET Framework provides Web service proxy objects that represent t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WSDL
+PS C:\> $zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WSDL
 ```
 
 This command uses the **New-WebServiceProxy** command to create a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$URI = "http://www.webservicex.net/uszip.asmx?WSDL"
-PS C:\>$zip = New-WebServiceProxy -Uri $URI -Namespace WebServiceProxy -Class USZip
+PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
+PS C:\> $zip = New-WebServiceProxy -Uri $URI -Namespace WebServiceProxy -Class USZip
 ```
 
 This command uses the **New-WebServiceProxy** cmdlet to create a .NET Framework proxy of the US Zip Web service.
@@ -69,7 +70,7 @@ The command uses the **URI** parameter to specify the URI and the **Namespace** 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$zip | get-member -type method
+PS C:\> $zip | get-member -type method
 
 TypeName: WebServiceProxy.USZip
 Name                      MemberType Definition
@@ -105,7 +106,7 @@ Notice that the TypeName of the proxy object, WebServiceProxy, reflects the name
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$zip.getinfobyzip(20500).table
+PS C:\> $zip.getinfobyzip(20500).table
 CITY      : Washington
 STATE     : DC
 ZIP       : 20500

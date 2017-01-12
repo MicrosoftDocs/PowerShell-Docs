@@ -1,18 +1,18 @@
 ---
-author: jpjofre
-description:
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: 1ce19f56-8359-408e-addd-d5635e52a1f5#VerbList
-schema: 2.0.0
-title: Register-ArgumentCompleter
-online version: http://go.microsoft.com/fwlink/?LinkId=822079
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Register ArgumentCompleter
+ms.technology:  powershell
+external help file:   System.Management.Automation.dll-Help.xml
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822079
 ---
+
 
 # Register-ArgumentCompleter
 
@@ -39,7 +39,7 @@ The **Register-ArgumentCompleter** cmdlet registers a custom argument completer.
 
 ### Example 1: Register a custom argument completer
 ```
-PS C:\>Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
+PS C:\> Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
 
         echo -- -PSConsoleFile -Version -NoLogo -NoExit -Sta -NoProfile -NonInteractive `
@@ -159,3 +159,4 @@ This cmdlet returns no output.
 ## RELATED LINKS
 
 [Core Cmdlets](Microsoft.PowerShell.Core.md)
+

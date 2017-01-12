@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821604
-schema: 2.0.0
-title: New-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821604
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-Item
 
@@ -45,7 +46,7 @@ For example, when it creates a new file, **New-Item** can add initial content to
 
 ### Example 1: Create a file in the current directory
 ```
-PS C:\>New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
+PS C:\> New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
 ```
 
 This command creates a text file that is named testfile1.txt in the current directory.
@@ -54,7 +55,7 @@ The quoted text that follows the *Value* parameter is added to the file as conte
 
 ### Example 2: Create a directory
 ```
-PS C:\>New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
+PS C:\> New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
 ```
 
 This command creates a directory named Logfiles in the C: drive.
@@ -62,7 +63,7 @@ The *ItemType* parameter specifies that the new item is a directory, not a file 
 
 ### Example 3: Create a profile
 ```
-PS C:\>New-Item -Path $profile -ItemType "file" -Force
+PS C:\> New-Item -Path $profile -ItemType "file" -Force
 ```
 
 This command creates a Windows PowerShell profile in the path that is specified by the $profile variable.
@@ -82,7 +83,7 @@ For more information, see about_Automatic_Variables and about_Profiles.
 
 ### Example 4: Create a directory in a different directory
 ```
-PS C:\>New-Item -ItemType "directory" -Path "c:\ps-test\scripts"
+PS C:\> New-Item -ItemType "directory" -Path "c:\ps-test\scripts"
 ```
 
 This command creates a new Scripts directory in the C:\PS-Test directory.
@@ -92,7 +93,7 @@ As indicated by the syntax, either command form is valid.
 
 ### Example 5: Create multiple files
 ```
-PS C:\>New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
+PS C:\> New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
 
 This command creates files in two different directories.

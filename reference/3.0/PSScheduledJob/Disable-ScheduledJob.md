@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223927
-schema: 2.0.0
-title: Disable-ScheduledJob
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable ScheduledJob
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223927
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
+
 
 # Disable-ScheduledJob
 ## SYNOPSIS
@@ -52,7 +53,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Disable a scheduled job
 ```
-PS C:\>Disable-ScheduledJob -ID 2 -Passthru
+PS C:\> Disable-ScheduledJob -ID 2 -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 2          Inventory       {1, 2}          \\Srv01\Scripts\Get-FullInventory.ps1    False
@@ -62,7 +63,7 @@ This command disables the scheduled job with ID 2 on the local computer.
 The output shows the effect of the command.
 ### Example 2: Disable all scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Disable-ScheduledJob -Passthru
+PS C:\> Get-ScheduledJob | Disable-ScheduledJob -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          ArchiveProje... {}              C:\Scripts\Archive-DxProjects.ps1        False
@@ -79,7 +80,7 @@ You can re-enable scheduled job by using the Enable-ScheduledJob cmdlet and run 
 **Disable-ScheduledJob** does not generate warnings or errors if you disable a scheduled job that is already disabled, so you can disable all scheduled jobs without conditions.
 ### Example 3: Disable selected scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Where-Object {!$_.Credential} | Disable-ScheduledJob
+PS C:\> Get-ScheduledJob | Where-Object {!$_.Credential} | Disable-ScheduledJob
 ```
 
 This command disables scheduled job do not include a credential.
@@ -91,7 +92,7 @@ The command uses the not (!) operator and references the **Credential** property
 Another pipeline operator sends the selected scheduled jobs to the **Disable-ScheduledJob** cmdlet, which disables them.
 ### Example 4: Disable scheduled jobs on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName Srv01, Srv10 -ScriptBlock {Disable-ScheduledJob -Name TestJob}
+PS C:\> Invoke-Command -ComputerName Srv01, Srv10 -ScriptBlock {Disable-ScheduledJob -Name TestJob}
 ```
 
 This command disables the TestJob scheduled job on two remote computers, Srv01 and Srv10.
@@ -101,7 +102,7 @@ The command uses the **Name** parameter of **Disable-ScheduledJob** to select th
 ### Example 5: Disable a scheduled job by its global ID
 ```
 The first command demonstrates one way of finding the GlobalID of a scheduled job. The command uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Format-Table cmdlet which displays the **Name**, **GlobalID**, and **Command** properties of each job in a table.
-PS C:\>Get-ScheduledJob | Format-Table -Property Name, GlobalID, Command -Autosize
+PS C:\> Get-ScheduledJob | Format-Table -Property Name, GlobalID, Command -Autosize
 Name             GlobalId                             Command
 ----             --------                             -------
 ArchiveProjects1 a26a0b3d-b4e6-44d3-8b95-8706ef621f7c C:\Scripts\Archive-DxProjects.ps1
@@ -111,7 +112,7 @@ Test-HelpFiles   d77020ca-f20d-42be-86c8-fc64df97db90 .\Test-HelpFiles.ps1
 Test-HelpFiles   2f1606d2-c6cf-4bef-8b1c-ae36a9cc9934 .\Test-DomainHelpFiles.ps1
 
 The second command uses the  Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Where-Object cmdlet, which selects the scheduled job with the specified global ID. Another pipeline operator sends the job to the Disable-ScheduledJob cmdlet, which disables it.
-PS C:\>Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc64df97db90} | Disable-ScheduledJob
+PS C:\> Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc64df97db90} | Disable-ScheduledJob
 ```
 
 This examples shows how to disable a scheduled job by using its global identifier.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293955
-schema: 2.0.0
-title: Export-Alias
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Alias
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293955
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Export-Alias
 
@@ -42,7 +43,7 @@ Export-Alias can export the aliases in a particular scope or all scopes, it can 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>export-alias -path alias.csv
+PS C:\> export-alias -path alias.csv
 ```
 
 Description
@@ -53,7 +54,7 @@ This command exports current alias information to a file named Alias.csv in the 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>export-alias -path alias.csv -noclobber
+PS C:\> export-alias -path alias.csv -noclobber
 ```
 
 Description
@@ -66,7 +67,7 @@ Because the NoClobber parameter is specified, the command will fail if an Alias.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>export-alias -path alias.csv -append -description "Appended Aliases" -force
+PS C:\> export-alias -path alias.csv -append -description "Appended Aliases" -force
 ```
 
 Description
@@ -81,7 +82,7 @@ The command also uses the Force parameter to overwrite any existing Alias.csv fi
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>export-alias -path alias.ps1 -as script
+PS C:\> export-alias -path alias.ps1 -as script
 PS C:\> add-content -path $profile -value (get-content alias.ps1)
 PS C:\> $s = new-pssession -computername Server01
 PS C:\> invoke-command -session $s -filepath .\alias.ps1

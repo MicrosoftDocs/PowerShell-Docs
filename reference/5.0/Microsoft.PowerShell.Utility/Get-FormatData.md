@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821790
-schema: 2.0.0
-title: Get-FormatData
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get FormatData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821790
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-FormatData
 
@@ -38,28 +39,28 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### Example 1: Get all formatting data
 ```
-PS C:\>Get-FormatData
+PS C:\> Get-FormatData
 ```
 
 This command gets all the formatting data in the session.
 
 ### Example 2: Get formatting data by type name
 ```
-PS C:\>Get-FormatData -TypeName "Microsoft.Wsman*"
+PS C:\> Get-FormatData -TypeName "Microsoft.Wsman*"
 ```
 
 This command gets the formatting data items whose names begin with Microsoft.Wsman.
 
 ### Example 3: Examine a formatting data object
 ```
-PS C:\>$F = Get-FormatData -TypeName helpinfoshort
-PS C:\>$F
+PS C:\> $F = Get-FormatData -TypeName helpinfoshort
+PS C:\> $F
 TypeName        FormatViewDefinition
 --------        --------------------
-HelpInfoShort   {help , TableControl} PS C:\>$F.FormatViewDefinition[0].control
+HelpInfoShort   {help , TableControl} PS C:\> $F.FormatViewDefinition[0].control
 Headers                                                                    Rows
 -------                                                                    ----
-{System.Management.Automation.TableControlColumnHeader, System.Manageme... {System.Management.Automation.TableControlRow} PS C:\>$F.FormatViewDefinition[0].control.headers
+{System.Management.Automation.TableControlColumnHeader, System.Manageme... {System.Management.Automation.TableControlRow} PS C:\> $F.FormatViewDefinition[0].control.headers
 Label         Alignment      Width
 -----         ---------      -----
 Name          Left           33
@@ -71,14 +72,14 @@ This example shows how to get a formatting data object and examine its propertie
 
 ### Example 4: Get formatting data and export it
 ```
-PS C:\>$A = Get-FormatData
-PS C:\>Import-Module bitstransfer
-PS C:\>$B = Get-FormatData
-PS C:\>Compare-Object $A $B
+PS C:\> $A = Get-FormatData
+PS C:\> Import-Module bitstransfer
+PS C:\> $B = Get-FormatData
+PS C:\> Compare-Object $A $B
 InputObject                                                SideIndicator
 -----------                                                -------------
-Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => PS C:\>Get-FormatData *bits* | Export-FormatData -FilePath "c:\test\bits.format.ps1xml"
-PS C:\>Get-Content "c:\test\bits.format.ps1xml"
+Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => PS C:\> Get-FormatData *bits* | Export-FormatData -FilePath "c:\test\bits.format.ps1xml"
+PS C:\> Get-Content "c:\test\bits.format.ps1xml"
 <?xml version="1.0" encoding="utf-8"?><Configuration><ViewDefinitions>
 <View><Name>Microsoft.BackgroundIntelligentTransfer.Management.BitsJob</Name>
 ...

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294033
-schema: 2.0.0
-title: Write-Warning
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Warning
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294033
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Warning
 
@@ -32,15 +33,15 @@ The response to the warning depends on the value of the user's $WarningPreferenc
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>write-warning "This is only a test warning."
+PS C:\> write-warning "This is only a test warning."
 ```
 
 This command displays the message "WARNING: This is only a test warning."
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$w = "This is only a test warning."
-PS C:\>$w | write-warning
+PS C:\> $w = "This is only a test warning."
+PS C:\> $w | write-warning
 ```
 
 This example shows that you can use a pipeline operator (|) to send a string to Write-Warning.
@@ -48,17 +49,17 @@ You can save the string in a variable, as shown in this command, or pipe the str
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$warningpreference
+PS C:\> $warningpreference
 Continue
 
-PS C:\>write-warning "This is only a test warning."
+PS C:\> write-warning "This is only a test warning."
 This is only a test warning.
 
-PS C:\>$warningpreference = "SilentlyContinue"
-PS C:\>write-warning "This is only a test warning."
+PS C:\> $warningpreference = "SilentlyContinue"
+PS C:\> write-warning "This is only a test warning."
 PS C:\>
-PS C:\>$warningpreference = "Stop"
-PS C:\>write-warning "This is only a test warning."
+PS C:\> $warningpreference = "Stop"
+PS C:\> write-warning "This is only a test warning."
 
 WARNING: This is only a test message.
 Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop.
@@ -79,7 +80,7 @@ For more information about the $WarningPreference variable, see about_Preference
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>write-warning "This is only a test warning." -warningaction Inquire
+PS C:\> write-warning "This is only a test warning." -warningaction Inquire
 
 WARNING: This is only a test warning.
 Confirm

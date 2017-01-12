@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821489
-schema: 2.0.0
-title: Get-PSSessionCapability
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSSessionCapability
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821489
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Get-PSSessionCapability
 
@@ -42,14 +43,14 @@ It includes information such as Language Mode, Execution Policy, and Environment
 
 ### Example 1: Get commands available for a user
 ```
-PS C:\>Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
+PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
 ```
 
 This example returns the commands available to the user CONTOSO\User when connecting to the Endpoint1 constrained endpoint on the local computer.
 
 ### Example 2: Get details about a runspace for a user
 ```
-PS C:\>Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
+PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
 ```
 
 This example returns details about the runspace the user CONTOSO\User would interact with when connecting to the Endpoint1 constrained endpoint.

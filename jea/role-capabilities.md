@@ -46,8 +46,6 @@ Risk | Example | Related commands
 Granting the connecting user admin privileges to bypass JEA | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
 Running arbitrary code, such as malware, exploits, or custom scripts to bypass protections | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-
-
 ## Create a role capability file
 
 You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) cmdlet.
@@ -74,7 +72,9 @@ In a multi-tenant environment where tenants are granted access to self-service m
 For these cases, you can restrict which parameters are exposed from the cmdlet or function.
 
 ```powershell
+
 VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
+
 ```
 
 In more advanced scenarios, you may also need to restrict which values someone can supply to these parameters.
@@ -102,12 +102,15 @@ Example                                                                         
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Allows the user to run `My-Func` with the `Param1` parameter. Only "Value1" and "Value2" can be supplied to the parameter.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with "contoso" can be supplied to the parameter.
 
+
 > [!WARNING]
 > For best security practices, it is not recommended to use wildcards when defining visible cmdlets or functions.
 > Instead, you should explicitly list each trusted command to ensure no other commands that share the same naming scheme are unintentionally authorized.
 
 You cannot apply both a ValidatePattern and ValidateSet to the same cmdlet or function.
+
 If you do, the ValidatePattern will override the ValidateSet.
+
 For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](https://technet.microsoft.com/en-us/library/hh847880.aspx) reference content.
 
 ### Allowing external commands and PowerShell scripts
@@ -119,7 +122,9 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 ```
 
 It is advised, where possible, to use PowerShell cmdlet/function equivalents of any external executables you authorize since you have control over which parameters are allowed with PowerShell cmdlets/functions.
+
 Many executables allow you to both read the current state and then change it just by providing different parameters.
+
 For example, consider the role of a file server admin who wants to check which network shares are hosted by the local machine.
 One way to check is to use `net share`.
 However, allowing net.exe is very dangerous becuase the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
@@ -130,7 +135,9 @@ When making external commands available to users in a JEA session, always specif
 ### Allowing access to PowerShell providers
 
 By default, no PowerShell providers are available in JEA sessions.
+
 This is primarily to reduce the risk of sensitive information and configuration settings being disclosed to the connecting user.
+
 When necessary, you can allow access to the PowerShell providers using the `VisibleProviders` command.
 For a full list of providers, run `Get-PSProvider`.
 
@@ -153,6 +160,7 @@ VisibleFunctions = 'Get-TopProcess'
 
 FunctionDefinitions = @{
     Name = 'Get-TopProcess'
+
     ScriptBlock = {
         param($Count = 10)
 
@@ -164,12 +172,14 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Don't forget to add the name of your custom functions to the **VisibleFunctions** field so they can be run by the JEA users.
 
+
 The body (script block) of custom functions runs in the default language mode for the system and is not subject to JEA's language constraints.
 This means that functions can access the file system and registry, and run commands that were not made visible in the role capability file.
 Take care to avoid allowing arbitrary code to be run when using parameters and avoid piping user input directly into cmdlets like `Invoke-Expression`.
 
 In the above example, you will notice that the fully qualified module name (FQMN) `Microsoft.PowerShell.Utility\Select-Object` was used instead of the shorthand `Select-Object`.
 Functions defined in role capability files are still subject to the scope of JEA sessions, which includes the proxy functions JEA creates to constrain existing commands.
+
 Select-Object is a default, constrained cmdlet in all JEA sessions that doesn't allow you to select arbitrary properties on objects.
 To use the unconstrained Select-Object in functions, you must explicitly request the full implementation by specifying the FQMN.
 Any constrained cmdlet in a JEA session will exhibit the same behavior when invoked from a function, in line with PowerShell's [command precedence](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
@@ -202,12 +212,14 @@ See [Understanding a PowerShell Module](https://msdn.microsoft.com/en-us/library
 
 ## Updating role capabilities
 
+
 You can update a role capability file at any time by simply saving changes to the role capability file.
 Any new JEA sessions started after the role capability has been updated will reflect the revised capabilities.
 
 This is why controlling access to the role capabilities folder is so important.
 Only highly trusted administrators should be able to change role capability files.
 If an untrusted user can change role capability files, they can easily give themselves access to cmdlets which allow them to elevate their privileges.
+
 
 For administrators looking to lock down access to the role capabilities, ensure Local System has read access to the role capability files and containing modules.
 
@@ -219,7 +231,9 @@ When this happens, JEA tries to give the user the *most permissive* set of comma
 **VisibleCmdlets and VisibleFunctions**
 
 The most complex merge logic affects cmdlets and functions, which can have their parameters and parameter values limited in JEA.
+
 The rules are as follows:
+
 
 1. If a cmdlet is only made visible in one role, it will be visible to the user with any applicable parameter constraints.
 2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the cmdlet, the cmdlet will be visible to the user with those constraints.
@@ -242,6 +256,7 @@ Rule | Role A VisibleCmdlets                                                    
 5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
 6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
 7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+
 
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**

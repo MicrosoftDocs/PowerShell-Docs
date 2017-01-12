@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSDesiredStateConfiguration-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821454
-schema: 2.0.0
-title: Find-DscResource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Find DscResource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821454
+external help file:   PSDesiredStateConfiguration-help.xml
 ---
+
 
 # Find-DscResource
 
@@ -34,7 +35,7 @@ For each module that this cmdlet finds, **Find-DscResource** returns a **PSGetDs
 
 ### Example 1: Find all DSC resources
 ```
-PS C:\>Find-DscResource
+PS C:\> Find-DscResource
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xJeaEndPoint                        0.2.16.6   xJea                                PSGallery
@@ -49,7 +50,7 @@ This command runs **Find-DscResource** without any parameters to return all DSC 
 
 ### Example 2: Find DSC modules containing resources with a specified name
 ```
-PS C:\>Find-DscResource -Name "Website01"
+PS C:\> Find-DscResource -Name "Website01"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 Website01                           1.7.0.0    xWebAdministration                  PSGallery
@@ -60,7 +61,7 @@ When searching for a specific DSC resource, the name field can be used to find o
 
 ### Example 3: Install a DSC resource after finding it
 ```
-PS C:\>Find-DscResource -Name "Website01" | Install-Module
+PS C:\> Find-DscResource -Name "Website01" | Install-Module
 ```
 
 This commands installs a DSC Resource, together with its module, by piping the output of **Find-DscResource** to **Install-Module**. 
@@ -68,7 +69,7 @@ When piping multiple resources from the same module, **Install-Module** only att
 
 ### Example 4: Discover all DSC resources in a module
 ```
-PS C:\>Find-DscResource -ModuleName xWebAdministration
+PS C:\> Find-DscResource -ModuleName xWebAdministration
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xIisFeatureDelegation               1.7.0.0    WebAdministration                   PSGallery 
@@ -88,7 +89,7 @@ This command finds all the DSC resources contained in the WebAdministration modu
 
 ### Example 5: Search by tag or required version
 ```
-PS C:\>Find-DscResource -Tag Credentials -RequiredVersion "1.5"
+PS C:\> Find-DscResource -Tag Credentials -RequiredVersion "1.5"
 ```
 
 This command searches for a resource based on the tag and required version.
@@ -96,7 +97,7 @@ The metadata for tag, minimum version, and required version is shared between th
 
 ### Example 6: Search by using a filter
 ```
-PS C:\>Find-DscResource -Filter 'Domain'
+PS C:\> Find-DscResource -Filter 'Domain'
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 xComputer                           1.3.0      xComputerManagement                 PSGallery

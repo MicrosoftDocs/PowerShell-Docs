@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821616
-schema: 2.0.0
-title: Remove-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821616
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Remove-Item
 
@@ -42,7 +43,7 @@ Because it is supported by many providers, it can delete many different types of
 
 ### Example 1: Delete files that have any file name extension
 ```
-PS C:\>Remove-Item C:\Test\*.*
+PS C:\> Remove-Item C:\Test\*.*
 ```
 
 This command deletes all of the files that have names that include a dot (.) from the C:\Test folder.
@@ -50,7 +51,7 @@ Because the command specifies a dot, the command does not delete folders or file
 
 ### Example 2: Delete some of the document files in a folder
 ```
-PS C:\>Remove-Item * -Include *.doc -Exclude *1*
+PS C:\> Remove-Item * -Include *.doc -Exclude *1*
 ```
 
 This command deletes from the current folder all files that have a .doc file name extension and a name that does not include 1.
@@ -59,7 +60,7 @@ It uses the *Include* and *Exclude* parameters to specify the files to delete.
 
 ### Example 3: Delete hidden, read-only files
 ```
-PS C:\>Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
+PS C:\> Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
 This command deletes a file that is both hidden and read-only.
@@ -69,7 +70,7 @@ Without *Force*, you cannot delete read-only or hidden files.
 
 ### Example 4: Delete files in subfolders recursively
 ```
-PS C:\>Get-ChildItem * -Include *.csv -Recurse | Remove-Item
+PS C:\> Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 ```
 
 This command deletes all of the CSV files in the current folder and all subfolder recursively.
@@ -83,7 +84,7 @@ If you try to specify the file type the path, such as `-Path *.csv`, the cmdlet 
 
 ### Example 5: Delete subkeys recursively
 ```
-PS C:\>Remove-Item hklm:\software\mycompany\OldApp -Recurse
+PS C:\> Remove-Item hklm:\software\mycompany\OldApp -Recurse
 ```
 
 This command deletes the OldApp registry key and all its subkeys and values.

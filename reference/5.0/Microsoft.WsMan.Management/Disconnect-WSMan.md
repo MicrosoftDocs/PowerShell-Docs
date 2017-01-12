@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821726
-schema: 2.0.0
-title: Disconnect-WSMan
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disconnect WSMan
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821726
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Disconnect-WSMan
 
@@ -36,7 +37,7 @@ For more information about how to connect to the WinRM service on a remote compu
 
 ### Example 1: Delete a connection to a remote computer
 ```
-PS C:\>Disconnect-WSMan -computer server01
+PS C:\> Disconnect-WSMan -computer server01
 PS C:\> cd WSMan:
 PS WSMan:\>
 PS WSMan:\> dir

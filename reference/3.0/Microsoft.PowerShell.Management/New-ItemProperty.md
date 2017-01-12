@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113354
-schema: 2.0.0
-title: New-ItemProperty
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113354
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-ItemProperty
 ## SYNOPSIS
@@ -44,8 +45,8 @@ To add a property to all objects of a particular type, edit the Types.ps1xml fil
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 822
-PS C:\>get-itemproperty hklm:\software\mycompany
+PS C:\> new-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 822
+PS C:\> get-itemproperty hklm:\software\mycompany
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
@@ -64,7 +65,7 @@ It uses the Name parameter to specify a name for the entry and the Value paramet
 The second command uses the Get-ItemProperty cmdlet to see the new registry entry.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfLocations -value 3
+PS C:\> get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfLocations -value 3
 ```
 
 This command adds a new registry entry to a registry key.

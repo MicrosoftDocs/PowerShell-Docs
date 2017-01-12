@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135237
-schema: 2.0.0
-title: New-PSSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135237
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # New-PSSession
 ## SYNOPSIS
@@ -55,7 +56,7 @@ When you use the **ComputerName** parameter, Windows PowerShell creates a tempor
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$s = New-PSSession
+PS C:\> $s = New-PSSession
 ```
 
 This command creates a new PSSession on the local computer and saves the PSSession in the $s variable.
@@ -63,7 +64,7 @@ This command creates a new PSSession on the local computer and saves the PSSessi
 You can now use this PSSession to run commands on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$Server01 = New-PSSession -ComputerName Server01
+PS C:\> $Server01 = New-PSSession -ComputerName Server01
 ```
 
 This command creates a new PSSession on the Server01 computer and saves it in the $Server01 variable.
@@ -72,7 +73,7 @@ When creating multiple PSSessions, assign them to variables with useful names.
 This will help you manage the PSSessions in subsequent commands.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$s1, $s2, $s3 = New-PSSession -ComputerName Server1,Server2,Server3
+PS C:\> $s1, $s2, $s3 = New-PSSession -ComputerName Server1,Server2,Server3
 ```
 
 This command creates three new PSSessions, one on each of the computers specified by the ComputerName parameter.
@@ -85,7 +86,7 @@ If there are more objects than variables, all remaining objects are assigned to 
 If there are more variables than objects, the remaining variables are empty (null).
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
+PS C:\> New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
 ```
 
 This command creates a new PSSession on the Server01 computer that connects to server port 8081 and uses the SSL protocol.
@@ -95,7 +96,7 @@ Before setting the port, you must configure the WinRM listener on the remote com
 For more information, see the description of the **Port** parameter.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>New-PSSession -Session $s -Credential Domain01\User01
+PS C:\> New-PSSession -Session $s -Credential Domain01\User01
 ```
 
 This command creates a new PSSession with the same properties as an existing PSSession.
@@ -105,7 +106,7 @@ The command uses the **Session** parameter of **New-PSSession** to specify the P
 It uses the credentials of the Domain1\Admin01 user to complete the command.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
+PS C:\> $global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
 ```
 
 This example shows how to create a PSSession with a global scope on a computer in a different domain.
@@ -119,7 +120,7 @@ The command uses the **ComputerName** parameter to specify the remote computer.
 Because the computer is in a different domain than the user account, the full name of the computer is specified along with the credentials of the user.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>$rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
+PS C:\> $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
 ```
 
 This command creates a PSSession on each of the 200 computers listed in the Servers.txt file and it stores the resulting PSSession in the $rs variable.
@@ -128,7 +129,7 @@ The PSSessions have a throttle limit of 50.
 You can use this command format when the names of computers are stored in a database, spreadsheet, text file, or other text-convertible format.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
+PS C:\> $s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
 ```
 
 This command creates a PSSession on the Server01 computer and stores it in the $s variable.
@@ -136,8 +137,8 @@ It uses the URI parameter to specify the transport protocol, the remote computer
 It also uses the **Credential** parameter to specify a user account with permission to create a session on the remote computer.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>$s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
-PS C:\>Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
+PS C:\> $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
+PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
 ```
 
 These commands create a set of PSSessions and then run a background job in each of the PSSessions.
@@ -154,14 +155,14 @@ The second command uses the **AsJob** parameter of the Invoke-Command cmdlet to 
 For more information about background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
+PS C:\> New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
 ```
 
 This command creates a new PSSession that connects to a computer that is specified by a URI instead of a computer name.
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>$so = New-PSSessionOption -SkipCACheck
-PS C:\>New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
+PS C:\> $so = New-PSSessionOption -SkipCACheck
+PS C:\> New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
 ```
 
 This example shows how to create a session option object and use the  **SessionOption** parameter.

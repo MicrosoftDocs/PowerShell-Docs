@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821533
-schema: 2.0.0
-title: Stop-Transcript
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Transcript
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821533
+external help file:   Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 ---
+
 
 # Stop-Transcript
 
@@ -32,7 +33,7 @@ Alternatively, you can end a session to stop a transcript.
 
 ### Example 1: Stop all transcripts
 ```
-PS C:\>Stop-Transcript
+PS C:\> Stop-Transcript
 ```
 
 This command stops all transcripts.

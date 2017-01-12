@@ -1,26 +1,21 @@
 ---
-title: about_Operators
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Operators
+ms.technology:  powershell
 ---
+
 # About Operators
 ## about_Operators
 
 
 ## SHORT DESCRIPTION
-Describes the operators that are supported by  Windows PowerShell�.
+Describes the operators that are supported by  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION

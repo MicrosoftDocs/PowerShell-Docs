@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293947
-schema: 2.0.0
-title: ConvertFrom-Json
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertFrom Json
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293947
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # ConvertFrom-Json
 
@@ -36,7 +37,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 
@@ -76,7 +77,7 @@ It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JS
 
 ### Example 2
 ```
-PS C:\>$j = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
+PS C:\> $j = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
 ```
 
 This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be  managed in Windows PowerShell.
@@ -85,7 +86,7 @@ You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON
 
 ### Example 3
 ```
-PS C:\>(Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
+PS C:\> (Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
 ```
 
 This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a Windows PowerShell custom object.

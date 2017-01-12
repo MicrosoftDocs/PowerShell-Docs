@@ -1,20 +1,15 @@
 ---
-title: about_Remote_Requirements
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Requirements
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Requirements
+ms.technology:  powershell
 ---
+
 # About Remote Requirements
 ## about_Remote_Requirements
 
@@ -135,7 +130,7 @@ access from all locations on client and server versions of Windows, use
 the Set-NetFirewallRule cmdlet in the NetSecurity module. Run the following
 command:
 
-Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 In Windows PowerShell 2.0, on server versions of Windows, Enable-PSRemoting
 creates firewall rules that permit remote access on all networks.
@@ -257,4 +252,5 @@ about_PSSessions
 Invoke-Command
 Enter-PSSession
 New-PSSession
+
 

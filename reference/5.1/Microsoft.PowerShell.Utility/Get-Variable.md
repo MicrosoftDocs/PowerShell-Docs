@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821809
-schema: 2.0.0
-title: Get-Variable
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Variable
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821809
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-Variable
 
@@ -33,7 +34,7 @@ You can retrieve just the values of the variables by specifying the *ValueOnly* 
 
 ### Example 1: Get variables by letter
 ```
-PS C:\>Get-Variable m*
+PS C:\> Get-Variable m*
 ```
 
 This command gets variables with names that begin with the letter m.
@@ -41,22 +42,22 @@ The command also gets the value of the variables.
 
 ### Example 2: Get variable values by letter
 ```
-PS C:\>Get-Variable m* -ValueOnly
+PS C:\> Get-Variable m* -ValueOnly
 ```
 
 This command gets only the values of the variables that have names that begin with m.
 
 ### Example 3: Get variables by two letters
 ```
-PS C:\>Get-Variable -Include M*,P*
+PS C:\> Get-Variable -Include M*,P*
 ```
 
 This command gets information about the variables that begin with either the letter M or the letter P.
 
 ### Example 4: Get variables by scope
 ```
-PS C:\>Get-Variable -Scope 0
-PS C:\>Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
+PS C:\> Get-Variable -Scope 0
+PS C:\> Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
 ```
 
 The first command gets only the variables that are defined in the local scope.

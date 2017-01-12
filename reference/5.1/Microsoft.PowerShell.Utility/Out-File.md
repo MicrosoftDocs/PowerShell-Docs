@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821839
-schema: 2.0.0
-title: Out-File
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out File
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821839
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Out-File
 
@@ -40,7 +41,7 @@ You can use this cmdlet instead of the redirection operator (\>) when you need t
 
 ### Example 1: Send output to a file
 ```
-PS C:\>Get-Process | Out-File -filepath C:\Test1\process.txt
+PS C:\> Get-Process | Out-File -filepath C:\Test1\process.txt
 ```
 
 This command sends a list of processes on the computer to the Process.txt file.
@@ -49,7 +50,7 @@ Because the name of the *FilePath* parameter is optional, you can omit it and su
 
 ### Example 2: Send output to a file without overwriting
 ```
-PS C:\>Get-Process | Out-File C:\Test1\process.txt -NoClobber
+PS C:\> Get-Process | Out-File C:\Test1\process.txt -NoClobber
 
 Out-File : File C:\Test1\process.txt already exists and NoClobber was specified.
 At line:1 char:23
@@ -61,8 +62,8 @@ The output shows the error message that appears when *NoClobber* is used with an
 
 ### Example 3: Send output to a file in ASCII format
 ```
-PS C:\>$A = Get-Process
-PS C:\>Out-File -FilePath C:\Test1\process.txt -InputObject $A -Encoding ASCII -Width 50
+PS C:\> $A = Get-Process
+PS C:\> Out-File -FilePath C:\Test1\process.txt -InputObject $A -Encoding ASCII -Width 50
 ```
 
 These commands send a list of processes on the computer to the Process.txt file.
@@ -79,9 +80,9 @@ Because the lines of output are truncated at 50 characters, the rightmost column
 
 ### Example 4: Send output from outside a file system drive
 ```
-PS C:\>Set-Location hklm:\software
-PS C:\>Get-Acl mycompany\mykey | Out-File -FilePath c:\ps\acl.txt
-PS C:\>Get-Acl mycompany\mykey | Out-File -FilePath filesystem::acl.txt
+PS C:\> Set-Location hklm:\software
+PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath c:\ps\acl.txt
+PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath filesystem::acl.txt
 ```
 
 These commands show how to use the **Out-File** cmdlet when you are not in a FileSystem drive.

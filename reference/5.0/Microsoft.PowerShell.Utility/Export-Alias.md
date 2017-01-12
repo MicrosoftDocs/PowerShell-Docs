@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821766
-schema: 2.0.0
-title: Export-Alias
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Alias
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821766
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Export-Alias
 
@@ -42,14 +43,14 @@ If the output file does not exist, the cmdlet will create it.
 
 ### Example 1: Export an alias
 ```
-PS C:\>Export-Alias -Path "alias.csv"
+PS C:\> Export-Alias -Path "alias.csv"
 ```
 
 This command exports current alias information to a file named Alias.csv in the current directory.
 
 ### Example 2: Export an alias unless the export file already exists
 ```
-PS C:\>Export-Alias -Path "alias.csv" -NoClobber
+PS C:\> Export-Alias -Path "alias.csv" -NoClobber
 ```
 
 This command exports the aliases in the current session to an Alias.csv file.
@@ -58,7 +59,7 @@ Because the *NoClobber* parameter is specified, the command will fail if an Alia
 
 ### Example 3: Append aliases to a file
 ```
-PS C:\>Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
+PS C:\> Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
 ```
 
 This command appends the aliases in the current session to the Alias.csv file.
@@ -69,7 +70,7 @@ The command also uses the *Force* parameter to overwrite any existing Alias.csv 
 
 ### Example 4: Export aliases as a script
 ```
-PS C:\>Export-Alias -Path "alias.ps1" -As Script
+PS C:\> Export-Alias -Path "alias.ps1" -As Script
 PS C:\> Add-Content -Path $Profile -Value (Get-Content alias.ps1)
 PS C:\> $S = New-PSSession -ComputerName Server01
 PS C:\> Invoke-Command -Session $S -FilePath .\alias.ps1

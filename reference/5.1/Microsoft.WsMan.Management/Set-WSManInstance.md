@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821736
-schema: 2.0.0
-title: Set-WSManInstance
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set WSManInstance
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821736
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Set-WSManInstance
 
@@ -46,7 +47,7 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 
 ### Example 1: Disable a listener on the local computer
 ```
-PS C:\>set-wsmaninstance -ResourceUri winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+PS C:\> set-wsmaninstance -ResourceUri winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -72,7 +73,7 @@ This succeeds: `-ValueSet @{Enabled="False"}`
 
 ### Example 2: Set the maximum envelope size on the local computer
 ```
-PS C:\>Set-WSManInstance -ResourceUri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
+PS C:\> Set-WSManInstance -ResourceUri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
 cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
@@ -90,7 +91,7 @@ Important: *ValueSet* is case-sensitive when matching the properties specified.
 
 ### Example 3: Disable a listener on a remote computer
 ```
-PS C:\>Set-WSManInstance -ResourceUri winrm/config/listener -ComputerName "SERVER02" -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+PS C:\> Set-WSManInstance -ResourceUri winrm/config/listener -ComputerName "SERVER02" -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US

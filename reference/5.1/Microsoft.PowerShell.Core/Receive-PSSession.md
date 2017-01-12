@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821506
-schema: 2.0.0
-title: Receive-PSSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Receive PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821506
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Receive-PSSession
 
@@ -97,7 +98,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Connect to a PSSession
 ```
-PS C:\>Receive-PSSession -ComputerName Server01 -Name ITTask
+PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask
 ```
 
 This command uses the **Receive-PSSession** cmdlet to connect to the ITTask session on the Server01 computer and get the results of commands that were running in the session.
@@ -106,7 +107,7 @@ Because the command does not use the *OutTarget* parameter, the results appear a
 
 ### Example 2: Get results of all commands on disconnected sessions
 ```
-PS C:\>Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
+PS C:\> Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
 ```
 
 This command gets the results of all commands running in all disconnected sessions on the Server01 and Server02 computers.
@@ -115,7 +116,7 @@ If any session was not disconnected or is not running commands, **Receive-PSSess
 
 ### Example 3: Get the results of a script running in a session
 ```
-PS C:\>Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
+PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
 Id     Name            State         HasMoreData     Location
 --     ----            -----         -----------     --------
 16     ITTaskJob01     Running       True            Server01
@@ -134,15 +135,15 @@ To get the job results, use a Receive-Job command
 ### Example 4: Get results after a network outage
 ```
 The first command uses the New-PSSession cmdlet to create a session on the Server01 computer. The command saves the session in the $s variable.The second command gets the session in the $s variable. Notice that the **State** is Opened and the **Availability** is Available. These values indicate that you are connected to the session and can run commands in the session.
-PS C:\>$s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
-PS C:\>$s 
+PS C:\> $s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
+PS C:\> $s 
 
 Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
   8 AD      Server01        Opened        ADEndpoint            Available
 
 The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script starts to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
-PS C:\>Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
+PS C:\> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
  Running "New-ADResolve.ps1" â€¦.exit
 
 # Network outage
@@ -150,7 +151,7 @@ PS C:\>Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New
 # Network access is not re-established within 4 minutes
 
 When the computer restarts, the user starts Windows PowerShell and runs a Get-PSSession command to get sessions on the Server01 computer. The output shows that the AD session still exists on the Server01 computer. The **State** indicates that it is disconnected and the **Availability** value, None, indicates that it is not connected to any client sessions.
-PS C:\>Get-PSSession -ComputerName Server01
+PS C:\> Get-PSSession -ComputerName Server01
 
  Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
@@ -159,13 +160,13 @@ PS C:\>Get-PSSession -ComputerName Server01
 
 
 The fifth command uses the **Receive-PSSession** cmdlet to reconnect to the AD session and get the results of the script that ran in the session. The command uses the *OutTarget* parameter to request the results in a job named ADJob.The command returns a job object. The output indicates that the script is still running.
-PS C:\>Receive-PSSession -ComputerName Server01 -Name AD -OutTarget Job -JobName AD
+PS C:\> Receive-PSSession -ComputerName Server01 -Name AD -OutTarget Job -JobName AD
 Job Id     Name      State         HasMoreData     Location
 --     ----      -----         -----------     --------
 16     ADJob     Running       True            Server01
 
 The sixth command uses the Get-PSSession cmdlet to check the job state. The output confirms that, in addition to resuming script execution and getting the script results, the **Receive-PSSession** cmdlet reconnected to the AD session, which is now open and available for commands.
-PS C:\>Get-PSSession -ComputerName Server01
+PS C:\> Get-PSSession -ComputerName Server01
 Id Name    ComputerName    State         ConfigurationName     Availability
 -- ----    ------------    -----         -----------------     ------------ 
  1 Backup  Server01        Disconnected  Microsoft.PowerShell          Busy
@@ -178,13 +179,13 @@ Windows PowerShell automatically attempts to reconnect the session one time each
 ### Example 5: Reconnect to disconnected sessions
 ```
 The first command uses the Invoke-Command cmdlet to run a script on the three remote computers. Because the scripts gathers and summarize data from multiple databases, it often takes the script an extended time to finish. The command uses the *InDisconnectedSession* parameter, which starts the scripts and then immediately disconnects the sessions.The command uses the *SessionOption* parameter to extend the **IdleTimeout** value of the disconnected session. Disconnected sessions are considered to be idle from the moment they are disconnected, so it is important to set the idle time-out for long enough that the commands can complete and you can reconnect to the session, if necessary. You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it. You cannot change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.After running the command, the user exits Windows PowerShell and closes the computer .
-PS C:\>Invoke-Command -InDisconnectedSession -ComputerName Server01, Server02, Server30 -FilePath \\Server12\Scripts\SharedScripts\Get-BugStatus.ps1 -Name BugStatus -SessionOption @{IdleTimeout = 86400000} -ConfigurationName ITTasks# Exit
+PS C:\> Invoke-Command -InDisconnectedSession -ComputerName Server01, Server02, Server30 -FilePath \\Server12\Scripts\SharedScripts\Get-BugStatus.ps1 -Name BugStatus -SessionOption @{IdleTimeout = 86400000} -ConfigurationName ITTasks# Exit
 
 # Start Windows PowerShell on a different computer.
 
 On the next day, the user resumes Windows and starts Windows PowerShell. The second command uses the Get-PSSession cmdlet to get the sessions in which the scripts were running. The command identifies the sessions by the computer name, session name, and the name of the session configuration and saves the sessions in the $s variable.The third command displays the value of the $s variable. The output shows that the sessions are disconnected, but not busy, as expected.
-PS C:\>$s = Get-PSSession -ComputerName Server01, Server02, Server30 -Name BugStatus
- PS C:\>$s
+PS C:\> $s = Get-PSSession -ComputerName Server01, Server02, Server30 -Name BugStatus
+ PS C:\> $s
 Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
   1 ITTask  Server01        Disconnected  ITTasks                       None
@@ -193,8 +194,8 @@ Id Name    ComputerName    State         ConfigurationName     Availability
 
 
 The fourth command uses the **Receive-PSSession** cmdlet to connect to the sessions in the $s variable and get their results. The command saves the results in the $Results variable.Another display of the $s variable shows that the sessions are connected and available for commands.
-PS C:\>$Results = Receive-PSSession -Session $s
-PS C:\>$s
+PS C:\> $Results = Receive-PSSession -Session $s
+PS C:\> $s
  Id Name    ComputerName    State         ConfigurationName     Availability
 -- ----    ------------    -----         -----------------     ------------ 
  1 ITTask  Server01        Opened        ITTasks                  Available
@@ -203,7 +204,7 @@ PS C:\>$s
 
 
 The fifth command displays the script results in the $Results variable. If any of the results are unexpected, the user can run commands in the sessions to investigate.
-PS C:\>$Results
+PS C:\> $Results
 Bug Report - Domain 01
 ----------------------
 ComputerName          BugCount          LastUpdated
@@ -216,39 +217,39 @@ This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that
 ### Example 5: Running a job in a disconnected session
 ```
 The first command uses the New-PSSession cmdlet to create the Test session on the Server01 computer. The command saves the session in the $s variable.
-PS C:\>$s = New-PSSession -ComputerName Server01 -Name Test
+PS C:\> $s = New-PSSession -ComputerName Server01 -Name Test
 
 The second command uses the Invoke-Command cmdlet to run a command in the session in the $s variable. The command uses the *AsJob* parameter to run the command as a job and to create the job object in the current session. The command returns a job object, which is saved in the $j variable.The third command displays the job object in the $j variable.
-PS C:\>$j = Invoke-Command -Session $s { 1..1500 | Foreach-Object {"Return $_"; sleep 30}} -AsJob
+PS C:\> $j = Invoke-Command -Session $s { 1..1500 | Foreach-Object {"Return $_"; sleep 30}} -AsJob
 
-PS C:\>$j
+PS C:\> $j
 Id     Name           State         HasMoreData     Location
 --     ----           -----         -----------     --------
 16     Job1           Running       True            Server01
 
 The fourth command disconnects the session in the $s variable.
-PS C:\>$s | Disconnect-PSSession
+PS C:\> $s | Disconnect-PSSession
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------ 
 1  Test   Server01        Disconnected  Microsoft.PowerShell  None
 
 The fifth command shows the effect of disconnecting on the job object in the $j variable. The job state is now Disconnected.
-PS C:\>$j
+PS C:\> $j
 Id     Name           State         HasMoreData     Location
 --     ----           -----         -----------     --------
 16     Job1           Disconnected  True            Server01
 
 The sixth command runs a Receive-Job command on the job in the $j variable. The output shows that the job began to return output before the session and the job were disconnected.
-PS C:\>Receive-Job $j -Keep
+PS C:\> Receive-Job $j -Keep
 Return 1Return 2
 
 The seventh command is run in the same client session. The command uses the Connect-PSSession cmdlet to reconnect to the Test session on the Server01 computer and saves the session in the $s2 variable.
-PS C:\>$s2 = Connect-PSSession -ComputerName Server01 -Name Test
+PS C:\> $s2 = Connect-PSSession -ComputerName Server01 -Name Test
 
 The eighth command uses the **Receive-PSSession** cmdlet to get the results of the job that was running in the session. Because the command is run in the same session, **Receive-PSSession** returns the results as a job by default and reuses the same job object. The command saves the job in the $j2 variable.The ninth command uses the **Receive-Job** cmdlet to get the results of the job in the $j variable.
-PS C:\>$j2 = Receive-PSSession -ComputerName Server01 -Name Test
+PS C:\> $j2 = Receive-PSSession -ComputerName Server01 -Name Test
 
-PS C:\>Receive-Job $j
+PS C:\> Receive-Job $j
 Return 3
 Return 4â€¦
 ```

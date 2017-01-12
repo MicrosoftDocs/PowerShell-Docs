@@ -1,20 +1,15 @@
 ---
-title: about_Type_Operators
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Type_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Type_Operators
+ms.technology:  powershell
 ---
+
 # About Type Operators
 ## about_Type_Operators
 
@@ -28,7 +23,7 @@ The Boolean type operators (-is and -isNot) tell whether an object is an instanc
 
 The -as operator tries to convert the input object to the specified .NET Framework type. If it succeeds, it returns the converted object. It if fails, it returns nothing. It does not return an error.
 
-The following table lists the type operators in  Windows PowerShell�.
+The following table lists the type operators in  Windows PowerShell.
 
 
 ```

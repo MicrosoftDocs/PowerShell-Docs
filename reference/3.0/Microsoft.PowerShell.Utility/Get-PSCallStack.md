@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113326
-schema: 2.0.0
-title: Get-PSCallStack
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSCallStack
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113326
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-PSCallStack
 ## SYNOPSIS
@@ -32,7 +33,7 @@ To run a Get-PSCallStack command while in the debugger,  type "k" or "get-pscall
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>function my-alias {
+PS C:\> function my-alias {
 $p = $args[0]
 get-alias | where {$_.definition -like "*$p"} | ft definition, name -auto
 }

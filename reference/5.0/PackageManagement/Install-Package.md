@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517138
-schema: 2.0.0
-title: Install-Package
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Install Package
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517138
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
+
 
 # Install-Package
 
@@ -82,7 +83,7 @@ The **Install-Packages** cmdlet installs one or more software packages on the lo
 
 ### Example 1: Install a package by package name
 ```
-PS C:\>Install-Package -Name "DSCAccelerator" -Credential "CONTOSO\TestUser"
+PS C:\> Install-Package -Name "DSCAccelerator" -Credential "CONTOSO\TestUser"
 ```
 
 This command installs a package named DSCAccelerator.
@@ -90,14 +91,14 @@ When you run this command, you are prompted to provide a password for the accoun
 
 ### Example 2: Install a package that you find with Find-Package
 ```
-PS C:\>Find-Package "zoomit" | Install-Package
+PS C:\> Find-Package "zoomit" | Install-Package
 ```
 
 This command installs a package named zoomit by piping the package from a **Find-Package** command.
 
 ### Example 3: Install packages by specifying a range of versions
 ```
-PS C:\>Install-Package -Name "DSCAccel" -MinimumVersion 2.1.2 -MaximumVersion 2.2
+PS C:\> Install-Package -Name "DSCAccel" -MinimumVersion 2.1.2 -MaximumVersion 2.2
 ```
 
 This command installs any package that has a name matching the partial name DSCAccel.

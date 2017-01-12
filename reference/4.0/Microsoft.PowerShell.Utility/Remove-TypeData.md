@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294005
-schema: 2.0.0
-title: Remove-TypeData
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove TypeData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294005
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Remove-TypeData
 
@@ -50,7 +51,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>Remove-TypeData -TypeName System.Array
+PS C:\> Remove-TypeData -TypeName System.Array
 ```
 
 This command deletes from the session all type data for the System.Array type, including type data that was added by a Types.ps1xml file and dynamic type data that was added to the session by using the Update-TypeData cmdlet.
@@ -58,20 +59,20 @@ This command deletes from the session all type data for the System.Array type, i
 ### Example 2
 ```
 The first command uses the Get-TypeData cmdlet to get extended type data for the **System.DateTime** type.The output shows that a **DateTime** property has been added to all **System.DateTime** objects in Windows PowerShell.
-PS C:\>Get-TypeData System.DateTime
+PS C:\> Get-TypeData System.DateTime
 TypeName        Members
 --------        -------
 System.DateTime {[DateTime, System.Management.Automation.Runspaces.ScriptPropertyData]}
 
 The second command uses the Get-Date cmdlet, which returns a **System.DateTime** object. The command uses dot notation to get the value of the **DateTime** property of the **System.DateTime** object that **Get-Date** returns.
-PS C:\>(Get-Date).DateTime
+PS C:\> (Get-Date).DateTime
 Friday, January 20, 2012 9:01:00 PM
 
 The third command uses the Get-TypeData cmdlet to get all extended type data for the **System.DateTime** type and the **Remove-TypeData** cmdlet to delete the extended type data.
-PS C:\>Get-TypeData System.DateTime | Remove-TypeData
+PS C:\> Get-TypeData System.DateTime | Remove-TypeData
 
 The fourth command shows the effect of deleting the extended type data for the System.DateTime type. The command repeats the second command. However, because the System.DateTime property no longer exists, a command to get its value returns nothing.
-PS C:\>(Get-Date).DateTime
+PS C:\> (Get-Date).DateTime
 PS C:\>
 ```
 
@@ -79,7 +80,7 @@ This command shows the effect of removing extended type data from a session.
 
 ### Example 3
 ```
-PS C:\>Get-Module | Remove-TypeData
+PS C:\> Get-Module | Remove-TypeData
 ```
 
 This command removes all extended type data for module objects.
@@ -87,7 +88,7 @@ When you pipe an object to **Remove-TypeData**, **Remove-TypeData** gets the nam
 
 ### Example 4
 ```
-PS C:\>Remove-TypeData -Path C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\PSScheduledJob, C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\PSWorkflow\PSWorkflow.types.ps1xml
+PS C:\> Remove-TypeData -Path C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\PSScheduledJob, C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\PSWorkflow\PSWorkflow.types.ps1xml
 ```
 
 This command uses the **Path** parameter of the **Remove-TypeData** cmdlet to remove the extended types that are defined in the Types.ps1xml files that are added by the **PSScheduledJob** and **PSWorkflow** modules.
@@ -98,7 +99,7 @@ For more information about modules, see about_Modules (http://go.microsoft.com/f
 
 ### Example 5
 ```
-PS C:\>Invoke-Command -Session $s {Get-TypeData -TypeName *CIM* | Remove-TypeData}
+PS C:\> Invoke-Command -Session $s {Get-TypeData -TypeName *CIM* | Remove-TypeData}
 ```
 
 This command removes extended types from a remote session.

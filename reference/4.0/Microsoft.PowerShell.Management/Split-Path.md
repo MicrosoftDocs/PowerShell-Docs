@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293917
-schema: 2.0.0
-title: Split-Path
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Split Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293917
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Split-Path
 
@@ -66,7 +67,7 @@ You can use this cmdlet to get or submit only a selected part of a path.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>split-path "HKCU:\Software\Microsoft" -qualifier
+PS C:\> split-path "HKCU:\Software\Microsoft" -qualifier
 HKCU:
 ```
 
@@ -74,7 +75,7 @@ This command returns only the qualifier (the drive) of the path.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>split-path "C:\Test\Logs\*.log" -leaf -resolve
+PS C:\> split-path "C:\Test\Logs\*.log" -leaf -resolve
 Pass1.log
 Pass2.log
 ...
@@ -90,7 +91,7 @@ It does not return FileInfo Objects representing the files.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>split-path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
+PS C:\> split-path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
 C:\WINDOWS\system32\WindowsPowerShell\V1.0
 ```
 
@@ -99,7 +100,7 @@ Because it does not include any parameters to specify the split, Split-Path uses
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>split-path ".\My Pictures\*.jpg" -IsAbsolute
+PS C:\> split-path ".\My Pictures\*.jpg" -IsAbsolute
 False
 ```
 
@@ -108,7 +109,7 @@ In this case, because the path is relative to the current directory, which is re
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>set-location (split-path $profile)
+PS C:\> set-location (split-path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
 ```
 
@@ -120,7 +121,7 @@ This is a handy way to navigate to a directory with a long path name.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>'C:\Documents and Settings\User01\My Documents\My Pictures' | split-path
+PS C:\> 'C:\Documents and Settings\User01\My Documents\My Pictures' | split-path
 C:\Documents and Settings\User01\My Documents
 ```
 

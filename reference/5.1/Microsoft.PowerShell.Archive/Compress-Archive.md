@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Archive-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821654
-schema: 2.0.0
-title: Compress-Archive
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Compress Archive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821654
+external help file:   Microsoft.PowerShell.Archive-help.xml
 ---
+
 
 # Compress-Archive
 
@@ -68,7 +69,7 @@ This is a limitation of the underlying API.
 
 ### Example 1: Create an archive file
 ```
-PS C:\>Compress-Archive -LiteralPath C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.vsd -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
+PS C:\> Compress-Archive -LiteralPath C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.vsd -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
 ```
 
 This command creates a new archive file, Draft.zip, by compressing two files, Draftdoc.docx and diagram2.vsd, specified by the *LiteralPath* parameter.
@@ -76,7 +77,7 @@ The compression level specified for this operation is Optimal.
 
 ### Example 2: Create an archive with wildcard characters
 ```
-PS C:\>Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath C:\Archives\Draft
+PS C:\> Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath C:\Archives\Draft
 ```
 
 This command creates a new archive file, Draft.zip, in the C:\Archives folder.
@@ -86,7 +87,7 @@ The specified compression level is Fastest, which might result in a larger outpu
 
 ### Example 3: Update an existing archive file
 ```
-PS C:\>Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft.Zip
+PS C:\> Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft.Zip
 ```
 
 This command updates an existing archive file, Draft.Zip, in the C:\Archives folder.
@@ -94,7 +95,7 @@ The command is run to update Draft.Zip with newer versions of existing files tha
 
 ### Example 4: Create an archive from an entire folder
 ```
-PS C:\>Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
+PS C:\> Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 ```
 
 This command creates an archive from an entire folder, C:\Reference.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821856
-schema: 2.0.0
-title: Send-MailMessage
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Send MailMessage
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821856
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Send-MailMessage
 
@@ -34,7 +35,7 @@ The **Send-MailMessage** cmdlet sends an email message from within Windows Power
 
 ### Example 1: Send an email from one user to another
 ```
-PS C:\>Send-MailMessage -To "User01 <user01@example.com>" -From "User02 <user02@example.com>" -Subject "Test mail"
+PS C:\> Send-MailMessage -To "User01 <user01@example.com>" -From "User02 <user02@example.com>" -Subject "Test mail"
 ```
 
 This command sends an email message from User01 to User02.
@@ -44,7 +45,7 @@ Also, because the *SmtpServer* parameter is not specified, **Send-MailMessage** 
 
 ### Example 2: Send an attachment
 ```
-PS C:\>Send-MailMessage -From "User01 <user01@example.com>" -To "User02 <user02@example.com>", "User03 <user03@example.com>" -Subject "Sending the Attachment" -Body "Forgot to send the attachment. Sending now." -Attachments "data.csv" -Priority High -dno onSuccess, onFailure -SmtpServer "smtp.fabrikam.com"
+PS C:\> Send-MailMessage -From "User01 <user01@example.com>" -To "User02 <user02@example.com>", "User03 <user03@example.com>" -Subject "Sending the Attachment" -Body "Forgot to send the attachment. Sending now." -Attachments "data.csv" -Priority High -dno onSuccess, onFailure -SmtpServer "smtp.fabrikam.com"
 ```
 
 This command sends an email message with an attachment from User01 to two other users.
@@ -53,7 +54,7 @@ It specifies a priority value of High and requests a delivery notification by em
 
 ### Example 3: Send email to a mailing list
 ```
-PS C:\>Send-MailMessage -To "User01 <user01@example.com>" -From "ITGroup <itdept@example.com>" -Cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
+PS C:\> Send-MailMessage -To "User01 <user01@example.com>" -From "ITGroup <itdept@example.com>" -Cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
 ```
 
 This command sends an email message from User01 to the ITGroup mailing list with a copy (Cc) to User02 and a blind carbon copy (Bcc) to the IT manager (ITMgr).

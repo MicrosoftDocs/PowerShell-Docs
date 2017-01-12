@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294004
-schema: 2.0.0
-title: Remove-PSBreakpoint
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294004
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Remove-PSBreakpoint
 
@@ -44,15 +45,15 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-breakpoint | remove-breakpoint
+PS C:\> get-breakpoint | remove-breakpoint
 ```
 
 This command deletes all of the breakpoints in the current console.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -variable Name
-PS C:\>$b | remove-psbreakpoint
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
+PS C:\> $b | remove-psbreakpoint
 ```
 
 This command deletes a breakpoint.
@@ -68,14 +69,14 @@ Also, the Get-PSBreakpoint cmdlet does not return this breakpoint.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-psbreakpoint -id 2
+PS C:\> remove-psbreakpoint -id 2
 ```
 
 This command deletes the breakpoint with breakpoint ID 2.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function del-psb { get-psbreakpoint | remove-psbreakpoint }
+PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```
 
 This simple function deletes all of the breakpoints in the current console.

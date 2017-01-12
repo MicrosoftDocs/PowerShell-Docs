@@ -1,12 +1,16 @@
 ---
-title: FileSystem Provider
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-online version: http://go.microsoft.com/fwlink/?LinkId=821468
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  FileSystem Provider
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=821468
 ---
+
 # FileSystem Provider
 ## PROVIDER NAME  
  FileSystem  
@@ -546,3 +550,4 @@ Get-ChildItem -attributes Compressed,Encrypted
 
 ## See Also  
  [about_Providers](../About/about_Providers.md)
+

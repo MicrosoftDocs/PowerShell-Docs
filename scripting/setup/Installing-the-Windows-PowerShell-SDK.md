@@ -1,14 +1,16 @@
 ---
-title:  Installing the Windows PowerShell SDK
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Installing the Windows PowerShell SDK
+ms.technology:  powershell
+ms.assetid:    c3636b45-61aa-4720-85f0-58312c4fc8f9
 ---
+
 
 # Installing the Windows PowerShell SDK
 
@@ -267,3 +269,4 @@ The provider class in this sample derives from the [NavigationCmdletProvider](ht
 Shows how to overwrite content methods to support calls to the Clear-Content, Get-Content, and Set-Content cmdlets.
 These methods should be implemented when the user needs to manage the content of the items in the data store.
 The provider class in this sample derives from the [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) class, and it implements the [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) interface.
+

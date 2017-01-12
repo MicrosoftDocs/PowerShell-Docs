@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113365
-schema: 2.0.0
-title: Out-Host
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out Host
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113365
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Out-Host
 ## SYNOPSIS
@@ -30,7 +31,7 @@ Because **Out-Host** is the default, you do not need to specify it unless you wa
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Process | Out-Host -Paging
+PS C:\> Get-Process | Out-Host -Paging
 ```
 
 This command displays the processes on the system one page at a time.
@@ -42,8 +43,8 @@ The same command format is used for the Help function that is built into Windows
 That function gets data from the Get-Help cmdlet and then uses the **Paging** parameter of **Out-Host** to display the data one page at a time by using this command format: `Get-Help $Args\[0\] | Out-Host -Paging`.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = Get-History
-PS C:\>Out-Host -InputObject $a
+PS C:\> $a = Get-History
+PS C:\> Out-Host -InputObject $a
 ```
 
 These commands display the session history at the command line.

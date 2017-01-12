@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=141552
-schema: 2.0.0
-title: Get-Module
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=141552
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Get-Module
 ## SYNOPSIS
@@ -74,13 +75,13 @@ You can use this WMI and CIM strategy to manage the remote computer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Module
+PS C:\> Get-Module
 ```
 
 This command gets modules that have been imported into the current session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Module -ListAvailable
+PS C:\> Get-Module -ListAvailable
 ```
 
 This command gets the modules that are installed on the computer and can be imported into the current session.
@@ -89,13 +90,13 @@ This command gets the modules that are installed on the computer and can be impo
 For more information about **PSModulePath**, see about_Modules and about_Environment_Variables.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Module -ListAvailable -All
+PS C:\> Get-Module -ListAvailable -All
 ```
 
 This command gets all of the exported files for all available modules.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Module | Get-Member -MemberType Property | Format-Table Name
+PS C:\> Get-Module | Get-Member -MemberType Property | Format-Table Name
 
 Name
 
@@ -187,7 +188,7 @@ For more information about the properties, see "PSModule Properties" in the MSDN
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
+PS C:\> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 
    Name: AppLocker
 
@@ -241,10 +242,10 @@ This lets you see the module files that each script is exporting.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first command gets the **PSModuleInfo** object that represents BitsTransfer module. It saves the object in the $m variable.
-PS C:\>$m = Get-Module -list -Name BitsTransfer
+PS C:\> $m = Get-Module -list -Name BitsTransfer
 
 The second command uses the Get-Content cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the **Path** property of the object.The output shows the contents of the module manifest.
-PS C:\>Get-Content $m.Path
+PS C:\> Get-Content $m.Path
 
 @{
 GUID="{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
@@ -267,7 +268,7 @@ Modules are not required to have manifest files and, when they do have a manifes
 However, manifest files often provide useful information about a module, its requirements, and its contents.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>dir (Get-Module -ListAvailable FileTransfer).ModuleBase
+PS C:\> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -282,9 +283,9 @@ This is another way to determine what is in a module before you import it.
 Some modules might have help files or ReadMe files that describe the module.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
+PS C:\> $s = New-PSSession -ComputerName Server01
 
-PS C:\>Get-Module -PSSession $s -ListAvailable
+PS C:\> Get-Module -PSSession $s -ListAvailable
 ```
 
 These commands get the modules that are installed on the Server01 computer.
@@ -301,13 +302,13 @@ For more information, see Import-Module and Import-PSSession.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-PS C:\>$cs = New-CimSession -ComputerName RSDGF03
+PS C:\> $cs = New-CimSession -ComputerName RSDGF03
 
 The second command uses in the CIM session in the $cs variable to run a **Get-Module** command on the RSDGF03 computer. The command uses the **Name** parameter to specify the Storage module.The command uses a pipeline operator (|) to send the Storage module to the **Import-Module** cmdlet, which imports it into the local session.
-PS C:\>Get-Module -CimSession $cs -Name Storage | Import-Module
+PS C:\> Get-Module -CimSession $cs -Name Storage | Import-Module
 
 The third command runs the **Get-Command** cmdlet on the **Get-Disk** command in the Storage module.When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent in the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
-PS C:\>Get-Command Get-Disk
+PS C:\> Get-Command Get-Disk
 CommandType     Name                  ModuleName
 
 -----------     ----                  ----------
@@ -315,7 +316,7 @@ CommandType     Name                  ModuleName
 Function        Get-Disk              Storage
 
 The fourth command runs the **Get-Disk** command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported.The command gets objects from the remote computer and returns them to the local session.
-PS C:\>Get-Disk
+PS C:\> Get-Disk
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 
 ------ -------------              -----------------          ---------- ---------------

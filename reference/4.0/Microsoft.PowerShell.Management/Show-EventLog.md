@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293916
-schema: 2.0.0
-title: Show-EventLog
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Show EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293916
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Show-EventLog
 
@@ -36,14 +37,14 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>show-eventlog
+PS C:\> show-eventlog
 ```
 
 This command opens Event Viewer and displays in it the classic event logs on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>show-eventlog -computername Server01
+PS C:\> show-eventlog -computername Server01
 ```
 
 This command opens Event Viewer and displays in it the classic event logs on the Server01 computer.

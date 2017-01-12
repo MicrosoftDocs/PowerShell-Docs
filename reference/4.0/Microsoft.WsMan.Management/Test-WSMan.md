@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294046
-schema: 2.0.0
-title: Test-WSMan
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test WSMan
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294046
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Test-WSMan
 
@@ -34,7 +35,7 @@ If the tested computer is running the service, the cmdlet displays the WS-Manage
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>test-wsman
+PS C:\> test-wsman
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -46,7 +47,7 @@ This command determines whether the WinRM service is running on the local comput
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>test-wsman -computername server01
+PS C:\> test-wsman -computername server01
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -58,7 +59,7 @@ This command determines whether the WinRM service is running on the server01 com
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>test-wsman -authentication default
+PS C:\> test-wsman -authentication default
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -72,7 +73,7 @@ Using the authentication parameter allows the Test-WSMan cmdlet to return the Op
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>test-wsman -computername server01 -authentication default
+PS C:\> test-wsman -computername server01 -authentication default
 
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd

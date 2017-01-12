@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135244
-schema: 2.0.0
-title: Register-ObjectEvent
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Register ObjectEvent
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135244
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Register-ObjectEvent
 ## SYNOPSIS
@@ -40,9 +41,9 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
-PS C:\>$processWatcher = New-Object System.Management.ManagementEventWatcher $query
-PS C:\>register-objectEvent -inputObject $processWatcher -eventName "EventArrived"
+PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
+PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
+PS C:\> register-objectEvent -inputObject $processWatcher -eventName "EventArrived"
 ```
 
 This example subscribes to events generated when a new process starts.
@@ -51,10 +52,10 @@ The command uses the ManagementEventWatcher object to get EventArrived events.
 A query object specifies that the events are instance creation events for the Win32_Process class.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
-PS C:\>$processWatcher = New-Object System.Management.ManagementEventWatcher $query
-PS C:\>$action = { New-Event "PowerShell.ProcessCreated" -Sender $sender -EventArguments $EventArgs.NewEvent.TargetInstance }
-PS C:\>register-objectEvent -inputObject $processWatcher -eventName "EventArrived" -action $action
+PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
+PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
+PS C:\> $action = { New-Event "PowerShell.ProcessCreated" -Sender $sender -EventArguments $EventArgs.NewEvent.TargetInstance }
+PS C:\> register-objectEvent -inputObject $processWatcher -eventName "EventArrived" -action $action
 
 Id    Name            State      HasMoreData     Location             Command
 --    ----            -----      -----------     --------             -------
@@ -75,9 +76,9 @@ You can use the Job cmdlets, such as Get-Job and Receive-Job, to manage the back
 For more information, see about_Jobs.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$s = new-pssession -computername Server01, Server02
-PS C:\>invoke-command -session $s -filepath ProcessCreationEvent.ps1
-PS C:\>invoke-command -session $s { get-event }
+PS C:\> $s = new-pssession -computername Server01, Server02
+PS C:\> invoke-command -session $s -filepath ProcessCreationEvent.ps1
+PS C:\> invoke-command -session $s { get-event }
 
 # ProcessCreationEvent.ps1
 
@@ -103,12 +104,12 @@ The second command uses the FilePath parameter of the Invoke-Command cmdlet to r
 The script includes a Register-ObjectEvent command that subscribes to instance creation events on the Win32_Process object through the ManagementEventWatcher object and its EventArrived event.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$timer  = New-Object Timers.Timer
-PS C:\>$timer.Interval = 500
-PS C:\>$job = Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action {$random = Get-Random -Min 0 -Max 100}
-PS C:\>$job.gettype().fullname
+PS C:\> $timer  = New-Object Timers.Timer
+PS C:\> $timer.Interval = 500
+PS C:\> $job = Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action {$random = Get-Random -Min 0 -Max 100}
+PS C:\> $job.gettype().fullname
 System.Management.Automation.PSEventJob
-PS C:\>$job | format-list -property *
+PS C:\> $job | format-list -property *
 
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
@@ -123,10 +124,10 @@ Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
 ...
-PS C:\>$timer.Enabled = $true
-PS C:\>& $job.module {$random}
+PS C:\> $timer.Enabled = $true
+PS C:\> & $job.module {$random}
 60
-PS C:\>& $job.module {$random}
+PS C:\> & $job.module {$random}
 47
 ```
 

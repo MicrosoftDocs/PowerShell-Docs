@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821632
-schema: 2.0.0
-title: Set-Location
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Location
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821632
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Set-Location
 
@@ -46,7 +47,7 @@ For more information about location stacks, see the Notes.
 
 ### Example 1: Set the current location
 ```
-PS C:\>Set-Location -Path "HKLM:"
+PS C:\> Set-Location -Path "HKLM:"
 PS HKLM:\>
 ```
 
@@ -54,7 +55,7 @@ This command sets the current location to the root of the HKLM: drive.
 
 ### Example 2: Set the current location and display that location
 ```
-PS C:\>Set-Location -Path "Env:" -PassThru
+PS C:\> Set-Location -Path "Env:" -PassThru
 
 Path
 ----
@@ -67,14 +68,14 @@ It uses the *PassThru* parameter to direct Windows PowerShell to return a **Path
 
 ### Example 3: Set location to the C: drive
 ```
-PS C:\>Set-Location C:
+PS C:\> Set-Location C:
 ```
 
 This command sets the current location C: drive in the file system provider.
 
 ### Example 4: Set the current location to a named stack
 ```
-PS C:\>Set-Location -StackName "WSManPaths"
+PS C:\> Set-Location -StackName "WSManPaths"
 ```
 
 This command makes the WSManPaths location stack the current location stack.

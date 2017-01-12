@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289625
-schema: 2.0.0
-title: Get-Counter
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Counter
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289625
+external help file:   Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 ---
+
 
 # Get-Counter
 
@@ -43,7 +44,7 @@ You can use the parameters of Get-Counter to specify one or more computers, to l
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Counter -ListSet *
+PS C:\> Get-Counter -ListSet *
 ```
 
 This command gets all of the counter sets on the local computer.
@@ -52,7 +53,7 @@ Because many of the counter sets are protected by access control lists (ACLs), t
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 3
+PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 3
 ```
 
 This command gets the current "% Processor Time" combined values for all processors on the local computer.
@@ -60,7 +61,7 @@ It collects data every two seconds until it has three values.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Counter -ListSet * | Sort-Object CounterSetName | Format-Table CounterSetName
+PS C:\> Get-Counter -ListSet * | Sort-Object CounterSetName | Format-Table CounterSetName
 ```
 
 This command gets an alphabetically sorted list of the names of all of the counter sets on the local computer.
@@ -68,7 +69,7 @@ This command gets an alphabetically sorted list of the names of all of the count
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
 The first command gets the path names of the performance counters in the Memory counter set on the local computer.
-PS C:\>(Get-Counter -ListSet Memory).Paths
+PS C:\> (Get-Counter -ListSet Memory).Paths
 
 \Memory\Page Faults/sec
 \Memory\Available Bytes
@@ -84,7 +85,7 @@ PS C:\>(Get-Counter -ListSet Memory).Paths
 
 
 The second command gets the path names that include "cache".
-PS C:\>(Get-Counter -ListSet Memory).Paths | Where {$_ -like "*Cache*"}
+PS C:\> (Get-Counter -ListSet Memory).Paths | Where {$_ -like "*Cache*"}
 
 \Memory\Cache Faults/sec
 \Memory\Cache Bytes
@@ -101,17 +102,17 @@ You can use a command like this one to get the correct counter path names.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
 The first command saves the **Disk Reads/sec** counter path in the $DiskReads variable.
-PS C:\>$DiskReads = "\LogicalDisk(C:)\Disk Reads/sec"
+PS C:\> $DiskReads = "\LogicalDisk(C:)\Disk Reads/sec"
 
 The second command uses a pipeline operator (|) to send the counter path in the $DiskReads variable to the **Get-Counter** cmdlet. The command uses the **MaxSamples** parameter to limit the output to 10 samples.
-PS C:\>$DiskReads | Get-Counter -Computer Server01, Server02 -MaxSamples 10
+PS C:\> $DiskReads | Get-Counter -Computer Server01, Server02 -MaxSamples 10
 ```
 
 These commands get the **Disk Reads/sec** counter data from the Server01 and Server02 computers.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>(Get-Counter -List PhysicalDisk).PathsWithInstances
+PS C:\> (Get-Counter -List PhysicalDisk).PathsWithInstances
 ```
 
 This command gets the correctly formatted path names for the **PhysicalDisk** performance counters, including the instance names.
@@ -119,13 +120,13 @@ This command gets the correctly formatted path names for the **PhysicalDisk** pe
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
 The first command uses the Get-Content cmdlet to get the list of enterprise servers from the Servers.txt file. It uses the Get-Random cmdlet to select 50 server names randomly from the Servers.txt file contents. The results are saved in the $Servers variable.
-PS C:\>$Servers = Get-Random (Get-Content Servers.txt) -Count 50
+PS C:\> $Servers = Get-Random (Get-Content Servers.txt) -Count 50
 
 The second command saves the path to the **"% DPC Time**" counter in the $Counter variable. The counter path includes a wildcard character in the instance name to get the data on all of the processors on each of the computers.
-PS C:\>$Counter = "\Processor(*)\% DPC Time"
+PS C:\> $Counter = "\Processor(*)\% DPC Time"
 
 The third command uses the **Get-Counter** cmdlet to get the counter values. It uses the **Counter** parameter to specify the counters and the **ComputerName** parameter to specify the computers saved in the $servers variable.
-PS C:\>Get-Counter -Counter $Counter -ComputerName $Servers
+PS C:\> Get-Counter -Counter $Counter -ComputerName $Servers
 ```
 
 These commands get the value of the "**% DPC Time**" performance counter on 50 randomly select computers in the enterprise.
@@ -133,10 +134,10 @@ These commands get the value of the "**% DPC Time**" performance counter on 50 r
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
 The first command uses the **Get-Counter** cmdlet to get the counter paths. It saves them in the $MemCounters variable.
-PS C:\>$MemCounters = (Get-Counter -List Memory).Paths
+PS C:\> $MemCounters = (Get-Counter -List Memory).Paths
 
 The second command uses the **Get-Counter** cmdlet to get the counter data for each counter. It uses the **Counter** parameter to specify the counters in the $MemCounters variable.
-PS C:\>Get-Counter -Counter $MemCounters
+PS C:\> Get-Counter -Counter $MemCounters
 ```
 
 These commands get a single value for all of the performance counters in the Memory counter set on the local computer.
@@ -144,13 +145,13 @@ These commands get a single value for all of the performance counters in the Mem
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
 The first command saves a counter path in the $Counter variable.
-PS C:\>$Counter = "\\SERVER01\Process(Idle)\% Processor Time"
+PS C:\> $Counter = "\\SERVER01\Process(Idle)\% Processor Time"
 
 The second command uses the **Get-Counter** cmdlet to get one sample of the counter values. It saves the results in the $Data variable.
-PS C:\>$Data = Get-Counter $Counter
+PS C:\> $Data = Get-Counter $Counter
 
 The third command uses the Format-List cmdlet to display all the properties of the **CounterSamples** property of the sample set object as a list.
-PS C:\>$Data.CounterSamples | Format-List -Property *
+PS C:\> $Data.CounterSamples | Format-List -Property *
 
 Path             : \\SERVER01\process(idle)\% processor time
 InstanceName     : idle
@@ -171,7 +172,7 @@ You can use the properties of the CounterSamples object to examine, select, sort
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
+PS C:\> Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
 ```
 
 The command runs a **Get-Counter** command as background job.
@@ -183,7 +184,7 @@ PS C:\\\>
 
 ### -------------------------- EXAMPLE 11 --------------------------
 ```
-PS C:\>Get-Counter -ComputerName (Get-Random Servers.txt -Count 50) -Counter "\LogicalDisk(*)\% Free Space"
+PS C:\> Get-Counter -ComputerName (Get-Random Servers.txt -Count 50) -Counter "\LogicalDisk(*)\% Free Space"
 ```
 
 This command uses the **Get-Counter** and Get-Random cmdlets to find the percentage of free disk space on 50 computers selected randomly from the Servers.txt file.
@@ -191,10 +192,10 @@ This command uses the **Get-Counter** and Get-Random cmdlets to find the percent
 ### -------------------------- EXAMPLE 12 --------------------------
 ```
 The first command uses the **Get-Counter** cmdlet to get the "LogicalDisk\% Free Space" counter value from two remote computers, S1 and S2. It saves the result in the $DiskSpace variable.
-PS C:\>$DiskSpace = Get-Counter "\LogicalDisk(_Total)\% Free Space" -ComputerName s1, s2
+PS C:\> $DiskSpace = Get-Counter "\LogicalDisk(_Total)\% Free Space" -ComputerName s1, s2
 
 The second command displays the results that were saved in the $DiskSpace variable. All of the data is stored in the object, but it is not easy to see it in this form.
-PS C:\>$DiskSpace
+PS C:\> $DiskSpace
 
 Timestamp                 CounterSamples
 ---------                 --------------
@@ -204,7 +205,7 @@ Timestamp                 CounterSamples
 3.73238142733405
 
 The third command displays in a table the value of the **CounterSamples** property of the **PerformanceCounterSampleSet** object that **Get-Counter** returns. (To see all of the properties and methods of the object, pipe it to the Get-Member cmdlet.)
-PS C:\>$DiskSpace.CounterSamples | Format-Table -AutoSize
+PS C:\> $DiskSpace.CounterSamples | Format-Table -AutoSize
 
 Path                                     InstanceName CookedValue
 ----                                     ------------ -----------
@@ -212,7 +213,7 @@ Path                                     InstanceName CookedValue
 \\s2\\logicaldisk(_total)\% free space   _total       3.73238142733405
 
 The **CounterSamples** property contains a **PerformanceCounterSample** object with its own properties and methods. The fourth command uses array notation to get the first counter sample and a pipeline operator to send the counter sample object to the Format-List cmdlet, which displays all of its properties and property value in a list. This display shows the richness of the data in each counter sample object.
-PS C:\>$DiskSpace.countersamples[0] | Format-Table -Property *
+PS C:\> $DiskSpace.countersamples[0] | Format-Table -Property *
 
 Path             : \\localhost\\logicaldisk(_total)\% free space
 InstanceName     : _total
@@ -228,7 +229,7 @@ DefaultScale     : 0
 TimeBase         : 14318180
 
 The fifth command shows how to select data from the counter samples. It uses the Where-Object cmdlet to get only the counter samples with a **CookedValue** of less than 15.
-PS C:\>$DiskSpace.CounterSamples | Where-Object {$_.CookedValue -lt 15}
+PS C:\> $DiskSpace.CounterSamples | Where-Object {$_.CookedValue -lt 15}
 
 Path                                InstanceName    CookedValue
 ----                                ------------    -----------
@@ -240,10 +241,10 @@ This example shows how to associate counter data with the computer on which it o
 ### -------------------------- EXAMPLE 13 --------------------------
 ```
 The first command uses the **Get-Counter** cmdlet to get the "Process\% Processor Time" counter for all the processes on the computer. The command saves the results in the $p variable.
-PS C:\>$p = Get-counter '\Process(*)\% Processor Time'
+PS C:\> $p = Get-counter '\Process(*)\% Processor Time'
 
 The second command gets the **CounterSamples** property of the sample set object in $p. It uses the Sort-Object cmdlet to sort the samples in descending order based on the cooked value of the sample. Then, the command uses Format-Table cmdlet to display the data in a table and its **AutoSize** parameter to optimize the display.
-PS C:\>$p.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Auto
+PS C:\> $p.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Auto
 
 Path                                              InstanceName      CookedValue
 ----                                              ------------      -----------
@@ -263,10 +264,10 @@ The example finds the processes on the computer that are using the most processo
 ### -------------------------- EXAMPLE 14 --------------------------
 ```
 The first command gets one sample of the "Process\Working Set - Private" counter for each process. The command saves the counter data in the $ws variable.
-PS C:\>$ws = Get-Counter "\Process(*)\Working Set - Private"
+PS C:\> $ws = Get-Counter "\Process(*)\Working Set - Private"
 
 The second command uses a pipeline operator (|) to send the data in the **CounterSamples** property of the $ws variable to the Sort-Object cmdlet, where the process data is sorted in descending order by the value of the **CookedValue** property. Another pipeline sends the sorted data to the Format-Table cmdlet, where the data is formatted as a table with **InstanceName** and **CookedValue** columns.
-PS C:\>$ws.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Property InstanceName, CookedValue -AutoSize
+PS C:\> $ws.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Property InstanceName, CookedValue -AutoSize
 
 InstanceName  CookedValue
 ------------  -----------
@@ -284,7 +285,7 @@ They list the processes in descending order based on their working set size.
 
 ### -------------------------- EXAMPLE 15 --------------------------
 ```
-PS C:\>Get-Counter -Counter "\Processor(_Total)\% Processor Time" -Continuous
+PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -Continuous
 ```
 
 This command gets a series of samples of the Processor\% Processor Time counter at the default one second interval.

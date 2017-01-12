@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822226
-schema: 2.0.0
-title: Get-ComputerInfo
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ComputerInfo
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822226
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-ComputerInfo
 
@@ -31,14 +32,14 @@ The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operati
 
 ### Example 1: Get all computer properties
 ```
-PS C:\>Get-ComputerInfo
+PS C:\> Get-ComputerInfo
 ```
 
 This command gets all system and operating system properties from the computer.
 
 ### Example 2: Get all computer operating system properties
 ```
-PS C:\>Get-ComputerInfo -Property "os*"
+PS C:\> Get-ComputerInfo -Property "os*"
 ```
 
 This command gets all operating system properties from the computer.

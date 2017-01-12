@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294044
-schema: 2.0.0
-title: Set-WSManInstance
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set WSManInstance
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294044
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Set-WSManInstance
 
@@ -46,7 +47,7 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-wsmaninstance -resourceuri winrm/config/listener -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
+PS C:\> set-wsmaninstance -resourceuri winrm/config/listener -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
 
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
@@ -73,7 +74,7 @@ This succeeds:  -ValueSet @{Enabled="False"}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-wsmaninstance -resourceuri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
+PS C:\> set-wsmaninstance -resourceuri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
 cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
@@ -97,7 +98,7 @@ This succeeds:  -ValueSet @{MaxEnvelopeSizekb ="200"}
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-wsmaninstance -resourceuri winrm/config/listener -computername SERVER02 -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
+PS C:\> set-wsmaninstance -resourceuri winrm/config/listener -computername SERVER02 -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
 
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance

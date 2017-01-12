@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Restore-DSCConfiguration.cdxml-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821462
-schema: 2.0.0
-title: Restore-DscConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Restore DscConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821462
+external help file:   Restore-DSCConfiguration.cdxml-help.xml
 ---
+
 
 # Restore-DscConfiguration
 
@@ -45,7 +46,7 @@ This command restores the configuration for the local computer.
 ### Example 2: Restore configuration for a specified computer
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
-PS C:\>Restore-DscConfiguration -CimSession $Session
+PS C:\> Restore-DscConfiguration -CimSession $Session
 ```
 
 This example restores configuration on a computer specified by a CIM session.

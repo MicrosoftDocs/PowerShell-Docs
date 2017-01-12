@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821784
-schema: 2.0.0
-title: Get-Event
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821784
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-Event
 
@@ -45,22 +46,22 @@ To get those events, use Get-WinEvent or Get-EventLog.
 
 ### Example 1: Get all events
 ```
-PS C:\>Get-Event
+PS C:\> Get-Event
 ```
 
 This command gets all events in the event queue.
 
 ### Example 2: Get events by source identifier
 ```
-PS C:\>Get-Event -SourceIdentifier "PowerShell.ProcessCreated"
+PS C:\> Get-Event -SourceIdentifier "PowerShell.ProcessCreated"
 ```
 
 This command gets events in which the value of the SourceIdentifier property is PowerShell.ProcessCreated.
 
 ### Example 3: Get an event based on the time it was generated
 ```
-PS C:\>$Events = Get-Event
-PS C:\>$Events[0] | Format-List -Property *
+PS C:\> $Events = Get-Event
+PS C:\> $Events[0] | Format-List -Property *
 ComputerName     : 
 RunspaceId       : c2153740-256d-46c0-a57c-b805917d1b7b
 EventIdentifier  : 1
@@ -69,7 +70,7 @@ SourceEventArgs  : System.Management.EventArrivedEventArgs
 SourceArgs       : {System.Management.ManagementEventWatcher, System.Management.EventArrivedEventArgs}
 SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
-MessageData      : PS C:\>Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
+MessageData      : PS C:\> Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
 ComputerName     : 
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
 EventIdentifier  : 1
@@ -93,7 +94,7 @@ The third command shows how to use the Where-Object cmdlet to get an event based
 
 ### Example 4: Get an event by its identifier
 ```
-PS C:\>Get-Event -EventIdentifier 2
+PS C:\> Get-Event -EventIdentifier 2
 ```
 
 This command gets the event with an event identifier of 2.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821829
-schema: 2.0.0
-title: Measure-Object
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Measure Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821829
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Measure-Object
 
@@ -44,35 +45,35 @@ For text objects, it can count and calculate the number of lines, words, and cha
 
 ### Example 1: Count the files and folders in a directory
 ```
-PS C:\>Get-ChildItem | Measure-Object
+PS C:\> Get-ChildItem | Measure-Object
 ```
 
 This command counts the files and folders in the current directory.
 
 ### Example 2: Measure the files in a directory
 ```
-PS C:\>Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Average
+PS C:\> Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Average
 ```
 
 This command displays the minimum, maximum, and sum of the sizes of all files in the current directory, and the average size of a file in the directory.
 
 ### Example 3: Measure text in a text file
 ```
-PS C:\>Get-Content C:\test.txt | Measure-Object -Character -Line -Word
+PS C:\> Get-Content C:\test.txt | Measure-Object -Character -Line -Word
 ```
 
 This command displays the number of characters, words, and lines in the Text.txt file.
 
 ### Example 4: Measure computer processes
 ```
-PS C:\>Get-Process | Measure-Object -Property workingset -Minimum -Maximum -Average
+PS C:\> Get-Process | Measure-Object -Property workingset -Minimum -Maximum -Average
 ```
 
 This command displays the minimum, maximum, and average sizes of the working sets of the processes on the computer.
 
 ### Example 5: Measure the contents of a CSV file
 ```
-PS C:\>Import-Csv d:\test\serviceyrs.csv | Measure-Object -Property years -Minimum -Maximum -Average
+PS C:\> Import-Csv d:\test\serviceyrs.csv | Measure-Object -Property years -Minimum -Maximum -Average
 ```
 
 This command calculates the average years of service of the employees of a company.
@@ -85,7 +86,7 @@ You can use **Measure-Object** to calculate the values of these properties, just
 
 ### Example 6: Measure Boolean values
 ```
-PS C:\>Get-ChildItem | Measure-Object -Property psiscontainer -Max -Sum -Min -Average
+PS C:\> Get-ChildItem | Measure-Object -Property psiscontainer -Max -Sum -Min -Average
 Count    : 126
 Average  : 0.0634920634920635
 Sum      : 8

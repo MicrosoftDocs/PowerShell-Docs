@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821774
-schema: 2.0.0
-title: Format-List
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format List
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821774
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Format-List
 
@@ -35,7 +36,7 @@ Because more space is available for each item in a list than in a table, Windows
 
 ### Example 1: Format computer services
 ```
-PS C:\>Get-Service | Format-List
+PS C:\> Get-Service | Format-List
 ```
 
 This command formats information about services on the computer as a list.
@@ -46,7 +47,7 @@ Then, the **Format-List** command formats the service information in a list and 
 
 ### Example 2: Format PS1XML files
 ```
-PS C:\>$A = Get-ChildItem $pshome\*.ps1xml
+PS C:\> $A = Get-ChildItem $pshome\*.ps1xml
 PS C:\> Format-List -InputObject $A
 ```
 
@@ -59,7 +60,7 @@ This command uses the *InputObject* parameter to pass the variable to **Format-L
 
 ### Example 3: Format process properties by name
 ```
-PS C:\>Get-Process | Format-List -Property name, basepriority, priorityclass
+PS C:\> Get-Process | Format-List -Property name, basepriority, priorityclass
 ```
 
 This command displays the name, base priority, and priority class of each process on the computer.
@@ -70,7 +71,7 @@ The *Property* parameter name is optional, so you can omit it.
 
 ### Example 4: Format all properties for a process
 ```
-PS C:\>Get-Process winlogon | Format-List -Property *
+PS C:\> Get-Process winlogon | Format-List -Property *
 ```
 
 This command displays all of the properties of the Winlogon process.

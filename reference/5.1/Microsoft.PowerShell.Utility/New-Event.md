@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821833
-schema: 2.0.0
-title: New-Event
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821833
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # New-Event
 
@@ -41,7 +42,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 
 ### Example 1: Create a new event in the event queue
 ```
-PS C:\>New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
+PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
 This command creates a new event in the Windows PowerShell event queue.
@@ -49,7 +50,7 @@ It uses a **Windows.Timer** object to send the event.
 
 ### Example 2: Raise an event in response to another event
 ```
-PS C:\>function Enable-ProcessCreationEvent
+PS C:\> function Enable-ProcessCreationEvent
 {
    $Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
    $ProcessWatcher = New-Object System.Management.ManagementEventWatcher $Query

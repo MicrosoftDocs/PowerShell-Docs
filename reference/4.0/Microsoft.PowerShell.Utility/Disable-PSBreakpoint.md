@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293953
-schema: 2.0.0
-title: Disable-PSBreakpoint
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293953
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Disable-PSBreakpoint
 
@@ -46,8 +47,8 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$b = set-psbreakpoint -script sample.ps1 -variable name
-PS C:\>$b | disable-psbreakpoint
+PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable name
+PS C:\> $b | disable-psbreakpoint
 ```
 
 These commands disable a newly-created breakpoint.
@@ -62,15 +63,15 @@ As a result of this command, the value of the Enabled property of the breakpoint
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>disable-psbreakpoint -id 0
+PS C:\> disable-psbreakpoint -id 0
 ```
 
 This command disables the breakpoint with breakpoint ID 0.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>disable-psbreakpoint -breakpoint ($b = set-psbreakpoint -script sample.ps1 -line 5)
-PS C:\>$b
+PS C:\> disable-psbreakpoint -breakpoint ($b = set-psbreakpoint -script sample.ps1 -line 5)
+PS C:\> $b
 ```
 
 This command creates a new breakpoint that is disabled until you enable it.
@@ -85,7 +86,7 @@ The second command displays the breakpoint object in the value of the $b variabl
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-psbreakpoint | disable-psbreakpoint
+PS C:\> get-psbreakpoint | disable-psbreakpoint
 ```
 
 This command disables all breakpoints in the current console.

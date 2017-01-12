@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821760
-schema: 2.0.0
-title: ConvertTo-Xml
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertTo Xml
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821760
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # ConvertTo-Xml
 
@@ -38,14 +39,14 @@ ConvertTo-XML** returns the XML, so you can continue to process it in Windows Po
 
 ### Example 1: Convert a date to XML
 ```
-PS C:\>Get-Date | ConvertTo-Xml
+PS C:\> Get-Date | ConvertTo-Xml
 ```
 
 This command converts the current date (a **DateTime** object) to XML.
 
 ### Example 2: Convert processes to XML
 ```
-PS C:\>ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
+PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 ```
 
 This command converts the process objects that represent all of the processes on the computer into an XML document.

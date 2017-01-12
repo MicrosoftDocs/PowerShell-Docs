@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822510
-schema: 2.0.0
-title: Enable-LocalUser
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable LocalUser
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822510
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
+
 
 # Enable-LocalUser
 
@@ -44,14 +45,14 @@ When a user account is enabled, the user can log on.
 
 ### Example 1: Enable an account by specifying a name
 ```
-PS C:\>Enable-LocalUser -Name "Admin02"
+PS C:\> Enable-LocalUser -Name "Admin02"
 ```
 
 This command enables the user account named Admin02.
 
 ### Example 2: Enable an account by using the pipeline
 ```
-PS C:\>Get-LocalUser -Name "Administrator" | Enable-LocalUser
+PS C:\> Get-LocalUser -Name "Administrator" | Enable-LocalUser
 ```
 
 This command gets the built-in Administrator account by using **Get-LocalUser**, and then passes it to the current cmdlet by using the pipeline operator.

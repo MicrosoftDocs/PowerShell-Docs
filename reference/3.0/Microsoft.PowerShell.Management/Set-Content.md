@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113392
-schema: 2.0.0
-title: Set-Content
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113392
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Set-Content
 ## SYNOPSIS
@@ -40,14 +41,14 @@ You can type the content in the command or send content through the pipeline to 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-content -path C:\Test1\test*.txt -value "Hello, World"
+PS C:\> set-content -path C:\Test1\test*.txt -value "Hello, World"
 ```
 
 This command replaces the contents of all files in the Test1 directory that have names beginning with "test" with "Hello, World".
 This example shows how to specify content by typing it in the command.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-date | set-content C:\Test1\date.csv
+PS C:\> get-date | set-content C:\Test1\date.csv
 ```
 
 This command creates a comma-separated variable-length (csv) file that contains only the current date and time.
@@ -57,7 +58,7 @@ The pipeline operator passes the result to Set-Content, which creates the file a
 If the Test1 directory does not exist, the command fails, but if the file does not exist, the command will create it.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>(get-content Notice.txt) | foreach-object {$_ -replace "Warning", "Caution"} | set-content Notice.txt
+PS C:\> (get-content Notice.txt) | foreach-object {$_ -replace "Warning", "Caution"} | set-content Notice.txt
 ```
 
 This command replaces all instances of "Warning" with "Caution" in the Notice.txt file.

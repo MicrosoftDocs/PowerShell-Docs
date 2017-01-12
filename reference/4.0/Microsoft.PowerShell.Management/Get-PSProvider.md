@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290501
-schema: 2.0.0
-title: Get-PSProvider
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSProvider
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290501
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-PSProvider
 
@@ -35,21 +36,21 @@ For information about Windows PowerShell providers, see about_Providers.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-psprovider
+PS C:\> get-psprovider
 ```
 
 This command displays a list of all available Windows PowerShell providers.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-psprovider f*, r* | format-list
+PS C:\> get-psprovider f*, r* | format-list
 ```
 
 This command displays a list of all Windows PowerShell providers with names that begin with the letter "f" or "r".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-psprovider | format-table name, module, pssnapin -auto
+PS C:\> get-psprovider | format-table name, module, pssnapin -auto
 
 Name        Module       PSSnapIn
 ----        ------       --------
@@ -63,7 +64,7 @@ Registry                 Microsoft.PowerShell.Core
 Variable                 Microsoft.PowerShell.Core
 Certificate              Microsoft.PowerShell.Security
 
-PS C:\>get-psprovider | where {$_.pssnapin -eq "Microsoft.PowerShell.Security"}
+PS C:\> get-psprovider | where {$_.pssnapin -eq "Microsoft.PowerShell.Security"}
 
 Name            Capabilities      Drives
 ----            ------------      ------
@@ -82,13 +83,13 @@ The second command uses the Where-Object cmdlet to get the providers that come f
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>resolve-path ~
+PS C:\> resolve-path ~
 
 Path
 ----
 C:\Users\User01
 
-PS C:\>(get-psprovider FileSystem).home
+PS C:\> (get-psprovider FileSystem).home
 C:\Users\User01
 ```
 

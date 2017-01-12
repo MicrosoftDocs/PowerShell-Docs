@@ -1,11 +1,15 @@
 ---
-title: about_PackageManagement
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PackageManagement
+ms.technology:  powershell
 ---
+
 # About PackageManagement
 ## about_PackageManagement
 # TOPIC
@@ -82,7 +86,7 @@ if the specified provider is not available, PackageManagement prompts you to boo
 Chocolatey provider is not already installed, PackageManagement bootstrapping installs
 the provider.
 
-Find-Package –Provider Chocolatey <PackageName>
+Find-Package -Provider Chocolatey <PackageName>
 
 If the Chocolatey provider is not already installed, when you run the
 preceding command, you are prompted to install it.

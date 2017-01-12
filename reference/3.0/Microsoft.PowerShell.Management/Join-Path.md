@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113347
-schema: 2.0.0
-title: Join-Path
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Join Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113347
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Join-Path
 ## SYNOPSIS
@@ -31,14 +32,14 @@ The provider supplies the path delimiters.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>join-path -path c:\win* -childpath System*
+PS C:\> join-path -path c:\win* -childpath System*
 ```
 
 This command uses Join-Path to combine the "c:\Win*" path with the "System*" child path.
 The Windows PowerShell file system provider, FileSystem joins the path and adds the "\" delimiter.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>join-path c:\win* System* -resolve
+PS C:\> join-path c:\win* System* -resolve
 ```
 
 This command displays the files and folders that are referenced by joining the "c:\Win*" path and the "System*" child path.
@@ -46,20 +47,20 @@ It displays the same files and folders as Get-ChildItem, but it displays the ful
 In this command, the Path and ChildPath optional parameter names are omitted.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>PS HKLM:\> join-path System *ControlSet* -resolve
+PS C:\> PS HKLM:\> join-path System *ControlSet* -resolve
 ```
 
 This command displays the registry keys in the HKLM\System registry subkey that include "ControlSet".
 This example shows how to use Join-Path with the Windows PowerShell registry provider.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>join-path -path C:, D:, E:, F: -childpath New
+PS C:\> join-path -path C:, D:, E:, F: -childpath New
 ```
 
 This command uses Join-Path to combine multiple path roots with a child path.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-psdrive -psprovider filesystem | foreach {$_.root} | join-path -childpath Subdir
+PS C:\> get-psdrive -psprovider filesystem | foreach {$_.root} | join-path -childpath Subdir
 ```
 
 This command combines the roots of each Windows PowerShell file system drive in the console with the Subdir child path.

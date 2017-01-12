@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=526220
-schema: 2.0.0
-title: Set-Clipboard
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Clipboard
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=526220
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Set-Clipboard
 
@@ -47,14 +48,14 @@ The **Set-Clipboard** cmdlet sets the current Windows clipboard entry.
 
 ### Example 1: Copy text to the clipboard
 ```
-PS C:\>Set-Clipboard -Value "This is a test string"
+PS C:\> Set-Clipboard -Value "This is a test string"
 ```
 
 This command copies a string to the clipboard.
 
 ### Example 2: Copy the contents of a directory to the clipboard
 ```
-PS C:\>Set-Clipboard -Path "C:\Staging\"
+PS C:\> Set-Clipboard -Path "C:\Staging\"
 ```
 
 This command copies the content of the specified folder to the clipboard.

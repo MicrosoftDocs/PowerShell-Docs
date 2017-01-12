@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517143
-schema: 2.0.0
-title: Unregister-PackageSource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister PackageSource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517143
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
+
 
 # Unregister-PackageSource
 
@@ -52,7 +53,7 @@ Package sources are always managed by a package provider.
 
 ### Example 1: Unregister a package source for the Nuget provider
 ```
-PS C:\>Unregister-PackageSource -Source "MyRep" -Location "http://contoso/nuget/MyRepository/api/v3" -Provider "Nuget"
+PS C:\> Unregister-PackageSource -Source "MyRep" -Location "http://contoso/nuget/MyRepository/api/v3" -Provider "Nuget"
 ```
 
 This command unregisters a package source named Features for the Nuget provider.
@@ -60,8 +61,8 @@ You are prompted to confirm that you want to unregister the package because the 
 
 ### Example 2: Unregister a package source by using a PackageSource object
 ```
-PS C:\>$A = Get-PackageSource -Name "MyRep" -Location "http://contoso/nuget/Features/api/v3"
-PS C:\>Unregister-PackageSource -InputObject $A -Force
+PS C:\> $A = Get-PackageSource -Name "MyRep" -Location "http://contoso/nuget/Features/api/v3"
+PS C:\> Unregister-PackageSource -InputObject $A -Force
 ```
 
 This command unregisters a package source named Features for the Nuget provider by saving the results of a **Get-PackageSource** command to a variable, and then using the variable as input to **Unregister-PackageSource**.

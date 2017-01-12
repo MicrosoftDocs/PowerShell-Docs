@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293943
-schema: 2.0.0
-title: Add-Type
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Type
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293943
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Add-Type
 
@@ -70,7 +71,7 @@ You can use the parameters of **Add-Type** to specify an alternate language and 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$source = @"
+PS C:\> $source = @"
 public class BasicTest
 {
   public static int Add(int a, int b)
@@ -84,10 +85,10 @@ public class BasicTest
 }
 "@
 
-PS C:\>Add-Type -TypeDefinition $source
-PS C:\>[BasicTest]::Add(4, 3)
-PS C:\>$basicTestObject = New-Object BasicTest
-PS C:\>$basicTestObject.Multiply(5, 2)
+PS C:\> Add-Type -TypeDefinition $source
+PS C:\> [BasicTest]::Add(4, 3)
+PS C:\> $basicTestObject = New-Object BasicTest
+PS C:\> $basicTestObject.Multiply(5, 2)
 ```
 
 These commands add the BasicTest class to the session by specifying source code that is stored in a variable.
@@ -110,10 +111,10 @@ The fifth command uses the Multiply method of $basicTestObject.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>[BasicTest] | Get-Member
-PS C:\>[BasicTest] | Get-Member -Static
-PS C:\>$basicTestObject | Get-Member
-PS C:\>[BasicTest] | Get-Member
+PS C:\> [BasicTest] | Get-Member
+PS C:\> [BasicTest] | Get-Member -Static
+PS C:\> $basicTestObject | Get-Member
+PS C:\> [BasicTest] | Get-Member
 
 TypeName: System.RuntimeType
 Name                           MemberType Definition
@@ -122,7 +123,7 @@ Clone                          Method     System.ObjectClone(
 Equals                         Method     System.BooleanEquals
 FindInterfaces                 Method     System.Type[] FindInt...
 
-PS C:\>[BasicTest] | Get-Member -static
+PS C:\> [BasicTest] | Get-Member -static
 
 TypeName: BasicTest
 Name            MemberType Definition
@@ -131,7 +132,7 @@ Add             Method     static System.Int32 Add(Int32 a, Int32 b)
 Equals          Method     static System.Boolean Equals(Object objA,
 ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj
 
-PS C:\>$basicTestObject | Get-Member
+PS C:\> $basicTestObject | Get-Member
 
 TypeName: BasicTest
 Name        MemberType Definition
@@ -158,7 +159,7 @@ The output reveals that the value of the $BasicTestObject variable is an instanc
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$accType = Add-Type -AssemblyName accessib* -PassThru
+PS C:\> $accType = Add-Type -AssemblyName accessib* -PassThru
 ```
 
 This command adds the classes from the Accessibility assembly to the current session.
@@ -169,12 +170,12 @@ The command uses the **PassThru** parameter to generate objects that represent t
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Add-Type -Path c:\ps-test\Hello.vb[VBFromFile]::SayHello(", World")
+PS C:\> Add-Type -Path c:\ps-test\Hello.vb[VBFromFile]::SayHello(", World")
 
 # From Hello.vb
 
 Public Class VBFromFilePublic Shared Function SayHello(sourceName As String) As StringDim myValue As String = "Hello"return myValue + sourceNameEnd FunctionEnd Class
-PS C:\>[VBFromFile]::SayHello(", World")Hello, World
+PS C:\> [VBFromFile]::SayHello(", World")Hello, World
 ```
 
 This example uses the **Add-Type** cmdlet to add the VBFromFile class that is defined in the Hello.vb file to the current session.
@@ -187,7 +188,7 @@ The second command calls the SayHello function as a static method of the VBFromF
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$signature = @"
+PS C:\> $signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
 $showWindowAsync = Add-Type -MemberDefinition $signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru 
@@ -225,7 +226,7 @@ To restore the window, the fourth command use a value of "4" for the window posi
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
+PS C:\> Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
 ```
 
 This command uses the **Add-Type** cmdlet to add a method from inline JScript code to the Windows PowerShell session.
@@ -234,14 +235,14 @@ It uses the **Name** parameter to specify a name for the class that **Add-Type**
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Add-Type -Path FSharp.Compiler.CodeDom.dll
-PS C:\>Add-Type -Path FSharp.Compiler.CodeDom.dll
-PS C:\>$Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
-PS C:\>$fSharpCode = @"
+PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll
+PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll
+PS C:\> $Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
+PS C:\> $fSharpCode = @"
 let rec loop n =if n <= 0 then () else beginprint_endline (string_of_int n);loop (n-1)end
 "@
-PS C:\>$fsharpType = Add-Type -TypeDefinition $fSharpCode -CodeDomProvider $Provider -PassThru | where { $_.IsPublic }
-PS C:\>$fsharpType::loop(4)4321
+PS C:\> $fsharpType = Add-Type -TypeDefinition $fSharpCode -CodeDomProvider $Provider -PassThru | where { $_.IsPublic }
+PS C:\> $fsharpType::loop(4)4321
 ```
 
 This example shows how to use the **Add-Type** cmdlet to add an FSharp code compiler to your Windows PowerShell session.

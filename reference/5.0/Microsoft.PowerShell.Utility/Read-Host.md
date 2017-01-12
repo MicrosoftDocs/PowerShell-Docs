@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821843
-schema: 2.0.0
-title: Read-Host
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Read Host
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821843
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Read-Host
 
@@ -33,7 +34,7 @@ Because you can save the input as a secure string, you can use this cmdlet to pr
 
 ### Example 1: Save console input to a variable
 ```
-PS C:\>$Age = Read-Host "Please enter your age"
+PS C:\> $Age = Read-Host "Please enter your age"
 ```
 
 This command displays the string "Please enter your age:" as a prompt.
@@ -41,7 +42,7 @@ When a value is entered and the Enter key is pressed, the value is stored in the
 
 ### Example 2: Save console input as a secure string
 ```
-PS C:\>$pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
+PS C:\> $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ```
 
 This command displays the string "Enter a Password:" as a prompt.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293908
-schema: 2.0.0
-title: Resume-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Resume Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293908
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Resume-Service
 
@@ -48,7 +49,7 @@ You can specify the services by their service names or display names, or you can
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>resume-service sens
+PS C:\> resume-service sens
 ```
 
 This command resumes the System Event Notification service (the service name is represented in the command by "sens") on the local computer.
@@ -56,7 +57,7 @@ The command uses the Name parameter to specify the service name of the service, 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-service | where-object {$_.Status -eq "Paused"} | resume-service
+PS C:\> get-service | where-object {$_.Status -eq "Paused"} | resume-service
 ```
 
 This command resumes all of the suspended (paused) services on the computer.

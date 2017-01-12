@@ -1,18 +1,16 @@
 ---
-title: "Remove-Item for Certificate"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to:
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 9
-manager: stevenka
-online version: http://go.microsoft.com/fwlink/?LinkId=834972
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  remove item for certificate
+ms.technology:  powershell
+online version:   http://go.microsoft.com/fwlink/?LinkId=834972
 ---
+
 # Remove-Item for Certificate
 Deletes certificate stores, certificates, and private keys.  
 
@@ -116,15 +114,15 @@ This series of commands enables delegation and then deletes the certificate and 
 
 The first command uses the Enable-WSManCredSSP cmdlet to enable Credential Security Service Provider (CredSSP) authentication on a client on the S1 remote computer. CredSSP permits delegated authentication.  
 
-PS C:\>Enable-WSManCredSSP -Role Client -DelegateComputer S1  
+PS C:\> Enable-WSManCredSSP -Role Client -DelegateComputer S1  
 
 The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in Windows PowerShell.  
 
-PS C:\>Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
+PS C:\> Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
 
 The third command uses the Set-Item cmdlet in the WSMan: drive to enable the CredSSP attribute for the WinRM service.  
 
-PS C:\>Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
+PS C:\> Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
 
 The fourth command uses the New-PSSession cmdlet to start a remote session on the S1 computer with CredSSP authentication. It saves the session in the $s variable.  
 
@@ -168,3 +166,4 @@ This command deletes all certificates that have a DNS name that contains "Fabrik
  [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)   
  [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
  [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+

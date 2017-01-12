@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=144302
-schema: 2.0.0
-title: Export-FormatData
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export FormatData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=144302
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Export-FormatData
 ## SYNOPSIS
@@ -42,7 +43,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-formatdata -typename * | export-formatdata -path allformat.ps1xml -IncludeScriptBlock
+PS C:\> get-formatdata -typename * | export-formatdata -path allformat.ps1xml -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
@@ -55,8 +56,8 @@ The command uses a pipeline operator (|) to send the format data from the Get-Fo
 The Export-FormatData command uses the IncludeScriptBlock parameter to include script blocks in the format data in the file.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$f = get-formatdata -typename helpinfoshort
-PS C:\>export-formatdata -inputObject $f -path c:\test\help.format.ps1xml -IncludeScriptBlock
+PS C:\> $f = get-formatdata -typename helpinfoshort
+PS C:\> export-formatdata -inputObject $f -path c:\test\help.format.ps1xml -IncludeScriptBlock
 ```
 
 These commands export the format data for the HelpInfoShort type to the Help.format.ps1xml file.
@@ -67,9 +68,9 @@ The second command uses the InputObject parameter of the Export-FormatData to en
 It also uses the IncludeScriptBlock parameter to include script blocks in the output.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-formatdata -typename System.Diagnostics.Process | export-FormatData -path process.format.ps1xml
-PS C:\>Update-FormatData -prependPath .\process.format.ps1xml
-PS C:\>get-process p*
+PS C:\> get-formatdata -typename System.Diagnostics.Process | export-FormatData -path process.format.ps1xml
+PS C:\> Update-FormatData -prependPath .\process.format.ps1xml
+PS C:\> get-process p*
 
 Handles  NPM(K)  PM(K)  WS(K) VM(M)   CPU(s)    Id ProcessName
 -------  ------  -----  ----- -----   ------    -- -----------

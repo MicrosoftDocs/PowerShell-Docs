@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821675
-schema: 2.0.0
-title: Unregister-PSRepository
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister PSRepository
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821675
+external help file:   PSModule-help.xml
 ---
+
 
 # Unregister-PSRepository
 
@@ -31,14 +32,14 @@ The **Unregister-PSRepository** cmdlet unregisters a repository for the current 
 
 ### Example 1: Unregister a repository
 ```
-PS C:\>Unregister-PSRepository -Name "myNuGetSource"
+PS C:\> Unregister-PSRepository -Name "myNuGetSource"
 ```
 
 This command unregisters the repository named myNuGetSource.
 
 ### Example 2: Unregister all repositories
 ```
-PS C:\>Get-PSRepository | Unregister-PSRepository
+PS C:\> Get-PSRepository | Unregister-PSRepository
 ```
 
 This command uses Get-PSRepository to get all registered repositories, and uses the pipeline operator to pass them to **Unregister-PSRepository** to unregister them.

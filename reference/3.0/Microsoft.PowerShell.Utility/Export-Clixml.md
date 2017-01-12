@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113297
-schema: 2.0.0
-title: Export-Clixml
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Clixml
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113297
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Export-Clixml
 ## SYNOPSIS
@@ -43,14 +44,14 @@ For an example of how to do this, see Example 3 in this topic.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>"This is a test" | export-clixml sample.xml
+PS C:\> "This is a test" | export-clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-acl C:\test.txt | export-clixml -Path fileacl.xml
-PS C:\>$fileacl = import-clixml fileacl.xml
+PS C:\> get-acl C:\test.txt | export-clixml -Path fileacl.xml
+PS C:\> $fileacl = import-clixml fileacl.xml
 ```
 
 This example shows how to export an object to an XML file and then create an object by importing the XML from the file.
@@ -62,9 +63,9 @@ The second command uses the Import-Clixml cmdlet to create an object from the XM
 Then, it saves the object in the $FileAcl variable.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential | Export-CliXml $credPath PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential = Import-CliXml $credxmlpath
+PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential | Export-CliXml $credPath PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential = Import-CliXml $credxmlpath
 ```
 
 The Export-CliXml cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.

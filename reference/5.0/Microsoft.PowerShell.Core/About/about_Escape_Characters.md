@@ -1,20 +1,15 @@
 ---
-title: about_Escape_Characters
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Escape_Characters
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Escape_Characters
+ms.technology:  powershell
 ---
+
 # About Escape Characters
 ## about_Escape_Characters
 
@@ -47,11 +42,11 @@ being substituted for the variable.
 For example:
 
 PS C:> $a = 5
-PS C:>"The value is stored in $a."
+PS C:\> "The value is stored in $a."
 The value is stored in 5.
 
 PS C:> $a = 5
-PS C:>"The value is stored in `$a."
+PS C:\> "The value is stored in `$a."
 The value is stored in $a.
 
 # ESCAPING QUOTATION MARKS

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821687
-schema: 2.0.0
-title: Get-ScheduledJobOption
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ScheduledJobOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821687
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
+
 
 # Get-ScheduledJobOption
 
@@ -56,7 +57,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Get job options
 ```
-PS C:\>Get-ScheduledJobOption -Name "*Backup*"
+PS C:\> Get-ScheduledJobOption -Name "*Backup*"
 StartIfOnBatteries     : False
 
 StopIfGoingOnBatteries : True
@@ -91,7 +92,7 @@ The results show the job options object that **Get-ScheduledJobOption** returned
 
 ### Example 2: Get all job options
 ```
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOptions
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOptions
 ```
 
 This command gets the job options of all scheduled jobs on the local computer.
@@ -101,7 +102,7 @@ A pipeline operator (|) sends the scheduled jobs to the **Get-ScheduledJobOption
 
 ### Example 3: Get selected job options
 ```
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun}
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun}
 StartIfOnBatteries     : False
 
 StopIfGoingOnBatteries : True
@@ -131,7 +132,7 @@ MultipleInstancePolicy : Ignore
 NewJobDefinition       : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 The second command shows how to find to which scheduled job the job options belong. This command uses a pipeline operator (|) to send the selected job options to the ForEach-Object cmdlet, which gets the JobDefinition property of each options object. The JobDefinition property contains the originating job object. The results show that the selected options came from the DeployPkg scheduled job.
-PS C:\>Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun} | ForEach-Object {$_.JobDefinition}
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun} | ForEach-Object {$_.JobDefinition}
 Id         Name            Triggers        Command                                  Enabled
 
 --         ----            --------        -------                                  -------
@@ -146,8 +147,8 @@ The output shows the **JobOptions** object that was selected.
 
 ### Example 4: Use job options to create a new job
 ```
-PS C:\>$Opts = Get-ScheduledJobOption -Name "BackupTestLogs"
-PS C:\>Register-ScheduledJob -Name "Archive-Scripts" -FilePath "\\Srv01\Scripts\ArchiveScripts.ps1" -ScheduledJobOption $Opts
+PS C:\> $Opts = Get-ScheduledJobOption -Name "BackupTestLogs"
+PS C:\> Register-ScheduledJob -Name "Archive-Scripts" -FilePath "\\Srv01\Scripts\ArchiveScripts.ps1" -ScheduledJobOption $Opts
 ```
 
 This example shows how to use the job options that Get-ScheduledJobOptions gets in a new scheduled job.
@@ -160,7 +161,7 @@ The value of the *ScheduledJobOption* parameter is the options object in the $Op
 
 ### Example 5: Get job options from a remote computer
 ```
-PS C:\>$O = Invoke-Command -ComputerName "Srv01" -ScriptBlock {Get-ScheduledJob -Name "DataDemon" }
+PS C:\> $O = Invoke-Command -ComputerName "Srv01" -ScriptBlock {Get-ScheduledJob -Name "DataDemon" }
 ```
 
 This command uses the Invoke-Command cmdlet to get the scheduled job options of the DataDemon job on the Srv01 computer.

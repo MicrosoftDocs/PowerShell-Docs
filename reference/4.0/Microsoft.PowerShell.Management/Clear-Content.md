@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289798
-schema: 2.0.0
-title: Clear-Content
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289798
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Clear-Content
 
@@ -41,7 +42,7 @@ Clear-Content is similar to Clear-Item, but it works on items with contents, ins
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-content ..\SmpUsers\*\init.txt
+PS C:\> clear-content ..\SmpUsers\*\init.txt
 ```
 
 This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
@@ -49,7 +50,7 @@ The files are not deleted, but they are empty.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-content -path * -filter *.log -force
+PS C:\> clear-content -path * -filter *.log -force
 ```
 
 This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.
@@ -59,7 +60,7 @@ Using a filter to restrict the command to files with the ".log" file name extens
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-content c:\Temp\* -Include Smp* -Exclude *2* -whatif
+PS C:\> clear-content c:\Temp\* -Include Smp* -Exclude *2* -whatif
 ```
 
 This command requests a prediction of what would happen if you submitted the command: "clear-content c:\temp\* -include smp* -exclude *2*".

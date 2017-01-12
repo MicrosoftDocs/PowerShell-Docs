@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822329
-schema: 2.0.0
-title: New-ScriptFileInfo
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New ScriptFileInfo
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822329
+external help file:   PSModule-help.xml
 ---
+
 
 # New-ScriptFileInfo
 
@@ -35,7 +36,7 @@ The **New-ScriptFileInfo** cmdlet creates a PowerShell script file, including me
 
 ### Example 1: Create a script file and specify its version, author, and description
 ```
-PS C:\>New-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "My test script file description goes here"
+PS C:\> New-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "My test script file description goes here"
 PS C:\> Get-Content -Path "\temp\Temp-Scriptfile.ps1"
 <#PSScriptInfo
 
@@ -74,7 +75,7 @@ PS C:\> Get-Content -Path "\temp\Temp-Scriptfile.ps1"
  my test script file description goes here
 
 #>
-Param() PS C:\>Test-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1"
+Param() PS C:\> Test-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------
 1.0        temp-scriptfile           pattif@contoso.com   my test script file description goes here
@@ -86,7 +87,7 @@ The second command uses the Get-Content cmdlet to get the contents of the script
 
 ### Example 2: Create a script file with all of the metadata properties
 ```
-PS C:\>New-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1" -Verbose
+PS C:\> New-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1" -Verbose
 >> -Version 1.0 -Author pattif -Description "my new script file test" -CompanyName "Contoso Corporation" `
 >> -Copyright "Â© 2015 Contoso Corporation. All rights reserved." -ExternalModuleDependencies 'ff','bb' `
 >> -RequiredScripts 'Start-WFContosoServer', 'Stop-ContosoServerScript' `

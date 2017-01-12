@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821517
-schema: 2.0.0
-title: Set-StrictMode
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set StrictMode
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821517
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Set-StrictMode
 
@@ -47,7 +48,7 @@ Unnamed variables are not permitted.
 
 ### Example 1: Turn on strict mode as version 1.0
 ```
-PS C:\>Set-StrictMode -Version 1.0
+PS C:\> Set-StrictMode -Version 1.0
 PS C:\> $a -gt 5
 False
 
@@ -69,7 +70,7 @@ The sample output shows the effect of version 1.0 strict mode.
 
 ### Example 2: Turn on strict mode as version 2.0
 ```
-PS C:\># Set-StrictMode -Version 2.0
+PS C:\> # Set-StrictMode -Version 2.0
 # Strict mode is off by default.
 
 PS C:\> function add ($a, $b) {$a + $b}

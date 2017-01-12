@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821511
-schema: 2.0.0
-title: Remove-PSSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821511
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Remove-PSSession
 
@@ -58,14 +59,14 @@ If you have saved the *PSSession* in a variable, the session object remains in t
 
 ### Example 1: Remove sessions by using IDs
 ```
-PS C:\>Remove-PSSession -Id 1, 2
+PS C:\> Remove-PSSession -Id 1, 2
 ```
 
 This command removes the **PSSessions** that have IDs 1 and 2.
 
 ### Example 2: Remove all the sessions in the current session
 ```
-PS C:\>Get-PSSession | Remove-PSSession
+PS C:\> Get-PSSession | Remove-PSSession
 
 - or -
 
@@ -82,7 +83,7 @@ Although the three command formats look different, they have the same effect.
 
 ### Example 3: Close sessions by using names
 ```
-PS C:\>$r = Get-PSSession -ComputerName Serv*
+PS C:\> $r = Get-PSSession -ComputerName Serv*
 PS C:\> $r | Remove-PSSession
 ```
 
@@ -90,7 +91,7 @@ These commands close the **PSSessions** that are connected to computers that hav
 
 ### Example 4: Close sessions connected to a port
 ```
-PS C:\>Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
+PS C:\> Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
 ```
 
 This command closes the **PSSessions** that are connected to port 90.
@@ -98,14 +99,14 @@ You can use this command format to identify **PSSessions** by properties other t
 
 ### Example 5: Close a session based on instance ID
 ```
-PS C:\>Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
+PS C:\> Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
 ComputerName InstanceId
 ------------ ----------------
 Server01     875d231b-2788-4f36-9f67-2e50d63bb82a
 localhost    c065ffa0-02c4-406e-84a3-dacb0d677868
 Server02     4699cdbc-61d5-4e0d-b916-84f82ebede1f
 Server03     4e5a3245-4c63-43e4-88d0-a7798bfc2414
-TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85 PS C:\>Remove-PSSession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
+TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85 PS C:\> Remove-PSSession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
 These commands show how to close a **PSSession** based on its instance ID, or **RemoteRunspaceID**.
@@ -120,7 +121,7 @@ The second command uses the **Remove-PSSession** cmdlet to remove the *PSSession
 
 ### Example 6: Create a function that deletes all sessions in the current session
 ```
-PS C:\>Function EndPSS { Get-PSSession | Remove-PSSession }
+PS C:\> Function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
 This function deletes all of the **PSSessions** in the current session.

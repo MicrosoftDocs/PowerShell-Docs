@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=526219
-schema: 2.0.0
-title: Get-Clipboard
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Clipboard
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=526219
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-Clipboard
 
@@ -31,7 +32,7 @@ The **Get-Clipboard** cmdlet gets the current Windows clipboard entry.
 
 ### Example 1: Get the content of the clipboard and display it to the command-line
 ```
-PS C:\>Get-Clipboard
+PS C:\> Get-Clipboard
 This is a test string.
 ```
 
@@ -39,7 +40,7 @@ This command displays the contents of the clipboard to the command-line.
 
 ### Example 2: Get the content of the clipboard and display it to the command-line
 ```
-PS C:\>Get-Clipboard
+PS C:\> Get-Clipboard
 http://upload.wikimedia.org/wikipedia/en/7/7f/Windows_PowerShell_icon.png
 ```
 

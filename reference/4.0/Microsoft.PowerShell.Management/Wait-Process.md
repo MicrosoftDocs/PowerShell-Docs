@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293930
-schema: 2.0.0
-title: Wait-Process
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Wait Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293930
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Wait-Process
 
@@ -46,9 +47,9 @@ Wait-Process works only on processes running on the local computer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$nid = (get-process notepad).id
-PS C:\>stop-process -id $nid
-PS C:\>wait-process -id $nid
+PS C:\> $nid = (get-process notepad).id
+PS C:\> stop-process -id $nid
+PS C:\> wait-process -id $nid
 ```
 
 These commands stop the Notepad process and then wait for the process to be stopped before proceeding with the next command.
@@ -63,10 +64,10 @@ It uses the ID parameter of Wait-Process to identify the process.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$p = get-process notepad
-PS C:\>wait-process -id $p.id
-PS C:\>wait-process -name notepad
-PS C:\>wait-process -inputobject $p
+PS C:\> $p = get-process notepad
+PS C:\> wait-process -id $p.id
+PS C:\> wait-process -name notepad
+PS C:\> wait-process -inputobject $p
 ```
 
 These commands show three different methods of specifying a process to the Wait-Process cmdlet.
@@ -78,7 +79,7 @@ These commands have the same results and can be used interchangeably.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>wait-process -name outlook, winword -timeout 30
+PS C:\> wait-process -name outlook, winword -timeout 30
 ```
 
 This command waits 30 seconds for the Outlook and Winword processes to stop.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822514
-schema: 2.0.0
-title: Get-LocalUser
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get LocalUser
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822514
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
+
 
 # Get-LocalUser
 
@@ -38,7 +39,7 @@ This cmdlet gets default built-in user accounts, local user accounts that you cr
 
 ### Example 1: Get an account by using its name
 ```
-PS C:\>Get-LocalUser -Name "AdminContoso02"
+PS C:\> Get-LocalUser -Name "AdminContoso02"
 Name             Enabled Description
 ----             ------- -----------
 AdminContoso02   True    Description of this account.
@@ -48,7 +49,7 @@ This command gets a user account named AdminContoso02.
 
 ### Example 2: Get an account that is connected to a Microsoft account
 ```
-PS C:\>Get-LocalUser -Name "MicrosoftAccount\username@Outlook.com"
+PS C:\> Get-LocalUser -Name "MicrosoftAccount\username@Outlook.com"
 Name                                    Enabled  Description
 ----                                    -------  -----------
 MicrosoftAccount\user name@outlook.com  True     Description of this account.
@@ -59,7 +60,7 @@ This example uses a placeholder value for the user name of an account at Outlook
 
 ### Example 3: Get an account that is connected to a Microsoft account
 ```
-PS C:\>Get-LocalUser -SecurityIdentifier "S-1-5-2"
+PS C:\> Get-LocalUser -SecurityIdentifier "S-1-5-2"
 Name                                    Enabled  Description
 ----                                    -------  -----------
 MicrosoftAccount\user name@contoso.com  True     Description of this account.

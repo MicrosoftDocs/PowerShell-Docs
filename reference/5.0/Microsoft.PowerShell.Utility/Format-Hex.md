@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821773
-schema: 2.0.0
-title: Format-Hex
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format Hex
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821773
+external help file:   Microsoft.PowerShell.Utility-help.xml
 ---
+
 
 # Format-Hex
 
@@ -46,7 +47,7 @@ Run this cmdlet, and then inspect the results for file information.
 
 ### Example 1: Get the hexadecimal representation of a string
 ```
-PS C:\>"Hello World" | Format-Hex
+PS C:\> "Hello World" | Format-Hex
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
@@ -56,7 +57,7 @@ This command returns the hexadecimal representation of the string Hello World.
 
 ### Example 2: Investigate a file type
 ```
-PS C:\>Format-Hex -Path "C:\temp\temp.t7f"
+PS C:\> Format-Hex -Path "C:\temp\temp.t7f"
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????. 

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822321
-schema: 2.0.0
-title: Find-RoleCapability
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Find RoleCapability
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822321
+external help file:   PSModule-help.xml
 ---
+
 
 # Find-RoleCapability
 
@@ -40,7 +41,7 @@ Role capabilities are defined by files with a .psrc extension.
 
 ### Example 1: Find all role capabilities
 ```
-PS C:\>Find-RoleCapability
+PS C:\> Find-RoleCapability
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 Maintenance                         1.0        Demo_Module                         PSGallery
@@ -52,7 +53,7 @@ This command finds all role capabilities.
 
 ### Example 2: Find role capabilities by name
 ```
-PS C:\>Find-RoleCapability -Name "Maintenance,MyJeaRole"
+PS C:\> Find-RoleCapability -Name "Maintenance,MyJeaRole"
 Name                                Version    ModuleName                          Repository
 ----                                -------    ----------                          ----------
 Maintenance                         1.0        Demo_Module                         PSGallery
@@ -63,7 +64,7 @@ This command finds the role capabilities named Maintenance and MyJeaRole.
 
 ### Example 3: Find role capabilities and save them
 ```
-PS C:\>Find-RoleCapability -Name "Maintenance,MyJeaRole" | Save-Module -Path "C:\MyModulesPath"
+PS C:\> Find-RoleCapability -Name "Maintenance,MyJeaRole" | Save-Module -Path "C:\MyModulesPath"
 PS C:\> Get-ChildItem -Path "C:\MyModulesPath"
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -77,7 +78,7 @@ The second command uses Get-ChildItem to get the items saved with the prior comm
 
 ### Example 4: Find role capabilities and install them
 ```
-PS C:\>Find-RoleCapability -Name "Maintenance,MyJeaRole" | Install-Module
+PS C:\> Find-RoleCapability -Name "Maintenance,MyJeaRole" | Install-Module
 PS C:\> Get-InstalledModule
     Version    Name                                Type       Repository           Description
     -------    ----                                ----       ----------           -----------

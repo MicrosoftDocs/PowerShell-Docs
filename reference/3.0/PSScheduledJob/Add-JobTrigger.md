@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223913
-schema: 2.0.0
-title: Add-JobTrigger
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add JobTrigger
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223913
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
+
 
 # Add-JobTrigger
 ## SYNOPSIS
@@ -55,7 +56,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Add a job trigger to a scheduled job
 ```
-PS C:\>$Daily = New-JobTrigger -Daily -At 3AMPS C:\>Add-JobTrigger -Trigger $Daily -Name TestJob
+PS C:\> $Daily = New-JobTrigger -Daily -At 3AMPS C:\> Add-JobTrigger -Trigger $Daily -Name TestJob
 ```
 
 These commands add the Daily job trigger to the TestJob scheduled job.
@@ -66,7 +67,7 @@ The command saves the job trigger in the $Daily variable.
 The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in the $Startup variable to the TestJob scheduled job.
 ### Example 2: Add a job trigger to many scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
+PS C:\> Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
 ```
 
 This command adds an AtStartup job trigger to all scheduled jobs on the local computer.
@@ -75,9 +76,9 @@ It uses a pipeline operator (|) to send the jobs to the **Add-JobTrigger** cmdle
 The value of the **Trigger** parameter is a New-JobTrigger command that creates the AtStartup job trigger.
 ### Example 3: Copy a job trigger
 ```
-PS C:\>$t = Get-JobTrigger -Name BackupArchives
+PS C:\> $t = Get-JobTrigger -Name BackupArchives
 
-PS C:\>Add-JobTrigger -Name TestBackup, BackupLogs -Trigger $t
+PS C:\> Add-JobTrigger -Name TestBackup, BackupLogs -Trigger $t
 ```
 
 These commands copy the job trigger from the BackupArchives scheduled job and add it to the TestBackup and BackupLogs scheduled jobs.

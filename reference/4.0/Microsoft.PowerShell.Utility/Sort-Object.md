@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294017
-schema: 2.0.0
-title: Sort-Object
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Sort Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294017
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Sort-Object
 
@@ -35,7 +36,7 @@ You can also direct Sort-Object to display only the objects with a unique value 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem | sort-object
+PS C:\> get-childitem | sort-object
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -62,7 +63,7 @@ Because no properties are specified, the files and directories are sorted in asc
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem | sort-object -property length
+PS C:\> get-childitem | sort-object -property length
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -81,7 +82,7 @@ This command displays the files in the current directory in ascending order by f
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-process | sort-object -property WS | select-object -last 5
+PS C:\> get-process | sort-object -property WS | select-object -last 5
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -101,7 +102,7 @@ Another pipeline operator sends the results to the Select-Object, which displays
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-history | sort-object -descending
+PS C:\> get-history | sort-object -descending
 
 Id CommandLine
 -- -----------
@@ -121,7 +122,7 @@ This command sorts HistoryInfo objects using the Id property as the default key.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-service | sort-object -property @{Expression="Status";Descending=$true}, @{Expression="DisplayName";Descending=$false}
+PS C:\> get-service | sort-object -property @{Expression="Status";Descending=$true}, @{Expression="DisplayName";Descending=$false}
 
 Status   Name               DisplayName
 ------   ----               -----------
@@ -152,7 +153,7 @@ When sorted in ascending order, "Stopped" appears before "Running", because Stat
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-childitem *.txt | sort-object -property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending=$false} | Format-Table LastWriteTime, CreationTime
+PS C:\> get-childitem *.txt | sort-object -property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending=$false} | Format-Table LastWriteTime, CreationTime
 
 LastWriteTime                           CreationTime
 -------------                           ------------
@@ -169,7 +170,7 @@ This command sorts text files in descending order by the time span between Creat
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-content servers.txt
+PS C:\> get-content servers.txt
 
 localhost
 test01
@@ -178,7 +179,7 @@ server02
 localhost
 server01
 
-PS C:\>get-content servers.txt | sort-object -unique
+PS C:\> get-content servers.txt | sort-object -unique
 
 localhost
 server01

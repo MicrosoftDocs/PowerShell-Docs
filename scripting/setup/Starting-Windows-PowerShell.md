@@ -1,14 +1,16 @@
 ---
-title:  Starting Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  59b649a2-c90c-4cf4-bf95-a740c59148e7
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Starting Windows PowerShell
+ms.technology:  powershell
+ms.assetid:    59b649a2-c90c-4cf4-bf95-a740c59148e7
 ---
+
 
 # Starting Windows PowerShell
 PowerShell is a scripting engine dll which is embedded into multiple hosts.  The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.  

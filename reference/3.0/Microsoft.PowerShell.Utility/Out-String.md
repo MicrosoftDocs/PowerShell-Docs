@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113368
-schema: 2.0.0
-title: Out-String
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out String
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113368
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Out-String
 ## SYNOPSIS
@@ -30,7 +31,7 @@ This cmdlet lets you search and manipulate string output as you would in traditi
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-content C:\test1\testfile2.txt | out-string
+PS C:\> get-content C:\test1\testfile2.txt | out-string
 ```
 
 This command sends the content of the Testfile2.txt file to the console as a single string.
@@ -39,16 +40,16 @@ The pipeline operator (|) sends the content to **Out-String**, which sends the c
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
 The first command uses the Get-Culture cmdlet to get the regional settings. The pipeline operator (|) sends the result to the Select-Object cmdlet, which selects all properties (*) of the culture object that **Get-Culture** returned. The command then stores the results in the $c variable.
-PS C:\>$c = Get-Culture | Select-Object *
+PS C:\> $c = Get-Culture | Select-Object *
 
 The second command uses the **Out-String** cmdlet to convert the **CultureInfo** object to a series of strings (one string for each property). It uses the **InputObject** parameter to pass the $c variable to **Out-String**. The **Width** parameter is set to 100 characters per line to prevent truncation.
-PS C:\>Out-String -InputObject $c -Width 100
+PS C:\> Out-String -InputObject $c -Width 100
 ```
 
 These commands get the regional settings for the current user and convert the data to strings.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-alias | out-string -stream | select-string "Get-Command"
+PS C:\> get-alias | out-string -stream | select-string "Get-Command"
 ```
 
 This example demonstrates the difference between working with objects and working with strings.

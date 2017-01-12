@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: ISE-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=225298
-schema: 2.0.0
-title: New-IseSnippet
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New IseSnippet
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=225298
+external help file:   ISE-help.xml
 ---
+
 
 # New-IseSnippet
 ## SYNOPSIS
@@ -44,7 +45,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
+PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS             
     .DESCRIPTION            
     .PARAMETER  <Parameter-Name>
@@ -59,7 +60,7 @@ This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE.
 It creates a file named "Comment-BasedHelp.snippets.ps1xml" in the user's Snippets directory ($home\Documents\WindowsPowerShell\Snippets).
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$m = @'
+PS C:\> $m = @'
 Param
 (
   [parameter(Mandatory=$true)]
@@ -68,7 +69,7 @@ Param
 )
 '@
 
-PS C:\>New-ISESnippet -Text $m -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Kim Akers, Fabrikam Corp." -Force
+PS C:\> New-ISESnippet -Text $m -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Kim Akers, Fabrikam Corp." -Force
 ```
 
 These commands create a Mandatory snippet for Windows PowerShell ISE.
@@ -77,7 +78,7 @@ The second command uses the **New-ISESnippet** cmdlet to create the snippet.
 The command uses the **Force** parameter to overwrite a previous snippet with the same name.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml -Destination \\Server\Share
+PS C:\> Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml -Destination \\Server\Share
 ```
 
 This command uses the Copy-Item cmdlet to copy the Mandatory snippet from the folder where **New-ISESnippet** places it to the Server\Share file share.

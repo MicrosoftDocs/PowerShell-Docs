@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821804
-schema: 2.0.0
-title: Get-TraceSource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get TraceSource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821804
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-TraceSource
 
@@ -36,14 +37,14 @@ The tracing cmdlets were designed for Windows PowerShell developers, but they ar
 
 ### Example 1: Get trace sources by name
 ```
-PS C:\>Get-TraceSource -Name "*provider*"
+PS C:\> Get-TraceSource -Name "*provider*"
 ```
 
 This command gets all of the trace sources that have names that include provider.
 
 ### Example 2: Get all trace sources
 ```
-PS C:\>Get-TraceSource
+PS C:\> Get-TraceSource
 ```
 
 This command gets all of the Windows PowerShell components that can be traced.

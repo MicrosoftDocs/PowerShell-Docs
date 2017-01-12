@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821645
-schema: 2.0.0
-title: Test-ComputerSecureChannel
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test ComputerSecureChannel
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821645
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Test-ComputerSecureChannel
 
@@ -40,7 +41,7 @@ Both NetDom and **Test-ComputerSecureChannel** use the **NetLogon** service to p
 
 ### Example 1: Test a channel between the local computer and its domain
 ```
-PS C:\>Test-ComputerSecureChannel
+PS C:\> Test-ComputerSecureChannel
 True
 ```
 
@@ -48,7 +49,7 @@ This command tests the channel between the local computer and the domain to whic
 
 ### Example 2: Test a channel between the local computer and a domain controller
 ```
-PS C:\>Test-ComputerSecureChannel -Server "DCName.fabrikam.com"
+PS C:\> Test-ComputerSecureChannel -Server "DCName.fabrikam.com"
 True
 ```
 
@@ -56,7 +57,7 @@ This command specifies a preferred domain controller for the test.
 
 ### Example 3: Reset the channel between the local computer and its domain
 ```
-PS C:\>Test-ComputerSecureChannel -Repair
+PS C:\> Test-ComputerSecureChannel -Repair
 True
 ```
 
@@ -64,7 +65,7 @@ This command resets the channel between the local computer and its domain.
 
 ### Example 4: Display detailed information about the test
 ```
-PS C:\>Test-ComputerSecureChannel -verbose
+PS C:\> Test-ComputerSecureChannel -verbose
 VERBOSE: Performing operation "Test-ComputerSecureChannel" on Target "SERVER01".
 True
 VERBOSE: "The secure channel between 'SERVER01' and 'net.fabrikam.com' is alive and working correctly."
@@ -75,7 +76,7 @@ For more information about *Verbose*, see about_CommonParameters.
 
 ### Example 5: Test a connection before you run a script
 ```
-PS C:\>Set-Alias tcsc Test-ComputerSecureChannel
+PS C:\> Set-Alias tcsc Test-ComputerSecureChannel
 if (!(tcsc))
 {Write-Host "Connection failed. Reconnect and retry."}
 else { &(.\Get-Servers.ps1) }

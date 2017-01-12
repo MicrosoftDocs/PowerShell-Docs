@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821522
-schema: 2.0.0
-title: Test-PSSessionConfigurationFile
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test PSSessionConfigurationFile
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821522
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Test-PSSessionConfigurationFile
 
@@ -41,7 +42,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Test a session configuration file
 ```
-PS C:\>Test-PSSessionConfigurationFile -Path "FullLanguage.pssc"
+PS C:\> Test-PSSessionConfigurationFile -Path "FullLanguage.pssc"
 True
 ```
 
@@ -49,7 +50,7 @@ This command uses the **Test-PSSessionConfigurationFile** cmdlet to test a new s
 
 ### Example 2: Test the session configuration file of a session configuration
 ```
-PS C:\>Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name Restricted).ConfigFilePath
+PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name Restricted).ConfigFilePath
 ```
 
 This command tests the session configuration file that is being used to in the Restricted session configuration.
@@ -58,7 +59,7 @@ The path of the session configuration file is stored in the value of the **Confi
 
 ### Example 3: Test all session configuration files
 ```
-PS C:\>function Test-AllConfigFiles
+PS C:\> function Test-AllConfigFiles
 {
     Get-PSSessionConfiguration | ForEach-Object { if ($_.ConfigFilePath)
     {$_.ConfigFilePath; Test-PSSessionConfigurationFile -Verbose `

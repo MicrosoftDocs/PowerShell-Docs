@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113319
-schema: 2.0.0
-title: Get-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113319
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-Item
 ## SYNOPSIS
@@ -39,7 +40,7 @@ The Get-Item cmdlet is used by Windows PowerShell providers to enable you to nav
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-item .
+PS C:\> get-item .
 
 Directory: C:\
 Mode                LastWriteTime     Length Name
@@ -51,7 +52,7 @@ This command gets the current directory.
 The dot (.) represents the item at the current location (not its contents).
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-item *
+PS C:\> get-item *
 
 Directory: C:\ps-test
 Mode                LastWriteTime     Length Name
@@ -68,14 +69,14 @@ This command gets all the items in the current directory.
 The wildcard character (*) represents all the contents of the current item.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-item C:\
+PS C:\> get-item C:\
 ```
 
 This command gets the current directory of the C: drive.
 The object that is retrieved represents only the directory, not its contents.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-item C:\*
+PS C:\> get-item C:\*
 ```
 
 This command gets the items in the C: drive.
@@ -85,7 +86,7 @@ In Windows PowerShell, use a single asterisk (*) to get contents, instead of the
 The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>(get-item C:\Windows).LastAccessTime
+PS C:\> (get-item C:\Windows).LastAccessTime
 ```
 
 This command gets the LastAccessTime property of the C:\Windows directory.
@@ -93,14 +94,14 @@ LastAccessTime is just one property of file system directories.
 To see all of the properties of a directory, type "(Get-Item \<directory-name\>) | Get-Member".
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
+PS C:\> get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
 ```
 
 This command shows the contents of the Microsoft.PowerShell registry key.
 You can use Get-Item with the Windows PowerShell Registry provider to get registry keys and subkeys, but you must use Get-ItemProperty to get the registry values and data.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-item c:\Windows\*.* -exclude w*
+PS C:\> get-item c:\Windows\*.* -exclude w*
 ```
 
 This command gets items in the Windows directory with names that include a dot (.), but do not begin with w*.

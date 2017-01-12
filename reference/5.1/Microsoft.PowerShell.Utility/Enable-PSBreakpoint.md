@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821764
-schema: 2.0.0
-title: Enable-PSBreakpoint
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821764
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Enable-PSBreakpoint
 
@@ -46,7 +47,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### Example 1: Enable all breakpoints
 ```
-PS C:\>Get-PSBreakpoint | Enable-PSBreakpoint
+PS C:\> Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 This command enables all breakpoints in the current console.
@@ -54,14 +55,14 @@ You can abbreviate the command as `gbp | ebp`.
 
 ### Example 2: Enable breakpoints by ID
 ```
-PS C:\>Enable-PSBreakpoint -Id 0, 1, 5
+PS C:\> Enable-PSBreakpoint -Id 0, 1, 5
 ```
 
 This command enables breakpoints with breakpoint IDs 0, 1, and 5.
 
 ### Example 3: Enable a disabled breakpoint
 ```
-PS C:\>$B = Set-PSBreakpoint -Script "sample.ps1" -Variable Name
+PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable Name
 PS C:\> $B | Disable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
@@ -70,7 +71,7 @@ Enabled    : False
 HitCount   : 0
 Id         : 0
 Script     : C:\ps-test\sample.ps1
-ScriptName : C:\ps-test\sample.ps1 PS C:\>$B | Enable-PSBreakpoint -PassThru
+ScriptName : C:\ps-test\sample.ps1 PS C:\> $B | Enable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
 Action     : 
@@ -98,7 +99,7 @@ The results are shown in the following sample output.
 
 ### Example 4: Enable breakpoints using a variable
 ```
-PS C:\>$B = Get-PSBreakpoint -Id 3, 5
+PS C:\> $B = Get-PSBreakpoint -Id 3, 5
 PS C:\> Enable-PSBreakpoint -Breakpoint $B
 ```
 

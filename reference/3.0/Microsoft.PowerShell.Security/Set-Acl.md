@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113389
-schema: 2.0.0
-title: Set-Acl
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Acl
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113389
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
 ---
+
 
 # Set-Acl
 ## SYNOPSIS
@@ -49,8 +50,8 @@ It uses the value of the **AclObject** parameter as a model and changes the valu
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$DogACL = Get-Acl C:\Dog.txt
-PS C:\>Set-Acl -Path C:\Cat.txt -AclObject $DogACL
+PS C:\> $DogACL = Get-Acl C:\Dog.txt
+PS C:\> Set-Acl -Path C:\Cat.txt -AclObject $DogACL
 ```
 
 These commands copy the values from the security descriptor of the Dog.txt file to the security descriptor of the Cat.txt file.
@@ -65,7 +66,7 @@ The value of the **Path** parameter is the path to the Cat.txt file.
 The value of the **AclObject** parameter is the model ACL, in this case, the ACL of Dog.txt as saved in the $DogACL variable.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
+PS C:\> Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
 ```
 
 This command is almost the same as the command in the previous example, except that it uses a pipeline operator to send the security descriptor from a Get-Aclcommand to a **Set-Acl** command.
@@ -77,8 +78,8 @@ The second command uses **Set-Acl** to apply the security descriptor of  Dog.txt
 When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$NewAcl = Get-Acl File0.txt
-PS C:\>Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject $NewAcl
+PS C:\> $NewAcl = Get-Acl File0.txt
+PS C:\> Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject $NewAcl
 ```
 
 These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.

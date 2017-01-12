@@ -1,26 +1,21 @@
 ---
-title: about_PSSnapins
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_PSSnapins
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PSSnapins
+ms.technology:  powershell
 ---
+
 # About PSSnapins
 ## about_PSSnapins
 
 
 ## SHORT DESCRIPTION
-Describes  Windows PowerShell� snap-ins and shows how to use and manage them.
+Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 
 
 ## LONG DESCRIPTION

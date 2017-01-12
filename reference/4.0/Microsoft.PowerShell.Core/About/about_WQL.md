@@ -1,20 +1,15 @@
 ---
-title: about_WQL
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_WQL
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_WQL
+ms.technology:  powershell
 ---
+
 # About WQL
 ## about_WQL
 
@@ -123,14 +118,14 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 You can also save the WQL statement in a variable
 and then use the variable as the value of the Query
 parameter, as shown in the following command.
 
 PS C:> $query = "Select * from Win32_Bios"
-PS C:> Get-WmiObject –Query $query
+PS C:> Get-WmiObject -Query $query
 
 You can use either format with any WQL statement.
 The following command uses the query in the
@@ -167,7 +162,7 @@ example, the following command also gets the values
 of the Name and Version properties of instances of
 the Win32_Bios WMI class.
 
-PS C:> Get-WmiObject –Class Win32_Bios -Property Name, Version
+PS C:> Get-WmiObject -Class Win32_Bios -Property Name, Version
 
 # __GENUS          : 2
 
@@ -218,7 +213,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 Get-CimInstance returns a CimInstance object, instead of
 the ManagementObject that Get-WmiObject returns, but
@@ -263,7 +258,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 NOTE: Only selected object properties are displayed
 by default. These properties are defined in the
@@ -281,7 +276,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 When you use the [wmisearcher] type accelerator, it
 changes the query string into a ManagementObjectSearcher
@@ -742,4 +737,5 @@ about_Escape_Characters
 about_Quoting_Rules
 about_WMI
 about_WMI_Cmdlets
+
 

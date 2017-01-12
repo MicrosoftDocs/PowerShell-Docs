@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=821449
-schema: 2.0.0
-title: Get-PSReadlineKeyHandler
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSReadlineKeyHandler
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=821449
+external help file:   Microsoft.PowerShell.PSReadLine.dll-Help.xml
 ---
+
 
 # Get-PSReadlineKeyHandler
 
@@ -34,7 +35,7 @@ If you specify *Unbound*, but not *Bound*, the cmdlet returns only unbound keys.
 
 ### Example 1: Get all key mappings
 ```
-PS C:\>Get-PSReadlineKeyHandler
+PS C:\> Get-PSReadlineKeyHandler
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 
@@ -71,7 +72,7 @@ This command returns all key mappings, bound and unbound.
 
 ### Example 2: Get bound keys
 ```
-PS C:\>Get-PSReadlineKeyHandler -Bound
+PS C:\> Get-PSReadlineKeyHandler -Bound
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 

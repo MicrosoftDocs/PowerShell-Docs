@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293922
-schema: 2.0.0
-title: Stop-Process
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293922
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Stop-Process
 
@@ -47,7 +48,7 @@ Also, you are prompted for confirmation unless you use the Force parameter.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>stop-process -name notepad
+PS C:\> stop-process -name notepad
 ```
 
 This command stops all instances of the Notepad process on the computer.
@@ -56,7 +57,7 @@ If you were to use the ID parameter to stop the same processes, you would have t
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>stop-process -id 3952 -confirm -passthru
+PS C:\> stop-process -id 3952 -confirm -passthru
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Stop-Process" on Target "notepad (3952)".
@@ -76,10 +77,10 @@ Without this parameter, there would be no display after a Stop-Process command.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>calc
-PS C:\>$p = get-process calc
-PS C:\>stop-process -inputobject $p
-PS C:\>get-process | where-object {$_.HasExited}
+PS C:\> calc
+PS C:\> $p = get-process calc
+PS C:\> stop-process -inputobject $p
+PS C:\> get-process | where-object {$_.HasExited}
 ```
 
 This series of commands starts and stops the Calc process and then detects processes that have stopped.
@@ -97,19 +98,19 @@ To find all the properties, type "get-process | get-member".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-process lsass | stop-process
+PS C:\> get-process lsass | stop-process
 
 Stop-Process : Cannot stop process 'lsass (596)' because of the following error: Access is denied
 At line:1 char:34
 + get-process lsass  | stop-process <<<<
 
-[ADMIN]: PS C:\>get-process lsass | stop-process
+[ADMIN]: PS C:\> get-process lsass | stop-process
 
 Warning!
 Are you sure you want to perform this action?
 Performing operation 'Stop-Process' on Target 'lsass(596)'
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
-[ADMIN]: PS C:\>get-process lsass | stop-process -force
+[ADMIN]: PS C:\> get-process lsass | stop-process -force
 [ADMIN]: PS C:\>
 ```
 

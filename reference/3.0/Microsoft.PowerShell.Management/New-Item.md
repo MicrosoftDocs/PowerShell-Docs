@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113353
-schema: 2.0.0
-title: New-Item
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113353
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # New-Item
 ## SYNOPSIS
@@ -42,7 +43,7 @@ For example, when creating a new file, New-Item can add initial content to the f
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-item -path . -name testfile1.txt -itemtype "file" -value "This is a text string."
+PS C:\> new-item -path . -name testfile1.txt -itemtype "file" -value "This is a text string."
 ```
 
 This command creates a text file named testfile1.txt in the current directory.
@@ -50,14 +51,14 @@ The dot (.) in the value of the Path parameter indicates the current directory.
 The quoted text that follows the Value parameter is added to the file as content.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>new-item -path c:\ -name logfiles -itemtype directory
+PS C:\> new-item -path c:\ -name logfiles -itemtype directory
 ```
 
 This command creates a directory named Logfiles in the C: drive.
 The ItemType parameter specifies that the new item is a directory, not a file or other file system object.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>new-item -path $profile -itemtype file -force
+PS C:\> new-item -path $profile -itemtype file -force
 ```
 
 This command creates a Windows PowerShell profile in the path that is specified by the $profile variable.
@@ -75,7 +76,7 @@ After you use this command to create a profile, you can enter aliases, functions
 For more information, see about_Automatic_Variables and about_Profiles.1
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>new-item -itemtype directory -path c:\ps-test\scripts
+PS C:\> new-item -itemtype directory -path c:\ps-test\scripts
 ```
 
 This command creates a new Scripts directory in the C:\PS-Test directory.
@@ -84,7 +85,7 @@ The name of the new directory item, Scripts, is included in the value of the Pat
 As indicated by the syntax, either command form is valid.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>new-item -itemtype file -path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
+PS C:\> new-item -itemtype file -path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
 
 This command uses the New-Item cmdlet to create files in two different directories.

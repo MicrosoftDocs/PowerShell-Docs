@@ -1,20 +1,15 @@
 ---
-title: about_Regular_Expressions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Regular_Expressions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Regular_Expressions
+ms.technology:  powershell
 ---
+
 # About Regular Expressions
 ## about_Regular_Expressions
 
@@ -39,7 +34,7 @@ characters in the brackets.
 
 [range]  Matches at least one of the      "and" -match "[a-e]nd"
 characters within the range.
-The use of a hyphen (–) allows
+The use of a hyphen (-) allows
 you to specify an adjacent
 character.
 
@@ -151,4 +146,5 @@ at http://go.microsoft.com/fwlink/?LinkId=133231.
 
 about_Comparison_Operators
 about_Operators
+
 

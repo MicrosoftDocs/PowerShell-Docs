@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821879
-schema: 2.0.0
-title: Write-Progress
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Progress
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821879
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Progress
 
@@ -34,7 +35,7 @@ You can select the indicators that the bar reflects and the text that appears ab
 
 ### Example 1: Display the progress of a For loop
 ```
-PS C:\>for ($I = 1; $I -le 100; $I++ )
+PS C:\> for ($I = 1; $I -le 100; $I++ )
 {Write-Progress -Activity "Search in Progress" -Status "$I% Complete:" -PercentComplete $I;}
 ```
 
@@ -43,7 +44,7 @@ The **Write-Progress** command includes a status bar heading ("activity"), a sta
 
 ### Example 2: Display the progress of nested For loops
 ```
-PS C:\>for($I = 1; $I -lt 101; $I++ )
+PS C:\> for($I = 1; $I -lt 101; $I++ )
 {Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop; `
 PS C:\> for($j = 1; $j -lt 101; $j++ )
 {Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop} }
@@ -64,7 +65,7 @@ Without the *Id* parameter, the progress bars would be superimposed on each othe
 
 ### Example 3: Display the progress while searching for a string
 ```
-PS C:\>$Events = Get-EventLog -logname system
+PS C:\> $Events = Get-EventLog -logname system
 PS C:\> $Events | foreach-object -begin {clear-host;$I=0;$out=""} `
 -process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $I = $I+1;
 Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete ($I/$Events.count*100)} `

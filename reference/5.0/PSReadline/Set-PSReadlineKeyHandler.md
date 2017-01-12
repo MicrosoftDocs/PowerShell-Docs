@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=821452
-schema: 2.0.0
-title: Set-PSReadlineKeyHandler
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSReadlineKeyHandler
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=821452
+external help file:   Microsoft.PowerShell.PSReadLine.dll-Help.xml
 ---
+
 
 # Set-PSReadlineKeyHandler
 
@@ -40,14 +41,14 @@ Typically, you might modify the command line in a new way, but because the handl
 
 ### Example 1: Bind the arrow key to a function
 ```
-PS C:\>Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
+PS C:\> Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 ```
 
 This command binds the up arrow key to the function HistorySearchBackward, which uses the currently-entered command line as the start of the search string when it is searching through command history.
 
 ### Example 2: Bind a key to a script block
 ```
-PS C:\>Set-PSReadlineKeyHandler -Chord Shift+Ctrl+B -ScriptBlock { 
+PS C:\> Set-PSReadlineKeyHandler -Chord Shift+Ctrl+B -ScriptBlock { 
   [PSConsoleUtilities.PSConsoleReadLine]::RevertLine() 
   [PSConsoleUtilities.PSConsoleReadLine]::Insert('build')
       [PSConsoleUtilities.PSConsoleReadLine]::AcceptLine()

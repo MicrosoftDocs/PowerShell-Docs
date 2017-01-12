@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821834
-schema: 2.0.0
-title: New-Guid
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Guid
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821834
+external help file:   Microsoft.PowerShell.Utility-help.xml
 ---
+
 
 # New-Guid
 
@@ -32,7 +33,7 @@ If you need a unique ID in a script, you can create a GUID, as needed.
 
 ### Example 1: Create a GUID
 ```
-PS C:\>New-Guid
+PS C:\> New-Guid
 Guid
 ----
 0352cf0f-2e7a-4aee-801d-7f27f8344c77

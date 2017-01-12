@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293895
-schema: 2.0.0
-title: Remove-EventLog
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293895
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Remove-EventLog
 
@@ -43,14 +44,14 @@ CAUTION:  This cmdlet can delete operating system event logs, which might result
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-eventlog -logname MyLog
+PS C:\> remove-eventlog -logname MyLog
 ```
 
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>remove-eventlog -logname MyLog, TestLog -computername Server01, Server02, localhost
+PS C:\> remove-eventlog -logname MyLog, TestLog -computername Server01, Server02, localhost
 ```
 
 This command deletes the MyLog and TestLog event logs from the local computer ("localhost") and the Server01 and Server02 remote computers.
@@ -58,7 +59,7 @@ The command also unregisters the event sources for these logs.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-eventlog -source MyApp
+PS C:\> remove-eventlog -source MyApp
 ```
 
 This command deletes the MyApp event source from the logs on the local computer.
@@ -66,7 +67,7 @@ When the command completes, the MyApp program cannot write to any event logs.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-eventlog -list
+PS C:\> get-eventlog -list
 
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
@@ -79,8 +80,8 @@ Max(K) Retain OverflowAction        Entries Log
 15,168      0 OverwriteAsNeeded      27,592 System
 15,360      0 OverwriteAsNeeded      18,355 Windows PowerShell
 15,168      7 OverwriteAsNeeded          12 ZapLog
-PS C:\>remove-eventlog -logname ZapLog
-PS C:\>get-eventlog -list
+PS C:\> remove-eventlog -logname ZapLog
+PS C:\> get-eventlog -list
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
 15,168      0 OverwriteAsNeeded      22,923 Application
@@ -104,11 +105,11 @@ The ZapLog event log no longer appears in the list.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-wmiobject win32_nteventlogfile -filter "logfilename='TestLog'" | foreach {$_.sources}
+PS C:\> get-wmiobject win32_nteventlogfile -filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp
 TestApp
-PS C:\>remove-eventlog -source MyApp
-PS C:\>get-wmiobject win32_nteventlogfile -filter "logfilename='TestLog'"} | foreach {$_.sources}
+PS C:\> remove-eventlog -source MyApp
+PS C:\> get-wmiobject win32_nteventlogfile -filter "logfilename='TestLog'"} | foreach {$_.sources}
 TestApp
 ```
 

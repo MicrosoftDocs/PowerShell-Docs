@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289588
-schema: 2.0.0
-title: Get-PSSession
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289588
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Get-PSSession
 
@@ -86,7 +87,7 @@ For more information about Windows PowerShell sessions, see about_PSSessions (ht
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-PSSession
+PS C:\> Get-PSSession
 ```
 
 This command gets all of the PSSessions that were created in the current session.
@@ -94,7 +95,7 @@ It does not get PSSessions that were created in other sessions or on other compu
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-PSSession -ComputerName localhost
+PS C:\> Get-PSSession -ComputerName localhost
 ```
 
 This command gets the PSSessions that are connected to the local computer.
@@ -104,7 +105,7 @@ The command returns all of the sessions on the local computer, even if they were
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-PSSession -ComputerName Server02
+PS C:\> Get-PSSession -ComputerName Server02
  Id Name            ComputerName    State         ConfigurationName     Availability
  -- ----            ------------    -----         -----------------     ------------
   2 Session3        Server02       Disconnected  ITTasks                       Busy
@@ -122,8 +123,8 @@ The "ScheduledJobs" session, which is Opened and Available, was created in the c
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>New-PSSession -ComputerName Server01, Server02, Server03
-PS C:\>$s1, $s2, $s3 = Get-PSSession
+PS C:\> New-PSSession -ComputerName Server01, Server02, Server03
+PS C:\> $s1, $s2, $s3 = Get-PSSession
 ```
 
 This example shows how to save the results of a Get-PSSession command in multiple variables.
@@ -139,9 +140,9 @@ If there are more variables than objects, the extra variables are not used.
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-PSSession | Format-Table -Property ComputerName, InstanceID
-PS C:\>$s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
-PS C:\>Remove-PSSession -Session $s
+PS C:\> Get-PSSession | Format-Table -Property ComputerName, InstanceID
+PS C:\> $s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
+PS C:\> Remove-PSSession -Session $s
 ```
 
 This example shows how to get a PSSession by using its instance ID, and then to delete the PSSession.
@@ -157,16 +158,16 @@ The third command uses the Remove-PSSession cmdlet to delete the PSSession in th
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first command gets sessions on the Server02 and Server12 remote computers that have names that begin with "BackupJob" and use the ITTasks session configuration.The command uses the **Name** parameter to specify the name pattern and the **ConfigurationName** parameter to specify the session configuration. The value of the **SessionOption** parameter is a hash table that sets the value of the **OperationTimeout** to 240000 milliseconds (4 minutes). This setting gives the command more time to complete.The **ConfigurationName** and **SessionOption** parameters are used to configure the temporary sessions in which the **Get-PSSession** cmdlet runs on each computer.The output shows that the command returns the BackupJob04 session. The session is disconnected and the Availability is None, which indicates that it is not in use.
-PS C:\>Get-PSSession -ComputerName Server02, Server12 -Name BackupJob* -ConfigurationName ITTasks -SessionOption @{OperationTimeout=240000}
+PS C:\> Get-PSSession -ComputerName Server02, Server12 -Name BackupJob* -ConfigurationName ITTasks -SessionOption @{OperationTimeout=240000}
  Id Name            ComputerName    State         ConfigurationName     Availability
  -- ----            ------------    -----         -----------------     ------------
   3 BackupJob04     Server02        Disconnected        ITTasks                  None
 
 The second command uses the **Get-PSSession** cmdlet to get to the BackupJob04 session and the Connect-PSSession cmdlet to connect to the session. The command saves the session in the $s variable.
-PS C:\>$s = Get-PSSession -ComputerName Server02 -Name BackupJob04 -ConfigurationName ITTasks | Connect-PSSession
+PS C:\> $s = Get-PSSession -ComputerName Server02 -Name BackupJob04 -ConfigurationName ITTasks | Connect-PSSession
 
 The third command gets the session in the $s variable. The output shows that the **Connect-PSSession** command was successful. The session is in the **Opened** state and is available for use.
-PS C:\>$s
+PS C:\> $s
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  5 BackupJob04     Server02        Opened        ITTasks                  Available
@@ -177,7 +178,7 @@ You can use a command like this one to find a session in which a colleague start
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-PSSession -ID 2
+PS C:\> Get-PSSession -ID 2
 ```
 
 This command gets the PSSession with ID 2.

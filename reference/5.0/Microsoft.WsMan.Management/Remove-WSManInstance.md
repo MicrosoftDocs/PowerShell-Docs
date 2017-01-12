@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821735
-schema: 2.0.0
-title: Remove-WSManInstance
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove WSManInstance
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821735
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
 ---
+
 
 # Remove-WSManInstance
 
@@ -44,7 +45,7 @@ This cmdlet uses the WinRM connection/transport layer to delete the management r
 
 ### Example 1: Delete a listener
 ```
-PS C:\>Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
+PS C:\> Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
 ```
 
 This command deletes the WS-Management HTTP listener on a computer.

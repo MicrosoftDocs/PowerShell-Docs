@@ -1,14 +1,16 @@
 ---
-title:  Working with Files and Folders
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Working with Files and Folders
+ms.technology:  powershell
+ms.assetid:    c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
+
 
 # Working with Files and Folders
 Navigating through Windows PowerShell drives and manipulating the items on them is similar to manipulating files and folders on Windows physical disk drives. We will discuss how to deal with specific file and folder manipulation tasks in this section.

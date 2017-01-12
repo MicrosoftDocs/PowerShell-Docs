@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822520
-schema: 2.0.0
-title: Rename-LocalGroup
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Rename LocalGroup
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822520
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
+
 
 # Rename-LocalGroup
 
@@ -42,7 +43,7 @@ The **Rename-LocalGroup** cmdlet renames a local security group.
 
 ### Example 1: Change the name of a group
 ```
-PS C:\>Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
+PS C:\> Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
 ```
 
 This command renames a security group named SecurityGroup.

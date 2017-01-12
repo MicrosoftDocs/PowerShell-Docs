@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821643
-schema: 2.0.0
-title: Stop-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821643
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Stop-Service
 
@@ -46,14 +47,14 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Stop a service on the local computer
 ```
-PS C:\>Stop-Service -Name "sysmonlog"
+PS C:\> Stop-Service -Name "sysmonlog"
 ```
 
 This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.
 
 ### Example 2: Stop a service by using the display name
 ```
-PS C:\>Get-Service -DisplayName "telnet" | Stop-Service
+PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
 This command stops the Telnet service on the local computer.
@@ -62,7 +63,7 @@ The pipeline operator (|) pipes the object to **Stop-Service**, which stops the 
 
 ### Example 3: Stop a service that has dependent services
 ```
-PS C:\>Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
+PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 

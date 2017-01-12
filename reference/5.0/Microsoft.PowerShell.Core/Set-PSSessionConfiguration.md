@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821516
-schema: 2.0.0
-title: Set-PSSessionConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSSessionConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821516
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Set-PSSessionConfiguration
 
@@ -78,7 +79,7 @@ For more information about the WSMan Provider, type `Get-Help WSMan`.
 
 ### Example 1: Change the thread apartment state
 ```
-PS C:\>Set-PSSessionConfiguration -Name "MaintenanceShell" -ThreadApartmentState STA
+PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -ThreadApartmentState STA
 ```
 
 This command changes the thread apartment state in the MaintenanceShell configuration to STA.
@@ -87,18 +88,18 @@ The change is effective when you restart the **WinRM** service.
 ### Example 2: Create and change a session configuration
 ```
 The first command uses the **Register-PSSessionConfiguration** cmdlet to create the AdminShell configuration.
-PS C:\>Register-PSSessionConfiguration -Name "AdminShell" -AssemblyName "C:\Shells\AdminShell.dll" -ConfigurationTypeName "AdminClass"
+PS C:\> Register-PSSessionConfiguration -Name "AdminShell" -AssemblyName "C:\Shells\AdminShell.dll" -ConfigurationTypeName "AdminClass"
 
 The second command uses the **Set-PSSessionConfiguration** cmdlet to add the AdminConfig.ps1 script to the configuration. The change is effective when you restart **WinRM**.
-PS C:\>Set-PSSessionConfiguration -Name "AdminShell" -StartupScript "AdminConfig.ps1"
+PS C:\> Set-PSSessionConfiguration -Name "AdminShell" -StartupScript "AdminConfig.ps1"
 
 The third command removes the AdminConfig.ps1 script from the configuration. It uses the **Set-PSSessionConfiguration** cmdlet with a value of $Null for the *StartupScript* parameter.
-PS C:\>Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
+PS C:\> Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
 ```
 
 ### Example 3: Display results
 ```
-PS C:\>Set-PSSessionConfiguration -Name "IncObj" -MaximumReceivedObjectSizeMB 20
+PS C:\> Set-PSSessionConfiguration -Name "IncObj" -MaximumReceivedObjectSizeMB 20
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\IncObj\InitializationParameters
 ParamName                       ParamValue
 ---------                       ----------
@@ -118,7 +119,7 @@ The change is not effective until the **WinRM** service is restarted.
 ### Example 4: Display results in different ways
 ```
 The first command uses the **Set-PSSessionConfiguration** cmdlet to change the startup script in the MaintenanceShell session configuration to Maintenance.ps1. The output of this command shows the change and prompts you to restart the **WinRM** service. The response is "y" (yes).
-PS C:\>Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
+PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell\InitializationParameters
 
 ParamName            ParamValue
@@ -132,7 +133,7 @@ the command "restart-service winrm"?
 
 
 The second command uses the Get-PSSessionConfiguration cmdlet to get the MaintenanceShell session configuration. The command uses a pipeline operator (|) to send the results of the command to the Format-List cmdlet, which displays all of the properties of the session configuration object in a list.
-PS C:\>Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
+PS C:\> Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
 xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
 Filename         : %windir%\system32\pwrshplugin.dll
@@ -148,7 +149,7 @@ Capability       : {Shell}
 Permission       :
 
 The third command uses the WSMan provider to view the initialization parameters for the MaintenanceShell configuration. The command uses the Get-ChildItem cmdlet, also known as dir, to get the child items in the **InitializationParameters** node for the MaintenanceShell plug-in.For more information about the WSMan provider, type [CODE_Snippit]Get-Help wsman[CODE_Snippit].
-PS C:\>dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
+PS C:\> dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
 ParamName     ParamValue
 ---------     ----------
 PSVersion     2.0

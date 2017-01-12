@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289801
-schema: 2.0.0
-title: Clear-ItemProperty
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289801
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Clear-ItemProperty
 
@@ -42,7 +43,7 @@ You can use this cmdlet to delete the data from a registry value.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-itemproperty -path HKLM:\Software\MyCompany\MyApp -name Options
+PS C:\> clear-itemproperty -path HKLM:\Software\MyCompany\MyApp -name Options
 ```
 
 This command deletes the data in the Options registry value in the MyApp subkey of HKEY_LOCAL_MACHINE\Software\MyCompany.

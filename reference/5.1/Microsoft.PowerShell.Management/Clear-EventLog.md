@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821568
-schema: 2.0.0
-title: Clear-EventLog
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821568
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Clear-EventLog
 
@@ -35,28 +36,28 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### Example 1: Clear specific event log types from the local computer
 ```
-PS C:\>Clear-EventLog "Windows PowerShell"
+PS C:\> Clear-EventLog "Windows PowerShell"
 ```
 
 This command clears the entries from the Windows PowerShell event log on the local computer.
 
 ### Example 2: Clear specific multiple log types from the local and remote computers
 ```
-PS C:\>Clear-EventLog -LogName "ODiag", "OSession" -ComputerName "localhost", "Server02"
+PS C:\> Clear-EventLog -LogName "ODiag", "OSession" -ComputerName "localhost", "Server02"
 ```
 
 This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
 ### Example 3: Clear all logs on the specified computers then display the event log list
 ```
-PS C:\>function Clear-All-Event-Logs ($ComputerName="localhost")
+PS C:\> function Clear-All-Event-Logs ($ComputerName="localhost")
 {
    $Logs = Get-EventLog -ComputerName $ComputerName -List | ForEach {$_.Log}
    $Logs | ForEach {Clear-EventLog -Comp $ComputerName -Log $_ }
    Get-EventLog -ComputerName $ComputerName -List
 }
 
-PS C:\>Clear-All-Event-Logs -Comp "Server01"
+PS C:\> Clear-All-Event-Logs -Comp "Server01"
 
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---

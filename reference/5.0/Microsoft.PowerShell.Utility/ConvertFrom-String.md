@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description:
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822386
-schema: 2.0.0
-title: ConvertFrom-String
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertFrom String
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822386
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # ConvertFrom-String
 
@@ -55,7 +56,7 @@ The cmdlet also supports automatically-generated, example-driven parsing based o
 ### Example 1: Generate an object with default property names
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String
+PS C:\> "Hello World" | ConvertFrom-String
 
 P1    P2
 --    --
@@ -71,7 +72,7 @@ The results are P1="Hello" and P2="World".
 ### Example 1A: Get to know the generated object
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String | Get-Member
+PS C:\> "Hello World" | ConvertFrom-String | Get-Member
 
 
    TypeName: System.Management.Automation.PSCustomObject
@@ -95,7 +96,7 @@ both properties are of 'string' type, by default.
 ### Example 2: Generate an object with default property names using a delimiter
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String -Delimiter "ll"
+PS C:\> "Hello World" | ConvertFrom-String -Delimiter "ll"
 
 P1 P2
 -- --
@@ -110,7 +111,7 @@ This command generates an object with P1="He" and P2="o World" properties, by sp
 ### Example 3: Generate an object that contains two named properties
 
 ```
-PS C:\>"Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
+PS C:\> "Hello World" | ConvertFrom-String -PropertyNames FirstWord, SecondWord
 
 FirstWord SecondWord
 --------- ----------
@@ -422,3 +423,4 @@ For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
+

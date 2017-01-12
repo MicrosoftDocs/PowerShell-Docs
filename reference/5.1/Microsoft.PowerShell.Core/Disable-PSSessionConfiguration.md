@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821473
-schema: 2.0.0
-title: Disable-PSSessionConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable PSSessionConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821473
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Disable-PSSessionConfiguration
 
@@ -42,21 +43,21 @@ To disable all session configurations on the computer, use Disable-PSRemoting.
 
 ### Example 1: Disable the default configuration
 ```
-PS C:\>Disable-PSSessionConfiguration
+PS C:\> Disable-PSSessionConfiguration
 ```
 
 This command disables the Microsoft.PowerShell session configuration.
 
 ### Example 2: Disable all registered session configurations
 ```
-PS C:\>Disable-PSSessionConfiguration -Name *
+PS C:\> Disable-PSSessionConfiguration -Name *
 ```
 
 This command disables all registered session configurations on the computer.
 
 ### Example 3: Disable session configurations by name
 ```
-PS C:\>Disable-PSSessionConfiguration -Name Microsoft* -Force
+PS C:\> Disable-PSSessionConfiguration -Name Microsoft* -Force
 ```
 
 This command disables all session configurations that have names that begin with Microsoft.
@@ -64,7 +65,7 @@ The command uses the *Force* parameter to suppress all user prompts from the com
 
 ### Example 4: Disable session configurations by using the pipeline
 ```
-PS C:\>Get-PSSessionConfiguration -Name MaintenanceShell, AdminShell | Disable-PSSessionConfiguration
+PS C:\> Get-PSSessionConfiguration -Name MaintenanceShell, AdminShell | Disable-PSSessionConfiguration
 ```
 
 This command disables the MaintenanceShell and AdminShell session configurations.
@@ -74,7 +75,7 @@ The command uses a pipeline operator (|) to send the results of a Get-PSSessionC
 ### Example 5: Effects of disabling a session configuration
 ```
 The first command uses the **Get-PSSessionConfiguration** and Format-Table cmdlets to display only the **Name** and **Permission** properties of the session configuration objects. This table format makes it easier to see the values of the objects. The results show that members of the Administrators group are permitted to use the session configurations.
-PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                   Permission
 ----                   ----------
@@ -84,10 +85,10 @@ microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 
 
 The second command uses the **Disable-PSSessionConfiguration** cmdlet to disable the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
-PS C:\>Disable-PSSessionConfiguration -Name MaintenanceShell -Force
+PS C:\> Disable-PSSessionConfiguration -Name MaintenanceShell -Force
 
 The third command repeats the first command. The results show that you can still get the object that represents the MaintenanceShell session configuration even though everyone is denied access to it. The "AccessDenied" entry takes precedence over all other entries in the security descriptor.
-PS C:\>Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                   Permission
 ----                   ----------
@@ -97,7 +98,7 @@ microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 
 
 The fourth command uses the Set-PSSessionConfiguration cmdlet to increase the MaximumDataSizePerCommandMB setting on the MaintenanceShell session configuration to 60. The results show that the command was successful even though everyone is denied access to the configuration.
-PS C:\>Set-PSSessionConfiguration -Name MaintenanceShell -MaximumReceivedDataSizePerCommandMB 60
+PS C:\> Set-PSSessionConfiguration -Name MaintenanceShell -MaximumReceivedDataSizePerCommandMB 60
 
 ParamName            ParamValue
 ---------            ----------
@@ -108,7 +109,7 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 
 
 The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the *ConfigurationName* parameter to specify the MaintenanceShell configuration.The results show that the **New-PSSession** command fails because the user is denied access to the configuration. 
-PS C:\>New-PSSession -ComputerName localhost -ConfigurationName MaintenanceShell
+PS C:\> New-PSSession -ComputerName localhost -ConfigurationName MaintenanceShell
 [localhost] Connecting to remote server failed with the following error message : Access is denied. For more information, see the about_Remote_Troubl
 eshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException

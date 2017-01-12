@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821510
-schema: 2.0.0
-title: Remove-Module
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821510
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Remove-Module
 
@@ -47,21 +48,21 @@ It affects only the current Windows PowerShell session.
 
 ### Example 1: Remove a module
 ```
-PS C:\>Remove-Module -Name "BitsTransfer"
+PS C:\> Remove-Module -Name "BitsTransfer"
 ```
 
 This command removes the BitsTransfer module from the current session.
 
 ### Example 2: Remove all modules
 ```
-PS C:\>Get-Module | Remove-Module
+PS C:\> Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 
 ### Example 3: Remove modules by using the pipeline
 ```
-PS C:\>"FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
+PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
 VERBOSE: Performing operation "Remove-Module" on Target "Microsoft.BackgroundIntelligentTransfer.Management (Path: 'C:\Windows\assembly\GAC_MSIL\Microsoft.BackgroundIntelligentTransfer.Management\1.0.0.0__31bf3856ad364e35\Microsoft.BackgroundIntelligentTransfe
 r.Management.dll')".
@@ -90,7 +91,7 @@ The PSDiagnostics module includes a module script file (.psm1) that exports func
 
 ### Example 4: Remove a module by using ModuleInfo
 ```
-PS C:\>$a = Get-Module BitsTransfer
+PS C:\> $a = Get-Module BitsTransfer
 PS C:\> Remove-Module -ModuleInfo $a
 ```
 

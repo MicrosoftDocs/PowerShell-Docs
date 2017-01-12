@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821639
-schema: 2.0.0
-title: Start-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Start Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821639
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Start-Service
 
@@ -47,7 +48,7 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Start a service by using its name
 ```
-PS C:\>Start-Service -Name "eventlog"
+PS C:\> Start-Service -Name "eventlog"
 ```
 
 This command starts the EventLog service on the local computer.
@@ -55,7 +56,7 @@ It uses the *Name* parameter to identify the service by its service name.
 
 ### Example 2: Display information without starting a service
 ```
-PS C:\>Start-Service -DisplayName *remote* -WhatIf
+PS C:\> Start-Service -DisplayName *remote* -WhatIf
 ```
 
 This command tells what would occur if you started the services that have a display name that includes remote.
@@ -65,7 +66,7 @@ That parameter means that this command displays what would occur if you run the 
 
 ### Example 3: Start a service and record the action in a text file
 ```
-PS C:\>$s = Get-Service wmi
+PS C:\> $s = Get-Service wmi
 PS C:\> Start-Service -InputObject $s -PassThru | Format-List >> services.txt
 ```
 
@@ -82,16 +83,16 @@ The append redirection operator (\>\>) redirects the output to the services.txt 
 
 ### Example 4: Start a disabled service
 ```
-PS C:\>Start-Service tlntsvr
+PS C:\> Start-Service tlntsvr
 Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the    following error: Cannot start service TlntSvr on computer '.'.
 At line:1 char:14
-+ start-service  <<<< tlntsvr PS C:\>Get-WMIObject win32_service | Where-Object {$_.Name -eq "tlntsvr"}
++ start-service  <<<< tlntsvr PS C:\> Get-WMIObject win32_service | Where-Object {$_.Name -eq "tlntsvr"}
 ExitCode  : 0
 Name      : TlntSvr
 ProcessId : 0
 StartMode : Disabled
 State     : Stopped
-Status    : OK PS C:\>Set-Service tlntsvr -StartupType manual PS C:\>start-service tlntsvr
+Status    : OK PS C:\> Set-Service tlntsvr -StartupType manual PS C:\> start-service tlntsvr
 ```
 
 This series of commands shows how to start a service when the start type of the service is Disabled.

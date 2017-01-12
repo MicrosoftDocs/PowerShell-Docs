@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135217
-schema: 2.0.0
-title: Get-HotFix
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get HotFix
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135217
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-HotFix
 ## SYNOPSIS
@@ -35,20 +36,20 @@ The Get-Hotfix cmdlet gets hotfixes (also called updates) that have been install
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-hotfix
+PS C:\> get-hotfix
 ```
 
 This command gets all hotfixes on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-hotfix -description Security* -computername Server01, Server02 -cred Server01\admin01
+PS C:\> get-hotfix -description Security* -computername Server01, Server02 -cred Server01\admin01
 ```
 
 This command gets all hotfixes on the Server01 and Server02 computers that have a description that begins with "Security".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a = get-content servers.txt
-PS C:\>$a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing-kb953631.txt }}
+PS C:\> $a = get-content servers.txt
+PS C:\> $a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing-kb953631.txt }}
 ```
 
 The commands in this example create a text file listing the names of computers that are missing a security update.
@@ -58,7 +59,7 @@ The commands use the Get-Hotfix cmdlet to get the KB957095 security update on al
 If a computer does not have the update, the Add-Content cmdlet writes the computer name in the Missing-KB953631.txt file.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(get-hotfix | sort installedon)[-1]
+PS C:\> (get-hotfix | sort installedon)[-1]
 ```
 
 This command gets the most recent hotfix on the computer.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: ISE-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821535
-schema: 2.0.0
-title: Import-IseSnippet
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import IseSnippet
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821535
+external help file:   ISE-help.xml
 ---
+
 
 # Import-IseSnippet
 
@@ -53,7 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Import snippets from a directory
 ```
-PS C:\>Import-IseSnippet -Path "\\Server01\Public\Snippets" -Recurse
+PS C:\> Import-IseSnippet -Path "\\Server01\Public\Snippets" -Recurse
 ```
 
 This command imports the snippets from the \\Server01\Public\Snippets directory into the current session.
@@ -61,7 +62,7 @@ It uses the **Recurse** parameter to get snippets from all subdirectories of the
 
 ### Example 2: Import snippets from a module
 ```
-PS C:\>Import-IseSnippet -Module "SnippetModule" -ListAvailable
+PS C:\> Import-IseSnippet -Module "SnippetModule" -ListAvailable
 ```
 
 This command imports the snippets from the SnippetModule module.

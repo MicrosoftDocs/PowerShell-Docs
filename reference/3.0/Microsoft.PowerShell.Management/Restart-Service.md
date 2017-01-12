@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113385
-schema: 2.0.0
-title: Restart-Service
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Restart Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113385
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Restart-Service
 ## SYNOPSIS
@@ -44,19 +45,19 @@ You can specify the services by their service names or display names, or you can
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Restart-Service winmgmt
+PS C:\> Restart-Service winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Restart-Service -DisplayName net* -Exclude "net logon"
+PS C:\> Restart-Service -DisplayName net* -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that begins with "Net", except for the "Net Logon" service.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Service net* | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
+PS C:\> Get-Service net* | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
 This command starts all of the stopped network services on the computer.

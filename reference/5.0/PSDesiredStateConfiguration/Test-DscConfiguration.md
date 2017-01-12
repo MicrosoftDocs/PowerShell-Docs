@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821466
-schema: 2.0.0
-title: Test-DscConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test DscConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821466
+external help file:   Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 ---
+
 
 # Test-DscConfiguration
 
@@ -91,14 +92,14 @@ The second command tests configuration for the computers identified by the **Cim
 
 ### Example 3: Test configurations with detailed results
 ```
-PS C:\>Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
+PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
 ```
 
 This command tests configurations for a set of computers specified by the *ComputerName* parameter and returns detailed information that includes the overall state, resources that are in the desired state, resources that are not in the desired state and computer name.
 
 ### Example 4: Test configurations specified in a folder
 ```
-PS C:\>Test-DscConfiguration -Path "C:\Dsc\Configurations"
+PS C:\> Test-DscConfiguration -Path "C:\Dsc\Configurations"
 ```
 
 This command tests configurations that are defined in a folder specified by the *Path* parameter.
@@ -106,7 +107,7 @@ The configurations are tested against a set of computers, each identified by the
 
 ### Example 5: Test configurations specified in a file
 ```
-PS C:\>Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
+PS C:\> Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
 ```
 
 This command tests a configuration defined in a file against a set of computers specified by the *ComputerName* parameter.

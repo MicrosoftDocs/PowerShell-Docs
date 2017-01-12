@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821470
-schema: 2.0.0
-title: Clear-History
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear History
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821470
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Clear-History
 
@@ -39,35 +40,35 @@ Without parameters, **Clear-History** deletes all commands from the session hist
 
 ### Example 1: Delete all commands
 ```
-PS C:\>Clear-History
+PS C:\> Clear-History
 ```
 
 This command deletes all commands from the session history.
 
 ### Example 2: Delete commands by using history IDs
 ```
-PS C:\>Clear-History -Id 23, 25
+PS C:\> Clear-History -Id 23, 25
 ```
 
 This command deletes the commands that have history IDs 23 and 25.
 
 ### Example 3: Delete specific commands
 ```
-PS C:\>Clear-History -Command *help*, *command
+PS C:\> Clear-History -Command *help*, *command
 ```
 
 This command deletes commands that include "help" or end in "command".
 
 ### Example 4: Delete the newest commands
 ```
-PS C:\>Clear-History -Count 10 -Newest
+PS C:\> Clear-History -Count 10 -Newest
 ```
 
 This command deletes the 10 newest commands from the history.
 
 ### Example 5: Delete the oldest commands
 ```
-PS C:\>Clear-History -Id 10 -Count 3
+PS C:\> Clear-History -Id 10 -Count 3
 ```
 
 This command deletes the three oldest commands, starting with the entry with ID 10.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290504
-schema: 2.0.0
-title: Get-Transaction
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290504
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
+
 
 # Get-Transaction
 
@@ -39,8 +40,8 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-transaction
-PS C:\>get-transaction
+PS C:\> start-transaction
+PS C:\> get-transaction
 
 RollbackPreference   SubscriberCount   Status
 ------------------   ---------------   ------
@@ -51,7 +52,7 @@ This command uses the Get-Transaction cmdlet to get the current transaction.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-transaction | get-member
+PS C:\> get-transaction | get-member
 
 Name               MemberType Definition
 ----               ---------- ----------
@@ -70,7 +71,7 @@ This command uses the Get-Member cmdlet to show the properties and methods of th
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Undo-Transaction
@@ -85,7 +86,7 @@ This command shows the property values of a transaction object for a transaction
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Complete-Transaction
@@ -100,7 +101,7 @@ This command shows the property values of a transaction object for a transaction
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>cd hklm:\software
+PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> New-Item MyCompany -UseTransaction
 HKLM:\SOFTWARE> Start-Transaction
@@ -147,7 +148,7 @@ The second Complete-Transaction command commits the transaction.
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>HKLM:\SOFTWARE> Start-Transaction
+PS C:\> HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> Get-Transaction
 
 RollbackPreference   SubscriberCount   IsRolledBack   IsCommitted

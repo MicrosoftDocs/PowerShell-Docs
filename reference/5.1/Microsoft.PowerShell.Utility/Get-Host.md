@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821791
-schema: 2.0.0
-title: Get-Host
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Host
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821791
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-Host
 
@@ -34,7 +35,7 @@ You can also use this cmdlet to customize features of the host program user inte
 
 ### Example 1: Get information about the PowerShell console host
 ```
-PS C:\>Get-Host
+PS C:\> Get-Host
 Name             : ConsoleHost
 Version          : 2.0
 InstanceId       : e4e0ab54-cc5e-4261-9117-4081f20ce7a2
@@ -54,7 +55,7 @@ Later examples examine these properties.
 
 ### Example 2: Resize the PowerShell window
 ```
-PS C:\>$H = Get-Host
+PS C:\> $H = Get-Host
 PS C:\> $Win = $H.UI.RawUI.WindowSize
 PS C:\> $Win.Height = 10
 PS C:\> $Win.Width  = 10
@@ -65,7 +66,7 @@ This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
 
 ### Example 3: Get the PowerShell version for the host
 ```
-PS C:\>(Get-Host).Version | Format-List -Property *
+PS C:\> (Get-Host).Version | Format-List -Property *
 Major         : 2
 Minor         : 0
 Build         : -1
@@ -83,7 +84,7 @@ The **Format-List** command uses the *Property* parameter with a value of all (*
 
 ### Example 4: Get the current culture for the host
 ```
-PS C:\>(Get-Host).CurrentCulture | Format-List -Property *
+PS C:\> (Get-Host).CurrentCulture | Format-List -Property *
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -118,7 +119,7 @@ The **Format-List** command uses the *Property* parameter with a value of all (*
 
 ### Example 5: Get the DateTimeFormat for the current culture
 ```
-PS C:\>(Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+PS C:\> (Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -157,7 +158,7 @@ To display the property values of the object, use the Format-List cmdlet.
 
 ### Example 6: Get the RawUI property for the host
 ```
-PS C:\>(Get-Host).UI.RawUI | Format-List -Property *
+PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
 ForegroundColor       : DarkYellow
 BackgroundColor       : DarkBlue
 CursorPosition        : 0,390
@@ -176,7 +177,7 @@ By changing these values, you can change the appearance of the host program.
 
 ### Example 7: Set the background color for the PowerShell console
 ```
-PS C:\>(Get-Host).UI.RawUI.BackgroundColor = "Black"
+PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
 PS C:\> cls
 ```
 
@@ -188,7 +189,7 @@ To change the background color of the console for all sessions, add the command 
 
 ### Example 8: Set the background color for error messages
 ```
-PS C:\>$Host.PrivateData.ErrorBackgroundColor = "white"
+PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
 ```
 
 This command changes the background color of error messages to white.

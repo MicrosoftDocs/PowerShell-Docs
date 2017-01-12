@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113408
-schema: 2.0.0
-title: Start-Transcript
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Start Transcript
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113408
+external help file:   Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 ---
+
 
 # Start-Transcript
 ## SYNOPSIS
@@ -36,13 +37,13 @@ The transcript includes all command that the user types and all output that appe
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-transcript
+PS C:\> start-transcript
 ```
 
 This command starts a transcript in the default file location.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-transcript -path c:\transcripts\transcript0.txt -noclobber
+PS C:\> start-transcript -path c:\transcripts\transcript0.txt -noclobber
 ```
 
 This command starts a transcript in the Transcript0.txt file in C:\transcripts.

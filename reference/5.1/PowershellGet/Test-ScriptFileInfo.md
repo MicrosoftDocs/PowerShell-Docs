@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822336
-schema: 2.0.0
-title: Test-ScriptFileInfo
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Test ScriptFileInfo
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822336
+external help file:   PSModule-help.xml
 ---
+
 
 # Test-ScriptFileInfo
 
@@ -38,7 +39,7 @@ If the comment block has an error, this cmdlet returns information about where t
 
 ### Example 1: Test a script file
 ```
-PS C:\>Test-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1"
+PS C:\> Test-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------
 1.0        New-ScriptFile            pattif               my new script file test
@@ -49,7 +50,7 @@ The script file includes valid metadata.
 
 ### Example 2: Test a script file that has values for all metadata properties
 ```
-PS C:\>Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1 | Format-List * 
+PS C:\> Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1 | Format-List * 
 Name                       : Test-Runbook
 Path                       : D:\code\Test-Runbook.ps1
 ScriptBase                 : D:\code
@@ -77,7 +78,7 @@ This command tests the script file Test-Runbook.ps1 and uses the pipeline operat
 
 ### Example 3: Test a script file that has no metadata
 ```
-PS C:\>Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
+PS C:\> Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
 Test-ScriptFileInfo : Script 'D:\code\Hello-World.ps1' is missing required metadata properties. Verify that the script file has Version, Description
 and Author properties. You can use the Update-ScriptFileInfo or New-ScriptFileInfo cmdlet to add or update the PSScriptInfo to the script file. 
 At line:1 char:1

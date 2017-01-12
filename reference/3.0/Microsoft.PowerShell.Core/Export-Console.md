@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113298
-schema: 2.0.0
-title: Export-Console
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Console
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113298
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Export-Console
 ## SYNOPSIS
@@ -33,13 +34,13 @@ For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>export-console -path $pshome\Consoles\ConsoleS1.psc1
+PS C:\> export-console -path $pshome\Consoles\ConsoleS1.psc1
 ```
 
 This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles subdirectory of the Windows PowerShell installation directory, $pshome.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>export-console
+PS C:\> export-console
 ```
 
 This command exports the names of Windows PowerShell snap-ins from current session to the Windows PowerShell console file that was most recently used in the current session.
@@ -48,9 +49,9 @@ It overwrites the previous file contents.
 If you have not exported a console file during the current session, you are prompted for permission to continue and then prompted for a file name.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>add-pssnapin NewPSSnapin
-PS C:\>export-console -path NewPSSnapinConsole.psc1
-PS C:\>powershell.exe -PsConsoleFile NewPsSnapinConsole.psc1
+PS C:\> add-pssnapin NewPSSnapin
+PS C:\> export-console -path NewPSSnapinConsole.psc1
+PS C:\> powershell.exe -PsConsoleFile NewPsSnapinConsole.psc1
 ```
 
 These commands add the NewPSSnapin Windows PowerShell snap-in to the current session, export the names of Windows PowerShell snap-ins in the current session to a console file, and then start a Windows PowerShell session with the console file.
@@ -64,8 +65,8 @@ The third command starts Windows PowerShell with the NewPSSnapinConsole.psc1 fil
 Because the console file includes the Windows PowerShell snap-in name, the cmdlets and providers in the snap-in are available in the current session.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>export-console -path Console01
-PS C:\>notepad console01.psc1
+PS C:\> export-console -path Console01
+PS C:\> notepad console01.psc1
 <?xml version="1.0" encoding="utf-8"?>
 <PSConsoleFile ConsoleSchemaVersion="1.0">
   <PSVersion>2.0</PSVersion>
@@ -80,12 +81,12 @@ This command exports the names of the Windows PowerShell snap-ins in the current
 The second command displays the contents of the Console01.psc1 file in Notepad.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>powershell.exe -PSConsoleFile Console01.psc1
-PS C:\>add-pssnapin MySnapin
-PS C:\>export-console NewConsole.psc1
-PS C:\>$consolefilename
-PS C:\>add-pssnapin SnapIn03
-PS C:\>export-console
+PS C:\> powershell.exe -PSConsoleFile Console01.psc1
+PS C:\> add-pssnapin MySnapin
+PS C:\> export-console NewConsole.psc1
+PS C:\> $consolefilename
+PS C:\> add-pssnapin SnapIn03
+PS C:\> export-console
 ```
 
 This example shows how to use the $ConsoleFileName automatic variable to determine the console file that will be updated if you use Export-Console without a Path parameter value.

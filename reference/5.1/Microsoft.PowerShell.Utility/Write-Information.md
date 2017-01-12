@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821877
-schema: 2.0.0
-title: Write-Information
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Information
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821877
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Write-Information
 
@@ -45,7 +46,7 @@ Information streams also work for **PowerShell.Streams**, jobs, scheduled jobs, 
 
 ### Example 1: Write information for Get- results
 ```
-PS C:\>Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
+PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -67,7 +68,7 @@ The *InformationAction* value is Continue, which means that your message is show
 
 ### Example 2: Write information and tag it
 ```
-PS C:\>Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
+PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -89,7 +90,7 @@ After running this command, if you search the information stream for messages ta
 
 ### Example 3: Write information to a file
 ```
-PS C:\>function Test-Info
+PS C:\> function Test-Info
        { 
          Get-Process P*
          Write-Information "Here you go"

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=627544
-schema: 2.0.0
-title: Invoke-DscResource
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke DscResource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=627544
+external help file:   Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 ---
+
 
 # Invoke-DscResource
 
@@ -37,14 +38,14 @@ This cmdlet also enables debugging of resources when the DSC engine or LCM is ru
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 ```
-PS C:\>Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'}
+PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'}
 ```
 
 This command invokes the **Set** method of a resource named Log and specifies a **Message** property for it.
 
 ### Example 2: Invoke the Test method of a resource for a specified module
 ```
-PS C:\>Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
+PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
 ```
 
 This command invokes the **Test** method of a resource named WindowsProcess, which is in the module named PSDesiredStateConfiguration.

@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293989
-schema: 2.0.0
-title: Measure-Command
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Measure Command
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293989
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Measure-Command
 
@@ -31,7 +32,7 @@ The **Measure-Command** cmdlet runs a script block or cmdlet internally, times t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Measure-Command { Get-EventLog "windows powershell" }
+PS C:\> Measure-Command { Get-EventLog "windows powershell" }
 ```
 
 This command measures the time it takes to run a Get-EventLog command that gets the events in the Windows PowerShell event log.
@@ -39,7 +40,7 @@ This command measures the time it takes to run a Get-EventLog command that gets 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
 The first command measures the time it takes to process a recursive **Get-ChildItem** command that uses the **Path** parameter to get only .txt files in the C:\Windows directory and its subdirectories.
-PS C:\>Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+PS C:\> Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 
 Days              : 0
 Hours             : 0
@@ -54,7 +55,7 @@ TotalSeconds      : 8.6182763
 TotalMilliseconds : 8618.2763
 
 The second command measures the time it takes to process a recursive **Get-ChildItem** command that uses the provider-specific **Filter** parameter.
-PS C:\>Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
+PS C:\> Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 
 PS C:\>
 Days              : 0

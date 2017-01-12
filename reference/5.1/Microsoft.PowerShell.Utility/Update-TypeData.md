@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821871
-schema: 2.0.0
-title: Update-TypeData
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Update TypeData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821871
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Update-TypeData
 
@@ -72,7 +73,7 @@ For more information about the *types.ps1xml files in Windows PowerShell, see ab
 
 ### Example 1: Update extended types
 ```
-PS C:\>Update-TypeData
+PS C:\> Update-TypeData
 ```
 
 This command updates the extended type configuration from the *.types.ps1xml files that have already been used in the session.
@@ -80,10 +81,10 @@ This command updates the extended type configuration from the *.types.ps1xml fil
 ### Example 2: Update types multiple times
 ```
 The first command updates the extended type configuration from the *.types.ps1xml files, processing the TypesA.types.ps1xml and TypesB.types.ps1xml files first.
-PS C:\>Update-TypeData -PrependPath TypesA.types.ps1xml, TypesB.types.ps1xml
+PS C:\> Update-TypeData -PrependPath TypesA.types.ps1xml, TypesB.types.ps1xml
 
 The second command shows how to update the TypesA.types.ps1xml again, such as you might do if you added or changed a type in the file. You can either repeat the previous command for the TypesA.types.ps1xml file, or run an **Update-TypeData** command without parameters, because TypesA.types.ps1xml is already in the type file list for the current session.
-PS C:\>Update-TypeData -PrependPath TypesA.types.ps1xml
+PS C:\> Update-TypeData -PrependPath TypesA.types.ps1xml
 
 -or-
 
@@ -94,8 +95,8 @@ This example shows how to update the types in a type file multiple times in the 
 
 ### Example 3: Add a script property to DateTime objects
 ```
-PS C:\>Update-TypeData -TypeName "System.DateTime" -MemberType ScriptProperty -MemberName "Quarter" -Value {if ($this.Month -in @(1,2,3)) {"Q1"} elseif ($this.Month -in @(4,5,6)) {"Q2"} elseif ($this.Month -in @(7,8,9)) {"Q3"} else {"Q4"} }
-PS C:\>(Get-Date).QuarterQ1
+PS C:\> Update-TypeData -TypeName "System.DateTime" -MemberType ScriptProperty -MemberName "Quarter" -Value {if ($this.Month -in @(1,2,3)) {"Q1"} elseif ($this.Month -in @(4,5,6)) {"Q2"} elseif ($this.Month -in @(7,8,9)) {"Q3"} else {"Q4"} }
+PS C:\> (Get-Date).QuarterQ1
 ```
 
 This example uses **Update-TypeData** to add the Quarter script property to **System.DateTime** objects in the current session, such as those returned by the Get-Date cmdlet.
@@ -110,8 +111,8 @@ The second command gets the new Quarter property of the current date.
 
 ### Example 4: Update a type that displays in lists by default
 ```
-PS C:\>Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime, DayOfYear, Quarter"
-PS C:\>Get-Date | Format-List
+PS C:\> Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime, DayOfYear, Quarter"
+PS C:\> Get-Date | Format-List
 Thursday, March 15, 2012 12:00:00 AM
 DayOfYear : 75
 Quarter   : Q1
@@ -130,7 +131,7 @@ Because the **Format-List** command does not specify the properties to display i
 
 ### Example 5: Update type data for a piped object
 ```
-PS C:\>Get-Module | Update-TypeData -MemberType ScriptProperty -MemberName "SupportsUpdatableHelp" -Value {if ($this.HelpInfoUri) {$True} else {$False}}
+PS C:\> Get-Module | Update-TypeData -MemberType ScriptProperty -MemberName "SupportsUpdatableHelp" -Value {if ($this.HelpInfoUri) {$True} else {$False}}
 Get-Module -ListAvailable | Format-Table Name, SupportsUpdatableHelp
 Name                             SupportsUpdatableHelp
 ----                             ---------------------

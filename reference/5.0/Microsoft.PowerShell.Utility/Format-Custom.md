@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821772
-schema: 2.0.0
-title: Format-Custom
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format Custom
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821772
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Format-Custom
 
@@ -34,7 +35,7 @@ You can use the views defined in the *format.PS1XML files in the Windows PowerSh
 
 ### Example 1: Format output with a custom view
 ```
-PS C:\>Get-Command Start-Transcript | Format-Custom -View "MyView"
+PS C:\> Get-Command Start-Transcript | Format-Custom -View "MyView"
 ```
 
 This command formats information about the Start-Transcript cmdlet in the format defined by the MyView view, a custom view created by the user.
@@ -42,7 +43,7 @@ To run this command successfully, you must first create a new PS1XML file, defin
 
 ### Example 2: Format output with the default view
 ```
-PS C:\>Get-Process Winlogon | Format-Custom
+PS C:\> Get-Process Winlogon | Format-Custom
 ```
 
 This command formats information about the Winlogon process in an alternate customized view.
