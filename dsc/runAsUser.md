@@ -21,6 +21,9 @@ Every DSC resource has a **PsDscRunAsCredential** property that can be set to an
 The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx),
 which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).
 
+>**Note:** In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported. In PowerShell 5.1, the **PsDscRunAsCredential** property
+>is supported in configurations calling composite resources.
+
 >**Note:** The **PsDscRunAsCredential** property is not available in PowerShell 4.0.
 
 In the following example, **Get-Credential** is used to prompt the user for credentials. 
