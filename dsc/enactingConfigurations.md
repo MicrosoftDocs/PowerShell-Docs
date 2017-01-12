@@ -35,11 +35,15 @@ you would apply it to the local machine with the following command: `Start-DscCo
 
 In pull mode, pull clients are configured to get their desired state configurations from a remote pull server. Likewise, the pull server has been set up to host the DSC service, and 
 has been provisioned with the configurations and resources that are required by the pull clients. Each one of the pull clients has a scheduled task that performs a periodic compliance 
-check on the configuration of the node. When the event is triggered the first time, it causes the Local Configuration Manager (LCM) on the pull client to validate the configuration. 
-If the pull client is configured as desired, nothing happens. Otherwise, the LCM makes a request to the pull server to get a given configuration. If that configuration exists on the pull 
-server, and it passes initial validation checks, the configuration is transmitted to the pull client, where it is then executed by the LCM.
+check on the configuration of the node. When the event is triggered the first time, it the Local Configuration Manager (LCM) on the pull client makes a request to the pull server to get the 
+configuration specified in the LCM. If that configuration exists on the pull server, and it passes initial validation checks, the configuration is transmitted to the pull client, where it is then 
+executed by the LCM.
 
-For more information on deploying a DSC Pull Server on premises, see the DSC Pull Server Configuration and Planning Guide.
+The LCM checks that the client is in compliance with the configuration at regular intervals specified by the **ConfigurationModeFrequencyMins** property of the LCM. The LCM checks for updated
+configurations on the pull server at regular intervals specified by the **RefreshModeFrequency** property of the LCM. For information about configuring the LCM, see 
+[Configuring the Local Configuration Manager](metaConfig.md).
+
+For more information on setting up a DSC Pull Server, see [Setting up a DSC web pull server](pullServer.md).
 
 If you would prefer to take advantage of an online service to host Pull Server functionality, see the [Azure Automation DSC](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/) service.
 
