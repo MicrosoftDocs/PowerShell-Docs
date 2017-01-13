@@ -7,7 +7,7 @@ ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
 ms.date:  2016-12-05
-title:  README
+title:  Overview of Just Enough Administration
 ms.technology:  powershell
 ---
 
