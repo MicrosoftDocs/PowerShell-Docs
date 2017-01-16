@@ -112,6 +112,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 >**Note:** The user running the 
 
+<!-- Loc Comment: Please fix the incomplete sentense above as it is blocking localization. --> 
 
 ## Partial configurations in pull mode
 
