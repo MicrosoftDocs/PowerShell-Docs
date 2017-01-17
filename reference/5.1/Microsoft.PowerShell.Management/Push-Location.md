@@ -8,6 +8,9 @@ keywords:  powershell,cmdlet
 ms.date:  2016-12-12
 title:  Push Location
 ms.technology:  powershell
+schema: 2.0.0
+online version: http://go.microsoft.com/fwlink/?LinkId=821612
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml 
 ---
 
 # Push-Location
