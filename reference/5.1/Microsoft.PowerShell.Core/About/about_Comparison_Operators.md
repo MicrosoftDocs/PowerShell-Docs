@@ -34,15 +34,15 @@ Windows PowerShell includes the following comparison operators:
 -ge  
 -lt  
 -le  
--Like  
--NotLike  
--Match  
--NotMatch  
--Contains  
--NotContains  
--In  
--NotIn  
--Replace
+-like  
+-notLike  
+-match  
+-notmatch  
+-contains  
+-notcontains  
+-in  
+-notin  
+-replace
 
 By default, all comparison operators are case-insensitive. To make a
 comparison operator case-sensitive, precede the operator name with a "c".
@@ -61,7 +61,7 @@ which always return a Boolean value.
 
 Windows PowerShell supports the following comparison operators.
 
--eq  
+**-eq**  
 Description: Equal to. Includes an identical value.  
 
 Example:
@@ -76,7 +76,7 @@ PS C:> "abc", "def" -eq "abc"
 abc
 ```
 
--ne  
+**-ne**  
 Description: Not equal to. Includes a different value.  
 
 Example:
@@ -94,7 +94,7 @@ PS C:> "abc", "def" -ne "abc"
 def
 ```
 
--gt  
+**-gt**  
 Description: Greater-than.  
 
 Example:
@@ -107,7 +107,7 @@ PS C:> 7, 8, 9 -gt 8
 9
 ```
 
--ge  
+**-ge**  
 Description: Greater-than or equal to.  
 
 Example:
@@ -121,7 +121,7 @@ PS C:> 7, 8, 9 -ge 8
 9
 ```
 
--lt  
+**-lt**  
 Description: Less-than.  
 
 Example:
@@ -135,7 +135,7 @@ PS C:> 7, 8, 9 -lt 8
 7
 ```
 
--le  
+**-le**  
 Description: Less-than or equal to.  
 
 Example:
@@ -148,7 +148,7 @@ PS C:> 7, 8, 9 -le 8
 8
 ```
 
--Like  
+**-Like**  
 Description: Match using the wildcard character (\*).
 Example:
 
@@ -160,7 +160,7 @@ PS C:> "Windows PowerShell", "Server" -like "*shell"
 Windows PowerShell
 ```
 
--NotLike  
+**-NotLike**  
 Description: Does not match using the wildcard character (\*).  
 
 Example:
@@ -172,7 +172,7 @@ PS C:> "Windows PowerShell", "Server" -NotLike "*shell"
 Server
 ```
 
--Match  
+**-Match**  
 Description: Matches a string using regular expressions.
 When the input is scalar, it populates the
 $Matches automatic variable.  
@@ -191,7 +191,7 @@ PS C:> "Sunday", "Monday" -Match "sun"
 Sunday
 ```
 
--NotMatch
+**-NotMatch**
 Description: Does not match a string. Uses regular expressions.
 When the input is scalar, it populates the $Matches
 automatic variable.  
@@ -211,7 +211,7 @@ PS C:> "Sunday", "Monday" -NotMatch "sun"
 Monday
 ```
 
--Contains
+**-Contains**  
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns TRUE
 only when the test value exactly matches at least one of the reference values.
@@ -220,10 +220,10 @@ When the test value is a collection, the Contains operator uses reference
 equality. It returns TRUE only when one of the reference values is the same
 instance of the test value object.
 
-Syntax:
+Syntax:  
 \<Reference-values> -Contains \<Test-value>
 
-Examples:
+Examples:  
 ```PowerShell
 PS C:> "abc", "def" -Contains "def"  
 True
@@ -246,7 +246,7 @@ PS C:> $a, "ghi" -Contains $a
 True
 ``` 
 
--NotContains
+**-NotContains**  
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns
 TRUE when the test value is not an exact matches for at least one of the reference
@@ -285,7 +285,7 @@ Tee
 Where
 ```
 
--In
+**-In**
 Description: In operator. Tells whether a test value appears in a collection
 of reference values. Always return as Boolean value. Returns TRUE only when
 the test value exactly matches at least one of the reference values.
@@ -299,7 +299,7 @@ The -In operator was introduced in Windows PowerShell 3.0.
 Syntax:
 \<Test-value> -in \<Reference-values>
 
-Examples:
+Examples:  
 ```PowerShell
 PS C:> "def" -in "abc", "def"
 True
@@ -321,7 +321,7 @@ True  #Using reference equality
 PS C:> $thisComputer -in  $domainServers
 True
 ```
--NotIn
+**-NotIn**  
 Description: Tells whether a test value appears in a collection
 of reference values. Always returns a Boolean value. Returns TRUE when the test
 value is not an exact match for at least one of the reference values.
@@ -371,7 +371,7 @@ Stop-Process
 PS C:> dir *.gif | foreach {$_ -Replace ".gif", ".jpg"}
 ```
 
-Equality Operators
+**Equality Operators**
 The equality operators (-eq, -ne) return a value of TRUE or the matches
 when one or more of the input values is identical to the specified
 pattern. The entire pattern must match an entire value.
@@ -402,7 +402,7 @@ abc
 ```
 
 
-Containment Operators
+**Containment Operators**  
 The containment operators (-Contains and -NotContains) are similar to the
 equality operators. However, the containment operators always return a
 Boolean value, even when the input is a collection.
@@ -444,7 +444,7 @@ True
 In a very large collection, the -Contains operator returns results
 quicker than the equal to operator.
 
-Match Operators
+**Match Operators**
 The match operators (-Match and -NotMatch) find elements that match or
 do not match a specified pattern using regular expressions.
 
@@ -525,8 +525,6 @@ PS C:> "Sunday" -NotMatch "day"
 False
 
 PS C:> $matches
-# PS C:>
-
 
 Name                           Value
 ----                           -----
@@ -564,7 +562,7 @@ PS C:> "book" -cReplace "B", "C"
 book
 ```
 
-Bitwise Operators
+**Bitwise Operators**
 Windows PowerShell supports the standard bitwise operators, including
 bitwise-AND (-bAnd), the inclusive and exclusive bitwise-OR operators
 (-bOr and -bXor), and bitwise-NOT (-bNot).
@@ -710,7 +708,7 @@ PS C:> 21 -shr 2
 00000101  ( 5)
 ```
 
-SEE ALSO
+# SEE ALSO
 
 about_Operators
 about_Regular_Expressions
