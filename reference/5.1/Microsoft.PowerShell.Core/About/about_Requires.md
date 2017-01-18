@@ -90,7 +90,7 @@ For example,
 
 
 ```
-#Requires -Modules PSWorkflow, @{ModuleName="PSScheduledJob";ModuleVersion=1.0.0.0}
+#Requires -Modules PSWorkflow, @{ModuleName="PSScheduledJob";ModuleVersion="1.0.0.0"}
 ```
 
 
