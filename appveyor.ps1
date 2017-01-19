@@ -7,12 +7,17 @@ param(
 $global:ProgressPreference = 'SilentlyContinue'
 if($ShowProgress){$ProgressPreference = 'Continue'}   
 
+# Find the reference folder path w.r.t the script
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
+
+# Variable to collect any errors in during processing
 $allErrors = @()
 
+# Go through all the directories in the reference folder
 Get-ChildItem $ReferenceDocset -Directory | ForEach-Object -Process {
-    $Version = $_
+    $Version = $_.Name
     $VersionFolder = $_.FullName
+    # For each of the directories, go through each module folder
     Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
         $ModuleName = $_        
         $ModulePath = Join-Path $VersionFolder $_
@@ -22,7 +27,11 @@ Get-ChildItem $ReferenceDocset -Directory | ForEach-Object -Process {
         $CabOutputFolder = Join-Path "$PSScriptRoot\out_cab" "$Version\$ModuleName"
 
         try {
-            New-ExternalHelp -Path $ModulePath -OutputPath $MamlOutputFolder -Force
+            # For each module, create a single maml help file
+            # Adding warningaction=stop to throw errors for all warnings, erroraction=stop to make them terminating errors
+            New-ExternalHelp -Path $ModulePath -OutputPath $MamlOutputFolder -Force -WarningAction Stop -ErrorAction Stop
+            
+            # For each module, create update-help help files (cab and helpinfo.xml files)
             if (-not $SkipCabs) {
                 $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
 
@@ -35,6 +44,7 @@ Get-ChildItem $ReferenceDocset -Directory | ForEach-Object -Process {
     }
 }
 
+# If the above block, produced any errors, throw and fail the job
 if ($allErrors) {
     $allErrors
     throw "There are errors during platyPS run!`nPlease fix your markdown to comply with the schema: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md"
