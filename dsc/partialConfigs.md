@@ -11,7 +11,7 @@ ms.prod:  powershell
 
 # PowerShell Desired State Configuration partial configurations
 
->Applies To: Windows PowerShell 5.0
+>Applies To: Windows PowerShell 5.0 and later.
 
 In PowerShell 5.0, Desired State Configuration (DSC) allows configurations to be delivered in fragments and from multiple sources. The Local Configuration Manager (LCM) on the 
 target node puts the fragments together before applying them as a single configuration. This capability allows sharing control of configuration between teams or individuals. 
@@ -63,7 +63,7 @@ The **RefreshMode** for each partial configuration is set to "Push". The names o
 
 ### Publishing and starting push-mode partial configurations
 
-You then call [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md) for each configuration, passing the folders that contain the configuration 
+You then call [Publish-DSCConfiguration](/reference/5.1/PSDesiredStateconfiguration/Publish-DscConfiguration.md) for each configuration, passing the folders that contain the configuration 
 documents as the **Path** parameters. `Publish-DSCConfiguration`places the configuration MOF files to the target nodes. After publishing both configurations, you can call 
 `Start-DSCConfiguration –UseExisting` on the target node.
 
@@ -110,8 +110,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Note:** The user running the 
-
+>**Note:** The user running the [Publish-DSCConfiguration](/reference/5.1/PSDesiredStateconfiguration/Publish-DscConfiguration.md)
+>cmdlet must have administrator privileges on the target node.
 
 ## Partial configurations in pull mode
 
