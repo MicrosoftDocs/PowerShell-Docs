@@ -11,7 +11,7 @@ ms.prod:  powershell
 
 # PowerShell Desired State Configuration partial configurations
 
->Applies To: Windows PowerShell 5.0 and later
+>Applies To: Windows PowerShell 5.0 and later.
 
 In PowerShell 5.0, Desired State Configuration (DSC) allows configurations to be delivered in fragments and from multiple sources. The Local Configuration Manager (LCM) on the 
 target node puts the fragments together before applying them as a single configuration. This capability allows sharing control of configuration between teams or individuals. 
@@ -21,7 +21,7 @@ individuals or teams to control different aspects of configuring nodes without h
 might be responsible for deploying a VM and operating system, while another team might deploy other applications and services on that VM. With partial configurations, each team 
 can create its own configuration, without either of them being unnecessarily complicated.
 
-1You can use partial configurations in push mode, pull mode, or a combination of the two.
+You can use partial configurations in push mode, pull mode, or a combination of the two.
 
 ## Partial configurations in push mode
 To use partial configurations in push mode, you configure the LCM on the target node to receive the partial configurations. Each partial configuration must be pushed to the 
