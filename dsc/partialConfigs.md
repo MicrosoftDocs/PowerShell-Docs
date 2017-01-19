@@ -110,9 +110,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Note:** The user running the 
-
-<!-- Loc Comment: Please fix the incomplete sentense above as it is blocking localization. --> 
+>**Note:** The user running the [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md)
+>cmdlet must have administrator privileges on the target node.
 
 ## Partial configurations in pull mode
 
