@@ -43,7 +43,7 @@ The **Update-ModuleManifest** cmdlet updates a module manifest (.psd1) file.
 
 ### Example 1: Update a module manifest
 ```
-PS C:\> Update-ModuleManifest -Path "C:\temp\TestManifest.psd1" -Author"TestUser1" -CompanyName "Contoso Corporation" -Copyright "(c) 2015 Contoso Corporation. All rights reserved."
+PS C:\> Update-ModuleManifest -Path "C:\temp\TestManifest.psd1" -Author "TestUser1" -CompanyName "Contoso Corporation" -Copyright "(c) 2015 Contoso Corporation. All rights reserved."
 ```
 
 This command updates the module manifest TestManifest.psd1 with updated Author, CompanyName, and Copyright fields.
