@@ -19,14 +19,19 @@ This topic describes the prerequisites that must be satisfied in order to start 
 
 ## Install JEA
 JEA is available with Windows PowerShell 5.0 and higher, but for full functionality it is recommended that you install the latest version of PowerShell available for your system.
-The following table describes JEA's availability on each supported OS.
+The following table describes JEA's availability on Windows Server:
 
-Operating System          | JEA Availability
---------------------------|------------------------------------------------------
+Server Operating System   | JEA Availability
+--------------------------|--------------------------------
 Windows Server 2016       | Preinstalled
 Windows Server 2012 R2    | Full functionality with WMF 5.1
 Windows Server 2012       | Full functionality with WMF 5.1
 Windows Server 2008 R2    | Full functionality with WMF 5.1
+
+You can also use JEA on your home or work computer:
+
+Client Operating System   | JEA Availability
+--------------------------|-----------------------------------------------------
 Windows 10 1607           | Preinstalled
 Windows 10 1603, 1511     | Preinstalled, with reduced functionality<sup>1</sup>
 Windows 10 1507           | Not available
