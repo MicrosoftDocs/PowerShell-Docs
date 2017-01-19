@@ -26,7 +26,6 @@ nxUser <string> #ResourceName
     [ Disabled = <bool> ]
     [ PasswordChangeRequired = <bool> ]
     [ HomeDirectory = <string> ]
-    [ Mode = <string> ]
     [ GroupID = <string> ]
     [ DependsOn = <string[]> ]
 
