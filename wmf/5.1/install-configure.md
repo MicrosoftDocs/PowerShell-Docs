@@ -1,12 +1,12 @@
 ---
-title: Install and configure WMF 5.1
-ms.date:  2017-01-18
-keywords:  PowerShell, DSC, WMF
+title: Install and configure WMF 5.1 
+ms.date:  2017-01-18 
+keywords:  PowerShell, DSC, WMF 
 description:  
-ms.topic:  article
-contributor:  keithb
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  article 
+contributor:  keithb 
+manager:  carmonm 
+ms.prod:  powershell 
 ms.technology: WMF
 ---
 
@@ -19,11 +19,11 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 
 | Operating System	     | Prerequisites       | Package Links             |
 |------------------------|---------------------|---------------------------|
-| Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)|
-| Windows Server 2012	 | | [W2K12-KB3191565-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823587)|
-| Windows Server 2008 R2 | [.NET Framework 4.5](https://www.microsoft.com/en-ca/download/details.aspx?id=30653) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86:** [Win7-KB3191566-x86.ZIP](http://go.microsoft.com/fwlink/?LinkID=823590) | 
-| Windows 8.1            |  | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586) </br> **x86:** [Win8.1-KB3191564-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589) |
-| Windows 7 SP1          | [.NET Framework 4.5](https://www.microsoft.com/en-ca/download/details.aspx?id=30653) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86:** [Win7-KB3191566-x86.ZIP](http://go.microsoft.com/fwlink/?LinkID=823590)
+| Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516)|
+| Windows Server 2012	 | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
+| Windows Server 2008 R2 | [.NET Framework 4.5](https://www.microsoft.com/en-ca/download/details.aspx?id=30653) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86:** [Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522) | 
+| Windows 8.1            |  | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516) </br> **x86:** [Win8.1-KB3191564-x86.msu](https://go.microsoft.com/fwlink/?linkid=839521) |
+| Windows 7 SP1          | [.NET Framework 4.5](https://www.microsoft.com/en-ca/download/details.aspx?id=30653) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86:** [Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522)
 
 
 
