@@ -29,7 +29,9 @@ Configuration MyDscConfiguration {
 			Name = "Bitlocker"
 		}
 	}
-}
+} 
+
+MyDscConfiguration 
 ```
 
 Save the script as a .ps1 file.
@@ -62,12 +64,14 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
+
+MyDscConfiguration 
 ```
 
 In this example, you specify the name of the node by passing it as the $ComputerName parameter when you [compile the configuraton](# Compiling the configuration). The name defaults to "localhost".
 
 ## Compiling the configuration
-Before you can enact a configuration, you have to compile it into a MOF document. You do this by calling the configuration like you would a PowerShell function.
+Before you can enact a configuration, you have to compile it into a MOF document. You do this by calling the configuration like you would a PowerShell function.  The last line of the example containing only the name of the configuration, calls the configuration.
 >__Note:__ To call a configuration, the function must be in global scope (as with any other PowerShell function). You can make this happen either by "dot-sourcing" the script, or by running the 
 >configuration script by using F5 or clicking on the __Run Script__ button in the ISE. To dot-source the script, run the command `. .\myConfig.ps1` where `myConfig.ps1` is the name of the 
 >script file that contains your configuration.
@@ -122,6 +126,8 @@ Configuration DependsOnExample {
         }
     }
 }
+
+DependsOnExample
 ```
 
 ## Using New Resources in Your Configuration
