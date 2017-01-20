@@ -108,3 +108,16 @@ WMF 5.1 fixes this by returning the help for the latest version of the topic.
 
 `Get-Help` does not provide a way to specify which version you want help for. 
 To work around this, navigate to the modules directory and view the help directly with a tool like your favorite editor. 
+
+### powershell.exe reading from STDIN stopped working
+
+Customers use `powershell -command -` from native apps to execute PowerShell passing in the script via STDIN unfortunately this was broken due to other changes it the console host.
+
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
+
+### powershell.exe creates spike in CPU usage on startup
+
+PowerShell uses a WMI query to check if it was started via Group Policy to avoid causing delay in login.
+The WMI query ends up injecting tzres.mui.dll into every process on the system since the WMI Win32_Process class attempts to retrieve local timezone information.
+This results in a large CPU spike in wmiprvse (the WMI provider host).
+Fix is to use Win32 API calls to get the same information instead of using WMI.
