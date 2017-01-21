@@ -70,7 +70,8 @@ Stream is a dynamic parameter that the FileSystem provider adds to the Set-Conte
 
 You can use the Clear-Content cmdlet to clear the content of an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
 
-This parameter is introduced in Windows PowerShell 3.0.```yaml
+This parameter is introduced in Windows PowerShell 3.0.
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -248,9 +249,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions. 
 
 ```yaml
 Type: SwitchParameter
