@@ -206,7 +206,8 @@ only once in each topic.
 A detailed description of the function or script. This keyword can be
 used only once in each topic.
 
-.PARAMETER  <Parameter-Name>
+# .PARAMETER  <Parameter-Name>
+
 The description of a parameter. Add a .PARAMETER keyword for
 each parameter in the function or script syntax.
 
