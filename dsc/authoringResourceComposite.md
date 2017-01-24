@@ -1,4 +1,3 @@
-
 ---
 title:   Composite resources: Using a DSC configuration as a resource
 ms.date:  2016-05-16
