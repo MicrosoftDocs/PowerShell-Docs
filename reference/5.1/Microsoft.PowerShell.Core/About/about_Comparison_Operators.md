@@ -13,8 +13,6 @@ ms.technology:  powershell
 # About Comparison Operators
 ## about_Comparison_Operators
 
-
-
 # SHORT DESCRIPTION
 
 Describes the operators that compare values in Windows PowerShell.
@@ -35,7 +33,7 @@ Windows PowerShell includes the following comparison operators:
 -lt  
 -le  
 -like  
--notLike  
+-notlike  
 -match  
 -notmatch  
 -contains  
@@ -148,7 +146,7 @@ PS C:> 7, 8, 9 -le 8
 8
 ```
 
-**-Like**  
+**-like**  
 Description: Match using the wildcard character (\*).
 Example:
 
@@ -160,26 +158,26 @@ PS C:> "Windows PowerShell", "Server" -like "*shell"
 Windows PowerShell
 ```
 
-**-NotLike**  
+**-notlike**  
 Description: Does not match using the wildcard character (\*).  
 
 Example:
 ```PowerShell
-PS C:> "Windows PowerShell" -NotLike "*shell"
+PS C:> "Windows PowerShell" -notlike "*shell"
 False
 
-PS C:> "Windows PowerShell", "Server" -NotLike "*shell"
+PS C:> "Windows PowerShell", "Server" -notlike "*shell"
 Server
 ```
 
-**-Match**  
+**-match**  
 Description: Matches a string using regular expressions.
 When the input is scalar, it populates the
 $Matches automatic variable.  
 
 Example:
 ```PowerShell
-PS C:> "Sunday" -Match "sun"
+PS C:> "Sunday" -match "sun"
 True
 
 PS C:> $matches
@@ -187,11 +185,11 @@ Name Value
 ---- -----
 0    Sun
 
-PS C:> "Sunday", "Monday" -Match "sun"
+PS C:> "Sunday", "Monday" -match "sun"
 Sunday
 ```
 
-**-NotMatch**
+**-notmatch**  
 Description: Does not match a string. Uses regular expressions.
 When the input is scalar, it populates the $Matches
 automatic variable.  
@@ -199,7 +197,7 @@ automatic variable.
 Example:
 
 ```PowerShell
-PS C:> "Sunday" -NotMatch "sun"
+PS C:> "Sunday" -notmatch "sun"
 False
 
 PS C:> $matches
@@ -207,11 +205,11 @@ Name Value
 ---- -----
 0    sun
 
-PS C:> "Sunday", "Monday" -NotMatch "sun"
+PS C:> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-**-Contains**  
+**-contains**  
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns TRUE
 only when the test value exactly matches at least one of the reference values.
@@ -225,28 +223,28 @@ Syntax:
 
 Examples:  
 ```PowerShell
-PS C:> "abc", "def" -Contains "def"  
+PS C:> "abc", "def" -contains "def"  
 True
 
-PS C:> "Windows", "PowerShell" -Contains "Shell"  
+PS C:> "Windows", "PowerShell" -contains "Shell"  
 False  #Not an exact match
 
 # Does the list of computers in $DomainServers
 include $ThisComputer?
-PS C:> $DomainServers -Contains $thisComputer  
+PS C:> $DomainServers -contains $thisComputer  
 True
 
-PS C:> "abc", "def", "ghi" -Contains "abc", "def"  
+PS C:> "abc", "def", "ghi" -contains "abc", "def"  
 False
 
 PS C:> $a = "abc", "def"  
-PS C:> "abc", "def", "ghi" -Contains $a  
+PS C:> "abc", "def", "ghi" -contains $a  
 False  
-PS C:> $a, "ghi" -Contains $a  
+PS C:> $a, "ghi" -contains $a  
 True
 ``` 
 
-**-NotContains**  
+**-notcontains**  
 Description: Containment operator. Tells whether a collection of reference
 values includes a single test value. Always returns a Boolean value. Returns
 TRUE when the test value is not an exact matches for at least one of the reference
@@ -260,7 +258,7 @@ Syntax:
 
 Examples:
 ```PowerShell
-PS C:> "Windows", "PowerShell" -NotContains "Shell"
+PS C:> "Windows", "PowerShell" -notcontains "Shell"
 True  #Not an exact match
 
 # Get cmdlet parameters, but exclude common parameters
@@ -272,20 +270,20 @@ $Common = "Verbose", "Debug", "WarningAction", "WarningVariable", `
 $allparms = (Get-Command $Cmdlet).parametersets | foreach {$_.Parameters} | `
 foreach {$_.Name} | Sort-Object | Get-Unique
 
-$allparms | where {$Common -NotContains $_ }
+$allparms | where {$Common -notcontains $_ }
 }
 
 # Find unapproved verbs in the functions in my module
 PS C:> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
 PS C:> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS C:> $myVerbs | where {$ApprovedVerbs -NotContains $_}
+PS C:> $myVerbs | where {$ApprovedVerbs -notcontains $_}
 ForEach
 Sort
 Tee
 Where
 ```
 
-**-In**
+**-in**  
 Description: In operator. Tells whether a test value appears in a collection
 of reference values. Always return as Boolean value. Returns TRUE only when
 the test value exactly matches at least one of the reference values.
@@ -321,7 +319,7 @@ True  #Using reference equality
 PS C:> $thisComputer -in  $domainServers
 True
 ```
-**-NotIn**  
+**-notin**  
 Description: Tells whether a test value appears in a collection
 of reference values. Always returns a Boolean value. Returns TRUE when the test
 value is not an exact match for at least one of the reference values.
@@ -337,38 +335,38 @@ Syntax:
 
 Examples:
 ```PowerShell
-PS C:> "def" -NotIn "abc", "def"
+PS C:> "def" -notin "abc", "def"
 False
 
-PS C:> "ghi" -NotIn "abc", "def"
+PS C:> "ghi" -notin "abc", "def"
 True
 
-PS C:> "Shell" -NotIn "Windows", "PowerShell"
+PS C:> "Shell" -notin "Windows", "PowerShell"
 True  #Not an exact match
 
-PS C:> "Windows" -NotIn "Windows", "PowerShell"
+PS C:> "Windows" -notin "Windows", "PowerShell"
 False  #An exact match
 
 # Find unapproved verbs in the functions in my module
 PS C:> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
 PS C:> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
 
-PS C:> $MyVerbs | where {$_ -NotIn $ApprovedVerbs}
+PS C:> $MyVerbs | where {$_ -notin $ApprovedVerbs}
 ForEach
 Sort
 Tee
 Where
 ```
 
--Replace
+**-replace**  
 Description: Replace operator. Changes the specified elements of a value.
 Example:
 ```PowerShell
-PS C:> "Get-Process" -Replace "Get", "Stop"
+PS C:> "Get-Process" -replace "Get", "Stop"
 Stop-Process
 
 # Change all .GIF file name extension to .JPG
-PS C:> dir *.gif | foreach {$_ -Replace ".gif", ".jpg"}
+PS C:> dir *.gif | foreach {$_ -replace ".gif", ".jpg"}
 ```
 
 **Equality Operators**
@@ -444,7 +442,7 @@ True
 In a very large collection, the -Contains operator returns results
 quicker than the equal to operator.
 
-**Match Operators**
+**Match Operators**  
 The match operators (-Match and -NotMatch) find elements that match or
 do not match a specified pattern using regular expressions.
 
@@ -531,7 +529,7 @@ Name                           Value
 0                              day
 ```
 
-Replace Operator
+**Replace Operator**  
 The -Replace operator replaces all or part of a value with the specified
 value using regular expressions. You can use the -Replace operator for
 many administrative tasks, such as renaming files. For example, the
@@ -562,7 +560,7 @@ PS C:> "book" -cReplace "B", "C"
 book
 ```
 
-**Bitwise Operators**
+**Bitwise Operators**  
 Windows PowerShell supports the standard bitwise operators, including
 bitwise-AND (-bAnd), the inclusive and exclusive bitwise-OR operators
 (-bOr and -bXor), and bitwise-NOT (-bNot).
@@ -581,26 +579,20 @@ Operator  Description               Example
 -bAnd     Bitwise AND               PS C:> 10 -band 3
 2
 
-
 -bOr      Bitwise OR (inclusive)    PS C:> 10 -bor 3
 11
-
 
 -bXor     Bitwise OR (exclusive)    PS C:> 10 -bxor 3
 9
 
-
 -bNot     Bitwise NOT               PS C:> -bNot 10
 -11
-
 
 -shl      Shift-left                PS C:> 100 -shl 2
 400
 
-
 -shr      Shift-right               PS C:> 100 -shr 1
 50
-
 
 Bitwise operators act on the binary format of a value. For example, the
 bit structure for the number 10 is 00001010 (based on 1 byte), and the
@@ -711,9 +703,14 @@ PS C:> 21 -shr 2
 # SEE ALSO
 
 about_Operators
+
 about_Regular_Expressions
+
 about_Wildcards
+
 Compare-Object
+
 Foreach-Object
+
 Where-Object
 
