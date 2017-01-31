@@ -68,7 +68,7 @@ Other than specifying pull servers and partial configurations, all of the proper
 | ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are __"ContinueConfiguration(default)"__ and __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Continue applying the current configuration after machine reboot.</li><li>__StopConfiguration__: Stop the current configuration after machine reboot.</li></ul>| 
 | RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push(default)"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull server. If this property is set to __Pull__, you must specify a pull server in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block. For more information about pull servers, see [Setting up a DSC pull server](pullServer.md).</li></ul>| 
 | CertificateID| string| The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?.| 
-| ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull sever if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull server by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
+| ConfigurationID| string| A GUID that identifies the configuration file to get from a pull server in pull mode. The node will pull configurations on the pull server if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull server by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).| 
 | RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull server to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.<br> __Note:__  Either the value of this property must be a multiple of the value of the __ConfigurationModeFrequencyMins__ property, or the value of the __ConfigurationModeFrequencyMins__ property must be a multiple of the value of this property.| 
 | AllowModuleOverwrite| bool| __$TRUE__ if new configurations downloaded from the configuration server are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.| 
 | DebugMode| string| Possible values are __None(Default)__, __ForceModuleImport__, and __All__. <ul><li>Set to __None__ to use cached resources. This is the default and should be used in production scenarios.</li><li>Setting to __ForceModuleImport__, causes the LCM to reload any DSC resource modules, even if they have been previously loaded and cached. This impacts the performance of DSC operations as each module is reloaded on use. Typically you would use this value while debugging a resource</li><li>In this release, __All__ is same as __ForceModuleImport__</li></ul> |
@@ -82,15 +82,15 @@ Other than specifying pull servers and partial configurations, all of the proper
 
 A pull server is either an OData web service or an SMB share that is used as a central location for DSC files. LCM configuration supports defining the following types of pull servers:
 
-* **Configuration server**: A repository for DSC configurations. Define configuration severs by using **ConfigurationRepositoryWeb** (for web-based servers) and **ConfigurationRepositoryShare** (for SMB-based servers) blocks.
-* Resource server—A repository for DSC resources, packaged as PowerShell modules. Define resource severs by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
+* **Configuration server**: A repository for DSC configurations. Define configuration servers by using **ConfigurationRepositoryWeb** (for web-based servers) and **ConfigurationRepositoryShare** (for SMB-based servers) blocks.
+* Resource server—A repository for DSC resources, packaged as PowerShell modules. Define resource servers by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
 * Report server—A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
 
 For information about setting up and using pull servers, see [Setting up a DSC pull server](pullServer.md).
 
 ## Configuration server blocks
 
-To define a web-based configuration sever, you create a **ConfigurationRepositoryWeb** block. A **ConfigurationRepositoryWeb** defines the following properties.
+To define a web-based configuration server, you create a **ConfigurationRepositoryWeb** block. A **ConfigurationRepositoryWeb** defines the following properties.
 
 |Property|Type|Description|
 |---|---|---| 
@@ -109,7 +109,7 @@ To define an SMB-based configuration server, you create a **ConfigurationReposit
 
 ## Resource server blocks
 
-To define a web-based resource sever, you create a **ResourceRepositoryWeb** block. A **ResourceRepositoryWeb** defines the following properties.
+To define a web-based resource server, you create a **ResourceRepositoryWeb** block. A **ResourceRepositoryWeb** defines the following properties.
 
 |Property|Type|Description|
 |---|---|---|
