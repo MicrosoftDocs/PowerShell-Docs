@@ -220,10 +220,11 @@ The partial configuration documents must be placed in the folder specified as th
 
 #### Naming configuration documents on the pull server in PowerShell 5.1
 
-If you are pulling only one partial configuration from an individual pull server, the configuration document can have any name. If you are pulling more than one partial configuration 
-from an pull server, the configuration document can be named either `<ConfigurationName>.mof`, where _ConfigurationName_ is the name of the partial configuration, or 
-`<ConfigurationName>.<NodeName>.mof`, where  _ConfigurationName_ is the name of the partial configuration, and _NodeName_ is the name of the target node. This allows you to pull
-configurations from Azure Automation DSC pull server.
+If you are pulling only one partial configuration from an individual pull server, the configuration document can have any name. 
+If you are pulling more than one partial configuration from a pull server, the configuration document can be named either `<ConfigurationName>.mof`, 
+where _ConfigurationName_ is the name of the partial configuration, 
+or `<ConfigurationName>.<NodeName>.mof`, where  _ConfigurationName_ is the name of the partial configuration, and _NodeName_ is the name of the target node. 
+This allows you to pull configurations from Azure Automation DSC pull server.
 
 
 #### Naming configuration documents on the pull server in PowerShell 5.0
