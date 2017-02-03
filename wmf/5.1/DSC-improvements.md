@@ -1,4 +1,4 @@
- ---
+---
 title:   DSC Improvements in WMF 5.1
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
@@ -13,7 +13,7 @@ ms.technology: WMF
 #Improvements in Desired State Configuration (DSC) in WMF 5.1
 
 ## DSC class resource improvements
-u
+
 In WMF 5.1, we have fixed the following known issues:
 * Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.
 * Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.
@@ -23,7 +23,6 @@ In WMF 5.1, we have fixed the following known issues:
 
 
 ## DSC resource debugging improvements
-o
 In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.
 In WMF 5.1, the debugger will stop at the class-based resource method in the same way as for MOF-based resources methods.
 
