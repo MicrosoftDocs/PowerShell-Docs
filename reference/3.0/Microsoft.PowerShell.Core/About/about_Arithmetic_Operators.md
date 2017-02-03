@@ -264,7 +264,7 @@ At line:1 char:9
 + $hash1 + <<<<  $hash2
 ```
 
-Although the addition operators are very useful, use the assignment operators to add elements to hash tables and arrays. For more information see [about_Assignment_Operators.md](about_assignment_operators). The following examples use the `+=` assignment operator to add items to an array:
+Although the addition operators are very useful, use the assignment operators to add elements to hash tables and arrays. For more information see [about_assignment_operators](about_Assignment_Operators.md). The following examples use the `+=` assignment operator to add items to an array:
 
 ```
 C:\PS>  $array
