@@ -10,7 +10,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-#Improvements in Desired State Configuration (DSC) in WMF 5.1
+# Improvements in Desired State Configuration (DSC) in WMF 5.1
 
 ## DSC class resource improvements
 
@@ -40,7 +40,7 @@ In WMF 5.1, this issue has been fixed.
 Concurrent registrations or reporting (involving ESENT database) will work fine in WMF 5.1. 
 This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
-## Circular ESENT database log
+## Enable Circular log on ESENT database instance
 In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, customer will have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging will be set to TRUE.
 ```
 <appSettings>
