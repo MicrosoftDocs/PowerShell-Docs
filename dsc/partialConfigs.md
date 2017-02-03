@@ -63,7 +63,7 @@ The **RefreshMode** for each partial configuration is set to "Push". The names o
 
 ### Publishing and starting push-mode partial configurations
 
-You then call [Publish-DSCConfiguration](../reference/5.1/PSDesiredStateconfiguration/Publish-DscConfiguration.md) for each configuration, passing the folders that contain the configuration 
+You then call [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) for each configuration, passing the folders that contain the configuration 
 documents as the **Path** parameters. `Publish-DSCConfiguration`places the configuration MOF files to the target nodes. After publishing both configurations, you can call 
 `Start-DSCConfiguration –UseExisting` on the target node.
 
@@ -110,7 +110,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Note:** The user running the [Publish-DSCConfiguration](../reference/5.1/PSDesiredStateconfiguration/Publish-DscConfiguration.md)
+>**Note:** The user running the [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)
 >cmdlet must have administrator privileges on the target node.
 
 ## Partial configurations in pull mode
