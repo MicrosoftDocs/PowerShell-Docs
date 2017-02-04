@@ -10,19 +10,18 @@ title:  about_Arithmetic_Operators
 ms.technology:  powershell
 ---
 
-
 # About Arithmetic Operators
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the operators that perform arithmetic in Windows PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
+
 
 Arithmetic operators calculate numeric values. You can use one or more arithmetic operators to add, subtract, multiply, and divide values, and to calculate the remainder (modulus) of a division operation.
 
-In addition, the addition operator (+) and multiplication operator (*) also operate on strings, arrays, and hash tables. The addition operator concatenates the input. The multiplication operator returns multiple copies of the input. You can even mix object types in an arithmetic statement. The method that is used to evaluate the statement is determined by the type of the leftmost object in the expression.
+In addition, the addition operator (`+`) and multiplication operator (`*`) also operate on strings, arrays, and hash tables. The addition operator concatenates the input. The multiplication operator returns multiple copies of the input. You can even mix object types in an arithmetic statement. The method that is used to evaluate the statement is determined by the type of the leftmost object in the expression.
 
 Beginning in Windows PowerShell 2.0, all arithmetic operators work on 64-bit numbers.
 
@@ -41,7 +40,7 @@ Windows PowerShell supports the following arithmetic operators:
 | -shl |Shifts bits to the left the specified number of times. Available only on integer types.|`100 -shl 2`|
 | -shr |     Shifts bits to the right the specified  number of times. Available only on integer types.|`100 -shr 2`|
 
-# OPERATOR PRECEDENCE
+## OPERATOR PRECEDENCE
 
 Windows PowerShell processes arithmetic operators in the following order:
 
@@ -78,9 +77,9 @@ C:\PS> $b
 
 In this example, the expression `$a++` is evaluated before `$c[$a++]`. Evaluating `$a++` changes the value of `$a`. The variable `$a` in `$b[$a]` equals `1`, not `0`, so the statement assigns a value to `$b[1]`, not `$b[0]`.
 
-# DIVISION AND ROUNDING
+## DIVISION AND ROUNDING
 
-When the quotient of a division operation is an integer, Windows PowerShell rounds the value to the nearest integer. When the value is .5, it rounds to the nearest even integer.
+When the quotient of a division operation is an integer, Windows PowerShell rounds the value to the nearest integer. When the value is `.5`, it rounds to the nearest even integer.
 
 The following example shows the effect of rounding to the nearest even integer.
 
@@ -330,7 +329,7 @@ C:\PS> (512MB * 512MB).GetType().FullName
 System.Double
 ```
 
-The type of the result will not necessarily be the same as one of the operands. In the following example, the negative value cannot be cast to an unsigned integer, and the unsigned integer is too large to be cast to Int32:
+The type of the result will not necessarily be the same as one of the operands. In the following example, the negative value cannot be cast to an unsigned integer, and the unsigned integer is too large to be cast to `Int32`:
 
 ```
 C:\PS> ([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
@@ -353,7 +352,7 @@ At line:1 char:22
 + [Decimal]::maxvalue + <<<<  1
 ```
 
-# ARITHMETIC OPERATORS AND VARIABLES
+## ARITHMETIC OPERATORS AND VARIABLES
 
 You can also use arithmetic operators with variables. The operators act on the values of the variables. The following examples demonstrate the use of arithmetic operators with variables:
 
@@ -373,7 +372,7 @@ C:\PS> $a + $b + $c
 Windows PowerShell 2
 ```
 
-# ARITHMETIC OPERATORS AND COMMANDS
+## ARITHMETIC OPERATORS AND COMMANDS
 
 Typically, you use the arithmetic operators in expressions with numbers, strings, and arrays. However, you can also use arithmetic operators with the objects that commands return and with the properties of those objects.
 
@@ -402,7 +401,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     967      30    58804      59496   416   930.97   2508 WINWORD
 ```
 
-# EXAMPLES
+## EXAMPLES
 
 The following examples show how to use the arithmetic operators in Windows PowerShell:
 
@@ -480,30 +479,29 @@ C:\PS> $servers = @{0 = "LocalHost"; 1 = "Server01"; 2 = "Server02"}
 C:\PS> $servers + @{3 = "Server03"}
 Name Value
 ---- -----
-3 Server03
-2 Server02
-1 Server01
-0 LocalHost
+3    Server03
+2    Server02
+1    Server01
+0    LocalHost
 
 C:\PS> $servers
 Name Value
 ---- -----
-2 Server02
-1 Server01
-0 LocalHost
+2    Server02
+1    Server01
+0    LocalHost
 
 C:\PS> $servers += @{3 = "Server03"} #Use assignment operator
 C:\PS> $servers
 Name Value
 ---- -----
-3 Server03
-2 Server02
-1 Server01
-0 LocalHost
+3    Server03
+2    Server02
+1    Server01
+0    LocalHost
 ```
 
-# BITWISE ARITHMETIC IN WINDOWS POWERSHELL
-
+## BITWISE ARITHMETIC IN WINDOWS POWERSHELL
 
 Windows PowerShell supports the `-shl` (shift-left) and `-shr` (shift-right) operators for bitwise arithmetic.
 
@@ -541,6 +539,7 @@ When the left operand is a Long (64-bit) value, the lower 6 bits of the right op
 ```
 PS C:> 21 -shr 1
 10
+
   00010101  (21)
   00001010  (10)
 ```
@@ -554,14 +553,20 @@ PS C:> 21 -shr 2
   00000101  ( 5)
 ```
 
-# SEE ALSO
+## SEE ALSO
 
-about_arrays
-about_assignment_operators
-about_comparison_operators
-about_hash_tables
-about_operators
-about_variables
-Get-Date
-New-TimeSpan
+[about_arrays](about_Arrays.md)
 
+[about_assignment_operators](about_Assignment_Operators.md)
+
+[about_comparison_operators](about_Comparison_Operators.md)
+
+[about_hash_tables](about_Hash_Tables.md)
+
+[about_operators](about_Operators.md)
+
+[about_variables](about_Variables.md)
+
+[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
+
+[New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
