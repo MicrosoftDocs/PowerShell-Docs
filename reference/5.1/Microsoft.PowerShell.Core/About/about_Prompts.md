@@ -323,5 +323,3 @@ Write-Host
 [about_Debuggers](about_Debuggers.md)
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
-
-

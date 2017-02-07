@@ -114,5 +114,3 @@ or initialized."
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Switch](about_Switch.md)
-
-

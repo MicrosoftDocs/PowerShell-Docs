@@ -336,5 +336,3 @@ if there are comments in the functions used in a script or script module.
 [about_If](about_If.md)
 
 Foreach-Object
-
-

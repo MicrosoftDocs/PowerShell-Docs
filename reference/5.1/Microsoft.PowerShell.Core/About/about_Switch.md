@@ -235,5 +235,3 @@ The action for each condition is independent of the actions in other conditions.
 [about_If](about_If.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
-
-

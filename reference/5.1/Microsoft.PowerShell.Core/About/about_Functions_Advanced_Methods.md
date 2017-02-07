@@ -215,5 +215,3 @@ the function is run.
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-
-

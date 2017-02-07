@@ -740,5 +740,3 @@ PS C:> Get-CimInstance -Query $q
 [about_WMI](about_WMI.md)
 
 [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
-
-

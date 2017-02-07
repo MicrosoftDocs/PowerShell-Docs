@@ -91,5 +91,3 @@ and the Get-Member topic, to learn how to find an object type.
 [about_Pipelines](about_Pipelines.md)
 
 Get-Member
-
-

@@ -574,5 +574,3 @@ PS C:> 21 -shr 2
 Get-Date
 
 New-TimeSpan
-
-

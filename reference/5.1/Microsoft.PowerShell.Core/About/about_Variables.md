@@ -352,5 +352,3 @@ To get help for these cmdlets, type: "Get-Help <cmdlet-hame>".
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Scopes](about_Scopes.md)
-
-

@@ -73,5 +73,3 @@ Get-Help <Reserved_Word>
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [about_Special_Characters](about_Special_Characters.md)
-
-

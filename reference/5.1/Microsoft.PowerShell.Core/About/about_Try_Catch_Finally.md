@@ -159,5 +159,3 @@ A Finally block runs even if you use CTRL\+C to stop the script. A Finally block
 [about_Throw](about_Throw.md)
 
 [about_Trap](about_Trap.md)
-
-

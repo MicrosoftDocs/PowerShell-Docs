@@ -1472,5 +1472,3 @@ Verify that the process is stopped.
 [about_Scopes](about_Scopes.md)
 
 [about_Variables](about_Variables.md)
-
-

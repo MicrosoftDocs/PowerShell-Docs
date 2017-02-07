@@ -289,5 +289,3 @@ The function resumes after the error is trapped, and the "Function completed" st
 [about_Throw](about_Throw.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-
-

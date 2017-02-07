@@ -270,5 +270,3 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.
 [about_Hash_Tables](about_Hash_Tables.md)
 
 [about_Parameters](about_Parameters.md)
-
-

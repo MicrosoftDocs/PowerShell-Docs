@@ -147,5 +147,3 @@ at http://go.microsoft.com/fwlink/?LinkId=133231.
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Operators](about_Operators.md)
-
-

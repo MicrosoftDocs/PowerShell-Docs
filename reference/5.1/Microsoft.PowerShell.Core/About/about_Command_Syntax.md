@@ -286,5 +286,3 @@ about_Help_Syntax
 Get-Command
 
 Get-Help
-
-

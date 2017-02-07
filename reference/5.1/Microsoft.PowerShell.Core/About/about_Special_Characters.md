@@ -149,5 +149,3 @@ about_Symbols
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Escape_Characters](about_Escape_Characters.md)
-
-

@@ -207,5 +207,3 @@ Format-XML -strings string1, string2, string3
 ConvertFrom-StringData
 
 Import-LocalizedData
-
-

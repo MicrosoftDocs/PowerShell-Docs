@@ -150,5 +150,3 @@ In  Windows PowerShell 3.0, the  Windows PowerShell Core packages appear as modu
 [about_PSSnapins](about_PSSnapins.md)
 
 Get-PSSnapin
-
-
