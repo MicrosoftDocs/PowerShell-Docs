@@ -282,5 +282,3 @@ Get-Help * -Category provider
 [about_Locations](about_Locations.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
-
-

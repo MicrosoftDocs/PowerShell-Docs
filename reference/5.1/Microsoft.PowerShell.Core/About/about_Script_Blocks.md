@@ -120,5 +120,3 @@ For more information about the call operator, see about_Operators.
 [about_Functions_Advanced](about_Functions_Advanced.md)
 
 [about_Operators](about_Operators.md)
-
-

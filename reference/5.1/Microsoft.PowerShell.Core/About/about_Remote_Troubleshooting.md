@@ -777,5 +777,3 @@ the command again.
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
 [about_Remote_Variables](about_Remote_Variables.md)
-
-

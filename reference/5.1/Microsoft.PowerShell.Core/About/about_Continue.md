@@ -54,5 +54,3 @@ modified by the For statement, an infinite loop may result.
 [about_Trap](about_Trap.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-
-

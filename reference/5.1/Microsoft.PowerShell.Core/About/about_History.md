@@ -102,5 +102,3 @@ the prompt level.)
 [about_Profiles](about_Profiles.md)
 
 [about_Variables](about_Variables.md)
-
-

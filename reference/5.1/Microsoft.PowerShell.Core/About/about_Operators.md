@@ -270,5 +270,3 @@ $(Get-WMIObject win32_Directory)
 [about_Join](about_Join.md)
 
 [about_Redirection](about_Redirection.md)
-
-

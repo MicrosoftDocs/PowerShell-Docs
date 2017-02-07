@@ -379,5 +379,3 @@ Contains TRUE. You can use this variable to represent TRUE in commands and scrip
 [about_Preference_Variables](about_Preference_Variables.md)
 
 [about_Variables](about_Variables.md)
-
-

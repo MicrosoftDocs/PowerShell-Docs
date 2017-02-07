@@ -364,5 +364,3 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 Invoke-Command
 
 New-PSSession
-
-

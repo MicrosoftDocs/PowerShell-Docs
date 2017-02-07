@@ -132,5 +132,3 @@ for ($i = 0; $i -ile 20; $i += 2) {Write-Host $i}
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Foreach](about_Foreach.md)
-
-

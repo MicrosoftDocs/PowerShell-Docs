@@ -237,5 +237,3 @@ Save-Help
 Show-Command
 
 Update-Help
-
-

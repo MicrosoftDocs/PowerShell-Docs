@@ -266,5 +266,3 @@ about_RestrictedLanguage
 [about_Session_Configurations](about_Session_Configurations.md)
 
 [about_Windows_RT](about_Windows_RT.md)
-
-

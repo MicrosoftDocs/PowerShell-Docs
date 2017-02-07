@@ -300,5 +300,3 @@ $a[-1]
 [about_Foreach](about_Foreach.md)
 
 [about_While](about_While.md)
-
-

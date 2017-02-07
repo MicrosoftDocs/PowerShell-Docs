@@ -214,5 +214,3 @@ Get-WmiObject
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
 [about_Preference_Variables](about_Preference_Variables.md)
-
-

@@ -813,5 +813,3 @@ Set-Strictmode
 Write-Debug
 
 Write-Verbose
-
-

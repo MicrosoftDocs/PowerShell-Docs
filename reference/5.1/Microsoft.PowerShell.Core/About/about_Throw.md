@@ -152,5 +152,3 @@ dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attribut
 [about_Trap](about_Trap.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-
-

@@ -146,5 +146,3 @@ Tee-Object
 [about_Command_Syntax](about_Command_Syntax.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
-
-

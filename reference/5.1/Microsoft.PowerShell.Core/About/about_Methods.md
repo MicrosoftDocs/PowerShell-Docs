@@ -195,5 +195,3 @@ PS C:\> $p | Foreach-Object {$_.Kill()}
 [about_Properties](about_Properties.md)
 
 Get-Member
-
-

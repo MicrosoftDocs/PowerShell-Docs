@@ -781,5 +781,3 @@ Registry (provider)
 Get-PSProvider
 
 Get-ChildItem
-
-
