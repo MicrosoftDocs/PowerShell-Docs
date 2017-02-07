@@ -45,11 +45,11 @@ Beginning in Windows PowerShell 3.0, you can also use splatting
 to represent all parameters of a command.
 
 # SYNTAX
-
-
+```
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
 
 <CommandName> <optional parameters> @<Array> <optional parameters>
+```
 
 To provide parameter values for positional parameters, in which
 parameter names are not required, use the array syntax. To provide
@@ -73,9 +73,9 @@ Test.txt file to the Test2.txt file in the same directory.
 
 The first example uses the traditional format in which parameter names
 are included.
-
+```powershell
 Copy-Item -Path "test.txt" -Destination "test2.txt" -WhatIf
-
+```
 The second example uses hash table splatting. The first command creates
 a hash table of parameter-name and parameter-value pairs and stores it
 in the $HashArguments variable. The second command uses the $HashArguments
@@ -83,13 +83,15 @@ variable in a command with splatting. The At symbol (@HashArguments)
 replaces the dollar sign ($HashArguments) in the command.
 
 To provide a value for the WhatIf switch parameter, use $True or $False.
-
+```powershell
 PS C:> $HashArguments = @{ Path = "test.txt"; Destination = "test2.txt"; WhatIf = $true }
 PS C:> Copy-Item @HashArguments
-
+```
 Note: In the first command, the At symbol (@) indicates a hash table, not
 a splatted value. The syntax for hash tables in Windows PowerShell is:
-@{ <name>=<value>; <name>=<value>; â€¦}
+```
+@{ <name>=<value>; <name>=<value>; …}
+```
 
 # SPLATTING WITH ARRAYS
 
@@ -101,20 +103,20 @@ file to the Test2.txt file in the same directory.
 
 The first example uses the traditional format in which parameter names are
 omitted. The parameter values appear in position order in the command.
-
+```powershell
 Copy-Item "test.txt" "test2.txt" -WhatIf
-
+```
 The second example uses array splatting. The first command creates an array
 of the parameter values and stores it in the $ArrayArguments variable. The
 values are in position order in the array. The second command uses the
 $ArrayArguments variable in a command in splatting. The At symbol
 (@ArrayArguments) replaces the dollar sign ($ArrayArguments) in the command.
-
+```powershell
 PS C:> $ArrayArguments = "test.txt", "test2.txt"
 PS C:> Copy-Item @ArrayArguments -WhatIf
+```
 
 # EXAMPLES
-
 
 This example shows how to re-use splatted values in different commands.
 The commands in this example use the Write-Host cmdlet to write messages
@@ -126,20 +128,21 @@ variable.
 
 The first command creates a hash table of parameter names and values and
 stores the hash table in the $Colors variable.
-
+```powershell
 $Colors = @{ForegroundColor = "black"
-BackgroundColor = "white"}
-
+            BackgroundColor = "white"}
+```
 The second and third commands use the $Colors variable for splatting in a
 Write-Host command. To use the $Colors variable, replace the dollar sign
 ($Colors) with an At symbol (@Colors).
-
-Write a message with the colors in $Colors
+```powershell
+# Write a message with the colors in $Colors
 Write-Host "This is a test." @Colors
 
-Write second message with same colors.
-The position of splatted hash table does not matter.
+# Write second message with same colors.
+# The position of splatted hash table does not matter.
 Write-Host @Colors "This is another test."
+```
 
 This example shows how to forward their parameters to other commands by
 using splatting and the $PSBoundParameters automatic variable.
@@ -153,40 +156,36 @@ In the following example, we use the $PSBoundParameters variable to
 forward the parameters values passed to a script or function from Test2
 function to the Test1 function. Both calls to the Test1 function from
 Test2 use splatting.
-
+```powershell
 function Test1
 {
-param($a, $b, $c)
+    param($a, $b, $c)
 
-$a
-$b
-$c
+    $a
+    $b
+    $c
 }
 
 function Test2
 {
-param($a, $b, $c)
+    param($a, $b, $c)
 
-Call the Test1 function with $a, $b, and $c.
-Test1 @PsBoundParameters
+    # Call the Test1 function with $a, $b, and $c.
+    Test1 @PsBoundParameters
 
-Call the Test1 function with $b and $c, but not with $a
-$LimitedParameters = $PSBoundParameters
-$LimitedParameters.Remove("a") | Out-Null
-Test1 @LimitedParameters
+    # Call the Test1 function with $b and $c, but not with $a
+    $LimitedParameters = $PSBoundParameters
+    $LimitedParameters.Remove("a") | Out-Null
+    Test1 @LimitedParameters
 }
 
 PS C:> Test2 -a 1 -b 2 -c 3
-# 1
-
-# 2
-
-# 3
-
-# 2
-
-# 3
-
+1
+2
+3
+2
+3
+```
 
 # SPLATTING COMMAND PARAMETERS
 
@@ -206,13 +205,14 @@ all unassigned parameter values.
 For example, the following function calls the Get-Process
 cmdlet. In this function, @Args represents all of the parameters
 of the Get-Process cmdlet.
-
+```powershell
 function Get-MyProcess { Get-Process @Args }
+```
 
 When you use the Get-MyProcess function, all unassigned
 parameters and parameter values are passed to @Args, as
 shown in the following commands.
-
+```
 PS C:> Get-MyProcess -Name PowerShell
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -224,13 +224,14 @@ PS C:> Get-MyProcess -Name PowerShell_Ise -FileVersionInfo
 ProductVersion   FileVersion      FileName
 --------------   -----------      --------
 6.2.9200.16384   6.2.9200.1638... C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+```
 
 You can use @Args in a function that has explicitly
 declared parameters. You can use it more than once in
 a function, but all parameters that you enter are passed
 to all instances of @Args, as shown in the following
 example.
-
+```
 function Get-MyCommand
 {
 Param ([switch]$P, [switch]$C)
@@ -258,11 +259,14 @@ Parameters         :
 ParameterSets      :
 HelpUri            :
 FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+```
 
 # SEE ALSO
 
 about_Arrays
-about_Automatic_Variables
-about_Hash_Tables
-about_Parameters
 
+about_Automatic_Variables
+
+about_Hash_Tables
+
+about_Parameters
