@@ -1,25 +1,3 @@
-<#
-Describe "Updatable help can download help" {
-    BeforeAll {
-        ## Rename original help temporarily.
-        Move-Item "$pshome\en-us\Microsoft.PowerShell.Management.dll-Help.xml" "$pshome\en-us\Microsoft.PowerShell.Management.dll-Help.xml.temp"
-    }
-
-    AfterAll {
-        Move-Item "$pshome\en-us\Microsoft.PowerShell.Management.dll-Help.xml.temp" "$pshome\en-us\Microsoft.PowerShell.Management.dll-Help.xml"
-    }
-
-    It "Artifacts are built" {
-        "$PSScriptRoot/../../updatablehelp/5.1" | Should Exist
-    }
-
-    It "Dowloading Microsoft.Powershell.Management module works" {
-        (Get-Help Get-Process).description | Should BeNullOrEmpty
-        Update-Help 'Microsoft.Powershell.Management' -SourcePath "$PSScriptRoot/../../updatablehelp/5.1/" -Verbose
-        (Get-Help Get-Process).syntax | Should "Gets the processes that are running on the local computer or a remote computer."
-    }
-}#>
-
 # Test Settings:
 # This is the list of PowerShell Core modules for which we test update-help
 $powershellCoreModules = @(
