@@ -69,7 +69,7 @@ configuration PullClientConfigID
             RefreshFrequencyMins = 30 
             RebootNodeIfNeeded = $true
         }
-        ConfigurationRepositoryWeb SMBPullServer
+        ConfigurationRepositoryShare SMBPullServer
         {
             SourcePath = '\\SMBPullServer\PullSource'
             
