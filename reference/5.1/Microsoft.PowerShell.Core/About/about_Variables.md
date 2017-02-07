@@ -340,15 +340,17 @@ To get help for these cmdlets, type: "Get-Help <cmdlet-hame>".
 
 
 ## SEE ALSO
-about_Automatic_Variables
 
-about_Environment_Variables
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
-about_Preference_Variables
+[about_Environment_Variables](about_Environment_Variables.md)
 
-about_Profiles
+[about_Preference_Variables](about_Preference_Variables.md)
 
-about_Quoting_Rules
+[about_Profiles](about_Profiles.md)
 
-about_Scopes
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Scopes](about_Scopes.md)
+
 

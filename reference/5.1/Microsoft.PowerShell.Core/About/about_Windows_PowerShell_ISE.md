@@ -218,14 +218,24 @@ http://go.microsoft.com/fwlink/?LinkId=144711.
 
 # SEE ALSO
 
-about_Debuggers
-about_Profiles
-about_Updatable_Help
+[about_Debuggers](about_Debuggers.md)
+
+[about_Profiles](about_Profiles.md)
+
+[about_Updatable_Help](about_Updatable_Help.md)
+
 Get-Help
+
 Get-IseSnippet
+
 Import-IseSnippet
+
 New-IseSnippet
+
 Save-Help
+
 Show-Command
+
 Update-Help
+
 

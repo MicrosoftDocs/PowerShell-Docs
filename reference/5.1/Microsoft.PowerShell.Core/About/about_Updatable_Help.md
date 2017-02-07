@@ -488,8 +488,11 @@ Windows Preinstallation Environment (Windows PE).
 # SEE ALSO
 
 Get-Help
+
 Save-Help
+
 Update-Help
-Updatable Help Status Table
-(http://go.microsoft.com/fwlink/?LinkID=270007)
+
+Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)
+
 

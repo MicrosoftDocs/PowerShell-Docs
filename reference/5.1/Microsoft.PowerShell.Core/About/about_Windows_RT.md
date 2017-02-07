@@ -41,29 +41,17 @@ While remoting is disabled, you can use  Windows PowerShell remoting to run comm
 
 For more information about ConstrainedLanguage language mode, see about_Language_Modes.
 
+## SEE ALSO
+
+[about_Language_Modes](about_Language_Modes.md)
+
+[about_Remote](about_Remote.md)
+
+[about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
+
+[about_Workflows](about_Workflows.md)
+
+Windows PowerShell System Requirements: (http://technet.microsoft.com/library/hh857337.aspx)
 
 ## KEYWORDS
-about_ARM
-
-about_PowerShell_on_ARM
-
-about_PowerShell_on_Surface
-
-about_Windows_RT_8.1
-
-about_WindowsRT
-
-
-## SEE ALSO
-about_Language_Modes
-
-about_Remote
-
-about_Windows_PowerShell_ISE
-
-about_Workflows
-
-Windows PowerShell System Requirements:
-
-(http:\/\/technet.microsoft.com\/library\/hh857337.aspx)
-
+about_ARM, about_PowerShell_on_ARM, about_PowerShell_on_Surface, about_Windows_RT_8.1 about_WindowsRT

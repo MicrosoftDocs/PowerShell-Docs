@@ -267,5 +267,5 @@ For more information, see about_Modules.
 # SEE ALSO
 
 Environment (provider)
-about_Modules
 
+[about_Modules](about_Modules.md)

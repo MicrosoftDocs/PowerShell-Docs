@@ -487,8 +487,12 @@ Invoke-Command $s {param($c) Remove-Item .\Test*.ps1 -Credential $c} -ArgumentLi
 
 # SEE ALSO
 
-about_Variables
-about_Environment_Variables
-about_Functions
-about_Script_Blocks
+[about_Variables](about_Variables.md)
+
+[about_Environment_Variables](about_Environment_Variables.md)
+
+[about_Functions](about_Functions.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
 

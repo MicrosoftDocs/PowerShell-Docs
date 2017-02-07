@@ -182,9 +182,14 @@ about_Functions_CmdletBinding_Attribute
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced
-about_Functions_Advanced_Methods
-about_Functions_Advanced_Parameters
-about_Functions_OutputTypeAttribute
+[about_Functions](about_Functions.md)
+
+[about_Functions_Advanced](about_Functions_Advanced.md)
+
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+
 

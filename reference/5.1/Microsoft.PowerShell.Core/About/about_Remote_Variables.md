@@ -114,10 +114,16 @@ about_Using
 
 # SEE ALSO
 
-about_Remote
-about_PSSessions
-about_Scopes
+[about_Remote](about_Remote.md)
+
+[about_PSSessions](about_PSSessions.md)
+
+[about_Scopes](about_Scopes.md)
+
 Enter-PSSession
+
 Invoke-Command
+
 New-PSSession
+
 

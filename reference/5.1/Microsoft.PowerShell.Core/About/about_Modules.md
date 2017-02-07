@@ -479,14 +479,24 @@ all Windows PowerShell sessions. For more information, see about_EventLogs
 
 # SEE ALSO
 
-about_Command_Precedence
-about_DesiredStateConfiguration
-about_EventLogs
-about_Group_Policy_Settings
-about_PSSnapins
+[about_Command_Precedence](about_Command_Precedence.md)
+
+[about_DesiredStateConfiguration](about_DesiredStateConfiguration.md)
+
+[about_EventLogs](about_EventLogs.md)
+
+[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+
+[about_PSSnapins](about_PSSnapins.md)
+
 Get-Command
+
 Get-Help
+
 Get-Module
+
 Import-Module
+
 Remove-Module
+
 

@@ -238,17 +238,19 @@ For more information, see the help topic for the Import-Csv cmdlet.
 
 
 ## SEE ALSO
-about_Objects
 
-about_Methods
+[about_Objects](about_Objects.md)
 
-about_Properties
+[about_Methods](about_Methods.md)
 
-about_Pipelines
+[about_Properties](about_Properties.md)
+
+[about_Pipelines](about_Pipelines.md)
 
 Get-Member
 
 Import-Csv
 
 New-Object
+
 

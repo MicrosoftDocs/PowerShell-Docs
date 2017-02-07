@@ -273,6 +273,7 @@ Get-Help Alias
 
 
 ## SEE ALSO
+
 New-Alias
 
 Get-Alias
@@ -287,9 +288,10 @@ get-psprovider
 
 get-psdrive
 
-about_functions
+[about_functions](about_functions.md)
 
-about_profiles
+[about_profiles](about_profiles.md)
 
-about_providers
+[about_providers](about_providers.md)
+
 

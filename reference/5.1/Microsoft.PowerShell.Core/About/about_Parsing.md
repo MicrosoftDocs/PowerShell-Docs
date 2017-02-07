@@ -111,5 +111,6 @@ X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 
 # SEE ALSO
 
-about_Command_Syntax
+[about_Command_Syntax](about_Command_Syntax.md)
+
 

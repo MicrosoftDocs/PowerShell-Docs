@@ -204,15 +204,17 @@ Common parameters are parameters that you can use with any cmdlet. For more info
 
 
 ## SEE ALSO
-about_Command_syntax
 
-about_Comment_Based_Help
+[about_Command_syntax](about_Command_syntax.md)
 
-about_Functions_Advanced
+[about_Comment_Based_Help](about_Comment_Based_Help.md)
 
-about_Parameters_Default_Values
+[about_Functions_Advanced](about_Functions_Advanced.md)
 
-about_Pipelines
+[about_Parameters_Default_Values](about_Parameters_Default_Values.md)
 
-about_Wildcards
+[about_Pipelines](about_Pipelines.md)
+
+[about_Wildcards](about_Wildcards.md)
+
 

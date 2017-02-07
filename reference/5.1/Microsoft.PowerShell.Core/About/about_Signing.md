@@ -321,11 +321,16 @@ to come.
 
 # SEE ALSO
 
-about_Execution_Policies
-about_Profiles
-Get-ExecutionPolicy
-New-SelfSignedCertificate
-Set-ExecutionPolicy
-Set-AuthenticodeSignature
-"Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)
+[about_Execution_Policies](about_Execution_Policies.md)
 
+[about_Profiles](about_Profiles.md)
+
+Get-ExecutionPolicy
+
+New-SelfSignedCertificate
+
+Set-ExecutionPolicy
+
+Set-AuthenticodeSignature
+
+"Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)
