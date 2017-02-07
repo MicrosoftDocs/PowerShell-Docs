@@ -73,11 +73,13 @@ At line:1 char:7
 
 
 ## SEE ALSO
-about_Variables
 
-about_Environment_Variables
+[about_Variables](about_Variables.md)
 
-about_Functions
+[about_Environment_Variables](about_Environment_Variables.md)
 
-about_Script_Blocks
+[about_Functions](about_Functions.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
 

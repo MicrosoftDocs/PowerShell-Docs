@@ -227,11 +227,12 @@ For more information about PSSessions, see about_PSSession_Details.
 
 
 ## SEE ALSO
-about_Remote
 
-about_Remote_Disconnected_Sessions
+[about_Remote](about_Remote.md)
 
-about_Remote_Requirements
+[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
 
 Connect-PSSession
 
@@ -248,4 +249,5 @@ Invoke-Command
 New-PSSession
 
 Remove-PSSession
+
 

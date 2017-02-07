@@ -733,8 +733,12 @@ PS C:> Get-CimInstance -Query $q
 
 # SEE ALSO
 
-about_Escape_Characters
-about_Quoting_Rules
-about_WMI
-about_WMI_Cmdlets
+[about_Escape_Characters](about_Escape_Characters.md)
+
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_WMI](about_WMI.md)
+
+[about_WMI_Cmdlets](about_WMI_Cmdlets.md)
+
 

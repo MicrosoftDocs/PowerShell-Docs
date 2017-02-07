@@ -164,5 +164,7 @@ C:\PS>
 
 
 ## SEE ALSO
-about_Operators
+
+[about_Operators](about_Operators.md)
+
 

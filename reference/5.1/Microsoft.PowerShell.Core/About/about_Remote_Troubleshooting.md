@@ -772,8 +772,10 @@ the command again.
 
 # SEE ALSO
 
-Online version: http://technet.microsoft.com/library/hh847850(v=wps.630).aspx
-about_Remote
-about_Remote_Requirements
-about_Remote_Variables
+[about_Remote](about_Remote.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
+
 

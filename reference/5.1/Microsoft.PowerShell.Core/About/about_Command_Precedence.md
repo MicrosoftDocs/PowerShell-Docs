@@ -257,12 +257,24 @@ For more information, see Import-Module and Import-PSSession.
 
 # SEE ALSO
 
-about_Path_Syntax
-about_Aliases
-about_Functions
-Alias (provider)
-Function (provider)
+[about_Path_Syntax](about_Path_Syntax.md)
+
+[about_Aliases](about_Aliases.md)
+
+[about_Functions](about_Functions.md)
+
+Alias
+
+(provider)
+
+Function
+
+(provider)
+
 Get-Command
+
 Import-Module
+
 Import-PSSession
+
 

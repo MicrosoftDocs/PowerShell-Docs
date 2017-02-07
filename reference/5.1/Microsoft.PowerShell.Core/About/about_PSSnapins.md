@@ -165,6 +165,7 @@ Beginning in  Windows PowerShell 3.0, you can record execution events for the cm
 
 
 ## SEE ALSO
+
 Add-PsSnapin
 
 Get-PsSnapin
@@ -175,11 +176,11 @@ Export-Console
 
 Get-Command
 
-about_Profiles
+[about_Profiles](about_Profiles.md)
 
-about_Modules
-
+[about_Modules](about_Modules.md)
 
 ## KEYWORDS:
 about_Snapins, about_Snap_ins, about_Snap-ins
+
 

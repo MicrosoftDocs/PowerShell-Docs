@@ -136,13 +136,15 @@ To force the redirection of content to a read-only, hidden, or system file, use 
 
 
 ## SEE ALSO
+
 Out-File
 
 Tee-Object
 
-about_Operators
+[about_Operators](about_Operators.md)
 
-about_Command_Syntax
+[about_Command_Syntax](about_Command_Syntax.md)
 
-about_Path_Syntax
+[about_Path_Syntax](about_Path_Syntax.md)
+
 

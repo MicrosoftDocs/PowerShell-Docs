@@ -77,7 +77,10 @@ foreach ($point in $p)
 
 # SEE ALSO
 
-about_Language_Keywords
-about_If
-about_Script_Blocks
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_If](about_If.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
 

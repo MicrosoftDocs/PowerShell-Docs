@@ -668,7 +668,8 @@ TechNet Library.
 
 # SEE ALSO
 
--  [about_Escape_Characters](about_Escape_Characters.md)
--  [about_Special_Characters](about_Special_Characters.md)
--  [about_Wildcards](about_Wildcards.md)
+[about_Escape_Characters](about_Escape_Characters.md)
 
+[about_Special_Characters](about_Special_Characters.md)-
+
+[about_Wildcards](about_Wildcards.md)

@@ -263,10 +263,12 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.
 
 # SEE ALSO
 
-about_Arrays
+[about_Arrays](about_Arrays.md)
 
-about_Automatic_Variables
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
-about_Hash_Tables
+[about_Hash_Tables](about_Hash_Tables.md)
 
-about_Parameters
+[about_Parameters](about_Parameters.md)
+
+

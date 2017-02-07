@@ -279,13 +279,14 @@ invoke-command -session $s -command {receive-job -sessionid 2 > c:\logs\pslog.tx
 
 
 ## SEE ALSO
-about_Jobs
 
-about_Job_Details
+[about_Jobs](about_Jobs.md)
 
-about_Remote
+[about_Job_Details](about_Job_Details.md)
 
-about_Remote_Variables
+[about_Remote](about_Remote.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
 
 Invoke-Command
 
@@ -304,4 +305,3 @@ New-PSSession
 Enter-PSSession
 
 Exit-PSSession
-
