@@ -39,13 +39,6 @@ $testCases = @{
         HelpInstallationPath = "$pshome\en-US"
     }
 
-    "Microsoft.PowerShell.LocalAccounts" = @{
-        HelpFiles            = "Microsoft.Powershell.LocalAccounts.dll-help.xml"
-        HelpInfoFiles        = "Microsoft.PowerShell.LocalAccounts_8e362604-2c0b-448f-a414-a6a690a644e2_HelpInfo.xml"
-        CompressedFiles      = "Microsoft.PowerShell.LocalAccounts_8e362604-2c0b-448f-a414-a6a690a644e2_en-US_HelpContent$extension"
-        HelpInstallationPath = "$pshome\Modules\Microsoft.PowerShell.LocalAccounts\*\en-US"
-    }
-
     "Microsoft.PowerShell.Management" = @{
         HelpFiles            = "Microsoft.PowerShell.Commands.Management.dll-help.xml"
         HelpInfoFiles        = "Microsoft.PowerShell.Management_eefcb906-b326-4e99-9f54-8b4bb6ef3c6d_HelpInfo.xml"
@@ -72,6 +65,18 @@ $testCases = @{
         HelpInfoFiles        = "Microsoft.WsMan.Management_766204A6-330E-4263-A7AB-46C87AFC366C_HelpInfo.xml"
         CompressedFiles      = "Microsoft.WsMan.Management_766204A6-330E-4263-A7AB-46C87AFC366C_en-US_helpcontent$extension"
         HelpInstallationPath = "$pshome\en-US"
+    }
+}
+
+if(($PSVersionTable.PSVersion.Major -ge 5) -and ($PSVersionTable.PSVersion.Minor -ge 1))
+{
+    $testCases += @{
+        "Microsoft.PowerShell.LocalAccounts" = @{
+            HelpFiles            = "Microsoft.Powershell.LocalAccounts.dll-help.xml"
+            HelpInfoFiles        = "Microsoft.PowerShell.LocalAccounts_8e362604-2c0b-448f-a414-a6a690a644e2_HelpInfo.xml"
+            CompressedFiles      = "Microsoft.PowerShell.LocalAccounts_8e362604-2c0b-448f-a414-a6a690a644e2_en-US_HelpContent$extension"
+            HelpInstallationPath = "$pshome\Modules\Microsoft.PowerShell.LocalAccounts\*\en-US"
+        }
     }
 }
 
