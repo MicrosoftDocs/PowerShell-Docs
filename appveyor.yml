@@ -29,8 +29,8 @@ artifacts:
 only_commits:
   files:
     - reference/**/*
-    - 'appveyor.ps1'
-    - 'appveyor.yml'
+    - appveyor.ps1
+    - appveyor.yml
 
 deploy:
   provider: AzureBlob
