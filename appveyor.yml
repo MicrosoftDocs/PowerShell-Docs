@@ -31,6 +31,7 @@ only_commits:
     - reference/**/*
     - appveyor.ps1
     - appveyor.yml
+    - tests/**/*
 
 deploy:
   provider: AzureBlob
