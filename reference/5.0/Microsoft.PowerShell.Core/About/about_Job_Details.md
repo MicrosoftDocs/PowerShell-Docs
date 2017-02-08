@@ -332,7 +332,7 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Remote](about_Remote.md)
 
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+about_Scheduled_Jobs
 
 Invoke-Command
 
