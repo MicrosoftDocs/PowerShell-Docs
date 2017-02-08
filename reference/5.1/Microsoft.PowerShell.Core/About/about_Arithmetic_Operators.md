@@ -568,7 +568,6 @@ PS C:> 21 -shr 2
 
 [about_operators](about_Operators.md)
 
-<<<<<<< 5bed3c6fe46767168350b4d7c42fd9654a40a71c
 [about_variables](about_Variables.md)
 
 [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)

@@ -91,3 +91,4 @@ Tab expansion works when changing WMI namespaces, and therefore use of tab expan
 Get-CimClass *power* -Namespace root/cimv2/power
 ```
 
+

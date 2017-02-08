@@ -84,5 +84,5 @@ For more information about a cmdlet, type "get-help <cmdlet-name>".
 
 
 ## SEE ALSO
-about_Providers
 
+[about_Providers](about_Providers.md)

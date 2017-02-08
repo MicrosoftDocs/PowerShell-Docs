@@ -142,12 +142,11 @@ In  Windows PowerShell 3.0, the  Windows PowerShell Core packages appear as modu
 
 
 ## SEE ALSO
-about_Automatic_Variables
 
-about_Language_Keywords
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
-about_PSSnapins
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_PSSnapins](about_PSSnapins.md)
 
 get-PSSnapin
-
-

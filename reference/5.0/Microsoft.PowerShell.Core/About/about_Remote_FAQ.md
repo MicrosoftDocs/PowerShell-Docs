@@ -350,18 +350,17 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 
 
 ## SEE ALSO
-about_Remote
 
-about_Profiles
+[about_Remote](about_Remote.md)
 
-about_PSSessions
+[about_Profiles](about_Profiles.md)
 
-about_Remote_Jobs
+[about_PSSessions](about_PSSessions.md)
 
-about_Remote_Variables
+[about_Remote_Jobs](about_Remote_Jobs.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
 
 Invoke-Command
 
 New-PSSession
-
-

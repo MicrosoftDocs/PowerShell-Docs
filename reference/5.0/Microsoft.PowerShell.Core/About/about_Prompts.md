@@ -303,6 +303,7 @@ Like any function, the Prompt function exists only in the current session. To sa
 
 
 ## SEE ALSO
+
 Get-Location
 
 Enter-PSSession
@@ -313,13 +314,12 @@ Get-Random
 
 Write-Host
 
-about_Profiles
+[about_Profiles](about_Profiles.md)
 
-about_Functions
+[about_Functions](about_Functions.md)
 
-about_Scopes
+[about_Scopes](about_Scopes.md)
 
-about_Debuggers
+[about_Debuggers](about_Debuggers.md)
 
-about_Automatic_Variables
-
+[about_Automatic_Variables](about_Automatic_Variables.md)
