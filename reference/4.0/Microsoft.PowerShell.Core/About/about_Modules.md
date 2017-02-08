@@ -481,7 +481,7 @@ all Windows PowerShell sessions. For more information, see about_EventLogs
 
 [about_Command_Precedence](about_Command_Precedence.md)
 
-[about_DesiredStateConfiguration](about_DesiredStateConfiguration.md)
+about_DesiredStateConfiguration
 
 [about_EventLogs](about_EventLogs.md)
 

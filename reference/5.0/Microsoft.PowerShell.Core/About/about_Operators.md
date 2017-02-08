@@ -261,7 +261,7 @@ $(Get-WMIObject win32_Directory)
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
-[about_Logical_Operators](about_Logical_Operators.md)
+about_Logical_Operators
 
 [about_Type_Operators](about_Type_Operators.md)
 
