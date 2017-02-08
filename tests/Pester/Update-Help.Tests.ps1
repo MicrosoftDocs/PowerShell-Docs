@@ -5,7 +5,6 @@ $powershellCoreModules = @(
     "Microsoft.PowerShell.Core"
     "Microsoft.PowerShell.Diagnostics"
     "Microsoft.PowerShell.Management"
-    "Microsoft.PowerShell.LocalAccounts"
     "Microsoft.PowerShell.Security"
     "Microsoft.PowerShell.Utility"
     "Microsoft.WsMan.Management"
@@ -78,6 +77,9 @@ if(($PSVersionTable.PSVersion.Major -ge 5) -and ($PSVersionTable.PSVersion.Minor
             HelpInstallationPath = "$pshome\Modules\Microsoft.PowerShell.LocalAccounts\*\en-US"
         }
     }
+
+    $powershellCoreModules += "Microsoft.PowerShell.LocalAccounts"
+
 }
 
 # These are the inbox modules.
