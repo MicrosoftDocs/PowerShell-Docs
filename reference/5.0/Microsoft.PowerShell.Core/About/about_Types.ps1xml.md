@@ -557,11 +557,16 @@ a digital signature. For more information, see about_Signing.
 
 # SEE ALSO
 
-about_Signing (http://go.microsoft.com/fwlink/?LinkID=113268)
-Copy-Item (http://go.microsoft.com/fwlink/?LinkID=113292)
-Copy-ItemProperty (http://go.microsoft.com/fwlink/?LinkID=113293)
-Get-Member (http://go.microsoft.com/fwlink/?LinkID=113322)
-Get-TypeData (http://go.microsoft.com/fwlink/?LinkID=217033)
-Remove-TypeData (http://go.microsoft.com/fwlink/?LinkID=217038)
-Update-TypeData (http://go.microsoft.com/fwlink/?LinkID=113421)
+[about_Signing](about_Signing)
 
+Copy-Item (http://go.microsoft.com/fwlink/?LinkID=113292)
+
+Copy-ItemProperty (http://go.microsoft.com/fwlink/?LinkID=113293)
+
+Get-Member (http://go.microsoft.com/fwlink/?LinkID=113322)
+
+Get-TypeData (http://go.microsoft.com/fwlink/?LinkID=217033)
+
+Remove-TypeData (http://go.microsoft.com/fwlink/?LinkID=217038)
+
+Update-TypeData (http://go.microsoft.com/fwlink/?LinkID=113421)

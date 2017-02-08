@@ -246,11 +246,14 @@ connection, the policies on the remote computer are in effect.
 
 # SEE ALSO
 
-about_Remote
-about_Remote_Variables
-about_PSSessions
+[about_Remote](about_Remote.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
+
+[about_PSSessions](about_PSSessions.md)
+
 Invoke-Command
+
 Enter-PSSession
+
 New-PSSession
-
-
