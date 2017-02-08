@@ -477,17 +477,17 @@ For more information about here-strings, see about_Quoting_Rules.
 
 
 ## SEE ALSO
-about_Arrays
 
-about_Object_Creation
+[about_Arrays](about_Arrays.md)
 
-about_Quoting_Rules
+[about_Object_Creation](about_Object_Creation.md)
 
-about_Script_Internationalization
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Script_Internationalization](about_Script_Internationalization.md)
 
 ConvertFrom-StringData
 
 Import-LocalizedData
 
 "System.Collections.Hashtable" on MSDN
-

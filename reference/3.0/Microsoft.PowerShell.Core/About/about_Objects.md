@@ -82,9 +82,12 @@ and the Get-Member topic, to learn how to find an object type.
 
 # SEE ALSO
 
-about_Methods
-about_Object_Creation
-about_Properties
-about_Pipelines
-Get-Member
+[about_Methods](about_Methods.md)
 
+[about_Object_Creation](about_Object_Creation.md)
+
+[about_Properties](about_Properties.md)
+
+[about_Pipelines](about_Pipelines.md)
+
+Get-Member
