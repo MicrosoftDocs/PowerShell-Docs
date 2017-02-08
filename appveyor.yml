@@ -24,7 +24,8 @@ test_script:
       Invoke-AppveyorTest
 
 artifacts:
-  - path: updatablehelp
+  - path: updatablehelp.zip
+    name: updatablehelp
 
 only_commits:
   files:
