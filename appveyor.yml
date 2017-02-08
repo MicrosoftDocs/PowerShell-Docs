@@ -34,13 +34,28 @@ only_commits:
     - tests/**/*
 
 deploy:
-  provider: AzureBlob
-  storage_account_name: pshelp
-  storage_access_key:
-    secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
-  container: 'update-help'
-  folder: 'pshelp'
-  artifact: 'pshelp'
-  unzip: false
-  set_content_type: false
+  - provider: AzureBlob
+    name: live
+    on:
+      branch: live
+    storage_account_name: pshelp
+    storage_access_key:
+      secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
+    container: update-help
+    folder: pshelp
+    artifact: updatablehelp
+    unzip: true
+    set_content_type: false
 
+  - provider: AzureBlob
+    name: staging
+    on:
+      branch: staging
+    storage_account_name: pshelp
+    storage_access_key:
+      secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
+    container: int-update-help
+    folder: pshelp
+    artifact: updatablehelp
+    unzip: true
+    set_content_type: false
