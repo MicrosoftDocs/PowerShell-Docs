@@ -448,8 +448,10 @@ Product      : 18
 
 # SEE ALSO
 
-about_objects
-about_parameters
-about_command_syntax
-about_foreach
+[about_objects](about_objects.md)
 
+[about_parameters](about_parameters.md)
+
+[about_command_syntax](about_command_syntax.md)
+
+[about_foreach](about_foreach.md)

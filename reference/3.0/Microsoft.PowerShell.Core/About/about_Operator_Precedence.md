@@ -184,11 +184,17 @@ intentions clear to people who are reading and maintaining your scripts.
 # SEE ALSO
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
-- [about_Comparison_Operators](about_Comparison_Operators.md)
-- [about_Join](about_Join.md)
-- [about_Operators](about_Operators.md)
-- [about_Redirection](about_Redirection.md)
-- [about_Scopes](about_Scopes.md)
-- [about_Split](about_Split.md)
-- [about_Type_Operators](about_Type_Operators.md)
 
+- [about_Comparison_Operators](about_Comparison_Operators.md)
+
+- [about_Join](about_Join.md)
+
+- [about_Operators](about_Operators.md)
+
+- [about_Redirection](about_Redirection.md)
+
+- [about_Scopes](about_Scopes.md)
+
+- [about_Split](about_Split.md)
+
+- [about_Type_Operators](about_Type_Operators.md)

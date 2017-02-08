@@ -288,10 +288,14 @@ $a[-1]
 
 # SEE ALSO
 
-about_Assignment_Operators
-about_Hash_Tables
-about_Operators
-about_For
-about_Foreach
-about_While
+[about_Assignment_Operators](about_Assignment_Operators.md)
 
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Operators](about_Operators.md)
+
+[about_For](about_For.md)
+
+[about_Foreach](about_Foreach.md)
+
+[about_While](about_While.md)
