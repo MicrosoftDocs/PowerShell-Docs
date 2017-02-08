@@ -12,16 +12,35 @@ install:
   - ps: |
       Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
       Install-Module -Name platyPS -Repository PSGallery -Force
+      Install-Module -Name Pester -Repository PSGallery -Force
+      Import-Module ./tests/AppVeyorTest.psm1
 
 build_script:
   - ps: |
       ./appveyor.ps1
 
+test_script:
+  - ps: |
+      Invoke-AppveyorTest
+
 artifacts:
-  - path: out_cab
+  - path: updatablehelp
 
 only_commits:
   files:
     - reference/**/*
-    - 'appveyor.ps1'
-    - 'appveyor.yml'
+    - appveyor.ps1
+    - appveyor.yml
+    - tests/**/*
+
+deploy:
+  provider: AzureBlob
+  storage_account_name: pshelp
+  storage_access_key:
+    secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
+  container: 'update-help'
+  folder: 'pshelp'
+  artifact: 'pshelp'
+  unzip: false
+  set_content_type: false
+
