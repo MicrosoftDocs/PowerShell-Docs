@@ -557,7 +557,7 @@ a digital signature. For more information, see about_Signing.
 
 # SEE ALSO
 
-[about_Signing (http://go.microsoft.com/fwlink/?LinkID=113268)](about_Signing (http://go.microsoft.com/fwlink/?LinkID=113268).md)
+[about_Signing](about_Signing.md)
 
 Copy-Item (http://go.microsoft.com/fwlink/?LinkID=113292)
 
