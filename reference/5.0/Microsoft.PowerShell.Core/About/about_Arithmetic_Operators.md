@@ -568,24 +568,6 @@ PS C:> 21 -shr 2
 
 [about_variables](about_Variables.md)
 
-<<<<<<< HEAD
-[about_arrays](about_arrays.md)
-
-[about_assignment_operators](about_assignment_operators.md)
-
-[about_comparison_operators](about_comparison_operators.md)
-
-[about_hash_tables](about_hash_tables.md)
-
-[about_operators](about_operators.md)
-
-[about_variables](about_variables.md)
-
-Get-Date
-
-New-TimeSpan
-=======
 [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 
 [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
->>>>>>> refs/remotes/PowerShell/staging
