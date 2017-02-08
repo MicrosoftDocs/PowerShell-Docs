@@ -326,21 +326,36 @@ Id         Name            JobTriggers     Command       Enabled
 
 # SEE ALSO
 
-about_Jobs
-about_Remote_Jobs
-about_Remote
-about_Scheduled_Jobs
-Invoke-Command
-Start-Job
-Get-Job
-Wait-Job
-Stop-Job
-Remove-Job
-Suspend-Job
-Resume-Job
-New-PSSession
-Enter-PSSession
-Exit-PSSession
-Register-ScheduledJob
-Get-ScheduleJob
+[about_Jobs](about_Jobs.md)
 
+[about_Remote_Jobs](about_Remote_Jobs.md)
+
+[about_Remote](about_Remote.md)
+
+[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+
+Invoke-Command
+
+Start-Job
+
+Get-Job
+
+Wait-Job
+
+Stop-Job
+
+Remove-Job
+
+Suspend-Job
+
+Resume-Job
+
+New-PSSession
+
+Enter-PSSession
+
+Exit-PSSession
+
+Register-ScheduledJob
+
+Get-ScheduleJob

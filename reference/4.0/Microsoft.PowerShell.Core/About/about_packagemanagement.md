@@ -117,14 +117,21 @@ PackageManagement project on GitHub at https://oneget.org.
 # SEE ALSO
 
 Get-PackageProvider
+
 Get-PackageSource
+
 Register-PackageSource
+
 Set-PackageSource
+
 Unregister-PackageSource
+
 Get-Package
+
 Find-Package
+
 Install-Package
+
 Save-Package
+
 Uninstall-Package
-
-

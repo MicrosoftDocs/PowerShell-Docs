@@ -87,15 +87,14 @@ while (++$a -lt 10)
 
 # SEE ALSO
 
-about_While
+[about_While](about_While.md)
 
-about_Operators
+[about_Operators](about_Operators.md)
 
-about_Assignment_Operators
+[about_Assignment_Operators](about_Assignment_Operators.md)
 
-about_Comparison_Operators
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
-about_Break
+[about_Break](about_Break.md)
 
-about_Continue
-
+[about_Continue](about_Continue.md)
