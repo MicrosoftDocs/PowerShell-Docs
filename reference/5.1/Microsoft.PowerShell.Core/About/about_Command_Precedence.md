@@ -263,13 +263,9 @@ For more information, see Import-Module and Import-PSSession.
 
 [about_Functions](about_Functions.md)
 
-Alias
+Alias (provider)
 
-(provider)
-
-Function
-
-(provider)
+Function (provider)
 
 Get-Command
 
