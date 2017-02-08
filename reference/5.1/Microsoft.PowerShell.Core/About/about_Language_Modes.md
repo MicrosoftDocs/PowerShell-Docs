@@ -261,7 +261,7 @@ about_RestrictedLanguage
 
 # SEE ALSO
 
-[about_Session_ConfigurationFiles](about_Session_ConfigurationFiles.md)
+about_Session_ConfigurationFiles
 
 [about_Session_Configurations](about_Session_Configurations.md)
 

@@ -62,6 +62,6 @@ about_WindowsRT
 
 [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 
-[about_Workflows](about_Workflows.md)
+about_Workflows
 
 Windows PowerShell System Requirements: http://technet.microsoft.com/library/hh857337.aspx)

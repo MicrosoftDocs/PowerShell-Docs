@@ -85,4 +85,4 @@ For instance, suppose that you have two files that are each named Results.txt. T
 
 ## SEE ALSO
 
-[about_Locations](about_Locations.md)
+about_Locations
