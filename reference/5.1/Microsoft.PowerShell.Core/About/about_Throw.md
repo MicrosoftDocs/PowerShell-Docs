@@ -147,7 +147,7 @@ dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attribut
 
 [about_Continue](about_Continue.md)
 
-about_Scope
+[about_Scopes](about_Scopes.md)
 
 [about_Trap](about_Trap.md)
 
