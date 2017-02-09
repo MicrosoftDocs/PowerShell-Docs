@@ -42,8 +42,8 @@ deploy:
     storage_account_name: pshelp
     storage_access_key:
       secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
-    container: update-help
-    folder: pshelp
+    container: powershell
+    folder: help
     artifact: updatablehelp
     unzip: true
     set_content_type: false
@@ -55,8 +55,8 @@ deploy:
     storage_account_name: pshelp
     storage_access_key:
       secure: Rk2OPX/IPOix5LKL1oIyp9GjN4lCKVEgpy4eOSL4WMTOFEtOkO7+3Hw8uYCxCXtV728lxtghscOCH2XouPkSyC7fJx99keG2uz9cgBjbH9xiG+3RwXT0+2xvsBOrbYwO
-    container: int-update-help
-    folder: pshelp
+    container: int-powershell
+    folder: help
     artifact: updatablehelp
     unzip: true
     set_content_type: false
