@@ -15,8 +15,9 @@ ms.prod:  powershell
 
 This topic describes ways to troubleshoot DSC when problems arise.
 
-## Remoting Issues
-DSC requires PowerShell remoting to be enabled, even when managing a local machine. As a first step, review [about_remote_requirements](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements) and ensure the target machine is properly configured for remoting. 
+## WinRM Dependency
+
+Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7. Run ```Set-WSManQuickConfig```, in a Windows PowerShell elevated session, to enable WinRM.
 
 ## Using Get-DscConfigurationStatus
 
