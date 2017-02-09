@@ -227,4 +227,3 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
-

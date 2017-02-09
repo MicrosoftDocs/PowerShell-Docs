@@ -702,10 +702,14 @@ PS C:> 21 -shr 2
 
 # SEE ALSO
 
-about_Operators
-about_Regular_Expressions
-about_Wildcards
-Compare-Object
-Foreach-Object
-Where-Object
+[about_Operators](about_Operators.md)
 
+[about_Regular_Expressions](about_Regular_Expressions.md)
+
+[about_Wildcards](about_Wildcards.md)
+
+Compare-Object
+
+Foreach-Object
+
+Where-Object

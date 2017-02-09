@@ -144,6 +144,6 @@ at http://go.microsoft.com/fwlink/?LinkId=133231.
 
 # SEE ALSO
 
-about_Comparison_Operators
-about_Operators
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
+[about_Operators](about_Operators.md)

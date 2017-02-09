@@ -455,12 +455,11 @@ about_DefaultValues
 
 
 ## SEE ALSO
-about_Hash_Tables
 
-about_Preference_Variables
+[about_Hash_Tables](about_Hash_Tables.md)
 
-about_Profiles
+[about_Preference_Variables](about_Preference_Variables.md)
 
-about_Script_Blocks
+[about_Profiles](about_Profiles.md)
 
-
+[about_Script_Blocks](about_Script_Blocks.md)

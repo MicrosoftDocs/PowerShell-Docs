@@ -198,14 +198,22 @@ computers are interspersed.
 
 # SEE ALSO
 
-about_Remote
-about_Remote_Variables
-Format-Table
-Get-EventLog
-Get-Process
-Get-Service
-Get-WmiObject
-Invoke-Command
-Out-GridView
-Select-Object
+[about_Remote](about_Remote.md)
 
+[about_Remote_Variables](about_Remote_Variables.md)
+
+Format-Table
+
+Get-EventLog
+
+Get-Process
+
+Get-Service
+
+Get-WmiObject
+
+Invoke-Command
+
+Out-GridView
+
+Select-Object

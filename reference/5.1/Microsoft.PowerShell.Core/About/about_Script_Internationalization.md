@@ -197,4 +197,3 @@ The remaining commands load the strings into an array and display
 them.
 
 $Day = DATA {
-

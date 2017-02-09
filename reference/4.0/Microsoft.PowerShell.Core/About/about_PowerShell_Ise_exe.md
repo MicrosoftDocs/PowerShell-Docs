@@ -105,8 +105,8 @@ PS C:> ISE -help
 
 # SEE ALSO
 
-about_PowerShell.exe
-about_Windows_PowerShell_ISE
+[about_PowerShell.exe](about_PowerShell_exe.md)
+
+[about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
+
 Windows PowerShell 3.0 Integrated Scripting Environment (ISE)
-
-

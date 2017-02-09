@@ -795,13 +795,21 @@ Write-Verbose.
 # SEE ALSO
 
 Disable-PsBreakpoint
-Enable-PsBreakpoint
-Get-PsBreakpoint
-Get-PsCallStack
-Remove-PsBreakpoint
-Set-PsBreakpoint
-Set-PsDebug
-Set-Strictmode
-Write-Debug
-Write-Verbose
 
+Enable-PsBreakpoint
+
+Get-PsBreakpoint
+
+Get-PsCallStack
+
+Remove-PsBreakpoint
+
+Set-PsBreakpoint
+
+Set-PsDebug
+
+Set-Strictmode
+
+Write-Debug
+
+Write-Verbose

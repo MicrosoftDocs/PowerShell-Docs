@@ -867,8 +867,10 @@ about_Comment-Based_Help
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced_Parameters
-about_Scripts
-"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Scripts](about_Scripts.md)
+
+"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)

@@ -275,13 +275,13 @@ PS C:\> (Get-Service Audiosrv).Count
 
 
 ## SEE ALSO
-about_Methods
 
-about_Objects
+[about_Methods](about_Methods.md)
+
+[about_Objects](about_Objects.md)
 
 Get-Member
 
 Select-Object
 
 Format-List
-

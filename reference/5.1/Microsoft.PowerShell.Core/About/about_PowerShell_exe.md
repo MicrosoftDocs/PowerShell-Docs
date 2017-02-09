@@ -181,4 +181,3 @@ PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 PowerShell -Command {Get-EventLog -LogName security}
 
 PowerShell -Command "& {Get-EventLog -LogName security}"
-

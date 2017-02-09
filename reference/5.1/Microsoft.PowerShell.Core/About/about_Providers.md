@@ -280,5 +280,5 @@ Get-Help * -Category provider
 # SEE ALSO
 
 about_Locations
-about_Path_Syntax
 
+[about_Path_Syntax](about_Path_Syntax.md)

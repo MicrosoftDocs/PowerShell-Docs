@@ -85,10 +85,14 @@ pass named parameters.
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced_Methods
-about_Functions_Advanced_Parameters
-about_Functions_CmdletBindingAttribute
-about_Functions_OutputTypeAttribute
-Windows PowerShell Cmdlets (http://go.microsoft.com/fwlink/?LinkID=135279)
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+
+[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+
+Windows PowerShell Cmdlets (http://go.microsoft.com/fwlink/?LinkID=135279)

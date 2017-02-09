@@ -322,11 +322,16 @@ are available in $s.
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_Functions
-about_Prompts
-about_Execution_Policies
-about_Signing
-about_Remote
-Set-ExecutionPolicy
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_Functions](about_Functions.md)
+
+[about_Prompts](about_Prompts.md)
+
+[about_Execution_Policies](about_Execution_Policies.md)
+
+[about_Signing](about_Signing.md)
+
+[about_Remote](about_Remote.md)
+
+Set-ExecutionPolicy

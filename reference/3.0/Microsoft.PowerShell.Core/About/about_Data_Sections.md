@@ -190,13 +190,20 @@ Format-XML -strings string1, string2, string3
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_Comparison_Operators
-about_Hash_Tables
-about_If
-about_Operators
-about_Quoting_Rules
-about_Script_Internationalization
-ConvertFrom-StringData
-Import-LocalizedData
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_Comparison_Operators](about_Comparison_Operators.md)
+
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_If](about_If.md)
+
+[about_Operators](about_Operators.md)
+
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Script_Internationalization](about_Script_Internationalization.md)
+
+ConvertFrom-StringData
+
+Import-LocalizedData

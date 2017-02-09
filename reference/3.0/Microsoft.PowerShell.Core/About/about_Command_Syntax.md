@@ -281,7 +281,8 @@ about_Help_Syntax
 
 # SEE ALSO
 
-about_Parameters
-Get-Command
-Get-Help
+[about_Parameters](about_Parameters.md)
 
+Get-Command
+
+Get-Help

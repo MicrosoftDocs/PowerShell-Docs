@@ -314,18 +314,30 @@ about_SessionConfigurations
 
 # SEE ALSO
 
-about_Preference_Variables
-about_PSSession
-about_Remote
-about_Session_Configuration_Files
-New-PSSession
-Disable-PSSessionConfiguration
-Enable-PSSessionConfiguration
-Get-PSSessionConfiguration
-New-PSSessionConfigurationFile
-Register-PSSessionConfiguration
-Set-PSSessionConfiguration
-Test-PSSessionConfigurationFile
-Unregister-PSSessionConfiguration
-Windows Server Resources
+[about_Preference_Variables](about_Preference_Variables.md)
 
+about_PSSession
+
+[about_Remote](about_Remote.md)
+
+[about_Session_Configuration_Files](about_Session_Configuration_Files.md)
+
+New-PSSession
+
+Disable-PSSessionConfiguration
+
+Enable-PSSessionConfiguration
+
+Get-PSSessionConfiguration
+
+New-PSSessionConfigurationFile
+
+Register-PSSessionConfiguration
+
+Set-PSSessionConfiguration
+
+Test-PSSessionConfigurationFile
+
+Unregister-PSSessionConfiguration
+
+Windows Server Resources

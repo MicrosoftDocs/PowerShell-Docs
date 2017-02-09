@@ -331,7 +331,8 @@ if there are comments in the functions used in a script or script module.
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_If
-Foreach-Object
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_If](about_If.md)
+
+Foreach-Object
