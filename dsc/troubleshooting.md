@@ -15,6 +15,9 @@ ms.prod:  powershell
 
 This topic describes ways to troubleshoot DSC when problems arise.
 
+## Remoting Issues
+DSC requires PowerShell remoting to be enabled, even when managing a local machine. As a first step, review [about_remote_requirements](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements) and ensure the target machine is properly configured for remoting. 
+
 ## Using Get-DscConfigurationStatus
 
 The [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet gets information about configuration status from a target node. 
