@@ -15,6 +15,10 @@ ms.prod:  powershell
 
 This topic describes ways to troubleshoot DSC when problems arise.
 
+## WinRM Dependency
+
+Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7. Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.
+
 ## Using Get-DscConfigurationStatus
 
 The [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet gets information about configuration status from a target node. 
