@@ -252,9 +252,10 @@ refresh, you can call the [Update-DscConfiguration](https://technet.microsoft.co
 
 ## Partial configurations in mixed push and pull modes
 
-You can also mix push and pull modes for partial configurations. That is, you could have one partial configuration that is pulled from a pull server, while another partial 
-configuration is pushed. Treat each partial configuration as you would, depending on its refresh mode as described in the previous sections. For example, the following 
-meta-configuration describes the same example, with the service account partial configuration in pull mode and the SharePoint partial configuration in push mode.
+You can also mix push and pull modes for partial configurations. That is, you could have one partial configuration that is pulled from a pull server, 
+while another partial configuration is pushed. Specify the refresh mode for each partial configuration as described in the previous sections. 
+For example, the following meta-configuration describes the same example, 
+with the `ServiceAccountConfig` partial configuration in pull mode and the `SharePointConfig` partial configuration in push mode.
 
 ### Mixed push and pull modes using ConfigurationNames
 
