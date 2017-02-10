@@ -31,6 +31,7 @@ The cmdlets work fine when the value of InputObject parameter are passed into it
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
+
 - Enable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
