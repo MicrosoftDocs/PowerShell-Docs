@@ -216,7 +216,20 @@ After creating the meta-configuration, you must run it to create a configuration
 ### Naming and placing the configuration documents on the pull server (ConfigurationNames)
 
 The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server 
-(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: `ConfigurationName.mof`, 
+(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). 
+
+#### Naming configuration documents on the pull server in PowerShell 5.1
+
+If you are pulling only one partial configuration from an individual pull server, the configuration document can have any name. 
+If you are pulling more than one partial configuration from a pull server, the configuration document can be named either `<ConfigurationName>.mof`, 
+where _ConfigurationName_ is the name of the partial configuration, 
+or `<ConfigurationName>.<NodeName>.mof`, where  _ConfigurationName_ is the name of the partial configuration, and _NodeName_ is the name of the target node. 
+This allows you to pull configurations from Azure Automation DSC pull server.
+
+
+#### Naming configuration documents on the pull server in PowerShell 5.0
+
+The configuration documents must be named as follows: `ConfigurationName.mof`, 
 where _ConfigurationName_ is the name of the partial configuration. For our example, the configuration 
 documents should be named as follows:
 
@@ -252,9 +265,10 @@ refresh, you can call the [Update-DscConfiguration](https://technet.microsoft.co
 
 ## Partial configurations in mixed push and pull modes
 
-You can also mix push and pull modes for partial configurations. That is, you could have one partial configuration that is pulled from a pull server, while another partial 
-configuration is pushed. Treat each partial configuration as you would, depending on its refresh mode as described in the previous sections. For example, the following 
-meta-configuration describes the same example, with the service account partial configuration in pull mode and the SharePoint partial configuration in push mode.
+You can also mix push and pull modes for partial configurations. That is, you could have one partial configuration that is pulled from a pull server, 
+while another partial configuration is pushed. Specify the refresh mode for each partial configuration as described in the previous sections. 
+For example, the following meta-configuration describes the same example, 
+with the `ServiceAccountConfig` partial configuration in pull mode and the `SharePointConfig` partial configuration in push mode.
 
 ### Mixed push and pull modes using ConfigurationNames
 
@@ -333,7 +347,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the SharePointConfig partial configuration is "Push".
+Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the `SharePointConfig` partial configuration is "Push".
 
 Name and locate the configuration MOF files as described above for their respective refresh modes. Call **Publish-DSCConfiguration** to publish the `SharePointConfig` 
 partial configuration, and either wait for the `ServiceAccountConfig` configuration to be pulled from the pull server, or force a refresh by calling 
