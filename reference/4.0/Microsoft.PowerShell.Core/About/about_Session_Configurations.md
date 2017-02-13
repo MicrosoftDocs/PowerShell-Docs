@@ -316,7 +316,7 @@ about_SessionConfigurations
 
 [about_Preference_Variables](about_Preference_Variables.md)
 
-about_PSSession
+[about_PSSessions](about_PSSessions.md)
 
 [about_Remote](about_Remote.md)
 
