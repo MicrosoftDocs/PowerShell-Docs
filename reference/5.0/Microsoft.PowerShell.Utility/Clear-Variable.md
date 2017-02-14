@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821750
-schema: 2.0.0
-title: Clear-Variable
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Variable
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821750
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Clear-Variable
 
@@ -34,14 +35,14 @@ If the variable has a specified data or object type, this cmdlet preserves the t
 
 ### Example 1: Remove the value of global variables that begin with a search string
 ```
-PS C:\>Clear-Variable "my*" -Scope Global
+PS C:\> Clear-Variable "my*" -Scope Global
 ```
 
 This command removes the value of global variables that have names that begin with my.
 
 ### Example 2: Clear a variable in a child scope but not the parent scope
 ```
-PS C:\>$A = 3
+PS C:\> $A = 3
 PS C:\> &{ Clear-Variable A }
 PS C:\> $A
 3
@@ -55,7 +56,7 @@ The third command, which gets the value of $A, shows that the value 3 is unaffec
 
 ### Example 3: Delete the value of the specified variable
 ```
-PS C:\>Clear-Variable -Name "Processes"
+PS C:\> Clear-Variable -Name "Processes"
 ```
 
 This command deletes the value of the variable named Processes.
@@ -64,7 +65,7 @@ After the cmdlet completes the operation, the variable named Processes still exi
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -190,7 +191,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

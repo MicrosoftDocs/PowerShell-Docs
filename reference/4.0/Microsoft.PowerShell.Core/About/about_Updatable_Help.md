@@ -1,25 +1,19 @@
-﻿---
-title: about_Updatable_Help
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Updatable_Help
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Updatable_Help
+ms.technology:  powershell
+---
+
 # About Updatable Help
 ## about_Updatable_Help
 
 
-About_Updatable_Help
 
 # SHORT DESCRIPTION
 
@@ -307,8 +301,8 @@ DHCP Server module on a computer that does not have network access.
 First, run Export-CliXml to export the PSModuleInfo object to
 a shared folder or to removable media.
 
-$m = Get-Module -Name DhcpServer –ListAvailable
-Export-CliXml –Path E:\UsbFlashDrive\DhcpModule.xml –InputObject $m
+$m = Get-Module -Name DhcpServer -ListAvailable
+Export-CliXml -Path E:\UsbFlashDrive\DhcpModule.xml -InputObject $m
 
 Next, transport the removable media to a computer that has
 Internet access, and then import the PSModuleInfo object with
@@ -316,14 +310,14 @@ Import-CliXml. Run Save-Help to save the Help for the imported
 DhcpServer module PSModuleInfo object.
 
 $deserialized_m = Import-CliXml E:\UsbFlashDrive\DhcpModule.xml
-Save-Help -Module $deserialized_m –DestinationPath
+Save-Help -Module $deserialized_m -DestinationPath
 E:\UsbFlashDrive\SavedHelp
 
 Finally, transport the removable media back to the computer that
 does not have network access, and then install the help by running
 Update-Help.
 
-Update-Help –Module DhcpServer –SourcePath
+Update-Help -Module DhcpServer -SourcePath
 E:\UsbFlashDrive\SavedHelp
 
 # NOTES:
@@ -494,8 +488,9 @@ Windows Preinstallation Environment (Windows PE).
 # SEE ALSO
 
 Get-Help
-Save-Help
-Update-Help
-Updatable Help Status Table
-(http://go.microsoft.com/fwlink/?LinkID=270007)
 
+Save-Help
+
+Update-Help
+
+Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)

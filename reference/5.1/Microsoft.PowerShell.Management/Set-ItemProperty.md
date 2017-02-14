@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822276
-schema: 2.0.0
-title: Set-ItemProperty
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821631
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Set-ItemProperty
 
@@ -60,7 +61,7 @@ For example, you can add a new registry entry to a key and establish or change i
 
 ### Example 1: Set a property of a file
 ```
-PS C:\>Set-ItemProperty -Path "c:\GroupFiles\final.doc" -Name IsReadOnly -Value $True
+PS C:\> Set-ItemProperty -Path "c:\GroupFiles\final.doc" -Name IsReadOnly -Value $True
 ```
 
 This command sets the value of the **IsReadOnly** property of the final.doc file to true.
@@ -78,7 +79,7 @@ For example, type `final.doc | Get-Member`.
 
 ### Example 2: Create a registry entry and value
 ```
-PS C:\>Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Value 823
+PS C:\> Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Value 823
 PS C:\> Get-ItemProperty -Path "HKLM:\Software\MyCompany"
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
@@ -122,7 +123,7 @@ For more information about how to use Windows PowerShell to manage the registry,
 
 ### Example 3: Modify an item by using the pipeline
 ```
-PS C:\>Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
+PS C:\> Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 ```
 
 These commands show how to use a pipeline operator (|) to send an item to **Set-ItemProperty**.
@@ -136,7 +137,7 @@ This command is equivalent to using the *InputObject* parameter to specify the o
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -353,7 +354,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

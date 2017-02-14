@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294028
-schema: 2.0.0
-title: Write-Error
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Error
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294028
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Write-Error
 
@@ -57,14 +58,14 @@ For more information, see about_Throw (http://go.microsoft.com/fwlink/?LinkID=14
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ChildItem | ForEach-Object { if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey") {Write-Error "Invalid object" -ErrorID B1 -Targetobject $_ } else {$_ } }
+PS C:\> Get-ChildItem | ForEach-Object { if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey") {Write-Error "Invalid object" -ErrorID B1 -Targetobject $_ } else {$_ } }
 ```
 
 This command declares a non-terminating error when the Get-ChildItem cmdlet returns a Microsoft.Win32.RegistryKey object, such as the objects in the HKLM: or HKCU: drives of the Windows PowerShell Registry provider.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Write-Error "Access denied."
+PS C:\> Write-Error "Access denied."
 ```
 
 This command declares a non-terminating error and writes an "Access denied" error.
@@ -72,14 +73,14 @@ The command uses the **Message** parameter to specify the message, but omits the
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Write-Error -Message "Error: Too many input values." -Category InvalidArgument
+PS C:\> Write-Error -Message "Error: Too many input values." -Category InvalidArgument
 ```
 
 This command declares a non-terminating error and specifies an error category.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$e = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+PS C:\> $e = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
 PS C:\> Write-Error $e -Message "Files not found. The $Files location does not contain any XML files."
 ```
 

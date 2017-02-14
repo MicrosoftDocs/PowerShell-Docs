@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822401
-schema: 2.0.0
-title: Export-FormatData
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export FormatData
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821770
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Export-FormatData
 
@@ -45,7 +46,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ### Example 1: Export session format data
 ```
-PS C:\>Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
+PS C:\> Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
@@ -59,7 +60,7 @@ The **Export-FormatData** command uses the *IncludeScriptBlock* parameter to inc
 
 ### Example 2: Export format data for a type
 ```
-PS C:\>$F = Get-FormatData -TypeName "helpinfoshort"
+PS C:\> $F = Get-FormatData -TypeName "helpinfoshort"
 PS C:\> Export-FormatData -InputObject $F -Path "c:\test\help.format.ps1xml" -IncludeScriptBlock
 ```
 
@@ -72,7 +73,7 @@ It also uses the *IncludeScriptBlock* parameter to include script blocks in the 
 
 ### Example 3: Export format data without a script block
 ```
-PS C:\>Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
+PS C:\> Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
 PS C:\> Update-FormatData -PrependPath ".\process.format.ps1xml"
 PS C:\> Get-Process p*
 Handles  NPM(K)  PM(K)  WS(K) VM(M)   CPU(s)    Id ProcessName

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822451
-schema: 2.0.0
-title: Register-EngineEvent
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Register EngineEvent
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821844
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Register-EngineEvent
 
@@ -44,8 +45,8 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ### Example 1: Register a PowerShell engine event on remote computers
 ```
-PS C:\>$S = New-PSSession -ComputerName "Server01, Server02"
-PS C:\>Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+PS C:\> $S = New-PSSession -ComputerName "Server01, Server02"
+PS C:\> Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
 ```
 
 This command registers for a Windows PowerShell engine event on two remote computers.
@@ -59,7 +60,7 @@ It uses the *Forward* parameter to forward the events from the remote session to
 
 ### Example 2: Take a specified action when the Exiting event occurs
 ```
-PS C:\>Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
+PS C:\> Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
      Get-History | Export-Clixml $Home\history.clixml
 }
 ```

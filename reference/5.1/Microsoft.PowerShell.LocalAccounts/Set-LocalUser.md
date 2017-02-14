@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822523
-schema: 2.0.0
-title: Set-LocalUser
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set LocalUser
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822523
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
+---
+
 
 # Set-LocalUser
 
@@ -49,14 +50,14 @@ This cmdlet can reset the password of a local user account.
 
 ### Example 1: Change a description of a user account
 ```
-PS C:\>Set-LocalUser -Name "Admin07" -Description "Description of this account."
+PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account."
 ```
 
 This command changes the description of a user account named Admin07.
 
 ### Example 2: Change the password on an account
 ```
-PS C:\>$Password = Read-Host -AsSecureString
+PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> $UserAccount = Get-LocalUser -Name "User02"
 PS C:\> $UserAccount | Set-LocalUser -Password $Password
 ```
@@ -105,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -249,7 +250,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

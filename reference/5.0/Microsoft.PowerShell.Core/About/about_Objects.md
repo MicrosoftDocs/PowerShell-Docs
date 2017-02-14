@@ -1,25 +1,18 @@
-﻿---
-title: about_Objects
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Objects
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Objects
+ms.technology:  powershell
+---
+
 # About Objects
 ## about_Objects
-# TOPIC
 
-about_Objects
 
 # SHORT DESCRIPTION
 
@@ -89,9 +82,12 @@ and the Get-Member topic, to learn how to find an object type.
 
 # SEE ALSO
 
-about_Methods
-about_Object_Creation
-about_Properties
-about_Pipelines
-Get-Member
+[about_Methods](about_Methods.md)
 
+[about_Object_Creation](about_Object_Creation.md)
+
+[about_Properties](about_Properties.md)
+
+[about_Pipelines](about_Pipelines.md)
+
+Get-Member

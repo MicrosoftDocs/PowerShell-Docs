@@ -1,23 +1,17 @@
-﻿---
-title: about_Type_Operators
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Type_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Type_Operators
+ms.technology:  powershell
+---
+
 # About Type Operators
 ## about_Type_Operators
-about_Type_Operators
 
 
 ## SHORT DESCRIPTION
@@ -170,5 +164,5 @@ C:\PS>
 
 
 ## SEE ALSO
-about_Operators
 
+[about_Operators](about_Operators.md)

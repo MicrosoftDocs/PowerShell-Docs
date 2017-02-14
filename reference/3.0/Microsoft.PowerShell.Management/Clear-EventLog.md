@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135198
-schema: 2.0.0
-title: Clear-EventLog
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135198
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Clear-EventLog
 ## SYNOPSIS
@@ -32,32 +33,32 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-eventlog "Windows PowerShell"
+PS C:\> clear-eventlog "Windows PowerShell"
 ```
 
 This command deletes the entries from the "Windows PowerShell" event log on the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-eventlog -logname ODiag, OSession -computername localhost, Server02
+PS C:\> clear-eventlog -logname ODiag, OSession -computername localhost, Server02
 ```
 
 This command deletes all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-eventlog -log application, system -confirm
+PS C:\> clear-eventlog -log application, system -confirm
 ```
 
 This command prompts you for confirmation before deleting the entries in the specified event logs.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function clear-all-event-logs ($computerName="localhost")
+PS C:\> function clear-all-event-logs ($computerName="localhost")
 {
    $logs = get-eventlog -computername $computername -list | foreach {$_.Log}
    $logs | foreach {clear-eventlog -comp $computername -log $_ }
    get-eventlog -computername $computername -list
 }
 
-PS C:\>clear-all-event-logs -comp Server01
+PS C:\> clear-all-event-logs -comp Server01
 
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
@@ -120,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -136,7 +137,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,25 +1,18 @@
-﻿---
-title: about_Operator_Precedence
-description:
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Operator_Precedence
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Operator_Precedence
+ms.technology:  powershell
+---
+
 # About Operator Precedence
 ## about_Operator_Precedence
-# TOPIC
 
-about_Operator_Precedence
 
 # SHORT DESCRIPTION
 
@@ -191,10 +184,17 @@ intentions clear to people who are reading and maintaining your scripts.
 # SEE ALSO
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
+
 - [about_Comparison_Operators](about_Comparison_Operators.md)
+
 - [about_Join](about_Join.md)
+
 - [about_Operators](about_Operators.md)
+
 - [about_Redirection](about_Redirection.md)
+
 - [about_Scopes](about_Scopes.md)
+
 - [about_Split](about_Split.md)
+
 - [about_Type_Operators](about_Type_Operators.md)

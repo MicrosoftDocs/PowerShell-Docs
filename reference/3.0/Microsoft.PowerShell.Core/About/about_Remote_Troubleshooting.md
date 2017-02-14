@@ -1,25 +1,19 @@
-﻿---
-title: about_Remote_Troubleshooting
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Troubleshooting
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Troubleshooting
+ms.technology:  powershell
+---
+
 # About Remote Troubleshooting
 ## about_Remote_Troubleshooting
 
 
-about_Remote_Troubleshooting
 
 # SHORT DESCRIPTION
 
@@ -184,7 +178,7 @@ and creates a firewall rule that allows traffic from the same local subnet.
 To remove the local subnet restriction on public networks and allow
 remote access from any location, run the following command:
 
-Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 The Set-NetFirewallRule cmdlet is exported by the NetSecurity module.
 
@@ -779,7 +773,9 @@ the command again.
 # SEE ALSO
 
 Online version: http://technet.microsoft.com/library/hh847850(v=wps.630).aspx
-about_Remote
-about_Remote_Requirements
-about_Remote_Variables
 
+[about_Remote](about_Remote.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)

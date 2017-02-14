@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113382
-schema: 2.0.0
-title: Rename-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Rename Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113382
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Rename-Item
 ## SYNOPSIS
@@ -40,13 +41,13 @@ To move and rename an item, use the Move-Item cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
+PS C:\> rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
 ```
 
 This command renames the file daily_file.txt to monday_file.txt.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>rename-item -path project.txt -newname d:\archive\old-project.txt
+PS C:\> rename-item -path project.txt -newname d:\archive\old-project.txt
 
 Rename-Item : Cannot rename because the target specified represents a path or device name.
 At line:1 char:12
@@ -54,7 +55,7 @@ At line:1 char:12
 + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PSArgumentException
 + FullyQualifiedErrorId : Argument,Microsoft.PowerShell.Commands.RenameItemCommand
 
-PS C:\>move-item -path project.txt -destination d:\archive\old-project.txt
+PS C:\> move-item -path project.txt -destination d:\archive\old-project.txt
 # Command succeeds
 ```
 
@@ -69,14 +70,14 @@ The second command shows the correct way to move and rename a file by using the 
 The Move-Item cmdlet lets you specify both a new path and a new name in the value of its Destination parameter.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
+PS C:\> rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
 ```
 
 This command uses the Rename-Item cmdlet to rename a registry key from Advertising to Marketing.
 When the command is complete, the key is renamed, but the registry entries in the key are unchanged.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt','.log' }
+PS C:\> get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt','.log' }
 ```
 
 This example shows how to use the Replace operator to rename multiple files, even though the NewName parameter does not accept wildcard characters.
@@ -95,6 +96,14 @@ The Replace operator replaces the ".txt" file name extension of each file with "
 Because the Replace operator works with regular expressions, the dot preceding "txt" is interpreted to match any character.
 To ensure that it matches only a dot (.), it is escaped with a backslash character (\\).
 The backslash character is not required in ".log" because it is a string, not a regular expression.
+
+### -------------------------- EXAMPLE 5 --------------------------
+```
+Get-ChildItem -Filter "*.MARKUP" -Recurse | Rename-Item -NewName {"2017-01-10-" + $_.name}
+```
+
+This command shows how to prefix ( or suffix for that matter; use your imagination) a specific string to each entry supplied to Rename-Item commandlet.
+
 ## PARAMETERS
 
 ### -Credential
@@ -212,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -228,7 +237,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

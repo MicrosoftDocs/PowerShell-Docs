@@ -1,23 +1,17 @@
-﻿---
-title: about_Operators
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Operators
+ms.technology:  powershell
+---
+
 # About Operators
 ## about_Operators
-about_Operators
 
 
 ## SHORT DESCRIPTION
@@ -260,19 +254,19 @@ $(Get-WMIObject win32_Directory)
 
 
 ## SEE ALSO
-about_Arithmetic_Operators
 
-about_Assignment_Operators
+[about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 
-about_Comparison_Operators
+[about_Assignment_Operators](about_Assignment_Operators.md)
+
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
 about_Logical_Operators
 
-about_Type_Operators
+[about_Type_Operators](about_Type_Operators.md)
 
-about_Split
+[about_Split](about_Split.md)
 
-about_Join
+[about_Join](about_Join.md)
 
-about_Redirection
-
+[about_Redirection](about_Redirection.md)

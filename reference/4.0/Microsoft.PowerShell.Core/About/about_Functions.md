@@ -1,25 +1,19 @@
-﻿---
-title: about_Functions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Functions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Functions
+ms.technology:  powershell
+---
+
 # About Functions
 ## about_Functions
 
 
-about_Functions
 
 # SHORT DESCRIPTION
 
@@ -174,7 +168,7 @@ defined for the parameter.
 
 To use this function, type the following command:
 
-C:\PS> function Get-SmallFiles –Size 50
+C:\PS> function Get-SmallFiles -Size 50
 
 You can also enter a value for a named parameter without the parameter
 name. For example, the following command gives the same result as a
@@ -280,7 +274,7 @@ You can use all of the parameters of Get-Command when you call
 the Get-MyCommand function. The parameters and parameter values
 are passed to the command using @Args.
 
-PS C:>Get-MyCommand -Name Get-ChildItem
+PS C:> Get-MyCommand -Name Get-ChildItem
 CommandType     Name                ModuleName
 -----------     ----                ----------
 Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
@@ -486,16 +480,26 @@ XML-based help, see "How to Write Cmdlet Help" in MSDN.
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_Comment_Based_Help
-about_Functions_Advanced
-about_Functions_Advanced_Methods
-about_Functions_Advanced_Parameters
-about_Functions_CmdletBindingAttribute
-about_Functions_OutputTypeAttribute
-about_Parameters
-about_Profiles
-about_Scopes
-about_Script_Blocks
-Function (provider)
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_Comment_Based_Help](about_Comment_Based_Help.md)
+
+[about_Functions_Advanced](about_Functions_Advanced.md)
+
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+
+[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+
+[about_Parameters](about_Parameters.md)
+
+[about_Profiles](about_Profiles.md)
+
+[about_Scopes](about_Scopes.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
+Function (provider)

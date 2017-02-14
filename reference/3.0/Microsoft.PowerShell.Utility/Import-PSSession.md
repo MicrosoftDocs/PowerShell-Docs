@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135221
-schema: 2.0.0
-title: Import-PSSession
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135221
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Import-PSSession
 ## SYNOPSIS
@@ -58,9 +59,9 @@ It is equivalent to using **Import-PSSession** to import selected modules from a
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
+PS C:\> $s = New-PSSession -ComputerName Server01
 
-PS C:\>Import-PSSession -Session $s
+PS C:\> Import-PSSession -Session $s
 ```
 
 This command imports all commands from a PSSession on the Server01 computer into the current session, except for commands that have the same names as commands in the current session.
@@ -68,10 +69,10 @@ This command imports all commands from a PSSession on the Server01 computer into
 Because this command does not use the **CommandName** parameter, it also imports all of the formatting data required for the imported commands.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$s = New-PSSession https://ps.testlabs.com/powershell
-PS C:\>Import-PSSession -Session $s -CommandName *-test -FormatTypeName *
-PS C:\>New-Test -Name Test1
-PS C:\>Get-Test test1 | Run-Test
+PS C:\> $s = New-PSSession https://ps.testlabs.com/powershell
+PS C:\> Import-PSSession -Session $s -CommandName *-test -FormatTypeName *
+PS C:\> New-Test -Name Test1
+PS C:\> Get-Test test1 | Run-Test
 ```
 
 These commands import the commands with names that end in "-test" from a PSSession into the local session, and then they show how to use an imported cmdlet.
@@ -87,11 +88,11 @@ Because imported commands are actually added to the current session, you use the
 You do not need to use the Invoke-Command cmdlet to run an imported command.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$s1 = New-PSSession -ComputerName s1
-PS C:\>$s2 = New-PSSession -ComputerName s2
-PS C:\>Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
-PS C:\>Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
-PS C:\>New-Test Test1 | Set-Test -RunType Full
+PS C:\> $s1 = New-PSSession -ComputerName s1
+PS C:\> $s2 = New-PSSession -ComputerName s2
+PS C:\> Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+PS C:\> Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
+PS C:\> New-Test Test1 | Set-Test -RunType Full
 ```
 
 This example shows that you can use imported cmdlets just as you would use local cmdlets.
@@ -101,10 +102,10 @@ These commands import the New-Test and Get-Test cmdlets from a PSSession on the 
 Even though the cmdlets were imported from different PSSessions, you can pipe an object from one cmdlet to another without error.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
-PS C:\>Import-PSSession -Session $s -CommandName *-test* -FormatTypeName *
-PS C:\>$batch = New-Test -Name Batch -AsJob
-PS C:\>Receive-Job $batch
+PS C:\> $s = New-PSSession -ComputerName Server01
+PS C:\> Import-PSSession -Session $s -CommandName *-test* -FormatTypeName *
+PS C:\> $batch = New-Test -Name Batch -AsJob
+PS C:\> Receive-Job $batch
 ```
 
 This example shows how to run an imported command as a background job.
@@ -122,9 +123,9 @@ The command saves the job object that New-Test returns in the $batch variable.
 The fourth command uses the Receive-Job cmdlet to get the results of the job in the $batch variable.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
-PS C:\>Invoke-Command -Session $s {Import-Module TestManagement}
-PS C:\>Import-PSSession -Session $s -Module TestManagement
+PS C:\> $s = New-PSSession -ComputerName Server01
+PS C:\> Invoke-Command -Session $s {Import-Module TestManagement}
+PS C:\> Import-PSSession -Session $s -Module TestManagement
 ```
 
 This example shows how to import the cmdlets and functions from a Windows PowerShell module on a remote computer into the current session.
@@ -138,7 +139,7 @@ Typically, the module would be added to all sessions by an **Import-Module** com
 The third command uses the **Module** parameter of **Import-PSSession** to import the cmdlets and functions in the module into the current session.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Import-PSSession $s -CommandName Get-Date, SearchHelp  -FormatTypeName * -AllowClobber
+PS C:\> Import-PSSession $s -CommandName Get-Date, SearchHelp  -FormatTypeName * -AllowClobber
 
 Name              : tmp_79468106-4e1d-4d90-af97-1154f9317239_tcw1zunz.ttf
 Path              : C:\Users\User01\AppData\Local\Temp\tmp_79468106-4e1d-4d90-af97-1154f9317239_tcw1zunz.ttf\tmp_79468106-4e1d-4d90-af97-1154f9317239_
@@ -167,22 +168,22 @@ The value of the **Path** property shows that **Import-PSSession** created a scr
 The **ExportedFunctions** property shows that the **Get-Date** cmdlet and the SearchHelp function were both imported as functions.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Import-PSSession $s -CommandName Get-Date -FormatTypeName * -AllowClobber
+PS C:\> Import-PSSession $s -CommandName Get-Date -FormatTypeName * -AllowClobber
 
-PS C:\>Get-Command Get-Date -All
+PS C:\> Get-Command Get-Date -All
 
 CommandType   Name       Definition
 -----------   ----       ----------
 Function      Get-Date   ...
 Cmdlet        Get-Date   Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>]
 
-PS C:\>Get-Date
+PS C:\> Get-Date
 09074
 
-PS C:\>(Get-Command -Type Cmdlet -Name Get-Date).PSSnapin.Name
+PS C:\> (Get-Command -Type Cmdlet -Name Get-Date).PSSnapin.Name
 Microsoft.PowerShell.Utility
 
-PS C:\>Microsoft.PowerShell.Utility\Get-Date
+PS C:\> Microsoft.PowerShell.Utility\Get-Date
 Sunday, March 15, 2009 2:08:26 PM
 ```
 
@@ -207,7 +208,7 @@ The fifth command uses the snap-in-qualified name of the **Get-Date** cmdlet to 
 For more information about command precedence and hidden commands, see about_Command_Precedence.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Import-PSSession -Session $s -CommandName *Item* -AllowClobber
+PS C:\> Import-PSSession -Session $s -CommandName *Item* -AllowClobber
 ```
 
 This command imports commands whose names include "Item" from the PSSession in $s.
@@ -216,8 +217,8 @@ Because the command includes the **CommandName** parameter but not the **FormatT
 Use this command when you are using **Import-PSSession** to run a command on a remote computer and you already have the formatting data for the command in the current session.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>$m = Import-PSSession -Session $s -CommandName *bits* -FormatTypeName *bits*
-PS C:\>Get-Command -Module $m
+PS C:\> $m = Import-PSSession -Session $s -CommandName *bits* -FormatTypeName *bits*
+PS C:\> Get-Command -Module $m
 CommandType     Name
 -----------     ----
 Function        Add-BitsFile

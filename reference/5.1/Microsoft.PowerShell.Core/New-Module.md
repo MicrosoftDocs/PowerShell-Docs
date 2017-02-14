@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822067
-schema: 2.0.0
-title: New-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821495
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # New-Module
 
@@ -53,7 +54,7 @@ This action adds the dynamic module to the **Get-Module** list, but it does not 
 
 ### Example 1: Create a dynamic module
 ```
-PS C:\>New-Module -ScriptBlock {function Hello {"Hello!"}}
+PS C:\> New-Module -ScriptBlock {function Hello {"Hello!"}}
 
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
@@ -76,7 +77,7 @@ The command returns a module object that represents the new dynamic module.
 
 ### Example 2: Working with dynamic modules and Get-Module and Get-Command
 ```
-PS C:\>new-module -scriptblock {function Hello {"Hello!"}}
+PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
@@ -106,7 +107,7 @@ The members that they export are returned by the **Get-Command** cmdlet.
 
 ### Example 3: Export a variable into the current session
 ```
-PS C:\>New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+PS C:\> New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
 
 PS C:\> $SayHelloHelp
 
@@ -123,7 +124,7 @@ The output shows that both the variable and the function were exported into the 
 
 ### Example 4: Make a dynamic module available to Get-Module
 ```
-PS C:\>New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
+PS C:\> New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
 PS C:\> Get-Module
 
 Name              : GreetingModule
@@ -161,7 +162,7 @@ The third command uses the **Get-Command** cmdlet to get the Hello function that
 
 ### Example 5: Generate a custom object that has exported functions
 ```
-PS C:\>$m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; functionn Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
+PS C:\> $m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; functionn Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
 PS C:\> $m
 PS C:\> $m | Get-Member
 TypeName: System.Management.Automation.PSCustomObject
@@ -198,7 +199,7 @@ The fourth and fifth commands use the script method format to call the Hello and
 
 ### Example 6: Get the results of the script block
 ```
-PS C:\>New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnResult
+PS C:\> New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnResult
 Hello, World!
 ```
 

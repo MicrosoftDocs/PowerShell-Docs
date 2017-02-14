@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135209
-schema: 2.0.0
-title: Enable-ComputerRestore
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable ComputerRestore
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135209
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Enable-ComputerRestore
 ## SYNOPSIS
@@ -35,13 +36,13 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>enable-computerrestore -drive "C:\"
+PS C:\> enable-computerrestore -drive "C:\"
 ```
 
 This command enables System Restore on the C: drive of the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>enable-computerrestore -drive "C:\", "D:\"
+PS C:\> enable-computerrestore -drive "C:\", "D:\"
 ```
 
 This command enables System Restore on the C: and D: drives of the local computer.
@@ -69,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -85,7 +86,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

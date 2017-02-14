@@ -1,25 +1,18 @@
-﻿---
-title: about_Script_Blocks
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Script_Blocks
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Script_Blocks
+ms.technology:  powershell
+---
+
 # About Script Blocks
 ## about_Script_Blocks
-# TOPIC
 
-about_Script_Blocks
 
 # SHORT DESCRIPTION
 
@@ -122,7 +115,8 @@ For more information about the call operator, see about_Operators.
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced
-about_Operators
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced](about_Functions_Advanced.md)
+
+[about_Operators](about_Operators.md)

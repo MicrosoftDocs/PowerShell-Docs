@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Archive-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821655
-schema: 2.0.0
-title: Expand-Archive
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Expand Archive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821655
+external help file:   Microsoft.PowerShell.Archive-help.xml
+---
+
 
 # Expand-Archive
 
@@ -40,14 +41,14 @@ An archive file allows multiple files to be packaged, and optionally compressed,
 
 ### Example 1: Extract the contents of an archive
 ```
-PS C:\>Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
+PS C:\> Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
 ```
 
 This command extracts the contents of an existing archive file, Draft.zip, into the folder specified by the *DestinationPath* parameter, C:\Reference.
 
 ### Example 2: Extract the contents of an archive in the current folder
 ```
-PS C:\>Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
+PS C:\> Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
 ```
 
 This command extracts the contents of an existing archive file in the current folder, Draft.zip, into the folder specified by the *DestinationPath* parameter, C:\Reference.
@@ -55,7 +56,7 @@ This command extracts the contents of an existing archive file in the current fo
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -136,7 +137,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

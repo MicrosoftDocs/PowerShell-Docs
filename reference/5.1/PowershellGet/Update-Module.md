@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=398576
-schema: 2.0.0
-title: Update-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Update Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821676
+external help file:   PSModule-help.xml
+---
+
 
 # Update-Module
 
@@ -38,14 +39,14 @@ Running **Update-Module** without the *Name* parameter updates all modules that 
 
 ### Example 1: Update all modules
 ```
-PS C:\>Update-Module
+PS C:\> Update-Module
 ```
 
 This example updates to the newest version all modules in $env:PSModulePath that were installed by Install-Module from the online gallery.
 
 ### Example 2: Update a module by name
 ```
-PS C:\>Update-Module -Name "MyDscModule"
+PS C:\> Update-Module -Name "MyDscModule"
 ```
 
 This example updates to the newest online gallery version the first module named MyDscModule found in $env:PSModulePath.
@@ -54,7 +55,7 @@ If **Update-Module** cannot find a module named MyDscModule in $env:PSModulePath
 
 ### Example 3: View what would occur if Update-Module runs
 ```
-PS C:\>Update-Module -WhatIf
+PS C:\> Update-Module -WhatIf
 What if: Performing the operation "Update-Module" on target "Version '2.0' of module 'xDscDiagnostics', updating to version '2.0'".
 What if: Performing the operation "Update-Module" on target "Version '1.1.1' of module 'xDSCResourceDesigner', updating to version '1.1.1.1'".
 ```
@@ -64,7 +65,7 @@ The command is not run.
 
 ### Example 4: Update a module to a specified version
 ```
-PS C:\>Update-Module -Name "ContosoModule" -RequiredVersion 2.1.0.3
+PS C:\> Update-Module -Name "ContosoModule" -RequiredVersion 2.1.0.3
 ```
 
 This example updates ContosoModule to version 2.1.0.3.
@@ -72,7 +73,7 @@ If version 2.1.0.3 does not exist in the online gallery, an error occurs.
 
 ### Example 5: Update a module regardless of the current version installed
 ```
-PS C:\>Update-Module -Name "ContosoModule" -Force
+PS C:\> Update-Module -Name "ContosoModule" -Force
 ```
 
 This example installs (or reinstalls) the newest version of ContosoModule from the online gallery, regardless of the current version of the module that is installed on the computer.
@@ -80,7 +81,7 @@ This example installs (or reinstalls) the newest version of ContosoModule from t
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -209,7 +210,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821618
-schema: 2.0.0
-title: Remove-PSDrive
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSDrive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821618
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-PSDrive
 
@@ -47,14 +48,14 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Remove a file system drive
 ```
-PS C:\>Remove-PSDrive -Name smp
+PS C:\> Remove-PSDrive -Name smp
 ```
 
 This command removes a temporary file system drive named smp.
 
 ### Example 2: Remove mapped network drives
 ```
-PS C:\>Get-PSDrive X, S | Remove-PSDrive
+PS C:\> Get-PSDrive X, S | Remove-PSDrive
 ```
 
 This command disconnects the X: mapped network drive that was created in File Explorer and the S: mapped network drive that was created by using the *Persist* parameter of the New-PSDrive cmdlet.
@@ -64,7 +65,7 @@ The command uses the Get-PSDrive cmdlet to get the drives and **Remove-PSDrive**
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -181,7 +182,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

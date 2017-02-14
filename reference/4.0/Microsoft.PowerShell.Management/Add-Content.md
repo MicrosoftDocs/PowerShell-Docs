@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289796
-schema: 2.0.0
-title: Add-Content
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289796
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Add-Content
 
@@ -42,14 +43,14 @@ You can specify the content by typing the content in the command or by specifyin
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>add-content -path *.txt -exclude help* -value "END"
+PS C:\> add-content -path *.txt -exclude help* -value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>add-content -Path file1.log, file2.log -Value (get-date) -passthru
+PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
 ```
 
 This command adds the date to the end of the File1.log and File2.log files and then displays the date at the command line.
@@ -59,7 +60,7 @@ Because there is no other cmdlet to receive the passed object, it is displayed a
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
+PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
 ```
 
 This command adds the contents of the Weekly.txt file to the end of the Monthly.txt file.
@@ -71,7 +72,7 @@ In that case, the command would be "add-content -path monthly.txt -value $w".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
+PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
 ```
 
 This command creates a new directory and file and copies the content of an existing file to the newly created file.
@@ -249,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -265,7 +266,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

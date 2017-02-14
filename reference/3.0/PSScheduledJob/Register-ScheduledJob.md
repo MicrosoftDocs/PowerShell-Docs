@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223922
-schema: 2.0.0
-title: Register-ScheduledJob
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Register ScheduledJob
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223922
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Register-ScheduledJob
 ## SYNOPSIS
@@ -66,7 +67,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a scheduled job
 ```
-PS C:\>Register-ScheduledJob -Name Archive-Scripts -ScriptBlock { dir $home\*.ps1 -Recurse | Copy-Item -Destination \\Server\Share\PSScriptArchive }
+PS C:\> Register-ScheduledJob -Name Archive-Scripts -ScriptBlock { dir $home\*.ps1 -Recurse | Copy-Item -Destination \\Server\Share\PSScriptArchive }
 ```
 
 This command creates the Archive-Scripts scheduled job.
@@ -77,27 +78,27 @@ You can use add job triggers later, use the Start-Job cmdlet to start the job on
 ### Example 2: Create a scheduled job with triggers and custom options
 ```
 The first command uses the New-ScheduledJobOption cmdlet to create a job option object, which it saves in the $o parameter. The options start the scheduled job even if the computer is not idle, wake the computer to run the job, if necessary, and allows multiple instances of the job to run in a series.
-PS C:\>$o = New-ScheduledJobOption -WakeToRun -StartIfNotIdle -MultipleInstancesPolicy Queue
+PS C:\> $o = New-ScheduledJobOption -WakeToRun -StartIfNotIdle -MultipleInstancesPolicy Queue
 
 
 The second command uses the New-JobTrigger cmdlet to create job trigger that starts a job every other Monday at 9:00 p.m.
-PS C:\>$t = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
+PS C:\> $t = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
 
 This command creates the UpdateVersion scheduled job, which runs the UpdateVersion.ps1 script every Monday at 9:00 p.m. The command uses the **FilePath** parameter to specify the script that the job runs. It uses the **Trigger** parameter to specify the job triggers in the $t variable and the **ScheduledJobOption** parameter to specify the option object in the $o variable.
-PS C:\>Register-ScheduledJob -Name UpdateVersion -FilePath \\Srv01\Scripts\UpdateVersion.ps1 -Trigger $t -ScheduledJobOption $o
+PS C:\> Register-ScheduledJob -Name UpdateVersion -FilePath \\Srv01\Scripts\UpdateVersion.ps1 -Trigger $t -ScheduledJobOption $o
 ```
 
 This example shows how to create a scheduled job that has a job trigger and custom job options.
 ### Example 3: Use hash tables to specify a trigger and job options
 ```
-PS C:\>Register-ScheduledJob -FilePath \\Srv01\Scripts\Update-Version.ps1 -Trigger @{Frequency=Weekly; At="9:00PM"; DaysOfWeek="Monday"; Interval=2} -ScheduledJobOption @{WakeToRun; StartIfNotIdle; MultipleInstancesPolicy="Queue"}
+PS C:\> Register-ScheduledJob -FilePath \\Srv01\Scripts\Update-Version.ps1 -Trigger @{Frequency=Weekly; At="9:00PM"; DaysOfWeek="Monday"; Interval=2} -ScheduledJobOption @{WakeToRun; StartIfNotIdle; MultipleInstancesPolicy="Queue"}
 ```
 
 This command is has the same effect as the command in Example 2.
 It creates a scheduled job, but it uses hash tables to specify the values of the **Trigger** and **ScheduledJobOption** parameters.
 ### Example 4: Create scheduled jobs on remote computers
 ```
-PS C:\>Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Register-ScheduledJob -Name Get-EnergyData -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -ScheduledJobOption $o -Trigger $t } -Credential $cred
+PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {Register-ScheduledJob -Name Get-EnergyData -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -ScheduledJobOption $o -Trigger $t } -Credential $cred
 ```
 
 This command creates the EnergyData scheduled job on multiple remote computers.
@@ -111,7 +112,7 @@ The Register-ScheduledJob command creates a scheduled job on the remote computer
 The script is located on a file server that is available to all participating computers.
 ### Example 5: Create a scheduled job that runs a script on remote computers
 ```
-PS C:\>Register-ScheduledJob -Name CollectEnergyData -Trigger $t -MaxResultCount 99 -ScriptBlock { Invoke-Command -AsJob -ComputerName (Servers.txt) -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
+PS C:\> Register-ScheduledJob -Name CollectEnergyData -Trigger $t -MaxResultCount 99 -ScriptBlock { Invoke-Command -AsJob -ComputerName (Servers.txt) -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
 ```
 
 This command uses the **Register-ScheduledJob** cmdlet to create the CollectEnergyData scheduled job on the local computer.
@@ -357,7 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -373,7 +374,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

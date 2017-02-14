@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822051
-schema: 2.0.0
-title: Export-ModuleMember
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export ModuleMember
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821480
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Export-ModuleMember
 
@@ -41,7 +42,7 @@ Even if the command confirms the default values, it demonstrates the intention o
 
 ### Example 1: Export aliases and functions in a script module
 ```
-PS C:\>Export-ModuleMember -Function * -Alias *
+PS C:\> Export-ModuleMember -Function * -Alias *
 ```
 
 This command exports the aliases defined in the script module, together with the functions defined in the script module.
@@ -51,7 +52,7 @@ Otherwise, the cmdlet exports only the aliases.
 
 ### Example 2: Export specific aliases and functions
 ```
-PS C:\>Export-ModuleMember -Function Get-Test, New-Test, Start-Test -Alias gtt, ntt, stt
+PS C:\> Export-ModuleMember -Function Get-Test, New-Test, Start-Test -Alias gtt, ntt, stt
 ```
 
 This command exports three aliases and three functions defined in the script module.
@@ -60,7 +61,7 @@ You can use this command format to specify the names of module members.
 
 ### Example 3: Export no members
 ```
-PS C:\>Export-ModuleMember
+PS C:\> Export-ModuleMember
 ```
 
 This command specifies that no members defined in the script module are exported.
@@ -70,7 +71,7 @@ Users can read and copy module members or use the call operator (&) to invoke mo
 
 ### Example 4: Export a specific variable
 ```
-PS C:\>Export-ModuleMember -Variable increment
+PS C:\> Export-ModuleMember -Variable increment
 ```
 
 This command exports only the $increment variable from the script module.
@@ -80,7 +81,7 @@ If you want to export a variable, in addition to exporting the functions in a mo
 
 ### Example 5: Multiple export commands
 ```
-PS C:\># From TestModule.psm1
+PS C:\> # From TestModule.psm1
 function new-test
    { <function code> }
 export-modulemember -function new-test
@@ -101,7 +102,7 @@ With the **Export-ModuleMember** commands, only the **Get-Test** and **Start-Tes
 
 ### Example 6: Export members in a dynamic module
 ```
-PS C:\>New-Module -Script {function SayHello {"Hello!"}; Set-Alias Hi SayHello; Export-ModuleMember -Alias Hi -Function SayHello}
+PS C:\> New-Module -Script {function SayHello {"Hello!"}; Set-Alias Hi SayHello; Export-ModuleMember -Alias Hi -Function SayHello}
 ```
 
 This command shows how to use Export-ModuleMember in a dynamic module that is created by using the **New-Module** cmdlet.
@@ -110,7 +111,7 @@ In this example, **Export-ModuleMember** is used to export both the Hi alias and
 
 ### Example 7: Declare and export a function in a single command
 ```
-PS C:\>function export
+PS C:\> function export
 {
   param ([parameter(mandatory=$true)] [validateset("function","variable")] $type,
   [parameter(mandatory=$true)] $name,

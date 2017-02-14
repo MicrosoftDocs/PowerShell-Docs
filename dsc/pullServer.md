@@ -23,14 +23,15 @@ Requirements for using a pull server:
   - DSC Service
 * Ideally, some means of generating a certificate, to secure credentials passed to the Local Configuration Manager (LCM) on target nodes
 
-You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using PowerShell. The sample scripts included in this topic will handle both of these steps for you as well.
+You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using PowerShell. The sample scripts included in this topic will handle both of these steps 
+for you as well.
 
 ## Using the xWebService resource
 The easiest way to set up a web pull server is to use the xWebService resource, included in the xPSDesiredStateConfiguration module. The following steps explain how to use the resource in a configuration that sets up the web service.
 
 1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
 1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either within your orgnaization or a public authority. The certificate recieved from the authority is usually in the PFX format. Install the certificate on the node that will become the DSC Pull server in the default location which should be CERT:\LocalMachine\My. Make a note of the certificate thumbprint.
-1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see [Registration Key](#RegKey) section below.
+1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see the Registration Key section below.
 1. In the PowerShell ISE, start (F5) the following configuration script (included in the Example folder of the  **xPSDesiredStateConfiguration** module as Sample_xDscWebService.ps1). This script sets up the pull server.
   
 ```powershell
@@ -71,7 +72,7 @@ configuration Sample_xDscPullServer
              ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
              State                    = 'Started'
              DependsOn                = '[WindowsFeature]DSCServiceFeature'     
-             UseSecurityBestPractices = $true
+             UseSecurityBestPractices = $false
          } 
 
         File RegistrationKeyFile
@@ -138,20 +139,34 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ```
 > **Note**: The **ReportServerWeb** section allows reporting data to be sent to the pull server. 
 
-The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration is required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
+The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that pull server is supporting the V2 version of the pull server protocol so an initial registration 
+is required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull server protocol is used and there is no registration processing.
 
->**Note**: In a PUSH scenario, a bug exists in the current relase that makes it necessary to define a ConfigurationID property in the metaconfiguration file for nodes that have never registered with a pull server. This will force the V1 Pull Server protocol and avoid registration failure messages.
+>**Note**: In a PUSH scenario, a bug exists in the current relase that makes it necessary to define a ConfigurationID property in the metaconfiguration file for nodes that have never 
+registered with a pull server. This will force the V1 Pull Server protocol and avoid registration failure messages.
 
 ## Placing configurations and resources
-After the pull server setup completes, the folders defined by the **ConfigurationPath** and **ModulePath** properties in the pull server configuration are where you will place modules and configurations that will be available for target nodes to pull. These files need to be in a specific format in order for the pull server to correctly process them. 
+
+After the pull server setup completes, the folders defined by the **ConfigurationPath** and **ModulePath** properties in the pull server configuration are where you will place modules and 
+configurations that will be available for target nodes to pull. These files need to be in a specific format in order for the pull server to correctly process them. 
 
 ### DSC resource module package format
-Each resource module needs to be zipped and named according the the following pattern **{Module Name}_{Module Version}.zip**. For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes '{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the **ModulePath** folder.
+
+Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
+of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
+file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
+pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
+'{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes 
+'{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the **ModulePath** folder.
 
 Use `new-dscchecksum {module zip file}` to create a checksum file for the newly-added module.
 
 ### Configuration MOF format 
-A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder. Place the MOF files and their associated checksum files in the the **ConfigurationPath** folder.
+A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. To create a checksum, call the 
+[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is 
+located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. If there are more than 
+one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder. Place the MOF files and their associated checksum files in the 
+the **ConfigurationPath** folder.
 
 >**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.
 

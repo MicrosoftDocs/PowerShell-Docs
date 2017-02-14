@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822429
-schema: 2.0.0
-title: Import-Clixml
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import Clixml
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821813
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Import-Clixml
 
@@ -41,8 +42,8 @@ For an example of how to do this, see Example 2.
 
 ### Example 1: Import a serialized file and recreate an object
 ```
-PS C:\>Get-Process | Export-Clixml pi.xml
-PS C:\>$Processes = Import-Clixml pi.xml
+PS C:\> Get-Process | Export-Clixml pi.xml
+PS C:\> $Processes = Import-Clixml pi.xml
 ```
 
 This command uses the Export-Clixml cmdlet to save a serialized copy of the process information returned by Get-Process.
@@ -50,10 +51,10 @@ It then uses **Import-Clixml** to retrieve the contents of the serialized file a
 
 ### Example 2: Import a secure credential object
 ```
-PS C:\>$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$Credential | Export-CliXml $Credxmlpath
-PS C:\>$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$Credential = Import-CliXml $Credxmlpath
+PS C:\> $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $Credential | Export-CliXml $Credxmlpath
+PS C:\> $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $Credential = Import-CliXml $Credxmlpath
 ```
 
 The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.

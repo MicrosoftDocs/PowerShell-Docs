@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822261
-schema: 2.0.0
-title: Remove-ItemProperty
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821617
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-ItemProperty
 
@@ -41,7 +42,7 @@ You can use it to delete registry values and the data that they store.
 
 ### Example 1: Delete a registry value
 ```
-PS C:\>Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
+PS C:\> Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
 ```
 
 This command deletes the SmpProperty registry value, and its data, from the SmpApplication subkey of the HKEY_LOCAL_MACHINE\Software registry key.
@@ -52,7 +53,7 @@ It uses the *Name* parameter to identify the registry value that is being delete
 
 ### Example 2: Delete a registry value from the HKCU location
 ```
-PS C:\>Set-Location HKCU:\Software\MyCompany\MyApp
+PS C:\> Set-Location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> Remove-ItemProperty -Path . -Name "Options" -Confirm
 ```
 
@@ -67,7 +68,7 @@ It uses the *Confirm* parameter to request a user prompt before deleting the val
 
 ### Example 3: Remove a registry value by using the pipeline
 ```
-PS C:\>Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
+PS C:\> Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
 ```
 
 This command deletes the NoOfEmployees registry value, and its data, from the HKLM\Software\MyCompany registry key.
@@ -79,7 +80,7 @@ Then, it uses the *Name* parameter of **Remove-ItemProperty** to specify the nam
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -256,7 +257,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

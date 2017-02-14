@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293986
-schema: 2.0.0
-title: Invoke-Expression
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke Expression
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293986
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Invoke-Expression
 
@@ -32,11 +33,11 @@ Without Invoke-Expression, a string submitted at the command line would be retur
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$command = "Get-Process"
-PS C:\>$command
+PS C:\> $command = "Get-Process"
+PS C:\> $command
 Get-Process
 
-PS C:\>invoke-expression $command
+PS C:\> invoke-expression $command
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 -------  ------    -----      ----- -----   ------     --   -----------
@@ -60,8 +61,8 @@ The third command uses Invoke-Expression to evaluate the string.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>invoke-expression -command "C:\ps-test\testscript.ps1"
-PS C:\>"C:\ps-test\testscript.ps1" | invoke-expression
+PS C:\> invoke-expression -command "C:\ps-test\testscript.ps1"
+PS C:\> "C:\ps-test\testscript.ps1" | invoke-expression
 ```
 
 These commands use Invoke-Expression to run a script, TestScript.ps1, on the local computer.
@@ -71,8 +72,8 @@ The second uses a pipeline operator (|) to send the command string to Invoke-Exp
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$Command = 'Get-Process | where {$_.cpu -gt 1000}'
-PS C:\>Invoke-Expression $Command
+PS C:\> $Command = 'Get-Process | where {$_.cpu -gt 1000}'
+PS C:\> Invoke-Expression $Command
 ```
 
 This example runs a command string that is saved in the $Command variable.
@@ -82,10 +83,10 @@ If it were enclosed in double quotation marks, the $_ variable would be replaced
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$cmdlet_name = "get-eventlog"
-PS C:\>$example_number = 1
-PS C:\>$example_code = (get-help $cmdlet_name).examples.example[($example_number-1)].code
-PS C:\>invoke-expression $example_code
+PS C:\> $cmdlet_name = "get-eventlog"
+PS C:\> $example_number = 1
+PS C:\> $example_code = (get-help $cmdlet_name).examples.example[($example_number-1)].code
+PS C:\> invoke-expression $example_code
 ```
 
 This command retrieves and runs the first example in the Get-EventLog cmdlet help topic.

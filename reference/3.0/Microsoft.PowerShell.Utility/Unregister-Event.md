@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135269
-schema: 2.0.0
-title: Unregister-Event
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135269
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Unregister-Event
 ## SYNOPSIS
@@ -40,7 +41,7 @@ To delete events, use the Remove-Event cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>unregister-event -sourceIdentifier ProcessStarted
+PS C:\> unregister-event -sourceIdentifier ProcessStarted
 ```
 
 This command cancels the event subscription that has a source identifier of "ProcessStarted".
@@ -49,7 +50,7 @@ To find the source identifier of an event, use the Get-Event cmdlet.
 To find the source identifier of an event subscription, use the Get-EventSubscriber cmdlet.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>unregister-event -subscriptionId 2
+PS C:\> unregister-event -subscriptionId 2
 ```
 
 This command cancels the event subscription that has a subscription identifier of 2.
@@ -57,7 +58,7 @@ This command cancels the event subscription that has a subscription identifier o
 To find the subscription identifier of an event subscription, use the Get-EventSubscriber cmdlet.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-eventsubscriber -force | unregister-event -force
+PS C:\> get-eventsubscriber -force | unregister-event -force
 ```
 
 This command cancels all event subscriptions in the session.
@@ -118,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -134,7 +135,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

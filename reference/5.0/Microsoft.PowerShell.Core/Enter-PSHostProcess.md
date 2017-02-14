@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=403736
-schema: 2.0.0
-title: Enter-PSHostProcess
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enter PSHostProcess
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=403736
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Enter-PSHostProcess
 
@@ -64,11 +65,11 @@ To support attaching to processes on remote computers, the **Enter-PSHostProcess
 ### Example 1: Start debugging a runspace within the Windows PowerShell ISE process
 ```
 In this example, you run **Enter-PSHostProcess** from within the Windows PowerShell console to enter the Windows PowerShell ISE process. In the resulting interactive session, you can find a runspace that you want to debug by running Get-Runspace, and then debug the runspace.
-PS C:\>Enter-PSHostProcess -Name powershell_ise
+PS C:\> Enter-PSHostProcess -Name powershell_ise
 [Process:1520]: PS C:\Test\Documents>
 
 Next, get available runspaces within the process you have entered.
-PS C:\>[Process:1520]: PS C:\> Get-Runspace
+PS C:\> [Process:1520]: PS C:\>  Get-Runspace
 Id    Name          InstanceId                               State           Availability
 --    -------       -----------                              ------          -------------
 1     Runspace1     2d91211d-9cce-42f0-ab0e-71ac258b32b5     Opened          Available
@@ -78,7 +79,7 @@ Id    Name          InstanceId                               State           Ava
 5     Runspace8     3e517382-a97a-49ba-9c3c-fd21f6664288     Broken          None
 
 The runspace objects returned by **Get-Runspace** also have a NoteProperty called **ScriptStackTrace** of the running command stack, if available.Next, debug runspace ID 4, that is running another user's long-running script. From the list returned from **Get-Runspace**, note that the runspace state is **Opened**, and **Availability** is **Busy**, meaning that the runspace is still running the long-running script.
-PS C:\>[Process:1520]: PS C:\> (Get-Runspace -Id 4).ScriptStackTrace
+PS C:\> [Process:1520]: PS C:\>  (Get-Runspace -Id 4).ScriptStackTrace
 Command                    Arguments                           Location
 -------                    ---------                           --------
 MyModuleWorkflowF1         {}                                  TestNoFile3.psm1: line 6
@@ -87,21 +88,21 @@ TestNoFile2.ps1            {}                                  TestNoFile2.ps1: 
 <ScriptBlock>              {}                                  <No file>
 
 Start an interactive debugging session with this runspace by running the Debug-Runspace cmdlet.
-PS C:\>[Process: 1520]: PS C:\> Debug-Runspace -Id 4
+PS C:\> [Process: 1520]: PS C:\>  Debug-Runspace -Id 4
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 
 At C:\TestWFVar1.ps1:83 char:1
 + $scriptVar = "Script Variable"
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Process: 1520]: [RSDBG: 4]: PS C:\>>
+[Process: 1520]: [RSDBG: 4]: PS C:\> >
 
 After you are finished debugging, allow the script to continue running without the debugger attached by running the **exit** debugger command. Alternatively, you can quit the debugger with the **q** or **Stop** commands.
-PS C:\>[Process:346]: [RSDBG: 3]: PS C:\>> exit
+PS C:\> [Process:346]: [RSDBG: 3]: PS C:\> > exit
 [Process:1520]: PS C:\>
 
 When you are finished working in the process, exit the process by running the Exit-PSHostProcess cmdlet. This returns you to the PS C:\> prompt.
-PS C:\>[Process:1520]: PS C:\> Exit-PSHostProcess
+PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 

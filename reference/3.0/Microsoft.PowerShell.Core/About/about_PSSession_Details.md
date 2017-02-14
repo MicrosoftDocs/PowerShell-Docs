@@ -1,25 +1,19 @@
-﻿---
-title: about_PSSession_Details
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_PSSession_Details
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PSSession_Details
+ms.technology:  powershell
+---
+
 # About PSSession Details
 ## about_PSSession_Details
 
 
-about_PSSession_Details
 
 # SHORT DESCRIPTION
 
@@ -287,15 +281,24 @@ another, it might be because the session is restricted.
 
 # SEE ALSO
 
-about_Jobs
-about_PSSessions
-about_Remote
-about_Remote_Disconnected_Sessions
-about_Remote_Requirements
-Invoke-Command
-New-PSSession
-Get-PSSession
-Remove-PSSession
-Enter-PSSession
-Exit-PSSession
+[about_Jobs](about_Jobs.md)
 
+[about_PSSessions](about_PSSessions.md)
+
+[about_Remote](about_Remote.md)
+
+[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
+
+Invoke-Command
+
+New-PSSession
+
+Get-PSSession
+
+Remove-PSSession
+
+Enter-PSSession
+
+Exit-PSSession

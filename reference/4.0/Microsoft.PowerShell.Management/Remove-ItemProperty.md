@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293897
-schema: 2.0.0
-title: Remove-ItemProperty
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293897
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-ItemProperty
 
@@ -41,7 +42,7 @@ You can use it to delete registry values and the data that they store.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
+PS C:\> remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
 ```
 
 This command deletes the SmpProperty registry value, and its data, from the SmpApplication subkey of the HKEY_LOCAL_MACHINE\Software registry key.
@@ -52,7 +53,7 @@ It uses the Name parameter to identify the registry value that is being deleted.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-location HKCU:\Software\MyCompany\MyApp
+PS C:\> set-location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> remove-itemproperty -path . -Name Options -confirm
 ```
 
@@ -67,7 +68,7 @@ It uses the Confirm parameter to request a user prompt before deleting the value
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
+PS C:\> get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
 ```
 
 This command deletes the NoOfEmployees registry value, and its data, from the HKLM\Software\MyCompany registry key.
@@ -221,7 +222,7 @@ Accept wildcard characters: True
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -237,7 +238,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

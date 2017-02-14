@@ -58,7 +58,7 @@ User UserExample
     Ensure = "Present"  # To ensure the user account does not exist, set Ensure to "Absent"
     UserName = "SomeName"
     Password = $passwordCred # This needs to be a credential object
-    DependsOn = “[Group]GroupExample" # Configures GroupExample first
+    DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
 

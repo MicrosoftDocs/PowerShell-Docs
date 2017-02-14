@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822377
-schema: 2.0.0
-title: Unprotect-CmsMessage
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unprotect CmsMessage
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821720
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+---
+
 
 # Unprotect-CmsMessage
 
@@ -61,7 +62,7 @@ The **Unprotect-CmsMessage** cmdlet returns the decrypted content.
 
 ### Example 1: Decrypt a message
 ```
-PS C:\>C:\Users\gabyk\Documents\PowerShell_ISEUnprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt" -To 'â€Ž0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
+PS C:\> C:\Users\gabyk\Documents\PowerShell_ISEUnprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt" -To 'â€Ž0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
 Try the new Break All command
 ```
 

@@ -1,25 +1,19 @@
-﻿---
-title: about_WorkflowCommonParameters
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_WorkflowCommonParameters
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_WorkflowCommonParameters
+ms.technology:  powershell
+---
+
 # About WorkflowCommonParameters
 ## about_WorkflowCommonParameters
 
 
-about_Workflow_Common_Parameters
 
 # SHORT DESCRIPTION
 
@@ -332,7 +326,6 @@ is not available on the port used for the command, the command fails.
 
 # KEYWORDS
 
-about_Workflow_Common_Parameters
 about_Workflow_CommonParameters
 
 # SEE ALSO

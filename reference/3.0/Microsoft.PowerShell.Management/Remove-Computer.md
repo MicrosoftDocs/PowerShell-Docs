@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135246
-schema: 2.0.0
-title: Remove-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135246
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-Computer
 ## SYNOPSIS
@@ -50,7 +51,7 @@ It includes new credential parameters that specify alternate credentials for con
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
+PS C:\> Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
 ```
 
 This command removes the local computer from the domain to which it is joined.
@@ -61,7 +62,7 @@ It uses the **PassThru** parameter and the **Verbose** common parameter to displ
 Because the command does not specify a workgroup name, the local computer is moved to the "WORKGROUP" workgroup after it is removed from its domain.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -Workgroup Legacy -Force -Restart
+PS C:\> Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -Workgroup Legacy -Force -Restart
 ```
 
 This command removes all of the computers that are listed in the OldServers.txt file from their domains and places them in the Legacy workgroup.
@@ -70,7 +71,7 @@ The command uses the **LocalCredential** parameter to supply the credentials of 
 It uses the **Force** parameter to suppress the confirmation prompts for each computer and the **Restart** parameter to restart each of the computers after it is removed from its domain.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -Workgroup Local -Restart -Force
+PS C:\> Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -Workgroup Local -Restart -Force
 ```
 
 This command removes the Server01 remote computer and the local computer from their domains and adds them to the Local workgroup.

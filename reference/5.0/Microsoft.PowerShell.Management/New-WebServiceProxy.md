@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821608
-schema: 2.0.0
-title: New-WebServiceProxy
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New WebServiceProxy
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821608
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # New-WebServiceProxy
 
@@ -49,14 +50,14 @@ The Microsoft .NET Framework provides Web service proxy objects that represent t
 
 ### Example 1: Create a proxy for a Web service
 ```
-PS C:\>$zip = New-WebServiceProxy -Uri "http://www.webservicex.net/uszip.asmx?WSDL"
+PS C:\> $zip = New-WebServiceProxy -Uri "http://www.webservicex.net/uszip.asmx?WSDL"
 ```
 
 This command creates a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
 
 ### Example 2: Create a proxy for a Web service and specify namespace and class
 ```
-PS C:\>$URI = "http://www.webservicex.net/uszip.asmx?WSDL"
+PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
 PS C:\> $zip = New-WebServiceProxy -Uri $URI -Namespace "WebServiceProxy" -Class "USZip"
 ```
 
@@ -69,7 +70,7 @@ The command uses the *Uri* parameter to specify the URI and the *Namespace* and 
 
 ### Example 3: Display methods of a Web service proxy
 ```
-PS C:\>$zip | Get-Member -MemberType method
+PS C:\> $zip | Get-Member -MemberType method
 TypeName: WebServiceProxy.USZip
 Name                      MemberType Definition
 ----                      ---------- ----------
@@ -104,7 +105,7 @@ Notice that the **TypeName** of the proxy object, WebServiceProxy, reflects the 
 
 ### Example 4: Use a Web service proxy
 ```
-PS C:\>$zip.GetInfoByZip(20500).table
+PS C:\> $zip.GetInfoByZip(20500).table
 CITY      : Washington
 STATE     : DC
 ZIP       : 20500

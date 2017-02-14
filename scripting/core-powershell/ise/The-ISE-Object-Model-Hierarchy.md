@@ -1,14 +1,16 @@
 ---
-title:  The ISE Object Model Hierarchy
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The ISE Object Model Hierarchy
+ms.technology:  powershell
+ms.assetid:    bc3300e4-9c17-4f00-a621-c8867126e3b3
 ---
+
 
 # The ISE Object Model Hierarchy
   This topic shows the hierarchy of objects that are part of Windows PowerShell Integrated Scripting Environment (ISE). Windows PowerShell ISE is included in Windows PowerShell 3.0 and in Windows PowerShell 4.0. Click an object to take you to the reference documentation for the class that defines the object.
@@ -35,7 +37,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -74,7 +76,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -117,18 +119,18 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 ##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add-on tool that is currently docked to the top edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
  The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class. It represents the installed add-on tool that is currently docked to the right-hand edge of the Windows PowerShell ISE window. This object makes the following objects available for scripting:
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 

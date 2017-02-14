@@ -1,25 +1,19 @@
-﻿---
-title: about_Assignment_Operators
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Assignment_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Assignment_Operators
+ms.technology:  powershell
+---
+
 # About Assignment Operators
 ## about_Assignment_Operators
 
 
-about_assignment_operators
 
 # SHORT DESCRIPTION
 
@@ -671,10 +665,14 @@ Set-Variable -name a -value 1, 2, 3
 
 # SEE ALSO
 
-about_Arrays
-about_Hash_Tables
-about_Variables
-Clear-Variable
-Remove-Variable
-Set-Variable
+[about_Arrays](about_Arrays.md)
 
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Variables](about_Variables.md)
+
+Clear-Variable
+
+Remove-Variable
+
+Set-Variable

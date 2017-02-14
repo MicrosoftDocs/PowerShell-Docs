@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821848
-schema: 2.0.0
-title: Remove-PSBreakpoint
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSBreakpoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821848
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Remove-PSBreakpoint
 
@@ -44,15 +45,15 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ### Example 1: Remove all breakpoints
 ```
-PS C:\>Get-PSBreakpoint | Remove-PSBreakpoint
+PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 This command deletes all of the breakpoints in the current console.
 
 ### Example 2: Remove a specified breakpoint
 ```
-PS C:\>$B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
-PS C:\>$B | Remove-PSBreakpoint
+PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
+PS C:\> $B | Remove-PSBreakpoint
 ```
 
 This command deletes a breakpoint.
@@ -68,14 +69,14 @@ Also, the **Get-PSBreakpoint** cmdlet does not return this breakpoint.
 
 ### Example 3: Remove a breakpoint by ID
 ```
-PS C:\>Remove-PSBreakpoint -Id 2
+PS C:\> Remove-PSBreakpoint -Id 2
 ```
 
 This command deletes the breakpoint with breakpoint ID 2.
 
 ### Example 4: Use a function to remove all breakpoints
 ```
-PS C:\>function del-psb { get-psbreakpoint | remove-psbreakpoint }
+PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```
 
 This simple function deletes all of the breakpoints in the current console.
@@ -106,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -137,7 +138,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

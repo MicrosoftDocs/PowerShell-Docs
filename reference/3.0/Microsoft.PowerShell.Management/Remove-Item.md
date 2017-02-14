@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113373
-schema: 2.0.0
-title: Remove-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113373
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-Item
 ## SYNOPSIS
@@ -39,14 +40,14 @@ Because it is supported by many providers, it can delete many different types of
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-item C:\Test\*.*
+PS C:\> remove-item C:\Test\*.*
 ```
 
 This command deletes all of the files with names that include a dot (.) from the C:\Test directory.
 Because the command specifies a dot, the command does not delete directories or files with no file name extension.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>remove-item * -include *.doc -exclude *1*
+PS C:\> remove-item * -include *.doc -exclude *1*
 ```
 
 This command deletes from the current directory all files with a .doc file name extension and a name that does not include "1".
@@ -54,7 +55,7 @@ It uses the wildcard character (*) to specify the contents of the current direct
 It uses the Include and Exclude parameters to specify the files to delete.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-item -path C:\Test\hidden-RO-file.txt -force
+PS C:\> remove-item -path C:\Test\hidden-RO-file.txt -force
 ```
 
 This command deletes a file that is both hidden and read-only.
@@ -63,7 +64,7 @@ It uses the Force parameter to give permission to delete it.
 Without Force, you cannot delete read-only or hidden files.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-childitem * -include *.csv -recurse | remove-item
+PS C:\> get-childitem * -include *.csv -recurse | remove-item
 ```
 
 This command deletes all of the CSV files in the current directory and all subdirectories recursively.
@@ -76,7 +77,7 @@ It uses the Include parameter to specify the CSV file type, and it uses the Recu
 If you try to specify the file type in the path, such as "-path *.csv", the cmdlet interprets the subject of the search to be a file that has no child items, and Recurse fails.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>remove-item hklm:\software\mycompany\OldApp -recurse
+PS C:\> remove-item hklm:\software\mycompany\OldApp -recurse
 ```
 
 This command deletes the OldApp registry key and all of its subkeys and values.
@@ -255,7 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -271,7 +272,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

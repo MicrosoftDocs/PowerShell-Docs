@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113292
-schema: 2.0.0
-title: Copy-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Copy Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113292
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Copy-Item
 ## SYNOPSIS
@@ -47,14 +48,14 @@ To rename an item without copying it, use the Rename-Item cmdlet.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Copy-Item C:\Wabash\Logfiles\mar1604.log.txt -Destination C:\Presentation
+PS C:\> Copy-Item C:\Wabash\Logfiles\mar1604.log.txt -Destination C:\Presentation
 ```
 
 This command copies the mar1604.log.txt file to the C:\Presentation directory.
 The command does not delete the original file.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Copy-Item C:\Logfiles -Destination C:\Drawings -Recurse
+PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings -Recurse
 ```
 
 This command copies the entire contents of the Logfiles directory into the Drawings directory.
@@ -63,14 +64,14 @@ The Container parameter is set to true by default.
 This preserves the directory structure.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
+PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
 ```
 
 This command copies the contents of the C:\Logfiles directory to the C:\Drawings\Logs directory.
 It creates the \Logs subdirectory if it does not already exist.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Copy-Item \\Server01\Share\Get-Widget.ps1 -Destination \\Server12\ScriptArchive\Get-Widget.ps1.txt
+PS C:\> Copy-Item \\Server01\Share\Get-Widget.ps1 -Destination \\Server12\ScriptArchive\Get-Widget.ps1.txt
 ```
 
 This command uses the **Copy-Item** cmdlet to copy the Get-Widget.ps1 script from the \\\\Server01\Share directory to the \\\\Server12\ScriptArchive directory.
@@ -259,7 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -275,7 +276,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

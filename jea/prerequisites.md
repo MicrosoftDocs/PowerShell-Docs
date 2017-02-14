@@ -1,124 +1,106 @@
 ---
-description:  
-manager:  dongill
+manager:  carmonm
 ms.topic:  article
-author:  jpjofre
+author:  rpsqrd
+ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-06-22
-title:  prerequisites
+ms.date:  2016-12-05
+title:  JEA Prerequisites
 ms.technology:  powershell
 ---
 
 # Prerequisites
 
-## Initial State
-Before starting this section, please ensure the following:
+> Applies to: Windows PowerShell 5.0
 
-1. JEA is available on your system. Check out the [README](./README.md) for the current supported operating systems and required downloads.
-2. You have administrative rights on the computer where you are trying out JEA.
-3. The computer is domain joined.
-See the [Creating a Domain Controller](#creating-a-domain-controller) section to quickly set up a new domain on a server if you don't already have one.
+Just Enough Administration is a feature included with Windows PowerShell 5.0 and higher.
+This topic describes the prerequisites that must be satisfied in order to start using JEA.
+
+## Install JEA
+JEA is available with Windows PowerShell 5.0 and higher, but for full functionality it is recommended that you install the latest version of PowerShell available for your system.
+The following table describes JEA's availability on Windows Server:
+
+Server Operating System   | JEA Availability
+--------------------------|--------------------------------
+Windows Server 2016       | Preinstalled
+Windows Server 2012 R2    | Full functionality with WMF 5.1
+Windows Server 2012       | Full functionality with WMF 5.1
+Windows Server 2008 R2    | Full functionality with WMF 5.1
+
+You can also use JEA on your home or work computer:
+
+Client Operating System   | JEA Availability
+--------------------------|-----------------------------------------------------
+Windows 10 1607           | Preinstalled
+Windows 10 1603, 1511     | Preinstalled, with reduced functionality<sup>1</sup>
+Windows 10 1507           | Not available
+Windows 8, 8.1            | Full functionality with WMF 5.1
+Windows 7                 | Limited functionality<sup>2</sup> with WMF 5.1
+
+<sup>1</sup> Windows 10 versions 1511 and 1603 do not support the following JEA features: running as a group managed service account, conditional access rules in session configurations, the user drive, and granting access to local user accounts.
+To get support for these features, update Windows to version 1607 (Anniversary Update) or higher.
+
+<sup>2</sup> JEA cannot be configured to use virtual accounts on Windows 7.
+
+### Check which version of PowerShell is installed
+To check which version of PowerShell is installed on your system, check the `$PSVersionTable` variable in a Windows PowerShell prompt.
+
+```powershell
+PS C:\> $PSVersionTable.PSVersion
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  1000
+```
+
+You are ready to use JEA if the *Major* version is equal to or greater than **5**.
+For the best experience, and to have access to all the latest features, it is recommended that you upgrade to PowerShell version **5.1** when possible.
+
+### Install Windows Management Framework
+If you are running an older version of PowerShell, you will need to update your system with the latest Windows Management Framework (WMF) update.
+Update packages and a link to the latest WMF release notes are available in the [Download Center](https://aka.ms/WMF5).
+
+It is strongly recommended that you test your workload's compatibility with WMF before upgrading all of your servers.
+
+Windows 10 users should install the latest feature updates to obtain the current version of Windows PowerShell.
 
 ## Enable PowerShell Remoting
-Management with JEA occurs through PowerShell Remoting.
-Run the following in an Administrator PowerShell window to ensure that this is enabled and configured properly:
+PowerShell Remoting provides the foundation on which JEA is built.
+It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
 
-```PowerShell
+PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016.
+You can enable PowerShell Remoting by running the following command in an elevated PowerShell window.
+
+```powershell
 Enable-PSRemoting
 ```
 
-If you are unfamiliar with PowerShell remoting, it would be a good idea to run `Get-Help about_Remote` to learn about this important foundational concept.
-
-## Identify Your Users or Groups
-To show JEA in action, you need to identify the non-administrator users and groups you are going to use throughout this guide.
-
-If you're using an existing domain, please identify or create some unprivileged users and groups.
-You will give these non-administrators access to JEA.
-Anytime you see the `$NonAdministrator` variable in a top of a script, assign it to your selected non-administrator users or groups.
-
-If you created a new domain from scratch, it's much easier.
-Please use the [Set Up Users and Groups](creating-a-domain-controller.md#set-up-users-and-groups) section in the appendix to create a non-administrator users and groups.
-The default values of `$NonAdministrator` will be the groups created in that section.
-
-## Set Up Maintenance Role Capability File
-Run the following commands in PowerShell to create the demo Role Capability file we will be using for the next section.
-Later in this guide, you will learn about what this file does.
-
-```PowerShell
-# Fields in the role capability
-$MaintenanceRoleCapabilityCreationParams = @{
-    Author = 'Contoso Admin'
-    CompanyName = 'Contoso'
-    VisibleCmdlets = 'Restart-Service'
-    FunctionDefinitions =
-            @{ Name = 'Get-UserInfo'; ScriptBlock = { $PSSenderInfo } }
-}
-
-# Create the demo module, which will contain the maintenance Role Capability File
-New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module" -ItemType Directory
-New-ModuleManifest -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\Demo_Module.psd1"
-New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities" -ItemType Directory
-
-# Create the Role Capability file
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc" @MaintenanceRoleCapabilityCreationParams
-```
-
-## Create and Register Demo Session Configuration File
-Run the following commands to create and register the demo Session Configuration file we will be using for the next section.
-Later in this guide, you will learn about what this file does.
-
-```PowerShell
-# Determine domain
-$domain = (Get-CimInstance -ClassName Win32_ComputerSystem).Domain
-
-# Replace with your non-admin group name
-$NonAdministrator = "$domain\JEA_NonAdmin_Operator"
-
-# Specify the settings for this JEA endpoint
-# Note: You will not be able to use a virtual account if you are using WMF 5.0 on Windows 7 or Windows Server 2008 R2
-$JEAConfigParams = @{
-    SessionType = 'RestrictedRemoteServer'
-    RunAsVirtualAccount = $true
-    RoleDefinitions = @{
-        $NonAdministrator = @{ RoleCapabilities = 'Maintenance' }
-    }
-    TranscriptDirectory = "$env:ProgramData\JEAConfiguration\Transcripts"
-}
-
-# Set up a folder for the Session Configuration files
-if (-not (Test-Path "$env:ProgramData\JEAConfiguration"))
-{
-    New-Item -Path "$env:ProgramData\JEAConfiguration" -ItemType Directory
-}
-
-# Specify the name of the JEA endpoint
-$sessionName = 'JEA_Demo'
-
-if (Get-PSSessionConfiguration -Name $sessionName -ErrorAction SilentlyContinue)
-{
-    Unregister-PSSessionConfiguration -Name $sessionName -ErrorAction Stop
-}
-
-New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc" @JEAConfigParams
-
-# Register the session configuration
-Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc"
-```
-
-## Enable PowerShell Module Logging (Optional)
+## Enable PowerShell module and script block logging (optional)
 The following steps enable logging for all PowerShell actions on your system.
-You don't need to enable this for JEA to work, but it will be useful in the [Reporting on JEA](reporting-on-jea.md) section.
+PowerShell Module Logging is not required for JEA, however it is strongly recommended that you turn it on to ensure the commands users run are logged in a central location.
 
-1. Open the Local Group Policy Editor
-2. Navigate to "Computer Configuration\Administrative Templates\Windows Components\Windows PowerShell"
-3. Double Click on "Turn on Module Logging"
-4. Click "Enabled"
-5. In the Options section, click on "Show" next to Module Names
-6. Type "\*" in the pop up window. This means PowerShell will log commands from all modules.
-7. Click OK and apply the policy
+You can configure the PowerShell Module Logging policy using Group Policy.
 
-Note: you can also enable system-wide PowerShell transcription through Group Policy.
+1. Open the Local Group Policy Editor on a workstation or a Group Policy Object in the Group Policy Management Console on an Active Directory Domain Controller
+2. Navigate to **Computer Configuration\\Administrative Templates\\Windows Components\\Windows PowerShell**
+3. Double click on **Turn on Module Logging**
+4. Click **Enabled**
+5. In the Options section, click on **Show** next to Module Names
+6. Type "**\***" in the pop up window. This instructs PowerShell to log commands from all modules.
+7. Click **OK** to set the policy
+8. Double click on **Turn on PowerShell Script Block Logging**
+9. Click **Enabled**
+10. Click **OK to set the policy
+11. (On domain-joined machines only) Run **gpupdate** or wait for Group Policy to process the updated policy and apply the settings
 
-**Congratulations, you have now configured your computer with the demo endpoint and are ready to get started with JEA!**
+You can also enable system-wide PowerShell transcription through Group Policy.
 
+## Next steps
+
+- [Create a role capability file](role-capabilities.md)
+- [Create a session configuration file](session-configurations.md)
+
+## See also
+- [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=325249
-schema: 2.0.0
-title: Get-FileHash
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get FileHash
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=325249
+external help file:   Microsoft.PowerShell.Utility-help.xml
+---
+
 
 # Get-FileHash
 
@@ -53,7 +54,7 @@ By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any 
 ## EXAMPLES
 
 ### Example 1: Compute the hash value for a PowerShell.exe file
-```
+```powershell
 PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
 
 Algorithm : SHA256
@@ -65,8 +66,8 @@ This command uses the **Get-FileHash** cmdlet to compute the hash value for the 
 The hash algorithm used is the default, SHA256.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
-### Example 2: Compute the has value for an ISO file
-```
+### Example 2: Compute the hash value for an ISO file
+```powershell
 PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 
 Algorithm : SHA384
@@ -80,7 +81,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
 
 ```PowerShell
-¶ >$testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+PS C:> $testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## open $testfile as a stream
 $testfilestream = [System.IO.File]::Open(
@@ -120,8 +121,6 @@ Results from Stream:
 Algorithm : MD5
 Hash      : 097CE5761C89434367598B34FE32893B
 Path      :
-
-¶ >
 ```
 
 ## PARAMETERS

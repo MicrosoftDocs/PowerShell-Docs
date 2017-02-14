@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294011
-schema: 2.0.0
-title: Set-Alias
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Alias
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294011
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Set-Alias
 
@@ -34,7 +35,7 @@ Unless you add the alias to the Windows PowerShell profile, the changes to an al
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-alias -name list -value get-childitem
+PS C:\> set-alias -name list -value get-childitem
 ```
 
 This command creates the alias "list" for the Get-ChildItem cmdlet.
@@ -42,7 +43,7 @@ After you create the alias, you can use "list" in place of "Get-ChildItem" at th
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-alias list get-location
+PS C:\> set-alias list get-location
 ```
 
 This command associates the alias "list" with the Get-Location cmdlet.
@@ -54,7 +55,7 @@ In this case, the value of -Name ("list") must be the first parameter and the va
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-alias scrub remove-item -option readonly -passthru | format-list
+PS C:\> set-alias scrub remove-item -option readonly -passthru | format-list
 ```
 
 This command associates the alias "scrub" with the Remove-Item cmdlet.
@@ -65,7 +66,7 @@ If the PassThru parameter were omitted, there would be no output from this cmdle
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Set-Alias np c:\windows\notepad.exe
+PS C:\> Set-Alias np c:\windows\notepad.exe
 ```
 
 This command associates the alias, "np", with the executable file for Notepad.
@@ -78,8 +79,8 @@ The generic version of the command is "set-alias np ${env:windir}\notepad.exe".
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>function CD32 {set-location c:\windows\system32}
-PS C:\>set-alias go cd32
+PS C:\> function CD32 {set-location c:\windows\system32}
+PS C:\> set-alias go cd32
 ```
 
 These commands show how to assign an alias to a command with parameters, or even to a pipeline of many commands.
@@ -221,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -237,7 +238,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

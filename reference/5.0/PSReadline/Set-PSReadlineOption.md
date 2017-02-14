@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821453
-schema: 2.0.0
-title: Set-PSReadlineOption
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSReadlineOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821453
+external help file:   Microsoft.PowerShell.PSReadLine.dll-Help.xml
+---
+
 
 # Set-PSReadlineOption
 
@@ -48,14 +49,14 @@ The **Set-PSReadlineOption** cmdlet customizes the behavior of the PSReadline mo
 
 ### Example 1: Set values for Comment type
 ```
-PS C:\>Set-PSReadlineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
+PS C:\> Set-PSReadlineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
 ```
 
 This command sets tokens of the type Comment to be displayed in PSReadline in green text on a gray background.
 
 ### Example 2: Set bell style
 ```
-PS C:\>Set-PSReadlineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
+PS C:\> Set-PSReadlineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
 ```
 
 This cmdlet instructs PSReadline to respond to errors and other conditions that require user input by emitting an audible beep or sound at 1221 Hz for 60 ms.

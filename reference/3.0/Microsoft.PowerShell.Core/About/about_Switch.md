@@ -1,23 +1,17 @@
-﻿---
-title: about_Switch
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Switch
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Switch
+ms.technology:  powershell
+---
+
 # About Switch
 ## about_Switch
-about_Switch
 
 
 ## SHORT DESCRIPTION
@@ -233,11 +227,11 @@ The action for each condition is independent of the actions in other conditions.
 
 
 ## SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_If
+[about_Continue](about_Continue.md)
 
-about_Script_Blocks
+[about_If](about_If.md)
 
+[about_Script_Blocks](about_Script_Blocks.md)

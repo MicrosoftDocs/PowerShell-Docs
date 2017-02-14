@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822214
-schema: 2.0.0
-title: Debug-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Debug Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821577
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Debug-Process
 
@@ -46,35 +47,35 @@ Before using this cmdlet, verify that a debugger is downloaded and correctly con
 
 ### Example 1: Attach a debugger to a process on the computer
 ```
-PS C:\>Debug-Process -Name "Windows Powershell"
+PS C:\> Debug-Process -Name "Windows Powershell"
 ```
 
 This command attaches a debugger to the Windows PowerShell process on the computer.
 
 ### Example 2: Attach a debugger to all processes that begin with the specified string
 ```
-PS C:\>Debug-Process -Name "SQL*"
+PS C:\> Debug-Process -Name "SQL*"
 ```
 
 This command attaches a debugger to all processes that have names that begin with SQL.
 
 ### Example 3: Attach a debugger to multiple processes
 ```
-PS C:\>Debug-Process "Winlogon", "Explorer", "Outlook"
+PS C:\> Debug-Process "Winlogon", "Explorer", "Outlook"
 ```
 
 This command attaches a debugger to the Winlogon, Explorer, and Outlook processes.
 
 ### Example 4: Attach a debugger to multiple process IDs
 ```
-PS C:\>Debug-Process -Id 1132, 2028
+PS C:\> Debug-Process -Id 1132, 2028
 ```
 
 This command attaches a debugger to the processes that have process IDs 1132 and 2028.
 
 ### Example 5: Use Get-Process to get a process then attach a debugger to it
 ```
-PS C:\>Get-Process "Windows PowerShell" | Debug-Process
+PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
 
 This command attaches a debugger to the Windows PowerShell processes on the computer.
@@ -84,7 +85,7 @@ To specify a particular PowerShell process, use the ID parameter of **Get-Proces
 
 ### Example 6: Attach a debugger to a current process on the local computer
 ```
-PS C:\>$PID | Debug-Process
+PS C:\> $PID | Debug-Process
 ```
 
 This command attaches a debugger to the current Windows PowerShell processes on the computer.
@@ -96,7 +97,7 @@ For more information about the $PID automatic variable, see about_Automatic_Vari
 
 ### Example 7: Attach a debugger to the specified process on multiple computers
 ```
-PS C:\>Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-Process
+PS C:\> Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-Process
 ```
 
 This command attaches a debugger to the MyApp processes on the Server01 and Server02 computers.
@@ -106,8 +107,8 @@ It uses a pipeline operator to send the processes to the Debug-Process cmdlet, w
 
 ### Example 8: Attach a debugger to a process that uses the InputObject parameter
 ```
-PS C:\>$P = Get-Process "Windows PowerShell"
-PS C:\>Debug-Process -InputObject $P
+PS C:\> $P = Get-Process "Windows PowerShell"
+PS C:\> Debug-Process -InputObject $P
 ```
 
 This command attaches a debugger to the Windows PowerShell processes on the local computer.
@@ -120,7 +121,7 @@ The second command uses the *InputObject* parameter of the **Debug-Process** cmd
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -188,7 +189,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

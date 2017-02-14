@@ -1,14 +1,16 @@
 ---
-title:  Getting Ready to Use Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  6dc7052d-cc5a-4220-950f-98f963a2b587
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Getting Ready to Use Windows PowerShell
+ms.technology:  powershell
+ms.assetid:    6dc7052d-cc5a-4220-950f-98f963a2b587
 ---
+
 
 # Getting Ready to Use Windows PowerShell
 When Windows PowerShell is installed and started, consider the following setup options. You can perform these tasks at any time.

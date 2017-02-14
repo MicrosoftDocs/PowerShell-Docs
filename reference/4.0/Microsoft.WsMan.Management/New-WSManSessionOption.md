@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294042
-schema: 2.0.0
-title: New-WSManSessionOption
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New WSManSessionOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294042
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
+---
+
 
 # New-WSManSessionOption
 
@@ -41,7 +42,7 @@ Connect-WSMan
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$a = New-WSManSessionOption -operationtimeout 30000
+PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>

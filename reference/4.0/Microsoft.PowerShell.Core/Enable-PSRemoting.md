@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289576
-schema: 2.0.0
-title: Enable-PSRemoting
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enable PSRemoting
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289576
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Enable-PSRemoting
 
@@ -60,14 +61,14 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Enable-PSRemoting
+PS C:\> Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Enable-PSRemoting -Force
+PS C:\> Enable-PSRemoting -Force
 ```
 
 This command configures the computer to receive remote commands.
@@ -75,9 +76,9 @@ It uses the Force parameter to suppress the user prompts.
 
 ### Example 3
 ```
-PS C:\>Enable-PSRemoting -SkipNetworkProfileCheck -Force
+PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
 
-PS C:\>Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
+PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
 This example shows how to allow remote access from public networks on client versions of Windows.
@@ -96,7 +97,7 @@ The command uses the **Set-NetFirewallRule** cmdlet in the **NetSecurity** modul
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -152,7 +153,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

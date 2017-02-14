@@ -1,25 +1,18 @@
-﻿---
-title: about_Continue
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Continue
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Continue
+ms.technology:  powershell
+---
+
 # About Continue
 ## about_Continue
-# TOPIC
 
-about_Continue
 
 # SHORT DESCRIPTION
 
@@ -52,9 +45,12 @@ modified by the For statement, an infinite loop may result.
 
 # SEE ALSO
 
-about_Break
-about_Comparison_Operators
-about_Throw
-about_Trap
-about_Try_Catch_Finally
+[about_Break](about_Break.md)
 
+[about_Comparison_Operators](about_Comparison_Operators.md)
+
+[about_Throw](about_Throw.md)
+
+[about_Trap](about_Trap.md)
+
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294034
-schema: 2.0.0
-title: Connect-WSMan
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Connect WSMan
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294034
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
+---
+
 
 # Connect-WSMan
 
@@ -48,7 +49,7 @@ For information about how to disconnect from the WinRM service on a remote compu
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Connect-WSMan -computer server01
+PS C:\> Connect-WSMan -computer server01
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
 PS WSMan:\> dir
@@ -68,7 +69,7 @@ Those connections will appear in the ComputerName list.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$cred = Get-Credential Administrator
+PS C:\> $cred = Get-Credential Administrator
 Connect-WSMan -computer server01 -credential $cred
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
@@ -97,7 +98,7 @@ However, the cmdlet can be used establish connections to remote computers before
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Connect-WSMan -computer server01 -port 80
+PS C:\> Connect-WSMan -computer server01 -port 80
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
 PS WSMan:\> dir
@@ -116,7 +117,7 @@ Those connections will appear in the ComputerName list.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = New-WSManSessionOption -operationtimeout 30000
+PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>

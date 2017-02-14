@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290500
-schema: 2.0.0
-title: Get-PSDrive
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSDrive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?linkid=821591
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-PSDrive
 
@@ -53,7 +54,18 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Get drives in the current session
 ```
-PS C:\>Get-PSDriveName       Provider      Root----       --------      ----Alias      AliasC          FileSystem    C:\cert       Certificate   \D          FileSystem    D:\Env        EnvironmentFunction   FunctionHKCU       Registry      HKEY_CURRENT_USERHKLM       Registry      HKEY_LOCAL_MACHINEVariable   VariableX          FileSystem    X:\
+PS C:\> Get-PSDrive  
+Name           Used (GB)     Free (GB) Provider      Root  
+----           ---------     --------- --------      ----
+A                                                    A:\ 
+C                 202.06      23718.91 FileSystem    C:\  
+Cert                                   Certificate   \  
+D                1211.06     123642.32 FileSystem    D:\
+Env                                    Environment
+Function                               Function
+G                 202.06        710.91 fILEsYSTEM    \\Music\GratefulDead
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
 ```
 
 This command gets the drives in the current session.
@@ -62,7 +74,12 @@ The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the 
 
 ### Example 2: Get a drive on the computer
 ```
-PS C:\>Get-PSDrive DName       Provider      Root----       --------      ----D          FileSystem    D:\
+PS C:\foo> Get-PSDrive D  
+
+Name           Used (GB)     Free (GB) Provider      Root  
+----           ---------     --------- --------      ----  
+D                1211.06     123642.32 FileSystem    D:\  
+
 ```
 
 This command gets the D: drive on the computer.
@@ -70,7 +87,13 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32
+PS C:\> Get-PSDrive -Provider FileSystem  
+Name           Used (GB)     Free (GB) Provider      Root  
+----           ---------     --------- --------      ----
+A                                                    A:\ 
+C                 202.06      23718.91 FileSystem    C:\  
+D                1211.06     123642.32 FileSystem    D:\
+G                 202.06        710.91 FileSystem    \\Music\GratefulDead
 ```
 
 This command gets all of the drives that are supported by the Windows PowerShell FileSystem provider.
@@ -78,35 +101,76 @@ This includes fixed drives, logical partitions, mapped network drives, and tempo
 
 ### Example 4: Check to see if a drive is in use as a Windows PowerShell drive name
 ```
-PS C:\>if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}else { Write-Host "The X: drive is already in use." }
+PS C:\> if (!(Get-PSDrive X -ErrorAction SilentlyContinue))
+          {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
+        else 
+          { Write-Host "The X: drive is already in use." }
 ```
 
 This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
-If it is not, the command uses the New-PSDrive cmdlet to create a temporary drive that is mapped to the HKLM:\Network registry key.
+If it is not, the command uses the **New-PSDrive** cmdlet to create a temporary drive that is mapped to the HKLM:\Network registry key.
 
 ### Example 5: Compare the types of files system drives
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystemPS C:\>Get-PSDrive -provider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32PS C:\>net useNew connections will be remembered.Status       Local     Remote                    Network-------------------------------------------------------------------------------X:        \\Server01\Public         Microsoft Windows NetworkPS C:\>[System.IO.DriveInfo]::getdrives()Name               : C:\DriveType          : FixedDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 39831498752TotalFreeSpace     : 39831498752TotalSize          : 79900368896RootDirectory      : C:\VolumeLabel        :Name               : D:\DriveType          : CDRomDriveFormat        :IsReady            : FalseAvailableFreeSpace :TotalFreeSpace     :TotalSize          :RootDirectory      : D:\VolumeLabel        :Name               : X:\DriveType          : NetworkDriveFormat        : NTFSIsReady            : TrueAvailableFreeSpace : 36340559872TotalFreeSpace     : 36340559872TotalSize          : 36413280256RootDirectory      : X:\VolumeLabel        : D_DrivePS C:\>get-wmiobject win32_logicaldiskDeviceID     : C:DriveType    : 3ProviderName :FreeSpace    : 39831252992Size         : 79900368896VolumeName   :DeviceID     : D:DriveType    : 5ProviderName :FreeSpace    :Size         :VolumeName   :DeviceID     : X:DriveType    : 4ProviderName : \\server01\publicFreeSpace    : 36340559872Size         : 36413280256VolumeName   : D_DrivePS C:\>get-wmiobject win32_networkconnectionLocalName                     RemoteName--------------               ------------x:                            \\server01\public
+PS C:\> Get-PSDrive -PSProvider FileSystem  
+Name           Used (GB)     Free (GB) Provider      Root    
+----           ---------     --------- --------      ----  
+A                                                    A:\   
+C                 202.06      23718.91 FileSystem    C:\    
+D                1211.06     123642.32 FileSystem    D:\  
+G                 202.06        710.91 FileSystem    \\Music\GratefulDead  
+X                                      Registry      HKLM:\Network  
+
+PS C:\> net use  
+New connections will be remembered.  
+Status       Local     Remote                    Network  
+-------------------------------------------------------------------------------  
+OK           G:        \\Server01\Public         Microsoft Windows Network  
+
+PS C:\> [System.IO.DriveInfo]::GetDrives() | Format-Table 
+Name DriveType DriveFormat IsReady AvailableFreeSpace TotalFreeSpace TotalSize     RootDirectory VolumeLabel
+---- --------- ----------- ------- ------------------ -------------- ---------     ------------- -----------
+A:\    Network               False                                                 A:\
+C:\      Fixed NTFS          True  771920580608       771920580608   988877418496  C:\           Windows
+D:\      Fixed NTFS          True  689684144128       689684144128   1990045179904 D:\           Big Drive
+E:\      CDRom               False                                                 E:\
+G:\    Network NTFS          True      69120000           69120000       104853504 G:\           GratefulDead
+
+PS N:\> Get-CimInstance -Class Win32_LogicalDisk
+
+DeviceID DriveType ProviderName   VolumeName         Size          FreeSpace
+-------- --------- ------------   ----------         ----          ---------
+A:       4
+C:       3                        Windows            988877418496  771926069248
+D:       3                        Big!              1990045179904  689684144128
+E:       5
+G:       4         \\Music\GratefulDead              988877418496  771926069248
+
+
+PS C:\> Get-CimInstance -Class Win32_NetworkConnection
+LocalName RemoteName            ConnectionState Status
+--------- ----------            --------------- ------
+G:        \\Music\GratefulDead  Connected       OK
 ```
 
 This example compares the types of file system drives that are displayed by **Get-PSDrive** to those displayed by using other methods.
-This example demonstrates different ways to display drives in Windows PowerShell, and it shows that temporary, session-specific drives created by using the New-PSDrive cmdlet are accessible only in Windows PowerShell.
+This example demonstrates different ways to display drives in Windows PowerShell, and it shows that session-specific drives created by using the New-PSDrive cmdlet are accessible only in Windows PowerShell.
 
 The first command uses **Get-PSDrive** to get all of the file system drives in the session.
-This includes the fixed drives (C: and D:), a mapped network drive (X:) that was created by using the *Persist* parameter of **New-PSDrive**, and two temporary Windows PowerShell drives (Y: and Z:) that were created by using **New-PSDrive** without the *Persist* parameter.
+This includes the fixed drives (C: and D:), a mapped network drive (G:) that was created by using the *Persist* parameter of **New-PSDrive**, and a PowerShell drive (T:) that was created by using **New-PSDrive** without the *Persist* parameter.
 
-A net use command, which displays Windows mapped network drives, displays only the X drive.
-It does not display the Y: and Z: drives that were created by **New-PSDrive**.
-It shows that the X: drive is also mapped to \\\\Server01\Public.
+The **net use** command displays Windows mapped network drives, in this case it displays only the G drive.
+It does not display the X: drive that was created by **New-PSDrive**.
+It shows that the G: drive is also mapped to \\\\Music\\GratefulDead.
 
 The third command uses the **GetDrives** method of the Microsoft .NET Framework **System.IO.DriveInfo** class.
-This command gets the Windows file system drives, including drive X:, but it does not get the temporary drives created by **New-PSDrive**.
+This command gets the Windows file system drives, including drive G:, but it does not get the drives created by **New-PSDrive**.
 
-The fourth command uses the Get-WmiObject cmdlet to get the instances of the **Win32_LogicalDisk** class.
-It returns the C:, D:, and X: drives, but not the temporary drives created by **New-PSDrive**.
+The fourth command uses the **Get-CimInstance** cmdlet to get the instances of the **Win32_LogicalDisk** class.
+It returns the A:, C:, D:, E:, and G: drives, but not the drives created by **New-PSDrive**.
 
-The last command uses the Get-WmiObject cmdlet to display the instances of the **Win32_NetworkConnection** class.
-Like net use, it returns only the persistent X: drive that was created by **New-PSDrive**.
+The last command uses the **Get-CimInstance** cmdlet to display the instances of the **Win32_NetworkConnection** class.
+Like **net use**, it returns only the persistent G: drive reated by **New-PSDrive**.
 
 ## PARAMETERS
 
@@ -121,7 +185,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String[]
 Parameter Sets: LiteralName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -137,7 +201,7 @@ Type the drive name or letter without a colon (:).
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -154,7 +218,7 @@ Type the name of a provider, such as FileSystem, Registry, or Certificate.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -178,7 +242,7 @@ For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +284,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet returns objects that represent the drives in the session.
 
 ## NOTES
-* This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the Get-PSProvider cmdlet. For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
+* This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the **Get-PSProvider** cmdlet. For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
 * Mapped network drives that are created by using the *Persist* parameter of the New-PSDrive cmdlet are specific to a user account. Mapped network drives that you create in sessions that are started with the Run as administrator option or with the credentials of another user are not visible in sessions that are started without explicit credentials or with the credentials of the current user.
 
 ## RELATED LINKS

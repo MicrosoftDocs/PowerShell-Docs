@@ -1,27 +1,21 @@
-﻿---
-title: about_WMI_Cmdlets
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_WMI_Cmdlets
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_WMI_Cmdlets
+ms.technology:  powershell
+---
+
 # About WMI Cmdlets
 ## about_WMI_Cmdlets
-about_WMI_cmdlets
 
 
 ## SHORT DESCRIPTION
-Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell�.
+Provides background information about Windows Management Instrumentation (WMI) and  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -212,7 +206,7 @@ http://go.microsoft.com/fwlink/?LinkId=142213
 ```
 
 
-And, see "Secrets of Windows Management Instrumentation – Troubleshooting and Tips" in the Microsoft TechNet Script Center:
+And, see "Secrets of Windows Management Instrumentation - Troubleshooting and Tips" in the Microsoft TechNet Script Center:
 
 
 ```
@@ -222,6 +216,7 @@ http://go.microsoft.com/fwlink/?LinkId=142214
 
 
 ## SEE ALSO
+
 Online version: http:\/\/go.microsoft.com\/fwlink\/?LinkId\=142219
 
 Get-WmiObject
@@ -233,4 +228,3 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
-

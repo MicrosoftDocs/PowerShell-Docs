@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822393
-schema: 2.0.0
-title: Debug-Runspace
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Debug Runspace
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821761
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Debug-Runspace
 
@@ -55,7 +56,7 @@ For example, if you are working in a PowerShell.exe session, you can't enter the
 
 ### Example 1: Debug a remote runspace
 ```
-PS C:\>Get-Process -ComputerName "WS10TestServer" -Name "*powershell*"
+PS C:\> Get-Process -ComputerName "WS10TestServer" -Name "*powershell*"
 Handles      WS(K)   VM(M)      CPU(s)    Id  ProcessName
 -------      -----   -----      ------    --  -----------
     377      69912     63     2.09      2420  powershell
@@ -65,12 +66,12 @@ Handles      WS(K)   VM(M)      CPU(s)    Id  ProcessName
 Id Name            ComputerName    Type          State         Availability
 -- ----            ------------    ----          -----         ------------
  1 Runspace1       WS10TestServer  Remote        Opened        Available
- 2 RemoteHost      WS10TestServer  Remote        Opened        Busy PS C:\>[WS10TestServer][Process:1152]: PS C:\Users\Test\Documents> Debug-Runspace -Id 2
+ 2 RemoteHost      WS10TestServer  Remote        Opened        Busy PS C:\> [WS10TestServer][Process:1152]: PS C:\Users\Test\Documents> Debug-Runspace -Id 2
 Hit Line breakpoint on 'C:\TestWFVar1.ps1:83'
 At C:\TestWFVar1.ps1:83 char:1
 + $scriptVar = "Script Variable"
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[Process:1152]: [RSDBG: 2]: PS C:\>>
+[Process:1152]: [RSDBG: 2]: PS C:\> >
 ```
 
 In this example, you debug a runspace that is open on a remote computer, WS10TestServer.
@@ -89,7 +90,7 @@ Because there's a breakpoint in the script, the debugger opens.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -168,7 +169,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

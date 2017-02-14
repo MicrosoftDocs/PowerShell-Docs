@@ -1,25 +1,19 @@
-﻿---
-title: about_Scheduled_Jobs
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Scheduled_Jobs
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Scheduled_Jobs
+ms.technology:  powershell
+---
+
 # About Scheduled Jobs
 ## about_Scheduled_Jobs
 
 
-about_Scheduled_Jobs
 
 # SHORT DESCRIPTION
 
@@ -198,7 +192,7 @@ are not subject to job options or affected by job triggers -- and
 their output is not saved in the Output directory of the scheduled
 job directory.
 
-PS C:>Start-Job -DefinitionName ProcessJob
+PS C:> Start-Job -DefinitionName ProcessJob
 
 The following command deletes the ProcessJob scheduled job and all
 saved results of its job instances.

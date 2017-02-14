@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822338
-schema: 2.0.0
-title: Uninstall-Script
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Uninstall Script
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822338
+external help file:   PSModule-help.xml
+---
+
 
 # Uninstall-Script
 
@@ -38,7 +39,7 @@ The **Uninstall-Script** cmdlet uninstalls the specified script files from the o
 
 ### Example 1: Uninstall a script file
 ```
-PS C:\>Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
+PS C:\> Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
 ```
 
 This command uninstalls version 2.5 of the script file named MyScript.
@@ -46,7 +47,7 @@ This command uninstalls version 2.5 of the script file named MyScript.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -154,7 +155,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

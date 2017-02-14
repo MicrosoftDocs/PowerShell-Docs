@@ -1,20 +1,15 @@
-﻿---
-title: about_Session_Configurations
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Session_Configurations
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Session_Configurations
+ms.technology:  powershell
+---
+
 # About Session Configurations
 ## about_session_configurations
 
@@ -319,18 +314,30 @@ about_SessionConfigurations
 
 # SEE ALSO
 
-about_Preference_Variables
-about_PSSession
-about_Remote
-about_Session_Configuration_Files
-New-PSSession
-Disable-PSSessionConfiguration
-Enable-PSSessionConfiguration
-Get-PSSessionConfiguration
-New-PSSessionConfigurationFile
-Register-PSSessionConfiguration
-Set-PSSessionConfiguration
-Test-PSSessionConfigurationFile
-Unregister-PSSessionConfiguration
-Windows Server Resources
+[about_Preference_Variables](about_Preference_Variables.md)
 
+[about_PSSessions](about_PSSessions.md)
+
+[about_Remote](about_Remote.md)
+
+[about_Session_Configuration_Files](about_Session_Configuration_Files.md)
+
+New-PSSession
+
+Disable-PSSessionConfiguration
+
+Enable-PSSessionConfiguration
+
+Get-PSSessionConfiguration
+
+New-PSSessionConfigurationFile
+
+Register-PSSessionConfiguration
+
+Set-PSSessionConfiguration
+
+Test-PSSessionConfigurationFile
+
+Unregister-PSSessionConfiguration
+
+Windows Server Resources

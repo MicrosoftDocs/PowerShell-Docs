@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113304
-schema: 2.0.0
-title: Format-Wide
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format Wide
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113304
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Format-Wide
 ## SYNOPSIS
@@ -30,7 +31,7 @@ You can use the Property parameter to determine which property is displayed.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-childitem | format-wide -column 3
+PS C:\> get-childitem | format-wide -column 3
 ```
 
 This command displays the names of files in the current directory in three columns across the screen.
@@ -39,7 +40,7 @@ The pipeline operator (|) passes the file objects through the pipeline to Format
 The Column parameter specifies the number of columns.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
+PS C:\> get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
 ```
 
 This command displays the names of registry keys in the HKEY_CURRENT_USER\Software\Microsoft key.

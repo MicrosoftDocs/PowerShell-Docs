@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822324
-schema: 2.0.0
-title: Get-InstalledScript
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get InstalledScript
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822324
+external help file:   PSModule-help.xml
+---
+
 
 # Get-InstalledScript
 
@@ -32,7 +33,7 @@ The **Get-InstalledScript** cmdlet gets installed scripts for CurrentUser and Al
 
 ### Example 1: Get all installed scripts
 ```
-PS C:\>Get-InstalledScript
+PS C:\> Get-InstalledScript
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
@@ -45,7 +46,7 @@ This command gets all installed scripts.
 
 ### Example 2: Get installed scripts by name
 ```
-PS C:\>Get-InstalledScript -Name "Required-Scri*" 
+PS C:\> Get-InstalledScript -Name "Required-Scri*" 
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script

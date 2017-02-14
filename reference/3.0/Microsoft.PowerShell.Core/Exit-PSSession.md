@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135212
-schema: 2.0.0
-title: Exit-PSSession
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Exit PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135212
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Exit-PSSession
 ## SYNOPSIS
@@ -31,7 +32,7 @@ The effect is the same as using Exit-PSSession.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Enter-PSSession -computername Server01
+PS C:\> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
 PS C:\>
 ```
@@ -39,10 +40,10 @@ PS C:\>
 These commands start and then stop an interactive session with the Server01 remote computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$s = new-pssession -computername Server01
-PS C:\>Enter-PSSession -session $s
+PS C:\> $s = new-pssession -computername Server01
+PS C:\> Enter-PSSession -session $s
 Server01\PS> Exit-PSSession
-PS C:\>$s
+PS C:\> $s
 Id Name            ComputerName    State    ConfigurationName
 -- ----            ------------    -----    -----------------
 1  Session1        Server01        Opened   Microsoft.PowerShell
@@ -64,7 +65,7 @@ The final command displays the PSSession in the $s variable.
 The State property shows the PSSession is still open and available for use.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Enter-PSSession -computername Server01
+PS C:\> Enter-PSSession -computername Server01
 Server01\PS> exit
 PS C:\>
 ```

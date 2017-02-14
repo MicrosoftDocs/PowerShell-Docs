@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294020
-schema: 2.0.0
-title: Trace-Command
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Trace Command
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294020
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Trace-Command
 
@@ -42,7 +43,7 @@ It works like Set-TraceSource, except that it applies only to the specified comm
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>trace-command -name metadata,parameterbinding,cmdlet -expression {get-process notepad} -pshost
+PS C:\> trace-command -name metadata,parameterbinding,cmdlet -expression {get-process notepad} -pshost
 ```
 
 This command starts a trace of metadata processing, parameter binding, and cmdlet creation and destruction of the "get-process notepad" expression.
@@ -51,8 +52,8 @@ Because it does not specify any tracing options or listener options, the command
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = "i*"
-PS C:\>trace-command parameterbinding {get-alias $input} -pshost -inputobject $a
+PS C:\> $a = "i*"
+PS C:\> trace-command parameterbinding {get-alias $input} -pshost -inputobject $a
 ```
 
 These commands trace the actions of the ParameterBinding operations of Windows PowerShell while it processes a Get-Alias expression that takes input from the pipeline.

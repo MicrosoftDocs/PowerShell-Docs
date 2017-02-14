@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSGet-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821666
-schema: 2.0.0
-title: Publish-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Publish Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821666
+external help file:   PSGet-help.xml
+---
+
 
 # Publish-Module
 
@@ -49,7 +50,7 @@ Although most metadata is taken from the module manifest, some metadata must be 
 
 ### Example 1: Publish a module
 ```
-PS C:\>Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
+PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's online gallery account.
@@ -57,7 +58,7 @@ If MyDscModule is not a valid manifest module that specifies a name, version, de
 
 ### Example 2: Publish a module with gallery metadata
 ```
-PS C:\>Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
+PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's gallery account.
@@ -68,7 +69,7 @@ If MyDscModule is not a valid manifest module that specifies a name, version, de
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -261,7 +262,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

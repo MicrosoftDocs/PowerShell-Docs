@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821868
-schema: 2.0.0
-title: Unregister-Event
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821868
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Unregister-Event
 
@@ -43,7 +44,7 @@ To delete events, use the Remove-Event cmdlet.
 
 ### Example 1: Cancel an event subscription by source identifier
 ```
-PS C:\>Unregister-Event -SourceIdentifier "ProcessStarted"
+PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 ```
 
 This command cancels the event subscription that has a source identifier of ProcessStarted.
@@ -53,7 +54,7 @@ To find the source identifier of an event subscription, use the **Get-EventSubsc
 
 ### Example 2: Cancel an event subscription by subscription identifier
 ```
-PS C:\>Unregister-Event -SubscriptionId 2
+PS C:\> Unregister-Event -SubscriptionId 2
 ```
 
 This command cancels the event subscription that has a subscription identifier of 2.
@@ -62,7 +63,7 @@ To find the subscription identifier of an event subscription, use the **Get-Even
 
 ### Example 3: Cancel all event subscriptions
 ```
-PS C:\>Get-EventSubscriber -Force | Unregister-Event -Force
+PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 ```
 
 This command cancels all event subscriptions in the session.
@@ -75,7 +76,7 @@ To complete the task, the *Force* parameter is also required on **Unregister-Eve
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -140,7 +141,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

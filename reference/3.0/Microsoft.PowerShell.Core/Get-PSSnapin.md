@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113330
-schema: 2.0.0
-title: Get-PSSnapin
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSSnapin
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113330
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Get-PSSnapin
 ## SYNOPSIS
@@ -38,21 +39,21 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-PSSnapIn
+PS C:\> get-PSSnapIn
 ```
 
 This command gets the Windows PowerShell snap-ins that are currently loaded in the session.
 This includes the snap-ins that are installed with Windows PowerShell and those that have been added to the session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-PSSnapIn -registered
+PS C:\> get-PSSnapIn -registered
 ```
 
 This command gets the Windows PowerShell snap-ins that have been registered on the computer, including those that have already been added to the session.
 The output does not include snap-ins that are installed with Windows PowerShell or Windows PowerShell snap-in dynamic-link libraries (DLLs) that have not yet been registered on the system.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-PSSnapIn smp*
+PS C:\> get-PSSnapIn smp*
 ```
 
 This command gets the Windows PowerShell snap-ins in the current session that have names that begin with "smp".

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822418
-schema: 2.0.0
-title: Get-PSCallStack
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSCallStack
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821798
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Get-PSCallStack
 
@@ -35,7 +36,7 @@ To run a **Get-PSCallStack** command while in the debugger, type `k` or `Get-PSC
 
 ### Example 1: Get the call stack for a function
 ```
-PS C:\>function my-alias {
+PS C:\> function my-alias {
 $p = $args[0]
 Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -auto
 }
@@ -45,7 +46,7 @@ Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
-Script     : prompt PS C:\>my-alias Get-Content
+Script     : prompt PS C:\> my-alias Get-Content
 
 Entering debug mode. Use h or ? for help.
 Hit Command breakpoint on 'prompt:my-alias'
@@ -61,7 +62,7 @@ Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
 my-alias    {}                            {get-content}                 prompt
-prompt      {}                            {}                            prompt PS C:\>[DBG]: PS C:\ps-test> o
+prompt      {}                            {}                            prompt PS C:\> [DBG]: PS C:\ps-test> o
 Definition  Name
 ----------  ----
 Get-Content gc

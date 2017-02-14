@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135261
-schema: 2.0.0
-title: Start-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Start Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135261
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Start-Process
 ## SYNOPSIS
@@ -42,20 +43,20 @@ You can use the parameters of Start-Process to specify options, such as loading 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>start-process sort.exe
+PS C:\> start-process sort.exe
 ```
 
 This command starts a process that uses the Sort.exe file in the current directory.
 The command uses all of the default values, including the default window style, working directory, and credentials.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>start-process myfile.txt -workingdirectory "C:\PS-Test" -verb Print
+PS C:\> start-process myfile.txt -workingdirectory "C:\PS-Test" -verb Print
 ```
 
 This command starts a process that prints the C:\PS-Test\MyFile.txt file.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>start-process Sort.exe -RedirectStandardInput Testsort.txt -RedirectStandardOutput Sorted.txt -RedirectStandardError SortError.txt -UseNewEnvironment
+PS C:\> start-process Sort.exe -RedirectStandardInput Testsort.txt -RedirectStandardOutput Sorted.txt -RedirectStandardError SortError.txt -UseNewEnvironment
 ```
 
 This command starts a process that sorts items in the Testsort.txt file and returns the sorted items in the Sorted.txt files.
@@ -64,31 +65,31 @@ Any errors are written to the SortError.txt file.
 The UseNewEnvironment parameter specifies that the process runs with its own environment variables.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>start-process notepad -wait -windowstyle Maximized
+PS C:\> start-process notepad -wait -windowstyle Maximized
 ```
 
 This command starts the Notepad process.
 It maximizes the window and retains the window until the process completes.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>start-process powershell -verb runAs
+PS C:\> start-process powershell -verb runAs
 ```
 
 This command starts Windows PowerShell with the "Run as administrator" option.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$startExe = new-object System.Diagnostics.ProcessStartInfo -args PowerShell.exe
-PS C:\>$startExe.verbs
+PS C:\> $startExe = new-object System.Diagnostics.ProcessStartInfo -args PowerShell.exe
+PS C:\> $startExe.verbs
 open
 runas
 
 # Starts a PowerShell process in a new console window.
 
-PS C:\>start-process powershell.exe -verb open
+PS C:\> start-process powershell.exe -verb open
 
 # Starts a PowerShell process with "Run as Administrator" permissions.
 
-PS C:\>start-process powershell.exe -verb runas
+PS C:\> start-process powershell.exe -verb runas
 ```
 
 These commands show how to find the verbs that can be used when starting a process, and the effect of using the verbs to start the process.

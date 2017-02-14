@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=141556
-schema: 2.0.0
-title: Remove-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=141556
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Remove-Module
 ## SYNOPSIS
@@ -39,19 +40,19 @@ It affects only the current Windows PowerShell session.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Remove-Module -Name BitsTransfer
+PS C:\> Remove-Module -Name BitsTransfer
 ```
 
 This command removes the BitsTransfer module from the current session.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Module | Remove-Module
+PS C:\> Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>"FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
+PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
 VERBOSE: Performing operation "Remove-Module" on Target "Microsoft.BackgroundIntelligentTransfer.Management (Path: 'C:\Windows\assembly\GAC_MSIL\Microsoft.BackgroundIntelligentTransfer.Management\1.0.0.0__31bf3856ad364e35\Microsoft.BackgroundIntelligentTransfe
 r.Management.dll')".
@@ -79,8 +80,8 @@ The messages differ because the BitsTransfer module includes an assembly that im
 The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = Get-Module BitsTransfer
-PS C:\>Remove-Module -ModuleInfo $a
+PS C:\> $a = Get-Module BitsTransfer
+PS C:\> Remove-Module -ModuleInfo $a
 ```
 
 This command uses the ModuleInfo parameter to remove the BitsTransfer module.
@@ -139,7 +140,7 @@ Accept wildcard characters: True
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -155,7 +156,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

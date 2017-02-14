@@ -1,19 +1,20 @@
-﻿---
-title: ISE
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-29
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: ISE
-Module Guid: bae93d8e-782c-4a23-b87f-8699bfc17ee0
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=390780
-Help Version: 5.0.2.2
-Locale: en-US
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ISE
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   ISE
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390780
+Help Version:   5.0.2.2
+Module Guid:   bae93d8e-782c-4a23-b87f-8699bfc17ee0
+---
+
 
 # ISE Module
 ## Description

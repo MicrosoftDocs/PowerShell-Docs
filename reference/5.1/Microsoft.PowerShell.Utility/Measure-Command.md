@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822437
-schema: 2.0.0
-title: Measure-Command
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Measure Command
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821828
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Measure-Command
 
@@ -31,14 +32,14 @@ The **Measure-Command** cmdlet runs a script block or cmdlet internally, times t
 
 ### Example 1: Measure the time to run a command
 ```
-PS C:\>Measure-Command { Get-EventLog "windows powershell" }
+PS C:\> Measure-Command { Get-EventLog "windows powershell" }
 ```
 
 This command measures the time it takes to run a Get-EventLog command that gets the events in the Windows PowerShell event log.
 
 ### Example 2: Use a provider-specific filter
 ```
-PS C:\>Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+PS C:\> Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 
 Days              : 0
 Hours             : 0
@@ -50,7 +51,7 @@ TotalDays         : 9.9748568287037E-05
 TotalHours        : 0.00239396563888889
 TotalMinutes      : 0.143637938333333
 TotalSeconds      : 8.6182763
-TotalMilliseconds : 8618.2763 PS C:\>Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
+TotalMilliseconds : 8618.2763 PS C:\> Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 
 PS C:\>
 Days              : 0

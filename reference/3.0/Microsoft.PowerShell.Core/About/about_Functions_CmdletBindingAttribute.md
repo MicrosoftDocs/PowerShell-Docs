@@ -1,25 +1,18 @@
-﻿---
-title: about_Functions_CmdletBindingAttribute
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Functions_CmdletBindingAttribute
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Functions_CmdletBindingAttribute
+ms.technology:  powershell
+---
+
 # About Functions CmdletBindingAttribute
 ## about_Functions_CmdletBindingAttribute
-# TOPIC
 
-about_Functions_CmdletBindingAttribute
 
 # SHORT DESCRIPTION
 
@@ -189,9 +182,12 @@ about_Functions_CmdletBinding_Attribute
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced
-about_Functions_Advanced_Methods
-about_Functions_Advanced_Parameters
-about_Functions_OutputTypeAttribute
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced](about_Functions_Advanced.md)
+
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)

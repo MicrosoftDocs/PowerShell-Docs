@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289585
-schema: 2.0.0
-title: Get-History
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get History
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289585
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Get-History
 
@@ -40,7 +41,7 @@ For more information about the history features in Windows PowerShell, see about
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-History
+PS C:\> Get-History
 ```
 
 This command gets the entries in the session history.
@@ -48,7 +49,7 @@ The default display shows each command and its ID, which indicates the order of 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-History | Where-Object {$_.CommandLine -like "*Service*"}
+PS C:\> Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 ```
 
 This command gets entries in the command history that include "service".
@@ -57,7 +58,7 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-History -ID 7 -Count 5 | Export-Csv History.csv
+PS C:\> Get-History -ID 7 -Count 5 | Export-Csv History.csv
 ```
 
 This command gets the five most recent history entries ending with entry 7.
@@ -66,7 +67,7 @@ The file includes the data that is displayed when you format the history as a li
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-History -Count 1
+PS C:\> Get-History -Count 1
 ```
 
 This command gets the last (most recently entered) command in the command history.
@@ -76,7 +77,7 @@ This command can be abbreviated to "h -c 1" and is equivalent to pressing the up
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-History | Format-List -Property *
+PS C:\> Get-History | Format-List -Property *
 ```
 
 This command displays all of the properties of entries in the session history.

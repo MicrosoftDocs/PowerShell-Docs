@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822299
-schema: 2.0.0
-title: Find-PackageProvider
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Find PackageProvider
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822299
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
+---
+
 
 # Find-PackageProvider
 
@@ -38,7 +39,7 @@ Use the bootstrapper provider to find and install them.
 
 ### Example 1: Find all available package providers
 ```
-PS C:\>Find-PackageProvider
+PS C:\> Find-PackageProvider
 ```
 
 This command gets a list of all package providers that are available on the repositories supported by Package Management.
@@ -46,14 +47,14 @@ By default, those package providers are available on the PowerShell Gallery and 
 
 ### Example 2: Find all versions of a provider
 ```
-PS C:\>Find-PackageProvider -Name "Nuget" -AllVersions
+PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 ```
 
 This command finds all versions of the package provider named Nuget.
 
 ### Example 3: Find a provider from a specified source
 ```
-PS C:\>Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
+PS C:\> Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
 This command finds a package provider available by using a specified package source.

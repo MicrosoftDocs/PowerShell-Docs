@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289582
-schema: 2.0.0
-title: ForEach-Object
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ForEach Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289582
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # ForEach-Object
 
@@ -65,7 +66,7 @@ The End script block, which is the value of the **End** parameter, runs after th
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>30000, 56798, 12432 | ForEach-Object -Process {$_/1024}
+PS C:\> 30000, 56798, 12432 | ForEach-Object -Process {$_/1024}
 29.296875
 55.466796875
 12.140625
@@ -75,7 +76,7 @@ This command takes an array of three integers and divides each one of them by 10
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; "" }}
+PS C:\> Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; "" }}
 ```
 
 This command gets the files and directories in the Windows PowerShell installation directory ($pshome) and passes them to the ForEach-Object cmdlet.
@@ -83,8 +84,8 @@ If the object is not a directory (the value of the PSISContainer property is fal
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$Events = Get-EventLog -LogName System -Newest 1000
-PS C:\>$events | ForEach-Object -Begin {Get-Date} -Process {Out-File -Filepath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
+PS C:\> $Events = Get-EventLog -LogName System -Newest 1000
+PS C:\> $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -Filepath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
 ```
 
 This command gets the 1000 most recent events from the System event log and stores them in the $Events variable.
@@ -96,7 +97,7 @@ Last, the **End** parameter is used to display the date and time after all of th
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-ItemProperty -Path HKCU:\Network\* | ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
+PS C:\> Get-ItemProperty -Path HKCU:\Network\* | ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
 ```
 
 This command changes the value of the **RemotePath** registry entry in all of the subkeys under the HKCU:\Network key to uppercase text.
@@ -114,7 +115,7 @@ Because **Set-ItemProperty** is changing the property of each key, the **ForEach
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>1, 2, $null, 4 | ForEach-Object {"Hello"}
+PS C:\> 1, 2, $null, 4 | ForEach-Object {"Hello"}
 Hello
 Hello
 Hello
@@ -129,8 +130,8 @@ For more information about the $null automatic variable, see about_Automatic_Var
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Get-Module -List | ForEach-Object -MemberName Path
-PS C:\>Get-Module -List | Foreach Path
+PS C:\> Get-Module -List | ForEach-Object -MemberName Path
+PS C:\> Get-Module -List | Foreach Path
 ```
 
 These commands gets the value of the **Path** property of all installed Windows PowerShell modules.
@@ -143,9 +144,9 @@ The **ForEach-Object** cmdlet is very useful for getting property values, becaus
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
-PS C:\>"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object -MemberName Split -ArgumentList "."
-PS C:\>"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | Foreach Split "."
+PS C:\> "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
+PS C:\> "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object -MemberName Split -ArgumentList "."
+PS C:\> "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | Foreach Split "."
 Microsoft
 PowerShell
 Core
@@ -205,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -307,7 +308,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

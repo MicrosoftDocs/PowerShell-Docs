@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821583
-schema: 2.0.0
-title: Get-Content
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821583
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Content
 
@@ -46,7 +47,7 @@ Beginning in Windows PowerShell 3.0, this cmdlet can also get a specified number
 
 ### Example 1: Get the content of a text file
 ```
-PS C:\>Get-Content -Path "C:\Chapters\Chapter1.txt"
+PS C:\> Get-Content -Path "C:\Chapters\Chapter1.txt"
 ```
 
 This command gets the content of the Chapter1.txt file.
@@ -55,7 +56,7 @@ It uses the *Path* parameter to specify the name of the item.
 
 ### Example 2: Get the first 50 lines from a text file and store the results in another file
 ```
-PS C:\>Get-Content "C:\Logs\Log060912.txt" -TotalCount 50 | Set-Content "Sample.txt"
+PS C:\> Get-Content "C:\Logs\Log060912.txt" -TotalCount 50 | Set-Content "Sample.txt"
 ```
 
 This command gets the first 50 lines of the Log060912.txt file and stores them in the Sample.txt file.
@@ -65,7 +66,7 @@ The pipeline operator (|) sends the result to the Set-Content cmdlet, which plac
 
 ### Example 3: Get the fifth line of a text file
 ```
-PS C:\>(Get-Content Cmdlets.txt -TotalCount 5)[-1]
+PS C:\> (Get-Content Cmdlets.txt -TotalCount 5)[-1]
 ```
 
 This command gets the fifth line of the Cmdlets.txt text file.
@@ -73,7 +74,7 @@ It uses the *TotalCount* parameter to get the first five lines and then uses arr
 
 ### Example 4: Get the first and last line of a text file
 ```
-PS C:\>dir .\*.txt | ForEach {Get-Content $_ -Head 1; Get-Content $_ -Tail 1}
+PS C:\> dir .\*.txt | ForEach {Get-Content $_ -Head 1; Get-Content $_ -Tail 1}
 ```
 
 This command gets the first and last lines of each text file in the current directory.

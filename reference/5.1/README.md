@@ -1,3 +1,15 @@
+---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  README
+ms.technology:  powershell
+---
+
 # Windows PowerShell 5.1
 
 Updated: October, 2016
@@ -45,3 +57,4 @@ Windows PowerShell
 Windows PowerShell Core
 Windows PowerShell Core Cmdlet Help Topics
 Windows PowerShell Core Provider Help Topics
+

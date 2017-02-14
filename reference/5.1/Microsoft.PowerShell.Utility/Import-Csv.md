@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822430
-schema: 2.0.0
-title: Import-Csv
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import Csv
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821815
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Import-Csv
 
@@ -49,10 +50,10 @@ In previous versions of Windows PowerShell, if a header row entry in a CSV file 
 
 ### Example 1: Import process objects
 ```
-PS C:\>Get-Process | Export-Csv processes.csv
-PS C:\>$P = Import-Csv processes.csv
-PS C:\>$P | Get-Member
-PS C:\>$P | Format-Table
+PS C:\> Get-Process | Export-Csv processes.csv
+PS C:\> $P = Import-Csv processes.csv
+PS C:\> $P | Get-Member
+PS C:\> $P | Format-Table
 TypeName: CSV:System.Diagnostics.Process
 
 Name                       MemberType   Definition
@@ -83,8 +84,8 @@ To display the objects, use the formatting cmdlets, such as Format-Table and For
 
 ### Example 2: Specify the delimiter
 ```
-PS C:\>Get-Process | Export-Csv processes.csv -Delimiter :
-PS C:\>$P = Import-Csv processes.csv -Delimiter :
+PS C:\> Get-Process | Export-Csv processes.csv -Delimiter :
+PS C:\> $P = Import-Csv processes.csv -Delimiter :
 ```
 
 This example shows how to use the *Delimiter* parameter of the **Import-Csv** cmdlet.
@@ -94,8 +95,8 @@ When importing, the **Import-Csv** file uses the *Delimiter* parameter to indica
 
 ### Example 3: Specify the current culture for the delimiter
 ```
-PS C:\>$P = Import-Csv processes.csv -UseCulture
-PS C:\>(Get-Culture).textinfo.listseparator
+PS C:\> $P = Import-Csv processes.csv -UseCulture
+PS C:\> (Get-Culture).textinfo.listseparator
 ,
 ```
 
@@ -111,16 +112,16 @@ In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
 ```
-PS C:\>Start-Job -ScriptBlock { Get-Process } | Export-Csv jobs.csv
-PS C:\>$Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
+PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv jobs.csv
+PS C:\> $Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
 
 # Delete header from file
 
-PS C:\>$A = (Get-Content jobs.csv)
-PS C:\>$A = $A[0], $A[2..($A.count - 1)]
-PS C:\>$A > jobs.csv
-PS C:\>$J = Import-Csv jobs.csv -Header $Header
-PS C:\>$J
+PS C:\> $A = (Get-Content jobs.csv)
+PS C:\> $A = $A[0], $A[2..($A.count - 1)]
+PS C:\> $A > jobs.csv
+PS C:\> $J = Import-Csv jobs.csv -Header $Header
+PS C:\> $J
 
 MoreData      : True
 StatusMessage :
@@ -160,11 +161,11 @@ The resulting object has MoreData and State properties, as shown in the command 
 
 ### Example 5: Create a custom object using a CSV file
 ```
-PS C:\>Get-Content .\Links.csv
+PS C:\> Get-Content .\Links.csv
 113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212, 
 about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309, 
 about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219, 
-about_Core_Commands113220,about_Data_Sectionâ€¦ PS C:\>$A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
+about_Core_Commands113220,about_Data_Sectionâ€¦ PS C:\> $A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
 PS C:\> $A | Get-Member
    TypeName: System.Management.Automation.PSCustomObject
 Name                      MemberType   Definition
@@ -176,7 +177,7 @@ GetHashCode()GetType      Method       type
 GetType()ToString         Method       string 
 ToString()LinkID          NoteProperty System.String 
 LinkID=113207TopicTitle   NoteProperty System.String 
-TopicTitle=about_Aliases PS C:\>$A | Where-Object TopicTitle -Like "*alias*"
+TopicTitle=about_Aliases PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
 LinkID            TopicTitle
 ------            ----------
 113207            about_Aliases
@@ -209,14 +210,14 @@ The Where-Object command uses the new simplified command format that does not re
 
 ### Example 6: Import a CSV that is missing a value
 ```
-PS C:\>Get-Content "\\Server2\c$\Test\Projects.csv"
-ProjectID, ProjectName,,Completed, Inventory, Redmond, True440, , FarEast, True, Marketing, Europe, False PS C:\>Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\>WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"
+ProjectID, ProjectName,,Completed, Inventory, Redmond, True440, , FarEast, True, Marketing, Europe, False PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
+PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
 ProjectID     ProjectName       H1               Completed
 ---------     -----------       --               ---------
 13            Inventory         Redmond          True
 440                             FarEast          True
-469           Marketing         Europe           False PS C:\>(Import-Csv "\\Server2\c$\Test\Projects.csv").H1
+469           Marketing         Europe           False PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
 RedmondFarEastEurope
 ```
 

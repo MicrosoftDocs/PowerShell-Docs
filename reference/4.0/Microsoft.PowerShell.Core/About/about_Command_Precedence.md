@@ -1,25 +1,19 @@
-﻿---
-title: about_Command_Precedence
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Command_Precedence
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Command_Precedence
+ms.technology:  powershell
+---
+
 # About Command Precedence
 ## about_Command_Precedence
 
 
-about_Command_Precedence
 
 # SHORT DESCRIPTION
 
@@ -177,7 +171,7 @@ ModuleName property of commands.
 
 For example, to find the source of the Get-Date cmdlet, type:
 
-PS C:>(Get-Command Get-Date).ModuleName
+PS C:> (Get-Command Get-Date).ModuleName
 Microsoft.PowerShell.Utility
 
 # CALL OPERATOR
@@ -263,12 +257,18 @@ For more information, see Import-Module and Import-PSSession.
 
 # SEE ALSO
 
-about_Path_Syntax
-about_Aliases
-about_Functions
-Alias (provider)
-Function (provider)
-Get-Command
-Import-Module
-Import-PSSession
+[about_Path_Syntax](about_Path_Syntax.md)
 
+[about_Aliases](about_Aliases.md)
+
+[about_Functions](about_Functions.md)
+
+Alias (provider)
+
+Function (provider)
+
+Get-Command
+
+Import-Module
+
+Import-PSSession

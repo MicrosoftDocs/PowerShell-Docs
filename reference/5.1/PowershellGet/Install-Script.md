@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822327
-schema: 2.0.0
-title: Install-Script
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Install Script
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822327
+external help file:   PSModule-help.xml
+---
+
 
 # Install-Script
 
@@ -45,17 +46,17 @@ When operating against multiple repositories, **Install-Script** installs the fi
 
 ### Example 1: Find a script and install it
 ```
-PS C:\>Find-Script -Repository "Local1" -Name "Required-Script2"
+PS C:\> Find-Script -Repository "Local1" -Name "Required-Script2"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\>Find-Script -Repository "Local1" -Name "Required-Script2" | Install-Script
+2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\> Find-Script -Repository "Local1" -Name "Required-Script2" | Install-Script
 PS C:\> Get-Command -Name "Required-Script2"
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-ExternalScript  Required-Script2.ps1                                2.0       C:\Users\pattif\Documents\WindowsPowerShell\Scripts\Required-Script2.ps1 PS C:\>Get-InstalledScript -Name "Required-Script2"
+ExternalScript  Required-Script2.ps1                                2.0       C:\Users\pattif\Documents\WindowsPowerShell\Scripts\Required-Script2.ps1 PS C:\> Get-InstalledScript -Name "Required-Script2"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\>Get-InstalledScript -Name "Required-Script2" | Format-List * 
+2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\> Get-InstalledScript -Name "Required-Script2" | Format-List * 
 Name                       : Required-Script2
 Version                    : 2.5
 Type                       : Script
@@ -90,11 +91,11 @@ The fifth command gets RequiredScript2 and uses the pipeline operator to pass it
 
 ### Example 2: Install a script with AllUsers scope
 ```
-PS C:\>Install-Script -Repository "Local1" -Name "Required-Script3" -Scope "AllUsers"
+PS C:\> Install-Script -Repository "Local1" -Name "Required-Script3" -Scope "AllUsers"
 PS C:\> Get-InstalledScript -Name "Required-Script3"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\>Get-InstalledScript -Name "Required-Script3" | Format-List * 
+2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\> Get-InstalledScript -Name "Required-Script3" | Format-List * 
 Name                       : Required-Script3
 Version                    : 2.5
 Type                       : Script
@@ -125,7 +126,7 @@ The third command gets Required-Script3 and uses the pipeline operator to pass i
 
 ### Example 3: Install a script with its dependent scripts and modules
 ```
-PS C:\>Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies
+PS C:\> Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.0        Script-WithDependencies2            Script     local1               Description for the Script-WithDependencies2 script
@@ -134,24 +135,24 @@ Version    Name                                Type       Repository           D
 2.5        RequiredModule3                     Module     local1               RequiredModule3 module
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
 2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
-2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\>Install-Script -Repository "Local1" -Name "Script-WithDependencies2"
+2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\> Install-Script -Repository "Local1" -Name "Script-WithDependencies2"
 PS C:\> Get-InstalledScript
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
 2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
 2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
-2.0        Script-WithDependencies2            Script     local1               Description for the Script-WithDependencies2 script PS C:\>Get-InstalledModule
+2.0        Script-WithDependencies2            Script     local1               Description for the Script-WithDependencies2 script PS C:\> Get-InstalledModule
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        RequiredModule1                     Module     local1               RequiredModule1 module
 2.5        RequiredModule2                     Module     local1               RequiredModule2 module
-2.5        RequiredModule3                     Module     local1               RequiredModule3 module PS C:\>Find-Script -Repository "Local1" -Name "Required-Script*"
+2.5        RequiredModule3                     Module     local1               RequiredModule3 module PS C:\> Find-Script -Repository "Local1" -Name "Required-Script*"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
 2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script
-2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\>Install-Script -Repository "Local1" -Name "Required-Script*"
+2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\> Install-Script -Repository "Local1" -Name "Required-Script*"
 PS C:\> Get-InstalledScript
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
@@ -177,7 +178,7 @@ The final command gets installed scripts and displays the results.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -383,7 +384,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

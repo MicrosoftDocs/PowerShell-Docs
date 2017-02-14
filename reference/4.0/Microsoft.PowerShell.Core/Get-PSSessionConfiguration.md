@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289589
-schema: 2.0.0
-title: Get-PSSessionConfiguration
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSSessionConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289589
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Get-PSSessionConfiguration
 
@@ -42,14 +43,14 @@ For more information about session configurations, see about_Session_Configurati
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-PSSessionConfiguration
+PS C:\> Get-PSSessionConfiguration
 ```
 
 This command gets the session configurations on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-PSSessionConfiguration -Name Microsoft*
+PS C:\> Get-PSSessionConfiguration -Name Microsoft*
 
 Name                      PSVersion  StartupScript        Permission
 ----                      ---------  -------------        ----------
@@ -62,7 +63,7 @@ The command uses the **Name** parameter of **Get-PSSessionConfiguration** to get
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-PSSessionConfiguration -Name Full  | Format-List -Property *
+PS C:\> Get-PSSessionConfiguration -Name Full  | Format-List -Property *
  
                       
 Copyright                     : (c) 2011 User01. All rights reserved.
@@ -118,7 +119,7 @@ For more information about session configuration files, see about_Session_Config
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
+PS C:\> (Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
 
 Name                                                                                                              Value
 
@@ -234,7 +235,7 @@ This example was contributed by Shay Levy, a Windows PowerShell MVP from Sderot,
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>dir wsman:\localhost\plugin
+PS C:\> dir wsman:\localhost\plugin
 Type            Keys                                Name
 ----            ----                                ----
 Container       {Name=Event Forwarding Plugin}      Event Forwarding Plugin
@@ -254,10 +255,10 @@ The **PlugIn** node contains **ContainerElement** objects (Microsoft.WSMan.Manag
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
 The first command uses the Connect-WSMan cmdlet to connect to the WinRM service on the Server01 remote computer.
-PS C:\>Connect-WSMan -ComputerName Server01
+PS C:\> Connect-WSMan -ComputerName Server01
 
 The second command uses the Get-ChildItem cmdlet ("dir") in the WSMan: drive to get the items in the Server01\Plugin path.The output shows the items in the Plugin directory on the Server01 computer. The items include the session configurations, which are a type of WSMan plug-in, along with other types of plug-ins on the computer.
-PS C:\>dir WSMan:\Server01\Plugin
+PS C:\> dir WSMan:\Server01\Plugin
    WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
 Type            Keys                                Name
@@ -277,7 +278,7 @@ Container       {Name=WithProfile}                  WithProfile
 Container       {Name=WMI Provider}                 WMI Provider
 
 The third command returns the names of the plugins that are session configurations. The command searches for a value of **Shell** in the **Capability** property, which is in the Plugin\Resources\<ResourceNumber> path in the WSMan: drive.
-PS C:\>dir WSMan:\Server01\Plugin\*\Resources\Resource*\Capability | where {$_.Value -eq "Shell"} | foreach {($_.PSPath.split("\"))[3] }
+PS C:\> dir WSMan:\Server01\Plugin\*\Resources\Resource*\Capability | where {$_.Value -eq "Shell"} | foreach {($_.PSPath.split("\"))[3] }
 Empty
 Full
 microsoft.powershell
@@ -296,16 +297,16 @@ This method does not provide as much information as a **Get-PSSessionConfigurati
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
 The first command uses the Enable-WSManCredSSP cmdlet to enable **CredSSP** delegation from the Server01 local computer to the Server02 remote computer. This configures the **CredSSP** client setting on the local computer.
-PS C:\>Enable-WSManCredSSP -Delegate Server02
+PS C:\> Enable-WSManCredSSP -Delegate Server02
 
 The second command uses the Connect-WSMan cmdlet to connect to the Server02 computer. This action adds a node for the Server02 computer to the WSMan: drive on the local computer, allowing you to view and change the WS-Management settings on the Server02 computer.
-PS C:\>Connect-WSMan Server02
+PS C:\> Connect-WSMan Server02
 
 The third command uses the Set-Item cmdlet to change the value of the **CredSSP** item in the Service node of the Server02 computer to True. This configures the service settings on the remote computer.
-PS C:\>Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $true
+PS C:\> Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $true
 
 The fourth command uses the Invoke-Command cmdlet to run a **Get-PSSessionConfiguration** command on the Server02 computer. The command uses the **Credential** parameter, and it uses the **Authentication** parameter with a value of **CredSSP**.The output shows the session configurations on the Server02 remote computer.
-PS C:\>Invoke-Command -ScriptBlock {Get-PSSessionConfiguration} -ComputerName Server02 -Authentication CredSSP -Credential Domain01\Admin01
+PS C:\> Invoke-Command -ScriptBlock {Get-PSSessionConfiguration} -ComputerName Server02 -Authentication CredSSP -Credential Domain01\Admin01
 
 Name                      PSVersion  StartupScript        Permission                          PSComputerName
 ----                      ---------  -------------        ----------                          --------------
@@ -321,7 +322,7 @@ To run the commands in this example, you must be a member of the Administrators 
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>(Get-PSSessionConfiguration -Name CustomShell).resourceURI
+PS C:\> (Get-PSSessionConfiguration -Name CustomShell).resourceURI
 http://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 

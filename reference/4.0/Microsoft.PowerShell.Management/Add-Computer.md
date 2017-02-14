@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289795
-schema: 2.0.0
-title: Add-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289795
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Add-Computer
 
@@ -47,21 +48,21 @@ To get the results of the command, use the **Verbose** and **PassThru** paramete
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Add-Computer -DomainName Domain01 -Restart
+PS C:\> Add-Computer -DomainName Domain01 -Restart
 ```
 
 This command adds the local computer to the Domain01 domain and then restarts the computer to make the change effective.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Add-Computer -WorkGroupName WORKGROUP-A
+PS C:\> Add-Computer -WorkGroupName WORKGROUP-A
 ```
 
 This command adds the local computer to the Workgroup-A workgroup.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Add-Computer -DomainName Domain01 -Server Domain01\DC01 -Passthru -Verbose
+PS C:\> Add-Computer -DomainName Domain01 -Server Domain01\DC01 -Passthru -Verbose
 ```
 
 This command adds the local computer to the Domain01 domain by using the Domain01\DC01 domain controller.
@@ -70,7 +71,7 @@ The command uses the **PassThru** and **Verbose** parameters to get detailed inf
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
+PS C:\> Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
 ```
 
 This command adds the local computer to the Domain02 domain.
@@ -78,7 +79,7 @@ It uses the OUPath parameter to specify the organizational unit for the new acco
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
+PS C:\> Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
 This command adds the Server01 computer to the Domain02 domain.
@@ -88,7 +89,7 @@ It uses the **Restart** parameter to restart the computer after the join operati
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Add-Computer -ComputerName Server01, Server02, localhost -Domain Domain02 -LocalCredential Domain01\User01 -UnjoinDomainCredential Domain01\Admin01 -Credential Domain02\Admin01 -Restart
+PS C:\> Add-Computer -ComputerName Server01, Server02, localhost -Domain Domain02 -LocalCredential Domain01\User01 -UnjoinDomainCredential Domain01\Admin01 -Credential Domain02\Admin01 -Restart
 ```
 
 This command moves the Server01 and Server02 computers, and the local computer, from Domain01 to Domain02.
@@ -99,7 +100,7 @@ It uses the **Restart** parameter to restart all three computers after the move 
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Add-Computer -ComputerName Server01 -Domain Domain02 -NewName Server044 -Credential Domain02\Admin01 -Restart
+PS C:\> Add-Computer -ComputerName Server01 -Domain Domain02 -NewName Server044 -Credential Domain02\Admin01 -Restart
 ```
 
 This command moves the Server01 computer to the Domain02 and changes the machine name to Server044.
@@ -109,7 +110,7 @@ It uses the **Credential** parameter to specify  a user account that has permiss
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Add-Computer -ComputerName (Get-Content Servers.txt) -Domain Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
+PS C:\> Add-Computer -ComputerName (Get-Content Servers.txt) -Domain Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
 This command adds the computers that are listed in the Servers.txt file to the Domain02 domain.
@@ -414,7 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -430,7 +431,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Disable-DscDebug.cdxml-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=627546
-schema: 2.0.0
-title: Disable-DscDebug
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Disable DscDebug
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=627546
+external help file:   Disable-DscDebug.cdxml-help.xml
+---
+
 
 # Disable-DscDebug
 
@@ -33,14 +34,14 @@ This cmdlet has no effect if the DSC engine is not currently in debugging mode.
 
 ### Example 1: Stop resource debugging
 ```
-PS C:\>Disable-DscDebug
+PS C:\> Disable-DscDebug
 ```
 
 This command indicates to the DSC engine on the Local Configuration Manager (LCM) to stop resource debugging.
 
 ### Example 2: Check the engine state and stop debugging
 ```
-PS C:\>if((Get-DscLocalConfigurationManager).DebugMode -like '*Break*'){Disable-DscDebug}
+PS C:\> if((Get-DscLocalConfigurationManager).DebugMode -like '*Break*'){Disable-DscDebug}
 ```
 
 This command checks the DSC engine state, and stops resource debugging only if it is already in debugging mode
@@ -91,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -124,7 +125,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

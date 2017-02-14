@@ -1,15 +1,11 @@
-# [Just Enough Administration (JEA)](README.md)
-##  [Introduction](introduction.md)
-##  [Prerequisites](prerequisites.md)
-##  [Using JEA](using-jea.md)
-##  [Remake the Demo](remake-the-demo-endpoint.md)
-##  [Role Capabilities](role-capabilities.md)
-##  [End to End - Active Directory](end-to-end---active-directory.md)
-##  [Multi-machine Deployment and Maintenance](multi-machine-deployment-and-maintenance.md)
-##  [Reporting on JEA](reporting-on-jea.md)
-##  Appendixes
-###  [Key Concepts Used Throughout This Guide](key-concepts-used-throughout-this-guide.md)  
-###  [Creating a Domain Controller](creating-a-domain-controller.md)  
-###  [On Blacklisting](on-blacklisting.md)  
-###  [Considerations When Limiting Commands](considerations-when-limiting-commands.md)  
-###  [Common Role Capability Pitfalls](common-role-capability-pitfalls.md)
+
+# [Overview](overview.md)
+
+# Deploy JEA
+## [Prerequisites](prerequisites.md)
+## [Role Capabilities](role-capabilities.md)
+## [Session Configurations](session-configurations.md)
+## [Registering JEA](register-jea.md)
+## [Using JEA](using-jea.md)
+## [Security Considerations](security-considerations.md)
+## [Audit and Report on JEA](audit-and-report.md)

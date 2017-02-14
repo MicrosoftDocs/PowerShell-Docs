@@ -1,25 +1,19 @@
-﻿---
-title: about_Job_Details
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Job_Details
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Job_Details
+ms.technology:  powershell
+---
+
 # About Job Details
 ## about_Job_Details
 
 
-about_Job_Details
 
 # SHORT DESCRIPTION
 
@@ -180,7 +174,7 @@ When you display the Name and ChildJob properties of the job in $j, it
 shows that the command returned a job object with three child jobs, one for
 each computer.
 
-CPS C:> $j | Format-List Name, ChildJobs
+PS C:> $j | Format-List Name, ChildJobs
 
 Name      : Job3
 ChildJobs : {Job4, Job5, Job6}
@@ -332,21 +326,36 @@ Id         Name            JobTriggers     Command       Enabled
 
 # SEE ALSO
 
-about_Jobs
-about_Remote_Jobs
-about_Remote
-about_Scheduled_Jobs
-Invoke-Command
-Start-Job
-Get-Job
-Wait-Job
-Stop-Job
-Remove-Job
-Suspend-Job
-Resume-Job
-New-PSSession
-Enter-PSSession
-Exit-PSSession
-Register-ScheduledJob
-Get-ScheduleJob
+[about_Jobs](about_Jobs.md)
 
+[about_Remote_Jobs](about_Remote_Jobs.md)
+
+[about_Remote](about_Remote.md)
+
+[about_Scheduled_Jobs](../../PSScheduledJob/About/about_Scheduled_Jobs.md)
+
+Invoke-Command
+
+Start-Job
+
+Get-Job
+
+Wait-Job
+
+Stop-Job
+
+Remove-Job
+
+Suspend-Job
+
+Resume-Job
+
+New-PSSession
+
+Enter-PSSession
+
+Exit-PSSession
+
+Register-ScheduledJob
+
+Get-ScheduleJob

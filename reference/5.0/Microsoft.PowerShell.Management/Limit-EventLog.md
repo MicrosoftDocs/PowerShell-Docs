@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821600
-schema: 2.0.0
-title: Limit-EventLog
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Limit EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821600
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Limit-EventLog
 
@@ -36,21 +37,21 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### Example 1: Increase the size of an event log
 ```
-PS C:\>Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
+PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 ```
 
 This command increases the maximum size of the Windows PowerShell event log on the local computer to 20480 bytes (20 KB).
 
 ### Example 2: Retain an event log for a specified duration
 ```
-PS C:\>Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -RetentionDays 7
+PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -RetentionDays 7
 ```
 
 This command ensures that events in the Security log on the Server01 and Server02 computers are retained for at least 7 days.
 
 ### Example 3: Change the overflow action of all event logs
 ```
-PS C:\>$Logs = Get-EventLog -List | ForEach {$_.log}
+PS C:\> $Logs = Get-EventLog -List | ForEach {$_.log}
 PS C:\> Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
 PS C:\> Get-EventLog -List
 
@@ -99,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -191,7 +192,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

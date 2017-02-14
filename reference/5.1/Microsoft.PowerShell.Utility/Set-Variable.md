@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822465
-schema: 2.0.0
-title: Set-Variable
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Variable
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821861
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Set-Variable
 
@@ -35,15 +36,15 @@ If the variable does not exist, the cmdlet creates it.
 
 ### Example 1: Set a variable and get its value
 ```
-PS C:\>Set-Variable -Name "desc" -Value "A description"
-PS C:\>Get-Variable -Name "desc"
+PS C:\> Set-Variable -Name "desc" -Value "A description"
+PS C:\> Get-Variable -Name "desc"
 ```
 
 These commands set the value of the desc variable to A description, and then gets the value of the variable.
 
 ### Example 2: Set a global, read-only variable
 ```
-PS C:\>Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru | Format-List -Property *
+PS C:\> Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru | Format-List -Property *
 ```
 
 This command creates a global, read-only variable that contains all processes on the system, and then it displays all properties of the variable.
@@ -57,25 +58,25 @@ Otherwise, the variable contains the words "Get-Process".
 
 ### Example 3: Understand public vs. private variables
 ```
-PS C:\># Set-Variable -Name "counter" -Visibility Private
-PS C:\>New-Variable -Name "counter" -Visibility Public -Value 26
-PS C:\>$Counter
-26 PS C:\>Get-Variable c*
+PS C:\> # Set-Variable -Name "counter" -Visibility Private
+PS C:\> New-Variable -Name "counter" -Visibility Public -Value 26
+PS C:\> $Counter
+26 PS C:\> Get-Variable c*
 Name Value
 ---- -----
 Culture en-US
 ConsoleFileName
 ConfirmPreference High
 CommandLineParameters {}
-Counter 26 PS C:\>Set-Variable -Name "counter" -Visibility Private
-PS C:\>Get-Variable c*
+Counter 26 PS C:\> Set-Variable -Name "counter" -Visibility Private
+PS C:\> Get-Variable c*
 Name Value
 ---- -----
 Culture en-US
 ConsoleFileName
 ConfirmPreference High
-CommandLineParameters {} PS C:\>$counter
-"Cannot access the variable '$counter' because it is a private variable" PS C:\>.\use-counter.ps1
+CommandLineParameters {} PS C:\> $counter
+"Cannot access the variable '$counter' because it is a private variable" PS C:\> .\use-counter.ps1
 #Commands completed successfully.
 ```
 
@@ -87,7 +88,7 @@ The sample output shows the difference in the behavior of public and private var
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -305,7 +306,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

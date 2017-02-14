@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822517
-schema: 2.0.0
-title: Remove-LocalGroup
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove LocalGroup
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822517
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
+---
+
 
 # Remove-LocalGroup
 
@@ -48,7 +49,7 @@ The new group does not inherit the permissions that were assigned to the group.
 
 ### Example 1: Delete a security group
 ```
-PS C:\>Remove-LocalGroup -Name "SecurityGroup04"
+PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
 ```
 
 This command deletes the group named SecurityGroup04.
@@ -56,7 +57,7 @@ This command deletes the group named SecurityGroup04.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -118,7 +119,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

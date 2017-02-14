@@ -1,14 +1,16 @@
 ---
-title:  The PowerShellTab Object
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  a9b58556-951b-4f48-b3ae-b351b7564360
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  The PowerShellTab Object
+ms.technology:  powershell
+ms.assetid:    a9b58556-951b-4f48-b3ae-b351b7564360
 ---
+
 
 # The PowerShellTab Object
   The **PowerShellTab** object represents a Windows PowerShell runtime environment.

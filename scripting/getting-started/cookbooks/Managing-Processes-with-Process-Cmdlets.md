@@ -1,14 +1,16 @@
 ---
-title:  Managing Processes with Process Cmdlets
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Managing Processes with Process Cmdlets
+ms.technology:  powershell
+ms.assetid:    5038f612-d149-4698-8bbb-999986959e31
 ---
+
 
 # Managing Processes with Process Cmdlets
 You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in Windows PowerShell.
@@ -174,3 +176,4 @@ Windows PowerShell also comes with cmdlets to start (or restart), debug a proces
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
+

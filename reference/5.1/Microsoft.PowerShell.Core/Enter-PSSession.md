@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822047
-schema: 2.0.0
-title: Enter-PSSession
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Enter PSSession
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821477
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Enter-PSSession
 
@@ -87,7 +88,7 @@ To end the interactive session and disconnect from the remote computer, use the 
 
 ### Example 1: Start an interactive session
 ```
-PS C:\>Enter-PSSession
+PS C:\> Enter-PSSession
 [localhost]: PS C:\>
 ```
 
@@ -99,18 +100,18 @@ The commands that you enter run in the new session, and the results are returned
 ### Example 2: Work with an interactive session
 ```
 The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
-PS C:\>Enter-PSSession -Computer Server01
+PS C:\> Enter-PSSession -Computer Server01
 [Server01]: PS C:\>
 
 The second command gets the Windows PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
-[Server01]: PS C:\>Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS C:\> Get-Process Powershell > C:\ps-test\Process.txt
 
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
-[Server01]: PS C:\>exit
+[Server01]: PS C:\> exit
 PS C:\>
 
 The fourth command confirms that the Process.txt file is on the remote computer. A **Get-ChildItem** ("dir") command on the local computer cannot find the file.
-PS C:\>dir C:\ps-test\process.txt
+PS C:\> dir C:\ps-test\process.txt
 Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
 At line:1 char:4
 + dir <<<<  c:\ps-test\process.txt
@@ -120,8 +121,8 @@ This command shows how to work in an interactive session with a remote computer.
 
 ### Example 3: Use the Session parameter
 ```
-PS C:\>$s = New-PSSession -ComputerName Server01
-PS C:\>Enter-PSSession -Session $s
+PS C:\> $s = New-PSSession -ComputerName Server01
+PS C:\> Enter-PSSession -Session $s
 [Server01]: PS C:\>
 ```
 
@@ -129,7 +130,7 @@ These commands use the *Session* parameter of **Enter-PSSession** to run the int
 
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 ```
-PS C:\>Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
 [Server01]: PS C:\>
 ```
 
@@ -138,8 +139,8 @@ It uses the *Port* parameter to specify the port and the *Credential* parameter 
 
 ### Example 5: Stop an interactive session
 ```
-PS C:\>Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\>Exit-PSSession
+PS C:\> Enter-PSSession -ComputerName Server01
+[Server01]: PS C:\> Exit-PSSession
 PS C:\>
 ```
 

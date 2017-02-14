@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113305
-schema: 2.0.0
-title: Get-Acl
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Acl
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113305
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+---
+
 
 # Get-Acl
 ## SYNOPSIS
@@ -46,13 +47,13 @@ Beginning in Windows PowerShell 3.0, you can use the **InputObject** parameter o
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Acl C:\Windows
+PS C:\> Get-Acl C:\Windows
 ```
 
 This command gets the security descriptor of the C:Windows directory.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Acl C:\Windows\k*.log | Format-List -Property PSPath, Sddl
+PS C:\> Get-Acl C:\Windows\k*.log | Format-List -Property PSPath, Sddl
 ```
 
 This command gets the Windows PowerShell path and SDDL for all of the .log files in the C:\Windows directory whose names begin with "k."
@@ -67,7 +68,7 @@ The **SDDL** values are valuable to system administrators, because they are simp
 As such, they are easy to pass and store, and they can be parsed when needed.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Acl C:/Windows/k*.log -Audit | Foreach-Object { $_.Audit.Count }
+PS C:\> Get-Acl C:/Windows/k*.log -Audit | Foreach-Object { $_.Audit.Count }
 ```
 
 This command gets the security descriptors of the .log files in the C:\Windows directory whose names begin with "k." It uses the **Audit** parameter to get the audit records from the SACL in the security descriptor.
@@ -75,7 +76,7 @@ Then it uses theForEach-Object cmdlet to count the number of audit records assoc
 The result is a list of numbers representing the number of audit records for each log file.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Acl -Path HKLM:\System\CurrentControlSet\Control | Format-List
+PS C:\> Get-Acl -Path HKLM:\System\CurrentControlSet\Control | Format-List
 ```
 
 This command uses the **Get-Acl** cmdlet to get the security descriptor of the Control subkey (HKLM\SYSTEM\CurrentControlSet\Control) of the registry.
@@ -84,7 +85,7 @@ The **Path** parameter specifies the Control subkey.
 The pipeline operator (|) passes the security descriptor that **Get-Ac**l gets to the Format-List command, which formats the properties of the security descriptor as a list so that they are easy to read.
 ### Example 5
 ```
-PS C:\>Get-Acl -InputObject (Get-StorageSubsystem -Name S087)
+PS C:\> Get-Acl -InputObject (Get-StorageSubsystem -Name S087)
 ```
 
 This command uses the **InputObject** parameter of **Get-Acl** to get the security descriptor of a storage subsystem object.

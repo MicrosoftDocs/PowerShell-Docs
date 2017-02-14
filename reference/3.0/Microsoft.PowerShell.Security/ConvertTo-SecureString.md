@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113291
-schema: 2.0.0
-title: ConvertTo-SecureString
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertTo SecureString
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113291
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+---
+
 
 # ConvertTo-SecureString
 ## SYNOPSIS
@@ -48,18 +49,18 @@ If the standard string being converted was encrypted with ConvertFrom-SecureStri
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$secure = read-host -assecurestring
-PS C:\>$secure
+PS C:\> $secure = read-host -assecurestring
+PS C:\> $secure
 System.Security.SecureString
-PS C:\>$encrypted = convertfrom-securestring -securestring $secure
-PS C:\>$encrypted
+PS C:\> $encrypted = convertfrom-securestring -securestring $secure
+PS C:\> $encrypted
 
 01000000d08c9ddf0115d1118c7a00c04fc297eb010000001a114d45b8dd3f4aa11ad7c0abdae9800000000002000000000003660000a8000000100000005df63cea84bfb7d70bd6842e7
 efa79820000000004800000a000000010000000f10cd0f4a99a8d5814d94e0687d7430b100000008bf11f1960158405b2779613e9352c6d14000000e6b7bf46a9d485ff211b9b2a2df3bd
 6eb67aae41
 
-PS C:\>$secure2 = convertto-securestring -string $encrypted
-PS C:\>$secure2
+PS C:\> $secure2 = convertto-securestring -string $encrypted
+PS C:\> $secure2
 
 System.Security.SecureString
 ```
@@ -82,10 +83,10 @@ The sixth command displays the value of the $secure2 variable.
 The SecureString type indicates that the command was successful.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$secure = read-host -assecurestring
-PS C:\>$encrypted = convertfrom-securestring -secureString $secure -key (1..16)
-PS C:\>$encrypted | set-content encrypted.txt
-PS C:\>$secure2 = get-content encrypted.txt | convertto-securestring -key (1..16)
+PS C:\> $secure = read-host -assecurestring
+PS C:\> $encrypted = convertfrom-securestring -secureString $secure -key (1..16)
+PS C:\> $encrypted | set-content encrypted.txt
+PS C:\> $secure2 = get-content encrypted.txt | convertto-securestring -key (1..16)
 ```
 
 This example shows how to create a secure string from an encrypted standard string that is saved in a file.
@@ -103,7 +104,7 @@ The command uses a pipeline operator to send the encrypted string to the Convert
 The results are saved in the $secure2 variable.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$secure_string_pwd = convertto-securestring "P@ssW0rD!" -asplaintext -force
+PS C:\> $secure_string_pwd = convertto-securestring "P@ssW0rD!" -asplaintext -force
 ```
 
 This command converts the plain text string "P@ssW0rD!" into a secure string and stores the result in the $secure_string_pwd variable.

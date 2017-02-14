@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293962
-schema: 2.0.0
-title: Format-Table
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format Table
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293962
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Format-Table
 
@@ -37,7 +38,7 @@ To add a calculated property, use the Property or GroupBy parameters.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-pssnapin | format-table -auto
+PS C:\> get-pssnapin | format-table -auto
 ```
 
 This command formats information about Windows PowerShell snap-ins in a table.
@@ -49,7 +50,7 @@ The Autosize parameter adjusts the column widths to minimize truncation.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-process | sort-object -property basepriority | format-table -groupby basepriority -wrap
+PS C:\> get-process | sort-object -property basepriority | format-table -groupby basepriority -wrap
 ```
 
 This command displays the processes on the computer in groups with the same base priority.
@@ -63,7 +64,7 @@ The Wrap parameter ensures that data is not truncated.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-process | sort-object starttime | format-table -view starttime
+PS C:\> get-process | sort-object starttime | format-table -view starttime
 ```
 
 This command displays information about the processes on the computer in group based on the start date of the process.
@@ -78,7 +79,7 @@ The DotNetTypes.format.ps1xml formatting file also contains a Priority view for 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-service | format-table -property Name, DependentServices
+PS C:\> get-service | format-table -property Name, DependentServices
 ```
 
 This command displays all of the services on the computer in a table with two columns, Name and DependentServices.
@@ -92,7 +93,7 @@ To view all of the properties, type "get-service | get-member".
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-process notepad | format-table ProcessName, @{Label="TotalRunningTime"; Expression={(get-date) - $_.StartTime}}
+PS C:\> get-process notepad | format-table ProcessName, @{Label="TotalRunningTime"; Expression={(get-date) - $_.StartTime}}
 ```
 
 This command shows how to use a calculated property in a table.
@@ -109,8 +110,8 @@ The expression gets the StartTime property of each process object and subtracts 
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$processes = get-wmiobject -ComputerName Server01 win32_process -filter "name='notepad.exe'"
-PS C:\>$processes | format-table ProcessName, @{ Label = "Total  Running Time"; Expression={(get-date) - $_.ConvertToDateTime($_.CreationDate)}}
+PS C:\> $processes = get-wmiobject -ComputerName Server01 win32_process -filter "name='notepad.exe'"
+PS C:\> $processes | format-table ProcessName, @{ Label = "Total  Running Time"; Expression={(get-date) - $_.ConvertToDateTime($_.CreationDate)}}
 ```
 
 These commands are similar to the previous command, except that these commands use the Get-WmiObject cmdlet and the Win32_Process class to display information about Notepad processes on a remote computer.

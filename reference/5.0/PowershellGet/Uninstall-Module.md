@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSGet-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821673
-schema: 2.0.0
-title: Uninstall-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Uninstall Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821673
+external help file:   PSGet-help.xml
+---
+
 
 # Uninstall-Module
 
@@ -39,7 +40,7 @@ You cannot uninstall a module if it has other modules as dependencies.
 
 ### Example 1: Get a module and uninstall it
 ```
-PS C:\>Get-InstalledModule -Name "xPSDesiredStateConfiguration" -RequiredVersion 3.6.0.0 | Uninstall-Module
+PS C:\> Get-InstalledModule -Name "xPSDesiredStateConfiguration" -RequiredVersion 3.6.0.0 | Uninstall-Module
 ```
 
 This command gets version 3.6.0.0 of the module named xPSDesiredStateConfiguration, and then uses the pipeline operator to pass it to the **Uninstall-Module** cmdlet, which uninstalls it.
@@ -47,7 +48,7 @@ This command gets version 3.6.0.0 of the module named xPSDesiredStateConfigurati
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -155,7 +156,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

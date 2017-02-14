@@ -1,25 +1,18 @@
-﻿---
-title: about_Special_Characters
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Special_Characters
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Special_Characters
+ms.technology:  powershell
+---
+
 # About Special Characters
 ## about_Special_Characters
-# TOPIC
 
-about_Special_Characters
 
 # SHORT DESCRIPTION
 
@@ -153,6 +146,6 @@ about_Symbols
 
 # SEE ALSO
 
-about_Quoting_Rules
-about_Escape_Characters
+[about_Quoting_Rules](about_Quoting_Rules.md)
 
+[about_Escape_Characters](about_Escape_Characters.md)

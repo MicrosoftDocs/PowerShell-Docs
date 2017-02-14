@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113322
-schema: 2.0.0
-title: Get-Member
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Member
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113322
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-Member
 ## SYNOPSIS
@@ -33,7 +34,7 @@ To get only certain types of members, such as NoteProperties, use the MemberType
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-service | get-member
+PS C:\> get-service | get-member
 TypeName: System.ServiceProcess.ServiceController
 
 Name                      MemberType    Definition
@@ -78,8 +79,8 @@ Because the Get-Member part of the command does not have any parameters, it uses
 As such, it gets all member types, but it does not get static members and does not display intrinsic members.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-service | get-member -force
-PS C:\>(get-service -schedule).psbase
+PS C:\> get-service | get-member -force
+PS C:\> (get-service -schedule).psbase
 ```
 
 This example gets all of the members (properties and methods) of the service objects (System.ServiceProcess.ServiceController) retrieved by the Get-Service cmdlet, including the intrinsic members, such as PSBase and PSObject, and the get_ and set_ methods.
@@ -94,7 +95,7 @@ You can use these properties and methods in the same way that you would use an a
 The second command shows how to display the value of the PSBase property of the Schedule service.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-service| get-member -view extended
+PS C:\> get-service| get-member -view extended
 TypeName: System.ServiceProcess.ServiceController
 
 Name MemberType    Definition
@@ -108,7 +109,7 @@ The Get-Member command uses the View parameter to get only the extended members 
 In this case, the extended member is the Name property, which is an alias property of the ServiceName property.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-eventlog -log system | gm -membertype scriptproperty
+PS C:\> get-eventlog -log system | gm -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
 
 Name    MemberType     Definition
@@ -120,7 +121,7 @@ This command gets the script properties of event log objects in the System log i
 In this case, the only script property is the EventID.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-eventlog -log system | get-member -membertype scriptproperty
+PS C:\> get-eventlog -log system | get-member -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
 
 Name    MemberType     Definition
@@ -135,8 +136,8 @@ The command uses the MemberType parameter to get only objects with a value of Al
 The command returns the EventID property of the EventLog object.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$a = "get-process", "get-service", "get-culture", "get-psdrive", "get-executionpolicy"
-PS C:\>foreach ($cmdlet in $a) {invoke-command $cmdlet | get-member -name machinename}
+PS C:\> $a = "get-process", "get-service", "get-culture", "get-psdrive", "get-executionpolicy"
+PS C:\> foreach ($cmdlet in $a) {invoke-command $cmdlet | get-member -name machinename}
 TypeName: System.Diagnostics.Process
 
 Name        MemberType Definition
@@ -159,10 +160,10 @@ The second command uses a ForEach statement to invoke each command, send the res
 The results show that only process objects (System.Diagnostics.Process) and service objects (System.ServiceProcess.ServiceController) have a MachineName property.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>$a = get-member -inputobject @(1)
-PS C:\>$a.count
+PS C:\> $a = get-member -inputobject @(1)
+PS C:\> $a.count
 1
-PS C:\>$a = get-member -inputobject 1,2,3
+PS C:\> $a = get-member -inputobject 1,2,3
 TypeName: System.Object[]
 
 Name               MemberType    Definition
@@ -171,7 +172,7 @@ Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS C:\>$a.count
+PS C:\> $a.count
 1
 ```
 
@@ -186,8 +187,8 @@ The third command uses the Get-Member cmdlet to get the properties and methods o
 The fourth command uses the Count property of the array to find the number of objects in the $a variable.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$file = get-item c:\test\textFile.txt
-PS C:\>$file.psobject.properties | where-object {$_.issettable} | format-table -property name
+PS C:\> $file = get-item c:\test\textFile.txt
+PS C:\> $file.psobject.properties | where-object {$_.issettable} | format-table -property name
 
 Name
 ----
@@ -206,7 +207,7 @@ LastWriteTime
 LastWriteTimeUtc
 Attributes
 
-PS C:\>[appdomain]::CurrentDomain.GetAssemblies() | foreach-object { $_.getexportedtypes() } | foreach-object {$_.getproperties() | where-object {$_.canwrite }} | select-object reflectedtype, name
+PS C:\> [appdomain]::CurrentDomain.GetAssemblies() | foreach-object { $_.getexportedtypes() } | foreach-object {$_.getproperties() | where-object {$_.canwrite }} | select-object reflectedtype, name
 ```
 
 This example shows how to determine which properties of an object can be changed.
@@ -219,8 +220,8 @@ The second command gets all of the changeable properties of the file object in t
 The third command gets the changeable properties of all objects in your Windows PowerShell session.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>$s = get-service
-PS C:\>$s | get-member
+PS C:\> $s = get-service
+PS C:\> $s | get-member
 TypeName: System.ServiceProcess.ServiceController
 
 Name                      MemberType    Definition
@@ -233,7 +234,7 @@ Continue                  Method        System.Void Continue()
 CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(type requestedTy
 Dispose                   Method        System.Void Dispose()
 ...
-PS C:\>get-member -inputObject $s
+PS C:\> get-member -inputObject $s
 TypeName: System.Object[]
 
 Name           MemberType    Definition

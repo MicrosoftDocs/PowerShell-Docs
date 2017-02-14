@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293910
-schema: 2.0.0
-title: Set-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293910
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Set-Item
 
@@ -40,28 +41,28 @@ The Set-Item cmdlet changes the value of an item, such as a variable or registry
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-item -path alias:np -value c:\windows\notepad.exe
+PS C:\> set-item -path alias:np -value c:\windows\notepad.exe
 ```
 
 This command creates an alias of "np" for Notepad.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-item -path env:UserRole -value Administrator
+PS C:\> set-item -path env:UserRole -value Administrator
 ```
 
 This command uses the Set-Item cmdlet to change the value of the "UserRole" environment variable to "Administrator".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Get-Location) + '> '}
+PS C:\> set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Get-Location) + '> '}
 ```
 
 This command uses the Set-Item cmdlet to change the "prompt" function so that it displays the time before the path.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-item -path function:prompt -options "AllScope,ReadOnly"
+PS C:\> set-item -path function:prompt -options "AllScope,ReadOnly"
 ```
 
 This command sets the AllScope and ReadOnly options for the "prompt" function.
@@ -231,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -247,7 +248,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

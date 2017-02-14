@@ -1,23 +1,17 @@
-﻿---
-title: about_Hash_Tables
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Hash_Tables
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Hash_Tables
+ms.technology:  powershell
+---
+
 # About Hash Tables
 ## about_Hash_Tables
-about_Hash_Tables
 
 
 ## SHORT DESCRIPTION
@@ -483,17 +477,17 @@ For more information about here-strings, see about_Quoting_Rules.
 
 
 ## SEE ALSO
-about_Arrays
 
-about_Object_Creation
+[about_Arrays](about_Arrays.md)
 
-about_Quoting_Rules
+[about_Object_Creation](about_Object_Creation.md)
 
-about_Script_Internationalization
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Script_Internationalization](about_Script_Internationalization.md)
 
 ConvertFrom-StringData
 
 Import-LocalizedData
 
 "System.Collections.Hashtable" on MSDN
-

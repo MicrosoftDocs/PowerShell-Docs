@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821587
-schema: 2.0.0
-title: Get-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821587
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Item
 
@@ -42,7 +43,7 @@ This cmdlet is used by Windows PowerShell providers to navigate through differen
 
 ### Example 1: Get the current directory
 ```
-PS C:\>Get-Item .
+PS C:\> Get-Item .
 
 
 
@@ -59,7 +60,7 @@ The dot (.) represents the item at the current location (not its contents).
 
 ### Example 2: Get all the items in the current directory
 ```
-PS C:\>Get-Item *
+PS C:\> Get-Item *
 
 
 
@@ -87,7 +88,7 @@ The wildcard character (*) represents all the contents of the current item.
 
 ### Example 3: Get the current directory of a drive
 ```
-PS C:\>Get-Item C:\
+PS C:\> Get-Item C:\
 ```
 
 This command gets the current directory of the C: drive.
@@ -95,7 +96,7 @@ The object that is retrieved represents only the directory, not its contents.
 
 ### Example 4: Get items in the specified drive
 ```
-PS C:\>Get-Item C:\*
+PS C:\> Get-Item C:\*
 ```
 
 This command gets the items in the C: drive.
@@ -106,7 +107,7 @@ The format is interpreted literally, so *.* would not retrieve directories or fi
 
 ### Example 5: Get a property in the specified directory
 ```
-PS C:\>(Get-Item C:\Windows).LastAccessTime
+PS C:\> (Get-Item C:\Windows).LastAccessTime
 ```
 
 This command gets the LastAccessTime property of the C:\Windows directory.
@@ -115,7 +116,7 @@ To see all of the properties of a directory, type `(Get-Item \<directory-name\>)
 
 ### Example 6: Show the contents of a registry key
 ```
-PS C:\>Get-Item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
+PS C:\> Get-Item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
 ```
 
 This command shows the contents of the Microsoft.PowerShell registry key.
@@ -123,7 +124,7 @@ You can use this cmdlet with the Windows PowerShell Registry provider to get reg
 
 ### Example 7: Get items in a directory that have an exclusion
 ```
-PS C:\>Get-Item c:\Windows\*.* -exclude "w*"
+PS C:\> Get-Item c:\Windows\*.* -exclude "w*"
 ```
 
 This command gets items in the Windows directory with names that include a dot (.), but do not begin with w*.

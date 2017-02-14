@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Workflow.ServiceCore.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821721
-schema: 2.0.0
-title: New-PSWorkflowExecutionOption
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New PSWorkflowExecutionOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821721
+external help file:   Microsoft.PowerShell.Workflow.ServiceCore.dll-Help.xml
+---
+
 
 # New-PSWorkflowExecutionOption
 
@@ -49,7 +50,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a workflow options object
 ```
-PS C:\>New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedSessions 200
+PS C:\> New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedSessions 200
 SessionThrottleLimit                       : 100
 PersistencePath                            : C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell\WF\PS
 MaxPersistenceStoreSizeGB                  : 10
@@ -75,11 +76,11 @@ The output shows the object that the cmdlet returns.
 ### Example 2: Using a workflow options object
 ```
 The first command uses the **New-PSWorkflowExecutionOption** cmdlet to create a workflow options object. The command saves the object in the $wo variable.
-PS C:\>$wo = New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedSessions 200
+PS C:\> $wo = New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedSessions 200
 
 
 The second command uses the Register-PSSessionConfiguration cmdlet to create the ITWorkflows session configuration. To set the workflow options in the session configuration, the command uses the *SessionTypeOption* parameter. The value of the *SessionTypeOption* parameter is the workflow options object in the $wo variable. The command also uses the *Force* parameter to suppress confirmations prompts.
-PS C:\>Register-PSSessionConfiguration -Name ITWorkflows -SessionTypeOption $wo -Force
+PS C:\> Register-PSSessionConfiguration -Name ITWorkflows -SessionTypeOption $wo -Force
     WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
 Type            Keys                                Name
@@ -87,7 +88,7 @@ Type            Keys                                Name
 Container       {Name=ITWorkflows}                  ITWorkflows
 
 The third command shows the workflow options in the session configuration. The command uses the Get-PSSessionConfiguration cmdlet to the get the ITWorkflows session configuration and the Format-List cmdlet to display all properties of the session configuration in a list.The output shows that the workflow options in the session configuration. Specifically, the session configuration has a **MaxSessionsPerWorkflow** property that has a value of 10 and a **MaxDisconnectedSessions** property that has a value of 200.
-PS C:\>Get-PSSessionConfiguration ITWorkflows | Format-List -Property *
+PS C:\> Get-PSSessionConfiguration ITWorkflows | Format-List -Property *
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
 ResourceUri                   : http://schemas.microsoft.com/powershell/ITWorkflows

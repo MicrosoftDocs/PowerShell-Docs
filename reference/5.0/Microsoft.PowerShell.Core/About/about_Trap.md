@@ -1,23 +1,17 @@
-﻿---
-title: about_Trap
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Trap
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Trap
+ms.technology:  powershell
+---
+
 # About Trap
 ## about_Trap
-about_Trap
 
 
 ## SHORT DESCRIPTION
@@ -285,13 +279,13 @@ The function resumes after the error is trapped, and the "Function completed" st
 
 
 ## SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_Scopes
+[about_Continue](about_Continue.md)
 
-about_Throw
+[about_Scopes](about_Scopes.md)
 
-about_Try_Catch_Finally
+[about_Throw](about_Throw.md)
 
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)

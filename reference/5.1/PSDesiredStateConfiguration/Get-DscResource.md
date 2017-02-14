@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSDesiredStateConfiguration-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822024
-schema: 2.0.0
-title: Get-DscResource
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get DscResource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821458
+external help file:   PSDesiredStateConfiguration-help.xml
+---
+
 
 # Get-DscResource
 
@@ -48,7 +49,7 @@ This command gets the WindowsFeature resource.
 
 ### Example 3: Get all the resources from a module
 ```
-PS C:\>Get-DscResource -Module "xHyper-V"
+PS C:\> Get-DscResource -Module "xHyper-V"
 ```
 
 This command gets all the resources from the xHyper-V module.
@@ -76,7 +77,7 @@ This command gets the User resource, and then uses the pipeline operator to retu
 
 ### Example 7: Get all the resources from a specified module with a specified version
 ```
-PS C:\>Get-DscResource -Module @{ModuleName='xHyper-V';RequiredVersion='3.0.0.0'}
+PS C:\> Get-DscResource -Module @{ModuleName='xHyper-V';RequiredVersion='3.0.0.0'}
 ```
 
 This command gets all the resources from xHyper-V module with version 3.0.0.0.

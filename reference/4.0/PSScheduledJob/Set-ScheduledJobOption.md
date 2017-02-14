@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290634
-schema: 2.0.0
-title: Set-ScheduledJobOption
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set ScheduledJobOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290634
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Set-ScheduledJobOption
 
@@ -55,7 +56,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ### Example 1: Change job options
 ```
 The first command uses the Get-ScheduledJobOption cmdlet to get the job options of the DeployPackage scheduled job. The output shows that the WakeToRun and RunElevated properties are set to False.This command is not required; it is included only to show the effect of the option change.
-PS C:\>Get-ScheduledJobOption -Name DeployPackage
+PS C:\> Get-ScheduledJobOption -Name DeployPackage
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -72,7 +73,7 @@ MultipleInstancePolicy : IgnoreNew
 JobDefinition          :
 
 The second command uses the **Set-ScheduledJobOpton** cmdlet to change the job options so the values of the **WakeToRun** and **RunWithoutNetwork** properties are True. The command uses the **Passthru** parameter to return the trigger after the change.
-PS C:\>Get-ScheduledJobOption -Name DeployPackage | Set-ScheduledJobOption -WakeToRun -RequireNetwork:$False -Passthru
+PS C:\> Get-ScheduledJobOption -Name DeployPackage | Set-ScheduledJobOption -WakeToRun -RequireNetwork:$False -Passthru
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : True
@@ -92,7 +93,7 @@ This example shows how to change the options of a scheduled job on the local com
 
 ### Example 2: Change an option on all remote scheduled jobs
 ```
-PS C:\>Invoke-Command -Computer Server01 -ScriptBlock {Get-ScheduledJob | Get-ScheduledJobOption | Set-ScheduledJobOption -IdleTimeout 2:00:00}
+PS C:\> Invoke-Command -Computer Server01 -ScriptBlock {Get-ScheduledJob | Get-ScheduledJobOption | Set-ScheduledJobOption -IdleTimeout 2:00:00}
 ```
 
 This command changes the value of the IdleTimeout from one hour (the default value) to two hours on all scheduled jobs on the Server01 computer.

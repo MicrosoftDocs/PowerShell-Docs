@@ -1,19 +1,20 @@
-﻿---
-title: Microsoft.PowerShell.Utility
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.Utility
-Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822378
-Help Version: 5.1.0.2
-Locale: en-US
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Utility
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.Utility
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390818
+Help Version:   5.1.1.0
+Module Guid:   1da87e53-152b-403e-98dc-74d7b4d63d59
+---
+
 
 # Microsoft.PowerShell.Utility Module
 ## Description
@@ -25,7 +26,7 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 
 
 ### [Add-Type](Add-Type.md)
-Adds a.NET Framework type (a class) to a Windows PowerShell session.
+Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 
 ### [Clear-Variable](Clear-Variable.md)

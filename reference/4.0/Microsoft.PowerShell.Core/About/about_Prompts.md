@@ -1,23 +1,17 @@
-﻿---
-title: about_Prompts
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Prompts
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Prompts
+ms.technology:  powershell
+---
+
 # About Prompts
 ## about_Prompts
-about_Prompts
 
 
 ## SHORT DESCRIPTION
@@ -25,7 +19,7 @@ Describes the Prompt function and demonstrates how to create a custom Prompt fun
 
 
 ## LONG DESCRIPTION
-The  Windows PowerShell� command prompt indicates that  Windows PowerShell is ready to run a command:
+The  Windows PowerShell® command prompt indicates that  Windows PowerShell is ready to run a command:
 
 
 ```
@@ -68,7 +62,7 @@ For example:
 
 
 ```
-PS C:\>Get-Command Prompt  
+PS C:\> Get-Command Prompt  
   
 CommandType     Name                                               ModuleName  
 -----------     ----                                               ----------  
@@ -82,7 +76,7 @@ For example:
 
 
 ```
-PS C:\>(Get-Command Prompt).ScriptBlock  
+PS C:\> (Get-Command Prompt).ScriptBlock  
   
 "PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "  
 # .Link  
@@ -309,6 +303,7 @@ Like any function, the Prompt function exists only in the current session. To sa
 
 
 ## SEE ALSO
+
 Get-Location
 
 Enter-PSSession
@@ -319,13 +314,12 @@ Get-Random
 
 Write-Host
 
-about_Profiles
+[about_Profiles](about_Profiles.md)
 
-about_Functions
+[about_Functions](about_Functions.md)
 
-about_Scopes
+[about_Scopes](about_Scopes.md)
 
-about_Debuggers
+[about_Debuggers](about_Debuggers.md)
 
-about_Automatic_Variables
-
+[about_Automatic_Variables](about_Automatic_Variables.md)

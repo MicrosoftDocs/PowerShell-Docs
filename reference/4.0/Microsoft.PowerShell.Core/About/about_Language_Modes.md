@@ -1,25 +1,18 @@
-﻿---
-title: about_Language_Modes
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Language_Modes
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Language_Modes
+ms.technology:  powershell
+---
+
 # About Language Modes
 ## about_Language_Modes
-# TOPIC
 
-about_Language_Modes
 
 # SHORT DESCRIPTION
 
@@ -216,7 +209,7 @@ configuration file, the session configuration has a LanguageMode
 property. You can find the language mode by getting the value
 of the LanguageMode property.
 
-PS C:>(Get-PSSessionConfiguration -Name Test).LanguageMode
+PS C:> (Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 
 On other session configurations, you can find the language
@@ -230,7 +223,7 @@ ConstrainedLanguage session by getting the value of the
 LanguageMode property of the session state.
 
 For example:
-PS C:>$ExecutionContext.SessionState.LanguageMode
+PS C:> $ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 
 However, in sessions with  RestrictedLanguage and
@@ -268,7 +261,8 @@ about_RestrictedLanguage
 
 # SEE ALSO
 
-about_Session_ConfigurationFiles
-about_Session_Configurations
-about_Windows_RT
+[about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 
+[about_Session_Configurations](about_Session_Configurations.md)
+
+[about_Windows_RT](about_Windows_RT.md)

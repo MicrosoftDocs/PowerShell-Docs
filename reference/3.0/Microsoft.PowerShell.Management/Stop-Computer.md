@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135263
-schema: 2.0.0
-title: Stop-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135263
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Stop-Computer
 ## SYNOPSIS
@@ -35,21 +36,21 @@ This cmdlet does not require Windows PowerShell remoting unless you use the AsJo
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>stop-computer
+PS C:\> stop-computer
 ```
 
 This command shuts down the local computer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>stop-computer -computername Server01, Server02, localhost
+PS C:\> stop-computer -computername Server01, Server02, localhost
 ```
 
 This command stops two remote computers, Server01 and Server02, and the local computer, identified as "localhost".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$j = stop-computer -computername Server01, Server02 -asjob
-PS C:\>$results = $j | receive-job
-PS C:\>$results
+PS C:\> $j = stop-computer -computername Server01, Server02 -asjob
+PS C:\> $results = $j | receive-job
+PS C:\> $results
 ```
 
 These commands run a Stop-Computer command as a background job on two remote computers, and then get the results.
@@ -65,16 +66,16 @@ The third command displays the result saved in the $results variable.
 Because the AsJob parameter creates the job on the local computer and automatically returns the results to the local computer, you can run the Receive-Job command as a local command.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>stop-computer -comp Server01 -impersonation anonymous -authentication PacketIntegrity
+PS C:\> stop-computer -comp Server01 -impersonation anonymous -authentication PacketIntegrity
 ```
 
 This command restarts the Server01 remote computer.
 The command uses customized impersonation and authentication settings.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$s = get-content domain01.txt
-PS C:\>$c = get-credential domain01\admin01
-PS C:\>stop-computer -computername $s -force -throttlelimit 10 -credential $c
+PS C:\> $s = get-content domain01.txt
+PS C:\> $c = get-credential domain01\admin01
+PS C:\> stop-computer -computername $s -force -throttlelimit 10 -credential $c
 ```
 
 These commands force an immediate shut down of all of the computers in Domain01.
@@ -248,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -264,7 +265,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

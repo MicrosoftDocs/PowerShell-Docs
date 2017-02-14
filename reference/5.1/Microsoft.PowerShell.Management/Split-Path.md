@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822283
-schema: 2.0.0
-title: Split-Path
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Split Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821637
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Split-Path
 
@@ -66,7 +67,7 @@ You can use this cmdlet to get or submit only a selected part of a path.
 
 ### Example 1: Get the qualifier of a path
 ```
-PS C:\>Split-Path -Path "HKCU:\Software\Microsoft" -Qualifier
+PS C:\> Split-Path -Path "HKCU:\Software\Microsoft" -Qualifier
 HKCU:
 ```
 
@@ -75,7 +76,7 @@ The qualifier is the drive.
 
 ### Example 2: Display file names
 ```
-PS C:\>Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
+PS C:\> Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
 Pass1.log
 Pass2.log
 ...
@@ -91,7 +92,7 @@ It does not return **FileInfo** objects that represent the files.
 
 ### Example 3: Get the parent container
 ```
-PS C:\>Split-Path -Path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
+PS C:\> Split-Path -Path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
 C:\WINDOWS\system32\WindowsPowerShell\V1.0
 ```
 
@@ -100,7 +101,7 @@ Because it does not include any parameters to specify the split, **Split-Path** 
 
 ### Example 4: Determines whether a path is absolute
 ```
-PS C:\>Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
+PS C:\> Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
 False
 ```
 
@@ -109,7 +110,7 @@ In this case, because the path is relative to the current folder, which is repre
 
 ### Example 5: Change location to a specified path
 ```
-PS C:\>Set-Location (Split-Path -Path $profile)
+PS C:\> Set-Location (Split-Path -Path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
 ```
 
@@ -123,7 +124,7 @@ This is a useful way to move to a folder that has a long path name.
 
 ### Example 6: Split a path by using the pipeline
 ```
-PS C:\>'C:\Documents and Settings\User01\My Documents\My Pictures' | Split-Path
+PS C:\> 'C:\Documents and Settings\User01\My Documents\My Pictures' | Split-Path
 C:\Documents and Settings\User01\My Documents
 ```
 

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223914
-schema: 2.0.0
-title: Remove-JobTrigger
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove JobTrigger
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223914
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Remove-JobTrigger
 ## SYNOPSIS
@@ -53,13 +54,13 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Delete all job triggers
 ```
-PS C:\>Remove-JobTrigger -Name Test*
+PS C:\> Remove-JobTrigger -Name Test*
 ```
 
 This command deletes all job triggers from scheduled job that have names that begin with "Test".
 ### Example 2: Delete selected job triggers
 ```
-PS C:\>Remove-JobTrigger -Name BackupArchive -TriggerID 3
+PS C:\> Remove-JobTrigger -Name BackupArchive -TriggerID 3
 ```
 
 This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
@@ -88,7 +89,7 @@ The value of the **InputObject** parameter of **Remove-JobTrigger** is the sched
 The value of the **TriggerID** parameter is the identifier in the **ID** property of the job trigger.
 ### Example 4: Delete a job trigger from a remote scheduled job
 ```
-PS C:\>Invoke-Command -ComputerName Server01 { Remove-JobTrigger -ID 38 -TriggerID 1 }
+PS C:\> Invoke-Command -ComputerName Server01 { Remove-JobTrigger -ID 38 -TriggerID 1 }
 ```
 
 This command deletes the first job trigger from the Inventory job on the Server01 computer.

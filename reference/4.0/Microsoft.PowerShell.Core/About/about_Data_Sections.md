@@ -1,25 +1,18 @@
-﻿---
-title: about_Data_Sections
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Data_Sections
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Data_Sections
+ms.technology:  powershell
+---
+
 # About Data Sections
 ## about_Data_Sections
-# TOPIC
 
-about_Data_Sections
 
 # SHORT DESCRIPTION
 
@@ -197,13 +190,20 @@ Format-XML -strings string1, string2, string3
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_Comparison_Operators
-about_Hash_Tables
-about_If
-about_Operators
-about_Quoting_Rules
-about_Script_Internationalization
-ConvertFrom-StringData
-Import-LocalizedData
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_Comparison_Operators](about_Comparison_Operators.md)
+
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_If](about_If.md)
+
+[about_Operators](about_Operators.md)
+
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Script_Internationalization](about_Script_Internationalization.md)
+
+ConvertFrom-StringData
+
+Import-LocalizedData

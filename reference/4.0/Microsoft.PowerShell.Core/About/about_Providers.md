@@ -1,25 +1,18 @@
-﻿---
-title: about_Providers
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Providers
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Providers
+ms.technology:  powershell
+---
+
 # About Providers
 ## about_Providers
-# TOPIC
 
-about_Providers
 
 # SHORT DESCRIPTION
 
@@ -287,5 +280,5 @@ get-help * -category provider
 # SEE ALSO
 
 about_Locations
-about_Path_Syntax
 
+[about_Path_Syntax](about_Path_Syntax.md)

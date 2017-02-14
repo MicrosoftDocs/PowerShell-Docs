@@ -1,23 +1,17 @@
-﻿---
-title: about_Requires
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Requires
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Requires
+ms.technology:  powershell
+---
+
 # About Requires
 ## about_Requires
-about_Requires
 
 
 ## SHORT DESCRIPTION
@@ -35,9 +29,9 @@ You can use \#Requires statements in any script. You cannot use them in function
 
 ```
 #Requires -Version <N>[.<n>]   
-#Requires –PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
+#Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]  
 #Requires -Modules { <Module-Name> | <Hashtable> }   
-#Requires –ShellId <ShellId>  
+#Requires -ShellId <ShellId>  
 #Requires -RunAsAdministrator
 ```
 
@@ -72,7 +66,7 @@ For example:
 
 
 ```
-#Requires –PSSnapin DiskSnapin -Version 1.2
+#Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
 
@@ -96,7 +90,7 @@ For example,
 
 
 ```
-#Requires -Modules PSWorkflow, @{ModuleName="PSScheduledJob";ModuleVersion=1.0.0.0}
+#Requires -Modules PSWorkflow, @{ModuleName="PSScheduledJob";ModuleVersion="1.0.0.0"}
 ```
 
 
@@ -108,7 +102,7 @@ For example,
 
 
 ```
-#Requires –ShellId MyLocalShell
+#Requires -ShellId MyLocalShell
 ```
 
 
@@ -130,8 +124,8 @@ The following script has two \#Requires statements. If the requirements specifie
 
 
 ```
-#Requires –Modules PSWorkflow  
- #Requires –Version 3  
+#Requires -Modules PSWorkflow  
+ #Requires -Version 3  
  Param  
 (  
     [parameter(Mandatory=$true)]  
@@ -148,11 +142,11 @@ In  Windows PowerShell 3.0, the  Windows PowerShell Core packages appear as modu
 
 
 ## SEE ALSO
-about_Automatic_Variables
 
-about_Language_Keywords
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
-about_PSSnapins
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_PSSnapins](about_PSSnapins.md)
 
 get-PSSnapin
-

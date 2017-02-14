@@ -1,25 +1,18 @@
-﻿---
-title: about_Parsing
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Parsing
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Parsing
+ms.technology:  powershell
+---
+
 # About Parsing
 ## about_Parsing
-# TOPIC
 
-about_Parsing
 
 # SHORT DESCRIPTION
 
@@ -118,5 +111,4 @@ X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 
 # SEE ALSO
 
-about_Command_Syntax
-
+[about_Command_Syntax](about_Command_Syntax.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113363
-schema: 2.0.0
-title: Out-File
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out File
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113363
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Out-File
 ## SYNOPSIS
@@ -37,7 +38,7 @@ You can use this cmdlet instead of the redirection operator (\>) when you need t
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-process | out-file -filepath C:\Test1\process.txt
+PS C:\> get-process | out-file -filepath C:\Test1\process.txt
 ```
 
 This command sends a list of processes on the computer to the Process.txt file.
@@ -45,7 +46,7 @@ If the file does not exist, Out-File creates it.
 Because the name of the FilePath parameter is optional, you can omit it and submit the equivalent command "get-process | outfile C:\Test1\process.txt".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-process | out-file C:\Test1\process.txt -noclobber
+PS C:\> get-process | out-file C:\Test1\process.txt -noclobber
 
 Out-File : File C:\Test1\process.txt already exists and NoClobber was specified.
 At line:1 char:23
@@ -56,8 +57,8 @@ This command also sends a list of processes to the Process.txt file, but it uses
 The output shows the error message that appears when NoClobber is used with an existing file.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a = get-process
-PS C:\>out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 50
+PS C:\> $a = get-process
+PS C:\> out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 50
 ```
 
 These commands send a list of processes on the computer to the Process.txt file.
@@ -73,9 +74,9 @@ It uses the Width parameter to limit each line in the file to 50 characters.
 Because the lines of output are truncated at 50 characters, the rightmost column in the process table is omitted.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-location hklm:\software
-PS C:\>get-acl mycompany\mykey | out-file -filepath c:\ps\acl.txt
-PS C:\>get-acl mycompany\mykey | out-file -filepath filesystem::acl.txt
+PS C:\> set-location hklm:\software
+PS C:\> get-acl mycompany\mykey | out-file -filepath c:\ps\acl.txt
+PS C:\> get-acl mycompany\mykey | out-file -filepath filesystem::acl.txt
 ```
 
 These commands show how to use the Out-File cmdlet when you are not in a FileSystem drive.
@@ -228,7 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -244,7 +245,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

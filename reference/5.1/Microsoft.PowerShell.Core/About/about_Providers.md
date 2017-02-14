@@ -1,25 +1,18 @@
-﻿---
-title: about_Providers
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Providers
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Providers
+ms.technology:  powershell
+---
+
 # About Providers
 ## about_Providers
-# TOPIC
 
-about_Providers
 
 # SHORT DESCRIPTION
 
@@ -73,7 +66,7 @@ You can also create your own Windows PowerShell providers, and you can
 install providers that others develop. To list the providers that are
 available in your session, type:
 
-get-psprovider
+Get-PSProvider
 
 # INSTALLING AND REMOVING PROVIDERS
 
@@ -87,7 +80,7 @@ about_PSSnapins.
 
 You cannot uninstall a provider, although you can remove the Windows
 PowerShell snap-in for the provider from the current session. If you do,
-you will remove all the contents of the snap-in, including its cmdlets.
+you remove all the contents of the snap-in, including its cmdlets.
 
 To remove a provider from the current session, use the Remove-PSSnapin
 cmdlet. This cmdlet does not uninstall the provider, but it makes
@@ -101,7 +94,7 @@ no longer available in that session.
 
 To view the Windows PowerShell providers on your computer, type:
 
-get-psprovider
+Get-PSProvider
 
 The output lists the built-in providers and the providers that you added
 to the session.
@@ -122,7 +115,7 @@ drive, you can use New-Item to create a new alias.
 
 For detailed information about any of the following cmdlets, type:
 
-get-help <cmdlet-name> -detailed
+Get-Help <cmdlet-name> -Detailed
 
 # CHILDITEM CMDLETS
 
@@ -199,7 +192,7 @@ but you can get information about the provider drive by using the
 Get-PSDrive cmdlet. For example, to get all the properties of the
 Function: drive, type:
 
-get-psdrive Function | format-list *
+Get-PSDrive Function | Format-List *
 
 You can view and move through the data in a provider drive just as
 you would on a file system drive.
@@ -208,23 +201,23 @@ To view the contents of a provider drive, use the Get-Item or Get-ChildItem
 cmdlets. Type the drive name followed by a colon (:). For example, to
 view the contents of the Alias: drive, type:
 
-get-item alias:
+Get-Item Alias:
 
 You can view and manage the data in any drive from another drive by
 including the drive name in the path. For example, to view the
 HKLM\Software registry key in the HKLM: drive from another drive, type:
 
-get-childitem hklm:\software
+Get-ChildItem HKLM:\SOFTWARE
 
 To open the drive, use the Set-Location cmdlet. Remember the colon
 when you specify the drive path. For example, to change your location
 to the root directory of the Cert: drive, type:
 
-set-location cert:
+Set-Location Cert:
 
 Then, to view the contents of the Cert: drive, type:
 
-get-childitem
+Get-ChildItem
 
 # MOVING THROUGH HIERARCHICAL DATA
 
@@ -237,14 +230,14 @@ drive:\location\child-location\...
 For example, to change your location to the HKLM\Software registry key,
 type a Set-Location command, such as:
 
-set-location hklm:\software
+Set-Location HKLM:\SOFTWARE
 
 You can also use relative references to locations. A dot (.) represents the
 current location. For example, if you are in the HKLM:\Software\Microsoft
 registry key, and you want to list the registry subkeys in the
 HKLM:\Software\Microsoft\PowerShell key, type the following command:
 
-get-childitem .\PowerShell
+Get-ChildItem .\PowerShell
 
 # FINDING DYNAMIC PARAMETERS
 
@@ -259,11 +252,11 @@ only when you use Get-Item or Get-ChildItem in the Cert: drive.
 For a list of the dynamic parameters that a provider supports, see the
 Help file for the provider. Type:
 
-get-help <provider-name>
+Get-Help <provider-name>
 
 For example:
 
-get-help certificate
+Get-Help Certificate
 
 # LEARNING ABOUT PROVIDERS
 
@@ -274,18 +267,18 @@ Microsoft Exchange Server mailboxes.
 
 For information about individual Windows PowerShell providers, type:
 
-get-help <ProviderName>
+Get-Help <ProviderName>
 
 For example:
 
-get-help registry
+Get-Help Registry
 
 For a list of Help topics about the providers, type:
 
-get-help * -category provider
+Get-Help * -Category provider
 
 # SEE ALSO
 
 about_Locations
-about_Path_Syntax
 
+[about_Path_Syntax](about_Path_Syntax.md)

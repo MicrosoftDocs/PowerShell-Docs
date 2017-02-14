@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822335
-schema: 2.0.0
-title: Set-PSRepository
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSRepository
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821671
+external help file:   PSModule-help.xml
+---
+
 
 # Set-PSRepository
 
@@ -34,14 +35,14 @@ The **Set-PSRepository** cmdlet sets values for a registered module repository.
 
 ### Example 1: Set the installation policy for a repository
 ```
-PS C:\>Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
+PS C:\> Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
 ```
 
 This command sets the installation policy for the myInternalSource repository to Trusted, so that users are not prompted before installing modules from that source.
 
 ### Example 2: Set the source and publish locations for a repository
 ```
-PS C:\>Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNuGetUrl.com/api/v2' -PublishLocation 'http://someNuGetUrl.com/api/v2/packages'
+PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNuGetUrl.com/api/v2' -PublishLocation 'http://someNuGetUrl.com/api/v2/packages'
 ```
 
 This command sets the source location and publish location for myInternalSource to the specified URIs.

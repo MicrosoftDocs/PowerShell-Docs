@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822244
-schema: 2.0.0
-title: Invoke-WmiMethod
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke WmiMethod
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821598
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Invoke-WmiMethod
 
@@ -77,7 +78,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.
 
 ### Example 1: List the required order of WMI objects
 ```
-PS C:\>([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
 __CLASS           : __PARAMETERS
 __SUPERCLASS      :
@@ -102,7 +103,7 @@ To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires tha
 
 ### Example 2: Start an instance of an application
 ```
-PS C:\>([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
 __CLASS                   : __PARAMETERS
 __SUPERCLASS              : 
@@ -116,7 +117,7 @@ __PATH                    :
 CommandLine               : 
 CurrentDirectory          : 
 ProcessStartupInformation : 
-PSComputerName            : PS C:\>Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
+PSComputerName            : PS C:\> Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 
@@ -138,7 +139,7 @@ The **ReturnValue** property is populated with a 0, and the **ProcessId** proper
 
 ### Example 3: Rename a file
 ```
-PS C:\>Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+PS C:\> Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
 __CLASS          : __PARAMETERS
 __SUPERCLASS     : 
@@ -308,7 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -481,7 +482,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

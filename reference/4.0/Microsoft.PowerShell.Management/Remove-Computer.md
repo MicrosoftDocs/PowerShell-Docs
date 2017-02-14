@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293894
-schema: 2.0.0
-title: Remove-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293894
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Remove-Computer
 
@@ -53,7 +54,7 @@ It includes credential parameters that specify alternate credentials for connect
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
+PS C:\> Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
 ```
 
 This command removes the local computer from the domain to which it is joined.
@@ -65,7 +66,7 @@ Because the command does not specify a workgroup name, the local computer is mov
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName Legacy -Force -Restart
+PS C:\> Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName Legacy -Force -Restart
 ```
 
 This command removes all of the computers that are listed in the OldServers.txt file from their domains and places them in the Legacy workgroup.
@@ -75,7 +76,7 @@ It uses the **Force** parameter to suppress the confirmation prompts for each co
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName Local -Restart -Force
+PS C:\> Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName Local -Restart -Force
 ```
 
 This command removes the Server01 remote computer and the local computer from their domains and adds them to the Local workgroup.
@@ -236,7 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -252,7 +253,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

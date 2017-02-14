@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113306
-schema: 2.0.0
-title: Get-Alias
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Alias
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113306
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
+
 
 # Get-Alias
 ## SYNOPSIS
@@ -40,7 +41,7 @@ Beginning in Windows PowerShell 3.0, Get-Alias displays non-hyphenated alias nam
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Alias
+PS C:\> Get-Alias
 CommandType     Name
 
 -----------     ----
@@ -72,13 +73,13 @@ The output shows the "\<alias\> -\> \<definition\>" format that was introduced i
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Alias -Name g*, s* -Exclude Get-*
+PS C:\> Get-Alias -Name g*, s* -Exclude Get-*
 ```
 
 This command gets all aliases that begin with "g" or "s", except for aliases that begin with "get-".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Alias -Definition Get-ChildItem
+PS C:\> Get-Alias -Definition Get-ChildItem
 ```
 
 This command gets the aliases for the Get-ChildItem cmdlet.
@@ -87,7 +88,7 @@ By default, the Get-Alias cmdlet gets the item name when you know the alias.
 The Definition parameter gets the alias when you know the item name.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
+PS C:\> Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
 ```
 
 This command retrieves all aliases in which the value of the Options property is ReadOnly.
@@ -97,7 +98,7 @@ Options is just one property of the AliasInfo objects that Get-Alias gets.
 To find all properties and methods of AliasInfo objects, type "Get-Alias | get-member".
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-Alias -Definition "*-PSSession" -Exclude e* -Scope Global
+PS C:\> Get-Alias -Definition "*-PSSession" -Exclude e* -Scope Global
 ```
 
 This example gets aliases for commands that have names that end in "-PSSession", except for those that begin with "e".

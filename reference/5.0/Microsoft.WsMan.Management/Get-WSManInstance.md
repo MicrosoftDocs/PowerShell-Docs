@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821729
-schema: 2.0.0
-title: Get-WSManInstance
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get WSManInstance
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821729
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
+---
+
 
 # Get-WSManInstance
 
@@ -48,7 +49,7 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 
 ### Example 1: Get all information from WMI
 ```
-PS C:\>Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
+PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -95,7 +96,7 @@ This command returns all of the information that Windows Management Instrumentat
 
 ### Example 2: Get the status of the Spooler service
 ```
-PS C:\>Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
+PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
 XmlFragment=OK
 ```
 
@@ -103,7 +104,7 @@ This command returns only the status of the **Spooler** service on the remote se
 
 ### Example 3: Get endpoint references for all services
 ```
-PS C:\>Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
+PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -143,7 +144,7 @@ This command returns endpoint references that correspond to all the services on 
 
 ### Example 4: Get services that meet specified criteria
 ```
-PS C:\>Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
+PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -185,7 +186,7 @@ This command lists all of the services that meet the following criteria on the r
 
 ### Example 5: Get listener configuration that matches criteria on the local computer
 ```
-PS C:\>Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
+PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -203,7 +204,7 @@ This command lists the WS-Management listener configuration on the local compute
 
 ### Example 6: Get listener configuration that matches criteria on a remote computer
 ```
-PS C:\>Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
+PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -221,7 +222,7 @@ This command lists the WS-Management listener configuration on the remote server
 
 ### Example 7: Get associated instances related to a specified instance
 ```
-PS C:\>Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
+PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
 p                         : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
 cim                       : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -348,7 +349,7 @@ You must enclose the filter in quotation marks, as shown in the example.
 
 ### Example 8: Get association instances related to a specified instance
 ```
-PS C:\>Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
+PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 ```
 
 This command gets association instances that are related to the specified instance (winrm).

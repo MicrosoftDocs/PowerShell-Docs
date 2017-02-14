@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821865
-schema: 2.0.0
-title: Tee-Object
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Tee Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821865
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Tee-Object
 
@@ -44,7 +45,7 @@ If **Tee-Object** is the last command in the pipeline, the command output is dis
 
 ### Example 1: Output processes to a file and to the console
 ```
-PS C:\>Get-Process | Tee-Object -FilePath "C:\Test1\testfile2.txt"
+PS C:\> Get-Process | Tee-Object -FilePath "C:\Test1\testfile2.txt"
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
 -------  ------    -----      ----- -----   ------    -- -----------
 83       4     2300       4520    39     0.30    4032 00THotkey
@@ -59,7 +60,7 @@ Because a second path is not specified, the processes are also displayed in the 
 
 ### Example 2: Output processes to a variable and Select-Object
 ```
-PS C:\>Get-Process notepad | Tee-Object -Variable proc | Select-Object processname,handles
+PS C:\> Get-Process notepad | Tee-Object -Variable proc | Select-Object processname,handles
 ProcessName                              Handles
 -----------                              -------
 notepad                                  43
@@ -74,7 +75,7 @@ Note that the $proc variable includes the default information returned by Get-Pr
 
 ### Example 3: Output system files to two log files
 ```
-PS C:\>Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "c:\test\AllSystemFiles.txt" -Append | Out-File c:\test\NewSystemFiles.txt
+PS C:\> Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "c:\test\AllSystemFiles.txt" -Append | Out-File c:\test\NewSystemFiles.txt
 ```
 
 This command saves a list of system files in a two log files, a cumulative file and a current file.

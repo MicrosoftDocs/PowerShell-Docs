@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821642
-schema: 2.0.0
-title: Stop-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821642
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Stop-Process
 
@@ -47,7 +48,7 @@ Also, you are prompted for confirmation unless you specify the *Force* parameter
 
 ### Example 1: Stop all instances of a process
 ```
-PS C:\>Stop-Process -Name "notepad"
+PS C:\> Stop-Process -Name "notepad"
 ```
 
 This command stops all instances of the Notepad process on the computer.
@@ -57,7 +58,7 @@ If you were to use the *Id* parameter to stop the same processes, you would have
 
 ### Example 2: Stop a specific instance of a process
 ```
-PS C:\>Stop-Process -Id 3952 -Confirm -PassThru
+PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
 Confirm
 Are you sure you want to perform this action? 
 Performing operation "Stop-Process" on Target "notepad (3952)". 
@@ -77,8 +78,8 @@ Without this parameter, there would be no display after a **Stop-Process** comma
 
 ### Example 3: Stop a process and detect that it has stopped
 ```
-PS C:\>calc
-PS C:\> $p = Get-Crocess -Name "calc"
+PS C:\> calc
+PS C:\> $p = Get-Process -Name "calc"
 PS C:\> Stop-Process -InputObject $p
 PS C:\> Get-Process | Where-Object {$_.HasExited}
 ```
@@ -100,7 +101,7 @@ To find all the properties, type `Get-Process | Get-Member`.
 
 ### Example 4: Stop a process not owned by the current user
 ```
-PS C:\>Get-Process -Name "lsass" | Stop-Process
+PS C:\> Get-Process -Name "lsass" | Stop-Process
 
 Stop-Process : Cannot stop process 'lsass (596)' because of the following error: Access is denied
 At line:1 char:34
@@ -130,7 +131,7 @@ As a result, the process is stopped without confirmation.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -229,7 +230,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223925
-schema: 2.0.0
-title: Unregister-ScheduledJob
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Unregister ScheduledJob
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223925
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Unregister-ScheduledJob
 ## SYNOPSIS
@@ -55,16 +56,16 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Delete a scheduled job
 ```
-PS C:\>Unregister-ScheduledJob TestJob
+PS C:\> Unregister-ScheduledJob TestJob
 ```
 
 This command deletes the TestJob scheduled job on the local computer.
 ### Example 2: Delete all scheduled jobs
 ```
-PS C:\>Get-ScheduledJob | Unregister-ScheduledJob -Force
+PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
  
                       
-PS C:\>Unregistered-ScheduledJob -Name * -Force
+PS C:\> Unregistered-ScheduledJob -Name * -Force
 ```
 
 This examples shows two different commands that delete all scheduled jobs on the local computer.
@@ -77,7 +78,7 @@ The second command uses the **Name** parameter of **Unregister-ScheduledJob** wi
 Both commands use the **Force** parameter, which deletes a scheduled job even if an instance of the job is running.
 ### Example 3: Delete a scheduled job on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName Server01 { Unregister-ScheduledJob -Name Test*}
+PS C:\> Invoke-Command -ComputerName Server01 { Unregister-ScheduledJob -Name Test*}
 ```
 
 This command deletes scheduled jobs with names that begin with "Test" on the Server01 remote computer.
@@ -151,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -167,7 +168,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

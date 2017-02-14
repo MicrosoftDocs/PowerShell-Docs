@@ -1,25 +1,19 @@
-﻿---
-title: about_Environment_Variables
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Environment_Variables
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Environment_Variables
+ms.technology:  powershell
+---
+
 # About Environment Variables
 ## about_Environment_Variables
 
 
-about_Environment_Variables
 
 # SHORT DESCRIPTION
 
@@ -273,5 +267,5 @@ For more information, see about_Modules.
 # SEE ALSO
 
 Environment (provider)
-about_Modules
 
+[about_Modules](about_Modules.md)

@@ -1,23 +1,17 @@
-﻿---
-title: about_Object_Creation
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Object_Creation
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Object_Creation
+ms.technology:  powershell
+---
+
 # About Object Creation
 ## about_Object_Creation
-about_Object_Creation
 
 
 ## SHORT DESCRIPTION
@@ -53,8 +47,8 @@ For example, the following command creates a Version object.
 
 
 ```
-PS C:\>$v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1  
-PS C:\>$v
+PS C:\> $v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1  
+PS C:\> $v
 ```
 
 
@@ -68,7 +62,7 @@ Major  Minor  Build  Revision
 
 
 ```
-PS C:\>$v | Get-Member  
+PS C:\> $v | Get-Member  
   
     TypeName: System.Version
 ```
@@ -118,7 +112,7 @@ The output of this function is a collection of custom objects formatted as a tab
 
 
 ```
-PS C:\>Test-Object  
+PS C:\> Test-Object  
   
 ModuleName        UICulture      Version  
 ---------         ---------      -------  
@@ -131,7 +125,7 @@ Users can manage the properties of the custom objects just as they do with stand
 
 
 ```
-PS C:\>(Test-Object).ModuleName  
+PS C:\> (Test-Object).ModuleName  
  PSScheduledJob  
  PSWorkflow
 ```
@@ -188,8 +182,8 @@ AssetID, Name, OS, Department
 
 
 ```
-PS C:\>$a = Import-Csv Servers.csv  
-PS C:\>$a  
+PS C:\> $a = Import-Csv Servers.csv  
+PS C:\> $a  
   
 AssetID        Name           OS                    Department  
 -------        ----           --                    ----------  
@@ -203,7 +197,7 @@ Use the Get-Member cmdlet to confirm the object type.
 
 
 ```
-PS C:\>$a | Get-Member
+PS C:\> $a | Get-Member
 ```
 
 
@@ -228,7 +222,7 @@ You can use the custom objects just as you would standard objects.
 
 
 ```
-PS C:\>$a | where {$_.OS -eq "Windows 8"}
+PS C:\> $a | where {$_.OS -eq "Windows 8"}
 ```
 
 
@@ -244,17 +238,17 @@ For more information, see the help topic for the Import-Csv cmdlet.
 
 
 ## SEE ALSO
-about_Objects
 
-about_Methods
+[about_Objects](about_Objects.md)
 
-about_Properties
+[about_Methods](about_Methods.md)
 
-about_Pipelines
+[about_Properties](about_Properties.md)
+
+[about_Pipelines](about_Pipelines.md)
 
 Get-Member
 
 Import-Csv
 
 New-Object
-

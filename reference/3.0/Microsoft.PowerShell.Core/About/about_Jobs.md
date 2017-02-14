@@ -1,25 +1,19 @@
-﻿---
-title: about_Jobs
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Jobs
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Jobs
+ms.technology:  powershell
+---
+
 # About Jobs
 ## about_Jobs
 
 
-about_Jobs
 
 # SHORT DESCRIPTION
 
@@ -95,7 +89,7 @@ returns all of the jobs that were started in the current session.
 
 For example, the following command gets the jobs in the current session.
 
-PS C:>Get-Job
+PS C:> Get-Job
 
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
 --  ----  ------------- -----      -----------  --------   -------
@@ -313,15 +307,24 @@ message : Access is denied.
 
 # SEE ALSO
 
-about_Remote_Jobs
-about_Job_Details
-about_Remote
-about_PSSessions
-Start-Job
-Get-Job
-Receive-Job
-Stop-Job
-Wait-Job
-Remove-Job
-Invoke-Command
+[about_Remote_Jobs](about_Remote_Jobs.md)
 
+[about_Job_Details](about_Job_Details.md)
+
+[about_Remote](about_Remote.md)
+
+[about_PSSessions](about_PSSessions.md)
+
+Start-Job
+
+Get-Job
+
+Receive-Job
+
+Stop-Job
+
+Wait-Job
+
+Remove-Job
+
+Invoke-Command

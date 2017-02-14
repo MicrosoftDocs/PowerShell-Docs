@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821641
-schema: 2.0.0
-title: Stop-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Stop Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821641
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Stop-Computer
 
@@ -39,21 +40,21 @@ This cmdlet does not require Windows PowerShell remoting unless you use the *AsJ
 
 ### Example 1: Shut down the local computer
 ```
-PS C:\>Stop-Computer
+PS C:\> Stop-Computer
 ```
 
 This command shuts down the local computer.
 
 ### Example 2: Shut down two remote computers and the local computer
 ```
-PS C:\>Stop-Computer -ComputerName "Server01", "Server02", "localhost"
+PS C:\> Stop-Computer -ComputerName "Server01", "Server02", "localhost"
 ```
 
 This command stops two remote computers, Server01 and Server02, and the local computer, identified as localhost.
 
 ### Example 3: Shut down remote computers as a background job
 ```
-PS C:\>$j = Stop-Computer -ComputerName "Server01", "Server02" -AsJob
+PS C:\> $j = Stop-Computer -ComputerName "Server01", "Server02" -AsJob
 PS C:\> $results = $j | Receive-Job
 PS C:\> $results
 ```
@@ -72,7 +73,7 @@ Because *AsJob* creates the job on the local computer and automatically returns 
 
 ### Example 4: Shut down a remote computer
 ```
-PS C:\>Stop-Computer -CompupterName "Server01" -Impersonation anonymous -Authentication PacketIntegrity
+PS C:\> Stop-Computer -CompupterName "Server01" -Impersonation anonymous -Authentication PacketIntegrity
 ```
 
 This command stops the Server01 remote computer.
@@ -80,7 +81,7 @@ The command uses customized impersonation and authentication settings.
 
 ### Example 5:
 ```
-PS C:\>$s = Get-Content Domain01.txt
+PS C:\> $s = Get-Content Domain01.txt
 PS C:\> $c = Get-Credential domain01\admin01
 PS C:\> Stop-Computer -ComputerName $s -Force -ThrottleLimit 10 -Credential $c
 ```
@@ -145,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -300,7 +301,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

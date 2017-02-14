@@ -1,25 +1,18 @@
-﻿---
-title: about_Arrays
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Arrays
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Arrays
+ms.technology:  powershell
+---
+
 # About Arrays
 ## about_Arrays
-# TOPIC
 
-about_Arrays
 
 # SHORT DESCRIPTION
 
@@ -93,13 +86,13 @@ The syntax of the array operator is as follows:
 You can use the array operator to create an array of zero or
 one object.
 
-PS C:>$a = @("One")
-PS C:>$a.Count
+PS C:> $a = @("One")
+PS C:> $a.Count
 # 1
 
 
-PS C:>$b = @()
-PS C:>$b.Count
+PS C:> $b = @()
+PS C:> $b.Count
 # 0
 
 
@@ -296,10 +289,14 @@ $a[-1]
 
 # SEE ALSO
 
-about_Assignment_Operators
-about_Hash_Tables
-about_Operators
-about_For
-about_Foreach
-about_While
+[about_Assignment_Operators](about_Assignment_Operators.md)
 
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Operators](about_Operators.md)
+
+[about_For](about_For.md)
+
+[about_Foreach](about_Foreach.md)
+
+[about_While](about_While.md)

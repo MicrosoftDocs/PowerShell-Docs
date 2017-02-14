@@ -1,25 +1,18 @@
-﻿---
-title: about_Suspend-Workflow
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Suspend-Workflow
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Suspend Workflow
+ms.technology:  powershell
+---
+
 # About Suspend-Workflow
 ## about_Suspend-Workflow
-# TOPIC
 
-about_Suspend-Workflow
 
 # SHORT DESCRIPTION
 
@@ -74,7 +67,7 @@ Suspend-Workflow
 (Get-Date)- $a
 }
 
-PS C:>Test-Suspend
+PS C:> Test-Suspend
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -91,13 +84,13 @@ To wait for the job to be resumed, use the Wait
 parameter, or use the Get-Job cmdlet to get the current
 job object.
 
-PS C:>Resume-Job -Name Job8
+PS C:> Resume-Job -Name Job8
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 8      Job8            PSWorkflowJob   Suspended     True            localhost            Test-Suspend
 
-PS C:>Get-Job -Name Job8
+PS C:> Get-Job -Name Job8
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -111,7 +104,7 @@ command that followed the Suspend-Workflow cmdlet. The value
 of the $a variable, which was populated before the suspension,
 is available to the workflow when it resumes.
 
-PS C:>Get-Job -Name Job8 | Receive-Job
+PS C:> Get-Job -Name Job8 | Receive-Job
 
 Days              : 0
 Hours             : 0

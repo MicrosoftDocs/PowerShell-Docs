@@ -1,17 +1,18 @@
-﻿---
-title: Add-Member
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-external help file: PSITPro4_Utility.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=293942
-schema: 2.0.0
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Member
+ms.technology:  powershell
+external help file:   PSITPro4_Utility.xml
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293942
+schema:   2.0.0
+---
+
 
 # Add-Member
 
@@ -67,10 +68,10 @@ For more information, see the **PassThru** parameter description.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$a = dir c:\ps-test\test.txt
-PS C:\>$a | Add-Member -NotePropertyName Status -NotePropertyValue Done
-PS C:\>$a | Add-Member Status Done
-PS C:\>$a.Status
+PS C:\> $a = dir c:\ps-test\test.txt
+PS C:\> $a | Add-Member -NotePropertyName Status -NotePropertyValue Done
+PS C:\> $a | Add-Member Status Done
+PS C:\> $a.Status
 Done
 ```
 
@@ -88,9 +89,9 @@ As the output shows, the value is "Done".
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = dir c:\ps-test\test.txt
-PS C:\>$a | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
-PS C:\>$a.FileLength
+PS C:\> $a = dir c:\ps-test\test.txt
+PS C:\> $a | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
+PS C:\> $a.FileLength
 2394
 ```
 
@@ -105,9 +106,9 @@ The third command uses dot notation to get the value of the new FileLength prope
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a = "A string"
-PS C:\>$a = $a | Add-Member @{StringUse="Display"} -PassThru
-PS C:\>$a.StringUse
+PS C:\> $a = "A string"
+PS C:\> $a = $a | Add-Member @{StringUse="Display"} -PassThru
+PS C:\> $a.StringUse
 Display
 ```
 
@@ -121,9 +122,9 @@ The key is the note property name, StringUse, and the value is the note property
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = "This is a string."
-PS C:\>$a = Add-Member -InputObject $a -MemberType ScriptMethod -Name PadBoth -Value {$p = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
-PS C:\>$a.Padboth()
+PS C:\> $a = "This is a string."
+PS C:\> $a = Add-Member -InputObject $a -MemberType ScriptMethod -Name PadBoth -Value {$p = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
+PS C:\> $a.Padboth()
 This is a string.
 ```
 
@@ -145,8 +146,8 @@ The third command uses dot notation to call the new PadBoth script method on the
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$event = Get-EventLog -LogName System -Newest 1
-PS C:\>$event.TimeWritten | Get-Member
+PS C:\> $event = Get-EventLog -LogName System -Newest 1
+PS C:\> $event.TimeWritten | Get-Member
 TypeName: System.DateTime
 
 Name                 MemberType     Definition
@@ -158,8 +159,8 @@ AddMilliseconds      Method         System.DateTime AddMilliseconds(double value
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
 
 
-PS C:\>Add-Member -InputObject $event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
-PS C:\>$event.When | Get-Member
+PS C:\> Add-Member -InputObject $event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
+PS C:\> $event.When | Get-Member
 TypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
@@ -189,7 +190,7 @@ The command pipes the method value to the **Get-Member** cmdlet to confirm that 
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>function Copy-Property ($From, $To)
+PS C:\> function Copy-Property ($From, $To)
 {     foreach ($p in Get-Member -InputObject $From -MemberType Property)
   {     Add-Member -InputObject $To -MemberType NoteProperty -Name $p.Name
      -Value $From.$($p.Name) -Force     $To.$($p.Name) = $From.$($p.Name)
@@ -211,10 +212,10 @@ The last command in the function gives the new property the same name as the ori
 
 ### Example 7
 ```
-PS C:\>$Asset = New-Object -TypeName PSObject
-PS C:\>$d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
-PS C:\>$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-PS C:\>$Asset | Get-Member
+PS C:\> $Asset = New-Object -TypeName PSObject
+PS C:\> $d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
+PS C:\> $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
+PS C:\> $Asset | Get-Member
    TypeName: Asset
 
 Name        MemberType   Definition

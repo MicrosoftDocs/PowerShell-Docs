@@ -1,25 +1,19 @@
-﻿---
-title: about_Session_Configuration_Files
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Session_Configuration_Files
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Session_Configuration_Files
+ms.technology:  powershell
+---
+
 # About Session Configuration Files
 ## about_Session_Configuration_Files
 
 
-about_Session_Configuration_Files
 
 # SHORT DESCRIPTION
 
@@ -376,16 +370,26 @@ an empty session.
 
 # SEE ALSO
 
-about_Session_Configurations
-New-PSSession
-Disable-PSSessionConfiguration
-Enable-PSSessionConfiguration
-Get-PSSessionConfiguration
-New-PSSessionConfigurationFile
-Register-PSSessionConfiguration
-Set-PSSessionConfiguration
-Test-PSSessionConfigurationFile
-Unregister-PSSessionConfiguration
-Get-PSSessionCapability
-New-PSRoleCapabilityFile
+[about_Session_Configurations](about_Session_Configurations.md)
 
+New-PSSession
+
+Disable-PSSessionConfiguration
+
+Enable-PSSessionConfiguration
+
+Get-PSSessionConfiguration
+
+New-PSSessionConfigurationFile
+
+Register-PSSessionConfiguration
+
+Set-PSSessionConfiguration
+
+Test-PSSessionConfigurationFile
+
+Unregister-PSSessionConfiguration
+
+Get-PSSessionCapability
+
+New-PSRoleCapabilityFile

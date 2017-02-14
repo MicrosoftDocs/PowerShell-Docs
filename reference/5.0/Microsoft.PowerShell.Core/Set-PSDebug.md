@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821515
-schema: 2.0.0
-title: Set-PSDebug
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSDebug
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821515
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Set-PSDebug
 
@@ -41,7 +42,7 @@ If the *Step* parameter is specified, you are prompted before each line of the s
 
 ### Example 1: Set the trace level to 2
 ```
-PS C:\>Set-PSDebug -Trace 2; foreach ($i in 1..3) {$i}
+PS C:\> Set-PSDebug -Trace 2; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -Trace 2; foreach ($i in 1..3) {$i}
 DEBUG:    1+ Set-PsDebug -Trace 2; foreach ($i in 1..3) {$i}
@@ -56,7 +57,7 @@ This command sets the trace level to 2, and then runs a script that displays the
 
 ### Example 2: Turn on stepping
 ```
-PS C:\>Set-PSDebug -Step; foreach ($i in 1..3) {$i}
+PS C:\> Set-PSDebug -Step; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -Step; foreach ($i in 1..3) {$i}
 Continue with this operation?
@@ -73,7 +74,7 @@ This command turns on stepping, and then runs a script that displays the numbers
 
 ### Example 3: Turn off debug features
 ```
-PS C:\>Set-PSDebug -Off; foreach ($i in 1..3) {$i}
+PS C:\> Set-PSDebug -Off; foreach ($i in 1..3) {$i}
 1
 2
 3
@@ -83,7 +84,7 @@ This command turns off all debugging features, and then runs a script that displ
 
 ### Example 4: Use strict mode
 ```
-PS C:\>set-psdebug -Strict; $NewVar
+PS C:\> set-psdebug -Strict; $NewVar
 The variable $NewVar cannot be retrieved because it has not been set yet.
 At line:1 char:28
 + Set-PsDebug -strict;$NewVar <<<<

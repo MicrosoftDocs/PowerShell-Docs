@@ -1,25 +1,19 @@
-﻿---
-title: about_Command_Syntax
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Command_Syntax
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Command_Syntax
+ms.technology:  powershell
+---
+
 # About Command Syntax
 ## about_Command_Syntax
 
 
-about_Command_Syntax
 
 # SHORT DESCRIPTION
 
@@ -287,7 +281,8 @@ about_Help_Syntax
 
 # SEE ALSO
 
-about_Parameters
-Get-Command
-Get-Help
+[about_Parameters](about_Parameters.md)
 
+Get-Command
+
+Get-Help

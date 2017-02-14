@@ -1,14 +1,15 @@
-﻿---
-author: jpjofre
-description: 
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: conceptual
-title: PowerShell Reference
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  README
+ms.technology:  powershell
+---
+
 
 #  PowerShell Reference
 

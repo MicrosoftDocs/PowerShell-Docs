@@ -1,23 +1,17 @@
-﻿---
-title: about_Try_Catch_Finally
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Try_Catch_Finally
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Try_Catch_Finally
+ms.technology:  powershell
+---
+
 # About Try Catch Finally
 ## about_Try_Catch_Finally
-about_Try_Catch_Finally
 
 
 ## SHORT DESCRIPTION
@@ -27,7 +21,7 @@ Describes how to use the Try, Catch, and Finally blocks to handle terminating er
 ## LONG DESCRIPTION
 Use Try, Catch, and Finally blocks to respond to or handle terminating errors in scripts. The Trap statement can also be used to handle terminating errors in scripts. For more information, see about_Trap.
 
-A terminating error stops a statement from running. If  Windows PowerShell� does not handle a terminating error in some way,  Windows PowerShell also stops running the function or script using the current pipeline. In other languages, such as C\#, terminating errors are referred to as exceptions. For more information about errors, see about_Errors.
+A terminating error stops a statement from running. If  Windows PowerShell® does not handle a terminating error in some way,  Windows PowerShell also stops running the function or script using the current pipeline. In other languages, such as C\#, terminating errors are referred to as exceptions. For more information about errors, see about_Errors.
 
 Use the Try block to define a section of a script in which you want  Windows PowerShell to monitor for errors. When an error occurs within the Try block, the error is first saved to the $Error automatic variable.  Windows PowerShell then searches for a Catch block to handle the error. If the Try statement does not have a  matching Catch block,  Windows PowerShell continues to search for an appropriate Catch block or Trap statement in the parent scopes. After a Catch block is completed or if no appropriate Catch block or Trap statement is found, the Finally block is run. If the error cannot be handled, the error is written to the error stream.
 
@@ -155,13 +149,13 @@ A Finally block runs even if you use CTRL\+C to stop the script. A Finally block
 
 
 ### SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_Scopes
+[about_Continue](about_Continue.md)
 
-about_Throw
+[about_Scopes](about_Scopes.md)
 
-about_Trap
+[about_Throw](about_Throw.md)
 
+[about_Trap](about_Trap.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: 1ce19f56-8359-408e-addd-d5635e52a1f5#VerbList
-schema: 2.0.0
-title: Register-ArgumentCompleter
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Register ArgumentCompleter
+ms.technology:  powershell
+external help file:   System.Management.Automation.dll-Help.xml
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822079
+---
+
 
 # Register-ArgumentCompleter
 
@@ -38,7 +39,7 @@ The **Register-ArgumentCompleter** cmdlet registers a custom argument completer.
 
 ### Example 1: Register a custom argument completer
 ```
-PS C:\>Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
+PS C:\> Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
 
         echo -- -PSConsoleFile -Version -NoLogo -NoExit -Sta -NoProfile -NonInteractive `
@@ -71,7 +72,7 @@ If the command line uses  an alias, this value is the actual command, not the al
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -83,7 +84,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -98,7 +99,7 @@ Indicates that custom argument handlers are dispatched based on the command name
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +115,7 @@ If the command line uses a parameter alias, this value is the actual parameter, 
 ```yaml
 Type: String
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -131,7 +132,7 @@ This parameter is required.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -145,10 +146,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
+### None
 This cmdlet returns no output.
 
 ## NOTES

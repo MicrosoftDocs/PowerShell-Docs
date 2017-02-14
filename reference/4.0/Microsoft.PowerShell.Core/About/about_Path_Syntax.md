@@ -1,27 +1,21 @@
-﻿---
-title: about_Path_Syntax
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Path_Syntax
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Path_Syntax
+ms.technology:  powershell
+---
+
 # About Path Syntax
 ## about_Path_Syntax
-about_Path_Syntax
 
 
 ## SHORT DESCRIPTION
-Describes the full and relative path name formats in  Windows PowerShell�.
+Describes the full and relative path name formats in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -90,5 +84,5 @@ For instance, suppose that you have two files that are each named Results.txt. T
 
 
 ## SEE ALSO
-about_Locations
 
+about_Locations

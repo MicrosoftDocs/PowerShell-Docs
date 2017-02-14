@@ -38,12 +38,12 @@ SerializationVersion           1.1.0.1
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
-$moduleInfo = Test-ModuleManifest -Path \TestModuleWithEdition.psd1
-$moduleInfo.CompatiblePSEditions
+$ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
+$ModuleInfo.CompatiblePSEditions
 Desktop
 Core
 
-$moduleInfo | Get-Member CompatiblePSEditions
+$ModuleInfo | Get-Member CompatiblePSEditions
 
    TypeName: System.Management.Automation.PSModuleInfo
 
@@ -72,7 +72,7 @@ Core
 ## Module authors can publish a single module targeting to either or both PowerShell editions (Desktop and Core) 
 
 A single module can work on both Desktop and Core editions, in that module author has to add required logic in either RootModule or in the module manifest using $PSEdition variable.
-Modules can have two sets of compiled dlls targeting both CoreCLR and FullCLR.
+Modules can have two sets of compiled DLLs targeting both CoreCLR and FullCLR.
 Here are the couple of options to package your module with logic for loading proper dlls.
 
 ### Option 1: Packaging a module for targeting multiple versions and multiple editions of PowerShell

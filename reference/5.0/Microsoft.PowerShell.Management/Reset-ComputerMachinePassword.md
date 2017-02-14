@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821623
-schema: 2.0.0
-title: Reset-ComputerMachinePassword
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Reset ComputerMachinePassword
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821623
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Reset-ComputerMachinePassword
 
@@ -33,7 +34,7 @@ You can use it to reset the password of the local computer.
 
 ### Example 1: Reset the password for the local computer
 ```
-PS C:\>Reset-ComputerMachinePassword
+PS C:\> Reset-ComputerMachinePassword
 ```
 
 This command resets the computer password for the local computer.
@@ -41,7 +42,7 @@ The command runs with the credentials of the current user.
 
 ### Example 2: Reset the password for the local computer by using a specified domain controller
 ```
-PS C:\>Reset-ComputerMachinePassword -Server "DC01" -Credential Domain01\Admin01
+PS C:\> Reset-ComputerMachinePassword -Server "DC01" -Credential Domain01\Admin01
 ```
 
 This command resets the computer password of the local computer by using the DC01 domain controller.
@@ -49,7 +50,7 @@ It uses the *Credential* parameter to specify a user account that has permission
 
 ### Example 3: Reset the password on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword}
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword}
 ```
 
 This command uses the Invoke-Command cmdlet to run a **Reset-ComputerMachinePassword** command on the Server01 remote computer.
@@ -59,7 +60,7 @@ For more information about remote commands in Windows PowerShell, see about_Remo
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -114,7 +115,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

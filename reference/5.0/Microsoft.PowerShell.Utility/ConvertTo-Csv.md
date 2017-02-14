@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821757
-schema: 2.0.0
-title: ConvertTo-Csv
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertTo Csv
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821757
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # ConvertTo-Csv
 
@@ -44,7 +45,7 @@ You can use the parameters of the **ConvertTo-CSV** cmdlet to specify a delimite
 
 ### Example 1: Convert an object to CSV
 ```
-PS C:\>Get-Process powershell | ConvertTo-Csv
+PS C:\> Get-Process powershell | ConvertTo-Csv
 #TYPE System.Diagnostics.Process
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion","Description",
 "Product","BasePriority","ExitCode","HasExited","ExitTime","Handle","HandleCount","Id","MachineName","MainWindowHandle"
@@ -71,7 +72,7 @@ It uses a pipeline operator (|) to send the command to the **ConvertTo-CSV** cmd
 
 ### Example 2: Convert a DateTime object to CSV
 ```
-PS C:\>$Date = Get-Date
+PS C:\> $Date = Get-Date
 PS C:\> ConvertTo-Csv -InputObject $Date -Delimiter ";" -NoTypeInformation
 ```
 
@@ -87,7 +88,7 @@ It uses the *NoTypeInformation* parameter to suppress the #TYPE string.
 
 ### Example 3: Convert the PowerShell event log to CSV
 ```
-PS C:\>Get-EventLog -Log "windows powershell" | ConvertTo-Csv -UseCulture
+PS C:\> Get-EventLog -Log "windows powershell" | ConvertTo-Csv -UseCulture
 ```
 
 This command converts the Windows PowerShell event log on the local computer to a series of CSV strings.

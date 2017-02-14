@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822369
-schema: 2.0.0
-title: Get-CmsMessage
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get CmsMessage
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821712
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+---
+
 
 # Get-CmsMessage
 
@@ -55,7 +56,7 @@ You can pipe the results of **Get-CmsMessage** to Unprotect-CmsMessage to decryp
 
 ### Example 1: Get encrypted content
 ```
-PS C:\>Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
+PS C:\> Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
 -----BEGIN CMS-----
 MIIBqAYJKoZIhvcNAQcDoIIBmTCCAZUCAQAxggFQMIIBTAIBADA0MCAxHjAcBgNVBAMBFWxlZWhv
 bG1AbGljcm9zb2Z0LmNvbQIQQYHsbcXnjIJCtH+OhGmc1DANBgkqhkiG9w0BAQcwAASCAQAnkFHM
@@ -72,7 +73,7 @@ This command gets encrypted content located at C:\Users\Test\Documents\PowerShel
 
 ### Example 2: Pipe encrypted content to Unprotect-CmsMessage
 ```
-PS C:\>$Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
+PS C:\> $Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
 $Msg | Unprotect-CmsMessage -To "â€Žcn=youralias@emailaddress.com"
 Try the new Break All command
 ```

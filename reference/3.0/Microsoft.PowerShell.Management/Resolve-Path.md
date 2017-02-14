@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113384
-schema: 2.0.0
-title: Resolve-Path
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Resolve Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113384
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Resolve-Path
 ## SYNOPSIS
@@ -35,34 +36,34 @@ The Resolve-Path cmdlet interprets the wildcard characters in a path and display
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>resolve-path ~
+PS C:\> resolve-path ~
 C:\Users\User01
 ```
 
 This command resolves the path represented by the tilde character (~), which represents the home path of a file system drive, such as C:.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>resolve-path windows
+PS C:\> resolve-path windows
 C:\Windows
 ```
 
 When run from the root of the C: drive, this command returns the path to the Windows directory in the C: drive.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>"C:\windows\*" | resolve-path
+PS C:\> "C:\windows\*" | resolve-path
 ```
 
 This command returns all of the directories in the C:\Windows directory.
 The command uses a pipeline operator (|) to send a path string to Resolve-Path.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>resolve-path \\Server01\public
+PS C:\> resolve-path \\Server01\public
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>resolve-path c:\prog* -relative
+PS C:\> resolve-path c:\prog* -relative
 ..\Program Files
 ..\Program Files (x86)
 ..\programs.txt
@@ -71,7 +72,7 @@ PS C:\>resolve-path c:\prog* -relative
 This command returns relative paths for the directories at the root of the C: drive.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>resolve-path -literalPath test[xml]
+PS C:\> resolve-path -literalPath test[xml]
 ```
 
 This command resolves the path to the Test\[xml\] subdirectory of the current directory.

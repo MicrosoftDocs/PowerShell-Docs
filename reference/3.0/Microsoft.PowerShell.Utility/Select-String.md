@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113388
-schema: 2.0.0
-title: Select-String
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Select String
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113388
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Select-String
 ## SYNOPSIS
@@ -57,7 +58,7 @@ You can also specify that Select-String should expect a particular character enc
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>"Hello","HELLO" | select-string -pattern "HELLO" -casesensitive
+PS C:\> "Hello","HELLO" | select-string -pattern "HELLO" -casesensitive
 ```
 
 This command performs a case-sensitive match of the text that was piped to the Select-String command.
@@ -67,13 +68,13 @@ As a result, Select-String finds only "HELLO", because "Hello" does not match.
 Because each of the quoted strings is treated as a line, without the CaseSensitive parameter, Select-String would recognize both of the strings as matches.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>select-string -path *.xml -pattern "the the"
+PS C:\> select-string -path *.xml -pattern "the the"
 ```
 
 This command searches through all files with the .xml file name extension in the current directory and displays the lines in those files that include the string "the the".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>select-string -path $pshome\en-US\*.txt -pattern "@"
+PS C:\> select-string -path $pshome\en-US\*.txt -pattern "@"
 ```
 
 This command searches the Windows PowerShell conceptual Help files (about_*.txt) for information about the use of the at sign (@).
@@ -82,7 +83,7 @@ To indicate the path, this command uses the value of the $pshome automatic varia
 In this example, the command searches the en-US subdirectory, which contains the English (US) language Help files for Windows PowerShell.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function search-help
+PS C:\> function search-help
 {
    $pshelp = "$pshome\es\about_*.txt", "$pshome\en-US\*dll-help.xml"
    select-string -path $pshelp -pattern $args[0]
@@ -97,8 +98,8 @@ To use the function to find a string, such as "psdrive", type search-help psdriv
 To use this function in any Windows PowerShell console, change the path to point to the Windows PowerShell Help files on your system, and then paste the function in your Windows PowerShell profile.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname application -newest 100
-PS C:\>$events | select-string -inputobject {$_.message} -pattern "failed"
+PS C:\> $events = get-eventlog -logname application -newest 100
+PS C:\> $events | select-string -inputobject {$_.message} -pattern "failed"
 ```
 
 This example searches for the string "failed" in the 100 newest events in the Application log in Event Viewer.
@@ -114,22 +115,22 @@ The current object is represented by the $_ symbol.
 As each event arrives in the pipeline, Select-String searches the value of its Message property for the "failed" string, and then displays any lines that include a match.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-childitem c:\windows\system32\*.txt -recurse | select-string -pattern "Microsoft" -casesensitive
+PS C:\> get-childitem c:\windows\system32\*.txt -recurse | select-string -pattern "Microsoft" -casesensitive
 ```
 
 This command examines all files in the subdirectories of C:\Windows\System32 with the .txt file name extension and searches for the string "Microsoft".
 The CaseSensitive parameter indicates that the "M" in "Microsoft" must be capitalized and that the rest of the characters must be lowercase for Select-String to find a match.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>select-string -path process.txt -pattern idle, svchost -notmatch
+PS C:\> select-string -path process.txt -pattern idle, svchost -notmatch
 ```
 
 This command finds lines of text in the Process.txt file that do not include the words "idle" or "svchost".
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$f = select-string -path audit.log -pattern "logon failed" -context 2, 3
-PS C:\>$f.count
-PS C:\>($f)[0].context | format-list
+PS C:\> $f = select-string -path audit.log -pattern "logon failed" -context 2, 3
+PS C:\> $f.count
+PS C:\> ($f)[0].context | format-list
 ```
 
 The first command searches the Audit.Log file for the phrase "logon failed." It uses the Context parameter to capture 2 lines before the match and 3 lines after the match.
@@ -145,20 +146,20 @@ The context lines are stored in the Context property of the MatchInfo object.
 ```
 PS C:\>
 $a = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript
-PS C:\>$b = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript -allmatches
-PS C:\>$a
+PS C:\> $b = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript -allmatches
+PS C:\> $a
 C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript.
-PS C:\>$b
+PS C:\> $b
 C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript.
 
-PS C:\>> $a.matches
+PS C:\> > $a.matches
 Groups   : {Transcript}
 Success  : True
 Captures : {Transcript}
 Index    : 13
 Length   : 10
 Value    : Transcript
-PS C:\>$b.matches
+PS C:\> $b.matches
 Groups   : {Transcript}
 Success  : True
 Captures : {Transcript}

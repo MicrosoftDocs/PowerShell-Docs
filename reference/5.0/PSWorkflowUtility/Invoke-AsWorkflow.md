@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSWorkflowUtility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821723
-schema: 2.0.0
-title: Invoke-AsWorkflow
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke AsWorkflow
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821723
+external help file:   PSWorkflowUtility-help.xml
+---
+
 
 # Invoke-AsWorkflow
 
@@ -47,7 +48,7 @@ This workflow is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Run a cmdlet as a workflow
 ```
-PS C:\>Invoke-AsWorkflow -CommandName "Get-ExecutionPolicy" -PSComputerName (Get-Content Servers.txt)
+PS C:\> Invoke-AsWorkflow -CommandName "Get-ExecutionPolicy" -PSComputerName (Get-Content Servers.txt)
 PSComputerName                     PSSourceJobInstanceId                   Value
 --------------                     ---------------------                   -----
 Server01                           77b1cdf8-8226-4662-9067-cd2fa5c3b711    AllSigned
@@ -70,10 +71,10 @@ That is, if the value of the PSComputerName parameter includes the local compute
 ### Example 2: Run a cmdlet with parameters
 ```
 The first command uses the Import-Csv cmdlet to create an object from the content in the Servers.csv file. The command uses the *Header* parameter to create a **ServerName** property for the column that contains the names of the target computers, also known as remote nodes. The command saves the result in the $s variable.
-PS C:\>$s = Import-Csv .\Servers.csv -Header ServerName, ServerID
+PS C:\> $s = Import-Csv .\Servers.csv -Header ServerName, ServerID
 
 The second command uses the **Invoke-AsWorkflow** workflow to run a **Get-ExecutionPolicy** command on the computers in the Servers.csv file.The command uses the *CommandName* parameter of **Invoke-AsWorkflow** to specify the command to run in the workflow. It uses the *Parameter* parameter of **Invoke-AsWorkflow** to specify the *Scope* parameter of the **Get-ExecutionPolicy** cmdlet with a value of **Process**.The command also uses the **PSConnectionRetryCount** workflow common parameter to limit the command to five attempts on each computer and the **PSComputerName** workflow common parameter to specify the names of the remote nodes, target computers. The value of the **PSComputerName** parameter is an expression that gets the **ServerName** property of every object in the $s variable.
-PS C:\>Invoke-AsWorkflow -CommandName "Get-ExecutionPolicy" -Parameter @{Scope="Process"} -PSComputerName {$s.ServerName}-PSConnectionRetryCount 5
+PS C:\> Invoke-AsWorkflow -CommandName "Get-ExecutionPolicy" -Parameter @{Scope="Process"} -PSComputerName {$s.ServerName}-PSConnectionRetryCount 5
 ```
 
 These commands run a Get-ExecutionPolicy command as a workflow on hundreds of computers.
@@ -81,7 +82,7 @@ The command uses the *Scope* parameter of the **Get-ExecutionPolicy** cmdlet wit
 
 ### Example 3: Run an expression as a workflow
 ```
-PS C:\>Invoke-AsWorkflow -Expression "ipconfig /all" -PSComputerName (Get-Content DomainControllers.txt) -AsJob -JobName "IPConfig"
+PS C:\> Invoke-AsWorkflow -Expression "ipconfig /all" -PSComputerName (Get-Content DomainControllers.txt) -AsJob -JobName "IPConfig"
 
 Id     Name          PSJobTypeName   State         HasMoreData   Location                Command
 --     ----          -------------   -----         -----------   --------                -------

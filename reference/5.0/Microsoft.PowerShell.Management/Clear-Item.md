@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821569
-schema: 2.0.0
-title: Clear-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821569
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Clear-Item
 
@@ -42,9 +43,9 @@ This cmdlet is similar to Clear-Content, but it works on aliases and variables, 
 
 ### Example 1: Clear the value of a variable
 ```
-PS C:\>Clear-Item Variable:TestVar1
+PS C:\> Clear-Item Variable:TestVar1
 -or-
-PS C:>Set-location Variable:
+PS C:> Set-location Variable:
 PS Variable:\> Clear-Item TestVar1
 ```
 
@@ -56,7 +57,7 @@ The alternate commands show that, to get the same result, you can switch to the 
 
 ### Example 2: Clear all registry entries
 ```
-PS C:\>Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
+PS C:\> Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
 ```
 
 This command clears all registry entries in the MyKey subkey, but only after prompting you to confirm your intent.
@@ -68,7 +69,7 @@ To delete the value of a registry entry, use the Clear-ItemPropertycmdlet.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -233,7 +234,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

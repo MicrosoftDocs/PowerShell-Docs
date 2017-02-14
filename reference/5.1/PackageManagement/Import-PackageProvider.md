@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822306
-schema: 2.0.0
-title: Import-PackageProvider
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import PackageProvider
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822306
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
+---
+
 
 # Import-PackageProvider
 
@@ -39,14 +40,14 @@ For more information on how to build a provider with provider.manifest injected,
 
 ### Example 1: Import a package provider from the local computer
 ```
-PS C:\>Import-PackageProvider -Name "Nuget"
+PS C:\> Import-PackageProvider -Name "Nuget"
 ```
 
 This command imports the Nuget provider after it has been installed on the local computer.
 
 ### Example 2: Import a specific version of a package provider
 ```
-PS C:\>Find-PackageProvider -Name "Nuget" -AllVersions
+PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.201" -Force
 Get-PackageProvider -ListAvailable
 Import-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose

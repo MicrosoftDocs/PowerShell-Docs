@@ -1,25 +1,18 @@
-﻿---
-title: about_Eventlogs
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Eventlogs
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Eventlogs
+ms.technology:  powershell
+---
+
 # About Eventlogs
 ## about_Eventlogs
-# TOPIC
 
-about_EventLogs
 
 # SHORT DESCRIPTION
 
@@ -215,7 +208,9 @@ MSDN at http://go.microsoft.com/fwlink/?LinkID=144916.
 # SEE ALSO
 
 Get-EventLog
-Get-WmiObject
-about_Group_Policy_Settings
-about_Preference_Variables
 
+Get-WmiObject
+
+[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+
+[about_Preference_Variables](about_Preference_Variables.md)

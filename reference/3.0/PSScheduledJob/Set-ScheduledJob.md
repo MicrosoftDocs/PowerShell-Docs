@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=223924
-schema: 2.0.0
-title: Set-ScheduledJob
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set ScheduledJob
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=223924
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Set-ScheduledJob
 ## SYNOPSIS
@@ -64,13 +65,13 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ### Example 1: Change the script that a job runs
 ```
 The first command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. The output shows that the job runs the Get-Inventory.ps1 script.This command is not required; it is included only to show the effect of the script change.
-PS C:\>Get-ScheduledJob -Name Inventory
+PS C:\> Get-ScheduledJob -Name Inventory
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          Inventory       {1}             C:\Scripts\Get-Inventory.ps1             True
 
 The second command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. A pipeline operator (|) sends the scheduled job to the **Set-ScheduledJob** cmdlet. The Set-ScheduledJob command uses the Script parameter to specify a new script, Get-FullInventory.ps1. The command uses the **Passthru** parameter to return the scheduled job after the change.
-PS C:\>Get-ScheduledJob -Name Inventory | Set-ScheduledJob -FilePath C:\Scripts\Get-FullInventory.ps1 -Passthru
+PS C:\> Get-ScheduledJob -Name Inventory | Set-ScheduledJob -FilePath C:\Scripts\Get-FullInventory.ps1 -Passthru
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          Inventory       {1}             C:\Scripts\Get-FullInventory.ps1         True
@@ -79,7 +80,7 @@ Id         Name            Triggers        Command                              
 This example shows how to change the script that is run in a scheduled job.
 ### Example 2: Delete the execution history of a scheduled job
 ```
-PS C:\>Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
+PS C:\> Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
 ```
 
 This command deletes the current execution history and saved job results for the BackupArchive scheduled job.
@@ -91,7 +92,7 @@ The **Set-ScheduledJob** command uses the **ClearExecutionHistory** parameter to
 For more information about the execution history and saved job results of scheduled jobs, see about_Scheduled_Jobs.
 ### Example 3: Change scheduled jobs on a remote computer
 ```
-PS C:\>Invoke-Command -Computer Server01, Server02 -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
+PS C:\> Invoke-Command -Computer Server01, Server02 -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
 
 This command changes the initialization script in all scheduled jobs on the Server01 and Server02 computers.

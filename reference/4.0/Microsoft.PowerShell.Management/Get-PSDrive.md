@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290500
-schema: 2.0.0
-title: Get-PSDrive
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PSDrive
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290500
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-PSDrive
 
@@ -53,7 +54,7 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-PSDrive
+PS C:\> Get-PSDrive
 
 Name       Provider      Root
 ----       --------      ----
@@ -75,7 +76,7 @@ The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-PSDrive D
+PS C:\> Get-PSDrive D
 
 Name       Provider      Root
 ----       --------      ----
@@ -87,7 +88,7 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystem
+PS C:\> Get-PSDrive -PSProvider FileSystem
 
 Name       Provider      Root
 ----       --------      ----
@@ -103,7 +104,7 @@ This includes fixed drives, logical partitions, mapped network drives, and tempo
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
+PS C:\> if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
 else { Write-Host "The X: drive is already in use." }
 ```
 
@@ -112,8 +113,8 @@ If it is not, the command uses the New-PSDrive cmdlet to create a temporary driv
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-PSDrive -PSProvider FileSystem
-PS C:\>Get-PSDrive -provider FileSystem
+PS C:\> Get-PSDrive -PSProvider FileSystem
+PS C:\> Get-PSDrive -provider FileSystem
 
 Name       Provider      Root
 ----       --------      ----
@@ -122,14 +123,14 @@ D          FileSystem    D:\
 X          FileSystem    X:\
 Y          FileSystem    \\Server01\Public
 Z          FileSystem    C:\Windows\System32
-PS C:\>net use
+PS C:\> net use
 New connections will be remembered.
 
 Status       Local     Remote                    Network
 -------------------------------------------------------------------------------
 X:        \\Server01\Public         Microsoft Windows Network
 
-PS C:\>[System.IO.DriveInfo]::getdrives()
+PS C:\> [System.IO.DriveInfo]::getdrives()
 
 Name               : C:\
 DriveType          : Fixed
@@ -159,7 +160,7 @@ TotalSize          : 36413280256
 RootDirectory      : X:\
 VolumeLabel        : D_Drive
 
-PS C:\>get-wmiobject win32_logicaldisk
+PS C:\> get-wmiobject win32_logicaldisk
 
 DeviceID     : C:
 DriveType    : 3
@@ -180,7 +181,7 @@ FreeSpace    : 36340559872
 Size         : 36413280256
 VolumeName   : D_Drive
 
-PS C:\>get-wmiobject win32_networkconnection
+PS C:\> get-wmiobject win32_networkconnection
 
 LocalName                     RemoteName
 --------------               ------------

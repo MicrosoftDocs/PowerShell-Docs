@@ -1,25 +1,19 @@
-﻿---
-title: about_Windows_PowerShell_ISE
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Windows_PowerShell_ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Windows_PowerShell_ISE
+ms.technology:  powershell
+---
+
 # About Windows PowerShell ISE
 ## about_Windows_PowerShell_ISE
 
 
-about_Windows_PowerShell_ISE
 
 # SHORT DESCRIPTION
 
@@ -224,14 +218,22 @@ http://go.microsoft.com/fwlink/?LinkId=144711.
 
 # SEE ALSO
 
-about_Debuggers
-about_Profiles
-about_Updatable_Help
-Get-Help
-Get-IseSnippet
-Import-IseSnippet
-New-IseSnippet
-Save-Help
-Show-Command
-Update-Help
+[about_Debuggers](about_Debuggers.md)
 
+[about_Profiles](about_Profiles.md)
+
+[about_Updatable_Help](about_Updatable_Help.md)
+
+Get-Help
+
+Get-IseSnippet
+
+Import-IseSnippet
+
+New-IseSnippet
+
+Save-Help
+
+Show-Command
+
+Update-Help

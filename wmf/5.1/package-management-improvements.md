@@ -1,5 +1,5 @@
 ---
-title:   Improvements to Package Management in WMF 5.1 (Preview)
+title:   Improvements to Package Management in WMF 5.1
 ms.date:  2016-07-15
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -11,7 +11,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-# Improvements to Package Management in WMF 5.1 (Preview) #
+# Improvements to Package Management in WMF 5.1#
 
 ## Improvements in PackageManagement ##
 The following are the fixes made in the WMF 5.1: 

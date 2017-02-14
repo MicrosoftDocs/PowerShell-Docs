@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113345
-schema: 2.0.0
-title: Invoke-Item
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Invoke Item
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113345
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Invoke-Item
 ## SYNOPSIS
@@ -38,14 +39,14 @@ The default action depends on the type of item and is determined by the Windows 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>invoke-item C:\Test\aliasApr04.doc
+PS C:\> invoke-item C:\Test\aliasApr04.doc
 ```
 
 This command opens the file aliasApr04.doc in Microsoft Office Word.
 In this case, opening in Word is the default action for .doc files.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
+PS C:\> invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
 ```
 
 This command opens all of the Microsoft Office Excel spreadsheets in the C:\Documents and Settings\Lister\My Documents folder.
@@ -163,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -179,7 +180,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

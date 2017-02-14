@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821648
-schema: 2.0.0
-title: Undo-Transaction
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Undo Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821648
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Undo-Transaction
 
@@ -40,14 +41,14 @@ For more information, see about_Transactions.
 
 ### Example 1: Roll back the current transaction
 ```
-PS C:\>Undo-Transaction
+PS C:\> Undo-Transaction
 ```
 
 This command rolls back the current, active, transaction.
 
 ### Example 2: Start and roll back a transaction
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
 PS HKCU:\Software> New-Item -Path "ContosoCompany" -UseTransaction
 PS HKCU:\Software> Undo-Transaction
@@ -58,7 +59,7 @@ As a result, no changes are made to the registry.
 
 ### Example 3: Roll back a transaction for all subscribers
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
 PS HKCU:\Software> New-Item -Path "ContosoCompany" -UseTransaction
 PS HKCU:\Software> Get-Transaction
@@ -111,7 +112,7 @@ The results show that the transaction is rolled back, and that the subscriber co
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -127,7 +128,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

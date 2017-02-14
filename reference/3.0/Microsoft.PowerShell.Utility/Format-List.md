@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113302
-schema: 2.0.0
-title: Format-List
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Format List
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113302
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Format-List
 ## SYNOPSIS
@@ -32,7 +33,7 @@ Because more space is available for each item in a list than in a table, Windows
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-service | format-list
+PS C:\> get-service | format-list
 ```
 
 This command formats information about services on the computer as a list.
@@ -42,8 +43,8 @@ The pipeline operator (|) passes the results through the pipeline to Format-List
 Then, the Format-List command formats the service information in a list and sends it to the default output cmdlet for display.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = get-childitem $pshome\*.ps1xml
-PS C:\>format-list -InputObject $a
+PS C:\> $a = get-childitem $pshome\*.ps1xml
+PS C:\> format-list -InputObject $a
 ```
 
 These commands display information about the PS1XML files in the Windows PowerShell directory as a list.
@@ -54,7 +55,7 @@ The second command uses Format-List to format information about objects stored i
 This command uses the InputObject parameter to pass the variable to Format-List, which then sends the formatted output to the default output cmdlet for display.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-process | format-list -property name, basepriority, priorityclass
+PS C:\> get-process | format-list -property name, basepriority, priorityclass
 ```
 
 This command displays the name, base priority, and priority class of each process on the computer.
@@ -64,7 +65,7 @@ Format-List formats the processes as a list of the specified properties.
 The "Property" parameter name is optional, so you can omit it.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-process winlogon | format-list -property *
+PS C:\> get-process winlogon | format-list -property *
 ```
 
 This command displays all of the properties of the Winlogon process.

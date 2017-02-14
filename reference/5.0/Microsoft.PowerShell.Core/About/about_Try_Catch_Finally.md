@@ -1,23 +1,17 @@
-﻿---
-title: about_Try_Catch_Finally
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Try_Catch_Finally
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Try_Catch_Finally
+ms.technology:  powershell
+---
+
 # About Try Catch Finally
 ## about_Try_Catch_Finally
-about_Try_Catch_Finally
 
 
 ## SHORT DESCRIPTION
@@ -155,13 +149,13 @@ A Finally block runs even if you use CTRL\+C to stop the script. A Finally block
 
 
 ### SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_Scopes
+[about_Continue](about_Continue.md)
 
-about_Throw
+[about_Scopes](about_Scopes.md)
 
-about_Trap
+[about_Throw](about_Throw.md)
 
+[about_Trap](about_Trap.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822270
-schema: 2.0.0
-title: Set-Content
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821629
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Set-Content
 
@@ -43,7 +44,7 @@ You can type the content in the command or send content through the pipeline to 
 
 ### Example 1: Replace the contents of multiple files in a folder
 ```
-PS C:\>Set-Content -Path "C:\Test1\test*.txt" -Value "Hello, World"
+PS C:\> Set-Content -Path "C:\Test1\test*.txt" -Value "Hello, World"
 ```
 
 This command replaces the contents of all files in the Test1 folder that have names that start with "test" with "Hello, World".
@@ -51,7 +52,7 @@ This example shows how to specify content by typing it in the command.
 
 ### Example 2: Send content to a file
 ```
-PS C:\>Get-Date | Set-Content -Path "C:\Test1\date.csv"
+PS C:\> Get-Date | Set-Content -Path "C:\Test1\date.csv"
 ```
 
 This command creates a comma separated variable length (csv) file that contains only the current date and time.
@@ -62,7 +63,7 @@ If the Test1 directory does not exist, the command fails, but if the file does n
 
 ### Example 3: Replace text in a file
 ```
-PS C:\>(Get-Content -Path "Notice.txt") | ForEach-Object {$_ -Replace "Warning", "Caution"} | Set-Content -Path "Notice.txt"
+PS C:\> (Get-Content -Path "Notice.txt") | ForEach-Object {$_ -Replace "Warning", "Caution"} | Set-Content -Path "Notice.txt"
 ```
 
 This command replaces all instances of Warning with Caution in the Notice.txt file.
@@ -79,7 +80,7 @@ Without them, the command fails because the two functions will be trying to acce
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -353,7 +354,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

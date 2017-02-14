@@ -1,23 +1,17 @@
-﻿---
-title: about_Return
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Return
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Return
+ms.technology:  powershell
+---
+
 # About Return
 ## about_Return
-about_Return
 
 
 ## SHORT DESCRIPTION
@@ -123,11 +117,11 @@ Both the informational string and the result of the calculation are returned by 
 
 
 ## SEE ALSO
+
 Exit keyword in about_Language_Keywords
 
-about_Functions
+[about_Functions](about_Functions.md)
 
-about_Scopes
+[about_Scopes](about_Scopes.md)
 
-about_Script_Blocks
-
+[about_Script_Blocks](about_Script_Blocks.md)

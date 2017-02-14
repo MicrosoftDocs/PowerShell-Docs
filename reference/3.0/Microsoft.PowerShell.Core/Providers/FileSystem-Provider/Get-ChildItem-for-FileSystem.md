@@ -1,12 +1,15 @@
-﻿---
-title: Get-ChildItem for FileSystem
-ms.custom: na
-ms.date: 07/31/2015
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ChildItem for FileSystem
+ms.technology:  powershell
+---
+
 # Get-ChildItem for FileSystem
 Gets the files and folders in a file system drive.  
   

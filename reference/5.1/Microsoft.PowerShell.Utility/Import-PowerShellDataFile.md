@@ -1,22 +1,23 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Utility-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822432
-schema: 2.0.0
-title: Import-PowerShellDataFile
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import PowerShellDataFile
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821817
+external help file:   Microsoft.PowerShell.Utility-help.xml
+---
+
 
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
-
+Imports values from a .PSD1 file without invoking its contents
 ## SYNTAX
 
 ### ByPath (Default)
@@ -30,14 +31,20 @@ Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+The **Import-PowerShellDataFile** cmdlet returns a hashtable consisting of the key-value pairs in a .PSD1 file.
 
 ## EXAMPLES
 
-### 1:
+### 1: Retrieve values from PSD1
 ```
-PS C:\>
+PS C:\> $content = Import-PowerShellDataFile .\Configuration.psd1
+PS C:\> $content
+Name                           Value                                                                          
+----                           -----                                                                          
+key1                           value1                                                                         
+key2                           value2  
 ```
-
+This examples retrieves the key-value pairs stored in the hashtable kept inside the Configuration.psd1 file. 
 ## PARAMETERS
 
 ### -LiteralPath

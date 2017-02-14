@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822323
-schema: 2.0.0
-title: Get-InstalledModule
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get InstalledModule
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821660
+external help file:   PSModule-help.xml
+---
+
 
 # Get-InstalledModule
 
@@ -32,7 +33,7 @@ The **Get-InstalledModule** cmdlet gets Windows PowerShell modules that are inst
 
 ### Example 1: Get all installed modules
 ```
-PS C:\>Get-InstalledModule
+PS C:\> Get-InstalledModule
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.0.0      PSGTEST-UploadMultipleVersionOfP... Module     GalleryINT           Module for DAC functionality
@@ -44,7 +45,7 @@ This command gets all installed modules.
 
 ### Example 2: Get specific versions of a module
 ```
-PS C:\>Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersion 2.0
+PS C:\> Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersion 2.0
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821749
-schema: 2.0.0
-title: Add-Type
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Type
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821749
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Add-Type
 
@@ -71,7 +72,7 @@ C# is the default language.
 
 ### Example 1: Add a .NET type to a session
 ```
-PS C:\>$Source = @"
+PS C:\> $Source = @"
 public class BasicTest
 {
   public static int Add(int a, int b)
@@ -85,10 +86,10 @@ public class BasicTest
 }
 "@
 
-PS C:\>Add-Type -TypeDefinition $Source
-PS C:\>[BasicTest]::Add(4, 3)
-PS C:\>$BasicTestObject = New-Object BasicTest
-PS C:\>$BasicTestObject.Multiply(5, 2)
+PS C:\> Add-Type -TypeDefinition $Source
+PS C:\> [BasicTest]::Add(4, 3)
+PS C:\> $BasicTestObject = New-Object BasicTest
+PS C:\> $BasicTestObject.Multiply(5, 2)
 ```
 
 This example adds the **BasicTest** class to the session by specifying source code that is stored in a variable.
@@ -111,7 +112,7 @@ The fifth command uses the Multiply method of $BasicTestObject.
 
 ### Example 2: Examine an added type
 ```
-PS C:\>[BasicTest] | Get-Member
+PS C:\> [BasicTest] | Get-Member
 PS C:\> [BasicTest] | Get-Member -Static
 PS C:\> $BasicTestObject | Get-Member
 PS C:\> [BasicTest] | Get-Member
@@ -120,7 +121,7 @@ Name                           MemberType Definition
 ----                           ---------- ----------
 Clone                          Method     System.ObjectClone(
 Equals                         Method     System.BooleanEquals
-FindInterfaces                 Method     System.Type[] FindInt... PS C:\>[BasicTest] | Get-Member -Static
+FindInterfaces                 Method     System.Type[] FindInt... PS C:\> [BasicTest] | Get-Member -Static
 TypeName: BasicTest
 Name            MemberType Definition
 ----            ---------- ----------
@@ -152,7 +153,7 @@ The output reveals that the value of the $BasicTestObject variable is an instanc
 
 ### Example 3: Add types from an assembly
 ```
-PS C:\>$AccType = Add-Type -AssemblyName "accessib*" -PassThru
+PS C:\> $AccType = Add-Type -AssemblyName "accessib*" -PassThru
 ```
 
 This command adds the classes from the Accessibility assembly to the current session.
@@ -163,7 +164,7 @@ The command uses the *PassThru* parameter to generate objects that represent the
 
 ### Example 4: Add a type from a Visual Basic file
 ```
-PS C:\>Add-Type -Path "c:\ps-test\Hello.vb"
+PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
 PS C:\> [VBFromFile]::SayHello(", World")
 # From Hello.vb
 
@@ -182,7 +183,7 @@ The second command calls the SayHello function as a static method of the VBFromF
 
 ### Example 5: Call native Windows APIs
 ```
-PS C:\>$Signature = @"
+PS C:\> $Signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
 $ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru 
@@ -221,7 +222,7 @@ To restore the window, the fourth command use a value of 4 for the window positi
 
 ### Example 6: Add a method from inline JScript
 ```
-PS C:\>Add-Type -MemberDefinition $JsMethod -Name "PrintInfo" -Language JScript
+PS C:\> Add-Type -MemberDefinition $JsMethod -Name "PrintInfo" -Language JScript
 ```
 
 This command uses the **Add-Type** cmdlet to add a method from inline JScript code to the Windows PowerShell session.
@@ -230,13 +231,13 @@ It uses the *Name* parameter to specify a name for the class that **Add-Type** c
 
 ### Example 7: Add an F# compiler
 ```
-PS C:\>Add-Type -Path "FSharp.Compiler.CodeDom.dll"
-PS C:\>$Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
-PS C:\>$FSharpCode = @"
+PS C:\> Add-Type -Path "FSharp.Compiler.CodeDom.dll"
+PS C:\> $Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
+PS C:\> $FSharpCode = @"
 let rec loop n =if n <= 0 then () else beginprint_endline (string_of_int n);loop (n-1)end
 "@
-PS C:\>$FSharpType = Add-Type -TypeDefinition $FSharpCode -CodeDomProvider $Provider -PassThru | where { $_.IsPublic }
-PS C:\>$FSharpType::loop(4)4321
+PS C:\> $FSharpType = Add-Type -TypeDefinition $FSharpCode -CodeDomProvider $Provider -PassThru | where { $_.IsPublic }
+PS C:\> $FSharpType::loop(4)4321
 ```
 
 This example shows how to use the **Add-Type** cmdlet to add an F# code compiler to your Windows PowerShell session.

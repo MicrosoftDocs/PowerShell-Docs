@@ -1,27 +1,21 @@
-﻿---
-title: about_Properties
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Properties
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Properties
+ms.technology:  powershell
+---
+
 # About Properties
 ## about_Properties
-about_Properties
 
 
 ## SHORT DESCRIPTION
-Describes how to use object properties in  Windows PowerShell�.
+Describes how to use object properties in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -224,7 +218,7 @@ For example, each service has a DisplayName property. The following command gets
 
 
 ```
-PS C:\>(Get-Service Audiosrv).DisplayName  
+PS C:\> (Get-Service Audiosrv).DisplayName  
 Windows Audio
 ```
 
@@ -233,7 +227,7 @@ However, a collection or array of services does not have a DisplayName. The foll
 
 
 ```
-PS C:\>(Get-Service).DisplayName  
+PS C:\> (Get-Service).DisplayName  
 PS C:\>
 ```
 
@@ -242,7 +236,7 @@ Beginning in  Windows PowerShell 3.0, the same command returns the value of the 
 
 
 ```
-PS C:\>(Get-Service).DisplayName  
+PS C:\> (Get-Service).DisplayName  
 Application Experience  
 Application Layer Gateway Service  
 Windows All-User Install Agent  
@@ -256,7 +250,7 @@ Conversely, a collection of two or more services has a Count property, which con
 
 
 ```
-PS C:\>(Get-Service).Count  
+PS C:\> (Get-Service).Count  
 176
 ```
 
@@ -265,7 +259,7 @@ Individual services do not have a Count or Length property, as shown in this com
 
 
 ```
-PS C:\>(Get-Service Audiosrv).Count  
+PS C:\> (Get-Service Audiosrv).Count  
 PS C:\>
 ```
 
@@ -274,20 +268,20 @@ Beginning in  Windows PowerShell 3.0, the command returns the correct Count valu
 
 
 ```
-PS C:\>(Get-Service Audiosrv).Count  
+PS C:\> (Get-Service Audiosrv).Count  
 1
 ```
 
 
 
 ## SEE ALSO
-about_Methods
 
-about_Objects
+[about_Methods](about_Methods.md)
+
+[about_Objects](about_Objects.md)
 
 Get-Member
 
 Select-Object
 
 Format-List
-

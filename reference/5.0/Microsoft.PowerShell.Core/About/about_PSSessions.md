@@ -1,23 +1,17 @@
-﻿---
-title: about_PSSessions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_PSSessions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PSSessions
+ms.technology:  powershell
+---
+
 # About PSSessions
 ## about_PSSessions
-about_PSSessions
 
 
 ## SHORT DESCRIPTION
@@ -233,11 +227,12 @@ For more information about PSSessions, see about_PSSession_Details.
 
 
 ## SEE ALSO
-about_Remote
 
-about_Remote_Disconnected_Sessions
+[about_Remote](about_Remote.md)
 
-about_Remote_Requirements
+[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
 
 Connect-PSSession
 
@@ -254,4 +249,3 @@ Invoke-Command
 New-PSSession
 
 Remove-PSSession
-

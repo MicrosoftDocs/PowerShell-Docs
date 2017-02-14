@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822268
-schema: 2.0.0
-title: Resolve-Path
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Resolve Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821624
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Resolve-Path
 
@@ -38,7 +39,7 @@ The **Resolve-Path** cmdlet interprets the wildcard characters in a path and dis
 
 ### Example 1: Resolve the current path
 ```
-PS C:\>Resolve-Path ~
+PS C:\> Resolve-Path ~
 Path
 ----
 C:\Users\User01
@@ -48,7 +49,7 @@ This command resolves the path represented by the tilde character (~), which rep
 
 ### Example 2: Resolve the path of the Windows folder
 ```
-PS C:\>Resolve-Path -Path "windows"
+PS C:\> Resolve-Path -Path "windows"
 Path
 ----
 C:\Windows
@@ -58,7 +59,7 @@ When run from the root of the C: drive, this command returns the path of the Win
 
 ### Example 3: Get all paths in the Windows folder
 ```
-PS C:\>"C:\windows\*" | Resolve-Path
+PS C:\> "C:\windows\*" | Resolve-Path
 ```
 
 This command returns all of the folders in the C:\Windows folder.
@@ -66,14 +67,14 @@ The command uses a pipeline operator (|) to send a path string to **Resolve-Path
 
 ### Example 4: Resolve a UNC path
 ```
-PS C:\>Resolve-Path -Path "\\Server01\public"
+PS C:\> Resolve-Path -Path "\\Server01\public"
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
 
 ### Example 5: Get relative paths
 ```
-PS C:\>Resolve-Path -Path "c:\prog*" -Relative
+PS C:\> Resolve-Path -Path "c:\prog*" -Relative
 ..\Program Files
 ..\Program Files (x86) 
 ..\programs.txt
@@ -83,7 +84,7 @@ This command returns relative paths for the directories at the root of the C: dr
 
 ### Example 6: Resolve a path that contains brackets
 ```
-PS C:\>Resolve-Path -LiteralPath 'test[xml]'
+PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 ```
 
 This command resolves the path of the Test\[xml\] subfolder of the current folder.

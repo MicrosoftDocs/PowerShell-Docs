@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290489
-schema: 2.0.0
-title: Get-ComputerRestorePoint
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ComputerRestorePoint
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=290489
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-ComputerRestorePoint
 
@@ -42,21 +43,21 @@ System restore points and the Get-ComputerRestorePoint cmdlet are supported only
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-computerrestorepoint
+PS C:\> get-computerrestorepoint
 ```
 
 This command gets all of the restore points on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-computerrestorepoint -restorepoint 232, 240, 245
+PS C:\> get-computerrestorepoint -restorepoint 232, 240, 245
 ```
 
 This command gets the restore points with sequence numbers 232, 240, and 245.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-computerrestorepoint -laststatus
+PS C:\> get-computerrestorepoint -laststatus
 The last restore failed.
 ```
 
@@ -64,7 +65,7 @@ This command displays the status of the most recent system restore operation on 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-computerrestorepoint | format-table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -auto
+PS C:\> get-computerrestorepoint | format-table SequenceNumber, @{Label="Date"; Expression={$_.ConvertToDateTime($_.CreationTime)}}, Description -auto
 
 SequenceNumber Date                  Description
 -------------- ----                  -----------
@@ -80,7 +81,7 @@ The Format-Table command includes a calculated property that uses the ConvertToD
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>((get-computerrestorepoint)[-1]).sequencenumber
+PS C:\> ((get-computerrestorepoint)[-1]).sequencenumber
 ```
 
 This command gets the sequence number of the most recently created restore point on the computer.

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822272
-schema: 2.0.0
-title: Resume-Service
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Resume Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821628
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Resume-Service
 
@@ -48,7 +49,7 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Resume a service on the local computer
 ```
-PS C:\>Resume-Service "sens"
+PS C:\> Resume-Service "sens"
 ```
 
 This command resumes the System Event Notification service  on the local computer.
@@ -57,7 +58,7 @@ The command uses the *Name* parameter to specify the service name of the service
 
 ### Example 2: Resume all suspended services
 ```
-PS C:\>Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
+PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
 This command resumes all of the suspended  services on the computer.
@@ -70,7 +71,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -185,7 +186,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

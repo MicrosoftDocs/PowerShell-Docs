@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: ISE-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=287355
-schema: 2.0.0
-title: Get-IseSnippet
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get IseSnippet
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=287355
+external help file:   ISE-help.xml
+---
+
 
 # Get-IseSnippet
 
@@ -39,14 +40,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ISESnippet
+PS C:\> Get-ISESnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
+PS C:\> Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
 ```
 
 This command copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
@@ -56,7 +57,7 @@ A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which c
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>#Parse-Snippet Function
+PS C:\> #Parse-Snippet Function
 
 function Parse-Snippet
 {
@@ -91,7 +92,7 @@ This function uses the **Get-ISESnippet** and Select-Xml cmdlets to display the 
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
+PS C:\> $psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
 ```
 
 This command displays the title and description of all snippets in the session, including built-in snippets, user-defined snippets, and imported snippets.

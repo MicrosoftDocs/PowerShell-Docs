@@ -1,20 +1,15 @@
-﻿---
-title: about_Reserved_Words
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Reserved_Words
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Reserved_Words
+ms.technology:  powershell
+---
+
 # About Reserved Words
 ## about_Reserved_Words
 
@@ -65,11 +60,16 @@ Get-Help <Reserved_Word>
 
 # SEE ALSO
 
-about_Command_Syntax
-about_Escape_Characters
-about_Language_Keywords
-about_Parsing
-about_Quoting_Rules
-about_Script_Blocks
-about_Special_Characters
+[about_Command_Syntax](about_Command_Syntax.md)
 
+[about_Escape_Characters](about_Escape_Characters.md)
+
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_Parsing](about_Parsing.md)
+
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
+[about_Special_Characters](about_Special_Characters.md)

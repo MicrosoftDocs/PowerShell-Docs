@@ -1,25 +1,18 @@
-﻿---
-title: about_Remote
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote
+ms.technology:  powershell
+---
+
 # About Remote
 ## about_Remote
-# TOPIC
 
-about_Remote
 
 # SHORT DESCRIPTION
 
@@ -231,13 +224,20 @@ about_Remoting
 
 # SEE ALSO
 
-about_PSSessions
-about_Remote_Disconnected_Sessions
-about_Remote_Requirements
-about_Remote_FAQ
-about_Remote_TroubleShooting
-about_Remote_Variables
-Enter-PSSession
-Invoke-Command
-New-PSSession
+[about_PSSessions](about_PSSessions.md)
 
+[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+
+[about_Remote_Requirements](about_Remote_Requirements.md)
+
+[about_Remote_FAQ](about_Remote_FAQ.md)
+
+[about_Remote_TroubleShooting](about_Remote_TroubleShooting.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
+
+Enter-PSSession
+
+Invoke-Command
+
+New-PSSession

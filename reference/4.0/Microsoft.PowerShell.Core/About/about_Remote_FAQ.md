@@ -1,27 +1,21 @@
-﻿---
-title: about_Remote_FAQ
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_FAQ
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_FAQ
+ms.technology:  powershell
+---
+
 # About Remote FAQ
 ## about_Remote_FAQ
-about_Remote_FAQ
 
 
 ## SHORT DESCRIPTION
-Contains questions and answers about running remote commands in  Windows PowerShell�.
+Contains questions and answers about running remote commands in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -326,7 +320,7 @@ Create the following registry entry, and then set its value to 1: LocalAccountTo
 
 You can use the following  Windows PowerShell command to add this entry:
 
-New-ItemProperty ` –Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` –Name LocalAccountTokenFilterPolicy –propertyType DWord –Value 1
+New-ItemProperty ` -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System ` -Name LocalAccountTokenFilterPolicy -propertyType DWord -Value 1
 
 --  Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2012 R2:
 
@@ -356,17 +350,17 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 
 
 ## SEE ALSO
-about_Remote
 
-about_Profiles
+[about_Remote](about_Remote.md)
 
-about_PSSessions
+[about_Profiles](about_Profiles.md)
 
-about_Remote_Jobs
+[about_PSSessions](about_PSSessions.md)
 
-about_Remote_Variables
+[about_Remote_Jobs](about_Remote_Jobs.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
 
 Invoke-Command
 
 New-PSSession
-

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113308
-schema: 2.0.0
-title: Get-ChildItem
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ChildItem
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113308
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-ChildItem
 ## SYNOPSIS
@@ -44,7 +45,7 @@ A location can be a file system location, such as a directory, or a location exp
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-ChildItem
+PS C:\> Get-ChildItem
 ```
 
 This command gets the child items in the current location.
@@ -55,7 +56,7 @@ The default display lists the mode (attributes), last write time, file size (len
 The valid values for mode are d (directory), a (archive), r (read-only), h (hidden), and s (system).
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-ChildItem -Path *.txt -Recurse -Force
+PS C:\> Get-ChildItem -Path *.txt -Recurse -Force
 ```
 
 This command gets all of the .txt files in the current directory and its subdirectories.
@@ -67,7 +68,7 @@ Use the Include parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
+PS C:\> Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
 
 This command lists the .txt files in the Logs subdirectory, except for those whose names start with the letter A.
@@ -75,20 +76,20 @@ It uses the wildcard character (*) to indicate the contents of the Logs subdirec
 Because the command does not include the **Recurse** parameter, **Get-ChildItem** does not include the content of directory automatically; you need to specify it.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>Get-ChildItem -Path HKLM:\Software
+PS C:\> Get-ChildItem -Path HKLM:\Software
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>Get-ChildItem -Name
+PS C:\> Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>Import-Module Microsoft.PowerShell.Security
-PS C:\>Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
+PS C:\> Import-Module Microsoft.PowerShell.Security
+PS C:\> Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
 ```
 
 This command gets all of the certificates in the Windows PowerShell Cert: drive that have code-signing authority.
@@ -105,7 +106,7 @@ This parameter gets only certificates that have code-signing authority.
 For more information about the Certificate provider and the Cert: drive, go to http://go.microsoft.com/fwlink/?LinkID=113433http://go.microsoft.com/fwlink/?LinkID=113433 or use the Update-Help cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type "Get-Help Certificate".
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
+PS C:\> Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```
 
 This command gets all of the items in the C:\Windows directory and its subdirectories that have "mouse" in the file name, except for those with a .png file name extension.

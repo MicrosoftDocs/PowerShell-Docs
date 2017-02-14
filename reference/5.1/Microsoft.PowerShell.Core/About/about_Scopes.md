@@ -1,11 +1,15 @@
-﻿---
-title: about_Scopes
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Scopes
+ms.technology:  powershell
+---
+
 # About Scopes
 ## about_Scopes
 
@@ -483,8 +487,10 @@ Invoke-Command $s {param($c) Remove-Item .\Test*.ps1 -Credential $c} -ArgumentLi
 
 # SEE ALSO
 
-about_Variables
-about_Environment_Variables
-about_Functions
-about_Script_Blocks
+[about_Variables](about_Variables.md)
 
+[about_Environment_Variables](about_Environment_Variables.md)
+
+[about_Functions](about_Functions.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)

@@ -1,25 +1,18 @@
-﻿---
-title: about_PowerShell_Ise.exe
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_PowerShell_Ise.exe
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PowerShell_Ise_exe
+ms.technology:  powershell
+---
+
 # About PowerShell Ise.exe
 ## about_PowerShell_Ise.exe
-# TOPIC
 
-about_PowerShell_Ise.exe
 
 # SHORT DESCRIPTION
 
@@ -39,8 +32,8 @@ or ISE.
 PowerShell_Ise[.exe]
 PowerShell_ISE[.exe]
 ISE[.exe]
-[–File]<FilePath[]> [–NoProfile] [–MTA]
-–Help | ? | -? | /?
+[-File]<FilePath[]> [-NoProfile] [-MTA]
+-Help | ? | -? | /?
 Displays the syntax and describes the command-line switches.
 
 # PARAMETERS
@@ -83,36 +76,37 @@ Displays help for PowerShell_ISE.exe.
 These commands start Windows PowerShell ISE. The commands are equivalent
 and can be used interchangeably.
 
-PS C:>PowerShell_ISE.exe
-PS C:>PowerShell_ISE
+PS C:> PowerShell_ISE.exe
+PS C:> PowerShell_ISE
 # PS C:>ISE
 
 
 These commands open the Get-Profile.ps1 script in Windows PowerShell ISE.
 The commands are equivalent and can be used interchangeably.
 
-PS C:>PowerShell_ISE.exe -File .\Get-Profile.ps1
-PS C:>ISE -File .\Get-Profile.ps1
-PS C:>ISE .\Get-Profile.ps1
+PS C:> PowerShell_ISE.exe -File .\Get-Profile.ps1
+PS C:> ISE -File .\Get-Profile.ps1
+PS C:> ISE .\Get-Profile.ps1
 
 This command opens the Get-Backups.ps1 and Get-BackupInstance.ps1 scripts
 in Windows PowerShell ISE. To open more than one file, use a comma to
 separate the file names and enclose the entire file name value in quotation
 marks.
 
-PS C:>ISE -File ".\Get-Backups.ps1,Get-BackupInstance.ps1"
+PS C:> ISE -File ".\Get-Backups.ps1,Get-BackupInstance.ps1"
 
 This command starts Windows PowerShell ISE with no profiles.
 
-PS C:>ISE -NoProfile
+PS C:> ISE -NoProfile
 
 This command gets help for PowerShell_ISE.exe.
 
-PS C:>ISE -help
+PS C:> ISE -help
 
 # SEE ALSO
 
-about_PowerShell.exe
-about_Windows_PowerShell_ISE
-Windows PowerShell 3.0 Integrated Scripting Environment (ISE)
+[about_PowerShell.exe](about_PowerShell_exe.md)
 
+[about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
+
+Windows PowerShell 3.0 Integrated Scripting Environment (ISE)

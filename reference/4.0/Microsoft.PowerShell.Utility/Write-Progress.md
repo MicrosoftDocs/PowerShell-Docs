@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294031
-schema: 2.0.0
-title: Write-Progress
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Write Progress
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294031
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Write-Progress
 
@@ -34,7 +35,7 @@ You can select the indicators that the bar reflects and the text that appears ab
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>for ($i = 1; $i -le 100; $i++ )
+PS C:\> for ($i = 1; $i -le 100; $i++ )
 {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i;}
 ```
 
@@ -43,7 +44,7 @@ The Write-Progress command includes a status bar heading ("activity"), a status 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>for($i = 1; $i -lt 101; $i++ )
+PS C:\> for($i = 1; $i -lt 101; $i++ )
 {write-progress -activity Updating -status 'Progress->' -percentcomplete $i -currentOperation OuterLoop; `
 for($j = 1; $j -lt 101; $j++ )
 {write-progress -id  1 -activity Updating -status 'Progress' -percentcomplete $j -currentOperation InnerLoop} }
@@ -65,8 +66,8 @@ Without the Id parameter, the progress bars would be superimposed on each other 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$events = get-eventlog -logname system
-PS C:\>$events | foreach-object -begin {clear-host;$i=0;$out=""} `
+PS C:\> $events = get-eventlog -logname system
+PS C:\> $events | foreach-object -begin {clear-host;$i=0;$out=""} `
 -process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $i = $i+1;
 write-progress -activity "Searching Events" -status "Progress:" -percentcomplete ($i/$events.count*100)} `
 -end {$out}

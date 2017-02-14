@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821573
-schema: 2.0.0
-title: Convert-Path
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Convert Path
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821573
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Convert-Path
 
@@ -37,21 +38,21 @@ The **Convert-Path** cmdlet converts a path from a Windows PowerShell path to a 
 
 ### Example 1: Convert the working directory to a standard file system path
 ```
-PS C:\>Convert-Path .
+PS C:\> Convert-Path .
 ```
 
 This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
 ### Example 2: Convert a provider path to a standard registry path
 ```
-PS C:\>Convert-Path HKLM:\Software\Microsoft
+PS C:\> Convert-Path HKLM:\Software\Microsoft
 ```
 
 This command converts the Windows PowerShell provider path to a standard registry path.
 
 ### Example 3: Convert a path to a string
 ```
-PS C:\>Convert-Path ~
+PS C:\> Convert-Path ~
 C:\Users\User01
 ```
 

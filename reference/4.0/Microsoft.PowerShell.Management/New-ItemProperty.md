@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293887
-schema: 2.0.0
-title: New-ItemProperty
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293887
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # New-ItemProperty
 
@@ -47,8 +48,8 @@ To add a property to all objects of a particular type, edit the Types.ps1xml fil
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 822
-PS C:\>get-itemproperty hklm:\software\mycompany
+PS C:\> new-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 822
+PS C:\> get-itemproperty hklm:\software\mycompany
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
@@ -68,7 +69,7 @@ The second command uses the Get-ItemProperty cmdlet to see the new registry entr
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfLocations -value 3
+PS C:\> get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfLocations -value 3
 ```
 
 This command adds a new registry entry to a registry key.
@@ -264,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -280,7 +281,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

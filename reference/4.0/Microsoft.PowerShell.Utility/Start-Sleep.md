@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=294018
-schema: 2.0.0
-title: Start-Sleep
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Start Sleep
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=294018
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Start-Sleep
 
@@ -38,14 +39,14 @@ You can use it for many tasks, such as waiting for an operation to complete or p
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Start-Sleep -s 15
+PS C:\> Start-Sleep -s 15
 ```
 
 This command makes all commands in the session sleep for 15 seconds.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Start-Sleep -m 500
+PS C:\> Start-Sleep -m 500
 ```
 
 This command makes all the commands in the session sleep for one-half of a second (500 milliseconds).

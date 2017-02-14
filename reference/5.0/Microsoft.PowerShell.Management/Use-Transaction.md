@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821649
-schema: 2.0.0
-title: Use-Transaction
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Use Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821649
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Use-Transaction
 
@@ -38,7 +39,7 @@ For more information, see about_Transactions.
 
 ### Example 1: Script by using a transaction-enabled object
 ```
-PS C:\>Start-Transaction
+PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
 PS C:\> $transactedString.Append("Hello")
 PS C:\> Use-Transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
@@ -87,12 +88,12 @@ The final command uses the **ToString** method to display the resulting value of
 
 ### Example 2: Roll back a transaction
 ```
-PS C:\>Start-Transaction
+PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
 PS C:\> $transactedString.Append("Hello")
 PS C:\> Use-Transaction -TransactedScript { $transactedString.Append(", World") } -UseTransaction
 PS C:\> Undo-Transaction
-PS C:\>$transactedString.ToString()
+PS C:\> $transactedString.ToString()
 Hello
 ```
 

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135200
-schema: 2.0.0
-title: Complete-Transaction
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Complete Transaction
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135200
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Complete-Transaction
 ## SYNOPSIS
@@ -34,7 +35,7 @@ For more information, see about_Transactions.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> dir m*
@@ -65,7 +66,7 @@ The Complete-Transaction command commits the transaction, which makes the regist
 As a result, the second "dir" command shows that the registry is changed.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 Hive: HKEY_CURRENT_USER\Software
@@ -136,7 +137,7 @@ The second Complete-Transaction command commits the entire transaction and chang
 This is confirmed by a second "dir m*" command, which shows the changes.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>cd hkcu:\software
+PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
 PS HKCU:\software> new-item MyCompany -UseTransaction
 PS HKCU:\software> dir m*
@@ -170,7 +171,7 @@ However, when you add the UseTransaction parameter to the "dir" command, the com
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -186,7 +187,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

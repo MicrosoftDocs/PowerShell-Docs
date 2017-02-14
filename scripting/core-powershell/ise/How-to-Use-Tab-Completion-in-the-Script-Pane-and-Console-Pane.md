@@ -1,14 +1,16 @@
 ---
-title:  How to Use Tab Completion in the Script Pane and Console Pane
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  How to Use Tab Completion in the Script Pane and Console Pane
+ms.technology:  powershell
+ms.assetid:    3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ---
+
 
 # How to Use Tab Completion in the Script Pane and Console Pane
 Tab completion provides automatic help when you are typing in the Script Pane or in the Command Pane. Use the following steps to take advantage of this feature:

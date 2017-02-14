@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=290498
-schema: 2.0.0
-title: Get-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?linkid=821590
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Process
 
@@ -64,7 +65,7 @@ You can also use the parameters of the **Get-Process** cmdlet to get file versio
 
 ### Example 1: Get a list of all active processes on the local computer
 ```
-PS C:\>Get-Process
+PS C:\> Get-Process
 ```
 
 This command gets a list of all active processes running on the local computer.
@@ -72,7 +73,7 @@ For a definition of each column, see the "Additional Notes" section of the Help 
 
 ### Example 2: Get all available data about one or more processes
 ```
-PS C:\>Get-Process winword, explorer | Format-List *
+PS C:\> Get-Process winword, explorer | Format-List *
 ```
 
 This command gets all available data about the Winword and Explorer processes on the computer.
@@ -84,7 +85,7 @@ For instance, `Get-Process -Id 664, 2060`.
 
 ### Example 3: Get all processes with a working set greater than a specified size
 ```
-PS C:\>Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
+PS C:\> Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
 
 This command gets all processes that have a working set greater than 20 MB.
@@ -97,7 +98,7 @@ By default, the values of all amount properties are in bytes, even though the de
 
 ### Example 4: List processes on the computer in groups based on priority
 ```
-PS C:\>$A = Get-Process PS C:\>Get-Process -InputObject $A | Format-Table -View priority
+PS C:\> $A = Get-Process PS C:\> Get-Process -InputObject $A | Format-Table -View priority
 ```
 
 These commands list the processes on the computer in groups based on their priority class.
@@ -109,7 +110,7 @@ The Priority view, and other views, are defined in the PS1XML format files in th
 
 ### Example 5: Add a property to the standard Get-Process output display
 ```
-PS C:\>Get-Process Powershell -ComputerName S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -Auto
+PS C:\> Get-Process Powershell -ComputerName S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -Auto
 
 
 
@@ -127,7 +128,7 @@ This example provides a **Format-Table** (alias = ft) command that adds the **Ma
 
 ### Example 6: Get version information for a process
 ```
-PS C:\>Get-Process powershell -FileVersionInfo
+PS C:\> Get-Process powershell -FileVersionInfo
 
 
 
@@ -143,7 +144,7 @@ To run this command with processes that you do not own on Windows Vista and late
 
 ### Example 7: Get modules loaded with the specified process
 ```
-PS C:\>Get-Process SQL* -Module
+PS C:\> Get-Process SQL* -Module
 ```
 
 This command uses the *Module* parameter to get the modules that have been loaded by the process.
@@ -153,8 +154,8 @@ To run this command on Windows Vista and later versions of Windows with processe
 
 ### Example 8: Find the owner of a process
 ```
-PS C:\>$P = Get-WmiObject win32_process -Filter "name='powershell.exe'"
-PS C:\>$P.getowner()
+PS C:\> $P = Get-WmiObject win32_process -Filter "name='powershell.exe'"
+PS C:\> $P.getowner()
 
 
 
@@ -171,14 +172,14 @@ PS C:\>$P.getowner()
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 3
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 Domain           : DOMAIN01
 ReturnValue      : 0
 User             : user01
@@ -195,7 +196,7 @@ The command reveals that the owner is Domain01\user01.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
 ```
-PS C:\>Get-Process powershell
+PS C:\> Get-Process powershell
 
 
 
@@ -204,7 +205,7 @@ PS C:\>Get-Process powershell
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 308      26        52308      61780   567     3.18   5632 powershell
-377      26        62676      63384   575     3.88   5888 powershell PS C:\>Get-Process -Id $pid
+377      26        62676      63384   575     3.88   5888 powershell PS C:\> Get-Process -Id $pid
 
 
 
@@ -221,7 +222,7 @@ The second command gets the Windows PowerShell process that is hosting the curre
 
 ### Example 10: Get all processes that have a main window title and display them in a table
 ```
-PS C:\>Get-Process | where {$_.mainWindowTitle} | Format-Table id, name, mainwindowtitle -autosize
+PS C:\> Get-Process | where {$_.mainWindowTitle} | Format-Table id, name, mainwindowtitle -autosize
 ```
 
 This command gets all the processes that have a main window title, and it displays them in a table with the process ID and the process name.
@@ -300,7 +301,7 @@ Indicates that the UserName value of the **Process** object is returned with res
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NameWithUserName, IdWithUserName, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -316,7 +317,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -342,7 +343,7 @@ When you use both the *Module* and *FileVersionInfo* parameters in the same comm
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Name, Id, InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -380,7 +381,7 @@ You can pipe a process object to this cmdlet.
 
 ### System.Diagnostics.Process, System.Diagnotics.FileVersionInfo, System.Diagnostics.ProcessModule
 By default, this cmdlet returns a **System.Diagnostics.Process** object.
-If you use the *FileVersionInfo* parameter, it returns a **System.Diagnotics.FileVersionInfo** object. 
+If you use the *FileVersionInfo* parameter, it returns a **System.Diagnotics.FileVersionInfo** object.
 If you use the *Module* parameter, without the *FileVersionInfo* parameter, it returns a **System.Diagnostics.ProcessModule** object.
 
 ## NOTES

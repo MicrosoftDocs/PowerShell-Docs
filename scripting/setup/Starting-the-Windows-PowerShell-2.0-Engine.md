@@ -1,14 +1,16 @@
 ---
-title:  Starting the Windows PowerShell 2.0 Engine
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
-ms.assetid:  edafc2fa-7576-49c2-bbba-9336f4bcfc28
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Starting the Windows PowerShell 2.0 Engine
+ms.technology:  powershell
+ms.assetid:    edafc2fa-7576-49c2-bbba-9336f4bcfc28
 ---
+
 
 # Starting the Windows PowerShell 2.0 Engine
 This section explains how to start the Windows PowerShell 2.0 Engine on Windows 8.1, Windows Server 2012 R2, Windows 8, and Windows Server 2012, which include the Windows PowerShell 2.0 Engine, and on other systems on which Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 are installed.

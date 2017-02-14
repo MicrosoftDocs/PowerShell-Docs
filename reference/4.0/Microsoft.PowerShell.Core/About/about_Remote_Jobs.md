@@ -1,23 +1,17 @@
-﻿---
-title: about_Remote_Jobs
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Jobs
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Jobs
+ms.technology:  powershell
+---
+
 # About Remote Jobs
 ## about_Remote_Jobs
-about_Remote_Jobs
 
 
 ## SHORT DESCRIPTION
@@ -49,7 +43,7 @@ The procedure for starting a background job in an interactive session is almost 
 
 
 #### STEP 1: ENTER-PSSESSION
-Use the Enter-PSSession cmdlet to start an interactive session with a remote computer. You can use the ComputerName parameter of Enter-PSSession to establish a temporary connection for the interactive session. Or, you can use the Session parameter to run the interactive session in a  Windows PowerShell� session (PSSession).
+Use the Enter-PSSession cmdlet to start an interactive session with a remote computer. You can use the ComputerName parameter of Enter-PSSession to establish a temporary connection for the interactive session. Or, you can use the Session parameter to run the interactive session in a  Windows PowerShell® session (PSSession).
 
 The following command starts an interactive session on the Server01 computer.
 
@@ -285,13 +279,14 @@ invoke-command -session $s -command {receive-job -sessionid 2 > c:\logs\pslog.tx
 
 
 ## SEE ALSO
-about_Jobs
 
-about_Job_Details
+[about_Jobs](about_Jobs.md)
 
-about_Remote
+[about_Job_Details](about_Job_Details.md)
 
-about_Remote_Variables
+[about_Remote](about_Remote.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
 
 Invoke-Command
 
@@ -310,4 +305,3 @@ New-PSSession
 Enter-PSSession
 
 Exit-PSSession
-

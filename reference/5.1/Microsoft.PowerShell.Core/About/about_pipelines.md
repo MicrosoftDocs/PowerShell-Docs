@@ -1,25 +1,19 @@
-﻿---
-title: about_pipelines
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Pipelines
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_pipelines
+ms.technology:  powershell
+---
+
 # About Pipelines
 ## about_Pipelines
 
 
-about_pipelines
 
 # SHORT DESCRIPTION
 
@@ -454,8 +448,10 @@ Product      : 18
 
 # SEE ALSO
 
-about_objects
-about_parameters
-about_command_syntax
-about_foreach
+[about_objects](about_objects.md)
 
+[about_parameters](about_parameters.md)
+
+[about_command_syntax](about_command_syntax.md)
+
+[about_foreach](about_foreach.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113340
-schema: 2.0.0
-title: Import-Clixml
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Import Clixml
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113340
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Import-Clixml
 ## SYNOPSIS
@@ -38,17 +39,17 @@ For an example of how to do this, see Example 2 in this topic.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-process | export-clixml pi.xml
-PS C:\>$processes = import-clixml pi.xml
+PS C:\> get-process | export-clixml pi.xml
+PS C:\> $processes = import-clixml pi.xml
 ```
 
 This command uses the Export-Clixml cmdlet to save a serialized copy of the process information returned by Get-Process.
 It then uses Import-Clixml to retrieve the contents of the serialized file and re-create an object that is stored in the $processes variable.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential | Export-CliXml $credxmlpath PS C:\>$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\>$credential = Import-CliXml $credxmlpath
+PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential | Export-CliXml $credxmlpath PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential = Import-CliXml $credxmlpath
 ```
 
 The Export-CliXml cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.

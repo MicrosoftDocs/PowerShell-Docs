@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=799468
-schema: 2.0.0
-title: Get-TimeZone
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get TimeZone
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=799468
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-TimeZone
 
@@ -42,7 +43,7 @@ The **Get-TimeZone** cmdlet gets the current time zone or a list of available ti
 
 ### Example 1: Get the current time zone
 ```
-PS C:\>Get-TimeZone
+PS C:\> Get-TimeZone
 Pacific Standard Time
 ```
 
@@ -50,7 +51,7 @@ This command gets the current time zone.
 
 ### Example 2: Get time zones that match a specified string
 ```
-PS C:\>Get-TimeZone -Name "*pac*"
+PS C:\> Get-TimeZone -Name "*pac*"
 Pacific Standard Time (Mexico) 
 
 (UTC-08:00) Pacific Time (US &amp; Canada) 
@@ -70,7 +71,7 @@ This command gets all time zones that match the specified wildcard.
 
 ### Example 3: Get all available time zones
 ```
-PS C:\>Get-TimeZone -ListAvailable
+PS C:\> Get-TimeZone -ListAvailable
 ```
 
 This command gets all available time zones.

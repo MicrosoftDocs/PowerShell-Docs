@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821779
-schema: 2.0.0
-title: Get-Culture
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Culture
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821779
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Get-Culture
 
@@ -28,22 +29,22 @@ Get-Culture [<CommonParameters>]
 The **Get-Culture** cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
-You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the Set-Culturehttp://go.microsoft.com/fwlink/?LinkID=242258 cmdlet in the International module.
+You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
 The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
 
 ## EXAMPLES
 
 ### Example 1: Get culture settings
 ```
-PS C:\>Get-Culture
+PS C:\> Get-Culture
 ```
 
 This command displays information about the regional settings on the computer.
 
 ### Example 2: Format the properties of a culture object
 ```
-PS C:\>$C = Get-Culture
-PS C:\>$C | Format-List -Property *
+PS C:\> $C = Get-Culture
+PS C:\> $C | Format-List -Property *
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -64,14 +65,14 @@ DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
 Calendar                       : System.Globalization.GregorianCalendar
 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : False PS C:\>$C.Calendar
+IsReadOnly                     : False PS C:\> $C.Calendar
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
 AlgorithmType        : SolarCalendar
 CalendarType         : Localized
 Eras                 : {1}
 TwoDigitYearMax      : 2029
-IsReadOnly           : False PS C:\>$C.DateTimeFormat
+IsReadOnly           : False PS C:\> $C.DateTimeFormat
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -97,7 +98,7 @@ MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...} 
-MonthGenitiveNames               : {January, February, March, April...} PS C:\>$C.DateTimeFormat.FirstDayOfWeek
+MonthGenitiveNames               : {January, February, March, April...} PS C:\> $C.DateTimeFormat.FirstDayOfWeek
 Sunday
 ```
 
@@ -144,7 +145,7 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-Set-Culture
+[Set-Culture]()
 
 [Get-UICulture](Get-UICulture.md)
 

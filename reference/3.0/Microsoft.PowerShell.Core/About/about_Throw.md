@@ -1,25 +1,18 @@
-﻿---
-title: about_Throw
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Throw
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Throw
+ms.technology:  powershell
+---
+
 # About Throw
 ## about_Throw
-# TOPIC
 
-about_Throw
 
 # SHORT DESCRIPTION
 
@@ -150,9 +143,12 @@ dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attribut
 
 # SEE ALSO
 
-about_Break
-about_Continue
-about_Scope
-about_Trap
-about_Try_Catch_Finally
+[about_Break](about_Break.md)
 
+[about_Continue](about_Continue.md)
+
+[about_Scopes](about_Scopes.md)
+
+[about_Trap](about_Trap.md)
+
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)

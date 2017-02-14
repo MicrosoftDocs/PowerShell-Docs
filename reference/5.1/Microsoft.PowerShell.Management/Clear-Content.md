@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822205
-schema: 2.0.0
-title: Clear-Content
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear Content
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821567
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Clear-Content
 
@@ -41,7 +42,7 @@ The **Clear-Content** is similar to Clear-Item, but it works on items with conte
 
 ### Example 1: Delete all content from a directory
 ```
-PS C:\>Clear-Content "..\SmpUsers\*\init.txt"
+PS C:\> Clear-Content "..\SmpUsers\*\init.txt"
 ```
 
 This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
@@ -49,7 +50,7 @@ The files are not deleted, but they are empty.
 
 ### Example 2: Delete content of all files with a wildcard
 ```
-PS C:\>Clear-Content -Path "*" -Filter "*.log" -Force
+PS C:\> Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
 This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.
@@ -60,7 +61,7 @@ Using a filter to restrict the command to files with the .log file name extensio
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -242,7 +243,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

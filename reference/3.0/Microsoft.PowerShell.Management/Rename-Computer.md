@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135253
-schema: 2.0.0
-title: Rename-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Rename Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135253
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Rename-Computer
 ## SYNOPSIS
@@ -33,13 +34,13 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Rename-Computer -NewName Server044 -DomainCredential Domain01\Admin01 -Restart
+PS C:\> Rename-Computer -NewName Server044 -DomainCredential Domain01\Admin01 -Restart
 ```
 
 This command renames the local computer to Server044 and then restarts it to make the change effective.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Rename-Computer -ComputerName Srv01 -NewName Server001 -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
+PS C:\> Rename-Computer -ComputerName Srv01 -NewName Server001 -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
 ```
 
 This command renames the Srv01 computer to Server001 and then restarts it to make the change effective.
@@ -47,8 +48,8 @@ It uses the **LocalCredential** parameter to supply the credentials of a user wh
 It uses the **Force** parameter to suppress the confirmation prompt and the **PassThru** parameter to return the results of the command.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a = Import-Csv ServerNames.csv -Header OldName, NewName
-PS C:\>Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}
+PS C:\> $a = Import-Csv ServerNames.csv -Header OldName, NewName
+PS C:\> Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}
 ```
 
 This command renames multiple computers in the domain.
@@ -194,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -210,7 +211,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

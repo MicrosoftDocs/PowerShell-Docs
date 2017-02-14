@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822270
-schema: 2.0.0
-title: Restart-Service
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Restart Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821629
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Restart-Service
 
@@ -47,21 +48,21 @@ You can specify the services by their service names or display names, or you can
 
 ### Example 1: Restart a service on the local computer
 ```
-PS C:\>Restart-Service -Name winmgmt
+PS C:\> Restart-Service -Name winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.
 
 ### Example 2: Exclude a service
 ```
-PS C:\>Restart-Service -DisplayName "net*" -Exclude "net logon"
+PS C:\> Restart-Service -DisplayName "net*" -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that starts with Net, except for the Net Logon service.
 
 ### Example 3: Start all stopped network services
 ```
-PS C:\>Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
+PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
 This command starts all of the stopped network services on the computer.
@@ -75,7 +76,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -205,7 +206,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821831
-schema: 2.0.0
-title: New-Alias
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New Alias
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821831
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # New-Alias
 
@@ -35,15 +36,15 @@ You can later use **Import-Alias** to retrieve that saved alias information.
 
 ### Example 1: Create an alias for a cmdlet
 ```
-PS C:\>New-Alias -Name "List" Get-ChildItem
+PS C:\> New-Alias -Name "List" Get-ChildItem
 ```
 
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
 ```
-PS C:\>New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
-PS C:\>Get-Alias -Name "W" | Format-List *
+PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
+PS C:\> Get-Alias -Name "W" | Format-List *
 ```
 
 This command creates an alias named W to represent the Get-WmiObject cmdlet.
@@ -53,7 +54,7 @@ The last line of the command uses Get-Alias to get the new alias and pipes it to
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -204,7 +205,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

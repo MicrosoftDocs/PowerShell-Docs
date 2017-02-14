@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113398
-schema: 2.0.0
-title: Set-PSDebug
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set PSDebug
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113398
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Set-PSDebug
 ## SYNOPSIS
@@ -38,7 +39,7 @@ If the Step parameter is specified, you are prompted before each line of the scr
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>set-psdebug -trace 2; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -trace 2; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
 DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
@@ -52,7 +53,7 @@ DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
 This command sets the trace level to 2, and then runs a script that displays the numbers 1, 2, and 3.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>set-psdebug -step; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -step; foreach ($i in 1..3) {$i}
 
 DEBUG:    1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
 Continue with this operation?
@@ -70,7 +71,7 @@ This command turns on stepping and then
 runs a script that displays the numbers 1, 2, and 3.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>set-psdebug -off; foreach ($i in 1..3) {$i}
+PS C:\> set-psdebug -off; foreach ($i in 1..3) {$i}
 1
 2
 3
@@ -79,7 +80,7 @@ PS C:\>set-psdebug -off; foreach ($i in 1..3) {$i}
 This command turns off all debugging features, and then runs a script that displays the numbers 1, 2, and 3.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>set-psdebug -strict; $NewVar
+PS C:\> set-psdebug -strict; $NewVar
 The variable $NewVar cannot be retrieved because it has not been set yet.
 At line:1 char:28
 + Set-PsDebug -strict;$NewVar <<<<

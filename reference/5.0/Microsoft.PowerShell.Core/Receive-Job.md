@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821505
-schema: 2.0.0
-title: Receive-Job
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Receive Job
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821505
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Receive-Job
 
@@ -80,8 +81,8 @@ For information about a particular custom job type, see the documentation of the
 
 ### Example 1: Get results for a particular job
 ```
-PS C:\>$job = Start-Job -ScriptBlock {Get-Process}
-PS C:\>Receive-Job -Job $job
+PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
+PS C:\> Receive-Job -Job $job
 ```
 
 These commands use the *Job* parameter of **Receive-Job** to get the results of a particular job.
@@ -94,8 +95,8 @@ It uses the *Job* parameter to specify the job.
 
 ### Example 2: Get results for a particular job by using the pipeline
 ```
-PS C:\>$job = Start-Job -ScriptBlock {Get-Process}
-PS C:\>$job | Receive-Job
+PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
+PS C:\> $job | Receive-Job
 ```
 
 This example is the same as the previous example, except that the command uses a pipeline operator (|) to send the job object to **Receive-Job**.
@@ -106,10 +107,10 @@ As a result, the command does not need a *Job* parameter to specify the job.
 The first command uses the Invoke-Command cmdlet to start a background job that runs a Get-Service command on three remote computers. The command uses the *AsJob* parameter to run the command as a background job. The command saves the resulting job object in the $j variable.When you use the *AsJob* parameter of **Invoke-Command** to start a job, the job object is created on the local computer, even though the job runs on the remote computers. As a result, you use local commands to manage the job.Also, when you use *AsJob*, Windows PowerShell returns one job object that contains a child job for each job that was started. In this case, the job object contains three child jobs, one for each job on each remote computer.
 
 
-PS C:\>$j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
+PS C:\> $j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
 
 The second command uses the dot method to display the value of the **ChildJobs** property of the job object in $j. The display shows that the command created three child jobs, one for the job on each remote computer.
-PS C:\>$j.ChildJobs
+PS C:\> $j.ChildJobs
 
 Id   Name     State      HasMoreData   Location       Command
 --   ----     -----      -----------   --------       -------
@@ -118,7 +119,7 @@ Id   Name     State      HasMoreData   Location       Command
 4    Job4     Completed  True          Server03       Get-Service
 
 The third command uses the **Receive-Job** cmdlet to get the results of the Job3 child job that ran on the Server02 computer. It uses the *Name* parameter to specify the name of the child job and the *Keep* parameter to save the job results even after they are received.
-PS C:\>Receive-Job -Name Job3 -Keep
+PS C:\> Receive-Job -Name Job3 -Keep
 
 Status  Name        DisplayName                        PSComputerName
 ------  ----------- -----------                        --------------
@@ -133,13 +134,13 @@ These commands get the results of one of several background jobs run on remote c
 ### Example 4: Get results of background jobs on multiple remote computers
 ```
 The first command uses the New-PSSession cmdlet to create three user-managed sessions (**PSSessions**), one on each of the servers specified in the command. It saves the sessions in the $s variable.
-PS C:\>$s = new-pssession -computername Server01, Server02, Server03
+PS C:\> $s = new-pssession -computername Server01, Server02, Server03
 
 The second command uses the **Invoke-Command** cmdlet to run a **Start-Job** command in each of the **PSSessions** in the $s variable. The job runs a Get-EventLog command that gets the events in the System log. The command saves the results in the $j variable.Because the command used **Invoke-Command** to run the **Start-Job** command, the command actually started three independent jobs on each of the three computers. As a result, the command returned three job objects representing three jobs run locally on three different computers.
-PS C:\>$j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
+PS C:\> $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
 
 The third command displays the three job objects in $j.
-PS C:\>$j
+PS C:\> $j
 
 Id   Name     State      HasMoreData   Location   Command
 --   ----     -----      -----------   --------   -------
@@ -149,7 +150,7 @@ Id   Name     State      HasMoreData   Location   Command
 
 
 The fourth command uses Invoke-Command to run a **Receive-Job** command in each of the sessions in $s and save the results in the $Results variable.Because $j is a local variable, the script block uses the **Using** scope modifier to identify the $j variable. For more information about the **Using** scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
-PS C:\>$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+PS C:\> $results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
 ```
 
 This example shows how to get the results of background jobs run on three remote computers.

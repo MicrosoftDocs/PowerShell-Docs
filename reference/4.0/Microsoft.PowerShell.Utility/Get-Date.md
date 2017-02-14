@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293966
-schema: 2.0.0
-title: Get-Date
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Date
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293966
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Get-Date
 
@@ -43,7 +44,7 @@ You can use **Get-Date** to generate a date or time character string, and then s
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Date -DisplayHint Date
+PS C:\> Get-Date -DisplayHint Date
 Tuesday, June 13, 2006
 ```
 
@@ -52,7 +53,7 @@ It uses the Displa****yHint parameter to indicate that only the date is to be di
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Date -Format g
+PS C:\> Get-Date -Format g
 6/13/2006 12:43 PM
 ```
 
@@ -61,7 +62,7 @@ It uses the .NET Framework "g" format specifier (General \[short date and short 
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>Get-Date -UFormat "%Y / %m / %d / %A / %Z"
+PS C:\> Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 2006 / 06 / 13 / Tuesday / -07
 ```
 
@@ -70,7 +71,7 @@ In this case, the format includes the full year (%Y), the two-digit numeric mont
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
+PS C:\> (Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
 366
 ```
 
@@ -79,8 +80,8 @@ For example, December 31 is the 365th day of 2006, but it is the 366th day of 20
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$a = Get-Date
-PS C:\>$a.IsDaylightSavingTime()
+PS C:\> $a = Get-Date
+PS C:\> $a.IsDaylightSavingTime()
 True
 ```
 
@@ -95,8 +96,8 @@ To see the properties and methods of the **DateTime** object, type:
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>$a = Get-Date
-PS C:\>$a.ToUniversalTime()
+PS C:\> $a = Get-Date
+PS C:\> $a.ToUniversalTime()
 Tuesday, June 13, 2006 8:09:19 PM
 ```
 
@@ -107,8 +108,8 @@ Then, it uses the **ToUniversalTime** method on the object in $a.
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>$a = Get-WmiObject Win32_Bios -Computer Server01
-PS C:\>$a | Format-List -Property Name, @{Label="BIOS Age";Expression={(Get-Date) - $_.ConvertToDateTime($_.ReleaseDate)}}
+PS C:\> $a = Get-WmiObject Win32_Bios -Computer Server01
+PS C:\> $a | Format-List -Property Name, @{Label="BIOS Age";Expression={(Get-Date) - $_.ConvertToDateTime($_.ReleaseDate)}}
 Name     : Default System BIOS
 BIOS Age : 1345.17:31:07.1091047
 ```
@@ -131,7 +132,7 @@ The backtick character (\`) is the line continuation character in Windows PowerS
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>Get-Date
+PS C:\> Get-Date
 Tuesday, June 13, 2006 12:43:42 PM
 ```
 
@@ -139,17 +140,17 @@ This command gets a **DateTime** object and displays the current date and time i
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>Get-Date
+PS C:\> Get-Date
 Tuesday, September 26, 2006 11:25:31 AM
 
-PS C:\>(Get-Date).ToString()
+PS C:\> (Get-Date).ToString()
 9/26/2006 11:25:31 AM
 
-PS C:\>Get-Date | Add-Content Test.txt
+PS C:\> Get-Date | Add-Content Test.txt
 
 # Adds 9/26/2006 11:25:31 AM
 
-PS C:\>Get-Date -Format F | Add-Content Test.txt
+PS C:\> Get-Date -Format F | Add-Content Test.txt
 
 # Adds Tuesday, September 26, 2006 11:25:31 AM
 ```
@@ -170,14 +171,14 @@ Then, when you send the string to **Add-Content**, it adds the string to the Tes
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
 The first command uses the **Format** parameter with a value of "o" to generate a timestamp string.
-PS C:\>Get-Date -Format o
+PS C:\> Get-Date -Format o
 2012-03-08T10:55:55.6083839-08:00
 
 The second command prepares the timestamp to be used in a directory name. The command replaces the colon characters (:) in the string with dots (.) and saves the result in the $timestamp variable. Replacing the colons prevents the characters that precede each colon from being interpreted as a drive name.
-PS C:\>$timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
+PS C:\> $timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
 
 The third command uses the Mkdir function to create a directory with the name in the $timestamp variable.
-PS C:\>mkdir C:\ps-test\$timestamp
+PS C:\> mkdir C:\ps-test\$timestamp
     Directory: C:\ps-test
 
 Mode                LastWriteTime     Length Name

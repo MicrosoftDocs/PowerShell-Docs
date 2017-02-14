@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822040
-schema: 2.0.0
-title: Debug-Job
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Debug Job
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=512991
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Debug-Job
 
@@ -51,7 +52,7 @@ Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, 
 
 ### Example 1: Debug a job by job ID
 ```
-PS C:\>Debug-Job -ID 3
+PS C:\> Debug-Job -ID 3
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 3      Job3            RemoteJob       Running       True            PowerShellIx         TestWFDemo1.ps1
@@ -62,7 +63,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
           At C:\TestWFDemo1.ps1:8 char:5
           +     Write-Output -InputObject "Now writing output:" 
           +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          [DBG:PowerShellIx]: PS C:\>> list
+          [DBG:PowerShellIx]: PS C:\> > list
 
               3: 
               4:  workflow SampleWorkflowTest
@@ -87,7 +88,7 @@ This command breaks into a running job with an ID of 3.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -169,7 +170,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

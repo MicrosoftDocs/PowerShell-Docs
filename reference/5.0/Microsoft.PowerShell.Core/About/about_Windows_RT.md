@@ -1,23 +1,17 @@
-﻿---
-title: about_Windows_RT
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Windows_RT
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Windows_RT
+ms.technology:  powershell
+---
+
 # About Windows RT
 ## about_Windows_RT
-about_Windows_RT
 
 
 ## SHORT DESCRIPTION
@@ -61,15 +55,13 @@ about_WindowsRT
 
 
 ## SEE ALSO
-about_Language_Modes
 
-about_Remote
+[about_Language_Modes](about_Language_Modes.md)
 
-about_Windows_PowerShell_ISE
+[about_Remote](about_Remote.md)
+
+[about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 
 about_Workflows
 
-Windows PowerShell System Requirements:
-
-(http:\/\/technet.microsoft.com\/library\/hh857337.aspx)
-
+Windows PowerShell System Requirements: http://technet.microsoft.com/library/hh857337.aspx)

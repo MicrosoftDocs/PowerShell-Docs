@@ -1,23 +1,17 @@
-﻿---
-title: about_For
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_For
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_For
+ms.technology:  powershell
+---
+
 # About For
 ## about_For
-about_For
 
 
 ## SHORT DESCRIPTION
@@ -134,7 +128,7 @@ for ($i = 0; $i -ile 20; $i += 2) {Write-Host $i}
 
 
 ## SEE ALSO
-about_Comparison_Operators
 
-about_Foreach
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
+[about_Foreach](about_Foreach.md)

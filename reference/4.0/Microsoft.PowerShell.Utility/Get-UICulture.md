@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293977
-schema: 2.0.0
-title: Get-UICulture
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get UICulture
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293977
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Get-UICulture
 
@@ -35,21 +36,21 @@ The culture determines the display format of items such as numbers, currency, an
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-uiculture
+PS C:\> get-uiculture
 ```
 
 This command gets the current UI culture information.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-uiculture | format-list *
+PS C:\> get-uiculture | format-list *
 ```
 
 This command displays the values of all of the properties of the current UI culture in a list.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>(get-uiculture).calendar
+PS C:\> (get-uiculture).calendar
 ```
 
 This command displays the current values for the Calendar property of the current UI culture.
@@ -58,7 +59,7 @@ To see all of the properties, type "get-uiculture | get-member".
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>(get-uiculture).datetimeformat.shortdatepattern
+PS C:\> (get-uiculture).datetimeformat.shortdatepattern
 ```
 
 This command displays the short date pattern for the current UI culture.

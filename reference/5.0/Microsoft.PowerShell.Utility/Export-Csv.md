@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821769
-schema: 2.0.0
-title: Export-Csv
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Csv
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821769
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Export-Csv
 
@@ -47,14 +48,14 @@ To export only selected properties of an object, use the Select-Object cmdlet.
 
 ### Example 1: Export process properties
 ```
-PS C:\>Get-Process wmiprvse | Select-Object basePriority,ID,SessionID,WorkingSet | Export-Csv -Path "data.csv"
+PS C:\> Get-Process wmiprvse | Select-Object basePriority,ID,SessionID,WorkingSet | Export-Csv -Path "data.csv"
 ```
 
 This command selects a few properties of the WmiPrvse process and exports them to a CSV file named Data.csv.
 
 ### Example 2: Export processes to a comma-delimited file
 ```
-PS C:\>Get-Process | Export-Csv -Path "processes.csv"
+PS C:\> Get-Process | Export-Csv -Path "processes.csv"
 # In processes.csv
 #TYPE System.Diagnostics.Process
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
@@ -65,7 +66,7 @@ Because it does not specify a delimiter, a comma (,) is used to separate the fie
 
 ### Example 3: Export processes to a semicolon-delimited file
 ```
-PS C:\>Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
+PS C:\> Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
 # In processes.csv
 #TYPE System.Diagnostics.Process
 __NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
@@ -77,7 +78,7 @@ As a result, the fields in the file are separated by semicolons.
 
 ### Example 4: Export using the list separator of the current culture
 ```
-PS C:\>Get-Process | Export-Csv -Path "processes.csv" -UseCulture
+PS C:\> Get-Process | Export-Csv -Path "processes.csv" -UseCulture
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
@@ -85,7 +86,7 @@ It uses the *UseCulture* parameter to direct **Export-CSV** to use the delimiter
 
 ### Example 5: Export processes without type information
 ```
-PS C:\>Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
+PS C:\> Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
 # In processes.csv
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
 ```
@@ -95,13 +96,13 @@ It uses the *NoTypeInformation* parameter to suppress the type information in th
 
 ### Example 6: Export and append script properties
 ```
-PS C:\>$ScriptFiles = Get-ChildItem D:\* -Include *.ps1 -Recurse | Where-Object {$_.creationtime -gt "01/01/2011"}
+PS C:\> $ScriptFiles = Get-ChildItem D:\* -Include *.ps1 -Recurse | Where-Object {$_.creationtime -gt "01/01/2011"}
 
 The second command uses the Select-Object cmdlet to select the relevant properties of the script files. It saves the revised results in the ScriptFiles variable.
-PS C:\>$ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
+PS C:\> $ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
 
 The third command uses a pipeline operator (|) to send the script file information in the ScriptFiles variable to the **Export-CSV** cmdlet. The command uses the Path parameter to specify the output file and the *Append* parameter to add the new script data to the end of the output file, instead of replacing the existing file contents.
-PS C:\>$ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
+PS C:\> $ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
 ```
 
 These commands add information about new Windows PowerShell scripts to a script inventory file.
@@ -112,11 +113,11 @@ It uses a pipeline operator to sends the results to the Where-Object cmdlet, whi
 ### Example 7: Select properties to export
 ```
 The first command shows how to select properties of an object and export them to a CSV file. This command uses the Get-Date cmdlet to get the current date and time. It uses the **Select-Object** cmdlet to select the desired properties, and the **Export-CSV** cmdlet to export the object and its properties to the Date.csv file. The output shows the expected content in the Date.csv file.
-PS C:\>Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
+PS C:\> Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
 #In Date.csv:"DateTime","Day","DayOfWeek","DayOfYear""Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
 
 The second command shows that when you use the **Format-Table** cmdlet to format your data before exporting it, the output is not useful. 
-PS C:\>Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
+PS C:\> Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
 #In Date.csv: "ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry"
 "033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo","9e210fe47d09416682b841769c78b8a3"
 ,,,,,"27c87ef9bbda4f709f6b4002fa4af63c",,,,,"4ec4f0187cb04f4cb6973460dfe252df",,,,,"cf522b78d86c486691226b40aa69e95c",,,,,
@@ -154,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -333,7 +334,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

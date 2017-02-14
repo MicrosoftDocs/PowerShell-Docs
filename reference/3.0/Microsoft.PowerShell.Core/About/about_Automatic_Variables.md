@@ -1,27 +1,21 @@
-﻿---
-title: about_Automatic_Variables
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Automatic_Variables
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Automatic_Variables
+ms.technology:  powershell
+---
+
 # About Automatic Variables
 ## about_Automatic_Variables
-about_Automatic_Variables
 
 
 ## SHORT DESCRIPTION
-Describes variables that store state information for  Windows PowerShell�. These variables are created and maintained by  Windows PowerShell.
+Describes variables that store state information for  Windows PowerShell®. These variables are created and maintained by  Windows PowerShell.
 
 
 ## LONG DESCRIPTION
@@ -172,7 +166,7 @@ $currentDay = 0
 ```
 foreach($day in $calendar)  
 {  
-    if($day –ne $null)  
+    if($day -ne $null)  
     {  
         "Appointment on $($days[$currentDay]): $day"  
     }  
@@ -424,9 +418,9 @@ Contains TRUE. You can use this variable to represent TRUE in commands and scrip
 
 
 ## SEE ALSO
-about_Hash_Tables
 
-about_Preference_Variables
+[about_Hash_Tables](about_Hash_Tables.md)
 
-about_Variables
+[about_Preference_Variables](about_Preference_Variables.md)
 
+[about_Variables](about_Variables.md)

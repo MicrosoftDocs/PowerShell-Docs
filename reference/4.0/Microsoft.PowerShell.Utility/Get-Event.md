@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293967
-schema: 2.0.0
-title: Get-Event
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Event
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293967
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Get-Event
 
@@ -45,22 +46,22 @@ To get those events, use Get-WinEvent or Get-EventLog.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-event
+PS C:\> get-event
 ```
 
 This command gets all events in the event queue.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-event -sourceIdentifier "PowerShell.ProcessCreated"
+PS C:\> get-event -sourceIdentifier "PowerShell.ProcessCreated"
 ```
 
 This command gets events in which the value of the SourceIdentifier property is "PowerShell.ProcessCreated".
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$events = get-event
-PS C:\>$events[0] | format-list -property *
+PS C:\> $events = get-event
+PS C:\> $events[0] | format-list -property *
 
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b805917d1b7b
@@ -72,7 +73,7 @@ SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
 MessageData      :
 
-PS C:\>get-event | where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
+PS C:\> get-event | where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
 
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
@@ -99,7 +100,7 @@ based on the time that it was generated.
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-event -eventIdentifier 2
+PS C:\> get-event -eventIdentifier 2
 ```
 
 This command gets the event with an event identifier of 2.

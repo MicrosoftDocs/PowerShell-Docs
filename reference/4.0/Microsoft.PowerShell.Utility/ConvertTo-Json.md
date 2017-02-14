@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293951
-schema: 2.0.0
-title: ConvertTo-Json
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  ConvertTo Json
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293951
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # ConvertTo-Json
 
@@ -38,7 +39,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1
 ```
-PS C:\>(Get-UICulture).Calendar | ConvertTo-Json
+PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 
 {
 
@@ -67,7 +68,7 @@ This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar o
 
 ### Example 2
 ```
-PS C:\>@{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json - Compress
+PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json - Compress
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
@@ -77,7 +78,7 @@ The compression affects only the appearance of the string, not its validity.
 ### Example 3
 ```
 The first command uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the Get-Date cmdlet to a JSON-formatted string. The command uses the Select-Object cmdlet to get all (*) of the properties of the **DateTime** object.The output shows the JSON string that **ConvertTo-Json** returned.
-PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 {
 
@@ -138,7 +139,7 @@ PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 
 The second command uses ConvertFrom-Json to convert the JSON string to a JSON object. 
-PS C:\>Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 
@@ -181,7 +182,7 @@ This command shows how to use the ConvertTo-Json and ConvertFrom-Json cmdlet to 
 
 ### Example 4
 ```
-PS C:\>$JsonSecurityHelp = Get-Content $pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
+PS C:\> $JsonSecurityHelp = Get-Content $pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a Windows PowerShell help file from XML format to JSON format.

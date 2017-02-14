@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822235
-schema: 2.0.0
-title: Get-Location
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Location
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821589
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Location
 
@@ -45,7 +46,7 @@ For more information, see the Notes and the descriptions of the *Stack* and *Sta
 
 ### Example 1: Display your current drive location
 ```
-PS C:\>Get-Location
+PS C:\> Get-Location
 Path
 ----
 C:\WINDOWS
@@ -58,7 +59,7 @@ For instance, if you are in the Windows directory of the C: drive, it displays t
 ### Example 2: Display your current location for different drives
 ```
 The first command uses the **Set-Location** cmdlet to set the current location to the Windows subdirectory of the C: drive.
-PS C:\>Set-Location C:\Windows
+PS C:\> Set-Location C:\Windows
 
 The second command uses the **Set-Location** cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, Windows PowerShell retains your location in the C: drive.
 PS C:\>
@@ -114,7 +115,7 @@ This example demonstrates the use of **Get-Location** to display your current lo
 ### Example 3:
 ```
 The first command sets the current location to the Windows directory on the C: drive.
-PS C:\>Set-Location C:\Windows
+PS C:\> Set-Location C:\Windows
 
 The second command uses the **Push-Location** cmdlet to push the current location (C:\Windows) onto the current location stack and change to the System32 subdirectory. Because no stack is specified, the current location is pushed onto the current location stack. By default, the current location stack is the unnamed default location stack.
 PS C:\>

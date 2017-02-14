@@ -1,19 +1,20 @@
-﻿---
-title: Microsoft.PowerShell.ODataUtils
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.ODataUtils
-Module Guid: fa1606d1-94cb-4264-bfb6-def714420084
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=822007
-Help Version: 5.1.0.2
-Locale: en-US
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.ODataUtils
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.ODataUtils
+Download Help Link:   http://go.microsoft.com/fwlink/?LinkId=509916
+Help Version:   5.1.1.0
+Module Guid:   fa1606d1-94cb-4264-bfb6-def714420084
+---
+
 
 # Microsoft.PowerShell.ODataUtils Module
 ## Description

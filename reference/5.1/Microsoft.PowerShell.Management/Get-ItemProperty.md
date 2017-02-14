@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822233
-schema: 2.0.0
-title: Get-ItemProperty
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ItemProperty
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821588
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-ItemProperty
 
@@ -41,14 +42,14 @@ You can also use this cmdlet to view registry entries and their values.
 
 ### Example 1: Get information about a specific directory
 ```
-PS C:\>Get-ItemProperty C:\Windows
+PS C:\> Get-ItemProperty C:\Windows
 ```
 
 This command gets information about the C:\Windows directory.
 
 ### Example 2: Get the properties of a specific file
 ```
-PS C:\>Get-ItemProperty C:\Test\Weather.xls | Format-List
+PS C:\> Get-ItemProperty C:\Test\Weather.xls | Format-List
 ```
 
 This command gets the properties of the C:\Test\Weather.xls file.
@@ -56,7 +57,7 @@ The result is piped to the Format-List cmdlet to display the output as a list.
 
 ### Example 3: Display the value name and data of registry entries in a registry subkey
 ```
-PS C:\>Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
+PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
 This command displays the value name and data of each of the registry entries contained in the CurrentVersion registry subkey.
@@ -68,7 +69,7 @@ Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion.
 
 ### Example 4: Get the value name and data of a registry entry in a registry subkey
 ```
-PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -name "ProgramFilesDir"
+PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -name "ProgramFilesDir"
 ```
 
 This command gets the value name and data of the ProgramFilesDir registry entry in the CurrentVersion registry subkey.
@@ -78,7 +79,7 @@ The command uses a back tick or grave accent (\`), the Windows PowerShell contin
 
 ### Example 5: Get the value names and data of registry entries in a registry key
 ```
-PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
+PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
 
 
 
@@ -99,7 +100,7 @@ The results are shown in the following sample output.
 
 ### Example 6: Get, format, and display the results of registry values and data
 ```
-PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 
 
 
@@ -119,7 +120,7 @@ Path                                                        ExecutionPolicy
 ----                                                        ---------------
 C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe   RemoteSigned
 
-PS C:\>Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell | Format-List -property *
+PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell | Format-List -property *
 
 PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\PowerShell\1\ShellIds\Micro
 soft.PowerShell

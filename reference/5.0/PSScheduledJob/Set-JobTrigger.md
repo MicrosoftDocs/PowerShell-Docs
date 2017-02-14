@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821704
-schema: 2.0.0
-title: Set-JobTrigger
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set JobTrigger
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821704
+external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+---
+
 
 # Set-JobTrigger
 
@@ -53,13 +54,13 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Change the days in a job trigger
 ```
-PS C:\>Get-JobTrigger -Name "DeployPackage"
+PS C:\> Get-JobTrigger -Name "DeployPackage"
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Weekly          9/29/2011 12:00:00 AM  {Wednesday, Saturday}   True
 
 The second command uses the Get-JobTrigger cmdlet to get the job trigger of the DeployPackage scheduled job. A pipeline operator (|) sends the trigger to the **Set-JobTrigger** cmdlet, which changes the job trigger so that it starts the DeployPackage job on Wednesdays and Sundays. The command uses the *Passthru* parameter to return the trigger after the change.
-PS C:\>Get-JobTrigger -Name "DeployPackage" | Set-JobTrigger -DaysOfWeek "Wednesday", "Sunday" -Passthru
+PS C:\> Get-JobTrigger -Name "DeployPackage" | Set-JobTrigger -DaysOfWeek "Wednesday", "Sunday" -Passthru
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Weekly          9/29/2011 12:00:00 AM  {Wednesday, Sunday}     True
@@ -74,14 +75,14 @@ This command is not required; it is included only to show the effect of the trig
 
 ### Example 2: Change the job trigger type
 ```
-PS C:\>Get-JobTrigger -Name "Inventory"
+PS C:\> Get-JobTrigger -Name "Inventory"
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Daily           9/27/2011 11:00:00 PM                          True
 2          AtStartup                                                      True
 
 The second command uses the **Get-JobTrigger** cmdlet to get the *AtStartup* job trigger of the Inventory job. The command uses the *TriggerID* parameter to identify the job trigger. A pipeline operator (|) sends the job trigger to the **Set-JobTrigger** cmdlet, which changes it to a weekly job trigger that runs every four weeks on Monday at midnight. The command uses the *Passthru* parameter to return the trigger after the change.
-PS C:\>Get-JobTrigger -Name "Inventory" -TriggerID 2 | Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
+PS C:\> Get-JobTrigger -Name "Inventory" -TriggerID 2 | Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Daily           9/27/2011 11:00:00 PM                          True
@@ -98,7 +99,7 @@ This command is not required; it is included only to show the effect of the trig
 
 ### Example 3: Change the user on a remote job trigger
 ```
-PS C:\>Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
 ```
 
 This command changes the user in all *AtLogon* job triggers of scheduled jobs on the Server01 computer.
@@ -114,7 +115,7 @@ The selected job triggers are piped to the **Set-JobTrigger** cmdlet, which chan
 
 ### Example 4: Change one of many job triggers
 ```
-PS C:\>Get-JobTrigger -Name "SecurityCheck"
+PS C:\> Get-JobTrigger -Name "SecurityCheck"
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Daily           4/24/2013 3:00:00 AM                           True
@@ -122,7 +123,7 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 3          Once            4/24/2013 4:00:00 PM                           True
 
 The second command uses the **TriggerID** parameter of the **Get-JobTrigger** cmdlet to get the *Once* trigger of the SecurityCheck scheduled job. The command pipes the trigger to the Format-List cmdlet, which displays all of the properties of the *Once* job trigger.The output shows that the trigger starts the job once every hour (RepetitionInterval = 1 hour) for one day (RepetitionDuration = 1 day).
-PS C:\>Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
+PS C:\> Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
 At                 : 4/24/2012 4:00:00 PM
 DaysOfWeek         :
 Interval           : 1
@@ -136,10 +137,10 @@ Enabled            : True
 JobDefinition      : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 The third command changes the repetition interval of the job trigger from one hour to 90 minutes. The command does not return any output.
-PS C:\>Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
+PS C:\> Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
 
 The fourth command displays the effect of the change.The output shows that the trigger starts the job once every 90 minutes (RepetitionInterval = 1 hour, 30 minutes) for one day (RepetitionDuration = 1 day).
-PS C:\>Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
+PS C:\> Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
 At                 : 4/24/2012 4:00:00 PM
 DaysOfWeek         :
 Interval           : 1

@@ -1,22 +1,16 @@
-﻿---
-title: about_If
-description:
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_If
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_If
+ms.technology:  powershell
+---
+
 # About If
-about_If
 
 ## SHORT DESCRIPTION
 Describes a language command you can use to run statement lists based on the results of one or more conditional tests.
@@ -116,7 +110,7 @@ or initialized."
 
 
 ## SEE ALSO
-about_Comparison_Operators
 
-about_Switch
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
+[about_Switch](about_Switch.md)

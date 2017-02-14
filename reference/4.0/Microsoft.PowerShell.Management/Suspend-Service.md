@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=293924
-schema: 2.0.0
-title: Suspend-Service
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Suspend Service
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=293924
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Suspend-Service
 
@@ -47,14 +48,14 @@ You can specify the services by their service names or display names, or you can
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>suspend-service -displayname "Telnet"
+PS C:\> suspend-service -displayname "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>suspend-service -name lanman* -whatif
+PS C:\> suspend-service -name lanman* -whatif
 ```
 
 This command tells what would happen if you suspended the services that have a service name that begins with "lanman".
@@ -62,7 +63,7 @@ To suspend the services, rerun the command without the WhatIf parameter.
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-service schedule | suspend-service
+PS C:\> get-service schedule | suspend-service
 ```
 
 This command uses the Get-Service cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
@@ -70,7 +71,7 @@ The pipeline operator (|) passes the result to the Suspend-Service cmdlet, which
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>get-service | where-object {$_.canpauseandcontinue -eq "True"} | suspend-service -confirm
+PS C:\> get-service | where-object {$_.canpauseandcontinue -eq "True"} | suspend-service -confirm
 ```
 
 This command suspends all of the services on the computer that can be suspended.
@@ -185,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -201,7 +202,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

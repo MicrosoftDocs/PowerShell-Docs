@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113324
-schema: 2.0.0
-title: Get-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113324
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Process
 ## SYNOPSIS
@@ -46,14 +47,14 @@ You can also use the parameters of Get-Process to get file version information f
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Get-Process
+PS C:\> Get-Process
 ```
 
 This command gets a list of all of the running processes running on the local computer.
 For a definition of each column, see the "Additional Notes" section of the Help topic for Get-Help.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Get-Process winword, explorer | format-list *
+PS C:\> Get-Process winword, explorer | format-list *
 ```
 
 This command gets all available data about the Winword and Explorer processes on the computer.
@@ -64,7 +65,7 @@ You can also identify the processes by their process IDs.
 For example, "get-process -id 664, 2060".
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>get-process | where-object {$_.WorkingSet -gt 20000000}
+PS C:\> get-process | where-object {$_.WorkingSet -gt 20000000}
 ```
 
 This command gets all processes that have a working set greater than 20 MB.
@@ -76,7 +77,7 @@ To see all of the properties, type "Get-Process | Get-Member".
 By default, the values of all amount properties are in bytes, even though the default display lists them in kilobytes and megabytes.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = get-process PS C:\>get-process -inputobject $a | format-table -view priority
+PS C:\> $a = get-process PS C:\> get-process -inputobject $a | format-table -view priority
 ```
 
 These  commands list the processes on the computer in groups based on their priority class.
@@ -87,7 +88,7 @@ The pipeline operator passes the objects to the Format-Table cmdlet, which forma
 The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>get-process powershell -computername S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -auto
+PS C:\> get-process powershell -computername S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -auto
 
 NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 ------ ----- ----- ----- ------   -- ----------- -----------
@@ -99,7 +100,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 This example provides a Format-Table (alias = ft) command that adds the MachineName property to the standard Get-Process output display.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>get-process powershell -fileversioninfo
+PS C:\> get-process powershell -fileversioninfo
 
 ProductVersion   FileVersion      FileName
 --------------   -----------      --------
@@ -111,7 +112,7 @@ This command uses the FileVersionInfo parameter to get the version information f
 To run this command with processes that you do not own on Windows Vista and later versions of Windows, you must open Windows PowerShell with the "Run as administrator" option.
 ### -------------------------- EXAMPLE 7 --------------------------
 ```
-PS C:\>get-process sql* -module
+PS C:\> get-process sql* -module
 ```
 
 This command uses the Module parameter to get the modules that have been loaded by the process.
@@ -120,8 +121,8 @@ This command gets the modules for the processes that have names that begin with 
 To run this command on Windows Vista (and later versions of Windows) with processes that you do not own, you must start Windows PowerShell with the "Run as administrator" option.
 ### -------------------------- EXAMPLE 8 --------------------------
 ```
-PS C:\>$p = get-wmiobject win32_process -filter "name='powershell.exe'"
-PS C:\>$p.getowner()
+PS C:\> $p = get-wmiobject win32_process -filter "name='powershell.exe'"
+PS C:\> $p.getowner()
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
@@ -150,12 +151,12 @@ The second command uses the GetOwner method to get the owner of the process in $
 The command reveals that the owner is Domain01\user01.
 ### -------------------------- EXAMPLE 9 --------------------------
 ```
-PS C:\>get-process powershell
+PS C:\> get-process powershell
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 308      26    52308      61780   567     3.18   5632 powershell
-377      26    62676      63384   575     3.88   5888 powershell PS C:\>get-process -id $pid
+377      26    62676      63384   575     3.88   5888 powershell PS C:\> get-process -id $pid
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 396      26    56488      57236   575     3.90   5888 powershell
@@ -168,7 +169,7 @@ The first command gets all of the Windows PowerShell processes in the current se
 The second command gets the Windows PowerShell process that is hosting the current session.
 ### -------------------------- EXAMPLE 10 --------------------------
 ```
-PS C:\>get-process | where {$_.mainWindowTitle} | format-table id, name, mainwindowtitle -autosize
+PS C:\> get-process | where {$_.mainWindowTitle} | format-table id, name, mainwindowtitle -autosize
 ```
 
 This command gets all the processes that have a main window title, and it displays them in a table with the process ID and the process name.

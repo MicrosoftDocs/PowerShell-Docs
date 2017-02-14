@@ -1,25 +1,18 @@
-﻿---
-title: about_Line_Editing
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Line_Editing
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Line_Editing
+ms.technology:  powershell
+---
+
 # About Line Editing
 ## about_Line_Editing
-# TOPIC
 
-about_Line_Editing
 
 # SHORT DESCRIPTION
 
@@ -60,6 +53,6 @@ is displayed is not what you want, press the TAB key again.
 
 # SEE ALSO
 
-about_Command_Syntax
-about_Path_Syntax
+[about_Command_Syntax](about_Command_Syntax.md)
 
+[about_Path_Syntax](about_Path_Syntax.md)

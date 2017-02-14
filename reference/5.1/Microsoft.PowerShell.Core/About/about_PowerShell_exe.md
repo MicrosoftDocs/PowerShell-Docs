@@ -1,25 +1,18 @@
-﻿---
-title: about_PowerShell.exe
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_PowerShell.exe
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_PowerShell_exe
+ms.technology:  powershell
+---
+
 # About PowerShell.exe
 ## about_PowerShell.exe
-# TOPIC
 
-about_PowerShell.exe
 
 # SHORT DESCRIPTION
 
@@ -188,4 +181,3 @@ PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 PowerShell -Command {Get-EventLog -LogName security}
 
 PowerShell -Command "& {Get-EventLog -LogName security}"
-

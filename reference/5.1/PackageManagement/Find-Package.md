@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822300
-schema: 2.0.0
-title: Find-Package
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Find Package
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=517132
+external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
+---
+
 
 # Find-Package
 
@@ -46,21 +47,21 @@ The **Find-Package** cmdlet finds matching software packages that are available 
 
 ### Example 1: Find all available packages from a package provider
 ```
-PS C:\>Find-Package -Provider "PSModule"
+PS C:\> Find-Package -Provider "PSModule"
 ```
 
 This command finds all available Windows PowerShell module packages from galleries that are registered with the PSModule provider.
 
 ### Example 2: Find a package from a provider that is not yet installed
 ```
-PS C:\>Find-Package -Name "Git" -Provider "Chocolatey"
+PS C:\> Find-Package -Name "Git" -Provider "Chocolatey"
 ```
 
 This command first automatically installs the Chocolatey provider on the local computer, then searches for the Git package within that provider.
 
 ### Example 3: Find a package from a package source
 ```
-PS C:\>Find-Package -Name "Git" -Source "ChocolateyRepository"
+PS C:\> Find-Package -Name "Git" -Source "ChocolateyRepository"
 ```
 
 This command finds a package from a specified package source.
@@ -70,14 +71,14 @@ You can run Get-PackageSource -Location to get a package source name.
 
 ### Example 4: Find a package from a file system
 ```
-PS C:\>Find-Package "C:\temp"
+PS C:\> Find-Package "C:\temp"
 ```
 
 This command finds packages from all installed PackageManagement package providers that are stored in the C:\temp folder on the local computer.
 
 ### Example 5: Find a package with a specific name and version
 ```
-PS C:\>Find-Package -Name "DSCAccel" -RequiredVersion "2.1.2"
+PS C:\> Find-Package -Name "DSCAccel" -RequiredVersion "2.1.2"
 ```
 
 This command finds version 2.1.2 of a package named DSCAccelerator.
@@ -85,7 +86,7 @@ Although only part of the package name has been specified, **Find-Package** shou
 
 ### Example 6: Find packages within a range of versions
 ```
-PS C:\>Find-Package -Name "DSCAccelerator" -MinimumVersion "1.5.0" -MaximumVersion "2.1" -AllVersions
+PS C:\> Find-Package -Name "DSCAccelerator" -MinimumVersion "1.5.0" -MaximumVersion "2.1" -AllVersions
 ```
 
 This command finds a matching range of versions of a package named DSCAccelerator, by adding the *MinimumVersion* and *MaximumVersion* parameters to specify a range, and the *AllVersions* parameter to specify that all matching results within that range are returned as results.

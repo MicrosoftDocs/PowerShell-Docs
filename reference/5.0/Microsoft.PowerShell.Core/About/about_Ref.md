@@ -1,23 +1,17 @@
-﻿---
-title: about_Ref
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Ref
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Ref
+ms.technology:  powershell
+---
+
 # About Ref
 ## about_Ref
-about_Ref
 
 
 ## SHORT DESCRIPTION
@@ -79,11 +73,11 @@ At line:1 char:7
 
 
 ## SEE ALSO
-about_Variables
 
-about_Environment_Variables
+[about_Variables](about_Variables.md)
 
-about_Functions
+[about_Environment_Variables](about_Environment_Variables.md)
 
-about_Script_Blocks
+[about_Functions](about_Functions.md)
 
+[about_Script_Blocks](about_Script_Blocks.md)

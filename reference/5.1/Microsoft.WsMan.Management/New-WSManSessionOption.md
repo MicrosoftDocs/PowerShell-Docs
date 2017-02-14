@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822501
-schema: 2.0.0
-title: New-WSManSessionOption
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New WSManSessionOption
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821734
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
+---
+
 
 # New-WSManSessionOption
 
@@ -38,7 +39,7 @@ The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table 
 
 ### Example 1: Create a connection that uses connection options
 ```
-PS C:\>$a = New-WSManSessionOption -OperationTimeout 30000
+PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
 PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a
 PS C:\> cd wsman:
 PS WSMan:\>

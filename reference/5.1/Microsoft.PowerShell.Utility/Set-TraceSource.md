@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: hhttp://go.microsoft.com/fwlink/?LinkId=822464
-schema: 2.0.0
-title: Set-TraceSource
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set TraceSource
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821860
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Set-TraceSource
 
@@ -44,7 +45,7 @@ You can use it to specify which components will be traced and where the tracing 
 
 ### Example 1: Trace the ParameterBinding component
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
 ```
 
 This command starts tracing for the ParameterBinding component of Windows PowerShell.
@@ -53,7 +54,7 @@ The *ListenerOption* parameter adds the ProcessID and TimeStamp values to the tr
 
 ### Example 2: Stop a trace
 ```
-PS C:\>Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
+PS C:\> Set-TraceSource -Name "ParameterBinding" -RemoveListener "Host"
 ```
 
 This command stops the trace of the ParameterBinding component of Windows PowerShell.
@@ -69,7 +70,7 @@ This parameter also selects the default trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -102,7 +103,7 @@ Use with the *FilePath* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -129,7 +130,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: TraceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
@@ -147,7 +148,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -183,7 +184,7 @@ The acceptable values for this parameter are:
 
 All is the default.
 
-The following values are combinations of other values: 
+The following values are combinations of other values:
 
 - ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope)
 - Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
@@ -194,7 +195,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: PSTraceSourceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 Accepted values: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, All
 
 Required: False
@@ -211,7 +212,7 @@ This parameter also selects the PSHost trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +228,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -243,7 +244,7 @@ Enter the path and file name of the trace output file.
 ```yaml
 Type: String[]
 Parameter Sets: removeFileListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,7 +256,7 @@ Accept wildcard characters: False
 ### -RemoveListener
 Stops the trace by removing the trace listener.
 
-Use the following values with *RemoveListener*: 
+Use the following values with *RemoveListener*:
 
 - To remove PSHost (console), type `Host`.
 - To remove Debugger, type `Debug`.
@@ -266,7 +267,7 @@ To remove the file trace listener, use the *RemoveFileListener* parameter.
 ```yaml
 Type: String[]
 Parameter Sets: removeAllListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,9 +302,9 @@ To trace a component, you identify its trace source.
   A trace listener receives the output of the trace and displays it to the user.
 You can elect to send the trace data to a user-mode or kernel-mode debugger, to the console, to a file, or to a custom listener derived from the **System.Diagnostics.TraceListener** class.
 
-  
 
-  
+
+
 
 * To start a trace, use the *Name* parameter to specify a trace source and the *FilePath*, *Debugger*, or *PSHost* parameters to specify a listener (a destination for the output). Use the *Options* parameter to determine the types of events that are traced and the *ListenerOption* parameter to configure the trace output.
 * To change the configuration of a trace, enter a **Set-TraceSource** command as you would to start a trace. Windows PowerShell recognizes that the trace source is already being traced. It stops the trace, adds the new configuration, and starts or restarts the trace.

@@ -1,11 +1,15 @@
-﻿---
-title: about_Profiles
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Profiles
+ms.technology:  powershell
+---
+
 # About Profiles
 ## about_Profiles
 
@@ -318,11 +322,16 @@ are available in $s.
 
 # SEE ALSO
 
-about_Automatic_Variables
-about_Functions
-about_Prompts
-about_Execution_Policies
-about_Signing
-about_Remote
-Set-ExecutionPolicy
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
+[about_Functions](about_Functions.md)
+
+[about_Prompts](about_Prompts.md)
+
+[about_Execution_Policies](about_Execution_Policies.md)
+
+[about_Signing](about_Signing.md)
+
+[about_Remote](about_Remote.md)
+
+Set-ExecutionPolicy

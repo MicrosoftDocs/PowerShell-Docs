@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: PSModule-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822326
-schema: 2.0.0
-title: Install-Module
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Install Module
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821663
+external help file:   PSModule-help.xml
+---
+
 
 # Install-Module
 
@@ -47,14 +48,14 @@ You can filter your results based on minimum and exact versions of specified mod
 
 ### Example 1: Find a module and install it
 ```
-PS C:\>Find-Module -Name "MyDSC*" | Install-Module
+PS C:\> Find-Module -Name "MyDSC*" | Install-Module
 ```
 
 In this example, modules with a name that starts with MyDSC that are found by Find-Module in the online gallery are installed to the default folder, C:\ProgramFiles\WindowsPowerShell\Modules.
 
 ### Example 2: Install a module by name
 ```
-PS C:\>Install-Module -Name "MyDscModule"
+PS C:\> Install-Module -Name "MyDscModule"
 ```
 
 In this example, the newest version of the module MyDscModule from the online gallery is installed to the default folder, Program Files.
@@ -63,7 +64,7 @@ If no module named MyDscModule exists, an error occurs.
 
 ### Example 3: Install a module using its minimum version
 ```
-PS C:\>Install-Module -Name "ContosoServer" -MinimumVersion 1.0
+PS C:\> Install-Module -Name "ContosoServer" -MinimumVersion 1.0
 ```
 
 In this example, the most current version of the module ContosoServer is installed that matches the specified minimum version.
@@ -71,7 +72,7 @@ If the most current version of the module is a lower number than 1.0, the comman
 
 ### Example 4: Install a specific version of a module
 ```
-PS C:\>Install-Module -Name "ContosoServer" -RequiredVersion 1.1.3
+PS C:\> Install-Module -Name "ContosoServer" -RequiredVersion 1.1.3
 ```
 
 This example installs version 1.1.3 of the module ContosoServer to the Program Files folder.
@@ -79,7 +80,7 @@ If version 1.1.3 is not available, an error occurs.
 
 ### Example 5: Install the current version of a module
 ```
-PS C:\>Install-Module -Name "ContosoServer" -Scope "CurrentUser"
+PS C:\> Install-Module -Name "ContosoServer" -Scope "CurrentUser"
 ```
 
 This example installs the newest version of the module ContosoServer to $home\Documents\WindowsPowerShell\Modules.
@@ -102,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -318,7 +319,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

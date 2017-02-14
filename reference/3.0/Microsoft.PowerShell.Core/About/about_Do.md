@@ -1,25 +1,18 @@
-﻿---
-title: about_Do
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Do
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Do
+ms.technology:  powershell
+---
+
 # About Do
 ## about_Do
-# TOPIC
 
-about_Do
 
 # SHORT DESCRIPTION
 
@@ -90,10 +83,14 @@ while (++$a -lt 10)
 
 # SEE ALSO
 
-about_While
-about_Operators
-about_Assignment_Operators
-about_Comparison_Operators
-about_Break
-about_Continue
+[about_While](about_While.md)
 
+[about_Operators](about_Operators.md)
+
+[about_Assignment_Operators](about_Assignment_Operators.md)
+
+[about_Comparison_Operators](about_Comparison_Operators.md)
+
+[about_Break](about_Break.md)
+
+[about_Continue](about_Continue.md)

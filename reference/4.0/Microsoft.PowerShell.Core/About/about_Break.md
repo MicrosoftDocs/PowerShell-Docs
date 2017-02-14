@@ -1,23 +1,17 @@
-﻿---
-title: about_Break
-description:
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Break
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Break
+ms.technology:  powershell
+---
+
 # About Break
 
-about_Break
 
 # SHORT DESCRIPTION
 
@@ -209,13 +203,20 @@ display results when the most specific condition is met.
 
 # SEE ALSO
 
-about_Comparison_Operators
-about_Continue
-about_For
-about_Foreach
-about_Switch
-about_Throw
-about_Trap
-about_Try_Catch_Finally
-about_While
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
+[about_Continue](about_Continue.md)
+
+[about_For](about_For.md)
+
+[about_Foreach](about_Foreach.md)
+
+[about_Switch](about_Switch.md)
+
+[about_Throw](about_Throw.md)
+
+[about_Trap](about_Trap.md)
+
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+
+[about_While](about_While.md)

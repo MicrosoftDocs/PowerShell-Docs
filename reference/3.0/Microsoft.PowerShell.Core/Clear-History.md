@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135199
-schema: 2.0.0
-title: Clear-History
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Clear History
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135199
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Clear-History
 ## SYNOPSIS
@@ -36,31 +37,31 @@ Without parameters, Clear-History deletes all commands from the session history,
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>clear-history
+PS C:\> clear-history
 ```
 
 Deletes all commands from the session history.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>clear-history -id 23, 25
+PS C:\> clear-history -id 23, 25
 ```
 
 Deletes the commands with history IDs 23 and 25.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>clear-history -command *help*, *command
+PS C:\> clear-history -command *help*, *command
 ```
 
 Deletes commands that include "help" or end in "command".
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>clear-history -count 10 -newest
+PS C:\> clear-history -count 10 -newest
 ```
 
 Deletes the 10 newest commands from the history.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>clear-history -id 10 -count 3
+PS C:\> clear-history -id 10 -count 3
 ```
 
 Deletes the three oldest commands, beginning with the entry with ID 10.
@@ -136,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -152,7 +153,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

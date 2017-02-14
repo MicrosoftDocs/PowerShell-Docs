@@ -1,23 +1,24 @@
-﻿---
-title: PSDesiredStateConfiguration
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: PSDesiredStateConfiguration
-Module Guid: ced422f3-86a4-4841-9f80-a713eac9522a
-Download Help Link: http://go.microsoft.com/fwlink/?LinkId=280237
-Help Version: 4.0.0.2
-Locale: en-US
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  PSDesiredStateConfiguration
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   PSDesiredStateConfiguration
+Download Help Link:   http://go.microsoft.com/fwlink/?LinkId=280237
+Help Version:   4.0.0.2
+Module Guid:   ced422f3-86a4-4841-9f80-a713eac9522a
+---
+
 
 # PSDesiredStateConfiguration Module
 ## Description
-Windows PowerShell� is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks.
+Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks.
 
 ## PSDesiredStateConfiguration Cmdlets
 ### [Get-DscConfiguration](Get-DscConfiguration.md)

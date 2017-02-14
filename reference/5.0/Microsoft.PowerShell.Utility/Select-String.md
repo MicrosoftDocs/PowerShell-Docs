@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821853
-schema: 2.0.0
-title: Select-String
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Select String
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821853
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Select-String
 
@@ -60,7 +61,7 @@ You can also specify that **Select-String** should expect a particular character
 
 ### Example 1: Find a case-sensitive match
 ```
-PS C:\>"Hello","HELLO" | Select-String -Pattern "HELLO" -CaseSensitive
+PS C:\> "Hello","HELLO" | Select-String -Pattern "HELLO" -CaseSensitive
 ```
 
 This command performs a case-sensitive match of the text that was piped to the **Select-String** command.
@@ -71,14 +72,14 @@ Because each of the quoted strings is treated as a line, without the *CaseSensit
 
 ### Example 2: Find matches in XML files only
 ```
-PS C:\>Select-String -Path "*.xml" -Pattern "the the"
+PS C:\> Select-String -Path "*.xml" -Pattern "the the"
 ```
 
 This command searches through all files with the .xml file name extension in the current directory and displays the lines in those files that include the string "the the".
 
 ### Example 3: Find a pattern match
 ```
-PS C:\>Select-String -Path "$pshome\en-US\*.txt" -Pattern "@"
+PS C:\> Select-String -Path "$pshome\en-US\*.txt" -Pattern "@"
 ```
 
 This command searches the Windows PowerShell conceptual Help files (about_*.txt) for information about the use of the at sign (@).
@@ -88,7 +89,7 @@ In this example, the command searches the en-US subdirectory, which contains the
 
 ### Example 4: Use Select-String in a function
 ```
-PS C:\>function search-help
+PS C:\> function search-help
 {
    $pshelp = "$pshome\es\about_*.txt", "$pshome\en-US\*dll-help.xml"
    Select-String -path $pshelp -Pattern $args[0]
@@ -104,8 +105,8 @@ To use this function in any Windows PowerShell console, change the path to point
 
 ### Example 5: Search for a string in the Application log
 ```
-PS C:\>$Events = Get-EventLog -LogName application -Newest 100
-PS C:\>$Events | Select-String -InputObject {$_.message} -Pattern "failed"
+PS C:\> $Events = Get-EventLog -LogName application -Newest 100
+PS C:\> $Events | Select-String -InputObject {$_.message} -Pattern "failed"
 ```
 
 This example searches for the string "failed" in the 100 newest events in the Application log in Event Viewer.
@@ -122,7 +123,7 @@ As each event arrives in the pipeline, **Select-String** searches the value of i
 
 ### Example 6: Find a string in subdirectories
 ```
-PS C:\>Get-ChildItem c:\windows\system32\*.txt -Recurse | Select-String -Pattern "Microsoft" -CaseSensitive
+PS C:\> Get-ChildItem c:\windows\system32\*.txt -Recurse | Select-String -Pattern "Microsoft" -CaseSensitive
 ```
 
 This command examines all files in the subdirectories of C:\Windows\System32 with the .txt file name extension and searches for the string "Microsoft".
@@ -130,16 +131,16 @@ The *CaseSensitive* parameter indicates that the "M" in "Microsoft" must be capi
 
 ### Example 7: Find strings that do not match a pattern
 ```
-PS C:\>Select-String -Path "process.txt" -Pattern "idle, svchost" -NotMatch
+PS C:\> Select-String -Path "process.txt" -Pattern "idle, svchost" -NotMatch
 ```
 
 This command finds lines of text in the Process.txt file that do not include the words "idle" or "svchost".
 
 ### Example 8: Find lines before and after a match
 ```
-PS C:\>$F = Select-String -Path "audit.log" -Pattern "logon failed" -Context 2, 3
-PS C:\>$F.count
-PS C:\>($F)[0].context | Format-List
+PS C:\> $F = Select-String -Path "audit.log" -Pattern "logon failed" -Context 2, 3
+PS C:\> $F.count
+PS C:\> ($F)[0].context | Format-List
 ```
 
 The first command searches the Audit.Log file for the phrase "logon failed." It uses the *Context* parameter to capture 2 lines before the match and 3 lines after the match.
@@ -154,17 +155,17 @@ The context lines are stored in the Context property of the **MatchInfo** object
 
 ### Example 9: Find all pattern matches
 ```
-PS C:\>$A = Get-ChildItem $pshome\en-us\about*.help.txt | Select-String -Pattern "transcript"
-PS C:\>$B = Get-ChildItem $pshome\en-us\about*.help.txt | Select-String -Pattern "transcript" -AllMatches
-PS C:\>$A
-C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript. PS C:\>$B
-C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript. PS C:\>$A.matches
+PS C:\> $A = Get-ChildItem $pshome\en-us\about*.help.txt | Select-String -Pattern "transcript"
+PS C:\> $B = Get-ChildItem $pshome\en-us\about*.help.txt | Select-String -Pattern "transcript" -AllMatches
+PS C:\> $A
+C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript. PS C:\> $B
+C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript. PS C:\> $A.matches
 Groups   : {Transcript}
 Success  : True
 Captures : {Transcript}
 Index    : 13
 Length   : 10
-Value    : Transcript PS C:\>$B.matches
+Value    : Transcript PS C:\> $B.matches
 
 Groups   : {Transcript}
 Success  : True

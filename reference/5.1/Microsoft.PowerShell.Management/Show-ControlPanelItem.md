@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822281
-schema: 2.0.0
-title: Show-ControlPanelItem
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Show ControlPanelItem
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821635
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Show-ControlPanelItem
 
@@ -51,14 +52,14 @@ Because this cmdlet requires a user interface, it does not work on Server Core i
 
 ### Example 1: Show a control panel item
 ```
-PS C:\>Show-ControlPanelItem -Name "AutoPlay"
+PS C:\> Show-ControlPanelItem -Name "AutoPlay"
 ```
 
 This command shows the AutoPlay item.
 
 ### Example 2: Pipe a control panel item to this cmldet
 ```
-PS C:\>Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
 
 This command opens the Windows Firewall control panel item on the local computer.
@@ -66,7 +67,7 @@ It uses the Get-ControlPanelItem cmdlet to get the control panel item and the **
 
 ### Example 3: Use a file name to open a control panel item
 ```
-PS C:\>appwiz
+PS C:\> appwiz
 ```
 
 This command opens the Programs and Features control panel item by using its application name.

@@ -1,25 +1,19 @@
-﻿---
-title: about_WQL
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-10-11
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_WQL
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_WQL
+ms.technology:  powershell
+---
+
 # About WQL
 ## about_WQL
 
 
-about_WQL
 
 # SHORT DESCRIPTION
 
@@ -124,14 +118,14 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 You can also save the WQL statement in a variable
 and then use the variable as the value of the Query
 parameter, as shown in the following command.
 
 PS C:> $query = "Select * from Win32_Bios"
-PS C:> Get-WmiObject –Query $query
+PS C:> Get-WmiObject -Query $query
 
 You can use either format with any WQL statement.
 The following command uses the query in the
@@ -168,7 +162,7 @@ example, the following command also gets the values
 of the Name and Version properties of instances of
 the Win32_Bios WMI class.
 
-PS C:> Get-WmiObject –Class Win32_Bios -Property Name, Version
+PS C:> Get-WmiObject -Class Win32_Bios -Property Name, Version
 
 # __GENUS          : 2
 
@@ -219,15 +213,15 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 Get-CimInstance returns a CimInstance object, instead of
 the ManagementObject that Get-WmiObject returns, but
 the objects are quite similar.
 
-PS C:>(Get-CimInstance -Query "Select * from Win32_Bios").GetType().FullName
+PS C:> (Get-CimInstance -Query "Select * from Win32_Bios").GetType().FullName
 Microsoft.Management.Infrastructure.CimInstance
-PS C:>(Get-WmiObject -Query "Select * from Win32_Bios").GetType().FullName
+PS C:> (Get-WmiObject -Query "Select * from Win32_Bios").GetType().FullName
 System.Management.ManagementObject
 
 USING THE [wmisearcher] TYPE ACCELERATOR
@@ -264,7 +258,7 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 NOTE: Only selected object properties are displayed
 by default. These properties are defined in the
@@ -282,18 +276,18 @@ SMBIOSBIOSVersion : 8BET56WW (1.36 )
 Manufacturer      : LENOVO
 Name              : Default System BIOS
 SerialNumber      : R9FPY3P
-Version           : LENOVO – 1360
+Version           : LENOVO - 1360
 
 When you use the [wmisearcher] type accelerator, it
 changes the query string into a ManagementObjectSearcher
 object, as shown in the following commands.
 
-PS C:>$a = "Select * from Win32_Bios"
-PS C:>$a.GetType().FullName
+PS C:> $a = "Select * from Win32_Bios"
+PS C:> $a.GetType().FullName
 System.String
 
-PS C:>$a = [wmisearcher]"Select * from Win32_Bios"
-PS C:>$a.GetType().FullName
+PS C:> $a = [wmisearcher]"Select * from Win32_Bios"
+PS C:> $a.GetType().FullName
 System.Management.ManagementObjectSearcher
 
 This command format works on any query. The following
@@ -512,8 +506,8 @@ Select-Object cmdlet gets the Name and ProcessID
 properties, and the Sort-Object cmdlet sorts the
 results in alphabetical order by name.
 
-PS C:>$query = "Select * from win32_Process where name LIKE '[A-P]%'"
-PS C:>Get-WmiObject -Query $query |
+PS C:> $query = "Select * from win32_Process where name LIKE '[A-P]%'"
+PS C:> Get-WmiObject -Query $query |
 Select-Object -Property Name, ProcessID |
 Sort-Object -Property Name
 
@@ -524,8 +518,8 @@ do not begin with any of the following letters:
 
 and followed zero or more letters.
 
-PS C:>$query = "Select * from win32_Process where name LIKE '[^ASWPRCUN]%'"
-PS C:>Get-WmiObject -Query $query |
+PS C:> $query = "Select * from win32_Process where name LIKE '[^ASWPRCUN]%'"
+PS C:> Get-WmiObject -Query $query |
 Select-Object -Property Name, ProcessID |
 Sort-Object -Property Name
 
@@ -589,8 +583,8 @@ For example, the following commands get all instances
 of the Win32_Process WMI class but returns them
 only if the process name is winword.exe or excel.exe.
 
-PS C:>$q = "Select * from Win32_Process where Name = 'winword.exe' or Name = 'excel.exe'"
-PS C:>Get-WmiObject -Query $q
+PS C:> $q = "Select * from Win32_Process where Name = 'winword.exe' or Name = 'excel.exe'"
+PS C:> Get-WmiObject -Query $q
 
 The Or statement can be used with more than two
 conditions. In the following query, the Or statement
@@ -614,7 +608,7 @@ ID of 6512.
 
 Note that the commands use the Get-CimInstance cmdlet.
 
-PS C:>$q = "Select * from Win32_Process where Name = 'winword.exe' and ProcessID =6512"
+PS C:> $q = "Select * from Win32_Process where Name = 'winword.exe' and ProcessID =6512"
 PS C:> Get-CimInstance -Query $q
 
 ProcessId        Name             HandleCount      WorkingSetSize   VirtualSize
@@ -658,8 +652,8 @@ For example, the following commands get processes
 that have a null value for the IntallDate property.
 The commands return many processes.
 
-PS C:>$q = "Select * from Win32_Process where InstallDate is null"
-PS C:>Get-WmiObject -Query $q
+PS C:> $q = "Select * from Win32_Process where InstallDate is null"
+PS C:> Get-WmiObject -Query $q
 
 In contrast, the following command, gets user
 accounts that have a null value for the Description
@@ -667,8 +661,8 @@ property. This command does not return any user
 accounts, even though most user accounts do not have
 any value for the Description property.
 
-PS C:>$q = "Select * from Win32_UserAccount where Description is null"
-PS C:>Get-WmiObject -Query $q
+PS C:> $q = "Select * from Win32_UserAccount where Description is null"
+PS C:> Get-WmiObject -Query $q
 
 To find the user accounts that have no value for
 the Description property, use the equality operator
@@ -686,14 +680,14 @@ sensitive.
 The following WQL query returns only local user
 accounts from a domain joined computer.
 
-PS C:>$q = "Select * from Win32_UserAccount where LocalAccount = True"
-PS C:>Get-CimInstance -Query $q
+PS C:> $q = "Select * from Win32_UserAccount where LocalAccount = True"
+PS C:> Get-CimInstance -Query $q
 
 To find domain accounts, use a value of False,
 as shown in the following example.
 
-PS C:>$q = "Select * from Win32_UserAccount where LocalAccount = False"
-PS C:>Get-CimInstance -Query $q
+PS C:> $q = "Select * from Win32_UserAccount where LocalAccount = False"
+PS C:> Get-CimInstance -Query $q
 
 # USING THE ESCAPE CHARACTER
 
@@ -739,8 +733,10 @@ PS C:> Get-CimInstance -Query $q
 
 # SEE ALSO
 
-about_Escape_Characters
-about_Quoting_Rules
-about_WMI
-about_WMI_Cmdlets
+[about_Escape_Characters](about_Escape_Characters.md)
 
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_WMI](about_WMI.md)
+
+[about_WMI_Cmdlets](about_WMI_Cmdlets.md)

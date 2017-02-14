@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113280
-schema: 2.0.0
-title: Add-Member
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add Member
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113280
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Add-Member
 ## SYNOPSIS
@@ -64,10 +65,10 @@ For more information, see the **PassThru** parameter description.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>$a = dir c:\ps-test\test.txt
-PS C:\>$a | Add-Member -NotePropertyName Status -NotePropertyValue Done
-PS C:\>$a | Add-Member Status Done
-PS C:\>$a.Status
+PS C:\> $a = dir c:\ps-test\test.txt
+PS C:\> $a | Add-Member -NotePropertyName Status -NotePropertyValue Done
+PS C:\> $a | Add-Member Status Done
+PS C:\> $a.Status
 Done
 ```
 
@@ -84,9 +85,9 @@ The fourth command uses dot notation to get the value of the Status property of 
 As the output shows, the value is "Done".
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$a = dir c:\ps-test\test.txt
-PS C:\>$a | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
-PS C:\>$a.FileLength
+PS C:\> $a = dir c:\ps-test\test.txt
+PS C:\> $a | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
+PS C:\> $a.FileLength
 2394
 ```
 
@@ -100,9 +101,9 @@ The second command adds the FileLength alias property.
 The third command uses dot notation to get the value of the new FileLength property.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$a = "A string"
-PS C:\>$a = $a | Add-Member @{StringUse="Display"} -PassThru
-PS C:\>$a.StringUse
+PS C:\> $a = "A string"
+PS C:\> $a = $a | Add-Member @{StringUse="Display"} -PassThru
+PS C:\> $a.StringUse
 Display
 ```
 
@@ -115,9 +116,9 @@ The value of the **NotePropertyMembers** parameter is a hash table.
 The key is the note property name, StringUse, and the value is the note property value, Display.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>$a = "This is a string." 
-PS C:\>$a = Add-Member -InputObject $a -MemberType ScriptMethod -Name PadBoth -Value {$p = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
-PS C:\>$a.Padboth()
+PS C:\> $a = "This is a string." 
+PS C:\> $a = Add-Member -InputObject $a -MemberType ScriptMethod -Name PadBoth -Value {$p = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
+PS C:\> $a.Padboth()
 This is a string.
 ```
 
@@ -138,8 +139,8 @@ By default, **Add-Member** adds members to PSObjects and does not generate any o
 The third command uses dot notation to call the new PadBoth script method on the object in the $a variable.
 ### -------------------------- EXAMPLE 5 --------------------------
 ```
-PS C:\>$event = Get-EventLog -LogName System -Newest 1
-PS C:\>$event.TimeWritten | Get-Member
+PS C:\> $event = Get-EventLog -LogName System -Newest 1
+PS C:\> $event.TimeWritten | Get-Member
 TypeName: System.DateTime
 
 Name                 MemberType     Definition
@@ -151,8 +152,8 @@ AddMilliseconds      Method         System.DateTime AddMilliseconds(double value
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
 
 
-PS C:\>Add-Member -InputObject $event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
-PS C:\>$event.When | Get-Member
+PS C:\> Add-Member -InputObject $event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
+PS C:\> $event.When | Get-Member
 TypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
@@ -181,7 +182,7 @@ The fourth command uses dot notation to call the new When method.
 The command pipes the method value to the **Get-Member** cmdlet to confirm that it has returned a string.
 ### -------------------------- EXAMPLE 6 --------------------------
 ```
-PS C:\>function Copy-Property ($From, $To)
+PS C:\> function Copy-Property ($From, $To)
 {
      foreach ($p in Get-Member -InputObject $From -MemberType Property)
   {
@@ -205,10 +206,10 @@ It uses the **Force** parameter add members with the same member name.
 The last command in the function gives the new property the same name as the original property.
 ### Example 7
 ```
-PS C:\>$Asset = New-Object -TypeName PSObject
-PS C:\>$d = [ordered]@{Name="Server30";System="Server Core";PSVersion="3.0"}
-PS C:\>$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-PS C:\>$Asset | Get-Member
+PS C:\> $Asset = New-Object -TypeName PSObject
+PS C:\> $d = [ordered]@{Name="Server30";System="Server Core";PSVersion="3.0"}
+PS C:\> $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
+PS C:\> $Asset | Get-Member
    TypeName: Asset
 
 Name        MemberType   Definition

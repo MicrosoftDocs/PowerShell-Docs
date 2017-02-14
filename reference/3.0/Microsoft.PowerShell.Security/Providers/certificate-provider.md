@@ -1,17 +1,15 @@
-﻿---
-title: "Certificate Provider"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to: 
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 12
-manager: stevenka
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  certificate provider
+ms.technology:  powershell
+---
+
 # Certificate Provider
 ## PROVIDER NAME  
  Certificate  
@@ -242,11 +240,11 @@ Remove-Item -Path cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
  The fifth command uses the Invoke-Command cmdlet to run a Remove-Item command in the session in the $s variable. The Remove-Item command uses the DeleteKey parameter to remove the private key along with the specified certificate.  
   
 ```  
-PS C:\>Enable-WSManCredSSP -Role Client -DelegateComputer S1   
+PS C:\> Enable-WSManCredSSP -Role Client -DelegateComputer S1   
   
-PS C:\>Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
+PS C:\> Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01  
   
-PS C:\>Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
+PS C:\> Set-Item -Path WSMan:\S1\Service\Auth\CredSSP -Value $true  
   
 PS C:\> $s  = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01  
   

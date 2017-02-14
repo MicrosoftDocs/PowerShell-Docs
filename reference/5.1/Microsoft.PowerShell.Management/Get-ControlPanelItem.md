@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822229
-schema: 2.0.0
-title: Get-ControlPanelItem
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get ControlPanelItem
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821584
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-ControlPanelItem
 
@@ -44,7 +45,7 @@ It works only on Windows 8 and Windows Server 2012.
 
 ### Example 1: Get all control panel items
 ```
-PS C:\>Get-ControlPanelItem
+PS C:\> Get-ControlPanelItem
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
 Action Center                 Microsoft.ActionCenter        {System and Security}         Review recent messages and... 
@@ -60,21 +61,21 @@ This command gets all control panel items on the local computer.
 
 ### Example 2: Get control panel items by name
 ```
-PS C:\>Get-ControlPanelItem -Name "*Program*", "*App*"
+PS C:\> Get-ControlPanelItem -Name "*Program*", "*App*"
 ```
 
 This command gets control panel items that have Program or App in their names.
 
 ### Example 3: Get control panel items by category
 ```
-PS C:\>Get-ControlPanelItem -Category "*Security*"
+PS C:\> Get-ControlPanelItem -Category "*Security*"
 ```
 
 This command gets all control panel items in categories that have Security in their names.
 
 ### Example 4: Open a control panel item
 ```
-PS C:\>Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
 
 This command opens the Windows Firewall control panel item on the local computer.
@@ -82,7 +83,7 @@ It uses the **Get-ControlPanelItem** cmdlet to get the control panel item and th
 
 ### Example 5: Get control panel items on a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName "Server01" {Get-ControlPanelItem -Name "BitLocker*" }
+PS C:\> Invoke-Command -ComputerName "Server01" {Get-ControlPanelItem -Name "BitLocker*" }
 ```
 
 This command gets the BitLocker Drive Encryption control panel item on the Server01 remote computer.
@@ -90,7 +91,7 @@ It uses the Invoke-Command cmdlet to run the **Get-ControlPanelItem** cmdlet rem
 
 ### Example 6: Search the descriptions of control panel items
 ```
-PS C:\>Get-ControlPanelItem | Where-Object {$_.Description -like "*Device*"}
+PS C:\> Get-ControlPanelItem | Where-Object {$_.Description -like "*Device*"}
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
 AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo... 

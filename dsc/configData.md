@@ -50,7 +50,7 @@ $MyData =
 
         @{
             NodeName    = 'VM-2'
-            FeatureName = 'VMHost'
+            Role = 'VMHost'
         }
     )
 }
@@ -353,9 +353,9 @@ Configuration MyWebApp
 
     }
 
-MyWebApp -ConfigurationData DevProdEnvData.psd1
-
 }
+
+MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
 ## See Also

@@ -1,27 +1,21 @@
-﻿---
-title: about_Scripts
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Scripts
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Scripts
+ms.technology:  powershell
+---
+
 # About Scripts
 ## about_Scripts
-about_Scripts
 
 
 ## SHORT DESCRIPTION
-Describes how to run and write scripts in  Windows PowerShell�.
+Describes how to run and write scripts in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -338,27 +332,27 @@ You can add a digital signature to a script. Depending on the execution policy, 
 
 
 ## SEE ALSO
-about_Command_Precedence
 
-about_Comment_Based_Help
+[about_Command_Precedence](about_Command_Precedence.md)
 
-about_Execution_Policies
+[about_Comment_Based_Help](about_Comment_Based_Help.md)
 
-about_Functions
+[about_Execution_Policies](about_Execution_Policies.md)
 
-about_Modules
+[about_Functions](about_Functions.md)
 
-about_Profiles
+[about_Modules](about_Modules.md)
 
-about_Requires
+[about_Profiles](about_Profiles.md)
 
-about_Run_With_PowerShell
+[about_Requires](about_Requires.md)
 
-about_Scopes
+[about_Run_With_PowerShell](about_Run_With_PowerShell.md)
 
-about_Script_Blocks
+[about_Scopes](about_Scopes.md)
 
-about_Signing
+[about_Script_Blocks](about_Script_Blocks.md)
+
+[about_Signing](about_Signing.md)
 
 Invoke-Command
-

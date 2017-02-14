@@ -1,25 +1,19 @@
-﻿---
-title: about_Remote_Disconnected_Sessions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Disconnected_Sessions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Disconnected_Sessions
+ms.technology:  powershell
+---
+
 # About Remote Disconnected Sessions
 ## about_Remote_Disconnected_Sessions
 
 
-about_Remote_Disconnected_Session
 
 # SHORT DESCRIPTION
 
@@ -639,14 +633,22 @@ about_Disconnected_Sessions
 
 # SEE ALSO
 
-about_Jobs
-about_Remote
-about_Remote_Variables
-about_PSSessions
-about_Session_Configurations
-Disconnect-PSSession
-Connect-PSSession
-Get-PSSession
-Receive-PSSession
-Invoke-Command
+[about_Jobs](about_Jobs.md)
 
+[about_Remote](about_Remote.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
+
+[about_PSSessions](about_PSSessions.md)
+
+[about_Session_Configurations](about_Session_Configurations.md)
+
+Disconnect-PSSession
+
+Connect-PSSession
+
+Get-PSSession
+
+Receive-PSSession
+
+Invoke-Command

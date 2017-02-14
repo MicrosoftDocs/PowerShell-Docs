@@ -1,27 +1,21 @@
-﻿---
-title: about_Parameters
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Parameters
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Parameters
+ms.technology:  powershell
+---
+
 # About Parameters
 ## about_Parameters
-about_Parameters
 
 
 ## SHORT DESCRIPTION
-Describes how to work with command parameters in  Windows PowerShell�.
+Describes how to work with command parameters in  Windows PowerShell®.
 
 
 ## LONG DESCRIPTION
@@ -210,15 +204,15 @@ Common parameters are parameters that you can use with any cmdlet. For more info
 
 
 ## SEE ALSO
-about_Command_syntax
 
-about_Comment_Based_Help
+[about_Command_syntax](about_Command_syntax.md)
 
-about_Functions_Advanced
+[about_Comment_Based_Help](about_Comment_Based_Help.md)
 
-about_Parameters_Default_Values
+[about_Functions_Advanced](about_Functions_Advanced.md)
 
-about_Pipelines
+[about_Parameters_Default_Values](about_Parameters_Default_Values.md)
 
-about_Wildcards
+[about_Pipelines](about_Pipelines.md)
 
+[about_Wildcards](about_Wildcards.md)

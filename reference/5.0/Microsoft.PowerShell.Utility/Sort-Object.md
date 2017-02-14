@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821863
-schema: 2.0.0
-title: Sort-Object
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Sort Object
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821863
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Sort-Object
 
@@ -35,7 +36,7 @@ You can also direct **Sort-Object** to display only the objects with a unique va
 
 ### Example 1: Sort the current directory by name
 ```
-PS C:\>Get-ChildItem | Sort-Object
+PS C:\> Get-ChildItem | Sort-Object
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---         9/13/2005   4:24 PM          0 0
@@ -61,7 +62,7 @@ Because no properties are specified, the files and directories are sorted in asc
 
 ### Example 2: Sort the current directory by file length
 ```
-PS C:\>Get-ChildItem | Sort-Object -Property length
+PS C:\> Get-ChildItem | Sort-Object -Property length
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---         12/3/2006   5:35 PM          2 pref.txt
@@ -79,7 +80,7 @@ This command displays the files in the current directory in ascending order by f
 
 ### Example 3: Sort processes by memory use
 ```
-PS C:\>Get-Process | Sort-Object -Property WS | Select-Object -Last 5
+PS C:\> Get-Process | Sort-Object -Property WS | Select-Object -Last 5
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 1105      25    44236      18932   197    93.81      2032 iexplore
@@ -98,7 +99,7 @@ Another pipeline operator sends the results to the Select-Object, which displays
 
 ### Example 4: Sort HistoryInfo objects by ID
 ```
-PS C:\>Get-History | Sort-Object -Descending
+PS C:\> Get-History | Sort-Object -Descending
 Id CommandLine
 -- -----------
 51 get-history | sort -descending
@@ -117,7 +118,7 @@ This command sorts **HistoryInfo** objects using the Id property as the default 
 
 ### Example 5: Sort services by Status and DisplayName
 ```
-PS C:\>Get-Service | Sort-Object -Property @{Expression = "Status"; Descending = $True}, @{Expression = "DisplayName"; Descending = $False}
+PS C:\> Get-Service | Sort-Object -Property @{Expression = "Status"; Descending = $True}, @{Expression = "DisplayName"; Descending = $False}
 Status   Name               DisplayName
 ------   ----               -----------
 Running  ALG                Application Layer Gateway Service
@@ -147,7 +148,7 @@ When sorted in ascending order, Stopped appears before Running, because Status i
 
 ### Example 6: Sort text files by time span
 ```
-PS C:\>Get-ChildItem *.txt | Sort-Object -Property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending = $False} | Format-Table LastWriteTime, CreationTime
+PS C:\> Get-ChildItem *.txt | Sort-Object -Property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending = $False} | Format-Table LastWriteTime, CreationTime
 LastWriteTime                           CreationTime
 -------------                           ------------
 2/21/2006 10:22:20 AM                   10/3/2005 4:19:40 PM
@@ -163,13 +164,13 @@ This command sorts text files in descending order by the time span between Creat
 
 ### Example 7: Sort names in a text file
 ```
-PS C:\>Get-Content servers.txt
+PS C:\> Get-Content servers.txt
 localhost
 test01
 server01
 server02
 localhost
-server01 PS C:\>Get-Content servers.txt | Sort-Object -Unique
+server01 PS C:\> Get-Content servers.txt | Sort-Object -Unique
 localhost
 server01
 server02

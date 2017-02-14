@@ -1,25 +1,18 @@
-﻿---
-title: about_Remote_Variables
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Variables
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Variables
+ms.technology:  powershell
+---
+
 # About Remote Variables
 ## about_Remote_Variables
-# TOPIC
 
-about_Remote_Variables
 
 # SHORT DESCRIPTION
 
@@ -47,16 +40,16 @@ commands  are defined in the session in which the command runs.
 In the following example, the $ps variable is defined in the
 temporary  session in which the Get-WinEvent command runs.
 
-PS C:>Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"; Get-WinEvent -LogName $ps}
+PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"; Get-WinEvent -LogName $ps}
 
 Similarly, when the command runs in a persistent session (PSSession),
 the remote variable must be defined in the same PSSession.
 
-PS C:>$s = New-PSSession -ComputerName S1
+PS C:> $s = New-PSSession -ComputerName S1
 
-PS C:>Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
+PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
 
-PS C:>Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $ps}
+PS C:> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $ps}
 
 # USING LOCAL VARIABLES
 
@@ -76,16 +69,16 @@ In the following example, the $ps variable is created in the local
 session, but is used in the session in which the command runs. The
 Using scope modifier identifies $ps as a local variable.
 
-PS C:>$ps = "Windows PowerShell"
-PS C:>Invoke-Command -ComputerName S1 -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+PS C:> $ps = "Windows PowerShell"
+PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 
 You can also use the Using scope modifier in PSSessions.
 
-PS C:>$s = New-PSSession -ComputerName S1
+PS C:> $s = New-PSSession -ComputerName S1
 
-PS C:>$ps = "Windows PowerShell"
+PS C:> $ps = "Windows PowerShell"
 
-PS C:>Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+PS C:> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 
 # USING LOCAL VARIABLES IN WINDOWS POWERSHELL 2.0
 
@@ -121,10 +114,14 @@ about_Using
 
 # SEE ALSO
 
-about_Remote
-about_PSSessions
-about_Scopes
-Enter-PSSession
-Invoke-Command
-New-PSSession
+[about_Remote](about_Remote.md)
 
+[about_PSSessions](about_PSSessions.md)
+
+[about_Scopes](about_Scopes.md)
+
+Enter-PSSession
+
+Invoke-Command
+
+New-PSSession

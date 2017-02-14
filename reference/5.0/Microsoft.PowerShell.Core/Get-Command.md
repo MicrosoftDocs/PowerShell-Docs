@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821482
-schema: 2.0.0
-title: Get-Command
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Command
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821482
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Get-Command
 
@@ -60,21 +61,21 @@ A new **Version** property has been added to the **CommandInfo** class.
 
 ### Example 1: Get cmdlets, functions, and aliases
 ```
-PS C:\>Get-Command
+PS C:\> Get-Command
 ```
 
 This command gets the Windows PowerShell cmdlets, functions, and aliases that are installed on the computer.
 
 ### Example 2: Get commands in the current session
 ```
-PS C:\>Get-Command -ListImported
+PS C:\> Get-Command -ListImported
 ```
 
 This command uses the *ListImported* parameter to get only the commands in the current session.
 
 ### Example 3: Get cmdlets and display them in order
 ```
-PS C:\>Get-Command -Type Cmdlet | Sort-Object -Property Noun | Format-Table -GroupBy Noun
+PS C:\> Get-Command -Type Cmdlet | Sort-Object -Property Noun | Format-Table -GroupBy Noun
 ```
 
 This command gets all of the cmdlets, sorts them alphabetically by the noun in the cmdlet name, and then displays them in noun-based groups.
@@ -82,14 +83,14 @@ This display can help you find the cmdlets for a task.
 
 ### Example 4: Get commands in a module
 ```
-PS C:\>Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
+PS C:\> Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
 ```
 
 This command uses the *Module* parameter to get the commands in the Microsoft.PowerShell.Security and PSScheduledJob modules.
 
 ### Example 5: Get information about a cmdlet
 ```
-PS C:\>Get-Command Get-AppLockerPolicy
+PS C:\> Get-Command Get-AppLockerPolicy
 ```
 
 This command gets information about the **Get-AppLockerPolicy** cmdlet.
@@ -102,7 +103,7 @@ For more information, see about_Preference_Variables.
 
 ### Example 6: Get the syntax of a cmdlet
 ```
-PS C:\>Get-Command Get-Childitem -Args Cert: -Syntax
+PS C:\> Get-Command Get-Childitem -Args Cert: -Syntax
 ```
 
 This command uses the *ArgumentList* and *Syntax* parameters to get the syntax of the Get-ChildItem cmdlet when it is used in the Cert: drive.
@@ -114,7 +115,7 @@ For more information about the Certificate provider, see Certificate Provider.
 
 ### Example 7: Get dynamic parameters
 ```
-PS C:\>function Get-DynamicParameters
+PS C:\> function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
     (Get-Command $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
@@ -134,7 +135,7 @@ The command in the example uses the **Get-DynamicParameters** function to get th
 
 ### Example 8: Get all commands of all types
 ```
-PS C:\>Get-Command *
+PS C:\> Get-Command *
 ```
 
 This command gets all commands of all types on the local computer, including executable files in the paths of the **Path** environment variable ($env:path).
@@ -142,7 +143,7 @@ It returns an **ApplicationInfo** object (System.Management.Automation.Applicati
 
 ### Example 9: Get cmdlets by using a name
 ```
-PS C:\>Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
+PS C:\> Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 ```
 
 This command gets cmdlets that have a parameter whose name includes Auth and whose type is **AuthenticationMechanism**.
@@ -152,7 +153,7 @@ The *ParameterType* parameter distinguishes parameters that take an **Authentica
 
 ### Example 10: Get an alias
 ```
-PS C:\>Get-Command dir
+PS C:\> Get-Command dir
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Alias           dir -> Get-ChildItem
@@ -166,7 +167,7 @@ The view shows the alias and the full command name.
 
 ### Example 11: Get all instances of the Notepad command
 ```
-PS C:\>Get-Command Notepad -All | Format-Table CommandType, Name, Definition
+PS C:\> Get-Command Notepad -All | Format-Table CommandType, Name, Definition
 
 CommandType     Name           Definition
 -----------     ----           ----------
@@ -185,7 +186,7 @@ For more information about command precedence, see about_Command_Precedence (htt
 
 ### Example 12: Get the name of a snap-in or module that contains a cmdlet
 ```
-PS C:\>(Get-Command Get-Date).ModuleName
+PS C:\> (Get-Command Get-Date).ModuleName
 Microsoft.PowerShell.Utility
 ```
 
@@ -196,7 +197,7 @@ This command format works on commands in Windows PowerShell modules and snap-ins
 
 ### Example 13: Get cmdlets and functions that have an output type
 ```
-PS C:\>Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
+PS C:\> Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
 ```
 
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
@@ -209,7 +210,7 @@ The **OutputType** property of a **CommandInfo** object has a non-null value onl
 
 ### Example 14: Get cmdlets that take a specific object type as input
 ```
-PS C:\>Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
+PS C:\> Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Disable-NetAdapter                                 NetAdapter

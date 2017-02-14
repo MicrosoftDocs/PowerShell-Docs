@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821514
-schema: 2.0.0
-title: Save-Help
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Save Help
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821514
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Save-Help
 
@@ -70,7 +71,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Save the help for the DhcpServer module
 ```
-PS C:\># Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
+PS C:\> # Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
 
 PS C:\> $m = Invoke-Command -ComputerName RemoteServer -ScriptBlock { Get-Module -Name DhcpServer -ListAvailable }
 PS C:\> Save-Help -Module $m -DestinationPath "C:\SavedHelp"
@@ -94,7 +95,7 @@ This example shows three different ways to use **Save-Help** to save the help fo
 
 ### Example 2: Install help for the DhcpServer module
 ```
-PS C:\># First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
+PS C:\> # First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
 
 PS C:\> $m = Get-Module -Name "DhcpServer" -ListAvailable
 PS C:\> Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
@@ -113,7 +114,7 @@ This example shows how to install help that you saved in Example 1 for the **Dhc
 
 ### Example 3: Save help for all modules
 ```
-PS C:\>Save-Help -DestinationPath "\\Server01\FileShare01"
+PS C:\> Save-Help -DestinationPath "\\Server01\FileShare01"
 ```
 
 This command downloads the newest help files for all modules in the UI culture set for Windows on the local computer.
@@ -121,7 +122,7 @@ It saves the help files in the \\\\Server01\Fileshare01 folder.
 
 ### Example 4: Save help for a module on the computer
 ```
-PS C:\>Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Credential Domain01/Admin01
+PS C:\> Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Credential Domain01/Admin01
 ```
 
 This command downloads the newest help files for the **ServerManager** module, and then saves them in the \\\\Server01\Fileshare01 folder.
@@ -132,7 +133,7 @@ The command uses the *Credential* parameter to supply the credentials of a user 
 
 ### Example 5: Save help for a module on a different computer
 ```
-PS C:\>Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
+PS C:\> Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
 ```
 
 These commands download the newest help files for the **CustomSQL** module and save them in the \\\\Server01\Fileshare01 folder.
@@ -143,7 +144,7 @@ When a module is not installed on the computer, **Save-Help** needs the module o
 
 ### Example 6: Save help for a module in multiple languages
 ```
-PS C:\>Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
+PS C:\> Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
 ```
 
 This command saves help for the Windows PowerShell Core modules in four different UI cultures.
@@ -153,7 +154,7 @@ The language packs for these locales do not have to be installed on the computer
 
 ### Example 7: Save help more than one time each day
 ```
-PS C:\>Save-Help -Force -DestinationPath "\\Server3\AdminShare\Help"
+PS C:\> Save-Help -Force -DestinationPath "\\Server3\AdminShare\Help"
 ```
 
 This command saves help for all modules that are installed on the computer.

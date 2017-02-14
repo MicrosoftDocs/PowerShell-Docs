@@ -1,25 +1,18 @@
-﻿---
-title: about_Wildcards
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Wildcards
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Wildcards
+ms.technology:  powershell
+---
+
 # About Wildcards
 ## about_Wildcards
-# TOPIC
 
-about_Wildcards
 
 # SHORT DESCRIPTION
 
@@ -84,7 +77,8 @@ foreach ($point in $p)
 
 # SEE ALSO
 
-about_Language_Keywords
-about_If
-about_Script_Blocks
+[about_Language_Keywords](about_Language_Keywords.md)
 
+[about_If](about_If.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113367
-schema: 2.0.0
-title: Out-Printer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Out Printer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113367
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Out-Printer
 ## SYNOPSIS
@@ -28,7 +29,7 @@ The Out-Printer cmdlet sends output to the default printer or to an alternate pr
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-content $pshome\about_signing.help.txt | Out-Printer
+PS C:\> get-content $pshome\about_signing.help.txt | Out-Printer
 ```
 
 This command prints the content of the about_Signing Help topic to the default printer.
@@ -39,7 +40,7 @@ The path includes $pshome, a built-in variable that stores the installation dire
 A pipeline operator (|) passes the results to Out-Printer, which sends it to the default printer.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>"Hello, World" | out-printer -name "\\Server01\Prt-6B Color"
+PS C:\> "Hello, World" | out-printer -name "\\Server01\Prt-6B Color"
 ```
 
 This command prints "Hello, World" to the "Prt-6B Color" printer on Server01.
@@ -47,8 +48,8 @@ This command uses the Name parameter to specify the alternate printer.
 Because the parameter name is optional, you can omit it.
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>$h = get-help -full get-wmiobject
-PS C:\>out-printer -inputobject $h
+PS C:\> $h = get-help -full get-wmiobject
+PS C:\> out-printer -inputobject $h
 ```
 
 These commands print the full version of the Help topic for Get-WmiObject.

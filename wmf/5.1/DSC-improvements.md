@@ -1,5 +1,5 @@
 ---
-title:   DSC Improvements in WMF 5.1 (Preview)
+title:   DSC Improvements in WMF 5.1
 ms.date:  2016-07-13
 keywords:  PowerShell, DSC, WMF
 description:  
@@ -10,7 +10,7 @@ ms.prod:  powershell
 ms.technology: WMF
 ---
 
-#Improvements in Desired State Configuration (DSC) in WMF 5.1
+# Improvements in Desired State Configuration (DSC) in WMF 5.1
 
 ## DSC class resource improvements
 
@@ -23,7 +23,6 @@ In WMF 5.1, we have fixed the following known issues:
 
 
 ## DSC resource debugging improvements
-
 In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.
 In WMF 5.1, the debugger will stop at the class-based resource method in the same way as for MOF-based resources methods.
 
@@ -41,7 +40,17 @@ In WMF 5.1, this issue has been fixed.
 Concurrent registrations or reporting (involving ESENT database) will work fine in WMF 5.1. 
 This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
-##Pull partial configuration naming convention
+## Enable Circular log on ESENT database instance
+In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, customer will have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging will be set to TRUE.
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## Pull partial configuration naming convention
 In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file. 
 
 See the snapshots below:

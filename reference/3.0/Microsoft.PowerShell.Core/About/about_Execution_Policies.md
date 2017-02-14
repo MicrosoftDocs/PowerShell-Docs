@@ -1,25 +1,19 @@
-﻿---
-title: about_Execution_Policies
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Execution_Policies
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Execution_Policies
+ms.technology:  powershell
+---
+
 # About Execution Policies
 ## about_Execution_Policies
 
 
-about_Execution_Policies
 
 # SHORT DESCRIPTION
 
@@ -382,14 +376,18 @@ Unblock-File.
 
 # SEE ALSO
 
-about_Environment_Variables
-about_Signing
-Get-ExecutionPolicy
-Set-ExecutionPolicy
-Get-Item
-Unblock-File
-"Administrative Templates for Windows PowerShell"
-(http://go.microsoft.com/fwlink/?LinkId=131786)
-"PowerShell.exe Console Help"
-(http://go.microsoft.com/fwlink/?LinkID=113439)
+[about_Environment_Variables](about_Environment_Variables.md)
 
+[about_Signing](about_Signing.md)
+
+Get-ExecutionPolicy
+
+Set-ExecutionPolicy
+
+Get-Item
+
+Unblock-File
+
+"Administrative Templates for Windows PowerShell" (http://go.microsoft.com/fwlink/?LinkId=131786)
+
+"PowerShell.exe Console Help" (http://go.microsoft.com/fwlink/?LinkID=113439)

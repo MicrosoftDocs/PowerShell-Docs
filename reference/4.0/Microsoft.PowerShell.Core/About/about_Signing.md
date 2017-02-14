@@ -1,25 +1,19 @@
-﻿---
-title: about_Signing
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Signing
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Signing
+ms.technology:  powershell
+---
+
 # About Signing
 ## about_Signing
 
 
-about_Signing
 
 # SHORT DESCRIPTION
 
@@ -327,11 +321,16 @@ to come.
 
 # SEE ALSO
 
-about_Execution_Policies
-about_Profiles
-Get-ExecutionPolicy
-New-SelfSignedCertificate
-Set-ExecutionPolicy
-Set-AuthenticodeSignature
-"Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)
+[about_Execution_Policies](about_Execution_Policies.md)
 
+[about_Profiles](about_Profiles.md)
+
+Get-ExecutionPolicy
+
+New-SelfSignedCertificate
+
+Set-ExecutionPolicy
+
+Set-AuthenticodeSignature
+
+"Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)

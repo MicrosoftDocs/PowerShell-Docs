@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821468
-schema: 2.0.0
-title: Add-History
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Add History
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821468
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Add-History
 
@@ -34,7 +35,7 @@ You can use this cmdlet to add specific commands to the history or to create a s
 
 ### Example 1: Add commands to the history of a different session
 ```
-PS C:\>Get-History | Export-Csv c:\testing\history.csv
+PS C:\> Get-History | Export-Csv c:\testing\history.csv
 PS C:\> Import-Csv history.csv | Add-History
 ```
 
@@ -48,7 +49,7 @@ The pipeline operator (|) passes the objects to the **Add-History** cmdlet, whic
 
 ### Example 2: Import and turn commands
 ```
-PS C:\>Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
+PS C:\> Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
 ```
 
 This command imports commands from the History.xml file, adds them to the current session history, and then runs the commands in the combined history.
@@ -62,7 +63,7 @@ The **Invoke-History** command is formatted as a script block, enclosed in brace
 
 ### Example 3: Add commands in the history to the end of the history
 ```
-PS C:\>Get-History -Id 5 -Count 5 | Add-History
+PS C:\> Get-History -Id 5 -Count 5 | Add-History
 ```
 
 This command adds the first five commands in the history to the end of the history list.
@@ -72,7 +73,7 @@ The **Add-History** command does not include any parameters, but Windows PowerSh
 
 ### Example 4: Add commands in a .csv file to the current history
 ```
-PS C:\>$a = Import-Csv c:\testing\history.csv
+PS C:\> $a = Import-Csv c:\testing\history.csv
 PS C:\> Add-History -InputObject $a -PassThru
 ```
 
@@ -86,7 +87,7 @@ Without the *PassThru* parameter, the **Add-History** cmdlet does not generate a
 
 ### Example 5: Add commands in an .xml file to the current history
 ```
-PS C:\>Add-History -InputObject (Import-Clixml c:\temp\history01.xml)
+PS C:\> Add-History -InputObject (Import-Clixml c:\temp\history01.xml)
 ```
 
 This command adds the commands in the History01.xml file to the current session history.

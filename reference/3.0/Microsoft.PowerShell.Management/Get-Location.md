@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=113321
-schema: 2.0.0
-title: Get-Location
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get Location
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=113321
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Get-Location
 ## SYNOPSIS
@@ -42,7 +43,7 @@ For more information, see the Notes and the descriptions of the Stack and StackN
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>get-location
+PS C:\> get-location
 Path
 ----
 C:\WINDOWS
@@ -54,24 +55,24 @@ For example, if you are in the Windows directory of the C: drive, it displays th
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
 The first command uses the Set-Location cmdlet to set the current location to the Windows subdirectory of the C: drive.
-PS C:\>set-location C:\Windows
+PS C:\> set-location C:\Windows
 
 The second command uses the Set-Location cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, Windows PowerShell retains your location in the C: drive.
 PS C:\WINDOWS> set-location HKLM:\Software\Microsoft
 PS HKLM:\Software\Microsoft>
 
 The third command uses the Set-Location cmdlet to change the location to the "HKCU:\Control Panel\Input Method" registry key.
-PS C:\>PS HKLM:\Software\Microsoft> set-location 'HKCU:\Control Panel\Input Method'
+PS C:\> PS HKLM:\Software\Microsoft> set-location 'HKCU:\Control Panel\Input Method'
 PS HKCU:\Control Panel\Input Method>
 
 The fourth command uses the Get-Location cmdlet to find the current location on the C: drive. It uses the PSDrive parameter to specify the drive.
-PS C:\>PS HKCU:\Control Panel\Input Method> get-location -psdrive c
+PS C:\> PS HKCU:\Control Panel\Input Method> get-location -psdrive c
 Path
 ----
 C:\WINDOWS
 
 The fifth command uses the Set-Location cmdlet to return to the C: drive. Even though the command does not specify a subdirectory, Windows PowerShell returns you to the saved location.
-PS C:\>PS HKCU:\Control Panel\Input Method> set-location C:
+PS C:\> PS HKCU:\Control Panel\Input Method> set-location C:
 PS C:\WINDOWS>
 
 The sixth command uses the Get-Location cmdlet to find the current location in the drives supported by the Windows PowerShell registry provider. Get-Location returns the location of the most recently accessed registry drive, HKCU.
@@ -92,7 +93,7 @@ These commands demonstrate the use of Get-Location to display your current locat
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
 The first command sets the current location to the Windows directory on the C: drive.
-PS C:\>set-location C:\Windows
+PS C:\> set-location C:\Windows
 
 The second command uses the Push-Location cmdlet to push the current location (C:\Windows) onto the current location stack and change to the System32 subdirectory. Because no stack is specified, the current location is pushed onto the current location stack. By default, the current location stack is the unnamed default location stack.
 C:\WINDOWS>push-location System32
@@ -117,7 +118,7 @@ These commands show how to use the Stack and StackName parameters of Get-Locatio
 For more information about location stacks, see the Notes.
 ### -------------------------- EXAMPLE 4 --------------------------
 ```
-PS C:\>function prompt { 'PowerShell: ' + (get-location) + '> '}
+PS C:\> function prompt { 'PowerShell: ' + (get-location) + '> '}
 PowerShell: C:\WINDOWS>
 ```
 

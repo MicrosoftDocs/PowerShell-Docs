@@ -1,25 +1,19 @@
-﻿---
-title: about_Comment_Based_Help
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Comment_Based_Help
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Comment_Based_Help
+ms.technology:  powershell
+---
+
 # About Comment Based Help
 ## about_Comment_Based_Help
 
 
-about_Comment_Based_Help
 
 # SHORT DESCRIPTION
 
@@ -873,8 +867,10 @@ about_Comment-Based_Help
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced_Parameters
-about_Scripts
-"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Scripts](about_Scripts.md)
+
+"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)

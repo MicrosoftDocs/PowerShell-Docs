@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.WSMan.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=141463
-schema: 2.0.0
-title: Set-WSManQuickConfig
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set WSManQuickConfig
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=141463
+external help file:   Microsoft.WSMan.Management.dll-Help.xml
+---
+
 
 # Set-WSManQuickConfig
 ## SYNOPSIS
@@ -37,14 +38,14 @@ To run this cmdlet, start Windows PowerShell with the "Run as administrator" opt
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Set-WSManQuickConfig
+PS C:\> Set-WSManQuickConfig
 ```
 
 This command sets the required configuration to enable remote management of the local computer.
 By default, this command creates a WS-Management listener on HTTP.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Set-WSManQuickConfig -UseSSL
+PS C:\> Set-WSManQuickConfig -UseSSL
 ```
 
 The command sets the required configuration to enable remote management of the local computer.

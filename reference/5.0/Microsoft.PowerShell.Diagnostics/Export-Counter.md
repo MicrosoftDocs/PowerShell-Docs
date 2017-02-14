@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821527
-schema: 2.0.0
-title: Export-Counter
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Counter
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821527
+external help file:   Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+---
+
 
 # Export-Counter
 
@@ -37,7 +38,7 @@ This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions o
 
 ### Example 1: Export counter data to a file
 ```
-PS C:\>Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
+PS C:\> Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
 ```
 
 This command exports counter data to a BLG file.
@@ -52,10 +53,10 @@ If the data were saved in a variable, the command might use a disproportionate a
 ### Example 2: Export a file to a counter file format
 ```
 The first command uses the built-in Windows PowerShell conversion feature to store the value of 1 gigabyte (GB) in bytes in the $1GBInBytes variable. When you type a value followed by K (kilobyte), MB (megabyte), or GB, Windows PowerShell returns the value in bytes.
-PS C:\>$1GBInBytes = 1GB
+PS C:\> $1GBInBytes = 1GB
 
 The second command uses the Import-Counter cmdlet to import performance counter data from the Threads.csv file. The example presumes that this file was previously exported by using the **Export-Counter** cmdlet. A pipeline operator (|) sends the imported data to the **Export-Counter** cmdlet. The command uses the *Path* parameter to specify the location of the output file. It uses the *Circular* and *MaxSize* parameters to direct the **Export-Counter** cmdlet to create a circular log that wraps at 1 GB.
-PS C:\>Import-Counter Threads.csv | Export-Counter -Path ThreadTest.blg -Circular -MaxSize $1GBinBytes
+PS C:\> Import-Counter Threads.csv | Export-Counter -Path ThreadTest.blg -Circular -MaxSize $1GBinBytes
 ```
 
 This example convert a CSV file to a counter data BLG format.
@@ -63,10 +64,10 @@ This example convert a CSV file to a counter data BLG format.
 ### Example 3: Get counter data from a remote computer and save the data to a file
 ```
 The first command uses the Get-Counter cmdlet to collect working set counter data from Server01, a remote computer. The command saves the data in the $C variable.
-PS C:\>$C = Get-Counter -ComputerName Server01 -Counter "\Process(*)\Working Set - Private" -MaxSamples 20
+PS C:\> $C = Get-Counter -ComputerName Server01 -Counter "\Process(*)\Working Set - Private" -MaxSamples 20
 
 The second command uses a pipeline operator (|) to send the data in $C to the **Export-Counter** cmdlet, which saves it in the Workingset.blg file in the Perf share of the Server01 computer.
-PS C:\>$C | Export-Counter -Path \\Server01\Perf\WorkingSet.blg
+PS C:\> $C | Export-Counter -Path \\Server01\Perf\WorkingSet.blg
 ```
 
 This example shows how to get performance counter data from a remote computer and save the data in a file on the remote computer.
@@ -74,13 +75,13 @@ This example shows how to get performance counter data from a remote computer an
 ### Example 4: Re-log existing data
 ```
 The first command uses the **Import-Counter** cmdlet to import performance counter data from the DiskSpace.blg log. It saves the data in the $All variable. This file contains samples of the "LogicalDisk\% Free Space" counter on more than 200 remote computers in the enterprise.
-PS C:\>$All = Import-Counter DiskSpace.blg
+PS C:\> $All = Import-Counter DiskSpace.blg
 
 The second command uses the **CounterSamples** property of the sample set object in $All and the Where-Object cmdlet (alias = "where") to select objects with **CookedValues** of less than 15 (percent). The command saves the results in the $LowSpace variable.
-PS C:\>$LowSpace = $All.CounterSamples | where {$_.CookedValues -lt 15}
+PS C:\> $LowSpace = $All.CounterSamples | where {$_.CookedValues -lt 15}
 
 The third command uses a pipeline operator (|) to send the data in the $LowSpace variable to the **Export-Counter** cmdlet. The command uses the *Path* parameter to indicate that the selected data should be logged in the LowDiskSpace.blg file.
-PS C:\>$LowSpace | Export-Counter -Path LowDiskSpace.blg
+PS C:\> $LowSpace | Export-Counter -Path LowDiskSpace.blg
 ```
 
 This example shows how to use the Import-Counter and **Export-Counter** cmdlets to re-log existing data.

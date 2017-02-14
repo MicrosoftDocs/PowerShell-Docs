@@ -1,23 +1,17 @@
-﻿---
-title: about_Trap
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-27
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Trap
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Trap
+ms.technology:  powershell
+---
+
 # About Trap
 ## about_Trap
-about_Trap
 
 
 ## SHORT DESCRIPTION
@@ -25,7 +19,7 @@ Describes a keyword that handles a terminating error.
 
 
 ## LONG DESCRIPTION
-A terminating error stops a statement from running. If  Windows PowerShell� does not handle a terminating error in some way,  Windows PowerShell also stops running the function or script in the current pipeline. In other languages, such as C\#, terminating errors are referred to as exceptions.
+A terminating error stops a statement from running. If  Windows PowerShell® does not handle a terminating error in some way,  Windows PowerShell also stops running the function or script in the current pipeline. In other languages, such as C\#, terminating errors are referred to as exceptions.
 
 The Trap keyword specifies a list of statements to run when a terminating error occurs. Trap statements handle the terminating errors and allow execution of the script or function to continue instead of stopping.
 
@@ -285,13 +279,13 @@ The function resumes after the error is trapped, and the "Function completed" st
 
 
 ## SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_Scopes
+[about_Continue](about_Continue.md)
 
-about_Throw
+[about_Scopes](about_Scopes.md)
 
-about_Try_Catch_Finally
+[about_Throw](about_Throw.md)
 
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)

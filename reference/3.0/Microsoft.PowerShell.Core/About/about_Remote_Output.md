@@ -1,25 +1,18 @@
-﻿---
-title: about_Remote_Output
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Remote_Output
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Remote_Output
+ms.technology:  powershell
+---
+
 # About Remote Output
 ## about_Remote_Output
-# TOPIC
 
-about_Remote_Output
 
 # SHORT DESCRIPTION
 
@@ -205,14 +198,22 @@ computers are interspersed.
 
 # SEE ALSO
 
-about_Remote
-about_Remote_Variables
-Format-Table
-Get-EventLog
-Get-Process
-Get-Service
-Get-WmiObject
-Invoke-Command
-Out-GridView
-Select-Object
+[about_Remote](about_Remote.md)
 
+[about_Remote_Variables](about_Remote_Variables.md)
+
+Format-Table
+
+Get-EventLog
+
+Get-Process
+
+Get-Service
+
+Get-WmiObject
+
+Invoke-Command
+
+Out-GridView
+
+Select-Object

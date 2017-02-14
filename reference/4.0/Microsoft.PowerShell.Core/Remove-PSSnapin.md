@@ -1,17 +1,18 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/p/?linkid=289609
-schema: 2.0.0
-title: Remove-PSSnapin
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Remove PSSnapin
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/p/?linkid=289609
+external help file:   System.Management.Automation.dll-Help.xml
 ---
+
 
 # Remove-PSSnapin
 
@@ -34,7 +35,7 @@ After a snap-in is removed from the current session, it is still loaded, but the
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>remove-pssnapin -name Microsoft.Exchange
+PS C:\> remove-pssnapin -name Microsoft.Exchange
 ```
 
 This command removes the Microsoft.Exchange snap-in from the current session.
@@ -42,7 +43,7 @@ When the command is complete, the cmdlets and providers that the snap-in support
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>get-PSSnapIn smp* | remove-PSSnapIn
+PS C:\> get-PSSnapIn smp* | remove-PSSnapIn
 ```
 
 This command removes the Windows PowerShell snap-ins that have names beginning with "smp" from the current session.
@@ -55,7 +56,7 @@ When you pipe objects to Remove-PSSnapin, the names of the objects are associate
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```
-PS C:\>remove-pssnapin -name *event*
+PS C:\> remove-pssnapin -name *event*
 ```
 
 This command removes all Windows PowerShell snap-ins that have names that include "event".
@@ -64,7 +65,7 @@ This command specifies the "Name" parameter name, but the parameter name can be 
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -112,7 +113,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

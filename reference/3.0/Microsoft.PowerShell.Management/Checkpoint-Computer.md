@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135197
-schema: 2.0.0
-title: Checkpoint-Computer
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Checkpoint Computer
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135197
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Checkpoint-Computer
 ## SYNOPSIS
@@ -32,14 +33,14 @@ Beginning in Windows 8, **Checkpoint-Computer** cannot create more than one chec
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>Checkpoint-Computer -Description "Install MyApp"
+PS C:\> Checkpoint-Computer -Description "Install MyApp"
 ```
 
 This command creates a system restore point called "Install MyApp".
 It uses the default APPLICATION_INSTALL restore point type.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
+PS C:\> Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
 ```
 
 This command creates a MODIFY_SETTINGS system restore point called "ChangeNetSettings".

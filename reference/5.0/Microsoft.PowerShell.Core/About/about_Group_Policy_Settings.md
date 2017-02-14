@@ -1,25 +1,18 @@
-﻿---
-title: about_Group_Policy_Settings
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Group_Policy_Settings
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Group_Policy_Settings
+ms.technology:  powershell
+---
+
 # About Group Policy Settings
 ## about_Group_Policy_Settings
-# TOPIC
 
-about_Group_Policy_Settings
 
 # SHORT DESCRIPTION
 
@@ -110,8 +103,8 @@ To turn on module logging for a module, use the following command format.
 The module must be imported into the session and the setting is effective
 only in the current session.
 
-PS C:>Import-Module <Module-Name>
-PS C:>(Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
+PS C:> Import-Module <Module-Name>
+PS C:> (Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
 
 To turn on module logging for all sessions on a particular computer,
 add the previous commands to the all-users Windows PowerShell profile
@@ -168,13 +161,18 @@ about_GroupPolicy
 
 # SEE ALSO
 
-about_Execution_Policies
-about_Modules
-about_Updatable_Help
+[about_Execution_Policies](about_Execution_Policies.md)
+
+[about_Modules](about_Modules.md)
+
+[about_Updatable_Help](about_Updatable_Help.md)
 
 Get-ExecutionPolicy
-Set-ExecutionPolicy
-Get-Module
-Update-Help
-Save-Help
 
+Set-ExecutionPolicy
+
+Get-Module
+
+Update-Help
+
+Save-Help

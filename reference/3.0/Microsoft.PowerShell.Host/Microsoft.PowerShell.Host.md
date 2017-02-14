@@ -1,19 +1,20 @@
-﻿---
-title: Microsoft.PowerShell.Host
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-20
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-Module Name: Microsoft.PowerShell.Host
-Module Guid: 56d66100-99a0-4ffc-a12d-eee9a6718aef
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=210600
-Help Version: 3.1.0.2
-Locale: en-US
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Microsoft.PowerShell.Host
+ms.technology:  powershell
+Locale:   en-US
+Module Name:   Microsoft.PowerShell.Host
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=210600
+Help Version:   3.1.0.2
+Module Guid:   56d66100-99a0-4ffc-a12d-eee9a6718aef
+---
+
 
 # Microsoft.PowerShell.Host Module
 ## Description

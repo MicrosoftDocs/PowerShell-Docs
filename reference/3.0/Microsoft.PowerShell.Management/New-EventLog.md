@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=135235
-schema: 2.0.0
-title: New-EventLog
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New EventLog
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=135235
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # New-EventLog
 ## SYNOPSIS
@@ -33,14 +34,14 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-PS C:\>new-eventlog -source TestApp -logname TestLog -MessageResourceFile C:\Test\TestApp.dll
+PS C:\> new-eventlog -source TestApp -logname TestLog -MessageResourceFile C:\Test\TestApp.dll
 ```
 
 This command creates the TestLog event log on the local computer and registers a new source for it.
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-PS C:\>$file = "C:\Program Files\TestApps\NewTestApp.dll"
-PS C:\>new-eventlog -computername Server01 -source NewTestApp -logname Application -MessageResourceFile $file -CategoryResourceFile $file
+PS C:\> $file = "C:\Program Files\TestApps\NewTestApp.dll"
+PS C:\> new-eventlog -computername Server01 -source NewTestApp -logname Application -MessageResourceFile $file -CategoryResourceFile $file
 ```
 
 This command adds a new event source, NewTestApp, to the Application log on the Server01 remote computer.

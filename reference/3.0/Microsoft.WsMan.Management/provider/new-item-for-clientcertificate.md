@@ -1,17 +1,15 @@
-﻿---
-title: "New-Item for ClientCertificate"
-ms.custom: na
-ms.date: 09/30/2014
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-applies_to: 
-  - Windows PowerShell 4.0
-  - Windows PowerShell 5.0
-caps.latest.revision: 4
-manager: stevenka
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  new item for clientcertificate
+ms.technology:  powershell
+---
+
 # New-Item for ClientCertificate
 Creates a new item. In this location, the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) command creates a new client certificate.  
   

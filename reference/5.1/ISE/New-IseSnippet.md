@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: ISE-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822198
-schema: 2.0.0
-title: New-IseSnippet
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  New IseSnippet
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821536
+external help file:   ISE-help.xml
+---
+
 
 # New-IseSnippet
 
@@ -26,16 +27,16 @@ New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String> [-Auth
 ```
 
 ## DESCRIPTION
-The **New-ISESnippet** cmdlet creates a reusable text "snippet" for Windows PowerShell® Integrated Scripting Environment (ISE).
+The **New-IseSnippet** cmdlet creates a reusable text "snippet" for Windows PowerShell® Integrated Scripting Environment (ISE).
 You can use snippets to add text to the Script pane or Command pane in Windows PowerShell ISE.
 This cmdlet is available only in Windows PowerShell ISE.
 
-Beginning in Windows PowerShell 3.0, Windows PowerShell ISEincludes a collection of built-in snippets.
-The **New-ISESnippet** cmdlet lets you create your own snippets to add to the built-in collection.
+Beginning in Windows PowerShell 3.0, Windows PowerShell ISE includes a collection of built-in snippets.
+The **New-IseSnippet** cmdlet lets you create your own snippets to add to the built-in collection.
 You can view, change, add, delete, and share snippet files and include them in Windows PowerShell modules.
 To see snippets in Windows PowerShell ISE, from the Edit menu, select Start Snippets or press CTRL+J.
 
-The **New-ISESnippet** cmdlet creates a \<Title\>.Snippets.ps1xml file in the $home\Documents\WindowsPowerShell\Snippets directory with the title that you specify.
+The **New-IseSnippet** cmdlet creates a \<Title\>.Snippets.ps1xml file in the $home\Documents\WindowsPowerShell\Snippets directory with the title that you specify.
 To include a snippet file in a module that you are authoring, add the snippet file to a Snippets subdirectory of your module directory.
 
 You cannot use user-created snippets in a session in which the execution policy is **Restricted** or **AllSigned**.
@@ -46,7 +47,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a Comment-BasedHelp snippet
 ```
-PS C:\>New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
+PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS             
     .DESCRIPTION            
     .PARAMETER  <Parameter-Name>
@@ -62,7 +63,7 @@ It creates a file named Comment-BasedHelp.snippets.ps1xml in the user's Snippets
 
 ### Example 2: Create a mandatory snippet
 ```
-PS C:\>$M = @'
+PS C:\> $M = @'
 Param
 (
   [parameter(Mandatory=$true)]
@@ -71,22 +72,22 @@ Param
 )
 '@
 
-PS C:\>New-ISESnippet -Text $M -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Patti Fuller, Fabrikam Corp." -Force
+PS C:\> New-ISESnippet -Text $M -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Patti Fuller, Fabrikam Corp." -Force
 ```
 
 This example creates a Mandatory snippet for Windows PowerShell ISE.
 The first command saves the snippet text in the $M variable.
-The second command uses the **New-ISESnippet** cmdlet to create the snippet.
-The command uses the *Force* parameter to overwrite a previous snippet with the same name.
+The second command uses the **New-IseSnippet** cmdlet to create the snippet.
+The command uses the **Force** parameter to overwrite a previous snippet with the same name.
 
 ### Example 3: Copy a mandatory snippet from a folder to a destination folder
 ```
-PS C:\>Copy-Item "$Home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
+PS C:\> Copy-Item "$Home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
 ```
 
-This command uses the Copy-Item cmdlet to copy the Mandatory snippet from the folder where **New-ISESnippet** places it to the Server\Share file share.
+This command uses the Copy-Item cmdlet to copy the Mandatory snippet from the folder where **New-IseSnippet** places it to the \\Server\Share file share.
 
-Because the Snippets.ps1xml files that **New-ISESnippet** creates are text (XML) files, you can use the **Item** cmdlets to get, changes, move, rename, and copy them.
+Because the Snippets.ps1xml files that **New-IseSnippet** creates are text (XML) files, you can use the **Item** cmdlets to get, changes, move, rename, and copy them.
 
 ## PARAMETERS
 
@@ -177,7 +178,7 @@ Accept wildcard characters: False
 
 ### -Force
 Indicates that this cmdlet overwrites snippet files with the same name in the same location.
-By default, **New-ISESnippet** does not overwrite files.
+By default, **New-IseSnippet** does not overwrite files.
 
 ```yaml
 Type: SwitchParameter

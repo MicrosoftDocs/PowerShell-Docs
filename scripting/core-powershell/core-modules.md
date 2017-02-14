@@ -1,13 +1,15 @@
 ---
-title:  core modules
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
 description:  
+manager:  carmonm
 ms.topic:  article
 author:  jpjofre
-manager:  dongill
 ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  core modules
+ms.technology:  powershell
 ---
+
 
 #  The PowerShell Common Modules
 
@@ -30,3 +32,4 @@ The main areas these modules cover are:
 -  [Scheduled Job Module](core-modules/PSScheduledJob-Module.md)
 -  [ScriptAnalyzer Module](core-modules/PSScriptAnalyzer-Module.md)
 -  [Utility Module](core-modules/Microsoft.PowerShell.Utility-Module.md)
+

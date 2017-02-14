@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Get-DscConfigurationStatus.cdxml-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822022
-schema: 2.0.0
-title: Get-DscConfigurationStatus
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get DscConfigurationStatus
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821456
+external help file:   Get-DscConfigurationStatus.cdxml-help.xml
+---
+
 
 # Get-DscConfigurationStatus
 
@@ -34,21 +35,21 @@ This cmdlet is useful for finding historical information about configuration run
 
 ### Example 1: Get information on the last configuration run
 ```
-PS C:\>Get-DscConfigurationStatus
+PS C:\> Get-DscConfigurationStatus
 ```
 
 This command gets information on the last configuration run.
 
 ### Example 2: Get information on all configurations
 ```
-PS C:\>Get-DscConfigurationStatus -All
+PS C:\> Get-DscConfigurationStatus -All
 ```
 
 This command gets information about all the configurations that were run on the system, including the Windows PowerShell Desired State Configuration (DSC) consistency check.
 
 ### Example 3: Get information on the configuration run on a remote computer
 ```
-PS C:\>Get-DscConfigurationStaus -CimSession "Server01"
+PS C:\> Get-DscConfigurationStaus -CimSession "Server01"
 ```
 
 This command gets the configuration run details of the remote computer named Server01.

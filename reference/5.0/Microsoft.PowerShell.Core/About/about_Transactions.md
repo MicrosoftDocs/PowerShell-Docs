@@ -1,25 +1,19 @@
-﻿---
-title: about_Transactions
-description: 
-keywords: powershell, cmdlet
-author: jpjofre
-manager: carolz
-ms.date: 2016-09-30
-ms.topic: reference
-ms.prod: powershell
-ms.technology: powershell
-title: about_Transactions
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Transactions
+ms.technology:  powershell
+---
+
 # About Transactions
 ## about_Transactions
 
 
-about_Transactions
 
 # SHORT DESCRIPTION
 
@@ -771,12 +765,19 @@ SKC  VC Name                           Property
 # SEE ALSO
 
 Start-Transaction
-Get-Transaction
-Complete-Transaction
-Undo-Transaction
-Use-Transaction
-Registry (provider)
-about_Providers
-Get-PSProvider
-Get-ChildItem
 
+Get-Transaction
+
+Complete-Transaction
+
+Undo-Transaction
+
+Use-Transaction
+
+Registry (provider)
+
+[about_Providers](about_Providers.md)
+
+Get-PSProvider
+
+Get-ChildItem

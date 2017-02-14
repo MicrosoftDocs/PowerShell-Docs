@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-30
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821715
-schema: 2.0.0
-title: Get-PfxCertificate
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get PfxCertificate
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821715
+external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+---
+
 
 # Get-PfxCertificate
 
@@ -38,7 +39,7 @@ A .pfx file includes both the certificate and a private key.
 
 ### Example 1: Get a .pfx certificate
 ```
-PS C:\>Get-PfxCertificate -FilePath "C:\windows\system32\Test.pfx"
+PS C:\> Get-PfxCertificate -FilePath "C:\windows\system32\Test.pfx"
 Password: ******
 Signer Certificate:      David Chew (Self Certificate) 
 Time Certificate: 
@@ -50,7 +51,7 @@ This command gets information about the Test.pfx certificate on the system.
 
 ### Example 2: Get a .pfx certificate from a remote computer
 ```
-PS C:\>Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx}" -authentication CredSSP
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx}" -authentication CredSSP
 ```
 
 This command gets a .pfx certificate file from the Server01 remote computer.

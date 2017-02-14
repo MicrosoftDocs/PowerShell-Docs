@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822296
-schema: 2.0.0
-title: Wait-Process
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Wait Process
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821650
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Wait-Process
 
@@ -46,7 +47,7 @@ You can specify a process by process name or process ID (PID), or pipe a process
 
 ### Example 1: Stop a process and wait
 ```
-PS C:\>$nid = (Get-Process notepad).id
+PS C:\> $nid = (Get-Process notepad).id
 PS C:\> Stop-Process -Id $nid
 PS C:\> Wait-Process -Id $nid
 ```
@@ -63,7 +64,7 @@ It uses the *Id* parameter of **Wait-Process** to identify the process.
 
 ### Example 2: Specifying a process
 ```
-PS C:\>$p = Get-Process notepad
+PS C:\> $p = Get-Process notepad
 PS C:\> Wait-Process -Id $p.id
 PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
@@ -78,7 +79,7 @@ These commands have the same results and can be used interchangeably.
 
 ### Example 3: Wait for processes for a specified time
 ```
-PS C:\>Wait-Process -Name outlook, winword -Timeout 30
+PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
 
 This command waits 30 seconds for the Outlook and Winword processes to stop.

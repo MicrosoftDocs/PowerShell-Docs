@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Get-DSCConfiguration.cdxml-help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-27
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=288760
-schema: 2.0.0
-title: Get-DscConfiguration
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Get DscConfiguration
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=288760
+external help file:   Get-DSCConfiguration.cdxml-help.xml
+---
+
 
 # Get-DscConfiguration
 

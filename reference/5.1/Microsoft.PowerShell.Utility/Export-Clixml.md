@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822399
-schema: 2.0.0
-title: Export-Clixml
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Export Clixml
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=821767
+external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+---
+
 
 # Export-Clixml
 
@@ -46,14 +47,14 @@ For an example of how to do this, see Example 3.
 
 ### Example 1: Export a string to an XML file
 ```
-PS C:\>"This is a test" | Export-Clixml sample.xml
+PS C:\> "This is a test" | Export-Clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
 
 ### Example 2: Export an object to an XML file
 ```
-PS C:\>Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
+PS C:\> Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
 PS C:\> $Fileacl = Import-Clixml "fileacl.xml"
 ```
 
@@ -67,10 +68,10 @@ Then, it saves the object in the $FileAcl variable.
 
 ### Example 3: Encrypt an exported credential object
 ```
-PS C:\>$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$credential | Export-CliXml $CredPath
-PS C:\>$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\>$Credential = Import-CliXml $CredXmlPath
+PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $credential | Export-CliXml $CredPath
+PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+PS C:\> $Credential = Import-CliXml $CredXmlPath
 ```
 
 The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
@@ -88,7 +89,7 @@ This eliminates the risk of exposing plain-text passwords in your script.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -236,7 +237,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

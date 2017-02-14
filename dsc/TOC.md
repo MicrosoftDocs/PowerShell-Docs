@@ -55,7 +55,7 @@
 
 # DSC on Linux
 ## [Getting started with DSC for Linux](lnxGettingStarted.md)
-## [Built-in resorces for Linux](lnxBuiltInResources.md)
+## [Built-in resources for Linux](lnxBuiltInResources.md)
 ### [nxArchive Resource](lnxArchiveResource.md)
 ### [nxEnvironment Resource](lnxEnvironmentResource.md)
 ### [nxFile Resource](lnxFileResource.md)
@@ -65,6 +65,8 @@
 ### [nxService Resource](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys Resource](lnxSshAuthorizedKeysResource.md)
 ### [nxUser Resource](lnxUserResource.md)
+
+# [Using DSC on Microsoft Azure](azureDsc.md)
 
 # DSC MOF Reference
 ## [MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager.md)

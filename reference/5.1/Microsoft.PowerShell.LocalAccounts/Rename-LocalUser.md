@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822521
-schema: 2.0.0
-title: Rename-LocalUser
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Rename LocalUser
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822521
+external help file:   Microsoft.Powershell.LocalAccounts.dll-Help.xml
+---
+
 
 # Rename-LocalUser
 
@@ -42,7 +43,7 @@ The **Rename-LocalUser** cmdlet renames a local user account.
 
 ### Example 1: Rename a user account
 ```
-PS C:\>Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
+PS C:\> Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
 ```
 
 This command renames the user account named Admin02.
@@ -50,7 +51,7 @@ This command renames the user account named Admin02.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -127,7 +128,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

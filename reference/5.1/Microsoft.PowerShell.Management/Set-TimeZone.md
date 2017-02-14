@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-10-11
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822279
-schema: 2.0.0
-title: Set-TimeZone
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Set TimeZone
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkId=822279
+external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+---
+
 
 # Set-TimeZone
 
@@ -42,7 +43,7 @@ The **Set-TimeZone** cmdlet sets the system time zone to a specified time zone.
 
 ### Example 1: Set the time zone on the computer
 ```
-PS C:\>Set-TimeZone -Name "Pacific Standard Time"
+PS C:\> Set-TimeZone -Name "Pacific Standard Time"
 ```
 
 This command sets the time zone on the local computer to Pacific Standard Time.
@@ -50,7 +51,7 @@ This command sets the time zone on the local computer to Pacific Standard Time.
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -127,7 +128,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml

@@ -1,17 +1,18 @@
-﻿---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell, cmdlet
-manager: carolz
-ms.date: 2016-09-20
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=210612
-schema: 2.0.0
-title: Save-Help
 ---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  Save Help
+ms.technology:  powershell
+schema:   2.0.0
+online version:   http://go.microsoft.com/fwlink/?LinkID=210612
+external help file:   System.Management.Automation.dll-Help.xml
+---
+
 
 # Save-Help
 ## SYNOPSIS
@@ -55,14 +56,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Save help for all modules
 ```
-PS C:\>Save-Help -DestinationPath \\Server01\FileShare01
+PS C:\> Save-Help -DestinationPath \\Server01\FileShare01
 ```
 
 This command downloads the newest help files for all modules in the UI culture set for Windows on the local computer.
 It saves the help files in the \\\\Server01\Fileshare01 directory.
 ### Example 2: Save help for a module on the computer
 ```
-PS C:\>Save-Help -Module ServerManager -DestinationPath \\Server01\FileShare01 -Credential Domain01/Admin01
+PS C:\> Save-Help -Module ServerManager -DestinationPath \\Server01\FileShare01 -Credential Domain01/Admin01
 ```
 
 This command downloads the newest help files for the ServerManager module and saves them in the \\\\Server01\Fileshare01 directory.
@@ -72,7 +73,7 @@ When a module is installed on the computer, you can type the module name as the 
 The command uses the **Credential** parameter to supply the credentials of a user who has permission to write to the file share.
 ### Example 3: Save help for a module on a different computer
 ```
-PS C:\>Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
+PS C:\> Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
 ```
 
 These commands download the newest help files for the CustomSQL module and save them in the \\\\Server01\Fileshare01 directory.
@@ -82,7 +83,7 @@ Because the CustomSQL module is not installed on the computer, the sequence incl
 When a module is not installed on the computer, **Save-Help** needs the module object, which includes information about the location of the newest help files.
 ### Example 4: Save help for a module in multiple languages
 ```
-PS C:\>Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath D:\Help
+PS C:\> Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath D:\Help
 ```
 
 This command saves help for the Windows PowerShell Core modules in four different UI cultures.
@@ -91,7 +92,7 @@ The language packs for these locales do not need to be installed on the computer
 **Save-Help** can download help files for modules in different UI cultures only when the module owner makes the translated files available on the Internet.
 ### Example 5: Save help more than once each day
 ```
-PS C:\>Save-Help -Force -DestinationPath \\Server3\AdminShare\Help
+PS C:\> Save-Help -Force -DestinationPath \\Server3\AdminShare\Help
 ```
 
 This command saves help for all modules that are installed on the computer.
