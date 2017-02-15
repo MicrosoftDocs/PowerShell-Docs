@@ -1,6 +1,6 @@
 ---
 title:   Windows Management Framework (WMF)
-ms.date:  2016-12-07
+ms.date:  2017-02-14
 keywords:  PowerShell, WMF
 description:  
 ms.topic:  article
@@ -31,8 +31,10 @@ WMF installation adds and/or updates the following features:
 
 To learn about various enhancements in PowerShell and other components of a given WMF, please refer to the links below to review the release notes:
 
-- [WMF 5.1 (Preview)](5.1/release-notes.md)
+- [WMF 5.1](5.1/release-notes.md)
 - [WMF 5.0](5.0/releasenotes.md)
+- [WMF 4.0](https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows%20Management%20Framework%204%200%20Release%20Notes.docx)
+- [WMF 3.0](https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/WMF%203%20Release%20Notes.docx)
 
 ## WMF Availability Across Windows Operating Systems
 
