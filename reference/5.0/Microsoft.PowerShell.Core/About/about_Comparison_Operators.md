@@ -590,42 +590,14 @@ Windows PowerShell.
 
 Windows PowerShell supports the following bitwise operators.
 
-Operator | Description | Example |
-`-bAnd` | Bitwise AND | 
-```PowerShell
-PS C:\> 10 `-band` 3
-2
-``` |
-
-`-bOr` | Bitwise OR (inclusive) | 
-```PowerShell
-PS C:\> 10 `-bor` 3
-11
-``` |
-
-`-bXor` | Bitwise OR (exclusive) | 
-```PowerShell
-PS C:\> 10 `-bxor` 3 
-9 
-``` |
-
-`-bNot` | Bitwise NOT | 
-```PowerShell
-PS C:\> `-bnot` 10 
--11
-``` |
-
-`-shl` | Shift-left | 
-```PowerShell 
-PS C:\> 100 `-shl` 2 
- 400
- ``` |
-
-`-shr` | Shift-right | 
-```PowerShell
-PS C:\> 100 `-shr` 1 
-50
-``` |
+|Operator|Description|Example|
+|--------|----------------------|-------------------|
+|`-band`|Bitwise AND|`PS C:> 10 -band 3`<br />`2`|
+|`-bor`|Bitwise OR (inclusive)|`PS C:> 10 -bor 3`<br />`11`|
+|`-bxor`|Bitwise OR (exclusive)|`PS C:> 10 -bxor 3`<br />`9`|
+|`-bnot`|Bitwise NOT|`PS C:> -bNot 10`<br />`-11`|
+|`-shl`|Shift-left|`PS C:> 100 -shl 2`<br />`400`|
+|`-shr`|Shift-right|`PS C:> 100 -shr 1`<br />`50`|
 
 Bitwise operators act on the binary format of a value. For example, the
 bit structure for the number 10 is 00001010 (based on 1 byte), and the
