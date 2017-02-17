@@ -82,7 +82,8 @@ Accept wildcard characters: False
 ```
 
 ### -Process
-@{Text=}
+Specifies a process by the process object.
+The simplest way to use this parameter is to save the results of a **Get-Process** command that returns process that you want to enter in a variable, and then specify the variable as the value of this parameter.
 
 ```yaml
 Type: Process[]
