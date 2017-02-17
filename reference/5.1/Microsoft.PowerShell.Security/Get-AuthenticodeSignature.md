@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePathOrExtension
-@{Text=}
+To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
 
 ```yaml
 Type: String[]

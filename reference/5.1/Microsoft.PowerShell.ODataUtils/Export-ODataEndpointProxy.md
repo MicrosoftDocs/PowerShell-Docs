@@ -185,7 +185,8 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
-@{Text=}
+Specifies the headers of the web request.
+Enter a hash table or dictionary.
 
 ```yaml
 Type: Hashtable

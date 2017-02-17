@@ -94,7 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
-@{Text=}
+Specifies a runspace object.
+The simplest way to provide a value for this parameter is to specify a variable that contains the results of a filtered **Get-Runspace** command.
 
 ```yaml
 Type: Runspace[]

@@ -405,7 +405,7 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-@{Text=}
+Specifies the DSC resources that the module exports. Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -520,7 +520,7 @@ Accept wildcard characters: False
 ```
 
 ### -IconUri
-@{Text=}
+Specifies the URL of an icon for the module. The specified icon is displayed on the gallery web page for the module.
 
 ```yaml
 Type: Uri
@@ -535,7 +535,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
-@{Text=}
+Specifies the URL of licensing terms for the module.
 
 ```yaml
 Type: Uri
@@ -744,7 +744,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
-@{Text=}
+Specifies the URL of a web page about this project.
 
 ```yaml
 Type: Uri
@@ -862,7 +862,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-@{Text=}
+Specifies an array of tags.
 
 ```yaml
 Type: String[]

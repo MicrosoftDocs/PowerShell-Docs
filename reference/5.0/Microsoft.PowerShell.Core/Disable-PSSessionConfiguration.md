@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
-@{Text=}
+Indicates that the cmdlet does not restart the service.
 
 ```yaml
 Type: SwitchParameter

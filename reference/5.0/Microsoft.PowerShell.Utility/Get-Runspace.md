@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-@{Text=}
+Specifies the instance ID GUID of a running job.
 
 ```yaml
 Type: Guid[]

@@ -183,7 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+Specifies that the cmdlet uses a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to gain access through an intermediate Web proxy.
 
 ```yaml
 Type: PSCredential
