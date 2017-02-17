@@ -19,7 +19,7 @@ The **nxService** resource in PowerShell Desired State Configuration (DSC) provi
 nxService <string> #ResourceName
 {
     Name = <string>
-    [ Controller = <string> { init | upstart | system }  ]
+    [ Controller = <string> { init | upstart | systemd }  ]
     [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
