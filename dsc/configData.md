@@ -46,7 +46,7 @@ $MyData =
         @{
             NodeName    = 'VM-1'
             Role = 'WebServer'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -187,7 +187,7 @@ For example, you could create a file named `MyData.psd1` with the following cont
         @{
             NodeName    = 'VM-1'
             FeatureName = 'Web-Server'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -243,7 +243,7 @@ We'll define the development and production environment data in a file namd `Dev
             Role            = "Web"
             SiteContents    = "C:\Website\Prod\SiteContents\"
             SitePath        = "\\Prod-IIS\Website\"
-        }
+        },
 
         @{
             NodeName         = "Dev"
@@ -256,24 +256,25 @@ We'll define the development and production environment data in a file namd `Dev
     )
 
 }
-
-    )
-
-}
 ```
 
-### Configuration file
+### Configuration script file
 
-Now, in the configuration, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly. The development environment
-has both the SQL Server and IIS on one node, while the production environment has them on two different nodes. The site contents is also different, as specified by the `SiteContents` properties.
+Now, in the configuration,which is defined in a .ps1 file we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both),
+and configure them accordingly. 
+The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes. 
+The site contents is also different, as specified by the `SiteContents` properties.
 
 At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.
+
+>**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.
 
 ```powershell
 Configuration MyWebApp
 {
     Import-DscResource -Module PSDesiredStateConfiguration
     Import-DscResource -Module xSqlPs
+    Import-DscResource -Module xWebAdministration
 
     Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
    {
@@ -296,7 +297,7 @@ Configuration MyWebApp
         }
    }
 
-   Node $AllNodes.Where($_.Role -contains "Web")
+   Node $AllNodes.Where($_.Role -contains "Web").NodeName
    {
         # Install the IIS role
         WindowsFeature IIS
