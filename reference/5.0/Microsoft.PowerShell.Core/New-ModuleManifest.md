@@ -405,7 +405,8 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-Specifies the DSC resources that the module exports. Wildcards are permitted.
+Specifies the DSC resources that the module exports. 
+Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -416,7 +417,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -FileList

@@ -78,7 +78,7 @@ Accept wildcard characters: False
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a New-CimSession or Get-CimSession cmdlet.
+Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
 Type: CimSession[]

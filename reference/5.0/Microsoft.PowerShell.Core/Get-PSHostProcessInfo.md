@@ -52,7 +52,7 @@ PS C:\>
 ## PARAMETERS
 
 ### -Id
-Specifies a process by the process ID. To get a process ID, run the Get-Process cmdlet.
+Specifies a process by the process ID. To get a process ID, run the **Get-Process** cmdlet.
 
 ```yaml
 Type: Int32[]
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies a process by the process name. To get a process name, run the Get-Process cmdlet. You can also get process names from the Properties dialog box of a process in Task Manager.
+Specifies a process by the process name. To get a process name, run the **Get-Process** cmdlet. You can also get process names from the Properties dialog box of a process in Task Manager.
 
 ```yaml
 Type: String[]
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -Process
-Specifies a process by the process object. The simplest way to use this parameter is to save the results of a Get-Process command that returns process that you want to enter in a variable, and then specify the variable as the value of this parameter.
+Specifies a process by the process object. The simplest way to use this parameter is to save the results of a **Get-Process** command that returns process that you want to enter in a variable, and then specify the variable as the value of this parameter.
 
 ```yaml
 Type: Process[]
