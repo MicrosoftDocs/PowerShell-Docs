@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
-Specifies the resource property name and its value in a hash table as key and value, respectively. Use the Get-DscResource cmdlet to discover resource properties and their types.
+Specifies the resource property name and its value in a hash table as key and value, respectively. Use the **Get-DscResource** cmdlet to discover resource properties and their types.
 
 ```yaml
 Type: Hashtable
