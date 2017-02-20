@@ -493,7 +493,8 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-{{Fill VMName Description}}
+Specifies an array of names of virtual machines.
+This cmdlet starts an interactive session with each of the specified virtual machines.
 
 ```yaml
 Type: String[]

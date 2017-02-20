@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -Attributes
-{{Fill Attributes Description}}
+Specifies, as a string arrry, the attribute or attributess an item must posess in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
-{{Fill Directory Description}}
+Specifies that an item must posess the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -File
-{{Fill File Description}}
+Specifies that an item must not posses the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -345,7 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadOnly
-{{Fill ReadOnly Description}}
+Specifies that an item must posess the ReadOnly attribute in order to be returned. The value of this parameter qualifies the *Path* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -360,7 +360,7 @@ Accept wildcard characters: False
 ```
 
 ### -System
-{{Fill System Description}}
+Specifies that an item must posess the System attribute in order to be returned. The value of this parameter qualifies the Path parameter.
 
 ```yaml
 Type: SwitchParameter

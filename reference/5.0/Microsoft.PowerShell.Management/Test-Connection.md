@@ -158,7 +158,30 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-{{Fill Authentication Description}}
+Specifies the authentication level that this cmdlet uses with WMI.
+**Test-Connection** uses WMI.
+The acceptable values for this parameter are:
+
+- Default.
+Windows Authentication 
+- None.
+No COM authentication 
+- Connect.
+Connect-level COM authentication
+- Call.
+Call-level COM authentication
+- Packet .
+Packet-level COM authentication
+- PacketIntegrity.
+Packet Integrity-level COM authentication 
+- PacketPrivacy.
+Packet Privacy-level COM authentication 
+- Unchanged.
+Same as the previous command
+
+The default value is Packet.
+
+For more information about the values of this parameter, see AuthenticationLevel Enumeration http://go.microsoft.com/fwlink/?LinkID=235229 (http://go.microsoft.com/fwlink/?LinkID=235229) in the Microsoft Developer Library (MSDN).
 
 ```yaml
 Type: AuthenticationLevel

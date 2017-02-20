@@ -53,7 +53,7 @@ The second command stops a currently running configuration job on the computer i
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter
