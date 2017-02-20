@@ -58,7 +58,7 @@ The second command gets the current configuration for the computers identified b
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter

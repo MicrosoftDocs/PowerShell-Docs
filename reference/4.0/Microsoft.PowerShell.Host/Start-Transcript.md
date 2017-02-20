@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeInvocationHeader
-{{Fill IncludeInvocationHeader Description}}
+Indicates that this cmdlet logs the time stamp when commands are run.
 
 ```yaml
 Type: SwitchParameter
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputDirectory
-{{Fill OutputDirectory Description}}
+Specifies a specific path and folder in which to save a transcript. Windows PowerShell automatically assigns the transcript name.
 
 ```yaml
 Type: String

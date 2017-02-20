@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-{{Fill Confirm Description}}
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -197,7 +197,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-{{Fill WhatIf Description}}
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter

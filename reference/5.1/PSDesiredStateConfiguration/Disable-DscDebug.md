@@ -49,7 +49,7 @@ This command checks the DSC engine state, and stops resource debugging only if i
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter

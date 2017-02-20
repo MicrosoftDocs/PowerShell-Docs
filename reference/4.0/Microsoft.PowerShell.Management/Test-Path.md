@@ -279,7 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -NewerThan
-{{Fill NewerThan Description}}
+Specify a time as a **DateTime** object.
 
 ```yaml
 Type: DateTime
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -OlderThan
-{{Fill OlderThan Description}}
+Specify a time as a **DateTime** object.
 
 ```yaml
 Type: DateTime
