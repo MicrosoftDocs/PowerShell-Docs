@@ -180,7 +180,6 @@ $hashtable.<key>
 <value>
 ```
 
-
 For example:
 
 
@@ -190,6 +189,13 @@ C:\PS> $hash.Number
   
 C:\PS> $hash.Color  
 Blue
+```
+
+
+If the key name itself is `keys` and you want to return the collection of Keys, use this syntax:
+
+```powershell
+$hashtable.PSBase.Keys
 ```
 
 
