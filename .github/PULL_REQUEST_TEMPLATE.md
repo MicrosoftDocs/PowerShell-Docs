@@ -16,6 +16,6 @@ If the PR is fixing all the document version(s), please delete the list/options 
 -->
 Reason(s) for not updating all version of documents
 --------------------------------------------------
-- [ ] The docuemnted feature was introduced in selected version (list version(s) here) of PowerShell
-- [ ] This issue only shows up in selected version (list version(s) here) of the document
+- [ ] The documented feature was introduced in version (list version here) of PowerShell
+- [ ] This issue only shows up in version (list version(s) here) of the document
 - [ ] This PR partially fixes the issue, and issue #<insert here> tracks the remaining work
