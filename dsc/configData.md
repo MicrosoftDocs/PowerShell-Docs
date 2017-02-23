@@ -217,7 +217,7 @@ Let's look at a complete example that uses a single configuration to set up both
 both IIS and SQL Server are installed on a single nodes. In the production environment, IIS and SQL Server are installed on separate nodes. We'll use a configuration data .psd1
 file to specify the data for the two different environments.
 
-### Configuration data file
+ ### Configuration data file
 
 We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:
 
@@ -260,8 +260,7 @@ We'll define the development and production environment data in a file namd `Dev
 
 ### Configuration script file
 
-Now, in the configuration,which is defined in a .ps1 file we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both),
-and configure them accordingly. 
+Now, in the configuration, which is defined in a .ps1 file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly. 
 The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes. 
 The site contents is also different, as specified by the `SiteContents` properties.
 
