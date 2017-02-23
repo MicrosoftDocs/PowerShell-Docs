@@ -43,7 +43,7 @@ they are not supported on earlier systems.
 
 ### Vi mode support in PSReadline
 
-[PSReadline](https://github.com/lzybkr/PSReadLine) adds support for vi mode. To use vi mode, run `Set-PSReadline -EditMode vi`.
+[PSReadline](https://github.com/lzybkr/PSReadLine) adds support for vi mode. To use vi mode, run `Set-PSReadlineOption -EditMode Vi`.
 
 ### Redirected stdin with interactive input 
 
