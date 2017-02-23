@@ -50,7 +50,7 @@ This command indicates to the DSC engine of the remote computer to start resourc
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter

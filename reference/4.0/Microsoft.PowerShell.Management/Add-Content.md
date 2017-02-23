@@ -300,7 +300,22 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
-{{Fill Encoding Description}}
+Specifies the encoding that this cmdlet applies to the content.
+
+The acceptable values for this parameter are:
+
+- Unknown
+- String
+- Unicode
+- Byte
+- BigEndianUnicode
+- UTF8
+- UTF7
+- UTF32
+- Ascii
+- Default
+- Oem
+- BigEndianUTF32
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
@@ -315,7 +330,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream for content.
+If the stream does not exist, this cmdlet creates it.
+Wildcard characters are not supported.
+
+Stream is a dynamic parameter that the FileSystem provider adds to **Add-Content**.
+This parameter works only in file system drives.
+
+You can use the **Add-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String

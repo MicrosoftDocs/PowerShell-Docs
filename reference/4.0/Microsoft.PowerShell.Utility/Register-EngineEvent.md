@@ -171,7 +171,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaxTriggerCount
-{{Fill MaxTriggerCount Description}}
+Specifies the max trigger count.
+
+The value of the *Action* parameter can include the $Event, $EventSubscriber, $Sender, $EventArgs, and $Args automatic variables, which provide information about the event to the Action script block.
+For more information, see about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+
+When you specify an action, **Register-EngineEvent** returns an event job object that represents that action.
+You can use the Job cmdlets to manage the event job.
 
 ```yaml
 Type: Int32

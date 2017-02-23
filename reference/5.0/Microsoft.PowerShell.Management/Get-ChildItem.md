@@ -123,7 +123,7 @@ This command gets all of the items in the C:\Windows directory and its subdirect
 ## PARAMETERS
 
 ### -Attributes
-{{Fill Attributes Description}}
+Specifies, as a string arrry, the attribute or attributess an item must posess in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
-{{Fill Depth Description}}
+This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the -Recurse and the -Depth parameter to limit the recursion.
 
 ```yaml
 Type: UInt32
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
-{{Fill Directory Description}}
+Specifies that an item must posess the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -File
-{{Fill File Description}}
+Specifies that an item must not posses the Directory attribute in order to be returned. The value of this parameter qualifies the *Path* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
-{{Fill Hidden Description}}
+Specifies that an item must posess the Hidden attribute in order to be returned. The value of this parameter qualifies the *Path* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -322,7 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadOnly
-{{Fill ReadOnly Description}}
+Specifies that an item must posess the ReadOnly attribute in order to be returned. The value of this parameter qualifies the *Path* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -System
-{{Fill System Description}}
+Specifies that an item must posess the System attribute in order to be returned. The value of this parameter qualifies the *Path* parameter. 
 
 ```yaml
 Type: SwitchParameter

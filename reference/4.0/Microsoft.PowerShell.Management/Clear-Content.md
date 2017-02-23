@@ -235,10 +235,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
+For more information, see about_Transactions.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -252,7 +249,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream for content.
+If the stream does not exist, this cmdlet creates it.
+Wildcard characters are not supported.
+
+Stream is a dynamic parameter that the FileSystem provider adds to **Clear-Content**.
+This parameter works only in file system drives.
+
+You can use the **Clear-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
