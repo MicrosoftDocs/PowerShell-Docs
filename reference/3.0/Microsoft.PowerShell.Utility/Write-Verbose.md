@@ -30,7 +30,7 @@ Typically, the verbose message stream is used to deliver information about comma
 By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable or using the **Verbose** common parameter in any command.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Write-Verbose -Message "Searching the Application Event Log."
 PS C:\> Write-Verbose -Message "Searching the Application Event Log." -verbose
@@ -40,7 +40,7 @@ These commands use the **Write-Verbose** cmdlet to display a status message.
 By default, the message is not displayed.
 
 The second command uses the Verbose common parameter, which displays any verbose messages, regardless of the value of the **$VerbosePreference** variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $VerbosePreference = "Continue"
 PS C:\> Write-Verbose "Copying file $filename"

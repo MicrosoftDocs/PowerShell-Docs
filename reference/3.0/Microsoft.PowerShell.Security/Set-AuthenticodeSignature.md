@@ -40,7 +40,7 @@ In a Windows PowerShell script file, the signature takes the form of a block of 
 If there is a signature in the file when this cmdlet runs, that signature is removed.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $cert=Get-ChildItem -Path cert:\CurrentUser\my -CodeSigningCert
 PS C:\> Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -certificate $cert
@@ -54,7 +54,7 @@ The command stores the result in the $cert variable.
 
 The second command uses the Set-AuthenticodeSignature cmdlet to sign the PSTestInternet2.ps1 script.
 It uses the FilePath parameter to specify the name of the script and the Certificate parameter to specify that the certificate is stored in the $cert variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $cert = Get-PfxCertificate C:\Test\Mysign.pfx
 PS C:\> Set-AuthenticodeSignature -Filepath ServerProps.ps1 -Cert $cert
@@ -69,7 +69,7 @@ The second command uses Set-AuthenticodeSignature to sign the script.
 The FilePath parameter of Set-AuthenticodeSignature specifies the path to the script file being signed and the Cert parameter passes the $cert variable containing the certificate to Set-AuthenticodeSignature.
 
 If the certificate file is password protected, Windows PowerShell prompts you for the password.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Set-AuthenticodeSignature -filepath c:\scripts\Remodel.ps1 -certificate $cert -IncludeChain All -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
 ```

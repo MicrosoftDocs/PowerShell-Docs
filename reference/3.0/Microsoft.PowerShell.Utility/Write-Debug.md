@@ -29,14 +29,14 @@ The Write-Debug cmdlet writes debug messages to the console from a script or com
 By default, debug messages are not displayed in the console, but you can display them by using the Debug parameter or the $DebugPreference variable.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Write-Debug "Cannot open file."
 ```
 
 This command writes a debug message.
 Because the value of $DebugPreference is "SilentlyContinue", the message is not displayed in the console.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $DebugPreference
 SilentlyContinue
@@ -58,7 +58,7 @@ It uses the Debug common parameter to override the value of $DebugPreference and
 As a result, even though the value of $DebugPreference is "SilentlyContinue", the debug message appears.
 
 For more information about the Debug common parameter, see about_CommonParameters.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $DebugPreference
 SilentlyContinue

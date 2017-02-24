@@ -29,14 +29,14 @@ You can use it to prompt a user for input.
 Because you can save the input as a secure string, you can use this cmdlet to prompt users for secure data, such as passwords, as well as shared data.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $age = read-host "Please enter your age"
 ```
 
 This command displays the string "Please enter your age:" as a prompt.
 When a value is entered and the Enter key is pressed, the value is stored in the $age variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $pwd_secure_string = read-host "Enter a Password" -assecurestring
 ```

@@ -38,14 +38,14 @@ You can use this cmdlet to start, stop, or suspend (pause) a service.
 To identify the service, enter its service name or submit a service object, or pipe a service name or service object to Set-Service.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-service -name lanmanworkstation -DisplayName "LanMan Workstation"
 ```
 
 This command changes the display name of the lanmanworkstation service to "LanMan Workstation".
 (The default is "Workstation".)
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-wmiobject win32_service -filter "name = 'SysmonLog'"
 
@@ -86,7 +86,7 @@ The second command uses Set-Service to change the start mode to automatic.
 Then, the first command is repeated to display the change.
 
 The final command displays the start mode of all services on the computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-service -name Schedule -computername S1 -description "Configures and schedules tasks."
 PS C:\> get-wmiobject win32_service -computername s1 | where-object {$_.Name -eq "Schedule"} | format-list Name, Description
@@ -105,14 +105,14 @@ The first element in the command gets all instances of the Win32_service class.
 The pipeline operator (|) passes the result to the Where-Object cmdlet, which selects instances with a value of "Schedule" in the Name property.
 
 Another pipeline operator sends the result to the Format-List cmdlet, which formats the output as a list with only the Name and Description properties.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> set-service winrm -status Running -passthru -computername Server02
 ```
 
 This command starts the WinRM service on the Server02 computer.
 The command uses the Status parameter to specify the desired status ("running") and the PassThru parameter to direct Set-Service to return an object that represents the WinRM service.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-service schedule -computername S1, S2 | set-service -status paused
 ```
@@ -120,7 +120,7 @@ PS C:\> get-service schedule -computername S1, S2 | set-service -status paused
 This command suspends the Schedule service on the S1 and S2 remote computers.
 It uses the Get-Service cmdlet to get the service.
 A pipeline operator (|) sends the service to the Set-Service cmdlet, which changes its status to "Paused".
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $s = get-service schedule
 PS C:\> set-service -inputobject $s -status stopped

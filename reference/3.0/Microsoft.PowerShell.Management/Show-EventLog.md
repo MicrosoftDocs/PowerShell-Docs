@@ -32,13 +32,13 @@ The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on c
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> show-eventlog
 ```
 
 This command opens Event Viewer and displays in it the classic event logs on the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> show-eventlog -computername Server01
 ```

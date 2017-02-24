@@ -44,14 +44,14 @@ If they are currently running, the message is ignored.
 You can specify the services by their service names or display names, or you can use the InputObject parameter to pass a service object that represents the services that you want to resume.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> resume-service sens
 ```
 
 This command resumes the System Event Notification service (the service name is represented in the command by "sens") on the local computer.
 The command uses the Name parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-service | where-object {$_.Status -eq "Paused"} | resume-service
 ```

@@ -53,7 +53,7 @@ Get-PSBreakpoint is one of several cmdlets designed for debugging Windows PowerS
 For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 C:\PS>get-psbreakpoint
 ```
@@ -63,7 +63,7 @@ Description
 -----------
 
 This command gets all breakpoints set on all scripts and functions in the current session.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 C:\PS>get-psbreakpoint -Id 2
 
@@ -81,7 +81,7 @@ Description
 -----------
 
 This command gets the breakpoint with breakpoint ID 2.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 C:\PS>$b = set-psbreakpoint -script sample.ps1 -function increment
 PS C:\> $b.Id | get-psbreakpoint
@@ -100,7 +100,7 @@ The second command uses the dot operator (.) to get the Id property of the break
 It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
 
 As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 C:\PS>get-psbreakpoint -script Sample.ps1, SupportScript.ps1
 ```
@@ -112,7 +112,7 @@ Description
 This command gets all of the breakpoints in the Sample.ps1 and SupportScript.ps1 files.
 
 This command does not get other breakpointS that might be set in other scripts or on functions in the session.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 C:\PS>get-psbreakpoint -command Read-Host, Write-Host -script Sample.ps1
 ```
@@ -122,7 +122,7 @@ Description
 -----------
 
 This command gets all Command breakpoints that are set on Read-Host or Write-Host commands in the Sample.ps1 file.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 C:\PS>get-psbreakpoint -type Command -script Sample.ps1
 ```
@@ -132,7 +132,7 @@ Description
 -----------
 
 This command gets all Command breakpoints in the Sample.ps1 file.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 C:\PS>get-psbreakpoint -variable Index, Swap
 ```
@@ -142,7 +142,7 @@ Description
 -----------
 
 This command gets breakpoints that are set on the $index and $swap variables in the current session.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 C:\PS>get-psbreakpoint -type line, variable -script Sample.ps1
 ```

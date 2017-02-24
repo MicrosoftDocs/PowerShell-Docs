@@ -30,14 +30,14 @@ The Join-Path cmdlet combines a path and child-path into a single path.
 The provider supplies the path delimiters.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> join-path -path c:\win* -childpath System*
 ```
 
 This command uses Join-Path to combine the "c:\Win*" path with the "System*" child path.
 The Windows PowerShell file system provider, FileSystem joins the path and adds the "\" delimiter.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> join-path c:\win* System* -resolve
 ```
@@ -45,20 +45,20 @@ PS C:\> join-path c:\win* System* -resolve
 This command displays the files and folders that are referenced by joining the "c:\Win*" path and the "System*" child path.
 It displays the same files and folders as Get-ChildItem, but it displays the fully qualified path to each item.
 In this command, the Path and ChildPath optional parameter names are omitted.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> PS HKLM:\> join-path System *ControlSet* -resolve
 ```
 
 This command displays the registry keys in the HKLM\System registry subkey that include "ControlSet".
 This example shows how to use Join-Path with the Windows PowerShell registry provider.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> join-path -path C:, D:, E:, F: -childpath New
 ```
 
 This command uses Join-Path to combine multiple path roots with a child path.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-psdrive -psprovider filesystem | foreach {$_.root} | join-path -childpath Subdir
 ```

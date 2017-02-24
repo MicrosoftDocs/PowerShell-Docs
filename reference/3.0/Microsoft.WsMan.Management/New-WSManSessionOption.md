@@ -37,7 +37,7 @@ Invoke-WSManAction
 Connect-WSMan
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a

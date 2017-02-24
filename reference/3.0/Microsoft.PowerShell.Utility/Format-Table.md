@@ -33,7 +33,7 @@ You can also use a hash table to add calculated properties to an object before d
 To add a calculated property, use the Property or GroupBy parameters.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-pssnapin | format-table -auto
 ```
@@ -44,7 +44,7 @@ The Get-PSSnapin cmdlet gets objects representing the snap-ins.
 The pipeline operator (|) passes the object to the Format-Table command.
 Format-Table formats the objects in a table.
 The Autosize parameter adjusts the column widths to minimize truncation.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process | sort-object -property basepriority | format-table -groupby basepriority -wrap
 ```
@@ -57,7 +57,7 @@ The pipeline operator (|) passes the object to the Sort-Object cmdlet, which sor
 Another pipeline operator passes the results to the Format-Table cmdlet.
 The GroupBy parameter arranges the data about the processes into groups based on the value of their BasePriority property.
 The Wrap parameter ensures that data is not truncated.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-process | sort-object starttime | format-table -view starttime
 ```
@@ -71,7 +71,7 @@ The View parameter is used to select the StartTime view that is defined in the D
 This view converts the StartTime of the process to a short date and then groups the processes by start date.
 
 The DotNetTypes.format.ps1xml formatting file also contains a Priority view for processes, and you can create your own format.ps1xml files with customized views.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-service | format-table -property Name, DependentServices
 ```
@@ -84,7 +84,7 @@ The name of the Property parameter is optional, so you can omit it ("format-tabl
 
 Property and DependentServices are just two of the properties of service objects.
 To view all of the properties, type "get-service | get-member".
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-process notepad | format-table ProcessName, @{Label="TotalRunningTime"; Expression={(get-date) - $_.StartTime}}
 ```
@@ -100,7 +100,7 @@ The TotalRunningTime property is specified by a hash table with two keys, Label 
 The name of the property is assigned to the Label key.
 The calculation is assigned to the Expression key.
 The expression gets the StartTime property of each process object and subtracts it from the result of a Get-Date command, which gets the current date (and time).
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $processes = get-wmiobject -ComputerName Server01 win32_process -filter "name='notepad.exe'"
 PS C:\> $processes | format-table ProcessName, @{ Label = "Total  Running Time"; Expression={(get-date) - $_.ConvertToDateTime($_.CreationDate)}}

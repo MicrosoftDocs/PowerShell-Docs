@@ -68,7 +68,7 @@ ms.technology:  powershell
   
 ### Splitting a Large File  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  By default, the Get-Content cmdlet uses the end-of-line character as its delimiter, so it gets a file as a collection of strings, with each line as one string in the file.  
   
  You can use the Delimiter parameter to specify an alternate delimiter. If you set it to the characters that denote the end of a section or the beginning of the next section, you can split the file into logical parts.  
@@ -88,7 +88,7 @@ $e[0]
   
 ### Navigating the File System  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets the current location:  
   
 ```  
@@ -99,7 +99,7 @@ get-location
  The Get-Location cmdlet includes the functionality of commands like the cd command in the Windows Command Prompt and the pwd command in UNIX. For more information, type:  
     get-help get-location  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command sets the current location:  
   
 ```  
@@ -109,7 +109,7 @@ set-location C:
   
 ### Getting File and Directory Information  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets all the files and directories in the current directory:  
   
 ```  
@@ -119,7 +119,7 @@ get-childitem
   
  By default, the Get-ChildItem cmdlet does not recurse. If files and folders are present in the current directory when you run this command, a System.IO.FileInfo object and a System.IO.DirectoryInfo object are returned.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets all the files in the current directory:  
   
 ```  
@@ -129,7 +129,7 @@ get-childitem | where-object {!$_.psiscontainer}
   
  The command uses the Get-ChildItem cmdlet to get all files and directories. It pipes the results to the Where-Object cmdlet, which selects only the objects that are not (!) containers.  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  The command uses the Get-ChildItem cmdlet to get all files and directories. It pipes the results to Where-Object, which select only the objects that are containers.  
   
 ```  
@@ -137,7 +137,7 @@ get-childitem | where-object {$_.psiscontainer}
   
 ```  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command displays the properties of a directory:  
   
 ```  
@@ -147,7 +147,7 @@ get-item -path c:\ps-test | format-list -property *
   
  The command uses the Path parameter of the Get-Item cmdlet to get the C:\ps-test directory. It pipes the directory object to the Format-List cmdlet, which displays all (*) the properties and values of the directory in a list.  
   
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command displays the properties of a file:  
   
 ```  
@@ -159,7 +159,7 @@ get-item -path test.txt | format-list -property *
   
 ### Copying Files and Directories  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command copies the A.txt file from the C:\A directory to the C:\A\Bb directory:  
   
 ```  
@@ -169,7 +169,7 @@ copy-item -path C:\a\a.txt -destination C:\a\bb\a.txt
   
  It overwrites files in the destination directory without prompting for confirmation.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command copies all the files in the C:\A\Bb directory that have the .txt file name extension to the C:\A\Cc\Ccc\ directory:  
   
 ```  
@@ -179,7 +179,7 @@ copy-item -path C:\a\bb\*.txt -destination C:\a\cc\ccc\
   
  It uses the original names of the files. The command overwrites the existing files in the destination directory without prompting for confirmation.  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  Copies all the directories and files in the C:\a directory to the C:\c directory. If any of the directories to copy already exist in the destination directory, the command will fail unless you specify the Force parameter.  
   
 ```  
@@ -189,7 +189,7 @@ copy-item -path C:\a\* -destination C:\c -recurse
   
 ### Moving Files and Directories  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command moves the C.txt file in the C:\A directory to the C:\A\Aa directory:  
   
 ```  
@@ -199,7 +199,7 @@ move-item -path C:\a\c.txt -destination C:\a\aa
   
  The command will not automatically overwrite an existing file that has the same name. To force the cmdlet to overwrite an existing file, specify the Force parameter.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command moves the C:\A directory and all its contents to the C:\B directory:  
   
 ```  
@@ -211,7 +211,7 @@ move-item -path C:\a -destination C:\b
   
 ### Managing File Content  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command appends the "test content" string to the Test.txt file:  
   
 ```  
@@ -221,7 +221,7 @@ add-content -path test.txt -value "test content"
   
  The existing content in the Test.txt file is not deleted.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets the contents of the Test.txt file and displays them in the console:  
   
 ```  
@@ -232,7 +232,7 @@ get-content -path test.txt
  You can pipe the contents of the file to another cmdlet. For example, the following command reads the contents of the Test.txt file and then supplies them as input to the ConvertTo-HTML cmdlet:  
 get-content -path test.txt &#124; convertto-html  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command replaces the contents of the Test.txt file with the "test content" string:  
   
 ```  
@@ -244,7 +244,7 @@ set-content -path test.txt -value "test content"
   
 ### Managing Security Descriptors  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command returns a System.Security.AccessControl.FileSecurity object:  
   
 ```  
@@ -254,7 +254,7 @@ get-acl -path test.txt | format-list -property *
   
  For more information about this object, pipe the command to the Get-Member cmdlet. Or, see "FileSecurity Class" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=145718.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command returns a System.Security.AccessControl.DirectorySecurity object:  
   
 ```  
@@ -266,7 +266,7 @@ get-acl -path test_directory | format-list -property *
   
 ### Creating Files and Directories  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command creates the Logfiles directory on the C drive:  
   
 ```  
@@ -274,7 +274,7 @@ new-item -path c:\ -name logfiles -type directory
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command creates the Log2.txt file in the C:\Logfiles directory and then adds the "test log" string to the file:  
   
 ```  
@@ -282,7 +282,7 @@ new-item -path c:\logfiles -name log.txt -type file
   
 ```  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  Creates a file called Log2.txt in the C:\logfiles directory and adds the string "test log" to the file.  
   
 ```  
@@ -292,7 +292,7 @@ new-item -path c:\logfiles -name log2.txt -type file -value "test log"
   
 ### Renaming Files and Directories  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command renames the A.txt file in the C:\A directory to B.txt:  
   
 ```  
@@ -300,7 +300,7 @@ rename-item -path c:\a\a.txt -newname b.txt
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command renames the C:\A\Cc directory to C:\A\Dd:  
   
 ```  
@@ -310,7 +310,7 @@ rename-item -path c:\a\cc -newname dd
   
 ### Deleting Files and Directories  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command deletes the Test.txt file in the current directory:  
   
 ```  
@@ -318,7 +318,7 @@ remove-item -path test.txt
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command deletes all the files in the current directory that have the .xml file name extension:  
   
 ```  
@@ -328,7 +328,7 @@ remove-item -path *.xml
   
 ### Starting a Program by Invoking an Associated File  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  The first command uses the Get-Service cmdlet to get information about local services.  
   
  It pipes the information to the Export-Csv cmdlet and then stores that information in the Services.csv file.  
@@ -344,7 +344,7 @@ invoke-item -path services.csv
   
 ### Getting Files and Folders with Specified Attributes  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets system files in the current directory and its subdirectories.  
   
  It uses the File parameter to get only files (not directories) and the System parameter to get only items with the System attribute.  
@@ -356,7 +356,7 @@ get-childitem -file -system  -recurse
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets all files, including hidden files, in the current directory.  
   
  It uses the Attributes parameter with two values, !Directory+Hidden, which gets hidden files, and !Directory, which gets all other files.  
@@ -368,7 +368,7 @@ Get-ChildItem -attributes !Directory,!Directory+Hidden
   
  "dir -att !d,!d+h" is the equivalent of this command.  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command gets files in the current directory that are either compressed or encrypted.  
   
  It uses the Attributes parameter with two values, Compressed and Encrypted. The values are separated by a comma (,) which represents the OR operator.  

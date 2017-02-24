@@ -36,7 +36,7 @@ To specify a new date or time, use the Date parameter.
 To specify a change interval, use the Adjust parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 C:\PS>Set-Date -Date (Get-Date).AddDays(3)
 ```
@@ -49,7 +49,7 @@ This command adds three days to the current system date.
 It does not affect the time.
 The command uses the Date parameter to specify the date.
 It uses the Get-Date cmdlet to get the current date and time and applies the AddDays .NET method for DateTime objects with a value of 3 (days).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 C:\PS>set-date -adjust -0:10:0 -displayHint time
 ```
@@ -61,7 +61,7 @@ Description
 This command sets the current system time back by 10 minutes.
 It uses the Adjust parameter to specify an interval of change and the time change (minus ten minutes) in standard time format for the locale.
 The DisplayHint parameter tells Windows PowerShell to display only the time, but it does not affect the DateTime object that Set-Date returns.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 C:\PS>$t = get-date
 PS C:\> set-date -date $t
@@ -74,7 +74,7 @@ Description
 These commands change the system date and time on the computer to the date and time saved in the variable $t.
 The first command gets the date and stores it in $t.
 The second command uses the Date parameter to pass the DateTime object in $t to the Set-Date cmdlet.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 C:\PS>$90mins = new-timespan -minutes 90
 PS C:\> set-date -adjust $90mins
