@@ -77,7 +77,7 @@ For more information about the WSMan Provider, type "Get-Help WSMan".
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Set-PSSessionConfiguration -Name MaintenanceShell -ThreadApartmentState STA
 ```
@@ -85,7 +85,7 @@ PS C:\> Set-PSSessionConfiguration -Name MaintenanceShell -ThreadApartmentState 
 This command changes the thread apartment state in the MaintenanceShell configuration to STA.
 The change is effective when you restart the WinRM service.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the Register-PSSessionConfiguration cmdlet to create the AdminShell configuration.
 PS C:\> Register-PSSessionConfiguration -name AdminShell -AssemblyName C:\Shells\AdminShell.dll -ConfigurationType AdminClass
@@ -99,7 +99,7 @@ PS C:\> Set-PSSessionConfiguration -Name AdminShell -StartupScript $null
 
 This example shows how to create and then change a session configuration.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Set-PSSessionConfiguration -name IncObj -MaximumReceivedObjectSizeMB 20
 
@@ -121,7 +121,7 @@ The **Set-PSSessionConfiguration** command returns a **Microsoft.WSMan.Managemen
 It also prompts you to restart the WinRM service.
 The **Set-PSSessionConfiguration** change is not effective until the WinRM service is restarted.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **Set-PSSessionConfiguration** cmdlet to change the startup script in the MaintenanceShell session configuration to Maintenance.ps1. The output of this command shows the change and prompts you to restart the WinRM service. The response is "y" (yes).
 PS C:\> Set-PSSessionConfiguration -Name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1

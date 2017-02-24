@@ -37,7 +37,7 @@ A .pfx file includes both the certificate and a private key.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-pfxcertificate -filepath C:\windows\system32\Test.pfx
 Password: ******
@@ -49,7 +49,7 @@ Path:                    C:\windows\system32\zap.pfx
 
 This command gets information about the Test.pfx certificate on the system.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> invoke-command -computername Server01 -scriptblock {get-pfxcertificate -filepath C:\Text\TestNoPassword.pfx} -authentication CredSSP
 ```

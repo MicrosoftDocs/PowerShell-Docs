@@ -34,14 +34,14 @@ The user-interface (UI) culture determines which text strings are used for user 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-culture
 ```
 
 This command displays information about the regional settings on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $c = get-culture
 PS C:\> $c | format-list -property *

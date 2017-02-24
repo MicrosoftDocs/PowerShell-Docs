@@ -43,7 +43,7 @@ You can use it to specify which components will be traced and where the tracing 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Set-TraceSource -Name Parameterbinding -Option ExecutionFlow -PSHost -ListenerOption "ProcessID,TimeStamp"
 ```
@@ -52,7 +52,7 @@ This command starts tracing for the ParameterBinding component of Windows PowerS
 It uses the Name parameter to specify the trace source, the Option parameter to select the ExecutionFlow trace events, and the PSHost parameter to select the Windows PowerShell host listener, which sends the output to the console.
 The ListenerOption parameter adds the "ProcessID" and "TimeStamp" values to the trace message prefix.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-tracesource -name ParameterBinding -RemoveListener Host
 ```

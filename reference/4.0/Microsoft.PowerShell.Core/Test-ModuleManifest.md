@@ -36,14 +36,14 @@ If any files are not in the locations specified in the manifest, the cmdlet also
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-ModuleManifest -path $pshome\Modules\TestModule.psd1
 ```
 
 This command tests the TestModule.psd1 module manifest.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
 
@@ -74,7 +74,7 @@ This command uses a pipeline operator (|) to send a path string to Test-ModuleMa
 
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> function Test-ManifestBool ($path)
 {$a = dir $path | test-modulemanifest -erroraction SilentlyContinue; $?}

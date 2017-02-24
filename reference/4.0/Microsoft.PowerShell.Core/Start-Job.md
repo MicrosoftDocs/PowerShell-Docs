@@ -66,7 +66,7 @@ For information about using **Start-Job** to start jobs with custom types, see t
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-job -scriptblock {get-process}
 
@@ -79,7 +79,7 @@ This command starts a background job that runs a Get-Process command.
 The command returns a job object with information about the job.
 The command prompt returns immediately so that you can work in the session while the job runs in the background.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
 ```
@@ -92,7 +92,7 @@ The value of the ComputerName parameter is a Get-Content command that gets the t
 
 The command uses the ScriptBlock parameter to specify the command and the JobName parameter to specify a friendly name for the job.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
 PS C:\> $j | format-list -property *
@@ -148,14 +148,14 @@ It stores the results in the $results variable.
 
 The final command displays the contents of the $results variable.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> start-job -filepath c:\scripts\sample.ps1
 ```
 
 This command runs the Sample.ps1 script as a background job.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> start-job -name WinRm -scriptblock {get-process winrm}
 ```
@@ -164,7 +164,7 @@ This command runs a background job that gets the WinRM process on the local comp
 The command uses the ScriptBlock parameter to specify the command that runs in the background job.
 It uses the Name parameter to specify a friendly name for the new job.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
 ```

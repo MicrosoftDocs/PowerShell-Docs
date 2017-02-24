@@ -66,7 +66,7 @@ For more information, see the **PassThru** parameter description.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $a = dir c:\ps-test\test.txt
 PS C:\> $a | Add-Member -NotePropertyName Status -NotePropertyValue Done
@@ -87,7 +87,7 @@ These commands are equivalent and can be used interchangeably.
 The fourth command uses dot notation to get the value of the Status property of the object in $a.
 As the output shows, the value is "Done".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = dir c:\ps-test\test.txt
 PS C:\> $a | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
@@ -104,7 +104,7 @@ The second command adds the FileLength alias property.
 
 The third command uses dot notation to get the value of the new FileLength property.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $a = "A string"
 PS C:\> $a = $a | Add-Member @{StringUse="Display"} -PassThru
@@ -120,7 +120,7 @@ The command uses the **NotePropertyMembers** parameter, but omits the parameter 
 The value of the **NotePropertyMembers** parameter is a hash table.
 The key is the note property name, StringUse, and the value is the note property value, Display.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = "This is a string."
 PS C:\> $a = Add-Member -InputObject $a -MemberType ScriptMethod -Name PadBoth -Value {$p = $this.PadLeft($this.Length + 1); $p.PadRight($p.Length + 1)} -PassThru
@@ -144,7 +144,7 @@ By default, **Add-Member** adds members to PSObjects and does not generate any o
 
 The third command uses dot notation to call the new PadBoth script method on the object in the $a variable.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $event = Get-EventLog -LogName System -Newest 1
 PS C:\> $event.TimeWritten | Get-Member
@@ -188,7 +188,7 @@ The **SecondValue** parameter indicates that the value that the When method retu
 The fourth command uses dot notation to call the new When method.
 The command pipes the method value to the **Get-Member** cmdlet to confirm that it has returned a string.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> function Copy-Property ($From, $To)
 {     foreach ($p in Get-Member -InputObject $From -MemberType Property)

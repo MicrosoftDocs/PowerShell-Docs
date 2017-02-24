@@ -40,7 +40,7 @@ To overwrite an existing alias, after assuring that the contents of the alias fi
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> import-alias test.txt
 ```
