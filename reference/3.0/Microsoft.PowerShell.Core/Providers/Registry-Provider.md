@@ -40,7 +40,7 @@ ms.technology:  powershell
   
 ### Navigating the Registry  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command sets the current location to the HKEY_LOCAL_MACHINE\Software registry key:  
   
 ```  
@@ -48,7 +48,7 @@ set-location hklm:\software
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets an object that represents the current location:  
   
 ```  
@@ -58,7 +58,7 @@ get-location
   
 ### Managing Registry Keys  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets each immediate subkeys of the HKEY_LOCAL_MACHINE\Software registry key:  
   
 ```  
@@ -66,7 +66,7 @@ get-childitem -path hklm:\software
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command creates the TestNew subkey under the HKCU:\Environment subkey:  
   
 ```  
@@ -74,7 +74,7 @@ new-item -path hkcu:\Environment\TestNew
   
 ```  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command deletes the TestNew subkey of the HKEY_CURRENT_USER\Environment key:  
   
 ```  
@@ -82,7 +82,7 @@ remove-item -path hkcu:\Environment\TestNew
   
 ```  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command copies the TestNew key to the TestCopy subkey:  
   
 ```  
@@ -90,7 +90,7 @@ copy-item -path  hkcu:\Environment\TestNew  hkcu:\Environment\TestNew\TestCopy
   
 ```  
   
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command gets all the subkeys of the HKEY_LOCAL_MACHINE\Software registry key:  
   
 ```  
@@ -98,7 +98,7 @@ get-childitem -path hklm:\Software -recurse
   
 ```  
   
-#### -------------------------- EXAMPLE 6 --------------------------  
+#### Example 6  
  This command moves the HKEY_CURRENT_USER\Environment\testnewcopy registry key, its subkeys and their registry entries to the HKEY_CURRENT_USER\Environment\testnew key:  
   
 ```  
@@ -106,7 +106,7 @@ move-item -path hkcu:\environment\testnewcopy -destination hkcu:\environment\tes
   
 ```  
   
-#### -------------------------- EXAMPLE 7 --------------------------  
+#### Example 7  
  This command renames the HKEY_CURRENT_USER\Environment\testnew registry key to HKEY_CURRENT_USER\Environment\test:  
   
 ```  
@@ -114,7 +114,7 @@ rename-item -path hkcu:\environment\testnew\ -newname test
   
 ```  
   
-#### -------------------------- EXAMPLE 8 --------------------------  
+#### Example 8  
  This command gets the security descriptor of the specified registry key:  
   
 ```  
@@ -124,7 +124,7 @@ get-acl -path hkcu:\environment\testnew | format-list -property *
   
 ### Managing Registry Entries  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets the registry entries in the HKEY_CURRENT_USER\Environment registry key:  
   
 ```  
@@ -134,7 +134,7 @@ get-itemproperty -path hkcu:\Environment
   
  This command gets the Default registry entry only when it contains data.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets the Temp registry entry in the HKEY_CURRENT_USER\Environment key:  
   
 ```  
@@ -142,7 +142,7 @@ get-itemproperty -path hkcu:\Environment -name Temp
   
 ```  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command creates a PSTest registry entry in the HKEY_CURRENT_USER\Environment key and sets its value to 1:  
   
 ```  
@@ -150,7 +150,7 @@ new-itemproperty -path hkcu:\environment -name PSTest -value 1 -propertyType dwo
   
 ```  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command changes the value of the PSTest registry entry  in the HKEY_CURRENT_USER\Environment key to "Start" and changes its data type to REG_SZ (string):  
   
 ```  
@@ -158,7 +158,7 @@ set-itemproperty -path hkcu:\environment -name PSTest -value Start -type string
   
 ```  
   
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command renames the PSTest registry entry in the HKEY_CURRENT_USER\Environment key to PSTestNew:  
   
 ```  
@@ -167,7 +167,7 @@ rename-itemproperty -path hkcu:\environment -name PSTest
   
 ```  
   
-#### -------------------------- EXAMPLE 6 --------------------------  
+#### Example 6  
  This command copies the PSTestNew registry entry from the HKEY_CURRENT_USER\Environment key to the HKEY_CURRENT_USER\Environment\testnewcopy key:  
   
 ```  
@@ -175,7 +175,7 @@ copy-itemproperty -path hkcu:\environment -destination hkcu:\environment\testnew
   
 ```  
   
-#### -------------------------- EXAMPLE 7 --------------------------  
+#### Example 7  
  The command moves the pstestnew registry entry from the HKEY_CURRENT_USER\environment\testnewcopy key to the HKEY_CURRENT_USER\environment\testnew key:  
   
 ```  
@@ -183,7 +183,7 @@ move-itemproperty -path hkcu:\environment\testnewcopy -destination hkcu:\environ
   
 ```  
   
-#### -------------------------- EXAMPLE 8 --------------------------  
+#### Example 8  
  This command clears the value of the pstestnew registry entry in the HKEY_CURRENT_USER\Environment\testnew key:  
   
 ```  
@@ -194,7 +194,7 @@ clear-itemproperty -path hkcu:\environment\testnew -name pstestnew
  You can use the Clear-Item cmdlet to clear the value of the default registry entry for a subkey. For example, the following command clears the value of the default entry of the HKEY_CURRENT_USER\Environment\testnew registry key:  
 clear-item -path hkcu:\environment\testnew  
   
-#### -------------------------- EXAMPLE 9 --------------------------  
+#### Example 9  
  This command deletes the pstestnew registry entry from the HKEY_CURRENT_USER\Environment\testnew registry key:  
   
 ```  
@@ -202,7 +202,7 @@ remove-itemproperty -path hkcu:\environment\testnew -name pstestnew
   
 ```  
   
-#### -------------------------- EXAMPLE 10 --------------------------  
+#### Example 10  
  This command changes the value of the default registry entry in the HKEY_CURRENT_USER\Environment\testnew key to "default value":  
   
 ```  

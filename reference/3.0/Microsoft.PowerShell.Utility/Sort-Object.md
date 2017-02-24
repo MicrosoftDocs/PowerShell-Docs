@@ -31,7 +31,7 @@ You can specify a single property or multiple properties (for a multi-key sort),
 You can also direct Sort-Object to display only the objects with a unique value for a particular property.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-childitem | sort-object
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 
 This command sorts the subdirectories and files in the current directory.
 Because no properties are specified, the files and directories are sorted in ascending alphabetical order by their default sort property, Name.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-childitem | sort-object -property length
 
@@ -75,7 +75,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 This command displays the files in the current directory in ascending order by file length.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-process | sort-object -property WS | select-object -last 5
 
@@ -94,7 +94,7 @@ The command uses the Get-Process cmdlet to get a list of processes.
 It uses a pipeline operator (|) to send the results to the Sort-Object cmdlet, which sorts the objects in working-set order.
 
 Another pipeline operator sends the results to the Select-Object, which displays only the last five items in the list.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-history | sort-object -descending
 
@@ -113,7 +113,7 @@ Id CommandLine
 ```
 
 This command sorts HistoryInfo objects using the Id property as the default key.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-service | sort-object -property @{Expression="Status";Descending=$true}, @{Expression="DisplayName";Descending=$false}
 
@@ -143,7 +143,7 @@ The hash table uses an Expression key to specify the property name and an Ascend
 
 The resulting display, which sorts the Status values in descending order, lists properties with a Status value of "Running" before those with a Status value of "Stopped".
 When sorted in ascending order, "Stopped" appears before "Running", because Status is an enumerated property in which the value of "Stopped" (1) is less than the value of "Running" (4).
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-childitem *.txt | sort-object -property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending=$false} | Format-Table LastWriteTime, CreationTime
 
@@ -159,7 +159,7 @@ LastWriteTime                           CreationTime
 ```
 
 This command sorts text files in descending order by the time span between CreationTime and LastWriteTime.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-content servers.txt
 

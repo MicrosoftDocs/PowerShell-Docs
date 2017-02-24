@@ -30,7 +30,7 @@ The Write-Progress cmdlet displays a progress bar in a Windows PowerShell comman
 You can select the indicators that the bar reflects and the text that appears above and below the progress bar.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> for ($i = 1; $i -le 100; $i++ )
 {write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i;}
@@ -38,7 +38,7 @@ PS C:\> for ($i = 1; $i -le 100; $i++ )
 
 This command displays the progress of a For loop that counts from 1 to 100.
 The Write-Progress command includes a status bar heading ("activity"), a status line, and the variable $i (the counter in the For loop), which indicates the relative completeness of the task.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> for($i = 1; $i -lt 101; $i++ )
 {write-progress -activity Updating -status 'Progress->' -percentcomplete $i -currentOperation OuterLoop; `
@@ -59,7 +59,7 @@ This example displays the progress of two nested For loops, each of which is rep
 
 The Write-Progress command for the second progress bar includes the Id parameter that distinguishes it from the first progress bar.
 Without the Id parameter, the progress bars would be superimposed on each other instead of being displayed one below the other.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $events = get-eventlog -logname system
 PS C:\> $events | foreach-object -begin {clear-host;$i=0;$out=""} `

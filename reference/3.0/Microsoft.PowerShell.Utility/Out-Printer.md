@@ -27,7 +27,7 @@ Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 The Out-Printer cmdlet sends output to the default printer or to an alternate printer, if one is specified.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-content $pshome\about_signing.help.txt | Out-Printer
 ```
@@ -38,7 +38,7 @@ This example shows you how to print a file, even though Out-Printer does not hav
 The command uses the Get-Content cmdlet to get the contents of the Help topic.
 The path includes $pshome, a built-in variable that stores the installation directory for Windows PowerShell.
 A pipeline operator (|) passes the results to Out-Printer, which sends it to the default printer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> "Hello, World" | out-printer -name "\\Server01\Prt-6B Color"
 ```
@@ -46,7 +46,7 @@ PS C:\> "Hello, World" | out-printer -name "\\Server01\Prt-6B Color"
 This command prints "Hello, World" to the "Prt-6B Color" printer on Server01.
 This command uses the Name parameter to specify the alternate printer.
 Because the parameter name is optional, you can omit it.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $h = get-help -full get-wmiobject
 PS C:\> out-printer -inputobject $h

@@ -29,7 +29,7 @@ The host displays the output at the command line.
 Because **Out-Host** is the default, you do not need to specify it unless you want to use its parameters to change the display.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Process | Out-Host -Paging
 ```
@@ -41,7 +41,7 @@ The **Paging** parameter displays one page of data at a time.
 
 The same command format is used for the Help function that is built into Windows PowerShell.
 That function gets data from the Get-Help cmdlet and then uses the **Paging** parameter of **Out-Host** to display the data one page at a time by using this command format: `Get-Help $Args\[0\] | Out-Host -Paging`.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = Get-History
 PS C:\> Out-Host -InputObject $a

@@ -29,7 +29,7 @@ The Format-Wide cmdlet formats objects as a wide table that displays only one pr
 You can use the Property parameter to determine which property is displayed.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-childitem | format-wide -column 3
 ```
@@ -38,7 +38,7 @@ This command displays the names of files in the current directory in three colum
 The Get-ChildItem cmdlet gets objects representing each file in the directory.
 The pipeline operator (|) passes the file objects through the pipeline to Format-Wide, which formats them for output.
 The Column parameter specifies the number of columns.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
 ```

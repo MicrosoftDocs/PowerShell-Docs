@@ -31,19 +31,19 @@ Windows PowerShell providers let you access a variety of data stores as though t
 For information about Windows PowerShell providers, see about_Providers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-psprovider
 ```
 
 This command displays a list of all available Windows PowerShell providers.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-psprovider f*, r* | format-list
 ```
 
 This command displays a list of all Windows PowerShell providers with names that begin with the letter "f" or "r".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-psprovider | format-table name, module, pssnapin -auto
 
@@ -75,7 +75,7 @@ The values of these properties contain the name of the snap-in or module that ad
 The first command gets all of the providers in the session and formats them in a table with the values of their Name, Module, and PSSnapin properties.
 
 The second command uses the Where-Object cmdlet to get the providers that come from the Microsoft.PowerShell.Security snap-in.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> resolve-path ~
 
