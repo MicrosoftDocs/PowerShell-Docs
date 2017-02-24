@@ -53,7 +53,7 @@ Unlike the traditional "ping" command, Test-Connection returns a Win32_PingStatu
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Test-Connection Server01
 
@@ -68,14 +68,14 @@ ADMIN1        Server01        157.59.137.44                32       1
 This command sends echo request packets ("pings") from the local computer to the Server01 computer.
 This command uses the **ComputerName** parameter to specify the Server01 computer, but omits the optional parameter name.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Test-Connection -ComputerName Server01, Server02, Server12
 ```
 
 This command sends pings from the local computer to several remote computers.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Test-Connection -Source Server02, Server12, localhost -ComputerName Server01 -Credential Domain01\Admin01
 ```
@@ -84,7 +84,7 @@ This command sends pings from different source computers to a single remote comp
 It uses the **Credential** parameter to specify the credentials of a user who has permission to send a ping request from the source computers.
 Use this command format to test the latency of connections from multiple points.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
 ```
@@ -94,7 +94,7 @@ It uses the parameters of **Test-Connection** to customize the command.
 
 Use this command format when the ping response is expected to take longer than usual, either because of an extended number of hops or a high-traffic network condition.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $job = Test-connection -ComputerName (Get-Content Servers.txt) -asjob
 PS C:\> if ($job.JobStateInfo.State -ne "Running") {$Results = Receive-Job $job}
@@ -108,7 +108,7 @@ The command uses the **AsJob** parameter to run the command as a background job 
 
 The second command checks to see that the job is not still running, and if it is not, it uses a Receive-Job command to get the results and store them in the $Results variable.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Test-Connection Server55 -Credential Domain55\User01 -Impersonation Identify
 ```
@@ -116,7 +116,7 @@ PS C:\> Test-Connection Server55 -Credential Domain55\User01 -Impersonation Iden
 This command uses the **Test-Connection** cmdlet to ping a remote computer.
 The command uses the **Credential** parameter to specify a user account with permission to ping the remote computer and the **Impersonation** parameter to change the impersonation level to "Identify".
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> if (Test-Connection -ComputerName Server01 -Quiet) {New-PSSession Server01}
 ```

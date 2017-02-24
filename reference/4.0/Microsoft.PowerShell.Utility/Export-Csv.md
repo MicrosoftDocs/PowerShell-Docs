@@ -46,14 +46,14 @@ To export only selected properties of an object, use the Select-Object cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-process wmiprvse | select-object basePriority,ID,SessionID,WorkingSet | export-csv -path data.csv
 ```
 
 This command selects a few properties of the WmiPrvse process and exports them to a CSV file named Data.csv.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process | export-csv processes.csv
 PS C:\> get-process | export-csv processes.csv
@@ -66,7 +66,7 @@ __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,po
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
 Because it does not specify a delimiter, a comma (,) is used to separate the fields in the file.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-process | export-csv processes.csv -Delimiter ";"
 
@@ -79,7 +79,7 @@ This command exports objects representing the processes on the computer to the P
 It uses the Delimiter parameter to specify the semicolon (;).
 As a result, the fields in the file are separated by semicolons.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-process | export-csv processes.csv -UseCulture
 ```
@@ -87,7 +87,7 @@ PS C:\> get-process | export-csv processes.csv -UseCulture
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
 It uses the UseCulture parameter to direct Export-CSV to use the delimiter specified by the ListSeparator property of the current culture.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-process | export-csv processes.csv -NoTypeInformation
 PS C:\> get-process | export-csv processes.csv -NoTypeInformation
@@ -99,7 +99,7 @@ __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,po
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
 It uses the NoTypeInformation parameter to suppress the type information in the file.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command uses the Get-ChildItem cmdlet to do a recursive search in the D: drive for files with the .ps1 file name extension. It uses a pipeline operator to sends the results to the Where-Object cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the ScriptFiles variable. 
 PS C:\> $scriptFiles = Get-ChildItem D:\* -include *.ps1 -recurse | where-object {$_.creationtime -gt "01/01/2011"}
@@ -113,7 +113,7 @@ PS C:\> $scriptFiles | export-csv -append -path \\Archive01\Scripts\Scripts.csv
 
 These commands add information about new Windows PowerShell scripts to a script inventory file.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command shows how to select properties of an object and export them to a CSV file. This command uses the Get-Date cmdlet to get the current date and time. It uses the Select-Object cmdlet to select the desired properties, and the Export-CSV cmdlet to export the object and its properties to the Date.csv file. The output shows the expected content in the Date.csv file.
 PS C:\> get-date | select-object -property DateTime, Day, DayOfWeek, DayOfYear | export-csv -path Date.csv

@@ -45,14 +45,14 @@ For an example of how to do this, see Example 3 in this topic.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> "This is a test" | export-clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-acl C:\test.txt | export-clixml -Path fileacl.xml
 PS C:\> $fileacl = import-clixml fileacl.xml
@@ -66,7 +66,7 @@ It uses a pipeline operator to pass the security descriptor to Export-Clixml, wh
 The second command uses the Import-Clixml cmdlet to create an object from the XML in the FileACL.xml file.
 Then, it saves the object in the $FileAcl variable.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
 PS C:\> $credential | Export-CliXml $credPath PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential

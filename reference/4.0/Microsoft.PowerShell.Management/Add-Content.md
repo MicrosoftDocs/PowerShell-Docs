@@ -41,14 +41,14 @@ You can specify the content by typing the content in the command or by specifyin
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> add-content -path *.txt -exclude help* -value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
 ```
@@ -58,7 +58,7 @@ The command uses the Get-Date cmdlet to get the date, and it uses the Value para
 The PassThru parameter passes an object representing the added content through the pipeline.
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
 ```
@@ -70,7 +70,7 @@ The parentheses ensure that the Get-Content command is complete before the Add-C
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
 In that case, the command would be "add-content -path monthly.txt -value $w".
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
 ```

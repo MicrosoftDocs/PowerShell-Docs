@@ -64,7 +64,7 @@ The End script block, which is the value of the **End** parameter, runs after th
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> 30000, 56798, 12432 | ForEach-Object -Process {$_/1024}
 29.296875
@@ -74,7 +74,7 @@ PS C:\> 30000, 56798, 12432 | ForEach-Object -Process {$_/1024}
 
 This command takes an array of three integers and divides each one of them by 1024.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; "" }}
 ```
@@ -82,7 +82,7 @@ PS C:\> Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) 
 This command gets the files and directories in the Windows PowerShell installation directory ($pshome) and passes them to the ForEach-Object cmdlet.
 If the object is not a directory (the value of the PSISContainer property is false), the script block gets the name of the file, divides the value of its Length property by 1024, and adds a space ("") to separate it from the next entry.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $Events = Get-EventLog -LogName System -Newest 1000
 PS C:\> $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -Filepath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
@@ -95,7 +95,7 @@ The **Begin** parameter displays the current date and time.
 Next, the **Process** parameter uses the **Out-File** cmdlet to create a text file named events.txt and stores the message property of each of the events in that file.
 Last, the **End** parameter is used to display the date and time after all of the processing has completed.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-ItemProperty -Path HKCU:\Network\* | ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
 ```
@@ -113,7 +113,7 @@ In the **Set-ItemProperty** command, the path is the value of the **PSPath** pro
 
 Because **Set-ItemProperty** is changing the property of each key, the **ForEach-Object** cmdlet is required to access the property.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> 1, 2, $null, 4 | ForEach-Object {"Hello"}
 Hello
@@ -128,7 +128,7 @@ Because Windows PowerShell treats null as an explicit placeholder, the **ForEach
 
 For more information about the $null automatic variable, see about_Automatic_Variables.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Get-Module -List | ForEach-Object -MemberName Path
 PS C:\> Get-Module -List | Foreach Path
@@ -142,7 +142,7 @@ It uses the **Foreach** alias of the **Foreach-Object** cmdlet and omits the nam
 
 The **ForEach-Object** cmdlet is very useful for getting property values, because it gets the value without changing the type, unlike the **Format** cmdlets or the Select-Object cmdlet, which change the property value type.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
 PS C:\> "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object -MemberName Split -ArgumentList "."

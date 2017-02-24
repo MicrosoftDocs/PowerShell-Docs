@@ -56,7 +56,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-psbreakpoint
 ```
@@ -67,7 +67,7 @@ Description
 
 This command gets all breakpoints set on all scripts and functions in the current session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-psbreakpoint -Id 2
 
@@ -86,7 +86,7 @@ Description
 
 This command gets the breakpoint with breakpoint ID 2.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $b = set-psbreakpoint -script sample.ps1 -function increment
 PS C:\> $b.Id | get-psbreakpoint
@@ -106,7 +106,7 @@ It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
 
 As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-psbreakpoint -script Sample.ps1, SupportScript.ps1
 ```
@@ -119,7 +119,7 @@ This command gets all of the breakpoints in the Sample.ps1 and SupportScript.ps1
 
 This command does not get other breakpointS that might be set in other scripts or on functions in the session.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-psbreakpoint -command Read-Host, Write-Host -script Sample.ps1
 ```
@@ -130,7 +130,7 @@ Description
 
 This command gets all Command breakpoints that are set on Read-Host or Write-Host commands in the Sample.ps1 file.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-psbreakpoint -type Command -script Sample.ps1
 ```
@@ -141,7 +141,7 @@ Description
 
 This command gets all Command breakpoints in the Sample.ps1 file.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-psbreakpoint -variable Index, Swap
 ```
@@ -152,7 +152,7 @@ Description
 
 This command gets breakpoints that are set on the $index and $swap variables in the current session.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> get-psbreakpoint -type line, variable -script Sample.ps1
 ```

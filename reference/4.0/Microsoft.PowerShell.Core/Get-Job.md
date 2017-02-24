@@ -78,7 +78,7 @@ For information about a particular custom job type, see the documentation of the
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Job
 ```
@@ -86,7 +86,7 @@ PS C:\> Get-Job
 This command gets all background jobs started in the current session.
 It does not include jobs created in other sessions, even if the jobs run on the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the **Get-Job** cmdlet to get a job. It uses the Name parameter to identify the job. The command stores the job object that **Get-Job** returns in the $j variable. In this example, there is only one job with the specified name.
 PS C:\> $j = Get-Job -Name Job1
@@ -108,7 +108,7 @@ PS C:\> Stop-Job -InstanceId $ID
 These commands show how to get the instance ID of a job and then use it to stop a job.
 Unlike the name of a job, which is not unique, the instance ID is unique.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Job -Command "*get-process*"
 ```
@@ -117,7 +117,7 @@ This command gets the jobs on the system that include a Get-Process command.
 The command uses the **Command** parameter of **Get-Job** to limit the jobs retrieved.
 The command uses wildcard characters (*) to get jobs that include a **Get-Process** command anywhere within the command string.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> "*get-process*" | Get-Job
 ```
@@ -126,7 +126,7 @@ Like the command in the  previous example, this command gets the jobs on the sys
 The command uses a pipeline operator (|) to send a string (in quotation marks) to the **Get-Job** cmdlet.
 It is the equivalent of the previous command.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Job -State NotStarted
 ```
@@ -134,7 +134,7 @@ PS C:\> Get-Job -State NotStarted
 This command gets only those jobs that have been created but have not yet been started.
 This includes jobs that are scheduled to run in the future and those not yet scheduled.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Get-Job -name Job*
 ```
@@ -142,7 +142,7 @@ PS C:\> Get-Job -name Job*
 This command gets all jobs that have job names beginning with "job".
 Because "job\<number\>" is the default name for a job, this command gets all jobs that do not have an explicitly assigned name.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command uses the Start-Jobcmdlet to start a background job that runs a **Get-Process** command on the local computer. The command uses the **Name** parameter of **Start-Job** to assign a friendly name to the job.
 PS C:\> Start-Job -ScriptBlock {Get-Process} -Name MyJob
@@ -169,7 +169,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 This example shows how to use **Get-Job** to get a job object, and then it shows how to use the job object to represent the job in a command.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 The first command uses the Start-Job cmdlet to start a job on the local computer.
 PS C:\> Start-Job -ScriptBlock {Get-EventLog System}
@@ -196,7 +196,7 @@ Id    Name     PSJobTypeName  State      HasMoreData   Location   Command
 
 This example demonstrates that the Get-Job cmdlet can get all of the jobs that were started in the current session, even if they were started by using different methods.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 The first command uses the Start-Job cmdlet to start a job on the local computer. The job object that **Start-Job** returns shows that the job failed. The value of the **State** property is "Failed".
 PS C:\> Start-Job -ScriptBlock {Get-Process}
@@ -253,7 +253,7 @@ Connecting to remote server using WSManCreateShellEx api failed. The async callb
 This command shows how to use the job object that Get-Job returns to investigate why a job failed.
 It also shows how to get the child jobs of each job.
 
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 The first command uses the **Workflow** keyword to create the "WFProcess" workflow.
 PS C:\> Workflow WFProcess {Get-Process}
@@ -273,7 +273,7 @@ Id     Name            State         HasMoreData     Location             Comman
 This example shows how to use the **Filter** parameter to get a workflow job.
 The **Filter** parameter, introduced in Windows PowerShell 3.0 is valid only on custom job types, such as workflow jobs and scheduled jobs.
 
-### -------------------------- EXAMPLE 11 --------------------------
+### Example 11
 ```
 The first command gets the jobs in the current session. The output includes a background job, a remote job and several instances of a scheduled job. The remote job, Job4, appears to have failed.
 PS C:\> Get-Job

@@ -37,7 +37,7 @@ For more information, see about_Transactions.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -84,7 +84,7 @@ The seventh command uses the Complete-Transaction cmdlet to commit the transacti
 
 The final command uses the ToString method to display the resulting value of the variable as a string.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString

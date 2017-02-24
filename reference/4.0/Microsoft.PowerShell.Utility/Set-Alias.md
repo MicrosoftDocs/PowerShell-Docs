@@ -33,7 +33,7 @@ Unless you add the alias to the Windows PowerShell profile, the changes to an al
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-alias -name list -value get-childitem
 ```
@@ -41,7 +41,7 @@ PS C:\> set-alias -name list -value get-childitem
 This command creates the alias "list" for the Get-ChildItem cmdlet.
 After you create the alias, you can use "list" in place of "Get-ChildItem" at the command line and in scripts.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-alias list get-location
 ```
@@ -53,7 +53,7 @@ This command uses the same format as the command in the previous example, but it
 When you omit parameter names, the values of those parameters must appear in the specified order in the command.
 In this case, the value of -Name ("list") must be the first parameter and the value of -Value ("get-location") must be the second parameter.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-alias scrub remove-item -option readonly -passthru | format-list
 ```
@@ -64,7 +64,7 @@ It uses the "ReadOnly" option to prevent the alias from being deleted or assigne
 The PassThru parameter directs Windows PowerShell to pass an object that represents the new alias through the pipeline to the Format-List cmdlet.
 If the PassThru parameter were omitted, there would be no output from this cmdlet to display (in a list or otherwise).
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Set-Alias np c:\windows\notepad.exe
 ```
@@ -77,7 +77,7 @@ This example demonstrates that you can create aliases for executable files and e
 To make the command more generic, you can use the "Windir" environment variable (${env:windir}) to represent the C\Windows directory.
 The generic version of the command is "set-alias np ${env:windir}\notepad.exe".
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> function CD32 {set-location c:\windows\system32}
 PS C:\> set-alias go cd32

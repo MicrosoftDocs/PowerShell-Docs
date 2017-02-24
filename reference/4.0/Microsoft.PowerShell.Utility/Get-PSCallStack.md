@@ -34,7 +34,7 @@ To run a Get-PSCallStack command while in the debugger, type "k" or "get-pscalls
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> function my-alias {
 $p = $args[0]
