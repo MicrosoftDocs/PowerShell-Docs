@@ -243,7 +243,7 @@ for file objects.
       <ScriptProperty>
         <Name>Age</Name>
         <GetScriptBlock>
-          ((get-date) - ($this.creationtime)).days
+          ((Get-Date) - ($this.CreationTime)).Days
         </GetScriptBlock>
       </ScriptProperty>
     </Members>
