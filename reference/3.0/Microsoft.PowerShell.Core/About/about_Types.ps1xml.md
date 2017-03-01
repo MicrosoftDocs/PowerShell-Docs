@@ -49,7 +49,7 @@ PS C:> (Get-Date).DateTime
 Sunday, January 29, 2012 9:43:57 AM
 ```
 
-You won't find the DateTime property in the description of the [System.DateTime
+You won't find the DateTime property in the description of the [`System.DateTime`
 structure](http://msdn.microsoft.com/library/system.datetime.aspx),
 because Windows PowerShell adds the property and it is visible only in
 Windows PowerShell.
