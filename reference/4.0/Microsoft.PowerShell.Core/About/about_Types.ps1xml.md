@@ -27,7 +27,7 @@ of object types in Windows PowerShell. There are two techniques for adding
 extended type data to a Windows PowerShell session.
 
 - Types.ps1xml file: An XML file that defines extended type data.
-- Update-TypeData: A cmdlet that reloads Types.ps1xml files and defines
+- `Update-TypeData`: A cmdlet that reloads Types.ps1xml files and defines
 extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
@@ -105,7 +105,7 @@ files to further extend the types.
 
 For example, by default, array objects (`System.Array`) have a `Length`
 property that lists the number of objects in the array. However, because
-the name "length" does not clearly describe the property, Windows
+the name "Length" does not clearly describe the property, Windows
 PowerShell adds an alias property named "Count" that displays the same
 value. The following XML adds the `Count` property to the `System.Array` type.
 
@@ -181,7 +181,7 @@ use the `PrependData` parameter of the `Update-TypeData` cmdlet.
 all future sessions, export the console, or add the `Update-TypeData`
 command to your Windows PowerShell profile.
 
-## Types.ps1xml and Add-Member
+## Types.ps1xml and `Add-Member`
 
 The Types.ps1xml files add properties and methods to all the instances
 of the objects of the specified .NET Framework type in the affected
@@ -190,7 +190,7 @@ methods only to one instance of an object, use the `Add-Member` cmdlet.
 
 For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
 
-## Example: Adding an Age Member to FileInfo Objects
+## Example: Adding an `Age` Member to `FileInfo` Objects
 
 This example shows how to add an Age property to file objects
 (`System.IO.FileInfo`). The age of a file is the difference between
@@ -564,7 +564,7 @@ For more information, see the [Windows PowerShell Software Development
 Kit (SDK) in the MSDN (Microsoft Developer Network)
 library](http://go.microsoft.com/fwlink/?LinkId=144538).
 
-## Update-TypeData
+## `Update-TypeData`
 
 To load your Types.ps1xml files into a Windows PowerShell session, run
 the `Update-TypeData` cmdlet. If you want the types in your file to take
