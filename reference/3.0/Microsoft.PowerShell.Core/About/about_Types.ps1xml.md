@@ -30,7 +30,7 @@ extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
 Update-TypeData cmdlet to add dynamic extended type data to the current session
-see Update-TypeData (http://go.microsoft.com/fwlink/?LinkID=113421).
+see [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ## About Extended Type Data
 
@@ -49,14 +49,14 @@ PS C:> (Get-Date).DateTime
 Sunday, January 29, 2012 9:43:57 AM
 ```
 
-You won't find the DateTime property in the description of the System.DateTime
-structure (<http://msdn.microsoft.com/library/system.datetime.aspx>),
+You won't find the DateTime property in the description of the [System.DateTime
+structure](http://msdn.microsoft.com/library/system.datetime.aspx),
 because Windows PowerShell adds the property and it is visible only in
 Windows PowerShell.
 
 To add the DateTime property to all Windows PowerShell sessions, Windows PowerShell
 defines the DateTime property in the Types.ps1xml file in the Windows PowerShell
-installation directory (`$pshome`).
+installation directory (`$PSHOME`).
 
 Adding Extended Type Data to Windows PowerShell.
 
@@ -89,11 +89,11 @@ cmdlet.
 
 ## Built-in Types.ps1xml Files
 
-The Types.ps1xml files in the `$pshome` directory are added automatically to
+The Types.ps1xml files in the `$PSHOME` directory are added automatically to
 every session.
 
 The Types.ps1xml file in the Windows PowerShell installation directory
-(`$pshome`) is an XML-based text file that lets you add properties and
+(`$PSHOME`) is an XML-based text file that lets you add properties and
 methods to the objects that are used in Windows PowerShell. Windows
 PowerShell has built-in Types.ps1xml files that add several elements
 to the .NET Framework types, but you can create additional Types.ps1xml
@@ -132,11 +132,11 @@ The command returns the following results.
 Name           MemberType    Definition
 ----           ----------    ----------
 Count          AliasProperty Count = Length
-Address        Method        System.Object& Address(Int32 )
+Address        Method        System.Object& Address(Int32)
 Clone          Method        System.Object Clone()
 CopyTo         Method        System.Void CopyTo(Array array, Int32 index):
 Equals         Method        System.Boolean Equals(Object obj)
-Get            Method        System.Object Get(Int32 )
+Get            Method        System.Object Get(Int32)
 # ...
 ```
 
@@ -145,12 +145,12 @@ As a result, you can use either the Count property or the Length property
 of arrays in Windows PowerShell. For example:
 
 ```powershell
-C:\PS> (1, 2, 3, 4).count
+C:\PS> (1, 2, 3, 4).Count
 # 4
 ```
 
 ```powershell
-C:\PS> (1, 2, 3, 4).length
+C:\PS> (1, 2, 3, 4).Length
 # 4
 ```
 
@@ -166,7 +166,7 @@ To create a new file, start by copying an existing Types.ps1xml file. The
 new file can have any name, but it must have a .ps1xml file name
 extension. You can place the new file in any directory that is accessible
 to Windows PowerShell, but it is useful to place the files in the Windows
-PowerShell installation directory (`$pshome`) or in a subdirectory of the
+PowerShell installation directory (`$PSHOME`) or in a subdirectory of the
 installation directory.
 
 When you have saved the new file, use the Update-TypeData cmdlet to add
@@ -194,10 +194,10 @@ its creation time and the current time in days.
 
 It is easiest to use the original Types.ps1xml file as a template
 for the new file. The following command copies the original file to
-a file called `MyTypes.ps1xml` in the `$pshome` directory.
+a file called `MyTypes.ps1xml` in the `$PSHOME` directory.
 
 ```powershell
-copy-item Types.ps1xml MyTypes.ps1xml
+Copy-Item Types.ps1xml MyTypes.ps1xml
 ```
 
 Next, open the Types.ps1xml file in any XML or text editor, such
@@ -241,7 +241,7 @@ for file objects.
       <ScriptProperty>
         <Name>Age</Name>
         <GetScriptBlock>
-          ((get-date) - ($this.creationtime)).days
+          ((Get-Date) - ($this.CreationTime)).Days
         </GetScriptBlock>
       </ScriptProperty>
     </Members>
@@ -256,16 +256,16 @@ new file in a higher precedence order than the original file. (For more
 information about Update-TypeData, see Update-TypeData.)
 
 ```powershell
-update-typedata -prependpath $pshome\MyTypes.ps1xml
+Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the
-PowerShell.exe file in the `$pshome` directory, and then pipe the file to
+PowerShell.exe file in the `$PSHOME` directory, and then pipe the file to
 the `Format-List` cmdlet to list all of the properties of the file. As a
 result of the change, the Age property appears in the list.
 
 ```powershell
-get-childitem $pshome\PowerShell.exe | format-list -property *
+Get-ChildItem $PSHOME\PowerShell.exe | Format-List -Property *
 
 PSPath            : Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS...
 PSParentPath      : Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS...
@@ -284,7 +284,7 @@ You can also display the Age property of the file by using the following
 command.
 
 ```powershell
-(get-childitem $pshome\PowerShell.exe).age
+(Get-ChildItem $PSHOME\PowerShell.exe).Age
 # 16
 ```
 
@@ -553,9 +553,9 @@ property of the `GetVersionInfo` static method of
 </Type>
 ```
 
-For more information, see the Windows PowerShell Software Development
-Kit (SDK) in the MSDN (Microsoft Developer Network) library
-at <http://go.microsoft.com/fwlink/?LinkId=144538>.
+For more information, see the [Windows PowerShell Software Development
+Kit (SDK) in the MSDN (Microsoft Developer Network)
+library](http://go.microsoft.com/fwlink/?LinkId=144538).
 
 ## Update-TypeData
 
@@ -591,14 +591,14 @@ a digital signature. For more information, see `about_Signing`.
 
 [about_Signing](about_Signing.md)
 
-Copy-Item (<http://go.microsoft.com/fwlink/?LinkID=113292>)
+[Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
 
-Copy-ItemProperty (<http://go.microsoft.com/fwlink/?LinkID=113293>)
+[Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
 
-Get-Member (<http://go.microsoft.com/fwlink/?LinkID=113322>)
+[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
 
-Get-TypeData (<http://go.microsoft.com/fwlink/?LinkID=217033>)
+[Get-TypeData](../../Microsoft.PowerShell.Utility/Get-TypeData.md)
 
-Remove-TypeData (<http://go.microsoft.com/fwlink/?LinkID=217038>)
+[Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
-Update-TypeData (<http://go.microsoft.com/fwlink/?LinkID=113421>)
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
