@@ -58,7 +58,7 @@ Windows PowerShell.
 
 To add the `DateTime` property to all Windows PowerShell sessions, Windows PowerShell
 defines the `DateTime` property in the Types.ps1xml file in the Windows PowerShell
-installation directory (`$pshome`).
+installation directory (`$PSHOME`).
 
 ## Adding Extended Type Data to Windows PowerShell.
 
@@ -92,11 +92,11 @@ For more information about these cmdlets, see the help topic for each cmdlet.
 
 ## Built-in Types.ps1xml Files
 
-The Types.ps1xml files in the $pshome directory are added automatically to
+The Types.ps1xml files in the $PSHOME directory are added automatically to
 every session.
 
 The Types.ps1xml file in the Windows PowerShell installation directory
-(`$pshome`) is an XML-based text file that lets you add properties and
+(`$PSHOME`) is an XML-based text file that lets you add properties and
 methods to the objects that are used in Windows PowerShell. Windows
 PowerShell has built-in Types.ps1xml files that add several elements
 to the .NET Framework types, but you can create additional Types.ps1xml
@@ -168,7 +168,7 @@ To create a new file, start by copying an existing Types.ps1xml file. The
 new file can have any name, but it must have a .ps1xml file name
 extension. You can place the new file in any directory that is accessible
 to Windows PowerShell, but it is useful to place the files in the Windows
-PowerShell installation directory (`$pshome`) or in a subdirectory of the
+PowerShell installation directory (`$PSHOME`) or in a subdirectory of the
 installation directory.
 
 When you have saved the new file, use the `Update-TypeData` cmdlet to add
@@ -196,7 +196,7 @@ its creation time and the current time in days.
 
 It is easiest to use the original Types.ps1xml file as a template
 for the new file. The following command copies the original file to
-a file called MyTypes.ps1xml in the `$pshome` directory.
+a file called MyTypes.ps1xml in the `$PSHOME` directory.
 
 ```powershell
 Copy-Item Types.ps1xml MyTypes.ps1xml
@@ -259,16 +259,16 @@ information about `Update-TypeData`, see
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).)
 
 ```powershell
-Update-Typedata -PrependPath $pshome\MyTypes.ps1xml
+Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the
-PowerShell.exe file in the `$pshome` directory, and then pipe the file to
+PowerShell.exe file in the `$PSHOME` directory, and then pipe the file to
 the `Format-List` cmdlet to list all of the properties of the file. As a
 result of the change, the `Age` property appears in the list.
 
 ```powershell
-Get-ChildItem $pshome\PowerShell.exe | Format-List -Property *
+Get-ChildItem $PSHOME\PowerShell.exe | Format-List -Property *
 
 PSPath            : Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS...
 PSParentPath      : Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS...
@@ -287,7 +287,7 @@ You can also display the `Age` property of the file by using the following
 command.
 
 ```powershell
-(Get-ChildItem $pshome\PowerShell.exe).Age
+(Get-ChildItem $PSHOME\PowerShell.exe).Age
 # 16
 ```
 
