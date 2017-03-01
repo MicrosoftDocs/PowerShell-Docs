@@ -592,7 +592,7 @@ use method syntax.
 ## Signing a Types.ps1xml File
 
 To protect users of your Types.ps1xml file, you can sign the file using
-a digital signature. For more information, see [about_Signing](about_Signing).
+a digital signature. For more information, see [about_Signing](about_Signing.md).
 
 # SEE ALSO
 
@@ -608,4 +608,4 @@ a digital signature. For more information, see [about_Signing](about_Signing).
 
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
-[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData,md)
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
