@@ -92,7 +92,7 @@ For more information about these cmdlets, see the help topic for each cmdlet.
 
 ## Built-in Types.ps1xml Files
 
-The Types.ps1xml files in the $PSHOME directory are added automatically to
+The Types.ps1xml files in the `$PSHOME` directory are added automatically to
 every session.
 
 The Types.ps1xml file in the Windows PowerShell installation directory
