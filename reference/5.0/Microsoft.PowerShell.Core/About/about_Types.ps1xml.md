@@ -32,7 +32,7 @@ extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current session
-see [Update-TypeData](../../Microsoft.Management.Utility/Update-TypeData.md).
+see [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ## About Extended Type Data
 
