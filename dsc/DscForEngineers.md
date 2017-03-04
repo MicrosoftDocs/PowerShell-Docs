@@ -28,7 +28,12 @@ The DSC configuration should be updated as a part of the application, ensuring t
 
 ## "I have PowerShell, why do I need Desired State Configuration?"
 
-PowerShell scripts should look like this:
+DSC configurations separate intent, or "what I want to do", from execution, or "how I want to do it."
+This means the logic of execution is contained within the resources.
+Users do not have to know how to implement or deploy a feature when a DSC resource for that feature is available.
+This allows the user to focus on the structure of their deployment.
+
+As an example, PowerShell scripts should look like this:
 ```powershell
 # Create a share in Windows Server 8
 New-SmbShare -Name MyShare -Path C:\Demo\Temp -FullAccess Alice -ReadAccess Bob
@@ -102,10 +107,7 @@ Start-DscConfiguration Sample_Share
 This script is cleanly formatted and straightforward to read.
 The logic paths and error handling are still present in the [resource](resources.md) implementation, but invisible to the script author. 
 
-DSC configurations separate intent, or "what I want to do", from execution, or "how I want to do it."
-This means the logic of execution is contained within the resources.
-Users do not have to know how to implement or deploy a feature when a DSC resource for that feature is available.
-This allows the user to focus on the structure of their deployment.
+
 
 ## Separating Environment from Structure
 
