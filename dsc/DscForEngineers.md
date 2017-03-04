@@ -114,7 +114,7 @@ For example, there might be a "dev" environment used to quickly prototype new co
 The code from the "dev" environment goes into a "test" environment, where other people verify the new functionality.
 Finally, the code goes into "prod", or the live site production environment.
 
-DSC configurations accomodate this dev-test-prod pipeline through the use of [configuration data](configdata.md).
+DSC configurations accomodate this dev-test-prod pipeline through the use of [configuration data](configData.md).
 This further abstracts the difference between the structure of the configuration from the nodes that are managed.
 For example, you can define a configuration that requires a SQL server, an IIS server, and a middle-tier server. 
 Regardless of what nodes receive the different pieces of this configuration, those three elements will always be present.
@@ -125,6 +125,6 @@ To deploy to the different environments, you can invoke `Start-DscConfiguration`
 
 [Configurations](configurations.md)
 
-[Configuration Data](configdata.md)
+[Configuration Data](configData.md)
 
 [Resources](resources.md)
