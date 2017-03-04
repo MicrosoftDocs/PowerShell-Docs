@@ -214,7 +214,7 @@ Unless specified, all operators are case-insensitive.
 Prior to Windows PowerShell 3.0, the comparison operators in the Windows PowerShell language could be used only in script blocks.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Stopped"}
 PS C:\> Get-Service | where Status -eq "Stopped"
@@ -226,7 +226,7 @@ The "$_" symbol represents each object that is passed to the **Where-Object** cm
 The first command uses the script block format.
 The second command uses the comparison statement format.
 The commands are equivalent and can be used interchangeably.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Process | Where-Object {$_.WorkingSet -gt 25000*1024}
 PS C:\> Get-Process | Where-Object WorkingSet -gt (25000*1024)
@@ -238,7 +238,7 @@ Because the value of the WorkingSet property is stored in bytes, the value of 25
 The first command uses the script block format.
 The second command uses the comparison statement format.
 The commands are equivalent and can be used interchangeably.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Process | Where-Object {$_.ProcessName -Match "^p.*"}
 PS C:\> Get-Process | Where-Object ProcessName -Match "^p.*"
@@ -250,7 +250,7 @@ The match operator lets you use regular expression matches.
 The first command uses the script block format.
 The second command uses the comparison statement format.
 The commands are equivalent and can be used interchangeably.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Process | Where-Object -Property Handles -ge -Value 1000
 PS C:\> Get-Process | where Handles -ge 1000
@@ -263,7 +263,7 @@ In this command, no aliases are used and all parameters include the parameter na
 
 The second command is the more natural use of the comparison command format.
 The "where" alias is substituted for the "Where-Object" cmdlet name and all optional parameter names are omitted.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first pair of commands gets commands that have any value for the **OutputType** property of the command. They omit commands that do not have an **OutputType** property and those that have an **OutputType** property, but no property value.
 PS C:\> Get-Command | where OutputType
@@ -280,7 +280,7 @@ PS C:\> Get-ChildItem | where  PSIsContainer -eq $false
 
 This example shows how to write commands that return items that are true or false or have any value for a specified property.
 The example shows both the script block and comparison statement formats for the command.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-Module -ListAvailable | where {($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri}
 ```

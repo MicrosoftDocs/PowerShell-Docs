@@ -41,19 +41,19 @@ This cmdlet does not get events from the Event Viewer logs.
 To get those events, use Get-WinEvent or Get-EventLog.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-event
 ```
 
 This command gets all events in the event queue.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-event -sourceIdentifier "PowerShell.ProcessCreated"
 ```
 
 This command gets events in which the value of the SourceIdentifier property is "PowerShell.ProcessCreated".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $events = get-event
 PS C:\> $events[0] | format-list -property *
@@ -92,7 +92,7 @@ This allows you to examine the properties of the event object.
 The third command shows how to use the Where-Object cmdlet to get an event
 
 based on the time that it was generated.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-event -eventIdentifier 2
 ```

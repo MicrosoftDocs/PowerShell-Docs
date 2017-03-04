@@ -31,19 +31,19 @@ You can also use the Get-Culture cmdlet, which gets the current culture on the s
 The culture determines the display format of items such as numbers, currency, and dates.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-uiculture
 ```
 
 This command gets the current UI culture information.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-uiculture | format-list *
 ```
 
 This command displays the values of all of the properties of the current UI culture in a list.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> (get-uiculture).calendar
 ```
@@ -51,7 +51,7 @@ PS C:\> (get-uiculture).calendar
 This command displays the current values for the Calendar property of the current UI culture.
 Calendar is just one property of UI culture.
 To see all of the properties, type "get-uiculture | get-member".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> (get-uiculture).datetimeformat.shortdatepattern
 ```

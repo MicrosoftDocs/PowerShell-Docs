@@ -40,7 +40,7 @@ The Export-PSSession cmdlet uses the implicit remoting feature of Windows PowerS
 When you import commands into the current session, they run implicitly  in the original session or in a  similar session on the originating computer.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $s = new-pssession -computerName Server01
 PS C:\> export-pssession -session $s -outputModule Server01
@@ -51,7 +51,7 @@ It also exports the formatting data for the commands.
 
 The first command creates a PSSession on the Server01 computer.
 The second command exports the commands and formatting data from the session into the Server01 module.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $s = new-pssession -ConnectionUri http://exchange.microsoft.com/mailbox -credential exchangeadmin01@hotmail.com -authentication negotiate
 PS C:\> export-pssession -session $r -module exch* -commandname get-*, set-* -formattypename * -outputModule $pshome\Modules\Exchange -encoding ASCII
@@ -60,7 +60,7 @@ PS C:\> export-pssession -session $r -module exch* -commandname get-*, set-* -fo
 These commands export the Get and Set commands from a Microsoft Exchange Server snap-in on a remote computer to an Exchange module in the $pshome\Modules directory on the local computer.
 
 Placing the module in the $pshome\Module directory makes it accessible to all users of the computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = new-pssession -computerName Server01 -credential Server01\User01
 PS C:\> export-pssession -session $s -outputModule TestCmdlets -type cmdlet -commandname *test* -formattypename *
@@ -88,14 +88,14 @@ The sixth command uses the Test-Files cmdlet, which was exported from the Server
 
 Although it is not evident, the Test-Files command actually runs in a remote session on the computer from which the command was imported.
 Windows PowerShell creates a session from information that is stored in the module.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> export-pssession -session $s -AllowClobber -outputModule AllCommands
 ```
 
 This command exports all commands and all formatting data from the PSSession in the $s variable into the current session.
 The command uses the AllowClobber parameter to include commands with the same names as commands in the current session.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $options = New-PSSessionOption -NoMachineProfile
 PS C:\> $s = new-pssession -computername Server01 -sessionoption $options

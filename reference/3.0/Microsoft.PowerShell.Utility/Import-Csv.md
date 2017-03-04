@@ -45,7 +45,7 @@ Beginning in Windows PowerShell 3.0, if a header row entry in a CSV file contain
 In previous versions of Windows PowerShell, if a header row entry in a CSV file contains an empty or null value, the **Import-Csv** command fails.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 This example shows how to export and then import a CSV file of objects.The first command uses the Get-Process cmdlet to get the process on the local computer. It uses a pipeline operator (|) to send the process objects to the Export-CSV cmdlet, which exports the process objects to the Processes.csv file in the current directory.
 PS C:\> get-process | export-csv processes.csv
@@ -69,7 +69,7 @@ PS C:\> $p | out-gridview
 ```
 
 This example shows how to export and then import a CSV file of objects.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process | export-csv processes.csv -Delimiter :
 PS C:\> $p = Import-Csv processes.csv -Delimiter :
@@ -79,7 +79,7 @@ This example shows how to use the *Delimiter* parameter of the Import-Csv cmdlet
 In this example, the processes are exported to a file that uses a colon (:) as a delimiter.
 
 When importing, the Import-Csv file uses the *Delimiter* parameter to indicate the delimiter that is used in the file.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $p = Import-Csv processes.csv -UseCulture
 PS C:\> (get-culture).textinfo.listseparator
@@ -95,7 +95,7 @@ The second command displays the list separator for the current culture.
 It uses the Get-Culture cmdlet to get the current culture.
 It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
 In this example, the command returns a comma.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer. A pipeline operator (|) sends the resulting job object to the Export-CSV cmdlet, which converts the job object to CSV format. An assignment operator (=) saves the resulting CSV in the Jobs.csv file.
 PS C:\> start-job -scriptblock { get-process } | export-csv jobs.csv
@@ -136,7 +136,7 @@ StateChanged  :
 ```
 
 This example shows how to use the Header parameter of Import-Csv to change the names of properties in the resulting imported object.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command uses the Get-Content cmdlet to get the Links.csv file.
 PS C:\> Get-Content .\Links.csv
@@ -176,7 +176,7 @@ LinkID            TopicTitle
 ```
 
 This example shows how to create a custom object in Windows PowerShell by using a CSV file.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
 PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"

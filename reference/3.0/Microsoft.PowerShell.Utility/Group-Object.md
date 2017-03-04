@@ -31,20 +31,20 @@ Group-Object returns a table with one row for each property value and a column t
 If you specify more than one property, Group-Object first groups them by the values of the first property, and then, within each property group, it groups by the value of the next property.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-childitem *.doc | group-object -property length
 ```
 
 This command gets the files in the current location that have a .doc extension and groups them by size.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-childitem | sort-object -property extension | group-object -property extension
 ```
 
 This command gets the files in the current location, sorts them by file name extension, and then groups them by file name extension.
 Note that the files are sorted before they are grouped.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> 1..35 | group-object -property {$_ % 2},{$_ % 3}
 ```
@@ -52,7 +52,7 @@ PS C:\> 1..35 | group-object -property {$_ % 2},{$_ % 3}
 This example shows how to use script blocks as the value of the Property parameter.
 
 This command displays the integers from 1 to 35, grouped by the remainder left when they are divided by 2 or 3.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $events = get-eventlog -logname system -newest 1000
 PS C:\> $events | group-object -property eventID
@@ -72,7 +72,7 @@ The second command uses a pipeline operator (|) to send the events in the $event
 The command uses the Property parameter to specify that the events should be grouped according to the value of their EventID property.
 
 In the output, the Count column represents the number of entries in each group, the Name column represents the EventID values that define a group, and the Group column represents the objects in each group.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-process | group-object -property priorityclass
 
@@ -103,7 +103,7 @@ The second command is identical to the first, except that it uses the NoElement 
 The result is a table with only the count and property value name.
 
 The results are shown in the following sample output.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-eventlog -logname system -newest 1000 | group-object -property {$_.TimeWritten - $_.TimeGenerated}
 ```
@@ -117,7 +117,7 @@ It uses a pipeline operator (|) to send the entries to the Group-Object cmdlet.
 The value of the Property parameter is specified as a script block (an expression in braces).
 The result of evaluating the script block is the time between when the log entry was generated and when it was written to the log.
 That value is used to group the 1,000 most recent events.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-childitem | group-object extension -noelement
 
@@ -141,7 +141,7 @@ This command groups the items in the current directory by file name extension.
 It uses the NoElement parameter to omit the members of the group.
 
 The results are shown in the following sample output.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> "a", "b", "c", "c", "d" | get-unique
 a
@@ -177,7 +177,7 @@ The third command shows a practical use for this technique.
 It uses the same method to find processes on the computer that have the same process name.
 
 The results are shown in the following sample output.
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $a = get-command get-*, set-* -type cmdlet | group-object -property verb -ashashtable -asstring
 PS C:\> $a

@@ -29,7 +29,7 @@ The Remove-Variable cmdlet deletes a variable and its value from the scope in wh
 You cannot use this cmdlet to delete variables that are set as constants or those that are owned by the system.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-variable Smp
 ```

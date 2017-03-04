@@ -33,7 +33,7 @@ By default, the verbose message stream is not displayed, but you can display it 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Write-Verbose -Message "Searching the Application Event Log."
 PS C:\> Write-Verbose -Message "Searching the Application Event Log." -verbose
@@ -44,7 +44,7 @@ By default, the message is not displayed.
 
 The second command uses the Verbose common parameter, which displays any verbose messages, regardless of the value of the **$VerbosePreference** variable.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $VerbosePreference = "Continue"
 PS C:\> Write-Verbose "Copying file $filename"

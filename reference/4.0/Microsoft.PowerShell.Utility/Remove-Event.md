@@ -39,21 +39,21 @@ To cancel event registrations or unsubscribe, use the Unregister-Event cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-event -sourceIdentifier "ProcessStarted"
 ```
 
 This command deletes events with a source identifier of "Process Started" from the event queue.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> remove-event -eventIdentifier 30
 ```
 
 This command deletes the event with an event ID of 30 from the event queue.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-event | remove-event
 ```

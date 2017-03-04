@@ -30,13 +30,13 @@ As a result, the value of the variable is NULL (empty).
 If the variable has a specified data or object type, Clear-Variable preserves the type of the object stored in the variable.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Clear-Variable my* -Scope Global
 ```
 
 This command deletes the value of global variables that have names that begin with "my".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a=3
 PS C:\> &{ Clear-Variable a }
@@ -49,7 +49,7 @@ The first command sets the value of the variable $a to "3".
 The second command uses the invoke operator (&) to run a Clear-Variable command in a new scope.
 The variable is cleared in the child scope (although it did not exist), but it is not cleared in the local scope.
 The third command, which gets the value of $a, shows that the value "3" is unaffected.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Clear-variable -Name Processes
 ```

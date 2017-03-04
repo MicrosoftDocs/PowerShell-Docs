@@ -32,13 +32,13 @@ It renames one computer in each command.
 This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Rename-Computer -NewName Server044 -DomainCredential Domain01\Admin01 -Restart
 ```
 
 This command renames the local computer to Server044 and then restarts it to make the change effective.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Rename-Computer -ComputerName Srv01 -NewName Server001 -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
 ```
@@ -46,7 +46,7 @@ PS C:\> Rename-Computer -ComputerName Srv01 -NewName Server001 -LocalCredential 
 This command renames the Srv01 computer to Server001 and then restarts it to make the change effective.
 It uses the **LocalCredential** parameter to supply the credentials of a user who has permission to connect to the local computer and the **DomainCredential** parameter to supply the credentials of a user who has permission to rename computers in the domain.
 It uses the **Force** parameter to suppress the confirmation prompt and the **PassThru** parameter to return the results of the command.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $a = Import-Csv ServerNames.csv -Header OldName, NewName
 PS C:\> Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}

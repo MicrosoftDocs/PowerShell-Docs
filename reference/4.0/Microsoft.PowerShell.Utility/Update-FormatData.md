@@ -44,14 +44,14 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> update-formatdata
 ```
 
 This command reloads the formatting files that it loaded previously.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> update-formatdata -appendpath trace.format.ps1xml, log.format.ps1xml
 ```
@@ -62,7 +62,7 @@ Because the command uses the AppendPath parameter, the formatting data in the ne
 
 The AppendPath parameter is used because the new files contain formatting data for objects that are not referenced in the built-in files.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> update-formatdata -prependPath c:\test\NewFiles.format.ps1xml
 

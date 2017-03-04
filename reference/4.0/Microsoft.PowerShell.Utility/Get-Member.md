@@ -35,7 +35,7 @@ To get only certain types of members, such as NoteProperties, use the MemberType
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-service | get-member
 TypeName: System.ServiceProcess.ServiceController
@@ -81,7 +81,7 @@ The command uses the pipeline operator (|) to send the output of a Get-Service c
 Because the Get-Member part of the command does not have any parameters, it uses all of the default values.
 As such, it gets all member types, but it does not get static members and does not display intrinsic members.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-service | get-member -force
 PS C:\> (get-service -schedule).psbase
@@ -98,7 +98,7 @@ Get-Member gets these members, but it hides them by default.
 You can use these properties and methods in the same way that you would use an adapted method of the object.
 The second command shows how to display the value of the PSBase property of the Schedule service.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-service| get-member -view extended
 TypeName: System.ServiceProcess.ServiceController
@@ -113,7 +113,7 @@ This command gets the methods and properties of service objects that were extend
 The Get-Member command uses the View parameter to get only the extended members of the service objects.
 In this case, the extended member is the Name property, which is an alias property of the ServiceName property.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-eventlog -log system | gm -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
@@ -126,7 +126,7 @@ EventID ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFF
 This command gets the script properties of event log objects in the System log in Event Viewer.
 In this case, the only script property is the EventID.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-eventlog -log system | get-member -membertype scriptproperty
 TypeName: System.Diagnostics.EventLogEntry
@@ -142,7 +142,7 @@ The command uses the MemberType parameter to get only objects with a value of Al
 
 The command returns the EventID property of the EventLog object.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $a = "get-process", "get-service", "get-culture", "get-psdrive", "get-executionpolicy"
 PS C:\> foreach ($cmdlet in $a) {invoke-command $cmdlet | get-member -name machinename}
@@ -167,7 +167,7 @@ The second command uses a ForEach statement to invoke each command, send the res
 
 The results show that only process objects (System.Diagnostics.Process) and service objects (System.ServiceProcess.ServiceController) have a MachineName property.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> $a = get-member -inputobject @(1)
 PS C:\> $a.count
@@ -195,7 +195,7 @@ The third command uses the Get-Member cmdlet to get the properties and methods o
 
 The fourth command uses the Count property of the array to find the number of objects in the $a variable.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> $file = get-item c:\test\textFile.txt
 PS C:\> $file.psobject.properties | where-object {$_.issettable} | format-table -property name
@@ -229,7 +229,7 @@ The second command gets all of the changeable properties of the file object in t
 
 The third command gets the changeable properties of all objects in your Windows PowerShell session.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $s = get-service
 PS C:\> $s | get-member

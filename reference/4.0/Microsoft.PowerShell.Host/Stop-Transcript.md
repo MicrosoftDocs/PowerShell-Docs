@@ -31,7 +31,7 @@ You can also stop a transcript by ending the session.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-transcript
 ```

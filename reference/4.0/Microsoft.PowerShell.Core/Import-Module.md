@@ -97,7 +97,7 @@ You can use this WMI and CIM strategy to manage the remote computer.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Import-Module -Name BitsTransfer
 ```
@@ -109,14 +109,14 @@ The **Name** parameter name (-Name) is optional and can be omitted.
 By default, **Import-Module** does not generate any output when it imports a module.
 To request output, use the **PassThru** or **AsCustomObject** parameter, or the **Verbose** common parameter.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Module -ListAvailable | Import-Module
 ```
 
 This command imports all available modules in the path specified by the PSModulePath environment variable ($env:PSModulePath) into the current session.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $m = Get-Module -ListAvailable BitsTransfer, ServerManager
 PS C:\> Import-Module -ModuleInfo $m
@@ -132,7 +132,7 @@ The second command uses the **ModuleInfo** parameter of **Import-Module** to imp
 
 These commands are equivalent to using a pipeline operator (|) to send the output of a **Get-Module** command to **Import-Module**.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Import-Module -Name c:\ps-test\modules\test -Verbose
 VERBOSE: Loading module from path 'C:\ps-test\modules\Test\Test.psm1'.
@@ -147,7 +147,7 @@ This command uses an explicit path to identify the module to import.
 It also uses the **Verbose** common parameter to get a list of the items imported from the module.
 Without the **Verbose**, **PassThru**, or **AsCustomObject** parameter, **Import-Module** does not generate any output when it imports a module.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Import-Module BitsTransfer -cmdlet Add-BitsTransferFile, Get-BitsTransfer
 PS C:\> Get-Module BitsTransfer
@@ -194,7 +194,7 @@ The **ExportedCmdlets** property lists all of the cmdlets that the module export
 The third command uses the **Module** parameter of the Get-Command cmdlet to get the commands that were imported from the **BitsTransfer** module.
 The results confirm that only the **Add-BitsTransfer** and **Get-BitsTransfer** cmdlets were imported.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Import-Module BitsTransfer -Prefix PS -PassThru
 
@@ -236,7 +236,7 @@ The output shows that the module members were correctly prefixed.
 The prefix that you use applies only to the members in the current session.
 It does not change the module.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
 
@@ -287,7 +287,7 @@ The output shows a **Show-Calendar** script method.
 The last command uses the **Show-Calendar** script method.
 The method name must be enclosed in quotation marks, because it includes a hyphen.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Import-Module BitsTransfer
 PS C:\> Import-Module BitsTransfer -force -Prefix PS
@@ -301,7 +301,7 @@ The second command imports the module again, this time using the **Prefix** para
 The second command also includes the **Force** parameter, which removes the module and then imports it again.
 Without this parameter, the session would include two copies of each **BitsTransfer** cmdlet, one with the standard name and one with the prefixed name.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> Get-Date
 Thursday, March 15, 2012 6:47:04 PM
@@ -340,7 +340,7 @@ The fifth command runs the hidden cmdlet by qualifying the command name with the
 
 For more information about command precedence in Windows PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
 
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 PS C:\> Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
 ```
@@ -350,7 +350,7 @@ It uses the **MinimumVersion** (alias=Version) parameter of **Import-Module** to
 
 You can also use the **RequiredVersion** parameter to import a particular version of a module, or use the **Module** and **Version** parameters of the **#Requires** keyword to require a particular version of a module in a script.
 
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 The first command uses the New-PSSession cmdlet to create a remote session (PSSession) to the Server01 computer. The command saves the PSSession in the $s variable
 PS C:\> $s = New-PSSession -ComputerName Server01
@@ -394,7 +394,7 @@ This command uses the Implicit Remoting feature of Windows PowerShell.
 When you import modules from another session, you can use the cmdlets in the current session.
 However, commands that use the cmdlets actually run in the remote session.
 
-### -------------------------- EXAMPLE 11 --------------------------
+### Example 11
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
 PS C:\> $cs = New-CimSession -ComputerName RSDGF03

@@ -42,7 +42,7 @@ To delete events, use the Remove-Event cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> unregister-event -sourceIdentifier ProcessStarted
 ```
@@ -52,7 +52,7 @@ This command cancels the event subscription that has a source identifier of "Pro
 To find the source identifier of an event, use the Get-Event cmdlet.
 To find the source identifier of an event subscription, use the Get-EventSubscriber cmdlet.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> unregister-event -subscriptionId 2
 ```
@@ -61,7 +61,7 @@ This command cancels the event subscription that has a subscription identifier o
 
 To find the subscription identifier of an event subscription, use the Get-EventSubscriber cmdlet.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-eventsubscriber -force | unregister-event -force
 ```

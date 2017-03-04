@@ -32,19 +32,19 @@ This feature provides an alternative to polling for an event.
 It also allows you to determine the response to an event in two different ways: by using the Action parameter of the event subscription and by waiting for an event to return and then respond with an action.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> wait-event
 ```
 
 This command waits for the next event that is raised.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> wait-event -sourceIdentifier "ProcessStarted"
 ```
 
 This command waits for the next event that is raised and that has a source identifier of "ProcessStarted".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $timer.Interval = 2000
 PS C:\> $timer.Autoreset = $false
@@ -63,7 +63,7 @@ ForwardEvent     : False
 ```
 
 This command uses the Wait-Event cmdlet to wait for a timer event on a timer that is set for 2000 milliseconds.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> wait-event -sourceIdentifier "ProcessStarted" -timeout 90
 ```

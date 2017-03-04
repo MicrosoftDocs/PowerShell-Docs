@@ -34,7 +34,7 @@ The Use-Transaction cmdlet is one of a set of cmdlets that support the transacti
 For more information, see about_Transactions.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -80,7 +80,7 @@ Because the command is part of the transaction, it displays the current value of
 The seventh command uses the Complete-Transaction cmdlet to commit the transaction.
 
 The final command uses the ToString method to display the resulting value of the variable as a string.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString

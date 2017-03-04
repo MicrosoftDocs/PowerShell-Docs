@@ -157,7 +157,7 @@ ms.technology:  powershell
   
 ### Navigating the WSMan: Drive  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Set-Location cmdlet to change the current location to the WSMan: drive.  
   
 ```  
@@ -165,7 +165,7 @@ Set-Location WSMan:
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Set-Location command to change the current location to the root location in the Localhost store location.  Use a backslash (\\) or forward slash (/) to indicate a level of the WSMan: drive.  
   
 ```  
@@ -175,7 +175,7 @@ Set-Location -Path Localhost
   
  If you are not in the WSMan: drive, begin the path with the drive name.  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the Set-Location command to change the current location to the root location in the remote system store location.  Use a backslash (\\) or forward slash (/) to indicate a level of the WSMan: drive.  
   
 ```  
@@ -188,7 +188,7 @@ The above command assume that a connection to the remote system already exists. 
   WSMan-Connect SERVER01  
   Set-Location -Path  WSMan:\SERVER01  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command uses the Set-Location command to change the current location to the Client location in the Localhost store location.  Use a backslash (\\) or forward slash (/) to indicate a level of the WSMan: drive.  
   
 ```  
@@ -200,7 +200,7 @@ Set-Location -Path Localhost\Client
   
 ### Displaying the Contents of the WSMan: Drive  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Get-Childitem cmdlet to display the WS-Management stores in the Localhost store location.  
   
 ```  
@@ -210,7 +210,7 @@ get-childitem -path WSMan:\Localhost
   
  If you are in the WSMan: drive, you can omit the drive name.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Get-Childitem cmdlet to display the WS-Management stores in the remote computer (SERVER01) store location.  
   
 ```  
@@ -223,7 +223,7 @@ The above command assume that a connection to the remote system already exists. 
   WSMan-Connect SERVER01  
   get-childitem -path WSMan:\SERVER01  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the Get-Childitem cmdlet to display the current WS-Management connections.  
   
 ```  
@@ -233,7 +233,7 @@ get-childitem -path WSMan:\
   
  If you are in the WSMan: drive, you can omit the drive name.  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command uses the Get-Item cmdlet to get the properties and containers in the current store.  
   
 ```  

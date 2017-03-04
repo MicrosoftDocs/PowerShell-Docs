@@ -65,7 +65,7 @@ However, you cannot use the Disconnect-PSSession, Connect-PSSession, or Receive-
 To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type "exit".
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Enter-PSSession
 [localhost]: PS C:\>
@@ -75,7 +75,7 @@ This command starts an interactive session on the local computer.
 The command prompt changes to indicate that you are now running commands in a different session.
 
 The commands that you enter run in the new session, and the results are returned to the default session as text.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the Enter-PSSession cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
 PS C:\> Enter-PSSession -Computer Server01
@@ -96,7 +96,7 @@ At line:1 char:4
 ```
 
 This command shows how to work in an interactive session with a remote computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Enter-PSSession -Session $s
@@ -104,7 +104,7 @@ PS C:\> Enter-PSSession -Session $s
 ```
 
 These commands use the Session parameter of Enter-PSSession to run the interactive session in an existing Windows PowerShell session (PSSession).
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
 [Server01]: PS C:\>
@@ -112,7 +112,7 @@ PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\Use
 
 This command starts an interactive session with the Server01 computer.
 It uses the Port parameter to specify the port and the Credential parameter to specify the account of a user with permission to connect to the remote computer.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\> Exit-PSSession

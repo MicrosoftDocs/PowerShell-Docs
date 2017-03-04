@@ -27,7 +27,7 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 The **Out-Null** cmdlet sends output to NULL, in effect, deleting it.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ChildItem | Out-Null
 ```

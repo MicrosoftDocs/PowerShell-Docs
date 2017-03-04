@@ -37,7 +37,7 @@ Beginning in Windows PowerShell 3.0, as a security feature, **Import-Alias** doe
 To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the **Force** parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> import-alias test.txt
 ```

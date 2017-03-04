@@ -53,7 +53,7 @@ Beginning in Windows PowerShell 3.0, it prompts only when required parameter val
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-ModuleManifest -Path C:\Users\User01\Documents\WindowsPowerShell\Modules\Test-Module\Test-Module.psd1 -PassThru
 
@@ -114,7 +114,7 @@ The **PassThru** parameter sends the output to the pipeline as well as to the fi
 
 The output shows the default values of all keys in the manifest.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
 ```
@@ -122,7 +122,7 @@ PS C:\> New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TA
 This command creates a new module manifest.
 It uses the **PowerShellVersion** and **AliasesToExport** parameters to add values to the corresponding manifest keys.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> New-ModuleManifest -RequiredModules BitsTransfer,@{ModuleName="PSScheduledJob";ModuleVersion="1.0.0.0";GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"}
 ```
@@ -134,7 +134,7 @@ This command commands creates a module manifest for a module that requires the *
 
 The command uses a string format to specify the name of the **BitsTransfer** module and the hash table format to specify the name, a GUID, and a version of the **PSScheduledJob** module.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> New-ModuleManifest -HelpInfoUri "http://http://go.microsoft.com/fwlink/?LinkID=603"
 ```

@@ -73,13 +73,13 @@ When you import a CIM module (by using the **Import-Module** cmdlet) and then ru
 You can use this WMI and CIM strategy to manage the remote computer.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Module
 ```
 
 This command gets modules that have been imported into the current session.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Module -ListAvailable
 ```
@@ -88,13 +88,13 @@ This command gets the modules that are installed on the computer and can be impo
 
 **Get-Module** looks for available modules in the path specified by the **$env:PSModulePath** environment variable.
 For more information about **PSModulePath**, see about_Modules and about_Environment_Variables.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Module -ListAvailable -All
 ```
 
 This command gets all of the exported files for all available modules.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Module | Get-Member -MemberType Property | Format-Table Name
 
@@ -186,7 +186,7 @@ You can use the properties to format and filter the module objects.
 For more information about the properties, see "PSModule Properties" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143624http://go.microsoft.com/fwlink/?LinkId=143624.
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 
@@ -239,7 +239,7 @@ BitsTransfer   Manifest C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsT
 
 This command gets all module files (imported and available) and groups them by module name.
 This lets you see the module files that each script is exporting.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command gets the **PSModuleInfo** object that represents BitsTransfer module. It saves the object in the $m variable.
 PS C:\> $m = Get-Module -list -Name BitsTransfer
@@ -266,7 +266,7 @@ These commands display the contents of the module manifest for the Windows Power
 
 Modules are not required to have manifest files and, when they do have a manifest file, the manifest file is required only to include a version number.
 However, manifest files often provide useful information about a module, its requirements, and its contents.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
@@ -281,7 +281,7 @@ d----        12/16/2008  12:36 PM            en-US
 This command lists the files in the module's directory.
 This is another way to determine what is in a module before you import it.
 Some modules might have help files or ReadMe files that describe the module.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 
@@ -299,7 +299,7 @@ If you pipe modules from other sessions to the **Import-Module** cmdlet, **Impor
 This is equivalent to using the  Import-PSSession cmdlet.
 You can use the cmdlets from the module in the current session, but commands that use these cmdlets actually run the remote session.
 For more information, see Import-Module and Import-PSSession.
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
 PS C:\> $cs = New-CimSession -ComputerName RSDGF03

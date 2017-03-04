@@ -43,7 +43,7 @@ The Get-Service cmdlet gets objects that represent the services on a local compu
 You can direct Get-Service to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to Get-Service.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-service
 ```
@@ -51,13 +51,13 @@ PS C:\> get-service
 This command retrieves all of the services on the system.
 It behaves as though you typed "get-service *".
 The default display shows the status, service name, and display name of each service.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-service wmi*
 ```
 
 This command retrieves services with service names that begin with "WMI" (the acronym for Windows Management Instrumentation).
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-service -displayname *network*
 ```
@@ -66,13 +66,13 @@ This command displays services with a display name that includes the word
 
 "network".
 Searching the display name finds network-related services even when the service name does not include "Net", such as xmlprov, the Network Provisioning Service.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-service -name win* -exclude winrm
 ```
 
 These commands get only the services with service names that begin with "win", except for the WinRM service.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-service | where-object {$_.Status -eq "Running"}
 ```
@@ -83,7 +83,7 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 
 Status is only one property of service objects.
 To see all of the properties, type "get-service | get-member".
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-service -computername Server02
 ```
@@ -91,7 +91,7 @@ PS C:\> get-service -computername Server02
 This command gets the services on the Server02 remote computer.
 
 Because the ComputerName parameter of Get-Service does not use Windows PowerShell remoting, you can use this parameter even if the computer is not configured for remoting in Windows PowerShell.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-service | where-object {$_.DependentServices} | format-list -property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
@@ -111,7 +111,7 @@ A pipeline operator (|) sends the services to the Where-Object cmdlet, which sel
 
 Another pipeline operator sends the results to the Format-List cmdlet.
 The command uses its Property parameter to display the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services that each service has.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> get-service s* | sort-object status
 
@@ -154,7 +154,7 @@ This command shows that when you sort services in ascending order by the value o
 This happens because the value of Status is an enumeration, in which "Stopped" has a value of "1", and "Running" has a value of 4.
 
 To list running services first, use the Descending parameter of the Sort-Object cmdlet.
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> get-service -name winrm -computername localhost, Server01, Server02 | format-table -property MachineName, Status, Name, DisplayName -auto
 
@@ -170,7 +170,7 @@ This command uses the Get-Service cmdlet to run a "Get-Service Winrm" command on
 The Get-Service command runs on the remote computers, and the results are returned to the local computer.
 A pipeline operator (|) sends the results to the Format-Table cmdlet, which formats the services as a table.
 The Format-Table command uses the Property parameter to specify the properties displayed in the table, including the MachineName property.
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 PS C:\> get-service winrm -requiredServices
 ```
@@ -178,7 +178,7 @@ PS C:\> get-service winrm -requiredServices
 This command gets the services that the WinRM service requires.
 
 The command returns the value of the ServicesDependedOn property of the service.
-### -------------------------- EXAMPLE 11 --------------------------
+### Example 11
 ```
 PS C:\> "winrm" | get-service
 ```

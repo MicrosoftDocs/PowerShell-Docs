@@ -31,13 +31,13 @@ You can use the Export-Alias cmdlet to save your alias information to a file.
 You can later use Import-Alias to retrieve that saved alias information.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-alias list get-childitem
 ```
 
 This command creates an alias named "list" to represent the Get-ChildItem cmdlet.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-alias -name w -value get-wmiobject -description "quick wmi alias" -option ReadOnly
 PS C:\> get-alias -name w | format-list *

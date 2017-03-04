@@ -38,7 +38,7 @@ The Trace-Command cmdlet configures and starts a trace of the specified expressi
 It works like Set-TraceSource, except that it applies only to the specified command.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> trace-command -name metadata,parameterbinding,cmdlet -expression {get-process notepad} -pshost
 ```
@@ -46,7 +46,7 @@ PS C:\> trace-command -name metadata,parameterbinding,cmdlet -expression {get-pr
 This command starts a trace of metadata processing, parameter binding, and cmdlet creation and destruction of the "get-process notepad" expression.
 It uses the Name parameter to specify the trace sources, the Expression parameter to specify the command, and the PSHost parameter to send the output to the console.
 Because it does not specify any tracing options or listener options, the command uses the defaults, "All" for the tracing options, and "None" for the listener options.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = "i*"
 PS C:\> trace-command parameterbinding {get-alias $input} -pshost -inputobject $a

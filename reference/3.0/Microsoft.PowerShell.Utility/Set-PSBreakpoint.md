@@ -59,7 +59,7 @@ The Set-PSBreakpoint cmdlet is one of several cmdlets designed for debugging Win
 For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-psbreakpoint -script sample.ps1 -line 5
 Column     : 0
@@ -76,7 +76,7 @@ This command sets a breakpoint at line 5 in the Sample.ps1 script.
 As a result, when the script runs, execution stops immediately before line 5 would execute.
 
 When you set a new breakpoint by line number, the Set-PSBreakpoint cmdlet generates a line breakpoint object (System.Management.Automation.LineBreakpoint) that includes the breakpoint ID and hit count, as shown in the following sample output.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-psbreakpoint -command Increment -script sample.ps1
 Command    : Increment
@@ -93,20 +93,20 @@ The script stops executing immediately before each call to the specified functio
 
 The result is a command breakpoint object.
 Before the script runs, the value of the HitCount property is 0.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-psbreakpoint -script sample.ps1 -variable Server -Mode ReadWrite
 ```
 
 This command sets a breakpoint on the Server variable in the Sample.ps1 script.
 It uses the Mode parameter with a value of ReadWrite to stop execution when the value of the variable is read and just before the value changes.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> set-psbreakpoint -script Sample.ps1 -command "write*"
 ```
 
 This command sets a breakpoint on every command in the Sample.ps1 script that begins with "write", such as "write-host".
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> set-psbreakpoint -script test.ps1 -command DiskTest `
 -action { if ($disk -gt 2) { break } }
@@ -119,7 +119,7 @@ The value of the action is a script block that tests the value of the $disk vari
 
 The action uses the BREAK keyword to stop execution if the condition is met.
 The alternative (and the default) is CONTINUE.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> set-psbreakpoint -command checklog
 
@@ -143,7 +143,7 @@ PS C:\> >>
 This command sets a breakpoint on the CheckLog function.
 Because the command does not specify a script, the breakpoint is set on anything that runs in the current session.
 The debugger breaks when the function is called, not when it is declared.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> set-psbreakpoint -script sample.ps1 -line 1, 14, 19 -column 2 -action {&(log.ps1)}
 

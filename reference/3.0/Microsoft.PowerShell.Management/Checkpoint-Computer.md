@@ -31,14 +31,14 @@ System restore points and the **Checkpoint-Computer** cmdlet are supported only 
 Beginning in Windows 8, **Checkpoint-Computer** cannot create more than one checkpoint each day.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Checkpoint-Computer -Description "Install MyApp"
 ```
 
 This command creates a system restore point called "Install MyApp".
 It uses the default APPLICATION_INSTALL restore point type.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
 ```

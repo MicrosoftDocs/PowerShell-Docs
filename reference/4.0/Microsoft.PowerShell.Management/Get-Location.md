@@ -44,7 +44,7 @@ For more information, see the Notes and the descriptions of the Stack and StackN
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-location
 Path
@@ -56,7 +56,7 @@ This command displays your location in the current Windows PowerShell drive.
 
 For example, if you are in the Windows directory of the C: drive, it displays the path to that directory.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the Set-Location cmdlet to set the current location to the Windows subdirectory of the C: drive.
 PS C:\> set-location C:\Windows
@@ -95,7 +95,7 @@ HKLM:\Software\Microsoft
 
 These commands demonstrate the use of Get-Location to display your current location in different Windows PowerShell drives.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command sets the current location to the Windows directory on the C: drive.
 PS C:\> set-location C:\Windows
@@ -122,7 +122,7 @@ C:\WINDOWS\system32
 These commands show how to use the Stack and StackName parameters of Get-Location to list the locations in the current location stack and alternate location stacks.
 For more information about location stacks, see the Notes.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> function prompt { 'PowerShell: ' + (get-location) + '> '}
 PowerShell: C:\WINDOWS>
