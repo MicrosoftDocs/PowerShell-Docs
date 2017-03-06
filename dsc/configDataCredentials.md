@@ -158,7 +158,6 @@ This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/grou
 It can create local groups and add or remove members.
 It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.
 However, the resource only uses the `Credential` property.
-Read more about `PsDscRunAsCredential` in the [WMF Release Notes](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas).
 
 ## Example: The Group resource Credential property
 
