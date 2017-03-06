@@ -35,7 +35,7 @@ For more information about how to connect to the WinRM service on a remote compu
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Disconnect-WSMan -computer server01
 PS C:\> cd WSMan:

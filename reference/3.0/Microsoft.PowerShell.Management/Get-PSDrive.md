@@ -49,7 +49,7 @@ You do not need to restart Windows PowerShell.
 Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-PSDrive
 
@@ -70,7 +70,7 @@ X          FileSystem    X:\
 This command gets the drives in the current session.
 
 The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-PSDrive D
 
@@ -81,7 +81,7 @@ D          FileSystem    D:\
 
 This command gets the D: drive on the computer.
 Note that the drive letter in the command is not followed by a colon.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
 
@@ -96,7 +96,7 @@ Z          FileSystem    C:\Windows\System32
 
 This command gets all of the drives that are supported by the Windows PowerShell FileSystem provider.
 This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the New-PSDrive cmdlet.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
 else { Write-Host "The X: drive is already in use." }
@@ -104,7 +104,7 @@ else { Write-Host "The X: drive is already in use." }
 
 This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
 If it is not, the command uses the New-PSDrive cmdlet to create a temporary drive that is mapped to the HKLM:\Network registry key.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
 PS C:\> Get-PSDrive -provider FileSystem

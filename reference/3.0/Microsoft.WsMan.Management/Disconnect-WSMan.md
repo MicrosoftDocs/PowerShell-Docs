@@ -32,7 +32,7 @@ However, you can also use this cmdlet to disconnect from the WinRM service on re
 For more information about how to connect to the WinRM service on a remote computer, see Connect-WSMan.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Disconnect-WSMan -computer server01
 PS C:\> cd WSMan:

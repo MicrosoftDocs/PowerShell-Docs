@@ -46,7 +46,7 @@ A location can be a file system location, such as a directory, or a location exp
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ChildItem
 ```
@@ -58,7 +58,7 @@ If the item does not have child items, this command returns to the command promp
 The default display lists the mode (attributes), last write time, file size (length), and the name of the file.
 The valid values for mode are d (directory), a (archive), r (read-only), h (hidden), and s (system).
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-ChildItem -Path *.txt -Recurse -Force
 ```
@@ -71,7 +71,7 @@ To use the **Recurse** parameter on Windows PowerShell 2.0 and earlier versions 
 Use the Include parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
@@ -80,21 +80,21 @@ This command lists the .txt files in the Logs subdirectory, except for those who
 It uses the wildcard character (*) to indicate the contents of the Logs subdirectory, not the directory container.
 Because the command does not include the **Recurse** parameter, **Get-ChildItem** does not include the content of directory automatically; you need to specify it.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-ChildItem -Path HKLM:\Software
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Import-Module Microsoft.PowerShell.Security
 PS C:\> Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
@@ -113,7 +113,7 @@ This parameter gets only certificates that have code-signing authority.
 
 For more information about the Certificate provider and the Cert: drive, go to http://go.microsoft.com/fwlink/?LinkID=113433http://go.microsoft.com/fwlink/?LinkID=113433 or use the Update-Help cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type "Get-Help Certificate".
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```

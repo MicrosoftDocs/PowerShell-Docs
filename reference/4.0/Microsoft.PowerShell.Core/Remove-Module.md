@@ -41,21 +41,21 @@ It affects only the current Windows PowerShell session.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Remove-Module -Name BitsTransfer
 ```
 
 This command removes the BitsTransfer module from the current session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
@@ -84,7 +84,7 @@ The Verbose messages show the items that are removed.
 The messages differ because the BitsTransfer module includes an assembly that implements its cmdlets and a nested module with its own assembly.
 The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = Get-Module BitsTransfer
 PS C:\> Remove-Module -ModuleInfo $a

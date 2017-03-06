@@ -58,7 +58,7 @@ ms.technology:  powershell
   
 ### Getting to the Variable: Drive  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command changes the current location to the Variable: drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type "set-location c:".  
   
 ```  
@@ -68,7 +68,7 @@ set-location variable:
   
 ### Displaying the Value of Variables  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets the list of all the variables and their values in the current session. You can use this command from any Windows PowerShell drive.  
   
 ```  
@@ -76,7 +76,7 @@ get-childitem -path variable:
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets the variables with names that begin with "max". You can use this command from any Windows PowerShell drive.  
   
 ```  
@@ -86,7 +86,7 @@ get-childitem -path variable:max*
   
  If you are in the Variable: drive, you can omit the drive name from the path.  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command gets the value of the WhatIfPreference variable by typing it at the command line.  
   
  The name of the variable is preceded by a dollar sign ($) to indicate that it is a variable. The Variable: drive name is not specified.  
@@ -96,7 +96,7 @@ $WhatIfPreference
   
 ```  
   
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command uses the LiteralPath parameter of Get-ChildItem to get the value of the "?" variable from within the Variable: drive. Get-ChildItem does not attempt to resolve any wildcards in the values of the LiteralPath parameter.  
   
 ```  
@@ -106,7 +106,7 @@ get-childitem -literalpath ?
   
  To display the value of a variable with a special character name without a cmdlet, type a dollar sign ($) and the variable name. For example, to display the value of the "?" variable, type "$?".  
   
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command gets the variables that have the values of "ReadOnly" or "Constant" for their Options property.  
   
 ```  
@@ -116,7 +116,7 @@ get-childitem -path variable: | where-object {$_.options -match "Constant" -or $
   
 ### Creating a New Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command creates the "services" variable and stores the results of a Get-Service command in it. Because the current location is in the Variable: drive, the value of the Path parameter is a dot (.), which represents the current location.  
   
  The parentheses around the Get-Service command ensure that the command is executed before the variable is created. Without the parentheses, the value of the new variable is a "Get-Service" string.  
@@ -128,7 +128,7 @@ new-item -path . -name services -value (Get-Service)
   
  If you are not in the variable: drive, include the Variable: drive name in the path.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command creates a "services" variable and stores the result of a Get-Service command in it.  
   
  The command uses a dollar sign ($) to indicate a variable and the assignment operator (=) to assign the result of the Get-Service command to the newly created variable.  
@@ -142,7 +142,7 @@ $services = Get-Service
   
 ### Displaying the Properties and Methods of Variables  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Get-Item cmdlet to get all variables. The pipeline operator (&#124;) sends the results to the Get-Member cmdlet, which displays the methods and properties of the object.  
   
 ```  
@@ -153,7 +153,7 @@ get-item -path variable:* | get-member
  When you pipe a collection of objects (such as the collection of variables in the Variable: drive) to Get-Member, Get-Member evaluates each object in the collection separately and returns information about each of the object types that it finds.   
 To get information about the collection of objects in the Variable: drive, use the InputObject parameter of Get-Member. For example, "get-member -inputobject (get-item variable:*)". When you use InputObject, Get-Member evaluates the collection, not the objects in the collection.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command lists the values of the properties of the "home" variable. It uses the Get-Item cmdlet to get an object that represents the "home" variable. The pipeline operator (&#124;) sends the results to the Format-List command. The Format-List command uses the Property parameter with a wildcard character (*) to format and to display the values of all of the properties of the "home" variable.  
   
 ```  
@@ -163,7 +163,7 @@ get-item variable:home | format-list -property *
   
 ### Changing the Properties of a Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Rename-Item cmdlet to change the name of the "a" variable to "processes".  
   
 ```  
@@ -171,7 +171,7 @@ rename-item -path variable:a -newname processes
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Set-Item cmdlet to change the value of the ErrorActionPreference variable to "Stop".  
   
 ```  
@@ -179,7 +179,7 @@ set-item -path variable:ErrorActionPreference -value Stop
   
 ```  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command changes the value of the ErrorActionPreference variable to "Stop".  
   
  It uses a dollar sign ($) to indicate a variable and the assignment operator (=) to assign the value.  
@@ -191,7 +191,7 @@ $ErrorActionPreference = Stop
   
 ### Copying a Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Copy-Item cmdlet to copy the "processes" variable to "old_processes". This creates a new variable named "old_processes" that has the same value as the "processes" variable.  
   
 ```  
@@ -201,7 +201,7 @@ copy-item -path variable:processes -destination variable:old_processes
   
  If the command is issued from within the Variable: drive, you can omit the drive name from the value of the Path parameter.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command copies the "processes" variable to "old_processes" without using a cmdlet. It uses the dollar sign ($) to indicate variables and the assignment operator to assign the value of $processes to old_processes.  
   
 ```  
@@ -211,7 +211,7 @@ $old_processes = $processes
   
 ### Deleting a Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command deletes the "serv" variable from the current session. You can use this command in any Windows PowerShell drive.  
   
 ```  
@@ -219,7 +219,7 @@ remove-variable -path variable:serv
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command deletes all variables from the current session except for the variables whose Options property has a value of Constant. Without the Force parameter, the command does not delete variables whose Options property has a value of ReadOnly.  
   
 ```  
@@ -229,7 +229,7 @@ remove-item variable:* -force
   
 ### Setting the Value of a Variable to NULL  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Clear-Item cmdlet to change the value of the "processes" variable to NULL.  
   
 ```  
@@ -237,7 +237,7 @@ clear-item -path variable:processes
   
 ```  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command clears the value of the "processes" variable by assigning a null value to it. It uses the $null automatic variable to represent the NULL value.  
   
 ```  

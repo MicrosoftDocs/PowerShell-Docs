@@ -31,13 +31,13 @@ Developers use the trace data to monitor data flow, program execution, and error
 The tracing cmdlets were designed for Windows PowerShell developers, but they are available to all users.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-traceSource  *provider*
 ```
 
 This command gets all of the trace sources that have names that include "provider".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-tracesource
 ```

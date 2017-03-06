@@ -34,13 +34,13 @@ The Start-Sleep cmdlet suspends the activity in a script or session for the spec
 You can use it for many tasks, such as waiting for an operation to complete or pausing before repeating an operation.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Start-Sleep -s 15
 ```
 
 This command makes all commands in the session sleep for 15 seconds.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Start-Sleep -m 500
 ```

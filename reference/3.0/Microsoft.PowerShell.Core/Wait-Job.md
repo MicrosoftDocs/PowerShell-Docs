@@ -63,13 +63,13 @@ To enable **Wait-Job** to wait for jobs of a particular type, import the module 
 For information about a particular custom job type, see the documentation of the custom job type feature.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Job | Wait-Job
 ```
 
 This command waits for all of the background jobs running in the session to complete.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -Name Date1 -ScriptBlock {Get-Date}}
@@ -93,7 +93,7 @@ This command waits for the Date1 jobs on each computer to complete.
 It stores the resulting collection (array) of job objects in the $done variable.
 
 The fourth command uses the Count property of the array of job objects in the $done variable to determine how many of the jobs are complete.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = New-PSSession (Get-Content Machines.txt)
 PS C:\> $c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
@@ -119,7 +119,7 @@ For more information about the **Using** scope modifier, see about_Remote_Variab
 
 The fourth command uses the **Invoke-Command** cmdlet to run a **Wait-Job** command in the sessions.
 It uses the **Any** parameter to wait until the first job on the remote computers is complete.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
@@ -141,27 +141,27 @@ In this case, after 30 seconds, only the command on the Server02 computer has co
 Wait-Job ends the wait, displays the command prompt, and returns the object that represents the job that was completed.
 
 The $done variable contains a job object that represents the job that ran on Server02.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Wait-Job -id 1,2,5 -Any
 ```
 
 This command identifies three jobs by their IDs and waits until any of them are complete.
 The command prompt returns when the first job completes.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Wait-Job -Name DailyLog -Timeout 120
 ```
 
 This command waits 120 seconds (two minutes) for the DailyLog job to complete.
 If the job does not complete in the next two minutes, the command prompt returns anyway, and the job continues to run in the background.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Wait-Job -Name Job3
 ```
 
 This Wait-Job command uses the job name to identify the job to wait for.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> $j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 PS C:\> $j | Wait-Job
@@ -176,7 +176,7 @@ The job runs a Get-ChildItem command that gets all of the files with a ".ps1" fi
 
 The third command uses the Wait-Job cmdlet to wait until the job is complete.
 When the job completes, the command displays the job object, which contains information about the job.
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
@@ -196,7 +196,7 @@ The command returns a job object, just like the jobs started by using Start-Job,
 
 The third command uses a pipeline operator (|) to send the job object in $j to the Wait-Job cmdlet.
 Notice that an Invoke-Command command is not required in this case, because the job resides on the local computer.
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 PS C:\> Get-Job
 

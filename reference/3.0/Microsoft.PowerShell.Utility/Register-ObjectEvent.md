@@ -39,7 +39,7 @@ To get the event subscribers in the session, use the Get-EventSubscriber cmdlet.
 To cancel the subscription, use the Unregister-Event cmdlet, which deletes the event subscriber from the session.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
 PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
@@ -50,7 +50,7 @@ This example subscribes to events generated when a new process starts.
 
 The command uses the ManagementEventWatcher object to get EventArrived events.
 A query object specifies that the events are instance creation events for the Win32_Process class.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
 PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
@@ -74,7 +74,7 @@ The Register-ObjectEvent command returns a job object that represents the action
 You can use the Job cmdlets, such as Get-Job and Receive-Job, to manage the background job.
 
 For more information, see about_Jobs.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = new-pssession -computername Server01, Server02
 PS C:\> invoke-command -session $s -filepath ProcessCreationEvent.ps1
@@ -102,7 +102,7 @@ The first command creates PSSessions on two remote computers and saves them in t
 The second command uses the FilePath parameter of the Invoke-Command cmdlet to run the ProcessCreationEvent.ps1 script in the each of the PSSessions in $s.
 
 The script includes a Register-ObjectEvent command that subscribes to instance creation events on the Win32_Process object through the ManagementEventWatcher object and its EventArrived event.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $timer  = New-Object Timers.Timer
 PS C:\> $timer.Interval = 500

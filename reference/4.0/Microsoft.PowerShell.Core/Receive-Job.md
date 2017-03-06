@@ -79,7 +79,7 @@ For information about a particular custom job type, see the documentation of the
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
 PS C:\> Receive-Job -Job $job
@@ -93,7 +93,7 @@ The command uses the assignment operator (=) to save the resulting job object in
 The second command uses the **Receive-Job** cmdlet to get the results of the job.
 It uses the **Job** parameter to specify the job.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
 PS C:\> $job | Receive-Job
@@ -102,7 +102,7 @@ PS C:\> $job | Receive-Job
 This example is the same as Example 2, except that the command uses a pipeline operator (|) to send the job object to **Receive-Job**.
 As a result, the command does not need a **Job** parameter to specify the job.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command uses the Invoke-Command cmdlet to start a background job that runs a Get-Service command on three remote computers. The command uses the **AsJob** parameter to run the command as a background job. The command saves the resulting job object in the $j variable.When you use the **AsJob** parameter of **Invoke-Command** to start a job, the job object is created on the local computer, even though the job runs on the remote computers. As a result, you use local commands to manage the job.Also, when you use **AsJob**, Windows PowerShell returns one job object that contains a child job for each job that was started. In this case, the job object contains three child jobs, one for each job on each remote computer.
 PS C:\>
@@ -132,7 +132,7 @@ Running AppMgmt     Application Management             Server02
 
 These commands get the results of one of several background jobs run on remote computers.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the New-PSSession cmdlet to create three user-managed sessions ("PSSessions), one on each of the servers specified in the command. It saves the sessions in the $s variable.
 PS C:\> $s = new-pssession -computername Server01, Server02, Server03

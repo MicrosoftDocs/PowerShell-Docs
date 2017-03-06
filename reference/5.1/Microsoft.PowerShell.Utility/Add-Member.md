@@ -71,7 +71,8 @@ For more information, see the *PassThru* parameter description.
 PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 PS C:\> $A | Add-Member Status Done
-PS C:\> $A.StatusDone
+PS C:\> $A.Status
+Done
 ```
 
 These commands add the Status note property with a value of "Done" to the FileInfo object that represents the Test.txt file.
@@ -90,7 +91,8 @@ As the output shows, the value is "Done".
 ```
 PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
-PS C:\> $A.FileLength2394
+PS C:\> $A.FileLength
+2394
 ```
 
 These commands add the FileLength alias property to the object that represents the Test.txt file.
@@ -104,8 +106,10 @@ The third command uses dot notation to get the value of the new FileLength prope
 
 ### Example 3: Add a StringUse note property to a string
 ```
-PS C:\> $A = "A string"PS C:\>  $A = $A | Add-Member @{StringUse="Display"} -PassThru
-PS C:\> $A.StringUseDisplay
+PS C:\> $A = "A string"
+PS C:\> $A = $A | Add-Member @{StringUse="Display"} -PassThru
+PS C:\> $A.StringUse
+Display
 ```
 
 These commands add the **StringUse** note property to a string.
@@ -142,35 +146,25 @@ The third command uses dot notation to call the new PadBoth script method on the
 
 ### Example 5: Add an alias property to an event
 ```
-PS C:\> $Event = Get-EventLog -LogName System -Newest 1
-PS C:\> $Event.TimeWritten | Get-MemberTypeName: System.DateTime
+PS C:\>$Event = Get-EventLog -LogName System -Newest 1
+PS C:\>$Event.TimeWritten | Get-Member
+TypeName: System.DateTime
 Name                 MemberType     Definition
-
-
 ----                 ----------     ----------
-
-
-Add                  Method         System.DateTime Add(System.TimeSpan value) 
-
-
-AddDays              Method         System.DateTime AddDays(double value) 
-
-
-AddHours             Method         System.DateTime AddHours(double value) 
-
-
-AddMilliseconds      Method         System.DateTime AddMilliseconds(double value) 
-
-
+Add                  Method         System.DateTime Add(System.TimeSpan value)
+AddDays              Method         System.DateTime AddDays(double value)
+AddHours             Method         System.DateTime AddHours(double value)
+AddMilliseconds      Method         System.DateTime AddMilliseconds(double value)
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
 
 
-PS C:\> Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
-PS C:\> $Event.When | Get-MemberTypeName: System.String
+PS C:\>Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
+PS C:\>$Event.When | Get-Member
+TypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
-CompareTo        Method                int CompareTo(System.Object value), int CompareTo(string strB) 
+CompareTo        Method                int CompareTo(System.Object value), int CompareTo(string strB)
 Contains         Method                bool Contains(string value)
 ```
 
@@ -220,15 +214,20 @@ The last command in the function gives the new property the same name as the ori
 PS C:\> $Asset = New-Object -TypeName PSObject
 PS C:\> $d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
 PS C:\> $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-PS C:\> $Asset | Get-Member   TypeName: Asset
+PS C:\> $Asset | Get-Member
+
+
+   TypeName: Asset
+
 Name        MemberType   Definition
 ----        ----------   ----------
-Equals      Method       bool Equals(System.Object obj) GetHashCode Method       int GetHashCode()
+Equals      Method       bool Equals(System.Object obj)
+GetHashCode Method       int GetHashCode()
 GetType     Method       type GetType()
 ToString    Method       string ToString()
-Name        NoteProperty System.String Name=Server30
-PSVersion   NoteProperty System.String PSVersion=4.0
-System      NoteProperty System.String System=Server Core
+Name        NoteProperty string Name=Server30
+PSVersion   NoteProperty string PSVersion=4.0
+System      NoteProperty string System=Server Core
 ```
 
 This example creates the **Asset** custom object.

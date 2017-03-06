@@ -28,7 +28,7 @@ The Stop-Transcript cmdlet stops a transcript that was started by using the Star
 You can also stop a transcript by ending the session.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-transcript
 ```

@@ -46,7 +46,7 @@ You can specify the services by their service names or display names, or you can
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-service -name eventlog
 ```
@@ -54,7 +54,7 @@ PS C:\> start-service -name eventlog
 This command starts the EventLog service on the local computer.
 It uses the Name parameter to identify the service by its service name.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-service -displayname *remote* -whatif
 ```
@@ -63,7 +63,7 @@ This command tells what would happen if you started the services with a display 
 It uses the DisplayName parameter to specify the services by their display name instead of by their service name.
 And, it uses the WhatIf parameter to tell what would happen if the command were executed instead of executing the command.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = get-service wmi
 PS C:\> start-service -InputObject $s -passthru | format-list >> services.txt
@@ -80,7 +80,7 @@ Without this parameter, Start-Service does not create any output.
 The pipeline operator (|) passes the object that Start-Service creates to the Format-List cmdlet, which formats the object as a list of its properties.
 The append redirection operator (\>\>) redirects the output to the services.txt file, where it is added to the end of the existing file.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> start-service tlntsvr
 Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the    following error: Cannot start service TlntSvr on computer '.'.

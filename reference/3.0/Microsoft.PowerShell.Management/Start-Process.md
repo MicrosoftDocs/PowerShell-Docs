@@ -41,20 +41,20 @@ If you specify a non-executable file, Start-Process starts the program that is a
 You can use the parameters of Start-Process to specify options, such as loading a user profile, starting the process in a new window, or using alternate credentials.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-process sort.exe
 ```
 
 This command starts a process that uses the Sort.exe file in the current directory.
 The command uses all of the default values, including the default window style, working directory, and credentials.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-process myfile.txt -workingdirectory "C:\PS-Test" -verb Print
 ```
 
 This command starts a process that prints the C:\PS-Test\MyFile.txt file.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> start-process Sort.exe -RedirectStandardInput Testsort.txt -RedirectStandardOutput Sorted.txt -RedirectStandardError SortError.txt -UseNewEnvironment
 ```
@@ -63,20 +63,20 @@ This command starts a process that sorts items in the Testsort.txt file and retu
 Any errors are written to the SortError.txt file.
 
 The UseNewEnvironment parameter specifies that the process runs with its own environment variables.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> start-process notepad -wait -windowstyle Maximized
 ```
 
 This command starts the Notepad process.
 It maximizes the window and retains the window until the process completes.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> start-process powershell -verb runAs
 ```
 
 This command starts Windows PowerShell with the "Run as administrator" option.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $startExe = new-object System.Diagnostics.ProcessStartInfo -args PowerShell.exe
 PS C:\> $startExe.verbs

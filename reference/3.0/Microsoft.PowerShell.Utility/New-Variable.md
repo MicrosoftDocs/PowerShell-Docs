@@ -34,20 +34,20 @@ You can use the parameters of New-Variable to set the properties of the variable
 Typically, you create a new variable by typing the variable name and its value, such as "$var = 3", but you can use the New-Variable cmdlet to use its parameters.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-variable days
 ```
 
 This command creates a new variable named "days".
 It has no value immediately following the command.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-variable zipcode -value 98033
 ```
 
 This command creates a variable named "zipcode" and assigns it the value "98033".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> new-variable -name max -value 256 -option readonly
 PS C:\> new-variable -name max -value 1024
@@ -69,7 +69,7 @@ This command returns an error, because the read-only option is set on the variab
 
 The third command uses the Force parameter to override the read-only protection on the variable.
 In this case, the command to create a new variable with the same name succeeds.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> new-variable -name counter -visibility private
 

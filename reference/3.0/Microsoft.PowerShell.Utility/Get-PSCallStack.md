@@ -31,7 +31,7 @@ Although it is designed to be used with the Windows PowerShell debugger, you can
 To run a Get-PSCallStack command while in the debugger,  type "k" or "get-pscallstack".
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> function my-alias {
 $p = $args[0]

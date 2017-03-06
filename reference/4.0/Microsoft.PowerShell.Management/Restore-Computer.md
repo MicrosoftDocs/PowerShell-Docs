@@ -35,7 +35,7 @@ System restore points and the Restore-Computer cmdlet are supported only on clie
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> restore-computer -RestorePoint 253
 ```
@@ -44,7 +44,7 @@ This command restores the local computer to the restore point with sequence numb
 
 Because the RestorePoint parameter is positional, you can omit the parameter name.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> restore-computer 255 -confirm
 
@@ -57,7 +57,7 @@ Performing operation "Restore-Computer" .
 This command restores the local computer to the restore point with sequence number 255.
 It uses the Confirm parameter to prompt the user before actually performing the operation.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-ComputerRestorePoint
 PS C:\> Restore-Computer -RestorePoint 255

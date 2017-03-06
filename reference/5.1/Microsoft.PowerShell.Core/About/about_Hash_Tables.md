@@ -180,7 +180,6 @@ $hashtable.<key>
 <value>
 ```
 
-
 For example:
 
 
@@ -190,6 +189,14 @@ C:\PS> $hash.Number
   
 C:\PS> $hash.Color  
 Blue
+```
+
+
+If the key name collides with one of the property names of the HashTable type, you can use `PSBase` to access those properties.
+For example, if the key name is `keys` and you want to return the collection of Keys, use this syntax:
+
+```powershell
+$hashtable.PSBase.Keys
 ```
 
 

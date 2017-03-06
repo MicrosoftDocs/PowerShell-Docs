@@ -44,7 +44,7 @@ For more information about this registry entry, see the notes and examples.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $c = Get-Credential
 ```
@@ -57,7 +57,7 @@ When you enter the requested information, the cmdlet creates a **PSCredential** 
 You can use the object as input to cmdlets that request user authentication, such as those with a **Credential** parameter.
 However, some providers that are installed with Windows PowerShell do not support the **Credential** parameter.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $c = Get-Credential
 PS C:\> Get-WmiObject Win32_DiskDrive -ComputerName Server01 -Credential $c
@@ -69,7 +69,7 @@ The first command gets a credential object and saves it in the $c variable.
 The second command uses the credential object in a Get-WmiObject command.
 This command gets information about the disk drives on the Server01 computer.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-WmiObject Win32_BIOS -ComputerName Server01 -Credential (Get-Credential -Credential Domain01\User01)
 ```
@@ -79,7 +79,7 @@ This command shows how to include a **Get-Credential** command in a  **Get-WmiOb
 This command uses the  Get-WmiObject cmdlet to get information about the BIOS on the Server01 computer.
 It uses the **Credential** parameter to authenticate the user, Domain01\User01, and a **Get-Credential** command as the value of the **Credential** parameter.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $c = Get-Credential -credential User01
 PS C:\> $c.Username
@@ -93,7 +93,7 @@ The first command gets a credential with the user name User01 and stores it in t
 
 The second command displays the value of the **Username** property of the resulting credential object.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
@@ -104,7 +104,7 @@ The command saves the resulting credentials in the $Credential variable.
 The **PromptForCredential** method is an alternative to using the **Get-Credential** cmdlet.
 When you use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the message box.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name ConsolePrompting -Value $true
 ```
@@ -119,7 +119,7 @@ To use a dialog box for prompting, set the value of the ConsolePrompting to fals
 The ConsolePrompting registry entry works in some host programs, such as the Windows PowerShell console.
 It might not work in all host programs.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command saves the user account name in the $User parameter. The value must have the "Domain\User" or "ComputerName\User" format.
 PS C:\> $User = "Domain01\User01"
@@ -134,7 +134,7 @@ PS C:\> $Credential = New-Object -TypeName System.Management.Automation.PSCreden
 This example shows how to create a credential object that is identical to the object that **Get-Credential** returns without prompting the user.
 This method requires a plain text password, which might violate the security standards in some enterprises.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUsers
 Windows PowerShell Credential Request
@@ -146,7 +146,7 @@ This command uses the **Message** and **UserName** parameters of the **Get-Crede
 This command format is designed for shared scripts and functions.
 In this case, the message tells the user why credentials are needed and gives them confidence that the request is legitimate.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
 

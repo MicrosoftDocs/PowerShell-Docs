@@ -36,21 +36,21 @@ The Convert-Path cmdlet converts a path from a Windows PowerShell path to a Wind
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> convert-path .
 ```
 
 This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> convert-path HKLM:\software\microsoft
 ```
 
 This command converts the Windows PowerShell provider path to a standard registry path.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> convert-path ~
 C:\Users\User01

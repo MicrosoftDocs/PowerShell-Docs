@@ -34,19 +34,19 @@ Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PS
 The Get-Hotfix cmdlet gets hotfixes (also called updates) that have been installed on either the local computer (or on specified remote computers) by Windows Update, Microsoft Update, or Windows Server Update Services; the cmdlet also gets hotfixes or updates that have been installed manually by users.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-hotfix
 ```
 
 This command gets all hotfixes on the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-hotfix -description Security* -computername Server01, Server02 -cred Server01\admin01
 ```
 
 This command gets all hotfixes on the Server01 and Server02 computers that have a description that begins with "Security".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $a = get-content servers.txt
 PS C:\> $a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing-kb953631.txt }}
@@ -57,7 +57,7 @@ The commands in this example create a text file listing the names of computers t
 The commands use the Get-Hotfix cmdlet to get the KB957095 security update on all of the computers whose names are listed in the Servers.txt file.
 
 If a computer does not have the update, the Add-Content cmdlet writes the computer name in the Missing-KB953631.txt file.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> (get-hotfix | sort installedon)[-1]
 ```

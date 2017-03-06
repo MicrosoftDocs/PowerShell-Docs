@@ -72,13 +72,13 @@ Beginning in Windows PowerShell 3.0, the **__Server** property of the object tha
 This makes it easier to include the source computer name in output and reports.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-WmiObject -Class Win32_Process
 ```
 
 This command get the processes on the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 ```
@@ -86,13 +86,13 @@ PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 This command gets the services on a remote computer.
 It uses the ComputerName parameter to specify the Internet Protocol (IP) address, 127.0.0.1.
 By default, the current account must be a member of the Administrators group on the remote computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-WmiObject -Namespace "root/default" -List
 ```
 
 This command gets the WMI classes in the root or default namespace of the local computer.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
 PSComputerName : SERVER01
@@ -136,7 +136,7 @@ This makes it easy to see the computer on which the service resides.
 
 **PSComputerName** is an alias of the **__Server** property of the objects that **Get-WmiObject** returns.
 This alias is introduced in Windows PowerShell 3.0.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> (Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
 ```
@@ -146,7 +146,7 @@ The command uses a **Get-WmiObject** command to get the WinRM service on Server0
 Then, it invokes the **StopService** method of the Win32_Service WMI class on the object that the **Get-WmiObject** command returns.
 
 This command is an alternative to using the Stop-Service cmdlet.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
 
@@ -245,7 +245,7 @@ Container             :
 This command gets the BIOS on the local computer.
 The command uses a value of all (*) for the Property parameter of the Format-List cmdlet to display all properties of the returned object in a list.
 By default, only a subset (defined in the Types.ps1xml configuration file) are displayed.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator Computer Fabrikam
 ```

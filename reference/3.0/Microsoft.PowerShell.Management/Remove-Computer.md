@@ -49,7 +49,7 @@ Beginning in Windows PowerShell 3.0, **Remove-Computer** removes the local compu
 It includes new credential parameters that specify alternate credentials for connecting to remote computers, and unjoining from a domain, a new **Restart** parameter for restarting the affected computers, and a Workgroup parameter for specifying the name of the workgroup to which computers are added.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
 ```
@@ -60,7 +60,7 @@ The command uses the **UnjoinDomainCredential** parameter to supply the credenti
 It uses the **PassThru** parameter and the **Verbose** common parameter to display information about the success or failure of the command and the **Restart** parameter restart the computer, which is required to complete the remove operation.
 
 Because the command does not specify a workgroup name, the local computer is moved to the "WORKGROUP" workgroup after it is removed from its domain.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -Workgroup Legacy -Force -Restart
 ```
@@ -69,7 +69,7 @@ This command removes all of the computers that are listed in the OldServers.txt 
 
 The command uses the **LocalCredential** parameter to supply the credentials of a user who has permission to connect to remote computers and the **UnjoinDomainCredential** parameter to supply the credentials of a user who has permission to remove the computers from their domains.
 It uses the **Force** parameter to suppress the confirmation prompts for each computer and the **Restart** parameter to restart each of the computers after it is removed from its domain.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -Workgroup Local -Restart -Force
 ```

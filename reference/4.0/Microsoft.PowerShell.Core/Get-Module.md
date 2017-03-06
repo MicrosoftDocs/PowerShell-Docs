@@ -78,14 +78,14 @@ You can use this WMI and CIM strategy to manage the remote computer.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Module
 ```
 
 This command gets modules that have been imported into the current session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Module -ListAvailable
 ```
@@ -95,14 +95,14 @@ This command gets the modules that are installed on the computer and can be impo
 **Get-Module** looks for available modules in the path specified by the **$env:PSModulePath** environment variable.
 For more information about **PSModulePath**, see about_Modules and about_Environment_Variables.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Module -ListAvailable -All
 ```
 
 This command gets all of the exported files for all available modules.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Module -FullyQualifiedName @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"} | Format-Table -Property Name,Version
 Name                                                                                 Version                                                                             
@@ -113,7 +113,7 @@ Microsoft.PowerShell.Management                                                 
 This command gets the Microsoft.PowerShell.Management module by specifying the module's fully qualified name, with the FullyQualifiedName parameter.
 The command then pipes the results into Format-Table, to format the results as a table with Name and Version as the column headings.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Module | Get-Member -MemberType Property | Format-Table Name
 
@@ -206,7 +206,7 @@ For more information about the properties, see "PSModule Properties" in the MSDN
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 
@@ -260,7 +260,7 @@ BitsTransfer   Manifest C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsT
 This command gets all module files (imported and available) and groups them by module name.
 This lets you see the module files that each script is exporting.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command gets the **PSModuleInfo** object that represents BitsTransfer module. It saves the object in the $m variable.
 PS C:\> $m = Get-Module -list -Name BitsTransfer
@@ -288,7 +288,7 @@ These commands display the contents of the module manifest for the Windows Power
 Modules are not required to have manifest files and, when they do have a manifest file, the manifest file is required only to include a version number.
 However, manifest files often provide useful information about a module, its requirements, and its contents.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
@@ -304,7 +304,7 @@ This command lists the files in the module's directory.
 This is another way to determine what is in a module before you import it.
 Some modules might have help files or ReadMe files that describe the module.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 
@@ -323,7 +323,7 @@ This is equivalent to using the  Import-PSSession cmdlet.
 You can use the cmdlets from the module in the current session, but commands that use these cmdlets actually run the remote session.
 For more information, see Import-Module and Import-PSSession.
 
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
 PS C:\> $cs = New-CimSession -ComputerName RSDGF03

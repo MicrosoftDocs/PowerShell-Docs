@@ -36,7 +36,7 @@ For more information, see about_Transactions.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
@@ -68,7 +68,7 @@ The first "dir" (Get-ChildItem) command shows that the new item has not yet been
 The Complete-Transaction command commits the transaction, which makes the registry change effective.
 As a result, the second "dir" command shows that the registry is changed.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
@@ -140,7 +140,7 @@ However, no data is changed, as evidenced by a "dir m*" (Get-ChildItem) command.
 The second Complete-Transaction command commits the entire transaction and changes the data in the registry.
 This is confirmed by a second "dir m*" command, which shows the changes.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
