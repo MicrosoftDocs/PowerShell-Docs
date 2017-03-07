@@ -80,7 +80,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
     Node "TestMachine2"
@@ -109,8 +108,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-
-
     }
 
 }
