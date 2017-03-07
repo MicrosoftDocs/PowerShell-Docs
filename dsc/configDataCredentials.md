@@ -83,7 +83,6 @@ configuration unencryptedPasswordDemo
 
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -130,7 +129,6 @@ Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 
 DSC configuration resources run as `Local System` by default.
 However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.
-
 
 Earlier resources used a hard-coded `Credential` property name to handle this.
 WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources. For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).
