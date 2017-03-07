@@ -110,7 +110,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
+
+
     }
 
 }
@@ -129,6 +130,7 @@ Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 
 DSC configuration resources run as `Local System` by default.
 However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.
+
 
 Earlier resources used a hard-coded `Credential` property name to handle this.
 WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources. For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).
@@ -158,6 +160,8 @@ This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/grou
 It can create local groups and add or remove members.
 It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.
 However, the resource only uses the `Credential` property.
+
+For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).
 
 ## Example: The Group resource Credential property
 
