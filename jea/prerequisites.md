@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2016-03-07
 title:  JEA Prerequisites
 ms.technology:  powershell
 ---
@@ -18,6 +18,7 @@ Just Enough Administration is a feature included with Windows PowerShell 5.0 and
 This topic describes the prerequisites that must be satisfied in order to start using JEA.
 
 ## Install JEA
+
 JEA is available with Windows PowerShell 5.0 and higher, but for full functionality it is recommended that you install the latest version of PowerShell available for your system.
 The following table describes JEA's availability on Windows Server:
 
@@ -44,6 +45,7 @@ To get support for these features, update Windows to version 1607 (Anniversary U
 <sup>2</sup> JEA cannot be configured to use virtual accounts on Windows 7.
 
 ### Check which version of PowerShell is installed
+
 To check which version of PowerShell is installed on your system, check the `$PSVersionTable` variable in a Windows PowerShell prompt.
 
 ```powershell
@@ -58,6 +60,7 @@ You are ready to use JEA if the *Major* version is equal to or greater than **5*
 For the best experience, and to have access to all the latest features, it is recommended that you upgrade to PowerShell version **5.1** when possible.
 
 ### Install Windows Management Framework
+
 If you are running an older version of PowerShell, you will need to update your system with the latest Windows Management Framework (WMF) update.
 Update packages and a link to the latest WMF release notes are available in the [Download Center](https://aka.ms/WMF5).
 
@@ -66,6 +69,7 @@ It is strongly recommended that you test your workload's compatibility with WMF 
 Windows 10 users should install the latest feature updates to obtain the current version of Windows PowerShell.
 
 ## Enable PowerShell Remoting
+
 PowerShell Remoting provides the foundation on which JEA is built.
 It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
 
@@ -77,6 +81,7 @@ Enable-PSRemoting
 ```
 
 ## Enable PowerShell module and script block logging (optional)
+
 The following steps enable logging for all PowerShell actions on your system.
 PowerShell Module Logging is not required for JEA, however it is strongly recommended that you turn it on to ensure the commands users run are logged in a central location.
 
@@ -102,5 +107,6 @@ You can also enable system-wide PowerShell transcription through Group Policy.
 - [Create a session configuration file](session-configurations.md)
 
 ## See also
+
 - [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
