@@ -173,55 +173,13 @@ As shown in the example above, role capabilities are referenced by the flat name
 If multiple role capabilities are available on the system with the same flat name, PowerShell will use its implicit search order to select the effective role capability file.
 It will **not** give access to all role capability files with the same name.
 
-The search order for JEA role capabilities is determined by the ordering of paths in `$env:PSModulePath` and the name of the parent module.
-The default module path in PowerShell is the following:
+JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role capability files.
+Within each of those paths, JEA will look for valid PowerShell modules that contain a "RoleCapabilities" subfolder.
+As with importing modules, JEA prefers role capabilities that are shipped with Windows to custom role capabilities with the same name.
+For all other naming conflicts, precedence is determined by the order in which Windows enumerates the files in the directory (not guaranteed to be alphabetically).
+The first role capability file found that matches the desired name will be used for the connecting user.
 
-```powershell
-PS C:\> $env:PSModulePath
-
-
-C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
-```
-
-Paths that appear earlier (to the left) in the PSModulePath list have higher precedence than paths on the right.
-
-Within each path, there may be 0 or more PowerShell modules.
-Role capabilities are selected from the first module, alphabetically, that contain a role capability file that matches the desired name.
-
-To help illustrate this precedence, consider the following example where the plus sign (+) indicates a folder, and the minus sign (-) indicates a file.
-
-```
-+ C:\Program Files\WindowsPowerShell\Modules
-    + ContosoMaintenance
-        - ContosoMaintenance.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - DnsOperator.psrc
-            - DnsAuditor.psrc
-    + FabrikamModule
-        - FabrikamModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - FileServerAdmin.psrc
-
-+ C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    + BuiltInModule
-        - BuiltInModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - OtherBuiltinRole.psrc
-```
-
-There are several role capability files installed on this system.
-What happens if a session configuration file gives a user access to the "DnsAdmin" role?
-
-
-The effective role capability file will be the one located at "C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc".
-
-If you're wondering why, remember the 2 orders of precedence:
-
-1. The `$env:PSModulePath` variable has the Program Files folder listed before the System32 folder, so it will prefer files from the Program Files folder.
-2. Alphabetically, the ContosoMaintenance module comes before the FabrikamModule, so it will select the DnsAdmin role from ContosoMaintenance.
+Since the role capability search order is not deterministic when two or more role capabilities share the same name, it is **strongly recommended** that you ensure role capabilities have unique names on your machine.
 
 ### Conditional access rules
 
