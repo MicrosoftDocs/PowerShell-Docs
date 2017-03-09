@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2017-03-07
 title:  JEA Role Capabilities
 ms.technology:  powershell
 ---

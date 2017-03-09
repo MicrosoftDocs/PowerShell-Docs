@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-03-07
+ms.date:  2017-03-07
 title:  JEA Security Considerations
 ms.technology:  powershell
 ---
