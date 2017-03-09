@@ -1,12 +1,11 @@
 ---
-description:  
-manager:  dongill
+manager:  carmonm
 ms.topic:  article
 author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2017-03-07
 title:  Overview of Just Enough Administration
 ms.technology:  powershell
 ---
@@ -50,3 +49,7 @@ To learn more about the requirements to use JEA and to learn how to create, use,
 - [Using JEA](using-jea.md) - learn the various ways you can use JEA.
 - [Security Considerations](security-considerations.md) - review security best practices and implications of JEA configuration options.
 - [Audit and Report on JEA](audit-and-report.md) - learn how to audit and report on JEA endpoints.
+
+## Samples and DSC resource
+
+Sample JEA configurations and the JEA DSC resource can be found in the [JEA GitHub repository](https://github.com/PowerShell/JEA).
