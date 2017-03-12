@@ -183,7 +183,7 @@ In order to make setting up, validating and managing the pull server easier, the
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## Pull client configuration 
