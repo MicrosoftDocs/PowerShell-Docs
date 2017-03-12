@@ -15,7 +15,7 @@ ms.technology:  powershell
 Just Enough Administration (JEA) is a security technology that enables delegated administration for anything that can be managed with PowerShell.
 With JEA, you can:
 
-- **Reduce the number of administrators on your machines** by leveraging virtual accounts that perform privileged actions on behalf of regular users.
+- **Reduce the number of administrators on your machines** by leveraging virtual accounts or group managed service accounts that perform privileged actions on behalf of regular users.
 - **Limit what users can do** by specifying which cmdlets, functions, and external commands they can run.
 - **Better understand what your users are doing** with transcripts and logs that show you exactly which commands a user executed during their session.
 
