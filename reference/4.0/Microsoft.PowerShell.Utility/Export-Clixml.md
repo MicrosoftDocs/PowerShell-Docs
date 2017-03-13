@@ -69,7 +69,8 @@ Then, it saves the object in the $FileAcl variable.
 ### Example 3
 ```
 PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\> $credential | Export-Clixml $credPath PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+PS C:\> $credential | Export-Clixml $credPath
+PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
 PS C:\> $credential = Import-Clixml $credxmlpath
 ```
 
