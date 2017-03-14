@@ -5,7 +5,9 @@
 
 * Titles/headings (anything preprended by \#) should be followed with a newline
 * Only the first letter of a title and any proper nouns in that title should be capitalized
-* Only use \# style headers (as opposed to = or \- style headers):
+* Only 1 H1 per document
+* When editing reference content, the H2s are prescribed by platyPS and should not be added or removed as it will cause a build break
+* Only use \# style headers (as opposed to = or \- style headers)
 
 ### Correct
 
@@ -34,7 +36,7 @@ Header 2
 
 * When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
   * When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation
-* All PowerShell syntax blocks should use ` \` \` \` powershell
+* All PowerShell syntax blocks should use &#96;&#96;&#96;powershell
 * Do not start PowerShell commands with "C:\ PS>"
 * Output emitted by PowerShell commands should be commented to prevent it from recieving syntax highlighting
 * Property names and parameter names should be in **bold**
