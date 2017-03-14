@@ -1,4 +1,7 @@
 # [Overview](overview.md)
+## [Desired State Configuration Overview for Decision Makers](decisionMaker.md)
+## [Desired State Configuration Overview for Engineers](DscForEngineers.md)
+## [DSC quick start](quickStart.md)
 
 # [Configurations](configurations.md)
 ## [Enacting configurations](enactingConfigurations.md)

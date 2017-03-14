@@ -1,3 +1,14 @@
+---
+title:   Desired State Configuration Overview for Decision Makers 
+ms.date:  2017-03-13
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  carmonm
+ms.prod:  powershell
+---
+
 # Desired State Configuration Overview for Engineers #
 
 This document is intended for developer and operations teams to understand the benefits of PowerShell Desired State Configuration (DSC).
