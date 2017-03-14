@@ -33,9 +33,12 @@ Header 2
 ## Syntax
 
 * When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
+  * When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation
 * All PowerShell syntax blocks should use ` \` \` \` powershell
 * Do not start PowerShell commands with "C:\ PS>"
 * Output emitted by PowerShell commands should be commented to prevent it from recieving syntax highlighting
+* Property names and parameter names should be in **bold**
+
 
 ## Lists
 
@@ -45,23 +48,12 @@ Header 2
 ## Links
 
 * Links are always marked up using MarkDown syntax `[friendlyname](url)`
-* Links should have a a friendly name when applicable, most likely the title of the linked page. 
- * **Exception**: Links going towards non-Microsoft sites should only have a URL. 
-
+* Links should have a a friendly name when applicable, most likely the title of the linked page
+  * **Exception**: Links going towards non-Microsoft sites should only have a URL
+* All items in the "related links" section at the bottom should be hyperlinked. 
 
 ## Line breaks
 
 * You must include semantic line breaks
-* You should limit lines to 100char. (Open item: tooling to help us validate this)
+* You should limit lines to 100char (Open item: tooling to help us validate this)
 * You CAN remove additional line breaks for PS4+, NOT ps3 (needs validation)
-
-
-first cmdlet reference should always be a link in an article (not reference) . All related links at the bottom should links
-
-Bold property names and parameter names. 
-User-provided input in a syntax block: `<YourPropertyName>`
-User-provided input 
-
-Asterisk for bold
-
-Italics are underscore
