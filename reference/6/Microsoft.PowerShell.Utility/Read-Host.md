@@ -131,7 +131,7 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../microsoft.powershell.core/clear-host.md)
 
 [Get-Host](Get-Host.md)
 

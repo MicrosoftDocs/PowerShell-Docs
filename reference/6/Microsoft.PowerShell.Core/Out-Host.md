@@ -112,7 +112,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](Functions/Clear-Host.md)
+[Clear-Host](clear-host.md)
 
 [Out-Default](Out-Default.md)
 

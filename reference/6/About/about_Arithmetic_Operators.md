@@ -570,6 +570,6 @@ PS C:> 21 -shr 2
 
 [about_variables](about_Variables.md)
 
-[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
+[Get-Date](../microsoft.powershell.utility/get-date.md)
 
-[New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+[New-TimeSpan](../microsoft.powershell.utility/new-timespan.md)

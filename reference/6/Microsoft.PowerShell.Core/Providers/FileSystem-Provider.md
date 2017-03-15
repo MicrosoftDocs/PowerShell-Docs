@@ -549,5 +549,5 @@ Get-ChildItem -attributes Compressed,Encrypted
 -   [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
 
 ## See Also  
- [about_Providers](../About/about_Providers.md)
+ [about_Providers](../../about/about_providers.md)
 

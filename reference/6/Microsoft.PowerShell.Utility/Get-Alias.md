@@ -231,7 +231,7 @@ You can pipe alias names to **Get-Alias**.
 
 ## RELATED LINKS
 
-[About Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
+[About Aliases](../about/about_aliases.md)
 
 [Export-Alias](Export-Alias.md)
 

@@ -259,6 +259,6 @@ remove-item alias:* -force
 -   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
 
 ## See Also  
- [about_Aliases](../About/about_Aliases.md)   
- [about_Providers](../About/about_Providers.md)
+ [about_Aliases](../../about/about_aliases.md)   
+ [about_Providers](../../about/about_providers.md)
 

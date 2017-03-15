@@ -247,7 +247,7 @@ $processes = $null
 ```  
 
 ## See Also  
- [about_Variables](../About/about_Variables.md)   
- [about_Automatic_Variables](../About/about_Automatic_Variables.md)   
- [about_Providers](../About/about_Providers.md)
+ [about_Variables](../../about/about_variables.md)   
+ [about_Automatic_Variables](../../about/about_automatic_variables.md)   
+ [about_Providers](../../about/about_providers.md)
 
