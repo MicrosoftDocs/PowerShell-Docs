@@ -119,7 +119,7 @@ New-Item [-ResourceURI <Uri>] [-SupportsOptions] [-ExactMatch] [-Capability <str
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../about/about_commonparameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -142,7 +142,7 @@ This command creates a resource entry in the Resources directory of TestPlugin.
 ```  
 
 ## See Also  
- [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
+ [about_Providers](../../about/about_providers.md)   
  [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
  [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)   
  [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)   

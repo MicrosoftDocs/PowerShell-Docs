@@ -234,7 +234,7 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
 ## RELATED LINKS
 
-[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
+[about_Debuggers](../about/about_debuggers.md)
 
 [Get-Runspace](Get-Runspace.md)
 

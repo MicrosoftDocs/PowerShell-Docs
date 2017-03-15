@@ -413,8 +413,8 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 -   [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)  
 
 ## See Also  
- [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
- [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)   
+ [about_Providers](../../about/about_providers.md)   
+ [about_Signing](../../about/about_signing.md)   
  [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)   
  [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)   
  [Get-PfxCertificate](../Get-PfxCertificate.md)

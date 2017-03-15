@@ -165,7 +165,7 @@ You can pipe a **PackageProvider** object returned by **Get-PackageProvider** in
 
 ## RELATED LINKS
 
-[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
+[about_PackageManagement](../about/about_packagemanagement.md)
 
 [Unregister-PackageSource](Unregister-PackageSource.md)
 

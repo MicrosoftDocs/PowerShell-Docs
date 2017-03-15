@@ -231,7 +231,7 @@ However, the host might display the objects that **Write-Host** sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../microsoft.powershell.core/clear-host.md)
 
 [Write-Debug](Write-Debug.md)
 

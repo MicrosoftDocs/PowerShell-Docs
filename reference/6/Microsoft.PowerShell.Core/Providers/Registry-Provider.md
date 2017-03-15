@@ -239,5 +239,5 @@ set-item -path hkcu:\environment\testnew -value "another default value"
 -   [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)  
 
 ## See Also  
- [about_Providers](../About/about_Providers.md)
+ [about_Providers](../../about/about_providers.md)
 

@@ -139,7 +139,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|  
 
 ### -UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../../about/about_transactions.md).  
 
 |||  
 |-|-|  
@@ -150,7 +150,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../../about/about_commonparameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
