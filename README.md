@@ -4,7 +4,6 @@
 
 Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview). 
 
-> **Note**: Currently, this repository is intended only for PowerShell [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) content and [Windows Management Framework (WMF) release notes](https://msdn.microsoft.com/powershell/wmf/5.1/release-notes). In the future, the repo will be expanded to include a wider range of PowerShell documentation. 
 
 ## Contributing
 
