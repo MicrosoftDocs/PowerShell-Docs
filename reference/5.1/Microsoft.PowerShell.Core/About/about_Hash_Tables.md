@@ -291,7 +291,7 @@ $hash.$Remove("Time")
 ```
 
 
-You can use all of the properties and methods of Hashtable objects in Windows PowerShell, including Contains, Clear, Clone, and CopyTo. For more information about Hashtable objects, see "System.Collections.Hashtable" on MSDN.
+You can use all of the properties and methods of Hashtable objects in Windows PowerShell, including Contains, Clear, Clone, and CopyTo. For more information about Hashtable objects, see [System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN.
 
 
 ### Object Types in HashTables
@@ -444,13 +444,13 @@ The syntax is as follows:
 
 This method works only for classes that have a null constructor, that is, a constructor that has no parameters. The object properties must be public and settable.
 
-For more information, see about_Object_Creation.
+For more information, see [about_Object_Creation](about_Object_Creation.md).
 
 
 ### ConvertFrom-StringData
 The ConvertFrom-StringData cmdlet converts a string or a here-string of key\/value pairs into a hash table. You can use the ConvertFrom-StringData cmdlet safely in the Data section of a script, and you can use it with the Import-LocalizedData cmdlet to display user messages in the user-interface (UI) culture of the current user.
 
-Here-strings are especially useful when the values in the hash table include quotation marks. (For more information about here-strings, see about_Quoting_Rules.)
+Here-strings are especially useful when the values in the hash table include quotation marks. (For more information about here-strings, see [about_Quoting_Rules](about_Quoting_Rules.md).)
 
 The following example shows how to create a here-string of the user messages in the previous example and how to use ConvertFrom-StringData to convert them from a string into a hash table.
 
@@ -480,7 +480,7 @@ Msg1                           Type "Windows".
 ```
 
 
-For more information about here-strings, see about_Quoting_Rules.
+For more information about here-strings, see [about_Quoting_Rules](about_Quoting_Rules.md).
 
 
 ## SEE ALSO
@@ -493,8 +493,8 @@ For more information about here-strings, see about_Quoting_Rules.
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-ConvertFrom-StringData
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-Import-LocalizedData
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
-"System.Collections.Hashtable" on MSDN
+[System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
