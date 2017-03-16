@@ -34,13 +34,13 @@ Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-F
 ```
 
 ## DESCRIPTION
-The **Export-CliXml** cmdlet creates an XML-based representation of an object or objects and stores it in a file.
+The **Export-Clixml** cmdlet creates an XML-based representation of an object or objects and stores it in a file.
 You can then use the Import-Clixml cmdlet to re-create the saved object based on the contents of that file.
 
-This cmdlet is similar to ConvertTo-Xml, except that **Export-CliXml** stores the resulting XML in a file.
+This cmdlet is similar to ConvertTo-Xml, except that **Export-Clixml** stores the resulting XML in a file.
 **ConvertTo-XML** returns the XML, so you can continue to process it in Windows PowerShell.
 
-A valuable use of **Export-CliXml** is to export credentials and secure strings securely as XML.
+A valuable use of **Export-Clixml** is to export credentials and secure strings securely as XML.
 For an example of how to do this, see Example 3.
 
 ## EXAMPLES
@@ -54,13 +54,13 @@ This command creates an XML file that stores a representation of the string, "Th
 
 ### Example 2: Export an object to an XML file
 ```
-PS C:\> Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
-PS C:\> $Fileacl = Import-Clixml "fileacl.xml"
+PS C:\> Get-Acl C:\test.txt | Export-Clixml -Path "FileACL.xml"
+PS C:\> $FileAcl = Import-Clixml "FileACL.xml"
 ```
 
 This example shows how to export an object to an XML file and then create an object by importing the XML from the file.
 
-The first command uses the Get-Acl cmdlet to get the security descriptor of the Test.txt file.
+The first command uses the Get-Acl cmdlet to get the security descriptor of the test.txt file.
 It uses a pipeline operator to pass the security descriptor to **Export-Clixml**, which stores an XML-based representation of the object in a file named FileACL.xml.
 
 The second command uses the Import-Clixml cmdlet to create an object from the XML in the FileACL.xml file.
@@ -69,18 +69,18 @@ Then, it saves the object in the $FileAcl variable.
 ### Example 3: Encrypt an exported credential object
 ```
 PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $credential | Export-CliXml $CredPath
+PS C:\> $Credential | Export-CliXml $CredPath
 PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 PS C:\> $Credential = Import-CliXml $CredXmlPath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **Export-Clixml** cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
 This ensures that only your user account can decrypt the contents of the credential object.
 
-In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk.In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
+In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-Clixml** cmdlet to save the credential to disk. In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
 Replace TestScript with the name of the script with which you are loading the credential.
 
-In the second command, pipe the credential object to **Export-CliXml**, and save it to the path, $CredXmlPath, that you specified in the first command.
+In the second command, pipe the credential object to **Export-Clixml**, and save it to the path, $CredXmlPath, that you specified in the first command.
 
 To import the credential automatically into your script, run the final two commands.
 This time, you are running Import-Clixml to import the secured credential object into your script.
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Indicates that that the cmdlet does not overwrite the contents of an existing file.
+Indicates that the cmdlet does not overwrite the contents of an existing file.
 By default, if a file exists in the specified path, **Export-Clixml** overwrites the file without warning.
 
 ```yaml
