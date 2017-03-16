@@ -57,7 +57,7 @@ in parentheses.
 -PipelineVariable (pv)
 -Verbose (vb)
 -WarningAction (wa)
--WarningVariable (wv
+-WarningVariable (wv)
 
 The risk mitigation parameters are:
 -WhatIf (wi)
