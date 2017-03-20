@@ -527,7 +527,8 @@ Performing operation "Create File" on Target "Destination: C:\ps-test\test.txt".
 
 PS C:\ps-test>>> Get-Help New-Item -Parameter ItemType
 
--ItemType <string>
+## -ItemType &lt;string&gt;
+
 Specifies the provider-specified type of the new item.
 
 Required?                    false
@@ -549,14 +550,10 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---         8/27/2010   2:41 PM          0 test.txt
 
-# KEYWORDS
-
-about_Common_Parameters
-
 # SEE ALSO
 
 - [about_Preference_Variables](about_Preference_Variables.md)
-- [Write-Debug](../Microsoft.PowerShell.Utility/write-debug.md)
-- [Write-Warning](../Microsoft.PowerShell.Utility/write-warning.md)
-- [Write-Error](../Microsoft.PowerShell.Utility/write-error.md)
-- [Write-Verbose](../Microsoft.PowerShell.Utility/write-verbose.md)
+- [Write-Debug](../../Microsoft.PowerShell.Utility/write-debug.md)
+- [Write-Warning](../../Microsoft.PowerShell.Utility/write-warning.md)
+- [Write-Error](../../Microsoft.PowerShell.Utility/write-error.md)
+- [Write-Verbose](../../Microsoft.PowerShell.Utility/write-verbose.md)
