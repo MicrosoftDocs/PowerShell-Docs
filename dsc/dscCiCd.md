@@ -540,7 +540,9 @@ Add the following steps to you build definition:
 - Copy Files
 - Publish Artifact
 
-Edit the properties of the **PowerShell Script** build step as follows:
+After adding these build steps, edit the properties of each step as follows:
+
+### PowerShell Script
 
 1. Set the **Type** property to `File Path`.
 1. Set the **Script Path** property to `initiate.ps1`.
@@ -548,7 +550,7 @@ Edit the properties of the **PowerShell Script** build step as follows:
 
 This build step runs the `initiate.ps1` file, which calls the psake build script.
 
-Edit the properties of the **Publish Test Results** step as follows:
+### Publish Test Results
 
 1. Set **Test Result Format** to `NUnit`
 1. Set **Test Results Files** to `InfraDNS/Tests/Results/*.xml`
@@ -558,7 +560,45 @@ Edit the properties of the **Publish Test Results** step as follows:
 This build step runs the unit tests in the Pester script we looked at earlier,
 and stores the results in the 
 
-Edit the properties of the 
+### Copy Files
+
+1.  Add each of the following lines to **Contents**:
+
+    ```
+    initiate.ps1
+    **\deploy.ps1
+    **\Acceptance\**
+    **\Integration\**
+    ```
+
+1. Set **TargetFolder** to `$(BuildArtifactStagingDirectory)\`
+
+This step copies the build and test scripts to the staging directory so that the can be published as build artifacts by the next step.
+
+### Publish Artifact
+
+1. Set **Path to Publish** to `$(Build.ArtifactStagingDirectory)\`
+1. Set **Artifact Name** to `Deploy`
+1. Set **Artifact Type** to `Server`
+1. Select `Enabled` in **Control Options**
+
+## Enable continuous integration
+
+Now we'll set up a trigger that causes the project to build any time a change is checked in to the `master` branch of the git repository. 
+
+1. In TFS, click the **Build & Release** tab
+1. Select the `DNS Infra` build definition, and click **Edit**
+1. Click the **Triggers** tab
+1. Select **Continuous integration (CI)**, and select `refs/heads/ci-cd-example` in the branch drop-down list
+1. Click **Save**
+
+Now any change in the TFS git repository triggers an automated build.
+
+## Trigger a build
+
+
+
+
 
 
 
