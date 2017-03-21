@@ -162,7 +162,7 @@ This command deletes all certificates that have a DNS name that contains "Fabrik
  [Certificate Provider](Certificate-Provider.md)   
  [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
  [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
- [Get-PfxCertificate](../Get-PfxCertificate.md)   
+ [Get-PfxCertificate](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Security/Get-PfxCertificate)   
  [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)   
  [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
  [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)

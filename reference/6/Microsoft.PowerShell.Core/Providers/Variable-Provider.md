@@ -50,7 +50,7 @@ online version:   http://go.microsoft.com/fwlink/?LinkId=834963
 
  You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign ($) to identify the name as a variable and the assignment operator (=) to establish and change its value. For example, "$p = [Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)" creates the "p" variable and stores the results of a "[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)" command in it.  
 
- All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current console.  
+ All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Export-Console) to save the current console.  
 
 ## CAPABILITIES  
  ShouldProcess  

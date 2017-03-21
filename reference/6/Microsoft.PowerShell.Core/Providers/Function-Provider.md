@@ -38,7 +38,7 @@ online version:   http://go.microsoft.com/fwlink/?LinkId=834961
 
  The Function provider supports all of the cmdlets whose names contain the Item noun (the Item cmdlets), except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the ItemProperty noun (the ItemProperty cmdlets), and it does not support the Filter parameter in any cmdlet.  
 
- All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current console.  
+ All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Export-Console) to save the current console.  
 
 ## CAPABILITIES  
  ShouldProcess  

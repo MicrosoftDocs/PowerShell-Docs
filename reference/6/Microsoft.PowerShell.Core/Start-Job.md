@@ -485,11 +485,11 @@ This cmdlet returns an object that represents the job that it started.
 
 [Remove-Job](Remove-Job.md)
 
-[Resume-Job](Resume-Job.md)
+[Resume-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Resume-Job)
 
 [Stop-Job](Stop-Job.md)
 
-[Suspend-Job](Suspend-Job.md)
+[Suspend-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Suspend-Job)
 
 [Wait-Job](Wait-Job.md)
 

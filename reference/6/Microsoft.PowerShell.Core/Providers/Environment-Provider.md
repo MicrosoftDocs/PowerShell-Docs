@@ -34,7 +34,7 @@ online version:   https://go.microsoft.com/fwlink/?linkid=834944
 
  Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign (=).  
 
- Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../Export-Console.md) to save the current session.  
+ Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Export-Console) to save the current session.  
 
 ## CAPABILITIES  
  ShouldProcess  

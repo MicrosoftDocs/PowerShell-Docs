@@ -309,7 +309,7 @@ You can pipe a string that contains the file path to **Set-AuthenticodeSignature
 
 [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
-[Get-PfxCertificate](Get-PfxCertificate.md)
+[Get-PfxCertificate](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Security/Get-PfxCertificate)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 

@@ -333,11 +333,11 @@ Otherwise, it does not return any output.
 
 ## RELATED LINKS
 
-[Add-Computer](Add-Computer.md)
+[Add-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Add-Computer)
 
-[Remove-Computer](Remove-Computer.md)
+[Remove-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Remove-Computer)
 
-[Reset-ComputerMachinePassword](Reset-ComputerMachinePassword.md)
+[Reset-ComputerMachinePassword](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Reset-ComputerMachinePassword)
 
 [Restart-Computer](Restart-Computer.md)
 

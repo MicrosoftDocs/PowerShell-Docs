@@ -488,7 +488,7 @@ Otherwise, this cmdlet returns a **Win32_PingStatus** object for each ping.
 
 ## RELATED LINKS
 
-[Add-Computer](Add-Computer.md)
+[Add-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Add-Computer)
 
 [Restart-Computer](Restart-Computer.md)
 

@@ -350,9 +350,9 @@ If you pipe the output of **Out-File** to Get-Member, **Get-Member** reports tha
 
 ## RELATED LINKS
 
-[Out-GridView](Out-GridView.md)
+[Out-GridView](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-GridView)
 
-[Out-Printer](Out-Printer.md)
+[Out-Printer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-Printer)
 
 [Out-String](Out-String.md)
 
