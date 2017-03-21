@@ -615,13 +615,13 @@ Job started by using the *AsJob* common parameter of workflows.
 
 [Remove-Job](Remove-Job.md)
 
-[Resume-Job](Resume-Job.md)
+[Resume-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Resume-Job)
 
 [Start-Job](Start-Job.md)
 
 [Stop-Job](Stop-Job.md)
 
-[Suspend-Job](Suspend-Job.md)
+[Suspend-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Suspend-Job)
 
 [Wait-Job](Wait-Job.md)
 

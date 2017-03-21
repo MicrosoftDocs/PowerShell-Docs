@@ -318,7 +318,7 @@ This cmdlet returns objects that represent the drives in the session.
 
 [Remove-PSDrive](Remove-PSDrive.md)
 
-[Get-WmiObject](Get-WmiObject.md)
+[Get-WmiObject](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Get-WmiObject)
 
 [Get-PSProvider](Get-PSProvider.md)
 

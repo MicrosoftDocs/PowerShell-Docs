@@ -171,7 +171,7 @@ You can pipe objects to **Out-String**.
 
 [Out-File](Out-File.md)
 
-[Out-GridView](Out-GridView.md)
+[Out-GridView](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-GridView)
 
-[Out-Printer](Out-Printer.md)
+[Out-Printer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-Printer)
 

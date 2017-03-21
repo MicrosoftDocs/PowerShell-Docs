@@ -401,17 +401,17 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Add-Computer](Add-Computer.md)
+[Add-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Add-Computer)
 
-[Checkpoint-Computer](Checkpoint-Computer.md)
+[Checkpoint-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Checkpoint-Computer)
 
-[Remove-Computer](Remove-Computer.md)
+[Remove-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Remove-Computer)
 
 [Rename-Computer](Rename-Computer.md)
 
 [Restart-Computer](Restart-Computer.md)
 
-[Restore-Computer](Restore-Computer.md)
+[Restore-Computer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Restore-Computer)
 
 [Test-Connection](Test-Connection.md)
 

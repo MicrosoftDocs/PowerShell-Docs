@@ -417,5 +417,5 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
  [about_Signing](../../about/about_signing.md)   
  [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)   
  [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)   
- [Get-PfxCertificate](../Get-PfxCertificate.md)
+ [Get-PfxCertificate](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Security/Get-PfxCertificate)
 
