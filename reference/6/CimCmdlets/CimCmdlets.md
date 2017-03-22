@@ -1,7 +1,7 @@
 ---
 Module Name: CimCmdlets
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: {{Please enter FwLink manually}}
+Download Help Link: http://Please-enter-FwLink-manually
 Help Version: 6.0
 Locale: en-US
 ---
