@@ -1,7 +1,7 @@
 ---
 Module Name: Pester
 Module Guid: a699dea5-2c73-4616-a270-1f7abb777e71
-Download Help Link: {{Please enter FwLink manually}}
+Download Help Link: http://Please-enter-FwLink-manually
 Help Version: {{Please enter version of help manually (X.X.X.X) format}}
 Locale: en-US
 ---

@@ -1,7 +1,7 @@
 ---
 Module Name: PSDiagnostics
 Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
-Download Help Link: {{Please enter FwLink manually}}
+Download Help Link: http://Please-enter-FwLink-manually
 Help Version: {{Please enter version of help manually (X.X.X.X) format}}
 Locale: en-US
 ---
