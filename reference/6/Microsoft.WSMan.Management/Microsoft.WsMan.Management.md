@@ -10,7 +10,7 @@ title:  Microsoft.WsMan.Management
 ms.technology:  powershell
 Locale:   en-US
 Module Name:   Microsoft.WsMan.Management
-Download Help Link:   {{Please enter FwLink manually}}
+Download Help Link:   http://Please-enter-FwLink-manually
 Help Version:   6.0
 Module Guid:   766204a6-330e-4263-a7ab-46c87afc366c
 ---

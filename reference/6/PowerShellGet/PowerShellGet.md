@@ -10,7 +10,7 @@ title:  PowerShellGet
 ms.technology:  powershell
 Locale:   en-US
 Module Name:   PowerShellGet
-Download Help Link:    {{Please enter FwLink manually}}
+Download Help Link:    http://Please-enter-FwLink-manually
 Help Version:   6.0
 Module Guid:   1d73a601-4a6c-43c5-ba3f-619b18bbb404
 ---

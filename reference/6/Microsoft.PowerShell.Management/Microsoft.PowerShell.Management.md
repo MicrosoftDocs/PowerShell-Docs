@@ -10,7 +10,7 @@ title:  Microsoft.PowerShell.Management
 ms.technology:  powershell
 Locale:   en-US
 Module Name:   Microsoft.PowerShell.Management
-Download Help Link:   {{Please enter FwLink manually}}
+Download Help Link:   http://Please-enter-FwLink-manually
 Help Version:   6.0
 Module Guid:   eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 ---

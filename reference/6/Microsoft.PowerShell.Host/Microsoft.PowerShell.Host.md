@@ -10,7 +10,7 @@ title:  Microsoft.PowerShell.Host
 ms.technology:  powershell
 Locale:   en-US
 Module Name:   Microsoft.PowerShell.Host
-Download Help Link:   {{Please enter FwLink manually}}
+Download Help Link:   http://Please-enter-FwLink-manually
 Help Version:   6.0
 Module Guid:   56d66100-99a0-4ffc-a12d-eee9a6718aef
 ---
