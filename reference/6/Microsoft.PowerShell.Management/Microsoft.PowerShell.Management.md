@@ -21,24 +21,12 @@ Module Guid:   eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Management module. The Management module contains cmdlets that help you manage Windows in Windows PowerShell.
 
 ## Microsoft.PowerShell.Management Cmdlets
-### [Add-Computer](Add-Computer.md)
-Add the local computer to a domain or workgroup.
-
-
 ### [Add-Content](Add-Content.md)
 Adds content to the specified items, such as adding words to a file.
 
 
-### [Checkpoint-Computer](Checkpoint-Computer.md)
-Creates a system restore point on the local computer.
-
-
 ### [Clear-Content](Clear-Content.md)
 Deletes the contents of an item, but does not delete the item.
-
-
-### [Clear-EventLog](Clear-EventLog.md)
-Clears all entries from specified event logs on the local or remote computers.
 
 
 ### [Clear-Item](Clear-Item.md)
@@ -47,14 +35,6 @@ Clears the contents of an item, but does not delete the item.
 
 ### [Clear-ItemProperty](Clear-ItemProperty.md)
 Clears the value of a property but does not delete the property.
-
-
-### [Clear-RecycleBin](Clear-RecycleBin.md)
-
-
-
-### [Complete-Transaction](Complete-Transaction.md)
-Commits the active transaction.
 
 
 ### [Convert-Path](Convert-Path.md)
@@ -73,20 +53,8 @@ Copies a property and value from a specified location to another location.
 Debugs one or more processes running on the local computer.
 
 
-### [Disable-ComputerRestore](Disable-ComputerRestore.md)
-Disables the System Restore feature on the specified file system drive.
-
-
-### [Enable-ComputerRestore](Enable-ComputerRestore.md)
-Enables the System Restore feature on the specified file system drive.
-
-
 ### [Get-ChildItem](Get-ChildItem.md)
 Gets the items and child items in one or more specified locations.
-
-
-### [Get-Clipboard](Get-Clipboard.md)
-Gets the current Windows clipboard entry.
 
 
 ### [Get-ComputerInfo](Get-ComputerInfo.md)

@@ -25,10 +25,6 @@ This section contains the help topics for the cmdlets that are installed with Wi
 Appends entries to the session history.
 
 
-### [Add-PSSnapin](Add-PSSnapin.md)
-Adds one or more Windows PowerShell snap-ins to the current session.
-
-
 ### [Clear-History](Clear-History.md)
 Deletes entries from the command history.
 
@@ -41,20 +37,12 @@ Reconnects to disconnected sessions.
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 
-### [Disable-PSRemoting](Disable-PSRemoting.md)
-Prevents remote users from running commands on the local computer.
-
-
 ### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 Disables session configurations on the local computer.
 
 
 ### [Disconnect-PSSession](Disconnect-PSSession.md)
 Disconnects from a session.
-
-
-### [Enable-PSRemoting](Enable-PSRemoting.md)
-Configures the computer to receive remote commands.
 
 
 ### [Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
@@ -75,10 +63,6 @@ Closes an interactive session with a local process.
 
 ### [Exit-PSSession](Exit-PSSession.md)
 Ends an interactive session with a remote computer.
-
-
-### [Export-Console](Export-Console.md)
-Exports the names of snap-ins in the current session to a console file.
 
 
 ### [Export-ModuleMember](Export-ModuleMember.md)
@@ -110,8 +94,7 @@ Gets the modules that have been imported or that can be imported into the curren
 
 
 ### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
-
-
+{{Fill Get-PSHostProcessInfo Description}}
 
 ### [Get-PSSession](Get-PSSession.md)
 Gets the Windows PowerShell sessions on local and remote computers.
@@ -123,10 +106,6 @@ Gets the capabilities of a specific user on a constrained session configuration.
 
 ### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 Gets the registered session configurations on the computer.
-
-
-### [Get-PSSnapin](Get-PSSnapin.md)
-Gets the Windows PowerShell snap-ins on the computer.
 
 
 ### [Import-Module](Import-Module.md)
@@ -209,14 +188,6 @@ Removes modules from the current session.
 Closes one or more Windows PowerShell sessions (PSSessions).
 
 
-### [Remove-PSSnapin](Remove-PSSnapin.md)
-Removes Windows PowerShell snap-ins from the current session.
-
-
-### [Resume-Job](Resume-Job.md)
-Restarts a suspended job.
-
-
 ### [Save-Help](Save-Help.md)
 Downloads and saves the newest help files to a file system directory.
 
@@ -239,10 +210,6 @@ Starts a Windows PowerShell background job.
 
 ### [Stop-Job](Stop-Job.md)
 Stops a Windows PowerShell background job.
-
-
-### [Suspend-Job](Suspend-Job.md)
-Temporarily stops workflow jobs.
 
 
 ### [Test-ModuleManifest](Test-ModuleManifest.md)
