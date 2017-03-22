@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-- [Get-CimInstance](get-ciminstance.md)
-- [Import-BinaryMiLog](import-binarymilog.md)
-- [Import-Clixml](../microsoft.powershell.utility/import-clixml.md)
+[Get-CimInstance](get-ciminstance.md)  
+[Import-BinaryMiLog](import-binarymilog.md)  
+[Import-Clixml](../microsoft.powershell.utility/import-clixml.md)  
 

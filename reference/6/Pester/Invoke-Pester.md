@@ -347,7 +347,4 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Describe
-about_pester
-New-PesterOption]()
-
+[Describe](describe.md)
