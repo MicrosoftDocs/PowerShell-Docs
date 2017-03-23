@@ -590,7 +590,7 @@ Now we'll set up a trigger that causes the project to build any time a change is
 1. Select the `DNS Infra` build definition, and click **Edit**
 1. Click the **Triggers** tab
 1. Select **Continuous integration (CI)**, and select `refs/heads/ci-cd-example` in the branch drop-down list
-1. Click **Save**
+1. Click **Save** and then **OK**
 
 Now any change in the TFS git repository triggers an automated build.
 
