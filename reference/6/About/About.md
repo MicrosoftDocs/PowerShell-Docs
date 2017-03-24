@@ -10,7 +10,8 @@ Locale: en-US
 ## Description
 {{Manually Enter Description Here}}
 
-## About Topics### [about_Aliases](about_Aliases.md)
+## About Topics
+### [about_Aliases](about_Aliases.md)
 {{Manually Enter about_Aliases Description Here}}
 
 ### [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
