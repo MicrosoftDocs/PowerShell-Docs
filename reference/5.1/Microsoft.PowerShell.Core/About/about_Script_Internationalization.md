@@ -12,12 +12,12 @@ ms.technology:  powershell
 
 # About_Script_Internationalization
 
-## SHORT DESCRIPTION
+## Short Description
 
 Describes the script internationalization features that make it easy for scripts to display
 messages and instructions to users in their user interface (UI) language.
 
-## LONG DESCRIPTION
+## Long Description
 
 The Windows PowerShell script internationalization features allow you to
 better serve users throughout the world by displaying Help and user
@@ -56,7 +56,7 @@ for a specified language into a script at runtime. This cmdlet recognizes
 and imports strings in any Windows-supported language. For more
 information see [Import-LocalizedData](..\..\Microsoft.PowerShell.Utility\Import-LocalizedData.md).
 
-###The Data Section: Storing Default Strings
+### The Data Section: Storing Default Strings
 
 Use a Data section in the script to store the text strings in the default language.
 Arrange the strings in key/value pairs in a here-string. Each key/value pair must
@@ -85,7 +85,7 @@ $msgTable = Data {
 
 For more information about here-strings, see [about_Quoting_Rules](about_Quoting_Rules.md).
 
-###PSD1 Files: Storing Translated Strings
+### PSD1 Files: Storing Translated Strings
 
 Save the script messages for each UI language in separate text files with
 the same name as the script and the .psd1 file name extension. Store the files
@@ -128,7 +128,7 @@ promptMsg = Please enter your user name (in Arabic).
 '@
 ```
 
-###Import-LocalizedData: Dynamic Retrieval of Translated Strings
+### Import-LocalizedData: Dynamic Retrieval of Translated Strings
 
 To retrieve the strings in the UI language of the current user, use
 the `Import-LocalizedData` cmdlet.
@@ -169,7 +169,7 @@ value of $PSUIculture, the value of $msgTable is not replaced,
 and the call to $msgTable.promptMsg displays the fallback en-US
 strings.
 
-##EXAMPLES
+## Examples
 
 This example shows how the script internationalization features
 are used in a script to display a day of the week to users
@@ -250,8 +250,13 @@ Today is Friday (in German)
 
 SEE ALSO
 [about_Data_Sections](about_Data_Sections.md)
+
 [about_Automatic_Variables](about_Automatic_Variables.md)
+
 [about_Hash_Tables](about_Hash_Tables.md)
+
 [about_Quoting_Rules](about_Quoting_Rules.md)
-[ConvertFrom-StringData](..\..\Microsoft.PowerShell.Utility\ConvertFrom-StringData.md).
-[Import-LocalizedData](..\..\Microsoft.PowerShell.Utility\Import-LocalizedData.md).
+
+[ConvertFrom-StringData](..\..\Microsoft.PowerShell.Utility\ConvertFrom-StringData.md)
+
+[Import-LocalizedData](..\..\Microsoft.PowerShell.Utility\Import-LocalizedData.md)
