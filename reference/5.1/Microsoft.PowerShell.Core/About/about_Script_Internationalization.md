@@ -10,7 +10,7 @@ title:  about_Script_Internationalization
 ms.technology:  powershell
 ---
 
-# About_Script_Internationalization
+# About Script Internationalization
 
 ## Short Description
 
@@ -253,7 +253,8 @@ of $PSUICulture is de-DE, the output of the script is:
 Today is Friday (in German)
 ```
 
-SEE ALSO
+## See also
+
 [about_Data_Sections](about_Data_Sections.md)
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
