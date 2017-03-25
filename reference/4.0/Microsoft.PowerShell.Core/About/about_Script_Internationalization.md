@@ -99,17 +99,14 @@ Examples: de-DE, ar-SA, and zh-Hans
 For example, if the World.ps1 script is stored in the C:\Scripts directory, you
 would create a file directory structure that resembles the following:
 
+```
 C:\Scripts
-
 C:\Scripts\World.ps1
-
 C:\Scripts\de-DE\World.psd1
-
 C:\Scripts\ar-SA\World.psd1
-
 C:\Scripts\zh-CN\World.psd1
-
 ...
+```
 
 The World.psd1 file in the de-DE subdirectory of the script directory
 might include the following statement:
