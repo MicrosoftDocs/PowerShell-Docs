@@ -255,9 +255,9 @@ Today is Friday (in German)
 
 ## See also
 
-*[about_Data_Sections](about_Data_Sections.md)
-*[about_Automatic_Variables](about_Automatic_Variables.md)
-*[about_Hash_Tables](about_Hash_Tables.md)
-*[about_Quoting_Rules](about_Quoting_Rules.md)
-*[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
-*[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+* [about_Data_Sections](about_Data_Sections.md)
+* [about_Automatic_Variables](about_Automatic_Variables.md)
+* [about_Hash_Tables](about_Hash_Tables.md)
+* [about_Quoting_Rules](about_Quoting_Rules.md)
+* [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+* [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
