@@ -45,7 +45,7 @@ such as menus and text strings.
 
 * A cmdlet, `ConvertFrom-StringData`, that converts text strings into
 dictionary-like hash tables to facilitate translation. For more
-information, see [ConvertFrom-StringData](..\..\Microsoft.PowerShell.Utility\ConvertFrom-StringData.md).
+information, see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
 
 * A new file type, .psd1, that stores translated text strings. The .psd1
 files are stored in language-specific subdirectories of the script
@@ -54,7 +54,7 @@ directory.
 * A cmdlet, `Import-LocalizedData`, that imports translated text strings
 for a specified language into a script at runtime. This cmdlet recognizes
 and imports strings in any Windows-supported language. For more
-information see [Import-LocalizedData](..\..\Microsoft.PowerShell.Utility\Import-LocalizedData.md).
+information see [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).
 
 ### The Data Section: Storing Default Strings
 
@@ -100,10 +100,15 @@ For example, if the World.ps1 script is stored in the C:\Scripts directory, you
 would create a file directory structure that resembles the following:
 
 C:\Scripts
+
 C:\Scripts\World.ps1
+
 C:\Scripts\de-DE\World.psd1
+
 C:\Scripts\ar-SA\World.psd1
+
 C:\Scripts\zh-CN\World.psd1
+
 ...
 
 The World.psd1 file in the de-DE subdirectory of the script directory
@@ -257,6 +262,6 @@ SEE ALSO
 
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
-[ConvertFrom-StringData](..\..\Microsoft.PowerShell.Utility\ConvertFrom-StringData.md)
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-[Import-LocalizedData](..\..\Microsoft.PowerShell.Utility\Import-LocalizedData.md)
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
