@@ -21,7 +21,7 @@ Module Guid:   a94c8c7e-9810-47c0-b8af-65089c13a35a
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Security module. The Security module contains cmdlets and providers that manage the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
-### [certificate-provider](certificate-provider.md)
+### [certificate-provider](providers/certificate-provider.md)
 {{Manually Enter certificate-provider Description Here}}
 
 ### [ConvertFrom-SecureString](convertfrom-securestring.md)
@@ -40,7 +40,7 @@ Gets the security descriptor for a resource, such as a file or registry key.
 Gets information about the Authenticode signature for a file.
 
 
-### [get-childitem-for-certificate](get-childitem-for-certificate.md)
+### [get-childitem-for-certificate](providers/get-childitem-for-certificate.md)
 {{Manually Enter get-childitem-for-certificate Description Here}}
 
 ### [Get-Credential](get-credential.md)
@@ -51,14 +51,14 @@ Gets a credential object based on a user name and password.
 Gets the execution policies for the current session.
 
 
-### [move-item-for-certificate](move-item-for-certificate.md)
+### [move-item-for-certificate](providers/move-item-for-certificate.md)
 {{Manually Enter move-item-for-certificate Description Here}}
 
 ### [New-FileCatalog](new-filecatalog.md)
-{{Manually Enter New-FileCatalog Description Here}}### [new-item-for-certificate](new-item-for-certificate.md)
+{{Manually Enter New-FileCatalog Description Here}}### [new-item-for-certificate](providers/new-item-for-certificate.md)
 {{Manually Enter new-item-for-certificate Description Here}}
 
-### [remove-item-for-certificate](remove-item-for-certificate.md)
+### [remove-item-for-certificate](providers/move-item-for-certificate.md)
 {{Manually Enter remove-item-for-certificate Description Here}}
 
 ### [Set-Acl](set-acl.md)

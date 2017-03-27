@@ -49,22 +49,22 @@ Displays management information for a resource instance specified by a Resource 
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
 
-### [new-item-for-clientcertificate](new-item-for-clientcertificate.md)
+### [new-item-for-clientcertificate](providers/new-item-for-clientcertificate.md)
 {{Manually Enter new-item-for-clientcertificate Description Here}}
 
-### [new-item-for-initializationparameters](new-item-for-initializationparameters.md)
+### [new-item-for-initializationparameters](providers/new-item-for-initializationparameters.md)
 {{Manually Enter new-item-for-initializationparameters Description Here}}
 
-### [new-item-for-listener](new-item-for-listener.md)
+### [new-item-for-listener](providers/new-item-for-listener.md)
 {{Manually Enter new-item-for-listener Description Here}}
 
-### [new-item-for-plugin](new-item-for-plugin.md)
+### [new-item-for-plugin](providers/new-item-for-plugin.md)
 {{Manually Enter new-item-for-plugin Description Here}}
 
-### [new-item-for-resources](new-item-for-resources.md)
+### [new-item-for-resources](providers/new-item-for-resources.md)
 {{Manually Enter new-item-for-resources Description Here}}
 
-### [new-item-for-security](new-item-for-security.md)
+### [new-item-for-security](providers/new-item-for-security.md)
 {{Manually Enter new-item-for-security Description Here}}
 
 ### [New-WSManInstance](new-wsmaninstance.md)
@@ -90,6 +90,6 @@ Configures the local computer for remote management.
 ### [Test-WSMan](test-wsman.md)
 Tests whether the WinRM service is running on a local or remote computer.
 
-### [wsman-provider](wsman-provider.md)
+### [wsman-provider](providers/wsman-provider.md)
 {{Manually Enter wsman-provider Description Here}}
 
