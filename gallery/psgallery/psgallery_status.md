@@ -14,6 +14,11 @@ ms.technology:  powershell
 PowerShell Gallery Status
 =========================
 
+## 03/27/2017 - Unable to see individual module and script pages
+
+__Summary of Impact__: Direct links to individual module and script pages on https://www.powershellgallery.com is currently broken. This is currently being reported across all the regions. This does impact any of the PowerShellGet cmdlets ie., Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Scirpt should continue to work
+__Root Cause__: Engineers identified the cause as an issue bringing up social media buttons like Facebook onto the page.  
+__Resolution__: Engineers are working on a fix to resolve this issue.  
 
 ## 12/15/2016 - Unable to send emails via PowerShellGallery website
 
