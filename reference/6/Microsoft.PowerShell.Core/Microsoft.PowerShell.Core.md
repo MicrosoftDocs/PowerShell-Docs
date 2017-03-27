@@ -21,20 +21,20 @@ Module Guid:   00000000-0000-0000-0000-000000000000
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell® Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of Windows PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
-### [add-content-for-filesystem](add-content-for-filesystem.md)
+### [add-content-for-filesystem](providers/filesystem-provider/add-content-for-filesystem.md)
 {{Manually Enter add-content-for-filesystem Description Here}}
 
 ### [Add-History](add-history.md)
 Appends entries to the session history.
 
 
-### [alias-provider](alias-provider.md)
+### [alias-provider](providers/alias-provider.md)
 {{Manually Enter alias-provider Description Here}}
 
 ### [cd..](cd...md)
 {{Manually Enter cd.. Description Here}}
 
-### [clear-content-for-filesystem](clear-content-for-filesystem.md)
+### [clear-content-for-filesystem](providers/filesystem-provider/clear-content-for-filesystem.md)
 {{Manually Enter clear-content-for-filesystem Description Here}}
 
 ### [Clear-History](clear-history.md)
@@ -72,7 +72,7 @@ Connects to and enters into an interactive session with a local process.
 Starts an interactive session with a remote computer.
 
 
-### [environment-provider](environment-provider.md)
+### [environment-provider](providers/environment-provider.md)
 {{Manually Enter environment-provider Description Here}}
 
 ### [Exit-PSHostProcess](exit-pshostprocess.md)
@@ -87,24 +87,24 @@ Ends an interactive session with a remote computer.
 Specifies the module members that are exported.
 
 
-### [filesystem-provider](filesystem-provider.md)
+### [filesystem-provider](providers/filesystem-provider.md)
 {{Manually Enter filesystem-provider Description Here}}
 
 ### [ForEach-Object](foreach-object.md)
 Performs an operation against each item in a collection of input objects.
 
 
-### [function-provider](function-provider.md)
+### [function-provider](providers/function-provider.md)
 {{Manually Enter function-provider Description Here}}
 
-### [get-childitem-for-filesystem](get-childitem-for-filesystem.md)
+### [get-childitem-for-filesystem](providers/filesystem-provider/get-childitem-for-filesystem.md)
 {{Manually Enter get-childitem-for-filesystem Description Here}}
 
 ### [Get-Command](get-command.md)
 Gets all commands.
 
 
-### [get-content-for-filesystem](get-content-for-filesystem.md)
+### [get-content-for-filesystem](providers/filesystem-provider/get-content-for-filesystem.md)
 {{Manually Enter get-content-for-filesystem Description Here}}
 
 ### [get-hashvaluefromstring](get-hashvaluefromstring.md)
@@ -118,7 +118,7 @@ Displays information about Windows PowerShell commands and concepts.
 Gets a list of the commands entered during the current session.
 
 
-### [get-item-for-filesystem](get-item-for-filesystem.md)
+### [get-item-for-filesystem](providers/filesystem-provider/get-item-for-filesystem.md)
 {{Manually Enter get-item-for-filesystem Description Here}}
 
 ### [Get-Job](get-job.md)
@@ -239,10 +239,10 @@ Registers a custom argument completer.
 Creates and registers a new session configuration.
 
 
-### [registry-provider](registry-provider.md)
+### [registry-provider](providers/registry-provider.md)
 {{Manually Enter registry-provider Description Here}}
 
-### [remove-item-for-filesystem](remove-item-for-filesystem.md)
+### [remove-item-for-filesystem](providers/filesystem-provider/remove-item-for-filesystem.md)
 {{Manually Enter remove-item-for-filesystem Description Here}}
 
 ### [Remove-Job](remove-job.md)
@@ -261,7 +261,7 @@ Closes one or more Windows PowerShell sessions (PSSessions).
 Downloads and saves the newest help files to a file system directory.
 
 
-### [set-content-for-filesystem](set-content-for-filesystem.md)
+### [set-content-for-filesystem](providers/filesystem-provider/set-content-for-filesystem.md)
 {{Manually Enter set-content-for-filesystem Description Here}}
 
 ### [Set-PSDebug](set-psdebug.md)
@@ -291,7 +291,7 @@ Stops a Windows PowerShell background job.
 Verifies that a module manifest file accurately describes the contents of a module.
 
 
-### [test-path-for-filesystem](test-path-for-filesystem.md)
+### [test-path-for-filesystem](providers/filesystem-provider/test-path-for-filesystem.md)
 {{Manually Enter test-path-for-filesystem Description Here}}
 
 ### [Test-PSSessionConfigurationFile](test-pssessionconfigurationfile.md)
@@ -306,7 +306,7 @@ Deletes registered session configurations from the computer.
 Downloads and installs the newest help files on your computer.
 
 
-### [variable-provider](variable-provider.md)
+### [variable-provider](providers/variable-provider.md)
 {{Manually Enter variable-provider Description Here}}
 
 ### [Wait-Job](wait-job.md)
