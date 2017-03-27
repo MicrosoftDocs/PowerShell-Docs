@@ -21,62 +21,57 @@ Module Guid:   a94c8c7e-9810-47c0-b8af-65089c13a35a
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Security module. The Security module contains cmdlets and providers that manage the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
-### [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
+### [certificate-provider](certificate-provider.md)
+{{Manually Enter certificate-provider Description Here}}
+
+### [ConvertFrom-SecureString](convertfrom-securestring.md)
 Converts a secure string to an encrypted standard string.
 
 
-### [ConvertTo-SecureString](ConvertTo-SecureString.md)
+### [ConvertTo-SecureString](convertto-securestring.md)
 Converts encrypted standard strings to secure strings.
 
 
-### [Get-Acl](Get-Acl.md)
+### [Get-Acl](get-acl.md)
 Gets the security descriptor for a resource, such as a file or registry key.
 
 
-### [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
+### [Get-AuthenticodeSignature](get-authenticodesignature.md)
 Gets information about the Authenticode signature for a file.
 
 
-### [Get-CmsMessage](Get-CmsMessage.md)
-Gets content that has been encrypted by using the Cryptographic Message Syntax format.
+### [get-childitem-for-certificate](get-childitem-for-certificate.md)
+{{Manually Enter get-childitem-for-certificate Description Here}}
 
-
-### [Get-Credential](Get-Credential.md)
+### [Get-Credential](get-credential.md)
 Gets a credential object based on a user name and password.
 
 
-### [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
+### [Get-ExecutionPolicy](get-executionpolicy.md)
 Gets the execution policies for the current session.
 
 
-### [Get-PfxCertificate](Get-PfxCertificate.md)
-Gets information about .pfx certificate files on the computer.
+### [move-item-for-certificate](move-item-for-certificate.md)
+{{Manually Enter move-item-for-certificate Description Here}}
 
+### [New-FileCatalog](new-filecatalog.md)
+{{Manually Enter New-FileCatalog Description Here}}### [new-item-for-certificate](new-item-for-certificate.md)
+{{Manually Enter new-item-for-certificate Description Here}}
 
-### [New-FileCatalog](New-FileCatalog.md)
+### [remove-item-for-certificate](remove-item-for-certificate.md)
+{{Manually Enter remove-item-for-certificate Description Here}}
 
-
-
-### [Protect-CmsMessage](Protect-CmsMessage.md)
-Encrypts content by using the Cryptographic Message Syntax format.
-
-
-### [Set-Acl](Set-Acl.md)
+### [Set-Acl](set-acl.md)
 Changes the security descriptor of a specified item, such as a file or a registry key.
 
 
-### [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
+### [Set-AuthenticodeSignature](set-authenticodesignature.md)
 Adds an Authenticode signature to a Windows PowerShell script or other file.
 
 
-### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
+### [Set-ExecutionPolicy](set-executionpolicy.md)
 Changes the user preference for the Windows PowerShell execution policy.
 
 
-### [Test-FileCatalog](Test-FileCatalog.md)
-
-
-
-### [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
-Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
-
+### [Test-FileCatalog](test-filecatalog.md)
+{{Manually Enter Test-FileCatalog Description Here}}

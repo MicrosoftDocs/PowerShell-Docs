@@ -21,54 +21,75 @@ Module Guid:   766204a6-330e-4263-a7ab-46c87afc366c
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.WSMan.Management module. The WSMan module contains cmdlets and providers that manage the WS-Management protocol in Windows PowerShell.
 
 ## Microsoft.WsMan.Management Cmdlets
-### [Connect-WSMan](Connect-WSMan.md)
+### [Connect-WSMan](connect-wsman.md)
 Connects to the WinRM service on a remote computer.
 
 
-### [Disable-WSManCredSSP](Disable-WSManCredSSP.md)
+### [Disable-WSManCredSSP](disable-wsmancredssp.md)
 Disables CredSSP authentication on a computer.
 
 
-### [Disconnect-WSMan](Disconnect-WSMan.md)
+### [Disconnect-WSMan](disconnect-wsman.md)
 Disconnects the client from the WinRM service on a remote computer.
 
 
-### [Enable-WSManCredSSP](Enable-WSManCredSSP.md)
+### [Enable-WSManCredSSP](enable-wsmancredssp.md)
 Enables CredSSP authentication on a computer.
 
 
-### [Get-WSManCredSSP](Get-WSManCredSSP.md)
+### [Get-WSManCredSSP](get-wsmancredssp.md)
 Gets the Credential Security Support Provider-related configuration for the client.
 
 
-### [Get-WSManInstance](Get-WSManInstance.md)
+### [Get-WSManInstance](get-wsmaninstance.md)
 Displays management information for a resource instance specified by a Resource URI.
 
 
-### [Invoke-WSManAction](Invoke-WSManAction.md)
+### [Invoke-WSManAction](invoke-wsmanaction.md)
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
 
-### [New-WSManInstance](New-WSManInstance.md)
+### [new-item-for-clientcertificate](new-item-for-clientcertificate.md)
+{{Manually Enter new-item-for-clientcertificate Description Here}}
+
+### [new-item-for-initializationparameters](new-item-for-initializationparameters.md)
+{{Manually Enter new-item-for-initializationparameters Description Here}}
+
+### [new-item-for-listener](new-item-for-listener.md)
+{{Manually Enter new-item-for-listener Description Here}}
+
+### [new-item-for-plugin](new-item-for-plugin.md)
+{{Manually Enter new-item-for-plugin Description Here}}
+
+### [new-item-for-resources](new-item-for-resources.md)
+{{Manually Enter new-item-for-resources Description Here}}
+
+### [new-item-for-security](new-item-for-security.md)
+{{Manually Enter new-item-for-security Description Here}}
+
+### [New-WSManInstance](new-wsmaninstance.md)
 Creates a new instance of a management resource.
 
 
-### [New-WSManSessionOption](New-WSManSessionOption.md)
+### [New-WSManSessionOption](new-wsmansessionoption.md)
 Creates session option hash table to use as input parameters for WS-Management cmdlets.
 
 
-### [Remove-WSManInstance](Remove-WSManInstance.md)
+### [Remove-WSManInstance](remove-wsmaninstance.md)
 Deletes a management resource instance.
 
 
-### [Set-WSManInstance](Set-WSManInstance.md)
+### [Set-WSManInstance](set-wsmaninstance.md)
 Modifies the management information that is related to a resource.
 
 
-### [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
+### [Set-WSManQuickConfig](set-wsmanquickconfig.md)
 Configures the local computer for remote management.
 
 
-### [Test-WSMan](Test-WSMan.md)
+### [Test-WSMan](test-wsman.md)
 Tests whether the WinRM service is running on a local or remote computer.
+
+### [wsman-provider](wsman-provider.md)
+{{Manually Enter wsman-provider Description Here}}
 

@@ -21,62 +21,62 @@ Module Guid:   8e362604-2c0b-448f-a414-a6a690a644e2
 This section contains the help topics for the Local Accounts cmdlets in Windows PowerShell.
 
 ## Microsoft.PowerShell.LocalAccounts Cmdlets
-### [Add-LocalGroupMember](Add-LocalGroupMember.md)
+### [Add-LocalGroupMember](add-localgroupmember.md)
 Adds members to a local group.
 
 
-### [Disable-LocalUser](Disable-LocalUser.md)
+### [Disable-LocalUser](disable-localuser.md)
 Disables a local user account.
 
 
-### [Enable-LocalUser](Enable-LocalUser.md)
+### [Enable-LocalUser](enable-localuser.md)
 Enables a local user account.
 
 
-### [Get-LocalGroup](Get-LocalGroup.md)
+### [Get-LocalGroup](get-localgroup.md)
 Gets the local security groups.
 
 
-### [Get-LocalGroupMember](Get-LocalGroupMember.md)
+### [Get-LocalGroupMember](get-localgroupmember.md)
 Gets members from a local group.
 
 
-### [Get-LocalUser](Get-LocalUser.md)
+### [Get-LocalUser](get-localuser.md)
 Gets local user accounts.
 
 
-### [New-LocalGroup](New-LocalGroup.md)
+### [New-LocalGroup](new-localgroup.md)
 Creates a local security group.
 
 
-### [New-LocalUser](New-LocalUser.md)
+### [New-LocalUser](new-localuser.md)
 Creates a local user account.
 
 
-### [Remove-LocalGroup](Remove-LocalGroup.md)
+### [Remove-LocalGroup](remove-localgroup.md)
 Deletes local security groups.
 
 
-### [Remove-LocalGroupMember](Remove-LocalGroupMember.md)
+### [Remove-LocalGroupMember](remove-localgroupmember.md)
 Removes members from a local group.
 
 
-### [Remove-LocalUser](Remove-LocalUser.md)
+### [Remove-LocalUser](remove-localuser.md)
 Deletes local user accounts.
 
 
-### [Rename-LocalGroup](Rename-LocalGroup.md)
+### [Rename-LocalGroup](rename-localgroup.md)
 Renames a local security group.
 
 
-### [Rename-LocalUser](Rename-LocalUser.md)
+### [Rename-LocalUser](rename-localuser.md)
 Renames a local user account.
 
 
-### [Set-LocalGroup](Set-LocalGroup.md)
+### [Set-LocalGroup](set-localgroup.md)
 Changes a local security group.
 
 
-### [Set-LocalUser](Set-LocalUser.md)
+### [Set-LocalUser](set-localuser.md)
 Modifies a local user account.
 

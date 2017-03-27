@@ -11,33 +11,33 @@ Locale: en-US
 {{Manually Enter Description Here}}
 
 ## PSDiagnostics Cmdlets
-### [Disable-PSTrace](Disable-PSTrace.md)
+### [Disable-PSTrace](disable-pstrace.md)
 {{Manually Enter Disable-PSTrace Description Here}}
 
-### [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
+### [Disable-PSWSManCombinedTrace](disable-pswsmancombinedtrace.md)
 {{Manually Enter Disable-PSWSManCombinedTrace Description Here}}
 
-### [Disable-WSManTrace](Disable-WSManTrace.md)
+### [Disable-WSManTrace](disable-wsmantrace.md)
 {{Manually Enter Disable-WSManTrace Description Here}}
 
-### [Enable-PSTrace](Enable-PSTrace.md)
+### [Enable-PSTrace](enable-pstrace.md)
 {{Manually Enter Enable-PSTrace Description Here}}
 
-### [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
+### [Enable-PSWSManCombinedTrace](enable-pswsmancombinedtrace.md)
 {{Manually Enter Enable-PSWSManCombinedTrace Description Here}}
 
-### [Enable-WSManTrace](Enable-WSManTrace.md)
+### [Enable-WSManTrace](enable-wsmantrace.md)
 {{Manually Enter Enable-WSManTrace Description Here}}
 
-### [Get-LogProperties](Get-LogProperties.md)
+### [Get-LogProperties](get-logproperties.md)
 {{Manually Enter Get-LogProperties Description Here}}
 
-### [Set-LogProperties](Set-LogProperties.md)
+### [Set-LogProperties](set-logproperties.md)
 {{Manually Enter Set-LogProperties Description Here}}
 
-### [Start-Trace](Start-Trace.md)
+### [Start-Trace](start-trace.md)
 {{Manually Enter Start-Trace Description Here}}
 
-### [Stop-Trace](Stop-Trace.md)
+### [Stop-Trace](stop-trace.md)
 {{Manually Enter Stop-Trace Description Here}}
 

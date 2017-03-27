@@ -11,72 +11,63 @@ Locale: en-US
 {{Manually Enter Description Here}}
 
 ## Pester Cmdlets
-### [AfterAll](AfterAll.md)
+### [AfterAll](afterall.md)
 {{Manually Enter AfterAll Description Here}}
 
-### [AfterEach](AfterEach.md)
+### [AfterEach](aftereach.md)
 {{Manually Enter AfterEach Description Here}}
 
-### [Assert-MockCalled](Assert-MockCalled.md)
+### [Assert-MockCalled](assert-mockcalled.md)
 {{Manually Enter Assert-MockCalled Description Here}}
 
-### [Assert-VerifiableMocks](Assert-VerifiableMocks.md)
+### [Assert-VerifiableMocks](assert-verifiablemocks.md)
 {{Manually Enter Assert-VerifiableMocks Description Here}}
 
-### [BeforeAll](BeforeAll.md)
+### [BeforeAll](beforeall.md)
 {{Manually Enter BeforeAll Description Here}}
 
-### [BeforeEach](BeforeEach.md)
+### [BeforeEach](beforeeach.md)
 {{Manually Enter BeforeEach Description Here}}
 
-### [Context](Context.md)
+### [Context](context.md)
 {{Manually Enter Context Description Here}}
 
-### [Describe](Describe.md)
+### [Describe](describe.md)
 {{Manually Enter Describe Description Here}}
 
-### [Get-MockDynamicParameters](Get-MockDynamicParameters.md)
+### [Get-MockDynamicParameters](get-mockdynamicparameters.md)
 {{Manually Enter Get-MockDynamicParameters Description Here}}
 
-### [Get-TestDriveItem](Get-TestDriveItem.md)
+### [Get-TestDriveItem](get-testdriveitem.md)
 {{Manually Enter Get-TestDriveItem Description Here}}
 
-### [In](In.md)
+### [In](in.md)
 {{Manually Enter In Description Here}}
 
-### [InModuleScope](InModuleScope.md)
+### [InModuleScope](inmodulescope.md)
 {{Manually Enter InModuleScope Description Here}}
 
-### [Invoke-Mock](Invoke-Mock.md)
+### [Invoke-Mock](invoke-mock.md)
 {{Manually Enter Invoke-Mock Description Here}}
 
-### [Invoke-Pester](Invoke-Pester.md)
+### [Invoke-Pester](invoke-pester.md)
 {{Manually Enter Invoke-Pester Description Here}}
 
-### [It](It.md)
+### [It](it.md)
 {{Manually Enter It Description Here}}
 
-### [Mock](Mock.md)
+### [Mock](mock.md)
 {{Manually Enter Mock Description Here}}
 
-### [New-Fixture](New-Fixture.md)
+### [New-Fixture](new-fixture.md)
 {{Manually Enter New-Fixture Description Here}}
 
-### [New-PesterOption](New-PesterOption.md)
-{{Manually Enter New-PesterOption Description Here}}
-
-### [SafeGetCommand](SafeGetCommand.md)
-{{Manually Enter SafeGetCommand Description Here}}
-
-### [Set-DynamicParameterVariables](Set-DynamicParameterVariables.md)
+### [Set-DynamicParameterVariables](set-dynamicparametervariables.md)
 {{Manually Enter Set-DynamicParameterVariables Description Here}}
 
-### [Set-TestInconclusive](Set-TestInconclusive.md)
-{{Manually Enter Set-TestInconclusive Description Here}}
-
-### [Setup](Setup.md)
+### [Setup](setup.md)
 {{Manually Enter Setup Description Here}}
 
-### [Should](Should.md)
+### [Should](should.md)
 {{Manually Enter Should Description Here}}
 

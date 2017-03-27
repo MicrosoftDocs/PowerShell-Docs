@@ -21,217 +21,298 @@ Module Guid:   00000000-0000-0000-0000-000000000000
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell® Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of Windows PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
-### [Add-History](Add-History.md)
+### [add-content-for-filesystem](add-content-for-filesystem.md)
+{{Manually Enter add-content-for-filesystem Description Here}}
+
+### [Add-History](add-history.md)
 Appends entries to the session history.
 
 
-### [Clear-History](Clear-History.md)
+### [alias-provider](alias-provider.md)
+{{Manually Enter alias-provider Description Here}}
+
+### [cd..](cd...md)
+{{Manually Enter cd.. Description Here}}
+
+### [clear-content-for-filesystem](clear-content-for-filesystem.md)
+{{Manually Enter clear-content-for-filesystem Description Here}}
+
+### [Clear-History](clear-history.md)
 Deletes entries from the command history.
 
 
-### [Connect-PSSession](Connect-PSSession.md)
+### [clear-host](clear-host.md)
+{{Manually Enter clear-host Description Here}}
+
+### [Connect-PSSession](connect-pssession.md)
 Reconnects to disconnected sessions.
 
 
-### [Debug-Job](Debug-Job.md)
+### [Debug-Job](debug-job.md)
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 
-### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
+### [Disable-PSSessionConfiguration](disable-pssessionconfiguration.md)
 Disables session configurations on the local computer.
 
 
-### [Disconnect-PSSession](Disconnect-PSSession.md)
+### [Disconnect-PSSession](disconnect-pssession.md)
 Disconnects from a session.
 
 
-### [Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
+### [Enable-PSSessionConfiguration](enable-pssessionconfiguration.md)
 Enables the session configurations on the local computer.
 
 
-### [Enter-PSHostProcess](Enter-PSHostProcess.md)
+### [Enter-PSHostProcess](enter-pshostprocess.md)
 Connects to and enters into an interactive session with a local process.
 
 
-### [Enter-PSSession](Enter-PSSession.md)
+### [Enter-PSSession](enter-pssession.md)
 Starts an interactive session with a remote computer.
 
 
-### [Exit-PSHostProcess](Exit-PSHostProcess.md)
+### [environment-provider](environment-provider.md)
+{{Manually Enter environment-provider Description Here}}
+
+### [Exit-PSHostProcess](exit-pshostprocess.md)
 Closes an interactive session with a local process.
 
 
-### [Exit-PSSession](Exit-PSSession.md)
+### [Exit-PSSession](exit-pssession.md)
 Ends an interactive session with a remote computer.
 
 
-### [Export-ModuleMember](Export-ModuleMember.md)
+### [Export-ModuleMember](export-modulemember.md)
 Specifies the module members that are exported.
 
 
-### [ForEach-Object](ForEach-Object.md)
+### [filesystem-provider](filesystem-provider.md)
+{{Manually Enter filesystem-provider Description Here}}
+
+### [ForEach-Object](foreach-object.md)
 Performs an operation against each item in a collection of input objects.
 
 
-### [Get-Command](Get-Command.md)
+### [function-provider](function-provider.md)
+{{Manually Enter function-provider Description Here}}
+
+### [get-childitem-for-filesystem](get-childitem-for-filesystem.md)
+{{Manually Enter get-childitem-for-filesystem Description Here}}
+
+### [Get-Command](get-command.md)
 Gets all commands.
 
 
-### [Get-Help](Get-Help.md)
+### [get-content-for-filesystem](get-content-for-filesystem.md)
+{{Manually Enter get-content-for-filesystem Description Here}}
+
+### [get-hashvaluefromstring](get-hashvaluefromstring.md)
+{{Manually Enter get-hashvaluefromstring Description Here}}
+
+### [Get-Help](get-help.md)
 Displays information about Windows PowerShell commands and concepts.
 
 
-### [Get-History](Get-History.md)
+### [Get-History](get-history.md)
 Gets a list of the commands entered during the current session.
 
 
-### [Get-Job](Get-Job.md)
+### [get-item-for-filesystem](get-item-for-filesystem.md)
+{{Manually Enter get-item-for-filesystem Description Here}}
+
+### [Get-Job](get-job.md)
 Gets Windows PowerShell background jobs that are running in the current session.
 
 
-### [Get-Module](Get-Module.md)
+### [Get-Module](get-module.md)
 Gets the modules that have been imported or that can be imported into the current session.
 
 
-### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
+### [get-osversion](get-osversion.md)
+{{Manually Enter get-osversion Description Here}}
+
+### [Get-PSHostProcessInfo](get-pshostprocessinfo.md)
 {{Fill Get-PSHostProcessInfo Description}}
 
-### [Get-PSSession](Get-PSSession.md)
+### [Get-PSSession](get-pssession.md)
 Gets the Windows PowerShell sessions on local and remote computers.
 
 
-### [Get-PSSessionCapability](Get-PSSessionCapability.md)
+### [Get-PSSessionCapability](get-pssessioncapability.md)
 Gets the capabilities of a specific user on a constrained session configuration.
 
 
-### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
+### [Get-PSSessionConfiguration](get-pssessionconfiguration.md)
 Gets the registered session configurations on the computer.
 
 
-### [Import-Module](Import-Module.md)
+### [get-verb](get-verb.md)
+{{Manually Enter get-verb Description Here}}
+
+### [help](help.md)
+{{Manually Enter help Description Here}}
+
+### [Import-Module](import-module.md)
 Adds modules to the current session.
 
 
-### [Invoke-Command](Invoke-Command.md)
+### [importsystemmodules](importsystemmodules.md)
+{{Manually Enter importsystemmodules Description Here}}
+
+### [Invoke-Command](invoke-command.md)
 Runs commands on local and remote computers.
 
 
-### [Invoke-History](Invoke-History.md)
+### [Invoke-History](invoke-history.md)
 Runs commands from the session history.
 
 
-### [New-Module](New-Module.md)
+### [mkdir](mkdir.md)
+{{Manually Enter mkdir Description Here}}
+
+### [more](more.md)
+{{Manually Enter more Description Here}}
+
+### [New-Module](new-module.md)
 Creates a new dynamic module that exists only in memory.
 
 
-### [New-ModuleManifest](New-ModuleManifest.md)
+### [New-ModuleManifest](new-modulemanifest.md)
 Creates a new module manifest.
 
 
-### [New-PSRoleCapabilityFile](New-PSRoleCapabilityFile.md)
+### [New-PSRoleCapabilityFile](new-psrolecapabilityfile.md)
 Creates a file that defines a set of capabilities to be exposed through a session configuration.
 
 
-### [New-PSSession](New-PSSession.md)
+### [New-PSSession](new-pssession.md)
 Creates a persistent connection to a local or remote computer.
 
 
-### [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
+### [New-PSSessionConfigurationFile](new-pssessionconfigurationfile.md)
 Creates a file that defines a session configuration.
 
 
-### [New-PSSessionOption](New-PSSessionOption.md)
+### [New-PSSessionOption](new-pssessionoption.md)
 Creates an object that contains advanced options for a PSSession.
 
 
-### [New-PSTransportOption](New-PSTransportOption.md)
+### [New-PSTransportOption](new-pstransportoption.md)
 Creates an object that contains advanced options for a session configuration.
 
 
-### [Out-Default](Out-Default.md)
+### [oss](oss.md)
+{{Manually Enter oss Description Here}}
+
+### [Out-Default](out-default.md)
 Sends the output to the default formatter and to the default output cmdlet.
 
 
-### [Out-Host](Out-Host.md)
+### [Out-Host](out-host.md)
 Sends output to the command line.
 
 
-### [Out-Null](Out-Null.md)
+### [Out-Null](out-null.md)
 Deletes output instead of sending it down the pipeline.
 
 
-### [Receive-Job](Receive-Job.md)
+### [pause](pause.md)
+{{Manually Enter pause Description Here}}
+
+### [prompt](prompt.md)
+{{Manually Enter prompt Description Here}}
+
+### [Receive-Job](receive-job.md)
 Gets the results of the Windows PowerShell background jobs in the current session.
 
 
-### [Receive-PSSession](Receive-PSSession.md)
+### [Receive-PSSession](receive-pssession.md)
 Gets results of commands in disconnected sessions.
 
 
-### [Register-ArgumentCompleter](Register-ArgumentCompleter.md)
+### [Register-ArgumentCompleter](register-argumentcompleter.md)
 Registers a custom argument completer.
 
 
-### [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
+### [Register-PSSessionConfiguration](register-pssessionconfiguration.md)
 Creates and registers a new session configuration.
 
 
-### [Remove-Job](Remove-Job.md)
+### [registry-provider](registry-provider.md)
+{{Manually Enter registry-provider Description Here}}
+
+### [remove-item-for-filesystem](remove-item-for-filesystem.md)
+{{Manually Enter remove-item-for-filesystem Description Here}}
+
+### [Remove-Job](remove-job.md)
 Deletes a Windows PowerShell background job.
 
 
-### [Remove-Module](Remove-Module.md)
+### [Remove-Module](remove-module.md)
 Removes modules from the current session.
 
 
-### [Remove-PSSession](Remove-PSSession.md)
+### [Remove-PSSession](remove-pssession.md)
 Closes one or more Windows PowerShell sessions (PSSessions).
 
 
-### [Save-Help](Save-Help.md)
+### [Save-Help](save-help.md)
 Downloads and saves the newest help files to a file system directory.
 
 
-### [Set-PSDebug](Set-PSDebug.md)
+### [set-content-for-filesystem](set-content-for-filesystem.md)
+{{Manually Enter set-content-for-filesystem Description Here}}
+
+### [Set-PSDebug](set-psdebug.md)
 Turns script debugging features on and off, sets the trace level, and toggles strict mode.
 
 
-### [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
+### [Set-PSSessionConfiguration](set-pssessionconfiguration.md)
 Changes the properties of a registered session configuration.
 
 
-### [Set-StrictMode](Set-StrictMode.md)
+### [Set-StrictMode](set-strictmode.md)
 Establishes and enforces coding rules in expressions, scripts, and script blocks.
 
 
-### [Start-Job](Start-Job.md)
+### [Start-Job](start-job.md)
 Starts a Windows PowerShell background job.
 
 
-### [Stop-Job](Stop-Job.md)
+### [Stop-Job](stop-job.md)
 Stops a Windows PowerShell background job.
 
 
-### [Test-ModuleManifest](Test-ModuleManifest.md)
+### [tabexpansion2](tabexpansion2.md)
+{{Manually Enter tabexpansion2 Description Here}}
+
+### [Test-ModuleManifest](test-modulemanifest.md)
 Verifies that a module manifest file accurately describes the contents of a module.
 
 
-### [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
+### [test-path-for-filesystem](test-path-for-filesystem.md)
+{{Manually Enter test-path-for-filesystem Description Here}}
+
+### [Test-PSSessionConfigurationFile](test-pssessionconfigurationfile.md)
 Verifies the keys and values in a session configuration file.
 
 
-### [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+### [Unregister-PSSessionConfiguration](unregister-pssessionconfiguration.md)
 Deletes registered session configurations from the computer.
 
 
-### [Update-Help](Update-Help.md)
+### [Update-Help](update-help.md)
 Downloads and installs the newest help files on your computer.
 
 
-### [Wait-Job](Wait-Job.md)
+### [variable-provider](variable-provider.md)
+{{Manually Enter variable-provider Description Here}}
+
+### [Wait-Job](wait-job.md)
 Suppresses the command prompt until one or all of the Windows PowerShell background jobs running in the session are completed.
 
 
-### [Where-Object](Where-Object.md)
+### [Where-Object](where-object.md)
 Selects objects from a collection based on their property values.
 
