@@ -1,7 +1,7 @@
 ---
 author: jpjofre
 description: 
-external help file: 
+external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 manager: carmonm
 ms.date: 2016-12-12

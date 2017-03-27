@@ -107,9 +107,7 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[Describe
-Context
-It
-about_Pester
-about_Should]()
+[about_Pester](https://github.com/pester/Pester/blob/master/en-US/about_Pester.help.txt)
+
+[about_Should](https://github.com/pester/Pester/blob/master/en-US/about_Should.help.txt)
 
