@@ -11,45 +11,45 @@ Locale: en-US
 {{Manually Enter Description Here}}
 
 ## CimCmdlets Cmdlets
-### [Export-BinaryMiLog](Export-BinaryMiLog.md)
+### [Export-BinaryMiLog](export-binarymilog.md)
 {{Manually Enter Export-BinaryMiLog Description Here}}
 
-### [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
+### [Get-CimAssociatedInstance](get-cimassociatedinstance.md)
 {{Manually Enter Get-CimAssociatedInstance Description Here}}
 
-### [Get-CimClass](Get-CimClass.md)
+### [Get-CimClass](get-cimclass.md)
 {{Manually Enter Get-CimClass Description Here}}
 
-### [Get-CimInstance](Get-CimInstance.md)
+### [Get-CimInstance](get-ciminstance.md)
 {{Manually Enter Get-CimInstance Description Here}}
 
-### [Get-CimSession](Get-CimSession.md)
+### [Get-CimSession](get-cimsession.md)
 {{Manually Enter Get-CimSession Description Here}}
 
-### [Import-BinaryMiLog](Import-BinaryMiLog.md)
+### [Import-BinaryMiLog](import-binarymilog.md)
 {{Manually Enter Import-BinaryMiLog Description Here}}
 
-### [Invoke-CimMethod](Invoke-CimMethod.md)
+### [Invoke-CimMethod](invoke-cimmethod.md)
 {{Manually Enter Invoke-CimMethod Description Here}}
 
-### [New-CimInstance](New-CimInstance.md)
+### [New-CimInstance](new-ciminstance.md)
 {{Manually Enter New-CimInstance Description Here}}
 
-### [New-CimSession](New-CimSession.md)
+### [New-CimSession](new-cimsession.md)
 {{Manually Enter New-CimSession Description Here}}
 
-### [New-CimSessionOption](New-CimSessionOption.md)
+### [New-CimSessionOption](new-cimsessionoption.md)
 {{Manually Enter New-CimSessionOption Description Here}}
 
-### [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
+### [Register-CimIndicationEvent](register-cimindicationevent.md)
 {{Manually Enter Register-CimIndicationEvent Description Here}}
 
-### [Remove-CimInstance](Remove-CimInstance.md)
+### [Remove-CimInstance](remove-ciminstance.md)
 {{Manually Enter Remove-CimInstance Description Here}}
 
-### [Remove-CimSession](Remove-CimSession.md)
+### [Remove-CimSession](remove-cimsession.md)
 {{Manually Enter Remove-CimSession Description Here}}
 
-### [Set-CimInstance](Set-CimInstance.md)
+### [Set-CimInstance](set-ciminstance.md)
 {{Manually Enter Set-CimInstance Description Here}}
 

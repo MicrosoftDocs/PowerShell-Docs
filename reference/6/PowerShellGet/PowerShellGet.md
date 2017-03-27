@@ -21,102 +21,102 @@ Module Guid:   1d73a601-4a6c-43c5-ba3f-619b18bbb404
 Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks. 
 
 ## PowerShellGet Cmdlets
-### [Find-Command](Find-Command.md)
+### [Find-Command](find-command.md)
 Finds PowerShell commands in modules.
 
 
-### [Find-DscResource](Find-DscResource.md)
+### [Find-DscResource](find-dscresource.md)
 Finds a DSC resource.
 
 
-### [Find-Module](Find-Module.md)
+### [Find-Module](find-module.md)
 Finds modules from an online gallery that match specified criteria.
 
 
-### [Find-RoleCapability](Find-RoleCapability.md)
+### [Find-RoleCapability](find-rolecapability.md)
 Finds role capabilities in modules.
 
 
-### [Find-Script](Find-Script.md)
+### [Find-Script](find-script.md)
 Finds a script.
 
 
-### [Get-InstalledModule](Get-InstalledModule.md)
+### [Get-InstalledModule](get-installedmodule.md)
 Gets installed modules on a computer.
 
 
-### [Get-InstalledScript](Get-InstalledScript.md)
+### [Get-InstalledScript](get-installedscript.md)
 Gets an installed script.
 
 
-### [Get-PSRepository](Get-PSRepository.md)
+### [Get-PSRepository](get-psrepository.md)
 Gets PowerShell repositories.
 
 
-### [Install-Module](Install-Module.md)
+### [Install-Module](install-module.md)
 Downloads one or more modules from an online gallery, and installs them on the local computer.
 
 
-### [Install-Script](Install-Script.md)
+### [Install-Script](install-script.md)
 Installs a script.
 
 
-### [New-ScriptFileInfo](New-ScriptFileInfo.md)
+### [New-ScriptFileInfo](new-scriptfileinfo.md)
 Creates a script file with metadata.
 
 
-### [Publish-Module](Publish-Module.md)
+### [Publish-Module](publish-module.md)
 Publishes a specified module from the local computer to an online gallery.
 
 
-### [Publish-Script](Publish-Script.md)
+### [Publish-Script](publish-script.md)
 Publishes a script from the local computer to an online gallery.
 
 
-### [Register-PSRepository](Register-PSRepository.md)
+### [Register-PSRepository](register-psrepository.md)
 Registers a PowerShell repository.
 
 
-### [Save-Module](Save-Module.md)
+### [Save-Module](save-module.md)
 Saves a module locally without installing it.
 
 
-### [Save-Script](Save-Script.md)
+### [Save-Script](save-script.md)
 Saves a script.
 
 
-### [Set-PSRepository](Set-PSRepository.md)
+### [Set-PSRepository](set-psrepository.md)
 Sets values for a registered repository.
 
 
-### [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
+### [Test-ScriptFileInfo](test-scriptfileinfo.md)
 Validates a comment block for a script.
 
 
-### [Uninstall-Module](Uninstall-Module.md)
+### [Uninstall-Module](uninstall-module.md)
 Uninstalls a module.
 
 
-### [Uninstall-Script](Uninstall-Script.md)
+### [Uninstall-Script](uninstall-script.md)
 Uninstalls a script file.
 
 
-### [Unregister-PSRepository](Unregister-PSRepository.md)
+### [Unregister-PSRepository](unregister-psrepository.md)
 Unregisters a repository.
 
 
-### [Update-ModuleManifest](Update-ModuleManifest.md)
-Updates a module manifest file.
-
-
-### [Update-Module](Update-Module.md)
+### [Update-Module](update-module.md)
 Downloads and installs the newest version of specified modules from an online gallery to the local computer.
 
 
-### [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
+### [Update-ModuleManifest](update-modulemanifest.md)
+Updates a module manifest file.
+
+
+### [Update-Script](update-script.md)
+Updates a script.
+
+### [Update-ScriptFileInfo](update-scriptfileinfo.md)
 Updates information for a script.
 
-
-### [Update-Script](Update-Script.md)
-Updates a script.
 

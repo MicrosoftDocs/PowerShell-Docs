@@ -21,326 +21,227 @@ Module Guid:   eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Management module. The Management module contains cmdlets that help you manage Windows in Windows PowerShell.
 
 ## Microsoft.PowerShell.Management Cmdlets
-### [Add-Content](Add-Content.md)
+### [Add-Content](add-content.md)
 Adds content to the specified items, such as adding words to a file.
 
 
-### [Clear-Content](Clear-Content.md)
+### [Clear-Content](clear-content.md)
 Deletes the contents of an item, but does not delete the item.
 
 
-### [Clear-Item](Clear-Item.md)
+### [Clear-Item](clear-item.md)
 Clears the contents of an item, but does not delete the item.
 
 
-### [Clear-ItemProperty](Clear-ItemProperty.md)
+### [Clear-ItemProperty](clear-itemproperty.md)
 Clears the value of a property but does not delete the property.
 
 
-### [Convert-Path](Convert-Path.md)
+### [Convert-Path](convert-path.md)
 Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
 
 
-### [Copy-Item](Copy-Item.md)
+### [Copy-Item](copy-item.md)
 Copies an item from one location to another.
 
 
-### [Copy-ItemProperty](Copy-ItemProperty.md)
+### [Copy-ItemProperty](copy-itemproperty.md)
 Copies a property and value from a specified location to another location.
 
 
-### [Debug-Process](Debug-Process.md)
+### [Debug-Process](debug-process.md)
 Debugs one or more processes running on the local computer.
 
 
-### [Get-ChildItem](Get-ChildItem.md)
+### [Get-ChildItem](get-childitem.md)
 Gets the items and child items in one or more specified locations.
 
 
-### [Get-ComputerInfo](Get-ComputerInfo.md)
+### [Get-ComputerInfo](get-computerinfo.md)
 Gets a consolidated object of system and operating system properties.
 
 
-### [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
-Gets the restore points on the local computer.
-
-
-### [Get-Content](Get-Content.md)
+### [Get-Content](get-content.md)
 Gets the content of the item at the specified location.
 
 
-### [Get-ControlPanelItem](Get-ControlPanelItem.md)
-Gets control panel items.
-
-
-### [Get-EventLog](Get-EventLog.md)
-Gets the events in an event log, or a list of the event logs, on the local or remote computers.
-
-
-### [Get-HotFix](Get-HotFix.md)
-Gets the hotfixes that have been applied to the local and remote computers.
-
-
-### [Get-Item](Get-Item.md)
+### [Get-Item](get-item.md)
 Gets the item at the specified location.
 
 
-### [Get-ItemProperty](Get-ItemProperty.md)
+### [Get-ItemProperty](get-itemproperty.md)
 Gets the properties of a specified item.
 
 
-### [Get-ItemPropertyValue](Get-ItemPropertyValue.md)
+### [Get-ItemPropertyValue](get-itempropertyvalue.md)
 Gets the value for one or more properties of a specified item.
 
 
-### [Get-Location](Get-Location.md)
+### [Get-Location](get-location.md)
 Gets information about the current working location or a location stack.
 
 
-### [Get-Process](Get-Process.md)
+### [Get-Process](get-process.md)
 Gets the processes that are running on the local computer or a remote computer.
 
 
-### [Get-PSDrive](Get-PSDrive.md)
+### [Get-PSDrive](get-psdrive.md)
 Gets drives in the current session.
 
 
-### [Get-PSProvider](Get-PSProvider.md)
+### [Get-PSProvider](get-psprovider.md)
 Gets information about the specified Windows PowerShell provider.
 
 
-### [Get-Service](Get-Service.md)
+### [Get-Service](get-service.md)
 Gets the services on a local or remote computer.
 
 
-### [Get-TimeZone](Get-TimeZone.md)
+### [Get-TimeZone](get-timezone.md)
 Gets the current time zone or a list of available time zones.
 
 
-### [Get-Transaction](Get-Transaction.md)
-Gets the current (active) transaction.
-
-
-### [Get-WmiObject](Get-WmiObject.md)
-Gets instances of WMI classes or information about the available classes.
-
-
-### [Invoke-Item](Invoke-Item.md)
+### [Invoke-Item](invoke-item.md)
 Performs the default action on the specified item.
 
 
-### [Invoke-WmiMethod](Invoke-WmiMethod.md)
-Calls WMI methods.
-
-
-### [Join-Path](Join-Path.md)
+### [Join-Path](join-path.md)
 Combines a path and a child path into a single path.
 
 
-### [Limit-EventLog](Limit-EventLog.md)
-Sets the event log properties that limit the size of the event log and the age of its entries.
-
-
-### [Move-Item](Move-Item.md)
+### [Move-Item](move-item.md)
 Moves an item from one location to another.
 
 
-### [Move-ItemProperty](Move-ItemProperty.md)
+### [Move-ItemProperty](move-itemproperty.md)
 Moves a property from one location to another.
 
 
-### [New-EventLog](New-EventLog.md)
-Creates a new event log and a new event source on a local or remote computer.
-
-
-### [New-Item](New-Item.md)
+### [New-Item](new-item.md)
 Creates a new item.
 
 
-### [New-ItemProperty](New-ItemProperty.md)
+### [New-ItemProperty](new-itemproperty.md)
 Creates a new property for an item and sets its value.
 
 
-### [New-PSDrive](New-PSDrive.md)
+### [New-PSDrive](new-psdrive.md)
 Creates temporary and persistent mapped network drives.
 
 
-### [New-Service](New-Service.md)
+### [New-Service](new-service.md)
 Creates a new Windows service.
 
 
-### [New-WebServiceProxy](New-WebServiceProxy.md)
-Creates a Web service proxy object that lets you use and manage the Web service in Windows PowerShell.
-
-
-### [Pop-Location](Pop-Location.md)
+### [Pop-Location](pop-location.md)
 Changes the current location to the location most recently pushed onto the stack.
 
 
-### [Push-Location](Push-Location.md)
+### [Push-Location](push-location.md)
 Adds the current location to the top of a location stack.
 
 
-### [Register-WmiEvent](Register-WmiEvent.md)
-Subscribes to a Windows Management Instrumentation (WMI) event.
-
-
-### [Remove-Computer](Remove-Computer.md)
-Removes the local computer from its domain.
-
-
-### [Remove-EventLog](Remove-EventLog.md)
-Deletes an event log or unregisters an event source.
-
-
-### [Remove-Item](Remove-Item.md)
+### [Remove-Item](remove-item.md)
 Deletes the specified items.
 
 
-### [Remove-ItemProperty](Remove-ItemProperty.md)
+### [Remove-ItemProperty](remove-itemproperty.md)
 Deletes the property and its value from an item.
 
 
-### [Remove-PSDrive](Remove-PSDrive.md)
+### [Remove-PSDrive](remove-psdrive.md)
 Deletes temporary Windows PowerShell drives and disconnects mapped network drives.
 
 
-### [Remove-WmiObject](Remove-WmiObject.md)
-Deletes an instance of an existing Windows Management Instrumentation (WMI) class.
-
-
-### [Rename-Computer](Rename-Computer.md)
+### [Rename-Computer](rename-computer.md)
 Renames a computer.
 
 
-### [Rename-Item](Rename-Item.md)
+### [Rename-Item](rename-item.md)
 Renames an item in a Windows PowerShell provider namespace.
 
 
-### [Rename-ItemProperty](Rename-ItemProperty.md)
+### [Rename-ItemProperty](rename-itemproperty.md)
 Renames a property of an item.
 
 
-### [Reset-ComputerMachinePassword](Reset-ComputerMachinePassword.md)
-Resets the machine account password for the computer.
-
-
-### [Resolve-Path](Resolve-Path.md)
+### [Resolve-Path](resolve-path.md)
 Resolves the wildcard characters in a path, and displays the path contents.
 
 
-### [Restart-Computer](Restart-Computer.md)
+### [Restart-Computer](restart-computer.md)
 Restarts ("reboots") the operating system on local and remote computers.
 
 
-### [Restart-Service](Restart-Service.md)
+### [Restart-Service](restart-service.md)
 Stops and then starts one or more services.
 
 
-### [Restore-Computer](Restore-Computer.md)
-Starts a system restore on the local computer.
-
-
-### [Resume-Service](Resume-Service.md)
+### [Resume-Service](resume-service.md)
 Resumes one or more suspended (paused) services.
 
 
-### [Set-Clipboard](Set-Clipboard.md)
-Sets the current Windows clipboard entry.
-
-
-### [Set-Content](Set-Content.md)
+### [Set-Content](set-content.md)
 Writes or replaces the content in an item with new content.
 
 
-### [Set-Item](Set-Item.md)
+### [Set-Item](set-item.md)
 Changes the value of an item to the value specified in the command.
 
 
-### [Set-ItemProperty](Set-ItemProperty.md)
+### [Set-ItemProperty](set-itemproperty.md)
 Creates or changes the value of a property of an item.
 
 
-### [Set-Location](Set-Location.md)
+### [Set-Location](set-location.md)
 Sets the current working location to a specified location.
 
 
-### [Set-Service](Set-Service.md)
+### [Set-Service](set-service.md)
 Starts, stops, and suspends a service, and changes its properties.
 
 
-### [Set-TimeZone](Set-TimeZone.md)
+### [Set-TimeZone](set-timezone.md)
 Sets the system time zone to a specified time zone.
 
 
-### [Set-WmiInstance](Set-WmiInstance.md)
-Creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
-
-
-### [Show-ControlPanelItem](Show-ControlPanelItem.md)
-Opens control panel items.
-
-
-### [Show-EventLog](Show-EventLog.md)
-Displays the event logs of the local or a remote computer in Event Viewer.
-
-
-### [Split-Path](Split-Path.md)
+### [Split-Path](split-path.md)
 Returns the specified part of a path.
 
 
-### [Start-Process](Start-Process.md)
+### [Start-Process](start-process.md)
 Starts one or more processes on the local computer.
 
 
-### [Start-Service](Start-Service.md)
+### [Start-Service](start-service.md)
 Starts one or more stopped services.
 
 
-### [Start-Transaction](Start-Transaction.md)
-Starts a transaction.
-
-
-### [Stop-Computer](Stop-Computer.md)
+### [Stop-Computer](stop-computer.md)
 Stops (shuts down) local and remote computers.
 
 
-### [Stop-Process](Stop-Process.md)
+### [Stop-Process](stop-process.md)
 Stops one or more running processes.
 
 
-### [Stop-Service](Stop-Service.md)
+### [Stop-Service](stop-service.md)
 Stops one or more running services.
 
 
-### [Suspend-Service](Suspend-Service.md)
+### [Suspend-Service](suspend-service.md)
 Suspends (pauses) one or more running services.
 
 
-### [Test-ComputerSecureChannel](Test-ComputerSecureChannel.md)
-Tests and repairs the secure channel between the local computer and its domain.
-
-
-### [Test-Connection](Test-Connection.md)
+### [Test-Connection](test-connection.md)
 Sends ICMP echo request packets ("pings") to one or more computers.
 
 
-### [Test-Path](Test-Path.md)
+### [Test-Path](test-path.md)
 Determines whether all elements of a path exist.
 
 
-### [Undo-Transaction](Undo-Transaction.md)
-Rolls back the active transaction.
-
-
-### [Use-Transaction](Use-Transaction.md)
-Adds the script block to the active transaction.
-
-
-### [Wait-Process](Wait-Process.md)
+### [Wait-Process](wait-process.md)
 Waits for the processes to be stopped before accepting more input.
 
-
-### [Write-EventLog](Write-EventLog.md)
-Writes an event to an event log.
 

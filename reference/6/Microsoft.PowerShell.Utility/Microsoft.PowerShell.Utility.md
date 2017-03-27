@@ -21,430 +21,399 @@ Module Guid:   1da87e53-152b-403e-98dc-74d7b4d63d59
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell® Utility module, Microsoft.PowerShell.Utility. The Utility module contains cmdlets that manage the basic features of Windows PowerShell.
 
 ## Microsoft.PowerShell.Utility Cmdlets
-### [Add-Member](Add-Member.md)
+### [Add-Member](add-member.md)
 Adds custom properties and methods to an instance of a Windows PowerShell object.
 
 
-### [Add-Type](Add-Type.md)
+### [Add-Type](add-type.md)
 Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 
-### [Clear-Variable](Clear-Variable.md)
+### [Clear-Variable](clear-variable.md)
 Deletes the value of a variable.
 
 
-### [Compare-Object](Compare-Object.md)
+### [Compare-Object](compare-object.md)
 Compares two sets of objects.
 
 
-### [Convert-String](Convert-String.md)
-Formats a string to match examples.
-
-
-### [ConvertFrom-Csv](ConvertFrom-Csv.md)
+### [ConvertFrom-Csv](convertfrom-csv.md)
 Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.
 
 
-### [ConvertFrom-Json](ConvertFrom-Json.md)
+### [ConvertFrom-Json](convertfrom-json.md)
 Converts a JSON-formatted string to a custom object.
 
 
-### [ConvertFrom-SddlString](ConvertFrom-SddlString.md)
-
-
-
-### [ConvertFrom-String](ConvertFrom-String.md)
-Extracts and parses structured objects from string content.
-
-
-### [ConvertFrom-StringData](ConvertFrom-StringData.md)
+### [ConvertFrom-SddlString](convertfrom-sddlstring.md)
+{{Manually Enter ConvertFrom-SddlString Description Here}}### [ConvertFrom-StringData](convertfrom-stringdata.md)
 Converts a string containing one or more key and value pairs to a hash table.
 
 
-### [ConvertTo-Csv](ConvertTo-Csv.md)
+### [ConvertTo-Csv](convertto-csv.md)
 Converts objects into a series of comma-separated value (CSV) variable-length strings.
 
 
-### [ConvertTo-Html](ConvertTo-Html.md)
+### [ConvertTo-Html](convertto-html.md)
 Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
 
 
-### [ConvertTo-Json](ConvertTo-Json.md)
+### [ConvertTo-Json](convertto-json.md)
 Converts an object to a JSON-formatted string.
 
 
-### [ConvertTo-Xml](ConvertTo-Xml.md)
+### [ConvertTo-Xml](convertto-xml.md)
 Creates an XML-based representation of an object.
 
 
-### [Debug-Runspace](Debug-Runspace.md)
+### [Debug-Runspace](debug-runspace.md)
 Starts an interactive debugging session with a runspace.
 
 
-### [Disable-PSBreakpoint](Disable-PSBreakpoint.md)
+### [Disable-PSBreakpoint](disable-psbreakpoint.md)
 Disables the breakpoints in the current console.
 
 
-### [Disable-RunspaceDebug](Disable-RunspaceDebug.md)
+### [Disable-RunspaceDebug](disable-runspacedebug.md)
 Disables debugging on one or more runspaces, and releases any pending debugger stop.
 
 
-### [Enable-PSBreakpoint](Enable-PSBreakpoint.md)
+### [Enable-PSBreakpoint](enable-psbreakpoint.md)
 Enables the breakpoints in the current console.
 
 
-### [Enable-RunspaceDebug](Enable-RunspaceDebug.md)
+### [Enable-RunspaceDebug](enable-runspacedebug.md)
 Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
 
 
-### [Export-Alias](Export-Alias.md)
+### [Export-Alias](export-alias.md)
 Exports information about currently defined aliases to a file.
 
 
-### [Export-Clixml](Export-Clixml.md)
+### [Export-Clixml](export-clixml.md)
 Creates an XML-based representation of an object or objects and stores it in a file.
 
 
-### [Export-Csv](Export-Csv.md)
+### [Export-Csv](export-csv.md)
 Converts objects into a series of comma-separated (CSV) strings and saves the strings in a CSV file.
 
 
-### [Export-FormatData](Export-FormatData.md)
+### [Export-FormatData](export-formatdata.md)
 Saves formatting data from the current session in a formatting file.
 
 
-### [Export-PSSession](Export-PSSession.md)
+### [Export-PSSession](export-pssession.md)
 Imports commands from another session and saves them in a Windows PowerShell module.
 
 
-### [Format-Custom](Format-Custom.md)
+### [Format-Custom](format-custom.md)
 Uses a customized view to format the output.
 
 
-### [Format-Hex](Format-Hex.md)
+### [Format-Hex](format-hex.md)
 Displays a file or other input as hexadecimal.
 
 
-### [Format-List](Format-List.md)
+### [Format-List](format-list.md)
 Formats the output as a list of properties in which each property appears on a new line.
 
 
-### [Format-Table](Format-Table.md)
+### [Format-Table](format-table.md)
 Formats the output as a table.
 
 
-### [Format-Wide](Format-Wide.md)
+### [Format-Wide](format-wide.md)
 Formats objects as a wide table that displays only one property of each object.
 
 
-### [Get-Alias](Get-Alias.md)
+### [Get-Alias](get-alias.md)
 Gets the aliases for the current session.
 
 
-### [Get-Culture](Get-Culture.md)
+### [Get-Culture](get-culture.md)
 Gets the current culture set in the operating system.
 
 
-### [Get-Date](Get-Date.md)
+### [Get-Date](get-date.md)
 Gets the current date and time.
 
 
-### [Get-Event](Get-Event.md)
+### [Get-Event](get-event.md)
 Gets the events in the event queue.
 
 
-### [Get-EventSubscriber](Get-EventSubscriber.md)
+### [Get-EventSubscriber](get-eventsubscriber.md)
 Gets the event subscribers in the current session.
 
 
-### [Get-FileHash](Get-FileHash.md)
+### [Get-FileHash](get-filehash.md)
 Computes the hash value for a file by using a specified hash algorithm.
 
 
-### [Get-FormatData](Get-FormatData.md)
+### [Get-FormatData](get-formatdata.md)
 Gets the formatting data in the current session.
 
 
-### [Get-Host](Get-Host.md)
+### [Get-Host](get-host.md)
 Gets an object that represents the current host program.
 
 
-### [Get-Member](Get-Member.md)
+### [Get-Member](get-member.md)
 Gets the properties and methods of objects.
 
 
-### [Get-PSBreakpoint](Get-PSBreakpoint.md)
+### [Get-PSBreakpoint](get-psbreakpoint.md)
 Gets the breakpoints that are set in the current session.
 
 
-### [Get-PSCallStack](Get-PSCallStack.md)
+### [Get-PSCallStack](get-pscallstack.md)
 Displays the current call stack.
 
 
-### [Get-Random](Get-Random.md)
+### [Get-Random](get-random.md)
 Gets a random number, or selects objects randomly from a collection.
 
 
-### [Get-Runspace](Get-Runspace.md)
+### [Get-Runspace](get-runspace.md)
 Gets active runspaces within a Windows PowerShellhost process.
 
 
-### [Get-RunspaceDebug](Get-RunspaceDebug.md)
+### [Get-RunspaceDebug](get-runspacedebug.md)
 Shows runspace debugging options.
 
 
-### [Get-TraceSource](Get-TraceSource.md)
+### [Get-TraceSource](get-tracesource.md)
 Gets Windows PowerShell components that are instrumented for tracing.
 
 
-### [Get-TypeData](Get-TypeData.md)
+### [Get-TypeData](get-typedata.md)
 Gets the extended type data in the current session.
 
 
-### [Get-UICulture](Get-UICulture.md)
+### [Get-UICulture](get-uiculture.md)
 Gets the current UI culture settings in the operating system.
 
 
-### [Get-Unique](Get-Unique.md)
+### [Get-Unique](get-unique.md)
 Returns unique items from a sorted list.
 
 
-### [Get-Variable](Get-Variable.md)
+### [Get-Variable](get-variable.md)
 Gets the variables in the current console.
 
 
-### [Group-Object](Group-Object.md)
+### [get-verb](get-verb.md)
+{{Manually Enter get-verb Description Here}}
+
+### [Group-Object](group-object.md)
 Groups objects that contain the same value for specified properties.
 
 
-### [Import-Alias](Import-Alias.md)
+### [Import-Alias](import-alias.md)
 Imports an alias list from a file.
 
 
-### [Import-Clixml](Import-Clixml.md)
+### [Import-Clixml](import-clixml.md)
 Imports a CLIXML file and creates corresponding objects in Windows PowerShell.
 
 
-### [Import-Csv](Import-Csv.md)
+### [Import-Csv](import-csv.md)
 Creates table-like custom objects from the items in a CSV file.
 
 
-### [Import-LocalizedData](Import-LocalizedData.md)
+### [Import-LocalizedData](import-localizeddata.md)
 Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 
-### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-
-
-
-### [Import-PSSession](Import-PSSession.md)
+### [Import-PowerShellDataFile](import-powershelldatafile.md)
+{{Manually Enter Import-PowerShellDataFile Description Here}}### [Import-PSSession](import-pssession.md)
 Imports commands from another session into the current session.
 
 
-### [Invoke-Expression](Invoke-Expression.md)
+### [Invoke-Expression](invoke-expression.md)
 Runs commands or expressions on the local computer.
 
 
-### [Invoke-RestMethod](Invoke-RestMethod.md)
+### [Invoke-RestMethod](invoke-restmethod.md)
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 
-### [Invoke-WebRequest](Invoke-WebRequest.md)
+### [Invoke-WebRequest](invoke-webrequest.md)
 Gets content from a web page on the Internet.
 
 
-### [Measure-Command](Measure-Command.md)
+### [Measure-Command](measure-command.md)
 Measures the time it takes to run script blocks and cmdlets.
 
 
-### [Measure-Object](Measure-Object.md)
+### [Measure-Object](measure-object.md)
 Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
 
-### [New-Alias](New-Alias.md)
+### [New-Alias](new-alias.md)
 Creates a new alias.
 
 
-### [New-Event](New-Event.md)
+### [New-Event](new-event.md)
 Creates a new event.
 
 
-### [New-Guid](New-Guid.md)
+### [New-Guid](new-guid.md)
 Creates a GUID.
 
 
-### [New-Object](New-Object.md)
+### [New-Object](new-object.md)
 Creates an instance of a Microsoft .NET Framework or COM object.
 
 
-### [New-TemporaryFile](New-TemporaryFile.md)
+### [New-TemporaryFile](new-temporaryfile.md)
 Creates a temporary file.
 
 
-### [New-TimeSpan](New-TimeSpan.md)
+### [New-TimeSpan](new-timespan.md)
 Creates a TimeSpan object.
 
 
-### [New-Variable](New-Variable.md)
+### [New-Variable](new-variable.md)
 Creates a new variable.
 
 
-### [Out-File](Out-File.md)
+### [Out-File](out-file.md)
 Sends output to a file.
 
 
-### [Out-GridView](Out-GridView.md)
-Sends output to an interactive table in a separate window.
-
-
-### [Out-Printer](Out-Printer.md)
-Sends output to a printer.
-
-
-### [Out-String](Out-String.md)
+### [Out-String](out-string.md)
 Sends objects to the host as a series of strings.
 
 
-### [Read-Host](Read-Host.md)
+### [Read-Host](read-host.md)
 Reads a line of input from the console.
 
 
-### [Register-EngineEvent](Register-EngineEvent.md)
+### [Register-EngineEvent](register-engineevent.md)
 Subscribes to events that are generated by the Windows PowerShell engine and by the New-Event cmdlet.
 
 
-### [Register-ObjectEvent](Register-ObjectEvent.md)
+### [Register-ObjectEvent](register-objectevent.md)
 Subscribes to the events that are generated by a Microsoft .NET Framework object.
 
 
-### [Remove-Event](Remove-Event.md)
+### [Remove-Event](remove-event.md)
 Deletes events from the event queue.
 
 
-### [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
+### [Remove-PSBreakpoint](remove-psbreakpoint.md)
 Deletes breakpoints from the current console.
 
 
-### [Remove-TypeData](Remove-TypeData.md)
+### [Remove-TypeData](remove-typedata.md)
 Deletes extended types from the current session.
 
 
-### [Remove-Variable](Remove-Variable.md)
+### [Remove-Variable](remove-variable.md)
 Deletes a variable and its value.
 
 
-### [Select-Object](Select-Object.md)
+### [Select-Object](select-object.md)
 Selects objects or object properties.
 
 
-### [Select-String](Select-String.md)
+### [Select-String](select-string.md)
 Finds text in strings and files.
 
 
-### [Select-Xml](Select-Xml.md)
+### [Select-Xml](select-xml.md)
 Finds text in an XML string or document.
 
 
-### [Send-MailMessage](Send-MailMessage.md)
-Sends an email message.
-
-
-### [Set-Alias](Set-Alias.md)
+### [Set-Alias](set-alias.md)
 Creates or changes an alias for a cmdlet or other command element in the current Windows PowerShell session.
 
 
-### [Set-Date](Set-Date.md)
+### [Set-Date](set-date.md)
 Changes the system time on the computer to a time that you specify.
 
 
-### [Set-PSBreakpoint](Set-PSBreakpoint.md)
+### [Set-PSBreakpoint](set-psbreakpoint.md)
 Sets a breakpoint on a line, command, or variable.
 
 
-### [Set-TraceSource](Set-TraceSource.md)
+### [Set-TraceSource](set-tracesource.md)
 Configures, starts, and stops a trace of Windows PowerShell components.
 
 
-### [Set-Variable](Set-Variable.md)
+### [Set-Variable](set-variable.md)
 Sets the value of a variable.
 
 
-### [Show-Command](Show-Command.md)
-Creates Windows PowerShell commands in a graphical command window.
-
-
-### [Sort-Object](Sort-Object.md)
+### [Sort-Object](sort-object.md)
 Sorts objects by property values.
 
 
-### [Start-Sleep](Start-Sleep.md)
+### [Start-Sleep](start-sleep.md)
 Suspends the activity in a script or session for the specified period of time.
 
 
-### [Tee-Object](Tee-Object.md)
+### [Tee-Object](tee-object.md)
 Saves command output in a file or variable and also sends it down the pipeline.
 
 
-### [Trace-Command](Trace-Command.md)
+### [Trace-Command](trace-command.md)
 Configures and starts a trace of the specified expression or command.
 
 
-### [Unblock-File](Unblock-File.md)
+### [Unblock-File](unblock-file.md)
 Unblocks files that were downloaded from the Internet.
 
 
-### [Unregister-Event](Unregister-Event.md)
+### [Unregister-Event](unregister-event.md)
 Cancels an event subscription.
 
 
-### [Update-FormatData](Update-FormatData.md)
+### [Update-FormatData](update-formatdata.md)
 Updates the formatting data in the current session.
 
 
-### [Update-List](Update-List.md)
-Adds items to and removes items from a property value that contains a collection of objects.
-
-
-### [Update-TypeData](Update-TypeData.md)
+### [Update-TypeData](update-typedata.md)
 Updates the extended type data in the session.
 
 
-### [Wait-Debugger](Wait-Debugger.md)
+### [Wait-Debugger](wait-debugger.md)
 Stops a script in the debugger before running the next statement in the script.
 
 
-### [Wait-Event](Wait-Event.md)
+### [Wait-Event](wait-event.md)
 Waits until a particular event is raised before continuing to run.
 
 
-### [Write-Debug](Write-Debug.md)
+### [Write-Debug](write-debug.md)
 Writes a debug message to the console.
 
 
-### [Write-Error](Write-Error.md)
+### [Write-Error](write-error.md)
 Writes an object to the error stream.
 
 
-### [Write-Host](Write-Host.md)
+### [Write-Host](write-host.md)
 Writes customized output to a host.
 
 
-### [Write-Information](Write-Information.md)
+### [Write-Information](write-information.md)
 Specifies how Windows PowerShell handles information stream data for a command.
 
 
-### [Write-Output](Write-Output.md)
+### [Write-Output](write-output.md)
 Sends the specified objects to the next command in the pipeline.
 
 
-### [Write-Progress](Write-Progress.md)
+### [Write-Progress](write-progress.md)
 Displays a progress bar within a Windows PowerShell command window.
 
 
-### [Write-Verbose](Write-Verbose.md)
+### [Write-Verbose](write-verbose.md)
 Writes text to the verbose message stream.
 
 
-### [Write-Warning](Write-Warning.md)
+### [Write-Warning](write-warning.md)
 Writes a warning message.
 
