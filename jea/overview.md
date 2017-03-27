@@ -1,12 +1,11 @@
 ---
-description:  
-manager:  dongill
+manager:  carmonm
 ms.topic:  article
 author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2017-03-07
 title:  Overview of Just Enough Administration
 ms.technology:  powershell
 ---
@@ -16,7 +15,7 @@ ms.technology:  powershell
 Just Enough Administration (JEA) is a security technology that enables delegated administration for anything that can be managed with PowerShell.
 With JEA, you can:
 
-- **Reduce the number of administrators on your machines** by leveraging virtual accounts that perform privileged actions on behalf of regular users.
+- **Reduce the number of administrators on your machines** by leveraging virtual accounts or group managed service accounts that perform privileged actions on behalf of regular users.
 - **Limit what users can do** by specifying which cmdlets, functions, and external commands they can run.
 - **Better understand what your users are doing** with transcripts and logs that show you exactly which commands a user executed during their session.
 
@@ -50,3 +49,7 @@ To learn more about the requirements to use JEA and to learn how to create, use,
 - [Using JEA](using-jea.md) - learn the various ways you can use JEA.
 - [Security Considerations](security-considerations.md) - review security best practices and implications of JEA configuration options.
 - [Audit and Report on JEA](audit-and-report.md) - learn how to audit and report on JEA endpoints.
+
+## Samples and DSC resource
+
+Sample JEA configurations and the JEA DSC resource can be found in the [JEA GitHub repository](https://github.com/PowerShell/JEA).
