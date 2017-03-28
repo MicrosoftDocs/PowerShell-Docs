@@ -5,7 +5,7 @@ keywords:  powershell,DSC
 description:  
 ms.topic:  article
 author:  eslesar
-manager:  dongill
+manager:  carmonm
 ms.prod:  powershell
 ---
 
