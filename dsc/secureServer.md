@@ -5,7 +5,7 @@ keywords:  powershell,DSC
 description:  
 ms.topic:  article
 author:  eslesar
-manager:  dongill
+manager:  carmonm
 ms.prod:  powershell
 ---
 
@@ -131,27 +131,28 @@ What size server will you request?|
 
 ### Accounts
 
-There are no service account requirements to deploy a pull server instance. However there are scenarios where the website could run in the context of a local user account. For example, 
-if there is a need to access a storage share for website content and either the Windows Server or the device hosting the storage share are not domain joined.
+There are no service account requirements to deploy a pull server instance. 
+However, there are scenarios where the website could run in the context of a local user account. 
+For example, if there is a need to access a storage share for website content and either the Windows Server or the device hosting the storage share are not domain joined.
 
 ### DNS records
 
-You will need a server name to use when configuring clients to work with a pull server environment. In test environments, typically the server hostname is used, or the IP address for 
-the server can be used if DNS name resolution is not available. In production environments or in a lab environment that is intended to represent a production deployment, the best practice 
-is to create a DNS CNAME record.
+You will need a server name to use when configuring clients to work with a pull server environment. 
+In test environments, typically the server hostname is used, or the IP address for the server can be used if DNS name resolution is not available. 
+In production environments or in a lab environment that is intended to represent a production deployment, the best practice is to create a DNS CNAME record.
 
-A DNS CNAME allows you to create an alias to refer to your host (A) record. The intent of the additional name record is to increase flexibility should a change be required in the future. A 
-CNAME can help to isolate the client configuration so that changes to the server environment, such as replacing a pull server or adding additional pull servers, will not require a corresponding 
-change to the client configuration.
+A DNS CNAME allows you to create an alias to refer to your host (A) record. 
+The intent of the additional name record is to increase flexibility should a change be required in the future. 
+A CNAME can help to isolate the client configuration so that changes to the server environment, such as replacing a pull server or adding additional pull servers, 
+will not require a corresponding change to the client configuration.
 
-When choosing a name for the DNS record, keep the solution architecture in mind. If using load balancing, the certificate used to secure traffic over HTTPS will need to share the same name 
-as the DNS record. Similarly, if using a highly available file share the virtual name for the cluster would be used.
+When choosing a name for the DNS record, keep the solution architecture in mind. 
+If using load balancing, the certificate used to secure traffic over HTTPS will need to share the same name as the DNS record. 
 
 Scenario |Best Practice
 :---|:---
 Test Environment |Reproduce the planned production environment, if possible. A server hostname is suitable for simple configurations. If DNS is not available, an IP address may be used in lieu of a hostname.|
 Single Node Deployment |Create a DNS CNAME record that points to the server hostname.|
-Highly Available Deployment |If clients will connect through a load balancing solution, create a hostname for the virtual IP and a CNAME record that references that hostname. If DNS round robin will be used to distribute client requests across pull servers, you must configure the name records to include the host names of all deployed pull server instances.|
 
 For more information, see [Configuring DNS Round Robin in Windows Server](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
 
@@ -189,17 +190,6 @@ Web Reporting Manager (both topics to be addressed in a future version of this d
 SMB provides an option for environments where policy dictates that a web server should not be utilized, and for other environmental requirements that make a web server role undesirable. 
 In either case, remember to evaluate the requirements for signing and encrypting traffic. HTTPS, SMB signing, and IPSEC policies are all options worth considering.
 
-#### Designing for high availability  
-The pull server role can be deployed in a highly available architecture. The web service role can be load balanced and the files and folders that include DSC modules and DSC configurations 
-can be located on highly available storage.
-
-Bear in mind that once configurations and modules are delivered to a target node all data required to perform tests and to set configurations is stored locally on each node. Only changes are 
-delivered from the pull server. A service outage for a pull server would not be an interruption unless deployments are active.  Typically, high availability is only warranted for the largest 
-of environments.
-
-Configuring a highly available pull server environment requires decisions about how to distribute client requests across multiple server nodes, and how to share the required server files 
-across those nodes.
-
 #### Load balancing  
 Clients interacting with the web service make a request for information that is returned in a single response. No sequential requests are required, so it is not necessary for the load 
 balancing platform to ensure sessions are maintained on a single server at any point in time.
@@ -213,19 +203,6 @@ What information will be required for the request?|
 Will you need to request an additional IP or will the team responsible for load balancing handle that?|
 Do you have the DNS records needed, and will this be required by the team responsible for configuring the load balancing solution?|
 Does the load balancing solution require that PKI be handled by the device or can it load balance HTTPS traffic as long as there are no session requirements?|
-
-### Shared storage
-
-In a highly available scenario where multiple servers are configured as pull servers and connections are load balanced across them, it is critical that the resources and configurations 
-available from those servers be identical. The best way to accomplish this is to store this content on a highly available location such as a clustered file share. The location of the share 
-can be specified in the configuration for each server.For more information about shared storage options, see Scale-Out File Server for Application Data Overview .
-
-Planning task|
----|
-What solution will be used to host the highly available share?|
-Who will handle the request for a new highly available share?|
-What is the average turnaround time for a highly available share to be available?|
-What information will the teams responsible for storage and/or clustering need?|
 
 ### Staging configurations and modules on the pull server
 
