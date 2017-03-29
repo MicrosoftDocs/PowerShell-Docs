@@ -1,4 +1,4 @@
-#  [Microsoft.PowerShell.Archive]()
-##  [Compress-Archive](Compress-Archive.md)
-##  [Expand-Archive](Expand-Archive.md)
-##  [Microsoft.PowerShell.Archive](Microsoft.PowerShell.Archive.md)
+#  [Microsoft.PowerShell.Archive](Microsoft.PowerShell.Archive.md)
+##  [Compress-Archive](compress-archive.md)
+##  [Expand-Archive](expand-archive.md)
+##  [Microsoft.PowerShell.Archive](microsoft.powershell.archive.md)

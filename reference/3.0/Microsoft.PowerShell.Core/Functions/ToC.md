@@ -1,3 +1,3 @@
-#  Functions
-##  [Clear-Host](Clear-Host.md)
-##  [Get-Verb](Get-Verb.md)
+#  [Functions]()
+##  [Clear-Host](clear-host.md)
+##  [Get-Verb](get-verb.md)

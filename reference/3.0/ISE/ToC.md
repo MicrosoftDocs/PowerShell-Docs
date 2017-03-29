@@ -1,4 +1,5 @@
 #  [ISE](ISE.md)
-##  [Get-IseSnippet](Get-IseSnippet.md)
-##  [Import-IseSnippet](Import-IseSnippet.md)
-##  [New-IseSnippet](New-IseSnippet.md)
+##  [Get-IseSnippet](get-isesnippet.md)
+##  [Import-IseSnippet](import-isesnippet.md)
+##  [ISE](ise.md)
+##  [New-IseSnippet](new-isesnippet.md)

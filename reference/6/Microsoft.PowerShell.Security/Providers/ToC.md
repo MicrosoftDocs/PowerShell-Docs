@@ -1,5 +1,5 @@
 #  [Providers]()
-##  [Certificate-Provider](Certificate-Provider.md)
+##  [Certificate-Provider](certificate-provider.md)
 ##  [get-childitem-for-certificate](get-childitem-for-certificate.md)
 ##  [move-item-for-certificate](move-item-for-certificate.md)
 ##  [new-item-for-certificate](new-item-for-certificate.md)
