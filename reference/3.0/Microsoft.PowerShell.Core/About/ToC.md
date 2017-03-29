@@ -1,4 +1,4 @@
-#  [About]()
+#  About
 ##  [about_Aliases](about_Aliases.md)
 ##  [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 ##  [about_Arrays](about_Arrays.md)
