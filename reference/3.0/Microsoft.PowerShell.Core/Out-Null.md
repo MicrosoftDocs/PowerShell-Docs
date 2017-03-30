@@ -16,7 +16,7 @@ external help file:   System.Management.Automation.dll-Help.xml
 
 # Out-Null
 ## SYNOPSIS
-Deletes output instead of sending it down the pipeline.
+Hides the output instead of sending it down the pipeline or displaying it.
 ## SYNTAX
 
 ```
@@ -24,7 +24,8 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Out-Null** cmdlet sends output to NULL, in effect, deleting it.
+The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
+preventing the output to be displayed at the screen.
 ## EXAMPLES
 
 ### Example 1
@@ -32,12 +33,13 @@ The **Out-Null** cmdlet sends output to NULL, in effect, deleting it.
 PS C:\> Get-ChildItem | Out-Null
 ```
 
-This command gets the items in the local directory, but then it deletes them instead of passing them through the pipeline or displaying them at the command line.
-This is useful for deleting output that you do not need.
+This command gets items in the current location/directory, but its output is not passed through
+the pipeline nor displayed at the command line.
+This is useful for hiding output that you do not need.
 ## PARAMETERS
 
 ### -InputObject
-Specifies the object that was sent to null (deleted).
+Specifies the object to be sent to NULL (removed from pipeline).
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
