@@ -16,8 +16,8 @@ ms.prod:  powershell
 DSC is a management platform in PowerShell that enables you to manage your IT and development infrastructure with configuration as code.
 
 - For an overview of the business benefits of using DSC, see [Desired State Configuration Overview for Decision Makers](decisionMaker.md).
-- For an overview of the engineering benefits of using DSC, see [Desired State Configuration Overview for Engineers]DscForEngineers.md).
-- To start using DSC quickly, see [DSC quick start]quickStart.md.
+- For an overview of the engineering benefits of using DSC, see [Desired State Configuration Overview for Engineers](DscForEngineers.md).
+- To start using DSC quickly, see [DSC quick start](quickStart.md).
 
 ## Key Concepts
 
