@@ -25,9 +25,10 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
  [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>]
- [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-NoProxy] [-Body <Object>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -405,6 +406,22 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+### -NoProxy
+Indicates that the cmdlet will not use a proxy to reach the destination.
+
+When you need to bypass the proxy configured in Internet Explorer, or a proxy specified in the environment, use this switch.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: StandardMethodNoProxy, CustomMethodNoProxy
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -OutFile
 Specifies the output file that this cmdlet saves the response body.
@@ -448,7 +465,7 @@ Enter the URI of a network proxy server.
 
 ```yaml
 Type: Uri
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, CustomMethod
 Aliases: 
 
 Required: False
@@ -469,7 +486,7 @@ You cannot use the *ProxyCredential* and *ProxyUseDefaultCredentials* parameters
 
 ```yaml
 Type: PSCredential
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, CustomMethod
 Aliases: 
 
 Required: False
@@ -487,7 +504,7 @@ You cannot use the *ProxyCredential* and *ProxyUseDefaultCredentials* parameters
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, CustomMethod
 Aliases: 
 
 Required: False
