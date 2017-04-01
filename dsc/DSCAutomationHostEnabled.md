@@ -10,7 +10,7 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
->Applies to: Windows PowerShell 5.0
+>Applies to: Windows PowerShell 6.0
 
 # DSCAutomationHostEnabled registry key
 
