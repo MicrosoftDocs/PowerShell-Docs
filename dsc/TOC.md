@@ -5,6 +5,7 @@
 
 # [Configurations](configurations.md)
 ## [Enacting configurations](enactingConfigurations.md)
+## [Separating configuration and environment data](separatingEnvData.md)
 ## [Using resources with multiple versions](sxsResource.md)
 ## [Running DSC with user credentials](runAsUser.md)
 ## [Specifying cross-node dependencies](crossNodeDependencies.md)
@@ -14,7 +15,7 @@
 ## [Securing the configuration MOF file](secureMOF.md)
 ## [Partial Configurations](partialConfigs.md)
 ## [Writing help for DSC configurations](configHelp.md)
-## [Configure a virtual machines at initial boot-up by using DSC](bootstrapDsc.md)
+## [Configure a virtual machine at initial boot-up by using DSC](bootstrapDsc.md)
 ### [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md)
 
 # [Resources](resources.md)

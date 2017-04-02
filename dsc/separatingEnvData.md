@@ -247,7 +247,77 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
+## Using non-node data
+
+You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.
+The following configuration ensures the presence of two websites.
+Data for each website are defined in the **AllNodes** array.
+The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.
+Note that you can have as many additional keys as you want, and you can name them anything you want.
+`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.
+
+You access additional keys by using the special variable **$ConfigurationData**.
+In this example, `ConfigFileContents` is accessed with the line:
+```powershell
+ Contents = $ConfigurationData.NonNodeData.ConfigFileContents
+ ```
+ in the `File` resource block.
+
+
+```powershell
+$MyData = 
+@{
+    AllNodes = 
+    @(
+        @{
+            NodeName           = “*”
+            LogPath            = “C:\Logs”
+        },
+ 
+        @{
+            NodeName = “VM-1”
+            SiteContents = “C:\Site1”
+            SiteName = “Website1”
+        },
+ 
+        
+        @{
+            NodeName = “VM-2”;
+            SiteContents = “C:\Site2”
+            SiteName = “Website2”
+        }
+    );
+ 
+    NonNodeData = 
+    @{
+        ConfigFileContents = (Get-Content C:\Template\Config.xml)
+     }   
+} 
+ 
+configuration WebsiteConfig
+{
+    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
+ 
+    node $AllNodes.NodeName
+    {
+        xWebsite Site
+        {
+            Name         = $Node.SiteName
+            PhysicalPath = $Node.SiteContents
+            Ensure       = “Present”
+        }
+ 
+        File ConfigFile
+        {
+            DestinationPath = $Node.SiteContents + “\\config.xml”
+            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
+        }
+    }
+} 
+```
+
 
 ## See Also
+- [Using configuration data](configData.md)
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)
