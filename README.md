@@ -26,5 +26,5 @@ Each folder in this repo publishes to [MSDN](https://msdn.microsoft.com/en-us/po
 We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch. 
 Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.
 For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./style.md) to review before making contributions.
+There is a draft [style guide](./STYLE.md) to review before making contributions.
 Please use the Issue and Pull Request templates to help keep documentation consistent across versions. 
