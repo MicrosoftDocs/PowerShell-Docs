@@ -21,6 +21,8 @@ In this topic, we will create a simple resource named **FileResource** that mana
 
 For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
+>**Note:** Generic collections are not supported in class-based resources.
+
 ## Folder structure for a class resource
 
 To implement a DSC custom resource with a PowerShell class, create the following folder structure. The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.
