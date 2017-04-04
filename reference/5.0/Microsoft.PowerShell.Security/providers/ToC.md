@@ -1,0 +1,6 @@
+#  [providers]()
+##  [certificate-provider](certificate-provider.md)
+##  [get-childitem-for-certificate](get-childitem-for-certificate.md)
+##  [move-item-for-certificate](move-item-for-certificate.md)
+##  [new-item-for-certificate](new-item-for-certificate.md)
+##  [remove-item-for-certificate](remove-item-for-certificate.md)

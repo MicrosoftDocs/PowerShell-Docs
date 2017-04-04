@@ -1,0 +1,7 @@
+#  [Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics.md)
+##  [Export-Counter](export-counter.md)
+##  [Get-Counter](get-counter.md)
+##  [Get-WinEvent](get-winevent.md)
+##  [Import-Counter](import-counter.md)
+##  [Microsoft.PowerShell.Diagnostics](microsoft.powershell.diagnostics.md)
+##  [New-WinEvent](new-winevent.md)
