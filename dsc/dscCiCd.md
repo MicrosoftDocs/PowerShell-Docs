@@ -594,7 +594,17 @@ Now we'll set up a trigger that causes the project to build any time a change is
 
 Now any change in the TFS git repository triggers an automated build.
 
-## Trigger a build
+## Create the release definition
+
+Let's create a release definition so that the project is deployed to the development environment with every code check-in.
+
+To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.
+([How to: Work with release definitions](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions))
+and configure it as follows:
+
+1. 
+
+
 
 
 
