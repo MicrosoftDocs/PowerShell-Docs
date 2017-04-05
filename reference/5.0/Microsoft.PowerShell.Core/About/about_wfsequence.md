@@ -15,7 +15,7 @@ ms.assetid: 5684ddce-cf99-45e8-b273-08fa4e32ab73
  Describes the Sequence keyword, which runs selected activities sequentially.  
   
 ## LONG DESCRIPTION  
- The Sequence keyword runs selected workflow activities sequentially, that is, they run in the order in which they appear and do not run concurrently. The Sequence keyword is valid only in a [!INCLUDE[wps_1](../Token/wps_1_md.md)] Workflow.  
+ The Sequence keyword runs selected workflow activities sequentially, that is, they run in the order in which they appear and do not run concurrently. The Sequence keyword is valid only in a Windows PowerShellÂ® Workflow.  
   
  The Sequence keyword is typically used in a Parallel script block to run selected commands sequentially.  
   

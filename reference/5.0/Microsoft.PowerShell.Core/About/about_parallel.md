@@ -15,7 +15,7 @@ ms.assetid: 392ce9ea-1cee-48a3-8297-fa6d1074d069
  Describes the Parallel keyword, which runs the activities in a workflow in parallel.  
   
 ## LONG DESCRIPTION  
- The Parallel keyword runs workflow activities in parallel. This keyword is valid only in [!INCLUDE[wps_1](../Token/wps_1_md.md)] Workflow.  
+ The Parallel keyword runs workflow activities in parallel. This keyword is valid only in Windows PowerShellÂ® Workflow.  
   
 ### SYNTAX  
   

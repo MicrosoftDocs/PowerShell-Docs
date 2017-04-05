@@ -12,20 +12,20 @@ ms.assetid: 8a811137-b9d6-4fbb-bf7c-54534b521fba
  about\_Transactions  
   
 ## SHORT DESCRIPTION  
- Describes how to manage transacted operations in [!INCLUDE[wps_1](../Token/wps_1_md.md)].  
+ Describes how to manage transacted operations in Windows PowerShellÂ®.  
   
 ## LONG DESCRIPTION  
- Transactions are supported in [!INCLUDE[wps_2](../Token/wps_2_md.md)] beginning in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 2.0. This feature enables you to start a transaction, to indicate which commands are part of the transaction, and to commit or roll back a transaction.  
+ Transactions are supported in Windows PowerShell beginning in Windows PowerShell 2.0. This feature enables you to start a transaction, to indicate which commands are part of the transaction, and to commit or roll back a transaction.  
   
 ### ABOUT TRANSACTIONS  
- In [!INCLUDE[wps_2](../Token/wps_2_md.md)], a transaction is a set of one or more commands that are managed as a logical unit. A transaction can be completed \("committed"\), which changes data affected by the transaction. Or, a transaction can be completely undone \("rolled back"\) so that the affected data is not changed by the transaction.  
+ In Windows PowerShell, a transaction is a set of one or more commands that are managed as a logical unit. A transaction can be completed \("committed"\), which changes data affected by the transaction. Or, a transaction can be completely undone \("rolled back"\) so that the affected data is not changed by the transaction.  
   
  Because the commands in a transaction are managed as a unit, either all commands are committed, or all commands are rolled back.  
   
  Transactions are widely used in data processing, most notably in database operations and for financial transactions. Transactions are most often used when the worst\-case scenario for a set of commands is not that they all fail, but that some commands succeed while others fail, leaving the system in a damaged, false, or uninterpretable state that is difficult to repair.  
   
 ### TRANSACTION CMDLETS  
- [!INCLUDE[wps_2](../Token/wps_2_md.md)] includes several cmdlets designed for managing transactions.  
+ Windows PowerShell includes several cmdlets designed for managing transactions.  
   
 ```  
 Cmdlet                 Description  
@@ -71,9 +71,9 @@ get-help use-transaction -detailed
 ### TRANSACTION\-ENABLED ELEMENTS  
  To participate in a transaction, both the cmdlet and the provider must support transactions. This feature is built in to the objects that are affected by the transaction.  
   
- The [!INCLUDE[wps_2](../Token/wps_2_md.md)]Registry provider supports transactions in Windows Vista. The TransactedString object \(Microsoft.PowerShell.Commands.Management.TransactedString\) works with any operating system that runs [!INCLUDE[wps_2](../Token/wps_2_md.md)].  
+ The Windows PowerShellRegistry provider supports transactions in Windows Vista. The TransactedString object \(Microsoft.PowerShell.Commands.Management.TransactedString\) works with any operating system that runs Windows PowerShell.  
   
- Other [!INCLUDE[wps_2](../Token/wps_2_md.md)]providers can support transactions. To find the [!INCLUDE[wps_2](../Token/wps_2_md.md)] providers in your session that support transactions, use the following command to find the "Transactions" value in the Capabilities property of providers:  
+ Other Windows PowerShellproviders can support transactions. To find the Windows PowerShell providers in your session that support transactions, use the following command to find the "Transactions" value in the Capabilities property of providers:  
   
 ```  
 get-psprovider | where {$_.Capabilities -like "*transactions*"}  
@@ -106,12 +106,12 @@ get-help * -parameter UseTransaction
   
 ```  
   
- In [!INCLUDE[wps_2](../Token/wps_2_md.md)] core, all of the cmdlets designed to work with [!INCLUDE[wps_2](../Token/wps_2_md.md)] providers support transactions. As a result, you can use the provider cmdlets to manage transactions.  
+ In Windows PowerShell core, all of the cmdlets designed to work with Windows PowerShell providers support transactions. As a result, you can use the provider cmdlets to manage transactions.  
   
- For more information about [!INCLUDE[wps_2](../Token/wps_2_md.md)] providers, see about\_Providers.  
+ For more information about Windows PowerShell providers, see about\_Providers.  
   
 ### THE TRANSACTION OBJECT  
- Transactions are represented in [!INCLUDE[wps_2](../Token/wps_2_md.md)] by a transaction object, System.Management.Automation.Transaction.  
+ Transactions are represented in Windows PowerShell by a transaction object, System.Management.Automation.Transaction.  
   
  The object has the following properties:  
   
@@ -130,7 +130,7 @@ get-help * -parameter UseTransaction
  Contains the number of subscribers to the transaction. A subscriber is added to a transaction when you start a transaction while another transaction is in progress. The subscriber count is decremented when a subscriber commits the transaction.  
   
 ### ACTIVE TRANSACTIONS  
- In [!INCLUDE[wps_2](../Token/wps_2_md.md)], only one transaction is active at a time, and you can manage only the active transaction. Multiple transactions can be in progress in the same session at the same time, but only the most\-recently started transaction is active.  
+ In Windows PowerShell, only one transaction is active at a time, and you can manage only the active transaction. Multiple transactions can be in progress in the same session at the same time, but only the most\-recently started transaction is active.  
   
  As a result, you cannot specify a particular transaction when using the transaction cmdlets. Commands always apply to the active transaction.  
   
@@ -139,7 +139,7 @@ get-help * -parameter UseTransaction
  To manage a different transaction, you must first finish the active transaction, either by committing it or rolling it back. When you do this, the previous transaction becomes active automatically. Transactions become active in the reverse of order of which they are started, so that the most recently started transaction is always active.  
   
 ### SUBSCRIBERS AND INDEPENDENT TRANSACTIONS  
- If you start a transaction while another transaction is in progress, by default, [!INCLUDE[wps_2](../Token/wps_2_md.md)] does not start a new transaction. Instead, it adds a "subscriber" to the current transaction.  
+ If you start a transaction while another transaction is in progress, by default, Windows PowerShell does not start a new transaction. Instead, it adds a "subscriber" to the current transaction.  
   
  When a transaction has multiple subscribers, a single Undo\-Transaction command at any point rolls back the entire transaction for all subscribers. However, to commit the transaction, you must enter a Complete\-Transaction command for every subscriber.  
   
@@ -166,7 +166,7 @@ get-help * -parameter UseTransaction
  However, the lock is a feature of the database. It is not related to transactions. If you are working in a transaction\-enabled file system or other data store, the data can be changed while the transaction is in progress.  
   
 ## EXAMPLES  
- The examples in this section use the [!INCLUDE[wps_2](../Token/wps_2_md.md)] Registry provider and assume that you are familiar with it. For information about the Registry provider, type "get\-help registry".  
+ The examples in this section use the Windows PowerShell Registry provider and assume that you are familiar with it. For information about the Registry provider, type "get\-help registry".  
   
 ### EXAMPLE 1: COMMITTING A TRANSACTION  
  To create a transaction, use the Start\-Transaction cmdlet. The following command starts a transaction with the default settings.  
@@ -541,7 +541,7 @@ Windows PowerShell
 ```  
   
 ### EXAMPLE 7: MANAGING MULTI\-SUBSCRIBER TRANSACTIONS  
- When you start a transaction while another transaction is in progress, [!INCLUDE[wps_2](../Token/wps_2_md.md)] does not create a second transaction by default. Instead, it adds a subscriber to the current transaction.  
+ When you start a transaction while another transaction is in progress, Windows PowerShell does not create a second transaction by default. Instead, it adds a subscriber to the current transaction.  
   
  This example shows how to view and manage a multi\-subscriber transaction.  
   

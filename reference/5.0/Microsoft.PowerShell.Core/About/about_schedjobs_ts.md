@@ -15,9 +15,9 @@ ms.assetid: 36300d69-c798-40e1-95bb-aacf1328f6b7
  Explains how to resolve problems with scheduled jobs  
   
 ## LONG DESCRIPTION  
- This section describes some of the problems that you might encounter when using the scheduled job features of [!INCLUDE[wps_1](../Token/wps_1_md.md)] and it suggests solutions to these problems.  
+ This section describes some of the problems that you might encounter when using the scheduled job features of Windows PowerShellÂ® and it suggests solutions to these problems.  
   
- Before using [!INCLUDE[wps_2](../Token/wps_2_md.md)]scheduled jobs, see about\_Scheduled\_Jobs and the related scheduled jobs about topics.  
+ Before using Windows PowerShellscheduled jobs, see about\_Scheduled\_Jobs and the related scheduled jobs about topics.  
   
  This topic contains the following sections:  
   
@@ -130,7 +130,7 @@ Directory: C:\Users\User01\Appdata\Local\Microsoft\Windows\PowerShell
              \ScheduledJobs\ProcessJob\Output  
 ```  
   
- If the Results.xml file is missing, [!INCLUDE[wps_2](../Token/wps_2_md.md)] cannot return or display the job results.  
+ If the Results.xml file is missing, Windows PowerShell cannot return or display the job results.  
   
  \-\- The Job cmdlet might not be able to get scheduled job instances or their results because the PSScheduledJob module is not imported into the session.  
   
@@ -148,7 +148,7 @@ Import-Module PSScheduledJob
   
  When you use Receive\-Job without the Keep parameter, Receive\-Job returns the job results and sets the HasMoreData property of the job instance to False to indicate that it returned all of the results for the job instance and has no more results to return. This setting is appropriate for standard background jobs, but not for instances of scheduled jobs, which are saved to disk.  
   
- To get the job instance results again, start a new [!INCLUDE[wps_2](../Token/wps_2_md.md)] session \(type "PowerShell" without quotation marks\), import the PSScheduledJob module, and try the Receive\-Job command again  
+ To get the job instance results again, start a new Windows PowerShell session \(type "PowerShell" without quotation marks\), import the PSScheduledJob module, and try the Receive\-Job command again  
   
 ```  
 PS C:\> Receive-Job -ID 50  
@@ -194,7 +194,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
   
  \-\- The scheduled job might be corrupted.  
   
- If a scheduled job becomes corrupted, [!INCLUDE[wps_2](../Token/wps_2_md.md)] deletes the corrupted scheduled job and its results. You cannot recover the results of a corrupted scheduled job.  
+ If a scheduled job becomes corrupted, Windows PowerShell deletes the corrupted scheduled job and its results. You cannot recover the results of a corrupted scheduled job.  
   
  To determine if a scheduled job still exists, use the Get\-ScheduledJob cmdlet.  
   
@@ -205,7 +205,7 @@ PS C:\> Get-ScheduledJob
   
  \-\- The number of results might have exceeded the ExecutionHistoryLength of the scheduled job.  
   
- The ExecutionHistoryLength property of a scheduled job determines how many job instances, and their results, are saved to disk. The default value is 32. When the number of instances of a scheduled job exceeds this value, [!INCLUDE[wps_2](../Token/wps_2_md.md)] deletes the oldest job instance to make room for each new job instance.  
+ The ExecutionHistoryLength property of a scheduled job determines how many job instances, and their results, are saved to disk. The default value is 32. When the number of instances of a scheduled job exceeds this value, Windows PowerShell deletes the oldest job instance to make room for each new job instance.  
   
  To get the value of the ExecutionHistoryLength property of a scheduled job, use the following command format:  
   
@@ -248,7 +248,7 @@ PS C:\> Get-ScheduledJob ProcessJob | Set-ScheduledJob -ClearExecutionHistory
   
  You can use the Get\-Job cmdlet to get the job and the Receive\-Job cmdlet to get the job results, but the results are available only until you receive them, unless you use the Keep parameter of the Receive\-Job cmdlet.  
   
- Also, background jobs and their results are session\-specific; they exist only in the session in which they are created. If you delete the job \(Remove\-Job\), close the session or close [!INCLUDE[wps_2](../Token/wps_2_md.md)], the job instance and its results are deleted.  
+ Also, background jobs and their results are session\-specific; they exist only in the session in which they are created. If you delete the job \(Remove\-Job\), close the session or close Windows PowerShell, the job instance and its results are deleted.  
   
 ### SCHEDULED JOB DOES NOT RUN  
  \-\- Scheduled jobs do not run automatically if the job triggers or the scheduled job are disabled.  
@@ -321,17 +321,17 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
   
  \-\- The scheduled job instance might have failed.  
   
- If a scheduled job command fails, [!INCLUDE[wps_2](../Token/wps_2_md.md)] reports it immediately by generating an error message. However, if the job fails when Task Scheduler tries to run it, the error is not available to [!INCLUDE[wps_2](../Token/wps_2_md.md)].  
+ If a scheduled job command fails, Windows PowerShell reports it immediately by generating an error message. However, if the job fails when Task Scheduler tries to run it, the error is not available to Windows PowerShell.  
   
  Use the following methods to detect and correct job failures.  
   
--   \-\- Check the Task Scheduler event log for errors. To check the log, use Event Viewer or a [!INCLUDE[wps_2](../Token/wps_2_md.md)] command such as the following:  
+-   \-\- Check the Task Scheduler event log for errors. To check the log, use Event Viewer or a Windows PowerShell command such as the following:  
   
     ```  
     Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | Where {$_.Message -like "*fail*"}  
     ```  
   
--   \-\- Check the job record in Task Scheduler. [!INCLUDE[wps_2](../Token/wps_2_md.md)] scheduled jobs are stored in the following Task Scheduled folder:  
+-   \-\- Check the job record in Task Scheduler. Windows PowerShell scheduled jobs are stored in the following Task Scheduled folder:  
   
     ```  
     Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs  
@@ -346,7 +346,7 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 ### CANNOT GET SCHEDULED JOB : SCHEDULED JOB IS CORRUPTED  
  On rare occasions, scheduled jobs can become corrupted or contain internal contradictions that cannot be resolved. Typically, this happens when the XML files for the scheduled job are manually edited, resulting in invalid XML.  
   
- When a scheduled job is corrupted, [!INCLUDE[wps_2](../Token/wps_2_md.md)] attempts to delete the scheduled job, its execution history, and its results from disk.  
+ When a scheduled job is corrupted, Windows PowerShell attempts to delete the scheduled job, its execution history, and its results from disk.  
   
  If it cannot remove the scheduled job, you will get a corrupted job error message each time you run the Get\-ScheduledJob cmdlet.  
   
@@ -363,7 +363,7 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
       \ScheduledJobs\<ScheduledJobName>.  
     ```  
   
--   \-\- Use Task Scheduler to delete the scheduled job. [!INCLUDE[wps_2](../Token/wps_2_md.md)] scheduled tasks appear in the following Task Scheduler path:  
+-   \-\- Use Task Scheduler to delete the scheduled job. Windows PowerShell scheduled tasks appear in the following Task Scheduler path:  
   
     ```  
     Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs\<ScheduledJobName>  
@@ -372,7 +372,7 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 ### \-\- JOB CMDLETS CANNOT CONSISTENTLY FIND SCHEDULED JOBS  
  When the PSScheduledJob module is not in the current session, the Job cmdlets cannot get scheduled jobs, start them, or get their results.  
   
- To import the PSScheduledJob module, type "Import\-Module PSScheduledJob" or run or get any cmdlet in the module, such as the Get\-ScheduledJob cmdlet. Beginning in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0, modules are imported automatically when you get or use any cmdlet in the module.  
+ To import the PSScheduledJob module, type "Import\-Module PSScheduledJob" or run or get any cmdlet in the module, such as the Get\-ScheduledJob cmdlet. Beginning in Windows PowerShell 3.0, modules are imported automatically when you get or use any cmdlet in the module.  
   
  When the PSScheduledJob cmdlet is not in the current session, the following command sequence is possible.  
   

@@ -40,12 +40,12 @@ Workflow <Verb-Noun>
 ### ABOUT CHECKPOINTS  
  A checkpoint is a snapshot of the current state of the workflow, including the current values of variables, and any output generated up to that point, and it saves it to disk.  
   
- If a workflow is interrupted, intentionally or unintentionally, [!INCLUDE[wps_1](../Token/wps_1_md.md)] Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.  
+ If a workflow is interrupted, intentionally or unintentionally, Windows PowerShellÂ® Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.  
   
  When you run the workflow as a job, such as by using the AsJob workflow common parameter, the workflow checkpoints are retained until you delete the job, such as by using the Remove\-Job cmdlet. Otherwise, workflow checkpoints are deleted when the workflow completes.  
   
 ### OTHER CHECKPOINTING TECHNIQUES  
- In addition to the Checkpoint\-Workflow activity, [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow supports other checkpointing techniques, including the following:  
+ In addition to the Checkpoint\-Workflow activity, Windows PowerShell Workflow supports other checkpointing techniques, including the following:  
   
  \-\- PSPersist workflow common parameter  
   

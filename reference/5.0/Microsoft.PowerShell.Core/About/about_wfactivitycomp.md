@@ -12,16 +12,16 @@ ms.assetid: 3d7ce3a3-3a77-410c-9385-17cf2fd0f30a
  about\_ActivityCommonParameters  
   
 ## SHORT DESCRIPTION  
- Describes the parameters that [!INCLUDE[wps_1](../Token/wps_1_md.md)] Workflow adds to activities.  
+ Describes the parameters that Windows PowerShellÂ® Workflow adds to activities.  
   
 ## LONG DESCRIPTION  
- [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow adds the activity common parameters to activities that are derived from the PSActivity base class. This category includes the InlineScript activity and [!INCLUDE[wps_2](../Token/wps_2_md.md)] cmdlets that are implemented as activities, such as Get\-Process and Get\-WinEvent.  
+ Windows PowerShell Workflow adds the activity common parameters to activities that are derived from the PSActivity base class. This category includes the InlineScript activity and Windows PowerShell cmdlets that are implemented as activities, such as Get\-Process and Get\-WinEvent.  
   
- The activity common parameters are not valid on the Suspend\-Workflow and Checkpoint\-Workflow activities and they are not added to cmdlets or expressions that [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow automatically runs in an InlineScript script block or similar activity. The activity common parameters are available on the InlineScript activity, but not on commands in the InlineScript script block.  
+ The activity common parameters are not valid on the Suspend\-Workflow and Checkpoint\-Workflow activities and they are not added to cmdlets or expressions that Windows PowerShell Workflow automatically runs in an InlineScript script block or similar activity. The activity common parameters are available on the InlineScript activity, but not on commands in the InlineScript script block.  
   
- Several of the activity common parameters are also workflow common parameters or [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameters. Other activity common parameters are unique to activities.  
+ Several of the activity common parameters are also workflow common parameters or Windows PowerShell common parameters. Other activity common parameters are unique to activities.  
   
- For information about the workflow common parameters, see about\_WorkflowCommonParameters. For information about the [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameters, see about\_CommonParameters.  
+ For information about the workflow common parameters, see about\_WorkflowCommonParameters. For information about the Windows PowerShell common parameters, see about\_CommonParameters.  
   
 ### LIST OF ACTIVITY COMMON PARAMETERS  
   
@@ -78,7 +78,7 @@ workflow Test-Workflow
   
  \-Debug \<SwitchParameter\>  
   
- Displays programmer\-level detail about the operation performed by the command. The Debug parameter overrides the value of the $DebugPreference variable for the current command. This parameter works only when the command generates debugging messages. This parameter is also a [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameter.  
+ Displays programmer\-level detail about the operation performed by the command. The Debug parameter overrides the value of the $DebugPreference variable for the current command. This parameter works only when the command generates debugging messages. This parameter is also a Windows PowerShell common parameter.  
   
  \-DisplayName \<String\>  
   
@@ -86,13 +86,13 @@ workflow Test-Workflow
   
  \-ErrorAction \<ActionPreference\>  
   
- Determines how the activity responds to a non\-terminating error from the command. It has no effect on termination errors. This parameter works only when the command generates a non\-terminating error, such as those from the Write\-Error cmdlet. The ErrorAction parameter overrides the value of the $ErrorActionPreference variable for the current command. This parameter is also a [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameter.  
+ Determines how the activity responds to a non\-terminating error from the command. It has no effect on termination errors. This parameter works only when the command generates a non\-terminating error, such as those from the Write\-Error cmdlet. The ErrorAction parameter overrides the value of the $ErrorActionPreference variable for the current command. This parameter is also a Windows PowerShell common parameter.  
   
  Valid values:  
   
  Continue. Displays the error message and continues executing the command. "Continue" is the default value.  
   
- Ignore.  Suppresses the error message and continues executing the command. Unlike SilentlyContinue, Ignore does not add the error message to the $Error automatic variable. The Ignore value is introduced in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0.  
+ Ignore.  Suppresses the error message and continues executing the command. Unlike SilentlyContinue, Ignore does not add the error message to the $Error automatic variable. The Ignore value is introduced in Windows PowerShell 3.0.  
   
  Inquire. Displays the error message and prompts you for confirmation before continuing execution. This value is rarely used.  
   
@@ -120,13 +120,13 @@ workflow Test-Workflow
   
  \-PSActionRunningTimeoutSec \<Int32\>  
   
- Determines how long the activity can run on each target computer. If the activity does not complete before the timeout expires, [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow generates a terminating error and stops processing the workflow on the affected target computer.  
+ Determines how long the activity can run on each target computer. If the activity does not complete before the timeout expires, Windows PowerShell Workflow generates a terminating error and stops processing the workflow on the affected target computer.  
   
  \-PSAllowRedirection \<Boolean\>  
   
  A value of $True allows redirection of the connection to the target computers. A value of $False has no effect. This activity common parameter is also a workflow common parameter.  
   
- When you use the PSConnectionURI parameter, the remote destination can return an instruction to redirect to a different URI. By default, [!INCLUDE[wps_2](../Token/wps_2_md.md)] does not redirect connections, but you can use the PSAllowRedirection parameter with a value of $True to allow redirection of the connection to the target computer.  
+ When you use the PSConnectionURI parameter, the remote destination can return an instruction to redirect to a different URI. By default, Windows PowerShell does not redirect connections, but you can use the PSAllowRedirection parameter with a value of $True to allow redirection of the connection to the target computer.  
   
  You can also limit the number of times that the connection is redirected by setting the MaximumConnectionRedirectionCount property of the $PSSessionOption preference variable, or the MaximumConnectionRedirectionCount property of the value of the SSessionOption parameter of cmdlets that create a session. The default value is 5.  
   
@@ -152,7 +152,7 @@ workflow Test-Workflow
   
  Certificates are used in client certificate\-based authentication. They can only be mapped to local user accounts; they do not work with domain accounts.  
   
- To get a certificate, use the Get\-Item \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113319\) or Get\-ChildItem \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113308\) cmdlets in the [!INCLUDE[wps_2](../Token/wps_2_md.md)] Cert: drive.  
+ To get a certificate, use the Get\-Item \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113319\) or Get\-ChildItem \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=113308\) cmdlets in the Windows PowerShell Cert: drive.  
   
  \-PSComputerName \<String\[\]\>  
   
@@ -160,9 +160,9 @@ workflow Test-Workflow
   
  Type the NETBIOS name, IP address, or fully\-qualified domain name of one or more computers in a comma\-separated list. To specify the local computer, type the computer name, "localhost", or a dot \(.\).  
   
- To include the local computer in the value of the PSComputerName parameter, open [!INCLUDE[wps_2](../Token/wps_2_md.md)] with the "Run as administrator" option.  
+ To include the local computer in the value of the PSComputerName parameter, open Windows PowerShell with the "Run as administrator" option.  
   
- If this parameter is omitted from the command, or it value is $null or an empty string, the workflow target is the local computer and [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting is not used to run the command.  
+ If this parameter is omitted from the command, or it value is $null or an empty string, the workflow target is the local computer and Windows PowerShell remoting is not used to run the command.  
   
  To use an IP address in the value of the ComputerName parameter, the command must include the PSCredential parameter. Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer. For instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to the Trusted Host List" in about\_Remote\_Troubleshooting \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=135188\).  
   
@@ -193,7 +193,7 @@ workflow Test-Workflow
   
  If you do not specify a PSConnectionURI, you can use the PSUseSSL, PSComputerName, PSPort, and PSApplicationName parameters to specify the PSConnectionURI values.  
   
- Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS. To use the default ports for [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting, specify port 5985 for HTTP or 5986 for HTTPS.  
+ Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS. To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.  
   
  \-PSCredential \<PSCredential\>  
   
@@ -255,7 +255,7 @@ workflow Test-Workflow
   
  Takes a checkpoint after the activity. This checkpoint is in addition to any checkpoints that are specified in the workflow. This activity common parameter is also a workflow common parameter.  
   
- A "checkpoint" or "persistence point" is a snapshot of the workflow state and data that is captured while the workflow runs and is saved to a persistence store on disk. [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow uses the saved data to resume a suspended or interrupted workflow from the last persistence point, rather than to restart the workflow.  
+ A "checkpoint" or "persistence point" is a snapshot of the workflow state and data that is captured while the workflow runs and is saved to a persistence store on disk. Windows PowerShell Workflow uses the saved data to resume a suspended or interrupted workflow from the last persistence point, rather than to restart the workflow.  
   
  Valid values:  
   
@@ -289,7 +289,7 @@ workflow Test-Workflow
   
  None: The activity is not run on remote computers.  
   
- PowerShell: [!INCLUDE[wps_2](../Token/wps_2_md.md)] remoting is used to run the activity on target computers.  
+ PowerShell: Windows PowerShell remoting is used to run the activity on target computers.  
   
  Custom: The activity supports its own type of remoting. This value is valid when the cmdlet that is being implemented as an activity sets the value of the RemotingCapability attribute to SupportedByCommand and the command includes the ComputerName parameter.  
   
@@ -315,7 +315,7 @@ workflow Test-Workflow
   
  A value of $True uses the Secure Sockets Layer \(SSL\) protocol to establish a connection to the target computer. By default, SSL is not used. A value of $False has no effect. This activity common parameter is also a workflow common parameter.  
   
- WS\-Management encrypts all [!INCLUDE[wps_2](../Token/wps_2_md.md)] content transmitted over the network. UseSSL is an additional protection that sends the data across an HTTPS, instead of HTTP. If you use this parameter, but SSL is not available on the port used for the command, the command fails.  
+ WS\-Management encrypts all Windows PowerShell content transmitted over the network. UseSSL is an additional protection that sends the data across an HTTPS, instead of HTTP. If you use this parameter, but SSL is not available on the port used for the command, the command fails.  
   
  \-PSVerbose \<PSDataCollection\[VerboseRecord\]\>  
   
@@ -351,11 +351,11 @@ Running  winrm              Windows Remote Management (WS-Manag... localhost
   
  \-Verbose \<SwitchParameter\>  
   
- Displays detailed information about the operation performed by the command. This information resembles the information in a trace or in a transaction log. The Verbose parameter overrides the value of the $VerbosePreference variable for the current command. This parameter works only when the command generates a verbose message. This parameter is also a [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameter.  
+ Displays detailed information about the operation performed by the command. This information resembles the information in a trace or in a transaction log. The Verbose parameter overrides the value of the $VerbosePreference variable for the current command. This parameter works only when the command generates a verbose message. This parameter is also a Windows PowerShell common parameter.  
   
  \-WarningAction \<ActionPreference\>  
   
- Determines how the activity responds to a warning. "Continue" is the default value. The WarningAction parameter overrides the value of the $WarningPreference variable for the current command. This parameter works only when the command generates a warning message. This parameter is also a [!INCLUDE[wps_2](../Token/wps_2_md.md)] common parameter.  
+ Determines how the activity responds to a warning. "Continue" is the default value. The WarningAction parameter overrides the value of the $WarningPreference variable for the current command. This parameter works only when the command generates a warning message. This parameter is also a Windows PowerShell common parameter.  
   
  Valid Values:  
   

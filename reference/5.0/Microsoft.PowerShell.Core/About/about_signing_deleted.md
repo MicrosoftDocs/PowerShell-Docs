@@ -12,17 +12,17 @@ ms.assetid: a295a865-7ddf-4faf-a622-5cd74317e11b
  about\_Signing  
   
 ## SHORT DESCRIPTION  
- Explains how to sign scripts so that they comply with the [!INCLUDE[wps_1](../Token/wps_1_md.md)] execution policies.  
+ Explains how to sign scripts so that they comply with the Windows PowerShellÂ® execution policies.  
   
 ## LONG DESCRIPTION  
- The Restricted execution policy does not permit any scripts to run. The AllSigned and RemoteSigned execution policies prevent [!INCLUDE[wps_2](../Token/wps_2_md.md)] from running scripts that do not have a digital signature.  
+ The Restricted execution policy does not permit any scripts to run. The AllSigned and RemoteSigned execution policies prevent Windows PowerShell from running scripts that do not have a digital signature.  
   
  This topic explains how to run selected scripts that are not signed, even while the execution policy is RemoteSigned, and how to sign scripts for your own use.  
   
- For more information about [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policies, see about\_Execution\_Policy.  
+ For more information about Windows PowerShell execution policies, see about\_Execution\_Policy.  
   
 ## TO PERMIT SIGNED SCRIPTS TO RUN  
- When you start [!INCLUDE[wps_2](../Token/wps_2_md.md)] on a computer for the first time, the Restricted execution policy \(the default\) is likely to be in effect.  
+ When you start Windows PowerShell on a computer for the first time, the Restricted execution policy \(the default\) is likely to be in effect.  
   
  The Restricted policy does not permit any scripts to run.  
   
@@ -32,7 +32,7 @@ ms.assetid: a295a865-7ddf-4faf-a622-5cd74317e11b
 Get-ExecutionPolicy  
 ```  
   
- To run unsigned scripts that you write on your local computer and signed scripts from other users, start [!INCLUDE[wps_2](../Token/wps_2_md.md)] with the Run as Administrator option and then use the following command to change the execution policy on the computer to RemoteSigned:  
+ To run unsigned scripts that you write on your local computer and signed scripts from other users, start Windows PowerShell with the Run as Administrator option and then use the following command to change the execution policy on the computer to RemoteSigned:  
   
 ```  
 Set-ExecutionPolicy RemoteSigned  
@@ -41,9 +41,9 @@ Set-ExecutionPolicy RemoteSigned
  For more information, see the help topic for the Set\-ExecutionPolicy cmdlet.  
   
 ## RUNNING UNSIGNED SCRIPTS \(REMOTESIGNED EXECUTION POLICY\)  
- If your [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policy is RemoteSigned, [!INCLUDE[wps_2](../Token/wps_2_md.md)] will not run unsigned scripts that are downloaded from the Internet, including unsigned scripts you receive through e\-mail and instant messaging programs.  
+ If your Windows PowerShell execution policy is RemoteSigned, Windows PowerShell will not run unsigned scripts that are downloaded from the Internet, including unsigned scripts you receive through e\-mail and instant messaging programs.  
   
- If you try to run a downloaded script, [!INCLUDE[wps_2](../Token/wps_2_md.md)] displays the following error message:  
+ If you try to run a downloaded script, Windows PowerShell displays the following error message:  
   
 ```  
 The file <file-name> cannot be loaded. The file   
@@ -64,7 +64,7 @@ about_Signing" for more details.
   
 -   4. Click Unblock.  
   
- If a script that was downloaded from the Internet is digitally signed, but you have not yet chosen to trust its publisher, [!INCLUDE[wps_2](../Token/wps_2_md.md)] displays the following message:  
+ If a script that was downloaded from the Internet is digitally signed, but you have not yet chosen to trust its publisher, Windows PowerShell displays the following message:  
   
 ```  
 Do you want to run software from this untrusted publisher?   
@@ -88,7 +88,7 @@ PowerShell will not prompt you again for this publisher.
   
  For more information about how to sign a script file, see Set\-AuthenticodeSignature.  
   
- The New\-SelfSignedCertificate cmdlet, introduced in the PKI module in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0, creates a self\-signed certificate that is Appropriate for testing. For more information, see the help topic for the New\-SelfSignedCertificate cmdlet.  
+ The New\-SelfSignedCertificate cmdlet, introduced in the PKI module in Windows PowerShell 3.0, creates a self\-signed certificate that is Appropriate for testing. For more information, see the help topic for the New\-SelfSignedCertificate cmdlet.  
   
  To add a digital signature to a script, you must sign it with a code signing certificate. Two types of certificates are suitable for signing a script file:  
   
@@ -105,7 +105,7 @@ PowerShell will not prompt you again for this publisher.
  If you create a self\-signed certificate, be sure to enable strong private key protection on your certificate. This prevents malicious programs from signing scripts on your behalf. The instructions are included at the end of this topic.  
   
 ## CREATE A SELF\-SIGNED CERTIFICATE  
- To create a self\-signed certificate in use the New\-SelfSignedCertificate cmdlet in the PKI module. This module is introduced in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0 and is included in Windows 8 and Windows Server 2012. For more information, see the help topic for the New\-SelfSignedCertificate cmdlet.  
+ To create a self\-signed certificate in use the New\-SelfSignedCertificate cmdlet in the PKI module. This module is introduced in Windows PowerShell 3.0 and is included in Windows 8 and Windows Server 2012. For more information, see the help topic for the New\-SelfSignedCertificate cmdlet.  
   
  To create a self\-signed certificate in earlier versions of Windows, use the Certificate Creation tool \(MakeCert.exe\). This  tool is included in the Microsoft .NET Framework SDK \(versions 1.1 and later\) and in the Microsoft Windows SDK.  
   
@@ -130,13 +130,13 @@ makecert -pe -n "CN=PowerShell User" -ss MY -a sha1 `
   
  To verify that the certificate was generated correctly, use the following command to get the certificate in the certificate store on the computer. \(You will not find a certificate file in the file system directory.\)  
   
- At the [!INCLUDE[wps_2](../Token/wps_2_md.md)] prompt, type:  
+ At the Windows PowerShell prompt, type:  
   
 ```  
 get-childitem cert:\CurrentUser\my -codesigning  
 ```  
   
- This command uses the [!INCLUDE[wps_2](../Token/wps_2_md.md)] Certificate provider to view information about the certificate.Insert section body here.  
+ This command uses the Windows PowerShell Certificate provider to view information about the certificate.Insert section body here.  
   
  If the certificate was created, the output shows the thumbprint that identifies the certificate in a display that resembles the following:  
   
@@ -165,7 +165,7 @@ $cert = @(Get-ChildItem cert:\CurrentUser\My -codesigning)[0]
 Set-AuthenticodeSignature $file $cert  
 ```  
   
- To sign the Add\-Signature.ps1 script file, type the following commands at the [!INCLUDE[wps_2](../Token/wps_2_md.md)] command prompt:  
+ To sign the Add\-Signature.ps1 script file, type the following commands at the Windows PowerShell command prompt:  
   
 ```  
 $cert = @(Get-ChildItem cert:\CurrentUser\My -codesigning)[0]  
@@ -173,7 +173,7 @@ $cert = @(Get-ChildItem cert:\CurrentUser\My -codesigning)[0]
 Set-AuthenticodeSignature add-signature.ps1 $cert  
 ```  
   
- After the script is signed, you can run it on the local computer. However, the script will not run on computers on which the [!INCLUDE[wps_2](../Token/wps_2_md.md)] execution policy requires a digital signature from a trusted authority. If you try, [!INCLUDE[wps_2](../Token/wps_2_md.md)] displays the following error message:  
+ After the script is signed, you can run it on the local computer. However, the script will not run on computers on which the Windows PowerShell execution policy requires a digital signature from a trusted authority. If you try, Windows PowerShell displays the following error message:  
   
 ```  
 The file C:\remote_file.ps1 cannot be loaded. The signature of the   
@@ -182,10 +182,10 @@ At line:1 char:15
 + .\ remote_file.ps1 <<<<  
 ```  
   
- If [!INCLUDE[wps_2](../Token/wps_2_md.md)] displays this message when you run a script that you did not write, treat the file as you would treat any unsigned script. Review the code to determine whether you can trust the script.  
+ If Windows PowerShell displays this message when you run a script that you did not write, treat the file as you would treat any unsigned script. Review the code to determine whether you can trust the script.  
   
 ## ENABLE STRONG PRIVATE KEY PROTECTION FOR YOUR CERTIFICATE  
- If you have a private certificate on your computer, malicious programs might be able to sign scripts on your behalf, which authorizes [!INCLUDE[wps_2](../Token/wps_2_md.md)] to run them.  
+ If you have a private certificate on your computer, malicious programs might be able to sign scripts on your behalf, which authorizes Windows PowerShell to run them.  
   
  To prevent automated signing on your behalf, use Certificate Manager \(Certmgr.exe\) to export your signing certificate to a .pfx file. Certificate Manager is included in the Microsoft .NET Framework SDK, the Microsoft Windows SDK, and in Internet Explorer 5.0 and later versions.  
   

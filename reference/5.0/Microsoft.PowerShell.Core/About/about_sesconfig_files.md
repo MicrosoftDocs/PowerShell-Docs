@@ -15,20 +15,20 @@ ms.assetid: 9a885803-e59f-4928-8b01-61ea225f58a4
  Describes session configuration files, which can be used in a session configuration \("endpoint"\) to define the environment of sessions that use the session configuration.  
   
 ## LONG DESCRIPTION  
- A "session configuration file" is a text file with a .pssc file name extension that contains a hash table of session configuration properties and values. You can use a session configuration file to set the properties of a session configuration and, thereby, to define the environment of [!INCLUDE[wps_1](../Token/wps_1_md.md)] sessions that use the session configuration.  
+ A "session configuration file" is a text file with a .pssc file name extension that contains a hash table of session configuration properties and values. You can use a session configuration file to set the properties of a session configuration and, thereby, to define the environment of Windows PowerShellÂ® sessions that use the session configuration.  
   
  Session configuration files make it easy to design custom session configurations without complex C\# assemblies or scripts.  
   
  A "session configuration" or "endpoint" is a collection of settings on the local computer that determine which users can create sessions on the computer and which commands they can run in the sessions. For more information about session configurations, see about\_Session\_Configurations \(http:\/\/go.microsoft.com\/fwlink\/?LinkID\=145152\).  
   
- Session configurations were introduced in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 2.0. Session configuration files were introduced in [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0. You must use [!INCLUDE[wps_2](../Token/wps_2_md.md)] 3.0 to include a session configuration file in a session configuration, but users of [!INCLUDE[wps_2](../Token/wps_2_md.md)] 2.0 and later are affected by all settings in the session configuration.  
+ Session configurations were introduced in Windows PowerShell 2.0. Session configuration files were introduced in Windows PowerShell 3.0. You must use Windows PowerShell 3.0 to include a session configuration file in a session configuration, but users of Windows PowerShell 2.0 and later are affected by all settings in the session configuration.  
   
 ### CREATING CUSTOM SESSIONS  
- You can customize many features of a [!INCLUDE[wps_2](../Token/wps_2_md.md)] session by specifying session properties in a session configuration. You can customize a session by writing a C\# program that defines a custom runspace, or you can use a session configuration file to define the properties of sessions that are created by using the session configuration.  
+ You can customize many features of a Windows PowerShell session by specifying session properties in a session configuration. You can customize a session by writing a C\# program that defines a custom runspace, or you can use a session configuration file to define the properties of sessions that are created by using the session configuration.  
   
  You can use a session configuration file to create fully functioning sessions for highly trusted users, locked\-down sessions for minimal access, and sessions designed for particular tasks that contain only the modules required for the task.  
   
- For example, you can determine whether users of the session can use [!INCLUDE[wps_2](../Token/wps_2_md.md)] language elements, such as script blocks, or whether they can only run commands. You can determine which version of [!INCLUDE[wps_2](../Token/wps_2_md.md)] can run in the session, which modules are imported into the session and which cmdlets, functions, and aliases session users can run.  
+ For example, you can determine whether users of the session can use Windows PowerShell language elements, such as script blocks, or whether they can only run commands. You can determine which version of Windows PowerShell can run in the session, which modules are imported into the session and which cmdlets, functions, and aliases session users can run.  
   
 ### CREATING A SESSION CONFIGURATION FILE  
  The easiest way to create a session configuration file is by using the New\-PSSessionConfiguration cmdlet. This cmdlet generates a file with the correct syntax and format, and it verifies many of the property values.  
@@ -49,7 +49,7 @@ PS C:\> Invoke-Item -Path .\Defaults.pssc
   
 ```  
   
- To create a session configuration for sessions in which user can run commands, but not use other elements of the [!INCLUDE[wps_2](../Token/wps_2_md.md)] language, type:  
+ To create a session configuration for sessions in which user can run commands, but not use other elements of the Windows PowerShell language, type:  
   
 ```  
 PS C:\> New-PSSessionConfigurationFile -LanguageMode NoLanguage -Path .\NoLanguage.pssc  
@@ -84,7 +84,7 @@ PS C:\> Set-PSSessionConfiguration -Name LockedDown -Path .\NoLanguage.pssc
   
 ```  
   
- When users use the LockedDown session configuration to create a session, they can run cmdlets, but they cannot create or use variables, assign values, or use other [!INCLUDE[wps_2](../Token/wps_2_md.md)] language elements.  
+ When users use the LockedDown session configuration to create a session, they can run cmdlets, but they cannot create or use variables, assign values, or use other Windows PowerShell language elements.  
   
  For example, the following command uses the New\-PSSession cmdlet to create a session on the local computer that uses the LockedDown session configuration. The command saves the session in the $s variable. The ACL of the session configuration determines who can use it to create a session.  
   
@@ -109,7 +109,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
 ### EDITING A SESSION CONFIGURATION FILE  
  To edit the session configuration file that is being used by a session configuration, begin by locating the active copy of the session configuration file.  
   
- When you use a session configuration file in a session configuration, [!INCLUDE[wps_2](../Token/wps_2_md.md)] creates an active copy of the session configuration file and stores it in the $pshome\\SessionConfig directory on the local computer.  
+ When you use a session configuration file in a session configuration, Windows PowerShell creates an active copy of the session configuration file and stores it in the $pshome\\SessionConfig directory on the local computer.  
   
  The location of the active copy of a session configuration file is stored in the ConfigFilePath property of the session configuration object.  
   

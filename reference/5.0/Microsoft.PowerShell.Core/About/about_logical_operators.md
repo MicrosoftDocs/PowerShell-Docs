@@ -12,10 +12,10 @@ ms.assetid: 51fca7f4-6b32-4bbf-bed1-742196b2f002
  about\_Logical\_Operators  
   
 ## SHORT DESCRIPTION  
- Describes the operators that connect statements in [!INCLUDE[wps_1](../Token/wps_1_md.md)].  
+ Describes the operators that connect statements in Windows PowerShellÂ®.  
   
 ## LONG DESCRIPTION  
- The [!INCLUDE[wps_2](../Token/wps_2_md.md)] logical operators connect expressions and statements, allowing you to use a single expression to test for multiple conditions.  
+ The Windows PowerShell logical operators connect expressions and statements, allowing you to use a single expression to test for multiple conditions.  
   
  For example, the following statement uses the and operator and the or operator to connect three conditional statements. The statement is true only when the value of $a is greater than the value of $b, and either $a or $b is less than 20.  
   
@@ -23,7 +23,7 @@ ms.assetid: 51fca7f4-6b32-4bbf-bed1-742196b2f002
 ($a -gt $b) -and (($a -lt 20) -or ($b -lt 20))  
 ```  
   
- [!INCLUDE[wps_2](../Token/wps_2_md.md)] supports the following logical operators.  
+ Windows PowerShell supports the following logical operators.  
   
 ```  
 Operator  Description                      Example  
@@ -59,7 +59,7 @@ Operator  Description                      Example
   
  Statements that use the logical operators return Boolean \(TRUE or FALSE\) values.  
   
- The [!INCLUDE[wps_2](../Token/wps_2_md.md)] logical operators evaluate only the statements required to determine the truth value of the statement. If the left operand in a statement that contains the and operator is FALSE, the right operand is not evaluated. If the left operand in a statement that contains the or statement is TRUE, the right operand is not evaluated. As a result, you can use these statements in the same way that you would use the If statement.  
+ The Windows PowerShell logical operators evaluate only the statements required to determine the truth value of the statement. If the left operand in a statement that contains the and operator is FALSE, the right operand is not evaluated. If the left operand in a statement that contains the or statement is TRUE, the right operand is not evaluated. As a result, you can use these statements in the same way that you would use the If statement.  
   
 ## SEE ALSO  
  about\_Operators  

@@ -12,14 +12,14 @@ ms.assetid: cf6b2c0d-f551-47c6-91f8-b8741071fff1
  about\_ForEach\-Parallel  
   
 ## SHORT DESCRIPTION  
- Describes the ForEach \-Parallel language construct in [!INCLUDE[wps_1](../Token/wps_1_md.md)] Workflow  
+ Describes the ForEach \-Parallel language construct in Windows PowerShellÂ® Workflow  
   
 ## LONG DESCRIPTION  
  The Parallel parameter of the ForEach keyword runs the commands in a ForEach script block once for each item in a specified collection.  
   
  The items in the collection, such as a disk in a collection of disks, are processed in parallel. The commands in the script block run sequentially on each item in the collection.  
   
- ForEach \-Parallel is valid only in a [!INCLUDE[wps_2](../Token/wps_2_md.md)] Workflow.  
+ ForEach \-Parallel is valid only in a Windows PowerShell Workflow.  
   
 ### SYNTAX  
   
@@ -34,7 +34,7 @@ ForEach -Parallel ($<item> in $<collection>)
 ```  
   
 ### DETAILED DESCRIPTION  
- Like the ForEach statement in [!INCLUDE[wps_2](../Token/wps_2_md.md)], the variable that contains collection \($\<Collection\>\) must be defined before the ForEach \-Parallel statement, but the variable that represents the current item \($\<item\>\) is defined in the ForEach –Parallel statement.  
+ Like the ForEach statement in Windows PowerShell, the variable that contains collection \($\<Collection\>\) must be defined before the ForEach \-Parallel statement, but the variable that represents the current item \($\<item\>\) is defined in the ForEach –Parallel statement.  
   
  The ForEach \-Parallel construct is different from the ForEach keyword and the Parallel keyword. The ForEach keyword processes the items in the collection in sequence. The Parallel keyword runs commands in a script block in parallel. You can enclose a Parallel script block in a ForEach \-Parallel script block.  
   
