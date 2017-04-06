@@ -584,7 +584,7 @@ This step copies the build and test scripts to the staging directory so that the
 
 ## Enable continuous integration
 
-Now we'll set up a trigger that causes the project to build any time a change is checked in to the `master` branch of the git repository. 
+Now we'll set up a trigger that causes the project to build any time a change is checked in to the `ci-cd-example` branch of the git repository. 
 
 1. In TFS, click the **Build & Release** tab
 1. Select the `DNS Infra` build definition, and click **Edit**
@@ -599,13 +599,36 @@ Now any change in the TFS git repository triggers an automated build.
 Let's create a release definition so that the project is deployed to the development environment with every code check-in.
 
 To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.
+Be sure to select **Continuous deployment** so that a new release will be triggered any time a new build is completed.
 ([How to: Work with release definitions](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions))
 and configure it as follows:
 
-1. 
+Add the following steps to the release definition:
 
+- PowerShell Script
+- Publish Test Results
+- Publish Test Results
 
+Edit the steps as follows:
 
+### PowerShell Script
+
+1. Set the **Script Path** field to `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Set the **Arguments** field to `-fileName Deploy`
+
+### First Pubish Test Results
+
+1. Select `NUnit` for the **Test Result Format** field
+1. Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Set the **Test Run Title** to `Integration`
+1. Under **Control Options**, check **Always run**
+
+### Second Pubish Test Results
+
+1. Select `NUnit` for the **Test Result Format** field
+1. Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Set the **Test Run Title** to `Acceptance`
+1. Under **Control Options**, check **Always run**
 
 
 
