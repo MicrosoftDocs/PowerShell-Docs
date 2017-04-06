@@ -54,6 +54,10 @@
 ## [Using a DSC report server](reportServer.md)
 ## [Pull server best practices](secureServer.md)
 
+# [DSC examples](dscExamples.md)
+## [Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services](dscCiCd.md)
+## [Separating configuration and environment data](separatingEnvData.md)
+
 # [Troubleshooting DSC](troubleshooting.md)
 
 # [Using DSC on Nano Server](nanoDsc.md)

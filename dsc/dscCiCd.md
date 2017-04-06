@@ -30,9 +30,7 @@ To use this example, you should be familiar with the following:
 
 To build and run this example, you will need an environment with several computers and/or virtual machines. 
 
->**Note:** The client computer, TFS server, and build agent can all be the same computer.
-
-### Client computer 
+### Client 
 
 This is the computer where you'll do all of the work setting up and running the example.
 
@@ -41,22 +39,29 @@ The client computer must be a Windows computer with the following installed:
 - a local git repo cloned from https://github.com/PowerShell/Demo_CI
 - a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)  
 
-###  TFS server
+###  TFSSrv1
 
 The computer that hosts the TFS server where you will define your build and release.
 This computer must have [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) installed.
 
-### Build agent
+### BuildAgent
 
 The computer that runs the Windows build agent that builds the project.
 This computer must have a Windows build agent installed and running. 
 See [Deploy an agent on Windows](https://www.visualstudio.com/en-us/docs/build/actions/agents/v2-windows)
 for instructions on how to install and run a Windows build agent.
 
-### Test node
+You also need to install 
+
+### TestAgent1
 
 This is the computer that is conifigured as a DNS server by the DSC configuration in this example.
 The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+
+### TestAgent2
+
+This is the computer that hosts the website this example configures.
+The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
 
 ## Add the code to TFS
 
@@ -80,6 +85,10 @@ If you have not already cloned the Demo_CI repository to your client computer, d
 
     `git push tfs --all`
 1. The TFS repository will be populated with the Demo_CI code.
+
+>**Note:** This example uses the code in the `ci-cd-example` branch of the Git repo.
+>Be sure to specify this branch as the default branch in your TFS project,
+>and for the CI/CD triggers you create.
 
 ## Understanding the code
 
@@ -191,141 +200,11 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-The `New-DscConfigurationDataDocument` function programatically creates a configuration data document from the hashtable (node data)
-and array (non-node data) that are passed as the `RawEnvData` and `OtherEnvData` parameters.
+The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1) 
+programatically creates a configuration data document from the hashtable (node data) and array (non-node data) 
+that are passed as the `RawEnvData` and `OtherEnvData` parameters.
 
 In our case, only the `RawEnvData` parameter is used.
-
-Here is the `DscPipelineTools.psm` file:
-
-```powershell
-# Generate PowerShell Document file(s)
-function New-DscConfigurationDataDocument
-{
-    param(
-        [parameter(Mandatory)]
-        [hashtable]
-        $RawEnvData, 
-        
-        [array]
-        $OtherEnvData,
-        
-        [string]
-        $OutputPath = '.\', 
-        
-        [string]
-        $FileName
-        
-    )
-    
-    [System.Array]$AllNodesData
-    [System.Array]$NetworkData
-
-    #First validate that the path passed in is not a file
-    if(!(Test-Path $outPutPath -IsValid) -or (Test-Path $outPutPath -PathType Leaf))
-    {
-        Throw "The OutPutPath parameter must be a valid path and must not be an existing file." 
-    }
-
-    if ($FileName.length -eq 0)
-    {
-        $FileName = $RawEnvData.Name
-    }
-    $OutFile = join-path $outputpath "$FileName.psd1"
-    
-    ## Loop through $RawEnvData and generate Configuration Document
-    # Create AllNodes array based on input
-    foreach ($Role in $RawEnvData.Roles)
-    {
-        $NumberOfServers = 0
-        if($Role.VMQuantity -gt 0)
-        {
-            $NumberOfServers = $Role.VMQuantity
-        }
-        else
-        {
-            $NumberOfServers = $Role.VMName.Count
-        }
-
-        for($i = 1; $i -le $NumberOfServers; $i++)
-        {
-            $j = if($Role.VMQuantity -gt 0){$i}
-            [hashtable]$NodeData =  @{    NodeName                = "$($Role.VMName)$j"
-                                Role                    = $Role.Role
-                            }
-            # Remove Role and VMName from HT
-            $role.remove("Role")
-            $role.remove("VMName")
-
-            # Add Lability properties to ConfigurationData if they are included in the raw hashtable
-            if($Role.ContainsKey('VMProcessorCount')){ $NodeData  +=  @{Lability_ProcessorCount = $Role.VMProcessorCount}}
-            if($Role.ContainsKey('VMStartupMemory')){$NodeData  +=  @{Lability_StartupMemory  = $Role.VMStartupMemory}}
-            if($Role.ContainsKey('NetworkName')){    $NodeData  +=  @{Lability_SwitchName     = $Role.NetworkName}}
-            if($Role.ContainsKey('VMMedia')){        $NodeData  +=  @{Lability_Media          = $Role.VMMedia}}
-            
-            # Add all other properties
-            $Role.keys | % {$NodeData += @{$_ = $Role.$_}}
-
-            # Generate networking data for static networks 
-            Foreach ($Network in $OtherEnvData)
-            {
-                if($Network.NetworkName -eq $Role.NetworkName -and $network.IPv4AddressAssignment -eq 'Static')
-                {
-                    # logic to add networking information
-                }
-            }
-            
-            [System.Array]$AllNodesData += $NodeData
-        }
-    }
-    
-    # Create NonNodeData hashtable based on input            
-    foreach ($Network in $OtherEnvData )
-    {
-        [hashtable]$NetworkHash += @{
-                            Name   = $Network.NetworkName;
-                            Type   = $Network.SwitchType;
-        }
-        
-        if ($Network.ContainsKey('ExternalAdapterName'))
-        {
-            $NetworkHash += @{
-                            NetAdapterName      = $Network.ExternalAdapterName;
-                            AllowManagementOS   = $true;
-            }
-        }
-        
-        $NetworkData += $NetworkHash
-    }
-    
-    $NonNodeData = if($NetworkData){ @{Lability=@{Network = $NetworkData}}}
-    $ConfigData = @{AllNodes = $AllNodesData; NonNodeData = $NonNodeData}
-    
-
-    if(!(Test-path $OutputPath))
-    {
-        New-Item $OutputPath -ItemType Directory
-    }
-    
-    import-module $PSScriptRoot\Visualization.psm1
-    $ConfigData | convertto-ScriptBlock | Out-File $OutFile
-    $FullFileName = dir $OutFile
-    
-    Return "Successfully created file $FullFileName"
-}
-
-# Get list of resources required by a configuration script
-function Get-DscRequiredResources ()
-{
-    param(
-        [Parameter(Mandatory)]
-        [string[]]
-        $Path
-    )
-    
-    
-}
-```
 
 ### The psake build script
 
@@ -341,138 +220,9 @@ In this example, the `Default` task is defined as:
 Task Default -depends UnitTests
 ```
 
-The `Default` task has no implementation itself, but has a dependency on the `UnitTests` task. 
-The `UnitTests` task depends on the `ScriptAnalysis` task, which depends on `InstallModules`.
-`InstallModules` depends on `GenerateEnvironmentFiles`, which depends on `Clean`.
-When the `Default` task is invoked, psake ensures that all of these tasks run.
+The `Default` task has no implementation itself, but has a dependency on the `CompileConfigs` task.
+The resulting chain of task dependencies ensures that all tasks in the build script are run.
 
-Here is the psake script in its entirety:
-
-```powershell
-
-Import-Module psake
-
-function Invoke-TestFailure
-{
-    param(
-        [parameter(Mandatory=$true)]
-        [validateSet('Unit','Integration','Acceptance')]
-        [string]$TestType,
-
-        [parameter(Mandatory=$true)]
-        $PesterResults
-    )
-
-    $errorID = if($TestType -eq 'Unit'){'UnitTestFailure'}elseif($TestType -eq 'Integration'){'InetegrationTestFailure'}else{'AcceptanceTestFailure'}
-    $errorCategory = [System.Management.Automation.ErrorCategory]::LimitsExceeded
-    $errorMessage = "$TestType Test Failed: $($PesterResults.FailedCount) tests failed out of $($PesterResults.TotalCount) total test."
-    $exception = New-Object -TypeName System.SystemException -ArgumentList $errorMessage
-    $errorRecord = New-Object -TypeName System.Management.Automation.ErrorRecord -ArgumentList $exception,$errorID, $errorCategory, $null
-
-    Write-Output "##vso[task.logissue type=error]$errorMessage"
-    Throw $errorRecord
-}
-
-FormatTaskName "--------------- {0} ---------------"
-
-Properties {
-    $TestsPath = "$PSScriptRoot\Tests"
-    $TestResultsPath = "$TestsPath\Results"
-    $ArtifactPath = "$Env:BUILD_ARTIFACTSTAGINGDIRECTORY"
-    $ModuleArtifactPath = "$ArtifactPath\Modules"
-    $MOFArtifactPath = "$ArtifactPath\MOF"
-    $ConfigPath = "$PSScriptRoot\Configs"
-    $RequiredModules = @(@{Name='xDnsServer';Version='1.7.0.0'}, @{Name='xNetworking';Version='2.9.0.0'}) 
-}
-
-Task Default -depends UnitTests
-
-Task GenerateEnvironmentFiles -Depends Clean {
-     Exec {& $PSScriptRoot\DevEnv.ps1 -OutputPath $ConfigPath}
-}
-
-Task InstallModules -Depends GenerateEnvironmentFiles {
-    # Install resources on build agent
-    "Installing required resources..."
-
-    #Workaround for bug in Install-Module cmdlet
-    if(!(Get-PackageProvider -Name NuGet -ListAvailable -ErrorAction Ignore))
-    {
-        Install-PackageProvider -Name NuGet -Force
-    }
-    
-    if (!(Get-PSRepository -Name PSGallery -ErrorAction Ignore))
-    {
-        Register-PSRepository -Name PSGallery -SourceLocation https://www.powershellgallery.com/api/v2/ -InstallationPolicy Trusted -PackageManagementProvider NuGet
-    }
-    
-    #End Workaround
-    
-    foreach ($Resource in $RequiredModules)
-    {
-        Install-Module -Name $Resource.Name -RequiredVersion $Resource.Version -Repository 'PSGallery' -Force
-        Save-Module -Name $Resource.Name -RequiredVersion $Resource.Version -Repository 'PSGallery' -Path $ModuleArtifactPath -Force
-    }
-}
-
-Task ScriptAnalysis -Depends InstallModules {
-    # Run Script Analyzer
-    "Starting static analysis..."
-    Invoke-ScriptAnalyzer -Path $ConfigPath
-
-}
-
-Task UnitTests -Depends ScriptAnalysis {
-    # Run Unit Tests with Code Coverage
-    "Starting unit tests..."
-
-    $PesterResults = Invoke-Pester -path "$TestsPath/Unit/"  -CodeCoverage "$ConfigPath/*.ps1" -OutputFile "$TestResultsPath/UnitTest.xml" -OutputFormat NUnitXml -PassThru
-    
-    if($PesterResults.FailedCount) #If Pester fails any tests fail this task
-    {
-        Invoke-TestFailure -TestType Unit -PesterResults $PesterResults
-    }
-    
-}
-
-Task CompileConfigs -Depends UnitTests, ScriptAnalysis {
-    # Compile Configurations...
-    "Starting to compile configuration..."
-    . "$ConfigPath\DNSServer.ps1"
-
-    DNSServer -ConfigurationData "$ConfigPath\DevEnv.psd1" -OutputPath "$MOFArtifactPath\DevEnv\"
-    # Build steps for other environments can follow here.
-}
-
-Task Clean {
-    "Starting Cleaning enviroment..."
-    #Make sure output path exist for MOF and Module artifiacts
-    New-Item $ModuleArtifactPath -ItemType Directory -Force 
-    New-Item $MOFArtifactPath -ItemType Directory -Force 
-
-    # No need to delete Artifacts as VS does it automatically for each build
-
-    #Remove Test Results from previous runs
-    New-Item $TestResultsPath -ItemType Directory -Force
-    Remove-Item "$TestResultsPath\*.xml" -Verbose 
-
-    #Remove ConfigData generated from previous runs
-    Remove-Item "$ConfigPath\*.psd1" -Verbose
-
-    #Remove modules that were installed on build Agent
-    foreach ($Resource in $RequiredModules)
-    {
-        $Module = Get-Module -Name $Resource.Name
-        if($Module  -And $Module.Version.ToString() -eq  $Resource.Version)
-        {
-            Uninstall-Module -Name $Resource.Name -RequiredVersion $Resource.Version
-        }
-    }
-
-    $Error.Clear()
-}
-```
- 
 In this example, the psake script is invoked by a call to `Invoke-PSake` in the `Initiate.ps1` file
 (located at the root of the Demo_CI repository):
 
@@ -496,6 +246,60 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 ```
 
 When we create the build definition for our example in TFS, we will supply our psake script file as the `fileName` parameter for this script.
+
+The build script defines the following tasks:
+
+#### GenerateEnvironmentFiles
+
+Runs `DevEnv.ps1`, which generates the configuration data file.
+
+#### InstallModules
+
+Installs the modules required by the configuration `DNSServer.ps1`.
+
+#### ScriptAnalysis
+
+Calls the [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer).
+
+#### UnitTests
+
+Runs the [Pester](https://github.com/pester/Pester/wiki) unit tests.
+
+#### CompileConfigs
+
+Compiles the configuration (`DNSServer.ps1`) into a MOF file, using the configuration data generated by the `GenerateEnvironmentFiles` task.
+
+#### Clean
+
+Creates the folders used for the example,
+and removes any test results, configuration data files, and modules from previous runs.
+
+### The psake deploy script
+
+The [psake](https://github.com/psake/psake) deployment script defined in `Deploy.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Deploy.ps1`) 
+defines tasks that deploy and run the configuration.
+
+`Deploy.ps1` defines the following tasks:
+
+#### DeployModules
+
+Starts a PowerShell session on `TestAgent1` and installs the modules containing the DSC resources required for the configuration.
+
+#### DeployConfigs
+
+Calls the [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) cmdlet to run the configuration on `TestAgent1`.
+
+#### IntegrationTests
+
+Runs the [Pester](https://github.com/pester/Pester/wiki) integration tests.
+
+#### AcceptanceTests
+
+Runs the [Pester](https://github.com/pester/Pester/wiki) acceptance tests.
+
+#### Clean
+
+Removes any modules installed in previous runs, and ensures that the test result folder exists.
 
 ### Test scripts
 
@@ -629,6 +433,21 @@ Edit the steps as follows:
 1. Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
 1. Set the **Test Run Title** to `Acceptance`
 1. Under **Control Options**, check **Always run**
+
+## Verify your results
+
+Now, any time you push changes in the `ci-cd-example` branch to TFS, a new build will start.
+If the build completes successfully, a new deployment is triggered.
+
+You can check the result of the deployment by opening a browser on the client machine and navigating to `www.contoso.com`.
+
+## Next steps
+
+This example configures the DNS server `TestAgent1` so that the URL `www.contoso.com` resolves to `TestAgent2`,
+but it does not actually deploy a website. 
+The skeleton for doing so is provided in the repo under the `WebApp` folder.
+You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own webiste. 
+
 
 
 
