@@ -102,13 +102,6 @@ Because the *ComputerName* parameter of **Get-Service** does not use Windows Pow
 ```
 PS C:\> Get-Service | Where-Object {$_.DependentServices} | Format-List -Property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
-
-
-
-
-
-
-
 Name                  : AudioEndpointBuilder
 DependentServices     : {AudioSrv}
 NoOfDependentServices : 1
@@ -173,10 +166,6 @@ To list running services first, use the *Descending* parameter of the Sort-Objec
 ### Example 9: Get services on multiple computers
 ```
 PS C:\> Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
-
-
-
-
 
 
 MachineName    Status  Name  DisplayName
