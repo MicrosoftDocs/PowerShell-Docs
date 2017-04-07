@@ -200,7 +200,7 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1) 
+The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) 
 programatically creates a configuration data document from the hashtable (node data) and array (non-node data) 
 that are passed as the `RawEnvData` and `OtherEnvData` parameters.
 
