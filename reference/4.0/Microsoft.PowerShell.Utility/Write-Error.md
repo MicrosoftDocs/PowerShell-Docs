@@ -80,8 +80,8 @@ This command declares a non-terminating error and specifies an error category.
 
 ### Example 4
 ```
-PS C:\> $e = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
-PS C:\> Write-Error $e -Message "Files not found. The $Files location does not contain any XML files."
+PS C:\> $E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+PS C:\> Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 
 This command uses an **Exception** object to declare a non-terminating error.
