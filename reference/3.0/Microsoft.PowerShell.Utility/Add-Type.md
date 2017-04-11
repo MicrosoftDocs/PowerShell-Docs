@@ -66,7 +66,7 @@ If you specify source code, **Add-Type** compiles the specified source code and 
 You can use the parameters of **Add-Type** to specify an alternate language and compiler (CSharp is the default), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $source = @"
 public class BasicTest
@@ -104,7 +104,7 @@ The fourth command uses the **New-Object** cmdlet to instantiate an instance of 
 It saves the new object in the $basicTestObject variable.
 
 The fifth command uses the Multiply method of $basicTestObject.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> [BasicTest] | Get-Member
 PS C:\> [BasicTest] | Get-Member -Static
@@ -151,7 +151,7 @@ The third command uses the **Get-Member** cmdlet to get the members of the objec
 This was the object instance that was created by using the **New-Object** cmdlet with the $BasicType class.
 
 The output reveals that the value of the $BasicTestObject variable is an instance of the BasicTest class and that it includes a member called Multiply.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $accType = Add-Type -AssemblyName accessib* -PassThru
 ```
@@ -161,7 +161,7 @@ The command uses the **AssemblyName** parameter to specify the name of the assem
 The wildcard character allows you to get the correct assembly even when you are not sure of the name or its spelling.
 
 The command uses the **PassThru** parameter to generate objects that represent the classes that are added to the session, and it saves the objects in the $accType variable.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Add-Type -Path c:\ps-test\Hello.vb
 [VBFromFile]::SayHello(", World")
@@ -185,7 +185,7 @@ The first command uses the **Add-Type** cmdlet to add the type defined in the He
 The command uses the **Path** parameter to specify the source file.
 
 The second command calls the SayHello function as a static method of the VBFromFile class.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $signature = @"
 [DllImport("user32.dll")]
@@ -223,7 +223,7 @@ Then it uses the **MainWindowHandle** property of the current process and a valu
 
 To restore the window, the fourth command use a value of "4" for the window position, which represents the SW_RESTORE value.
 (SW_MAXIMIZE is 3.)
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
 ```
@@ -231,7 +231,7 @@ PS C:\> Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
 This command uses the **Add-Type** cmdlet to add a method from inline JScript code to the Windows PowerShell session.
 It uses the **MemberDefinition** parameter to submit source code stored in the $jsMethod variable.
 It uses the **Name** parameter to specify a name for the class that **Add-Type** creates for the method and the **Language** parameter to specify the JScript language.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll
 PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll

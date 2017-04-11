@@ -44,7 +44,7 @@ For example, when creating a new file, New-Item can add initial content to the f
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-item -path . -name testfile1.txt -itemtype "file" -value "This is a text string."
 ```
@@ -53,7 +53,7 @@ This command creates a text file named testfile1.txt in the current directory.
 The dot (.) in the value of the Path parameter indicates the current directory.
 The quoted text that follows the Value parameter is added to the file as content.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-item -path c:\ -name logfiles -itemtype directory
 ```
@@ -61,7 +61,7 @@ PS C:\> new-item -path c:\ -name logfiles -itemtype directory
 This command creates a directory named Logfiles in the C: drive.
 The ItemType parameter specifies that the new item is a directory, not a file or other file system object.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> new-item -path $profile -itemtype file -force
 ```
@@ -80,7 +80,7 @@ After you use this command to create a profile, you can enter aliases, functions
 
 For more information, see about_Automatic_Variables and about_Profiles.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> new-item -itemtype directory -path c:\ps-test\scripts
 ```
@@ -90,7 +90,7 @@ This command creates a new Scripts directory in the C:\PS-Test directory.
 The name of the new directory item, Scripts, is included in the value of the Path parameter, instead of being specified in the value of the Name parameter.
 As indicated by the syntax, either command form is valid.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> new-item -itemtype file -path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
@@ -251,9 +251,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions. 
 
 ```yaml
 Type: SwitchParameter

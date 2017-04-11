@@ -41,7 +41,7 @@ Because it is supported by many providers, it can delete many different types of
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-item C:\Test\*.*
 ```
@@ -49,7 +49,7 @@ PS C:\> remove-item C:\Test\*.*
 This command deletes all of the files with names that include a dot (.) from the C:\Test directory.
 Because the command specifies a dot, the command does not delete directories or files with no file name extension.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> remove-item * -include *.doc -exclude *1*
 ```
@@ -58,7 +58,7 @@ This command deletes from the current directory all files with a .doc file name 
 It uses the wildcard character (*) to specify the contents of the current directory.
 It uses the Include and Exclude parameters to specify the files to delete.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> remove-item -path C:\Test\hidden-RO-file.txt -force
 ```
@@ -68,7 +68,7 @@ It uses the Path parameter to specify the file.
 It uses the Force parameter to give permission to delete it.
 Without Force, you cannot delete read-only or hidden files.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-childitem * -include *.csv -recurse | remove-item
 ```
@@ -82,7 +82,7 @@ It uses the Include parameter to specify the CSV file type, and it uses the Recu
 
 If you try to specify the file type in the path, such as "-path *.csv", the cmdlet interprets the subject of the search to be a file that has no child items, and Recurse fails.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> remove-item hklm:\software\mycompany\OldApp -recurse
 ```
@@ -295,7 +295,21 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream from a file that this cmdlet deletes.
+This cmdlet does not delete the file.
+Enter the stream name.
+Wildcard characters are supported.
+
+This parameter is not valid on folders.
+
+The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Remove-Item**.
+This parameter works only in file system drives.
+
+You can use **Remove-Item** to delete an alternative data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]

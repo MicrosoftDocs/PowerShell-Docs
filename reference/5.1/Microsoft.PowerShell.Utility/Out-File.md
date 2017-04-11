@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoNewline
-@{Text=}
+Specifies that the content displayed in the console does not end with a newline character.
 
 ```yaml
 Type: SwitchParameter

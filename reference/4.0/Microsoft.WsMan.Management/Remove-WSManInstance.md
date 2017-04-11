@@ -43,7 +43,7 @@ This cmdlet uses the WinRM connection/transport layer to delete the management r
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Remove-WSManInstance winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
 ```

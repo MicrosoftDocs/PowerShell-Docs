@@ -40,7 +40,7 @@ The Remove-WSManInstance deletes an instance of a management resource that is sp
 This cmdlet uses the WinRM connection/transport layer to delete the management resource instance.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Remove-WSManInstance winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
 ```

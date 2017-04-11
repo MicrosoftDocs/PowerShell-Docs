@@ -558,17 +558,17 @@ None. You cannot pipe objects to Add-Extension.
 
 System.String. Add-Extension returns a string with the extension or file name.
 
--------------------------- EXAMPLE 1 --------------------------
+Example 1
 
 C:\PS> extension -name "File"
 File.txt
 
--------------------------- EXAMPLE 2 --------------------------
+Example 2
 
 C:\PS> extension -name "File" -extension "doc"
 File.doc
 
--------------------------- EXAMPLE 3 --------------------------
+Example 3
 
 C:\PS> extension "File" "doc"
 File.doc
@@ -758,15 +758,15 @@ None. You cannot pipe objects to Update-Month.ps1.
 
 None. Update-Month.ps1 does not generate any output.
 
--------------------------- EXAMPLE 1 --------------------------
+Example 1
 
 C:\PS> .\Update-Month.ps1
 
--------------------------- EXAMPLE 2 --------------------------
+Example 2
 
 C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
--------------------------- EXAMPLE 3 --------------------------
+Example 3
 
 C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
 C:\Reports\2009\January.csv
@@ -867,8 +867,10 @@ about_Comment-Based_Help
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced_Parameters
-about_Scripts
-"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Scripts](about_Scripts.md)
+
+"How to Write Cmdlet Help" (http://go.microsoft.com/fwlink/?LinkID=123415)

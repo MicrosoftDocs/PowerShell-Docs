@@ -149,13 +149,13 @@ A Finally block runs even if you use CTRL\+C to stop the script. A Finally block
 
 
 ### SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_Scopes
+[about_Continue](about_Continue.md)
 
-about_Throw
+[about_Scopes](about_Scopes.md)
 
-about_Trap
+[about_Throw](about_Throw.md)
 
+[about_Trap](about_Trap.md)

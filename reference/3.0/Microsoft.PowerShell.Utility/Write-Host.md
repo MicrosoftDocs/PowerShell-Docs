@@ -31,14 +31,14 @@ The Separator parameter lets you specify a string to use to separate displayed o
 The particular result depends on the program that is hosting Windows PowerShell.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> write-host "no newline test " -nonewline
 no newline test PS C:\>
 ```
 
 This command displays the input to the console, but because of the NoNewline parameter, the output is followed directly by the prompt.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> write-host (2,4,6,8,10,12) -Separator ", +2= "
 2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
@@ -46,14 +46,14 @@ PS C:\> write-host (2,4,6,8,10,12) -Separator ", +2= "
 
 This command displays the even numbers from 2 through 12.
 The Separator parameter is used to add the string , +2= (comma, space, +, 2, =, space).
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> write-host (2,4,6,8,10,12) -Separator ", -> " -foregroundcolor DarkGreen -backgroundcolor white
 ```
 
 This command displays the even numbers from 2 through 12.
 It uses the ForegroundColor parameter to output dark green text and the BackgroundColor parameter to display a white background.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> write-host "Red on white text." -ForegroundColor red -BackgroundColor white
 Red on white text.

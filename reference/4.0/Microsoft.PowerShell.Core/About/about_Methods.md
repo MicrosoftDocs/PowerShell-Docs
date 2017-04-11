@@ -189,9 +189,9 @@ PS C:\> $p | Foreach-Object {$_.Kill()}
 
 
 ## SEE ALSO
-about_Objects
 
-about_Properties
+[about_Objects](about_Objects.md)
+
+[about_Properties](about_Properties.md)
 
 Get-Member
-

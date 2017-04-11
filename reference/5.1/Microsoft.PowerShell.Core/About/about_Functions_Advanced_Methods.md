@@ -206,9 +206,12 @@ the function is run.
 
 # SEE ALSO
 
-about_Functions
-about_Functions_Advanced
-about_Functions_Advanced_Parameters
-about_Functions_CmdletBindingAttribute
-about_Functions_OutputTypeAttribute
+[about_Functions](about_Functions.md)
 
+[about_Functions_Advanced](about_Functions_Advanced.md)
+
+[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+
+[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)

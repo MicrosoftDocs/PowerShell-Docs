@@ -45,7 +45,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable name
 PS C:\> $b | disable-psbreakpoint
@@ -61,14 +61,14 @@ It uses a pipeline operator (|) to send the breakpoint object in $b to the Disab
 
 As a result of this command, the value of the Enabled property of the breakpoint object in $b is False.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> disable-psbreakpoint -id 0
 ```
 
 This command disables the breakpoint with breakpoint ID 0.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> disable-psbreakpoint -breakpoint ($b = set-psbreakpoint -script sample.ps1 -line 5)
 PS C:\> $b
@@ -84,7 +84,7 @@ In this case, because Set-PSBreakpoint generates a breakpoint object, it can be 
 
 The second command displays the breakpoint object in the value of the $b variable.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-psbreakpoint | disable-psbreakpoint
 ```

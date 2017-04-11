@@ -46,21 +46,21 @@ You can specify the services by their service names or display names, or you can
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Restart-Service winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Restart-Service -DisplayName net* -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that begins with "Net", except for the "Net Logon" service.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Service net* | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```

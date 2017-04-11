@@ -35,14 +35,14 @@ The parameters of this cmdlet let you set the display name, description, startup
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
 ```
 
 This command creates a new service named "TestService".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -dependson NetLogon -displayName "Test Service" -StartupType Manual -Description "This is a test service."
 ```
@@ -50,7 +50,7 @@ PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svcho
 This command creates a new service named "TestService".
 It uses the parameters of the New-Service cmdlet to specify a description, startup type, and display name for the new service.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-wmiobject win32_service -filter "name='testservice'"
 
@@ -65,7 +65,7 @@ Status    : OK
 This command uses the Get-WmiObject cmdlet to get the Win32_Service object for the new service.
 This object includes the start mode and the service description.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> sc.exe delete TestService
 - or -

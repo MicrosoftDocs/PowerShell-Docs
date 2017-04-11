@@ -33,7 +33,7 @@ You can also use this  cmdlet to customize features of the host program user int
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-host
 
@@ -54,7 +54,7 @@ It includes the name of the host, the version of Windows PowerShell that is runn
 The Version, UI, CurrentCulture, CurrentUICulture, PrivateData, and Runspace properties each contain an object with very useful properties.
 Later examples examine these properties.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $h = get-host
 PS C:\> $win = $h.ui.rawui.windowsize
@@ -65,7 +65,7 @@ PS C:\> $h.ui.rawui.set_windowsize($win)
 
 This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> (get-host).version | format-list -property *
 Major         : 2
@@ -83,7 +83,7 @@ The Version property of Get-Host contains a System.Version object.
 This command uses a pipeline operator (|) to send the version object to the Format-List cmdlet.
 The Format-List command uses the Property parameter with a value of all (*) to display all of the properties and property values of the version object.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> (get-host).currentculture | format-list -property *
 
@@ -119,7 +119,7 @@ The CurrentCulture property of the host object contains a  System.Globalization.
 This command uses a pipeline operator (|) to send the CultureInfo object to the Format-List cmdlet.
 The Format-List command uses the Property parameter with a value of all (*) to display all of the properties and property values of the CultureInfo object.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> (get-host).currentculture.DateTimeFormat | format-list -property *
 
@@ -159,7 +159,7 @@ Among them, the DateTimeFormat property contains a DateTimeFormatInfo object wit
 To find the type of an object that is stored in an object property, use the Get-Member cmdlet.
 To display the property values of the object, use the Format-List cmdlet.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> (get-host).ui.rawui | format-list -property *
 
@@ -179,7 +179,7 @@ WindowTitle           : Windows PowerShell 2.0 (04/11/2008 00:08:14)
 This command displays the properties of the RawUI property of the host object.
 By changing these values, you can change the appearance of the host program.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> (get-host).ui.rawui.backgroundcolor = "Black"
 PS C:\> cls
@@ -191,7 +191,7 @@ The "cls" command is an alias for the Clear-Host function, which clears the scre
 This change is effective only in the current session.
 To change the background color of the console for all sessions, add the command to your Windows PowerShell profile.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> $host.privatedata.errorbackgroundcolor = "white"
 ```

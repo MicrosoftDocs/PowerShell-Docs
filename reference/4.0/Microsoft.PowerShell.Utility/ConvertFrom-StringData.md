@@ -41,7 +41,7 @@ Unescaped backslash characters, such as those that are commonly used in file pat
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $here = @'
 Msg1 = The string parameter is required.
@@ -64,7 +64,7 @@ The first command creates a here-string and saves it in the $here variable.
 
 The second command uses the ConvertFrom-StringData cmdlet to convert the here-string in the $here variable to a hash table.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $p = @"
 ISE = Windows PowerShell Integrated Scripting Environment
@@ -99,7 +99,7 @@ The command stores the result in the $hash variable.
 The final command uses a pipeline operator (|) to send the $hash variable to the Get-Member cmdlet.
 The result shows that the content of the $hash variable is a hash table (System.Collections.Hashtable).
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> convertfrom-stringdata -stringdata @'
 Name = Disks.ps1
@@ -125,7 +125,7 @@ Either format is valid.
 The here-string includes a comment about one of the strings.
 Comments are valid in strings, provided that the comment is on a different line than a key/value pair.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = convertfrom-stringdata -stringdata "Top = Red `n Bottom = Blue"
 PS C:\> "Top = " + $a.Top
@@ -141,7 +141,7 @@ To satisfy the condition that each key/value pair must be on a separate line, it
 The result is a hash table of the input.
 The remaining commands display the output.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $TextMsgs = DATA {
 ConvertFrom-StringData @'
@@ -161,7 +161,7 @@ The statements below the DATA section display the text to the user.
 Because the text includes variable names, it must be enclosed in a single-quoted string so that the variables are interpreted literally and not expanded.
 Variables are not permitted in the DATA section.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $here = @'
 Msg1 = The string parameter is required.
@@ -186,7 +186,7 @@ The command saves the result in the $hash variable.
 
 The final command displays the contents of the $hash variable.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> ConvertFrom-StringData @"
 Vincentio = Heaven doth with us as we with torches do,\nNot light them for themselves; for if our virtues\nDid not go forth of us, 'twere all alike\nAs if we had them not.
@@ -209,7 +209,7 @@ Value : Heaven doth with us as we with torches do,
 This example shows the use of escape characters to create new lines and return characters in ConvertFrom-StringData.
 In this example, the escape sequence **\n** is used to create new lines within a block of text (the value, in the resulting hash table) that is associated with a name or item (the name, in the resulting hash table).
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
 Name                           Value                                                                                                                                     

@@ -143,9 +143,12 @@ dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attribut
 
 # SEE ALSO
 
-about_Break
-about_Continue
-about_Scope
-about_Trap
-about_Try_Catch_Finally
+[about_Break](about_Break.md)
 
+[about_Continue](about_Continue.md)
+
+[about_Scopes](about_Scopes.md)
+
+[about_Trap](about_Trap.md)
+
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)

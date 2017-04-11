@@ -50,14 +50,14 @@ To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Disable-WSManCredSSP -Role Client
 ```
 
 This command disables CredSSP on the client, which prevents delegation to servers.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Disable-WSManCredSSP -Role Server
 ```

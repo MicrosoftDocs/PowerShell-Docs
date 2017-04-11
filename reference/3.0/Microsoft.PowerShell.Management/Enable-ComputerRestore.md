@@ -34,13 +34,13 @@ To find the state of System Restore for each drive, use Rstrui.exe.
 System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> enable-computerrestore -drive "C:\"
 ```
 
 This command enables System Restore on the C: drive of the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> enable-computerrestore -drive "C:\", "D:\"
 ```

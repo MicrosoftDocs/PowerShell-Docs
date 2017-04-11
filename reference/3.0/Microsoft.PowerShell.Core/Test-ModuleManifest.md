@@ -33,13 +33,13 @@ The Test-ModuleManifest cmdlet returns an object that represents the module (the
 If any files are not in the locations specified in the manifest, the cmdlet also generates an error for each missing file.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-ModuleManifest -path $pshome\Modules\TestModule.psd1
 ```
 
 This command tests the TestModule.psd1 module manifest.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
 
@@ -69,7 +69,7 @@ NestedModules     : {}
 This command uses a pipeline operator (|) to send a path string to Test-ModuleManifest.
 
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> function Test-ManifestBool ($path)
 {$a = dir $path | test-modulemanifest -erroraction SilentlyContinue; $?}

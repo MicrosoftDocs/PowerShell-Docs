@@ -33,9 +33,9 @@ By default, the value of this key is 2, which allows DSC to run at boot time.
 
 If you do not want DSC to run at boot time, set the value of the [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key to 0.
 
-- [Inject a configuration MOF document into a VHD](##Inject-a-configuration-MOF-document-into-a-VHD)
-- [Inject a DSC metaconfiguration into a VHD](##Inject-a-DSC-metaconfiguration-into-a-VHD)
-- [Disable DSC at boot time](##Disable-DSC-at-boot-time)
+- Inject a configuration MOF document into a VHD
+- Inject a DSC metaconfiguration into a VHD
+- Disable DSC at boot time
 
 >**Note:** You can inject both `Pending.mof` and `MetaConfig.mof` into a computer at the same time.
 If both files are present, the settings specified in `MetaConfig.mof` take precedence.

@@ -26,7 +26,7 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 
 
 ### [Add-Type](Add-Type.md)
-Adds a.NET Framework type (a class) to a Windows PowerShell session.
+Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 
 ### [Clear-Variable](Clear-Variable.md)

@@ -71,14 +71,14 @@ For more information about the *types.ps1xml files in Windows PowerShell, see ab
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Update-Typedata
 ```
 
 This command updates the extended type configuration from the *.types.ps1xml files that have already been used in the session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command updates the extended type configuration from the *.types.ps1xml files, processing the TypesA.types.ps1xml and TypesB.types.ps1xml files first.
 PS C:\> Update-Typedata -PrependPath TypesA.types.ps1xml, TypesB.types.ps1xml
@@ -93,7 +93,7 @@ Update-Typedata
 
 This example show how to update the types in a type file multiple times in the same session.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Update-TypeData -TypeName System.DateTime -MemberType ScriptProperty -MemberName Quarter -Value {if ($this.Month -in @(1,2,3)) {"Q1"} elseif ($this.Month -in @(4,5,6)) {"Q2"} elseif ($this.Month -in @(7,8,9)) {"Q3"} else {"Q4"} }
 PS C:\> (Get-Date).QuarterQ1
@@ -109,7 +109,7 @@ For more information about the In operator, see about_Comparison_Operators (http
 
 The second command gets the new Quarter property of the current date.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Update-TypeData -TypeName System.DateTime -DefaultDisplayPropertySet DateTime, DayOfYear, Quarter
 PS C:\> Get-Date | Format-List
@@ -130,7 +130,7 @@ The second command uses the Get-Date cmdlet to get a **System.DateTime** object 
 The command uses a pipeline operator (|) to send the **DateTime** object to the Format-List cmdlet.
 Because the **Format-List** command does not specify the properties to display in the list, Windows PowerShell uses the default values that were established by the **Update-TypeData** command.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Module | Update-TypeData -MemberType ScriptProperty -MemberName SupportsUpdatableHelp -Value {if ($this.HelpInfoUri) {$True} else {$False}}
 Get-Module -ListAvailable | Format-Table Name, SupportsUpdatableHelp

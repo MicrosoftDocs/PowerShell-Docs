@@ -53,6 +53,6 @@ is displayed is not what you want, press the TAB key again.
 
 # SEE ALSO
 
-about_Command_Syntax
-about_Path_Syntax
+[about_Command_Syntax](about_Command_Syntax.md)
 
+[about_Path_Syntax](about_Path_Syntax.md)

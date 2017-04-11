@@ -42,7 +42,7 @@ You can type the content in the command or send content through the pipeline to 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-content -path C:\Test1\test*.txt -value "Hello, World"
 ```
@@ -50,7 +50,7 @@ PS C:\> set-content -path C:\Test1\test*.txt -value "Hello, World"
 This command replaces the contents of all files in the Test1 directory that have names beginning with "test" with "Hello, World".
 This example shows how to specify content by typing it in the command.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-date | set-content C:\Test1\date.csv
 ```
@@ -61,7 +61,7 @@ The pipeline operator passes the result to Set-Content, which creates the file a
 
 If the Test1 directory does not exist, the command fails, but if the file does not exist, the command will create it.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> (get-content Notice.txt) | foreach-object {$_ -replace "Warning", "Caution"} | set-content Notice.txt
 ```
@@ -289,7 +289,30 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
-{{Fill Encoding Description}}
+Specifies the file encoding.
+The acceptable values for this parameter are:
+
+- ASCII.
+Uses the encoding for the ASCII (7-bit) character set. 
+- BigEndianUnicode.
+Encodes in UTF-16 format using the big-endian byte order. 
+- Byte.
+Encodes a set of characters into a sequence of bytes. 
+- String.
+Uses the encoding type for a string. 
+- Unicode.
+Encodes in UTF-16 format using the little-endian byte order. 
+- UTF7.
+Encodes in UTF-7 format. 
+- UTF8.
+Encodes in UTF-8 format. 
+- Unknown.: The encoding type is unknown or invalid.
+The data can be treated as binary. 
+
+The default value is ASCII.
+
+Encoding is a dynamic parameter that the FileSystem provider adds to **Set-Content**.
+This parameter works only in file system drives.
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
@@ -304,7 +327,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream for content.
+If the stream does not exist, this cmdlet creates it.
+Wildcard characters are not supported.
+
+Stream is a dynamic parameter that the FileSystem provider adds to **Set-Content**.
+This parameter works only in file system drives.
+
+You can use the **Set-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String

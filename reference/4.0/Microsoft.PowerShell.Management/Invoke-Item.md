@@ -40,7 +40,7 @@ The default action depends on the type of item and is determined by the Windows 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> invoke-item C:\Test\aliasApr04.doc
 ```
@@ -48,7 +48,7 @@ PS C:\> invoke-item C:\Test\aliasApr04.doc
 This command opens the file aliasApr04.doc in Microsoft Office Word.
 In this case, opening in Word is the default action for .doc files.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
 ```
@@ -202,9 +202,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_transactions. 
 
 ```yaml
 Type: SwitchParameter

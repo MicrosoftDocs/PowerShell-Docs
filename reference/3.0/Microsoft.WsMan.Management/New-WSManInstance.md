@@ -42,7 +42,7 @@ It uses a resource URI and a value set or input file to create the new instance 
 This cmdlet uses the WinRM connection/transport layer to create the management resource instance.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-WSManInstance winrm/config/Listener -SelectorSet @{Transport=HTTPS} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
 ```

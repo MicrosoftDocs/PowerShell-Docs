@@ -17,7 +17,7 @@ external help file:   Microsoft.PowerShell.Utility-help.xml
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
-
+Imports values from a .PSD1 file without invoking its contents
 ## SYNTAX
 
 ### ByPath (Default)
@@ -31,14 +31,20 @@ Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+The **Import-PowerShellDataFile** cmdlet returns a hashtable consisting of the key-value pairs in a .PSD1 file.
 
 ## EXAMPLES
 
-### 1:
+### 1: Retrieve values from PSD1
 ```
-PS C:\>
+PS C:\> $content = Import-PowerShellDataFile .\Configuration.psd1
+PS C:\> $content
+Name                           Value                                                                          
+----                           -----                                                                          
+key1                           value1                                                                         
+key2                           value2  
 ```
-
+This examples retrieves the key-value pairs stored in the hashtable kept inside the Configuration.psd1 file. 
 ## PARAMETERS
 
 ### -LiteralPath
@@ -77,4 +83,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

@@ -37,7 +37,7 @@ By default, you type the fully qualified name of a .NET Framework class and the 
 To create an instance of a COM object, use the ComObject parameter and specify the ProgID of the object as its value.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
 Major  Minor  Build  Revision
@@ -49,7 +49,7 @@ Major  Minor  Build  Revision
 
 This command creates a System.Version object.
 It uses a "1.2.3.4" string as the constructor.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $ie = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
 ```
@@ -64,7 +64,7 @@ This command is the equivalent of the following:
 `$ie.Navigate2("www.microsoft.com")`
 
 `$ie.Visible = $true`
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $a=New-Object -COMObject Word.Application -Strict -Property @{Visible=$true}
 New-Object : The object written to the pipeline is an instance of the type
@@ -78,7 +78,7 @@ At line:1 char:14
 ```
 
 This example demonstrates that adding the **Strict** parameter causes the **New-Object** cmdlet to generate a non-terminating error when the COM object uses an interop assembly.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **ComObject** parameter of the **New-Object** cmdlet to create a COM object with the "Shell.Application" ProgID. It stores the resulting object in the $objShell variable.
 PS C:\> $objshell = New-Object -COMObject "Shell.Application"

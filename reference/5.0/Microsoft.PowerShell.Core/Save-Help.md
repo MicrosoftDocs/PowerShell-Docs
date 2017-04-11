@@ -95,14 +95,14 @@ This example shows three different ways to use **Save-Help** to save the help fo
 
 ### Example 2: Install help for the DhcpServer module
 ```
-PS C:\> # First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
+PS C:\> # First, run Export-Clixml to export the PSModuleInfo object to a shared folder or to removable media.
 
 PS C:\> $m = Get-Module -Name "DhcpServer" -ListAvailable
-PS C:\> Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
+PS C:\> Export-Clixml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
 
-# Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
+# Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-Clixml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
 
-PS C:\> $deserialized_m = Import-CliXml "E:\UsbFlashDrive\DhcpModule.xml"
+PS C:\> $deserialized_m = Import-Clixml "E:\UsbFlashDrive\DhcpModule.xml"
 PS C:\> Save-Help -Module $deserialized_m -DestinationPath "E:\UsbFlashDrive\SavedHelp"
 
 # Finally, transport the removable media back to the computer that does not have network access, and then install the help by running Update-Help.

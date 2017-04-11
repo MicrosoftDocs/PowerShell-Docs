@@ -48,7 +48,7 @@ To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-wsmancredssp
 ```

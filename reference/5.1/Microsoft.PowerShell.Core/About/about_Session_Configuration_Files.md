@@ -370,16 +370,26 @@ an empty session.
 
 # SEE ALSO
 
-about_Session_Configurations
-New-PSSession
-Disable-PSSessionConfiguration
-Enable-PSSessionConfiguration
-Get-PSSessionConfiguration
-New-PSSessionConfigurationFile
-Register-PSSessionConfiguration
-Set-PSSessionConfiguration
-Test-PSSessionConfigurationFile
-Unregister-PSSessionConfiguration
-Get-PSSessionCapability
-New-PSRoleCapabilityFile
+[about_Session_Configurations](about_Session_Configurations.md)
 
+New-PSSession
+
+Disable-PSSessionConfiguration
+
+Enable-PSSessionConfiguration
+
+Get-PSSessionConfiguration
+
+New-PSSessionConfigurationFile
+
+Register-PSSessionConfiguration
+
+Set-PSSessionConfiguration
+
+Test-PSSessionConfigurationFile
+
+Unregister-PSSessionConfiguration
+
+Get-PSSessionCapability
+
+New-PSRoleCapabilityFile

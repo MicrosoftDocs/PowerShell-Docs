@@ -208,7 +208,9 @@ MSDN at http://go.microsoft.com/fwlink/?LinkID=144916.
 # SEE ALSO
 
 Get-EventLog
-Get-WmiObject
-about_Group_Policy_Settings
-about_Preference_Variables
 
+Get-WmiObject
+
+[about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+
+[about_Preference_Variables](about_Preference_Variables.md)

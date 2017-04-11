@@ -227,11 +227,11 @@ The action for each condition is independent of the actions in other conditions.
 
 
 ## SEE ALSO
-about_Break
 
-about_Continue
+[about_Break](about_Break.md)
 
-about_If
+[about_Continue](about_Continue.md)
 
-about_Script_Blocks
+[about_If](about_If.md)
 
+[about_Script_Blocks](about_Script_Blocks.md)

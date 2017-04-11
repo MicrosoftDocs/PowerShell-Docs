@@ -80,10 +80,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -110,7 +108,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
     }
 
 }
@@ -158,7 +155,8 @@ This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/grou
 It can create local groups and add or remove members.
 It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.
 However, the resource only uses the `Credential` property.
-Read more about `PsDscRunAsCredential` in the [WMF Release Notes](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas).
+
+For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).
 
 ## Example: The Group resource Credential property
 

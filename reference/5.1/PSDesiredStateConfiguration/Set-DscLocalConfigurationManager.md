@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-@{Text=}
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter

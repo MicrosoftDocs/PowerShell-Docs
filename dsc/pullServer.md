@@ -23,14 +23,15 @@ Requirements for using a pull server:
   - DSC Service
 * Ideally, some means of generating a certificate, to secure credentials passed to the Local Configuration Manager (LCM) on target nodes
 
-You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using PowerShell. The sample scripts included in this topic will handle both of these steps for you as well.
+You can add the IIS server role and DSC Service with the Add Roles and Features wizard in Server Manager, or by using PowerShell. The sample scripts included in this topic will handle both of these steps 
+for you as well.
 
 ## Using the xWebService resource
 The easiest way to set up a web pull server is to use the xWebService resource, included in the xPSDesiredStateConfiguration module. The following steps explain how to use the resource in a configuration that sets up the web service.
 
 1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
 1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either within your orgnaization or a public authority. The certificate recieved from the authority is usually in the PFX format. Install the certificate on the node that will become the DSC Pull server in the default location which should be CERT:\LocalMachine\My. Make a note of the certificate thumbprint.
-1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see [Registration Key](#RegKey) section below.
+1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see the Registration Key section below.
 1. In the PowerShell ISE, start (F5) the following configuration script (included in the Example folder of the  **xPSDesiredStateConfiguration** module as Sample_xDscWebService.ps1). This script sets up the pull server.
   
 ```powershell
@@ -182,7 +183,7 @@ In order to make setting up, validating and managing the pull server easier, the
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## Pull client configuration 

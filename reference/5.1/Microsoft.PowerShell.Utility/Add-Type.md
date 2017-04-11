@@ -17,7 +17,7 @@ external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 # Add-Type
 
 ## SYNOPSIS
-Adds a.NET Framework type (a class) to a Windows PowerShell session.
+Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 ## SYNTAX
 

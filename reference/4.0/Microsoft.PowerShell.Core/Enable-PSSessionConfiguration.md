@@ -42,21 +42,21 @@ Instead, use the more comprehensive cmdlet, Enable-PSRemoting.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Enable-PSSessionConfiguration
 ```
 
 This command re-enables the Microsoft.PowerShell default session configuration on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
 ```
 
 This command re-enables the MaintenanceShell and AdminShell session configurations on the computer.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Enable-PSSessionConfiguration -name *
 PS C:\> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
@@ -67,7 +67,7 @@ The commands are equivalent, so you can use either one.
 
 Enable-PSSessionConfiguration does not generate an error if you enable a session configuration that is already enabled.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
 ```

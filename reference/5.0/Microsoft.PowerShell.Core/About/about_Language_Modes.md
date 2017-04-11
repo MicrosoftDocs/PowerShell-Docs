@@ -261,7 +261,8 @@ about_RestrictedLanguage
 
 # SEE ALSO
 
-about_Session_ConfigurationFiles
-about_Session_Configurations
-about_Windows_RT
+[about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 
+[about_Session_Configurations](about_Session_Configurations.md)
+
+[about_Windows_RT](about_Windows_RT.md)

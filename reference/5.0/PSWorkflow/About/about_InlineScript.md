@@ -27,7 +27,7 @@ is valid only in workflows.
 
 # SYNTAX
 
-InlineScript {<script block>} <ActivityCommonParameters>
+InlineScript {\<script block\>} \<ActivityCommonParameters\>
 
 # DETAILED DESCRIPTION
 
@@ -64,21 +64,26 @@ The following example shows that the $Using scope modifier
 makes the value of the $a top-level workflow variable available
 to the commands in the InlineScript script block.
 
-workflow Test-Workflow
-{
-$a = 3
+```PowerShell
+workflow Test-Workflow {
+  $a = 3
 
-Without $Using, the $a workflow variable is not visible
-in inline script.
-InlineScript {"Inline A0 = $a"}
+  ## Without $Using, the $a workflow variable is not visible
+  ## in inline script.
+  InlineScript {"Inline A0 = $a"}
 
-$Using imports the variable and its current value.
-InlineScript {"Inline A1 = $Using:a"}
+  ## $Using imports the variable and its current value.
+  InlineScript {"Inline A1 = $Using:a"}
 }
 
+Test-Workflow
+```
+
+```output
 PS C:> Test-Workflow
 Inline A0 =
 Inline A1 = 3
+```
 
 InlineScript commands can change the value of the variable
 that was imported from workflow scope, but the changes are
@@ -86,25 +91,33 @@ not visible in workflow scope. To make them visible, return
 the changed value to the workflow scope, as shown in the
 following example.
 
-workflow Test-Workflow
-{
-$a = 3
+```PowerShell
+workflow Test-Workflow {
+  $a = 3
 
-Changes to the InlineScript variable value do not
-change the workflow variable.
-InlineScript {$a = $using:a+1; "Inline A = $a"}
-"Workflow A = $a"
+  ##  Changes to the InlineScript variable value do not
+  ##  change the workflow variable.
+  InlineScript {
+    $a = $using:a+1; 
+    "Inline A = $a"
+  }
+  "Workflow A = $a"
 
-To change the variable in workflow scope, return the
-new value.
-$a = InlineScript {$b = $Using:a+1; $b}
-"Workflow New A = $a"
+  ##  To change the variable in workflow scope, return the
+  ##  new value.
+  $a = InlineScript {$b = $Using:a+1; $b}
+  "Workflow New A = $a"
 }
 
+Test-Workflow
+```
+
+```output
 PS C:> test-workflow
 Inline A = 4
 Workflow A = 3
 Workflow New A = 4
+```
 
 Troubleshooting Note:  A statement with the $Using scope modifier
 should appear before any use of the variable in the InlineScript
@@ -122,25 +135,28 @@ the workflow process, remove the InlineScript value from the
 OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
 
-For more information, see "How to Run Windows PowerShell Commands
-in a Workflow" ( http://go.microsoft.com/fwlink/?LinkId=261983).
+For more information, see [How to Run Windows PowerShell Commands
+in a Workflow](http://go.microsoft.com/fwlink/?LinkId=261983).
 
 # EXAMPLES
-
 
 The InlineScript in the following workflow includes commands
 that are not valid in workflows, including the use of the
 New-Object cmdlet with the ComObject parameter.
 
+```PowerShell
 workflow Test-Workflow
 {
-$ie = InlineScript
-{
-$ie = New-Object -ComObject InternetExplorer.Application
--property @{navigate2="www.microsoft.com"}
+  $ie = InlineScript {
+    $ie = New-Object -ComObject InternetExplorer.Application -property @{navigate2="www.microsoft.com"}
 
-$ie
+    $ie.Visible = $true
+  }
+
+  $ie
 }
-$ie
-}
+
+Test-Workflow
+```
+
 

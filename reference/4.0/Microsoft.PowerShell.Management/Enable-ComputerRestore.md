@@ -37,14 +37,14 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> enable-computerrestore -drive "C:\"
 ```
 
 This command enables System Restore on the C: drive of the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> enable-computerrestore -drive "C:\", "D:\"
 ```

@@ -216,7 +216,8 @@ http://go.microsoft.com/fwlink/?LinkId=142214
 
 
 ## SEE ALSO
-Online version: http:\/\/go.microsoft.com\/fwlink\/?LinkId\=142219
+
+Online version: http://go.microsoft.com/fwlink/?LinkId=142219
 
 Get-WmiObject
 
@@ -227,5 +228,3 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
-
-

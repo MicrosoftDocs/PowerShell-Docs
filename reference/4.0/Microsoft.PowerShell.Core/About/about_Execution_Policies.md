@@ -376,14 +376,18 @@ Unblock-File.
 
 # SEE ALSO
 
-about_Environment_Variables
-about_Signing
-Get-ExecutionPolicy
-Set-ExecutionPolicy
-Get-Item
-Unblock-File
-"Administrative Templates for Windows PowerShell"
-(http://go.microsoft.com/fwlink/?LinkId=131786)
-"PowerShell.exe Console Help"
-(http://go.microsoft.com/fwlink/?LinkID=113439)
+[about_Environment_Variables](about_Environment_Variables.md)
 
+[about_Signing](about_Signing.md)
+
+Get-ExecutionPolicy
+
+Set-ExecutionPolicy
+
+Get-Item
+
+Unblock-File
+
+"Administrative Templates for Windows PowerShell" (http://go.microsoft.com/fwlink/?LinkId=131786)
+
+"PowerShell.exe Console Help" (http://go.microsoft.com/fwlink/?LinkID=113439)

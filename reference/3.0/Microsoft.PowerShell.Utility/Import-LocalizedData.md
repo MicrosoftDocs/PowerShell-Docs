@@ -39,7 +39,7 @@ This initiative aims to better serve users worldwide by making it easy for scrip
 For more information about this and about the format of the .psd1 files, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Import-LocalizedData -BindingVariable Messages
 ```
@@ -48,7 +48,7 @@ This command imports text strings into the $Messages variable.
 It uses the default values of all other cmdlet parameters.
 
 If the command is included in the Archives.ps1 script in the C:\Test directory, and the value of the $PsUICulture automatic variable is zh-CN, **Import-LocalizedData** imports the Archives.psd1 file in the C:\test\zh-CN directory into the $Messages variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Import-LocalizedData -FileName Test.psd1 -UICulture en-US
 
@@ -65,7 +65,7 @@ Because the command is not used in a script, the **FileName** parameter is requi
 The command uses the **UICuture** parameter to specify the en-US culture.
 
 Import-LocalizedData returns a hash table that contains the localized data strings.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Import-LocalizedData -BindingVariable msgTbl -UICulture ar-SA -FileName Simple -BaseDirectory C:\Data\Localized
 ```
@@ -73,7 +73,7 @@ PS C:\> Import-LocalizedData -BindingVariable msgTbl -UICulture ar-SA -FileName 
 This command imports text strings into the $msgTbl  variable of a script.
 
 It uses the **UICulture** parameter to direct the cmdlet to import data from the Simple.psd1 file in the ar-SA subdirectory of C:\Data\Localized.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> # In C:\Test\en-US\Test.psd1:
 
@@ -108,7 +108,7 @@ It contains an **Import-LocalizedData** command that imports the data from the m
 
 The last part of the example runs the script.
 The output shows that it displays the correct user message in the UI language set for the current user of the operating system.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> # In TestScript.ps1$UserMessages = DATA 
 
@@ -135,7 +135,7 @@ The third command displays the first message in the $UserMessages variable.
 
 If the **Import-LocalizedData** command finds a .psd1 file for the $PsUICulture language, the value of the $UserMessages variable contains the translated text strings.
 If the command fails for any reason, the command displays the default text strings defined in the DATA section of the script.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> # In Day1.ps1
 

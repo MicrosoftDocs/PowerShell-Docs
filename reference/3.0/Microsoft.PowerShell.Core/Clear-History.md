@@ -35,31 +35,31 @@ The Clear-History cmdlet deletes commands from the command history, that is, the
 Without parameters, Clear-History deletes all commands from the session history, but you can use the parameters of Clear-History to delete selected commands.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> clear-history
 ```
 
 Deletes all commands from the session history.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> clear-history -id 23, 25
 ```
 
 Deletes the commands with history IDs 23 and 25.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> clear-history -command *help*, *command
 ```
 
 Deletes commands that include "help" or end in "command".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> clear-history -count 10 -newest
 ```
 
 Deletes the 10 newest commands from the history.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> clear-history -id 10 -count 3
 ```

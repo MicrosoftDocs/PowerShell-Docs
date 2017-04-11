@@ -32,13 +32,13 @@ To add the snap-ins in the .psc1 console file to a session, start Windows PowerS
 For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> export-console -path $pshome\Consoles\ConsoleS1.psc1
 ```
 
 This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles subdirectory of the Windows PowerShell installation directory, $pshome.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> export-console
 ```
@@ -47,7 +47,7 @@ This command exports the names of Windows PowerShell snap-ins from current sessi
 It overwrites the previous file contents.
 
 If you have not exported a console file during the current session, you are prompted for permission to continue and then prompted for a file name.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> add-pssnapin NewPSSnapin
 PS C:\> export-console -path NewPSSnapinConsole.psc1
@@ -63,7 +63,7 @@ The second command exports the Windows PowerShell snap-in names to the NewPSSnap
 
 The third command starts Windows PowerShell with the NewPSSnapinConsole.psc1 file.
 Because the console file includes the Windows PowerShell snap-in name, the cmdlets and providers in the snap-in are available in the current session.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> export-console -path Console01
 PS C:\> notepad console01.psc1
@@ -79,7 +79,7 @@ PS C:\> notepad console01.psc1
 This command exports the names of the Windows PowerShell snap-ins in the current session to the Console01.psc1 file in the current directory.
 
 The second command displays the contents of the Console01.psc1 file in Notepad.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> powershell.exe -PSConsoleFile Console01.psc1
 PS C:\> add-pssnapin MySnapin

@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2017-03-07
 title:  JEA Role Capabilities
 ms.technology:  powershell
 ---
@@ -234,7 +234,6 @@ The most complex merge logic affects cmdlets and functions, which can have their
 
 The rules are as follows:
 
-
 1. If a cmdlet is only made visible in one role, it will be visible to the user with any applicable parameter constraints.
 2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the cmdlet, the cmdlet will be visible to the user with those constraints.
 3. If a cmdlet is made visible in more than one role, and each role allows a different set of parameters, the cmdlet and all of the parameters defined across every role will be visible to the user. If one role doesn't have constraints on the parameters, all parameters will be allowed.
@@ -243,19 +242,29 @@ The rules are as follows:
 6. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values that match any of the patterns will be allowed.
 7. If a validate set is defined in one or more roles, and a validate pattern is defined in another role for the same cmdlet parameter, the validate set is ignored and rule (6) applies to the remaining validate patterns.
 
-The table below shows some examples of this logic in practice using two roles, A and B, which are both assigned to a user in a JEA session.
+Below is an example of how roles are merged according to these rules:
 
-Rule | Role A VisibleCmdlets                                                                          | Role B VisibleCmdlets                                                                             | Effective user permissions
------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
-1    | `Get-Service`                                                                                  | N/A                                                                                               | `Get-Service`
-1    | N/A                                                                                            | `Get-Service`                                                                                     | `Get-Service`
-2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
-4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
-5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
-6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
-7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+```powershell
+# Role A Visible Cmdlets
+$roleA = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
+}
+
+# Role B Visible Cmdlets
+$roleB = @{
+    VisibleCmdlets = @{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
+}
+
+# Resulting permisisons for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
+$mergedAandB = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
+}
+```
 
 
 

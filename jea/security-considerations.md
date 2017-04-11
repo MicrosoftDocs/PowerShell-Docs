@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.date:  2017-03-07
 title:  JEA Security Considerations
 ms.technology:  powershell
 ---
@@ -33,12 +33,11 @@ The connecting user does not know the credentials for the virtual account and ca
 
 By default, virtual accounts belong to the local administrators group on the machine.
 This gives them full rights to manage anything on the system, but no rights to manage resources on the network.
-When authenticating with other machines, the user context will be the local computer account, not the virtual account.
+When authenticating with other machines, the user context will be that of the local computer account, not the virtual account.
 
-On an Active Directory Domain Controller, virtual accounts get *domain admin* privileges by default.
-This is due to the fact that there is no group for local administrators on a domain controller.
-Accordingly, virtual accounts on domain controllers are domain accounts and can be used on other machines.
-When configuring JEA sessions on a domain controller, you must be careful to avoid exposing commands which could be used to manage other computers on the network.
+Domain controllers are a special case since there is no concept of a local administrators group.
+Instead, virtual accounts belong to Domain Admins instead and can manage the directory services on the domain controller.
+The domain identity is still restricted to use on the domain controller where the JEA session was instantiated, and any network access will appear to come from the domain controller computer object instead.
 
 In both cases, you can also explicitly define which security groups the virtual account should belong to.
 This is a good practice when the task you are performing can be done without local/domain admin privileges.
@@ -50,8 +49,8 @@ The table below summarizes the possible configuration options and resulting perm
 
 Computer type                | Virtual account group configuration | Local user context                                      | Network user context
 -----------------------------|-------------------------------------|---------------------------------------------------------|--------------------------------------------------
-Domain controller            | Default                             | Domain user, member of '*DOMAIN*\Domain Admins'         | Domain user, member of '*DOMAIN*\Domain Admins'
-Domain controller            | Domain groups A and B               | Domain user, member of '*DOMAIN*\A', '*DOMAIN*\B'       | Domain user, member of '*DOMAIN*\A', '*DOMAIN*\B'
+Domain controller            | Default                             | Domain user, member of '*DOMAIN*\Domain Admins'         | Computer account
+Domain controller            | Domain groups A and B               | Domain user, member of '*DOMAIN*\A', '*DOMAIN*\B'       | Computer account
 Member server or workstation | Default                             | Local user, member of '*BUILTIN*\Administrators'        | Computer account
 Member server or workstation | Local groups C and D                | Local user, member of '*COMPUTER*\C' and '*COMPUTER*\D' | Computer account
 
@@ -70,9 +69,8 @@ The effective permissions of the gMSA are defined by the security groups (local 
 When a JEA endpoint is configured to use a gMSA account, the actions of all JEA users will appear to come from the same group managed service account.
 The only way you can trace actions back to a specific user is to identify the set of commands run in a PowerShell session transcript.
 
-**Pass-thru credentials** 
-If you do not specify a run as account, PowerShell will use the connecting user's credential to run commands on the remote server.
-This configuration is not recommended for JEA as it would require you to grant the connecting user direct access to privileged management groups.
+**Pass-thru credentials** are used when you do not speicfy a run as account and want PowerShell to use the connecting user's credential to run commands on the remote server.
+This configuration is *not* recommended for JEA as it would require you to grant the connecting user direct access to privileged management groups.
 If the connecting user already has admin privileges, they can avoid JEA altogether and manage the system via other, unconstrained means.
 See the section below on how [JEA does not protect against admins](#jea-does-not-protect-against-admins) for more information.
 

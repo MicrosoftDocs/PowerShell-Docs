@@ -117,11 +117,11 @@ Both the informational string and the result of the calculation are returned by 
 
 
 ## SEE ALSO
+
 Exit keyword in about_Language_Keywords
 
-about_Functions
+[about_Functions](about_Functions.md)
 
-about_Scopes
+[about_Scopes](about_Scopes.md)
 
-about_Script_Blocks
-
+[about_Script_Blocks](about_Script_Blocks.md)

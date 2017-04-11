@@ -41,7 +41,7 @@ In Windows PowerShell 3.0, Save-Help worked only for modules that are installed 
 Although it was possible to import a module from a remote computer, or obtain a reference to a PSModuleInfo object from a remote computer by using Windows PowerShell remoting, the HelpInfoUri property was not preserved, and Save-Help would not work for remote module Help.
 
 In Windows PowerShell 4.0, the HelpInfoUri property is preserved over Windows PowerShell remoting, which allows Save-Help to work for modules that are installed on remote computers.
-It is also possible to save a PSModuleInfo object to disk or removable media by running Export-CliXml on a computer that does not have Internet access, import the object on a computer that does have Internet access, and then run Save-Help on the PSModuleInfo object.
+It is also possible to save a PSModuleInfo object to disk or removable media by running Export-Clixml on a computer that does not have Internet access, import the object on a computer that does have Internet access, and then run Save-Help on the PSModuleInfo object.
 The saved help can be transported to the remote computer by using removable storage media (such as a USB drive), and then the help can be installed on the remote computer by running Update-Help.
 This process can be used to install help on computers that do not have any kind of network access.
 
@@ -91,14 +91,14 @@ This example shows three different ways to use Save-Help to save the help for th
 
 ### Example 2: Install help for the DhcpServer module
 ```
-PS C:\> # First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
+PS C:\> # First, run Export-Clixml to export the PSModuleInfo object to a shared folder or to removable media.
 
 $m = Get-Module -Name DhcpServer -ListAvailable
-Export-CliXml -Path E:\UsbFlashDrive\DhcpModule.xml -InputObject $m
+Export-Clixml -Path E:\UsbFlashDrive\DhcpModule.xml -InputObject $m
 
-# Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
+# Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-Clixml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
 
-$deserialized_m = Import-CliXml E:\UsbFlashDrive\DhcpModule.xml
+$deserialized_m = Import-Clixml E:\UsbFlashDrive\DhcpModule.xml
 Save-Help -Module $deserialized_m -DestinationPath E:\UsbFlashDrive\SavedHelp
 
 # Finally, transport the removable media back to the computer that does not have network access, and then install the help by running Update-Help.

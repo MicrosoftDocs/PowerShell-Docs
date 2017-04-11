@@ -36,7 +36,7 @@ Note: Export-Counter runs only on Windows 7, Windows Server 2008 R2, and later v
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
 ```
@@ -50,7 +50,7 @@ The **Export-Counter** command uses the **Path** variable to specify the output 
 Because the data set might be very large, this command sends the data to **Export-Counter** through the pipeline.
 If the data were saved in a variable, the command might use a disproportionate amount of memory.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the built-in Windows PowerShell conversion feature to store the value of 1 gigabyte (GB) in bytes in the $1GBInBytes variable. When you type a value followed by K (kilobyte), MB (megabyte), or GB, Windows PowerShell returns the value in bytes.
 PS C:\> $1GBInBytes = 1GB
@@ -61,7 +61,7 @@ PS C:\> Import-Counter Threads.csv | Export-Counter -Path ThreadTest.blg -Circul
 
 These commands convert a CSV file to a counter data BLG format.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command uses the Get-Counter cmdlet to collect working set counter data from Server01, a remote computer. The command saves the data in the $c variable.
 PS C:\> $c = Get-Counter -ComputerName Server01 -Counter "\Process(*)\Working Set - Private" -MaxSamples 20
@@ -72,7 +72,7 @@ PS C:\> $c | Export-Counter -Path \\Server01\Perf\WorkingSet.blg
 
 This example shows how to get performance counter data from a remote computer and save the data in a file on the remote computer.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **Import-Counter** cmdlet to import performance counter data from the DiskSpace.blg log. It saves the data in the $All variable. This file contains samples of the "LogicalDisk\% Free Space" counter on more than 200 remote computers in the enterprise.
 PS C:\> $All = Import-Counter DiskSpace.blg

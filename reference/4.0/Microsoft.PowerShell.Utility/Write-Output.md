@@ -38,7 +38,7 @@ For example, "get-process | write-output" is equivalent to "get-process".
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $p = get-process
 PS C:\> write-output $p
@@ -47,14 +47,14 @@ PS C:\> $p
 
 These commands get objects representing the processes running on the computer and display the objects on the console.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> write-output "test output" | get-member
 ```
 
 This command pipes the "test output" string to the Get-Member cmdlet, which displays the members of the String class, demonstrating that the string was passed along the pipeline.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> write-output @(1,2,3) | measure
 

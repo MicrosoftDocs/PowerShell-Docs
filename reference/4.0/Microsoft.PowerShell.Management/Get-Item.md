@@ -41,7 +41,7 @@ The Get-Item cmdlet is used by Windows PowerShell providers to enable you to nav
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-item .
 
@@ -54,7 +54,7 @@ d----         7/26/2006  10:01 AM            ps-test
 This command gets the current directory.
 The dot (.) represents the item at the current location (not its contents).
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-item *
 
@@ -72,7 +72,7 @@ d----         7/26/2006   9:26 AM            Recs
 This command gets all the items in the current directory.
 The wildcard character (*) represents all the contents of the current item.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-item C:\
 ```
@@ -80,7 +80,7 @@ PS C:\> get-item C:\
 This command gets the current directory of the C: drive.
 The object that is retrieved represents only the directory, not its contents.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-item C:\*
 ```
@@ -91,7 +91,7 @@ The wildcard character (*) represents all the items in the container, not just t
 In Windows PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*".
 The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> (get-item C:\Windows).LastAccessTime
 ```
@@ -100,7 +100,7 @@ This command gets the LastAccessTime property of the C:\Windows directory.
 LastAccessTime is just one property of file system directories.
 To see all of the properties of a directory, type "(Get-Item \<directory-name\>) | Get-Member".
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
 ```
@@ -108,7 +108,7 @@ PS C:\> get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powers
 This command shows the contents of the Microsoft.PowerShell registry key.
 You can use Get-Item with the Windows PowerShell Registry provider to get registry keys and subkeys, but you must use Get-ItemProperty to get the registry values and data.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-item c:\Windows\*.* -exclude w*
 ```
@@ -275,7 +275,21 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream from a file that this cmdlet deletes.
+This cmdlet does not delete the file.
+Enter the stream name.
+Wildcard characters are supported.
+
+This parameter is not valid on folders.
+
+The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Get-Item**.
+This parameter works only in file system drives.
+
+You can use **Get-Item** to delete an alternative data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]

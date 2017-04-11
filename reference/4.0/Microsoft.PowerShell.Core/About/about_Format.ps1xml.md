@@ -406,6 +406,7 @@ get-help about_signing
 # SEE ALSO
 
 Update-FormatData
-Trace-Command
-Get-TraceSource
 
+Trace-Command
+
+Get-TraceSource

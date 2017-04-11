@@ -43,7 +43,7 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01, Server02
 PS C:\> Invoke-Command -Session $s { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
@@ -58,7 +58,7 @@ The second command uses the Invoke-Command cmdlet to run the **Register-EngineEv
 The **Register-EngineEvent** command uses the **SourceIdentifier** parameter to identify the event.
 It uses the **Forward** parameter to forward the events from the remote session to the local session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $j = Register-EngineEvent -SourceIdentifier PowerShell.ProcessCreated -action { $ProcessName | Add-Content ProcessLog.txt }
 PS C:\> Get-Event
@@ -171,7 +171,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaxTriggerCount
-{{Fill MaxTriggerCount Description}}
+Specifies the max trigger count.
+
+The value of the *Action* parameter can include the $Event, $EventSubscriber, $Sender, $EventArgs, and $Args automatic variables, which provide information about the event to the Action script block.
+For more information, see about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+
+When you specify an action, **Register-EngineEvent** returns an event job object that represents that action.
+You can use the Job cmdlets to manage the event job.
 
 ```yaml
 Type: Int32

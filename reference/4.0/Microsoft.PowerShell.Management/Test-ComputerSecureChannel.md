@@ -39,7 +39,7 @@ Both NetDom and Test-ComputerSecureChannel use the NetLogon service to perform t
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-computersecurechannel
 True
@@ -47,7 +47,7 @@ True
 
 This command tests the secure channel between the local computer and the domain to which it is joined.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> test-computersecurechannel -server DCName.fabrikam.com
 True
@@ -55,7 +55,7 @@ True
 
 This command specifies a preferred domain controller for the test.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Test-ComputerSecureChannel -repair
 True
@@ -63,7 +63,7 @@ True
 
 This command resets the secure channel between the local computer and its domain.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> test-computerSecureChannel -verbose
 VERBOSE: Performing operation "Test-ComputerSecureChannel" on Target "SERVER01".
@@ -74,7 +74,7 @@ VERBOSE: "The secure channel between 'SERVER01' and 'net.fabrikam.com' is alive 
 This command uses the Verbose common parameter to request detailed messages about the operation.
 For more information about the Verbose parameter, see about_CommonParameters.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> set-alias tcsc test-computersecurechannel
 if (!(tcsc))

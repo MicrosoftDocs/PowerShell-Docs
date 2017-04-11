@@ -665,10 +665,14 @@ Set-Variable -name a -value 1, 2, 3
 
 # SEE ALSO
 
-about_Arrays
-about_Hash_Tables
-about_Variables
-Clear-Variable
-Remove-Variable
-Set-Variable
+[about_Arrays](about_Arrays.md)
 
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Variables](about_Variables.md)
+
+Clear-Variable
+
+Remove-Variable
+
+Set-Variable

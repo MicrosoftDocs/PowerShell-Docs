@@ -41,7 +41,7 @@ Windows PowerShell remoting, which allows Save-Help to work for
 modules that are installed on a remote computer, but are not
 necessarily installed on the local computer. You can save a PSModuleInfo
 object to disk or removable media (such as a USB drive) by running
-Export-CliXml on a computer that does not have Internet access,
+Export-Clixml on a computer that does not have Internet access,
 importing the PSModuleInfo object on a computer that does have Internet
 access, and then running Save-Help on the PSModuleInfo object. The
 saved help can be copied to the remote, disconnected computer by using
@@ -298,18 +298,18 @@ Save-Help -Module $m -DestinationPath C:\SavedHelp
 In the following example, the administrator installs help for the
 DHCP Server module on a computer that does not have network access.
 
-First, run Export-CliXml to export the PSModuleInfo object to
+First, run Export-Clixml to export the PSModuleInfo object to
 a shared folder or to removable media.
 
 $m = Get-Module -Name DhcpServer -ListAvailable
-Export-CliXml -Path E:\UsbFlashDrive\DhcpModule.xml -InputObject $m
+Export-Clixml -Path E:\UsbFlashDrive\DhcpModule.xml -InputObject $m
 
 Next, transport the removable media to a computer that has
 Internet access, and then import the PSModuleInfo object with
-Import-CliXml. Run Save-Help to save the Help for the imported
+Import-Clixml. Run Save-Help to save the Help for the imported
 DhcpServer module PSModuleInfo object.
 
-$deserialized_m = Import-CliXml E:\UsbFlashDrive\DhcpModule.xml
+$deserialized_m = Import-Clixml E:\UsbFlashDrive\DhcpModule.xml
 Save-Help -Module $deserialized_m -DestinationPath
 E:\UsbFlashDrive\SavedHelp
 
@@ -488,9 +488,9 @@ Windows Preinstallation Environment (Windows PE).
 # SEE ALSO
 
 Get-Help
+
 Save-Help
+
 Update-Help
-Updatable Help Status Table
-(http://go.microsoft.com/fwlink/?LinkID=270007)
 
-
+Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)
