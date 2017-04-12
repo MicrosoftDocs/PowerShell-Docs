@@ -405,8 +405,7 @@ Accept wildcard characters: False
 ### -FileList
 Specifies all items that are included in the module.
 
-This key is designed to act as a module inventory.
-The files listed in the key are not automatically exported with the module.
+This key is designed to act as a module inventory. The files listed in the key are included when the module is published, but any functions are not automatically exported.
 
 ```yaml
 Type: String[]

@@ -14,6 +14,16 @@ ms.technology:  powershell
 PowerShell Gallery Status
 =========================
 
+## 04/11/2017 - Users unable to log in
+
+__Summary of Impact__: Some users are unable to log in to the PowerShell Gallery using Azure AD Accounts. 
+The PowerShell Gallery Operations team is investigating the issue. The issue does not appear to affect users 
+with Microsoft accounts (those with domains like Outlook.com, Live.com, etc.) 
+ 
+__Root Cause__: TBD  
+
+__Next Steps__: We are working with the Azure AD team to investigate the issue. 
+
 ## 03/27/2017 - RESOLVED: Unable to see individual module and script pages
 
 __Summary of Impact__: Direct links to individual module and script pages on https://www.powershellgallery.com were broken. This was being reported across all the regions. This did not impact any of the PowerShellGet cmdlets ie., Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Scirpt continued to work.

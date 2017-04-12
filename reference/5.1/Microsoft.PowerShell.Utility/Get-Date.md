@@ -139,9 +139,12 @@ This command gets a **DateTime** object and displays the current date and time i
 ### Example 9: Convert a DateTime object to a string and add it to a file
 ```
 PS C:\> Get-Date
-Tuesday, September 26, 2006 11:25:31 AM PS C:\> (Get-Date).ToString()
-9/26/2006 11:25:31 AM PS C:\> Get-Date | Add-Content Test.txt
-# Adds 9/26/2006 11:25:31 AM PS C:\> Get-Date -Format F | Add-Content Test.txt
+Tuesday, September 26, 2006 11:25:31 AM 
+PS C:\> (Get-Date).ToString()
+9/26/2006 11:25:31 AM 
+PS C:\> Get-Date | Add-Content Test.txt
+# Adds 9/26/2006 11:25:31 AM 
+PS C:\> Get-Date -Format F | Add-Content Test.txt
 # Adds Tuesday, September 26, 2006 11:25:31 AM
 ```
 
