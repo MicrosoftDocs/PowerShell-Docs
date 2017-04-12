@@ -14,15 +14,16 @@ ms.technology:  powershell
 PowerShell Gallery Status
 =========================
 
-## 04/11/2017 - Users unable to log in
+## 04/11/2017 - Users unable to log in with Azure Active Directory (AAD) accounts
 
-__Summary of Impact__: Some users are unable to log in to the PowerShell Gallery using Azure AD Accounts. 
-The PowerShell Gallery Operations team is investigating the issue. The issue does not appear to affect users 
-with Microsoft accounts (those with domains like Outlook.com, Live.com, etc.) 
+__Summary of Impact__: Some users were unable to log in to the PowerShell Gallery using Azure AD Accounts. 
  
-__Root Cause__: TBD  
+__Root Cause__: During an update to interact more securely with AAD, a setting change was missed. 
+The testing done to validate the change did not include certain types of AAD accounts, so the deployment proceeded.
 
-__Next Steps__: We are working with the Azure AD team to investigate the issue. 
+__Resolution__: Engineers identified the missing setting and corrected the problem. 
+
+__Next Steps__: We will be modifying our testing to include a broader set of AAD account types.
 
 ## 03/27/2017 - RESOLVED: Unable to see individual module and script pages
 
