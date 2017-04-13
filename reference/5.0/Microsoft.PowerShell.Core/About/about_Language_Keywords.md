@@ -25,41 +25,45 @@ Windows PowerShell has the following language keywords. For more
 information, see the about topic for the keyword and the information that
 follows the table.
 
-Keyword            Reference
--------            ---------
-Begin              about_Functions, about_Functions_Advanced
-Break              about_Break, about_Trap
-Catch              about_Try_Catch_Finally
-Continue           about_Continue, about_Trap
-Data               about_Data_Sections
-Do                 about_Do, about_While
-DynamicParam       about_Functions_Advanced_Parameters
-Else               about_If
-Elseif             about_If
-End                about_Functions, about_Functions_Advanced_Methods
-Exit               Described in this topic.
-Filter             about_Functions
-Finally            about_Try_Catch_Finally
-For                about_For
-ForEach            about_ForEach
-From               Reserved for future use.
-Function           about_Functions, about_Functions_Advanced
-If                 about_If
-In                 about_ForEach
-InlineScript       about_InlineScript
-Hidden             about_Hidden
-Parallel           about_Parallel, about_ForEach-Parallel
-Param              about_Functions
-Process            about_Functions, about_Functions_Advanced
-Return             about_Return
-Sequence           about_Sequence
-Switch             about_Switch
-Throw              about_Throw, about_Functions_Advanced_Methods
-Trap               about_Trap, about_Break, about_Try_Catch_Finally
-Try                about_Try_Catch_Finally
-Until              about_Do
-While              about_While, about_Do
-Workflow           about_Workflows
+Keyword     |       Reference
+-------     |       ---------
+Begin       | about\_Functions, about\_Functions\_Advanced
+Break       | about\_Break, about\_Trap
+Catch       | about\_Try\_Catch\_Finally
+Class       | about\_Classes
+Continue    | about\_Continue, about\_Trap
+Data        | about\_Data\_Sections
+Do          | about\_Do, about\_While
+DynamicParam| about\_Functions\_Advanced\_Parameters
+Else        | about\_If
+Elseif      | about\_If
+End         | about\_Functions, about\_Functions\_Advanced\_Methods
+Enum        | about\_Enums
+Exit        | Described in this topic.
+Filter      | about\_Functions
+Finally     | about\_Try\_Catch\_Finally
+For         | about\_For
+ForEach     | about\_ForEach
+From        | Reserved for future use.
+Function    | about\_Functions, about\_Functions\_Advanced
+If          | about\_If
+In          | about\_ForEach
+InlineScript| about\_InlineScript
+Hidden      | about\_Hidden
+Parallel    | about\_Parallel, about\_ForEach-Parallel
+Param       | about\_Functions
+Process     | about\_Functions, about\_Functions\_Advanced
+Return      | about\_Return
+Sequence    | about\_Sequence
+Static      | about\_Classes
+Switch      | about\_Switch
+Throw       | about\_Throw, about\_Functions\_Advanced\_Methods
+Trap        | about\_Trap, about\_Break, about\_Try\_Catch\_Finally
+Try         | about\_Try\_Catch\_Finally
+Until       | about\_Do
+Using       | about\_Using, about\_Classes
+While       | about\_While, about\_Do
+Workflow    | about\_Workflows
 
 Language Keywords
 
@@ -109,6 +113,20 @@ Syntax:
 ```
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
+```
+
+**Class**
+-----
+
+Specifies a new class in PowerShell.
+
+Syntax:
+```
+class <class-name> {
+    [[hidden] [static] <property-definition> ...]
+    [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
+    [[hidden] [static] <method-definition> ...]
+}
 ```
 
 **Continue**
@@ -212,6 +230,18 @@ function <name> {
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
+}
+```
+
+**Enum**
+
+Specifies a new enumeration in PowerShell.
+
+Syntax:
+```
+enum <enum-name> {
+    <label> [= <int-value>]
+    ...
 }
 ```
 
@@ -516,6 +546,13 @@ script block. The commands in the Sequence script block run
 sequentially and in the order defined.
 
 For more information, see: [about_Sequence](../../psworkflow/about/about_sequence.md)
+
+**Static**
+--------
+Specifies the property or method defined is common to all instances 
+of the class in which is defined.
+
+See, in this topic, **Class**  for usage examples.
 
 **Switch**
 ------
