@@ -45,7 +45,7 @@ If you do not specify a target computer, the cmdlet applies settings to the loca
 PS C:\> Set-DscLocalConfigurationManager -Path "C:\DSC\Configurations\"
 ```
 
-This command applies the LCM settings from C:\DSC\Configurations\ to the targeted notes.
+This command applies the LCM settings from C:\DSC\Configurations\ to the targeted nodes.
 After receiving the settings, LCM processes them.
 
 ### Example 2: Apply LCM settings by using a CIM session
