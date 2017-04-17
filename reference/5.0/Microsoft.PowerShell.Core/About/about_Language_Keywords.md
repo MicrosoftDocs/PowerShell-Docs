@@ -234,8 +234,11 @@ function <name> {
 ```
 
 **Enum**
+----
 
-Specifies a new enumeration in PowerShell.
+`enum` is used to declare an enumeration;
+a distinct type that consists of a set of named labels called the
+enumerator list.
 
 Syntax:
 ```
@@ -524,6 +527,7 @@ return [<expression>]
 
 **Sequence**
 --------
+
 Runs workflow commands sequentially in a Parallel script block.
 This keyword is valid only in a Windows PowerShell Workflow.
 
@@ -549,7 +553,8 @@ For more information, see: [about_Sequence](../../psworkflow/about/about_sequenc
 
 **Static**
 --------
-Specifies the property or method defined is common to all instances 
+
+Specifies the property or method defined is common to all instances
 of the class in which is defined.
 
 See, in this topic, **Class**  for usage examples.
@@ -557,12 +562,16 @@ See, in this topic, **Class**  for usage examples.
 **Switch**
 ------
 
-Specifies a variety of actions to be performed on items from the pipeline
-or from a file. You can use either of the following syntax models.
+To check multiple conditions, use a Switch statement.
+The Switch statement is equivalent to a series of If statements,
+but it is simpler.
+
+The Switch statement lists each condition and an optional action.
+If a condition obtains, the action is performed.
 
 Syntax 1:
 ```
-switch [-regex|-wildcard|-exact][-casesensitive] ( pipeline )
+switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -574,7 +583,7 @@ switch [-regex|-wildcard|-exact][-casesensitive] ( pipeline )
 
 Syntax 2:
 ```
-switch [-regex|-wildcard|-exact][-casesensitive] -file filename
+switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -631,6 +640,24 @@ Syntax:
 ```
 do {<statement list>} until (<condition>)
 ```
+
+**Using**
+-----
+
+Allows to indicate which namespaces are used in the session.
+Classes and members require less typing to mention them.
+You can also include classes from modules.
+
+Syntax #1:
+```
+using namespace <.Net-framework-namespace>
+```
+
+Syntax #2:
+```
+using module <module-name>
+```
+
 
 **While**
 -----
