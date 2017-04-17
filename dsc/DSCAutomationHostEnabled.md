@@ -14,7 +14,7 @@ ms.prod:  powershell
 
 # DSCAutomationHostEnabled registry key
 
-DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** to automatically configure the machine at initial boot-up.
+DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** to enable configuration of the machine at initial boot-up.
 DSCAutomationHostEnabled supports three modes:
 
 |  DSCAutomationHostEnabled Value  |  Description   | 
