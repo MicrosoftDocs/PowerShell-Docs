@@ -1,7 +1,7 @@
 ---
 title:   DSC Improvements in WMF 5.1
 ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
+keywords:  PowerShell, DSC, WMF		
 description:  
 ms.topic:  article
 author:  keithb
@@ -24,7 +24,7 @@ In WMF 5.1, we have fixed the following known issues:
 
 ## DSC resource debugging improvements
 In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.
-In WMF 5.1, the debugger will stop at the class-based resource method in the same way as for MOF-based resources methods.
+In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.
 
 ## DSC pull client supports TLS 1.1 and TLS 1.2 
 Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections. 
@@ -34,17 +34,17 @@ In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for 
 ## Improved pull server registration ##
 
 In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report. 
-In such cases, the event logs on the pull server will have the error "Instance Name already in use."
+In such cases, the event logs on the pull server has the error "Instance Name already in use."
 This was due to an incorrect pattern being used to access the ESENT database in a multi-threaded scenario. 
 In WMF 5.1, this issue has been fixed. 
-Concurrent registrations or reporting (involving ESENT database) will work fine in WMF 5.1. 
+Concurrent registrations or reporting (involving ESENT database) works fine in WMF 5.1. 
 This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
 ## Enable Circular log on ESENT database instance
-In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, customer will have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging will be set to TRUE.
+In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is be set to TRUE.
 ```
 <appSettings>
-     <add key="dbprovider" value="ESENT" />
+    <add key="dbprovider" value="ESENT" />
     <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
     <add key="CheckpointDepthMaxKB" value="512" />
     <add key="UseCircularESENTLogs" value="TRUE" />
@@ -85,7 +85,7 @@ PartialOne
 ![FileName in Configuration Repository](../images/PartialInConfigRepository.png)
 
 Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`. 
-So the configuration below will compile to PartialOne.localhost.mof.
+So the configuration below compiles to PartialOne.localhost.mof.
 
 This made it impossible to pull one of your partial configuration from Azure Automation service.
 
@@ -104,11 +104,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-In WMF 5.1, partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`. 
+In WMF 5.1, a partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`. 
 Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name. 
-This naming flexibility allow you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and you have a partial configuration that you wanted to manage locally.
+This naming flexibility allows you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and with a partial configuration that you manage locally.
 
-The metaconfiguration below will set up a node to be managed both locally as well as by Azure Automation service.
+The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.
 
 ```PowerShell
   [DscLocalConfigurationManager()]
@@ -143,18 +143,18 @@ The metaconfiguration below will set up a node to be managed both locally as wel
    }
 
    RegistrationMetaConfig
-   slcm -Path .\RegistrationMetaConfig -Verbose
+   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
 # Using PsDscRunAsCredential with DSC composite resources   
 
 We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) resources.    
 
-Users can now specify a value for PsDscRunAsCredential when using composite resources inside configurations. 
+You can now specify a value for PsDscRunAsCredential when using composite resources inside configurations. 
 When specified, all resources run inside a composite resource as a RunAs user. 
 If a composite resource calls another composite resource, all of its resources are also executed as RunAs user. 
 RunAs credentials are propagated to any level of the composite resource hierarchy. 
-If any resource inside a composite resource specifies its own value for PsDscRunAsCredential, a merge error will result during configuration compilation.
+If any resource inside a composite resource specifies its own value for PsDscRunAsCredential, a merge error results during configuration compilation.
 
 This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module. 
 
@@ -200,7 +200,7 @@ In DSC, configurations and modules are distributed to managed computers from the
 If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them. 
 
  In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files. 
- This feature will prevent nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer. 
+ This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer. 
 
 
 
@@ -241,7 +241,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }
@@ -252,7 +252,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
  ```
 
 Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules. 
-The Local Configuration Manager will perform the following steps to verify the digital signatures.
+The Local Configuration Manager performs the following steps to verify the digital signatures.
 
 1. Verify the signature on a configuration file (.MOF) is valid. 
    It uses the PowerShell cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), which is extended in 5.1 to support MOF signature validation.
@@ -267,17 +267,17 @@ The Local Configuration Manager will perform the following steps to verify the d
 
 > Note: Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed. 
 Consistency runs do not validate the signature of Current.mof or its module dependencies.
-If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration will terminate with the error shown below and all temporary files will be deleted.
+If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration terminates with the error shown below and all temporary files are deleted.
 
 ![Sample Error Output Configuration](../images/PullUnsignedConfigFail.png)
 
-Similarly, pulling a module whose catalog is not signed will result in the following error:
+Similarly, pulling a module whose catalog is not signed results in the following error:
 
 ![Sample Error Output Module](../images/PullUnisgnedCatalog.png)
 
 ####Push
 A configuration delivered by using push might be tampered with at its source before it delivered to the node. 
-The Local Configuration Manager will perform similar signature validation steps for pushed or published configuration(s).
+The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s).
 Below is a complete example of signature validation for push.
 
 * Enable signature validation on the node.
