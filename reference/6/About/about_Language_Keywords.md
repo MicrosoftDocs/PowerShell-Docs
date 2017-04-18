@@ -50,11 +50,9 @@ If          | about\_If
 In          | about\_ForEach
 InlineScript| about\_InlineScript
 Hidden      | about\_Hidden
-Parallel    | about\_Parallel, about\_ForEach-Parallel
 Param       | about\_Functions
 Process     | about\_Functions, about\_Functions\_Advanced
 Return      | about\_Return
-Sequence    | about\_Sequence
 Static      | about\_Classes
 Switch      | about\_Switch
 Throw       | about\_Throw, about\_Functions\_Advanced\_Methods
@@ -63,7 +61,6 @@ Try         | about\_Try\_Catch\_Finally
 Until       | about\_Do
 Using       | about\_Using, about\_Classes
 While       | about\_While, about\_Do
-Workflow    | about\_Workflows
 
 Language Keywords
 
@@ -447,53 +444,6 @@ function [<scope:>]<name> {
 }
 ```
 
-**Parallel**
---------
-Runs workflow commands concurrently and in an undefined order.
-This keyword is valid only in a Windows PowerShell Workflow.
-
-The Parallel keyword indicates a Parallel script block. The
-commands in a Parallel script block can run at the same time and
-in any order. This feature significantly improves the performance
-of a workflow.
-
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   Parallel
-   {
-      <Activity>
-      <Activity>
-      …
-
-   }
-}
-```
-
-The Parallel parameter of the ForEach keyword processes the
-items in a collection in parallel. The activities in the script
-block run sequentially on each item, but the script block can
-run on multiple items at the same time and the items are
-processed in an undefined order.
-
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   ForEach -Parallel (<item> in <collection>)
-   {
-      <Activity>
-      <Activity>
-      ...
-
-   }
-}
-```
-
-For more information, see: [about_Parallel](../../psworkflow/about/about_parallel.md),
-[about_ForEach-Parallel](../../psworkflow/about/about_foreach-parallel.md)
-
 **Process**
 -------
 
@@ -524,32 +474,6 @@ Syntax:
 ```
 return [<expression>]
 ```
-
-**Sequence**
---------
-
-Runs workflow commands sequentially in a Parallel script block.
-This keyword is valid only in a Windows PowerShell Workflow.
-
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   Parallel
-   {
-      Sequence
-      {
-         <Activity>
-      }
-   }
-}
-```
-
-The Sequence keyword creates a sequence block within a Parallel
-script block. The commands in the Sequence script block run
-sequentially and in the order defined.
-
-For more information, see: [about_Sequence](../../psworkflow/about/about_sequence.md)
 
 **Static**
 --------
@@ -670,70 +594,10 @@ Syntax:
 do {<statement list>} while (<condition>)
 ```
 
-**Workflow**
---------
-Creates a script-based Windows PowerShell workflow, that
-is, a workflow written in the Windows PowerShell language.
-
-A Windows PowerShell workflow is a Windows PowerShell command
-type that is supported by Windows PowerShell and Windows Workflow
-Foundation. Workflows are designed for complex, long-running tasks
-that affect multiple computers. Workflows can be recovered if
-interrupted, such as by a network outage, and you can suspend and
-resume them  without losing state or data.
-
-Workflows can be written in XAML, the native language of
-Windows Workflow Foundation, or in the Windows PowerShell
-language.
-
-The syntax of a script-based workflow is similar to the syntax
-of a function. However, the unit of execution in a workflow is an
-activity, instead of a command. Cmdlets (and other commands) that
-are used in script-based workflows are implicitly converted to
-activities.
-
-Some language elements that are permitted in scripts and functions
-are not permitted in workflows. Similarly, workflows can include
-elements that are not found in scripts and functions, such as
-"persistence points" (checkpoints), self-suspension, and parallel
-processing. In addition, all workflows have a set of common
-parameters that are added by Windows PowerShell when you use the
-Workflow keyword.
-
-Syntax:
-```
-workflow <verb-noun>
-{
-   param
-   (
-        [type]<$pname1>
-        [, [type]<$pname2>]
-    )
-   <statement list>
-}
-
-workflow <verb-noun>
-{
-   [CmdletBinding(<Attributes>)]
-   Param
-   (
-      [Parameter(<Arguments>)] $Param1
-      ...
-   )
-
-   <statement list>
-}
-```
-
-For more information about workflows, see [about_Workflows](../../psworkflow/about/about_workflows.md)
-and "Getting Started with Windows PowerShell Workflow"
-(http://go.microsoft.com/fwlink/?LinkID=252592) in the
-TechNet Library.
-
 # SEE ALSO
 
--  [about_Escape_Characters](about_Escape_Characters.md)
+- [about_Escape_Characters](about_Escape_Characters.md)
 
--  [about_Special_Characters](about_Special_Characters.md)
+- [about_Special_Characters](about_Special_Characters.md)
 
--  [about_Wildcards](about_Wildcards.md)
+- [about_Wildcards](about_Wildcards.md)
