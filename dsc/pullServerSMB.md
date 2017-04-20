@@ -13,7 +13,7 @@ ms.prod:  powershell
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull server is an SMB file share that makes DSC configuration files and/or DSC resources
+A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources
 available to target nodes when those nodes ask for them.
 
 To use an SMB pull server for DSC, you have to:
@@ -33,7 +33,7 @@ to create an SMB file share.
 
 ### Create the directory and file share
 
-The following configuration uses the [File](fileResource.md) resource to create the directory for the share, and the **xSmbShare** resource to set up the SMB share:
+The following configuration uses the [File](fileResource.md) resource to create the directory for the share and the **xSmbShare** resource to set up the SMB share:
 
 ```powershell
 Configuration SmbShare {
@@ -69,7 +69,7 @@ Import-DscResource -ModuleName xSmbShare
 ```
 
 The configuration creates the directory `C:\DscSmbShare` if it doesn't already exists, and then uses that directory as an SMB file share. **FullAccess** should be given to any
-account that needs to write to or delete from the file share, and **ReadAccess** must be given to any client nodes that will get configurations and/or DSC resources from the share (
+account that needs to write to or delete from the file share, and **ReadAccess** must be given to any client nodes that get configurations and/or DSC resources from the share (
 this is because DSC runs as the system account by default, so the computer itself has to have access to the share).
 
 
@@ -144,7 +144,7 @@ setting up pull clients, see [Setting up a pull client using configuration ID](p
 Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
 of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
 file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
-pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
+pull server you need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
 '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes 
 '{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the SMB share folder. 
 
