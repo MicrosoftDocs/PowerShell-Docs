@@ -11,9 +11,9 @@ ms.technology:  powershell
 ---
 
 # About Classes
-## about_Classes
+## about\_Classes
 
-#  SHORT DESCRIPTION
+# SHORT DESCRIPTION
 
 Describes how you can use classes to develop in Windows PowerShell
 
@@ -24,8 +24,7 @@ for defining classes and other user-defined types, by using formal syntax
 and semantics that are similar to other object-oriented programming
 languages. The goal is to enable developers and IT professionals to
 embrace Windows PowerShell for a wider range of use cases, simplify
-development of Windows PowerShell artifacts -such as Windows PowerShell
-Desired State Configuration (DSC) resources- and accelerate coverage
+development of Windows PowerShell artifacts and accelerate coverage
 of management surfaces.
 
 
@@ -35,7 +34,6 @@ of management surfaces.
 - Debug types by using the Windows PowerShell language.
 - Generate and handle exceptions by using formal mechanisms, and at the right level.
 - Define DSC resources and their associated types by using the Windows PowerShell language.
-
 
 ## 
 
