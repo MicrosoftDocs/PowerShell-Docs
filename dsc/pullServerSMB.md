@@ -13,7 +13,7 @@ ms.prod:  powershell
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull server is computer hosting SMB file shares that make DSC configuration files and DSC resources
+A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources
 available to target nodes when those nodes ask for them.
 
 To use an SMB pull server for DSC, you have to:
