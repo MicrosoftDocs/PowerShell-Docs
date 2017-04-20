@@ -1,7 +1,7 @@
 ---
 title:   DSC Improvements in WMF 5.1
 ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF		
+keywords:  PowerShell, DSC, WMF
 description:  
 ms.topic:  article
 author:  keithb
@@ -41,7 +41,7 @@ Concurrent registrations or reporting (involving ESENT database) works fine in W
 This issue is applicable only to the ESENT database and does not apply to the OLEDB database. 
 
 ## Enable Circular log on ESENT database instance
-In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is be set to TRUE.
+In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is set to TRUE.
 ```
 <appSettings>
     <add key="dbprovider" value="ESENT" />
