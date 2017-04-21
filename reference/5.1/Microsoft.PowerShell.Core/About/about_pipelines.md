@@ -207,6 +207,7 @@ is much like saving the service objects in a variable and using the InputObject 
 of Format-Table to submit the service object.
 
 $services = get-service
+
 format-table -inputobject $services -property name, dependentservices
 
 or imbedding the command in the parameter value
