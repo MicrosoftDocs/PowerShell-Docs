@@ -8,6 +8,7 @@ Issue Details
 
 Version(s) of document impacted
 ------------------------------
+- [ ] Impacts 6 document
 - [ ] Impacts 5.1 document
 - [ ] Impacts 5.0 document
 - [ ] Impacts 4.0 document
