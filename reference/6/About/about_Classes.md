@@ -165,10 +165,9 @@ Devices   : {$null, $null, $null, $null...}
 ## CLASS METHODS
 
 Methods define the actions that a class can perform.
-Methods can take parameters that provide input data,
-and can return output data through parameters.
-Returned data can be of any defined data type.
-Methods can also return a value directly, without using a parameter.
+Methods can take parameters that provide input data, and can return  an output;
+the returned data can be of any defined data type.
+Methods can be paramterless and return an output.
 
 ### EXAMPLE: A simple class with properties and methods
 
@@ -320,6 +319,166 @@ Undefined
 Microsoft Surface Pro 4 5072641000
 
 ```
+
+## HIDDEN ATTRIBUTE
+
+The `hidden` attribute allows to make less visible a property or a method.
+That doesn't mean the property or method isn't accessible to the user,
+or its value protected.
+It is a developer's convenience, to provide class encapsulation; what it makes
+is to hide the members from the `Get-Member` cmdlet.
+Hidden members are not displayed by using tab completion or IntelliSense,
+unless the completion occurs in the class that defines the hidden member.
+
+### EXAMPLE: Hidden attribute
+
+When a 'rack' is created, the number of slots (for devices) is a fixed value
+that should not be changed at any time; this value is known at creation time.
+
+Using the hidden attribute allows the developer to keep the number of slots
+out of sight; so, nobody, inadvertently, changes the size of the rack.
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+}
+
+class Rack {
+    [int] hidden $Slots = 8
+    [string]$Brand
+    [string]$Model
+    [Device[]]$Devices = [Device[]]::new($this.Slots)
+
+    Rack ([string]$b, [string]$m, [int]$capacity){
+        ## argument validation here
+
+        $this.Brand = $b
+        $this.Model = $m
+        $this.Slots = $capacity
+
+        ## reset rack size to new capacity
+        $this.Devices = [Device[]]::new($this.Slots)
+    }
+}
+
+[Rack]$r1 = [Rack]::new("Microsoft", "Surface Pro 4", 16)
+
+$r1
+$r1.Devices.Length
+$r1.Slots
+```
+
+```output
+
+Brand     Model         Devices
+-----     -----         -------
+Microsoft Surface Pro 4 {$null, $null, $null, $null...}
+16
+16
+
+```
+
+Notice `Slots` property is not reported in `$r1` output; but, the size was changed.
+Also, the property is available in all scopes the object is available.
+
+## STATIC ATTRIBUTE
+
+The `static` attribute defines a property or a method that exists in the class
+and needs no instance or instantiation.
+
+A static property is always available, independent of class instantiation.
+A static property is shared across all instances of the class.
+A static method is available always.
+
+> **NOTE**: All static properties live for the entire session span.
+
+### EXAMPLE: Static attribute and method
+
+Assume the racks instantiated here exist in your data center.
+So, you would like to keep track of the racks in your code.
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+}
+
+class Rack {
+    hidden [int] $Slots = 8
+    static [Rack[]]$InstalledRacks = @() 
+    [string]$Brand
+    [string]$Model
+    [string]$AssetId
+    [Device[]]$Devices = [Device[]]::new($this.Slots)
+
+    Rack ([string]$b, [string]$m, [string]$id, [int]$capacity){
+        ## argument validation here
+
+        $this.Brand = $b
+        $this.Model = $m
+        $this.AssetId = $id
+        $this.Slots = $capacity
+
+        ## reset rack size to new capacity
+        $this.Devices = [Device[]]::new($this.Slots)
+
+        ## add rack to installed racks
+        [Rack]::InstalledRacks += $this
+    }
+
+    static [void]PowerOffRacks(){
+        foreach ($rack in [Rack]::InstalledRacks) {
+            Write-Warning ("Turning off rack: " + ($rack.AssetId))
+        }
+    }
+}
+
+## Testing static property and method exist
+[Rack]::InstalledRacks.Length
+[Rack]::PowerOffRacks()
+
+(1..10).foreach({[Rack]::new("Adatum Corporation", "Standard-16", $_.ToString("Std0000"), 16)}) > $null
+
+## Testing static property and method
+[Rack]::InstalledRacks.Length
+
+[Rack]::InstalledRacks[3]
+
+[Rack]::PowerOffRacks()
+
+```
+
+```output
+0
+10
+
+WARNING: Turning off rack: Std0001
+WARNING: Turning off rack: Std0002
+WARNING: Turning off rack: Std0003
+WARNING: Turning off rack: Std0004
+WARNING: Turning off rack: Std0005
+WARNING: Turning off rack: Std0006
+WARNING: Turning off rack: Std0007
+WARNING: Turning off rack: Std0008
+WARNING: Turning off rack: Std0009
+WARNING: Turning off rack: Std0010
+Brand              Model       AssetId Devices
+-----              -----       ------- -------
+Adatum Corporation Standard-16 Std0004 {$null, $null, $null, $null...}
+
+```
+
+Note: Messages from the different streams might come at different times
+to your screen. In this case the, the warning messages came in the middle
+of the standard output stream.
+
+If you run the sample a couple of times, you will notice the number of racks
+keeps increasing.
+
+## VALIDATION ATTRIBUTES
+
+
 
 ## INHERITANCE IN POWERSHELL CLASSES
 
