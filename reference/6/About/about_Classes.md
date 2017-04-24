@@ -15,7 +15,7 @@ ms.technology:  powershell
 
 # SHORT DESCRIPTION
 
-Describes how you can use classes to develop in Windows PowerShell
+Describes how you can use classes to create your own custom types.
 
 # LONG DESCRIPTION
 
@@ -27,6 +27,13 @@ embrace Windows PowerShell for a wider range of use cases, simplify
 development of Windows PowerShell artifacts and accelerate coverage
 of management surfaces.
 
+A class declaration is like a blueprint that is used to create instances or
+objects at run time.
+If you define a class called *Device*, *Device* is the name of the type.
+If you declare and initialize a variable *d* of type *Device*,
+*d* is said to be an object or instance of *Device*.
+Multiple instances of the *Device* type can be created,
+and each instance can have different values in its properties.
 
 ## SUPPORTED SCENARIOS
 
@@ -35,7 +42,284 @@ of management surfaces.
 - Generate and handle exceptions by using formal mechanisms, and at the right level.
 - Define DSC resources and their associated types by using the Windows PowerShell language.
 
-## 
+## SYNTAX
+
+Classes are declared using the following syntax:
+
+```syntax
+class <class-name> [: <base-class-list>] {
+    [[<attribute>] [hidden] [static] <property-definition> ...]
+    [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
+    [[<attribute>] [hidden] [static] <method-definition> ...]
+}
+```
+
+Classes are instantiated using the following syntax:
+
+```syntax
+[$<variable-name> =] `[<class-name>`]::new([<argument-list>])
+```
+
+### EXAMPLE: Minimum syntax and usage
+
+This is the minimum needed to create a 'useful' class.
+
+```powershell
+class Device {
+    [string]$Brand
+}
+
+$dev = [Device]::new()
+
+$dev
+
+$dev.Brand = "Microsoft"
+
+$dev
+```
+
+```output
+
+Brand
+-----
+
+Microsoft
+```
+
+> **Note**: the first invocation of $dev returns the empty object
+> with the header of the  empty property *Brand*.
+> After updating the property, on the second invocation,
+> PowerShell removes the header when displaying the object.
+
+## CLASS PROPERTIES
+
+Properties are variables declared at class scope.
+A property may be any built-in type or an instance of another class.
+Classes have no restriction in the number of properties they have;
+the only limitation is the available memory to instantiate the class.
+
+## EXAMPLE: Class with simple properties
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+}
+
+$device = [Device]::new()
+$device.Brand = "Microsoft"
+$device.Model = "Surface Pro 4"
+$device.VendorSku = "5072641000"
+
+$device
+```
+
+```output
+
+
+Brand     Model         VendorSku
+-----     -----         ---------
+Microsoft Surface Pro 4 5072641000
+
+```
+
+### EXAMPLE: Complex types in class properties
+
+This example defines an empty **Rack** class using the **Device** class.
+The examples, following this one, show how to add devices to the rack
+and how to start with a pre-loaded rack.
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+}
+
+class Rack {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+    [string]$AssetId
+    [Device[]]$Devices = [Device[]]::new(8)
+
+}
+
+$rack = [Rack]::new()
+
+$rack
+```
+
+```output
+
+Brand     :
+Model     :
+VendorSku :
+AssetId   :
+Devices   : {$null, $null, $null, $null...}
+
+
+```
+
+## CLASS METHODS
+
+Methods define the actions that a class can perform.
+Methods can take parameters that provide input data,
+and can return output data through parameters.
+Returned data can be of any defined data type.
+Methods can also return a value directly, without using a parameter.
+
+### EXAMPLE: A simple class with properties and methods
+
+Extending the **Rack** class to add and remove devices
+to or from it.
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+}
+
+class Rack {
+    [int]$Slots = 8
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+    [string]$AssetId
+    [Device[]]$Devices = [Device[]]::new($this.Slots)
+
+    AddDevice([Device]$dev, [int]$slot){
+        ## Add argument validation logic here
+        $this.Devices[$slot] = $dev
+    }
+
+    RemoveDevice([int]$slot){
+        ## Add argument validation logic here
+        $this.Devices[$slot] = $null
+    }
+}
+
+$rack = [Rack]::new()
+
+
+$surface = [Device]::new()
+$surface.Brand = "Microsoft"
+$surface.Model = "Surface Pro 4"
+$surface.VendorSku = "5072641000"
+
+$rack.AddDevice($surface, 2)
+
+$rack
+```
+
+```output
+
+Slots     : 8
+Brand     :
+Model     :
+VendorSku :
+AssetId   :
+Devices   : {$null, $null, Device, $null...}
+
+```
+
+## CONSTRUCTOR
+
+Constructors enable to set default values and validate object logic at the
+moment of creating the instance of the class. Constructors have the same name
+as the class. Constructors might have arguments, to initialize the data
+members of the new object.
+
+The class can have no constructor defined, one or more constructors.
+If no constructor is defined, the class is given a default parameterless
+constructor; this constructor instantiates all members to their default
+values (null values for object type classes, including string).
+If a constructor is defined, then no default parameterless constructor
+is available; if needed, it has to be explicitly added to the class.
+
+### EXAMPLE: Constructor basic syntax
+
+In this example the Device class is defined with properties and a constructor.
+In order to use this class, the user is required to provide minimum values
+to create the device.
+
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+
+    Device(
+        [string]$b,
+        [string]$m,
+        [string]$vsk
+    ){
+        $this.Brand = $b
+        $this.Model = $m
+        $this.VendorSku = $vsk
+    }
+}
+
+[Device]$surface = [Device]::new("Microsoft", "Surface Pro 4", "5072641000")
+
+$surface
+```
+
+```output
+Brand     Model         VendorSku
+-----     -----         ---------
+Microsoft Surface Pro 4 5072641000
+
+```
+
+### EXAMPLE: Multiple Constructors
+
+In this example the Device class is defined with properties, a default
+constructor, and a constructor to initialize the instance.
+
+The default constructor sets the brand to *Undefined*,
+and leaves model and vendor-sku with null values.
+
+
+```powershell
+class Device {
+    [string]$Brand
+    [string]$Model
+    [string]$VendorSku
+
+    Device(){
+        $this.Brand = 'Undefined'
+    }
+
+    Device(
+        [string]$b,
+        [string]$m,
+        [string]$vsk
+    ){
+        $this.Brand = $b
+        $this.Model = $m
+        $this.VendorSku = $vsk
+    }
+}
+
+[Device]$somedevice = [Device]::new()
+[Device]$surface = [Device]::new("Microsoft", "Surface Pro 4", "5072641000")
+
+$somedevice
+$surface
+```
+
+```output
+
+Brand     Model         VendorSku
+-----     -----         ---------
+Undefined
+Microsoft Surface Pro 4 5072641000
+
+```
 
 ## INHERITANCE IN POWERSHELL CLASSES
 
