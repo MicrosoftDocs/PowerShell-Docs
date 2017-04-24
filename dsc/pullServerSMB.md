@@ -160,8 +160,8 @@ The checksum file must be present in the same directory as the configuration MOF
 
 ## Setting up a pull client for SMB
 
-To set up a client that pulls configurations and/or resources from an SMB share, you configure the Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and 
-**ResourceRepositoryShare** blpcks that specify the share from which to pull.
+To set up a client that pulls configurations and/or resources from an SMB share, you configure the client's Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and 
+**ResourceRepositoryShare** blocks that specify the share from which to pull configurations and DSC resources.
 
 For more information about configuring the LCM, see [Setting up a pull client using configuration ID](pullClientConfigID.md).
 
