@@ -35,8 +35,7 @@ Group [string] #ResourceName
 |  Property  |  Description   | 
 |---|---| 
 | GroupName| The name of the group for which you want to ensure a specific state.| 
-| Credential| The credentials required to access remote resources. **Note**: This account must have the appropriate Active Directory permissions to add all non-local accounts to the group; otherwise, an error occurs
-when the configuration is executed on the target node.  
+| Credential| The credentials required to access remote resources. **Note**: This account must have the appropriate Active Directory permissions to add all non-local accounts to the group; otherwise, an error occurs when the configuration is executed on the target node.  
 | Description| The description of the group.| 
 | Ensure| Indicates if the group exists. Set this property to "Absent" to ensure that the group does not exist. Setting it to "Present" (the default value) ensures that the group exists.| 
 | Members| Use this property to replace the current group membership with the specified members. The value of this property is an array of strings of the form *Domain*\\*UserName*. If you set this property in a configuration, do not use either the **MembersToExclude** or **MembersToInclude** property. Doing so generates an error.| 
