@@ -15,7 +15,7 @@ ms.prod:  powershell
 
 The Group resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on the target node.
 
-##Syntax##
+## Syntax
 ```
 Group [string] #ResourceName
 {
