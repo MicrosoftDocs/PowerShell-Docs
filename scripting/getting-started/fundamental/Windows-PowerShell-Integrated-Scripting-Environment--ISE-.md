@@ -53,7 +53,7 @@ Here are some of the features that have been added to the ISE in the most recent
 
 -   **Block selection**. You can select a block-shaped chunk of text by holding down the ALT key while selecting text in the script pane with your mouse, or by pressing **Alt+Shift+Arrow**.
 
-### Added in PowerShell 2.0 (Windows Server 2008 R2, Windows 7
+### Added in PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
 The ISE was introduced with PowerShell v2.0.
 
 ## Requirements for running the Windows PowerShell ISE
