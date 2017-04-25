@@ -406,7 +406,7 @@ class Device {
 
 class Rack {
     hidden [int] $Slots = 8
-    static [Rack[]]$InstalledRacks = @() 
+    static [Rack[]]$InstalledRacks = @()
     [string]$Brand
     [string]$Model
     [string]$AssetId
@@ -453,6 +453,10 @@ class Rack {
 0
 10
 
+Brand              Model       AssetId Devices
+-----              -----       ------- -------
+Adatum Corporation Standard-16 Std0004 {$null, $null, $null, $null...}
+
 WARNING: Turning off rack: Std0001
 WARNING: Turning off rack: Std0002
 WARNING: Turning off rack: Std0003
@@ -463,22 +467,52 @@ WARNING: Turning off rack: Std0007
 WARNING: Turning off rack: Std0008
 WARNING: Turning off rack: Std0009
 WARNING: Turning off rack: Std0010
-Brand              Model       AssetId Devices
------              -----       ------- -------
-Adatum Corporation Standard-16 Std0004 {$null, $null, $null, $null...}
-
 ```
 
 Note: Messages from the different streams might come at different times
-to your screen. In this case the, the warning messages came in the middle
-of the standard output stream.
+to your screen.
 
 If you run the sample a couple of times, you will notice the number of racks
 keeps increasing.
 
-## VALIDATION ATTRIBUTES
+## PROPERTY VALIDATION ATTRIBUTES
+
+Validation attributes allow to test values given to properties meet defined
+requirements. Validations are triggered at the moment the property assignment
+is invoked, except at moment the class is instantiated. See [about_functions_advanced_parameters](about_functions_advanced_parameters.md).
+
+### EXAMPLE: Validation Attributes
+
+```powershell
+class Device {
+    [ValidateNotNullOrEmpty()][string]$Brand
+    [ValidateNotNullOrEmpty()][string]$Model
+}
+
+[Device]$dev = [Device]::new()
+
+Write-Output "Testing dev"
+$dev
+
+$dev.Brand = ""
+
+```
+
+```output
+Testing dev
+
+Brand Model
+----- -----
+
+Exception setting "Brand": "The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+At C:\tmp\Untitled-5.ps1:11 char:1
++ $dev.Brand = ""
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], SetValueInvocationException
+    + FullyQualifiedErrorId : ExceptionWhenSetting
 
 
+```
 
 ## INHERITANCE IN POWERSHELL CLASSES
 
