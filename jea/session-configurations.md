@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2017-03-08
+ms.date:  2017-04-25
 title:  JEA Session Configurations
 ms.technology:  powershell
 ---
@@ -167,6 +167,15 @@ RoleDefinitions = @{
 
 If a user belongs to more than one group in the role definition, they will get access to the roles of each.
 If two roles grant access to the same cmdlets, the most permissive parameter set will be granted to the user.
+
+When specifying local users or groups in the role definitions field, be sure to use the computer name (not *localhost* or *.*) before the backslash.
+You can check the computer name by inspecting the `$env:computername` variable.
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### Role capability search order
 As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.
