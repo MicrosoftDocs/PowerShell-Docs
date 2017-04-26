@@ -10,7 +10,7 @@ title:  Microsoft.PowerShell.Utility
 ms.technology:  powershell
 Locale:   en-US
 Module Name:   Microsoft.PowerShell.Utility
-Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390818
+Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390787
 Help Version:   5.1.1.0
 Module Guid:   1da87e53-152b-403e-98dc-74d7b4d63d59
 ---
