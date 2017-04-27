@@ -37,7 +37,8 @@ and advanced functions. For more information, see about_Functions
 (http://go.microsoft.com/fwlink/?LinkID=113231) and about_Splatting
 (http://go.microsoft.com/fwlink/?LinkID=262720).
 
-Static Parameters
+## Static Parameters
+
 Static parameters are parameters that are always available in the function.
 Most parameters in Windows PowerShell cmdlets and scripts are static parameters.
 
@@ -59,7 +60,7 @@ Param
 ```
 
 
-Attributes of Parameters
+## Attributes of Parameters
 
 This section describes the attributes that you can add to function
 parameters.
@@ -72,7 +73,7 @@ You can add one or multiple attributes in each parameter declaration. There
 is no limit to the number of attributes that you can add to a parameter
 declaration.
 
-The Parameter Attribute
+## The Parameter Attribute
 
 The Parameter attribute is used to declare the attributes of function
 parameters.
@@ -122,7 +123,7 @@ Param
 )
 ```
 
-Mandatory Argument
+## Mandatory Argument
 
 The Mandatory argument indicates that the parameter is required. If this
 argument is not specified, the parameter is an optional parameter.
@@ -139,7 +140,7 @@ Param
 )
 ```
 
-Position Argument
+## Position Argument
 
 The Position argument determines whether the parameter name is required
 when the parameter is used in a command. When a parameter declaration
@@ -188,7 +189,7 @@ attribute, the position value is incremented by 1. For example, a parameter
 with a Position argument value of 0 has a parameter attribute of
 "Position? 1."
 
-ParameterSetName Argument
+## ParameterSetName Argument
 
 The ParameterSetName argument specifies the parameter set to which a
 parameter belongs. If no parameter set is specified, the parameter
@@ -252,7 +253,7 @@ Param
 For more information about parameter sets, see "Cmdlet Parameter Sets"
 in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=142183.
 
-ValueFromPipeline Argument
+## ValueFromPipeline Argument
 
 The ValueFromPipeline argument indicates that the parameter accepts
 input from a pipeline object. Specify this argument if the function
@@ -272,7 +273,7 @@ Param
 )
 ```
 
-ValueFromPipelineByPropertyName Argument
+## ValueFromPipelineByPropertyName Argument
 
 The valueFromPipelineByPropertyName argument indicates that the
 parameter accepts input from a property of a pipeline object. The
@@ -297,7 +298,7 @@ Param
 ```
 
 
-ValueFromRemainingArguments Argument
+## ValueFromRemainingArguments Argument
 
 The ValueFromRemainingArguments argument indicates that the parameter
 accepts all of the parameters values in the command that are not
@@ -317,7 +318,7 @@ Param
 )
 ```
 
-HelpMessage Argument
+## HelpMessage Argument
 
 The HelpMessage argument specifies a string that contains a brief
 description of the parameter or its value. Windows PowerShell displays
@@ -338,7 +339,7 @@ Param
 ```
 
 
-Alias Attribute
+## Alias Attribute
 
 The Alias attribute establishes an alternate name for the parameter. There
 is no limit to the number of aliases that you can assign to a parameter.
@@ -357,7 +358,7 @@ Param
 ```
 
 
-Parameter and Variable Validation Attributes
+## Parameter and Variable Validation Attributes
 
 Validation attributes direct Windows PowerShell to test the parameter
 values that users submit when they call the advanced function. If the parameter
@@ -382,7 +383,7 @@ Param
 ```
 
 
-AllowEmptyString Validation Attribute
+## AllowEmptyString Validation Attribute
 
 The AllowEmptyString attribute allows the value of a mandatory parameter to be
 an empty string (""). The following example declares a ComputerName parameter
@@ -399,7 +400,7 @@ Param
 ```
 
 
-AllowEmptyCollection Validation Attribute
+## AllowEmptyCollection Validation Attribute
 
 The AllowEmptyCollection attribute allows the value of a mandatory parameter
 to be an empty collection (@()). The following example declares a ComputerName
@@ -416,7 +417,7 @@ Param
 ```
 
 
-ValidateCount Validation Attribute
+## ValidateCount Validation Attribute
 
 The ValidateCount attribute specifies the minimum and maximum number
 of parameter values that a parameter accepts. Windows PowerShell
@@ -436,7 +437,7 @@ Param
 )
 ```
 
-ValidateLength Validation Attribute
+## ValidateLength Validation Attribute
 
 The ValidateLength attribute specifies the minimum and maximum number
 of characters in a parameter or variable value. Windows PowerShell generates an
@@ -464,7 +465,7 @@ minimum of one character in length, and a maximum of ten characters.
 [Int32][ValidateLength(1,10)]$number = 01
 ```
 
-ValidatePattern Validation Attribute
+## ValidatePattern Validation Attribute
 
 The ValidatePattern attribute specifies a regular expression that
 is compared to the parameter or variable value. Windows PowerShell generates
@@ -492,7 +493,7 @@ four-digit number, and each digit must be a number 0 to 9.
 [Int32][ValidatePattern("[0-9][0-9][0-9][0-9]")]$number = 1111
 ```
 
-ValidateRange Validation Attribute
+## ValidateRange Validation Attribute
 
 The ValidateRange attribute specifies a numeric range for each
 parameter or variable value. Windows PowerShell generates an error
@@ -517,7 +518,7 @@ between 0 and 10.
 [Int32][ValidateRange(0,10)]$number = 5
 ```
 
-ValidateScript Validation Attribute
+## ValidateScript Validation Attribute
 
 The ValidateScript attribute specifies a script that is used
 to validate a parameter or variable value. Windows PowerShell
@@ -549,7 +550,7 @@ greater than or equal to the current date and time.
 [DateTime][ValidateScript({$_ -ge (get-date)})]$date = (get-date)
 ```
 
-ValidateSet Attribute
+## ValidateSet Attribute
 
 The ValidateSet attribute specifies a set of valid values for a
 parameter or variable. Windows PowerShell generates an error if a
@@ -574,7 +575,7 @@ either Chocolate, Strawberry, or Vanilla.
 [String][ValidateSet("Chocolate", "Strawberry", "Vanilla")]$flavor = Strawberry
 ```
 
-ValidateNotNull Validation Attribute
+## ValidateNotNull Validation Attribute
 
 The ValidateNotNull attribute specifies that the parameter
 value cannot be null ($null). Windows PowerShell generates an
@@ -597,9 +598,9 @@ Param
     [ValidateNotNull()]
     # $ID
 )
+```
 
-
-ValidateNotNullOrEmpty Validation Attribute
+## ValidateNotNullOrEmpty Validation Attribute
 
 The ValidateNotNullOrEmpty attribute specifies that the parameter
 value cannot be null ($null) and cannot be an empty string ("").
@@ -618,7 +619,7 @@ Param
 ```
 
 
-Dynamic Parameters
+## Dynamic Parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script
 that are available only under certain conditions.
@@ -697,7 +698,8 @@ For more information, see "RuntimeDefinedParameter Class" in
 the MSDN (Microsoft Developer Network) library at
 http://go.microsoft.com/fwlink/?LinkID=145130.
 
-Switch Parameters
+## Switch Parameters
+
 Switch parameters are parameters with no parameter value. They
 are effective only when they are used and have only one effect.
 
