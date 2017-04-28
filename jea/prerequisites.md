@@ -27,22 +27,23 @@ Server Operating System   | JEA Availability
 Windows Server 2016       | Preinstalled
 Windows Server 2012 R2    | Full functionality with WMF 5.1
 Windows Server 2012       | Full functionality with WMF 5.1
-Windows Server 2008 R2    | Full functionality with WMF 5.1
+Windows Server 2008 R2    | Reduced functionality<sup>1</sup> with WMF 5.1
 
 You can also use JEA on your home or work computer:
 
 Client Operating System   | JEA Availability
 --------------------------|-----------------------------------------------------
-Windows 10 1607           | Preinstalled
-Windows 10 1603, 1511     | Preinstalled, with reduced functionality<sup>1</sup>
+Windows 10 1607+          | Preinstalled
+Windows 10 1603, 1511     | Preinstalled, with reduced functionality<sup>2</sup>
 Windows 10 1507           | Not available
 Windows 8, 8.1            | Full functionality with WMF 5.1
-Windows 7                 | Limited functionality<sup>2</sup> with WMF 5.1
+Windows 7                 | Reduced functionality<sup>1</sup> with WMF 5.1
 
-<sup>1</sup> Windows 10 versions 1511 and 1603 do not support the following JEA features: running as a group managed service account, conditional access rules in session configurations, the user drive, and granting access to local user accounts.
+<sup>1</sup> JEA cannot be configured to use group managed service accounts on Windows Server 2008 R2 or Windows 7.
+Virtual accounts and other JEA features *are* supported.
+
+<sup>2</sup> Windows 10 versions 1511 and 1603 do not support the following JEA features: running as a group managed service account, conditional access rules in session configurations, the user drive, and granting access to local user accounts.
 To get support for these features, update Windows to version 1607 (Anniversary Update) or higher.
-
-<sup>2</sup> JEA cannot be configured to use virtual accounts on Windows 7.
 
 ### Check which version of PowerShell is installed
 
