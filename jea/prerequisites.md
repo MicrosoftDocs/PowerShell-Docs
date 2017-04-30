@@ -96,7 +96,7 @@ You can configure the PowerShell Module Logging policy using Group Policy.
 7. Click **OK** to set the policy
 8. Double click on **Turn on PowerShell Script Block Logging**
 9. Click **Enabled**
-10. Click **OK to set the policy
+10. Click **OK** to set the policy
 11. (On domain-joined machines only) Run **gpupdate** or wait for Group Policy to process the updated policy and apply the settings
 
 You can also enable system-wide PowerShell transcription through Group Policy.
