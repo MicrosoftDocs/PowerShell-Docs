@@ -168,15 +168,9 @@ Devices   : {$null, $null, $null, $null...}
 ## CLASS METHODS
 
 Methods define the actions that a class can perform.
-Methods can take parameters that provide input data, and can return an output;
+Methods can take parameters that provide input data, and can return output;
 the returned data can be of any defined data type.
-Methods can be paramterless and return an output.
-
-In class methods, nothing goes to the pipeline except what is mentioned
-in the `return` statement.
-There is no accidental pipeline bleeding from the code.
-See "_EXAMPLE: Method output_", after the
-"_EXAMPLE: A simple class with properties and method_".
+Also, methods can have no parameters and return output.
 
 ### EXAMPLE: A simple class with properties and methods
 
@@ -233,9 +227,18 @@ Devices   : {$null, $null, Device, $null...}
 
 ```
 
+## OUTPUT IN CLASS METHODS
+
+In class methods, nothing goes to the pipeline except what is mentioned
+in the `return` statement. There is no accidental output to the pipeline
+from the code.
+
+> **Note**: This is fundamentally different from how PowerShell functions
+> handle output, where everything goes to the pipeline.
+
 ### EXAMPLE: Method output
 
-This example demonstrates no bleeding to the pipeline from
+This example demonstrates no accidental output to the pipeline from
 class methods, except on the `return` statement.
 
 ```powershell
