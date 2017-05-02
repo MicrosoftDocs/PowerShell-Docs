@@ -60,7 +60,7 @@ To override the once-per-day limit, use the *Force* parameter.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-### UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES
+**UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES**
 
 You must be a member of the Administrators group on the computer to update the help files for the PowerShell Core modules.
 
