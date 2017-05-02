@@ -168,9 +168,15 @@ Devices   : {$null, $null, $null, $null...}
 ## CLASS METHODS
 
 Methods define the actions that a class can perform.
-Methods can take parameters that provide input data, and can return  an output;
+Methods can take parameters that provide input data, and can return an output;
 the returned data can be of any defined data type.
 Methods can be paramterless and return an output.
+
+In class methods, nothing goes to the pipeline except what is mentioned
+in the `return` statement.
+There is no accidental pipeline bleeding from the code.
+See "_EXAMPLE: Method output_", after the
+"_EXAMPLE: A simple class with properties and method_".
 
 ### EXAMPLE: A simple class with properties and methods
 
@@ -224,6 +230,53 @@ Model     :
 VendorSku :
 AssetId   :
 Devices   : {$null, $null, Device, $null...}
+
+```
+
+### EXAMPLE: Method output
+
+This example demonstrates no bleeding to the pipeline from
+class methods, except on the `return` statement.
+
+```powershell
+class FunWithIntegers
+{
+    [int[]]$Integers = 0..10
+
+    [int[]]GetOddIntegers(){
+        return $this.Integers.Where({ ($_ % 2) })
+    }
+
+    GetEvenIntegers(){
+        # this following line doesn't go to the pipeline
+        $this.Integers.Where({ ($_ % 2) -eq 0})
+    }
+
+    [string]SayHello(){
+        # this following line doesn't go to the pipeline
+        "Good Morning"
+
+        # this line goes to the pipeline
+        return "Hello World"
+    }
+}
+
+$ints = [FunWithIntegers]::new()
+
+$ints.GetOddIntegers()
+
+$ints.GetEvenIntegers()
+
+$ints.SayHello()
+```
+
+```output
+1
+3
+5
+7
+9
+Hello World
 
 ```
 
@@ -764,7 +817,7 @@ $list[0] # return 200
 ## INTERFACES
 
 There is no syntax to declare interfaces in PowerShell.
- 
+
 ## SEE ALSO
 
 - [about_Enum](about_Enum.md)
