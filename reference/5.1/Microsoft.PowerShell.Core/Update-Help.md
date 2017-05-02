@@ -22,20 +22,23 @@ Downloads and installs the newest help files on your computer.
 ## SYNTAX
 
 ### Path (Default)
-```
+
+```syntax
 Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>] [[-SourcePath] <String[]>]
  [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>] [-UseDefaultCredentials] [-Force]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
+
+```syntax
 Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>] [-LiteralPath <String[]>]
  [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>] [-UseDefaultCredentials] [-Force]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Update-Help** cmdlet downloads the newest help files for Windows PowerShell modules and installs them on your computer.
 You can use the Get-Help cmdlet to view the new help files immediately.
 You do not have to restart Windows PowerShell to make the change effective.
@@ -55,14 +58,17 @@ You can even automate the running of **Update-Help** by adding an **Update-Help*
 By default, **Update-Help** runs only one time per day on each computer.
 To override the once-per-day limit, use the *Force* parameter.
 
+This cmdlet was introduced in Windows PowerShell 3.0.
+
+### UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES
+
+You must be a member of the Administrators group on the computer to update the help files for the PowerShell Core modules.
+
 To download or update the help files for modules in the Windows PowerShell installation directory ($pshome\Modules), including the Windows PowerShell Core modules, start Windows PowerShell by using the Run as administrator option.
-You must be a member of the Administrators group on the computer to update the help files for these modules.
 
 You can also update help files by using the Update Windows PowerShell Help menu item in the Help menu in Windows PowerShell Integrated Scripting Environment (ISE).
 The Update Windows PowerShell Help item runs an **Update-Help** command without parameters.
 To update help for modules in the $PSHome directory, start Windows PowerShell ISE by using the Run as administrator option.
-
-This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -473,8 +479,6 @@ To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-nam
 [Get-Help](Get-Help.md)
 
 [Get-Module](Get-Module.md)
-
-[Start-Job](Start-Job.md)
 
 [Save-Help](Save-Help.md)
 
