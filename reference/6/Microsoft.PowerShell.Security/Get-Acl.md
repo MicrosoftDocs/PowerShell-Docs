@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821710
 schema: 2.0.0
-title: Get Acl
+title: Get-Acl
 ---
 
 # Get-Acl
@@ -103,7 +103,7 @@ This command uses the *InputObject* parameter of **Get-Acl** to get the security
 ### -AllCentralAccessPolicies
 Gets information about all central access policies that are enabled on the computer.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows Server? 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see "Central Access Policies" at http://go.microsoft.com/fwlink/?LinkId=238408http://go.microsoft.com/fwlink/?LinkId=238408.
 
 This parameter was introduced in Windows PowerShell 3.0.

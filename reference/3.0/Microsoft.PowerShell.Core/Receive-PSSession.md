@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Receive PSSession
+title: Receive-PSSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=217037
@@ -137,7 +137,7 @@ Id Name    ComputerName    State         ConfigurationName     Availability
 
 The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script begins to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
 PS C:\> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
- Running "New-ADResolve.ps1" â€¦.exit
+ Running "New-ADResolve.ps1" ???.exit
 
 # Network outage
 # Restart local computer
@@ -201,7 +201,7 @@ Bug Report - Domain 01
 ----------------------
 ComputerName          BugCount          LastUpdated
 --------------        ---------         ------------
-Server01              121               Friday, December 30, 2011 5:03:34 PMâ€¦
+Server01              121               Friday, December 30, 2011 5:03:34 PM???
 ```
 
 This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.
@@ -242,7 +242,7 @@ PS C:\> $j2 = Receive-PSSession -ComputerName Server01 -Name Test
 
 PS C:\> Receive-Job $j
 Return 3
-Return 4â€¦
+Return 4???
 ```
 
 This example shows what happens to a job that is running in a disconnected session.

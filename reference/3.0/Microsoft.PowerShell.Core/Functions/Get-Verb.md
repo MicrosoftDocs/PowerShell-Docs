@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Verb
+title: Get-Verb
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-help.xml
 online version:   http://technet.microsoft.com/library/hh852690(v=wps.630).aspx

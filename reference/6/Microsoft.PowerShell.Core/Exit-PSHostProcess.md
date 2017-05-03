@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=403737
 schema: 2.0.0
-title: Exit PSHostProcess
+title: Exit-PSHostProcess
 ---
 
 # Exit-PSHostProcess

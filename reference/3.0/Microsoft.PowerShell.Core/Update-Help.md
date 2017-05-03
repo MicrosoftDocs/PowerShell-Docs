@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Update Help
+title: Update-Help
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=210614
@@ -190,7 +190,7 @@ ADDSDeployment                          en-US                                   
 
 ADFS                                    en-US                                   3.0.0.0
 
-â€¦
+???
 ```
 
 The Get-UpdateHelpVersion.ps1 script creates an inventory of the Updatable Help files for each module and their version numbers.

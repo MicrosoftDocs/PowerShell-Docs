@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=821525
 schema: 2.0.0
-title: Wait Job
+title: Wait-Job
 ---
 
 # Wait-Job

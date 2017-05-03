@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821642
 schema: 2.0.0
-title: Stop Process
+title: Stop-Process
 ---
 
 # Stop-Process

@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821778
 schema: 2.0.0
-title: Get Alias
+title: Get-Alias
 ---
 
 # Get-Alias
@@ -57,7 +57,7 @@ Alias           cd -> Set-Location
 Alias           chdir -> Set-Location
 Alias           clc -> Clear-Content
 Alias           clear -> Clear-Host
-Alias           clhy -> Clear-History â€¦
+Alias           clhy -> Clear-History ???
 ```
 
 This command gets all aliases in the current session.

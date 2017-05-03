@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821772
 schema: 2.0.0
-title: Format Custom
+title: Format-Custom
 ---
 
 # Format-Custom

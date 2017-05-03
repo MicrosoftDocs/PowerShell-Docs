@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get DscResource
+title: Get-DscResource
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?linkid=327746
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ### -Syntax
 Indicates that the cmdlet returns the syntax view of the specified Desired State Configuration resources.
-The returned syntax shows how to use the resources in a Windows PowerShell® script.
+The returned syntax shows how to use the resources in a Windows PowerShell? script.
 
 ```yaml
 Type: SwitchParameter

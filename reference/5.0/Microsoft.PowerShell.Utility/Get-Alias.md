@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Alias
+title: Get-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821778
@@ -67,7 +67,7 @@ Alias           clc -> Clear-Content
 
 Alias           clear -> Clear-Host
 
-Alias           clhy -> Clear-History â€¦
+Alias           clhy -> Clear-History ???
 ```
 
 This command gets all aliases in the current session.

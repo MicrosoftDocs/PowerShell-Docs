@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Module
+title: Get-Module
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=141552
@@ -251,7 +251,7 @@ PS C:\> Get-Content $m.Path
 GUID="{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
 Author="Microsoft Corporation"
 CompanyName="Microsoft Corporation"
-Copyright="Â© Microsoft Corporation. All rights reserved."
+Copyright="?? Microsoft Corporation. All rights reserved."
 ModuleVersion="1.0.0.0"
 Description="Windows Powershell File Transfer Module"
 PowerShellVersion="2.0"

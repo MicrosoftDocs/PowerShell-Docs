@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear Host
+title: Clear-Host
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-help.xml
 online version:   https://go.microsoft.com/fwlink/?linkid=834941

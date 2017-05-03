@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=822318
 schema: 2.0.0
-title: Find Command
+title: Find-Command
 ---
 
 # Find-Command

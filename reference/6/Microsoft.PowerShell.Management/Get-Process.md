@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?linkid=821590
 schema: 2.0.0
-title: Get Process
+title: Get-Process
 ---
 
 # Get-Process
