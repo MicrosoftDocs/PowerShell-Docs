@@ -47,20 +47,25 @@ and each instance can have different values in its properties.
 Classes are declared using the following syntax:
 
 ```syntax
-class <class-name> [: <base-class-list>] {
+class <class-name> [: [<base-class>][,<interface-list]] {
     [[<attribute>] [hidden] [static] <property-definition> ...]
     [<class-name>([<constructor-argument-list>]) {<constructor-statement-list>} ...]
     [[<attribute>] [hidden] [static] <method-definition> ...]
 }
 ```
 
-Classes are instantiated using the following syntax:
+Classes are instantiated using either of the following syntaxes:
+
+```syntax
+[$<variable-name> =] New-Object -TypeName <class-name> [[-ArgumentList] <constructor-argument-list>]
+```
 
 ```syntax
 [$<variable-name> =] [<class-name>]::new([<constructor-argument-list>])
 ```
 
-> **Note** Brackets around the class name are mandatory!
+> **Note** When using the `[<class-name>]::new(` syntax,
+> brackets around the class name are mandatory!
 > The brackets signal a type definition for PowerShell.
 
 ### EXAMPLE: Minimum syntax and usage
@@ -168,9 +173,9 @@ Devices   : {$null, $null, $null, $null...}
 ## CLASS METHODS
 
 Methods define the actions that a class can perform.
-Methods can take parameters that provide input data, and can return output;
+Methods can take parameters that provide input data.
+Methods can return or not return output; when a method returns data,
 the returned data can be of any defined data type.
-Also, methods can have no parameters and return output.
 
 ### EXAMPLE: A simple class with properties and methods
 
@@ -182,6 +187,10 @@ class Device {
     [string]$Brand
     [string]$Model
     [string]$VendorSku
+
+    [string]ToString(){
+        return ("{0}|{1}|{2}" -f $this.Brand, $this.Model, $this.VendorSku)
+    }
 }
 
 class Rack {
@@ -192,19 +201,23 @@ class Rack {
     [string]$AssetId
     [Device[]]$Devices = [Device[]]::new($this.Slots)
 
-    AddDevice([Device]$dev, [int]$slot){
+    [void] AddDevice([Device]$dev, [int]$slot){
         ## Add argument validation logic here
         $this.Devices[$slot] = $dev
     }
 
-    RemoveDevice([int]$slot){
+    [void]RemoveDevice([int]$slot){
         ## Add argument validation logic here
         $this.Devices[$slot] = $null
+    }
+
+    [int[]] GetAvailableSlots(){
+        [int]$i = 0
+        return @($this.Devices.foreach{ if($_ -eq $null){$i}; $i++})
     }
 }
 
 $rack = [Rack]::new()
-
 
 $surface = [Device]::new()
 $surface.Brand = "Microsoft"
@@ -214,6 +227,7 @@ $surface.VendorSku = "5072641000"
 $rack.AddDevice($surface, 2)
 
 $rack
+$rack.GetAvailableSlots()
 ```
 
 ```output
@@ -223,11 +237,22 @@ Brand     :
 Model     :
 VendorSku :
 AssetId   :
-Devices   : {$null, $null, Device, $null...}
+Devices   : {$null, $null, Microsoft|Surface Pro 4|5072641000, $null...}
+
+0
+1
+3
+4
+5
+6
+7
 
 ```
 
 ## OUTPUT IN CLASS METHODS
+
+Methods in classes should have a return type defined; if a method does not
+return output, then the output type should be `[void]`.
 
 In class methods, nothing goes to the pipeline except what is mentioned
 in the `return` statement. There is no accidental output to the pipeline
@@ -250,7 +275,7 @@ class FunWithIntegers
         return $this.Integers.Where({ ($_ % 2) })
     }
 
-    GetEvenIntegers(){
+    [void] GetEvenIntegers(){
         # this following line doesn't go to the pipeline
         $this.Integers.Where({ ($_ % 2) -eq 0})
     }
