@@ -40,7 +40,7 @@ Header 2
 * Do not start PowerShell commands with "C:\ PS>"
 * Output emitted by PowerShell commands should be commented to prevent it from recieving syntax highlighting
 * Property names and parameter names should be in **bold**
-
+* PowerShell cmdlets are "[Pascal Cased](https://en.wikipedia.org/wiki/PascalCase)". Verbs are seperated from nouns by a hyphen.
 
 ## Lists
 
