@@ -54,15 +54,24 @@ To override the once-per-day limit, use the *Force* parameter.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-## UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES
-
-You must be a member of the Administrators group on the computer to update the help files for the PowerShell Core modules.
-
-To download or update the help files for modules in the Windows PowerShell installation directory ($pshome\Modules), including the Windows PowerShell Core modules, start Windows PowerShell by using the Run as administrator option.
-
-You can also update help files by using the Update Windows PowerShell Help menu item in the Help menu in Windows PowerShell Integrated Scripting Environment (ISE).
-The Update Windows PowerShell Help item runs an **Update-Help** command without parameters.
-To update help for modules in the $PSHome directory, start Windows PowerShell ISE by using the Run as administrator option.
+> **UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES**
+>
+> You must be a member of the Administrators group on the computer
+> to update the help files for the PowerShell Core modules.
+>
+> To download or update the help files for modules in the Windows PowerShell
+> installation directory ($pshome\Modules), including the Windows PowerShell
+> Core modules, start Windows PowerShell by using the Run as administrator
+> option.
+>
+> You can also update help files by using the Update Windows PowerShell Help
+> menu item in the Help menu in Windows PowerShell Integrated Scripting
+> Environment (ISE).
+>
+> The Update Windows PowerShell Help item runs an **Update-Help** command
+> without parameters.
+> To update help for modules in the $PSHome directory, start Windows PowerShell
+> ISE by using the Run as administrator option.
 
 ## EXAMPLES
 
