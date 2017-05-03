@@ -46,19 +46,21 @@ a name that includes a verb (Send) and noun (Greeting) pair similar to the
 verb-noun pair of a compiled cmdlet. However, functions are not required
 to have a verb-noun name.
 
+```powershell
 function Send-Greeting
 {
-[CmdletBinding()]
-Param(
-[Parameter(Mandatory=$true)]
-[string] $Name
-# )
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$true)]
+        [string] $Name
+    )
 
-Process
-{
-write-host ("Hello " + $Name + "!")
+    Process
+    {
+        write-host ("Hello " + $Name + "!")
+    }
 }
-}
+```
 
 The parameters of the function are declared by using the Parameter
 attribute. This attribute can be used alone, or it can be combined with
@@ -95,4 +97,4 @@ pass named parameters.
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
-Windows PowerShell Cmdlets (http://go.microsoft.com/fwlink/?LinkID=135279)
+[Windows PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)
