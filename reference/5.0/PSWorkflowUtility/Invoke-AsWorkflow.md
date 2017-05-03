@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke AsWorkflow
+title: Invoke-AsWorkflow
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821723
@@ -55,7 +55,7 @@ Server01                           77b1cdf8-8226-4662-9067-cd2fa5c3b711    AllSi
 Server02                           a33542d7-3cdd-4339-ab99-0e7cd8e59462    Unrestricted
 Server03                           279bac28-066a-4646-9497-8fcdcfe9757e    AllSigned
 localhost                          0d858009-2cc4-47a4-a2e0-da17dc2883d0    RemoteSigned
-a�|
+a?|
 ```
 
 This command runs the Get-ExecutionPolicy cmdlet as a workflow on hundreds of computers.

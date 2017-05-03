@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New ModuleManifest
+title: New-ModuleManifest
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289595
@@ -212,7 +212,7 @@ IscsiTarget                                                 4.0
 Kds                                                         4.0
 Microsoft.PowerShell.Diagnostics                            4.0
 Microsoft.PowerShell.Host                                   4.0
-Microsoft.PowerShell.Management                             4.0â€¦
+Microsoft.PowerShell.Management                             4.0???
 ```
 
 This example shows how to get the module manifest values of a module -- essentially a "Get-ModuleManifest" command.

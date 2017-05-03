@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?linkid=821591
 schema: 2.0.0
-title: Get PSDrive
+title: Get-PSDrive
 ---
 
 # Get-PSDrive

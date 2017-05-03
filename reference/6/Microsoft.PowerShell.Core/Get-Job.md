@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821485
 schema: 2.0.0
-title: Get Job
+title: Get-Job
 ---
 
 # Get-Job

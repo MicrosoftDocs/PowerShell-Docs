@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New IseSnippet
+title: New-IseSnippet
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821536
@@ -27,7 +27,7 @@ New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String> [-Auth
 ```
 
 ## DESCRIPTION
-The **New-IseSnippet** cmdlet creates a reusable text "snippet" for Windows PowerShell® Integrated Scripting Environment (ISE).
+The **New-IseSnippet** cmdlet creates a reusable text "snippet" for Windows PowerShell? Integrated Scripting Environment (ISE).
 You can use snippets to add text to the Script pane or Command pane in Windows PowerShell ISE.
 This cmdlet is available only in Windows PowerShell ISE.
 

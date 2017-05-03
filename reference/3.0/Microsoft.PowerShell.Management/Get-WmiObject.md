@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get WmiObject
+title: Get-WmiObject
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113337
@@ -166,11 +166,11 @@ __SUPERCLASS          : CIM_BIOSElement
 
 __DYNASTY             : CIM_ManagedSystemElement
 
-__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 â€¦
+__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 ???
 
 __PROPERTY_COUNT      : 27
 
-__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,â€¦
+__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,???
 
 __SERVER              : Server01
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Import IseSnippet
+title: Import-IseSnippet
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821535
@@ -34,7 +34,7 @@ Import-IseSnippet [-Recurse] -Module <String> [-ListAvailable] [<CommonParameter
 ## DESCRIPTION
 The **Import-IseSnippet** cmdlet imports reusable text "snippets" from a module or a directory into the current session.
 The snippets are immediately available for use in Windows PowerShell ISE.
-This cmdlet works only in Windows PowerShell® Integrated Scripting Environment (ISE).
+This cmdlet works only in Windows PowerShell? Integrated Scripting Environment (ISE).
 
 To view and use the imported snippets, from the Windows PowerShell ISE Edit menu, click Start Snippets or press Ctrl + J.
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Test ScriptFileInfo
+title: Test-ScriptFileInfo
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=822336
@@ -59,7 +59,7 @@ Version                    : 1.0
 Guid                       : eb246b19-17da-4392-8c89-7c280f69ad0e
 Author                     : pattif
 CompanyName                : Microsoft Corporation
-Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : ?? 2015 Microsoft Corporation. All rights reserved. 
 Tags                       : {Tag1, Tag2, Tag3}
 LicenseUri                 : https://contoso.com/License
 ProjectUri                 : https://contoso.com/

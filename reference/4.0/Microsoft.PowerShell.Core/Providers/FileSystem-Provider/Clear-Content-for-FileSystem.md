@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear Content for FileSystem
+title: Clear-Content for FileSystem
 ms.technology:  powershell
 ---
 

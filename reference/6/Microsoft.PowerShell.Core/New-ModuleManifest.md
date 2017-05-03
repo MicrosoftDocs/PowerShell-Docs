@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821496
 schema: 2.0.0
-title: New ModuleManifest
+title: New-ModuleManifest
 ---
 
 # New-ModuleManifest
@@ -213,7 +213,7 @@ IscsiTarget                                                 4.0
 Kds                                                         4.0
 Microsoft.PowerShell.Diagnostics                            4.0
 Microsoft.PowerShell.Host                                   4.0
-Microsoft.PowerShell.Management                             4.0â€¦
+Microsoft.PowerShell.Management                             4.0???
 ```
 
 This example shows how to get the module manifest values of a module.
