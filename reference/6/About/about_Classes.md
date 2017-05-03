@@ -19,7 +19,7 @@ Describes how you can use classes to create your own custom types.
 
 # LONG DESCRIPTION
 
-Starting in Windows PowerShell 5.0, Windows PowerShell adds language
+Starting in PowerShell 5.0, PowerShell adds language
 for defining classes and other user-defined types, by using formal syntax
 and semantics that are similar to other object-oriented programming
 languages. The goal is to enable developers and IT professionals to
@@ -102,9 +102,8 @@ Microsoft
 ## CLASS PROPERTIES
 
 Properties are variables declared at class scope.
-A property may be any built-in type or an instance of another class.
-Classes have no restriction in the number of properties they have;
-the only limitation is the available memory to instantiate the class.
+A property may be of any built-in type or an instance of another class.
+Classes have no restriction in the number of properties they have.
 
 ## EXAMPLE: Class with simple properties
 
@@ -819,27 +818,6 @@ class ChildClass1 : BaseClass
 
 2
 1
-```
-
-## METHODS ARE VIRTUAL
-
-All PowerShell methods are virtual. You can hide non-virtual .NET
-methods in a subclass by using the same syntax as you do for an override:  
-declare methods with same name and signature.
-
-```powershell 
-class MyIntList : system.collections.generic.list[int] 
-{
-    # Add is final in system.collections.generic.list
-    [void] Add([int]$arg) 
-    {
-        ([system.collections.generic.list[int]]$this).Add($arg * 2)
-    }
-} 
-
-$list = [MyIntList]::new()
-$list.Add(100)
-$list[0] # return 200
 ```
 
 ## INTERFACES
