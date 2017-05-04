@@ -67,7 +67,7 @@ Alias           clc -> Clear-Content
 
 Alias           clear -> Clear-Host
 
-Alias           clhy -> Clear-History ?
+Alias           clhy -> Clear-History …
 ```
 
 This command gets all aliases in the current session.

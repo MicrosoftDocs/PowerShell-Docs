@@ -63,7 +63,7 @@ Type                       : Script
 Description                : Description for the Required-Script2 script
 Author                     : pattif
 CompanyName                : 
-Copyright                  : ?? 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
 PublishedDate              : 8/15/2015 12:42:39 AM
 LicenseUri                 : http://required-script2.com/license
 ProjectUri                 : http://required-script2.com/
@@ -102,7 +102,7 @@ Type                       : Script
 Description                : Description for the Required-Script3 script
 Author                     : pattif
 CompanyName                : 
-Copyright                  : ?? 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
 PublishedDate              : 8/15/2015 12:42:45 AM
 LicenseUri                 : http://required-script3.com/license
 ProjectUri                 : http://required-script3.com/

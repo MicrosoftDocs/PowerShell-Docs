@@ -59,7 +59,7 @@ serProcessorTime","VirtualMemorySize","VirtualMemorySize64","EnableRaisingEvents
 ndardError","WorkingSet","WorkingSet64","Site","Container"
 "Process","powershell","216","597544960","60399616","63197184","21692","C:\WINDOWS\system32\WindowsPowerShell\v1.0\powe
 rshell.exe","Microsoft Corporation","3.4788223","6.1.6587.1 (fbl_srv_powershell(nigels).070711-0102)","6.1.6587.1","Win
-dows PowerShell","Microsoft? Windows? Operating System","8",,"False",,"860","216","5132",".","5636936","Windows PowerSh
+dows PowerShell","Microsoft® Windows® Operating System","8",,"False",,"860","216","5132",".","5636936","Windows PowerSh
 ell 2.0 (04/17/2008 00:10:40)","System.Diagnostics.ProcessModule (powershell.exe)","1413120","204800","System.Diagnosti
 cs.ProcessModuleCollection","21692","21692","63197184","63197184","320080","320080","63868928","63868928","60715008","6
 0715008","598642688","598642688","True","Normal","63197184","63197184","00:00:00.2028013","powershell","15","True","1",

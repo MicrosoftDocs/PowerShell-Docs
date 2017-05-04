@@ -74,7 +74,7 @@ This command gets encrypted content located at C:\Users\Test\Documents\PowerShel
 ### Example 2: Pipe encrypted content to Unprotect-CmsMessage
 ```
 PS C:\> $Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt"
-$Msg | Unprotect-CmsMessage -To "???cn=youralias@emailaddress.com"
+$Msg | Unprotect-CmsMessage -To "â€Žcn=youralias@emailaddress.com"
 Try the new Break All command
 ```
 

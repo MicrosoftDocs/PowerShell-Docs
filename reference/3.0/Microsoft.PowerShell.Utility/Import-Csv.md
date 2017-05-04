@@ -143,7 +143,7 @@ PS C:\> Get-Content .\Links.csv
 113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212, 
 about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309, 
 about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219, 
-about_Core_Commands113220,about_Data_Section???
+about_Core_Commands113220,about_Data_Sectionâ€¦
 
 The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the **Header** parameter to specify **LinkId** and **TopicTitle** as property names for the new custom objects. The command saves the imported objects in the $a variable.
 PS C:\> $a = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle

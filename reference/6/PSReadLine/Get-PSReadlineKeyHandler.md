@@ -64,7 +64,7 @@ Ctrl+c                CopyOrCancelLine        Either copy selected text to the c
 Ctrl+C                Copy                    Copy selected region to the system clipboard.  If no region is selected, copy the whole line
 Ctrl+l                ClearScreen             Clear the screen and redraw the current line at the top of the screen
 Ctrl+r                ReverseSearchHistory    Search history backwards interactively
-???
+â€¦
 ```
 
 This command returns all key mappings, bound and unbound.
@@ -95,7 +95,7 @@ Delete                DeleteChar              Delete the character under the cur
 Backspace             BackwardDeleteChar      Delete the charcter before the cursor
 Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o... 
 Tab                   TabCompleteNext         Complete the input using the next completion
-???
+â€¦
 ```
 
 This command returns only bound keys and key combinations.

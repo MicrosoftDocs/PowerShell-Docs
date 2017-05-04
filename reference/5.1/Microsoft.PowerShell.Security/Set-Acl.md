@@ -128,7 +128,7 @@ Accept wildcard characters: False
 Establishes or changes the central access policy of the item.
 Enter the CAP ID or friendly name of a central access policy on the computer.
 
-Beginning in Windows Server?? 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see Dynamic Access Control: Scenario Overviewhttp://go.microsoft.com/fwlink/?LinkId=238408 on TechNet.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ### -ClearCentralAccessPolicy
 Removes the central access policy from the specified item.
 
-Beginning in Windows Server?? 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see Dynamic Access Control: Scenario Overviewhttp://go.microsoft.com/fwlink/?LinkId=238408 on TechNet.
 
 This parameter was introduced in Windows PowerShell 3.0.

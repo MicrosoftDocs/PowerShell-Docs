@@ -166,11 +166,11 @@ __SUPERCLASS          : CIM_BIOSElement
 
 __DYNASTY             : CIM_ManagedSystemElement
 
-__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 ???
+__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 â€¦
 
 __PROPERTY_COUNT      : 27
 
-__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,???
+__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,â€¦
 
 __SERVER              : Server01
 

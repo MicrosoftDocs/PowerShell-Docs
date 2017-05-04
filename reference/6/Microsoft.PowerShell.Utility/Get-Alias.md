@@ -57,7 +57,7 @@ Alias           cd -> Set-Location
 Alias           chdir -> Set-Location
 Alias           clc -> Clear-Content
 Alias           clear -> Clear-Host
-Alias           clhy -> Clear-History ???
+Alias           clhy -> Clear-History â€¦
 ```
 
 This command gets all aliases in the current session.

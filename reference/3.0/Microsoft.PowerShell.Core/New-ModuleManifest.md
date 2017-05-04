@@ -205,7 +205,7 @@ IscsiTarget                                                 4.0
 Kds                                                         4.0
 Microsoft.PowerShell.Diagnostics                            4.0
 Microsoft.PowerShell.Host                                   4.0
-Microsoft.PowerShell.Management                             4.0???
+Microsoft.PowerShell.Management                             4.0â€¦
 ```
 
 This example shows how to get the module manifest values of a module -- essentially a "Get-ModuleManifest" command.

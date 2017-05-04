@@ -58,7 +58,7 @@ Server03                           279bac28-066a-4646-9497-8fcdcfe9757e    AllSi
 
 localhost                          0d858009-2cc4-47a4-a2e0-da17dc2883d0    RemoteSigned
 
-?
+…
 ```
 
 This command runs the Get-ExecutionPolicy cmdlet as a workflow on hundreds of computers.
