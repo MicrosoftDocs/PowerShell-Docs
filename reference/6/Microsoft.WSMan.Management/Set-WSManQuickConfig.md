@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821737
 schema: 2.0.0
-title: Set WSManQuickConfig
+title: Set-WSManQuickConfig
 ---
 
 # Set-WSManQuickConfig

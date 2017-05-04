@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=389281
 schema: 2.0.0
-title: Get ItemPropertyValue
+title: Get-ItemPropertyValue
 ---
 
 # Get-ItemPropertyValue

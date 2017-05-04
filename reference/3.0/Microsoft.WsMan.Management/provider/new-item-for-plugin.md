@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  new item for plugin
+title: New-Item for Plugin
 ms.technology:  powershell
 ---
 
