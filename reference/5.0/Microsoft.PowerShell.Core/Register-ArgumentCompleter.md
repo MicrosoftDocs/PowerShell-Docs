@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register ArgumentCompleter
+title: Register-ArgumentCompleter
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-Help.xml
 schema:   2.0.0

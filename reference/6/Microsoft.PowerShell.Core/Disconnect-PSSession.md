@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=821474
 schema: 2.0.0
-title: Disconnect PSSession
+title: Disconnect-PSSession
 ---
 
 # Disconnect-PSSession
