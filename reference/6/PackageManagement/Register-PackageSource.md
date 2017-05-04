@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=517139
 schema: 2.0.0
-title: Register PackageSource
+title: Register-PackageSource
 ---
 
 # Register-PackageSource

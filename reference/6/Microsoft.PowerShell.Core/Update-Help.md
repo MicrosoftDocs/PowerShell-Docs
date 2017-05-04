@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=821524
 schema: 2.0.0
-title: Update Help
+title: Update-Help
 ---
 
 # Update-Help
