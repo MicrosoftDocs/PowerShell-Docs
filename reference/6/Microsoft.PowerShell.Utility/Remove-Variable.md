@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821852
 schema: 2.0.0
-title: Remove Variable
+title: Remove-Variable
 ---
 
 # Remove-Variable

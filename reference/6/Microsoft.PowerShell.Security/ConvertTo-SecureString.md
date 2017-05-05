@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821709
 schema: 2.0.0
-title: ConvertTo SecureString
+title: ConvertTo-SecureString
 ---
 
 # ConvertTo-SecureString

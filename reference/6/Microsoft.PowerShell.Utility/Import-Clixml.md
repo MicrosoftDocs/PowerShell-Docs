@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821813
 schema: 2.0.0
-title: Import Clixml
+title: Import-Clixml
 ---
 
 # Import-Clixml

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke OperationValidation
+title: Invoke-OperationValidation
 ms.technology:  powershell
 ms.assetid:   C66EF231-7E55-4866-8938-9FEE8E577E10
 external help file:   Microsoft.PowerShell.Operation.Validation-help.xml
