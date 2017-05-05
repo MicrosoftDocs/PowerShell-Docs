@@ -14,5 +14,6 @@ out_maml/
 packages.config
 **/.ignore/**
 *.orig
+*.vscode
 .vscode/
 
