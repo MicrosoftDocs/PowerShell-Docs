@@ -25,7 +25,7 @@ and a distinct folder for the about topics.
 
 Over time, namespaces appeared as:
 
-- ISE, introduced in 3.0
+- ISE, introduced in 2.0
 - Microsoft.PowerShell.Archive, introduced in 5.0
 - Microsoft.PowerShell.Core, introduced in 3.0
 - Microsoft.PowerShell.Diagnostics, introduced in 3.0
