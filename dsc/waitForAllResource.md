@@ -31,7 +31,7 @@ WaitForAll [string] #ResourceName
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
-
+```
 
 ## Properties
 
