@@ -140,8 +140,7 @@ If the cmdlets were executed as a user without elevated permissions:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-The second option is to download NuGet.exe from the NuGet.Org website:<br>
-[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
+The second option is to download NuGet.exe from the NuGet.Org website: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
 Remember to unblock the file if it was downloaded using a browser.
 This can be performed by using the *Unblock-File* cmdlet.
 The NuGet.exe file can be copied to any location in *$env:path*, but the standard locations are:
