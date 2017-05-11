@@ -125,6 +125,7 @@ Copy these folders and file using a trusted process to the offline machines.
 ## Manually bootstrapping NuGet.exe to support publish operations on a machine that is not connected to the Internet
 
 In addition to the process to manually bootstrap the NuGet provider, if the machine will be used to publish modules or scripts to a private gallery using the *Publish-Module* or *Publish-Script* cmdlets, the NuGet.exe binary executable file will be required.
+The most common use case for this scenario is when a private gallery is available to support an isolated environment.
 There are two options to obtain the NuGet.exe file.
 
 One option is to bootstrap a machine that is Internet connected and copy the files to the offline machines using a trusted process.
