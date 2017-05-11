@@ -18,7 +18,7 @@ For publish operations of either a module or script, PowerShellGet requires the 
 Only the NuGet provider is required for all other operations, including *find*, *install*, *save*, and *uninstall*.
 PowerShellGet includes logic to handle either a combined bootstrap of the NuGet provider and NuGet.exe, or bootstrap of only the NuGet provider.
 In either case, only a single prompt message should occur.
-If the machine is not connected to the Internet, an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the Provider Assemblies folder.
+If the machine is not connected to the Internet, the user or an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the disconnected machine.
 
 *Note - Starting with version 6, the NuGet provider is included in the installation of PowerShell.*
 *[http://github.com/powershell/powershell](http://github.com/powershell/powershell)*
@@ -109,7 +109,7 @@ The processes demonstrated above assume the machine is connected to the Internet
 If that is not possible, the only option is to bootstrap a machine using the processes given above, and manually copy the provider to the isolated node through an offline trusted process.
 The most common use case for this scenario is when a private gallery is available to support an isolated environment.
 
-After following the process [above](## Resolving error when the NuGet provider has not been installed on a machine that is Internet connected), you will find provider files in the location:
+After following the process above to bootstrap an Internet connected machine, you will find provider files in the location:
 ```
 C:\Program Files\PackageManagement\ProviderAssemblies\
 ```
@@ -124,10 +124,10 @@ Copy these folders and file using a trusted process to the offline machines.
 
 ## Manually bootstrapping NuGet.exe to support publish operations on a machine that is not connected to the Internet
 
-In addition to the process to [manually bootstrap the NuGet provider](## Manually bootstrapping the NuGet provider on a machine that is not connected to the Internet), if the machine will be used to publish modules or scripts to a private gallery using the *Publish-Module* or *Publish-Script* cmdlets, the NuGet.exe binary executable file will be required.
+In addition to the process to manually bootstrap the NuGet provider, if the machine will be used to publish modules or scripts to a private gallery using the *Publish-Module* or *Publish-Script* cmdlets, the NuGet.exe binary executable file will be required.
 There are two options to obtain the NuGet.exe file.
 
-One option is to [bootstrap a machine that is Internet connected](## Resolving error when both NuGet provider and NuGet.exe are not available during the publish operation on a machine that is Internet connected) and copy the files to the offline machines using a trusted process.
+One option is to bootstrap a machine that is Internet connected and copy the files to the offline machines using a trusted process.
 After bootstrapping the Internet connected machine, the NuGet.exe binary will be located in one of two folders:
 
 If the *Publish-Module* or *Publish-Script* cmdlets were executed with elevated permissions (As an Administrator):
@@ -139,11 +139,11 @@ If the cmdlets were executed as a user without elevated permissions:
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
-The second option is to download NuGet.exe from the NuGet.Org website:
-[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)
+
+The second option is to download NuGet.exe from the NuGet.Org website:<br>
+[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
 Remember to unblock the file if it was downloaded using a browser.
 This can be performed by using the *Unblock-File* cmdlet.
-
 The NuGet.exe file can be copied to any location in *$env:path*, but the standard locations are:
 
 To make the executable available so that all users can use *Publish-Module* and *Publish-Script* cmdlets:
