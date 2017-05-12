@@ -142,7 +142,7 @@ $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
 A second option is to download NuGet.exe from the NuGet.Org website: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
-As criteria to select a version for production machines, make sure it is later than 2.8.5.208, and identify the version that has been labeled "recommended".
+When selecting a NugGet version for production machines, make sure it is later than 2.8.5.208, and identify the version that has been labeled "recommended".
 Remember to unblock the file if it was downloaded using a browser.
 This can be performed by using the *Unblock-File* cmdlet.
 
