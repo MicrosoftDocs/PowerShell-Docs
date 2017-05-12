@@ -16,7 +16,7 @@ PowerShell Gallery Status
 
 ## 03/27/2017 - RESOLVED: Unable to see individual module and script pages
 
-__Summary of Impact__: Direct links to individual module and script pages on https://www.powershellgallery.com were broken. This was being reported across all the regions. This did not impact any of the PowerShellGet cmdlets ie., Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Scirpt continued to work.
+__Summary of Impact__: Direct links to individual module and script pages on https://www.powershellgallery.com were broken. This was being reported across all the regions. This did not impact any of the PowerShellGet cmdlets ie., Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Script continued to work.
 
 __Root Cause__: Engineers identified the cause as an issue bringing up social media buttons like Facebook onto the page.  
 
