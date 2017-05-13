@@ -58,7 +58,7 @@ This command selects a few properties of the WmiPrvse process and exports them t
 PS C:\> Get-Process | Export-Csv -Path "processes.csv"
 # In processes.csv
 #TYPE System.Diagnostics.Process
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+#__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... #Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... #Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
@@ -69,7 +69,7 @@ Because it does not specify a delimiter, a comma (,) is used to separate the fie
 PS C:\> Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
 # In processes.csv
 #TYPE System.Diagnostics.Process
-__NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
+#__NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... #Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... #Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
@@ -88,7 +88,7 @@ It uses the *UseCulture* parameter to direct **Export-CSV** to use the delimiter
 ```
 PS C:\> Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
 # In processes.csv
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+#__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... #Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the Processes.csv file in the current directory.
