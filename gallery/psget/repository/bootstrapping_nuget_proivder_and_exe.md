@@ -7,7 +7,7 @@ ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2016-10-14
 contributor:  manikb
-title:  Bootstrapping NuGet Proivder and EXE
+title:  Bootstrapping NuGet Provider and EXE
 ms.technology:  powershell
 ---
 
