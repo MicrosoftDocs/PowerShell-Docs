@@ -20,8 +20,7 @@ PowerShellGet includes logic to handle either a combined bootstrap of the NuGet 
 In either case, only a single prompt message should occur.
 If the machine is not connected to the Internet, the user or an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the disconnected machine.
 
-**Note**: Starting with version 6, the NuGet provider is included in the installation of PowerShell.*
-*[http://github.com/powershell/powershell](http://github.com/powershell/powershell)*
+>**Note**: Starting with version 6, the NuGet provider is included in the installation of PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
 ## Resolving error when the NuGet provider has not been installed on a machine that is Internet connected
 
