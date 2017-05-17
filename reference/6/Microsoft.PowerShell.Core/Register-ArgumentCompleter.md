@@ -8,7 +8,7 @@ ms.date: 2016-12-12
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821506
+online version: http://go.microsoft.com/fwlink/?LinkId=821507
 schema: 2.0.0
 title: Register-ArgumentCompleter
 ---
