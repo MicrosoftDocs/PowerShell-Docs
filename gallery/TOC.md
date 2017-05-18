@@ -8,6 +8,9 @@
 ### [Items with Compatible PSEditions](psgallery/psgallery_pseditions.md)
 ### [FileList view](psgallery/psgallery_filelist_feature.md)
 ### [Deploy to Azure Automation](psgallery/psgallery_deploy_to_azure_automation.md)
+### [Creating a PowerShellGallery Account](psgallery/psgallery_creating_an_account.md)
+### [Creating and publishing items](psgallery/psgallery-Creating-and-Publishing-an-item.md)
+### [Publishing guidelines and best practices](psgallery/psgallery-PublishingGuidelines.md)
 ### [Unlisting items](psgallery/psgallery_unlist_items.md)
 ### [Deleting items](psgallery/Deleting-Items.md)
 ### [Managing item owners](psgallery/Managing-Item-Owners.md)
@@ -15,6 +18,7 @@
 ### [Dispute resolution](psgallery/psgallery_dispute_resolution.md)
 ### [Contacting item owners](psgallery/psgallery_contacting_item_owners.md)
 ### [Contacting administrators](psgallery/psgallery_contacting_administrators.md)
+### [Providing Feedback via Social Media or Comments](psgallery/psgallery-SocialMediaFeedback.md)
 
 # [PowerShellGet](psget/overview.md)
 ## Module
