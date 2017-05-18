@@ -222,6 +222,4 @@ The most successful approach we have found for items published to the PowerShell
 * Continue to gather feedback and iterate on your code based on user input
 
 
-
-Publishers should follow the [guidelines](.\PublishingGuidelines) for maintaining consistency between the Owners and Author information they provide.
    
