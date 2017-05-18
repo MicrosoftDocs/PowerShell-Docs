@@ -10,7 +10,7 @@ title: Register-ArgumentCompleter
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-Help.xml
 schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=822079
+online version:   http://go.microsoft.com/fwlink/?LinkId=821507
 ---
 
 
