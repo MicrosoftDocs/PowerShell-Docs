@@ -479,7 +479,6 @@ PSVersion                 | The PowerShell version number
 SerializationVersion      | The version of the serialization method
 WSManStackVersion         | The version number of the WS-Management stack
 
-
 ### $PWD
 
 Contains a path object that represents the full path of the current directory.
