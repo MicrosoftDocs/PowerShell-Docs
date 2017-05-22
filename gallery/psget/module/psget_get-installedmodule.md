@@ -7,7 +7,7 @@ ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2016-10-14
 contributor:  manikb
-title:  psget_get installedmodule
+title: Get-InstalledModule
 ms.technology:  powershell
 ---
 
