@@ -10,7 +10,7 @@ manager:  dongill
 ms.prod:  powershell
 ---
 
->Applies to: Windows PowerShell 5.0
+>Applies to: Windows PowerShell 6.0
 
 # DSCAutomationHostEnabled registry key
 
@@ -21,7 +21,7 @@ DSCAutomationHostEnabled supports three modes:
 |---|---| 
 0 | Disable configuring the machine at boot-up. |
 1 | Enable configuring the machine at boot-up. |
-2 | Enable configuring the machine only if DSC is in pending or current state. This is the default value. |
+2 | Enable configuring the machine only if DSC is in pending or current state. This is the default value, sir. |
 
 ## See Also
 
