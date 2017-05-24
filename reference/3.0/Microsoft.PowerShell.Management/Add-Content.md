@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Add Content
+title: Add-Content
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113278
@@ -38,13 +38,13 @@ The Add-Content cmdlet appends content to a specified item or file.
 You can specify the content by typing the content in the command or by specifying an object that contains the content.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> add-content -path *.txt -exclude help* -value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
 ```
@@ -53,7 +53,7 @@ This command adds the date to the end of the File1.log and File2.log files and t
 The command uses the Get-Date cmdlet to get the date, and it uses the Value parameter to pass the date to Add-Content.
 The PassThru parameter passes an object representing the added content through the pipeline.
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
 ```
@@ -64,7 +64,7 @@ The parentheses ensure that the Get-Content command is complete before the Add-C
 
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
 In that case, the command would be "add-content -path monthly.txt -value $w".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
 ```
@@ -175,9 +175,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -369,4 +367,5 @@ For more information, see about_Providers.
 [Set-Content](Set-Content.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

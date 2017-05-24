@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove Item for FileSystem
+title: Remove-Item for FileSystem
 ms.technology:  powershell
 ---
 

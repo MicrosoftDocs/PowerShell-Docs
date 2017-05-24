@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write Error
+title: Write-Error
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113425
@@ -53,29 +53,29 @@ To declare a terminating error, use the **Throw** keyword.
 For more information, see about_Throw (http://go.microsoft.com/fwlink/?LinkID=145153).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ChildItem | ForEach-Object { if ($_.GetType().ToString() -eq "Microsoft.Win32.RegistryKey") {Write-Error "Invalid object" -ErrorID B1 -Targetobject $_ } else {$_ } }
 ```
 
 This command declares a non-terminating error when the Get-ChildItem cmdlet returns a Microsoft.Win32.RegistryKey object, such as the objects in the HKLM: or HKCU: drives of the Windows PowerShell Registry provider.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Write-Error "Access denied."
 ```
 
 This command declares a non-terminating error and writes an "Access denied" error.
 The command uses the **Message** parameter to specify the message, but omits the optional **Message** parameter name.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Write-Error -Message "Error: Too many input values." -Category InvalidArgument
 ```
 
 This command declares a non-terminating error and specifies an error category.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
-PS C:\> $e = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
-PS C:\> Write-Error $e -Message "Files not found. The $Files location does not contain any XML files."
+PS C:\> $E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+PS C:\> Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 
 This command uses an **Exception** object to declare a non-terminating error.

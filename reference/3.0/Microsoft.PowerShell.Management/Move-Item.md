@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Move Item
+title: Move-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113350
@@ -40,26 +40,26 @@ For example, it can move a file or subdirectory from one directory to another or
 When you move an item, it is added to the new location and deleted from its original location.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> move-item -path C:\test.txt -destination E:\Temp\tst.txt
 ```
 
 This command moves the Test.txt file from the C: drive to the E:\Temp directory and renames it from "test.txt" to "tst.txt".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> move-item -path C:\Temp -destination C:\Logs
 ```
 
 This command moves the C:\Temp directory and its contents to the C:\Logs directory.
 The Temp directory, and all of its subdirectories and files, then appear in the Logs directory.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> move-item -path .\*.txt -destination C:\Logs
 ```
 
 This command moves all of the text files (*.txt) in the current directory (represented by a dot (.)) to the C:\Logs directory.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-ChildItem -Path .\*.txt -Recurse | Move-Item -Destination C:\TextFiles
 ```
@@ -83,7 +83,7 @@ To move hidden files, use the Force parameter with Get-ChildItem.
 
 Note: In Windows PowerShell 2.0, when using the **Recurse** parameter of the Get-ChildItem cmdlet, the value of the **Path** parameter must be a container. 
 Use the **Include** parameter to specify the .txt file name extension filter (`Get-ChildItem -Path .\* -Include *.txt -Recurse | Move-Item -Destination C:\TextFiles`).
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> move-item hklm:\software\mycompany\* hklm:\software\mynewcompany
 ```
@@ -91,7 +91,7 @@ PS C:\> move-item hklm:\software\mycompany\* hklm:\software\mynewcompany
 This command moves the registry keys and values within the MyCompany registry key in HKLM\Software to the MyNewCompany key.
 The wildcard character (*) indicates that the contents of the MyCompany key should be moved, not the key itself.
 In this command, the optional Path and Destination parameter names are omitted.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> move-item -literalpath 'Logs[Sept`06]' -destination 'Logs[2006]'
 ```
@@ -302,9 +302,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -361,4 +359,5 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Export ModuleMember
+title: Export-ModuleMember
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289581
@@ -39,7 +39,7 @@ Even if the command confirms the default values, it demonstrates the intention o
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Export-ModuleMember -function * -alias *
 ```
@@ -49,7 +49,7 @@ This command exports the aliases defined in the script module, along with the fu
 To export the aliases, which are not exported by default, you must also explicitly specify the functions.
 Otherwise, only the aliases will be exported.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Export-ModuleMember -function Get-Test, New-Test, Start-Test -alias gtt, ntt, stt
 ```
@@ -58,7 +58,7 @@ This command exports three aliases and three functions defined in the script mod
 
 You can use this command format to specify the names of module members.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Export-ModuleMember
 ```
@@ -68,7 +68,7 @@ This command specifies that no members defined in the script module are exported
 This command prevents the module members from being exported, but it does not hide the members.
 Users can read and copy module members or use the call operator (&) to invoke module members that are not exported.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Export-ModuleMember -variable increment
 ```
@@ -78,7 +78,7 @@ No other members are exported.
 
 If you want to export a variable, in addition to exporting the functions in a module, the Export-ModuleMember command must include the names of all of the functions and the name of the variable.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> # From TestModule.psm1
 function new-test
@@ -99,7 +99,7 @@ These commands create three functions and one alias, and then they export two of
 Without the Export-ModuleMember commands, all three of the functions would be exported, but the alias would not be exported.
 With the Export-ModuleMember commands, only the Get-Test and Start-Test functions and the STT alias are exported.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> new-module -script {function SayHello {"Hello!"}; set-alias Hi SayHello; Export-ModuleMember -alias Hi -function SayHello}
 ```
@@ -108,7 +108,7 @@ This command shows how to use Export-ModuleMember in a dynamic module that is cr
 
 In this example, Export-ModuleMember is used to export both the "Hi" alias and the "SayHello" function in the dynamic module.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> function export
 {

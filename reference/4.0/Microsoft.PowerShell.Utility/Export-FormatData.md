@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Export FormatData
+title: Export-FormatData
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293958
@@ -44,7 +44,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-formatdata -typename * | export-formatdata -path allformat.ps1xml -IncludeScriptBlock
 ```
@@ -58,7 +58,7 @@ The command uses a pipeline operator (|) to send the format data from the Get-Fo
 
 The Export-FormatData command uses the IncludeScriptBlock parameter to include script blocks in the format data in the file.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $f = get-formatdata -typename helpinfoshort
 PS C:\> export-formatdata -inputObject $f -path c:\test\help.format.ps1xml -IncludeScriptBlock
@@ -71,7 +71,7 @@ The first command uses the Get-FormatData cmdlet to get the format data for the 
 The second command uses the InputObject parameter of the Export-FormatData to enter the format data saved in the $f variable.
 It also uses the IncludeScriptBlock parameter to include script blocks in the output.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-formatdata -typename System.Diagnostics.Process | export-FormatData -path process.format.ps1xml
 PS C:\> Update-FormatData -prependPath .\process.format.ps1xml

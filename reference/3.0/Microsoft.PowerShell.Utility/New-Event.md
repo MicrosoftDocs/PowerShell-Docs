@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New Event
+title: New-Event
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135234
@@ -37,14 +37,14 @@ If you cancel the event subscription by using the Unregister-Event cmdlet, the e
 If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the Windows PowerShell session.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-event -sourceidentifier Timer -sender windows.timer  -messagedata "Test"
 ```
 
 This command creates a new event in the Windows PowerShell event queue.
 It uses a Windows.Timer object to send the event.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> function Enable-ProcessCreationEvent
 {

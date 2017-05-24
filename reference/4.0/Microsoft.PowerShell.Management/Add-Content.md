@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Add Content
+title: Add-Content
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289796
@@ -41,14 +41,14 @@ You can specify the content by typing the content in the command or by specifyin
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> add-content -path *.txt -exclude help* -value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
 ```
@@ -58,7 +58,7 @@ The command uses the Get-Date cmdlet to get the date, and it uses the Value para
 The PassThru parameter passes an object representing the added content through the pipeline.
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
 ```
@@ -70,7 +70,7 @@ The parentheses ensure that the Get-Content command is complete before the Add-C
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
 In that case, the command would be "add-content -path monthly.txt -value $w".
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
 ```
@@ -300,7 +300,22 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
-{{Fill Encoding Description}}
+Specifies the encoding that this cmdlet applies to the content.
+
+The acceptable values for this parameter are:
+
+- Unknown
+- String
+- Unicode
+- Byte
+- BigEndianUnicode
+- UTF8
+- UTF7
+- UTF32
+- Ascii
+- Default
+- Oem
+- BigEndianUTF32
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
@@ -315,7 +330,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream for content.
+If the stream does not exist, this cmdlet creates it.
+Wildcard characters are not supported.
+
+Stream is a dynamic parameter that the FileSystem provider adds to **Add-Content**.
+This parameter works only in file system drives.
+
+You can use the **Add-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String

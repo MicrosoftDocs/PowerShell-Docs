@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set ItemProperty
+title: Set-ItemProperty
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113396
@@ -56,7 +56,7 @@ You also use Set-ItemProperty to create and change registry values and data.
 For example, you can add a new registry entry to a key and establish or change its value.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-itemproperty -path c:\GroupFiles\final.doc -name IsReadOnly -value $true
 ```
@@ -73,7 +73,7 @@ For more information, see about_Automatic_Variables.
 The file is a System.IO.FileInfo object and IsReadOnly is just one of its properties.
 To see all of the properties and methods of a FileInfo object, pipe the file to the Get-Member cmdlet.
 For example, "final.doc | get-member".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 823
 PS C:\> get-itemproperty -path HKLM:\Software\MyCompany
@@ -114,7 +114,7 @@ You can also use the New-ItemProperty cmdlet to create the registry entry and it
 
 For more information about the HKLM: drive, type "get-help get-psdrive".
 For more information about using Windows PowerShell to manage the registry, type "get-help registry".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-childitem weekly.txt | set-itemproperty -name IsReadOnly -value $true
 ```
@@ -344,9 +344,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -392,4 +390,5 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-ItemProperty](Rename-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Stop Process
+title: Stop-Process
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293922
@@ -46,7 +46,7 @@ Also, you are prompted for confirmation unless you use the Force parameter.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-process -name notepad
 ```
@@ -55,7 +55,7 @@ This command stops all instances of the Notepad process on the computer.
 (Each instance of Notepad runs in its own process.) It uses the Name parameter to specify the processes, all of which have the same name.
 If you were to use the ID parameter to stop the same processes, you would have to list the process IDs of each instance of Notepad.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> stop-process -id 3952 -confirm -passthru
 Confirm
@@ -75,7 +75,7 @@ Because the prompt includes the process name, as well as its ID, this is best pr
 The PassThru parameter passes the process object to the formatter for display.
 Without this parameter, there would be no display after a Stop-Process command.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> calc
 PS C:\> $p = get-process calc
@@ -96,7 +96,7 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 HasExited is just one property of process objects.
 To find all the properties, type "get-process | get-member".
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-process lsass | stop-process
 

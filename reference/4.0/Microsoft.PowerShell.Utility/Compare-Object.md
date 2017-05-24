@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Compare Object
+title: Compare-Object
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293945
@@ -37,7 +37,7 @@ NOTE:  If the reference set or the difference set is null ($null), Compare-Objec
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> compare-object -referenceobject $(get-content C:\test\testfile1.txt) -differenceobject $(get-content C:\test\testfile2.txt)
 ```
@@ -45,7 +45,7 @@ PS C:\> compare-object -referenceobject $(get-content C:\test\testfile1.txt) -di
 This command compares the contents of two text files.
 It displays only the lines that appear in one file or in the other file, not lines that appear in both files.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> compare-object -referenceobject $(get-content C:\Test\testfile1.txt) -differenceobject $(get-content C:\Test\testfile2.txt) -includeequal
 ```
@@ -53,7 +53,7 @@ PS C:\> compare-object -referenceobject $(get-content C:\Test\testfile1.txt) -di
 This command compares each line of content in two text files.
 It displays all lines of content from both files, indicating whether each line appears in only Textfile1.txt or Textfile2.txt or whether each line appears in both files.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $processes_before = get-process
 PS C:\> notepad

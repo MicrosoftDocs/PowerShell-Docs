@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Find Module
+title: Find-Module
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821658
@@ -278,11 +278,11 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
-@{Text=}
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Import Alias
+title: Import-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113339
@@ -37,7 +37,7 @@ Beginning in Windows PowerShell 3.0, as a security feature, **Import-Alias** doe
 To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the **Force** parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> import-alias test.txt
 ```

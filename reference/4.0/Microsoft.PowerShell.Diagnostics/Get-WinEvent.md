@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get WinEvent
+title: Get-WinEvent
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289626
@@ -77,7 +77,7 @@ And, you can combine events from multiple sources in a single command.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-WinEvent -ListLog  *
 ```
@@ -90,7 +90,7 @@ Classic logs are usually retrieved first, followed by the new Windows Eventing l
 Because there are typically more than a hundred event logs, this parameter requires a log name or name pattern.
 To get all the logs, use *.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-WinEvent -ListLog Setup | Format-List -Property *
 
@@ -124,7 +124,7 @@ ProviderControlGuid            :
 These commands get an object that represents the classic System log on the local computer.
 The object includes useful information about the log, including its size, event log provider, file path, and whether it is enabled.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-WinEvent -ListLog * -ComputerName Server01 |Where-Object {$_.RecordCount}
 ```
@@ -134,7 +134,7 @@ Many logs might be empty.
 
 The command uses the **RecordCount** property of the **EventLogConfiguration** object that **Get-WinEvent** returns when you use the **ListLog** parameter.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $s = "Server01", "Server02", "Server03"
 PS C:\> Foreach ($Server in $S) {$Server; Get-WinEvent -ListLog "Windows PowerShell" -Computername $Server}
@@ -150,28 +150,28 @@ For each of the computers in the $s variable, it performs the command in the scr
 First, the command prints the name of the computer.
 Then, it runs a **Get-WinEvent** command to get an object that represents the Windows PowerShell log.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-WinEvent -ListProvider *
 ```
 
 This command gets the event log providers on the local computer and the logs to which they write, if any.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> (Get-WinEvent -ListLog Application).ProviderNames
 ```
 
 This command gets all of the providers that write to the Application log on the local computer.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-WinEvent -ListProvider *policy*
 ```
 
 This command gets the event log providers whose names include the word "policy."
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> (Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table ID, Description -AutoSize
 ```
@@ -180,7 +180,7 @@ This command lists the event IDs that the Microsoft-Windows-GroupPolicy event pr
 
 It uses the **Events** property of the object that **Get-WinEvent** returns when you use the **ListProvider** parameter, and it uses the **ID** and **Description** properties of the object in the **Events** property.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 The first command uses the **Get-WinEvent** cmdlet to get all of the events in the Windows PowerShell event log. Then, it saves them in the $Events variable. The log name is enclosed in quotation marks because it contains a space.
 PS C:\> $Events = Get-WinEvent -LogName "Windows PowerShell"
@@ -211,14 +211,14 @@ Count Name
 
 This example shows how to use the properties of the event objects that **Get-WinEvent** returns to learn about the events in an event log.
 
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 PS C:\> Get-WinEvent -LogName *disk*, Microsoft-Windows-Kernel-WHEA
 ```
 
 This command gets the error events whose names include "disk" from all of the event logs on the computer and from the Microsoft-Windows-Kernel-WHEA event log.
 
-### -------------------------- EXAMPLE 11 --------------------------
+### Example 11
 ```
 PS C:\> Get-WinEvent -Path 'c:\ps-test\Windows PowerShell.evtx'
 ```
@@ -226,7 +226,7 @@ PS C:\> Get-WinEvent -Path 'c:\ps-test\Windows PowerShell.evtx'
 This command gets events from a copy of the Windows PowerShell event log file in a test directory.
 The path is enclosed in quotation marks because the log name includes a space.
 
-### -------------------------- EXAMPLE 12 --------------------------
+### Example 12
 ```
 The first command gets the 100 oldest events in the log. It uses the **Get-WinEvent** cmdlet to get events from the Tracelog.etl file. It uses the **MaxEvents** parameter to limit the retrieval to 100 events. Because the events are listed in the order in which they are written to the log (oldest first), the **Oldest** parameter is required.
 PS C:\> Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -MaxEvents 100 -Oldest
@@ -237,7 +237,7 @@ PS C:\> Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest | Sort-Object -Prop
 
 These commands get the first 100 events from an Event Tracing for Windows (ETW) event trace log file.
 
-### -------------------------- EXAMPLE 13 --------------------------
+### Example 13
 ```
 PS C:\> Get-WinEvent -Path "C:\Tracing\TraceLog.etl", "c:\Logs\Windows PowerShell.evtx" -Oldest | Where-Object {$_.ID -eq "103"}
 ```
@@ -249,7 +249,7 @@ Because the files contain the same type of .NET Framework object (an EventLogRec
 
 The command requires the **Oldest** parameter because it is reading from an .etl file, but the **Oldest** parameter applies to both of the files.
 
-### -------------------------- EXAMPLE 14 --------------------------
+### Example 14
 ```
 PS C:\> # Use the Where-Object cmdlet
 
@@ -278,7 +278,7 @@ The filter methods are more efficient than using the Where-Object cmdlet because
 Because dates are difficult to formulate in the XML and XPath formats, to create the XML content for the date, the Filter Current Log feature of Event Viewer is used.
 For more information about this feature, see Event Viewer Help.
 
-### -------------------------- EXAMPLE 15 --------------------------
+### Example 15
 ```
 PS C:\> $date = (Get-Date).AddDays(-2)
 PS C:\> $events = Get-WinEvent -FilterHashTable @{ LogName = "Microsoft-Windows-Diagnostics-Performance/Operational"; StartTime = $date; ID = 100 }
@@ -294,7 +294,7 @@ The keys in the hash table define a filter that selects events from the performa
 
 The **LogName** key specifies the event log, the **StartTime** key specifies the date, and the ID key specifies the event ID.
 
-### -------------------------- EXAMPLE 16 --------------------------
+### Example 16
 ```
 PS C:\> $StartTime = (Get-Date).AddDays(-7)
 PS C:\> $IE_Error = Get-WinEvent -FilterHashtable @{Logname="Application"; ProviderName="Application Error"; Data="iexplore.exe"; StartTime=$StartTime}

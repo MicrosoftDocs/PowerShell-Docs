@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New PSSessionOption
+title: New-PSSessionOption
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144305
@@ -46,7 +46,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-PSSessionOption
 
@@ -73,7 +73,7 @@ IdleTimeout                       : 00:04:00
 ```
 
 This command creates a session option object with all of the default values.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
 PS C:\> New-PSSession -ComputerName Server01 -SessionOption $pso
@@ -85,7 +85,7 @@ The first command creates a new session option object and saves it in the value 
 
 The second command uses the New-PSSession cmdlet to create a session on the Server01 remote computer.
 The command uses the session option object in the value of the $pso variable as the value of the SessionOption parameter of the command.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Enter-PSSession -ComputerName Server01 -SessionOption (New-PSSessionOption -NoEncryption -NoCompression)
 ```
@@ -94,7 +94,7 @@ This command uses the Enter-PSSession cmdlet to start an interactive session wit
 The value of the **SessionOption** parameter is a **New-PSSessionOption** command with the **NoEncryption** and **NoCompression** switch parameters.
 
 The **New-PSSessionOption** command is enclosed in parentheses to make sure that it runs before the **Enter-PSSession** command.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = New-PSSessionOption
 
@@ -150,7 +150,7 @@ This example demonstrates that you can edit the session option object.
 All properties have read/write values.
 
 Use this method to create a standard session object for your enterprise, and then create customized versions of it for particular uses.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
@@ -163,7 +163,7 @@ To make the **$PSSessionOption** variable available in all sessions, add it to y
 
 For more information about the **$PSSessionOption** preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
 For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $skipCN = New-PSSessionOption -SkipCNCheck
 PS C:\> New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
@@ -179,7 +179,7 @@ The $skipCN check variable is used in the value of the **SessionOption** paramet
 
 Because the computer is identified by its IP address, the value of the **ComputerName** parameter does not match any of the common names in the certificate used for Secure Sockets Layer (SSL).
 As a result, the **SkipCNCheck** option is required.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> $team = @{Team="IT"; Use="Testing"}
 PS C:\> $TeamOption = New-PSSessionOption -ApplicationArguments $team

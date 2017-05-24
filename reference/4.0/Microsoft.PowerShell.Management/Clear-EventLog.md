@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear EventLog
+title: Clear-EventLog
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289799
@@ -34,28 +34,28 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> clear-eventlog "Windows PowerShell"
 ```
 
 This command deletes the entries from the "Windows PowerShell" event log on the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> clear-eventlog -logname ODiag, OSession -computername localhost, Server02
 ```
 
 This command deletes all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> clear-eventlog -log application, system -confirm
 ```
 
 This command prompts you for confirmation before deleting the entries in the specified event logs.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> function clear-all-event-logs ($computerName="localhost")
 {

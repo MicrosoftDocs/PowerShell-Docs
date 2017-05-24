@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Item
+title: Get-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113319
@@ -38,7 +38,7 @@ It does not get the contents of the item at the location unless you use a wildca
 The Get-Item cmdlet is used by Windows PowerShell providers to enable you to navigate through different types of data stores.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-item .
 
@@ -50,7 +50,7 @@ d----         7/26/2006  10:01 AM            ps-test
 
 This command gets the current directory.
 The dot (.) represents the item at the current location (not its contents).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-item *
 
@@ -67,14 +67,14 @@ d----         7/26/2006   9:26 AM            Recs
 
 This command gets all the items in the current directory.
 The wildcard character (*) represents all the contents of the current item.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-item C:\
 ```
 
 This command gets the current directory of the C: drive.
 The object that is retrieved represents only the directory, not its contents.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-item C:\*
 ```
@@ -84,7 +84,7 @@ The wildcard character (*) represents all the items in the container, not just t
 
 In Windows PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*".
 The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> (get-item C:\Windows).LastAccessTime
 ```
@@ -92,14 +92,14 @@ PS C:\> (get-item C:\Windows).LastAccessTime
 This command gets the LastAccessTime property of the C:\Windows directory.
 LastAccessTime is just one property of file system directories.
 To see all of the properties of a directory, type "(Get-Item \<directory-name\>) | Get-Member".
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
 ```
 
 This command shows the contents of the Microsoft.PowerShell registry key.
 You can use Get-Item with the Windows PowerShell Registry provider to get registry keys and subkeys, but you must use Get-ItemProperty to get the registry values and data.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-item c:\Windows\*.* -exclude w*
 ```
@@ -265,9 +265,7 @@ Accept wildcard characters: True
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -325,4 +323,5 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

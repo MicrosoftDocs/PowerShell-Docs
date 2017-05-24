@@ -5,27 +5,27 @@ ms.topic:  reference
 author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  2017-03-15
 title:  README
 ms.technology:  powershell
 ---
 
-
-#  PowerShell Reference
+# PowerShell Reference
 
 Reference material is organized into release versions.
 
-- 3.0
-- 4.0
-- 5.0
-- 5.1
+- [3.0](3.0/readme.md)
+- [4.0](4.0/readme.md)
+- [5.0](5.0/readme.md)
+- [5.1](5.1/readme.md)
+- [6](6/readme.md)
 
 The content for each version is organized by namespace,
 and a distinct folder for the about topics.
 
 Over time, namespaces appeared as:
 
-- ISE, introduced in 3.0
+- ISE, introduced in 2.0
 - Microsoft.PowerShell.Archive, introduced in 5.0
 - Microsoft.PowerShell.Core, introduced in 3.0
 - Microsoft.PowerShell.Diagnostics, introduced in 3.0

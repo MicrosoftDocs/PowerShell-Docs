@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove Computer
+title: Remove-Computer
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293894
@@ -52,7 +52,7 @@ It includes credential parameters that specify alternate credentials for connect
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Remove-Computer -UnjoinDomaincredential Domain01\Admin01 -Passthru -Verbose -Restart
 ```
@@ -64,7 +64,7 @@ It uses the **PassThru** parameter and the **Verbose** common parameter to displ
 
 Because the command does not specify a workgroup name, the local computer is moved to the "WORKGROUP" workgroup after it is removed from its domain.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName Legacy -Force -Restart
 ```
@@ -74,7 +74,7 @@ This command removes all of the computers that are listed in the OldServers.txt 
 The command uses the **LocalCredential** parameter to supply the credentials of a user who has permission to connect to remote computers and the **UnjoinDomainCredential** parameter to supply the credentials of a user who has permission to remove the computers from their domains.
 It uses the **Force** parameter to suppress the confirmation prompts for each computer and the **Restart** parameter to restart each of the computers after it is removed from its domain.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Remove-Computer -ComputerName Server01, localhost -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName Local -Restart -Force
 ```

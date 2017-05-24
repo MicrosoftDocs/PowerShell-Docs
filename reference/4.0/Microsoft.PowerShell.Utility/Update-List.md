@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Update List
+title: Update-List
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294024
@@ -49,7 +49,7 @@ To determine whether a cmdlet supports Update-List, see the cmdlet Help topic.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-mailbox | update-list -Property aliases -Add "A","B" -Remove "X","Y" | set-mailbox
 ```
@@ -66,7 +66,7 @@ The Update-List cmdlet returns the updated mailbox, which is piped to the Set-Ma
 
 For more information about Get-Mailbox, see http://go.microsoft.com/fwlink/?LinkId=111536.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $m = get-mailbox
 PS C:\> update-list -InputObject $m -Property aliases -Add "A","B" -Remove "X", "Y" | set-mailbox
@@ -82,7 +82,7 @@ It uses the Property parameter to specify the Aliases property and the Add and R
 
 The command uses a pipeline operator (|) to send the updated mailbox object to the Set-Mailbox cmdlet, which changes the mailbox.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-mailbox | set-mailbox -alias (update-list -Add "A", "B" -Remove "X","Y")
 ```
@@ -101,7 +101,7 @@ The value of the Alias parameter is an Update-List command that creates an objec
 The Update-List command is enclosed in parentheses to ensure that it runs before the value of the Alias parameter is evaluated.
 When the Set-Mailbox command completes, the mailbox is changed.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> update-list -InputObject $a -Property aliases -replace "A", "B" | set-mailbox
 ```

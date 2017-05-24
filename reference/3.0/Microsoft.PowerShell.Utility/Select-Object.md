@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Select Object
+title: Select-Object
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113387
@@ -44,13 +44,13 @@ When you include a **Select-Object** command with the **First** or **Index** par
 To turn off this optimizing behavior, use the **Wait** parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
 This command creates objects that have the Name, ID, and working set (WS) properties of process objects.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
 
@@ -72,7 +72,7 @@ It uses the **Select-Object** cmdlet to create new objects with only the selecte
 The command uses the **Property** parameter of the **Select-Object** cmdlet to select the process names.
 Because the **Modules** property contains an **ModuleProcess** object that has many properties, the command uses the **ExpandProperty** parameter to get the properties of the objects in the **Modules** property of each process.
 The command uses the Format-List parameter to display the name and modules in of each process in a list.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Process | Sort-Object -Property WS | Select-Object -Last 5
 
@@ -91,7 +91,7 @@ The Sort-Object cmdlet sorts the processes according to memory (working set) usa
 
 The **Wait** parameter is not required in commands that include the **Sort-Object** cmdlet because **Sort-Object** processes all objects and then returns a collection.
 The **Select-Object** optimization is available only for commands that return objects individually as they are processed.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression = {$_.StartTime.DayOfWeek}}
 
@@ -108,7 +108,7 @@ This command gets the name and start day of the processes running on a computer.
 The command uses the Get-Process cmdlet to get the processes on the computer.
 It passes the processes to the **Select-Object** cmdlet, which creates objects that have only the **ProcessName** parameter and a calculated property named "Start Day." The "Start Day" property is added by using a hash table with Name and Expression keys.
 The value of the Expression key is a script blocks that gets the StartTime property of each process and the DayofWeek property of the StartTime.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> "a","b","c","a","a","a" | Select-Object -Unique
 
@@ -118,7 +118,7 @@ c
 ```
 
 This command uses the Unique parameter of Select-Object to get unique characters from an array of characters.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $a = Get-Eventlog -Log "Windows PowerShell"
 $a | select-object -index 0, ($a.count - 1)
@@ -133,7 +133,7 @@ The second command uses a pipeline operator (|) to send the events in $a to the 
 The **Select-Object** command uses the **Index** parameter to select events from the array of events in the $a variable.
 The index of the first event is 0.
 The index of the last event is the number of items in $a minus 1.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
@@ -142,7 +142,7 @@ This command creates a new PSSession on each of the computers listed in the Serv
 
 This command uses the **Select-Object** cmdlet to select all but the first computer in a list of computer names.
 The resulting list of computers is set as the value of the **ComputerName** parameter of the New-PSSession cmdlet.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
 ```

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Content
+title: Get-Content
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113310
@@ -42,7 +42,7 @@ It reads the content one line at a time and returns a collection of objects , ea
 Beginning in Windows PowerShell 3.0, **Get-Content** can also get a specified number of lines from the beginning or end of an item.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Content -Path C:\Chapters\Chapter1.txt
 ```
@@ -50,7 +50,7 @@ PS C:\> Get-Content -Path C:\Chapters\Chapter1.txt
 This command gets the content of the Chapter1.txt file.
 It uses the **Path** parameter to specify the name of the item.
 **Get-Content** actually passes the content down the pipeline, but because there are no other pipeline elements, the content is formatted by default and displayed at the command line.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Content c:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
 ```
@@ -59,14 +59,14 @@ This command gets the first 50 lines of the Log060912.txt file and stores them i
 The command uses the **Get-Content** cmdlet to get the text in the file.
 (The name of **Path** parameter, which is optional, is omitted.) The **TotalCount** parameter limits the content retrieved to the first 50 lines.
 The pipeline operator (|) sends the result to the Set-Content cmdlet, which places it in the Sample.txt file.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> (Get-Content Cmdlets.txt -TotalCount 5)[-1]
 ```
 
 This command gets the fifth line of the Cmdlets.txt text file.
 It uses the **TotalCount** parameter to get the first five lines and then uses array notation to get the last line (indicated by "-1") of the resulting set.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> dir .\*.txt | ForEach {Get-Content $_ -Head 1; Get-Content $_ -Tail 1}
 ```
@@ -197,9 +197,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -407,4 +405,5 @@ The output type depends upon the content that it gets.
 [Set-Content](Set-Content.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

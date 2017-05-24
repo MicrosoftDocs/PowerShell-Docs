@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register PSSessionConfiguration
+title: Register-PSSessionConfiguration
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289605
@@ -74,7 +74,7 @@ For information about session configuration files, see about_Session_Configurati
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Register-PSSessionConfiguration -Name NewShell -ApplicationBase c:\MyShells\ -AssemblyName MyShell.dll -ConfigurationTypeName MyClass
 ```
@@ -85,7 +85,7 @@ It also uses the **ConfigurationTypeName** parameter to specify a new class that
 
 To use this configuration, type "new-pssession -configurationname newshell".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
 ```
@@ -97,7 +97,7 @@ When a user uses a New-PSSession command and selects the MaintenanceShell config
 The script can configure the session, including importing modules, adding Windows PowerShell snap-ins, and setting the execution policy for the session.
 If the script generates any errors, including non-terminating errors, the **New-PSSession** command fails.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
 PS C:\> Register-PSSessionConfiguration -name AdminShell -SecurityDescriptorSDDL $sddl -MaximumReceivedObjectSizeMB 20 -StartupScript C:\scripts\AdminShell.ps1
@@ -114,7 +114,7 @@ It also uses the **StartupScript** parameter to specify a script that configures
 As an alternative to using the **SecurityDescriptorSDDL** parameter, you can use the **ShowSecurityDescriptorUI** parameter, which displays a property sheet that you can use to set permissions for the session configuration.
 When you click "OK" in the property sheet, the tool generates an SDDL for the session configuration.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **Register-PSSessionConfiguration** cmdlet to register the MaintenanceShell configuration. It saves the object that the cmdlet returns in the $s variable.
 PS C:\> $s = Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
@@ -161,7 +161,7 @@ microsoft.powershell32    Container            {Name=microsoft.powershell32}
 This example shows that a Register-PSSessionConfiguration command returns a WSManConfigContainerElement.
 It also shows how to find the container elements in the WSMan: drive.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
 
@@ -178,7 +178,7 @@ The script contains a single command that uses dot sourcing to run the user's **
 For more information about profiles, see about_Profiles.
 For more information about dot sourcing, see about_Scopes.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first pair of commands use the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-Language file. The second command creates a restricted-language file. Other than the value of the **LanguageMode** parameter, the session configuration files are equivalent.
 PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage

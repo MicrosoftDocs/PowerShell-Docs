@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Show Command
+title: Show-Command
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294016
@@ -54,7 +54,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Show-Command
 ```
@@ -62,7 +62,7 @@ PS C:\> Show-Command
 This command displays the default view of the **Show-Command** window.
 The command window displays a list of all commands in all modules that are installed on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Show-Command -Name Invoke-Command
 ```
@@ -70,7 +70,7 @@ PS C:\> Show-Command -Name Invoke-Command
 This command opens the Invoke-Command cmdlet display in the **Show-Command** window.
 You can use the Invoke-Command display to run **Invoke-Command** commands.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Show-Command -Name Connect-PSSession -Height 700 -Width 1000 -ErrorPopup
 ```
@@ -80,7 +80,7 @@ It uses the **Height** and **Width** parameters to specify the dimension of the 
 
 When you click **Run**, the **Connect-PSSession** command runs, just as would if you typed the **Connect-PSSession** command at the command line.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $PSDefaultParameterValues = @{"Show-Command:Height" = 700; "Show-Command:Width" = 1000; "Show-Command:ErrorPopup" = $True}
 ```
@@ -91,7 +91,7 @@ Now when you run a **Show-Command** command, the new defaults are applied automa
 To use these default values in every Windows PowerShell session, add the **$PSDefaultParameterValues** variable to your Windows PowerShell profile.
 For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729) and about_PSDefaultParameterValues (http://go.microsoft.com/fwlink/?LinkID=228266).
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Show-Command Get-ChildItem | Out-GridView
 ```
@@ -102,7 +102,7 @@ The command uses the **Show-Command** cmdlet to open a command window for the Ge
 When you click the **Run** button, the **Get-ChildItem** command runs and generates output.
 The pipeline operator ( | ) sends the output of the **Get-ChildItem** command to the **Out-GridView** cmdlet, which displays the **Get-ChildItem** output in an interactive window.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Show-Command -Passthru
 Get-EventLog -LogName "Windows PowerShell" -Newest 5
@@ -115,7 +115,7 @@ For example, if you use the **Show-Command** window to create a Get-EventLog com
 
 Viewing the command string helps you to learn Windows PowerShell.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command uses the **PassThru** parameter of the **Show-Command** cmdlet. It saves the results of the command in the $c variable.The command opens a Show-Command window. In this case, we use the **Show-Command** window to create a Get-EventLog command that gets the five newest events in the Windows PowerShell event log. When you click **OK**, **Show-Command** returns the command string, which is saved in the $c variable.
 PS C:\> $c = Show-Command -Passthru
@@ -140,7 +140,7 @@ PS C:\> iex $c
 This command shows how to run the command string that you get when you use the **PassThru** parameter of the **Show-Command** cmdlet.
 This strategy lets you see the command and use it.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 The first command runs the **Show-Command** cmdlet with the **ErrorPopup** parameter. In addition to displaying errors in a window, **ErrorPopup** returns command output to the current command, instead of creating a new command.When you run this command, the **Show-Command** window opens. You can use the window features to set parameter values. To run the command, click the **Run** button in the **Show-Command** window. 
 PS C:\> $p = Show-Command Get-Process -ErrorPopup

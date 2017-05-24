@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set Acl
+title: Set-Acl
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113389
@@ -48,7 +48,7 @@ Then, use the **AclObject** or **SecurityDescriptor** parameters to supply a sec
 It uses the value of the **AclObject** parameter as a model and changes the values in the item's security descriptor to match the values in the **AclObject** parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $DogACL = Get-Acl C:\Dog.txt
 PS C:\> Set-Acl -Path C:\Cat.txt -AclObject $DogACL
@@ -64,7 +64,7 @@ The second command uses **Set-Acl** to change the values in the ACL of Cat.txt t
 
 The value of the **Path** parameter is the path to the Cat.txt file.
 The value of the **AclObject** parameter is the model ACL, in this case, the ACL of Dog.txt as saved in the $DogACL variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Acl C:\Dog.txt | Set-Acl -Path C:\Cat.txt
 ```
@@ -76,7 +76,7 @@ The pipeline operator (|) passes an object that represents the Dog.txt security 
 
 The second command uses **Set-Acl** to apply the security descriptor of  Dog.txt to Cat.txt.
 When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $NewAcl = Get-Acl File0.txt
 PS C:\> Get-ChildItem c:\temp -Recurse -Include *.txt -Force | Set-Acl -AclObject $NewAcl
@@ -211,7 +211,7 @@ Accept wildcard characters: True
 Establishes or changes the central access policy of the item.
 Enter the CAP ID or friendly name of a central access policy on the computer.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see "Central Access Policies" at http://go.microsoft.com/fwlink/?LinkId=238408http://go.microsoft.com/fwlink/?LinkId=238408.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ### -ClearCentralAccessPolicy
 Removes the central access policy from the specified item.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see "Central Access Policies" at http://go.microsoft.com/fwlink/?LinkId=238408http://go.microsoft.com/fwlink/?LinkId=238408.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -324,9 +324,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -359,4 +357,5 @@ The type of the security object depends on the type of the item.
 ## RELATED LINKS
 
 [Get-Acl](Get-Acl.md)
+
 

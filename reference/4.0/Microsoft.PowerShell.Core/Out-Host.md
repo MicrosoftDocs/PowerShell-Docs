@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Out Host
+title: Out-Host
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289601
@@ -32,7 +32,7 @@ Because **Out-Host** is the default, you do not need to specify it unless you wa
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Process | Out-Host -Paging
 ```
@@ -45,7 +45,7 @@ The **Paging** parameter displays one page of data at a time.
 The same command format is used for the Help function that is built into Windows PowerShell.
 That function gets data from the Get-Help cmdlet and then uses the **Paging** parameter of **Out-Host** to display the data one page at a time by using this command format: `Get-Help $Args\[0\] | Out-Host -Paging`.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = Get-History
 PS C:\> Out-Host -InputObject $a

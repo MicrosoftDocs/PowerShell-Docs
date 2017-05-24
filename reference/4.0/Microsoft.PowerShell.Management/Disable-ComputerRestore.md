@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disable ComputerRestore
+title: Disable-ComputerRestore
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=290486
@@ -38,14 +38,14 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> disable-computerrestore -drive "C:\"
 ```
 
 This command disables System Restore on the C: drive.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> disable-computerrestore "C:\", "D:\"
 ```

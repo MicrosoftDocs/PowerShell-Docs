@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disable PSRemoting
+title: Disable-PSRemoting
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144298
@@ -45,19 +45,19 @@ The commands might appear to succeed, but the remoting is not configured correct
 Remote commands, and later attempts to enable and disable remoting, are likely to fail.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 C:\PS>Disable-PSRemoting
 ```
 
 This command prevents remote access to all session configurations on the computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 C:\PS>Disable-PSRemoting -Force
 ```
 
 This command prevents remote access all session configurations on the computer without prompting.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 C:\PS>Disable-PSRemoting -Force
 
@@ -88,7 +88,7 @@ The command succeeds.
 The third command is run on the Server02 remote computer.
 The command uses the **New-PSSession** cmdlet to create a session to the Server01 remote computer.
 Because remote access is disabled, the command fails.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 C:\PS>Disable-PSRemoting -force
 
@@ -135,7 +135,7 @@ The command uses the **Force** parameter to suppress all user prompts and to res
 
 The fourth command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display the names and permissions of the session configurations.
 The results show that the "AccessDenied" security descriptors have been removed from all session configurations.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 C:\PS>Register-PSSessionConfiguration -Name Test -FilePath .\TestEndpoint.pssc -ShowSecurityDescriptorUI
 
@@ -183,7 +183,7 @@ The output shows that an AccessDenied security descriptor for all network users 
 Although the other security desriptors are not changed, the "network_deny_all" security descriptor takes precedence.
 
 The fifth command shows that the **Disable-PSRemoting** command prevents even the Domain01\User01 user with special permissions to the Test session configuration from using the Test session configuration to connect to the computer remotely.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 C:\PS>Disable-PSRemoting -Force
 

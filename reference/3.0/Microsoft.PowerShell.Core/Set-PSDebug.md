@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set PSDebug
+title: Set-PSDebug
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113398
@@ -37,7 +37,7 @@ When the parameter is set to 2, variable assignments, function calls, and script
 If the Step parameter is specified, you are prompted before each line of the script is executed.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-psdebug -trace 2; foreach ($i in 1..3) {$i}
 
@@ -51,7 +51,7 @@ DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
 ```
 
 This command sets the trace level to 2, and then runs a script that displays the numbers 1, 2, and 3.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-psdebug -step; foreach ($i in 1..3) {$i}
 
@@ -69,7 +69,7 @@ DEBUG:    1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
 This command turns on stepping and then
 
 runs a script that displays the numbers 1, 2, and 3.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-psdebug -off; foreach ($i in 1..3) {$i}
 1
@@ -78,7 +78,7 @@ PS C:\> set-psdebug -off; foreach ($i in 1..3) {$i}
 ```
 
 This command turns off all debugging features, and then runs a script that displays the numbers 1, 2, and 3.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> set-psdebug -strict; $NewVar
 The variable $NewVar cannot be retrieved because it has not been set yet.

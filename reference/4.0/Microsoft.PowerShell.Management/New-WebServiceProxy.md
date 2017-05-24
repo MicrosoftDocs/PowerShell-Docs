@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New WebServiceProxy
+title: New-WebServiceProxy
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293890
@@ -48,14 +48,14 @@ The Microsoft .NET Framework provides Web service proxy objects that represent t
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WSDL
 ```
 
 This command uses the **New-WebServiceProxy** command to create a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
 PS C:\> $zip = New-WebServiceProxy -Uri $URI -Namespace WebServiceProxy -Class USZip
@@ -68,7 +68,7 @@ The first command stores the URI of the Web service in the $URI variable.
 The second command creates the Web service proxy.
 The command uses the **URI** parameter to specify the URI and the **Namespace** and **Class** parameters to specify the namespace and class of the object.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $zip | get-member -type method
 
@@ -104,7 +104,7 @@ We will use these methods in the following example.
 
 Notice that the TypeName of the proxy object, WebServiceProxy, reflects the namespace and class names that were specified in the previous example.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $zip.getinfobyzip(20500).table
 CITY      : Washington

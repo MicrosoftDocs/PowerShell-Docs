@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Job
+title: Start-Job
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113405
@@ -63,7 +63,7 @@ Beginning in Windows PowerShell 3.0, **Start-Job** can start instances of custom
 For information about using **Start-Job** to start jobs with custom types, see the help topics for the job type feature.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-job -scriptblock {get-process}
 
@@ -75,7 +75,7 @@ Id    Name  State    HasMoreData  Location   Command
 This command starts a background job that runs a Get-Process command.
 The command returns a job object with information about the job.
 The command prompt returns immediately so that you can work in the session while the job runs in the background.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
 ```
@@ -87,7 +87,7 @@ The command uses the ComputerName parameter to specify the computers on which th
 The value of the ComputerName parameter is a Get-Content command that gets the text in the Servers.txt file, a file of computer names in a domain.
 
 The command uses the ScriptBlock parameter to specify the command and the JobName parameter to specify a friendly name for the job.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
 PS C:\> $j | format-list -property *
@@ -142,13 +142,13 @@ The fourth command uses the Receive-Job cmdlet to get the results of the job.
 It stores the results in the $results variable.
 
 The final command displays the contents of the $results variable.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> start-job -filepath c:\scripts\sample.ps1
 ```
 
 This command runs the Sample.ps1 script as a background job.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> start-job -name WinRm -scriptblock {get-process winrm}
 ```
@@ -156,7 +156,7 @@ PS C:\> start-job -name WinRm -scriptblock {get-process winrm}
 This command runs a background job that gets the WinRM process on the local computer.
 The command uses the ScriptBlock parameter to specify the command that runs in the background job.
 It uses the Name parameter to specify a friendly name for the new job.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
 ```

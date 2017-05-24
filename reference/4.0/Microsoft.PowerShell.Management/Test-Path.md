@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Test Path
+title: Test-Path
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293927
@@ -42,7 +42,7 @@ It can also tell whether the path syntax is valid and whether the path leads to 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-path -path "C:\Documents and Settings\NicoleH"
 ```
@@ -51,7 +51,7 @@ This command tells whether all elements in the path exist, that is, the C: direc
 If any are missing, the cmdlet returns FALSE.
 Otherwise, it returns TRUE.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> test-path -path $profile
 PS C:\> test-path -path $profile -IsValid
@@ -66,7 +66,7 @@ These commands use $profile, the automatic variable that points to the location 
 
 For more information about automatic variables, see about_Automatic_Variables.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> test-path -path "C:\CAD\Commercial Buildings\*" -exclude *.dwg
 ```
@@ -82,7 +82,7 @@ The command uses the Exclude parameter to specify files that will be omitted fro
 
 In this case, because the directory contains only .dwg files, the result is FALSE.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> test-path -path $profile -pathtype leaf
 ```
@@ -90,7 +90,7 @@ PS C:\> test-path -path $profile -pathtype leaf
 This command tells whether the path stored in the $profile variable leads to a file.
 In this case, because the Windows PowerShell profile is a .ps1 file, the cmdlet returns TRUE.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 TRUE
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -NewerThan
-{{Fill NewerThan Description}}
+Specify a time as a **DateTime** object.
 
 ```yaml
 Type: DateTime
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -OlderThan
-{{Fill OlderThan Description}}
+Specify a time as a **DateTime** object.
 
 ```yaml
 Type: DateTime

@@ -1,0 +1,603 @@
+---
+description:  
+manager:  carmonm
+ms.topic:  reference
+author:  jpjofre
+ms.prod:  powershell
+keywords:  powershell,cmdlet
+ms.date:  2016-12-12
+title:  about_Language_Keywords
+ms.technology:  powershell
+---
+
+# About Language Keywords
+## about_Language_Keywords
+
+
+
+# SHORT DESCRIPTION
+
+Describes the keywords in the Windows PowerShell scripting language.
+
+# LONG DESCRIPTION
+
+Windows PowerShell has the following language keywords. For more
+information, see the about topic for the keyword and the information that
+follows the table.
+
+Keyword     |       Reference
+-------     |       ---------
+Begin       | about\_Functions, about\_Functions\_Advanced
+Break       | about\_Break, about\_Trap
+Catch       | about\_Try\_Catch\_Finally
+Class       | about\_Classes
+Continue    | about\_Continue, about\_Trap
+Data        | about\_Data\_Sections
+Do          | about\_Do, about\_While
+DynamicParam| about\_Functions\_Advanced\_Parameters
+Else        | about\_If
+Elseif      | about\_If
+End         | about\_Functions, about\_Functions\_Advanced\_Methods
+Enum        | about\_Enums
+Exit        | Described in this topic.
+Filter      | about\_Functions
+Finally     | about\_Try\_Catch\_Finally
+For         | about\_For
+ForEach     | about\_ForEach
+From        | Reserved for future use.
+Function    | about\_Functions, about\_Functions\_Advanced
+If          | about\_If
+In          | about\_ForEach
+InlineScript| about\_InlineScript
+Hidden      | about\_Hidden
+Param       | about\_Functions
+Process     | about\_Functions, about\_Functions\_Advanced
+Return      | about\_Return
+Static      | about\_Classes
+Switch      | about\_Switch
+Throw       | about\_Throw, about\_Functions\_Advanced\_Methods
+Trap        | about\_Trap, about\_Break, about\_Try\_Catch\_Finally
+Try         | about\_Try\_Catch\_Finally
+Until       | about\_Do
+Using       | about\_Using, about\_Classes
+While       | about\_While, about\_Do
+
+Language Keywords
+
+**Begin**
+-----
+
+Specifies one part of the body of a function, along with the
+DynamicParam, Process, and End keywords. The Begin statement list runs
+one time before any objects are received from the pipeline.
+
+Syntax:
+```
+function <name> {
+DynamicParam {<statement list>}
+begin {<statement list>}
+process {<statement list>}
+end {<statement list>}
+}
+```
+
+**Break**
+-----
+
+Causes a script to exit a loop.
+
+Syntax:
+```
+while (<condition>) {
+   <statements>
+   ...
+
+   break
+   ...
+
+   <statements>
+}
+```
+
+**Catch**
+-----
+
+Specifies a statement list to run if an error occurs in the
+accompanying Try statement list. An error type requires brackets. The
+second pair of brackets indicates that the error type is optional.
+
+Syntax:
+```
+try {<statement list>}
+catch [[<error type>]] {<statement list>}
+```
+
+**Class**
+-----
+
+Specifies a new class in PowerShell.
+
+Syntax:
+```
+class <class-name> {
+    [[hidden] [static] <property-definition> ...]
+    [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
+    [[hidden] [static] <method-definition> ...]
+}
+```
+
+**Continue**
+--------
+
+Causes a script to stop running a loop and to go back to the condition.
+If the condition is met, the script begins the loop again.
+
+Syntax:
+```
+while (<condition>) {
+   <statements>
+   ...
+
+   continue
+   ...
+
+   <statements>
+}
+```
+
+**Data**
+----
+
+In a script, defines a section that isolates data from the script logic.
+Can also include If statements and some limited commands.
+
+Syntax:
+```
+data <variable> [-supportedCommand <cmdlet-name>] {<permitted content>}
+```
+
+**Do**
+--
+
+Used with the While or Until keyword as a looping construct. Windows
+PowerShell runs the statement list at least one time, unlike a loop that
+uses While.
+
+Syntax for _While_:
+```
+do {<statement list>} while (<condition>)
+```
+
+Syntax for _Until_:
+```
+do {<statement list>} until (<condition>)
+```
+
+**DynamicParam**
+------------
+
+Specifies one part of the body of a function, along with the Begin,
+Process, and End keywords. Dynamic parameters are added at run time.
+
+Syntax:
+```
+function <name> {
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
+}
+```
+
+**Else**
+----
+
+Used with the If keyword to specify the default statement list.
+
+Syntax:
+```
+if (<condition>) {<statement list>}
+else {<statement list>}
+```
+
+**Elseif**
+------
+
+Used with the If and Else keywords to specify additional conditionals.
+The Else keyword is optional.
+
+Syntax:
+```
+if (<condition>) {<statement list>}
+elseif (<condition>) {<statement list>}
+else {<statement list>}
+```
+
+**End**
+---
+
+Specifies one part of the body of a function, along with the
+DynamicParam, Begin, and End keywords. The End statement list runs one
+time after all the objects have been received from the pipeline.
+
+Syntax:
+```
+function <name> {
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
+}
+```
+
+**Enum**
+----
+
+`enum` is used to declare an enumeration;
+a distinct type that consists of a set of named labels called the
+enumerator list.
+
+Syntax:
+```
+enum <enum-name> {
+    <label> [= <int-value>]
+    ...
+}
+```
+
+**Exit**
+----
+
+Causes Windows PowerShell to exit a script or a Windows PowerShell
+instance.
+
+When you run 'powershell.exe -File <path to a script>', you can only
+set the %ERRORLEVEL% variable to a value other than zero by using the
+exit statement. In the following example, the user sets the error level
+variable value to 4 by adding 'exit 4' to the script file _test.ps1_.
+
+```
+C:\Users\bruce\documents\test>type test.ps1
+1
+
+2
+
+3
+
+exit 4
+
+C:\Users\bruce\documents\test>powershell -file ./test.ps1
+1
+
+2
+
+3
+
+
+C:\Users\bruce\documents\test>echo %ERRORLEVEL%
+4
+```
+
+When you use powershell.exe with the File parameter, the .ps1 (script)
+file itself should include instructions for handling any errors or
+exceptions that occur while the script is running. You should only use
+the exit statement to indicate the post-execution status of the script.
+
+Syntax:
+```
+exit
+exit <exit code>
+```
+
+**Filter**
+------
+
+Specifies a function in which the statement list runs one time for each
+input object. It has the same effect as a function that contains only a
+Process block.
+
+Syntax:
+```
+filter <name> {<statement list>}
+```
+
+**Finally**
+-------
+
+Defines a statement list that runs after statements that are associated
+with Try and Catch. A Finally statement list runs even if you press
+CTRL+C to leave a script or if you use the Exit keyword in the script.
+
+Syntax:
+```
+try {<statement list>}
+catch [<error type] {<statement list>}
+finally {<statement list>}
+```
+
+**For**
+---
+
+Defines a loop by using a condition.
+
+Syntax:
+```
+for (<initialize>; <condition>; <iterate>) { <statement list> }
+```
+
+**ForEach**
+-------
+
+Defines a loop by using each member of a collection.
+
+Syntax:
+```
+ForEach (<item> in <collection>) { <statement list> }
+```
+
+**From**
+-----
+
+Reserved for future use.
+
+**Function**
+--------
+
+Creates a named statement list of reusable code. You can name the scope a
+function belongs to. And, you can specify one or more named parameters by
+using the Param keyword. Within the function statement list, you can
+include DynamicParam, Begin, Process, and End statement lists.
+
+Syntax:
+```
+function [<scope:>]<name> {
+   param ([type]<$pname1> [, [type]<$pname2>])
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
+}
+```
+You also have the option of defining one or more parameters outside the
+statement list after the function name.
+
+Syntax:
+```
+function [<scope:>]<name> [([type]<$pname1>, [[type]<$pname2>])] {
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
+}
+```
+
+**If**
+--
+
+Defines a conditional.
+
+Syntax:
+```
+if (<condition>) {<statement list>}
+```
+
+**Hidden**
+------
+
+Hides class members from the default results of the Get-Member cmdlet, and
+from IntelliSense and tab completion results.
+
+Syntax:
+```
+Hidden [data type] $member_name
+```
+
+**In**
+--
+
+Used in a ForEach statement to create a loop that uses each member of a
+collection.
+
+Syntax:
+```
+ForEach (<item> in <collection>){<statement list>}
+```
+
+**InlineScript**
+------------
+Runs workflow commands in a shared Windows PowerShell session.
+This keyword is valid only in a Windows PowerShell Workflow.
+
+Syntax:
+```
+workflow <verb>-<noun>
+{
+   InlineScript
+   {
+      <Command/Expression>
+      ...
+
+   }
+}
+```
+
+The InlineScript keyword indicates an InlineScript activity,
+which runs commands in a shared standard (non-workflow)
+session. You can use the InlineScript keyword to run commands
+that are not otherwise valid in a workflow, and to run commands
+that share data. By default, the commands in an InlineScript
+script block run in a separate process.
+
+For more information, see about_InlineScript and
+[Running Windows PowerShell Commands in a Workflow](http://technet.microsoft.com/library/jj574197.aspx).
+
+**Param**
+-----
+
+Defines the parameters in a function.
+
+Syntax:
+```
+function [<scope:>]<name> {
+   param ([type]<$pname1>[, [[type]<$pname2>]])
+   <statement list>
+}
+```
+
+**Process**
+-------
+
+Specifies a part of the body of a function, along with the DynamicParam,
+Begin, and End keywords. When a Process statement list receives input
+from the pipeline, the Process statement list runs one time for each
+element from the pipeline. If the pipeline provides no objects, the
+Process statement list does not run. If the command is the first command
+in the pipeline, the Process statement list runs one time.
+
+Syntax:
+```
+function <name> {
+   DynamicParam {<statement list>}
+   begin {<statement list>}
+   process {<statement list>}
+   end {<statement list>}
+}
+```
+
+**Return**
+------
+
+Causes Windows PowerShell to leave the current scope, such as a script or
+function, and writes the optional expression to the output.
+
+Syntax:
+```
+return [<expression>]
+```
+
+**Static**
+--------
+
+Specifies the property or method defined is common to all instances
+of the class in which is defined.
+
+See, in this topic, **Class**  for usage examples.
+
+**Switch**
+------
+
+To check multiple conditions, use a Switch statement.
+The Switch statement is equivalent to a series of If statements,
+but it is simpler.
+
+The Switch statement lists each condition and an optional action.
+If a condition obtains, the action is performed.
+
+Syntax 1:
+```
+switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
+{
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   ...
+
+   default {<statement list>}
+}
+```
+
+Syntax 2:
+```
+switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
+{
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   <string>|<number>|<variable>|{ <expression> } {<statement list>}
+   ...
+
+   default {<statement list>}
+}
+```
+
+**Throw**
+-----
+
+Throws an object as an error.
+
+Syntax:
+```
+throw [<object>]
+```
+
+**Trap**
+----
+
+Defines a statement list to be run if an error is encountered. An error
+type requires brackets. The second pair of brackets indicates that the
+error type is optional.
+
+Syntax:
+```
+trap [[<error type>]] {<statement list>}
+```
+
+**Try**
+---
+
+Defines a statement list to be checked for errors while the statements
+run. If an error occurs, Windows PowerShell continues running in a Catch
+or Finally statement. An error type requires brackets. The second pair of
+brackets indicates that the error type is optional.
+
+Syntax:
+```
+try {<statement list>}
+catch [[<error type]] {<statement list>}
+finally {<statement list>}
+```
+
+**Until**
+-----
+
+Used in a Do statement as a looping construct where the statement list is
+executed at least one time.
+
+Syntax:
+```
+do {<statement list>} until (<condition>)
+```
+
+**Using**
+-----
+
+Allows to indicate which namespaces are used in the session.
+Classes and members require less typing to mention them.
+You can also include classes from modules.
+
+Syntax #1:
+```
+using namespace <.Net-framework-namespace>
+```
+
+Syntax #2:
+```
+using module <module-name>
+```
+
+
+**While**
+-----
+
+Used in a Do statement as a looping construct where the statement list is
+executed at least one time.
+
+Syntax:
+```
+do {<statement list>} while (<condition>)
+```
+
+# SEE ALSO
+
+- [about_Escape_Characters](about_Escape_Characters.md)
+
+- [about_Special_Characters](about_Special_Characters.md)
+
+- [about_Wildcards](about_Wildcards.md)

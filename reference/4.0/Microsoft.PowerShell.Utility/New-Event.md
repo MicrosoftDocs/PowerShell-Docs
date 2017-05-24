@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New Event
+title: New-Event
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293992
@@ -40,7 +40,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-event -sourceidentifier Timer -sender windows.timer  -messagedata "Test"
 ```
@@ -48,7 +48,7 @@ PS C:\> new-event -sourceidentifier Timer -sender windows.timer  -messagedata "T
 This command creates a new event in the Windows PowerShell event queue.
 It uses a Windows.Timer object to send the event.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> function Enable-ProcessCreationEvent
 {

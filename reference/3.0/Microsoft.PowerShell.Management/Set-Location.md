@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set Location
+title: Set-Location
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113397
@@ -42,14 +42,14 @@ You can also use the StackName parameter of the Set-Location cmdlet to make a na
 For more information about location stacks, see the Notes.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-location HKLM:
 PS HKLM:\>
 ```
 
 This command sets the current location to the root of the HKLM: drive.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-location env: -passthru
 
@@ -61,13 +61,13 @@ PS Env:\>
 
 This command sets the current location to the root of the Env: drive.
 It uses the Passthru parameter to direct Windows PowerShell to return a PathInfo (System.Management.Automation.PathInfo) object that represents the Env: location.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-location C:
 ```
 
 This command sets the current location C: drive in the file system provider.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> set-location -stackName WSManPaths
 ```

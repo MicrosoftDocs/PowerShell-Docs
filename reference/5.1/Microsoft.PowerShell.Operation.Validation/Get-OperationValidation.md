@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get OperationValidation
+title: Get-OperationValidation
 ms.technology:  powershell
 external help file:   Microsoft.PowerShell.Operation.Validation-help.xml
 schema:   2.0.0

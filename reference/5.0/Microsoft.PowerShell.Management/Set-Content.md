@@ -6,22 +6,23 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set Content
+title: Set-Content
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821629
 external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
 
-
 # Set-Content
 
 ## SYNOPSIS
+
 Writes or replaces the content in an item with new content.
 
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Set-Content [-Value] <Object[]> [-PassThru] [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
@@ -29,6 +30,7 @@ Set-Content [-Value] <Object[]> [-PassThru] [-Path] <String[]> [-Filter <String>
 ```
 
 ### LiteralPath
+
 ```
 Set-Content [-Value] <Object[]> [-PassThru] -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
@@ -36,6 +38,7 @@ Set-Content [-Value] <Object[]> [-PassThru] -LiteralPath <String[]> [-Filter <St
 ```
 
 ## DESCRIPTION
+
 The **Set-Content** cmdlet is a string-processing cmdlet that writes or replaces the content in the specified item, such as a file.
 Whereas the Add-Content cmdlet appends content to a file, **Set-Content** replaces the existing content.
 You can type the content in the command or send content through the pipeline to **Set-Content**.
@@ -43,6 +46,7 @@ You can type the content in the command or send content through the pipeline to 
 ## EXAMPLES
 
 ### Example 1: Replace the contents of multiple files in a folder
+
 ```
 PS C:\> Set-Content -Path "C:\Test1\test*.txt" -Value "Hello, World"
 ```
@@ -51,6 +55,7 @@ This command replaces the contents of all files in the Test1 folder that have na
 This example shows how to specify content by typing it in the command.
 
 ### Example 2: Send content to a file
+
 ```
 PS C:\> Get-Date | Set-Content -Path "C:\Test1\date.csv"
 ```
@@ -62,6 +67,7 @@ The pipeline operator passes the result to **Set-Content**, which creates the fi
 If the Test1 directory does not exist, the command fails, but if the file does not exist, the command creates it.
 
 ### Example 3: Replace text in a file
+
 ```
 PS C:\> (Get-Content -Path "Notice.txt") | ForEach-Object {$_ -Replace "Warning", "Caution"} | Set-Content -Path "Notice.txt"
 ```
@@ -80,6 +86,7 @@ Without them, the command fails because the two functions will be trying to acce
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -95,6 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -116,25 +124,20 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
+
 Specifies the file encoding.
 The acceptable values for this parameter are:
 
-- ASCII.
-Uses the encoding for the ASCII (7-bit) character set. 
-- BigEndianUnicode.
-Encodes in UTF-16 format using the big-endian byte order. 
-- Byte.
-Encodes a set of characters into a sequence of bytes. 
-- String.
-Uses the encoding type for a string. 
-- Unicode.
-Encodes in UTF-16 format using the little-endian byte order. 
-- UTF7.
-Encodes in UTF-7 format. 
-- UTF8.
-Encodes in UTF-8 format. 
-- Unknown.: The encoding type is unknown or invalid.
-The data can be treated as binary. 
+- **ASCII** Uses the encoding for the ASCII (7-bit) character set.
+- **BigEndianUnicode** Encodes in UTF-16 format using the big-endian byte order. 
+- **BigEndianUTF32** Encodes in UTF-32 format using the big-endian byte order. 
+- **Default** Encodes using the default value: ASCII.
+- **Byte** Encodes a set of characters into a sequence of bytes. 
+- **String** Uses the encoding type for a string. 
+- **Unicode** Encodes in UTF-16 format using the little-endian byte order. 
+- **UTF7** Encodes in UTF-7 format.
+- **UTF8** Encodes in UTF-8 format. 
+- **Unknown** The encoding type is unknown or invalid; the data can be treated as binary. 
 
 The default value is ASCII.
 
@@ -155,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Specifies items that this cmdlet omits.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as *.txt.
@@ -173,10 +177,14 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a filter in the format or language of the provider.
 The value of this parameter qualifies the *Path* parameter.
-The syntax of the filter, including the use of wildcard characters, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when it is retrieving the objects, instead of having Windows PowerShell filter the objects after they are retrieved.
+The syntax of the filter, including the use of wildcard characters, 
+depends on the provider.
+Filters are more efficient than other parameters, 
+because the provider applies them when it is retrieving the objects, 
+instead of having Windows PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -191,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the cmdlet to set the contents of a file, even if the file is read-only.
 Implementation varies from provider to provider.
 For more information, see about_Providers.
@@ -209,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Specifies items that this cmdlet changes.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as *.txt.
@@ -227,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path of the item that receives the content.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
@@ -246,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoNewline
+
 Indicates that this cmdlet uses the no newline setting.
 
 ```yaml
@@ -261,6 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object that represents the content.
 By default, this cmdlet does not generate any output.
 
@@ -277,6 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path of the item that receives the content.
 Wildcard characters are permitted.
 
@@ -293,15 +307,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
 Specifies an alternative data stream for content.
 If the stream does not exist, this cmdlet creates it.
 Wildcard characters are not supported.
 
-Stream is a dynamic parameter that the FileSystem provider adds to **Set-Content**.
+Stream is a dynamic parameter the FileSystem provider adds to **Set-Content**.
 This parameter works only in file system drives.
 
-You can use the Set-Content cmdlet to change the content of the Zone.Identifier alternate data stream.
-However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+You can use the Set-Content cmdlet to change the content of 
+the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks 
+that block files that are downloaded from the Internet.
 If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -319,11 +336,10 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -338,6 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the new content for the item.
 
 ```yaml
@@ -353,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -369,31 +387,52 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: 
+Parameter |
+-- | -
+-Debug |
+-ErrorAction |
+-ErrorVariable |
+-InformationAction |
+-InformationVariable |
+-OutBuffer |
+-OutVariable |
+-PipelineVariable |
+-Verbose |
+-WarningAction |
+-WarningVariable. |
+
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe an object that contains the new value for the item to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.String
-This cmdlet generates a System.String object that represents the content, if you specify the *Passthru* parameter.
+
+This cmdlet generates a System.String object that represents the content, 
+if you specify the *Passthru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* You can also refer to **Set-Content** by its built-in alias, **sc**. For more information, see about_Aliases.
 
-  **Set-Content** is designed for string processing.
-If you pipe non-string objects to this cmdlet, it converts the object to a string before writing it.
+You can also refer to **Set-Content** by its built-in alias, **sc**. 
+For more information, see about_Aliases.
+
+**Set-Content** is designed for string processing.
+If you pipe non-string objects to this cmdlet, 
+it converts the object to a string before writing it.
 To write objects to files, use Out-File.
 
-  **Set-Content** cmdlet is designed to work with the data exposed by any provider.
+**Set-Content** cmdlet is designed to work with the data exposed by any 
+provider.
 To list the providers available in your session, type `Get-PsProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 
@@ -402,4 +441,5 @@ For more information, see about_Providers.
 [Clear-Content](Clear-Content.md)
 
 [Get-Content](Get-Content.md)
+
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get History
+title: Get-History
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113317
@@ -36,14 +36,14 @@ By default, history files are saved in the home directory, but you can save the 
 For more information about the history features in Windows PowerShell, see about_History (http://go.microsoft.com/fwlink/?LinkID=113233).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-History
 ```
 
 This command gets the entries in the session history.
 The default display shows each command and its ID, which indicates the order of execution.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 ```
@@ -51,7 +51,7 @@ PS C:\> Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 This command gets entries in the command history that include "service".
 The first command gets all entries in the session history.
 The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects only the commands that include "service".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-History -ID 7 -Count 5 | Export-Csv History.csv
 ```
@@ -59,7 +59,7 @@ PS C:\> Get-History -ID 7 -Count 5 | Export-Csv History.csv
 This command gets the five most recent history entries ending with entry 7.
 The pipeline operator (|) passes the result to the Export-Csv cmdlet, which formats the history as comma-separated text and saves it in the History.csv file.
 The file includes the data that is displayed when you format the history as a list, including the status and start and end times of the command.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-History -Count 1
 ```
@@ -68,7 +68,7 @@ This command gets the last (most recently entered) command in the command histor
 It uses the **Count** parameter to display just one command.
 By default, **Get-History** gets the most recent commands.
 This command can be abbreviated to "h -c 1" and is equivalent to pressing the up-arrow key.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-History | Format-List -Property *
 ```

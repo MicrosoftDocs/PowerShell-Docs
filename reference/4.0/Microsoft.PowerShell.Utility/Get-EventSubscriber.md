@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get EventSubscriber
+title: Get-EventSubscriber
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293968
@@ -39,7 +39,7 @@ To cancel an event subscription, delete the event subscriber by using the Unregi
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $timer = New-Object Timers.Timer
 PS C:\> $timer | Get-Member -Type Event
@@ -79,7 +79,7 @@ The third command uses the Register-ObjectEvent cmdlet to register for the Elaps
 
 The fourth command uses the Get-EventSubscriber cmdlet to get the event subscriber for the Elapsed event.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $timer  = New-Object Timers.Timer
 PS C:\> $timer.Interval = 500

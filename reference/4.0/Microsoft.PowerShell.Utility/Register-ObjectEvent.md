@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register ObjectEvent
+title: Register-ObjectEvent
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294002
@@ -42,7 +42,7 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
 PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
@@ -54,7 +54,7 @@ This example subscribes to events generated when a new process starts.
 The command uses the ManagementEventWatcher object to get EventArrived events.
 A query object specifies that the events are instance creation events for the Win32_Process class.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
 PS C:\> $processWatcher = New-Object System.Management.ManagementEventWatcher $query
@@ -79,7 +79,7 @@ You can use the Job cmdlets, such as Get-Job and Receive-Job, to manage the back
 
 For more information, see about_Jobs.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s = new-pssession -computername Server01, Server02
 PS C:\> invoke-command -session $s -filepath ProcessCreationEvent.ps1
@@ -97,7 +97,7 @@ The second command uses the FilePath parameter of the Invoke-Command cmdlet to r
 
 The script includes a Register-ObjectEvent command that subscribes to instance creation events on the Win32_Process object through the ManagementEventWatcher object and its EventArrived event.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $timer  = New-Object Timers.Timer
 PS C:\> $timer.Interval = 500
@@ -285,7 +285,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaxTriggerCount
-{{Fill MaxTriggerCount Description}}
+Specifies the max trigger count.
+
+The value of the *Action* parameter can include the $Event, $EventSubscriber, $Sender, $EventArgs, and $Args automatic variables, which provide information about the event to the Action script block.
+For more information, see about_Automatic_Variables.
+
+When you specify an action, **Register-ObjectEvent** returns an event job object that represents that action.
+You can use the Job cmdlets to manage the event job.
 
 ```yaml
 Type: Int32

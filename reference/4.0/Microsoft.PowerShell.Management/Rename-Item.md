@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Rename Item
+title: Rename-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293901
@@ -42,14 +42,14 @@ To move and rename an item, use the Move-Item cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
 ```
 
 This command renames the file daily_file.txt to monday_file.txt.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> rename-item -path project.txt -newname d:\archive\old-project.txt
 
@@ -73,7 +73,7 @@ The result is the error shown in the output.
 The second command shows the correct way to move and rename a file by using the Move-Item cmdlet.
 The Move-Item cmdlet lets you specify both a new path and a new name in the value of its Destination parameter.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
 ```
@@ -81,7 +81,7 @@ PS C:\> rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
 This command uses the Rename-Item cmdlet to rename a registry key from Advertising to Marketing.
 When the command is complete, the key is renamed, but the registry entries in the key are unchanged.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt','.log' }
 ```
@@ -253,9 +253,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -309,4 +307,5 @@ Otherwise, this cmdlet does not generate any output.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

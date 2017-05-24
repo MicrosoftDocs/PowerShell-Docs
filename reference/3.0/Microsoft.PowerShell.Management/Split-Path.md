@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Split Path
+title: Split-Path
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113404
@@ -62,14 +62,14 @@ It can also get items that are referenced by the split path and tell whether the
 You can use this cmdlet to get or submit only a selected part of a path.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> split-path "HKCU:\Software\Microsoft" -qualifier
 HKCU:
 ```
 
 This command returns only the qualifier (the drive) of the path.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> split-path "C:\Test\Logs\*.log" -leaf -resolve
 Pass1.log
@@ -84,7 +84,7 @@ The Resolve parameter tells Split-Path to display the items that the split path 
 
 Like all Split-Path commands, this command returns strings.
 It does not return FileInfo Objects representing the files.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> split-path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
 C:\WINDOWS\system32\WindowsPowerShell\V1.0
@@ -92,7 +92,7 @@ C:\WINDOWS\system32\WindowsPowerShell\V1.0
 
 This command returns only the parent containers of the path.
 Because it does not include any parameters to specify the split, Split-Path uses the split location default, which is Parent.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> split-path ".\My Pictures\*.jpg" -IsAbsolute
 False
@@ -100,7 +100,7 @@ False
 
 This command determines whether the path is relative or absolute.
 In this case, because the path is relative to the current directory, which is represented by a dot (.), it returns FALSE ($false).
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> set-location (split-path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
@@ -111,7 +111,7 @@ This command changes your location to the directory that contains the Windows Po
 The command in parentheses uses the Split-Path cmdlet to return only the parent of the path stored in the built-in $Profile variable.
 (The Parent parameter is the default split location parameter, so you can omit it from the command.) The parentheses direct Windows PowerShell to run the command first.
 This is a handy way to navigate to a directory with a long path name.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> 'C:\Documents and Settings\User01\My Documents\My Pictures' | split-path
 C:\Documents and Settings\User01\My Documents

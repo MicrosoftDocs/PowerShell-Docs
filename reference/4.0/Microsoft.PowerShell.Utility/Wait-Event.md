@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Wait Event
+title: Wait-Event
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294026
@@ -35,21 +35,21 @@ It also allows you to determine the response to an event in two different ways: 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> wait-event
 ```
 
 This command waits for the next event that is raised.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> wait-event -sourceIdentifier "ProcessStarted"
 ```
 
 This command waits for the next event that is raised and that has a source identifier of "ProcessStarted".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $timer.Interval = 2000
 PS C:\> $timer.Autoreset = $false
@@ -69,7 +69,7 @@ ForwardEvent     : False
 
 This command uses the Wait-Event cmdlet to wait for a timer event on a timer that is set for 2000 milliseconds.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> wait-event -sourceIdentifier "ProcessStarted" -timeout 90
 ```

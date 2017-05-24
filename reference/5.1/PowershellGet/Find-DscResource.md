@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Find DscResource
+title: Find-DscResource
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821657
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential

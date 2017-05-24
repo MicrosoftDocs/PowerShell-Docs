@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  new item for resources
+title: New-Item for Resources
 ms.technology:  powershell
 online version:   http://go.microsoft.com/fwlink/?LinkId=834978
 ---

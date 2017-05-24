@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Pop Location
+title: Pop-Location
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113369
@@ -29,13 +29,13 @@ The Pop-Location cmdlet changes the current location to the location most recent
 You can pop a location from the default stack or from a stack that you create by using a Push-Location command.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> pop-location
 ```
 
 This command changes your location to the location most recently added to the current stack.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> pop-location -stackname Stack2
 ```
@@ -43,7 +43,7 @@ PS C:\> pop-location -stackname Stack2
 This command changes your location to the location most recently added to the Stack2 location stack.
 
 For more information about location stacks, see the Notes.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> pushd HKLM:\Software\Microsoft\PowerShell
 pushd Cert:\LocalMachine\TrustedPublisher
@@ -107,9 +107,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -177,4 +175,5 @@ For more information, see about_Providers.
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

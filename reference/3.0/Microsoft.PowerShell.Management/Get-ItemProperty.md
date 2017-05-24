@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get ItemProperty
+title: Get-ItemProperty
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113320
@@ -37,20 +37,20 @@ For example, you can use Get-ItemProperty to get the value of the LastAccessTime
 You can also use Get-ItemProperty to view registry entries and their values.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ItemProperty C:\Windows
 ```
 
 This command gets information about the C:\Windows directory.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-ItemProperty C:\Test\Weather.xls | Format-List
 ```
 
 This command gets the properties of the C:\Test\Weather.xls file.
 The result is piped to the Format-List cmdlet to display the output as a list.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
@@ -61,7 +61,7 @@ A drive with that name and mapping is available in Windows PowerShell by default
 Alternatively, the path to this registry subkey can be specified by using the following alternative path that begins with the provider name followed by two colons:
 
 Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -name "ProgramFilesDir"
 ```
@@ -70,7 +70,7 @@ This command gets the value name and data of the ProgramFilesDir registry entry 
 The command uses the Path parameter to specify the subkey and the Name parameter to specify the value name of the entry.
 
 The command uses a back tick or "grave accent" (\`), the Windows PowerShell continuation character, to continue the command on the second line.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
 
@@ -84,7 +84,7 @@ PSCompatibleVersion     : 1.0,2.0
 
 This command gets the value names and data of the registry entries in the PowerShellEngine registry key.
 The results are shown in the following sample output.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Get-ItemProperty -path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 
@@ -244,9 +244,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -293,4 +291,5 @@ For example, in a file system drive, it might return a file or folder.
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

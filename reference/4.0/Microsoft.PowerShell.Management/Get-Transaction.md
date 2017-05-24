@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Transaction
+title: Get-Transaction
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=290504
@@ -38,7 +38,7 @@ For more information, see about_Transactions.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transaction
 PS C:\> get-transaction
@@ -50,7 +50,7 @@ Error                1                 Active
 
 This command uses the Get-Transaction cmdlet to get the current transaction.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-transaction | get-member
 
@@ -69,7 +69,7 @@ SubscriberCount    Property   System.Int32 SubscriberCount {get;set;}
 
 This command uses the Get-Member cmdlet to show the properties and methods of the transaction object.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -84,7 +84,7 @@ Error                0                 RolledBack
 
 This command shows the property values of a transaction object for a transaction that has been rolled back.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -99,7 +99,7 @@ Error                1                 Committed
 
 This command shows the property values of a transaction object for a transaction that has been committed.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -146,7 +146,7 @@ The first Complete-Transaction command does not commit the transaction, but it r
 
 The second Complete-Transaction command commits the transaction.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> HKLM:\SOFTWARE> Start-Transaction
 HKLM:\SOFTWARE> Get-Transaction

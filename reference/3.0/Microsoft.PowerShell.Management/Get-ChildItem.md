@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get ChildItem
+title: Get-ChildItem
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113308
@@ -43,7 +43,7 @@ You can use the **Recurse** parameter to get items in all child containers.
 A location can be a file system location, such as a directory, or a location exposed by a different Windows PowerShell provider, such as a registry hive or a certificate store.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ChildItem
 ```
@@ -54,7 +54,7 @@ If the item does not have child items, this command returns to the command promp
 
 The default display lists the mode (attributes), last write time, file size (length), and the name of the file.
 The valid values for mode are d (directory), a (archive), r (read-only), h (hidden), and s (system).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-ChildItem -Path *.txt -Recurse -Force
 ```
@@ -66,7 +66,7 @@ The Force parameter adds hidden files to the display.
 To use the **Recurse** parameter on Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the value use the Path parameter must be a container.
 Use the Include parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
@@ -74,19 +74,19 @@ PS C:\> Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 This command lists the .txt files in the Logs subdirectory, except for those whose names start with the letter A.
 It uses the wildcard character (*) to indicate the contents of the Logs subdirectory, not the directory container.
 Because the command does not include the **Recurse** parameter, **Get-ChildItem** does not include the content of directory automatically; you need to specify it.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-ChildItem -Path HKLM:\Software
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Import-Module Microsoft.PowerShell.Security
 PS C:\> Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
@@ -104,7 +104,7 @@ The **CodeSigningCertificate** parameter is a dynamic parameter that the Certifi
 This parameter gets only certificates that have code-signing authority.
 
 For more information about the Certificate provider and the Cert: drive, go to http://go.microsoft.com/fwlink/?LinkID=113433http://go.microsoft.com/fwlink/?LinkID=113433 or use the Update-Help cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type "Get-Help Certificate".
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```
@@ -244,9 +244,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -419,4 +417,5 @@ For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkI
 [Get-Process](Get-Process.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

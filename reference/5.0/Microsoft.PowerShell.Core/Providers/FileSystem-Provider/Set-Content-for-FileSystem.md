@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set Content for FileSystem
+title: Set-Content for FileSystem
 ms.technology:  powershell
 online version:   http://go.microsoft.com/fwlink/?LinkId=834955
 ---

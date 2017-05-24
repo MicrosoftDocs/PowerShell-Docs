@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New TimeSpan
+title: New-TimeSpan
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113360
@@ -35,14 +35,14 @@ The New-TimeSpan cmdlet creates a TimeSpan object that represents a time interva
 Without parameters, a "New-Timespan" command returns a timespan object that represents a time interval of zero.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $timespan = new-timespan -hour 1 -minute 25
 ```
 
 This command creates a TimeSpan object with a duration of 1 hour and 25 minutes and stores it in a variable named $timespan.
 It displays a representation of the TimeSpan object.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-timespan -end (get-date -year 2010 -month 1 -day 1)
 ```
@@ -50,14 +50,14 @@ PS C:\> new-timespan -end (get-date -year 2010 -month 1 -day 1)
 This example creates a new TimeSpan object that represents the interval between the time that the command is run and January 1, 2010.
 
 This command does not require the Start parameter, because the default value of the Start parameter is the current date and time.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $90days = new-timespan -days 90
 PS C:\> (get-date) + $90days
 ```
 
 These commands return the date that is 90 days after the current date.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> dir $pshome\en-us\about_remote.help.txt | new-timespan
 

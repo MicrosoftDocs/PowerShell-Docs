@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Transaction
+title: Start-Transaction
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135262
@@ -45,7 +45,7 @@ The Start-Transaction cmdlet is one of a set of cmdlets that support the transac
 For more information, see about_Transactions.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
@@ -56,7 +56,7 @@ PS HKCU:\software> undo-transaction
 
 These commands start and then roll back a transaction.
 Because the transaction is rolled back, no changes are made to the registry.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
@@ -67,7 +67,7 @@ PS HKCU:\software> complete-transaction
 
 These commands start and then complete a transaction.
 No changes are made to the registry until the Complete-Transaction command is used.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
@@ -120,7 +120,7 @@ In the second set of commands, the Start-Transaction command uses the RollbackPr
 As a result, when an error occurs in a transaction command, the transaction is still active and can be completed successfully.
 
 Because most transactions must be performed without error, the default value of the RollbackPreference parameter is typically preferred.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
@@ -152,7 +152,7 @@ The second New-Item command is part of the same transaction.
 No changes are made to the registry until the entire transaction is completed.
 To complete the transaction, you must enter two Complete-Transaction commands, one for each subscriber.
 If you were to roll back the transaction at any point, the entire transaction would be rolled back for both subscribers.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> start-transaction
@@ -197,7 +197,7 @@ When the active transaction is rolled back by using an Undo-Transaction command,
 
 The New-ItemProperty command, which is part of the original transaction, completes without error, and the original transaction can be completed by using the Complete-Transaction command.
 As a result, the registry is changed.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> start-transaction
@@ -237,7 +237,7 @@ The second New-Item command is completed immediately, but the first and third Ne
 
 The Complete-Transaction command commits the transaction.
 As a result, the second "dir" command shows that all of the new items are added to the registry.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> start-transaction -timeout 2
 

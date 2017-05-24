@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New PSWorkflowSession
+title: New-PSWorkflowSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=287542
@@ -41,7 +41,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
 ```
@@ -49,7 +49,7 @@ PS C:\> New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -Se
 This command creates the WorkflowTests session on the ServerNode01 remote computer.
 The value of the **SessionOption** parameter is a **New-PSSessionOption** command that sets the output buffering mode in the session to Drop.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> "ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
 ```

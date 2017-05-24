@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke Item
+title: Invoke-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113345
@@ -37,14 +37,14 @@ For example, it runs an executable file or opens a document file in the applicat
 The default action depends on the type of item and is determined by the Windows PowerShell provider that provides access to the data.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> invoke-item C:\Test\aliasApr04.doc
 ```
 
 This command opens the file aliasApr04.doc in Microsoft Office Word.
 In this case, opening in Word is the default action for .doc files.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> invoke-item "C:\Documents and Settings\Lister\My Documents\*.xls"
 ```
@@ -197,9 +197,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter

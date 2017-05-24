@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Date
+title: Get-Date
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113313
@@ -39,7 +39,7 @@ It can format the date and time in several Windows and UNIX formats.
 You can use **Get-Date** to generate a date or time character string, and then send the string to other cmdlets or programs.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Date -DisplayHint Date
 Tuesday, June 13, 2006
@@ -47,7 +47,7 @@ Tuesday, June 13, 2006
 
 This command gets a **DateTime** object, but it displays only the date.
 It uses the Displa****yHint parameter to indicate that only the date is to be displayed.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Date -Format g
 6/13/2006 12:43 PM
@@ -55,7 +55,7 @@ PS C:\> Get-Date -Format g
 
 This command gets the current date and time and formats it in short-date and short-time format.
 It uses the .NET Framework "g" format specifier (General \[short date and short time\]) to specify the format.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 2006 / 06 / 13 / Tuesday / -07
@@ -63,7 +63,7 @@ PS C:\> Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 
 This command gets the current date and time and formats it as specified by the command.
 In this case, the format includes the full year (%Y), the two-digit numeric month (%m), the date (%d), the full day of the week (%A), and the offset from UTC ("Zulu").
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> (Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
 366
@@ -71,7 +71,7 @@ PS C:\> (Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
 
 This command displays the day of the year for the current date.
 For example, December 31 is the 365th day of 2006, but it is the 366th day of 2000.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $a = Get-Date
 PS C:\> $a.IsDaylightSavingTime()
@@ -86,7 +86,7 @@ Then, it uses the **IsDaylightSavingTime** method on the object in $a.
 To see the properties and methods of the **DateTime** object, type:
 
 "Get-Date | get-member".
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $a = Get-Date
 PS C:\> $a.ToUniversalTime()
@@ -97,7 +97,7 @@ These commands convert the current date and time to UTC time.
 
 The first command creates a variable named $a and then assigns the object retrieved by **Get-Date** to the $a variable.
 Then, it uses the **ToUniversalTime** method on the object in $a.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> $a = Get-WmiObject Win32_Bios -Computer Server01
 PS C:\> $a | Format-List -Property Name, @{Label="BIOS Age";Expression={(Get-Date) - $_.ConvertToDateTime($_.ReleaseDate)}}
@@ -120,14 +120,14 @@ The expression uses the **ConvertToDateTime** method to convert each instance of
 Then, the value is subtracted from the value of the **Get-Date** cmdlet, which, without parameters, gets the current date.
 
 The backtick character (\`) is the line continuation character in Windows PowerShell.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Get-Date
 Tuesday, June 13, 2006 12:43:42 PM
 ```
 
 This command gets a **DateTime** object and displays the current date and time in the long date and long time formats for the system locale, as though you typed "Get-Date -Format F".
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> Get-Date
 Tuesday, September 26, 2006 11:25:31 AM
@@ -156,7 +156,7 @@ Because **Add-Content** uses the ToString() method of the **DateTime** object, t
 The fourth command uses the **Format** parameter of **Get-Date** to specify the format.
 When you use the **Format** or **UFormat** parameters, **Get-Date** generates a string, not a **DateTime** object.
 Then, when you send the string to **Add-Content**, it adds the string to the Test.txt file without changing it.
-### -------------------------- EXAMPLE 10 --------------------------
+### Example 10
 ```
 The first command uses the **Format** parameter with a value of "o" to generate a timestamp string.
 PS C:\> Get-Date -Format o

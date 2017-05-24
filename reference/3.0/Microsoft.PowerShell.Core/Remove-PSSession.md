@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove PSSession
+title: Remove-PSSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135250
@@ -54,13 +54,13 @@ To remove a PSSession, enter the Name, ComputerName, ID, or InstanceID of the se
 If you have saved the PSSession in a variable, the session object remains in the variable, but the state of the PSSession is "Closed."
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-pssession -id 1, 2
 ```
 
 This command removes the PSSessions that have IDs 1 and 2.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-pssession | remove-pssession
 
@@ -76,21 +76,21 @@ PS C:\> remove-pssession -session $s
 
 These commands remove all of the PSSessions in the current session.
 Although the three command formats look different, they have the same effect.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $r = get-pssession -computername Serv*
 $r | remove-pssession
 ```
 
 These commands close the PSSessions that are connected to computers that have names that begin with "Serv".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-pssession | where {$_.port -eq 90} | remove-pssession
 ```
 
 This command closes the PSSessions that are connected to port 90.
 You can use this command format to identify PSSessions by properties other than ComputerName, Name, InstanceID, and ID.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-pssession | ft computername, instanceID  -auto
 
@@ -114,7 +114,7 @@ The AutoSize parameter ("auto") compresses the columns for display.
 From the resulting display, the administrator can identify the PSSession to be closed, and copy and paste the InstanceID of that PSSession into the second command.
 
 The second command uses the Remove-PSSession cmdlet to remove the PSSession with the specified instance ID.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> function EndPSS { get-pssession | remove-pssession }
 ```

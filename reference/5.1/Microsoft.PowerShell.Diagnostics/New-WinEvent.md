@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New WinEvent
+title: New-WinEvent
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821531
@@ -42,7 +42,7 @@ This command uses the **New-WinEvent** cmdlet to create event 45090 for the Micr
 ## PARAMETERS
 
 ### -Id
-@{Text=}
+Specifies an event ID that was registered through an instrumentation manifest.
 
 ```yaml
 Type: Int32
@@ -57,7 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -Payload
-@{Text=}
+Specifies the message for the event. When the event is written to an event log, the payload is stored in the Message property of the event object.
+
+When the specified payload does not match the payload in the event definition, Windows PowerShell generates a warning, but the command still succeeds.
 
 ```yaml
 Type: Object[]
@@ -72,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
-@{Text=}
+Specifies the event provider that writes the event to an event log, such as Microsoft-Windows-PowerShell. An ETW event provider is a logical entity that writes events to ETW sessions.
 
 ```yaml
 Type: String
@@ -87,7 +89,9 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-@{Text=}
+Specifies the version number of the event. Type the event number. Windows PowerShell converts the number to the required Byte type.
+
+This parameter lets you specify an event when different versions of the same event are defined.
 
 ```yaml
 Type: Byte

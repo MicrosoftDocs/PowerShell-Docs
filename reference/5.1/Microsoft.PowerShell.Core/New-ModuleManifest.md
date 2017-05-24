@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New ModuleManifest
+title: New-ModuleManifest
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821496
@@ -424,7 +424,8 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-@{Text=}
+Specifies the DSC resources that the module exports.
+Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -435,14 +436,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -FileList
 Specifies all items that are included in the module.
 
 This key is designed to act as a module inventory.
-The files listed in the key are not automatically exported with the module.
+The files listed in the key are included when the module is published, but any functions are not automatically exported.
 
 ```yaml
 Type: String[]
@@ -539,7 +540,8 @@ Accept wildcard characters: False
 ```
 
 ### -IconUri
-@{Text=}
+Specifies the URL of an icon for the module.
+The specified icon is displayed on the gallery web page for the module.
 
 ```yaml
 Type: Uri
@@ -554,7 +556,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
-@{Text=}
+Specifies the URL of licensing terms for the module.
 
 ```yaml
 Type: Uri
@@ -763,7 +765,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
-@{Text=}
+Specifies the URL of a web page about this project.
 
 ```yaml
 Type: Uri
@@ -881,7 +883,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-@{Text=}
+Specifies an array of tags.
 
 ```yaml
 Type: String[]

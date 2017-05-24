@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Tee Object
+title: Tee-Object
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294019
@@ -43,7 +43,7 @@ If Tee-Object is the last command in the pipeline, the command output is display
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-process | tee-object -filepath C:\Test1\testfile2.txt
 
@@ -59,7 +59,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
 This command gets a list of the processes running on the computer and sends the result to a file.
 Because a second path is not specified, the processes are also displayed in the console.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process notepad | tee-object -variable proc | select-object processname,handles
 
@@ -75,7 +75,7 @@ This command gets a list of the processes running on the computer and sends the 
 It then pipes the resulting objects along to Select-Object, which selects the ProcessName and Handles property.
 Note that the $proc variable includes the default information returned by Get-Process.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-childitem -path D: -file -system -recurse | tee-object -file c:\test\AllSystemFiles.txt -append | out-file c:\test\NewSystemFiles.txt
 ```

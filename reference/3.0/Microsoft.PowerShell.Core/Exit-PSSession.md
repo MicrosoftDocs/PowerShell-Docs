@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Exit PSSession
+title: Exit-PSSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135212
@@ -30,7 +30,7 @@ You can also use the Exit keyword to end an interactive session.
 The effect is the same as using Exit-PSSession.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
@@ -38,7 +38,7 @@ PS C:\>
 ```
 
 These commands start and then stop an interactive session with the Server01 remote computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $s = new-pssession -computername Server01
 PS C:\> Enter-PSSession -session $s
@@ -63,7 +63,7 @@ The third command uses the Exit-PSSession cmdlet to stop the interactive session
 
 The final command displays the PSSession in the $s variable.
 The State property shows the PSSession is still open and available for use.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> exit

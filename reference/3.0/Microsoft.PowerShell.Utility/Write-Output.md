@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write Output
+title: Write-Output
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113427
@@ -35,7 +35,7 @@ However, because the default behavior is to display the objects at the end of a 
 For example, "get-process | write-output" is equivalent to "get-process".
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $p = get-process
 PS C:\> write-output $p
@@ -43,7 +43,7 @@ PS C:\> $p
 ```
 
 These commands get objects representing the processes running on the computer and display the objects on the console.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> write-output "test output" | get-member
 ```

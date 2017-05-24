@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get PSSessionConfiguration
+title: Get-PSSessionConfiguration
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144304
@@ -38,13 +38,13 @@ To create and register a session configuration, use the Register-PSSessionConfig
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-PSSessionConfiguration
 ```
 
 This command gets the session configurations on the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-PSSessionConfiguration -Name Microsoft*
 
@@ -56,7 +56,7 @@ microsoft.powershell32    2.0                             BUILTIN\Administrators
 
 This command gets the two default session configurations that come with Windows PowerShell.
 The command uses the **Name** parameter of **Get-PSSessionConfiguration** to get only the session configurations with names that begin with "Microsoft".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-PSSessionConfiguration -Name Full  | Format-List -Property *
  
@@ -111,7 +111,7 @@ The output of this command has very useful information, including the author of 
 
 This view of a session configuration is used for sessions that include a session configuration file.
 For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> (Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
 
@@ -226,7 +226,7 @@ This command gets the properties of the Microsoft.PowerShell.Worfklow session co
 You can use this command format in a function to get this display for any session configuration.
 
 This example was contributed by Shay Levy, a Windows PowerShell MVP from Sderot, Israel.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> dir wsman:\localhost\plugin
 Type            Keys                                Name
@@ -244,7 +244,7 @@ This command uses the Get-ChildItem cmdlet (alias = dir) in the WSMan: provider 
 This is another way to look at the session configurations on the computer.
 
 The **PlugIn** node contains **ContainerElement** objects (Microsoft.WSMan.Management.WSManConfigContainerElement) that represent the registered Windows PowerShell session configurations, along with other plug-ins for WS-Management.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command uses the Connect-WSMan cmdlet to connect to the WinRM service on the Server01 remote computer.
 PS C:\> Connect-WSMan -ComputerName Server01
@@ -285,7 +285,7 @@ WithProfile
 
 This example shows how to use the WSMan provider to view the session configurations on a remote computer.
 This method does not provide as much information as a **Get-PSSessionConfiguration** command, but the user does not need to be a member of the Administrators group to run this command.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command uses the Enable-WSManCredSSP cmdlet to enable **CredSSP** delegation from the Server01 local computer to the Server02 remote computer. This configures the **CredSSP** client setting on the local computer.
 PS C:\> Enable-WSManCredSSP -Delegate Server02
@@ -310,7 +310,7 @@ This example shows how to run a **Get-PSSessionConfiguration** command on a remo
 The command requires that CredSSP delegation be enabled in the client settings on the local computer and in the service settings on the remote computer.
 
 To run the commands in this example, you must be a member of the Administrators group on the local computer and the remote computer and you must start Windows PowerShell with the "Run as administrator" option.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> (Get-PSSessionConfiguration -Name CustomShell).resourceURI
 http://schemas.microsoft.com/powershell/microsoft.CustomShell

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disconnect WSMan
+title: Disconnect-WSMan
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294036
@@ -35,7 +35,7 @@ For more information about how to connect to the WinRM service on a remote compu
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Disconnect-WSMan -computer server01
 PS C:\> cd WSMan:

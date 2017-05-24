@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get WSManInstance
+title: Get-WSManInstance
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=141444
@@ -44,7 +44,7 @@ This cmdlet is the equivalent to the standard WS-Management Get command.
 This cmdlet uses the WS-Management connection/transport layer to retrieve information.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="winrm"} -computername server01
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
@@ -90,14 +90,14 @@ WaitHint                : 0
 ```
 
 This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the WinRM service on the remote server01 computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="spooler"} -fragment status -computername server01
 XmlFragment=OK
 ```
 
 This command returns only the status of the Spooler service on the remote server01 computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-wsmaninstance -enumerate wmicimv2/win32_service -returntype epr
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
@@ -136,7 +136,7 @@ WaitHint                : 0
 ```
 
 This command returns endpoint references that correspond to all the services on the local computer.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-WSManInstance -Enumerate wmicimv2/* -filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -computername server01
 
@@ -178,7 +178,7 @@ This command lists all of the services that meet the following criteria on the r
 
 - The startup type of the service is "Automatic".
 - The service is stopped.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"}
 
@@ -196,7 +196,7 @@ ListeningOn           : {100.0.0.1, 123.123.123.123, ::1, 2001:4898:0:fff:0:5efe
 ```
 
 This command lists the WS-Management listener configuration on the local computer for the listener that matches the criteria in the selector set.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"} -computername server01
 
@@ -214,7 +214,7 @@ ListeningOn           : {100.0.0.1, 123.123.123.124, ::1, 2001:4898:0:fff:0:5efe
 ```
 
 This command lists the WS-Management listener configuration on the remote server01 computer for the listener that matches the criteria in the selector set.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect association -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 
@@ -341,7 +341,7 @@ TagId                   : 0
 This command gets the associated instances that are related to the specified instance (winrm).
 
 Important: You must enclose the filter in quotation marks, as shown in the example.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect association -Associations -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 ```

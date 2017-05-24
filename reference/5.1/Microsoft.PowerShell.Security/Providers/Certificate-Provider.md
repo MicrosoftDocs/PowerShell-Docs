@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Certificate Provider
+title: Certificate Provider
 ms.technology:  powershell
 online version:   http://go.microsoft.com/fwlink/?LinkId=834968
 ---
@@ -61,7 +61,7 @@ online version:   http://go.microsoft.com/fwlink/?LinkId=834968
 
 ### Navigating the Cert: Drive  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Set-Location cmdlet to change the current location to the Cert: drive.  
 
 ```  
@@ -69,7 +69,7 @@ set-location cert:
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Set-Location command to change the current location to the Root certificate store in the LocalMachine store location. Use a backslash (\\) or a forward slash (/) to indicate a level of the Cert: drive.  
 
 ```  
@@ -81,7 +81,7 @@ set-location -path LocalMachine\Root
 
 ### Displaying the Contents of the Cert: Drive  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Get-ChildItem cmdlet to display the certificate stores in the CurrentUser certificate store location.  
 
 ```  
@@ -91,7 +91,7 @@ get-childitem -path cert:\CurrentUser
 
  If you are in the Cert: drive, you can omit the drive name.  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Get-ChildItem cmdlet to display the certificates in the My certificate store.  
 
 ```  
@@ -101,7 +101,7 @@ get-childitem -path cert:\CurrentUser\My
 
  If you are in the Cert: drive, you can omit the drive name.  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the Get-Item cmdlet to get the "My" certificate store and the Property parameter of Format-List with a wildcard character (*) to display all of the properties of the store.  
 
 ```  
@@ -109,7 +109,7 @@ get-item -path cert:\CurrentUser\My | format-list *
 
 ```  
 
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command gets a certificate and displays all of its properties. It uses the Get-ChildItem cmdlet to get the certificate and the Property parameter of Format-List with a wildcard character (*) to display all of the properties of the certificate.  
 
  The certificate is identified by its thumbprint.  
@@ -119,7 +119,7 @@ get-childitem -path cert:\LocalMachine\my\6B8223358119BB08840DEE50FD8AF9EA776CE6
 
 ```  
 
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command displays the web hosting properties of all certificates in the LocalMachine certificate store location.  
 
  It uses the Recurse parameter of the Get-ChildItem cmdlet to get all certificates in all stores of the LocalMachine store location. A pipeline operator sends the certificates to the Format-Table command, which displays the selected properties of each certificate in a table.  
@@ -131,7 +131,7 @@ Get-ChildItem -Path cert:\LocalMachine -Recurse | Format-Table -Property DnsName
 
 ### Opening the Certificates MMC Snap-in  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command opens the Certificates MMC snap-in to manage the specified certificate.  
 
 ```  
@@ -141,7 +141,7 @@ invoke-item cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 
 ### Getting Selected Certificates  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the CodeSigningCert and Recurse parameters of the Get-ChildItem cmdlet to get all of the certificates on the computer that have code-signing authority.  
 
 ```  
@@ -149,7 +149,7 @@ Get-ChildItem -Path cert: -CodeSigningCert -Recurse
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the DNSName parameter of the Get-ChildItem cmdlet to get all of the certificates in the WebHosting store whose domain names contain "Fabrikam".  
 
 ```  
@@ -157,7 +157,7 @@ Get-ChildItem -Path cert:\LocalMachine\WebHosting -DNSName "*fabrikam*"
 
 ```  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the ExpiringInDays parameter of the Get-ChildItem cmdlet to get certificates that will expire within the next 30 days.  
 
 ```  
@@ -165,7 +165,7 @@ Get-ChildItem -Path cert:\LocalMachine\WebHosting -ExpiringInDays 30
 
 ```  
 
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command uses the Invoke-Command cmdlet to run a Get-ChildItem command on the Srv01 and Srv02 computers. A value of zero (0) in the ExpiringInDays parameter gets certificates on the Srv01 and Srv02 computers that have expired.  
 
 ```  
@@ -173,7 +173,7 @@ Invoke-Command -ComputerName Srv01, Srv02 {Get-ChildItem -Path cert:\* -Recurse 
 
 ```  
 
-#### -------------------------- EXAMPLE 5 --------------------------  
+#### Example 5  
  This command uses the SSLServerAuthentication parameter of the Get-ChildItem cmdlet to get all  
 
  Server SSL Certificates in the My and WebHosting stores.  
@@ -183,7 +183,7 @@ Get-ChildItem -Path cert:\LocalMachine\My, cert:\LocalMachine\WebHosting -SSLSer
 
 ```  
 
-#### -------------------------- EXAMPLE 6 --------------------------  
+#### Example 6  
  This command gets all certificates in the LocalMachine store location that have "fabrikam" in their DNS name, "Client Authentication" in their EKU, a value of $true for the SendAsTrustedIssuer property, and do not expire within the next 30 days.  
 
 ```  
@@ -195,7 +195,7 @@ Get-ChildItem -Path cert:\* -Recurse  -DNSName "*fabrikam*" -EKU "*Client Authen
 
 ### Moving Certificates  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Move-Item cmdlet to move a certificate from the My store to the WebHosting store.  
 
  Move-Item will not move certificate stores and it will not move certificates to a different store location, such as moving a certificate from LocalMachine to CurrentUser. Also, Move-Item moves certificates, but it does not move private keys.  
@@ -205,7 +205,7 @@ Move-Item -Path cert:\LocalMachine\My\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0 -
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the SSLServerAuthentication parameter of the Get-ChildItem cmdlet to get SSL server authentication certificates in the MY certificate store.  
 
  It uses a pipeline operator to send the certificates to the Move-Item cmdlet, which moves the certificates to the WebHosting store.  
@@ -217,7 +217,7 @@ Get-ChildItem -Path cert:\LocalMachine\My -SSLServerAuthentication | Move-Item -
 
 ### Deleting Certificates and Private Keys  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command deletes a certificate from the CA certificate store, but leaves the associated private key intact.  
 
  In the Cert: drive, the Remove-Item cmdlet supports only the DeleteKey, Path, WhatIf, and Confirm parameters. All other parameters are ignored.  
@@ -227,7 +227,7 @@ Remove-Item -Path cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This series of commands enables delegation and then deletes the certificate and associated private key on a remote computer. To delete a private key on a remote computer, you must use delegated credentials.  
 
  The first command uses the Enable-WSManCredSSP cmdlet to enable Credential Security Service Provider (CredSSP) authentication on a client on the S1 remote computer. CredSSP permits delegated authentication.  
@@ -253,7 +253,7 @@ PS C:\> Invoke-Command -Session $s { Remove-Item cert:\LocalMachine\My\D2D38EBA6
 
 ```  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the ExpiringInDays parameter of the Get-ChildItem cmdlet with a value of 0 to get certificates in the WebHosting store that have expired.  
 
  It uses a pipeline operator to pass the certificates to the Remove-Item cmdlet, which deletes them. The command uses the DeleteKey parameter to delete the private key along with the certificate.  
@@ -263,7 +263,7 @@ Get-ChildItem -Path cert:\LocalMachine\WebHosting -ExpiringInDays 0 | Remove-Ite
 
 ```  
 
-#### -------------------------- EXAMPLE 4 --------------------------  
+#### Example 4  
  This command deletes all certificates that have a DNS name that contains "Fabrikam".  
 
  It uses the DNSName parameter of the Get-ChildItem cmdlet to get the certificates and the Remove-Item cmdlet to delete them.  
@@ -275,7 +275,7 @@ Get-ChildItem -Path cert:\LocalMachine -DnsName *Fabrikam* | Remove-Item
 
 ### Creating Certificate Stores  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command creates a new certificate store named "CustomStore" in the LocalMachine store location.  
 
  In the Cert: drive, the New-Item cmdlet creates certificate stores in the LocalMachine store location. It supports the Name, Path, WhatIf, and Confirm parameters. All other parameters are ignored.  
@@ -287,7 +287,7 @@ New-Item -Path cert:\LocalMachine\CustomStore
 
  The command returns a System.Security.Cryptography.X509Certificates.X509Store that represents the new certificate store.  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command creates a new certificate store named "HostingStore" in the LocalMachine store location on the Server01 computer.  
 
  The command uses the Invoke-Command cmdlet to run a New-Item command on the Server01 computer.  
@@ -301,7 +301,7 @@ Invoke-Command -ComputerName Server01 { New-Item -Path cert:\LocalMachine\Custom
 
 ### Deleting Certificate Stores  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Remove-Item cmdlet to delete the Test1 certificate store. It uses the Recurse parameter to delete the certificates in the Test1 store.  
 
  In the Cert: drive, the Remove-Item cmdlet deletes user-created certificate stores from the LocalMachine store location. You cannot use the Remove-Item cmdlet to delete Windows system certificate stores.  
@@ -315,7 +315,7 @@ Remove-Item -Path cert:\LocalMachine\TestStore -Recurse
 
  If the certificate store contains certificates and you omit the Recurse parameter, Remove-Item prompts you for confirmation before deleting any items.  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Invoke-Command cmdlet to run a Remove-Item command on the S1 and S2 computers. The Remove-Item command includes the Recurse parameter, which deletes the certificates in the store before it deletes the store.  
 
 ```  
@@ -323,7 +323,7 @@ Invoke-Command -ComputerName S1, S2 { Remove-Item -Path cert:\LocalMachine\TestS
 
 ```  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command deletes all certificate stores in the LocalMachine store location that have "Test" in their names.  
 
 ```  

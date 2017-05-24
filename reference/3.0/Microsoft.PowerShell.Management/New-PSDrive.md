@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New PSDrive
+title: New-PSDrive
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113357
@@ -41,7 +41,7 @@ New features are added to New-PSDrive in Windows PowerShell 3.0.
 - Credentials for UNC Paths: When the value of the **Root** parameter is a UNC path, such as \\\\Server\Share, the credential specified in the value of the **Credential** parameter is used to create the PSDrive. Otherwise, the **Credential** parameter is not effective when creating new file system drives.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-PSDrive -Name P -PSProvider FileSystem -Root \\Server01\Public
 
@@ -56,7 +56,7 @@ It uses the **Name** parameter to specify a name for the drive, the **PSProvider
 
 When the command completes, the contents of the \\\\Server01\Public share appear in the P: drive.
 To see them, type: "`dir P:`".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> New-PSDrive -Name MyDocs -PSProvider FileSystem -Root "C:\Documents and Settings\User01\My Documents" -Description "Maps to my My Documents folder."
 
@@ -72,7 +72,7 @@ It uses the **Name** parameter to specify a name for the drive, the **PSProvider
 
 When the command completes, the contents of the My Documents folder appear in the MyDocs: drive.
 To see them, type: "dir MyDocs:".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> New-PSDrive -Name MyCompany -PSProvider Registry -Root HKLM:\Software\MyCompany
 
@@ -88,7 +88,7 @@ It uses the **Name** parameter to specify a name for the drive, the **PSProvider
 
 When the command completes, the contents of the MyCompany key appear in the MyCompany: drive.
 To see them, type: "`dir MyCompany:`".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> New-PSDrive -Name S -Root \\Server01\Scripts -Persist -PSProvider FileSystem
 PS C:\> net use
@@ -107,7 +107,7 @@ The command uses the **Name** parameter to specify a letter name that Windows ac
 It uses the **PSProvider** parameter to specify the FileSystem provider.
 
 The resulting drive can be viewed in other Windows PowerShell sessions on the local computer, in Windows Explorer, and in other tools, such as Net Use.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command uses the **New-PSDrive** cmdlet to create a temporary Windows PowerShell drive called PSDrive: that is mapped to the \\Server01\Public network share.
 PS C:\> New-PSDrive -Name PSDrive -PSProvider FileSystem -Root \\Server01\Public
@@ -347,9 +347,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -383,4 +381,5 @@ You cannot pipe input to this cmdlet.
 [Remove-PSDrive](Remove-PSDrive.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

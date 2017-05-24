@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove DscConfigurationDocument
+title: Remove-DscConfigurationDocument
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821461
@@ -51,7 +51,7 @@ The second command removes the current configuration document for the computer s
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter
@@ -66,7 +66,8 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
-@{Text=}
+Runs the cmdlet in a remote session or on a remote computer.
+Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
 Type: CimSession[]
@@ -96,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-@{Text=}
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -111,7 +112,16 @@ Accept wildcard characters: False
 ```
 
 ### -Stage
-@{Text=}
+Specifies which configuration document to remove.
+You can specify multiple documents.
+The acceptable values for this parameter are:
+
+- Current.
+Remove the configuration document that describes the current state of the system. 
+- Pending.
+Remove the configuration document that describes the pending state of the system. 
+- Previous.
+Remove the configuration document that describes the previous state of the system.
 
 ```yaml
 Type: Stage
@@ -127,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
-@{Text=}
+Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 
 ```yaml
 Type: Int32

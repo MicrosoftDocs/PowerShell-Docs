@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Enable RunspaceDebug
+title: Enable-RunspaceDebug
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821765
@@ -109,7 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
-@{Text=}
+Specifies a runspace object.
+The simplest way to provide a value for this parameter is to specify a variable that contains the results of a filtered **Get-Runspace** command.
 
 ```yaml
 Type: Runspace[]

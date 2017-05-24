@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Alias
+title: Get-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293964
@@ -42,7 +42,7 @@ Beginning in Windows PowerShell 3.0, Get-Alias displays non-hyphenated alias nam
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Alias
 CommandType     Name
@@ -75,14 +75,14 @@ This command gets all aliases in the current session.
 The output shows the "\<alias\> -\> \<definition\>" format that was introduced in Windows PowerShell 3.0. 
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Alias -Name g*, s* -Exclude Get-*
 ```
 
 This command gets all aliases that begin with "g" or "s", except for aliases that begin with "get-".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Alias -Definition Get-ChildItem
 ```
@@ -92,7 +92,7 @@ This command gets the aliases for the Get-ChildItem cmdlet.
 By default, the Get-Alias cmdlet gets the item name when you know the alias.
 The Definition parameter gets the alias when you know the item name.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
 ```
@@ -103,7 +103,7 @@ This command provides a quick way to find the aliases that are built into Window
 Options is just one property of the AliasInfo objects that Get-Alias gets.
 To find all properties and methods of AliasInfo objects, type "Get-Alias | get-member".
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Alias -Definition "*-PSSession" -Exclude e* -Scope Global
 ```

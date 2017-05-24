@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Add PSSnapin
+title: Add-PSSnapin
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113281
@@ -36,13 +36,13 @@ By default, only the **Microsoft.PowerShell.Core** snap-in is added to the sessi
 Modules are imported automatically on first use and you can use the Import-Module cmdlet to import them.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> add-PSSnapIn Microsoft.Exchange, Microsoft.Windows.AD
 ```
 
 This command adds the Microsoft Exchange and Active Directory snap-ins to the current session.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-pssnapin -registered | add-pssnapin -passthru
 ```
@@ -51,7 +51,7 @@ This command adds all of the registered Windows PowerShell snap-ins to the sessi
 It uses the Get-PSSnapin cmdlet with the Registered parameter to get objects representing each of the registered snap-ins.
 The pipeline operator (|) passes the result to Add-PSSnapin, which adds them to the session.
 The PassThru parameter returns objects that represent each of the added snap-ins.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command gets snap-ins that have been added to the current session, including the snap-ins that are installed with Windows PowerShell. In this example, ManagementFeatures is not returned. This indicates that it has not been added to the session.
 PS C:\> get-pssnapin

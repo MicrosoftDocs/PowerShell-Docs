@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear Content
+title: Clear-Content
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289798
@@ -40,7 +40,7 @@ Clear-Content is similar to Clear-Item, but it works on items with contents, ins
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> clear-content ..\SmpUsers\*\init.txt
 ```
@@ -48,7 +48,7 @@ PS C:\> clear-content ..\SmpUsers\*\init.txt
 This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
 The files are not deleted, but they are empty.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> clear-content -path * -filter *.log -force
 ```
@@ -58,7 +58,7 @@ The asterisk (*) in the path represents all items in the current directory.
 The Force parameter makes the command effective on read-only files.
 Using a filter to restrict the command to files with the ".log" file name extension instead of specifying "*.log" in the path makes the operation faster.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> clear-content c:\Temp\* -Include Smp* -Exclude *2* -whatif
 ```
@@ -235,10 +235,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
+For more information, see about_Transactions.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -252,7 +249,18 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-{{Fill Stream Description}}
+Specifies an alternative data stream for content.
+If the stream does not exist, this cmdlet creates it.
+Wildcard characters are not supported.
+
+Stream is a dynamic parameter that the FileSystem provider adds to **Clear-Content**.
+This parameter works only in file system drives.
+
+You can use the **Clear-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Environment Provider
+title: Environment Provider
 ms.technology:  powershell
 ---
 
@@ -42,7 +42,7 @@ ms.technology:  powershell
   
 ### Getting to the Env: Drive  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command changes the current location to the Env: drive:  
   
 ```  
@@ -55,7 +55,7 @@ set-location env:
   
 ### Getting Environment Variables  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command lists all the environment variables in the current session:  
   
 ```  
@@ -65,7 +65,7 @@ get-childitem -path env:
   
  You can use this command from any Windows PowerShell drive.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets the WINDIR environment variable:  
   
 ```  
@@ -73,7 +73,7 @@ get-childitem -path env:windir
   
 ```  
   
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command gets a list of all the environment variables in the current session and then sorts them by name:  
   
 ```  
@@ -86,7 +86,7 @@ When you run this command from another drive, add the Path parameter with a valu
   
 ### Creating a New Environment Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command creates the USERMODE environment variable with a value of Non-Admin:  
   
 ```  
@@ -99,7 +99,7 @@ If you are not in the Env: drive, the value of the Path parameter would be Env:.
   
 ### Displaying the Properties and Methods of Environment Variables  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Get-ChildItem cmdlet to get all the environment variables:  
   
 ```  
@@ -113,7 +113,7 @@ To get information about the collection of DictionaryEntry objects, use the Inpu
     get-member -inputobject (get-childitem env:)  
 When you use the InputObject parameter, Get-Member evaluates the collection, not the objects in the collection.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command lists the values of the properties of the WINDIR environment variable:  
   
 ```  
@@ -125,7 +125,7 @@ get-item env:windir | format-list -property *
   
 ### Changing the Properties of an Environment Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Rename-Item cmdlet to change the name of the USERMODE environment variable that you created to USERROLE:  
   
 ```  
@@ -136,7 +136,7 @@ rename-item -path env:USERMODE -newname USERROLE
  This change affects the Name, Key, and PSPath properties of the DictionaryEntry object.  
 Do not change the name of an environment variable that the system uses. Although these changes affect only the current session, they might cause the system or a program to operate incorrectly.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Set-Item cmdlet to change the value of the USERROLE environment variable to Administrator:  
   
 ```  
@@ -146,7 +146,7 @@ set-item -path env:USERROLE -value Administrator
   
 ### Copying an Environment Variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command copies the value of the USERROLE environment variable to the USERROLE2 environment variable:  
   
 ```  
@@ -156,7 +156,7 @@ copy-item -path env:USERROLE -destination env:USERROLE2
   
 ### Deleting an environment variable  
   
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command deletes the USERROLE2 environment variable from the current session:  
   
 ```  
@@ -166,7 +166,7 @@ remove-item -path env:USERROLE2
   
  You can use this command in any Windows PowerShell drive. If you are in the Env: drive, you can omit the drive name from the path.  
   
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command deletes the USERROLE environment variable.  
   
 ```  

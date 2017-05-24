@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Out File
+title: Out-File
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293996
@@ -39,7 +39,7 @@ You can use this cmdlet instead of the redirection operator (\>) when you need t
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-process | out-file -filepath C:\Test1\process.txt
 ```
@@ -48,7 +48,7 @@ This command sends a list of processes on the computer to the Process.txt file.
 If the file does not exist, Out-File creates it.
 Because the name of the FilePath parameter is optional, you can omit it and submit the equivalent command "get-process | outfile C:\Test1\process.txt".
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process | out-file C:\Test1\process.txt -noclobber
 
@@ -60,7 +60,7 @@ At line:1 char:23
 This command also sends a list of processes to the Process.txt file, but it uses the NoClobber parameter, which prevents an existing file from being overwritten.
 The output shows the error message that appears when NoClobber is used with an existing file.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $a = get-process
 PS C:\> out-file -filepath C:\Test1\process.txt -inputobject $a -encoding ASCII -width 50
@@ -78,7 +78,7 @@ It uses the Encoding parameter to convert the output to ASCII format.
 It uses the Width parameter to limit each line in the file to 50 characters.
 Because the lines of output are truncated at 50 characters, the rightmost column in the process table is omitted.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> set-location hklm:\software
 PS C:\> get-acl mycompany\mykey | out-file -filepath c:\ps\acl.txt

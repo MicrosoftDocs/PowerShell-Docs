@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Sleep
+title: Start-Sleep
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294018
@@ -37,14 +37,14 @@ You can use it for many tasks, such as waiting for an operation to complete or p
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Start-Sleep -s 15
 ```
 
 This command makes all commands in the session sleep for 15 seconds.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Start-Sleep -m 500
 ```

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set ExecutionPolicy
+title: Set-ExecutionPolicy
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293941
@@ -37,14 +37,14 @@ NOTE:  To change the execution policy for the default (LocalMachine) scope, star
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Set-ExecutionPolicy RemoteSigned
 ```
 
 This command sets the user preference for the shell execution policy to RemoteSigned.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Set-ExecutionPolicy Restricted
 Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is overridden by the group policy applied to your system. Due to the override, your shell will retain its current effective execution policy of "AllSigned". Contact your group policy administrator for more information.
@@ -54,7 +54,7 @@ At line:1 char:20
 
 This command attempts to set the execution policy for the shell to "Restricted." The "Restricted" setting is written to the registry, but because it conflicts with a Group Policy, it is not effective, even though it is more restrictive than the policy.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Invoke-Command -ComputerName Server01 -ScriptBlock {Get-ExecutionPolicy} | Set-ExecutionPolicy -Force
 ```
@@ -66,7 +66,7 @@ Because you can pipe an ExecutionPolicy (Microsoft.PowerShell.ExecutionPolicy) o
 
 The command uses the **Force** parameter to suppress the user prompt.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **Set-ExecutionPolicy** cmdlet to set an execution policy of **AllSigned** for the current user. It uses the **Force** parameter to suppress the user prompts.
 PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy AllSigned -Force
@@ -89,7 +89,7 @@ AllSigned
 
 This example shows how to set an execution policy for a particular scope.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
 ```
@@ -99,7 +99,7 @@ As a result, the execution policy that is set in Group Policy or in the LocalMac
 
 If you set the execution policy in all scopes to **Undefined** and the Group Policy is not set, the default execution policy, **Restricted**, is effective for all users of the computer.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
 ```
@@ -108,7 +108,7 @@ This command sets an execution policy of **AllSigned** for only the current Wind
 This execution policy is saved in the **PSExecutionPolicyPreference** environment variable ($env:PSExecutionPolicyPreference), so it does not affect the value in the registry.
 The variable and its value are deleted when the current session is closed.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 The first command uses the **Set-ExecutionPolicy** cmdlet to change the execution policy to RemoteSigned.
 PS C:\> Set-ExecutionPolicy RemoteSigned

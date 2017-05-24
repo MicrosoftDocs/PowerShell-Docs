@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Enable PSBreakpoint
+title: Enable-PSBreakpoint
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113295
@@ -42,20 +42,20 @@ Enable-PSBreakpoint is one of several cmdlets designed for debugging Windows Pow
 For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-psbreakpoint | enable-psbreakpoint
 ```
 
 This command enables all breakpoints in the current console.
 You can abbreviate the command as "gbp | ebp".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> enable-psbreakpoint -id 0, 1, 5
 ```
 
 This command enables breakpoints with breakpoint IDs 0, 1, and 5.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
 PS C:\> $b | disable-psbreakpoint -passthru
@@ -95,7 +95,7 @@ It uses a pipeline operator (|) to send the breakpoint object in $b to the Enabl
 This lets you verify that the value of the Enabled property of the breakpoint object is True.
 
 The results are shown in the following sample output.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $b = get-psbreakpoint -id 3, 5
 PS C:\> enable-psbreakpoint -breakpoint $b
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-{{Fill Confirm Description}}
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -177,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-{{Fill WhatIf Description}}
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove Item
+title: Remove-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113373
@@ -38,14 +38,14 @@ The Remove-Item cmdlet deletes one or more items.
 Because it is supported by many providers, it can delete many different types of items, including files, directories, registry keys, variables, aliases, and functions.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-item C:\Test\*.*
 ```
 
 This command deletes all of the files with names that include a dot (.) from the C:\Test directory.
 Because the command specifies a dot, the command does not delete directories or files with no file name extension.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> remove-item * -include *.doc -exclude *1*
 ```
@@ -53,7 +53,7 @@ PS C:\> remove-item * -include *.doc -exclude *1*
 This command deletes from the current directory all files with a .doc file name extension and a name that does not include "1".
 It uses the wildcard character (*) to specify the contents of the current directory.
 It uses the Include and Exclude parameters to specify the files to delete.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> remove-item -path C:\Test\hidden-RO-file.txt -force
 ```
@@ -62,7 +62,7 @@ This command deletes a file that is both hidden and read-only.
 It uses the Path parameter to specify the file.
 It uses the Force parameter to give permission to delete it.
 Without Force, you cannot delete read-only or hidden files.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-childitem * -include *.csv -recurse | remove-item
 ```
@@ -75,7 +75,7 @@ In the Get-ChildItem command, the Path parameter has a value of *, which represe
 It uses the Include parameter to specify the CSV file type, and it uses the Recurse parameter to make the retrieval recursive.
 
 If you try to specify the file type in the path, such as "-path *.csv", the cmdlet interprets the subject of the search to be a file that has no child items, and Recurse fails.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> remove-item hklm:\software\mycompany\OldApp -recurse
 ```
@@ -289,9 +289,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -344,4 +342,5 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

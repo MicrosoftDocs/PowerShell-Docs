@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Stop Transcript
+title: Stop-Transcript
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113415
@@ -28,7 +28,7 @@ The Stop-Transcript cmdlet stops a transcript that was started by using the Star
 You can also stop a transcript by ending the session.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-transcript
 ```

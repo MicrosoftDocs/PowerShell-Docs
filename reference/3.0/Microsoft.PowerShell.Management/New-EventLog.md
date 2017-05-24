@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New EventLog
+title: New-EventLog
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135235
@@ -32,13 +32,13 @@ The cmdlets that contain the EventLog noun (the Event log cmdlets) work only on 
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-eventlog -source TestApp -logname TestLog -MessageResourceFile C:\Test\TestApp.dll
 ```
 
 This command creates the TestLog event log on the local computer and registers a new source for it.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $file = "C:\Program Files\TestApps\NewTestApp.dll"
 PS C:\> new-eventlog -computername Server01 -source NewTestApp -logname Application -MessageResourceFile $file -CategoryResourceFile $file

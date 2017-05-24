@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Variable
+title: Get-Variable
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113336
@@ -29,26 +29,26 @@ The **Get-Variable** cmdlet gets the Windows PowerShell variables in the current
 You can retrieve just the values of the variables by specifying the **ValueOnly** parameter, and you can filter the variables returned by name.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Variable m*
 ```
 
 This command gets variables with names that begin with the letter "m".
 The command also gets the value of the variables.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Variable m* -Valueonly
 ```
 
 This command gets only the values of the variables that have names that begin with "m".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Variable -Include M*,P*
 ```
 
 This command gets information about the variables that begin with either the letter "M" or the letter "P".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Variable -Scope 0
 PS C:\> Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)

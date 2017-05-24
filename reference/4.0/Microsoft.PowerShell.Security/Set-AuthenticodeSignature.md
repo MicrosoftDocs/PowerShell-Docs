@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set AuthenticodeSignature
+title: Set-AuthenticodeSignature
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293940
@@ -43,7 +43,7 @@ If there is a signature in the file when this cmdlet runs, that signature is rem
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $cert=Get-ChildItem -Path cert:\CurrentUser\my -CodeSigningCert
 PS C:\> Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -certificate $cert
@@ -58,7 +58,7 @@ The command stores the result in the $cert variable.
 The second command uses the Set-AuthenticodeSignature cmdlet to sign the PSTestInternet2.ps1 script.
 It uses the FilePath parameter to specify the name of the script and the Certificate parameter to specify that the certificate is stored in the $cert variable.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $cert = Get-PfxCertificate C:\Test\Mysign.pfx
 PS C:\> Set-AuthenticodeSignature -Filepath ServerProps.ps1 -Cert $cert
@@ -74,7 +74,7 @@ The FilePath parameter of Set-AuthenticodeSignature specifies the path to the sc
 
 If the certificate file is password protected, Windows PowerShell prompts you for the password.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Set-AuthenticodeSignature -filepath c:\scripts\Remodel.ps1 -certificate $cert -IncludeChain All -TimeStampServer "http://timestamp.fabrikam.com/scripts/timstamper.dll"
 ```

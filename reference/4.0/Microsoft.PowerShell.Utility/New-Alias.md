@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New Alias
+title: New-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293991
@@ -34,14 +34,14 @@ You can later use Import-Alias to retrieve that saved alias information.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-alias list get-childitem
 ```
 
 This command creates an alias named "list" to represent the Get-ChildItem cmdlet.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-alias -name w -value get-wmiobject -description "quick wmi alias" -option ReadOnly
 PS C:\> get-alias -name w | format-list *

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get WSManCredSSP
+title: Get-WSManCredSSP
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=141443
@@ -45,7 +45,7 @@ To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
 To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-wsmancredssp
 ```

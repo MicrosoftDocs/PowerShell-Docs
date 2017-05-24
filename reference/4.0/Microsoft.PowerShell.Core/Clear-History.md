@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear History
+title: Clear-History
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289571
@@ -38,35 +38,35 @@ Without parameters, Clear-History deletes all commands from the session history,
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> clear-history
 ```
 
 Deletes all commands from the session history.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> clear-history -id 23, 25
 ```
 
 Deletes the commands with history IDs 23 and 25.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> clear-history -command *help*, *command
 ```
 
 Deletes commands that include "help" or end in "command".
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> clear-history -count 10 -newest
 ```
 
 Deletes the 10 newest commands from the history.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> clear-history -id 10 -count 3
 ```

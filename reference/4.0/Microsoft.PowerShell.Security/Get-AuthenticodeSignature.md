@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get AuthenticodeSignature
+title: Get-AuthenticodeSignature
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293935
@@ -37,7 +37,7 @@ If the file is not signed, the information is retrieved, but the fields are blan
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-AuthenticodeSignature -filepath C:\Test\NewScript.ps1
 ```
@@ -45,7 +45,7 @@ PS C:\> get-AuthenticodeSignature -filepath C:\Test\NewScript.ps1
 This command gets information about the Authenticode signature in the NewScript.ps1 file.
 It uses the FilePath parameter to specify the file.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-authenticodesignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
@@ -53,7 +53,7 @@ PS C:\> get-authenticodesignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps
 This command gets information about the Authenticode signature in the four files listed at the command line.
 In this command, the name of the FilePath parameter, which is optional, is omitted.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-childitem $pshome\*.* | foreach-object {Get-AuthenticodeSignature $_} | where {$_.status -eq "Valid"}
 ```

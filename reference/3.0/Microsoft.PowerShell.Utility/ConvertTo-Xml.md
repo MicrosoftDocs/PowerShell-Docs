@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  ConvertTo Xml
+title: ConvertTo-Xml
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135204
@@ -34,13 +34,13 @@ This cmdlet is similar to Export-Clixml except that Export-Clixml stores the res
 ConvertTo-XML returns the XML, so you can continue to process it in Windows PowerShell.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-date | convertto-xml
 ```
 
 This command converts the current date (a DateTime object) to XML.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> convertto-xml -as Document -inputObject (get-process) -depth 3
 ```

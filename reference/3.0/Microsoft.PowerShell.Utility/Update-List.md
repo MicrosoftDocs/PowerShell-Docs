@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Update List
+title: Update-List
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113447
@@ -46,7 +46,7 @@ The core cmdlets that are installed with Windows PowerShell do not support this 
 To determine whether a cmdlet supports Update-List, see the cmdlet Help topic.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-mailbox | update-list -Property aliases -Add "A","B" -Remove "X","Y" | set-mailbox
 ```
@@ -62,7 +62,7 @@ The Aliases property fulfills the conditions of Update-List, because it stores a
 The Update-List cmdlet returns the updated mailbox, which is piped to the Set-MailBox cmdlet, which changes the mailbox.
 
 For more information about Get-Mailbox, see http://go.microsoft.com/fwlink/?LinkId=111536.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $m = get-mailbox
 PS C:\> update-list -InputObject $m -Property aliases -Add "A","B" -Remove "X", "Y" | set-mailbox
@@ -77,7 +77,7 @@ The value of InputObject is the mailbox in the $m variable.
 It uses the Property parameter to specify the Aliases property and the Add and Remove parameters to specify the items being added to and removed from the value of Aliases.
 
 The command uses a pipeline operator (|) to send the updated mailbox object to the Set-Mailbox cmdlet, which changes the mailbox.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-mailbox | set-mailbox -alias (update-list -Add "A", "B" -Remove "X","Y")
 ```
@@ -95,7 +95,7 @@ The command uses the Alias parameter of Set-Mailbox to change the Aliases proper
 The value of the Alias parameter is an Update-List command that creates an object that represents the update.
 The Update-List command is enclosed in parentheses to ensure that it runs before the value of the Alias parameter is evaluated.
 When the Set-Mailbox command completes, the mailbox is changed.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> update-list -InputObject $a -Property aliases -replace "A", "B" | set-mailbox
 ```

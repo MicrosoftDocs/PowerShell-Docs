@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Acl
+title: Get-Acl
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293934
@@ -48,14 +48,14 @@ Beginning in Windows PowerShell 3.0, you can use the **InputObject** parameter o
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Acl C:\Windows
 ```
 
 This command gets the security descriptor of the C:Windows directory.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-Acl C:\Windows\k*.log | Format-List -Property PSPath, Sddl
 ```
@@ -71,7 +71,7 @@ Lists are often used in Windows PowerShell, because long values appear truncated
 The **SDDL** values are valuable to system administrators, because they are simple text strings that contain all of the information in the security descriptor.
 As such, they are easy to pass and store, and they can be parsed when needed.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Acl C:/Windows/k*.log -Audit | Foreach-Object { $_.Audit.Count }
 ```
@@ -80,7 +80,7 @@ This command gets the security descriptors of the .log files in the C:\Windows d
 Then it uses theForEach-Object cmdlet to count the number of audit records associated with each file.
 The result is a list of numbers representing the number of audit records for each log file.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-Acl -Path HKLM:\System\CurrentControlSet\Control | Format-List
 ```
@@ -191,7 +191,7 @@ Accept wildcard characters: True
 ### -AllCentralAccessPolicies
 Gets information about all central access policies that are enabled on the computer.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see "Central Access Policies" at http://go.microsoft.com/fwlink/?LinkId=238408http://go.microsoft.com/fwlink/?LinkId=238408.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -253,9 +253,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -303,4 +301,5 @@ Windows PowerShell uses the GetSddlForm method of security descriptors to get th
 ## RELATED LINKS
 
 [Set-Acl](Set-Acl.md)
+
 

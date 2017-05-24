@@ -29,12 +29,12 @@ Stops debugging of DSC resources.
 Starts debugging of all DSC resources.
 
 
-### [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
-Retrieves data about completed configuration runs.
-
-
 ### [Get-DscConfiguration](Get-DscConfiguration.md)
 Gets the current configuration of the nodes.
+
+
+### [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
+Retrieves data about completed configuration runs.
 
 
 ### [Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager.md)

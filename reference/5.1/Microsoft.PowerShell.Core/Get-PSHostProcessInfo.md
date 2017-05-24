@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get PSHostProcessInfo
+title: Get-PSHostProcessInfo
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821487
@@ -82,7 +82,8 @@ Accept wildcard characters: False
 ```
 
 ### -Process
-@{Text=}
+Specifies a process by the process object.
+The simplest way to use this parameter is to save the results of a **Get-Process** command that returns process that you want to enter in a variable, and then specify the variable as the value of this parameter.
 
 ```yaml
 Type: Process[]

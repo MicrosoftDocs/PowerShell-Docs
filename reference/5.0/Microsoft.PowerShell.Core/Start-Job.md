@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Job
+title: Start-Job
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821518
@@ -493,7 +493,8 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-{{Fill VMName Description}}
+Specifies an array of names of virtual machines.
+This cmdlet starts an interactive session with each of the specified virtual machines.
 
 ```yaml
 Type: String[]

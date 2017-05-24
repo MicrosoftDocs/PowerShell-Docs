@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  ConvertTo SecureString
+title: ConvertTo-SecureString
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113291
@@ -47,7 +47,7 @@ This enables it to be stored in a file for later use.
 If the standard string being converted was encrypted with ConvertFrom-SecureString using a specified key, that same key must be provided as the value of the Key or SecureKey parameter of the ConvertTo-SecureString cmdlet.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $secure = read-host -assecurestring
 PS C:\> $secure
@@ -81,7 +81,7 @@ The fifth command uses the ConvertTo-SecureString cmdlet to convert the encrypte
 It saves the result in the $secure2 variable.
 The sixth command displays the value of the $secure2 variable.
 The SecureString type indicates that the command was successful.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $secure = read-host -assecurestring
 PS C:\> $encrypted = convertfrom-securestring -secureString $secure -key (1..16)
@@ -102,7 +102,7 @@ The third command uses a pipeline operator (|) to send the value of the $encrypt
 The fourth command uses the Get-Content cmdlet to get the encrypted standard string in the Encrypted.txt file.
 The command uses a pipeline operator to send the encrypted string to the ConvertTo-SecureString cmdlet, which converts it to a secure string by using the specified key.
 The results are saved in the $secure2 variable.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $secure_string_pwd = convertto-securestring "P@ssW0rD!" -asplaintext -force
 ```

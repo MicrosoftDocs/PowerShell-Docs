@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Export Clixml
+title: Export-Clixml
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821767
@@ -34,13 +34,13 @@ Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-F
 ```
 
 ## DESCRIPTION
-The **Export-CliXml** cmdlet creates an XML-based representation of an object or objects and stores it in a file.
+The **Export-Clixml** cmdlet creates an XML-based representation of an object or objects and stores it in a file.
 You can then use the Import-Clixml cmdlet to re-create the saved object based on the contents of that file.
 
-This cmdlet is similar to ConvertTo-Xml, except that **Export-CliXml** stores the resulting XML in a file.
+This cmdlet is similar to ConvertTo-Xml, except that **Export-Clixml** stores the resulting XML in a file.
 **ConvertTo-XML** returns the XML, so you can continue to process it in Windows PowerShell.
 
-A valuable use of **Export-CliXml** is to export credentials and secure strings securely as XML.
+A valuable use of **Export-Clixml** is to export credentials and secure strings securely as XML.
 For an example of how to do this, see Example 3.
 
 ## EXAMPLES
@@ -69,18 +69,18 @@ Then, it saves the object in the $FileAcl variable.
 ### Example 3: Encrypt an exported credential object
 ```
 PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $credential | Export-CliXml $CredPath
+PS C:\> $credential | Export-Clixml $CredPath
 PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $Credential = Import-CliXml $CredXmlPath
+PS C:\> $Credential = Import-Clixml $CredXmlPath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **Export-Clixml** cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
 This ensures that only your user account can decrypt the contents of the credential object.
 
-In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk.In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
+In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-Clixml** cmdlet to save the credential to disk.In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
 Replace TestScript with the name of the script with which you are loading the credential.
 
-In the second command, pipe the credential object to **Export-CliXml**, and save it to the path, $CredXmlPath, that you specified in the first command.
+In the second command, pipe the credential object to **Export-Clixml**, and save it to the path, $CredXmlPath, that you specified in the first command.
 
 To import the credential automatically into your script, run the final two commands.
 This time, you are running Import-Clixml to import the secured credential object into your script.

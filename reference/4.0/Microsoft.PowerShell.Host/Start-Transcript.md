@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Transcript
+title: Start-Transcript
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289793
@@ -45,14 +45,14 @@ The transcript includes all command that the user types and all output that appe
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transcript
 ```
 
 This command starts a transcript in the default file location.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-transcript -path c:\transcripts\transcript0.txt -noclobber
 ```
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeInvocationHeader
-{{Fill IncludeInvocationHeader Description}}
+Indicates that this cmdlet logs the time stamp when commands are run.
 
 ```yaml
 Type: SwitchParameter
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputDirectory
-{{Fill OutputDirectory Description}}
+Specifies a specific path and folder in which to save a transcript. Windows PowerShell automatically assigns the transcript name.
 
 ```yaml
 Type: String

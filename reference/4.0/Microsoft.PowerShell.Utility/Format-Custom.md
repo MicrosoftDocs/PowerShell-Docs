@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Format Custom
+title: Format-Custom
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293960
@@ -33,7 +33,7 @@ You can use the views defined in the *format.PS1XML files in the Windows PowerSh
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-command start-transcript | format-custom -view MyView
 ```
@@ -41,7 +41,7 @@ PS C:\> get-command start-transcript | format-custom -view MyView
 This command formats information about the Start-Transcript cmdlet in the format defined by the MyView view, a custom view created by the user.
 To run this command successfully, you must first create a new PS1XML file, define the MyView view, and then use the Update-FormatData command to add the PS1XML file to Windows PowerShell.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-process Winlogon | format-custom
 ```

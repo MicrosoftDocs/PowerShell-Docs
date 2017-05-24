@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke Expression
+title: Invoke-Expression
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113343
@@ -28,7 +28,7 @@ The Invoke-Expression cmdlet evaluates or runs a specified string as a command a
 Without Invoke-Expression, a string submitted at the command line would be returned (echoed) unchanged.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $command = "Get-Process"
 PS C:\> $command
@@ -55,7 +55,7 @@ The second command shows the effect of typing the variable name at the command l
 Windows PowerShell echoes the string.
 
 The third command uses Invoke-Expression to evaluate the string.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> invoke-expression -command "C:\ps-test\testscript.ps1"
 PS C:\> "C:\ps-test\testscript.ps1" | invoke-expression
@@ -65,7 +65,7 @@ These commands use Invoke-Expression to run a script, TestScript.ps1, on the loc
 The two commands are equivalent.
 The first uses the Command parameter to specify the command to run.
 The second uses a pipeline operator (|) to send the command string to Invoke-Expression.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $Command = 'Get-Process | where {$_.cpu -gt 1000}'
 PS C:\> Invoke-Expression $Command
@@ -75,7 +75,7 @@ This example runs a command string that is saved in the $Command variable.
 
 The command string is enclosed in single quotation marks because it includes a variable, $_, which represents the current object.
 If it were enclosed in double quotation marks, the $_ variable would be replaced by its value before it was saved in the $Command variable.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $cmdlet_name = "get-eventlog"
 PS C:\> $example_number = 1

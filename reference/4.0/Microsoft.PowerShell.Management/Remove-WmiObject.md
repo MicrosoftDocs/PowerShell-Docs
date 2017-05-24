@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove WmiObject
+title: Remove-WmiObject
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293899
@@ -72,7 +72,7 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing WMI class.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> notepad
 PS C:\> $np = get-wmiobject -query "select * from win32_process where name='notepad.exe'"
@@ -87,7 +87,7 @@ The second command uses the Get-WmiObject cmdlet to retrieve the instances of th
 
 The third command passes the object in the $np variable to the Remove-WmiObject cmdlet, which deletes all the instances of Notepad.exe.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = Get-WMIObject -query "Select * From Win32_Directory Where Name ='C:\\Test'"
 PS C:\> $a | Remove-WMIObject

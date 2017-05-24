@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set WmiInstance
+title: Set-WmiInstance
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293914
@@ -77,7 +77,7 @@ Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://g
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2}
 
@@ -126,7 +126,7 @@ The command passes the property to be set and the value (together considered a v
 The parameter takes a hash table that is defined by the @{property = value} construction.
 The class information that is returned reflects the new value.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 
@@ -154,7 +154,7 @@ This command creates the testvar environment variable that has the value "testva
 It does this by creating a new instance of the Win32_Environment WMI class.
 Note that this operation requires appropriate credentials and that you may need to restart Windows PowerShell to see the new environment variable.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Set-WMIInstance -class Win32_WMISetting -argument @{LoggingLevel=2} -computername system01, system02, system03
 

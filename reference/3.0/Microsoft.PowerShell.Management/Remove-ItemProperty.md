@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove ItemProperty
+title: Remove-ItemProperty
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113374
@@ -37,7 +37,7 @@ The Remove-ItemProperty cmdlet deletes a property and its value from an item.
 You can use it to delete registry values and the data that they store.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
 ```
@@ -47,7 +47,7 @@ This command deletes the SmpProperty registry value, and its data, from the SmpA
 Because the command is issued from a file system drive (PS C:\\\>), it includes the fully qualified path to the SmpApplication subkey, including the drive, HKLM:, and the Software key.
 
 It uses the Name parameter to identify the registry value that is being deleted.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> remove-itemproperty -path . -Name Options -confirm
@@ -61,7 +61,7 @@ The second command uses the Remove-Item cmdlet to remove the Options registry va
 Because the Path parameter is required, the command uses a dot (.) to indicate the current location.
 It uses the Name parameter to specify which registry value to delete.
 It uses the Confirm parameter to request a user prompt before deleting the value.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
 ```
@@ -249,9 +249,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -305,4 +303,5 @@ For more information, see about_Providers.
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

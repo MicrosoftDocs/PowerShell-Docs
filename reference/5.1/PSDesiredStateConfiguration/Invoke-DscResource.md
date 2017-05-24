@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke DscResource
+title: Invoke-DscResource
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=627544
@@ -53,7 +53,7 @@ This command invokes the **Test** method of a resource named WindowsProcess, whi
 ## PARAMETERS
 
 ### -Method
-@{Text=}
+Specifies the method of the resource that this cmdlet invokes. The acceptable values for this parameter are: Get, Set, and Test.
 
 ```yaml
 Type: String
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleName
-@{Text=}
+Specifies the name of the module from which this cmdlet invokes the specified resource.
 
 ```yaml
 Type: ModuleSpecification
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+Specifies the name of the DSC resource to start.
 
 ```yaml
 Type: String
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
-@{Text=}
+Specifies the resource property name and its value in a hash table as key and value, respectively. Use the **Get-DscResource** cmdlet to discover resource properties and their types.
 
 ```yaml
 Type: Hashtable

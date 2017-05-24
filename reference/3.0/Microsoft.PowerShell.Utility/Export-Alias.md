@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Export Alias
+title: Export-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113296
@@ -38,7 +38,7 @@ If the output file does not exist, the cmdlet will create it.
 Export-Alias can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a Windows PowerShell profile.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 C:\PS>export-alias -path alias.csv
 ```
@@ -48,7 +48,7 @@ Description
 -----------
 
 This command exports current alias information to a file named Alias.csv in the current directory.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 C:\PS>export-alias -path alias.csv -noclobber
 ```
@@ -60,7 +60,7 @@ Description
 This command exports the aliases in the current session to an Alias.csv file.
 
 Because the NoClobber parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 C:\PS>export-alias -path alias.csv -append -description "Appended Aliases" -force
 ```
@@ -74,7 +74,7 @@ This command appends the aliases in the current session to the Alias.csv file.
 The command uses the Description parameter to add a description to the comments at the top of the file.
 
 The command also uses the Force parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 C:\PS>export-alias -path alias.ps1 -as script
 PS C:\> add-content -path $profile -value (get-content alias.ps1)

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Connect WSMan
+title: Connect-WSMan
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=141437
@@ -44,7 +44,7 @@ Note: Explicit credentials are required when the client and server computers are
 For information about how to disconnect from the WinRM service on a remote computer, see Disconnect-WSMan.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Connect-WSMan -computer server01
 PS C:\Users\testuser> cd wsman:
@@ -63,7 +63,7 @@ This command creates a connection to the remote server01 computer.
 The Connect-WSMan cmdlet is generally used within the context of the WSMan provider to connect to a remote computer, in this case the server01 computer.
 However, you can use the cmdlet to establish connections to remote computers before you change to the WSMan provider.
 Those connections will appear in the ComputerName list.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $cred = Get-Credential Administrator
 Connect-WSMan -computer server01 -credential $cred
@@ -91,7 +91,7 @@ Connect-WSMan then connects to the remote system server01 using the Administrato
 
 The Connect-WSMan cmdlet is generally used within the context of the WSMan provider to connect to a remote computer, in this case server01.
 However, the cmdlet can be used establish connections to remote computers before changing to the WSMan provider and those connections will show up in the ComputerName list.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Connect-WSMan -computer server01 -port 80
 PS C:\Users\testuser> cd wsman:
@@ -109,7 +109,7 @@ This command creates a connection to the remote server01 computer over port 80.
 The Connect-WSMan cmdlet is generally used within the context of the WSMan provider to connect to a remote computer, in this case the server01 computer.
 However, you can use the cmdlet to establish connections to remote computers before you change to the WSMan provider.
 Those connections will appear in the ComputerName list.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
 Connect-WSMan -computer server01 -sessionoption $a

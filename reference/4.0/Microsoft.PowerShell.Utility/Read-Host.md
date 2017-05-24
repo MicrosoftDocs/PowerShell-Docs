@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Read Host
+title: Read-Host
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294000
@@ -32,7 +32,7 @@ Because you can save the input as a secure string, you can use this cmdlet to pr
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $age = read-host "Please enter your age"
 ```
@@ -40,7 +40,7 @@ PS C:\> $age = read-host "Please enter your age"
 This command displays the string "Please enter your age:" as a prompt.
 When a value is entered and the Enter key is pressed, the value is stored in the $age variable.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $pwd_secure_string = read-host "Enter a Password" -assecurestring
 ```

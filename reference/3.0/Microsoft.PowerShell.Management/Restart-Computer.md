@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Restart Computer
+title: Restart-Computer
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135253
@@ -46,19 +46,19 @@ You can also use the WSMan protocol to restart the computer, in case DCOM calls 
 This cmdlet requires Windows PowerShell remoting only when you use the **AsJob** parameter in a command.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Restart-Computer
 ```
 
 This command restarts the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Restart-Computer -ComputerName Server01, Server02, localhost
 ```
 
 This command restarts two remote computers, Server01 and Server02, and the local computer, identified as "localhost".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command uses the **AsJob** parameter to run the command as a background job. The command saves the resulting job object in the $j variable.
 PS C:\> $j = Restart-Computer -ComputerName Server01, Server02 -AsJob
@@ -71,14 +71,14 @@ PS C:\> $Results
 ```
 
 These commands run a **Restart-Computer** command as a background job on two remote computers, and then get the results.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Restart-Computer -ComputerName Server01 -Impersonation Anonymous -Authentication PacketIntegrity
 ```
 
 This command restarts the Server01 remote computer.
 The command uses customized impersonation and authentication settings.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command uses the Get-Content cmdlet to get a list of computers in the domain from the Domain01.txt file. It saves the list in the $s variable.
 PS C:\> $s = Get-Content Domain01.txt
@@ -92,7 +92,7 @@ PS C:\> Restart-Computer -ComputerName $s -Force -ThrottleLimit 10 -Credential $
 ```
 
 These commands force an immediate restart of all of the computers in Domain01.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Restart-Computer -ComputerName Server01 -Wait -For PowerShell -Timeout 300 -Delay 2
 ```
@@ -101,7 +101,7 @@ This command restarts the Server01 remote computer and then waits up to 5 minute
 
 The command uses the **Wait**, **For**, and **Timeout** parameters to specify the conditions of the wait.
 It uses the **Delay** parameter to reduce the interval between queries to the remote computer that determine whether it is restarted.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Restart-Computer -ComputerName Server01 -Protocol WSMan -WSManAuthentication Kerberos
 ```

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Select Xml
+title: Select-Xml
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294009
@@ -47,7 +47,7 @@ Enter an XPath query, and use the Content, Path, or Xml parameter to specify the
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $Path = "$pshome\Types.ps1xml"
 PS C:\> $XPath = "/Types/Type/Members/AliasProperty"
@@ -86,7 +86,7 @@ The **ExpandProperty** parameter expands the Node object and returns its Name an
 The result shows the Name and ReferencedMemberName of each alias property in the Types.ps1xml file.
 For example, there is a Count property that is an alias of the Length property.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> [xml]$Types = Get-Content $pshome\Types.ps1xml
 PS C:\> Select-Xml -Xml $Types -XPath "//MethodName"
@@ -100,7 +100,7 @@ The "\[xml\]" casts the variable as an XML object.
 The second command uses the **Select-Xml** cmdlet to get the MethodName nodes in the Types.ps1xml file.
 The command uses the **Xml** parameter to specify the XML content in the $Types variable and the **XPath** parameter to specify the path to the MethodName node.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.
 PS C:\> $Namespace = @{command="http://schemas.microsoft.com/maml/dev/command/2004/10"; maml="http://schemas.microsoft.com/maml/2004/10"; dev="http://schemas.microsoft.com/maml/dev/2004/10"}
@@ -129,7 +129,7 @@ Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microso
 This example shows how to use the Select-Xml cmdlet to search the Windows PowerShell XML-based cmdlet help files.
 In this example, we'll search for the cmdlet name that serves as a title for each help file and the path to the help file.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command saves a here-string that contains XML in the $xml variable. (For more information about here-strings, see about_Quoting_Rules.)
 PS C:\> $xml = @"
@@ -167,7 +167,7 @@ Pl.Book1.com
 
 This example shows two different ways to send XML to the Select-Xml cmdlet.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command creates a hash table for the default namespace the that snippet XML files use and assigns it to the $SnippetNamespace variable. The hash table value is the XMLNS schema URI in the snippet XML. The hash table key name, "snip," is arbitrary. You can use any name that is not reserved, but you cannot use "xmlns."
 PS C:\> $SnippetNamespace = @{snip="http://schemas.microsoft.com/PowerShell/Snippets"}

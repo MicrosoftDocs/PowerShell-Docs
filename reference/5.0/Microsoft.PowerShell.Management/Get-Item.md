@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Item
+title: Get-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821587
@@ -270,7 +270,21 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-This parameter is not supported by any providers installed with Windows PowerShell.
+Specifies an alternative data stream from a file that this cmdlet deletes.
+This cmdlet does not delete the file.
+Enter the stream name.
+Wildcard characters are supported.
+
+This parameter is not valid on folders.
+
+The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Get-Item**.
+This parameter works only in file system drives.
+
+You can use **Get-Item** to delete an alternative data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]

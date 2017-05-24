@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove EventLog
+title: Remove-EventLog
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293895
@@ -42,14 +42,14 @@ CAUTION:  This cmdlet can delete operating system event logs, which might result
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> remove-eventlog -logname MyLog
 ```
 
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> remove-eventlog -logname MyLog, TestLog -computername Server01, Server02, localhost
 ```
@@ -57,7 +57,7 @@ PS C:\> remove-eventlog -logname MyLog, TestLog -computername Server01, Server02
 This command deletes the MyLog and TestLog event logs from the local computer ("localhost") and the Server01 and Server02 remote computers.
 The command also unregisters the event sources for these logs.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> remove-eventlog -source MyApp
 ```
@@ -65,7 +65,7 @@ PS C:\> remove-eventlog -source MyApp
 This command deletes the MyApp event source from the logs on the local computer.
 When the command completes, the MyApp program cannot write to any event logs.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-eventlog -list
 
@@ -103,7 +103,7 @@ The second command deletes the ZapLog event log.
 The third command lists the event logs again.
 The ZapLog event log no longer appears in the list.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-wmiobject win32_nteventlogfile -filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp

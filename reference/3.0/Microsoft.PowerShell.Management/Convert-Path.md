@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Convert Path
+title: Convert-Path
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113289
@@ -33,19 +33,19 @@ Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
 The Convert-Path cmdlet converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> convert-path .
 ```
 
 This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> convert-path HKLM:\software\microsoft
 ```
 
 This command converts the Windows PowerShell provider path to a standard registry path.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> convert-path ~
 C:\Users\User01
@@ -91,9 +91,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter

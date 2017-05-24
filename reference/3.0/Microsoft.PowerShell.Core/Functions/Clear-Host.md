@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear Host
+title: Clear-Host
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-help.xml
 online version:   http://technet.microsoft.com/library/hh852689(v=wps.630).aspx
@@ -38,7 +38,7 @@ Because the behavior of the Clear-Host function is determined by the host progra
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 cls
 

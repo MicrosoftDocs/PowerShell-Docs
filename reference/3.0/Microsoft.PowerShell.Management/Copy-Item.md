@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Copy Item
+title: Copy-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113292
@@ -46,14 +46,14 @@ To rename an item, enter the new name in the value of the Destination parameter.
 To rename an item without copying it, use the Rename-Item cmdlet.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Copy-Item C:\Wabash\Logfiles\mar1604.log.txt -Destination C:\Presentation
 ```
 
 This command copies the mar1604.log.txt file to the C:\Presentation directory.
 The command does not delete the original file.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings -Recurse
 ```
@@ -62,14 +62,14 @@ This command copies the entire contents of the Logfiles directory into the Drawi
 If the LogFiles directory contains files in subdirectories, those subdirectories will be copied with their file trees intact.
 The Container parameter is set to true by default.
 This preserves the directory structure.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
 ```
 
 This command copies the contents of the C:\Logfiles directory to the C:\Drawings\Logs directory.
 It creates the \Logs subdirectory if it does not already exist.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Copy-Item \\Server01\Share\Get-Widget.ps1 -Destination \\Server12\ScriptArchive\Get-Widget.ps1.txt
 ```
@@ -293,9 +293,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -347,4 +345,5 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get PSSnapin
+title: Get-PSSnapin
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289590
@@ -40,7 +40,7 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-PSSnapIn
 ```
@@ -48,7 +48,7 @@ PS C:\> get-PSSnapIn
 This command gets the Windows PowerShell snap-ins that are currently loaded in the session.
 This includes the snap-ins that are installed with Windows PowerShell and those that have been added to the session.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-PSSnapIn -registered
 ```
@@ -56,7 +56,7 @@ PS C:\> get-PSSnapIn -registered
 This command gets the Windows PowerShell snap-ins that have been registered on the computer, including those that have already been added to the session.
 The output does not include snap-ins that are installed with Windows PowerShell or Windows PowerShell snap-in dynamic-link libraries (DLLs) that have not yet been registered on the system.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-PSSnapIn smp*
 ```

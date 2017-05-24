@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Enable ComputerRestore
+title: Enable-ComputerRestore
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=290487
@@ -37,14 +37,14 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> enable-computerrestore -drive "C:\"
 ```
 
 This command enables System Restore on the C: drive of the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> enable-computerrestore -drive "C:\", "D:\"
 ```

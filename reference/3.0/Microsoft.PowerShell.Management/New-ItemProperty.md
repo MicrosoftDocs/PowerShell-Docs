@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New ItemProperty
+title: New-ItemProperty
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113354
@@ -43,7 +43,7 @@ To add a property to an instance of an object, use the Add-Member cmdlet.
 To add a property to all objects of a particular type, edit the Types.ps1xml file.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-itemproperty -path HKLM:\Software\MyCompany -name NoOfEmployees -value 822
 PS C:\> get-itemproperty hklm:\software\mycompany
@@ -63,7 +63,7 @@ The first command uses the Path parameter to specify the path to the MyCompany r
 It uses the Name parameter to specify a name for the entry and the Value parameter to specify its value.
 
 The second command uses the Get-ItemProperty cmdlet to see the new registry entry.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfLocations -value 3
 ```
@@ -293,9 +293,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -340,4 +338,5 @@ New-ItemProperty returns a custom object that contains the new property.
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  move item for certificate
+title: Move-Item for Certificate
 ms.technology:  powershell
 ---
 

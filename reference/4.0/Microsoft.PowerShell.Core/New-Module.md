@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New Module
+title: New-Module
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289594
@@ -52,7 +52,7 @@ This action adds the dynamic module to the Get-Module list, but it does not save
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
@@ -75,7 +75,7 @@ NestedModules     : {}
 This command creates a new dynamic module with a function called "Hello".
 The command returns a module object that represents the new dynamic module.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
@@ -104,7 +104,7 @@ Function        Hello  "Hello!"
 
 This example demonstrates that dynamic modules are not returned by the Get-Module cmdlet, but the members that they export are returned by the Get-Command cmdlet.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> New-Module -scriptblock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
 
@@ -121,7 +121,7 @@ Without the Export-ModuleMember command, only the function is exported.
 
 The output shows that both the variable and the function were exported into the session.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> new-module -scriptblock {function Hello {"Hello!"}} -name GreetingModule | import-module
 PS C:\> get-module
@@ -159,7 +159,7 @@ The result shows that Get-Module can get the new dynamic module.
 
 The third command uses the Get-Command cmdlet to get the Hello function that the dynamic module exports.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $m = new-module -scriptblock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
 PS C:\> $m
@@ -196,7 +196,7 @@ The output shows that the object has script methods that represent the Hello and
 
 The fourth and fifth commands use the script method format to call the Hello and Goodbye functions.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> new-module -scriptblock {function SayHello {"Hello, World!"}; SayHello} -returnResult
 Hello, World!

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Stop Computer
+title: Stop-Computer
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293921
@@ -37,21 +37,21 @@ This cmdlet does not require Windows PowerShell remoting unless you use the AsJo
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-computer
 ```
 
 This command shuts down the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> stop-computer -computername Server01, Server02, localhost
 ```
 
 This command stops two remote computers, Server01 and Server02, and the local computer, identified as "localhost".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $j = stop-computer -computername Server01, Server02 -asjob
 PS C:\> $results = $j | receive-job
@@ -70,7 +70,7 @@ The third command displays the result saved in the $results variable.
 
 Because the AsJob parameter creates the job on the local computer and automatically returns the results to the local computer, you can run the Receive-Job command as a local command.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> stop-computer -comp Server01 -impersonation anonymous -authentication PacketIntegrity
 ```
@@ -78,7 +78,7 @@ PS C:\> stop-computer -comp Server01 -impersonation anonymous -authentication Pa
 This command restarts the Server01 remote computer.
 The command uses customized impersonation and authentication settings.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $s = get-content domain01.txt
 PS C:\> $c = get-credential domain01\admin01

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Format Wide
+title: Format-Wide
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293963
@@ -32,7 +32,7 @@ You can use the Property parameter to determine which property is displayed.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-childitem | format-wide -column 3
 ```
@@ -42,7 +42,7 @@ The Get-ChildItem cmdlet gets objects representing each file in the directory.
 The pipeline operator (|) passes the file objects through the pipeline to Format-Wide, which formats them for output.
 The Column parameter specifies the number of columns.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-childitem HKCU:\software\microsoft | format-wide -property pschildname -autosize
 ```

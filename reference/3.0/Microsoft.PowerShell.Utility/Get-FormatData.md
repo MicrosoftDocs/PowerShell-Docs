@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get FormatData
+title: Get-FormatData
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144303
@@ -34,19 +34,19 @@ Then, you can use the Export-FormatData cmdlet to serialize the objects (convert
 For more information about formatting files in Windows PowerShell, see about_Format.ps1xml.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-formatdata
 ```
 
 This command gets all the formatting data in the session.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-formatdata -typename Microsoft.Wsman*
 ```
 
 This command gets the formatting data items whose names begin with "Microsoft.Wsman".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $f = get-formatdata -typename helpinfoshort
 PS C:\> $f
@@ -71,7 +71,7 @@ Undefined      0
 ```
 
 This example shows how to get a formatting data object and examine its properties.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $a = get-formatdata
 PS C:\> import-module bitstransfer

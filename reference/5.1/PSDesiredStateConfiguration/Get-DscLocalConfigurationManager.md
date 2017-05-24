@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get DscLocalConfigurationManager
+title: Get-DscLocalConfigurationManager
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821457
@@ -59,7 +59,7 @@ The second command gets Local Configuration Manager settings for the computers i
 ## PARAMETERS
 
 ### -AsJob
-{{Fill AsJob Description}}
+Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
 Type: SwitchParameter
@@ -74,7 +74,8 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
-@{Text=}
+Runs the cmdlet in a remote session or on a remote computer.
+Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
 Type: CimSession[]
@@ -89,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
-@{Text=}
+Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 
 ```yaml
 Type: Int32

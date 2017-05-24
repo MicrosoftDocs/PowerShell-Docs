@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Invoke WSManAction
+title: Invoke-WSManAction
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=141446
@@ -41,7 +41,7 @@ The Invoke-WSManAction runs an action on the object that is specified by RESOURC
 This cmdlet uses the WSMan connection/transport layer to run the action.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> invoke-wsmanaction -action startservice -resourceuri wmicimv2/win32_service  -selectorset @{name="spooler"} -authentication default
 
@@ -57,7 +57,7 @@ This command calls the StartService method of the Win32_Service WMI class instan
 The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
 A return value of 5 indicates that the service is already started.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> invoke-wsmanaction -action stopservice -resourceuri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -authentication default
 
@@ -76,7 +76,7 @@ The file, Input.xml, contains the following content:
 The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
 A return value of 5 indicates that the service is already started.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> invoke-wsmanaction -action create -resourceuri wmicimv2/win32_process -valueset @{commandline="notepad.exe";currentdirectory="C:\"}
 xsi         : http://www.w3.org/2001/XMLSchema-instance
@@ -90,7 +90,7 @@ ReturnValue : 0
 This command calls the Create method of the Win32_Process class.
 It passes the method two parameter values, Notepad.exe and "C:\".
 As a result, a new process is created to run Notepad, and the current directory of the new process is set to "C:\".
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> invoke-wsmanaction -action startservice -resourceuri wmicimv2/win32_service  -selectorset @{name="spooler"} -computername server01 -authentication default
 

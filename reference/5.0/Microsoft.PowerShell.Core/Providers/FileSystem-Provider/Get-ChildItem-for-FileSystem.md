@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get ChildItem for FileSystem
+title: Get-ChildItem for FileSystem
 ms.technology:  powershell
 online version:   http://go.microsoft.com/fwlink/?LinkId=834950
 ---

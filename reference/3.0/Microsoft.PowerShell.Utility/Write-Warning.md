@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write Warning
+title: Write-Warning
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113430
@@ -28,13 +28,13 @@ The Write-Warning cmdlet writes a warning message to the Windows PowerShell host
 The response to the warning depends on the value of the user's $WarningPreference variable and the use of the WarningAction common parameter.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> write-warning "This is only a test warning."
 ```
 
 This command displays the message "WARNING: This is only a test warning."
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $w = "This is only a test warning."
 PS C:\> $w | write-warning
@@ -42,7 +42,7 @@ PS C:\> $w | write-warning
 
 This example shows that you can use a pipeline operator (|) to send a string to Write-Warning.
 You can save the string in a variable, as shown in this command, or pipe the string directly to Write-Warning.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $warningpreference
 Continue
@@ -72,7 +72,7 @@ A value of "SilentlyContinue" suppresses the warning.
 A value of "Stop" displays the warning and then stops execution of the command.
 
 For more information about the $WarningPreference variable, see about_Preference_Variables.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> write-warning "This is only a test warning." -warningaction Inquire
 

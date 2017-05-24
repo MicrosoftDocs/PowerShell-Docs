@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Out String
+title: Out-String
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293999
@@ -32,7 +32,7 @@ This cmdlet lets you search and manipulate string output as you would in traditi
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-content C:\test1\testfile2.txt | out-string
 ```
@@ -41,7 +41,7 @@ This command sends the content of the Testfile2.txt file to the console as a sin
 It uses the Get-Content cmdlet to get the content of the file.
 The pipeline operator (|) sends the content to **Out-String**, which sends the content to the console as a string.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command uses the Get-Culture cmdlet to get the regional settings. The pipeline operator (|) sends the result to the Select-Object cmdlet, which selects all properties (*) of the culture object that **Get-Culture** returned. The command then stores the results in the $c variable.
 PS C:\> $c = Get-Culture | Select-Object *
@@ -52,7 +52,7 @@ PS C:\> Out-String -InputObject $c -Width 100
 
 These commands get the regional settings for the current user and convert the data to strings.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-alias | out-string -stream | select-string "Get-Command"
 ```

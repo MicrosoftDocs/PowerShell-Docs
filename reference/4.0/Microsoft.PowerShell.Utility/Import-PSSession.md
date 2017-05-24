@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Import PSSession
+title: Import-PSSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293985
@@ -60,7 +60,7 @@ It is equivalent to using **Import-PSSession** to import selected modules from a
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 
@@ -71,7 +71,7 @@ This command imports all commands from a PSSession on the Server01 computer into
 
 Because this command does not use the **CommandName** parameter, it also imports all of the formatting data required for the imported commands.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $s = New-PSSession https://ps.testlabs.com/powershell
 PS C:\> Import-PSSession -Session $s -CommandName *-test -FormatTypeName *
@@ -91,7 +91,7 @@ The third and fourth commands use the imported commands in the current session.
 Because imported commands are actually added to the current session, you use the local syntax to run them.
 You do not need to use the Invoke-Command cmdlet to run an imported command.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $s1 = New-PSSession -ComputerName s1
 PS C:\> $s2 = New-PSSession -ComputerName s2
@@ -106,7 +106,7 @@ These commands import the New-Test and Get-Test cmdlets from a PSSession on the 
 
 Even though the cmdlets were imported from different PSSessions, you can pipe an object from one cmdlet to another without error.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Import-PSSession -Session $s -CommandName *-test* -FormatTypeName *
@@ -128,7 +128,7 @@ The command saves the job object that New-Test returns in the $batch variable.
 
 The fourth command uses the Receive-Job cmdlet to get the results of the job in the $batch variable.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Invoke-Command -Session $s {Import-Module TestManagement}
@@ -145,7 +145,7 @@ Typically, the module would be added to all sessions by an **Import-Module** com
 
 The third command uses the **Module** parameter of **Import-PSSession** to import the cmdlets and functions in the module into the current session.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Import-PSSession $s -CommandName Get-Date, SearchHelp  -FormatTypeName * -AllowClobber
 
@@ -175,7 +175,7 @@ The **Import-PSSession** cmdlet returns a **PSModuleInfo** object that represent
 The value of the **Path** property shows that **Import-PSSession** created a script module (.psm1) file in a temporary location.
 The **ExportedFunctions** property shows that the **Get-Date** cmdlet and the SearchHelp function were both imported as functions.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Import-PSSession $s -CommandName Get-Date -FormatTypeName * -AllowClobber
 
@@ -216,7 +216,7 @@ The fifth command uses the snap-in-qualified name of the **Get-Date** cmdlet to 
 
 For more information about command precedence and hidden commands, see about_Command_Precedence.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Import-PSSession -Session $s -CommandName *Item* -AllowClobber
 ```
@@ -226,7 +226,7 @@ Because the command includes the **CommandName** parameter but not the **FormatT
 
 Use this command when you are using **Import-PSSession** to run a command on a remote computer and you already have the formatting data for the command in the current session.
 
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $m = Import-PSSession -Session $s -CommandName *bits* -FormatTypeName *bits*
 PS C:\> Get-Command -Module $m

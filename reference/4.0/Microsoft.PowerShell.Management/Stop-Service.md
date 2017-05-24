@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Stop Service
+title: Stop-Service
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293923
@@ -45,14 +45,14 @@ You can specify the services by their service names or display names, or you can
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> stop-service sysmonlog
 ```
 
 This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-service -displayname telnet | stop-service
 ```
@@ -61,7 +61,7 @@ This command stops the Telnet service on the local computer.
 The command uses the Get-Service cmdlet to get an object representing the Telnet service.
 The pipeline operator (|) pipes the object to the Stop-Service cmdlet, which stops the service.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-service iisadmin | format-list -property name, dependentservices
 PS C:\> stop-service iisadmin -force -confirm

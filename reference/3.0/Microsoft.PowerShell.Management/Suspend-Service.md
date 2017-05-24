@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Suspend Service
+title: Suspend-Service
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113416
@@ -43,27 +43,27 @@ While suspended, the service is still running, but its action is halted until re
 You can specify the services by their service names or display names, or you can use the InputObject parameter to pass a service object representing the services that you want to suspend.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> suspend-service -displayname "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> suspend-service -name lanman* -whatif
 ```
 
 This command tells what would happen if you suspended the services that have a service name that begins with "lanman".
 To suspend the services, rerun the command without the WhatIf parameter.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-service schedule | suspend-service
 ```
 
 This command uses the Get-Service cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
 The pipeline operator (|) passes the result to the Suspend-Service cmdlet, which suspends the service.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-service | where-object {$_.canpauseandcontinue -eq "True"} | suspend-service -confirm
 ```

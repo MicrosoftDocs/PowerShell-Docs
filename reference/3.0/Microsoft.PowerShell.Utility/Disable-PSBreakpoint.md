@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disable PSBreakpoint
+title: Disable-PSBreakpoint
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113294
@@ -42,7 +42,7 @@ Disable-PSBreakpoint is one of several cmdlets designed for debugging Windows Po
 For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable name
 PS C:\> $b | disable-psbreakpoint
@@ -57,13 +57,13 @@ The second command uses the Disable-PSBreakpoint cmdlet to disable the new break
 It uses a pipeline operator (|) to send the breakpoint object in $b to the Disable-PSBreakpoint cmdlet.
 
 As a result of this command, the value of the Enabled property of the breakpoint object in $b is False.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> disable-psbreakpoint -id 0
 ```
 
 This command disables the breakpoint with breakpoint ID 0.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> disable-psbreakpoint -breakpoint ($b = set-psbreakpoint -script sample.ps1 -line 5)
 PS C:\> $b
@@ -78,7 +78,7 @@ Cmdlet parameters that take objects as their values can accept a variable that c
 In this case, because Set-PSBreakpoint generates a breakpoint object, it can be used as the value of the Breakpoint parameter.
 
 The second command displays the breakpoint object in the value of the $b variable.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-psbreakpoint | disable-psbreakpoint
 ```

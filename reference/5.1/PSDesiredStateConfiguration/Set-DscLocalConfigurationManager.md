@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set DscLocalConfigurationManager
+title: Set-DscLocalConfigurationManager
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821464
@@ -45,7 +45,7 @@ If you do not specify a target computer, the cmdlet applies settings to the loca
 PS C:\> Set-DscLocalConfigurationManager -Path "C:\DSC\Configurations\"
 ```
 
-This command applies the LCM settings from C:\DSC\Configurations\ to the targeted notes.
+This command applies the LCM settings from C:\DSC\Configurations\ to the targeted nodes.
 After receiving the settings, LCM processes them.
 
 ### Example 2: Apply LCM settings by using a CIM session
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-@{Text=}
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter

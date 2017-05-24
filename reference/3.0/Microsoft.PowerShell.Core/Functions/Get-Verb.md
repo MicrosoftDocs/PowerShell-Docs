@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Verb
+title: Get-Verb
 ms.technology:  powershell
 external help file:   System.Management.Automation.dll-help.xml
 online version:   http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
@@ -41,7 +41,7 @@ For an updated list of approved Windows PowerShell verbs with descriptions, see 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 get-verb
 ```
@@ -52,7 +52,7 @@ Description
 
 This command gets all approved verbs.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 get-verb un*
 
@@ -73,7 +73,7 @@ Description
 
 This command gets all approved verbs that begin with "un".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 get-verb | where-object {$_.Group -eq "Security"}
 
@@ -93,7 +93,7 @@ Description
 
 This command gets all approved verbs in the Security group.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 get-command -module MyModule | where { (get-verb $_.Verb) -eq $null }
 ```
@@ -104,7 +104,7 @@ Description
 
 This command finds all commands in a module that have unapproved verbs.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 $approvedVerbs = get-verb | foreach {$_.verb}
 

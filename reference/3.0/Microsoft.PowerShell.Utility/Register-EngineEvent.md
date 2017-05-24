@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register EngineEvent
+title: Register-EngineEvent
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135243
@@ -40,7 +40,7 @@ To get the event subscribers in the session, use the Get-EventSubscriber cmdlet.
 To cancel the subscription, use the Unregister-Event cmdlet, which deletes the event subscriber from the session.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01, Server02
 PS C:\> Invoke-Command -Session $s { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
@@ -54,7 +54,7 @@ The second command uses the Invoke-Command cmdlet to run the **Register-EngineEv
 
 The **Register-EngineEvent** command uses the **SourceIdentifier** parameter to identify the event.
 It uses the **Forward** parameter to forward the events from the remote session to the local session.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $j = Register-EngineEvent -SourceIdentifier PowerShell.ProcessCreated -action { $ProcessName | Add-Content ProcessLog.txt }
 PS C:\> Get-Event

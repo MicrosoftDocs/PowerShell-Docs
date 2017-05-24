@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disable ComputerRestore
+title: Disable-ComputerRestore
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135207
@@ -35,13 +35,13 @@ To find the state of System Restore for each drive, use Rstrui.exe.
 System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> disable-computerrestore -drive "C:\"
 ```
 
 This command disables System Restore on the C: drive.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> disable-computerrestore "C:\", "D:\"
 ```

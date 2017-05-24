@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Format List
+title: Format-List
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293961
@@ -34,7 +34,7 @@ Because more space is available for each item in a list than in a table, Windows
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-service | format-list
 ```
@@ -45,7 +45,7 @@ The Get-Service cmdlet gets objects representing the services on the computer.
 The pipeline operator (|) passes the results through the pipeline to Format-List.
 Then, the Format-List command formats the service information in a list and sends it to the default output cmdlet for display.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $a = get-childitem $pshome\*.ps1xml
 PS C:\> format-list -InputObject $a
@@ -58,7 +58,7 @@ The first command gets the objects representing the files and stores them in the
 The second command uses Format-List to format information about objects stored in $a.
 This command uses the InputObject parameter to pass the variable to Format-List, which then sends the formatted output to the default output cmdlet for display.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-process | format-list -property name, basepriority, priorityclass
 ```
@@ -69,7 +69,7 @@ The pipeline operator (|) passes the process objects through the pipeline to For
 Format-List formats the processes as a list of the specified properties.
 The "Property" parameter name is optional, so you can omit it.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-process winlogon | format-list -property *
 ```

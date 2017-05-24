@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get IseSnippet
+title: Get-IseSnippet
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=287355
@@ -38,14 +38,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ISESnippet
 ```
 
 This command gets all user-define snippets in the Snippets directory.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Invoke-Command -Computer (Get-Content Servers.txt) {Get-ISESnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
 ```
@@ -55,7 +55,7 @@ This command copies all of the user-created snippets from a group of remote comp
 The command uses the Invoke-Command cmdlet to run a **Get-ISESnippet** command on the computers in the Servers.txt file.
 A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the **Destination** parameter.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> #Parse-Snippet Function
 
@@ -90,7 +90,7 @@ Text:  (c) Fabrikam, Inc. 2012
 
 This function uses the **Get-ISESnippet** and Select-Xml cmdlets to display the Title and Text of each snippet on the local computer.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> $psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
 ```

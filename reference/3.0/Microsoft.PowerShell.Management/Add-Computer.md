@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Add Computer
+title: Add-Computer
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135194
@@ -43,19 +43,19 @@ You can use the parameters of this cmdlet to specify an organizational unit (OU)
 To get the results of the command, use the **Verbose** and **PassThru** parameters.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Add-Computer -DomainName Domain01 -Restart
 ```
 
 This command adds the local computer to the Domain01 domain and then restarts the computer to make the change effective.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Add-Computer -WorkGroupName WORKGROUP-A
 ```
 
 This command adds the local computer to the Workgroup-A workgroup.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Add-Computer -DomainName Domain01 -Server Domain01\DC01 -Passthru -Verbose
 ```
@@ -63,14 +63,14 @@ PS C:\> Add-Computer -DomainName Domain01 -Server Domain01\DC01 -Passthru -Verbo
 This command adds the local computer to the Domain01 domain by using the Domain01\DC01 domain controller.
 
 The command uses the **PassThru** and **Verbose** parameters to get detailed information about the results of the command.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
 ```
 
 This command adds the local computer to the Domain02 domain.
 It uses the OUPath parameter to specify the organizational unit for the new accounts.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
@@ -79,7 +79,7 @@ This command adds the Server01 computer to the Domain02 domain.
 It uses the **LocalCredential** parameter to specify a user account that has permission to connect to the Server01 computer.
 It uses the **Credential** parameter to specify a user account that has permission to join computers to the domain.
 It uses the **Restart** parameter to restart the computer after the join operation completes and the **Force** parameter to suppress user confirmation messages.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Add-Computer -ComputerName Server01, Server02, localhost -Domain Domain02 -LocalCredential Domain01\User01 -UnjoinDomainCredential Domain01\Admin01 -Credential Domain02\Admin01 -Restart
 ```
@@ -89,7 +89,7 @@ This command moves the Server01 and Server02 computers, and the local computer, 
 It uses the **LocalCredential** parameter to specify a user account that has permission to connect to the three affected computers.
 It uses the **UnjoinDomainCredential** parameter to specify a user account that has permission to unjoin the computers from the Domain01 domain and the **Credential** parameter to specify a user account that has permission to join the computers to the Domain02 domain.
 It uses the **Restart** parameter to restart all three computers after the move is complete.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Add-Computer -ComputerName Server01 -Domain Domain02 -NewName Server044 -Credential Domain02\Admin01 -Restart
 ```
@@ -98,7 +98,7 @@ This command moves the Server01 computer to the Domain02 and changes the machine
 
 The command uses the credential of the current user to connect to the Server01 computer and unjoin it from its current domain.
 It uses the **Credential** parameter to specify  a user account that has permission to join the computer to the Domain02 domain.
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Add-Computer -ComputerName (Get-Content Servers.txt) -Domain Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```

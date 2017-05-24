@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New IseSnippet
+title: New-IseSnippet
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=225298
@@ -43,7 +43,7 @@ For more information, see the Notes section.
 This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS             
@@ -58,7 +58,7 @@ PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for com
 
 This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE.
 It creates a file named "Comment-BasedHelp.snippets.ps1xml" in the user's Snippets directory ($home\Documents\WindowsPowerShell\Snippets).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $m = @'
 Param
@@ -76,7 +76,7 @@ These commands create a Mandatory snippet for Windows PowerShell ISE.
 The first command saves the snippet text in the $m variable.
 The second command uses the **New-ISESnippet** cmdlet to create the snippet.
 The command uses the **Force** parameter to overwrite a previous snippet with the same name.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Copy-Item $home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml -Destination \\Server\Share
 ```

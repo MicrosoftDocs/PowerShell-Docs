@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set StrictMode
+title: Set-StrictMode
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289614
@@ -45,7 +45,7 @@ Unnamed variables are not permitted.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-strictmode -version 1.0
 PS C:\> $a -gt 5
@@ -62,7 +62,7 @@ As a result, attempts to reference variables that are not initialized will fail.
 
 The sample output shows the effect of version 1.0 strict mode.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> # set-strictmode -version 2.0
 # Strict mode is off by default.

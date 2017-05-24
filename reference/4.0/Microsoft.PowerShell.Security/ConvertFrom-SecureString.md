@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  ConvertFrom SecureString
+title: ConvertFrom-SecureString
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293932
@@ -42,7 +42,7 @@ If no key is specified, the Windows Data Protection API (DPAPI) is used to encry
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $SecureString = Read-Host -AsSecureString
 ```
@@ -51,7 +51,7 @@ This command creates a secure string from characters that you type at the comman
 After entering the command, type the string you want to store as a secure string.
 An asterisk (*) is displayed to represent each character that you type.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $StandardString = ConvertFrom-SecureString $SecureString
 ```
@@ -59,7 +59,7 @@ PS C:\> $StandardString = ConvertFrom-SecureString $SecureString
 This command converts the secure string in the $SecureString variable to an encrypted standard string.
 The resulting encrypted standard string is stored in the $StandardString variable.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $Key = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
 PS C:\> $StandardString = ConvertFrom-SecureString $SecureString -Key $Key

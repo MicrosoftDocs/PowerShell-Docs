@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Test WSMan
+title: Test-WSMan
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294046
@@ -33,7 +33,7 @@ If the tested computer is running the service, the cmdlet displays the WS-Manage
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-wsman
 
@@ -45,7 +45,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 
 This command determines whether the WinRM service is running on the local computer or on a remote computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> test-wsman -computername server01
 
@@ -57,7 +57,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 
 This command determines whether the WinRM service is running on the server01 computer named.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> test-wsman -authentication default
 
@@ -71,7 +71,7 @@ This command tests to see if the WS-Management (WinRM) service is running on the
 
 Using the authentication parameter allows the Test-WSMan cmdlet to return the Operating System version.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> test-wsman -computername server01 -authentication default
 

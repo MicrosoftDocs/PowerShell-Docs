@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Runspace
+title: Get-Runspace
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821801
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-@{Text=}
+Specifies the instance ID GUID of a running job.
 
 ```yaml
 Type: Guid[]

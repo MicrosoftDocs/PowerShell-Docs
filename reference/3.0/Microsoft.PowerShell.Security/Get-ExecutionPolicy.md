@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get ExecutionPolicy
+title: Get-ExecutionPolicy
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113315
@@ -35,14 +35,14 @@ You can use the **List** parameter to get all execution policies that affect the
 For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-ExecutionPolicy
 Restricted
 ```
 
 This command gets the current execution policy for the computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Set-ExecutionPolicy RemoteSigned
 PS C:\> Get-ExecutionPolicy
@@ -52,7 +52,7 @@ RemoteSigned
 These commands set a new user preference for the execution policy and then display the effective execution policy.
 The commands are separated by a semicolon (;).
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-ExecutionPolicy -list
 
@@ -74,7 +74,7 @@ The first command gets all execution policies that affect the current session.
 The policies are listed in precedence order.
 
 The second command gets only the effective execution policy, which is the one set in the CurrentUser scope.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **Get-ExecutionPolicy** cmdlet to get the effective execution policy in the current session.
 PS C:\> Get-ExecutionPolicy

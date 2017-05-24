@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Install Script
+title: Install-Script
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=822327
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+Specifies a user account that has rights to install a script for a specified package provider or source.
 
 ```yaml
 Type: PSCredential
@@ -301,7 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential

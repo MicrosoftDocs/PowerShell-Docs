@@ -91,7 +91,7 @@ Although there is no guaranteed way to find every application on a system, it is
 We can also examine this key to find applications. To make it easier to view the Uninstall key, we can map a Windows PowerShell drive to this registry location:
 
 ```
-PS>    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------

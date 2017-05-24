@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Format Hex
+title: Format-Hex
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821773
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
 Type: Object

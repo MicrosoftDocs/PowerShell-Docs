@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Use Transaction
+title: Use-Transaction
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135271
@@ -34,7 +34,7 @@ The Use-Transaction cmdlet is one of a set of cmdlets that support the transacti
 For more information, see about_Transactions.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -80,7 +80,7 @@ Because the command is part of the transaction, it displays the current value of
 The seventh command uses the Complete-Transaction cmdlet to commit the transaction.
 
 The final command uses the ToString method to display the resulting value of the variable as a string.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -131,9 +131,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter

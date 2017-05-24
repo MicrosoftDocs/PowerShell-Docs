@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Export Alias
+title: Export-Alias
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293955
@@ -41,7 +41,7 @@ Export-Alias can export the aliases in a particular scope or all scopes, it can 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> export-alias -path alias.csv
 ```
@@ -52,7 +52,7 @@ Description
 
 This command exports current alias information to a file named Alias.csv in the current directory.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> export-alias -path alias.csv -noclobber
 ```
@@ -65,7 +65,7 @@ This command exports the aliases in the current session to an Alias.csv file.
 
 Because the NoClobber parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> export-alias -path alias.csv -append -description "Appended Aliases" -force
 ```
@@ -80,7 +80,7 @@ The command uses the Description parameter to add a description to the comments 
 
 The command also uses the Force parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> export-alias -path alias.ps1 -as script
 PS C:\> add-content -path $profile -value (get-content alias.ps1)

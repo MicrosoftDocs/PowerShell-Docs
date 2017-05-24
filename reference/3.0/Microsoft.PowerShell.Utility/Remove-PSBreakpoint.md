@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Remove PSBreakpoint
+title: Remove-PSBreakpoint
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113375
@@ -40,13 +40,13 @@ Remove-PSBreakpoint is one of several cmdlets designed for debugging Windows Pow
 For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-breakpoint | remove-breakpoint
 ```
 
 This command deletes all of the breakpoints in the current console.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $b = set-psbreakpoint -script sample.ps1 -variable Name
 PS C:\> $b | remove-psbreakpoint
@@ -62,13 +62,13 @@ It uses a pipeline operator (|) to send the breakpoint object in the $b variable
 
 As a result of this command, if you run the script, it runs to completion without stopping.
 Also, the Get-PSBreakpoint cmdlet does not return this breakpoint.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> remove-psbreakpoint -id 2
 ```
 
 This command deletes the breakpoint with breakpoint ID 2.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```

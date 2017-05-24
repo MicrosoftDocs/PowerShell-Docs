@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Disable PSSessionConfiguration
+title: Disable-PSSessionConfiguration
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289574
@@ -40,21 +40,21 @@ To disable all session configurations on the computer, use Disable-PSRemoting.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Disable-PSSessionConfiguration
 ```
 
 This command disables the Microsoft.PowerShell session configuration.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Disable-PSSessionConfiguration -Name *
 ```
 
 This command disables all registered session configurations on the computer.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Disable-PSSessionConfiguration -Name Microsoft* -Force
 ```
@@ -62,7 +62,7 @@ PS C:\> Disable-PSSessionConfiguration -Name Microsoft* -Force
 This command disables all session configurations that have names that begin with "Microsoft".
 The command uses the **Force** parameter to suppress all user prompts from the command.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> Get-PSSessionConfiguration -Name MaintenanceShell, AdminShell | Disable-PSSessionConfiguration
 ```
@@ -71,7 +71,7 @@ This command disables the MaintenanceShell and AdminShell session configurations
 
 The command uses a pipeline operator (|) to send the results of a Get-PSSessionConfiguration command to Disable-PSSessionConfiguration.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display only the **Name** and **Permission** properties of the session configuration objects. This table format makes it easier to see the values of the objects. The results show that members of the Administrators group are permitted to use the session configurations.
 PS C:\> Get-PSSessionConfiguration | format-table -property Name, Permission -auto

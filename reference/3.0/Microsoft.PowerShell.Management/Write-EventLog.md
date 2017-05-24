@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write EventLog
+title: Write-EventLog
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135281
@@ -33,13 +33,13 @@ The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on c
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> write-eventlog -logname Application -source MyApp -eventID 3001 -entrytype Information -message "MyApp added a user-requested feature to the display." -category 1 -rawdata 10,20
 ```
 
 This command writes an event from the MyApp source to the Application event log.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> write-eventlog -computername Server01 -logname Application -source MyApp -eventID 3001 -message "MyApp added a user-requested feature to the display."
 ```

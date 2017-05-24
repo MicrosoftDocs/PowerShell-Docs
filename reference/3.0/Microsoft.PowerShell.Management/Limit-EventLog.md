@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Limit EventLog
+title: Limit-EventLog
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135227
@@ -32,19 +32,19 @@ The cmdlets that contain the EventLog noun (the EventLog cmdlets) work only on c
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use Get-WinEvent.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> limit-eventLog -logname "Windows PowerShell" -MaximumSize 20KB
 ```
 
 This command increases the maximum size of the Windows PowerShell event log on the local computer to 20480 kilobytes (KB) (20 KB).
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> limit-eventlog -logname Security -comp Server01, Server02 -retentionDays 7
 ```
 
 This command ensures that events in the Security log on the Server01 and Server02 computers are retained for at least 7 days.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $logs = get-eventlog -list | foreach {$_.log}
 PS C:\> limit-eventlog -overflowaction OverwriteOlder -logname $logs

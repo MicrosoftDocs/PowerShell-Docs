@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Checkpoint Computer
+title: Checkpoint-Computer
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289797
@@ -34,7 +34,7 @@ Beginning in Windows 8, **Checkpoint-Computer** cannot create more than one chec
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Checkpoint-Computer -Description "Install MyApp"
 ```
@@ -42,7 +42,7 @@ PS C:\> Checkpoint-Computer -Description "Install MyApp"
 This command creates a system restore point called "Install MyApp".
 It uses the default APPLICATION_INSTALL restore point type.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
 ```

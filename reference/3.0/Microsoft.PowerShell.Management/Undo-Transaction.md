@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Undo Transaction
+title: Undo-Transaction
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135268
@@ -36,13 +36,13 @@ The Undo-Transaction cmdlet is one of a set of cmdlets that support the transact
 For more information, see about_Transactions.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> undo-transaction
 ```
 
 This command rolls back the current (active) transaction.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> start-transaction
@@ -52,7 +52,7 @@ PS HKCU:\Software> undo-transaction
 
 This command starts a transaction and then rolls it back.
 As a result, no changes are made to the registry.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> start-transaction

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Unregister PSSessionConfiguration
+title: Unregister-PSSessionConfiguration
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144308
@@ -35,20 +35,20 @@ If you accidentally delete the default Microsoft.PowerShell or Microsoft.PowerSh
 For more information, see about_Session_Configurations.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> unregister-pssessionconfiguration -name MaintenanceShell
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> unregister-pssessionconfiguration -name MaintenanceShell -force
 ```
 
 This command deletes the MaintenanceShell session configuration from the computer.
 The command uses the Force parameter to suppress all user messages and to restart the WinRM service without prompting.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> unregister-pssessionconfiguration -name *
 PS C:\> get-pssessionconfiguration -name * | unregister-pssessionconfiguration
@@ -56,7 +56,7 @@ PS C:\> get-pssessionconfiguration -name * | unregister-pssessionconfiguration
 
 These commands delete all of the session configurations on the computer.
 The commands have the same effect and can be used interchangeably.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> unregister-pssessionconfiguration -name maintenanceShell -noServiceRestart
 PS C:\> get-pssessionconfiguration -name maintenanceShell

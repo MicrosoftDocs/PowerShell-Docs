@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Test Path
+title: Test-Path
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113418
@@ -39,7 +39,7 @@ It returns TRUE ($true) if all elements exist and FALSE ($false) if any are miss
 It can also tell whether the path syntax is valid and whether the path leads to a container or a terminal (leaf) element.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> test-path -path "C:\Documents and Settings\NicoleH"
 ```
@@ -47,7 +47,7 @@ PS C:\> test-path -path "C:\Documents and Settings\NicoleH"
 This command tells whether all elements in the path exist, that is, the C: directory, the Documents and Settings directory, and the NicoleH directory.
 If any are missing, the cmdlet returns FALSE.
 Otherwise, it returns TRUE.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> test-path -path $profile
 PS C:\> test-path -path $profile -IsValid
@@ -61,7 +61,7 @@ In this case, the path is FALSE, but the syntax is correct (TRUE).
 These commands use $profile, the automatic variable that points to the location for the profile, even if the profile does not exist.
 
 For more information about automatic variables, see about_Automatic_Variables.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> test-path -path "C:\CAD\Commercial Buildings\*" -exclude *.dwg
 ```
@@ -76,14 +76,14 @@ The asterisk at the end of the path indicates the contents of the Commercial Bui
 The command uses the Exclude parameter to specify files that will be omitted from the evaluation.
 
 In this case, because the directory contains only .dwg files, the result is FALSE.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> test-path -path $profile -pathtype leaf
 ```
 
 This command tells whether the path stored in the $profile variable leads to a file.
 In this case, because the Windows PowerShell profile is a .ps1 file, the cmdlet returns TRUE.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> test-path -path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 TRUE
@@ -284,9 +284,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -331,4 +329,5 @@ For more information, see about_Providers.
 [Split-Path](Split-Path.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

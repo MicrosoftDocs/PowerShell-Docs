@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start Transcript
+title: Start-Transcript
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113408
@@ -35,13 +35,13 @@ The Start-Transcript cmdlet creates a record of all or part of a Windows PowerSh
 The transcript includes all command that the user types and all output that appears on the console.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> start-transcript
 ```
 
 This command starts a transcript in the default file location.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> start-transcript -path c:\transcripts\transcript0.txt -noclobber
 ```

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  ConvertTo Csv
+title: ConvertTo-Csv
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135203
@@ -42,7 +42,7 @@ You can use the parameters of the ConvertTo-CSV cmdlet to specify a delimiter ot
 For more information, see Export-CSV, and see the Notes section.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-process powershell | convertto-csv
 #TYPE System.Diagnostics.Process
@@ -68,7 +68,7 @@ cs.ProcessModuleCollection","21692","21692","63197184","63197184","320080","3200
 This command converts a single process object to CSV format.
 The command uses the Get-Process cmdlet to get the PowerShell process on the local computer.
 It uses a pipeline operator (|) to send the command to the ConvertTo-CSV cmdlet, which converts it to a series of comma-separated strings.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $date = get-date
 PS C:\> convertto-csv -inputobject $date -delimiter ";" -notypeinformation
@@ -83,7 +83,7 @@ The second command uses the ConvertTo-CSV cmdlet to convert the DateTime object 
 The command uses the InputObject parameter to specify the object to be converted.
 It uses the Delimiter parameter to specify the delimiter that separates the object properties.
 It uses the NoTypeInformation parameter to suppress the #TYPE string.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-eventlog -log "windows powershell" | convertto-csv -useculture
 ```

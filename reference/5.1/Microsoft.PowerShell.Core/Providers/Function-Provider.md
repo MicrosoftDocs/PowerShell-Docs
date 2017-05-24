@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Function Provider
+title: Function Provider
 ms.technology:  powershell
 online version:   http://go.microsoft.com/fwlink/?LinkId=834961
 ---
@@ -47,7 +47,7 @@ online version:   http://go.microsoft.com/fwlink/?LinkId=834961
 
 ### Getting to the Function: Drive  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  Changes the current location to the Function: drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type "set-location c:".  
 
 ```  
@@ -57,7 +57,7 @@ set-location function:
 
 ### Getting Functions  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command gets the list of all the functions in the current session. You can use this command from any Windows PowerShell drive.  
 
 ```  
@@ -65,7 +65,7 @@ get-childitem -path function:
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command gets the "man" function from the Function: drive. It uses the Get-Item cmdlet to get the function. The pipeline operator (&#124;) sends the result to Format-Table.  
 
  The Wrap parameter directs text that does not fit on the line onto the next line. The Autosize parameter resizes the table columns to accommodate the text.  
@@ -77,7 +77,7 @@ get-item -path man | format-table -wrap -autosize
 
  If you are in a different drive, add the drive name (Function:) to the path.  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  These commands both get the function named "c:". The first command can be used in any drive. The second command is used in the Function: drive.  
 
  Because the name ends in a colon, which is the syntax for a drive, you must qualify the path with the drive name. Within the Function: drive, you can use either format. In the second command, the dot (.) represents the current location.  
@@ -91,7 +91,7 @@ PS Function> get-item -path .\c:
 
 ### Creating a Function  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the New-Item cmdlet to create a function called "HKLM:". The expression in braces is the script block that is represented by the function name.  
 
 ```  
@@ -102,7 +102,7 @@ new-item -path function:hklm: -value {set-location hklm:}
  You can also create a function by typing it at the Windows PowerShell command line. For example, tpe "function:hklm: {set-location hklm:}". If you are in the Function: drive, you can omit the drive name.  
 Because you cannot specify the "Filter" label in New-Item, filters are labeled as functions, but they operate properly with any label. To create a filter with the "Filter" label, type the filter at the command line. For example, type "filter:Running {$_.Status -eq "Running"}".  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the New-Item cmdlet to create a function called Csrss. It uses the Options dynamic parameter to specify a value of ReadOnly for the Options property of the function.  
 
 ```  
@@ -114,7 +114,7 @@ new-item -path function: -name csrss -options readonly -value {get-process csrss
 
 ### Deleting a Function  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command deletes the "hklm:" function from the current session.  
 
 ```  
@@ -122,7 +122,7 @@ remove-item function:hklm:
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command deletes all the functions from the current session except for the functions whose Options property has a value of Constant. Without the Force parameter, the command does not delete functions whose Options property has a value of ReadOnly.  
 
 ```  
@@ -134,7 +134,7 @@ remove-item function:* -force
 
 ### Displaying the Properties and Methods of Functions  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command uses the Get-Item cmdlet to get all the functions. The pipeline operator sends the results to the Get-Member cmdlet, which displays the methods and the properties of the object.  
 
 ```  
@@ -145,7 +145,7 @@ get-item -path function:* | get-member
  When you pipe a collection of objects (such as the collection of functions in the Function: drive) to Get-Member, Get-Member evaluates each object in the collection separately and returns information about each object type that it finds. If all of the objects are of the same type, it returns information about the single object type. In this case, all of the functions are FunctionInfo objects.  
 To get information about the collection of FunctionInfo objects, use the InputObject parameter of Get-Member. For example, type "get-member -InputObject (get-item function:*)". When you use the InputObject parameter, Get-Member evaluates the collection, not the objects in the collection.  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command lists the values of the properties of the "prompt" function. It uses the Get-Item cmdlet to get an object that represents the "prompt" function. The pipeline operator (&#124;) sends the results to the Format-List command. The Format-List command uses the Property parameter with a wildcard character (*) to format and to display the values of all of the properties of the "prompt" function.  
 
 ```  
@@ -155,7 +155,7 @@ get-item function:prompt | format-list -property *
 
 ### Changing the Properties of a Function  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  You can use the Set-Item cmdlet with the Options dynamic parameter to change the value of the Options property of a function.  
 
  This command sets the AllScope and ReadOnly options for the "prompt" function. This command uses the Options dynamic parameter of the Set-Item cmdlet. The Options parameter is available in Set-Item only when you use it with the Alias or Function provider.  
@@ -165,7 +165,7 @@ set-item -path function:prompt -options "AllScope,ReadOnly"
 
 ```  
 
-#### -------------------------- EXAMPLE 2 --------------------------  
+#### Example 2  
  This command uses the Set-Item cmdlet to change the "prompt" function so that it displays the time before the path.  
 
 ```  
@@ -175,7 +175,7 @@ set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Ge
 
  The change affects both the Definition and ScriptBlock properties of the FunctionInfo object. To see the effect of the change, type "get-item -path function:prompt &#124; format-list -property *".  
 
-#### -------------------------- EXAMPLE 3 --------------------------  
+#### Example 3  
  This command uses the Rename-Item cmdlet to change the name of the "help" function to "gh".  
 
 ```  
@@ -185,7 +185,7 @@ rename-item -path function:help -newname gh
 
 ### Copying a Function  
 
-#### -------------------------- EXAMPLE 1 --------------------------  
+#### Example 1  
  This command copies the "prompt" function to "oldPrompt", effectively creating a new name for the script block that is associated with the prompt function. You can use this to save the original prompt function if you plan to change it.  
 
  The Options property of the new function has a value of None. To change the value of the Options property, use Set-Item.  

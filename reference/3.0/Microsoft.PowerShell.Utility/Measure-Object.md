@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Measure Object
+title: Measure-Object
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113349
@@ -40,31 +40,31 @@ It can count objects and calculate the minimum, maximum, sum, and average of the
 For text objects, it can count and calculate the number of lines, words, and characters.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-childitem | measure-object
 ```
 
 This command counts the files and folders in the current directory.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-childitem | measure-object -property length -minimum -maximum -average
 ```
 
 This command displays the minimum, maximum, and sum of the sizes of all files in the current directory, and the average size of a file in the directory.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-content C:\test.txt | measure-object -character -line -word
 ```
 
 This command displays the number of characters, words, and lines in the Text.txt file.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-process | measure-object -property workingset -minimum -maximum -average
 ```
 
 This command displays the minimum, maximum, and average sizes of the working sets of the processes on the computer.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> import-csv d:\test\serviceyrs.csv | measure-object -property years -minimum -maximum -average
 ```
@@ -76,7 +76,7 @@ The first row in the table is a header row of "EmpNo, Years".
 
 When you use Import-Csv to import the file, the result is a PSCustomObject with note properties of EmpNo and Years.
 You can use Measure-Object to calculate the values of these properties, just like any other property of an object.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> get-childitem | measure-object -property psiscontainer -max -sum -min -average
 

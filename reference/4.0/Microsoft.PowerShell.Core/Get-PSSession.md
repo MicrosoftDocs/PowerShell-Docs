@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get PSSession
+title: Get-PSSession
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=289588
@@ -85,7 +85,7 @@ For more information about Windows PowerShell sessions, see about_PSSessions (ht
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-PSSession
 ```
@@ -93,7 +93,7 @@ PS C:\> Get-PSSession
 This command gets all of the PSSessions that were created in the current session.
 It does not get PSSessions that were created in other sessions or on other computers, even if they connect to this computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Get-PSSession -ComputerName localhost
 ```
@@ -103,7 +103,7 @@ To indicate the local computer, type the computer name, "localhost" or a dot (.)
 
 The command returns all of the sessions on the local computer, even if they were created in different sessions or on different computers.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-PSSession -ComputerName Server02
  Id Name            ComputerName    State         ConfigurationName     Availability
@@ -121,7 +121,7 @@ The output shows that two of the sessions have a Disconnected state and a Busy a
 They were created in different sessions and are currently in use.
 The "ScheduledJobs" session, which is Opened and Available, was created in the current session.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> New-PSSession -ComputerName Server01, Server02, Server03
 PS C:\> $s1, $s2, $s3 = Get-PSSession
@@ -138,7 +138,7 @@ When Windows PowerShell assigns an array of objects to an array of variables, it
 If there are more objects than variables, it assigns all remaining objects to the last variable in the array.
 If there are more variables than objects, the extra variables are not used.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-PSSession | Format-Table -Property ComputerName, InstanceID
 PS C:\> $s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
@@ -155,7 +155,7 @@ The command uses the **InstanceID** parameter to identify the PSSession.
 
 The third command uses the Remove-PSSession cmdlet to delete the PSSession in the $s variable.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command gets sessions on the Server02 and Server12 remote computers that have names that begin with "BackupJob" and use the ITTasks session configuration.The command uses the **Name** parameter to specify the name pattern and the **ConfigurationName** parameter to specify the session configuration. The value of the **SessionOption** parameter is a hash table that sets the value of the **OperationTimeout** to 240000 milliseconds (4 minutes). This setting gives the command more time to complete.The **ConfigurationName** and **SessionOption** parameters are used to configure the temporary sessions in which the **Get-PSSession** cmdlet runs on each computer.The output shows that the command returns the BackupJob04 session. The session is disconnected and the Availability is None, which indicates that it is not in use.
 PS C:\> Get-PSSession -ComputerName Server02, Server12 -Name BackupJob* -ConfigurationName ITTasks -SessionOption @{OperationTimeout=240000}
@@ -176,7 +176,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 The commands in this example find a session that has a particular name format and uses a particular session configuration and then connect to the session.
 You can use a command like this one to find a session in which a colleague started a task and connect to finish the task.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-PSSession -ID 2
 ```

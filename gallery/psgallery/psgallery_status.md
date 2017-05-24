@@ -14,6 +14,26 @@ ms.technology:  powershell
 PowerShell Gallery Status
 =========================
 
+## 04/11/2017 - Users unable to log in with Azure Active Directory (AAD) accounts
+
+__Summary of Impact__: Some users were unable to log in to the PowerShell Gallery using Azure AD Accounts. 
+ 
+__Root Cause__: During an update to interact more securely with AAD, a setting change was missed. 
+The testing done to validate the change did not include certain types of AAD accounts, so the deployment proceeded.
+
+__Resolution__: Engineers identified the missing setting and corrected the problem. 
+
+__Next Steps__: We will be modifying our testing to include a broader set of AAD account types.
+
+## 03/27/2017 - RESOLVED: Unable to see individual module and script pages
+
+__Summary of Impact__: Direct links to individual module and script pages on https://www.powershellgallery.com were broken. This was being reported across all the regions. This did not impact any of the PowerShellGet cmdlets ie., Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Scirpt continued to work.
+
+__Root Cause__: Engineers identified the cause as an issue bringing up social media buttons like Facebook onto the page.  
+
+__Resolution__: Engineers fixed the problem by disabling the Facebook count information.
+
+__Next Steps__: We opened an internal tracking issue to fix our usage of Facebook API.
 
 ## 12/15/2016 - Unable to send emails via PowerShellGallery website
 

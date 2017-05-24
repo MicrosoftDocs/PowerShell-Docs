@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Resume Service
+title: Resume-Service
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293908
@@ -47,7 +47,7 @@ You can specify the services by their service names or display names, or you can
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> resume-service sens
 ```
@@ -55,7 +55,7 @@ PS C:\> resume-service sens
 This command resumes the System Event Notification service (the service name is represented in the command by "sens") on the local computer.
 The command uses the Name parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-service | where-object {$_.Status -eq "Paused"} | resume-service
 ```

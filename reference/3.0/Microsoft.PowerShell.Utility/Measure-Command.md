@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Measure Command
+title: Measure-Command
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113348
@@ -27,13 +27,13 @@ Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonPa
 The **Measure-Command** cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Measure-Command { Get-EventLog "windows powershell" }
 ```
 
 This command measures the time it takes to run a Get-EventLog command that gets the events in the Windows PowerShell event log.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 The first command measures the time it takes to process a recursive **Get-ChildItem** command that uses the **Path** parameter to get only .txt files in the C:\Windows directory and its subdirectories.
 PS C:\> Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}

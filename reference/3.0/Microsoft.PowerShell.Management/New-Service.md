@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  New Service
+title: New-Service
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113359
@@ -32,20 +32,20 @@ A new service requires an executable file that executes during the service.
 The parameters of this cmdlet let you set the display name, description, startup type, and dependencies of the service.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
 ```
 
 This command creates a new service named "TestService".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> new-service -name TestService -binaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -dependson NetLogon -displayName "Test Service" -StartupType Manual -Description "This is a test service."
 ```
 
 This command creates a new service named "TestService".
 It uses the parameters of the New-Service cmdlet to specify a description, startup type, and display name for the new service.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-wmiobject win32_service -filter "name='testservice'"
 
@@ -59,7 +59,7 @@ Status    : OK
 
 This command uses the Get-WmiObject cmdlet to get the Win32_Service object for the new service.
 This object includes the start mode and the service description.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> sc.exe delete TestService
 - or -
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-{{Fill Confirm Description}}
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -205,7 +205,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-{{Fill WhatIf Description}}
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter

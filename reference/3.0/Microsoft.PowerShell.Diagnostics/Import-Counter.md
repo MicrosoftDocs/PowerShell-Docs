@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Import Counter
+title: Import-Counter
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=138338
@@ -46,19 +46,19 @@ And, you can use the parameters of Import-Counter to filter the data that you im
 Along with Get-Counter and Export-Counter, this feature lets you collect, export, import, combine, filter, manipulate, and re-export performance counter data within Windows PowerShell.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $Data = Import-Counter -Path ProcessorData.csv
 ```
 
 This command imports all of the counter data from the ProcessorData.csv file into the $Data variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $i = Import-Counter -Path ProcessorData.blg -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
 ```
 
 This command imports only the **"Processor(_total)\Interrupts/sec"** counter data from the ProcessorData.blg file into the $i variable.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 The first command uses **Import-Counter** to import all of the performance counter data from the ProcessorData.blg files. The command saves the data in the $Data variable.
 PS C:\> $Data = Import-Counter .\ProcessorData.blg
@@ -97,7 +97,7 @@ PS C:\> $i | Export-Counter -Path .\Interrupts.csv -Format CSV
 This example shows how to select data from a performance counter log file (.blg) and then export the selected data to a .csv file.
 The first four commands get the counter paths from the file and save them in a variable.
 The last two commands import selected data and then export only the selected data.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 The first command uses the **ListSet** parameter of the **Import-Counter** cmdlet to get all of the counter sets that are represented in a counter data file.
 PS C:\> Import-Counter -Path ProcessorData.csv -ListSet *
@@ -134,7 +134,7 @@ PS C:\> Import-Counter -Path ProcessorData.csv -ListSet * | ForEach-Object {$_.P
 ```
 
 This example shows how to display all the counter paths in a group of imported counter sets.
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 The first command lists in a table the time stamps of all of the data in the ProcessorData.blg file.
 PS C:\> Import-Counter -Path .\disk.blg | Format-Table -Property Timestamp
@@ -147,7 +147,7 @@ PS C:\> Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
 ```
 
 This example imports only the counter data that has a time stamp between the starting an ending ranges specified in the command.
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 The first command uses the **Import-Counter** cmdlet to import the first (oldest) five samples from the Disk.blg file. The command uses the **MaxSamples** parameter to limit the import to five counter samples.
 PS C:\> Import-Counter -Path Disk.blg -MaxSamples 5
@@ -157,7 +157,7 @@ PS C:\> (Import-Counter -Path Disk.blg)[-1 .. -5]
 ```
 
 This example shows how to import the five oldest and five newest samples from a performance counter log file.
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Import-Counter D:\Samples\memory.blg -Summary
 
@@ -169,7 +169,7 @@ OldestRecord            NewestRecord            SampleCount
 This command uses the **Summary** parameter of the **Import-Counter** cmdlet to get a summary of the counter data in the Memory.blg file.
 
 PS C:\\\>
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 The first command uses the **ListSet** parameter of **Import-Counter** to get the counters in OldData.blg, an existing counter log file. The command uses a pipeline operator (|) to send the data to a ForEach-Object command that gets only the values of the **PathsWithInstances** property of each object
 PS C:\> $Counters = Import-Counter OldData.blg -ListSet * | ForEach-Object {$_.PathsWithInstances}
@@ -179,7 +179,7 @@ PS C:\> Get-Counter -Counter $Counters -MaxSamples 20 | Export-Counter C:\Logs\N
 ```
 
 This example updates a performance counter log file.
-### -------------------------- EXAMPLE 9 --------------------------
+### Example 9
 ```
 PS C:\> $counters = "d:\test\pdata.blg", "d:\samples\netlog.blg" | import-counter
 ```

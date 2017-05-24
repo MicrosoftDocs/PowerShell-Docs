@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set WSManInstance
+title: Set-WSManInstance
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294044
@@ -45,7 +45,7 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-wsmaninstance -resourceuri winrm/config/listener -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
 
@@ -72,7 +72,7 @@ This fails:     -ValueSet @{enabled="False"}
 
 This succeeds:  -ValueSet @{Enabled="False"}
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-wsmaninstance -resourceuri winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
 cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
@@ -96,7 +96,7 @@ This fails:     -ValueSet @{MaxEnvelopeSizeKB ="200"}
 
 This succeeds:  -ValueSet @{MaxEnvelopeSizekb ="200"}
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> set-wsmaninstance -resourceuri winrm/config/listener -computername SERVER02 -selectorset @{address="*";transport="https"} -valueset @{Enabled="false"}
 

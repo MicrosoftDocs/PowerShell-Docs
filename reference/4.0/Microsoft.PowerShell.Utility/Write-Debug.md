@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write Debug
+title: Write-Debug
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294027
@@ -32,7 +32,7 @@ By default, debug messages are not displayed in the console, but you can display
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Write-Debug "Cannot open file."
 ```
@@ -40,7 +40,7 @@ PS C:\> Write-Debug "Cannot open file."
 This command writes a debug message.
 Because the value of $DebugPreference is "SilentlyContinue", the message is not displayed in the console.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $DebugPreference
 SilentlyContinue
@@ -63,7 +63,7 @@ As a result, even though the value of $DebugPreference is "SilentlyContinue", th
 
 For more information about the Debug common parameter, see about_CommonParameters.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> $DebugPreference
 SilentlyContinue

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Clear Item
+title: Clear-Item
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113283
@@ -38,7 +38,7 @@ The value that used to represent a cleared item is defined by each Windows Power
 Clear-Item is similar to Clear-Content, but it works on aliases and variables, instead of files.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Clear-Item Variable:TestVar1
 -or-
@@ -50,7 +50,7 @@ The variable remains and is valid, but its value is set to null.
 The variable name is prefixed with "Variable:" to indicate the Windows PowerShell Variable provider.
 
 The alternate commands show that, to get the same result, you can switch to the Windows PowerShell Variable: drive and then run the Clear-Item command.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> Clear-Item Alias:log* -Include *1* -Exclude *3* -Whatif
 What if: Performing operation "Clear Item" on Target "Item: log1".
@@ -59,7 +59,7 @@ What if: Performing operation "Clear Item" on Target "Item: log1".
 This command asks Windows PowerShell what would happen if you executed the command, "`clear-item alias:log* -include *1* -exclude *3`".
 In response, Windows PowerShell explains that it would delete the value of the log1 alias, but the command would not have any effect on the log, log2, or log13 aliases.
 Because the Alias provider does not permit an alias without a value, when you clear an alias, you also delete the alias.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
 ```
@@ -235,9 +235,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -294,4 +292,5 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 

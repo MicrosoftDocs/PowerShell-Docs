@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register PSRepository
+title: Register-PSRepository
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821668
@@ -99,7 +99,14 @@ Accept wildcard characters: False
 ```
 
 ### -InstallationPolicy
-@{Text=}
+Specifies the installation policy.
+Valid values are: Trusted, UnTrusted.
+The default value is UnTrusted.
+
+A repository's installation policy specifies PowerShell behavior when installing from that repository.
+When installing modules from an UnTrusted repository, the user is prompted for confirmation.
+
+You can set the *InstallationPolicy* with the Set-PSRepository cmdlet.
 
 ```yaml
 Type: String
@@ -115,7 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+Specifies the name of the repository to register.
+You can use this name to specify the repository in cmdlets such as Find-Module and Install-Module.
 
 ```yaml
 Type: String
@@ -130,7 +138,8 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
-@{Text=}
+Specifies a OneGet package provider.
+If you don't specify a value for this parameter, PowerShellGet polls available package providers and associates this repository with the first package provider that indicates it can handle the repository.
 
 ```yaml
 Type: String
@@ -145,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -160,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -175,7 +184,8 @@ Accept wildcard characters: False
 ```
 
 ### -PublishLocation
-@{Text=}
+Specifies the URI of the publish location.
+For example, for NuGet-based repositories, the publish location is similar to http://someNuGetUrl.com/api/v2/Packages.
 
 ```yaml
 Type: Uri
@@ -190,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
-@{Text=}
+Specifies the script publish location.
 
 ```yaml
 Type: Uri
@@ -205,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
-@{Text=}
+Specifies the script source location.
 
 ```yaml
 Type: Uri
@@ -220,7 +230,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceLocation
-@{Text=}
+Specifies the URI for discovering and installing modules from this repository.
+For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
 
 ```yaml
 Type: Uri

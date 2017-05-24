@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Out GridView
+title: Out-GridView
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=293997
@@ -53,14 +53,14 @@ For instructions for using these features, type "Get-Help Out-GridView -Full" an
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> Get-Process | Out-GridView
 ```
 
 This command gets the processes running on the local computer and sends them to a grid view window.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $p = Get-Process
 PS C:\> $p | Out-GridView
@@ -72,7 +72,7 @@ The first command uses the Get-Process cmdlet to get the processes on the comput
 
 The second command uses a pipeline operator to send the $p variable to **Out-GridView**.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> Get-Process | Select-Object -Property Name, WorkingSet, PeakWorkingSet | Sort-Object -Property WorkingSet -Descending | Out-GridView
 ```
@@ -90,7 +90,7 @@ The final part of the command uses a pipeline operator (|) to send the formatted
 
 You can now use the features of the grid view to search, sort, and filter the data.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> ($a = Get-ChildItem -Path $pshome -Recurse) | Out-GridView
 ```
@@ -105,7 +105,7 @@ The command uses the assignment operator (=) to save the output in the $a variab
 The parentheses in the command establish the order of operations.
 As a result, the output from the Get-ChildItem command is saved in the $a variable before it is sent to **Out-GridView**.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> Get-Process -ComputerName Server01| ogv -Title "Processes - Server01"
 ```
@@ -114,7 +114,7 @@ This command displays the processes that are running on the Server01 computer in
 
 The command uses "ogv," which is the built-in alias for the **Out-GridView** cmdlet, it uses the **Title** parameter to specify the window title.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> Invoke-Command -ComputerName S1, S2, S3 -ScriptBlock {Get-Culture} | Out-GridView
 ```
@@ -127,7 +127,7 @@ It uses a pipeline operator to send the data that is returned to the **Out-GridV
 Notice that the script block that contains the commands that are run remotely does not include the **Out-GridView** command.
 If it did, the command would fail when it tried to open a grid view window on each of the remote computers.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
 ```
@@ -138,7 +138,7 @@ The processes that you select are passed to the **Export-Csv** command and writt
 The command uses the **PassThru** parameter of **Out-GridView**, which lets you send multiple items down the pipeline.
 The **PassThru** parameter is equivalent to using the **Multiple** value of the **OutputMode** parameter.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> Powershell.exe -Command "Get-Service | Out-GridView -Wait"
 ```

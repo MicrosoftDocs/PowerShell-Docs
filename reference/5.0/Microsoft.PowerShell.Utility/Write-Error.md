@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Write Error
+title: Write-Error
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821875
@@ -80,8 +80,8 @@ This command declares a non-terminating error and specifies an error category.
 
 ### Example 4: Write an error using an Exception object
 ```
-PS C:\> $E = [System.Exception]@{$e = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
-PS C:\> Write-Error $E -Message "Files not found. The $Files location does not contain any XML files."
+PS C:\> $E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+PS C:\> Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 
 This command uses an **Exception** object to declare a non-terminating error.

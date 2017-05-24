@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get Unique
+title: Get-Unique
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113335
@@ -37,7 +37,7 @@ The list must be sorted for the cmdlet to work properly.
 As a result, strings that differ only in character casing are considered to be unique.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $a = $(foreach ($line in get-content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | get-unique
 PS C:\> $a.count
@@ -51,14 +51,14 @@ Then, it sorts the resulting list alphabetically (the default) and uses the Get-
 The results are stored in the $a variable.
 
 The second command uses the Count property of the collection of strings in $a to determine how many items are in $a.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | sort-object | Get-Unique
 ```
 
 This command finds the unique members of the set of integers.
 The first command takes an array of integers typed at the command line, pipes them to the Sort-Object cmdlet to be sorted, and then pipes them to Get-Unique, which eliminates duplicate entries.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> get-childitem | sort-object {$_.GetType()} |  unique -OnType
 ```
@@ -69,7 +69,7 @@ The "$_.GetType()" statement applies the GetType method to each file or director
 Then, Sort-Object sorts the items by type.
 Another pipeline operator sends the results to Get-Unique.
 The OnType parameter directs Get-Unique to return only one object of each type.
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> get-process | sort-object | select processname | get-unique -asstring
 ```

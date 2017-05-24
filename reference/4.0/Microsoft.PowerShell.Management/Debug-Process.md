@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Debug Process
+title: Debug-Process
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=290485
@@ -45,35 +45,35 @@ Before using this cmdlet, verify that a debugger is downloaded and correctly con
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> debug-process -name powershell
 ```
 
 This command attaches a debugger to the PowerShell process on the computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> debug-process -name sql*
 ```
 
 This command attaches a debugger to all processes that have names that begin with "sql".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> debug-process winlogon, explorer, outlook
 ```
 
 This command attaches a debugger to the Winlogon, Explorer, and Outlook processes.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> debug-process -id 1132, 2028
 ```
 
 This command attaches a debugger to the processes that have process IDs 1132 and 2028.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> get-process powershell | debug-process
 ```
@@ -83,7 +83,7 @@ It uses the Get-Process cmdlet to get the PowerShell processes on the computer, 
 
 To specify a particular PowerShell process, use the ID parameter of Get-Process.
 
-### -------------------------- EXAMPLE 6 --------------------------
+### Example 6
 ```
 PS C:\> $pid | debug-process
 ```
@@ -95,7 +95,7 @@ Then, it uses a pipeline operator (|) to send the process ID to the Debug-Proces
 
 For more information about the $pid automatic variable, see about_Automatic_Variables.
 
-### -------------------------- EXAMPLE 7 --------------------------
+### Example 7
 ```
 PS C:\> get-process -computername Server01, Server02 -name MyApp | debug-process
 ```
@@ -105,7 +105,7 @@ This command attaches a debugger to the MyApp processes on the Server01 and Serv
 It uses the Get-Process cmdlet to get the MyApp processes on the Server01 and Server02 computers.
 It uses a pipeline operator to send the processes to the Debug-Process cmdlet, which attaches the debuggers.
 
-### -------------------------- EXAMPLE 8 --------------------------
+### Example 8
 ```
 PS C:\> $p = get-process powershell
 PS C:\> debug-process -inputobject $p

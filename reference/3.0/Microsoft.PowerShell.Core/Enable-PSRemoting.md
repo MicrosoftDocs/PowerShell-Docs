@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Enable PSRemoting
+title: Enable-PSRemoting
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=144300
@@ -38,16 +38,16 @@ For more information, see the description of the **SkipNetworkProfileCheck** par
 
 The **Enable-PSRemoting** cmdlet performs the following operations:
 
-- Runs the Set-WSManQuickConfighttp://go.microsoft.com/fwlink/?LinkID=141463 cmdlet, which performs the following tasks:
------ Starts the WinRM service.
------ Sets the startup type on the WinRM service to Automatic.
------ Creates a listener to accept requests on any IP address.
------ Enables a firewall exception for WS-Management communications.
------ Registers the Microsoft.PowerShell and Microsoft.PowerShell.Workflow session configurations, if it they are not already registered.
------ Registers the Microsoft.PowerShell32 session configuration on 64-bit computers, if it is not already registered.
------ Enables all session configurations.
------ Changes the security descriptor of all session configurations to allow remote access.
------ Restarts the WinRM service to make the preceding changes effective.
+- Runs the [Set-WSManQuickConfig](http://go.microsoft.com/fwlink/?LinkID=141463) cmdlet, which performs the following tasks:
+ - Starts the WinRM service.
+ - Sets the startup type on the WinRM service to Automatic.
+ - Creates a listener to accept requests on any IP address.
+ - Enables a firewall exception for WS-Management communications.
+ - Registers the Microsoft.PowerShell and Microsoft.PowerShell.Workflow session configurations, if it they are not already registered.
+ - Registers the Microsoft.PowerShell32 session configuration on 64-bit computers, if it is not already registered.
+ - Enables all session configurations.
+ - Changes the security descriptor of all session configurations to allow remote access.
+- Restarts the WinRM service to make the preceding changes effective.
 
 To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
 
@@ -56,13 +56,13 @@ The commands might appear to succeed, but the remoting is not configured correct
 Remote commands, and later attempts to enable and disable remoting, are likely to fail.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+###  Example 1 
 ```
 PS C:\> Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
-### -------------------------- EXAMPLE 2 --------------------------
+###  Example 2 
 ```
 PS C:\> Enable-PSRemoting -Force
 ```

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set PSRepository
+title: Set-PSRepository
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821671
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
-@{Text=}
+Specifies the script publish location.
 
 ```yaml
 Type: Uri
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
-@{Text=}
+Specifies the script source location.
 
 ```yaml
 Type: Uri

@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Enable WSManCredSSP
+title: Enable-WSManCredSSP
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/p/?linkid=294037
@@ -52,7 +52,7 @@ To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> enable-wsmancredssp -role client -delegatecomputer server02.accounting.fabrikam.com
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
@@ -67,7 +67,7 @@ CredSSP     : true
 
 This command allows the client credentials to be delegated to the server02 computer.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> enable-wsmancredssp -role client -delegatecomputer *.accounting.fabrikam.com
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
@@ -82,7 +82,7 @@ CredSSP     : true
 
 This command allows the client credentials to be delegated to all the computers in the accounting.fabrikam.com domain.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> enable-wsmancredssp -role client -delegatecomputer server02.accounting.fabrikam.com, server03.accounting.fabrikam.com, server04.accounting.fabrikam.com
 cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
@@ -97,7 +97,7 @@ CredSSP     : true
 
 This command allows the client credentials to be delegated to multiple computers.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### Example 4
 ```
 PS C:\> enable-wsmancredssp -role server
 ```
@@ -107,7 +107,7 @@ The Enable-WSManCredSSP cmdlet (shown in the earlier examples) only enables Cred
 In order for the remote computer to act as a delegate for the client, the CredSSP item in the Service node of WSMan must be set to true.
 This example sets the the CredSSP item in the Service node of WSMan to true.
 
-### -------------------------- EXAMPLE 5 --------------------------
+### Example 5
 ```
 PS C:\> connect-wsman server02
 set-item wsman:\server02\service\auth\credSSP -value $true

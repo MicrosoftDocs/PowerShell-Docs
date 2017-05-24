@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get TraceSource
+title: Get-TraceSource
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113333
@@ -31,13 +31,13 @@ Developers use the trace data to monitor data flow, program execution, and error
 The tracing cmdlets were designed for Windows PowerShell developers, but they are available to all users.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> get-traceSource  *provider*
 ```
 
 This command gets all of the trace sources that have names that include "provider".
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> get-tracesource
 ```

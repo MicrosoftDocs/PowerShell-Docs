@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Set Variable
+title: Set-Variable
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113401
@@ -31,14 +31,14 @@ The Set-Variable cmdlet assigns a value to a specified variable or changes the c
 If the variable does not exist, the cmdlet creates it.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> set-variable -name desc -value "A description"
 PS C:\> get-variable -name desc
 ```
 
 These commands set the value of the "desc" variable to "A description", and then get the value of the variable.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> set-variable -name processes -value (Get-Process) -option constant -scope global -description "All processes" -passthru | format-list -property *
 ```
@@ -51,7 +51,7 @@ It uses the Property parameter of Format-List with a value of all (*) to display
 
 The value, "(Get-Process)", is enclosed in parentheses to ensure that it is executed before being stored in the variable.
 Otherwise, the variable contains the words "Get-Process".
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> # set-variable -name counter -visibility private
 PS C:\> new-variable -name counter -visibility public -value 26

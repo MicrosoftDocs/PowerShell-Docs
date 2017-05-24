@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Get PSCallStack
+title: Get-PSCallStack
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113326
@@ -31,7 +31,7 @@ Although it is designed to be used with the Windows PowerShell debugger, you can
 To run a Get-PSCallStack command while in the debugger,  type "k" or "get-pscallstack".
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> function my-alias {
 $p = $args[0]

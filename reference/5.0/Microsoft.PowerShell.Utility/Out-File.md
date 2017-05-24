@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Out File
+title: Out-File
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821839
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoNewline
-@{Text=}
+Specifies that the content displayed in the console does not end with a newline character.
 
 ```yaml
 Type: SwitchParameter

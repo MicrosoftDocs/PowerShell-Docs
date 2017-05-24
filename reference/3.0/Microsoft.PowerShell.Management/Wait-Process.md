@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Wait Process
+title: Wait-Process
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=135277
@@ -42,7 +42,7 @@ You can specify a process by process name or process ID (PID), or pipe a process
 Wait-Process works only on processes running on the local computer.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
 PS C:\> $nid = (get-process notepad).id
 PS C:\> stop-process -id $nid
@@ -58,7 +58,7 @@ The second command uses the Stop-Process cmdlet to stop the process with the ID 
 
 The third command uses the Wait-Process cmdlet to wait until the Notepad process is stopped.
 It uses the ID parameter of Wait-Process to identify the process.
-### -------------------------- EXAMPLE 2 --------------------------
+### Example 2
 ```
 PS C:\> $p = get-process notepad
 PS C:\> wait-process -id $p.id
@@ -72,7 +72,7 @@ The first command gets the Notepad process and saves it in the $p variable.
 The second command uses the ID parameter, the third command uses the Name parameter, and the fourth command uses the InputObject parameter.
 
 These commands have the same results and can be used interchangeably.
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
 ```
 PS C:\> wait-process -name outlook, winword -timeout 30
 ```
