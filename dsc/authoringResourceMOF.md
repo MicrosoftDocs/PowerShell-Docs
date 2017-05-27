@@ -40,7 +40,7 @@ Note that it is necessary to create a folder named DSCResources under the top-le
 Following is an example MOF file that can be used for a custom website resource. To follow this example, save this schema to a file, and call the file *Demo_IISWebsite.schema.mof*.
 
 ```
-[ClassVersion("1.0.0"), FriendlyName("Website")] 
+[ClassVersion("1.0.0"), FriendlyName("Website")]
 class Demo_IISWebsite : OMI_BaseResource
 {
   [Key] string Name;
@@ -75,10 +75,10 @@ In the **Get-TargetResource** function implementation, use the key resource prop
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
-function Get-TargetResource 
+function Get-TargetResource
 {
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -108,7 +108,7 @@ function Get-TargetResource
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
         $getTargetResourceResult = @{
-                                      Name = $Website.Name; 
+                                      Name = $Website.Name;
                                         Ensure = $ensureResult;
                                         PhysicalPath = $Website.physicalPath;
                                         State = $Website.state;
@@ -132,11 +132,11 @@ The following example illustrates this.
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
-function Set-TargetResource 
+function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -210,11 +210,14 @@ $ApplicationPool
 #Include logic to 
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
-$result 
+$result
 }
 ```
 
-**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions. This cmdlet writes text to the verbose message stream. By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable or by using the **Verbose** parameter in the DSC cmdlets = new.
+**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions. 
+>This cmdlet writes text to the verbose message stream. 
+>By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable
+>or by using the **Verbose** parameter in the DSC cmdlets = new.
 
 ### Creating the module manifest
 
@@ -271,4 +274,25 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
+
+## Supporting PsDscRunAsCredential
+
+>**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the 
+resource should be run under a specified set of credentials.
+For more information, see [Running DSC with user credentials](runAsUser.md).
+
+To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.
+
+For example the following code would write the user context under which the resource is running to the verbose output stream:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
+}
+```
+
+
+
 

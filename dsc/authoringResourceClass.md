@@ -472,6 +472,44 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
+## Supporting PsDscRunAsCredential
+
+>**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the 
+resource should be run under a specified set of credentials.
+For more information, see [Running DSC with user credentials](runAsUser.md).
+
+### Require or disallow PsDscRunAsCredential for your resource
+
+The **DscResource()** attribute takes an optional parameter **RunAsCredential**.
+This parameter takes one of three values:
+
+- `Optional` **PsDscRunAsCredential** is optional for configurations that call this resource. This is the default value.
+- `Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.
+- `NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.
+- `Default` Same as `Optional`.
+
+For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:
+
+```powershell
+[DscResource(RunAsCredential=NotSupported)]
+class FileResource {
+}
+```
+
+### Access the user context
+
+To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.
+
+For example the following code would write the user context under which the resource is running to the verbose output stream:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $global:PsDscContext.RunAsUser";
+}
+```
+
 ## See Also
 ### Concepts
 [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
