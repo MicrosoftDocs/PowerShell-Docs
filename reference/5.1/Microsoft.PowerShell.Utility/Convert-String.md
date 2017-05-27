@@ -34,7 +34,7 @@ The **Convert-String** cmdlet formats a string to match the format of examples.
 ### Example 1: Convert format of a string
 ```
 PS C:\> $Names = "Evan Narvaez","David Chew","Elisa Daugherty"
-Convert-String -InputObject $Names -Example "Patti Fuller = Fuller, P."
+$Names | Convert-String -Example "Patti Fuller=Fuller, P."
 Narvaez, E. 
 Chew, D. 
 Daugherty, E.
