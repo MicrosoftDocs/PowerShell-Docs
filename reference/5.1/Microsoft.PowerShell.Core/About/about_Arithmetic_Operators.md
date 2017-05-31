@@ -79,7 +79,7 @@ C:\PS> $b
 -1
 ```
 
-In this example, the expression `$a++` is evaluated before `$c[$a++]`. Evaluating `$a++` changes the value of `$a`. The variable `$a` in `$b[$a]` equals `1`, not `0`, so the statement assigns a value to `$b[1]`, not `$b[0]`.
+In this example, the expression `$a++` is evaluated before `$b[$a]`. Evaluating `$a++` changes the value of `$a`. The variable `$a` in `$b[$a]` equals `1`, not `0`, so the statement assigns a value to `$b[1]`, not `$b[0]`.
 
 ## DIVISION AND ROUNDING
 
