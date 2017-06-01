@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Update Help
+title: Update-Help
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=210614
@@ -32,32 +32,47 @@ Update-Help [[-Module] <String[]>] [-LiteralPath <String[]>] [-Recurse] [[-UICul
 ```
 
 ## DESCRIPTION
+
 The **Update-Help** cmdlet downloads the newest help files for Windows PowerShell modules and installs them on your computer.
-You can use the Get-Help cmdlet to view the new help files immediately; you do not need to restart Windows PowerShell to make the change effective.
+You can use the Get-Help cmdlet to view the new help files immediately.
+You do not have to restart Windows PowerShell to make the change effective.
 This feature enables you to install help files for modules that do not include them and to update help files on your computer so that they never become obsolete.
 
-The **Update-Help** cmdlet checks the version of the help files on your computer.
+**Update-Help** checks the version of the help files on your computer.
 If you do not have help files for a module or do not have the newest help files for a module, **Update-Help** downloads the newest help files from the Internet or a file share and installs them on your computer in the correct module folder.
 
-Without parameters, **Update-Help** updates the help for modules in the session and for all installed  modules (in a **PSModulePath** location) that support Updatable Help, even if the module is not in the current session.
-You can also use the **Module** parameter to update help for a particular module and use the **UICulture** parameter to download help files in multiple languages and locales.
+Without parameters, **Update-Help** updates the help for modules in the session and for all installed modules, in a **PSModulePath** location, that support Updatable Help, even if the module is not in the current session.
+You can also use the *Module* parameter to update help for a particular module and use the *UICulture* parameter to download help files in multiple languages and locales.
 
 You can use **Update-Help** even on computers that are not connected to the Internet.
-Use the **Save-Help** cmdlet to download help files from the Internet and save them in a file system location, such as a shared folder or file system directory.
-Then use the **SourcePath** parameter of **Update-Help** to get the updated help files from a file system location and install them on the computer.
+Use the Save-Help cmdlet to download help files from the Internet and save them in a file system location, such as a shared folder or file system directory.
+Then use the *SourcePath* parameter of **Update-Help** to get the updated help files from a file system location and install them on the computer.
 
-You can even automate the running of **Update-Help** by adding an Update-Help command to your Windows PowerShell profile.
-By default, **Update-Help** runs only once per day on each computer.
-To override the once-per-day limit, use the **Force** parameter.
+You can even automate the running of **Update-Help** by adding an **Update-Help** command to your Windows PowerShell profile.
+By default, **Update-Help** runs only one time per day on each computer.
+To override the once-per-day limit, use the *Force* parameter.
 
-To download or update the help files for modules in the Windows PowerShell installation directory ($pshome\Modules), including the Windows PowerShell Core modules, start Windows PowerShell with the "Run as administrator" option.
-You must be a member of the Administrators group on the computer to update the help files for these modules.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
-You can also update help files by using the "Update Windows PowerShell Help" menu item in the Help menu in Windows PowerShell Integrated Scripting Environment (ISE).
-The "Update Windows PowerShell Help" item runs an **Update-Help** command without parameters.
-To update help for modules in the $PSHome directory, start Windows PowerShell ISE with the "Run as administrator" option.
+> **UPDATE-HELP REQUIRES ADMINISTRATIVE PRIVILEGES**
+>
+> You must be a member of the Administrators group on the computer
+> to update the help files for the PowerShell Core modules.
+>
+> To download or update the help files for modules in the Windows PowerShell
+> installation directory ($pshome\Modules), including the Windows PowerShell
+> Core modules, start Windows PowerShell by using the Run as administrator
+> option.
+>
+> You can also update help files by using the Update Windows PowerShell Help
+> menu item in the Help menu in Windows PowerShell Integrated Scripting
+> Environment (ISE).
+>
+> The Update Windows PowerShell Help item runs an **Update-Help** command
+> without parameters.
+> To update help for modules in the $PSHome directory, start Windows PowerShell
+> ISE by using the Run as administrator option.
 
-This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Update help for all modules

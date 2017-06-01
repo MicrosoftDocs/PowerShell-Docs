@@ -13,6 +13,27 @@ ms.technology:  powershell
 
 PowerShell Gallery Status
 =========================
+## 06/01/2017 - Deploy to Azure Automation Currently Unavailable
+
+__Summary of Impact__: Deploying items with dependencies to Azure Automation from the PowerShell Gallery is currently unavailable.  Importing items from the PowerShell Gallery from inside Azure Automation is still available.  
+ 
+__Root Cause__: Items that have dependencies on others, and have been previously deployed to Azure Automation, will not be deployed to Azure Automation. Engineers have identified an issue with how ARM templates are generated for items with dependencies for the Deploy to Azure Automation functionality.
+
+__Resolution__: Engineers are working to resolve issue.  The current workaround for users is to import the item from the PowerShell Gallery from inside Azure Automation. 
+
+__Next Steps__: Engineers will release the fix shortly.  In the meantime, please use the recommended workaround. 
+
+
+## 04/11/2017 - Users unable to log in with Azure Active Directory (AAD) accounts
+
+__Summary of Impact__: Some users were unable to log in to the PowerShell Gallery using Azure AD Accounts. 
+ 
+__Root Cause__: During an update to interact more securely with AAD, a setting change was missed. 
+The testing done to validate the change did not include certain types of AAD accounts, so the deployment proceeded.
+
+__Resolution__: Engineers identified the missing setting and corrected the problem. 
+
+__Next Steps__: We will be modifying our testing to include a broader set of AAD account types.
 
 ## 03/27/2017 - RESOLVED: Unable to see individual module and script pages
 

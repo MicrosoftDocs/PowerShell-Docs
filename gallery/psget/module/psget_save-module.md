@@ -7,7 +7,7 @@ ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2016-10-14
 contributor:  manikb
-title:  psget_save module
+title: Save-Module
 ms.technology:  powershell
 ---
 

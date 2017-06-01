@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkId=821738
 schema: 2.0.0
-title: Test WSMan
+title: Test-WSMan
 ---
 
 # Test-WSMan
@@ -34,7 +34,7 @@ If the tested computer is running the service, the cmdlet displays the WS-Manage
 
 ### Example 1: Determine the status of the WinRM service
 ```
-PS C:\> Test-WSMman
+PS C:\> Test-WSMan
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -48,7 +48,7 @@ This command determines whether the WinRM service is running on the local comput
 
 ### Example 2: Determine the status of the WinRM service on a remote computer
 ```
-PS C:\> Test-WSMman -ComputerName "server01"
+PS C:\> Test-WSMan -ComputerName "server01"
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -62,7 +62,7 @@ This command determines whether the WinRM service is running on the server01 com
 
 ### Example 3: Determine the status of the WinRM service and the operating system version
 ```
-PS C:\> Test-WSMman -Authentication default
+PS C:\> Test-WSMan -Authentication default
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
@@ -78,7 +78,7 @@ Using the authentication parameter enables **Test-WSMan** to return the operatin
 
 ### Example 4: Determine the status of the WinRM service and the operating system version on a remote computer
 ```
-PS C:\> Test-WSMman -ComputerName "server01" -Authentication default
+PS C:\> Test-WSMan -ComputerName "server01" -Authentication default
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
 
 ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd

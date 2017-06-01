@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Start DscConfiguration
+title: Start-DscConfiguration
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=294367
@@ -147,9 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Indicates that the cmdlet pushes configuration to computers.
-Some computers pull configuration data.
-If you do not specify this parameter and if the computer pulls its configuration, the configuration fails.
+Stops the configuration operation currently running on the target computer and begins the new Start-Configuration operation.
+If the **RefreshMode** property of the Local Configuration Manager is set to **Pull**, specifying this parameter changes it to **Push**.
 
 ```yaml
 Type: SwitchParameter

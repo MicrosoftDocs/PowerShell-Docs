@@ -10,7 +10,7 @@ ms.technology: powershell
 ms.topic: reference
 online version: http://go.microsoft.com/fwlink/?LinkID=821449
 schema: 2.0.0
-title: Get PSReadlineKeyHandler
+title: Get-PSReadlineKeyHandler
 ---
 
 # Get-PSReadlineKeyHandler

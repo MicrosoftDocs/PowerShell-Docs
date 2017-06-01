@@ -7,7 +7,7 @@ ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2016-10-14
 contributor:  manikb
-title:  psget_register psrepository
+title: Register-PSRepository
 ms.technology:  powershell
 ---
 

@@ -5,7 +5,7 @@ author:  rpsqrd
 ms.author:  ryanpu
 ms.prod:  powershell
 keywords:  powershell,cmdlet,jea
-ms.date:  2017-03-08
+ms.date:  2017-04-25
 title:  JEA Session Configurations
 ms.technology:  powershell
 ---
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 You can open the session configuration file in any text editor.
 The `-SessionType RestrictedRemoteServer` field indicates that the session configuration will be used by JEA for secure management.
-Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/en-us/library/dn433292.aspx) and only have the following 8 default cmdlets (and aliases) available:
+Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/en-us/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -137,7 +137,7 @@ MountUserDrive = $true
 ```
 
 By default, the user drive allows you to store a maximum of 50MB of data per user.
-You can limit the amount of data a user can consume with the *UserDriveMaxmimumSize* field.
+You can limit the amount of data a user can consume with the *UserDriveMaximumSize* field.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -167,6 +167,15 @@ RoleDefinitions = @{
 
 If a user belongs to more than one group in the role definition, they will get access to the roles of each.
 If two roles grant access to the same cmdlets, the most permissive parameter set will be granted to the user.
+
+When specifying local users or groups in the role definitions field, be sure to use the computer name (not *localhost* or *.*) before the backslash.
+You can check the computer name by inspecting the `$env:computername` variable.
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### Role capability search order
 As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.

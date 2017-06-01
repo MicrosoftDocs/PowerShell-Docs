@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Register ScheduledJob
+title: Register-ScheduledJob
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkId=821702
@@ -121,7 +121,7 @@ The script is located on a file server that is available to all participating co
 
 ### Example 5: Create a scheduled job that runs a script on remote computers
 ```
-PS C:\> Register-ScheduledJob -Name "CollectEnergyData -Trigger $T -MaxResultCount 99 -ScriptBlock { Invoke-Command -AsJob -ComputerName (Servers.txt) -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
+PS C:\> Register-ScheduledJob -Name "CollectEnergyData" -Trigger $T -MaxResultCount 99 -ScriptBlock { Invoke-Command -AsJob -ComputerName (Servers.txt) -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
 ```
 
 This command uses the **Register-ScheduledJob** cmdlet to create the CollectEnergyData scheduled job on the local computer.

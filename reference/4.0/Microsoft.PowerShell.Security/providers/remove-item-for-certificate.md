@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  remove item for certificate
+title: Remove-Item for Certificate
 ms.technology:  powershell
 ---
 

@@ -170,7 +170,7 @@ Position argument with a value of 0. As a result, when "-ComputerName"
 is omitted from command, its value must be the first or only unnamed
 parameter value in the command.
 
-```powerhsell
+```powershell
 Param
 (
     [parameter(Position=0)]

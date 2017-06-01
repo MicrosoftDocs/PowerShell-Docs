@@ -6,7 +6,7 @@ author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
-title:  Import LocalizedData
+title: Import-LocalizedData
 ms.technology:  powershell
 schema:   2.0.0
 online version:   http://go.microsoft.com/fwlink/?LinkID=113342
@@ -212,6 +212,7 @@ Accept wildcard characters: False
 Specifies the name of the data file (.psd1) to be imported.
 Enter a file name.
 You can specify a file name that does not include its .psd1 file name extension, or you can specify the file name including the .psd1 file name extension.
+Data files should be saved as Unicode or UTF-8.
 
 The **FileName** parameter is required when **Import-LocalizedData** is not used in a script.
 Otherwise, the parameter is optional and the default value is the base name of the script.

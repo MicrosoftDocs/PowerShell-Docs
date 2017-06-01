@@ -25,41 +25,42 @@ Windows PowerShell has the following language keywords. For more
 information, see the about topic for the keyword and the information that
 follows the table.
 
-Keyword            Reference
--------            ---------
-Begin              about_Functions, about_Functions_Advanced
-Break              about_Break, about_Trap
-Catch              about_Try_Catch_Finally
-Continue           about_Continue, about_Trap
-Data               about_Data_Sections
-Do                 about_Do, about_While
-DynamicParam       about_Functions_Advanced_Parameters
-Else               about_If
-Elseif             about_If
-End                about_Functions, about_Functions_Advanced_Methods
-Exit               Described in this topic.
-Filter             about_Functions
-Finally            about_Try_Catch_Finally
-For                about_For
-ForEach            about_ForEach
-From               Reserved for future use.
-Function           about_Functions, about_Functions_Advanced
-If                 about_If
-In                 about_ForEach
-InlineScript       about_InlineScript
-Hidden             about_Hidden
-Parallel           about_Parallel, about_ForEach-Parallel
-Param              about_Functions
-Process            about_Functions, about_Functions_Advanced
-Return             about_Return
-Sequence           about_Sequence
-Switch             about_Switch
-Throw              about_Throw, about_Functions_Advanced_Methods
-Trap               about_Trap, about_Break, about_Try_Catch_Finally
-Try                about_Try_Catch_Finally
-Until              about_Do
-While              about_While, about_Do
-Workflow           about_Workflows
+Keyword     |       Reference
+-------     |       ---------
+Begin       | about\_Functions, about\_Functions\_Advanced
+Break       | about\_Break, about\_Trap
+Catch       | about\_Try\_Catch\_Finally
+Class       | about\_Classes
+Continue    | about\_Continue, about\_Trap
+Data        | about\_Data\_Sections
+Do          | about\_Do, about\_While
+DynamicParam| about\_Functions\_Advanced\_Parameters
+Else        | about\_If
+Elseif      | about\_If
+End         | about\_Functions, about\_Functions\_Advanced\_Methods
+Enum        | about\_Enums
+Exit        | Described in this topic.
+Filter      | about\_Functions
+Finally     | about\_Try\_Catch\_Finally
+For         | about\_For
+ForEach     | about\_ForEach
+From        | Reserved for future use.
+Function    | about\_Functions, about\_Functions\_Advanced
+If          | about\_If
+In          | about\_ForEach
+InlineScript| about\_InlineScript
+Hidden      | about\_Hidden
+Param       | about\_Functions
+Process     | about\_Functions, about\_Functions\_Advanced
+Return      | about\_Return
+Static      | about\_Classes
+Switch      | about\_Switch
+Throw       | about\_Throw, about\_Functions\_Advanced\_Methods
+Trap        | about\_Trap, about\_Break, about\_Try\_Catch\_Finally
+Try         | about\_Try\_Catch\_Finally
+Until       | about\_Do
+Using       | about\_Using, about\_Classes
+While       | about\_While, about\_Do
 
 Language Keywords
 
@@ -109,6 +110,20 @@ Syntax:
 ```
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
+```
+
+**Class**
+-----
+
+Specifies a new class in PowerShell.
+
+Syntax:
+```
+class <class-name> {
+    [[hidden] [static] <property-definition> ...]
+    [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
+    [[hidden] [static] <method-definition> ...]
+}
 ```
 
 **Continue**
@@ -212,6 +227,21 @@ function <name> {
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
+}
+```
+
+**Enum**
+----
+
+`enum` is used to declare an enumeration;
+a distinct type that consists of a set of named labels called the
+enumerator list.
+
+Syntax:
+```
+enum <enum-name> {
+    <label> [= <int-value>]
+    ...
 }
 ```
 
@@ -414,53 +444,6 @@ function [<scope:>]<name> {
 }
 ```
 
-**Parallel**
---------
-Runs workflow commands concurrently and in an undefined order.
-This keyword is valid only in a Windows PowerShell Workflow.
-
-The Parallel keyword indicates a Parallel script block. The
-commands in a Parallel script block can run at the same time and
-in any order. This feature significantly improves the performance
-of a workflow.
-
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   Parallel
-   {
-      <Activity>
-      <Activity>
-      …
-
-   }
-}
-```
-
-The Parallel parameter of the ForEach keyword processes the
-items in a collection in parallel. The activities in the script
-block run sequentially on each item, but the script block can
-run on multiple items at the same time and the items are
-processed in an undefined order.
-
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   ForEach -Parallel (<item> in <collection>)
-   {
-      <Activity>
-      <Activity>
-      ...
-
-   }
-}
-```
-
-For more information, see: [about_Parallel](https://msdn.microsoft.com/en-us/powershell/reference/5.1/PSWorkflow/About/about_Parallel),
-[about_ForEach-Parallel](https://msdn.microsoft.com/en-us/powershell/reference/5.1/PSWorkflow/About/about_Foreach-Parallel)
-
 **Process**
 -------
 
@@ -492,40 +475,27 @@ Syntax:
 return [<expression>]
 ```
 
-**Sequence**
+**Static**
 --------
-Runs workflow commands sequentially in a Parallel script block.
-This keyword is valid only in a Windows PowerShell Workflow.
 
-Syntax:
-```
-workflow <verb>-<noun>
-{
-   Parallel
-   {
-      Sequence
-      {
-         <Activity>
-      }
-   }
-}
-```
+Specifies the property or method defined is common to all instances
+of the class in which is defined.
 
-The Sequence keyword creates a sequence block within a Parallel
-script block. The commands in the Sequence script block run
-sequentially and in the order defined.
-
-For more information, see: [about_Sequence](https://msdn.microsoft.com/en-us/powershell/reference/5.1/PSWorkflow/About/about_Sequence)
+See, in this topic, **Class**  for usage examples.
 
 **Switch**
 ------
 
-Specifies a variety of actions to be performed on items from the pipeline
-or from a file. You can use either of the following syntax models.
+To check multiple conditions, use a Switch statement.
+The Switch statement is equivalent to a series of If statements,
+but it is simpler.
+
+The Switch statement lists each condition and an optional action.
+If a condition obtains, the action is performed.
 
 Syntax 1:
 ```
-switch [-regex|-wildcard|-exact][-casesensitive] ( pipeline )
+switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -537,7 +507,7 @@ switch [-regex|-wildcard|-exact][-casesensitive] ( pipeline )
 
 Syntax 2:
 ```
-switch [-regex|-wildcard|-exact][-casesensitive] -file filename
+switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -595,6 +565,24 @@ Syntax:
 do {<statement list>} until (<condition>)
 ```
 
+**Using**
+-----
+
+Allows to indicate which namespaces are used in the session.
+Classes and members require less typing to mention them.
+You can also include classes from modules.
+
+Syntax #1:
+```
+using namespace <.Net-framework-namespace>
+```
+
+Syntax #2:
+```
+using module <module-name>
+```
+
+
 **While**
 -----
 
@@ -606,70 +594,10 @@ Syntax:
 do {<statement list>} while (<condition>)
 ```
 
-**Workflow**
---------
-Creates a script-based Windows PowerShell workflow, that
-is, a workflow written in the Windows PowerShell language.
-
-A Windows PowerShell workflow is a Windows PowerShell command
-type that is supported by Windows PowerShell and Windows Workflow
-Foundation. Workflows are designed for complex, long-running tasks
-that affect multiple computers. Workflows can be recovered if
-interrupted, such as by a network outage, and you can suspend and
-resume them  without losing state or data.
-
-Workflows can be written in XAML, the native language of
-Windows Workflow Foundation, or in the Windows PowerShell
-language.
-
-The syntax of a script-based workflow is similar to the syntax
-of a function. However, the unit of execution in a workflow is an
-activity, instead of a command. Cmdlets (and other commands) that
-are used in script-based workflows are implicitly converted to
-activities.
-
-Some language elements that are permitted in scripts and functions
-are not permitted in workflows. Similarly, workflows can include
-elements that are not found in scripts and functions, such as
-"persistence points" (checkpoints), self-suspension, and parallel
-processing. In addition, all workflows have a set of common
-parameters that are added by Windows PowerShell when you use the
-Workflow keyword.
-
-Syntax:
-```
-workflow <verb-noun>
-{
-   param
-   (
-        [type]<$pname1>
-        [, [type]<$pname2>]
-    )
-   <statement list>
-}
-
-workflow <verb-noun>
-{
-   [CmdletBinding(<Attributes>)]
-   Param
-   (
-      [Parameter(<Arguments>)] $Param1
-      ...
-   )
-
-   <statement list>
-}
-```
-
-For more information about workflows, see [about_Workflows](https://msdn.microsoft.com/en-us/powershell/reference/5.1/PSWorkflow/About/about_Workflows)
-and "Getting Started with Windows PowerShell Workflow"
-(http://go.microsoft.com/fwlink/?LinkID=252592) in the
-TechNet Library.
-
 # SEE ALSO
 
-[about_Escape_Characters](about_Escape_Characters.md)
+- [about_Escape_Characters](about_Escape_Characters.md)
 
-[about_Special_Characters](about_Special_Characters.md)-
+- [about_Special_Characters](about_Special_Characters.md)
 
-[about_Wildcards](about_Wildcards.md)
+- [about_Wildcards](about_Wildcards.md)
