@@ -97,7 +97,7 @@ Select name, version from Win32_Bios
 # USING THE WQL QUERY
 
 
-There are two ways to use WQL query in Windows
+There are three ways to use WQL query in Windows
 PowerShell command.
 
 -- Use the Get-WmiObject cmdlet
