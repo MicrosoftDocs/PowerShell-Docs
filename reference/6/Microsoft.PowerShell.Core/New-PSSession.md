@@ -607,12 +607,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsAdministrator
-When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to enable it to redirect the connection.
-
-You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
-Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the **$PSSessionOption** preference variable.
-The default value is 5.
+Indicates that the **PSSession** runs as administrator.
 
 ```yaml
 Type: SwitchParameter

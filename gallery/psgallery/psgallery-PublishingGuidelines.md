@@ -160,8 +160,8 @@ PowerShell supports validation of code signing through two primary approaches:
 Signing PowerShell files is a well-established approach to ensuring that the code being executed was produced by a reliable source, and has not been modified.
 Details on how to sign PowerShell script files is covered in the [About Signing](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) topic. 
 In overview, a signature can be added to any .PS1 file that PowerShell validates when the script is loaded. 
-PowerShell can be constrained using the [Execution Policy](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts.
-This feature is frequently used in highly secure environments.
+PowerShell can be constrained using the [Execution Policy](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts. 
+This feature is frequently used in highly secure environments. 
 
 Catalog signing modules is a feature added to PowerShell in version 5.1. 
 How to sign a module is covered in the [Catalog Cmdlets](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) topic. 
