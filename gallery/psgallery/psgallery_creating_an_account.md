@@ -19,7 +19,7 @@ The PowerShell Gallery accounts must be linked to an Azure Active Directory emai
 
 To create a PowerShell Gallery account, go to https://PowerShellGallery.com and click on "Register" (see the image below). 
 
-_tbd - need to link in the image in images\GalleryHomePageBanner1.png_
+![Register new account](./images/CreatingAccount-Register.png)
 
 In the next page, to use an Azure Active Directory account, select "Work or School Account", and log in with your account. 
 To use a Microsoft account - such as one in a Hotmail.com or Outlook.com domain - choose "Personal Account", and log in. 
