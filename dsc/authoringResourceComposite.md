@@ -188,6 +188,24 @@ configuration RenameVM
 }
 ```
 
+## Supporting PsDscRunAsCredential
+
+>**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the 
+resource should be run under a specified set of credentials.
+For more information, see [Running DSC with user credentials](runAsUser.md).
+
+To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.
+
+For example the following code would write the user context under which the resource is running to the verbose output stream:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
+}
+```
+
 ## See Also
 ### Concepts
 * [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
