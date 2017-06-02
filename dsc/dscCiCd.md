@@ -1,5 +1,5 @@
 ---
-title:   Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services
+title:   Building a Continuous Integration and Continuous Deplyoment pipeline with DSC
 ms.date:  2017-03-03
 keywords:  powershell,DSC
 description:  
@@ -9,13 +9,16 @@ manager:  carmonm
 ms.prod:  powershell
 ---
 
-# Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services
+# Building a Continuous Integration and Continuous Deplyoment pipeline with DSC
 
-This example demonstrates how to build a Continuous Integration-Continuous Deployment (CI-CD) pipeline by using PowerShell,
+This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell,
 DSC, Pester, and Visual Studio Team Foundation Server (TFS).
 
 After the pipeline is built and configured, you can use it to fully deploy, configure and test a DNS server and associated host records. 
 This process simulates the first part of a pipeline that would be used in a development environment.
+
+An automated CI/CD pipeline helps you update software faster and more reliably, ensuring that all code is tested,
+and that a current build of your code is available at all times.
 
 ## Prerequisites
 
@@ -30,7 +33,7 @@ To use this example, you should be familiar with the following:
 
 To build and run this example, you will need an environment with several computers and/or virtual machines. 
 
-### Client 
+### Client
 
 This is the computer where you'll do all of the work setting up and running the example.
 
@@ -39,7 +42,7 @@ The client computer must be a Windows computer with the following installed:
 - a local git repo cloned from https://github.com/PowerShell/Demo_CI
 - a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)  
 
-###  TFSSrv1
+### TFSSrv1
 
 The computer that hosts the TFS server where you will define your build and release.
 This computer must have [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) installed.
@@ -92,7 +95,7 @@ If you have not already cloned the Demo_CI repository to your client computer, d
 
 ## Understanding the code
 
-Before we create the build and deployment pipelins, let's look at some of the code to understand what is going on.
+Before we create the build and deployment pipelines, let's look at some of the code to understand what is going on.
 On your client computer, open your favorite text editor and navigate to the root of your Demo_CI Git repository.
 
 ### The DSC configuration
@@ -105,7 +108,7 @@ This file contains the DSC configuration that sets up the DNS server. Here it is
 configuration DNSServer
 {
     Import-DscResource -module 'xDnsServer','xNetworking', 'PSDesiredStateConfiguration'
-    
+
     Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
     {
         WindowsFeature DNS
@@ -116,11 +119,11 @@ configuration DNSServer
 
         xDnsServerPrimaryZone $Node.zone
         {
-            Ensure    = 'Present'                
+            Ensure    = 'Present'
             Name      = $Node.Zone
             DependsOn = '[WindowsFeature]DNS'
         }
-            
+
         foreach ($ARec in $Node.ARecords.keys) {
             xDnsRecord $ARec
             {
@@ -362,11 +365,11 @@ This build step runs the `initiate.ps1` file, which calls the psake build script
 1. Make sure **Control Options** **Enabled** and **Always run** are both selected.
 
 This build step runs the unit tests in the Pester script we looked at earlier,
-and stores the results in the 
+and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.
 
 ### Copy Files
 
-1.  Add each of the following lines to **Contents**:
+1. Add each of the following lines to **Contents**:
 
     ```
     initiate.ps1
@@ -420,14 +423,14 @@ Edit the steps as follows:
 1. Set the **Script Path** field to `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Set the **Arguments** field to `-fileName Deploy`
 
-### First Pubish Test Results
+### First Publish Test Results
 
 1. Select `NUnit` for the **Test Result Format** field
 1. Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
 1. Set the **Test Run Title** to `Integration`
 1. Under **Control Options**, check **Always run**
 
-### Second Pubish Test Results
+### Second Publish Test Results
 
 1. Select `NUnit` for the **Test Result Format** field
 1. Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
@@ -444,9 +447,9 @@ You can check the result of the deployment by opening a browser on the client ma
 ## Next steps
 
 This example configures the DNS server `TestAgent1` so that the URL `www.contoso.com` resolves to `TestAgent2`,
-but it does not actually deploy a website. 
+but it does not actually deploy a website.
 The skeleton for doing so is provided in the repo under the `WebApp` folder.
-You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own webiste. 
+You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own website.
 
 
 
