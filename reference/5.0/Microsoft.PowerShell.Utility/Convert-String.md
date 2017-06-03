@@ -33,16 +33,16 @@ The **Convert-String** cmdlet formats a string to match the format of examples.
 
 ### Example 1: Convert format of a string
 ```
-PS C:\> $Names = "Evan Narvaez","David Chew","Elisa Daugherty"
-Convert-String -InputObject $Names -Example "Patti Fuller = Fuller, P."
-Narvaez, E. 
-Chew, D. 
-Daugherty, E.
+PS C:\> "Mu Han", "Jim Hance", "David Ahs", "Kim Akers" | Convert-String -Example "Ed Wilson=Wilson, E."
+Han, M.
+Hance, J.
+Ahs, D.
+Akers, K.
 ```
 
-The first command creates an array named **$Names** that contains first and last names.
+The first command creates an array that contains first and last names.
 
-The second command formats the names in **$Names** according to the example.
+The second command formats the names according to the example.
 It puts the surname first in the output, followed by an initial.
 
 ### Example 2: Format process information
