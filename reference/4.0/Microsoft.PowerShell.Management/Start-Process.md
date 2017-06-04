@@ -299,12 +299,12 @@ The verbs that are available are determined by the file name extension of the fi
 
 The following table shows the verbs for some common process file types.
 
-`File type      Verbs`
-`---------      -------`
-`.cmd------Edit, Open, Print, Runas`
-`.exe------Open, RunAs`
-`.txt------Open, Print, PrintTo`
-`.wav------Open, Play`
+| File type | Verbs   |
+| --------- | ------- |
+|.cmd       | Edit, Open, Print, Runas |
+|.exe       | Open, RunAs |
+|.txt       | Open, Print, PrintTo |
+|.wav       | Open, Play |
 
 To find the verbs that can be used with the file that runs in a process, use the New-Object cmdlet to create a System.Diagnostics.ProcessStartInfo object for the file.
 The available verbs are in the Verbs property of the ProcessStartInfo object.
