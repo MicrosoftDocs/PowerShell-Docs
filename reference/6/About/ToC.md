@@ -6,6 +6,7 @@
 ##  [about_Assignment_Operators](about_assignment_operators.md)
 ##  [about_Automatic_Variables](about_automatic_variables.md)
 ##  [about_Break](about_break.md)
+##  [about_Classes](about_classes.md)
 ##  [about_Command_Precedence](about_command_precedence.md)
 ##  [about_Command_Syntax](about_command_syntax.md)
 ##  [about_Comment_Based_Help](about_comment_based_help.md)

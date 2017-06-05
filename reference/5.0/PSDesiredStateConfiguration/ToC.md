@@ -1,4 +1,6 @@
 #  [PSDesiredStateConfiguration](PSDesiredStateConfiguration.md)
+##  [About]()
+###  [about_Classes_and_DSC](about/about_classes_and_dsc.md)
 ##  [Disable-DscDebug](disable-dscdebug.md)
 ##  [Enable-DscDebug](enable-dscdebug.md)
 ##  [Find-DscResource](find-dscresource.md)

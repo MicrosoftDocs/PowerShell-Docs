@@ -7,6 +7,7 @@
 ###  [about_Automatic_Variables](about/about_automatic_variables.md)
 ###  [about_Break](about/about_break.md)
 ###  [about_Classes](about/about_classes.md)
+###  [about_Classes_and_DSC](about/about_classes_and_dsc.md)
 ###  [about_Command_Precedence](about/about_command_precedence.md)
 ###  [about_Command_Syntax](about/about_command_syntax.md)
 ###  [about_Comment_Based_Help](about/about_comment_based_help.md)
