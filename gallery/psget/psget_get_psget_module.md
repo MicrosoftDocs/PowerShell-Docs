@@ -2,7 +2,7 @@
 description:  
 manager:  kriscv
 ms.topic:  article
-author:  bmanikm,tylerl0706
+author:  tylerl0706
 ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2017-6-3
