@@ -31,14 +31,14 @@ Install-PackageProvider Nuget –Force
 Exit
 ```
 
-#### For systems with PowerShell 5.0 (or newer) you can install both PowerShellGet 
+#### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet 
 - To do this on Windows 10, Windows Server 2016, or any system with WMF 5.0 or 5.1 installed, run the following commands from an elevated PowerShell session.
 ```powershell
 Install-Module –Name PowerShellGet –Force
 Exit
 ```
 
-- Use Update-Module to get the next updated versions.
+- Use Update-Module to get newer versions.
 ```powershell
 Update-Module -Name PowerShellGet
 Exit
