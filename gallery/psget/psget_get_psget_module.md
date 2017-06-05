@@ -2,11 +2,11 @@
 description:  
 manager:  kriscv
 ms.topic:  article
-author:  manikb,tyleonha
+author:  bmanikm,tylerl0706
 ms.prod:  powershell
 keywords:  powershell,cmdlet,gallery
 ms.date:  2017-6-3
-contributor:  tyleonha
+contributor:  tylerl0706
 title:  Get PowerShellGet Module
 ms.technology:  powershell
 ---
