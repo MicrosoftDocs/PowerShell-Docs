@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Redirecting Data with Out Cmdlets
-ms.technology:  powershell
-ms.assetid:    2a4acd33-041d-43a5-a3e9-9608a4c52b0c
+ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ---
-
 
 # Redirecting Data with Out-* Cmdlets
 Windows PowerShell provides several cmdlets that let you control data output directly. These cmdlets share two important characteristics.

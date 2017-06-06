@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The ISEFileCollection Object
-ms.technology:  powershell
-ms.assetid:    0f86a427-ea38-4bce-85f8-06c98d30d508
+ms.assetid:  0f86a427-ea38-4bce-85f8-06c98d30d508
 ---
-
 
 # The ISEFileCollection Object
   The **ISEFileCollection** object is a collection of **ISEFile** objects. An example is the $psISE.CurrentPowerShellTab.Files collection.
