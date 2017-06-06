@@ -22,7 +22,7 @@ and that a current build of your code is available at all times.
 
 ## Prerequisites
 
-To use this example, you should be familiar with the following: 
+To use this example, you should be familiar with the following:
 
 - CI-CD concepts. A good reference can be found at [The Release Pipeline Model](http://aka.ms/thereleasepipelinemodelpdf).
 - [Git](https://git-scm.com/) source control
@@ -31,7 +31,7 @@ To use this example, you should be familiar with the following:
 
 ## What you will need
 
-To build and run this example, you will need an environment with several computers and/or virtual machines. 
+To build and run this example, you will need an environment with several computers and/or virtual machines.
 
 ### Client
 
@@ -40,7 +40,7 @@ This is the computer where you'll do all of the work setting up and running the 
 The client computer must be a Windows computer with the following installed:
 - [Git](https://git-scm.com/)
 - a local git repo cloned from https://github.com/PowerShell/Demo_CI
-- a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)  
+- a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)
 
 ### TFSSrv1
 
@@ -50,15 +50,15 @@ This computer must have [Team Foundation Server 2017](https://www.visualstudio.c
 ### BuildAgent
 
 The computer that runs the Windows build agent that builds the project.
-This computer must have a Windows build agent installed and running. 
+This computer must have a Windows build agent installed and running.
 See [Deploy an agent on Windows](https://www.visualstudio.com/en-us/docs/build/actions/agents/v2-windows)
 for instructions on how to install and run a Windows build agent.
 
-You also need to install 
+You also need to install both the `xDnsServer` and `xNetworking` DSC modules on this computer.
 
 ### TestAgent1
 
-This is the computer that is conifigured as a DNS server by the DSC configuration in this example.
+This is the computer that is configured as a DNS server by the DSC configuration in this example.
 The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ### TestAgent2
@@ -204,7 +204,7 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 ```
 
 The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) 
-programatically creates a configuration data document from the hashtable (node data) and array (non-node data) 
+programmatically creates a configuration data document from the hashtable (node data) and array (non-node data) 
 that are passed as the `RawEnvData` and `OtherEnvData` parameters.
 
 In our case, only the `RawEnvData` parameter is used.
@@ -326,10 +326,10 @@ The integration test script uses a mixture of [Pester](https://github.com/pester
 
 #### Acceptance tests
 
-Acceptance tests test the system to ensure that it behaves as expected. 
-For example, it tests to ensure a web page returns the right information when queried. 
-These tests run remotely from the target node in order to test real world scenarios. 
-The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and 
+Acceptance tests test the system to ensure that it behaves as expected.
+For example, it tests to ensure a web page returns the right information when queried.
+These tests run remotely from the target node in order to test real world scenarios.
+The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and
 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.
 
 ## Define the build
@@ -391,7 +391,7 @@ This step copies the build and test scripts to the staging directory so that the
 
 ## Enable continuous integration
 
-Now we'll set up a trigger that causes the project to build any time a change is checked in to the `ci-cd-example` branch of the git repository. 
+Now we'll set up a trigger that causes the project to build any time a change is checked in to the `ci-cd-example` branch of the git repository.
 
 1. In TFS, click the **Build & Release** tab
 1. Select the `DNS Infra` build definition, and click **Edit**
