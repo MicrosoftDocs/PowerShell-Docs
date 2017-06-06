@@ -4,7 +4,7 @@ description:
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 manager: carmonm
-ms.date: 2016-12-12
+ms.date: 2017-05-24
 ms.prod: powershell
 ms.technology: powershell
 ms.topic: reference
@@ -21,14 +21,13 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 ## SYNTAX
 
 ```
-Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
- [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>]
- [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Invoke-RestMethod [-Uri] <uri> [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowRelLink <int>] [-UseBasicParsing] [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-UserAgent <string>] [-DisableKeepAlive] [-TimeoutSec <int>] [-Headers <IDictionary>] [-MaximumRedirection <int>] [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [<CommonParameters>]
+
+Invoke-RestMethod [-Uri] <uri> -NoProxy [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowRelLink <int>] [-UseBasicParsing] [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-UserAgent <string>] [-DisableKeepAlive] [-TimeoutSec <int>] [-Headers <IDictionary>] [-MaximumRedirection <int>] [-Body <Object>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [<CommonParameters>]
+
+Invoke-RestMethod [-Uri] <uri> -CustomMethod <string> [-FollowRelLink] [-MaximumFollowRelLink <int>] [-UseBasicParsing] [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-UserAgent <string>] [-DisableKeepAlive] [-TimeoutSec <int>] [-Headers <IDictionary>] [-MaximumRedirection <int>] [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [<CommonParameters>]
+
+Invoke-RestMethod [-Uri] <uri> -CustomMethod <string> -NoProxy [-FollowRelLink] [-MaximumFollowRelLink <int>] [-UseBasicParsing] [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-UserAgent <string>] [-DisableKeepAlive] [-TimeoutSec <int>] [-Headers <IDictionary>] [-MaximumRedirection <int>] [-Body <Object>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,6 +132,17 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
+
+### Example 3: Follow relation links
+
+```powershell
+# REST apis that support pagination implement relation links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6)
+# Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you
+# This example returns the first two pages of issues from the PowerShell GitHub repository
+
+Invoke-RestMethod https://api.github.com/repos/powershell/powershell/issues -FollowRelLink -MaximumFollowRelLink 2
+```
+
 
 ## PARAMETERS
 
@@ -268,6 +278,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FollowRelLink
+Indicates that the cmdlet should automatically follow the `next` relation link if present in the header.
+By default, the `next` relation link is not followed.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Headers
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
@@ -358,6 +384,24 @@ Aliases: iv
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumFollowRelLink
+Specifies how many times to follow relation links if `-FollowRelLink` is used.
+A smaller value may be needed if the REST api throttles due to too many requests.
+The default value is Int32.MaxValue.
+A value of 0 (zero) prevents following relation links.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: Int32.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

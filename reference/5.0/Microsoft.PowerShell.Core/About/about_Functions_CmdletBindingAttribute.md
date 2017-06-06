@@ -44,21 +44,24 @@ The following example shows the format of a function that specifies all
 the optional arguments of the CmdletBinding attribute. A brief description
 of each argument follows this example.
 
+```powershell
 {
-[CmdletBinding(ConfirmImpact=<String>,
-DefaultParameterSetName=<String>,
-HelpURI=<URI>,
-SupportsPaging=<Boolean>,
-SupportsShouldProcess=<Boolean>,
-PositionalBinding=<Boolean>)]
+    [CmdletBinding(ConfirmImpact=<String>,
+    DefaultParameterSetName=<String>,
+    HelpURI=<URI>,
+    SupportsPaging=<Boolean>,
+    SupportsShouldProcess=<Boolean>,
+    PositionalBinding=<Boolean>)]
 
-Param ($Parameter1)
-Begin{}
-Process{}
-End{}
+    Param ($Parameter1)
+    Begin{}
+    Process{}
+    End{}
 }
+```
 
-ConfirmImpact
+## ConfirmImpact
+
 The ConfirmImpact argument specifies when the action of the function
 should be confirmed by a call to the ShouldProcess method. The call to
 the ShouldProcess method displays a confirmation prompt only when the
@@ -71,13 +74,15 @@ For more information about confirmation requests, see "Requesting
 Confirmation" in the MSDN (Microsoft Developer Network) library at
 http://go.microsoft.com/fwlink/?LinkId=136658.
 
-DefaultParameterSetName
+## DefaultParameterSetName
+
 The DefaultParameterSetName argument specifies the name of the parameter
 set that Windows PowerShell will attempt to use when it cannot determine
 which parameter set to use. You can avoid this issue by making the
 unique parameter of each parameter set a mandatory parameter.
 
-HelpURI
+## HelpURI
+
 The HelpURI argument specifies the Internet address (Uniform Resource
 Identifier (URI)) of the online version of the help topic that describes
 the function. The value of the HelpURI argument must begin with "http"
@@ -96,7 +101,8 @@ The Get-Help cmdlet uses the value of the HelpURI property to locate the
 online version of the function help topic when the Online parameter
 of Get-Help is specified in a command.
 
-SupportsPaging
+## SupportsPaging
+
 The SupportsPaging argument adds the First, Skip, and IncludeTotalCount
 parameters to the function. These parameters allow users to select
 output from a very large result set. This argument is designed for cmdlets
@@ -118,30 +124,32 @@ total count value.
 The following sample function shows how to add support for the paging parameters
 to an advanced function.
 
-function Get-Numbers
-{
-[CmdletBinding(SupportsPaging = $true)]
-param()
-
-$FirstNumber = [Math]::Min($PSCmdlet.PagingParameters.Skip, 100)
-$LastNumber = [Math]::Min($PSCmdlet.PagingParameters.First + $FirstNumber - 1, 100)
-
-if ($PSCmdlet.PagingParameters.IncludeTotalCount)
-{
-$TotalCountAccuracy = 1.0
-$TotalCount = $PSCmdlet.PagingParameters.NewTotalCount(100, $TotalCountAccuracy)
-Write-Output $TotalCount
+```powershell
+function Get-Numbers {
+    [CmdletBinding(SupportsPaging = $true)]
+    param()
+    
+    $FirstNumber = [Math]::Min($PSCmdlet.PagingParameters.Skip, 100)
+    $LastNumber = [Math]::Min($PSCmdlet.PagingParameters.First + $FirstNumber - 1, 100)
+    
+    if ($PSCmdlet.PagingParameters.IncludeTotalCount) {
+        $TotalCountAccuracy = 1.0
+        $TotalCount = $PSCmdlet.PagingParameters.NewTotalCount(100, $TotalCountAccuracy)
+        Write-Output $TotalCount
+    }
+    $FirstNumber .. $LastNumber | Write-Output
 }
-$FirstNumber .. $LastNumber | Write-Output
-}
+```
 
-SupportsShouldProcess
+## SupportsShouldProcess
+
 The SupportsShouldProcess argument adds Confirm and WhatIf parameters
 to the function. The Confirm parameter prompts the user before it runs
 the command on each object in the pipeline. The WhatIf parameter lists the
 changes that the command would make, instead of running the command.
 
-PositionalBinding
+## PositionalBinding
+
 The PositionalBinding argument determines whether parameters in the function
 are positional by default. The default value is $True. You can use the
 PositionalBinding argument with a value of $False to disable positional

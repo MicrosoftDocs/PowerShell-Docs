@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Microsoft.PowerShell.Utility Module
-ms.technology:  powershell
-ms.assetid:    35c7701f-8e26-442f-8dc7-cf0c89f2c337
+ms.assetid:  35c7701f-8e26-442f-8dc7-cf0c89f2c337
 ---
-
 
 # Microsoft.PowerShell.Utility Module
 This section contains the help topics for the **Microsoft.PowerShell.Utility** module. The **Microsoft.PowerShell.Utility** module is installed with Windows PowerShell.

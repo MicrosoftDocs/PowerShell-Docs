@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Manipulating Items Directly
-ms.technology:  powershell
-ms.assetid:    8cbd4867-917d-41ea-9ff0-b8e765509735
+ms.assetid:  8cbd4867-917d-41ea-9ff0-b8e765509735
 ---
-
 
 # Manipulating Items Directly
 The elements that you see in Windows PowerShell drives, such as the files and folders in the file system drives, and the registry keys in the Windows PowerShell registry drives, are called *items* in Windows PowerShell. The cmdlets for working with them item have the noun **Item** in their names.

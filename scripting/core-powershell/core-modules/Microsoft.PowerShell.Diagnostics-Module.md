@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Microsoft.PowerShell.Diagnostics Module
-ms.technology:  powershell
-ms.assetid:    f5aab004-d759-4f8b-9064-a30095ad4257
+ms.assetid:  f5aab004-d759-4f8b-9064-a30095ad4257
 ---
-
 
 # Microsoft.PowerShell.Diagnostics Module
 This section contains the help topics for the **Microsoft.PowerShell.Diagnostics** module. The **Microsoft.PowerShell.Diagnostics** module contains cmdlets that manage event logs, performance counters, and Event Tracing for Windows (ETW). It is installed with Windows PowerShell.

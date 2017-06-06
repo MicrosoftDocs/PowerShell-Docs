@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Windows PowerShell Core Providers
-ms.technology:  powershell
-ms.assetid:    6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+ms.assetid:  6e24bf6d-4c70-4edf-956a-1e8e4779ba10
 ---
-
 
 # Windows PowerShell Core Providers
 This section contains help topics that describe the Windows PowerShell providers in the **Microsoft.PowerShell.Core** module.
