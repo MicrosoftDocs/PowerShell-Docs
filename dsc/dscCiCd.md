@@ -1,5 +1,5 @@
 ---
-title:   Building a Continuous Integration and Continuous Deplyoment pipeline with DSC
+title:   Building a Continuous Integration and Continuous Deployment pipeline with DSC
 ms.date:  2017-03-03
 keywords:  powershell,DSC
 description:  
