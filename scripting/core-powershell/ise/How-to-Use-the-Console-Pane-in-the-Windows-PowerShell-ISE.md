@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  How to Use the Console Pane in the Windows PowerShell ISE
-ms.technology:  powershell
-ms.assetid:    44d67705-87c7-4a69-a53e-6471fdebb757
+ms.assetid:  44d67705-87c7-4a69-a53e-6471fdebb757
 ---
-
 
 # How to Use the Console Pane in the Windows PowerShell ISE
 The Console pane in the Windows PowerShell® Integrated Scripting Environment (ISE) operates exactly like the stand-alone Windows PowerShell ISE console window.

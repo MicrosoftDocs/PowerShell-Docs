@@ -1,15 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  security
-ms.technology:  powershell
 ---
-
 
 # Security Module
 This section contains the help topics for the **Microsoft.PowerShell.Security** module. The **Microsoft.PowerShell.Security** module contains the [Certificate Provider [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d) and cmdlets that manage the security features of Windows PowerShell, including execution policies. The **Microsoft.PowerShell.Security** module is installed with Windows PowerShell.

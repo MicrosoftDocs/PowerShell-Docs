@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Repeating a Task for Multiple Objects ForEach Object
-ms.technology:  powershell
-ms.assetid:    6697a12d-2470-4ed6-b5bb-c35e5d525eb6
+ms.assetid:  6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ---
-
 
 # Repeating a Task for Multiple Objects (ForEach-Object)
 The **ForEach-Object** cmdlet uses script blocks and the $_ descriptor for the current pipeline object to let you run a command on each object in the pipeline. This can be used to perform some complicated tasks.

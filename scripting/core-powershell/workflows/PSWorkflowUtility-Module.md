@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  PSWorkflowUtility Module
-ms.technology:  powershell
-ms.assetid:    c62a363a-caa2-4b6e-a079-d6e8543bc4c6
+ms.assetid:  c62a363a-caa2-4b6e-a079-d6e8543bc4c6
 ---
-
 
 # PSWorkflowUtility Module
 This section contains the help topics for the **PSWorkflowUtility** module, which includes commands that manage the Windows PowerShell Workflow feature. The **PSWorkflowUtility** module is installed with Windows PowerShell.

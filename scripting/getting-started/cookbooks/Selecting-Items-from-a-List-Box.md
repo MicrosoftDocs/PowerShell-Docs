@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Selecting Items from a List Box
-ms.technology:  powershell
-ms.assetid:    327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+ms.assetid:  327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ---
-
 
 # Selecting Items from a List Box
 Use Windows PowerShell 3.0 and later releases to create a dialog box that lets users select items from a list box control.
