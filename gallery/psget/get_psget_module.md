@@ -32,7 +32,7 @@ Exit
 ```
 
 #### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet 
-- To do this on Windows 10, Windows Server 2016, or any system with WMF 5.0 or 5.1 installed, run the following commands from an elevated PowerShell session.
+- To do this on Windows 10, Windows Server 2016, any system with WMF 5.0 or 5.1 installed, or any system with PowerShell 6, run the following commands from an elevated PowerShell session.
 ```powershell
 Install-Module –Name PowerShellGet –Force
 Exit
