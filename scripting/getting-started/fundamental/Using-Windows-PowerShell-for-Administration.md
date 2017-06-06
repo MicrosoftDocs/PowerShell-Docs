@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Using Windows PowerShell for Administration
-ms.technology:  powershell
-ms.assetid:    db6334ec-ace6-436d-ab88-77aefc817511
+ms.assetid:  db6334ec-ace6-436d-ab88-77aefc817511
 ---
-
 
 # Using Windows PowerShell for Administration
 The fundamental goal of Windows PowerShell is providing better, easier administrative control over systems, either interactively or from script. This chapter walks through solutions to many specific problems in administering Windows systems with Windows PowerShell. Although we have not talked about scripts or functions in the Windows PowerShell User's Guide, the solutions can be used from scripts or as functions later. We will show examples that include functions as part of the solution to solve problems.

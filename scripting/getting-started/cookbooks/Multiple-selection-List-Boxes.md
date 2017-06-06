@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Multiple selection List Boxes
-ms.technology:  powershell
-ms.assetid:    f74cd5d9-da57-4802-b614-0b194a7bc8f8
+ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ---
-
 
 # Multiple-selection List Boxes
 Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.

@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Running Remote Commands
-ms.technology:  powershell
-ms.assetid:    d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
-
 
 # Running Remote Commands
 You can run commands on one or hundreds of computers with a single Windows PowerShell command. Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS-Management.

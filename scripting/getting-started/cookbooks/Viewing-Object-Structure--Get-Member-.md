@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Viewing Object Structure Get Member
-ms.technology:  powershell
-ms.assetid:    a1819ed2-2ef3-453a-b2b0-f3589c550481
+ms.assetid:  a1819ed2-2ef3-453a-b2b0-f3589c550481
 ---
-
 
 # Viewing Object Structure (Get-Member)
 Because objects play such a central role in Windows PowerShell, there are several native commands designed to work with arbitrary object types. The most important one is the **Get-Member** command.

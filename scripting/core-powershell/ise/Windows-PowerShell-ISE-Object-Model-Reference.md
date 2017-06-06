@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Windows PowerShell ISE Object Model Reference
-ms.technology:  powershell
-ms.assetid:    e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
+ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 ---
-
 
 # Windows PowerShell ISE Object Model Reference
   

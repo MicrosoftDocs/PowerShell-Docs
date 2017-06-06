@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Sorting Objects
-ms.technology:  powershell
-ms.assetid:    8530caa8-3ed4-4c56-aed7-1295dd9ba199
+ms.assetid:  8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ---
-
 
 # Sorting Objects
 We can organize displayed data to make it easier to scan by using the **Sort-Object** cmdlet. **Sort-Object** takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.

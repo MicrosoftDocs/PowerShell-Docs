@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The ISESnippetCollection Object
-ms.technology:  powershell
-ms.assetid:    ae974955-4282-4cbc-8c42-0fff1904ef32
+ms.assetid:  ae974955-4282-4cbc-8c42-0fff1904ef32
 ---
-
 
 # The ISESnippetCollection Object
   The **ISESnippetCollection** object is a collection of **ISESnippet** objects. The files collection that is associated with a **PowerShellTab** object is a member of this class. An example is the **$psISE.CurrentPowerShellTab.Files** collection.
