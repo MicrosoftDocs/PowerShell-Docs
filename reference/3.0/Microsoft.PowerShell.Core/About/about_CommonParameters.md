@@ -5,15 +5,13 @@ ms.topic:  reference
 author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  2017-03-17
 title:  about_CommonParameters
 ms.technology:  powershell
 ---
 
 # About CommonParameters
 ## about_CommonParameters
-
-
 
 # SHORT DESCRIPTION
 
@@ -47,29 +45,30 @@ or to user data usually offer these parameters.
 The following list displays the common parameters. Their aliases are listed
 in parentheses.
 
--Debug (db)
--ErrorAction (ea)
--ErrorVariable (ev)
--InformationAction
--InformationVariable
--OutVariable (ov)
--OutBuffer (ob)
--PipelineVariable (pv)
--Verbose (vb)
--WarningAction (wa)
--WarningVariable (wv)
+- -Debug (db)
+- -ErrorAction (ea)
+- -ErrorVariable (ev)
+- -InformationAction
+- -InformationVariable
+- -OutVariable (ov)
+- -OutBuffer (ob)
+- -PipelineVariable (pv)
+- -Verbose (vb)
+- -WarningAction (wa)
+- -WarningVariable (wv)
 
 The risk mitigation parameters are:
--WhatIf (wi)
--Confirm (cf)
+
+- -WhatIf (wi)
+- -Confirm (cf)
 
 For more information about preference variables, type:
 help about_Preference_Variables
 
 # COMMON PARAMETER DESCRIPTIONS
 
+## -Debug[:{$true | $false}]
 
--Debug[:{$true | $false}]
 Alias: db
 
 Displays programmer-level detail about the operation performed by the
@@ -84,14 +83,18 @@ is SilentlyContinue, debugging messages are not displayed by default.
 
 Valid values:
 
-$true (-Debug:$true). Has the same effect as -Debug.
+$true (-Debug:$true).
 
-$false (-Debug:$false). Suppresses the display of debugging
+Has the same effect as -Debug.
+
+$false (-Debug:$false).
+
+Suppresses the display of debugging
 messages when the value of the $DebugPreference is not
 SilentlyContinue (the default).
 
--ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop |
-Suspend }]
+## -ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop |Suspend }]
+
 Alias: ea
 
 Determines how the cmdlet responds to a non-terminating error
@@ -134,7 +137,8 @@ When a workflow runs into terminating error, this action preference
 automatically suspends the job to allow for further investigation. After
 investigation, the workflow can be resumed.
 
--ErrorVariable [+]<variable-name>
+## -ErrorVariable [+]&lt;variable-name&gt;
+
 Alias: ev
 
 Stores error messages about the command in the specified variable
@@ -150,15 +154,21 @@ variable content, type  a plus sign (+) before the variable name.
 For example, the following command creates the $a variable and then
 stores any errors in it:
 
+```PowerShell
 Get-Process -Id 6 -ErrorVariable a
+```
 
 The following command adds any error messages to the $a variable:
 
+```PowerShell
 Get-Process -Id 2 -ErrorVariable +a
+```
 
 The following command displays the contents of $a:
 
+```PowerShell
 $a
+```
 
 You can use this parameter to create a variable that contains only
 error messages from specific commands. The $Error automatic
@@ -166,7 +176,8 @@ variable contains error messages from all the commands in the session.
 You can use array notation, such as $a[0] or $error[1,2] to refer to
 specific errors stored in the variables.
 
--InformationAction [:{SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}]
+## -InformationAction [:{SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}]
+
 Alias: ia
 
 Introduced in Windows PowerShell 5.0. Within the command or script in which
@@ -204,7 +215,8 @@ SilentlyContinue:   No effect. The informational messages are not
 (Default)           displayed, and the script continues without
 interruption.
 
--InformationVariable [+]<variable-name>
+## -InformationVariable [+]&lt;variable-name&gt;
+
 Alias: iv
 
 Introduced in Windows PowerShell 5.0. Within the command or script in which
@@ -216,7 +228,8 @@ Write-Information strings are shown depending on the value of the $InformationPr
 preference variable. For more information about $InformationPreference, see
 about_Preference_Variables.
 
--OutBuffer <Int32>
+## -OutBuffer &lt;Int32&gt;
+
 Alias: ob
 
 Determines the number of objects to accumulate in a buffer before
@@ -229,7 +242,8 @@ next cmdlet in the pipeline until the number of objects generated
 equals OutBuffer + 1. Thereafter, it sends all objects as they are
 generated.
 
--OutVariable [+]<variable-name>
+## -OutVariable [+]&lt;variable-name&gt;
+
 Alias: ov
 
 Stores output objects from the command in the specified variable and
@@ -242,17 +256,24 @@ variable name.
 For example, the following command creates the $out variable and
 stores the process object in it:
 
+```PowerShell
 Get-Process PowerShell -OutVariable out
+```
 
 The following command adds the process object to the $out variable:
 
+```PowerShell
 Get-Process iexplore -OutVariable +out
+```
 
 The following command displays the contents of the $out variable:
 
+```PowerShell
 $out
+```
 
--PipelineVariable <String>
+## -PipelineVariable &lt;String&gt;
+
 Alias: pv
 
 PipelineVariable stores the value of the current pipeline element
@@ -263,14 +284,14 @@ Valid values are strings, the same as for any variable names.
 The following is an example of how PipelineVariable works. In
 this example, the PipelineVariable parameter is added to a
 Foreach-Object command to store the results of the command
-in variables. A range of numbers, 1 to 10, are piped into the first
-Foreach-Object command, the results of which are stored in a
-variable named Left.
+in variables. A range of numbers, 1 to 3, are piped into the first
+Foreach-Object command, the results of process block are stored in
+a variable called LeftOperand.
 
 The results of the first Foreach-Object command are piped into a
-second Foreach-Object command, which filters the objects returned
+second Foreach-Object command, which processes the objects returned
 by the first Foreach-Object command. The results of the second
-command are stored in a variable named Right.
+command are stored in a variable named RightOperand.
 
 In the third Foreach-Object command, the results of the first two
 Foreach-Object piped commands, represented by the variables Left
@@ -279,23 +300,28 @@ command instructs objects stored in the Left and Right variables
 to be multiplied, and specifies that the results should be
 displayed as "Left range member * Right range member = product".
 
-1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
->>    Foreach-Object -PV Right -Process { 1..10 } |
->>    Foreach-Object -Process { "$Left$Right = " + ($Left$Right) }
-# >>
+```PowerShell
+1..3 |
+  Foreach-Object -PipelineVariable LeftOperand -Process {  $_ } |
+  Foreach-Object -PV RightOperand -Process { 4..6 } |
+  Foreach-Object -Process { "$LeftOperand * $RightOperand = " + ($LeftOperand * $RightOperand) }
+```
 
-# 1 * 1 = 1
+```Output
+1 * 4 = 4
+1 * 5 = 5
+1 * 6 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+3 * 4 = 12
+3 * 5 = 15
+3 * 6 = 18
+```
 
-# 1 * 2 = 2
 
-# 1 * 3 = 3
+## -Verbose[:{$true | $false}]
 
-# 1 * 4 = 4
-
-# 1 * 5 = 5
-
-
--Verbose[:{$true | $false}]
 Alias: vb
 
 Displays detailed information about the operation performed by the
@@ -317,7 +343,8 @@ $false (-Verbose:$false) suppresses the display of verbose
 messages. Use this parameter when the value of $VerbosePreference
 is not SilentlyContinue (the default).
 
--WarningAction[:{Continue | Inquire | SilentlyContinue | Stop}]
+## -WarningAction[:{Continue | Inquire | SilentlyContinue | Stop}]
+
 Alias: wa
 
 Determines how the cmdlet responds to a warning from the command.
@@ -350,7 +377,8 @@ NOTE: The WarningAction parameter does not override the value of
 the $WarningAction preference variable when the parameter
 is used in a command to run a script or function.
 
--WarningVariable [+]<variable-name>
+## -WarningVariable [+]&lt;variable-name&gt;
+
 Alias: wv
 
 Stores warnings about the command in the specified variable.
@@ -365,15 +393,21 @@ before the variable name.
 For example, the following command creates the $a variable and then
 stores any warnings in it:
 
+```PowerShell
 Get-Process -Id 6 -WarningVariable a
+```
 
 The following command adds any warnings to the $a variable:
 
+```PowerShell
 Get-Process -Id 2 -WarningVariable +a
+```
 
 The following command displays the contents of $a:
 
+```PowerShell
 $a
+```
 
 You can use this parameter to create a variable that contains only
 warnings from specific commands. You can use array notation, such as
@@ -385,7 +419,8 @@ nested calls in functions or scripts.
 
 Risk Management Parameter Descriptions
 
--WhatIf[:{$true | $false}]
+## -WhatIf[:{$true | $false}]
+
 Alias: wi
 
 Displays a message that describes the effect of the command,
@@ -397,7 +432,7 @@ $WhatIfPreference variable is 0 (disabled), WhatIf behavior is not
 performed without the WhatIf parameter. For more information, type
 the following command:
 
-Get-Help about_Preference_Variables
+Get-Help about\_Preference\_Variables
 
 Valid values:
 
@@ -410,7 +445,9 @@ is 1.
 For example, the following command uses the WhatIf parameter in a
 Remove-Item command:
 
-PS> Remove-Item Date.csv -WhatIf
+```PowerShell
+Remove-Item Date.csv -WhatIf
+```
 
 Instead of removing the item, Windows PowerShell lists the operations
 it would perform and the items that would be affected. This command
@@ -419,7 +456,8 @@ produces the following output:
 What if: Performing operation "Remove File" on
 Target "C:\ps-test\date.csv".
 
--Confirm[:{$true | $false}]
+## -Confirm[:{$true | $false}]
+
 Alias: cf
 
 Prompts you for confirmation before executing the command.
@@ -428,7 +466,7 @@ The Confirm parameter overrides the value of the $ConfirmPreference
 variable for the current command. The default value is High. For more
 information, type the following command:
 
-Get-Help about_Preference_Variables
+Get-Help about\_Preference\_Variables
 
 Valid values:
 
@@ -443,7 +481,9 @@ Remove-Item command. Before removing the item, Windows PowerShell
 lists the operations it would perform and the items that would be
 affected, and asks for approval.
 
-PS C:\ps-test> Remove-Item tmp*.txt -Confirm
+```PowerShell
+Remove-Item tmp*.txt -Confirm
+```
 
 This command produces the following output:
 
@@ -476,7 +516,9 @@ temporarily while the user checks the help for a command parameter. After
 obtaining the needed information, the user types "exit" to end the nested prompt
 and then selects the Yes (y) response to the Confirm query.
 
-PS C:\ps-test> New-Item -ItemType File -Name Test.txt -Confirm
+```PowerShell
+New-Item -ItemType File -Name Test.txt -Confirm
+```
 
 Confirm
 Are you sure you want to perform this action?
@@ -485,7 +527,8 @@ Performing operation "Create File" on Target "Destination: C:\ps-test\test.txt".
 
 PS C:\ps-test>>> Get-Help New-Item -Parameter ItemType
 
--ItemType <string>
+## -ItemType &lt;string&gt;
+
 Specifies the provider-specified type of the new item.
 
 Required?                    false
@@ -507,18 +550,10 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---         8/27/2010   2:41 PM          0 test.txt
 
-# KEYWORDS
-
-about_Common_Parameters
-
 # SEE ALSO
 
-[about_Preference_Variables](about_Preference_Variables.md)
-
-Write-Debug
-
-Write-Warning
-
-Write-Error
-
-Write-Verbose
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [Write-Debug](../../Microsoft.PowerShell.Utility/write-debug.md)
+- [Write-Warning](../../Microsoft.PowerShell.Utility/write-warning.md)
+- [Write-Error](../../Microsoft.PowerShell.Utility/write-error.md)
+- [Write-Verbose](../../Microsoft.PowerShell.Utility/write-verbose.md)
