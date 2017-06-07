@@ -46,14 +46,16 @@ Exit
 
 #### For systems running PowerShell 3 or PowerShell 4, that have installed the [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
-- Use below PowerShellGet cmdlet to save the modules to a local directory
+- Use below PowerShellGet cmdlet from an elevated PowerShell session to save the modules to a local directory
 
 ```powershell
 Save-Module PowerShellGet -Path C:\LocalFolder
 Exit
 ```
 
-- Re-open the PS Console then run the following commands
+- Ensure that PowerShellGet and PackageManagment modules are not loaded in any other processes.
+- Delete contents of `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and  `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` folders.
+- Re-open the PS Console with elevated permissions then run the following commands.
 
 ```powershell
 Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
