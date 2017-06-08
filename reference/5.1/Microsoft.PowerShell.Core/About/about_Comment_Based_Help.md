@@ -250,7 +250,7 @@ Additional information about the function or script.
 # .LINK
 
 The name of a related topic. The value appears on the line below
-the .LINE keyword and must be preceded by a comment symbol (#) or
+the .LINK keyword and must be preceded by a comment symbol (#) or
 included in the comment block.
 
 Repeat the .LINK keyword for each related topic.
