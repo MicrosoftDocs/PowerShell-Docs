@@ -31,80 +31,105 @@ Windows PowerShell supports the following arithmetic operators:
 
 |Operator|Description|Example|
 |--------|-----------|-------|
-| + |Adds integers; concatenates strings, concatenates strings, concatenates arrays, and hash tables.|`6 + 2`<br />`"file" + "name"`<br />`@(1, "one") + @(2.0, "two")`<br />`@{"one" = 1} + @{"two" = 2}`|  
+| + |Adds integers; concatenates strings,<br/> concatenates arrays, and hash tables.|`6 + 2`<br />`"file" + "name"`<br />`@(1, "one") + @(2.0, "two")`<br />`@{"one" = 1} + @{"two" = 2}`|  
 | - |Subtracts one value from another value.|`6-2`<br />`(get-date).date - 1`|
 | - |Makes a number a negative number.|`-6`|
-| * |Multiplies numbers, copies strings and arrays the specified number of times.|`6 * 2`<br />`"!" * 3`<br />`@("!") * 4`|
+| * |Multiplies numbers, copies strings and<br/>arrays the specified number of times.|`6 * 2`<br />`"!" * 3`<br />`@("!") * 4`|
 | / |Divides two values.|`6 / 2`|
 | % |Returns the remainder of a division operation.|`7 % 2`|
-| -shl |Shifts bits to the left the specified number of times. Available only on integer types.|`100 -shl 2`|
-| -shr |     Shifts bits to the right the specified  number of times. Available only on integer types.|`100 -shr 2`|
+| -shl |Shifts bits to the left the specified number of times.<br/>Available only on integer types.|`100 -shl 2`|
+| -shr |     Shifts bits to the right the specified  number of times.<br/>Available only on integer types.|`100 -shr 2`|
 
 ## OPERATOR PRECEDENCE
 
 Windows PowerShell processes arithmetic operators in the following order:
 
-   1. `()` parentheses   
-   1. `-` (for a negative number)
-   1. `*`, `/`, `%`
-   1. `+`, `-` (for subtraction)
+Precedence | Operator| Description
+-- | -- | --
+1 | `()` | Parentheses
+2 | `-` | For a negative number or unary operator
+3 | `*`, `/`, `%` | 
+4 | `+`, `-` | For addition and subtraction
 
 Windows PowerShell processes the expressions from left to right according to the precedence rules. The following examples show the effect of the precedence rules:
 
-```
-C:\PS> 3+6/3*4
-11
-
-C:\PS> 3+6/(3*4)  
-3.5
-
-C:\PS> (3+6)/3*4  
-12
-```
-The order in which Windows PowerShell evaluates expressions might differ from other programming and scripting languages that you have used. The following example shows a complicated assignment statement.
-
-```
-C:\PS> $a = 0
-C:\PS> $b = 1,2
-C:\PS> $c = -1,-2
-
-C:\PS> $b[$a] = $c[$a++]
-
-C:\PS> $b
-1
--1
+```powershell
+3+6/3*4 -eq 11
+3+6/(3*4) -eq 3.5
+(3+6)/3*4 -eq 12
 ```
 
-In this example, the expression `$a++` is evaluated before `$c[$a++]`. Evaluating `$a++` changes the value of `$a`. The variable `$a` in `$b[$a]` equals `1`, not `0`, so the statement assigns a value to `$b[1]`, not `$b[0]`.
+```output
+True
+True
+True
+```
+
+The order in which Windows PowerShell evaluates expressions might differ from
+other programming and scripting languages that you have used.
+The following example shows a complicated assignment statement.
+
+```powershell
+$a = 0
+$b = @(1,2)
+$c = @(-1,-2)
+
+$b[$a] = $c[$a++]
+```
+
+In this example, the expression `$a++` is evaluated before `$b[$a]`.
+Evaluating `$a++` changes the value of `$a` after it is used in the statement `$c[$a++]`.
+The variable `$a` in `$b[$a]` equals `1`, not `0`; so, the statement assigns a value to `$b[1]`, not `$b[0]`.
+
+The above code is equivalent to:
+
+```powershell
+$a = 0
+$b = @(1,2)
+$c = @(-1,-2)
+
+$tmp = $c[$a]
+$a = $a + 1
+$b[$a] = $tmp
+```
 
 ## DIVISION AND ROUNDING
 
-When the quotient of a division operation is an integer, Windows PowerShell rounds the value to the nearest integer. When the value is `.5`, it rounds to the nearest even integer.
+When the quotient of a division operation is an integer, Windows PowerShell
+rounds the value to the nearest integer.
+When the value is `.5`, it rounds to the nearest even integer.
 
-The following example shows the effect of rounding to the nearest even integer.
+The following example shows the effect of rounding to the nearest even
+integer.
 
-```
-C:\PS> [int]( 5 / 2 )
-2
-```
-
-```
-C:\PS> [int]( 7 / 2 )
-4
+```powershell
+[int]( 5 / 2 )  -eq 2
+[int]( 7 / 2 )  -eq 4
 ```
 
-# ADDING AND MULTIPLYING NON-NUMERIC TYPES
+Notice how **_5/2_ = 2.5** gets rounded to **2**.
+But, **_7/2_ = 3.5** gets rounded to **4**.
 
-You can add numbers, strings, arrays, and hash tables. And, you can multiply numbers, strings, and arrays. However, you cannot multiply hash tables.
+## ADDING AND MULTIPLYING NON-NUMERIC TYPES
 
-When you add strings, arrays, or hash tables, the elements are concatenated. When you concatenate collections, such as arrays or hash tables, a new object is created that contains the objects from both collections. If you try to concatenate hash tables that have the same key, the operation fails.
+You can add numbers, strings, arrays, and hash tables.
+And, you can multiply numbers, strings, and arrays.
+However, you cannot multiply hash tables.
+
+When you add strings, arrays, or hash tables, the elements are concatenated.
+When you concatenate collections, such as arrays or hash tables,
+a new object is created that contains the objects from both collections.
+If you try to concatenate hash tables that have the same key, the operation fails.
 
 For example, the following commands create two arrays and then add them:
 
+```powershell
+$a = 1,2,3
+$b = "A","B","C"
+$a + $b
 ```
-C:\PS> $a = 1,2,3
-C:\PS> $b = "A","B","C"
-C:\PS> $a + $b
+
+```output
 1
 2
 3
@@ -113,75 +138,50 @@ B
 C
 ```
 
-You can also perform arithmetic operations on objects of different types. The operation that Windows PowerShell performs is determined by the Microsoft .NET Framework type of the leftmost object in the operation. Windows PowerShell tries to convert all the objects in the operation to the .NET Framework type of the first object. If it succeeds in converting the objects, it performs the operation appropriate to the .NET Framework type of the first object. If it fails to convert any of the objects, the operation fails.
+You can also perform arithmetic operations on objects of different types.
+The operation that Windows PowerShell performs is determined by the
+Microsoft .NET Framework type of the leftmost object in the operation.
+Windows PowerShell tries to convert all the objects in the operation to the
+.NET Framework type of the first object. If it succeeds in converting the
+objects, it performs the operation appropriate to the .NET Framework type
+of the first object. If it fails to convert any of the objects,
+the operation fails.
 
-The following example demonstrates the use of the addition and multiplication operators in operations that include different object types:
+The following examples demonstrate the use of the addition and
+multiplication operators; in operations that include different object types.
+Assume `$array = 1,2,3`:
 
-```
-C:\PS> "file" + 16
-file16
-```
+Expression | Results
+--- | ---
+`"file" + 16` | `file16` 
+`$array + 16` | `1`<br/>`2`<br/>`3`<br/>`16`
+`$array + "file"` | `1`<br/>`2`<br/>`3`<br/>`file`
+"file" * 3 | `filefilefile`
 
-```
-C:\PS> $array = 1,2,3
-C:\PS> $array + 16
-1
-2
-3
-16
-```
-
-```
-C:\PS> $array + "file"
-1
-2
-3
-file
-```
-
-```
-C:\PS> "file" * 3
-filefilefile
-```
-
-Because the method that is used to evaluate statements is determined by the leftmost object, addition and multiplication in Windows PowerShell are not strictly commutative. For example, `(a + b)` does not always equal `(b + a)`, and `(ab)` does not always equal `(ba)`.
+Because the method that is used to evaluate statements is determined by the
+leftmost object,
+addition and multiplication in Windows PowerShell are not strictly
+commutative.
+For example, `(a + b)` does not always equal `(b + a)`,
+and `(ab)` does not always equal `(ba)`.
 
 The following examples demonstrate this principle:
 
-```
-C:\PS> "file" + 2
-file2
-```
+Expression | Results
+--- | ---
+`"file" + 16` | `file16` 
+`16 + "file"` | `Cannot convert value "file" to type "System.Int32".`<br/>`Error: "Input string was not in a correct format."`<br/>`At line:1 char:1`<br/>`+ 16 + "file"`
 
-```
-C:\PS> 2 + "file"
-Cannot convert value "file" to type "System.Int32". Error: "Input
-string was not in a correct format."
-At line:1 char:4
-+ 2 + <<<<  "file"
-```
-
-```
-C:\PS> "file" * 3
-filefilefile
-```
-
-```
-C:\PS> 3 * "file"
-Cannot convert value "file" to type "System.Int32". Error: "Input
-string was not in a correct format."
-At line:1 char:4
-+ 3 * <<<<  "file"
-```
 
 Hash tables are a slightly different case. You can add hash tables. And, you can add a hash table to an array. However, you cannot add any other type to a hash table.
 
 The following examples show how to add hash tables to each other and to other objects:
 
-```
+```powershell
 C:\PS> $hash1 = @{a=1; b=2; c=3}
 C:\PS> $hash2 = @{c1="Server01"; c2="Server02"}
 C:\PS> $hash1 + $hash2
+```
 
 Name                           Value
 ----                           -----
