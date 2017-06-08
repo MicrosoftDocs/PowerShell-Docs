@@ -24,7 +24,7 @@ Gets content from a web page on the Internet.
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-Credential <PSCredential>] [-UseDefaultCredentials]
  [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
+ [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-PreserveAuthorizationOnRedirect]
  [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-NoProxy] [-Body <Object>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
@@ -356,6 +356,23 @@ A value of 0 (zero) prevents all redirection.
 Type: Int32
 Parameter Sets: (All)
 Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PreserveAuthorizationOnRedirect
+Indicates the cmdlet should preserve the Authorization header, when present, across redirections.  
+
+By default, the cmdlet strips the Authorization header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
