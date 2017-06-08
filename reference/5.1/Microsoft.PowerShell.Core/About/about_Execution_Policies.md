@@ -98,7 +98,7 @@ Unrestricted
 - Unsigned scripts can run. (This risks running malicious
 scripts.)
 
-- Warns the user before running srcipts and configuration
+- Warns the user before running scripts and configuration
 files that are downloaded from the Internet.
 
 Bypass
