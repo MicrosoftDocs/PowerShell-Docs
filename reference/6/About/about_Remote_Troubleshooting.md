@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Remote_Troubleshooting
-ms.technology:  powershell
 ---
 
 # About Remote Troubleshooting
@@ -777,3 +771,4 @@ the command again.
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
 [about_Remote_Variables](about_Remote_Variables.md)
+

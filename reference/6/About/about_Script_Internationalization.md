@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Script_Internationalization
-ms.technology:  powershell
 ---
 
 # About Script Internationalization
@@ -197,3 +191,4 @@ The remaining commands load the strings into an array and display
 them.
 
 $Day = DATA {
+

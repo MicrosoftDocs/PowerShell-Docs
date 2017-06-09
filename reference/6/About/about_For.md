@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_For
-ms.technology:  powershell
 ---
 
 # About For
@@ -132,3 +126,4 @@ for ($i = 0; $i -ile 20; $i += 2) {Write-Host $i}
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Foreach](about_Foreach.md)
+

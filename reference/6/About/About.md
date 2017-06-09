@@ -1,9 +1,10 @@
 ---
-Module Name: About
-Module Guid: 00000000-0000-0000-0000-000000000000
-Download Help Link: http://Please-enter-FwLink-manually
-Help Version: 6.0
-Locale: en-US
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  00000000-0000-0000-0000-000000000000
+Module Name:  About
+Help Version:  6.0
 ---
 
 # About Module

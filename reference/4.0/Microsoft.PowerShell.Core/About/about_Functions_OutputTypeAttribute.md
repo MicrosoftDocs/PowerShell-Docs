@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Functions_OutputTypeAttribute
-ms.technology:  powershell
 ---
 
 # About Functions OutputTypeAttribute
@@ -206,3 +200,4 @@ of an object.
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+

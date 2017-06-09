@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_WMI
-ms.technology:  powershell
 ---
 
 # About WMI
@@ -90,3 +84,4 @@ Tab expansion works when changing WMI namespaces, and therefore use of tab expan
 ```
 Get-CimClass *power* -Namespace root/cimv2/power
 ```
+

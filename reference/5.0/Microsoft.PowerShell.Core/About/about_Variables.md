@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Variables
-ms.technology:  powershell
 ---
 
 # About Variables
@@ -352,3 +346,4 @@ To get help for these cmdlets, type: "Get-Help <cmdlet-hame>".
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Scopes](about_Scopes.md)
+

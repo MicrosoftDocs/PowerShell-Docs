@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Objects
-ms.technology:  powershell
 ---
 
 # About Objects
@@ -91,3 +85,4 @@ and the Get-Member topic, to learn how to find an object type.
 [about_Pipelines](about_Pipelines.md)
 
 Get-Member
+

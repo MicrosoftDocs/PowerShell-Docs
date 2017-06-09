@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Remove-Item for FileSystem
-ms.technology:  powershell
+title:  Remove-Item for FileSystem
 ---
 
 # Remove-Item for FileSystem

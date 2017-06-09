@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Connect-WSMan
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821724
-external help file:   Microsoft.WSMan.Management.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821724
+title:  Connect-WSMan
+external help file:  Microsoft.WSMan.Management.dll-Help.xml
 ---
-
 
 # Connect-WSMan
 

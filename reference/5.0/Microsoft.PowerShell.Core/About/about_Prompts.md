@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Prompts
-ms.technology:  powershell
 ---
 
 # About Prompts
@@ -323,3 +317,4 @@ Write-Host
 [about_Debuggers](about_Debuggers.md)
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
+

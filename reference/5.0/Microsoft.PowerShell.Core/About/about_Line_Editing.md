@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Line_Editing
-ms.technology:  powershell
 ---
 
 # About Line Editing
@@ -56,3 +50,4 @@ is displayed is not what you want, press the TAB key again.
 [about_Command_Syntax](about_Command_Syntax.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
+

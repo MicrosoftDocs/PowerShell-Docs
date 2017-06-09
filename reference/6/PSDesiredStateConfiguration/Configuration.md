@@ -1,7 +1,8 @@
 ---
-external help file: PSDesiredStateConfiguration-help.xml
-online version: http://go.microsoft.com/fwlink/?LinkId=517195
-schema: 2.0.0
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+external help file:  PSDesiredStateConfiguration-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=517195
 ---
 
 # Configuration

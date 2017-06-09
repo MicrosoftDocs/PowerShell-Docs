@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-ChildItem
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=290488
-external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=290488
+title:  Get-ChildItem
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
-
 
 # Get-ChildItem
 

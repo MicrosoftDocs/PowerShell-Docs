@@ -1,7 +1,6 @@
 ---
-external help file: 
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
 ---
 
 # prompt

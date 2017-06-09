@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Script_Internationalization
-ms.technology:  powershell
 ---
 
 # About Script Internationalization
@@ -258,3 +252,4 @@ Today is Friday (in German)
 * [about_Quoting_Rules](about_Quoting_Rules.md)
 * [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 * [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+

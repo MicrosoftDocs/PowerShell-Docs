@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-Counter
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=138335
-external help file:   Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=138335
+title:  Get-Counter
+external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 ---
-
 
 # Get-Counter
 ## SYNOPSIS

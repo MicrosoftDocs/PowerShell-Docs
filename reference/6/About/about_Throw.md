@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Throw
-ms.technology:  powershell
 ---
 
 # About Throw
@@ -152,3 +146,4 @@ dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attribut
 [about_Trap](about_Trap.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+

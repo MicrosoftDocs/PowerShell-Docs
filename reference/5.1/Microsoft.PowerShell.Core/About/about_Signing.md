@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Signing
-ms.technology:  powershell
 ---
 
 # About Signing
@@ -334,3 +328,4 @@ Set-ExecutionPolicy
 Set-AuthenticodeSignature
 
 "Introduction to Code Signing" (http://go.microsoft.com/fwlink/?LinkId=106296)
+

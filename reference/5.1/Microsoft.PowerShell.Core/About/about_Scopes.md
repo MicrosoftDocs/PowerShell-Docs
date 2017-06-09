@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Scopes
-ms.technology:  powershell
 ---
 
 # About Scopes
@@ -494,3 +488,4 @@ Invoke-Command $s {param($c) Remove-Item .\Test*.ps1 -Credential $c} -ArgumentLi
 [about_Functions](about_Functions.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

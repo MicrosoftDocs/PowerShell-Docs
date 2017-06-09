@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=821452
-schema: 2.0.0
-title: Set-PSReadlineKeyHandler
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Set-PSReadlineKeyHandler
+online version:  http://go.microsoft.com/fwlink/?LinkID=821452
+external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 ---
 
 # Set-PSReadlineKeyHandler

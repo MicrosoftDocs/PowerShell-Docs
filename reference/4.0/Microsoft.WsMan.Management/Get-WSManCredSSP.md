@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-WSManCredSSP
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://technet.microsoft.com/library/hh849871.aspx
-external help file:   Microsoft.WSMan.Management.dll-Help.xml
+online version:  http://technet.microsoft.com/library/hh849871.aspx
+title:  Get-WSManCredSSP
+external help file:  Microsoft.WSMan.Management.dll-Help.xml
 ---
-
 
 # Get-WSManCredSSP
 

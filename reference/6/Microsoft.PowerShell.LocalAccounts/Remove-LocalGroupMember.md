@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822518
-schema: 2.0.0
-title: Remove-LocalGroupMember
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Remove-LocalGroupMember
+online version:  http://go.microsoft.com/fwlink/?LinkId=822518
+external help file:  Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
 
 # Remove-LocalGroupMember

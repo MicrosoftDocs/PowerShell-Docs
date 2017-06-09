@@ -1,20 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Module Name:  Microsoft.PowerShell.Security
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210602
 title:  Microsoft.PowerShell.Security
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Security
-Download Help Link:   http://go.microsoft.com/fwlink/?linkid=210602
-Help Version:   3.1.0.2
-Module Guid:   a94c8c7e-9810-47c0-b8af-65089c13a35a
+Help Version:  3.1.0.2
+Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
 ---
-
 
 # Microsoft.PowerShell.Security Module
 ## Description

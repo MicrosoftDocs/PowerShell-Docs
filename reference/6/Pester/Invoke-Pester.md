@@ -1,7 +1,7 @@
 ---
-external help file: Pester-help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+external help file:  Pester-help.xml
 ---
 
 # Invoke-Pester
@@ -348,3 +348,4 @@ Accept wildcard characters: False
 ## RELATED LINKS
 
 [Describe](describe.md)
+

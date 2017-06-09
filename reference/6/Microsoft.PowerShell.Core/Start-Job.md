@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821518
-schema: 2.0.0
-title: Start-Job
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Start-Job
+online version:  http://go.microsoft.com/fwlink/?LinkId=821518
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # Start-Job

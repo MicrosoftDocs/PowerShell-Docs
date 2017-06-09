@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Run_With_PowerShell
-ms.technology:  powershell
 ---
 
 # About Run With PowerShell
@@ -69,3 +63,4 @@ to confirm the execution policy change.
 [about_Scripts](about_Scripts.md)
 
 "Running Scripts" (http://go.microsoft.com/fwlink/?LinkId=257680)
+

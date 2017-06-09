@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Wildcards
-ms.technology:  powershell
 ---
 
 # About Wildcards
@@ -82,3 +76,4 @@ foreach ($point in $p)
 [about_If](about_If.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

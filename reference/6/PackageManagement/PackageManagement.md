@@ -1,20 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2017-03-21
+Module Name:  PackageManagement
+Download Help Link:  http://Please-enter-FwLink-manually
 title:  PackageManagement
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   PackageManagement
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   4ae9fd46-338a-459c-8186-07f910774cb8
+Help Version:  6.0
+Module Guid:  4ae9fd46-338a-459c-8186-07f910774cb8
 ---
-
 
 # PackageManagement Module
 ## Description

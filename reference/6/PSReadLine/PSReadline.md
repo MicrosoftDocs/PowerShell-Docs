@@ -1,20 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Module Name:  PSReadline
+Download Help Link:  http://Please-enter-FwLink-manually
 title:  PSReadline
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   PSReadline
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   5714753b-2afd-4492-a5fd-01d9e2cff8b5
+Help Version:  6.0
+Module Guid:  5714753b-2afd-4492-a5fd-01d9e2cff8b5
 ---
-
 
 # PSReadline Module
 ## Description

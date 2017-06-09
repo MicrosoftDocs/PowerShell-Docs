@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2017-04-17
 title:  about_Using
-ms.technology:  powershell
 ---
 
 # About Using
@@ -81,3 +75,4 @@ $deck.Shuffle()
 [Card[]]$hand2 = $deck.Deal(5)
 [Card[]]$hand3 = $deck.Deal(5)
 ```
+

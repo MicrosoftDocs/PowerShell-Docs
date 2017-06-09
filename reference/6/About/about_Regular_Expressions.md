@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Regular_Expressions
-ms.technology:  powershell
 ---
 
 # About Regular Expressions
@@ -147,3 +141,4 @@ at http://go.microsoft.com/fwlink/?LinkId=133231.
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Operators](about_Operators.md)
+

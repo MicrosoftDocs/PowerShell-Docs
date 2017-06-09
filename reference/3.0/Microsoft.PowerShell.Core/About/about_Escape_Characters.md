@@ -1,13 +1,8 @@
 ---
-description: Introduces the escape character in PowerShell and explains its effect.
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2017-05-08
+description:  Introduces the escape character in PowerShell and explains its effect.
 title:  about_Escape_Characters
-ms.technology:  powershell
 ---
 
 # About Escape Characters
@@ -164,3 +159,4 @@ see about\_Parsing.
 - [about_Quoting_Rules](about_Quoting_Rules.md)
 - [about_Special_Characters](about_Special_Characters.md)
 - [about_Parsing](about_Parsing.md)
+

@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-JobTrigger
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=223915
-external help file:   Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=223915
+title:  Get-JobTrigger
+external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
-
 
 # Get-JobTrigger
 ## SYNOPSIS

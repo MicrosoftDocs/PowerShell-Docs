@@ -1,20 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2017-03-21
+Module Name:  Microsoft.WsMan.Management
+Download Help Link:  http://Please-enter-FwLink-manually
 title:  Microsoft.WsMan.Management
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.WsMan.Management
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   766204a6-330e-4263-a7ab-46c87afc366c
+Help Version:  6.0
+Module Guid:  766204a6-330e-4263-a7ab-46c87afc366c
 ---
-
 
 # Microsoft.WsMan.Management Module
 ## Description

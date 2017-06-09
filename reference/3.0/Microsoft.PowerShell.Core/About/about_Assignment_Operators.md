@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Assignment_Operators
-ms.technology:  powershell
 ---
 
 # About Assignment Operators
@@ -676,3 +670,4 @@ Clear-Variable
 Remove-Variable
 
 Set-Variable
+
