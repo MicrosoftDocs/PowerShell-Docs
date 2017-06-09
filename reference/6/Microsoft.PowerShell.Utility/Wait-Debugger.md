@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Wait-Debugger
 online version:  http://go.microsoft.com/fwlink/?LinkId=821872
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Wait-Debugger
 ---
 
 # Wait-Debugger

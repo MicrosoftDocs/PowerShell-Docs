@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Export-Clixml
 online version:  http://go.microsoft.com/fwlink/?LinkID=113297
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Export-Clixml
 ---
 
 # Export-Clixml

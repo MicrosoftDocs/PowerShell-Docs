@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
 title:  Environment Provider
 online version:  https://go.microsoft.com/fwlink/?linkid=834944

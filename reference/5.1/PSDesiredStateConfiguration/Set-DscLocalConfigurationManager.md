@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Set-DscLocalConfigurationManager
 online version:  http://go.microsoft.com/fwlink/?LinkId=821464
 external help file:  Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
+title:  Set-DscLocalConfigurationManager
 ---
 
 # Set-DscLocalConfigurationManager

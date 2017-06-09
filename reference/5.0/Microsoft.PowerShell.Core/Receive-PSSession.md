@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Receive-PSSession
 online version:  http://go.microsoft.com/fwlink/?LinkId=821506
 external help file:  System.Management.Automation.dll-Help.xml
+title:  Receive-PSSession
 ---
 
 # Receive-PSSession

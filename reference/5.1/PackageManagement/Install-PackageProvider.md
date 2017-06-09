@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Install-PackageProvider
 online version:  http://go.microsoft.com/fwlink/?LinkId=822308
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
+title:  Install-PackageProvider
 ---
 
 # Install-PackageProvider

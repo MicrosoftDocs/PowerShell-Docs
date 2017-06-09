@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Join-Path
 online version:  http://go.microsoft.com/fwlink/p/?linkid=290508
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Join-Path
 ---
 
 # Join-Path

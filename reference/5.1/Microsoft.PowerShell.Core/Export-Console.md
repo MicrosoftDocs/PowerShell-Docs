@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Export-Console
 online version:  http://go.microsoft.com/fwlink/?LinkId=821479
 external help file:  System.Management.Automation.dll-Help.xml
+title:  Export-Console
 ---
 
 # Export-Console

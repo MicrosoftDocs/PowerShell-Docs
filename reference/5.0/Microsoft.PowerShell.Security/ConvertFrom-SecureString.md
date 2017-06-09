@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  ConvertFrom-SecureString
 online version:  http://go.microsoft.com/fwlink/?LinkId=821708
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
+title:  ConvertFrom-SecureString
 ---
 
 # ConvertFrom-SecureString

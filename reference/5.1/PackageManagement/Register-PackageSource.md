@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Register-PackageSource
 online version:  http://go.microsoft.com/fwlink/?LinkID=517139
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
+title:  Register-PackageSource
 ---
 
 # Register-PackageSource

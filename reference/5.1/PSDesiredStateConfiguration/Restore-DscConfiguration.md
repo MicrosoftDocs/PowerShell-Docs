@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Restore-DscConfiguration
 online version:  http://go.microsoft.com/fwlink/?LinkId=821462
 external help file:  Restore-DSCConfiguration.cdxml-help.xml
+title:  Restore-DscConfiguration
 ---
 
 # Restore-DscConfiguration

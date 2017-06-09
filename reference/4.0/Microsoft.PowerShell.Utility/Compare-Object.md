@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Compare-Object
 online version:  http://go.microsoft.com/fwlink/p/?linkid=293945
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Compare-Object
 ---
 
 # Compare-Object

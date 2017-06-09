@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Export-ODataEndpointProxy
 online version:  http://go.microsoft.com/fwlink/?LinkID=510069
 external help file:  Microsoft.PowerShell.ODataUtils-help.xml
+title:  Export-ODataEndpointProxy
 ---
 
 # Export-ODataEndpointProxy

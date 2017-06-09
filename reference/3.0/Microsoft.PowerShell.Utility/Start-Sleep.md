@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Start-Sleep
 online version:  http://go.microsoft.com/fwlink/?LinkID=113407
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Start-Sleep
 ---
 
 # Start-Sleep

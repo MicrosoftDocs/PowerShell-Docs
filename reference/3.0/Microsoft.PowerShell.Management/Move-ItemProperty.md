@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Move-ItemProperty
 online version:  http://go.microsoft.com/fwlink/?LinkID=113351
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Move-ItemProperty
 ---
 
 # Move-ItemProperty

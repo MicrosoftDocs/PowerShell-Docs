@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Export-Counter
 online version:  http://go.microsoft.com/fwlink/p/?linkid=289624
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+title:  Export-Counter
 ---
 
 # Export-Counter

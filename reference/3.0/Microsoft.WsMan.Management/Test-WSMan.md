@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Test-WSMan
 online version:  http://go.microsoft.com/fwlink/?LinkId=141464
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
+title:  Test-WSMan
 ---
 
 # Test-WSMan

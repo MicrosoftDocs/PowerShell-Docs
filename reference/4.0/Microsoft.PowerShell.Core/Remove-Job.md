@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Remove-Job
 online version:  http://technet.microsoft.com/library/hh849742.aspx
 external help file:  System.Management.Automation.dll-Help.xml
+title:  Remove-Job
 ---
 
 # Remove-Job

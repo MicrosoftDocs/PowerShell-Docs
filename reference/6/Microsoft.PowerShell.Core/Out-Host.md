@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Out-Host
 online version:  http://go.microsoft.com/fwlink/?LinkId=821503
 external help file:  System.Management.Automation.dll-Help.xml
+title:  Out-Host
 ---
 
 # Out-Host

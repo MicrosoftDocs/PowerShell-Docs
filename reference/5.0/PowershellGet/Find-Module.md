@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Find-Module
 online version:  http://go.microsoft.com/fwlink/?LinkId=821658
 external help file:  PSGet-help.xml
+title:  Find-Module
 ---
 
 # Find-Module

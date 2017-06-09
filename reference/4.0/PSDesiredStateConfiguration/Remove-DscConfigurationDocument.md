@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Remove-DscConfigurationDocument
 online version:  http://go.microsoft.com/fwlink/?LinkID=311940
 external help file:  Remove-DscConfigurationDocument.cdxml-help.xml
+title:  Remove-DscConfigurationDocument
 ---
 
 # Remove-DscConfigurationDocument

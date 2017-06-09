@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Remove-WSManInstance
 online version:  http://go.microsoft.com/fwlink/?LinkId=141453
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
+title:  Remove-WSManInstance
 ---
 
 # Remove-WSManInstance

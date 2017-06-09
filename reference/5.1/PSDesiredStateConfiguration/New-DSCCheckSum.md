@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  New-DscChecksum
 online version:  http://go.microsoft.com/fwlink/?LinkId=821459
 external help file:  PSDesiredStateConfiguration-help.xml
+title:  New-DscChecksum
 ---
 
 # New-DscChecksum
