@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Requires
-ms.technology:  powershell
 ---
 
 # About Requires
@@ -150,3 +144,4 @@ In  Windows PowerShell 3.0, the  Windows PowerShell Core packages appear as modu
 [about_PSSnapins](about_PSSnapins.md)
 
 Get-PSSnapin
+

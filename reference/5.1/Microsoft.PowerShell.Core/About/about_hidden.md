@@ -1,12 +1,9 @@
 ---
-title: about_Hidden
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bda7621e-647b-4dbf-a079-2f4d47078b11
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  about_Hidden
 ---
+
 # about_Hidden
 ## TOPIC  
  about\_Hidden  
@@ -126,3 +123,4 @@ rides         Property     int rides {get;set;}
  about\_Wildcards  
   
  Get\-Member
+

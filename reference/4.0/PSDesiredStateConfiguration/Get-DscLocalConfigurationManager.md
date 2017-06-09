@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-DscLocalConfigurationManager
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=289261
-external help file:   Get-DSCLocalConfigurationManager.cdxml-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=289261
+title:  Get-DscLocalConfigurationManager
+external help file:  Get-DSCLocalConfigurationManager.cdxml-help.xml
 ---
-
 
 # Get-DscLocalConfigurationManager
 

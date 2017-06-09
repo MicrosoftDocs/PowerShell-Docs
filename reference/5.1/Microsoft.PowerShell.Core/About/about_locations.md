@@ -1,12 +1,9 @@
 ---
-title: about_Locations
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2f7d4339-8188-4f85-af02-5dec4036f07d
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  about_Locations
 ---
+
 # about_Locations
 ## TOPIC  
  about\_Locations  
@@ -89,3 +86,4 @@ Get-ChildItem system
  about\_Providers  
   
  about\_Path\_Syntax
+

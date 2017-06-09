@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2017-04-17
 title:  about_Enum
-ms.technology:  powershell
 ---
 
 # About Enum
@@ -197,3 +191,4 @@ file2 attributes are: Device, Directory, Encrypted
 PS C:\tmp>
 
 ```
+

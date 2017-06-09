@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-PSCallStack
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821798
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821798
+title:  Get-PSCallStack
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
-
 
 # Get-PSCallStack
 

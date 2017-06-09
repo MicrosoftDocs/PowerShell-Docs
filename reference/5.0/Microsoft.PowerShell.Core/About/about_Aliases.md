@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Aliases
-ms.technology:  powershell
 ---
 
 # About Aliases
@@ -293,3 +287,4 @@ get-psdrive
 [about_profiles](about_profiles.md)
 
 [about_providers](about_providers.md)
+

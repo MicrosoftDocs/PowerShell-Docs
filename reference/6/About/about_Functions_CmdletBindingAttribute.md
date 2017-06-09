@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Functions_CmdletBindingAttribute
-ms.technology:  powershell
 ---
 
 # About Functions CmdletBindingAttribute
@@ -199,3 +193,4 @@ about_Functions_CmdletBinding_Attribute
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+

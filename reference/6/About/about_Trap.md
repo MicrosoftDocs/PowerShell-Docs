@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Trap
-ms.technology:  powershell
 ---
 
 # About Trap
@@ -289,3 +283,4 @@ The function resumes after the error is trapped, and the "Function completed" st
 [about_Throw](about_Throw.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+

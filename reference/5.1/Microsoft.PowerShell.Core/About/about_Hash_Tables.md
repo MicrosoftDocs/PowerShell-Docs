@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Hash_Tables
-ms.technology:  powershell
 ---
 
 # About Hash Tables
@@ -498,3 +492,4 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
 [System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
+

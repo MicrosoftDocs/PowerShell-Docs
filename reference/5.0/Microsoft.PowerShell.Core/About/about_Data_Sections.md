@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Data_Sections
-ms.technology:  powershell
 ---
 
 # About Data Sections
@@ -207,3 +201,4 @@ Format-XML -strings string1, string2, string3
 ConvertFrom-StringData
 
 Import-LocalizedData
+

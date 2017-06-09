@@ -1,12 +1,9 @@
 ---
-title: about_Windows_PowerShell_5.0
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d56fa88-371e-40c9-b2de-64a2a0cd49da
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  about_Windows_PowerShell_5.0
 ---
+
 # about_Windows_PowerShell_5.0
 ```  
 TOPIC  
@@ -287,3 +284,4 @@ KEYWORDS
     What's New in Windows PowerShell 5.0  
   
 ```
+

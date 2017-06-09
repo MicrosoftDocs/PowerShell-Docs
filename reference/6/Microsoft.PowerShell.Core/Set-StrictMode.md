@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821517
-schema: 2.0.0
-title: Set-StrictMode
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Set-StrictMode
+online version:  http://go.microsoft.com/fwlink/?LinkId=821517
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # Set-StrictMode

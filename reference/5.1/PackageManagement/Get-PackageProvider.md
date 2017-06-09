@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-PackageProvider
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=517136
-external help file:   Microsoft.PowerShell.PackageManagement.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=517136
+title:  Get-PackageProvider
+external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
-
 
 # Get-PackageProvider
 

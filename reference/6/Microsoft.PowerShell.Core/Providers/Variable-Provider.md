@@ -1,14 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Variable Provider
-ms.technology:  powershell
-online version:   http://go.microsoft.com/fwlink/?LinkId=834963
+online version:  http://go.microsoft.com/fwlink/?LinkId=834963
+title:  Variable Provider
 ---
 
 # Variable Provider

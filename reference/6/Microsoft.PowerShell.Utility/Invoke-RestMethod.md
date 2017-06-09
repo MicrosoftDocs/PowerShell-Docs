@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2017-05-24
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821824
-schema: 2.0.0
-title: Invoke-RestMethod
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Invoke-RestMethod
+online version:  http://go.microsoft.com/fwlink/?LinkId=821824
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 
 # Invoke-RestMethod

@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkID=517142
-schema: 2.0.0
-title: Uninstall-Package
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Uninstall-Package
+online version:  http://go.microsoft.com/fwlink/?LinkID=517142
+external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
 
 # Uninstall-Package

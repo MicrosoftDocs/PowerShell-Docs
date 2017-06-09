@@ -1,12 +1,9 @@
 ---
-title: about_Classes
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1eb99e7f-dd1a-4659-920b-9a4c4c7b86c1
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  about_Classes
 ---
+
 # about_Classes
 ```  
 TOPIC  
@@ -878,3 +875,4 @@ SEE ALSO
     about_Methods  
     Writing a custom DSC resource with PowerShell classes (http://technet.microsoft.com/library/dn948461.aspx)   
 ```
+

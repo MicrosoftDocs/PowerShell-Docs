@@ -1,20 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Module Name:  Microsoft.PowerShell.Archive
+Download Help Link:  http://Please-enter-FwLink-manually
 title:  Microsoft.PowerShell.Archive
-ms.technology:  powershell
-Module Name:   Microsoft.PowerShell.Archive
-Module Guid: eb74e8da-9ae2-482a-a648-e96550fb8733
-Download Help Link: http://Please-enter-FwLink-manually
-Help Version: 6.0
-Locale: en-US
+Help Version:  6.0
+Module Guid:  eb74e8da-9ae2-482a-a648-e96550fb8733
 ---
-
 
 # Microsoft.PowerShell.Archive Module
 ## Description

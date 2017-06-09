@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Format-Wide
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=293963
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293963
+title:  Format-Wide
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
-
 
 # Format-Wide
 

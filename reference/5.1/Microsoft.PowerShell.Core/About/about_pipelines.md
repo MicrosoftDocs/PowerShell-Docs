@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_pipelines
-ms.technology:  powershell
 ---
 
 # About Pipelines
@@ -456,3 +450,4 @@ Product      : 18
 [about_command_syntax](about_command_syntax.md)
 
 [about_foreach](about_foreach.md)
+

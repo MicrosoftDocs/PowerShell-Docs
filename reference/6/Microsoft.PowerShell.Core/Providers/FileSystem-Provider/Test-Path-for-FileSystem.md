@@ -1,14 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Test-Path for FileSystem
-ms.technology:  powershell
-online version:   http://go.microsoft.com/fwlink/?LinkId=834958
+online version:  http://go.microsoft.com/fwlink/?LinkId=834958
+title:  Test-Path for FileSystem
 ---
 
 # Test-Path for FileSystem

@@ -1,16 +1,9 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821751
-schema: 2.0.0
-title: Compare-Object
+ms.date:  2017-06-09
+keywords:  powershell,cmdlet
+title:  Compare-Object
+online version:  http://go.microsoft.com/fwlink/?LinkId=821751
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 
 # Compare-Object

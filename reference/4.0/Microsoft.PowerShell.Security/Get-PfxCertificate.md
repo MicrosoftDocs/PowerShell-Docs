@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-PfxCertificate
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=293938
-external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293938
+title:  Get-PfxCertificate
+external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 ---
-
 
 # Get-PfxCertificate
 

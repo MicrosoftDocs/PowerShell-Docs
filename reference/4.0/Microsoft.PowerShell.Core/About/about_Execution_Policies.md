@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Execution_Policies
-ms.technology:  powershell
 ---
 
 # About Execution Policies
@@ -391,3 +385,4 @@ Unblock-File
 "Administrative Templates for Windows PowerShell" (http://go.microsoft.com/fwlink/?LinkId=131786)
 
 "PowerShell.exe Console Help" (http://go.microsoft.com/fwlink/?LinkID=113439)
+

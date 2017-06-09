@@ -1,18 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Set-ExecutionPolicy
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=113394
-external help file:   Microsoft.PowerShell.Security.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=113394
+title:  Set-ExecutionPolicy
+external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 ---
-
 
 # Set-ExecutionPolicy
 ## SYNOPSIS

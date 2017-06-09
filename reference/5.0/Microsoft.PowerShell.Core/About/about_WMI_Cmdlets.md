@@ -1,13 +1,7 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_WMI_Cmdlets
-ms.technology:  powershell
 ---
 
 # About WMI Cmdlets
@@ -228,3 +222,4 @@ Register-WmiEvent
 Remove-WmiObject
 
 Set-WmiInstance
+
