@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Get-DscLocalConfigurationManager
 online version:  http://go.microsoft.com/fwlink/?LinkID=289261
 external help file:  Get-DSCLocalConfigurationManager.cdxml-help.xml
+title:  Get-DscLocalConfigurationManager
 ---
 
 # Get-DscLocalConfigurationManager

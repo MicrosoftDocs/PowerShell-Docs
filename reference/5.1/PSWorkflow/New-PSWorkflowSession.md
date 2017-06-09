@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  New-PSWorkflowSession
 online version:  http://go.microsoft.com/fwlink/?LinkId=821722
 external help file:  PSWorkflow-help.xml
+title:  New-PSWorkflowSession
 ---
 
 # New-PSWorkflowSession

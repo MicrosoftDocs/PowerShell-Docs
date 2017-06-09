@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Unregister-PSRepository
 online version:  http://go.microsoft.com/fwlink/?LinkId=821675
 external help file:  PSGet-help.xml
+title:  Unregister-PSRepository
 ---
 
 # Unregister-PSRepository

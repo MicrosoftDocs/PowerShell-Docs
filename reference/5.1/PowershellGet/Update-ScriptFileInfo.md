@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Update-ScriptFileInfo
 online version:  http://go.microsoft.com/fwlink/?LinkId=822343
 external help file:  PSModule-help.xml
+title:  Update-ScriptFileInfo
 ---
 
 # Update-ScriptFileInfo

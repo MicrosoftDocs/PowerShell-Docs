@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  New-FileCatalog
 online version:  http://go.microsoft.com/fwlink/?LinkId=822569
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
+title:  New-FileCatalog
 ---
 
 # New-FileCatalog

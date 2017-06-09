@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Set-PSReadlineKeyHandler
 online version:  http://go.microsoft.com/fwlink/?LinkID=821452
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
+title:  Set-PSReadlineKeyHandler
 ---
 
 # Set-PSReadlineKeyHandler

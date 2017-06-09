@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  New-JobTrigger
 online version:  http://go.microsoft.com/fwlink/?LinkID=223912
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+title:  New-JobTrigger
 ---
 
 # New-JobTrigger

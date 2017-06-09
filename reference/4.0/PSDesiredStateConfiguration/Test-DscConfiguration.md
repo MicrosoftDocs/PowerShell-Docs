@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Test-DscConfiguration
 online version:  http://go.microsoft.com/fwlink/?LinkID=294365
 external help file:  Test-DSCConfiguration.cdxml-help.xml
+title:  Test-DscConfiguration
 ---
 
 # Test-DscConfiguration

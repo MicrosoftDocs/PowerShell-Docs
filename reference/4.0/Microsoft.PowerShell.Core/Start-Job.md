@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Start-Job
 online version:  http://go.microsoft.com/fwlink/p/?linkid=289615
 external help file:  System.Management.Automation.dll-Help.xml
+title:  Start-Job
 ---
 
 # Start-Job

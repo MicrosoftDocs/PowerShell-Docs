@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Set-JobTrigger
 online version:  http://go.microsoft.com/fwlink/?LinkID=223916
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+title:  Set-JobTrigger
 ---
 
 # Set-JobTrigger

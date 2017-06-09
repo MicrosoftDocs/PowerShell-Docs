@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Disable-DscDebug
 online version:  http://go.microsoft.com/fwlink/?LinkId=627546
 external help file:  Disable-DscDebug.cdxml-help.xml
+title:  Disable-DscDebug
 ---
 
 # Disable-DscDebug

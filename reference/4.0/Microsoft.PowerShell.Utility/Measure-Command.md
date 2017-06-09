@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Measure-Command
 online version:  http://go.microsoft.com/fwlink/p/?linkid=293989
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Measure-Command
 ---
 
 # Measure-Command

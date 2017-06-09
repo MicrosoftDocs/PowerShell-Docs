@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
 Help Version:  6.0.0.1
 Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=808399

@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Stop-Transcript
 online version:  http://go.microsoft.com/fwlink/p/?linkid=289794
 external help file:  Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+title:  Stop-Transcript
 ---
 
 # Stop-Transcript

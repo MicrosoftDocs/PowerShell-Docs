@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Find-RoleCapability
 online version:  http://go.microsoft.com/fwlink/?LinkId=822321
 external help file:  PSModule-help.xml
+title:  Find-RoleCapability
 ---
 
 # Find-RoleCapability

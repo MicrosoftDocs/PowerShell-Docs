@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Invoke-WSManAction
 online version:  http://go.microsoft.com/fwlink/p/?linkid=294040
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
+title:  Invoke-WSManAction
 ---
 
 # Invoke-WSManAction

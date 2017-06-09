@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Import-PowerShellDataFile
 online version:  http://go.microsoft.com/fwlink/?LinkId=821817
 external help file:  Microsoft.PowerShell.Utility-help.xml
+title:  Import-PowerShellDataFile
 ---
 
 # Import-PowerShellDataFile

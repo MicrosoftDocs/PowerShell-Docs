@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Get-PSBreakpoint
 online version:  http://go.microsoft.com/fwlink/?LinkId=821797
 external help file:  ISESteroids.dll-Help.xml
+title:  Get-PSBreakpoint
 ---
 
 # Get-PSBreakpoint

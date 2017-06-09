@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Test-FileCatalog
 online version:  http://go.microsoft.com/fwlink/?LinkId=822570
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
+title:  Test-FileCatalog
 ---
 
 # Test-FileCatalog

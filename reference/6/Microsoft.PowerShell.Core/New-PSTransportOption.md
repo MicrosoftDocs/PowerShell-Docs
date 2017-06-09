@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  New-PSTransportOption
 online version:  http://go.microsoft.com/fwlink/?LinkId=821501
 external help file:  System.Management.Automation.dll-Help.xml
+title:  New-PSTransportOption
 ---
 
 # New-PSTransportOption

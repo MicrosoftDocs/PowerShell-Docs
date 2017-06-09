@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Enable-ScheduledJob
 online version:  http://go.microsoft.com/fwlink/p/?linkid=290624
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+title:  Enable-ScheduledJob
 ---
 
 # Enable-ScheduledJob

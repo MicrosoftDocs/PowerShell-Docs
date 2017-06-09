@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Set-Variable
 online version:  http://go.microsoft.com/fwlink/?LinkID=113401
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Set-Variable
 ---
 
 # Set-Variable

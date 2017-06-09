@@ -1,10 +1,10 @@
 ---
 ms.date:  2017-06-09
-locale:  en-us
+schema:  2.0
 keywords:  powershell,cmdlet
-title:  Invoke-AsWorkflow
 online version:  http://go.microsoft.com/fwlink/?LinkID=238267
 external help file:  PSWorkflowUtility-help.xml
+title:  Invoke-AsWorkflow
 ---
 
 # Invoke-AsWorkflow
