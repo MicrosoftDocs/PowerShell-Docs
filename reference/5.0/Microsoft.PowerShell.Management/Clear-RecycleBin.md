@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821571
 title:  Clear-RecycleBin
+online version:  http://go.microsoft.com/fwlink/?LinkId=821571
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
 

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822510
 title:  Enable-LocalUser
+online version:  http://go.microsoft.com/fwlink/?LinkId=822510
 external help file:  Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
 

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=288760
 title:  Get-DscConfiguration
+online version:  http://go.microsoft.com/fwlink/?LinkID=288760
 external help file:  Get-DSCConfiguration.cdxml-help.xml
 ---
 

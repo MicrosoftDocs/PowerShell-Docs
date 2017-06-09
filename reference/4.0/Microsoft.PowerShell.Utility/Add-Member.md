@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  PSITPro4_Utility.xml
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293942
 title:  Add-Member
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293942
+external help file:  PSITPro4_Utility.xml
 ---
 
 # Add-Member

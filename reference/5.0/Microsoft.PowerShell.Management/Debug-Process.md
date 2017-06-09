@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821577
 title:  Debug-Process
+online version:  http://go.microsoft.com/fwlink/?LinkId=821577
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
 

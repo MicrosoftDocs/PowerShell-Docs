@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=141463
 title:  Set-WSManQuickConfig
+online version:  http://go.microsoft.com/fwlink/?LinkID=141463
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 ---
 

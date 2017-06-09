@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=834972
 title:  Remove-Item for Certificate
+online version:  http://go.microsoft.com/fwlink/?LinkId=834972
 ---
 
 # Remove-Item for Certificate

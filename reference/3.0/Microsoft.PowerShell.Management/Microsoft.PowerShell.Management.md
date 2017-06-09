@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Management
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210601
-title:  Microsoft.PowerShell.Management
 Help Version:  3.3.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210601
 Module Guid:  eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
+title:  Microsoft.PowerShell.Management
+Module Name:  Microsoft.PowerShell.Management
 ---
 
 # Microsoft.PowerShell.Management Module

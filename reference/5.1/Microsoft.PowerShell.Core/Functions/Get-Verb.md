@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  System.Management.Automation.dll-help.xml
-online version:  http://go.microsoft.com/fwlink/?LinkId=834942
 title:  Get-Verb
+online version:  http://go.microsoft.com/fwlink/?LinkId=834942
+external help file:  System.Management.Automation.dll-help.xml
 ---
 
 # Get-Verb

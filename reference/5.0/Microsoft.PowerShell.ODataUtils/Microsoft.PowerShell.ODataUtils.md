@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.ODataUtils
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=509916
-title:  Microsoft.PowerShell.ODataUtils
 Help Version:  5.0.4.2
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=509916
 Module Guid:  fa1606d1-94cb-4264-bfb6-def714420084
+title:  Microsoft.PowerShell.ODataUtils
+Module Name:  Microsoft.PowerShell.ODataUtils
 ---
 
 # Microsoft.PowerShell.ODataUtils Module

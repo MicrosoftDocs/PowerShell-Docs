@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293970
 title:  Get-Host
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293970
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 

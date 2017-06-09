@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PSDesiredStateConfiguration
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=390814
-title:  PSDesiredStateConfiguration
 Help Version:  5.0.5.2
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=390814
 Module Guid:  94b905ff-74b5-437e-89ed-7df44386533c
+title:  PSDesiredStateConfiguration
+Module Name:  PSDesiredStateConfiguration
 ---
 
 # PSDesiredStateConfiguration Module

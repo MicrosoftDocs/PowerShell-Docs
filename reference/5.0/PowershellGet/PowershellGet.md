@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PowershellGet
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkID=393271
-title:  PowershellGet
 Help Version:  5.0.11.3
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkID=393271
 Module Guid:  1d73a601-4a6c-43c5-ba3f-619b18bbb404
+title:  PowershellGet
+Module Name:  PowershellGet
 ---
 
 # PowershellGet Module

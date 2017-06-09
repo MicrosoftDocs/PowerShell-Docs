@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=834970
 title:  Move-Item for Certificate
+online version:  http://go.microsoft.com/fwlink/?LinkId=834970
 ---
 
 # Move-Item for Certificate

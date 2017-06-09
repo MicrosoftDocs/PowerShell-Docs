@@ -1,10 +1,11 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
+Help Version:  6.0
 Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  fb6cc51d-c096-4b38-b78d-0fed6277096a
 Module Name:  CimCmdlets
-Help Version:  6.0
 ---
 
 # CimCmdlets Module

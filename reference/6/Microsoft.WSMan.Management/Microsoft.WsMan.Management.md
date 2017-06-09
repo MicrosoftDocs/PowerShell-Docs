@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.WsMan.Management
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  Microsoft.WsMan.Management
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  766204a6-330e-4263-a7ab-46c87afc366c
+title:  Microsoft.WsMan.Management
+Module Name:  Microsoft.WsMan.Management
 ---
 
 # Microsoft.WsMan.Management Module

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113378
 title:  Remove-PSSnapin
+online version:  http://go.microsoft.com/fwlink/?LinkID=113378
 external help file:  System.Management.Automation.dll-Help.xml
 ---
 

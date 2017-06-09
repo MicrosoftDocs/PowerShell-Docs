@@ -1,5 +1,6 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
 title:  Wait-Job
 online version:  http://go.microsoft.com/fwlink/?LinkID=821525

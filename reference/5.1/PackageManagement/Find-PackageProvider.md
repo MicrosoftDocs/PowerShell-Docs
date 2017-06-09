@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822299
 title:  Find-PackageProvider
+online version:  http://go.microsoft.com/fwlink/?LinkId=822299
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
 

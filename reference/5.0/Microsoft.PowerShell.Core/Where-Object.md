@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821526
 title:  Where-Object
+online version:  http://go.microsoft.com/fwlink/?LinkId=821526
 external help file:  System.Management.Automation.dll-Help.xml
 ---
 

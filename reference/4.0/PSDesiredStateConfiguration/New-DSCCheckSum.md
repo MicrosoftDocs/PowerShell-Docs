@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?linkid=327747
 title:  New-DSCCheckSum
+online version:  http://go.microsoft.com/fwlink/?linkid=327747
 external help file:  PSDesiredStateConfiguration-help.xml
 ---
 

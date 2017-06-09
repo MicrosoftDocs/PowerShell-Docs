@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.LocalAccounts
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  Microsoft.PowerShell.LocalAccounts
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  8e362604-2c0b-448f-a414-a6a690a644e2
+title:  Microsoft.PowerShell.LocalAccounts
+Module Name:  Microsoft.PowerShell.LocalAccounts
 ---
 
 # Microsoft.PowerShell.LocalAccounts Module

@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Utility
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390787
-title:  Microsoft.PowerShell.Utility
 Help Version:  5.0.4.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390787
 Module Guid:  1da87e53-152b-403e-98dc-74d7b4d63d59
+title:  Microsoft.PowerShell.Utility
+Module Name:  Microsoft.PowerShell.Utility
 ---
 
 # Microsoft.PowerShell.Utility Module

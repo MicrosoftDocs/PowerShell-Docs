@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PSReadline
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=528806
-title:  PSReadline
 Help Version:  5.0.4.2
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=528806
 Module Guid:  5714753b-2afd-4492-a5fd-01d9e2cff8b5
+title:  PSReadline
+Module Name:  PSReadline
 ---
 
 # PSReadline Module

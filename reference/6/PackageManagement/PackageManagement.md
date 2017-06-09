@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PackageManagement
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  PackageManagement
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  4ae9fd46-338a-459c-8186-07f910774cb8
+title:  PackageManagement
+Module Name:  PackageManagement
 ---
 
 # PackageManagement Module

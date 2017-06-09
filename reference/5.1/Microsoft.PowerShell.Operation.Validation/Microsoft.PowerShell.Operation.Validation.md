@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Operation.Validation
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=808399
-title:  Microsoft.PowerShell.Operation.Validation
 Help Version:  6.0.0.1
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=808399
 Module Guid:  25bd9e34-bff9-4552-a23d-854857b42462
+title:  Microsoft.PowerShell.Operation.Validation
+Module Name:  Microsoft.PowerShell.Operation.Validation
 ---
 
 # Microsoft.PowerShell.Operation.Validation Module

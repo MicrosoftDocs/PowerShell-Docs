@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PowerShellGet
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  PowerShellGet
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  1d73a601-4a6c-43c5-ba3f-619b18bbb404
+title:  PowerShellGet
+Module Name:  PowerShellGet
 ---
 
 # PowerShellGet Module

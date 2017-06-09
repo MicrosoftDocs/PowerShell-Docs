@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821671
 title:  Set-PSRepository
+online version:  http://go.microsoft.com/fwlink/?LinkId=821671
 external help file:  PSGet-help.xml
 ---
 

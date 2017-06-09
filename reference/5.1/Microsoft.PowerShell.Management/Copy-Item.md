@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821574
 title:  Copy-Item
+online version:  http://go.microsoft.com/fwlink/?LinkId=821574
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
 

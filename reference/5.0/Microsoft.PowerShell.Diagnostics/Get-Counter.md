@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821528
 title:  Get-Counter
+online version:  http://go.microsoft.com/fwlink/?LinkId=821528
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 ---
 

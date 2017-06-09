@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
 title:  Save-Package
+online version:  http://go.microsoft.com/fwlink/?LinkID=517140
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 ---
 
