@@ -25,7 +25,17 @@
     ],
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
+        "globalMetadata": {
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "powershell",
+            "ms.technology": "powershell",
+            "ms.topic": "reference",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows, macos, linux",
+            "author": "jpjofre",
+            "ms.author": "jpjofre"
+        },
     "fileMetadata": {},
     "template": [
       null
