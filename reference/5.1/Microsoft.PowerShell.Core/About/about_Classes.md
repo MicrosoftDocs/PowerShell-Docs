@@ -1,6 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Classes
 description:  Describes how you can use classes to create your own custom types.
