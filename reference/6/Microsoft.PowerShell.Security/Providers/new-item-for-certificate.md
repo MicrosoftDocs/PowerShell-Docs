@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-schema:  2.0
+schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  New-Item for Certificate
 online version:  http://go.microsoft.com/fwlink/?LinkId=834971

@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-schema:  2.0
+schema:  2.0.0
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/?LinkId=821461
 external help file:  Remove-DscConfigurationDocument.cdxml-help.xml
