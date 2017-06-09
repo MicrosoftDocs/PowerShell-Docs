@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://technet.microsoft.com/library/hh849871.aspx
 title:  Get-WSManCredSSP
+online version:  http://technet.microsoft.com/library/hh849871.aspx
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 ---
 

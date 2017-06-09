@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113391
 title:  Set-AuthenticodeSignature
+online version:  http://go.microsoft.com/fwlink/?LinkID=113391
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 ---
 

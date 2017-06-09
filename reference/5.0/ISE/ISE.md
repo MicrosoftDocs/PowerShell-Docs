@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  ISE
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390780
-title:  ISE
 Help Version:  5.0.2.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390780
 Module Guid:  bae93d8e-782c-4a23-b87f-8699bfc17ee0
+title:  ISE
+Module Name:  ISE
 ---
 
 # ISE Module

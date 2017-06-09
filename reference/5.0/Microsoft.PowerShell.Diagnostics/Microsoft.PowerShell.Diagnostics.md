@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Diagnostics
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390783
-title:  Microsoft.PowerShell.Diagnostics
 Help Version:  5.0.2.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390783
 Module Guid:  ca046f10-ca64-4740-8ff9-2565dba61a4f
+title:  Microsoft.PowerShell.Diagnostics
+Module Name:  Microsoft.PowerShell.Diagnostics
 ---
 
 # Microsoft.PowerShell.Diagnostics Module

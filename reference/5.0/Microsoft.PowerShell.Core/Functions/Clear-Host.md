@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  System.Management.Automation.dll-help.xml
-online version:  https://go.microsoft.com/fwlink/?linkid=834941
 title:  Clear-Host
+online version:  https://go.microsoft.com/fwlink/?linkid=834941
+external help file:  System.Management.Automation.dll-help.xml
 ---
 
 # Clear-Host

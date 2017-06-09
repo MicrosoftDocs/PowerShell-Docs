@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821475
 title:  Enable-PSRemoting
+online version:  http://go.microsoft.com/fwlink/?LinkId=821475
 external help file:  System.Management.Automation.dll-Help.xml
 ---
 

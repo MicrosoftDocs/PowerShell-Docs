@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-description:  Describes how you can use classes to create your own custom types.
 title:  about_Classes
+description:  Describes how you can use classes to create your own custom types.
 ---
 
 # About Classes

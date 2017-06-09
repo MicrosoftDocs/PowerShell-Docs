@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  Microsoft.PowerShell.Operation.Validation-help.xml
 title:  Invoke-OperationValidation
 online version:  http://go.microsoft.com/fwlink/?LinkId=834966
+external help file:  Microsoft.PowerShell.Operation.Validation-help.xml
 ---
 
 # Invoke-OperationValidation

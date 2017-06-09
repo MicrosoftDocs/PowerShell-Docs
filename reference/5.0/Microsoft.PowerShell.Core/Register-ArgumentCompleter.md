@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  System.Management.Automation.dll-Help.xml
-online version:  http://go.microsoft.com/fwlink/?LinkId=821507
 title:  Register-ArgumentCompleter
+online version:  http://go.microsoft.com/fwlink/?LinkId=821507
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # Register-ArgumentCompleter

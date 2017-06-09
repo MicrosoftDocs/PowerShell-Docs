@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Host
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210600
-title:  Microsoft.PowerShell.Host
 Help Version:  3.1.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210600
 Module Guid:  56d66100-99a0-4ffc-a12d-eee9a6718aef
+title:  Microsoft.PowerShell.Host
+Module Name:  Microsoft.PowerShell.Host
 ---
 
 # Microsoft.PowerShell.Host Module

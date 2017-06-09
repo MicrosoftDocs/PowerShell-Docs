@@ -1,5 +1,6 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
 title:  Get-ComputerInfo
 online version:  http://go.microsoft.com/fwlink/?LinkId=822226

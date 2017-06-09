@@ -1,5 +1,6 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
 title:  Exit-PSHostProcess
 online version:  http://go.microsoft.com/fwlink/?LinkID=403737

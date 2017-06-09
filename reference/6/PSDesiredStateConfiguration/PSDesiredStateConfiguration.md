@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  PSDesiredStateConfiguration
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  PSDesiredStateConfiguration
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  94b905ff-74b5-437e-89ed-7df44386533c
+title:  PSDesiredStateConfiguration
+Module Name:  PSDesiredStateConfiguration
 ---
 
 # PSDesiredStateConfiguration Module

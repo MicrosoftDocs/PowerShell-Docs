@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113447
 title:  Update-List
+online version:  http://go.microsoft.com/fwlink/?LinkID=113447
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 

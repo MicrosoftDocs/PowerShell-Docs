@@ -1,9 +1,10 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  Microsoft.PowerShell.Operation.Validation-help.xml
-online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 title:  Get-OperationValidation
+online version:  http://go.microsoft.com/fwlink/?LinkId=834963
+external help file:  Microsoft.PowerShell.Operation.Validation-help.xml
 ---
 
 # Get-OperationValidation

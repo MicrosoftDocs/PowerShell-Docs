@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Diagnostics
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  Microsoft.PowerShell.Diagnostics
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  ca046f10-ca64-4740-8ff9-2565dba61a4f
+title:  Microsoft.PowerShell.Diagnostics
+Module Name:  Microsoft.PowerShell.Diagnostics
 ---
 
 # Microsoft.PowerShell.Diagnostics Module

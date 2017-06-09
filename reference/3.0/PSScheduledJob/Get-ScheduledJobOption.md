@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=223920
 title:  Get-ScheduledJobOption
+online version:  http://go.microsoft.com/fwlink/?LinkID=223920
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
 

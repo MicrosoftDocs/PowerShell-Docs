@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-description:  Introduces the escape character in PowerShell and explains its effect.
 title:  about_Escape_Characters
+description:  Introduces the escape character in PowerShell and explains its effect.
 ---
 
 # About Escape Characters

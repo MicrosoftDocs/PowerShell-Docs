@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821492
 title:  Import-Module
+online version:  http://go.microsoft.com/fwlink/?LinkId=821492
 external help file:  System.Management.Automation.dll-Help.xml
 ---
 

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822507
 title:  Add-LocalGroupMember
+online version:  http://go.microsoft.com/fwlink/?LinkId=822507
 external help file:  Microsoft.Powershell.LocalAccounts.dll-Help.xml
 ---
 

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821531
 title:  New-WinEvent
+online version:  http://go.microsoft.com/fwlink/?LinkId=821531
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 ---
 

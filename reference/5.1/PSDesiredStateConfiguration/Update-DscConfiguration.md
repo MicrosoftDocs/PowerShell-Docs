@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821467
 title:  Update-DscConfiguration
+online version:  http://go.microsoft.com/fwlink/?LinkId=821467
 external help file:  Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 ---
 

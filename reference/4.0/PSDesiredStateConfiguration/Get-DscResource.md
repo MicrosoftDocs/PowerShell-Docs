@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?linkid=327746
 title:  Get-DscResource
+online version:  http://go.microsoft.com/fwlink/?linkid=327746
 external help file:  PSDesiredStateConfiguration-help.xml
 ---
 

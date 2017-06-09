@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113300
 title:  ForEach-Object
+online version:  http://go.microsoft.com/fwlink/?LinkID=113300
 external help file:  System.Management.Automation.dll-Help.xml
 ---
 

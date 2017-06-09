@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822329
 title:  New-ScriptFileInfo
+online version:  http://go.microsoft.com/fwlink/?LinkId=822329
 external help file:  PSModule-help.xml
 ---
 

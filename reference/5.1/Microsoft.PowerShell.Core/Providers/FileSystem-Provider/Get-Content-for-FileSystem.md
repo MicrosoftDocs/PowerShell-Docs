@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=834951
 title:  Get-Content for FileSystem
+online version:  http://go.microsoft.com/fwlink/?LinkId=834951
 ---
 
 # Get-Content for FileSystem

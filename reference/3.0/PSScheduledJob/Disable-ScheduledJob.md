@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=223927
 title:  Disable-ScheduledJob
+online version:  http://go.microsoft.com/fwlink/?LinkID=223927
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 ---
 

@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=287356
 title:  Import-IseSnippet
+online version:  http://go.microsoft.com/fwlink/p/?linkid=287356
 external help file:  ISE-help.xml
 ---
 

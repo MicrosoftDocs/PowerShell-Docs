@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=290487
 title:  Enable-ComputerRestore
+online version:  http://go.microsoft.com/fwlink/p/?linkid=290487
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ---
 

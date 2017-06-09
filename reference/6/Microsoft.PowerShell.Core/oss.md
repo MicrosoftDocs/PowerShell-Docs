@@ -1,8 +1,9 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-external help file:  System.Management.Automation.dll-Help.xml
 online version:  http://go.microsoft.com/fwlink/p/?linkid=293999
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # oss

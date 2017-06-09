@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Archive
-Download Help Link:  http://Please-enter-FwLink-manually
-title:  Microsoft.PowerShell.Archive
 Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  eb74e8da-9ae2-482a-a648-e96550fb8733
+title:  Microsoft.PowerShell.Archive
+Module Name:  Microsoft.PowerShell.Archive
 ---
 
 # Microsoft.PowerShell.Archive Module

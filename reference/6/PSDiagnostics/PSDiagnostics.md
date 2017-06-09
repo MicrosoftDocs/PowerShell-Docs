@@ -1,10 +1,11 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
+Help Version:  6.0
 Download Help Link:  http://Please-enter-FwLink-manually
 Module Guid:  c61d6278-02a3-4618-ae37-a524d40a7f44
 Module Name:  PSDiagnostics
-Help Version:  6.0
 ---
 
 # PSDiagnostics Module

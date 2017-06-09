@@ -1,11 +1,12 @@
 ---
 ms.date:  2017-06-09
+locale:  en-us
 keywords:  powershell,cmdlet
-Module Name:  Microsoft.PowerShell.Security
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390786
-title:  Microsoft.PowerShell.Security
 Help Version:  5.0.5.2
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390786
 Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
+title:  Microsoft.PowerShell.Security
+Module Name:  Microsoft.PowerShell.Security
 ---
 
 # Microsoft.PowerShell.Security Module
