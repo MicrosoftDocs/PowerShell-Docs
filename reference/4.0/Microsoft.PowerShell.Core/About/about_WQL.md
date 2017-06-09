@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_WQL
-ms.technology:  powershell
 ---
 
 # About WQL
@@ -740,3 +736,4 @@ PS C:> Get-CimInstance -Query $q
 [about_WMI](about_WMI.md)
 
 [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
+

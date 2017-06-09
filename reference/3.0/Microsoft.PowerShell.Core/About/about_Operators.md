@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Operators
-ms.technology:  powershell
 ---
 
 # About Operators
@@ -278,3 +274,4 @@ about_Logical_Operators
 [about_Join](about_Join.md)
 
 [about_Redirection](about_Redirection.md)
+

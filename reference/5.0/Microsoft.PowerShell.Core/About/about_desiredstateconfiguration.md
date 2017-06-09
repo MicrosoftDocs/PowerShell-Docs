@@ -1,12 +1,11 @@
 ---
-title: about_DesiredStateConfiguration
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: f1b54875-bf62-4a04-bf50-470791b1dfca
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_DesiredStateConfiguration
 ---
+
 # about_DesiredStateConfiguration
 ```  
 TOPIC  
@@ -162,3 +161,4 @@ SEE ALSO
    "Build Custom Windows PowerShell Desired State Configuration Resources"  
    (http://technet.microsoft.com/library/dn249927.aspx)   
 ```
+

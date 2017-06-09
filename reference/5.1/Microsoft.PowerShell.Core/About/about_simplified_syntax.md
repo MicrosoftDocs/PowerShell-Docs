@@ -1,12 +1,11 @@
 ---
-title: about_Simplified_Syntax
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 283a1a20-724d-4c15-9972-f66e290e8b09
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_Simplified_Syntax
 ---
+
 # about_Simplified_Syntax
 ```  
 TOPIC  
@@ -331,3 +330,4 @@ SEE ALSO
     Foreach-Object  
   
 ```
+

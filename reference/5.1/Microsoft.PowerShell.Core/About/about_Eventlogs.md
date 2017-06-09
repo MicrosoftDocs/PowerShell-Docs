@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Eventlogs
-ms.technology:  powershell
 ---
 
 # About Eventlogs
@@ -214,3 +210,4 @@ Get-WmiObject
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
 [about_Preference_Variables](about_Preference_Variables.md)
+

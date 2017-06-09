@@ -1,9 +1,12 @@
 ---
-Module Name: Pester
-Module Guid: a699dea5-2c73-4616-a270-1f7abb777e71
-Download Help Link: http://Please-enter-FwLink-manually
-Help Version: 6.0
-Locale: en-US
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  a699dea5-2c73-4616-a270-1f7abb777e71
+Module Name:  Pester
 ---
 
 # Pester Module

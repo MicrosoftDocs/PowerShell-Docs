@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Join
-ms.technology:  powershell
 ---
 
 # About join
@@ -119,3 +115,4 @@ a b c
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Split](about_Split.md)
+
