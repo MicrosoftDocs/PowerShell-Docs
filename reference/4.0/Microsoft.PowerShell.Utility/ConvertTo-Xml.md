@@ -1,6 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/p/?linkid=293952
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml

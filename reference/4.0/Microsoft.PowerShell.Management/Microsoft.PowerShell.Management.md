@@ -1,6 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  4.0.5.2
 Download Help Link:  http://go.microsoft.com/fwlink/?linkid=285756

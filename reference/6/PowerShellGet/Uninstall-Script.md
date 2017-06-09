@@ -1,6 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/?LinkId=822338
 external help file:  PSModule-help.xml
