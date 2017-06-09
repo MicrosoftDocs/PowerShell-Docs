@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-schema:  2.0
+schema:  2.0.0
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/p/?linkid=290482
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml

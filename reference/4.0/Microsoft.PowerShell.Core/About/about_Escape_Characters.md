@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-09
-schema:  2.0
+schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Escape_Characters
 description:  Introduces the escape character in PowerShell and explains its effect.
