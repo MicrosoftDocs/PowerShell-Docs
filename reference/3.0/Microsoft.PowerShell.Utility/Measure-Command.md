@@ -124,15 +124,9 @@ You can pipe an object to `Measure-Command`.
 `Measure-Command` returns a time span object that represents the result.
 
 ## Notes
-- For more information, type: 
-```PowerShell
-Get-Help Measure-Command -Detailed
-```
+- For more information, type: `Get-Help Measure-Command -Detailed`
 
-- For technical information, type:
-```PowerShell
-Get-Help Measure-Command -Full
-```
+- For technical information, type: `Get-Help Measure-Command -Full`
 
 - When specifying multiple values for a parameter, use commas to separate the values.
 For example, `\<parameter-name\> \<value1\>, \<value2\>`.
