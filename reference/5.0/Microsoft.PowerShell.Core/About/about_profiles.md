@@ -1,7 +1,6 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-06-12
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Profiles
 ---
@@ -333,4 +332,4 @@ are available in $s.
 
 [about_Remote](about_Remote.md)
 
-[Set-ExecutionPolicy](https://github.com/PowerShell/PowerShell-Docs/blob/staging/reference/5.1/Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](../../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
