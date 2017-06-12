@@ -1,12 +1,9 @@
 ---
-title:   Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)
 ---
 
 # Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager (LCM)

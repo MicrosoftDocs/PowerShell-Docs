@@ -1,12 +1,9 @@
 ---
-title:   Configure a virtual machines at initial boot-up by using DSC
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Configure a virtual machines at initial boot-up by using DSC
 ---
 
 >Applies To: Windows PowerShell 5.0
@@ -209,3 +206,4 @@ so set the value of this key to 0:
 - [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md)
 - [Configuring the Local Configuration Manager (LCM)](metaConfig.md)
 - [Setting up a DSC web pull server](pullServer.md)
+

@@ -1,12 +1,9 @@
 ---
-title:   DSC WaitForAny Resource
-ms.date:  2017-04-07
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonmills
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  DSC WaitForAny Resource
 ---
 
 # DSC WaitForAny Resource
@@ -48,3 +45,4 @@ WaitForAny [string] #ResourceName
 ## Example
 
 For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)
+
