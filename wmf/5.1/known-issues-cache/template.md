@@ -1,6 +1,9 @@
 ---
-title: example template of a known issue or limitation writeup
-contributor:  
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  example template of a known issue or limitation writeup
 ---
 
 >Note: provide a proposed descriptive title and a brief description
@@ -15,3 +18,4 @@ To resolve, set the **ExecutionPolicy** to **RemoteSigned** by running the follo
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
+

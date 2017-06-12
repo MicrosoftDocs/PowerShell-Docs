@@ -1,13 +1,10 @@
 ---
-title: Install and configure WMF 5.1 
-ms.date:  2017-01-18 
-keywords:  PowerShell, DSC, WMF 
-description:  
-ms.topic:  article 
-contributor:  keithb 
-manager:  carmonm 
-ms.prod:  powershell 
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+contributor:  keithb
+title:  Install and configure WMF 5.1
 ---
 
 # Install and Configure WMF 5.1 #

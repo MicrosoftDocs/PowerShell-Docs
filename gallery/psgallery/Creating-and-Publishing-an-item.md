@@ -1,16 +1,10 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  keithb
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2017-05-18
-contributor:  keithb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating and Publishing an item
-ms.technology:  powershell
 ---
-
 
 # Creating and Publishing an Item 
 The PowerShell Gallery is the place to publish and share stable PowerShell modules, scripts, 

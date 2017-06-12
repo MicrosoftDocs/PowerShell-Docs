@@ -1,13 +1,9 @@
 ---
-title:   PowerShell Engine Improvements in WMF 5.1
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  PowerShell Engine Improvements in WMF 5.1
 ---
 
 #PowerShell Engine Improvements
@@ -43,3 +39,4 @@ modules that are installed on a system.
 Previously, this cache was stored in the directory `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`. 
 In WMF 5.1, the cache is a single file `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 See [Module Analysis Cache](scenarios-features.md#module-analysis-cache) for more details.
+

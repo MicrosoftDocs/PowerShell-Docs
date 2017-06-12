@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # New language features in PowerShell 5.0 
 
 PowerShell 5.0 introduces the following new language elements in Windows PowerShell:
@@ -325,3 +332,4 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
+

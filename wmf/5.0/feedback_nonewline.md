@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # NoNewLine parameter
 **Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.
 ```PowerShell
@@ -27,3 +34,4 @@ a single
 
 sentence.
 ```
+

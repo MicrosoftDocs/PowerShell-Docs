@@ -1,12 +1,9 @@
 ---
-title:   Resource authoring checklist
-ms.date:  2016-07-11
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Resource authoring checklist
 ---
 
 # Resource authoring checklist
@@ -305,3 +302,4 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
 This list is not exhaustive, but it covers many important issues which can be encountered while designing, developing and testing DSC resources.
+

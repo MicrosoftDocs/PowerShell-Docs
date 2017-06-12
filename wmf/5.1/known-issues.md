@@ -1,13 +1,9 @@
 ---
-title:   Known Issues in WMF 5.1 
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  krishna
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Known Issues in WMF 5.1
 ---
 
 # Known Issues in WMF 5.1 #
@@ -61,3 +57,4 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
+

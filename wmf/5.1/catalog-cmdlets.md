@@ -1,14 +1,11 @@
 ---
-title:   Catalog cmdlets
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  carolz
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Catalog cmdlets
 ---
+
 # Catalog Cmdlets  
 
 We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) module to generate and validate windows catalog files.  
@@ -56,3 +53,4 @@ a status of `ValidationFailed`.
 Users can retrieve all this information using the `Detailed` switch. The signing status of the catalog is displayed as the `Signature` field, which is same as 
 calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file. 
 Users can also skip any file during validation by using the `FilesToSkip` parameter. 
+

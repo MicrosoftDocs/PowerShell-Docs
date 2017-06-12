@@ -1,14 +1,9 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2016-10-14
-contributor:  manikb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  Managing Item Owners
-ms.technology:  powershell
 ---
 
 # Managing Item Owners
