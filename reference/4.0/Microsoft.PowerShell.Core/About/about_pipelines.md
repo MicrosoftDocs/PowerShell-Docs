@@ -31,8 +31,9 @@ output of that command to yet another command. The result is a very powerful
 command chain or "pipeline" that is comprised of a series of simple commands.
 
 For example,
-
+```PowerShell
 Command-1 | Command-2 | Command-3
+```
 
 In this example, the objects that Command-1 emits are sent to Command-2.
 Command-2 processes the objects and sends them to Command-3. Command-3 processes
@@ -46,73 +47,74 @@ output is displayed as it is generated.
 Here is a simple example. The following command gets the Notepad process
 and then stops it.
 
-get-process notepad | stop-process
+For example,
+```PowerShell
+Get-Process notepad | Stop-Process
+```
 
-The first command uses the Get-Process cmdlet to get an object representing
+The first command uses the `Get-Process` cmdlet to get an object representing
 the Notepad process. It uses a pipeline operator (|) to send the process object
-to the Stop-Process cmdlet, which stops the Notepad process. Notice that the
-Stop-Process command does not have a Name or ID parameter to specify the process,
+to the `Stop-Process` cmdlet, which stops the Notepad process. Notice that the
+`Stop-Process` command does not have a Name or ID parameter to specify the process,
 because the specified process is submitted through the pipeline.
 
 Here is a practical example. This command pipeline gets the text files in the
 current directory, selects only the files that are more than 10,000 bytes long,
 sorts them by length, and displays the name and length of each file in a table.
 
-Get-ChildItem -path *.txt | Where-Object {$_.length -gt 10000} |
-Sort-Object -property Length | Format-Table -property name, length
+`Get-ChildItem` -path *.txt | `Where-Object` {$_.length -gt 10000} |
+`Sort-Object` -property Length | `Format-Table` -property name, length
 
 This pipeline is comprised of four commands in the specified order. The command
 is written horizontally, but we will show the process vertically in the following
 graphic.
 
-Get-ChildItem -path *.txt
+`Get-ChildItem` -path *.txt
 
-# |
-
+ |
 |   (FileInfo objects )
 |   (    .txt         )
-# |
+ |
+ V
 
-# V
 
+`Where-Object` {$_.length -gt 10000}
 
-Where-Object {$_.length -gt 10000}
-
-# |
+ |
 
 |   (FileInfo objects )
 |   (    .txt         )
 |   ( Length > 10000  )
-# |
+ |
 
-# V
+ V
 
 
-Sort-Object -property Length
+`Sort-Object` -property Length
 
-# |
+ |
 
 |   (FileInfo objects  )
 |   (    .txt          )
 |   ( Length > 10000   )
 |   ( Sorted by length )
-# |
+ |
 
-# V
+ V
 
 
-Format-Table -property name, length
+`Format-Table` -property name, length
 
-# |
+ |
 
 |   (FileInfo objects     )
 |   (    .txt             )
 |   ( Length > 10000      )
 |   ( Sorted by length    )
 |   (Formatted in a table )
-# |
+ |
 
-# V
+ V
 
 Name                       Length
 ----                       ------
@@ -132,34 +134,46 @@ or Stop-Service cmdlets (although disabled services cannot be restarted in this 
 
 This command pipeline starts the WMI service on the computer:
 
+For example,
+```PowerShell
 get-service wmi | start-service
+```
 
 The cmdlets that get and set objects of the Windows PowerShell providers, such as the
 Item and ItemProperty cmdlets, are also designed to be used in pipelines.
 
-For example, you can pipe the results of a Get-Item or Get-ChildItem command in the
-Windows PowerShell registry provider to the New-ItemProperty cmdlet. This command adds
+For example, you can pipe the results of a `Get-Item` or `Get-ChildItem` command in the
+Windows PowerShell registry provider to the `New-ItemProperty` cmdlet. This command adds
 a new registry entry, NoOfEmployees, with a value of 8124, to the MyCompany registry key.
 
+For example,
+```PowerShell
 get-item -path HKLM:\Software\MyCompany | new-Itemproperty -name NoOfEmployees -value 8124
+```
 
-Many of the utility cmdlets, such as Get-Member, Where-Object, Sort-Object, Group-Object,
-and Measure-Object are used almost exclusively in pipelines. You can pipe any objects to
+Many of the utility cmdlets, such as `Get-Member`, `Where-Object`, `Sort-Object`, `Group-Object`,
+and `Measure-Object` are used almost exclusively in pipelines. You can pipe any objects to
 these cmdlets.
 
 For example, you can pipe all of the processes on the computer to the Sort-Object command
 and have them sorted by the number of handles in the process.
 
+For example,
+```PowerShell
 get-process | sort-object -property handles
+```
 
-Also, you can pipe any objects to the formatting cmdlets, such as Format-List and
-Format-Table, the Export cmdlets, such as Export-Clixml and Export-CSV, and the Out
-cmdlets, such as Out-Printer.
+Also, you can pipe any objects to the formatting cmdlets, such as `Format-List` and
+`Format-Table`, the Export cmdlets, such as `Export-Clixml` and `Export-CSV`, and the Out
+cmdlets, such as `Out-Printer`.
 
-For example, you can pipe the Winlogon process to the Format-List cmdlet to display all
+For example, you can pipe the Winlogon process to the `Format-List` cmdlet to display all
 of the properties of the process in a list.
 
+For example,
+```PowerShell
 get-process winlogon | format-list -property *
+```
 
 With a bit of practice, you'll find that combining simple commands into pipelines
 saves time and typing, and makes your scripting more efficient.
@@ -198,20 +212,28 @@ the piping as efficiently as possible.
 Piping objects to a command is much like using a parameter of the command to submit the
 objects.
 
-For example, piping objects representing the services on the computer to a Format-Table command,
+For example, piping objects representing the services on the computer to a `Format-Table` command,
 such as:
 
+```PowerShell
 get-service | format-table -property name, dependentservices
+```
 
 is much like saving the service objects in a variable and using the InputObject parameter
-of Format-Table to submit the service object.
+of `Format-Table` to submit the service object.
 
+For example,
+```PowerShell
 $services = get-service
 format-table -inputobject $services -property name, dependentservices
+```
 
 or imbedding the command in the parameter value
 
+For example,
+```PowerShell
 format-table -inputobject (get-service wmi) -property name, dependentservices
+```
 
 However, there is an important difference. When you pipe multiple objects to a command,
 Windows PowerShell sends the objects to the command one at a time. When you use a
@@ -219,15 +241,17 @@ command parameter, the objects are sent as a single array object.
 
 This seemingly technical difference can have interesting, and sometimes useful, consequences.
 
-For example, if you pipe multiple process objects from the Get-Process cmdlet to the
-Get-Member cmdlet, Windows PowerShell sends each process object, one at a time, to Get-Member.
-Get-Member displays the .NET class (type) of the process objects, and their properties and methods.
-(Get-Member eliminates duplicates, so if the objects are all of the same type, it displays only
+For example, if you pipe multiple process objects from the `Get-Process` cmdlet to the
+`Get-Member` cmdlet, Windows PowerShell sends each process object, one at a time, to `Get-Member`.
+`Get-Member` displays the .NET class (type) of the process objects, and their properties and methods.
+(`Get-Member` eliminates duplicates, so if the objects are all of the same type, it displays only
 one object type.)
 
-In this case, Get-Member displays the properties and methods of each process object, that is, a
+In this case, `Get-Member` displays the properties and methods of each process object, that is, a
 System.Diagnostics.Process object.
 
+For example,
+```PowerShell
 get-process | get-member
 
 TypeName: System.Diagnostics.Process
@@ -238,12 +262,14 @@ Handles                        AliasProperty  Handles = Handlecount
 Name                           AliasProperty  Name = ProcessName
 NPM                            AliasProperty  NPM = NonpagedSystemMemorySize
 # ...
+```
 
-
-However, if you use the InputObject parameter of Get-Member, then Get-Member receives an
+However, if you use the InputObject parameter of `Get-Member`, then `Get-Member` receives an
 array of System.Diagnostics.Process objects as a single unit, and it displays the properties
 of an array of objects. (Note the array symbol ([]) after the System.Object type name.)
 
+For example,
+```PowerShell
 get-member -inputobject (get-process)
 
 TypeName: System.Object[]
@@ -254,13 +280,16 @@ Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 # ...
-
+```
 
 This result might not be what you intended, but after you understand it, you can use it. For
 example, an array of process objects has a Count property that you can use to count the number
 of processes on the computer.
 
+For example,
+```PowerShell
 (get-process).count
+```
 
 This distinction can be important, so remember that when you pipe objects to a cmdlet, they
 are delivered one at a time.
