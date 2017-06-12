@@ -36,7 +36,9 @@ The first command measures the time it takes to process a recursive `Get-ChildIt
 
 ```PowerShell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+```
 
+```Text
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -54,7 +56,9 @@ The second command measures the time it takes to process a recursive `Get-ChildI
 
 ```PowerShell
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
+```
 
+```Text
 Days              : 0
 Hours             : 0
 Minutes           : 0
