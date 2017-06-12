@@ -32,12 +32,13 @@ Measure-Command { Get-EventLog "windows powershell" }
 
 This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
 
-### Example 2: Use a provider-specific filter
-The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+### Example 2
 
 ```PowerShell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+```
 
+```
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -51,11 +52,11 @@ TotalSeconds      : 8.6182763
 TotalMilliseconds : 8618.2763
 ```
 
-The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
-
 ```PowerShell
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
+```
 
+```
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -68,6 +69,10 @@ TotalMinutes      : 0.019015315
 TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
+
+The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+
+The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
 
 These commands show the value of using a provider-specific filter in Windows PowerShell commands.
 
@@ -104,7 +109,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### `-InformationVariable`
+### -InformationVariable
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -117,7 +122,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### `-InputObject`
+### -InputObject
 Specifies objects representing the expressions to be measured.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -147,15 +152,9 @@ You can pipe an object to `Measure-Command`.
 `Measure-Command` returns a time span object that represents the result.
 
 ## Notes
-- For more information, type: 
-```PowerShell
-Get-Help Measure-Command -Detailed
-```
+- For more information, type: `Get-Help Measure-Command -Detailed`
 
-- For technical information, type:
-```PowerShell
-Get-Help Measure-Command -Full
-```
+- For technical information, type: `Get-Help Measure-Command -Full`
 
 - When specifying multiple values for a parameter, use commas to separate the values.
 For example, `\<parameter-name\> \<value1\>, \<value2\>`.
