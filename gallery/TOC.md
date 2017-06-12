@@ -21,6 +21,8 @@
 ### [Providing Feedback via Social Media or Comments](psgallery/psgallery-SocialMediaFeedback.md)
 
 # [PowerShellGet](psget/overview.md)
+## [Get PowerShellGet Module](psget/get_psget_module.md)
+
 ## Module
 ### [Find Modules](psget/module/psget_find-module.md)
 ### [Find DSC Resources](psget/module/psget_find-dscresource.md)
