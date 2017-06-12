@@ -49,12 +49,12 @@ For example, the Windows PowerShell console supports the following basic
 profile files. The profiles are listed in precedence order. The first
 profile has the highest precedence.
 
-Description                Path
------------                ----
-Current User, Current Host $Home[My ]Documents\WindowsPowerShell\Profile.ps1
-Current User, All Hosts    $Home[My ]Documents\Profile.ps1
-All Users, Current Host    $PsHome\Microsoft.PowerShell_profile.ps1
-All Users, All Hosts       $PsHome\Profile.ps1
+| Description  | Path |
+| ------------- | ------------- |
+| Current user, Current Host  | $Home[My ]Documents\WindowsPowerShell\Profile.ps1  |
+| Current User, All Hosts  | $Home[My ]Documents\Profile.ps1  |
+| All Users, Current Host  | $PsHome\Microsoft.PowerShell_profile.ps1  |
+| All Users, All Hosts  | $PsHome\Profile.ps1  |
 
 The profile paths include the following variables:
 
@@ -67,10 +67,10 @@ In addition, other programs that host Windows PowerShell can support their
 own profiles. For example, Windows PowerShell Integrated Scripting
 Environment (ISE) supports the following host-specific profiles.
 
-Description                Path
------------                -----
-Current user, Current Host $Home[My ]Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1
-All users, Current Host    $PsHome\Microsoft.PowerShellISE_profile.ps1
+| Description | Path |
+| ------------- | ------------- |
+| Current user, Current Host | $Home[My ]Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1 |
+| All users, Current Host | $PsHome\Microsoft.PowerShellISE_profile.ps1 |
 
 In Windows PowerShell Help, the "CurrentUser, Current Host" profile is the profile most
 often referred to as "your Windows PowerShell profile".
@@ -91,47 +91,49 @@ the $profile variable.
 For example, the $Profile variable has the following values in the Windows
 PowerShell console.
 
-Name                               Description
------------                        -----------
-$Profile                           Current User,Current Host
-$Profile.CurrentUserCurrentHost    Current User,Current Host
-$Profile.CurrentUserAllHosts       Current User,All Hosts
-$Profile.AllUsersCurrentHost       All Users, Current Host
-$Profile.AllUsersAllHosts          All Users, All Hosts
+| Name | Description |
+| ------------- | ------------- |
+| $Profile | Current User, Current Host |
+| $Profile.CurrentUserCurrentHost | Current User, Current Host |
+| $Profile.CurrentUserAllHosts | Current User, All Hosts |
+| $Profile.AllUsersCurrentHost | All Users, Current Host |
+| $Profile.AllUsersAllHosts | All Users, All Hosts |
 
 Because the values of the $Profile variable change for each user and in
 each host application, ensure that you display the values of the
 profile variables in each Windows PowerShell host application that you use.
 
 To see the current values of the $Profile variable, type:
-
-$profile | get-member -type noteproperty
+```
+$profile | Get-Member -Type NoteProperty
+```
 
 You can use the $Profile variable in many commands. For example, the
 following command opens the "Current User, Current Host" profile in
 Notepad:
-
+```
 notepad $profile
-
+```
 The following command determines whether an "All Users, All Hosts" profile
 has been created on the local computer:
-
-test-path $profile.AllUsersAllHosts
+```
+Test-Path -Path $profile.AllUsersAllHosts
+```
 
 # HOW TO CREATE A PROFILE
 
 
 To create a Windows PowerShell profile, use the following command format:
-
-if (!(test-path <profile-name>))
-{new-item -type file -path <profile-name> -force}
-
+```
+if (!(Test-Path -Path <profile-name>))
+{New-Item -ItemType File -Path <profile-name> -Force}
+```
 For example, to create a profile for the current user in the current
 Windows PowerShell host application, use the following command:
-
-if (!(test-path $profile))
-{new-item -type file -path $profile -force}
-
+```
+if (!(Test-Path -Path $profile))
+{New-Item -ItemType File -Path $profile -Force}
+```
 In this command, the If statement prevents you from overwriting an existing
 profile. Replace the value of the <profile-path> placeholder with the path
 to the profile file that you want to create.
@@ -148,14 +150,14 @@ Notepad.
 
 To open the profile of the current user in the current Windows PowerShell
 host application in Notepad, type:
-
+```
 notepad $profile
-
+```
 To open other profiles, specify the profile name. For example, to open the
 profile for all the users of all the host applications, type:
-
+```
 notepad $profile.AllUsersAllHosts
-
+```
 To apply the changes, save the profile file, and then restart Windows
 PowerShell.
 
@@ -171,13 +173,13 @@ specific to that host application.
 If you are an administrator who is customizing Windows
 PowerShell for many users, follow these guidelines:
 
--- Store the common items in the $profile.AllUsersAllHosts profile.
+- Store the common items in the $profile.AllUsersAllHosts profile.
 
--- Store items that are specific to a host application in
+- Store items that are specific to a host application in
 $profile.AllUsersCurrentHost profiles that are specific to the host
 application.
 
--- Store items for particular users in the user-specific profiles.
+- Store items for particular users in the user-specific profiles.
 
 Be sure to check the host application documentation for any special
 implementation of Windows PowerShell profiles.
@@ -208,56 +210,57 @@ the variables, aliases, and commands that you use frequently.
 
 Here are a few suggestions to get you started.
 
--- Add commands that make it easy to open your profile. This is especially
+- Add commands that make it easy to open your profile. This is especially
 useful if you use a profile other than the "Current User, Current Host"
 profile. For example, add the following command:
-
-function pro {notepad $profile.CurrentUserAllHosts}
-
--- Add a function that opens Windows PowerShell Help in a compiled HTML
+```
+function Pro {notepad $profile.CurrentUserAllHosts}
+```
+- Add a function that opens Windows PowerShell Help in a compiled HTML
 Help file (.chm).
-
+```
 function Get-CHM
 {
-(invoke-item $env:windir\help\mui\0409\WindowsPowerShellHelp.chm)
+Invoke-Item -Path "$env:windir\help\mui\0409\WindowsPowerShellHelp.chm"
 }
-
+```
 This function opens the English version of the .chm file. However, you
 can replace the language code (0409) to open other versions of the .chm
 file.
 
--- Add a function that lists the aliases for any cmdlet.
-
+- Add a function that lists the aliases for any cmdlet.
+```
 function Get-CmdletAlias ($cmdletname)
 {
-get-alias | Where {$_.definition -like "$cmdletname"} | ft Definition, Name -auto
+Get-Alias | Where-Object -FilterScript {$_.Definition -like "$cmdletname"} | Format-Table -Property Definition, Name -AutoSize
 }
-
--- Add an Add-PsSnapin command to add any Windows PowerShell snap-ins that
+```
+- Add an Add-PsSnapin command to add any Windows PowerShell snap-ins that
 you use.
 
--- Customize your console.
-
+- Customize your console.
+```
 function Color-Console
 {
 $host.ui.rawui.backgroundcolor = "white"
 $host.ui.rawui.foregroundcolor = "black"
-$hosttime = (dir $pshome\PowerShell.exe).creationtime
+$hosttime = (Get-ChildItem -Path $pshome\PowerShell.exe).CreationTime
+$hostversion="$((Get-Host).Version.Major)`.$((Get-Host).Version.Minor)"
 $Host.UI.RawUI.WindowTitle = "Windows PowerShell $hostversion ($hosttime)"
-clear-host
+Clear-Host
 }
-Color-console
-
--- Add a customized Windows PowerShell prompt that includes the computer
+Color-Console
+```
+- Add a customized Windows PowerShell prompt that includes the computer
 name and the current path.
-
-function prompt
+```
+function Prompt
 {
-$env:computername + "\" + (get-location) + "> "
+$env:COMPUTERNAME + "\" + (Get-Location) + "> "
 }
-
+```
 For more information about the Windows PowerShell prompt, see
-about_Prompts.
+[about_Prompts](about_Prompts.md).
 
 # THE NOPROFILE PARAMETER
 
@@ -270,14 +273,14 @@ or Windows PowerShell itself. You can also use the Run dialog box in
 Windows.
 
 Type:
-
-PowerShell -noprofile
-
+```
+PowerShell -NoProfile
+```
 For a complete list of the parameters of PowerShell.exe,
 type:
-
+```
 PowerShell -?
-
+```
 # PROFILES AND EXECUTION POLICY
 
 
@@ -304,15 +307,15 @@ To run a profile in a session, use the Invoke-Command cmdlet.
 
 For example, the following command runs the CurrentUserCurrentHost profile from
 the local computer in the session in $s.
-
-invoke-command -session $s -filepath $profile
-
+```
+Invoke-Command -Session $s -FilePath $profile
+```
 The following command runs the CurrentUserCurrentHost profile from the remote
 computer in the session in $s. Because the $profile variable is not populated,
 the command uses the explicit path to the profile.
-
-invoke-command -session $s {invoke-command "$home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}
-
+```
+Invoke-Command -SessionName $s -ScriptBlock {Invoke-Command -FilePath "$home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}
+```
 After running this command, the commands that the profile adds to the session
 are available in $s.
 
@@ -330,5 +333,4 @@ are available in $s.
 
 [about_Remote](about_Remote.md)
 
-Set-ExecutionPolicy
-
+[Set-ExecutionPolicy](https://github.com/PowerShell/PowerShell-Docs/blob/staging/reference/5.1/Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
