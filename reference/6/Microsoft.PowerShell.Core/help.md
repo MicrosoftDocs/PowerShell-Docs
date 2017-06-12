@@ -1,7 +1,10 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/?LinkId=821483
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821483
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # help

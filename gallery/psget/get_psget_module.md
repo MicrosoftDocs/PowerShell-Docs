@@ -1,14 +1,9 @@
 ---
-description:  
-manager:  kriscv
-ms.topic:  article
-author:  tylerl0706
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2017-6-3
-contributor:  tylerl0706
+ms.date:  2017-06-12
+contributor:  manikb
+ms.topic:  reference
+keywords:  gallery,powershell,cmdlet,psget
 title:  Get PowerShellGet Module
-ms.technology:  powershell
 ---
 
 Get PowerShellGet Module
@@ -60,4 +55,3 @@ Exit
 ```powershell
 Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
 Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
-```

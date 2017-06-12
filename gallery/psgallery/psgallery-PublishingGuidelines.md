@@ -1,14 +1,10 @@
 ---
-description: Guidelines for Publishers
-manager: 
-ms.topic:  article
-author:  jkeithb
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2017-04-04 
-contributor:  jkeithb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
+description:  Guidelines for Publishers
 title:  PowerShell Gallery Publishing Guidelines and Best Practices
-ms.technology:  powershell
 ---
 
 ## PowerShellGallery Publishing Guidelines and Best Practices

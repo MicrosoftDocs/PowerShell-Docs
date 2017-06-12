@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Try_Catch_Finally
-ms.technology:  powershell
 ---
 
 # About Try Catch Finally
@@ -159,3 +155,4 @@ A Finally block runs even if you use CTRL\+C to stop the script. A Finally block
 [about_Throw](about_Throw.md)
 
 [about_Trap](about_Trap.md)
+

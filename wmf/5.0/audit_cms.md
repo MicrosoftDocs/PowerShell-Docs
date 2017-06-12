@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Cryptographic Message Syntax (CMS) cmdlets
 
 The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](http://tools.ietf.org/html/rfc5652).
@@ -82,3 +89,4 @@ To view document encryption certificates in the certificate provider, you can us
 ```powershell
 dir -DocumentEncryptionCert
 ```
+

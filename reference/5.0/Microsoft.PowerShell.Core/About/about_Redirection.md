@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Redirection
-ms.technology:  powershell
 ---
 
 # About Redirection
@@ -146,3 +142,4 @@ Tee-Object
 [about_Command_Syntax](about_Command_Syntax.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
+

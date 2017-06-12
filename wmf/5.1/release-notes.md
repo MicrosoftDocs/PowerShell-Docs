@@ -1,13 +1,9 @@
 ---
-title:   WMF 5.1 Release Notes 
-ms.date:  2017-01-20
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  carmonm
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  WMF 5.1 Release Notes
 ---
 
 # Windows Management Framework (WMF) 5.1 Release Notes #

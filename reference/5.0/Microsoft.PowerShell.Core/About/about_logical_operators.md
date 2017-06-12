@@ -1,12 +1,11 @@
 ---
-title: about_Logical_Operators
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 51fca7f4-6b32-4bbf-bed1-742196b2f002
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_Logical_Operators
 ---
+
 # about_Logical_Operators
 ## TOPIC  
  about\_Logical\_Operators  
@@ -69,3 +68,4 @@ Operator  Description                      Example
  about\_Comparison\_operators  
   
  about\_If
+

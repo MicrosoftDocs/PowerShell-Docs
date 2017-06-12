@@ -1,13 +1,9 @@
 ---
-title:   Bug Fixes in WMF 5.1 
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Bug Fixes in WMF 5.1
 ---
 
 # Bug Fixes in WMF 5.1#
@@ -121,3 +117,4 @@ PowerShell uses a WMI query to check if it was started via Group Policy to avoid
 The WMI query ends up injecting tzres.mui.dll into every process on the system since the WMI Win32_Process class attempts to retrieve local timezone information.
 This results in a large CPU spike in wmiprvse (the WMI provider host).
 Fix is to use Win32 API calls to get the same information instead of using WMI.
+

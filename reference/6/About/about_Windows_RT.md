@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Windows_RT
-ms.technology:  powershell
 ---
 
 # About Windows RT
@@ -55,3 +51,4 @@ Windows PowerShell System Requirements: (http://technet.microsoft.com/library/hh
 
 ## KEYWORDS
 about_ARM, about_PowerShell_on_ARM, about_PowerShell_on_Surface, about_Windows_RT_8.1 about_WindowsRT
+

@@ -1,9 +1,12 @@
 ---
-Module Name: PSDiagnostics
-Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
-Download Help Link: http://Please-enter-FwLink-manually
-Help Version: 6.0
-Locale: en-US
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  c61d6278-02a3-4618-ae37-a524d40a7f44
+Module Name:  PSDiagnostics
 ---
 
 # PSDiagnostics Module

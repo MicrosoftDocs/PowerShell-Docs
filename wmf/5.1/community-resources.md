@@ -1,13 +1,9 @@
 ---
-title:   Community Resources 
-ms.date:  2016-05-16
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Community Resources
 ---
 
 # Community Resources #
@@ -35,5 +31,5 @@ A few key repositories to point out are:
 * [PowerShell](https://github.com/PowerShell/powershell) is the location for PowerShell Core, which is the future version of PowerShell. 
 This is the place to suggest feature recommendations, or raise issues for PowerShell Core.   
 * [PowerShellGet](https://github.com/PowerShell/powershellget) repository is for the PowerShellGet module and cmdlets.
-* [DSCResources] (https://github.com/PowerShell/DscResources) contains the set of DSC modules maintained by the PowerShell team and published to the PowerShell Gallery in the DSC Resource Kit.
+* [DSCResources](https://github.com/PowerShell/DscResources) contains the set of DSC modules maintained by the PowerShell team and published to the PowerShell Gallery in the DSC Resource Kit.
 

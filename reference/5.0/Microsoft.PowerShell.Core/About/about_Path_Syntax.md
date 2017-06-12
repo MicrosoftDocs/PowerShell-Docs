@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Path_Syntax
-ms.technology:  powershell
 ---
 
 # About Path Syntax
@@ -86,3 +82,4 @@ For instance, suppose that you have two files that are each named Results.txt. T
 ## SEE ALSO
 
 about_Locations
+

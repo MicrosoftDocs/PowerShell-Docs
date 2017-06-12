@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2017-03-21
+Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  ca046f10-ca64-4740-8ff9-2565dba61a4f
 title:  Microsoft.PowerShell.Diagnostics
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Diagnostics
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   ca046f10-ca64-4740-8ff9-2565dba61a4f
+Module Name:  Microsoft.PowerShell.Diagnostics
 ---
-
 
 # Microsoft.PowerShell.Diagnostics Module
 ## Description

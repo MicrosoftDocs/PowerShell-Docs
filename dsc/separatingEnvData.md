@@ -1,12 +1,9 @@
 ---
-title:   Separating configuration and environment data
-ms.date:  2016-03-31
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Separating configuration and environment data
 ---
 
 # Separating configuration and environment data
@@ -321,3 +318,4 @@ configuration WebsiteConfig
 - [Using configuration data](configData.md)
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)
+

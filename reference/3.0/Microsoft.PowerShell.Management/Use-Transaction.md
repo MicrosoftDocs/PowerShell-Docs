@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Use-Transaction
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=135271
-external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=135271
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Use-Transaction
 ---
-
 
 # Use-Transaction
 ## SYNOPSIS

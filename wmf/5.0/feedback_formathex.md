@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Format-Hex
 **Format-Hex** lets you view text or binary data in hexadecimal format;
 see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
@@ -25,3 +32,4 @@ PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet"
 
 PS C:\>
 ```
+
