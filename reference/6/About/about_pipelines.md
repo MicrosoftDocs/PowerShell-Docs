@@ -69,51 +69,55 @@ graphic.
 
 `Get-ChildItem` `-Path` *.txt
 
- *|*
+ **|**
 
 |   (FileInfo objects )
 |   (    .txt         )
- *|*
 
- *V*
+ **|**
+
+ **V**
 
 `Where-Object` {$_.length `-gt` 10000}
 
- *|*
+ **|**
 
 |   (FileInfo objects )
 |   (    .txt         )
 |   ( Length > 10000  )
- *|*
 
- *V*
+ **|**
+
+ **V**
 
 
 `Sort-Object` `-Property` Length
 
- *|*
+ **|**
 
 |   (FileInfo objects  )
 |   (    .txt          )
 |   ( Length > 10000   )
 |   ( Sorted by length )
- *|*
 
- *V*
+ **|**
+
+ **V**
 
 
 `Format-Table` `-Property` name, length
 
- *|*
+ **|**
 
 |   (FileInfo objects     )
 |   (    .txt             )
 |   ( Length > 10000      )
 |   ( Sorted by length    )
 |   (Formatted in a table )
- *|*
 
- *V*
+ **|**
+
+ **V**
 
 Name                       Length
 ----                       ------
