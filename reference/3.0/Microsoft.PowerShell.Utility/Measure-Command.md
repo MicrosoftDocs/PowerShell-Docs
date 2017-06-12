@@ -25,6 +25,7 @@ The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the
 ## Examples
 
 ### Example 1
+
 ```PowerShell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
@@ -55,7 +56,7 @@ TotalMilliseconds : 8618.2763
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
 
 ```PowerShell
-Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
+Measure-Command {Get-ChildItem -Path C:\Windows -Filter "*.txt" -Recurse}
 ```
 
 ```Text
