@@ -7,7 +7,7 @@ load the DSC resources from. The new syntax of the keyword is:
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **Name**: Names of one or more reosurces to import.
+* **Name**: Names of one or more resources to import.
 * **ModuleName**: Module names or ModuleSpecification objects of one or more modules to import.
 * **ModuleVersion**: Version of module ot import. If used, ModuleName must represent only one module by name. 
 
