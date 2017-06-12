@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Register a PowerShell Repository
 You can configure PowerShellGet to operate against internal repositories. This is done by using the following additions:
 - Register-PSRepository: Registers a repository for the current user.
@@ -31,3 +38,4 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
+

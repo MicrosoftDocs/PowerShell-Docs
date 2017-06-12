@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Import-DscResource keyword supports -ModuleVersion parameter
 
 We have added a new parameter to the `Import-DscResource` dynamic keyword available when authoring DSC configurations. Configuration authors can now specify exactly which module version to 

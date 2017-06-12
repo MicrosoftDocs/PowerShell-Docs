@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Network Switch Management with PowerShell
 
 The **Get-NetworkSwitchEthernetPort** cmdlet now returns the following additional information with instances:
@@ -59,3 +66,4 @@ PS> Get-Command *-NetworkSwitch*
 ```
 
 More information is available in Jeffrey Snover’s WMF 5.0 Preview announcement blog post: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
+

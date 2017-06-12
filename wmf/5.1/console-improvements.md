@@ -1,13 +1,9 @@
 ---
-title:   Console Improvements in WMF 5.1
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Console Improvements in WMF 5.1
 ---
 
 # Console Improvements in WMF 5.1#
@@ -56,3 +52,4 @@ You can start PowerShell without any options, e.g. `powershell`.
 Note that PSReadline does not currently support redirected stdin, and the built-in command-line editing experience with redirected
 stdin is extremely limited, for example, arrow keys don't work. 
 A future release of PSReadline should address this issue.   
+

@@ -9,7 +9,13 @@
             }
         ],
         "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW"
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "powershell",
+            "ms.technology": "wmf",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows",
+            "ms.author": "jpjofre"
         },
         "resource": [
             {

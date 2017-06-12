@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Extract and Parse Structured Objects out of String
 This also introduces some additional functionality for the ConvertFrom-String cmdlet:
 

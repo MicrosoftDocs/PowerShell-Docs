@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Desired State Configuration (DSC) Known Issues and Limitations
 
 Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
@@ -226,3 +233,4 @@ Configuration $configName
     }
 }
 ```
+
