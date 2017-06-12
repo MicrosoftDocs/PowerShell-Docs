@@ -390,7 +390,7 @@ Configuration PullServer {
             Credential = $Node.Credential
     	}
     
-        # The next series of settings disable IIS and enable TLS, for environments where that is required by policy.
+        # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
             Ensure = 'Present'
