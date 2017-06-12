@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Arithmetic_Operators
-ms.technology:  powershell
 ---
 
 # About Arithmetic Operators
@@ -571,3 +567,4 @@ PS C:> 21 -shr 2
 [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 
 [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+

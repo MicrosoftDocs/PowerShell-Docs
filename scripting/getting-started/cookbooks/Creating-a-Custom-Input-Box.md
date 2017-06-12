@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Creating a Custom Input Box
-ms.technology:  powershell
-ms.assetid:    0b12e56c-299f-40ee-afbf-d30d23ed2565
+ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565
 ---
-
 
 # Creating a Custom Input Box
 Script a graphical custom input box by using Microsoft .NET Framework form-building features in Windows PowerShell 3.0 and later releases.

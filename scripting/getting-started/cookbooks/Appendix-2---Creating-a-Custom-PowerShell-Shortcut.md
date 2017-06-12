@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Appendix 2 Creating a Custom PowerShell Shortcut
-ms.technology:  powershell
-ms.assetid:    5d4fd421-5d43-4ec7-86fd-acfe887b066e
+ms.assetid:  5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ---
-
 
 # Appendix 2 - Creating a Custom PowerShell Shortcut
 The following procedure describes how to create a shortcut to Windows PowerShell that has several convenient options customized.

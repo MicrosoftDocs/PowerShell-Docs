@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Types.ps1xml
-ms.technology:  powershell
 ---
 
 # About Types.ps1xml
@@ -602,3 +598,4 @@ a digital signature. For more information, see `about_Signing`.
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
+

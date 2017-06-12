@@ -1,13 +1,10 @@
 ---
-description: Describes how you can use classes to create your own custom types. 
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2017-04-04
 title:  about_Classes
-ms.technology:  powershell
+description:  Describes how you can use classes to create your own custom types.
 ---
 
 # About Classes
@@ -829,3 +826,4 @@ There is no syntax to declare interfaces in PowerShell.
 - [about_Enum](about_Enum.md)
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
+

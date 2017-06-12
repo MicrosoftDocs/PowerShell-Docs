@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Environment_Variables
-ms.technology:  powershell
 ---
 
 # About Environment Variables
@@ -269,3 +265,4 @@ For more information, see about_Modules.
 Environment (provider)
 
 [about_Modules](about_Modules.md)
+

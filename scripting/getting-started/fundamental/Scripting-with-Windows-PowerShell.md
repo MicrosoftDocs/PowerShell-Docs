@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Scripting with Windows PowerShell
-ms.technology:  powershell
-ms.assetid:    c425d27a-bb41-4947-8d73-ba5480bc8ee0
+ms.assetid:  c425d27a-bb41-4947-8d73-ba5480bc8ee0
 ---
-
 
 # Scripting with Windows PowerShell
 

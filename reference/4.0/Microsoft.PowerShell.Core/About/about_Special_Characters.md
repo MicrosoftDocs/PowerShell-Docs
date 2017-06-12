@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Special_Characters
-ms.technology:  powershell
 ---
 
 # About Special Characters
@@ -149,3 +145,4 @@ about_Symbols
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Escape_Characters](about_Escape_Characters.md)
+

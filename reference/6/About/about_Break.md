@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Break
-ms.technology:  powershell
 ---
 
 # About Break
@@ -220,3 +216,4 @@ display results when the most specific condition is met.
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 
 [about_While](about_While.md)
+

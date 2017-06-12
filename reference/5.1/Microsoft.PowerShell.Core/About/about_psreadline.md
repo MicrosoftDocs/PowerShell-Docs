@@ -1,12 +1,11 @@
 ---
-title: about_PSReadline
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8d88badf-3cf1-4243-b26e-eed204ad0514
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_PSReadline
 ---
+
 # about_PSReadline
 ```  
 TOPIC  
@@ -653,3 +652,4 @@ SEE ALSO
     Set-PSReadlineOption  
   
 ```
+

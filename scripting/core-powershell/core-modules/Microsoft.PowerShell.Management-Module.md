@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Microsoft.PowerShell.Management Module
-ms.technology:  powershell
-ms.assetid:    03d69ab7-89d8-4cff-863e-d5f3864fee5a
+ms.assetid:  03d69ab7-89d8-4cff-863e-d5f3864fee5a
 ---
-
 
 # Microsoft.PowerShell.Management Module
 This section contains the help topics for the **Microsoft.PowerShell.Management** module. The **Microsoft.PowerShell.Management** module is installed with Windows PowerShell.

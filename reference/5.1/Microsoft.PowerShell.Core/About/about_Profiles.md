@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Profiles
-ms.technology:  powershell
 ---
 
 # About Profiles
@@ -335,3 +331,4 @@ are available in $s.
 [about_Remote](about_Remote.md)
 
 Set-ExecutionPolicy
+
