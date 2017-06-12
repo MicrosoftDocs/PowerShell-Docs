@@ -1,16 +1,10 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  jkeithb
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2017-03-23
-contributor:  jkeithb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating a PowerShell Gallery Account
-ms.technology:  powershell
 ---
-
 
 ## Creating a PowerShell Gallery Account
 
@@ -44,3 +38,4 @@ A best practice in that case is to use Outlook Forwarding to send email to anoth
 If there are multiple owners associated with an item, all communications that come from the PowerShell Gallery will go to all owners.
 See [Managing Item Owners](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) for additional 
 details on adding owners to an item. 
+

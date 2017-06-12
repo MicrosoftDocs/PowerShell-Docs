@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Clipboard cmdlets
 **Get-Clipboard** and **Set-Clipboard** make it easier for you to transfer content to and from a Windows PowerShell session. For example, if you use Windows Explorer to copy three files
 to the clipboard (by selecting them and pressing `ctrl-c`, for example), you can then easily access the contents of the clipboard as a list of files:
@@ -20,3 +27,4 @@ Mode LastWriteTime Length Name
 
 
 The Clipboard cmdlets support images, audio files, file lists, and text.
+

@@ -1,13 +1,9 @@
 ---
-description:  
-ms.topic:  article
-author:  jkeithb
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2017-05-18
-contributor:  jkeithb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  Providing Feedback via Social Media or Comments
-ms.technology:  powershell
 ---
 
 # Providing Feedback via Social Media or Comments

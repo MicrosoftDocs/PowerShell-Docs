@@ -1,14 +1,10 @@
 ---
-title:   Improvements to Package Management in WMF 5.1
-ms.date:  2016-07-15
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  jaimeo
-contributor: jianyunt, quoctruong
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+contributor:  jianyunt, quoctruong
+title:  Improvements to Package Management in WMF 5.1
 ---
 
 # Improvements to Package Management in WMF 5.1#

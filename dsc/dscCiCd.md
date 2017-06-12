@@ -1,12 +1,9 @@
 ---
-title:   Building a Continuous Integration and Continuous Deployment pipeline with DSC
-ms.date:  2017-03-03
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Building a Continuous Integration and Continuous Deployment pipeline with DSC
 ---
 
 # Building a Continuous Integration and Continuous Deplyoment pipeline with DSC

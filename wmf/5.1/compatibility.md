@@ -1,13 +1,9 @@
 ---
-title:   WMF 5.1 Operating System Compatibility 
-ms.date:  2016-05-16
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  WMF 5.1 Operating System Compatibility
 ---
 
 # WMF 5.1 Operating System Compatibility #

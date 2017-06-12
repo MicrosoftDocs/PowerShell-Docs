@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2017-03-07
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  JEA Prerequisites
-ms.technology:  powershell
 ---
 
 # Prerequisites
@@ -111,3 +107,4 @@ You can also enable system-wide PowerShell transcription through Group Policy.
 
 - [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

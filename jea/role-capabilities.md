@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2017-03-07
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  JEA Role Capabilities
-ms.technology:  powershell
 ---
 
 # JEA Role Capabilities
@@ -280,3 +276,4 @@ Additional information about identifying users' effective permissions can be fou
 ## Next steps
 
 - [Create a session configuration file](session-configurations.md)
+

@@ -1,1 +1,4 @@
-# Index test file for Open Publishing
+---
+redirect_url:  overview
+---
+

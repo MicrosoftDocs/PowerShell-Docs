@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  Using JEA
-ms.technology:  powershell
 ---
 
 # Using JEA
@@ -189,3 +185,4 @@ It is strongly recommended that you create a dedicated local user with no other 
 Remember that even an unprivileged user can still log into a Windows machine by default, including using unconstrained PowerShell.
 That will allow them to browse (some of) the file system and learn more about your OS environment.
 To lock down a Hyper-V administrator to only access a VM using PowerShell Direct with JEA, you will need to deny local logon rights to the Hyper-V admin's JEA account.
+

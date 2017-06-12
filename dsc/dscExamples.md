@@ -1,12 +1,9 @@
 ---
-title:   DSC Examples
-ms.date:  2017-04-15
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  DSC Examples
 ---
 
 # DSC examples

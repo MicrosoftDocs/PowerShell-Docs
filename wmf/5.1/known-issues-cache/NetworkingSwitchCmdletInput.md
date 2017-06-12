@@ -1,6 +1,10 @@
 ---
-title: Network Switch Manager cmdlets failure
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
 contributor:  vaibch
+title:  Network Switch Manager cmdlets failure
 ---
 
 The Network Switch Manager cmdlets can be used to manage network switches over WSMAN. 
@@ -77,3 +81,4 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
+
