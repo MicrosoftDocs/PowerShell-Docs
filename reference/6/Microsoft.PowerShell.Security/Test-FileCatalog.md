@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Security.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=822570
-schema: 2.0.0
-title: Test-FileCatalog
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=822570
+external help file:  Microsoft.PowerShell.Security.dll-Help.xml
+title:  Test-FileCatalog
 ---
 
 # Test-FileCatalog

@@ -1,15 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  use the web based windows powershell console
-ms.technology:  powershell
 ---
-
 
 #  Use the Web-based Windows PowerShell Console
 

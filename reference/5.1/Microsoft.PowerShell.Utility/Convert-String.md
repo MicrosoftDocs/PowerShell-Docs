@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Convert-String
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821756
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821756
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Convert-String
 ---
-
 
 # Convert-String
 
@@ -33,16 +27,16 @@ The **Convert-String** cmdlet formats a string to match the format of examples.
 
 ### Example 1: Convert format of a string
 ```
-PS C:\> $Names = "Evan Narvaez","David Chew","Elisa Daugherty"
-Convert-String -InputObject $Names -Example "Patti Fuller = Fuller, P."
-Narvaez, E. 
-Chew, D. 
-Daugherty, E.
+PS C:\> "Mu Han", "Jim Hance", "David Ahs", "Kim Akers" | Convert-String -Example "Ed Wilson=Wilson, E."
+Han, M.
+Hance, J.
+Ahs, D.
+Akers, K.
 ```
 
-The first command creates an array named **$Names** that contains first and last names.
+The first command creates an array that contains first and last names.
 
-The second command formats the names in **$Names** according to the example.
+The second command formats the names according to the example.
 It puts the surname first in the output, followed by an initial.
 
 ### Example 2: Format process information

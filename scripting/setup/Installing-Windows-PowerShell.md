@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Installing Windows PowerShell
-ms.technology:  powershell
-ms.assetid:    6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
+ms.assetid:  6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 ---
-
 
 # Installing Windows PowerShell
 Windows® 8 and Windows Server® 2012 include Windows PowerShell 3.0 and all of its prerequisites. The system also includes the Windows PowerShell 2.0 engine for backward compatibility with host programs that cannot use Windows PowerShell 3.0.

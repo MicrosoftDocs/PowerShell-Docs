@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Getting WMI Objects Get WmiObject
-ms.technology:  powershell
-ms.assetid:    f0ddfc7d-6b5e-4832-82de-2283597ea70d
+ms.assetid:  f0ddfc7d-6b5e-4832-82de-2283597ea70d
 ---
-
 
 # Getting WMI Objects (Get-WmiObject)
 

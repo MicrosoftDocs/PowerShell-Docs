@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  5.1.1.0
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390787
+Module Guid:  1da87e53-152b-403e-98dc-74d7b4d63d59
 title:  Microsoft.PowerShell.Utility
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Utility
-Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390787
-Help Version:   5.1.1.0
-Module Guid:   1da87e53-152b-403e-98dc-74d7b4d63d59
+Module Name:  Microsoft.PowerShell.Utility
 ---
-
 
 # Microsoft.PowerShell.Utility Module
 ## Description

@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Windows PowerShell Glossary
-ms.technology:  powershell
-ms.assetid:    b0f88cbe-cb83-4912-a301-184534cb35c7
+ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 ---
-
 
 # Windows PowerShell Glossary
 

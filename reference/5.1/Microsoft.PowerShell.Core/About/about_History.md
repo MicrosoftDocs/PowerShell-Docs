@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_History
-ms.technology:  powershell
 ---
 
 # About History
@@ -28,15 +24,15 @@ commands from the command history.
 History Cmdlets
 Windows PowerShell has a set of cmdlets that manage the command history.
 
-Cmdlet (Alias)       Description
--------------------  ------------------------------------------
-Get-History (h)      Gets the command history.
+Cmdlet (Alias)        Description
+-------------------   ------------------------------------------
+Get-History (h)       Gets the command history.
 
-Invoke-History (r)   Runs a command in the command history.
+Invoke-History (r)    Runs a command in the command history.
 
-Add-History          Adds a command to the command history.
+Add-History           Adds a command to the command history.
 
-Clear-History (clh)  Deletes commands from the command history.
+Clear-History (clhy)  Deletes commands from the command history.
 
 Keyboard Shortcuts for Managing History
 In the Windows PowerShell console, you can use the following shortcuts
@@ -102,3 +98,4 @@ the prompt level.)
 [about_Profiles](about_Profiles.md)
 
 [about_Variables](about_Variables.md)
+

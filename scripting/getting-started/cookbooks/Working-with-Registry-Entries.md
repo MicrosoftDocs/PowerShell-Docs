@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Working with Registry Entries
-ms.technology:  powershell
-ms.assetid:    fd254570-27ac-4cc9-81d4-011afd29b7dc
+ms.assetid:  fd254570-27ac-4cc9-81d4-011afd29b7dc
 ---
-
 
 # Working with Registry Entries
 Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.

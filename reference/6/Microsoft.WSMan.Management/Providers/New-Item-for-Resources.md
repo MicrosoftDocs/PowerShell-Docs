@@ -1,14 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: New-Item for Resources
-ms.technology:  powershell
-online version:   http://go.microsoft.com/fwlink/?LinkId=834978
+title:  New-Item for Resources
+online version:  http://go.microsoft.com/fwlink/?LinkId=834978
 ---
 
 # New-Item for Resources

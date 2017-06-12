@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The PowerShellTabCollection Object
-ms.technology:  powershell
-ms.assetid:    81f4bf4a-83bf-415e-8378-1703792fbb58
+ms.assetid:  81f4bf4a-83bf-415e-8378-1703792fbb58
 ---
-
 
 # The PowerShellTabCollection Object
   The **PowerShellTab** collection object is a collection of **PowerShellTab** objects. Each **PowerShellTab** object functions as a separate runtime environment. It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class. An example is the **$psISE.PowerShellTabs** object.
