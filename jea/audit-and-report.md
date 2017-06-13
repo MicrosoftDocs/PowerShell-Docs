@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  Auditing and Reporting on JEA
-ms.technology:  powershell
 ---
 
 # Auditing and Reporting on JEA
@@ -152,3 +148,4 @@ The details of that object are printed a few lines below, closely mimicking what
 
 - [Audit user actions in a JEA session](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

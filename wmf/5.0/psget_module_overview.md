@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # PowerShell Module Discovery, Install and Inventory with PowerShellGet
  
 PowerShellGet is included in this release of WMF:

@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Call Base Class Method
 
 You can override existing methods in subclasses. To do this, declare methods by using the same name and signature:
@@ -46,3 +53,4 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
+

@@ -1,12 +1,9 @@
 ---
-title:   Desired State Configuration Overview for Decision Makers 
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Desired State Configuration Overview for Decision Makers
 ---
 
 # Desired State Configuration Overview for Decision Makers

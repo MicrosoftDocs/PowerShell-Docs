@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # New built-in DSC resources
 
 WMF 5.0 RTM has 4 new DSC resources: 
@@ -81,3 +88,4 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
+

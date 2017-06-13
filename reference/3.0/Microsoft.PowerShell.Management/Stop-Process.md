@@ -34,7 +34,7 @@ You can specify a process by process name or process ID (PID), or pass a process
 Stop-Process works only on processes running on the local computer.
 
 On Windows Vista and later versions of Windows, to stop a process that is not owned by the current user, you must start Windows PowerShell with the "Run as administrator" option. 
-Also, you are prompted for confirmation unless you use the Force parameter.
+Also, you are will not be prompted for confirmation unless you specify the *Confirm* parameter.
 ## EXAMPLES
 
 ### Example 1

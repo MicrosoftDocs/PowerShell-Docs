@@ -85,7 +85,7 @@ $hash = @{ Number = 1; Shape = "Square"; Color = "Blue"}
 
 
 ### Creating Ordered Dictionaries
-You can create an ordered dictionary by adding an object of the OrderedDictiory type, but the easiest way to create an ordered dictionary is use the [Ordered] attribute.
+You can create an ordered dictionary by adding an object of the OrderedDictionary type, but the easiest way to create an ordered dictionary is use the [Ordered] attribute.
 
 The [ordered] attribute is introduced in Windows PowerShell 3.0.
 

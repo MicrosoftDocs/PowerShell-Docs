@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Test-DscConfiguration cmdlet supports Reference Configurations
 
 The Test-DscConfiguration cmdlet has been updated to allow testing of desired configuration state of one or more target nodes by specifying a reference configuration document to compare against.
@@ -35,3 +42,4 @@ Test-DscConfiguration 	-ReferenceConfiguration <string>
 						[-AsJob] 
 						[<CommonParameters>]
 ```
+

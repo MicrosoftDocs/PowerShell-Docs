@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # PowerShellGet Cmdlets for Module Management
 
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
@@ -277,3 +284,4 @@ PrivateData = @{
 } # End of PrivateData hashtable
 ```
 ***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on previous PowerShell version.
+

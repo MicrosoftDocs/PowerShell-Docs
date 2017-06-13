@@ -1,12 +1,9 @@
 ---
-title:   Writing a custom DSC resource with PowerShell classes
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Writing a custom DSC resource with PowerShell classes
 ---
 
 # Writing a custom DSC resource with PowerShell classes

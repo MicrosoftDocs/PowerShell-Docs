@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Support for mixed RefreshMode
 
 When you use partial configurations, you can now define each individual partial configuration with a `RefreshMode`. 

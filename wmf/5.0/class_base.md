@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Declare Base Class
 You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.
 
@@ -29,3 +36,4 @@ $list.Add(100)
 
 $list[0] # return 100
 ```
+
