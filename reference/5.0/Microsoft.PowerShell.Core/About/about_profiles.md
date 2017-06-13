@@ -299,7 +299,7 @@ command in your profile.
 
 
 Windows PowerShell profiles are not run automatically in remote sessions,
-so the commands that the profileS add are not present in the remote session.
+so the commands that the profiles add are not present in the remote session.
 In addition, the $profile automatic variable is not populated in remote sessions.
 
 To run a profile in a session, use the Invoke-Command cmdlet.
