@@ -15,13 +15,24 @@ Describes the operators that perform arithmetic in Windows PowerShell.
 ## LONG DESCRIPTION
 
 
-Arithmetic operators calculate numeric values. You can use one or more arithmetic operators to add, subtract, multiply, and divide values, and to calculate the remainder (modulus) of a division operation.
+Arithmetic operators calculate numeric values. You can use one or more 
+arithmetic operators to add, subtract, multiply, and divide values, 
+and to calculate the remainder (modulus) of a division operation.
 
-In addition, the addition operator (`+`) and multiplication operator (`*`) also operate on strings, arrays, and hash tables. The addition operator concatenates the input. The multiplication operator returns multiple copies of the input. You can even mix object types in an arithmetic statement. The method that is used to evaluate the statement is determined by the type of the leftmost object in the expression.
+In addition, the addition operator (`+`) and multiplication operator (`*`) 
+also operate on strings, arrays, and hash tables. 
+The addition operator concatenates the input. The multiplication operator 
+returns multiple copies of the input. 
+You can even mix object types in an arithmetic statement. 
+The method that is used to evaluate the statement is determined by the type of 
+the leftmost object in the expression.
 
-Beginning in Windows PowerShell 2.0, all arithmetic operators work on 64-bit numbers.
+Beginning in Windows PowerShell 2.0, 
+all arithmetic operators work on 64-bit numbers.
 
-Beginning in Windows PowerShell 3.0, the `-shr` (shift-right) and `-shl` (shift-left) are added to support bitwise arithmetic in Windows PowerShell.
+Beginning in Windows PowerShell 3.0, 
+the `-shr` (shift-right) and `-shl` (shift-left) are added to support 
+bitwise arithmetic in Windows PowerShell.
 
 Windows PowerShell supports the following arithmetic operators:
 
@@ -47,19 +58,15 @@ Precedence | Operator| Description
 3 | `*`, `/`, `%` | 
 4 | `+`, `-` | For addition and subtraction
 
-Windows PowerShell processes the expressions from left to right according to the precedence rules. The following examples show the effect of the precedence rules:
+Windows PowerShell processes the expressions from left to right according to 
+the precedence rules. 
+The following examples show the effect of the precedence rules:
 
-```powershell
-3+6/3*4 -eq 11
-3+6/(3*4) -eq 3.5
-(3+6)/3*4 -eq 12
-```
-
-```output
-True
-True
-True
-```
+Expression | Result
+-- | --
+`3+6/3*4` | `11`
+`3+6/(3*4)` | `3.5`
+`(3+6)/3*4` | `12`
 
 The order in which Windows PowerShell evaluates expressions might differ from
 other programming and scripting languages that you have used.
@@ -74,8 +81,10 @@ $b[$a] = $c[$a++]
 ```
 
 In this example, the expression `$a++` is evaluated before `$b[$a]`.
-Evaluating `$a++` changes the value of `$a` after it is used in the statement `$c[$a++]`.
-The variable `$a` in `$b[$a]` equals `1`, not `0`; so, the statement assigns a value to `$b[1]`, not `$b[0]`.
+Evaluating `$a++` changes the value of `$a` after it is used in
+the statement `$c[$a++]`; but, before it is used in `$b[$a]`.
+The variable `$a` in `$b[$a]` equals `1`, not `0`; 
+so, the statement assigns a value to `$b[1]`, not `$b[0]`.
 
 The above code is equivalent to:
 
@@ -98,10 +107,10 @@ When the value is `.5`, it rounds to the nearest even integer.
 The following example shows the effect of rounding to the nearest even
 integer.
 
-```powershell
-[int]( 5 / 2 )  -eq 2
-[int]( 7 / 2 )  -eq 4
-```
+Expression | Result
+-- | --
+`[int]( 5 / 2 )` | `2`
+`[int]( 7 / 2 )` | `4`
 
 Notice how **_5/2_ = 2.5** gets rounded to **2**.
 But, **_7/2_ = 3.5** gets rounded to **4**.
@@ -115,7 +124,8 @@ However, you cannot multiply hash tables.
 When you add strings, arrays, or hash tables, the elements are concatenated.
 When you concatenate collections, such as arrays or hash tables,
 a new object is created that contains the objects from both collections.
-If you try to concatenate hash tables that have the same key, the operation fails.
+If you try to concatenate hash tables that have the same key, 
+the operation fails.
 
 For example, the following commands create two arrays and then add them:
 
@@ -152,7 +162,7 @@ Expression | Results
 `"file" + 16` | `file16` 
 `$array + 16` | `1`<br/>`2`<br/>`3`<br/>`16`
 `$array + "file"` | `1`<br/>`2`<br/>`3`<br/>`file`
-"file" * 3 | `filefilefile`
+`"file" * 3` | `filefilefile`
 
 Because the method that is used to evaluate statements is determined by the
 leftmost object,
@@ -168,17 +178,19 @@ Expression | Results
 `"file" + 16` | `file16` 
 `16 + "file"` | `Cannot convert value "file" to type "System.Int32".`<br/>`Error: "Input string was not in a correct format."`<br/>`At line:1 char:1`<br/>`+ 16 + "file"`
 
+Hash tables are a slightly different case.
+You can add hash tables to another hash table;
+for as long the added hash tables don't have duplicate keys.
 
-Hash tables are a slightly different case. You can add hash tables. And, you can add a hash table to an array. However, you cannot add any other type to a hash table.
-
-The following examples show how to add hash tables to each other and to other objects:
+The following example show how to add hash tables to each other. 
 
 ```powershell
-C:\PS> $hash1 = @{a=1; b=2; c=3}
-C:\PS> $hash2 = @{c1="Server01"; c2="Server02"}
-C:\PS> $hash1 + $hash2
+$hash1 = @{a=1; b=2; c=3}
+$hash2 = @{c1="Server01"; c2="Server02"}
+$hash1 + $hash2
 ```
 
+```output
 Name                           Value
 ----                           -----
 c2                             Server02
@@ -188,205 +200,174 @@ c1                             Server01
 c                              3
 ```
 
-```
-C:\PS> $hash1 + 2
-You can add another hash table only to a hash table.
-At line:1 char:9
-+ $hash1 + <<<<  2
+The following example throws an error because one of the keys 
+is duplicated in both hash tables.
+
+```powershell
+$hash1 = @{a=1; b=2; c=3}
+$hash2 = @{c1="Server01"; c="Server02"}
+$hash1 + $hash2
 ```
 
-```
-C:\PS> 2 + $hash1
-Cannot convert "System.Collections.Hashtable" to "System.Int32".
-At line:1 char:4
-+ 2 + <<<<  $hash1
+```output
+Item has already been added. Key in dictionary: 'c'  Key being added: 'c'
+At line:3 char:1
++ $hash1 + $hash2
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
 ```
 
-The following examples demonstrate that you can add a hash table to an array. The entire hash table is added to the array as a single object.
+Also, you can add a hash table to an array; and, the entire hash table becomes
+an item in the array.
 
+```powershell
+$array1 = @(0, "Hello World", [datetime]::Now)
+$hash1 = @{a=1; b=2}
+$array2 = $array1 + $hash1
+$array2
 ```
-C:\PS> $array = 1,2,3
-C:\PS> $array + $hash1
+
+```output
+0
+Hello World
+
+Monday, June 12, 2017 3:05:46 PM
+
+Key   : a
+Value : 1
+Name  : a
+
+
+Key   : b
+Value : 2
+Name  : b
+```
+
+However, you cannot add any other type to a hash table.
+
+```powershell
+$hash1 + 2
+```
+
+```output
+A hash table can only be added to another hash table.
+At line:3 char:1
++ $hash1 + 2
+```
+
+Although the addition operators are very useful,
+use the assignment operators to add elements to hash tables and arrays. 
+For more information see 
+[about_assignment_operators](about_Assignment_Operators.md). 
+The following examples use the `+=` assignment operator to add items to an 
+array:
+
+```powershell
+$array = @()
+(0..9).foreach{ $array += $_ }
+$array
+```
+
+```output
+0
 1
 2
-3
-
-Name                           Value
-----                           -----
-a                              1
-b                              2
-c                              3
 ```
 
-```
-C:\PS> $sum = $array + $hash1
-C:\PS> $sum.count
-4
-```
+## TYPE CONVERSION TO ACCOMMODATE RESULT
 
-```
-C:\PS> $sum[3]
-Name                           Value
-----                           -----
-a                              1
-b                              2
-c                              3
+Windows PowerShell automatically selects the .NET Framework numeric type that
+best expresses the result without losing  precision. For example:
+
+```powershell
+2 + 3.1
+
+(2). GetType().FullName
+(2 + 3.1).GetType().FullName
 ```
 
-```
-PS C:\ps-test> $sum + $hash2
-1
-2
-3
-
-Name                           Value
-----                           -----
-a                              1
-b                              2
-c                              3
-c2                             Server02
-```
-
-The following example shows that you cannot add hash tables that contain the same key:
-
-```
-C:\PS> $hash1 = @{a=1; b=2; c=3}
-C:\PS> $hash2 = @{c="red"}
-C:\PS> $hash1 + $hash2
-Bad argument to operator '+': Item has already been added.
-Key in dictionary: 'c'    Key being added: 'c'.
-At line:1 char:9
-+ $hash1 + <<<<  $hash2
-```
-
-Although the addition operators are very useful, use the assignment operators to add elements to hash tables and arrays. For more information see [about_assignment_operators](about_Assignment_Operators.md). The following examples use the `+=` assignment operator to add items to an array:
-
-```
-C:\PS>  $array
-1
-2
-3
-
-C:\PS>  $array + "file"
-1
-2
-3
-file
-
-C:\PS>  $array
-1
-2
-3
-
-C:\PS>  $array += "file"
-C:\PS>  $array
-1
-2
-3
-file
-```
-
-```
-C:\PS> $hash1
-Name                           Value
-----                           -----
-a                              1
-b                              2
-c                              3
-
-C:\PS> $hash1 += @{e = 5}
-C:\PS> $hash1
-Name                           Value
-----                           -----
-a                              1
-b                              2
-e                              5
-c                              3
-```
-
-Windows PowerShell automatically selects the .NET Framework numeric type that best expresses the result without losing  precision. For example:
-
-```
-C:\PS> 2 + 3.1
+```output
 5.1
-
-C:\PS> (2). GetType().FullName
 System.Int32
-C:\PS> (2 + 3.1).GetType().FullName
 System.Double
 ```
 
-If the result of an operation is too large for the type, the type of the result is widened to accommodate the result, as in the following example:
+If the result of an operation is too large for the type, the type of the
+result is widened to accommodate the result, as in the following example:
 
+```powershell
+(512MB).GetType().FullName
+(512MB * 512MB).GetType().FullName
 ```
-C:\PS> (512MB).GetType().FullName
+
+```output
 System.Int32
-C:\PS> (512MB * 512MB).GetType().FullName
 System.Double
 ```
 
-The type of the result will not necessarily be the same as one of the operands. In the following example, the negative value cannot be cast to an unsigned integer, and the unsigned integer is too large to be cast to `Int32`:
+The type of the result will not necessarily be the same as one of the
+operands.
+In the following example, the negative value cannot be cast to an
+unsigned integer, and the unsigned integer is too large to be cast to `Int32`:
 
+```powershell
+([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
 ```
-C:\PS> ([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
+
+```output
 System.Int64
 ```
 
 In this example, `Int64` can accommodate both types.
 
-The `System.Decimal` type is an exception. If either operand has the Decimal type, the result will be of the Decimal type. If the result is too large for the Decimal type, it will not be cast to Double. Instead, an error results.
+The `System.Decimal` type is an exception.
+If either operand has the Decimal type, the result will be of the
+Decimal type.
+If the result is too large for the Decimal type,
+it will not be cast to Double. Instead, an error results.
 
-```
-C:\PS> [Decimal]::maxvalue
-79228162514264337593543950335
-```
-
-```
-C:\PS> [Decimal]::maxvalue + 1
-Value was either too large or too small for a Decimal.
-At line:1 char:22
-+ [Decimal]::maxvalue + <<<<  1
-```
+Expression | Result
+-- | --
+`[Decimal]::maxvalue` | `79228162514264337593543950335`
+`[Decimal]::maxvalue + 1` | `Value was either too large`<br/>`or too small for a Decimal.`
 
 ## ARITHMETIC OPERATORS AND VARIABLES
 
-You can also use arithmetic operators with variables. The operators act on the values of the variables. The following examples demonstrate the use of arithmetic operators with variables:
+You can also use arithmetic operators with variables.
+The operators act on the values of the variables.
+The following examples demonstrate the use of arithmetic
+operators with variables:
 
-```
-C:\PS> $intA = 6
-C:\PS> $intB = 4
-C:\PS> $intA + $intB
-10
-```
-
-```
-C:\PS> $a = "Windows "
-C:\PS> $b = "PowerShell "
-C:\PS> $c = 2
-C:\PS> $a + $b + $c
-
-Windows PowerShell 2
-```
+Expression | Result
+-- | --
+`$intA = 6`<br/>`$intB = 4`<br/>`$intA + $intB` | `10`
+`$a = "Power"`<br/>`$b = "Shell"`<br/>`$a + $b` | `PowerShell`
 
 ## ARITHMETIC OPERATORS AND COMMANDS
 
-Typically, you use the arithmetic operators in expressions with numbers, strings, and arrays. However, you can also use arithmetic operators with the objects that commands return and with the properties of those objects.
+Typically, you use the arithmetic operators in expressions with numbers,
+strings, and arrays.
+However, you can also use arithmetic operators with the objects that
+commands return and with the properties of those objects.
 
-The following examples show how to use the arithmetic operators in expressions with Windows PowerShell commands:
+The following examples show how to use the arithmetic operators in
+expressions with Windows PowerShell commands:
 
-```
-C:\PS> get-date
-Wednesday, January 02, 2008 1:28:42 PM
-```
-
-```
-C:\PS> $day = new-timespan -day 1
-C:\PS> get-date + $day
-Thursday, January 03, 2008 1:34:52 PM
+```powershell
+(get-date) + (new-timespan -day 1)
 ```
 
+The parenthesis operator forces the evaluation of the `get-date` cmdlet,
+and the evaluation of the `new-timespan -day 1` cmdlet expression;
+in that order.
+Both results are then added using the `+` operator.
+
+```powershell
+Get-Process | Where-Object { ($_.ws * 2) -gt 50mb }
 ```
-C:\PS> get-process | where {($_.ws * 2) -gt 50mb}
+
+```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
    1896      39    50968      30620   264 1,572.55   1104 explorer
@@ -397,9 +378,14 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     967      30    58804      59496   416   930.97   2508 WINWORD
 ```
 
+In the above expression, each process working space (`$_.ws`) is multiplied
+by `2`; and, the result, compared against `50mb` to see if it is greater
+than that.
+
 ## EXAMPLES
 
-The following examples show how to use the arithmetic operators in Windows PowerShell:
+The following examples show how to use the arithmetic operators in 
+Windows PowerShell:
 
 ```
 C:\PS> 1 + 1
