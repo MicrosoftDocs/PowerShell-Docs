@@ -258,7 +258,7 @@ At line:3 char:1
 
 Although the addition operators are very useful,
 use the assignment operators to add elements to hash tables and arrays. 
-For more information see 
+For more information see
 [about_assignment_operators](about_Assignment_Operators.md). 
 The following examples use the `+=` assignment operator to add items to an 
 array:
@@ -278,7 +278,8 @@ $array
 ## TYPE CONVERSION TO ACCOMMODATE RESULT
 
 Windows PowerShell automatically selects the .NET Framework numeric type that
-best expresses the result without losing  precision. For example:
+best expresses the result without losing  precision.
+For example:
 
 ```powershell
 2 + 3.1
@@ -358,8 +359,8 @@ expressions with Windows PowerShell commands:
 (get-date) + (new-timespan -day 1)
 ```
 
-The parenthesis operator forces the evaluation of the `get-date` cmdlet,
-and the evaluation of the `new-timespan -day 1` cmdlet expression;
+The parenthesis operator forces the evaluation of the `get-date` cmdlet
+and the evaluation of the `new-timespan -day 1` cmdlet expression,
 in that order.
 Both results are then added using the `+` operator.
 
@@ -387,169 +388,106 @@ than that.
 The following examples show how to use the arithmetic operators in 
 Windows PowerShell:
 
-```
-C:\PS> 1 + 1
-2
-```
-
-```
-C:\PS> 1 - 1
-0
-```
-
-```
-C:\PS> -(6 + 3)
--9
-```
-
-```
-C:\PS> 6 * 2
-12
-```
-
-```
-C:\PS> 7 / 2
-3.5
-```
-
-```
-C:\PS> 7 % 2
-1
-```
-
-```
-C:\PS> w * 3
-www
-
-C:\PS> 3 * "w"
-Cannot convert value "w" to type "System.Int32". Error: "Input string was not
-in a correct format."
-At line:1 char:4
-+ 3 * <<<< "w"
-```
-
-```
-PS C:\ps-test> "Windows" + " " + "PowerShell"
-Windows PowerShell
-
-PS C:\ps-test> $a = "Windows" + " " + "PowerShell"
-PS C:\ps-test> $a
-Windows PowerShell
-
-C:\PS> $a[0]
-W
-```
-
-```
-C:\PS> $a = "TestFiles.txt"
-C:\PS> $b = "C:\Logs\"
-C:\PS> $b + $a
-C:\Logs\TestFiles.txt
-```
-
-```
-C:\PS> $a = 1,2,3
-C:\PS> $a + 4
-1
-2
-3
-4
-```
-
-```
-C:\PS> $servers = @{0 = "LocalHost"; 1 = "Server01"; 2 = "Server02"}
-C:\PS> $servers + @{3 = "Server03"}
-Name Value
----- -----
-3    Server03
-2    Server02
-1    Server01
-0    LocalHost
-
-C:\PS> $servers
-Name Value
----- -----
-2    Server02
-1    Server01
-0    LocalHost
-
-C:\PS> $servers += @{3 = "Server03"} #Use assignment operator
-C:\PS> $servers
-Name Value
----- -----
-3    Server03
-2    Server02
-1    Server01
-0    LocalHost
-```
+Expression | Result
+-- | -- 
+`1 + 1` | `2`
+`1 - 1` | `0`
+`-(6 + 3)` | `-9`
+`6 * 2` | `12`
+`7 / 2` | `3.5`
+`7 % 2` | `1`
+`'w' * 3` | `www`
+`3 * 'w'` | `Cannot convert value "w" to type "System.Int32".`<br/>` Error: "Input string was not in a correct format."`
+`"Power" + "Shell"` | `PowerShell`
+`$a = "Power" + "Shell"`<br/>`$a[5]` | `S`
+`$b = 1,2,3`<br/>`$b + 4` | `1`<br/>`2`<br/>`3`<br/>`4`
+`$servers = @{`<br/>&nbsp;&nbsp;`0 = "LocalHost"`<br/>&nbsp;&nbsp;`1 = "Server01"`<br/>&nbsp;&nbsp;`2 = "Server02"`<br/>`}`<br/>`$servers + @{3 = "Server03"}` | `Name Value`<br/>`---- -----`<br/>`3    Server03`<br/>`2    Server02`<br/>`1    Server01`<br/>`0    LocalHost`
+`#Use assignment operator`<br/>`$servers += @{3 = "Server03"}` | `Name Value`<br/>`---- -----`<br/>`3    Server03`<br/>`2    Server02`<br/>`1    Server01`<br/>`0    LocalHost`
+`` | ``
 
 ## BITWISE ARITHMETIC IN WINDOWS POWERSHELL
 
-Windows PowerShell supports the `-shl` (shift-left) and `-shr` (shift-right) operators for bitwise arithmetic.
-
+Windows PowerShell supports the `-shl` (shift-left) and `-shr` (shift-right)
+operators for bitwise arithmetic.
 These operators are introduced in Windows PowerShell 3.0.
 
-In a bitwise shift-left operation, all bits are moved "n" places to the left, where "n" is the value of the right operand. A zero is inserted in the ones place.
+In a bitwise shift-left operation,
+all bits are moved "n" places to the left,
+where "n" is the value of the right operand.
+A zero is inserted in the ones place.
 
-When the left operand is an Integer (32-bit) value, the lower 5 bits of the right operand determine how many bits of the left operand are shifted.
+When the left operand is an Integer (32-bit) value,
+the lower 5 bits of the right operand determine how many bits of the left
+operand are shifted.
 
-When the left operand is a Long (64-bit) value, the lower 6 bits of the right operand determine how many bits of the left operand are shifted.
+When the left operand is a Long (64-bit) value,
+the lower 6 bits of the right operand determine how many bits of the left
+operand are shifted.
 
-```
-PS C:> 21 -shl 1
-42
+Expression | Result
+-- | --
+`21 -shl 0` | `21`
+`21 -shl 1` | `42`
+`21 -shl 2` | `84`
+`21 -shl 31` | `-2147483648`, [int]::MinValue
+`21 -shl 32` | `21`
+`21 -shl 64` | `21`
+`21 -shl 65` | `42`
+`21 -shl 66` | `84`
+`[int]::MaxValue -shl 1` | `-2`
 
-  00010101  (21)
-  00101010  (42)
-```
+> **Binary value** (decimal value)
+> - 00010101  (21)
+> - 00101010  (42)
+> - 01010100  (84)
+> - 10000000000000000000000000000000 (-2147483648), [int]::MinValue
+> - 1111111111111111111111111111111 (2147483647), [int]::MaxValue
+> - 11111111111111111111111111111110 (-2)
 
-```
-PS C:> 21 -shl 2
-84
+In a bitwise shift-right operation, all bits are moved "n" places to the right,
+where "n" is specified by the right operand.
+The shift-right operator (-shr) inserts a zero in the left-most place when
+shifting a positive or unsigned value to the right.
 
-  00010101  (21)
-  00101010  (42)
-  01010100  (84)
-```
+When the left operand is an Integer (32-bit) value,
+the lower 5 bits of the right operand determine how many bits of the left
+operand are shifted.
 
-In a bitwise shift-right operation, all bits are moved "n" places to the right, where "n" is specified by the right operand. The shift-right operator (-shr) inserts a zero in the left-most place when shifting a positive or unsigned value to the right.
+When the left operand is a Long (64-bit) value,
+the lower 6 bits of the right operand determine how many bits of the left
+operand are shifted.
 
-When the left operand is an Integer (32-bit) value, the lower 5 bits of the right operand determine how many bits of the left operand are shifted.
+Expression | Result
+-- | --
+`21 -shr 0` | `21`
+`21 -shr 1` | `10`
+`21 -shr 2` | `5`
+`21 -shr 31` | `0`
+`21 -shr 32` | `21`
+`21 -shr 64` | `21`
+`21 -shr 65` | `10`
+`21 -shr 66` | `5`
+`[int]::MaxValue -shr 1` | `1073741823`
+`[int]::MinValue -shr 1` | `-1073741824`
+`-1 -shr 1` | `-1`
 
-When the left operand is a Long (64-bit) value, the lower 6 bits of the right operand determine how many bits of the left operand are shifted.
-
-```
-PS C:> 21 -shr 1
-10
-
-  00010101  (21)
-  00001010  (10)
-```
-
-```
-PS C:> 21 -shr 2
-5
-
-  00010101  (21)
-  00001010  (10)
-  00000101  ( 5)
-```
+> **Binary value** (decimal value)
+> - 00010101  (21)
+> - 00001010  (10)
+> - 00000101  (5)
+> - 10000000000000000000000000000000 (-2147483648), [int]::MinValue
+> - 1111111111111111111111111111111 (2147483647), [int]::MaxValue
+> - 111111111111111111111111111111 (1073741823)
+> - 11000000000000000000000000000000 (-1073741824)
 
 ## SEE ALSO
 
-[about_arrays](about_Arrays.md)
-
-[about_assignment_operators](about_Assignment_Operators.md)
-
-[about_comparison_operators](about_Comparison_Operators.md)
-
-[about_hash_tables](about_Hash_Tables.md)
-
-[about_operators](about_Operators.md)
-
-[about_variables](about_Variables.md)
-
-[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
-
-[New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+* [about_arrays](about_Arrays.md)
+* [about_assignment_operators](about_Assignment_Operators.md)
+* [about_comparison_operators](about_Comparison_Operators.md)
+* [about_hash_tables](about_Hash_Tables.md)
+* [about_operators](about_Operators.md)
+* [about_variables](about_Variables.md)
+* [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
+* [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
 
