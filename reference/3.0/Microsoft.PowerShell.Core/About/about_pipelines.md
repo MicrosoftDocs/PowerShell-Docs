@@ -336,22 +336,26 @@ Specifies the service names for the service to be started.
 The parameter name is optional. You can use `-Name` or its alias,
 `-ServiceName`, or you can omit the parameter name.
 
+```
 Required?                    true
 Position?                    1
 Default value
--->  Accept pipeline input?       true (ByValue, ByPropertyName)
+Accept pipeline input?       true (ByValue, ByPropertyName)
 Accept wildcard characters?  true
+```
 
 `-InputObject` <ServiceController[]>
 Specifies ServiceController objects representing the services to be started. Enter
 a variable that contains the objects or type a command or expression that gets the
 objects.
 
+```
 Required?                    false
 Position?                    named
 Default value
--->  Accept pipeline input?       true (ByValue)
+Accept pipeline input?       true (ByValue)
 Accept wildcard characters?  false
+```
 
 This means that you can send objects (PsObjects) through the pipeline to the
 `Where-Object` cmdlet and Windows PowerShell will associate the object with the
@@ -463,14 +467,16 @@ Get-Help Move-ItemProperty -Parameter destination
 The results show that Destination takes pipeline input only "by property name".
 That is, the piped object must have a property named Destination.
 
-`-Destination` <string>
+`-Destination` <String>
 Specifies the path to the destination location.
 
+```
 Required?                    true
 Position?                    2
 Default value
 Accept pipeline input?       true (ByPropertyName)
 Accept wildcard characters?  true
+```
 
 To see the properties of the object being piped to the `Move-ItemProperty` cmdlet,
 pipe it to the `Get-Member` cmdlet. The following command pipes the results of the
