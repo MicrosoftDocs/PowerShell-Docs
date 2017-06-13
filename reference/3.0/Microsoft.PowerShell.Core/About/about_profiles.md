@@ -234,8 +234,6 @@ function Get-CmdletAlias ($cmdletname)
 Get-Alias | Where-Object -FilterScript {$_.Definition -like "$cmdletname"} | Format-Table -Property Definition, Name -AutoSize
 }
 ```
-- Add an Add-PsSnapin command to add any Windows PowerShell snap-ins that
-you use.
 
 - Customize your console.
 ```
