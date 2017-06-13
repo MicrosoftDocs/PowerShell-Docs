@@ -434,17 +434,20 @@ and then the named values being bound to the `Move-ItemProperty` cmdlet.
 
 BIND NAMED cmd line args [`Move-ItemProperty`]
 BIND arg [HKLM:\software\mycompany\design] to parameter [Path]
+
 ...
 
 BIND arg [product] to parameter [Name]
-....
 
-BIND POSITIONAL cmd line args [`Move-ItemProperty`]
 ...
 
+BIND POSITIONAL cmd line args [`Move-ItemProperty`]
+
+...
 
 Finally, it shows that the attempt to bind the path to the Destination parameter
 of `Move-ItemProperty` failed.
+
 ...
 
 BIND PIPELINE object to parameters: [`Move-ItemProperty`]
@@ -452,6 +455,7 @@ PIPELINE object TYPE = [Microsoft.Win32.RegistryKey]
 RESTORING pipeline parameter's original values
 Parameter [Destination] PIPELINE INPUT ValueFromPipelineByPropertyName NO COERCION
 Parameter [Credential] PIPELINE INPUT ValueFromPipelineByPropertyName NO COERCION
+
 ...
 
 
