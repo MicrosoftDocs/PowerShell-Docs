@@ -102,19 +102,6 @@ For example,
 ```
 
 
--RunAsAdministrator
-
-When this switch parameter is added to your requires statement, it specifies that the  Windows PowerShell session in which you are running the script must be started with elevated user rights (Run as Administrator).
-
-For example,
-
-
-```
-#Requires -RunAsAdministrator
-```
-
-
-
 ### EXAMPLES
 The following script has two \#Requires statements. If the requirements specified in both statements are not met, the script does not run. Each \#Requires statement must be the first item on a line:
 
