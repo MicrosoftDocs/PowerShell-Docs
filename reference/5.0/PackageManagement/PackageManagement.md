@@ -14,8 +14,6 @@ Module Name:  PackageManagement
 ## Description
 This topic displays help topics for the Package Management Cmdlets.
 
-PowerShell is a command-line shell and scripting language designed to help information technology (IT) professionals automate system administration tasks. To install the latest Azure PowerShell version and associate it with your Azure subscription, see [How to install and configure Azure PowerShell](http://azure.microsoft.com/documentation/articles/powershell-install-configure/).
-
 ## PackageManagement Cmdlets
 ### [Find-Package](Find-Package.md)
 Finds software packages in available package sources.
