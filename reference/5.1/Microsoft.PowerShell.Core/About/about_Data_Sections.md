@@ -64,42 +64,40 @@ The permitted content is limited to the following elements:
 
 - Literals, such as the following:
 
-  - a
+  + a
 
-  - 1
+  + 1
 
-  - 1,2,3
+  + 1,2,3
 
-  - "Windows PowerShell 2.0"
+  + "Windows PowerShell 2.0"
 
-  - @( "red", "green", "blue" )
+  + @( "red", "green", "blue" )
 
-  - @{ a = 0x1; b = "great"; c ="script" }
+  + @{ a = 0x1; b = "great"; c ="script" }
 
-  - 
+  + &nbsp;
   
-        ```powershell
-        [XML] @'
-        <p> Hello, World </p>
-        '@
-        ```
+      ```powershell
+      [XML] @'
+      <p> Hello, World </p>
+      '@
+      ```
 
-- Cmdlets that are permitted in a Data section. By default, only the
-ConvertFrom-StringData cmdlet is permitted.
+- Cmdlets that are permitted in a Data section. By default, only the `ConvertFrom-StringData` cmdlet is permitted.
 
-- Cmdlets that you permit in a Data section by using the
-SupportedCommand parameter.
+- Cmdlets that you permit in a Data section by using the `SupportedCommand` parameter.
 
-When you use the ConvertFrom-StringData cmdlet in a Data section, you can
+When you use the `ConvertFrom-StringData` cmdlet in a Data section, you can
 enclose the key/value pairs in single-quoted or double-quoted strings or in
 single-quoted or double-quoted here-strings. However, strings that contain
 variables and subexpressions must be enclosed in single-quoted strings or
 in single-quoted here-strings so that the variables are not expanded and the
 subexpressions are not executable.
 
-SupportedCommand
+## SupportedCommand
 
-The SupportedCommand parameter allows you to indicate that a cmdlet or
+The `SupportedCommand` parameter allows you to indicate that a cmdlet or
 function generates only data. It is designed to allow users to include
 cmdlets and functions in a data section that they have written or tested.
 
@@ -121,11 +119,11 @@ Using a Data Section
 To use the content of a Data section, assign it to a variable and use
 variable notation to access the content.
 
-For example, the following data section contains a ConvertFrom-StringData
+For example, the following data section contains a `ConvertFrom-StringData`
 command that converts the here-string into a hash table. The hash table
-is assigned to the $TextMsgs variable.
+is assigned to the `$TextMsgs` variable.
 
-The $TextMsgs variable is not part of the data section.
+The `$TextMsgs` variable is not part of the data section.
 
 ```powershell
 $TextMsgs = DATA {
@@ -136,7 +134,7 @@ Text002 = Windows Server 2008 R2
 }
 ```
 
-To access the keys and values in hash table in $TextMsgs, use the
+To access the keys and values in hash table in `$TextMsgs`, use the
 following commands.
 
 ```powershell
@@ -167,7 +165,7 @@ if ($null) {
 }
 ```
 
-A single-quoted here-string that uses the ConvertFrom-StringData cmdlet:
+A single-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA {
@@ -178,7 +176,7 @@ Text002 = Windows Server 2008 R2
 }
 ```
 
-A double-quoted here-string that uses the ConvertFrom-StringData cmdlet:
+A double-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA  {
@@ -213,7 +211,7 @@ Format-XML -strings string1, string2, string3
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-ConvertFrom-StringData
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-Import-LocalizedData
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
