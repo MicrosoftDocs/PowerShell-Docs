@@ -394,13 +394,13 @@ For more information, see about_Signing, `Get-Item`, and
 
 [about_Signing](about_Signing.md)
 
-[Get-ExecutionPolicy](/../staging/reference/5.0/Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+Get-ExecutionPolicy
 
-[Set-ExecutionPolicy](/../staging/reference/5.0/Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+Set-ExecutionPolicy
 
-[Get-Item](/../staging/reference/5.0/Microsoft.PowerShell.Management/Get-Item.md)
+Get-Item
   		  
-[Unblock-File](/../staging/reference/5.0/Microsoft.PowerShell.Utility/Unblock-File.md)
+Unblock-File
 
 [Administrative Templates for Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=131786)
 
