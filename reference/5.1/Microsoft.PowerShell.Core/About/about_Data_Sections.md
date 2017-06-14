@@ -40,49 +40,49 @@ Syntax
 
 The syntax for a Data section is as follows:
 
+```
 DATA [-supportedCommand <cmdlet-name>] {
-
 <Permitted content>
 }
+```
 
-The Data keyword is required. It is not case-sensitive.
+The `Data` keyword is required. It is not case-sensitive.
 
 The permitted content is limited to the following elements:
 
-- All Windows PowerShell operators, except -match
+- All Windows PowerShell operators, except `-match`
 
-- If, Else, and ElseIf statements
+- `If`, `Else`, and `ElseIf` statements
 
-- The following automatic variables: $PsCulture,  $PsUICulture,  $True,
-$False, and $Null
+- The following automatic variables: `$PsCulture`,  `$PsUICulture`,  `$True`, `$False`, and `$Null`
 
 - Comments
 
 - Pipelines
 
-- Statements separated by semicolons (;)
+- Statements separated by semicolons (`;`)
 
 - Literals, such as the following:
 
-a
+  - a
 
-# 1
+  - 1
 
+  - 1,2,3
 
-# 1,2,3
+  - "Windows PowerShell 2.0"
 
+  - @( "red", "green", "blue" )
 
-"Windows PowerShell 2.0"
+  - @{ a = 0x1; b = "great"; c ="script" }
 
-@( "red", "green", "blue" )
-
-@{ a = 0x1; b = "great"; c ="script" }
-
-# [XML] @'
-
-<p> Hello, World </p>
-# '@
-
+  - 
+  
+        ```powershell
+        [XML] @'
+        <p> Hello, World </p>
+        '@
+        ```
 
 - Cmdlets that are permitted in a Data section. By default, only the
 ConvertFrom-StringData cmdlet is permitted.
@@ -107,12 +107,14 @@ The value of SupportedCommand is a comma-separated list of one or more
 cmdlet or function names.
 
 For example, the following data section includes a user-written cmdlet,
-Format-XML, that formats data in an XML file:
+`Format-XML`, that formats data in an XML file:
 
+```powershell
 DATA -supportedCommand Format-XML
 {
 Format-XML -strings string1, string2, string3
 }
+```
 
 Using a Data Section
 
@@ -125,64 +127,75 @@ is assigned to the $TextMsgs variable.
 
 The $TextMsgs variable is not part of the data section.
 
+```powershell
 $TextMsgs = DATA {
 ConvertFrom-StringData -stringdata @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
-# '@
-
+'@
 }
+```
 
 To access the keys and values in hash table in $TextMsgs, use the
 following commands.
 
+```powershell
 $TextMsgs.Text001
 $TextMsgs.Text002
+```
 
 # EXAMPLES
 
 
 Simple data strings.
 
+```powershell
 DATA {
 "Thank you for using my Windows PowerShell Organize.pst script."
 "It is provided free of charge to the community."
 "I appreciate your comments and feedback."
 }
+```
 
 Strings that include permitted variables.
 
+```powershell
 DATA {
 if ($null) {
 "To get help for this cmdlet, type get-help new-dictionary."
 }
 }
+```
 
 A single-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
+```powershell
 DATA {
 ConvertFrom-StringData -stringdata @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
-# '@
-
+'@
 }
+```
 
 A double-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
+```powershell
 DATA  {
 ConvertFrom-StringData -stringdata @"
 Msg1 = To start, press any key.
 Msg2 = To exit, type "quit".
-# "@
-
+"@
 }
+```
 
 A data section that includes a user-written cmdlet that generates data:
 
+```powershell
 DATA -supportedCommand Format-XML {
 Format-XML -strings string1, string2, string3
 }
+```
 
 # SEE ALSO
 
