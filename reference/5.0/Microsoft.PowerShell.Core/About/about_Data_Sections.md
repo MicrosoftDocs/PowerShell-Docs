@@ -51,7 +51,7 @@ The permitted content is limited to the following elements:
 
 - All Windows PowerShell operators, except `-match`
 
-- If, Else, and ElseIf statements
+- `If`, `Else`, and `ElseIf` statements
 
 - The following automatic variables: `$PsCulture`,  `$PsUICulture`,  `$True`,
 `$False`, and `$Null`
@@ -221,6 +221,6 @@ DATA -supportedCommand Format-XML {
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-ConvertFrom-StringData
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-Import-LocalizedData
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
