@@ -51,7 +51,7 @@ The permitted content is limited to the following elements:
 
 - All Windows PowerShell operators, except `-match`
 
-- If, Else, and ElseIf statements
+- `If`, `Else`, and `ElseIf` statements
 
 - The following automatic variables: `$PsCulture`,  `$PsUICulture`,  `$True`,
 `$False`, and `$Null`
