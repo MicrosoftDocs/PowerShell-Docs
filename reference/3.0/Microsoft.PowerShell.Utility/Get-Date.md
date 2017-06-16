@@ -465,14 +465,11 @@ Otherwise, it returns a **DateTime** object.
 
     The following are the values of the `-UFormat` parameter. The format for the command is:
 
-    ```
-    Get-Date -UFormat %\<value\>
-    ```
+    `Get-Date -UFormat %\<value\>`
 
     For example,
-    ```
-    Get-Date -UFormat %d
-    ```
+    
+    `Get-Date -UFormat %d`
 
     
      * Date-Time:
