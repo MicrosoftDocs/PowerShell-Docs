@@ -10,12 +10,12 @@ title:  about_Data_Sections
 ## about_Data_Sections
 
 
-# SHORT DESCRIPTION
+### Short Description
 
 Explains Data sections, which isolate text strings and other read-only
 data from script logic.
 
-# LONG DESCRIPTION
+### Long Description
 
 Scripts that are designed for Windows PowerShell can have one or more
 Data sections that contain only data. You can include one or more Data
@@ -36,155 +36,176 @@ user interface (UI) languages.
 The Data section is a Windows PowerShell 2.0 feature. Scripts with Data
 sections will not run in Windows PowerShell 1.0 without revision.
 
-Syntax
+### Syntax
 
 The syntax for a Data section is as follows:
-
+```PowerShell
 DATA [-supportedCommand <cmdlet-name>] {
-
-<Permitted content>
+    <Permitted content>
 }
+```
 
 The Data keyword is required. It is not case-sensitive.
 
 The permitted content is limited to the following elements:
 
-- All Windows PowerShell operators, except -match
+- All Windows PowerShell operators, except `-match`
 
-- If, Else, and ElseIf statements
+- `If`, `Else`, and `ElseIf` statements
 
-- The following automatic variables: $PsCulture,  $PsUICulture,  $True,
-$False, and $Null
+- The following automatic variables: `$PsCulture`,  `$PsUICulture`,  `$True`,
+`$False`, and `$Null`
 
 - Comments
 
 - Pipelines
 
-- Statements separated by semicolons (;)
+- Statements separated by semicolons (`;`)
 
 - Literals, such as the following:
 
+```PowerShell
 a
+```
 
-# 1
+```PowerShell
+1
+```
 
+```PowerShell
+1,2,3
+```
 
-# 1,2,3
-
-
+```PowerShell
 "Windows PowerShell 2.0"
+```
 
+```PowerShell
 @( "red", "green", "blue" )
-
+```
+```PowerShell
 @{ a = 0x1; b = "great"; c ="script" }
+```
 
-# [XML] @'
-
+```PowerShell
+[XML] @'
 <p> Hello, World </p>
-# '@
-
+'@
+```
 
 - Cmdlets that are permitted in a Data section. By default, only the
-ConvertFrom-StringData cmdlet is permitted.
+`ConvertFrom-StringData` cmdlet is permitted.
 
 - Cmdlets that you permit in a Data section by using the
-SupportedCommand parameter.
+`-SupportedCommand` parameter.
 
-When you use the ConvertFrom-StringData cmdlet in a Data section, you can
+When you use the `ConvertFrom-StringData` cmdlet in a Data section, you can
 enclose the key/value pairs in single-quoted or double-quoted strings or in
 single-quoted or double-quoted here-strings. However, strings that contain
 variables and subexpressions must be enclosed in single-quoted strings or
 in single-quoted here-strings so that the variables are not expanded and the
 subexpressions are not executable.
 
-SupportedCommand
+### -SupportedCommand
 
-The SupportedCommand parameter allows you to indicate that a cmdlet or
+The `-SupportedCommand` parameter allows you to indicate that a cmdlet or
 function generates only data. It is designed to allow users to include
 cmdlets and functions in a data section that they have written or tested.
 
-The value of SupportedCommand is a comma-separated list of one or more
+The value of `-SupportedCommand` is a comma-separated list of one or more
 cmdlet or function names.
 
 For example, the following data section includes a user-written cmdlet,
-Format-XML, that formats data in an XML file:
+`Format-XML`, that formats data in an XML file:
 
-DATA -supportedCommand Format-XML
+```PowerShell
+DATA -supportedCommand Format-Xml
 {
-Format-XML -strings string1, string2, string3
+    Format-Xml -Strings string1, string2, string3
 }
+```
 
-Using a Data Section
+### Using a Data Section
 
 To use the content of a Data section, assign it to a variable and use
 variable notation to access the content.
 
-For example, the following data section contains a ConvertFrom-StringData
+For example, the following data section contains a `ConvertFrom-StringData`
 command that converts the here-string into a hash table. The hash table
-is assigned to the $TextMsgs variable.
+is assigned to the `$TextMsgs` variable.
 
-The $TextMsgs variable is not part of the data section.
+The `$TextMsgs` variable is not part of the data section.
 
+```PowerShell
 $TextMsgs = DATA {
-ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
-# '@
-
+'@
 }
+```
 
 To access the keys and values in hash table in $TextMsgs, use the
 following commands.
 
+```PowerShell
 $TextMsgs.Text001
 $TextMsgs.Text002
+```
 
-# EXAMPLES
-
+### Examples
 
 Simple data strings.
 
+```PowerShell
 DATA {
-"Thank you for using my Windows PowerShell Organize.pst script."
-"It is provided free of charge to the community."
-"I appreciate your comments and feedback."
+    "Thank you for using my Windows PowerShell Organize.pst script."
+    "It is provided free of charge to the community."
+    "I appreciate your comments and feedback."
 }
+```
 
 Strings that include permitted variables.
 
+```PowerShell
 DATA {
-if ($null) {
-"To get help for this cmdlet, type get-help new-dictionary."
+    if ($null) {
+        "To get help for this cmdlet, type get-help new-dictionary."
+    }
 }
-}
+```
 
 A single-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
+```PowerShell
 DATA {
-ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -stringdata @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
-# '@
-
+'@
 }
+```
 
 A double-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
+```PowerShell
 DATA  {
-ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -stringdata @"
 Msg1 = To start, press any key.
 Msg2 = To exit, type "quit".
-# "@
-
+"@
 }
+```
 
 A data section that includes a user-written cmdlet that generates data:
 
+```PowerShell
 DATA -supportedCommand Format-XML {
-Format-XML -strings string1, string2, string3
+    Format-Xml -strings string1, string2, string3
 }
+```
 
-# SEE ALSO
+# See Also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
@@ -200,7 +221,6 @@ Format-XML -strings string1, string2, string3
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-ConvertFrom-StringData
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-Import-LocalizedData
-
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
