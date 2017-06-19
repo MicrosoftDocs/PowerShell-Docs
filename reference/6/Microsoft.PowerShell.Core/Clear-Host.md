@@ -16,7 +16,7 @@ Clears the display in the host program.
 ## SYNTAX
 
 ```
-Clear-Host [<CommonParameters>]
+Clear-Host
 ```
 
 ## DESCRIPTION
@@ -76,9 +76,6 @@ Description
 This command uses the CLS alias of Clear-Host to clear the current display.
 
 ## PARAMETERS
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
