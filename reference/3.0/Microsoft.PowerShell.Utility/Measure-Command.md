@@ -15,7 +15,7 @@ Measures the time it takes to run script blocks and cmdlets.
 
 ## Syntax
 
-```PowerShell
+```powershell
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the
 
 ### Example 1
 
-```PowerShell
+```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
@@ -34,7 +34,7 @@ This command measures the time it takes to run a `Get-EventLog` command that get
 
 ### Example 2
 
-```PowerShell
+```powershell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 ```
 
@@ -52,7 +52,7 @@ TotalSeconds      : 8.6182763
 TotalMilliseconds : 8618.2763
 ```
 
-```PowerShell
+```powershell
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 ```
 

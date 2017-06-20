@@ -56,7 +56,7 @@ most recent commands, but you can change the value of the variable.
 For example, the following command lowers the `$MaximumHistoryCount` to
 100 commands:
 
-```PowerShell
+```powershell
 $MaximumHistoryCount = 100
 ```
 
