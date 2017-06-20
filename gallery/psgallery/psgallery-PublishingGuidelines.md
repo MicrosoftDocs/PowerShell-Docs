@@ -50,7 +50,7 @@ All items item published to the PowerShell Gallery will be scanned using PSScrip
 
 The best practice is to run ```Invoke-ScriptAnalyzer``` with ```-Recurse``` and ```-Severity``` Warning.
 
-Review the results, and ensure that 
+Review the results, and ensure that:
 
 * All Errors are corrected or addressed in your documentation
 * All Warnings are reviewed, and addressed where applicable
