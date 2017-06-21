@@ -48,7 +48,7 @@ PSScriptAnalyzer will identify the most common issues seen in PowerShell code, a
 The tool is easy to use, and categorizes the issues as Errors (severe, must be addressed), Warning (need to be reviewed & should be addressed), and Information (worth checking out for best practices). 
 All items item published to the PowerShell Gallery will be scanned using PSScriptAnalyzer, and any errors will be reported back to the owner and must be addressed. 
 
-The best practice is to run ```Invoke-ScriptAnalyzer``` with ```-Recurse``` and ```-Severity``` Warning.
+The best practice is to run Invoke-ScriptAnalyzer with -Recurse and -Severity Warning.
 
 Review the results, and ensure that:
 
