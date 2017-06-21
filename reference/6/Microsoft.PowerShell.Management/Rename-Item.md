@@ -73,7 +73,7 @@ When the command is complete, the key is renamed, but the registry entries in th
 
 ### Example 4: Rename multiple files
 ```
-PS C:\> Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt','.log' }
+PS C:\> Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt$','.log' }
 ```
 
 This example shows how to use the **Replace** operator to rename multiple files, even though the *NewName* parameter does not accept wildcard characters.
