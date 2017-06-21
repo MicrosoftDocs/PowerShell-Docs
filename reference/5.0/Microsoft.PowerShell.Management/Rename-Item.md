@@ -90,6 +90,7 @@ The **Replace** operator replaces the .txt file name extension of each file with
 Because the **Replace** operator works with regular expressions, the dot in front of txt is interpreted to match any character.
 To make sure that it matches only a dot (.), it is escaped with a backslash character (\\).
 The backslash character is not required in .log because it is a string, not a regular expression.
+
 To make sure that .txt is an extension, i.e. last part of the string representing the name, a dollar sign ($) is added after \.txt.
 
 ## PARAMETERS
