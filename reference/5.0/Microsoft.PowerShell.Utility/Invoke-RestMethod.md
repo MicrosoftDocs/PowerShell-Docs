@@ -15,7 +15,7 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax
 
-```PowerShell
+```powershell
 Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
@@ -37,7 +37,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
-```PowerShell
+```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
 Format-Table -Property Title, pubDate
 ```
@@ -63,7 +63,7 @@ The command uses the `Format-Table` cmdlet to display the values of the **Title*
 ### Example 2
 In the following example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
-```PowerShell
+```powershell
 $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
@@ -117,7 +117,7 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
@@ -126,7 +126,7 @@ Invoke-RestMethod http://website.com/service.aspx -Body $R
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
@@ -509,13 +509,13 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
 ```
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]
 ```
 
@@ -555,7 +555,7 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet
 
-```PowerShell
+```powershell
 Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
 ```
 

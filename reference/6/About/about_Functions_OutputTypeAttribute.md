@@ -36,7 +36,7 @@ value might be inaccurate.
 
 The OutputType attribute of functions has the following syntax:
 
-```PowerShell
+```powershell
 [OutputType([<TypeLiteral>], ParameterSetName="<Name>")]
 [OutputType("<TypeNameString>", ParameterSetName="<Name>")]
 ```
@@ -44,13 +44,13 @@ The ParameterSetName parameter is optional.
 
 You can list multiple types in the OutputType attribute.
 
-```PowerShell
+```powershell
 [OutputType([<Type1>],[<Type2>],[<Type3>])]
 ```
 You can use the ParameterSetName parameter to indicate that different
 parameter sets return different types.
 
-```PowerShell
+```powershell
 [OutputType([<Type1>], ParameterSetName="<Set1>","<Set2>")]
 [OutputType([<Type2>], ParameterSetName="<Set3>")]
 ```
@@ -61,7 +61,7 @@ the Param statement.
 The following example shows the placement of the OutputType attribute in a
 simple function.
 
-```PowerShell
+```powershell
 function SimpleFunction2
 {
   [OutputType([<Type>])]
@@ -74,7 +74,7 @@ function SimpleFunction2
 The following example shows the placement of the OutputType attribute in
 advanced functions.
 
-```PowerShell
+```powershell
 function AdvancedFunction1
 {
   [OutputType([<Type>])]
@@ -105,7 +105,7 @@ function AdvancedFunction2
 The following function uses the OutputType attribute to indicate that it returns
 a string value.
 
-```PowerShell
+```powershell
 function Send-Greeting
 {
   [OutputType([String])]
@@ -129,7 +129,7 @@ The following advanced function uses the OutputType attribute to indicate that
 the function returns different types depending on the parameter set used in the
 function command.
 
-```PowerShell
+```powershell
 function Get-User
 {
   [CmdletBinding(DefaultParameterSetName="ID")]
@@ -156,7 +156,7 @@ The Get-Time function returns a string that contains the short form of
 the time in any DateTime object. However, the OutputType attribute reports
 that it returns a System.DateTime object.
 
-```PowerShell
+```powershell
 function Get-Time
 {
   [OutputType([DateTime])]
@@ -197,7 +197,7 @@ Type properties.
 To get only the name of each output type, use a command with the following
 format.
 
-```PowerShell
+```powershell
 (Get-Command Get-Time).OutputType | ForEach {$_.Name}
 ```
 

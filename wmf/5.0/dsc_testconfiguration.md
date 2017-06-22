@@ -11,7 +11,7 @@ The Test-DscConfiguration cmdlet has been updated to allow testing of desired co
 
 The following new parameter sets use DSC configurations in the path specified to only test and never apply each configuration on the specified target node(s). As with Start-DscConfiguration and other DSC cmdlets, the name of each MOF is used to determine which target node to test the configuration on. 
 
-```PowerShell
+```powershell
 Test-DscConfiguration 	[-Path] <string> 
 						[[-ComputerName] <string[]>] 
 						[-Credential <pscredential>] 
@@ -28,7 +28,7 @@ Test-DscConfiguration 	[-Path] <string>
 
 The following new parameter sets use a single DSC configuration to only test and never apply the configuration on the specified target node(s). 
 
-```PowerShell
+```powershell
 Test-DscConfiguration 	-ReferenceConfiguration <string> 
 						[[-ComputerName] <string[]>]
 						[-Credential <pscredential>] 

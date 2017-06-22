@@ -132,7 +132,7 @@ Newer resources and custom resources can use this automatic property instead of 
 
 To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).
 
-```PowerShell
+```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
 Group [String] #ResourceName
 {
@@ -169,7 +169,7 @@ For most purposes this could be a generic user account, because by default users
 
 The following example code uses DSC to populate a local group with a domain user:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -228,7 +228,7 @@ For more information on certificates and DSC [read this post](http://aka.ms/cert
 
 To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -280,7 +280,7 @@ There is an exception for "localhost", "127.0.0.1", and "::1" in the domain port
 In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.
 In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:
 
-```PowerShell
+```powershell
 $cd = @{
     AllNodes = @(
         @{

@@ -56,7 +56,7 @@ or `mpg`, `mpeg`.
 > mentioned under the 'Get Names' results, but not under the 'Get Values';
 > similar output for `jpg`, `jpeg`, and `mpg`, `mpeg`.
 
-```PowerShell
+```powershell
 enum MediaTypes {
     unknown
     music = 10
@@ -170,7 +170,7 @@ two value.
 
 In the following example the *FileAttributes* enumeration is created.
 
- ```PowerShell
+ ```powershell
  [Flags()] enum FileAttributes {
      Archive = 1
      Compressed = 2

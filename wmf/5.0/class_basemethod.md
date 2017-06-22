@@ -9,7 +9,7 @@ keywords:  wmf,powershell,setup
 
 You can override existing methods in subclasses. To do this, declare methods by using the same name and signature:
 
-```PowerShell
+```powershell
 class baseClass
 {
 	[int]foo() {return 100500}
@@ -25,7 +25,7 @@ class childClass1 : baseClass
 
 To call base class methods from overridden implementations, cast to the base class ([baseClass]$this) on invocation:
 
-```PowerShell
+```powershell
 class childClass2 : baseClass
 {
 	[int]foo()
@@ -39,7 +39,7 @@ class childClass2 : baseClass
 
 All PowerShell methods are virtual. You can hide non-virtual .NET methods in a subclass by using the same syntax as you do for an override: just declare methods with same name and signature.
 
-```PowerShell
+```powershell
 class MyIntList : system.collections.generic.list[int]
 {
 	# Add is final in system.collections.generic.list

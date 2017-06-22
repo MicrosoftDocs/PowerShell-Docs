@@ -27,7 +27,7 @@ output of that command to yet another command. The result is a very powerful
 command chain or "pipeline" that is comprised of a series of simple commands.
 
 For example,
-```PowerShell
+```powershell
 Command-1 | Command-2 | Command-3
 ```
 
@@ -44,7 +44,7 @@ Here is a simple example. The following command gets the Notepad process
 and then stops it.
 
 For example,
-```PowerShell
+```powershell
 Get-Process notepad | Stop-Process
 ```
 
@@ -58,7 +58,7 @@ Here is a practical example. This command pipeline gets the text files in the
 current directory, selects only the files that are more than 10,000 bytes long,
 sorts them by length, and displays the name and length of each file in a table.
 
-```PowerShell
+```powershell
 Get-ChildItem -Path *.txt | Where-Object {$_.length -gt 10000} |
 Sort-Object -Property length | Format-Table -Property name, length
 ```
@@ -140,7 +140,7 @@ or `Stop-Service` cmdlets (although disabled services cannot be restarted in thi
 This command pipeline starts the WMI service on the computer:
 
 For example,
-```PowerShell
+```powershell
 Get-Service wmi | Start-Service
 ```
 
@@ -152,7 +152,7 @@ Windows PowerShell registry provider to the `New-ItemProperty` cmdlet. This comm
 a new registry entry, NoOfEmployees, with a value of 8124, to the MyCompany registry key.
 
 For example,
-```PowerShell
+```powershell
 Get-Item -Path HKLM:\Software\MyCompany | New-ItemProperty -Name NoOfEmployees -Value 8124
 ```
 
@@ -164,7 +164,7 @@ For example, you can pipe all of the processes on the computer to the `Sort-Obje
 and have them sorted by the number of handles in the process.
 
 For example,
-```PowerShell
+```powershell
 Get-Process | Sort-Object -Property handles
 ```
 
@@ -176,7 +176,7 @@ For example, you can pipe the Winlogon process to the `Format-List` cmdlet to di
 of the properties of the process in a list.
 
 For example,
-```PowerShell
+```powershell
 Get-Process winlogon | Format-List -Property *
 ```
 
@@ -220,7 +220,7 @@ objects.
 For example, piping objects representing the services on the computer to a `Format-Table` command,
 such as:
 
-```PowerShell
+```powershell
 Get-Service | Format-Table -Property name, dependentservices
 ```
 
@@ -228,7 +228,7 @@ is much like saving the service objects in a variable and using the InputObject 
 of `Format-Table` to submit the service object.
 
 For example,
-```PowerShell
+```powershell
 $services = Get-Service
 Format-Table -InputObject $services -Property name, dependentservices
 ```
@@ -236,7 +236,7 @@ Format-Table -InputObject $services -Property name, dependentservices
 or imbedding the command in the parameter value
 
 For example,
-```PowerShell
+```powershell
 Format-Table -InputObject (Get-Service wmi) -Property name, dependentservices
 ```
 
@@ -256,7 +256,7 @@ In this case, `Get-Member` displays the properties and methods of each process o
 System.Diagnostics.Process object.
 
 For example,
-```PowerShell
+```powershell
 Get-Process | Get-Member
 ```
 
@@ -276,7 +276,7 @@ array of System.Diagnostics.Process objects as a single unit, and it displays th
 of an array of objects. (Note the array symbol ([]) after the System.Object type name.)
 
 For example,
-```PowerShell
+```powershell
 Get-Member -InputObject (Get-Process)
 ```
 
@@ -296,7 +296,7 @@ example, an array of process objects has a Count property that you can use to co
 of processes on the computer.
 
 For example,
-```PowerShell
+```powershell
 (Get-Process).count
 ```
 
@@ -318,12 +318,12 @@ For example, to determine which of the parameters of the `Start-Service` cmdlet 
 pipeline input, type:
 
 For example,
-```PowerShell
+```powershell
 Get-Help Start-Service -Full
 ```
 
 For example,
-```PowerShell
+```powershell
 Get-Help Start-Service -Parameter *
 ```
 
@@ -400,7 +400,7 @@ a pipeline operator to send the result to the `Move-ItemProperty` cmdlet. The `M
 command specifies the current path and name of the registry entry to be moved.
 
 For example,
-```PowerShell
+```powershell
 Get-Item -Path HKLM:\software\mycompany\sales |
 Move-ItemProperty -Path HKLM:\software\mycompany\design -Name product
 ```
@@ -422,7 +422,7 @@ command is processing. It uses the `-PSHost` parameter to display the results at
 and the `-filepath` command to send them to the debug.txt file for later reference.
 
 For example,
-```PowerShell
+```powershell
 Trace-Command -Name parameterbinding -Expression {Get-Item -Path HKLM:\software\mycompany\sales |
 Move-ItemProperty -Path HKLM:\software\mycompany\design -Name product} -PSHost -FilePath debug.txt
 ```
@@ -464,7 +464,7 @@ Destination parameter. The following command gets detailed information about the
 Destination parameter.
 
 For example,
-```PowerShell
+```powershell
 Get-Help Move-ItemProperty -Parameter destination
 ```
 
@@ -487,7 +487,7 @@ pipe it to the `Get-Member` cmdlet. The following command pipes the results of t
 first part of the command to the `Get-Member` cmdlet.
 
 For example,
-```PowerShell
+```powershell
 Get-Item -Path HKLM:\software\mycompany\sales | Get-Member
 ```
 
@@ -499,7 +499,7 @@ use a `Get-ItemProperty` command to get the path, but the name and destination m
 in the `Move-ItemProperty` part of the command.
 
 For example,
-```PowerShell
+```powershell
 Get-Item -Path HKLM:\software\mycompany\design |
 Move-ItemProperty -Dest HKLM:\software\mycompany\design -Name product
 ```
@@ -507,7 +507,7 @@ Move-ItemProperty -Dest HKLM:\software\mycompany\design -Name product
 To verify that the command worked, use a `Get-ItemProperty` command:
 
 For example,
-```PowerShell
+```powershell
 Get-Itemproperty HKLM:\software\mycompany\sales
 ```
 
