@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  5.1.1.0
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390782
+Module Guid:  00000000-0000-0000-0000-000000000000
 title:  Microsoft.PowerShell.Core
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Core
-Download Help Link:   http://go.microsoft.com/fwlink/?linkid=390782
-Help Version:   5.1.1.0
-Module Guid:   00000000-0000-0000-0000-000000000000
+Module Name:  Microsoft.PowerShell.Core
 ---
-
 
 # Microsoft.PowerShell.Core Module
 ## Description

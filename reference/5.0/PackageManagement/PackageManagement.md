@@ -1,26 +1,18 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  5.0.5.3
+Download Help Link:  http://go.microsoft.com/fwlink/?linkid=392040
+Module Guid:  4ae9fd46-338a-459c-8186-07f910774cb8
 title:  PackageManagement
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   PackageManagement
-Download Help Link:   http://go.microsoft.com/fwlink/?linkid=392040
-Help Version:   5.0.5.3
-Module Guid:   4ae9fd46-338a-459c-8186-07f910774cb8
+Module Name:  PackageManagement
 ---
-
 
 # PackageManagement Module
 ## Description
 This topic displays help topics for the Package Management Cmdlets.
-
-PowerShell is a command-line shell and scripting language designed to help information technology (IT) professionals automate system administration tasks. To install the latest Azure PowerShell version and associate it with your Azure subscription, see [How to install and configure Azure PowerShell](http://azure.microsoft.com/documentation/articles/powershell-install-configure/).
 
 ## PackageManagement Cmdlets
 ### [Find-Package](Find-Package.md)

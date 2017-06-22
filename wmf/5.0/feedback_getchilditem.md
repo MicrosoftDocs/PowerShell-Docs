@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Get-ChildItem has -Depth parameter
 **Get-ChildItem** now has a **–Depth** parameter you use with **–Recurse** to limit the recursion:
 
@@ -40,3 +47,4 @@ Mode LastWriteTime Length Name
 ---- ------------- ------ ----
 
 d----- 4/14/2015 5:33 PM Depth1
+

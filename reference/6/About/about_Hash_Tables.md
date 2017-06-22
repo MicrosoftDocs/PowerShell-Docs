@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Hash_Tables
-ms.technology:  powershell
 ---
 
 # About Hash Tables
@@ -89,7 +85,7 @@ $hash = @{ Number = 1; Shape = "Square"; Color = "Blue"}
 
 
 ### Creating Ordered Dictionaries
-You can create an ordered dictionary by adding an object of the OrderedDictiory type, but the easiest way to create an ordered dictionary is use the [Ordered] attribute.
+You can create an ordered dictionary by adding an object of the OrderedDictionary type, but the easiest way to create an ordered dictionary is use the [Ordered] attribute.
 
 The [ordered] attribute is introduced in Windows PowerShell 3.0.
 
@@ -498,3 +494,4 @@ ConvertFrom-StringData
 Import-LocalizedData
 
 "System.Collections.Hashtable" on MSDN
+

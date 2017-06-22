@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Splatting
-ms.technology:  powershell
 ---
 
 # About Splatting
@@ -293,3 +289,4 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.
 [about_Hash_Tables](about_Hash_Tables.md)
 
 [about_Parameters](about_Parameters.md)
+

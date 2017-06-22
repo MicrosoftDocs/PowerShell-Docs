@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Stop Process
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821642
-external help file:   Microsoft.PowerShell.Commands.Management.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821642
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Stop-Process
 ---
-
 
 # Stop-Process
 
@@ -42,7 +36,7 @@ You can specify a process by process name or process ID (PID), or pass a process
 **Stop-Process** works only on processes running on the local computer.
 
 On Windows Vista and later versions of the Windows operating system, to stop a process that is not owned by the current user, you must start Windows PowerShell by using the Run as administrator option.
-Also, you are prompted for confirmation unless you specify the *Force* parameter.
+Also, you are will not be prompted for confirmation unless you specify the *Confirm* parameter.
 
 ## EXAMPLES
 

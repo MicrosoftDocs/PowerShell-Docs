@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Operator_Precedence
-ms.technology:  powershell
 ---
 
 # About Operator Precedence
@@ -198,3 +194,4 @@ intentions clear to people who are reading and maintaining your scripts.
 [about_Split](about_Split.md)
 
 [about_Type_Operators](about_Type_Operators.md)
+

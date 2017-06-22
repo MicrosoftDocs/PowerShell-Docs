@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Comment_Based_Help
-ms.technology:  powershell
 ---
 
 # About Comment Based Help
@@ -250,7 +246,7 @@ Additional information about the function or script.
 # .LINK
 
 The name of a related topic. The value appears on the line below
-the .LINE keyword and must be preceded by a comment symbol (#) or
+the .LINK keyword and must be preceded by a comment symbol (#) or
 included in the comment block.
 
 Repeat the .LINK keyword for each related topic.
@@ -873,3 +869,4 @@ Displays information about Windows PowerShell cmdlets and concepts.
 # KEYWORDS
 
 about_Comment-Based_Help
+

@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Appendix 1 Compatibility Aliases
-ms.technology:  powershell
-ms.assetid:    96ad921e-1a57-463e-8e60-424faf8b6ef8
+ms.assetid:  96ad921e-1a57-463e-8e60-424faf8b6ef8
 ---
-
 
 # Appendix 1 - Compatibility Aliases
 Windows PowerShell has several transition aliases that allow UNIX and Cmd users to use familiar command names in Windows PowerShell. The most common aliases are shown in the table below, along with the Windows PowerShell command behind the alias and the standard Windows PowerShell alias if one exists.

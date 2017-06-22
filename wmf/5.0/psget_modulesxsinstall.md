@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Side-by-Side Version Support on PowerShell 5.0 or newer
 
 There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.
@@ -26,3 +33,4 @@ Version    Name                                Type       Repository           D
 1.1.0      PSScriptAnalyzer                    Module     PSGallery            PSScriptAnalyzer provides script analysis... 
 1.1.1      PSScriptAnalyzer                    Module     PSGallery            PSScriptAnalyzer provides script analysis...
 ```
+

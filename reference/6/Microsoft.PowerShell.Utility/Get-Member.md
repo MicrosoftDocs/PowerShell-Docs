@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821792
-schema: 2.0.0
-title: Get Member
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821792
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Get-Member
 ---
 
 # Get-Member
@@ -83,7 +78,7 @@ As such, it gets all member types, but it does not get static members and does n
 ### Example 2: Get members of service objects
 ```
 PS C:\> Get-Service | Get-Member -Force
-PS C:\> (Get-Service -Schedule).PSBase
+PS C:\> (Get-Service Schedule).PSBase
 ```
 
 This example gets all of the members (properties and methods) of the service objects (System.ServiceProcess.ServiceController) retrieved by the Get-Service cmdlet, including the intrinsic members, such as PSBase and PSObject, and the get_ and set_ methods.

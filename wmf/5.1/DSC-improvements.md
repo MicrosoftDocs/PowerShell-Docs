@@ -1,13 +1,9 @@
 ---
-title:   DSC Improvements in WMF 5.1
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  DSC Improvements in WMF 5.1
 ---
 
 # Improvements in Desired State Configuration (DSC) in WMF 5.1

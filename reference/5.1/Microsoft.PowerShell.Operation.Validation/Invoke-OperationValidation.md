@@ -1,19 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Invoke OperationValidation
-ms.technology:  powershell
-ms.assetid:   C66EF231-7E55-4866-8938-9FEE8E577E10
-external help file:   Microsoft.PowerShell.Operation.Validation-help.xml
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=834966
+online version:  http://go.microsoft.com/fwlink/?LinkId=834966
+external help file:  Microsoft.PowerShell.Operation.Validation-help.xml
+title:  Invoke-OperationValidation
 ---
-
 
 # Invoke-OperationValidation
 

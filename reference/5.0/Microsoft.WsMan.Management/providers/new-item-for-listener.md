@@ -1,14 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  new item for listener
-ms.technology:  powershell
-online version:   http://go.microsoft.com/fwlink/?LinkId=834976
+title:  New-Item for Listener
+online version:  http://go.microsoft.com/fwlink/?LinkId=834976
 ---
 
 # New-Item for Listener

@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Creating and Connecting to a JEA Endpoint
 To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.
 
@@ -137,3 +144,4 @@ Connecting to a JEA Endpoint works the same way connecting to any other PowerShe
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to. If you try to run any command not allowed for your role, you will encounter an error.
+

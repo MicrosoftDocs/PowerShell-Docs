@@ -1,12 +1,9 @@
 ---
-title:   Desired State Configuration Overview for Decision Makers 
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Desired State Configuration Overview for Decision Makers
 ---
 
 # Desired State Configuration Overview for Decision Makers
@@ -50,10 +47,10 @@ check that configuration into source control, and operations teams can easily de
 Configurations are also [data-driven](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), 
 which makes it easier for ops teams to identify and change environments without developer intervention. 
 
-## Desired State Configuration On- and Off-Premise
+## Desired State Configuration On- and Off-Premises
 
-DSC can be used to manage both on-premise and off-premise deployments. 
-For on-premise solutions, DSC has a [pull server](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) 
+DSC can be used to manage both on-premises and off-premises deployments. 
+For on-premises solutions, DSC has a [pull server](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) 
 that can be used to centralize management of machines and report on their status. 
 For cloud solutions, DSC is usable wherever Windows is usable. 
 There are also specific offerings from Azure built on Desired State Configuration, 

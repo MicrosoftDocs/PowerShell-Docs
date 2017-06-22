@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2017-03-15
 title:  README
-ms.technology:  powershell
 ---
 
 # PowerShell Reference
@@ -25,7 +21,7 @@ and a distinct folder for the about topics.
 
 Over time, namespaces appeared as:
 
-- ISE, introduced in 3.0
+- ISE, introduced in 2.0
 - Microsoft.PowerShell.Archive, introduced in 5.0
 - Microsoft.PowerShell.Core, introduced in 3.0
 - Microsoft.PowerShell.Diagnostics, introduced in 3.0

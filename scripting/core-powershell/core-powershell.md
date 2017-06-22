@@ -1,15 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  core powershell
-ms.technology:  powershell
 ---
-
 
 #  Common PowerShell
 This section contains all reference material and in-depth guides for PowerShell.  

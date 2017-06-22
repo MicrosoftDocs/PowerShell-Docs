@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821638
-schema: 2.0.0
-title: Start Process
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821638
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Start-Process
 ---
 
 # Start-Process
@@ -328,12 +323,12 @@ The verbs that are available are determined by the file name extension of the fi
 
 The following table shows the verbs for some common process file types.
 
-`File type      Verbs`
-`---------      -------`
-`.cmd------Edit, Open, Print, Runas`
-`.exe------Open, RunAs`
-`.txt------Open, Print, PrintTo`
-`.wav------Open, Play`
+| File type | Verbs   |
+| --------- | ------- |
+|.cmd       | Edit, Open, Print, Runas |
+|.exe       | Open, RunAs |
+|.txt       | Open, Print, PrintTo |
+|.wav       | Open, Play |
 
 To find the verbs that can be used with the file that runs in a process, use the New-Object cmdlet to create a **System.Diagnostics.ProcessStartInfo** object for the file.
 The available verbs are in the **Verbs** property of the **ProcessStartInfo** object.

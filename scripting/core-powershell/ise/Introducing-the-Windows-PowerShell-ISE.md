@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Introducing the Windows PowerShell ISE
-ms.technology:  powershell
-ms.assetid:    a0de70ca-909a-4807-94d1-6da86e5b52a0
+ms.assetid:  a0de70ca-909a-4807-94d1-6da86e5b52a0
 ---
-
 
 # Introducing the Windows PowerShell ISE
 The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows PowerShell. In Windows PowerShell ISE, you can run commands and write, test, and debug scripts in a single Windows-based graphic user interface with multiline editing, tab completion, syntax coloring, selective execution, context-sensitive help, and support for right-to-left languages.

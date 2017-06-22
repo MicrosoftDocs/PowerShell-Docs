@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Installing the Windows PowerShell SDK
-ms.technology:  powershell
-ms.assetid:    c3636b45-61aa-4720-85f0-58312c4fc8f9
+ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
 ---
-
 
 # Installing the Windows PowerShell SDK
 

@@ -1,13 +1,9 @@
 ---
-title:   Windows Management Framework (WMF)
-ms.date:  2017-02-14
-keywords:  PowerShell, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Windows Management Framework (WMF)
 ---
 
 # Windows Management Framework
@@ -56,3 +52,4 @@ To learn about various enhancements in PowerShell and other components of a give
 **"Ships in-box"**: 
 The features of the `specified WMF` were shipped in the indicated version of  Windows and Windows Server.
 Hence, the `specified WMF` doesn't need to be installed on the indicated operating system versions.
+

@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Remove Job
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://technet.microsoft.com/library/hh849742.aspx
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://technet.microsoft.com/library/hh849742.aspx
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Remove-Job
 ---
-
 
 # Remove-Job
 

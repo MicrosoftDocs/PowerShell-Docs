@@ -1,14 +1,10 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Environment Provider
-ms.technology:  powershell
-online version:   https://go.microsoft.com/fwlink/?linkid=834944
+online version:  https://go.microsoft.com/fwlink/?linkid=834944
 ---
 
 # Environment Provider

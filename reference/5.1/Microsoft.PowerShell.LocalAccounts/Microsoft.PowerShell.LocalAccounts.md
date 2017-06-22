@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  5.1.1.0
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=717973
+Module Guid:  8e362604-2c0b-448f-a414-a6a690a644e2
 title:  Microsoft.PowerShell.LocalAccounts
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.LocalAccounts
-Download Help Link:   http://go.microsoft.com/fwlink/?LinkId=717973
-Help Version:   5.1.1.0
-Module Guid:   8e362604-2c0b-448f-a414-a6a690a644e2
+Module Name:  Microsoft.PowerShell.LocalAccounts
 ---
-
 
 # Microsoft.PowerShell.LocalAccounts Module
 ## Description

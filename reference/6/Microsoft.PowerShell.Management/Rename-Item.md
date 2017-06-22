@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821621
-schema: 2.0.0
-title: Rename Item
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821621
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Rename-Item
 ---
 
 # Rename-Item
@@ -78,7 +73,7 @@ When the command is complete, the key is renamed, but the registry entries in th
 
 ### Example 4: Rename multiple files
 ```
-PS C:\> Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt','.log' }
+PS C:\> Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt$','.log' }
 ```
 
 This example shows how to use the **Replace** operator to rename multiple files, even though the *NewName* parameter does not accept wildcard characters.
@@ -97,6 +92,8 @@ The **Replace** operator replaces the .txt file name extension of each file with
 Because the **Replace** operator works with regular expressions, the dot in front of txt is interpreted to match any character.
 To make sure that it matches only a dot (.), it is escaped with a backslash character (\\).
 The backslash character is not required in .log because it is a string, not a regular expression.
+
+To make sure that .txt is an extension, i.e. last part of the string representing the name, a dollar sign ($) is added after \\.txt.
 
 ## PARAMETERS
 

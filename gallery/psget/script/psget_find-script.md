@@ -1,14 +1,9 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2016-10-14
+ms.date:  2017-06-12
 contributor:  manikb
-title:  psget_find script
-ms.technology:  powershell
+ms.topic:  reference
+keywords:  gallery,powershell,cmdlet,psget
+title:  Find-Script
 ---
 
 # Find-Script

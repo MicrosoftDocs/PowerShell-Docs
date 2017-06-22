@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Test ScriptFileInfo
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=822336
-external help file:   PSModule-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=822336
+external help file:  PSModule-help.xml
+title:  Test-ScriptFileInfo
 ---
-
 
 # Test-ScriptFileInfo
 

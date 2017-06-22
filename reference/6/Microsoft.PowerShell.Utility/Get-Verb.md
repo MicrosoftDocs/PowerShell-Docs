@@ -1,7 +1,10 @@
 ---
-external help file: System.Management.Automation.dll-help.xml
-online version: http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
+external help file:  System.Management.Automation.dll-help.xml
 ---
 
 # Get-Verb

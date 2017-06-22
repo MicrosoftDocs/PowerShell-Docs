@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 title:  Microsoft.PowerShell.Management
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Management
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
+Module Name:  Microsoft.PowerShell.Management
 ---
-
 
 # Microsoft.PowerShell.Management Module
 ## Description

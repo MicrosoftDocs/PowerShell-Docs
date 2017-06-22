@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # PowerShell Script Discovery, Install and Management with PowerShellGet
 
 PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.
@@ -66,3 +73,4 @@ Syntax of script sharing Cmdlets:
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
+

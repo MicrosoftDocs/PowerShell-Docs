@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Using the Windows PowerShell ISE
-ms.technology:  powershell
-ms.assetid:    64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
+ms.assetid:  64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ---
-
 
 # Using the Windows PowerShell ISE
 This topics in this document describe how you can use features of the Windows PowerShell® Integrated Scripting Environment (ISE) to be more productive.

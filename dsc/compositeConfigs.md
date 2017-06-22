@@ -1,12 +1,9 @@
 ---
-title:   Nesting configurations
-ms.date:  2017-03-27
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Nesting configurations
 ---
 
 # Nesting DSC configurations
@@ -59,3 +56,4 @@ The properties in the `NestedConfig` resource block (**CopyFrom** and **CopyTo**
 ## See Also
 
 - [Composite resources--Using a DSC configuration as a resource](authoringResourceComposite.md)
+

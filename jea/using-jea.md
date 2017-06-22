@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  Using JEA
-ms.technology:  powershell
 ---
 
 # Using JEA
@@ -132,7 +128,6 @@ If you are building a C# app, you can create a PowerShell runspace that connects
 ```csharp
 
 // using System.Management.Automation;
-
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
 var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
@@ -144,7 +139,6 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     "/wsman",              // WSMan Path
                     string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
                     creds);                // Credentials
-
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -171,7 +165,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## Using JEA with PowerShell Direct
 
-Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession), a feature which allows Hyper-V administrators to manage virtual machines with PowerShell even if the VM is on a different network.
+Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession), a feature which allows Hyper-V administrators to manage virtual machines with PowerShell regardless of the network configuration or remote management settings on the virtual machine.
 
 You can use PowerShell Direct with JEA to give a Hyper-V administrator limited access to your VM, which can be useful if you lose network connectivity to your VM and need a datacenter admin to fix the network settings.
 
@@ -188,6 +182,7 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 ```
 
 It is strongly recommended that you create a dedicated local user with no other rights to manage the system for your Hyper-V administrators to use.
-Rememver that even an unprivileged user can still log into a Windows machine by default, including using unconstrained PowerShell.
+Remember that even an unprivileged user can still log into a Windows machine by default, including using unconstrained PowerShell.
 That will allow them to browse (some of) the file system and learn more about your OS environment.
-To lock down a Hyper-V administrator to only access a VM using PowerShell Direct with JEA, you will to deny local logon rights to the Hyper-V admin's JEA account.
+To lock down a Hyper-V administrator to only access a VM using PowerShell Direct with JEA, you will need to deny local logon rights to the Hyper-V admin's JEA account.
+

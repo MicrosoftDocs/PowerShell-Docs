@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  3.3.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?LinkID=223911
+Module Guid:  50cdb55f-5ab7-489f-9e94-4ec21ff51e59
 title:  PSScheduledJob
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   PSScheduledJob
-Download Help Link:   http://go.microsoft.com/fwlink/?LinkID=223911
-Help Version:   3.3.0.2
-Module Guid:   50cdb55f-5ab7-489f-9e94-4ec21ff51e59
+Module Name:  PSScheduledJob
 ---
-
 
 # PSScheduledJob Module
 ## Description

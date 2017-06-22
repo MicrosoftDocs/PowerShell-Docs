@@ -1,12 +1,9 @@
 ---
-title:   Specifying cross-node dependencies
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Specifying cross-node dependencies
 ---
 
 # Specifying cross-node dependencies
@@ -29,11 +26,31 @@ in any other resource blocks in your configuration to wait for the conditions sp
 For example, in the following configuration, the target node is waiting for the **xADDomain** resource to finish on the **MyDC** node with maximum number of 30 retries, at 15-second intervals, before the target node 
 can join the domain.
 
-```PowerShell
+```powershell
 Configuration JoinDomain
 
 {
-	Import-DscResource -Module xComputerManagement
+	Import-DscResource -Module xComputerManagement, xActiveDirectory
+
+	Node myPC
+	{
+		WindowsFeature InstallAD
+		{
+			Ensure = 'Present' 
+			Name = 'AD-Domain-Services' 
+		}
+
+		xADDomain NewDomain 
+		{ 
+			DomainName = 'Contoso.com'            
+			DomainAdministratorCredential = (Get-Credential)
+			SafemodeAdministratorPassword = (Get-Credential)
+			DatabasePath = "C:\Windows\NTDS"
+			LogPath = "C:\Windows\NTDS"
+			SysvolPath = "C:\Windows\Sysvol"
+		}
+
+	}
 
     Node myDomainJoinedServer
     {
@@ -48,7 +65,7 @@ Configuration JoinDomain
 
 	    xComputer JoinDomain
 	    {
-		    Name             = 'MyPC'
+		    Name             = 'myPC'
 		    DomainName       = 'Contoso.com'
 		    Credential       = (Get-Credential)
 		    DependsOn        ='[WaitForAll]DC'

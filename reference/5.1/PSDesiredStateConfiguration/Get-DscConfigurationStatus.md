@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Get DscConfigurationStatus
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821456
-external help file:   Get-DscConfigurationStatus.cdxml-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821456
+external help file:  Get-DscConfigurationStatus.cdxml-help.xml
+title:  Get-DscConfigurationStatus
 ---
-
 
 # Get-DscConfigurationStatus
 
@@ -49,7 +43,7 @@ This command gets information about all the configurations that were run on the 
 
 ### Example 3: Get information on the configuration run on a remote computer
 ```
-PS C:\> Get-DscConfigurationStaus -CimSession "Server01"
+PS C:\> Get-DscConfigurationStatus -CimSession "Server01"
 ```
 
 This command gets the configuration run details of the remote computer named Server01.

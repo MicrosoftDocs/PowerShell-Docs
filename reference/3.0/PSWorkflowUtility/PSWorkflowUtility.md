@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  3.3.0.2
+Download Help Link:  http://go.microsoft.com/fwlink/?Linkid=247510
+Module Guid:  e40bae2f-9558-479f-939b-e52407a19c86
 title:  PSWorkflowUtility
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   PSWorkflowUtility
-Download Help Link:   http://go.microsoft.com/fwlink/?Linkid=247510
-Help Version:   3.3.0.2
-Module Guid:   e40bae2f-9558-479f-939b-e52407a19c86
+Module Name:  PSWorkflowUtility
 ---
-
 
 # PSWorkflowUtility Module
 ## Description

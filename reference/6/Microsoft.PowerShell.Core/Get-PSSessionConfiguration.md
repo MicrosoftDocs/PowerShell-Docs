@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821490
-schema: 2.0.0
-title: Get PSSessionConfiguration
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821490
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Get-PSSessionConfiguration
 ---
 
 # Get-PSSessionConfiguration

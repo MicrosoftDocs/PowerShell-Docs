@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Functions_Advanced
-ms.technology:  powershell
 ---
 
 # About Functions Advanced
@@ -46,19 +42,21 @@ a name that includes a verb (Send) and noun (Greeting) pair similar to the
 verb-noun pair of a compiled cmdlet. However, functions are not required
 to have a verb-noun name.
 
+```powershell
 function Send-Greeting
 {
-[CmdletBinding()]
-Param(
-[Parameter(Mandatory=$true)]
-[string] $Name
-# )
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$true)]
+        [string] $Name
+    )
 
-Process
-{
-write-host ("Hello " + $Name + "!")
+    Process
+    {
+        write-host ("Hello " + $Name + "!")
+    }
 }
-}
+```
 
 The parameters of the function are declared by using the Parameter
 attribute. This attribute can be used alone, or it can be combined with
@@ -95,4 +93,5 @@ pass named parameters.
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
-Windows PowerShell Cmdlets (http://go.microsoft.com/fwlink/?LinkID=135279)
+[Windows PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)
+

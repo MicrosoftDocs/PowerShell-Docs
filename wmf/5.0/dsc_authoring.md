@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Authoring Improvements using PowerShell ISE
 
 Authoring DSC configurations in Windows PowerShell ISE is much easier, thanks to the following improvements:
@@ -8,3 +15,4 @@ Authoring DSC configurations in Windows PowerShell ISE is much easier, thanks to
 - Better tab completion of resource property values.
 
 **Note:** You must have an empty string for resource property values before you can use Ctrl+Space to list the options. Pressing **Tab** cycles through options.
+

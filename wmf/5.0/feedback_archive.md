@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Archive cmdlets
 
 Two new cmdlets, **Compress-Archive** and **Expand-Archive**, let you compress and expand ZIP files.
@@ -15,3 +22,4 @@ The **Expand-Archive** cmdlet extracts files from a specified archive file. An a
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>
 ```
+

@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The ISEEditor Object
-ms.technology:  powershell
-ms.assetid:    0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
-
 
 # The ISEEditor Object
   An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.

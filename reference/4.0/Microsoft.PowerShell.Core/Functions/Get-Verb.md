@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title:  Get Verb
-ms.technology:  powershell
-external help file:   System.Management.Automation.dll-help.xml
-online version:   http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
-schema:   2.0.0
+online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
+external help file:  System.Management.Automation.dll-help.xml
+title:  Get-Verb
 ---
-
 
 # Get-Verb
 

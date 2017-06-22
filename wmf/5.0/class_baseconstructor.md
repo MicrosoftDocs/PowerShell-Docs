@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Call Base Class Constructor
 
 To call a base class constructor from a subclass, use the keyword **base**:
@@ -29,3 +36,4 @@ class C : B
 	C([int]$c) {}
 }
 ```
+

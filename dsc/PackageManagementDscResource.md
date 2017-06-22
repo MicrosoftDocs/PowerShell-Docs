@@ -1,12 +1,9 @@
 ---
-title:   DSC PackageManagement Resource
-ms.date:  
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  brywang-msft
-manager:  kriscv
-ms.prod:  powershell
+ms.date:  2017-06-12
+author:  eslesar
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  DSC PackageManagement Resource
 ---
 
 # DSC PackageManagement Resource
@@ -95,3 +92,4 @@ Configuration PackageTest
     }
 }
 ```
+

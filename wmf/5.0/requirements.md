@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # System Requirements
 
 - Install the latest Windows updates before installing WMF 5.0 RTM.
@@ -85,3 +92,4 @@ wusa /uninstall /kb:3134760
 3.	Click **View installed updates.**
 
 4.	Select **Windows Management Framework 5.0** from the list of installed updates. This corresponds to *KB3134758*, *KB3134759*, or *KB3134760*. Click **Uninstall.**
+

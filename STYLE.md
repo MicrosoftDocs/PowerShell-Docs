@@ -35,12 +35,24 @@ Header 2
 ## Syntax
 
 * When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
-  * When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation
+  * Correct Example:
+  This `Write-Host` Cmdlet can ...
+  * Incorrect Example:
+  This **Write-Host** Cmdlet can ... and pipeline to out-file Cmdlet to ...
+* When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation
 * All PowerShell syntax blocks should use &#96;&#96;&#96;powershell
-* Do not start PowerShell commands with "C:\ PS>"
+* Do not start PowerShell commands with "`PS C:\>`"
+  * Correct Example:
+  ```powershell
+  Get-Process
+  ```
+  * Incorrect Example:
+  ```powershell
+  PS C:\> Get-Process
+  ```
 * Output emitted by PowerShell commands should be commented to prevent it from recieving syntax highlighting
 * Property names and parameter names should be in **bold**
-
+* PowerShell cmdlets are "[Pascal Cased](https://en.wikipedia.org/wiki/PascalCase)". Verbs are seperated from nouns by a hyphen.
 
 ## Lists
 
