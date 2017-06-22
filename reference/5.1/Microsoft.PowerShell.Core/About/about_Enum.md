@@ -56,7 +56,7 @@ or `mpg`, `mpeg`.
 > mentioned under the 'Get Names' results, but not under the 'Get Values';
 > similar output for `jpg`, `jpeg`, and `mpg`, `mpeg`.
 
-```PowerShell
+```powershell
 enum MediaTypes {
     unknown
     music = 10

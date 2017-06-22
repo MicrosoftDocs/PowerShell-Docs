@@ -163,14 +163,14 @@ effect in the current session, use the `Get-ExecutionPolicy` cmdlet.
 
 The following command gets the current execution policy:
 
-```PowerShell
+```powershell
 Get-ExecutionPolicy
 ```
 
 To get all of the execution policies that affect the current
 session and displays them in precedence order, type:
 
-```PowerShell
+```powershell
 Get-ExecutionPolicy -List
 ```
 
@@ -196,7 +196,7 @@ Scope parameter of `Get-ExecutionPolicy`.
 For example, the following command gets the execution policy for
 the current user scope.
 
-```PowerShell
+```powershell
 Get-ExecutionPolicy -Scope CurrentUser
 ```
 
@@ -224,23 +224,23 @@ computer (the default), start Windows PowerShell with the
 
 To change your execution policy, type:
 
-```PowerShell
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy <PolicyName>
 ```
 
 For example:
-```PowerShell
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
 To set the execution policy in a particular scope, type:
 
-```PowerShell
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy <PolicyName> -Scope <scope>
 ```
 
 For example:
-```PowerShell
+```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
@@ -260,12 +260,12 @@ the value of the value of the execution policy to Undefined.
 For example, to remove the execution policy for all the users of
 the local computer, type:
 
-```PowerShell
+```powershell
 Set-ExecutionPolicy Undefined
 ```
 Or, type:
 
-```PowerShell
+```powershell
 Set-ExecutionPolicy Undefined -scope LocalMachine
 ```
 
@@ -285,7 +285,7 @@ the `-ExecutionPolicy` parameter of PowerShell.exe to set the execution
 policy.
 
 For example:
-```PowerShell
+```powershell
 PowerShell.exe -ExecutionPolicy AllSigned
 ```
 
