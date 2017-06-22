@@ -39,7 +39,7 @@ sections will not run in Windows PowerShell 1.0 without revision.
 ### Syntax
 
 The syntax for a Data section is as follows:
-```PowerShell
+```powershell
 DATA [-supportedCommand <cmdlet-name>] {
     <Permitted content>
 }
@@ -64,30 +64,30 @@ The permitted content is limited to the following elements:
 
 - Literals, such as the following:
 
-```PowerShell
+```powershell
 a
 ```
 
-```PowerShell
+```powershell
 1
 ```
 
-```PowerShell
+```powershell
 1,2,3
 ```
 
-```PowerShell
+```powershell
 "Windows PowerShell 2.0"
 ```
 
-```PowerShell
+```powershell
 @( "red", "green", "blue" )
 ```
-```PowerShell
+```powershell
 @{ a = 0x1; b = "great"; c ="script" }
 ```
 
-```PowerShell
+```powershell
 [XML] @'
 <p> Hello, World </p>
 '@
@@ -118,7 +118,7 @@ cmdlet or function names.
 For example, the following data section includes a user-written cmdlet,
 `Format-XML`, that formats data in an XML file:
 
-```PowerShell
+```powershell
 DATA -supportedCommand Format-Xml
 {
     Format-Xml -Strings string1, string2, string3
@@ -136,7 +136,7 @@ is assigned to the `$TextMsgs` variable.
 
 The `$TextMsgs` variable is not part of the data section.
 
-```PowerShell
+```powershell
 $TextMsgs = DATA {
     ConvertFrom-StringData -StringData @'
 Text001 = Windows 7
@@ -148,7 +148,7 @@ Text002 = Windows Server 2008 R2
 To access the keys and values in hash table in $TextMsgs, use the
 following commands.
 
-```PowerShell
+```powershell
 $TextMsgs.Text001
 $TextMsgs.Text002
 ```
@@ -157,7 +157,7 @@ $TextMsgs.Text002
 
 Simple data strings.
 
-```PowerShell
+```powershell
 DATA {
     "Thank you for using my Windows PowerShell Organize.pst script."
     "It is provided free of charge to the community."
@@ -167,7 +167,7 @@ DATA {
 
 Strings that include permitted variables.
 
-```PowerShell
+```powershell
 DATA {
     if ($null) {
         "To get help for this cmdlet, type get-help new-dictionary."
@@ -177,7 +177,7 @@ DATA {
 
 A single-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
-```PowerShell
+```powershell
 DATA {
     ConvertFrom-StringData -stringdata @'
 Text001 = Windows 7
@@ -188,7 +188,7 @@ Text002 = Windows Server 2008 R2
 
 A double-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
-```PowerShell
+```powershell
 DATA  {
     ConvertFrom-StringData -stringdata @"
 Msg1 = To start, press any key.
@@ -199,7 +199,7 @@ Msg2 = To exit, type "quit".
 
 A data section that includes a user-written cmdlet that generates data:
 
-```PowerShell
+```powershell
 DATA -supportedCommand Format-XML {
     Format-Xml -strings string1, string2, string3
 }
