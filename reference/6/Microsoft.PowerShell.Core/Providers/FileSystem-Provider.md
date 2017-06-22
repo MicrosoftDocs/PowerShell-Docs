@@ -86,9 +86,9 @@ The first command gets the `Employees.txt` file and splits it into sections, eac
 
 The second command uses array notation to get the first item in the collection in `$e`. It uses an index of 0, because Windows PowerShell arrays are zero-based.
 
-For more information about `Get-Content` cmdlet, see the help topic for the [Get-Content](..\..\Microsoft.PowerShell.Management\Get-Content.md).
+For more information about `Get-Content` cmdlet, see the help topic for the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md).
 
-For more information about arrays, see [about_Arrays](..\Microsoft.PowerShell.Core\About\about_Arrays.md).  
+For more information about arrays, see [about_Arrays](../../About/about_Arrays.md).  
 
 ```powershell  
 $e = Get-Content c:\test\employees.txt -Delimited "End Of Employee Record"  
@@ -106,7 +106,7 @@ Get-Location
 
 ```  
 
-The [Get-Location](..\..\Microsoft.PowerShell.Management\Get-Location.md) cmdlet includes the functionality of commands like the `cd` command in the Windows Command Prompt and the `pwd` command in UNIX. For more information, type:  
+The [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md) cmdlet includes the functionality of commands like the `cd` command in the Windows Command Prompt and the `pwd` command in UNIX. For more information, type:  
 
 ```powershell
 Get-Help Get-Location
@@ -131,7 +131,7 @@ Get-ChildItem
 
 ```  
 
-By default, the [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet does not recurse. If files and folders are present in the current directory when you run this command, a [System.IO.FileInfo](link-to-dotnet-type) object and a [System.IO.DirectoryInfo](link-to-dotnet-type) object are returned.  
+By default, the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet does not recurse. If files and folders are present in the current directory when you run this command, a [System.IO.FileInfo](https://msdn.microsoft.com/library/system.io.fileinfo) object and a [System.IO.DirectoryInfo](https://msdn.microsoft.com/library/system.io.directoryinfo) object are returned.  
 
 #### Example 2  
 This command gets all the files in the current directory:  
@@ -141,10 +141,10 @@ Get-ChildItem | Where-Object {!$_.psiscontainer}
 
 ```  
 
-The command uses the [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet to get all files and directories. It pipes the results to the [Where-Object](..\Where-Object.md) cmdlet, which selects only the objects that are not (`!`) containers.  
+The command uses the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all files and directories. It pipes the results to the [Where-Object](../../Microsoft.PowerShell.Core/Where-Object.md) cmdlet, which selects only the objects that are not (`!`) containers.  
 
 #### Example 3  
-The command uses the [Get-ChildItem](..\..\Microsoft.PowerShell.Management\Get-ChildItem.md) cmdlet to get all files and directories. It pipes the results to [Where-Object](..\Where-Object.md), which select only the objects that are containers.  
+The command uses the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all files and directories. It pipes the results to [Where-Object](../../Microsoft.PowerShell.Core/Where-Object.md), which select only the objects that are containers.  
 
 ```powershell
 Get-ChildItem | Where-Object {$_.psiscontainer}
@@ -159,7 +159,7 @@ Get-Item -Path c:\ps-test | Format-List -Property *
 
 ```  
 
-The command uses the **Path** parameter of the [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet to get the `C:\ps-test` directory. It pipes the directory object to the [Format-List](..\..\Microsoft.PowerShell.Utility\Format-List.md) cmdlet, which displays all (`*`) the properties and values of the directory in a list.  
+The command uses the **Path** parameter of the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get the `C:\ps-test` directory. It pipes the directory object to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) cmdlet, which displays all (`*`) the properties and values of the directory in a list.  
 
 #### Example 5  
 This command displays the properties of a file:  
@@ -169,7 +169,7 @@ Get-Item -Path test.txt | Format-List -Property *
 
 ```  
 
-The command uses the **Path** parameter of the [Get-Item](..\..\Microsoft.PowerShell.Management\Get-Item.md) cmdlet to get the `test.txt` file. It pipes the file object to the [Format-List](..\..\Microsoft.PowerShell.Utility\Format-List.md) cmdlet, which displays all (`*`) the properties and values of the file in a list.  
+The command uses the **Path** parameter of the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get the `test.txt` file. It pipes the file object to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) cmdlet, which displays all (`*`) the properties and values of the file in a list.  
 
 ### Copying Files and Directories  
 
@@ -243,7 +243,7 @@ Get-Content -Path test.txt
 
 ```  
 
-You can pipe the contents of the file to another cmdlet. For example, the following command reads the contents of the `Test.txt` file and then supplies them as input to the [ConvertTo-HTML](..\..\Microsoft.PowerShell.Utility\ConvertTo-Html.md) cmdlet:  
+You can pipe the contents of the file to another cmdlet. For example, the following command reads the contents of the `Test.txt` file and then supplies them as input to the [ConvertTo-HTML](../../Microsoft.PowerShell.Utility/ConvertTo-Html.md) cmdlet:  
 
 ```powershell  
 Get-Content -Path test.txt | Convertto-Html  
@@ -257,29 +257,29 @@ Set-Content -Path test.txt -Value "test content"
 
 ```  
 
-It overwrites the contents of `Test.txt`. You can use the **Value** parameter of the [New-Item](..\..\Microsoft.PowerShell.Management\New-Item.md) cmdlet to add content to a file when you create it.  
+It overwrites the contents of `Test.txt`. You can use the **Value** parameter of the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to add content to a file when you create it.  
 
 ### Managing Security Descriptors  
 
 #### Example 1  
-This command returns a [System.Security.AccessControl.FileSecurity](link-to-dotnet-type) object:  
+This command returns a [System.Security.AccessControl.FileSecurity](https://msdn.microsoft.com/library/system.security.accesscontrol.filesecurity) object:  
 
 ```powershell  
 Get-Acl -Path test.txt | Format-List -Property *  
 
 ```  
 
-For more information about this object, pipe the command to the [Get-Member](..\..\Microsoft.PowerShell.Utility\Get-Member.md) cmdlet. Or, see "[FileSecurity](http://go.microsoft.com/fwlink/?LinkId=145718) Class" in the MSDN (Microsoft Developer Network) library.  
+For more information about this object, pipe the command to the [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) cmdlet. Or, see "[FileSecurity](http://go.microsoft.com/fwlink/?LinkId=145718) Class" in the MSDN (Microsoft Developer Network) library.  
 
 #### Example 2  
-This command returns a [System.Security.AccessControl.DirectorySecurity](link-to-dotnet-type) object:  
+This command returns a [System.Security.AccessControl.DirectorySecurity](https://msdn.microsoft.com/library/system.security.accesscontrol.directorysecurity) object:  
 
 ```powershell  
 Get-Acl -Path test_directory | Format-List -Property *  
 
 ```  
 
-For more information about this object, pipe the command to the [Get-Member](..\..\Microsoft.PowerShell.Utility\Get-Member.md) cmdlet. Or, see "[DirectorySecurity](http://go.microsoft.com/fwlink/?LinkId=145736) Class" in the MSDN library.  
+For more information about this object, pipe the command to the [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) cmdlet. Or, see "[DirectorySecurity](http://go.microsoft.com/fwlink/?LinkId=145736) Class" in the MSDN library.  
 
 ### Creating Files and Directories  
 
@@ -346,11 +346,11 @@ Remove-Item -Path *.xml
 ### Starting a Program by Invoking an Associated File  
 
 #### Example 1  
-The first command uses the [Get-Service](..\..\Microsoft.PowerShell.Management\Get-Service.md) cmdlet to get information about local services.  
+The first command uses the [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) cmdlet to get information about local services.  
 
-It pipes the information to the [Export-Csv](..\..\Microsoft.PowerShell.Utility\Export-Csv.md) cmdlet and then stores that information in the `Services.csv` file.  
+It pipes the information to the [Export-Csv](../../Microsoft.PowerShell.Utility/Export-Csv.md) cmdlet and then stores that information in the `Services.csv` file.  
 
-The second command uses [Invoke-Item](..\..\Microsoft.PowerShell.Management\Invoke-Item.md) to open the `services.csv` file in the program associated with the `.csv` extension:  
+The second command uses [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) to open the `services.csv` file in the program associated with the `.csv` extension:  
 
 ```powershell  
 Get-Service | Export-Csv -Path services.csv  
@@ -397,7 +397,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 ## Dynamic Parameters
 Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.  
 
-### Encoding <[Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](link-to-dotnet-type)>  
+### Encoding <[Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](https://msdn.microsoft.com/library/microsoft.powershell.commands.filesystemcmdletproviderencoding)>  
 Specifies the file encoding. The default is ASCII.  
 
 |Value|Description|  
@@ -419,7 +419,7 @@ Specifies the file encoding. The default is ASCII.
 
 - [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)  
 
-### Delimiter <[System.String](link-to-dotnet-type)>  
+### Delimiter <[System.String](https://msdn.microsoft.com/library/system.string)>  
 Specifies the delimiter that [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) uses to divide the file into objects while it reads.  
 
 The default is `\n`, the end-of-line character.  
@@ -436,7 +436,7 @@ You can use this parameter to split a large file into smaller files by specifyin
 
 - [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
 
-### Wait <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### Wait <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Waits for content to be appended to the file. If content is appended, it returns the appended content. If the content has changed, it returns the entire file.  
 
 When waiting, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL+C.  
@@ -445,7 +445,7 @@ When waiting, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md
 
 - [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
 
-### Attributes <[FlagsExpression\[System.IO.FileAttributes\]](link-to-dotnet-type)>  
+### Attributes <[FlagsExpression](https://msdn.microsoft.com/library/hh485401)<[System.IO.FileAttributes](https://msdn.microsoft.com/library/system.io.fileattributes)>>  
 Gets files and folders with the specified attributes.  This parameter supports all attributes and lets you specify complex combinations of attributes.  
 
 The `-Attributes` parameter was introduced in Windows PowerShell 3.0.  
@@ -481,7 +481,7 @@ No spaces are permitted between an operator and its attribute. However, spaces a
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### Directory <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### Directory <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Gets directories (folders).  
 
 The `-Directory` parameter was introduced in Windows PowerShell 3.0.  
@@ -492,7 +492,7 @@ To get only directories, use the `-Directory` parameter and omit the `-File` par
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### File <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### File <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Gets files.  
 
 The `-File` parameter was introduced in Windows PowerShell 3.0.  
@@ -503,7 +503,7 @@ To get only files, use the `-File` parameter and omit the `-Directory` parameter
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### Hidden <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### Hidden <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Gets only hidden files and directories (folders). By default, [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden items.  
 
 The `-Hidden` parameter was introduced in Windows PowerShell 3.0.  
@@ -514,7 +514,7 @@ To get only hidden items, use the `-Hidden` parameter, its `h` or `ah` aliases, 
 
 -   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### ReadOnly <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### ReadOnly <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Gets only read-only files and directories (folders).  
 
 The `-ReadOnly` parameter was introduced in Windows PowerShell 3.0.  
@@ -525,7 +525,7 @@ To get only read-only items, use the `-ReadOnly` parameter, its `ar` alias, or t
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### System <[System.Management.Automation.SwitchParameter](link-to-dotnet-type)>  
+### System <[System.Management.Automation.SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 Gets only system files and directories (folders).  
 
 The `-System` parameter was introduced in Windows PowerShell 3.0.  
@@ -536,26 +536,26 @@ To get only system files and folders, use the `-System` parameter, its `as` alia
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
-### NewerThan <[System.DateTime](link-to-dotnet-type)>  
+### NewerThan <[System.DateTime](https://msdn.microsoft.com/library/system.datetime)>  
 
 Returns `$True` when the `LastWriteTime` value of a file is greater than the specified date. Otherwise, it returns  `$False`.  
 
-Enter a [DateTime](link-to-dotnet-type) object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a [DateTime](link-to-dotnet-type) object, such as `"August 10, 2011 2:00 PM"`.  
+Enter a [DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a [DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as `"August 10, 2011 2:00 PM"`.  
 
 #### Cmdlets supported:  
 
 - [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)  
 
-### OlderThan <[System.DateTime](link-to-dotnet-type)>  
+### OlderThan <[System.DateTime](https://msdn.microsoft.com/library/system.datetime)>  
 Returns `$True` when the `LastWriteTime` value of a file is less than the specified date. Otherwise, it returns  `$False`.  
 
-Enter a [DateTime](link-to-dotnet-type) object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a [DateTime](link-to-dotnet-type) object, such as `"August 10, 2011 2:00 PM"`.  
+Enter a [DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a [DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as `"August 10, 2011 2:00 PM"`.  
 
 #### Cmdlets supported:  
 
 - [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)  
 
-### Stream <[System.String](link-to-dotnet-type)[]>  
+### Stream <[System.String](https://msdn.microsoft.com/library/system.string)[]>  
 Manages alternate data streams. Enter the stream name. Wildcards are permitted only in [Get-Item for FileSystem](FileSystem-Provider/Get-Item-for-FileSystem.md) and [Remove-Item for FileSystem](FileSystem-Provider/Remove-Item-for-FileSystem.md) commands in a file system drive.  
 
 #### Cmdlets supported:  
@@ -572,7 +572,7 @@ Manages alternate data streams. Enter the stream name. Wildcards are permitted o
 
 - [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)  
 
-### Raw <[SwitchParameter](link-to-dotnet-type)>  
+### Raw <[SwitchParameter](https://msdn.microsoft.com/library/system.management.automation.switchparameter)>  
 
 Ignores newline characters. Returns contents as a single item.  
 
