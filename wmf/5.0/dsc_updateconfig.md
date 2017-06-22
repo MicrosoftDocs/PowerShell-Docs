@@ -18,7 +18,7 @@ Once triggered, the pull behaves exactly the same as it would have when triggere
 
 **Note:** If the Meta-Configuration RefreshMode = 'Push' an error is returned by this cmdlet so this cmdlet will always do nothing when a target node is in 'Push' Mode.
 
-```PowerShell
+```powershell
 Update-DscConfiguration 	[[-ComputerName] <string[]>] 
 							[-Wait]
 							[-Force] 

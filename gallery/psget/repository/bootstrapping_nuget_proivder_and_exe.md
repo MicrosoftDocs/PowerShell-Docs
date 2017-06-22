@@ -19,7 +19,7 @@ If the machine is not connected to the Internet, the user or an administrator mu
 
 ## Resolving error when the NuGet provider has not been installed on a machine that is Internet connected
 
-```PowerShell
+```powershell
 PS C:\> Find-Module -Repository PSGallery -Verbose -Name Contoso
 
 NuGet provider is required to continue
@@ -49,7 +49,7 @@ Version    Name                                Type       Repository           D
 ```
 ## Resolving error when the NuGet provider is available and NuGet.exe is not available during the publish operation on a machine that is Internet connected
 
-```PowerShell
+```powershell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 
 NuGet.exe is required to continue
@@ -73,7 +73,7 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## Resolving error when both NuGet provider and NuGet.exe are not available during the publish operation on a machine that is Internet connected
 
-```PowerShell
+```powershell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 
 NuGet.exe and NuGet provider are required to continue
