@@ -19,7 +19,7 @@ Gets content from a web page on the Internet.
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-Credential <PSCredential>] [-UseDefaultCredentials]
  [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-PreserveAuthorizationOnRedirect]
+ [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation] [-MaximumRedirection <Int32>] [-PreserveAuthorizationOnRedirect]
  [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-NoProxy] [-Body <Object>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
@@ -259,6 +259,23 @@ You cannot use this parameter to specify UserAgent or cookie headers.
 Type: IDictionary
 Parameter Sets: (All)
 Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipHeaderValidation
+Indicates the cmdlet should add headers to the request without validation.
+
+This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
