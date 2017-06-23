@@ -217,6 +217,8 @@ $timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
 ```
 
 ```powershell
+$timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
+
 mkdir C:\ps-test\$timestamp
 ```
 

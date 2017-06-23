@@ -113,6 +113,10 @@ Get-Help Get-Location
 
 ```
 
+```powershell
+Get-Help Get-Location  
+
+```
 #### Example 2  
 This command sets the current location:  
 

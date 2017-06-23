@@ -88,7 +88,7 @@ You will not automatically have admin rights on any machines or services unless 
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'MyJEAgMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
 gMSA accounts should only be used when access to network resources are required for a few reasons:
