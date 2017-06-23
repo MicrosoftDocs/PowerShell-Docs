@@ -211,6 +211,6 @@ copy-item -path function:prompt -destination function:oldPrompt
 -   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
 
 ## See Also  
- [about_Functions](../../about/about_functions.md)   
- [about_Providers](../../about/about_providers.md)
+ [about_Functions](../../Microsoft.PowerShell.Core/About/about_Functions.md)   
+ [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
 
