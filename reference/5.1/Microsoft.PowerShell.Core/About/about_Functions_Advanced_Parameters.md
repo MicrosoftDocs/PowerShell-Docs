@@ -571,6 +571,20 @@ either Chocolate, Strawberry, or Vanilla.
 [String][ValidateSet("Chocolate", "Strawberry", "Vanilla")]$flavor = Strawberry
 ```
 
+Note that the validation occurs whenever that variable is assigned even
+within the script.
+For example, the following results in an error at runtime:
+
+```powershell
+Param
+(
+    [ValidateSet("hello","world")]
+    [String]$Message
+)
+
+$Message = "bye"
+```
+
 ## ValidateNotNull Validation Attribute
 
 The ValidateNotNull attribute specifies that the parameter
