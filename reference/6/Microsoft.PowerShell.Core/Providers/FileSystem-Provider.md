@@ -445,7 +445,7 @@ When waiting, [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md
 
 - [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)  
 
-### Attributes <[FlagsExpression](https://msdn.microsoft.com/library/hh485401)<[System.IO.FileAttributes](https://msdn.microsoft.com/library/system.io.fileattributes)>>  
+### Attributes <[FlagsExpression](https://msdn.microsoft.com/library/hh485401)([System.IO.FileAttributes](https://msdn.microsoft.com/library/system.io.fileattributes))>  
 Gets files and folders with the specified attributes.  This parameter supports all attributes and lets you specify complex combinations of attributes.  
 
 The `-Attributes` parameter was introduced in Windows PowerShell 3.0.  
@@ -582,4 +582,4 @@ Ignores newline characters. Returns contents as a single item.
 
 ## See Also  
 
-[about_Providers](../About/about_Providers.md)
+[about_Providers](../../About/about_Providers.md)
