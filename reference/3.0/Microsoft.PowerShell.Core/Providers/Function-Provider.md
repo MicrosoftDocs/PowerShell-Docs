@@ -6,17 +6,27 @@ keywords:  powershell,cmdlet
 title:  Function Provider
 ---
 
-# Function Provider
-## PROVIDER NAME  
+
+# *Function* provider
+
+
+## Provider name
+
  Function  
 
-## DRIVES  
+
+## Drives
+
  `Function:`  
 
-## SHORT DESCRIPTION  
+
+## Short description
+
  Provides access to the functions defined in Windows PowerShell.  
 
-## DETAILED DESCRIPTION  
+
+## Detailed description
+
  The Windows PowerShell **Function** provider lets you get, add, change, clear, and delete the functions and filters in Windows PowerShell.  
 
  A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where-Object](../Where-Object.md) command.  
@@ -35,14 +45,20 @@ title:  Function Provider
 
  All changes to the functions affect the current console only. To save the changes, add the function to the Windows PowerShell profile, or use [Export-Console](../../Microsoft.PowerShell.Core/Export-Console.md) to save the current console.  
 
-## CAPABILITIES  
+
+## Capabilities
+
  ShouldProcess  
 
-## EXAMPLES  
 
-### Getting to the Function: Drive  
+## Examples
 
-#### Example 1  
+
+### Getting to the `Function:` drive
+
+
+#### Example 1
+
  Changes the current location to the `Function:` drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.  
 
 ```  
@@ -50,9 +66,12 @@ set-location function:
 
 ```  
 
-### Getting Functions  
 
-#### Example 1  
+### Getting functions
+
+
+#### Example 1
+
  This command gets the list of all the functions in the current session. You can use this command from any Windows PowerShell drive.  
 
 ```  
@@ -60,7 +79,9 @@ get-childitem -path function:
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command gets the `man` function from the `Function:` drive. It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get the function. The pipeline operator (`|`) sends the result to [Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md).  
 
  The `-Wrap` parameter directs text that does not fit on the line onto the next line. The `-Autosize` parameter resizes the table columns to accommodate the text.  
@@ -72,7 +93,9 @@ get-item -path man | format-table -wrap -autosize
 
  If you are in a different drive, add the drive name (`Function:`) to the path.  
 
-#### Example 3  
+
+#### Example 3
+
  These commands both get the function named `c:`. The first command can be used in any drive. The second command is used in the `Function:` drive.  
 
  Because the name ends in a colon, which is the syntax for a drive, you must qualify the path with the drive name. Within the `Function:` drive, you can use either format. In the second command, the dot (`.`) represents the current location.  
@@ -84,9 +107,12 @@ PS Function> get-item -path .\c:
 
 ```  
 
-### Creating a Function  
 
-#### Example 1  
+### Creating a function
+
+
+#### Example 1
+
  This command uses the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create a function called `HKLM:`. The expression in braces is the script block that is represented by the function name.  
 
 ```  
@@ -97,7 +123,9 @@ new-item -path function:hklm: -value {set-location hklm:}
  You can also create a function by typing it at the Windows PowerShell command line. For example, tpe `function:hklm: {set-location hklm:}`. If you are in the `Function:` drive, you can omit the drive name.  
 Because you cannot specify the "Filter" label in [New-Item](../../Microsoft.PowerShell.Management/New-Item.md), filters are labeled as functions, but they operate properly with any label. To create a filter with the "Filter" label, type the filter at the command line. For example, type `filter:Running {$_.Status -eq "Running"}`.  
 
-#### Example 2  
+
+#### Example 2
+
  This command uses the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create a function called `Csrss`. It uses the `-Options` dynamic parameter to specify a value of `ReadOnly` for the **Options** property of the function.  
 
 ```  
@@ -107,9 +135,12 @@ new-item -path function: -name csrss -options readonly -value {get-process csrss
 
  This command works from any location. If you are in the `Function:` drive, you can use a dot (`.`) to specify the path. The dot represents the current location.  
 
-### Deleting a Function  
 
-#### Example 1  
+### Deleting a function
+
+
+#### Example 1
+
  This command deletes the `hklm:` function from the current session.  
 
 ```  
@@ -117,7 +148,9 @@ remove-item function:hklm:
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command deletes all the functions from the current session except for the functions whose **Options** property has a value of `Constant`. Without the `-Force` parameter, the command does not delete functions whose **Options** property has a value of `ReadOnly`.  
 
 ```  
@@ -127,9 +160,12 @@ remove-item function:* -force
 
  When you delete all the functions, the command prompt changes because the prompt function, which defines the content of the command prompt, is deleted.  
 
-### Displaying the Properties and Methods of Functions  
 
-#### Example 1  
+### Displaying the properties and methods of functions
+
+
+#### Example 1
+
  This command uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get all the functions. The pipeline operator sends the results to the [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) cmdlet, which displays the methods and the properties of the object.  
 
 ```  
@@ -140,7 +176,9 @@ get-item -path function:* | get-member
  When you pipe a collection of objects (such as the collection of functions in the `Function:` drive) to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates each object in the collection separately and returns information about each object type that it finds. If all of the objects are of the same type, it returns information about the single object type. In this case, all of the functions are [FunctionInfo](https://msdn.microsoft.com/library/system.management.automation.functioninfo) objects.  
 To get information about the collection of [FunctionInfo](https://msdn.microsoft.com/library/system.management.automation.functioninfo) objects, use the `-InputObject` parameter of [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md). For example, type `get-member -InputObject (get-item function:*)`. When you use the `-InputObject` parameter, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
 
-#### Example 2  
+
+#### Example 2
+
  This command lists the values of the properties of the `prompt` function. It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `prompt` function. The pipeline operator (`|`) sends the results to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command. The [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command uses the `-Property` parameter with a wildcard character (`*`) to format and to display the values of all of the properties of the `prompt` function.  
 
 ```  
@@ -148,9 +186,12 @@ get-item function:prompt | format-list -property *
 
 ```  
 
-### Changing the Properties of a Function  
 
-#### Example 1  
+### Changing the properties of a function
+
+
+#### Example 1
+
  You can use the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet with the `-Options` dynamic parameter to change the value of the **Options** property of a function.  
 
  This command sets the `AllScope` and `ReadOnly` options for the `prompt` function. This command uses the `-Options` dynamic parameter of the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet. The `-Options` parameter is available in [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) only when you use it with the **Alias** or **Function** provider.  
@@ -160,7 +201,9 @@ set-item -path function:prompt -options "AllScope,ReadOnly"
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command uses the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the `prompt` function so that it displays the time before the path.  
 
 ```  
@@ -170,7 +213,9 @@ set-item -path function:prompt -value {'PS '+ $(Get-Date -format t) + " " + $(Ge
 
  The change affects both the **Definition** and **ScriptBlock** properties of the [FunctionInfo](https://msdn.microsoft.com/library/system.management.automation.functioninfo) object. To see the effect of the change, type `get-item -path function:prompt | format-list -property *`.  
 
-#### Example 3  
+
+#### Example 3
+
  This command uses the [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `help` function to `gh`.  
 
 ```  
@@ -178,9 +223,12 @@ rename-item -path function:help -newname gh
 
 ```  
 
-### Copying a Function  
 
-#### Example 1  
+### Copying a function
+
+
+#### Example 1
+
  This command copies the `prompt` function to `oldPrompt`, effectively creating a new name for the script block that is associated with the prompt function. You can use this to save the original prompt function if you plan to change it.  
 
  The **Options** property of the new function has a value of `None`. To change the value of the **Options** property, use [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md).  
@@ -190,10 +238,14 @@ copy-item -path function:prompt -destination function:oldPrompt
 
 ```  
 
-## DYNAMIC PARAMETERS  
+
+## Dynamic parameters
+
  Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.  
 
-### Options <[System.Management.Automation.ScopedItemOptions](https://msdn.microsoft.com/library/system.management.automation.scopeditemoptions)>  
+
+### `Options` <[System.Management.Automation.ScopedItemOptions](https://msdn.microsoft.com/library/system.management.automation.scopeditemoptions)>
+
  Determines the value of the **Options** property of a function.  
 
 |Value|Description|  
@@ -204,13 +256,17 @@ copy-item -path function:prompt -destination function:oldPrompt
 |`ReadOnly`|The properties of the function cannot be changed except by using the `-Force` parameter. You can use [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) to delete the function.|  
 |`AllScope`|The function is copied to any new scopes that are created.|  
 
-#### Cmdlets supported:  
+
+#### Cmdlets supported:
+
 
 -   [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)  
 
 -   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
 
-## See Also  
+
+## See also
+
  [about_Functions](../../Microsoft.PowerShell.Core/About/about_Functions.md)   
  [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
 

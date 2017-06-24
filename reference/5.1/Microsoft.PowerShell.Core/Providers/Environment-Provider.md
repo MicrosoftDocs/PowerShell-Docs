@@ -7,17 +7,27 @@ title:  Environment Provider
 online version:  https://go.microsoft.com/fwlink/?linkid=834944
 ---
 
-# Environment Provider
-## PROVIDER NAME  
+
+# *Environment* provider
+
+
+## Provider name
+
  Environment  
 
-## DRIVES  
+
+## Drives
+
  `Env:`  
 
-## SHORT DESCRIPTION  
+
+## Short description
+
  Provides access to the Windows environment variables.  
 
-## DETAILED DESCRIPTION  
+
+## Detailed description
+
  The Windows PowerShell **Environment** provider lets you get, add, change, clear, and delete Windows environment variables in Windows PowerShell.  
 
  The **Environment** provider is a flat namespace that contains only objects that represent the environment variables. The variables have no child items.  
@@ -32,14 +42,20 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 
  Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../../Microsoft.PowerShell.Core/Export-Console.md) to save the current session.  
 
-## CAPABILITIES  
+
+## Capabilities
+
  ShouldProcess  
 
-## EXAMPLES  
 
-### Getting to the Env: Drive  
+## Examples
 
-#### Example 1  
+
+### Getting to the `Env:` drive
+
+
+#### Example 1
+
  This command changes the current location to the `Env:` drive:  
 
 ```  
@@ -52,9 +68,12 @@ set-location env:
     set-location c:  
 ```
 
-### Getting Environment Variables  
 
-#### Example 1  
+### Getting environment variables
+
+
+#### Example 1
+
  This command lists all the environment variables in the current session:  
 
 ```  
@@ -64,7 +83,9 @@ get-childitem -path env:
 
  You can use this command from any Windows PowerShell drive.  
 
-#### Example 2  
+
+#### Example 2
+
  This command gets the `WINDIR` environment variable:  
 
 ```  
@@ -72,7 +93,9 @@ get-childitem -path env:windir
 
 ```  
 
-#### Example 3  
+
+#### Example 3
+
  This command gets a list of all the environment variables in the current session and then sorts them by name:  
 
 ```  
@@ -83,9 +106,12 @@ get-childitem  | sort-object -property name
  By default, the environment variables appear in the order that Windows PowerShell discovers them. This command is submitted in the `Env:` drive.  
 When you run this command from another drive, add the `-Path` parameter with a value of `Env:`.  
 
-### Creating a New Environment Variable  
 
-#### Example 1  
+### Creating a new environment variable
+
+
+#### Example 1
+
  This command creates the `USERMODE` environment variable with a value of "Non-Admin":  
 
 ```  
@@ -96,9 +122,12 @@ new-item -path . -name USERMODE -value Non-Admin
  Because the current location is in the `Env:` drive, the value of the `-Path` parameter is a dot (`.`). The dot represents the current location.  
 If you are not in the `Env:` drive, the value of the `-Path` parameter would be `Env:`.  
 
-### Displaying the Properties and Methods of Environment Variables  
 
-#### Example 1  
+### Displaying the properties and methods of environment variables
+
+
+#### Example 1
+
  This command uses the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all the environment variables:  
 
 ```  
@@ -114,7 +143,9 @@ To get information about the collection of [DictionaryEntry](https://msdn.micros
 ```
 When you use the `-InputObject` parameter, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
 
-#### Example 2  
+
+#### Example 2
+
  This command lists the values of the properties of the `WINDIR` environment variable:  
 
 ```  
@@ -124,9 +155,12 @@ get-item env:windir | format-list -property *
 
  It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `WINDIR` environment variable. The pipeline operator (`|`) sends the results to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command. It uses the `-Property` parameter with a wildcard character (`*`) to format and display the values of all the properties of the `WINDIR` environment variable.  
 
-### Changing the Properties of an Environment Variable  
 
-#### Example 1  
+### Changing the properties of an environment variable
+
+
+#### Example 1
+
  This command uses the [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `USERMODE` environment variable that you created to `USERROLE`:  
 
 ```  
@@ -137,7 +171,9 @@ rename-item -path env:USERMODE -newname USERROLE
  This change affects the **Name**, **Key**, and **PSPath** properties of the [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) object.  
 Do not change the name of an environment variable that the system uses. Although these changes affect only the current session, they might cause the system or a program to operate incorrectly.  
 
-#### Example 2  
+
+#### Example 2
+
  This command uses the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the value of the `USERROLE` environment variable to "Administrator":  
 
 ```  
@@ -145,9 +181,12 @@ set-item -path env:USERROLE -value Administrator
 
 ```  
 
-### Copying an Environment Variable  
 
-#### Example 1  
+### Copying an environment variable
+
+
+#### Example 1
+
  This command copies the value of the `USERROLE` environment variable to the `USERROLE2` environment variable:  
 
 ```  
@@ -155,9 +194,12 @@ copy-item -path env:USERROLE -destination env:USERROLE2
 
 ```  
 
-### Deleting an environment variable  
 
-#### Example 1  
+### Deleting an environment variable
+
+
+#### Example 1
+
  This command deletes the `USERROLE2` environment variable from the current session:  
 
 ```  
@@ -167,7 +209,9 @@ remove-item -path env:USERROLE2
 
  You can use this command in any Windows PowerShell drive. If you are in the `Env:` drive, you can omit the drive name from the path.  
 
-#### Example 2  
+
+#### Example 2
+
  This command deletes the `USERROLE` environment variable.  
 
 ```  
@@ -175,6 +219,8 @@ clear-item -path env:USERROLE
 
 ```  
 
-## See Also  
+
+## See also
+
  [about_Providers](../About/about_Providers.md)
 

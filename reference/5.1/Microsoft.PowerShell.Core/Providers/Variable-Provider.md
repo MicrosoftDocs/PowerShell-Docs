@@ -7,17 +7,27 @@ title:  Variable Provider
 online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 ---
 
-# Variable Provider
-## PROVIDER NAME  
+
+# *Variable* provider
+
+
+## Provider name
+
  Variable  
 
-## DRIVES  
+
+## Drives
+
  `Variable:`  
 
-## SHORT DESCRIPTION  
+
+## Short description
+
  Provides access to the Windows PowerShell variables and to their values.  
 
-## DETAILED DESCRIPTION  
+
+## Detailed description
+
  The Windows PowerShell **Variable** provider lets you get, add, change, clear, and delete Windows PowerShell variables in the current console.  
 
  The Windows PowerShell **Variable** provider supports the variables that Windows PowerShell creates, including the automatic variables, the preference variables, and the variables that you create.  
@@ -44,14 +54,20 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 
  All changes to the variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../../Microsoft.PowerShell.Core/Export-Console.md) to save the current console.  
 
-## CAPABILITIES  
+
+## Capabilities
+
  ShouldProcess  
 
-## EXAMPLES  
 
-### Getting to the Variable: Drive  
+## Examples
 
-#### Example 1  
+
+### Getting to the `Variable:` drive
+
+
+#### Example 1
+
  This command changes the current location to the `Variable:` drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.  
 
 ```  
@@ -59,9 +75,12 @@ set-location variable:
 
 ```  
 
-### Displaying the Value of Variables  
 
-#### Example 1  
+### Displaying the value of variables
+
+
+#### Example 1
+
  This command gets the list of all the variables and their values in the current session. You can use this command from any Windows PowerShell drive.  
 
 ```  
@@ -69,7 +88,9 @@ get-childitem -path variable:
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command gets the variables with names that begin with "max". You can use this command from any Windows PowerShell drive.  
 
 ```  
@@ -79,7 +100,9 @@ get-childitem -path variable:max*
 
  If you are in the `Variable:` drive, you can omit the drive name from the path.  
 
-#### Example 3  
+
+#### Example 3
+
  This command gets the value of the `WhatIfPreference` variable by typing it at the command line.  
 
  The name of the variable is preceded by a dollar sign (`$`) to indicate that it is a variable. The `Variable:` drive name is not specified.  
@@ -89,7 +112,9 @@ $WhatIfPreference
 
 ```  
 
-#### Example 4  
+
+#### Example 4
+
  This command uses the `-LiteralPath` parameter of [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to get the value of the `?` variable from within the `Variable:` drive. [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) does not attempt to resolve any wildcards in the values of the `-LiteralPath` parameter.  
 
 ```  
@@ -99,7 +124,9 @@ get-childitem -literalpath ?
 
  To display the value of a variable with a special character name without a cmdlet, type a dollar sign (`$`) and the variable name. For example, to display the value of the `?` variable, type `$?`.  
 
-#### Example 5  
+
+#### Example 5
+
  This command gets the variables that have the values of `ReadOnly` or `Constant` for their **Options** property.  
 
 ```  
@@ -107,9 +134,12 @@ get-childitem -path variable: | where-object {$_.options -match "Constant" -or $
 
 ```  
 
-### Creating a New Variable  
 
-#### Example 1  
+### Creating a new variable
+
+
+#### Example 1
+
  This command creates the `services` variable and stores the results of a [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) command in it. Because the current location is in the `Variable:` drive, the value of the `-Path` parameter is a dot (`.`), which represents the current location.  
 
  The parentheses around the [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) command ensure that the command is executed before the variable is created. Without the parentheses, the value of the new variable is a "Get-Service" string.  
@@ -121,7 +151,9 @@ new-item -path . -name services -value (Get-Service)
 
  If you are not in the `Variable:` drive, include the `Variable:` drive name in the path.  
 
-#### Example 2  
+
+#### Example 2
+
  This command creates a `services` variable and stores the result of a [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) command in it.  
 
  The command uses a dollar sign (`$`) to indicate a variable and the assignment operator (`=`) to assign the result of the [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) command to the newly created variable.  
@@ -133,9 +165,12 @@ $services = Get-Service
 
  To create a variable without a value, omit the assignment operator.  
 
-### Displaying the Properties and Methods of Variables  
 
-#### Example 1  
+### Displaying the properties and methods of variables
+
+
+#### Example 1
+
  This command uses the Get-Item cmdlet to get all variables. The pipeline operator (`|`) sends the results to the [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) cmdlet, which displays the methods and properties of the object.  
 
 ```  
@@ -146,7 +181,9 @@ get-item -path variable:* | get-member
  When you pipe a collection of objects (such as the collection of variables in the `Variable:` drive) to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates each object in the collection separately and returns information about each of the object types that it finds.   
 To get information about the collection of objects in the `Variable:` drive, use the `-InputObject` parameter of [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md). For example, `get-member -inputobject (get-item variable:*)`. When you use `-InputObject`, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
 
-#### Example 2  
+
+#### Example 2
+
  This command lists the values of the properties of the `home` variable. It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `home` variable. The pipeline operator (`|`) sends the results to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command. The [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command uses the `-Property` parameter with a wildcard character (`*`) to format and to display the values of all of the properties of the `home` variable.  
 
 ```  
@@ -154,9 +191,12 @@ get-item variable:home | format-list -property *
 
 ```  
 
-### Changing the Properties of a Variable  
 
-#### Example 1  
+### Changing the properties of a variable
+
+
+#### Example 1
+
  This command uses the [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `a` variable to `processes`.  
 
 ```  
@@ -164,7 +204,9 @@ rename-item -path variable:a -newname processes
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command uses the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the value of the `ErrorActionPreference` variable to "Stop".  
 
 ```  
@@ -172,7 +214,9 @@ set-item -path variable:ErrorActionPreference -value Stop
 
 ```  
 
-#### Example 3  
+
+#### Example 3
+
  This command changes the value of the `ErrorActionPreference` variable to "Stop".  
 
  It uses a dollar sign (`$`) to indicate a variable and the assignment operator (`=`) to assign the value.  
@@ -182,9 +226,12 @@ $ErrorActionPreference = Stop
 
 ```  
 
-### Copying a Variable  
 
-#### Example 1  
+### Copying a variable
+
+
+#### Example 1
+
  This command uses the [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md) cmdlet to copy the `processes` variable to `old_processes`. This creates a new variable named `old_processes` that has the same value as the `processes` variable.  
 
 ```  
@@ -194,7 +241,9 @@ copy-item -path variable:processes -destination variable:old_processes
 
  If the command is issued from within the `Variable:` drive, you can omit the drive name from the value of the `-Path` parameter.  
 
-#### Example 2  
+
+#### Example 2
+
  This command copies the `processes` variable to `old_processes` without using a cmdlet. It uses the dollar sign (`$`) to indicate variables and the assignment operator to assign the value of `$processes` to `old_processes`.  
 
 ```  
@@ -202,9 +251,12 @@ $old_processes = $processes
 
 ```  
 
-### Deleting a Variable  
 
-#### Example 1  
+### Deleting a variable
+
+
+#### Example 1
+
  This command deletes the `serv` variable from the current session. You can use this command in any Windows PowerShell drive.  
 
 ```  
@@ -212,7 +264,9 @@ remove-variable -path variable:serv
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command deletes all variables from the current session except for the variables whose **Options** property has a value of `Constant`. Without the `-Force` parameter, the command does not delete variables whose **Options** property has a value of `ReadOnly`.  
 
 ```  
@@ -220,9 +274,12 @@ remove-item variable:* -force
 
 ```  
 
-### Setting the Value of a Variable to NULL  
 
-#### Example 1  
+### Setting the value of a variable to NULL
+
+
+#### Example 1
+
  This command uses the [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md) cmdlet to change the value of the `processes` variable to NULL.  
 
 ```  
@@ -230,7 +287,9 @@ clear-item -path variable:processes
 
 ```  
 
-#### Example 2  
+
+#### Example 2
+
  This command clears the value of the `processes` variable by assigning a null value to it. It uses the `$null` automatic variable to represent the NULL value.  
 
 ```  
@@ -238,7 +297,9 @@ $processes = $null
 
 ```  
 
-## See Also  
+
+## See also
+
  [about_Variables](../About/about_Variables.md)   
  [about_Automatic_Variables](../About/about_Automatic_Variables.md)   
  [about_Providers](../About/about_Providers.md)
