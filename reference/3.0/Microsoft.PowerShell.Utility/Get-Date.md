@@ -323,7 +323,7 @@ Accept wildcard characters: False
 
 ### -Hour
 Specifies the hour that is displayed.
-Enter a value from 1 to 23.
+Enter a value from 0 to 23.
 The default is the current hour.
 
 ```yaml
@@ -359,7 +359,7 @@ Accept wildcard characters: False
 
 ### -Minute
 Specifies the minute that is displayed.
-Enter a value from 1 to 59.
+Enter a value from 0 to 59.
 The default value is the current minutes.
 
 ```yaml
@@ -393,7 +393,7 @@ Accept wildcard characters: False
 
 ### -Second
 Specifies the second that is displayed.
-Enter a value from 1 to 59.
+Enter a value from 0 to 59.
 The default is the current second.
 
 ```yaml

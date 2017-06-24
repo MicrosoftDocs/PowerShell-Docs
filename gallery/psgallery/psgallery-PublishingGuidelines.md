@@ -65,7 +65,7 @@ If there is a compelling reason for your item to keep code that is flagged as an
 Documentation and examples are the best way to ensure users can take advantage of any shared code.
 
 Documentation is the most helpful thing to include in items published to the PowerShell Gallery. 
-Users will generally bypass items without documentation, as the alternative is to the code to understand what the item is and how to use it.
+Users will generally bypass items without documentation, as the alternative is to read the code to understand what the item is and how to use it.
 There are several articles available in MSDN on how to provide documentation with PowerShell items, including:
 
 * Guidelines for providing help are in [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)
