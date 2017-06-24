@@ -24,7 +24,7 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 
  Each environment variable is an instance of the [System.Collections.DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) class. The name of the variable is the dictionary key. The value of the environment variable is the dictionary value.  
 
- The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive ("`set-location env:`"), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.  
+ The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive (`set-location env:`), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.  
 
  The **Environment** provider supports all the cmdlets that contain the *Item* noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the *ItemProperty* noun, and it does not support the `-Filter` parameter in any cmdlet.  
 
