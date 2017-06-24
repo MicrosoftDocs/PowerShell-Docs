@@ -16,14 +16,14 @@ Gets the current date and time.
 ## Syntax
 
 ### Net (Default)
-```PowerShell
+```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-Format <String>]
  [<CommonParameters>]
 ```
 
 ### UFormat
-```PowerShell
+```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-UFormat <String>]
  [<CommonParameters>]
@@ -38,7 +38,7 @@ You can use `Get-Date` to generate a date or time character string, and then sen
 
 ### Example 1
 
-```PowerShell
+```powershell
 Get-Date -DisplayHint Date
 ```
 
@@ -51,7 +51,7 @@ It uses the `-DisplayHint` parameter to indicate that only the date is to be dis
 
 ### Example 2
 
-```PowerShell
+```powershell
 Get-Date -Format g
 ```
 
@@ -64,7 +64,7 @@ It uses the .NET Framework "`g`" format specifier (General \[short date and shor
 
 ### Example 3
 
-```PowerShell
+```powershell
 Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 ```
 
@@ -77,7 +77,7 @@ In this case, the format includes the full year (`%Y`), the two-digit numeric mo
 
 ### Example 4
 
-```PowerShell
+```powershell
 (Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
 ```
 
@@ -89,7 +89,7 @@ This command displays the day of the year for the current date.
 For example, December 31 is the 365th day of 2006, but it is the 366th day of 2000.
 
 ### Example 5
-```PowerShell
+```powershell
 $a = Get-Date
 $a.IsDaylightSavingTime()
 ```
@@ -107,7 +107,7 @@ To see the properties and methods of the **DateTime** object, type: `Get-Date | 
 
 ### Example 6
 
-```PowerShell
+```powershell
 $a = Get-Date
 $a.ToUniversalTime()
 ```
@@ -123,7 +123,7 @@ Then, it uses the **ToUniversalTime** method on the object in $a.
 
 ### Example 7
 
-```PowerShell
+```powershell
 $a = Get-WmiObject Win32_Bios -Computer Server01
 $a | Format-List -Property Name, @{Label="BIOS Age";Expression={(Get-Date) - $_.ConvertToDateTime($_.ReleaseDate)}}
 ```
@@ -151,7 +151,7 @@ The backtick character (`` ` ``) is the line continuation character in Windows P
 
 ### Example 8
 
-```PowerShell
+```powershell
 Get-Date
 ```
 
@@ -163,14 +163,14 @@ This command gets a **DateTime** object and displays the current date and time i
 
 ### Example 9
 
-```PowerShell
+```powershell
 Get-Date
 ```
 ```
 Tuesday, September 26, 2006 11:25:31 AM
 ```
 
-```PowerShell
+```powershell
 (Get-Date).ToString()
 ```
 
@@ -178,13 +178,13 @@ Tuesday, September 26, 2006 11:25:31 AM
 9/26/2006 11:25:31 AM
 ```
 
-```PowerShell
+```powershell
 Get-Date | Add-Content Test.txt
 
 # Adds 9/26/2006 11:25:31 AM
 ```
 
-```PowerShell
+```powershell
 Get-Date -Format F | Add-Content Test.txt
 
 # Adds Tuesday, September 26, 2006 11:25:31 AM
@@ -204,7 +204,7 @@ When you use the `-Format` or `-UFormat` parameters, `Get-Date` generates a stri
 Then, when you send the string to `Add-Content`, it adds the string to the Test.txt file without changing it.
 
 ### Example 10
-```PowerShell
+```powershell
 Get-Date -Format o
 ```
 
@@ -212,11 +212,11 @@ Get-Date -Format o
 2012-03-08T10:55:55.6083839-08:00
 ```
 
-```PowerShell
+```powershell
 $timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
 ```
 
-```PowerShell
+```powershell
 mkdir C:\ps-test\$timestamp
 ```
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 
 ### -Hour
 Specifies the hour that is displayed.
-Enter a value from 1 to 23.
+Enter a value from 0 to 23.
 The default is the current hour.
 
 ```yaml
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 
 ### -Minute
 Specifies the minute that is displayed.
-Enter a value from 1 to 59.
+Enter a value from 0 to 59.
 The default value is the current minutes.
 
 ```yaml
@@ -402,7 +402,7 @@ Accept wildcard characters: False
 
 ### -Second
 Specifies the second that is displayed.
-Enter a value from 1 to 59.
+Enter a value from 0 to 59.
 The default is the current second.
 
 ```yaml

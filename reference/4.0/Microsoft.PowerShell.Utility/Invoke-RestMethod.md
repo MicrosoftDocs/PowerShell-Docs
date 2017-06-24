@@ -15,7 +15,7 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax
 
-```PowerShell
+```powershell
 Invoke-RestMethod [-Method <WebRequestMethod>] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-Credential <PSCredential>] [-UseDefaultCredentials]
  [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-UserAgent <String>] [-DisableKeepAlive]
@@ -36,7 +36,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
-```PowerShell
+```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
 Format-Table -Property Title, pubDate
 ```
@@ -62,7 +62,7 @@ The command uses the `Format-Table` cmdlet to display the values of the **Title*
 ### Example 2
 In the following example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
-```PowerShell
+```powershell
 $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
@@ -519,7 +519,7 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet
 
-```PowerShell
+```powershell
 Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
 ```
 

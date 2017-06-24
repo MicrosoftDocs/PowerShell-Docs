@@ -74,7 +74,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
 
-```PowerShell
+```powershell
 PS C:> $testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## open $testfile as a stream

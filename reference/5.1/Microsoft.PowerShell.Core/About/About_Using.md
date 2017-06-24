@@ -44,7 +44,7 @@ the references to `[UnicodeEncoding]` in *System.Text*; and, to `[Stream]`
 and to `[MemoryStream]` in *System.IO*.
 
 
-```PowerShell
+```powershell
     using namespace System.Text
     using namespace System.IO
 
@@ -68,7 +68,7 @@ The following classes are defined in the module:
 - *Deck*
 - *Card*
 
-```PowerShell
+```powershell
 using module CardGames
 
 [Deck]$deck = [Deck]::new()
