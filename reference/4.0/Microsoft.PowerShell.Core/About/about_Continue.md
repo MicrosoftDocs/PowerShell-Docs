@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-18
+ms.date:  2017-06-25
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Continue
@@ -27,7 +27,7 @@ In the following example, program flow returns to the top of the While loop
 if the $ctr variable is equal to 5. As a result, all the numbers between 1
 and 10 are displayed except for 5:
 
-```
+```powershell
 while ($ctr -lt 10)
 {
 $ctr += 1
