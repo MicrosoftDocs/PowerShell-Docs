@@ -73,8 +73,8 @@ Because the Get-Member part of the command does not have any parameters, it uses
 As such, it gets all member types, but it does not get static members and does not display intrinsic members.
 ### Example 2
 ```
-PS C:\> get-service | get-member -force
-PS C:\> (get-service -schedule).psbase
+PS C:\> Get-Service | Get-Member -Force
+PS C:\> (Get-Service Schedule).PSBase
 ```
 
 This example gets all of the members (properties and methods) of the service objects (System.ServiceProcess.ServiceController) retrieved by the Get-Service cmdlet, including the intrinsic members, such as PSBase and PSObject, and the get_ and set_ methods.

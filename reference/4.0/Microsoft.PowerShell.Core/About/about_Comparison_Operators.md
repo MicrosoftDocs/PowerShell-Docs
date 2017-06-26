@@ -59,7 +59,7 @@ Windows PowerShell supports the following comparison operators.
 Description: Equal to. Includes an identical value.  
 
 Example:
-```PowerShell
+```powershell
 PS C:\> "abc" -eq "abc"
 True
 
@@ -74,7 +74,7 @@ abc
 Description: Not equal to. Includes a different value.  
 
 Example:
-```PowerShell
+```powershell
 PS C:\> "abc" -ne "def"
 True
 
@@ -93,7 +93,7 @@ Description: Greater-than.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 8 -gt 6
 True
 
@@ -106,7 +106,7 @@ Description: Greater-than or equal to.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 8 -ge 8
 True
 
@@ -120,7 +120,7 @@ Description: Less-than.
 
 Example:
 
-```PowerShell
+```powershell
 
 PS C:\> 8 -lt 6
 False
@@ -134,7 +134,7 @@ Description: Less-than or equal to.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 6 -le 8
 True
 
@@ -148,7 +148,7 @@ Description: Match using the wildcard character (\*).
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Windows PowerShell" -like "*shell"
 True
 
@@ -161,7 +161,7 @@ Description: Does not match using the wildcard character (\*).
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Windows PowerShell" -notlike "*shell"
 False
 
@@ -176,7 +176,7 @@ When the input is scalar, it populates the
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Sunday" -match "sun"
 True
 
@@ -196,7 +196,7 @@ automatic variable.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Sunday" -notmatch "sun"
 False
 
@@ -223,7 +223,7 @@ Syntax:
 
 Examples:  
 
-```PowerShell
+```powershell
 PS C:\> "abc", "def" -contains "def"  
 True
 
@@ -258,7 +258,7 @@ Syntax:
 
 Examples:
 
-```PowerShell
+```powershell
 PS C:\> "Windows", "PowerShell" -notcontains "Shell"
 True  #Not an exact match
 
@@ -300,7 +300,7 @@ Syntax:
 
 Examples:  
 
-```PowerShell
+```powershell
 PS C:\> "def" -in "abc", "def"
 True
 
@@ -337,7 +337,7 @@ Syntax:
 
 Examples:
 
-```PowerShell
+```powershell
 PS C:\> "def" -notin "abc", "def"
 False
 
@@ -366,7 +366,7 @@ Description: Replace operator. Changes the specified elements of a value.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Get-Process" -replace "Get", "Stop"
 Stop-Process
 
@@ -381,7 +381,7 @@ pattern. The entire pattern must match an entire value.
 
 Example:
 
-```PowerShell
+```powershell
 C:PS> 2 -eq 2
 True
 
@@ -417,7 +417,7 @@ evaluate all input and then return all the matches in the collection.
 
 The following examples show the effect of the `-contains` operator:
 
-```PowerShell
+```powershell
 PS C:\> 1,2,3 -contains 2
 True
 
@@ -438,7 +438,7 @@ The following example shows how the containment operators differ from the
 equal to operator. The containment operators return a value of TRUE on the
 first match.
 
-```PowerShell
+```powershell
 PS C:\> 1,2,3,4,5,4,3,2,1 -eq 2
 2
 2
@@ -460,7 +460,7 @@ The syntax is:
 
 The following examples show some uses of the `-match` operator:
 
-```PowerShell
+```powershell
 PS C:\> "Windows", "PowerShell" -match ".shell"
 PowerShell
 
@@ -491,7 +491,7 @@ For example, the following command submits a collection of strings to
 the `-match` operator. The `-match` operator returns the items in the collection
 that match. It does not populate the `$Matches` automatic variable.
 
-```PowerShell
+```powershell
 PS C:\> "Sunday", "Monday", "Tuesday" -match "sun"
 Sunday
 
@@ -503,7 +503,7 @@ In contrast, the following command submits a single string to the
 `-match` operator. The `-match` operator returns a Boolean value and
 populates the `$Matches` automatic variable.
 
-```PowerShell
+```powershell
 PS C:\> "Sunday" -match "sun"
 True
 
@@ -518,7 +518,7 @@ The `-notmatch` operator populates the `$Matches` automatic variable when
 the input is scalar and the result is False, that it, when it detects
 a match.
 
-```PowerShell
+```powershell
 PS C:\> "Sunday" -notmatch "rain"
 True
 
@@ -542,7 +542,7 @@ many administrative tasks, such as renaming files. For example, the
 following command changes the file name extensions of all .gif files
 to .jpg:
 
-```PowerShell
+```powershell
 Get-ChildItem | Rename-Item -NewName { $_ -replace '.gif$','.jpg$' }
 ```
 
@@ -557,17 +557,17 @@ By default, the `-replace` operator is case-insensitive. To make it case
 sensitive, use `-creplace`. To make it explicitly case-insensitive, use
 `-ireplace`. Consider the following examples:
 
-```PowerShell
+```powershell
 PS C:\> "book" -replace "B", "C"
 Cook
 ```
 
-```PowerShell
+```powershell
 PS C:\> "book" -ireplace "B", "C"
 Cook
 ```
 
-```PowerShell
+```powershell
 PS C:\> "book" -creplace "B", "C"
 book
 ```
@@ -639,7 +639,7 @@ to 1.
 For example, the binary complement of 0 is -1, the maximum unsigned
 integer (0xffffffff), and the binary complement of -1 is 0.
 
-```PowerShell
+```powershell
 PS C:\> -bNot 10
 -11
 ```
@@ -662,7 +662,7 @@ When the left operand is a Long (64-bit) value, the lower 6 bits of
 the right operand determine how many bits of the left operand are
 shifted.
 
-```PowerShell
+```powershell
 PS C:\> 21 -shl 1
 42
 
@@ -670,7 +670,7 @@ PS C:\> 21 -shl 1
 # 00101010  (42)
 ```
 
-```PowerShell
+```powershell
 PS C:\> 21 -shl 2
 84
 
@@ -692,7 +692,7 @@ When the left operand is a Long (64-bit) value, the lower 6 bits of
 the right operand determine how many bits of the left operand are
 shifted.
 
-```PowerShell
+```powershell
 PS C:\> 21 -shr 1
 10
 
@@ -700,7 +700,7 @@ PS C:\> 21 -shr 1
 # 00001010  (10)
 ```
 
-```PowerShell
+```powershell
 PS C:\> 21 -shr 2
 5
 

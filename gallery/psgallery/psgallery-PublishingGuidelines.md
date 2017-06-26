@@ -14,9 +14,9 @@ the PowerShell Gallery will be widely adopted and provide high value to users, b
 PowerShell Gallery handles manifest data and on feedback from large numbers of PowerShell Gallery users. 
 Items that are published following these guidelines will be more likely to be installed, trusted, and attract more users.
 
-Included below are guidelines for what makes a good PowerShell Gallery item, what optional Manfest settings are most important, 
+Included below are guidelines for what makes a good PowerShell Gallery item, what optional Manifest settings are most important, 
 improving your code with feedback from initial reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), 
-versioning your module, documentation, tests, & examples for how to use what you have shared. 
+versioning your module, documentation, tests & examples for how to use what you have shared. 
 Much of this documentation follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 For the mechanics of publishing an item to the PowerShell Gallery, see [Creating and Publishing an Item](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
@@ -48,8 +48,9 @@ PSScriptAnalyzer will identify the most common issues seen in PowerShell code, a
 The tool is easy to use, and categorizes the issues as Errors (severe, must be addressed), Warning (need to be reviewed & should be addressed), and Information (worth checking out for best practices). 
 All items item published to the PowerShell Gallery will be scanned using PSScriptAnalyzer, and any errors will be reported back to the owner and must be addressed. 
 
-The best practice is to run Invoke-ScriptAnalyzer with -Recurse and -Severity Warning.
-Review the results, and ensure that 
+The best practice is to run `Invoke-ScriptAnalyzer` with `-Recurse` and `-Severity` Warning.
+
+Review the results, and ensure that:
 
 * All Errors are corrected or addressed in your documentation
 * All Warnings are reviewed, and addressed where applicable
@@ -64,7 +65,7 @@ If there is a compelling reason for your item to keep code that is flagged as an
 Documentation and examples are the best way to ensure users can take advantage of any shared code.
 
 Documentation is the most helpful thing to include in items published to the PowerShell Gallery. 
-Users will generally bypass items without documentation, as the alternative is to the code to understand what the item is and how to use it.
+Users will generally bypass items without documentation, as the alternative is to read the code to understand what the item is and how to use it.
 There are several articles available in MSDN on how to provide documentation with PowerShell items, including:
 
 * Guidelines for providing help are in [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)

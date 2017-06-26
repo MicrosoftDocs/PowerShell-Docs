@@ -10,12 +10,12 @@ title:  Invoke-RestMethod
 
 # Invoke-RestMethod
 
-## SYNOPSIS
+## Synopsis
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## SYNTAX
+## Syntax
 
-```
+```powershell
 Invoke-RestMethod [-Method <WebRequestMethod>] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-Credential <PSCredential>] [-UseDefaultCredentials]
  [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-UserAgent <String>] [-DisableKeepAlive]
@@ -24,8 +24,8 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-Uri] <Uri> [-WebSession <WebReq
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [<CommonParameters>]
 ```
 
-## DESCRIPTION
-The **Invoke-RestMethod** cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
+## Description
+The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 Windows PowerShell formats the response based to the data type.
 For an RSS or ATOM feed, Windows PowerShell returns the Item or Entry XML nodes.
@@ -33,23 +33,16 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Get the PowerShell RSS feed
-Get the latest feeds from the PowerShell team's blog.
-
-```PowerShell
+```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-    Format-Table -Property Title, PubDate
+Format-Table -Property Title, pubDate
 ```
 
 ```
-PS C:\ >Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-    Format-Table -Property Title, PubDate
-
-
-
-title                                                                pubDate                        
+Title                                                                pubDate                        
 -----                                                                -------                        
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
 DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
@@ -61,21 +54,15 @@ PowerShell Security at DerbyCon                                      Wed, 28 Sep
 DSC Resource Kit September Release                                   Thu, 22 Sep 2016 00:25:37 +0000
 PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug 2016 15:07:50 +0000
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
-
-
-
-PS C:\ >
 ```
 
-This command uses the **Invoke-RestMethod** cmdlet to get information from the Windows PowerShell Blog RSS feed.
-The command uses the Format-Table cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
+This command uses the `Invoke-RestMethod` cmdlet to get information from the Windows PowerShell Blog RSS feed.
+The command uses the `Format-Table` cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
 
 ### Example 2
-In the following example,
-a user runs **Invoke-RestMethod**
-to perform a POST request on an intranet website in the user's organization.
+In the following example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
-```PowerShell
+```powershell
 $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
@@ -111,25 +98,25 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Body
 Specifies the body of the request.
 The body is the content of the request that follows the headers.
-You can also pipe a body value to **Invoke-RestMethod**.
+You can also pipe a body value to `Invoke-RestMethod`.
 
-The **Body** parameter can be used to specify a list of query parameters or specify the content of the response.
+The `-Body` parameter can be used to specify a list of query parameters or specify the content of the response.
 
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters.
 For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
 
 **Warning**: *The verbose output of a POST body will end with `with -1-byte payload`, even though the size of the body is both known and sent in the `Content-Length` HTTP header.*
 
-When the body is a form, or it is the output of another **Invoke-WebRequest** call, Windows PowerShell sets the request content to the form fields.
+When the body is a form, or it is the output of another `Invoke-WebRequest` call, Windows PowerShell sets the request content to the form fields.
 
 For example:
 
-```powershell
+```PowerShell
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
@@ -138,7 +125,7 @@ Invoke-RestMethod http://website.com/service.aspx -Body $R
 
 or
 
-```powershell
+```PowerShell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
@@ -158,7 +145,7 @@ Accept wildcard characters: False
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
-To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
+To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate (`Cert:`) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
 
 ```yaml
@@ -180,7 +167,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the Windows PowerShell (`Cert:`) drive.
 
 ```yaml
 Type: String
@@ -197,7 +184,7 @@ Accept wildcard characters: False
 ### -ContentType
 Specifies the content type of the web request.
 
-If this parameter is omitted and the request method is POST, Invoke-RestMethod sets the content type to "application/x-www-form-urlencoded".
+If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content type to "application/x-www-form-urlencoded".
 Otherwise, the content type is not specified in the call.
 
 ```yaml
@@ -216,7 +203,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to send the request.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
 
 ```yaml
 Type: PSCredential
@@ -303,7 +290,17 @@ Accept wildcard characters: False
 
 ### -Method
 Specifies the method used for the web request.
-Valid values are Default, Delete, Get, Head, Merge, Options, Patch, Post, Put, and Trace.
+The acceptable values for this parameter are:
+* Default
+* Delete
+* Get
+* Head
+* Merge
+* Options
+* Patch
+* Post
+* Put
+* Trace
 
 ```yaml
 Type: WebRequestMethod
@@ -322,8 +319,8 @@ Saves the response body in the specified output file.
 Enter a path and file name.
 If you omit the path, the default is the current location.
 
-By default, **Invoke-RestMethod** returns the results to the pipeline.
-To send the results to a file and to the pipeline, use the **Passthru** parameter.
+By default, `Invoke-RestMethod` returns the results to the pipeline.
+To send the results to a file and to the pipeline, use the `-Passthru` parameter.
 
 ```yaml
 Type: String
@@ -339,7 +336,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 Returns the results, in addition to writing them to a file.
-This parameter is valid only when the **OutFile** parameter is also used in the command.
+This parameter is valid only when the `-OutFile` parameter is also used in the command.
 
 ```yaml
 Type: SwitchParameter
@@ -370,13 +367,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
+Specifies a user account that has permission to use the proxy server that is specified by the `-Proxy` parameter.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command.
-You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the `-Proxy` parameter is also used in the command.
+You cannot use the `-ProxyCredential` and `-ProxyUseDefaultCredentials` parameters in the same command.
 
 ```yaml
 Type: PSCredential
@@ -391,10 +388,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyUseDefaultCredentials
-Uses the credentials of the current user to access the proxy server that is specified by the **Proxy** parameter.
+Uses the credentials of the current user to access the proxy server that is specified by the `-Proxy` parameter.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command.
-You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the `-Proxy` parameter is also used in the command.
+You cannot use the `-ProxyCredential` and `-ProxyUseDefaultCredentials` parameters in the same command.
 
 ```yaml
 Type: SwitchParameter
@@ -410,21 +407,21 @@ Accept wildcard characters: False
 
 ### -SessionVariable
 Creates a web request session and saves it in the value of the specified variable.
-Enter a variable name without the dollar sign ($) symbol.
+Enter a variable name without the dollar sign (`$`) symbol.
 
-When you specify a session variable, **Invoke-RestMethod** creates a web request session object and assigns it to a variable with the specified name in your Windows PowerShell session.
+When you specify a session variable, `Invoke-RestMethod` creates a web request session object and assigns it to a variable with the specified name in your Windows PowerShell session.
 You can use the variable in your session as soon as the command completes.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
 You can use it to share state and data among web requests.
 
-To use the web request session in subsequent web requests, specify the session variable in the value of the **WebSession** parameter.
+To use the web request session in subsequent web requests, specify the session variable in the value of the `-WebSession` parameter.
 Windows PowerShell uses the data in the web request session object when establishing the new connection.
-To override a value in the web request session, use a cmdlet parameter, such as **UserAgent** or **Credential**.
+To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
 Parameter values take precedence over values in the web request session.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You cannot use the `-SessionVariable` and `-WebSession` parameters in the same command.
 
 ```yaml
 Type: String
@@ -460,7 +457,12 @@ Accept wildcard characters: False
 
 ### -TransferEncoding
 Specifies a value for the transfer-encoding HTTP response header.
-Valid values are Chunked, Compress, Deflate, GZip and Identity.
+The acceptable values for this parameter are:
+* Chunked
+* Compress
+* Deflate
+* GZip
+* Identity
 
 ```yaml
 Type: String
@@ -479,7 +481,7 @@ Specifies the Uniform Resource Identifier (URI) of the Internet resource to whic
 This parameter supports HTTP, HTTPS, FTP, and FILE values.
 
 This parameter is required.
-The parameter name (-Uri) is optional.
+The parameter name (`-Uri`) is optional.
 
 ```yaml
 Type: Uri
@@ -513,11 +515,13 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the PSUserAgenthttp://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet.
+For example, the following command uses the user agent string for Internet
 
-`Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)`
+```powershell
+Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
+```
 
 ```yaml
 Type: String
@@ -533,20 +537,20 @@ Accept wildcard characters: False
 
 ### -WebSession
 Specifies a web request session.
-Enter the variable name, including the dollar sign ($).
+Enter the variable name, including the dollar sign (`$`).
 
-To override a value in the web request session, use a cmdlet parameter, such as **UserAgent** or **Credential**.
+To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
 Parameter values take precedence over values in the web request session.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
 You can use it to share state and data among web requests.
 
-To create a web request session, enter a variable name (without a dollar sign) in the value of the **SessionVariable** parameter of an **Invoke-RestMethod** command.
-**Invoke-RestMethod** creates the session and saves it in the variable.
-In subsequent commands, use the variable as the value of the **WebSession** parameter.
+To create a web request session, enter a variable name (without a dollar sign) in the value of the `-SessionVariable` parameter of an `Invoke-RestMethod` command.
+`Invoke-RestMethod` creates the session and saves it in the variable.
+In subsequent commands, use the variable as the value of the `-WebSession` parameter.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You cannot use the `-SessionVariable` and `-WebSession` parameters in the same command.
 
 ```yaml
 Type: WebRequestSession
@@ -561,24 +565,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Object
-You can pipe the body of a web request to **Invoke-Rest-Method**.
+You can pipe the body of a web request to `Invoke-Rest-Method`.
 
-## OUTPUTS
+## Outputs
 
 ### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
 The output of the cmdlet depends upon the format of the content that is retrieved.
 
 ### PSObject
-If the request returns JSON strings, Invoke-RestMethod returns a PSObject that represents the strings.
+If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related Links
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

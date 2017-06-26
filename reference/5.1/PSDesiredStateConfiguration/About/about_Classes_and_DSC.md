@@ -3,16 +3,16 @@ ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-title:  about_Classes
+title:  about_Classes_and_DSC
 ---
 
-# about_Classes
+# about_Classes_and_DSC
 ```  
 TOPIC  
-    about_Classes  
+    about_Classes_and_DSC  
   
 SHORT DESCRIPTION  
-    Describes how you can use classes to develop in Windows PowerShell  
+    Describes how you can use classes to develop in Windows PowerShell with DSC 
   
 LONG DESCRIPTION  
     Starting in Windows PowerShell 5.0, Windows PowerShell adds language  
