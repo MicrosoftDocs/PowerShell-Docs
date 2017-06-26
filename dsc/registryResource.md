@@ -19,7 +19,7 @@ Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
