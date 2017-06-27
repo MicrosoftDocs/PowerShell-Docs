@@ -16,56 +16,56 @@ Creates a record of all or part of a Windows PowerShell session to a text file.
 ## SYNTAX
 
 ### ByPath (Default)
-```
+```powershell
 Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-```
+```powershell
 Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
-```
+```powershell
 Start-Transcript [-OutputDirectory <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Start-Transcript** cmdlet creates a record of all or part of a Windows PowerShell session to a text file.
+The `Start-Transcript` cmdlet creates a record of all or part of a Windows PowerShell session to a text file.
 The transcript includes all command that the user types and all output that appears on the console.
 
-Starting in Windows PowerShell 5.0, **Start-Transcript** includes the host name in the generated file name of all transcripts.
+Starting in Windows PowerShell 5.0, `Start-Transcript` includes the host name in the generated file name of all transcripts.
 This is especially useful when your enterprise's logging is centralized.
-Files that are created by the **Start-Transcript** cmdlet include random characters in names to prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
+Files that are created by the `Start-Transcript` cmdlet include random characters in names to prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
 This also prevents unauthorized discovery of transcripts that are stored in a centralized file share.
-Additionally in Windows PowerShell 5.0, the Start-Transcript cmdlet works in Windows PowerShell ISE.
+Additionally in Windows PowerShell 5.0, the `Start-Transcript` cmdlet works in Windows PowerShell ISE.
 
 ## EXAMPLES
 
 ### Example 1: Start a transcript file with default settings
-```
-PS C:\> Start-Transcript
+```powershell
+Start-Transcript
 ```
 
 This command starts a transcript in the default file location.
 
 ### Example 2: Start a transcript file at a specific location
-```
-PS C:\> Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
+```powershell
+Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
 This command starts a transcript in the Transcript0.txt file in C:\transcripts.
-Since the *NoClobber* parameter is used, the command prevents any existing files from being overwritten.
+Since the **NoClobber** parameter is used, the command prevents any existing files from being overwritten.
 If the Transcript0.txt file already exists, the command fails.
 
 ## PARAMETERS
 
 ### -Append
 Indicates that this cmdlet adds the new transcript to the end of an existing file.
-Use the *Path* parameter to specify the file.
+Use the **Path** parameter to specify the file.
 
 ```yaml
 Type: SwitchParameter
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 
 ### -NoClobber
 Indicates that this cmdlet will not overwrite of an existing file.
-By default, if a transcript file exists in the specified path, **Start-Transcript** overwrites the file without warning.
+By default, if a transcript file exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
 ```yaml
 Type: SwitchParameter
@@ -148,8 +148,8 @@ Specifies a location to the transcript file.
 Enter a path to a .txt file.
 Wildcards are not permitted.
 
-If you do not specify a path, **Start-Transcript** uses the path in the value of the $Transcript global variable.
-If you have not created this variable, **Start-Transcript** stores the transcripts in the $Home\My Documents directory as \PowerShell_transcript.\<time-stamp\>.txt files.
+If you do not specify a path, `Start-Transcript` uses the path in the value of the $Transcript global variable.
+If you have not created this variable, `Start-Transcript` stores the transcripts in the $Home\My Documents directory as \PowerShell_transcript.\<time-stamp\>.txt files.
 
 If any of the directories in the path do not exist, the command fails.
 
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies a location to the transcript file.
-Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
+Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks inform Windows PowerShell not to interpret any characters as escape sequences.
@@ -229,9 +229,9 @@ You cannot pipe objects to this cmdlet.
 This cmdlet returns a string that contains a confirmation message and the path to the output file.
 
 ## NOTES
-* To stop a transcript, use the Stop-Transcript cmdlet.
+* To stop a transcript, use the `Stop-Transcript` cmdlet.
 
-  To record an entire session, add the **Start-Transcript** command to your profile.
+  To record an entire session, add the `Start-Transcript` command to your profile.
 For more information, see about_Profiles.
 
 *
