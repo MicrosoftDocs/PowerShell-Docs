@@ -65,7 +65,7 @@ help about_Preference_Variables
 # COMMON PARAMETER DESCRIPTIONS
 
 
--Debug[:{$true | $false}]
+#### -Debug[:{$true | $false}]
 Alias: db
 
 Displays programmer-level detail about the operation performed by the
@@ -78,7 +78,7 @@ variable for the current command, setting the value of $DebugPreference
 to Inquire. Because the default value of the $DebugPreference variable
 is SilentlyContinue, debugging messages are not displayed by default.
 
-Valid values:
+##### Valid values:
 
 $true (-Debug:$true). Has the same effect as -Debug.
 
@@ -86,7 +86,7 @@ $false (-Debug:$false). Suppresses the display of debugging
 messages when the value of the $DebugPreference is not
 SilentlyContinue (the default).
 
--ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop |
+#### -ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop |
 Suspend }]
 Alias: ea
 
@@ -104,7 +104,7 @@ The ErrorAction parameter has no effect on terminating errors (such as
 missing data, parameters that are not valid, or insufficient
 permissions) that prevent a command from completing successfully.
 
-Valid values:
+##### Valid values:
 
 Continue. Displays the error message and continues executing
 the command. "Continue" is the default value.
@@ -130,7 +130,7 @@ When a workflow runs into terminating error, this action preference
 automatically suspends the job to allow for further investigation. After
 investigation, the workflow can be resumed.
 
--ErrorVariable [+]<variable-name>
+#### -ErrorVariable [+]<variable-name>
 Alias: ev
 
 Stores error messages about the command in the specified variable
@@ -162,7 +162,7 @@ variable contains error messages from all the commands in the session.
 You can use array notation, such as $a[0] or $error[1,2] to refer to
 specific errors stored in the variables.
 
--InformationAction [:{SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}]
+#### -InformationAction [:{SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}]
 Alias: ia
 
 Introduced in Windows PowerShell 5.0. Within the command or script in which
@@ -173,7 +173,7 @@ Write-Information values are shown depending on the value of the -InformationAct
 parameter. For more information about $InformationPreference, see
 about_Preference_Variables.
 
-Valid values:
+##### Valid values:
 Stop:               Stops a command or script at an occurrence of the
 Write-Information command.
 
@@ -200,7 +200,7 @@ SilentlyContinue:   No effect. The informational messages are not
 (Default)           displayed, and the script continues without
 interruption.
 
--InformationVariable [+]<variable-name>
+#### -InformationVariable [+]<variable-name>
 Alias: iv
 
 Introduced in Windows PowerShell 5.0. Within the command or script in which
@@ -212,7 +212,7 @@ Write-Information strings are shown depending on the value of the $InformationPr
 preference variable. For more information about $InformationPreference, see
 about_Preference_Variables.
 
--OutBuffer <Int32>
+#### -OutBuffer <Int32>
 Alias: ob
 
 Determines the number of objects to accumulate in a buffer before
@@ -225,7 +225,7 @@ next cmdlet in the pipeline until the number of objects generated
 equals OutBuffer + 1. Thereafter, it sends all objects as they are
 generated.
 
--OutVariable [+]<variable-name>
+#### -OutVariable [+]<variable-name>
 Alias: ov
 
 Stores output objects from the command in the specified variable and
@@ -248,7 +248,7 @@ The following command displays the contents of the $out variable:
 
 $out
 
--PipelineVariable <String>
+#### -PipelineVariable <String>
 Alias: pv
 
 PipelineVariable stores the value of the current pipeline element
@@ -291,7 +291,7 @@ displayed as "Left range member * Right range member = product".
 # 1 * 5 = 5
 
 
--Verbose[:{$true | $false}]
+#### -Verbose[:{$true | $false}]
 Alias: vb
 
 Displays detailed information about the operation performed by the
@@ -305,7 +305,7 @@ variable for the current command. Because the default value of the
 $VerbosePreference variable is SilentlyContinue, verbose messages
 are not displayed by default.
 
-Valid values:
+##### Valid values:
 
 $true (-Verbose:$true) has the same effect as -Verbose.
 
@@ -313,7 +313,7 @@ $false (-Verbose:$false) suppresses the display of verbose
 messages. Use this parameter when the value of $VerbosePreference
 is not SilentlyContinue (the default).
 
--WarningAction[:{Continue | Inquire | SilentlyContinue | Stop}]
+#### -WarningAction[:{Continue | Inquire | SilentlyContinue | Stop}]
 Alias: wa
 
 Determines how the cmdlet responds to a warning from the command.
@@ -327,7 +327,7 @@ default value of the $WarningPreference variable is Continue,
 warnings are displayed and execution continues unless you use the
 WarningAction parameter.
 
-Valid Values:
+##### Valid Values:
 
 Continue. Displays the warning message and continues executing
 the command. "Continue" is the default value.
@@ -346,7 +346,7 @@ NOTE: The WarningAction parameter does not override the value of
 the $WarningAction preference variable when the parameter
 is used in a command to run a script or function.
 
--WarningVariable [+]<variable-name>
+#### -WarningVariable [+]<variable-name>
 Alias: wv
 
 Stores warnings about the command in the specified variable.
@@ -381,7 +381,7 @@ nested calls in functions or scripts.
 
 Risk Management Parameter Descriptions
 
--WhatIf[:{$true | $false}]
+#### -WhatIf[:{$true | $false}]
 Alias: wi
 
 Displays a message that describes the effect of the command,
@@ -395,7 +395,7 @@ the following command:
 
 Get-Help about_Preference_Variables
 
-Valid values:
+##### Valid values:
 
 $true (-WhatIf:$true). Has the same effect as -WhatIf.
 
@@ -415,7 +415,7 @@ produces the following output:
 What if: Performing operation "Remove File" on
 Target "C:\ps-test\date.csv".
 
--Confirm[:{$true | $false}]
+#### -Confirm[:{$true | $false}]
 Alias: cf
 
 Prompts you for confirmation before executing the command.
@@ -426,7 +426,7 @@ information, type the following command:
 
 Get-Help about_Preference_Variables
 
-Valid values:
+##### Valid values:
 
 $true (-Confirm:$true). Has the same effect as -Confirm.
 
@@ -481,7 +481,7 @@ Performing operation "Create File" on Target "Destination: C:\ps-test\test.txt".
 
 PS C:\ps-test>>> Get-Help New-Item -Parameter ItemType
 
--ItemType <string>
+#### -ItemType <string>
 Specifies the provider-specified type of the new item.
 
 Required?                    false
