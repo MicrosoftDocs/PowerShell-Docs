@@ -119,22 +119,49 @@ Escape Sequence | Special Character
 `0 | Null
 `a | Alert
 `b | Backspace
+`e | Escape
 `f | Form feed
 `n | New line
 `r | Carriage return
 `t | Horizontal tab
+`u{x} | Unicode escape sequence for characters with hex value x (up to xxxxxx)
 `v | Vertical tab
 
-For example:
+This next example uses new line and tab characters to format the string:
 
 ```powershell
-"12345678123456781`nCol1`tColumn2`tCol3"
+"12345678123456781`nCol1`tColumn2`tCol3`u{2195}"
 ```
 
 ```output
-# 12345678123456781
+12345678123456781
 
-Col1 Column2 Col3
+Col1 Column2 Col3↕
+```
+
+This next example uses the escape character to specify a virtual
+terminal sequence to output text with the foreground color of Orange.
+This example requires Windows 10 Anniversary Update or a Linux or
+macOS terminal that supports 24-bit color.
+
+```powershell
+$r,$g,$b = 0xff,0x66,0x00
+"`e[38;2;$r;$g;${b}mOrange text`e[0m"
+```
+
+```output
+Orange text
+```
+
+This next example uses a Unicode escape sequence to display the
+character '↕'.
+
+```powershell
+"`u{2195}"
+```
+
+```output
+↕
 ```
 
 For more information, type:
