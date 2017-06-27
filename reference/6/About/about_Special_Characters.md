@@ -29,10 +29,12 @@ The following special characters are recognized by Windows PowerShell:
 `0    Null
 `a    Alert
 `b    Backspace
+`e    Escape
 `f    Form feed
 `n    New line
 `r    Carriage return
 `t    Horizontal tab
+`u{x} Unicode escape sequence
 `v    Vertical tab
 --%   Stop parsing
 
@@ -65,6 +67,25 @@ does not delete any characters. The following command writes the word
 The output from this command is as follows:
 
 back out
+
+ESCAPE (`e)
+The escape character is most commonly used to specify virtual terminal
+sequences to modify the color of text in addition to other text attributes
+such as bolding and underlining as well as moving the cursor. The PowerShell
+host must support virtual terminal sequences. Windows 10 v1511 and higher,
+as well as most Linux and macOS terminals support virtual terminal sequences.
+
+The following command outputs Orange text. This requires a host capable
+of 24-bit color such as Windows 10 Anniversary Update or higher:
+
+$r,$g,$b = 0xff,0x66,0x00
+
+"`e[38;2;$r;$g;${b}mOrange text`e[0m"
+
+The output from this command is the following text with a foreground color
+of Orange:
+
+Orange text
 
 FORM FEED (`f)
 The form feed character (`f) is a print instruction that ejects the
@@ -111,6 +132,20 @@ column.
 The output from this command is:
 
 Column1         Column2         Column3
+
+UNICODE CHARACTER (`u{x})
+The Unicode escape sequence allows you to specify any Unicode character
+including Unicode surrogate characters often used for Emoji e.g. `u{1F44D}.
+The Unicode escape sequence requires at least one hex digit and supports
+up to six hex digits. The maximum hex value is 0x10FFFF.
+
+The following command outputs the character '↕':
+
+"`u{2195}"
+
+The output from this command is:
+
+↕
 
 VERTICAL TAB (`v)
 The horizontal tab character (`t) advances to the next vertical tab stop

@@ -15,19 +15,19 @@ Stops a transcript.
 
 ## SYNTAX
 
-```
+```powershell
 Stop-Transcript [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Stop-Transcript** cmdlet stops a transcript that was started by the Start-Transcript cmdlet.
+The `Stop-Transcript` cmdlet stops a transcript that was started by the `Start-Transcript` cmdlet.
 Alternatively, you can end a session to stop a transcript.
 
 ## EXAMPLES
 
 ### Example 1: Stop all transcripts
-```
-PS C:\> Stop-Transcript
+```powershell
+Stop-Transcript
 ```
 
 This command stops all transcripts.
