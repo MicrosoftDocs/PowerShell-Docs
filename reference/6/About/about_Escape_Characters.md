@@ -124,7 +124,7 @@ Escape Sequence | Special Character
 `n | New line
 `r | Carriage return
 `t | Horizontal tab
-`u{x} | Unicode escape sequence for characters with hex value x (up to xxxxxx)
+`u{x} | Unicode escape sequence for character with hex value x (up to xxxxxx)
 `v | Vertical tab
 
 This next example uses new line and tab characters to format the string:
@@ -139,18 +139,19 @@ This next example uses new line and tab characters to format the string:
 Col1 Column2 Col3↕
 ```
 
-This next example uses the escape character to specify a virtual
-terminal sequence to output text with the foreground color of Orange.
-This example requires Windows 10 Anniversary Update or a Linux or
-macOS terminal that supports 24-bit color.
+This next example uses the escape character to specify a virtual terminal
+sequence to output text with a Green foreground color.  The example
+requires that the PowerShell host support virtual terminal sequences.
+This can be checked on PowerShell v5 and higher with the boolean property
+$Host.UI.SupportsVirtualTerminal.
 
 ```powershell
-$r,$g,$b = 0xff,0x66,0x00
-"`e[38;2;$r;$g;${b}mOrange text`e[0m"
+$fgColor = 32 # green - see http://en.wikipedia.org/wiki/ANSI_escape_code
+"`e[${fgColor}mGreen text`e[0m"
 ```
 
 ```output
-Orange text
+Green text
 ```
 
 This next example uses a Unicode escape sequence to display the
