@@ -17,14 +17,12 @@ Gets information about the current working location or a location stack.
 
 ### Location (Default)
 ```
-Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Get-Location [-Stack] [-StackName <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,33 +167,6 @@ To append the current location, it uses a **Get-Location** command, which runs w
 The prompt ends with the string "\> ".
 
 ## PARAMETERS
-
-### -InformationAction
-For example, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-For example, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -PSDrive
 Specifies the current location in the specified Windows PowerShell drive that this cmdlet gets in the operation.

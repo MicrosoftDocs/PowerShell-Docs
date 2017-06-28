@@ -17,20 +17,17 @@ Sets the current working location to a specified location.
 
 ### Path (Default)
 ```
-Set-Location [[-Path] <String>] [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Set-Location [[-Path] <String>] [-PassThru] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Set-Location -LiteralPath <String> [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Set-Location -LiteralPath <String> [-PassThru] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Set-Location [-PassThru] [-StackName <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Set-Location [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -81,33 +78,6 @@ The location cmdlets use the current location stack unless a different location 
 For information about location stacks, see the Notes.
 
 ## PARAMETERS
-
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -LiteralPath
 Specifies a path of the location.
