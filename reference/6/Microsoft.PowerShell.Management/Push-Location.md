@@ -17,14 +17,12 @@ Adds the current location to the top of a location stack.
 
 ### Path (Default)
 ```
-Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,33 +80,6 @@ PS C:\> Get-Location -Stack
 This commmand shows the current location stack.
 
 ## PARAMETERS
-
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -LiteralPath
 Specifies the path of the new location.
