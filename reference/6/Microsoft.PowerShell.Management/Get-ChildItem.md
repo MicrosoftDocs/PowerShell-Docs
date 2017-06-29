@@ -42,7 +42,7 @@ A location can be a file system location, such as a directory, or a location exp
 
 ## Examples
 
-### Example 1
+### Example 1: Get child items in the current directory
 ```powershell
 Get-ChildItem
 ```
@@ -54,7 +54,7 @@ If the item does not have child items, this command returns to the command promp
 The default display lists the mode (attributes), last write time, file size (length), and the name of the file.
 The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system).
 
-### Example 2
+### Example 2: Get all files with the specified file extension in the current directory and subdirectories
 ```powershell
 Get-ChildItem -Path *.txt -Recurse -Force
 ```
@@ -67,7 +67,7 @@ To use the `-Recurse` parameter on Windows PowerShell 2.0 and earlier versions o
 Use the `-Include` parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 
-### Example 3
+### Example 3: Get all child items using an inclusion and exclusion
 ```powershell
 Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
@@ -76,21 +76,21 @@ This command lists the .txt files in the Logs subdirectory, except for those who
 It uses the wildcard character (`*`) to indicate the contents of the Logs subdirectory, not the directory container.
 Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of directory automatically; you need to specify it.
 
-### Example 4
+### Example 4: Get all registry keys in a specific key
 ```powershell
 Get-ChildItem -Path HKLM:\Software
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 
-### Example 5
+### Example 5: Get the name of items in the current directory
 ```powershell
 Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
 
-### Example 6
+### Example 6: Get all certificates in a certification drive that have code-signing authority
 ```powershell
 Import-Module Microsoft.PowerShell.Security
 Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
@@ -109,12 +109,19 @@ This parameter gets only certificates that have code-signing authority.
 
 For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../../Microsoft.PowerShell.Security/Providers/certificate-provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
-### Example 7
+### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
 ```powershell
 Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```
 
 This command gets all of the items in the C:\Windows directory and its subdirectories that have "mouse" in the file name, except for those with a .png file name extension.
+
+### Example 8: Get all items in the specified directory and its subdirectories limited by the Depth parameter
+```
+PS C:\> Get-ChildItem -Path C:\Windows -Depth 2
+```
+
+This command gets all of the items in the C:\Windows directory and its subdirectories up to 2 level below in depth.
 
 ## Parameters
 
@@ -171,6 +178,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Depth
+This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
+
+```yaml
+Type: UInt32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Directory
 Gets directories (folders).  
 
@@ -186,111 +208,6 @@ Aliases: ad, d
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -File
-Gets files. 
-
-To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
-
-To get files, use the File parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: af
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Hidden
-Gets only hidden files and directories (folders).  By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
-
-To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the Hidden value of the `-Attributes` parameter. To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: ah, h
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReadOnly
-Gets only read-only files and directories (folders).  
-
-To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: ar
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -System
-Gets only system files and directories (folders).
-
-To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: as
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
-Implementation varies among providers.
-For more information, see [about_Provider](../../Microsoft.PowerShell.Core/about/about_Providers.md).
-Even when using the `-Force` parameter, the cmdlet cannot override security restrictions.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -313,6 +230,25 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -File
+Gets files. 
+
+To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
+
+To get files, use the File parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: af
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Filter
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the `-Path` parameter.
@@ -329,6 +265,41 @@ Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -Force
+Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
+Implementation varies among providers.
+For more information, see [about_Provider](../../Microsoft.PowerShell.Core/about/about_Providers.md).
+Even when using the `-Force` parameter, the cmdlet cannot override security restrictions.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Hidden
+Gets only hidden files and directories (folders).  By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
+
+To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the Hidden value of the `-Attributes` parameter. To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: ah, h
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Include
@@ -403,6 +374,23 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
+### -ReadOnly
+Gets only read-only files and directories (folders).  
+
+To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: ar
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Recurse
 Gets the items in the specified locations and in all child items of the locations.
 
@@ -420,17 +408,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Depth
-This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
+### -System
+Gets only system files and directories (folders).
+
+To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
 
 ```yaml
-Type: UInt32
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases: as
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseTransaction
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see about_Transactions.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
