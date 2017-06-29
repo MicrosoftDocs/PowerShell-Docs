@@ -101,7 +101,7 @@ $b[$a] = $tmp
 ## DIVISION AND ROUNDING
 
 When the quotient of a division operation is an integer, Windows PowerShell
-rounds the value to the nearest integer.
+rounds the value to the nearest integer. This is because powershell implements Bankers’ Rounding.
 When the value is `.5`, it rounds to the nearest even integer.
 
 The following example shows the effect of rounding to the nearest even
