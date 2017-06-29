@@ -143,42 +143,31 @@ Without the **Verbose**, **PassThru**, or **AsCustomObject** parameter, **Import
 
 ### Example 5
 ```
-PS C:\> Import-Module BitsTransfer -cmdlet Add-BitsTransferFile, Get-BitsTransfer
-PS C:\> Get-Module BitsTransfer
+PS C:\> Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
+PS C:\> (Get-Module BitsTransfer).ExportedCmdlets
 
-Name              : BitsTransfer
-Path              : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1
-Description       :
-Guid              : 8fa5064b-8479-4c5c-86ea-0d311fe48875
-Version           : 1.0.0.0
-ModuleBase        : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer
-ModuleType        : Manifest
-PrivateData       :
-AccessMode        : ReadWrite
-ExportedAliases   : {}
-ExportedCmdlets   : {[Add-BitsTransfer, Add-BitsTransfer], [Complete-BitsTransfer, Complete-BitsTransfer],
- [Get-BitsTransfer, Get-BitsTransfer], [Remove-BitsTransfer, Remove-BitsTransfer]...}
-ExportedFunctions : {}
-ExportedVariables : {}
-NestedModules     : {Microsoft.BackgroundIntelligentTransfer.Management}
+Key                   Value
+---                   -----
+Add-BitsFile          Add-BitsFile
+Complete-BitsTransfer Complete-BitsTransfer
+Get-BitsTransfer      Get-BitsTransfer
+Remove-BitsTransfer   Remove-BitsTransfer
+Resume-BitsTransfer   Resume-BitsTransfer
+Set-BitsTransfer      Set-BitsTransfer
+Start-BitsTransfer    Start-BitsTransfer
+Suspend-BitsTransfer  Suspend-BitsTransfer
 
 PS C:\> Get-Command -Module BitsTransfer
 
-CommandType     Name                                               ModuleName
------------     ----                                               ----------
-Cmdlet          Add-BitsFile                                       bitstransfer
-Cmdlet          Complete-BitsTransfer                              bitstransfer
-Cmdlet          Get-BitsTransfer                                   bitstransfer
-Cmdlet          Remove-BitsTransfer                                bitstransfer
-Cmdlet          Resume-BitsTransfer                                bitstransfer
-Cmdlet          Set-BitsTransfer                                   bitstransfer
-Cmdlet          Start-BitsTransfer                                 bitstransfer
-Cmdlet          Suspend-BitsTransfer                               bitstransfer
+CommandType Name             Version Source
+----------- ----             ------- ------
+Cmdlet      Add-BitsFile     2.0.0.0 BitsTransfer
+Cmdlet      Get-BitsTransfer 2.0.0.0 BitsTransfer
 ```
 
 This example shows how to restrict the module members that are imported into the session and the effect of this command on the session.
 
-The first command imports only the **Add-BitsTransfer** and **Get-BitsTransfer** cmdlets from the **BitsTransfer** module.
+The first command imports only the **Add-BitsFile** and **Get-BitsTransfer** cmdlets from the **BitsTransfer** module.
 The command uses the **Cmdlet** parameter to restrict the cmdlets that the module imports.
 You can also use the **Alias**, **Variable**, and **Function** parameters to restrict other members that a module imports.
 
@@ -186,7 +175,7 @@ The second command uses the Get-Module cmdlet to get the object that represents 
 The **ExportedCmdlets** property lists all of the cmdlets that the module exports, even when they were not all imported.
 
 The third command uses the **Module** parameter of the Get-Command cmdlet to get the commands that were imported from the **BitsTransfer** module.
-The results confirm that only the **Add-BitsTransfer** and **Get-BitsTransfer** cmdlets were imported.
+The results confirm that only the **Add-BitsFile** and **Get-BitsTransfer** cmdlets were imported.
 
 ### Example 6
 ```
