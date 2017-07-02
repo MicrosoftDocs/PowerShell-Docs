@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the path to the output file.
-Unlike *Path*, the value of the **LiteralPath** parameter is used exactly as it is typed.
+Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
