@@ -52,11 +52,11 @@ number.
 # ASSIGNING VALUES
 
 Variables are named memory spaces that store values. You store the values
-in variables by using the assignment operator `(=)`. The new value can
+in variables by using the assignment operator `=`. The new value can
 replace the existing value of the variable, or you can append a new value
 to the existing value.
 
-The basic assignment operator is the equal sign `(=)(ASCII 61)`. For example,
+The basic assignment operator is the equal sign `=` `(ASCII 61)`. For example,
 the following statement assigns the value Windows PowerShell to the
 $MyShell variable:
 
@@ -91,8 +91,8 @@ $a += "string"
 $a += 12
 ```
 
-Because the assignment operator `(=)` has a lower precedence than the
-pipeline operator `(|)`, parentheses are not required to assign the result
+Because the assignment operator `=` has a lower precedence than the
+pipeline operator `|`, parentheses are not required to assign the result
 of a command pipeline to a variable. For example, the following command
 sorts the services on the computer and then assigns the sorted services
 to the $a variable:
@@ -114,8 +114,8 @@ than zero.
 
 # THE ASSIGNMENT OPERATOR
 
-The assignment operator `(=)` assigns values to variables. If the variable
-already has a value, the assignment operator `(=)` replaces the value
+The assignment operator `=` assigns values to variables. If the variable
+already has a value, the assignment operator `=` replaces the value
 without warning.
 
 The following statement assigns the integer value 6 to the $a variable:
@@ -139,8 +139,8 @@ $a = "apple", "orange", "lemon", "grape"
 ```
 
 To assign a hash table to a variable, use the standard hash table notation
-in Windows PowerShell. Type an at sign `(@)` followed by key/value pairs that
-are separated by semicolons `(;)` and enclosed in braces `({ })`. For example,
+in Windows PowerShell. Type an at sign `@` followed by key/value pairs that
+are separated by semicolons `;` and enclosed in braces `{ }`. For example,
 to assign a hash table to the $a variable, type:
 
 ```powershell
@@ -164,8 +164,8 @@ assign a value of 3.1415 to the power of 1,000 to the $a variable, type:
 $a = 3.1415e3
 ```
 
-Windows PowerShell can also convert kilobytes `(KB)`, megabytes `(MB)`, and
-gigabytes `(GB)` into bytes. For example, to assign a value of 10 kilobytes
+Windows PowerShell can also convert kilobytes `KB`, megabytes `MB`, and
+gigabytes `GB` into bytes. For example, to assign a value of 10 kilobytes
 to the $a variable, type:
 
 ```powershell
@@ -174,7 +174,7 @@ $a = 10kb
 
 # THE ASSIGNMENT BY ADDITION OPERATOR
 
-The assignment by addition operator `(+=)` either increments the value of a
+The assignment by addition operator `+=` either increments the value of a
 variable or appends the specified value to the existing value. The action
 depends on whether the variable has a numeric or string type and whether
 the variable contains a single value (a scalar) or multiple values
@@ -198,6 +198,9 @@ value of a variable:
 $a = 4
 $a += 2
 $a
+```
+
+```
 6
 ```
 
@@ -208,10 +211,13 @@ the operator is appended to the string, as follows:
 $a = "Windows"
 $a += " PowerShell"
 $a
+```
+
+```
 Windows PowerShell
 ```
 
-When the value of the variable is an array, the += operator appends the
+When the value of the variable is an array, the `+=` operator appends the
 values on the right side of the operator to the array. Unless the array is
 explicitly typed by casting, you can append any type of value to the array,
 as follows:
@@ -220,6 +226,9 @@ as follows:
 $a = 1,2,3
 $a += 2
 $a
+```
+
+```
 1
 2
 3
@@ -231,6 +240,9 @@ and
 ```powershell
 $a += "String"
 $a
+```
+
+```
 1
 2
 3
@@ -252,6 +264,9 @@ table. This command succeeds, as shown in the output:
 $a = @{a = 1; b = 2; c = 3}
 $a += @{mode = "write"}
 $a
+```
+
+```
 Name                           Value
 ----                           -----
 a                              1
@@ -260,12 +275,15 @@ mode                           write
 c                              3
 ```
 
-The following command attempts to append an integer (1) to the hash table
+The following command attempts to append an integer "1" to the hash table
 in the $a variable. This command fails:
 
 ```powershell
 $a = @{a = 1; b = 2; c = 3}
 $a += 1
+```
+
+```
 You can add another hash table only to a hash table.
 At line:1 char:6
 + $a += <<<<  1
@@ -273,7 +291,7 @@ At line:1 char:6
 
 # THE ASSIGNMENT BY SUBTRACTION OPERATOR
 
-The assignment by subtraction operator `(-=)` decrements the value of a
+The assignment by subtraction operator `-=` decrements the value of a
 variable by the value that is specified on the right side of the operator.
 This operator cannot be used with string variables, and it cannot be used
 to remove an element from a collection.
@@ -293,6 +311,9 @@ value of a variable:
 $a = 8
 $a -= 2
 $a
+```
+
+```
 6
 ```
 
@@ -303,8 +324,11 @@ third element of an array (element 2) is decreased by 1:
 
 ```powershell
 $a = 1,2,3
-$a[2] -= 1.
+$a[2] -= 1
 $a
+```
+
+```
 1
 2
 2
@@ -325,11 +349,20 @@ deletes the second value (index position 1) from an array:
 ```powershell
 $a = 1,2,3
 $a
+```
+
+```
 1
 2
 3
+```
+
+```powershell
 $a[1] = $null
 $a
+```
+
+```
 1
 3
 ```
@@ -341,9 +374,10 @@ want an untyped variable. The following command deletes the $a variable:
 ```powershell
 Remove-Variable -Name a
 ```
+
 # THE ASSIGNMENT BY MULTIPLICATION OPERATOR
 
-The assignment by multiplication operator (*=) multiplies a numeric value
+The assignment by multiplication operator `*=` multiplies a numeric value
 or appends the specified number of copies of the string value of a
 variable.
 
@@ -356,6 +390,9 @@ variable:
 $a = 3
 $a *= 4
 $a
+```
+
+```
 12
 ```
 
@@ -375,6 +412,9 @@ specified number of strings to the value, as follows:
 $a = "file"
 $a *= 4
 $a
+```
+
+```
 filefilefilefile
 ```
 
@@ -388,7 +428,7 @@ $a[0] *= 2
 
 # THE ASSIGNMENT BY DIVISION OPERATOR
 
-The assignment by division operator `(/=)` divides a numeric value by the
+The assignment by division operator `/=` divides a numeric value by the
 value that is specified on the right side of the operator. The operator
 cannot be used with string variables.
 
@@ -407,6 +447,9 @@ of a variable:
 $a = 8
 $a /=2
 $a
+```
+
+```
 4
 ```
 
@@ -420,8 +463,8 @@ $a[1] /= 2
 
 # THE ASSIGNMENT BY MODULUS OPERATOR
 
-The assignment by modulus operator `(%=)` divides the value of a variable by
-the value on the right side of the operator. Then, the %= operator assigns
+The assignment by modulus operator `%=` divides the value of a variable by
+the value on the right side of the operator. Then, the `%=` operator assigns
 the remainder (known as the modulus) to the variable. You can use this
 operator only when a variable contains a single numeric value. You cannot
 use this operator when a variable contains a string variable or an array.
@@ -442,12 +485,15 @@ of a quotient:
 $a = 7
 $a %= 4
 $a
+```
+
+```
 3
 ```
 
 # THE INCREMENT AND DECREMENT OPERATORS
 
-The increment operator `(++)` increases the value of a variable by 1. When
+The increment operator `++` increases the value of a variable by 1. When
 you use the increment operator in a simple statement, no value is returned.
 To view the result, display the value of the variable, as follows:
 
@@ -455,6 +501,9 @@ To view the result, display the value of the variable, as follows:
 $a = 7
 ++$a
 $a
+```
+
+```
 8
 ```
 
@@ -464,6 +513,9 @@ parentheses, as follows:
 ```powershell
 $a = 7
 (++$a)
+```
+
+```
 8
 ```
 
@@ -475,8 +527,17 @@ its value is used in the statement, as follows:
 $a = 7
 $c = ++$a
 $a
+```
+
+```
 8
+```
+
+```powershell
 $c
+```
+
+```
 8
 ```
 
@@ -489,12 +550,21 @@ changes:
 $a = 7
 $c = $a++
 $a
+```
+
+```
 8
+```
+
+```powershell
 $c
+```
+
+```
 7
 ```
 
-The decrement operator `(--)` decreases the value of a variable by 1. As with
+The decrement operator `--` decreases the value of a variable by 1. As with
 the increment operator, no value is returned when you use the operator in a
 simple statement. Use parentheses to return a value, as follows:
 
@@ -502,8 +572,17 @@ simple statement. Use parentheses to return a value, as follows:
 $a = 7
 --$a
 $a
+```
+
+```
 6
+```
+
+```powershell
 (--$a)
+```
+
+```
 5
 ```
 
@@ -514,8 +593,17 @@ is used in the statement, as follows:
 $a = 7
 $c = --$a
 $a
+```
+
+```
 6
+```
+
+```powershell
 $c
+```
+
+```
 6
 ```
 
@@ -528,8 +616,17 @@ changes:
 $a = 7
 $d = $a--
 $a
+```
+
+```
 6
+```
+
+```powershell
 $d
+```
+
+```
 7
 ```
 
@@ -537,20 +634,23 @@ $d
 
 By default, when a variable has only one value, the value that is assigned
 to the variable determines the data type of the variable. For example, the
-following command creates a variable that has the Integer (System.Int32)
+following command creates a variable that has the "Integer" (System.Int32)
 type:
 
 ```powershell
 $a = 6
 ```
 
-To find the .NET Framework type of a variable, use the GetType method and
-its FullName property, as follows. Be sure to include the parentheses after
-the GetType method name, even though the method call has no arguments:
+To find the .NET Framework type of a variable, use the **GetType** method and
+its **FullName** property, as follows. Be sure to include the parentheses after
+the **GetType** method name, even though the method call has no arguments:
 
 ```powershell
 $a = 6
 $a.GetType().FullName
+```
+
+```
 System.Int32
 ```
 
@@ -561,6 +661,9 @@ marks, as follows:
 ```powershell
 $a = "6"
 $a.GetType().FullName
+```
+
+```
 System.String
 ```
 
@@ -572,6 +675,9 @@ to strings. This occurs in the following example:
 $a = "file"
 $a += 3
 $a
+```
+
+```
 file3
 ```
 
@@ -583,6 +689,9 @@ following example:
 $a = 6
 $a += "3"
 $a
+```
+
+```
 9
 ```
 
@@ -598,6 +707,9 @@ For example, the following command casts the variable as a string type:
 [string]$a = 27
 $a += 3
 $a
+```
+
+```
 273
 ```
 
@@ -616,11 +728,17 @@ type. To change the data type, you must replace its value, as follows:
 ```powershell
 $a = "string"
 [int]$a
+```
+
+```
 Cannot convert value "string" to type "System.Int32". Error: "Input
 string was not in a correct format."
 At line:1 char:8
 + [int]$a <<<<
-[int]$a =3
+```
+
+```powershell
+[int]$a = 3
 ```
 
 In addition, when you precede a variable name with a data type, the type
@@ -635,10 +753,16 @@ $a = 3
 $a = "string"
 [int]$a = 3
 $a = "string"
+```
+
+```
 Cannot convert value "string" to type "System.Int32". Error: "Input
 string was not in a correct format."
 At line:1 char:3
 + $a <<<<  = "string"
+```
+
+```powershell
 [string]$a = "string"
 ```
 
@@ -668,7 +792,7 @@ specifies a `System.DateTime` data type:
 The variable will be assigned a value that conforms to the `System.DateTime`
 data type. The value of the $a variable would be the following:
 
-```powershell
+```
 Tuesday, May 31, 2005 12:00:00 AM
 ```
 
