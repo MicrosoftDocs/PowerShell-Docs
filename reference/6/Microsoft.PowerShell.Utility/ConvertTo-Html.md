@@ -18,7 +18,7 @@ Converts Microsoft .NET Framework objects into HTML that can be displayed in a W
 ### Page (Default)
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>] [[-Head] <String[]>]
- [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>] [-PreContent <String[]>]
+ [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>] [-PreContent <String[]>] [-Meta <String[]>] [-Charset <String>] [-Transitional]
  [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
 ```
 
@@ -159,6 +159,20 @@ The command uses a pipeline operator (|) to send the results to the **ConvertTo-
 The command uses a redirection operator (\>) to send the output to the Services.htm file.
 
 A semicolon (;) ends the first command and starts a second command, which uses the Invoke-Item cmdlet (alias = "ii") to open the Services.htm file in the default browser.
+
+### Example 10: Set the Meta properties and Charset of the HTML
+```
+PS C:\> Get-Service | ConvertTo-HTML -Meta @{refresh=10;author="Author's Name";keywords="PowerShell, HTML, ConvertTo-HTML"} -Charset "UTF-8"
+```
+
+This command creates the HTML for a webpage with the meta tags for refresh, author, and keywords. The charset for the page is set to UTF-9
+
+### Example 10: Set the HTML to XHTML Transitional DTD
+```
+PS C:\> Get-Service | ConvertTo-HTML -Transitional
+```
+
+This command sets the DOCTYPE of the returned HTML to XHTML Transitional DTD
 
 ## PARAMETERS
 
@@ -325,6 +339,54 @@ By default, there is no text in that position.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Meta
+Specifies text to add to the opening \<meta\> tag.
+By default, there is no text in that position.
+
+```yaml
+Type: String[]
+Parameter Sets: (Page)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Charset
+Specifies text to add to the opening \<charset\> tag.
+By default, there is no text in that position.
+
+```yaml
+Type: String
+Parameter Sets: (Page)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Transitional
+Changes the DOCTYPE to XHTML Transitional DTD
+Default DOCTYPE is XHTML Strict DTD
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Page
 Aliases: 
 
 Required: False
