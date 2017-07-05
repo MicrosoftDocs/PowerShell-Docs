@@ -117,7 +117,7 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
@@ -126,7 +126,7 @@ Invoke-RestMethod http://website.com/service.aspx -Body $R
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 

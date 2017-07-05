@@ -8,7 +8,7 @@ keywords:  wmf,powershell,setup
 # Modules support for declaring version ranges (1.*, etc)
 Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range. The parameter also support **.***. The following example shows how it works:
 
-```PowerShell
+```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
 
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*

@@ -8,7 +8,7 @@ keywords:  wmf,powershell,setup
 # Declare Base Class
 You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.
 
-```PowerShell
+```powershell
 class bar
 {
    [int]foo() 
@@ -24,7 +24,7 @@ class baz : bar {}
 
 You can also use existing .NET Framework types as base classes:
 
-```PowerShell
+```powershell
 class MyIntList : system.collections.generic.list[int]
 {
     
