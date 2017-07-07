@@ -17,7 +17,7 @@ We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.
 corresponding the catalog file that represents those folders. A catalog file can be used by the recipient of content to validate whether any changes were made to the folders after 
 the catalog was created.    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 We support creating catalog version 1 and 2. Version 1 uses SHA1 hashing algorithm to create file hashes and version 2 uses SHA256. Catalog version 2 is not supported on 
@@ -42,7 +42,7 @@ To verify the integrity of a catalog file (Pester.cat in above exmaple) it shoul
 
 `Test-FileCatalog` validates the catalog representing a set of folders. 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
