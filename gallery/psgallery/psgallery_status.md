@@ -62,7 +62,7 @@ __Next Steps__: If you used the Contact Us link or sent mail to cgadmin@microsof
 
 __Summary of Impact__: Between 7/11/2016 and 7/13/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -81,7 +81,7 @@ __Next Steps__: Investigate the underlying root cause and developing a solution 
 ## 5/19/2016 - Download Items Failed
 __Summary of Impact__: Between 5/17/2016 and 5/19/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

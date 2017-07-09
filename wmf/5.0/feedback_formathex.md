@@ -12,7 +12,7 @@ see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/micro
 ## Example 1
 View the contents of a string in hexadecimal format.
 
-```PowerShell
+```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 

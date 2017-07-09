@@ -57,7 +57,7 @@ See the snapshots below:
 
 •	Sample partial configuration definition 
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -85,7 +85,7 @@ So the configuration below compiles to PartialOne.localhost.mof.
 
 This made it impossible to pull one of your partial configuration from Azure Automation service.
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -106,7 +106,7 @@ This naming flexibility allows you to manage your nodes partially by Azure Autom
 
 The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.
 
-```PowerShell
+```powershell
   [DscLocalConfigurationManager()]
    Configuration RegistrationMetaConfig
    {
@@ -221,7 +221,7 @@ The LocalConfigurationManager of a node performs signing validation of modules a
 By default, signature validation is disabled. 
 Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -278,7 +278,7 @@ Below is a complete example of signature validation for push.
 
 * Enable signature validation on the node.
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -297,7 +297,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ``` 
 * Create a sample configuration file.
 
-```PowerShell
+```powershell
 # Sample configuration
 Configuration Test
 {
@@ -313,7 +313,7 @@ Test
 
 * Try pushing the unsigned configuration file in to the node. 
 
-```PowerShell
+```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
