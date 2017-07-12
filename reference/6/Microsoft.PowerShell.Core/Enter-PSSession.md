@@ -66,6 +66,11 @@ Enter-PSSession [-VMName] <String> -Credential <PSCredential> [-ConfigurationNam
 Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
 ```
 
+### SSHTransport
+```
+Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The **Enter-PSSession** cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were typing directly on the remote computer.
@@ -74,6 +79,9 @@ You can have only one interactive session at a time.
 Typically, you use the *ComputerName* parameter to specify the name of the remote computer.
 However, you can also use a session that you create by using the New-PSSession cmdlet for the interactive session.
 However, you cannot use the Disconnect-PSSession, Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
+
+Starting with PowerShell V6.0 you can use Secure Shell (SSH) to establish a connection to a remote computer, if SSH is available on the client computer and the target computer is configured as a PowerShell SSH endpoint. The benefit of SSH based PowerShell remoting is that it works across Windows and Linux platforms. For SSH based remoting you use the *HostName* parameter to specify the remote computer name rather than the *ComputerName* parameter. 
+For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
 
@@ -143,6 +151,20 @@ The first command uses the **Enter-PSSession** cmdlet to start an interactive se
 The second command uses the **Exit-PSSession** cmdlet to end the session.
 You can also use the **Exit** keyword to end the interactive session.
 **Exit-PSSession** and **Exit** have the same effect.
+
+### Example 6: Start an interactive session using SSH
+```
+PS C:\> Enter-PSSession -HostName LinuxServer01 -UserName UserA
+```
+
+This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
+
+### Example 7: Start an interactive session and specify the Port and user authentication key
+```
+PS C:\> Enter-PSSession -HostName LinuxServer02 - UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+```
+
+This example shows how to start an interactive session using SSH. It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to authenticate the user on the remote computer.
 
 ## PARAMETERS
 
@@ -394,6 +416,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HostName
+Specifies a computer name for a Secure Shell (SSH) based connection. 
+This is similar to the *ComputerName* parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True
+Accept wildcard characters: False
+```
+
 ### -Id
 Specifies the ID of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
@@ -430,6 +470,25 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -KeyFilePath
+Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
+
+SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -533,6 +592,46 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH). 
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the SSHHost parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserName
+Specifies the user name for the account used to create a remote session on the target computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+
+If SSH is configured for basic password authentication then you will be prompted for the user password.
+
+If SSH is configured for key based user authentication then a key file path can be provided via the *KeyFilePath* parameter, and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the *KeyFilePath* parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+
+This is not a required parameter.  If no *UserName* parameter is specified then the current user name is used for the connection.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard charaacters: False
 ```
 
 ### -UseSSL
