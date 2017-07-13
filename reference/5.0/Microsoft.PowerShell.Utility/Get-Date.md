@@ -314,9 +314,9 @@ Starting in Windows PowerShell 5.0, you can use the following additional formats
 
 - FileDateUniversal. A file or path-friendly representation of the current date in universal time (UTC). It is in the form of yyyyMMddZ (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, and the letter "Z" as the UTC indicator). An example of results when you use this format is 20150302Z.
 
-- FileDateTime. A file or path-friendly representation of the current date and time in local time, in 24-hour format. It is in the form of yyyyMMddThhmmssffff (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, and 4-digit millisecond). An example of results when you use this format is 20150302T1240514987.
+- FileDateTime. A file or path-friendly representation of the current date and time in local time, in 24-hour format. It is in the form of yyyyMMddTHHmmssffff (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, and 4-digit millisecond). An example of results when you use this format is 20150302T1240514987.
 
-- FileDateTimeUniversal. A file or path-friendly representation of the current date and time in universal time (UTC), in 24-hour format. It is in the form of yyyyMMddThhmmssffffZ (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter "Z" as the UTC indicator). An example of results when you use this format is 20150302T0840539947Z.
+- FileDateTimeUniversal. A file or path-friendly representation of the current date and time in universal time (UTC), in 24-hour format. It is in the form of yyyyMMddTHHmmssffffZ (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter "Z" as the UTC indicator). An example of results when you use this format is 20150302T0840539947Z.
 
 ```yaml
 Type: String
