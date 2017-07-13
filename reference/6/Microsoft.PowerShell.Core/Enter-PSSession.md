@@ -66,7 +66,7 @@ Enter-PSSession [-VMName] <String> -Credential <PSCredential> [-ConfigurationNam
 Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
 ```
 
-### SSHTransport
+### HostName
 ```
 Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
 ```
@@ -161,7 +161,7 @@ This example shows how to start an interactive session using Secure Shell (SSH).
 
 ### Example 7: Start an interactive session and specify the Port and user authentication key
 ```
-PS C:\> Enter-PSSession -HostName LinuxServer02 - UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Enter-PSSession -HostName LinuxServer02 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to authenticate the user on the remote computer.
@@ -424,7 +424,7 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: SSHHost
+Parameter Sets: HostName
 Aliases:
 
 Required: True
@@ -482,7 +482,7 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: SSHHost
+Parameter Sets: HostName
 Aliases:
 
 Required: False
@@ -516,6 +516,10 @@ Accept wildcard characters: False
 
 ### -Port
 Specifies the network port on the remote computer that is used for this command.
+
+In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set that supports Secure Shell (SSH) connections.
+
+#### WinRM (ComputerName parameter set)
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
@@ -532,9 +536,13 @@ Do not use the *Port* parameter unless you must.
 The port setting in the command applies to all computers or sessions on which the command runs.
 An alternate port setting might prevent the command from running on all computers.
 
+#### SSH (HostName parameter set)
+To connect to a remote computer, the remote computer must be configured with the SSH service (SSHD) and must be listening on the port that the connection uses.
+The default port for SSH is 22.
+
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName
+Parameter Sets: ComputerName, HostName
 Aliases: 
 
 Required: False
@@ -597,13 +605,13 @@ Accept wildcard characters: False
 ### -SSHTransport
 Indicates that the remote connection is established using Secure Shell (SSH). 
 
-By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the SSHHost parameter set for establishing an SSH based remote connection.
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
 
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: SSHHost
+Parameter Sets: HostName
 Aliases:
 
 Required: False
@@ -614,17 +622,19 @@ Accept wildcard characters: False
 ```
 
 ### -UserName
-Specifies the user name for the account used to create a remote session on the target computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+Specifies the user name for the account used to create a session on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
 
 If SSH is configured for basic password authentication then you will be prompted for the user password.
 
-If SSH is configured for key based user authentication then a key file path can be provided via the *KeyFilePath* parameter, and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the *KeyFilePath* parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+If SSH is configured for key based user authentication then a key file path can be provided via the *KeyFilePath* parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the *KeyFilePath* parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
 
-This is not a required parameter.  If no *UserName* parameter is specified then the current user name is used for the connection.
+This is not a required parameter.  If no *UserName* parameter is specified then the current log on user name is used for the connection.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: SSHHost
+Parameter Sets: HostName
 Aliases:
 
 Required: False
@@ -736,6 +746,7 @@ The cmdlet does not return any output.
 * **Enter-PSSession** requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these cmdlets are not included in the session configuration on the remote computer, the **Enter-PSSession** commands fails.
 * Unlike Invoke-Command, which parses and interprets the commands before it sends them to the remote computer, **Enter-PSSession** sends the commands directly to the remote computer without interpretation.
 * If the session that you want to enter is busy processing a command, there might be a delay before Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the session is available. To cancel the **Enter-PSSession** command, press `CTRL+C`.
+* The new **HostName** parameter set was included starting with PowerShell 6.0 to provide PowerShell remoting based on Secure Shell (SSH). This supports remoting for PowerShell running on multiple platforms (Windows, Linux, MacOS) and is not dependent on WinRM. Since this is separate from previous Windows based remoting, much of the older WinRM specific features and limitations do not apply.  For example WinRM based quotas, custom endpoint configuration, and disconnect/reconnect features are not currently supported in SSH based remoting.
 
 ## RELATED LINKS
 
