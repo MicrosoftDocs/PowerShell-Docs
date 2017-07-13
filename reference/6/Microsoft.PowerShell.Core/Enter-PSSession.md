@@ -80,7 +80,7 @@ Typically, you use the *ComputerName* parameter to specify the name of the remot
 However, you can also use a session that you create by using the New-PSSession cmdlet for the interactive session.
 However, you cannot use the Disconnect-PSSession, Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
 
-Starting with PowerShell V6.0 you can use Secure Shell (SSH) to establish a connection to a remote computer, if SSH is available on the client computer and the target computer is configured as a PowerShell SSH endpoint. The benefit of SSH based PowerShell remoting is that it works across Windows and Linux platforms. For SSH based remoting you use the *HostName* parameter to specify the remote computer name rather than the *ComputerName* parameter. 
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint. The benefit an SSH based PowerShell remote session is that it works across multiple platforms (Windows, Linux, MacOS). For SSH based remoting you use the **HostName** parameter set to specify the remote computer and relevant connection information.
 For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
@@ -159,7 +159,7 @@ PS C:\> Enter-PSSession -HostName LinuxServer01 -UserName UserA
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
 
-### Example 7: Start an interactive session and specify the Port and user authentication key
+### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 ```
 PS C:\> Enter-PSSession -HostName LinuxServer02 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
@@ -517,7 +517,7 @@ Accept wildcard characters: False
 ### -Port
 Specifies the network port on the remote computer that is used for this command.
 
-In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set that supports Secure Shell (SSH) connections.
+In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set which supports Secure Shell (SSH) connections.
 
 #### WinRM (ComputerName parameter set)
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
@@ -746,7 +746,8 @@ The cmdlet does not return any output.
 * **Enter-PSSession** requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these cmdlets are not included in the session configuration on the remote computer, the **Enter-PSSession** commands fails.
 * Unlike Invoke-Command, which parses and interprets the commands before it sends them to the remote computer, **Enter-PSSession** sends the commands directly to the remote computer without interpretation.
 * If the session that you want to enter is busy processing a command, there might be a delay before Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the session is available. To cancel the **Enter-PSSession** command, press `CTRL+C`.
-* The new **HostName** parameter set was included starting with PowerShell 6.0 to provide PowerShell remoting based on Secure Shell (SSH). This supports remoting for PowerShell running on multiple platforms (Windows, Linux, MacOS) and is not dependent on WinRM. Since this is separate from previous Windows based remoting, much of the older WinRM specific features and limitations do not apply.  For example WinRM based quotas, custom endpoint configuration, and disconnect/reconnect features are not currently supported in SSH based remoting.
+* The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, MacOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
+For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 ## RELATED LINKS
 
