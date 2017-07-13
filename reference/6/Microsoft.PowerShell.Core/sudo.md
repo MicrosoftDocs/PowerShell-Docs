@@ -87,12 +87,22 @@ For example, the following will expand -P to -Path
 sudo {Get-Item -P[tab]
 
 ### Parameter spatting
-Due to the design of the sudo function; parameter splatting cannot be used. For example, the following will produce an error indicating the Path parameter is null.
-
+Due to the design of the sudo function; parameter splatting is not supported when a scriptblock is passed as the command expression. For example, the following will produce an error indicating the Path parameter is null.
 ```
 $h = @{ Path = "file.txt"; Force = $true }
 sudo { remove-item @h }
 ```
+
+When splatting is used without a scriptblock, all arguments being expanded.
+```
+$h = @{ Path = "file.txt"; Force = $true }
+sudo remove-item @h
+```
+The above will invoke powershell with the following parameters
+```
+remove-item -Force: $true -Path: file.txt
+```
+
 ### Referencing built-in variables in expressions
 When using PowerShell expressions, be aware that variable expansion occurs in the calling PowerShell session. As a result, some expressions may not work as expected.  For example,when referencing $true or $false, the variables will be converted to the string values before calling sudo, resulting in the values 'true' and 'false'.  Other variables, such as environment variables, may exhibit a different behavior; the variable may a different value in the launched  PowerShell session than it does in the launching PowerShell session.
 
