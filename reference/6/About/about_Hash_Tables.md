@@ -283,7 +283,7 @@ For example, to remove the Time\=Now key\/value pair from the hash table in the 
 
 
 ```
-$hash.$Remove("Time")
+$hash.Remove("Time")
 ```
 
 
