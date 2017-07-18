@@ -149,13 +149,13 @@ For more information, see the examples.
 
 ## RELATED LINKS
 
-[Out-Default]()
+[Out-Default](out-default.md)
 
-[Out-File]()
+[Out-File](../microsoft.powershell.utility/out-file.md)
 
-[Out-Host]()
+[Out-Host](out-host.md)
 
-[Out-Null]()
+[Out-Null](out-null.md)
 
 [Out-Printer]()
 

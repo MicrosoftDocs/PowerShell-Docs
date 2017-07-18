@@ -352,11 +352,11 @@ This cmdlet returns an object that contains the CIM instance information.
 
 ## RELATED LINKS
 
-[Get-CimClass]()
+[Get-CimClass](get-cimclass.md)
 
-[Get-CimInstance]()
+[Get-CimInstance](get-ciminstance.md)
 
-[Remove-CimInstance]()
+[Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance]()
+[Set-CimInstance](set-ciminstance.md)
 

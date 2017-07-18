@@ -141,5 +141,3 @@ Otherwise, this cmdlet does not generate any output.
 
 [about_PSSnapins](About/about_PSSnapins.md)
 
-[about_Pssnapins]()
-

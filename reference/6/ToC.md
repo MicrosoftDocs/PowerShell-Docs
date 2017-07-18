@@ -500,7 +500,7 @@
 ###  [Update-Script](powershellget/update-script.md)
 ###  [Update-ScriptFileInfo](powershellget/update-scriptfileinfo.md)
 ##  [PSDesiredStateConfiguration](psdesiredstateconfiguration/psdesiredstateconfiguration.md)
-###  [About]()
+###  [About](about/about.md)
 ####  [about_Classes_and_DSC](psdesiredstateconfiguration/about/about_classes_and_dsc.md)
 ###  [Configuration](psdesiredstateconfiguration/configuration.md)
 ###  [Get-DscResource](psdesiredstateconfiguration/get-dscresource.md)

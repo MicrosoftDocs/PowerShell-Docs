@@ -254,5 +254,5 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 
 [about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
 
-[about_Data_Sections]()
+[about_Data_Sections](../microsoft.powershell.core/about/about_data_sections.md)
 
