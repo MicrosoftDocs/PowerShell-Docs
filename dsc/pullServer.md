@@ -27,7 +27,7 @@ for you as well.
 The easiest way to set up a web pull server is to use the xWebService resource, included in the xPSDesiredStateConfiguration module. The following steps explain how to use the resource in a configuration that sets up the web service.
 
 1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
-1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either within your orgnaization or a public authority. The certificate recieved from the authority is usually in the PFX format. Install the certificate on the node that will become the DSC Pull server in the default location which should be CERT:\LocalMachine\My. Make a note of the certificate thumbprint.
+1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either within your organization or a public authority. The certificate received from the authority is usually in the PFX format. Install the certificate on the node that will become the DSC Pull server in the default location which should be CERT:\LocalMachine\My. Make a note of the certificate thumbprint.
 1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see the Registration Key section below.
 1. In the PowerShell ISE, start (F5) the following configuration script (included in the Example folder of the  **xPSDesiredStateConfiguration** module as Sample_xDscWebService.ps1). This script sets up the pull server.
   
@@ -84,10 +84,10 @@ configuration Sample_xDscPullServer
 
 ```
 
-1. Run the configuration, passing the thumbprint of the SSL certificate as the **certificateThumbPrint** parameter and a GUID registration key as the **RegistrationKey** parameter:
+5. Run the configuration, passing the thumbprint of the SSL certificate as the **certificateThumbPrint** parameter and a GUID registration key as the **RegistrationKey** parameter:
 
 ```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certifcates in your local store 
+# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
 # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
 dir Cert:\LocalMachine\my
 
@@ -99,10 +99,10 @@ Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
 ## Registration Key
-To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key which was created by the above configuration is saved in a file named `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. The registration key functions as a shared secret used during the initial registration by the client with the pull server. The client will generate a self-signed certificate which is used to uniquely authenticate to the pull server once registration is successfully completed. The thumbprint of the this certificate is stored locally and associated with the URL of the pull server.
+To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key which was created by the above configuration is saved in a file named `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. The registration key functions as a shared secret used during the initial registration by the client with the pull server. The client will generate a self-signed certificate which is used to uniquely authenticate to the pull server once registration is successfully completed. The thumbprint of this certificate is stored locally and associated with the URL of the pull server.
 > **Note**: Registration keys are not supported in PowerShell 4.0. 
 
-In order to configure the a node to authenticate with the pull server the registration key needs to be in the metaconfiguration for any target node that will be registering with this pull server. Note that the **RegistrationKey** in the metaconfiguration below is removed after the target machine has successfully registered, and that the value '140a952b-b9d6-406b-b416-e0f759c9c0e4' must match the value stored in the RegistrationKeys.txt file on the pull server. Always treat the registration key value securely, because knowing it allows any target machine to register with the pull server.
+In order to configure a node to authenticate with the pull server the registration key needs to be in the metaconfiguration for any target node that will be registering with this pull server. Note that the **RegistrationKey** in the metaconfiguration below is removed after the target machine has successfully registered, and that the value '140a952b-b9d6-406b-b416-e0f759c9c0e4' must match the value stored in the RegistrationKeys.txt file on the pull server. Always treat the registration key value securely, because knowing it allows any target machine to register with the pull server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -149,7 +149,7 @@ configurations that will be available for target nodes to pull. These files need
 
 ### DSC resource module package format
 
-Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
+Each resource module needs to be zipped and named according the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
 of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
 file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
 pull server you will need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
@@ -180,7 +180,7 @@ In order to make setting up, validating and managing the pull server easier, the
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+2. A script that validates the Pull Server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## Pull client configuration 
