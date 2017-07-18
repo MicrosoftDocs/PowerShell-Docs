@@ -67,7 +67,7 @@ Get-PSProvider
 # INSTALLING AND REMOVING PROVIDERS
 
 Windows PowerShell providers are delivered to you in Windows PowerShell
-snap-ins, which are .NET Framework-based programs that are compiled
+modules, which are .NET Framework-based programs that are compiled
 into .dll files. The snap-ins can include providers and cmdlets.
 
 Before you use the provider features, you have to install the snap-in and
