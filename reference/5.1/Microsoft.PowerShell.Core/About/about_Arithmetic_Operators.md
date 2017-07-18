@@ -102,7 +102,7 @@ $b[$a] = $tmp
 
 When the quotient of a division operation is an integer, Windows PowerShell
 rounds the value to the nearest integer.
-When the value is `.5`, it rounds to the nearest even integer.
+When the value is `.5`, it rounds to the nearest even integer. This rounding system is called Bankers' Rounding.
 
 The following example shows the effect of rounding to the nearest even
 integer.
