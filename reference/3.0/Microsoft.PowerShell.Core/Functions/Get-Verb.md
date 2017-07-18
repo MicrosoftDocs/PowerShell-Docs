@@ -174,5 +174,5 @@ These cmdlets are considered to be historic exceptions and their verbs are class
 
 ## RELATED LINKS
 
-[Import-Module]()
+[Import-Module](../import-module.md)
 

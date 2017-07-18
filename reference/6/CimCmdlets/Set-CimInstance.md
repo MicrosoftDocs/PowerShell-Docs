@@ -384,9 +384,9 @@ When the Passthru parameter is specified, this cmdlet returns a modified CIM ins
 
 ## RELATED LINKS
 
-[Get-CimInstance]()
+[Get-CimInstance](get-ciminstance.md)
 
-[New-CimInstance]()
+[New-CimInstance](new-ciminstance.md)
 
-[Remove-CimInstance]()
+[Remove-CimInstance](remove-ciminstance.md)
 

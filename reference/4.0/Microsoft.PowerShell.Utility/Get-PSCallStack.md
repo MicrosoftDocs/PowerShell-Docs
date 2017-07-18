@@ -112,5 +112,5 @@ Get-PSCallStack returns an object that represents the items in the call stack.
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[about_Debuggers]()
+[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md)
 

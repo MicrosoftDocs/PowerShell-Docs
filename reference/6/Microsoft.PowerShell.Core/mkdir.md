@@ -300,21 +300,21 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Clear-Item]()
+[Clear-Item](../microsoft.powershell.management/clear-item.md)
 
-[Copy-Item]()
+[Copy-Item](../microsoft.powershell.management/copy-item.md)
 
-[Get-Item]()
+[Get-Item](../microsoft.powershell.management/get-item.md)
 
-[Invoke-Item]()
+[Invoke-Item](../microsoft.powershell.management/invoke-item.md)
 
-[Move-Item]()
+[Move-Item](../microsoft.powershell.management/move-item.md)
 
-[Remove-Item]()
+[Remove-Item](../microsoft.powershell.management/remove-item.md)
 
-[Rename-Item]()
+[Rename-Item](../microsoft.powershell.management/rename-item.md)
 
-[Set-Item]()
+[Set-Item](../microsoft.powershell.management/set-item.md)
 
-[about_Providers]()
+[about_Providers](../about/about_providers.md)
 

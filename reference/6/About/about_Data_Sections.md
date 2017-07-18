@@ -221,6 +221,6 @@ DATA -supportedCommand Format-XML {
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](../microsoft.powershell.utility/convertfrom-stringdata.md)
 
-[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+[Import-LocalizedData](../microsoft.powershell.utility/import-localizeddata.md)
