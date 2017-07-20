@@ -9,9 +9,11 @@ title:  about_Switch
 # About Switch
 
 ## SHORT DESCRIPTION
+
 Explains how to use a switch to handle multiple If statements.
 
 ## LONG DESCRIPTION
+
 To check a condition in a script or function, use an If statement. The If
 can check many types of conditions, including the value of variables and
 the properties of objects.
@@ -113,21 +115,21 @@ It is four.
 ```
 
 ### SYNTAX
+
 The complete Switch statement syntax is as follows:
 
 ```powershell
 switch [-regex|-wildcard|-exact][-casesensitive] (<value>)
+{
+    "string"|number|variable|{ expression } { statementlist }
+    default { statementlist }
+}
 ```
 
 or
 
 ```powershell
 switch [-regex|-wildcard|-exact][-casesensitive] -file filename
-```
-
-followed by
-
-```powershell
 {
     "string"|number|variable|{ expression } { statementlist }
     default { statementlist }
@@ -146,13 +148,13 @@ Default clause is permitted in each Switch statement.
 
 Switch has the following parameters:
 
-```
-Regex           Performs regular expression matching of the
-                value to the condition. If you use Regex,
-                Wildcard and Exact are ignored. Also, if the
-                match clause is not a string, this parameter
-                is ignored.
-```
+|Parameter|Description|
+|---|---|
+| Wildcard      | Indicates that the condition is a wildcard string. If you use Wildcard, Regex and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
+| Exact         | Indicates that the match clause, if it is a string, must match exactly. If you use Exact, Regex and Wildcard and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
+| CaseSensitive | Performs a case-sensitive match. If the match clause is not a string, this parameter is ignored. |
+| File          | Takes input from a file rather than a value statement. If multiple File parameters are included, only the last one is used. Each line of the file is read and evaluated by the Switch statement. |
+| Regex         | Performs regular expression matching of the value to the condition. If you use Regex, Wildcard and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
 
 ```powershell
 Example:
@@ -176,26 +178,6 @@ Example:
            "fo*" {"That's too many."}
        }
 That's too many.
-```
-
-```
-Wildcard        Indicates that the condition is a wildcard string.
-                If you use Wildcard, Regex and Exact are ignored.
-                Also, if the match clause is not a string, this
-                parameter is ignored.
-
-Exact           Indicates that the match clause, if it is a string,
-                must match exactly. If you use Exact, Regex and
-                Wildcard and Exact are ignored. Also, if the match
-                clause is not a string, this parameter is ignored.
-
-CaseSensitive   Performs a case-sensitive match. If the match
-                clause is not a string, this parameter is ignored.
-
-File            Takes input from a file rather than a value
-                statement. If multiple File parameters are
-                included, only the last one is used. Each line of the
-                file is read and evaluated by the Switch statement.
 ```
 
 Multiple instances of Regex, Wildcard, or Exact are permitted. However,
