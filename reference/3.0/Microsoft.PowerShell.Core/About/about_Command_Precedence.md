@@ -125,6 +125,7 @@ The following command uses the **All** parameter to get all "Get-Date" commands.
 Get-Command Get-Date -All
 ```
 
+
 ```
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
@@ -182,16 +183,20 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 ```
 
 ```
+
 Microsoft.PowerShell.Utility
 ```
 
 # CALL OPERATOR
 
+
 You can also use the `Call` operator `&` to run any command that you
+
 can get by using a [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) (the alias is "dir"), `Get-Command` or
 [Get-Module](../Get-Module.md) command.
 
 To run a command, enclose the `Get-Command` command in parentheses,
+
 and use the Call operator `&` to run the command.
 
 ```
@@ -199,6 +204,7 @@ and use the Call operator `&` to run the command.
 ```
 
 or
+
 
 ```
 &(dir ... )
@@ -273,6 +279,7 @@ in the names of commands.
 For example, the following command avoids any conflict with the `Get-Date` 
 and [Set-Date](../../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that come with Windows PowerShell when you import
 the "DateFunctions" module.
+
 
 ```powershell
 Import-Module -Name DateFunctions -Prefix ZZ

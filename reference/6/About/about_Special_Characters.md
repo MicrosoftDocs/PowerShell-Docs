@@ -75,6 +75,7 @@ back out
 ```
 
 ## ESCAPE (`e)
+
 The escape character is most commonly used to specify a virtual terminal
 sequence (ANSI escape sequence) that modifies the color of text and other
 text attributes such as bolding and underlining.  These sequences can also
@@ -97,6 +98,7 @@ Green text
 ```
 
 ## FORM FEED (`f)
+
 The form feed character (`f) is a print instruction that ejects the
 current page and continues printing on the next page. This character
 affects printed documents only; it does not affect screen output.
@@ -169,6 +171,7 @@ The following command outputs the character '↕':
 ```
 
 ## VERTICAL TAB (`v)
+
 The horizontal tab character (`t) advances to the next vertical tab stop
 and writes all subsequent output beginning at that point. This character
 affects printed documents only. It does not affect screen output.

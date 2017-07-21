@@ -271,6 +271,7 @@ Accept wildcard characters: True
 Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
 Implementation varies among providers.
 For more information, see [about_Provider](../microsoft.powershell.core/about/about_providers.md).
+
 Even when using the `-Force` parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
@@ -443,6 +444,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../microsoft.powershell.core/about/about_commonparameters.md).
 
 ## Inputs
