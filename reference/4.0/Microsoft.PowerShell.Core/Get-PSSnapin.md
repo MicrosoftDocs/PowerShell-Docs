@@ -113,7 +113,7 @@ Get-PSSnapin returns an object for each snap-in that it gets.
 ## NOTES
 * Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins"). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.initialsessionstate.createdefault2(v=vs.85).aspx) in the MSDN library.
 
 ## RELATED LINKS
 
