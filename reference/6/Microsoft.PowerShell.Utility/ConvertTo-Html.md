@@ -353,7 +353,7 @@ Specifies text to add to the opening \<meta\> tag.
 By default, there is no text in that position.
 
 ```yaml
-Type: String[]
+Type: Hashtable
 Parameter Sets: (Page)
 Aliases: 
 
