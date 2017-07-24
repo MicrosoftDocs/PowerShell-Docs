@@ -6,14 +6,12 @@ title:  about_Assignment_Operators
 ---
 
 # About Assignment Operators
-## about_Assignment_Operators
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes how to use operators to assign values to variables.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Assignment operators assign one or more values to a variable. They can
 perform numeric operations on the values before the assignment.
@@ -31,14 +29,14 @@ Windows PowerShell supports the following assignment operators.
 | ++ | Increases the value of a variable, assignable property, or array element by 1. |
 | -- | Decreases the value of a variable, assignable property, or array element by 1. |
 
-# SYNTAX
+## SYNTAX
 
 The syntax of the assignment operators is as follows:
 
 `<assignable-expression>` `<assignment-operator>` `<value>`
 
-Assignable expressions include variables and properties.  The value can be
-a single value, an array of values, or a command, expression, or statement.
+Assignable expressions include variables and properties. The value can be a
+single value, an array of values, or a command, expression, or statement.
 
 The increment and decrement operators are unary operators. Each has prefix
 and postfix versions.
@@ -49,16 +47,16 @@ and postfix versions.
 The assignable expression must be a number or it must be convertible to a
 number.
 
-# ASSIGNING VALUES
+## ASSIGNING VALUES
 
 Variables are named memory spaces that store values. You store the values
 in variables by using the assignment operator `=`. The new value can
 replace the existing value of the variable, or you can append a new value
 to the existing value.
 
-The basic assignment operator is the equal sign `=` `(ASCII 61)`. For example,
-the following statement assigns the value Windows PowerShell to the
-$MyShell variable:
+The basic assignment operator is the equal sign `=` `(ASCII 61)`. For
+example, the following statement assigns the value Windows PowerShell to
+the $MyShell variable:
 
 ```powershell
 $MyShell = "Windows PowerShell"
@@ -66,10 +64,10 @@ $MyShell = "Windows PowerShell"
 
 When you assign a value to a variable in Windows PowerShell, the variable
 is created if it did not already exist. For example, the first of the
-following two assignement statements creates the $a variable and assigns
-a value of 6 to $a. The second assignment statement assigns a value
-of 12 to $a. The first statement creates a new variable. The second
-statement changes only its value:
+following two assignement statements creates the $a variable and assigns a
+value of 6 to $a. The second assignment statement assigns a value of 12 to
+$a. The first statement creates a new variable. The second statement
+changes only its value:
 
 ```powershell
 $a = 6
@@ -92,10 +90,10 @@ $a += 12
 ```
 
 Because the assignment operator `=` has a lower precedence than the
-pipeline operator `|`, parentheses are not required to assign the result
-of a command pipeline to a variable. For example, the following command
-sorts the services on the computer and then assigns the sorted services
-to the $a variable:
+pipeline operator `|`, parentheses are not required to assign the result of
+a command pipeline to a variable. For example, the following command sorts
+the services on the computer and then assigns the sorted services to the $a
+variable:
 
 ```powershell
 $a = Get-Service | Sort-Object -Property name
@@ -108,15 +106,15 @@ the following example:
 $a = if ($b -lt 0) { 0 } else { $b }
 ```
 
-This example assigns 0 to the $a variable if the value of $b is less
-than 0. It assigns the value of $b to $a if the value of $b is not less
-than zero.
+This example assigns 0 to the $a variable if the value of $b is less than
+0. It assigns the value of $b to $a if the value of $b is not less than
+zero.
 
-# THE ASSIGNMENT OPERATOR
+### THE ASSIGNMENT OPERATOR
 
 The assignment operator `=` assigns values to variables. If the variable
-already has a value, the assignment operator `=` replaces the value
-without warning.
+already has a value, the assignment operator `=` replaces the value without
+warning.
 
 The following statement assigns the integer value 6 to the $a variable:
 
@@ -148,9 +146,9 @@ $a = @{one=1; two=2; three=3}
 ```
 
 To assign hexadecimal values to a variable, precede the value with `0x`.
-Windows PowerShell converts the hexadecimal value (0x10) to a decimal
-value (in this case, 16) and assigns that value to the $a variable. For
-example, to assign a value of 0x10 to the $a variable, type:
+Windows PowerShell converts the hexadecimal value (0x10) to a decimal value
+(in this case, 16) and assigns that value to the $a variable. For example,
+to assign a value of 0x10 to the $a variable, type:
 
 ```powershell
 $a = 0x10
@@ -172,13 +170,13 @@ to the $a variable, type:
 $a = 10kb
 ```
 
-# THE ASSIGNMENT BY ADDITION OPERATOR
+### THE ASSIGNMENT BY ADDITION OPERATOR
 
 The assignment by addition operator `+=` either increments the value of a
 variable or appends the specified value to the existing value. The action
 depends on whether the variable has a numeric or string type and whether
-the variable contains a single value (a scalar) or multiple values
-(a collection).
+the variable contains a single value (a scalar) or multiple values (a
+collection).
 
 The `+=` operator combines two operations. First, it adds, and then it
 assigns. Therefore, the following statements are equivalent:
@@ -256,9 +254,9 @@ the only type that you can add to a hash table is another hash table, all
 other assignments fail.
 
 For example, the following command assigns a hash table to the $a variable.
-Then, it uses the `+=` operator to append another hash table to the existing
-hash table, effectively adding a new key/value pair to the existing hash
-table. This command succeeds, as shown in the output:
+Then, it uses the `+=` operator to append another hash table to the
+existing hash table, effectively adding a new key/value pair to the
+existing hash table. This command succeeds, as shown in the output:
 
 ```powershell
 $a = @{a = 1; b = 2; c = 3}
@@ -289,7 +287,7 @@ At line:1 char:6
 + $a += <<<<  1
 ```
 
-# THE ASSIGNMENT BY SUBTRACTION OPERATOR
+### THE ASSIGNMENT BY SUBTRACTION OPERATOR
 
 The assignment by subtraction operator `-=` decrements the value of a
 variable by the value that is specified on the right side of the operator.
@@ -335,16 +333,18 @@ $a
 ```
 
 You cannot use the `-=` operator to delete the values of a variable. To
-delete all the values that are assigned to a variable, use the [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
-or [Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md) cmdlets to assign a value of `$null` or `""` to the variable.
+delete all the values that are assigned to a variable, use the
+[Clear-Item](../Microsoft.PowerShell.Management/Clear-Item.md) or
+[Clear-Variable](../Microsoft.PowerShell.Utility/Clear-Variable.md) cmdlets
+to assign a value of `$null` or `""` to the variable.
 
 ```powershell
 $a = $null
 ```
 
 To delete a particular value from an array, use array notation to assign a
-value of `$null` to the particular item. For example, the following statement
-deletes the second value (index position 1) from an array:
+value of `$null` to the particular item. For example, the following
+statement deletes the second value (index position 1) from an array:
 
 ```powershell
 $a = 1,2,3
@@ -367,15 +367,17 @@ $a
 3
 ```
 
-To delete a variable, use the [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md) cmdlet. This method is useful
-when the variable is explicitly cast to a particular data type, and you
-want an untyped variable. The following command deletes the $a variable:
+To delete a variable, use the
+[Remove-Variable](../Microsoft.PowerShell.Utility/Remove-Variable.md)
+cmdlet. This method is useful when the variable is explicitly cast to a
+particular data type, and you want an untyped variable. The following
+command deletes the $a variable:
 
 ```powershell
 Remove-Variable -Name a
 ```
 
-# THE ASSIGNMENT BY MULTIPLICATION OPERATOR
+### THE ASSIGNMENT BY MULTIPLICATION OPERATOR
 
 The assignment by multiplication operator `*=` multiplies a numeric value
 or appends the specified number of copies of the string value of a
@@ -426,7 +428,7 @@ the first element in the array (index position 0) by 2:
 $a[0] *= 2
 ```
 
-# THE ASSIGNMENT BY DIVISION OPERATOR
+### THE ASSIGNMENT BY DIVISION OPERATOR
 
 The assignment by division operator `/=` divides a numeric value by the
 value that is specified on the right side of the operator. The operator
@@ -440,8 +442,8 @@ $a /= 2
 $a = ($a / 2)
 ```
 
-For example, the following command uses the `/=` operator to divide the value
-of a variable:
+For example, the following command uses the `/=` operator to divide the
+value of a variable:
 
 ```powershell
 $a = 8
@@ -461,13 +463,14 @@ element in the array (index position 1) by 2:
 $a[1] /= 2
 ```
 
-# THE ASSIGNMENT BY MODULUS OPERATOR
+### THE ASSIGNMENT BY MODULUS OPERATOR
 
 The assignment by modulus operator `%=` divides the value of a variable by
-the value on the right side of the operator. Then, the `%=` operator assigns
-the remainder (known as the modulus) to the variable. You can use this
-operator only when a variable contains a single numeric value. You cannot
-use this operator when a variable contains a string variable or an array.
+the value on the right side of the operator. Then, the `%=` operator
+assigns the remainder (known as the modulus) to the variable. You can use
+this operator only when a variable contains a single numeric value. You
+cannot use this operator when a variable contains a string variable or an
+array.
 
 The `%=` operator combines two operations. First, it divides and determines
 the remainder, and then it assigns the remainder to the variable.
@@ -478,8 +481,8 @@ $a %= 2
 $a = ($a % 2)
 ```
 
-The following example shows how to use the `%=` operator to save the modulus
-of a quotient:
+The following example shows how to use the `%=` operator to save the
+modulus of a quotient:
 
 ```powershell
 $a = 7
@@ -630,7 +633,7 @@ $d
 7
 ```
 
-# MICROSOFT .NET FRAMEWORK TYPES
+## MICROSOFT .NET FRAMEWORK TYPES
 
 By default, when a variable has only one value, the value that is assigned
 to the variable determines the data type of the variable. For example, the
@@ -641,9 +644,10 @@ type:
 $a = 6
 ```
 
-To find the .NET Framework type of a variable, use the **GetType** method and
-its **FullName** property, as follows. Be sure to include the parentheses after
-the **GetType** method name, even though the method call has no arguments:
+To find the .NET Framework type of a variable, use the **GetType** method
+and its **FullName** property, as follows. Be sure to include the
+parentheses after the **GetType** method name, even though the method call
+has no arguments:
 
 ```powershell
 $a = 6
@@ -696,8 +700,8 @@ $a
 ```
 
 You can cast a new scalar variable as any .NET Framework type by placing
-the type name in brackets that precede either the variable name or
-the first assignment value. When you cast a variable, you can determine the
+the type name in brackets that precede either the variable name or the
+first assignment value. When you cast a variable, you can determine the
 types of data that can be stored in the variable. And, you can determine
 how the variable behaves when you manipulate it.
 
@@ -741,8 +745,8 @@ At line:1 char:8
 [int]$a = 3
 ```
 
-In addition, when you precede a variable name with a data type, the type
-of that variable is locked unless you explicitly override the type by
+In addition, when you precede a variable name with a data type, the type of
+that variable is locked unless you explicitly override the type by
 specifying another data type. If you try to assign a value that is
 incompatible with the existing type, and you do not explicitly override the
 type, Windows PowerShell displays an error, as shown in the following
@@ -769,11 +773,11 @@ At line:1 char:3
 In Windows PowerShell, the data types of variables that contain multiple
 items in an array are handled differently from the data types of variables
 that contain a single item. Unless a data type is specifically assigned to
-an array variable, the data type is always `System.Object []`. This data type
-is specific to arrays.
+an array variable, the data type is always `System.Object []`. This data
+type is specific to arrays.
 
-Sometimes, you can override the default type by specifying another
-type. For example, the following command casts the variable as a `string []`
+Sometimes, you can override the default type by specifying another type.
+For example, the following command casts the variable as a `string []`
 array type:
 
 ```powershell
@@ -789,8 +793,9 @@ specifies a `System.DateTime` data type:
 [System.DateTime]$a = "5/31/2005"
 ```
 
-The variable will be assigned a value that conforms to the `System.DateTime`
-data type. The value of the $a variable would be the following:
+The variable will be assigned a value that conforms to the
+`System.DateTime` data type. The value of the $a variable would be the
+following:
 
 ```
 Tuesday, May 31, 2005 12:00:00 AM
@@ -818,36 +823,38 @@ $a, $b, $c = 1, 2, 3, 4, 5
 ```
 
 Therefore, Windows PowerShell assigns the value 1 to the $a variable and
-the value 2 to the $b variable. It assigns the values 3, 4, and 5 to
-the $c variable. To assign the values in the $c variable to three other
-variables, use the following format:
+the value 2 to the $b variable. It assigns the values 3, 4, and 5 to the $c
+variable. To assign the values in the $c variable to three other variables,
+use the following format:
 
 ```powershell
 $d, $e, $f = $c
 ```
 
-This command assigns the value 3 to the $d variable, the value 4 to
-the $e variable, and the value 5 to the $f variable.
+This command assigns the value 3 to the $d variable, the value 4 to the $e
+variable, and the value 5 to the $f variable.
 
 You can also assign a single value to multiple variables by chaining the
-variables. For example, the following command assigns a value of "three"
-to all four variables:
+variables. For example, the following command assigns a value of "three" to
+all four variables:
 
 ```powershell
 $a = $b = $c = $d = "three"
 ```
 
-# VARIABLE-RELATED CMDLETS
+## VARIABLE-RELATED CMDLETS
 
 In addition to using an assignment operation to set a variable value, you
-can also use the [Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md) cmdlet. For example, the following command
-uses `Set-Variable` to assign an array of 1, 2, 3 to the $a variable.
+can also use the
+[Set-Variable](../Microsoft.PowerShell.Utility/Set-Variable.md) cmdlet. For
+example, the following command uses `Set-Variable` to assign an array of 1,
+2, 3 to the $a variable.
 
 ```powershell
 Set-Variable -Name a -Value 1, 2, 3
 ```
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Arrays](about_Arrays.md)
 
@@ -855,8 +862,8 @@ Set-Variable -Name a -Value 1, 2, 3
 
 [about_Variables](about_Variables.md)
 
-[Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
+[Clear-Variable](../Microsoft.PowerShell.Utility/Clear-Variable.md)
 
-[Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
+[Remove-Variable](../Microsoft.PowerShell.Utility/Remove-Variable.md)
 
-[Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md)
+[Set-Variable](../Microsoft.PowerShell.Utility/Set-Variable.md)
