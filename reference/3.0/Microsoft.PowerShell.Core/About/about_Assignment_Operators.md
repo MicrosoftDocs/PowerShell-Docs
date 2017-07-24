@@ -866,4 +866,4 @@ Set-Variable -Name a -Value 1, 2, 3
 
 [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
 
-[Set-Variable](../,,/Microsoft.PowerShell.Utility/Set-Variable.md)
+[Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md)
