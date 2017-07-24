@@ -63,13 +63,13 @@ the same precedence.
 |--------|---------|
 |`-split` (unary)|[about_Split](about_Split.md)|
 |`-join` (unary)|[about_Join](about_Join.md)|
-|`-is -isnot -as`|[about_Type_Operators](about_Type_Operators)|
-|`-eq -ne -gt -gt -lt -le`|[about_Comparison_Operators](about_Comparison_Operators)|
-|`-like -notlike`|[about_comparison_operators](about_comparison_operators)|
-|`-match -notmatch`|[about_comparison_operators](about_comparison_operators)|
-|`-in -notIn`|[about_comparison_operators](about_comparison_operators)|
-|`-contains -notContains`|[about_comparison_operators](about_comparison_operators)|
-|`-replace`|[about_comparison_operators](about_comparison_operators)|
+|`-is -isnot -as`|[about_Type_Operators](about_Type_Operators.md)|
+|`-eq -ne -gt -gt -lt -le`|[about_Comparison_Operators](about_Comparison_Operators.md)|
+|`-like -notlike`|[about_comparison_operators](about_comparison_operators.md)|
+|`-match -notmatch`|[about_comparison_operators](about_comparison_operators.md)|
+|`-in -notIn`|[about_comparison_operators](about_comparison_operators.md)|
+|`-contains -notContains`|[about_comparison_operators](about_comparison_operators.md)|
+|`-replace`|[about_comparison_operators](about_comparison_operators.md)|
 
 The list resumes here with the following operators in precedence
 order:
@@ -77,11 +77,11 @@ order:
 |OPERATOR|REFERENCE|
 |--------|---------|
 |`-band -bor -bxor`|[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
-|`-and -or -xor`|[about_comparison_operators](about_comparison_operators)|
-|`.` (dot-source)<BR>`&` (call)|[about_Scopes](about_Scopes)<BR>[about_Operators](about_Operators)|
+|`-and -or -xor`|[about_comparison_operators](about_comparison_operators.md)|
+|`.` (dot-source)<BR>`&` (call)|[about_Scopes](about_Scopes.md)<BR>[about_Operators](about_Operators.md)|
 |&#124; (pipeline operator)|[about_Operators](about_Operators.md)|
-|`> >> 2> 2>> 2>&1`|[about_Redirection](about_Redirection)|
-|`= += -= *= /= %=`|[about_Assignment_Operators](about_Assignment_Operators)|
+|`> >> 2> 2>> 2>&1`|[about_Redirection](about_Redirection.md)|
+|`= += -= *= /= %=`|[about_Assignment_Operators](about_Assignment_Operators.md)|
 
 # EXAMPLES
 
