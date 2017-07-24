@@ -22,12 +22,12 @@ separates these values.
 PowerShell includes the following comparison operators:
 
 |Operator Type|Operators|Description|
-|---|---|---|---|
-|Equality|-eq<BR>-ne<BR>-gt<BR>-ge<BR>-lt<BR>-le|equals<BR>not equals<BR>greater than<BR>greater than or equal<BR>less than<BR>less than or equal|
-|Matching|-like<BR>-notlike<BR>-match<BR>-notmatch<BR>|Returns true when string matches wildcard pattern<BR>Returns true when string does not match wildcard pattern<BR>Returns true when string matches regex pattern - $matches contains matching strings<BR>Returns true when string does not match regex pattern - $matches contains matching strings|
-|Containment|-contains<BR> -notcontains<BR> -in<BR> -notin<BR>|Returns true when reference value contained in a collection<BR> Returns true when reference value not contained in a collection<BR> Returns true when test value contained in a collection<BR> Returns true when test value not contained in a collection|
-|Replacement|-replace|replace a string pattern|
-|Type comparison|-is<BR>-isnot|Returns true if both object are the same type<BR>Returns true if the objects are not the same type|
+|---|---|---|
+|Equality|`-eq`<BR>`-ne`<BR>`-gt`<BR>`-ge`<BR>`-lt`<BR>`-le`|equals<BR>not equals<BR>greater than<BR>greater than or equal<BR>less than<BR>less than or equal|
+|Matching|`-like`<BR>`-notlike`<BR>`-match`<BR>`-notmatch`|Returns true when string matches wildcard pattern<BR>Returns true when string does not match wildcard pattern<BR>Returns true when string matches regex pattern - $matches contains matching strings<BR>Returns true when string does not match regex pattern - $matches contains matching strings|
+|Containment|`-contains`<BR>`-notcontains`<BR>`-in`<BR>`-notin`|Returns true when reference value contained in a collection<BR> Returns true when reference value not contained in a collection<BR> Returns true when test value contained in a collection<BR>Returns true when test value not contained in a collection|
+|Replacement|`-replace`|replace a string pattern|
+|Type comparison|`-is`<BR>`-isnot`|Returns true if both object are the same type<BR>Returns true if the objects are not the same type|
 
 By default, all comparison operators are case-insensitive. To make a
 comparison operator case-sensitive, precede the operator name with a `c`.
