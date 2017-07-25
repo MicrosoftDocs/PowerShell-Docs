@@ -258,19 +258,19 @@ Get-Help Alias
 
 ## SEE ALSO
 
-[New-Alias](../Microsoft.PowerShell.Utility/New-Alias.md)
+[New-Alias](../../Microsoft.PowerShell.Utility/New-Alias.md)
 
-[Get-Alias](../Microsoft.PowerShell.Utility/Get-Alias.md)
+[Get-Alias](../../Microsoft.PowerShell.Utility/Get-Alias.md)
 
-[Set-Alias](../Microsoft.PowerShell.Utility/Set-Alias.md)
+[Set-Alias](../../Microsoft.PowerShell.Utility/Set-Alias.md)
 
-[Export-Alias](../Microsoft.PowerShell.Utility/Export-Alias.md)
+[Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md)
 
-[Import-Alias](../Microsoft.PowerShell.Utility/Import-Alias.md)
+[Import-Alias](../../Microsoft.PowerShell.Utility/Import-Alias.md)
 
-[Get-PSProvider](../Microsoft.PowerShell.Management/Get-PSProvider.md)
+[Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
 
-[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
+[Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
 [about_functions](about_functions.md)
 

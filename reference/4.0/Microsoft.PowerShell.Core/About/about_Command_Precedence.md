@@ -99,13 +99,13 @@ accessible.
 
 ## FINDING HIDDEN COMMANDS
 
-The **All** parameter of the [Get-Command](../Microsoft.PowerShell.Core/Get-Command.md)
+The **All** parameter of the [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 cmdlet gets all commands with the specified name, even if they are hidden
 or replaced. Beginning in PowerShell 3.0, by default, `Get-Command`
 gets only the commands that run when you type the command name.
 
 In the following examples, the session includes a "Get-Date" function and a
-[Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
+[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
 
 The following command gets the "Get-Date" command that runs when you type
 "Get-Date".
@@ -190,9 +190,9 @@ Microsoft.PowerShell.Utility
 ## CALL OPERATOR
 
 You can also use the `Call` operator `&` to run any command that you
-can get by using a [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
+can get by using a [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 (the alias is "dir"), `Get-Command` or
-[Get-Module](../Microsoft.PowerShell.Core/Get-Module.md) command.
+[Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md) command.
 
 To run a command, enclose the `Get-Command` command in parentheses, and use
 the Call operator `&` to run the command.
@@ -270,12 +270,12 @@ in your commands.
 
 Also, when you import commands into your session from a PowerShell
 module or from another session, use the **Prefix** parameter of the
-[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md) or
-[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+[Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) or
+[Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
 cmdlet to add a prefix to the nouns in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date`
-and [Set-Date](../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that
+and [Set-Date](../../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that
 come with PowerShell when you import the "DateFunctions" module.
 
 ```powershell
@@ -292,12 +292,12 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 
 [about_Functions](about_Functions.md)
 
-[Alias-Provider](../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
+[Alias-Provider](../../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
 
-[Function-Provider](../Microsoft.PowerShell.Core/Providers/Function-Provider.md)
+[Function-Provider](../../Microsoft.PowerShell.Core/Providers/Function-Provider.md)
 
-[Get-Command](../Microsoft.PowerShell.Core/Get-Command.md)
+[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 
-[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
+[Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
 
-[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+[Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
