@@ -41,7 +41,6 @@ Function    | [about_Functions](about_Functions.md), [about_Functions_Advanced](
 Hidden      | [about_Hidden](about_Hidden.md)
 If          | [about_If](about_If.md)
 In          | [about_ForEach](about_ForEach.md)
-InlineScript| [about_InlineScript](about_InlineScript.md)
 Param       | [about_Functions](about_Functions.md)
 Process     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)
 Return      | [about_Return](about_Return.md)

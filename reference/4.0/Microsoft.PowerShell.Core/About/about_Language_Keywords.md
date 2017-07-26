@@ -21,7 +21,6 @@ Keyword     | Reference
 Begin       | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)
 Break       | [about_Break](about_Break.md), [about_Trap](about_Trap.md)
 Catch       | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-Class       | [about_Classes](about_Classes.md)
 Continue    | [about_Continue](about_Continue.md), [about_Trap](about_Trap.md)
 Data        | [about_Data_Sections](about_Data_Sections.md)
 Define      | Reserved for future use
@@ -30,7 +29,6 @@ DynamicParam| [about_Functions_Advanced_Parameters](about_Functions_Advanced_Par
 Else        | [about_If](about_If.md)
 Elseif      | [about_If](about_If.md)
 End         | [about_Functions](about_Functions.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-Enum        | [about_Enum](about_Enum.md)
 Exit        | [Described in this topic](#exit)
 Filter      | [about_Functions](about_Functions.md)
 Finally     | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
@@ -38,10 +36,8 @@ For         | [about_For](about_For.md)
 ForEach     | [about_ForEach](about_ForEach.md)
 From        | Reserved for future use
 Function    | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)
-Hidden      | [about_Hidden](about_Hidden.md)
 If          | [about_If](about_If.md)
 In          | [about_ForEach](about_ForEach.md)
-InlineScript| [about_InlineScript](about_InlineScript.md)
 Param       | [about_Functions](about_Functions.md)
 Process     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)
 Return      | [about_Return](about_Return.md)
@@ -51,7 +47,6 @@ Throw       | [about_Throw](about_Throw.md), [about_Functions_Advanced_Methods](
 Trap        | [about_Trap](about_Trap.md), [about_Break](about_Break.md), [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 Try         | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 Until       | [about_Do](about_Do.md)
-Using       | [about_Using](about_Using.md), [about_Classes](about_Classes.md)
 Var         | Reserved for future use
 While       | [about_While](about_While.md), [about_Do](about_Do.md)
 
