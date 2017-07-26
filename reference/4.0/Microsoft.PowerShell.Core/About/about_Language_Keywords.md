@@ -41,7 +41,6 @@ In          | [about_ForEach](about_ForEach.md)
 Param       | [about_Functions](about_Functions.md)
 Process     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)
 Return      | [about_Return](about_Return.md)
-Static      | [about_Classes](about_Classes.md)
 Switch      | [about_Switch](about_Switch.md)
 Throw       | [about_Throw](about_Throw.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
 Trap        | [about_Trap](about_Trap.md), [about_Break](about_Break.md), [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
@@ -99,20 +98,6 @@ Syntax:
 ```powershell
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
-```
-
-### Class
-
-Specifies a new class in PowerShell.
-
-Syntax:
-
-```powershell
-class <class-name> {
-    [[hidden] [static] <property-definition> ...]
-    [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
-    [[hidden] [static] <method-definition> ...]
-}
 ```
 
 ### Continue
@@ -217,20 +202,6 @@ function <name> {
    begin {<statement list>}
    process {<statement list>}
    end {<statement list>}
-}
-```
-
-### Enum
-
-`enum` is used to declare an enumeration; a distinct type that consists of
-a set of named labels called the enumerator list.
-
-Syntax:
-
-```powershell
-enum <enum-name> {
-    <label> [= <int-value>]
-    ...
 }
 ```
 
@@ -369,17 +340,6 @@ Syntax:
 if (<condition>) {<statement list>}
 ```
 
-### Hidden
-
-Hides class members from the default results of the Get-Member cmdlet, and
-from IntelliSense and tab completion results.
-
-Syntax:
-
-```powershell
-Hidden [data type] $member_name
-```
-
 ### In
 
 Used in a ForEach statement to create a loop that uses each member of a
@@ -463,13 +423,6 @@ Syntax:
 return [<expression>]
 ```
 
-### Static
-
-Specifies the property or method defined is common to all instances of the
-class in which is defined.
-
-See, in this topic, **Class**  for usage examples.
-
 ### Switch
 
 To check multiple conditions, use a Switch statement. The Switch statement
@@ -550,22 +503,6 @@ Syntax:
 
 ```powershell
 do {<statement list>} until (<condition>)
-```
-
-### Using
-
-Allows to indicate which namespaces are used in the session. Classes and
-members require less typing to mention them. You can also include classes
-from modules.
-
-Syntax #1:
-```
-using namespace <.Net-framework-namespace>
-```
-
-Syntax #2:
-```
-using module <module-name>
 ```
 
 ### While
