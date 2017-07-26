@@ -86,7 +86,7 @@ PSProvider cmdlets
 
 - Get-PSProvider
 
-For more information about a cmdlet, type "get-help <cmdlet-name>".
+For more information about a cmdlet, type `get-help <cmdlet-name>`.
 
 ## SEE ALSO
 
