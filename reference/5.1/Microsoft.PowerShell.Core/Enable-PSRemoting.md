@@ -181,6 +181,9 @@ This cmdlet returns strings that describe its results.
 To create a firewall rule for public networks that allows remote access from the same local subnet, use the *SkipNetworkProfileCheck* parameter.
 
   On client or server versions of the Windows operating system, to create a firewall rule for public networks that removes the local subnet restriction and allows remote access , use the **Set-NetFirewallRule** cmdlet in the NetSecurity module to run the following command: `Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any`
+  
+  Document Registry information
+
 
 * In Windows PowerShell 2.0, **Enable-PSRemoting** creates the following firewall exceptions for WS-Management communications.
 
