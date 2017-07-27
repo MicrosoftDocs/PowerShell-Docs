@@ -505,7 +505,7 @@ Specifies the network port on the remote computer that is used for this connecti
 
 In PowerShell 6.0 this parameter was included in the **HostName** and **SSHConnection** parameter sets which support Secure Shell (SSH) connections.
 
-#### WinRM (ComputerName parameter set)
+**WinRM (ComputerName parameter set)**
 
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
@@ -523,7 +523,7 @@ Do not use the *Port* parameter unless you must.
 The port setting in the command applies to all computers or sessions on which the command runs.
 An alternate port setting might prevent the command from running on all computers.
 
-#### SSH (HostName and SSHConnection parameter sets)
+**SSH (HostName and SSHConnection parameter sets)**
 To connect to a remote computer, the remote computer must be configured with the SSH service (SSHD) and must be listening on the port that the connection uses. The default port for SSH is 22.
 
 ```yaml
