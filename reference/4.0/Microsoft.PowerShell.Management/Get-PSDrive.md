@@ -108,7 +108,6 @@ If it is not, the command uses the New-PSDrive cmdlet to create a temporary driv
 ### Example 5
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
-PS C:\> Get-PSDrive -provider FileSystem
 
 Name       Provider      Root
 ----       --------      ----
@@ -117,6 +116,7 @@ D          FileSystem    D:\
 X          FileSystem    X:\
 Y          FileSystem    \\Server01\Public
 Z          FileSystem    C:\Windows\System32
+
 PS C:\> net use
 New connections will be remembered.
 
@@ -124,7 +124,7 @@ Status       Local     Remote                    Network
 -------------------------------------------------------------------------------
 X:        \\Server01\Public         Microsoft Windows Network
 
-PS C:\> [System.IO.DriveInfo]::getdrives()
+PS C:\> [System.IO.DriveInfo]::GetDrives()
 
 Name               : C:\
 DriveType          : Fixed
@@ -154,7 +154,7 @@ TotalSize          : 36413280256
 RootDirectory      : X:\
 VolumeLabel        : D_Drive
 
-PS C:\> get-wmiobject win32_logicaldisk
+PS C:\> Get-WmiObject Win32_LogicalDisk
 
 DeviceID     : C:
 DriveType    : 3
@@ -175,7 +175,7 @@ FreeSpace    : 36340559872
 Size         : 36413280256
 VolumeName   : D_Drive
 
-PS C:\> get-wmiobject win32_networkconnection
+PS C:\> Get-WmiObject Win32_NetworkConnection
 
 LocalName                     RemoteName
 --------------               ------------
