@@ -9,7 +9,6 @@ title:  about_Command_Precedence
 ## about_Command_Precedence
 
 
-
 # SHORT DESCRIPTION
 
 Describes how Windows PowerShell determines which command to run.
@@ -42,11 +41,11 @@ C:\TechDocs\FindDocs.ps1
 As a security feature, Windows PowerShell does not run executable
 (native) commands, including Windows PowerShell scripts, unless the
 command is located in a path that is listed in the Path environment
-variable `($env:path)` or unless you specify the path to the script
+variable `$env:path` or unless you specify the path to the script
 file.
 
 To run a script that is in the current directory, specify the full
-path, or type a dot `(.)` to represent the current directory.
+path, or type a dot `.` to represent the current directory.
 
 For example, to run the FindDocs.ps1 file in the current directory,
 type:
@@ -112,7 +111,9 @@ The following command gets the "Get-Date" command that runs when you type "Get-D
 
 ```powershell
 Get-Command Get-Date
+```
 
+```
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Get-Date
@@ -122,7 +123,9 @@ The following command uses the **All** parameter to get all "Get-Date" commands.
 
 ```powershell
 Get-Command Get-Date -All
+```
 
+```
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Get-Date
@@ -166,9 +169,9 @@ MapFunctions\New-Map
 ```
 
 To find the snap-in or module from which a command was imported, use the
-ModuleName property of commands.
+**ModuleName** property of commands.
 
-```powershell
+```
 (Get-Command <command-name>).ModuleName
 ```
 
@@ -176,25 +179,30 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 
 ```powershell
 (Get-Command Get-Date).ModuleName
+```
+
+```
+
 Microsoft.PowerShell.Utility
 ```
 
 # CALL OPERATOR
 
-You can also use the `Call` operator `(&)` to run any command that you
+You can also use the `Call` operator `&` to run any command that you
+
 can get by using a [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) (the alias is "dir"), `Get-Command` or
 [Get-Module](../Get-Module.md) command.
 
 To run a command, enclose the `Get-Command` command in parentheses,
-and use the Call operator `(&)` to run the command.
+and use the Call operator `&` to run the command.
 
-```powershell
+```
 &(Get-Command ...)
 ```
 
 or
 
-```powershell
+```
 &(dir ... )
 ```
 
@@ -266,7 +274,8 @@ in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date` 
 and [Set-Date](../../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that come with Windows PowerShell when you import
-the `DateFunctions` module.
+the "DateFunctions" module.
+
 
 ```powershell
 Import-Module -Name DateFunctions -Prefix ZZ

@@ -170,7 +170,7 @@ two value.
 
 In the following example the *FileAttributes* enumeration is created.
 
- ```PowerShell
+ ```powershell
  [Flags()] enum FileAttributes {
      Archive = 1
      Compressed = 2

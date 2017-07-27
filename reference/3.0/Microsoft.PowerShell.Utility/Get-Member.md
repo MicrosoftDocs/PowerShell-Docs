@@ -431,7 +431,7 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 [about_Properties](../Microsoft.PowerShell.Core/About/about_Properties.md)
 
-[about_Methods]()
+[about_Methods](../microsoft.powershell.core/about/about_methods.md)
 
-[about_Objects]()
+[about_Objects](../microsoft.powershell.core/about/about_objects.md)
 

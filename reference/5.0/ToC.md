@@ -17,7 +17,7 @@
 ####  [about_Automatic_Variables](microsoft.powershell.core/about/about_automatic_variables.md)
 ####  [about_Break](microsoft.powershell.core/about/about_break.md)
 ####  [about_classes](microsoft.powershell.core/about/about_classes.md)
-####  [about_Classes_and_DSC](microsoft.powershell.core/about/about_classes_and_dsc.md)
+####  [about_Classes_and_DSC](psdesiredstateconfiguration/about/about_classes_and_dsc.md)
 ####  [about_Command_Precedence](microsoft.powershell.core/about/about_command_precedence.md)
 ####  [about_Command_Syntax](microsoft.powershell.core/about/about_command_syntax.md)
 ####  [about_Comment_Based_Help](microsoft.powershell.core/about/about_comment_based_help.md)

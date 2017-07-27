@@ -43,12 +43,13 @@ Sets the default execution policy for the current session and saves it in the $e
 Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command, because all characters typed after the **File** parameter name are interpreted as the script file path followed by the script parameters and their values.
 
 You can include the parameters of a script, and parameter values, in the value of the **File** parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
+Note that parameters passed to the script are passed as literal strings (after interpretation by the current shell).
+For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
+If you were to use PowerShell syntax, then in this example your script would receive the literal "$env:windir" and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
 
 Typically, the switch parameters of a script are either included or omitted. For example, the following command uses the **All** parameter of the Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
 
-In rare cases, you might need to provide a Boolean value for a switch parameter. To provide a Boolean value for a switch parameter in the value of the **File** parameter, enclose the parameter name and value in curly braces, such as the following: `-File .\Get-Script.ps1 {-All:$False}`
-
-### -InputFormat {Text | XML}
+### \-InputFormat {Text | XML}
 Describes the format of data sent to Windows PowerShell. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
 
 ### -Mta
@@ -87,12 +88,13 @@ Sets the window style for the session. Valid values are Normal, Minimized, Maxim
 
 ### -Command
 Executes the specified commands (and any parameters) as though they were typed at the Windows PowerShell command prompt, and then exits, unless the NoExit parameter is specified.
+Essentially, any text after `-Command` is sent as a single command line to PowerShell (this is different from how `-File` handles parameters sent to a script).
 
 The value of Command can be "-", a string. or a script block. If the value of Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block only when running PowerShell.exe in Windows PowerShell. The results of the script are returned to the parent shell as deserialized XML objects, not live objects.
 
-If the value of Command is a string, **Command** must be the last parameter in the command , because any characters typed after the command are interpreted as the command arguments.
+If the value of Command is a string, **Command** must be the last parameter in the command, because any characters typed after the command are interpreted as the command arguments.
 
 To write a string that runs a Windows PowerShell command, use the format:
 

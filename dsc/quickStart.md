@@ -50,22 +50,22 @@ Configuration WebsiteTest {
     Import-DscResource -ModuleName PsDesiredStateConfiguration
 
     # The Node statement specifies which targets this configuration will be applied to.
-	Node 'localhost' {
+    Node 'localhost' {
 
         # The first resource block ensures that the Web-Server (IIS) feature is enabled.
-		WindowsFeature WebServer {
-			Ensure = "Present"
-			Name =	"Web-Server"
-		}
+        WindowsFeature WebServer {
+            Ensure = "Present"
+            Name   = "Web-Server"
+        }
 
         # The second resource block ensures that the website content copied to the website root folder.
-		File WebsiteContent {
-			Ensure = 'Present'
-			SourcePath = 'c:\test\index.htm'
+        File WebsiteContent {
+            Ensure = 'Present'
+            SourcePath = 'c:\test\index.htm'
             DestinationPath = 'c:\inetpub\wwwroot'
-		}
-	}
-} 
+        }
+    }
+}
 ```
 
 Save the file as `WebsiteTest.ps1`.
@@ -94,21 +94,21 @@ This generates the following output:
 Directory: C:\ConfigurationTest\WebsiteTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                                       
-----                -------------         ------ ----                                                                                                                                                       
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
 The first line makes the configuration function available in the console.
 The second line runs the configuration.
 The result is that a new folder, named `WebsiteTest` is created as a subfolder of the current folder.
-The `WebsiteTest` folder contains a file named `localhost.mof`. 
+The `WebsiteTest` folder contains a file named `localhost.mof`.
 It is this file that can then be applied to the target node.
 
 ## Apply the configuration
 
 Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the
-[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) cmdlet.
+[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet.
 
 The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](metaConfig.md),
 which is the engine of DSC, to apply the configuration.
@@ -122,10 +122,10 @@ Start-DscConfiguration .\WebsiteTest
 
 ## Test the configuration
 
-You can call the [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md)
+You can call the [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 cmdlet to see whether the configuration succeeded. 
 
-You can also test the results directly, in this case by browsing to `http://localhost/` in a web browser. 
+You can also test the results directly, in this case by browsing to `http://localhost/` in a web browser.
 You should see the "Hello World" HTML page you created as the first step in this example.
 
 ## Next steps

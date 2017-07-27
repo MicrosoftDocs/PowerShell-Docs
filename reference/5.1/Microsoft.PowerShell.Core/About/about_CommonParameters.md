@@ -86,8 +86,7 @@ $false (-Debug:$false). Suppresses the display of debugging
 messages when the value of the $DebugPreference is not
 SilentlyContinue (the default).
 
-#### -ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop |
-Suspend }]
+#### -ErrorAction[:{Continue | Ignore | Inquire | SilentlyContinue | Stop | Suspend }]
 Alias: ea
 
 Determines how the cmdlet responds to a non-terminating error

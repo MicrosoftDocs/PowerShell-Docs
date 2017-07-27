@@ -197,5 +197,5 @@ Otherwise, this cmdlet does not generate any output.
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[about_Debuggers]()
+[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md)
 

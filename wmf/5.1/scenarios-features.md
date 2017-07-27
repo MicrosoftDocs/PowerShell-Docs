@@ -34,7 +34,7 @@ This catalog file contains hashes for all files in specified paths.
 Users can distribute the set of folders along with corresponding catalog file representing those folders. 
 This information is useful to validate whether any changes have been made to the folders since catalog creation time.    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 Catalog versions 1 and 2 are supported. 
@@ -58,7 +58,7 @@ To verify the integrity of catalog file (Pester.cat in above example), sign it u
 
 Test-FileCatalog validates the catalog representing a set of folders. 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -84,14 +84,14 @@ Changes to this environment variable will only affect children processes.
 The value should name a full path (including filename) that PowerShell has permission to create and write files. 
 To disable the file cache, set this value to an invalid location, for example:
 
-```PowerShell
+```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
 This sets the path to an invalid device. 
 If PowerShell can't write to the path, no error is returned, but you can see error reporting by using a tracer:
 
-```PowerShell
+```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
@@ -99,7 +99,7 @@ When writing out the cache, PowerShell will check for modules that no longer exi
 to avoid an unnecessarily large cache.
 Sometimes these checks are not desirable, in which case you can turn them off by setting:
 
-```PowerShell
+```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 

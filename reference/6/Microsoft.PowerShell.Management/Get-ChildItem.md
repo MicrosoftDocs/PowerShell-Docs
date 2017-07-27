@@ -107,7 +107,7 @@ The `-Recurse` parameter requests a recursive search.
 The `-CodeSigningCert` parameter is a dynamic parameter that the Certificate provider adds to the `Get-ChildItem` cmdlet.
 This parameter gets only certificates that have code-signing authority.
 
-For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../../Microsoft.PowerShell.Security/Providers/certificate-provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
+For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../microsoft.powershell.security/providers/certificate-provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
 ### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
 ```powershell
@@ -270,7 +270,9 @@ Accept wildcard characters: True
 ### -Force
 Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
 Implementation varies among providers.
-For more information, see [about_Provider](../../Microsoft.PowerShell.Core/about/about_Providers.md).
+
+For more information, see [about_Provider](../about/about_providers.md).
+
 Even when using the `-Force` parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
@@ -443,7 +445,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/about/about_CommonParameters.md).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../about/about_commonparameters.md).
 
 ## Inputs
 
@@ -466,7 +469,8 @@ To get hidden items, use the `-Force` parameter.
 
 The `Get-ChildItem` cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type "`Get-PSProvider`".
-For more information, see [about_Providers](../../Microsoft.PowerShell.Core/about/about_Providers.md).
+
+For more information, see [about_Providers](../about/about_providers.md).
 
 ## Related Links
 
@@ -480,4 +484,5 @@ For more information, see [about_Providers](../../Microsoft.PowerShell.Core/abou
 
 [Get-PSProvider](Get-PSProvider.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[about_Providers](../about/about_providers.md)
+
