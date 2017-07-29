@@ -556,7 +556,7 @@ Gets only jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 By default, **Get-Job** gets all the jobs in the current session.
 
-For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/en-us/library/system.management.automation.jobstate(v=vs.85).aspx) in the MSDN library.
+For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
