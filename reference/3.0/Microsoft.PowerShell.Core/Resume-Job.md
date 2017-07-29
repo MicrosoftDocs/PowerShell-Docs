@@ -264,7 +264,7 @@ Accept wildcard characters: False
 Resumes only those jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, and Stopping, but **Resume-Job** resumes only jobs in the **Suspended** state.
 
-For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/en-us/library/system.management.automation.jobstate(v=vs.85).aspx) in the MSDN library.
+For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
