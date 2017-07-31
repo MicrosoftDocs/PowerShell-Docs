@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Splatting
-ms.technology:  powershell
 ---
 
 # About Splatting
@@ -46,7 +42,7 @@ to represent all parameters of a command.
 
 # SYNTAX
 
-```PowerShell
+```powershell
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
 <CommandName> <optional parameters> @<Array> <optional parameters>
 ```
@@ -74,7 +70,7 @@ Test.txt file to the Test2.txt file in the same directory.
 The first example uses the traditional format in which parameter names
 are included.
 
-```PowerShell
+```powershell
 Copy-Item -Path "test.txt" -Destination "test2.txt" -WhatIf
 ```
 
@@ -86,7 +82,7 @@ replaces the dollar sign (`$HashArguments`) in the command.
 
 To provide a value for the WhatIf switch parameter, use $True or $False.
 
-```PowerShell
+```powershell
 $HashArguments = @{ Path = "test.txt"; Destination = "test2.txt"; WhatIf = $true }
 Copy-Item @HashArguments
 ```
@@ -106,7 +102,7 @@ file to the Test2.txt file in the same directory.
 The first example uses the traditional format in which parameter names are
 omitted. The parameter values appear in position order in the command.
 
-```PowerShell
+```powershell
 Copy-Item "test.txt" "test2.txt" -WhatIf
 ```
 
@@ -116,7 +112,7 @@ values are in position order in the array. The second command uses the
 `$ArrayArguments` variable in a command in splatting. The At symbol
 (`@ArrayArguments`) replaces the dollar sign (`$ArrayArguments`) in the command.
 
-```PowerShell
+```powershell
 $ArrayArguments = "test.txt", "test2.txt"
 Copy-Item @ArrayArguments -WhatIf
 ```
@@ -135,7 +131,7 @@ variable.
 The first command creates a hash table of parameter names and values and
 stores the hash table in the `$Colors` variable.
 
-```PowerShell
+```powershell
 $Colors = @{ForegroundColor = "black"; BackgroundColor = "white"}
 ```
 
@@ -143,7 +139,7 @@ The second and third commands use the `$Colors` variable for splatting in a
 Write-Host command. To use the `$Colors variable`, replace the dollar sign
 (`$Colors`) with an At symbol (`@Colors`).
 
-```PowerShell
+```powershell
 #Write a message with the colors in $Colors
 Write-Host "This is a test." @Colors
 
@@ -164,7 +160,7 @@ forward the parameters values passed to a script or function from Test2
 function to the Test1 function. Both calls to the Test1 function from
 Test2 use splatting.
 
-```PowerShell
+```powershell
 function Test1
 {
     param($a, $b, $c)
@@ -214,7 +210,7 @@ For example, the following function calls the Get-Process
 cmdlet. In this function, `@Args` represents all of the parameters
 of the Get-Process cmdlet.
 
-```PowerShell
+```powershell
 function Get-MyProcess { Get-Process @Args }
 ```
 
@@ -222,7 +218,7 @@ When you use the Get-MyProcess function, all unassigned
 parameters and parameter values are passed to `@Args`, as
 shown in the following commands.
 
-```PowerShell
+```powershell
 Get-MyProcess -Name PowerShell
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -242,7 +238,7 @@ a function, but all parameters that you enter are passed
 to all instances of `@Args`, as shown in the following
 example.
 
-```PowerShell
+```powershell
 function Get-MyCommand
 {
     Param ([switch]$P, [switch]$C)
@@ -293,3 +289,4 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.
 [about_Hash_Tables](about_Hash_Tables.md)
 
 [about_Parameters](about_Parameters.md)
+

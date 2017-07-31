@@ -1,12 +1,9 @@
 ---
-title:   Using configuration data
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  carmonm
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Using configuration data
 ---
 
 # Using configuration data in DSC
@@ -207,3 +204,4 @@ For an example of using non-node data, see [Separating configuration and environ
 ## See Also
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)
+

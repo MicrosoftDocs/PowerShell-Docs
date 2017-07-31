@@ -1,7 +1,9 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # Remove-CimSession
@@ -204,7 +206,7 @@ This cmdlet returns an object that contains CIM session information.
 
 ## RELATED LINKS
 
-[Get-CimSession]()
+[Get-CimSession](get-cimsession.md)
 
-[New-CimSession]()
+[New-CimSession](new-cimsession.md)
 

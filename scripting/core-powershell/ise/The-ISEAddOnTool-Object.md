@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The ISEAddOnTool Object
-ms.technology:  powershell
-ms.assetid:    ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
+ms.assetid:  ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ---
-
 
 # The ISEAddOnTool Object
   An **ISEAddonTool** object represents an installed add-on tool that provides additional functionality toWindows PowerShell ISE. An example is the **Commands** tool that you can display by clicking **View**, then **Show Command Add-on**. This tool is then accessible to you by manipulating the various available **ISEAddOnTool** objects.

@@ -1,12 +1,10 @@
 ---
-title:   DSC GroupSet Resource
-ms.date:  2016-05-16
-keywords:  powershell, DSC, built-in, resource
-description:  Provides a mechanism to manage local groups on the target node.
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+description:  Provides a mechanism to manage local groups on the target node.
+title:  DSC GroupSet Resource
 ---
 
 # DSC GroupSet Resource

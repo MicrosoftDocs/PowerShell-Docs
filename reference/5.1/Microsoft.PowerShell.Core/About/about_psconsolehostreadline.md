@@ -1,12 +1,11 @@
 ---
-title: about_PSConsoleHostReadLine
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: dba9aa0c-53af-401a-91d0-e8381ed4f133
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_PSConsoleHostReadLine
 ---
+
 # about_PSConsoleHostReadLine
 ## TOPIC  
  about\_PSConsoleHostReadLine  
@@ -40,3 +39,4 @@ ms.assetid: dba9aa0c-53af-401a-91d0-e8381ed4f133
   
 ### SEE ALSO  
  about\_Prompts
+

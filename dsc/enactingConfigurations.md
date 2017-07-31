@@ -1,12 +1,9 @@
 ---
-title:   Enacting configurations
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Enacting configurations
 ---
 
 # Enacting configurations
@@ -35,7 +32,7 @@ you would apply it to the local machine with the following command: `Start-DscCo
 
 In pull mode, pull clients are configured to get their desired state configurations from a remote pull server. Likewise, the pull server has been set up to host the DSC service, and 
 has been provisioned with the configurations and resources that are required by the pull clients. Each one of the pull clients has a scheduled task that performs a periodic compliance 
-check on the configuration of the node. When the event is triggered the first time, it the Local Configuration Manager (LCM) on the pull client makes a request to the pull server to get the 
+check on the configuration of the node. When the event is triggered the first time, the Local Configuration Manager (LCM) on the pull client makes a request to the pull server to get the 
 configuration specified in the LCM. If that configuration exists on the pull server, and it passes initial validation checks, the configuration is transmitted to the pull client, where it is then 
 executed by the LCM.
 

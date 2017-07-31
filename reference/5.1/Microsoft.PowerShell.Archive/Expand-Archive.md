@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Expand-Archive
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821655
-external help file:   Microsoft.PowerShell.Archive-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821655
+external help file:  Microsoft.PowerShell.Archive-help.xml
+title:  Expand-Archive
 ---
-
 
 # Expand-Archive
 
@@ -22,36 +16,36 @@ Extracts files from a specified archive (zipped) file.
 ## SYNTAX
 
 ### Path (Default)
-```
+```powershell
 Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
+```powershell
 Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Expand-Archive** cmdlet extracts files from a specified zipped archive file to a specified destination folder.
+The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified destination folder.
 An archive file allows multiple files to be packaged, and optionally compressed, into a single zipped file for easier distribution and storage.
 
 ## EXAMPLES
 
 ### Example 1: Extract the contents of an archive
-```
-PS C:\> Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
+```powershell
+Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
 ```
 
-This command extracts the contents of an existing archive file, Draft.zip, into the folder specified by the *DestinationPath* parameter, C:\Reference.
+This command extracts the contents of an existing archive file, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
 
 ### Example 2: Extract the contents of an archive in the current folder
-```
-PS C:\> Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
+```powershell
+Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
 ```
 
-This command extracts the contents of an existing archive file in the current folder, Draft.zip, into the folder specified by the *DestinationPath* parameter, C:\Reference.
+This command extracts the contents of an existing archive file in the current folder, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
 
 ## PARAMETERS
 
@@ -104,7 +98,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the path to an archive file.
-Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
+Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 Wildcard characters are not supported.
 If the path includes escape characters, enclose each escape character in single quotation marks, to instruct Windows PowerShell not to interpret any characters as escape sequences.
 

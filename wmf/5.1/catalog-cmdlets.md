@@ -1,14 +1,11 @@
 ---
-title:   Catalog cmdlets
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  carolz
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  Catalog cmdlets
 ---
+
 # Catalog Cmdlets  
 
 We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) module to generate and validate windows catalog files.  
@@ -20,7 +17,7 @@ We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.
 corresponding the catalog file that represents those folders. A catalog file can be used by the recipient of content to validate whether any changes were made to the folders after 
 the catalog was created.    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 We support creating catalog version 1 and 2. Version 1 uses SHA1 hashing algorithm to create file hashes and version 2 uses SHA256. Catalog version 2 is not supported on 
@@ -45,7 +42,7 @@ To verify the integrity of a catalog file (Pester.cat in above exmaple) it shoul
 
 `Test-FileCatalog` validates the catalog representing a set of folders. 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -56,3 +53,4 @@ a status of `ValidationFailed`.
 Users can retrieve all this information using the `Detailed` switch. The signing status of the catalog is displayed as the `Signature` field, which is same as 
 calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file. 
 Users can also skip any file during validation by using the `FilesToSkip` parameter. 
+

@@ -1,7 +1,9 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # New-CimSessionOption
@@ -466,13 +468,13 @@ This cmdlet returns an object that contains CIM session options information.
 
 ## RELATED LINKS
 
-[Get-ChildItem]()
+[Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
 
-[Get-Credential]()
+[Get-Credential](../microsoft.powershell.security/get-credential.md)
 
-[Get-Culture]()
+[Get-Culture](../microsoft.powershell.utility/get-culture.md)
 
-[Get-Item]()
+[Get-Item](../microsoft.powershell.management/get-item.md)
 
-[New-CimSession]()
+[New-CimSession](new-cimsession.md)
 

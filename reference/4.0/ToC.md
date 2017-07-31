@@ -1,4 +1,4 @@
-#  [4.0](readme.md)
+#  [4.0]()
 ##  [ISE](ise/ise.md)
 ###  [Get-IseSnippet](ise/get-isesnippet.md)
 ###  [Import-IseSnippet](ise/import-isesnippet.md)
@@ -150,7 +150,6 @@
 ###  [Providers]()
 ####  [Alias-Provider](microsoft.powershell.core/providers/alias-provider.md)
 ####  [Environment-Provider](microsoft.powershell.core/providers/environment-provider.md)
-####  [FileSystem-Provider]()
 ####  [FileSystem-Provider](microsoft.powershell.core/providers/filesystem-provider.md)
 ####  [Function-Provider](microsoft.powershell.core/providers/function-provider.md)
 ####  [Registry-Provider](microsoft.powershell.core/providers/registry-provider.md)

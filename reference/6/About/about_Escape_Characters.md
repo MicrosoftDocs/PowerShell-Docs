@@ -1,13 +1,10 @@
 ---
-description: Introduces the escape character in PowerShell and explains its effect.
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2017-05-08
 title:  about_Escape_Characters
-ms.technology:  powershell
+description:  Introduces the escape character in PowerShell and explains its effect.
 ---
 
 # About Escape Characters
@@ -122,22 +119,50 @@ Escape Sequence | Special Character
 `0 | Null
 `a | Alert
 `b | Backspace
+`e | Escape
 `f | Form feed
 `n | New line
 `r | Carriage return
 `t | Horizontal tab
+`u{x} | Unicode escape sequence for character with hex value x (up to xxxxxx)
 `v | Vertical tab
 
-For example:
+This next example uses new line and tab characters to format the string:
 
 ```powershell
-"12345678123456781`nCol1`tColumn2`tCol3"
+"12345678123456781`nCol1`tColumn2`tCol3`u{2195}"
 ```
 
 ```output
-# 12345678123456781
+12345678123456781
 
-Col1 Column2 Col3
+Col1 Column2 Col3↕
+```
+
+This next example uses the escape character to specify a virtual terminal
+sequence to output text with a Green foreground color.  The example
+requires that the PowerShell host support virtual terminal sequences.
+This can be checked on PowerShell v5 and higher with the boolean property
+$Host.UI.SupportsVirtualTerminal.
+
+```powershell
+$fgColor = 32 # green - see http://en.wikipedia.org/wiki/ANSI_escape_code
+"`e[${fgColor}mGreen text`e[0m"
+```
+
+```output
+Green text
+```
+
+This next example uses a Unicode escape sequence to display the
+character '↕'.
+
+```powershell
+"`u{2195}"
+```
+
+```output
+↕
 ```
 
 For more information, type:
@@ -164,3 +189,4 @@ see about\_Parsing.
 - [about_Quoting_Rules](about_Quoting_Rules.md)
 - [about_Special_Characters](about_Special_Characters.md)
 - [about_Parsing](about_Parsing.md)
+

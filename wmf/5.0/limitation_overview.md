@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Known Issues and Limitations
 
 PowerShell Shortcuts are broken when used for the first time
@@ -106,3 +113,4 @@ There are two workarounds for this issue depending on the version of Windows Ser
       * Assumes your edited copy of Generalize.xml was copied to C:\ .
 
   10.	Generalize.xml is now updated with the workaround. Please run Sysprep with the generalize option enabled.
+

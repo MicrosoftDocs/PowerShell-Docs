@@ -1,13 +1,10 @@
 ---
-title: Install and configure WMF 5.1 
-ms.date:  2017-01-18 
-keywords:  PowerShell, DSC, WMF 
-description:  
-ms.topic:  article 
-contributor:  keithb 
-manager:  carmonm 
-ms.prod:  powershell 
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+contributor:  keithb
+title:  Install and configure WMF 5.1
 ---
 
 # Install and Configure WMF 5.1 #
@@ -58,7 +55,7 @@ Installation of WMF 5.1 on either Windows Server 2008 R2 SP1 or Windows 7 SP1, r
 - WMF 3.0 **must not** be installed. Installing WMF 5.1 over WMF 3.0 will result in the loss of the PSModulePath, 
 which can cause other applications to fail. Before installing WMF 5.1, you must either un-install WMF 3.0, or save 
 the PSModulePath and then restore it manually after WMF 5.1 installation is complete. 
-- WMF 5.1 requires [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) 
+- WMF 5.1 requires at least [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) 
 You can install Microsoft .NET Framework 4.5.2 by following the instructions at the download location.
 
 **WinRM Dependency** 

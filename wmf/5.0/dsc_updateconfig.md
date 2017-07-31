@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # On-demand PULL of DSC Configurations
 
 The new Update-DscConfiguration cmdlet triggers a pull from the pull server(s) defined in the meta-configuration. The behavior is often referred to as 'Pull Now'. 
@@ -11,7 +18,7 @@ Once triggered, the pull behaves exactly the same as it would have when triggere
 
 **Note:** If the Meta-Configuration RefreshMode = 'Push' an error is returned by this cmdlet so this cmdlet will always do nothing when a target node is in 'Push' Mode.
 
-```PowerShell
+```powershell
 Update-DscConfiguration 	[[-ComputerName] <string[]>] 
 							[-Wait]
 							[-Force] 
@@ -31,3 +38,4 @@ Update-DscConfiguration 	-CimSession <CimSession[]>
 							[-Confirm] 
 							[<CommonParameters>]
 ```
+

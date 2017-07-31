@@ -1,7 +1,9 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # Invoke-CimMethod
@@ -455,11 +457,11 @@ This cmdlet returns an object.
 
 ## RELATED LINKS
 
-[Get-CimClass]()
+[Get-CimClass](get-cimclass.md)
 
-[Get-CimInstance]()
+[Get-CimInstance](get-ciminstance.md)
 
-[Get-CimSession]()
+[Get-CimSession](get-cimsession.md)
 
-[New-CimSession]()
+[New-CimSession](new-cimsession.md)
 

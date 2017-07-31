@@ -1,13 +1,9 @@
 ---
-title:   New Scenarios and Features in WMF 5.1
-ms.date:  2016-07-13
-keywords:  PowerShell, DSC, WMF
-description:  
-ms.topic:  article
-author:  keithb
-manager:  dongill
-ms.prod:  powershell
-ms.technology: WMF
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+title:  New Scenarios and Features in WMF 5.1
 ---
 
 # New Scenarios and Features in WMF 5.1 #
@@ -38,7 +34,7 @@ This catalog file contains hashes for all files in specified paths.
 Users can distribute the set of folders along with corresponding catalog file representing those folders. 
 This information is useful to validate whether any changes have been made to the folders since catalog creation time.    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 Catalog versions 1 and 2 are supported. 
@@ -62,7 +58,7 @@ To verify the integrity of catalog file (Pester.cat in above example), sign it u
 
 Test-FileCatalog validates the catalog representing a set of folders. 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -88,14 +84,14 @@ Changes to this environment variable will only affect children processes.
 The value should name a full path (including filename) that PowerShell has permission to create and write files. 
 To disable the file cache, set this value to an invalid location, for example:
 
-```PowerShell
+```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
 This sets the path to an invalid device. 
 If PowerShell can't write to the path, no error is returned, but you can see error reporting by using a tracer:
 
-```PowerShell
+```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
@@ -103,7 +99,7 @@ When writing out the cache, PowerShell will check for modules that no longer exi
 to avoid an unnecessarily large cache.
 Sometimes these checks are not desirable, in which case you can turn them off by setting:
 
-```PowerShell
+```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
@@ -129,3 +125,4 @@ This hash table has the same format as `Get-Module -FullyQualifiedName`.
 In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0, with the addition of commit https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, which enables better behavior for Pester on Nano Server. 
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the ChangeLog.md file at: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+

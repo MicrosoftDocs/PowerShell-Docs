@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2017-04-25
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  JEA Session Configurations
-ms.technology:  powershell
 ---
 
 # JEA Session Configurations
@@ -92,7 +88,7 @@ You will not automatically have admin rights on any machines or services unless 
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'MyJEAgMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
 gMSA accounts should only be used when access to network resources are required for a few reasons:
@@ -252,3 +248,4 @@ When you re-register the JEA session configuration, use an updated PowerShell se
 
 - [Register a JEA configuration](register-jea.md)
 - [Author JEA roles](role-capabilities.md)
+

@@ -1,12 +1,9 @@
 ---
-title:   DSC WindowsOptionalFeature Resource
-ms.date:  2016-05-24
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  DSC WindowsOptionalFeature Resource
 ---
 
 # DSC WindowsOptionalFeature Resource
@@ -21,7 +18,7 @@ The **WindowsOptionalFeature** resource in Windows PowerShell Desired State Conf
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
@@ -37,7 +34,7 @@ WindowsOptionalFeature [string] #ResourceName
 |  Property  |  Description   | 
 |---|---| 
 | Name| Indicates the name of the feature that you want to ensure is enabled or disabled.| 
-| Ensure| Specifies whether the feature is enabled. To ensure that the feature is enabled, set this property to "Present" To ensure that the feature is disabled, set the property to "Absent".|
+| Ensure| Specifies whether the feature is enabled. To ensure that the feature is enabled, set this property to "Enable" To ensure that the feature is disabled, set the property to "Disable".|
 | Source| Not implemented.|
 | NoWindowsUpdateCheck| Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable a feature. If $true, DISM does not contact WU.|
 | RemoveFilesOnDisable| Set to **$true** to remove all files associated with the feature when it is disabled (that is, when **Ensure** is set to "Absent").|

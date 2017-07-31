@@ -1,12 +1,9 @@
 ---
-title:   DSC Registry Resource
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  DSC Registry Resource
 ---
 
 # DSC Registry Resource
@@ -22,7 +19,7 @@ Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
@@ -35,9 +32,9 @@ Registry [string] #ResourceName
 |  Property  |  Description   | 
 |---|---| 
 | Key| Indicates the path of the registry key for which you want to ensure a specific state. This path must include the hive.| 
-| ValueName| Indicates the name of the registry value.| 
+| ValueName| Indicates the name of the registry value. To add or remove a registry key, specify this property as an empty string without specifying ValueType or ValueData. To modify or remove the default value of a registry key, specify this property as an empty string while also specifying ValueType or ValueData.| 
 | Ensure| Indicates if the key and value exist. To ensure that they do, set this property to "Present". To ensure that they do not exist, set the property to "Absent". The default value is "Present".| 
-| Force| If the specified registry key is present, __Force__ overwrites it with the new value.| 
+| Force| If the specified registry key is present, __Force__ overwrites it with the new value. If deleting a registry key with subkeys, this needs to be __$true__| 
 | Hex| Indicates if data will be expressed in hexadecimal format. If specified, the DWORD/QWORD value data is presented in hexadecimal format. Not valid for other types. The default value is __$false__.| 
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 | ValueData| The data for the registry value.| 

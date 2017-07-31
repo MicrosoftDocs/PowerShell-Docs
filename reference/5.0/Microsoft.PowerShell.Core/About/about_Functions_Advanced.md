@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Functions_Advanced
-ms.technology:  powershell
 ---
 
 # About Functions Advanced
@@ -98,3 +94,4 @@ pass named parameters.
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
 [Windows PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)
+

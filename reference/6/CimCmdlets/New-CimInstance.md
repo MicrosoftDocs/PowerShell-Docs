@@ -1,7 +1,9 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # New-CimInstance
@@ -350,11 +352,11 @@ This cmdlet returns an object that contains the CIM instance information.
 
 ## RELATED LINKS
 
-[Get-CimClass]()
+[Get-CimClass](get-cimclass.md)
 
-[Get-CimInstance]()
+[Get-CimInstance](get-ciminstance.md)
 
-[Remove-CimInstance]()
+[Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance]()
+[Set-CimInstance](set-ciminstance.md)
 

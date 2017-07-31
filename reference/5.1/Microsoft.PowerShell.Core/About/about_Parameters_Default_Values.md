@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Parameters_Default_Values
-ms.technology:  powershell
 ---
 
 # About Parameters Default Values
@@ -463,3 +459,4 @@ about_DefaultValues
 [about_Profiles](about_Profiles.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

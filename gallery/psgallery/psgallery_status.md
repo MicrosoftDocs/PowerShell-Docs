@@ -1,18 +1,23 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2016-10-14
-contributor:  manikb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_status
-ms.technology:  powershell
 ---
 
 PowerShell Gallery Status
 =========================
+## 06/01/2017 - Deploy to Azure Automation Currently Unavailable
+
+__Summary of Impact__: Deploying items with dependencies to Azure Automation from the PowerShell Gallery is currently unavailable.  Importing items from the PowerShell Gallery from inside Azure Automation is still available.  
+ 
+__Root Cause__: Items that have dependencies on others, and have been previously deployed to Azure Automation, will not be deployed to Azure Automation. Engineers have identified an issue with how ARM templates are generated for items with dependencies for the Deploy to Azure Automation functionality.
+
+__Resolution__: Engineers are working to resolve issue.  The current workaround for users is to import the item from the PowerShell Gallery from inside Azure Automation. 
+
+__Next Steps__: Engineers will release the fix shortly.  In the meantime, please use the recommended workaround. 
+
 
 ## 04/11/2017 - Users unable to log in with Azure Active Directory (AAD) accounts
 
@@ -57,7 +62,7 @@ __Next Steps__: If you used the Contact Us link or sent mail to cgadmin@microsof
 
 __Summary of Impact__: Between 7/11/2016 and 7/13/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -76,7 +81,7 @@ __Next Steps__: Investigate the underlying root cause and developing a solution 
 ## 5/19/2016 - Download Items Failed
 __Summary of Impact__: Between 5/17/2016 and 5/19/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

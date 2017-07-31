@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  Managing Processes with Process Cmdlets
-ms.technology:  powershell
-ms.assetid:    5038f612-d149-4698-8bbb-999986959e31
+ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
 ---
-
 
 # Managing Processes with Process Cmdlets
 You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in Windows PowerShell.

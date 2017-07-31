@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Wait-Job
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=289622
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=289622
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Wait-Job
 ---
-
 
 # Wait-Job
 
@@ -356,7 +350,7 @@ Accept wildcard characters: False
 Waits only for jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 
-For more information about job states, see "JobState Enumeration" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx
+For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
@@ -426,7 +420,7 @@ If the wait ends because the value of the Timeout parameter is exceeded, Wait-Jo
 
 [Suspend-Job](Suspend-Job.md)
 
-[about_Jobs]()
+[about_Jobs](about/about_jobs.md)
 
 [about_Job_Details](About/about_Job_Details.md)
 

@@ -1,27 +1,21 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Operator_Precedence
-ms.technology:  powershell
 ---
 
 # About Operator Precedence
-## about_Operator_Precedence
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Lists the Windows PowerShell operators in precedence order.
 
 [This topic was contributed by Kirk Munro, a Windows PowerShell MVP
 from Ottawa, Ontario]
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Windows PowerShell operators let you construct simple, but powerful
 expressions. This topic lists the operators in precedence order.
@@ -43,89 +37,75 @@ equal precedence.
 
 The Operator column lists the operators. The Reference column lists
 the Windows PowerShell Help topic in which the operator is described.
-To display the topic, type "get-help <topic-name>".
+To display the topic, type `get-help <topic-name>`.
 
-# OPERATOR                         REFERENCE
+|OPERATOR|REFERENCE|
+|--------|---------|
+|`$()  @()`|[about_Operators](#index-operator)|
+|`.` (dereference) `::` (static)|[about_Operators](about_Operators.md)|
+|`[0]` (index operator)|[about_Operators](about_Operators.md)|
+|`[int]` (cast operators)|[about_Operators](about_Operators.md)|
+|`-split` (unary)<BR>`-join` (unary)|[about_Split](about_Split.md)<BR>[about_Join](about_Join.md)|
+|`,` (comma operator)|[about_Operators](about_Operators.md)|
+|`++ --`|[about_Assignment_Operators](about_Assignment_Operators.md)|
+|`-not`<BR>`! -bNot`|[about_Logical_Operators](about_logical_operators.md)<BR>[about_Comparison_Operators](about_Comparison_Operators.md)|
+|`..` (range operator)|[about_Operators](about_Operators.md)|
+|`-f` (format operator)|[about_Operators](about_Operators.md)|
+|`* / %`|[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
+|`+ -`|[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
 
---------                         ---------
-
-$()  @()                         about_Operators
-
-. (dereference) :: (static)      about_Operators
-
-\[0] (index operator)             about_Operators
-
-\[int] (cast operators)           about_Operators
-
--split (unary) -join (unary)     about_Split, about_Join
-
-, (comma operator)               about_Operators
-
-++ --                            about_Assignment_Operators
-
--not ! -bNot                     about_Logical_Operators, about_Comparison_Operators
-
-.. (range operator)              about_Operators
-
--f (format operator)             about_Operators
-
-\* / %                            about_Arithmetic_Operators
-
-\+ -                              about_Arithmetic_Operators
 
 The following group of operators have equal precedence. Their
 case-sensitive and explicitly case-insensitive variants have
 the same precedence.
 
--split (binary)                  about_Split
--join (binary)                   about_Join
--is  -isnot  -as                 about_Type_Operators
--eq  -ne  -gt  -gt  -lt  -le     about_Comparison_Operators
--like  -notlike                  about_comparison_operators
--match  -notmatch                about_comparison_operators
--in -notIn                       about_comparison_operators
--contains -notContains           about_comparison_operators
--replace                         about_comparison_operators
+|OPERATOR|REFERENCE|
+|--------|---------|
+|`-split` (unary)|[about_Split](about_Split.md)|
+|`-join` (unary)|[about_Join](about_Join.md)|
+|`-is -isnot -as`|[about_Type_Operators](about_Type_Operators.md)|
+|`-eq -ne -gt -gt -lt -le`|[about_Comparison_Operators](about_Comparison_Operators.md)|
+|`-like -notlike`|[about_comparison_operators](about_comparison_operators.md)|
+|`-match -notmatch`|[about_comparison_operators](about_comparison_operators.md)|
+|`-in -notIn`|[about_comparison_operators](about_comparison_operators.md)|
+|`-contains -notContains`|[about_comparison_operators](about_comparison_operators.md)|
+|`-replace`|[about_comparison_operators](about_comparison_operators.md)|
 
 The list resumes here with the following operators in precedence
 order:
 
--band -bor -bxor                 about_Comparison_Operators
-
--and -or -xor                    about_Comparison_Operators
-
-. (dot-source)  & (call)         about_Scopes, about_Operators
-
-| (pipeline operator)            about_Operators
-
-\>  >>  2>  2>>  2>&1             about_Redirection
-
-=  +=  -=  \*=  /= %=             about_Assignment_Operators
+|OPERATOR|REFERENCE|
+|--------|---------|
+|`-band -bor -bxor`|[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
+|`-and -or -xor`|[about_comparison_operators](about_comparison_operators.md)|
+|`.` (dot-source)<BR>`&` (call)|[about_Scopes](about_Scopes.md)<BR>[about_Operators](about_Operators.md)|
+|&#124; (pipeline operator)|[about_Operators](about_Operators.md)|
+|`> >> 2> 2>> 2>&1`|[about_Redirection](about_Redirection.md)|
+|`= += -= *= /= %=`|[about_Assignment_Operators](about_Assignment_Operators.md)|
 
 # EXAMPLES
-
 
 The following two commands show the arithmetic operators and
 the effect of using parentheses to force Windows PowerShell to
 evaluate the enclosed part of the expression first.
-```
-C:\PS> 2 + 3 * 4
 
+```powershell
+C:\PS> 2 + 3 * 4
 14
 
-
 C:\PS> (2 + 3) * 4
-
 20
 ```
 
 The following example gets the read-only text files from the local
-directory and saves them in the $read_only variable.
-```
-$read_only = get-childitem *.txt | where-object {$_.isReadOnly}
+directory and saves them in the `$read_only` variable.
 
+```powershell
+$read_only = get-childitem *.txt | where-object {$_.isReadOnly}
+```
 It is equivalent to the following example.
 
+```powershell
 $read_only = ( get-childitem *.txt | where-object {$_.isReadOnly} )
 ```
 
@@ -141,7 +121,8 @@ The first expression creates an array of three strings. Then, it
 uses the index operator with a value of 0 to select the first object
 in the array, which is the first string. Finally, it casts the
 selected object as a string. In this case, the cast has no effect.
-```
+
+```powershell
 C:\PS> [string]@('Windows','PowerShell','2.0')[0]
 Windows
 ```
@@ -150,7 +131,8 @@ The second expression uses parentheses to force the cast operation
 to occur before the index selection. As a result, the entire array
 is cast as a (single) string. Then, the index operator selects
 the first item in the string array, which is the first character.
-```
+
+```powershell
 C:\PS> ([string]@('Windows','PowerShell','2.0'))[0]
 W
 ```
@@ -158,19 +140,22 @@ W
 In the following example, because the -gt (greater-than) operator
 has a higher precedence than the -and (logical AND) operator, the
 result of the expression is FALSE.
-```
+
+```powershell
 C:\PS> 2 -gt 4 -and 1
 False
 ```
 
 It is equivalent to the following expression.
-```
+
+```powershell
 C:\PS> (2 -gt 4) -and 1
 False
 ```
 
 If the -and operator had higher precedence, the answer would be TRUE.
-```
+
+```powershell
 C:\PS> 2 -gt (4 -and 1)
 True
 ```
@@ -181,20 +166,23 @@ interpret, use parentheses to force the evaluation order, even when it
 forces the default operator precedence. The parentheses make your
 intentions clear to people who are reading and maintaining your scripts.
 
-# SEE ALSO
+## SEE ALSO
 
-- [about_Assignment_Operators](about_Assignment_Operators.md)
+[about_Operators](about_Operators.md)
 
-- [about_Comparison_Operators](about_Comparison_Operators.md)
+[about_Assignment_Operators](about_Assignment_Operators.md)
 
-- [about_Join](about_Join.md)
+[about_Comparison_Operators](about_Comparison_Operators.md)
 
-- [about_Operators](about_Operators.md)
+[about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 
-- [about_Redirection](about_Redirection.md)
+[about_Join](about_Join.md)
 
-- [about_Scopes](about_Scopes.md)
+[about_Redirection](about_Redirection.md)
 
-- [about_Split](about_Split.md)
+[about_Scopes](about_Scopes.md)
 
-- [about_Type_Operators](about_Type_Operators.md)
+[about_Split](about_Split.md)
+
+[about_Type_Operators](about_Type_Operators.md)
+

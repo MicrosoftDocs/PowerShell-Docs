@@ -1,12 +1,9 @@
 ---
-title:   Running DSC with user credentials 
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
+ms.date:  2017-06-12
 author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+ms.topic:  conceptual
+keywords:  dsc,powershell,configuration,setup
+title:  Running DSC with user credentials
 ---
 
 # Running DSC with user credentials 
@@ -14,7 +11,7 @@ ms.prod:  powershell
 > Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1
 
 You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration. 
-By default, DSC runs each resource as the system account. 
+By default, DSC runs each resource as the system account.
 There are times when running as a user is necessary, such as installing MSI packages in a specific user context, setting a user's registry keys, accessing a user's specific local directory,
 or accessing a network share.
 
@@ -32,7 +29,7 @@ The [Registry](registryResource.md) resource is used to change the registry key 
 for the Windows command prompt window.
 
 ```powershell
-Configuration ChangeCmdBackGroundColor    
+Configuration ChangeCmdBackGroundColor
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
@@ -49,7 +46,7 @@ Configuration ChangeCmdBackGroundColor
             Hex                  = $true
             PsDscRunAsCredential = Get-Credential
         }
-    }                   
+    }
 }
 
 $configData = @{

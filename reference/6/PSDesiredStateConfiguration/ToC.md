@@ -1,4 +1,6 @@
 #  [PSDesiredStateConfiguration](PSDesiredStateConfiguration.md)
+##  [About](../about/about.md)
+###  [about_Classes_and_DSC](about/about_classes_and_dsc.md)
 ##  [Configuration](configuration.md)
 ##  [Get-DscResource](get-dscresource.md)
 ##  [New-DSCCheckSum](new-dscchecksum.md)

@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: New-ModuleManifest
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=821496
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=821496
+external help file:  System.Management.Automation.dll-Help.xml
+title:  New-ModuleManifest
 ---
-
 
 # New-ModuleManifest
 
@@ -322,10 +316,8 @@ Accept wildcard characters: False
 ```
 
 ### -CompatiblePSEditions
-You can use this parameter to restrict the aliases that are exported by the module.
-It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
-
-If you omit this parameter, **New-ModuleManifest** creates an **AliasesToExport** key with a value of * (all), meaning that all aliases that are exported by the module are exported by the manifest.
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
 Type: String[]

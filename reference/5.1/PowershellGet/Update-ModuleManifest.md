@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Update-ModuleManifest
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=822341
-external help file:   PSModule-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=822341
+external help file:  PSModule-help.xml
+title:  Update-ModuleManifest
 ---
-
 
 # Update-ModuleManifest
 
@@ -134,8 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -CompatiblePSEditions
-You can use this parameter to restrict the aliases that are exported by the module.
-It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
 Type: String[]

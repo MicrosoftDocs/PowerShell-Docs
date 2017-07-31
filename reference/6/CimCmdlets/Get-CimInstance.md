@@ -1,7 +1,9 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: 
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # Get-CimInstance
@@ -486,19 +488,19 @@ This cmdlet returns one or more CIM instance objects representing a snapshot of 
 
 ## RELATED LINKS
 
-[Format-Table]()
+[Format-Table](../microsoft.powershell.utility/format-table.md)
 
 [Get-CimAssociatedInstance" Get-CimAssociatedInstance]()
 
 [Get-CimClass" Get-CimClass]()
 
-[Invoke-CimMethod]()
+[Invoke-CimMethod](invoke-cimmethod.md)
 
-[New-CimInstance]()
+[New-CimInstance](new-ciminstance.md)
 
 [Register-CimIndicationEvent" Register-CimIndicationEvent]()
 
-[Remove-CimInstance]()
+[Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance]()
+[Set-CimInstance](set-ciminstance.md)
 

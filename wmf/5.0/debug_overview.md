@@ -1,3 +1,10 @@
+---
+ms.date:  2017-06-12
+author:  JKeithB
+ms.topic:  reference
+keywords:  wmf,powershell,setup
+---
+
 # Improvements in PowerShell Script Debugging
 
 A number of improvements were made in PowerShell 5.0 to enhance the debugging experience:
@@ -42,3 +49,4 @@ You can now attach to any computer process that has Windows PowerShell loaded. Y
 
 -   Enter-PSHostProcess
 -   Exit-PSHostProcess
+

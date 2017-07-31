@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=834941
-schema: 2.0.0
-title: Clear-Host
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=834941
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Clear-Host
 ---
 
 # Clear-Host
@@ -21,7 +16,7 @@ Clears the display in the host program.
 ## SYNTAX
 
 ```
-Clear-Host [<CommonParameters>]
+Clear-Host
 ```
 
 ## DESCRIPTION
@@ -82,9 +77,6 @@ This command uses the CLS alias of Clear-Host to clear the current display.
 
 ## PARAMETERS
 
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
-
 ## INPUTS
 
 ### None
@@ -101,9 +93,9 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 
 ## RELATED LINKS
 
-[Get-Host]()
+[Get-Host](../microsoft.powershell.utility/get-host.md)
 
-[Out-Host]()
+[Out-Host](out-host.md)
 
 [Read-Host. Write-Host]()
 

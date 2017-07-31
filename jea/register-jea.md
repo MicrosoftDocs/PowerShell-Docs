@@ -1,13 +1,9 @@
 ---
-manager:  carmonm
-ms.topic:  article
+ms.date:  2017-06-12
 author:  rpsqrd
-ms.author:  ryanpu
-ms.prod:  powershell
-keywords:  powershell,cmdlet,jea
-ms.date:  2016-12-05
+ms.topic:  conceptual
+keywords:  jea,powershell,security
 title:  Registering JEA Configurations
-ms.technology:  powershell
 ---
 
 # Registering JEA Configurations
@@ -135,3 +131,4 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ## Next steps
 
 - [Test the JEA endpoint](using-jea.md)
+

@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821864
-schema: 2.0.0
-title: Start-Sleep
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821864
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Start-Sleep
 ---
 
 # Start-Sleep
@@ -21,69 +16,40 @@ Suspends the activity in a script or session for the specified period of time.
 ## SYNTAX
 
 ### Seconds (Default)
-```
-Start-Sleep [-Seconds] <Int32> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+```powershell
+Start-Sleep [-Seconds] <Int32> [<CommonParameters>]
 ```
 
 ### Milliseconds
-```
-Start-Sleep -Milliseconds <Int32> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+```powershell
+Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Start-Sleep** cmdlet suspends the activity in a script or session for the specified period of time.
+The `Start-Sleep` cmdlet suspends the activity in a script or session for the specified period of time.
 You can use it for many tasks, such as waiting for an operation to complete or pausing before repeating an operation.
 
 ## EXAMPLES
 
 ### Example 1: Sleep all commands for 15 seconds
-```
-PS C:\> Start-Sleep -s 15
+```powershell
+Start-Sleep -s 15
 ```
 
 This command makes all commands in the session sleep for 15 seconds.
 
 ### Example 2: Sleep all commands
-```
-PS C:\> Start-Sleep -m 500
+```powershell
+Start-Sleep -m 500
 ```
 
 This command makes all the commands in the session sleep for one-half of a second (500 milliseconds).
 
 ## PARAMETERS
 
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Milliseconds
 Specifies how long the resource sleeps in milliseconds.
-The parameter can be abbreviated as *m*.
+The parameter can be abbreviated as **m**.
 
 ```yaml
 Type: Int32
@@ -99,7 +65,7 @@ Accept wildcard characters: False
 
 ### -Seconds
 Specifies how long the resource sleeps in seconds.
-You can omit the parameter name (*Seconds*), or you can abbreviate it as *s*.
+You can omit the parameter name (**Seconds**), or you can abbreviate it as **s**.
 
 ```yaml
 Type: Int32
@@ -119,7 +85,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Int32
-You can pipe the number of seconds to **Start-Sleep**.
+You can pipe the number of seconds to `Start-Sleep`.
 
 ## OUTPUTS
 
@@ -127,9 +93,7 @@ You can pipe the number of seconds to **Start-Sleep**.
 This cmdlet does not return any output.
 
 ## NOTES
-* You can also refer to **Start-Sleep** by its built-in alias, **sleep**. For more information, see about_Aliases.
-
-*
+* You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see about_Aliases.
 
 ## RELATED LINKS
 

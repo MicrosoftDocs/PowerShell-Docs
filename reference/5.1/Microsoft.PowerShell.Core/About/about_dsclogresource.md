@@ -1,12 +1,11 @@
 ---
-title: about_DSCLogResource
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1b34af05-0e92-4404-bda1-faa48b27f672
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_DSCLogResource
 ---
+
 # about_DSCLogResource
 ```  
 TOPIC  
@@ -23,3 +22,4 @@ LONG DESCRIPTION
   HOW TO USE THE DSC LOG RESOURCE  
   
 ```
+

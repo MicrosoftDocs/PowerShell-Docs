@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Start-Job
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=289615
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=289615
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Start-Job
 ---
-
 
 # Start-Job
 
@@ -491,5 +485,5 @@ For example, you can pipe a FileInfo object from Get-ChildItem to **Start-Job**.
 
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Jobs]()
+[about_Jobs](about/about_jobs.md)
 

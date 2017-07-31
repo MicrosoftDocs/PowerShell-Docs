@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Functions_Advanced_Parameters
-ms.technology:  powershell
 ---
 
 # About Functions Advanced Parameters
@@ -559,6 +555,20 @@ either Chocolate, Strawberry, or Vanilla.
 [String][ValidateSet("Chocolate", "Strawberry", "Vanilla")]$flavor = Strawberry
 ```
 
+Note that the validation occurs whenever that variable is assigned even
+within the script.
+For example, the following results in an error at runtime:
+
+```powershell
+Param
+(
+    [ValidateSet("hello","world")]
+    [String]$Message
+)
+
+$Message = "bye"
+```
+
 ## ValidateNotNull Validation Attribute
 
 The ValidateNotNull attribute specifies that the parameter
@@ -733,3 +743,4 @@ might imply that a value is required.
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+

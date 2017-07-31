@@ -1,7 +1,10 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=293886
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293886
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # mkdir
@@ -297,21 +300,21 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-[Clear-Item]()
+[Clear-Item](../microsoft.powershell.management/clear-item.md)
 
-[Copy-Item]()
+[Copy-Item](../microsoft.powershell.management/copy-item.md)
 
-[Get-Item]()
+[Get-Item](../microsoft.powershell.management/get-item.md)
 
-[Invoke-Item]()
+[Invoke-Item](../microsoft.powershell.management/invoke-item.md)
 
-[Move-Item]()
+[Move-Item](../microsoft.powershell.management/move-item.md)
 
-[Remove-Item]()
+[Remove-Item](../microsoft.powershell.management/remove-item.md)
 
-[Rename-Item]()
+[Rename-Item](../microsoft.powershell.management/rename-item.md)
 
-[Set-Item]()
+[Set-Item](../microsoft.powershell.management/set-item.md)
 
-[about_Providers]()
+[about_Providers](../about/about_providers.md)
 

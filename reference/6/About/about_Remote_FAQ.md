@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Remote_FAQ
-ms.technology:  powershell
 ---
 
 # About Remote FAQ
@@ -272,7 +268,7 @@ The Enable-PSRemoting cmdlet creates the default session configurations on your 
 
 You can use the session configuration cmdlets to edit the default session configurations, to create new session configurations, and to change the security descriptors of all the session configurations.
 
-Beginning in  Windows PowerShell 3.0, the New-SessionConfigurationFile cmdlet lets you create custom session configurations by using a text file. The file includes options for setting the language mode and for specifying the cmdlets and modules that are available in sessions that use the session configuration.
+Beginning in  Windows PowerShell 3.0, the New-PSSessionConfigurationFile cmdlet lets you create custom session configurations by using a text file. The file includes options for setting the language mode and for specifying the cmdlets and modules that are available in sessions that use the session configuration.
 
 When users use the Invoke-Command, New-PSSession, or Enter-PSSession cmdlets, they can use the ConfigurationName parameter to indicate the session configuration that is used for the session. And, they can change the default configuration that their sessions use by changing the value of the $PSSessionConfigurationName preference variable in the session.
 
@@ -364,3 +360,4 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 Invoke-Command
 
 New-PSSession
+

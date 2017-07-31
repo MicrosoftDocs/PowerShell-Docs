@@ -1,20 +1,14 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+Help Version:  6.0
+Download Help Link:  http://Please-enter-FwLink-manually
+Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
 title:  Microsoft.PowerShell.Security
-ms.technology:  powershell
-Locale:   en-US
-Module Name:   Microsoft.PowerShell.Security
-Download Help Link:   http://Please-enter-FwLink-manually
-Help Version:   6.0
-Module Guid:   a94c8c7e-9810-47c0-b8af-65089c13a35a
+Module Name:  Microsoft.PowerShell.Security
 ---
-
 
 # Microsoft.PowerShell.Security Module
 ## Description
@@ -75,3 +69,4 @@ Changes the user preference for the Windows PowerShell execution policy.
 
 ### [Test-FileCatalog](test-filecatalog.md)
 {{Manually Enter Test-FileCatalog Description Here}}
+

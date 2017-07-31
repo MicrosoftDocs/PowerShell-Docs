@@ -1,7 +1,10 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/?LinkId=301310
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=301310
+external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
 
 # Export-BinaryMiLog
@@ -12,7 +15,7 @@ Creates a binary encoded representation of an object or objects and stores it in
 
 ## SYNTAX
 
-```PowerShell
+```powershell
 Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String>
 ```
 
@@ -27,7 +30,7 @@ This cmdlet is similar to Import-Clixml, except that Export-BinaryMILog stores t
 
 ### Create a binary representation of CimInstances
 
-```PowerShell
+```powershell
 Get-CimInstance Win32_Process | Export-BinaryMiLog -Path "Processes.bmil"
 ```
 

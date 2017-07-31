@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_PowerShell_Ise_exe
-ms.technology:  powershell
 ---
 
 # About PowerShell Ise.exe
@@ -110,3 +106,4 @@ PS C:> ISE -help
 [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 
 Windows PowerShell 3.0 Integrated Scripting Environment (ISE)
+

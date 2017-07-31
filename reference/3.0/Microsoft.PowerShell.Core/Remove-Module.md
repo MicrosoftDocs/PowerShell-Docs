@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Remove-Module
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=141556
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=141556
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Remove-Module
 ---
-
 
 # Remove-Module
 ## SYNOPSIS
@@ -190,5 +184,5 @@ Remove-Module does not generate any output.
 
 [about_Modules](About/about_Modules.md)
 
-[about_modules]()
+[about_modules](about/about_modules.md)
 

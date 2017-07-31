@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Providers
-ms.technology:  powershell
 ---
 
 # About Providers
@@ -71,7 +67,7 @@ Get-PSProvider
 # INSTALLING AND REMOVING PROVIDERS
 
 Windows PowerShell providers are delivered to you in Windows PowerShell
-snap-ins, which are .NET Framework-based programs that are compiled
+modules, which are .NET Framework-based programs that are compiled
 into .dll files. The snap-ins can include providers and cmdlets.
 
 Before you use the provider features, you have to install the snap-in and
@@ -282,3 +278,4 @@ Get-Help * -Category provider
 about_Locations
 
 [about_Path_Syntax](about_Path_Syntax.md)
+

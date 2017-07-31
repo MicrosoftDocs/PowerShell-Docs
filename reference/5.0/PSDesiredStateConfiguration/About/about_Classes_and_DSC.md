@@ -1,19 +1,18 @@
 ---
-title: about_Classes
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1eb99e7f-dd1a-4659-920b-9a4c4c7b86c1
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  about_Classes_and_DSC
 ---
-# about_Classes
+
+# about_Classes_and_DSC
 ```  
 TOPIC  
-    about_Classes  
+    about_Classes_and_DSC  
   
 SHORT DESCRIPTION  
-    Describes how you can use classes to develop in Windows PowerShell  
+    Describes how you can use classes to develop in Windows PowerShell with DSC 
   
 LONG DESCRIPTION  
     Starting in Windows PowerShell 5.0, Windows PowerShell adds language  
@@ -878,3 +877,4 @@ SEE ALSO
     about_Methods  
     Writing a custom DSC resource with PowerShell classes (http://technet.microsoft.com/library/dn948461.aspx)   
 ```
+

@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_InlineScript
-ms.technology:  powershell
 ---
 
 # About InlineScript
@@ -64,7 +60,7 @@ The following example shows that the $Using scope modifier
 makes the value of the $a top-level workflow variable available
 to the commands in the InlineScript script block.
 
-```PowerShell
+```powershell
 workflow Test-Workflow {
   $a = 3
 
@@ -91,7 +87,7 @@ not visible in workflow scope. To make them visible, return
 the changed value to the workflow scope, as shown in the
 following example.
 
-```PowerShell
+```powershell
 workflow Test-Workflow {
   $a = 3
 
@@ -144,7 +140,7 @@ The InlineScript in the following workflow includes commands
 that are not valid in workflows, including the use of the
 New-Object cmdlet with the ComObject parameter.
 
-```PowerShell
+```powershell
 workflow Test-Workflow
 {
   $ie = InlineScript {

@@ -1,14 +1,9 @@
 ---
-description:  
-manager:  carolz
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
-keywords:  powershell,cmdlet,gallery
-ms.date:  2016-10-14
-contributor:  manikb
+ms.date:  2017-06-12
+contributor:  JKeithB
+ms.topic:  conceptual
+keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_gettingstarted
-ms.technology:  powershell
 ---
 
 # Get Started with the PowerShell Gallery
@@ -46,18 +41,18 @@ the PowerShell Gallery. You will be prompted to install the NuGet
 provider automatically upon first use of PowerShellGet if the NuGet
 provider is not in one of the following locations:
 
--   $env:ProgramFiles\\PackageManagement\\ProviderAssemblies
--   $env:LOCALAPPDATA\\PackageManagement\\ProviderAssemblies
+- `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
+- `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
-Or, you can run **Install-PackageProvider -Name NuGet -Force** to
+Or, you can run `Install-PackageProvider -Name NuGet -Force` to
 automate the download and installation of the NuGet provider.
 
   
 If you have a version older than 2.8.5.201 of NuGet, you will need to call the following
 PowerShell cmdlets to install and switch to the latest version of NuGet.
 
-1.  Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
-2.  Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
+1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
+2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 3.  Delete the older version of NuGet from the above installed location.
 
 For more information, see <http://oneget.org/> .
@@ -81,13 +76,13 @@ the
 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 and
 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
-cmdlets, depending on the item type, with **-Repository PSGallery**.
+cmdlets, depending on the item type, with `-Repository PSGallery`.
 
 Filtering results from the Gallery can be done by using the following
 parameters of
-[Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 and
-[Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 
 - Name
 - AllVersions
@@ -108,7 +103,7 @@ cmdlet.
 returns data on DSC resources contained in the Gallery. Because DSC
 resources are always delivered as part of a module, you still need to
 run
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 to install those DSC resources.
 
 ## Learning about items in the PowerShell Gallery
@@ -125,9 +120,9 @@ If you discover an item that you feel is not published in good faith,
 click **Report Abuse** on that item's page.
 
 If you're running
-[Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 or
-[Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409),
+[**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409),
 you can view this data in the returned PSGetModuleInfo object. For
 example, running [**Find-Module -Name PSReadLine -Repository PSGallery |
 Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
@@ -163,24 +158,24 @@ or
 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 cmdlet, depending on the item type.
 
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
-installs the module to $env:ProgramFiles\\WindowsPowerShell\\Modules by
-default. This requires an administrator account. If you add the **-Scope
-CurrentUser** parameter, the module is installed to
-$env:USERPROFILE\\Documents\\WindowsPowerShell\\Modules .
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by
+default. This requires an administrator account. If you add the `-Scope
+CurrentUser` parameter, the module is installed to
+`$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
-installs the script to $env:ProgramFiles\\WindowsPowerShell\\Scripts by
-default. This requires an administrator account. If you add the **-Scope
-CurrentUser** parameter, the script is installed to
-$env:USERPROFILE\\Documents\\WindowsPowerShell\\Scripts .
+[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by
+default. This requires an administrator account. If you add the `-Scope
+CurrentUser` parameter, the script is installed to
+`$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
 By default,
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 and
-[Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 installs the most current version of an item. To install an older
-version of the item, add the **-RequiredVersion** parameter.
+version of the item, add the `-RequiredVersion` parameter.
 
 ### Deploy
 
@@ -198,20 +193,20 @@ website](http://azure.microsoft.com/en-us/services/automation/).
 ## Updating items from the PowerShell Gallery
 
 To update items installed from the PowerShell Gallery, run either the
-[Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 or
-[Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 cmdlet. When run without any additional parameters,
-[Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 attempts to update each module installed by running
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
-To selectively update modules, add the **-Name** parameter.
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+To selectively update modules, add the `-Name` parameter.
 
 Similarly, when run without any additional parameters,
-[Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
 also attempts to update each script installed by running
-[Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
-To selectively update scripts, add the **-Name** parameter.
+[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+To selectively update scripts, add the `-Name` parameter.
 
 ## List items that you have installed from the PowerShell Gallery
 

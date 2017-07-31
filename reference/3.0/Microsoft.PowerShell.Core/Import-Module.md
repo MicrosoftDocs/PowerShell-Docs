@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Import-Module
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=141553
-external help file:   System.Management.Automation.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=141553
+external help file:  System.Management.Automation.dll-Help.xml
+title:  Import-Module
 ---
-
 
 # Import-Module
 ## SYNOPSIS
@@ -140,44 +134,34 @@ This command uses an explicit path to identify the module to import.
 
 It also uses the **Verbose** common parameter to get a list of the items imported from the module.
 Without the **Verbose**, **PassThru**, or **AsCustomObject** parameter, **Import-Module** does not generate any output when it imports a module.
+
 ### Example 5
 ```
-PS C:\> Import-Module BitsTransfer -cmdlet Add-BitsTransferFile, Get-BitsTransfer
-PS C:\> Get-Module BitsTransfer
+PS C:\> Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
+PS C:\> (Get-Module BitsTransfer).ExportedCmdlets
 
-Name              : BitsTransfer
-Path              : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1
-Description       :
-Guid              : 8fa5064b-8479-4c5c-86ea-0d311fe48875
-Version           : 1.0.0.0
-ModuleBase        : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer
-ModuleType        : Manifest
-PrivateData       :
-AccessMode        : ReadWrite
-ExportedAliases   : {}
-ExportedCmdlets   : {[Add-BitsTransfer, Add-BitsTransfer], [Complete-BitsTransfer, Complete-BitsTransfer],
- [Get-BitsTransfer, Get-BitsTransfer], [Remove-BitsTransfer, Remove-BitsTransfer]...}
-ExportedFunctions : {}
-ExportedVariables : {}
-NestedModules     : {Microsoft.BackgroundIntelligentTransfer.Management}
+Key                   Value
+---                   -----
+Add-BitsFile          Add-BitsFile
+Complete-BitsTransfer Complete-BitsTransfer
+Get-BitsTransfer      Get-BitsTransfer
+Remove-BitsTransfer   Remove-BitsTransfer
+Resume-BitsTransfer   Resume-BitsTransfer
+Set-BitsTransfer      Set-BitsTransfer
+Start-BitsTransfer    Start-BitsTransfer
+Suspend-BitsTransfer  Suspend-BitsTransfer
 
 PS C:\> Get-Command -Module BitsTransfer
 
-CommandType     Name                                               ModuleName
------------     ----                                               ----------
-Cmdlet          Add-BitsFile                                       bitstransfer
-Cmdlet          Complete-BitsTransfer                              bitstransfer
-Cmdlet          Get-BitsTransfer                                   bitstransfer
-Cmdlet          Remove-BitsTransfer                                bitstransfer
-Cmdlet          Resume-BitsTransfer                                bitstransfer
-Cmdlet          Set-BitsTransfer                                   bitstransfer
-Cmdlet          Start-BitsTransfer                                 bitstransfer
-Cmdlet          Suspend-BitsTransfer                               bitstransfer
+CommandType Name             Version Source
+----------- ----             ------- ------
+Cmdlet      Add-BitsFile     2.0.0.0 BitsTransfer
+Cmdlet      Get-BitsTransfer 2.0.0.0 BitsTransfer
 ```
 
 This example shows how to restrict the module members that are imported into the session and the effect of this command on the session.
 
-The first command imports only the **Add-BitsTransfer** and **Get-BitsTransfer** cmdlets from the **BitsTransfer** module.
+The first command imports only the **Add-BitsFile** and **Get-BitsTransfer** cmdlets from the **BitsTransfer** module.
 The command uses the **Cmdlet** parameter to restrict the cmdlets that the module imports.
 You can also use the **Alias**, **Variable**, and **Function** parameters to restrict other members that a module imports.
 
@@ -185,7 +169,8 @@ The second command uses the Get-Module cmdlet to get the object that represents 
 The **ExportedCmdlets** property lists all of the cmdlets that the module exports, even when they were not all imported.
 
 The third command uses the **Module** parameter of the Get-Command cmdlet to get the commands that were imported from the **BitsTransfer** module.
-The results confirm that only the **Add-BitsTransfer** and **Get-BitsTransfer** cmdlets were imported.
+The results confirm that only the **Add-BitsFile** and **Get-BitsTransfer** cmdlets were imported.
+
 ### Example 6
 ```
 PS C:\> Import-Module BitsTransfer -Prefix PS -PassThru
@@ -892,7 +877,7 @@ However, commands that use the cmdlets in these modules actually run in the remo
 * To update the formatting data for commands that have been imported from a module, use the Update-FormatData cmdlet. **Update-FormatData** also updates the formatting data for commands in the session that were imported from modules. If the formatting file for a module changes, you can run an **Update-FormatData** command to update the formatting data for imported commands. You do not need to import the module again.
 * Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins"). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see "CreateDefault2 Method" in MSDN at http://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspxhttp://msdn.microsoft.com/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
 * **Import-Module** cannot import Windows PowerShell Core modules from another session. The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
 * In Windows PowerShell 2.0, some of the property values of the module object, such as the **ExportedCmdlets** and **NestedModules** property values, were not populated until the module was imported and were not available on the module object that the **PassThru** parameter returns. In Windows PowerShell 3.0, all module property values are populated.

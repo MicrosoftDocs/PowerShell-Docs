@@ -1,15 +1,8 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  What s New With PowerShell
-ms.technology:  powershell
 ---
-
 
 # What&#39;s New With PowerShell
 Windows PowerShell® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows-based environments more easily and comprehensively.  The major improvements are in the areas of Desired State Configuration, security, performance, remoting, and language enhancements.

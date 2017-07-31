@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-PSCallStack
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=113326
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=113326
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Get-PSCallStack
 ---
-
 
 # Get-PSCallStack
 ## SYNOPSIS
@@ -111,5 +105,5 @@ Get-PSCallStack returns an object that represents the items in the call stack.
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[about_Debuggers]()
+[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md)
 

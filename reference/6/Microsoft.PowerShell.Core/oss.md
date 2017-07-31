@@ -1,7 +1,10 @@
 ---
-external help file: System.Management.Automation.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/p/?linkid=293999
-schema: 2.0.0
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293999
+external help file:  System.Management.Automation.dll-Help.xml
 ---
 
 # oss
@@ -146,13 +149,13 @@ For more information, see the examples.
 
 ## RELATED LINKS
 
-[Out-Default]()
+[Out-Default](out-default.md)
 
-[Out-File]()
+[Out-File](../microsoft.powershell.utility/out-file.md)
 
-[Out-Host]()
+[Out-Host](out-host.md)
 
-[Out-Null]()
+[Out-Null](out-null.md)
 
 [Out-Printer]()
 

@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821589
-schema: 2.0.0
-title: Get-Location
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821589
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Get-Location
 ---
 
 # Get-Location
@@ -22,14 +17,12 @@ Gets information about the current working location or a location stack.
 
 ### Location (Default)
 ```
-Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Get-Location [-Stack] [-StackName <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,33 +167,6 @@ To append the current location, it uses a **Get-Location** command, which runs w
 The prompt ends with the string "\> ".
 
 ## PARAMETERS
-
-### -InformationAction
-For example, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-For example, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -PSDrive
 Specifies the current location in the specified Windows PowerShell drive that this cmdlet gets in the operation.

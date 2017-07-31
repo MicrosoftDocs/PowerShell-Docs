@@ -1,12 +1,7 @@
 ---
-title:  Making the second hop in PowerShell Remoting
-ms.date:  2016-05-11
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  carmonmills
-ms.prod:  powershell
+title:  Making the second hop in PowerShell Remoting
 ---
 
 # Making the second hop in PowerShell Remoting

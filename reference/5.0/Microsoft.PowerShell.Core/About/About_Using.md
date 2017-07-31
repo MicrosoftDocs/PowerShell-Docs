@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2017-04-17
 title:  about_Using
-ms.technology:  powershell
 ---
 
 # About Using
@@ -48,7 +44,7 @@ the references to `[UnicodeEncoding]` in *System.Text*; and, to `[Stream]`
 and to `[MemoryStream]` in *System.IO*.
 
 
-```PowerShell
+```powershell
     using namespace System.Text
     using namespace System.IO
 
@@ -72,7 +68,7 @@ The following classes are defined in the module:
 - *Deck*
 - *Card*
 
-```PowerShell
+```powershell
 using module CardGames
 
 [Deck]$deck = [Deck]::new()
@@ -81,3 +77,4 @@ $deck.Shuffle()
 [Card[]]$hand2 = $deck.Deal(5)
 [Card[]]$hand3 = $deck.Deal(5)
 ```
+

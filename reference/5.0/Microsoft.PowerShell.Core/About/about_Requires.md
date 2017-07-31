@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Requires
-ms.technology:  powershell
 ---
 
 # About Requires
@@ -108,7 +104,7 @@ For example,
 
 -RunAsAdministrator
 
-When this switch parameter is added to your requires statement, it specifies that the  Windows PowerShell session in which you are running the script must be started with elevated user rights (Run as Administrator).
+When this switch parameter is added to your requires statement, it specifies that the  Windows PowerShell session in which you are running the script must be started with elevated user rights (Run as Administrator). This switch was introduced in PowerShell 4.
 
 For example,
 
@@ -150,3 +146,4 @@ In  Windows PowerShell 3.0, the  Windows PowerShell Core packages appear as modu
 [about_PSSnapins](about_PSSnapins.md)
 
 get-PSSnapin
+

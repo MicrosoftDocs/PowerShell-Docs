@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-FileHash
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkId=822413
-external help file:   Microsoft.PowerShell.Utility-help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkId=822413
+external help file:  Microsoft.PowerShell.Utility-help.xml
+title:  Get-FileHash
 ---
-
 
 # Get-FileHash
 
@@ -79,7 +73,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
 
-```PowerShell
+```powershell
 PS C:\> $testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## open $testfile as a stream

@@ -1,13 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  about_Arrays
-ms.technology:  powershell
 ---
 
 # About Arrays
@@ -36,7 +32,7 @@ from the variable name by the assignment operator (=).
 For example, to create an array named $A that contains the seven
 numeric (int) values of 22, 5, 10, 8, 12, 9, and 80, type:
 
-```PowerShell
+```powershell
 $A = 22,5,10,8,12,9,80
 ```
 
@@ -44,7 +40,7 @@ You can also create and initialize an array by using the range
 operator (..). For example, to create and initialize an array named
 "$B" that contains the values 5 through 8, type:
 
-```PowerShell
+```powershell
 $B = 5..8
 ```
 
@@ -55,7 +51,7 @@ an object array (type: System.Object[]). To determine the data type of an array,
 use the GetType() method. For example, to determine the data type of the
 $a array, type:
 
-```PowerShell
+```powershell
 $a.GetType()
 ```
 
@@ -66,7 +62,7 @@ name with an array type enclosed in brackets. For example, to create a
 32-bit integer array named $ia containing four integers (1500, 2230, 3350,
 and 4000), type:
 
-```PowerShell
+```powershell
 [int32[]]$ia = 1500,2230,3350,4000
 ```
 
@@ -78,7 +74,7 @@ retrieves to represent processes are of the System.Diagnostics.Process
 type. To create a strongly typed array of process objects, enter the
 following command:
 
-```PowerShell
+```powershell
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
@@ -96,7 +92,7 @@ The syntax of the array operator is as follows:
 You can use the array operator to create an array of zero or
 one object. For example:
 
-```PowerShell
+```powershell
 $a = @("Hello World")
 $a.Count
 
@@ -115,7 +111,7 @@ The array operator is particularly useful in scripts when
 you are getting objects, but do not know how many objects
 you will get. For example:
 
-```PowerShell
+```powershell
 $p = @(Get-Process Notepad)
 ```
 
@@ -131,7 +127,7 @@ To display all the elements in the array, type the array name.
 For example, assuming *$a* is an array containing integers 0, 1, 2, until 9;
 typing:
 
-```PowerShell
+```powershell
 $a
 ```
 
@@ -154,7 +150,7 @@ You can refer to the elements in an array by using an index, beginning
 at position 0. Enclose the index number in brackets. For example,
 to display the first element in the *$a* array, type:
 
-```PowerShell
+```powershell
 $a[0]
 ```
 
@@ -166,7 +162,7 @@ produces:
 
 To display the third element in the $a array, type:
 
-```PowerShell
+```powershell
 $a[2]
 ```
 
@@ -180,7 +176,7 @@ You can retrive part of the array using a range operator for the index.
 For example, to retrieve the second to fifth elements of the array,
 you would type:
 
-```PowerShell
+```powershell
 $a[1..4]
 ```
 
@@ -197,7 +193,7 @@ Negative numbers count from the end of the array. For example, "-1"
 refers to the last element of the array. To display the last three elements
 of the array, in index ascending order, type:
 
-```PowerShell
+```powershell
 $a = 0 .. 9
 $a[-3..-1]
 ```
@@ -213,7 +209,7 @@ produces:
 If you type negative indexes in descending order,
 your output changes.
 
-```PowerShell
+```powershell
 $a = 0 .. 9
 $a[-1..-3]
 ```
@@ -230,7 +226,7 @@ However, be cautious when using this notation.
 The notation cycles from the end boundary to the
 beginning of the array.
 
-```PowerShell
+```powershell
 $a = 0 .. 9
 $a[2..-2]
 ```
@@ -255,7 +251,7 @@ You can use the plus operator (+) to combine a ranges with a list of
 elements in an array. For example, to display the elements at index
 positions 0, 2, and 4 through 6, type:
 
-```PowerShell
+```powershell
 $a = 0 .. 9
 $a[0,2+4..6]
 ```
@@ -275,7 +271,7 @@ you can use the plus operator.
 For example, to list elements zero to two, four to six,
 and the element at eighth positionat type:
 
-```PowerShell
+```powershell
 $a = 0..9
 $a[+0..2+4..6+8]
 ```
@@ -299,7 +295,7 @@ to refer to the elements in an array.
 For example, to use a ForEach loop
 to display the elements in the $a array, type:
 
-```PowerShell
+```powershell
 $a = 0..9
 foreach ($element in $a) {
   $element
@@ -327,7 +323,7 @@ The For loop is useful when you are incrementing counters while examining
 the elements in an array. For example, to use a For loop to  return every
 other value in an array, type:
 
-```PowerShell
+```powershell
 $a = 0..9
 for ($i = 0; $i -le ($a.length - 1); $i += 2) {
   $a[$i]
@@ -348,7 +344,7 @@ defined condition is no longer true.
 For example, to display the elements
 in the $a array while the array index is less than 4, type:
 
-```PowerShell
+```powershell
 $a = 0..9
 $i=0
 while($i -lt 4) {
@@ -371,7 +367,7 @@ To determine how many items are in an array, use the Length property
 or its Count alias. Longlength is useful if the array contains
 more than 2,147,483,647 elements.
 
-```PowerShell
+```powershell
 $a = 0 .. 9
 $a.Count
 $a.Length
@@ -390,7 +386,7 @@ Most arrays in PowerShell have one dimension, only.
 Even when you think you are building a multidimensional array;
 like the following example:
 
-```PowerShell
+```powershell
 $a = @( 
   @(0,1), 
   @("b", "c"), 
@@ -409,7 +405,7 @@ Building a truly multidimensional array, in PowerShell,
 requires the assistance of the *.Net Framework*.
 Like in the following example:
 
-```PowerShell
+```powershell
 [int[,]]$rank2 = [int[,]]::new(5,5)
 $rank2.rank
 ```
@@ -425,7 +421,7 @@ $rank2.rank
 Removes all elements in the array.
 The following example shows the effect of the clear method.
 
-```PowerShell
+```powershell
 $a = 0 .. 2
 "Before the clear"
 $a
@@ -458,7 +454,7 @@ The following example shows how use the foreach method.
 In this case the intent is to generate the square value
 of the elements in the array.
 
-```PowerShell
+```powershell
 $a = @(0 .. 3)
 $a.ForEach({ $_ * $_})
 ```
@@ -476,7 +472,7 @@ the elements to a different type;
 the following example shows how to convert
 a list of string dates to `[DateTime]` type.
 
-```PowerShell
+```powershell
 @("1/1/2017", "2/1/2017", "3/1/2017").ForEach([datetime])
 ```
 
@@ -502,7 +498,7 @@ to show after the `Where`
 The following example shows how to
 select all odd numbers from the array.
 
-```PowerShell
+```powershell
 @(0..9).Where{ $_ % 2 }
 ```
 
@@ -530,7 +526,7 @@ members of the array.
 
 For example, the following command gets the members of the `$a` array variable.
 
-```PowerShell
+```powershell
 Get-Member -InputObject $a
 ```
 
@@ -540,7 +536,7 @@ array the second item in an array of arrays. Windows PowerShell pipes
 the arrays one at a time and Get-Member returns the members of the array.
 Like the next two examples.
 
-```PowerShell
+```powershell
 ,$a | Get-Member
 
 ,(1,2,3) | Get-Member
@@ -557,7 +553,7 @@ use the assignment operator (=) to specify a new value for the element. For
 example, to change the value of the second item in the `$a` array (index
 position 1) to 10, type:
 
-```PowerShell
+```powershell
 $a[1] = 10
 ```
 
@@ -565,7 +561,7 @@ You can also use the SetValue method of an array to change a value. The
 following example changes the second value (index position 1) of the $a
 array to 500:
 
-```PowerShell
+```powershell
 $a.SetValue(500,1)
 ```
 
@@ -573,7 +569,7 @@ You can use the += operator to add an element to an array.
 The following example shows how to add an element to the `$a`
 array.
 
-```PowerShell
+```powershell
 $a = @(0..4)
 $a += 5
 ```
@@ -621,7 +617,7 @@ The following examples demonstrate this feature.
 
 ## Zero objects
 
-```PowerShell
+```powershell
 $a = $null
 $a.Count
 $a.Length
@@ -634,7 +630,7 @@ $a.Length
 
 ## One object
 
-```PowerShell
+```powershell
 $a = 4
 $a.Count
 $a.Length
@@ -662,3 +658,4 @@ $a[-1]
 [about_Foreach](about_Foreach.md)
 
 [about_While](about_While.md)
+

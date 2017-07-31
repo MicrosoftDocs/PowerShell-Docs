@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Import-Alias
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/?LinkID=113339
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/?LinkID=113339
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Import-Alias
 ---
-
 
 # Import-Alias
 ## SYNOPSIS
@@ -20,36 +14,37 @@ Imports an alias list from a file.
 ## SYNTAX
 
 ### ByPath (Default)
-```
+```powershell
 Import-Alias [-Path] <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-```
+```powershell
 Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Import-Alias** cmdlet imports an alias list from a file.
+The `Import-Alias` cmdlet imports an alias list from a file.
 
-Beginning in Windows PowerShell 3.0, as a security feature, **Import-Alias** does not overwrite existing aliases by default.
+Beginning in Windows PowerShell 3.0, as a security feature, `Import-Alias` does not overwrite existing aliases by default.
 To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the **Force** parameter.
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> import-alias test.txt
+```powershell
+Import-Alias test.txt
 ```
 
 This command imports alias information from a file named test.txt.
+
 ## PARAMETERS
 
 ### -Force
 Allows the cmdlet to import an alias that is already defined or is read only.
 You can use the following command to display information about the currently-defined aliases:
 
-`get-alias | select-object name,Options`
+`Get-Alias | Select-Object Name, Options`
 
 If the corresponding alias is read-only, it will be displayed in the value of the **Options** property.
 
@@ -170,11 +165,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path to Import-Alias.
+You can pipe a string that contains a path to `Import-Alias`.
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
-When you use the **Passthru** parameter, **Import-Alias** returns a **System.Management.Automation.AliasInfo** object that represents the alias.
+When you use the **Passthru** parameter, `Import-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
 Otherwise, this cmdlet does not generate any output.
 ## NOTES
 

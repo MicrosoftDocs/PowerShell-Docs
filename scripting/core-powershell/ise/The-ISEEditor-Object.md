@@ -1,16 +1,9 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  article
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
 title:  The ISEEditor Object
-ms.technology:  powershell
-ms.assetid:    0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
-
 
 # The ISEEditor Object
   An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
@@ -22,7 +15,7 @@ ms.assetid:    0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 
  Clears the text in the editor.
 
-```PowerShell
+```powershell
 # Clears the text in the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
@@ -35,7 +28,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
  **lineNumber**
  The number of the line that is to be made visible.
 
-```PowerShell
+```powershell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
@@ -45,7 +38,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 
  Sets the focus to the editor.
 
-```PowerShell
+```powershell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -61,7 +54,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
  **Returns**
  The line length for the line at the specified line number.
 
-```PowerShell
+```powershell
 # Gets the length of the first line in the text of the Command pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
@@ -71,7 +64,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch](#cangotomatch).
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -109,7 +102,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Selects the entire line of text that currently contains the caret.
 
-```PowerShell
+```powershell
 # First, set the caret position on line 5.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
@@ -127,7 +120,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
  **columnNumber** - Integer
  The caret column number.
 
-```PowerShell
+```powershell
 # Set the CaretPosition.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
@@ -137,7 +130,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 
  Causes all the outline sections to expand or collapse.
 
-```PowerShell
+```powershell
 # Toggle the outlining expansion
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
@@ -149,7 +142,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
  The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
@@ -159,7 +152,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 
  The read-only property that gets the column number that corresponds to the position of the caret.
 
-```PowerShell
+```powershell
 # Get the CaretColumn.
 $psISE.CurrentFile.Editor.CaretColumn
 ```
@@ -169,7 +162,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 
  The read-only property that gets the number of the line that contains the caret.
 
-```PowerShell
+```powershell
 # Get the CaretLine.
 $psISE.CurrentFile.Editor.CaretLine
 ```
@@ -179,7 +172,7 @@ $psISE.CurrentFile.Editor.CaretLine
 
  The read-only property that gets the complete line of text that contains the caret.
 
-```PowerShell
+```powershell
 # Get all of the text on the line that contains the caret.
 $psISE.CurrentFile.Editor.CaretLineText
 ```
@@ -189,7 +182,7 @@ $psISE.CurrentFile.Editor.CaretLineText
 
  The read-only property that gets the line count from the editor.
 
-```PowerShell
+```powershell
 # Get the LineCount.
 $psISE.CurrentFile.Editor.LineCount
 ```
@@ -210,7 +203,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a> Scripting Example
 
-```PowerShell
+```powershell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.

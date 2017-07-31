@@ -1,18 +1,12 @@
 ---
-description:  
-manager:  carmonm
-ms.topic:  reference
-author:  jpjofre
-ms.prod:  powershell
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
-title: Get-Member
-ms.technology:  powershell
-schema:   2.0.0
-online version:   http://go.microsoft.com/fwlink/p/?linkid=293971
-external help file:   Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+online version:  http://go.microsoft.com/fwlink/p/?linkid=293971
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title:  Get-Member
 ---
-
 
 # Get-Member
 
@@ -83,8 +77,8 @@ As such, it gets all member types, but it does not get static members and does n
 
 ### Example 2
 ```
-PS C:\> get-service | get-member -force
-PS C:\> (get-service -schedule).psbase
+PS C:\> Get-Service | Get-Member -Force
+PS C:\> (Get-Service Schedule).PSBase
 ```
 
 This example gets all of the members (properties and methods) of the service objects (System.ServiceProcess.ServiceController) retrieved by the Get-Service cmdlet, including the intrinsic members, such as PSBase and PSObject, and the get_ and set_ methods.
@@ -453,7 +447,7 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 [about_Properties](../Microsoft.PowerShell.Core/About/about_Properties.md)
 
-[about_Methods]()
+[about_Methods](../microsoft.powershell.core/about/about_methods.md)
 
-[about_Objects]()
+[about_Objects](../microsoft.powershell.core/about/about_objects.md)
 

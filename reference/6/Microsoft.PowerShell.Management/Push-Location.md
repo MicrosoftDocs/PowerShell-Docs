@@ -1,16 +1,11 @@
 ---
-author: jpjofre
-description: 
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
-manager: carmonm
-ms.date: 2016-12-12
-ms.prod: powershell
-ms.technology: powershell
-ms.topic: reference
-online version: http://go.microsoft.com/fwlink/?LinkId=821612
-schema: 2.0.0
-title: Push-Location
+ms.date:  2017-06-09
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821612
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Push-Location
 ---
 
 # Push-Location
@@ -22,14 +17,12 @@ Adds the current location to the top of a location stack.
 
 ### Path (Default)
 ```
-Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,33 +80,6 @@ PS C:\> Get-Location -Stack
 This commmand shows the current location stack.
 
 ## PARAMETERS
-
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -LiteralPath
 Specifies the path of the new location.
@@ -248,3 +214,4 @@ Otherwise, this cmdlet does not generate any output.
 [Pop-Location](Pop-Location.md)
 
 [Set-Location](Set-Location.md)
+
