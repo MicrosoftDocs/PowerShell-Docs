@@ -14,7 +14,7 @@ This exercise walks through creating and applying a Desired State Configuration 
 The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled, 
 and that the content for a simple "Hello World" website is present in the `intetpub\wwwroot` directory of that server.
 
-For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Decision Makers](DscForEngineers.md).
+For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Decision Makers](decisionMaker.md).
 
 ## Requirements
 
