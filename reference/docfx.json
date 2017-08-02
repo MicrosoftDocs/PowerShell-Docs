@@ -5,10 +5,150 @@
         "files": [
           "**/*.md"
         ],
+        "src": "powershell-3.0/docs-conceptual",
+        "version":"powershell-3.0",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-3.0",
+        "version": "powershell-3.0",
+        "dest": "module/powershell-3.0"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "powershell-3.0",
+        "version":"powershell-3.0",
         "exclude": [
-          "**/obj/**",
-          "Powershell/reference/**"
-        ]
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "powershell-4.0/docs-conceptual",
+        "version":"powershell-4.0",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-4.0",
+        "version": "powershell-4.0",
+        "dest": "module/powershell-4.0"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "powershell-4.0",
+        "version":"powershell-4.0",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "powershell-5.0/docs-conceptual",
+        "version":"powershell-5.0",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-5.0",
+        "version": "powershell-5.0",
+        "dest": "module/powershell-5.0"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "powershell-5.0",
+        "version":"powershell-5.0",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "powershell-5.1/docs-conceptual",
+        "version":"powershell-5.1",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-5.1",
+        "version": "powershell-5.1",
+        "dest": "module/powershell-5.1"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "powershell-5.1",
+        "version":"powershell-5.1",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "powershell-6/docs-conceptual",
+        "version":"powershell-6",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-6",
+        "version": "powershell-6",
+        "dest": "module/powershell-6"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "powershell-6",
+        "version":"powershell-6",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "virtual-directory",
+        "dest": "scripting"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "virtual-directory-module",
+        "dest": "module"
       }
     ],
     "resource": [
@@ -19,27 +159,43 @@
         ],
         "exclude": [
           "**/obj/**",
-          "Powershell/reference/**"
+          "**/includes/**"
         ]
       }
     ],
+    "versions": {
+      "powershell-3.0": {
+        "dest": "powershell-3.0"
+      },
+      "powershell-4.0": {
+        "dest": "powershell-4.0"
+      },
+      "powershell-5.0": {
+        "dest": "powershell-5.0"
+      },
+      "powershell-5.1": {
+        "dest": "powershell-5.1"
+      },
+       "powershell-6": {
+        "dest": "powershell-6"
+      }
+    },
     "overwrite": [],
     "externalReference": [],
-        "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW",
+    "globalMetadata": {
+     "showPowerShellPicker": "true",
+      "ms.devlang": "powershell",
+       "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "powershell",
             "ms.topic": "reference",
             "manager": "carmonm",
-            "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows, macos, linux",
             "author": "juanpablojofre",
             "ms.author": "jpjofre"
-        },
+    },
     "fileMetadata": {},
-    "template": [
-      null
-    ],
+    "template": [],
     "dest": "Powershell/reference"
   }
 }

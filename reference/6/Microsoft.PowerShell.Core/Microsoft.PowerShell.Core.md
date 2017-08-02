@@ -25,9 +25,6 @@ Appends entries to the session history.
 ### [alias-provider](providers/alias-provider.md)
 {{Manually Enter alias-provider Description Here}}
 
-### [cd..](cd...md)
-{{Manually Enter cd.. Description Here}}
-
 ### [clear-content-for-filesystem](providers/filesystem-provider/clear-content-for-filesystem.md)
 {{Manually Enter clear-content-for-filesystem Description Here}}
 
