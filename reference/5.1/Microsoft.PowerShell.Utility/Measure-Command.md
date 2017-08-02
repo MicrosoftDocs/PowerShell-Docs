@@ -125,13 +125,9 @@ You can pipe an object to `Measure-Command`.
 
 ## Notes
 - For more information, type: `Get-Help Measure-Command -Detailed`
-
 - For technical information, type: `Get-Help Measure-Command -Full`
-
-- When specifying multiple values for a parameter, use commas to separate the values.
-For example, `\<parameter-name\> \<value1\>, \<value2\>`.
-
-*
+- When specifying multiple values for a parameter, use commas to separate the values. For 
+  example, `<parameter-name> <value1>, <value2>`.
 
 ## Related Links
 
