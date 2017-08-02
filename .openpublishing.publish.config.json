@@ -11,8 +11,11 @@
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
-      }
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
@@ -22,9 +25,11 @@
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
       },
-      "build_entry_point": "op"
+      "build_entry_point": "docs"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
@@ -34,8 +39,11 @@
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
-      }
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
@@ -49,7 +57,7 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "op"
+      "build_entry_point": "docs"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_scripting",
@@ -59,8 +67,11 @@
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
-      }
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
@@ -70,18 +81,21 @@
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
-      }
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs"
     }
   ],
-  "notification_subscribers": [
-    ""
-  ],
-  "branches_to_filter": [
-    ""
-  ],
+  "notification_subscribers": [],
+  "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,
-  "dependent_repositories": []
+  "dependent_repositories": [{
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master"
+    } ]
 }
