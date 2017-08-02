@@ -48,6 +48,8 @@
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
