@@ -8,6 +8,8 @@
       "build_source_folder": "dsc",
       "build_output_subfolder": "dsc",
       "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content"
