@@ -21,6 +21,8 @@
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content"
