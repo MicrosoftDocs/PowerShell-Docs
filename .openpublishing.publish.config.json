@@ -59,17 +59,7 @@
       "build_entry_point": "op",
       "version": 0
     },
-    {
-      "docset_name": "PowerShell_PowerShell-docs_scripting",
-      "build_source_folder": "scripting",
-      "build_output_subfolder": "scripting",
-      "locale": "en-us",
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "version": 0
-    },
+   
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
       "build_source_folder": "wmf",
