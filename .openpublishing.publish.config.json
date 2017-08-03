@@ -8,8 +8,7 @@
       "build_source_folder": "dsc",
       "build_output_subfolder": "dsc",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -18,58 +17,43 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
-      },
-      "version": 0
-
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-
       "build_entry_point": "docs",
       "template_folder": "_themes"
-      "build_entry_point": "op",
-      "version": 0
-
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
       "build_source_folder": "jea",
       "build_output_subfolder": "jea",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
-       "Conceptual": "Content"
-      },
-      "version": 0
-
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -77,7 +61,6 @@
         "RestApi": "Content",
         "AzurePSModulePage": "Content"
       },
-
       "build_entry_point": "docs",
       "template_folder": "_themes",
        "customized_template_paths": [
@@ -91,43 +74,21 @@
       "monikerPath": [
         "mapping/monikerMapping.json"
       ]
-=======
-      "build_entry_point": "op",
-      "version": 0
-    },
-    {
-      "docset_name": "PowerShell_PowerShell-docs_scripting",
-      "build_source_folder": "scripting",
-      "build_output_subfolder": "scripting",
-      "locale": "en-us",
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content"
-      },
-      "version": 0
-
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
-
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
-
-        "Conceptual": "Content"
-      },
-      "version": 0
-
     }
   ],
   "notification_subscribers": [],
@@ -136,7 +97,6 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,
-
   "dependent_repositories": [{
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
@@ -157,8 +117,4 @@
       "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
     }
   ]
-}
-
-  "dependent_repositories": [],
-  "need_generate_pdf_url_template": false
 }
