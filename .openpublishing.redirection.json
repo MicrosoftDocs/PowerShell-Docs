@@ -7812,7 +7812,7 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSDesiredStateConfiguration/about_Classes_and_DSC.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSDesiredStateConfiguration/about/about_Classes_and_DSC.md",
      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/about_Classes_and_DSC?view=powershell-5.0",
      "redirect_document_id": "False"
    },
@@ -8467,7 +8467,7 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Aliases.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Aliases?view=powershell-5.1",
      "redirect_document_id": "False"
    },
@@ -10762,7 +10762,7 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSDesiredStateConfiguration/about_Classes_and_DSC.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSDesiredStateConfiguration/about/about_Classes_and_DSC.md",
      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/about_Classes_and_DSC?view=powershell-5.1",
      "redirect_document_id": "False"
    },
@@ -13543,7 +13543,7 @@
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/about_Classes_and_DSC.md",
+     "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/about/about_Classes_and_DSC.md",
      "redirect_url": "/powershell/module/PSDesiredStateConfiguration/about_Classes_and_DSC?view=powershell-6",
     "redirect_document_id": "False"
    },
