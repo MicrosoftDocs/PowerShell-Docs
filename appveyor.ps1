@@ -14,7 +14,7 @@ $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 $allErrors = @()
 
 # Go through all the directories in the reference folder
-Get-ChildItem $ReferenceDocset -Directory -Exclude 'scripting' | ForEach-Object -Process {
+Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping' | ForEach-Object -Process {
     $Version = $_.Name
     $VersionFolder = $_.FullName
     # For each of the directories, go through each module folder
