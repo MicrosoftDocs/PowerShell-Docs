@@ -15,7 +15,8 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
@@ -29,7 +30,8 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
@@ -43,7 +45,8 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
@@ -72,7 +75,6 @@
         "mapping/monikerMapping.json"
       ]
     },
-    
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
       "build_source_folder": "wmf",
@@ -85,7 +87,8 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     }
   ],
   "notification_subscribers": [],
