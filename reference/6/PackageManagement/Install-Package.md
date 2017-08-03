@@ -793,7 +793,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about/about_packagemanagement.md)
+[about_PackageManagement](../about_packagemanagement.md)
 
 [Get-Package](Get-Package.md)
 

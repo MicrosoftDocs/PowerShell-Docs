@@ -183,5 +183,5 @@ For more information, see about_Aliases.
 
 [Set-Variable](Set-Variable.md)
 
-[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)
+[about_Profiles](../Microsoft.PowerShell.Core/about_Profiles.md)
 

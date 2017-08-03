@@ -382,5 +382,5 @@ This cmdlet does not generate any output.
 
 [Use-Transaction](Use-Transaction.md)
 
-[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/about_Transactions.md)
 

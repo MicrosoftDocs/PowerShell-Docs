@@ -17,15 +17,15 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 ```  
   
 ## Description  
- In the Cert: drive, the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
+ In the Cert: drive, the [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.  
   
- Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage (EKU) properties. The new dynamic parameters work in Windows PowerShell 3.0 and newer releases of Windows PowerShell, running on Windows 8, Windows Server 2012 and newer releases of the Windows operating system.  
+ Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage (EKU) properties. The new dynamic parameters work in Windows PowerShell 3.0 and newer releases of Windows PowerShell, running on Windows 8, Windows Server 2012 and newer releases of the Windows operating system.  
   
  Also, new script properties, DnsNameList and EnhancedKeyUsageList, and SendAsTrustedIssuer, have been added to the x509Certificate2 object that represents the certificates to make it easy to search and manage the certificates.  
   
  To populate the DnsNameList property, the Certificate provider copies the content from the DNSName entry in the SubjectAlternativeName (SAN) extension. If the SAN extension is empty, the property is populated with content from the Subject field of the certificate. To populate the EnhancedKeyUsageList property, the Certificate provider copies the content from the Friendly Name and OID properties of the EnhancedKeyUsage (EKU) field in the certificate.  
   
- NOTE: The Name parameter of [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) is not supported in the Cert: drive. To indicate items in the Cert: drive, use the Path parameter.  
+ NOTE: The Name parameter of [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) is not supported in the Cert: drive. To indicate items in the Cert: drive, use the Path parameter.  
   
 ## Parameters  
   
@@ -122,7 +122,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 |Accept Wildcard Characters?|false|  
   
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -133,7 +133,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 |Outputs|Microsoft.PowerShell.Commands.X509StoreLocation, System.Security.Cryptography.X509Certificates.X509Store, System.Security.Cryptography.X509Certificates.X509Certificate2,  System.String<br /><br /> In the Cert: drive, Get-ChildItem returns objects that represent certificate store locations, certificate stores, and certificates. When you use the Name parameter, it returns the object name as a string.|  
   
 ## Notes  
- -- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.  
+ -- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.  
   
  -- The CodeSigningCert, DnsName, EKU, and ExpiringInParameter parameters are valid in all subdirectories of the Certificate provider, but they are effective only on certificates.  
   
@@ -323,10 +323,10 @@ This command gets all certificates in the LocalMachine store location that have 
   
 ## See Also  
  [Certificate Provider](Certificate-Provider.md)   
- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
  [Get-PfxCertificate](../Get-PfxCertificate.md)   
- [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)   
- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)   
- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+ [Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)   
+ [Move-Item](../Microsoft.PowerShell.Management/Move-Item.md)   
+ [New-Item](../Microsoft.PowerShell.Management/New-Item.md)   
+ [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)
 

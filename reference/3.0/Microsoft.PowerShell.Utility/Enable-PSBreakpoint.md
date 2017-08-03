@@ -216,5 +216,5 @@ You do not need to enable newly created breakpoints.
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md)
+[about_Debuggers](../microsoft.powershell.core/about_debuggers.md)
 

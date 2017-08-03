@@ -482,9 +482,9 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+[Import-LocalizedData](../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
 [System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
 

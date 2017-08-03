@@ -245,7 +245,7 @@ Specifies one or more package sources.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/about_PackageManagement.md)
 
 [Register-PackageSource](Register-PackageSource.md)
 

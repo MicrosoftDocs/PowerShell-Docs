@@ -129,5 +129,5 @@ This cmdlet returns a file object that represents the snippet file.
 
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
-[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/about_Execution_Policies.md)
 

@@ -208,5 +208,5 @@ That is, they have loaded the Windows PowerShell engine.
 
 [Enable-RunspaceDebug](../Microsoft.PowerShell.Utility/Enable-RunspaceDebug.md)
 
-[about_Debuggers](About/about_Debuggers.md)
+[about_Debuggers](about_Debuggers.md)
 

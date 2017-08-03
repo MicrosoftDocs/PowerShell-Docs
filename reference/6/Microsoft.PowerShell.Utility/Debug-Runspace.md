@@ -229,7 +229,7 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
 ## RELATED LINKS
 
-[about_Debuggers](../about/about_debuggers.md)
+[about_Debuggers](../about_debuggers.md)
 
 [Get-Runspace](Get-Runspace.md)
 

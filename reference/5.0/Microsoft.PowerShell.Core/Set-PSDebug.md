@@ -187,5 +187,5 @@ This cmdlet does not return any output.
 
 [Write-Debug](../Microsoft.PowerShell.Utility/Write-Debug.md)
 
-[about_Debuggers](About/about_Debuggers.md)
+[about_Debuggers](about_Debuggers.md)
 

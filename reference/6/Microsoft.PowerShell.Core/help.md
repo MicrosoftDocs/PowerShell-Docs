@@ -612,7 +612,7 @@ To get help for a different locale, use Region and Language in Control Panel to 
 
 [Get-Command](get-command.md)
 
-[about_Comment_Based_Help](../about/about_comment_based_help.md)
+[about_Comment_Based_Help](../about_comment_based_help.md)
 
-[about_Parameters](../about/about_parameters.md)
+[about_Parameters](../about_parameters.md)
 

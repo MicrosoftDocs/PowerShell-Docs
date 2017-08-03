@@ -34,11 +34,11 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 
  The **Registry** provider lets you access a hierarchical namespace that consists of registry keys and subkeys. Registry entries and values are not components of that hierarchy. Instead, they are properties of each of the keys.  
 
- The **Registry** provider supports all the cmdlets that contain the *Item* noun (the `*-Item` cmdlets), such as [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md), and [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md), except for the [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet. Use the `*-Item` cmdlets when you work with registry keys and subkeys.  
+ The **Registry** provider supports all the cmdlets that contain the *Item* noun (the `*-Item` cmdlets), such as [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md), [Copy-Item](../Microsoft.PowerShell.Management/Copy-Item.md), and [Rename-Item](../Microsoft.PowerShell.Management/Rename-Item.md), except for the [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet. Use the `*-Item` cmdlets when you work with registry keys and subkeys.  
 
  The **Registry** provider also supports the cmdlets that contain the *ItemProperty* noun (the `*-ItemProperty` cmdlets). Use the `*-ItemProperty` cmdlets when you work with registry entries. You cannot use the cmdlets that contain the *Content* noun (the `*-Content` cmdlets) with the **Registry** provider.  
 
- Each registry key is protected by a security descriptor. You can use [Get-Acl](../../Microsoft.PowerShell.Security/Get-Acl.md) to view the security descriptor of a key.  
+ Each registry key is protected by a security descriptor. You can use [Get-Acl](../Microsoft.PowerShell.Security/Get-Acl.md) to view the security descriptor of a key.  
 
 
 ## Capabilities
@@ -221,7 +221,7 @@ Move-ItemProperty -Path hkcu:\environment\testnewcopy -Destination hkcu:\environ
 Clear-ItemProperty -Path hkcu:\environment\testnew -Name pstestnew
 ```
 
- You can use the [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md) cmdlet to clear the value of the default registry entry for a subkey. For example, the following command clears the value of the default entry of the `HKEY_CURRENT_USER\Environment\testnew` registry key:  
+ You can use the [Clear-Item](../Microsoft.PowerShell.Management/Clear-Item.md) cmdlet to clear the value of the default registry entry for a subkey. For example, the following command clears the value of the default entry of the `HKEY_CURRENT_USER\Environment\testnew` registry key:  
 
 ```powershell
 Clear-Item -Path hkcu:\environment\testnew  
@@ -245,7 +245,7 @@ Remove-ItemProperty -Path hkcu:\environment\testnew -Name pstestnew
 Set-ItemProperty -Path hkcu:\environment\testnew -Name "(default)" -Value "default value"
 ```
 
- You can also change the default value of a registry key by using the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet. For example, the following command updates the default value of the testnew key:  
+ You can also change the default value of a registry key by using the [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md) cmdlet. For example, the following command updates the default value of the testnew key:  
 
 ```powershell
 Set-Item -Path hkcu:\environment\testnew -Value "another default value"  
@@ -261,7 +261,7 @@ Set-Item -Path hkcu:\environment\testnew -Value "another default value"
 
  Establishes or changes the data type of a registry value. The default is `String` (REG_SZ).  
 
- This parameter works as designed on the [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet in the registry drives, but it has no effect.  
+ This parameter works as designed on the [Set-ItemProperty](../Microsoft.PowerShell.Management/Set-ItemProperty.md) cmdlet. It is also available on the [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md) cmdlet in the registry drives, but it has no effect.  
 
 |Value|Description|  
 |-----------|-----------------|  
@@ -277,12 +277,12 @@ Set-Item -Path hkcu:\environment\testnew -Value "another default value"
 #### Cmdlets supported:
 
 
--   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)  
+-   [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md)  
 
--   [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)  
+-   [Set-ItemProperty](../Microsoft.PowerShell.Management/Set-ItemProperty.md)  
 
 
 ## See also
 
- [about_Providers](../../about/about_providers.md)
+ [about_Providers](../about_providers.md)
 

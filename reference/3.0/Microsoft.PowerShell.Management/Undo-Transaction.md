@@ -159,7 +159,7 @@ To use a transaction again, you must start a new transaction.
 
 [Use-Transaction](Use-Transaction.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
 
-[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/about_Transactions.md)
 

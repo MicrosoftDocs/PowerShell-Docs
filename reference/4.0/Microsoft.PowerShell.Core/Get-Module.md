@@ -579,7 +579,7 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967)
 
-[about_Modules](About/about_Modules.md)
+[about_Modules](about_Modules.md)
 
 [Get-PSSession](Get-PSSession.md)
 

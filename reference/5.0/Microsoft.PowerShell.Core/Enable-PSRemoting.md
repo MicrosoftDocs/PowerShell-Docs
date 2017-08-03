@@ -209,7 +209,7 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 [WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
 
-[about_Remote](About/about_Remote.md)
+[about_Remote](about_Remote.md)
 
-[about_Session_Configurations](About/about_Session_Configurations.md)
+[about_Session_Configurations](about_Session_Configurations.md)
 

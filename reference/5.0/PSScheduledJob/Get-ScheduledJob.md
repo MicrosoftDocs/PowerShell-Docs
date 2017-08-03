@@ -131,7 +131,7 @@ You cannot pipe input to **Get-ScheduledJob**.
 
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

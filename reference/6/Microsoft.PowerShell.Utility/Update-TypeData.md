@@ -663,7 +663,7 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-[about_Types.ps1xml](../about/about_types.ps1xml.md)
+[about_Types.ps1xml](../about_types.ps1xml.md)
 
 [Get-TypeData](Get-TypeData.md)
 

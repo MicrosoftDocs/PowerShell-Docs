@@ -121,7 +121,7 @@ You cannot pipe input to **Get-ScheduledJob**.
 * You can use Task Scheduler, the SchTasks.exe command-line tool, and the Task Scheduler cmdlets to manage scheduled jobs that you create with the Scheduled Job cmdlets. However, you cannot use the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 
