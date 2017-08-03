@@ -1,5 +1,5 @@
 {
-  "build_entry_point": "",
+  "build_entry_point": "docs",
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "docsets_to_publish": [
@@ -14,6 +14,8 @@
       "type_mapping": {
         "Conceptual": "Content"
       },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
       "version": 0
     },
     {
