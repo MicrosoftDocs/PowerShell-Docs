@@ -46,7 +46,7 @@
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
-      "build_output_subfolder": "reference",
+       "build_output_subfolder": "reference",
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
@@ -93,6 +93,11 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,
-  "dependent_repositories": [],
+  "dependent_repositories": [{
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master",
+       "branch_mapping": {}   
+  } ],
   "need_generate_pdf_url_template": false
 }
