@@ -98,10 +98,10 @@
             "Microsoft.WSMan.Management":{},
             "PSDesiredStateConfiguration":{},
             "PSDiagnostics":{},
-            "PSReadline":{},
+            "PSReadLine":{},
             "PackageManagement":{},
             "Pester":{},
-            "PowershellGet":{}
+            "PowerShellGet":{}
 
         }
     }
