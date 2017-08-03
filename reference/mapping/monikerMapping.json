@@ -79,7 +79,7 @@
             "PSWorkflow":{},
             "PSWorkflowUtility":{},
             "PackageManagement":{},
-            "PowerShellGet":{}
+            "PowershellGet":{}
         }
     },
     "powershell-6": {
@@ -98,7 +98,7 @@
             "Microsoft.WSMan.Management":{},
             "PSDesiredStateConfiguration":{},
             "PSDiagnostics":{},
-            "PSReadline":{},
+            "PSReadLine":{},
             "PackageManagement":{},
             "Pester":{},
             "PowerShellGet":{}
