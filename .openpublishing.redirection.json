@@ -1052,527 +1052,527 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Aliases.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Aliases?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Arithmetic_Operators.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about/about_Arithmetic_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arithmetic_Operators?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Arrays.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Arrays.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arrays?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Assignment_Operators.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Assignment_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Assignment_Operators?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Automatic_Variables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Automatic_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Automatic_Variables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Break.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Break.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Break?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Command_Precedence.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Command_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Precedence?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Command_Syntax.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Command_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Syntax?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Comment_Based_Help.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Comment_Based_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comment_Based_Help?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_CommonParameters.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_CommonParameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_CommonParameters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Comparison_Operators.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Comparison_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comparison_Operators?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Continue.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Continue.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Continue?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Core_Commands.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Core_Commands.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Core_Commands?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Data_Sections.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Data_Sections.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Data_Sections?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Debuggers.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Debuggers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Debuggers?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Do.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Do.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Do?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Environment_Variables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Environment_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Environment_Variables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Escape_Characters.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Escape_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Escape_Characters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Eventlogs.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Eventlogs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Eventlogs?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Execution_Policies.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Execution_Policies.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Execution_Policies?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_For.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_For.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_For?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Foreach.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Foreach.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Foreach?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Format.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Format.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Format.ps1xml?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions_Advanced.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions_CmdletBindingAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Functions_OutputTypeAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Group_Policy_Settings.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Group_Policy_Settings.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Group_Policy_Settings?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Hash_Tables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Hash_Tables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Hash_Tables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_History.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_History.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_History?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_If.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_If.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_If?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Jobs.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Jobs?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Job_Details.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Job_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Job_Details?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Join.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Join.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Join?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Language_Keywords.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Language_Keywords.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Keywords?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Language_Modes.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Language_Modes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Modes?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Line_Editing.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Line_Editing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Line_Editing?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Methods.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Methods?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Modules.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Modules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Modules?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Objects.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Objects.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Objects?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Object_Creation.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Object_Creation.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Object_Creation?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Operators.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operators?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Operator_Precedence.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Operator_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operator_Precedence?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_packagemanagement.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_packagemanagement.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_packagemanagement?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Parameters.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Parameters_Default_Values.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Parameters_Default_Values.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters_Default_Values?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Parsing.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Parsing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parsing?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Path_Syntax.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Path_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Path_Syntax?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_pipelines.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_pipelines.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_pipelines?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_PowerShell_exe.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_PowerShell_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_exe?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_PowerShell_Ise_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Preference_Variables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Preference_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Preference_Variables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_profiles.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_profiles.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_profiles?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Prompts.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Prompts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Prompts?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Properties.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Properties.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Properties?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Providers.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Providers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Providers?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_PSSessions.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_PSSessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSessions?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_PSSession_Details.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_PSSession_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSession_Details?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_PSSnapins.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_PSSnapins.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSnapins?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Quoting_Rules.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Quoting_Rules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Quoting_Rules?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Redirection.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Redirection.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Redirection?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Ref.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Ref.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Ref?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Regular_Expressions.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Regular_Expressions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Regular_Expressions?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Disconnected_Sessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_FAQ.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_FAQ.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_FAQ?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Jobs.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Jobs?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Output.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Output.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Output?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Requirements.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Requirements.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Requirements?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Troubleshooting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Troubleshooting?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Remote_Variables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Remote_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Variables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Requires.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Requires.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Requires?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Reserved_Words.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Reserved_Words.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Reserved_Words?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Return.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Return.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Return?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Run_With_PowerShell.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Run_With_PowerShell.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Run_With_PowerShell?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_scopes.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_scopes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_scopes?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Scripts.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Scripts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Scripts?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Script_Blocks.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Script_Blocks.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Blocks?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Script_Internationalization.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Script_Internationalization.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Internationalization?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Session_Configurations.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Session_Configurations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configurations?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Session_Configuration_Files.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configuration_Files?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Signing.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Signing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Signing?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Special_Characters.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Special_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Special_Characters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Splatting.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Splatting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Splatting?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Split.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Split.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Split?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Switch.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Switch.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Switch?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Throw.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Throw.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Throw?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Transactions.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Transactions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Transactions?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Trap.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Trap.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Trap?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Try_Catch_Finally.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Try_Catch_Finally.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Try_Catch_Finally?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Types.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Types.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Types.ps1xml?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Type_Operators.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Type_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Type_Operators?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Updatable_Help.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Updatable_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Updatable_Help?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Variables.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Variables?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_While.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_While.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_While?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Wildcards.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Wildcards.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Wildcards?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Windows_PowerShell_ISE.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_Windows_RT.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_Windows_RT.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_RT?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_WMI.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_WMI.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_WMI_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_WMI_Cmdlets.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI_Cmdlets?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about_WQL.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/about/about_WQL.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WQL?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Clear-Host.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/functions/Clear-Host.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Get-Verb.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/functions/Get-Verb.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Verb?view=powershell-3.0",
      "redirect_document_id": "False"
    },
@@ -1592,57 +1592,57 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Function-Provider.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/Function-Provider.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Function-Provider?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Registry-Provider.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/Registry-Provider.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Registry-Provider?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Variable-Provider.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/Variable-Provider.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Variable-Provider?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Add-Content-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Add-Content-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Add-Content-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Clear-Content-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Clear-Content-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Content-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Get-ChildItem-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Get-ChildItem-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-ChildItem-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Get-Content-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Get-Content-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Content-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Get-Item-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Get-Item-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Item-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Remove-Item-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Remove-Item-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Remove-Item-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Set-Content-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Set-Content-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Set-Content-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/FileSystem-Provider/Test-Path-for-FileSystem.md",
+     "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/providers/FileSystem-Provider/Test-Path-for-FileSystem.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Test-Path-for-FileSystem?view=powershell-3.0",
      "redirect_document_id": "False"
    },
@@ -3297,527 +3297,527 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Aliases.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Aliases?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Arithmetic_Operators.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Arithmetic_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arithmetic_Operators?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Arrays.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Arrays.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arrays?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Assignment_Operators.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Assignment_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Assignment_Operators?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Automatic_Variables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Automatic_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Automatic_Variables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Break.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Break.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Break?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Command_Precedence.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Command_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Precedence?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Command_Syntax.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Command_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Syntax?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Comment_Based_Help.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Comment_Based_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comment_Based_Help?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_CommonParameters.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_CommonParameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_CommonParameters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Comparison_Operators.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Comparison_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comparison_Operators?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Continue.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Continue.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Continue?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Core_Commands.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Core_Commands.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Core_Commands?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Data_Sections.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Data_Sections.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Data_Sections?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Debuggers.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Debuggers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Debuggers?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Do.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Do.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Do?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Environment_Variables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Environment_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Environment_Variables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Escape_Characters.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Escape_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Escape_Characters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Eventlogs.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Eventlogs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Eventlogs?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Execution_Policies.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Execution_Policies.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Execution_Policies?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_For.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_For.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_For?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Foreach.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Foreach.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Foreach?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Format.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Format.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Format.ps1xml?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions_Advanced.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions_CmdletBindingAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Functions_OutputTypeAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Group_Policy_Settings.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Group_Policy_Settings.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Group_Policy_Settings?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Hash_Tables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Hash_Tables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Hash_Tables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_History.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_History.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_History?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_If.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_If.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_If?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Jobs.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Jobs?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Job_Details.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Job_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Job_Details?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Join.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Join.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Join?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Language_Keywords.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Language_Keywords.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Keywords?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Language_Modes.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Language_Modes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Modes?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Line_Editing.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Line_Editing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Line_Editing?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Methods.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Methods?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Modules.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Modules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Modules?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Objects.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Objects.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Objects?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Object_Creation.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Object_Creation.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Object_Creation?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Operators.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operators?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Operator_Precedence.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Operator_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operator_Precedence?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_packagemanagement.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_packagemanagement.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_packagemanagement?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Parameters.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Parameters_Default_Values.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Parameters_Default_Values.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters_Default_Values?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Parsing.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Parsing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parsing?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Path_Syntax.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Path_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Path_Syntax?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_pipelines.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_pipelines.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_pipelines?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_PowerShell_exe.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_PowerShell_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_exe?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_PowerShell_Ise_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Preference_Variables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Preference_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Preference_Variables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_profiles.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_profiles.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_profiles?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Prompts.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Prompts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Prompts?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Properties.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Properties.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Properties?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Providers.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Providers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Providers?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_PSSessions.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_PSSessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSessions?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_PSSession_Details.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_PSSession_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSession_Details?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_PSSnapins.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_PSSnapins.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSnapins?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Quoting_Rules.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Quoting_Rules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Quoting_Rules?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Redirection.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Redirection.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Redirection?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Ref.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Ref.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Ref?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Regular_Expressions.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Regular_Expressions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Regular_Expressions?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Disconnected_Sessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_FAQ.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_FAQ.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_FAQ?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Jobs.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Jobs?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Output.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Output.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Output?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Requirements.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Requirements.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Requirements?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Troubleshooting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Troubleshooting?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Remote_Variables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Remote_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Variables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Requires.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Requires.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Requires?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Reserved_Words.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Reserved_Words.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Reserved_Words?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Return.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Return.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Return?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Run_With_PowerShell.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Run_With_PowerShell.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Run_With_PowerShell?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_scopes.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_scopes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_scopes?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Scripts.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Scripts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Scripts?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Script_Blocks.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Script_Blocks.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Blocks?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Script_Internationalization.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Script_Internationalization.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Internationalization?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Session_Configurations.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Session_Configurations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configurations?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Session_Configuration_Files.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configuration_Files?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Signing.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Signing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Signing?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Special_Characters.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Special_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Special_Characters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Splatting.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Splatting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Splatting?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Split.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Split.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Split?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Switch.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Switch.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Switch?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Throw.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Throw.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Throw?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Transactions.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Transactions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Transactions?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Trap.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Trap.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Trap?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Try_Catch_Finally.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Try_Catch_Finally.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Try_Catch_Finally?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Types.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Types.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Types.ps1xml?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Type_Operators.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Type_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Type_Operators?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Updatable_Help.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Updatable_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Updatable_Help?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Variables.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Variables?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_While.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_While.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_While?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Wildcards.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Wildcards.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Wildcards?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Windows_PowerShell_ISE.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_Windows_RT.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_Windows_RT.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_RT?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_WMI.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_WMI.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_WMI_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_WMI_Cmdlets.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI_Cmdlets?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about_WQL.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/about/about_WQL.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WQL?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/Clear-Host.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/functions/Clear-Host.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/Get-Verb.md",
+     "source_path": "reference/virtual-directory-module/4.0/Microsoft.PowerShell.Core/funcitons/Get-Verb.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Verb?view=powershell-4.0",
      "redirect_document_id": "False"
    },
@@ -5697,587 +5697,587 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Aliases.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Aliases?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Arithmetic_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Arithmetic_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arithmetic_Operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Arrays.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Arrays.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arrays?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Assignment_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Assignment_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Assignment_Operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Automatic_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Automatic_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Automatic_Variables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Break.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Break.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Break?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_classes.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_classes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_classes?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Command_Precedence.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Command_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Precedence?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Command_Syntax.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Command_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Syntax?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Comment_Based_Help.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Comment_Based_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comment_Based_Help?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_CommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_CommonParameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_CommonParameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Comparison_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Comparison_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comparison_Operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Continue.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Continue.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Continue?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Core_Commands.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Core_Commands.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Core_Commands?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Data_Sections.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Data_Sections.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Data_Sections?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Debuggers.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Debuggers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Debuggers?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_desiredstateconfiguration.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_desiredstateconfiguration.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_desiredstateconfiguration?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Do.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Do.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Do?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_dsclogresource.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_dsclogresource.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_dsclogresource?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Enum.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Enum.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Enum?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Environment_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Environment_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Environment_Variables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Escape_Characters.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Escape_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Escape_Characters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Eventlogs.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Eventlogs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Eventlogs?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Execution_Policies.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Execution_Policies.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Execution_Policies?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_For.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_For.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_For?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Foreach.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Foreach.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Foreach?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Format.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Format.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Format.ps1xml?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions_Advanced.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions_CmdletBindingAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Functions_OutputTypeAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Group_Policy_Settings.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Group_Policy_Settings.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Group_Policy_Settings?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Hash_Tables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Hash_Tables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Hash_Tables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_hidden.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_hidden.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_hidden?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_History.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_History.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_History?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_If.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_If.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_If?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Jobs.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Jobs?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Job_Details.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Job_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Job_Details?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Join.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Join.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Join?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Language_Keywords.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Language_Keywords.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Keywords?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Language_Modes.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Language_Modes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Modes?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Line_Editing.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Line_Editing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Line_Editing?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_locations.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_locations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_locations?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_logical_operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_logical_operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_logical_operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Methods.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Methods?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Modules.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Modules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Modules?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Objects.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Objects.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Objects?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Object_Creation.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Object_Creation.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Object_Creation?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Operator_Precedence.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Operator_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operator_Precedence?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_packagemanagement.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_packagemanagement.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_packagemanagement?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Parameters.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Parameters_Default_Values.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Parameters_Default_Values.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters_Default_Values?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Parsing.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Parsing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parsing?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Path_Syntax.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Path_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Path_Syntax?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_pipelines.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_pipelines.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_pipelines?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_PowerShell_exe.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PowerShell_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_exe?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PowerShell_Ise_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Preference_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Preference_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Preference_Variables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_profiles.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_profiles.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_profiles?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Prompts.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Prompts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Prompts?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Properties.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Properties.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Properties?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Providers.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Providers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Providers?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_psconsolehostreadline.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_psconsolehostreadline.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_psconsolehostreadline?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_psreadline.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_psreadline.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_psreadline?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_PSSessions.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PSSessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSessions?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_PSSession_Details.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PSSession_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSession_Details?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_PSSnapins.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PSSnapins.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSnapins?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Quoting_Rules.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Quoting_Rules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Quoting_Rules?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Redirection.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Redirection.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Redirection?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Ref.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Ref.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Ref?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Regular_Expressions.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Regular_Expressions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Regular_Expressions?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Disconnected_Sessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_FAQ.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_FAQ.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_FAQ?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Jobs.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Jobs?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Output.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Output.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Output?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Requirements.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Requirements.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Requirements?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Troubleshooting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Troubleshooting?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Remote_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Remote_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Variables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Requires.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Requires.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Requires?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Reserved_Words.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Reserved_Words.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Reserved_Words?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Return.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Return.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Return?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Run_With_PowerShell.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Run_With_PowerShell.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Run_With_PowerShell?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_scopes.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_scopes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_scopes?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Scripts.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Scripts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Scripts?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Script_Blocks.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Script_Blocks.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Blocks?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Script_Internationalization.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Script_Internationalization.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Internationalization?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Session_Configurations.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Session_Configurations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configurations?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Session_Configuration_Files.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configuration_Files?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Signing.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Signing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Signing?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_simplified_syntax.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_simplified_syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_simplified_syntax?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Special_Characters.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Special_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Special_Characters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Splatting.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Splatting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Splatting?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Split.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Split.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Split?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Switch.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Switch.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Switch?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Throw.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Throw.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Throw?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Transactions.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Transactions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Transactions?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Trap.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Trap.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Trap?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Try_Catch_Finally.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Try_Catch_Finally.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Try_Catch_Finally?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Types.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Types.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Types.ps1xml?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_type_accelerators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_type_accelerators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_type_accelerators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Type_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Type_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Type_Operators?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Updatable_Help.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Updatable_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Updatable_Help?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Variables?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_While.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_While.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_While?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Wildcards.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Wildcards.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Wildcards?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_windows_powershell_5.0.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_windows_powershell_5.0.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_windows_powershell_5.0?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Windows_PowerShell_ISE.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_Windows_RT.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_Windows_RT.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_RT?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_WMI.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_WMI.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_WMI_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_WMI_Cmdlets.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI_Cmdlets?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about_WQL.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_WQL.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WQL?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/Clear-Host.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/functions/Clear-Host.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/Get-Verb.md",
+     "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/functions/Get-Verb.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Verb?view=powershell-5.0",
      "redirect_document_id": "False"
    },
@@ -6918,27 +6918,27 @@
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Security/providers/certificate-provider.md",
-     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/providers/certificate-provider?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/certificate-provider?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Security/providers/get-childitem-for-certificate.md",
-     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/providers/get-childitem-for-certificate?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/get-childitem-for-certificate?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Security/providers/move-item-for-certificate.md",
-     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/providers/move-item-for-certificate?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/move-item-for-certificate?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Security/providers/new-item-for-certificate.md",
-     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/providers/new-item-for-certificate?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/new-item-for-certificate?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Security/providers/remove-item-for-certificate.md",
-     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/providers/remove-item-for-certificate?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/remove-item-for-certificate?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
@@ -7563,37 +7563,37 @@
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-clientcertificate.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-clientcertificate?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-clientcertificate?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-initializationparameters.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-initializationparameters?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-initializationparameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-listener.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-listener?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-listener?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-plugin.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-plugin?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-plugin?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-resources.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-resources?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-resources?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/new-item-for-security.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/new-item-for-security?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/new-item-for-security?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
      "source_path": "reference/virtual-directory-module/5.0/Microsoft.WsMan.Management/providers/wsman-provider.md",
-     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/providers/wsman-provider?view=powershell-5.0",
+     "redirect_url": "/powershell/module/Microsoft.WsMan.Management/wsman-provider?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
@@ -8467,587 +8467,587 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about/about_Aliases.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Aliases?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Arithmetic_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Arithmetic_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arithmetic_Operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Arrays.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Arrays.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Arrays?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Assignment_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Assignment_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Assignment_Operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Automatic_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Automatic_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Automatic_Variables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Break.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Break.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Break?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Classes.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Classes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Classes?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Command_Precedence.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Command_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Precedence?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Command_Syntax.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Command_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Command_Syntax?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Comment_Based_Help.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Comment_Based_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comment_Based_Help?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_CommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_CommonParameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_CommonParameters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Comparison_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Comparison_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Comparison_Operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Continue.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Continue.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Continue?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Core_Commands.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Core_Commands.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Core_Commands?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Data_Sections.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Data_Sections.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Data_Sections?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Debuggers.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Debuggers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Debuggers?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_desiredstateconfiguration.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_desiredstateconfiguration.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_desiredstateconfiguration?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Do.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Do.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Do?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_dsclogresource.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_dsclogresource.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_dsclogresource?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Enum.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Enum.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Enum?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Environment_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Environment_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Environment_Variables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Escape_Characters.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Escape_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Escape_Characters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Eventlogs.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Eventlogs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Eventlogs?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Execution_Policies.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Execution_Policies.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Execution_Policies?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_For.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_For.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_For?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Foreach.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Foreach.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Foreach?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Format.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Format.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Format.ps1xml?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions_Advanced.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions_Advanced.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Methods?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions_Advanced_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_Advanced_Parameters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions_CmdletBindingAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_CmdletBindingAttribute?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Functions_OutputTypeAttribute.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Functions_OutputTypeAttribute?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Group_Policy_Settings.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Group_Policy_Settings.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Group_Policy_Settings?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Hash_Tables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Hash_Tables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Hash_Tables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_hidden.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_hidden.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_hidden?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_History.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_History.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_History?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_If.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_If.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_If?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Jobs.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Jobs?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Job_Details.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Job_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Job_Details?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Join.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Join.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Join?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Language_Keywords.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Language_Keywords.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Keywords?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Language_Modes.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Language_Modes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Language_Modes?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Line_Editing.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Line_Editing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Line_Editing?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_locations.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_locations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_locations?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_logical_operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_logical_operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_logical_operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Methods.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Methods.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Methods?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Modules.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Modules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Modules?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Objects.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Objects.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Objects?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Object_Creation.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Object_Creation.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Object_Creation?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Operator_Precedence.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Operator_Precedence.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Operator_Precedence?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PackageManagement.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PackageManagement.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PackageManagement?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Parameters.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Parameters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Parameters_Default_Values.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Parameters_Default_Values.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parameters_Default_Values?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Parsing.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Parsing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Parsing?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Path_Syntax.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Path_Syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Path_Syntax?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_pipelines.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_pipelines.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_pipelines?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PowerShell_exe.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PowerShell_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_exe?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PowerShell_Ise_exe.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PowerShell_Ise_exe?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Preference_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Preference_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Preference_Variables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Profiles.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Profiles.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Profiles?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Prompts.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Prompts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Prompts?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Properties.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Properties.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Properties?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Providers.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Providers.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Providers?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_psconsolehostreadline.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_psconsolehostreadline.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_psconsolehostreadline?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_psreadline.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_psreadline.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_psreadline?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PSSessions.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PSSessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSessions?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PSSession_Details.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PSSession_Details.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSession_Details?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_PSSnapins.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_PSSnapins.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_PSSnapins?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Quoting_Rules.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Quoting_Rules.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Quoting_Rules?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Redirection.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Redirection.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Redirection?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Ref.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Ref.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Ref?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Regular_Expressions.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Regular_Expressions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Regular_Expressions?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Disconnected_Sessions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Disconnected_Sessions?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_FAQ.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_FAQ.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_FAQ?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Jobs.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Jobs.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Jobs?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Output.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Output.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Output?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Requirements.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Requirements.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Requirements?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Troubleshooting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Troubleshooting?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Remote_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Remote_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Remote_Variables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Requires.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Requires.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Requires?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Reserved_Words.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Reserved_Words.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Reserved_Words?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Return.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Return.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Return?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Run_With_PowerShell.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Run_With_PowerShell.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Run_With_PowerShell?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Scopes.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Scopes.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Scopes?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Scripts.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Scripts.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Scripts?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Script_Blocks.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Script_Blocks.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Blocks?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Script_Internationalization.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Script_Internationalization.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Script_Internationalization?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Session_Configurations.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Session_Configurations.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configurations?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Session_Configuration_Files.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Session_Configuration_Files?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Signing.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Signing.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Signing?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_simplified_syntax.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_simplified_syntax.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_simplified_syntax?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Special_Characters.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Special_Characters.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Special_Characters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Splatting.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Splatting.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Splatting?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Split.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Split.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Split?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Switch.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Switch.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Switch?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Throw.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Throw.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Throw?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Transactions.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Transactions.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Transactions?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Trap.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Trap.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Trap?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Try_Catch_Finally.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Try_Catch_Finally.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Try_Catch_Finally?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Types.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Types.ps1xml.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Types.ps1xml?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_type_accelerators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_type_accelerators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_type_accelerators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Type_Operators.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Type_Operators.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Type_Operators?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Updatable_Help.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Updatable_Help.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Updatable_Help?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Variables.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Variables.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Variables?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_While.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_While.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_While?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Wildcards.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Wildcards.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Wildcards?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_windows_powershell_5.1.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_windows_powershell_5.1.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_windows_powershell_5.1?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Windows_PowerShell_ISE.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_PowerShell_ISE?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_Windows_RT.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_Windows_RT.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_Windows_RT?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_WMI.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_WMI.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_WMI_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_WMI_Cmdlets.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WMI_Cmdlets?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about_WQL.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_WQL.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/about_WQL?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/Clear-Host.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/functions/Clear-Host.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/Get-Verb.md",
+     "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/functions/Get-Verb.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Get-Verb?view=powershell-5.1",
      "redirect_document_id": "False"
    },
@@ -11683,7 +11683,7 @@
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Clear-Host.md",
+     "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/functions/Clear-Host.md",
      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-6",
     "redirect_document_id": "False"
    },
