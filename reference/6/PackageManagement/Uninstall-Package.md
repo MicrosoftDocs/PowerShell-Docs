@@ -480,7 +480,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about/about_packagemanagement.md)
+[about_PackageManagement](../about_packagemanagement.md)
 
 [Find-Package](Find-Package.md)
 

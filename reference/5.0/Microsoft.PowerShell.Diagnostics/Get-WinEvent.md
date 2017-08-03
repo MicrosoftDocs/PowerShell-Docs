@@ -614,7 +614,7 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 [Get-EventLog](../Microsoft.PowerShell.Management/Get-EventLog.md)
 
-[about_Eventlogs](../Microsoft.PowerShell.Core/About/about_Eventlogs.md)
+[about_Eventlogs](../Microsoft.PowerShell.Core/about_Eventlogs.md)
 
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

@@ -160,7 +160,7 @@ You can pipe a **PackageProvider** object returned by **Get-PackageProvider** in
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about/about_packagemanagement.md)
+[about_PackageManagement](../about_packagemanagement.md)
 
 [Unregister-PackageSource](Unregister-PackageSource.md)
 

@@ -56,5 +56,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Enable-RunspaceDebug](../Microsoft.PowerShell.Utility/Enable-RunspaceDebug.md)
 
-[about_Debuggers](About/about_Debuggers.md)
+[about_Debuggers](about_Debuggers.md)
 

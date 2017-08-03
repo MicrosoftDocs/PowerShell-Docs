@@ -37,7 +37,7 @@ Windows PowerShell uses the following notation for syntax diagrams.
 [-<Optional Parameter Name>] <Required Parameter Value>
 ```
 
-The following is the syntax for the [New-Alias](../../Microsoft.PowerShell.Utility/New-Alias.md) cmdlet.
+The following is the syntax for the [New-Alias](../Microsoft.PowerShell.Utility/New-Alias.md) cmdlet.
 
 ```
 New-Alias [-Name] <string> [-Value] <string> [-Description <string>]
@@ -136,7 +136,7 @@ set includes only parameters that can be used together in a command. If
 parameters cannot be used in the same command, they appear in separate
 parameter sets.
 
-For example, the [Get-Random](../../Microsoft.PowerShell.Utility/Get-Random.md) cmdlet has the following parameter sets:
+For example, the [Get-Random](../Microsoft.PowerShell.Utility/Get-Random.md) cmdlet has the following parameter sets:
 
 ```
 Get-Random [[-Maximum] <Object>] [-Minimum <Object>] [-SetSeed <int>]
@@ -212,7 +212,7 @@ required, but the parameter name, "Name", is optional.
 - A right and left bracket `[]` appended to a .NET type indicates that the parameter can accept one or multiple values of that type. Enter the values in a comma-separated list.
 
 For example, the **Name** parameter of the `New-Alias` cmdlet takes only
-one string, but the **Name** parameter of [Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md) can take one or
+one string, but the **Name** parameter of [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md) can take one or
 many strings.
 
 ```

@@ -226,7 +226,7 @@ You can pipe alias names to **Get-Alias**.
 
 ## RELATED LINKS
 
-[About Aliases](../about/about_aliases.md)
+[About Aliases](../about_aliases.md)
 
 [Export-Alias](Export-Alias.md)
 

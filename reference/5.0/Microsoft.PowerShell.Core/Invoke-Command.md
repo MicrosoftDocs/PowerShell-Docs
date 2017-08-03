@@ -1131,13 +1131,13 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
 [WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
 
-[about_PSSessions](About/about_PSSessions.md)
+[about_PSSessions](about_PSSessions.md)
 
-[about_Remote](About/about_Remote.md)
+[about_Remote](about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Variables](About/about_Remote_Variables.md)
+[about_Remote_Variables](about_Remote_Variables.md)
 
-[about_Scopes](About/about_Scopes.md)
+[about_Scopes](about_Scopes.md)
 

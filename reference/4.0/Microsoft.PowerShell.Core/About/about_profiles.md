@@ -201,7 +201,7 @@ that you run affect only the current session. When you end the session,
 the items are deleted.
 
 The session-specific commands and items include variables, preference
-variables, aliases, functions, commands (except for [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)),
+variables, aliases, functions, commands (except for [Set-ExecutionPolicy](../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)),
 and Windows PowerShell snap-ins that you add to the session.
 
 To save these items and make them available in all future sessions, add
@@ -357,4 +357,4 @@ are available in $s.
 
 [about_Remote](about_Remote.md)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)

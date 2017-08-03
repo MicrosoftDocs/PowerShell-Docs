@@ -245,7 +245,7 @@ Specifies one or more package sources.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about/about_packagemanagement.md)
+[about_PackageManagement](../about_packagemanagement.md)
 
 [Register-PackageSource](Register-PackageSource.md)
 

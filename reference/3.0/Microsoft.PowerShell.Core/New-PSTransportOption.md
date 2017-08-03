@@ -345,7 +345,7 @@ This cmdlet does not take input from the pipeline.
 * The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 ## RELATED LINKS
 
-[about_Session_Configurations](About/about_Session_Configurations.md)
+[about_Session_Configurations](about_Session_Configurations.md)
 
 [New-PSSession](New-PSSession.md)
 

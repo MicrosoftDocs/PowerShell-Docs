@@ -909,5 +909,5 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [Get-Verb](functions/get-verb.md)
 
-[about_Modules](About/about_Modules.md)
+[about_Modules](about_Modules.md)
 

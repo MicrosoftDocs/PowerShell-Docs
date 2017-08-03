@@ -431,7 +431,7 @@ Otherwise, this cmdlet does not generate any output.
 * Job triggers have a **JobDefintion** property that associates them with the scheduled job. When you change the job trigger of a scheduled job, the job is changed. You do not need to use a Set-ScheduledJob command to apply the changed trigger to the scheduled job.
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

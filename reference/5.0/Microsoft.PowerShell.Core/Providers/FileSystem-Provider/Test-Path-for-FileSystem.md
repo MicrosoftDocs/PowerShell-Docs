@@ -18,14 +18,14 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ```  
 
 ## Description  
- In a file system drive, [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
+ In a file system drive, [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.  
 
- Note: This custom cmdlet help file explains how the [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet works in a file system drive. For information about the [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) -Path $null" or see [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) at http://go.microsoft.com/fwlink/?LinkID=113418.  
+ Note: This custom cmdlet help file explains how the [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet works in a file system drive. For information about the [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet in all drives, type "[Get-Help](../Get-Help.md)[Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md) -Path $null" or see [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md) at http://go.microsoft.com/fwlink/?LinkID=113418.  
 
 ## Parameters  
 
 ### -OlderThan <DateTime\>  
- Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
 
  OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
 
@@ -38,7 +38,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|  
 
 ### -NewerThan <DateTime\>  
- Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
+ Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".  
 
  NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.  
 
@@ -51,7 +51,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../about_CommonParameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -152,12 +152,12 @@ The NewerThan parameter works only in file system drives.
 
 ## See Also  
  [FileSystem Provider](../FileSystem-Provider.md)   
- [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)   
- [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
- [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md)   
- [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
- [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
+ [Clear-Content](../../Microsoft.PowerShell.Management/Clear-Content.md)   
+ [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
+ [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)   
+ [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)
 

@@ -298,7 +298,7 @@ keyword to avoid conflicts when there are commands with the same name.
 ### .REMOTEHELPRUNSPACE
 
 Specifies a session that contains the help topic. Enter a variable that
-contains a "PSSession". This keyword is used by the [Export-PSSession](../../Microsoft.PowerShell.Utility/Export-PSSession.md)
+contains a "PSSession". This keyword is used by the [Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 cmdlet to find the help topics for the exported commands.
 
 ```

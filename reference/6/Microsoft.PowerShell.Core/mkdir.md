@@ -316,5 +316,5 @@ For more information, see about_Providers.
 
 [Set-Item](../microsoft.powershell.management/set-item.md)
 
-[about_Providers](../about/about_providers.md)
+[about_Providers](../about_providers.md)
 

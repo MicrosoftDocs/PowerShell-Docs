@@ -35,11 +35,11 @@ title:  Environment Provider
 
  The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive (`set-location Env:`), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.  
 
- The **Environment** provider supports all the cmdlets that contain the *Item* noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the *ItemProperty* noun, and it does not support the `-Filter` parameter in any cmdlet.  
+ The **Environment** provider supports all the cmdlets that contain the *Item* noun except for [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the *ItemProperty* noun, and it does not support the `-Filter` parameter in any cmdlet.  
 
  Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign (`=`).  
 
- Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../../Microsoft.PowerShell.Core/Export-Console.md) to save the current session.  
+ Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](../Microsoft.PowerShell.Core/Export-Console.md) to save the current session.  
 
 
 ## Capabilities
@@ -122,21 +122,21 @@ If you are not in the `Env:` drive, the value of the `-Path` parameter would be 
 
 #### Example 1
 
- This command uses the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all the environment variables:  
+ This command uses the [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all the environment variables:  
 
 ```powershell
 Get-ChildItem -Path Env: | Get-Member
 ```
 
- The pipeline operator (`|`) sends the results to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), which displays the methods and properties of the object.  
-When you pipe a collection of objects to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), such as the collection of environment variables in the `Env:` drive, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates each object in the collection separately. [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) then returns information about each object type that it finds. If all the objects are of the same type, it returns information about the single object type. In this case, all the environment variables are [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects.  
-To get information about the collection of [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects, use the `-InputObject` parameter of [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md). For example, type:  
+ The pipeline operator (`|`) sends the results to [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md), which displays the methods and properties of the object.  
+When you pipe a collection of objects to [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md), such as the collection of environment variables in the `Env:` drive, [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md) evaluates each object in the collection separately. [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md) then returns information about each object type that it finds. If all the objects are of the same type, it returns information about the single object type. In this case, all the environment variables are [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects.  
+To get information about the collection of [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects, use the `-InputObject` parameter of [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md). For example, type:  
 
 ```powershell
 Get-Member -InputObject (Get-ChildItem Env:)
 ```
 
-When you use the `-InputObject` parameter, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
+When you use the `-InputObject` parameter, [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
 
 
 #### Example 2
@@ -147,7 +147,7 @@ When you use the `-InputObject` parameter, [Get-Member](../../Microsoft.PowerShe
 Get-Item Env:windir | Format-List -Property *
 ```
 
- It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `WINDIR` environment variable. The pipeline operator (`|`) sends the results to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command. It uses the `-Property` parameter with a wildcard character (`*`) to format and display the values of all the properties of the `WINDIR` environment variable.  
+ It uses the [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `WINDIR` environment variable. The pipeline operator (`|`) sends the results to the [Format-List](../Microsoft.PowerShell.Utility/Format-List.md) command. It uses the `-Property` parameter with a wildcard character (`*`) to format and display the values of all the properties of the `WINDIR` environment variable.  
 
 
 ### Changing the properties of an environment variable
@@ -155,7 +155,7 @@ Get-Item Env:windir | Format-List -Property *
 
 #### Example 1
 
- This command uses the [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `USERMODE` environment variable that you created to `USERROLE`:  
+ This command uses the [Rename-Item](../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `USERMODE` environment variable that you created to `USERROLE`:  
 
 ```powershell
 Rename-Item -Path Env:USERMODE -NewName USERROLE
@@ -167,7 +167,7 @@ Do not change the name of an environment variable that the system uses. Although
 
 #### Example 2
 
- This command uses the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the value of the `USERROLE` environment variable to "Administrator":  
+ This command uses the [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the value of the `USERROLE` environment variable to "Administrator":  
 
 ```powershell
 Set-Item -Path Env:USERROLE -Value Administrator
@@ -211,5 +211,5 @@ Clear-Item -Path Env:USERROLE
 
 ## See also
 
- [about_Providers](../About/about_Providers.md)
+ [about_Providers](../about_Providers.md)
 

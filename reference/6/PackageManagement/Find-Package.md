@@ -570,7 +570,7 @@ This cmdlet does not produce any output.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about/about_packagemanagement.md)
+[about_PackageManagement](../about_packagemanagement.md)
 
 [Get-Package](Get-Package.md)
 

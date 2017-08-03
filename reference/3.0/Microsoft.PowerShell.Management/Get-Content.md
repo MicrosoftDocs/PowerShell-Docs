@@ -398,6 +398,6 @@ The output type depends upon the content that it gets.
 
 [Set-Content](Set-Content.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
 
 

@@ -18,18 +18,18 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 ```  
 
 ## Description  
- In the file system, [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) clears the content in a file, but does not delete the file. It has no effect on folders.  
+ In the file system, [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) clears the content in a file, but does not delete the file. It has no effect on folders.  
 
- Note: This custom cmdlet help file explains how the [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet works in a file system drive. For information about the [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) -Path $null" or see [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113282.  
+ Note: This custom cmdlet help file explains how the [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet works in a file system drive. For information about the [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet in all drives, type "[Get-Help](../Get-Help.md)[Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) -Path $null" or see [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113282.  
 
 ## Parameters  
 
 ### -Stream <string\>  
  Deletes the content in the specified alternate data stream, but does not delete the alternate data stream. Enter the stream name. Wildcards are not supported.  
 
- Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
 
- You can use the [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet to clear the content of an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
+ You can use the [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet to clear the content of an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
 
  This parameter is introduced in Windows PowerShell 3.0.  
 
@@ -42,7 +42,7 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../../about/about_commonparameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../about_commonparameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -114,12 +114,12 @@ This command requests a prediction of what would happen if you submitted the com
 
 ## See Also  
  [FileSystem Provider](../FileSystem-Provider.md)   
- [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)   
- [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
- [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md)   
- [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
- [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
+ [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md)   
+ [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)   
+ [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md)   
+ [Test-Path](../Microsoft.PowerShell.Management/Test-Path.md)
 
