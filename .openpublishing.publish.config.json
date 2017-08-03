@@ -1,5 +1,5 @@
 {
-  "build_entry_point": "",
+  "build_entry_point": "docs",
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "docsets_to_publish": [
@@ -12,9 +12,15 @@
       "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
       },
       "version": 0
+
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
@@ -25,10 +31,16 @@
       "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
       },
+
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
       "build_entry_point": "op",
       "version": 0
+
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
@@ -39,9 +51,17 @@
       "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+       "Conceptual": "Content"
       },
       "version": 0
+
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
@@ -54,8 +74,24 @@
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
-        "RestApi": "Content"
+        "RestApi": "Content",
+        "AzurePSModulePage": "Content"
       },
+
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+       "customized_template_paths": [
+        "_dependentPackages/azurecli.plugins/azurecli"
+      ],
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin/tools/Restructure.ps1"
+        ]
+      },
+      "monikerPath": [
+        "mapping/monikerMapping.json"
+      ]
+=======
       "build_entry_point": "op",
       "version": 0
     },
@@ -69,6 +105,7 @@
         "Conceptual": "Content"
       },
       "version": 0
+
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
@@ -79,20 +116,49 @@
       "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
+
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+
         "Conceptual": "Content"
       },
       "version": 0
+
     }
   ],
-  "notification_subscribers": [
-    ""
-  ],
-  "branches_to_filter": [
-    ""
-  ],
+  "notification_subscribers": [],
+  "branches_to_filter": [],
+  "need_preview_pull_request": false,
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,
+
+  "dependent_repositories": [{
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master",
+      "branch_mapping": {}
+    } ],
+    "dependent_packages": [
+    {
+      "path_to_root": "_dependentPackages/azurecli.plugins",
+      "id": "opbuild.templates.azurecli",
+      "version": "latest",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2"
+    },
+    {
+      "id": "Microsoft.OpenPublishing.AzurePSPlugin",
+      "path_to_root": "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin",
+      "version": "latest-prerelease",
+      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
+    }
+  ]
+}
+
   "dependent_repositories": [],
   "need_generate_pdf_url_template": false
 }
