@@ -79,7 +79,7 @@
             "PSWorkflow":{},
             "PSWorkflowUtility":{},
             "PackageManagement":{},
-            "PowershellGet":{}
+            "PowerShellGet":{}
         }
     },
     "powershell-6": {
@@ -101,7 +101,7 @@
             "PSReadline":{},
             "PackageManagement":{},
             "Pester":{},
-            "PowershellGet":{}
+            "PowerShellGet":{}
 
         }
     }
