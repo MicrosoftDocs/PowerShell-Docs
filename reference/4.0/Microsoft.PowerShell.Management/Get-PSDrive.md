@@ -54,19 +54,18 @@ Name       Provider      Root
 ----       --------      ----
 Alias      Alias
 C          FileSystem    C:\
-cert       Certificate   \
+Cert       Certificate   \
 D          FileSystem    D:\
 Env        Environment
 Function   Function
 HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
-X          FileSystem    X:\
 ```
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
 
 ### Example 2
 ```

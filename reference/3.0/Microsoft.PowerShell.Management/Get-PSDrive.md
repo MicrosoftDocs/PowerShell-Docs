@@ -41,6 +41,7 @@ For more information, see New-PSDrive.
 Also, beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
 You do not need to restart Windows PowerShell.
 Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+
 ## EXAMPLES
 
 ### Example 1
@@ -51,19 +52,19 @@ Name       Provider      Root
 ----       --------      ----
 Alias      Alias
 C          FileSystem    C:\
-cert       Certificate   \
+Cert       Certificate   \
 D          FileSystem    D:\
 Env        Environment
 Function   Function
 HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
-X          FileSystem    X:\
 ```
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
+
 ### Example 2
 ```
 PS C:\> Get-PSDrive D
