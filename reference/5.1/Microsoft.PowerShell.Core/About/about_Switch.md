@@ -26,7 +26,7 @@ obtains, the action is performed.
 A basic Switch statement has the following format:
 
 ```powershell
-Switch (<test-value>)
+switch (<test-value>)
 {
     <condition> {<action>}
     <condition> {<action>}
