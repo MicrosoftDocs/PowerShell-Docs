@@ -2877,47 +2877,47 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_ActivityCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_ActivityCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_ActivityCommonParameters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Checkpoint-Workflow.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Checkpoint-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Checkpoint-Workflow?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Foreach-Parallel.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Foreach-Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Foreach-Parallel?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_InlineScript.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_InlineScript.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_InlineScript?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Parallel.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Parallel?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Sequence.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Sequence.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Sequence?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Suspend-Workflow.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Suspend-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Suspend-Workflow?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_WorkflowCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_WorkflowCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_WorkflowCommonParameters?view=powershell-3.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/about_Workflows.md",
+     "source_path": "reference/virtual-directory-module/3.0/PSWorkflow/About/About_Workflows.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Workflows?view=powershell-3.0",
      "redirect_document_id": "False"
    },
@@ -5167,22 +5167,22 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about_Scheduled_Jobs.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about/about_Scheduled_Jobs.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about_Scheduled_Jobs_Advanced.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about/about_Scheduled_Jobs_Advanced.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Advanced?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about_Scheduled_Jobs_Basics.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about/about_Scheduled_Jobs_Basics.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Basics?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSScheduledJob/about/about_Scheduled_Jobs_Troubleshooting.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting?view=powershell-4.0",
      "redirect_document_id": "False"
    },
@@ -5202,47 +5202,47 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_ActivityCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_ActivityCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_ActivityCommonParameters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Checkpoint-Workflow.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Checkpoint-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Checkpoint-Workflow?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Foreach-Parallel.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Foreach-Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Foreach-Parallel?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_InlineScript.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_InlineScript.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_InlineScript?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Parallel.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Parallel?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Sequence.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Sequence.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Sequence?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Suspend-Workflow.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Suspend-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Suspend-Workflow?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_WorkflowCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_WorkflowCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_WorkflowCommonParameters?view=powershell-4.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/about_Workflows.md",
+     "source_path": "reference/virtual-directory-module/4.0/PSWorkflow/About/About_Workflows.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Workflows?view=powershell-4.0",
      "redirect_document_id": "False"
    },
@@ -7937,17 +7937,17 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about_Scheduled_Jobs_Advanced.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about/about_Scheduled_Jobs_Advanced.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Advanced?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about_Scheduled_Jobs_Basics.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about/about_Scheduled_Jobs_Basics.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Basics?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSScheduledJob/about/about_Scheduled_Jobs_Troubleshooting.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting?view=powershell-5.0",
      "redirect_document_id": "False"
    },
@@ -7967,47 +7967,47 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_ActivityCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_ActivityCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_ActivityCommonParameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Checkpoint-Workflow.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Checkpoint-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Checkpoint-Workflow?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Foreach-Parallel.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Foreach-Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Foreach-Parallel?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_InlineScript.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_InlineScript.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_InlineScript?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Parallel.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Parallel?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Sequence.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Sequence.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Sequence?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Suspend-Workflow.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Suspend-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Suspend-Workflow?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_WorkflowCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_WorkflowCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_WorkflowCommonParameters?view=powershell-5.0",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/about_Workflows.md",
+     "source_path": "reference/virtual-directory-module/5.0/PSWorkflow/About/about_Workflows.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Workflows?view=powershell-5.0",
      "redirect_document_id": "False"
    },
@@ -10882,22 +10882,22 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about_Scheduled_Jobs.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about/about_Scheduled_Jobs.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about_Scheduled_Jobs_Advanced.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about/about_Scheduled_Jobs_Advanced.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Advanced?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about_Scheduled_Jobs_Basics.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about/about_Scheduled_Jobs_Basics.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Basics?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSScheduledJob/about/about_Scheduled_Jobs_Troubleshooting.md",
      "redirect_url": "/powershell/module/PSScheduledJob/about_Scheduled_Jobs_Troubleshooting?view=powershell-5.1",
      "redirect_document_id": "False"
    },
@@ -10917,47 +10917,47 @@
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_ActivityCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_ActivityCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_ActivityCommonParameters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Checkpoint-Workflow.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Checkpoint-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Checkpoint-Workflow?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Foreach-Parallel.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Foreach-Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Foreach-Parallel?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_InlineScript.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_InlineScript.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_InlineScript?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Parallel.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Parallel.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Parallel?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Sequence.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Sequence.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Sequence?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Suspend-Workflow.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Suspend-Workflow.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Suspend-Workflow?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_WorkflowCommonParameters.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_WorkflowCommonParameters.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_WorkflowCommonParameters?view=powershell-5.1",
      "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/about_Workflows.md",
+     "source_path": "reference/virtual-directory-module/5.1/PSWorkflow/About/about_Workflows.md",
      "redirect_url": "/powershell/module/PSWorkflow/about_Workflows?view=powershell-5.1",
      "redirect_document_id": "False"
    },
@@ -11052,532 +11052,532 @@
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Aliases.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Aliases.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Aliases?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Arithmetic_Operators.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Arithmetic_Operators.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Arithmetic_Operators?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Arrays.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Arrays.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Arrays?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Assignment_Operators.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Assignment_Operators.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Assignment_Operators?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Automatic_Variables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Automatic_Variables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Automatic_Variables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Break.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Break.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Break?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Classes.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Classes.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Classes?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Command_Precedence.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Command_Precedence.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Command_Precedence?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Command_Syntax.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Command_Syntax.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Command_Syntax?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Comment_Based_Help.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Comment_Based_Help.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Comment_Based_Help?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_CommonParameters.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_CommonParameters.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_CommonParameters?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Comparison_Operators.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Comparison_Operators.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Comparison_Operators?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Continue.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Continue.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Continue?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Core_Commands.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Core_Commands.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Core_Commands?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Data_Sections.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Data_Sections.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Data_Sections?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Debuggers.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Debuggers.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Debuggers?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Do.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Do.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Do?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Enum.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Enum.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Enum?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Environment_Variables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Environment_Variables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Environment_Variables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Escape_Characters.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Escape_Characters.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Escape_Characters?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Eventlogs.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Eventlogs.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Eventlogs?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Execution_Policies.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Execution_Policies.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Execution_Policies?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_For.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_For.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_For?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Foreach.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Foreach.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Foreach?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Format.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Format.ps1xml.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Format.ps1xml?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions_Advanced.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions_Advanced.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions_Advanced?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions_Advanced_Methods.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions_Advanced_Methods.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions_Advanced_Methods?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions_Advanced_Parameters.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions_Advanced_Parameters.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions_Advanced_Parameters?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions_CmdletBindingAttribute.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions_CmdletBindingAttribute.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions_CmdletBindingAttribute?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Functions_OutputTypeAttribute.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Functions_OutputTypeAttribute.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Functions_OutputTypeAttribute?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Group_Policy_Settings.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Group_Policy_Settings.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Group_Policy_Settings?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Hash_Tables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Hash_Tables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Hash_Tables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_History.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_History.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_History?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_If.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_If.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_If?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Jobs.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Jobs.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Jobs?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Job_Details.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Job_Details.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Job_Details?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Join.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Join.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Join?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Language_Keywords.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Language_Keywords.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Language_Keywords?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Language_Modes.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Language_Modes.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Language_Modes?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Line_Editing.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Line_Editing.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Line_Editing?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Methods.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Methods.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Methods?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Modules.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Modules.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Modules?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Objects.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Objects.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Objects?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Object_Creation.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Object_Creation.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Object_Creation?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Operators.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Operators.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Operators?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Operator_Precedence.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Operator_Precedence.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Operator_Precedence?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PackageManagement.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PackageManagement.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PackageManagement?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Parameters.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Parameters.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Parameters?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Parameters_Default_Values.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Parameters_Default_Values.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Parameters_Default_Values?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Parsing.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Parsing.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Parsing?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Path_Syntax.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Path_Syntax.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Path_Syntax?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_pipelines.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_pipelines.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_pipelines?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PowerShell_exe.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PowerShell_exe.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PowerShell_exe?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PowerShell_Ise_exe.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PowerShell_Ise_exe.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PowerShell_Ise_exe?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Preference_Variables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Preference_Variables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Preference_Variables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Profiles.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Profiles.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Profiles?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Prompts.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Prompts.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Prompts?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Properties.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Properties.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Properties?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Providers.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Providers.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Providers?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PSSessions.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PSSessions.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PSSessions?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PSSession_Details.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PSSession_Details.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PSSession_Details?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_PSSnapins.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_PSSnapins.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_PSSnapins?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Quoting_Rules.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Quoting_Rules.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Quoting_Rules?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Redirection.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Redirection.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Redirection?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Ref.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Ref.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Ref?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Regular_Expressions.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Regular_Expressions.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Regular_Expressions?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Disconnected_Sessions.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Disconnected_Sessions.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Disconnected_Sessions?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_FAQ.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_FAQ.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_FAQ?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Jobs.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Jobs.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Jobs?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Output.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Output.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Output?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Requirements.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Requirements.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Requirements?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Troubleshooting.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Troubleshooting.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Troubleshooting?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Remote_Variables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Remote_Variables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Remote_Variables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Requires.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Requires.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Requires?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Reserved_Words.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Reserved_Words.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Reserved_Words?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Return.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Return.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Return?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Run_With_PowerShell.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Run_With_PowerShell.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Run_With_PowerShell?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Scopes.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Scopes.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Scopes?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Scripts.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Scripts.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Scripts?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Script_Blocks.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Script_Blocks.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Script_Blocks?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Script_Internationalization.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Script_Internationalization.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Script_Internationalization?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Session_Configurations.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Session_Configurations.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Session_Configurations?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Session_Configuration_Files.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Session_Configuration_Files.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Session_Configuration_Files?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Signing.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Signing.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Signing?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Special_Characters.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Special_Characters.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Special_Characters?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Splatting.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Splatting.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Splatting?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Split.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Split.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Split?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Switch.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Switch.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Switch?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Throw.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Throw.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Throw?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Transactions.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Transactions.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Transactions?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Trap.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Trap.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Trap?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Try_Catch_Finally.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Try_Catch_Finally.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Try_Catch_Finally?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Types.ps1xml.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Types.ps1xml.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Types.ps1xml?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Type_Operators.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Type_Operators.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Type_Operators?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Updatable_Help.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Updatable_Help.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Updatable_Help?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Variables.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Variables.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Variables?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_While.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_While.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_While?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Wildcards.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Wildcards.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Wildcards?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Windows_PowerShell_ISE.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Windows_PowerShell_ISE.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Windows_PowerShell_ISE?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_Windows_RT.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_Windows_RT.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_Windows_RT?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_WMI.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_WMI.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_WMI?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_WMI_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_WMI_Cmdlets.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_WMI_Cmdlets?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_WQL.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_WQL.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_WQL?view=powershell-6",
     "redirect_document_id": "False"
    },
    {
-     "source_path": "reference/virtual-directory-module/6/about_WS-Management_Cmdlets.md",
+     "source_path": "reference/virtual-directory-module/6/about/about_WS-Management_Cmdlets.md",
      "redirect_url": "/powershell/module/microsoft.powershell.core/about_WS-Management_Cmdlets?view=powershell-6",
     "redirect_document_id": "False"
    },

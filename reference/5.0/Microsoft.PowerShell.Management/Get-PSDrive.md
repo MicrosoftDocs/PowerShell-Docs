@@ -48,12 +48,24 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Get drives in the current session
 ```
-PS C:\> Get-PSDriveName       Provider      Root----       --------      ----Alias      AliasC          FileSystem    C:\cert       Certificate   \D          FileSystem    D:\Env        EnvironmentFunction   FunctionHKCU       Registry      HKEY_CURRENT_USERHKLM       Registry      HKEY_LOCAL_MACHINEVariable   VariableX          FileSystem    X:\
+PS C:\> Get-PSDrive
+
+Name       Provider      Root
+----       --------      ----
+Alias      Alias
+C          FileSystem    C:\
+Cert       Certificate   \
+D          FileSystem    D:\
+Env        Environment
+Function   Function
+HKCU       Registry      HKEY_CURRENT_USER
+HKLM       Registry      HKEY_LOCAL_MACHINE
+Variable   Variable
 ```
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
 
 ### Example 2: Get a drive on the computer
 ```
