@@ -23,7 +23,7 @@ These cmdlets include:
 
 -   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
--   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
+ -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
 -   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
@@ -70,7 +70,7 @@ To run any command on one or many remote computers, use the [Invoke-Command](htt
  For example, to run a [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) command on the Server01 and Server02 remote computers, type:
 
 ```
-Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
 The output is returned to your computer.
@@ -81,7 +81,6 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-
 For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### Run a Script
@@ -115,7 +114,7 @@ Invoke-Command -Session $s {$h = Get-HotFix}
 Now you can use the data in the $h variable in subsequent commands, such as the following one. The results are displayed on the local computer.
 
 ```
-Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
+Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### Advanced Remoting
