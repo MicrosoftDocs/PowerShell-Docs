@@ -344,7 +344,7 @@ Valid values are:
 - **PacketPrivacy**:   Packet Privacy-level COM authentication.
 - **Unchanged**:       The authentication level is the same as the previous command.
 
-For more information about the values of this parameter, see "AuthenticationLevel Enumeration" on MSDNhttp://go.microsoft.com/fwlink/?LinkID=235229 at http://go.microsoft.com/fwlink/?LinkID=235229.
+For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
 
 This parameter is introduced in Windows PowerShell 3.0.
 

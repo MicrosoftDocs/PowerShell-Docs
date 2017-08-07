@@ -399,7 +399,7 @@ Same as the previous command
 
 The default value is Packet.
 
-For more information about the values of this parameter, see AuthenticationLevel Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235229 (http://go.microsoft.com/fwlink/?LinkID=235229) in the Microsoft Developer Library (MSDN).
+For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
 
 ```yaml
 Type: AuthenticationLevel
