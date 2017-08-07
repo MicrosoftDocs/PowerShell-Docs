@@ -41,7 +41,7 @@ For an example of how to enable and use CredSSP for PowerShell remoting, see
 
 ## Kerberos delegation (unconstrained)
 
-You can also used Kerberos unconstrained delegation to make the second hop. However, this method provides no control of where delegated credentials are used.
+You can also use Kerberos unconstrained delegation to make the second hop. However, this method provides no control of where delegated credentials are used.
 
 >**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see 
 >[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
