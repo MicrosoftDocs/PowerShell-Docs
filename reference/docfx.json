@@ -3,6 +3,11 @@
     "content": [
       {
         "files": [
+          "bread/toc.yml"
+        ],
+      },
+      {
+        "files": [
           "**/*.md"
         ],
         "src": "powershell-3.0/docs-conceptual",
@@ -184,6 +189,7 @@
     "externalReference": [],
     "globalMetadata": {
      "showPowerShellPicker": "true",
+     "breadcrumb_path": "/powershell/bread/toc.json",
       "ms.devlang": "powershell",
        "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
@@ -196,6 +202,6 @@
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "Powershell/reference"
+    "dest": "pscore-reference"
   }
 }
