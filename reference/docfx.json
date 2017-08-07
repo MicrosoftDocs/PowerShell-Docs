@@ -184,6 +184,7 @@
     "externalReference": [],
     "globalMetadata": {
      "showPowerShellPicker": "true",
+     "apiPlatform": "powershell",
       "ms.devlang": "powershell",
        "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
