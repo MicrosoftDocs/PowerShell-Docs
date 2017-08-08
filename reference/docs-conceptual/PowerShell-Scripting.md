@@ -10,7 +10,7 @@ Built on the .NET Framework,
 Windows PowerShell is a task-based command-line shell and scripting language;
 it is designed specifically for system administrators and power-users,
 to rapidly automate the administration of multiple operating systems
-(Linux, OSX, Unix, and Windows)
+(Linux, macOS, Unix, and Windows)
 and the processes related to the applications that run on those operating systems.
 
 ###  PowerShell is now open source
@@ -53,7 +53,7 @@ explains what is PowerShell and the basic concepts needed to start using it.
 that cover the basics of PowerShell.
 -  A series of '[basic cookbook for &lt;usage&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)'
 topics that provide recipes to execute standard tasks around files, file system,
-registry, processes, services and similar day-to-day subjects.
+registry, processes, services, and similar day-to-day subjects.
 -  A curated guide to other sources for
 [learning PowerShell](getting-started/more-powershell-learning.md).
 
