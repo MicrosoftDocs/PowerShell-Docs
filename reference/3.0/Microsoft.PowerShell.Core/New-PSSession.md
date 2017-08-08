@@ -220,7 +220,7 @@ Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "**Default**", "**Basic**", "**Credssp**", "**Digest**", "**Kerberos**", "**Negotiate**", and "**NegotiateWithImplicitCredential**". 
 The default value is "**Default**".
 
-For more information about the values of this parameter, see the description of the **System.Management.Automation.Runspaces.AuthenticationMechanism** enumeration in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
