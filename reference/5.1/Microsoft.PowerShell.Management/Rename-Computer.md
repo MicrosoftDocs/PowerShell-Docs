@@ -258,7 +258,7 @@ The acceptable values for this parameter are:
 
 The default value is Default.
 
-For more information about the values of this parameter, see AuthenticationMechanism Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235230 (http://go.microsoft.com/fwlink/?LinkID=235230) in the Microsoft Developer Network (MSDN) library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

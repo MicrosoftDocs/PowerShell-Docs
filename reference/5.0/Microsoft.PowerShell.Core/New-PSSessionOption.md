@@ -574,7 +574,7 @@ Specifies the authentication method that is used for proxy resolution.
 The acceptable values for this parameter are: Basic,  Digest, and Negotiate.
 The default value is Negotiate.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanismhttp://go.microsoft.com/fwlink/?LinkID=144382 enumeration (http://go.microsoft.com/fwlink/?LinkID=144382) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 ```yaml
 Type: AuthenticationMechanism
