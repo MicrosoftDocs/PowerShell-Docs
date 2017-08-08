@@ -3,16 +3,12 @@
         "content": [
             {
                 "files": [
-                    "**/**.md"
-                    "**/**.yml"
+                    "**/**.md",
                 ],
                 "exclude": ["**/obj/**"]
             }
         ],
         "globalMetadata": {
-            "layout": "conceptual",
-            "breadcrumb_path": "bread/toc.json",
-            "ms.locale": "en-us",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "jea",
