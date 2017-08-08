@@ -495,7 +495,7 @@ The acceptable values for this parameter are:
 - ConsoleApplication
 - WindowsApplication
 
-For more information about the values, see OutputAssemblyType Enumerationhttps://msdn.microsoft.com/en-us/library/microsoft.powershell.commands.outputassemblytype(v=vs.85).aspx in MSDN.
+For more information about the values, see [OutputAssemblyType Enumeration](https://msdn.microsoft.com/library/microsoft.powershell.commands.outputassemblytype) in the MSDN library.
 
 By default, no output type is specified.
 

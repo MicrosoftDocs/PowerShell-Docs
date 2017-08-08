@@ -364,7 +364,7 @@ The acceptable values for this parameter are:
 - ScriptMethod
 - ScriptProperty
 
-For information about these values, see PSMemberTypes Enumerationhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.psmembertypes(v=vs.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.psmembertypes(v=vs.85).aspx) in MSDN.
+For information about these values, see [PSMemberTypes Enumeration](https://msdn.microsoft.com/library/system.management.automation.psmembertypes) in the MSDN library.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

@@ -100,7 +100,7 @@ You would publish and run the configurations as follows:
 ```powershell
 PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
 PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
-PS C:\PartialConfigTest> Start-Configuration -UseExisting -ComputerName 'TestVM'
+PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
 --     ----            -------------   -----         -----------     --------             -------                  
