@@ -11,7 +11,7 @@
         ],
         "globalMetadata": {
             "layout": "conceptual",
-            "breadcrumb_path": "bread/toc.json",
+            "breadcrumb_path": "~/bread/toc.json",
             "ms.locale": "en-us",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
