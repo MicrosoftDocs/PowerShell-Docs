@@ -3,12 +3,14 @@
         "content": [
             {
                 "files": [
+                    "**/*.yml",
                     "**/**.md"
                 ],
                 "exclude": ["**/obj/**"]
             }
         ],
         "globalMetadata": {
+        "breadcrumb_path": "/powershell/gallery/bread/toc.json",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "gallery",
