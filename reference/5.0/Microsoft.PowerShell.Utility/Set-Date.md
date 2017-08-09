@@ -183,7 +183,7 @@ You can pipe a date to **Set-Date**.
 
 ## NOTES
 * Use this cmdlet cautiously when changing the date and time on the computer. The change might prevent the computer from receiving system-wide events and updates that are triggered by a date or time. Use the *WhatIf* and *Confirm* parameters to avoid errors.
-* You can use standard .NET methods with the **DateTime** and **TimeSpan** objects used with **Set-Date**, such as **AddDays**, **AddMonths**, and **FromFileTime**. For more information, see DateTime Methodshttps://msdn.microsoft.com/en-us/library/system.datetime_methods(v=vs.110).aspx and TimeSpan Methodshttps://msdn.microsoft.com/en-us/library/system.timespan_methods(v=vs.110).aspx.
+* You can use standard .NET methods with the **DateTime** and **TimeSpan** objects used with **Set-Date**, such as **AddDays**, **AddMonths**, and **FromFileTime**. For more information, see [DateTime Methods](https://msdn.microsoft.com/library/system.datetime_methods) and [TimeSpan Methods](https://msdn.microsoft.com/library/system.timespan_methods) in the MSDN library.
 
 ## RELATED LINKS
 

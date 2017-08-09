@@ -117,6 +117,23 @@ This command gets the links in a web page.
 It uses the **Invoke-WebRequest** cmdlet to get the web page content.
 Then it users the **Links** property of the **HtmlWebResponseObject** that **Invoke-WebRequest** returns, and the Href property of each link.
 
+### Example 4: Writes the response content to a file using the encoding defined in the requested page.
+```
+PS C:\> $response = Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx"
+PS C:\> $stream = [System.IO.StreamWriter]::new('.\msdnpage.html', $false, $response.Encoding)
+PS C:\> try {$stream.Write($response.Content)} finally {$stream.Dispose()}
+```
+
+This command uses the **Invoke-WebRequest** cmdlet to retrieve the web page content of an msdn page.
+
+The first command retrieves the page and saves the response object in a variable.
+
+The second command creates a StreamWriter to use to write the response content to a file. The Encoding property of the response object is used to set the encoding for the file.
+
+The final command writes the Content property to the file then disposes the StreamWriter.
+
+Note that the Encoding property will be null if the web request does not return text content.
+
 ## PARAMETERS
 
 ### -Body

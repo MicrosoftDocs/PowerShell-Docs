@@ -3,10 +3,13 @@
     "content": [
       {
         "files": [
-                "bread/toc.yml"
-              ]
+          "toc.yml"
+        ],
+        "src": "powershell-3.0/docs-conceptual",
+        "version":"powershell-3.0",
+        "dest":"scripting/powershell-3.0"
       },
-{
+      {
         "files": [
           "**/*.md"
         ],
@@ -32,6 +35,14 @@
           "docs-conceptual/**"
         ],
         "dest": "module"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-4.0/docs-conceptual",
+        "version":"powershell-4.0",
+        "dest":"scripting/powershell-4.0"
       },
       {
         "files": [
@@ -62,6 +73,14 @@
       },
       {
         "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-5.0/docs-conceptual",
+        "version":"powershell-5.0",
+        "dest":"scripting/powershell-5.0"
+      },
+      {
+        "files": [
           "**/*.md"
         ],
         "src": "powershell-5.0/docs-conceptual",
@@ -89,6 +108,14 @@
       },
       {
         "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-5.1/docs-conceptual",
+        "version":"powershell-5.1",
+        "dest":"scripting/powershell-5.1"
+      },
+      {
+        "files": [
           "**/*.md"
         ],
         "src": "powershell-5.1/docs-conceptual",
@@ -113,6 +140,14 @@
           "docs-conceptual/**"
         ],
         "dest": "module"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "powershell-6/docs-conceptual",
+        "version":"powershell-6",
+        "dest":"scripting/powershell-6"
       },
       {
         "files": [
@@ -188,8 +223,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-     "showPowerShellPicker": "true",
      "breadcrumb_path": "/powershell/bread/toc.json",
+      "showPowerShellPicker": "true",
      "apiPlatform": "powershell",
       "ms.devlang": "powershell",
        "ROBOTS": "INDEX, FOLLOW",

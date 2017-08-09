@@ -86,7 +86,7 @@ The default value is "Default".
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

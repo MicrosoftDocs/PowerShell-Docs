@@ -457,7 +457,7 @@ Accept wildcard characters: False
 ### -OutputType
 Specifies the output type of the output assembly.
 Valid values are **Library**, **ConsoleApplication**, and **WindowsApplication**.
-For more information about the values, see "OutputAssemblyType Enumeration" in MSDN.
+For more information about the values, see [OutputAssemblyType Enumeration](https://msdn.microsoft.com/library/microsoft.powershell.commands.outputassemblytype) in the MSDN library.
 
 By default, no output type is specified.
 
