@@ -210,7 +210,7 @@ PowerShell was created before SemVer was published, so it provides support for m
 
 The PowerShell Gallery is not designed to be a target for testing the publishing process. 
 The best way to test out the end-to-end process of publishing to the PowerShell Gallery is to set up and use your own local repository. 
-This can be done in a couple of ways:
+This can be done in a few ways, including:
 
 * Set up a local PowerShell Gallery instance, using the [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery) in Github. This preview project will help you set up an instance of the PowerShell Gallery that you can control, and use for your tests. 
 * Set up an [internal Nuget repository](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). This will require more work to set up, but will have the advantage of validating a few more of the requirements, notably validating use of an API key, and whether or not dependencies are present in the target when you publish. 
