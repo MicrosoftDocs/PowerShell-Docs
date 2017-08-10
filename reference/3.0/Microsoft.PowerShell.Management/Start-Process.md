@@ -104,10 +104,21 @@ The Open verb starts the process in a new console window.
 The fourth command starts a PowerShell process with the RunAs verb.
 The RunAs verb starts the process with permissions of a member of the Administrators group on the computer.
 This is the same as starting Windows PowerShell with the "Run as administrator" option.
+
+### Example 7: Specifying arguments to the process
+```
+PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
+PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
+```
+Both commands start the Windows command interpreter, issueing a dir command on the 'Program Files' folder.
+Because this foldername contains a space, the value needs surrounded with escaped quotes.
+Note that the first command specifies a string as ArgumentList. The second command a string array.
+
 ## PARAMETERS
 
 ### -ArgumentList
-Specifies parameters or parameter values to use when starting the process. 
+Specifies parameters or parameter values to use when starting the process.
+If parameters or parameter values contain a space, they need surrounded with escaped double quotes.
 The parameter name ("ArgumentList") is optional.
 
 ```yaml
