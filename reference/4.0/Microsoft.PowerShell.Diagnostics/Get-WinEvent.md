@@ -399,7 +399,7 @@ Accept wildcard characters: False
 ### -FilterXPath
 Uses an XPath query to select events from one or more logs.
 
-For more information about the XPath language, see "XPath Reference" in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=242509http://go.microsoft.com/fwlink/?LinkId=242509 and "Selection Filters" in "Event Selection" in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=242510http://go.microsoft.com/fwlink/?LinkId=242510.
+For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
 
 ```yaml
 Type: String
@@ -423,10 +423,7 @@ For more information about the Event Viewer features, see Event Viewer Help.
 
 Typically, you use an XML query to create a complex query that contains several XPath statements.
 The XML format also allows you to use a "Suppress" XML element that excludes events from the query.
-For more information about the XML schema for event log queries, see the following topics in the MSDN (Microsoft Developer Network) library.
-
-- "Query Schema": http://go.microsoft.com/fwlink/?LinkId=143685
-- "XML Event Queries" in "Event Selection": http://go.microsoft.com/fwlink/?LinkID=143608
+For more information about the XML schema for event log queries, see [Query Schema](https://msdn.microsoft.com/library/aa385760) and the XML Event Queries section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
 
 ```yaml
 Type: XmlDocument
