@@ -285,9 +285,8 @@ You can pipe a path or XML node to Select-Xml.
 ### Microsoft.PowerShell.Commands.SelectXmlInfo
 
 ## NOTES
-* XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see the "Selection Filters" section of the "Event Selection" topic in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143608. And, see "XPath Reference" in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=143609.
+* XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
 
-*
 ## RELATED LINKS
 
 [ConvertTo-Xml](ConvertTo-Xml.md)

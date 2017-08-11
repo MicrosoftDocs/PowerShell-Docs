@@ -302,9 +302,7 @@ You can pipe a path or XML node to this cmdlet.
 ### Microsoft.PowerShell.Commands.SelectXmlInfo
 
 ## NOTES
-* XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see the Selection Filters section of the Event Selectionhttp://go.microsoft.com/fwlink/?LinkId=143608 topic in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143608. And, see the XPath Referencehttp://go.microsoft.com/fwlink/?LinkId=143609 in the MSDN library at http://go.microsoft.com/fwlink/?LinkId=143609.
-
-*
+* XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
 
 ## RELATED LINKS
 
