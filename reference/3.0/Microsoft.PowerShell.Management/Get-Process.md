@@ -306,11 +306,12 @@ You can pipe a process object to Get-Process.
 By default, Get-Process returns a System.Diagnostics.Process object.
 If you use the FileVersionInfo parameter, it returns a System.Diagnotics.FileVersionInfo object. 
 If you use the Module parameter (without the FileVersionInfo parameter), it returns a System.Diagnostics.ProcessModule object.
+
 ## NOTES
 * You can also refer to Get-Process by its built-in aliases, "ps" and "gps". For more information, see about_Aliases.
 * On computers that are running a 64-bit version of Windows, the 64-bit version of Windows PowerShell gets only 64-bit process modules and the 32-bit version of Windows PowerShell gets only 32-bit process modules.
 * You can use the properties and methods of the WMI Win32_Process object in Windows PowerShell. For information, see T:Microsoft.PowerShell.Commands.Get-WmiObject and the Windows Management Instrumentation (WMI) SDK.
-* The default display of a process is a table that includes the following columns. For a description of all of the properties of process objects, see "Process Properties" in MSDN at http://go.microsoft.com/fwlink/?LinkId=204482http://go.microsoft.com/fwlink/?LinkId=204482
+* The default display of a process is a table that includes the following columns. For a description of all of the properties of process objects, see [Process Properties](https://msdn.microsoft.com/library/system.diagnostics.process_properties) in the MSDN library.
 
   - Handles: The number of handles that the process has opened.
 
