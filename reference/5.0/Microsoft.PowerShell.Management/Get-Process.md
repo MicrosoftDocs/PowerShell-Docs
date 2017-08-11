@@ -382,7 +382,7 @@ If you use the *Module* parameter, without the *FileVersionInfo* parameter, it r
 * You can also refer to this cmdlet by its built-in aliases, ps and gps. For more information, see about_Aliases.
 * On computers that are running a 64-bit version of Windows, the 64-bit version of Windows PowerShell gets only 64-bit process modules and the 32-bit version of Windows PowerShell gets only 32-bit process modules.
 * You can use the properties and methods of the Windows Management Instrumentation (WMI) Win32_Process object in Windows PowerShell. For information, see Get-WmiObject and the WMI SDK.
-* The default display of a process is a table that includes the following columns. For a description of all of the properties of process objects, see Process Propertieshttp://go.microsoft.com/fwlink/?LinkId=204482 at http://go.microsoft.com/fwlink/?LinkId=204482.
+* The default display of a process is a table that includes the following columns. For a description of all of the properties of process objects, see [Process Properties](https://msdn.microsoft.com/library/system.diagnostics.process_properties) in the MSDN library.
 
   - Handles: The number of handles that the process has opened.
 
