@@ -56,16 +56,6 @@ The dot (.) represents the item at the current location (not its contents).
 ```
 PS C:\> Get-Item *
 
-
-
-
-
-
-
-
-
-
-
 Directory: C:\ps-test
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
