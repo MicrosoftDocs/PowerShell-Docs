@@ -42,7 +42,7 @@ Windows 7 SP1 | Click left lower corner Windows icon, on the search box start ty
 ### For ISE
 
 Version | Location
--- | -- | --
+-- | --
 Windows 10 | Click left lower corner Windows icon, start typing ISE
 Windows 8.1, 8.0 | On the start screen, type **PowerShell ISE**.<br/>If on desktop, click left lower corner Windows icon, type **PowerShell ISE**
 Windows 7 SP1 | Click left lower corner Windows icon, on the search box start typing PowerShell
