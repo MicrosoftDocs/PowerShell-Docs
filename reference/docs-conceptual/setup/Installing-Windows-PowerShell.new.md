@@ -106,4 +106,3 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 - [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 - [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
-- [Finding PowerShell in Windows Server editions](Finding-PowerShell-in-Windows-Server-editions.md)
