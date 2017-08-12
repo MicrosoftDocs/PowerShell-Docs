@@ -233,11 +233,11 @@ Specifies a hashtable that contains mappings that let you customize the generate
 In this hashtable, the resource collection name is the key.
 The desired cmdlet noun is the value.
 
-For example, in the hash table @{Products = 'Merchandise'}, **Products** is the resource collection name that serves as the key.
+For example, in the hash table `@{Products = 'Merchandise'}`, **Products** is the resource collection name that serves as the key.
 **Merchandise** is the resulting cmdlet noun.
-The generated cmdlet names might not align to Windows PowerShellcmdlet naming guidelines.
+The generated cmdlet names might not align to Windows PowerShell cmdlet naming guidelines.
 You can modify the resource CDXML file to change the cmdlet names after this cmdlet creates the module.
-For more information, see Strongly Encouraged Development Guidelineshttp://msdn.microsoft.com/library/dd878270(v=vs.85).aspx (http://msdn.microsoft.com/library/dd878270(v=vs.85).aspx) in the Microsoft Developer Network library.
+For more information, see [Strongly Encouraged Development Guidelines](https://msdn.microsoft.com/library/dd878270) in the MSDN library.
 
 ```yaml
 Type: Hashtable
