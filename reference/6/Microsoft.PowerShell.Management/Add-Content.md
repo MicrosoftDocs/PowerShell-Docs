@@ -100,18 +100,18 @@ Specifies the encoding that this cmdlet applies to the content.
 
 The acceptable values for this parameter are:
 
-- Unknown: The encoding type is unknown or invalid. The data can be treated as binary.
-- String: Uses the encoding type for a string.
-- Unicode: Encodes in UTF-16 format using the little-endian byte order.
-- Byte: Encodes a set of characters into a sequence of bytes.
-- BigEndianUnicode: Encodes in UTF-16 format using the little-endian byte order.
-- UTF8: Encodes in UTF-8 format.
-- UTF7: Encodes in UTF-7 format.
-- UTF32: Encodes in UTF-32 format.
 - Ascii: Uses the encoding for the ASCII (7-bit) character set.
+- BigEndianUnicode: Encodes in UTF-16 format using the little-endian byte order.
+- BigEndianUTF32: Encodes in UTF-16 format using the big-endian byte order.
+- Byte: Encodes a set of characters into a sequence of bytes.
 - Default: Uses the default encoding defined by the underlying .NET system.
 - Oem
-- BigEndianUTF32: Encodes in UTF-16 format using the big-endian byte order.
+- String: Uses the encoding type for a string.
+- Unicode: Encodes in UTF-16 format using the little-endian byte order.
+- Unknown: The encoding type is unknown or invalid. The data can be treated as binary.
+- UTF32: Encodes in UTF-32 format.
+- UTF7: Encodes in UTF-7 format.
+- UTF8: Encodes in UTF-8 format.
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
