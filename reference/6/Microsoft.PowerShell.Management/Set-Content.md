@@ -78,6 +78,8 @@ Another pipeline operator sends the changed content to `Set-Content` which repla
 The parentheses around `Get-Content` make sure that the Get operation is complete before the Set operation starts.
 Without them, the command fails because the two functions will be trying to access the same file.
 
+### Example 4: Set the content of a file using UTF-8 encoding
+
 ```powershell
 Get-Content test.xml | Set-Content final.xml -Force -Encoding UTF8
 ```
