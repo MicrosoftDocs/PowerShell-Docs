@@ -377,8 +377,8 @@ You can pipe any object to **Select-Object**.
 ### System.Management.Automation.PSObject
 
 ## NOTES
-* You can also refer to the **Select-Object** cmdlet by its built-in alias, **select**. For more information, see about_Aliases.
-* The optimization feature of **Select-Object** is available only for commands that write objects to the pipeline as they are processed. It has no effect on commands that buffer processed objects and write them as a collection. Writing objects immediately is a cmdlet design best practice. For more information, see Write Single Records to the Pipeline in Strongly Encouraged Development Guidelines at http://go.microsoft.com/fwlink/?LinkId=223385http://go.microsoft.com/fwlink/?LinkId=223385
+* You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`. For more information, see about_Aliases.
+* The optimization feature of `Select-Object` is available only for commands that write objects to the pipeline as they are processed. It has no effect on commands that buffer processed objects and write them as a collection. Writing objects immediately is a cmdlet design best practice. For more information, see Write Single Records to the Pipeline in [Strongly Encouraged Development Guidelines](https://msdn.microsoft.com/library/dd878270) in the MSDN library.
 
 ## RELATED LINKS
 
