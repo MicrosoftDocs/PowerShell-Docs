@@ -64,7 +64,7 @@ The following table identifies some common problems that users might experience 
 </tr>
 <tr class="even">
 <td><p>Cannot find Web Server (IIS) management tools, even though the role was installed</p></td>
-<td><p>If you installed Windows PowerShell Web Access by using the <span class="code">Install-WindowsFeature</span> cmdlet, management tools are not installed unless the <span class="code">IncludeManagementTools</span> parameter is added to the cmdlet. For an example, see “To install Windows PowerShell Web Access by using Windows PowerShell cmdlets” in <a href="https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx">Install and Use Windows PowerShell Web Access</a>. You can add the IIS Manager console and other IIS management tools that you need by selecting the tools in an Add Roles and Features Wizard session that is targeted at the gateway server. The Add Roles and Features Wizard is opened from within Server Manager.</p></td>
+<td><p>If you installed Windows PowerShell Web Access by using the `Install-WindowsFeature` cmdlet, management tools are not installed unless the `IncludeManagementTools` parameter is added to the cmdlet. For an example, see “To install Windows PowerShell Web Access by using Windows PowerShell cmdlets” in <a href="https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx">Install and Use Windows PowerShell Web Access</a>. You can add the IIS Manager console and other IIS management tools that you need by selecting the tools in an Add Roles and Features Wizard session that is targeted at the gateway server. The Add Roles and Features Wizard is opened from within Server Manager.</p></td>
 </tr>
 <tr class="odd">
 <td><p>The Windows PowerShell Web Access website is not accessible</p></td>
