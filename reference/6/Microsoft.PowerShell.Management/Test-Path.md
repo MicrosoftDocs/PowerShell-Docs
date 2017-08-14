@@ -18,17 +18,15 @@ Determines whether all elements of a path exist.
 ### Path (Default)
 ```
 Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [-OlderThan <DateTime>] [-NewerThan <DateTime>]
- [<CommonParameters>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-UseTransaction]
+ [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [-OlderThan <DateTime>] [-NewerThan <DateTime>]
- [<CommonParameters>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-UseTransaction]
+ [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

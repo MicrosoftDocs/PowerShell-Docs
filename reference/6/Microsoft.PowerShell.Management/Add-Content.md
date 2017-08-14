@@ -18,17 +18,15 @@ Appends content, such as adding words or data to a file.
 ### Path (Default)
 ```
 Add-Content [-Value] <Object[]> [-PassThru] [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Add-Content [-Value] <Object[]> [-PassThru] -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

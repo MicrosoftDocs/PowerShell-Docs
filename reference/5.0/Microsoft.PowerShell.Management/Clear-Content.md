@@ -29,42 +29,78 @@ Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [
 
 ## DESCRIPTION
 The **Clear-Content** cmdlet deletes the contents of an item, such as deleting the text from a file, but it does not delete the item.
-As a result, the item exists, but it is empty.
-The **Clear-Content** is similar to Clear-Item, but it works on items with contents, instead of items with values.
+As a result, the item continues to exist, but it is empty.
+**Clear-Content** is similar to `Clear-Item`, but it works on items with contents, instead of items with values.
 
 ## EXAMPLES
 
-### Example 1: Delete all content from a directory
-```
-PS C:\> Clear-Content "..\SmpUsers\*\init.txt"
+### Example 1: Delete all content from a text file
+```powershell
+Clear-Content "..\SmpUsers\*\init.txt"
 ```
 
-This command deletes all of the content from the "init.txt" files in all subdirectories of the SmpUsers directory.
+This command deletes all of the content from the `init.txt` files in all subdirectories of the `SmpUsers` directory.
 The files are not deleted, but they are empty.
 
 ### Example 2: Delete content of all files with a wildcard
-```
-PS C:\> Clear-Content -Path "*" -Filter "*.log" -Force
+```powershell
+Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
-This command deletes the contents of all files in the current directory with the ".log" file name extension, including files with the read-only attribute.
+This command deletes the contents of all files in the current directory with the `.log` file name extension, including files with the read-only attribute.
 The asterisk (*) in the path represents all items in the current directory.
-The *Force* parameter makes the command effective on read-only files.
-Using a filter to restrict the command to files with the .log file name extension instead of specifying *.log in the path makes the operation faster.
+The `-Force` parameter makes the command effective on read-only files.
+Using a filter to restrict the command to files with the `.log` file name extension instead of specifying `*.log` in the path makes the operation faster.
+
+### Example 3: Clear a data scream without deleting it
+
+```  
+C:\PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+[ZoneTransfer]
+ZoneId=3
+
+C:\PS>Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+C:\PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+C:\PS>
+```
+
+This example shows how **Clear-Content** clears the content from an alternate data stream while leaving the stream intact.
+
+The first command uses the `Get-Content` cmdlet to get the content of the `Zone.Identifier` stream in the `Copy-Script.ps1` file, which was downloaded from the internet.
+
+The second command uses the **Clear-Content** cmdlet to clear the content.
+
+The third command repeats the first command.
+It verifies that the content is cleared, but the stream remains.
+If the stream were deleted, the command would generate an error.
+
+You can use a method like this one to clear the content of an alternate data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the internet.
+If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Stream
+Deletes the content in the specified alternate data stream, but does not delete the alternate data stream.
+Enter the stream name. Wildcards are not supported.
+
+You can use **Clear-Content** to clear the content of an alternate data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
+
+This parameter only works in the FileSystem provider.
+This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases: 
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -92,7 +128,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 Specifies, as a string array, strings that this cmdlet omits from the path to the content.
-The value of this parameter qualifies the *Path* parameter.
+The value of this parameter qualifies the `-Path` parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
@@ -110,7 +146,7 @@ Accept wildcard characters: False
 
 ### -Filter
 Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the *Path* parameter.
+The value of this parameter qualifies the `-Path` parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
 Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
 
@@ -143,7 +179,7 @@ Accept wildcard characters: False
 
 ### -Include
 Specifies, as a string array, content that this cmdlet clears.
-The value of this parameter qualifies the *Path* parameter.
+The value of this parameter qualifies the `-Path` parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
@@ -161,7 +197,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the paths to the items from which content is deleted.
-Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
+Unlike the `-Path` parameter, the value of `-LiteralPath` is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell having Windows PowerShell not to interpret any characters as escape sequences.
@@ -192,49 +228,19 @@ Parameter Sets: Path
 Aliases: 
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Stream
-Specifies an alternative data stream for content.
-If the stream does not exist, this cmdlet creates it.
-Wildcard characters are not supported.
-
-Stream is a dynamic parameter that the FileSystem provider adds to **Clear-Content**.
-This parameter works only in file system drives.
-
-You can use the **Clear-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
-However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: usetx
+Aliases: cf
 
 Required: False
 Position: Named
@@ -259,6 +265,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UseTransaction
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see about_Transactions.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -273,20 +296,17 @@ You cannot pipe objects to **Clear-Content**.
 This cmdlet does not return any objects.
 
 ## NOTES
-* You can also refer to **Clear-Content** by its built-in alias, "clc". For more information, see about_Aliases.
+You can also refer to **Clear-Content** by its built-in alias, "clc". For more information, see about_Aliases.
 
-  If you omit the *Path* parameter name, the value of the *Path* parameter must be the first parameter in the command.
+If you omit the `-Path` parameter name, the value of the `-Path` parameter must be the first parameter in the command.
 For instance, `Clear-Content c:\mydir\*.txt`.
 If you include the parameter name, you can list the parameters in any order.
 
-  You can use **Clear-Content** with the Windows PowerShell FileSystem provider and with other providers that manipulate content.
-To clear items that are not considered to be content, such as items managed by the Windows PowerShell Certificate or Registry providers, use Clear-Item.
+You can use **Clear-Content** with the FileSystem provider and with other providers that manipulate content.
+To clear items that are not considered to be content, such as items managed by the Certificate or Registry providers, use `Clear-Item`.
 
-  The **Clear-Content** cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PsProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 
