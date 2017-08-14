@@ -109,7 +109,7 @@ These commands both require
 Most of the other options in the command line should be in the manifest data for the item you are publishing, so you should not need to specify them in the command. 
 
 To avoid errors, it is strongly recommended that you try the commands using -Whatif -Verbose, before publishing. 
-This will seave considerable time, since every time you publish to the PowerShell Gallery, you must update the version number in the manifest section of the item. 
+This will save considerable time, since every time you publish to the PowerShell Gallery, you must update the version number in the manifest section of the item. 
 
 Examples would be:
 'Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose'
