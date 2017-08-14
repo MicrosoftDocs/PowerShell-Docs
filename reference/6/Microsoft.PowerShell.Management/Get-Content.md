@@ -18,8 +18,7 @@ Gets the content of an item at a specified location.
 ### Path (Default)
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]> [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction]
+ [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
  [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
  [<CommonParameters>]
 ```
@@ -28,9 +27,8 @@ Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
- [<CommonParameters>]
+ [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

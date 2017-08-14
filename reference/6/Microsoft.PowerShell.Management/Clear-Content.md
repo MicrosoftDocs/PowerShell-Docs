@@ -18,15 +18,13 @@ Deletes the contents of an item, but does not delete the item.
 ### Path (Default)
 ```
 Clear-Content [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [-UseTransaction] [-Stream <String>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Clear-Content -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [-UseTransaction] [-Stream <String>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
