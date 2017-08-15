@@ -439,13 +439,13 @@ You can pipe job objects to **Receive-Job**.
 
 [Wait-Job](Wait-Job.md)
 
-[about_Jobs](about_Jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
-[about_Job_Details](about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Remote_Variables](about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](about_Scopes.md)
+[about_Scopes](About/about_scopes.md)
 

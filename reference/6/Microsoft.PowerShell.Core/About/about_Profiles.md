@@ -201,7 +201,7 @@ that you run affect only the current session. When you end the session,
 the items are deleted.
 
 The session-specific commands and items include variables, preference
-variables, aliases, functions, commands (except for [Set-ExecutionPolicy](../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)),
+variables, aliases, functions, commands (except for [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)),
 and Windows PowerShell snap-ins that you add to the session.
 
 To save these items and make them available in all future sessions, add
@@ -323,7 +323,7 @@ Windows PowerShell profiles are not run automatically in remote sessions,
 so the commands that the profiles add are not present in the remote session.
 In addition, the `$Profile` automatic variable is not populated in remote sessions.
 
-To run a profile in a session, use the [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md) cmdlet.
+To run a profile in a session, use the [Invoke-Command](../Invoke-Command.md) cmdlet.
 
 For example, the following command runs the "Current user, Current Host" profile from
 the local computer in the session in $s.
@@ -357,4 +357,4 @@ are available in $s.
 
 [about_Remote](about_Remote.md)
 
-[Set-ExecutionPolicy](../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)

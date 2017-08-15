@@ -202,6 +202,6 @@ This cmdlet does not return any output.
 
 [New-PSDrive](New-PSDrive.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 

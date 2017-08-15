@@ -182,9 +182,9 @@ However, it runs the workflow, which might generate output.
 
 [New-PSWorkflowSession](../PSWorkflow/New-PSWorkflowSession.md)
 
-[about_Workflows](../PSWorkflow/about_Workflows.md)
+[about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
-[about_Workflow_Common_Parameters](../psworkflow/about_workflowcommonparameters.md)
+[about_Workflow_Common_Parameters](../PSWorkflow/About/about_WorkflowCommonParameters.md)
 
 [Windows PowerShell Workflow Module](../PSWorkflow/PSWorkflow.md)
 

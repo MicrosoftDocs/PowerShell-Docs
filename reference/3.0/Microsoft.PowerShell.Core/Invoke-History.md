@@ -139,5 +139,5 @@ For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=
 
 [Get-History](Get-History.md)
 
-[about_History](about_History.md)
+[about_History](About/about_History.md)
 

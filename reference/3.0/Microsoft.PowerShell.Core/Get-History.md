@@ -128,5 +128,5 @@ Get-History returns a history object for each history item that it gets.
 
 [Invoke-History](Invoke-History.md)
 
-[about_History](about_History.md)
+[about_History](About/about_History.md)
 

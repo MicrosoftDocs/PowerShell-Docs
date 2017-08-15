@@ -402,11 +402,11 @@ If the wait ends because the value of the Timeout parameter is exceeded, Wait-Jo
 
 [Suspend-Job](Suspend-Job.md)
 
-[about_Jobs](about_jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
-[about_Job_Details](about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Remote_Variables](about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 

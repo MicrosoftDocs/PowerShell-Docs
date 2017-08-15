@@ -114,5 +114,5 @@ Get-PSProvider returns objects that represent the Windows PowerShell providers i
 
 ## RELATED LINKS
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

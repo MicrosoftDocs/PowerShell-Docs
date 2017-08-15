@@ -146,11 +146,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_CommonParameters](../about_commonparameters.md)
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
-[about_Preference_Variables](../about_preference_variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
-[about_Redirection](../about_redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 

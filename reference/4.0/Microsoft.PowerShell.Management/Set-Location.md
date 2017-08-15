@@ -217,5 +217,5 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 
 [Push-Location](Push-Location.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
