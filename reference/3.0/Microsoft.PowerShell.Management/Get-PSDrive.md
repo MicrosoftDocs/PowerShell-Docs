@@ -314,5 +314,5 @@ You cannot pipe objects to **Get-PSDrive**.
 
 [Remove-PSDrive](Remove-PSDrive.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

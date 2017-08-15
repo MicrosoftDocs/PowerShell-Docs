@@ -18,9 +18,9 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
 
 ## Description  
- In file system drives, the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
+ In file system drives, the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.  
 
- Note: This custom cmdlet help file explains how the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet works in a file system drive. For information about the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet in all drives, type "[Get-Help](../Get-Help.md)[Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) -Path $null" or see [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113392.  
+ Note: This custom cmdlet help file explains how the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet works in a file system drive. For information about the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) -Path $null" or see [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113392.  
 
 ## Parameters  
 
@@ -45,7 +45,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 
  -- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
 
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
 
 |||  
 |-|-|  
@@ -67,11 +67,11 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### -Stream <string\>  
- Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
+ Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
 
- Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.  
 
- You can use the [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
+ You can use the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet to change the content of the Zone.Identifier alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.  
 
  This parameter is introduced in Windows PowerShell 3.0.  
 
@@ -106,7 +106,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### -UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../about_transactions.md).  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).  
 
 |||  
 |-|-|  
@@ -117,7 +117,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../about_commonparameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -183,12 +183,12 @@ The command uses the Force parameter so that the command is successful even if t
 
 ## See Also  
  [FileSystem Provider](../FileSystem-Provider.md)   
- [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md)   
- [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)   
- [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
- [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md)   
- [Test-Path](../Microsoft.PowerShell.Management/Test-Path.md)
+ [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
+ [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
 

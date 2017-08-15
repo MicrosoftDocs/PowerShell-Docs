@@ -385,5 +385,5 @@ Set-PSBreakpoint returns an object that represents each breakpoint that it sets.
 
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[about_Debuggers](../microsoft.powershell.core/about_debuggers.md)
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 

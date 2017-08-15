@@ -172,5 +172,5 @@ Use-Transaction returns the result of the transaction.
 
 [Undo-Transaction](Undo-Transaction.md)
 
-[about_Transactions](../Microsoft.PowerShell.Core/about_Transactions.md)
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 

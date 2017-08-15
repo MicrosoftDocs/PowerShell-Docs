@@ -416,7 +416,7 @@ User="Domain1\User01 (or any valid user; used only with the AtLogon frequency va
 }
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

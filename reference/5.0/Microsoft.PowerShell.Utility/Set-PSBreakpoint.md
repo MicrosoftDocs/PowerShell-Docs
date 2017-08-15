@@ -382,5 +382,5 @@ You cannot pipe input to **Set-PSBreakpoint**.
 
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
-[about_Debuggers](../Microsoft.PowerShell.Core/about_Debuggers.md)
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 

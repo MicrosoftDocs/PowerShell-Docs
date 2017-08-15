@@ -20,11 +20,11 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
 ## DETAILED DESCRIPTION  
  The Windows PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. It also lets you open the Certificates snap-in for the Microsoft Management Console (MMC).  
 
- NOTE: Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](Certificate-Provider.md) is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.  
+ NOTE: Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](Certificate-Provider.md) is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.  
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by adding support for cmdlets and new dynamic parameters that create and delete certificate stores in the LocalMachine certificate store location, and find, move, and delete certificates.  
 
- New dynamic parameters, DnsName, EKU, SSLServerAuthentication, and ExpiringInDays have been added to the [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet in the Cert: drive. Also, a DeleteKey dynamic parameter has been added to [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md) in the Cert: drive. The new dynamic parameters are available in the Windows PowerShell 3.0 and newer Windows PowerShell releases, and work with IIS 8.0, available on Windows Server 2012 and later releases of the Windows Server operating system.  
+ New dynamic parameters, DnsName, EKU, SSLServerAuthentication, and ExpiringInDays have been added to the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet in the Cert: drive. Also, a DeleteKey dynamic parameter has been added to [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) in the Cert: drive. The new dynamic parameters are available in the Windows PowerShell 3.0 and newer Windows PowerShell releases, and work with IIS 8.0, available on Windows Server 2012 and later releases of the Windows Server operating system.  
 
  New script properties, DnsNameList, EnhancedKeyUsageList, and SendAsTrustedIssuer, have been added to the x509Certificate2 object that represents the certificates to make it easy to search and manage the certificates.  
 
@@ -44,11 +44,11 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
 
  -- X.509 certificates (System.Security.Cryptography.X509Certificates.X509Certificate2), each of which represent an X.509 certificate on the computer. Certificates are identified by their thumbprints.  
 
- In Windows PowerShell 3.0, the Certificate provider supports the [Get-Location](../Microsoft.PowerShell.Management/Get-Location.md), [Set-Location](../Microsoft.PowerShell.Management/Set-Location.md), [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md), [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md), [Move-Item](../Microsoft.PowerShell.Management/Move-Item.md), [New-Item](../Microsoft.PowerShell.Management/New-Item.md), and [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md) cmdlets.  
+ In Windows PowerShell 3.0, the Certificate provider supports the [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md), [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md), [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md), [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md), [New-Item](../../Microsoft.PowerShell.Management/New-Item.md), and [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) cmdlets.  
 
- In Windows PowerShell 2.0, the Certificate provider supports the [Get-Location](../Microsoft.PowerShell.Management/Get-Location.md), [Set-Location](../Microsoft.PowerShell.Management/Set-Location.md), [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md), [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), and [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlets.  
+ In Windows PowerShell 2.0, the Certificate provider supports the [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md), [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md), [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlets.  
 
- In addition, Windows PowerShell Security module (Microsoft.PowerShell.Security), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get-Command](../Microsoft.PowerShell.Core/Get-Command.md) -module *security".  
+ In addition, Windows PowerShell Security module (Microsoft.PowerShell.Security), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) -module *security".  
 
 ## CAPABILITIES  
  ShouldProcess  
@@ -341,9 +341,9 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)  
+-   [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)  
 
--   [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
 ### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>  
  Gets certificates that have the specified domain name or name pattern in the DNSNameList property of the certificate.  
@@ -356,7 +356,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
 ### EKU <System.String>  
  Gets certificates that have the specified text or text pattern in the EnhancedKeyUsageList property of the certificate. Wildcard characters (*) are permitted. The EnhancedKeyUsageList property contains the friendly name and the OID fields of the EKU.  
@@ -369,7 +369,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
 ### ExpiringInDays <System.Int32>  
  Gets certificates that are expiring in or before the specified number of days. Enter an integer. A value of 0 (zero) gets certificates that have expired.  
@@ -380,7 +380,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
 ### SSLServerAuthentication <System.Management.Automation.SwitchParameter>  
  Gets only server certificates for SSL web hosting. This parameter gets certificates that have "Server Authentication" in their EnhancedKeyUsageList property value.  
@@ -393,12 +393,12 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)  
+-   [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)  
 
 ### DeleteKey <System.Management.Automation.SwitchParameter>  
  Deletes the associated private key when it deletes the certificate.  
 
- To delete a private key that is associated with a user certificate in the Cert:\CurrentUser store on a remote computer, you must use delegated credentials. When using the [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md) cmdlet to run a [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md) command remotely, after considering the security risks, use the CredSSP parameter to enable delegation.  
+ To delete a private key that is associated with a user certificate in the Cert:\CurrentUser store on a remote computer, you must use delegated credentials. When using the [Invoke-Command](../../Microsoft.PowerShell.Core/Invoke-Command.md) cmdlet to run a [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) command remotely, after considering the security risks, use the CredSSP parameter to enable delegation.  
 
  This parameter is valid in all subdirectories of the Certificate provider, but it is effective only on certificates.  
 
@@ -406,11 +406,11 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 
 #### Cmdlets supported:  
 
--   [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)  
+-   [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)  
 
 ## See Also  
- [about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)   
- [about_Signing](../Microsoft.PowerShell.Core/about_Signing.md)   
+ [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
+ [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)   
  [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)   
  [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)   
  [Get-PfxCertificate](../Get-PfxCertificate.md)
