@@ -385,5 +385,5 @@ For more information, see about_Providers.
 
 [Set-Content](Set-Content.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 

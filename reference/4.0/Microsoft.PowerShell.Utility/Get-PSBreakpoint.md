@@ -284,5 +284,5 @@ Get-PSBreakPoint returns objects that represent the breakpoints in the session.
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
-[about_Debuggers](../microsoft.powershell.core/about_debuggers.md)
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
 

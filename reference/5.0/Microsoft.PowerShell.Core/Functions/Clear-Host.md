@@ -93,7 +93,7 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 
 ## RELATED LINKS
 
-[Get-Host](../microsoft.powershell.utility/get-host.md)
+[Get-Host](../../Microsoft.PowerShell.Utility/Get-Host.md)
 
 [Out-Host](../out-host.md)
 

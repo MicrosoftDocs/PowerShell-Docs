@@ -18,9 +18,9 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```  
 
 ## Description  
- In file system drives, the [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
+ In file system drives, the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.  
 
- Note: This custom cmdlet help file explains how the [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) cmdlet works in a file system drive. For information about the [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) cmdlet in all drives, type "[Get-Help](../Get-Help.md)[Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) -Path $null" or see [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113278.  
+ Note: This custom cmdlet help file explains how the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet works in a file system drive. For information about the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) -Path $null" or see [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113278.  
 
 ## Parameters  
 
@@ -45,7 +45,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 
  -- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.  
 
- Encoding is a dynamic parameter that the FileSystem provider adds to the [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) cmdlet. This parameter works only in file system drives.  
+ Encoding is a dynamic parameter that the FileSystem provider adds to the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet. This parameter works only in file system drives.  
 
 |||  
 |-|-|  
@@ -67,9 +67,9 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### -Stream <string\>  
- Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
+ Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) creates it. Enter the stream name. Wildcards are not supported.  
 
- Stream is a dynamic parameter that the FileSystem provider adds to the [Add-Content](../Microsoft.PowerShell.Management/Add-Content.md) cmdlet. This parameter works only in file system drives.  
+ Stream is a dynamic parameter that the FileSystem provider adds to the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet. This parameter works only in file system drives.  
 
  This parameter is introduced in Windows PowerShell 3.0.  
 
@@ -104,7 +104,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### -UseTransaction  
- Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../about_transactions.md).  
+ Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).  
 
 |||  
 |-|-|  
@@ -115,7 +115,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../about_commonparameters.md).  
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -194,12 +194,12 @@ The command uses the Force parameter so that the command is successful even if t
 
 ## See Also  
  [FileSystem Provider](../FileSystem-Provider.md)   
- [Clear-Content](../Microsoft.PowerShell.Management/Clear-Content.md)   
- [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)   
- [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)   
- [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
- [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Set-Content](../Microsoft.PowerShell.Management/Set-Content.md)   
- [Test-Path](../Microsoft.PowerShell.Management/Test-Path.md)
+ [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md)   
+ [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)   
+ [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)   
+ [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
 

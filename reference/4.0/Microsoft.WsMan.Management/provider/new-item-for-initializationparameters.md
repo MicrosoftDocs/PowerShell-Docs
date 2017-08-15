@@ -17,9 +17,9 @@ New-Item [-ParamName <string>] [-ParamValue <string>] [-Confirm] [-WhatIf] [<Com
 ```  
   
 ## Description  
- The [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New-Item](../Microsoft.PowerShell.Management/New-Item.md) is used to create files and folders. In the registry, [New-Item](../Microsoft.PowerShell.Management/New-Item.md) creates registry keys and entries.  
+ The [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item. For example, in the file system, [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) is used to create files and folders. In the registry, [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) creates registry keys and entries.  
   
- In the InitializationParameters directory, you can use the [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create and configure Plugin initialization parameters.  
+ In the InitializationParameters directory, you can use the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create and configure Plugin initialization parameters.  
   
 ## Parameters  
   
@@ -68,7 +68,7 @@ New-Item [-ParamName <string>] [-ParamValue <string>] [-Confirm] [-WhatIf] [<Com
 |Accept Wildcard Characters?|false|  
   
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -79,7 +79,7 @@ New-Item [-ParamName <string>] [-ParamValue <string>] [-Confirm] [-WhatIf] [<Com
 |Outputs|Any|  
   
 ## Notes  
- The [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PsProvider". For more information, see About_Providers.  
+ The [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PsProvider". For more information, see About_Providers.  
   
 ## Example 1  
   
@@ -91,13 +91,13 @@ This command creates an Initialization parameter named testparametername in the 
 ```  
   
 ## See Also  
- [about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)   
- [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
- [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md)   
- [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Clear-Item](../Microsoft.PowerShell.Management/Clear-Item.md)   
- [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md)   
- [Rename-Item](../Microsoft.PowerShell.Management/Rename-Item.md)   
- [Move-Item](../Microsoft.PowerShell.Management/Move-Item.md)   
- [Copy-Item](../Microsoft.PowerShell.Management/Copy-Item.md)
+ [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
+ [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)   
+ [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)   
+ [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)   
+ [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)   
+ [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
+ [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
 
