@@ -315,7 +315,7 @@ You can pipe the objects to be sorted to **Sort-Object**.
 * If an object does not have one of the specified properties, the property value for that object is interpreted by the cmdlet as Null and is placed at the end of the sort order.
 * When sorting objects, **Sort-Object** uses the Compare method for each property. If a property does not implement IComparable, the cmdlet converts the property value to a string and uses the Compare method for **System.String**.
 * The **Sort-Object** cmdlet sorts objects in ascending or descending order based on the values of properties of the object.
-* If you sort on a property whose value is an enumeration, **Sort-Object** sorts the enumeration values in numeric order; it does not sort the enumeration member names. For example, if you sort services by status, services with a status of Stopped appear before services with a status of Running, because the value of Status is a ServiceControllerStatushttps://msdn.microsoft.com/en-us/library/system.serviceprocess.servicecontrollerstatus(v=vs.110).aspx enumeration, in which Stopped has a value of 1 and Running has a value of 4.
+* If you sort on a property whose value is an enumeration, **Sort-Object** sorts the enumeration values in numeric order; it does not sort the enumeration member names. For example, if you sort services by status, services with a status of Stopped appear before services with a status of Running, because the value of Status is a [ServiceControllerStatus Enumeration](https://msdn.microsoft.com/library/system.serviceprocess.servicecontrollerstatus), in which Stopped has a value of 1 and Running has a value of 4.
 
 ## RELATED LINKS
 
