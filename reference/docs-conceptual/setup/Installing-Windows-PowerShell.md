@@ -102,6 +102,11 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
   >>
   >> If the original version of Windows 10 is not updated through Windows Updates, the version of PowerShell is 5.0.
 
+## Need Azure PowerShell instead?
+
+If you're looking for **Azure PowerShell**,
+you should read [Install and configure Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
+
 ## See Also
 
 - [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
