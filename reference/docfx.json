@@ -3,7 +3,7 @@
     "content": [
       {
         "files": [
-          "toc.yml"
+          "bread/toc.yml"
         ],
         "src": "powershell-3.0/docs-conceptual",
         "version":"powershell-3.0",
@@ -223,21 +223,21 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-     "breadcrumb_path": "/powershell/bread/toc.json",
+      "breadcrumb_path": "/powershell/bread/toc.json",
       "showPowerShellPicker": "true",
-     "apiPlatform": "powershell",
+      "apiPlatform": "powershell",
       "ms.devlang": "powershell",
-       "ROBOTS": "INDEX, FOLLOW",
-            "ms.prod": "powershell",
-            "ms.technology": "powershell",
-            "ms.topic": "reference",
-            "manager": "carmonm",
-            "ms.tgt_pltfr": "windows, macos, linux",
-            "author": "juanpablojofre",
-            "ms.author": "jpjofre"
+      "ROBOTS": "INDEX, FOLLOW",
+      "ms.prod": "powershell",
+      "ms.technology": "powershell",
+      "ms.topic": "reference",
+      "manager": "carmonm",
+      "ms.tgt_pltfr": "windows, macos, linux",
+      "author": "juanpablojofre",
+      "ms.author": "jpjofre"
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "Powershell/reference"
+    "dest": "pscore-reference"
   }
 }
