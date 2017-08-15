@@ -7,7 +7,6 @@
 ## [Setup](setup/setup-reference.md)
 ### [PowerShell System Requirements](setup/Windows-PowerShell-System-Requirements.md)
 ### [Installing  PowerShell](setup/Installing-Windows-PowerShell.md)
-### [Installing  PowerShell New](setup/Installing-Windows-PowerShell-new.md)
 ### [Starting PowerShell](setup/Starting-Windows-PowerShell.md)
 #### [Starting the 32-Bit Version of PowerShell](setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 #### [Starting PowerShell on Earlier Versions of Windows](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
