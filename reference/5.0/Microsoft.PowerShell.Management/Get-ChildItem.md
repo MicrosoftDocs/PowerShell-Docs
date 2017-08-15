@@ -111,7 +111,7 @@ The `-Recurse` parameter requests a recursive search.
 The `-CodeSigningCert` parameter is a dynamic parameter that the Certificate provider adds to the `Get-ChildItem` cmdlet.
 This parameter gets only certificates that have code-signing authority.
 
-For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](Microsoft.Powershell.Security/Providers/Certificate-Provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
+For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../Microsoft.Powershell.Security/Providers/Certificate-Provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
 ### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
 ```powershell
