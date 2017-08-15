@@ -2,7 +2,7 @@
     "powershell-3.0": {
         "conceptualToc": "docs-conceptual/TOC.md",
         "conceptualTocUrl": "/powershell/scripting/powershell-3.0/toc.json",
-        "referenceTocUrl": "/powershell/module/powershell-3.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "packageRoot": "3.0",
         "modules": {
             "ISE": {},
@@ -22,7 +22,7 @@
         "conceptualToc": "docs-conceptual/TOC.md",
         "packageRoot": "4.0",
         "conceptualTocUrl": "/powershell/scripting/powershell-4.0/toc.json",
-        "referenceTocUrl": "/powershell/module/powershell-4.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "modules": {
             "ISE": {},
             "Microsoft.PowerShell.Core": {},
@@ -42,7 +42,7 @@
         "conceptualToc": "docs-conceptual/TOC.md",
         "packageRoot": "5.0",
         "conceptualTocUrl": "/powershell/scripting/powershell-5.0/toc.json",
-        "referenceTocUrl": "/powershell/module/powershell-5.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "modules": {
             "ISE": {},
             "Microsoft.PowerShell.Archive": {},
@@ -67,7 +67,7 @@
         "conceptualToc": "docs-conceptual/TOC.md",
         "packageRoot": "5.1",
         "conceptualTocUrl": "/powershell/scripting/powershell-5.1/toc.json",
-        "referenceTocUrl": "/powershell/module/powershell-5.1/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "modules": {
             "ISE": {},
             "Microsoft.PowerShell.Archive": {},
@@ -94,7 +94,7 @@
         "conceptualToc": "docs-conceptual/TOC.md",
         "packageRoot": "6",
         "conceptualTocUrl": "/powershell/scripting/powershell-6/toc.json",
-        "referenceTocUrl": "/powershell/module/powershell-6/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "modules": {
             "CimCmdlets": {},
             "Microsoft.PowerShell.Archive": {},
