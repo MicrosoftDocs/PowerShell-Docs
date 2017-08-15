@@ -334,7 +334,7 @@ If a property does not implement IComparable, the cmdlet converts the property v
   The Sort-Object cmdlet sorts objects in ascending or descending order based on the values of properties of the object.
 
   If you sort on a property whose value is an enumeration, Sort-Object sorts the enumeration values in numeric order; it does not sort the enumeration member names.
-For example, if you sort services by status, services with a status of "Stopped" appear before services with a status of "Running", because the value of Status is a ServiceControllerStatus enumeration, in which "Stopped" has a value of 1 and "Running" has a value of 4.
+For example, if you sort services by status, services with a status of "Stopped" appear before services with a status of "Running", because the value of Status is a [ServiceControllerStatus Enumeration](https://msdn.microsoft.com/library/system.serviceprocess.servicecontrollerstatus), in which "Stopped" has a value of 1 and "Running" has a value of 4.
 
 *
 

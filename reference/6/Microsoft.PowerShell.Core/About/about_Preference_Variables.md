@@ -27,38 +27,38 @@ behavior for a specific command.
 The following table lists the preference variables and their default
 values.
 
-Variable                             Default Value
---------                             -------------
-$ConfirmPreference                   High
-$DebugPreference                     SilentlyContinue
-$ErrorActionPreference               Continue
-$ErrorView                           NormalView
-$FormatEnumerationLimit              4
-$InformationPreference               SilentlyContinue
-$LogCommandHealthEvent               False (not logged)
-$LogCommandLifecycleEvent            False (not logged)
-$LogEngineHealthEvent                True (logged)
-$LogEngineLifecycleEvent             True (logged)
-$LogProviderLifecycleEvent           True (logged)
-$LogProviderHealthEvent              True (logged)
-$MaximumAliasCount                   4096
-$MaximumDriveCount                   4096
-$MaximumErrorCount                   256
-$MaximumFunctionCount                4096
-$MaximumHistoryCount                 4096
-$MaximumVariableCount                4096
-$OFS                                 (Space character (" "))
-$OutputEncoding                      ASCIIEncoding object
-$ProgressPreference                  Continue
-$PSDefaultParameterValues            (None - empty hash table)
-$PSEmailServer                       (None)
-$PSModuleAutoLoadingPreference       All
-$PSSessionApplicationName            WSMAN
-$PSSessionConfigurationName          http://schemas.microsoft.com/PowerShell/microsoft.PowerShell
-$PSSessionOption                     (See below)
-$VerbosePreference                   SilentlyContinue
-$WarningPreference                   Continue
-$WhatIfPreference                    0
+|Variable                              |Default Value                                                 |
+|--------------------------------------|--------------------------------------------------------------|
+| $ConfirmPreference                   | High                                                         |
+| $DebugPreference                     | SilentlyContinue                                             |
+| $ErrorActionPreference               | Continue                                                     |
+| $ErrorView                           | NormalView                                                   |
+| $FormatEnumerationLimit              | 4                                                            |
+| $InformationPreference               | SilentlyContinue                                             |
+| $LogCommandHealthEvent               | False (not logged)                                           |
+| $LogCommandLifecycleEvent            | False (not logged)                                           |
+| $LogEngineHealthEvent                | True (logged)                                                |
+| $LogEngineLifecycleEvent             | True (logged)                                                |
+| $LogProviderLifecycleEvent           | True (logged)                                                |
+| $LogProviderHealthEvent              | True (logged)                                                |
+| $MaximumAliasCount                   | 4096                                                         |
+| $MaximumDriveCount                   | 4096                                                         |
+| $MaximumErrorCount                   | 256                                                          |
+| $MaximumFunctionCount                | 4096                                                         |
+| $MaximumHistoryCount                 | 4096                                                         |
+| $MaximumVariableCount                | 4096                                                         |
+| $OFS                                 | (Space character (" "))                                      |
+| $OutputEncoding                      | ASCIIEncoding object                                         |
+| $ProgressPreference                  | Continue                                                     |
+| $PSDefaultParameterValues            | (None - empty hash table)                                    |
+| $PSEmailServer                       | (None)                                                       |
+| $PSModuleAutoLoadingPreference       | All                                                          |
+| $PSSessionApplicationName            | WSMAN                                                        |
+| $PSSessionConfigurationName          | http://schemas.microsoft.com/PowerShell/microsoft.PowerShell |
+| $PSSessionOption                     | (See below)                                                  |
+| $VerbosePreference                   | SilentlyContinue                                             |
+| $WarningPreference                   | Continue                                                     |
+| $WhatIfPreference                    | 0                                                            |
 
 Windows PowerShell also includes the following environment variables that
 store user preferences. For more information about these environment
@@ -1069,28 +1069,30 @@ session.
 By default, the $PSSessionOption variable contains a PSSessionOption
 object with the default values for all options, as shown below.
 
-MaximumConnectionRedirectionCount : 5
-NoCompression                     : False
-NoMachineProfile                  : False
-ProxyAccessType                   : None
-ProxyAuthentication               : Negotiate
-ProxyCredential                   :
-SkipCACheck                       : False
-SkipCNCheck                       : False
-SkipRevocationCheck               : False
-OperationTimeout                  : 00:03:00
-NoEncryption                      : False
-UseUTF16                          : False
-IncludePortInSPN                  : False
-OutputBufferingMode               : None
-Culture                           :
-UICulture                         :
-MaximumReceivedDataSizePerCommand :
-MaximumReceivedObjectSize         : 209715200
-ApplicationArguments              :
-OpenTimeout                       : 00:03:00
-CancelTimeout                     : 00:01:00
-IdleTimeout                       : -00:00:00.0010000
+| Property                          | Value             |
+|-----------------------------------|-------------------|
+| MaximumConnectionRedirectionCount | 5                 |
+| NoCompression                     | False             |
+| NoMachineProfile                  | False             |
+| ProxyAccessType                   | None              |
+| ProxyAuthentication               | Negotiate         |
+| ProxyCredential                   |                   |
+| SkipCACheck                       | False             |
+| SkipCNCheck                       | False             |
+| SkipRevocationCheck               | False             |
+| OperationTimeout                  | 00:03:00          |
+| NoEncryption                      | False             |
+| UseUTF16                          | False             |
+| IncludePortInSPN                  | False             |
+| OutputBufferingMode               | None              |
+| Culture                           |                   |
+| UICulture                         |                   |
+| MaximumReceivedDataSizePerCommand |                   |
+| MaximumReceivedObjectSize         | 209715200         |
+| ApplicationArguments              |                   |
+| OpenTimeout                       | 00:03:00          |
+| CancelTimeout                     | 00:01:00          |
+| IdleTimeout                       | -00:00:00.0010000 |
 
 For descriptions of these options, see the help topic for the
 New-PSSessionOption cmdlet.
