@@ -223,7 +223,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-     "showPowerShellPicker": "true",
+     "breadcrumb_path": "/powershell/bread/toc.json",
+      "showPowerShellPicker": "true",
      "apiPlatform": "powershell",
       "ms.devlang": "powershell",
        "ROBOTS": "INDEX, FOLLOW",
