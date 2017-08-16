@@ -122,22 +122,14 @@ To override the $ConfirmPreference for a single command, use the Confirm
 parameter of the cmdlet or function. To request confirmation, use -Confirm.
 To suppress confirmation, use -Confirm:$false
 
-Valid values of $ConfirmPreference:
+Valid values of $ConfirmPreference are listed in the table below.
 
-None:    Windows PowerShell does not prompt automatically.
-To request confirmation of a particular command, use
-the Confirm parameter of the cmdlet or function.
-
-Low:     Windows PowerShell prompts for confirmation before
-running cmdlets or functions with a low, medium, or high
-risk.
-
-Medium:  Windows PowerShell prompts for confirmation before
-running cmdlets or functions with a medium, or high
-risk.
-
-High:    Windows PowerShell prompts for confirmation before
-running cmdlets or functions with a high risk.
+| Value  | Description                                                                                                                                             |
+|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| None   | Windows PowerShell does not prompt automatically. To request confirmation of a particular command, use the Confirm parameter of the cmdlet or function. |
+| Low    | Windows PowerShell prompts for confirmation before running cmdlets or functions with a low, medium, or high risk.                                       |
+| Medium | Windows PowerShell prompts for confirmation before running cmdlets or functions with a medium, or high risk.                                            |
+| High   | Windows PowerShell prompts for confirmation before running cmdlets or functions with a high risk.                                                       |
 
 #DETAILED EXPLANATION
 
@@ -1470,4 +1462,3 @@ Verify that the process is stopped.
 [about_Scopes](about_Scopes.md)
 
 [about_Variables](about_Variables.md)
-
