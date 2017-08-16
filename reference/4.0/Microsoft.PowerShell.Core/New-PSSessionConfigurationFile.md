@@ -782,7 +782,7 @@ The changes that you make affect all new sessions that use the session configura
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-[about_Session_Configurations](about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
-[about_Session_Configuration_Files](about_Session_Configuration_Files.md)
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
 

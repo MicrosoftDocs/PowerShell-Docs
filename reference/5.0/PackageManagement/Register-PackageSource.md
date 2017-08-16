@@ -239,7 +239,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_PackageManagement](../Microsoft.PowerShell.Core/about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_packagemanagement.md)
 
 [Get-PackageSource](Get-PackageSource.md)
 

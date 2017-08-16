@@ -75,15 +75,17 @@ in Windows Server 2008 R2 SP1;
 in this case, click the left lower corner Windows icon, 
 type PowerShell ISE.
 
+## How to check the version of PowerShell
+
+To find which version of PowerShell you have installed,
+start a PowerShell console (or the ISE) and type `$PSVersionTable`
+and press **ENTER**.
+
 ## Upgrading existing Windows PowerShell
 
 The installation package for PowerShell comes inside a WMF installer.
 The version of the WMF installer matches the version of PowerShell;
 there's no stand alone installer for Windows PowerShell.
-
-To find which version of PowerShell you have installed,
-start a PowerShell console (or the ISE) and type `$PSVersionTable`
-and press **ENTER**.
 
 If you need to update your existing version of PowerShell,
 in Windows, use the following table to locate the installer for the version

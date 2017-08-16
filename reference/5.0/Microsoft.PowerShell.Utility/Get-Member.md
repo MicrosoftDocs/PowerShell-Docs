@@ -434,11 +434,11 @@ For more information about the $This variable, see about_Automatic_Variables.
 
 [Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
 
-[about_Automatic_Variables](../Microsoft.PowerShell.Core/about_Automatic_Variables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[about_Properties](../Microsoft.PowerShell.Core/about_Properties.md)
+[about_Properties](../Microsoft.PowerShell.Core/About/about_Properties.md)
 
-[about_Methods](../Microsoft.PowerShell.Core/about_Methods.md)
+[about_Methods](../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[about_Objects](../Microsoft.PowerShell.Core/about_Objects.md)
+[about_Objects](../Microsoft.PowerShell.Core/About/about_Objects.md)
 

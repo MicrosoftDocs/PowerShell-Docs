@@ -7,7 +7,7 @@ title:  New-Item for ClientCertificate
 ---
 
 # New-Item for ClientCertificate
-Creates a new item. In this location, the [New-Item](../Microsoft.PowerShell.Management/New-Item.md) command creates a new client certificate.  
+Creates a new item. In this location, the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) command creates a new client certificate.  
   
 ## Syntax  
   
@@ -17,9 +17,9 @@ New-Item -Issuer <string> -Subject <string> -ResourceURI <Uri> -Credential <PSCr
 ```  
   
 ## Description  
- The [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item.  
+ The [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates a new item and sets its value. The types of items that can be created depend upon the location of the item.  
   
- In the ClientCertificate directory, you can use the [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create and configure a client certificate. A client certificate is used when the WS-Management client is configured to use certificate authentication.  
+ In the ClientCertificate directory, you can use the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create and configure a client certificate. A client certificate is used when the WS-Management client is configured to use certificate authentication.  
   
 ## Parameters  
   
@@ -100,7 +100,7 @@ New-Item -Issuer <string> -Subject <string> -ResourceURI <Uri> -Credential <PSCr
 |Accept Wildcard Characters?|false|  
   
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/about_CommonParameters.md).  
+ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).  
   
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -111,7 +111,7 @@ New-Item -Issuer <string> -Subject <string> -ResourceURI <Uri> -Credential <PSCr
 |Outputs|Any|  
   
 ## Notes  
- The [New-Item](../Microsoft.PowerShell.Management/New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PsProvider". For more information, see About_Providers.  
+ The [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PsProvider". For more information, see About_Providers.  
   
 ## Example 1  
   
@@ -124,13 +124,13 @@ This command creates ClientCertificate entry that can be used by the WS-Manageme
 ```  
   
 ## See Also  
- [about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)   
- [Get-Item](../Microsoft.PowerShell.Management/Get-Item.md)   
- [Set-Item](../Microsoft.PowerShell.Management/Set-Item.md)   
- [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)   
- [Clear-Item](../Microsoft.PowerShell.Management/Clear-Item.md)   
- [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md)   
- [Rename-Item](../Microsoft.PowerShell.Management/Rename-Item.md)   
- [Move-Item](../Microsoft.PowerShell.Management/Move-Item.md)   
- [Copy-Item](../Microsoft.PowerShell.Management/Copy-Item.md)
+ [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
+ [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
+ [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)   
+ [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)   
+ [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)   
+ [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)   
+ [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)   
+ [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)   
+ [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
 

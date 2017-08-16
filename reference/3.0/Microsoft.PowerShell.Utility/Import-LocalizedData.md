@@ -301,5 +301,5 @@ Then, when you display a message from the hash table in the variable, the locali
   For more information, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
 ## RELATED LINKS
 
-[about_Script_Internationalization](../Microsoft.PowerShell.Core/about_Script_Internationalization.md)
+[about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
 

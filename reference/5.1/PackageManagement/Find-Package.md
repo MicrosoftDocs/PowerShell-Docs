@@ -570,7 +570,7 @@ This cmdlet does not produce any output.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../Microsoft.PowerShell.Core/about_PackageManagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
 [Get-Package](Get-Package.md)
 
