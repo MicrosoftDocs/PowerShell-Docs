@@ -64,10 +64,10 @@ Windows PowerShell also includes the following environment variables that
 store user preferences. For more information about these environment
 variables, see about_Environment_Variables.
 
-Variable
---------
-PSExecutionPolicyPreference
-PSModulePath
+| Variable                    |
+|-----------------------------|
+| PSExecutionPolicyPreference |
+| PSModulePath                |
 
 #WORKING WITH PREFERENCE VARIABLES
 
