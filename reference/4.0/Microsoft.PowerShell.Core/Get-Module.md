@@ -196,7 +196,7 @@ This command gets the properties of the **PSModuleInfo** object that **Get-Modul
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see "PSModule Properties" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143624http://go.microsoft.com/fwlink/?LinkId=143624.
+For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
