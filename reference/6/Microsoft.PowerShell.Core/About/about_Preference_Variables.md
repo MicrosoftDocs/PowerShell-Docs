@@ -1069,30 +1069,28 @@ session.
 By default, the $PSSessionOption variable contains a PSSessionOption
 object with the default values for all options, as shown below.
 
-| Property                          | Value             |
-|-----------------------------------|-------------------|
-| MaximumConnectionRedirectionCount | 5                 |
-| NoCompression                     | False             |
-| NoMachineProfile                  | False             |
-| ProxyAccessType                   | None              |
-| ProxyAuthentication               | Negotiate         |
-| ProxyCredential                   |                   |
-| SkipCACheck                       | False             |
-| SkipCNCheck                       | False             |
-| SkipRevocationCheck               | False             |
-| OperationTimeout                  | 00:03:00          |
-| NoEncryption                      | False             |
-| UseUTF16                          | False             |
-| IncludePortInSPN                  | False             |
-| OutputBufferingMode               | None              |
-| Culture                           |                   |
-| UICulture                         |                   |
-| MaximumReceivedDataSizePerCommand |                   |
-| MaximumReceivedObjectSize         | 209715200         |
-| ApplicationArguments              |                   |
-| OpenTimeout                       | 00:03:00          |
-| CancelTimeout                     | 00:01:00          |
-| IdleTimeout                       | -00:00:00.0010000 |
+MaximumConnectionRedirectionCount : 5
+NoCompression                     : False
+NoMachineProfile                  : False
+ProxyAccessType                   : None
+ProxyAuthentication               : Negotiate
+ProxyCredential                   :
+SkipCACheck                       : False
+SkipCNCheck                       : False
+SkipRevocationCheck               : False
+OperationTimeout                  : 00:03:00
+NoEncryption                      : False
+UseUTF16                          : False
+IncludePortInSPN                  : False
+OutputBufferingMode               : None
+Culture                           :
+UICulture                         :
+MaximumReceivedDataSizePerCommand :
+MaximumReceivedObjectSize         : 209715200
+ApplicationArguments              :
+OpenTimeout                       : 00:03:00
+CancelTimeout                     : 00:01:00
+IdleTimeout                       : -00:00:00.0010000
 
 For descriptions of these options, see the help topic for the
 New-PSSessionOption cmdlet.
