@@ -142,6 +142,41 @@
         "dest": "module"
       },
       {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "docs-conceptual",
+        "version":"powershell-6",
+        "dest":"scripting/powershell-6"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "docs-conceptual",
+        "version":"powershell-6",
+        "dest":"scripting"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "6",
+        "version": "powershell-6",
+        "dest": "module/psdocs"
+      },
+      {
+        "files":[
+          "**/*.md"
+        ],
+        "src": "6",
+        "version":"powershell-6",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
         "files":[
           "**/*.md"
         ],
@@ -180,6 +215,9 @@
       },
       "powershell-5.1": {
         "dest": "powershell-5.1"
+      },
+       "powershell-6": {
+        "dest": "powershell-6"
       }
     },
     "overwrite": [],
