@@ -112,7 +112,7 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 ### PSCustomObject
 
 ## NOTES
-* The **ConvertFrom-Json** cmdlet is implemented by using the **JavaScriptSerializer** class (http://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(VS.100).aspx).
+* The **ConvertFrom-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
