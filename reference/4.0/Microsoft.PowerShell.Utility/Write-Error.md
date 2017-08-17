@@ -93,7 +93,7 @@ The value of the Exception parameter is the Exception object in the $e variable.
 Specifies the category of the error.
 The default value is **NotSpecified**.
 
-For information about the error categories, see "ErrorCategory Enumeration" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143600.
+For information about the error categories, see [ErrorCategory Enumeration](http://go.microsoft.com/fwlink/?LinkId=143600) in the MSDN library.
 
 ```yaml
 Type: ErrorCategory
