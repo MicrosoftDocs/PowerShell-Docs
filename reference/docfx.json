@@ -3,6 +3,11 @@
     "content": [
       {
         "files": [
+          "bread-pscore/toc.yml"
+        ]
+      },
+      {
+        "files": [
           "toc.yml"
         ],
         "src": "docs-conceptual",
@@ -223,6 +228,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "breadcrumb_path": "/powershell/bread-pscore/toc.json",
       "showPowerShellPicker": "true",
       "apiPlatform": "powershell",
       "ms.devlang": "powershell",
