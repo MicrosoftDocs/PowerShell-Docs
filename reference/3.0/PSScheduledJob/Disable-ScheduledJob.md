@@ -226,7 +226,7 @@ Otherwise, this cmdlet does not generate any output.
 * **Disable-ScheduledJob** does not generate warnings or errors if you use it to disable a scheduled job that is already disabled.
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

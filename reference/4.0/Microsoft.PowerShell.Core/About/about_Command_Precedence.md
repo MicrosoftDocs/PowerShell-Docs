@@ -105,7 +105,7 @@ PowerShell 3.0, by default, `Get-Command` gets only the commands that run
 when you type the command name.
 
 In the following examples, the session includes a "Get-Date" function and a
-[Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
+[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
 
 The following command gets the "Get-Date" command that runs when you type "Get-Date".
 
@@ -190,7 +190,7 @@ Microsoft.PowerShell.Utility
 
 You can also use the `Call` operator `&` to run any command that you
 
-can get by using a [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md) (the alias is "dir"), `Get-Command` or
+can get by using a [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) (the alias is "dir"), `Get-Command` or
 [Get-Module](../Get-Module.md) command.
 
 To run a command, enclose the `Get-Command` command in parentheses,
@@ -269,11 +269,11 @@ nouns in your commands.
 
 Also, when you import commands into your session from a Windows PowerShell
 module or from another session, use the **Prefix** parameter of the
-[Import-Module](../Import-Module.md) or [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md) cmdlet to add a prefix to the nouns
+[Import-Module](../Import-Module.md) or [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md) cmdlet to add a prefix to the nouns
 in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date` 
-and [Set-Date](../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that come with Windows PowerShell when you import
+and [Set-Date](../../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that come with Windows PowerShell when you import
 the "DateFunctions" module.
 
 
@@ -299,4 +299,4 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 
 [Import-Module](../Import-Module.md)
 
-[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+[Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)

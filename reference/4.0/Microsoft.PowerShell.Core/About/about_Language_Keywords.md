@@ -454,8 +454,8 @@ workflow <verb>-<noun>
 }
 ```
 
-For more information, see: [about_Parallel](../psworkflow/about_parallel.md),
-[about_ForEach-Parallel](../psworkflow/about_foreach-parallel.md)
+For more information, see: [about_Parallel](../../PSWorkflow/About/about_Parallel.md),
+[about_ForEach-Parallel](../../PSWorkflow/About/about_Foreach-Parallel.md)
 
 **Process**
 -------
@@ -511,7 +511,7 @@ The Sequence keyword creates a sequence block within a Parallel
 script block. The commands in the Sequence script block run
 sequentially and in the order defined.
 
-For more information, see: [about_Sequence](../psworkflow/about_sequence.md)
+For more information, see: [about_Sequence](../../PSWorkflow/About/about_Sequence.md)
 
 **Switch**
 ------
@@ -657,7 +657,7 @@ workflow <verb-noun>
 }
 ```
 
-For more information about workflows, see [about_Workflows](../psworkflow/about_workflows.md)
+For more information about workflows, see [about_Workflows](../../PSWorkflow/About/about_Workflows.md)
 and "Getting Started with Windows PowerShell Workflow"
 (http://go.microsoft.com/fwlink/?LinkID=252592) in the
 TechNet Library.

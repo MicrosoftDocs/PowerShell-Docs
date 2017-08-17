@@ -177,7 +177,7 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
 
-[about_Execution_Policies](../Microsoft.PowerShell.Core/about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
-[about_Signing](../Microsoft.PowerShell.Core/about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

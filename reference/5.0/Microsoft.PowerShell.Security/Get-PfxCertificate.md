@@ -114,5 +114,5 @@ You can pipe a string that contains a file path to **Get-PfxCertificate**.
 
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[about_Signing](../Microsoft.PowerShell.Core/about_Signing.md)
+[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
 

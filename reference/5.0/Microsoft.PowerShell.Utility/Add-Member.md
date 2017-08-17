@@ -506,5 +506,5 @@ For more information about the $this variable, see about_Automatic_Variables.
 
 [New-Object](New-Object.md)
 
-[about_Automatic_Variables](../Microsoft.PowerShell.Core/about_Automatic_Variables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 

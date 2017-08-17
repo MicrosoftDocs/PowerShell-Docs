@@ -271,7 +271,7 @@ Accept wildcard characters: True
 Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
 Implementation varies among providers.
 
-For more information, see [about_Provider](../microsoft.powershell.core/about_providers.md).
+For more information, see [about_Provider](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 Even when using the `-Force` parameter, the cmdlet cannot override security restrictions.
 
@@ -446,7 +446,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../microsoft.powershell.core/about_commonparameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs
 
@@ -469,7 +469,7 @@ To get hidden items, use the `-Force` parameter.
 
 The `Get-ChildItem` cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type "`Get-PSProvider`".
-For more information, see [about_Providers](../microsoft.powershell.core/about_providers.md).
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## Related Links
 
@@ -483,4 +483,4 @@ For more information, see [about_Providers](../microsoft.powershell.core/about_p
 
 [Get-PSProvider](Get-PSProvider.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

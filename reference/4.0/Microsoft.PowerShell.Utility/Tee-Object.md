@@ -191,5 +191,5 @@ Tee-Object returns the object that it redirects.
 
 [Select-Object](Select-Object.md)
 
-[about_Redirection](../Microsoft.PowerShell.Core/about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 

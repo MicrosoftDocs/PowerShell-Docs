@@ -773,11 +773,11 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [Remove-PSSession](Remove-PSSession.md)
 
-[about_PSSessions](about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Session_Configurations](about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 

@@ -395,7 +395,7 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-[about_PackageManagement](../about_packagemanagement.md)
+[about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
 [Get-PackageSource](Get-PackageSource.md)
 

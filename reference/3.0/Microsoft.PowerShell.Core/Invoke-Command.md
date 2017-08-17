@@ -1029,13 +1029,13 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-[about_PSSessions](about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Variables](about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](about_scopes.md)
+[about_Scopes](About/about_scopes.md)
 

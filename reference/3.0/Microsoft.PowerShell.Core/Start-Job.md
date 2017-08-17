@@ -467,9 +467,9 @@ For example, you can pipe a FileInfo object from Get-ChildItem to **Start-Job**.
 
 [Wait-Job](Wait-Job.md)
 
-[about_Job_Details](about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-[about_Jobs](about_jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
