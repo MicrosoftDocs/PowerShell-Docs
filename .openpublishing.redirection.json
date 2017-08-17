@@ -21,681 +21,6 @@
       "redirect_document_id": "False"
     },
     {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise.md",
-      "redirect_url": "/powershell/scripting/ise",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/workflows.md",
-      "redirect_url": "/powershell/scripting/workflows",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/console-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console-guide?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise-guide?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/Running-Remote-Commands.md",
-      "redirect_url": "/powershell/scripting/core-powershell/running-remote-commands?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/workflows-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows-guide?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/console/PowerShell.exe-Command-Line-Help.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/console/Using-Tab-Expansion.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console/using-tab-expansion?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.archive-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.core-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.diagnostics-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.host-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.management-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.ODataUtils-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.odatautils-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.PowerShell.Utility-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.utility-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Microsoft.WSMan.Management-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.wsman.management-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/PackageManagement-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/packagemanagement-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/PSLocalAccount5-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/pslocalaccount5-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/PSReadline-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psreadline-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/PSScheduledJob-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscheduledjob-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/PSScriptAnalyzer-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscriptanalyzer-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Windows-PowerShell-5.0.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-5.0?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Windows-PowerShell-Core-About-Topics.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-about-topics?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/core-modules/Windows-PowerShell-Core-Providers.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-providers?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/ISE-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/ise-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISE-Object-Model-Hierarchy.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-ise-object-model-hierarchy?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEAddOnTool-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontool-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEAddOnToolCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontoolcollection-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEEditor-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseeditor-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEFile-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefile-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEFileCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefilecollection-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEMenuItem-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitem-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEMenuItemCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitemcollection-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISEOptions-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseoptions-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISESnippetCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetcollection-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ISESnippetObject.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetobject?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-ObjectModelRoot-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-objectmodelroot-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-PowerShellTab-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltab-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-PowerShellTabCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltabcollection-object?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-windows-powershell-ise-scripting-object-model?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/using-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/windows-powershell-ise-object-model-reference?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access/install-and-use-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access/uninstall-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/web-access/use-the-web-based-windows-powershell-console.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/workflows/PSWorkflow-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflow-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/core-powershell/workflows/PSWorkflowUtility-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflowutility-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks.md",
-      "redirect_url": "/powershell/scripting/cookbooks",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental.md",
-      "redirect_url": "/powershell/scripting/fundamental",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/basic-cookbooks.md",
-      "redirect_url": "/powershell/scripting/getting-started/basic-cookbooks?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental-concepts.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental-concepts?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/Getting-Ready-to-Use-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/getting-ready-to-use-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/Getting-Started-with-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/more-powershell-learning.md",
-      "redirect_url": "/powershell/scripting/getting-started/more-powershell-learning?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/understanding-concepts-reference.md",
-      "redirect_url": "/powershell/scripting/getting-started/understanding-concepts-reference?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-1---compatibility-aliases?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/basic-cookbooks-reference.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/basic-cookbooks-reference?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Changing-Computer-State.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/changing-computer-state?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Collecting-Information-About-Computers.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/collecting-information-about-computers?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Creating-a-Custom-Input-Box.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-custom-input-box?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-graphical-date-picker?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/getting-wmi-objects--get-wmiobject-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Managing-Current-Location.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-current-location?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-processes-with-process-cmdlets?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Managing-Services.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-services?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Manipulating-Items-Directly.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/manipulating-items-directly?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Multiple-selection-List-Boxes.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/multiple-selection-list-boxes?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Other-Useful-Scripting-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/other-useful-scripting-objects?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Performing-Networking-Tasks.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/performing-networking-tasks?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/PowerShellGet-Module.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/powershellget-module?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/redirecting-data-with-out---cmdlets?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Selecting-Items-from-a-List-Box.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-items-from-a-list-box?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Selecting-Parts-of-Objects--Select-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-parts-of-objects--select-object-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Sorting-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/sorting-objects?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Using-Static-Classes-and-Methods.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-static-classes-and-methods?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Files-and-Folders.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-and-folders?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-folders-and-registry-keys?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-objects?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Printers.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-printers?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Registry-Entries.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-entries?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Registry-Keys.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-keys?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/cookbooks/Working-with-Software-Installations.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-software-installations?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/About-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/about-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/exploring-the-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Getting-Detailed-Help-Information.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-detailed-help-information?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Getting-Information-About-Commands.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-information-about-commands?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Learning-Windows-PowerShell-Names.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/learning-windows-powershell-names?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Object-Pipeline.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/object-pipeline?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Scripting-with-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/scripting-with-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Understanding-Important-Windows-PowerShell-Concepts.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-windows-powershell-concepts?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Understanding-the-Windows-PowerShell-Pipeline.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-windows-powershell-pipeline?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Using-Familiar-Command-Names.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-familiar-command-names?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Using-Variables-to-Store-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-variables-to-store-objects?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Using-Windows-PowerShell-for-Administration.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Using-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Windows-PowerShell-Basics.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Accessibility-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/setup/accessibility-in-windows-powershell-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Installing-the-Windows-PowerShell-2.0-Engine.md",
-      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-2.0-engine?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Installing-the-Windows-PowerShell-SDK.md",
-      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-sdk?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Installing-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/installing-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/PS-remoting-second-hop.md",
-      "redirect_url": "/powershell/scripting/setup/ps-remoting-second-hop?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/security.md",
-      "redirect_url": "/powershell/scripting/setup/security?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/setup-reference.md",
-      "redirect_url": "/powershell/scripting/setup/setup-reference?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/starting-the-32-bit-version-of-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Starting-the-Windows-PowerShell-2.0-Engine.md",
-      "redirect_url": "/powershell/scripting/setup/starting-the-windows-powershell-2.0-engine?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md",
-      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell-on-earlier-versions-of-windows?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Starting-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/Windows-PowerShell-System-Requirements.md",
-      "redirect_url": "/powershell/scripting/setup/windows-powershell-system-requirements?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/setup/WinRMSecurity.md",
-      "redirect_url": "/powershell/scripting/setup/winrmsecurity?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/topic/WinRMSecurity.md",
-      "redirect_url": "/powershell/scripting/setup/winrmsecurity?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/whats-new/What-s-New-in-the-PowerShell-50-ISE.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-the-powershell-50-ise?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/whats-new/What-s-New-in-Windows-PowerShell-50.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
-      "source_path": "reference/virtual-directory/whats-new/What-s-New-With-PowerShell.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-with-powershell?view=powershell-6",
-      "redirect_document_id": "False"
-    },
-    {
       "source_path": "reference/virtual-directory-module/readme.md",
       "redirect_url": "/powershell/scripting",
       "redirect_document_id": "False"
@@ -14552,652 +13877,652 @@
     },
     {
       "source_path": "reference/virtual-directory/console-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console-guide?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/console-guide?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/core-modules.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/core-powershell.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/ise-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise-guide?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise-guide?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Running-Remote-Commands.md",
-      "redirect_url": "/powershell/scripting/core-powershell/running-remote-commands?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/running-remote-commands?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/workflows-guide.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows-guide?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/workflows-guide?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PowerShell.exe-Command-Line-Help.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Tab-Expansion.md",
-      "redirect_url": "/powershell/scripting/core-powershell/console/using-tab-expansion?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/console/using-tab-expansion?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Archive-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.archive-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.archive-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Core-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.core-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.core-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Diagnostics-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.diagnostics-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.diagnostics-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Host-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.host-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.host-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Management-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.management-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.management-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.ODataUtils-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.odatautils-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.odatautils-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.PowerShell.Utility-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.utility-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.powershell.utility-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Microsoft.WSMan.Management-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.wsman.management-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/microsoft.wsman.management-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PackageManagement-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/packagemanagement-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/packagemanagement-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSLocalAccount5-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/pslocalaccount5-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/pslocalaccount5-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSReadline-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psreadline-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psreadline-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSScheduledJob-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscheduledjob-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscheduledjob-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSScriptAnalyzer-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscriptanalyzer-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/psscriptanalyzer-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-5.0.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-5.0?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-5.0?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-Core-About-Topics.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-about-topics?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-about-topics?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-Core-Providers.md",
-      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-providers?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/core-modules/windows-powershell-core-providers?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Introducing-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/ISE-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/ise-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/ise-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISE-Object-Model-Hierarchy.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-ise-object-model-hierarchy?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-ise-object-model-hierarchy?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEAddOnTool-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontool-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontool-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEAddOnToolCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontoolcollection-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseaddontoolcollection-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEEditor-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseeditor-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseeditor-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEFile-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefile-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefile-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEFileCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefilecollection-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isefilecollection-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEMenuItem-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitem-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitem-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEMenuItemCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitemcollection-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isemenuitemcollection-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISEOptions-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseoptions-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-iseoptions-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISESnippetCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetcollection-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetcollection-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ISESnippetObject.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetobject?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-isesnippetobject?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-ObjectModelRoot-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-objectmodelroot-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-objectmodelroot-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-PowerShellTab-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltab-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltab-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-PowerShellTabCollection-Object.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltabcollection-object?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-powershelltabcollection-object?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/The-Windows-PowerShell-ISE-Scripting-Object-Model.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/the-windows-powershell-ise-scripting-object-model?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-windows-powershell-ise-scripting-object-model?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/using-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/using-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-ISE-Object-Model-Reference.md",
-      "redirect_url": "/powershell/scripting/core-powershell/ise/windows-powershell-ise-object-model-reference?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/windows-powershell-ise-object-model-reference?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/authorization-rules-and-security-features-of-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/install-and-use-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/troubleshooting-access-problems-in-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/uninstall-windows-powershell-web-access.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/use-the-web-based-windows-powershell-console.md",
-      "redirect_url": "/powershell/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSWorkflow-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflow-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflow-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PSWorkflowUtility-Module.md",
-      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflowutility-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/core-powershell/workflows/psworkflowutility-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/basic-cookbooks.md",
-      "redirect_url": "/powershell/scripting/getting-started/basic-cookbooks?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/basic-cookbooks?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/fundamental-concepts.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental-concepts?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental-concepts?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Getting-Ready-to-Use-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/getting-ready-to-use-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/getting-ready-to-use-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Getting-Started-with-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/more-powershell-learning.md",
-      "redirect_url": "/powershell/scripting/getting-started/more-powershell-learning?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/more-powershell-learning?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/understanding-concepts-reference.md",
-      "redirect_url": "/powershell/scripting/getting-started/understanding-concepts-reference?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/understanding-concepts-reference?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Appendix-1---Compatibility-Aliases.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-1---compatibility-aliases?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-1---compatibility-aliases?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/basic-cookbooks-reference.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/basic-cookbooks-reference?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/basic-cookbooks-reference?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Changing-Computer-State.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/changing-computer-state?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/changing-computer-state?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Collecting-Information-About-Computers.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/collecting-information-about-computers?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/collecting-information-about-computers?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Creating-.NET-and-COM-Objects--New-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Creating-a-Custom-Input-Box.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-custom-input-box?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-custom-input-box?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Creating-a-Graphical-Date-Picker.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-graphical-date-picker?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/creating-a-graphical-date-picker?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Getting-WMI-Objects--Get-WmiObject-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/getting-wmi-objects--get-wmiobject-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/getting-wmi-objects--get-wmiobject-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Managing-Current-Location.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-current-location?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-current-location?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Managing-Processes-with-Process-Cmdlets.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-processes-with-process-cmdlets?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-processes-with-process-cmdlets?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Managing-Services.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-services?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-services?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Managing-Windows-PowerShell-Drives.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Manipulating-Items-Directly.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/manipulating-items-directly?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/manipulating-items-directly?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Multiple-selection-List-Boxes.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/multiple-selection-list-boxes?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/multiple-selection-list-boxes?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Other-Useful-Scripting-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/other-useful-scripting-objects?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/other-useful-scripting-objects?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Performing-Networking-Tasks.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/performing-networking-tasks?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/performing-networking-tasks?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PowerShellGet-Module.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/powershellget-module?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/powershellget-module?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Redirecting-Data-with-Out---Cmdlets.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/redirecting-data-with-out---cmdlets?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/redirecting-data-with-out---cmdlets?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Removing-Objects-from-the-Pipeline--Where-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Selecting-Items-from-a-List-Box.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-items-from-a-list-box?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-items-from-a-list-box?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Selecting-Parts-of-Objects--Select-Object-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-parts-of-objects--select-object-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/selecting-parts-of-objects--select-object-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Sorting-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/sorting-objects?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/sorting-objects?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Format-Commands-to-Change-Output-View.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Static-Classes-and-Methods.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-static-classes-and-methods?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/using-static-classes-and-methods",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Viewing-Object-Structure--Get-Member-.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Files-and-Folders.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-and-folders?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-and-folders?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-With-Files-Folders-and-Registry-Keys.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-folders-and-registry-keys?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-files-folders-and-registry-keys?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-objects?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-objects?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Printers.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-printers?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-printers?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Registry-Entries.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-entries?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-entries?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Registry-Keys.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-keys?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-registry-keys?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Working-with-Software-Installations.md",
-      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-software-installations?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/cookbooks/working-with-software-installations?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/About-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/about-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/about-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Exploring-the-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/exploring-the-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/exploring-the-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Getting-Detailed-Help-Information.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-detailed-help-information?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-detailed-help-information?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Getting-Information-About-Commands.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-information-about-commands?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/getting-information-about-commands?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Learning-Windows-PowerShell-Names.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/learning-windows-powershell-names?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/learning-windows-powershell-names?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Object-Pipeline.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/object-pipeline?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/object-pipeline?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Scripting-with-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/scripting-with-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/scripting-with-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Understanding-Important-Windows-PowerShell-Concepts.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-windows-powershell-concepts?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-windows-powershell-concepts?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Understanding-the-Windows-PowerShell-Pipeline.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-windows-powershell-pipeline?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-windows-powershell-pipeline?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Familiar-Command-Names.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-familiar-command-names?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-familiar-command-names?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Variables-to-Store-Objects.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-variables-to-store-objects?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-variables-to-store-objects?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Windows-PowerShell-for-Administration.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Using-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-Basics.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md",
-      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-?view=powershell-6",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Accessibility-in-Windows-PowerShell-ISE.md",
-      "redirect_url": "/powershell/scripting/setup/accessibility-in-windows-powershell-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/accessibility-in-windows-powershell-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Installing-the-Windows-PowerShell-2.0-Engine.md",
-      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-2.0-engine?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-2.0-engine?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Installing-the-Windows-PowerShell-SDK.md",
-      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-sdk?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/installing-the-windows-powershell-sdk?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Installing-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/installing-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/installing-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/PS-remoting-second-hop.md",
-      "redirect_url": "/powershell/scripting/setup/ps-remoting-second-hop?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/ps-remoting-second-hop?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/security.md",
-      "redirect_url": "/powershell/scripting/setup/security?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/security?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/setup-reference.md",
-      "redirect_url": "/powershell/scripting/setup/setup-reference?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/setup-reference?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Starting-the-32-Bit-Version-of-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/starting-the-32-bit-version-of-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/starting-the-32-bit-version-of-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Starting-the-Windows-PowerShell-2.0-Engine.md",
-      "redirect_url": "/powershell/scripting/setup/starting-the-windows-powershell-2.0-engine?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/starting-the-windows-powershell-2.0-engine?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md",
-      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell-on-earlier-versions-of-windows?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell-on-earlier-versions-of-windows?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Starting-Windows-PowerShell.md",
-      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/Windows-PowerShell-System-Requirements.md",
-      "redirect_url": "/powershell/scripting/setup/windows-powershell-system-requirements?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/windows-powershell-system-requirements?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/WinRMSecurity.md",
-      "redirect_url": "/powershell/scripting/setup/winrmsecurity?view=powershell-6",
+      "redirect_url": "/powershell/scripting/setup/winrmsecurity?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/What-s-New-in-the-PowerShell-50-ISE.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-the-powershell-50-ise?view=powershell-6",
+      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-the-powershell-50-ise?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/What-s-New-in-Windows-PowerShell-50.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50?view=powershell-6",
+      "redirect_url": "/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50?view=powershell-5.1",
       "redirect_document_id": "False"
     },
     {
       "source_path": "reference/virtual-directory/What-s-New-With-PowerShell.md",
-      "redirect_url": "/powershell/scripting/whats-new/what-s-new-with-powershell?view=powershell-6",
+      "redirect_url": "/powershell/scripting/whats-new/what-s-new-with-powershell?view=powershell-5.1",
       "redirect_document_id": "False"
     }
   ]
