@@ -113,7 +113,7 @@ Previously, you had no way to specify a particular module version; if there were
 
 In WMF 5.1:
 
-* You can use `ModuleSpecification` [hash table](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx). 
+* You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290). 
 This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
