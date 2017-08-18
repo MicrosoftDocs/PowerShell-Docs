@@ -423,9 +423,7 @@ This cmdlet generates a **System.Diagnostics.Process** object, if you specify th
 Otherwise, this cmdlet does not return any output.
 
 ## NOTES
-* This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see Process.Start Methodhttp://go.microsoft.com/fwlink/?LinkId=143602 (http://go.microsoft.com/fwlink/?LinkId=143602) in the Microsoft Developer Network (MSDN) library.
-
-*
+* This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
 
 ## RELATED LINKS
 

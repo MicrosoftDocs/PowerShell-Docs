@@ -392,9 +392,7 @@ When you use the PassThru parameter, Start-Process generates a System.Diagnostic
 Otherwise, this cmdlet does not return any output.
 
 ## NOTES
-* This cmdlet is implemented by using the Start method of the System.Diagnostics.Process class. For more information about this method, see "Process.Start Method" in the MSDN libraryhttp://go.microsoft.com/fwlink/?LinkId=143602 at http://go.microsoft.com/fwlink/?LinkId=143602.
-
-*
+* This cmdlet is implemented by using the Start method of the System.Diagnostics.Process class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
 
 ## RELATED LINKS
 
