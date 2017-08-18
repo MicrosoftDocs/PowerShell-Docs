@@ -150,7 +150,7 @@ BUILT-IN DSC RESOURCES
 FIND MORE RESOURCES  
     You can download, install, and learn about many other available DSC resources that  
     have been created by the PowerShell and DSC user community, and by Microsoft.  
-    Visit the PowerShell Gallery (https://www.powershellgallery.com/) to browse and learn  
+    Visit the [PowerShell Gallery](https://www.powershellgallery.com/) to browse and learn  
     about available DSC resources.  
   
 SEE ALSO  
