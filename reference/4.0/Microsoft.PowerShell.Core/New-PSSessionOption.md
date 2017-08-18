@@ -526,7 +526,7 @@ Determines which mechanism is used to resolve the host name.
 Valid values are **IEConfig**, **WinHttpConfig**, **AutoDetect**, **NoProxyServer** and **None**.
 The default value is **None**.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessType enumeration in the MSDN (Microsoft Developer Network) Library at http://go.microsoft.com/fwlink/?LinkId=144756.
+For information about the values of this parameter, see [ProxyAccessType Enumeration](https://msdn.microsoft.com/library/system.management.automation.remoting.proxyaccesstype) in the MSDN library.
 
 ```yaml
 Type: ProxyAccessType
