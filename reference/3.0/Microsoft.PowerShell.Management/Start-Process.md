@@ -380,10 +380,10 @@ You cannot pipe input to Start-Process.
 ### None or System.Diagnostics.Process
 When you use the PassThru parameter, Start-Process generates a System.Diagnostics.Process.
 Otherwise, this cmdlet does not return any output.
-## NOTES
-* This cmdlet is implemented by using the Start method of the System.Diagnostics,Process class. For more information about this method, see "Process.Start Method" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143602.
 
-*
+## NOTES
+* This cmdlet is implemented by using the Start method of the System.Diagnostics,Process class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
+
 ## RELATED LINKS
 
 [Debug-Process](Debug-Process.md)

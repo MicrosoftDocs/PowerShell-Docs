@@ -374,7 +374,7 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 Specifies names of modules in the form of **ModuleSpecification** objects.
-These objects are described in the Remarks section of ModuleSpecification Constructor (Hashtable)http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx (http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx) in the Microsoft Developer Network (MSDN) library.
+These objects are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library.
 For example, the *FullyQualifiedName* parameter accepts a module name that is specified in the following formats: 
 
 @{ModuleName = "modulename"; ModuleVersion = "version_number"}
