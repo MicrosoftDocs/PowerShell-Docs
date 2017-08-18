@@ -554,7 +554,7 @@ The acceptable values for this parameter are:
 
 The default value is None.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessTypehttp://go.microsoft.com/fwlink/?LinkId=144756 (http://go.microsoft.com/fwlink/?LinkId=144756) enumeration in the Microsoft Developer Network (MSDN) library.
+For information about the values of this parameter, see [ProxyAccessType Enumeration](https://msdn.microsoft.com/library/system.management.automation.remoting.proxyaccesstype) in the MSDN library.
 
 ```yaml
 Type: ProxyAccessType
