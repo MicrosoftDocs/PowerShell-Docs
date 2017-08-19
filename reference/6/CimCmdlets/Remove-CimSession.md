@@ -206,7 +206,7 @@ This cmdlet returns an object that contains CIM session information.
 
 ## RELATED LINKS
 
-[Get-CimSession](get-cimsession.md)
+[Get-CimSession](Get-CimSession.md)
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 
