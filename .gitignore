@@ -15,4 +15,6 @@ packages.config
 **/.ignore/**
 *.orig
 .vscode/
+_themes/
+dependentPackages/
 

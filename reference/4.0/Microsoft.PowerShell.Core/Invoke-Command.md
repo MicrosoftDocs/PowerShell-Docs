@@ -359,13 +359,13 @@ As a result, if the remote computer specified by the **ConnectionURI** parameter
 
 ### Example 14
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck
-PS C:\> Invoke-Command -Session $s -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
+PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a SessionOption parameter.
 
-The first command uses the New-PSSessionOption cmdlet to create a session option.
+The first command uses the New-PSSessionOption cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Cannonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
 It saves the resulting **SessionOption** object in the $so parameter.
 
 The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix command remotely.
@@ -1052,13 +1052,13 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-[about_PSSessions](about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Variables](about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](about_scopes.md)
+[about_Scopes](About/about_scopes.md)
 

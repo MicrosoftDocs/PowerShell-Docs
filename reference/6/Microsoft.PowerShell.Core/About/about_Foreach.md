@@ -357,4 +357,4 @@ function Get-FunctionPosition {
 
 [about_If](about_If.md)
 
-[Foreach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
+[Foreach-Object](../ForEach-Object.md)

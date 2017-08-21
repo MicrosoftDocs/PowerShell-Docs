@@ -146,7 +146,7 @@ This cmdlet does not generate any output.
 * **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
 ## RELATED LINKS
 
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
 
 [Add-JobTrigger](Add-JobTrigger.md)
 

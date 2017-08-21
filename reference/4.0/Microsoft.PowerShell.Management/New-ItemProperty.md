@@ -340,6 +340,6 @@ New-ItemProperty returns a custom object that contains the new property.
 
 [Set-ItemProperty](Set-ItemProperty.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/about_Providers.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 

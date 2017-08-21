@@ -28,7 +28,7 @@ When used in a DATA section, the contents of the string must conform to the rule
 For more information, see about_Data_Sections.
 
 **ConvertFrom-StringData** supports escape character sequences that are allowed by conventional machine translation tools.
-That is, the cmdlet can interpret backslashes (\\) as escape characters in the string data by using the Regex.Unescape Methodhttp://msdn.microsoft.com/library/vstudio/system.text.regularexpressions.regex.unescape(v=vs.100).aspx, instead of the Windows PowerShell backtick character (\`) that would normally signal the end of a line in a script.
+That is, the cmdlet can interpret backslashes (\\) as escape characters in the string data by using the [Regex.Unescape Method](https://msdn.microsoft.com/library/system.text.regularexpressions.regex.unescape), instead of the Windows PowerShell backtick character (\`) that would normally signal the end of a line in a script.
 Inside the here-string, the backtick character does not work.
 You can also preserve a literal backslash in your results by escaping it with a preceding backslash, like this: \\\\.
 Unescaped backslash characters, such as those that are commonly used in file paths, can render as illegal escape sequences in your results.
@@ -257,9 +257,9 @@ You can use the dictionary-style hash tables to isolate text strings from code, 
 
 ## RELATED LINKS
 
-[about_Data_Sections](../Microsoft.PowerShell.Core/about_Data_Sections.md)
+[about_Data_Sections](../Microsoft.PowerShell.Core/About/about_Data_Sections.md)
 
-[about_Quoting_Rules](../Microsoft.PowerShell.Core/about_Quoting_Rules.md)
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
-[about_Script_Internationalization](../Microsoft.PowerShell.Core/about_Script_Internationalization.md)
+[about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
 

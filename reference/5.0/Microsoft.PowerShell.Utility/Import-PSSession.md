@@ -417,7 +417,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedModule
-Specifies modules with names that are specified in the form of **ModuleSpecification** objects (described by the Remarks section of Module Specification Constructor (Hashtable)http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx on MSDN).
+Specifies modules with names that are specified in the form of **ModuleSpecification** objects (described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library).
 For example, the *FullyQualifiedModule* parameter accepts a module name that is specified in the format @{ModuleName = "modulename"; ModuleVersion = "version_number"} or @{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
 
@@ -527,9 +527,9 @@ To create a permanent module on disk, use the Export-PSSession cmdlet.
 
 [New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[about_Command_Precedence](../Microsoft.PowerShell.Core/about_Command_Precedence.md)
+[about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 
-[about_PSSessions](../Microsoft.PowerShell.Core/about_PSSessions.md)
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
-[about_Jobs](../Microsoft.PowerShell.Core/about_Jobs.md)
+[about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
 

@@ -196,7 +196,7 @@ This command gets the properties of the **PSModuleInfo** object that **Get-Modul
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see "PSModule Properties" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143624http://go.microsoft.com/fwlink/?LinkId=143624.
+For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
@@ -428,7 +428,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedName
-Gets modules with names that are specified in the form of ModuleSpecification objects (described by the Remarks section of ModuleSpecification Constructor (Hashtable)http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx on MSDN).
+Gets modules with names that are specified in the form of ModuleSpecification objects (described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library).
 For example, the FullyQualifiedName parameter accepts a module name that is specified in the format @{ModuleName = "modulename"; ModuleVersion = "version_number"} or @{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
 
@@ -579,7 +579,7 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967)
 
-[about_Modules](about_Modules.md)
+[about_Modules](About/about_Modules.md)
 
 [Get-PSSession](Get-PSSession.md)
 

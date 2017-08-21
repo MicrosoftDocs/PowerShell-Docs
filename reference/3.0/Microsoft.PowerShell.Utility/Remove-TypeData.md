@@ -204,5 +204,5 @@ This cmdlet does not generate any output.
 
 [Update-TypeData](Update-TypeData.md)
 
-[about_Types.ps1xml](../Microsoft.PowerShell.Core/about_Types.ps1xml.md)
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 

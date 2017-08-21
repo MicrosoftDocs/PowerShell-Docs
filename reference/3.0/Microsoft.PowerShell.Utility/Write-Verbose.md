@@ -84,5 +84,5 @@ You can pipe a string that contains the message to **Write-Verbose**.
 
 [Write-Warning](Write-Warning.md)
 
-[about_Preference_Variables](../Microsoft.PowerShell.Core/about_Preference_Variables.md)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

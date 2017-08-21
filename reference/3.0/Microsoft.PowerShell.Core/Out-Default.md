@@ -63,5 +63,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Format-Wide](../Microsoft.PowerShell.Utility/Format-Wide.md)
 
-[about_Format.ps1.xml](about_Format.ps1xml.md)
+[about_Format.ps1.xml](About/about_Format.ps1xml.md)
 
