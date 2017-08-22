@@ -1,5 +1,6 @@
 {
   "build_entry_point": "docs",
+  "enable_incremental_build": false,
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "docsets_to_publish": [
