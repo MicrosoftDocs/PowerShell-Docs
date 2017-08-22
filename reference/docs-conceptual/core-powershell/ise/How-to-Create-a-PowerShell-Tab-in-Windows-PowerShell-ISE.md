@@ -11,7 +11,7 @@ Tabs in the Windows PowerShell® Integrated Scripting Environment (ISE) allow yo
 > [!NOTE]
 > Variables, functions, and aliases that you create in one tab do not carry over to another. They are different Windows PowerShell sessions.
 
-Use the following steps to open or close a tab in Windows PowerShell. To rename a tab, set the [DisplayName](The-PowerShellTab-Object.md#Displayname) property on the Windows PowerShell Tab scripting object.
+Use the following steps to open or close a tab in Windows PowerShell. To rename a tab, set the [DisplayName]() property on the Windows PowerShell Tab scripting object.
 
 ## To create and use a new PowerShell Tab
 On the **File** menu, click **New PowerShell Tab**. The new PowerShell tab always opens as the active window. PowerShell tabs are incrementally numbered in the order that they are opened. Each tab is associated with its own Windows PowerShell console window. You can have up to 32 PowerShell tabs with their own session open at a time (this is limited to 8 on Windows PowerShell ISE 2.0.)
