@@ -1,12 +1,12 @@
 ---
-ms.date:  2017-06-05
+ms.date:  2017-08-23
 keywords:  powershell,cmdlet
 title:  install and use windows powershell web access
 ---
 
 # Install and Use Windows PowerShell Web Access
 
-Updated: November 5, 2013
+Updated: November 5, 2013 (Edited: August 23, 2017)
 
 Applies To: Windows Server 2012 R2, Windows Server 2012
 
@@ -560,7 +560,7 @@ For a secure production environment, always use a valid SSL certificate that has
 
     - Click **Import** to import an existing, valid certificate from a location on your network.
 
-    - Click **Create Certificate Request** to request a certificate from a CA such as [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), or [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header in the request. 
+    - Click **Create Certificate Request** to request a certificate from a CA such as [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), or [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header in the request.
 
       For example, if the client browser requests http://www.contoso.com/, then the common name must also be http://www.contoso.com/. This is the most secure and recommended option for providing the Windows PowerShell Web Access gateway with a certificate.
 
