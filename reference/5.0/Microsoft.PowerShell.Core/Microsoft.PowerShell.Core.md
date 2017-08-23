@@ -3,7 +3,7 @@ ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-Help Version:  5.1.1.0
+Help Version:  5.0.7.5
 Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390782
 Module Guid:  00000000-0000-0000-0000-000000000000
 title:  Microsoft.PowerShell.Core
