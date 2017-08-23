@@ -1,5 +1,6 @@
 {
   "build_entry_point": "docs",
+  "package_version": "1.38.0-alpha-384-g13f0713",
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "docsets_to_publish": [
@@ -107,8 +108,8 @@
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
       "id": "opbuild.templates.azurecli",
-      "version": "latest",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2"
+      "version": "latest-prerelease",
+      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
     },
     {
       "path_to_root": "_dependentPackages/CommonPlugins",
