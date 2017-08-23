@@ -26,7 +26,7 @@ Module Name:  CimCmdlets
 ### [Get-CimInstance](get-ciminstance.md)
 {{Manually Enter Get-CimInstance Description Here}}
 
-### [Get-CimSession](get-cimsession.md)
+### [Get-CimSession](Get-CimSession.md)
 {{Manually Enter Get-CimSession Description Here}}
 
 ### [Import-BinaryMiLog](import-binarymilog.md)
@@ -38,7 +38,7 @@ Module Name:  CimCmdlets
 ### [New-CimInstance](new-ciminstance.md)
 {{Manually Enter New-CimInstance Description Here}}
 
-### [New-CimSession](new-cimsession.md)
+### [New-CimSession](New-CimSession.md)
 {{Manually Enter New-CimSession Description Here}}
 
 ### [New-CimSessionOption](new-cimsessionoption.md)

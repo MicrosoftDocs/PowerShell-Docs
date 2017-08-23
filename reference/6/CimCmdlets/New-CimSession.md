@@ -333,7 +333,7 @@ This cmdlet accepts no inputs.
 
 [Get-Item](../microsoft.powershell.management/get-item.md)
 
-[Get-CimSession](get-cimsession.md)
+[Get-CimSession](Get-CimSession.md)
 
 [Remove-CimSession](remove-cimsession.md)
 

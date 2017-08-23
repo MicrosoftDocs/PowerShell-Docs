@@ -732,7 +732,7 @@ Accept wildcard characters: True
 
 ### -CimSession
 Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a Get-CIMSessionhttp://go.microsoft.com/fwlink/?LinkId=227966 command.
+Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](http://go.microsoft.com/fwlink/?LinkId=227966) command.
 
 **Import-Module** uses the CIM session connection to import modules from the remote computer into the current session.
 When you use the commands from the imported module in the current session, the commands actually run on the remote computer.

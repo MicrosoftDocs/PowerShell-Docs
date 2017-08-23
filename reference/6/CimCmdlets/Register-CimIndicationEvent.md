@@ -360,7 +360,7 @@ This cmdlet outputs a PS EventSubscription object.
 
 [Write-Host](../microsoft.powershell.utility/write-host.md)
 
-[Get-CimSession](get-cimsession.md)
+[Get-CimSession](Get-CimSession.md)
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 
