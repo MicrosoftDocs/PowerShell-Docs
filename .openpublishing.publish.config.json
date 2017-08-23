@@ -1,5 +1,6 @@
 {
   "build_entry_point": "docs",
+  "package_version": "1.38.0-alpha-384-g13f0713",
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "docsets_to_publish": [
