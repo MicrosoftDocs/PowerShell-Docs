@@ -188,14 +188,14 @@ This command shows the license from license.txt file and prompts the user to acc
 
 ### Example 11: Save Module requiring license acceptance with -AcceptLicense
 ```
-PS C:\> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+PS C:\> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 Module is saved without any prompt to accept license.
 ```
 
 ### Example 12: Update Module requiring license acceptance
 ```
-PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance
 
 License Acceptance
 
