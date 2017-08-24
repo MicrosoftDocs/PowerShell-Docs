@@ -69,7 +69,11 @@ The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed 
 
 ### Example 2: Get a drive on the computer
 ```
-PS C:\> Get-PSDrive DName       Provider      Root----       --------      ----D          FileSystem    D:\
+PS C:\> Get-PSDrive D
+
+Name       Provider      Root
+----       --------      ----
+D          FileSystem    D:\
 ```
 
 This command gets the D: drive on the computer.
@@ -77,11 +81,19 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\> Get-PSDrive -PSProvider FileSystemName       Provider      Root----       --------      ----C          FileSystem    C:\D          FileSystem    D:\X          FileSystem    X:\Y          FileSystem    \\Server01\PublicZ          FileSystem    C:\Windows\System32
+PS C:\> Get-PSDrive -PSProvider FileSystem
+
+Name       Provider      Root
+----       --------      ----
+C          FileSystem    C:\
+D          FileSystem    D:\
+X          FileSystem    X:\
+Y          FileSystem    \\Server01\Public
+Z          FileSystem    C:\Windows\System32
 ```
 
 This command gets all of the drives that are supported by the Windows PowerShell FileSystem provider.
-This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the New-PSDrive cmdlet.
+This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the `New-PSDrive` cmdlet.
 
 ### Example 4: Check to see if a drive is in use as a Windows PowerShell drive name
 ```powershell
