@@ -54,9 +54,9 @@ Script commands will support a new parameter -AcceptLicense that will behave as 
 
 ## EXAMPLES
 
-### Example 1: Update Module Manifest to include require license acceptance
+### Example 1: Update Module Manifest to require license acceptance
 ```
-PS C:\Users\farehar> Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance
+PS C:\> Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance
 
 This command updates the manifest file and sets the RequireLicenseAcceptance flag to true.
 
@@ -68,4 +68,101 @@ PrivateData = @{
     } # End of PSData hashtable
     
  } # End of PrivateData hashtable
+```
+### Example 2: Install Module requiring license acceptance
+```
+PS C:\> Install-Module -Name ModuleRequireLicenseAcceptance
 
+License Acceptance
+
+License 2.0
+Copyright (c) 2016 PowerShell Team
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software.
+
+Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+
+This command shows the license from license.txt file and prompts the user to accept the license.
+```
+### Example 3: Install Module requiring license acceptance with -AcceptLicense
+```
+PS C:\> Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+
+Module is installed without any prompt to accept license.
+```
+### Example 4: Install Module requiring license acceptance with -Force
+```
+PS C:\> Install-Module -Name ModuleRequireLicenseAcceptance -Force
+PackageManagement\Install-Package : License Acceptance is required for module 'ModuleRequireLicenseAcceptance'. Please specify '-AcceptLicense' to perform this operation.
+At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm1:1837 char:21
++ ...          $null = PackageManagement\Install-Package @PSBoundParameters
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], E
+   xception
+    + FullyQualifiedErrorId : ForceAcceptLicense,Install-PackageUtility,Microsoft.PowerShell.PackageManagement.Cmdlets
+   .InstallPackage
+```
+
+### Example 5: Install Module with dependencies requiring license acceptance
+```
+Module 'ModuleWithDependency' depends on module 'ModuleRequireLicenseAcceptance'. User is prompted to Accept License.
+
+PS C:\> Install-Module -Name ModuleWithDependency
+
+License Acceptance
+MIT License 2.0
+Copyright (c) 2016 PowerShell Team
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software.
+
+Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+```
+
+### Example 6: Install Module with dependencies requiring license acceptance and -AcceptLicense
+```
+Module 'ModuleWithDependency' depends on module 'ModuleRequireLicenseAcceptance'. User is not prompted to accept license as -AcceptLicense is specified.
+
+PS C:\>  Install-Module -Name ModuleWithDependency -AcceptLicense
+```
+
+### Example 7: Install Script with dependencies requiring license acceptance
+```
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is prompted to Accept License.
+
+PS C:\> Install-Script -Name ScriptRequireLicenseAcceptance
+
+License Acceptance
+MIT License 2.0
+Copyright (c) 2016 PowerShell Team
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software.
+
+Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+```
+
+### Example 8: Install Script with dependencies requiring license acceptance and -AcceptLicense
+```
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is not prompted to accept license as -AcceptLicense is specified.
+
+PS C:\> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
+```
+
+### Example 9: Install module requiring license acceptance on a client older than PSGetFormatVersion 2.0
+```
+PS C:\windows\system32> Install-Module -Name ModuleRequireLicenseAcceptance
+
+WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
+
+```
