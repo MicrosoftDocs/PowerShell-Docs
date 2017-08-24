@@ -50,7 +50,7 @@ Specifying –Force is NOT sufficient to accept a license. –AcceptLicense is r
 ## Scripts
 License Acceptance is not supported for scripts. However, the scenario where a script depends on a module that requires license acceptance is supported.
 
-Script commands will support a new parameter -AcceptLicense that will behave as though user saw the license. If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.
+Script commands(Install-Script/Save-Script/Update-Script) will support a new parameter -AcceptLicense that will behave as though user saw the license. If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.
 
 ## EXAMPLES
 
@@ -165,4 +165,57 @@ PS C:\windows\system32> Install-Module -Name ModuleRequireLicenseAcceptance
 
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 
+```
+### Example 10: Save Module requiring license acceptance
+```
+PS C:\> Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+
+License Acceptance
+
+License 2.0
+Copyright (c) 2016 PowerShell Team
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software.
+
+Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+
+This command shows the license from license.txt file and prompts the user to accept the license.
+```
+
+### Example 11: Save Module requiring license acceptance with -AcceptLicense
+```
+PS C:\> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+
+Module is saved without any prompt to accept license.
+```
+
+### Example 12: Update Module requiring license acceptance
+```
+PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+
+License Acceptance
+
+License 2.0
+Copyright (c) 2016 PowerShell Team
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software.
+
+Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+
+This command shows the license from license.txt file and prompts the user to accept the license.
+```
+
+### Example 13: Update Module requiring license acceptance with -AcceptLicense
+```
+PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+
+Module is updated without any prompt to accept license.
 ```
