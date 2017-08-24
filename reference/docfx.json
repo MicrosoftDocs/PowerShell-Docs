@@ -243,6 +243,6 @@
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "Powershell/reference"
+    "dest": "pscore-reference"
   }
 }

@@ -15,10 +15,9 @@ Module Name:  Microsoft.PowerShell.Host
 This section contains the help topics for the cmdlets that are installed with the Windows PowerShell Microsoft.PowerShell.Host module. The Host module contains cmdlets that manage data from host programs.
 
 ## Microsoft.PowerShell.Host Cmdlets
-### [Start-Transcript](start-transcript.md)
+### [Start-Transcript](Start-Transcript.md)
 Creates a record of all or part of a Windows PowerShell session to a text file.
 
 
-### [Stop-Transcript](stop-transcript.md)
+### [Stop-Transcript](Stop-Transcript.md)
 Stops a transcript.
-
