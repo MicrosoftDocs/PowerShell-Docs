@@ -10,7 +10,7 @@ ms.assetid:  a16660bd-0aee-46fd-ac17-3f022165d089
 
 ## Properties
 
-###  <a name="DisplayName"></a> DisplayName
+### DisplayName
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the display name of the menu item.
@@ -23,7 +23,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> Action
+### Action
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the block of script. It invokes the action when you click the menu item.
@@ -38,7 +38,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+### Shortcut
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the Windows input keyboard shortcut for the menu item.
@@ -50,7 +50,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> Submenus
+### Submenus
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.
@@ -83,7 +83,5 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ## See Also
 - [The ISEMenuItemCollection Object](The-ISEMenuItemCollection-Object.md) 
 - [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-
-  

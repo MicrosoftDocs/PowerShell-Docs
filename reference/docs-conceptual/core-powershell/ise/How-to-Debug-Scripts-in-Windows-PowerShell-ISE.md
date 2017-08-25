@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Debug Scripts in Windows PowerShell ISE
@@ -6,21 +6,21 @@ ms.assetid:  6dc6d8f9-8978-46e9-a92f-169af37e2817
 ---
 
 # How to Debug Scripts in Windows PowerShell ISE
-This topic describes how to debug scripts on a local computer by using the Windows PowerShell® Integrated Scripting Environment (ISE) visual debugging features.
+This topic describes how to debug scripts on a local computer by using the Windows PowerShellÂ® Integrated Scripting Environment (ISE) visual debugging features.
 
 [How to manage breakpoints]()
 [How to manage a debugging session]()
 [How to step over, step into, and step out while debugging]()
 [How to display the values of variables while debugging]()
 
-## <a name="bkmk_1"></a>How to manage breakpoints
+## How to manage breakpoints
 A breakpoint is a designated spot in a script where you would like operation to pause so that you can examine the current state of the variables and the environment in which your script is running. Once your script is paused by a breakpoint, you can run commands in the Console Pane to examine the state of your script.  You can output variables or run other commands. You can even modify the value of any variables that are visible to the context of the currently running script. After you have examined what you want to see, you can resume operation of the script.
 
 You can set three types of breakpoints in the Windows PowerShell debugging environment:
 
 1.  **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
 
-2.  **Variable breakpoint.** The script pauses whenever the designated variable’s value changes.
+2.  **Variable breakpoint.** The script pauses whenever the designated variableâ€™s value changes.
 
 3.  **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
 
@@ -37,7 +37,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
 
 ### List all breakpoints
-Displays all breakpoints in the current Windows PowerShell® session.
+Displays all breakpoints in the current Windows PowerShellÂ® session.
 
 On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
 
@@ -64,7 +64,7 @@ The following script is an example of how to remove all breakpoints from the Con
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="bkmk_disable"></a>Disable a Breakpoint
+### Disable a Breakpoint
 Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable a specific line breakpoint, right-click the line where you want to disable a breakpoint, and then click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press **F9** or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ``` PowerShell
@@ -98,7 +98,7 @@ To enable all breakpoints defined in the current session, on the **Debug** menu,
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="bkmk_2"></a>How to manage a debugging session
+## How to manage a debugging session
 Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints]() or [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). After you start debugging, you cannot edit a script until you stop debugging. A script that has one or more breakpoints set is automatically saved before it is run.
 
 ### To start debugging
@@ -115,7 +115,7 @@ While paused, to see the current call stack, press **CTRL+SHIFT+D** or, on the *
 ### To stop debugging
 Press **SHIFT-F5** or, on the **Debug** menu, click **Stop Debugger**, or, in the Console Pane, type **Q** and then press **ENTER**.
 
-## <a name="bkmk_3"></a>How to step over, step into, and step out while debugging
+## How to step over, step into, and step out while debugging
 Stepping is the process of running one statement at a time. You can stop on a line of code, and examine the values of variables and the state of the system. The following table describes common debugging tasks such as stepping over, stepping into, and stepping out.
 
 | Debugging Task | Description | How to accomplish it in PowerShell ISE |
@@ -125,7 +125,7 @@ Stepping is the process of running one statement at a time. You can stop on a li
 | **Step Out** | Steps out of the current function and up one level if the function is nested. If in the main body, the script is executed to the end, or to the next breakpoint. The skipped statements are executed, but not stepped through. | Press **SHIFT+F11**, or on the **Debug** menu, click **Step Out**, or in the Console Pane, type **O** and press **ENTER**. |
 | **Continue** | Continues execution to the end, or to the next breakpoint. The skipped functions and invocations are executed, but not stepped through. | Press **F5** or, on the **Debug** menu, click **Run/Continue**, or in the Console Pane, type **C** and press **ENTER**. |
 
-## <a name="bkmk_4"></a>How to display the values of variables while debugging
+## How to display the values of variables while debugging
 You can display the current values of variables in the script as you step through the code.
 
 ### To display the values of standard variables
