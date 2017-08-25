@@ -358,5 +358,5 @@ This cmdlet returns an object that contains the CIM instance information.
 
 [Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance](set-ciminstance.md)
+[Set-CimInstance](Set-CimInstance.md)
 
