@@ -2,7 +2,6 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  The ISE Object Model Hierarchy
-ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 ---
 
 # The ISE Object Model Hierarchy
@@ -14,7 +13,9 @@ Click an object to take you to the reference documentation
 for the class that defines the object.
 
 ## $psISE Object
- The **$psISE** object is the [root object](The-ObjectModelRoot-Object.md) of the Windows PowerShell ISE object hierarchy. Located at the top level, it makes the following objects available for scripting:
+The **$psISE** object is the [root object](The-ObjectModelRoot-Object.md)
+of the Windows PowerShell ISE object hierarchy.
+Located at the top level, it makes the following objects available for scripting:
 
 - [$psISE.CurrentFile]()
 
@@ -206,9 +207,8 @@ for the class that defines the object.
 - [$psISE.Options.ZoomThe-ISEOptions-Object.md]()
 
 ## [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
- The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.
+The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class. It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers. Each member in the collection is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.
 
 ## See Also
 - [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
-
