@@ -515,7 +515,7 @@ Workflows are also portable; they can be exported as or imported from XAML files
 
 The following are the benefits of Windows PowerShell Workflow
 
--   **Automation of sequenced, long-running tasks.**
+- Automation of sequenced, long-running tasks.
 
 -   **Remote monitoring of long-running tasks**. Status and progress of activities are visible at any time.
 
