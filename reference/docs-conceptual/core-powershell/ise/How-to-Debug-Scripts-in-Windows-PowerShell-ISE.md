@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Debug Scripts in Windows PowerShell ISE
