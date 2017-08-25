@@ -64,7 +64,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ## Properties
 
 ### DisplayName
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Supported in Windows PowerShell ISE 2.0 and later.
 
  The read-only property that gets the string that contains the display name of this file. The name is shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.
 
@@ -135,7 +135,5 @@ $psISE.CurrentFile.IsUntitled
 ## See Also
 - [The ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
 - [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-
-  
