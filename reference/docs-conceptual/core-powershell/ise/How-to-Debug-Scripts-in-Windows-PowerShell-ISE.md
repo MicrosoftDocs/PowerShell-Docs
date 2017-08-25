@@ -41,7 +41,18 @@ Get-PSBreakpoint
 ```
 
 ### Remove a breakpoint
-Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [Disable a Breakpoint](#disable-a-breakpoint) it instead.  Right-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
+
+Removing a breakpoint deletes it.
+
+If you think you might want to use it again later,
+consider [Disable a Breakpoint](#disable-a-breakpoint) it instead.
+Right-click the line where you want to remove a breakpoint,
+and then click **Toggle Breakpoint**.
+Or, click the line where you want to remove a breakpoint,
+and on the **Debug** menu, click **Toggle Breakpoint**.
+The following script is an example of how to remove a breakpoint with a
+specified ID from the Console Pane by using the
+[Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
 
 ``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.
