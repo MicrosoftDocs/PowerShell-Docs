@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Write and Run Scripts in the Windows PowerShell ISE
@@ -7,12 +7,6 @@ ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 
 # How to Write and Run Scripts in the Windows PowerShell ISE
 This topic describes how to create, edit, run, and save scripts in the Script Pane.
-
--   [How to create and run scripts]()
-
--   [How to write and edit text in the Script Pane]()
-
--   [How to save a script]()
 
 ## How to create and run scripts
 You can open and edit Windows PowerShellÂ® files in the Script Pane. Specific file types of interest in Windows PowerShellÂ® are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
@@ -24,7 +18,7 @@ You can open and edit Windows PowerShellÂ® files in the Script Pane. Specific 
 On the toolbar, click **New** , or on the **File** menu, click **New**. The created file appears in a new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible when there are more than one. By default a file of type script (.ps1) is created, but it can be saved with a new name and extension. Multiple script files can be created in the same PowerShell tab.
 
 ### To open an existing script
-On the toolbar, click **Openâ€¦**, or on the **File** menu, click **Open**. In the **Open** dialog box, select the file you want to open. The opened file appears in a new tab.
+On the toolbar, click **Open**, or on the **File** menu, click **Open**. In the **Open** dialog box, select the file you want to open. The opened file appears in a new tab.
 
 ### To close a script tab
 Click the script tab of the script you want to close, then do one of the following:

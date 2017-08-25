@@ -1,17 +1,11 @@
-﻿---
+---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Debug Scripts in Windows PowerShell ISE
-ms.assetid:  6dc6d8f9-8978-46e9-a92f-169af37e2817
 ---
 
 # How to Debug Scripts in Windows PowerShell ISE
 This topic describes how to debug scripts on a local computer by using the Windows PowerShellÂ® Integrated Scripting Environment (ISE) visual debugging features.
-
-[How to manage breakpoints]()
-[How to manage a debugging session]()
-[How to step over, step into, and step out while debugging]()
-[How to display the values of variables while debugging]()
 
 ## How to manage breakpoints
 A breakpoint is a designated spot in a script where you would like operation to pause so that you can examine the current state of the variables and the environment in which your script is running. Once your script is paused by a breakpoint, you can run commands in the Console Pane to examine the state of your script.  You can output variables or run other commands. You can even modify the value of any variables that are visible to the context of the currently running script. After you have examined what you want to see, you can resume operation of the script.
@@ -47,7 +41,7 @@ Get-PSBreakpoint
 ```
 
 ### Remove a breakpoint
-Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [disabling]() it instead.  Right-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
+Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [Disable a Breakpoint](#disable-a-breakpoint) it instead.  Right-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
 
 ``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.

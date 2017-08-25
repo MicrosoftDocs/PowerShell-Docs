@@ -2,7 +2,6 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
-ms.assetid:  a0de70ca-909a-4807-94d1-6da86e5b52a0
 ---
 
 # Introducing the Windows PowerShell ISE
