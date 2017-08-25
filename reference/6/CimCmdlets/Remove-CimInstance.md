@@ -291,9 +291,9 @@ This cmdlet produces no outputs.
 
 ## RELATED LINKS
 
-[New-CimInstance](new-ciminstance.md)
+[New-CimInstance](New-CimInstance.md)
 
 [Get-CimInstance](get-ciminstance.md)
 
-[Set-CimInstance](set-ciminstance.md)
+[Set-CimInstance](Set-CimInstance.md)
 
