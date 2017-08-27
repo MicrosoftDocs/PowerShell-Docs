@@ -15,7 +15,7 @@ Updates a module manifest file.
 
 ## SYNTAX
 
-```
+```powershell
 Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
  [-CompanyName <String>] [-Copyright <String>] [-RootModule <String>] [-ModuleVersion <Version>]
  [-Description <String>] [-ProcessorArchitecture <ProcessorArchitecture>] [-CompatiblePSEditions <String[]>]
@@ -31,13 +31,13 @@ Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>
 ```
 
 ## DESCRIPTION
-The **Update-ModuleManifest** cmdlet updates a module manifest (.psd1) file.
+The `Update-ModuleManifest` cmdlet updates a module manifest (.psd1) file.
 
 ## EXAMPLES
 
 ### Example 1: Update a module manifest
-```
-PS C:\> Update-ModuleManifest -Path "C:\temp\TestManifest.psd1" -Author "TestUser1" -CompanyName "Contoso Corporation" -Copyright "(c) 2015 Contoso Corporation. All rights reserved."
+```powershell
+Update-ModuleManifest -Path "C:\temp\TestManifest.psd1" -Author "TestUser1" -CompanyName "Contoso Corporation" -Copyright "(c) 2015 Contoso Corporation. All rights reserved."
 ```
 
 This command updates the module manifest TestManifest.psd1 with updated Author, CompanyName, and Copyright fields.
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 
 ### -CompatiblePSEditions
 Specifies the compatible PSEditions of the module.
-For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://docs.microsoft.com/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
 Type: String[]
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ### -FormatsToProcess
 Specifies the formatting files (.ps1xml) that run when the module is imported.
 
-When you import a module, Windows PowerShell runs the Update-FormatData cmdlet with the specified files.
+When you import a module, Windows PowerShell runs the `Update-FormatData` cmdlet with the specified files.
 Because formatting files are not scoped, they affect all session states in the session.
 
 ```yaml
@@ -324,8 +324,8 @@ Enter a Uniform Resource Identifier (URI) that begins with http or https.
 
 The HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell version 3.0.
 It contains information about the location of downloadable help files for the module and the version numbers of the newest help files for each supported locale.
-For information about Updatable Help, see about_Updatable_Helphttp://go.microsoft.com/fwlink/?LinkID=235801 (http://go.microsoft.com/fwlink/?LinkID=235801).
-For information about the HelpInfo XML file, see Supporting Updatable Helphttps://msdn.microsoft.com/en-us/expression/hh852754(v=vs.85) (https://msdn.microsoft.com/en-us/expression/hh852754(v=vs.85)) in MSDN.
+For information about Updatable Help, see [about_Updatable_Help](../Microsoft.PowerShell.Core/About/about_Updatable_Help.md).
+For information about the HelpInfo XML file, see [Supporting Updatable Help](https://msdn.microsoft.com/library/hh852754) in the MSDN library.
 
 ```yaml
 Type: Uri
@@ -462,12 +462,12 @@ Accept wildcard characters: False
 Specifies the path and file name of the module manifest.
 Enter a path and file name with a .psd1 file name extension, such as $pshome\Modules\MyModule\MyModule.psd1.
 
-If you specify the path to an existing file, **Update-ModuleManifest** replaces the file without warning unless the file has the read-only attribute.
+If you specify the path to an existing file, `Update-ModuleManifest` replaces the file without warning unless the file has the read-only attribute.
 
 The manifest should be located in the module's directory, and the manifest file name should be the same as the module directory name, but with a .psd1 extension.
 
-Note: You cannot use variables, such as $pshome or $home, in response to a prompt for a *Path* parameter value.
-To use a variable, include the *Path* parameter in the command.
+Note: You cannot use variables, such as $pshome or $home, in response to a prompt for a **Path** parameter value.
+To use a variable, include the **Path** parameter in the command.
 
 ```yaml
 Type: String
@@ -623,7 +623,7 @@ Accept wildcard characters: False
 ### -RequiredModules
 Specifies modules that must be in the global session state.
 If the required modules are not in the global session state, Windows PowerShell imports them.
-If the required modules are not available, the Import-Module command fails.
+If the required modules are not available, the `Import-Module` command fails.
 
 ```yaml
 Type: Object[]
@@ -697,7 +697,7 @@ Accept wildcard characters: False
 ### -TypesToProcess
 Specifies the type files (.ps1xml) that run when the module is imported.
 
-When you import the module, Windows PowerShell runs the Update-TypeData cmdlet with the specified files.
+When you import the module, Windows PowerShell runs the `Update-TypeData` cmdlet with the specified files.
 Because type files are not scoped, they affect all session states in the session.
 
 ```yaml
