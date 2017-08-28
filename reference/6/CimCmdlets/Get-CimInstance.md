@@ -496,11 +496,11 @@ This cmdlet returns one or more CIM instance objects representing a snapshot of 
 
 [Invoke-CimMethod](invoke-cimmethod.md)
 
-[New-CimInstance](new-ciminstance.md)
+[New-CimInstance](New-CimInstance.md)
 
 [Register-CimIndicationEvent" Register-CimIndicationEvent]()
 
 [Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance](set-ciminstance.md)
+[Set-CimInstance](Set-CimInstance.md)
 

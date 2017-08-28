@@ -241,7 +241,7 @@ Accept wildcard characters: True
 
 [Format-Table](../microsoft.powershell.utility/format-table.md)
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 
 [Remove-CimSession](remove-cimsession.md)
 

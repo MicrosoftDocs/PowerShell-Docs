@@ -461,7 +461,7 @@ This cmdlet returns an object.
 
 [Get-CimInstance](get-ciminstance.md)
 
-[Get-CimSession](get-cimsession.md)
+[Get-CimSession](Get-CimSession.md)
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 

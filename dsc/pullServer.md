@@ -45,8 +45,7 @@ The easiest way to set up a web pull server is to use the xWebService resource, 
                 [ValidateNotNullOrEmpty()]
                 [string] $RegistrationKey 
          ) 
-
-
+         
          Import-DSCResource -ModuleName xPSDesiredStateConfiguration
          Import-DSCResource –ModuleName PSDesiredStateConfiguration
 

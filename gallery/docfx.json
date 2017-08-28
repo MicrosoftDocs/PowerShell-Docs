@@ -12,6 +12,7 @@
         "globalMetadata": {
         "breadcrumb_path": "/powershell/gallery/bread/toc.json",
             "ROBOTS": "INDEX, FOLLOW",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
             "ms.prod": "powershell",
             "ms.technology": "gallery",
             "manager": "carmonm",
