@@ -7,7 +7,6 @@ title:  core powershell
 #  Common PowerShell
 This section contains all reference material and in-depth guides for PowerShell.  
 Find in this section:
--  The [PowerShell Common Modules](core-modules.md)
 -  The [PowerShell Integrated Scripting Environment -ISE-](ise-guide.md)
 -  The [PowerShell Console Window](console-guide.md)
 -  The [PowerShell Remote Management](Running-Remote-Commands.md)
