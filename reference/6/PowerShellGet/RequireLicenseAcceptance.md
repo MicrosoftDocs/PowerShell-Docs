@@ -178,9 +178,8 @@ copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
-
-This command shows the license from license.txt file and prompts the user to accept the license.
 ```
+This command shows the license from license.txt file and prompts the user to accept the license.
 
 ### Example 11: Save Module requiring license acceptance with -AcceptLicense
 ```PowerShell
