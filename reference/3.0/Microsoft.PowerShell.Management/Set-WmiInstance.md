@@ -60,12 +60,13 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
 ```
 
 ## DESCRIPTION
-The **Set-WmiInstance** cmdlet creates or updates an instance of an existing WMI class.
+The `Set-WmiInstance` cmdlet creates or updates an instance of an existing WMI class.
 The created or updated instance is written to the WMI repository.
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using **Set-WmiInstance**, consider using the Set-CimInstancehttp://go.microsoft.com/fwlink/?LinkId=227962 or New-CimInstancehttp://go.microsoft.com/fwlink/?LinkId=227963 cmdlets.
+Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](http://go.microsoft.com/fwlink/?LinkId=227962) or [New-CimInstance](http://go.microsoft.com/fwlink/?LinkId=227963) cmdlets.
+
 ## EXAMPLES
 
 ### Example 1

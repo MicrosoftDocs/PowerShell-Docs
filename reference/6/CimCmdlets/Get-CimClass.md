@@ -250,5 +250,5 @@ This cmdlet returns a CIM class object.
 
 ## RELATED LINKS
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 

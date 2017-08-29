@@ -8,11 +8,11 @@ ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 # How to Write and Run Scripts in the Windows PowerShell ISE
 This topic describes how to create, edit, run, and save scripts in the Script Pane.
 
--   [How to create and run scripts](#bkmk_1)
+-   [How to create and run scripts]()
 
--   [How to write and edit text in the Script Pane](#bkmk_2)
+-   [How to write and edit text in the Script Pane]()
 
--   [How to save a script](#bkmk_3)
+-   [How to save a script]()
 
 ## <a name="bkmk_1"></a>How to create and run scripts
 You can open and edit Windows PowerShell® files in the Script Pane. Specific file types of interest in Windows PowerShell® are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
