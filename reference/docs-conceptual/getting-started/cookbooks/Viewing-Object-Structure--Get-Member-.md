@@ -61,7 +61,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 There are over 60 properties for a process. The reason Windows PowerShell often shows only a handful of properties for any well-known object is that showing all of them would produce an unmanageable amount of information.
 
 > [!NOTE]
-> Windows PowerShell determines how to display an object type by using information stored in XML files that have names ending in .format.ps1xml. The formatting data for process objects, which are .NET System.Diagnostics.Process objects, is stored in PowerShellCore.format.ps1xml.
+> Windows PowerShell determines how to display an object type by using information stored in XML files that have names ending in .format.ps1xml. The formatting data for process objects, which are .NET System.Diagnostics.Process objects, is stored in DotNetTypes.format.ps1xml.
 
 If you need to look at properties other than those that Windows PowerShell displays by default, you will need to format the output data yourself. This can be done by using the format cmdlets.
 
