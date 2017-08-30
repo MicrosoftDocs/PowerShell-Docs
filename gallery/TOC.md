@@ -19,6 +19,7 @@
 ### [Contacting item owners](psgallery/psgallery_contacting_item_owners.md)
 ### [Contacting administrators](psgallery/psgallery_contacting_administrators.md)
 ### [Providing Feedback via Social Media or Comments](psgallery/psgallery-SocialMediaFeedback.md)
+### [Requires License Acceptance](psgallery/psgallery_requires_license_acceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [Get PowerShellGet Module](psget/get_psget_module.md)
@@ -36,6 +37,7 @@
 ### [Update module manifest](psget/module/psget_update-modulemanifest.md)
 ### [Publish](psget/module/psget_publish-module.md)
 ### [Modules with PSEditions](psget/module/modulewithpseditionsupport.md)
+### [Modules Requiring License Acceptance](psget/module/RequireLicenseAcceptance.md)
 ### [Troubleshooting](psget/psget_cmdlets_troubleshooting.md)
 
 ## Script
