@@ -33,7 +33,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-We can make this long list of information more usable by filtering for elements we want to see. The **Get-Member** command lets you list only members that are properties. There are several forms of properties. The cmdlet displays properties of any type if we set the **Get-MemberMemberType** parameter to the value **Properties**. The resulting list is still very long, but a bit more manageable:
+We can make this long list of information more usable by filtering for elements we want to see. The **Get-Member** command lets you list only members that are properties. There are several forms of properties. The cmdlet displays properties of any type if we set the **Get-Member MemberType** parameter to the value **Properties**. The resulting list is still very long, but a bit more manageable:
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
