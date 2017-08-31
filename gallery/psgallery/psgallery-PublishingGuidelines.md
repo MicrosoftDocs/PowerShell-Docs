@@ -69,9 +69,9 @@ Documentation is the most helpful thing to include in items published to the Pow
 Users will generally bypass items without documentation, as the alternative is to read the code to understand what the item is and how to use it.
 There are several articles available in MSDN on how to provide documentation with PowerShell items, including:
 
-* Guidelines for providing help are in [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)
+* Guidelines for providing help are in [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Creating cmdlet help, which is the best approach for any PowerShell script, function, or cmdlet.
-  For information about how to create cmdlet help, start with [How to Write Cmdlet Help](http://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN (Microsoft Developer Network) library.
+  For information about how to create cmdlet help, start with [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
   To add help within a script, see [About Comment Based Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Many modules also include documentation in text format, such as MarkDown files.
   This can be particularly helpful when there is a project site in Github, where Markdown is a heavily used format.
