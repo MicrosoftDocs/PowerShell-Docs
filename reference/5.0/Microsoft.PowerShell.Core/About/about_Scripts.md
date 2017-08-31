@@ -197,7 +197,7 @@ Create a Help topic by using special keywords in the comments. To create comment
 
 Create an XML-based Help topic, such as the type that is typically created for cmdlets. XML-based Help is required if you are translating Help topics into multiple languages.
 
-To associate the script with the XML-based Help topic, use the .ExternalHelp Help comment keyword. For more information about the ExternalHelp keyword, see about_Comment_Based_Help. For more information about XML-based help, see "How to Write Cmdlet Help" in the MSDN (Microsoft Developer Network) library at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=123415.
+To associate the script with the XML-based Help topic, use the .ExternalHelp Help comment keyword. For more information about the ExternalHelp keyword, see about_Comment_Based_Help. For more information about XML-based help, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 
 ### SCRIPT SCOPE AND DOT SOURCING

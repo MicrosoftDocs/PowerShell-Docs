@@ -12,20 +12,19 @@ Module Name:  PSDesiredStateConfiguration
 
 # PSDesiredStateConfiguration Module
 ## Description
-Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks. 
+Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks.
 
 ## PSDesiredStateConfiguration Cmdlets
-### [configuration](configuration.md)
+### [Configuration](Configuration.md)
 {{Manually Enter configuration Description Here}}
 
-### [Get-DscResource](get-dscresource.md)
+### [Get-DscResource](Get-DscResource.md)
 Gets the DSC resources present on the computer.
 
 
-### [New-DSCCheckSum](new-dscchecksum.md)
+### [New-DSCCheckSum](New-DSCCheckSum.md)
 Creates checksum files for DSC documents and DSC resources.
 
 
 ### [node.exe](node.exe.md)
 {{Manually Enter node.exe Description Here}}
-

@@ -476,5 +476,5 @@ This cmdlet returns an object that contains CIM session options information.
 
 [Get-Item](../microsoft.powershell.management/get-item.md)
 
-[New-CimSession](new-cimsession.md)
+[New-CimSession](New-CimSession.md)
 
