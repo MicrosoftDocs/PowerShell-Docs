@@ -71,7 +71,7 @@ To display only the examples in a Help topic, use the *Example* parameter of the
 get-help get-childitem -examples
 ```
 
-For information about how to write Help topics for the cmdlets that you write, see the "How to Write Cmdlet Help" topic in MSDN.
+For information about how to write Help topics for the cmdlets that you write, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 ## Getting Conceptual Help
 The Get-Help cmdlet also displays information about conceptual topics in Windows PowerShell, including topics about the Windows PowerShell language. Conceptual Help topics begin with the "about_" prefix, such as about_line_editing. (The name of the conceptual topic must be entered in English even on non-English versions of Windows PowerShell.)
@@ -161,7 +161,7 @@ The first line in the Related Links section of the topic is shown below.
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-For information about how to provide online support for your Help topics, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), and see "How to Write Cmdlet Help" ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) in the MSDN (Microsoft Developer Network) library.
+For information about how to provide online support for your Help topics, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), and see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 ## See Also
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)

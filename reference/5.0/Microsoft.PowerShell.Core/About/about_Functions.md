@@ -472,7 +472,7 @@ for the function return only auto-generated help.
 
 For more information about the ExternalHelp keyword, see
 about_Comment_Based_Help. For more information about
-XML-based help, see "How to Write Cmdlet Help" in MSDN.
+XML-based help, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 # SEE ALSO
 
