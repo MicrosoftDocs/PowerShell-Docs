@@ -19,8 +19,7 @@ Gets the items and child items in one or more specified locations.
 
 ```powershell
 Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
+ [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File]
  [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
@@ -28,9 +27,8 @@ Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-
 
 ```powershell
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
- [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory]
+ [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## Description

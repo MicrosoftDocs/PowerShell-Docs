@@ -11,7 +11,7 @@ title:  Get-Item
 # Get-Item
 
 ## SYNOPSIS
-Gets the item at the specified location.
+Gets one or more items at the specified location.
 
 ## SYNTAX
 
@@ -28,16 +28,17 @@ Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Excl
 ```
 
 ## DESCRIPTION
-The Get-Item cmdlet gets the item at the specified location.
+The **Get-Item** cmdlet gets the item at the specified location.
 It does not get the contents of the item at the location unless you use a wildcard character (*) to request all the contents of the item.
 
-The Get-Item cmdlet is used by Windows PowerShell providers to enable you to navigate through different types of data stores.
+This cmdlet is used by Windows PowerShell providers to navigate through different types of data stores.
+In the FileSystem provider, `Get-Item` gets files and folders.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get the current directory
 ```
-PS C:\> get-item .
+PS C:\> Get-Item .
 
 Directory: C:\
 Mode                LastWriteTime     Length Name
@@ -46,11 +47,11 @@ d----         7/26/2006  10:01 AM            ps-test
 ```
 
 This command gets the current directory.
-The dot (.) represents the item at the current location (not its contents).
+The dot (`.`) represents the item at the current location (not its contents).
 
-### Example 2
+### Example 2: Get all the items in the current directory
 ```
-PS C:\> get-item *
+PS C:\> Get-Item *
 
 Directory: C:\ps-test
 Mode                LastWriteTime     Length Name
@@ -64,82 +65,101 @@ d----         7/26/2006   9:26 AM            Recs
 ```
 
 This command gets all the items in the current directory.
-The wildcard character (*) represents all the contents of the current item.
+The wildcard character (`*`) represents all the contents of the current item.
 
-### Example 3
-```
-PS C:\> get-item C:\
+### Example 3: Get the current directory of a drive
+```powershell
+Get-Item C:\
 ```
 
 This command gets the current directory of the C: drive.
 The object that is retrieved represents only the directory, not its contents.
 
-### Example 4
-```
-PS C:\> get-item C:\*
+### Example 4: Get items in the specified drive
+```powershell
+Get-Item C:\*
 ```
 
 This command gets the items in the C: drive.
-The wildcard character (*) represents all the items in the container, not just the container.
+The wildcard character (`*`) represents all the items in the container, not just the container.
 
-In Windows PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*".
-The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
+In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*` in Windows.
+The format is interpreted literally, so `*.*` would not retrieve directories or file names without a dot.
 
-### Example 5
-```
-PS C:\> (get-item C:\Windows).LastAccessTime
-```
-
-This command gets the LastAccessTime property of the C:\Windows directory.
-LastAccessTime is just one property of file system directories.
-To see all of the properties of a directory, type "(Get-Item \<directory-name\>) | Get-Member".
-
-### Example 6
-```
-PS C:\> get-item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
+### Example 5: Get a property in the specified directory
+```powershell
+(Get-Item C:\Windows).LastAccessTime
 ```
 
-This command shows the contents of the Microsoft.PowerShell registry key.
-You can use Get-Item with the Windows PowerShell Registry provider to get registry keys and subkeys, but you must use Get-ItemProperty to get the registry values and data.
+This command gets the `LastAccessTime` property of the `C:\Windows` directory.
+`LastAccessTime` is just one property of file system directories.
+To see all of the properties of a directory, type `(Get-Item \<directory-name\>) | Get-Member`.
 
-### Example 7
-```
-PS C:\> get-item c:\Windows\*.* -exclude w*
+### Example 6: Show the contents of a registry key
+```powershell
+Get-Item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
 ```
 
-This command gets items in the Windows directory with names that include a dot (.), but do not begin with w*.
-This command works only when the path includes a wildcard character (*) to specify the contents of the item.
+This command shows the contents of the `Microsoft.PowerShell` registry key.
+You can use this cmdlet with the PowerShell Registry provider on Windows to get registry keys and subkeys, but you must use `Get-ItemProperty` to get the registry values and data.
+
+This example is not supported on non-Windows platforms.
+
+### Example 7: Get items in a directory that have an exclusion
+```powershell
+Get-Item c:\Windows\*.* -exclude "w*"
+```
+
+This command gets items in the Windows directory with names that include a dot (`.`), but do not begin with `w*`.
+This command works only when the path includes a wildcard character (`*`) to specify the contents of the item.
+
+### Example 8: Get all stream data from a single file
+```
+C:\PS>Get-Item C:\Users\User01\Downloads\InternetFile.docx -Stream *
+
+   FileName: C:\Users\User01\Downloads\InternetFile.docx
+
+Stream                   Length
+------                   ------
+:$DATA                    45056
+Zone.Identifier              26
+```
+
+This command gets all stream data from a file that was downloaded from the internet.
+The `Zone.Identifier` stream identifies a file that originated on the internet.
+The `$DATA` stream is the default.
+
+### Example 9: Get all `Zone.Identifier` stream data from multiple files
+```
+C:\PS>Get-Item C:\ps-test\* -Stream Zone.Identifier -ErrorAction SilentlyContinue
+
+   FileName: C:\ps-test\Copy-Script.ps1
+
+Stream                   Length
+------                   ------
+Zone.Identifier              26
+
+   FileName: C:\ps-test\Start-ActivityTracker.ps1
+
+Stream                   Length
+------                   ------
+Zone.Identifier              26
+```
+
+This command gets `Zone.Identifier` stream data from all files in the `C:\ps-test` directory.
+The command uses the `-Stream` parameter to specify the alternate stream and the `-ErrorAction` parameter with a value of `SilentlyContinue` to suppress non-terminating errors that are generated when a file has no alternate data streams.
 
 ## PARAMETERS
 
-### -Credential
-Specifies a user account that has permission to perform this action.
-The default is the current user.
+### -Stream
+Gets the specified alternate NTFS file stream from the file.
+Enter the stream name. Wildcards are supported.
+To get all streams, use an asterisk (`*`).
+This parameter is not valid on folders.
 
-Type a user-name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+`-Stream` is a dynamic parameter that the FileSystem provider adds to the `Get-Item` cmdlet. This parameter works only in filesystem drives.
 
-This parameter is not supported by any providers installed with Windows PowerShell.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: Current user
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Exclude
-Omits the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
-
-The Exclude parameter is effective only when the command includes the contents of an item, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]
@@ -150,14 +170,55 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
+```
+
+### -Credential
+Specifies a user account that has permission to perform this action.
+The default is the current user.
+
+Type a username, such as `User01` or `Domain01\User01`, or enter a `PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
+If you type a username, you will be prompted for a password.
+
+This parameter is not supported by any providers installed with PowerShell.
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
+The value of this parameter qualifies the `-Path` parameter.
+Enter a path element or pattern, such as `*.txt`.
+Wildcards are permitted.
+
+The `-Exclude` parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Filter
 Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the Path parameter.
+The value of this parameter qualifies the `-Path` parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when this cmdlet gets the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -168,14 +229,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Force
-Allows the cmdlet to get items that cannot otherwise be accessed, such as hidden items.
+Indicates that this cmdlet gets items that cannot otherwise be accessed, such as hidden items.
 Implementation varies from provider to provider.
 For more information, see about_Providers.
-Even using the Force parameter, the cmdlet cannot override security restrictions.
+Even using the `-Force` parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -184,18 +245,18 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Force
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Include
-Retrieves only the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
+Specifies, as a string array, an item or items that this cmdlet includes in the operation.
+The value of this parameter qualifies the `-Path` parameter.
+Enter a path element or pattern, such as `*.txt`.
 Wildcards are permitted.
 
-The Include parameter is effective only when the command includes the contents of an item, such as C:\Windows\*, where the wildcard character specifies the contents of the C:\Windows directory.
+The `-Include` parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -206,12 +267,12 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -LiteralPath
 Specifies a path to the item.
-Unlike Path, the value of LiteralPath is used exactly as it is typed.
+Unlike the `-Path` parameter, the value of `-LiteralPath` is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
@@ -230,12 +291,12 @@ Accept wildcard characters: False
 
 ### -Path
 Specifies the path to an item.
-Get-Item gets the item at the specified location.
+This cmdlet gets the item at the specified location.
 Wildcards are permitted.
-This parameter is required, but the parameter name ("Path") is optional.
+This parameter is required, but the parameter name `-Path` is optional.
 
-Use a dot (.) to specify the current location.
-Use the wildcard character (*) to specify all the items in the current location.
+Use a dot (`.`) to specify the current location.
+Use the wildcard character (`*`) to specify all the items in the current location.
 
 ```yaml
 Type: String[]
@@ -246,15 +307,13 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -268,63 +327,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Stream
-Specifies an alternative data stream from a file that this cmdlet deletes.
-This cmdlet does not delete the file.
-Enter the stream name.
-Wildcard characters are supported.
-
-This parameter is not valid on folders.
-
-The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Get-Item**.
-This parameter works only in file system drives.
-
-You can use **Get-Item** to delete an alternative data stream.
-However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path to Get-Item.
+You can pipe a string that contains a path to `Get-Item`.
 
 ## OUTPUTS
 
 ### System.Object
-Get-Item returns the objects that it gets.
+This cmdlet returns the objects that it gets.
 The type is determined by the type of objects in the path.
 
+### System.IOFileInfo, System.IO.DirectoryInfo, Microsoft.PowerShell.Commands.AlternateStreamData
+In the filesystem, `Get-Item` returns files and folders.
+If you use the `-Stream` parameter, it returns `AlternateStreamData` objects.
+
 ## NOTES
-* You can also refer to Get-Item by its built-in alias, "gi". For more information, see about_Aliases.
+You can also refer to this cmdlet by its built-in alias, "`gi`".
+For more information, see about_Aliases.
 
-  Get-Item does not have a Recurse parameter, because it gets only an item, not its contents.
-To get the contents of an item recursively, use Get-ChildItem.
+This cmdlet does not have a `-Recurse` parameter, because it gets only an item, not its contents.
+To get the contents of an item recursively, use `Get-ChildItem`.
 
-  To navigate through the registry, use Get-Item to get registry keys and Get-ItemProperty to get registry values and data.
+To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty` to get registry values and data.
 The registry values are considered to be properties of the registry key.
 
-  The Get-Item cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type "Get-PsProvider".
+This cmdlet is designed to work with the data exposed by any provider.
+To list the providers available in your session, type `Get-PsProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 
@@ -344,5 +377,8 @@ For more information, see about_Providers.
 
 [Set-Item](Set-Item.md)
 
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Get-ChildItem](Get-ChildItem.md)
 
+[Get-ItemProperty](Get-ItemProperty.md)
+
+[Get-PSProvider](Get-PSProvider.md)
