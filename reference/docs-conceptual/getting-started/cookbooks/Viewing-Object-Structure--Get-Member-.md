@@ -33,7 +33,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-We can make this long list of information more usable by filtering for elements we want to see. The **Get-Member** command lets you list only members that are properties. There are several forms of properties. The cmdlet displays properties of any type if we set the **Get-MemberMemberType** parameter to the value **Properties**. The resulting list is still very long, but a bit more manageable:
+We can make this long list of information more usable by filtering for elements we want to see. The **Get-Member** command lets you list only members that are properties. There are several forms of properties. The cmdlet displays properties of any type if we set the **Get-Member MemberType** parameter to the value **Properties**. The resulting list is still very long, but a bit more manageable:
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -61,7 +61,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 There are over 60 properties for a process. The reason Windows PowerShell often shows only a handful of properties for any well-known object is that showing all of them would produce an unmanageable amount of information.
 
 > [!NOTE]
-> Windows PowerShell determines how to display an object type by using information stored in XML files that have names ending in .format.ps1xml. The formatting data for process objects, which are .NET System.Diagnostics.Process objects, is stored in PowerShellCore.format.ps1xml.
+> Windows PowerShell determines how to display an object type by using information stored in XML files that have names ending in .format.ps1xml. The formatting data for process objects, which are .NET System.Diagnostics.Process objects, is stored in DotNetTypes.format.ps1xml.
 
 If you need to look at properties other than those that Windows PowerShell displays by default, you will need to format the output data yourself. This can be done by using the format cmdlets.
 
