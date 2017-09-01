@@ -64,8 +64,7 @@ If you use the JobName parameter in a workflow command, the workflow is run
 as a job and the workflow command returns a job object, even if you do not
 include the AsJob parameter in the command.
 
-For more information about Windows PowerShell background jobs, see
-about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 -PSAllowRedirection <SwitchParameter>
 Allows redirection of the connection to the target computers.

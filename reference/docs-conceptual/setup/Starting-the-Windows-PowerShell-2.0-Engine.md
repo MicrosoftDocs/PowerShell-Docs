@@ -62,5 +62,5 @@ The following command starts a background job with the Windows PowerShell 2.0 En
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-For more information about background jobs, see [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002).
+For more information about background jobs, see [about_Jobs [v4]](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-4.0).
 
