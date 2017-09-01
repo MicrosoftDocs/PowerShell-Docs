@@ -32,7 +32,7 @@ Items that follow these guidelines are far more likely to be downloaded and adop
 * Include documentation and examples
 * Be responsive to feedback
 * Provide modules rather than scripts
-* Follow [SemVer] guidelines for versioning
+* Follow [SemVer](http://semver.org/) guidelines for versioning
 * Provide links to a project site
 * Include tests with your modules
 * Include and/or link to license terms
