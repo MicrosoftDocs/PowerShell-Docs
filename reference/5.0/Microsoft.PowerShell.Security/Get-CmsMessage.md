@@ -33,12 +33,12 @@ Get-CmsMessage [-LiteralPath] <String> [<CommonParameters>]
 ## DESCRIPTION
 The **Get-CmsMessage** cmdlet gets content that has been encrypted using the Cryptographic Message Syntax (CMS) format.
 
-The CMS cmdlets support encryption and decryption of content using the IETF format for cryptographically protecting messages, as documented by RFC5652http://tools.ietf.org/html/rfc5652.
+The CMS cmdlets support encryption and decryption of content using the IETF format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.
 Your public key can be shared widely, and is not sensitive data.
 If any content is encrypted with this public key, only your private key can decrypt it.
-For more information about public-key cryptography, see http://en.wikipedia.org/wiki/Public-key_cryptographyhttp://en.wikipedia.org/wiki/Public-key_cryptography.
+For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 **Get-CmsMessage** gets content that has been encrypted in CMS format.
 It does not decrypt or unprotect content.
