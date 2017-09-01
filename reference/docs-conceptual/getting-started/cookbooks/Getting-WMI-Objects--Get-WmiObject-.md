@@ -106,14 +106,13 @@ If you want information contained in the **Win32_OperatingSystem** class that is
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-Table -Property TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize TotalVisibleMem FreePhysicalMem FreeVirtualMemo FreeSpaceInPagi
-                              ory              ry         ngFiles
---------------- --------------- --------------- --------------- ---------------
-        2097024          785904          305808         2056724         1558232
+TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
+---------------------- ---------------    ------------------ -==--------------------- ---------------
+               2097024          785904                305808           2056724                1558232
 ```
 
 > [!NOTE]
-> Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to **Format-Table -Property TotalV\&#42;,Free\&#42;**
+> Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to **Format-Table -Property Total*,Free*
 
 The memory data might be more readable if you format it as a list by typing:
 
