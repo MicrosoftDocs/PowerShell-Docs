@@ -21,11 +21,11 @@ Remove-DscConfigurationDocument -Stage <Stage> [-Force] [-CimSession <CimSession
 ```
 
 ## DESCRIPTION
-The **Remove-DscConfigurationDocument** cmdlet removes a configuration document (.mof file) from the Windows PowerShell Desired State Configuration (DSC) configuration store.
-During configuration, the Start-DscConfiguration cmdlet copies a .mof file to a folder on the target computer.
+The `Remove-DscConfigurationDocument` cmdlet removes a configuration document (.mof file) from the Windows PowerShell Desired State Configuration (DSC) configuration store.
+During configuration, the `Start-DscConfiguration` cmdlet copies a .mof file to a folder on the target computer.
 This cmdlet removes that configuration document and does additional cleanup.
 
-This cmdlet is available only as part of the November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2http://support.microsoft.com/en-us/kb/3000850 (http://support.microsoft.com/en-us/kb/3000850) from the Microsoft Support library.
+This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
 Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
