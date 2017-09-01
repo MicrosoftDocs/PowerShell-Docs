@@ -35,15 +35,15 @@ Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutF
 ## DESCRIPTION
 The **Protect-CmsMessage** cmdlet encrypts content by using the Cryptographic Message Syntax (CMS) format.
 
-The CMS cmdlets support encryption and decryption of content using the IETF format as documented by RFC5652http://tools.ietf.org/html/rfc5652.
+The CMS cmdlets support encryption and decryption of content using the IETF format as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.
 Your public key can be shared widely, and is not sensitive data.
 If any content is encrypted with this public key, only your private key can decrypt it.
-For more information about Public Key Cryptography, see http://en.wikipedia.org/wiki/Public-key_cryptographyhttp://en.wikipedia.org/wiki/Public-key_cryptography.
+For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 Before you can run the **Protect-CmsMessage** cmdlet, you must have an encryption certificate set up.
-To be recognized in Windows PowerShell, encryption certificates require a unique extended key usage (EKU)http://msdn.microsoft.com/library/windows/desktop/aa381990(v=vs.85).aspx ID to identify them as data encryption certificates (such as the IDs for Code Signing and Encrypted Mail).
+To be recognized in Windows PowerShell, encryption certificates require a unique extended key usage ([EKU](https://msdn.microsoft.com/library/windows/desktop/aa381990)) ID to identify them as data encryption certificates (such as the IDs for Code Signing and Encrypted Mail).
 For an example of a certificate that would work for document encryption, see Example 1 in this topic.
 
 ## EXAMPLES

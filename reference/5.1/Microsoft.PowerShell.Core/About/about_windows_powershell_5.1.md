@@ -78,8 +78,7 @@ NEW FEATURES
        Event Tracing for Windows (ETW) event log, Microsoft-Windows-PowerShell/Operational.  
     -- Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets  
        support encryption and decryption of content by using the IETF standard format  
-       for cryptographically protecting messages as documented by RFC5652  
-       (http://tools.ietf.org/html/rfc5652). The Get-CmsMessage, Protect-CmsMessage,  
+       for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652). The Get-CmsMessage, Protect-CmsMessage,  
        and Unprotect-CmsMessage cmdlets have been added to the   
        Microsoft.PowerShell.Security module.  
     -- New cmdlets in the Microsoft.PowerShell.Utility module, Get-Runspace,  
