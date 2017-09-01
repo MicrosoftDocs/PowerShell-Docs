@@ -10,7 +10,7 @@ Starts a Windows PowerShell session. You can use PowerShell.exe to start a Windo
 
 ## Syntax
 
-```
+```syntax
 PowerShell[.exe]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]

@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  What s New in the PowerShell 50 ISE
@@ -6,7 +6,7 @@ ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
 
 # What&#39;s New in the Windows PowerShell ISE
-This topic explains the new and updated features that have been introduced in versions of Windows PowerShell Â® Integrated Scripting Environment (ISE).
+This topic explains the new and updated features that have been introduced in versions of Windows PowerShell  Integrated Scripting Environment (ISE).
 
 ## Feature description
 The Windows PowerShell ISE is a host application that enables you to write, run, and test scripts and modules in a graphical and intuitive environment. Key features such as syntax-coloring, tab completion, visual debugging, Unicode compliance, and context-sensitive Help provide a rich scripting experience.
@@ -171,7 +171,7 @@ Other Windows PowerShell ISE editing features include:
 
 -   **Parse error display** Parse errors are indicated with red underlines. When you hover over an indicated error, tooltip text displays the problem that was found in the code.
 
--   **Zoom** The zoom percentage of the consoleâ€™s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
+-   **Zoom** The zoom percentage of the console'™s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
 
 -   **Rich text copy and paste** Copying to the clipboard in Windows PowerShell ISE preserves the font, size, and color information of the original selection.
 

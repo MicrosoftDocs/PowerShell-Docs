@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  What s New in Windows PowerShell 50
@@ -6,12 +6,12 @@ ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
 ---
 
 # What&#39;s New in Windows PowerShell
-Windows PowerShell Â® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows-based environments more easily and comprehensively.
+Windows PowerShell  5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows-based environments more easily and comprehensively.
 
 Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
 
 # Installing Windows PowerShell
-Windows PowerShell 5.0 is installed by default on Windows Server Â® 2016 Technical Preview and Windows 10 Â®. 
+Windows PowerShell 5.0 is installed by default on Windows Server  2016 Technical Preview and Windows 10 . 
 
 To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](http://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
 
@@ -174,7 +174,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets support encryption and decryption of content by using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](http://tools.ietf.org/html/rfc5652). The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage cmdlets have been added to the [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) module.
 
--   New cmdlets in the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module, Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a runspace, and start and stop debugging on a runspace. For debugging arbitrary runspacesâ€”that is, runspaces that are not the default runspace for a Windows PowerShell console or Windows PowerShell ISE sessionâ€”Windows PowerShell lets you set breakpoints in a script, and have added breakpoints stop the script from running until you can attach a debugger to debug the runspace script. Nested debugging support for arbitrary runspaces has been added to the Windows PowerShell script debugger for runspaces.
+-   New cmdlets in the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module, Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a runspace, and start and stop debugging on a runspace. For debugging arbitrary runspaces'”that is, runspaces that are not the default runspace for a Windows PowerShell console or Windows PowerShell ISE session'”Windows PowerShell lets you set breakpoints in a script, and have added breakpoints stop the script from running until you can attach a debugger to debug the runspace script. Nested debugging support for arbitrary runspaces has been added to the Windows PowerShell script debugger for runspaces.
 
 -   A new Format-Hex cmdlet has been added to the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module. Format-Hex lets you view text or binary data in hexadecimal format.
 
@@ -222,7 +222,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 ### New features in Windows PowerShell Desired State Configuration
 
--   Windows PowerShell language enhancements let you define Windows PowerShell Desired State Configuration (DSC) resources by using classes. Import-DscResource is now a true dynamic keyword; Windows PowerShell parses the specified moduleâ€™s root module, searching for classes that contain the DscResource attribute. You can now use classes to define DSC resources, in which neither a MOF file nor a DSCResource subfolder in the module folder is required. A Windows PowerShell module file can contain multiple DSC resource classes.
+-   Windows PowerShell language enhancements let you define Windows PowerShell Desired State Configuration (DSC) resources by using classes. Import-DscResource is now a true dynamic keyword; Windows PowerShell parses the specified module'™s root module, searching for classes that contain the DscResource attribute. You can now use classes to define DSC resources, in which neither a MOF file nor a DSCResource subfolder in the module folder is required. A Windows PowerShell module file can contain multiple DSC resource classes.
 
 -   A new parameter, ThrottleLimit, has been added to the following cmdlets in the PSDesiredStateConfiguration module. Add the ThrottleLimit parameter to specify the number of target computers or devices on which you want the command to work at the same time.
 
@@ -266,9 +266,9 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 -   A new **DscLocalConfigurationManager** attribute designates a configuration block as a meta-configuration, which is used to configure the DSC Local Configuration Manager. This attribute restricts a configuration to containing only items which configure the DSC Local Configuration Manager. During processing, this configuration generates a \*.meta.mof file that is then sent to the appropriate target nodes by running the Set-DscLocalConfigurationManager cmdlet.
 
--   Partial configurations are now allowed in Windows PowerShell 5.0. You can deliver configuration documents to a node in fragments. For a node to receive multiple fragments of a configuration document, the nodeâ€™s Local Configuration Manager must be first set to specify the expected fragments
+-   Partial configurations are now allowed in Windows PowerShell 5.0. You can deliver configuration documents to a node in fragments. For a node to receive multiple fragments of a configuration document, the node'™s Local Configuration Manager must be first set to specify the expected fragments
 
--   Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. By using the built-in WaitFor\* resources (**WaitForAll**, **WaitForAny**, and **WaitForSome**), you can now specify dependencies across computers during configuration runs, without external orchestrations. These resources provide node-to-node synchronization by using CIM connections over the WS-Man protocol. A configuration can wait for another computerâ€™s specific resource state to change.
+-   Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. By using the built-in WaitFor\* resources (**WaitForAll**, **WaitForAny**, and **WaitForSome**), you can now specify dependencies across computers during configuration runs, without external orchestrations. These resources provide node-to-node synchronization by using CIM connections over the WS-Man protocol. A configuration can wait for another computer'™s specific resource state to change.
 
 -   Just Enough Administration (JEA), a new delegation security feature, leverages DSC and Windows PowerShell constrained runspaces to help secure enterprises from data loss or compromise by employees, whether intentional or unintentional. For more information about JEA, including where you can download the xJEA DSC resource, see [Just Enough Administration, Step by Step](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 
@@ -286,7 +286,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 ### New features in Windows PowerShell ISE
 
--   You can now edit remote Windows PowerShell scripts and files in a local copy of Windows PowerShell ISE, by running Enter-PSSession to start a remote session on the computer thatâ€™s storing the files you want to edit, and then running **PSEdit <path and file name on the remote computer>**. This feature eases editing Windows PowerShell files that are stored on the Server Core installation option of Windows Server, where Windows PowerShell ISE cannot run.
+-   You can now edit remote Windows PowerShell scripts and files in a local copy of Windows PowerShell ISE, by running Enter-PSSession to start a remote session on the computer that'™s storing the files you want to edit, and then running **PSEdit <path and file name on the remote computer>**. This feature eases editing Windows PowerShell files that are stored on the Server Core installation option of Windows Server, where Windows PowerShell ISE cannot run.
 
 -   The Start-Transcript cmdlet is now supported in Windows PowerShell ISE.
 
@@ -307,7 +307,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 ## New features in Windows PowerShell 4.0
 Windows PowerShell 4.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 3.0 and Windows PowerShell 2.0 work in Windows PowerShell 4.0 without changes.
 
-Windows PowerShell 4.0 is installed by default on WindowsÂ® 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on WindowsÂ 7Â withÂ SP1, or WindowsÂ ServerÂ 2008Â R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
+Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on WindowsÂ 7Â withÂ SP1, or WindowsÂ ServerÂ 2008Â R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
 
 -   [New features in Windows PowerShell]()
 
@@ -375,7 +375,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 -   Parameter binding has been significantly enhanced to work outside of tab completion scenarios, such as with commands that do not exist in the current runspace.
 
--   Support for custom container activities has been added to Windows PowerShell Workflow. If an activity parameter is of the types **Activity**, **Activity\[]**â€”or is a generic collection of activitiesâ€”and the user has supplied a script block as an argument, then Windows PowerShell Workflow converts the script block to XAML, as with normal Windows PowerShell script-to-workflow compilation.
+-   Support for custom container activities has been added to Windows PowerShell Workflow. If an activity parameter is of the types **Activity**, **Activity\[]**'”or is a generic collection of activities'”and the user has supplied a script block as an argument, then Windows PowerShell Workflow converts the script block to XAML, as with normal Windows PowerShell script-to-workflow compilation.
 
 -   After a crash, Windows PowerShell Workflow automatically reconnects to managed nodes.
 
@@ -507,7 +507,7 @@ Windows PowerShell 3.0 includes the following new features.
 -   [Special Character Handling Improvements]()
 
 ### Windows PowerShell Workflow
-Windows PowerShellÂ® Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.
+Windows PowerShell Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.
 
 Workflows are sequences of multicomputer management activities that are long-running, repeatable, frequent, parallelizable, interruptible, suspendable, and restartable. Workflows can be resumed from an intentional or accidental interruption, such as a network outage, a Windows restart, or a power failure.
 
@@ -534,12 +534,12 @@ The following are the benefits of Windows PowerShell Workflow
 -   **Workflow and Connection Throttling.** Workflow execution and connections to nodes can be throttled, thus enabling scalability and high-availability scenarios.
 
 ### Windows PowerShell Web Access
-Windows PowerShellÂ® Web Access is a Windows Server 2012 feature that lets users run Windows PowerShell commands and scripts in a web-based console. Devices that use the web-based console do not require Windows PowerShell, remote management software, or browser plug-in installations. All that is required is a properly-configured Windows PowerShell Web Access gateway and a client device browser that supports JavaScriptÂ® and accepts cookies.
+Windows PowerShell Web Access is a Windows Server 2012 feature that lets users run Windows PowerShell commands and scripts in a web-based console. Devices that use the web-based console do not require Windows PowerShell, remote management software, or browser plug-in installations. All that is required is a properly-configured Windows PowerShell Web Access gateway and a client device browser that supports JavaScript and accepts cookies.
 
 For more information, see [Deploy Windows PowerShell Web Access](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### New Windows PowerShell ISE Features
-For Windows PowerShell 3.0, Windows PowerShellÂ® Integrated Scripting Environment (ISE) has many new features, including IntelliSense, Show-Command window, a unified Console Pane, snippets, brace-matching, expand-collapse sections, auto-save, recent items list, rich copy, block copy, and full support for writing Windows PowerShell script workflows. For more information, see [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+For Windows PowerShell 3.0, Windows PowerShell Integrated Scripting Environment (ISE) has many new features, including IntelliSense, Show-Command window, a unified Console Pane, snippets, brace-matching, expand-collapse sections, auto-save, recent items list, rich copy, block copy, and full support for writing Windows PowerShell script workflows. For more information, see [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### Support for Microsoft .NET Framework 4
 Windows PowerShell is built against the Common Language Runtime 4.0. Cmdlet, script, and workflow authors can use the new Microsoft .NET Framework 4 classes in Windows PowerShell, with features that include Application Compatibility and Deployment, Managed Extensibility Framework, Parallel Computing, Networking, Windows Communication Foundation and Windows Workflow Foundation.

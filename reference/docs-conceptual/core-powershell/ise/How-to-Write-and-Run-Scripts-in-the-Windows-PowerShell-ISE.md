@@ -9,7 +9,7 @@ ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 This topic describes how to create, edit, run, and save scripts in the Script Pane.
 
 ## How to create and run scripts
-You can open and edit Windows PowerShellÂ® files in the Script Pane. Specific file types of interest in Windows PowerShellÂ® are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
+You can open and edit Windows PowerShell files in the Script Pane. Specific file types of interest in Windows PowerShell are script files (.ps1), script data files (.psd1), and script module files (.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
 
 > [!NOTE]
 > The Windows PowerShell execution policy determines whether you can run scripts and load Windows PowerShell profiles and configuration files. The default execution policy, Restricted, prevents all scripts from running, and prevents loading profiles. To change the execution policy to allow profiles to load and be used, see [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) and [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
@@ -105,7 +105,7 @@ Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File**
 
 2.  In the **File name** box, enter a name for the file.
 
-3.  In the **Save as type** box, select a file type. For example, in the **Save as type** box, select â€œPowerShell Scripts (\* .ps1)â€.
+3.  In the **Save as type** box, select a file type. For example, in the **Save as type** box, select 'œPowerShell Scripts (\* .ps1)'.
 
 4.  Click **Save**.
 

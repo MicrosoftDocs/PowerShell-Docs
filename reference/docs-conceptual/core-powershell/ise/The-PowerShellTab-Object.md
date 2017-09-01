@@ -51,7 +51,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
+# You can switch to the other tab and type 'œ$x' to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -161,7 +161,7 @@ $psise.CurrentPowerShellTab.output.clear()
 ### Prompt
   Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the current prompt text. Note: the **Prompt** function can be overridden by the userâ€™s profile. If the result is other than a simple string, then this property returns nothing.
+ The read-only property that gets the current prompt text. Note: the **Prompt** function can be overridden by the user'™s profile. If the result is other than a simple string, then this property returns nothing.
 
 ```
 # Gets the current prompt text.

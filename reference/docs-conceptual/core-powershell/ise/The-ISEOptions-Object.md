@@ -301,7 +301,7 @@ $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ```
 
 # Sets the color of the script pane background to yellow.
-$psISE.Options.ScriptPaneBackgroundColor = â€yellowâ€
+$psISE.Options.ScriptPaneBackgroundColor = 'yellow'
 
 ```
 
@@ -481,7 +481,7 @@ $psISE.Options.VerboseBackgroundColor ='#0000FF'
 
 ```
 # Changes the foreground color for verbose text to yellow.
-$psISE.Options.VerboseForegroundColor =â€yellowâ€
+$psISE.Options.VerboseForegroundColor ='yellow'
 ```
 
 ### WarningBackgroundColor
@@ -501,7 +501,7 @@ $psISE.Options.WarningBackgroundColor ='#0000FF'
 
 ```
 # Changes the foreground color for warning text to yellow.
-$psISE.Options.WarningForegroundColor =â€yellowâ€
+$psISE.Options.WarningForegroundColor ='yellow'
 ```
 
 ### XmlTokenColors

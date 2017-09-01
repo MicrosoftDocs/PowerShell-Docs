@@ -20,7 +20,7 @@ PowerShell console in a web browser, with no Windows PowerShell, remote
 management software, or browser plug-in installation necessary on the
 client device. All that is required to run the web-based Windows PowerShell
 console is a properly-configured Windows PowerShell Web Access gateway, and
-a client device browser that supports JavaScriptÂ® and accepts cookies.
+a client device browser that supports JavaScript and accepts cookies.
 
 Examples of client devices include laptops, non-work personal computers,
 borrowed computers, tablet computers, web kiosks, computers that are not
@@ -534,7 +534,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the userâ€™s typical scripting and cmdlet needs. 
+    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user'™s typical scripting and cmdlet needs. 
     
     In the following example, a user named `JSmith` in the `Contoso` domain is granted access to manage the computer `Contoso_214`, and use a session configuration named `NewAdminsOnly`.
 
