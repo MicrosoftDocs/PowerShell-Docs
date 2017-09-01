@@ -28,9 +28,9 @@ Update-DscConfiguration -CimSession <CimSession[]> [-Wait] [-JobName <String>] [
 ```
 
 ## DESCRIPTION
-The **Update-DscConfiguration** cmdlet runs the existing configuration present on a computer or connects to a pull server and then applies the current configuration to the computer.
+The `Update-DscConfiguration` cmdlet runs the existing configuration present on a computer or connects to a pull server and then applies the current configuration to the computer.
 
-This cmdlet is available only as part of the November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2http://support.microsoft.com/en-us/kb/3000850 (http://support.microsoft.com/en-us/kb/3000850) from the Microsoft Support library.
+This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
 Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
