@@ -2,7 +2,6 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  The ISEEditor Object
-ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
 
 # The ISEEditor Object
@@ -62,7 +61,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch]().
+ Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  **text** - String
  The text to insert.
 
- See the [Scripting Example]() later in this topic.
+ See the [Scripting Example](#-scripting-example) later in this topic.
 
 ### Select\( startLine, startColumn, endLine, endColumn \)
   Supported in Windows PowerShell ISE 2.0 and later. 
@@ -95,7 +94,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  **endColumn** - Integer
  The column within the end line where the selection ends.
 
- See the  [Scripting Example]() later in this topic.
+ See the  [Scripting Example](#-scripting-example) later in this topic.
 
 ### SelectCaretLine\(\)
   Supported in Windows PowerShell ISE 2.0 and later. 
@@ -192,14 +191,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  The read-only property that gets the selected text from the editor.
 
- See the  [Scripting Example]() later in this topic.
+ See the  [Scripting Example](#-scripting-example) later in this topic.
 
 ###   Text
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read/write property that gets or sets the text in the editor.
 
- See the [Scripting Example]() later in this topic.
+ See the [Scripting Example](#-scripting-example) later in this topic.
 
 ##   Scripting Example
 
