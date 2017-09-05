@@ -36,9 +36,9 @@ Windows PowerShell console after successful authentication.
 Windows PowerShell Web Access setup and configuration is a three-step 
 process:
 
-1. [install windows powershell web access]()
-2. [configure the gateway]()
-3. [configure authorization rules]()
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
+1. [Configure the Gateway](#configure-the-gateway)
+1. [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
 Before you install and configure Windows PowerShell Web Access, we
 recommend that you read this entire guide, which includes instructions
