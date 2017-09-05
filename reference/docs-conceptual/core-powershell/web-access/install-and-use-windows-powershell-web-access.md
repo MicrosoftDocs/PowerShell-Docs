@@ -203,7 +203,7 @@ the gateway to use a valid certificate that has been signed by a CA.
 
     - On the Windows **Start** screen, click **Windows PowerShell**.
 
-2.  Type the following, and then press **Enter**.
+2. Type the following, and then press **Enter**.
 
     **Install-PswaWebApplication -UseTestCertificate**
 
@@ -284,9 +284,9 @@ visible. Expand the **Sites** folder.
 5. Select the website in which you have installed the Windows PowerShell
 Web Access web application. In the **Actions** pane, click **Bindings**.
 
-6.  In the **Site Binding** dialog box, click **Add**.
+6. In the **Site Binding** dialog box, click **Add**.
 
-7.  In the **Add Site Binding** dialog box, in the **Type** field, select **https**.
+7. In the **Add Site Binding** dialog box, in the **Type** field, select **https**.
 
 8. In the **SSL certificate** field, select your signed certificate from
 the drop-down menu. Click **OK**. See 
@@ -369,21 +369,21 @@ IIS Manager.
 
 #### To install Windows PowerShell Web Access by using the Add Roles and Features Wizard
 
-1.  If Server Manager is already open, go on to the next step. If Server Manager is not already open, open it by doing one of the following.
+1. If Server Manager is already open, go on to the next step. If Server Manager is not already open, open it by doing one of the following.
 
     - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar.
 
     - On the Windows **Start** screen, click **Server Manager**.
 
-2.  On the **Manage** menu, click **Add Roles and Features**.
+2. On the **Manage** menu, click **Add Roles and Features**.
 
-3.  On the **Select installation type** page, select **Role-based or feature-based installation**. Click **Next**.
+3. On the **Select installation type** page, select **Role-based or feature-based installation**. Click **Next**.
 
-4.  On the **Select destination server** page, select a server from the server pool, or select an offline VHD. To select an offline VHD as your destination server, first select the server on which to mount the VHD, and then select the VHD file. For information about how to add servers to your server pool, see the Server Manager Help. After you have selected the destination server, click **Next**.
+4. On the **Select destination server** page, select a server from the server pool, or select an offline VHD. To select an offline VHD as your destination server, first select the server on which to mount the VHD, and then select the VHD file. For information about how to add servers to your server pool, see the Server Manager Help. After you have selected the destination server, click **Next**.
 
-5.  On the **Select features** page of the wizard, expand **Windows PowerShell**, and then select **Windows PowerShell Web Access**.
+5. On the **Select features** page of the wizard, expand **Windows PowerShell**, and then select **Windows PowerShell Web Access**.
 
-6.  Note that you are prompted to add required features, such as .NET Framework 4.5, and role services of Web Server (IIS). Add required features and continue.
+6. Note that you are prompted to add required features, such as .NET Framework 4.5, and role services of Web Server (IIS). Add required features and continue.
 
     >**![Note](images/note.jpeg) Note** 
     >
@@ -399,27 +399,27 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 #### To use IIS Manager to configure the gateway in an existing website
 
-1.  Open the IIS Manager console by doing one of the following.
+1. Open the IIS Manager console by doing one of the following.
 
     - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
 
     - On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
 
-2.  Create a new application pool for Windows PowerShell Web Access. Expand the node of the gateway server in the IIS Manager tree pane, select **Application Pools**, and click **Add Application Pool** in the **Actions** pane.
+2. Create a new application pool for Windows PowerShell Web Access. Expand the node of the gateway server in the IIS Manager tree pane, select **Application Pools**, and click **Add Application Pool** in the **Actions** pane.
 
-3.  Add a new application pool with the name **pswa_pool**, or provide another name. Click **OK**.
+3. Add a new application pool with the name **pswa_pool**, or provide another name. Click **OK**.
 
-4.  In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
+4. In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
 
-5.  Right-click the website (for example, **Default Web Site**) to which you would like to add the Windows PowerShell Web Access website, and then click **Add Application**.
+5. Right-click the website (for example, **Default Web Site**) to which you would like to add the Windows PowerShell Web Access website, and then click **Add Application**.
 
-6.  In the **Alias** field, type pswa, or provide another alias. The alias becomes the virtual directory name. For example, **pswa** in the following URL represents the alias specified in this step: **https://\<server-name\>/pswa**.
+6. In the **Alias** field, type pswa, or provide another alias. The alias becomes the virtual directory name. For example, **pswa** in the following URL represents the alias specified in this step: **https://\<server-name\>/pswa**.
 
-7.  In the **Application pool** field, select the application pool that you created in step 3.
+7. In the **Application pool** field, select the application pool that you created in step 3.
 
-8.  In the **Physical path** field, browse for the location of the application. You can use the default location, %windir%/Web/PowerShellWebAccess/wwwroot. Click **OK**.
+8. In the **Physical path** field, browse for the location of the application. You can use the default location, %windir%/Web/PowerShellWebAccess/wwwroot. Click **OK**.
 
-9.  Follow the steps in the procedure 
+9. Follow the steps in the procedure 
 To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager)
 in this topic.
 
@@ -460,29 +460,29 @@ in this guide.
 
 #### To use IIS Manager to configure the gateway as a root website with a test certificate
 
-1.  Open the IIS Manager console by doing one of the following.
+1. Open the IIS Manager console by doing one of the following.
 
     - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar. On the **Tools** menu in Server Manager, click **Internet Information Services (IIS) Manager**.
 
     - On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
 
-2.  In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
+2. In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
 
-3.  In the **Actions** pane, click **Add Website**.
+3. In the **Actions** pane, click **Add Website**.
 
-4.  Type a name for the website, such as **Windows PowerShell Web Access**.
+4. Type a name for the website, such as **Windows PowerShell Web Access**.
 
-5.  An application pool is automatically created for the new website. To use a different application pool, click **Select** to select an application pool to associate with the new website. Select the alternate application pool in the **Select Application Pool** dialog box, and then click **OK**.
+5. An application pool is automatically created for the new website. To use a different application pool, click **Select** to select an application pool to associate with the new website. Select the alternate application pool in the **Select Application Pool** dialog box, and then click **OK**.
 
-6.  In the **Physical path** text box, navigate to %*windir*%/Web/PowerShellWebAccess/wwwroot.
+6. In the **Physical path** text box, navigate to %*windir*%/Web/PowerShellWebAccess/wwwroot.
 
-7.  In the **Type** field of the **Binding** area, select **https**.
+7. In the **Type** field of the **Binding** area, select **https**.
 
-8.  Assign a port number to the website that is not already in use by another site or application. To locate open ports, you can run the **netstat** command in a Command Prompt window. The default port number is 443.
+8. Assign a port number to the website that is not already in use by another site or application. To locate open ports, you can run the **netstat** command in a Command Prompt window. The default port number is 443.
 
     Change the default port if another website is already using 443, or if you have other security reasons for changing the port number. If another website that is running on your gateway server is using your selected port, a warning is displayed when you click **OK** in the **Add Website** dialog box. You must use an unused port to run Windows PowerShell Web Access.
 
-9.  Optionally, if needed for your organization, specify a host name that makes sense to your organization and users, such as **www.contoso.com**. Click **OK**.
+9. Optionally, if needed for your organization, specify a host name that makes sense to your organization and users, such as **www.contoso.com**. Click **OK**.
 
 10. For a more secure production environment, we strongly recommend providing a valid certificate that has been signed by a CA. You must provide an SSL certificate, because users can only connect to Windows PowerShell Web Access through an HTTPS website. See [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) in this topic for more information about how to obtain a certificate.
 
@@ -520,17 +520,17 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 #### To add a restrictive authorization rule
 
-1.  Do one of the following to open a Windows PowerShell session with elevated user rights.
+1. Do one of the following to open a Windows PowerShell session with elevated user rights.
 
     - On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
 
     - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-2.  ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
+2. ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
 
     Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3.  Type the following, and then press **Enter**.
+3. Type the following, and then press **Enter**.
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
@@ -540,7 +540,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
 
     For example, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -552,11 +552,11 @@ For a secure production environment, always use a valid SSL certificate that has
 
 ### To configure an SSL certificate in IIS Manager
 
-1.  In the IIS Manager tree pane, select the server on which Windows PowerShell Web Access is installed.
+1. In the IIS Manager tree pane, select the server on which Windows PowerShell Web Access is installed.
 
-2.  In the content pane, double click **Server Certificates**.
+2. In the content pane, double click **Server Certificates**.
 
-3.  In the **Actions** pane, do one of the following. For more information about configuring server certificates in IIS, see [Configuring Server Certificates in IIS 7](https://technet.microsoft.com/library/cc732230.aspx).
+3. In the **Actions** pane, do one of the following. For more information about configuring server certificates in IIS, see [Configuring Server Certificates in IIS 7](https://technet.microsoft.com/library/cc732230.aspx).
 
     - Click **Import** to import an existing, valid certificate from a location on your network.
 
@@ -566,11 +566,11 @@ For a secure production environment, always use a valid SSL certificate that has
 
     - Click **Create a Self-Signed Certificate** to create a certificate that you can use immediately, and have signed later by a CA if desired. Specify a friendly name for the self-signed certificate, such as **Windows PowerShell Web Access**. This option is not considered secure, and is recommended only for a private test environment.
 
-4.  After creating or obtaining a certificate, select the website to which the certificate is applied (for example, **Default Web Site**) in the IIS Manager tree pane, and then click **Bindings** in the **Actions** pane.
+4. After creating or obtaining a certificate, select the website to which the certificate is applied (for example, **Default Web Site**) in the IIS Manager tree pane, and then click **Bindings** in the **Actions** pane.
 
-5.  In the **Add Site Binding** dialog box, add an **https** binding for the site, if one is not already displayed. If you are not using a self-signed certificate, specify the host name from step 3 of this procedure. If you are using a self-signed certificate, this step is not required.
+5. In the **Add Site Binding** dialog box, add an **https** binding for the site, if one is not already displayed. If you are not using a self-signed certificate, specify the host name from step 3 of this procedure. If you are using a self-signed certificate, this step is not required.
 
-6.  Select the certificate that you obtained or created in step 3 of this procedure, and then click **OK**.
+6. Select the certificate that you obtained or created in step 3 of this procedure, and then click **OK**.
 
 ## Using the web-based Windows PowerShell console
 

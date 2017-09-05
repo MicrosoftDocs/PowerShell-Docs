@@ -12,31 +12,31 @@ schema:   2.0.0
 ---
 
 
-#  Add-PswaAuthorizationRule
+# Add-PswaAuthorizationRule
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Adds a new authorization rule to the Windows PowerShell® Web Access
 authorization rule set.
 
 ## Syntax
 
-###  UserGroupNameComputerGroupName
+### UserGroupNameComputerGroupName
 ```
 Add-PswaAuthorizationRule -ComputerGroupName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserGroupNameComputerName
+### UserGroupNameComputerName
 ```
 Add-PswaAuthorizationRule -ComputerName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserNameComputerGroupName
+### UserNameComputerGroupName
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> -ComputerGroupName <String> -ConfigurationName <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserNameComputerName
+### UserNameComputerName
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-ConfigurationName] <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
@@ -215,17 +215,17 @@ For more information, see
 
 ## INPUTS
 
-###  String
+### String
 
 This cmdlet accepts a string or an array of strings as input.
 
-###  String\[\]
+### String\[\]
 
 This cmdlet accepts a string or an array of strings as input.
 
-##  Outputs
+## Outputs
 
-###   Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule
+### Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule
 
 This cmdlet returns the an authorization rule object.
 

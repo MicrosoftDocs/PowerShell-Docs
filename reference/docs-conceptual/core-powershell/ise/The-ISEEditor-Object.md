@@ -136,7 +136,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## Properties
 
-###   CanGoToMatch
+### CanGoToMatch
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
  The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
@@ -146,7 +146,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###   CaretColumn
+### CaretColumn
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the column number that corresponds to the position of the caret.
@@ -156,7 +156,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###   CaretLine
+### CaretLine
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the number of the line that contains the caret.
@@ -166,7 +166,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###   CaretLineText
+### CaretLineText
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the complete line of text that contains the caret.
@@ -176,7 +176,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###   LineCount
+### LineCount
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the line count from the editor.
@@ -186,21 +186,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###   SelectedText
+### SelectedText
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the selected text from the editor.
 
  See the  [Scripting Example](#-scripting-example) later in this topic.
 
-###   Text
+### Text
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read/write property that gets or sets the text in the editor.
 
  See the [Scripting Example](#-scripting-example) later in this topic.
 
-##   Scripting Example
+## Scripting Example
 
 ```powershell
 # This illustrates how you can use the length of a line to

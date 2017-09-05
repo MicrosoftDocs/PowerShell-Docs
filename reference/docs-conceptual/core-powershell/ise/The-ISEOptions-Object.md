@@ -12,7 +12,7 @@ ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 
 ## Methods
 
-###  RestoreDefaultConsoleTokenColors\(\)
+### RestoreDefaultConsoleTokenColors\(\)
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  Restores the default values of the token colors in the Console pane.
@@ -23,7 +23,7 @@ $psISE.Options.ConsoleTokenColors["Command"] = "red"
 $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
-###  RestoreDefaults\(\)
+### RestoreDefaults\(\)
   Supported in Windows PowerShell ISE 2.0 and later.
 
  Restores the default values of all options settings in the Console pane. It also resets the behavior of various warning messages that provide the standard check box to prevent the message from being shown again.

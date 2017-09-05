@@ -14,11 +14,11 @@ To stop a command, on the toolbar, click **Stop Operation**, or press CTRL+BREAK
 
 Beginning in Windows PowerShell v3, the Output pane was combined with the Console pane. This has the benefit of behaving like the stand-alone Windows PowerShell console and eliminates the differences in procedures that were needed when they were separate. You can:
 
--   Select and copy text from the Console pane to the Clipboard for pasting in any other window. To select text, click and hold the mouse in the output pane while dragging the mouse over the text you want to capture. You can also use the cursor arrow keys while holding **SHIFT** to select text. Then press CTRL+C or click the **Copy** icon in the toolbar.
+- Select and copy text from the Console pane to the Clipboard for pasting in any other window. To select text, click and hold the mouse in the output pane while dragging the mouse over the text you want to capture. You can also use the cursor arrow keys while holding **SHIFT** to select text. Then press CTRL+C or click the **Copy** icon in the toolbar.
 
--   Paste the selected text at a current cursor position. Click the **Paste** icon on the toolbar.
+- Paste the selected text at a current cursor position. Click the **Paste** icon on the toolbar.
 
--   Clear all the text in the Console pane. To clear the Console pane, you can click the **Clear Console Pane** icon on the toolbar, or run the command **Clear-Host** or its alias, **cls**.
+- Clear all the text in the Console pane. To clear the Console pane, you can click the **Clear Console Pane** icon on the toolbar, or run the command **Clear-Host** or its alias, **cls**.
 
 ## See Also
 - [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)

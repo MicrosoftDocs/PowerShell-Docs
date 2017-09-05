@@ -105,29 +105,29 @@ Windows PowerShell ISE 2.0 does not have a most-recently used list.
 
 The separate Command and Output Panes that were available in the first release of Windows PowerShell ISE have been combined into a single Console Pane. The Console Pane is similar in function and appearance to a typical Windows PowerShell console, but it includes the following enhancements (most are described in this topic).
 
--   Syntax coloring for input text (not output text), including XML syntax
+- Syntax coloring for input text (not output text), including XML syntax
 
--   IntelliSense
+- IntelliSense
 
--   Brace matching
+- Brace matching
 
--   Error indication
+- Error indication
 
--   Full Unicode support
+- Full Unicode support
 
--   **F1** context-sensitive help
+- **F1** context-sensitive help
 
--   **Ctrl+F1** context-sensitive Show-Command
+- **Ctrl+F1** context-sensitive Show-Command
 
--   Complex script and right-to-left support
+- Complex script and right-to-left support
 
--   Font support
+- Font support
 
--   Zoom
+- Zoom
 
--   Line-select and block-select modes
+- Line-select and block-select modes
 
--   Preservation of typed content at the command line when you press the **Up** arrow to view history in the console
+- Preservation of typed content at the command line when you press the **Up** arrow to view history in the console
 
 **What value does this change add?**
 
@@ -142,11 +142,11 @@ Windows PowerShell ISE 2.0 has separate Command and Output Panes.
 
 If you start Windows PowerShell ISE from the command line (by typing **powershell_ise.exe**), you can add the following new command-line switches.
 
--   *-NoProfile*: Starts Windows PowerShell ISE without running **$profile**
+- *-NoProfile*: Starts Windows PowerShell ISE without running **$profile**
 
--   *-Help*: Displays a Help window
+- *-Help*: Displays a Help window
 
--   *-mta*: Starts Windows PowerShell ISE in multithreaded apartment mode. The default operation mode for Windows PowerShell ISE is single-threaded apartment mode, or *-sta*.
+- *-mta*: Starts Windows PowerShell ISE in multithreaded apartment mode. The default operation mode for Windows PowerShell ISE is single-threaded apartment mode, or *-sta*.
 
 **What value does this change add?**
 
@@ -161,21 +161,21 @@ Windows PowerShell ISE 2.0 does not recognize these command-line switches.
 
 Other Windows PowerShell ISE editing features include:
 
--   **XML syntax coloring**Windows PowerShell ISE now colors XML syntax in the same way as it colors Windows PowerShell syntax.
+- **XML syntax coloring**Windows PowerShell ISE now colors XML syntax in the same way as it colors Windows PowerShell syntax.
 
--   **Brace matching** Windows PowerShell ISE includes brace matching and highlighting, and can be used in the following ways: (for example, using the **Go to Match** command or **Ctrl + ]** locates the closing brace, if you have an opening brace selected).
+- **Brace matching** Windows PowerShell ISE includes brace matching and highlighting, and can be used in the following ways: (for example, using the **Go to Match** command or **Ctrl + ]** locates the closing brace, if you have an opening brace selected).
 
--   **Outline view** The Script Pane supports outlining, which allows collapsing or expanding sections of code by clicking plus or minus signs in the left margin. You can use braces or the **#region** and **#endregion** tags to mark the beginning or end of a collapsible section. To expand or collapse all regions, press **Ctrl + M**.
+- **Outline view** The Script Pane supports outlining, which allows collapsing or expanding sections of code by clicking plus or minus signs in the left margin. You can use braces or the **#region** and **#endregion** tags to mark the beginning or end of a collapsible section. To expand or collapse all regions, press **Ctrl + M**.
 
--   **Drag and drop text editing**Windows PowerShell ISE now supports drag and drop text editing. You can select any block of text and drag that text to another location in the editor or the console to move the text. If you hold down the Ctrl key while you drag the selected text, when you release the mouse button the text is copied to the new location. In this version of Windows PowerShell ISE, as well as the previous version of Windows PowerShell ISE, when you drag and drop files onto Windows PowerShell ISE, Windows PowerShell ISE opens the file.
+- **Drag and drop text editing**Windows PowerShell ISE now supports drag and drop text editing. You can select any block of text and drag that text to another location in the editor or the console to move the text. If you hold down the Ctrl key while you drag the selected text, when you release the mouse button the text is copied to the new location. In this version of Windows PowerShell ISE, as well as the previous version of Windows PowerShell ISE, when you drag and drop files onto Windows PowerShell ISE, Windows PowerShell ISE opens the file.
 
--   **Parse error display** Parse errors are indicated with red underlines. When you hover over an indicated error, tooltip text displays the problem that was found in the code.
+- **Parse error display** Parse errors are indicated with red underlines. When you hover over an indicated error, tooltip text displays the problem that was found in the code.
 
--   **Zoom** The zoom percentage of the console'™s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
+- **Zoom** The zoom percentage of the console'™s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
 
--   **Rich text copy and paste** Copying to the clipboard in Windows PowerShell ISE preserves the font, size, and color information of the original selection.
+- **Rich text copy and paste** Copying to the clipboard in Windows PowerShell ISE preserves the font, size, and color information of the original selection.
 
--   **Block selection** You can select a block of text by holding down the ALT key while selecting text in the Script Pane with your mouse, or by pressing **Alt+Shift+Arrow**.
+- **Block selection** You can select a block of text by holding down the ALT key while selecting text in the Script Pane with your mouse, or by pressing **Alt+Shift+Arrow**.
 
 **What value does this change add?**
 

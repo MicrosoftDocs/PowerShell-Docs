@@ -4,7 +4,7 @@ keywords:  powershell,cmdlet
 title:  uninstall windows powershell web access
 ---
 
-#  Uninstall Windows PowerShell Web Access
+# Uninstall Windows PowerShell Web Access
 
 Updated: June 24, 2013
 
@@ -53,7 +53,7 @@ by using Windows PowerShell cmdlets.
 
 ### Step 2: Uninstall Windows PowerShell Web Access using cmdlets
 
-1.  Do one of the following to open a Windows PowerShell session with elevated user rights. If a session is already open, go on to the next step.
+1. Do one of the following to open a Windows PowerShell session with elevated user rights. If a session is already open, go on to the next step.
 
     -   On the Windows desktop, right-click **Windows PowerShell** on the taskbar, and then click **Run as Administrator**.
 

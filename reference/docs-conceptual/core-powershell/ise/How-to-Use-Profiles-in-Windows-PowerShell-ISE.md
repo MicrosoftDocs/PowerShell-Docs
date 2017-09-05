@@ -18,9 +18,9 @@ Windows PowerShell ISE supports profiles for the current user and all users. It 
 
 The profile that you use is determined by how you use Windows PowerShell and Windows PowerShell ISE.
 
--   If you use only Windows PowerShell ISE to run Windows PowerShell, then save all your items in one of the ISE-specific profiles, such as the CurrentUserCurrentHost profile for Windows PowerShell ISE or the AllUsersCurrentHost profile for Windows PowerShell ISE.
+- If you use only Windows PowerShell ISE to run Windows PowerShell, then save all your items in one of the ISE-specific profiles, such as the CurrentUserCurrentHost profile for Windows PowerShell ISE or the AllUsersCurrentHost profile for Windows PowerShell ISE.
 
--   If you use multiple host programs to run Windows PowerShell, save your functions, aliases, variables, and commands in a profile that affects all host programs, such as the CurrentUserAllHosts or the AllUsersAllHosts profile, and save ISE-specific features, like color and font customization in the CurrentUserCurrentHost profile for Windows PowerShell ISE profile or the AllUsersCurrentHost profile for Windows PowerShell ISE.
+- If you use multiple host programs to run Windows PowerShell, save your functions, aliases, variables, and commands in a profile that affects all host programs, such as the CurrentUserAllHosts or the AllUsersAllHosts profile, and save ISE-specific features, like color and font customization in the CurrentUserCurrentHost profile for Windows PowerShell ISE profile or the AllUsersCurrentHost profile for Windows PowerShell ISE.
 
 The following are profiles that can be created and used in Windows PowerShell ISE. Each profile is saved to its own specific path.
 
@@ -62,15 +62,15 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## To edit a profile
 
-1.  To open the profile, run the command psedit with the variable that specifies the profile you want to edit. For example, to open the “Current user, Windows PowerShell ISE” profile, type: `psEdit $PROFILE`
+1. To open the profile, run the command psedit with the variable that specifies the profile you want to edit. For example, to open the “Current user, Windows PowerShell ISE” profile, type: `psEdit $PROFILE`
 
-2.  Add some items to your profile. The following are a few examples to get you started:
+2. Add some items to your profile. The following are a few examples to get you started:
 
     -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](The-ISE-Object-Model-Hierarchy.md).
 
     -   To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
-3.  To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows PowerShell ISE, your customizations are applied.
+3. To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows PowerShell ISE, your customizations are applied.
 
 ## See Also
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))

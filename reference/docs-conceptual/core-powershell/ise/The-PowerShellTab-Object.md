@@ -16,7 +16,7 @@ ms.assetid:  a9b58556-951b-4f48-b3ae-b351b7564360
  Runs the given script in the PowerShell tab.
 
 > [!NOTE]
->  This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. It does not return any object or value. If the code modifies any variable, then those changes persist on the tab against which the command was invoked.
+> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. It does not return any object or value. If the code modifies any variable, then those changes persist on the tab against which the command was invoked.
 
  **Script** - System.Management.Automation.ScriptBlock or String
  The script block to run.
@@ -33,7 +33,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
  Runs the given script in the PowerShell tab.
 
 > [!NOTE]
->  This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. The script block is run and any value that is returned from the script is returned to the run environment from which you invoked the command. If the command takes longer to run than the **millesecondsTimeout** value specifies, then the command fails with an exception: "The operation has timed out."
+> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. The script block is run and any value that is returned from the script is returned to the run environment from which you invoked the command. If the command takes longer to run than the **millesecondsTimeout** value specifies, then the command fails with an exception: "The operation has timed out."
 
  **Script** - System.Management.Automation.ScriptBlock or String
  The script block to run.

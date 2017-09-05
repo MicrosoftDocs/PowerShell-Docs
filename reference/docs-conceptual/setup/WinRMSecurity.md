@@ -18,7 +18,7 @@ computers. You can find more information about using PowerShell Remoting at [Run
 PowerShell Remoting is not the same as using the **ComputerName** parameter of a cmdlet to run it on a remote computer, which uses Remote Procedure Call (RPC)
 as its underlying protocol.
 
-##  PowerShell Remoting default settings
+## PowerShell Remoting default settings
 
 PowerShell Remoting (and WinRM) listen on the following ports:
 

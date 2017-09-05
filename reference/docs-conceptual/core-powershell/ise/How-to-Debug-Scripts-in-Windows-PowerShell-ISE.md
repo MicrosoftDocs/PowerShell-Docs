@@ -12,11 +12,11 @@ A breakpoint is a designated spot in a script where you would like operation to 
 
 You can set three types of breakpoints in the Windows PowerShell debugging environment:
 
-1.  **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
+1. **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
 
-2.  **Variable breakpoint.** The script pauses whenever the designated variable'™s value changes.
+2. **Variable breakpoint.** The script pauses whenever the designated variable'™s value changes.
 
-3.  **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
+3. **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
 
 Of these, in the Windows PowerShell ISE debugging environment, only line breakpoints can be set by using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they are set from the Console Pane by using the [Set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) cmdlet. This section describes how you can perform debugging tasks in Windows PowerShell ISE by using the menus where available, and perform a wider range of commands from the Console Pane by using scripting.
 
@@ -136,30 +136,30 @@ You can display the current values of variables in the script as you step throug
 ### To display the values of standard variables
 Use one of the following methods:
 
--   In the Script Pane, hover over the variable to display its value as a tool tip.
+- In the Script Pane, hover over the variable to display its value as a tool tip.
 
--   In the Console Pane, type the variable name and press **ENTER**.
+- In the Console Pane, type the variable name and press **ENTER**.
 
 All panes in ISE are always in the same scope. Therefore, while you are debugging a script, the commands that you type in the Console Pane run in script scope. This allows you to use the Console Pane to find the values of variables and call functions that are defined only in the script.
 
 ### To display the values of automatic variables
 You can use the preceding method to display the value of almost all variables while you are debugging a script. However, these methods do not work for the following automatic variables.
 
--   $_
+- $_
 
--   $Input
+- $Input
 
--   $MyInvocation
+- $MyInvocation
 
--   $PSBoundParameters
+- $PSBoundParameters
 
--   $Args
+- $Args
 
 If you try to display the value of any of these variables, you get the value of that variable for in an internal pipeline the debugger uses, not the value of the variable in the script. You can work around this for a few variables ($_, $Input, $MyInvocation, $PSBoundParameters, and $Args) by using the following method:
 
-1.  In the script, assign the value of the automatic variable to a new variable.
+1. In the script, assign the value of the automatic variable to a new variable.
 
-2.  Display the value of the new variable, either by hovering over the new variable in the Script Pane, or by typing the new variable in the Console Pane.
+2. Display the value of the new variable, either by hovering over the new variable in the Script Pane, or by typing the new variable in the Console Pane.
 
 For example, to display the value of the $MyInvocation variable, in the script, assign the value to a new variable, such as $scriptname, and then hover over or type the $scriptname variable to display its value.
 

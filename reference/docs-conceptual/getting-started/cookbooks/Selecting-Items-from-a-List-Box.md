@@ -77,11 +77,11 @@ Add-Type -AssemblyName System.Drawing
 
 After you create an instance of the Form class, assign values to three properties of this class.
 
--   **Text.** This becomes the title of the window.
+- **Text.** This becomes the title of the window.
 
--   **Size.** This is the size of the form, in pixels. The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.
+- **Size.** This is the size of the form, in pixels. The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.
 
--   **StartingPosition.** This optional property is set to **CenterScreen** in the preceding script. If you don’t add this property, Windows selects a location when the form is opened. By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.
+- **StartingPosition.** This optional property is set to **CenterScreen** in the preceding script. If you don’t add this property, Windows selects a location when the form is opened. By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.
 
 ```
 $form.Text = "Select a Computer"

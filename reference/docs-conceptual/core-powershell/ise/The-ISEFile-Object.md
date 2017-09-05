@@ -48,9 +48,9 @@ $myfile.Encoding
  **Exceptions**
  -   **System.ArgumentNullException**: The **filename** parameter is null.
 
--   **System.ArgumentException**: The **filename** parameter is empty.
+- **System.ArgumentException**: The **filename** parameter is empty.
 
--   **System.IO.IOException**: The file could not be saved.
+- **System.IO.IOException**: The file could not be saved.
 
 ```
 # Save the file with a full path and name. 

@@ -20,33 +20,33 @@ Microsoft is committed to making its products and services easier for everyone t
 
 Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see 'œHow to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
 
--   Keyboard Shortcuts
+- Keyboard Shortcuts
 
--   Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting object.
+- Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting object.
 
--   Text Size Change
+- Text Size Change
 
 ## How to change the size and location of the Console and Script Panes
 You can use the following steps to change the size and location of the Console Pane and the Script Pane. When you open the Windows PowerShell ISE again, the size and location changes you made will be retained.
 
 ### To resize the Script Pane and Console Pane
 
-1.  Pause the pointer on the split line between the Script Pane and Console Pane.
+1. Pause the pointer on the split line between the Script Pane and Console Pane.
 
-2.  When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the pane.
+2. When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the pane.
 
 ### To move the Script Pane and Console Pane
 Do one of the following:
 
--   To move the Script Pane above the Console Pane, press **CTRL+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
+- To move the Script Pane above the Console Pane, press **CTRL+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
 
--   To move the Script Pane to the right of the Console Pane, press **CTRL+2** or, on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show Script Pane Right**.
+- To move the Script Pane to the right of the Console Pane, press **CTRL+2** or, on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show Script Pane Right**.
 
--   To maximize the Script Pane, press **CTRL+3** or, on the toolbar, click the **Show Script Pane Maximized** icon, or in the **View** menu, click **Show Script Pane Maximized**.
+- To maximize the Script Pane, press **CTRL+3** or, on the toolbar, click the **Show Script Pane Maximized** icon, or in the **View** menu, click **Show Script Pane Maximized**.
 
--   To maximize the Console Pane and hide the Script Pane, on the far right edge of the row of tabs, click the **Hide Script Pane** icon, in the **View** menu, click to deselect the **Show Script Pane** menu option.
+- To maximize the Console Pane and hide the Script Pane, on the far right edge of the row of tabs, click the **Hide Script Pane** icon, in the **View** menu, click to deselect the **Show Script Pane** menu option.
 
--   To display the Script Pane when the Console Pane is maximized, on the far right edge of the row of tabs, click the **Show Script Pane** icon, or in the **View** menu, click to select the **Show Script Pane** menu option.
+- To display the Script Pane when the Console Pane is maximized, on the far right edge of the row of tabs, click the **Show Script Pane** icon, or in the **View** menu, click to select the **Show Script Pane** menu option.
 
 ## Keyboard shortcuts for editing text
 You can use the following keyboard shortcuts when you edit text.

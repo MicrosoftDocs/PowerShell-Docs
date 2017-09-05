@@ -17,7 +17,7 @@ ms.assetid:  ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 
 ## Properties
 
-###   Control
+### Control
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The **Control** property provides read access to many of the details of the Commands add-on tool.
@@ -133,7 +133,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###   IsVisible
+### IsVisible
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The Boolean property that indicates whether the add-on tool is currently visible in its assigned pane. If it is visible, you can set the **IsVisible** property to **$false** to hide the tool, or set the **IsVisible** property to **$true** to make an add-on tool visible on its PowerShell tab. Note that after an add-on tool is hidden, it is no longer accessible through the **CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be made visible by using this property on that object.
@@ -146,7 +146,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###   Name
+### Name
   Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The read-only property that gets the name of the add-on tool.
