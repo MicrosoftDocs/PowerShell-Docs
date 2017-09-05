@@ -79,7 +79,7 @@ end users are not shown information about how many security layers they passed,
 or at which layer the sign-in or authentication failure occurred.
 
 For more information about configuring authorization rules,
-see [configuring authorization rules]() in this topic.
+see [configuring authorization rules](#configuring-authorization-rules-and-site-security) in this topic.
 
 ### Security
 
@@ -99,10 +99,10 @@ between end users and target computers.
 
 |Level|Layer|
 |-|-|
-|1|[iis web server security features]()|
-|2|[windows powershell web access forms-based gateway authentication]()|
-|3|[windows powershell web access authorization rules]()|
-|4|[target authentication and authorization rules]()|
+|1|[iis web server security features](#iis-web-server-security-features)|
+|2|[windows powershell web access forms-based gateway authentication](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[windows powershell web access authorization rules](#windows-powershell-web-access-authorization-rules)|
+|4|[target authentication and authorization rules](#target-authentication-and-authorization-rules)|
 
 Detailed information about each layer can be found under the following headings:
 
@@ -111,8 +111,8 @@ Detailed information about each layer can be found under the following headings:
 Windows PowerShell Web Access users must always provide a
 user name and password to authenticate their accounts on the gateway.
 However, Windows PowerShell Web Access administrators can
-also turn optional client certificate authentication on or off
-(see [install and use windows powershell web access]()
+also turn optional client certificate authentication on or off,
+see [install and use windows powershell web access](install-and-use-windows-powershell-web-access.md)
 to enable a test certificate and, later, how to configure a genuine certificate).
 
 The optional client certificate feature requires end users
@@ -232,7 +232,8 @@ use a single asterisk per property (users, computers, or session configurations)
 >
 > For more ways you can use authorization rules to grant access to users
 and help secure the Windows PowerShell Web Access environment
-, see [other authorization rule scenario examples]() in this topic.
+, see [other authorization rule scenario examples](#other-authorization-rule-scenario-examples)
+in this topic.
 
 #### To add a restrictive authorization rule
 
@@ -271,7 +272,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### To remove an authorization rule
 
-1. If a Windows PowerShell session is not already open, see step 1 of [to add a restrictive authorization rule]() in this section.
+1. If a Windows PowerShell session is not already open, see step 1 of [to add a restrictive authorization rule](#to-add-a-restrictive-authorization-rule) in this section.
 
 2. Type the following, and then press **Enter**,
 where *rule ID* represents the unique ID number of the rule that you
