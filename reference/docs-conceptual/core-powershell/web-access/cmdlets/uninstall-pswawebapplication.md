@@ -10,15 +10,15 @@ title:  uninstall pswawebapplication
 ms.technology:  powershell
 ---
 
-#  Uninstall-PswaWebApplication
+# Uninstall-PswaWebApplication
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Uninstalls the Windows PowerShell® web application.
 
 ## SYNTAX
 
-###  Default
+### Default
 ```
 Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCertificate] [-WebSiteName <String> ] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -156,10 +156,10 @@ are also deleted.
 Uninstall-PswaWebApplication -WebApplicationName TestApplication -WebsiteName MySite -DeleteTestCertificate
 ```
 
-##  Related topics
+## Related topics
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

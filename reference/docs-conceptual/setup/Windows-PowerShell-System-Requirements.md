@@ -13,39 +13,39 @@ Windows® 8.1 and Windows Server® 2012 R2 include all required programs. This t
 ## Operating System Requirements
 Windows PowerShell 5.0 runs on the following versions of Windows.
 
--   Windows Server 2016, installed by default
+- Windows Server 2016, installed by default
 
--   Windows Server 2012 R2, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+- Windows Server 2012 R2, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
 
--   Windows Server 2012, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+- Windows Server 2012, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
 
--   Windows Server 2008 R2 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+- Windows Server 2008 R2 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
 
--   Windows 8.1
+- Windows 8.1
 
--   Windows 7 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
+- Windows 7 with Service Pack 1, install [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) to run Windows PowerShell 5.0
 
 Windows PowerShell 4.0 runs on the following versions of Windows.
 
--   Windows 8.1, installed by default
+- Windows 8.1, installed by default
 
--   Windows Server 2012 R2, installed by default
+- Windows Server 2012 R2, installed by default
 
--   Windows® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+- Windows® 7 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
--   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
+- Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) to run Windows PowerShell 4.0
 
 Windows PowerShell 3.0 runs on the following versions of Windows.
 
--   Windows 8, installed by default
+- Windows 8, installed by default
 
--   Windows Server 2012, installed by default
+- Windows Server 2012, installed by default
 
--   Windows® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+- Windows® 7 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
--   Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+- Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
--   Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
+- Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) to run Windows PowerShell 3.0
 
 ## Microsoft .NET Framework Requirements
 Windows PowerShell 5.0 requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.
@@ -75,9 +75,9 @@ Windows PowerShell is a console-based application that does not require a graphi
 
 However, some items, such as the following, require a graphical user interface. For details, see the help topic for each item.
 
--   Windows PowerShell Integrated Scripting Environment (ISE)
+- Windows PowerShell Integrated Scripting Environment (ISE)
 
--   Cmdlets
+- Cmdlets
 
     1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
 
@@ -87,7 +87,7 @@ However, some items, such as the following, require a graphical user interface. 
 
     4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
--   Parameters
+- Parameters
 
     1.  **ShowWindow** parameter of the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet.
 
@@ -105,15 +105,15 @@ For information about adding or installing the Windows PowerShell 2.0 engine, an
 ## Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run in the Windows Preinstallation Environment (Windows PE). However, the following cmdlets are not supported.
 
--   [Background Intelligent Transfer Service (BITS) Cmdlets](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Background Intelligent Transfer Service (BITS) Cmdlets](http://go.microsoft.com/fwlink/?LinkId=257514)
 
--   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
+- [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+- [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
--   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+- [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
--   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
+- [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
 Also, the **WinRM** service is not present on Windows PE.
 

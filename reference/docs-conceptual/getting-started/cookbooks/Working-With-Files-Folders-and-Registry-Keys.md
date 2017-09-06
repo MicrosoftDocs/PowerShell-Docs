@@ -73,11 +73,11 @@ This parameter is named Force because you can forcibly override the normal behav
 
 Because wildcard matching is handled by the Windows PowerShell engine, all cmdlets that accepts wildcards use the same notation and have the same matching behavior. The Windows PowerShell wildcard notation includes:
 
--   Asterisk (\*)matches zero or more occurrences of any character.
+- Asterisk (\*)matches zero or more occurrences of any character.
 
--   Question mark (?) matches exactly one character.
+- Question mark (?) matches exactly one character.
 
--   Left bracket (\[) character and right bracket (]) character surround a set of characters to be matched.
+- Left bracket (\[) character and right bracket (]) character surround a set of characters to be matched.
 
 Here are some examples of how wildcard specification works.
 

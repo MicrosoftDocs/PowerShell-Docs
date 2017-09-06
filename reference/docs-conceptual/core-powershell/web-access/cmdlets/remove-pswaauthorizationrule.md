@@ -10,16 +10,16 @@ title:  remove pswaauthorizationrule
 ms.technology:  powershell
 ---
 
-#  Remove-PswaAuthorizationRule
+# Remove-PswaAuthorizationRule
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Removes a specified authorization rule from Windows PowerShell® Web
 Access.
 
 ## SYNTAX
 
-###  Id
+### Id
 ```
 Remove-PswaAuthorizationRule [-Id] <Int32[]> [-Force] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -109,17 +109,17 @@ For more information, see
 
 ## INPUTS
 
-###  int\[\]
+### int\[\]
 
 This cmdlet accepts either an array of integers
 or an array of PswaAuthorizationRule objects.
 
-###  PswaAuthorizationRule\[\]
+### PswaAuthorizationRule\[\]
 
 This cmdlet accepts either an array of integers
 or an array of PswaAuthorizationRule objects.
 
-##  OUTPUTS
+## OUTPUTS
 
 This cmdlet produces no output.
 
@@ -142,9 +142,9 @@ confirmation by the user.
 Get-PswaAuthorizationRule | Remove-PswaAuthorizationRule -Confirm
 ```
 
-##  Related topics
+## Related topics
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

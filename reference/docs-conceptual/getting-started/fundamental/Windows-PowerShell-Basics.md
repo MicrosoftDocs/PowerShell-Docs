@@ -14,13 +14,13 @@ Most CLIs do not have patterns that can help the user to learn the interface. Be
 
 Windows PowerShell was designed to take advantage of a user's historic knowledge of CLIs. In this chapter, we will talk about some basic tools and concepts that you can use to learn Windows PowerShell quickly. They include:
 
--   Using Get-Command
+- Using Get-Command
 
--   Using Cmd.exe and UNIX commands
+- Using Cmd.exe and UNIX commands
 
--   Using External Commands
+- Using External Commands
 
--   Using Tab-Completion
+- Using Tab-Completion
 
--   Using Get-Help
+- Using Get-Help
 

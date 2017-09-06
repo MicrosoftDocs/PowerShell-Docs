@@ -2,7 +2,6 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
-ms.assetid:  a0de70ca-909a-4807-94d1-6da86e5b52a0
 ---
 
 # Introducing the Windows PowerShell ISE
@@ -11,17 +10,17 @@ You can use menu items and keyboard shortcuts to perform many of the same tasks 
 
 Try these features in Windows PowerShell ISE.
 
--   Multiline editing: To insert a blank line under the current line in the Command pane, press SHIFT+ENTER.
+- Multiline editing: To insert a blank line under the current line in the Command pane, press SHIFT+ENTER.
 
--   Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button. Or, press F5.
+- Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button. Or, press F5.
 
--   Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the Help topic for the **Invoke-Item** cmdlet.
+- Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the Help topic for the **Invoke-Item** cmdlet.
 
 The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own Windows PowerShell profile, where you can store functions, aliases, variables, and commands you use in the Windows PowerShell ISE.
 
 ### To start the Windows PowerShell ISE
 
-1.  Do one of the following:
+1. Do one of the following:
 
     -   Click **Start**, point to **All Programs**, point to **Windows PowerShell V2**, and then click **Windows PowerShell ISE**.
 
@@ -29,5 +28,5 @@ The Windows PowerShell ISE lets you customize some aspects of its appearance. It
 
 ### To get Help in the Windows PowerShell ISE
 
--   On the **Help** menu, click **Windows PowerShell Help**. Or, press F1. The file that opens describes Windows PowerShell ISE and Windows PowerShell, including all of the help available from the Get-Help cmdlet.
+- On the **Help** menu, click **Windows PowerShell Help**. Or, press F1. The file that opens describes Windows PowerShell ISE and Windows PowerShell, including all of the help available from the Get-Help cmdlet.
 

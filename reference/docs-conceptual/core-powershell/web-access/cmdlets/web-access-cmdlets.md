@@ -10,7 +10,7 @@ title:  web access cmdlets
 ms.technology:  powershell
 ---
 
-#  Windows PowerShell Web Access Cmdlets
+# Windows PowerShell Web Access Cmdlets
 
 This reference provides cmdlet descriptions and syntax for all Windows
 PowerShell® Web Access-specific cmdlets. It lists the cmdlets in
@@ -56,13 +56,13 @@ where *&lt;cmdlet name&gt;*
 For more detailed information,
 you can run any of the following cmdlets:
 
--  `Get-Help `*&lt;cmdlet name&gt;*` -Detailed`
--  `Get-Help `*&lt;cmdlet name&gt;*` -Examples`
--  `Get-Help `*&lt;cmdlet name&gt;*` -Full`
+- `Get-Help `*&lt;cmdlet name&gt;*` -Detailed`
+- `Get-Help `*&lt;cmdlet name&gt;*` -Examples`
+- `Get-Help `*&lt;cmdlet name&gt;*` -Full`
 
 ### More Information
 
 For more information about PowerShell Web Access, see the following:
 
--   [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
+- [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
 
