@@ -18,10 +18,12 @@ and corresponding application from the gateway server where it is installed.
 Before you begin, notify users of the web-based console that you are 
 removing the website.
 
-
-Before you uninstall Windows PowerShell Web Access from the gateway server, either run the `Uninstall-PswaWebApplication` cmdlet to remove the website and Windows PowerShell Web Access web applications, or use the IIS Manager procedure, [to delete the windows powershell web access website and web applications by using iis manager]().
-
-Uninstalling Windows PowerShell Web Access does not uninstall IIS or any other features that were installed automatically because Windows PowerShell Web Access requires them to run. The uninstallation process leaves features installed upon which Windows PowerShell Web Access was dependent; you can uninstall those features separately if needed.
+Uninstalling Windows PowerShell Web Access does not uninstall IIS or any
+other features that were installed automatically because Windows PowerShell
+Web Access requires them to run.
+The uninstallation process leaves features installed upon which Windows
+PowerShell Web Access was dependent;
+you can uninstall those features separately if needed.
 
 ## Recommended (quick) uninstallation
 
