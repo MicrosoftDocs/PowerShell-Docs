@@ -60,7 +60,7 @@ and editions with the GUI are named **Desktop**.
 In all Core editions,
 when you log to the server you get a Windows command prompt window.
 
-Type `powerhell` and press **ENTER** to start PowerShell
+Type `powershell` and press **ENTER** to start PowerShell
 inside the command prompt session. 
 Type `exit` to terminate the PowerShell session and return to command prompt.
 
