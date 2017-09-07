@@ -54,7 +54,7 @@ To get the job results, use the Receive-Job cmdlet.
 To use this parameter, the local and remote computers must be configured for remoting, and on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell with the Run as administrator option.
 For more information, see about_Remote_Requirementshttp://go.microsoft.com/fwlink/?LinkId=623526 (http://go.microsoft.com/fwlink/?LinkId=623526).
 
-For more information about Windows PowerShell background jobs, see about_Jobshttp://go.microsoft.com/fwlink/?LinkID=113251 (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobshttp://go.microsoft.com/fwlink/?LinkID=135184 (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter

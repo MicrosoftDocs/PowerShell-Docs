@@ -146,7 +146,8 @@ The command saves the PSSessions in the $s variable.
 
 The second command uses the **AsJob** parameter of the Invoke-Command cmdlet to start a background job that runs a "Get-Process PowerShell" command in each of the PSSessions in $s.
 
-For more information about background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+
 ### Example 10
 ```
 PS C:\> New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
