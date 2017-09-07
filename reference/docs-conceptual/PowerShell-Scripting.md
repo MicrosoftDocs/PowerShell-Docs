@@ -60,7 +60,6 @@ registry, processes, services, and similar day-to-day subjects.
 ## [Common PowerShell](core-powershell/core-powershell.md)
 This section contains all reference material PowerShell.  
 Find in this section:
-- The [PowerShell Common Modules](core-powershell/core-modules.md)
 - The [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
 - The [PowerShell Console Window](core-powershell/console-guide.md)
 - The [PowerShell Remote Management](core-powershell/Running-Remote-Commands.md)

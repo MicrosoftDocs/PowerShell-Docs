@@ -8,17 +8,17 @@ ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8
 # Accessibility in Windows PowerShell ISE
 This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
 
-* [How to change the size and location of the Console and Script Panes]()
-* [Keyboard shortcuts for editing text]()
-* [Keyboard shortcuts for running scripts]()
-* [Keyboard shortcuts for customizing the view]()
-* [Keyboard shortcuts for debugging scripts]()
-* [Keyboard shortcuts for Windows PowerShell tabs]()
-* [Keyboard shortcuts for starting and exiting]()
+* [How to change the size and location of the Console and Script Panes](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [Keyboard shortcuts for editing text](#keyboard-shortcuts-for-editing-text)
+* [Keyboard shortcuts for running scripts](#keyboard-shortcuts-for-running-scripts)
+* [Keyboard shortcuts for customizing the view](#keyboard-shortcuts-for-customizing-the-view)
+* [Keyboard shortcuts for debugging scripts](#keyboard-shortcuts-for-debugging-scripts)
+* [Keyboard shortcuts for Windows PowerShell tabs](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [Keyboard shortcuts for starting and exiting](#keyboard-shortcuts-for-starting-and-exiting)
 
 Microsoft is committed to making its products and services easier for everyone to use. The following topics provide information about the features, products, and services that make Windows PowerShell ISE more accessible for people with disabilities.
 
-Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see 'œHow to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
+Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see 'How to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
 
 - Keyboard Shortcuts
 
@@ -109,7 +109,8 @@ You can use the following keyboard shortcuts when you debug scripts.
 |**Remove All Breakpoints**|CTRL+SHIFT+F9|Script Pane, when debugging a script|
 |**Stop Debugger**|SHIFT+F5|Script Pane, when debugging a script|
 
-> [!NOTE]
+> ![NOTE](../core-powershell/web-access/images/Note.jpeg)**Note**
+>
 > You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the Console Pane and press ENTER.
 
 |Action|Keyboard Shortcut|Use in|
