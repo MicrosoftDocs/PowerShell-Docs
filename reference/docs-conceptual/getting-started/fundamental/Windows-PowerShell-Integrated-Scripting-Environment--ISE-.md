@@ -30,21 +30,21 @@ Here are some of the features that have been added to the ISE in the most recent
 
 **New editor features** make it easier to create and read your code:
 
--   **XML syntax coloring**. The ISE editor now colors XML syntax in the same way as it colors Windows PowerShell code syntax.
+- **XML syntax coloring**. The ISE editor now colors XML syntax in the same way as it colors Windows PowerShell code syntax.
 
--   **Brace matching**. The ISEWindows PowerShell ISE highlights matching braces to help you ensure you have the right number of closing braces to match your opening ones. Use CTRL-\[ to locate the closing brace that matches the opening brace that the cursor is on.
+- **Brace matching**. The ISEWindows PowerShell ISE highlights matching braces to help you ensure you have the right number of closing braces to match your opening ones. Use CTRL-\[ to locate the closing brace that matches the opening brace that the cursor is on.
 
--   **Outline view**. You can collapse or expand sections of your code by clicking the plus and minus signs in the left margin. This makes it easier to find the code you’re looking for in a long script.
+- **Outline view**. You can collapse or expand sections of your code by clicking the plus and minus signs in the left margin. This makes it easier to find the code you’re looking for in a long script.
 
--   **Drag and drop text editing**. You can select a block of text and drag it to another location to move it. If you hold down the Ctrl key while you drag the selected text you copy instead of move.
+- **Drag and drop text editing**. You can select a block of text and drag it to another location to move it. If you hold down the Ctrl key while you drag the selected text you copy instead of move.
 
--   **Parse error display**. Windows PowerShell examines your script as you type. If it detects an error, it shows a red squiggle under the offending code. When you hover over the indicated error, a tooltip shows you the problem that was found.
+- **Parse error display**. Windows PowerShell examines your script as you type. If it detects an error, it shows a red squiggle under the offending code. When you hover over the indicated error, a tooltip shows you the problem that was found.
 
--   **Zoom**. You can zoom in on your text to make it easier to read or zoom out to see the bigger picture by using the slider in the bottom-right corner of the ISE window.
+- **Zoom**. You can zoom in on your text to make it easier to read or zoom out to see the bigger picture by using the slider in the bottom-right corner of the ISE window.
 
--   **Rich text copy and paste**. When you copy from the ISE to the clipboard, the font, size, and color information of the selected text is included.
+- **Rich text copy and paste**. When you copy from the ISE to the clipboard, the font, size, and color information of the selected text is included.
 
--   **Block selection**. You can select a block-shaped chunk of text by holding down the ALT key while selecting text in the script pane with your mouse, or by pressing **Alt+Shift+Arrow**.
+- **Block selection**. You can select a block-shaped chunk of text by holding down the ALT key while selecting text in the script pane with your mouse, or by pressing **Alt+Shift+Arrow**.
 
 ### Added in PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
 The ISE was introduced with PowerShell v2.0.

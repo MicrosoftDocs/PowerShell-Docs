@@ -35,7 +35,7 @@ For more information about session configuration files, see [about_Session_Confi
 
 #### To start a remote Windows PowerShell 2.0 session
 
-1.  To create a session configuration that requires the Windows PowerShell 2.0 Engine, use the **PSVersion** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet with a value of "2.0". Run this command on the computer at the "server side" or receiving end of the connection.
+1. To create a session configuration that requires the Windows PowerShell 2.0 Engine, use the **PSVersion** parameter of the [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet with a value of "2.0". Run this command on the computer at the "server side" or receiving end of the connection.
 
     The following sample command creates the PS2 session configuration on the Server01 computer. To run this command, start Windows PowerShell 4.0 or Windows PowerShell 3.0 with the **Run as administrator** option.
 
@@ -43,7 +43,7 @@ For more information about session configuration files, see [about_Session_Confi
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  To create a session on the Server01 computer that uses the PS2 session configuration, use the **ConfigurationName** parameter of cmdlets that create a remote session, such as the [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet.
+2. To create a session on the Server01 computer that uses the PS2 session configuration, use the **ConfigurationName** parameter of cmdlets that create a remote session, such as the [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet.
 
     When a session that uses the session configuration starts, the Windows PowerShell 2.0 Engine is automatically loaded into the session.
 

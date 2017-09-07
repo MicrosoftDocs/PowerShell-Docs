@@ -21,46 +21,46 @@ On Windows 8.1 and Windows 8, the Windows PowerShell 2.0 Engine feature is turne
 
 #### To turn on .NET Framework 3.5
 
-1.  On the **Start** screen, type **Windows Features**.
+1. On the **Start** screen, type **Windows Features**.
 
-2.  On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
+2. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
 
-3.  In the **Windows Features** box, click **.NET Framework 3.5 (includes .NET 2.0 and 3.0** to select it.
+3. In the **Windows Features** box, click **.NET Framework 3.5 (includes .NET 2.0 and 3.0** to select it.
 
     When you select **.NET Framework 3.5 (includes .NET 2.0 and 3.0**, the box fills to indicate that only part of the feature is selected. However, this is sufficient for the Windows PowerShell 2.0 Engine.
 
 #### To turn the Windows PowerShell 2.0 Engine on and off
 
-1.  On the **Start** screen, type **Windows Features**.
+1. On the **Start** screen, type **Windows Features**.
 
-2.  On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
+2. On the **Apps** bar, click **Settings**, and then click **Turn Windows features on or off**.
 
-3.  In the **Windows Features** box, expand the **Windows PowerShell 2.0** node, and click the **Windows PowerShell 2.0 Engine** box to select or clear it.
+3. In the **Windows Features** box, expand the **Windows PowerShell 2.0** node, and click the **Windows PowerShell 2.0 Engine** box to select or clear it.
 
 ## On Windows Server 2012 R2 and Windows Server 2012
 Use the following procedures to add the Windows PowerShell 2.0 Engine and Microsoft .NET Framework 3.5 features. The Windows PowerShell 2.0 Engine requires Microsoft .NET Framework 2.0.50727 at a minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
 
 #### To add the .NET Framework 3.5 feature
 
-1.  In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
+1. In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
     Or in **Server Manager**, click **All Servers**, right-click a server name, and then select **Add Roles and Features**.
 
-2.  On the **Installation Type** page, select **Role-based or feature-based installation**.
+2. On the **Installation Type** page, select **Role-based or feature-based installation**.
 
-3.  On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET Framework 3.5 (includes .NET 2.0 and 3.0)**.
+3. On the **Features** page, expand the **.NET 3.5 Framework Features** node and select **.NET Framework 3.5 (includes .NET 2.0 and 3.0)**.
 
     The other options under that node are not required for the Windows PowerShell 2.0 Engine.
 
 #### To add the Windows PowerShell 2.0 Engine feature
 
--   In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
+- In **Server Manager**, from the **Manage** menu, select **Add Roles and Features**.
 
     Or **Server Manager**, click **All Servers**, right-click a server name, and then select **Add Roles and Features**.
 
--   On the **Installation Type** page, select **Role-based or feature-based installation**.
+- On the **Installation Type** page, select **Role-based or feature-based installation**.
 
--   On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.
+- On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.
 
 For information about starting the Windows PowerShell 2.0 Engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 

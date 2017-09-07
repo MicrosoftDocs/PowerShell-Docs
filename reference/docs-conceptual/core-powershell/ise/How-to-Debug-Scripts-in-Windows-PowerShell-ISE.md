@@ -2,27 +2,21 @@
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Debug Scripts in Windows PowerShell ISE
-ms.assetid:  6dc6d8f9-8978-46e9-a92f-169af37e2817
 ---
 
 # How to Debug Scripts in Windows PowerShell ISE
-This topic describes how to debug scripts on a local computer by using the Windows PowerShell® Integrated Scripting Environment (ISE) visual debugging features.
+This topic describes how to debug scripts on a local computer by using the Windows PowerShell Integrated Scripting Environment (ISE) visual debugging features.
 
-[How to manage breakpoints]()
-[How to manage a debugging session]()
-[How to step over, step into, and step out while debugging]()
-[How to display the values of variables while debugging]()
-
-## <a name="bkmk_1"></a>How to manage breakpoints
+## How to manage breakpoints
 A breakpoint is a designated spot in a script where you would like operation to pause so that you can examine the current state of the variables and the environment in which your script is running. Once your script is paused by a breakpoint, you can run commands in the Console Pane to examine the state of your script.  You can output variables or run other commands. You can even modify the value of any variables that are visible to the context of the currently running script. After you have examined what you want to see, you can resume operation of the script.
 
 You can set three types of breakpoints in the Windows PowerShell debugging environment:
 
-1.  **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
+1. **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
 
-2.  **Variable breakpoint.** The script pauses whenever the designated variable’s value changes.
+2. **Variable breakpoint.** The script pauses whenever the designated variable'™s value changes.
 
-3.  **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
+3. **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
 
 Of these, in the Windows PowerShell ISE debugging environment, only line breakpoints can be set by using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they are set from the Console Pane by using the [Set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) cmdlet. This section describes how you can perform debugging tasks in Windows PowerShell ISE by using the menus where available, and perform a wider range of commands from the Console Pane by using scripting.
 
@@ -37,7 +31,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
 
 ### List all breakpoints
-Displays all breakpoints in the current Windows PowerShell® session.
+Displays all breakpoints in the current Windows PowerShell session.
 
 On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
 
@@ -47,7 +41,18 @@ Get-PSBreakpoint
 ```
 
 ### Remove a breakpoint
-Removing a breakpoint deletes it.  If you think you might want to use it again later, consider [disabling]() it instead.  Right-click the line where you want to remove a breakpoint, and then click **Toggle Breakpoint**. Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a specified ID from the Console Pane by using the [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
+
+Removing a breakpoint deletes it.
+
+If you think you might want to use it again later,
+consider [Disable a Breakpoint](#disable-a-breakpoint) it instead.
+Right-click the line where you want to remove a breakpoint,
+and then click **Toggle Breakpoint**.
+Or, click the line where you want to remove a breakpoint,
+and on the **Debug** menu, click **Toggle Breakpoint**.
+The following script is an example of how to remove a breakpoint with a
+specified ID from the Console Pane by using the
+[Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet.
 
 ``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -64,7 +69,7 @@ The following script is an example of how to remove all breakpoints from the Con
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="bkmk_disable"></a>Disable a Breakpoint
+### Disable a Breakpoint
 Disabling a breakpoint does not remove it; it turns it off until it is enabled.  To disable a specific line breakpoint, right-click the line where you want to disable a breakpoint, and then click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press **F9** or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ``` PowerShell
@@ -98,8 +103,8 @@ To enable all breakpoints defined in the current session, on the **Debug** menu,
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="bkmk_2"></a>How to manage a debugging session
-Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints]() or [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). After you start debugging, you cannot edit a script until you stop debugging. A script that has one or more breakpoints set is automatically saved before it is run.
+## How to manage a debugging session
+Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints](#how-to-manage-breakpoints) or [Set-PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). After you start debugging, you cannot edit a script until you stop debugging. A script that has one or more breakpoints set is automatically saved before it is run.
 
 ### To start debugging
 Press **F5** or, on the toolbar, click the **Run Script** icon, or on the **Debug** menu click **Run/Continue**. The script runs until it encounters the first breakpoint. It pauses operation there and highlights the line on which it paused.
@@ -115,7 +120,7 @@ While paused, to see the current call stack, press **CTRL+SHIFT+D** or, on the *
 ### To stop debugging
 Press **SHIFT-F5** or, on the **Debug** menu, click **Stop Debugger**, or, in the Console Pane, type **Q** and then press **ENTER**.
 
-## <a name="bkmk_3"></a>How to step over, step into, and step out while debugging
+## How to step over, step into, and step out while debugging
 Stepping is the process of running one statement at a time. You can stop on a line of code, and examine the values of variables and the state of the system. The following table describes common debugging tasks such as stepping over, stepping into, and stepping out.
 
 | Debugging Task | Description | How to accomplish it in PowerShell ISE |
@@ -125,36 +130,36 @@ Stepping is the process of running one statement at a time. You can stop on a li
 | **Step Out** | Steps out of the current function and up one level if the function is nested. If in the main body, the script is executed to the end, or to the next breakpoint. The skipped statements are executed, but not stepped through. | Press **SHIFT+F11**, or on the **Debug** menu, click **Step Out**, or in the Console Pane, type **O** and press **ENTER**. |
 | **Continue** | Continues execution to the end, or to the next breakpoint. The skipped functions and invocations are executed, but not stepped through. | Press **F5** or, on the **Debug** menu, click **Run/Continue**, or in the Console Pane, type **C** and press **ENTER**. |
 
-## <a name="bkmk_4"></a>How to display the values of variables while debugging
+## How to display the values of variables while debugging
 You can display the current values of variables in the script as you step through the code.
 
 ### To display the values of standard variables
 Use one of the following methods:
 
--   In the Script Pane, hover over the variable to display its value as a tool tip.
+- In the Script Pane, hover over the variable to display its value as a tool tip.
 
--   In the Console Pane, type the variable name and press **ENTER**.
+- In the Console Pane, type the variable name and press **ENTER**.
 
 All panes in ISE are always in the same scope. Therefore, while you are debugging a script, the commands that you type in the Console Pane run in script scope. This allows you to use the Console Pane to find the values of variables and call functions that are defined only in the script.
 
 ### To display the values of automatic variables
 You can use the preceding method to display the value of almost all variables while you are debugging a script. However, these methods do not work for the following automatic variables.
 
--   $_
+- $_
 
--   $Input
+- $Input
 
--   $MyInvocation
+- $MyInvocation
 
--   $PSBoundParameters
+- $PSBoundParameters
 
--   $Args
+- $Args
 
 If you try to display the value of any of these variables, you get the value of that variable for in an internal pipeline the debugger uses, not the value of the variable in the script. You can work around this for a few variables ($_, $Input, $MyInvocation, $PSBoundParameters, and $Args) by using the following method:
 
-1.  In the script, assign the value of the automatic variable to a new variable.
+1. In the script, assign the value of the automatic variable to a new variable.
 
-2.  Display the value of the new variable, either by hovering over the new variable in the Script Pane, or by typing the new variable in the Console Pane.
+2. Display the value of the new variable, either by hovering over the new variable in the Script Pane, or by typing the new variable in the Console Pane.
 
 For example, to display the value of the $MyInvocation variable, in the script, assign the value to a new variable, such as $scriptname, and then hover over or type the $scriptname variable to display its value.
 

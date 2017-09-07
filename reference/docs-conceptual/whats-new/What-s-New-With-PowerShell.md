@@ -13,13 +13,13 @@ Windows PowerShell 5.0 is installed by default on Windows Server® 2016 and Wind
 
 ## In this topic
 
--   [New features in  PowerShell 5.0](What-s-New-in-Windows-PowerShell-50.md)
+- [New features in  PowerShell 5.0](What-s-New-in-Windows-PowerShell-50.md)
 
--   [New features in PowerShell ISE 5.0](What-s-New-in-the-PowerShell-50-ISE.md)
+- [New features in PowerShell ISE 5.0](What-s-New-in-the-PowerShell-50-ISE.md)
 
 <!--
--   New features in Windows PowerShell 4.0
+- New features in Windows PowerShell 4.0
 
--   New features in Windows PowerShell 3.0
+- New features in Windows PowerShell 3.0
 -->
 

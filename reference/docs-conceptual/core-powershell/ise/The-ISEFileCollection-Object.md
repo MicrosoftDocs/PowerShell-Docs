@@ -70,5 +70,3 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 - [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-
-  

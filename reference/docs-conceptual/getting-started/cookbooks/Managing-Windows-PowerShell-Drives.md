@@ -82,11 +82,11 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 To create a new Windows PowerShell drive, you must supply three parameters:
 
--   A name for the drive (you can use any valid Windows PowerShell name)
+- A name for the drive (you can use any valid Windows PowerShell name)
 
--   The PSProvider (use "FileSystem" for file system locations and "Registry" for registry locations)
+- The PSProvider (use "FileSystem" for file system locations and "Registry" for registry locations)
 
--   The root, that is, the path to the root of the new drive
+- The root, that is, the path to the root of the new drive
 
 For example, you can create a drive named "Office" that is mapped to the folder that contains the Microsoft Office applications on your computer, such as **C:\\Program Files\\Microsoft Office\\OFFICE11**. To create the drive, type the following command:
 

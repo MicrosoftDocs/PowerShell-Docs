@@ -10,7 +10,7 @@ ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
 ## Methods
 
-###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+### Save\( \[saveEncoding\] \)
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  Saves the file to disk.
@@ -34,7 +34,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
+### SaveAs\(filename, \[saveEncoding\]\)
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  Saves the file with the specified file name and encoding.
@@ -48,9 +48,9 @@ $myfile.Encoding
  **Exceptions**
  -   **System.ArgumentNullException**: The **filename** parameter is null.
 
--   **System.ArgumentException**: The **filename** parameter is empty.
+- **System.ArgumentException**: The **filename** parameter is empty.
 
--   **System.IO.IOException**: The file could not be saved.
+- **System.IO.IOException**: The file could not be saved.
 
 ```
 # Save the file with a full path and name. 
@@ -63,8 +63,8 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ## Properties
 
-###  <a name="Displayname"></a> DisplayName
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### DisplayName
+  Supported in Windows PowerShell ISE 2.0 and later.
 
  The read-only property that gets the string that contains the display name of this file. The name is shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.
 
@@ -74,7 +74,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="Editor"></a> Editor
+### Editor
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.
@@ -85,7 +85,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="Encoding"></a> Encoding
+### Encoding
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the original file encoding. This is a **System.Text.Encoding** object.
@@ -96,7 +96,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="FullPath"></a> FullPath
+### FullPath
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that gets the string that specifies the full path of the opened file.
@@ -107,7 +107,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="IsSaved"></a> IsSaved
+### IsSaved
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only Boolean property that returns **$true** if the file has been saved after it was last modified.
@@ -119,7 +119,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="IsUntitled"></a> IsUntitled
+### IsUntitled
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read-only property that returns **$true** if the file has never been given a title.
@@ -135,7 +135,5 @@ $psISE.CurrentFile.IsUntitled
 ## See Also
 - [The ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
 - [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-
-  

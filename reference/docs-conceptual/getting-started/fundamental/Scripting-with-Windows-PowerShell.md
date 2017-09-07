@@ -13,10 +13,10 @@ Windows PowerShell commands, called *cmdlets*, let you manage the computers from
 
 Windows PowerShell includes the following features:
 
--   Cmdlets for performing common system administration tasks, such as managing the registry, services, processes, and event logs, and using Windows Management Instrumentation (WMI).
--   A task-based scripting language and support for existing scripts and command-line tools.
--   Consistent design. Because cmdlets and system data stores use common syntax and naming conventions, data can be shared easily and the output from one cmdlet can be used as the input to another cmdlet without reformatting or manipulation.
--   Simplified, command-based navigation of the operating system, which lets users navigate the registry and other data stores by using the same techniques that they use to navigate the file system.
--   Powerful object manipulation capabilities. Objects can be directly manipulated or sent to other tools or databases.
--   Extensible interface. Independent software vendors and enterprise developers can build custom tools and utilities to administer their software.
+- Cmdlets for performing common system administration tasks, such as managing the registry, services, processes, and event logs, and using Windows Management Instrumentation (WMI).
+- A task-based scripting language and support for existing scripts and command-line tools.
+- Consistent design. Because cmdlets and system data stores use common syntax and naming conventions, data can be shared easily and the output from one cmdlet can be used as the input to another cmdlet without reformatting or manipulation.
+- Simplified, command-based navigation of the operating system, which lets users navigate the registry and other data stores by using the same techniques that they use to navigate the file system.
+- Powerful object manipulation capabilities. Objects can be directly manipulated or sent to other tools or databases.
+- Extensible interface. Independent software vendors and enterprise developers can build custom tools and utilities to administer their software.
 

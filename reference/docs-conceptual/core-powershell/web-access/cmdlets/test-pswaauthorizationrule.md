@@ -10,21 +10,21 @@ title:  test pswaauthorizationrule
 ms.technology:  powershell
 ---
 
-#  Test-PswaAuthorizationRule
+# Test-PswaAuthorizationRule
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Verifies whether a rule exists for a specified user, computer, or
 endpoint.
 
 ## SYNTAX
 
-###  ComputerName
+### ComputerName
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ComputerName] <String> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
 
-###  ConnectionUri
+### ConnectionUri
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
@@ -140,13 +140,13 @@ For more information, see
 
 ## INPUTS
 
-###  Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 This cmdlet accepts an array of PswaAuthorizationRule objects as input.
 
-##  OUTPUTS
+## OUTPUTS
 
-###  Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 This cmdlet produces an array of PswaAuthorizationRule objects as output.
 
@@ -171,9 +171,9 @@ rules apply to the user *contoso\\mhanson*.
 Test-PswaAuthorizationRule -UserName contoso\mhanson -ComputerName *
 ```
 
-##  Related topics
+## Related topics
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
