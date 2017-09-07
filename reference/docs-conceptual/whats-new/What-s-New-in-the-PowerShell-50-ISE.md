@@ -25,7 +25,7 @@ The following table lists the new and changed features for this release of Windo
 |**[Most-recently used list](#most-recently-used-list)**|X|X||
 |**[Console Pane](#console-pane)**|X|X||
 |**[Command-line switches](#command-line-switches)**|X|X||
-|**[New editor features](new-editor-features)**|X|X||
+|**[New editor features](#new-editor-features)**|X|X||
 |**[New Help viewer window](#new-help-viewer-window)**|X|X||
 |**[Show-Command cmdlet](#show-command-cmdlet)**|X|X||
 

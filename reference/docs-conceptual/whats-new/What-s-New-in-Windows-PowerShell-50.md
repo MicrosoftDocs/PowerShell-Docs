@@ -463,7 +463,7 @@ Windows PowerShell 3.0 includes the following new features.
 - [Formatting and Output Improvements](#formatting-and-output-improvements)
 - [Enhanced Console Host Experience](#enhanced-console-host-experience)
 - [New Cmdlet and Hosting APIs](#new-cmdlet-and-hosting-apis)
-- [Performance Improvements](d#performance-improvements)
+- [Performance Improvements](#performance-improvements)
 - [RunAs and Shared Host Support](#runas-and-shared-host-support)
 - [Special Character Handling Improvements](#special-character-handling-improvements)
 
