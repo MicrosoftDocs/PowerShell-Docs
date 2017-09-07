@@ -63,7 +63,7 @@ PS C:\> Unregister-Event PowerShell.ProcessCreated
 This command shows how to use the Job cmdlets to manage the event job object that** Register-EngineEvent** returns when you use the **Action** parameter.
 
 An event job is managed just like any other Windows PowerShell job.
-For more information, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251).
+For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md).
 In this example, the Receive-Job cmdlet is used to get the results of the job.
 
 To delete the job from the session, use Remove-Job.
