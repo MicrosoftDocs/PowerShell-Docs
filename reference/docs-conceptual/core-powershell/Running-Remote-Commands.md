@@ -13,25 +13,25 @@ Many Windows PowerShell cmdlets have the ComputerName parameter that enables you
 
 These cmdlets include:
 
--   [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
+- [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
 
--   [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
+- [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
 
--   [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
+- [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
 
--   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
+- [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+- [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
  -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
--   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
+- [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
--   [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
+- [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
 
--   [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
+- [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
 
--   [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
+- [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
 
 Typically, cmdlets that support remoting without special configuration have the ComputerName parameter and do not have the Session parameter. To find these cmdlets in your session, type:
 

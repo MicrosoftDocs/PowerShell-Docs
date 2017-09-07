@@ -10,9 +10,9 @@ title:  install pswawebapplication
 ms.technology:  powershell
 ---
 
-#  Install-PswaWebApplication
+# Install-PswaWebApplication
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Configures the Windows PowerShell® Web Access web application in IIS.
 
@@ -116,7 +116,7 @@ For more information, see
 
 This cmdlet takes no input.
 
-##  OUTPUTS
+## OUTPUTS
 
 This cmdlet produces no output.
 
@@ -142,9 +142,9 @@ and using the default values for the **WebApplicationName** and
 Install-PswaWebApplication -UseTestCertificate
 ```
 
-##  Related topics
+## Related topics
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

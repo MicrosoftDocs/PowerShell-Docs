@@ -9,20 +9,20 @@ ms.date:  2016-12-12
 title:  get pswaauthorizationrule
 ms.technology:  powershell
 ---
-#  Get-PswaAuthorizationRule
+# Get-PswaAuthorizationRule
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Returns a set of the Windows PowerShell® Web Access authorization rules.
 
-##  Syntax
+## Syntax
 
-###  ID
+### ID
 ```
 Get-PswaAuthorizationRule [[-Id] <Int32[]> ] [ <CommonParameters>]
 ```
 
-###  Name
+### Name
 ```
 Get-PswaAuthorizationRule [-RuleName] <String[]> [ <CommonParameters>]
 ```
@@ -76,17 +76,17 @@ For more information, see
 
 ## INPUTS
 
-###  int\[\]
+### int\[\]
 
 This cmdlet accepts an array of integers or an array of string values as input.
 
-###  String\[\]
+### String\[\]
 
 This cmdlet accepts an array of integers or an array of string values as input.
 
-##  OUTPUTS
+## OUTPUTS
 
-###  Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 This cmdlet produces a PswaAuthorizationRule object as output.
 
@@ -118,9 +118,9 @@ A rule id and a rule name are passed in this cmdlet.
     PS C:\> "rule1",0 | Get-PswaAuthorizationRule
 ```
 
-##  Related topics
+## Related topics
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)

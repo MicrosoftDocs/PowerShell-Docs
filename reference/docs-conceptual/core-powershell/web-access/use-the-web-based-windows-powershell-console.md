@@ -4,7 +4,7 @@ keywords:  powershell,cmdlet
 title:  use the web based windows powershell console
 ---
 
-#  Use the Web-based Windows PowerShell Console
+# Use the Web-based Windows PowerShell Console
 
 Updated: June 24, 2013
 

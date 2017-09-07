@@ -12,8 +12,8 @@ starting with Windows 7 SP1 and Windows Server 2008 R2 SP1.
 Linux, macOS, and Windows users that would like to install **PowerShell 6** (beta),
 in their machines, need to:
 
-1.  Get PowerShell for the specific OS and version, from [GitHub](https://github.com/powershell/powershell#get-powershell)
-1.  Follow the installation instructions
+1. Get PowerShell for the specific OS and version, from [GitHub](https://github.com/powershell/powershell#get-powershell)
+1. Follow the installation instructions
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
   - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)

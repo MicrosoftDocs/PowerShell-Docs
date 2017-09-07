@@ -12,31 +12,31 @@ schema:   2.0.0
 ---
 
 
-#  Add-PswaAuthorizationRule
+# Add-PswaAuthorizationRule
 
-##  SYNOPSIS
+## SYNOPSIS
 
 Adds a new authorization rule to the Windows PowerShell® Web Access
 authorization rule set.
 
 ## Syntax
 
-###  UserGroupNameComputerGroupName
+### UserGroupNameComputerGroupName
 ```
 Add-PswaAuthorizationRule -ComputerGroupName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserGroupNameComputerName
+### UserGroupNameComputerName
 ```
 Add-PswaAuthorizationRule -ComputerName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserNameComputerGroupName
+### UserNameComputerGroupName
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> -ComputerGroupName <String> -ConfigurationName <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-###  UserNameComputerName
+### UserNameComputerName
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-ConfigurationName] <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
@@ -215,17 +215,17 @@ For more information, see
 
 ## INPUTS
 
-###  String
+### String
 
 This cmdlet accepts a string or an array of strings as input.
 
-###  String\[\]
+### String\[\]
 
 This cmdlet accepts a string or an array of strings as input.
 
-##  Outputs
+## Outputs
 
-###   Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule
+### Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule
 
 This cmdlet returns the an authorization rule object.
 
@@ -273,102 +273,16 @@ This example illustrates how to input user name values via the pipeline.
 This example illustrates how all parameters take values from pipeline by
 property name.
 
-\
-###   {#section .subHeading}
+````PowerShell
+$o = New-Object -TypeName PSObject | 
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
-<div class="subSection">
+$o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
+````
 
-<div id="code-snippet-5" class="codeSnippetContainer" xmlns="">
-
-<div class="codeSnippetContainerTabs">
-
-<div class="codeSnippetContainerTabSingle" dir="ltr">
-
-[Windows PowerShell]()
-
-</div>
-
-</div>
-
-<div class="codeSnippetContainerCodeContainer">
-
-<div class="codeSnippetToolBar">
-
-<div class="codeSnippetToolBarText">
-
-[Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b61200ba-32cd-4df3-80be-7d5cf0ff709f'); "Copy to clipboard.")
-
-</div>
-
-</div>
-
-<div id="CodeSnippetContainerCode_b61200ba-32cd-4df3-80be-7d5cf0ff709f"
-class="codeSnippetContainerCode" dir="ltr">
-
-<div style="color:Black;">
-
-    PS C:\> $o = New-Object -TypeName PSObject | Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-###   {#section-1 .subHeading}
-
-<div class="subSection">
-
-<div id="code-snippet-6" class="codeSnippetContainer" xmlns="">
-
-<div class="codeSnippetContainerTabs">
-
-<div class="codeSnippetContainerTabSingle" dir="ltr">
-
-[Windows PowerShell]()
-
-</div>
-
-</div>
-
-<div class="codeSnippetContainerCodeContainer">
-
-<div class="codeSnippetToolBar">
-
-<div class="codeSnippetToolBarText">
-
-[Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c76e1b6c-cb67-4223-a7d0-54ec6b63bbcb'); "Copy to clipboard.")
-
-</div>
-
-</div>
-
-<div id="CodeSnippetContainerCode_c76e1b6c-cb67-4223-a7d0-54ec6b63bbcb"
-class="codeSnippetContainerCode" dir="ltr">
-
-<div style="color:Black;">
-
-    PS C:\> $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-### EXAMPLE 5 {#example-5 .subHeading}
-
-<div class="subSection">
+### EXAMPLE 5
 
 This example adds a rule to allow the local user named
 *PswaServer\\ChrisLocal* access to the server named *srv1.contoso.com*.
@@ -382,51 +296,11 @@ area. The gateway server uses the additional set of credentials to
 authenticate the user on the destination computer, a server named
 *srv1.contoso.com*.
 
-\
-<div id="code-snippet-7" class="codeSnippetContainer" xmlns="">
+````
+Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+````
 
-<div class="codeSnippetContainerTabs">
-
-<div class="codeSnippetContainerTabSingle" dir="ltr">
-
-[Windows PowerShell]()
-
-</div>
-
-</div>
-
-<div class="codeSnippetContainerCodeContainer">
-
-<div class="codeSnippetToolBar">
-
-<div class="codeSnippetToolBarText">
-
-[Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7572cdeb-8835-49ed-9d8e-d3318eb639d3'); "Copy to clipboard.")
-
-</div>
-
-</div>
-
-<div id="CodeSnippetContainerCode_7572cdeb-8835-49ed-9d8e-d3318eb639d3"
-class="codeSnippetContainerCode" dir="ltr">
-
-<div style="color:Black;">
-
-    PS C:\> Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-### EXAMPLE 6 {#example-6 .subHeading}
-
-<div class="subSection">
+### EXAMPLE 6
 
 This example allows all users access to all endpoints on all computers.
 This essentially turns off authorization rules.\
@@ -434,64 +308,16 @@ This essentially turns off authorization rules.\
 security-sensitive deployments and should only be considered for test
 environments or used in deployments where security can be relaxed.
 
-\
-<div id="code-snippet-8" class="codeSnippetContainer" xmlns="">
+````PowerShell
+Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````
 
-<div class="codeSnippetContainerTabs">
+## See Also
 
-<div class="codeSnippetContainerTabSingle" dir="ltr">
-
-[Windows PowerShell]()
-
-</div>
-
-</div>
-
-<div class="codeSnippetContainerCodeContainer">
-
-<div class="codeSnippetToolBar">
-
-<div class="codeSnippetToolBarText">
-
-[Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_9fb751ca-1e50-4411-a9a9-3343fe888076'); "Copy to clipboard.")
-
-</div>
-
-</div>
-
-<div id="CodeSnippetContainerCode_9fb751ca-1e50-4411-a9a9-3343fe888076"
-class="codeSnippetContainerCode" dir="ltr">
-
-<div style="color:Black;">
-
-    PS C:\> Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-Related topics 
---------------
-
-
-[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)\
-\
-[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)\
-\
-[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)\
-\
-[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)\
-\
-[Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)\
-\
-[New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)\
-\
-[Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)
+- [Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+- [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+- [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+- [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)
