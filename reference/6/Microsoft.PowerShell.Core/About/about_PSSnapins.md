@@ -57,7 +57,7 @@ The built-in snap-ins are registered in the system and added to the default sess
 ### REGISTERING A SNAP-IN
 A  Windows PowerShell snap-in is a program written in a .NET Framework language that is compiled into a .dll file. To use the providers and cmdlets in a snap-in, you must first register the snap-in (add it to the registry).
 
-Most snap-ins include an installation program (an .exe or .msi file) that registers the .dll file for you. However, if you receive a snap-in as a .dll file, you can register it on your system. For more information, see "How to Register Cmdlets, Providers, and Host Applications" in the MSDN (Microsoft Developer Network) library at http:\/\/go.microsoft.com\/fwlink\/?LinkID\=143619.
+Most snap-ins include an installation program (an .exe or .msi file) that registers the .dll file for you. However, if you receive a snap-in as a .dll file, you can register it on your system. For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://go.microsoft.com/fwlink/?LinkID=143619) in the MSDN library.
 
 To get all the registered snap-ins on your system or to verify that a snap-in is registered, type:
 
