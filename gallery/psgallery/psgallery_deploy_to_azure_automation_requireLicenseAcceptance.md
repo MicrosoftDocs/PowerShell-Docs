@@ -1,6 +1,6 @@
 ---
 ms.date:  2017-06-12
-contributor:  JKeithB
+contributor:  Farehar
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_deploy_to_azure_automation
@@ -9,7 +9,7 @@ title:  psgallery_deploy_to_azure_automation
 Require License Acceptance on Deploy to Azure Automation
 ===========================
 
-If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying By clicking OK, you are accepting license terms.
+If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance. By clicking OK, you are accepting license terms.'
 
 
 ![Deploy to Azure Automation Requires License Acceptance](Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
