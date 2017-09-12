@@ -13,4 +13,8 @@ Requires License Acceptance text shows up on item details page for modules that 
 
 ![Require License Acceptance](Images/RequireLicenseAcceptance.png)
 
-Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to azure automation. To learn more, see [PowerShellGet Documentation](../psget/module/RequireLicenseAcceptance.md)
+Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to Azure Automation. 
+
+## More details
+### [Require License Acceptance in PowerShellGet](../psget/module/RequireLicenseAcceptance.md)
+### [Require License Acceptance on Deploy to Azure Automation](psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
