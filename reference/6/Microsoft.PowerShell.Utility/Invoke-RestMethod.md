@@ -140,6 +140,8 @@ or
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
+The *Body* parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for *Body*, any Content related headers supplied to the *ContentType*, *Headers*, or *WebSession* parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
+
 ```yaml
 Type: Object
 Parameter Sets: (All)
@@ -198,6 +200,8 @@ Specifies the content type of the web request.
 If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content type to "application/x-www-form-urlencoded".
 Otherwise, the content type is not specified in the call.
 
+*ContentType* will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -251,6 +255,8 @@ Enter a hash table or dictionary.
 
 To set UserAgent headers, use the `-UserAgent` parameter.
 You cannot use this parameter to specify UserAgent or cookie headers.
+
+Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
 
 ```yaml
 Type: IDictionary
@@ -725,7 +731,7 @@ Specifies a web request session.
 Enter the variable name, including the dollar sign (`$`).
 
 To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
-Parameter values take precedence over values in the web request session.
+Parameter values take precedence over values in the web request session. Content related headers, such as `Content-Type`, will be also be overridden when a `MultipartFormDataContent` object is supplied for `-Body`.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
