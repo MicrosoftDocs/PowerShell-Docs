@@ -134,6 +134,28 @@ The final command writes the Content property to the file then disposes the Stre
 
 Note that the Encoding property will be null if the web request does not return text content.
 
+### Example 4: Submit a multipart/form-data file
+```powershell
+$filePath = 'c:\document.txt'
+$fieldName = 'document'
+$contentType = 'text/plain'
+
+$fileStream = [System.IO.FileStream]::new($filePath, [System.IO.FileMode]::Open)
+$fileHeader = [System.Net.Http.Headers.ContentDispositionHeaderValue]::new('form-data')
+$fileHeader.Name = $fieldName
+$fileHeader.FileName = Split-Path -leaf $filePath
+$fileContent = [System.Net.Http.StreamContent]::new($fileStream)
+$fileContent.Headers.ContentDisposition = $fileHeader
+$fileContent.Headers.ContentType = [System.Net.Http.Headers.MediaTypeHeaderValue]::Parse($contentType)
+
+$multipartContent = [System.Net.Http.MultipartFormDataContent]::new()
+$multipartContent.Add($fileContent)
+
+$response = Invoke-WebRequest -Body $multipartContent -Method 'POST' -uri 'https://api.contoso.com/upload'
+```
+
+This example uses the **Invoke-WebRequest** cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
+
 ## PARAMETERS
 
 ### -Body
@@ -151,16 +173,22 @@ When the body is a form, or it is the output of an **Invoke-WebRequest** call, W
 For example:
 
 
-
-PS C:\> $R = Invoke-WebRequest http://website.com/login.aspx
+```powershell
+$R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
 Invoke-RestMethod http://website.com/service.aspx -Body $R
+```
 
-- or -
+or
 
+```powershell
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+```
 
-PS C:\> Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]```yaml
+The *Body* parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for *Body*, any Content related headers supplied to the *ContentType*, *Headers*, or *WebSession* parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
+
+```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases: 
@@ -218,6 +246,8 @@ Specifies the content type of the web request.
 If this parameter is omitted and the request method is POST, **Invoke-WebRequest** sets the content type to application/x-www-form-urlencoded.
 Otherwise, the content type is not specified in the call.
 
+*ContentType* will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -271,6 +301,8 @@ Enter a hash table or dictionary.
 
 To set UserAgent headers, use the *UserAgent* parameter.
 You cannot use this parameter to specify UserAgent or cookie headers.
+
+Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
 
 ```yaml
 Type: IDictionary
@@ -335,7 +367,9 @@ Invoke-RestMethod http://website.com/service.aspx -Body $r
 
 - or -
 
-Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]```yaml
+Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
+
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -364,7 +398,9 @@ Invoke-RestMethod http://website.com/service.aspx -Body $r
 
 - or -
 
-Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]```yaml
+Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv
@@ -682,7 +718,9 @@ For example, the following command uses the user agent string for Internet Explo
 
 
 
-PS C:\> Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
+PS C:\> Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -699,7 +737,7 @@ Specifies a web request session.
 Enter the variable name, including the dollar sign ($).
 
 To override a value in the web request session, use a cmdlet parameter, such as *UserAgent* or *Credential*.
-Parameter values take precedence over values in the web request session.
+Parameter values take precedence over values in the web request session. Content related headers, such as `Content-Type`, will be also be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
