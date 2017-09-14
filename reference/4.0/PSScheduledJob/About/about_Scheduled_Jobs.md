@@ -49,8 +49,7 @@ was introduced in Windows PowerShell 3.0 and works in Windows
 PowerShell 3.0 and later versions of Windows PowerShell.
 
 For more information about Windows PowerShell background jobs,
-see About_Jobs
-(http://go.microsoft.com/fwlink/?LinkID=113251).
+see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 For more information about Task Scheduler, see "Task Scheduler"
 in the TechNet Library at
