@@ -10,7 +10,6 @@ title:  setup reference
 - [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md)
 - [Installing the Windows PowerShell SDK](Installing-the-Windows-PowerShell-SDK.md)
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
-- [security](security.md)
 - [setup reference](setup-reference.md)
 - [Starting the 32 Bit Version of Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 - [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)

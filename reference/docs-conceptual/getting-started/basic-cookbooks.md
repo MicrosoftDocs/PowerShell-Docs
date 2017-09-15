@@ -22,7 +22,6 @@ title:  basic cookbooks
 - [Multiple selection List Boxes](cookbooks/Multiple-selection-List-Boxes.md)
 - [Other Useful Scripting Objects](cookbooks/Other-Useful-Scripting-Objects.md)
 - [Performing Networking Tasks](cookbooks/Performing-Networking-Tasks.md)
-- [PowerShellGet Module](cookbooks/PowerShellGet-Module.md)
 - [Redirecting Data with Out   Cmdlets](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
 - [Removing Objects from the Pipeline  Where Object ](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [Repeating a Task for Multiple Objects  ForEach Object ](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

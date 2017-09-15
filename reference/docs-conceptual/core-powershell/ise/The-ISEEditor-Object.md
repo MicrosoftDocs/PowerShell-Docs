@@ -75,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  **text** - String
  The text to insert.
 
- See the [Scripting Example](#-scripting-example) later in this topic.
+ See the [Scripting Example](#scripting-example) later in this topic.
 
 ### Select\( startLine, startColumn, endLine, endColumn \)
   Supported in Windows PowerShell ISE 2.0 and later. 
@@ -94,7 +94,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
  **endColumn** - Integer
  The column within the end line where the selection ends.
 
- See the  [Scripting Example](#-scripting-example) later in this topic.
+ See the  [Scripting Example](#scripting-example) later in this topic.
 
 ### SelectCaretLine\(\)
   Supported in Windows PowerShell ISE 2.0 and later. 
@@ -191,14 +191,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  The read-only property that gets the selected text from the editor.
 
- See the  [Scripting Example](#-scripting-example) later in this topic.
+ See the  [Scripting Example](#scripting-example) later in this topic.
 
 ### Text
   Supported in Windows PowerShell ISE 2.0 and later. 
 
  The read/write property that gets or sets the text in the editor.
 
- See the [Scripting Example](#-scripting-example) later in this topic.
+ See the [Scripting Example](#scripting-example) later in this topic.
 
 ## Scripting Example
 
