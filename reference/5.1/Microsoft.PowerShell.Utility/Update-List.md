@@ -50,7 +50,7 @@ PS C:\> Get-MailBox | Update-List -Property aliases -Add "A","B" -Remove "X","Y"
 
 This command adds A and B and removes X and Y from the Aliases property of a mailbox.
 
-The command uses the Get-MailBoxhttp://go.microsoft.com/fwlink/?LinkId=111536 cmdlet from Microsoft Exchange Server to get the mailbox.
+The command uses the [Get-Mailbox](https://go.microsoft.com/fwlink/?LinkId=111536) cmdlet from Microsoft Exchange Server to get the mailbox.
 A pipeline operator sends the mailbox object to the **Update-List** cmdlet.
 
 The **Update-List** command uses the *Property* parameter to indicate that the Aliases property of the mailbox is being updated, and it uses the *Add* and *Remove* parameters to specify the items that are being added and removed from the collection.
