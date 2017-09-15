@@ -155,15 +155,13 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns objects that represent the hotfixes on the computer.
 
 ## NOTES
-* This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer, Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see the Win32_QuickFixEngineeringhttp://go.microsoft.com/fwlink/?LinkID=145071 class topic in the Microsoft .NET Framework SDK at http://go.microsoft.com/fwlink/?LinkID=145071.
+* This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer, Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see [Win32_QuickFixEngineering class](https://go.microsoft.com/fwlink/?LinkID=145071) in the MSDN library.
 
   The output of this cmdlet might be different on different operating systems.
 
-*
-
 ## RELATED LINKS
 
-[Win32_QuickFixEngineering](http://go.microsoft.com/fwlink/?LinkID=145071)
+[Win32_QuickFixEngineering class](https://go.microsoft.com/fwlink/?LinkID=145071)
 
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
