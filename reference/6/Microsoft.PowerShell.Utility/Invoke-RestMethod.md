@@ -21,6 +21,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-CustomMethod <String>] [-UseBas
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
  [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation]
  [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
+ [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
  [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
  [-PassThru] [<CommonParameters>]
 ```
@@ -626,7 +627,7 @@ Accept wildcard characters: False
 ### -SkipCertificateCheck
 Skips certificate validation checks.
 
-This includes all validations such as expiration, revocation, trusted root authority, etc.
+This includes all validations such as expiration, revocation, trusted root authority, etc. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes.
 
 ```yaml
 Type: SwitchParameter
