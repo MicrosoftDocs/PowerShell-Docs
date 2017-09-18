@@ -16,9 +16,9 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 ## Syntax
 
 ```powershell
-Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
+Invoke-RestMethod [-Method <WebRequestMethod>] [-CustomMethod <String>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
  [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation]
  [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
  [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
@@ -43,8 +43,8 @@ Format-Table -Property Title, pubDate
 ```
 
 ```
-Title                                                                pubDate                        
------                                                                -------                        
+Title                                                                pubDate
+-----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
 DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
 PSScriptAnalyzer Community Call - Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
@@ -232,10 +232,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CustomMethod
+Specifies custom method used for the web request.
+
+```yaml
+Type: String
+Parameter Sets: StandardMethod, CustomMethod
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DisableKeepAlive
 Sets the **KeepAlive** value in the HTTP header to False.
 By default, **KeepAlive** is True.
 **KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FollowRelLink
+Indicates the cmdlet should follow relation links.
+
+To set how many times to follow relation links, use the `-MaximumFollowRelLink` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -383,7 +415,7 @@ A value of 0 (zero) prevents following relation links.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -410,7 +442,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreserveAuthorizationOnRedirect
-Indicates the cmdlet should preserve the Authorization header, when present, across redirections.  
+Indicates the cmdlet should preserve the Authorization header, when present, across redirections.
 
 By default, the cmdlet strips the Authorization header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
 
@@ -583,6 +615,23 @@ You cannot use the `-SessionVariable` and `-WebSession` parameters in the same c
 Type: String
 Parameter Sets: (All)
 Aliases: SV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+### -SkipCertificateCheck
+Skips certificate validation checks.
+
+This includes all validations such as expiration, revocation, trusted root authority, etc.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
