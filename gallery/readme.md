@@ -57,7 +57,7 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
-- Windows Server 2016 TP5
+- Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
