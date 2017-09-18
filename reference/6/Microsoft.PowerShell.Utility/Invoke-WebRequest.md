@@ -19,7 +19,7 @@ Gets content from a web page on the Internet.
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-Credential <PSCredential>] [-UseDefaultCredentials]
  [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation] [-MaximumRedirection <Int32>] [-PreserveAuthorizationOnRedirect]
+ [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation] [-MaximumRedirection <Int32>] [-PreserveAuthorizationOnRedirect] 
  [-Method <WebRequestMethod>] [-CustomMethod <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-NoProxy] [-Body <Object>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
@@ -627,6 +627,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SkipCertificateCheck
+Skips certificate validation checks.
+
+This includes all validations such as expiration, revocation, trusted root authority, etc. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TimeoutSec
 Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
@@ -662,23 +679,6 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 Accepted values: chunked, compress, deflate, gzip, identity
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipCertificateCheck
-Skips certificate validation checks.
-
-This includes all validations such as expiration, revocation, trusted root authority, etc.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
