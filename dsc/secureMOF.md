@@ -153,7 +153,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
-Once exported, the ```DscPrivateKey.cer``` would need to be copied to the **Target Node**.
+Once exported, the ```DscPrivateKey.pfx``` would need to be copied to the **Target Node**.
 
 >Target Node: Windows Server 2012 R2/Windows 8.1 and earlier
 
