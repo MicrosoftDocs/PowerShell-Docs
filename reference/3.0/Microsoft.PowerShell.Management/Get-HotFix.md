@@ -144,12 +144,12 @@ You cannot pipe input to Get-HotFix.
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
 Get-Hotfix returns objects that represent the hotfixes on the computer.
+
 ## NOTES
-* This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer (MSI), Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see the Win32_QuickFixEngineering class topic in the Microsoft .NET Framework SDK at http://go.microsoft.com/fwlink/?LinkID=145071.
+* This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer (MSI), Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see [Win32_QuickFixEngineering class](https://go.microsoft.com/fwlink/?LinkID=145071) in the MSDN library.
 
   The output of this cmdlet might be different on different operating systems.
 
-*
 ## RELATED LINKS
 
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)

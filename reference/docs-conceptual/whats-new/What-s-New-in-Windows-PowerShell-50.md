@@ -1,8 +1,7 @@
 ---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
-title:  What s New in Windows PowerShell 50
-ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
+title:  What's New in Windows PowerShell 50
 ---
 
 # What&#39;s New in Windows PowerShell
@@ -17,13 +16,10 @@ To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterpr
 
 ## In this topic
 
-- [Windows PowerShell 4.0 DSC updates in KB 3000850]()
-
-- [New features in Windows PowerShell 5.0]()
-
-- [New features in Windows PowerShell 4.0]()
-
-- [New features in Windows PowerShell 3.0]()
+- [Windows PowerShell 4.0 DSC updates in KB 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [New features in Windows PowerShell 5.0](#new-features-in-windows-powershell-50)
+- [New features in Windows PowerShell 4.0](#new-features-in-windows-powershell-40)
+- [New features in Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## Windows PowerShell 4.0 updates in November 2014 update rollup (KB 3000850)
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows PowerShell 4.0 are available in the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). You can determine if KB 3000850 is installed on your system by running `Get-Hotfix -Id KB3000850` in Windows PowerShell.
@@ -124,15 +120,11 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 ## New features in Windows PowerShell 5.0
 
-- [New features in Windows PowerShell]()
-
-- [New features in Windows PowerShell Desired State Configuration]()
-
-- [New features in Windows PowerShell ISE]()
-
-- [New features in Windows PowerShell Web Services]()
-
-- [Notable bug fixes in Windows PowerShell 5.0]()
+- [New features in Windows PowerShell](#new-features-in-windows-powershell)
+- [New features in Windows PowerShell Desired State Configuration](#new-features-in-windows-powershell-desired-state-configuration)
+- [New features in Windows PowerShell ISE](#new-features-in-windows-powershell-ise)
+- [New features in Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Notable bug fixes in Windows PowerShell 5.0](#notable-bug-fixes-in-windows-powershell-50)
 
 ### New features in Windows PowerShell
 
@@ -166,7 +158,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 - Get-ChildItem also has a new -Depth parameter, which you use with the -Recurse parameter to limit the recursion. For example, Get-ChildItem -Recurse -Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
 
-- Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [NanoÂ Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+- Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
 - Windows PowerShell transcription has been improved to apply to all hosting applications (such as Windows PowerShell ISE) in addition to the console host (**powershell.exe**). Transcription options (including enabling a system-wide transcript) can be configured by enabling the **Turn on PowerShell Transcription** Group Policy setting, found in Administrative Templates/Windows Components/Windows PowerShell.
 
@@ -307,19 +299,14 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 ## New features in Windows PowerShell 4.0
 Windows PowerShell 4.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 3.0 and Windows PowerShell 2.0 work in Windows PowerShell 4.0 without changes.
 
-Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on WindowsÂ 7Â withÂ SP1, or WindowsÂ ServerÂ 2008Â R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
+Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
 
-- [New features in Windows PowerShell]()
-
-- [New features in Windows PowerShell Integrated Scripting Environment (ISE)]()
-
-- [New features in Windows PowerShell Workflow]()
-
-- [New features in Windows PowerShell Web Services]()
-
-- [New features in Windows PowerShell Web Access]()
-
-- [Notable bug fixes in Windows PowerShell 4.0]()
+- [New features in Windows PowerShell](#new-features-in-windows-powershell-1)
+- [New features in Windows PowerShell Integrated Scripting Environment (ISE)](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
+- [New features in Windows PowerShell Workflow](#new-features-in-windows-powershell-workflow)
+- [New features in Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services)
+- [New features in Windows PowerShell Web Access](#new-features-in-windows-powershell-web-access)
+- [Notable bug fixes in Windows PowerShell 4.0](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0 includes the following new features.
 
@@ -452,59 +439,33 @@ Windows PowerShell 4.0 includes the following new features.
 ## New features in Windows PowerShell 3.0
 Windows PowerShell 3.0 includes the following new features.
 
-- [Windows PowerShell Workflow]()
-
-- [Windows PowerShell Web Access]()
-
-- [New Windows PowerShell ISE Features]()
-
-- [Support for Microsoft .NET Framework 4.0]()
-
-- [Support for Windows Preinstallation Environment]()
-
-- [Disconnected Sessions]()
-
-- [Robust Session Connectivity]()
-
-- [Updatable Help System]()
-
-- [Enhanced Online Help]()
-
-- [CIM integration]()
-
-- [Session Configuration Files]()
-
-- [Scheduled Jobs and Task Scheduler Integration]()
-
-- [Windows PowerShell Language Enhancements]()
-
-- [New Core Cmdlets]()
-
-- [Improvements to Existing Core Cmdlets and Providers]()
-
-- [Remote module import and discovery]()
-
-- [Enhanced Tab Completion]()
-
-- [Module Auto-Loading]()
-
-- [Module Experience Improvements]()
-
-- [Simplified Command Discovery]()
-
-- [Improved Logging, Diagnostics, and Group Policy Support]()
-
-- [Formatting and Output Improvements]()
-
-- [Enhanced Console Host Experience]()
-
-- [New Cmdlet and Hosting APIs]()
-
-- [Performance Improvements]()
-
-- [RunAs and Shared Host Support]()
-
-- [Special Character Handling Improvements]()
+- [Windows PowerShell Workflow](#windows-powershell-workflow)
+- [Windows PowerShell Web Access](#windows-powershell-web-access)
+- [New Windows PowerShell ISE Features](#new-windows-powershell-ise-features)
+- [Support for Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
+- [Support for Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
+- [Disconnected Sessions](#disconnected-sessions)
+- [Robust Session Connectivity](#robust-session-connectivity)
+- [Updatable Help System](#updatable-help-system)
+- [Enhanced Online Help](#enhanced-online-help)
+- [CIM integration](#cim-integration)
+- [Session Configuration Files](#session-configuration-files)
+- [Scheduled Jobs and Task Scheduler Integration](#scheduled-jobs-and-task-scheduler-integration)
+- [Windows PowerShell Language Enhancements](#windows-powershell-language-enhancements)
+- [New Core Cmdlets](#new-core-cmdlets)
+- [Improvements to Existing Core Cmdlets and Providers](#improvements-to-existing-core-cmdlets-and-providers)
+- [Remote module import and discovery](#remote-module-import-and-discovery)
+- [Enhanced Tab Completion](#enhanced-tab-completion)
+- [Module Auto-Loading](#module-auto-loading)
+- [Module Experience Improvements](#module-experience-improvements)
+- [Simplified Command Discovery](#simplified-command-discovery)
+- [Improved Logging, Diagnostics, and Group Policy Support](#improved-logging-diagnostics-and-group-policy-support)
+- [Formatting and Output Improvements](#formatting-and-output-improvements)
+- [Enhanced Console Host Experience](#enhanced-console-host-experience)
+- [New Cmdlet and Hosting APIs](#new-cmdlet-and-hosting-apis)
+- [Performance Improvements](#performance-improvements)
+- [RunAs and Shared Host Support](#runas-and-shared-host-support)
+- [Special Character Handling Improvements](#special-character-handling-improvements)
 
 ### Windows PowerShell Workflow
 Windows PowerShell Workflow brings the power of Windows Workflow Foundation to Windows PowerShell. You can write workflows in XAML or in the Windows PowerShell language and run them just as you would run a cmdlet. The [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet gets workflw commands and the [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet gets help for workflows.
@@ -545,7 +506,7 @@ For Windows PowerShell 3.0, Windows PowerShell Integrated Scripting Environment 
 Windows PowerShell is built against the Common Language Runtime 4.0. Cmdlet, script, and workflow authors can use the new Microsoft .NET Framework 4 classes in Windows PowerShell, with features that include Application Compatibility and Deployment, Managed Extensibility Framework, Parallel Computing, Networking, Windows Communication Foundation and Windows Workflow Foundation.
 
 ### Support for Windows Preinstallation Environment
-Windows PowerShell 3.0 is an optional component of Windows Preinstallation Environment (Windows PE) 4.0 for Windows 8. WindowsÂ PE is a minimal operating system that starts a computer that has no operating system and prepares it for Windows installation. WindowsÂ PE can be used to partition and format hard drives, copy disk images to a computer, and initiate Windows Setup from a network share. Windows PowerShell 3.0 can be used on Windows PE to manage deployment, diagnostics, and recovery scenarios.
+Windows PowerShell 3.0 is an optional component of Windows Preinstallation Environment (Windows PE) 4.0 for Windows 8. Windows PE is a minimal operating system that starts a computer that has no operating system and prepares it for Windows installation. Windows PE can be used to partition and format hard drives, copy disk images to a computer, and initiate Windows Setup from a network share. Windows PowerShell 3.0 can be used on Windows PE to manage deployment, diagnostics, and recovery scenarios.
 
 ### Disconnected Sessions
 Beginning in Windows PowerShell 3.0, persistent user-managed sessions ("PSSessions") that you create by using the New-PSSession cmdlet are saved on the remote computer. They are no longer dependent on the session in which they were created.
@@ -746,7 +707,6 @@ The **SharedHost** feature allows multiple users on multiple computers to connec
 To improve the ability of Windows PowerShell 3.0 to interpret and correctly handle special characters, the **LiteralPath** parameter, which handles special characters in paths, is valid on almost all cmdlets that have a **Path** parameter, including the new [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) and [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlets. The parser also includes special logic to improve handling of the backtick character (\`) and square brackets in file names and paths.
 
 ## See Also
-- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
