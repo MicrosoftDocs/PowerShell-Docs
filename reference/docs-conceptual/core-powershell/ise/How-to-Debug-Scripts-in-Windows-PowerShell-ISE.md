@@ -1,10 +1,11 @@
----
+﻿---
 ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  How to Debug Scripts in Windows PowerShell ISE
 ---
 
 # How to Debug Scripts in Windows PowerShell ISE
+
 This topic describes how to debug scripts on a local computer by using the Windows PowerShell Integrated Scripting Environment (ISE) visual debugging features.
 
 ## How to manage breakpoints
@@ -14,7 +15,7 @@ You can set three types of breakpoints in the Windows PowerShell debugging envir
 
 1. **Line breakpoint**. The script pauses when the designated line is reached during the operation of the script
 
-2. **Variable breakpoint.** The script pauses whenever the designated variable'™s value changes.
+2. **Variable breakpoint.** The script pauses whenever the designated variable's value changes.
 
 3. **Command breakpoint.** The script pauses whenever the designated command is about to be run during the operation of the script. It can include parameters to further filter the breakpoint to only the operation you want. The command can also be a function you created.
 
@@ -31,6 +32,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
 
 ### List all breakpoints
+
 Displays all breakpoints in the current Windows PowerShell session.
 
 On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
