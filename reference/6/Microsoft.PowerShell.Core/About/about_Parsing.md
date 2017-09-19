@@ -46,14 +46,14 @@ The following table provides several examples of commands processed in
 expression mode and argument mode and the results produced by those
 commands.
 
-Example            Mode         Result
------------------- ----------   ----------------
-2+2                Expression   4 (integer)
-Write-Output 2+2   Argument     "2+2" (string)
-Write-Output (2+2) Expression   4 (integer)
-$a = 2+2           Expression   $a = 4 (integer)
-Write-Output $a    Expression   4 (integer)
-Write-Output $a/H  Argument     "4/H" (string)
+| Example            | Mode       | Result           |
+| ------------------ | ---------- | ---------------- |
+| 2+2                | Expression | 4 (integer)      |
+| Write-Output 2+2   | Argument   | "2+2" (string)   |
+| Write-Output (2+2) | Expression | 4 (integer)      |
+| $a = 2+2           | Expression | $a = 4 (integer) |
+| Write-Output $a    | Expression | 4 (integer)      |
+| Write-Output $a/H  | Argument   | "4/H" (string)   |
 
 Every token can be interpreted as some kind of object type, such
 as Boolean or string. Windows PowerShell attempts to determine the
@@ -63,11 +63,11 @@ knows how to convert the argument to the correct type. The
 following table shows several examples of the types assigned to
 values returned by the expressions.
 
-Example            Mode         Result
------------------- ----------   ---------------
-Write-Output !1    argument     "!1" (string)
-Write-Output (!1)  expression   False (Boolean)
-Write-Output (2)   expression   2 (integer)
+| Example            | Mode       | Result          |
+| ------------------ | ---------- | --------------- |
+| Write-Output !1    | argument   | "!1" (string)   |
+| Write-Output (!1)  | expression | False (Boolean) |
+| Write-Output (2)   | expression | 2 (integer)     |
 
 STOP PARSING:  --%
 The stop-parsing symbol (--%), introduced in Windows PowerShell 3.0,
