@@ -195,7 +195,7 @@ The commands in this example demonstrate how to call native Windows APIs in Wind
 **Add-Type** uses the Platform Invoke (P/Invoke) mechanism to call a function in User32.dll from Windows PowerShell.
 
 The first command stores the C# signature of the **ShowWindowAsync** function in the $Signature variable.
-For more information, see ShowWindowAsync Functionhttp://go.microsoft.com/fwlink/?LinkId=143643 (http://go.microsoft.com/fwlink/?LinkId=143643) in the MSDN library.
+(For more information, see [ShowWindowAsync function](https://go.microsoft.com/fwlink/?LinkId=143643) in the MSDN library.)
 To ensure that the resulting method will be visible in a Windows PowerShell session, the "public" keyword has been added to the standard signature.
 
 The second command uses the **Add-Type** cmdlet to add the ShowWindowAsync function to the Windows PowerShell session as a static method of a class that **Add-Type** creates.
