@@ -34,7 +34,7 @@ After a repository is registered, you can use Find-Module and Install-Module to 
 
 ```powershell
 # Register a default repository
-Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy –Trusted
+Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy Trusted
 
 # Get all of the registered repositories
 Name                      InstallationPolicy   SourceLocation
