@@ -21,6 +21,20 @@ Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
  [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
 ```
 
+### ExtensionSet
+```
+Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>]
+ [-InformationAction <ActionPreference>][-InformationVariable <String>]
+ [<CommonParameters>]
+```
+
+### LeafBaseSet
+```
+Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>]
+ [-InformationAction <ActionPreference>][-InformationVariable <String>]
+ [<CommonParameters>]
+```
+
 ### LeafSet
 ```
 Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>]
@@ -139,7 +153,23 @@ This parameter is not supported by any providers installed with parameter is not
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Extension
+Indicates that this cmdlet returns only the extension of the leaf.
+For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `.log`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ExtensionSet
+Aliases:
 
 Required: False
 Position: Named
@@ -186,7 +216,7 @@ An absolute path has a length greater than zero and does not use a dot (.) to in
 ```yaml
 Type: SwitchParameter
 Parameter Sets: IsAbsoluteSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -202,7 +232,23 @@ For example, in the path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: LeafSet
-Aliases: 
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -LeafBase
+Indicates that this cmdlet returns only base name of the leaf.
+For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `Pass1`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: LeafBaseSet
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +284,7 @@ For example, in the path `C:\Test\Logs\Pass1.log`, it returns only \Test\Logs\Pa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NoQualifierSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,7 +301,7 @@ The *Parent* parameter is the default split location parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ParentSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +319,7 @@ You can also pipe a path to this cmdlet.
 ```yaml
 Type: String[]
 Parameter Sets: ParentSet, LeafSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -289,7 +335,7 @@ For the FileSystem or registry providers, the qualifier is the drive of the prov
 ```yaml
 Type: SwitchParameter
 Parameter Sets: QualifierSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -304,7 +350,7 @@ Indicates that this cmdlet displays the items that are referenced by the resulti
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +395,7 @@ When you specify the *Resolve* parameter, **Split-Path** returns a string that d
 When you specify the *IsAbsolute* parameter, **Split-Path** returns a **Boolean** value.
 
 ## NOTES
-* The split location parameters (*Qualifier*, *Parent*, *Leaf*, and *NoQualifier*) are exclusive. You can use only one in each command.
+* The split location parameters (*Qualifier*, *Parent*, *Extension*, *Leaf*, *LeafBase*, and *NoQualifier*) are exclusive. You can use only one in each command.
 
   The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return the names in a concise format that all Windows PowerShell providers can interpret.
 They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format.
