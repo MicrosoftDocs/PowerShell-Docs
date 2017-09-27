@@ -3,10 +3,10 @@ ms.date:  2017-06-12
 author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
-title:  Authoring a DSC resource in C`
+title:  Authoring a DSC resource in C#
 ---
 
-# Authoring a DSC resource in C`#`
+# Authoring a DSC resource in C#
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 

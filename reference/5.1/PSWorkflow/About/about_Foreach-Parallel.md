@@ -90,7 +90,8 @@ workflow Test-Workflow
 
 
 ## SEE ALSO
-Writing a Script Workflow (http:\/\/go.microsoft.com\/fwlink\/?LinkId\=262872)
+
+Writing a Script Workflow (http://go.microsoft.com/fwlink/?LinkId=262872)
 
 about_ForEach
 
