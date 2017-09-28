@@ -73,16 +73,16 @@ You can find items in the PowerShell Gallery by using the **Search**
 control on this website, or by browsing through the Modules and Scripts
 pages. You can also find items from the PowerShell Gallery by running
 the
-[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658)
 and
-[**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322)
 cmdlets, depending on the item type, with `-Repository PSGallery`.
 
 Filtering results from the Gallery can be done by using the following
 parameters of
-[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658)
 and
-[**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322)
 
 - Name
 - AllVersions
@@ -97,13 +97,13 @@ and
 
 If you're only interested in discovering specific DSC resources in the
 Gallery, you can run the
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-DscResource](https://go.microsoft.com/fwlink/?LinkId=517196)
 cmdlet.
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-DscResource](https://go.microsoft.com/fwlink/?LinkId=517196)
 returns data on DSC resources contained in the Gallery. Because DSC
 resources are always delivered as part of a module, you still need to
 run
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663)
 to install those DSC resources.
 
 ## Learning about items in the PowerShell Gallery
@@ -120,12 +120,12 @@ If you discover an item that you feel is not published in good faith,
 click **Report Abuse** on that item's page.
 
 If you're running
-[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658)
 or
-[**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409),
-you can view this data in the returned PSGetModuleInfo object. For
-example, running [**Find-Module -Name PSReadLine -Repository PSGallery |
-Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322),
+you can view this data in the returned PSGetModuleInfo object.
+For example, running
+`Find-Module -Name PSReadLine -Repository PSGallery | Get-Member`
 returns data on the PSReadLine module in the Gallery.
 
 ## Downloading items from the PowerShell Gallery
@@ -136,9 +136,9 @@ PowerShell Gallery:
 ### Inspect
 
 To download an item from the Gallery for inspection, run either the
-[**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Save-Module](https://go.microsoft.com/fwlink/?LinkId=821669)
 or
-[**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Save-Script](https://go.microsoft.com/fwlink/?LinkId=822334)
 cmdlet, depending on the item type. This lets you save the item locally
 without installing it, and inspect the item contents. Remember to delete
 the saved item manually.
@@ -153,27 +153,27 @@ click **Report Abuse** on that item's page.
 ### Install
 
 To install an item from the Gallery for use, run either the
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663)
 or
-[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327)
 cmdlet, depending on the item type.
 
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663)
 installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by
 default. This requires an administrator account. If you add the `-Scope
 CurrentUser` parameter, the module is installed to
 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327)
 installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by
 default. This requires an administrator account. If you add the `-Scope
 CurrentUser` parameter, the script is installed to
 `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
 By default,
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663)
 and
-[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327)
 installs the most current version of an item. To install an older
 version of the item, add the `-RequiredVersion` parameter.
 
@@ -193,32 +193,32 @@ website](http://azure.microsoft.com/en-us/services/automation/).
 ## Updating items from the PowerShell Gallery
 
 To update items installed from the PowerShell Gallery, run either the
-[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Update-Module](https://go.microsoft.com/fwlink/?LinkID=398576)
 or
-[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
 cmdlet. When run without any additional parameters,
-[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Update-Module](https://go.microsoft.com/fwlink/?LinkID=398576)
 attempts to update each module installed by running
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+[Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663).
 To selectively update modules, add the `-Name` parameter.
 
 Similarly, when run without any additional parameters,
-[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
 also attempts to update each script installed by running
-[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+[Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327).
 To selectively update scripts, add the `-Name` parameter.
 
 ## List items that you have installed from the PowerShell Gallery
 
 To find out which modules you have installed from the PowerShell
 Gallery, run the
-[**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863)
 cmdlet. This command lists all of the modules you have on your system
 that were installed directly from the PowerShell Gallery.
 
 Similarly, to find out which scripts you have installed from the
 PowerShell Gallery, run the
-[**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+[Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790)
 cmdlet. This command lists all of the scripts you have on your system
 that were installed directly from the PowerShell Gallery.
 
