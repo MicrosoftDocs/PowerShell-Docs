@@ -89,10 +89,15 @@ the Server01 remote computer:
 Get-Service -ComputerName Server01
 
 Typically, cmdlets that support remoting without special configuration
-have a ComputerName parameter and do not have a Session parameter. To
-find these cmdlets in your session, type:
+have a **ComputerName** parameter and do not have a **Session** parameter.
+To find these cmdlets in your session, type:
 
-Get-Command | where { $.Parameters.Keys -contains "ComputerName" -and $.Parameters.Keys -NotContains "Session"}
+```powershell
+Get-Command | Where-Object {
+	$_.Parameters.Keys -contains 'ComputerName' -and
+	$_.Parameters.Keys -notcontains 'Session'
+}
+```
 
 # HOW TO RUN A REMOTE COMMAND
 

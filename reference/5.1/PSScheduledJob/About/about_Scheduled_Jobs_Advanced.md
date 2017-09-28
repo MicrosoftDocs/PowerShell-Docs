@@ -129,8 +129,7 @@ Start-Job cmdlet to start the ProcessJob scheduled job.
 Start-Job -DefinitionName ProcessJob
 
 To manage the job and get the job results, use the Job cmdlets.
-For more information about the Job cmdlets, see about_Jobs
-(http://go.microsoft.com/fwlink/?LinkID=113251).
+For more information about the Job cmdlets, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 NOTE: To use the Job cmdlets on instances of scheduled jobs, the
 PSScheduledJob module  must be imported into the session.

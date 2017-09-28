@@ -305,61 +305,59 @@ are delivered one at a time.
 
 ### Accepts Pipeline Input
 
-
 In order to receive objects in a pipeline, the receiving cmdlet must have a parameter
-that accepts pipeline input. You can use a `Get-Help` command with the Full or Parameter
+that accepts pipeline input. You can use a `Get-Help` command with the **Full** or **Parameter**
 parameters to determine which, if any, of a cmdlet's parameters accepts pipeline input.
 
-In the `Get-Help` default display, the "Accepts pipeline input" item appears in a table
-of parameter attributes. This table is displayed only when you use the Full or Parameter
+In the `Get-Help` default display, the "Accept pipeline input?" item appears in a table
+of parameter attributes. This table is displayed only when you use the **Full** or **Parameter**
 parameters of the `Get-Help` cmdlet.
 
 For example, to determine which of the parameters of the `Start-Service` cmdlet accepts
 pipeline input, type:
 
-For example,
 ```powershell
 Get-Help Start-Service -Full
 ```
 
-For example,
+or
+
 ```powershell
 Get-Help Start-Service -Parameter *
 ```
 
-For example, the help for the `Start-Service` cmdlet shows that the Name and InputObject
+For example, the help for the `Start-Service` cmdlet shows that the **InputObject** and **Name**
 parameters accept pipeline input ("true"). All other parameters have a value of "false"
 in the "Accept pipeline input?" row.
 
-`-Name` <String[]>
-Specifies the service names for the service to be started.
-The parameter name is optional. You can use `-Name` or its alias,
-`-ServiceName`, or you can omit the parameter name.
-
 ```
-Required?                    true
-Position?                    1
-Default value
-Accept pipeline input?       true (ByValue, ByPropertyName)
-Accept wildcard characters?  true
-```
+-InputObject <ServiceController[]>
+    Specifies ServiceController objects representing the services to be started.
+    Enter a variable that contains the objects, or type a command or expression 
+    that gets the objects.
 
-`-InputObject` <ServiceController[]>
-Specifies ServiceController objects representing the services to be started. Enter
-a variable that contains the objects or type a command or expression that gets the
-objects.
+    Required?                    true
+    Position?                    0
+    Default value                None
+    Accept pipeline input?       True (ByValue)
+    Accept wildcard characters?  false
 
-```
-Required?                    false
-Position?                    named
-Default value
-Accept pipeline input?       true (ByValue)
-Accept wildcard characters?  false
+-Name <String[]>
+    Specifies the service names for the service to be started.
+
+    The parameter name is optional. You can use Name or its alias, ServiceName,
+    or you can omit the parameter name.
+
+    Required?                    true
+    Position?                    0
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName, ByValue)
+    Accept wildcard characters?  false
 ```
 
 This means that you can send objects (PsObjects) through the pipeline to the
 `Where-Object` cmdlet and Windows PowerShell will associate the object with the
-InputObject parameter.
+**InputObject** and **Name** parameters.
 
 ### Methods Of Accepting Pipeline Input
 
@@ -459,27 +457,26 @@ Parameter [Credential] PIPELINE INPUT ValueFromPipelineByPropertyName NO COERCIO
 ...
 
 
-To investigate the failure, use the Get-Help cmdlet to view the attributes of the
-Destination parameter. The following command gets detailed information about the
-Destination parameter.
+To investigate the failure, use the `Get-Help` cmdlet to view the attributes of the
+**Destination** parameter. The following command gets detailed information about the
+**Destination** parameter.
 
-For example,
 ```powershell
-Get-Help Move-ItemProperty -Parameter destination
+Get-Help Move-ItemProperty -Parameter Destination
 ```
 
-The results show that Destination takes pipeline input only "by property name".
+The results show that **Destination** takes pipeline input only "by property name".
 That is, the piped object must have a property named Destination.
 
-`-Destination` <String>
-Specifies the path to the destination location.
-
 ```
-Required?                    true
-Position?                    2
-Default value
-Accept pipeline input?       true (ByPropertyName)
-Accept wildcard characters?  true
+-Destination <String>
+    Specifies the path to the destination location.
+
+    Required?                    true
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
 ```
 
 To see the properties of the object being piped to the `Move-ItemProperty` cmdlet,

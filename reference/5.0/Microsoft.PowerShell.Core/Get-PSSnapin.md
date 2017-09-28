@@ -25,7 +25,7 @@ This cmdlet lists the snap-ins in the order in which they are detected.
 
 **Get-PSSnapin** gets only registered snap-ins.
 To register a Windows PowerShell snap-in, use the InstallUtil tool included with the Microsoft .NET Framework 2.0.
-For more information, see How to Register Cmdlets, Providers, and Host Applicationshttp://go.microsoft.com/fwlink/?LinkId=143619 (http://go.microsoft.com/fwlink/?LinkId=143619) in the Microsoft Developer Network (MSDN) library.
+For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://go.microsoft.com/fwlink/?LinkID=143619) in the MSDN library.
 
 Starting in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules.
 The exception is **Microsoft.PowerShell.Core**, which is a snap-in (PSSnapin).

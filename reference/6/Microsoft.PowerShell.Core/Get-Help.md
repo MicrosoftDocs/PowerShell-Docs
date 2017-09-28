@@ -45,12 +45,6 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Functionality <String[]>] [-Role <String[]>] [-Online] [<CommonParameters>]
 ```
 
-### ShowWindow
-```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-ShowWindow] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 The **Get-Help** cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
@@ -542,28 +536,6 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShowWindow
-Displays the help topic in a window for easier reading.
-The window includes a Find search feature and a Settings box that lets you set options for the display.
-These include options to display only selected sections of a help topic.
-
-The *ShowWindow* parameter supports help topics for commands, which include cmdlets, functions, CIM commands, workflows, and scripts, and conceptual About topics.
-It does not support provider help.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ShowWindow
-Aliases: 
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

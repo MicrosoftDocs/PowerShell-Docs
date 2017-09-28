@@ -18,6 +18,7 @@ Sorts objects by property values.
 ```
 Sort-Object [-Descending] [-Unique] [-InputObject <PSObject>] [[-Property] <Object[]>] [-Culture <String>]
  [-CaseSensitive] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [-Top <Int32>] [-Bottom <Int32>]
 ```
 
 ## DESCRIPTION
@@ -118,10 +119,10 @@ Status   Name               DisplayName
 Running  ALG                Application Layer Gateway Service
 Running  Ati HotKey Poller  Ati HotKey Poller
 Running  wuauserv           Automatic Updates
-Running  BITS               Background Intelligent Transfer Ser... 
+Running  BITS               Background Intelligent Transfer Ser...
 Running  Client for NFS     Client for NFS
-... 
-Stopped  clr_optimizatio... .NET Runtime Optimization Service v... 
+...
+Stopped  clr_optimizatio... .NET Runtime Optimization Service v...
 Stopped  Alerter            Alerter
 Stopped  AppMgmt            Application Management
 Stopped  aspnet_state       ASP.NET State Service
@@ -176,6 +177,21 @@ The second command uses the **Sort-Object** cmdlet with the *Unique* parameter t
 
 ## PARAMETERS
 
+### -Bottom
+Specifies the number of objects to get from the end of the sorted object array.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CaseSensitive
 Indicates that the sort should be case sensitive.
 By default, sorting is not case sensitive.
@@ -183,7 +199,7 @@ By default, sorting is not case sensitive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +214,7 @@ Specifies the cultural configuration to use when sorting.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -217,7 +233,7 @@ To sort by some properties in ascending order and others in descending order, yo
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +280,7 @@ To sort objects, pipe them **to Sort-Object**.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -287,7 +303,7 @@ If you do not specify properties, the cmdlet sorts based on default properties f
 
 The value of the *Property* parameter can be a calculated property.
 To create a calculated, property, use a hash table.
-Valid keys are: 
+Valid keys are:
 
 - Expression \<string\> or \<script block\>
 - Ascending \<Boolean\>
@@ -296,10 +312,25 @@ Valid keys are:
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Specifies the number of objects to get from the start of the sorted object array.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -315,7 +346,7 @@ As a result, strings that differ only in character casing are considered to be t
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
