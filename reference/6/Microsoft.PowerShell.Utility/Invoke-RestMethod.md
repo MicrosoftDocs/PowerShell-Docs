@@ -594,6 +594,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResponseHeadersVariable
+Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values. 
+
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: RHV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
 ### -SessionVariable
 Creates a web request session and saves it in the value of the specified variable.
 Enter a variable name without the dollar sign (`$`) symbol.
