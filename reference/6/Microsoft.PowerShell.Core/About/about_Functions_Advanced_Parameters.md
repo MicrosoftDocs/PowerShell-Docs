@@ -454,7 +454,7 @@ Param
     [String[]]
     $ComputerName
 )
-
+```
 
 In the following example, the value of the variable $number must be a
 minimum of one character in length, and a maximum of ten characters.

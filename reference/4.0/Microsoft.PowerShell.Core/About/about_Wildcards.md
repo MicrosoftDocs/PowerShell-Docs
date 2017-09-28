@@ -27,21 +27,12 @@ that appear before the .ppt file name extension.
 
 Windows PowerShell supports the following wildcard characters.
 
-Wildcard Description        Example  Match             No match
--------- ------------------ -------- ----------------- --------
-Matches zero or    aA, ag, Apple      banana
-more characters
-
-?        Matches exactly    ?n       an, in, on        ran
-one character in
-the specified
-position
-
-[ ]      Matches a range    [a-l]ook book, cook, look  took
-of characters
-
-[ ]      Matches specified  [bc]ook  book, cook        hook
-characters
+| Wildcard | Description             | Example  | Match            | No match |
+| -------- | ----------------------- | -------- | ---------------- | -------- |
+| *        | Zero or more characters | a*       | aA, ag, Apple    | banana   |
+| ?        | Exactly one character   | ?n       | an, in, on       | ran      |
+| [ ]      | A range of characters   | [a-l]ook | book, cook, look | took     |
+| [ ]      | Specified characters    | [bc]ook  | book, cook       | hook     |
 
 You can include multiple wildcard characters in the same word pattern.
 For example, to find text files whose names begin with the letters "a"

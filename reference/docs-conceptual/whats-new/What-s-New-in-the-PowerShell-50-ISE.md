@@ -18,16 +18,16 @@ The following table lists the new and changed features for this release of Windo
 
 |Feature/functionality|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense]()**|X|X||
-|**[Snippets]()**|X|X||
-|**[Add-on Tools]()**|X|X||
-|**[Restart Manager and Auto-save]()**|X|X||
-|**[Console Pane]()**|X|X||
-|**[Most-recently used list]()**|X|X||
-|**[Command-line switches]()**|X|X||
-|**[New editor features]()**|X|X||
-|**[New Help viewer window]()**|X|X||
-|**[Show-Command cmdlet]()**|X|X||
+|**[IntelliSense](#intellisense)**|X|X||
+|**[Snippets](#snippets)**|X|X||
+|**[Add-on Tools](#add-on-tools)**|X|X||
+|**[Restart Manager and Auto-save](#restart-manager-and-auto-save)**|X|X||
+|**[Most-recently used list](#most-recently-used-list)**|X|X||
+|**[Console Pane](#console-pane)**|X|X||
+|**[Command-line switches](#command-line-switches)**|X|X||
+|**[New editor features](#new-editor-features)**|X|X||
+|**[New Help viewer window](#new-help-viewer-window)**|X|X||
+|**[Show-Command cmdlet](#show-command-cmdlet)**|X|X||
 
 ### IntelliSense
 **Added in ISE 3.0**

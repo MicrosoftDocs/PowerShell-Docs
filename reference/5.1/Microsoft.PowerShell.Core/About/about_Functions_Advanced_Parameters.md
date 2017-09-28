@@ -479,8 +479,7 @@ Param
     [String[]]
     $ComputerName
 )
-```)
-
+```
 
 In the following example, the value of the variable $number must be a
 four-digit number, and each digit must be a number 0 to 9.

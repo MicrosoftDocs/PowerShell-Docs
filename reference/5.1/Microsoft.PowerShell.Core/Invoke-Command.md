@@ -549,7 +549,7 @@ To get the job results, use the Receive-Job cmdlet.
 The *AsJob* parameter resembles using the **Invoke-Command** cmdlet to run a Start-Job command remotely.
 However, with *AsJob*, the job is created on the local computer, even though the job runs on a remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -884,7 +884,7 @@ By default, jobs are named Job\<n\>, where \<n\> is an ordinal number.
 
 If you use the *JobName* parameter in a command, the command is run as a job, and **Invoke-Command** returns a job object, even if you do not include *AsJob* in the command.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251).
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
 
 ```yaml
 Type: String

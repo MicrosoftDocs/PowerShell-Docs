@@ -63,6 +63,3 @@ The following topics describe how you can get the latest Help for Windows PowerS
     For more information about the Updatable Help system in Windows PowerShell, including how to install Updatable Help on network-isolated computers, see [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx), and [Supporting Updatable Help](http://msdn.microsoft.com/library/hh852754.aspx).
 
 - [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) cmdlet. A Windows PowerShell cmdlet that you can use to learn about the cmdlets and providers that are installed on your system.
-
-- You can get notifications about any updates to published Help files by subscribing to the following RSS feed: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
-

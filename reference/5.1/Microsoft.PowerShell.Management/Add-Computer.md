@@ -297,9 +297,7 @@ The acceptable values for this parameter are:
 
 - **JoinReadOnly**: Uses an existing machine account to join the computer to a read-only domain controller. The machine account must be added to the allowed list for password replication policy and the account password must be replicated to the read-only domain controller prior to the join operation.
 
-- **InstallInvoke**: Sets the create (0x2) and delete (0x4) flags of the *FJoinOptions* parameter of the **JoinDomainOrWorkgroup** method. For more information about the **JoinDomainOrWorkgroup** method, see "JoinDomainOrWorkgroup Method of the Win32_ComputerSystem Class" on MSDNhttp://msdn.microsoft.com/library/aa392154(VS.85).aspx at http://msdn.microsoft.com/library/aa392154(VS.85).aspx.
-
-For more information about these options, see "NetJoinDomain" on MSDNhttp://msdn.microsoft.com/library/aa370433(VS.85).aspx at http://msdn.microsoft.com/library/aa370433(VS.85).aspx.
+- **InstallInvoke**: Sets the create (0x2) and delete (0x4) flags of the **FJoinOptions** parameter of the **JoinDomainOrWorkgroup** method. For more information about the **JoinDomainOrWorkgroup** method, see [JoinDomainOrWorkgroup method of the Win32_ComputerSystem class](https://msdn.microsoft.com/library/aa392154) in the MSDN library. For more information about these options, see [NetJoinDomain function](https://msdn.microsoft.com/library/aa370433) in the MSDN library.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
