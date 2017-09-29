@@ -51,15 +51,18 @@ These commands set a new user preference for the execution policy and then displ
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 
 ### Example 3: Get all execution policies for the current session
-```
+```powershell
 PS C:\> Get-ExecutionPolicy -List
+
 Scope          ExecutionPolicy
 -----          ---------------
 MachinePolicy  Undefined
 UserPolicy     Undefined
 Process        Undefined
 CurrentUser    AllSigned
-LocalMachine   RemoteSigned PS C:\> Get-ExecutionPolicy
+LocalMachine   RemoteSigned
+
+PS C:\> Get-ExecutionPolicy
 AllSigned
 ```
 
