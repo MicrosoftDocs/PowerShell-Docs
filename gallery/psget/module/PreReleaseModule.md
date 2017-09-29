@@ -15,7 +15,7 @@ At a high level, the pre-release module features include:
 When the module is published to the PowerShell Gallery, this data is extracted from the manifest, and used to identify pre-release items.
 * Acquiring pre-release items requires adding -AllowPreRelease flag to the PowerShellGet commands Find-Module, Install-Module, Update-Module, and Save-Module. 
 If the flag is not specified, pre-release items will not be shown.  
-* Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShellGallery will be displayed as a single string with the ModuleVersionSuffix appended, as in 2.5.0-alpha. 
+* Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShell Gallery will be displayed as a single string with the ModuleVersionSuffix appended, as in 2.5.0-alpha. 
 
 Details for the features are included below. 
 
@@ -26,7 +26,7 @@ These changes do not affect the module version support that is built into PowerS
 PowerShellGet support for pre-release versions requires the use of two fields within the Module Manifest:
 
 * The ModuleVersion included in the module manifest must be a 3-part version if a pre-release version is used, and must comply with existing PowerShell versioning. The version format would be A.B.C, where A, B, and C are all integers. 
-* The ModuleVersionsuffix is specified in the module manifest, in the PSData section of PrivateData. 
+* The ModuleVersionSuffix is specified in the module manifest, in the PSData section of PrivateData. 
 ModuleVersionSuffix is a string which should begin with a hyphen, and may contain ASCII alphanumerics and hyphen [0-9A-Za-z-]. Detailed requirements on the ModuleVersionSuffix string are below. 
 
 An example section of a module manifest that defines a module as a pre-release would look like the following:
@@ -42,10 +42,10 @@ An example section of a module manifest that defines a module as a pre-release w
 }
 ```
 
-The detailed requirements for ModuleVersionsuffix string are: 
+The detailed requirements for ModuleVersionSuffix string are: 
 
 * It should begin with a hyphen. If a hyphen is not the first character in the string, it will be added in displays and filtering, and must be specified in search strings.
-* The ModuleVersionSuffix may contain contain only ASCII alphanumerics [0-9A-Za-z-] and hyphen [-]. It is recommended to begin the ModuleVersionSuffix with an alpha character, as it will be easier to identify that this is a pre-release version when scanning a list of items. 
+* The ModuleVersionSuffix may contain only ASCII alphanumerics [0-9A-Za-z-] and hyphen [-]. It is recommended to begin the ModuleVersionSuffix with an alpha character, as it will be easier to identify that this is a pre-release version when scanning a list of items. 
 * Only SemVer v1.0.0 pre-release strings are supported at this time. ModuleVersionSuffix __must not__ contain either period or + [.+], which are allowed in SemVer 2.0. 
 * Examples of supported ModuleVersionSuffix strings are: -alpha, -alpha.1, -BETA, -alpha.1.2.3
 
@@ -76,9 +76,9 @@ C:\windows\system32> find-module PowerShellGet
 
 Version        Name                                Repository           Description
 -------        ----                                ----------           -----------
-1.8.0          MainModule                          PSGallery            PowerShell module with commands for discovering,...
+1.8.0          PowerShellGet                       PSGallery            PowerShell module with commands for discovering,...
 
-C:\windows\system32> find-module PowerShellGet -AllowPrerelease
+C:\windows\system32> find-module PowerShellGet -AllowPreRelease
 
 Version        Name                                Repository           Description
 -------        ----                                ----------           -----------
@@ -118,7 +118,7 @@ The example below shows what to expect:
 
 
 ``` powershell
-C:\windows\system32> Get-InstalledModule powershellget -AllVersions
+C:\windows\system32> Get-InstalledModule PowerShellGet -AllVersions
 
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
@@ -126,14 +126,14 @@ Version         Name                                Repository           Descrip
 1.8.0           PowerShellGet                       PSGallery            PowerShell module with commands for discovering,...
 1.1.3.2         PowerShellGet                       PSGallery            PowerShell module with commands for discovering,...
 
-C:\windows\system32> find-module PowerShellGet -AllowPrerelease
+C:\windows\system32> find-module PowerShellGet -AllowPreRelease
 
 Version        Name                                Repository           Description
 -------        ----                                ----------           -----------
 1.9.0-beta     PowerShellGet                       PSGallery            PowerShell module with commands for discovering,...
 
 C:\windows\system32> Update-Module PowerShellGet -AllowPreRelease
-C:\windows\system32> Get-InstalledModule powershellget -AllVersions
+C:\windows\system32> Get-InstalledModule PowerShellGet -AllVersions
 
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
@@ -147,7 +147,7 @@ Uninstall-Module will remove the latest version of a module when -RequiredVersio
 If -RequiredVersion is specified, and is a pre-release, -AllowPreRelease must be added to the command. 
 
 ``` powershell
-C:\windows\system32> Get-InstalledModule powershellget -AllVersions
+C:\windows\system32> Get-InstalledModule PowerShellGet -AllVersions
 
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
@@ -167,7 +167,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 
 C:\windows\system32> Uninstall-Module PowerShellGet -RequiredVersion 1.9.0-beta -AllowPreRelease
-C:\windows\system32> Get-InstalledModule powershellget -AllVersions
+C:\windows\system32> Get-InstalledModule PowerShellGet -AllVersions
 
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
@@ -176,7 +176,7 @@ Version         Name                                Repository           Descrip
 1.1.3.2         PowerShellGet                       PSGallery            PowerShell module with commands for discovering,...
 
 C:\windows\system32> Uninstall-Module PowerShellGet
-C:\windows\system32> Get-InstalledModule powershellget -AllVersions
+C:\windows\system32> Get-InstalledModule PowerShellGet -AllVersions
 
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
