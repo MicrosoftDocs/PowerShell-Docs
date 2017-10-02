@@ -41,7 +41,7 @@ PowerShell[.exe] -Help | -? | /?
 # PARAMETERS
 
 -Version
-Displayes the version of PowerShell.  Additional parameters
+Displays the version of PowerShell.  Additional parameters
 are ignored.
 
 -EncodedCommand <Base64EncodedCommand>
