@@ -54,7 +54,7 @@ This command runs commands 16 through 24.
 Because you can list only one ID value, the command uses the ForEach-Object cmdlet to run the **Invoke-History** command once for each ID value.
 ### Example 5
 ```
-PS C:\> Get-History -Id 255 -Count 7 | Invoke-History
+PS C:\> Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
 ```
 
 This command runs the 7 commands in the history that end with command 255 (typically 249 through 255).
