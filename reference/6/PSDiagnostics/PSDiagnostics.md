@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855965
 Module Guid:  c61d6278-02a3-4618-ae37-a524d40a7f44
 Module Name:  PSDiagnostics
 ---

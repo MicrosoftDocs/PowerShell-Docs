@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855963
 Module Guid:  1d73a601-4a6c-43c5-ba3f-619b18bbb404
 title:  PowerShellGet
 Module Name:  PowerShellGet

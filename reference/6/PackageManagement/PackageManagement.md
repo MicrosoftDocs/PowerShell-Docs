@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855962
 Module Guid:  4ae9fd46-338a-459c-8186-07f910774cb8
 title:  PackageManagement
 Module Name:  PackageManagement

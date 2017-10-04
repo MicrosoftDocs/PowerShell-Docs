@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855964
 Module Guid:  94b905ff-74b5-437e-89ed-7df44386533c
 title:  PSDesiredStateConfiguration
 Module Name:  PSDesiredStateConfiguration
