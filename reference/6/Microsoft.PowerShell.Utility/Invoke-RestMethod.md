@@ -21,7 +21,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-CustomMethod <String>] [-UseBas
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
  [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation]
  [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
+ [-FollowRelLink] [-MaximumFollowRelLink <Int32>] [-ResponseHeadersVariable <String>]
  [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
  [-PassThru] [<CommonParameters>]
 ```

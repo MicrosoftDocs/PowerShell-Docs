@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855959
 Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
 title:  Microsoft.PowerShell.Security
 Module Name:  Microsoft.PowerShell.Security

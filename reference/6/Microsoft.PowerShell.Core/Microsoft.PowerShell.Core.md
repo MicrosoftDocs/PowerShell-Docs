@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855953
 Module Guid:  00000000-0000-0000-0000-000000000000
 title:  Microsoft.PowerShell.Core
 Module Name:  Microsoft.PowerShell.Core
