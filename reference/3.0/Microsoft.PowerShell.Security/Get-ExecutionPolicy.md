@@ -30,14 +30,14 @@ For more information, see about_Execution_Policies (http://go.microsoft.com/fwli
 ## EXAMPLES
 
 ### Example 1
-```
+```powershell
 PS C:\> Get-ExecutionPolicy
 Restricted
 ```
 
 This command gets the current execution policy for the computer.
 ### Example 2
-```
+```powershell
 PS C:\> Set-ExecutionPolicy RemoteSigned
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
@@ -70,7 +70,7 @@ The policies are listed in precedence order.
 The second command gets only the effective execution policy, which is the one set in the CurrentUser scope.
 
 ### Example 4
-```
+```powershell
 The first command uses the **Get-ExecutionPolicy** cmdlet to get the effective execution policy in the current session.
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
