@@ -207,7 +207,7 @@ Server01              121               Friday, December 30, 2011 5:03:34 PMÃ¢â‚
 
 This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.
 
-### Example 5
+### Example 6
 ```
 The first command uses the New-PSSession cmdlet to create the Test session on the Server01 computer. The command saves the session in the $s variable.
 PS C:\> $s = New-PSSession -ComputerName Server01 -Name Test
