@@ -148,37 +148,26 @@ Hello
 
 As a result, you cannot use $null to mean "no parameter value." A parameter value of $null overrides the default parameter value.
 
-However, because  Windows PowerShell treats the $null variable as a placeholder, you can use it scripts like the following one, which would not work if $null were ignored.
+However, because PowerShell treats the $null variable as a placeholder,
+you can use it in scripts like the following one, which would not work if
+$null were ignored.
 
-
-```
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)  
-$days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"  
+```powershell
+$calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
+$days = "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 $currentDay = 0
-```
-
-
-
-```
-foreach($day in $calendar)  
-{  
-    if($day -ne $null)  
-    {  
-        "Appointment on $($days[$currentDay]): $day"  
-    }  
-  
-    $currentDay++  
+foreach ($day in $calendar) {
+	if ($day -ne $null) {
+		"Appointment on $($days[$currentDay]): $day"
+	}
+	$currentDay++
 }
 ```
 
-
-
-```
+```output
 Appointment on Tuesday: Meeting  
 Appointment on Friday: Team lunch
 ```
-
-
 
 ### $OFS
 $OFS is a special variable that stores a string that you want to use as an output field separator. Use this variable when you are converting an array to a string. By default, the value of $OFS is " ", but you can change the value of $OFS in your session, by typing $OFS\="<value>". If you are expecting the default value of " " in your script, module, or configuration output, be careful that the $OFS default value has not been changed elsewhere in your code.
