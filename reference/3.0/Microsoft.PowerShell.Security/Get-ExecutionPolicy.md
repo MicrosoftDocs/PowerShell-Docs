@@ -48,15 +48,15 @@ The commands are separated by a semicolon (;).
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 ### Example 3
 ```powershell
-PS C:\> Get-ExecutionPolicy -list
+PS C:\> Get-ExecutionPolicy -List
 
-Scope  ExecutionPolicy
------  ---------------
+Scope          ExecutionPolicy
+-----          ---------------
 MachinePolicy  Undefined
-UserPolicy  Undefined
-Process  Undefined
-CurrentUser  AllSigned
-LocalMachine  RemoteSigned
+UserPolicy     Undefined
+Process        Undefined
+CurrentUser    AllSigned
+LocalMachine   RemoteSigned
 
 PS C:\> Get-ExecutionPolicy
 AllSigned
@@ -68,6 +68,7 @@ The first command gets all execution policies that affect the current session.
 The policies are listed in precedence order.
 
 The second command gets only the effective execution policy, which is the one set in the CurrentUser scope.
+
 ### Example 4
 ```powershell
 The first command uses the **Get-ExecutionPolicy** cmdlet to get the effective execution policy in the current session.

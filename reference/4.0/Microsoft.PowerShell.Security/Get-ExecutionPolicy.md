@@ -53,15 +53,15 @@ In this example, because there is no Group Policy setting, the user preference i
 
 ### Example 3
 ```powershell
-PS C:\> Get-ExecutionPolicy -list
+PS C:\> Get-ExecutionPolicy -List
 
-Scope  ExecutionPolicy
------  ---------------
+Scope          ExecutionPolicy
+-----          ---------------
 MachinePolicy  Undefined
-UserPolicy  Undefined
-Process  Undefined
-CurrentUser  AllSigned
-LocalMachine  RemoteSigned
+UserPolicy     Undefined
+Process        Undefined
+CurrentUser    AllSigned
+LocalMachine   RemoteSigned
 
 PS C:\> Get-ExecutionPolicy
 AllSigned

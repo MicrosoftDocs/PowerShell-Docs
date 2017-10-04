@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855966
 Module Guid:  5714753b-2afd-4492-a5fd-01d9e2cff8b5
 title:  PSReadline
 Module Name:  PSReadline
