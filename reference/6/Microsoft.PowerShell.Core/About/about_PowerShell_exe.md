@@ -23,17 +23,15 @@ in Cmd.exe and in Windows PowerShell.
 # SYNTAX
 
 PowerShell[.exe]
+[-Version]
 [-EncodedCommand <Base64EncodedCommand>]
 [-ExecutionPolicy <ExecutionPolicy>]
 [-InputFormat {Text | XML}]
-[-Mta]
 [-NoExit]
 [-NoLogo]
 [-NonInteractive]
 [-NoProfile]
 [-OutputFormat {Text | XML}]
-[-PSConsoleFile <FilePath> | -Version <Windows PowerShell version>]
-[-Sta]
 [-WindowStyle <style>]
 [-File <FilePath> [<Args>]]
 [-Command { - | <script-block> [-args <arg-array>]
@@ -42,6 +40,9 @@ PowerShell[.exe] -Help | -? | /?
 
 # PARAMETERS
 
+-Version
+Displays the version of PowerShell.  Additional parameters
+are ignored.
 
 -EncodedCommand <Base64EncodedCommand>
 Accepts a base-64-encoded string version of a command.
@@ -86,13 +87,6 @@ such as the following:
 Describes the format of data sent to Windows PowerShell. Valid
 values are "Text" (text strings) or "XML" (serialized CLIXML format).
 
--Mta
-Starts Windows PowerShell using a multi-threaded apartment. This
-parameter is introduced in Windows PowerShell 3.0. In Windows
-PowerShell 2.0, multi-threaded apartment (MTA) is the default.
-In Windows PowerShell 3.0, single-threaded apartment (STA) is
-the default.
-
 -NoExit
 Does not exit after running startup commands.
 
@@ -109,25 +103,6 @@ Does not load the Windows PowerShell profile.
 Determines how output from Windows PowerShell is formatted.
 Valid values are "Text" (text strings) or "XML" (serialized
 CLIXML format).
-
--PSConsoleFile <FilePath>
-Loads the specified Windows PowerShell console file. Enter
-the path and name of the console file. To create a console file,
-use the Export-Console cmdlet in Windows PowerShell.
-
--Sta
-Starts Windows PowerShell using a single-threaded apartment. In
-Windows PowerShell 2.0, multi-threaded apartment (MTA) is the default.
-In Windows PowerShell 3.0, single-threaded apartment (STA) is the
-default.
-
--Version <Windows PowerShell Version>
-Starts the specified version of Windows PowerShell. Valid values
-are 2.0 and 3.0. The version that you specify must be installed
-on the system. If Windows PowerShell 3.0 is installed on the
-computer, "3.0" is the default version. Otherwise, "2.0" is the
-default version. For more information, see "Installing Windows
-PowerShell" in the Windows PowerShell Getting Started Guide.
 
 -WindowStyle <Window style>
 Sets the window style for the session. Valid values are Normal,
@@ -170,9 +145,7 @@ from the Windows PowerShell console fails with a LastExitCode of 0xc0000142.
 
 # EXAMPLES
 
-PowerShell -PSConsoleFile sqlsnapin.psc1
-
-PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
+PowerShell -Version
 
 PowerShell -Command {Get-EventLog -LogName security}
 
