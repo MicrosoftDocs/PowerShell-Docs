@@ -12,8 +12,11 @@ Starts a Windows PowerShell session. You can use PowerShell.exe to start a Windo
 
 ```syntax
 PowerShell[.exe]
+       [-Command { - | <script-block> [-args <arg-array>]
+                     | <string> [<CommandParameters>] } ]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]
+       [-File <FilePath> [<Args>]]
        [-InputFormat {Text | XML}] 
        [-Mta]
        [-NoExit]
@@ -24,9 +27,7 @@ PowerShell[.exe]
        [-PSConsoleFile <FilePath> | -Version <Windows PowerShell version>]
        [-Sta]
        [-WindowStyle <style>]
-       [-File <FilePath> [<Args>]]
-       [-Command { - | <script-block> [-args <arg-array>]
-                     | <string> [<CommandParameters>] } ]
+        
 
 PowerShell[.exe] -Help | -? | /?
 ```
@@ -113,15 +114,19 @@ Shows this message. If you are typing a PowerShell.exe command in Windows PowerS
 ## EXAMPLES
 
 ```
+# Create a new PowerShell session and load a saved console file
 PowerShell -PSConsoleFile sqlsnapin.psc1
 
+# Create a new PowerShell V2 session with text input, XML output, and no logo
 PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 
+# Execute a Powerhell Command in a session
 PowerShell -Command "Get-EventLog -LogName security"
 
-# in an existing PowerShell session that understands the curly braces mean a script block
+# Run a script block in a session
 PowerShell -Command {Get-EventLog -LogName security}
 
+# An alternate wayh to run a command in a new session
 PowerShell -Command "& {Get-EventLog -LogName security}"
 
 # To use the -EncodedCommand parameter:
