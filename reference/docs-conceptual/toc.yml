@@ -14,7 +14,7 @@
     - name: Console Guide
       href: core-powershell/console-guide.md
     - name: ISE
-      href: ise/introducing-the-windows-powershell-ise.md
+      href: ise/Introducing-the-Windows-PowerShell-ISE.md
       items:
       - name: How to Create a PowerShell Tab in Windows PowerShell ISE
         href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
