@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/?LinkId=821797
-external help file:  ISESteroids.dll-Help.xml
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-PSBreakpoint
 ---
 
@@ -60,9 +60,9 @@ This command gets all breakpoints set on all scripts and functions in the curren
 ### Example 2: Get breakpoints by ID
 ```
 PS C:\> Get-PSBreakpoint -Id 2
-Function   : 
-IncrementAction     : 
-Enabled    : 
+Function   :
+IncrementAction     :
+Enabled    :
 TrueHitCount   : 0
 Id         : 2
 Script     : C:\ps-test\sample.ps1
@@ -134,7 +134,7 @@ If you omit the path, the default location is the current directory.
 ```yaml
 Type: String[]
 Parameter Sets: Script
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: Type, Command, Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -162,7 +162,7 @@ Enter the variable names without dollar signs.
 ```yaml
 Type: String[]
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -185,7 +185,7 @@ You can also pipe breakpoint types to **Get-PSBreakPoint**.
 ```yaml
 Type: BreakpointType[]
 Parameter Sets: Type
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -201,7 +201,7 @@ Enter the command names, such as the name of a cmdlet or function.
 ```yaml
 Type: String[]
 Parameter Sets: Command
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -218,7 +218,7 @@ You can also pipe breakpoint IDs to **Get-PSBreakpoint**.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
