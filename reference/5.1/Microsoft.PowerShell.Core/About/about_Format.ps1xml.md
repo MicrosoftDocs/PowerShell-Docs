@@ -99,7 +99,7 @@ are obvious to anyone examining the file.
 When you have saved the changes, use the Update-FormatData cmdlet to add
 the new file to your Windows PowerShell session. If you want your view
 to take precedence over a view defined in the built-in files, use the
-PrependData parameter of Update-FormatData. Update-FormatData affects
+**PrependPath** parameter of Update-FormatData. Update-FormatData affects
 only the current session. To make the change to all future sessions, add
 the Update-FormatData command to your Windows PowerShell profile.
 
@@ -267,7 +267,7 @@ Now, add a new column item in the table rows, as follows:
 
 After saving the file and closing it, use an Update-FormatData command,
 such as the following command, to add the new format file to the current
-session. The command uses the PrependData parameter to place the new file
+session. The command uses the **PrependPath** parameter to place the new file
 in a higher precedence order than the original file. (For more
 information about Update-FormatData, type `Get-Help Update-FormatData`.)
 
@@ -372,7 +372,7 @@ of the specified location in the view, including \<Text>, \<Indentation>,
 To load your Format.ps1xml files into a Windows PowerShell session, use
 the Update-FormatData cmdlet. If you want the views in your file to
 take precedence over the views in the built-in Format.ps1xml file, use
-the PrependData parameter of Update-FormatData. Update-FormatData affects
+the **PrependPath** parameter of Update-FormatData. Update-FormatData affects
 only the current session. To make the change to all future sessions, add
 the Update-FormatData command to your Windows PowerShell profile.
 
