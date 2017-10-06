@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
-external help file:  System.Management.Automation.dll-help.xml
+external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 
 # Get-Verb
@@ -129,7 +129,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -157,7 +157,7 @@ Windows PowerShell verbs are assigned to a group based on their most common use.
 The groups are designed to make the verbs easy to find and compare, not to restrict their use.
 You can use any approved verb for any type of command.
 
-Each Windows PowerShell verb is assigned to one of the following groups. 
+Each Windows PowerShell verb is assigned to one of the following groups.
 -- Common: Define generic actions that can apply to almost any cmdlet, such as Add.
 
 -- Communications:  Define actions that apply to communications, such as Connect.
