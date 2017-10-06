@@ -19,8 +19,8 @@
 ### [Contacting item owners](psgallery/psgallery_contacting_item_owners.md)
 ### [Contacting administrators](psgallery/psgallery_contacting_administrators.md)
 ### [Providing Feedback via Social Media or Comments](psgallery/psgallery-SocialMediaFeedback.md)
-### [Requires License Acceptance on Items details](psgallery/psgallery_requires_license_acceptance.md)
-### [Requires License Acceptance on Deploy to Azure Automation](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### [Require License Acceptance on Items details](psgallery/psgallery_requires_license_acceptance.md)
+### [Require License Acceptance on Deploy to Azure Automation](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [Get PowerShellGet Module](psget/get_psget_module.md)
@@ -53,7 +53,7 @@
 ### [Update script file metadata](psget/script/psget_update-scriptfileinfo.md)
 ### [Publish](psget/script/psget_publish-script.md)
 ### [Scripts with PSEditions](psget/script/scriptwithpseditionsupport.md)
-### [Requiring License Acceptance for Scripts](psget/script/script_RequireLicenseAcceptance.md)
+### [Require License Acceptance for Scripts](psget/script/script_RequireLicenseAcceptance.md)
 
 ## Repository management
 ### [Bootstrapping NuGet provider and NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
