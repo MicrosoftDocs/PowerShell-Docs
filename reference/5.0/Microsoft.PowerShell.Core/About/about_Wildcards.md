@@ -50,17 +50,22 @@ to create a word pattern that represents property values. For example, the
 following command gets services in which the ServiceType property value
 includes "Interactive".
 
-Get-Service | Where-Object {$_.ServiceType -like "Interactive"}
+```powershell
+Get-Service | Where-Object { $_.ServiceType -like "*Interactive*" }
+```
 
 In the following example, wildcard characters are used to find property values
 in the conditions of an If statement. In this command, if the Description of a
 restore point includes "PowerShell", the command adds the value of the CreationTime
 property of the restore point to a log file.
 
-$p = Get-ComputerRestorePoint
-foreach ($point in $p)
-{if ($point.description -like "PowerShell")
-{add-content -path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"}}
+```powershell
+foreach ($point in Get-ComputerRestorePoint) {
+	if ($point.Description -like "*PowerShell*") {
+		Add-Content -Path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
+	}
+}
+```
 
 # SEE ALSO
 
