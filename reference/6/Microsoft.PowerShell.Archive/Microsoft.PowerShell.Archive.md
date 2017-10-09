@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855952
 Module Guid:  eb74e8da-9ae2-482a-a648-e96550fb8733
 title:  Microsoft.PowerShell.Archive
 Module Name:  Microsoft.PowerShell.Archive
