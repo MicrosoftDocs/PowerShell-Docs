@@ -12,7 +12,7 @@ The PowerShell Gallery is the central repository for PowerShell content. You can
 
 ## PowerShellGet Overview
 
-PowerShellGet module contains cmdlets for discovering, installing, updating and publishing the PowerShell artifacts like Modules, DSC Resources, Role Capabilities and Scripts from the https://www.PowerShellGallery.com and other private repositories.
+The PowerShellGet module contains cmdlets for discovering, installing, updating and publishing PowerShell artifacts such as Modules, DSC Resources, Role Capabilities and Scripts from the [PowerShell Gallery](https://www.PowerShellGallery.com) and other private repositories.
 
 ## Getting Started with the Gallery
 
