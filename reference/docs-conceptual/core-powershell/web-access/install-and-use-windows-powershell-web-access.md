@@ -102,10 +102,10 @@ are not officially tested.
 
 ### Minimally-tested mobile devices or browsers
 
-- WindowsÂ Phone 7 and 7.5
-- Google Android WebKit 3.1 BrowserÂ Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 and 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari for iPhone operating system 5.0.1
-- Apple Safari for iPad 2Â operating system 5.0.1
+- Apple Safari for iPad 2 operating system 5.0.1
 
 ### Browser requirements
 
