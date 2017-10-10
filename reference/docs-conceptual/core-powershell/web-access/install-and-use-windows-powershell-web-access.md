@@ -96,7 +96,7 @@ are not officially tested.
 
 - Windows Internet Explorer for Microsoft Windows 8.0, 9.0, 10.0, and 11.0
 - Mozilla Firefox 10.0.2
-- Google Chromeâ 17.0.963.56m for Windows
+- Google Chrome 17.0.963.56m for Windows
 - Apple Safari 5.1.2 for Windows
 - Apple Safari 5.1.2 for Mac OS
 
