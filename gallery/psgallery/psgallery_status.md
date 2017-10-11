@@ -8,6 +8,16 @@ title:  psgallery_status
 
 PowerShell Gallery Status
 =========================
+## 10/10/2017 - PowerShell Gallery unavailable for 2 hours 10/10/17
+
+__Summary of Impact__: The PowerShell Gallery experienced a period of very high latency, resulting in intermittent connection issues, beginning approximately 5pm (PDT) 10/10/17. While resolving the issue, the site was taken offline for 2 hours starting approximately 10pm (PDT). The site was restored shortly before midnight 10/10/2017. 
+ 
+__Root Cause__: The root cause of the high latency is still being investigated.
+
+__Resolution__: The web services had to be taken offline and restored in order to address the primary issue. 
+
+__Next Steps__: The root cause for the original issue is being investigated.
+
 ## 06/01/2017 - Deploy to Azure Automation Currently Unavailable
 
 __Summary of Impact__: Deploying items with dependencies to Azure Automation from the PowerShell Gallery is currently unavailable.  Importing items from the PowerShell Gallery from inside Azure Automation is still available.  
