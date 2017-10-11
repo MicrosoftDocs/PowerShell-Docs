@@ -7,16 +7,13 @@ title:  about_PSSession_Details
 ---
 
 # About PSSession Details
-## about_PSSession_Details
 
-
-
-# SHORT DESCRIPTION
+## Short Description
 
 Provides detailed information about Windows PowerShell sessions and the
 role they play in remote commands.
 
-# LONG DESCRIPTION
+## Long Description
 
 A session is an environment in which Windows PowerShell runs. A session is
 created for you whenever you start Windows PowerShell. You can create
@@ -34,10 +31,9 @@ functions, and scripts that share data.
 
 This topic provides detailed information about sessions and PSSessions
 in Windows PowerShell. For basic information about the tasks that you
-can perform with sessions, see about_PSSessions.
+can perform with sessions, see [about_PSSessions](about_PSSessions.md).
 
-# ABOUT SESSIONS
-
+## About Sessions
 
 Technically, a session is an execution environment in which Windows
 PowerShell runs. Each session includes an instance of the
@@ -59,21 +55,20 @@ time. A second command run synchronously (one at a time) waits up to four
 minutes for the first command to be completed. A second command run
 asynchronously (concurrently) fails.
 
-# ABOUT PSSESSIONS
-
+## About PSSessions
 
 A session is created each time that you start Windows PowerShell. And,
 Windows PowerShell creates temporary sessions to run individual commands.
 However, you can also create sessions (called "Windows PowerShell sessions"
 or "PSSessions") that you control and manage.
 
-PSSessions are critical to remote commands. If you use the ComputerName
-parameter of the Invoke-Command or Enter-PSSession cmdlets, Windows
+PSSessions are critical to remote commands. If you use the **ComputerName**
+parameter of the `Invoke-Command` or `Enter-PSSession` cmdlets, Windows
 PowerShell establishes a temporary session to run the command and then
 closes the session as soon as the command or the interactive session
 is complete.
 
-However, if you use the New-PSSession cmdlet to create a PSSession, Windows
+However, if you use the `New-PSSession` cmdlet to create a PSSession, Windows
 PowerShell establishes a persistent session on the remote computer in which
 you can run multiple commands or interactive sessions. The PSSessions that
 you create remain open and available for use until you delete them or until
@@ -85,47 +80,43 @@ from the local computer to the process on the remote computer. When you
 create a PSSession on the local computer, both the new process and the
 connections are created on the local computer.
 
-# WHEN DO I NEED A PSSESSION?
+## When Do I Need a PSSession?
 
+The `Invoke-Command` and `Enter-PSSession` cmdlets have both **ComputerName** and
+**Session** parameters. You can use either to run a remote command.
 
-The Invoke-Command and Enter-PSSession cmdlets have both ComputerName and
-Session parameters. You can use either to run a remote command.
-
-Use the ComputerName parameter to run a single command or a series of
+Use the **ComputerName** parameter to run a single command or a series of
 unrelated commands on one or many computers.
 
 To run commands that share data, you need a persistent connection to the
-remote computer. In that case, create a PSSession, and then use the Session
+remote computer. In that case, create a PSSession, and then use the **Session**
 parameter to run commands in the PSSession.
 
 Many other cmdlets that get data from remote computers, such as
-Get-Process, Get-Service, Get-EventLog, and Get-WmiObject have only a
-ComputerName parameter. They use technologies other than Windows PowerShell
-remoting to gather data remotely. These cmdlets do not have a Session
-parameter, but you can use the Invoke-Command cmdlet to run these commands
+`Get-Process`, `Get-Service`, `Get-EventLog`, and `Get-WmiObject` have only a
+**ComputerName** parameter. They use technologies other than Windows PowerShell
+remoting to gather data remotely. These cmdlets do not have a **Session**
+parameter, but you can use the `Invoke-Command` cmdlet to run these commands
 in a PSSession.
 
-# HOW DO I CREATE A PSSESSION?
+## How Do I Create a PSSession?
 
+To create a PSSession, use the `New-PSSession` cmdlet. You can use
+`New-PSSession` to create a PSSession on a local or remote computer.
 
-To create a PSSession, use the New-PSSession cmdlet. You can use
-New-PSSession to create a PSSession on a local or remote computer.
-
-# CAN I CREATE A PSSESSION ON ANY COMPUTER?
-
+## Can I Create a PSSession on Any Computer?
 
 To create a PSSession that is connected to a remote computer, the computer
 must be configured for remoting in Windows PowerShell. The current user
 must be a member of the Administrators group on the remote computer, or
 the current user must be able to supply the credentials of a member of
 the Administrators group. For more information,
-see about_Remote_Requirements.
+see [about_Remote_Requirements](about_Remote_Requirements.md).
 
-# CAN I SEE MY PSSESSIONS IN OTHER SESSIONS?
+## Can I See My PSSessions in Other Sessions?
 
-
-Beginning in Windows PowerShell 3.0, the ComputerName
-parameter of the Get-PSSession cmdlet gets PSSessions
+Beginning in Windows PowerShell 3.0, the **ComputerName**
+parameter of the `Get-PSSession` cmdlet gets PSSessions
 that you created on the specified remote computers.
 
 Active PSSessions are maintained on the remote computer
@@ -137,7 +128,9 @@ computer to the Server02 computer, and then switch to the
 Server03 computer, you can use a command like the following
 one to get the session.
 
+```powershell
 Get-PSSession -ComputerName Server02
+```
 
 Even if you disconnect from the session, the session is
 maintained on the remote computer until you delete it or it
@@ -147,10 +140,9 @@ In Windows PowerShell 2.0, you can get only the PSSessions
 that you have created in the current session. You cannot get
 PSSessions that you created in other sessions.
 
-For more information, see Get-PSSession.
+For more information, see [Get-PSSession](../Get-PSSession.md).
 
-# CAN I SEE THE PSSESSIONS THAT OTHERS HAVE CREATED ON MY COMPUTER?
-
+## Can I See the PSSessions That Others Have Created on My Computer?
 
 You can get and manage only the PSSessions that others have created
 only if you can supply the credentials of the user who created the
@@ -158,29 +150,27 @@ PSSession or the session configuration that the PSSession uses
 includes RunAs credentials. Otherwise, you can get, connect to, use,
 and manage only the PSSessions that you created.
 
-# CAN I CONNECT TO A PSSESSION FROM A DIFFERENT COMPUTER?
-
+## Can I Connect to a PSSession From a Different Computer?
 
 Beginning in Windows PowerShell 3.0, PSSessions are independent
 of the sessions in which they were created. Active PSSessions
 are maintained on the computer at the remote or "server-side" of
 a connection.
 
-You can use the Disconnect-PSSession cmdlet to disconnect
+You can use the `Disconnect-PSSession` cmdlet to disconnect
 from a PSSession. The PSSession is disconnected from the
 local session, but is maintained on the remote computer.
 Commands continue to run in the disconnected PSSession. You
 can close Windows PowerShell and shut down the originating computer
 without interrupting the PSSession.
 
-Then, even hours later, you can use the Get-PSSession cmdlet to
-get the PSSession and the Connect-PSSession cmdlet to connect to the
+Then, even hours later, you can use the `Get-PSSession` cmdlet to
+get the PSSession and the `Connect-PSSession` cmdlet to connect to the
 PSSession from a new session on a different computer.
 
-For more information, see about_Remote_Disconnected_Sessions
-(http://go.microsoft.com/fwlink/?LinkID=252847).
+For more information, see [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md).
 
-# WHAT HAPPENS TO MY PSSESSION IF I MY COMPUTER STOPS?
+## What Happens to My PSSession if My Computer Stops?
 
 Disconnected PSSessions are independent of the sessions
 in which they were created. If you disconnect a PSSession
@@ -202,43 +192,40 @@ remote computer. However, if no commands are running in the
 PSSession, Windows PowerShell closes the PSSession when the
 connected session closes.
 
-For more information, see about_Remote_Disconnected_Sessions
-(http://go.microsoft.com/fwlink/?LinkID=252847).
+For more information, see [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md).
 
-# CAN I RUN A BACKGROUND JOB IN A PSSESSION?
-
+## Can I Run a Background Job in a PSSession?
 
 Yes. A background job is a command that runs asynchronously in the
 background without interacting with the current session. When you submit
 a command to start a job, the command returns a job object, but the job
 continues to run in the background until it is complete.
 
-To start a background job on a local computer, use the Start-Job command.
+To start a background job on a local computer, use the `Start-Job` command.
 You can run the background job in a temporary connection (by using the
-ComputerName parameter) or in a PSSession (by using the Session parameter).
+**ComputerName** parameter) or in a PSSession (by using the **Session** parameter).
 
-To start a background job on a remote computer, use the Invoke-Command
-cmdlet with its AsJob parameter, or use the Invoke-Command cmdlet to run a
-Start-Job command on a remote computer. When using the AsJob parameter,
-you can use the ComputerName or Session parameters.
+To start a background job on a remote computer, use the `Invoke-Command`
+cmdlet with its **AsJob** parameter, or use the `Invoke-Command` cmdlet to run a
+`Start-Job` command on a remote computer. When using the **AsJob** parameter,
+you can use the **ComputerName** or **Session** parameters.
 
-When using Invoke-Command to run a Start-Job command, you must run the
-command in a PSSession. If you use the ComputerName parameter, Windows
+When using `Invoke-Command` to run a `Start-Job` command, you must run the
+command in a PSSession. If you use the **ComputerName** parameter, Windows
 PowerShell ends the connection when the job object returns, and the job is
 interrupted.
 
-For more information, see about_Jobs.
+For more information, see [about_Jobs](about_Jobs.md).
 
-# CAN I RUN AN INTERACTIVE SESSION?
-
+## Can I Run an Interactive Session?
 
 Yes. To start an interactive session with a remote computer, use the
-Enter-PSSession cmdlet. In an interactive session, the commands that you
+`Enter-PSSession` cmdlet. In an interactive session, the commands that you
 type run on the remote computer, just as if you typed them directly on the
 remote computer.
 
 You can run an interactive session in a temporary session (by using the
-ComputerName parameter) or in a PSSession (by using the Session parameter).
+**ComputerName** parameter) or in a PSSession (by using the **Session** parameter).
 If you use a PSSession, the PSSession retains the data from previous
 commands, and the PSSession retains any data generated during the
 interactive session for use in later commands.
@@ -246,10 +233,9 @@ interactive session for use in later commands.
 When you end the interactive session, the PSSession remains open and
 available for use.
 
-For more information, see Enter-PSSession and Exit-PSSession.
+For more information, see [Enter-PSSession](../Enter-PSSession.md) and [Exit-PSSession](../Exit-PSSession.md).
 
-# MUST I DELETE THE PSSESSIONS?
-
+## Must I Delete the PSSessions?
 
 Yes. A PSSession is a process, which is a self-contained environment that
 uses memory and other resources even when you are not using it. When you are
@@ -257,25 +243,24 @@ finished with a PSSession, delete it. If you create multiple PSSessions,
 close the ones that you are not using, and maintain only the ones currently
 in use.
 
-To delete PSSessions, use the Remove-PSSession cmdlet. It deletes the
+To delete PSSessions, use the `Remove-PSSession` cmdlet. It deletes the
 PSSessions and releases all of the resources that they were using.
 
-You can also use the IdleTimeOut parameter of New-PSSessionOption to close
+You can also use the **IdleTimeOut** parameter of `New-PSSessionOption` to close
 an idle PSSession after an interval that you specify. For more information,
-see New-PSSessionOption.
+see [New-PSSessionOption](../New-PSSessionOption.md).
 
 If you save a PSSession object in a variable and then delete the PSSession
 or let it time out, the variable still contains the PSSession object, but
 the PSSession is not active and cannot be used or repaired.
 
-# ARE ALL SESSIONS AND PSSESSIONS ALIKE?
-
+## Are All Sessions and PSSessions Alike?
 
 No. Developers can create custom sessions that include only selected
 providers and cmdlets. If a command works in one session but not in
 another, it might be because the session is restricted.
 
-# SEE ALSO
+## See Also
 
 [about_Jobs](about_Jobs.md)
 
@@ -287,15 +272,14 @@ another, it might be because the session is restricted.
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-New-PSSession
+[Enter-PSSession](../Enter-PSSession.md)
 
-Get-PSSession
+[Exit-PSSession](../Exit-PSSession.md)
 
-Remove-PSSession
+[Get-PSSession](../Get-PSSession.md)
 
-Enter-PSSession
+[New-PSSession](../New-PSSession.md)
 
-Exit-PSSession
-
+[Remove-PSSession](../Remove-PSSession.md)
