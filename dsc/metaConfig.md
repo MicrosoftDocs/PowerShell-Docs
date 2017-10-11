@@ -121,12 +121,14 @@ consider an HTTP proxy that is restricted to the Azure IP range
 Features of the online service that are not currently available in the pull service on Windows Server include:
 - All data is encrypted in transit and at rest
 - Client certificates are created and managed automatically
-- Secrets store for centrally managing passwords/credentials, or variables such as server names or connection strings
+- Secrets store for centrally managing [passwords/credentials](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), or [variables](https://docs.microsoft.com/en-us/azure/automation/automation-variables) such as server names or connection strings
 - Centrally manage node [LCM configuration](metaConfig.md#basic-settings)
+- Centrally assign configurations to client nodes
+- Release configuration changes to "canary groups" for testing before reaching production
 - Graphical reporting
   - Status detail at the DSC resource level of granularity
   - Verbose error messages from client machines for troubleshooting
-- Integration with Azure Log Analytics for alerting, automated tasks, Android/iOS app for reporting and alerting
+- [Integration with Azure Log Analytics](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) for alerting, automated tasks, Android/iOS app for reporting and alerting
 
 Alternatively, for information about
 setting up and using HTTP pull service on Windows Server,
