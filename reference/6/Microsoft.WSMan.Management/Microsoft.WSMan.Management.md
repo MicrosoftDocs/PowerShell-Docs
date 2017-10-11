@@ -6,15 +6,15 @@ keywords:  powershell,cmdlet
 Help Version:  6.0
 Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855961
 Module Guid:  766204a6-330e-4263-a7ab-46c87afc366c
-title:  Microsoft.WsMan.Management
-Module Name:  Microsoft.WsMan.Management
+title:  Microsoft.WSMan.Management
+Module Name:  Microsoft.WSMan.Management
 ---
 
-# Microsoft.WsMan.Management Module
+# Microsoft.WSMan.Management Module
 ## Description
 This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.WSMan.Management module. The WSMan module contains cmdlets and providers that manage the WS-Management protocol in Windows PowerShell.
 
-## Microsoft.WsMan.Management Cmdlets
+## Microsoft.WSMan.Management Cmdlets
 ### [Connect-WSMan](Connect-WSMan.md)
 Connects to the WinRM service on a remote computer.
 
