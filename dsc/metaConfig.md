@@ -128,7 +128,12 @@ Features of the online service that are not currently available in the pull serv
   - Verbose error messages from client machines for troubleshooting
 - Integration with Azure Log Analytics for alerting, automated tasks, Android/iOS app for reporting and alerting
 
-For information about setting up and using pull service on Windows Server, see [Setting up a DSC pull server](pullServer.md).
+Alternatively, for information about
+setting up and using HTTP pull service on Windows Server,
+see [Setting up a DSC pull server](pullServer.md).
+Please be advised that it is a limited implementation with only basic
+capabilities of storing configurations/modules and capturing report data
+in to a local database.
 
 ## Configuration server blocks
 
