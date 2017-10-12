@@ -115,7 +115,7 @@ is [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/auto
 The Azure service can manage nodes on-premises in private datacenters,
 or in public clouds such as Azure and AWS.
 For private environments where servers cannot directly connect to the Internet,
-consider an HTTP proxy that is restricted to the Azure IP range
+consider limiting outbound traffic to only the published Azure IP range
 (see [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
 
 Features of the online service that are not currently available in the pull service on Windows Server include:
