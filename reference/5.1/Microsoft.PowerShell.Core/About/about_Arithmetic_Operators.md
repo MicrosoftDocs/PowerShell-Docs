@@ -36,8 +36,8 @@ PowerShell supports the following arithmetic operators:
 |Operator|Description|Example|
 |--------|-----------|-------|
 | + |Adds integers; concatenates strings,<br/> concatenates arrays, and hash tables.|`6 + 2`<br />`"file" + "name"`<br />`@(1, "one") + @(2.0, "two")`<br />`@{"one" = 1} + @{"two" = 2}`|
-| - |Subtracts one value from another value.|`6-2`<br />`(get-date).date - 1`|
-| - |Makes a number a negative number.|`-6`|
+| - | Subtracts one value from another value | `6 - 2` |
+| - | Makes a number a negative number | `-6`<br/>`(Get-Date).AddDays(-1)` |
 | * |Multiplies numbers, copies strings and<br/>arrays the specified number of times.|`6 * 2`<br />`"!" * 3`<br />`@("!") * 4`|
 | / |Divides two values.|`6 / 2`|
 | % |Returns the remainder of a division operation.|`7 % 2`|
