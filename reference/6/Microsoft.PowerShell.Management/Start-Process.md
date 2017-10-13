@@ -394,7 +394,7 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 Specifies the location of the executable file or document that runs in the process.
-The default is the current folder.
+The default is the folder for the new process.
 
 ```yaml
 Type: String
