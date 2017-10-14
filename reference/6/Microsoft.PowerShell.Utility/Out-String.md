@@ -72,8 +72,9 @@ If you omit the *Stream* parameter, the command displays all of the aliases, bec
 ### Example 4: Using NoNewLine
 ```
 PS C:\> "a", "b" | Out-String -NoNewLine
+ab
 ```
-This outputs `ab` while not using `-NoNewLine` would have resulted in an output like `a<newline>b<newline>`.
+Not using `-NoNewLine` would have resulted in an output like `a<newline>b<newline>`.
 It should be noted that `-NoNewLine` does not strip newlines embedded within a string but strips out embedded newlines from formatter-generated output. So while
 ```
 PS C:\> @{key='value'} | Out-String
@@ -92,7 +93,9 @@ Name Value  -----  key value
 ## PARAMETERS
 
 ### -InformationAction
-@{Text=}```yaml
+@{Text=}
+
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -106,7 +109,9 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}```yaml
+@{Text=}
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv
