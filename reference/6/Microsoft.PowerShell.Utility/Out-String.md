@@ -15,6 +15,13 @@ Sends objects to the host as a series of strings.
 
 ## SYNTAX
 
+### NoNewLineFormatting (Default)
+```
+Out-String [-NoNewLine] [-Width <Int32>] [-InputObject <PSObject>] [-InformationAction <ActionPreference>]
+ [-InformationVariable <String>] [<CommonParameters>]
+```
+
+### StreamFormatting
 ```
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [-InformationAction <ActionPreference>]
  [-InformationVariable <String>] [<CommonParameters>]
@@ -61,6 +68,26 @@ It uses the *Stream* parameter of **Out-String** to send each string individuall
 Another pipeline operator sends the strings to the Select-String cmdlet, which selects the strings that include **Get-Command** anywhere in the string.
 
 If you omit the *Stream* parameter, the command displays all of the aliases, because **Select-String** finds **Get-Command** in the single string that **Out-String** returns, and the formatter displays the string as a table.
+
+### Example 4: Using NoNewLine
+```
+PS C:\> "a", "b" | Out-String -NoNewLine
+```
+This outputs `ab` while not using `-NoNewLine` would have resulted in an output like `a<newline>b<newline>`.
+It should be noted that `-NoNewLine` does not strip newlines embedded within a string but strips out embedded newlines from formatter-generated output. So while
+```
+PS C:\> @{key='value'} | Out-String
+```
+Would generate the following output
+```
+Name   Value
+----   -----
+key    value
+```
+Using `-NoNewLine` would result in the newlines in this output being stripped, thus resulting in
+```
+Name Value  -----  key value
+```
 
 ## PARAMETERS
 
@@ -115,7 +142,7 @@ To use the *Stream* parameter, type `-Stream` or its alias, `ost`.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: StreamFormatting
 Aliases: 
 
 Required: False
@@ -134,6 +161,21 @@ The default value for the Windows PowerShell console is 80 (characters).
 ```yaml
 Type: Int32
 Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoNewline
+Removes all newlines from formatter generated output. Note that newlines present as part of string objects are preserved
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NoNewLineFormatting
 Aliases: 
 
 Required: False
