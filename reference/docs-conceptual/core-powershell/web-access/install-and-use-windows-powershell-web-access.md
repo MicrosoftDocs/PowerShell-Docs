@@ -96,16 +96,16 @@ are not officially tested.
 
 - Windows Internet Explorer for Microsoft Windows 8.0, 9.0, 10.0, and 11.0
 - Mozilla Firefox 10.0.2
-- Google Chromeâ 17.0.963.56m for Windows
+- Google Chrome 17.0.963.56m for Windows
 - Apple Safari 5.1.2 for Windows
 - Apple Safari 5.1.2 for Mac OS
 
 ### Minimally-tested mobile devices or browsers
 
-- WindowsÂ Phone 7 and 7.5
-- Google Android WebKit 3.1 BrowserÂ Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 and 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari for iPhone operating system 5.0.1
-- Apple Safari for iPad 2Â operating system 5.0.1
+- Apple Safari for iPad 2 operating system 5.0.1
 
 ### Browser requirements
 

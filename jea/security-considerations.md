@@ -65,7 +65,7 @@ The effective permissions of the gMSA are defined by the security groups (local 
 When a JEA endpoint is configured to use a gMSA account, the actions of all JEA users will appear to come from the same group managed service account.
 The only way you can trace actions back to a specific user is to identify the set of commands run in a PowerShell session transcript.
 
-**Pass-thru credentials** are used when you do not speicfy a run as account and want PowerShell to use the connecting user's credential to run commands on the remote server.
+**Pass-thru credentials** are used when you do not specify a run as account and want PowerShell to use the connecting user's credential to run commands on the remote server.
 This configuration is *not* recommended for JEA as it would require you to grant the connecting user direct access to privileged management groups.
 If the connecting user already has admin privileges, they can avoid JEA altogether and manage the system via other, unconstrained means.
 See the section below on how [JEA does not protect against admins](#jea-does-not-protect-against-admins) for more information.

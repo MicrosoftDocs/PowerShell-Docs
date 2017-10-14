@@ -7,37 +7,40 @@ title:  about_Parsing
 ---
 
 # About Parsing
-## about_Parsing
 
-
-# SHORT DESCRIPTION
+## Short Description
 
 Describes how Windows PowerShell parses commands.
 
-# LONG DESCRIPTION
+## Long Description
 
 When you enter a command at the command prompt, Windows PowerShell
 breaks the command text into a series of segments called "tokens"
 and then determines how to interpret each "token."
 
-For example, if you type:
+For example, if you type `Write-Host book`, Windows PowerShell breaks
+the command into two tokens, "Write-Host" and "book", and interprets
+each token independently.
 
-Write-Host book
-
-Windows PowerShell breaks the following command into two tokens,
-"Write-Host" and "book", and interprets each token independently.
-
+### Expression Mode and Argument Mode
 When processing a command, the Windows PowerShell parser operates
 in expression mode or in argument mode:
 
-- In expression mode, character string values must be contained in
-quotation marks. Numbers not enclosed in quotation marks are treated
-as numerical values (rather than as a series of characters).
+* Expression mode
 
-- In argument mode, each value is treated as an expandable string
-unless it begins with one of the following special characters: dollar
-sign ($), at sign (@), single quotation mark ('), double quotation
-mark ("), or an opening parenthesis (().
+  Character string values must be contained in quotation marks.
+  Numbers not enclosed in quotation marks are treated as numerical values
+  (rather than as a series of characters).
+
+* Argument mode
+
+  Each value is treated as an expandable string unless it begins with
+  one of the following special characters:
+  - dollar sign (`$`)
+  - at sign (`@`)
+  - single quotation mark (`'`)
+  - double quotation mark (`"`)
+  - opening parenthesis (`(`)
 
 If preceded by one of these characters, the value is treated as a value
 expression.
@@ -65,12 +68,12 @@ values returned by the expressions.
 
 | Example            | Mode       | Result          |
 | ------------------ | ---------- | --------------- |
-| Write-Output !1    | argument   | "!1" (string)   |
-| Write-Output (!1)  | expression | False (Boolean) |
-| Write-Output (2)   | expression | 2 (integer)     |
+| Write-Output !1    | Argument   | "!1" (string)   |
+| Write-Output (!1)  | Expression | False (Boolean) |
+| Write-Output (2)   | Expression | 2 (integer)     |
 
-STOP PARSING:  --%
-The stop-parsing symbol (--%), introduced in Windows PowerShell 3.0,
+### STOP PARSING: --%
+The stop-parsing symbol (`--%`), introduced in Windows PowerShell 3.0,
 directs Windows PowerShell to refrain from interpreting input as
 Windows PowerShell commands or expressions.
 
@@ -88,24 +91,32 @@ pipeline character. You cannot use a continuation character (`) to
 extend its effect or use a command delimiter (;) to terminate its effect.
 
 For example, the following command calls the Icacls program.
+
+```
 icacls X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
+```
 
-To run this command in Windows PowerShell 2.0, you must
-use escape characters to prevent Windows PowerShell from
-misinterpreting the parentheses.
+To run this command in Windows PowerShell 2.0, you must use escape characters
+to prevent Windows PowerShell from misinterpreting the parentheses.
 
+```powershell
 icacls X:\VMS /grant Dom\HVAdmin:`(CI`)`(OI`)F
+```
 
 Beginning in Windows PowerShell 3.0, you can use the stop-parsing
 symbol.
 
+```powershell
 icacls X:\VMS --% /grant Dom\HVAdmin:(CI)(OI)F
+```
 
 Windows PowerShell sends the following command string to the
-Icacls  program:
-X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
+Icacls program:
 
-# SEE ALSO
+```
+X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
+```
+
+## See Also
 
 [about_Command_Syntax](about_Command_Syntax.md)
-
