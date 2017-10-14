@@ -73,22 +73,17 @@ If you omit the *Stream* parameter, the command displays all of the aliases, bec
 ```
 PS C:\> "a", "b" | Out-String -NoNewLine
 ab
-```
-Not using `-NoNewLine` would have resulted in an output like `a<newline>b<newline>`.
-It should be noted that `-NoNewLine` does not strip newlines embedded within a string but strips out embedded newlines from formatter-generated output. So while
-```
+
 PS C:\> @{key='value'} | Out-String
-```
-Would generate the following output
-```
 Name   Value
 ----   -----
 key    value
-```
-Using `-NoNewLine` would result in the newlines in this output being stripped, thus resulting in
-```
+
+PS C:\> @{key='value'} | Out-String -NoNewLine
 Name Value  -----  key value
 ```
+Not using `-NoNewLine` would have resulted in an output like `a<newline>b<newline>`.
+It should be noted that `-NoNewLine` does not strip newlines embedded within a string but strips out embedded newlines from formatter-generated output. Compare the second and third commands in this examples for clarity.
 
 ## PARAMETERS
 
