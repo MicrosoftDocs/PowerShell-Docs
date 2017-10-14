@@ -63,6 +63,9 @@ Find-Module -Name PSReadline -MinimumVersion 1.0.0.12 -MaximumVersion 1.0.0.13
 # Find a module with exact version
 Find-Module -Name AzureRM -RequiredVersion 1.3.2
 
+# Find a module with a specific pre-release version
+Find-Module -Name AzureRM -RequiredVersion 1.3.2-alpha -AllowPrerelease
+
 # Find a module from the specified repository
 Find-Module -Name Contoso -Repository MyLocalRepo
 

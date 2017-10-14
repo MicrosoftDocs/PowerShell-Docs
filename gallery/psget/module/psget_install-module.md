@@ -77,6 +77,12 @@ Install-Module -Name ContosoServer -MinimumVersion 1.0
 # Install a specific version of a module
 Install-Module -Name ContosoServer -RequiredVersion 1.1.3
 
+# Install a specific prerelease version of a module
+Install-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -AllowPrerelease
+
 # Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
 Install-Module -Name ContosoServer -Scope CurrentUser
 

@@ -79,8 +79,36 @@ Version Name Repository Description
 2.8.1 ContosoServer MSPSGallery ContosoServer module
 ```
 
+### Update the module with a prerelease version, requires -AllowPrerelease flag
+```powershell
+PS C:\\windows\\system32> Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+2.8.1 ContosoServer MSPSGallery ContosoServer module
 
-###  Update the TestDepWithNestedRequiredModules1 module with dependencies.
+PS C:\\windows\\system32> Find-Module ContosoServer -AllowPrerelease
+
+Version        Name                                Repository           Description
+-------        ----                                ----------           -----------
+3.0.0-alpha    ConstosoServer                      MSPSGallery          The PowerShell Contoso Server deployment tools...
+
+PS C:\\windows\\system32> Update-Module -Name ContosoServer -AllowPrerelease
+PS C:\\windows\\system32> Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+2.8.1 ContosoServer MSPSGallery ContosoServer module
+3.0.0-alpha ContosoServer MSPSGallery ContosoServer module
+
+```
+
+
+### Update the TestDepWithNestedRequiredModules1 module with dependencies.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -104,5 +132,8 @@ Version    Name                               
 2.5        RequiredModule3                     LocalRepo   RequiredModule3 module
 1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+
+
+
 ```
 
