@@ -41,7 +41,7 @@ The **Write-Progress** command includes a status bar heading ("activity"), a sta
 PS C:\> for($I = 1; $I -lt 101; $I++ )
 {Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop; `
 PS C:\> for($j = 1; $j -lt 101; $j++ )
-{Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop} }
+{Write-Progress -Id 1 -Activity Updating -Status 'Progress' -PercentComplete $j -CurrentOperation InnerLoop} }
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo] 
