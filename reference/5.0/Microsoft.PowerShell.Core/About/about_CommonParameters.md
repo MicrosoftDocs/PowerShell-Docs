@@ -40,24 +40,23 @@ In addition to the common parameters, many cmdlets offer the WhatIf and
 Confirm risk mitigation parameters. Cmdlets that involve risk to the system
 or to user data usually offer these parameters.
 
-The following list displays the common parameters. Their aliases are listed
-in parentheses.
-
--Debug (db)
--ErrorAction (ea)
--ErrorVariable (ev)
--InformationAction
--InformationVariable
--OutVariable (ov)
--OutBuffer (ob)
--PipelineVariable (pv)
--Verbose (vb)
--WarningAction (wa)
--WarningVariable (wv
+The following list displays the common parameters.
+Their aliases are listed in parentheses.
+* Debug (db)
+* ErrorAction (ea)
+* ErrorVariable (ev)
+* InformationAction (infa)
+* InformationVariable (iv)
+* OutVariable (ov)
+* OutBuffer (ob)
+* PipelineVariable (pv)
+* Verbose (vb)
+* WarningAction (wa)
+* WarningVariable (wv)
 
 The risk mitigation parameters are:
--WhatIf (wi)
--Confirm (cf)
+* WhatIf (wi)
+* Confirm (cf)
 
 For more information about preference variables, type:
 help about_Preference_Variables
