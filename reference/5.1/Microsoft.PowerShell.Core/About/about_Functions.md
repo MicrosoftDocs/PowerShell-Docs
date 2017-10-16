@@ -163,15 +163,19 @@ In the function, you can use the $size variable, which is the name
 defined for the parameter.
 
 To use this function, type the following command:
+
+```powershell
+Get-SmallFiles -Size 50
 ```
-C:\PS> function Get-SmallFiles -Size 50
-```
+
 You can also enter a value for a named parameter without the parameter
 name. For example, the following command gives the same result as a
 command that names the Size parameter:
+
+```powershell
+Get-SmallFiles 50
 ```
-C:\PS> function Get-SmallFiles 50
-```
+
 To define a default value for a parameter, type an equal sign and the
 value after the parameter name, as shown in the following variation of
 the Get-SmallFiles example:

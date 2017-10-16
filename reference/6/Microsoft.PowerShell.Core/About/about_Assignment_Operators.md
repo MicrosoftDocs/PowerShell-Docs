@@ -106,8 +106,8 @@ the following example:
 $a = if ($b -lt 0) { 0 } else { $b }
 ```
 
-This example assigns 0 to the $a variable if the value of $b is less than
-0. It assigns the value of $b to $a if the value of $b is not less than
+This example assigns zero to the $a variable if the value of $b is less than
+zero. It assigns the value of $b to $a if the value of $b is not less than
 zero.
 
 ### THE ASSIGNMENT OPERATOR
