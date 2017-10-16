@@ -53,7 +53,7 @@ specified by the **RefreshModeFrequency** property of the LCM.
 For information about configuring the LCM, see
 [Configuring the Local Configuration Manager](metaConfig.md).
 
-The **recommended** solution for hosting a Pull Service, is the DSC cloud service,
+The recommended solution for hosting a Pull Service, is the DSC cloud service,
 [Azure Automation](https://azure.microsoft.com/en-us/services/automation/).
 This is hosted solution provides graphical management, reporting,
 and centralized administration.
