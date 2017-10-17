@@ -66,7 +66,9 @@ Get-WmiObject Win32_NTEventLogFile | where `
 
 To find the Win32 event-related WMI classes, type:
 
-Get-WmiObject -List | where {$_.Name -like "win32event"}
+```powershell
+Get-WmiObject -List | where Name -Like "win32*event*"
+```
 
 For more information, type "Get-Help Get-EventLog" and
 "Get-Help Get-WmiObject".
