@@ -45,10 +45,13 @@ You can specify paths relative to your current location in the same way as you w
 
 For example, if you are in the **C:\\Windows** folder, a period (**.**)represents **C:\\Windows** and double periods (**..**) represent **C:**. You can change from your current location to the root of the C: drive by typing:
 
-<pre>PS> Set-Location -Path .. -PassThru
+```powershell
+PS> Set-Location -Path .. -PassThru
+
 Path
 ----
-C:\</pre>
+C:\
+```
 
 The same technique works on Windows PowerShell drives that are not file system drives, such as **HKLM:**. You can set your location to the HKLM\\Software key in the registry by typing:
 

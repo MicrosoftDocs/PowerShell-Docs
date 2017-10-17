@@ -12,26 +12,16 @@ You can run commands on one or hundreds of computers with a single Windows Power
 Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
 
 These cmdlets include:
-
-- [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
-
-- [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
-
-- [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
-
-- [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
-
-- [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
-
- -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
-
-- [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
-
-- [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
-
-- [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
-
-- [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
+  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
+* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
 Typically, cmdlets that support remoting without special configuration have the ComputerName parameter and do not have the Session parameter. To find these cmdlets in your session, type:
 
@@ -48,7 +38,8 @@ After you have configured Windows PowerShell remoting, many remoting strategies 
 [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).
 
 ### Start an Interactive Session
-To start an interactive session with a single remote computer, use the [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet. For example, to start an interactive session with the Server01 remote computer, type:
+To start an interactive session with a single remote computer, use the [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.
+For example, to start an interactive session with the Server01 remote computer, type:
 
 ```
 Enter-PSSession Server01
@@ -62,12 +53,12 @@ To end the interactive session, type:
 Exit-PSSession
 ```
 
-For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
-and [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
+For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) 
+and [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
 
 ### Run a Remote Command
-To run any command on one or many remote computers, use the [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet.
- For example, to run a [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) command on the Server01 and Server02 remote computers, type:
+To run any command on one or many remote computers, use the [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet.
+For example, to run a [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) command on the Server01 and Server02 remote computers, type:
 
 ```
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -81,7 +72,7 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
+For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
 
 ### Run a Script
 To run a script on one or many remote computers, use the FilePath parameter of the Invoke-Command cmdlet. The script must be on or accessible to your local computer. The results are returned to your local computer.
@@ -92,7 +83,7 @@ For example, the following command runs the DiskCollect.ps1 script on the Server
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
+For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
 
 ### Establish a Persistent Connection
 To run a series of related commands that share data, create a session on the remote computer and then use the Invoke-Command cmdlet to run commands in the session that you create. To create a remote session, use the New-PSSession cmdlet.
@@ -126,8 +117,8 @@ To facilitate remote configuration, Windows PowerShell includes a WSMan provider
 
 For more information, see:
 - [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/dd819496.aspx)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/dd347575.aspx). 
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
 For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
 
@@ -138,9 +129,8 @@ For help with remoting errors, see [about_Remote_Troubleshooting](https://techne
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
-- [New-PSSession](https://technet.microsoft.com/en-us/library/59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/af68867a-d201-4b19-a1de-594015ed8a25)
+- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
-
