@@ -70,6 +70,9 @@ Find-Script -Name Connect-O365 -MinimumVersion 1.1 -MaximumVersion 1.6.2
 # Find a script with exact version
 Find-Script -Name Connect-O365 -RequiredVersion 1.5.7
 
+# Find a script with a specific pre-release version
+Find-Script -Name Connect-O365 -RequiredVersion 1.3.2-alpha -AllowPrerelease
+
 # Find a script from the specified repository
 Find-Script -Name Fabrikam-ServerScript -Repository MyLocalRepo
 

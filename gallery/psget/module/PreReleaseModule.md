@@ -7,7 +7,7 @@ title:  PrereleaseModule
 ---
 
 # Prerelease Module Versions
-Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Script Versions](../script/PrereleaseScript) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version. 
+Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Versions of Scripts](../script/PrereleaseScript) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version. 
 
 At a high level, the prerelease module features include:
 

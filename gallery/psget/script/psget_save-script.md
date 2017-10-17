@@ -1,6 +1,6 @@
 ---
-ms.date:  2017-06-12
-contributor:  manikb
+ms.date:  2017-10-17
+contributor:  keithb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  Save-Script
@@ -45,5 +45,12 @@ Test-ScriptFileInfo C:\\ScriptSharingDemo\\Fabrikam-ClientScript.ps1
 Version Name Author Description
 ------- ---- ------ -----------
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
+```
+
+### Example 3: Save a prerelease version of a script from a repository
+This command saves the latest version of the script Fabrikam-ClientScript from GalleryINT repository to the local folder C:\ScriptSharingDemo
+
+```powershell
+Save-Script -Name Fabrikam-ClientScript -Path C:\ScriptSharingDemo -AllowPrerelease
 ```
 
