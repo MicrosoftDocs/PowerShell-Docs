@@ -42,7 +42,7 @@ PS C:\> Register-ArgumentCompleter -Native -CommandName powershell -ScriptBlock 
             Where-Object { $_ -like "$wordToComplete*" } |
             Sort-Object |
             ForEach-Object {
-                [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_))
+                [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
             }
 }
 PS C:\> Register-ArgumentCompleter -CommandName Get-Command -ParameterName Verb -ScriptBlock {
