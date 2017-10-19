@@ -27,19 +27,12 @@ that appear before the .ppt file name extension.
 
 PowerShell supports the following wildcard characters.
 
-|Wildcard|Description               |Example |Match        |No Match|
-|--------|--------------------------|--------|-------------|--------|
-|*       |Matches zero or more      |a*      |aA, ag, Apple|banana  |
-|        |characters                |        |             |        |
-|        |                          |        |             |        |
-|?       |Matches exactly one       |?n      |an, in, on   |ran     |
-|        |character in that position|        |             |        |
-|        |                          |        |             |        |
-|[ ]     |Matches a range of        |[a-l]ook|book, cook,  |took    |
-|        |characters                |        | look        |        |
-|        |                          |        |             |        |
-|[ ]     |Matches the specified     |[bc]ook |book, cook   |hook    |
-|        |characters                |        |             |        |
+| Wildcard | Description             | Example  | Match            | No match |
+| -------- | ----------------------- | -------- | ---------------- | -------- |
+| *        | Zero or more characters | a*       | aA, ag, Apple    | banana   |
+| ?        | Exactly one character   | ?n       | an, in, on       | ran      |
+| [ ]      | A range of characters   | [a-l]ook | book, cook, look | took     |
+| [ ]      | Specified characters    | [bc]ook  | book, cook       | hook     |
 
 You can include multiple wildcard characters in the same word pattern.
 For example, to find text files whose names begin with the letters "a"
@@ -60,7 +53,7 @@ following command gets services in which the ServiceType property value
 includes "Interactive".
 
 ```powershell
-Get-Service | Where-Object {$_.ServiceType -like "Interactive"}
+Get-Service | Where-Object { $_.ServiceType -like "*Interactive*" }
 ```
 
 In the following example, wildcard characters are used to find property
@@ -69,16 +62,17 @@ Description of a restore point includes "PowerShell", the command adds the
 value of the CreationTime property of the restore point to a log file.
 
 ```powershell
-$p = Get-ComputerRestorePoint
-foreach ($point in $p) {
-  if ($point.description -like "PowerShell") {
-    add-content -path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
-  }
+foreach ($point in Get-ComputerRestorePoint) {
+	if ($point.Description -like "*PowerShell*") {
+		Add-Content -Path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
+	}
 }
 ```
 
 ## SEE ALSO
 
-- [about_Language_Keywords](about_Language_Keywords.md)
-- [about_If](about_If.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_If](about_If.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
