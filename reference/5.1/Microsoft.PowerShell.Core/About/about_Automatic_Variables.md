@@ -121,7 +121,7 @@ information, see [about_ForEach](about_ForEach.md).
 
 Contains the full path of the user's home directory. This variable is the
 equivalent of the `%homedrive%%homepath%` Windows environment variables,
-typically C:\\Users\\<UserName>.
+typically C:\Users\<UserName>.
 
 ### $HOST
 
@@ -172,15 +172,10 @@ is particularly useful for finding the name of the current script.
 Beginning in PowerShell 3.0, $MyInvocation has the following new
 properties.
 
-| Property      | Description                                         |
-| ------------- | --------------------------------------------------- |
-| PSScriptRoot  | Contains the full path to the script that invoked   |
-|               | the current command. The value of this property is  |
-|               | populated only when the caller is a script.         |
-| PSCommandPath | Contains the full path and file name of the script  |
-|               | that invoked the current command. The value of this |
-|               | property is populated only when the caller is a     |
-|               | script.                                             |
+Property | Description
+-- | --
+PSScriptRoot | Contains the full path to the script that invoked the current<br>command. The value of this property is populated only when the<br>caller is a script.
+PSCommandPath | Contains the full path and file name of the script that<br>invoked the current command. The value of this property<br>is populated only when the caller is a script.
 
 Unlike the $PSScriptRoot and $PSCommandPath automatic variables, the
 PSScriptRoot and PSCommandPath properties of the $MyInvocation automatic
@@ -250,17 +245,14 @@ can use it in scripts like the following one, which would not work if $null
 were ignored.
 
 ```powershell
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
-$days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+$calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
+$days = "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 $currentDay = 0
-foreach($day in $calendar)
-{
-    if($day -ne $null)
-    {
-        "Appointment on $($days[$currentDay]): $day"
-    }
-
-    $currentDay++
+foreach ($day in $calendar) {
+	if ($day -ne $null) {
+		"Appointment on $($days[$currentDay]): $day"
+	}
+	$currentDay++
 }
 ```
 
@@ -453,25 +445,17 @@ Contains a read-only hash table that displays details about the version of
 PowerShell that is running in the current session. The table includes the
 following items:
 
-| Property                  | Description                                   |
-| ------------------------- | --------------------------------------------- |
-| BuildVersion              | The build number of the current version       |
-| CLRVersion                | The version of the common language runtime    |
-|                           | (CLR)                                         |
-| GitCommitId               | The commit Id of the source files, in GitHub, |
-|                           | used in this version of PowerShell            |
-| PSCompatibleVersions      | Versions of PowerShell that are compatible    |
-|                           | with the current version                      |
-| PSEdition                 | This property has the value of 'Desktop', for |
-|                           | Windows Server and Windows client versions.   |
-|                           | This property has the value of 'Core' for     |
-|                           | PowerShell running under Nano Server or       |
-|                           | Windows IOT.                                  |
-| PSRemotingProtocolVersion | The version of the PowerShell remote          |
-|                           | management protocol.                          |
-| PSVersion                 | The PowerShell version number                 |
-| SerializationVersion      | The version of the serialization method       |
-| WSManStackVersion         | The version number of the WS-Management stack |
+Property | Description
+-- | --
+BuildVersion              | The build number of the current version
+CLRVersion                | The version of the common language runtime (CLR)
+GitCommitId               | The commit Id of the source files, in GitHub,<br>used in this version of PowerShell
+PSCompatibleVersions      | Versions of PowerShell that are compatible with<br>the current version
+PSEdition                 | This property has the value of 'Desktop', for<br>Windows Server and Windows client versions.<br>This property has the value of 'Core' for<br>PowerShell running under Nano Server or<br>Windows IOT.
+PSRemotingProtocolVersion | The version of the PowerShell remote management<br>protocol
+PSVersion                 | The PowerShell version number
+SerializationVersion      | The version of the serialization method
+WSManStackVersion         | The version number of the WS-Management stack
 
 ### $PWD
 
@@ -514,6 +498,8 @@ scripts.
 
 ## SEE ALSO
 
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Variables](about_Variables.md)
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Preference_Variables](about_Preference_Variables.md)
+
+[about_Variables](about_Variables.md)
