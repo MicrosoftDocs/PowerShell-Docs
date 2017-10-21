@@ -43,8 +43,9 @@ You can use the parameters of the `ConvertTo-CSV` cmdlet to specify a delimiter 
 Get-Process powershell | ConvertTo-Csv
 ```
 
-result:
-```none
+Result:
+
+```
 #TYPE System.Diagnostics.Process
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion",...
 "Process","powershell","216","597544960","60399616","63197184","21692","C:\WINDOWS\system32\WindowsPowerShell...

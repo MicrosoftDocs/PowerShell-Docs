@@ -52,8 +52,9 @@ This command selects a few properties of the WmiPrvse process and exports them t
 Get-Process | Export-Csv -Path "processes.csv"
 ```
 
-In `processes.csv`
-```none
+In `processes.csv`:
+
+```
 #TYPE System.Diagnostics.Process
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
@@ -68,8 +69,9 @@ Because it does not specify a delimiter, a comma (`,`) is used to separate the f
 Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
 ```
 
-In `processes.csv`
-```none
+In `processes.csv`:
+
+```
 #TYPE System.Diagnostics.Process
 __NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... 
 Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... 
@@ -93,8 +95,9 @@ It uses the `-UseCulture` parameter to direct `Export-CSV` to use the delimiter 
 Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
 ```
 
-In `processes.csv`
-```none
+In `processes.csv`:
+
+```
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
 Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
@@ -133,7 +136,8 @@ Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-
 ```
 
 In `Date.csv`:
-```none
+
+```
 "DateTime","Day","DayOfWeek","DayOfYear""Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
 ```
 
@@ -144,7 +148,8 @@ Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-C
 ```
 
 In `Date.csv`: 
-```none
+
+```
 "ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry"
 "033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo","9e210fe47d09416682b841769c78b8a3"
 ,,,,,"27c87ef9bbda4f709f6b4002fa4af63c",,,,,"4ec4f0187cb04f4cb6973460dfe252df",,,,,"cf522b78d86c486691226b40aa69e95c",,,,,

@@ -43,7 +43,8 @@ Get-Process powershell | ConvertTo-Csv
 ```
 
 Result:
-```none
+
+```
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion",...
 "Process","powershell","216","597544960","60399616","63197184","21692","C:\WINDOWS\system32\WindowsPowerShell...
 ```
