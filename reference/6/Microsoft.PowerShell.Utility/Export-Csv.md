@@ -51,14 +51,14 @@ This command selects a few properties of the WmiPrvse process and exports them t
 ### Example 2: Export processes to a comma-delimited file
 ```powershell
 Get-Process | Export-Csv -Path "processes.csv"
-```
+<#
+In processes.csv:
 
-In `processes.csv`:
-
-```
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
 Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+
+#>
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -67,14 +67,14 @@ Because it does not specify a delimiter, a comma (`,`) is used to separate the f
 ### Example 3: Export processes to a semicolon-delimited file
 ```powershell
 Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
-```
+<#
+In processes.csv:
 
-In `processes.csv`:
-
-```
 __NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... 
 Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... 
 Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
+
+#>
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -92,15 +92,15 @@ It uses the `-UseCulture` parameter to direct `Export-CSV` to use the delimiter 
 ### Example 5: Export processes with type information
 ```powershell
 Get-Process | Export-Csv -Path "processes.csv" -IncludeTypeInformation
-```
+<#
+In processes.csv:
 
-In `processes.csv`:
-
-```
 #TYPE System.Diagnostics.Process
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
 Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+
+#>
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -109,19 +109,13 @@ It uses the `-IncludeTypeInformation` parameter to include the type information 
 ### Example 6: Export and append script properties
 ```powershell
 $ScriptFiles = Get-ChildItem D:\* -Include *.ps1 -Recurse | Where-Object {$_.creationtime -gt "01/01/2011"}
+$ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
+$ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
 ```
 
 The second command uses the `Select-Object` cmdlet to select the relevant properties of the script files. It saves the revised results in the `$ScriptFiles` variable.
 
-```powershell
-$ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
-```
-
 The third command uses a pipeline operator (`|`) to send the script file information in the `$ScriptFiles` variable to the `Export-CSV` cmdlet. The command uses the `-Path` parameter to specify the output file and the `-Append` parameter to add the new script data to the end of the output file, instead of replacing the existing file contents.
-
-```powershell
-$ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
-```
 
 These commands add information about new PowerShell scripts to a script inventory file.
 
@@ -129,31 +123,29 @@ The first command uses the `Get-ChildItem` cmdlet to do a recursive search in th
 It uses a pipeline operator to sends the results to the `Where-Object` cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the `$ScriptFiles` variable.
 
 ### Example 7: Select properties to export
-The first command shows how to select properties of an object and export them to a CSV file. This command uses the `Get-Date` cmdlet to get the current date and time. It uses the `Select-Object` cmdlet to select the desired properties, and the `Export-CSV` cmdlet to export the object and its properties to the `Date.csv` file. The output shows the expected content in the `Date.csv` file.
-
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
-```
+<#
+In Date.csv:
 
-In `Date.csv`:
-
-```
 "DateTime","Day","DayOfWeek","DayOfYear""Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
-```
 
-The second command shows that when you use the `Format-Table` cmdlet to format your data before exporting it, the output is not useful. 
+#>
 
-```powershell
 Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv
-```
+<#
+In Date.csv:
 
-In `Date.csv`:
-
-```
 "ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry"
 "033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo","9e210fe47d09416682b841769c78b8a3"
 ,,,,,"27c87ef9bbda4f709f6b4002fa4af63c",,,,,"4ec4f0187cb04f4cb6973460dfe252df",,,,,"cf522b78d86c486691226b40aa69e95c",,,,,
+
+#>
 ```
+
+The first command shows how to select properties of an object and export them to a CSV file. This command uses the `Get-Date` cmdlet to get the current date and time. It uses the `Select-Object` cmdlet to select the desired properties, and the `Export-CSV` cmdlet to export the object and its properties to the `Date.csv` file. The output shows the expected content in the `Date.csv` file.
+
+The second command shows that when you use the `Format-Table` cmdlet to format your data before exporting it, the output is not useful. 
 
 This example demonstrates one of most common problems that users encounter when using the `Export-CSV` cmdlet.
 It explains how to recognize and avoid this error.
