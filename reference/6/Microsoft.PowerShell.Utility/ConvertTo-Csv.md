@@ -40,13 +40,13 @@ You can use the parameters of the `ConvertTo-CSV` cmdlet to specify a delimiter 
 ### Example 1: Convert an object to CSV
 ```powershell
 Get-Process powershell | ConvertTo-Csv
-```
-
+<#
 Result:
 
-```
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion",...
 "Process","powershell","216","597544960","60399616","63197184","21692","C:\WINDOWS\system32\WindowsPowerShell...
+
+#>
 ```
 
 This command converts a single process object to CSV format.
