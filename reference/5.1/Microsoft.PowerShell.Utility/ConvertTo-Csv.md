@@ -26,20 +26,24 @@ ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-NoTypeInformation] [<Com
 ```
 
 ## DESCRIPTION
-The **ConvertTo-CSV** cmdlet returns a series of comma-separated (CSV) strings that represents the objects that you submit.
-You can then use the ConvertFrom-Csv cmdlet to re-create objects from the CSV strings.
+The `ConvertTo-CSV` cmdlet returns a series of comma-separated (CSV) strings that represents the objects that you submit.
+You can then use the `ConvertFrom-Csv` cmdlet to re-create objects from the CSV strings.
 The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.
 
-You can also use the Export-Csv and Import-Csv cmdlets to convert objects to CSV strings and back.
-**Export-CSV** is the same as **ConvertTo-CSV**, except that it saves the CSV strings to a file.
+You can also use the `Export-Csv` and `Import-Csv` cmdlets to convert objects to CSV strings and back.
+`Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings to a file.
 
-You can use the parameters of the **ConvertTo-CSV** cmdlet to specify a delimiter other than a comma or to direct **ConvertTo-CSV** to use the default delimiter for the current culture.
+You can use the parameters of the `ConvertTo-CSV` cmdlet to specify a delimiter other than a comma or to direct `ConvertTo-CSV` to use the default delimiter for the current culture.
 
 ## EXAMPLES
 
 ### Example 1: Convert an object to CSV
+```powershell
+Get-Process powershell | ConvertTo-Csv
 ```
-PS C:\> Get-Process powershell | ConvertTo-Csv
+
+result:
+```none
 #TYPE System.Diagnostics.Process
 "__NounName","Name","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion","ProductVersion","Description",
 "Product","BasePriority","ExitCode","HasExited","ExitTime","Handle","HandleCount","Id","MachineName","MainWindowHandle"
@@ -61,44 +65,44 @@ cs.ProcessModuleCollection","21692","21692","63197184","63197184","320080","3200
 ```
 
 This command converts a single process object to CSV format.
-The command uses the Get-Process cmdlet to get the PowerShell process on the local computer.
-It uses a pipeline operator (|) to send the command to the **ConvertTo-CSV** cmdlet, which converts it to a series of comma-separated strings.
+The command uses the `Get-Process` cmdlet to get the PowerShell process on the local computer.
+It uses a pipeline operator (`|`) to send the command to the `ConvertTo-CSV` cmdlet, which converts it to a series of comma-separated strings.
 
 ### Example 2: Convert a DateTime object to CSV
+```powershell
+$Date = Get-Date
+ConvertTo-Csv -InputObject $Date -Delimiter ";" -NoTypeInformation
 ```
-PS C:\> $Date = Get-Date
-PS C:\> ConvertTo-Csv -InputObject $Date -Delimiter ";" -NoTypeInformation
-```
 
-This example converts a **DateTime** object to CSV format.
+This example converts a `DateTime` object to CSV format.
 
-The first command uses the Get-Date cmdlet to get the current date.
-It saves it in the $Date variable.
+The first command uses the `Get-Date` cmdlet to get the current date.
+It saves it in the `$Date` variable.
 
-The second command uses the **ConvertTo-CSV** cmdlet to convert the **DateTime** object in the $Date variable to CSV format.
-The command uses the *InputObject* parameter to specify the object to be converted.
-It uses the *Delimiter* parameter to specify the delimiter that separates the object properties.
-It uses the *NoTypeInformation* parameter to suppress the #TYPE string.
+The second command uses the `ConvertTo-CSV` cmdlet to convert the `DateTime` object in the `$Date` variable to CSV format.
+The command uses the `-InputObject` parameter to specify the object to be converted.
+It uses the `-Delimiter` parameter to specify the delimiter that separates the object properties.
+It uses the `-NoTypeInformation` parameter to suppress the `#TYPE` string.
 
 ### Example 3: Convert the PowerShell event log to CSV
-```
-PS C:\> Get-EventLog -Log "windows powershell" | ConvertTo-Csv -UseCulture
+```powershell
+Get-EventLog -Log "windows powershell" | ConvertTo-Csv -UseCulture
 ```
 
 This command converts the Windows PowerShell event log on the local computer to a series of CSV strings.
 
-The command uses the Get-EventLog cmdlet to get the events in the Windows PowerShell log.
-A pipeline operator (|) sends the events to the **ConvertTo-CSV** cmdlet, which converts the events to CSV format.
-The command uses the *UseCulture* parameter, which uses the list separator for the current culture as the delimiter.
+The command uses the `Get-EventLog` cmdlet to get the events in the Windows PowerShell log.
+A pipeline operator (`|`) sends the events to the `ConvertTo-CSV` cmdlet, which converts the events to CSV format.
+The command uses the `-UseCulture` parameter, which uses the list separator for the current culture as the delimiter.
 
 ## PARAMETERS
 
 ### -Delimiter
 Specifies a delimiter to separate the property values.
-The default is a comma (,).
-Enter a character, such as a colon (:).
+The default is a comma (`,`).
+Enter a character, such as a colon (`:`).
 
-To specify a semicolon (;), enclose it in quotation marks.
+To specify a semicolon (`;`), enclose it in quotation marks.
 Otherwise, it will be interpreted as the command delimiter.
 
 ```yaml
@@ -116,7 +120,7 @@ Accept wildcard characters: False
 ### -InputObject
 Specifies the objects to export as CSV strings.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
-You can also pipe objects to **ConvertTo-CSV**.
+You can also pipe objects to `ConvertTo-CSV`.
 
 ```yaml
 Type: PSObject
@@ -132,7 +136,7 @@ Accept wildcard characters: False
 
 ### -NoTypeInformation
 Omits the type information header from the output.
-By default, the string in the output contains #TYPE followed by the fully-qualified name of the object type.
+By default, the string in the output contains `#TYPE` followed by the fully-qualified name of the object type.
 
 ```yaml
 Type: SwitchParameter
@@ -148,7 +152,7 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Uses the list separator for the current culture as the data delimiter.
-The default is a comma (,).
+The default is a comma (`,`).
 
 This parameter is very useful in scripts that are being distributed to users worldwide.
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
@@ -171,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Management.Automation.PSObject
-You can pipe any object that has an Extended Type System (ETS) adapter to **ConvertTo-CSV**.
+You can pipe any object that has an Extended Type System (ETS) adapter to `ConvertTo-CSV`.
 
 ## OUTPUTS
 
@@ -179,19 +183,19 @@ You can pipe any object that has an Extended Type System (ETS) adapter to **Conv
 The CSV output is returned as a collection of strings.
 
 ## NOTES
-* In CSV format, each object is represented by a comma-separated list of its property value. The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value. **ConvertTo-CSV** does not export the methods of the object.
+* In CSV format, each object is represented by a comma-separated list of its property value. The property values are converted to strings (by using the `ToString()` method of the object), so they are generally represented by the name of the property value. `ConvertTo-CSV` does not export the methods of the object.
 
   The format of the resulting CSV strings is as follows:
 
-  - The first string consists of #TYPE followed by the fully-qualified name of the object type, such as #TYPE System.Diagnostics.Process.
-To suppress this string, use the *NoTypeInformation* parameter.
+  - The first string consists of #TYPE followed by the fully-qualified name of the object type, such as `#TYPE System.Diagnostics.Process`.
+To suppress this string, use the `-NoTypeInformation` parameter.
 
   - The next string represents the column headers.
 It contains a comma-separated list of the names of all the properties of the first object.
 
   - The remaining strings consist of comma-separated lists of the property values of each object.
 
-* When you submit multiple objects to **ConvertTo-CSV**, **ConvertTo-CSV** orders the strings based on the properties of the first object that you submit. If the remaining objects do not have one of the specified properties, the property value of that object is Null, as represented by two consecutive commas. If the remaining objects have additional properties, those property values are ignored.
+* When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on the properties of the first object that you submit. If the remaining objects do not have one of the specified properties, the property value of that object is Null, as represented by two consecutive commas. If the remaining objects have additional properties, those property values are ignored.
 
 ## RELATED LINKS
 

@@ -55,7 +55,9 @@ Get-Process | Export-Csv -Path "processes.csv"
 
 In `processes.csv`
 ```none
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
+Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
+Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -68,7 +70,9 @@ Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
 
 In `processes.csv`
 ```none
-__NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
+__NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;... 
+Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS... 
+Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -91,7 +95,9 @@ Get-Process | Export-Csv -Path "processes.csv" -IncludeTypeInformation
 In `processes.csv`
 ```none
 #TYPE System.Diagnostics.Process
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
+__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,... 
+Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS... 
+Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
 ```
 
 This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
@@ -114,7 +120,7 @@ The third command uses a pipeline operator (`|`) to send the script file informa
 $ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
 ```
 
-These commands add information about new Windows PowerShell scripts to a script inventory file.
+These commands add information about new PowerShell scripts to a script inventory file.
 
 The first command uses the `Get-ChildItem` cmdlet to do a recursive search in the `D:` drive for files with the `.ps1` file name extension.
 It uses a pipeline operator to sends the results to the `Where-Object` cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the `$ScriptFiles` variable.
@@ -236,7 +242,7 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 Indicates that this cmdlet includes the type information in the CSV file.
-When supplied, the first line of the CSV file contains #TYPE followed by the fully-qualified name of the type of the object.
+When supplied, the first line of the CSV file contains `#TYPE` followed by the fully-qualified name of the type of the object.
 
 This parameter was introduced in PowerShell 6.0.
 
