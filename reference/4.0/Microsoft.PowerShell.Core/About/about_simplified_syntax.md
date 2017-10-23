@@ -89,6 +89,11 @@ runs, it sets the $letter variable equal to the first item in $letterArray
 time through the loop, $letter is set to "b", and so on. After the Foreach
 loop displays the letter d, Windows PowerShell exits the loop.
 
+The entire Foreach statement must appear on a single line to run it as a
+command at the Windows PowerShell command prompt. The entire Foreach
+statement does not have to appear on a single line if you place the command
+in a .ps1 script file instead.
+
 Foreach statements can also be used together with cmdlets that return a
 collection of items. In the following example, the Foreach statement steps
 through the list of items that is returned by the Get-ChildItem cmdlet.
