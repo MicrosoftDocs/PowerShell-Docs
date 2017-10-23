@@ -43,10 +43,8 @@ For other host applications, see the product documentation.
 | DOWN ARROW   | Displays the next command.                              |
 | F7           | Displays the command history.                           |
 | ESC          | To hide the history.                                    |
-| F8           | Finds a command. Type one or more characters, and then  |
-|              | press F8. For the next instance, press F8 again.        |
-| F9           | Find a command by history ID. Type the history ID, and  |
-|              | then press F9. To find the ID, press F7.                |
+| F8           | Finds a command. Type one or more characters, and then press F8. For the next instance, press F8 again. |
+| F9           | Find a command by history ID. Type the history ID, and then press F9.  To find the ID, press F7.        |
 
 ### MaximumHistoryCount
 
