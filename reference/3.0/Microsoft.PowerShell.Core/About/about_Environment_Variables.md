@@ -37,7 +37,7 @@ jobs and the sessions in which module members run. This makes environment
 variables well suited to storing values that are needed in both parent and
 child sessions.
 
-## Windows PowerShell Environment Provider
+### Windows PowerShell Environment Provider
 
 The Windows PowerShell environment provider lets you access Windows
 environment variables in Windows PowerShell in a Windows PowerShell drive (the
@@ -58,7 +58,7 @@ You can view the environment variables in the Env: drive from any other
 Windows PowerShell drive, and you can go into the Env: drive to view and
 change the environment variables.
 
-## Environment Variable Objects
+### Environment Variable Objects
 
 In Windows PowerShell, each environment variable is represented by an object
 that is an instance of the System.Collections.DictionaryEntry class.
@@ -72,7 +72,7 @@ When you change an environment variable in Windows PowerShell, use the methods
 that are associated with the DictionaryEntry object.
 
 To display the properties and methods of the object that represents an
-environment variable in Windows PowerShell, use the `Get-Member` cmdlet. For
+environment variable in Windows PowerShell, use the Get-Member cmdlet. For
 example, to display the methods and properties of all the objects in the Env:
 drive, type:
 
@@ -80,11 +80,11 @@ drive, type:
 Get-Item -Path Env:* | Get-Member
 ```
 
-## Displaying Environment Variables
+### Displaying Environment Variables
 
 You can use the cmdlets that contain the Item noun (the Item cmdlets) to
 display and change the values of environment variables. Because environment
-variables do not have child items, the output of `Get-Item` and `Get-ChildItem` is
+variables do not have child items, the output of Get-Item and Get-ChildItem is
 the same.
 
 When you refer to an environment variable, type the Env: drive name followed
@@ -103,14 +103,14 @@ Get-ChildItem Env:
 
 By default, Windows PowerShell displays the environment variables in the order
 in which it retrieves them. To sort the list of environment variables by
-variable name, pipe the output of a `Get-ChildItem` command to the Sort-Object
+variable name, pipe the output of a Get-ChildItem command to the Sort-Object
 cmdlet. For example, from any Windows PowerShell drive, type:
 
 ```powershell
 Get-ChildItem Env: | Sort Name
 ```
 
-You can also go into the Env: drive by using the `Set-Location` cmdlet:
+You can also go into the Env: drive by using the Set-Location cmdlet:
 
 ```powershell
 Set-Location Env:
@@ -145,10 +145,10 @@ following command at the Windows PowerShell command prompt:
 $Env:windir
 ```
 
-In this syntax, the dollar sign ($) indicates a variable, and the drive name
+In this syntax, the dollar sign (\$) indicates a variable, and the drive name
 indicates an environment variable.
 
-## Changing Environment Variables
+### Changing Environment Variables
 
 To make a persistent change to an environment variable, use System in Control
 Panel (Advanced tab or the Advanced System Settings item) to store the change
@@ -170,16 +170,16 @@ following syntax:
 $Env:<variable-name> = "<new-value>"
 ```
 
-For example, to append ";C:\Temp" to the value of the Path environment
+For example, to append ";c:\\temp" to the value of the Path environment
 variable, use the following syntax:
 
 ```powershell
-$Env:Path = $Env:Path + ";C:\Temp"
+$Env:path = $env:path + ";c:\temp"
 ```
 
-You can also use the Item cmdlets, such as `Set-Item`, `Remove-Item`, and
-`Copy-Item` to change the values of environment variables. For example, to use
-the `Set-Item` cmdlet to append ";C:\Temp" to the value of the Path environment
+You can also use the Item cmdlets, such as Set-Item, Remove-Item, and
+Copy-Item to change the values of environment variables. For example, to use
+the Set-Item cmdlet to append ";c:\\temp" to the value of the Path environment
 variable, use the following syntax:
 
 ```powershell
@@ -189,12 +189,12 @@ Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
 In this command, the value is enclosed in parentheses so that it is
 interpreted as a unit.
 
-## Saving Changes to Environment Variables
+### Saving Changes to Environment Variables
 
 To create or change the value of an environment variable in every Windows
 PowerShell session, add the change to your Windows PowerShell profile.
 
-For example, to add the C:\Temp directory to the Path environment variable in
+For example, to add the C:\\Temp directory to the Path environment variable in
 every Windows PowerShell session, add the following command to your Windows
 PowerShell profile.
 
@@ -210,13 +210,13 @@ Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path = `
 $Env:Path + ";C:\Temp"'
 ```
 
-## Environment Variables That Store Preferences
+### Environment Variables That Store Preferences
 
 Windows PowerShell features can use environment variables to store user
 preferences. These variables work like preference variables, but they are
 inherited by child sessions of the sessions in which they are created. For
 more information about preference variables, see
-[about_Preference_Variables](about_Preference_Variables.md).
+[about_preference_variables](about_Preference_Variables.md).
 
 The environment variables that store preferences include:
 
@@ -230,7 +230,7 @@ The environment variables that store preferences include:
     use its ExecutionPolicy parameter to set the execution policy for
     the session.
 
-  - Use the `Set-ExecutionPolicy` cmdlet. Use the **Scope** parameter with
+  - Use the Set-ExecutionPolicy cmdlet. Use the Scope parameter with
     a value of "Process".
 
     For more information, see [about_Execution_Policies](about_Execution_Policies.md).
@@ -244,11 +244,11 @@ The environment variables that store preferences include:
   The default value of $Env:PSModulePath is:
 
   ```
-  $HOME\Documents\WindowsPowerShell\Modules;$PSHOME\Modules
+  $home\Documents\WindowsPowerShell\Modules; $pshome\Modules
   ```
 
-Windows PowerShell sets the value of "$PSHOME\Modules" in the registry. It
-sets the value of "$HOME\Documents\WindowsPowerShell\Modules" each time you
+Windows PowerShell sets the value of "\$pshome\\Modules" in the registry. It
+sets the value of "\$home\\Documents\\WindowsPowerShell\\Modules" each time you
 start Windows PowerShell.
 
 In addition, setup programs that install modules in other directories, such as
@@ -259,11 +259,11 @@ To change the default module directories for the current session, use the
 following command format to change the value of the PSModulePath environment
 variable.
 
-For example, to add the "C:\Program Files\Fabrikam\Modules" directory to
+For example, to add the "C:\\Program Files\\Fabrikam\\Modules" directory to
 the value of the PSModulePath environment variable, type:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath + ";C:\Program Files\Fabrikam\Modules"
+$Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
 ```
 
 The semi-colon (;) in the command separates the new path from the path that
@@ -275,7 +275,7 @@ the Environment class.
 
 The following command uses the GetEnvironmentVariable method to get the
 machine setting of PSModulePath and the SetEnvironmentVariable method to add
-the "C:\Program Files\Fabrikam\Modules" path to the value.
+the C:\\Program Files\\Fabrikam\\Modules path to the value.
 
 ```powershell
 $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
@@ -294,8 +294,8 @@ $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
 ```
 
 For more information about the methods of the System.Environment class, see
-[Environment Methods](https://go.microsoft.com/fwlink/?LinkId=242783) in
-the MSDN library.
+[Environment Methods](http://go.microsoft.com/fwlink/?LinkId=242783) in
+MSDN.
 
 You can add also add a command that changes the value to your profile or use
 System in Control Panel to change the value of the PSModulePath environment
@@ -305,6 +305,5 @@ For more information, see [about_Modules](about_Modules.md).
 
 ## SEE ALSO
 
-[Environment (provider)](../Providers/Environment-Provider.md)
-
-[about_Modules](about_Modules.md)
+- [Environment (provider)](../Providers/Environment-Provider.md)
+- [about_Modules](about_Modules.md)
