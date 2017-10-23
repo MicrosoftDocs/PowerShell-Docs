@@ -18,7 +18,7 @@ To suppress these error and warning messages use the DSC configuration data keyw
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Notes:** <p>Using plaintext passwords is not secure. Securing credentials by using the techniques covered later in this topic is recommended.</p> <p>The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.  For information, see: [Compiling DSC Configurations / Credential Assets](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+>**Notes:** <p>Storing/transmitting plaintext passwords unencrypted is generally not secure. Securing credentials by using the techniques covered later in this topic is recommended.</p> <p>The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.  For information, see: [Compiling DSC Configurations / Credential Assets](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
 
 The following is an example of passing plain text credentials:
 
