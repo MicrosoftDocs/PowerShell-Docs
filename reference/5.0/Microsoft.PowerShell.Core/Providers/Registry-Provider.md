@@ -30,7 +30,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 
  The Windows PowerShell **Registry** provider lets you get, add, change, clear, and delete registry keys, entries, and values in Windows PowerShell.  
 
- Registry keys are represented as instances of the [Microsoft.Win32.RegistryKey](https://msdn.microsoft.com/library/microsoft.win32.registrykey) class. Registry entries are represented as instances of the [PSCustomObject](https://msdn.microsoft.com/library/system.management.automation.pscustomobject) class.  
+ Registry keys are represented as instances of the [Microsoft.Win32.RegistryKey](https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registrykey) class. Registry entries are represented as instances of the [PSCustomObject](https://msdn.microsoft.com/library/system.management.automation.pscustomobject) class.  
 
  The **Registry** provider lets you access a hierarchical namespace that consists of registry keys and subkeys. Registry entries and values are not components of that hierarchy. Instead, they are properties of each of the keys.  
 

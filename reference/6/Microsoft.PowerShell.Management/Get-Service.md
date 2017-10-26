@@ -428,3 +428,4 @@ The sort is based on the integer value, not the name.
 
 [Suspend-Service](Suspend-Service.md)
 
+[Remove-Service](Remove-Service.md)
