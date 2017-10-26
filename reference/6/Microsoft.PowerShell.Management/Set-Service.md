@@ -398,3 +398,4 @@ This cmdlet does not return any objects.
 
 [Suspend-Service](Suspend-Service.md)
 
+[Remove-Service](Remove-Service.md)

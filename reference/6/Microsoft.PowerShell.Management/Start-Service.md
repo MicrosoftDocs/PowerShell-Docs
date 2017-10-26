@@ -305,3 +305,4 @@ Otherwise, this cmdlet does not generate any output.
 
 [Suspend-Service](Suspend-Service.md)
 
+[Remove-Service](Remove-Service.md)
