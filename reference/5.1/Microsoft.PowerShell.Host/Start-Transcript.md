@@ -35,7 +35,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [
 
 ## DESCRIPTION
 The `Start-Transcript` cmdlet creates a record of all or part of a Windows PowerShell session to a text file.
-The transcript includes all command that the user types and all output that appears on the console.
+The transcript includes all commands that the user types and all output that appears on the console.
 
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the host name in the generated file name of all transcripts.
 This is especially useful when your enterprise's logging is centralized.
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Indicates that this cmdlet will not overwrite of an existing file.
+Indicates that this cmdlet does not overwrite of an existing file.
 By default, if a transcript file exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
 ```yaml

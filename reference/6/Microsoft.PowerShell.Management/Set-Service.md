@@ -17,14 +17,14 @@ Starts, stops, and suspends a service, and changes its properties.
 
 ### Name (Default)
 ```
-Set-Service [-ComputerName <String[]>] [-Name] <String> [-DisplayName <String>] [-Description <String>]
+Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
  [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru] [-InformationAction <ActionPreference>]
  [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Set-Service [-ComputerName <String[]>] [-DisplayName <String>] [-Description <String>]
+Set-Service [-DisplayName <String>] [-Description <String>]
  [-StartupType <ServiceStartMode>] [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
  [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -90,11 +90,11 @@ The final command displays the start mode of all services on the computer.
 
 ### Example 3: Change the description of a service
 ```
-PS C:\> Set-Service -Name "Schedule" -ComputerName "S1" -Description "Configures and schedules tasks."
-PS C:\> Get-WMIObject win32_service -ComputerName "s1" | Where-Object {$_.Name -eq "Schedule"} | Format-List Name, Description
+PS C:\> Set-Service -Name "Schedule" -Description "Configures and schedules tasks."
+PS C:\> Get-WMIObject win32_service | Where-Object {$_.Name -eq "Schedule"} | Format-List Name, Description
 ```
 
-These commands change the description of the Task Scheduler service on the S1 remote computer and then display the result.
+These commands change the description of the Task Scheduler service and then display the result.
 
 These commands use the **Get-WmiObject** cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that **Get-Service** returns does not include the service description.
 
@@ -108,30 +108,30 @@ The pipeline operator (|) passes the result to the Where-Object cmdlet, which se
 
 Another pipeline operator sends the result to the Format-List cmdlet, which formats the output as a list that has only the **Name** and **Description** properties.
 
-### Example 4: Start a service on a remote computer
+### Example 4: Start a service
 ```
-PS C:\> Set-Service -Name "winrm" -Status Running -PassThru -ComputerName "Server02"
+PS C:\> Set-Service -Name "winrm" -Status Running -PassThru
 ```
 
-This command starts the WinRM service on the Server02 computer.
+This command starts the WinRM service.
 The command uses the Status parameter to specify the desired status, which is running, and the *PassThru* parameter to direct **Set-Service** to return an object that represents the WinRM service.
 
-### Example 5: Suspend a service on remote computers
+### Example 5: Suspend a service
 ```
-PS C:\> Get-Service -Name "schedule" -ComputerName "S1", "S2" | Set-Service -Status paused
+PS C:\> Get-Service -Name "schedule" | Set-Service -Status paused
 ```
 
-This command suspends the Schedule service on the S1 and S2 remote computers.
+This command suspends the Schedule service.
 It uses **Get-Service** to get the service.
 A pipeline operator (|) sends the service to **Set-Service**, which changes its status to Paused.
 
-### Example 6: Stop a service on the local computer
+### Example 6: Stop a service
 ```
 PS C:\> $s = Get-Service -Name "schedule"
 PS C:\> Set-Service -InputObject $s -Status stopped
 ```
 
-These commands stop the Schedule service on the local computer.
+These commands stop the Schedule service.
 
 The first command uses **Get-Service** to get the Schedule service.
 The command stores the service in the $s variable.
@@ -139,29 +139,20 @@ The command stores the service in the $s variable.
 The second command changes the status of the Schedule service to Stopped.
 It uses the *InputObject* parameter to submit the service stored in the $s variable, and it uses the *Status* parameter to specify the desired status.
 
-## PARAMETERS
-
-### -ComputerName
-Specifies one or more computers.
-The default is the local computer.
-
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot (.), or localhost.
-
-This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: cn
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+### Example 7: Change credential of a service
 ```
+PS C:\> $credential = Get-Credential
+PS C:\> Set-Service -Name "schedule" -Credential $credential
+```
+
+These commands changes credentials of the Schedule service.
+
+The first command uses **Get-Credential** to get the new credentials.
+The command stores the credentials in the $credential variable.
+
+The second command changes the credentials of the Schedule service.
+
+## PARAMETERS
 
 ### -Description
 Specifies a new description for the service.
@@ -259,6 +250,22 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Credential
+Specifies the credentials under which the service should be run.
+
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -391,3 +398,4 @@ This cmdlet does not return any objects.
 
 [Suspend-Service](Suspend-Service.md)
 
+[Remove-Service](Remove-Service.md)
