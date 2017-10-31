@@ -189,9 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationAction
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Set-Service even if your computer is not configured to run remote commands.```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -205,9 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Set-Service even if your computer is not configured to run remote commands.```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv

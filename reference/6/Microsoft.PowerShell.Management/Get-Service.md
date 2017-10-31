@@ -11,33 +11,33 @@ title:  Get-Service
 # Get-Service
 
 ## SYNOPSIS
-Gets the services on a local or remote computer.
+Gets the services on the computer.
 
 ## SYNTAX
 
 ### Default (Default)
 ```
-Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices]
+Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices]
  [-Include <String[]>] [-Exclude <String[]>] [-InformationAction <ActionPreference>]
  [-InformationVariable <String>] [<CommonParameters>]
 ```
 
 ### DisplayName
 ```
-Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] -DisplayName <String[]>
+Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]>
  [-Include <String[]>] [-Exclude <String[]>] [-InformationAction <ActionPreference>]
  [-InformationVariable <String>] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
+Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [-InputObject <ServiceController[]>] [-InformationAction <ActionPreference>]
  [-InformationVariable <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Service** cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
+The **Get-Service** cmdlet gets objects that represent the services on a local computer, including running and stopped services.
 
 You can direct this cmdlet to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to this cmdlet.
 
@@ -86,16 +86,7 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 Status is only one property of service objects.
 To see all of the properties, type `Get-Service | Get-Member`.
 
-### Example 6: Get the services on a remote computer
-```
-PS C:\> Get-Service -ComputerName "Server02"
-```
-
-This command gets the services on the Server02 remote computer.
-
-Because the *ComputerName* parameter of **Get-Service** does not use Windows PowerShell remoting, you can use this parameter even if the computer is not configured for remoting in Windows PowerShell.
-
-### Example 7: List the services on the local computer that have dependent services
+### Example 6: List the services on the computer that have dependent services
 ```
 PS C:\> Get-Service | Where-Object {$_.DependentServices} | Format-List -Property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
@@ -123,7 +114,7 @@ A pipeline operator (|) sends the services to the **Where-Object** cmdlet, which
 Another pipeline operator sends the results to the Format-List cmdlet.
 The command uses its *Property* parameter to display the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services that each service has.
 
-### Example 8: Sort services by property value
+### Example 7: Sort services by property value
 ```
 PS C:\> Get-Service "s*" | Sort-Object status
 
@@ -167,29 +158,7 @@ This happens because the value of Status is an enumeration, in which Stopped has
 
 To list running services first, use the *Descending* parameter of the Sort-Object cmdlet.
 
-### Example 9: Get services on multiple computers
-```
-PS C:\> Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
-
-
-
-
-
-
-MachineName    Status  Name  DisplayName
-------------   ------  ----  -----------
-localhost      Running WinRM Windows Remote Management (WS-Management) 
-Server01       Running WinRM Windows Remote Management (WS-Management) 
-Server02       Running WinRM Windows Remote Management (WS-Management)
-```
-
-This command uses the **Get-Service** cmdlet to run a Get-Service Winrm command on two remote computers and the local computer ("localhost").
-
-The command runs on the remote computers, and the results are returned to the local computer.
-A pipeline operator (|) sends the results to the **Format-Table** cmdlet, which formats the services as a table.
-The **Format-Table** command uses the *Property* parameter to specify the properties displayed in the table, including the **MachineName** property.
-
-### Example 10: Get the dependent services of a service
+### Example 8: Get the dependent services of a service
 ```
 PS C:\> Get-Service "WinRM" -RequiredServices
 ```
@@ -198,7 +167,7 @@ This command gets the services that the WinRM service requires.
 
 The command returns the value of the **ServicesDependedOn** property of the service.
 
-### Example 11: Get a service through the pipeline operator
+### Example 9: Get a service through the pipeline operator
 ```
 PS C:\> "WinRM" | Get-Service
 ```
@@ -207,28 +176,6 @@ This command gets the WinRM service on the local computer.
 This example shows that you can pipe a service name string (enclosed in quotation marks) to **Get-Service**.
 
 ## PARAMETERS
-
-### -ComputerName
-Gets the services running on the specified computers.
-The default is the local computer.
-
-Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of a remote computer.
-To specify the local computer, type the computer name, a dot (.), or localhost.
-
-This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter of **Get-Service** even if your computer is not configured to run remote commands.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: Cn
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -DependentServices
 Indicates that this cmdlet gets only the services that depend upon the specified service.
@@ -301,9 +248,8 @@ Accept wildcard characters: False
 ```
 
 ### -InformationAction
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
 
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Service even if your computer is not configured to run remote commands.```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -317,9 +263,8 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer. To specify the local computer, type the computer name, a dot (.), or "localhost".
 
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Service even if your computer is not configured to run remote commands.```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv
