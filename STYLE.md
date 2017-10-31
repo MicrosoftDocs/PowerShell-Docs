@@ -32,6 +32,26 @@ Header 2
 ### Header 3
 ```
 
+## Terminology
+
+There are several variants of PowerShell. 
+This table defines some of the different terms used to discuss PowerShell.
+
+| Terminology | Definition |
+| ----- | -----|
+| PowerShell |	This is the default. We are shipping PowerShell. The term PowerShell can be legitimately used to indicate any of the particular editions. This can be used to refer to the language, framework and default cmdlets, etc. |
+| PowerShell Core (PSCore) |	PowerShell built on .NET Core Common Language Runtime (CoreCLR) for any of the platforms. | 
+| Windows PowerShell	| PowerShell built on .NET Common Language Runtime (CLR). Windows PowerShell ships only on Windows and requires the complete CLR. |
+
+In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
+"Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed. 
+
+## About_ Files
+We are changing the way we process about_ files.
+For details, see [issue #1806](https://github.com/PowerShell/PowerShell-Docs/issues/1806). 
+Until this issue is completed, about_ files will not be properly formatted Markdown issues.
+Please do not alter the formatting of about_ files without checking in with a repo maintainer.
+
 ## Syntax
 
 * When talking about a cmdlet in paragraph, use \` to highlight cmdlet names

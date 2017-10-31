@@ -331,10 +331,6 @@ Windows Components\Windows PowerShell
 Policies set in the Computer Configuration node take precedence
 over policies set in the User Configuration node.
 
-The PowerShellExecutionPolicy.adm file is available on the
-Microsoft Download Center. For more information, see 
-[Administrative Templates for Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=131786).
-
 For more information, see [about_Group_Policy_Settings](about_Group_Policy_Settings.md).
 
 ## Execution Policy Precedence
@@ -382,8 +378,6 @@ For more information, see [about_Signing](about_Signing.md),
 [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 
 [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md)
-
-[Administrative Templates for Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=131786)
 
 [PowerShell.exe Console Help](http://go.microsoft.com/fwlink/?LinkID=113439)
 
