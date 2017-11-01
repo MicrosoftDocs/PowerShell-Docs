@@ -39,7 +39,8 @@ The following special characters are recognized by Windows PowerShell:
 | --%       | Stop parsing            |
 ```
 
-These characters are case-sensitive.
+These characters are case-sensitive. The escape character is only interpreted
+when used within double quoted (") strings.
 
 ## NULL (`0)
 
@@ -208,4 +209,3 @@ For more information about the stop-parsing symbol, see [about_Parsing](about_Pa
 # SEE ALSO
 
 - [about_Quoting_Rules](about_Quoting_Rules.md)
-- [about_Escape_Characters](about_Escape_Characters.md)
