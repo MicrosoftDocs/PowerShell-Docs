@@ -27,7 +27,7 @@ PowerShellGet support for prerelease versions requires the use of two fields wit
 
 * The ModuleVersion included in the module manifest must be a 3-part version if a prerelease version is used, and must comply with existing PowerShell versioning. The version format would be A.B.C, where A, B, and C are all integers. 
 * The PrereleaseString is specified in the module manifest, in the PSData section of PrivateData. 
-PrereleaseString is a string which should begin with a hyphen, and may contain ASCII alphanumerics and hyphen [0-9A-Za-z-]. Detailed requirements on the PrereleaseString string are below. 
+PrereleaseString is a string which may contain ASCII alphanumerics and hyphen [0-9A-Za-z-]. Detailed requirements on the PrereleaseString string are below. 
 
 An example section of a module manifest that defines a module as a prerelease would look like the following:
 ```powershell
@@ -36,7 +36,7 @@ An example section of a module manifest that defines a module as a prerelease wo
     #---
     PrivateData = @{
         PSData = @{
-            PrereleaseString = '-alpha'
+            PrereleaseString = 'alpha'
         }
     }
 }
@@ -45,7 +45,7 @@ An example section of a module manifest that defines a module as a prerelease wo
 The detailed requirements for PrereleaseString string are: 
 
 * PrereleaseString may only be specified when the ModuleVersion is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0.
-* The PrereleaseString should begin with a hyphen. If a hyphen is not the first character in the string, it will be included automatically by PowerShellGet in the package metadata.
+* A hyphen is the delimiter between the Build number and the PrereleaseString. A hyphen may be included in the Prerelease string as the first character.
 * The PrereleaseString may contain only ASCII alphanumerics [0-9A-Za-z-] and hyphen [-]. It is recommended to begin the PrereleaseString with an alpha character, as it will be easier to identify that this is a prerelease version when scanning a list of items. 
 * Only SemVer v1.0.0 prerelease strings are supported at this time. PrereleaseString __must not__ contain either period or + [.+], which are allowed in SemVer 2.0. 
 * Examples of supported PrereleaseString strings are: -alpha, -alpha1, -BETA, -update20171020
