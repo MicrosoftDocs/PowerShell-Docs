@@ -1,3 +1,4 @@
+
 # clone repo
 # Convert MD to MAML
 
@@ -33,6 +34,7 @@ only_commits:
     - appveyor.ps1
     - appveyor.yml
     - tests/**/*
+    - **/*.md
 
 deploy:
   - provider: AzureBlob
