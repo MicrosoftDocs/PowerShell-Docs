@@ -63,13 +63,17 @@ This is a limitation of the underlying API.
 
 ### Example 1: Create an archive file
 ```powershell
-Compress-Archive -LiteralPath C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.vsd -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
+Compress-Archive -Path C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.vsd -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
+```
+### Example 2: Create an archive file (using LiteralPath)
+```powershell
+Compress-Archive -LiteralPath "C:\Reference\Draft Doc.docx", "C:\Reference\Images\Diagram 2.vsd"  -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
 ```
 
 This command creates a new archive file, Draft.zip, by compressing two files, Draftdoc.docx and diagram2.vsd, specified by the **LiteralPath** parameter.
 The compression level specified for this operation is Optimal.
 
-### Example 2: Create an archive with wildcard characters
+### Example 3: Create an archive with wildcard characters
 ```powershell
 Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath C:\Archives\Draft
 ```
@@ -79,7 +83,7 @@ Note that though the file name extension .zip was not added to the value of the 
 The new archive file contains every file in the C:\Reference folder, because a wildcard character was used in place of specific file names in the **Path** parameter.
 The specified compression level is Fastest, which might result in a larger output file, but compresses a large number of files faster.
 
-### Example 3: Update an existing archive file
+### Example 4: Update an existing archive file
 ```powershell
 Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft.Zip
 ```
@@ -87,7 +91,7 @@ Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft
 This command updates an existing archive file, Draft.Zip, in the C:\Archives folder.
 The command is run to update Draft.Zip with newer versions of existing files that came from the C:\Reference folder, and also to add new files that have been added to C:\Reference since Draft.Zip was initially created.
 
-### Example 4: Create an archive from an entire folder
+### Example 5: Create an archive from an entire folder
 ```powershell
 Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 ```
