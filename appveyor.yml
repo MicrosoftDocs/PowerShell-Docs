@@ -29,10 +29,11 @@ artifacts:
 
 only_commits:
   files:
-    #- reference/**/*
+    - reference/**/*
     - appveyor.ps1
     - appveyor.yml
     - tests/**/*
+    - STYLE.md 
 
 deploy:
   - provider: AzureBlob
