@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  2017-10-31
 author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
@@ -10,12 +10,33 @@ title:  Securing the MOF File
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired 
-configuration. Because this file contains the details of the configuration, it’s important to keep it secure. To do this, you can set the LCM to check the credentials of 
-a user. This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.
+DSC manages the configuration of server nodes
+by applying information stored in a MOF file,
+where the Local Configuration Manager (LCM) implements the desired end state.
+Because this file contains the details of the configuration,
+it’s important to keep it secure.
+This topic describes how to ensure the target node has
+encrypted the file.
 
->**Note:** This topic discusses certificates used for encryption. For encryption, a self-signed certificate is sufficient, because the private key is always kept secret and encryption does not imply trust of the document. Self-signed certificates
->should *not* be used for authentication purposes. You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.
+Beginning with PowerShell version 5.0,
+the entire MOF file is encrypted by default when it is applied to the node
+using the **Start-DSCConfiguration** cmdlet.
+The process described in this article is required only when implementing a solution
+using the pull service protocol if certificates are not managed,
+to ensure configurations downloaded by the target node can be decrypted and read by the system
+before they are applied
+(for example, the pull service available in Windows Server).
+Nodes registered to [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+will automatically have certificates installed and managed by the service
+with no administrative overhead required.
+
+>**Note:**
+>This topic discusses certificates used for encryption.
+>For encryption, a self-signed certificate is sufficient,
+>because the private key is always kept secret and encryption does not imply trust of the document.
+>Self-signed certificates should *not* be used for authentication purposes.
+>You should use a certificate from a trusted Certification Authority (CA)
+>for any authentication purposes.
 
 ## Prerequisites
 
