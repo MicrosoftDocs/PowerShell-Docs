@@ -19,7 +19,7 @@ nxScript <string> #ResourceName
     SetScript = <string>
     TestScript = <string>
     [ User = <string> ]
-    { Group = <string> ]
+    [ Group = <string> ]
     [ DependsOn = <string[]> ]
 
 }
