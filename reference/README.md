@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-06
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,16 +8,8 @@ title:  README
 
 # PowerShell Reference
 
-Reference material is organized into release versions.
-
-- [3.0](3.0/readme.md)
-- [4.0](4.0/readme.md)
-- [5.0](5.0/readme.md)
-- [5.1](5.1/readme.md)
-- [6](6/readme.md)
-
-The content for each version is organized by namespace,
-and a distinct folder for the about topics.
+Reference material is organized into release versions. The content for each
+version is organized by namespace, and a distinct folder for the about topics.
 
 Over time, namespaces appeared as:
 
@@ -40,4 +32,3 @@ Over time, namespaces appeared as:
 - PSScriptAnalyzer, introduced in 3.0
 - PSWorkflow, introduced in 3.0
 - PSWorkflowUtility, introduced in 3.0
-
