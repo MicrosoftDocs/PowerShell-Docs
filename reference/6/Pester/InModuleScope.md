@@ -46,7 +46,7 @@ function PrivateFunction
 
 Export-ModuleMember -Function PublicFunction
 
-# The test script:
+The test script:
 
 Import-Module MyModule
 

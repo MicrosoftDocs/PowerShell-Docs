@@ -127,7 +127,7 @@ The acceptable values for this parameter are:
 - QuotaExceeded
 - NotEnabled
 
-For information about the error categories, see ErrorCategory Enumerationhttp://go.microsoft.com/fwlink/?LinkId=143600 (http://go.microsoft.com/fwlink/?LinkId=143600) in MSDN.
+For information about the error categories, see [ErrorCategory Enumeration](http://go.microsoft.com/fwlink/?LinkId=143600) in the MSDN library.
 
 ```yaml
 Type: ErrorCategory

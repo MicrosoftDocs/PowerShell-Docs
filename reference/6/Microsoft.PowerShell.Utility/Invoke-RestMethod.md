@@ -15,12 +15,13 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax
 
-```PowerShell
-Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
+```powershell
+Invoke-RestMethod [-Method <WebRequestMethod>] [-CustomMethod <String>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>]
+ [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-SkipHeaderValidation]
  [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
+ [-FollowRelLink] [-MaximumFollowRelLink <Int32>] [-ResponseHeadersVariable <String>]
  [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
  [-PassThru] [<CommonParameters>]
 ```
@@ -37,14 +38,14 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
-```PowerShell
+```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
 Format-Table -Property Title, pubDate
 ```
 
 ```
-Title                                                                pubDate                        
------                                                                -------                        
+Title                                                                pubDate
+-----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
 DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
 PSScriptAnalyzer Community Call - Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
@@ -63,7 +64,7 @@ The command uses the `Format-Table` cmdlet to display the values of the **Title*
 ### Example 2
 In the following example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
-```PowerShell
+```powershell
 $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
@@ -127,7 +128,7 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
@@ -136,9 +137,11 @@ Invoke-RestMethod http://website.com/service.aspx -Body $R
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
+
+The *Body* parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for *Body*, any Content related headers supplied to the *ContentType*, *Headers*, or *WebSession* parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
 
 ```yaml
 Type: Object
@@ -198,6 +201,8 @@ Specifies the content type of the web request.
 If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content type to "application/x-www-form-urlencoded".
 Otherwise, the content type is not specified in the call.
 
+*ContentType* will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -228,10 +233,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CustomMethod
+Specifies custom method used for the web request.
+
+```yaml
+Type: String
+Parameter Sets: StandardMethod, CustomMethod
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DisableKeepAlive
 Sets the **KeepAlive** value in the HTTP header to False.
 By default, **KeepAlive** is True.
 **KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FollowRelLink
+Indicates the cmdlet should follow relation links.
+
+To set how many times to follow relation links, use the `-MaximumFollowRelLink` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -252,8 +289,27 @@ Enter a hash table or dictionary.
 To set UserAgent headers, use the `-UserAgent` parameter.
 You cannot use this parameter to specify UserAgent or cookie headers.
 
+Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent` object is supplied for *Body*.
+
 ```yaml
 Type: IDictionary
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipHeaderValidation
+Indicates the cmdlet should add headers to the request without validation.
+
+This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -291,7 +347,7 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $r = Invoke-WebRequest http://website.com/login.aspx
 $r.Forms[0].Name = "MyName"
 $r.Forms[0].Password = "MyPassword"
@@ -300,7 +356,7 @@ Invoke-RestMethod http://website.com/service.aspx -Body $r
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
 ```
 
@@ -326,7 +382,7 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $r = Invoke-WebRequest http://website.com/login.aspx
 $r.Forms[0].Name = "MyName"
 $r.Forms[0].Password = "MyPassword"
@@ -335,7 +391,7 @@ Invoke-RestMethod http://website.com/service.aspx -Body $r
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
 ```
 
@@ -360,7 +416,7 @@ A value of 0 (zero) prevents following relation links.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -387,7 +443,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreserveAuthorizationOnRedirect
-Indicates the cmdlet should preserve the Authorization header, when present, across redirections.  
+Indicates the cmdlet should preserve the Authorization header, when present, across redirections.
 
 By default, the cmdlet strips the Authorization header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
 
@@ -538,6 +594,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResponseHeadersVariable
+Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values. 
+
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: RHV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
 ### -SessionVariable
 Creates a web request session and saves it in the value of the specified variable.
 Enter a variable name without the dollar sign (`$`) symbol.
@@ -560,6 +633,23 @@ You cannot use the `-SessionVariable` and `-WebSession` parameters in the same c
 Type: String
 Parameter Sets: (All)
 Aliases: SV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+### -SkipCertificateCheck
+Skips certificate validation checks.
+
+This includes all validations such as expiration, revocation, trusted root authority, etc. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -641,13 +731,13 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```PowerShell
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
 ```
 
 or
 
-```PowerShell
+```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]
 ```
 
@@ -687,7 +777,7 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet
 
-```PowerShell
+```powershell
 Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
 ```
 
@@ -708,7 +798,7 @@ Specifies a web request session.
 Enter the variable name, including the dollar sign (`$`).
 
 To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
-Parameter values take precedence over values in the web request session.
+Parameter values take precedence over values in the web request session. Content related headers, such as `Content-Type`, will be also be overridden when a `MultipartFormDataContent` object is supplied for `-Body`.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.

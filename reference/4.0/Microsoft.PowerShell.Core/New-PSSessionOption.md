@@ -328,7 +328,7 @@ For example, an IIS application that allows Kerberos authentication can require 
 In such cases, Windows PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
 To resolve this problem, administrators can create different SPNs (such as by using Setspn.exe) that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
 
-For more information about SetSPN.exe, see "SetSPN Overview" at http://go.microsoft.com/fwlink/?LinkID=189413.
+For more information about Setspn.exe, see [Setspn Overview](https://go.microsoft.com/fwlink/?LinkID=189413).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -526,7 +526,7 @@ Determines which mechanism is used to resolve the host name.
 Valid values are **IEConfig**, **WinHttpConfig**, **AutoDetect**, **NoProxyServer** and **None**.
 The default value is **None**.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Remoting.ProxyAccessType enumeration in the MSDN (Microsoft Developer Network) Library at http://go.microsoft.com/fwlink/?LinkId=144756.
+For information about the values of this parameter, see [ProxyAccessType Enumeration](https://msdn.microsoft.com/library/system.management.automation.remoting.proxyaccesstype) in the MSDN library.
 
 ```yaml
 Type: ProxyAccessType
@@ -546,7 +546,7 @@ Specifies the authentication method that is used for proxy resolution.
 Valid values are **Basic**, **Digest**, and **Negotiate**.
 The default value is **Negotiate**.
 
-For information about the values of this parameter, see the description of the System.Management.Automation.Runspaces.AuthenticationMechanism enumeration in the MSDN library at http://go.microsoft.com/fwlink/?LinkID=144382.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 ```yaml
 Type: AuthenticationMechanism

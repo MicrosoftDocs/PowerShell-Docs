@@ -20,16 +20,14 @@ Restarts ("reboots") the operating system on local and remote computers.
 Restart-Computer [-DcomAuthentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>]
  [-WsmanAuthentication <String>] [-Protocol <String>] [[-ComputerName] <String[]>]
  [[-Credential] <PSCredential>] [-Force] [-Wait] [-Timeout <Int32>] [-For <WaitForServiceTypes>]
- [-Delay <Int16>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AsJobSet
 ```
 Restart-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>]
  [[-ComputerName] <String[]>] [[-Credential] <PSCredential>] [-Force] [-ThrottleLimit <Int32>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,7 +127,7 @@ The job is created on the local computer and the results from remote computers a
 To manage the job, use the **Job** cmdlets.
 To get the job results, use the Receive-Job cmdlet.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -278,41 +276,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-Note: To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of Windows, you must open Windows PowerShell with the "Run as administrator" option. For more information, see about_Remote_Requirements (http://go.microsoft.com/fwlink/?LinkID=135187).
-
-When you use the AsJob parameter, the command immediately returns an object that represents the background job. You can continue to work in the session while the job completes. The job is created on the local computer and the results from remote computers are automatically returned to the local computer. To manage the job, use the Job cmdlets. To get the job results, use the Receive-Job cmdlet.
-
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Note: To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of Windows, you must open Windows PowerShell with the "Run as administrator" option. For more information, see about_Remote_Requirements (http://go.microsoft.com/fwlink/?LinkID=135187).
-
-When you use the AsJob parameter, the command immediately returns an object that represents the background job. You can continue to work in the session while the job completes. The job is created on the local computer and the results from remote computers are automatically returned to the local computer. To manage the job, use the Job cmdlets. To get the job results, use the Receive-Job cmdlet.
-
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0, the default value, 32, is used.
@@ -398,7 +361,7 @@ The authentication level is the same as the previous command
 
 The default value is Packet.
 
-For more information about the values of this parameter, see AuthenticationLevel Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235229 (http://go.microsoft.com/fwlink/?LinkID=235229) in the Microsoft Developer Network (MSDN) library.
+For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -440,7 +403,7 @@ Specifies the mechanism that is used to authenticate the user credentials when y
 
 The acceptable values for this parameter are: Basic, CredSSP, Default, Digest, Kerberos, and Negotiate.
 The default value is Default.
-For more information about the values of this parameter, see AuthenticationMechanism Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235230 (http://go.microsoft.com/fwlink/?LinkID=235230) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

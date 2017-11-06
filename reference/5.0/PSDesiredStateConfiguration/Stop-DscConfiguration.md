@@ -21,11 +21,11 @@ Stop-DscConfiguration [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int
 ```
 
 ## DESCRIPTION
-The **Stop-DscConfiguration** cmdlet stops a configuration job that is currently running.
+The `Stop-DscConfiguration` cmdlet stops a configuration job that is currently running.
 Specify which computers this cmdlet applies to by using Common Information Model (CIM) sessions.
 If there is no configuration job running, this cmdlet returns a warning message.
 
-This cmdlet is available only as part of the November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2http://support.microsoft.com/en-us/kb/3000850 (http://support.microsoft.com/en-us/kb/3000850) from the Microsoft Support library.
+This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
 Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 This cmdlet does not support the *Confirm* parameter.
@@ -58,7 +58,7 @@ To get the job results, use the Receive-Job cmdlet.
 To use this parameter, the local and remote computers must be configured for remoting, and on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell with the Run as administrator option.
 For more information, see about_Remote_Requirementshttp://go.microsoft.com/fwlink/?LinkId=623526 (http://go.microsoft.com/fwlink/?LinkId=623526).
 
-For more information about Windows PowerShell background jobs, see about_Jobshttp://go.microsoft.com/fwlink/?LinkID=113251 (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobshttp://go.microsoft.com/fwlink/?LinkID=135184 (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a New-CimSessionhttp://go.microsoft.com/fwlink/p/?LinkId=227967 or Get-CimSessionhttp://go.microsoft.com/fwlink/p/?LinkId=227966 cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml

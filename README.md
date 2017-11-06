@@ -28,3 +28,9 @@ Please note that before you submit a pull request you must [sign a Contribution 
 For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
 There is a draft [style guide](./STYLE.md) to review before making contributions.
 Please use the Issue and Pull Request templates to help keep documentation consistent across versions. 
+
+## Licenses
+
+There are two license files for this project. 
+The MIT License applies to the code contained in this repo.
+The Creative Commons license applies to the documentation. 

@@ -66,6 +66,11 @@ Enter-PSSession [-VMName] <String> -Credential <PSCredential> [-ConfigurationNam
 Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
 ```
 
+### HostName
+```
+Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The **Enter-PSSession** cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were typing directly on the remote computer.
@@ -74,6 +79,9 @@ You can have only one interactive session at a time.
 Typically, you use the *ComputerName* parameter to specify the name of the remote computer.
 However, you can also use a session that you create by using the New-PSSession cmdlet for the interactive session.
 However, you cannot use the Disconnect-PSSession, Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
+
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint. The benefit an SSH based PowerShell remote session is that it works across multiple platforms (Windows, Linux, macOS). For SSH based remoting you use the **HostName** parameter set to specify the remote computer and relevant connection information.
+For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
 
@@ -144,6 +152,20 @@ The second command uses the **Exit-PSSession** cmdlet to end the session.
 You can also use the **Exit** keyword to end the interactive session.
 **Exit-PSSession** and **Exit** have the same effect.
 
+### Example 6: Start an interactive session using SSH
+```
+PS C:\> Enter-PSSession -HostName LinuxServer01 -UserName UserA
+```
+
+This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
+
+### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
+```
+PS C:\> Enter-PSSession -HostName LinuxServer02 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+```
+
+This example shows how to start an interactive session using SSH. It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to authenticate the user on the remote computer.
+
 ## PARAMETERS
 
 ### -AllowRedirection
@@ -209,7 +231,7 @@ The default value is Default.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of the Windows operating system.
 
-For information about the values of this parameter, see the AuthenticationMechanism Enumerationhttp://go.microsoft.com/fwlink/?LinkID=144382 (http://go.microsoft.com/fwlink/?LinkID=144382) in the Microsoft Developer Network (MSDN).
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -394,6 +416,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HostName
+Specifies a computer name for a Secure Shell (SSH) based connection. 
+This is similar to the *ComputerName* parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True
+Accept wildcard characters: False
+```
+
 ### -Id
 Specifies the ID of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
@@ -433,6 +473,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -KeyFilePath
+Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
+
+SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the friendly name of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
@@ -457,6 +516,10 @@ Accept wildcard characters: False
 
 ### -Port
 Specifies the network port on the remote computer that is used for this command.
+
+In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set which supports Secure Shell (SSH) connections.
+
+**WinRM (ComputerName parameter set)**
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
@@ -473,9 +536,13 @@ Do not use the *Port* parameter unless you must.
 The port setting in the command applies to all computers or sessions on which the command runs.
 An alternate port setting might prevent the command from running on all computers.
 
+**SSH (HostName parameter set)**
+To connect to a remote computer, the remote computer must be configured with the SSH service (SSHD) and must be listening on the port that the connection uses.
+The default port for SSH is 22.
+
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName
+Parameter Sets: ComputerName, HostName
 Aliases: 
 
 Required: False
@@ -527,6 +594,48 @@ For more information about session configurations, see about_Session_Configurati
 Type: PSSessionOption
 Parameter Sets: ComputerName, Uri
 Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH). 
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserName
+Specifies the user name for the account used to create a session on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+
+If SSH is configured for basic password authentication then you will be prompted for the user password.
+
+If SSH is configured for key based user authentication then a key file path can be provided via the *KeyFilePath* parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the *KeyFilePath* parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+
+This is not a required parameter.  If no *UserName* parameter is specified then the current log on user name is used for the connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
 
 Required: False
 Position: Named
@@ -637,6 +746,8 @@ The cmdlet does not return any output.
 * **Enter-PSSession** requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these cmdlets are not included in the session configuration on the remote computer, the **Enter-PSSession** commands fails.
 * Unlike Invoke-Command, which parses and interprets the commands before it sends them to the remote computer, **Enter-PSSession** sends the commands directly to the remote computer without interpretation.
 * If the session that you want to enter is busy processing a command, there might be a delay before Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the session is available. To cancel the **Enter-PSSession** command, press `CTRL+C`.
+* The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
+For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 ## RELATED LINKS
 

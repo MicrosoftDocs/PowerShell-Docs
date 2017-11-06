@@ -113,10 +113,20 @@ The fourth command starts a PowerShell process with the RunAs verb.
 The RunAs verb starts the process with permissions of a member of the Administrators group on the computer.
 This is the same as starting Windows PowerShell by using the Run as administrator option.
 
+### Example 7: Specifying arguments to the process
+```
+PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
+PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
+```
+Both commands start the Windows command interpreter, issueing a dir command on the 'Program Files' folder.
+Because this foldername contains a space, the value needs surrounded with escaped quotes.
+Note that the first command specifies a string as ArgumentList. The second command a string array.
+
 ## PARAMETERS
 
 ### -ArgumentList
 Specifies parameters or parameter values to use when this cmdlet starts the process.
+If parameters or parameter values contain a space, they need surrounded with escaped double quotes.
 
 ```yaml
 Type: String[]
@@ -355,7 +365,7 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 Specifies the location of the executable file or document that runs in the process.
-The default is the current folder.
+The default is the folder for the new process.
 
 ```yaml
 Type: String
@@ -384,9 +394,7 @@ This cmdlet generates a **System.Diagnostics.Process** object, if you specify th
 Otherwise, this cmdlet does not return any output.
 
 ## NOTES
-* This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see Process.Start Methodhttp://go.microsoft.com/fwlink/?LinkId=143602 (http://go.microsoft.com/fwlink/?LinkId=143602) in the Microsoft Developer Network (MSDN) library.
-
-*
+* This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
 
 ## RELATED LINKS
 

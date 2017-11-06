@@ -8,6 +8,16 @@ title:  psgallery_status
 
 PowerShell Gallery Status
 =========================
+## 10/10/2017 - PowerShell Gallery unavailable for 2 hours 10/10/17
+
+__Summary of Impact__: The PowerShell Gallery experienced a period of very high latency, resulting in intermittent connection issues, beginning approximately 5pm (PDT) 10/10/17. While resolving the issue, the site was taken offline for 2 hours starting approximately 10pm (PDT). The site was restored shortly before midnight 10/10/2017. 
+ 
+__Root Cause__: The root cause of the high latency is still being investigated.
+
+__Resolution__: The web services had to be taken offline and restored in order to address the primary issue. 
+
+__Next Steps__: The root cause for the original issue is being investigated.
+
 ## 06/01/2017 - Deploy to Azure Automation Currently Unavailable
 
 __Summary of Impact__: Deploying items with dependencies to Azure Automation from the PowerShell Gallery is currently unavailable.  Importing items from the PowerShell Gallery from inside Azure Automation is still available.  
@@ -62,7 +72,7 @@ __Next Steps__: If you used the Contact Us link or sent mail to cgadmin@microsof
 
 __Summary of Impact__: Between 7/11/2016 and 7/13/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -81,7 +91,7 @@ __Next Steps__: Investigate the underlying root cause and developing a solution 
 ## 5/19/2016 - Download Items Failed
 __Summary of Impact__: Between 5/17/2016 and 5/19/2016, a subset of customers experienced issues downloading items from the PowerShell Gallery. The issue likely manifested itself in the following error message returned from Install-Module/Install-Script and Save-Module/Save-Script:
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

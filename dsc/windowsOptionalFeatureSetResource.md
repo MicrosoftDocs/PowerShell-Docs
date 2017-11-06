@@ -22,7 +22,7 @@ Use this resource when you want to configure a number of Windows optional featur
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string[]]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ] 
     [ RemoveFilesOnDisable = [bool] ]  
     [ LogPath = [string] ]
@@ -38,7 +38,7 @@ WindowsOptionalFeature [string] #ResourceName
 |  Property  |  Description   | 
 |---|---| 
 | Name| Indicates the name of the features that you want to ensure are enabled or disabled.| 
-| Ensure| Specifies whether the features are enabled. To ensure that the features are enabled, set this property to "Present" To ensure that the features are disabled, set the property to "Absent".|
+| Ensure| Specifies whether the features are enabled. To ensure that the features are enabled, set this property to "Enable" To ensure that the features are disabled, set the property to "Disable".|
 | Source| Not implemented.|
 | NoWindowsUpdateCheck| Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable features. If $true, DISM does not contact WU.|
 | RemoveFilesOnDisable| Set to **$true** to remove all files associated with the features when they are disabled (that is, when **Ensure** is set to "Absent").|

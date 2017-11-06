@@ -40,12 +40,12 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
 ## DESCRIPTION
 The **Unprotect-CmsMessage** cmdlet decrypts content that has been encrypted by using the Cryptographic Message Syntax (CMS) format.
 
-The CMS cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages, as documented by RFC5652http://tools.ietf.org/html/rfc5652.
+The CMS cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.
 Your public key can be shared widely, and is not sensitive data.
 If any content is encrypted with this public key, only your private key can decrypt it.
-For more information about Public Key Cryptography, see http://en.wikipedia.org/wiki/Public-key_cryptographyhttp://en.wikipedia.org/wiki/Public-key_cryptography.
+For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 **Unprotect-CmsMessage** decrypts content that has been encrypted in CMS format.
 You can run this cmdlet to decrypt content that you have encrypted by running the Protect-CmsMessage cmdlet.

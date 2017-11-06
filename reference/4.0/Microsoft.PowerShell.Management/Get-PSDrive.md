@@ -54,19 +54,18 @@ Name       Provider      Root
 ----       --------      ----
 Alias      Alias
 C          FileSystem    C:\
-cert       Certificate   \
+Cert       Certificate   \
 D          FileSystem    D:\
 Env        Environment
 Function   Function
 HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
-X          FileSystem    X:\
 ```
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
 
 ### Example 2
 ```
@@ -97,18 +96,20 @@ This command gets all of the drives that are supported by the Windows PowerShell
 This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the New-PSDrive cmdlet.
 
 ### Example 4
-```
-PS C:\> if (!(Get-PSDrive X)) {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
-else { Write-Host "The X: drive is already in use." }
+```powershell
+if (Get-PSDrive X -ErrorAction SilentlyContinue) {
+	Write-Host 'The X: drive is already in use.'
+} else {
+	New-PSDrive -Name X -PSProvider Registry -Root HKLM:\SOFTWARE
+}
 ```
 
 This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
-If it is not, the command uses the New-PSDrive cmdlet to create a temporary drive that is mapped to the HKLM:\Network registry key.
+If it is not, the command uses the `New-PSDrive` cmdlet to create a temporary drive that is mapped to the HKLM:\SOFTWARE registry key.
 
 ### Example 5
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
-PS C:\> Get-PSDrive -provider FileSystem
 
 Name       Provider      Root
 ----       --------      ----
@@ -117,6 +118,7 @@ D          FileSystem    D:\
 X          FileSystem    X:\
 Y          FileSystem    \\Server01\Public
 Z          FileSystem    C:\Windows\System32
+
 PS C:\> net use
 New connections will be remembered.
 
@@ -124,7 +126,7 @@ Status       Local     Remote                    Network
 -------------------------------------------------------------------------------
 X:        \\Server01\Public         Microsoft Windows Network
 
-PS C:\> [System.IO.DriveInfo]::getdrives()
+PS C:\> [System.IO.DriveInfo]::GetDrives()
 
 Name               : C:\
 DriveType          : Fixed
@@ -154,7 +156,7 @@ TotalSize          : 36413280256
 RootDirectory      : X:\
 VolumeLabel        : D_Drive
 
-PS C:\> get-wmiobject win32_logicaldisk
+PS C:\> Get-WmiObject Win32_LogicalDisk
 
 DeviceID     : C:
 DriveType    : 3
@@ -175,7 +177,7 @@ FreeSpace    : 36340559872
 Size         : 36413280256
 VolumeName   : D_Drive
 
-PS C:\> get-wmiobject win32_networkconnection
+PS C:\> Get-WmiObject Win32_NetworkConnection
 
 LocalName                     RemoteName
 --------------               ------------

@@ -143,5 +143,5 @@ For instructions, see about_Profiles.
 
 [Get-PSSnapin](Get-PSSnapin.md)
 
-[about_Profiles](about/about_profiles.md)
+[about_Profiles](About/about_profiles.md)
 

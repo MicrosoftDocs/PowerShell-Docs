@@ -33,7 +33,7 @@ For more information, see about_Execution_Policies (http://go.microsoft.com/fwli
 ## EXAMPLES
 
 ### Example 1: Get the current execution policy
-```
+```powershell
 PS C:\> Get-ExecutionPolicy
 Restricted
 ```
@@ -41,7 +41,7 @@ Restricted
 This command gets the current execution policy for the computer.
 
 ### Example 2: Set the execution policy
-```
+```powershell
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
@@ -51,15 +51,19 @@ These commands set a new user preference for the execution policy and then displ
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 
 ### Example 3: Get all execution policies for the current session
-```
+```powershell
 PS C:\> Get-ExecutionPolicy -List
+
 Scope          ExecutionPolicy
 -----          ---------------
 MachinePolicy  Undefined
 UserPolicy     Undefined
 Process        Undefined
 CurrentUser    AllSigned
-LocalMachine   RemoteSigned PS C:\> Get-ExecutionPolicy
+LocalMachine   RemoteSigned 
+
+
+PS C:\> Get-ExecutionPolicy
 AllSigned
 ```
 
@@ -71,7 +75,7 @@ The policies are listed in precedence order.
 The second command gets only the effective execution policy, which is the one set in the CurrentUser scope.
 
 ### Example 4: Prevent a unsigned script from running
-```
+```powershell
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
 

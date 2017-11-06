@@ -58,14 +58,14 @@ PS C:\> 16..24 | ForEach {Invoke-History -Id $_ }
 This command runs commands 16 through 24.
 Because you can list only one ID value, the command uses the ForEach-Object cmdlet to run the **Invoke-History** command one time for each ID value.
 
-### Example 5: Run several commands by using Get-History
+### Example 5
 ```
-PS C:\> Get-History -Id 255 -Count 7 | Invoke-History
+PS C:\> Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
 ```
 
-This command runs the 7 commands in the history that end with command 255, typically 249 through 255.
+This command runs the 7 commands in the history that end with command 255 (typically 249 through 255).
 It uses the Get-History cmdlet to retrieve the commands.
-The pipeline operator (|) passes the commands to **Invoke-History**, which runs them.
+Because you can list only one ID value, the command uses the ForEach-Object cmdlet to run the **Invoke-History** command once for each ID value.
 
 ## PARAMETERS
 

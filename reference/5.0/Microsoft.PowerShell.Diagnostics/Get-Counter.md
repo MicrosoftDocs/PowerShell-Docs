@@ -376,7 +376,7 @@ The default is 1 sample.
 To get samples continuously, use the *Continuous* parameter.
 
 To collect a very large data set, consider running a **Get-Counter** cmdlet as a Windows PowerShelll background job.
-For more information, see about_Jobsand the Start-Job.
+For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and the Start-Job.
 
 ```yaml
 Type: Int64

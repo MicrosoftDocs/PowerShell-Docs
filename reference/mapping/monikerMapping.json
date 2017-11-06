@@ -1,0 +1,118 @@
+{
+    "powershell-3.0": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "conceptualTocUrl": "/powershell/scripting/powershell-3.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
+        "packageRoot": "3.0",
+        "modules": {
+            "ISE": {},
+            "Microsoft.PowerShell.Core": {},
+            "Microsoft.PowerShell.Diagnostics":{},
+            "Microsoft.PowerShell.Host":{},
+            "Microsoft.PowerShell.Management":{},
+            "Microsoft.PowerShell.Security":{},
+            "Microsoft.PowerShell.Utility":{},
+            "Microsoft.WsMan.Management":{},
+            "PSScheduledJob":{},
+            "PSWorkflow":{},
+            "PSWorkflowUtility":{}
+        }
+    },
+    "powershell-4.0": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "packageRoot": "4.0",
+        "conceptualTocUrl": "/powershell/scripting/powershell-4.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
+        "modules": {
+            "ISE": {},
+            "Microsoft.PowerShell.Core": {},
+            "Microsoft.PowerShell.Diagnostics":{},
+            "Microsoft.PowerShell.Host":{},
+            "Microsoft.PowerShell.Management":{},
+            "Microsoft.PowerShell.Security":{},
+            "Microsoft.PowerShell.Utility":{},
+            "Microsoft.WsMan.Management":{},
+            "PSDesiredStateConfiguration":{},
+            "PSScheduledJob":{},
+            "PSWorkflow":{},
+            "PSWorkflowUtility":{}
+        }
+    },
+    "powershell-5.0": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "packageRoot": "5.0",
+        "conceptualTocUrl": "/powershell/scripting/powershell-5.0/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
+        "modules": {
+            "ISE": {},
+            "Microsoft.PowerShell.Archive": {},
+            "Microsoft.PowerShell.Core": {},
+            "Microsoft.PowerShell.Diagnostics":{},
+            "Microsoft.PowerShell.Host":{},
+            "Microsoft.PowerShell.Management":{},
+            "Microsoft.PowerShell.ODataUtils":{},
+            "Microsoft.PowerShell.Security":{},
+            "Microsoft.PowerShell.Utility":{},
+            "Microsoft.WsMan.Management":{},
+            "PSDesiredStateConfiguration":{},
+            "PSReadline":{},
+            "PSScheduledJob":{},
+            "PSWorkflow":{},
+            "PSWorkflowUtility":{},
+            "PackageManagement":{},
+            "PowershellGet":{}
+        }
+    },
+    "powershell-5.1": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "packageRoot": "5.1",
+        "conceptualTocUrl": "/powershell/scripting/powershell-5.1/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
+        "modules": {
+            "ISE": {},
+            "Microsoft.PowerShell.Archive": {},
+            "Microsoft.PowerShell.Core": {},
+            "Microsoft.PowerShell.Diagnostics":{},
+            "Microsoft.PowerShell.Host":{},
+            "Microsoft.PowerShell.LocalAccounts":{},
+            "Microsoft.PowerShell.Management":{},
+            "Microsoft.PowerShell.ODataUtils":{},
+            "Microsoft.PowerShell.Operation.Validation":{},
+            "Microsoft.PowerShell.Security":{},
+            "Microsoft.PowerShell.Utility":{},
+            "Microsoft.WsMan.Management":{},
+            "PSDesiredStateConfiguration":{},
+            "PSReadline":{},
+            "PSScheduledJob":{},
+            "PSWorkflow":{},
+            "PSWorkflowUtility":{},
+            "PackageManagement":{},
+            "PowershellGet":{}
+        }
+    },
+    "powershell-6": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "packageRoot": "6",
+        "conceptualTocUrl": "/powershell/scripting/powershell-6/toc.json",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
+        "modules": {
+            "CimCmdlets": {},
+            "Microsoft.PowerShell.Archive": {},
+            "Microsoft.PowerShell.Core": {},
+            "Microsoft.PowerShell.Diagnostics":{},
+            "Microsoft.PowerShell.Host":{},
+            "Microsoft.PowerShell.LocalAccounts":{},
+            "Microsoft.PowerShell.Management":{},
+            "Microsoft.PowerShell.Security":{},
+            "Microsoft.PowerShell.Utility":{},
+            "Microsoft.WSMan.Management":{},
+            "PSDesiredStateConfiguration":{},
+            "PSDiagnostics":{},
+            "PSReadLine":{},
+            "PackageManagement":{},
+            "Pester":{},
+            "PowerShellGet":{}
+
+        }
+    }
+}

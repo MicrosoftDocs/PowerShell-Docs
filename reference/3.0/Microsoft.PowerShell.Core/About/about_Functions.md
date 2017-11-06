@@ -154,31 +154,39 @@ has a $size parameter. The function displays all the files that are
 smaller than the value of the $size parameter, and it excludes
 directories:
 
+```powershell
 function Get-SmallFiles {
-param ($size)
-Get-ChildItem c:\ | where {$.Length -lt $Size -and !$.PSIsContainer}
+	Param($Size)
+	Get-ChildItem $HOME | where { $_.Length -lt $Size -and !$_.PSIsContainer }
 }
+```
 
 In the function, you can use the $size variable, which is the name
 defined for the parameter.
 
 To use this function, type the following command:
 
-C:\PS> function Get-SmallFiles -Size 50
+```powershell
+Get-SmallFiles -Size 50
+```
 
 You can also enter a value for a named parameter without the parameter
 name. For example, the following command gives the same result as a
 command that names the Size parameter:
 
-C:\PS> function Get-SmallFiles 50
+```powershell
+Get-SmallFiles 50
+```
 
 To define a default value for a parameter, type an equal sign and the
 value after the parameter name, as shown in the following variation of
 the Get-SmallFiles example:
 
-function Get-SmallFiles ($size = 100) {
-Get-ChildItem c:\ | where {$.Length -lt $Size -and !$.PSIsContainer}
+```powershell
+function Get-SmallFiles ($Size = 100) {
+	Get-ChildItem $HOME | where { $_.Length -lt $Size -and !$_.PSIsContainer }
 }
+```
 
 If you type "Get-SmallFiles" without a value, the function assigns 100 to
 $size. If you provide a value, the function uses that value.
@@ -472,7 +480,7 @@ for the function return only auto-generated help.
 
 For more information about the ExternalHelp keyword, see
 about_Comment_Based_Help. For more information about
-XML-based help, see "How to Write Cmdlet Help" in MSDN.
+XML-based help, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 # SEE ALSO
 

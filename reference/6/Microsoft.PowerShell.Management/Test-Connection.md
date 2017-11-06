@@ -20,7 +20,7 @@ Sends ICMP echo request packets ("pings") to one or more computers.
 Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
  [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
  [-Impersonation <ImpersonationLevel>] [-ThrottleLimit <Int32>] [-TimeToLive <Int32>] [-Delay <Int32>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Source
@@ -28,8 +28,7 @@ Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuth
 Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
  [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
  [-Credential <PSCredential>] [-Source] <String[]> [-Impersonation <ImpersonationLevel>]
- [-ThrottleLimit <Int32>] [-TimeToLive <Int32>] [-Delay <Int32>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-ThrottleLimit <Int32>] [-TimeToLive <Int32>] [-Delay <Int32>] [<CommonParameters>]
 ```
 
 ### Quiet
@@ -37,7 +36,7 @@ Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuth
 Test-Connection [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
  [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
  [-Impersonation <ImpersonationLevel>] [-TimeToLive <Int32>] [-Delay <Int32>] [-Quiet]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,7 +139,7 @@ You can continue to work in the session while the job finishes.
 The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
 To get the job results, use the Receive-Job cmdlet.
 
-For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -270,41 +269,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-Note: To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of Windows, you must open Windows PowerShell with the "Run as administrator" option. For more information, see about_Remote_Requirements.
-
-When you use the AsJob parameter, the command immediately returns an object that represents the background job. You can continue to work in the session while the job completes. The job is created on the local computer and the results from remote computers are automatically returned to the local computer. To get the job results, use the Receive-Job cmdlet.
-
-For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Note: To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of Windows, you must open Windows PowerShell with the "Run as administrator" option. For more information, see about_Remote_Requirements.
-
-When you use the AsJob parameter, the command immediately returns an object that represents the background job. You can continue to work in the session while the job completes. The job is created on the local computer and the results from remote computers are automatically returned to the local computer. To get the job results, use the Receive-Job cmdlet.
-
-For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Quiet
 Indicates that this cmdlet suppresses all errors.
 If any pings succeed, this cmdlet returns $True.
@@ -399,7 +363,7 @@ Same as the previous command
 
 The default value is Packet.
 
-For more information about the values of this parameter, see AuthenticationLevel Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235229 (http://go.microsoft.com/fwlink/?LinkID=235229) in the Microsoft Developer Library (MSDN).
+For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
 
 ```yaml
 Type: AuthenticationLevel
@@ -442,7 +406,7 @@ The acceptable values for this parameter are:
 
 The default value is Default.
 
-For more information about the values of this parameter, see AuthenticationMechanism Enumerationhttp://go.microsoft.com/fwlink/?LinkID=235230 (http://go.microsoft.com/fwlink/?LinkID=235230) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

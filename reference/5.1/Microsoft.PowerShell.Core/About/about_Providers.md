@@ -38,25 +38,18 @@ the provider data.
 Windows PowerShell includes a set of built-in providers that you can use
 to access the different types of data stores.
 
-Provider      Drive         Data store
---------      -----         ----------
-Alias         Alias:        Windows PowerShell aliases
+| Provider    | Drive        | Data store                                 |
+| ----------- | ------------ | ------------------------------------------ |
+| Alias       | Alias:       | Windows PowerShell aliases                 |
+| Certificate | Cert:        | x509 certificates for digital signatures   |
+| Environment | Env:         | Windows environment variables              |
+| FileSystem  | (*)          | File system drives, directories, and files |
+| Function    | Function:    | Windows PowerShell functions               |
+| Registry    | HKLM:, HKCU: | Windows registry                           |
+| Variable    | Variable:    | Windows PowerShell variables               |
+| WSMan       | WSMan:       | WS-Management configuration information    |
 
-Certificate   Cert:         x509 certificates for digital signatures
-
-Environment   Env:          Windows environment variables
-
-FileSystem    *             File system drives, directories, and files
-
-Function      Function:     Windows PowerShell functions
-
-Registry      HKLM:, HKCU:  Windows registry
-
-Variable      Variable:     Windows PowerShell variables
-
-WSMan         WSMan:        WS-Management configuration information
-
-* The FileSystem drives vary on each system.
+(*) The FileSystem drives vary on each system.
 
 You can also create your own Windows PowerShell providers, and you can
 install providers that others develop. To list the providers that are
@@ -67,7 +60,7 @@ Get-PSProvider
 # INSTALLING AND REMOVING PROVIDERS
 
 Windows PowerShell providers are delivered to you in Windows PowerShell
-snap-ins, which are .NET Framework-based programs that are compiled
+modules, which are .NET Framework-based programs that are compiled
 into .dll files. The snap-ins can include providers and cmdlets.
 
 Before you use the provider features, you have to install the snap-in and

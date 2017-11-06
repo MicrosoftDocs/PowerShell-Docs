@@ -3,12 +3,15 @@
         "content": [
             {
                 "files": [
-                    "**/**.md"
+                    "**/**.md",
+                    "**/**.yml"
                 ],
                 "exclude": ["**/obj/**"]
             }
         ],
         "globalMetadata": {
+            "breadcrumb_path": "bread/toc.json",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "jea",

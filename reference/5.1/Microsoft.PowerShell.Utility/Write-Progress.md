@@ -41,7 +41,7 @@ The **Write-Progress** command includes a status bar heading ("activity"), a sta
 PS C:\> for($I = 1; $I -lt 101; $I++ )
 {Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop; `
 PS C:\> for($j = 1; $j -lt 101; $j++ )
-{Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop} }
+{Write-Progress -Id 1 -Activity Updating -Status 'Progress' -PercentComplete $j -CurrentOperation InnerLoop} }
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo] 
@@ -244,9 +244,7 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 * If the progress bar does not appear, check the value of the $ProgressPreference variable. If the value is set to SilentlyContinue, the progress bar is not displayed. For more information about Windows PowerShell preferences, see about_Preference_Variables.
 
-  
-
-* The parameters of the cmdlet correspond to the properties of the ProgressRecord class (**System.Management.Automation.ProgressRecord**). For more information, see ProgressRecordhttps://msdn.microsoft.com/en-us/library/system.management.automation.progressrecord(v=vs.85).aspx (https://msdn.microsoft.com/en-us/library/system.management.automation.progressrecord(v=vs.85).aspx ) in the Windows PowerShell Software Development Kit (SDK).
+* The parameters of the cmdlet correspond to the properties of the ProgressRecord class (**System.Management.Automation.ProgressRecord**). For more information, see [ProgressRecord Class](https://msdn.microsoft.com/library/system.management.automation.progressrecord) in the MSDN library.
 
 ## RELATED LINKS
 

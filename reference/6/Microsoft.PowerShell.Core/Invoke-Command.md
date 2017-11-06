@@ -114,6 +114,32 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
  [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
 ```
 
+### HostName
+```
+Invoke-Command -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>] [-AsJob] 
+[-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] 
+[-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
+### FilePathHostName
+```
+Invoke-Command -FilePath <string> -HostName <string[]> [-Port <int>] [-AsJob] [-HideComputerName] 
+[-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] [-InputObject <psobject>] 
+[-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
+### SSHConnection
+```
+Invoke-Command -ScriptBlock <scriptblock> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName] 
+[-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
+### FilePathSSHConnection
+```
+Invoke-Command -FilePath <string> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName] 
+[-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The **Invoke-Command** cmdlet runs commands on a local or remote computer and returns all output from the commands, including errors.
 By using a single **Invoke-Command** command, you can run commands on multiple computers.
@@ -130,6 +156,8 @@ To start an interactive session with a remote computer, use the Enter-PSSession 
 To establish a persistent connection to a remote computer, use the **New-PSSession** cmdlet.
 
 Before using **Invoke-Command** to run commands on a remote computer, read about_Remote (http://go.microsoft.com/fwlink/?LinkID=135182).
+
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 ## EXAMPLES
 
@@ -401,13 +429,13 @@ As a result, if the remote computer specified by *ConnectionURI* returns a redir
 
 ### Example 14: Use a session option
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck
-PS C:\> Invoke-Command -Session $s -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
+PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a *SessionOption* parameter.
 
-The first command uses the **New-PSSessionOption** cmdlet to create a session option.
+The first command uses the **New-PSSessionOption** cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Cannonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
 It saves the resulting SessionOption object in the $so parameter.
 
 The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix command remotely.
@@ -460,6 +488,28 @@ The value of the *FilePath* parameter is the script that **Invoke-Command** runs
 The value of* SessionOption* is a hash table that sets the value of the **OutputBufferingMode** option to Drop and the value of the **IdleTimeout** option to 43200000 milliseconds (12 hours).
 
 To get the results of commands and scripts that run in disconnected sessions, use the Receive-PSSession cmdlet.
+
+### Example 17: Run a command on a remote computer using SSH
+```
+PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } 
+```
+
+This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
+
+### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
+```
+PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+```
+
+This example shows how to run a command on a remote computer using SSH and specifying a key file for user authentication. You will not get a password prompt unless the key authentication fails and the remote computer is configured to allow basic password authentication.
+
+### Example 19: Run a script file on multiple remote computers using SSH as a job
+```
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
+```
+
+This example shows how to run a script file on multiple remote computers using SSH and the **SSHConnection** parameter set. The SSHConnection parameter takes an array of hash tables that contain connection information for each computer. Note that this example requires that the target remote computers have SSH configured to support key based user authentication.
 
 ## PARAMETERS
 
@@ -549,11 +599,11 @@ To get the job results, use the Receive-Job cmdlet.
 The *AsJob* parameter resembles using the **Invoke-Command** cmdlet to run a Start-Job command remotely.
 However, with *AsJob*, the job is created on the local computer, even though the job runs on a remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName, FilePathHostName, SSHConnection, FilePathSSHConnection
 Aliases: 
 
 Required: False
@@ -579,7 +629,7 @@ The default value is Default.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of the Windows operating system.
 
-For information about the values of this parameter, see the description of the AuthenticationMechanism Enumerationhttp://go.microsoft.com/fwlink/?LinkID=144382 (http://go.microsoft.com/fwlink/?LinkID=144382) in the Microsoft Developer Network (MSDN) library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -780,7 +830,7 @@ When you use this parameter, Windows PowerShell converts the contents of the spe
 
 ```yaml
 Type: String
-Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId
+Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId, FilePathHostName, FilePathSSHConnection
 Aliases: PSPath
 
 Required: True
@@ -799,7 +849,7 @@ It does not change the object.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName, FilePathHostName, SSHConnection, FilePathSSHConnection
 Aliases: HCN
 
 Required: False
@@ -869,7 +919,7 @@ By default, jobs are named Job\<n\>, where \<n\> is an ordinal number.
 
 If you use the *JobName* parameter in a command, the command is run as a job, and **Invoke-Command** returns a job object, even if you do not include *AsJob* in the command.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251).
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
 
 ```yaml
 Type: String
@@ -921,7 +971,7 @@ An alternate port setting might prevent the command from running on all computer
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, HostName, FilePathHostName
 Aliases: 
 
 Required: False
@@ -941,7 +991,7 @@ To include local variables in the command, use *ArgumentList*.
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: InProcess, Session, ComputerName, Uri, VMId, VMName, ContainerId
+Parameter Sets: InProcess, Session, ComputerName, Uri, VMId, VMName, ContainerId, HostName, SSHConnection
 Aliases: Command
 
 Required: True
@@ -1116,6 +1166,105 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -HostName
+Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String[]
+Parameter Sets: HostName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyFilePath
+Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
+
+SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH).
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserName
+Specifies the user name for the account used to run a command on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+
+If SSH is configured for basic password authentication then you will be prompted for the user password.
+
+If SSH is configured for key based user authentication then a key file path can be provided via the KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the KeyFilePath parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+
+This is not a required parameter. If no UserName parameter is specified then the current log on user name is used for the connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHConnection
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
+
+The hashtable connection parameters are the same as defined for the HostName parameter set.
+
+The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: hashtable
+Parameter Sets: SSHConnection
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -1155,9 +1304,11 @@ To determine whether you can connect or reconnect to the session, use the **Avai
   An **Availability** value of None indicates that you can connect to the session.
 A value of Busy indicates that you cannot connect to the PSSession because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see RunspaceState Enumerationhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspacestate(v=VS.85).aspx) in the MSDN library.
+  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see RunspaceAvailability Enumerationhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.runspaceavailability(v=vs.85).aspx) in MSDN.
+  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+
+* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 ## RELATED LINKS
 

@@ -7,36 +7,27 @@ title:  about_Comparison_Operators
 ---
 
 # About Comparison Operators
-## about_Comparison_Operators
 
-### SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
-Describes the operators that compare values in Windows PowerShell.
+Describes the operators that compare values in PowerShell.
 
-### LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Comparison operators let you specify conditions for comparing values and
 finding values that match specified patterns. To use a comparison operator,
 specify the values that you want to compare together with an operator that
 separates these values.
 
-Windows PowerShell includes the following comparison operators:
+PowerShell includes the following comparison operators:
 
-* `-eq`  
-* `-ne` 
-* `-gt` 
-* `-ge` 
-* `-lt` 
-* `-le`
-* `-like`
-* `-notlike`
-* `-match`
-* `-notmatch` 
-* `-contains`
-* `-notcontains`
-* `-in`
-* `-notin`
-* `-replace`
+|Operator Type|Operators|Description|
+|---|---|---|
+|Equality|`-eq`<BR>`-ne`<BR>`-gt`<BR>`-ge`<BR>`-lt`<BR>`-le`|equals<BR>not equals<BR>greater than<BR>greater than or equal<BR>less than<BR>less than or equal|
+|Matching|`-like`<BR>`-notlike`<BR>`-match`<BR>`-notmatch`|Returns true when string matches wildcard pattern<BR>Returns true when string does not match wildcard pattern<BR>Returns true when string matches regex pattern - $matches contains matching strings<BR>Returns true when string does not match regex pattern - $matches contains matching strings|
+|Containment|`-contains`<BR>`-notcontains`<BR>`-in`<BR>`-notin`|Returns true when reference value contained in a collection<BR> Returns true when reference value not contained in a collection<BR> Returns true when test value contained in a collection<BR>Returns true when test value not contained in a collection|
+|Replacement|`-replace`|replace a string pattern|
+|Type comparison|`-is`<BR>`-isnot`|Returns true if both object are the same type<BR>Returns true if the objects are not the same type|
 
 By default, all comparison operators are case-insensitive. To make a
 comparison operator case-sensitive, precede the operator name with a `c`.
@@ -46,20 +37,34 @@ the explicitly case-insensitive version of `-eq` is `-ieq`.
 
 When the input to an operator is a scalar value, comparison operators
 return a Boolean value. When the input is a collection of values, the
-comparison operators return any matching values. If there are no matches
-in a collection, comparison operators do not return anything.
+comparison operators return any matching values. If there are no matches in
+a collection, comparison operators do not return anything.
 
 The exceptions are the containment operators (`-contains`, `-notcontains`),
-the In operators (`-in`, `-notin`), and the type operators (`-is`, `-isnot`),
-which always return a Boolean value.
+the In operators (`-in`, `-notin`), and the type operators (`-is`,
+`-isnot`), which always return a Boolean value.
 
-Windows PowerShell supports the following comparison operators.
-
-#### -eq  
-Description: Equal to. Includes an identical value.  
+### Equality Operators
+The equality operators (`-eq`, `-ne`) return a value of TRUE or the matches
+when one or more of the input values is identical to the specified
+pattern. The entire pattern must match an entire value.
 
 Example:
-```PowerShell
+
+#### -eq
+Description: Equal to. Includes an identical value.
+
+Example:
+
+```powershell
+C:PS> 2 -eq 2
+True
+
+C:PS> 2 -eq 3
+False
+
+C:PS> 1,2,3 -eq 2
+2
 PS C:\> "abc" -eq "abc"
 True
 
@@ -71,10 +76,11 @@ abc
 ```
 
 #### -ne
-Description: Not equal to. Includes a different value.  
+
+Description: Not equal to. Includes a different value.
 
 Example:
-```PowerShell
+```powershell
 PS C:\> "abc" -ne "def"
 True
 
@@ -89,11 +95,12 @@ def
 ```
 
 #### -gt
-Description: Greater-than.  
+
+Description: Greater-than.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 8 -gt 6
 True
 
@@ -101,12 +108,13 @@ PS C:\> 7, 8, 9 -gt 8
 9
 ```
 
-#### -ge  
-Description: Greater-than or equal to.  
+#### -ge
+
+Description: Greater-than or equal to.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 8 -ge 8
 True
 
@@ -115,12 +123,13 @@ PS C:\> 7, 8, 9 -ge 8
 9
 ```
 
-#### -lt 
-Description: Less-than.  
+#### -lt
+
+Description: Less-than.
 
 Example:
 
-```PowerShell
+```powershell
 
 PS C:\> 8 -lt 6
 False
@@ -129,12 +138,13 @@ PS C:\> 7, 8, 9 -lt 8
 7
 ```
 
-#### -le  
-Description: Less-than or equal to.  
+#### -le
+
+Description: Less-than or equal to.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> 6 -le 8
 True
 
@@ -143,60 +153,131 @@ PS C:\> 7, 8, 9 -le 8
 8
 ```
 
-#### -like  
+### Matching Operators
+
+The like operators (`-like` and `-notlike`) find elements that match or
+do not match a specified pattern using wildcard expressions.
+
+The syntax is:
+
+```powershell
+<string[]> -like <wildcard-expression>
+<string[]> -notlike <wildcard-expression>
+```
+
+The match operators (`-match` and `-notmatch`) find elements that match or
+do not match a specified pattern using regular expressions.
+
+The match operators populate the `$Matches` automatic variable when the
+input (the left-side argument) to the operator is a single scalar object.
+When the input is scalar, the `-match` and `-notmatch` operators return a
+Boolean value and set the value of the `$Matches` automatic variable to the
+matched components of the argument.
+
+The syntax is:
+
+```powershell
+<string[]> -match <regular-expression>
+<string[]> -notmatch <regular-expression>
+```
+
+#### -like
+
 Description: Match using the wildcard character (\*).
 
 Example:
 
-```PowerShell
-PS C:\> "Windows PowerShell" -like "*shell"
+```powershell
+PS C:\> "PowerShell" -like "*shell"
 True
 
-PS C:\> "Windows PowerShell", "Server" -like "*shell"
-Windows PowerShell
+PS C:\> "PowerShell", "Server" -like "*shell"
+PowerShell
 ```
 
-#### -notlike  
-Description: Does not match using the wildcard character (\*).  
+#### -notlike
+
+Description: Does not match using the wildcard character (\*).
 
 Example:
 
-```PowerShell
-PS C:\> "Windows PowerShell" -notlike "*shell"
+```powershell
+PS C:\> "PowerShell" -notlike "*shell"
 False
 
-PS C:\> "Windows PowerShell", "Server" -notlike "*shell"
+PS C:\> "PowerShell", "Server" -notlike "*shell"
 Server
 ```
 
-#### -match
-Description: Matches a string using regular expressions.
-When the input is scalar, it populates the
-`$Matches` automatic variable.  
+### -match
 
-Example:
+Description: Matches a string using regular expressions. When the input is
+scalar, it populates the `$Matches` automatic variable.
 
-```PowerShell
+The match operators search only in strings. They cannot search in arrays of
+integers or other objects.
+
+If the input is a collection, the `-match` and `-notmatch` operators return
+the matching members of that collection, but the operator does not populate
+the `$Matches` variable.
+
+For example, the following command submits a collection of strings to the
+`-match` operator. The `-match` operator returns the items in the
+collection that match. It does not populate the `$Matches` automatic
+variable.
+
+```powershell
+PS C:\> "Sunday", "Monday", "Tuesday" -match "sun"
+Sunday
+
+PS C:\> $matches
+PS C:\>
+```
+
+In contrast, the following command submits a single string to the `-match`
+operator. The `-match` operator returns a Boolean value and populates the
+`$Matches` automatic variable.
+
+```powershell
 PS C:\> "Sunday" -match "sun"
 True
 
 PS C:\> $matches
-Name Value
----- -----
-0    Sun
 
-PS C:\> "Sunday", "Monday" -match "sun"
-Sunday
+Name                           Value
+----                           -----
+0                              Sun
 ```
 
-#### -notmatch  
-Description: Does not match a string. Uses regular expressions.
-When the input is scalar, it populates the `$Matches`
-automatic variable.  
+The `-notmatch` operator populates the `$Matches` automatic variable when
+the input is scalar and the result is False, that it, when it detects a
+match.
+
+```powershell
+PS C:\> "Sunday" -notmatch "rain"
+True
+
+PS C:\> $matches
+PS C:\>
+
+PS C:\> "Sunday" -notmatch "day"
+False
+
+PS C:\> $matches
+
+Name                           Value
+----                           -----
+0                              day
+```
+
+#### -notmatch
+
+Description: Does not match a string. Uses regular expressions. When the
+input is scalar, it populates the `$Matches` automatic variable.
 
 Example:
 
-```PowerShell
+```powershell
 PS C:\> "Sunday" -notmatch "sun"
 False
 
@@ -209,69 +290,86 @@ PS C:\> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-#### -contains  
+### Containment Operators
+
+The containment operators (`-contains` and `-notcontains`) are similar to
+the equality operators. However, the containment operators always return a
+Boolean value, even when the input is a collection.
+
+Also, unlike the equality operators, the containment operators return a
+value as soon as they detect the first match. The equality operators
+evaluate all input and then return all the matches in the collection.
+
+#### -contains
+
 Description: Containment operator. Tells whether a collection of reference
-values includes a single test value. Always returns a Boolean value. Returns TRUE
-only when the test value exactly matches at least one of the reference values.
+values includes a single test value. Always returns a Boolean value.
+Returns TRUE only when the test value exactly matches at least one of the
+reference values.
 
 When the test value is a collection, the Contains operator uses reference
 equality. It returns TRUE only when one of the reference values is the same
 instance of the test value object.
 
-Syntax:  
-\<Reference-values> `-contains` \<Test-value>
-
-Examples:  
-
-```PowerShell
-PS C:\> "abc", "def" -contains "def"  
-True
-
-PS C:\> "Windows", "PowerShell" -contains "Shell"  
-False  #Not an exact match
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS C:\> $DomainServers -contains $thisComputer  
-True
-
-PS C:\> "abc", "def", "ghi" -contains "abc", "def"  
-False
-
-PS C:\> $a = "abc", "def"  
-PS C:\> "abc", "def", "ghi" -contains $a  
-False  
-PS C:\> $a, "ghi" -contains $a  
-True
-``` 
-
-#### -notcontains  
-Description: Containment operator. Tells whether a collection of reference
-values includes a single test value. Always returns a Boolean value. Returns
-TRUE when the test value is not an exact matches for at least one of the reference
-values.
-
-When the test value is a collection, the NotContains operator uses reference
-equality.
+In a very large collection, the `-contains` operator returns results
+quicker than the equal to operator.
 
 Syntax:
-\<Reference-values> `-notcontains` \<Test-value>
+
+`<Reference-values> -contains <Test-value>`
 
 Examples:
 
-```PowerShell
+```powershell
+PS C:\> "abc", "def" -contains "def"
+True
+
+PS C:\> "Windows", "PowerShell" -contains "Shell"
+False  #Not an exact match
+
+# Does the list of computers in $DomainServers include $ThisComputer?
+PS C:\> $DomainServers -contains $thisComputer
+True
+
+PS C:\> "abc", "def", "ghi" -contains "abc", "def"
+False
+
+PS C:\> $a = "abc", "def"
+PS C:\> "abc", "def", "ghi" -contains $a
+False
+PS C:\> $a, "ghi" -contains $a
+True
+```
+
+#### -notcontains
+
+Description: Containment operator. Tells whether a collection of reference
+values includes a single test value. Always returns a Boolean value.
+Returns TRUE when the test value is not an exact matches for at least one
+of the reference values.
+
+When the test value is a collection, the NotContains operator uses
+reference equality.
+
+Syntax:
+
+`<Reference-values> -notcontains <Test-value>`
+
+Examples:
+
+```powershell
 PS C:\> "Windows", "PowerShell" -notcontains "Shell"
 True  #Not an exact match
 
 # Get cmdlet parameters, but exclude common parameters
 function get-parms ($cmdlet)
 {
-$Common = "Verbose", "Debug", "WarningAction", "WarningVariable", `
-"ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
+    $Common = "Verbose", "Debug", "WarningAction", "WarningVariable", "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
 
-$allparms = (Get-Command $Cmdlet).parametersets | foreach {$_.Parameters} | `
-foreach {$_.Name} | Sort-Object | Get-Unique
+    $allparms = (Get-Command $Cmdlet).parametersets | foreach {$_.Parameters} |
+      foreach {$_.Name} | Sort-Object | Get-Unique
 
-$allparms | where {$Common -notcontains $_ }
+    $allparms | where {$Common -notcontains $_ }
 }
 
 # Find unapproved verbs in the functions in my module
@@ -284,23 +382,26 @@ Tee
 Where
 ```
 
-#### -in  
-Description: In operator. Tells whether a test value appears in a collection
-of reference values. Always return as Boolean value. Returns TRUE only when
-the test value exactly matches at least one of the reference values.
+#### -in
 
-When the test value is a collection, the In operator uses reference equality.
-It returns TRUE only when one of the reference values is the same
+Description: In operator. Tells whether a test value appears in a
+collection of reference values. Always return as Boolean value. Returns
+TRUE only when the test value exactly matches at least one of the reference
+values.
+
+When the test value is a collection, the In operator uses reference
+equality. It returns TRUE only when one of the reference values is the same
 instance of the test value object.
 
-The `-in` operator was introduced in Windows PowerShell 3.0.
+The `-in` operator was introduced in PowerShell 3.0.
 
 Syntax:
-\<Test-value> `-in` \<Reference-values>
 
-Examples:  
+`<Test-value> -in <Reference-values>`
 
-```PowerShell
+Examples:
+
+```powershell
 PS C:\> "def" -in "abc", "def"
 True
 
@@ -321,23 +422,26 @@ True  #Using reference equality
 PS C:\> $thisComputer -in  $domainServers
 True
 ```
-#### -notin  
-Description: Tells whether a test value appears in a collection
-of reference values. Always returns a Boolean value. Returns TRUE when the test
-value is not an exact match for at least one of the reference values.
 
-When the test value is a collection, the In operator uses reference equality.
-It returns TRUE only when one of the reference values is the same
+#### -notin
+
+Description: Tells whether a test value appears in a collection of
+reference values. Always returns a Boolean value. Returns TRUE when the
+test value is not an exact match for at least one of the reference values.
+
+When the test value is a collection, the In operator uses reference
+equality. It returns TRUE only when one of the reference values is the same
 instance of the test value object.
 
-The `-notin` operator was introduced in Windows PowerShell 3.0.
+The `-notin` operator was introduced in PowerShell 3.0.
 
 Syntax:
-\<Test-value> -notin \<Reference-values>
+
+`<Test-value> -notin \<Reference-values>`
 
 Examples:
 
-```PowerShell
+```powershell
 PS C:\> "def" -notin "abc", "def"
 False
 
@@ -361,355 +465,83 @@ Tee
 Where
 ```
 
-#### -replace  
-Description: Replace operator. Changes the specified elements of a value.
+### Replacement Operator
 
-Example:
-
-```PowerShell
-PS C:\> "Get-Process" -replace "Get", "Stop"
-Stop-Process
-
-# Change all .GIF file name extension to .JPG
-PS C:\> dir *.gif | foreach {$_ -replace ".gif", ".jpg"}
-```
-
-**Equality Operators**
-The equality operators (`-eq`, `-ne`) return a value of TRUE or the matches
-when one or more of the input values is identical to the specified
-pattern. The entire pattern must match an entire value.
-
-Example:
-
-```PowerShell
-C:PS> 2 -eq 2
-True
-
-C:PS> 2 -eq 3
-False
-
-C:PS> 1,2,3 -eq 2
-2
-
-C:PS> "PowerShell" -eq "Shell"
-False
-
-C:PS> "Windows", "PowerShell" -eq "Shell"
-C:PS>
-
-PS C:\> "abc", "def", "123" -eq "def"
-def
-
-PS C:\> "abc", "def", "123" -ne "def"
-abc
-123
-```
-
-
-### Containment Operators  
-The containment operators (`-contains` and `-notcontains`) are similar to the
-equality operators. However, the containment operators always return a
-Boolean value, even when the input is a collection.
-
-Also, unlike the equality operators, the containment operators return a
-value as soon as they detect the first match. The equality operators
-evaluate all input and then return all the matches in the collection.
-
-The following examples show the effect of the `-contains` operator:
-
-```PowerShell
-PS C:\> 1,2,3 -contains 2
-True
-
-PS C:\> "PowerShell" -contains "Shell"
-False
-
-PS C:\> "Windows", "PowerShell" -contains "Shell"
-False
-
-PS C:\> "abc", "def", "123" -contains "def"
-True
-
-PS C:\> "true", "blue", "six" -contains "true"
-True
-```
-
-The following example shows how the containment operators differ from the
-equal to operator. The containment operators return a value of TRUE on the
-first match.
-
-```PowerShell
-PS C:\> 1,2,3,4,5,4,3,2,1 -eq 2
-2
-2
-
-PS C:\> 1,2,3,4,5,4,3,2,1 -contains 2
-True
-```
-In a very large collection, the `-contains` operator returns results
-quicker than the equal to operator.
-
-### Match Operators
-The match operators (`-match` and `-notmatch`) find elements that match or
-do not match a specified pattern using regular expressions.
-
-The syntax is:
-
-\<string[]> `-match` \<regular-expression>
-\<string[]> `-notmatch` \<regular-expression>
-
-The following examples show some uses of the `-match` operator:
-
-```PowerShell
-PS C:\> "Windows", "PowerShell" -match ".shell"
-PowerShell
-
-PS C:\> (Get-Command Get-Member -Syntax) -match "-view"
-True
-
-PS C:\> (Get-Command Get-Member -Syntax) -notmatch "-path"
-True
-
-PS C:\> (Get-Content Servers.txt) -match "^Server\d\d"
-Server01
-Server02
-```
-The match operators search only in strings. They cannot search in arrays
-of integers or other objects.
-
-The `-match` and `-notmatch` operators populate the `$Matches` automatic
-variable when the input (the left-side argument) to the operator
-is a single scalar object. When the input is scalar, the `-match` and
-`-notmatch` operators return a Boolean value and set the value of the
-`$Matches` automatic variable to the matched components of the argument.
-
-If the input is a collection, the `-match` and `-notmatch` operators return
-the matching members of that collection, but the operator does not
-populate the `$Matches` variable.
-
-For example, the following command submits a collection of strings to
-the `-match` operator. The `-match` operator returns the items in the collection
-that match. It does not populate the `$Matches` automatic variable.
-
-```PowerShell
-PS C:\> "Sunday", "Monday", "Tuesday" -match "sun"
-Sunday
-
-PS C:\> $matches
-PS C:\>
-```
-
-In contrast, the following command submits a single string to the
-`-match` operator. The `-match` operator returns a Boolean value and
-populates the `$Matches` automatic variable.
-
-```PowerShell
-PS C:\> "Sunday" -match "sun"
-True
-
-PS C:\> $matches
-
-Name                           Value
-----                           -----
-0                              Sun
-```
-
-The `-notmatch` operator populates the `$Matches` automatic variable when
-the input is scalar and the result is False, that it, when it detects
-a match.
-
-```PowerShell
-PS C:\> "Sunday" -notmatch "rain"
-True
-
-PS C:\> $matches
-PS C:\>
-
-PS C:\> "Sunday" -notmatch "day"
-False
-
-PS C:\> $matches
-
-Name                           Value
-----                           -----
-0                              day
-```
-
-### Replace Operator 
 The `-replace` operator replaces all or part of a value with the specified
 value using regular expressions. You can use the `-replace` operator for
 many administrative tasks, such as renaming files. For example, the
-following command changes the file name extensions of all .gif files
-to .jpg:
+following command changes the file name extensions of all .gif files to
+.jpg:
 
-```PowerShell
+```powershell
 Get-ChildItem | Rename-Item -NewName { $_ -replace '.gif$','.jpg$' }
 ```
 
 The syntax of the `-replace` operator is as follows, where the \<original>
-placeholder represents the characters to be replaced, and the
-\<substitute> placeholder represents the characters that will replace
-them:
+placeholder represents the characters to be replaced, and the \<substitute>
+placeholder represents the characters that will replace them:
 
-\<input> \<operator> \<original>, \<substitute>
+`<input> <operator> <original>, <substitute>`
 
 By default, the `-replace` operator is case-insensitive. To make it case
 sensitive, use `-creplace`. To make it explicitly case-insensitive, use
 `-ireplace`. Consider the following examples:
 
-```PowerShell
+```powershell
 PS C:\> "book" -replace "B", "C"
 Cook
 ```
 
-```PowerShell
+```powershell
 PS C:\> "book" -ireplace "B", "C"
 Cook
 ```
 
-```PowerShell
+```powershell
 PS C:\> "book" -creplace "B", "C"
 book
 ```
 
-### Bitwise Operators
-Windows PowerShell supports the standard bitwise operators, including
-bitwise-AND (`-bAnd`), the inclusive and exclusive bitwise-OR operators
-(`-bOr` and `-bXor`), and bitwise-NOT (`-bNot`).
+### Type comparison
 
-Beginning in Windows PowerShell 2.0, all bitwise operators work with
-64-bit integers.
+The type comparison operators (`-is` and `-isnot`) are used to determine if
+an object is a specific type.
 
-Beginning in Windows PowerShell 3.0, the `-shr` (shift-right) and
-`-shl` (shift-left) are introduced to support bitwise arithmetic in
-Windows PowerShell.
+#### -is
 
-Windows PowerShell supports the following bitwise operators.
+Syntax:
 
-|Operator|Description|Example|
-|--------|----------------------|-------------------|
-|`-band`|Bitwise AND|`PS C:> 10 -band 3`<br />`2`|
-|`-bor`|Bitwise OR (inclusive)|`PS C:> 10 -bor 3`<br />`11`|
-|`-bxor`|Bitwise OR (exclusive)|`PS C:> 10 -bxor 3`<br />`9`|
-|`-bnot`|Bitwise NOT|`PS C:> -bNot 10`<br />`-11`|
-|`-shl`|Shift-left|`PS C:> 100 -shl 2`<br />`400`|
-|`-shr`|Shift-right|`PS C:> 100 -shr 1`<br />`50`|
+`<object> -is <type reference>`
 
-Bitwise operators act on the binary format of a value. For example, the
-bit structure for the number 10 is 00001010 (based on 1 byte), and the
-bit structure for the number 3 is 00000011. When you use a bitwise
-operator to compare 10 to 3, the individual bits in each byte are
-compared.
+Example:
 
-In a bitwise AND operation, the resulting bit is set to 1 only when both
-input bits are 1.
-
-```
-1010      (10)  
-0011      ( 3)  
-------------  bAND  
-0010      ( 2)
+```powershell
+PS C:\> $a = 1
+PS C:\> $b = "1"
+PS C:\> $a -is [int]
+True
+PS C:\> $a -is $b.GetType()
+False
 ```
 
-In a bitwise OR (inclusive) operation, the resulting bit is set to 1
-when either or both input bits are 1. The resulting bit is set to 0 only
-when both input bits are set to 0.
+#### -isnot
 
-```
-1010      (10)  
-0011      ( 3)  
---------------  bOR (inclusive)  
-1011      (11)
-```
+Syntax:
 
-In a bitwise OR (exclusive) operation, the resulting bit is set to 1 only
-when one input bit is 1.
+`<object> -isnot <type reference>`
 
-```
-1010      (10)  
-0011      ( 3)  
-------------  bXOR (exclusive)  
-1001      ( 9)
+Example:
+
+```powershell
+PS C:\> $a = 1
+PS C:\> $b = "1"
+PS C:\> $a -isnot $b.GetType()
+True
+PS C:\> $b -isnot [int]
+True
 ```
 
-The bitwise NOT operator is a unary operator that produces the binary
-complement of the value. A bit of 1 is set to 0 and a bit of 0 is set
-to 1.
-
-For example, the binary complement of 0 is -1, the maximum unsigned
-integer (0xffffffff), and the binary complement of -1 is 0.
-
-```PowerShell
-PS C:\> -bNot 10
--11
-```
-
-```
-0000 0000 0000 1010  (10)  
-------------------------- bNOT  
-1111 1111 1111 0101  (-11, xfffffff5)
-```
-
-In a bitwise shift-left operation, all bits are moved "n" places to
-the left, where "n" is the value of the right operand. A zero is
-inserted in the ones place.
-
-When the left operand is an Integer (32-bit) value, the lower 5 bits
-of the right operand determine how many bits of the left operand are
-shifted.
-
-When the left operand is a Long (64-bit) value, the lower 6 bits of
-the right operand determine how many bits of the left operand are
-shifted.
-
-```PowerShell
-PS C:\> 21 -shl 1
-42
-
-# 00010101  (21)
-# 00101010  (42)
-```
-
-```PowerShell
-PS C:\> 21 -shl 2
-84
-
-# 00010101  (21)
-# 00101010  (42)
-# 01010100  (84)
-```
-
-In a bitwise shift-right operation, all bits are moved "n" places
-to the right, where "n" is specified by the right operand. The
-shift-right operator (`-shr`) inserts a zero in the left-most
-place when shifting a positive or unsigned value to the right.
-
-When the left operand is an Integer (32-bit) value, the lower 5 bits
-of the right operand determine how many bits of the left operand are
-shifted.
-
-When the left operand is a Long (64-bit) value, the lower 6 bits of
-the right operand determine how many bits of the left operand are
-shifted.
-
-```PowerShell
-PS C:\> 21 -shr 1
-10
-
-# 00010101  (21)
-# 00001010  (10)
-```
-
-```PowerShell
-PS C:\> 21 -shr 2
-5
-
-# 00010101  (21)
-# 00001010  (10)
-# 00000101  ( 5)
-```
-
-# SEE ALSO
+## SEE ALSO
 
 [about_Operators](about_Operators.md)
 
@@ -717,9 +549,8 @@ PS C:\> 21 -shr 2
 
 [about_Wildcards](about_Wildcards.md)
 
-Compare-Object
+[Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
 
-Foreach-Object
+[Foreach-Object](../ForEach-Object.md)
 
-Where-Object
-
+[Where-Object](../Where-Object.md)

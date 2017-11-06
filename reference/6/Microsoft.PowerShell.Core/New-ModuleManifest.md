@@ -47,6 +47,8 @@ Unless specified in the parameter description, if you omit a parameter from the 
 In Windows PowerShell 2.0, **New-ModuleManifest** prompts you for the values of frequently used parameters that are not specified in the command, in addition to required parameter values.
 Starting in Windows PowerShell 3.0, it prompts only when required parameter values are not specified.
 
+Module manifest (.psd1) file encoding depends on environment: if it is PowerShell Core running on Linux then encoding is UTF-8 (no BOM); otherwise encoding is UTF-16 (with BOM).
+
 ## EXAMPLES
 
 ### Example 1: Create a manifest
@@ -926,15 +928,14 @@ Accept wildcard characters: False
 ```
 
 ### -CompatiblePSEditions
-You can use this parameter to restrict the aliases that are exported by the module.
-It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
-
-If you omit this parameter, **New-ModuleManifest** creates an **AliasesToExport** key with a value of * (all), meaning that all aliases that are exported by the module are exported by the manifest.
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
 Aliases: 
+Accepted values: Desktop, Core
 
 Required: False
 Position: Named

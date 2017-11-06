@@ -327,15 +327,15 @@ This cmdlet accepts no inputs.
 
 ## RELATED LINKS
 
-[Get-ChildItem]()
+[Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
 
-[Get-Credential]()
+[Get-Credential](../microsoft.powershell.security/get-credential.md)
 
-[Get-Item]()
+[Get-Item](../microsoft.powershell.management/get-item.md)
 
-[Get-CimSession]()
+[Get-CimSession](Get-CimSession.md)
 
-[Remove-CimSession]()
+[Remove-CimSession](remove-cimsession.md)
 
-[New-CimSessionOption]()
+[New-CimSessionOption](new-cimsessionoption.md)
 

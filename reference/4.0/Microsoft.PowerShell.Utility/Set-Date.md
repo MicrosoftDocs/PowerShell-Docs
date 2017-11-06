@@ -197,8 +197,7 @@ Set-Date returns an object that represents the date that it set.
 ## NOTES
 * Use this cmdlet cautiously. Changing the date and time on the computer. The change might prevent the computer from receiving system-wide events and updates that are triggered by a date or time. Use the -WhatIf and -Confirm parameters to avoid errors.
 
-  You can use standard .NET methods with the DateTime and TimeSpan objects used with Set-Date, such as AddDays, AddMonths and FromFileTime.
-For more information, see "DateTime Methods" and "TimeSpan Methods."
+  You can use standard .NET methods with the DateTime and TimeSpan objects used with Set-Date, such as AddDays, AddMonths and FromFileTime. For more information, see [DateTime Methods](https://msdn.microsoft.com/library/system.datetime_methods) and [TimeSpan Methods](https://msdn.microsoft.com/library/system.timespan_methods) in the MSDN library.
 
 ## RELATED LINKS
 

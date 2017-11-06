@@ -15,7 +15,7 @@ Measures the time it takes to run script blocks and cmdlets.
 
 ## Syntax
 
-```PowerShell
+```powershell
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
@@ -25,7 +25,7 @@ The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the
 ## Examples
 
 ### Example 1: Measure the time to run a command
-```PowerShell
+```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
@@ -33,7 +33,7 @@ This command measures the time it takes to run a `Get-EventLog` command that get
 
 ### Example 2
 
-```PowerShell
+```powershell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 ```
 
@@ -51,7 +51,7 @@ TotalSeconds      : 8.6182763
 TotalMilliseconds : 8618.2763
 ```
 
-```PowerShell
+```powershell
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 ```
 
@@ -125,13 +125,9 @@ You can pipe an object to `Measure-Command`.
 
 ## Notes
 - For more information, type: `Get-Help Measure-Command -Detailed`
-
 - For technical information, type: `Get-Help Measure-Command -Full`
-
-- When specifying multiple values for a parameter, use commas to separate the values.
-For example, `\<parameter-name\> \<value1\>, \<value2\>`.
-
-*
+- When specifying multiple values for a parameter, use commas to separate the values. For 
+  example, `<parameter-name> <value1>, <value2>`.
 
 ## Related Links
 

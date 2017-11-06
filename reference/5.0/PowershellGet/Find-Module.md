@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -Filter
 Specifies a filter based on the PackageManagement provider-specific search syntax.
-For NuGet modules, this is the equivalent of searching by using the Search bar on the PowerShell Galleryhttps://www.powershellgallery.com website.
+For NuGet modules, this is the equivalent of searching by using the Search bar on the [PowerShell Gallery](https://www.powershellgallery.com/) website.
 
 ```yaml
 Type: String

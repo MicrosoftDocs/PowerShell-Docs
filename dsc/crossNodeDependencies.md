@@ -32,7 +32,7 @@ Configuration JoinDomain
 {
 	Import-DscResource -Module xComputerManagement, xActiveDirectory
 
-	Node myPC
+	Node myDC
 	{
 		WindowsFeature InstallAD
 		{

@@ -16,43 +16,43 @@ Publishes a specified module from the local computer to an online gallery.
 ## SYNTAX
 
 ### ModuleNameParameterSet (Default)
-```
+```powershell
 Publish-Module -Name <String> [-RequiredVersion <Version>] [-NuGetApiKey <String>] [-Repository <String>]
  [-Credential <PSCredential>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>]
  [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ModulePathParameterSet
-```
+```powershell
 Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>] [-Credential <PSCredential>]
  [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>]
  [-ProjectUri <Uri>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Publish-Module** cmdlet publishes a module to an online NuGet-based gallery by using an API key, stored as part of a user's profile in the gallery.
+The `Publish-Module` cmdlet publishes a module to an online NuGet-based gallery by using an API key, stored as part of a user's profile in the gallery.
 You can specify the module to publish either by the module's name, or by the path to the folder containing the module.
 
-When you specify a module by name, **Publish-Module** publishes the first module that would be found by running `Get-Module -ListAvailable` \<Name\>.
-If you specify a minimum version of a module to publish, **Publish-Module** publishes the first module with a version that is greater than or equal to the minimum version that you have specified.
+When you specify a module by name, `Publish-Module` publishes the first module that would be found by running `Get-Module -ListAvailable <Name>`.
+If you specify a minimum version of a module to publish, `Publish-Module` publishes the first module with a version that is greater than or equal to the minimum version that you have specified.
 
 Publishing a module requires metadata that is displayed on the gallery page for the module.
 Required metadata includes the module name, version, description, and author.
-Although most metadata is taken from the module manifest, some metadata must be specified in **Publish-Module** parameters, such as *Tag*,  *ReleaseNote*, *IconUri*, *ProjectUri*, and *LicenseUri*, because these parameters match fields in a NuGet-based gallery.
+Although most metadata is taken from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as **Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters match fields in a NuGet-based gallery.
 
 ## EXAMPLES
 
 ### Example 1: Publish a module
-```
-PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
+```powershell
+Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73"
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's online gallery account.
 If MyDscModule is not a valid manifest module that specifies a name, version, description, and author, an error occurs.
 
 ### Example 2: Publish a module with gallery metadata
-```
-PS C:\> Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
+```powershell
+Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed75eb73" -LicenseUri "http://contoso.com/license" -Tag "Active Directory","DSC" -ReleaseNote "Updated the ActiveDirectory DSC Resources to support adding users."
 ```
 
 In this example, MyDscModule is published to the online gallery by using the API key to indicate the module owner's gallery account.
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 
 ### -Name
 Specifies the name of the module that you want to publish.
-**Publish-Module** searches for the specified module name in $Env:PSModulePath.
+`Publish-Module` searches for the specified module name in $Env:PSModulePath.
 
 ```yaml
 Type: String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ### -Path
 Specifies the path to the module that you want to publish.
 This parameter accepts either the path to the folder that contains the module, or the module manifest (.psd1) file.
-The parameter accepts piped values from Get-Module.
+The parameter accepts piped values from `Get-Module`.
 
 ```yaml
 Type: String
@@ -189,9 +189,9 @@ Accept wildcard characters: False
 ```
 
 ### -Repository
-Specifies the friendly name of a repository that has been registered by running Register-PSRepository.
+Specifies the friendly name of a repository that has been registered by running `Register-PSRepository`.
 The repository must have a PublishLocation, which is a valid NuGet URI.
-The PublishLocation can be set by running Set-PSRepository.
+The PublishLocation can be set by running `Set-PSRepository`.
 The default value of this parameter is PSGallery.
 
 ```yaml
@@ -311,7 +311,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 * This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.
 
-  **Publish-Module** shows no output if a module is published successfully.
+  `Publish-Module` shows no output if a module is published successfully.
 
 ## RELATED LINKS
 

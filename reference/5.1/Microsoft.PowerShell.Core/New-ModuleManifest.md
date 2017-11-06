@@ -316,10 +316,8 @@ Accept wildcard characters: False
 ```
 
 ### -CompatiblePSEditions
-You can use this parameter to restrict the aliases that are exported by the module.
-It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
-
-If you omit this parameter, **New-ModuleManifest** creates an **AliasesToExport** key with a value of * (all), meaning that all aliases that are exported by the module are exported by the manifest.
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
 Type: String[]

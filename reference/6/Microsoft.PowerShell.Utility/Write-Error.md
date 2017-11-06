@@ -19,23 +19,23 @@ Writes an object to the error stream.
 ```
 Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] [-TargetObject <Object>]
  [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-CategoryTargetName <String>] [-CategoryTargetType <String>]
+ [<CommonParameters>]
 ```
 
 ### WithException
 ```
 Write-Error -Exception <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
  [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-CategoryTargetName <String>] [-CategoryTargetType <String>]
+ [<CommonParameters>]
 ```
 
 ### ErrorRecord
 ```
 Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
  [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,7 +130,7 @@ The acceptable values for this parameter are:
 - QuotaExceeded
 - NotEnabled
 
-For information about the error categories, see ErrorCategory Enumerationhttp://go.microsoft.com/fwlink/?LinkId=143600 (http://go.microsoft.com/fwlink/?LinkId=143600) in MSDN.
+For information about the error categories, see [ErrorCategory Enumeration](http://go.microsoft.com/fwlink/?LinkId=143600) in the MSDN library.
 
 ```yaml
 Type: ErrorCategory
@@ -251,33 +251,6 @@ Parameter Sets: WithException
 Aliases: 
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-For information about the error categories, see "ErrorCategory Enumeration" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143600.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-For information about the error categories, see "ErrorCategory Enumeration" in the MSDN (Microsoft Developer Network) library at http://go.microsoft.com/fwlink/?LinkId=143600.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

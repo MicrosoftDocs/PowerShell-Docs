@@ -101,7 +101,7 @@ New-Item -Issuer <string> -Subject <string> -ResourceURI <Uri> -Credential <PSCr
 |Accept Wildcard Characters?|false|  
 
 ### <CommonParameters\>  
- This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../about/about_commonparameters.md).  
+ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).  
 
 ## Inputs and Outputs  
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.  
@@ -125,7 +125,7 @@ This command creates ClientCertificate entry that can be used by the WS-Manageme
 ```  
 
 ## See Also  
- [about_Providers](../../about/about_providers.md)   
+ [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)   
  [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)   
  [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)   
  [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)   

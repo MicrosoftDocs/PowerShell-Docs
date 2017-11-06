@@ -48,23 +48,24 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Get drives in the current session
 ```
-PS C:\> Get-PSDrive  
-Name           Used (GB)     Free (GB) Provider      Root  
+PS C:\> Get-PSDrive
+
+Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
-A                                                    A:\ 
-C                 202.06      23718.91 FileSystem    C:\  
-Cert                                   Certificate   \  
+Alias                                  Alias
+C                 202.06      23718.91 FileSystem    C:\
+Cert                                   Certificate   \
 D                1211.06     123642.32 FileSystem    D:\
 Env                                    Environment
 Function                               Function
-G                 202.06        710.91 fILEsYSTEM    \\Music\GratefulDead
 HKCU                                   Registry      HKEY_CURRENT_USER
 HKLM                                   Registry      HKEY_LOCAL_MACHINE
+Variable                               Variable
 ```
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:) and CD-ROM drive (D:) on the computer, the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:), and a drive mapped to a network share (X:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
 
 ### Example 2: Get a drive on the computer
 ```
@@ -94,15 +95,16 @@ This command gets all of the drives that are supported by the Windows PowerShell
 This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the New-PSDrive cmdlet.
 
 ### Example 4: Check to see if a drive is in use as a Windows PowerShell drive name
-```
-PS C:\> if (!(Get-PSDrive X -ErrorAction SilentlyContinue))
-          {New-PSDrive -Name X -PSProvider Registry -Root HKLM:\Network}
-        else 
-          { Write-Host "The X: drive is already in use." }
+```powershell
+if (Get-PSDrive X -ErrorAction SilentlyContinue) {
+	Write-Host 'The X: drive is already in use.'
+} else {
+	New-PSDrive -Name X -PSProvider Registry -Root HKLM:\SOFTWARE
+}
 ```
 
 This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
-If it is not, the command uses the **New-PSDrive** cmdlet to create a temporary drive that is mapped to the HKLM:\Network registry key.
+If it is not, the command uses the `New-PSDrive` cmdlet to create a temporary drive that is mapped to the HKLM:\SOFTWARE registry key.
 
 ### Example 5: Compare the types of files system drives
 ```

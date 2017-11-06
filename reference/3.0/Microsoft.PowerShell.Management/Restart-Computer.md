@@ -118,7 +118,7 @@ The job is created on the local computer and the results from remote computers a
 To manage the job, use the Job cmdlets.
 To get the job results, use the Receive-Job cmdlet.
 
-For more information about Windows PowerShell background jobs, see about_Jobs (http://go.microsoft.com/fwlink/?LinkID=113251) and about_Remote_Jobs (http://go.microsoft.com/fwlink/?LinkID=135184).
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -334,7 +334,7 @@ Valid values are:
 - **PacketPrivacy**:   Packet Privacy-level COM authentication.
 - **Unchanged**:       The authentication level is the same as the previous command.
 
-For more information about the values of this parameter, see "AuthenticationLevel Enumeration" in MSDN at http://go.microsoft.com/fwlink/?LinkID=235229.
+For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -374,7 +374,7 @@ Specifies the mechanism that is used to authenticate the user's credentials when
 
 Valid values are **Basic**, **CredSSP**, **Default**, **Digest**, **Kerberos**, and **Negotiate**.
 The default value is **Default**.
-For more information about the values of this parameter, see "AuthenticationMechanism Enumeration" in MSDN at http://go.microsoft.com/fwlink/?LinkID=235230.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

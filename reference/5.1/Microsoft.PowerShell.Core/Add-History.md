@@ -41,7 +41,7 @@ The second command is typed at the command line of a different session.
 It uses the **Import-Csv** cmdlet to import the objects in the History.csv file.
 The pipeline operator (|) passes the objects to the **Add-History** cmdlet, which adds the objects representing the commands in the History.csv file to the current session history.
 
-### Example 2: Import and turn commands
+### Example 2: Import and run commands
 ```
 PS C:\> Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
 ```

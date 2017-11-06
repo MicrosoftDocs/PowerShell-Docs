@@ -1,7 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
-locale:  en-us
+locale:  en-US
 keywords:  powershell,cmdlet
 Help Version:  6.0
 Download Help Link:  http://Please-enter-FwLink-manually
@@ -14,63 +14,62 @@ Module Name:  Pester
 {{Manually Enter Description Here}}
 
 ## Pester Cmdlets
-### [AfterAll](afterall.md)
+### [AfterAll](AfterAll.md)
 {{Manually Enter AfterAll Description Here}}
 
-### [AfterEach](aftereach.md)
+### [AfterEach](AfterEach.md)
 {{Manually Enter AfterEach Description Here}}
 
-### [Assert-MockCalled](assert-mockcalled.md)
+### [Assert-MockCalled](Assert-MockCalled.md)
 {{Manually Enter Assert-MockCalled Description Here}}
 
-### [Assert-VerifiableMocks](assert-verifiablemocks.md)
+### [Assert-VerifiableMocks](Assert-VerifiableMocks.md)
 {{Manually Enter Assert-VerifiableMocks Description Here}}
 
-### [BeforeAll](beforeall.md)
+### [BeforeAll](BeforeAll.md)
 {{Manually Enter BeforeAll Description Here}}
 
-### [BeforeEach](beforeeach.md)
+### [BeforeEach](BeforeEach.md)
 {{Manually Enter BeforeEach Description Here}}
 
-### [Context](context.md)
+### [Context](Context.md)
 {{Manually Enter Context Description Here}}
 
-### [Describe](describe.md)
+### [Describe](Describe.md)
 {{Manually Enter Describe Description Here}}
 
-### [Get-MockDynamicParameters](get-mockdynamicparameters.md)
+### [Get-MockDynamicParameters](Get-MockDynamicParameters.md)
 {{Manually Enter Get-MockDynamicParameters Description Here}}
 
-### [Get-TestDriveItem](get-testdriveitem.md)
+### [Get-TestDriveItem](Get-TestDriveItem.md)
 {{Manually Enter Get-TestDriveItem Description Here}}
 
-### [In](in.md)
+### [In](In.md)
 {{Manually Enter In Description Here}}
 
-### [InModuleScope](inmodulescope.md)
+### [InModuleScope](InModuleScope.md)
 {{Manually Enter InModuleScope Description Here}}
 
-### [Invoke-Mock](invoke-mock.md)
+### [Invoke-Mock](Invoke-Mock.md)
 {{Manually Enter Invoke-Mock Description Here}}
 
-### [Invoke-Pester](invoke-pester.md)
+### [Invoke-Pester](Invoke-Pester.md)
 {{Manually Enter Invoke-Pester Description Here}}
 
-### [It](it.md)
+### [It](It.md)
 {{Manually Enter It Description Here}}
 
-### [Mock](mock.md)
+### [Mock](Mock.md)
 {{Manually Enter Mock Description Here}}
 
-### [New-Fixture](new-fixture.md)
+### [New-Fixture](New-Fixture.md)
 {{Manually Enter New-Fixture Description Here}}
 
-### [Set-DynamicParameterVariables](set-dynamicparametervariables.md)
+### [Set-DynamicParameterVariables](Set-DynamicParameterVariables.md)
 {{Manually Enter Set-DynamicParameterVariables Description Here}}
 
-### [Setup](setup.md)
+### [Setup](Setup.md)
 {{Manually Enter Setup Description Here}}
 
-### [Should](should.md)
+### [Should](Should.md)
 {{Manually Enter Should Description Here}}
-

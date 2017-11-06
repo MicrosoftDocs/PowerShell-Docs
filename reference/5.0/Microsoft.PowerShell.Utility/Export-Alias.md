@@ -16,73 +16,73 @@ Exports information about currently defined aliases to a file.
 ## SYNTAX
 
 ### ByPath (Default)
-```
+```powershell
 Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append] [-Force]
  [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-```
+```powershell
 Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
  [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Export-Alias** cmdlet exports the aliases in the current session to a file.
+The `Export-Alias` cmdlet exports the aliases in the current session to a file.
 If the output file does not exist, the cmdlet will create it.
 
-**Export-Alias** can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a Windows PowerShell profile.
+`Export-Alias` can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a Windows PowerShell profile.
 
 ## EXAMPLES
 
 ### Example 1: Export an alias
-```
-PS C:\> Export-Alias -Path "alias.csv"
+```powershell
+Export-Alias -Path "alias.csv"
 ```
 
 This command exports current alias information to a file named Alias.csv in the current directory.
 
 ### Example 2: Export an alias unless the export file already exists
-```
-PS C:\> Export-Alias -Path "alias.csv" -NoClobber
+```powershell
+Export-Alias -Path "alias.csv" -NoClobber
 ```
 
 This command exports the aliases in the current session to an Alias.csv file.
 
-Because the *NoClobber* parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
+Because the **NoClobber** parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
 
 ### Example 3: Append aliases to a file
-```
-PS C:\> Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
+```powershell
+Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
 ```
 
 This command appends the aliases in the current session to the Alias.csv file.
 
-The command uses the *Description* parameter to add a description to the comments at the top of the file.
+The command uses the **Description** parameter to add a description to the comments at the top of the file.
 
-The command also uses the *Force* parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
+The command also uses the **Force** parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
 
 ### Example 4: Export aliases as a script
-```
-PS C:\> Export-Alias -Path "alias.ps1" -As Script
-PS C:\> Add-Content -Path $Profile -Value (Get-Content alias.ps1)
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Invoke-Command -Session $S -FilePath .\alias.ps1
+```powershell
+Export-Alias -Path "alias.ps1" -As Script
+Add-Content -Path $Profile -Value (Get-Content alias.ps1)
+$S = New-PSSession -ComputerName Server01
+Invoke-Command -Session $S -FilePath .\alias.ps1
 ```
 
-This example shows how to use the script file format that **Export-Alias** generates.
+This example shows how to use the script file format that `Export-Alias` generates.
 
 The first command exports the aliases in the session to the Alias.ps1 file.
-It uses the *As* parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
+It uses the **As** parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
 
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
 The path to the profile is saved in the $Profile variable.
-The command uses the Get-Content cmdlet to get the aliases from the Alias.ps1 file and the Add-Content cmdlet to add them to the profile.
+The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
 For more information, see about_Profiles.
 
 The third and fourth commands add the aliases in the Alias.ps1 file to a remote session on the Server01 computer.
-The third command uses the New-PSSession cmdlet to create the session.
-The fourth command uses the *FilePath* parameter of the Invoke-Command cmdlet to run the Alias.ps1 file in the new session.
+The third command uses the `New-PSSession` cmdlet to create the session.
+The fourth command uses the **FilePath** parameter of the `Invoke-Command` cmdlet to run the Alias.ps1 file in the new session.
 
 ## PARAMETERS
 
@@ -109,7 +109,7 @@ The acceptable values for this parameter are:
 - CSV.
 Comma-separated value (CSV) format. 
 - Script.
-Creates a **Set-Alias** command for each exported alias.
+Creates a `Set-Alias` command for each exported alias.
 If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
 
 ```yaml
@@ -159,10 +159,10 @@ Accept wildcard characters: False
 ### -Force
 Forces the command to run without asking for user confirmation.
 
-By default, **Export-Alias** overwrites files without warning, unless the read-only or hidden attribute is set or the *NoClobber* parameter is used in the command.
-The *NoClobber* parameter takes precedence over the *Force* parameter when both are used in a command.
+By default, `Export-Alias` overwrites files without warning, unless the read-only or hidden attribute is set or the **NoClobber** parameter is used in the command.
+The **NoClobber** parameter takes precedence over the **Force** parameter when both are used in a command.
 
-The *Force* parameter cannot force **Export-Alias** to overwrite files with the hidden attribute.
+The **Force** parameter cannot force `Export-Alias` to overwrite files with the hidden attribute.
 
 ```yaml
 Type: SwitchParameter
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the path to the output file.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 Specifies the names as an array of the aliases to export.
 Wildcards are permitted.
 
-By default, **Export-Alias** exports all aliases in the session or scope.
+By default, `Export-Alias` exports all aliases in the session or scope.
 
 ```yaml
 Type: String[]
@@ -214,12 +214,12 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Indicates that this cmdlet prevents **Export-Alias** from overwriting any files, even if the *Force* parameter is used in the command.
+Indicates that this cmdlet prevents `Export-Alias` from overwriting any files, even if the **Force** parameter is used in the command.
 
-If the *NoClobber* parameter is omitted, **Export-Alias** will overwrite an existing file without warning, unless the read-only attribute is set on the file.
-*NoClobber* takes precedence over the *Force* parameter, which permits **Export-Alias** to overwrite a file with the read-only attribute.
+If the **NoClobber** parameter is omitted, `Export-Alias` will overwrite an existing file without warning, unless the read-only attribute is set on the file.
+*NoClobber* takes precedence over the **Force** parameter, which permits `Export-Alias` to overwrite a file with the read-only attribute.
 
-*NoClobber* does not prevent the *Append* parameter from adding content to an existing file.
+*NoClobber* does not prevent the **Append** parameter from adding content to an existing file.
 
 ```yaml
 Type: SwitchParameter
@@ -316,7 +316,7 @@ You cannot pipe objects to this cmdlet.
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
-When you use the *Passthru* parameter, **Export-Alias** returns a **System.Management.Automation.AliasInfo** object that represents the alias.
+When you use the **Passthru** parameter, `Export-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES

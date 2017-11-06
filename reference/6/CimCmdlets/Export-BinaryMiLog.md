@@ -15,7 +15,7 @@ Creates a binary encoded representation of an object or objects and stores it in
 
 ## SYNTAX
 
-```PowerShell
+```powershell
 Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String>
 ```
 
@@ -30,7 +30,7 @@ This cmdlet is similar to Import-Clixml, except that Export-BinaryMILog stores t
 
 ### Create a binary representation of CimInstances
 
-```PowerShell
+```powershell
 Get-CimInstance Win32_Process | Export-BinaryMiLog -Path "Processes.bmil"
 ```
 

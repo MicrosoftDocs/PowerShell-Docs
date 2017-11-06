@@ -88,7 +88,7 @@ Specifies the entry type of the event.
 Valid values are Error, Warning, Information, SuccessAudit, and FailureAudit.
 The default value is Information.
 
-For a description of the values, see System.Diagnostics.EventLogEntryType in the MSDN libraryhttp://go.microsoft.com/fwlink/?LinkId=143599 at http://go.microsoft.com/fwlink/?LinkId=143599.
+For a description of the values, see [EventLogEntryType Enumeration](http://go.microsoft.com/fwlink/?LinkId=143599) in the MSDN library.
 
 ```yaml
 Type: EventLogEntryType

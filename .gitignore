@@ -5,8 +5,8 @@ obj/
 _site/
 Tools/NuGet/
 _site/
-out_cab/
-out_maml/
+maml/
+updateablehelp/
 
 
 .openpublishing.build.mdproj
@@ -15,4 +15,6 @@ packages.config
 **/.ignore/**
 *.orig
 .vscode/
+_themes/
+dependentPackages/
 

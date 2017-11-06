@@ -16,8 +16,9 @@ Combines a path and a child path into a single path.
 ## SYNTAX
 
 ```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [-Resolve] [-Credential <PSCredential>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Join-Path [-Path] <String[]> [-ChildPath] <String> [-AdditionalChildPath <String[]>] [-Resolve]
+ [-Credential <PSCredential>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,16 +28,16 @@ The provider supplies the path delimiters.
 ## EXAMPLES
 
 ### Example 1: Combine a path with a child path
-```
-PS C:\> Join-Path -Path "C:\win*" -ChildPath "System*"
+```powershell
+Join-Path -Path "C:\win*" -ChildPath "System*"
 ```
 
 This command uses **Join-Path** to combine the C:\Win* path with the System* child path.
 The Windows PowerShell file system provider, FileSystem joins the path and adds the "\" delimiter.
 
 ### Example 2: Display files and folders by joining a path with a child path
-```
-PS C:\> Join-Path "C:\win*" "System*" -Resolve
+```powershell
+Join-Path "C:\win*" "System*" -Resolve
 ```
 
 This command displays the files and folders that are referenced by joining the C:\Win* path and the System* child path.
@@ -44,24 +45,23 @@ It displays the same files and folders as Get-ChildItem, but it displays the ful
 In this command, the *Path* and *ChildPath* optional parameter names are omitted.
 
 ### Example 3: Use Join-Path with the Windows PowerShell registry provider
-```
-PS C:\>
-PS HKLM:\> Join-Path System *ControlSet* -Resolve
+```powershell
+HKLM:\> Join-Path System *ControlSet* -Resolve
 ```
 
 This command displays the registry keys in the HKLM\System registry subkey that include ControlSet.
 The command shows how to use **Join-Path** with the Windows PowerShell registry provider.
 
 ### Example 4: Combine multiple path roots with a child path
-```
-PS C:\> Join-Path -Path C:, D:, E:, F: -ChildPath New
+```powershell
+Join-Path -Path C:, D:, E:, F: -ChildPath New
 ```
 
 This command uses **Join-Path** to combine multiple path roots with a child path.
 
 ### Example 5: Combine the roots of a file system drive with a child path
-```
-PS C:\> Get-PSDrive -PSProvider filesystem | ForEach {$_.root} | Join-Path -ChildPath "Subdir"
+```powershell
+Get-PSDrive -PSProvider filesystem | ForEach {$_.root} | Join-Path -ChildPath "Subdir"
 ```
 
 This command combines the roots of each Windows PowerShell file system drive in the console with the Subdir child path.
@@ -73,6 +73,21 @@ The output shows that the Windows PowerShell drives on the computer included a d
 
 ## PARAMETERS
 
+### -AdditionalChildPath
+Specifies additional elements to append to the value of the *Path* parameter.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -ChildPath
 Specifies the elements to append to the value of the *Path* parameter.
 Wildcards are permitted.
@@ -81,7 +96,7 @@ The *ChildPath* parameter is required, although the parameter name ("ChildPath")
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -103,7 +118,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationAction
-@{Text=}```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -127,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv
@@ -164,7 +179,7 @@ Indicates that this cmdlet displays the items that are referenced by the joined 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

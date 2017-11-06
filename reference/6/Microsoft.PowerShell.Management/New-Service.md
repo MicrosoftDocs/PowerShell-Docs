@@ -59,17 +59,6 @@ Status    : OK
 This command uses **Get-WmiObject** to get the **Win32_Service** object for the new service.
 This object includes the start mode and the service description.
 
-### Example 4: Delete a service
-```
-PS C:\> sc.exe delete TestService
-- or -
-PS C:\> (Get-WmiObject win32_service -Filter "name='TestService'").delete()
-```
-
-This example shows two ways to delete the TestService service.
-The first command uses the delete option of Sc.exe.
-The second command uses the **Delete** method of the Win32_Service objects that **Get-WmiObject** returns.
-
 ## PARAMETERS
 
 ### -BinaryPathName
@@ -268,7 +257,6 @@ This cmdlet returns an object that represents the new service.
 
 ## NOTES
 * To run this cmdlet on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
-* To delete a service, use Sc.exe, or use the Get-WmiObject cmdlet to get the **Win32_Service** object that represents the service and then use the **Delete** method to delete the service. The object that Get-Service returns does not have a delete method.
 
 ## RELATED LINKS
 
@@ -286,3 +274,4 @@ This cmdlet returns an object that represents the new service.
 
 [Suspend-Service](Suspend-Service.md)
 
+[Remove-Service](Remove-Service.md)

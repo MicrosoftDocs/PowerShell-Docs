@@ -45,12 +45,6 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Functionality <String[]>] [-Role <String[]>] [-Online] [<CommonParameters>]
 ```
 
-### ShowWindow
-```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-ShowWindow] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 The **Get-Help** cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
@@ -469,7 +463,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the *Online* parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see about_Comment_Based_Help (http://go.microsoft.com/fwlink/?LinkID=144309), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and How to Write Cmdlet Helphttp://go.microsoft.com/fwlink/?LinkID=123415 (http://go.microsoft.com/fwlink/?LinkID=123415) in the Microsoft Developer Network MSDN library.
+For information about supporting this feature in help topics that you write, see about_Comment_Based_Help (http://go.microsoft.com/fwlink/?LinkID=144309), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 ```yaml
 Type: SwitchParameter
@@ -548,28 +542,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ShowWindow
-Displays the help topic in a window for easier reading.
-The window includes a Find search feature and a Settings box that lets you set options for the display.
-These include options to display only selected sections of a help topic.
-
-The *ShowWindow* parameter supports help topics for commands, which include cmdlets, functions, CIM commands, workflows, and scripts, and conceptual About topics.
-It does not support provider help.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ShowWindow
-Aliases: 
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -625,7 +597,7 @@ Indicates whether the value of a parameter can include wildcard characters, such
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
-[about_Command_Syntax](../about/about_command_syntax.md)
+[about_Command_Syntax](About/about_Command_Syntax.md)
 
 [Get-Command](Get-Command.md)
 

@@ -318,7 +318,7 @@ The acceptable values for this parameter are:
 - Suspending 
 - Stopping
 
-For more information about job states, see JobState Enumerationhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.jobstate(v=vs.85).aspx ) in the Microsoft Developer Network (MSDN).
+For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
@@ -391,5 +391,5 @@ Otherwise, this cmdlet does not generate any output.
 
 [about_Jobs](About/about_Jobs.md)
 
-[about_Scopes](about/about_scopes.md)
+[about_Scopes](About/about_scopes.md)
 

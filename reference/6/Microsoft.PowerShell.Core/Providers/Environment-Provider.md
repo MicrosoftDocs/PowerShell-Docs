@@ -7,170 +7,210 @@ title:  Environment Provider
 online version:  https://go.microsoft.com/fwlink/?linkid=834944
 ---
 
-# Environment Provider
-## PROVIDER NAME  
+
+# *Environment* provider
+
+
+## Provider name
+
  Environment  
 
-## DRIVES  
- Env:  
 
-## SHORT DESCRIPTION  
+## Drives
+
+ `Env:`  
+
+
+## Short description
+
  Provides access to the Windows environment variables.  
 
-## DETAILED DESCRIPTION  
- The Windows PowerShell Environment provider lets you get, add, change, clear, and delete Windows environment variables in Windows PowerShell.  
 
- The Environment provider is a flat namespace that contains only objects that represent the environment variables. The variables have no child items.  
+## Detailed description
 
- Each environment variable is an instance of the System.Collections.DictionaryEntry class. The name of the variable is the dictionary key. The value of the environment variable is the dictionary value.  
+ The Windows PowerShell **Environment** provider lets you get, add, change, clear, and delete Windows environment variables in Windows PowerShell.  
 
- The Environment provider exposes its data store in the Env: drive. To work with environment variables, change your location to the Env: drive ("set-location env:"), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the Env: drive name in the path.  
+ The **Environment** provider is a flat namespace that contains only objects that represent the environment variables. The variables have no child items.  
 
- The Environment provider supports all the cmdlets that contain the Item noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the ItemProperty noun, and it does not support the Filter parameter in any cmdlet.  
+ Each environment variable is an instance of the [System.Collections.DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) class. The name of the variable is the dictionary key. The value of the environment variable is the dictionary value.  
 
- Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign (=).  
+ The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive (`set-location Env:`), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.  
 
- Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Export-Console) to save the current session.  
+ The **Environment** provider supports all the cmdlets that contain the *Item* noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the *ItemProperty* noun, and it does not support the `-Filter` parameter in any cmdlet.  
 
-## CAPABILITIES  
+ Environment variables must conform to the usual naming standards. Additionally, the name cannot include the equal sign (`=`).  
+
+ Changes to the environment variables affect the current session only. To save the changes, add the changes to the Windows PowerShell profile, or use [Export-Console](there-should-be-an-external-link) to save the current session.  
+
+
+## Capabilities
+
  ShouldProcess  
 
-## EXAMPLES  
 
-### Getting to the Env: Drive  
+## Examples
 
-#### Example 1  
- This command changes the current location to the Env: drive:  
 
-```  
-set-location env:  
+### Getting to the `Env:` drive
 
-```  
+
+#### Example 1
+
+ This command changes the current location to the `Env:` drive:  
+
+```powershell
+Set-Location Env:
+```
 
  You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type:  
-    set-location c:  
+```powershell
+Set-Location c:
+```
 
-### Getting Environment Variables  
 
-#### Example 1  
+### Getting environment variables
+
+
+#### Example 1
+
  This command lists all the environment variables in the current session:  
 
-```  
-get-childitem -path env:  
-
-```  
+```powershell
+Get-ChildItem -Path Env:
+```
 
  You can use this command from any Windows PowerShell drive.  
 
-#### Example 2  
- This command gets the WINDIR environment variable:  
 
-```  
-get-childitem -path env:windir  
+#### Example 2
 
-```  
+ This command gets the `WINDIR` environment Variable:  
 
-#### Example 3  
+```powershell
+Get-ChildItem -Path Env:windir
+```
+
+
+#### Example 3
+
  This command gets a list of all the environment variables in the current session and then sorts them by name:  
 
-```  
-get-childitem  | sort-object -property name  
+```powershell
+Get-ChildItem  | Sort-Object -Property name
+```
 
-```  
+ By default, the environment variables appear in the order that Windows PowerShell discovers them. This command is submitted in the `Env:` drive.  
+When you run this command from another drive, add the `-Path` parameter with a value of `Env:`.  
 
- By default, the environment variables appear in the order that Windows PowerShell discovers them. This command is submitted in the Env: drive.  
-When you run this command from another drive, add the Path parameter with a value of Env:.  
 
-### Creating a New Environment Variable  
+### Creating a new environment variable
 
-#### Example 1  
- This command creates the USERMODE environment variable with a value of Non-Admin:  
 
-```  
-new-item -path . -name USERMODE -value Non-Admin  
+#### Example 1
 
-```  
+ This command creates the `USERMODE` environment variable with a value of "Non-Admin":  
 
- Because the current location is in the Env: drive, the value of the Path parameter is a dot (.). The dot represents the current location.  
-If you are not in the Env: drive, the value of the Path parameter would be Env:.  
+```powershell
+New-Item -Path . -Name USERMODE -Value Non-Admin
+```
 
-### Displaying the Properties and Methods of Environment Variables  
+ Because the current location is in the `Env:` drive, the value of the `-Path` parameter is a dot (`.`). The dot represents the current location.  
+If you are not in the `Env:` drive, the value of the `-Path` parameter would be `Env:`.  
 
-#### Example 1  
- This command uses the Get-ChildItem cmdlet to get all the environment variables:  
 
-```  
-get-childitem -path env: | get-member  
+### Displaying the properties and methods of environment variables
 
-```  
 
- The pipeline operator (&#124;) sends the results to Get-Member, which displays the methods and properties of the object.  
-When you pipe a collection of objects to Get-Member, such as the collection of environment variables in the Env: drive, Get-Member evaluates each object in the collection separately. Get-Member then returns information about each object type that it finds. If all the objects are of the same type, it returns information about the single object type. In this case, all the environment variables are DictionaryEntry objects.  
-To get information about the collection of DictionaryEntry objects, use the InputObject parameter of Get-Member. For example, type:  
-    get-member -inputobject (get-childitem env:)  
-When you use the InputObject parameter, Get-Member evaluates the collection, not the objects in the collection.  
+#### Example 1
 
-#### Example 2  
- This command lists the values of the properties of the WINDIR environment variable:  
+ This command uses the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet to get all the environment variables:  
 
-```  
-get-item env:windir | format-list -property *  
+```powershell
+Get-ChildItem -Path Env: | Get-Member
+```
 
-```  
+ The pipeline operator (`|`) sends the results to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), which displays the methods and properties of the object.  
+When you pipe a collection of objects to [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md), such as the collection of environment variables in the `Env:` drive, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates each object in the collection separately. [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) then returns information about each object type that it finds. If all the objects are of the same type, it returns information about the single object type. In this case, all the environment variables are [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects.  
+To get information about the collection of [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) objects, use the `-InputObject` parameter of [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md). For example, type:  
 
- It uses the Get-Item cmdlet to get an object that represents the WINDIR environment variable. The pipeline operator (&#124;) sends the results to the Format-List command. It uses the Property parameter with a wildcard character (*) to format and display the values of all the properties of the WINDIR environment variable.  
+```powershell
+Get-Member -InputObject (Get-ChildItem Env:)
+```
 
-### Changing the Properties of an Environment Variable  
+When you use the `-InputObject` parameter, [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) evaluates the collection, not the objects in the collection.  
 
-#### Example 1  
- This command uses the Rename-Item cmdlet to change the name of the USERMODE environment variable that you created to USERROLE:  
 
-```  
-rename-item -path env:USERMODE -newname USERROLE  
+#### Example 2
 
-```  
+ This command lists the values of the properties of the `WINDIR` environment Variable:  
 
- This change affects the Name, Key, and PSPath properties of the DictionaryEntry object.  
+```powershell
+Get-Item Env:windir | Format-List -Property *
+```
+
+ It uses the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet to get an object that represents the `WINDIR` environment variable. The pipeline operator (`|`) sends the results to the [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md) command. It uses the `-Property` parameter with a wildcard character (`*`) to format and display the values of all the properties of the `WINDIR` environment variable.  
+
+
+### Changing the properties of an environment variable
+
+
+#### Example 1
+
+ This command uses the [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md) cmdlet to change the name of the `USERMODE` environment variable that you created to `USERROLE`:  
+
+```powershell
+Rename-Item -Path Env:USERMODE -NewName USERROLE
+```
+
+ This change affects the **Name**, **Key**, and **PSPath** properties of the [DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) object.  
 Do not change the name of an environment variable that the system uses. Although these changes affect only the current session, they might cause the system or a program to operate incorrectly.  
 
-#### Example 2  
- This command uses the Set-Item cmdlet to change the value of the USERROLE environment variable to Administrator:  
 
-```  
-set-item -path env:USERROLE -value Administrator  
+#### Example 2
 
-```  
+ This command uses the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet to change the value of the `USERROLE` environment variable to "Administrator":  
 
-### Copying an Environment Variable  
+```powershell
+Set-Item -Path Env:USERROLE -Value Administrator
+```
 
-#### Example 1  
- This command copies the value of the USERROLE environment variable to the USERROLE2 environment variable:  
 
-```  
-copy-item -path env:USERROLE -destination env:USERROLE2  
+### Copying an environment variable
 
-```  
 
-### Deleting an environment variable  
+#### Example 1
 
-#### Example 1  
- This command deletes the USERROLE2 environment variable from the current session:  
+ This command copies the value of the `USERROLE` environment variable to the `USERROLE2` environment Variable:  
 
-```  
-remove-item -path env:USERROLE2  
+```powershell
+Copy-Item -Path Env:USERROLE -Destination Env:USERROLE2
+```
 
-```  
 
- You can use this command in any Windows PowerShell drive. If you are in the Env: drive, you can omit the drive name from the path.  
+### Deleting an environment variable
 
-#### Example 2  
- This command deletes the USERROLE environment variable.  
 
-```  
-clear-item -path env:USERROLE  
+#### Example 1
 
-```  
+ This command deletes the `USERROLE2` environment variable from the current session:  
 
-## See Also  
- [about_Providers](../../about/about_providers.md)
+```powershell
+Remove-Item -Path Env:USERROLE2
+```
+
+ You can use this command in any Windows PowerShell drive. If you are in the `Env:` drive, you can omit the drive name from the path.  
+
+
+#### Example 2
+
+ This command deletes the `USERROLE` environment variable.  
+
+```powershell
+Clear-Item -Path Env:USERROLE
+```
+
+
+## See also
+
+ [about_Providers](../About/about_Providers.md)
 

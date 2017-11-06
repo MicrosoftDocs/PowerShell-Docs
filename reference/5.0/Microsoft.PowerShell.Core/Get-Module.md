@@ -159,7 +159,7 @@ This command gets the properties of the **PSModuleInfo** object that **Get-Modul
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see PSModule Propertieshttp://go.microsoft.com/fwlink/?LinkId=143624 (http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN  library.
+For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0.
 
@@ -350,7 +350,7 @@ Accept wildcard characters: False
 
 ### -CimSession
 Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a Get-CIMSessionhttp://go.microsoft.com/fwlink/?LinkId=227966 command.
+Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) command.
 
 **Get-Module** uses the CIM session connection to get modules from the remote computer.
 When you import the module by using the **Import-Module** cmdlet and use the commands from the imported module in the current session, the commands actually run on the remote computer.
@@ -374,7 +374,7 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 Specifies names of modules in the form of **ModuleSpecification** objects.
-These objects are described in the Remarks section of ModuleSpecification Constructor (Hashtable)http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx (http://msdn.microsoft.com/library/windows/desktop/jj136290(v=vs.85).aspx) in the Microsoft Developer Network (MSDN) library.
+These objects are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library.
 For example, the *FullyQualifiedName* parameter accepts a module name that is specified in the following formats: 
 
 @{ModuleName = "modulename"; ModuleVersion = "version_number"}
@@ -511,7 +511,7 @@ When you specify the *ListAvailable* parameter, **Get-Module** returns a **Modul
 * Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in (**PSSnapin**). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session. Modules are imported automatically on first use and you can use the **Import-Module** cmdlet to import them.
 * Starting in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the **New-PSSession** cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see CreateDefault2 Methodhttp://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx (http://msdn.microsoft.com/en-us/library/windows/desktop/system.management.automation.runspaces.initialsessionstate.createdefault2(v=VS.85).aspx) in the MSDN library.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
 * **Get-Module** gets only modules in locations that are stored in the value of the **PSModulePath** environment variable ($env:PSModulePath). You can use the *Path* parameter of the **Import-Module** cmdlet to import modules in other locations, but you cannot use the **Get-Module** cmdlet to get them.
 * Also, starting in Windows PowerShell 3.0, new properties have been added to the object that **Get-Module** returns that make it easier to learn about modules even before they are imported. All properties are populated before importing. These include the **ExportedCommands**, **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module exports.
@@ -529,9 +529,9 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 ## RELATED LINKS
 
-[Get-CimSession](http://go.microsoft.com/fwlink/?LinkId=227966)
+[Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession)
 
-[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967)
+[New-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/new-cimsession)
 
 [about_Modules](About/about_Modules.md)
 

@@ -466,7 +466,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the Online parameter in Get-Help commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see about_Comment_Based_Help (http://go.microsoft.com/fwlink/?LinkID=144309), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and How to Write Cmdlet Helphttp://go.microsoft.com/fwlink/?LinkID=123415 (http://go.microsoft.com/fwlink/?LinkID=123415) in the Microsoft Developer Network MSDN library.
+For information about supporting this feature in help topics that you write, see about_Comment_Based_Help (http://go.microsoft.com/fwlink/?LinkID=144309), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 ```yaml
 Type: SwitchParameter
@@ -610,9 +610,9 @@ To get help for a different locale, use Region and Language in Control Panel to 
 
 [about_Command_Syntax](http://technet.microsoft.com/library/hh847867.aspx)
 
-[Get-Command]()
+[Get-Command](get-command.md)
 
-[about_Comment_Based_Help]()
+[about_Comment_Based_Help](About/about_Comment_Based_Help.md)
 
-[about_Parameters]()
+[about_Parameters](About/about_Parameters.md)
 

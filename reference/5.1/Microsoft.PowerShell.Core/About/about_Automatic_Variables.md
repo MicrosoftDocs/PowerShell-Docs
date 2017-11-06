@@ -8,14 +8,10 @@ title:  about_Automatic_Variables
 
 # About Automatic Variables
 
-## about\_Automatic\_Variables
-
-
 ## SHORT DESCRIPTION
 
-Describes variables that store state information for PowerShell.
-These variables are created and maintained by PowerShell.
-
+Describes variables that store state information for PowerShell. These
+variables are created and maintained by PowerShell.
 
 ## LONG DESCRIPTION
 
@@ -27,8 +23,8 @@ Contains the last token in the last line received by the session.
 
 ### $?
 
-Contains the execution status of the last operation.
-It contains TRUE if the last operation succeeded and FALSE if it failed.
+Contains the execution status of the last operation. It contains TRUE if
+the last operation succeeded and FALSE if it failed.
 
 ### $^
 
@@ -36,56 +32,52 @@ Contains the first token in the last line received by the session.
 
 ### $_
 
-Same as $PSItem. Contains the current object in the pipeline object.
-You can use this variable in commands that perform an action on every
-object or on selected objects in a pipeline.
+Same as $PSItem. Contains the current object in the pipeline object. You
+can use this variable in commands that perform an action on every object or
+on selected objects in a pipeline.
 
 ### $ARGS
 
 Contains an array of the undeclared parameters and\/or parameter values
-that are passed to a function, script, or script block. 
-When you create a function, you can declare the parameters by using the
-param keyword or by adding a comma-separated list of parameters in 
-parentheses after the function name.
+that are passed to a function, script, or script block. When you create a
+function, you can declare the parameters by using the param keyword or by
+adding a comma-separated list of parameters in parentheses after the
+function name.
 
 In an event action, the $Args variable contains objects that represent the
-event arguments of the event that is being processed. 
-This variable is populated only within the Action block of an event
-registration command.
-The value of this variable can also be found in the SourceArgs property
-of the PSEventArgs object (System.Management.Automation.PSEventArgs) 
-that Get-Event returns.
+event arguments of the event that is being processed. This variable is
+populated only within the Action block of an event registration command.
+The value of this variable can also be found in the SourceArgs property of
+the PSEventArgs object (System.Management.Automation.PSEventArgs) that
+Get-Event returns.
 
 ### $CONSOLEFILENAME
 
-Contains the path of the console file (.psc1) that was most recently
-used in the session.
-This variable is populated when you start  PowerShell with the 
-PSConsoleFile parameter or when you use the Export-Console cmdlet to export
-snap-in names to a console file.
+Contains the path of the console file (.psc1) that was most recently used
+in the session. This variable is populated when you start PowerShell with
+the PSConsoleFile parameter or when you use the Export-Console cmdlet to
+export snap-in names to a console file.
 
 When you use the Export-Console cmdlet without parameters, it automatically
-updates the console file that was most recently used in the session. 
-You can use this automatic variable to determine which file will be updated.
+updates the console file that was most recently used in the session. You
+can use this automatic variable to determine which file will be updated.
 
 ### $ERROR
 
 Contains an array of error objects that represent the most recent errors.
 The most recent error is the first error object in the array ($Error[0]).
 
-To prevent an error from being added to the $Error array, use the 
-ErrorAction common parameter with a value of Ignore. 
-For more information, see [about_CommonParameters](about_CommonParameters.md).
+To prevent an error from being added to the $Error array, use the
+ErrorAction common parameter with a value of Ignore. For more information,
+see [about_CommonParameters](about_CommonParameters.md).
 
 ### $EVENT
 
 Contains a PSEventArgs object that represents the event that is being
-processed.  
-This variable is populated only within the Action block of an event 
-registration command, such as Register-ObjectEvent. 
-The value of this variable is the same object that the Get-Event cmdlet
-returns. 
-Therefore, you can use the properties of the $Event variable, such as
+processed. This variable is populated only within the Action block of an
+event registration command, such as Register-ObjectEvent. The value of this
+variable is the same object that the Get-Event cmdlet returns. Therefore,
+you can use the properties of the $Event variable, such as
 $Event.TimeGenerated , in an Action script block.
 
 ### $EVENTARGS
@@ -128,8 +120,8 @@ information, see [about_ForEach](about_ForEach.md).
 ### $HOME
 
 Contains the full path of the user's home directory. This variable is the
-equivalent of the `%homedrive%%homepath%` Windows environment variables, typically
-C:\Users\<UserName>.
+equivalent of the `%homedrive%%homepath%` Windows environment variables,
+typically C:\\Users\\<UserName>.
 
 ### $HOST
 
@@ -170,20 +162,25 @@ parameters, parameter values, and information about how the command was
 started, called, or "invoked," such as the name of the script that called
 the current command.
 
-$MyInvocation is populated only for scripts, function, and script blocks.
-You can use the information in the
-System.Management.Automation.InvocationInfo object that $MyInvocation
-returns in the current script, such as the path and file name of the script
-($MyInvocation.MyCommand.Path) or the name of a function
-($MyInvocation.MyCommand.Name) to identify the current command. This is
-particularly useful for finding the name of the current script.
+\$MyInvocation is populated only for scripts, function, and script blocks.
+You can use the information in the System.Management.Automation.InvocationInfo
+object that \$MyInvocation returns in the current script, such as the path and
+file name of the script (\$MyInvocation.MyCommand.Path) or the name of a
+function (\$MyInvocation.MyCommand.Name) to identify the current command. This
+is particularly useful for finding the name of the current script.
 
-Beginning in  PowerShell 3.0, $MyInvocation has the following new properties.
+Beginning in PowerShell 3.0, $MyInvocation has the following new
+properties.
 
-Property | Description
--- | --
-PSScriptRoot | Contains the full path to the script that invoked the current<br>command. The value of this property is populated only when the<br>caller is a script.
-PSCommandPath | Contains the full path and file name of the script that<br>invoked the current command. The value of this property<br>is populated only when the caller is a script.
+| Property      | Description                                         |
+| ------------- | --------------------------------------------------- |
+| PSScriptRoot  | Contains the full path to the script that invoked   |
+|               | the current command. The value of this property is  |
+|               | populated only when the caller is a script.         |
+| PSCommandPath | Contains the full path and file name of the script  |
+|               | that invoked the current command. The value of this |
+|               | property is populated only when the caller is a     |
+|               | script.                                             |
 
 Unlike the $PSScriptRoot and $PSCommandPath automatic variables, the
 PSScriptRoot and PSCommandPath properties of the $MyInvocation automatic
@@ -223,7 +220,6 @@ of values.
 For example, when $null is included in a collection, it is counted as one
 of the objects.
 
-
 ```powershell
 $a = "one", $null, "three"
 $a.count
@@ -233,9 +229,8 @@ $a.count
 3
 ```
 
-If you pipe the $null variable to the ForEach-Object cmdlet, 
-it generates a value for $null,
-just as it does for the other objects
+If you pipe the $null variable to the ForEach-Object cmdlet, it generates a
+value for $null, just as it does for the other objects
 
 ```powershell
 "one", $null, "three" | ForEach-Object { "Hello " + $_}
@@ -247,30 +242,30 @@ Hello
 Hello three
 ```
 
-As a result, you cannot use $null to mean "no parameter value." 
-A parameter value of $null overrides the default parameter value.
+As a result, you cannot use $null to mean "no parameter value." A parameter
+value of $null overrides the default parameter value.
 
-However, because PowerShell treats the $null variable as a placeholder,
-you can use it in scripts like the following one, which would not work if
-$null were ignored.
+However, because PowerShell treats the $null variable as a placeholder, you
+can use it in scripts like the following one, which would not work if $null
+were ignored.
 
 ```powershell
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)  
-$days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"  
+$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
+$days = Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
 $currentDay = 0
 foreach($day in $calendar)
-{  
-    if($day -ne $null)  
-    {  
-        "Appointment on $($days[$currentDay]): $day"  
-    }  
-  
-    $currentDay++  
+{
+    if($day -ne $null)
+    {
+        "Appointment on $($days[$currentDay]): $day"
+    }
+
+    $currentDay++
 }
 ```
 
 ```output
-Appointment on Tuesday: Meeting  
+Appointment on Tuesday: Meeting
 Appointment on Friday: Team lunch
 ```
 
@@ -279,7 +274,7 @@ Appointment on Friday: Team lunch
 $OFS is a special variable that stores a string that you want to use as an
 output field separator. Use this variable when you are converting an array
 to a string. By default, the value of $OFS is " ", but you can change the
-value of $OFS in your session, by typing $OFS\="<value>". If you are
+value of $OFS in your session, by typing `$OFS="<value>"`. If you are
 expecting the default value of " " in your script, module, or configuration
 output, be careful that the $OFS default value has not been changed
 elsewhere in your code.
@@ -287,8 +282,8 @@ elsewhere in your code.
 For example:
 
 ```powershell
-$a="1","2","3","4"  
-$a  
+$a="1","2","3","4"
+$a
 [string]$a
 $OFS=""
 [string]$a
@@ -301,20 +296,20 @@ $OFS="`n`n";
 ```
 
 ```output
-1  
-2  
-3  
+1
+2
+3
 4
-1 2 3 4  
+1 2 3 4
 1234
 1,2,3,4
-1--PowerShellRocks--2--PowerShellRocks--3--PowerShellRocks--4  
-1  
-  
-2  
-  
-3  
-  
+1--PowerShellRocks--2--PowerShellRocks--3--PowerShellRocks--4
+1
+
+2
+
+3
+
 4
 ```
 
@@ -322,7 +317,6 @@ $OFS="`n`n";
 
 Contains the process identifier (PID) of the process that is hosting the
 current PowerShell session.
-
 
 ### $PROFILE
 
@@ -358,14 +352,14 @@ parameter values to another script or function.
 For example:
 
 ```powershell
-function Test {  
-   param($a, $b)  
-  
-   # Display the parameters in dictionary format.  
-   $PSBoundParameters  
-  
-   # Call the Test1 function with $a and $b.  
-   test1 @PSBoundParameters  
+function Test {
+   param($a, $b)
+
+   # Display the parameters in dictionary format.
+   $PSBoundParameters
+
+   # Call the Test1 function with $a and $b.
+   test1 @PSBoundParameters
 }
 ```
 
@@ -383,12 +377,10 @@ parameters to the cmdlet dynamically.
 For more information about the $PSCmdlet automatic variable, see
 [about_Functions_Advanced](about_Functions_Advanced.md).
 
-
 ### $PSCOMMANDPATH
 
 Contains the full path and file name of the script that is being run. This
 variable is valid in all scripts.
-
 
 ### $PSCULTURE
 
@@ -409,11 +401,10 @@ properties. The InvocationInfo property has several useful properties,
 including the Location property. The Location property indicates the path
 of the script that is being debugged.
 
-
 ### $PSHOME
 
 Contains the full path of the installation directory for PowerShell,
-typically, `%windir%\System32\ PowerShell\v1.0` in Windows systems. You can
+typically, `%windir%\System32\PowerShell\v1.0` in Windows systems. You can
 use this variable in the paths of PowerShell files. For example, the
 following command searches the conceptual Help topics for the word
 "variable":
@@ -427,7 +418,6 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 Same as $_. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object or on
 selected objects in a pipeline.
-
 
 ### $PSSCRIPTROOT
 
@@ -448,7 +438,6 @@ from the originating session. To add data to the ApplicationArguments
 property, use the ApplicationArguments parameter of the New-PSSessionOption
 cmdlet.
 
-
 ### $PSUICULTURE
 
 Contains the name of the user interface (UI) culture that is currently in
@@ -458,27 +447,36 @@ the value of the System.Globalization.CultureInfo.CurrentUICulture.Name
 property of the system. To get the System.Globalization.CultureInfo object
 for the system, use the Get-UICulture cmdlet.
 
-
 ### $PSVERSIONTABLE
 
 Contains a read-only hash table that displays details about the version of
 PowerShell that is running in the current session. The table includes the
 following items:
 
-Property | Description
--- | --
-BuildVersion              | The build number of the current version
-CLRVersion                | The version of the common language runtime (CLR)
-PSCompatibleVersions      | Versions of PowerShell that are compatible with<br>the current version
-PSEdition                 | This property has the value of 'Desktop', for<br>Windows Server and Windows client versions.<br>This property has the value of 'Core' for<br>PowerShell running under Nano Server or<br>Windows IOT.
-PSRemotingProtocolVersion | The version of the PowerShell remote management<br>protocol
-PSVersion                 | The PowerShell version number
-SerializationVersion      | The version of the serialization method
-WSManStackVersion         | The version number of the WS-Management stack
+| Property                  | Description                                   |
+| ------------------------- | --------------------------------------------- |
+| BuildVersion              | The build number of the current version       |
+| CLRVersion                | The version of the common language runtime    |
+|                           | (CLR)                                         |
+| GitCommitId               | The commit Id of the source files, in GitHub, |
+|                           | used in this version of PowerShell            |
+| PSCompatibleVersions      | Versions of PowerShell that are compatible    |
+|                           | with the current version                      |
+| PSEdition                 | This property has the value of 'Desktop', for |
+|                           | Windows Server and Windows client versions.   |
+|                           | This property has the value of 'Core' for     |
+|                           | PowerShell running under Nano Server or       |
+|                           | Windows IOT.                                  |
+| PSRemotingProtocolVersion | The version of the PowerShell remote          |
+|                           | management protocol.                          |
+| PSVersion                 | The PowerShell version number                 |
+| SerializationVersion      | The version of the serialization method       |
+| WSManStackVersion         | The version number of the WS-Management stack |
 
 ### $PWD
 
-Contains a path object that represents the full path of the current directory.
+Contains a path object that represents the full path of the current
+directory.
 
 ### REPORTERRORSHOW VARIABLES
 
@@ -511,15 +509,11 @@ $This variable refers to the object that is being extended.
 
 ### $TRUE
 
-Contains TRUE.
-You can use this variable to represent TRUE in commands and scripts.
-
+Contains TRUE. You can use this variable to represent TRUE in commands and
+scripts.
 
 ## SEE ALSO
 
-[about_Hash_Tables](about_Hash_Tables.md)
-
-[about_Preference_Variables](about_Preference_Variables.md)
-
-[about_Variables](about_Variables.md)
-
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Variables](about_Variables.md)

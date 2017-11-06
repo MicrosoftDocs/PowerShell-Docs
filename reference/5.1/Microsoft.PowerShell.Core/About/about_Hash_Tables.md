@@ -99,7 +99,7 @@ $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
 
 You can use ordered dictionaries in the same way that you use hash tables. Either type can be used as the value of parameters that take a hash table or dictionary (iDictionary).
 
-You cannot use the [ordered] attribute to convert or cast a hash hash table. If you place the ordered attribute before the variable name, the command fails with the following error message.
+You cannot use the [ordered] attribute to convert or cast a hash table. If you place the ordered attribute before the variable name, the command fails with the following error message.
 
 
 ```
@@ -283,7 +283,7 @@ For example, to remove the Time\=Now key\/value pair from the hash table in the 
 
 
 ```
-$hash.$Remove("Time")
+$hash.Remove("Time")
 ```
 
 

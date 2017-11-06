@@ -479,8 +479,7 @@ Param
     [String[]]
     $ComputerName
 )
-```)
-
+```
 
 In the following example, the value of the variable $number must be a
 four-digit number, and each digit must be a number 0 to 9.
@@ -569,6 +568,20 @@ either Chocolate, Strawberry, or Vanilla.
 
 ```powershell
 [String][ValidateSet("Chocolate", "Strawberry", "Vanilla")]$flavor = Strawberry
+```
+
+Note that the validation occurs whenever that variable is assigned even
+within the script.
+For example, the following results in an error at runtime:
+
+```powershell
+Param
+(
+    [ValidateSet("hello","world")]
+    [String]$Message
+)
+
+$Message = "bye"
 ```
 
 ## ValidateNotNull Validation Attribute

@@ -447,5 +447,5 @@ You can pipe job objects to **Receive-Job**.
 
 [about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](About/about_Scopes.md)
+[about_Scopes](About/about_scopes.md)
 

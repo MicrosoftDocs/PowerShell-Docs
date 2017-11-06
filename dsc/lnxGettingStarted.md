@@ -14,11 +14,11 @@ This topic explains how to get started using PowerShell Desired State Configurat
 
 The following Linux operating system versions are supported for DSC for Linux.
 - CentOS 5, 6, and 7 (x86/x64)
-- Debian GNU/Linux 6 and 7 (x86/x64)
+- Debian GNU/Linux 6, 7 and 8 (x86/x64)
 - Oracle Linux 5, 6 and 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)
-- Ubuntu Server 12.04 LTS and 14.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS, 14.04 LTS and 16.04 LTS (x86/x64)
 
 The following table describes the required package dependencies for DSC for Linux.
 
@@ -33,11 +33,11 @@ The following table describes the required package dependencies for DSC for Linu
 
 ## Installing DSC for Linux
 
-You must install the [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) before installing DSC for Linux.
+You must install the [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) before installing DSC for Linux.
 
 ### Installing OMI
 
-Desired State Configuration for Linux requires the Open Management Infrastructure (OMI) CIM server, version 1.0.8.1. OMI can be downloaded from The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/).
+Desired State Configuration for Linux requires the Open Management Infrastructure (OMI) CIM server, version 1.0.8.1 or later. OMI can be downloaded from The Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
 
 To install OMI, install the package that is appropriate for your Linux system (.rpm or .deb) and OpenSSL version (ssl_098 or ssl_100), and architecture (x64/x86). RPM packages are appropriate for CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server, and Oracle Linux. DEB packages are appropriate for Debian GNU/Linux and Ubuntu Server. The ssl_098 packages are appropriate for computers with OpenSSL 0.9.8 installed while the ssl_100 packages are appropriate for computers with OpenSSL 1.0 installed.
 
@@ -102,7 +102,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### Push the configuration to the Linux computer
 
-Configuration documents (MOF files) can be pushed to the Linux computer using the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. In order to use this cmdlet, along with the [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, or [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlets, remotely to a Linux computer, you must use a CIMSession. The [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet is used to create a CIMSession to the Linux computer.
+Configuration documents (MOF files) can be pushed to the Linux computer using the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. In order to use this cmdlet, along with the [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx), or [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlets, remotely to a Linux computer, you must use a CIMSession. The [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet is used to create a CIMSession to the Linux computer.
 
 The following code shows how to create a CIMSession for DSC for Linux.
 
@@ -122,7 +122,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * For “Push” mode, the user credential must be the root user on the Linux computer.
 * Only SSL/TLS connections are supported for DSC for Linux, the New-CimSession must be used with the –UseSSL parameter set to $true.
 * The SSL certificate used by OMI (for DSC) is specified in the file: `/opt/omi/etc/omiserver.conf` with the properties: pemfile and keyfile.
-If this certificate is not trusted by the Windows computer that you are running the [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet on, you can choose to ignore certificate validation with the CIMSession Options: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+If this certificate is not trusted by the Windows computer that you are running the [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet on, you can choose to ignore certificate validation with the CIMSession Options: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Run the following command to push the DSC configuration to the Linux node.
 

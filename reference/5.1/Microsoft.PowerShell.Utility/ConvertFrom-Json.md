@@ -52,7 +52,7 @@ Year        : 2012
 This command uses the ConvertTo-Json and **ConvertFrom-Json** cmdlets to convert a **DateTime** object from the Get-Date cmdlet to a JSON object.
 
 The command uses the Select-Object cmdlet to get all of the properties of the **DateTime** object.
-It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JSON-formatted string and the **ConvertFrom-Json** cmdlet to convert the JSON-formatted string to a JSON object..
+It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JSON-formatted string and the **ConvertFrom-Json** cmdlet to convert the JSON-formatted string to a JSON object.
 
 ### Example 2: Get JSON strings from a web service and convert them to Windows PowerShell objects
 ```
@@ -112,7 +112,7 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 ### PSCustomObject
 
 ## NOTES
-* The **ConvertFrom-Json** cmdlet is implemented by using the **JavaScriptSerializer** class (http://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(VS.100).aspx).
+* The **ConvertFrom-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 

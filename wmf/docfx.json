@@ -3,12 +3,15 @@
         "content": [
             {
                 "files": [
+                    "**/**.yml",
                     "**/**.md"
                 ],
                 "exclude": ["**/obj/**"]
             }
         ],
         "globalMetadata": {
+            "breadcrumb_path": "/powershell/wmf/bread/toc.json",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "wmf",

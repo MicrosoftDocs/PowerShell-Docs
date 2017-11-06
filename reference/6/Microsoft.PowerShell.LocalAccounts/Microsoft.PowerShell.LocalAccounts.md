@@ -1,7 +1,7 @@
 ---
 ms.date:  2017-06-09
 schema:  2.0.0
-locale:  en-us
+locale:  en-US
 keywords:  powershell,cmdlet
 Help Version:  6.0
 Download Help Link:  http://Please-enter-FwLink-manually
@@ -15,62 +15,61 @@ Module Name:  Microsoft.PowerShell.LocalAccounts
 This section contains the help topics for the Local Accounts cmdlets in Windows PowerShell.
 
 ## Microsoft.PowerShell.LocalAccounts Cmdlets
-### [Add-LocalGroupMember](add-localgroupmember.md)
+### [Add-LocalGroupMember](Add-LocalGroupMember.md)
 Adds members to a local group.
 
 
-### [Disable-LocalUser](disable-localuser.md)
+### [Disable-LocalUser](Disable-LocalUser.md)
 Disables a local user account.
 
 
-### [Enable-LocalUser](enable-localuser.md)
+### [Enable-LocalUser](Enable-LocalUser.md)
 Enables a local user account.
 
 
-### [Get-LocalGroup](get-localgroup.md)
+### [Get-LocalGroup](Get-LocalGroup.md)
 Gets the local security groups.
 
 
-### [Get-LocalGroupMember](get-localgroupmember.md)
+### [Get-LocalGroupMember](Get-LocalGroupMember.md)
 Gets members from a local group.
 
 
-### [Get-LocalUser](get-localuser.md)
+### [Get-LocalUser](Get-LocalUser.md)
 Gets local user accounts.
 
 
-### [New-LocalGroup](new-localgroup.md)
+### [New-LocalGroup](New-LocalGroup.md)
 Creates a local security group.
 
 
-### [New-LocalUser](new-localuser.md)
+### [New-LocalUser](New-LocalUser.md)
 Creates a local user account.
 
 
-### [Remove-LocalGroup](remove-localgroup.md)
+### [Remove-LocalGroup](Remove-LocalGroup.md)
 Deletes local security groups.
 
 
-### [Remove-LocalGroupMember](remove-localgroupmember.md)
+### [Remove-LocalGroupMember](Remove-LocalGroupMember.md)
 Removes members from a local group.
 
 
-### [Remove-LocalUser](remove-localuser.md)
+### [Remove-LocalUser](Remove-LocalUser.md)
 Deletes local user accounts.
 
 
-### [Rename-LocalGroup](rename-localgroup.md)
+### [Rename-LocalGroup](Rename-LocalGroup.md)
 Renames a local security group.
 
 
-### [Rename-LocalUser](rename-localuser.md)
+### [Rename-LocalUser](Rename-LocalUser.md)
 Renames a local user account.
 
 
-### [Set-LocalGroup](set-localgroup.md)
+### [Set-LocalGroup](Set-LocalGroup.md)
 Changes a local security group.
 
 
-### [Set-LocalUser](set-localuser.md)
+### [Set-LocalUser](Set-LocalUser.md)
 Modifies a local user account.
-
