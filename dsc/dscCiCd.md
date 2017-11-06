@@ -6,7 +6,7 @@ keywords:  dsc,powershell,configuration,setup
 title:  Building a Continuous Integration and Continuous Deployment pipeline with DSC
 ---
 
-# Building a Continuous Integration and Continuous Deplyoment pipeline with DSC
+# Building a Continuous Integration and Continuous Deployment pipeline with DSC
 
 This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell,
 DSC, Pester, and Visual Studio Team Foundation Server (TFS).
