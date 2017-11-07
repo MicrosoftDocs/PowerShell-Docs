@@ -15,11 +15,11 @@ title:  understanding concepts reference
 *  [Variables and assignment](./fundamental/using-variables-to-store-objects.md)
 *  Command or cmdlet execution
 *  Native apps execution and parameter passing
-*  [Implicit and explicit output formatting](../cookbooks/using-format-commands-to-change-output-view.md)
+*  [Implicit and explicit output formatting](./cookbooks/using-format-commands-to-change-output-view.md)
 *  Developing a Formatting File
 *  Scripting language elements
 *  Integration with OS and Services
 *  Providers
 *  Drivers
-*  [Updating help](http://go.microsoft.com/fwlink/?LinkID=821524)
+*  [Updating help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
