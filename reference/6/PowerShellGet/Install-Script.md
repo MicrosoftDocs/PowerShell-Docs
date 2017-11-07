@@ -50,21 +50,21 @@ CommandType     Name                                               Version    So
 ExternalScript  Required-Script2.ps1                                2.0       C:\Users\pattif\Documents\WindowsPowerShell\Scripts\Required-Script2.ps1 PS C:\> Get-InstalledScript -Name "Required-Script2"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\> Get-InstalledScript -Name "Required-Script2" | Format-List * 
+2.5        Required-Script2                    Script     local1               Description for the Required-Script2 script PS C:\> Get-InstalledScript -Name "Required-Script2" | Format-List *
 Name                       : Required-Script2
 Version                    : 2.5
 Type                       : Script
 Description                : Description for the Required-Script2 script
 Author                     : pattif
-CompanyName                : 
-Copyright                  : ???? 2015 Microsoft Corporation. All rights reserved. 
+CompanyName                :
+Copyright                  : 2015 Microsoft Corporation. All rights reserved.
 PublishedDate              : 8/15/2015 12:42:39 AM
 LicenseUri                 : http://required-script2.com/license
 ProjectUri                 : http://required-script2.com/
 IconUri                    : http://required-script2.com/icon
-Tags                       : {Tag1, Tag2, Tag-Required-Script2-2.5, PSScript...} 
+Tags                       : {Tag1, Tag2, Tag-Required-Script2-2.5, PSScript...}
 Includes                   : {Function, DscResource, Cmdlet, Command}
-PowerShellGetFormatVersion : 
+PowerShellGetFormatVersion :
 ReleaseNotes               : Required-Script2 release notes
 Dependencies               : {}
 RepositorySourceLocation   : http://pattif-dev:8765/api/v2/
@@ -89,21 +89,21 @@ PS C:\> Install-Script -Repository "Local1" -Name "Required-Script3" -Scope "All
 PS C:\> Get-InstalledScript -Name "Required-Script3"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\> Get-InstalledScript -Name "Required-Script3" | Format-List * 
+2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script PS C:\> Get-InstalledScript -Name "Required-Script3" | Format-List *
 Name                       : Required-Script3
 Version                    : 2.5
 Type                       : Script
 Description                : Description for the Required-Script3 script
 Author                     : pattif
-CompanyName                : 
-Copyright                  : ???? 2015 Microsoft Corporation. All rights reserved. 
+CompanyName                :
+Copyright                  : 2015 Microsoft Corporation. All rights reserved.
 PublishedDate              : 8/15/2015 12:42:45 AM
 LicenseUri                 : http://required-script3.com/license
 ProjectUri                 : http://required-script3.com/
 IconUri                    : http://required-script3.com/icon
-Tags                       : {Tag1, Tag2, Tag-Required-Script3-2.5, PSScript...} 
+Tags                       : {Tag1, Tag2, Tag-Required-Script3-2.5, PSScript...}
 Includes                   : {Function, DscResource, Cmdlet, Command}
-PowerShellGetFormatVersion : 
+PowerShellGetFormatVersion :
 ReleaseNotes               : Required-Script3 release notes
 Dependencies               : {}
 RepositorySourceLocation   : http://pattif-dev:8765/api/v2/
@@ -177,7 +177,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ This parameter accepts the wildcard character (*).
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -210,7 +210,7 @@ The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,7 +225,7 @@ Specifies an array of names of scripts to install.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -241,7 +241,7 @@ The default is all registered repositories.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -256,7 +256,7 @@ Specifies the exact version number of the script to install.
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -276,7 +276,7 @@ The CurrentUser scope specifies to install the script in $home\Documents\Windows
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSObject[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -353,7 +353,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -383,7 +383,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
