@@ -56,7 +56,7 @@ The **Unprotect-CmsMessage** cmdlet returns the decrypted content.
 
 ### Example 1: Decrypt a message
 ```
-PS C:\> C:\Users\gabyk\Documents\PowerShell_ISEUnprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt" -To '???????0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
+PS C:\> C:\Users\gabyk\Documents\PowerShell_ISEUnprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt" -To '0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
 Try the new Break All command
 ```
 
@@ -72,7 +72,7 @@ Specifies an encrypted string, or a variable containing an encrypted string.
 ```yaml
 Type: String
 Parameter Sets: ByContent
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -87,7 +87,7 @@ Specifies an event log record ID that represents a CMS encryption operation.
 ```yaml
 Type: PSObject
 Parameter Sets: ByWinEvent
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -136,7 +136,7 @@ Specifies the path to encrypted content that you want to decrypt.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -To
-Specifies one or more CMS message recipients, identified in any of the following formats. 
+Specifies one or more CMS message recipients, identified in any of the following formats.
 
 - An actual certificate (as retrieved from the certificate provider).
 - Path to the a file containing the certificate.
@@ -157,7 +157,7 @@ Specifies one or more CMS message recipients, identified in any of the following
 ```yaml
 Type: CmsMessageRecipient[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -171,7 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You can pipe an object containing encrypted content to **Unprotect-CmsMessage**.
 
 ## OUTPUTS
