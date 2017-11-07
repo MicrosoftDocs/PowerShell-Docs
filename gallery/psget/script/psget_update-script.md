@@ -39,7 +39,7 @@ Version Name Type Repository Description
 1.5 Fabrikam-Script Script GalleryINT Description for the Fabrikam-Script script
 
 # Update a specific script to the required prerelease version
-Update-Script -Name Fabrikam-Script -RequiredVersion 1.5.0-alpha
+Update-Script -Name Fabrikam-Script -RequiredVersion 1.5.0-alpha -AllowPrerelease
 Get-InstalledScript -Name Fabrikam-Script
 Version Name Type Repository Description
 ------- ---- ---- ---------- -----------

@@ -295,6 +295,9 @@ Install-Script -Name ContosoServer -MinimumVersion 1.0
 # Install a specific version of a script
 Install-Script -Name ContosoServer -RequiredVersion 1.1.3
 
+# Install a specific prerelease version of a script
+Install-Script -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
 # Install the latest version of a script to $home\Documents\WindowsPowerShell\scripts.
 Install-Script -Name ContosoServer -Scope CurrentUser
 

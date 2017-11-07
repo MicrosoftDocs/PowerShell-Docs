@@ -8,10 +8,10 @@ title:  PrereleaseScript
 
 # Prerelease Versions of Scripts
 
-Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. 
+Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited to having a version beginning with 0. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. 
 This topic focuses on the script-specific features. The equivalent features for modules are in the [Prerelease Module Versions](../script/PrereleaseModule) topic. Using these features, publishers can identify a script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version. 
 
-At a high level, the prerelease module features include:
+At a high level, the prerelease script features include:
 
 * Adding a PrereleaseString suffix to the version string in the script manifest. 
 When the scripts is published to the PowerShell Gallery, this data is extracted from the manifest, and used to identify prerelease items.
@@ -45,8 +45,7 @@ An example section of a script manifest with a prerelease version would look lik
 To use a prerelease suffix, the version string must meet the following requirements: 
 
 * A prerelease suffix may only be specified when the Version is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0
-* The prerelease suffix is a string which begins with a hyphen, and may contain ASCII alphanumerics and hyphen [0-9A-Za-z-]
-* The Prerelease suffix may contain only ASCII alphanumerics [0-9A-Za-z-] and hyphen [-]
+* The prerelease suffix is a string which begins with a hyphen, and may contain ASCII alphanumerics [0-9A-Za-z-]
 * Only SemVer v1.0.0 prerelease strings are supported at this time, so the prerelease suffix __must not__ contain either period or + [.+], which are allowed in SemVer 2.0 
 * Examples of supported PrereleaseString strings are: -alpha, -alpha1, -BETA, -update20171020
 
@@ -54,7 +53,7 @@ __Prerelease versioning impact on sort order and installation folders__
 
 Sort order changes when using a prerelease version, which is important when publishing to the PowerShell Gallery, and when installing scripts using PowerShellGet commands. 
 If two scripts versions with the version number exist, the sort order is based on the string portion following the hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma. 
-If two scripts have the same version number, and only one has a PrereleaseString, the module __without__ the prerelease suffix is assumed to be the production-ready version and will be sorted as a greater version than the prerelease version. 
+If two scripts have the same version number, and only one has a PrereleaseString, the script __without__ the prerelease suffix is assumed to be the production-ready version and will be sorted as a greater version than the prerelease version. 
 As an example, when comparing releases 2.5.0 and 2.5.0-beta, the 2.5.0 version will be considered the greater of the two. 
 
 When publishing to the PowerShell Gallery, by default the version of the script being published must have a greater version than any previously-published version that is in the PowerShell Gallery. 
@@ -66,10 +65,10 @@ Dealing with prerelease items using PowerShellGet Find-Script, Install-Script, U
 If -AllowPrerelease is specified, prerelease items will be included if they are present.
 If -AllowPrerelease flag is not specified, prerelease items will not be shown. 
 
-The only exceptions to this in the PowerShellGet module commands are Get-InstalledScript, and some cases with Uninstall-Script. 
+The only exceptions to this in the PowerShellGet script commands are Get-InstalledScript, and some cases with Uninstall-Script. 
 
 * Get-InstalledScript always will automatically show the prerelease information in the version string if it is present. 
-* Uninstall-Script will by default uninstall the most recent version of a module, if __no version__ is specified. That behavior has not changed. However, if a prerelease version is specified using -RequiredVersion, -AllowPrerelease will be required. 
+* Uninstall-Script will by default uninstall the most recent version of a script, if __no version__ is specified. That behavior has not changed. However, if a prerelease version is specified using -RequiredVersion, -AllowPrerelease will be required. 
 
 ## Examples
 ```powershell
@@ -129,13 +128,13 @@ At line:1 char:1
 + Unnstall-Script TestPackage -RequiredVersion 1.9.0-beta
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Script], ArgumentException
-    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-Module
+    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-script
 
 
 C:\windows\system32> Uninstall-Script TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease
 # Since script versions are not installed side-by-side, the above could be simply "Uninstall-Script TestPackage"
 
-C:\windows\system32> Get-InstalledModule TestPackage
+C:\windows\system32> Get-Installedscript TestPackage
 PackageManagement\Get-Package : No match was found for the specified search criteria and script names 'testpackage'.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm1:4088 char:9
 +         PackageManagement\Get-Package @PSBoundParameters | Microsoft. ...
@@ -150,9 +149,9 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 
 ## More details
 ### [Prerelease Module Versions](../script/PrereleaseModule)
-### [Find-Module](./psget_find-script.md)
-### [Install-Module](./psget_install-script.md)
-### [Save-Module](./psget_save-script.md)
-### [Update-Module](./psget_update-script.md)
-### [Get-InstalledModule](./psget_get-installedscript.md)
-### [UnInstall-Module](./psget_uninstall-script.md)
+### [Find-script](./psget_find-script.md)
+### [Install-script](./psget_install-script.md)
+### [Save-script](./psget_save-script.md)
+### [Update-script](./psget_update-script.md)
+### [Get-Installedscript](./psget_get-installedscript.md)
+### [UnInstall-script](./psget_uninstall-script.md)

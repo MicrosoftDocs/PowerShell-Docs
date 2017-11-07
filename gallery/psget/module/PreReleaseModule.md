@@ -7,15 +7,15 @@ title:  PrereleaseModule
 ---
 
 # Prerelease Module Versions
-Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Versions of Scripts](../script/PrereleaseScript) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version. 
+Starting with version 1.5.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited to having a version beginning with 0. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Versions of Scripts](../script/PrereleaseScript) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version. 
 
 At a high level, the prerelease module features include:
 
-* Adding a PrereleaseString string to the PSData section of the module manifest identifies the module as a prerelease version. 
+* Adding a Prerelease string to the PSData section of the module manifest identifies the module as a prerelease version. 
 When the module is published to the PowerShell Gallery, this data is extracted from the manifest, and used to identify prerelease items.
 * Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands Find-Module, Install-Module, Update-Module, and Save-Module. 
 If the flag is not specified, prerelease items will not be shown.  
-* Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShell Gallery will be displayed as a single string with the PrereleaseString appended, as in 2.5.0-alpha. 
+* Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShell Gallery will be displayed as a single string with the Prerelease string appended, as in 2.5.0-alpha. 
 
 Details for the features are included below. 
 
@@ -26,8 +26,8 @@ These changes do not affect the module version support that is built into PowerS
 PowerShellGet support for prerelease versions requires the use of two fields within the Module Manifest:
 
 * The ModuleVersion included in the module manifest must be a 3-part version if a prerelease version is used, and must comply with existing PowerShell versioning. The version format would be A.B.C, where A, B, and C are all integers. 
-* The PrereleaseString is specified in the module manifest, in the PSData section of PrivateData. 
-PrereleaseString is a string which may contain ASCII alphanumerics and hyphen [0-9A-Za-z-]. Detailed requirements on the PrereleaseString string are below. 
+* The Prerelease string is specified in the module manifest, in the PSData section of PrivateData. 
+Detailed requirements on the Prerelease string are below. 
 
 An example section of a module manifest that defines a module as a prerelease would look like the following:
 ```powershell
@@ -36,25 +36,25 @@ An example section of a module manifest that defines a module as a prerelease wo
     #---
     PrivateData = @{
         PSData = @{
-            PrereleaseString = 'alpha'
+            Prerelease = 'alpha'
         }
     }
 }
 ```
 
-The detailed requirements for PrereleaseString string are: 
+The detailed requirements for Prerelease string are: 
 
-* PrereleaseString may only be specified when the ModuleVersion is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0.
-* A hyphen is the delimiter between the Build number and the PrereleaseString. A hyphen may be included in the Prerelease string as the first character.
-* The PrereleaseString may contain only ASCII alphanumerics [0-9A-Za-z-] and hyphen [-]. It is recommended to begin the PrereleaseString with an alpha character, as it will be easier to identify that this is a prerelease version when scanning a list of items. 
-* Only SemVer v1.0.0 prerelease strings are supported at this time. PrereleaseString __must not__ contain either period or + [.+], which are allowed in SemVer 2.0. 
-* Examples of supported PrereleaseString strings are: -alpha, -alpha1, -BETA, -update20171020
+* Prerelease string may only be specified when the ModuleVersion is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0.
+* A hyphen is the delimiter between the Build number and the Prerelease string. A hyphen may be included in the Prerelease string as the first character, only.
+* The Prerelease string may contain only ASCII alphanumerics [0-9A-Za-z-]. It is a best practice to begin the Prerelease string with an alpha character, as it will be easier to identify that this is a prerelease version when scanning a list of items. 
+* Only SemVer v1.0.0 prerelease strings are supported at this time. Prerelease string __must not__ contain either period or + [.+], which are allowed in SemVer 2.0. 
+* Examples of supported Prerelease string are: -alpha, -alpha1, -BETA, -update20171020
 
 __Prerelease versioning impact on sort order and installation folders__
 
 Sort order changes when using a prerelease version, which is important when publishing to the PowerShell Gallery, and when installing modules using PowerShellGet commands. 
-If the PrereleaseString is specified for two modules, the sort order is based on the string portion following the hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma. 
-If two modules have the same ModuleVersion, and only one has a PrereleaseString, the module without the PrereleaseString is assumed to be the production-ready version and will be sorted as a greater version than the prerelease version (which includes the PrereleaseString). 
+If the Prerelease string is specified for two modules, the sort order is based on the string portion following the hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma. 
+If two modules have the same ModuleVersion, and only one has a Prerelease string, the module without the Prerelease string is assumed to be the production-ready version and will be sorted as a greater version than the prerelease version (which includes the Prerelease string). 
 As an example, when comparing releases 2.5.0 and 2.5.0-beta, the 2.5.0 version will be considered the greater of the two. 
 
 When publishing to the PowerShell Gallery, by default the version of the module being published must have a greater version than any previously-published version that is in the PowerShell Gallery. 
