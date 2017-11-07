@@ -27,7 +27,7 @@ You can select the indicators that the bar reflects and the text that appears ab
 ### Example 1
 ```
 PS C:\> for ($i = 1; $i -le 100; $i++ )
-{write-progress -activity "Search in Progress" -status "$i% Complete:" -percentcomplete $i;}
+{write-progress -activity "Search in Progress" -status "$i% Complete:" -PercentComplete $i;}
 ```
 
 This command displays the progress of a For loop that counts from 1 to 100.
@@ -35,9 +35,9 @@ The Write-Progress command includes a status bar heading ("activity"), a status 
 ### Example 2
 ```
 PS C:\> for($i = 1; $i -lt 101; $i++ )
-{write-progress -activity Updating -status 'Progress->' -percentcomplete $i -currentOperation OuterLoop; `
+{write-progress -activity Updating -status 'Progress->' -PercentComplete $i -currentOperation OuterLoop; `
 for($j = 1; $j -lt 101; $j++ )
-{write-progress -id  1 -activity Updating -status 'Progress' -percentcomplete $j -currentOperation InnerLoop} }
+{write-progress -id  1 -activity Updating -status 'Progress' -PercentComplete $j -currentOperation InnerLoop} }
 
 Updating
 Progress ->
@@ -58,7 +58,7 @@ Without the Id parameter, the progress bars would be superimposed on each other 
 PS C:\> $events = get-eventlog -logname system
 PS C:\> $events | foreach-object -begin {clear-host;$i=0;$out=""} `
 -process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $i = $i+1;
-write-progress -activity "Searching Events" -status "Progress:" -percentcomplete ($i/$events.count*100)} `
+write-progress -activity "Searching Events" -status "Progress:" -PercentComplete ($i/$events.count*100)} `
 -end {$out}
 ```
 
@@ -86,7 +86,7 @@ This text describes the activity whose progress is being reported.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -102,7 +102,7 @@ If this parameter is omitted, Write-Progress displays progress information.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ This text describes the operation that is currently taking place.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -135,7 +135,7 @@ If the progress bars do not have different IDs, they are superimposed instead of
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -151,7 +151,7 @@ Use the value -1 if the current activity has no parent activity.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ Use the value -1 if the percentage complete is unknown or not applicable.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ Use the value -1 if the number of seconds remaining is unknown or not applicable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +198,7 @@ Identifies the source of the record.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -214,7 +214,7 @@ This text describes current state of the activity.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
