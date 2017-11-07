@@ -74,7 +74,7 @@ Type                       : Script
 Description                : Description for the Required-Script2 script
 Author                     : pattif
 CompanyName                : Microsoft Corporation
-Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : ???? 2015 Microsoft Corporation. All rights reserved. 
 PublishedDate              : 8/14/2015 2:37:01 PM
 LicenseUri                 : http://required-script2.com/license
 ProjectUri                 : http://required-script2.com/
@@ -343,7 +343,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -373,7 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential

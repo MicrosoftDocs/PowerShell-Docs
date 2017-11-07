@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Raw
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

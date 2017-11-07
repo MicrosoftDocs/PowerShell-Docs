@@ -63,7 +63,7 @@ The second command gets registered repositories and displays the results.
 ## PARAMETERS
 
 ### -InstallationPolicy
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishLocation
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceLocation
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -Default
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential

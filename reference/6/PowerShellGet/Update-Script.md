@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
