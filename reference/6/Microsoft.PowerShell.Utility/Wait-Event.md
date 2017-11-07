@@ -75,7 +75,7 @@ If the specified time expires, the wait ends.
 ## PARAMETERS
 
 ### -InformationAction
-@{Text=}```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv

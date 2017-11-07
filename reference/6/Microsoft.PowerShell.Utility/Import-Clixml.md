@@ -69,7 +69,7 @@ This eliminates the risk of exposing plain-text passwords in your script.
 ## PARAMETERS
 
 ### -InformationAction
-@{Text=}```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv

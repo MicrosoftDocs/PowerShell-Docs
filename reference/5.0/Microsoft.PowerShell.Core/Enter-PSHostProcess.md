@@ -103,7 +103,7 @@ PS C:\>
 ## PARAMETERS
 
 ### -AppDomainName
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostProcessInfo
-@{Text=}
+
 
 ```yaml
 Type: PSHostProcessInfo

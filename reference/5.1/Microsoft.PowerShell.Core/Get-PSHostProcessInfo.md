@@ -46,7 +46,7 @@ PS C:\>
 ## PARAMETERS
 
 ### -Id
-@{Text=}
+
 
 ```yaml
 Type: Int32[]
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+
 
 ```yaml
 Type: String[]

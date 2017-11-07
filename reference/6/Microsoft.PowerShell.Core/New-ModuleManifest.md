@@ -210,7 +210,7 @@ IscsiTarget                                                 4.0
 Kds                                                         4.0
 Microsoft.PowerShell.Diagnostics                            4.0
 Microsoft.PowerShell.Host                                   4.0
-Microsoft.PowerShell.Management                             4.0â€¦
+Microsoft.PowerShell.Management                             4.0???????
 ```
 
 This example shows how to get the module manifest values of a module.
@@ -401,7 +401,7 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-@{Text=}
+
 
 ```yaml
 Type: String[]
@@ -516,7 +516,7 @@ Accept wildcard characters: False
 ```
 
 ### -IconUri
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -531,7 +531,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -740,7 +740,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -858,7 +858,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-@{Text=}
+
 
 ```yaml
 Type: String[]
