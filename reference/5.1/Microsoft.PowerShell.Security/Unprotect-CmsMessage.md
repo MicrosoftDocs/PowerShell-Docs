@@ -171,9 +171,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.Diagnostics.Eventing.Reader.EventLogRecord or System.String
 You can pipe an object containing encrypted content to **Unprotect-CmsMessage**.
 
 ## OUTPUTS
+
+### System.String
+The unencrypted message.
 
 ## NOTES
 
