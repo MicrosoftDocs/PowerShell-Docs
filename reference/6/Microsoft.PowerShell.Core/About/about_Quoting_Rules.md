@@ -29,7 +29,7 @@ For example:
 
 
 ```
-$i = 5  
+$i = 5
 "The value of $i is $i."
 ```
 
@@ -62,7 +62,7 @@ When you enclose a string in single-quotation marks (a single-quoted string), th
 
 
 ```
-$i = 5  
+$i = 5
 'The value of $i is $i.'
 ```
 
@@ -97,7 +97,7 @@ In the following example, the backtick character that precedes the first $i vari
 
 
 ```
-$i = 5  
+$i = 5
 "The value of `$i is $i."
 ```
 
@@ -188,9 +188,9 @@ For example, the following command generates an error because Windows PowerShell
 
 
 ```
-PS C:\> 'Use a quotation mark (`') to begin a string.'  
-Unexpected token ')' in expression or statement.  
-At line:1 char:27  
+PS C:\> 'Use a quotation mark (`') to begin a string.'
+Unexpected token ')' in expression or statement.
+At line:1 char:27
 + 'Use a quotation mark (`') <<<<  to begin a string.'
 ```
 
@@ -213,18 +213,18 @@ A here-string can have either of the following formats, where <Enter> represents
 
 
 ```
-Double-quotes:  
-   @"<Enter>  
-   <string> [string] ...<Enter>  
+Double-quotes:
+   @"<Enter>
+   <string> [string] ...<Enter>
    "@
 ```
 
 
 
 ```
-Single-quotes:  
-    @'<Enter>  
-    <string> [string] ...<Enter>  
+Single-quotes:
+    @'<Enter>
+    <string> [string] ...<Enter>
     '@
 ```
 
@@ -235,8 +235,8 @@ A here-string contains all the text between the two hidden characters. In the he
 
 
 ```
-@"  
-For help, type "get-help"  
+@"
+For help, type "get-help"
 "@
 ```
 
@@ -253,8 +253,8 @@ Using a here-string can simplify using a string in a command. For example:
 
 
 ```
-@"  
-Use a quotation mark (') to begin a string.  
+@"
+Use a quotation mark (') to begin a string.
 "@
 ```
 
@@ -271,9 +271,9 @@ In single-quoted here-strings, variables are interpreted literally and reproduce
 
 
 ```
-@'  
-The $profile variable contains the path  
-of your Windows PowerShell profile.  
+@'
+The $profile variable contains the path
+of your Windows PowerShell profile.
 '@
 ```
 
@@ -282,7 +282,7 @@ The output of this command is:
 
 
 ```
-The $profile variable contains the path  
+The $profile variable contains the path
 of your Windows PowerShell profile.
 ```
 
@@ -291,10 +291,10 @@ In double-quoted here-strings, variables are replaced by their values. For examp
 
 
 ```
-@"   
-Even if you have not created a profile,  
-the path of the profile file is:  
-$profile.  
+@"
+Even if you have not created a profile,
+the path of the profile file is:
+$profile.
 "@
 ```
 
@@ -303,8 +303,8 @@ The output of this command is:
 
 
 ```
-Even if you have not created a profile,  
-the path of the profile file is:  
+Even if you have not created a profile,
+the path of the profile file is:
 C:\Users\User01\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1.
 ```
 
@@ -313,23 +313,23 @@ Here-strings are typically used to assign multiple lines to a variable. For exam
 
 
 ```
-$page = [XML] @"  
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"  
-xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"   
-xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">  
-<command:details>  
-        <command:name>  
-               Format-Table  
-        </command:name>  
-        <maml:description>  
-            <maml:para>Formats the output as a table.</maml:para>  
-        </maml:description>  
-        <command:verb>format</command:verb>  
-        <command:noun>table</command:noun>  
-        <dev:version></dev:version>  
-</command:details>  
-...  
-</command:command>  
+$page = [XML] @"
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+<command:details>
+        <command:name>
+               Format-Table
+        </command:name>
+        <maml:description>
+            <maml:para>Formats the output as a table.</maml:para>
+        </maml:description>
+        <command:verb>format</command:verb>
+        <command:noun>table</command:noun>
+        <dev:version></dev:version>
+</command:details>
+...
+</command:command>
 "@
 ```
 
@@ -347,7 +347,7 @@ about_Quotation_Marks
 
 ## SEE ALSO
 
-[about_Escape_Characters](about_Escape_Characters.md)
+[about_Special_Characters](about_Special_Characters.md)
 
 ConvertFrom-StringData
 

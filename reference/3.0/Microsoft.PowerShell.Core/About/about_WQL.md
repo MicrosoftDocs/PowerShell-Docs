@@ -729,7 +729,7 @@ PS C:> Get-CimInstance -Query $q
 
 # SEE ALSO
 
-[about_Escape_Characters](about_Escape_Characters.md)
+[about_Special_Characters](about_Special_Characters.md)
 
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
