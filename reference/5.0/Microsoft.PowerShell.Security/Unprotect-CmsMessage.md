@@ -171,7 +171,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###
 You can pipe an object containing encrypted content to **Unprotect-CmsMessage**.
 
 ## OUTPUTS
