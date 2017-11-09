@@ -18,86 +18,154 @@ Deletes the specified items.
 ### Path (Default)
 ```
 Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
- [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
- [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Remove-Item cmdlet deletes one or more items.
-Because it is supported by many providers, it can delete many different types of items, including files, directories, registry keys, variables, aliases, and functions.
+The `Remove-Item` cmdlet deletes one or more items.
+Because it is supported by many providers, it can delete many different types of items, including files, folders, registry keys, variables, aliases, and functions.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Delete files that have any file name extension
 ```
-PS C:\> remove-item C:\Test\*.*
-```
-
-This command deletes all of the files with names that include a dot (.) from the C:\Test directory.
-Because the command specifies a dot, the command does not delete directories or files with no file name extension.
-
-### Example 2
-```
-PS C:\> remove-item * -include *.doc -exclude *1*
+PS C:\> Remove-Item C:\Test\*.*
 ```
 
-This command deletes from the current directory all files with a .doc file name extension and a name that does not include "1".
-It uses the wildcard character (*) to specify the contents of the current directory.
-It uses the Include and Exclude parameters to specify the files to delete.
+This command deletes all of the files that have names that include a dot (`.`) from the `C:\Test` folder.
+Because the command specifies a dot, the command does not delete folders or files that have no file name extension.
 
-### Example 3
+### Example 2: Delete some of the document files in a folder
 ```
-PS C:\> remove-item -path C:\Test\hidden-RO-file.txt -force
+PS C:\> Remove-Item * -Include *.doc -Exclude *1*
+```
+
+This command deletes from the current folder all files that have a `.doc` file name extension and a name that does not include 1.
+It uses the wildcard character (`*`) to specify the contents of the current folder.
+It uses the `-Include` and `-Exclude` parameters to specify the files to delete.
+
+### Example 3: Delete hidden, read-only files
+```
+PS C:\> Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
 This command deletes a file that is both hidden and read-only.
-It uses the Path parameter to specify the file.
-It uses the Force parameter to give permission to delete it.
-Without Force, you cannot delete read-only or hidden files.
+It uses the `-Path` parameter to specify the file.
+It uses the `-Force` parameter to delete it.
+Without `-Force`, you cannot delete read-only or hidden files.
 
-### Example 4
+### Example 4: Delete files in subfolders recursively
 ```
-PS C:\> get-childitem * -include *.csv -recurse | remove-item
-```
-
-This command deletes all of the CSV files in the current directory and all subdirectories recursively.
-
-Because the Recurse parameter in the Remove-Item cmdlet has a known issue (it might not delete all child directories or files, especially if the Include parameter is added to the command), the command in this example uses the Get-ChildItem cmdlet to get the desired files, and then uses the pipeline operator to pass them to the Remove-Item cmdlet.
-
-In the Get-ChildItem command, the Path parameter has a value of *, which represents the contents of the current directory.
-It uses the Include parameter to specify the CSV file type, and it uses the Recurse parameter to make the retrieval recursive.
-
-If you try to specify the file type in the path, such as "-path *.csv", the cmdlet interprets the subject of the search to be a file that has no child items, and Recurse fails.
-
-### Example 5
-```
-PS C:\> remove-item hklm:\software\mycompany\OldApp -recurse
+PS C:\> Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 ```
 
-This command deletes the OldApp registry key and all of its subkeys and values.
-It uses the Remove-Item cmdlet to remove the key.
-The path is specified, but the optional parameter name (Path) is omitted.
+This command deletes all of the CSV files in the current folder and all subfolder recursively.
 
-The Recurse parameter deletes all of the contents of the OldApp key recursively.
-If the key contains subkeys and you omit the Recurse parameter, you are prompted to confirm that you want to delete the contents of the key.
+Because the `-Recurse` parameter in `Remove-Item` has a known issue, the command in this example uses `Get-ChildItem` to get the desired files, and then uses the pipeline operator to pass them to `Remove-Item`.
+
+In the `Get-ChildItem` command, `-Path` has a value of *, which represents the contents of the current folder.
+It uses `-Include` to specify the CSV file type, and it uses `-Recurse` to make the retrieval recursive.
+
+If you try to specify the file type the path, such as `-Path *.csv`, the cmdlet interprets the subject of the search to be a file that has no child items, and `-Recurse` fails.
+
+### Example 5: Delete subkeys recursively
+```
+PS C:\> Remove-Item hklm:\software\mycompany\OldApp -Recurse
+```
+
+This command deletes the OldApp registry key and all its subkeys and values.
+It uses `Remove-Item` to remove the key.
+The path is specified, but the optional parameter name (`-Path`) is omitted.
+
+The `-Recurse` parameter deletes all of the contents of the OldApp key recursively.
+If the key contains subkeys and you omit the `-Recurse` parameter, you are prompted to confirm that you want to delete the contents of the key.
+
+### Example 6: Remove a `Zone.Identifier` stream from a file
+
+```
+C:\PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+   FileName: \\C:\Test\Copy-Script.ps1
+
+Stream                   Length
+------                   ------
+Zone.Identifier              26
+
+C:\PS>Remove-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+C:\PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+
+get-item : Could not open alternate data stream 'Zone.Identifier' of file 'C:\Test\Copy-Script.ps1'.
+At line:1 char:1
++ get-item 'C:\Test\Copy-Script.ps1' -Stream Zone.Identifier
++ [!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()][!INCLUDE[]()]~~
+    + CategoryInfo          : ObjectNotFound: (C:\Test\Copy-Script.ps1:String) [Get-Item], FileNotFoundException
+    + FullyQualifiedErrorId : AlternateDataStreamNotFound,Microsoft.PowerShell.Commands.GetItemCommand
+
+C:\PS>Get-Item C:\Test\Copy-Script.ps1
+
+    Directory: C:\Test
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---          8/4/2011  11:15 AM       9436 Copy-Script.ps1
+```
+
+This example shows how to use the `-Stream` dynamic parameter of the `Remove-Item` cmdlet to delete an alternate data stream.
+The `-Stream` parameter was introduced in Windows PowerShell 3.0.
+
+The first command uses the `-Stream` dynamic parameter of the `Get-Item` cmdlet to get the `Zone.Identifier` stream of the `Copy-Script.ps1` file.
+
+The second command uses the `-Stream` dynamic parameter of the `Remove-Item` cmdlet to remove the `Zone.Identifier` stream of the file.
+
+The third command uses the `-Stream` dynamic parameter of the `Get-Item` cmdlet to verify that the `Zone.Identifier` stream is deleted.
+
+The fourth command uses `Get-Item` without the `-Stream` parameter to verify that the file is not deleted.
 
 ## PARAMETERS
+
+### -Stream
+Specifies an alternative data stream from a file that this cmdlet deletes.
+Usage of this parameter does not delete the file itself.
+Enter the stream name.
+Wildcard characters are supported.
+This parameter is not valid on folders.
+
+The `-Stream` parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
+This parameter works only in filesystem drives.
+
+You can use `Remove-Item` to delete an alternative data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a `PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
+If you type a username, this cmdlet prompts you for a password.
 
-This parameter is not supported by any providers installed with Windows PowerShell.
+This parameter is not supported by any providers installed with PowerShell.
 
 ```yaml
 Type: PSCredential
@@ -112,10 +180,10 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
-Omits the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
+Specifies items that this cmdlet omits.
+The value of this parameter qualifies the `-Path` parameter.
+Enter a path element or pattern, such as `*.txt`.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -126,14 +194,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Filter
-Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the Path parameter.
-The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Specifies a filter in the format or language of the provider.
+The value of this parameter qualifies the `-Path` parameter.
+The syntax of the filter, including the use of wildcard characters, depends on the provider.
+Filters are more efficient than other parameters, because the provider applies them when it retrieves the objects, instead of having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -144,15 +212,15 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Force
-Allows the cmdlet to remove items that cannot otherwise be changed, such as hidden or read-only files or read-only aliases or variables.
-The cmdlet cannot remove constant aliases or variables. 
+Forces the cmdlet to remove items that cannot otherwise be changed, such as hidden or read-only files or read-only aliases or variables.
+The cmdlet cannot remove constant aliases or variables.
 Implementation varies from provider to provider.
 For more information, see about_Providers.
-Even using the Force parameter, the cmdlet cannot override security restrictions.
+Even using the `-Force` parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -161,16 +229,16 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Include
-Deletes only the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
+Specifies items to delete.
+The value of this parameter qualifies the `-Path` parameter.
+Enter a path element or pattern, such as `*.txt`.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -181,15 +249,15 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies a path to the items being removed.
-Unlike Path, the value of LiteralPath is used exactly as it is typed.
-No characters are interpreted as wildcards.
+Specifies a path of the items being removed.
+Unlike `-Path`, the value of the `-LiteralPath` parameter is used exactly as it is typed.
+No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -204,9 +272,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies a path to the items being removed.
-Wildcards are permitted.
-The parameter name ("-Path") is optional.
+Specifies a path of the items being removed.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -217,14 +284,15 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Recurse
-Deletes the items in the specified locations and in all child items of the locations.
+Indicates that this cmdlet deletes the items in the specified locations and in all child items of the locations.
 
-When it is used with the Include parameter, the Recurse parameter might not delete all child directories or all child items.
-This is a known issue; as a workaround, try piping results of the Get-ChildItem -Recurse cmdlet into the Remove-Item cmdlet, as described in Example 4 in this topic.
+When it is used with the `-Include` parameter, the `-Recurse` parameter might not delete all subfolders or all child items.
+This is a known issue.
+As a workaround, try piping results of the `Get-ChildItem -Recurse` command to `Remove-Item`, as described in Example 4 in this topic.
 
 ```yaml
 Type: SwitchParameter
@@ -233,7 +301,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -288,42 +356,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Stream
-Specifies an alternative data stream from a file that this cmdlet deletes.
-This cmdlet does not delete the file.
-Enter the stream name.
-Wildcard characters are supported.
-
-This parameter is not valid on folders.
-
-The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Remove-Item**.
-This parameter works only in file system drives.
-
-You can use **Remove-Item** to delete an alternative data stream.
-However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path (but not a literal path) to Remove-Item.
+You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
 ## OUTPUTS
 
@@ -331,13 +370,12 @@ You can pipe a string that contains a path (but not a literal path) to Remove-It
 This cmdlet does not return any output.
 
 ## NOTES
-* You can also refer to Remove-Item by any of its built-in aliases, "del", "erase", "rmdir", "rd", "ri", or "rm". For more information, see about_Aliases.
+You can also refer to `Remove-Item` by any of its built-in aliases: `del`, `erase`, `rmdir`, `rd`, `ri`, or `rm`.
+For more information, see about_Aliases.
 
-  The Remove-Item cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type "Get-PsProvider".
+`Remove-Item` cmdlet is designed to work with the data exposed by any provider.
+To list the providers available in your session, type `Get-PsProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 
@@ -358,6 +396,3 @@ For more information, see about_Providers.
 [Rename-Item](Rename-Item.md)
 
 [Set-Item](Set-Item.md)
-
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

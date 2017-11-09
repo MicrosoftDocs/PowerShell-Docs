@@ -19,8 +19,7 @@ Gets the items and child items in one or more specified locations.
 
 ```powershell
 Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
+ [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File]
  [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
@@ -28,21 +27,24 @@ Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-
 
 ```powershell
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
- [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory]
+ [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## Description
 The `Get-ChildItem` cmdlet gets the items in one or more specified locations.
 If the item is a container, it gets the items inside the container, known as child items.
-You can use the `-Recurse` parameter to get items in all child containers.
+You can use the `-Recurse` parameter to get items in all child containers and use the `-Depth` parameter to limit the number of levels to recurse.
 
-A location can be a file system location, such as a directory, or a location exposed by a different Windows PowerShell provider, such as a registry hive or a certificate store.
+A location can be a file system location, such as a directory, or a location exposed by a different PowerShell provider, such as a registry hive or a certificate store.
+In a file system drive, `Get-ChildItem` gets directories, subdirectories, and files in a given path.
+By default, `Get-ChildItem` gets non-hidden items, but you can use the `-Directory`, `-File`, `-Hidden`, `-ReadOnly`, and `-System` parameters to get only items with these attributes.
+To create a complex attribute search, use the `Attributes` parameter.
+If you use these parameters, `Get-ChildItem` gets only the items that meet all search conditions, as though the parameters were connected by an `-and` operator.
 
 ## Examples
 
-### Example 1
+### Example 1: Get child items in the current directory
 ```powershell
 Get-ChildItem
 ```
@@ -54,7 +56,7 @@ If the item does not have child items, this command returns to the command promp
 The default display lists the mode (attributes), last write time, file size (length), and the name of the file.
 The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system).
 
-### Example 2
+### Example 2: Get all files with the specified file extension in the current directory and subdirectories
 ```powershell
 Get-ChildItem -Path *.txt -Recurse -Force
 ```
@@ -67,7 +69,7 @@ To use the `-Recurse` parameter on Windows PowerShell 2.0 and earlier versions o
 Use the `-Include` parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 
-### Example 3
+### Example 3: Get all child items using an inclusion and exclusion
 ```powershell
 Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
@@ -76,21 +78,21 @@ This command lists the .txt files in the Logs subdirectory, except for those who
 It uses the wildcard character (`*`) to indicate the contents of the Logs subdirectory, not the directory container.
 Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of directory automatically; you need to specify it.
 
-### Example 4
+### Example 4: Get all registry keys in a specific key
 ```powershell
 Get-ChildItem -Path HKLM:\Software
 ```
 
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 
-### Example 5
+### Example 5: Get the name of items in the current directory
 ```powershell
 Get-ChildItem -Name
 ```
 
 This command gets only the names of items in the current directory.
 
-### Example 6
+### Example 6: Get all certificates in a certification drive that have code-signing authority
 ```powershell
 Import-Module Microsoft.PowerShell.Security
 Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
@@ -107,14 +109,21 @@ The `-Recurse` parameter requests a recursive search.
 The `-CodeSigningCert` parameter is a dynamic parameter that the Certificate provider adds to the `Get-ChildItem` cmdlet.
 This parameter gets only certificates that have code-signing authority.
 
-For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../microsoft.powershell.security/providers/certificate-provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
+For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../Microsoft.Powershell.Security/Providers/Certificate-Provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
-### Example 7
+### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
 ```powershell
 Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```
 
 This command gets all of the items in the C:\Windows directory and its subdirectories that have "mouse" in the file name, except for those with a .png file name extension.
+
+### Example 8: Get all items in the specified directory and its subdirectories limited by the Depth parameter
+```
+PS C:\> Get-ChildItem -Path C:\Windows -Depth 2
+```
+
+This command gets all of the items in the C:\Windows directory and its subdirectories up to 2 level below in depth.
 
 ## Parameters
 
@@ -146,18 +155,19 @@ The `-Attributes` parameter supports the following attributes:
 
 For a description of these attributes, see the [FileAttributes Enumeration](http://go.microsoft.com/fwlink/?LinkId=201508).
 
-Use the following operators to combine attributes.
-- `!`   (NOT)
-- `+`   (AND)
-- `,`   (OR)
+Use the following operators to combine attributes:
+- `!` (NOT)
+- `+` (AND)
+- `,` (OR)
 
-No spaces are permitted between an operator and its attribute. However, spaces are permitted before commas.
+No spaces are permitted between an operator and its attribute.
+However, spaces are permitted before commas.
 
 You can use the following abbreviations for commonly used attributes:
-- `D`   (Directory)
-- `H`   (Hidden)
-- `R`   (Read-only)
-- `S`   (System)
+- `D` (Directory)
+- `H` (Hidden)
+- `R` (Read-only)
+- `S` (System)
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
@@ -171,12 +181,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Depth
+This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
+
+```yaml
+Type: UInt32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Directory
-Gets directories (folders).  
+Gets directories (folders).
 
-To get only directories, use the `-Directory` parameter and omit the `-File` parameter. To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter. 
+To get only directories, use the `-Directory` parameter and omit the `-File` parameter.
+To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter.
 
-To get directories, use the Directory parameter, its "`ad`" alias, or the Directory attribute of the `-Attributes` parameter.
+To get directories, use the `-Directory` parameter, its "`ad`" alias, or the `Directory` attribute of the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -209,11 +235,12 @@ Accept wildcard characters: True
 ```
 
 ### -File
-Gets files. 
+Gets files.
 
-To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
+To get only files, use the `-File` parameter and omit the Directory parameter.
+To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
 
-To get files, use the File parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
+To get files, use the `-File` parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -265,9 +292,11 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
-Gets only hidden files and directories (folders).  By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
+Gets only hidden files and directories (folders).
+By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
 
-To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the Hidden value of the `-Attributes` parameter. To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
+To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the `Hidden` value of the `-Attributes` parameter.
+To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -354,9 +383,10 @@ Accept wildcard characters: True
 ```
 
 ### -ReadOnly
-Gets only read-only files and directories (folders).  
+Gets only read-only files and directories (folders).
 
-To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
+To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter.
+To exclude read-only items, use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -373,7 +403,7 @@ Accept wildcard characters: False
 ### -Recurse
 Gets the items in the specified locations and in all child items of the locations.
 
-In Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the `-Recurse` parameter works only when the value of the `-Path` parameter is a container that has child items, such as C:\Windows or C:\Windows\*, and not when it is an item does not have child items, such as C:\Windows\*.exe.
+In Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the `-Recurse` parameter works only when the value of the `-Path` parameter is a container that has child items, such as `C:\Windows` or `C:\Windows\*`, and not when it is an item does not have child items, such as `C:\Windows\*.exe`.
 
 ```yaml
 Type: SwitchParameter
@@ -390,7 +420,8 @@ Accept wildcard characters: False
 ### -System
 Gets only system files and directories (folders).
 
-To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
+To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the `System` value of the `-Attributes` parameter.
+To exclude system files and folders, use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -422,7 +453,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs
 
@@ -456,5 +488,7 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Get-Location](Get-Location.md)
 
 [Get-Process](Get-Process.md)
+
+[Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

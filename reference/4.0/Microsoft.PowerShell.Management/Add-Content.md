@@ -11,7 +11,7 @@ title:  Add-Content
 # Add-Content
 
 ## SYNOPSIS
-Adds content to the specified items, such as adding words to a file.
+Appends content, such as adding words or data to a file.
 
 ## SYNTAX
 
@@ -30,88 +30,105 @@ Add-Content [-Value] <Object[]> [-PassThru] -LiteralPath <String[]> [-Filter <St
 ```
 
 ## DESCRIPTION
-The Add-Content cmdlet appends content to a specified item or file.
+The **Add-Content** cmdlet appends content to a specified item or file.
 You can specify the content by typing the content in the command or by specifying an object that contains the content.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> add-content -path *.txt -exclude help* -value "END"
-```
-
-This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
-
-### Example 2
-```
-PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
+### Example 1: Add a string to all text files with an exception
+```powershell
+Add-Content -Path "*.txt" -Exclude "help*" -Value "END"
 ```
 
-This command adds the date to the end of the File1.log and File2.log files and then displays the date at the command line.
-The command uses the Get-Date cmdlet to get the date, and it uses the Value parameter to pass the date to Add-Content.
-The PassThru parameter passes an object representing the added content through the pipeline.
+This command adds END to all text files in the current directory, except for those with file names that begin with help.
+
+### Example 2: Add a date to the end of the specified files
+```powershell
+Add-Content -Path "file1.log", "file2.log" -Value (Get-Date) -PassThru
+```
+
+This command adds the date to the end of the `File1.log` and `File2.log` files and then displays the date at the command line.
+The command uses the Get-Date cmdlet to get the date, and it uses the Value parameter to pass the date to **Add-Content**.
+The `-PassThru` parameter passes an object representing the added content through the pipeline.
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
 
-### Example 3
-```
-PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
+### Example 3: Add the contents of a specified file to another file
+```powershell
+ Add-Content -Path "monthly.txt" -Value (Get-Content "c:\rec1\weekly.txt")
 ```
 
-This command adds the contents of the Weekly.txt file to the end of the Monthly.txt file.
-It uses the Get-Content cmdlet to get the contents of the Weekly.txt file, and it uses the Value parameter to pass the content of weekly.txt to Add-Content.
-The parentheses ensure that the Get-Content command is complete before the Add-Content command begins.
+This command adds the contents of the `weekly.txt` file to the end of the Monthly.txt file.
+The command uses the **Get-Content** cmdlet to get the contents of the `weekly.txt` file, and it uses the *Value* parameter to pass the content of `weekly`.txt to **Add-Content**.
+The parentheses ensure that the **Get-Content** command is complete before the **Add-Content** command begins.
 
-You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
-In that case, the command would be "add-content -path monthly.txt -value $w".
+You can also copy the content of `weekly.txt` to a variable, such as `$String `, and then use the *Value* parameter to pass the variable to **Add-Content**.
 
-### Example 4
-```
-PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
+### Example 4: Create a new directory and file and copy content
+```powershell
+ Add-Content -Value (Get-Content "test.log") -Path "C:\tests\test134\logs\test134.log"
 ```
 
 This command creates a new directory and file and copies the content of an existing file to the newly created file.
 
-This command uses the Add-Content cmdlet to add the content.
-The value of the Value parameter is a Get-Content command that gets content from an existing file, Test.log.
+This command uses the **Add-Content** cmdlet to add the content.
+The value of the *Value* parameter is a **Get-Content** command that gets content from an existing file, `test.log`.
 
-The value of the path parameter is a path that does not exist when the command runs.
-In this example, only the C:\Tests directories exist.
-The command creates the remaining directories and the Test134.log file.
+The value of the `-Path` parameter is a path that does not exist when the command runs.
+In this example, only the `C:\Tests` directories exist.
+The command creates the remaining directories and the `test134.log` file.
 
-The Force parameter is not required for this command.
-Add-Content creates directories to complete a path even without the Force parameter.
+The `-Force` parameter is not required for this command.
+**Add-Content** creates directories to complete a path even without the `-Force` parameter.
+
+### Example 5: Append the contents of an XML file to another with UTF-8 encoding 
+```powershell
+Get-Content test.xml | Add-Content final.xml -Force -Encoding UTF8
+```
+
+This command gets the content of `test.xml` and appends it to a file called `final.xml` with UTF-8 based encoding.
+`final.xml` may or may not exist when the command is run.
+Also, the content of `test.xml` may or may not be UTF-8 when it's read,
+but if `Get-Content` was able to determine the correct encoding,
+the `-Encoding` parameter on **Add-Content** will convert the content to UTF-8.
 
 ## PARAMETERS
 
-### -Credential
-Specifies a user account that has permission to perform this action.
-The default is the current user.
+### -Encoding
+Specifies the encoding that this cmdlet applies to the content.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+The acceptable values for this parameter are:
 
-This parameter is not supported by any providers installed with Windows PowerShell.
+- Ascii: Uses the encoding for the ASCII (7-bit) character set.
+- BigEndianUnicode: Encodes in UTF-16 format using the little-endian byte order.
+- BigEndianUTF32: Encodes in UTF-16 format using the big-endian byte order.
+- Byte: Encodes a set of characters into a sequence of bytes.
+- Default: Uses the default encoding defined by the underlying .NET system.
+- Oem
+- String: Uses the encoding type for a string.
+- Unicode: Encodes in UTF-16 format using the little-endian byte order.
+- Unknown: The encoding type is unknown or invalid. The data can be treated as binary.
+- UTF32: Encodes in UTF-32 format.
+- UTF7: Encodes in UTF-7 format.
+- UTF8: Encodes in UTF-8 format.
 
 ```yaml
-Type: PSCredential
+Type: FileSystemCmdletProviderEncoding
 Parameter Sets: (All)
 Aliases: 
+Accepted values: Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem, BigEndianUTF32
 
 Required: False
 Position: Named
-Default value: Current user
-Accept pipeline input: True (ByPropertyName)
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Exclude
-Omits the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
+### -Force
+Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: String[]
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
 
@@ -119,14 +136,18 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
-### -Filter
-Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the Path parameter.
-The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+### -Stream
+`-Stream` is a dynamic parameter that the FileSystem provider adds to the `Add-Content` cmdlet.
+This parameter works only in FileSystem drives.
+
+`-Stream` adds the content to the specified alternate data stream.
+If the stream does not yet, exist, `Add-Content` creates it.
+Enter the stream name. Wildcards are not supported.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
@@ -137,109 +158,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### -Force
-Overrides the read-only attribute, allowing you to add content to a read-only file.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Include
-Adds only the specified items.
-The value of this parameter qualifies the Path parameter.
-Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### -LiteralPath
-Specifies the path to the items that receive the additional content.
-Unlike Path, the value of LiteralPath is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: LiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns an object representing the added content.
-By default, this cmdlet does not generate any output.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Path
-Specifies the path to the items that receive the additional content.
-Wildcards are permitted.
-If you specify multiple paths, use commas to separate the paths.
-
-```yaml
-Type: String[]
-Parameter Sets: Path
-Aliases: 
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
-```
-
-### -Value
-Specifies the content to be added.
-Type a quoted string, such as "This data is for internal use only", or specify an object that contains content, such as the DateTime object that Get-Date generates.
-
-You cannot specify the contents of a file by typing its path, because the path is just a string, but you can use a Get-Content command to get the content and pass it to the Value parameter.
-
-```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases: 
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -277,9 +195,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see about_Transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -293,26 +209,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Encoding
-Specifies the encoding that this cmdlet applies to the content.
+### -Credential
+Specifies a user account that has permission to perform this action.
+The default is the current user.
 
-The acceptable values for this parameter are:
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
+If you type a user name, you will be prompted for a password.
 
-- Unknown
-- String
-- Unicode
-- Byte
-- BigEndianUnicode
-- UTF8
-- UTF7
-- UTF32
-- Ascii
-- Default
-- Oem
-- BigEndianUTF32
+This parameter is not supported by any providers installed with PowerShell Core.
 
 ```yaml
-Type: FileSystemCmdletProviderEncoding
+Type: PSCredential
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+Specifies, as a string array, items that this cmdlet omits.
+The value of this parameter qualifies the *Path* parameter.
+Enter a path element or pattern, such as "*.txt".
+Wildcards are permitted.
+
+```yaml
+Type: String[]
 Parameter Sets: (All)
 Aliases: 
 
@@ -323,19 +248,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Stream
-Specifies an alternative data stream for content.
-If the stream does not exist, this cmdlet creates it.
-Wildcard characters are not supported.
-
-Stream is a dynamic parameter that the FileSystem provider adds to **Add-Content**.
-This parameter works only in file system drives.
-
-You can use the **Add-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
-However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
+### -Filter
+Specifies a filter in the provider's format or language.
+The value of this parameter qualifies the *Path* parameter.
+The syntax of the filter, including the use of wildcards, depends on the provider.
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -349,31 +266,119 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Include
+Specifies, as a string array, items that this cmdlet includes.
+The value of this parameter qualifies the *Path* parameter.
+Enter a path element or pattern, such as "*.txt".
+Wildcards are permitted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+Specifies the path to the items that receive the additional content.
+Unlike the `-Path` parameter, the value of the `-LiteralPath` parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: LiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns an object representing the item with which you are working.
+By default, this cmdlet does not generate any output.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Specifies the path to the items that receive the additional content.
+Wildcards are permitted.
+If you specify multiple paths, use commas to separate the paths.
+
+```yaml
+Type: String[]
+Parameter Sets: Path
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Value
+Specifies the content to be added.
+Type a quoted string, such as "This data is for internal use only", or specify an object that contains content, such as the DateTime object that Get-Date generates.
+
+You cannot specify the contents of a file by typing its path, because the path is just a string, but you can use a Get-Content command to get the content and pass it to the Value parameter.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
-You can pipe the objects to be added (the Value) to Add-Content.
+You can pipe the objects to be added to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.String
-When you use the Passthru parameter, Add-Content generates a System.String object representing the content.
+When you use the `-Passthru` parameter, **Add-Content** generates a **System.String** object representing the content.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* When you pipe an object to Add-Content, the object is converted to a string before it is added to the item. The object type determines the string format, but the format might be different than the default display of the object. To control the string format, use the formatting parameters of the sending cmdlet.
+When you pipe an object to **Add-Content**, the object is converted to a string before it is added to the item.
+The object type determines the string format, but the format might be different than the default display of the object.
+To control the string format, use the formatting parameters of the sending cmdlet.
 
-  You can also refer to Add-Content by its built-in alias, "ac".
+You can also refer to **Add-Content** by its built-in alias, "ac".
 For more information, see about_Aliases.
 
-  The Add-Content cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type "Get-PsProvider".
+The **Add-Content** cmdlet is designed to work with the data exposed by any provider.
+To list the providers available in your session, type `Get-PsProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 
@@ -384,6 +389,3 @@ For more information, see about_Providers.
 [Get-Item](Get-Item.md)
 
 [Set-Content](Set-Content.md)
-
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

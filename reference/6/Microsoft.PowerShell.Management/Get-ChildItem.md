@@ -19,8 +19,7 @@ Gets the items and child items in one or more specified locations.
 
 ```powershell
 Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
+ [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File]
  [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
@@ -28,9 +27,8 @@ Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-
 
 ```powershell
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Name] [-UseTransaction]
- [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-Directory] [-File]
- [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory]
+ [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## Description
@@ -38,7 +36,11 @@ The `Get-ChildItem` cmdlet gets the items in one or more specified locations.
 If the item is a container, it gets the items inside the container, known as child items.
 You can use the `-Recurse` parameter to get items in all child containers and use the `-Depth` parameter to limit the number of levels to recurse.
 
-A location can be a file system location, such as a directory, or a location exposed by a different Windows PowerShell provider, such as a registry hive or a certificate store.
+A location can be a file system location, such as a directory, or a location exposed by a different PowerShell provider, such as a registry hive or a certificate store.
+In a file system drive, `Get-ChildItem` gets directories, subdirectories, and files in a given path.
+By default, `Get-ChildItem` gets non-hidden items, but you can use the `-Directory`, `-File`, `-Hidden`, `-ReadOnly`, and `-System` parameters to get only items with these attributes.
+To create a complex attribute search, use the `Attributes` parameter.
+If you use these parameters, `Get-ChildItem` gets only the items that meet all search conditions, as though the parameters were connected by an `-and` operator.
 
 ## Examples
 
@@ -153,18 +155,19 @@ The `-Attributes` parameter supports the following attributes:
 
 For a description of these attributes, see the [FileAttributes Enumeration](http://go.microsoft.com/fwlink/?LinkId=201508).
 
-Use the following operators to combine attributes.
-- `!`   (NOT)
-- `+`   (AND)
-- `,`   (OR)
+Use the following operators to combine attributes:
+- `!` (NOT)
+- `+` (AND)
+- `,` (OR)
 
-No spaces are permitted between an operator and its attribute. However, spaces are permitted before commas.
+No spaces are permitted between an operator and its attribute.
+However, spaces are permitted before commas.
 
 You can use the following abbreviations for commonly used attributes:
-- `D`   (Directory)
-- `H`   (Hidden)
-- `R`   (Read-only)
-- `S`   (System)
+- `D` (Directory)
+- `H` (Hidden)
+- `R` (Read-only)
+- `S` (System)
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
@@ -194,11 +197,12 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
-Gets directories (folders).  
+Gets directories (folders).
 
-To get only directories, use the `-Directory` parameter and omit the `-File` parameter. To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter. 
+To get only directories, use the `-Directory` parameter and omit the `-File` parameter.
+To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter.
 
-To get directories, use the Directory parameter, its "`ad`" alias, or the Directory attribute of the `-Attributes` parameter.
+To get directories, use the `-Directory` parameter, its "`ad`" alias, or the `Directory` attribute of the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -231,11 +235,12 @@ Accept wildcard characters: True
 ```
 
 ### -File
-Gets files. 
+Gets files.
 
-To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
+To get only files, use the `-File` parameter and omit the Directory parameter.
+To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
 
-To get files, use the File parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
+To get files, use the `-File` parameter, its "`af`" alias, or the File value of the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -288,9 +293,11 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
-Gets only hidden files and directories (folders).  By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
+Gets only hidden files and directories (folders).
+By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
 
-To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the Hidden value of the `-Attributes` parameter. To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
+To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the `Hidden` value of the `-Attributes` parameter.
+To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -377,9 +384,10 @@ Accept wildcard characters: True
 ```
 
 ### -ReadOnly
-Gets only read-only files and directories (folders).  
+Gets only read-only files and directories (folders).
 
-To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
+To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter.
+To exclude read-only items, use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -396,7 +404,7 @@ Accept wildcard characters: False
 ### -Recurse
 Gets the items in the specified locations and in all child items of the locations.
 
-In Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the `-Recurse` parameter works only when the value of the `-Path` parameter is a container that has child items, such as C:\Windows or C:\Windows\*, and not when it is an item does not have child items, such as C:\Windows\*.exe.
+In Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the `-Recurse` parameter works only when the value of the `-Path` parameter is a container that has child items, such as `C:\Windows` or `C:\Windows\*`, and not when it is an item does not have child items, such as `C:\Windows\*.exe`.
 
 ```yaml
 Type: SwitchParameter
@@ -413,7 +421,8 @@ Accept wildcard characters: False
 ### -System
 Gets only system files and directories (folders).
 
-To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
+To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the `System` value of the `-Attributes` parameter.
+To exclude system files and folders, use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -485,4 +494,3 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
