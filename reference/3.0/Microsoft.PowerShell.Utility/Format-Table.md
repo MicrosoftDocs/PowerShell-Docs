@@ -132,14 +132,17 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayError
-Displays errors at the command line.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Table command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the DisplayError parameter with an expression.
+Indicates that the cmdlet displays errors at the command line.
+This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and the expressions do not appear to be working.
+The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-PS \> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
+```powershell
+PS C:\> Get-Date | Format-Table DayOfWeek, { $_ / $null } -DisplayError
+
 DayOfWeek  $_ / $null
 --------- ------------
 Wednesday #ERR
+```
 
 ```yaml
 Type: SwitchParameter
