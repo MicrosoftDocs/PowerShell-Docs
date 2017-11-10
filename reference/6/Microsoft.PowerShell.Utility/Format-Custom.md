@@ -63,14 +63,18 @@ Accept wildcard characters: False
 
 ### -DisplayError
 Indicates that this cmdlet displays errors at the command line.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a **Format-Custom** command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the *DisplayError* parameter with an expression.
+This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Custom` command, and the expressions do not appear to be working.
+The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-`PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError`
+```powershell
+PS C:\> Get-Date | Format-Custom DayOfWeek, { $_ / $null } -DisplayError
 
-`DayOfWeek  $_ / $null`
-`--------- ------------`
-`Wednesday #ERR`
+class DateTime
+{
+  DayOfWeek = Wednesday
+   $_ / $null  = #ERR
+}
+```
 
 ```yaml
 Type: SwitchParameter
