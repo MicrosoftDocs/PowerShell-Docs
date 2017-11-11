@@ -208,18 +208,18 @@ Accept wildcard characters: True
 ```
 
 ### -ShowError
-Sends errors through the pipeline.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Wide command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the ShowError parameter with an expression.
+Indicates that the cmdlet sends errors through the pipeline.
+This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not appear to be working.
+The following shows an example of the results of adding the **ShowError** parameter with an expression.
 
-PS \> Get-Date | Format-Wide DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday
+```powershell
+PS C:\> Get-Date | Format-Wide { $_ / $null } -ShowError
+
 
 Failed to evaluate expression " $_ / $null ".
-    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
+    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) [], RuntimeException
     + FullyQualifiedErrorId : mshExpressionError
+```
 
 ```yaml
 Type: SwitchParameter
