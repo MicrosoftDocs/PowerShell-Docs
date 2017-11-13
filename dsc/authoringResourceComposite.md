@@ -94,7 +94,7 @@ Configuration xVirtualMachine
         DependsOn = "[File]ParentVHDFile"
     }
 
-    # Creae VM specific diff VHD
+    # Create VM specific diff VHD
     foreach ($Name in $VMName)
     {
         xVHD "VHD$Name"
