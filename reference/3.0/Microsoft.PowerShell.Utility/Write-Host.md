@@ -23,7 +23,7 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 
 ## DESCRIPTION
 
-The Write-Host cmdlet customizes output.
+The `Write-Host` cmdlet customizes output.
 You can specify the color of text by using the ForegroundColor parameter, and you can specify the background color by using the BackgroundColor parameter.
 The Separator parameter lets you specify a string to use to separate displayed objects.
 The particular result depends on the program that is hosting PowerShell.
@@ -208,9 +208,9 @@ You can pipe objects to be written to the host.
 
 ### None
 
-Write-Host sends the objects to the host.
+`Write-Host` sends the objects to the host.
 It does not return any objects.
-However, the host might display the objects that Write-Host sends to it.
+However, the host might display the objects that `Write-Host` sends to it.
 
 ## NOTES
 

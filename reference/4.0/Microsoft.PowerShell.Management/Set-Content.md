@@ -195,7 +195,7 @@ Accept wildcard characters: True
 Forces the cmdlet to set the contents of a file, even if the file is read-only.
 Implementation varies from provider to provider.
 For more information, see about_Providers.
-Even using the Force parameter, the cmdlet cannot override security restrictions.
+Using the Force parameter does not override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -230,7 +230,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies the path to the item that will receive the content.
+Specifies the path of the item that receives the content.
 Unlike Path, the value of LiteralPath is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
@@ -288,10 +288,10 @@ Specifies an alternative data stream for content.
 If the stream does not exist, this cmdlet creates it.
 Wildcard characters are not supported.
 
-Stream is a dynamic parameter that the FileSystem provider adds to **Set-Content**.
+Stream is a dynamic parameter that the FileSystem provider adds to `Set-Content`.
 This parameter works only in file system drives.
 
-You can use the **Set-Content** cmdlet to change the content of the Zone.Identifier alternate data stream.
+You can use the `Set-Content` cmdlet to change the content of the Zone.Identifier alternate data stream.
 However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
 If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
 
@@ -365,7 +365,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters).
 
 ## INPUTS
 
@@ -382,7 +382,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-You can also refer to Set-Content by its built-in alias, "sc". For more information, see about_Aliases.
+You can also refer to Set-Content by its built-in alias, "sc". For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 Set-Content is designed for string processing.
 If you pipe non-string objects to Set-Content, it converts the object to a string before writing it.

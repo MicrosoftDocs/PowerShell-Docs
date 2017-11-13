@@ -20,19 +20,19 @@ Sends output to a file.
 
 ```powershell
 Out-File [-FilePath] <String> [[-Encoding] <String>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
- [-NoNewline] [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```powershell
 Out-File -LiteralPath <String> [[-Encoding] <String>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
- [-NoNewline] [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The Out-File cmdlet sends output to a file.
+The `Out-File` cmdlet sends output to a file.
 You can use this cmdlet instead of the redirection operator (\>) when you need to use its parameters.
 
 ## EXAMPLES
@@ -44,8 +44,8 @@ PS C:\> Get-Process | Out-File -filepath C:\Test1\process.txt
 ```
 
 This command sends a list of processes on the computer to the Process.txt file.
-If the file does not exist, Out-File creates it.
-Because the name of the FilePath parameter is optional, you can omit it and submit the equivalent command "get-process | outfile C:\Test1\process.txt".
+If the file does not exist, `Out-File` creates it.
+Because the name of the FilePath parameter is optional, you can omit it and submit the equivalent command "Get-Process | Out-File C:\Test1\process.txt".
 
 ### Example 2: Send output to a file without overwriting
 
@@ -69,10 +69,10 @@ PS C:\> Out-File -FilePath C:\Test1\process.txt -InputObject $A -Encoding ASCII 
 
 These commands send a list of processes on the computer to the Process.txt file.
 The text is encoded in ASCII format so that it can be read by search programs like Findstr and Grep.
-By default, Out-File uses Unicode format.
+By default, `Out-File` uses Unicode format.
 
 The first command gets the list of processes and stores them in the $A variable.
-The second command uses the Out-File cmdlet to send the list to the Process.txt file.
+The second command uses the `Out-File` cmdlet to send the list to the Process.txt file.
 
 The command uses the InputObject parameter to specify that the input is in the $A variable.
 It uses the Encoding parameter to convert the output to ASCII format.
@@ -87,15 +87,15 @@ PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath c:\ps\acl.txt
 PS C:\> Get-Acl mycompany\mykey | Out-File -FilePath filesystem::acl.txt
 ```
 
-These commands show how to use the Out-File cmdlet when you are not in a FileSystem drive.
+These commands show how to use the `Out-File` cmdlet when you are not in a FileSystem drive.
 
 The first command sets the current location to the HKLM:\Software registry key.
 
 The second and third commands have the same effect.
-They use the Get-Acl cmdlet to get the security descriptor of the MyKey registry subkey (HKLM\Software\MyCompany\MyKey).
-A pipeline operator passes the result to the Out-File cmdlet, which sends it to the Acl.txt file.
+They use the 1Get-Acl1 cmdlet to get the security descriptor of the MyKey registry subkey (HKLM\Software\MyCompany\MyKey).
+A pipeline operator passes the result to the `Out-File` cmdlet, which sends it to the Acl.txt file.
 
-Because Out-File is not supported by the PowerShell Registry provider, you must specify either the file system drive name,
+Because `Out-File` is not supported by the PowerShell Registry provider, you must specify either the file system drive name,
 such as "c:", or the name of the provider followed by two colons, "FileSystem::", in the value of the FilePath parameter.
 The second and third commands demonstrate these methods.
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 
 ### -NoClobber
 Indicates that the cmdlet will not overwrite an existing file.
-By default, if a file exists in the specified path, **Out-File** overwrites the file without warning.
+By default, if a file exists in the specified path, `Out-File` overwrites the file without warning.
 If both *Append* and *NoClobber* are used, the output is appended to the existing file.
 
 ```yaml
@@ -298,7 +298,7 @@ The default for the Windows PowerShell console is 80 characters.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -312,13 +312,13 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216). 
+(http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to Out-File.
+You can pipe any object to `Out-File`.
 
 ## OUTPUTS
 
@@ -336,8 +336,8 @@ To send data to a cmdlet that contains the Out verb (an Out cmdlet), use a pipel
 You can also store data in a variable and use the InputObject parameter to pass the data to the cmdlet.
 For help, see the examples.
 
-Out-File sends data, but it does not emit any output objects.
-If you pipe the output of Out-File to Get-Member, Get-Member reports that no objects have been specified.
+`Out-File` sends data, but it does not emit any output objects.
+If you pipe the output of `Out-File` to `Get-Member`, `Get-Member` reports that no objects have been specified.
 
 ## RELATED LINKS
 

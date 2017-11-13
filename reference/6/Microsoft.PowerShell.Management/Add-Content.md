@@ -20,18 +20,16 @@ Adds content to the specified items, such as adding words to a file.
 
 ```powershell
 Add-Content [-Value] <Object[]> [-PassThru] [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```powershell
 Add-Content [-Value] <Object[]> [-PassThru] -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +69,7 @@ It uses the Get-Content cmdlet to get the contents of the Weekly.txt file, and i
 The parentheses ensure that the Get-Content command is complete before the Add-Content command begins.
 
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
-In that case, the command would be "add-content -path monthly.txt -value $w".
+In that case, the command would be "Add-Content -Path monthly.txt -Value $w".
 
 ### Example 4: Create a new directory and file and copy content
 
@@ -353,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the content to be added.
 Type a quoted string, such as "This data is for internal use only", or specify an object that contains content, such as the DateTime object that Get-Date generates.
 

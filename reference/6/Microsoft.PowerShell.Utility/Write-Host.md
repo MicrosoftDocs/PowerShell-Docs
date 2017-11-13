@@ -17,13 +17,12 @@ Writes customized output to a host.
 
 ```powershell
 Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
- [-BackgroundColor <ConsoleColor>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The Write-Host cmdlet customizes output.
+The `Write-Host` cmdlet customizes output.
 You can specify the color of text by using the ForegroundColor parameter, and you can specify the background color by using the BackgroundColor parameter.
 The Separator parameter lets you specify a string to use to separate displayed objects.
 The particular result depends on the program that is hosting PowerShell.
@@ -142,33 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -NoNewline
 
 The string representations of the input objects are concatenated to form the output.
@@ -235,9 +207,9 @@ You can pipe objects to be written to the host.
 
 ### None
 
-Write-Host sends the objects to the host.
+`Write-Host` sends the objects to the host.
 It does not return any objects.
-However, the host might display the objects that Write-Host sends to it.
+However, the host might display the objects that `Write-Host` sends to it.
 
 ## NOTES
 

@@ -39,18 +39,18 @@ You can specify the content by typing the content in the command or by specifyin
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Add a string to all text files with an exception
 
 ```powershell
-PS C:\> add-content -path *.txt -exclude help* -value "END"
+PS C:\> Add-Content -Path "*.txt" -Exclude "help*" -Value "END"
 ```
 
 This command adds "END" to all text files in the current directory, except for those with file names that begin with "help".
 
-### Example 2
+### Example 2: Add a date to the end of the specified files
 
-```
-PS C:\> add-content -Path file1.log, file2.log -Value (get-date) -passthru
+```powershell
+PS C:\> Add-Content -Path "file1.log", "file2.log" -Value (Get-Date) -PassThru
 ```
 
 This command adds the date to the end of the File1.log and File2.log files and then displays the date at the command line.
@@ -58,10 +58,10 @@ The command uses the Get-Date cmdlet to get the date, and it uses the Value para
 The PassThru parameter passes an object representing the added content through the pipeline.
 Because there is no other cmdlet to receive the passed object, it is displayed at the command line.
 
-### Example 3
+### Example 3: Add the contents of a specified file to another file
 
 ```powershell
-PS C:\> add-content -path monthly.txt -value (get-content c:\rec1\weekly.txt)
+PS C:\> Add-Content -Path "monthly.txt" -Value (Get-Content "c:\rec1\weekly.txt")
 ```
 
 This command adds the contents of the Weekly.txt file to the end of the Monthly.txt file.
@@ -69,12 +69,12 @@ It uses the Get-Content cmdlet to get the contents of the Weekly.txt file, and i
 The parentheses ensure that the Get-Content command is complete before the Add-Content command begins.
 
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
-In that case, the command would be "add-content -path monthly.txt -value $w".
+In that case, the command would be "Add-Content -Path monthly.txt -Value $w".
 
-### Example 4
+### Example 4: Create a new directory and file and copy content
 
 ```powershell
-PS C:\> add-content -value (get-content test.log) -path C:\tests\test134\logs\test134.log
+PS C:\> Add-Content -Value (Get-Content "test.log") -Path "C:\tests\test134\logs\test134.log"
 ```
 
 This command creates a new directory and file and copies the content of an existing file to the newly created file.
@@ -140,8 +140,11 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Adds the content to the specified alternate data stream. If the stream does not yet, exist, Add-Content creates it.
-Enter the stream name. Wildcards are not supported.
+Adds the content to the specified alternate data stream.
+If the stream does not yet, exist, Add-Content creates it.
+Enter the stream name.
+Wildcards are not supported.
+
 Stream is a dynamic parameter that the FileSystem provider adds to the Add-Content cmdlet.
 This parameter works only in file system drives.
 This parameter is introduced in PowerShell 3.0.
@@ -320,7 +323,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -369,7 +372,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe the objects to be added (the Value) to Add-Content.
+You can pipe the objects to be added by Add-Content.
 
 ## OUTPUTS
 
