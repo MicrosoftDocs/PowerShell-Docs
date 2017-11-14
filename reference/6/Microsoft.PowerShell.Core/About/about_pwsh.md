@@ -6,8 +6,8 @@ keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
 
-# About PowerShell.exe
-## about_PowerShell.exe
+# About pwsh
+## about_pwsh
 
 
 # SHORT DESCRIPTION
@@ -138,7 +138,7 @@ forward slash in Cmd.exe.
 
 pwsh -Version
 
-pwsh -Command {Get-EventLog -LogName security}
+pwsh -Command {Get-Command -Name Get-Command}
 
-pwsh -Command "& {Get-EventLog -LogName security}"
+pwsh -Command "& {Get-Command -Name Get-Command}"
 
