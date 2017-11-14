@@ -111,7 +111,7 @@ The command uses the Invoke-Command cmdlet to run a command on the Srv01 compute
 The remote command uses the *State* parameter of the **Get-Job** cmdlet to get all suspended jobs on the computer.
 A pipeline operator (|) sends the suspended jobs to the **Resume-Job** cmdlet, which resumes them.
 
-### Example 4: Wait for jobs to resume
+### Example 5: Wait for jobs to resume
 ```
 PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
 ```
@@ -119,7 +119,7 @@ PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
 This command uses the *Wait* parameter to direct **Resume-Job** to return only after all specified jobs are resumed.
 The *Wait* parameter is especially useful in scripts that assume that jobs are resumed before the script continues.
 
-### Example 5: Resume a workflow that suspends itself
+### Example 6: Resume a workflow that suspends itself
 ```
 This code sample shows the **Suspend-Workflow** activity in a workflow.
 #SampleWorkflow
