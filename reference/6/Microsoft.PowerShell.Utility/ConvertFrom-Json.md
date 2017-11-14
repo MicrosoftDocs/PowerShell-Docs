@@ -23,7 +23,7 @@ ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
 ## DESCRIPTION
 The **ConvertFrom-Json** cmdlet converts a JavaScript Object Notation (JSON) formatted string to a custom **PSCustomObject** object that has a property for each field in the JSON string.
 JSON is commonly used by web sites to provide a textual representation of objects.
-The JSON standard does not prohibit duplicate keys and in this case the cmdlet would disregard the duplicates and only use the last one. If keys differ only in casing then the `-AsHashTable` switch has to be used.
+The JSON standard does not prohibit duplicate keys and in this case the cmdlet would disregard the duplicates and only use the last one. If keys differ only in casing then the `-AsHashtable` switch has to be used.
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
 
@@ -83,7 +83,7 @@ The Join operator is required, because the **ConvertFrom-Json** cmdlet expects a
 PS C:\> '{ "key":"value1", "Key":"value2", "":"value3 }' | ConvertFrom-Json -AsHashtable
 ````
 
-This command shows 2 cases where the `-AsHashTable` switch can overcome limitations of the command: the JSON string contains 2 key value pairs with keys that differ only in casing and the key that is just an empty string. Without the switch, the command would have thrown an error.
+This command shows 2 cases where the `-AsHashtable` switch can overcome limitations of the command: the JSON string contains 2 key value pairs with keys that differ only in casing and the key that is just an empty string. Without the switch, the command would have thrown an error.
 
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -AsHashTable
+### -AsHashtable
 Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0.
 There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet
 - If the JSON contains a list with keys that only differ in casing. Without the switch, those keys would be seen as identical keys and therefore only the last one would get used.
