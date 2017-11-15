@@ -151,7 +151,7 @@ There are several scenarios where it can overcome some limitations of the `Conve
  
  Required: False
  Default value: False
- Accept pipeline input: True (ByValue)
+ Accept pipeline input: False
  Accept wildcard characters: False
  ```
 
