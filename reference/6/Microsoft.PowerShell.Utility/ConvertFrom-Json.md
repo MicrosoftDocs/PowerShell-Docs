@@ -23,7 +23,9 @@ ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
 ## DESCRIPTION
 The **ConvertFrom-Json** cmdlet converts a JavaScript Object Notation (JSON) formatted string to a custom **PSCustomObject** object that has a property for each field in the JSON string.
 JSON is commonly used by web sites to provide a textual representation of objects.
-The JSON standard does not prohibit duplicate keys and in this case the cmdlet would disregard the duplicates and only use the last one. If keys differ only in casing then the `-AsHashtable` switch has to be used.
+The JSON standard does not prohibit usage that is prohibited with a PSCustomObject.
+For example, if the JSON string contains duplicate keys, only the last key is used by this cmdlet.
+See other examples below.
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
 
@@ -80,10 +82,10 @@ The Join operator is required, because the **ConvertFrom-Json** cmdlet expects a
 
 ### Example 4: Convert a JSON string to a hash table
 ````
-PS C:\> '{ "key":"value1", "Key":"value2", "":"value3 }' | ConvertFrom-Json -AsHashtable
+PS C:\> '{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
 ````
 
-This command shows 2 cases where the `-AsHashtable` switch can overcome limitations of the command: the JSON string contains 2 key value pairs with keys that differ only in casing and the key that is just an empty string. Without the switch, the command would have thrown an error.
+This command shows an example where the `-AsHashtable` switch can overcome limitations of the command: the JSON string contains 2 key value pairs with keys that differ only in casing. Without the switch, the command would have thrown an error.
 
 
 ## PARAMETERS
@@ -145,11 +147,9 @@ There are several scenarios where it can overcome some limitations of the `Conve
  
  ```yaml
  Type: SwitchParameter
- Parameter Sets: UNNAMED_PARAMETER_SET_1
  Aliases:
  
  Required: False
- Position: Named
  Default value: False
  Accept pipeline input: True (ByValue)
  Accept wildcard characters: False
