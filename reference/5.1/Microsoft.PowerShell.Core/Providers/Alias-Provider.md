@@ -30,7 +30,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834943
 
  The Windows PowerShell **Alias** provider lets you get, add, change, clear, and delete aliases in Windows PowerShell.  
 
- An alias is an alternate name for a cmdlet, function, or executable file. Windows PowerShell includes a set of built-in aliases. And, you can add your own aliases to the current session and to your Windows PowerShell profile.  
+ An alias is an alternate name for a cmdlet, function, executable file, or PowerShell script. Windows PowerShell includes a set of built-in aliases. You can add your own aliases to the current session and to your Windows PowerShell profile.  
 
  The **Alias** provider is a flat namespace that contains only the alias objects. The aliases have no child items.  
 
@@ -54,7 +54,7 @@ Set-Location Alias:
 
  When you use these cmdlets, you do not need to specify the `Alias:` drive in the name.  
 
- The **Alias** provider supports all the cmdlets that have the *Item* noun except for the [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet. And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. The **Alias** provider does not support the cmdlets that have the *ItemProperty* noun. And, the **Alias** provider does not support the `-Filter` parameter in any cmdlet.  
+ The **Alias** provider supports all the cmdlets that have the *Item* noun except for the [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlet and supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. The **Alias** provider does not support the cmdlets that have the *ItemProperty* noun and does not support the `-Filter` parameter in any cmdlet.  
 
  All changes to the aliases affect the current session only. To save the changes, add the changes to the Windows PowerShell profile. Or, use the [Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md) and [Import-Alias](../../Microsoft.PowerShell.Utility/Import-Alias.md) cmdlets.  
 
@@ -110,8 +110,7 @@ Get-Item -Path Alias:ls
 Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
 ```
 
- When the aliased item is an executable file, the `Definition` contains the fully qualified path of the file.  
-
+ 
 
 #### Example 4
 
