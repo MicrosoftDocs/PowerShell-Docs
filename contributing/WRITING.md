@@ -40,7 +40,7 @@ Feel free to help out.
    To include a second element (like this one), insert a line break after the first and align indentations.
    The indentation of the second element must line up with the first character after the numbered list marker.
 
-2. The next numbered item starts here.
+1. The next numbered item starts here.
 ```
 
 to get this output:
@@ -50,7 +50,7 @@ to get this output:
    To include a second element (like this one), insert a line break after the first and align indentations.
    The indentation of the second element must line up with the first character after the numbered list marker.
 
-2. The next numbered item starts here.
+1. The next numbered item starts here.
 
 * **Bulleted lists:** Bulleted (unordered) lists are almost identical to ordered lists except that the list marker can be any of these three patterns: `* `, `- `, or `+ `.
   Multiple element lists work the same way as with ordered lists.
