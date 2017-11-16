@@ -2,6 +2,7 @@
 
 A **ToC** is used to define the Table of Contents (ToC) structure of a docset.
 The ToC can be described using either Yaml or Markdown.
+
 TOC files should only be modified by the PowerShell documentation team.
 This is done to ensure that new topics appear in the appropriate place in our docset and that the TOC is structured according to your internal requirements.
 
