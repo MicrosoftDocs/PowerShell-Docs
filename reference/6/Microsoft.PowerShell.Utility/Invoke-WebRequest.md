@@ -134,7 +134,7 @@ The final command writes the Content property to the file then disposes the Stre
 
 Note that the Encoding property will be null if the web request does not return text content.
 
-### Example 4: Submit a multipart/form-data file
+### Example 5: Submit a multipart/form-data file
 ```powershell
 $FilePath = 'c:\document.txt'
 $FieldName = 'document'
