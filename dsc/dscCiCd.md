@@ -375,7 +375,7 @@ and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.
     **\Integration\**
     ```
 
-1. Set **TargetFolder** to `$(BuildArtifactStagingDirectory)\`
+1. Set **TargetFolder** to `$(Build.ArtifactStagingDirectory)\`
 
 This step copies the build and test scripts to the staging directory so that the can be published as build artifacts by the next step.
 
