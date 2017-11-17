@@ -74,14 +74,14 @@ Type                       : Script
 Description                : Description for the Required-Script2 script
 Author                     : pattif
 CompanyName                : Microsoft Corporation
-Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : 2015 Microsoft Corporation. All rights reserved.
 PublishedDate              : 8/14/2015 2:37:01 PM
 LicenseUri                 : http://required-script2.com/license
 ProjectUri                 : http://required-script2.com/
 IconUri                    : http://required-script2.com/icon
-Tags                       : {, Tag1, Tag2, Tag-Required-Script2-2.0...} 
+Tags                       : {, Tag1, Tag2, Tag-Required-Script2-2.0...}
 Includes                   : {Function, DscResource, Cmdlet, Command}
-PowerShellGetFormatVersion : 
+PowerShellGetFormatVersion :
 ReleaseNotes               : Required-Script2 release notes
 Dependencies               : {}
 RepositorySourceLocation   : C:\MyLocalRepo
@@ -178,7 +178,7 @@ Indicates that this operation finds all script versions.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ A command can be a function or workflow.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,12 +204,12 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ Finds scripts based on the PackageManagement provider-specific search syntax.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -239,7 +239,7 @@ Indicates that this operation gets all scripts that are dependent upon the scrip
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,7 +255,7 @@ The acceptable values for this parameter are: Function, Workflow.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Function, Workflow
 
 Required: False
@@ -272,7 +272,7 @@ The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -288,7 +288,7 @@ The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ Specifies an array of names of scripts to find.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -318,7 +318,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -333,7 +333,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -348,7 +348,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -363,7 +363,7 @@ Specifies the exact version number of the script to find.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -378,7 +378,7 @@ Specifies an array of tags.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

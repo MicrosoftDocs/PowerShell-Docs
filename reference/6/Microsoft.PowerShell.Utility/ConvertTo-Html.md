@@ -167,7 +167,7 @@ PS C:\> Get-Service | ConvertTo-HTML -Meta @{refresh=10;author="Author's Name";k
 
 This command creates the HTML for a webpage with the meta tags for refresh, author, and keywords. The charset for the page is set to UTF-9
 
-### Example 10: Set the HTML to XHTML Transitional DTD
+### Example 11: Set the HTML to XHTML Transitional DTD
 ```
 PS C:\> Get-Service | ConvertTo-HTML -Transitional
 ```

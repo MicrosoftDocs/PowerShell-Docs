@@ -35,9 +35,9 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Send a web request
-```
-PS C:\> $R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
-PS C:\> $R.AllElements | where {$_.innerhtml -like "*=*"} | Sort { $_.InnerHtml.Length } | Select InnerText -First 5
+```powershell
+$Response = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
+$Response.AllElements | where {$_.innerhtml -like "*=*"} | Sort { $_.InnerHtml.Length } | Select InnerText -First 5
 innerText---------1 =5280 feet1 mile
 ```
 
@@ -49,41 +49,41 @@ The second command gets the InnerHtml property when it includes an equal sign, s
 Sorting by the shortest HTML value often helps you find the most specific element that matches that text.
 
 ### Example 2: Use a stateful web service
-```
-# The first command uses the **Invoke-WebRequest** cmdlet to send a sign-in request. The command specifies a value of "FB" for the value of the *SessionVariable* parameter, and saves the result in the $R variable.When the command completes, the $R variable contains an **HtmlWebResponseObject** and the $FB variable contains a **WebRequestSession** object.
-PS C:\> $R=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
+```powershell
+# The first command uses the **Invoke-WebRequest** cmdlet to send a sign-in request. The command specifies a value of "FB" for the value of the *SessionVariable* parameter, and saves the result in the $Response variable.When the command completes, the $Response variable contains an **HtmlWebResponseObject** and the $FB variable contains a **WebRequestSession** object.
+$Response=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable FB
 
 # The second command shows the **WebRequestSession** object in the $FB variable.
-PS C:\> $FB
+$FB
 
-# The third command gets the first form in the **Forms** property of the HTTP response object in the $R variable, and saves it in the $Form variable.
-PS C:\> $Form = $R.Forms[0]
+# The third command gets the first form in the **Forms** property of the HTTP response object in the $Response variable, and saves it in the $Form variable.
+$Form = $Response.Forms[0]
 
 # The fourth command pipes the properties of the form in the $Form variable into a list by using the Format-List cmdlet.
-PS C:\> $Form | Format-List
+$Form | Format-List
 
 # The fifth command displays the keys and values in the hash table (dictionary) object in the Fields property of the form.
-PS C:\> $Form.fields
+$Form.fields
 
 # The sixth and seventh commands populate the values of the email and pass keys of the hash table in the **Fields** property of the form. You can replace the email and password with values that you want to use.
-PS C:\> $Form.Fields["email"]="User01@Fabrikam.com"
+$Form.Fields["email"]="User01@Fabrikam.com"
 $Form.Fields["pass"]="P@ssw0rd"
 
-# The eighth command uses the **Invoke-WebRequest** cmdlet to sign into the Facebook web service.The value of the *Uri* parameter is the value of the **Action** property of the form. The **WebRequestSession** object in the $FB variable (the session variable specified in the first command) is now the value of the *WebSession* parameter. The value of the *Body* parameter is the hash table in the Fields property of the form and the value of the *Method* parameter is POST. The command saves the output in the $R variable.
-PS C:\> $R=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
+# The eighth command uses the **Invoke-WebRequest** cmdlet to sign into the Facebook web service.The value of the *Uri* parameter is the value of the **Action** property of the form. The **WebRequestSession** object in the $FB variable (the session variable specified in the first command) is now the value of the *WebSession* parameter. The value of the *Body* parameter is the hash table in the Fields property of the form and the value of the *Method* parameter is POST. The command saves the output in the $Response variable.
+$Response=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
 
 # The full script, then, is as follows.
-# Sends a sign-in request by running the Invoke-WebRequest cmdlet. The command specifies a value of "fb" for the SessionVariable parameter, and saves the results in the $R variable.
+# Sends a sign-in request by running the Invoke-WebRequest cmdlet. The command specifies a value of "FB" for the SessionVariable parameter, and saves the results in the $Response variable.
 
-PS C:\> $R=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
+$Response=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable FB
 
 # Use the session variable that you created in Example 1. Output displays values for Headers, Cookies, Credentials, etc.
 
 $FB
 
-# Gets the first form in the Forms property of the HTTP response object in the $R variable, and saves it in the $Form variable.
+# Gets the first form in the Forms property of the HTTP response object in the $Response variable, and saves it in the $Form variable.
 
-$Form = $R.Forms[0]
+$Form = $Response.Forms[0]
 
 # Pipes the form properties that are stored in the $Forms variable into the Format-List cmdlet, to display those properties in a list.
 
@@ -100,17 +100,17 @@ $Form.Fields["pass"] = "P@ssw0rd"
 
 # The final command uses the Invoke-WebRequest cmdlet to sign in to the Facebook web service.
 
-$R=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
+$Response=Invoke-WebRequest -Uri ("https://www.facebook.com" + $Form.Action) -WebSession $FB -Method POST -Body $Form.Fields
 
-# When the command finishes, the **StatusDescription** property of the web response object in the $R variable indicates that the user is signed in successfully.
-$R.StatusDescription
+# When the command finishes, the **StatusDescription** property of the web response object in the $Response variable indicates that the user is signed in successfully.
+$Response.StatusDescription
 ```
 
 This example shows how to use the **Invoke-WebRequest** cmdlet with a stateful web service, such as Facebook.
 
 ### Example 3: Get links from a web page
-```
-PS C:\> (Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx").Links.Href
+```powershell
+(Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx").Links.Href
 ```
 
 This command gets the links in a web page.
@@ -118,10 +118,10 @@ It uses the **Invoke-WebRequest** cmdlet to get the web page content.
 Then it users the **Links** property of the **HtmlWebResponseObject** that **Invoke-WebRequest** returns, and the Href property of each link.
 
 ### Example 4: Writes the response content to a file using the encoding defined in the requested page.
-```
-PS C:\> $response = Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx"
-PS C:\> $stream = [System.IO.StreamWriter]::new('.\msdnpage.html', $false, $response.Encoding)
-PS C:\> try {$stream.Write($response.Content)} finally {$stream.Dispose()}
+```powershell
+$Response = Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx"
+$Stream = [System.IO.StreamWriter]::new('.\msdnpage.html', $false, $Response.Encoding)
+try {$Stream.Write($response.Content)} finally {$Stream.Dispose()}
 ```
 
 This command uses the **Invoke-WebRequest** cmdlet to retrieve the web page content of an msdn page.
@@ -134,24 +134,24 @@ The final command writes the Content property to the file then disposes the Stre
 
 Note that the Encoding property will be null if the web request does not return text content.
 
-### Example 4: Submit a multipart/form-data file
+### Example 5: Submit a multipart/form-data file
 ```powershell
-$filePath = 'c:\document.txt'
-$fieldName = 'document'
-$contentType = 'text/plain'
+$FilePath = 'c:\document.txt'
+$FieldName = 'document'
+$ContentType = 'text/plain'
 
-$fileStream = [System.IO.FileStream]::new($filePath, [System.IO.FileMode]::Open)
-$fileHeader = [System.Net.Http.Headers.ContentDispositionHeaderValue]::new('form-data')
-$fileHeader.Name = $fieldName
-$fileHeader.FileName = Split-Path -leaf $filePath
-$fileContent = [System.Net.Http.StreamContent]::new($fileStream)
-$fileContent.Headers.ContentDisposition = $fileHeader
-$fileContent.Headers.ContentType = [System.Net.Http.Headers.MediaTypeHeaderValue]::Parse($contentType)
+$FileStream = [System.IO.FileStream]::new($filePath, [System.IO.FileMode]::Open)
+$FileHeader = [System.Net.Http.Headers.ContentDispositionHeaderValue]::new('form-data')
+$FileHeader.Name = $FieldName
+$FileHeader.FileName = Split-Path -leaf $FilePath
+$FileContent = [System.Net.Http.StreamContent]::new($FileStream)
+$FileContent.Headers.ContentDisposition = $FileHeader
+$FileContent.Headers.ContentType = [System.Net.Http.Headers.MediaTypeHeaderValue]::Parse($ContentType)
 
-$multipartContent = [System.Net.Http.MultipartFormDataContent]::new()
-$multipartContent.Add($fileContent)
+$MultipartContent = [System.Net.Http.MultipartFormDataContent]::new()
+$MultipartContent.Add($FileContent)
 
-$response = Invoke-WebRequest -Body $multipartContent -Method 'POST' -uri 'https://api.contoso.com/upload'
+$Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https://api.contoso.com/upload'
 ```
 
 This example uses the **Invoke-WebRequest** cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
@@ -218,16 +218,17 @@ For example:
 
 
 ```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx
-$R.Forms[0].Name = "MyName"
-$R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R
+$Response = Invoke-WebRequest -Uri http://website.com/login.aspx
+$Response.Forms[0].Name = "MyName"
+$Response.Forms[0].Password = "MyPassword"
 ```
 
-or
-
 ```powershell
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+Invoke-WebRequest -Uri http://website.com/service.aspx -Body $Response -Method POST
+```
+or
+```powershell
+Invoke-WebRequest -Uri http://website.com/service.aspx -Body $Response.Forms[0] -Method POST
 ```
 
 The *Body* parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for *Body*, any Content related headers supplied to the *ContentType*, *Headers*, or *WebSession* parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
@@ -413,66 +414,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-The Body parameter can be used to specify a list of query parameters or specify the content of the response.
-
-When the input is a GET request and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters. For other GET requests, the body is set as the value of the request body in the standard name=value format.
-
-When the body is a form, or it is the output of an Invoke-WebRequest call, Windows PowerShell sets the request content to the form fields.
-
-For example:
-
-$r = Invoke-WebRequest http://website.com/login.aspx
-$r.Forms[0].Name = "MyName"
-$r.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $r
-
-- or -
-
-Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
-
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The Body parameter can be used to specify a list of query parameters or specify the content of the response.
-
-When the input is a GET request and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters. For other GET requests, the body is set as the value of the request body in the standard name=value format.
-
-When the body is a form, or it is the output of an Invoke-WebRequest call, Windows PowerShell sets the request content to the form fields.
-
-For example:
-
-$r = Invoke-WebRequest http://website.com/login.aspx
-$r.Forms[0].Name = "MyName"
-$r.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $r
-
-- or -
-
-Invoke-RestMethod http://website.com/service.aspx -Body $r.Forms[0]
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -MaximumRedirection
 Specifies how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
@@ -817,8 +758,9 @@ To test a website with the standard user agent string that is used by most Inter
 For example, the following command uses the user agent string for Internet Explorer
 
 
-
-PS C:\> Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+```powershell
+Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+```
 
 ```yaml
 Type: String

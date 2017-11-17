@@ -58,7 +58,7 @@ The **Enable-RunspaceDebug** cmdlet enables debugging on runspaces where any bre
 ## PARAMETERS
 
 ### -AppDomainName
-@{Text=}
+
 
 ```yaml
 Type: String[]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -BreakAll
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessName
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceId
-@{Text=}
+
 
 ```yaml
 Type: Int32[]
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceInstanceId
-@{Text=}
+
 
 ```yaml
 Type: Guid[]
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceName
-@{Text=}
+
 
 ```yaml
 Type: String[]

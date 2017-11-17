@@ -579,7 +579,7 @@ $t.tostring()
 
 Windows PowerShell
 
-# EXAMPLE 7: MANAGING MULTI-SUBSCRIBER TRANSACTIONS
+# EXAMPLE 8: MANAGING MULTI-SUBSCRIBER TRANSACTIONS
 
 
 When you start a transaction while another transaction is in
@@ -663,7 +663,7 @@ RollbackPreference   SubscriberCount   Status
 ------------------   ---------------   ------
 Error                0                 Committed
 
-# EXAMPLE 8: MANAGING INDEPENDENT TRANSACTIONS
+# EXAMPLE 9: MANAGING INDEPENDENT TRANSACTIONS
 
 
 When you start a transaction while another transaction is in

@@ -167,7 +167,7 @@ Module Name:  About
 ### [about_pipelines](about_pipelines.md)
 {{Manually Enter about_pipelines Description Here}}
 
-### [about_PowerShell_exe](about_powershell_exe.md)
+### [about_pwsh](about_pwsh.md)
 {{Manually Enter about_PowerShell_exe Description Here}}
 
 ### [about_PowerShell_Ise_exe](about_powershell_ise_exe.md)

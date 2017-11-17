@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

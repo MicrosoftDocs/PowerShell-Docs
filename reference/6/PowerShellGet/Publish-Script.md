@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
