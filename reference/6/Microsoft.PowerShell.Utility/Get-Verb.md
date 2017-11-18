@@ -144,15 +144,9 @@ Accept wildcard characters: True
 
 ## OUTPUTS
 
-### Selected.Microsoft.PowerShell.Commands.MemberDefinition
+### System.Management.Automation.VerbInfo
 
 ## NOTES
-Get-Verb returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
-The object does not have the standard properties of a MemberDefinition object.
-Instead it has Verb and Group properties.
-The Verb property contains a string with the verb name.
-The Group property contains a string with the verb group.
-
 Windows PowerShell verbs are assigned to a group based on their most common use.
 The groups are designed to make the verbs easy to find and compare, not to restrict their use.
 You can use any approved verb for any type of command.
