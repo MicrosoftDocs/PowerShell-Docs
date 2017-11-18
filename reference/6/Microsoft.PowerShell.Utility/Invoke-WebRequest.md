@@ -86,7 +86,7 @@ $ProfileResponse
 
 This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service. T
 
-The first call to `Invoke-WebRequest` sends a sign-in request. The command specifies a value of "Session" for the value of the `-SessionVariable` parameter, and saves the result in the `$LoginResponse` variable. When the command completes, the `$LoginResponse` variable contains an `BasicHtmlWebResponseObject` and the `$Session` variable contains a `WebRequestSession` object. This logs the user into the site.
+The first call to `Invoke-WebRequest` sends a sign-in request. The command specifies a value of "Session" for the value of the **-SessionVariable** parameter, and saves the result in the `$LoginResponse` variable. When the command completes, the `$LoginResponse` variable contains an `BasicHtmlWebResponseObject` and the `$Session` variable contains a `WebRequestSession` object. This logs the user into the site.
 
 The call to `$Session` by itself shows the `WebRequestSession` object in the variable.
 
@@ -102,7 +102,7 @@ The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` 
 
 This command gets the links in a web page.
 It uses the `Invoke-WebRequest` cmdlet to get the web page content.
-Then it users the `Links` property of the `BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the Href property of each link.
+Then it users the **Links** property of the `BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the Href property of each link.
 
 ### Example 3: Writes the response content to a file using the encoding defined in the requested page.
 ```powershell
@@ -120,11 +120,11 @@ This command uses the `Invoke-WebRequest` cmdlet to retrieve the web page conten
 
 The first command retrieves the page and saves the response object in a variable.
 
-The second command creates a `StreamWriter` to use to write the response content to a file. The `Encoding` property of the response object is used to set the encoding for the file.
+The second command creates a `StreamWriter` to use to write the response content to a file. The **Encoding** property of the response object is used to set the encoding for the file.
 
-The final few commands write the `Content` property to the file then disposes the `StreamWriter`.
+The final few commands write the **Content** property to the file then disposes the `StreamWriter`.
 
-Note that the `Encoding` property will be null if the web request does not return text content.
+Note that the **Encoding** property will be null if the web request does not return text content.
 
 ### Example 3: Submit a multipart/form-data file
 ```powershell
@@ -151,7 +151,7 @@ This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/f
 ## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
-Allows sending of credentials and secrets over unencrypted connections. By default, supplying `-Credential` or any `-Authentication` option with a `-Uri` that does not begin with `https://` will result in an error and the request will abort to prevent unintentionally communicating secrets in plain text over unencrypted connections. To override this behavior at your own risk, supply the `-AllowUnencryptedAuthentication` parameter.
+Allows sending of credentials and secrets over unencrypted connections. By default, supplying **-Credential** or any **-Authentication** option with a **-Uri** that does not begin with `https://` will result in an error and the request will abort to prevent unintentionally communicating secrets in plain text over unencrypted connections. To override this behavior at your own risk, supply the **-AllowUnencryptedAuthentication** parameter.
 
 > **Warning**: Using this parameter is not secure and is not recommended. It is provided only for compatibility with legacy systems that cannot provide encrypted connections. Use at your own risk.
 
@@ -169,16 +169,16 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the explicit authentication type to use for the request. The default is `None`. `-Authentication` cannot be used with `-UseDefaultCredentials`.
+Specifies the explicit authentication type to use for the request. The default is **None**. **-Authentication** cannot be used with **-UseDefaultCredentials**.
 
 Available Authentication Options:
 
-- `None`: This is the default option when `-Authentication` is not supplied. No explicit authentication will be used.
-- `Basic`: Requires `-Credential`. The credentials will be used to send an RFC 7617 Basic Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
-- `Bearer`: Requires `-Token`. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for `OAuth`
-- `OAuth`: Requires `-Token`. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for `Bearer`
+- **None**: This is the default option when **-Authentication** is not supplied. No explicit authentication will be used.
+- **Basic**: Requires **-Credential**. The credentials will be used to send an RFC 7617 Basic Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
+- **Bearer**: Requires **-Token**. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for **OAuth**
+- **OAuth**: Requires **-Token**. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for **Bearer**
 
-Supplying `-Authentication` will override any `Authorization` headers supplied to `-Headers` or included in `-WebSession`.
+Supplying **-Authentication** will override any `Authorization` headers supplied to **-Headers** or included in **-WebSession**.
  
 
 ```yaml
@@ -199,12 +199,12 @@ Specifies the body of the request.
 The body is the content of the request that follows the headers.
 You can also pipe a body value to `Invoke-WebRequest`.
 
-The `-Body` parameter can be used to specify a list of query parameters or specify the content of the response.
+The **-Body** parameter can be used to specify a list of query parameters or specify the content of the response.
 
 When the input is a GET request and the body is an `IDictionary` (typically, a hash table), the body is added to the URI as query parameters.
 For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
 
-The `-Body` parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for `-Body`, any Content related headers supplied to the `-ContentType`, `-Headers`, or `-WebSession` parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
+The **-Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for **-Body**, any Content related headers supplied to the **-ContentType**, **-Headers**, or **-WebSession** parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
 
 ```yaml
 Type: Object
@@ -268,7 +268,7 @@ Specifies the content type of the web request.
 If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content type to `application/x-www-form-urlencoded`.
 Otherwise, the content type is not specified in the call.
 
-`-ContentType` will be overridden when a `MultipartFormDataContent` object is supplied for `-Body`.
+**-ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for **-Body**.
 
 ```yaml
 Type: String
@@ -288,8 +288,8 @@ The default is the current user.
 
 Type a user name, such as "User01", "Domain01\User01", "User01@Domain.com", or enter a `PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
 
-`-Credential` can be used alone or in conjunction with certain `-Authentication` options. When used alone, it will only supply credentials to the remote server if the remote server
-sends an authentication challenge request. When used with `-Authentication` options, the credentials will be explicitly sent.
+**-Credential** can be used alone or in conjunction with certain **-Authentication** options. When used alone, it will only supply credentials to the remote server if the remote server
+sends an authentication challenge request. When used with **-Authentication** options, the credentials will be explicitly sent.
 
 ```yaml
 Type: PSCredential
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomMethod
-Specifies custom method used for the web request. This can be used with the Request Method required by the endpoint is not an available option on the `-Method`. `-Method` and `-CustomMethod` cannot be used together.
+Specifies custom method used for the web request. This can be used with the Request Method required by the endpoint is not an available option on the **-Method**. **-Method** and **-CustomMethod** cannot be used together.
 
 Example:
 
@@ -327,9 +327,9 @@ Accept wildcard characters: False
 ```
 
 ### -DisableKeepAlive
-Indicates that the cmdlet sets the `KeepAlive` value in the HTTP header to False.
-By default, `KeepAlive` is True.
-`KeepAlive` establishes a persistent connection to the server to facilitate subsequent requests.
+Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to False.
+By default, **KeepAlive** is True.
+**KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
 
 ```yaml
 Type: SwitchParameter
@@ -347,10 +347,10 @@ Accept wildcard characters: False
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
-To set UserAgent headers, use the `-UserAgent` parameter.
+To set UserAgent headers, use the **-UserAgent** parameter.
 You cannot use this parameter to specify `User-Agent` or cookie headers.
 
-Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent` object is supplied for `-Body`.
+Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent` object is supplied for **-Body**.
 
 ```yaml
 Type: IDictionary
@@ -415,7 +415,7 @@ The acceptable values for this parameter are:
 - Put
 - Trace
 
-The `-CustomMethod` parameter can be used for Request Methods not listed above.
+The **-CustomMethod** parameter can be used for Request Methods not listed above.
 
 ```yaml
 Type: WebRequestMethod
@@ -453,7 +453,7 @@ Enter a path and file name.
 If you omit the path, the default is the current location.
 
 By default, `Invoke-WebRequest` returns the results to the pipeline.
-To send the results to a file and to the pipeline, use the `-Passthru` parameter.
+To send the results to a file and to the pipeline, use the **-Passthru** parameter.
 
 ```yaml
 Type: String
@@ -469,7 +469,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 Indicates that the cmdlet returns the results, in addition to writing them to a file.
-This parameter is valid only when the `-OutFile` parameter is also used in the command.
+This parameter is valid only when the **-OutFile** parameter is also used in the command.
 
 ```yaml
 Type: SwitchParameter
@@ -517,13 +517,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the `-Proxy` parameter.
+Specifies a user account that has permission to use the proxy server that is specified by the **-Proxy** parameter.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", "User@Domain.Com", or enter a `-PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", "User@Domain.Com", or enter a `PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
 
-This parameter is valid only when the `-Proxy` parameter is also used in the command.
-You cannot use the `-ProxyCredential` and `-ProxyUseDefaultCredentials` parameters in the same command.
+This parameter is valid only when the **-Proxy** parameter is also used in the command.
+You cannot use the **-ProxyCredential** and **-ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: PSCredential
@@ -538,10 +538,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyUseDefaultCredentials
-Indicates that the cmdlet uses the credentials of the current user to access the proxy server that is specified by the `-Proxy` parameter.
+Indicates that the cmdlet uses the credentials of the current user to access the proxy server that is specified by the **-Proxy** parameter.
 
-This parameter is valid only when the `-Proxy` parameter is also used in the command.
-You cannot use the `-ProxyCredential` and `-ProxyUseDefaultCredentials` parameters in the same command.
+This parameter is valid only when the **-Proxy** parameter is also used in the command.
+You cannot use the **-ProxyCredential** and **-ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: SwitchParameter
@@ -566,12 +566,12 @@ Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
 You can use it to share state and data among web requests.
 
-To use the web request session in subsequent web requests, specify the session variable in the value of the `-WebSession` parameter.
+To use the web request session in subsequent web requests, specify the session variable in the value of the **-WebSession** parameter.
 PowerShell uses the data in the web request session object when establishing the new connection.
-To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
+To override a value in the web request session, use a cmdlet parameter, such as **-UserAgent** or **-Credential**.
 Parameter values take precedence over values in the web request session.
 
-You cannot use the `-SessionVariable` and `-WebSession` parameters in the same command.
+You cannot use the **-SessionVariable** and **-WebSession** parameters in the same command.
 
 ```yaml
 Type: String
@@ -607,7 +607,7 @@ Indicates the cmdlet should add headers to the request without validation.
 
 This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
 
-This will disable validation for values passed to both the `-Headers` and `-UserAgent` parameters.
+This will disable validation for values passed to both the **-Headers** and **-UserAgent** parameters.
 
 ```yaml
 Type: SwitchParameter
@@ -622,9 +622,11 @@ Accept wildcard characters: False
 ```
 
 ### -SslProtocol
-Sets the SSL/TLS protocols that are permissible for the web request. By default all, SSL/TLS protocols supported by the system are allowed. `-SslProtocol` allows for limiting to specific protocols for compliance purposes.
+Sets the SSL/TLS protocols that are permissible for the web request. By default all, SSL/TLS protocols supported by the system are allowed. **-SslProtocol** allows for limiting to specific protocols for compliance purposes.
 
-`-SslProtocol` uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
+**-SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
+
+> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
 
 ```yaml
 Type: WebSslProtocol
@@ -645,7 +647,7 @@ Enter a value in seconds.
 The default value, 0, specifies an indefinite time-out.
 
 A Domain Name System (DNS) query can take up to 15 seconds to return or time out.
-If your request contains a host name that requires resolution, and you set `-TimeoutSec` to a value greater than zero, but less than 15 seconds, it can take 15 seconds or more before a WebException is thrown, and your request times out.
+If your request contains a host name that requires resolution, and you set **-TimeoutSec** to a value greater than zero, but less than 15 seconds, it can take 15 seconds or more before a WebException is thrown, and your request times out.
 
 ```yaml
 Type: Int32
@@ -660,9 +662,9 @@ Accept wildcard characters: False
 ```
 
 ### -Token
-The OAuth or Bearer token to include in the request. `-Token` is required by certain `-Authentication` options. It cannot be used independently. 
+The OAuth or Bearer token to include in the request. **-Token** is required by certain **-Authentication** options. It cannot be used independently. 
 
-`-Token` takes a `SecureString` containing the token. To supply the token manually use the following:
+**-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
 ```powershell
 Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
@@ -709,7 +711,7 @@ Enter a URI.
 This parameter supports HTTP or HTTPS only.
 
 This parameter is required.
-The parameter name (`-Uri`) is optional.
+The parameter name (**-Uri**) is optional.
 
 ```yaml
 Type: Uri
@@ -739,7 +741,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseDefaultCredentials
-Indicates that the cmdlet uses the credentials of the current user to send the web request. This cannot be used with `-Authentication` or `-Credential` and may not be supported on all platforms.
+Indicates that the cmdlet uses the credentials of the current user to send the web request. This cannot be used with **-Authentication** or **-Credential** and may not be supported on all platforms.
 
 ```yaml
 Type: SwitchParameter
@@ -783,18 +785,18 @@ Accept wildcard characters: False
 Specifies a web request session.
 Enter the variable name, including the dollar sign (`$`).
 
-To override a value in the web request session, use a cmdlet parameter, such as `-UserAgent` or `-Credential`.
-Parameter values take precedence over values in the web request session. Content related headers, such as `Content-Type`, will be also be overridden when a `MultipartFormDataContent` object is supplied for `-Body`.
+To override a value in the web request session, use a cmdlet parameter, such as **-UserAgent** or **-Credential**.
+Parameter values take precedence over values in the web request session. Content related headers, such as `Content-Type`, will be also be overridden when a `MultipartFormDataContent` object is supplied for **-Body**.
 
 Unlike a remote session, the web request session is not a persistent connection.
 It is an object that contains information about the connection and the request, including cookies, credentials, the maximum redirection value, and the user agent string.
 You can use it to share state and data among web requests.
 
-To create a web request session, enter a variable name (without a dollar sign) in the value of the `-SessionVariable` parameter of an `Invoke-WebRequest` command.
+To create a web request session, enter a variable name (without a dollar sign) in the value of the **-SessionVariable** parameter of an `Invoke-WebRequest` command.
 `Invoke-WebRequest` creates the session and saves it in the variable.
-In subsequent commands, use the variable as the value of the `-WebSession` parameter.
+In subsequent commands, use the variable as the value of the **-WebSession** parameter.
 
-You cannot use the `-SessionVariable` and `-WebSession` parameters in the same command.
+You cannot use the **-SessionVariable** and **-WebSession** parameters in the same command.
 
 ```yaml
 Type: WebRequestSession
@@ -809,7 +811,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
