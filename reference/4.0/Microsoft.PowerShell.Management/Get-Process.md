@@ -145,13 +145,7 @@ PS C:\> Get-Process powershell -IncludeUserName
 Handles      WS(K)   CPU(s)     Id UserName            ProcessName
 -------      -----   ------     -- --------            -----------
     782     132080     2.08   2188 DOMAIN01\user01     powershell
-```
 
-This command shows how to find the owner of a process.
-The **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
-The output reveals that the owner is Domain01\user01.
-
-```powershell
 PS C:\> $p = Get-WmiObject Win32_Process -Filter "name='powershell.exe'"
 PS C:\> $p.GetOwner()
 
@@ -171,12 +165,16 @@ ReturnValue      : 0
 User             : user01
 ```
 
-This is another way to find the owner of a process.
+The first command shows how to find the owner of a process.
+The **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
+The output reveals that the owner is Domain01\user01.
 
-The first command uses `Get-WmiObject` to get the PowerShell process.
+The second and third command are another way to find the owner of a process.
+
+The second command uses `Get-WmiObject` to get the PowerShell process.
 It saves it in the $p variable.
 
-The second command uses the GetOwner method to get the owner of the process in $p.
+The third command uses the GetOwner method to get the owner of the process in $p.
 The output reveals that the owner is Domain01\user01.
 
 ### Example 9
