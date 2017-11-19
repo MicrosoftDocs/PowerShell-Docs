@@ -147,46 +147,45 @@ This command gets the modules for the processes that have names that begin with 
 To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start Windows PowerShell with the Run as administrator option.
 
 ### Example 8: Find the owner of a process
+```powershell
+PS C:\> Get-Process powershell -IncludeUserName
+
+Handles      WS(K)   CPU(s)     Id UserName            ProcessName
+-------      -----   ------     -- --------            -----------
+    782     132080     2.08   2188 DOMAIN01\user01     powershell
 ```
-PS C:\> $P = Get-WmiObject win32_process -Filter "name='powershell.exe'"
-PS C:\> $P.getowner()
 
+This command shows how to find the owner of a process.
+The **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
+The output reveals that the owner is Domain01\user01.
 
-
-
-
-
-
-
-
-
-
-
+```powershell
+PS C:\> $p = Get-WmiObject Win32_Process -Filter "name='powershell.exe'"
+PS C:\> $p.GetOwner()
 
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 3
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 Domain           : DOMAIN01
 ReturnValue      : 0
 User             : user01
 ```
 
-This command shows how to find the owner of a process.
-Because the **System.Diagnostics.Process** object that **Get-Process** returns does not have a property or method that returns the process owner, the command uses the Get-WmiObject cmdlet to get a Win32_Process object that represents the same process.
+This is another way to find the owner of a process.
 
-The first command uses **Get-WmiObject** to get the PowerShell process.
-It saves it in the $P variable.
+The first command uses `Get-WmiObject` to get the PowerShell process.
+It saves it in the $p variable.
 
-The second command uses the **GetOwner** method to get the owner of the process in $P.
-The command reveals that the owner is Domain01\user01.
+The second command uses the GetOwner method to get the owner of the process in $p.
+The output reveals that the owner is Domain01\user01.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
 ```
