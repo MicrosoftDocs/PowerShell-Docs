@@ -114,9 +114,10 @@ This command gets the modules for the processes that have names that begin with 
 
 To run this command on Windows Vista (and later versions of Windows) with processes that you do not own, you must start Windows PowerShell with the "Run as administrator" option.
 ### Example 8
-```
-PS C:\> $p = get-wmiobject win32_process -filter "name='powershell.exe'"
-PS C:\> $p.getowner()
+```powershell
+PS C:\> $p = Get-WmiObject Win32_Process -Filter "name='powershell.exe'"
+PS C:\> $p.GetOwner()
+
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
@@ -134,15 +135,14 @@ User             : user01
 ```
 
 This command shows how to find the owner of a process.
-Because the System.Diagnostics.Process object that Get-Process returns does not have a property or method that returns the process owner, the command uses
+Because the System.Diagnostics.Process object that `Get-Process` returns does not have a property or method that returns the process owner, the command uses the `Get-WmiObject` cmdlet to get a Win32_Process object that represents the same process.
 
-the Get-WmiObject cmdlet to get a Win32_Process object that represents the same process.
-
-The first command uses Get-WmiObject to get the PowerShell process.
+The first command uses `Get-WmiObject` to get the PowerShell process.
 It saves it in the $p variable.
 
 The second command uses the GetOwner method to get the owner of the process in $p.
-The command reveals that the owner is Domain01\user01.
+The output reveals that the owner is Domain01\user01.
+
 ### Example 9
 ```
 PS C:\> get-process powershell
