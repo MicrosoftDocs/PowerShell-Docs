@@ -31,7 +31,7 @@ WindowsFeature [string] #ResourceName
 
 |  Property  |  Description   | 
 |---|---| 
-| Name| Indicates the name of the role or feature that you want to ensure is added or removed. This is the same as the __Name__ property from the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469(v=wps.630).aspx) cmdlet, and not the display name of the role or feature.| 
+| Name| Indicates the name of the role or feature that you want to ensure is added or removed. This is the same as the __Name__ property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature.| 
 | Credential| Indicates the credentials to use to add or remove the role or feature.| 
 | Ensure| Indicates if the role or feature is added. To ensure that the role or feature is added, set this property to "Present" To ensure that the role or feature is removed, set the property to "Absent".| 
 | IncludeAllSubFeature| Set this property to __$true__ to ensure the state of all required subfeatures with the state of the feature you specify with the __Name__ property.| 
