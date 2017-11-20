@@ -18,22 +18,19 @@ Gets the services on the computer.
 ### Default (Default)
 ```
 Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices]
- [-Include <String[]>] [-Exclude <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
 ```
 Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]>
- [-Include <String[]>] [-Exclude <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
 Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>]
- [-Exclude <String[]>] [-InputObject <ServiceController[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -208,7 +205,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Exclude
@@ -226,7 +223,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Include
@@ -244,36 +241,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
@@ -307,7 +275,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -RequiredServices
