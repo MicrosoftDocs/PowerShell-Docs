@@ -68,22 +68,18 @@ Description
 This command gets all approved verbs that begin with "un".
 
 ### Example 3
+```powershell
+PS C:\> Get-Verb | Where-Object Group -EQ Security
+
+Verb      Group
+----      -----
+Block     Security
+Grant     Security
+Protect   Security
+Revoke    Security
+Unblock   Security
+Unprotect Security
 ```
-get-verb | where-object {$_.Group -eq "Security"}
-
-Verb                 Group
-----                 -----
-Block                Security
-Grant                Security
-Protect              Security
-Revoke               Security
-Unblock              Security
-Unprotect            Security
-```
-
-Description
-
------------
 
 This command gets all approved verbs in the Security group.
 
