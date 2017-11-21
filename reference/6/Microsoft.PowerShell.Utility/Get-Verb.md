@@ -14,8 +14,8 @@ Gets approved Windows PowerShell verbs.
 
 ## SYNTAX
 
-```
-Get-Verb [[-verb] <String[]>]
+```powershell
+Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,23 +64,19 @@ Description
 
 This command gets all approved verbs that begin with "un".
 
-### -------------------------- EXAMPLE 3 --------------------------
+### Example 3
+```powershell
+PS C:\> Get-Verb -Group Security
+
+Verb      AliasPrefix Group    Description
+----      ----------- -----    -----------
+Block     bl          Security Restricts access to a resource
+Grant     gr          Security Allows access to a resource
+Protect   pt          Security Safeguards a resource from attack or loss
+Revoke    rk          Security Specifies an action that does not allow acc...
+Unblock   ul          Security Removes restrictions to a resource
+Unprotect up          Security Removes safeguards from a resource that wer...
 ```
-get-verb | where-object {$_.Group -eq "Security"}
-
-Verb                 Group
-----                 -----
-Block                Security
-Grant                Security
-Protect              Security
-Revoke               Security
-Unblock              Security
-Unprotect            Security
-```
-
-Description
-
------------
 
 This command gets all approved verbs in the Security group.
 
@@ -136,6 +132,24 @@ Position: 1
 Default value: All verbs
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
+```
+
+### -Group
+Gets only the specified groups.
+Enter the name of a group.
+Wildcards are not permitted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
+
+Required: False
+Position: 1
+Default value: All groups
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ## INPUTS
