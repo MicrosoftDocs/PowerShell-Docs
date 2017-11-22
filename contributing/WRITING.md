@@ -2,7 +2,6 @@
 
 One of the easiest ways to contribute to PowerShell is by helping to write and edit documentation.
 All of our documentation hosted on GitHub is written using GitHub Flavored Markdown (GFM).
-To get started using GFM, see GitHub's Help topics for [Writing on GitHub](https://help.github.com/categories/writing-on-github/).
 
 ## Markdown editors
 
@@ -15,58 +14,43 @@ Here are some Markdown editors you can try out:
 
 ## Using GitHub Flavored Markdown
 
-Some of the basic GFM syntax includes:
+To get started using GFM, see GitHub's Help topics for [Writing on GitHub][gfm-help].
 
-* **Line breaks vs. paragraphs:** In Markdown there is no HTML `<br />` or `<p />` element.
-Instead, a new paragraph is designated by an empty line between two blocks of text.
+**NOTE:** GitHub recently adopted the CommonMark specification (with GFM extensions) for its Markdown syntax.
+In the new specification, many spacing rules have changed.
+Spaces are significant in GFM.
+Do not use hard tabs in Markdown.
+For more detailed information about the Markdown specification, see the [GitHub Flavored Markdown Spec][gfm-spec].
 
-> **Note**: Please add a single newline after each sentence to simplify the command-line output of diffs and history.
-This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.
-Feel free to help out.
+## Creating new topics
 
-* **Italics:** The HTML `<em>some text</em>` element is written as `*some text*`
+If you want to contribute new documentation, first check for [issues tagged as "in progress"][labels]
+to make sure you're not duplicating efforts.
+If no one seems to be working on what you have planned:
 
-* **Bold:** The HTML `<strong>some text</strong>` element is written as `**some text**`
+* Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization)
+  or add "in progress" as a comment to tell others what you're working on.
+* Follow the same workflow as described above for making major edits to existing topics.
+* Do not edit the `TOC.md` or `TOC.yml` files (located in the top-level folder for each documentation set).
+* Create an issue requesting that your new article be added table of contents.
+  Include a suggestion about where you think it show appear in the TOC.
+  Someone on the PowerShell documentation team will make the appropriate changes to the TOC files.
 
-* **Headings:** HTML headings are designated using `#` characters at the start of the line.
-  The number of `#` characters corresponds to the hierarchical level of the heading (for example, `#` = `<h1>` and `###` = ```<h3>```).
+## Updating topics that exist in multiple versions
 
-* **Numbered lists:** To make a numbered (ordered) list, start the line with `1. `.
-  If you want multiple lines within a single list element, format your list as follows:
-
-```markdown
-1. For the first element (like this one), insert a space after the 1.
-
-   To include a second element (like this one), insert a line break after the first and align indentations.
-   The indentation of the second element must line up with the first character after the numbered list marker.
-
-1. The next numbered item starts here.
-```
-
-to get this output:
-
-1. For the first element (like this one), insert a tab stop after the 1.
-
-   To include a second element (like this one), insert a line break after the first and align indentations.
-   The indentation of the second element must line up with the first character after the numbered list marker.
-
-1. The next numbered item starts here.
-
-* **Bulleted lists:** Bulleted (unordered) lists are almost identical to ordered lists except that the list marker can be any of these three patterns: `* `, `- `, or `+ `.
-  Multiple element lists work the same way as with ordered lists.
-
-* **Links:** The syntax for a hyperlink is `[visible link text](link URL)`.
-
-* **Link to another topic within the same docset:** A docset is a top-level folder in this repository (for example, "dsc", "scripting").
-  The syntax for a hyperlink to a topic within the same docset is `[topic title](relative path to topic)`.
-  For more information, see [Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/).
-  To link to a topic in a different top-level folder, use the URL of the published page, as described above.
-
-> [!NOTE] Spacing is significant in Markdown.
-Always uses spaces instead of hard tabs.
-
-For more detailed information about the Markdown specification, see the [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
+Most reference topics are duplicated across all versions of PowerShell.
+When reporting an issue about a cmdlet reference or an About_ topic, you must specify which versions are affected by the issue.
+The default issue template in GitHub includes a [GFM task list][gfm-task].
+Use the checkboxes in the task list to specify which versions of the content are affected.
+When you submit a change to a topic for an issue that affects multiple versions of the content,
+you must apply the appropriate change to each version of the file.
 
 ## Next Steps
 
 Read the [Style Guide](STYLE.md).
+
+<!-- External URLs -->
+[gfm-help]: https://help.github.com/categories/writing-on-github/
+[gfm-spec]: https://github.github.com/gfm/
+[labels]: https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress
+[gfm-task]: https://github.github.com/gfm/#task-list-items-extension-
