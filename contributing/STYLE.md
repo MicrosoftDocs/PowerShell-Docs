@@ -77,17 +77,17 @@ Adding or removing H2 causes a build break.
 
 * Property names and parameter names should be in **bold**
 
-  * For wxample:
-
-    This `Write-Host` cmdlet uses the **-Object** parameter to ...
-
 * When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation.
+
+  For example:
+
+  This [`Write-Host`](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the **-Object** parameter to ...
 
 ## Formatting code blocks
 
 * All PowerShell syntax blocks should use &#96;&#96;&#96;powershell code fence marker.
 
-* Do not start PowerShell commands with the PowerShell prompt. For example, "`PS C:\>`".
+* Do **NOT** start PowerShell commands with the PowerShell prompt ("`PS C:\>`").
 
 * Avoid using line continuation characters (\`) in PowerShell code examples.
   These are a hard to see and can cause problems if there are extra spaces on the end of the line.
