@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -194,8 +194,8 @@ Get-Help about_Functions
 
 PowerShell aliases are represented by objects that are instances of the
 System.Management.Automation.AliasInfo class. For more information about this
-type of object, see [AliasInfo Class](http://go.microsoft.com/fwlink/?LinkId=143644)
-in the Microsoft Developer Network (MSDN) library.
+type of object, see [AliasInfo Class][aliasinfo] in the Microsoft Developer
+Network (MSDN) library.
 
 To view the properties and methods of the alias objects, get the aliases.
 Then, pipe them to the Get-Member cmdlet. For example:
@@ -266,3 +266,6 @@ Get-Help Alias
 - [about_functions](about_functions.md)
 - [about_profiles](about_profiles.md)
 - [about_providers](about_providers.md)
+
+<!-- External links -->
+[aliasinfo]: http://go.microsoft.com/fwlink/?LinkId=143644
