@@ -33,19 +33,23 @@ variables in the command.
 Windows PowerShell assumes that the variables used in remote
 commands  are defined in the session in which the command runs.
 
-In the following example, the $ps variable is defined in the
+In the following example, the `$ps` variable is defined in the
 temporary  session in which the Get-WinEvent command runs.
 
-PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"; Get-WinEvent -LogName $ps}
+```powershell
+PS C:\> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = 'Windows PowerShell'; Get-WinEvent -LogName $ps}
+```
 
 Similarly, when the command runs in a persistent session (PSSession),
 the remote variable must be defined in the same PSSession.
 
-PS C:> $s = New-PSSession -ComputerName S1
+```powershell
+PS C:\> $s = New-PSSession -ComputerName S1
 
-PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
+PS C:\> Invoke-Command -Session $s -ScriptBlock {$ps = 'Windows PowerShell'}
 
-PS C:> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $ps}
+PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $ps}
+```
 
 # USING LOCAL VARIABLES
 
@@ -58,23 +62,28 @@ modifier to identify a local variable in a remote command.
 
 The syntax of Using is as follows:
 
-The syntax is:
+```powershell
 $Using:<VariableName>
+```
 
-In the following example, the $ps variable is created in the local
+In the following example, the `$ps` variable is created in the local
 session, but is used in the session in which the command runs. The
-Using scope modifier identifies $ps as a local variable.
+Using scope modifier identifies `$ps` as a local variable.
 
-PS C:> $ps = "Windows PowerShell"
-PS C:> Invoke-Command -ComputerName S1 -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+```powershell
+PS C:\> $ps = 'Windows PowerShell'
+PS C:\> Invoke-Command -ComputerName S1 -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+```
 
 You can also use the Using scope modifier in PSSessions.
 
-PS C:> $s = New-PSSession -ComputerName S1
+```powershell
+PS C:\> $s = New-PSSession -ComputerName S1
 
-PS C:> $ps = "Windows PowerShell"
+PS C:\> $ps = 'Windows PowerShell'
 
-PS C:> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+PS C:\> Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+```
 
 # USING LOCAL VARIABLES IN WINDOWS POWERSHELL 2.0
 
@@ -87,22 +96,24 @@ value.
 This command format is valid on Windows PowerShell 2.0 and later versions
 of Windows PowerShell.
 
--- Use the param keyword to define parameters for the remote command.
+* Use a `Param()` block to define parameters for the remote command.
 The parameter names are placeholders that do not need to match the
 name of the local variable.
 
--- Use the parameters defined by the param keyword in the command.
+* Use the parameters defined by the `Param()` block in the command.
 
--- Use the ArgumentList parameter of the Invoke-Command cmdlet to
+* Use the ArgumentList parameter of the Invoke-Command cmdlet to
 specify the local variable as the parameter value.
 
-For example, the following commands define the $ps variable in the local
-session and then use it in a remote command. The command uses $log as
-the parameter name and the local variable, $ps, as its value.
+For example, the following commands define the `$ps` variable in the local
+session and then use it in a remote command. The command uses `$log` as
+the parameter name and the local variable, `$ps`, as its value.
 
-C:\PS>$ps = "Windows PowerShell"
+```powershell
+PS C:\> $ps = 'Windows PowerShell'
 
-C:\PS>Invoke-Command -ComputerName S1 -ScriptBlock {param($log) Get-WinEvent -logname $log} -ArgumentList $ps
+PS C:\> Invoke-Command -ComputerName S1 -ScriptBlock {Param($log) Get-WinEvent -logname $log} -ArgumentList $ps
+```
 
 # KEYWORDS
 
