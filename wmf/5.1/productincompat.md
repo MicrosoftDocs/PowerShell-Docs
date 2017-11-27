@@ -11,6 +11,8 @@ keywords:  wmf,powershell,setup
 > Systems that are running the following server applications **can run** Windows Management Framework 5.1:
 
 - Microsoft SharePoint Server 2013
+- Skype for Business Server 2015
+- Microsoft Lync Server 2013
 - System Center 2012 Configuration Manager
 
 ## Not Tested:
@@ -24,8 +26,6 @@ keywords:  wmf,powershell,setup
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
-- Skype for Business Server 2015
-- Microsoft Lync Server 2013
 - Microsoft Lync Server 2010
 - System Center 2012 R2 Service Management Automation
 
