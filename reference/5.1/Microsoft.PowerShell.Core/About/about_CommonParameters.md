@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -498,8 +498,8 @@ Are you sure you want to perform this action?
 
 Performing operation "Create File" on Target "Destination:
 C:\ps-test\test.txt".
-[Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is
-"Y"): s
+[Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default
+is "Y"): s
 
 PS C:\ps-test> Get-Help New-Item -Parameter ItemType
 
@@ -516,8 +516,10 @@ PS C:\ps-test> exit
 
 Confirm
 Are you sure you want to perform this action?
-Performing operation "Create File" on Target "Destination: C:\ps-test\test.txt".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): y
+Performing operation "Create File" on Target "Destination: C:\ps-test\test
+.txt".
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (defau
+lt is "Y"): y
 
 Directory: C:\ps-test
 
