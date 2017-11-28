@@ -49,7 +49,7 @@ and to `[MemoryStream]` in *System.IO*.
     using namespace System.IO
 
     [string]$string = "Hello World"
-    [string]$algorithm = "SHA256" ## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MACTripleDES", "MD5", "RIPEMD160"
+    [string]$algorithm = "SHA256" ## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
 
     [byte[]]$stringbytes = [UnicodeEncoding]::Unicode.GetBytes($string)
 

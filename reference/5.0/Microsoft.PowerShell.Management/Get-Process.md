@@ -147,72 +147,67 @@ This command gets the modules for the processes that have names that begin with 
 To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start Windows PowerShell with the Run as administrator option.
 
 ### Example 8: Find the owner of a process
-```
-PS C:\> $P = Get-WmiObject win32_process -Filter "name='powershell.exe'"
-PS C:\> $P.getowner()
+```powershell
+PS C:\> Get-Process powershell -IncludeUserName
 
+Handles      WS(K)   CPU(s)     Id UserName            ProcessName
+-------      -----   ------     -- --------            -----------
+    782     132080     2.08   2188 DOMAIN01\user01     powershell
 
-
-
-
-
-
-
-
-
-
-
+PS C:\> $p = Get-WmiObject Win32_Process -Filter "name='powershell.exe'"
+PS C:\> $p.GetOwner()
 
 
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 3
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 Domain           : DOMAIN01
 ReturnValue      : 0
 User             : user01
 ```
 
-This command shows how to find the owner of a process.
-Because the **System.Diagnostics.Process** object that **Get-Process** returns does not have a property or method that returns the process owner, the command uses the Get-WmiObject cmdlet to get a Win32_Process object that represents the same process.
+The first command shows how to find the owner of a process.
+The **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
+The output reveals that the owner is Domain01\user01.
 
-The first command uses **Get-WmiObject** to get the PowerShell process.
-It saves it in the $P variable.
+The second and third command are another way to find the owner of a process.
 
-The second command uses the **GetOwner** method to get the owner of the process in $P.
-The command reveals that the owner is Domain01\user01.
+The second command uses `Get-WmiObject` to get the PowerShell process.
+It saves it in the $p variable.
+
+The third command uses the GetOwner method to get the owner of the process in $p.
+The output reveals that the owner is Domain01\user01.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
-```
+```powershell
 PS C:\> Get-Process powershell
-
-
-
-
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 308      26        52308      61780   567     3.18   5632 powershell
-377      26        62676      63384   575     3.88   5888 powershell PS C:\> Get-Process -Id $pid
+377      26        62676      63384   575     3.88   5888 powershell
 
 
+PS C:\> Get-Process -Id $PID
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
 396      26        56488      57236   575     3.90   5888 powershell
 ```
 
-These commands show how to use the $pid automatic variable to identify the process that is hosting the current Windows PowerShell session.
-You can use this method to distinguish the host process from other Windows PowerShell processes that you might want to stop or close.
-The first command gets all of the Windows PowerShell processes in the current session.
+These commands show how to use the $PID automatic variable to identify the process that is hosting the current PowerShell session.
+You can use this method to distinguish the host process from other PowerShell processes that you might want to stop or close.
 
-The second command gets the Windows PowerShell process that is hosting the current session.
+The first command gets all of the PowerShell processes in the current session.
+
+The second command gets the PowerShell process that is hosting the current session.
 
 ### Example 10: Get all processes that have a main window title and display them in a table
 ```
