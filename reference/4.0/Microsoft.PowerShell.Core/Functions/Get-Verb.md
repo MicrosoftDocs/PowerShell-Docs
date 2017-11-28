@@ -84,39 +84,15 @@ Unprotect Security
 This command gets all approved verbs in the Security group.
 
 ### Example 4
+```powershell
+Get-Command -Module Microsoft.PowerShell.Utility | where Verb -NotIn (Get-Verb).Verb
+# CommandType     Name            Version    Source
+# -----------     ----            -------    ------
+# Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
+# Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 ```
-get-command -module MyModule | where { (get-verb $_.Verb) -eq $null }
-```
-
-Description
-
------------
 
 This command finds all commands in a module that have unapproved verbs.
-
-### Example 5
-```
-$approvedVerbs = get-verb | foreach {$_.verb}
-
-C:\PS> $myVerbs = get-command -module MyModule | foreach {$_.verb}
-
-# Does MyModule export functions with unapproved verbs?
-C:\PS> ($myVerbs | foreach {$approvedVerbs -contains $_}) -contains $false
-True
-
-# Which unapproved verbs are used in MyModule?
-C:\PS>  ($myverbs | where {$approvedVerbs -notcontains $_})
-ForEach
-Sort
-Tee
-Where
-```
-
-Description
-
------------
-
-These commands detect unapproved verbs in a module and tell which unapproved verbs were detected in the module.
 
 ## PARAMETERS
 
