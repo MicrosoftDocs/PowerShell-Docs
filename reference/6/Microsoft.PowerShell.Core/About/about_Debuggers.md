@@ -861,7 +861,5 @@ several other features that you can use to debug scripts and functions.
 - [Get-PsCallStack](../../Microsoft.PowerShell.Utility/Get-PsCallStack.md)
 - [Remove-PsBreakpoint](../../Microsoft.PowerShell.Utility/Remove-PsBreakpoint.md)
 - [Set-PsBreakpoint](../../Microsoft.PowerShell.Utility/Set-PsBreakpoint.md)
-- [Set-PsDebug](../../Microsoft.PowerShell.Utility/Set-PsDebug.md)
-- [Set-Strictmode](../../Microsoft.PowerShell.Utility/Set-Strictmode.md)
 - [Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
 - [Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
