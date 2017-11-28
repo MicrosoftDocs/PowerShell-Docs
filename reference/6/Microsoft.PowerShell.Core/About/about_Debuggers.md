@@ -855,13 +855,13 @@ several other features that you can use to debug scripts and functions.
 
 ## SEE ALSO
 
-- [Disable-PsBreakpoint](..\..\Microsoft.PowerShell.Utility\Disable-PsBreakpoint.md)
-- [Enable-PsBreakpoint](..\..\Microsoft.PowerShell.Utility\Enable-PsBreakpoint.md)
-- [Get-PsBreakpoint](..\..\Microsoft.PowerShell.Utility\Get-PsBreakpoint.md)
-- [Get-PsCallStack](..\..\Microsoft.PowerShell.Utility\Get-PsCallStack.md)
-- [Remove-PsBreakpoint](..\..\Microsoft.PowerShell.Utility\Remove-PsBreakpoint.md)
-- [Set-PsBreakpoint](..\..\Microsoft.PowerShell.Utility\Set-PsBreakpoint.md)
-- [Set-PsDebug](..\..\Microsoft.PowerShell.Utility\Set-PsDebug.md)
-- [Set-Strictmode](..\..\Microsoft.PowerShell.Utility\Set-Strictmode.md)
-- [Write-Debug](..\..\Microsoft.PowerShell.Utility\Write-Debug.md)
-- [Write-Verbose](..\..\Microsoft.PowerShell.Utility\Write-Verbose.md)
+- [Disable-PsBreakpoint](../../Microsoft.PowerShell.Utility/Disable-PsBreakpoint.md)
+- [Enable-PsBreakpoint](../../Microsoft.PowerShell.Utility/Enable-PsBreakpoint.md)
+- [Get-PsBreakpoint](../../Microsoft.PowerShell.Utility/Get-PsBreakpoint.md)
+- [Get-PsCallStack](../../Microsoft.PowerShell.Utility/Get-PsCallStack.md)
+- [Remove-PsBreakpoint](../../Microsoft.PowerShell.Utility/Remove-PsBreakpoint.md)
+- [Set-PsBreakpoint](../../Microsoft.PowerShell.Utility/Set-PsBreakpoint.md)
+- [Set-PsDebug](../../Microsoft.PowerShell.Utility/Set-PsDebug.md)
+- [Set-Strictmode](../../Microsoft.PowerShell.Utility/Set-Strictmode.md)
+- [Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
+- [Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
