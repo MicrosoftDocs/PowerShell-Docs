@@ -357,7 +357,7 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Remote](about_Remote.md)
 
-[about_Scheduled_Jobs](https://docs.microsoft.com/en-us/powershell/module/psscheduledjob/about/about_scheduled_jobs)
+[about_Scheduled_Jobs](../../psscheduledjob/about/about_scheduled_jobs)
 
 [Invoke-Command](../Invoke-Command.md)
 
@@ -383,4 +383,4 @@ Id         Name            JobTriggers     Command       Enabled
 
 [Register-ScheduledJob](../../PSScheduledJob/Register-ScheduledJob.md)
 
-[Get-ScheduleJob](../../PSScheduledJob/Get-ScheduleJob.md)
+[Get-ScheduledJob](../../PSScheduledJob/Get-ScheduledJob.md)
