@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-28
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,9 +7,6 @@ title:  about_Job_Details
 ---
 
 # About Job Details
-## about_Job_Details
-
-
 
 # SHORT DESCRIPTION
 
@@ -20,7 +17,8 @@ Provides details about background jobs on local and remote computers.
 This topic explains the concept of a background job and provides technical
 information about how background jobs work in Windows PowerShell.
 
-This topic is a supplement to the about_Jobs and about_Remote_Jobs topics.
+This topic is a supplement to the [about_Jobs](about_Jobs.md) and
+[about_Remote_Jobs](about_Remote_Jobs.md) topics.
 
 # ABOUT BACKGROUND JOBS
 
@@ -94,65 +92,71 @@ To get the parent and child jobs of a job, use the IncludeChildJobs
 parameter of the Get-Job cmdlet. The IncludeChildJob parameter is
 introduced in Windows PowerShell 3.0.
 
+```powershell
 C:\PS> Get-Job -IncludeChildJob
 
-Id    Name   PSJobTypeName State      HasMoreData   Location    Command
---    ----   ------------- -----      -----------   --------    -------
-1     Job1   RemoteJob     Failed     True          localhost   Get-Process
-2     Job2                 Completed  True          Server01    Get-Process
-3     Job3                 Failed     False         localhost   Get-Process
+Id Name   PSJobTypeName State      HasMoreData   Location    Command
+-- ----   ------------- -----      -----------   --------    -------
+1  Job1   RemoteJob     Failed     True          localhost   Get-Process
+2  Job2                 Completed  True          Server01    Get-Process
+3  Job3                 Failed     False         localhost   Get-Process
+```
 
 To get the parent job and only the child jobs with a particular State
 value, use the ChildJobState parameter of the Get-Job cmdlet. The
 ChildJobState parameter is introduced in Windows PowerShell 3.0.
 
+```powershell
 C:\PS> Get-Job -ChildJobState Failed
 
-Id    Name   PSJobTypeName State      HasMoreData   Location    Command
---    ----   ------------- -----      -----------   --------    -------
-1     Job1   RemoteJob     Failed     True          localhost   Get-Process
-3     Job3                 Failed     False         localhost   Get-Process
+Id Name   PSJobTypeName State      HasMoreData   Location    Command
+-- ----   ------------- -----      -----------   --------    -------
+1  Job1   RemoteJob     Failed     True          localhost   Get-Process
+3  Job3                 Failed     False         localhost   Get-Process
+```
 
 To get the child jobs of a job on all versions of Windows PowerShell,
 use the ChildJob property of the parent job.
 
+```powershell
 C:\PS> (Get-Job Job1).ChildJobs
 
-Id    Name   PSJobTypeName State      HasMoreData   Location    Command
---    ----   ------------- -----      -----------   --------    -------
-2     Job2                 Completed  True          Server01    Get-Process
-3     Job3                 Failed     False         localhost   Get-Process
+Id Name   PSJobTypeName State      HasMoreData   Location    Command
+-- ----   ------------- -----      -----------   --------    -------
+2  Job2                 Completed  True          Server01    Get-Process
+3  Job3                 Failed     False         localhost   Get-Process
+```
 
 You can also use a Get-Job command on the child job, as shown in the
 following command:
 
+```powershell
 C:\PS> Get-Job Job3
 
-Id    Name   PSJobTypeName State      HasMoreData   Location    Command
---    ----   ------------- -----      -----------   --------    -------
-3     Job3                 Failed     False         localhost   Get-Process
+Id Name   PSJobTypeName State      HasMoreData   Location    Command
+-- ----   ------------- -----      -----------   --------    -------
+3  Job3                 Failed     False         localhost   Get-Process
+```
 
 The configuration of the child job depends on the command that you use to
 start the job.
 
--- When you use Start-Job to start a job on a local computer, the job
-consists of an executive parent job and a child job that runs the
-command.
+- When you use Start-Job to start a job on a local computer, the job consists
+  of an executive parent job and a child job that runs the command.
 
--- When you use the AsJob parameter of Invoke-Command to start a job on
-one or more computers, the job consists of an executive parent job
-and a child job for each job run on each computer.
+- When you use the AsJob parameter of Invoke-Command to start a job on one or
+  more computers, the job consists of an executive parent job and a child job
+  for each job run on each computer.
 
--- When you use Invoke-Command to run a Start-Job command on one or more
-remote computers, the result is the same as a local command run on
-each remote computer. The command returns a job object for each
-computer. The job object consists of an executive parent job and
-one child job that runs the command.
+- When you use Invoke-Command to run a Start-Job command on one or more remote
+  computers, the result is the same as a local command run on each remote
+  computer. The command returns a job object for each computer. The job object
+  consists of an executive parent job and one child job that runs the command.
 
-The parent job represents all of the child jobs. When you manage a parent
-job, you also manage the associated child jobs. For example, if you stop a
-parent job, all child jobs are stopped. If you get the results of a parent
-job, you get the results of all child jobs.
+The parent job represents all of the child jobs. When you manage a parent job,
+you also manage the associated child jobs. For example, if you stop a parent
+job, all child jobs are stopped. If you get the results of a parent job, you
+get the results of all child jobs.
 
 However, you can also manage child jobs individually. This is most useful
 when you want to investigate a problem with a job or get the results of
@@ -161,49 +165,60 @@ Invoke-Command. (The backtick character [`] is the continuation character.)
 
 The following command uses the AsJob parameter of Invoke-Command to start
 background jobs on the local computer and two remote computers. The command
-saves the job in the $j variable.
+saves the job in the \$j variable.
 
+```powershell
 PS C:> $j = Invoke-Command -ComputerName localhost, Server01, Server02 `
 -Command {Get-Date} -AsJob
+```
 
-When you display the Name and ChildJob properties of the job in $j, it
+When you display the Name and ChildJob properties of the job in \$j, it
 shows that the command returned a job object with three child jobs, one for
 each computer.
 
+```powershell
 PS C:> $j | Format-List Name, ChildJobs
 
 Name      : Job3
 ChildJobs : {Job4, Job5, Job6}
+```
 
 When you display the parent job, it shows that the job failed.
 
+```powershell
 C:\PS> $j
 
-Id    Name   PSJobTypeName State      HasMoreData   Location
---    ----   ------------- -----      -----------   --------
-3     Job3   RemotingJob   Failed     False         localhost,Server...
+Id Name   PSJobTypeName State      HasMoreData   Location
+-- ----   ------------- -----      -----------   --------
+3  Job3   RemotingJob   Failed     False         localhost,Server...
+```
 
 But when you run a Get-Job command that gets the child jobs, the output
 shows that only one child job failed.
 
+```powershell
 PS C:> Get-Job -IncludeChildJobs
 
-Id    Name   PSJobTypeName State      HasMoreData   Location    Command
---    ----   ------------- -----      -----------   --------    -------
-3     Job3   RemotingJob   Failed     False         localhost,Server...
-4     Job4                 Completed  True          localhost   Get-Date
-5     Job5                 Failed     False         Server01    Get-Date
-6     Job6                 Completed  True          Server02    Get-Date
+Id  Name   PSJobTypeName State      HasMoreData   Location    Command
+--  ----   ------------- -----      -----------   --------    -------
+3   Job3   RemotingJob   Failed     False         localhost,Server...
+4   Job4                 Completed  True          localhost   Get-Date
+5   Job5                 Failed     False         Server01    Get-Date
+6   Job6                 Completed  True          Server02    Get-Date
+```
 
 To get the results of all child jobs, use the Receive-Job cmdlet to get
 the results of the parent job. But you can also get the results of a
 particular child job, as shown in the following command.
 
-C:\PS> Receive-Job -Name Job6 -Keep | Format-Table ComputerName, DateTime -Auto
+```powershell
+C:\PS> Receive-Job -Name Job6 -Keep | Format-Table ComputerName,
+>> DateTime -Auto
 
 ComputerName DateTime
 ------------ --------
 Server02     Thursday, March 13, 2008 4:16:03 PM
+```
 
 The child jobs feature of Windows PowerShell background jobs gives you
 more control over the jobs that you run.
@@ -239,86 +254,100 @@ Get-Job returns indicates the job type.
 The following table lists the job types that come with Windows
 PowerShell.
 
-Job Type         Description
---------         -----------
-BackgroundJob    Started by using the Start-Job cmdlet.
-RemoteJob        Started by using the AsJob parameter of the
-Invoke-Command cmdlet.
-PSWorkflowJob    Started by using the AsJob parameter of a
-workflow.
-PSScheduledJob   An instance of a scheduled job started by
-a job trigger.
-CIMJob           Started by using the AsJob parameter of
-a cmdlet from a CDXML module.
-WMIJob           Started by using the AsJob parameter of
-a cmdlet from a WMI module.
-PSEventJob       Created by running Register-ObjectEvent
-and specifying an action with the Action
-parameter.
+|Job Type      |Description                                               |
+|--------------|----------------------------------------------------------|
+|BackgroundJob |Started by using the Start-Job cmdlet.                    |
+|RemoteJob     |Started by using the AsJob parameter of the Invoke-Command|
+|              |cmdlet.                                                   |
+|PSWorkflowJob |Started by using the AsJob parameter of a workflow.       |
+|PSScheduledJob|An instance of a scheduled job started by a job trigger.  |
+|CIMJob        |Started by using the AsJob parameter of a cmdlet from a   |
+|              |CDXML module.                                             |
+|WMIJob        |Started by using the AsJob parameter of a cmdlet from a   |
+|              |WMI module.                                               |
+|PSEventJob    |Created by running Register-ObjectEvent and specifying an |
+|              |action with the Action parameter.                         |
 
-NOTE: Before using the Get-Job cmdlet to get jobs of a particular
-type, verify that the module that adds the job type is imported
-into the current session. Otherwise, Get-Job does not get jobs of
-that type.
+NOTE: Before using the Get-Job cmdlet to get jobs of a particular type, verify
+that the module that adds the job type is imported into the current session.
+Otherwise, Get-Job does not get jobs of that type.
 
 # EXAMPLE
 
-The following commands create a local background job, a
-remote background job, a workflow job, and a scheduled job.
-Then, it uses the Get-Job cmdlet to get the jobs. Get-Job
-does not get the scheduled job, but it gets any started
+The following commands create a local background job, a remote background job,
+a workflow job, and a scheduled job. Then, it uses the Get-Job cmdlet to get
+the jobs. `Get-Job` does not get the scheduled job, but it gets any started
 instances of the scheduled job.
 
 Start a background job on the local computer.
+
+```powershell
 PS C:> Start-Job -Name LocalData {Get-Process}
 
-Id   Name        PSJobTypeName   State   HasMoreData     Location   Command
---   ----        -------------   -----   -----------     --------   -------
-2    LocalData   BackgroundJob   Running        True     localhost  Get-Process
+Id Name        PSJobTypeName   State   HasMoreData   Location   Command
+-- ----        -------------   -----   -----------   --------   -------
+2  LocalData   BackgroundJob   Running        True   localhost  Get-Process
+```
 
 Start a background job that runs on a remote computer.
-PS C:> Invoke-Command -ComputerName Server01 {Get-Process} -AsJob -JobName RemoteData
 
-Id   Name        PSJobTypeName   State   HasMoreData     Location   Command
---   ----        -------------   -----   -----------     --------   -------
-2    RemoteData  RemoteJob       Running        True     Server01   Get-Process
+```powershell
+PS C:> Invoke-Command -ComputerName Server01 {Get-Process} `
+-AsJob -JobName RemoteData
+
+Id  Name        PSJobTypeName  State   HasMoreData   Location   Command
+--  ----        -------------  -----   -----------   --------   -------
+2   RemoteData  RemoteJob      Running        True   Server01   Get-Process
+```
 
 Create a scheduled job
-PS C:>  Register-ScheduledJob -Name ScheduledJob -ScriptBlock {Get-Process} `
--Trigger (New-JobTrigger -Once -At "3 PM")
+```powershell
+PS C:>  Register-ScheduledJob -Name ScheduledJob -ScriptBlock `
+ {Get-Process} -Trigger (New-JobTrigger -Once -At "3 PM")
 
 Id         Name            JobTriggers     Command       Enabled
 --         ----            -----------     -------       -------
 1          ScheduledJob    1               Get-Process   True
+```
 
 Create a workflow.
+```powershell
 PS C:> workflow Test-Workflow {Get-Process}
+```
 
 Run the workflow as a job.
+```powershell
+
 PS C:> Test-Workflow -AsJob -JobName TestWFJob
 
-Id   Name        PSJobTypeName   State   HasMoreData     Location   Command
---   ----        -------------   -----   -----------     --------   -------
-2    TestWFJob   PSWorkflowJob   NotStarted     True     localhost  Get-Process
+Id  Name       PSJobTypeName   State   HasMoreData   Location   Command
+--  ----       -------------   -----   -----------   --------   -------
+2   TestWFJob  PSWorkflowJob   NotStarted     True   localhost  Get-Process
+```
 
-Get the jobs. The Get-Job command does not get scheduled jobs, but it gets
+Get the jobs. The `Get-Job` command does not get scheduled jobs, but it gets
 instances of the scheduled job that are started.
 
+```powershell
 PS C:> Get-Job
 
-Id   Name         PSJobTypeName   State     HasMoreData     Location  Command
---   ----         -------------   -----     -----------     --------  -------
-2    LocalData    BackgroundJob   Completed True            localhost Get-Process
-4    RemoteData   RemoteJob       Completed True            Server01  Get-Process
-6    TestWFJob    PSWorkflowJob   Completed True            localhost WorkflowJob
-8    ScheduledJob PSScheduledJob  Completed True            localhost Get-Process
+Id  Name         PSJobTypeName  State     HasMoreData  Location  Command
+--  ----         -------------  -----     -----------  --------  -------
+2   LocalData    BackgroundJob  Completed True         localhost Get-Process
+4   RemoteData   RemoteJob      Completed True         Server01  Get-Process
+6   TestWFJob    PSWorkflowJob  Completed True         localhost WorkflowJob
+8   ScheduledJob PSScheduledJob Completed True         localhost Get-Process
+```
 
 To get scheduled jobs, use the Get-ScheduledJob cmdlet.
+
+```powershell
 PS C:> Get-ScheduledJob
 
 Id         Name            JobTriggers     Command       Enabled
 --         ----            -----------     -------       -------
 1          ScheduledJob    1               Get-Process   True
+```
 
 # SEE ALSO
 
@@ -328,31 +357,30 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Remote](about_Remote.md)
 
-[about_Scheduled_Jobs](../../PSScheduledJob/About/about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs](https://docs.microsoft.com/en-us/powershell/module/psscheduledjob/about/about_scheduled_jobs)
 
-Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-Start-Job
+[Start-Job](../Start-Job.md)
 
-Get-Job
+[Get-Job](../Get-Job.md)
 
-Wait-Job
+[Wait-Job](../Wait-Job.md)
 
-Stop-Job
+[Stop-Job](../Stop-Job.md)
 
-Remove-Job
+[Remove-Job](../Remove-Job.md)
 
-Suspend-Job
+[Suspend-Job](../Remove-Job.md)
 
-Resume-Job
+[Resume-Job](../Resume-Job)
 
-New-PSSession
+[New-PSSession](../New-PSSession.md)
 
-Enter-PSSession
+[Enter-PSSession](../Enter-PSSession.md)
 
-Exit-PSSession
+[Exit-PSSession](../Exit-PSSession.md)
 
-Register-ScheduledJob
+[Register-ScheduledJob](../../PSScheduledJob/Register-ScheduledJob.md)
 
-Get-ScheduleJob
-
+[Get-ScheduleJob](../../PSScheduledJob/Get-ScheduleJob.md)
