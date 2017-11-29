@@ -503,23 +503,11 @@ The following modules (or snap-ins) are installed with PowerShell.
 * PSWorkflowUtility
 * ISE
 
-## Logging Module Events
-
-Beginning in PowerShell 3.0, you can record execution events for the cmdlets
-and functions in PowerShell modules and snap-ins by setting the
-LogPipelineExecutionDetails property of modules and snap-ins to \$True. You can
-also use a Group Policy setting, Turn on Module Logging, to enable module
-logging in all PowerShell sessions. For more information, see
-[about_EventLogs](about_EventLogs.md) and
-[about_Group_Policy_Settings](about_Group_Policy_Settings.md).
-
 ## See Also
 
 [about_Command_Precedence](about_Command_Precedence.md)
 
 about_DesiredStateConfiguration
-
-[about_EventLogs](about_EventLogs.md)
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 

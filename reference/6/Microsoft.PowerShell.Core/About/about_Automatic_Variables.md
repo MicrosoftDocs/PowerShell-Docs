@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -251,7 +251,8 @@ were ignored.
 
 ```powershell
 $calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
-$days = "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+$days = "Sunday","Monday","Tuesday","Wednesday","Thursday",
+        "Friday","Saturday"
 $currentDay = 0
 foreach($day in $calendar)
 {

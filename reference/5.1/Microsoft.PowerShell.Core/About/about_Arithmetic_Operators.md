@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -33,20 +33,29 @@ Beginning in PowerShell 3.0, the `-shr` (shift-right) and `-shl`
 
 PowerShell supports the following arithmetic operators:
 
-|Operator|Description|Example|
-|--------|-----------|-------|
-| + |Adds integers; concatenates strings,<br/> concatenates arrays, and hash tables.|`6 + 2`<br />`"file" + "name"`<br />`@(1, "one") + @(2.0, "two")`<br />`@{"one" = 1} + @{"two" = 2}`|
-| - | Subtracts one value from another value | `6 - 2` |
-| - | Makes a number a negative number | `-6`<br/>`(Get-Date).AddDays(-1)` |
-| * |Multiplies numbers, copies strings and<br/>arrays the specified number of times.|`6 * 2`<br />`"!" * 3`<br />`@("!") * 4`|
-| / |Divides two values.|`6 / 2`|
-| % |Returns the remainder of a division operation.|`7 % 2`|
-|-band|Bitwise AND|`5 -band 3`|
-|-bnot|Bitwise NOT|`-bnot 5`|
-|-bor|Bitwise OR|`5 -bor 0x03`|
-|-bxor|Bitwise XOR|`5 -bxor 3`|
-|-shl|Shifts bits to the left the specified number of times|`102 -shl 2`|
-|-shr|Shifts bits to the right the specified number of times|`102 -shr 2`|
+|Operator|Description                       |Example                      |
+|--------|----------------------------------|-----------------------------|
+| +      |Adds integers; concatenates       |`6 + 2`                      |
+|        |strings, arrays, and hash tables. |`"file" + "name"`            |
+|        |                                  |`@(1, "one") + @(2.0, "two")`|
+|        |                                  |`@{"one" = 1} + @{"two" = 2}`|
+| -      |Subtracts one value from another  |`6 - 2`                      |
+|        |value                             |                             |
+| -      |Makes a number a negative number  |`-6`                         |
+|        |                                  |`(Get-Date).AddDays(-1)`     |
+| *      |Multiply numbers or copy strings  |`6 * 2`                      |
+|        |and arrays the specified number   |`@("!") * 4`                 |
+|        |of times.                         |`"!" * 3`                    |
+| /      |Divides two values.               |`6 / 2`                      |
+| %      |Modulus - returns the remainder of|`7 % 2`                      |
+|        |a division operation.             |                             |
+|-band   |Bitwise AND                       |`5 -band 3`                  |
+|-bnot   |Bitwise NOT                       |`-bnot 5`                    |
+|-bor    |Bitwise OR                        |`5 -bor 0x03`                |
+|-bxor   |Bitwise XOR                       |`5 -bxor 3`                  |
+|-shl    |Shifts bits to the left the       |`102 -shl 2`                 |
+|        |specified number of times         |                             |
+|-shr    |Shifts bits to the right          |`102 -shr 2`                 |
 
 The bitwise operators only work on integer types.
 
@@ -54,22 +63,22 @@ The bitwise operators only work on integer types.
 
 PowerShell processes arithmetic operators in the following order:
 
-| Precedence | Operator | Description |
-|---|---|---|
-|1 | `()` | Parentheses|
-|2 | `-` | For a negative number or unary operator|
-|3 | `*`, `/`, `%` |
-|4 | `+`, `-` | For addition and subtraction|
+|Precedence|Operator       |Description                            |
+|----------|---------------|---------------------------------------|
+|1         | `()`          |Parentheses                            |
+|2         | `-`           |For a negative number or unary operator|
+|3         | `*`, `/`, `%` |For muliplication and division         |
+|4         | `+`, `-`      |For addition and subtraction           |
 
 PowerShell processes the expressions from left to right according to the
 precedence rules. The following examples show the effect of the precedence
 rules:
 
-| Expression | Result |
-|---|---|
-| `3+6/3*4` | `11` |
-|`3+6/(3*4)` | `3.5` |
-|`(3+6)/3*4` | `12` |
+|Expression |Result|
+|-----------|------|
+|`3+6/3*4`  |`11`  |
+|`3+6/(3*4)`|`3.5` |
+|`(3+6)/3*4`|`12`  |
 
 The order in which PowerShell evaluates expressions might differ from other
 programming and scripting languages that you have used. The following
@@ -110,10 +119,10 @@ nearest even integer.
 The following example shows the effect of rounding to the nearest even
 integer.
 
-| Expression | Result |
-|---|---|
-|`[int]( 5 / 2 )` | `2` |
-|`[int]( 7 / 2 )` | `4` |
+|Expression      |Result|
+|----------------|------|
+|`[int]( 5 / 2 )`|`2`   |
+|`[int]( 7 / 2 )`|`4`   |
 
 Notice how **_5/2_ = 2.5** gets rounded to **2**. But, **_7/2_ = 3.5** gets
 rounded to **4**.
@@ -159,13 +168,13 @@ The following examples demonstrate the use of the addition and
 multiplication operators; in operations that include different object
 types. Assume `$array = 1,2,3`:
 
-| Expression | Result |
-|---|---|
-|`"file" + 16` | `file16`|
-|`$array + 16` | `1`<br/>`2`<br/>`3`<br/>`16`|
-|`$array + "file"` | `1`<br/>`2`<br/>`3`<br/>`file`|
-|`$array * 2` | `1`<br/>`2`<br/>`3`<br/>`1`<br/>`2`<br/>`3`|
-|`"file" * 3` | `filefilefile`|
+|Expression       |Result                 |
+|-----------------|-----------------------|
+|`"file" + 16`    |`file16`               |
+|`$array + 16`    |`1`,`2`,`3`,`16`       |
+|`$array + "file"`|`1`,`2`,`3`,`file`     |
+|`$array * 2`     |`1`,`2`,`3`,`1`,`2`,`3`|
+|`"file" * 3`     |`filefilefile`         |
 
 Because the method that is used to evaluate statements is determined by the
 leftmost object, addition and multiplication in PowerShell are not strictly
@@ -174,10 +183,13 @@ commutative. For example, `(a + b)` does not always equal `(b + a)`, and
 
 The following examples demonstrate this principle:
 
-| Expression | Result |
-|---|---|
-|`"file" + 16` | `file16`|
-|`16 + "file"` | `Cannot convert value "file" to type "System.Int32".`<br/>`Error: "Input string was not in a correct format."`<br/>`At line:1 char:1`<br/>`+ 16 + "file"`|
+|Expression   |Result                                               |
+|-------------|-----------------------------------------------------|
+|`"file" + 16`|`file16`                                             |
+|`16 + "file"`|`Cannot convert value "file" to type "System.Int32".`|
+|             |`Error: "Input string was not in a correct format."` |
+|             |`At line:1 char:1`                                   |
+|             |+ 16 + "file"`                                       |
 
 Hash tables are a slightly different case. You can add hash tables to
 another hash table, as long as, the added hash tables don't have duplicate
@@ -325,10 +337,11 @@ Decimal type, the result will be of the Decimal type. If the result is too
 large for the Decimal type, it will not be cast to Double. Instead, an
 error results.
 
-| Expression | Result |
-|---|---|
-|`[Decimal]::maxvalue` | `79228162514264337593543950335`|
-|`[Decimal]::maxvalue + 1` | `Value was either too large`<br/>`or too small for a Decimal.`|
+|Expression               |Result                                         |
+|-------------------------|-----------------------------------------------|
+|`[Decimal]::maxvalue`    |`79228162514264337593543950335`                |
+|`[Decimal]::maxvalue + 1`|`Value was either too large or too small for a`|
+|                         |`Decimal.`                                     |
 
 ## ARITHMETIC OPERATORS AND VARIABLES
 
@@ -336,10 +349,10 @@ You can also use arithmetic operators with variables. The operators act on
 the values of the variables. The following examples demonstrate the use of
 arithmetic operators with variables:
 
-| Expression | Result |
-|---|---|
-|`$intA = 6`<br/>`$intB = 4`<br/>`$intA + $intB` | `10`|
-|`$a = "Power"`<br/>`$b = "Shell"`<br/>`$a + $b` | `PowerShell`|
+| Expression                                    |Result      |
+|-----------------------------------------------|------------|
+|`$intA = 6`<br/>`$intB = 4`<br/>`$intA + $intB`|`10`        |
+|`$a = "Power"`<br/>`$b = "Shell"`<br/>`$a + $b`|`PowerShell`|
 
 ## ARITHMETIC OPERATORS AND COMMANDS
 
@@ -376,27 +389,6 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 In the above expression, each process working space (`$_.ws`) is multiplied
 by `2`; and, the result, compared against `50mb` to see if it is greater
 than that.
-
-### EXAMPLES
-
-The following examples show how to use the arithmetic operators in
-PowerShell:
-
-|Expression|Result|
-|----------|------|
-|`1 + 1`   | `2`  |
-|`1 - 1`   | `0`  |
-|`-(6 + 3)`| `-9` |
-|`6 * 2`   | `12` |
-|`7 / 2`   | `3.5`|
-|`7 % 2`   | `1`  |
-|`'w' * 3` | `www`|
-|`3 * 'w'` | `Cannot convert value "w" to type "System.Int32".`<br/>` Error: "Input string was not in a correct format."`|
-|`"Power" + "Shell"` | `PowerShell`|
-|`$a = "Power" + "Shell"`<br/>`$a[5]` | `S`|
-|`$b = 1,2,3`<br/>`$b + 4` | `1`<br/>`2`<br/>`3`<br/>`4`|
-|`$servers = @{`<br/>&nbsp;&nbsp;`0 = "LocalHost"`<br/>&nbsp;&nbsp;`1 = "Server01"`<br/>&nbsp;&nbsp;`2 = "Server02"`<br/>`}`<br/>`$servers + @{3 = "Server03"}` | `Name Value`<br/>`---- -----`<br/>`3    Server03`<br/>`2    Server02`<br/>`1    Server01`<br/>`0    LocalHost`|
-|`#Use assignment operator`<br/>`$servers += @{3 = "Server03"}` | `Name Value`<br/>`---- -----`<br/>`3    Server03`<br/>`2    Server02`<br/>`1    Server01`<br/>`0    LocalHost`|
 
 ## Bitwise Operators
 
@@ -484,11 +476,11 @@ right operand determine how many bits of the left operand are shifted.
 When the left operand is a Long (64-bit) value, the lower 6 bits of the
 right operand determine how many bits of the left operand are shifted.
 
-| Expression | Result | Binary Result |
-|---|---|---|
-|`21 -shl 0`  | 21 | 0001 0101 |
-|`21 -shl 1`  | 42 | 0010 1010 |
-|`21 -shl 2`  | 84 | 0101 0100 |
+|Expression |Result|Binary Result|
+|-----------|------|-------------|
+|`21 -shl 0`|21    |0001 0101    |
+|`21 -shl 1`|42    |0010 1010    |
+|`21 -shl 2`|84    |0101 0100    |
 
 In a bitwise shift-right operation, all bits are moved "n" places to the
 right, where "n" is specified by the right operand. The shift-right
@@ -501,19 +493,19 @@ right operand determine how many bits of the left operand are shifted.
 When the left operand is a Long (64-bit) value, the lower 6 bits of the
 right operand determine how many bits of the left operand are shifted.
 
-| Expression | Result | Binary Result |
-|---|---|---|
-|`21 -shr 0`  | 21 | 0001 0101 |
-|`21 -shr 1`  | 10 | 0000 1010 |
-|`21 -shr 2`  |  5 | 0000 0101 |
-|`21 -shr 31` |  0 | 0000 0000 |
-|`21 -shr 32` | 21 | 0001 0101 |
-|`21 -shr 64` | 21 | 0001 0101 |
-|`21 -shr 65` | 10 | 0000 1010 |
-|`21 -shr 66` |  5 | 0000 0101 |
-|`[int]::MaxValue -shr 1` |  1073741823 | 0011 1111 1111 1111 1111 1111 1111 1111 |
-|`[int]::MinValue -shr 1` | -1073741824 | 1100 0000 0000 0000 0000 0000 0000 0000 |
-|`-1 -shr 1` | -1 | 1111 1111 1111 1111 1111 1111 1111 1111 |
+|Expression              |Result      |Binary     |Hex         |
+|------------------------|------------|-----------|------------|
+|`21 -shr 0`             | 21         | 0001 0101 | 0x15       |
+|`21 -shr 1`             | 10         | 0000 1010 | 0x0A       |
+|`21 -shr 2`             | 5          | 0000 0101 | 0x05       |
+|`21 -shr 31`            | 0          | 0000 0000 | 0x00       |
+|`21 -shr 32`            | 21         | 0001 0101 | 0x15       |
+|`21 -shr 64`            | 21         | 0001 0101 | 0x15       |
+|`21 -shr 65`            | 10         | 0000 1010 | 0x15       |
+|`21 -shr 66`            | 5          | 0000 0101 | 0x15       |
+|`[int]::MaxValue -shr 1`| 1073741823 |           | 0x3FFFFFFF |
+|`[int]::MinValue -shr 1`| -1073741824|           | 0xC0000000 |
+|`-1 -shr 1`             | -1         |           | 0xFFFFFFFF |
 
 ## SEE ALSO
 
