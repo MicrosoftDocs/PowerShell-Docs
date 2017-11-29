@@ -88,7 +88,7 @@ It should be noted that `-NoNewLine` does not strip newlines embedded within a s
 ## PARAMETERS
 
 ### -InformationAction
-@{Text=}
+
 
 ```yaml
 Type: ActionPreference
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}
+
 
 ```yaml
 Type: String

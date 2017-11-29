@@ -74,20 +74,26 @@ The command uses the *Property* parameter to specify that the events should be g
 In the output, the Count column represents the number of entries in each group, the Name column represents the EventID values that define a group, and the Group column represents the objects in each group.
 
 ### Example 5: Group processes by priority class
-```
+```powershell
 PS C:\> Get-Process | Group-Object -Property PriorityClass
-Count Name                Group
------ ----                -----
-55 Normal              {System.Diagnostics.Process (AdtAgent), System.Diagnostics.Process (alg), System.Dia... 
-1                     {System.Diagnostics.Process (Idle)} 
-3 High                {System.Diagnostics.Process (Newproc), System.Diagnostics.Process (winlogon), System.D... 
-2 BelowNormal         {System.Diagnostics.Process (winperf), PS C:\> Get-Process | Group-Object -Property company -NoElement
+
+Count Name         Group
+----- ----         -----
+   55 Normal       {System.Diagnostics.Process (AdtAgent), System.Diagnosti...
+    1              {System.Diagnostics.Process (Idle)}
+    3 High         {System.Diagnostics.Process (Newproc), System.Diagnostic...
+    2 BelowNormal  {System.Diagnostics.Process (winperf),
+```
+
+```powershell
+PS C:\> Get-Process | Group-Object -Property PriorityClass -NoElement
+
 Count Name
 ----- ----
-55 Normal
-1
-3 High
-2 BelowNormal
+   55 Normal
+    1
+    3 High
+    2 BelowNormal
 ```
 
 This example demonstrates the effect of the *NoElement* parameter.

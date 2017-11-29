@@ -29,17 +29,16 @@ The following special characters are recognized by Windows PowerShell:
 | `0        | Null                    |
 | `a        | Alert                   |
 | `b        | Backspace               |
-| `e        | Escape                  |
 | `f        | Form feed               |
 | `n        | New line                |
 | `r        | Carriage return         |
 | `t        | Horizontal tab          |
-| `u{x}     | Unicode escape sequence |
 | `v        | Vertical tab            |
 | --%       | Stop parsing            |
 ```
 
-These characters are case-sensitive.
+These characters are case-sensitive. The escape character is only interpreted
+when used within double quoted (") strings.
 
 ## NULL (`0)
 
@@ -73,32 +72,6 @@ The output from this command is as follows:
 
 ```output
 back out
-```
-
-## ESCAPE (`e)
-
-The escape character is most commonly used to specify a virtual terminal
-sequence (ANSI escape sequence) that modifies the color of text and other text
-attributes such as bolding and underlining. These sequences can also be used
-for cursor positioning and scrolling. The PowerShell host must support virtual
-terminal sequences. This can be checked on PowerShell v5 and higher with the
-boolean property $Host.UI.SupportsVirtualTerminal.
-
-For more information about ANSI escape sequences, see
-http://en.wikipedia.org/wiki/ANSI_escape_code
-
-The following command outputs Green text.
-
-```powershell
-$fgColor = 32 # green
-"`e[${fgColor}mGreen text`e[0m"
-```
-
-The output from this command is the following text with a Green foreground
-color:
-
-```output
-Green text
 ```
 
 ## FORM FEED (`f)
@@ -162,21 +135,6 @@ The output from this command is:
 Column1         Column2         Column3
 ```
 
-## UNICODE CHARACTER (`u{x})
-
-The Unicode escape sequence allows you to specify any Unicode character by the
-hexadecimal representation of its code point. This includes Unicode characters
-above the Basic Multilingual Plane (> 0xFFFF) which includes emoji characters
-e.g. `` `u{1F44D}``. The Unicode escape sequence requires at least one hex
-digit and supports up to six hex digits. The maximum hex value for the
-sequence is 10FFFF.
-
-The following command outputs the character '&#x2195;':
-
-```powershell
-"`u{2195}"
-```
-
 ## VERTICAL TAB (`v)
 
 The horizontal tab character (`t) advances to the next vertical tab stop and
@@ -208,4 +166,3 @@ For more information about the stop-parsing symbol, see [about_Parsing](about_Pa
 # SEE ALSO
 
 - [about_Quoting_Rules](about_Quoting_Rules.md)
-- [about_Escape_Characters](about_Escape_Characters.md)

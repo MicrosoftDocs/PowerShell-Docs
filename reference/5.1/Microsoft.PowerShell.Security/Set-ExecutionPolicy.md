@@ -25,7 +25,7 @@ The **Set-ExecutionPolicy** cmdlet changes the user preference for the Windows P
 
 The execution policy is part of the security strategy of Windows PowerShell.
 It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
-For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information, see [about_Execution_Policies](http://go.microsoft.com/fwlink/?LinkID=135170).
 
 To change the execution policy for the default (LocalMachine) scope, start Windows PowerShell with the "Run as administrator" option.
 

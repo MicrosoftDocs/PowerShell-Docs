@@ -233,7 +233,7 @@ PS C:\> Get-Help Get-Member -Online
 
 This command displays the online version of the help topic for the Get-Member cmdlet.
 
-### Example 14
+### Example 12
 ```
 PS C:\> Get-Help remoting
 ```
@@ -242,7 +242,7 @@ This command displays a list of topics that include the word "remoting."
 
 When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
 
-### Example 15
+### Example 13
 ```
 The first command uses the **Path** parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
 PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
@@ -298,7 +298,7 @@ The example shows two ways of getting the provider-specific help for **Get-Item*
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
 For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676http://go.microsoft.com/fwlink/?LinkID=158676.
 
-### Example 16
+### Example 14
 ```
 PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```

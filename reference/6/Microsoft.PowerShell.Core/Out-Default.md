@@ -49,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -Transcript
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

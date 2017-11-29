@@ -104,6 +104,7 @@ We'll define the development and production environment data in a file namd `Dev
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
+	    WebSiteName     = "New website"
         },
 
         @{
@@ -218,7 +219,7 @@ Configuration MyWebApp
         {
 
             Ensure          = 'Present'
-            Name            = $WebSiteName
+            Name            = $Node.WebSiteName
             State           = 'Started'
             PhysicalPath    = $Node.SitePath
             DependsOn       = '[File]WebContent'

@@ -6,7 +6,7 @@ keywords:  dsc,powershell,configuration,setup
 title:  Building a Continuous Integration and Continuous Deployment pipeline with DSC
 ---
 
-# Building a Continuous Integration and Continuous Deplyoment pipeline with DSC
+# Building a Continuous Integration and Continuous Deployment pipeline with DSC
 
 This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell,
 DSC, Pester, and Visual Studio Team Foundation Server (TFS).
@@ -375,7 +375,7 @@ and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.
     **\Integration\**
     ```
 
-1. Set **TargetFolder** to `$(BuildArtifactStagingDirectory)\`
+1. Set **TargetFolder** to `$(Build.ArtifactStagingDirectory)\`
 
 This step copies the build and test scripts to the staging directory so that the can be published as build artifacts by the next step.
 

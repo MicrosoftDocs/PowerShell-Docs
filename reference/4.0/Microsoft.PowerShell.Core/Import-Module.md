@@ -333,7 +333,7 @@ It uses the **MinimumVersion** (alias=Version) parameter of **Import-Module** to
 
 You can also use the **RequiredVersion** parameter to import a particular version of a module, or use the **Module** and **Version** parameters of the **#Requires** keyword to require a particular version of a module in a script.
 
-### Example 10
+### Example 11
 ```
 The first command uses the New-PSSession cmdlet to create a remote session (PSSession) to the Server01 computer. The command saves the PSSession in the $s variable
 PS C:\> $s = New-PSSession -ComputerName Server01
@@ -377,7 +377,7 @@ This command uses the Implicit Remoting feature of Windows PowerShell.
 When you import modules from another session, you can use the cmdlets in the current session.
 However, commands that use the cmdlets actually run in the remote session.
 
-### Example 11
+### Example 12
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
 PS C:\> $cs = New-CimSession -ComputerName RSDGF03

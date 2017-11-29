@@ -167,11 +167,8 @@ Module Name:  About
 ### [about_pipelines](about_pipelines.md)
 {{Manually Enter about_pipelines Description Here}}
 
-### [about_PowerShell_exe](about_powershell_exe.md)
+### [about_pwsh](about_pwsh.md)
 {{Manually Enter about_PowerShell_exe Description Here}}
-
-### [about_PowerShell_Ise_exe](about_powershell_ise_exe.md)
-{{Manually Enter about_PowerShell_Ise_exe Description Here}}
 
 ### [about_Preference_Variables](about_preference_variables.md)
 {{Manually Enter about_Preference_Variables Description Here}}
@@ -307,9 +304,6 @@ Module Name:  About
 
 ### [about_Wildcards](about_wildcards.md)
 {{Manually Enter about_Wildcards Description Here}}
-
-### [about_Windows_PowerShell_ISE](about_windows_powershell_ise.md)
-{{Manually Enter about_Windows_PowerShell_ISE Description Here}}
 
 ### [about_Windows_RT](about_windows_rt.md)
 {{Manually Enter about_Windows_RT Description Here}}

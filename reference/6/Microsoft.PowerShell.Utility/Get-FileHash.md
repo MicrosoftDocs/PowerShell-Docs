@@ -127,9 +127,7 @@ The acceptable values for this parameter are:
 - SHA256
 - SHA384
 - SHA512
-- MACTripleDES
 - MD5
-- RIPEMD160
 
 If no value is specified, or if the parameter is omitted, the default value is SHA256.
 
@@ -139,7 +137,7 @@ For security reasons, MD5 and SHA1, which are no longer considered secure, shoul
 Type: String
 Parameter Sets: (All)
 Aliases: 
-Accepted values: SHA1, SHA256, SHA384, SHA512, MACTripleDES, MD5, RIPEMD160
+Accepted values: SHA1, SHA256, SHA384, SHA512, MD5
 
 Required: False
 Position: Named

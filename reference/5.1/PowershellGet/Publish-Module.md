@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-@{Text=}
+
 
 ```yaml
 Type: Version

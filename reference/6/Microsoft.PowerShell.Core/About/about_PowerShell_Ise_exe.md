@@ -101,7 +101,7 @@ PS C:> ISE -help
 
 # SEE ALSO
 
-[about_PowerShell.exe](about_PowerShell_exe.md)
+[about_pwsh](about_pwsh.md)
 
 [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 

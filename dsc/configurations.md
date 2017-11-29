@@ -28,7 +28,6 @@ Configuration MyDscConfiguration {
 	}
 } 
 
-MyDscConfiguration 
 ```
 
 Save the script as a .ps1 file.
@@ -62,7 +61,6 @@ Configuration MyDscConfiguration {
 	}
 }
 
-MyDscConfiguration 
 ```
 
 In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuraton. The name defaults to "localhost".
@@ -99,7 +97,7 @@ MyDscConfiguration
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
--a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
+-a----       10/23/2015   4:32 PM           2842 localhost.mof
 ```  
 
 If the configuration takes a parameter, as in the second example, that has to be provided at compile time. Here's how that would look:
@@ -140,7 +138,6 @@ Configuration DependsOnExample {
     }
 }
 
-DependsOnExample
 ```
 
 ## Using new resources in Your configuration

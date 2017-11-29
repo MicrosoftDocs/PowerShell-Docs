@@ -16,13 +16,15 @@ Gets a random number, or selects objects randomly from a collection.
 ## SYNTAX
 
 ### RandomNumberParameterSet (Default)
-```
-Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<CommonParameters>]
+```powershell
+Get-Random [[-Maximum] <Object>] [-SetSeed <Int32>] [-Minimum <Object>]
+ [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
-```
-Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
+```powershell
+Get-Random [-InputObject] <Object[]> [-SetSeed <Int32>] [-Count <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -186,7 +188,7 @@ PS C:\> Get-Random 10001
 ```
 
 This command gets a random integer less than 10001.
-Because the *Maximum* parameter has position 1, you can omit the parameter name when the value is the first or only unnamed parameter in the command.
+Because the **Maximum** parameter has position 0, you can omit the parameter name when the value is the first or only unnamed parameter in the command.
 
 ### Example 14: Get random 64-bit numbers
 ```

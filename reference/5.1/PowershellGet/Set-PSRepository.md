@@ -44,7 +44,7 @@ This command sets the source location and publish location for myInternalSource 
 ## PARAMETERS
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential

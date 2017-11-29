@@ -516,8 +516,7 @@ Syntax:
 do {<statement list>} while (<condition>)
 ```
 
-# SEE ALSO
+## SEE ALSO
 
-- [about_Escape_Characters](about_Escape_Characters.md)
 - [about_Special_Characters](about_Special_Characters.md)
 - [about_Wildcards](about_Wildcards.md)

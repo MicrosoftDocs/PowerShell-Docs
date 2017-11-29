@@ -86,13 +86,13 @@ The results show the job options object that **Get-ScheduledJobOption** returned
 
 ### Example 2: Get all job options
 ```
-PS C:\> Get-ScheduledJob | Get-ScheduledJobOptions
+PS C:\> Get-ScheduledJob | Get-ScheduledJobOption
 ```
 
 This command gets the job options of all scheduled jobs on the local computer.
 
 It uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the local computer.
-A pipeline operator (|) sends the scheduled jobs to the **Get-ScheduledJobOptions** cmdlet, which gets the job options of each scheduled job.
+A pipeline operator (|) sends the scheduled jobs to the **Get-ScheduledJobOption** cmdlet, which gets the job options of each scheduled job.
 
 ### Example 3: Get selected job options
 ```
@@ -145,9 +145,9 @@ PS C:\> $Opts = Get-ScheduledJobOption -Name "BackupTestLogs"
 PS C:\> Register-ScheduledJob -Name "Archive-Scripts" -FilePath "\\Srv01\Scripts\ArchiveScripts.ps1" -ScheduledJobOption $Opts
 ```
 
-This example shows how to use the job options that Get-ScheduledJobOptions gets in a new scheduled job.
+This example shows how to use the job options that Get-ScheduledJobOption gets in a new scheduled job.
 
-The first command uses **Get-ScheduledJobOptions** to get the jobs options of the BackupTestLogs scheduled job.
+The first command uses **Get-ScheduledJobOption** to get the jobs options of the BackupTestLogs scheduled job.
 The command saves the options in the $Opts variable.
 
 The second command uses Register-ScheduledJob cmdlet to create a new scheduled job.

@@ -91,7 +91,7 @@ The final command shows an excerpt of the format.ps1xml file content.
 ## PARAMETERS
 
 ### -PowerShellVersion
-@{Text=}
+
 
 ```yaml
 Type: Version
