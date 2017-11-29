@@ -357,7 +357,7 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Remote](about_Remote.md)
 
-[about_Scheduled_Jobs](../../psscheduledjob/about/about_scheduled_jobs)
+[about_Scheduled_Jobs](../../psscheduledjob/about/about_scheduled_jobs.md)
 
 [Invoke-Command](../Invoke-Command.md)
 
@@ -371,9 +371,9 @@ Id         Name            JobTriggers     Command       Enabled
 
 [Remove-Job](../Remove-Job.md)
 
-[Suspend-Job](../Remove-Job.md)
+[Suspend-Job](../Suspend-Job.md)
 
-[Resume-Job](../Resume-Job)
+[Resume-Job](../Resume-Job.md)
 
 [New-PSSession](../New-PSSession.md)
 
