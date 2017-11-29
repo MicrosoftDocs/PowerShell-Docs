@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,7 +8,6 @@ description:  Describes how you can use classes to create your own custom types.
 ---
 
 # About Classes
-## about\_Classes
 
 # SHORT DESCRIPTION
 
@@ -34,10 +33,14 @@ and each instance can have different values in its properties.
 
 ## SUPPORTED SCENARIOS
 
-- Define custom types in Windows PowerShell by using familiar object-oriented programming constructs, such as classes, properties, methods, inheritance, etc.
+- Define custom types in Windows PowerShell by using familiar object-oriented
+  programming constructs, such as classes, properties, methods, inheritance,
+  etc.
 - Debug types by using the Windows PowerShell language.
-- Generate and handle exceptions by using formal mechanisms, and at the right level.
-- Define DSC resources and their associated types by using the Windows PowerShell language.
+- Generate and handle exceptions by using formal mechanisms, and at the right
+  level.
+- Define DSC resources and their associated types by using the PowerShell
+  language.
 
 ## SYNTAX
 
@@ -46,7 +49,8 @@ Classes are declared using the following syntax:
 ```syntax
 class <class-name> [: [<base-class>][,<interface-list]] {
     [[<attribute>] [hidden] [static] <property-definition> ...]
-    [<class-name>([<constructor-argument-list>]) {<constructor-statement-list>} ...]
+    [<class-name>([<constructor-argument-list>])
+      {<constructor-statement-list>} ...]
     [[<attribute>] [hidden] [static] <method-definition> ...]
 }
 ```
@@ -54,7 +58,8 @@ class <class-name> [: [<base-class>][,<interface-list]] {
 Classes are instantiated using either of the following syntaxes:
 
 ```syntax
-[$<variable-name> =] New-Object -TypeName <class-name> [[-ArgumentList] <constructor-argument-list>]
+[$<variable-name> =] New-Object -TypeName <class-name> [
+  [-ArgumentList] <constructor-argument-list>]
 ```
 
 ```syntax
@@ -459,8 +464,9 @@ Microsoft Surface Pro 4 {$null, $null, $null, $null...}
 
 ```
 
-Notice `Slots` property is not reported in `$r1` output; but, the size was changed.
-Also, the property is available in all scopes the object is available.
+Notice `Slots` property is not reported in `$r1` output; but, the size was
+changed. Also, the property is available in all scopes the object is
+available.
 
 ## STATIC ATTRIBUTE
 
@@ -518,7 +524,10 @@ class Rack {
 [Rack]::InstalledRacks.Length
 [Rack]::PowerOffRacks()
 
-(1..10).foreach({[Rack]::new("Adatum Corporation", "Standard-16", $_.ToString("Std0000"), 16)}) > $null
+(1..10) | ForEach-Object {
+  [Rack]::new("Adatum Corporation", "Standard-16",
+    $_.ToString("Std0000"), 16)
+} > $null
 
 ## Testing static property and method
 [Rack]::InstalledRacks.Length
@@ -526,7 +535,6 @@ class Rack {
 [Rack]::InstalledRacks[3]
 
 [Rack]::PowerOffRacks()
-
 ```
 
 ```output
@@ -559,7 +567,8 @@ keeps increasing.
 
 Validation attributes allow to test values given to properties meet defined
 requirements. Validations are triggered at the moment the property assignment
-is invoked, except at moment the class is instantiated. See [about_functions_advanced_parameters](about_functions_advanced_parameters.md).
+is invoked, except at moment the class is instantiated. See
+[about_functions_advanced_parameters](about_functions_advanced_parameters.md).
 
 ### EXAMPLE: Validation Attributes
 
@@ -584,14 +593,14 @@ Testing dev
 Brand Model
 ----- -----
 
-Exception setting "Brand": "The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Exception setting "Brand": "The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again."
 At C:\tmp\Untitled-5.ps1:11 char:1
 + $dev.Brand = ""
 + ~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [], SetValueInvocationException
+    + CategoryInfo          : NotSpecified: (:) [], SetValueInvocationExcep
+tion
     + FullyQualifiedErrorId : ExceptionWhenSetting
-
-
 ```
 
 ## INHERITANCE IN POWERSHELL CLASSES
@@ -694,8 +703,8 @@ $FirstRack.Location = "F03R02.J10"
     $ComputeServer.Brand = "Fabrikam, Inc."       ## Inherited from Asset
     $ComputeServer.Model = "Fbk5040"              ## Inherited from Asset
     $ComputeServer.Status = "Installed"           ## Inherited from Device
-    $ComputeServer.ProcessorIdentifier = "x64"    ## ComputeServer property
-    $ComputeServer.Hostname = ("r1s" + $_.ToString("000"))     ## ComputeServer property
+    $ComputeServer.ProcessorIdentifier = "x64"    ## ComputeServer
+    $ComputeServer.Hostname = ("r1s" + $_.ToString("000")) ## ComputeServer
     $FirstRack.AddDevice($ComputeServer, $_)
   })
 
@@ -710,8 +719,8 @@ Datacenter : PNW
 Location   : F03R02.J10
 Devices    : {r1s000, r1s001, r1s002, r1s003...}
 Status     : Operational
-Brand      : 
-Model      : 
+Brand      :
+Model      :
 
 ProcessorIdentifier : x64
 Hostname            : r1s000
@@ -826,4 +835,3 @@ There is no syntax to declare interfaces in PowerShell.
 - [about_Enum](about_Enum.md)
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
-
