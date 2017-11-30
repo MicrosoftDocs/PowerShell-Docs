@@ -67,59 +67,46 @@ This pipeline is comprised of four commands in the specified order. The command
 is written horizontally, but we will show the process vertically in the following
 graphic.
 
-`Get-ChildItem` `-Path` *.txt
+```powershell
+Get-ChildItem -Path '*.txt'
 
- **|**
+|
+|   ( FileInfo objects )
+|   (    .txt          )
+|
+V
 
-|   (FileInfo objects )
-|   (    .txt         )
+Where-Object { $_.Length -gt 10000 }
 
- **|**
-
- **V**
-
-`Where-Object` {$_.length `-gt` 10000}
-
- **|**
-
-|   (FileInfo objects )
-|   (    .txt         )
-|   ( Length > 10000  )
-
- **|**
-
- **V**
-
-
-`Sort-Object` `-Property` Length
-
- **|**
-
-|   (FileInfo objects  )
+|
+|   ( FileInfo objects )
 |   (    .txt          )
 |   ( Length > 10000   )
+|
+V
+
+Sort-Object -Property 'Length'
+
+|
+|   ( FileInfo objects )
+|   (     .txt         )
+|   ( Length > 10000   )
 |   ( Sorted by length )
+|
+V
 
- **|**
+Format-Table -Property @('Name', 'Length')
 
- **V**
+|
+|   ( FileInfo objects     )
+|   (    .txt              )
+|   ( Length > 10000       )
+|   ( Sorted by length     )
+|   ( Formatted in a table )
+|
+V
 
 
-`Format-Table` `-Property` name, length
-
- **|**
-
-|   (FileInfo objects     )
-|   (    .txt             )
-|   ( Length > 10000      )
-|   ( Sorted by length    )
-|   (Formatted in a table )
-
- **|**
-
- **V**
-
-```
 Name                       Length
 ----                       ------
 tmp1.txt                    82920
