@@ -26,7 +26,8 @@ Configuration MyDscConfiguration {
 			Name = "Bitlocker"
 		}
 	}
-} 
+}
+MyDscConfiguration
 
 ```
 
@@ -60,6 +61,7 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
+MyDscConfiguration
 
 ```
 
