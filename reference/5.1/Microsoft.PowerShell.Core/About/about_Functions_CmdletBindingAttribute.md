@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-28
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,13 +7,10 @@ title:  about_Functions_CmdletBindingAttribute
 ---
 
 # About Functions CmdletBindingAttribute
-## about_Functions_CmdletBindingAttribute
-
 
 # SHORT DESCRIPTION
 
-Describes the attribute that makes a function work like a
-compiled cmdlet.
+Describes the attribute that makes a function work like a compiled cmdlet.
 
 # LONG DESCRIPTION
 
@@ -124,13 +121,15 @@ to an advanced function.
 function Get-Numbers {
     [CmdletBinding(SupportsPaging = $true)]
     param()
-    
+
     $FirstNumber = [Math]::Min($PSCmdlet.PagingParameters.Skip, 100)
-    $LastNumber = [Math]::Min($PSCmdlet.PagingParameters.First + $FirstNumber - 1, 100)
-    
+    $LastNumber = [Math]::Min($PSCmdlet.PagingParameters.First +
+      $FirstNumber - 1, 100)
+
     if ($PSCmdlet.PagingParameters.IncludeTotalCount) {
         $TotalCountAccuracy = 1.0
-        $TotalCount = $PSCmdlet.PagingParameters.NewTotalCount(100, $TotalCountAccuracy)
+        $TotalCount = $PSCmdlet.PagingParameters.NewTotalCount(100,
+          $TotalCountAccuracy)
         Write-Output $TotalCount
     }
     $FirstNumber .. $LastNumber | Write-Output
@@ -173,8 +172,7 @@ must be included when the parameter is used in a function.
 The Position argument of the Parameter attribute takes precedence over the
 PositionalBinding default value. You can use the Position argument to specify
 a position value for a parameter. For more information about the Position
-argument, see about_Functions_Advanced_Parameters
-(http://go.microsoft.com/fwlink/?LinkID=135173).
+argument, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 # NOTES
 
