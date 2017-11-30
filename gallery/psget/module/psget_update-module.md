@@ -39,38 +39,38 @@ Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ## Example commands
 
 ```powershell
-PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
-PS C:\\windows\\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
+PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
 Name : ContosoServer
 Version : 2.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.0
 Name : ContosoServer
 Version : 1.5
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.5
 Name : ContosoServer
 Version : 1.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
-PS C:\\windows\\system32> Get-InstalledModule
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.0
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module
 1.5 ContosoServer MSPSGallery ContosoServer module
 2.0 ContosoServer MSPSGallery ContosoServer module
-PS C:\\windows\\system32> Update-Module -Name ContosoServer
-PS C:\\windows\\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+PS C:\windows\system32> Update-Module -Name ContosoServer
+PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
 Name : ContosoServer
 Version : 2.8.1
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.8.1
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.8.1
 Name : ContosoServer
 Version : 2.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.0
 Name : ContosoServer
 Version : 1.5
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.5
 Name : ContosoServer
 Version : 1.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
-PS C:\\windows\\system32> Get-InstalledModule
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.0
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module
@@ -81,7 +81,7 @@ Version Name Repository Description
 
 ### Update the module with a prerelease version, requires -AllowPrerelease flag
 ```powershell
-PS C:\\windows\\system32> Get-InstalledModule
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module
@@ -89,14 +89,14 @@ Version Name Repository Description
 2.0 ContosoServer MSPSGallery ContosoServer module
 2.8.1 ContosoServer MSPSGallery ContosoServer module
 
-PS C:\\windows\\system32> Find-Module ContosoServer -AllowPrerelease
+PS C:\windows\system32> Find-Module ContosoServer -AllowPrerelease
 
 Version        Name                                Repository           Description
 -------        ----                                ----------           -----------
 3.0.0-alpha    ConstosoServer                      MSPSGallery          The PowerShell Contoso Server deployment tools...
 
-PS C:\\windows\\system32> Update-Module -Name ContosoServer -AllowPrerelease
-PS C:\\windows\\system32> Get-InstalledModule
+PS C:\windows\system32> Update-Module -Name ContosoServer -AllowPrerelease
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module

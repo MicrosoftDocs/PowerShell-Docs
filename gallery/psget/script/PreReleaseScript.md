@@ -148,7 +148,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 
 
 ## More details
-### [Prerelease Module Versions](../script/PrereleaseModule)
+### [Prerelease Module Versions](../script/PrereleaseModule.md)
 ### [Find-script](./psget_find-script.md)
 ### [Install-script](./psget_install-script.md)
 ### [Save-script](./psget_save-script.md)

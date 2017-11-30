@@ -191,7 +191,7 @@ Version         Name                                Repository           Descrip
 
 
 ## More details
-### [Prerelease Script Versions](../script/PrereleaseScript)
+### [Prerelease Script Versions](../script/PrereleaseScript.md)
 ### [Find-Module](./psget_find-module.md)
 ### [Install-Module](./psget_install-module.md)
 ### [Save-Module](./psget_save-module.md)
