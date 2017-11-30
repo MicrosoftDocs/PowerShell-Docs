@@ -16,18 +16,20 @@ Configures and starts a trace of the specified expression or command.
 ## SYNTAX
 
 ### expressionSet (Default)
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger]
- [-PSHost] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+ [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ### commandSet
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
- [-Debugger] [-PSHost] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+```powershell
+Trace-Command [-Name] <String[]> [-Command] <String>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+ [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,7 +93,7 @@ Parameter Sets: commandSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -124,7 +126,7 @@ Parameter Sets: expressionSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -155,33 +157,6 @@ Even using the *Force* parameter, the cmdlet cannot override security restrictio
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
 
 Required: False
 Position: Named
@@ -247,7 +222,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -294,7 +269,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

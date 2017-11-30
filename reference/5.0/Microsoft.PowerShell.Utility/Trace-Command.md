@@ -16,16 +16,19 @@ Configures and starts a trace of the specified expression or command.
 ## SYNTAX
 
 ### expressionSet (Default)
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger]
- [-PSHost] [<CommonParameters>]
+```powershell
+Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+ [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ### commandSet
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+```powershell
+Trace-Command [-Name] <String[]> [-Command] <String>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
