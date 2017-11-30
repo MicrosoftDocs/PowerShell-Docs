@@ -16,7 +16,8 @@ Measures the time it takes to run script blocks and cmdlets.
 ## Syntax
 
 ```powershell
-Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
+Measure-Command [-Expression] <ScriptBlock> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## Description
