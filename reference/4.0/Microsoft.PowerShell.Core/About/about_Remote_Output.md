@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,8 +7,6 @@ title:  about_Remote_Output
 ---
 
 # About Remote Output
-## about_Remote_Output
-
 
 # SHORT DESCRIPTION
 
@@ -25,7 +23,6 @@ of commands that are run on remote computers.
 
 # DISPLAYING THE COMPUTER NAME
 
-
 When you use the Invoke-Command cmdlet to run a command on a remote
 computer, the command returns an object that includes the name of
 the computer that generated the data. The remote computer name is
@@ -37,12 +34,14 @@ remote computers, Server01 and Server02. The output, which appears
 below, includes the names of the remote computers on which the command
 ran.
 
+```powershell
 C:\PS> invoke-command -script {get-culture} -comp Server01, Server02
 
 LCID  Name    DisplayName                PSComputerName
 ----  ----    -----------                --------------
 1033  en-US   English (United States)    Server01
 1033  es-AR   Spanish (Argentina)        Server02
+```
 
 You can use the HideComputerName parameter of Invoke-Command to hide
 the PSComputerName property. This parameter is designed for commands
@@ -52,11 +51,13 @@ The following command runs a Get-Culture command on the Server01
 remote computer. It uses the HideComputerName parameter to hide the
 PSComputerName property and related properties.
 
+```powershell
 C:\PS> invoke-command -scr {get-culture} -comp Server01 -HideComputerName
 
 LCID             Name             DisplayName
 ----             ----             -----------
 1033             en-US            English (United States)
+```
 
 You can also display the PSComputerName property if it is not displayed
 by default.
@@ -64,16 +65,17 @@ by default.
 For example, the following commands use the Format-Table cmdlet to add
 the PSComputerName property to the output of a remote Get-Date command.
 
-C:\PS> $dates = invoke-command -script {get-date} -computername Server01, Server02
-C:\PS> $dates | format-table DateTime, PSComputerName -auto
+```powershell
+$dates = invoke-command -script {get-date} -computername Server01, Server02
+$dates | format-table DateTime, PSComputerName -auto
 
 DateTime                            PSComputerName
 --------                            --------------
 Monday, July 21, 2008 7:16:58 PM    Server01
 Monday, July 21, 2008 7:16:58 PM    Server02
+```
 
 # DISPLAYING THE MACHINENAME PROPERTY
-
 
 Several cmdlets, including Get-Process, Get-Service, and Get-EventLog,
 have a ComputerName parameter that gets the objects on a remote computer.
@@ -89,6 +91,7 @@ For example, this command gets the PowerShell process on the Server01 and
 Server02 remote computers. The default display does not include the
 MachineName property.
 
+```powershell
 C:\PS> get-process PowerShell -computername server01, server02
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -96,6 +99,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 920      38    97524     114504   575     9.66   2648 PowerShell
 194       6    24256      32384   142            3020 PowerShell
 352      27    63472      63520   577     3.84   4796 PowerShell
+```
 
 You can use the Format-Table cmdlet to display the MachineName property
 of the process objects.
@@ -105,6 +109,7 @@ and then uses a pipeline operator (|) to send the processes in $p to the
 Format-Table command. The command uses the Property parameter of
 Format-Table to include the MachineName property in the display.
 
+```powershell
 C:\PS> $p = get-process PowerShell -comp Server01, Server02
 C:\PS> $P | format-table -property ID, ProcessName, MachineName -auto
 
@@ -113,6 +118,7 @@ Id ProcessName MachineName
 2648 PowerShell  Server02
 3020 PowerShell  Server01
 4796 PowerShell  Server02
+```
 
 The following more complex command adds the MachineName property to the
 default process display. It uses hash tables to specify calculated
@@ -120,6 +126,7 @@ properties. Fortunately, you do not have to understand it to use it.
 
 (Note that the backtick [`] is the continuation character.)
 
+```powershell
 C:\PS> $p = get-process PowerShell -comp Server01, Server02
 
 C:\PS> $p | format-table -property Handles, `
@@ -135,6 +142,8 @@ Handles NPM(K) PM(K)  WS(K) VM(M) CPU(s)   Id ProcessName MachineName
 920     38 97560 114532   576        2648 PowerShell  Server02
 192      6 24132  32028   140        3020 PowerShell  Server01
 438     26 48436  59132   565        4796 PowerShell  Server02
+
+```
 
 # DESERIALIZED OBJECTS
 
@@ -198,19 +207,18 @@ computers are interspersed.
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-Format-Table
+[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md)
 
-Get-EventLog
+[Get-EventLog](../../Microsoft.PowerShell.Management/Get-EventLog.md)
 
-Get-Process
+[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)
 
-Get-Service
+[Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md)
 
-Get-WmiObject
+[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
 
-Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-Out-GridView
+[Out-GridView](../../Microsoft.PowerShell.Utility/Out-GridView.md)
 
-Select-Object
-
+[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
