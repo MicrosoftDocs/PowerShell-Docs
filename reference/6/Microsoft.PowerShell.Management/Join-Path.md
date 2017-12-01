@@ -15,10 +15,10 @@ Combines a path and a child path into a single path.
 
 ## SYNTAX
 
-```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [-AdditionalChildPath <String[]>] [-Resolve]
- [-Credential <PSCredential>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-UseTransaction] [<CommonParameters>]
+```powershell
+Join-Path [-Path] <String[]> [-ChildPath] <String>
+ [[-AdditionalChildPath] <String[]>]
+ [-Resolve] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,7 +82,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -99,7 +99,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -127,33 +127,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Path
 Specifies the main path (or paths) to which the child-path is appended.
 Wildcards are permitted.
@@ -167,7 +140,7 @@ Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
