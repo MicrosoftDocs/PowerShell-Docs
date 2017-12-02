@@ -24,7 +24,8 @@ Basic formatting guidelines:
 
 - Limit lines to 80 characters
 - Code blocks should be limited to 76 characters
-- Within a paragraph, the following characters must be escaped using a leading `\` character: $,\`,\<
+- Within a paragraph, the following characters must be escaped using a leading `\` character:
+  <code>$</code>, <code>\`</code>, <code>\<</code>
 - Tables need fit withing 76 characters
   - Manually wrap contents of cells across multiple lines
   - Use opening and closing `|` characters on each line
@@ -59,13 +60,13 @@ Remove extra spaces at the end of lines.
 
 ## Titles/Headings
 
-Only use [ATX headings][atx] (as opposed to = or \- style headers).
+Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
 
 * Titles/headings should be surrounded by blank lines
 * Only the first letter of a title and any proper nouns in that title should be capitalized
 * Only one H1 per document
 
-When editing reference content, the H2s are prescribed by platyPS and must not be added or removed.
+When editing reference content, the H2s are prescribed by [platyPS][platyPS] and must not be added or removed.
 Adding or removing H2 causes a build break.
 
 ## Formatting syntax elements
@@ -85,7 +86,7 @@ Adding or removing H2 causes a build break.
 
 ## Formatting code blocks
 
-* All PowerShell syntax blocks should use &#96;&#96;&#96;powershell code fence marker.
+* All PowerShell syntax blocks should use <code>\`\`\`powershell</code> &hellip; <code>\`\`\`</code> code fence markers.
 
 * Do **NOT** start PowerShell commands with the PowerShell prompt ("`PS C:\>`").
 
@@ -169,3 +170,4 @@ There are special rules for linking to reference topics from conceptual topics.
 [links]: https://help.github.com/articles/relative-links-in-readmes/
 [gfm-spec]: https://github.github.com/gfm/
 [semantics]: http://rhodesmill.org/brandon/2012/one-sentence-per-line/
+[platyPS]: https://github.com/PowerShell/platyPS
