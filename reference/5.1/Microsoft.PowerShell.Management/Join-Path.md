@@ -15,9 +15,9 @@ Combines a path and a child path into a single path.
 
 ## SYNTAX
 
-```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
- [<CommonParameters>]
+```powershell
+Join-Path [-Path] <String[]> [-ChildPath] <String>
+ [-Resolve] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
