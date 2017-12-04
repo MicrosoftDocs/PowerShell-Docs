@@ -17,9 +17,9 @@ Describes how to run and write scripts in PowerShell.
 A script is a plain text file that contains one or more PowerShell commands.
 PowerShell scripts have a .ps1 file name extension.
 
-Running a script is a lot like running cmdlet. You type the path and file name
-of the script and use parameters to submit data and set options. You can run
-scripts on your computer or in a remote session on a different computer.
+Running a script is a lot like running a cmdlet. You type the path and file
+name of the script and use parameters to submit data and set options. You can
+run scripts on your computer or in a remote session on a different computer.
 
 Writing a script saves a command for later use and makes it easy to share with
 others. Most importantly, it lets you run the commands simply by typing the
