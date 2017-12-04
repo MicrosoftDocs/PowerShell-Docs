@@ -26,37 +26,37 @@ The following table lists the preference variables and their default values.
 
 Variable                      = Default Value
 
-- \$ConfirmPreference            = High
-- \$DebugPreference              = SilentlyContinue
-- \$ErrorActionPreference        = Continue
-- \$ErrorView                    = NormalView
-- \$FormatEnumerationLimit       = 4
-- \$InformationPreference        = SilentlyContinue
-- \$LogCommandHealthEvent        = False (not logged)
-- \$LogCommandLifecycleEvent     = False (not logged)
-- \$LogEngineHealthEvent         = True (logged)
-- \$LogEngineLifecycleEvent      = True (logged)
-- \$LogProviderLifecycleEvent    = True (logged)
-- \$LogProviderHealthEvent       = True (logged)
-- \$MaximumAliasCount            = 4096
-- \$MaximumDriveCount            = 4096
-- \$MaximumErrorCount            = 256
-- \$MaximumFunctionCount         = 4096
-- \$MaximumHistoryCount          = 4096
-- \$MaximumVariableCount         = 4096
-- \$OFS                          = (Space character (" "))
-- \$OutputEncoding               = ASCIIEncoding object
-- \$ProgressPreference           = Continue
-- \$PSDefaultParameterValues     = (None - empty hash table)
-- \$PSEmailServer                = (None)
-- \$PSModuleAutoLoadingPreference= All
-- \$PSSessionApplicationName     = WSMAN
-- \$PSSessionConfigurationName   =
+- $ConfirmPreference            = High
+- $DebugPreference              = SilentlyContinue
+- $ErrorActionPreference        = Continue
+- $ErrorView                    = NormalView
+- $FormatEnumerationLimit       = 4
+- $InformationPreference        = SilentlyContinue
+- $LogCommandHealthEvent        = False (not logged)
+- $LogCommandLifecycleEvent     = False (not logged)
+- $LogEngineHealthEvent         = True (logged)
+- $LogEngineLifecycleEvent      = True (logged)
+- $LogProviderLifecycleEvent    = True (logged)
+- $LogProviderHealthEvent       = True (logged)
+- $MaximumAliasCount            = 4096
+- $MaximumDriveCount            = 4096
+- $MaximumErrorCount            = 256
+- $MaximumFunctionCount         = 4096
+- $MaximumHistoryCount          = 4096
+- $MaximumVariableCount         = 4096
+- $OFS                          = (Space character (" "))
+- $OutputEncoding               = ASCIIEncoding object
+- $ProgressPreference           = Continue
+- $PSDefaultParameterValues     = (None - empty hash table)
+- $PSEmailServer                = (None)
+- $PSModuleAutoLoadingPreference= All
+- $PSSessionApplicationName     = WSMAN
+- $PSSessionConfigurationName   =
   http://schemas.microsoft.com/PowerShell/microsoft.PowerShell
-- \$PSSessionOption              = (See below)
-- \$VerbosePreference            = SilentlyContinue
-- \$WarningPreference            = Continue
-- \$WhatIfPreference             = 0
+- $PSSessionOption              = (See below)
+- $VerbosePreference            = SilentlyContinue
+- $WarningPreference            = Continue
+- $WhatIfPreference             = 0
 
 PowerShell also includes the following environment variables that store user
 preferences. For more information about these environment variables, see
@@ -71,7 +71,7 @@ This document describes each of the preference variables.
 
 To display the current value of a specific preference variable, type the name
 of the variable. In response, PowerShell provides the value. For example, the
-following command displays the value of the \$ConfirmPreference variable.
+following command displays the value of the $ConfirmPreference variable.
 
 ```powershell
 PS> $ConfirmPreference
@@ -79,7 +79,7 @@ High
 ```
 
 To change the value of a variable, use an assignment statement. For example,
-the following statement assigns the value "Medium" to the \$ConfirmPreference
+the following statement assigns the value "Medium" to the $ConfirmPreference
 variable.
 
 ```powershell
@@ -94,34 +94,34 @@ add them to your PowerShell profile. For more information, see about_Profiles.
 
 When you run commands on a remote computer, the remote commands are subject
 only to the preferences set in the PowerShell client on the remote computer.
-For example, when you run a remote command, the value of the \$DebugPreference
+For example, when you run a remote command, the value of the $DebugPreference
 variable on remote computer determines how Windows PowerShell responds to
 debugging messages.
 
 For more information about remote commands, see
 [about_remote](about_Remote.md).
 
-#### \$ConfirmPreference
+#### $ConfirmPreference
 
 Determines whether PowerShell automatically prompts you for confirmation
 before running a cmdlet or function.
 
-When the value of the \$ConfirmPreference variable (High, Medium, Low) is less
+When the value of the $ConfirmPreference variable (High, Medium, Low) is less
 than or equal to the risk assigned to the cmdlet or function (High, Medium,
 Low), PowerShell automatically prompts you for confirmation before running the
 cmdlet or function.
 
-If the value of the \$ConfirmPreference variable is None, PowerShell never
+If the value of the $ConfirmPreference variable is None, PowerShell never
 automatically prompts you before running a cmdlet or function.
 
 To change the confirming behavior for all cmdlets and functions in the
-session, change the value of the \$ConfirmPreference variable.
+session, change the value of the $ConfirmPreference variable.
 
-To override the \$ConfirmPreference for a single command, use the Confirm
+To override the $ConfirmPreference for a single command, use the Confirm
 parameter of the cmdlet or function. To request confirmation, use -Confirm. To
-suppress confirmation, use -Confirm:\$false
+suppress confirmation, use -Confirm:$false
 
-Valid values of \$ConfirmPreference:
+Valid values of $ConfirmPreference:
 
 - None: PowerShell does not prompt automatically. To request confirmation
   of a particular command, use the Confirm parameter of the cmdlet or
@@ -160,13 +160,13 @@ parameter that you can use to request or suppress confirmation for a single
 command.
 
 Because most cmdlets and functions use the default risk value (ConfirmImpact)
-of Medium, and the default value of \$ConfirmPreference is High, automatic
+of Medium, and the default value of $ConfirmPreference is High, automatic
 confirmation rarely occurs. However, you can activate automatic confirmation
-by changing the value of \$ConfirmPreference to Medium or Low.
+by changing the value of $ConfirmPreference to Medium or Low.
 
 ##### EXAMPLES
 
-This example shows the effect of the default value of \$ConfirmPreference. The
+This example shows the effect of the default value of $ConfirmPreference. The
 High value only confirms high-risk cmdlets and functions. Since most cmdlets
 and functions are medium risk, they are not automatically confirmed.
 
@@ -187,9 +187,9 @@ Performing operation "Remove File" on Target "C:\temp2.txt".
 ```
 
 The following example shows the effect of changing the value of
-\$ConfirmPreference to Medium. Because most cmdlets and function are
+$ConfirmPreference to Medium. Because most cmdlets and function are
 medium-risk, they are automatically confirmed. To suppress the confirmation
-prompt for a single command, use the Confirm parameter with a value of \$false
+prompt for a single command, use the Confirm parameter with a value of $false
 
 ```powershell
 PS> $confirmpreference = "Medium"  #Change the value of $ConfirmPreference
@@ -205,7 +205,7 @@ PS> remove-item temp3.txt -confirm:$false   #Use to suppress confirmation
 PS>
 ```
 
-#### \$DebugPreference
+#### $DebugPreference
 Determines how PowerShell responds to debugging messages generated by a
 script, cmdlet or provider, or by a Write-Debug command at the command
 line.
@@ -213,7 +213,7 @@ line.
 Some cmdlets display debugging messages, which are typically very technical
 messages designed for programmers and technical support professionals. By
 default, debugging messages are not displayed, but you can display
-debugging messages by changing the value of \$DebugPreference.
+debugging messages by changing the value of $DebugPreference.
 
 You can also use the Debug common parameter of a cmdlet to display or hide
 the debugging messages for a specific command. For more information, type:
@@ -227,7 +227,7 @@ Valid values:
 - Inquire: Displays the debug message and asks you whether you want to
   continue. Note that adding the Debug common parameter to a command--when
   the command is configured to generate a debugging message--changes the
-  value of the \$DebugPreference variable to Inquire.
+  value of the $DebugPreference variable to Inquire.
 
 - Continue: Displays the debug message and continues with execution.
 
@@ -237,7 +237,7 @@ Valid values:
 ##### EXAMPLES
 
 The following examples show the effect of changing the values of
-\$DebugPreference when a Write-Debug command is entered at the command line.
+$DebugPreference when a Write-Debug command is entered at the command line.
 The change affects all debugging messages, including those generated by
 cmdlets and scripts. The examples also show the use of the Debug common
 parameter, which displays or hides the debugging messages related to a
@@ -248,7 +248,7 @@ debug message is not displayed and processing continues. The final command
 uses the Debug parameter to override the preference for a single command.
 
 ```powershell
-PS> $debugpreference    # Get the current value of \$DebugPreference
+PS> $debugpreference    # Get the current value of $DebugPreference
 SilentlyContinue
 
 PS> write-debug "Hello, World"
@@ -264,7 +264,7 @@ Continue with this operation?
 ```
 
 This example shows the effect of the "Continue" value. The final command
-uses the Debug parameter with a value of \$false to suppress the message for
+uses the Debug parameter with a value of $false to suppress the message for
 a single command.
 
 ```powershell
@@ -279,7 +279,7 @@ PS> # The debug message is not displayed.
 ```
 
 This example shows the effect of the "Stop" value. The final command uses
-the Debug parameter with a value of \$false to suppress the message for a
+the Debug parameter with a value of $false to suppress the message for a
 single command.
 
 ```powershell
@@ -297,11 +297,11 @@ PS> # The debug message is not displayed and processing is not stopped.
 ```
 
 This example shows the effect of the "Inquire" value. The final command
-uses the Debug parameter with a value of \$false to suppress the message for
+uses the Debug parameter with a value of $false to suppress the message for
 a single command.
 
 ```powershell
-PS> \$debugpreference = "Inquire"
+PS> $debugpreference = "Inquire"
 PS> write-debug "Hello, World"
 DEBUG: Hello, World
 
@@ -315,7 +315,7 @@ PS> write-debug "Hello, World" -Debug:$false
 PS> # The debug message is not displayed and processing continues.
 ```
 
-#### \$ErrorActionPreference
+#### $ErrorActionPreference
 
 Determines how PowerShell responds to a non-terminating error (an error that
 does not stop the cmdlet processing) at the command line or in a script,
@@ -336,10 +336,10 @@ Valid values:
   execution continues without interruption.
 
 NOTE: The Ignore value of the ErrorAction common parameter is not a valid
-value of the \$ErrorActionPreference variable. The Ignore value is intended
+value of the $ErrorActionPreference variable. The Ignore value is intended
 for per-command use, not for use as saved preference.
 
-Neither \$ErrorActionPreference nor the ErrorAction common parameter affect
+Neither $ErrorActionPreference nor the ErrorAction common parameter affect
 how PowerShell responds to terminating errors (those that stop cmdlet
 processing).
 
@@ -349,9 +349,9 @@ For more information about the ErrorAction common parameter, see
 ##### EXAMPLES
 
 These examples show the effect of the different values of
-\$ErrorActionPreference and the use of the ErrorAction common parameter to
+$ErrorActionPreference and the use of the ErrorAction common parameter to
 override the preference for a single command. The ErrorAction parameter has
-the same valid values as the \$ErrorActionPreference variable.
+the same valid values as the $ErrorActionPreference variable.
 
 This example shows the effect of the Continue value, which is the default.
 
@@ -375,7 +375,7 @@ This example shows the effect of the SilentlyContinue value.
 
 ```powershell
 PS> # Change the value of the preference.
-PS> \$ErrorActionPreference = "SilentlyContinue"
+PS> $ErrorActionPreference = "SilentlyContinue"
 
 PS> # Generate an error message.
 PS> write-error "Hello, World"
@@ -393,14 +393,14 @@ a non-existent file, nofile.txt. The example also uses the ErrorAction common
 parameter to override the preference.
 
 ```powershell
-PS> \$erroractionpreference
+PS> $erroractionpreference
 SilentlyContinue        # Display the value of the preference.
 
 PS> get-childitem -path nofile.txt
 PS>                     # Error message is suppressed.
 
 PS> # Change the value to Continue.
-PS> \$ErrorActionPreference = "Continue"
+PS> $ErrorActionPreference = "Continue"
 
 PS> get-childitem -path nofile.txt
 Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
@@ -412,7 +412,7 @@ PS> get-childitem -path nofile.txt -erroraction SilentlyContinue
 PS> # Error message is suppressed.
 
 PS> # Change the value to Inquire.
-PS> \$ErrorActionPreference = "Inquire"
+PS> $ErrorActionPreference = "Inquire"
 PS> get-childitem -path nofile.txt
 
 Confirm
@@ -425,7 +425,7 @@ At line:1 char:4
 + get-childitem  <<<< nofile.txt
 
 PS> # Change the value to Continue.
-PS> \$ErrorActionPreference = "Continue"
+PS> $ErrorActionPreference = "Continue"
 PS> Get-Childitem nofile.txt -erroraction "Inquire"
 PS> # Use the ErrorAction parameter to override the preference value.
 
@@ -435,7 +435,7 @@ Cannot find path 'C:\nofile.txt' because it does not exist.
 [?] Help (default is "Y"):
 ```
 
-#### \$ErrorView
+#### $ErrorView
 
 Determines the display format of error messages in PowerShell.
 
@@ -457,12 +457,12 @@ For more information about the fields in CategoryView, see
 
 These example show the effect of the ErrorView values.
 
-This example shows how an error appears when the value of \$ErrorView is
+This example shows how an error appears when the value of $ErrorView is
 NormalView. In this case, the Get-ChildItem command is used to find a
 non-existent file.
 
 ```powershell
-PS> \$ErrorView                         # Verify the value.
+PS> $ErrorView                         # Verify the value.
 NormalView
 
 PS> get-childitem nofile.txt           # Find a non-existent file.
@@ -472,10 +472,10 @@ At line:1 char:14
 ```
 
 This example shows how the same error appears when the value of
-\$ErrorView is CategoryView.
+$ErrorView is CategoryView.
 
 ```powershell
-PS> \$ErrorView = "CategoryView"        # Change the value to
+PS> $ErrorView = "CategoryView"        # Change the value to
 CategoryView
 
 PS> get-childitem nofile.txt
@@ -485,7 +485,7 @@ tion
 
 This example demonstrates that the value of ErrorView only affects the error
 display; it does not change the structure of the error object that is stored
-in the \$error automatic variable. For information about the \$error automatic
+in the $error automatic variable. For information about the $error automatic
 variable, see [about_automatic_variables](about_Automatic_Variables.md).
 
 This command takes the ErrorRecord object associated with the most recent
@@ -493,7 +493,7 @@ error in the error array (element 0) and formats all of the properties of the
 error object in a list.
 
 ```powershell
-PS> \$error[0] | format-list -property * -force
+PS> $error[0] | format-list -property * -force
 
 Exception    : System.Management.Automation.ItemNotFoundException: Cannot
 find path 'C:\nofile.txt' because it does not exist.
@@ -511,11 +511,11 @@ ErrorDetails          :
 InvocationInfo        : System.Management.Automation.InvocationInfo
 ```
 
-#### \$FormatEnumerationLimit
+#### $FormatEnumerationLimit
 
 Determines how many enumerated items are included in a display. This
 variable does not affect the underlying objects; just the display. When the
-value of \$FormatEnumerationLimit is less than the number of enumerated
+value of $FormatEnumerationLimit is less than the number of enumerated
 items, PowerShell adds an ellipsis (...) to indicate items not shown.
 
 Valid values: Integers (Int32)
@@ -524,7 +524,7 @@ Default value: 4
 
 ##### EXAMPLES
 
-This example shows how to use the \$FormatEnumerationLimit variable to
+This example shows how to use the $FormatEnumerationLimit variable to
 improve the display of enumerated items.
 
 The command in this example generates a table that lists all of the services
@@ -540,13 +540,13 @@ format-table -examples".)
 
 There are a maximum of 4 services listed in the Group column for each status.
 To increase the number of items listed, increase the value of
-\$FormatEnumerationLimit to 1000.
+$FormatEnumerationLimit to 1000.
 
 In the resulting display, the list in the Group column is now limited by the
 line length. In the final command in the example, use the Wrap parameter of
 Format-Table to display all of the processes in each Status group.
 
-PS> \$formatenumerationlimit         # Find the current value
+PS> $formatenumerationlimit         # Find the current value
 4
 
 ```powershell
@@ -560,7 +560,7 @@ Count Name                      Group
 PS> # The list is truncated after 4 items.
 
 PS> # Increase the limit to 1000.
-PS> \$formatenumerationlimit = 1000
+PS> $formatenumerationlimit = 1000
 PS> get-service | group-object -property status
 
 Count Name     Group
@@ -595,13 +595,13 @@ Count Name       Group
               WmdmPmSN, Wmi, WmiApSrv, xmlprov}
 ```
 
-#### \$InformationPreference
+#### $InformationPreference
 
-The \$InformationPreference variable lets you set information stream
+The $InformationPreference variable lets you set information stream
 preferences (specifically, informational messages that you have added to
 commands or scripts by adding the Write-Information cmdlet, and want displayed
 to users) for a PowerShell session. The value of the -InformationAction
-parameter, if used, overrides the current value of the \$InformationPreference
+parameter, if used, overrides the current value of the $InformationPreference
 variable.
 
 Valid values:
@@ -618,7 +618,7 @@ Valid values:
   displayed, and the script continues without interruption.
 
 
-#### \$Log*Event
+#### $Log*Event
 
 The Log*Event preference variables determine which types of events are written
 to the PowerShell event log in Event Viewer. By default, only engine and
@@ -627,50 +627,50 @@ to customize your log, such as logging events about commands.
 
 The Log*Event preference variables are as follows:
 
-- \$LogCommandHealthEvent: Logs errors and exceptions in command
-  initialization and processing. Default = \$false (not logged).
+- $LogCommandHealthEvent: Logs errors and exceptions in command
+  initialization and processing. Default = $false (not logged).
 
-- \$LogCommandLifecycleEvent: Logs the starting and stopping of commands and
+- $LogCommandLifecycleEvent: Logs the starting and stopping of commands and
   command pipelines and security exceptions in command discovery. Default =
-  \$false (not logged).
+  $false (not logged).
 
-- \$LogEngineHealthEvent: Logs errors and failures of sessions. Default =
-  \$true (logged).
+- $LogEngineHealthEvent: Logs errors and failures of sessions. Default =
+  $true (logged).
 
-- \$LogEngineLifecycleEvent: Logs the opening and closing of sessions.
-  Default = \$true (logged).
+- $LogEngineLifecycleEvent: Logs the opening and closing of sessions.
+  Default = $true (logged).
 
-- \$LogProviderHealthEvent: Logs provider errors, such as read and write
-  errors, lookup errors, and invocation errors. Default = \$true (logged).
+- $LogProviderHealthEvent: Logs provider errors, such as read and write
+  errors, lookup errors, and invocation errors. Default = $true (logged).
 
-- \$LogProviderLifecycleEvent: Logs adding and removing of PowerShell
-  providers. Default = \$true (logged). (For information about PowerShell
+- $LogProviderLifecycleEvent: Logs adding and removing of PowerShell
+  providers. Default = $true (logged). (For information about PowerShell
   providers, type: "get-help about_provider".
 
-To enable a Log*Event, type the variable with a value of \$true, for example:
+To enable a Log*Event, type the variable with a value of $true, for example:
 
 ```powershell
-\$LogCommandLifeCycleEvent
+$LogCommandLifeCycleEvent
 ```
 
 - or -
 
 ```powershell
-\$LogCommandLifeCycleEvent = \$true
+$LogCommandLifeCycleEvent = $true
 ```
 
-To disable an event type, type the variable with a value of \$false, for
+To disable an event type, type the variable with a value of $false, for
 example:
 
 ```powershell
-\$LogCommandLifeCycleEvent = \$false
+$LogCommandLifeCycleEvent = $false
 ```
 
 The events that you enable are effective only for the current PowerShell
 console. To apply the configuration to all consoles, save the variable
 settings in your PowerShell profile.
 
-#### \$MaximumAliasCount
+#### $MaximumAliasCount
 
 Determines how many aliases are permitted in a PowerShell session. The default
 value, 4096, should be sufficient for most uses, but you can adjust it to meet
@@ -686,7 +686,7 @@ To count the aliases on your system, type:
 (get-alias).count
 ```
 
-#### \$MaximumDriveCount
+#### $MaximumDriveCount
 
 Determines how many PowerShell drives are permitted in a given session. This
 includes file system drives and data stores that are exposed by PowerShell
@@ -702,7 +702,7 @@ To count the aliases on your system, type:
 (get-psdrive).count
 ```
 
-#### \$MaximumErrorCount
+#### $MaximumErrorCount
 
 Determines how many errors are saved in the error history for the session.
 
@@ -710,35 +710,35 @@ Valid values: 256 - 32768 (Int32)
 
 Default: 256
 
-Objects that represent each retained error are stored in the \$Error automatic
+Objects that represent each retained error are stored in the $Error automatic
 variable. This variable contains an array of error record objects, one for
 each error. The most recent error is the first object in the array
-(\$Error[0]).
+($Error[0]).
 
-To count the errors on your system, use the Count property of the \$Error
+To count the errors on your system, use the Count property of the $Error
 array. Type:
 
 ```powershell
-\$Error.count
+$Error.count
 ```
 
 To display a specific error, use array notation to display the error. For
 example, to see the most recent error, type:
 
 ```powershell
-\$Error[0]
+$Error[0]
 ```
 
 To display the oldest retained error, type:
 
 ```powershell
-\$Error[(\$Error.Count -1]
+$Error[($Error.Count -1]
 ```
 
 To display the properties of the ErrorRecord object, type:
 
 ```powershell
-\$Error[0] | format-list -property * -force
+$Error[0] | format-list -property * -force
 ```
 
 In this command, the Force parameter overrides the special formatting of
@@ -748,11 +748,11 @@ To delete all errors from the error history, use the Clear method of the error
 array.
 
 ```powershell
-PS> \$Error.count
+PS> $Error.count
 17
-PS> \$Error.clear()
+PS> $Error.clear()
 PS>
-PS> \$Error.count
+PS> $Error.count
 0
 ```
 
@@ -762,7 +762,7 @@ to Get-Member, Get-Member displays the properties and methods of the objects
 in the collection. When you use the InputObject parameter of Get-Member,
 Get-Member displays the properties and methods of the collection.
 
-#### \$MaximumFunctionCount
+#### $MaximumFunctionCount
 
 Determines how many functions are permitted in a given session.
 
@@ -786,7 +786,7 @@ To count the functions in the current session, type:
 (get-childitem function:).count
 ```
 
-#### \$MaximumHistoryCount
+#### $MaximumHistoryCount
 
 Determines how many commands are saved in the command history for the
 current session.
@@ -805,7 +805,7 @@ history, type:
 To see the command saved in your session history, use the Get-History
 cmdlet. For more information, see [about_History](about_History.md).
 
-#### \$MaximumVariableCount
+#### $MaximumVariableCount
 
 Determines how many variables are permitted in a given session, including
 automatic variables, preference variables, and the variables that you create
@@ -826,7 +826,7 @@ To find the current number of variables on the system, type:
 (get-variable).count
 ```
 
-#### \$OFS
+#### $OFS
 
 Output Field Separator. Specifies the character that separates the elements of
 an array when the array is converted to a string.
@@ -834,7 +834,7 @@ an array when the array is converted to a string.
 Valid values: Any string.
 Default: Space
 
-By default, the \$OFS variable does not exist and the output file separator is
+By default, the $OFS variable does not exist and the output file separator is
 a space, but you can add this variable and set it to any string.
 
 ##### EXAMPLES
@@ -844,35 +844,35 @@ is converted to a string. In this case, an array of integers is stored in a
 variable and then the variable is cast as a string.
 
 ```powershell
-PS> \$array = 1,2,3                 # Store an array of integers.
+PS> $array = 1,2,3                 # Store an array of integers.
 
-PS> [string]\$array                 # Cast the array to a string.
+PS> [string]$array                 # Cast the array to a string.
 1 2 3                              # Spaces separate the elements
 ```
 
-To change the separator, add the \$OFS variable by assigning a value to it.
-To work correctly, the variable must be named \$OFS.
+To change the separator, add the $OFS variable by assigning a value to it.
+To work correctly, the variable must be named $OFS.
 
 ```powershell
-PS> \$OFS = "+"                     # Create \$OFS and assign a "+"
+PS> $OFS = "+"                     # Create $OFS and assign a "+"
 
-PS> [string]\$array                 # Repeat the command
+PS> [string]$array                 # Repeat the command
 1+2+3                              # Plus signs separate the elements
 ```
 
 To restore the default behavior, you can assign a space (" ") to the value of
-\$OFS or delete the variable. This command deletes the variable and then
+$OFS or delete the variable. This command deletes the variable and then
 verifies that the separator is a space.
 
 ```powershell
-PS> Remove-Variable OFS            # Delete \$OFS
+PS> Remove-Variable OFS            # Delete $OFS
 PS>
 
-PS> [string]\$array                 # Repeat the command
+PS> [string]$array                 # Repeat the command
 1 2 3                              # Spaces separate the elements
 ```
 
-#### \$OutputEncoding
+#### $OutputEncoding
 
 Determines the character encoding method that PowerShell uses when it sends
 text to other applications.
@@ -893,11 +893,11 @@ This example shows how to make the FINDSTR command in Windows work in
 PowerShell on a computer that is localized for a language that uses Unicode
 characters, such as Chinese.
 
-The first command finds the value of \$OutputEncoding. Because the value is an
+The first command finds the value of $OutputEncoding. Because the value is an
 encoding object, display only its EncodingName property.
 
 ```powershell
-PS> \$OutputEncoding.EncodingName # Find the current value US-ASCII
+PS> $OutputEncoding.EncodingName # Find the current value US-ASCII
 ```
 
 In this example, a FINDSTR command is used to search for two Chinese
@@ -912,15 +912,15 @@ PS> findstr <Unicode-characters>  # Use findstr to search.
 PS>                               # None found.
 ```
 
-To make the command work in PowerShell, set the value of \$OutputEncoding to
+To make the command work in PowerShell, set the value of $OutputEncoding to
 the value of the OutputEncoding property of the console, which is based on the
 locale selected for Windows. Because OutputEncoding is a static property of
 the console, use double-colons (::) in the command.
 
 ```powershell
-PS> \$OutputEncoding = [console]::outputencoding
+PS> $OutputEncoding = [console]::outputencoding
 PS> # Set the value equal to the OutputEncoding property of the console.
-PS> \$OutputEncoding.EncodingName
+PS> $OutputEncoding.EncodingName
 OEM United States
 ```
 As a result of this change, the FINDSTR command finds the characters.
@@ -930,7 +930,7 @@ PS> findstr <Unicode-characters>
 test.txt:         <Unicode-characters>
 ```
 
-#### \$ProgressPreference
+#### $ProgressPreference
 
 Determines how PowerShell responds to progress updates generated by a script,
 cmdlet or provider, such as the progress bars generated by the Write-Progress
@@ -948,16 +948,16 @@ Valid values:
 - SilentlyContinue: Executes the command, but does not display the progress
   bar.
 
-#### \$PSEmailServer
+#### $PSEmailServer
 
 Specifies the default e-mail server that is used to send e-mail messages. This
 preference variable is used by cmdlets that send e-mail, such as the
 Send-MailMessage cmdlet.
 
-#### \$PSDefaultParameterValues
+#### $PSDefaultParameterValues
 
 Specifies default values for the parameters of cmdlets and advanced functions.
-The value of \$PSDefaultParameterValues is a hash table where the key consists
+The value of $PSDefaultParameterValues is a hash table where the key consists
 of the cmdlet name and parameter name separated by a colon (:) and the value
 is a custom default value that you specify.
 
@@ -966,7 +966,7 @@ This variable was introduced in PowerShell 3.0
 For more information about this preference variable, see
 [about_Parameters_Default_Values](about_Parameters_Default_Values.md).
 
-#### \$PSModuleAutoloadingPreference
+#### $PSModuleAutoloadingPreference
 
 Enables and disables automatic importing of modules in the session. "All" is
 the default. Regardless of the value of this variable, you can use the
@@ -985,7 +985,7 @@ Valid values are:
 For more information about automatic importing of modules, see
 [about_Modules](about_Modules.md).
 
-#### \$PSSessionApplicationName
+#### $PSSessionApplicationName
 
 Specifies the default application name for a remote command that uses
 WS-Management technology.
@@ -1014,7 +1014,7 @@ This preference variable is set on the local computer, but it specifies a
 listener on the remote computer. If the application name that you specify does
 not exist on the remote computer, the command to establish the session fails.
 
-#### \$PSSessionConfigurationName
+#### $PSSessionConfigurationName
 
 Specifies the default session configuration that is used for PSSessions
 created in the current session.
@@ -1022,7 +1022,7 @@ created in the current session.
 This preference variable is set on the local computer, but it specifies a
 session configuration that is located on the remote computer.
 
-The value of the \$PSSessionConfigurationName variable is a fully
+The value of the $PSSessionConfigurationName variable is a fully
 qualified resource URI.
 
 The default value:
@@ -1051,18 +1051,18 @@ are used when remote users create a session that connects to this computer.
 However, you can use the permissions for the local session configurations to
 determine which users may use them.
 
-#### \$PSSessionOption
+#### $PSSessionOption
 
 Establishes the default values for advanced user options in a remote session.
 These option preferences override the system default values for session
 options.
 
-The \$PSSessionOption variable contains a PSSessionOption object
+The $PSSessionOption variable contains a PSSessionOption object
 (System.Management.Automation.Remoting.PSSessionObject). Each property of the
 object represents a session option. For example, the NoCompression property
 turns of data compression during the session.
 
-By default, the \$PSSessionOption variable contains a PSSessionOption object
+By default, the $PSSessionOption variable contains a PSSessionOption object
 with the default values for all options, as shown below.
 
 ```output
@@ -1093,23 +1093,23 @@ IdleTimeout                       : -00:00:00.0010000
 For descriptions of these options, see the help topic for the
 `New-PSSessionOption` cmdlet.
 
-To change the value of the \$PSSessionOption preference variable, use the
+To change the value of the $PSSessionOption preference variable, use the
 New-PSSessionOption cmdlet to create a PSSessionOption object with the option
-values you prefer. Save the output in a variable called \$PSSessionOption.
+values you prefer. Save the output in a variable called $PSSessionOption.
 
 For example,
 
 ```powershell
-\$PSSessionOption = New-PSSessionOption -NoCompression
+$PSSessionOption = New-PSSessionOption -NoCompression
 ```
 
-To use the \$PSSessionOption preference variable in every PowerShell session,
-add a New-PSSessionOption command that creates the \$PSSessionOption variable
+To use the $PSSessionOption preference variable in every PowerShell session,
+add a New-PSSessionOption command that creates the $PSSessionOption variable
 to your Windows PowerShell profile.
 
 You can also set custom options for a particular remote session. The options
 that you set take precedence over the system defaults and the value of the
-\$PSSessionOption preference variable.
+$PSSessionOption preference variable.
 
 To set custom session options, use the New-PSSessionOption cmdlet to create a
 PSSessionOption object. Then, use the PSSessionOption object as the value of
@@ -1122,7 +1122,7 @@ sessions, see [about_Remote](about_Remote.md) and
 [about_PSSessions](about_PSSessions.md). For more information about using a
 profile, see [about_Profiles](about_Profiles.md).
 
-#### \$VerbosePreference
+#### $VerbosePreference
 
 Determines how PowerShell responds to verbose messages generated by a script,
 cmdlet or provider, such as the messages generated by the Write-Verbose
@@ -1130,7 +1130,7 @@ cmdlet. Typically, verbose messages describe the actions performed to execute
 a command.
 
 By default, verbose messages are not displayed, but you can change this
-behavior by changing the value of \$VerbosePreference.
+behavior by changing the value of $VerbosePreference.
 
 You can also use the Verbose common parameter of a cmdlet to display or hide
 the verbose messages for a specific command. For more information, type:
@@ -1148,7 +1148,7 @@ Valid values:
 
 ### EXAMPLES
 
-These examples show the effect of the different values of \$VerbosePreference
+These examples show the effect of the different values of $VerbosePreference
 and the use of the Verbose common parameter to override the preference value.
 
 This example shows the effect of the SilentlyContinue value, which is the
@@ -1202,7 +1202,7 @@ This example shows the effect of the Inquire value.
 
 ```powershell
 PS> # Change the value to Inquire.
-PS> \$VerbosePreference = "Inquire"
+PS> $VerbosePreference = "Inquire"
 PS> Write-Verbose "Verbose message test."
 VERBOSE: Verbose message test.
 Confirm
@@ -1216,14 +1216,14 @@ PS> Write-Verbose "Verbose message test." -verbose:$false
 PS>                #Message is not displayed.
 ```
 
-#### \$WarningPreference
+#### $WarningPreference
 
 Determines how PowerShell responds to warning messages generated by a script,
 cmdlet or provider, such as the messages generated by the Write-Warning
 cmdlet.
 
 By default, warning messages are displayed and execution continues, but you
-can change this behavior by changing the value of \$WarningPreference.
+can change this behavior by changing the value of $WarningPreference.
 
 You can also use the WarningAction common parameter of a cmdlet to determine
 how PowerShell responds to warnings from a particular command. For more
@@ -1242,14 +1242,14 @@ Valid values:
 
 ##### EXAMPLES
 
-These examples show the effect of the different values of \$WarningPreference
+These examples show the effect of the different values of $WarningPreference
 and the use of the WarningAction common parameter to override the preference
 value.
 
 This example shows the effect of the Continue value, which is the default.
 
 ```powershell
-PS> \$WarningPreference    # Find the current value.
+PS> $WarningPreference    # Find the current value.
 Continue
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
@@ -1263,7 +1263,7 @@ This example shows the effect of the SilentlyContinue value.
 
 ```powershell
 PS> # Change the value to SilentlyContinue.
-PS> \$WarningPreference = "SilentlyContinue"
+PS> $WarningPreference = "SilentlyContinue"
 PS> Write-Warning "This action can delete data."
 PS>                        # Write a warning message.
 
@@ -1280,7 +1280,7 @@ This example shows the effect of the Inquire value.
 
 ```powershell
 PS> # Change the value to Inquire.
-PS> \$WarningPreference = "Inquire"
+PS> $WarningPreference = "Inquire"
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
 
@@ -1299,7 +1299,7 @@ This example shows the effect of the Stop value.
 
 ```powershell
 PS> # Change the value to Stop.
-PS> \$WarningPreference = "Stop"
+PS> $WarningPreference = "Stop"
 
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
@@ -1318,7 +1318,7 @@ Continue with this operation?
 [?] Help (default is "Y"):
 ```
 
-#### \$WhatIfPreference
+#### $WhatIfPreference
 
 Determines whether WhatIf is automatically enabled for every command that
 supports it. When WhatIf is enabled, the cmdlet reports the expected effect of
@@ -1330,7 +1330,7 @@ Valid values:
   use the WhatIf parameter of the command.
 - 1: WhatIf is automatically enabled on any command that supports it. Users
   can use the WhatIf command with a value of False to disable it manually
-  (WhatIf:\$false).
+  (WhatIf:$false).
 
 When a cmdlet supports WhatIf, the cmdlet reports the expected effect of the
 command, instead of executing the command. For example, instead of deleting
@@ -1352,7 +1352,7 @@ Mode                LastWriteTime     Length     Name
 
 ##### EXAMPLES
 
-These examples show the effect of the different values of \$WhatIfPreference.
+These examples show the effect of the different values of $WhatIfPreference.
 They also show how to use the WhatIf cmdlet parameter to override the
 preference value for a specific command.
 
@@ -1360,7 +1360,7 @@ This example shows the effect of the 0 (not enabled) value, which is the
 default.
 
 ```powershell
-PS> \$whatifpreference
+PS> $whatifpreference
 0                         # Check the current value.
 
 PS> # Verify that the file exists.
@@ -1379,7 +1379,7 @@ At line:1 char:14
 ```
 
 This example shows the effect of using the WhatIf parameter when the value
-of \$WhatIfPreference is 0.
+of $WhatIfPreference is 0.
 
 ```powershell
 PS> # Verify that the file exists.
@@ -1400,8 +1400,8 @@ Remove-Item to delete a cmdlet, Remove-Item displays the path to the file that
 it would delete, but it does not delete the file.
 
 ```powershell
-PS> \$whatifpreference = 1
-PS> \$whatifpreference
+PS> $whatifpreference = 1
+PS> $whatifpreference
 1                        # Change the value.
 
 PS> # Try to delete a file.
@@ -1413,24 +1413,24 @@ PS> get-childitem test.txt | format-list FullName
 FullName : C:\test.txt
 ```
 
-This example shows how to delete a file when the value of \$WhatIfPreference
-is 1. It uses the WhatIf parameter with a value of \$false.
+This example shows how to delete a file when the value of $WhatIfPreference
+is 1. It uses the WhatIf parameter with a value of $false.
 
 ```powershell
-PS> # Use the WhatIf parameter with \$false.
-PS> remove-item test.txt -whatif:\$false
+PS> # Use the WhatIf parameter with $false.
+PS> remove-item test.txt -whatif:$false
 ```
 
 This example demonstrates that some cmdlets support WhatIf behavior and others
-do not. In this example, in which the value of \$WhatIfPreference is 1
+do not. In this example, in which the value of $WhatIfPreference is 1
 (enabled), a Get-Process command, which does not support WhatIf, is executed,
 but a Stop-Process command performs the WhatIf behavior. You can override the
 WhatIf behavior of the Stop-Process command by using the WhatIf parameter with
-a value of \$false.
+a value of $false.
 
 ```powershell
 PS> # Change the value to 1.
-PS> \$whatifpreference = 1
+PS> $whatifpreference = 1
 
 PS> get-process winword
 A Get-Process command completes.
@@ -1443,8 +1443,8 @@ PS> # A Stop-Process command uses WhatIf.
 PS> stop-process -name winword
 What if: Performing operation "Stop-Process" on Target "WINWORD (2312)".
 
-PS> stop-process -name winword  -whatif:\$false
-PS>                      # WhatIf:\$false overrides the preference.
+PS> stop-process -name winword  -whatif:$false
+PS>                      # WhatIf:$false overrides the preference.
 
 PS> # Verify that the process is stopped.
 PS> get-process winword
