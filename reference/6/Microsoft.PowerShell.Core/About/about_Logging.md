@@ -114,7 +114,7 @@ The easiest method for viewing PowerShell log output on MacOS is using the Conso
 * Optionally save the search for future use.
 
 To filter on a specific process instance of PowerShell in the Console, teh variable $pid contains the process id.
-* Entry the pid (Process Id) in the Search field.
+* Enter the pid (Process Id) in the Search field.
 * Change search filter PID
 * Perform the operations
 
@@ -125,3 +125,20 @@ The `log` command can be used to view PowerShell log entries from the command-li
 ```
 sudo log stream --predicate 'process == "pwsh"' --info
 ```
+
+## Configuring Logging on non-Windows systems
+On Windows, logging is configured by creating ETW trace listeners or by using the Event Viewer to enable Analytic logging.   On Linux and MacOS, logging isc onfigured using the file `PowerShellProperties.json`. The rest of this section will discuss configuring PowerShell logging on non-Windows system.
+
+By default, PowerShell enables informational logging to the operational channel.  What this means is any log output produced by PowerShell that is marked as operational and has a log (trace) level greater then informational will be logged.  Occasionally, diagnoses may require additional log output, such as verbose log output or enabling analytic log output.
+
+The file `PowerShellProperties.json` is a JSON formatted file residing in the PowerShell installation directory. Each installation of PowerShell uses it's own copy of this file. For normal operation, this file is left unchanged but it can be useful for diagnosis or for distinguishing between multiple PowerShell versions on the same system or even multiple copies of the same version (See LogIdentity in the table below).
+
+The properties for configuring PowerShell logging are listed in the following table.
+Values marked with an asterick, such as `Operational*`, indicate the default value when no value is provided in the file.
+
+| Property | Values | Description |
+|----------|-------------|---------------------------------------|
+| LogIdentity | (string name)<br>powershell* | The name to use when logging. By default, powershell is the identity. This can be used to distinguish between two instances of a PowerShell installation, such as a release and beta version. This value is also used to redirect logging output to a sepearate file on Linux.  See the discussion of rsyslog above. |
+| LogChannels | Operational*<br>Analytic | The channels to enable.<br>Seperate the values with a comma when specifying more than one.
+| LogLevel | Always<br>Critical<br>Error<br>Warning<br>Informational*<br>Verbose<br>Debug|Specify a single value. The value enables itself as well as all values above it in the list to the left |
+| LogKeywords | Runspace<br>Pipeline<br>Protocol<br>Transport<br>Host<br>Cmdlets<br>Serializer<br>Session<br>ManagedPlugin | Keywords provide the ability to limit logging to specific components within PowerShell. By default, all keywords are enabled and change this value is generaly only useful for very specialized trouble shooting. |
