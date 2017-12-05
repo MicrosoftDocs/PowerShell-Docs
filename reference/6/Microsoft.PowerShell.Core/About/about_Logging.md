@@ -110,13 +110,13 @@ The easiest method for viewing PowerShell log output on MacOS is using the Conso
 * Select the Machine name under Devices
 * In the Search field, entry 'pwsh'; the PowerShell main binary.
 * Change search filter from 'Any' to 'Process'
-* Peform the operations.
+* Peform the operations
 * Optionally save the search for future use.
 
 To filter on a specific process instance of PowerShell in the Console, teh variable $pid contains the process id.
 * Entry the pid (Process Id) in the Search field.
 * Change search filter PID
-* Perform the operations.
+* Perform the operations
 
 ### Viewing PowerShell log output from a command-line
 
