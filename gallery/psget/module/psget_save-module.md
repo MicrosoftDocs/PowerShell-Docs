@@ -50,5 +50,14 @@ Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -
 # Save the role capability modules by piping the Find-RoleCapability output to Save-Module cmdlet.
 Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModulesPath
 
+
+# Save a specific prerelease version of a module to C:\MySavedModuleLocation
+Save-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -Path C:\MySavedModuleLocation -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelease
+
+
+
 ```
 

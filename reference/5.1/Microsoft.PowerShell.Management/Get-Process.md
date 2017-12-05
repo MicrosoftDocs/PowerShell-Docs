@@ -103,22 +103,23 @@ The pipeline operator passes the objects to the **Format-Table** cmdlet, which f
 The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
 
 ### Example 5: Add a property to the standard Get-Process output display
-```
-PS C:\> Get-Process Powershell -ComputerName S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -Auto
-
-
-
-
-
+```powershell
+PS C:\> Get-Process powershell -ComputerName S1, localhost |
+	ft @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
+	@{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
+	@{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
+	@{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
+	@{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
+	Id, MachineName, ProcessName -Auto
 
 NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 ------ ----- ----- ----- ------   -- ----------- -----------
-6      23500 31340   142        1980 S1          powershell
-6      23500 31348   142        4016 S1          powershell
-27     54572 54520   576        4428 localhost   powershell
+     6 23500 31340   142 1.70   1980 S1          powershell
+     6 23500 31348   142 2.75   4016 S1          powershell
+    27 54572 54520   576 5.52   4428 localhost   powershell
 ```
 
-This example provides a **Format-Table** (alias = ft) command that adds the **MachineName** property to the standard **Get-Process** output display.
+This example provides a `Format-Table` (alias = ft) command that adds the MachineName property to the standard `Get-Process` output display.
 
 ### Example 6: Get version information for a process
 ```

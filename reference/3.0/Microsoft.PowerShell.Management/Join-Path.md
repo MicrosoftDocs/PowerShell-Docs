@@ -14,9 +14,9 @@ Combines a path and a child path into a single path.
 The provider supplies the path delimiters.
 ## SYNTAX
 
-```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
- [<CommonParameters>]
+```powershell
+Join-Path [-Path] <String[]> [-ChildPath] <String>
+ [-Resolve] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,7 +76,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
@@ -117,7 +117,7 @@ Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
