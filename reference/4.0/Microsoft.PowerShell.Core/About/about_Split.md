@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,22 +19,21 @@ The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
 
 * Delimiter. The default is whitespace, but you can specify characters,
-strings, patterns, or script blocks that specify the delimiter. The Split
-operator in Windows PowerShell uses a regular expression in the delimiter,
-rather than a simple character.
+  strings, patterns, or script blocks that specify the delimiter. The Split
+  operator in Windows PowerShell uses a regular expression in the delimiter,
+  rather than a simple character.
 * Maximum number of substrings. The default is to return all substrings. If
-you specify a number less than the number of substrings, the remaining
-substrings are concatenated in the last substring.
+  you specify a number less than the number of substrings, the remaining
+  substrings are concatenated in the last substring.
 * Options that specify the conditions under which the delimiter is matched,
-such as SimpleMatch and Multiline.
+  such as SimpleMatch and Multiline.
 
 ## SYNTAX
 
 The following diagram shows the syntax for the -split operator.
 
-The parameter names do not appear in the command. Include only the
-parameter values. The values must appear in the order specified in the
-syntax diagram.
+The parameter names do not appear in the command. Include only the parameter
+values. The values must appear in the order specified in the syntax diagram.
 
 ```powershell
 -Split <String>
@@ -45,17 +44,17 @@ syntax diagram.
 ```
 
 You can substitute `-iSplit` or `-cSplit` for `-split` in any binary Split
-statement (a Split statement that includes a delimiter or script block).
-The `-iSplit` and `-split` operators are case-insensitive. The `-cSplit`
-operator is case-sensitive, meaning that case is considered when the
-delimiter rules are applied.
+statement (a Split statement that includes a delimiter or script block). The
+`-iSplit` and `-split` operators are case-insensitive. The `-cSplit` operator
+is case-sensitive, meaning that case is considered when the delimiter rules
+are applied.
 
 ## PARAMETERS
 
 ### \<String\>
 
-Specifies one or more strings to be split. If you submit multiple
-strings, all the strings are split using the same delimiter rules.
+Specifies one or more strings to be split. If you submit multiple strings, all
+the strings are split using the same delimiter rules.
 
 Example:
 
@@ -69,10 +68,10 @@ green
 
 ### \<Delimiter\>
 
-The characters that identify the end of a substring. The default delimiter
-is whitespace, including spaces and non-printable characters, such as
-newline (\`n) and tab (\`t). When the strings are split, the delimiter is
-omitted from all the substrings. Example:
+The characters that identify the end of a substring. The default delimiter is
+whitespace, including spaces and non-printable characters, such as newline
+(\`n) and tab (\`t). When the strings are split, the delimiter is omitted from
+all the substrings. Example:
 
 ```powershell
 "Lastname:FirstName:Address" -split ":"
@@ -81,13 +80,13 @@ FirstName
 Address
 ```
 
-By default, the delimiter is omitted from the results. To preserve all or
-part of the delimiter, enclose in parentheses the part that you want to
-preserve. If the \<Max-substrings\> parameter is added, this takes
-precedence when your command splits up the collection. If you opt to
-include a delimiter as part of the output, the command returns the
-delimiter as part of the output; however, splitting the string to return
-the delimiter as part of output does not count as a split.
+By default, the delimiter is omitted from the results. To preserve all or part
+of the delimiter, enclose in parentheses the part that you want to preserve.
+If the \<Max-substrings\> parameter is added, this takes precedence when your
+command splits up the collection. If you opt to include a delimiter as part of
+the output, the command returns the delimiter as part of the output; however,
+splitting the string to return the delimiter as part of output does not count
+as a split.
 
 Examples:
 
@@ -124,17 +123,16 @@ Strawberry-Blueberry
 
 ### \<Max-substrings\>
 
-Specifies the maximum number of times that a string is split. The default
-is all the substrings split by the delimiter. If there are more substrings,
-they are concatenated to the final substring. If there are fewer
-substrings, all the substrings are returned. A value of 0 and negative
-values return all the substrings.
+Specifies the maximum number of times that a string is split. The default is
+all the substrings split by the delimiter. If there are more substrings, they
+are concatenated to the final substring. If there are fewer substrings, all
+the substrings are returned. A value of 0 and negative values return all the
+substrings.
 
 Max-substrings does not specify the maximum number of objects that are
-returned; its value equals the maximum number of times that a string is
-split. If you submit more than one string (an array of strings) to the
-Split operator , the Max-substrings limit is applied to each string
-separately.
+returned; its value equals the maximum number of times that a string is split.
+If you submit more than one string (an array of strings) to the Split operator
+, the Max-substrings limit is applied to each string separately.
 
 Example:
 
@@ -150,9 +148,8 @@ Jupiter,Saturn,Uranus,Neptune
 
 ### \<ScriptBlock\>
 
-An expression that specifies rules for applying the delimiter. The
-expression must evaluate to $true or $false. Enclose the script block in
-braces.
+An expression that specifies rules for applying the delimiter. The expression
+must evaluate to $true or $false. Enclose the script block in braces.
 
 Example:
 
@@ -187,63 +184,62 @@ The syntax for the Options parameter is:
 The SimpleMatch options are:
 
 * **SimpleMatch**: Use simple string comparison when evaluating the
-delimiter. Cannot be used with RegexMatch.
+  delimiter. Cannot be used with RegexMatch.
 * **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
-operator is specified.
+  operator is specified.
 
 The RegexMatch options are:
 
 * **RegexMatch**: Use regular expression matching to evaluate the
-delimiter. This is the default behavior. Cannot be used with
-SimpleMatch.
+  delimiter. This is the default behavior. Cannot be used with
+  SimpleMatch.
 * **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
-operator is specified.
+  operator is specified.
 * **CultureInvariant**: Ignores cultural differences in language
-when evaluting the delimiter. Valid only with RegexMatch.
+  when evaluting the delimiter. Valid only with RegexMatch.
 * IgnorePatternWhitespace: Ignores unescaped whitespace and
-comments marked with the number sign (#). Valid only with
-RegexMatch.
+  comments marked with the number sign (#). Valid only with
+  RegexMatch.
 * **Multiline**: Multiline mode recognizes the start and end of lines
-and strings. Valid only with RegexMatch. Singleline is the default.
+  and strings. Valid only with RegexMatch. Singleline is the default.
 * **Singleline**: Singleline mode recognizes only the start and end of
-strings. Valid only with RegexMatch. Singleline is the default.
+  strings. Valid only with RegexMatch. Singleline is the default.
 * **ExplicitCapture**: Ignores non-named match groups so that only
-explicit capture groups are returned in the result list. Valid
-only with RegexMatch.
+  explicit capture groups are returned in the result list. Valid
+  only with RegexMatch.
 
 ## UNARY and BINARY SPLIT OPERATORS
 
 The unary split operator (`-split <string>`) has higher precedence than a
 comma. As a result, if you submit a comma-separated list of strings to the
-unary split operator, only the first string (before the first comma) is
-split.
+unary split operator, only the first string (before the first comma) is split.
 
-To split more than one string, use the binary split operator (<string>
--split <delimiter>). Enclose all the strings in parentheses, or store the
-strings in a variable, and then submit the variable to the split operator.
+To split more than one string, use the binary split operator (<string> -split
+<delimiter>). Enclose all the strings in parentheses, or store the strings in
+a variable, and then submit the variable to the split operator.
 
 Consider the following example:
 
 ```powershell
-PS C:\> -split "1 2", "a b"
+PS > -split "1 2", "a b"
 1
 2
 a b
 
-PS C:\> "1 2", "a b" -split " "
+PS > "1 2", "a b" -split " "
 1
 2
 a
 b
 
-PS C:\> -split ("1 2", "a b")
+PS > -split ("1 2", "a b")
 1
 2
 a
 b
 
-PS C:\> $a = "1 2", "a b"
-PS C:\> -split $a
+PS > $a = "1 2", "a b"
+PS > -split $a
 1
 2
 a
@@ -255,7 +251,7 @@ b
 The following statement splits the string at whitespace.
 
 ```powershell
-PS C:\> -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
+PS > -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
 Windows
 PowerShell
 2.0
@@ -268,7 +264,7 @@ remoting
 The following statement splits the string at any comma.
 
 ```powershell
-PS C:\> "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
+PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
 Mercury
 Venus
 Earth
@@ -282,17 +278,16 @@ Neptune
 The following statement splits the string at the pattern "er".
 
 ```powershell
-PS C:\> "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
+PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
 ```
 
-The following statement performs a case-sensitive split at the
-letter "N".
+The following statement performs a case-sensitive split at the letter "N".
 
 ```powershell
-PS C:\> "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
+PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -300,7 +295,7 @@ eptune
 The following statement splits the string at "e" and "t".
 
 ```powershell
-PS C:\> "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
+PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
 M
 rcury,V
 nus,
@@ -317,7 +312,8 @@ The following statement splits the string at "e" and "r", but limits the
 resulting substrings to six substrings.
 
 ```powershell
-PS C:\> "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
+PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" `
+  -split '[er]', 6
 M
 
 cu
@@ -329,7 +325,7 @@ arth,Mars,Jupiter,Saturn,Uranus,Neptune
 The following statement splits a string into three substrings.
 
 ```powershell
-PS C:\> "a,b,c,d,e,f,g,h" -split ",", 3
+PS > "a,b,c,d,e,f,g,h" -split ",", 3
 a
 b
 c,d,e,f,g,h
@@ -339,7 +335,7 @@ The following statement splits two strings into three substrings.
 (The limit is applied to each string independently.)
 
 ```powershell
-PS C:\> "a,b,c,d", "e,f,g,h" -split ",", 3
+PS > "a,b,c,d", "e,f,g,h" -split ",", 3
 a
 b
 c,d
@@ -352,18 +348,18 @@ The following statement splits each line in the here-string at the first
 digit. It uses the Multiline option to recognize the beginning of each line
 and string.
 
-The 0 represents the "return all" value of the Max-substrings parameter.
-You can use options, such as Multiline, only when the Max-substrings value
-is specified.
+The 0 represents the "return all" value of the Max-substrings parameter. You
+can use options, such as Multiline, only when the Max-substrings value is
+specified.
 
 ```powershell
-PS C:\> $a = @'
+PS > $a = @'
 1The first line.
 2The second line.
 3The third of three lines.
 '@
 
-PS C:\> $a -split "^\d", 0, "multiline"
+PS > $a -split "^\d", 0, "multiline"
 
 The first line.
 
@@ -380,12 +376,12 @@ interpreted to match any character except for a newline character. As a
 result, the Split statement returns a blank line for every character except
 newline.
 
-The 0 represents the "return all" value of the Max-substrings parameter.
-You can use options, such as SimpleMatch, only when the Max-substrings
-value is specified.
+The 0 represents the "return all" value of the Max-substrings parameter. You
+can use options, such as SimpleMatch, only when the Max-substrings value is
+specified.
 
 ```powershell
-PS C:\> "This.is.a.test" -split ".", 0, "simplematch"
+PS > "This.is.a.test" -split ".", 0, "simplematch"
 
 This
 is
@@ -393,13 +389,13 @@ a
 test
 ```
 
-The following statement splits the string at one of two delimiters,
-depending on the value of a variable.
+The following statement splits the string at one of two delimiters, depending
+on the value of a variable.
 
 ```powershell
-PS C:\> $i = 1
-PS C:\> $c = "LastName, FirstName; Address, City, State, Zip"
-PS C:\> $c -split {if ($i -lt 1) {$-eq ","} else {$-eq ";"}}
+PS > $i = 1
+PS > $c = "LastName, FirstName; Address, City, State, Zip"
+PS > $c -split {if ($i -lt 1) {$-eq ","} else {$-eq ";"}}
 
 LastName, FirstName
 Address, City, State, Zip
@@ -407,7 +403,7 @@ Address, City, State, Zip
 
 ## SEE ALSO
 
-Split-Path
+[Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
 
 [about_Operators](about_Operators.md)
 

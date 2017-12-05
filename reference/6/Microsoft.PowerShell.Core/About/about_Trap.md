@@ -130,7 +130,9 @@ statement that specifies the CommandNotFoundException type.
 
 ```powershell
 trap {"Other terminating error trapped" }
-trap [System.Management.Automation.CommandNotFoundException] {"Command error trapped"}
+trap [System.Management.Automation.CommandNotFoundException] {
+  "Command error trapped"
+}
 nonsenseString
 ```
 

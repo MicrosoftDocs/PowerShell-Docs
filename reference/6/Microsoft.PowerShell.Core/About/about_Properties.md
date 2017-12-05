@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,268 +7,295 @@ title:  about_Properties
 ---
 
 # About Properties
-## about_Properties
-
 
 ## SHORT DESCRIPTION
-Describes how to use object properties in  Windows PowerShell.
 
+Describes how to use object properties in PowerShell.
 
 ## LONG DESCRIPTION
-Windows PowerShell uses structured collections of information called objects to represent the items in data stores or the state of the computer. Typically, you work with object that are part of the Microsoft .NET Framework, but you can also create custom objects in  Windows PowerShell.
 
-The association between an item and its object is very close. When you change an object, you usually change the item that it represents. For example, when you get a file in  Windows PowerShell, you do not get the actual file. Instead, you get a FileInfo object that represents the file. When you change the FileInfo object, the file changes too.
+PowerShell uses structured collections of information called objects to
+represent the items in data stores or the state of the computer. Typically,
+you work with object that are part of the Microsoft .NET Framework, but you
+can also create custom objects in PowerShell.
 
-Most objects have properties. Properties are the data that is associated with an object. Different types of object have different properties. For example, a FileInfo object, which represents a file, has an IsReadOnly property that contains $True if the file the read-only attribute and $False if it does not. A DirectoryInfo object, which represents a file system directory, has a Parent property that contains the path to the parent directory.
+The association between an item and its object is very close. When you change
+an object, you usually change the item that it represents. For example, when
+you get a file in PowerShell, you do not get the actual file. Instead, you get
+a FileInfo object that represents the file. When you change the FileInfo
+object, the file changes too.
 
+Most objects have properties. Properties are the data that is associated with
+an object. Different types of object have different properties. For example, a
+FileInfo object, which represents a file, has an **IsReadOnly** property that
+contains $True if the file the read-only attribute and $False if it does not.
+A DirectoryInfo object, which represents a file system directory, has a Parent
+property that contains the path to the parent directory.
 
 ### OBJECT PROPERTIES
-To get the properties of an object, use the Get-Member cmdlet. For example, to get the properties of a FileInfo object, use the Get-ChildItem cmdlet to get the FileInfo object that represents a file. Then, use a pipeline operator (&#124;) to send the FileInfo object to Get-Member. The following command gets the PowerShell.exe file and sends it to Get-Member. The $Pshome automatic variable contains the path of the  Windows PowerShell installation directory.
 
+To get the properties of an object, use the `Get-Member` cmdlet. For example,
+to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
+to get the FileInfo object that represents a file. Then, use a pipeline
+operator (&#124;) to send the **FileInfo** object to `Get-Member`. The
+following command gets the PowerShell.exe file and sends it to `Get-Member`.
+The \$Pshome automatic variable contains the path of the PowerShell
+installation directory.
 
-```
+```powershell
 Get-ChildItem $pshome\PowerShell.exe | Get-Member
 ```
 
+The output of the command lists the members of the **FileInfo** object.
+Members include both properties and methods. When you work in PowerShell, you
+have access to all the members of the objects.
 
-The output of the command lists the members of the FileInfo object. Members include both properties and methods. When you work in  Windows PowerShell, you have access to all the members of the objects.
+To get only the properties of an object and not the methods, use the
+MemberType parameter of the `Get-Member` cmdlet with a value of "property", as
+shown in the following example.
 
-To get only the properties of an object and not the methods, use the MemberType parameter of the Get-Member cmdlet with a value of "property", as shown in the following example.
-
-
-```
+```powershell
 Get-ChildItem $pshome\PowerShell.exe | Get-Member -MemberType property
 ```
 
+```Output
+TypeName: System.IO.FileInfo
 
-
-```
-TypeName: System.IO.FileInfo  
-  
-Name              MemberType Definition  
-----              ---------- ----------  
-Attributes        Property   System.IO.FileAttributes Attributes {get;set;}  
-CreationTime      Property   System.DateTime CreationTime {get;set;}  
-CreationTimeUtc   Property   System.DateTime CreationTimeUtc {get;set;}  
-Directory         Property   System.IO.DirectoryInfo Directory {get;}  
-DirectoryName     Property   System.String DirectoryName {get;}  
-Exists            Property   System.Boolean Exists {get;}  
-Extension         Property   System.String Extension {get;}  
-FullName          Property   System.String FullName {get;}  
-IsReadOnly        Property   System.Boolean IsReadOnly {get;set;}  
-LastAccessTime    Property   System.DateTime LastAccessTime {get;set;}  
-LastAccessTimeUtc Property   System.DateTime LastAccessTimeUtc {get;set;}  
-LastWriteTime     Property   System.DateTime LastWriteTime {get;set;}  
-LastWriteTimeUtc  Property   System.DateTime LastWriteTimeUtc {get;set;}  
-Length            Property   System.Int64 Length {get;}  
+Name              MemberType Definition
+----              ---------- ----------
+Attributes        Property   System.IO.FileAttributes Attributes {get;set;}
+CreationTime      Property   System.DateTime CreationTime {get;set;}
+CreationTimeUtc   Property   System.DateTime CreationTimeUtc {get;set;}
+Directory         Property   System.IO.DirectoryInfo Directory {get;}
+DirectoryName     Property   System.String DirectoryName {get;}
+Exists            Property   System.Boolean Exists {get;}
+Extension         Property   System.String Extension {get;}
+FullName          Property   System.String FullName {get;}
+IsReadOnly        Property   System.Boolean IsReadOnly {get;set;}
+LastAccessTime    Property   System.DateTime LastAccessTime {get;set;}
+LastAccessTimeUtc Property   System.DateTime LastAccessTimeUtc {get;set;}
+LastWriteTime     Property   System.DateTime LastWriteTime {get;set;}
+LastWriteTimeUtc  Property   System.DateTime LastWriteTimeUtc {get;set;}
+Length            Property   System.Int64 Length {get;}
 Name              Property   System.String Name {get;}
 ```
 
-
-After you find the properties, you can use them in your  Windows PowerShell commands.
-
+After you find the properties, you can use them in your PowerShell commands.
 
 ## PROPERTY VALUES
-Although every object of a specific type has the same properties, the values of those properties describe the particular object. For example, every FileInfo object has a CreationTime property, but the value of that property differs for each file.
 
-The most common way to get the values of the properties of an object is to use the dot method. Type a reference to the object, such as a variable that contains the object, or a command that gets the object. Then, type a dot (.) followed by the property name.
+Although every object of a specific type has the same properties, the values
+of those properties describe the particular object. For example, every
+FileInfo object has a CreationTime property, but the value of that property
+differs for each file.
 
-For example, the following command displays the value of the CreationTime property of the PowerShell.exe file. The Get-ChildItem command returns a FileInfo object that represents the PowerShell.exe file. The command is enclosed in parentheses to make sure that it is executed before any properties are accessed. The Get-ChildItem command is followed by a dot and the name of the CreationTime property, as follows:
+The most common way to get the values of the properties of an object is to use
+the dot method. Type a reference to the object, such as a variable that
+contains the object, or a command that gets the object. Then, type a dot (.)
+followed by the property name.
 
+For example, the following command displays the value of the CreationTime
+property of the PowerShell.exe file. The `Get-ChildItem` command returns a
+FileInfo object that represents the PowerShell.exe file. The command is
+enclosed in parentheses to make sure that it is executed before any properties
+are accessed. The `Get-ChildItem` command is followed by a dot and the name of
+the CreationTime property, as follows:
 
-```
-C:\PS> (Get-ChildItem $pshome\PowerShell.exe).creationtime  
+```powershell
+C:\PS> (Get-ChildItem $pshome\PowerShell.exe).creationtime
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
+You can also save an object in a variable and then get its properties by using
+the dot method, as shown in the following example:
 
-You can also save an object in a variable and then get its properties by using the dot method, as shown in the following example:
-
-
-```
-C:\PS> $a = Get-ChildItem $pshome\PowerShell.exe  
-C:\PS> $a.CreationTime  
+```powershell
+C:\PS> $a = Get-ChildItem $pshome\PowerShell.exe
+C:\PS> $a.CreationTime
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
+You can also use the `Select-Object` and `Format-List` cmdlets to display the
+property values of an object. `Select-Object` and `Format-List` each have a
+**Property** parameter. You can use the **Property** parameter to specify one
+or more properties and their values. Or, you can use the wildcard character
+(\*) to represent all the properties.
 
-You can also use the Select-Object and Format-List cmdlets to display the property values of an object. Select-Object and Format-List each have a Property parameter. You can use the Property parameter to specify one or more properties and their values. Or, you can use the wildcard character (\*) to represent all the properties.
+For example, the following command displays the values of all the properties
+of the PowerShell.exe file.
 
-For example, the following command displays the values of all the properties of the PowerShell.exe file.
-
-
-```
+```powershell
 C:\PS> Get-ChildItem $pshome\PowerShell.exe | Format-List -property *
 ```
 
-
-
-```
-PSPath            : Microsoft.PowerShell.Core\FileSystem::C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell.exe  
-PSParentPath      : Microsoft.PowerShell.Core\FileSystem::C:\Windows\system32\WindowsPowerShell\v1.0  
-PSChildName       : PowerShell.exe  
-PSDrive           : C  
-PSProvider        : Microsoft.PowerShell.Core\FileSystem  
-PSIsContainer     : False  
-VersionInfo       : File:             C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell.exe  
-                    InternalName:     POWERSHELL  
-                    OriginalFilename: PowerShell.EXE.MUI  
-                    File Version:      6.1.6570.1 (fbl_srv_PowerShell(nigels).070711-0102)  
-                    FileDescription:  PowerShell.EXE  
-                    Product:          Microsoft® Windows® Operating System  
-                    ProductVersion:   6.1.6570.1  
-                    Debug:            False  
-                    Patched:          False  
-                    PreRelease:       False  
-                    PrivateBuild:     True  
-                    SpecialBuild:     False  
+```Output
+PSPath            : Microsoft.PowerShell.Core\FileSystem::C:\Windows\System3
+                    2\WindowsPowerShell\v1.0\PowerShell.exe
+PSParentPath      : Microsoft.PowerShell.Core\FileSystem::C:\Windows\System3
+                    2\WindowsPowerShell\v1.0
+PSChildName       : PowerShell.exe
+PSDrive           : C
+PSProvider        : Microsoft.PowerShell.Core\FileSystem
+PSIsContainer     : False
+Mode              : -a----
+VersionInfo       : File:             C:\Windows\System32\WindowsPowerShell\
+                    v1.0\PowerShell.exe
+                    InternalName:     POWERSHELL
+                    OriginalFilename: PowerShell.EXE.MUI
+                    FileVersion:      10.0.16299.15 (WinBuild.160101.0800)
+                    FileDescription:  Windows PowerShell
+                    Product:          Microsoft® Windows® Operating System
+                    ProductVersion:   10.0.16299.15
+                    Debug:            False
+                    Patched:          False
+                    PreRelease:       False
+                    PrivateBuild:     False
+                    SpecialBuild:     False
                     Language:         English (United States)
-```
 
-
-
-```
-BaseName          : PowerShell  
-Mode              : -a---  
-Name              : PowerShell.exe  
-Length            : 160256  
-DirectoryName     : C:\Windows\system32\WindowsPowerShell\v1.0  
-Directory         : C:\Windows\system32\WindowsPowerShell\v1.0  
-IsReadOnly        : False  
-Exists            : True  
-FullName          : C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell.exe  
-Extension         : .exe  
-CreationTime      : 3/18/2008 12:07:52 AM  
-CreationTimeUtc   : 3/18/2008 7:07:52 AM  
-LastAccessTime    : 3/19/2008 8:13:58 AM  
-LastAccessTimeUtc : 3/19/2008 3:13:58 PM  
-LastWriteTime     : 3/18/2008 12:07:52 AM  
-LastWriteTimeUtc  : 3/18/2008 7:07:52 AM  
+BaseName          : PowerShell
+Target            : {C:\Windows\WinSxS\amd64_microsoft-windows-powershell-ex
+                    e_31bf3856ad364e35_10.0.16299.15_none_8c022aa6735716ae\p
+                    owershell.exe}
+LinkType          : HardLink
+Name              : PowerShell.exe
+Length            : 449024
+DirectoryName     : C:\Windows\System32\WindowsPowerShell\v1.0
+Directory         : C:\Windows\System32\WindowsPowerShell\v1.0
+IsReadOnly        : False
+Exists            : True
+FullName          : C:\Windows\System32\WindowsPowerShell\v1.0\PowerShell.ex
+Extension         : .exe
+CreationTime      : 9/29/2017 6:43:19 AM
+CreationTimeUtc   : 9/29/2017 1:43:19 PM
+LastAccessTime    : 9/29/2017 6:43:19 AM
+LastAccessTimeUtc : 9/29/2017 1:43:19 PM
+LastWriteTime     : 9/29/2017 6:43:19 AM
+LastWriteTimeUtc  : 9/29/2017 1:43:19 PM
 Attributes        : Archive
 ```
 
-
-
 ### STATIC PROPERTIES
-You can use the static properties of .NET classes in  Windows PowerShell. Static properties are properties of class, unlike standard properties, which are properties of an object.
 
-To get the static properties of an class, use the Static parameter of the Get-Member cmdlet.
+You can use the static properties of .NET classes in PowerShell. Static
+properties are properties of class, unlike standard properties, which are
+properties of an object.
 
-For example, the following command gets the static properties of the System.DateTime class.
+To get the static properties of an class, use the Static parameter of the
+Get-Member cmdlet.
 
+For example, the following command gets the static properties of the
+`System.DateTime` class.
 
-```
+```powershell
 Get-Date | Get-Member -MemberType Property -Static
 ```
 
+```Output
+TypeName: System.DateTime
 
-
-```
-TypeName: System.DateTime  
-  
-Name     MemberType Definition  
-----     ---------- ----------  
-MaxValue Property   static datetime MaxValue {get;}  
-MinValue Property   static datetime MinValue {get;}  
-Now      Property   datetime Now {get;}  
-Today    Property   datetime Today {get;}  
+Name     MemberType Definition
+----     ---------- ----------
+MaxValue Property   static datetime MaxValue {get;}
+MinValue Property   static datetime MinValue {get;}
+Now      Property   datetime Now {get;}
+Today    Property   datetime Today {get;}
 UtcNow   Property   datetime UtcNow {get;}
 ```
 
-
 To get the value of a static property, use the following syntax.
 
-
-```
+```powershell
 [<ClassName>]::<Property>
 ```
 
+For example, the following command gets the value of the UtcNow static
+property of the `System.DateTime` class.
 
-For example, the following command gets the value of the UtcNow static property of the System.DateTime class.
-
-
-```
+```powershell
 [System.DateTime]::UtcNow
 ```
 
-
-
 ### PROPERTIES OF SCALAR OBJECTS AND COLLECTIONS
-The properties of one ("scalar") object of a particular type are often different from the properties of a collection of objects of the same type.
 
-For example, every service has as DisplayName property, but a collection of services does not have a DisplayName property. Similarly, all collections have a Count property that tells how many objects are in the collection, but individual objects do not have a Count property.
+The properties of one ("scalar") object of a particular type are often
+different from the properties of a collection of objects of the same type.
 
-Beginning in  Windows PowerShell 3.0,  Windows PowerShell tries to prevent scripting errors that result from the differing properties of scalar objects and collections.
+For example, every service has as **DisplayName** property, but a collection
+of services does not have a **DisplayName** property. Similarly, all
+collections have a **Count** property that tells how many objects are in the
+collection, but individual objects do not have a **Count** property.
 
-If you submit a collection, but request a property that exists only on single ("scalar") objects,  Windows PowerShell returns the value of that property for every object in the collection.
+Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
+result from the differing properties of scalar objects and collections.
 
-If you request the Count or Length property of zero objects or of one object,  Windows PowerShell returns the correct value.
+If you submit a collection, but request a property that exists only on single
+("scalar") objects, PowerShell returns the value of that property for every
+object in the collection.
 
-If the property exists on the individual objects and on the collection,  Windows PowerShell does not alter the result.
+If you request the Count or Length property of zero objects or of one object,
+PowerShell returns the correct value.
 
-This feature also works on methods of scalar objects and collections. For more information, see about_Methods.
+If the property exists on the individual objects and on the collection,
+PowerShell does not alter the result.
 
+This feature also works on methods of scalar objects and collections. For more
+information, see about_Methods.
 
 ### EXAMPLES
-For example, each service has a DisplayName property. The following command gets the value of the DisplayName property of the Audiosrv service.
 
+For example, each service has a DisplayName property. The following command
+gets the value of the DisplayName property of the Audiosrv service.
 
-```
-PS C:\> (Get-Service Audiosrv).DisplayName  
+```powershell
+PS C:\> (Get-Service Audiosrv).DisplayName
 Windows Audio
 ```
 
+However, a collection or array of services does not have a **DisplayName**.
+The following command tries to get the DisplayName property of all services in
+PowerShell 2.0.
 
-However, a collection or array of services does not have a DisplayName. The following command tries to get the DisplayName property of all services in  Windows PowerShell 2.0.
-
-
-```
-PS C:\> (Get-Service).DisplayName  
+```powershell
+PS C:\> (Get-Service).DisplayName
 PS C:\>
 ```
 
+Beginning in PowerShell 3.0, the same command returns the value of the
+**DisplayName** property of every service that `Get-Service` returns.
 
-Beginning in  Windows PowerShell 3.0, the same command returns the value of the DisplayName property of every service that Get-Service returns.
-
-
-```
-PS C:\> (Get-Service).DisplayName  
-Application Experience  
-Application Layer Gateway Service  
-Windows All-User Install Agent  
-Application Identity  
-Application Information  
+```powershell
+PS C:\> (Get-Service).DisplayName
+Application Experience
+Application Layer Gateway Service
+Windows All-User Install Agent
+Application Identity
+Application Information
 ...
 ```
 
+Conversely, a collection of two or more services has a **Count** property,
+which contains the number of objects in the collection.
 
-Conversely, a collection of two or more services has a Count property, which contains the number of objects in the collection.
-
-
-```
-PS C:\> (Get-Service).Count  
+```powershell
+PS C:\> (Get-Service).Count
 176
 ```
 
+Individual services do not have a Count or Length property, as shown in this
+command in PowerShell 2.0.
 
-Individual services do not have a Count or Length property, as shown in this command in  Windows PowerShell 2.0.
-
-
-```
-PS C:\> (Get-Service Audiosrv).Count  
+```powershell
+PS C:\> (Get-Service Audiosrv).Count
 PS C:\>
 ```
 
+Beginning in PowerShell 3.0, the command returns the correct Count value.
 
-Beginning in  Windows PowerShell 3.0, the command returns the correct Count value.
-
-
-```
-PS C:\> (Get-Service Audiosrv).Count  
+```powershell
+PS C:\> (Get-Service Audiosrv).Count
 1
 ```
-
-
 
 ## SEE ALSO
 
@@ -276,9 +303,8 @@ PS C:\> (Get-Service Audiosrv).Count
 
 [about_Objects](about_Objects.md)
 
-Get-Member
+[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
 
-Select-Object
+[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
 
-Format-List
-
+[Format-List](../../Microsoft.PowerShell.Utility/Format-List.md)

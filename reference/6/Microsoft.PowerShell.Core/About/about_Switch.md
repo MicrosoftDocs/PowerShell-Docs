@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -148,13 +148,25 @@ Default clause is permitted in each Switch statement.
 
 Switch has the following parameters:
 
-|Parameter|Description|
-|---|---|
-| Wildcard      | Indicates that the condition is a wildcard string. If you use Wildcard, Regex and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
-| Exact         | Indicates that the match clause, if it is a string, must match exactly. If you use Exact, Regex and Wildcard and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
-| CaseSensitive | Performs a case-sensitive match. If the match clause is not a string, this parameter is ignored. |
-| File          | Takes input from a file rather than a value statement. If multiple File parameters are included, only the last one is used. Each line of the file is read and evaluated by the Switch statement. |
-| Regex         | Performs regular expression matching of the value to the condition. If you use Regex, Wildcard and Exact are ignored. Also, if the match clause is not a string, this parameter is ignored. |
+|Parameter    |Description                                                |
+|-------------|-----------------------------------------------------------|
+|Wildcard     |Indicates that the condition is a wildcard string. If you  |
+|             |you use Wildcard, Regex and Exact are ignored. Also, if    |
+|             |the match clause is not a string, the parameter is ignored.|
+|Exact        |Indicates that the match clause, if it is a string, must   |
+|             |match exactly. Regex and Wildcard and Exact are ignored.   |
+|             |Also, if the match clause is not a string, this parameter  |
+|             |is ignored.                                                |
+|CaseSensitive|Performs a case-sensitive match. If the match clause is not|
+|             |a string, this parameter is ignored.                       |
+|File         |Takes input from a file rather than a value statement. If  |
+|             |multiple File parameters are included, only the last one is|
+|             |used. Each line of the file is read and evaluated by the   |
+|             |Switch statement.                                          |
+|Regex        |Performs regular expression matching of the value to the   |
+|             |condition. Wildcard and Exact are ignored. Also, if the    |
+|             |match clause is not a string, this parameter is ignored.   |
+
 
 ```powershell
 Example:
