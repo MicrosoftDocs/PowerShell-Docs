@@ -375,7 +375,7 @@ This example shows the effect of the SilentlyContinue value.
 
 ```powershell
 PS> # Change the value of the preference.
-PS> \$ErrorActionPreference = "SilentlyContinue"
+PS> $ErrorActionPreference = "SilentlyContinue"
 
 PS> # Generate an error message.
 PS> write-error "Hello, World"
@@ -854,7 +854,7 @@ To change the separator, add the \$OFS variable by assigning a value to it.
 To work correctly, the variable must be named \$OFS.
 
 ```powershell
-PS> $OFS = "+"                     # Create \$OFS and assign a "+"
+PS> $OFS = "+"                     # Create $OFS and assign a "+"
 
 PS> [string]$array                 # Repeat the command
 1+2+3                              # Plus signs separate the elements
@@ -865,7 +865,7 @@ To restore the default behavior, you can assign a space (" ") to the value of
 verifies that the separator is a space.
 
 ```powershell
-PS> Remove-Variable OFS            # Delete \$OFS
+PS> Remove-Variable OFS            # Delete $OFS
 PS>
 
 PS> [string]$array                 # Repeat the command
@@ -1417,8 +1417,8 @@ This example shows how to delete a file when the value of \$WhatIfPreference
 is 1. It uses the WhatIf parameter with a value of \$false.
 
 ```powershell
-PS> # Use the WhatIf parameter with \$false.
-PS> remove-item test.txt -whatif:\$false
+PS> # Use the WhatIf parameter with $false.
+PS> remove-item test.txt -whatif:$false
 ```
 
 This example demonstrates that some cmdlets support WhatIf behavior and others
@@ -1443,8 +1443,8 @@ PS> # A Stop-Process command uses WhatIf.
 PS> stop-process -name winword
 What if: Performing operation "Stop-Process" on Target "WINWORD (2312)".
 
-PS> stop-process -name winword  -whatif:\$false
-PS>                      # WhatIf:\$false overrides the preference.
+PS> stop-process -name winword  -whatif:$false
+PS>                      # WhatIf:$false overrides the preference.
 
 PS> # Verify that the process is stopped.
 PS> get-process winword
