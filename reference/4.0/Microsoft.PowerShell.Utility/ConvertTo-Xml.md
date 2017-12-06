@@ -15,9 +15,9 @@ Creates an XML-based representation of an object.
 
 ## SYNTAX
 
-```
-ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
- [<CommonParameters>]
+```powershell
+ConvertTo-Xml [-InputObject] <PSObject> [-Depth <Int32>] [-NoTypeInformation]
+ [-As <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,7 +102,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: True

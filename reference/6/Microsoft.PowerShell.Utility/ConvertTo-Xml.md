@@ -15,9 +15,9 @@ Creates an XML-based representation of an object.
 
 ## SYNTAX
 
-```
-ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+ConvertTo-Xml [-InputObject] <PSObject> [-Depth <Int32>] [-NoTypeInformation]
+ [-As <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,45 +95,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
--- String:  Returns a single string.
-
--- Stream:  Returns an array of strings.
-
--- Document:  Returns an XmlDocument object.
-
-The default is Document.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
--- String:  Returns a single string.
-
--- Stream:  Returns an array of strings.
-
--- Document:  Returns an XmlDocument object.
-
-The default is Document.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the object to be converted.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -145,7 +106,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
