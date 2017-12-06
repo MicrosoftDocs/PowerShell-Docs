@@ -167,9 +167,9 @@ Switch has the following parameters:
 |             |condition. Wildcard and Exact are ignored. Also, if the    |
 |             |match clause is not a string, this parameter is ignored.   |
 
+In this example, there is no matching case so there is no output.
 
 ```powershell
-Example:
    PS> switch ("fourteen")
        {
            1 {"It is one."; Break}
@@ -179,7 +179,12 @@ Example:
            3 {"Three again."; Break}
            "fo*" {"That's too many."}
        }
+```
 
+For the word "fourteen" to match a case you must use the **-Wildcard** or
+**-Regex** parameter.
+
+```powershell
    PS> switch -Regex ("fourteen")
        {
            1 {"It is one."; Break}
@@ -189,7 +194,12 @@ Example:
            3 {"Three again."; Break}
            "fo*" {"That's too many."}
        }
-That`'s too many.
+ ```
+ 
+ Result:
+ 
+ ```Output
+That's too many.
 ```
 
 Multiple instances of Regex, Wildcard, or Exact are permitted. However,
