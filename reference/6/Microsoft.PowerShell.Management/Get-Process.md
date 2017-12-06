@@ -11,48 +11,44 @@ title:  Get-Process
 # Get-Process
 
 ## SYNOPSIS
-Gets the processes that are running on the local computer or a remote computer.
+Gets the processes that are running on the local computer.
 
 ## SYNTAX
 
 ### Name (Default)
 ```
-Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo]
+ [<CommonParameters>]
 ```
 
 ### NameWithUserName
 ```
-Get-Process [[-Name] <String[]>] [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process [[-Name] <String[]>] [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-Process -Id <Int32[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -Id <Int32[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### IdWithUserName
 ```
-Get-Process -Id <Int32[]> [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Get-Process -InputObject <Process[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo]
+ [<CommonParameters>]
 ```
 
 ### InputObjectWithUserName
 ```
-Get-Process -InputObject <Process[]> [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -InputObject <Process[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Process** cmdlet gets the processes on a local or remote computer.
+The **Get-Process** cmdlet gets the processes on a local computer.
 
 Without parameters, this cmdlet gets all of the processes on the local computer.
 You can also specify a particular process by process name or process ID (PID) or pass a process object through the pipeline to this cmdlet.
@@ -201,34 +197,11 @@ To view all of the properties, pipe the results of a **Get-Process** command to 
 
 ## PARAMETERS
 
-### -ComputerName
-Specifies the computers for which this cmdlet gets active processes.
-The default is the local computer.
-
-Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one or more computers.
-To specify the local computer, type the computer name, a dot (.), or localhost.
-
-This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter of this cmdlet even if your computer is not configured to run remote commands.
-
-```yaml
-Type: String[]
-Parameter Sets: Name, Id, InputObject
-Aliases: Cn
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -FileVersionInfo
 Indicates that this cmdlet gets the file version information for the program that runs in the process.
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
-You cannot use the *FileVersionInfo* and *ComputerName* parameters of the **Get-Process** cmdlet in the same command.
 To get file version information for a process on a remote computer, use the Invoke-Command cmdlet.
 
 Using this parameter is equivalent to getting the **MainModule.FileVersionInfo** property of each process object.
@@ -279,37 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Process even if your computer is not configured to run remote commands.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Process even if your computer is not configured to run remote commands.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies one or more process objects.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -331,7 +273,6 @@ Indicates that this cmdlet gets the modules that have been loaded by the process
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
-You cannot use the *Module* and *ComputerName* parameters of the **Get-Process** cmdlet in the same command.
 To get the modules that have been loaded by a process on a remote computer, use the **Invoke-Command** cmdlet.
 
 This parameter is equivalent to getting the Modules property of each process object.
