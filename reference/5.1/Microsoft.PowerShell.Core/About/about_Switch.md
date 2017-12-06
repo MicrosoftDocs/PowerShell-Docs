@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2017-12-06
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -189,7 +189,7 @@ Example:
            3 {"Three again."; Break}
            "fo*" {"That's too many."}
        }
-That's too many.
+That`'s too many.
 ```
 
 Multiple instances of Regex, Wildcard, or Exact are permitted. However,
