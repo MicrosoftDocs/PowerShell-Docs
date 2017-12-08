@@ -70,11 +70,11 @@ The output shows the "\<alias\> -\> \<definition\>" format that was introduced i
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 
 ### Example 2
-```
-PS C:\> Get-Alias -Name g*, s* -Exclude Get-*
+```powershell
+Get-Alias -Name gp*, sp* -Exclude *ps
 ```
 
-This command gets all aliases that begin with "g" or "s", except for aliases that begin with "get-".
+This command gets all aliases that begin with gp or sp, except for aliases that end with ps.
 
 ### Example 3
 ```

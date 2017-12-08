@@ -15,19 +15,19 @@ Creates an XML-based representation of an object.
 
 ## SYNTAX
 
-```
-ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
- [<CommonParameters>]
+```powershell
+ConvertTo-Xml [-InputObject] <PSObject> [-Depth <Int32>] [-NoTypeInformation]
+ [-As <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The ConvertTo-Xml cmdlet creates an XML-based representation of one or more Microsoft .NET Framework objects.
-To use this cmdlet, pipe one or more objects to the cmdlet, or use the InputObject parameter to specify the object.
+The `ConvertTo-Xml` cmdlet creates an XML-based representation of one or more Microsoft .NET Framework objects.
+To use this cmdlet, pipe one or more objects to the cmdlet, or use the **InputObject** parameter to specify the object.
 
-When you pipe multiple objects to ConvertTo-XML or use the InputObject parameter to submit multiple objects, ConvertTo-XML returns a single XML document that includes representations of all of the objects.
+When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit multiple objects, `ConvertTo-Xml` returns a single XML document that includes representations of all of the objects.
 
-This cmdlet is similar to Export-Clixml except that Export-Clixml stores the resulting XML in a file.
-ConvertTo-XML returns the XML, so you can continue to process it in Windows PowerShell.
+This cmdlet is similar to `Export-Clixml` except that `Export-Clixml` stores the resulting XML in a file.
+`ConvertTo-Xml` returns the XML, so you can continue to process it in PowerShell.
 
 ## EXAMPLES
 
@@ -102,7 +102,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
