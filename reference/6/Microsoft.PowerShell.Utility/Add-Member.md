@@ -16,29 +16,30 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 ## SYNTAX
 
 ### TypeNameSet (Default)
-```
-Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### MemberSet
-```
-Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
- [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Add-Member [-MemberType] <PSMemberTypes> [-Name] <String>
+ [[-Value] <Object>] [[-SecondValue] <Object>]
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### NotePropertySingleMemberSet
-```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-NotePropertyName] <String>
- [-NotePropertyValue] <Object> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+```powershell
+Add-Member [-NotePropertyName] <String> [-NotePropertyValue] <Object>
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
  [<CommonParameters>]
 ```
 
 ### NotePropertyMultiMemberSet
-```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [-NotePropertyMembers] <IDictionary> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+```powershell
+Add-Member [-NotePropertyMembers] <IDictionary>
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -261,33 +262,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the object to which the new member is added.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -328,7 +302,7 @@ Aliases: Type
 Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -343,7 +317,7 @@ Parameter Sets: MemberSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -388,7 +362,7 @@ Parameter Sets: MemberSet
 Aliases: 
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -404,7 +378,7 @@ Parameter Sets: MemberSet
 Aliases: 
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -424,7 +398,7 @@ Parameter Sets: NotePropertyMultiMemberSet
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -444,7 +418,7 @@ Parameter Sets: NotePropertySingleMemberSet
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -464,7 +438,7 @@ Parameter Sets: NotePropertySingleMemberSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
