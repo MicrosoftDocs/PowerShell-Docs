@@ -16,15 +16,16 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
-```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
- [<CommonParameters>]
+```powershell
+Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
+ [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
 ```
 
 ### IndexParameter
-```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
+```powershell
+Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -290,7 +291,7 @@ Parameter Sets: DefaultParameter
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
