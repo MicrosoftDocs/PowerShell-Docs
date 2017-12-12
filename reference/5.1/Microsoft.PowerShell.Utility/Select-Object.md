@@ -16,21 +16,23 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
-```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
- [<CommonParameters>]
+```powershell
+Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
+ [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
-```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
+```powershell
+Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
+ [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
-```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
+```powershell
+Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
