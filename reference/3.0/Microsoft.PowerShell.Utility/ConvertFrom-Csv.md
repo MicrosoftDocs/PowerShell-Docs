@@ -14,13 +14,15 @@ Converts object properties in comma-separated value (CSV) format into CSV versio
 ## SYNTAX
 
 ### Delimiter (Default)
-```
-ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
+```powershell
+ConvertFrom-Csv [-InputObject] <PSObject[]> [[-Delimiter] <Char>]
+ [-Header <String[]>] [<CommonParameters>]
 ```
 
 ### UseCulture
-```
-ConvertFrom-Csv [-UseCulture] [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
+```powershell
+ConvertFrom-Csv [-InputObject] <PSObject[]> -UseCulture
+ [-Header <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,7 +138,7 @@ Parameter Sets: Delimiter
 Aliases: 
 
 Required: False
-Position: 2
+Position: 1
 Default value: "," (comma)
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -178,7 +180,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

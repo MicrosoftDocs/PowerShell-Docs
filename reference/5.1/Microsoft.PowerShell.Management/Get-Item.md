@@ -16,13 +16,13 @@ Gets the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```
+```powershell
 Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
  [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
+```powershell
 Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
  [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
@@ -37,16 +37,14 @@ This cmdlet is used by Windows PowerShell providers to navigate through differen
 
 ### Example 1: Get the current directory
 ```
-PS C:\> Get-Item .
+PS C:\ps-test> Get-Item .
+
+    Directory: C:\ 
 
 
-
-
-
-Directory: C:\ 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
-d----         7/26/2006  10:01 AM            ps-test
+d-----        7/26/2006  10:01 AM            ps-test
 ```
 
 This command gets the current directory.
@@ -54,27 +52,19 @@ The dot (.) represents the item at the current location (not its contents).
 
 ### Example 2: Get all the items in the current directory
 ```
-PS C:\> Get-Item *
+PS C:\ps-test> Get-Item *
+
+    Directory: C:\ps-test
 
 
-
-
-
-
-
-
-
-
-
-Directory: C:\ps-test
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
-d----         7/26/2006   9:29 AM            Logs
-d----         7/26/2006   9:26 AM            Recs
--a---         7/26/2006   9:28 AM         80 date.csv
--a---         7/26/2006  10:01 AM         30 filenoext
--a---         7/26/2006   9:30 AM      11472 process.doc
--a---         7/14/2006  10:47 AM         30 test.txt
+d-----        7/26/2006   9:29 AM            Logs
+d-----        7/26/2006   9:26 AM            Recs
+-a----        7/26/2006   9:28 AM         80 date.csv
+-a----        7/26/2006  10:01 AM         30 filenoext
+-a----        7/26/2006   9:30 AM      11472 process.doc
+-a----        7/14/2006  10:47 AM         30 test.txt
 ```
 
 This command gets all the items in the current directory.
@@ -82,15 +72,35 @@ The wildcard character (*) represents all the contents of the current item.
 
 ### Example 3: Get the current directory of a drive
 ```
-PS C:\> Get-Item C:\
+PS C:\ps-test> Get-Item C:\
+
+
+    Directory:
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d--hs-       12/10/2017   1:16 PM                C:\
 ```
 
 This command gets the current directory of the C: drive.
 The object that is retrieved represents only the directory, not its contents.
 
-### Example 4: Get items in the specified drive
+### Example 4: Get items in the specified drive root
 ```
-PS C:\> Get-Item C:\*
+PS C:\ps-test> Get-Item C:\*
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        3/19/2017  12:33 AM                PerfLogs
+d-r---       11/29/2017   2:36 PM                Program Files
+d-r---       11/29/2017   2:14 PM                Program Files (x86)
+d-r---        7/16/2017   4:03 PM                Users
+d-----       12/10/2017   1:16 PM                Windows
 ```
 
 This command gets the items in the C: drive.
@@ -102,6 +112,8 @@ The format is interpreted literally, so *.* would not retrieve directories or fi
 ### Example 5: Get a property in the specified directory
 ```
 PS C:\> (Get-Item C:\Windows).LastAccessTime
+
+Sunday, December 10, 2017 1:16:45 PM
 ```
 
 This command gets the LastAccessTime property of the C:\Windows directory.
@@ -110,15 +122,83 @@ To see all of the properties of a directory, type `(Get-Item \<directory-name\>)
 
 ### Example 6: Show the contents of a registry key
 ```
-PS C:\> Get-Item hklm:\software\microsoft\powershell\1\shellids\microsoft.powershell\*
+PS C:\Windows> Get-Item "hklm:\Software\Microsoft\Windows NT\*"
+
+
+    Hive: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT
+
+
+Name                           Property
+----                           --------
+CurrentVersion                 SystemRoot                : C:\WINDOWS
+                               BuildBranch               : rs2_release
+                               BuildGUID                 : ffffffff-ffff-ffff-ffff-ffffffffffff
+                               BuildLab                  : 15063.rs2_release.170317-1834
+                               BuildLabEx                : 15063.0.amd64fre.rs2_release.170317-1834
+                               CompositionEditionID      : Enterprise
+                               CurrentBuild              : 15063
+                               CurrentBuildNumber        : 15063
+                               CurrentMajorVersionNumber : 10
+                               CurrentMinorVersionNumber : 0
+                               CurrentType               : Multiprocessor Free
+                               CurrentVersion            : 6.3
+                               EditionID                 : Enterprise
+                               EditionSubstring          :
+                               InstallationType          : Client
+                               InstallDate               : 1495262485
+                               ProductName               : Windows 10 Enterprise
+                               ReleaseId                 : 1703
+                               SoftwareType              : System
+                               UBR                       : 726
+                               PathName                  : C:\WINDOWS
+                               DigitalProductId          : {164, 0, 0, 0...}
+                               DigitalProductId4         : {248, 4, 0, 0...}
+                               ProductId                 : 00329-00000-00003-AA840
+                               RegisteredOrganization    :
+                               RegisteredOwner           :
+                               InstallTime               : 131397360853701614
 ```
 
-This command shows the contents of the Microsoft.PowerShell registry key.
+This command shows the contents of the "Windows NT" registry key.
 You can use this cmdlet with the Windows PowerShell Registry provider to get registry keys and subkeys, but you must use the **Get-ItemProperty** cmdlet to get the registry values and data.
 
 ### Example 7: Get items in a directory that have an exclusion
 ```
 PS C:\> Get-Item c:\Windows\*.* -exclude "w*"
+
+
+    Directory: C:\Windows
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---       12/11/2017  10:25 AM                Microsoft.NET
+d-----         4/5/2017   4:34 PM                SoftwareDistribution.bak
+-a----        5/20/2017  10:54 AM              0 ativpsrm.bin
+-a----        8/25/2008  10:31 PM         292352 atprs.exe
+-a----         6/3/2017   1:21 PM          64512 bfsvc.exe
+-a--s-       12/11/2017   1:10 PM          67584 bootstat.dat
+-a----       10/30/2015  10:48 AM          31816 CoreSingleLanguage.xml
+-a----        10/8/2016   9:45 PM         232960 DfsrAdmin.exe
+-a----        5/22/2017  10:24 AM           1315 DfsrAdmin.exe.config
+-a----       12/10/2017   1:21 PM           1908 diagerr.xml
+-a----       12/10/2017   1:21 PM           1908 diagwrn.xml
+-a----        3/19/2017  12:29 AM          34774 Enterprise.xml
+-a----        10/7/2015   2:11 AM        2238152 ETDUninst.dll
+-a----        9/30/2017   9:12 AM        4848952 explorer.exe
+-a----         6/3/2017   1:29 PM         975360 HelpPane.exe
+-a----        3/19/2017  12:27 AM          18432 hh.exe
+-a----       12/14/2016  10:57 AM              0 HPMProp.INI
+-a----        3/19/2017  12:27 AM          43131 mib.bin
+-a----         4/9/2008   6:00 PM          53478 mvtcpui.ini
+-a----        3/19/2017  12:28 AM         246784 notepad.exe
+-a----       11/29/2017   4:23 PM            686 PFRO.log
+-a----        3/19/2017  12:27 AM         321024 regedit.exe
+-a----       12/10/2017   1:21 PM            445 setupact.log
+-a----       12/10/2017   1:16 PM              0 setuperr.log
+-a----        3/19/2017  12:28 AM         130560 splwow64.exe
+-a----       10/30/2015  10:51 AM            219 system.ini
+-a----        3/19/2017  12:28 AM          65536 twain_32.dll
 ```
 
 This command gets items in the Windows directory with names that include a dot (.), but do not begin with w*.

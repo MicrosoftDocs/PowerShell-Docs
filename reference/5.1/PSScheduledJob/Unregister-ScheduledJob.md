@@ -61,7 +61,7 @@ This command deletes the TestJob scheduled job on the local computer.
 ### Example 2: Delete all scheduled jobs
 ```
 PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
-PS C:\> Unregistered-ScheduledJob -Name "*" -Force
+PS C:\> Unregister-ScheduledJob -Name "*" -Force
 ```
 
 This example shows two different commands that delete all scheduled jobs on the local computer.
