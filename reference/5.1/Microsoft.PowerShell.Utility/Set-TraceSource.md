@@ -107,7 +107,8 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
-Specifies optional data to add to the prefix of each trace message in the output.The acceptable values for this parameter are:
+Specifies optional data to the prefix of each trace message in the output.
+The acceptable values for this parameter are:
 
 - None
 - LogicalOperationStack
