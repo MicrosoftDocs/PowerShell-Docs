@@ -102,20 +102,30 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
-Adds optional data to the prefix of each trace message in the output.
-The valid values are "None", "LogicalOperationStack", "DateTime", "Timestamp", "ProcessId", "ThreadId", and "Callstack".
-"None" is the default.
+Specifies optional data to the prefix of each trace message in the output.
+The acceptable values for this parameter are:
+
+- None
+- LogicalOperationStack
+- DateTime
+- Timestamp
+- ProcessId
+- ThreadId
+- Callstack
+
+None is the default.
 
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
 
 ```yaml
 Type: TraceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
+Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
 Position: Named
-Default value: "None"
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

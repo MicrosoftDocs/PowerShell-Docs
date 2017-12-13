@@ -137,7 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
-Specifies optional data to add to the prefix of each trace message in the output.The acceptable values for this parameter are:
+Specifies optional data to the prefix of each trace message in the output.
+The acceptable values for this parameter are:
 
 - None
 - LogicalOperationStack
@@ -154,8 +155,8 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: TraceOptions
 Parameter Sets: optionsSet
-Aliases: 
-Accepted values: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, All
+Aliases:
+Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
 Position: Named
