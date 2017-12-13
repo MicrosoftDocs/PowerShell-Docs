@@ -32,3 +32,7 @@ The features of WMF 5.1 were included in Windows Server 2016 and Windows 10 Anni
 WMF 5.1 is not applicable for these operating system versions, as the updates are provided via Windows Update.
 
 
+One thing to note is that WMF does not ship in Windows. 
+WMF is an upgrade package that provides a set of Windows features to previously released Windows versions. 
+This can make an important difference when seeking assistance for any of those features, as the version of those components will not match what shipped in the original operating system.
+
