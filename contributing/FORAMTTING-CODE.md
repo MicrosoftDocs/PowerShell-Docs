@@ -34,12 +34,12 @@ Here is an example of a syntax block:
      [-ParameterType <PSTypeName[]>] [<CommonParameters>]
     ```
 
-This is example is illustrating all of the possible parameters of the `Get-Command` cmdlet.
+This example illustrates all of the possible parameters of the `Get-Command` cmdlet.
 
-Here is another syntax example that is describing the `for` statement in general terms:
+Here is another syntax example describing the `for` statement in generalized terms:
 
     ```
-    for (>init>; <condition>; <repeat>)
+    for (<init>; <condition>; <repeat>)
     {<statement list>}
     ```
 
@@ -126,7 +126,8 @@ See the general guidelines, in the next section, for the appropriate use of prom
 
 - Code fences
 
-  Markdown allows for indentation to signal code block, however, all code blocks should be contained in a code fence.
+  Markdown allows for indentation to signify a code block, but this pattern can be problematic and should be avoided.
+  All code blocks should be contained in a code fence.
   A code fence is a block of code surrounded by <code>\`\`\`</code> strings.
   The code fence markers must be on their own line before and after the code sample.
   The marker at the start of the code block may have an optional language label.
@@ -135,7 +136,7 @@ See the general guidelines, in the next section, for the appropriate use of prom
 - Line continuation in code samples
 
   Avoid using line continuation characters (\`) in PowerShell code examples.
-  These are a hard to see and can cause problems if there are extra spaces on the end of the line.
+  These are hard to see and can cause problems if there are extra spaces on the end of the line.
   Use PowerShell splatting to reduce line length for cmdlets that have a lot of parameters.
   Take advantage of PowerShell's natural line break opportunities, like after pipe (\|) characters and opening braces, parentheses, and brackets.
 
