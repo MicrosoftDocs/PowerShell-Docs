@@ -1,8 +1,8 @@
 # Formatting code blocks
 
+The existing documentation has used multiple styles, over time, and the formatting rules have changed multiple times.
 We want to adopt a consistent style for PowerShell code blocks and output in our documentation.
-The existing documentation has uses multiple styles and the formatting rules have changed multiple times.
-The current Open Publishing System (OPS) we use has a syntax highlighting feature that support many languages.
+The current Open Publishing System (OPS) we use has a syntax highlighting feature that supports many languages.
 OPS also adds a **Copy** button that copies the contents of the code block to the clipboard.
 This allows you to quickly paste the code into a script for testing the code example.
 However, not all examples in our documentation are intended to be run.
@@ -141,7 +141,8 @@ See the general guidelines, in the next section, for the appropriate use of prom
 
 - PowerShell prompts in examples
 
-  PowerShell prompts should only be used in illustrative examples (as defined previously).
+  PowerShell prompts should only be used in illustrative examples.
+  Prompts should **NOT** be used in executable examples.
   For most of these examples, the prompt string should be "`PS>`".
   This prompt is independent of OS-specific indicators.
   Use of the prompt string is discouraged and should be limited to scenarios that are meant to illustrate command line usage.
