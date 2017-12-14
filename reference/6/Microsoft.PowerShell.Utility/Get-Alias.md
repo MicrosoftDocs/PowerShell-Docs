@@ -16,15 +16,15 @@ Gets the aliases for the current session.
 ## SYNTAX
 
 ### Default (Default)
-```
-Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
+ [<CommonParameters>]
 ```
 
 ### Definition
-```
+```powershell
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,50 +136,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-This parameter is called Definition, because it searches for the item name in the Definition property of the alias object.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-This parameter is called Definition, because it searches for the item name in the Definition property of the alias object.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 Specifies the aliases that this cmdlet gets.
 Wildcards are permitted.
-By default, **Get-Alias** retrieves all aliases defined for the current session.
-The parameter name *Name* is optional.
-You can also pipe alias names to **Get-Alias**.
+By default, `Get-Alias` retrieves all aliases defined for the current session.
+The parameter name **Name** is optional.
+You can also pipe alias names to `Get-Alias`.
 
 ```yaml
 Type: String[]
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
-Position: 1
-Default value: None
+Position: 0
+Default value: All aliases
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Scope
