@@ -15,10 +15,10 @@ Gets the properties and methods of objects.
 
 ## SYNTAX
 
-```
-Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
- [-View <PSMemberViewTypes>] [-Static] [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Get-Member [[-Name] <String[]>] [-InputObject <PSObject>]
+ [-MemberType <PSMemberTypes>] [-View <PSMemberViewTypes>] [-Static] [-Force]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -267,53 +267,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-The following list describes the properties that are added when you use the Force parameter:
-
--- PSBase:  The original properties of the .NET Framework object without extension or adaptation. These are the properties defined for the object class and listed in MSDN.
-
--- PSAdapted: The properties and methods defined in the Windows PowerShell extended type system.
-
--- PSExtended: The properties and methods that were added in the Types.ps1xml files or by using the Add-Member cmdlet.
-
--- PSObject: The adapter that converts the base object to a Windows PowerShell PSObject object.
-
--- PSTypeNames: A list of object types that describe the object, in order of specificity. When formatting the object, Windows PowerShell searches for the types in the Format.ps1xml files in the Windows PowerShell installation directory ($pshome). It uses the formatting definition for the first type that it finds.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The following list describes the properties that are added when you use the Force parameter:
-
--- PSBase:  The original properties of the .NET Framework object without extension or adaptation. These are the properties defined for the object class and listed in MSDN.
-
--- PSAdapted: The properties and methods defined in the Windows PowerShell extended type system.
-
--- PSExtended: The properties and methods that were added in the Types.ps1xml files or by using the Add-Member cmdlet.
-
--- PSObject: The adapter that converts the base object to a Windows PowerShell PSObject object.
-
--- PSTypeNames: A list of object types that describe the object, in order of specificity. When formatting the object, Windows PowerShell searches for the types in the Format.ps1xml files in the Windows PowerShell installation directory ($pshome). It uses the formatting definition for the first type that it finds.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the object whose members are retrieved.
 
@@ -393,7 +346,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
