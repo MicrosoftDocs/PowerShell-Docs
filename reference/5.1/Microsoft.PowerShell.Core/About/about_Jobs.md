@@ -26,20 +26,15 @@ work in the session without interruption while the job runs.
 
 ## THE JOB CMDLETS
 
-|Cmdlet          |Description                                            |
-|----------------|-------------------------------------------------------|
-|`Start-Job`     |Starts a background job on a local computer.           |
-|`Get-Job`       |Gets the background jobs that were started in the      |
-|                |current session.                                       |
-|`Receive-Job`   |Gets the results of background jobs.                   |
-|`Stop-Job`      |Stops a background job.                                |
-|`Wait-Job`      |Suppresses the command prompt until one or all jobs are|
-|                |complete.                                              |
-|`Remove-Job`    |Deletes a background job.                              |
-|`Invoke-Command`|The AsJob parameter runs any command as a background   |
-|                |job on a remote computer. You can also use             |
-|                |`Invoke-Command` to run any job command remotely,      |
-|                |including a Start-Job command.                         |
+|Cmdlet              |Description                                            |
+|--------------------|-------------------------------------------------------|
+|`Start-Job`         |Starts a background job on a local computer.           |
+|`Get-Job`           |Gets the background jobs that were started in the current session. |
+|`Receive-Job`       |Gets the results of background jobs.                   |
+|`Stop-Job`          |Stops a background job.                                |
+|`Wait-Job`          |Suppresses the command prompt until one or all jobs are complete. |
+|`Remove-Job`        |Deletes a background job.                              |
+|`Invoke-Command`    |The AsJob parameter runs any command as a background job on a remote computer. You can also use `Invoke-Command` to run any job command remotely, including a Start-Job command. |
 
 ## HOW TO START A JOB ON THE LOCAL COMPUTER
 
