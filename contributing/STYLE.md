@@ -6,7 +6,7 @@ There are several variants of PowerShell.
 This table defines some of the different terms used to discuss PowerShell.
 
 | Terminology | Definition |
-| ----- | -----|
+| ----- | ----- |
 | PowerShell | This is the default. We are shipping PowerShell. The term PowerShell can be legitimately used to indicate any of the particular editions. This can be used to refer to the language, framework and default cmdlets, etc. |
 | PowerShell Core (PSCore) | PowerShell built on .NET Core Common Language Runtime (CoreCLR) for any of the platforms. |
 | Windows PowerShell | PowerShell built on .NET Common Language Runtime (CLR). Windows PowerShell ships only on Windows and requires the complete CLR. |
@@ -84,43 +84,6 @@ Adding or removing H2 causes a build break.
 
   This [`Write-Host`](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the **-Object** parameter to ...
 
-## Formatting code blocks
-
-* All PowerShell syntax blocks should use <code>\`\`\`powershell</code> &hellip; <code>\`\`\`</code> code fence markers.
-
-* Do **NOT** start PowerShell commands with the PowerShell prompt ("`PS C:\>`").
-
-* Avoid using line continuation characters (\`) in PowerShell code examples.
-  These are a hard to see and can cause problems if there are extra spaces on the end of the line.
-
-* Output emitted by PowerShell commands should be enclosed in a naked code block to prevent it from recieving syntax highlighting.
-
-  For example:
-
-      ```powershell
-      Get-Command -Module Microsoft.PowerShell.Security
-      ```
-
-      ```
-      CommandType     Name                                               Version    Source
-      -----------     ----                                               -------    ------
-      Cmdlet          ConvertFrom-SecureString                           3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          ConvertTo-SecureString                             3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-CmsMessage                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Credential                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-PfxCertificate                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          New-FileCatalog                                    3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Protect-CmsMessage                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Test-FileCatalog                                   3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Unprotect-CmsMessage                               3.0.0.0    Microsoft.PowerShell.Security
-      ```
-
 ## Lists
 
 * Do not end list items with a period (unless they contain multiple sentences)
@@ -161,6 +124,10 @@ Note that the path to cmdlet reference is created by our publishing system.
 There are special rules for linking to reference topics from conceptual topics.
 
 \[TO DO\] - document special rules
+
+## Next steps
+
+See [Formatting code blocks](FORMATTING-CODE.md).
 
 <!-- External URLs -->
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase

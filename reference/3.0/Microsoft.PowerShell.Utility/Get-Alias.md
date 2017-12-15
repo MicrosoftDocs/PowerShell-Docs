@@ -14,13 +14,15 @@ Gets the aliases for the current session.
 ## SYNTAX
 
 ### Default (Default)
-```
-Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [<CommonParameters>]
+```powershell
+Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
+ [<CommonParameters>]
 ```
 
 ### Definition
-```
-Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>] [<CommonParameters>]
+```powershell
+Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,19 +141,19 @@ Accept wildcard characters: True
 ```
 
 ### -Name
-Specifies the aliases to retrieve.
+Specifies the aliases that this cmdlet gets.
 Wildcards are permitted.
-By default, Get-Alias retrieves all aliases defined for the current session.
-The parameter name ("Name") is optional.
-You can also pipe alias names to Get-Alias.
+By default, `Get-Alias` retrieves all aliases defined for the current session.
+The parameter name **Name** is optional.
+You can also pipe alias names to `Get-Alias`.
 
 ```yaml
 Type: String[]
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: All aliases
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
