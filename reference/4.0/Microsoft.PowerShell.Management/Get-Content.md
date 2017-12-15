@@ -16,19 +16,23 @@ Gets the content of the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]> [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+```powershell
+Get-Content [-Path] <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
+ [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>]
- [-Stream <String>] [<CommonParameters>]
+```powershell
+Get-Content -LiteralPath <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
+ [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -198,7 +202,7 @@ Parameter Sets: Path
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
