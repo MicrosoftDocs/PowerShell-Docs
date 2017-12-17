@@ -36,7 +36,7 @@ If you do not specify a parameter, the cmdlet creates the object that has a defa
 The **New-PSWorkflowExecutionOption** cmdlet is part of the Windows PowerShell Workflow feature.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParameters.
+For more information about workflow common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
