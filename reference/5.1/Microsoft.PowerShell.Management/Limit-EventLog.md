@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-You cannot pip input to this cmdlet.
+You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
