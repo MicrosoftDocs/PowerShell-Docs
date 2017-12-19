@@ -16,8 +16,8 @@ Groups objects that contain the same value for specified properties.
 ## SYNTAX
 
 ```
-Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>] [[-Property] <Object[]>]
- [-Culture <String>] [-CaseSensitive] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+Group-Object [[-Property] <Object[]>] [-NoElement] [-AsHashTable] [-AsString]
+ [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
  [<CommonParameters>]
 ```
 
@@ -277,33 +277,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-By itself, the AsHashTable parameter returns each hash table in which each key is an instance of the grouped object. When used with the  AsString parameter, the keys in the hash table are strings.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-By itself, the AsHashTable parameter returns each hash table in which each key is an instance of the grouped object. When used with the  AsString parameter, the keys in the hash table are strings.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the objects to group.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -353,7 +326,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
