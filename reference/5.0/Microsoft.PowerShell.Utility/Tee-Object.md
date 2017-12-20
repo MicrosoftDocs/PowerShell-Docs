@@ -17,17 +17,20 @@ Saves command output in a file or variable and also sends it down the pipeline.
 
 ### File (Default)
 ```
-Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
+Tee-Object [-FilePath] <String> [-InputObject <PSObject>] [-Append]
+ [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
-Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [<CommonParameters>]
+Tee-Object -LiteralPath <String> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ### Variable
 ```
-Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
+Tee-Object -Variable <String> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
