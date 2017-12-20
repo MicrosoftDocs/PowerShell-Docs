@@ -200,7 +200,7 @@ When **Select-String** finds more than one match in a line of text, it still emi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -216,7 +216,7 @@ By default, matches are not case-sensitive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -247,7 +247,7 @@ When the context includes a match, the **MatchInfo** object for each match inclu
 ```yaml
 Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +277,7 @@ OEM is the current original equipment manufacturer code page identifier for the 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: unicode, utf7, utf8, utf32, ascii, bigendianunicode, default, oem
 
 Required: False
@@ -296,7 +296,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -336,7 +336,7 @@ The differences are as follows:
 ```yaml
 Type: PSObject
 Parameter Sets: Object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -352,7 +352,7 @@ By default, **Select-String** returns a **MatchInfo** object for each match it f
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -386,7 +386,7 @@ Indicates that the cmdlet finds text that does not match the specified pattern.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -406,7 +406,7 @@ If you specify only a directory, the command fails.
 ```yaml
 Type: String[]
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -425,7 +425,7 @@ To learn about regular expressions, see about_Regular_Expressions.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -441,7 +441,7 @@ The value is True if the pattern is found; otherwise, the value is False.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -458,7 +458,7 @@ It does not interpret the value of the *Pattern* parameter as a regular expressi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -483,7 +483,7 @@ If you use the *Quiet* parameter, the output is a Boolean value indicating wheth
 
 ## NOTES
 * **Select-String** is like the Grep command in UNIX and the FindStr command in Windows.
-* The **sst** alias for the **Select-String** cmdlet was introduced in Windows PowerShell 3.0.
+* The **sls** alias for the **Select-String** cmdlet was introduced in Windows PowerShell 3.0.
 * To use **Select-String**, type the text that you want to find as the value of the *Pattern* parameter.
 
   To specify the text to be searched, do the following:
