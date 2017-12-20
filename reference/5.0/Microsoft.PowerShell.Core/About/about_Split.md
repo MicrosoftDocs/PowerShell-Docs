@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2017-12-20
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -35,11 +35,10 @@ The following diagram shows the syntax for the -split operator.
 The parameter names do not appear in the command. Include only the parameter
 values. The values must appear in the order specified in the syntax diagram.
 
-```powershell
+```
 -Split <String>
-
+-Split (<String[]>)
 <String> -Split <Delimiter>[,<Max-substrings>[,"<Options>"]]
-
 <String> -Split {<ScriptBlock>} [,<Max-substrings>]
 ```
 
@@ -51,14 +50,14 @@ are applied.
 
 ## PARAMETERS
 
-### \<String\>
+### \<String\> or \<String[]\>
 
 Specifies one or more strings to be split. If you submit multiple strings, all
 the strings are split using the same delimiter rules.
 
 Example:
 
-```powershell
+```
 -split "red yellow blue green"
 red
 yellow
@@ -73,7 +72,7 @@ whitespace, including spaces and non-printable characters, such as newline
 (\`n) and tab (\`t). When the strings are split, the delimiter is omitted from
 all the substrings. Example:
 
-```powershell
+```
 "Lastname:FirstName:Address" -split ":"
 Lastname
 FirstName
@@ -90,7 +89,7 @@ as a split.
 
 Examples:
 
-```powershell
+```
 "Lastname:FirstName:Address" -split "(:)"
 Lastname
 :
@@ -139,6 +138,9 @@ Example:
 ```powershell
 $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", 5
+```
+
+```Output
 Mercury
 Venus
 Earth
@@ -156,6 +158,9 @@ Example:
 ```powershell
 $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split {$_ -eq "e" -or $_ -eq "p"}
+```
+
+```Output
 M
 rcury,V
 nus,
@@ -173,7 +178,7 @@ Enclose the option name in quotation marks. Options are valid only when the
 
 The syntax for the Options parameter is:
 
-```powershell
+```
 "SimpleMatch [,IgnoreCase]"
 
 "[RegexMatch] [,IgnoreCase] [,CultureInvariant]
@@ -214,13 +219,16 @@ The unary split operator (`-split <string>`) has higher precedence than a
 comma. As a result, if you submit a comma-separated list of strings to the
 unary split operator, only the first string (before the first comma) is split.
 
-To split more than one string, use the binary split operator (<string> -split
-<delimiter>). Enclose all the strings in parentheses, or store the strings in
-a variable, and then submit the variable to the split operator.
+Use one of the following patterns to split more than one string:
+
+- Use the binary split operator (\<string[]\> -split \<delimiter\>)
+- Enclose all the strings in parentheses
+- Store the strings in a variable then submit the variable to the split
+  operator
 
 Consider the following example:
 
-```powershell
+```
 PS > -split "1 2", "a b"
 1
 2
@@ -251,7 +259,11 @@ b
 The following statement splits the string at whitespace.
 
 ```powershell
-PS > -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
+-split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
+```
+
+```Output
+
 Windows
 PowerShell
 2.0
@@ -264,7 +276,10 @@ remoting
 The following statement splits the string at any comma.
 
 ```powershell
-PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
+```
+
+```Output
 Mercury
 Venus
 Earth
@@ -278,7 +293,10 @@ Neptune
 The following statement splits the string at the pattern "er".
 
 ```powershell
-PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
+```
+
+```Output
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
@@ -287,7 +305,10 @@ cury,Venus,Earth,Mars,Jupit
 The following statement performs a case-sensitive split at the letter "N".
 
 ```powershell
-PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
+```
+
+```Output
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -295,7 +316,10 @@ eptune
 The following statement splits the string at "e" and "t".
 
 ```powershell
-PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
+```
+
+```Output
 M
 rcury,V
 nus,
@@ -312,8 +336,10 @@ The following statement splits the string at "e" and "r", but limits the
 resulting substrings to six substrings.
 
 ```powershell
-PS > "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" `
-  -split '[er]', 6
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
+```
+
+```Output
 M
 
 cu
@@ -325,7 +351,10 @@ arth,Mars,Jupiter,Saturn,Uranus,Neptune
 The following statement splits a string into three substrings.
 
 ```powershell
-PS > "a,b,c,d,e,f,g,h" -split ",", 3
+"a,b,c,d,e,f,g,h" -split ",", 3
+```
+
+```Output
 a
 b
 c,d,e,f,g,h
@@ -335,7 +364,10 @@ The following statement splits two strings into three substrings.
 (The limit is applied to each string independently.)
 
 ```powershell
-PS > "a,b,c,d", "e,f,g,h" -split ",", 3
+"a,b,c,d", "e,f,g,h" -split ",", 3
+```
+
+```Output
 a
 b
 c,d
@@ -353,13 +385,15 @@ can use options, such as Multiline, only when the Max-substrings value is
 specified.
 
 ```powershell
-PS > $a = @'
+$a = @'
 1The first line.
 2The second line.
 3The third of three lines.
 '@
+$a -split "^\d", 0, "multiline"
+```
 
-PS > $a -split "^\d", 0, "multiline"
+```Output
 
 The first line.
 
@@ -381,8 +415,10 @@ can use options, such as SimpleMatch, only when the Max-substrings value is
 specified.
 
 ```powershell
-PS > "This.is.a.test" -split ".", 0, "simplematch"
+"This.is.a.test" -split ".", 0, "simplematch"
+```
 
+```Output
 This
 is
 a
@@ -393,10 +429,12 @@ The following statement splits the string at one of two delimiters, depending
 on the value of a variable.
 
 ```powershell
-PS > $i = 1
-PS > $c = "LastName, FirstName; Address, City, State, Zip"
-PS > $c -split {if ($i -lt 1) {$-eq ","} else {$-eq ";"}}
+$i = 1
+$c = "LastName, FirstName; Address, City, State, Zip"
+$c -split {if ($i -lt 1) {$-eq ","} else {$-eq ";"}}
+```
 
+```Output
 LastName, FirstName
 Address, City, State, Zip
 ```
