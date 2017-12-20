@@ -72,47 +72,46 @@ This command uses the **Get-FileHash** cmdlet and the SHA384 algorithm to comput
 The output is piped to the Format-List cmdlet to format the output as a list.
 
 ### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
+
+```powershell
+# Path of Microsoft.PowerShell.Utility.psd1
+$file = (Get-Module Microsoft.PowerShell.Utility).Path
+
+$hashFromFile = Get-FileHash -Path $file -Algorithm MD5
+
+# Open $file as a stream
+$stream = [System.IO.File]::OpenRead($file)
+$hashFromStream = Get-FileHash -InputStream $stream -Algorithm MD5
+$stream.Close()
+
+Write-Host '### Hash from File ###' -NoNewline
+$hashFromFile | Format-List
+Write-Host '### Hash from Stream ###' -NoNewline
+$hashFromStream | Format-List
+
+# Check both hashes are the same
+if ($hashFromFile.Hash -eq $hashFromStream.Hash) {
+	Write-Host 'Get-FileHash results are consistent' -ForegroundColor Green
+} else {
+	Write-Host 'Get-FileHash results are inconsistent!!' -ForegroundColor Red
+}
 ```
-PS C:\> $testfile = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
-## open $testfile as a stream
-$testfilestream = [System.IO.File]::Open(
-    $testfile,
-    [System.IO.FileMode]::Open,
-    [System.IO.FileAccess]::Read)
+```output
+### Hash from File ###
 
-$hashFromStream = Get-FileHash -InputStream $testfilestream -Algorithm MD5
-
-$testfilestream.Close()
-
-$hashFromFile = Get-FileHash -Path $testfile -Algorithm MD5
-
-## check both hashes are the same
-if(($hashFromStream.Hash) -ne ($hashFromFile.Hash)) {
-    Write-Error "Get-FileHash results are inconsistent!!"
-}
-else {
-    Write-Output "Results from File:"
-    Write-Output "=================="
-    $hashFromFile | Format-List
-    Write-Output " "
-    Write-Output "Results from Stream:"
-    Write-Output "===================="
-    $hashFromStream | Format-List
-}
-
-
-Results from File:
-==================
 Algorithm : MD5
-Hash      : 097CE5761C89434367598B34FE32893B
-Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Hash      : 593D6592BD9B7F9174711AB136F5E751
+Path      : C:\Program Files\PowerShell\6.0.0\Modules\Microsoft.Powe
+            rShell.Utility\Microsoft.PowerShell.Utility.psd1
 
-Results from Stream:
-====================
+### Hash from Stream ###
+
 Algorithm : MD5
-Hash      : 097CE5761C89434367598B34FE32893B
+Hash      : 593D6592BD9B7F9174711AB136F5E751
 Path      :
+
+Get-FileHash results are consistent
 ```
 
 ## PARAMETERS
