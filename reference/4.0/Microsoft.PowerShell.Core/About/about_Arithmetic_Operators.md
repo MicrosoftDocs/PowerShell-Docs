@@ -501,8 +501,8 @@ right operand determine how many bits of the left operand are shifted.
 |`21 -shr 31`            | 0          | 0000 0000 | 0x00       |
 |`21 -shr 32`            | 21         | 0001 0101 | 0x15       |
 |`21 -shr 64`            | 21         | 0001 0101 | 0x15       |
-|`21 -shr 65`            | 10         | 0000 1010 | 0x15       |
-|`21 -shr 66`            | 5          | 0000 0101 | 0x15       |
+|`21 -shr 65`            | 10         | 0000 1010 | 0x0A       |
+|`21 -shr 66`            | 5          | 0000 0101 | 0x05       |
 |`[int]::MaxValue -shr 1`| 1073741823 |           | 0x3FFFFFFF |
 |`[int]::MinValue -shr 1`| -1073741824|           | 0xC0000000 |
 |`-1 -shr 1`             | -1         |           | 0xFFFFFFFF |

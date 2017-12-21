@@ -17,20 +17,20 @@ Saves command output in a file or variable and also sends it down the pipeline.
 
 ### File (Default)
 ```
-Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Tee-Object [-FilePath] <String> [-InputObject <PSObject>] [-Append]
+ [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
-Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Tee-Object -LiteralPath <String> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ### Variable
 ```
-Tee-Object [-InputObject <PSObject>] -Variable <String> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Tee-Object -Variable <String> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,34 +109,7 @@ Parameter Sets: File
 Aliases: 
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-This parameter is introduced in Windows PowerShell 3.0.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-This parameter is introduced in Windows PowerShell 3.0.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

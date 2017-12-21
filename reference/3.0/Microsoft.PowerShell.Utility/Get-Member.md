@@ -13,9 +13,10 @@ title:  Get-Member
 Gets the properties and methods of objects.
 ## SYNTAX
 
-```
-Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
- [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
+```powershell
+Get-Member [[-Name] <String[]>] [-InputObject <PSObject>]
+ [-MemberType <PSMemberTypes>] [-View <PSMemberViewTypes>] [-Static] [-Force]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -332,7 +333,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
