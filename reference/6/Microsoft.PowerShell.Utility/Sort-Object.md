@@ -15,10 +15,18 @@ Sorts objects by property values.
 
 ## SYNTAX
 
+### Default
 ```
-Sort-Object [-Descending] [-Unique] [-InputObject <PSObject>] [[-Property] <Object[]>] [-Culture <String>]
- [-CaseSensitive] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
- [-Top <Int32>] [-Bottom <Int32>]
+Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-Top <Int32>]
+ [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
+ [<CommonParameters>]
+```
+
+### Bottom
+```
+Sort-Object [[-Property] <Object[]>] -Bottom <Int32> [-Descending] [-Unique]
+ [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -182,7 +190,7 @@ Specifies the number of objects to get from the end of the sorted object array.
 
 ```yaml
 Type: Int32
-Parameter Sets: (All)
+Parameter Sets: Bottom
 Aliases:
 
 Required: False
@@ -242,33 +250,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the objects to sort.
 
@@ -315,7 +296,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -326,7 +307,7 @@ Specifies the number of objects to get from the start of the sorted object array
 
 ```yaml
 Type: Int32
-Parameter Sets: (All)
+Parameter Sets: Default
 Aliases:
 
 Required: False
