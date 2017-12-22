@@ -40,7 +40,7 @@ A `Get-Command *` command gets all types of commands, including all of the non-W
 
 A **Get-Command** command that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
 To enable, disable, and configure automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248) in the Microsoft TechNet library.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md) in the Microsoft TechNet library.
 
 **Get-Command** gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
 

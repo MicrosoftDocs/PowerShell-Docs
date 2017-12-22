@@ -75,7 +75,7 @@ The modules that you import must be installed on the local computer or a remote 
 Starting in Windows PowerShell 3.0, installed modules are automatically imported to the session when you use any commands or providers in the module.
 However, you can still use the **Import-Module** command to import a module and you can enable and disable automatic module importing by using the $PSModuleAutoloadingPreference preference variable.
 For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
-For more information about the $PSModuleAutoloadingPreference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about the $PSModuleAutoloadingPreference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 A module is a package that contains members that can be used in Windows PowerShell.
 Members include cmdlets, providers, scripts, functions, variables, and other tools and files.
