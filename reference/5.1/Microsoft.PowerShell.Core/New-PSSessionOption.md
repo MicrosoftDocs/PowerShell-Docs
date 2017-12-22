@@ -35,7 +35,7 @@ Because all of the properties can be edited, you can use the resulting object as
 You can also save a session option object in the **$PSSessionOption** preference variable.
 The values of this variable establish new default values for the session options.
 They effective when no session options are set for the session and they take precedence over options set in the session configuration, but you can override them by specifying session options or a session option object in a cmdlet that creates a session.
-For more information about the **$PSSessionOption** preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 When you use a session option object in a cmdlet that creates a session, the session option values take precedence over default values for sessions set in the $PSSessionOption preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
@@ -161,7 +161,7 @@ When the $PSSessionOption preference variable occurs in the session, it establis
 
 To make the $PSSessionOption variable available in all sessions, add it to your Windows PowerShell session and to your Windows PowerShell profile.
 
-For more information about the $PSSessionOption preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
 ### Example 6: Fulfill the requirements for a remote session configuration
@@ -703,7 +703,7 @@ You cannot pipe input to this cmdlet.
 ### System.Management.Automation.Remoting.PSSessionOption
 
 ## NOTES
-* If the *SessionOption* parameter is not used in a command to create a **PSSession**, the session options are determined by the property values of the $PSSessionOption preference variable, if it is set. For more information about the $PSSessionOption variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+* If the *SessionOption* parameter is not used in a command to create a **PSSession**, the session options are determined by the property values of the $PSSessionOption preference variable, if it is set. For more information about the $PSSessionOption variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 * The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 
 ## RELATED LINKS

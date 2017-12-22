@@ -212,7 +212,7 @@ Use this parameter to specify the application name when you are not using the **
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
 If this preference variable is not defined, the default value is "WSMAN".
 This value is appropriate for most uses.
-For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on the remote computer.
@@ -313,7 +313,7 @@ If the specified session configuration does not exist on the remote computer, th
 
 The default value is the value of the **$PSSessionConfigurationName** preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
 Type: String
@@ -490,7 +490,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
