@@ -41,11 +41,12 @@ Along with Get-Counter and Export-Counter, this feature lets you collect, export
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> $Data = Import-Counter -Path ProcessorData.csv
+```powershell
+$Data = Import-Counter -Path ProcessorData.csv
 ```
 
-This command imports all of the counter data from the ProcessorData.csv file into the $Data variable.
+This command imports all counter data from the ProcessorData.csv file into the $Data variable.
+
 ### Example 2
 ```
 PS C:\> $i = Import-Counter -Path ProcessorData.blg -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
