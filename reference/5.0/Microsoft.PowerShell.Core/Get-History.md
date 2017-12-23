@@ -133,7 +133,7 @@ This cmdlet returns a history object for each history item that it gets.
 
 ## NOTES
 * The session history is a list of the commands entered during the session. The session history represents the run order, the status, and the start and end times of the command. As you enter each command, Windows PowerShell adds it to the history so that you can reuse it. For more information about the command history, see about_History.
-* Starting in Windows PowerShell 3.0, the default value of the $MaximumHistoryCount preference variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the $MaximumHistoryCount variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248) in the TechNet library.
+* Starting in Windows PowerShell 3.0, the default value of the $MaximumHistoryCount preference variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the $MaximumHistoryCount variable, see [about_Preference_Variables](About/about_Preference_Variables.md) in the TechNet library.
 
 ## RELATED LINKS
 
