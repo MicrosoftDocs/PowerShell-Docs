@@ -50,7 +50,9 @@ For an example of a certificate that would work for document encryption, see Exa
 
 ### Example 1: Create a certificate for encrypting content
 ```
-PS C:\> [Version]
+PS C:\> # Create .INF file for certreq
+
+PS C:\> {[Version]
 Signature = "$Windows NT$"
 
 [Strings]
@@ -71,8 +73,9 @@ ValidityPeriodUnits = "1000"
 
 [Extensions]
 %szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_DOCUMENT_ENCRYPTION%"
+} | Out-File -FilePath DocumentEncryption.inf
 
-After you have created your certificate file, run the following command to add the certificate file to the certificate store.Now you are ready to encrypt and decrypt content with the next two examples.
+# After you have created your certificate file, run the following command to add the certificate file to the certificate store.Now you are ready to encrypt and decrypt content with the next two examples.
 PS C:\> Certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
