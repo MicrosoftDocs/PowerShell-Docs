@@ -159,7 +159,7 @@ For example, you could create a file named `MyData.psd1` with the following cont
 
 ## Compiling a configuration with configuration data
 
-To compile a configuration for which you have defined configuration data, you pass the cofiguration data as the value of the **ConfigurationData** parameter.
+To compile a configuration for which you have defined configuration data, you pass the configuration data as the value of the **ConfigurationData** parameter.
 
 This will create a MOF file for each entry in the **AllNodes** array.
 Each MOF file will be named with the `NodeName` property of the corresponding array entry.
@@ -196,8 +196,8 @@ DSC provides three special variables that can be used in a configuration script:
 ## Using non-node data
 
 As we've seen in previous examples, the **ConfigurationData** hashtable can have one or more keys in addition to the required **AllNodes** key.
-In the examples in this topic, we have used only a single addiontal node, and named it `NonNodeData`. 
-However, you can define any number of addiontal keys, and name them anything you want.
+In the examples in this topic, we have used only a single additional node, and named it `NonNodeData`. 
+However, you can define any number of additional keys, and name them anything you want.
 
 For an example of using non-node data, see [Separating configuration and environment data](separatingEnvData.md).
 
