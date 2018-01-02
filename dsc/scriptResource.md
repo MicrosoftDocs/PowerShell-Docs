@@ -79,13 +79,13 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Version' = "$currentVersion" }
+            return @{ 'Result' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript
-            if( $state['Version'] -eq $using:version )
+            if( $state['Result'] -eq $using:version )
             {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
                 return $true
             }
             Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
