@@ -40,10 +40,10 @@ Under this license, users are limited to the "community support" outlined above,
 
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 
-## Compatibility with Windows PowerShell modules
+## Windows PowerShell Module Support
 
 Support for PowerShell Core does not extend to other product modules unless they explicitly support PowerShell Core.
-For example, using the `ActiveDirectory` that ships `as part of Windows Server is an unsupporgted scenario.
+For example, using the `ActiveDirectory` that ships as part of Windows Server is an unsupported scenario.
 
 That being said, many modules that do not explicitly support PowerShell Core happen to be compatible in many cases.
 By installing the [`WindowsPSModulePath`][] module,
