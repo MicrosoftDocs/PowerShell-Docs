@@ -77,7 +77,7 @@ order:
 |OPERATOR                  |REFERENCE|
 |--------------------------|---------|
 |`-band -bor -bxor`        |[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
-|`-and -or -xor`           |[about_comparison_operators](about_comparison_operators.md)|
+|`-and -or -xor`           |[about_Logical_Operators](about_logical_operators.md)|
 |`.` (dot-source)          |[about_Scopes](about_Scopes.md)|
 |`&` (call)                |[about_Operators](about_Operators.md)|
 |&#124; (pipeline operator)|[about_Operators](about_Operators.md)|
