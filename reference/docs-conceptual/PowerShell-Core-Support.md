@@ -33,6 +33,13 @@ Eventually, we expect PowerShell Core to fork into something resembling a "long-
 [Microsoft Modern Lifecycle Policy]: https://support.microsoft.com/en-us/help/447912/announcing-microsoft-modern-lifecycle-policy
 [PowerShell Core branch lifecycle]: TODO
 
+## Notes on licensing
+
+It's important to note that PowerShell Core can be *used* under the [MIT license][] by anyone regardless of whether they have a support agreement with Microsoft. 
+Under this license, users are limited to the "community support" outlined above, for which we make no guarantees of responsiveness or fixes.
+
+[MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+
 ## Compatibility with Windows PowerShell modules
 
 Support for PowerShell Core does not extend to other product modules unless they explicitly support PowerShell Core.
