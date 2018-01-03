@@ -59,23 +59,24 @@ syslog contents may be used.
 The format of the log entries uses the following template:
 
 ```
-TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID) [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
+TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID) 
+  [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
 ```
 
-| Field         | Description
-|---------------|-------------|
-| `TIMESTAMP`   | A date/time when the log entry was produced.
-| `MACHINENAME` | The name of the system where the log was produced.
-| `PID`         | The process id of the process that wrote the log entry.
-| `COMMITID`    | The git commit id or tag that was used to produce the build.
-| `TID`         | The thread id of the thread that wrote the log entry.
-| `CID`         | The hex channel identifier of the log entry.<br/>10 = Operational, 11 = Analytic
-| `EVENTID`     | The event identifier of the log entry.
-| `TASK`        | The task identifier for the event entry
-| `OPCODE`      | The opcode for the event entry
-| `LEVEL`       | The log level for the event entry
-| `MESSAGE`     | The message associated with the event entry
-|
+|Field        |Description                                             |
+|-------------|--------------------------------------------------------|
+|`TIMESTAMP`  |A date/time when the log entry was produced.            |
+|`MACHINENAME`|The name of the system where the log was produced.      |
+|`PID`        |The process id of the process that wrote the log entry. |
+|`COMMITID`   |The git commit id or tag used to produce the build.     |
+|`TID`        |The thread id of the thread that wrote the log entry.   |
+|`CID`        |The hex channel identifier of the log entry.            |
+|             |10 = Operational, 11 = Analytic                         |
+|`EVENTID`    |The event identifier of the log entry.                  |
+|`TASK`       |The task identifier for the event entry                 |
+|`OPCODE`     |The opcode for the event entry                          |
+|`LEVEL`      |The log level for the event entry                       |
+|`MESSAGE`    |The message associated with the event entry             |
 
 * NOTE: EVENTID, TASK, OPCODE, and LEVEL are the same values as used when
 logging to the windows event log.
@@ -168,12 +169,33 @@ table.
 Values marked with an asterick, such as `Operational*`, indicate the default 
 value when no value is provided in the file.
 
-| Property      | Values     | Description    |
-|--------------|-------------|---------------------------------------|
-| LogIdentity  | (string name)<br>powershell* | The name to use when logging.<br>By default, powershell is the identity. This value can be used to distinguish between two instances of a PowerShell installation, such as a release and beta version. This value is also used to redirect logging output to a separate file on Linux.<br>See the discussion of rsyslog above. |
-| LogChannels  | Operational*<br>Analytic     | The channels to enable.<br>Seperate the values with a comma when specifying more than one.
-| LogLevel     | Always<br>Critical<br>Error<br>Warning<br>Informational*<br>Verbose<br>Debug|Specify a single value. The value enables itself as well as all values above it in the list to the left |
-| LogKeywords  | Runspace<br>Pipeline<br>Protocol<br>Transport<br>Host<br>Cmdlets<br>Serializer<br>Session<br>ManagedPlugin | Keywords provide the ability to limit logging to specific components within PowerShell.<br>By default, all keywords are enabled and change this value is generaly only useful for very specialized trouble shooting. |
+|Property   |Values        |Description                                  |
+|-----------|--------------|---------------------------------------------|
+|LogIdentity|(string name) |The name to use when logging. By default,    |
+|           |powershell*   |powershell is the identity. This value can be|
+|           |              |used to distinguish between two instances of |
+|           |              |a PowerShell installation, such as a release |
+|           |              |and beta version. This value is also used to |
+|           |              |redirect log output to a separate file on    |
+|           |              |Linux. See the discussion of rsyslog above.  |
+|LogChannels|Operational*  |The channels to enable. Seperate the values  |
+|           |Analytic      |with a comma when specifying more than one.  |
+|LogLevel   |Always        |Specify a single value. The value enables    |
+|           |Critical      |itself as well as all values above it in the |
+|           |Error         |list to the left.                            |
+|           |Warning       |                                             |
+|           |Informational*|                                             |
+|           |Verbose       |                                             |
+|           |Debug         |                                             |
+|LogKeywords|Runspace      |Keywords provide the ability to limit logging|
+|           |Pipeline      |to specific components within PowerShell. By |
+|           |Protocol      |default, all keywords are enabled and change |
+|           |Transport     |this value is generaly only useful for very  |
+|           |Host          |specialized trouble shooting.                |
+|           |Cmdlets       |                                             |
+|           |Serializer    |                                             |
+|           |Session       |                                             |
+|           |ManagedPlugin |                                             |
 
 ## SEE ALSO
 - syslog and rsyslog.conf man pages.
