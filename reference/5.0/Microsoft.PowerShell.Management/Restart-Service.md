@@ -17,19 +17,22 @@ Stops and then starts one or more services.
 
 ### InputObject (Default)
 ```
-Restart-Service [-Force] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
- [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Restart-Service [-InputObject] <ServiceController[]>
+ [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 ```
-Restart-Service [-Force] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Restart-Service [-Name] <String[]>
+ [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 ```
-Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
+Restart-Service -DisplayName <String[]>
+ [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 

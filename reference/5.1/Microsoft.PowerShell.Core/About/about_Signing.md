@@ -103,7 +103,7 @@ from other sources. Before you sign any script, examine each command
 to verify that it is safe to run.
 
 For best practices about code signing, see "Code-Signing
-Best Practices" at http://go.microsoft.com/fwlink/?LinkId=119096.
+Best Practices" at http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/best_practices.doc.
 
 For more information about how to sign a script file, see
 Set-AuthenticodeSignature.

@@ -65,7 +65,7 @@ MyDscConfiguration
 
 ```
 
-In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuraton. The name defaults to "localhost".
+In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuration. The name defaults to "localhost".
 
 ## Compiling the configuration
 
