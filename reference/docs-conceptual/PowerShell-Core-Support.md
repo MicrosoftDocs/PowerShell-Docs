@@ -11,7 +11,6 @@ We offer no guarantee there that your issue will be addressed or resolved in a t
 If you have a problem that requires immediate attention,
 you should use the traditional, paid support options.
 
-
 ## Lifecycle of PowerShell Core
 
 PowerShell Core is adopting the [Microsoft Modern Lifecycle Policy][modern].
