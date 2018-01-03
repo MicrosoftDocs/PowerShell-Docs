@@ -34,7 +34,7 @@ Eventually, we expect PowerShell Core will adopt the "long-term servicing" appro
 PowerShell Core is released under the [MIT license][].
 Under this license, and in the absence of a paid support agreement,
 users are limited to [community support][].
-With community support, Microsoft makes no guaranteese of responsiveness or fixes.
+With community support, Microsoft makes no guarantees of responsiveness or fixes.
 
 ## Windows PowerShell Module
 
