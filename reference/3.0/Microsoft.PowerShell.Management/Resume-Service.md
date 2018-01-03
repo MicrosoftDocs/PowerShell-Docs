@@ -15,20 +15,23 @@ Resumes one or more suspended (paused) services.
 
 ### InputObject (Default)
 ```
-Resume-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+Resume-Service [-InputObject] <ServiceController[]>
+ [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 ```
-Resume-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Resume-Service [-Name] <String[]>
+ [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 ```
-Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Resume-Service -DisplayName <String[]>
+ [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,7 +123,7 @@ Parameter Sets: InputObject
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -138,7 +141,7 @@ Parameter Sets: Default
 Aliases: ServiceName
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
