@@ -66,7 +66,7 @@ TypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
-...
+
 PS C:\> $hash = convertfrom-stringdata -stringdata $p
 PS C:\> $hash | get-member
 TypeName: System.Collections.Hashtable
@@ -74,7 +74,7 @@ TypeName: System.Collections.Hashtable
 Name              MemberType            Definition
 ----              ----------            ----------
 Add               Method                System.Void Add(Object key, Object
-...
+
 ```
 
 These commands demonstrate that ConvertFrom-StringData actually converts a here-string to a hash table.
@@ -246,9 +246,8 @@ ConvertFrom-StringData returns a hash table that it creates from the key/value p
 * A here-string is a string consisting of one or more lines within which quotation marks are interpreted literally. For more information, see about_Quoting_Rules.
 
   ConvertFrom-StringData can be useful in scripts that display user messages in multiple spoken languages.
-You can use the dictionary-style hash tables to isolate text strings from code, such as in resource files, and to format the text strings for use in translation tools.
+  You can use the dictionary-style hash tables to isolate text strings from code, such as in resource files, and to format the text strings for use in translation tools.
 
-*
 ## RELATED LINKS
 
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
