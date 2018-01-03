@@ -64,6 +64,6 @@ Add-WindowsPSModulePath
 [community support]: https://github.com/powershell/powershell/issues
 [assisted support]: https://support.microsoft.com/en-us/assistedsupportproducts
 [modern]: https://support.microsoft.com/en-us/help/447912/announcing-microsoft-modern-lifecycle-policy
-[lifecycle-chart]: TODO
+[lifecycle-chart]: ./images/modern-lifecycle.png
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
