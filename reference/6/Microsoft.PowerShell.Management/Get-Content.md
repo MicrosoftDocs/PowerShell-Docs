@@ -374,7 +374,7 @@ This cmdlet returns strings or bytes.
 The output type depends upon the content that it gets.
 
 ## NOTES
-* This cmdlet is designed to work with the data exposed by any provider. To get the providers in your session, use the Get-PSProvider cmdlet. For more information, see about_Providers(http://go.microsoft.com/fwlink/?LinkID=113250).
+* This cmdlet is designed to work with the data exposed by any provider. To get the providers in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 *
 

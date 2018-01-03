@@ -233,7 +233,7 @@ You can pipe a drive object, such as one from the Get-PSDrive cmdlet, to the thi
 This cmdlet does not return any output.
 
 ## NOTES
-* **Remove-PSDrive** is designed to work with the data exposed by any Windows PowerShell provider. To list the providers in your session, use the Get-PSProvider cmdlet. For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
+* **Remove-PSDrive** is designed to work with the data exposed by any Windows PowerShell provider. To list the providers in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 *
 

@@ -507,7 +507,7 @@ To see the custom cmdlet help for a provider path, go to the provider path locat
 You can also find custom cmdlet help online in the provider help section of the help topics.
 For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate path (http://go.microsoft.com/fwlink/?LinkID=158676).
 
-For more information about Windows PowerShell providers, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250) in the TechNet library.
+For more information about Windows PowerShell providers, see [about_Providers](About/about_Providers.md).
 
 ```yaml
 Type: String
