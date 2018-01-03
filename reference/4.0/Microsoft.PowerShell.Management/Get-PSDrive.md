@@ -306,7 +306,7 @@ You cannot pipe objects to **Get-PSDrive**.
 **Get-PSDrive** returns objects that represent the drives in the session.
 
 ## NOTES
-* The **Get-PSDrive** cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the Get-PSProvider cmdlet. For more information, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
+* The **Get-PSDrive** cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 * Mapped network drives that are created by using the **Persist** parameter of the New-PSDrive cmdlet are specific to a user account. Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credentials of another user are not visible in sessions that are started without explicit credentials or with  the credentials of the current user.
 
 ## RELATED LINKS
