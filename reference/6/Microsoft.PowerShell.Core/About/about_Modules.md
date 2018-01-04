@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-29
+ms.date:  2018-01-04
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -486,22 +486,20 @@ NOTE: Remote sessions, including sessions that are started by using the
 commands are packaged in snap-ins.
 
 The following modules (or snap-ins) are installed with PowerShell.
+* CimCmdlets
 * Microsoft.PowerShell.Archive
 * Microsoft.PowerShell.Core
 * Microsoft.PowerShell.Diagnostics
 * Microsoft.PowerShell.Host
 * Microsoft.PowerShell.Management
-* Microsoft.PowerShell.ODataUtils
 * Microsoft.PowerShell.Security
 * Microsoft.PowerShell.Utility
 * Microsoft.WSMan.Management
-* OneGet
+* PackageManagement
 * PowerShellGet
 * PSDesiredStateConfiguration
-* PSScheduledJob
-* PSWorkflow
-* PSWorkflowUtility
-* ISE
+* PSDiagnostics
+* PSReadline
 
 ## See Also
 

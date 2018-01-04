@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -142,8 +142,3 @@ always a snap-in.
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
 [about_Language_Keywords](about_Language_Keywords.md)
-
-[about_PSSnapins](about_PSSnapins.md)
-
-Get-PSSnapin
-
