@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,15 +7,13 @@ title:  about_Functions_OutputTypeAttribute
 ---
 
 # About Functions OutputTypeAttribute
-## about_Functions_OutputTypeAttribute
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes an attribute that reports the type of object that the function
 returns.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The OutputType attribute lists the .NET types of objects that the functions
 returns. You can use its optional ParameterSetName parameter to list different
@@ -32,25 +30,27 @@ The OutputType attribute value is only a documentation note. It is not derived
 from the function code or compared to the actual function output. As such, the
 value might be inaccurate.
 
-# SYNTAX
+## SYNTAX
 
 The OutputType attribute of functions has the following syntax:
 
-```powershell
+```
 [OutputType([<TypeLiteral>], ParameterSetName="<Name>")]
 [OutputType("<TypeNameString>", ParameterSetName="<Name>")]
 ```
+
 The ParameterSetName parameter is optional.
 
 You can list multiple types in the OutputType attribute.
 
-```powershell
+```
 [OutputType([<Type1>],[<Type2>],[<Type3>])]
 ```
+
 You can use the ParameterSetName parameter to indicate that different
 parameter sets return different types.
 
-```powershell
+```
 [OutputType([<Type1>], ParameterSetName="<Set1>","<Set2>")]
 [OutputType([<Type2>], ParameterSetName="<Set3>")]
 ```
@@ -80,9 +80,11 @@ function AdvancedFunction1
   [OutputType([<Type>])]
   Param (
     [parameter(Mandatory=$true)]
-    [String[]] $Parameter1
+    [String[]]
+    $Parameter1
   )
-  
+
+
   <function body>
 }
 
@@ -92,15 +94,16 @@ function AdvancedFunction2
   [OutputType([<Type>])]
   Param (
     [parameter(Mandatory=$true)]
-    [String[]] $Parameter1
+    [String[]]
+    $Parameter1
   )
+
 
   <function body>
 }
 ```
 
 # EXAMPLES
-
 
 The following function uses the OutputType attribute to indicate that it returns
 a string value.
@@ -111,13 +114,13 @@ function Send-Greeting
   [OutputType([String])]
   Param ($Name)
 
-  Hello, $Name
+  "Hello, $Name"
 }
 ```
 
 To see the resulting output type property, use the Get-Command cmdlet.
 
-```bash
+```
 PS C:> (Get-Command Send-Greeting).OutputType
 
 Name                                               Type
@@ -139,11 +142,14 @@ function Get-User
 
   Param (
     [parameter(Mandatory=$true, ParameterSetName="ID")]
-    [Int[]] $UserID,
+    [Int[]]
+    $UserID,
 
     [parameter(Mandatory=$true, ParameterSetName="Name")]
-    [String[]] $UserName
+    [String[]]
+    $UserName
   )
+
 
   <function body>
 }
@@ -160,19 +166,18 @@ that it returns a System.DateTime object.
 function Get-Time
 {
   [OutputType([DateTime])]
-  Param
-  (
+  Param (
     [parameter(Mandatory=$true)]
-    [Datetime] $DateTime
+    [Datetime]$DateTime
   )
-  
+
   $DateTime.ToShortTimeString()
 }
 ```
 
 The Get-Type method confirms that the function returns a string.
 
-```bash
+```
 PS C:> (Get-Time -DateTime (Get-Date)).Gettype().FullName
 System.String
 ```
@@ -180,7 +185,7 @@ System.String
 However, the OutputType property, which gets its value from the OutputType
 attribute, reports that the function returns a DateTime object.
 
-```bash
+```
 PS C:> (Get-Command Get-Time).OutputType
 
 Name                                      Type
@@ -188,7 +193,7 @@ Name                                      Type
 System.DateTime                           System.DateTime
 ```
 
-# NOTES
+## NOTES
 
 The value of the OutputType property of a FunctionInfo object is an array of
 System.Management.Automation.PSTypeName objects, each of which have Name and
@@ -216,4 +221,3 @@ of an object.
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-
