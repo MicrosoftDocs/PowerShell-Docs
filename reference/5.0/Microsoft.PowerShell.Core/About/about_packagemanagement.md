@@ -104,7 +104,7 @@ For more information about the PackageManagement open development project,
 including how to create a PackageManagement package provider, see the
 PackageManagement project on GitHub at https://oneget.org.
 
-# SEE ALSO
+## SEE ALSO
 
 [Get-PackageProvider](../../PackageManagement/Get-PackageProvider.md)
 

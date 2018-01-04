@@ -14,7 +14,7 @@ Describes how to work with command parameters in PowerShell.
 
 ## LONG DESCRIPTION
 
-Most Windows PowerShell commands, such as cmdlets, functions, and scripts,
+Most PowerShell commands, such as cmdlets, functions, and scripts,
 rely on parameters to allow users to select options or provide input. The
 parameters follow the command name and have the following form:
 
