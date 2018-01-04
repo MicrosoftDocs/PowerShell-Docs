@@ -70,8 +70,8 @@ Get-Help <Reserved_Word>
 ## SEE ALSO
 
 - [about_Command_Syntax](about_Command_Syntax.md)
-- [about_Special_Characters](about_Special_Characters.md)
 - [about_Language_Keywords](about_Language_Keywords.md)
 - [about_Parsing](about_Parsing.md)
 - [about_Quoting_Rules](about_Quoting_Rules.md)
 - [about_Script_Blocks](about_Script_Blocks.md)
+- [about_Special_Characters](about_Special_Characters.md)
