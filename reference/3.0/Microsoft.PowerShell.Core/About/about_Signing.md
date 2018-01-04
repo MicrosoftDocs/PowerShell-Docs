@@ -24,7 +24,7 @@ while the execution policy is RemoteSigned, and how to sign scripts for your
 own use.
 
 For more information about PowerShell execution policies, see
-[about_Execution_Policy](about_Execution_Policy.md).
+[about_Execution_Policies](about_Execution_Policies.md).
 
 ## TO PERMIT SIGNED SCRIPTS TO RUN
 

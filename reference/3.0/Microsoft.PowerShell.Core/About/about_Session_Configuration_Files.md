@@ -397,10 +397,6 @@ working with an empty session.
 
 [Set-PSSessionConfiguration](../Set-PSSessionConfiguration.md)
 
-[Test-PSSessionConfigurationFile](T../est-PSSessionConfigurationFile.md)
+[Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
-
-[Get-PSSessionCapability](../Get-PSSessionCapability.md)
-
-[New-PSRoleCapabilityFile](../New-PSRoleCapabilityFile.md)
