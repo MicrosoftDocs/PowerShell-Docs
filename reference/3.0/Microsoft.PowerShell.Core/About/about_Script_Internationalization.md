@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,63 +10,63 @@ title:  about_Script_Internationalization
 
 ## Short Description
 
-Describes the script internationalization features that make it easy for scripts to display
-messages and instructions to users in their user interface (UI) language.
+Describes the script internationalization features that make it easy for
+scripts to display messages and instructions to users in their user interface
+(UI) language.
 
 ## Long Description
 
 The Windows PowerShell script internationalization features allow you to
-better serve users throughout the world by displaying Help and user
-messages for scripts and functions in the user's UI language.
+better serve users throughout the world by displaying Help and user messages
+for scripts and functions in the user's UI language.
 
-The script internationalization features query the UI culture of the
-operating system during execution, import the appropriate
-translated text strings, and display them to the user. The Data section
-lets you store text strings separate from code so they are easily
-identified and extracted. A new cmdlet, `ConvertFrom-StringData`,
-converts text strings into dictionary-like hash tables to facilitate
-translation.
+The script internationalization features query the UI culture of the operating
+system during execution, import the appropriate translated text strings, and
+display them to the user. The Data section lets you store text strings
+separate from code so they are easily identified and extracted. A new cmdlet,
+`ConvertFrom-StringData`, converts text strings into dictionary-like hash
+tables to facilitate translation.
 
-To support international Help text, Windows PowerShell includes the
-following features:
+To support international Help text, Windows PowerShell includes the following
+features:
 
-* A Data section that separates text strings from code instructions. For
-more information about the Data section, see [about_Data_Sections](about_Data_Sections.md).
+* A Data section that separates text strings from code instructions. For more
+  information about the Data section, see
+  [aout_Data_Sections](about_Data_Sections.md).
 
-* New automatic variables, $PSCulture and $PSUICulture. $PSCulture stores
-the name of the UI language used on the system for elements such as
-the date, time, and currency. The $PSUICulture variable stores the
-name of the UI language used on the system for user interface elements
-such as menus and text strings.
+* New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
+  name of the UI language used on the system for elements such as the date,
+  time, and currency. The $PSUICulture variable stores the name of the UI
+  language used on the system for user interface elements such as menus and text
+  strings.
 
 * A cmdlet, `ConvertFrom-StringData`, that converts text strings into
-dictionary-like hash tables to facilitate translation. For more
-information, see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
+  dictionary-like hash tables to facilitate translation. For more information,
+  see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
 
-* A new file type, .psd1, that stores translated text strings. The .psd1
-files are stored in language-specific subdirectories of the script
-directory.
+* A new file type, .psd1, that stores translated text strings. The .psd1 files
+  are stored in language-specific subdirectories of the script directory.
 
-* A cmdlet, `Import-LocalizedData`, that imports translated text strings
-for a specified language into a script at runtime. This cmdlet recognizes
-and imports strings in any Windows-supported language. For more
-information see [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).
+* A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
+  specified language into a script at runtime. This cmdlet recognizes and
+  imports strings in any Windows-supported language. For more information see
+  [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).
 
 ### The Data Section: Storing Default Strings
 
-Use a Data section in the script to store the text strings in the default language.
-Arrange the strings in key/value pairs in a here-string. Each key/value pair must
-be on a separate line. If you include comments, the comments must be on separate
-lines.
+Use a Data section in the script to store the text strings in the default
+language. Arrange the strings in key/value pairs in a here-string. Each
+key/value pair must be on a separate line. If you include comments, the
+comments must be on separate lines.
 
-The `ConvertFrom-StringData` cmdlet converts the key/value pairs in the here-string
-into a dictionary-like hash table that is stored in the value of the Data section
-variable.
+The `ConvertFrom-StringData` cmdlet converts the key/value pairs in the
+here-string into a dictionary-like hash table that is stored in the value of
+the Data section variable.
 
 In the following example, the Data section of the World.ps1 script includes
 the English-United States (en-US) set of prompt messages for a script. The
-`ConvertFrom-StringData` cmdlet converts the strings into a hash table and stores
-them in the $msgtable variable.
+`ConvertFrom-StringData` cmdlet converts the strings into a hash table and
+stores them in the $msgtable variable.
 
 ```powershell
 $msgTable = Data {
@@ -79,21 +79,22 @@ $msgTable = Data {
 }
 ```
 
-For more information about here-strings, see [about_Quoting_Rules](about_Quoting_Rules.md).
+For more information about here-strings, see
+[about_Quoting_Rules](about_Quoting_Rules.md).
 
 ### PSD1 Files: Storing Translated Strings
 
-Save the script messages for each UI language in separate text files with
-the same name as the script and the .psd1 file name extension. Store the files
-in subdirectories of the script directory with names of cultures in the following
+Save the script messages for each UI language in separate text files with the
+same name as the script and the .psd1 file name extension. Store the files in
+subdirectories of the script directory with names of cultures in the following
 format:
 
 \<language\>-\<region\>
 
 Examples: de-DE, ar-SA, and zh-Hans
 
-For example, if the World.ps1 script is stored in the C:\Scripts directory, you
-would create a file directory structure that resembles the following:
+For example, if the World.ps1 script is stored in the C:\Scripts directory,
+you would create a file directory structure that resembles the following:
 
 ```
 C:\Scripts
@@ -104,8 +105,8 @@ C:\Scripts\zh-CN\World.psd1
 ...
 ```
 
-The World.psd1 file in the de-DE subdirectory of the script directory
-might include the following statement:
+The World.psd1 file in the de-DE subdirectory of the script directory might
+include the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
@@ -115,8 +116,8 @@ promptMsg = Please enter your user name (in German).
 '@
 ```
 
-Similarly, the World.psd1 file in the ar-SA subdirectory of the script directory
-might includes the following statement:
+Similarly, the World.psd1 file in the ar-SA subdirectory of the script
+directory might includes the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
@@ -128,70 +129,63 @@ promptMsg = Please enter your user name (in Arabic).
 
 ### Import-LocalizedData: Dynamic Retrieval of Translated Strings
 
-To retrieve the strings in the UI language of the current user, use
-the `Import-LocalizedData` cmdlet.
+To retrieve the strings in the UI language of the current user, use the
+`Import-LocalizedData` cmdlet.
 
-`Import-LocalizedData` finds the value of the $PSUICulture automatic
-variable and imports the content of the \<script-name\>.psd1 files in
-the subdirectory that matches the $PSUICulture value. Then, it saves
-the imported content in the variable specified by the value of the
-**BindingVariable** parameter.
+`Import-LocalizedData` finds the value of the \$PSUICulture automatic variable
+and imports the content of the \<script-name\>.psd1 files in the subdirectory
+that matches the \$PSUICulture value. Then, it saves the imported content in
+the variable specified by the value of the **BindingVariable** parameter.
 
 ```powershell
 Import-LocalizedData -BindingVariable msgTable
 ```
 
 For example, if the `Import-LocalizedData` command appears in the
-C:\Scripts\World.ps1 script and the value of $PSUICulture is
-"ar-SA", `Import-LocalizedData` finds the following file:
+C:\\Scripts\\World.ps1 script and the value of $PSUICulture is "ar-SA",
+`Import-LocalizedData` finds the following file:
 
-C:\Scripts\ar-SA\World.psd1
+C:\\Scripts\\ar-SA\\World.psd1
 
-Then, it imports the Arabic text strings from the file into
-the $msgTable variable, replacing any default strings that might
-be defined in the Data section of the World.ps1 script.
+Then, it imports the Arabic text strings from the file into the $msgTable
+variable, replacing any default strings that might be defined in the Data
+section of the World.ps1 script.
 
-As a result, when the script uses the $msgTable variable
-to display user messages, the messages are displayed in
-Arabic.
+As a result, when the script uses the $msgTable variable to display user
+messages, the messages are displayed in Arabic.
 
-For example, the following script displays the "Please enter your user
-name" message in Arabic:
+For example, the following script displays the "Please enter your user name"
+message in Arabic:
 
 ```powershell
 if (!($username)) { $msgTable.promptMsg }
 ```
 
-If `Import-LocalizedData` cannot find a .psd1 file that matches the
-value of $PSUIculture, the value of $msgTable is not replaced,
-and the call to $msgTable.promptMsg displays the fallback en-US
-strings.
+If `Import-LocalizedData` cannot find a .psd1 file that matches the value of
+\$PSUIculture, the value of \$msgTable is not replaced, and the call to
+\$msgTable.promptMsg displays the fallback en-US strings.
 
 ## Examples
 
-This example shows how the script internationalization features
-are used in a script to display a day of the week to users
-in the language that is set on the computer.
+This example shows how the script internationalization features are used in a
+script to display a day of the week to users in the language that is set on
+the computer.
 
-The following is a complete listing of the Sample1.ps1 script
-file.
+The following is a complete listing of the Sample1.ps1 script file.
 
-The script begins with a Data section named Day ($Day) that
-contains a `ConvertFrom-StringData` command. The expression
-submitted to `ConvertFrom-StringData` is a here-string that
-contains the day names in the default UI culture, en-US, in
-key/value pairs. The `ConvertFrom-StringData` cmdlet converts
-the key/value pairs in the here-string into a hash table and
+The script begins with a Data section named Day ($Day) that contains a
+`ConvertFrom-StringData` command. The expression submitted to
+`ConvertFrom-StringData` is a here-string that contains the day names in the
+default UI culture, en-US, in key/value pairs. The `ConvertFrom-StringData`
+cmdlet converts the key/value pairs in the here-string into a hash table and
 then saves it in the value of the $Day variable.
 
-The `Import-LocalizedData` command imports the contents of the
-.psd1 file in the directory that matches the value of the
-$PSUICulture automatic variable and then saves it in the $Day
-variable, replacing the values of $Day that are defined in the
-Data section.
+The `Import-LocalizedData` command imports the contents of the .psd1 file in
+the directory that matches the value of the $PSUICulture automatic variable
+and then saves it in the $Day variable, replacing the values of $Day that are
+defined in the Data section.
 
-The remaining commands load the strings into an array and display
-them.
+The remaining commands load the strings into an array and display them.
 
 ```powershell
 $Day = Data {
@@ -239,10 +233,10 @@ ConvertFrom-StringData @'
 '@
 ```
 
-As a result, when you run Sample.ps1 on a system on which the value
-of $PSUICulture is de-DE, the output of the script is:
+As a result, when you run Sample.ps1 on a system on which the value of
+\$PSUICulture is de-DE, the output of the script is:
 
-```
+```output
 Today is Friday (in German)
 ```
 
@@ -254,4 +248,3 @@ Today is Friday (in German)
 * [about_Quoting_Rules](about_Quoting_Rules.md)
 * [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 * [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
-
