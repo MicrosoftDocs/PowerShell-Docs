@@ -47,8 +47,6 @@ Script [string] #ResourceName
 
 ## Example 1
 ```powershell
-$version = Get-Content 'version.txt'
-
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
