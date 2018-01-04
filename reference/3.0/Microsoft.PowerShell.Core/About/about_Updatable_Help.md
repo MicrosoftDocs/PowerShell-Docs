@@ -369,8 +369,6 @@ Register-ScheduledJob -Name UpdateHelpJob -ScriptBlock {Update-Help} `
 -Trigger (New-JobTrigger -Weekly -DaysOfWeek Friday -At "5:00 AM")
 ```
 
-For more information about scheduled jobs, see [about_Scheduled_Jobs](about_Scheduled_Jobs.md).
-
 ## HOW TO USE ONLINE HELP
 
 If you cannot or choose not to update the help files on your local computer,
