@@ -7,19 +7,12 @@ title:  about_DSCLogResource
 ---
 
 # about_DSCLogResource
-```  
-TOPIC  
-    about_DSCLogResource  
-  
-SHORT DESCRIPTION  
-    Provides a brief introduction to the Windows   
-    PowerShell Desired State Configuration (DSC) Log Resource.  
-  
-LONG DESCRIPTION  
-  
-  ABOUT THE DSC LOG RESOURCE  
-  
-  HOW TO USE THE DSC LOG RESOURCE  
-  
-```
 
+## SHORT DESCRIPTION
+
+Provides a brief introduction to the PowerShell Desired State Configuration
+(DSC) Log Resource. LONG DESCRIPTION
+
+## LONG DESCRIPTION
+
+## HOW TO USE THE DSC LOG RESOURCE
