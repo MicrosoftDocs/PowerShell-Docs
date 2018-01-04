@@ -303,9 +303,7 @@ sites:
 
 [about_Debuggers](about_Debuggers.md)
 
-[about_Desired_State_Configuration](about_Desired_State_Configuration.md)
-
-[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+[about_Desired_State_Configuration](about_desiredstateconfiguration.md)
 
 [about_Updatable_Help](about_Updatable_Help.md)
 

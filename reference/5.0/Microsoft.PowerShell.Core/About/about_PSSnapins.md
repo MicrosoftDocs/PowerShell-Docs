@@ -199,7 +199,7 @@ information, see [about_EventLogs](about_EventLogs.md).
 
 ## SEE ALSO
 
-[Add-PsSnapin](../Add-PsSnapin.md.md)
+[Add-PsSnapin](../Add-PsSnapin.md)
 
 [Get-PsSnapin](../Get-PsSnapin.md)
 
