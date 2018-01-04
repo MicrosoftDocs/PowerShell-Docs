@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -145,5 +145,4 @@ always a snap-in.
 
 [about_PSSnapins](about_PSSnapins.md)
 
-Get-PSSnapin
-
+[Get-PSSnapin](../Get-PSSnapin.md)
