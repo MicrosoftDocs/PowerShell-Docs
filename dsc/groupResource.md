@@ -96,10 +96,9 @@ Configuration SecureTigerTeamSrouce
   Group TigerTeamAdmins
     {
        GroupName        = 'TigerTeamAdmins'   
-       Ensure           = 'Absent'             
-       MembersToInclude = "Contoso\JerryG"
+       Ensure           = 'Present'             
+       MembersToExclude = 'Contoso\JerryG'
     }
   }
 }
 ```
-
