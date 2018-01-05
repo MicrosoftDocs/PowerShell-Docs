@@ -7,6 +7,17 @@ param(
 $global:ProgressPreference = 'SilentlyContinue'
 if($ShowProgress){$ProgressPreference = 'Continue'}
 
+# Pandoc source URL
+$panDocVersion = "2.0.6"
+$pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows.zip"
+
+$pandocDestinationPath = New-Item (Join-Path ([System.IO.Path]::GetTempPath()) "PanDoc") -ItemType Directory -Force
+$pandocZipPath = Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows.zip"
+Invoke-WebRequest -Uri $pandocSourceURL -OutFile $pandocZipPath
+
+Expand-Archive -Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows.zip") -DestinationPath $pandocDestinationPath -Force
+$pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion") "pandoc.exe"
+
 # Find the reference folder path w.r.t the script
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 
@@ -14,7 +25,7 @@ $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 $allErrors = @()
 
 # Go through all the directories in the reference folder
-Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping' | ForEach-Object -Process {
+Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 'bread-pscore' | ForEach-Object -Process {
     $Version = $_.Name
     $VersionFolder = $_.FullName
     # For each of the directories, go through each module folder
@@ -25,6 +36,31 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping' |
         $LandingPage = Join-Path $ModulePath "$ModuleName.md"
         $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
         $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
+
+        # Process the about topics if any
+        $AboutFolder = Join-Path $ModulePath "About"
+
+        if(Test-Path $AboutFolder)
+        {
+            Get-ChildItem "$aboutfolder/about_*.md" | ForEach-Object {
+                $aboutFileFullName = $_.FullName
+                $aboutFileOutputName = "$($_.BaseName).help.txt"
+                $aboutFileOutputFullName = Join-Path $MamlOutputFolder $aboutFileOutputName
+
+                $pandocArgs = @(
+                    "--from=markdown",
+                    "--to=plain+multiline_tables+inline_code_attributes",
+                    "--columns=75",
+                    "--output=$aboutFileOutputFullName",
+                    "--ascii",
+                    $aboutFileFullName,
+                    "--quiet"
+                )
+
+
+                & $pandocExePath $pandocArgs
+            }
+        }
 
         try {
             # For each module, create a single maml help file
