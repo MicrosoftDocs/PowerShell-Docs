@@ -129,7 +129,7 @@ block.
 ### USING MULTIPLE CATCH STATEMENTS
 
 A Try statement can have any number of Catch blocks. For example, the
-following script has a Try block that downloads MyFile.doc, and it contains
+following script has a Try block that downloads MyDoc.doc, and it contains
 two Catch blocks:
 
 ```powershell

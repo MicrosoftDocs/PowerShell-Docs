@@ -61,7 +61,7 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
-MyDscConfiguration
+MyDscConfiguration -ComputerName <MyComputer>
 
 ```
 
