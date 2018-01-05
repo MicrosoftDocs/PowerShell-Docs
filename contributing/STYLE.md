@@ -125,6 +125,31 @@ There are special rules for linking to reference topics from conceptual topics.
 
 \[TO DO\] - document special rules
 
+## Markdown extensions supported by Open Publishing
+The following sections describe supported extensions in Open Publishing.
+
+### Note, warning, tip, important
+Use specific syntax inside a block quote to indicate that the content is a type of note.
+
+```Markdown
+> [!NOTE]
+> This is a note.
+
+> [!WARNING]
+> This is a warning.
+
+> [!TIP]
+> This is a tip.
+
+> [!IMPORTANT]
+> This is important.
+
+```
+
+And it will be rendered like this:
+
+![alert boxes](./images/alert-boxes.png)
+
 ## Next steps
 
 See [Formatting code blocks](FORMATTING-CODE.md).
