@@ -446,11 +446,8 @@ Get-Command <cmdlet-name> | Format-List -Property verb,noun,pssnapin,module
 For example, to find the source of the `Get-Date` cmdlet, type:
 
 ```powershell
-Get-Command Get-Date | Format-List -Property verb,noun,pssnapin,module
+Get-Command Get-Date | Format-List -Property verb,noun,module
 ```
-
-For more information about PowerShell snap-ins, see
-[about_PSSnapins](about_PSSnapins.md).
 
 ## Module-related Warnings and Errors
 
@@ -508,8 +505,6 @@ The following modules (or snap-ins) are installed with PowerShell.
 about_DesiredStateConfiguration
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_PSSnapins](about_PSSnapins.md)
 
 [Get-Command](../Get-Command.md)
 

@@ -27,8 +27,7 @@ the following methods:
 
 All the methods and properties of the `PSCmdlet` class are available to
 advanced functions. For more information about these methods and properties,
-see `System.Management.Automation.PSCmdlet` in the MSDN (Microsoft Developer
-Network) library at http://go.microsoft.com/fwlink/?LinkId=142139.
+see [`System.Management.Automation.PSCmdlet`](http://go.microsoft.com/fwlink/?LinkId=142139) in the MSDN library.
 
 ### Input Processing Methods
 

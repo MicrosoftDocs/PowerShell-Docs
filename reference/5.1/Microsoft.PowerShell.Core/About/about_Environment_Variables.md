@@ -244,11 +244,11 @@ The environment variables that store preferences include:
   The default value of $Env:PSModulePath is:
 
   ```
-  $home\Documents\WindowsPowerShell\Modules; $pshome\Modules
+  $HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules
   ```
 
-Windows PowerShell sets the value of "\$pshome\\Modules" in the registry. It
-sets the value of "\$home\\Documents\\WindowsPowerShell\\Modules" each time you
+Windows PowerShell sets the value of "\$PSHOME\\Modules" in the registry. It
+sets the value of "\$HOME\\Documents\\WindowsPowerShell\\Modules" each time you
 start Windows PowerShell.
 
 In addition, setup programs that install modules in other directories, such as
@@ -294,7 +294,7 @@ $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
 ```
 
 For more information about the methods of the System.Environment class, see
-[Environment Methods](http://go.microsoft.com/fwlink/?LinkId=242783) in
+[Environment Methods](https://go.microsoft.com/fwlink/?LinkId=242783) in
 MSDN.
 
 You can add also add a command that changes the value to your profile or use
