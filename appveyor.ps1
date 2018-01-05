@@ -57,7 +57,6 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
                     "--quiet"
                 )
 
-
                 & $pandocExePath $pandocArgs
             }
         }
