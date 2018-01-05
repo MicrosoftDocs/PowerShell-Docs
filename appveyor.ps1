@@ -52,7 +52,6 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
                     "--to=plain+multiline_tables+inline_code_attributes",
                     "--columns=75",
                     "--output=$aboutFileOutputFullName",
-                    "--ascii",
                     $aboutFileFullName,
                     "--quiet"
                 )
