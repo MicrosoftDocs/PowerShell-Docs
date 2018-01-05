@@ -81,15 +81,15 @@ After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add th
 Add-WindowsPSModulePath
 ```
 
-[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
-[enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
-[assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
+[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
+[enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
+[assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [community support]: https://github.com/powershell/powershell/issues
 [Microsoft Community]: https://answers.microsoft.com/
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[assisted support]: https://support.microsoft.com/en-us/assistedsupportproducts
-[modern]: https://support.microsoft.com/en-us/help/30881/modern-lifecycle-policy
+[assisted support]: https://support.microsoft.com/assistedsupportproducts
+[modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
-[semi-annual]: https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview
+[semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
