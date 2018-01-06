@@ -37,6 +37,11 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
         $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
         $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
 
+        if(-not (Test-Path $MamlOutputFolder))
+        {
+            New-Item $MamlOutputFolder -ItemType Directory -Force > $null
+        }
+
         # Process the about topics if any
         $AboutFolder = Join-Path $ModulePath "About"
 
