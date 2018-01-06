@@ -41,7 +41,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
         {
             New-Item $MamlOutputFolder -ItemType Directory -Force > $null
         }
-
+        
         # Process the about topics if any
         $AboutFolder = Join-Path $ModulePath "About"
 
