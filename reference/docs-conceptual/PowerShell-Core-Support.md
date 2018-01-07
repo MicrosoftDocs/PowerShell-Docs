@@ -27,6 +27,8 @@ you would be expected to update to PowerShell Core 6.1 by January 1st, 2019 to m
 
 ![PowerShell Core branch lifecycle][lifecycle-chart]
 
+The Modern Lifecycle Policy also requires that Microsft give customers 12 months notice before discontinuing support for a product (i.e. PowerShell Core).
+
 Eventually, we expect PowerShell Core will adopt the "long-term servicing" approach where we would require only servicing and security updates to stay in support on a specific branch/version of 6.x.
 
 ## Supported platforms
@@ -81,9 +83,9 @@ After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add th
 Add-WindowsPSModulePath
 ```
 
-[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
-[enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
-[assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
+[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
+[assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [community support]: https://github.com/powershell/powershell/issues
 [Microsoft Community]: https://answers.microsoft.com/
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
