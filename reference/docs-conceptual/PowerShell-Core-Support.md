@@ -27,7 +27,7 @@ you would be expected to update to PowerShell Core 6.1 by January 1st, 2019 to m
 
 ![PowerShell Core branch lifecycle][lifecycle-chart]
 
-The Modern Lifecycle Policy also requires that Microsft give customers 12 months notice before discontinuing support for a product (i.e. PowerShell Core).
+The Modern Lifecycle Policy also requires that Microsoft give customers 12 months notice before discontinuing support for a product (i.e. PowerShell Core).
 
 Eventually, we expect PowerShell Core will adopt the "long-term servicing" approach where we would require only servicing and security updates to stay in support on a specific branch/version of 6.x.
 
