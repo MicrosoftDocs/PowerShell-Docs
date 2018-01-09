@@ -16,8 +16,7 @@ Converts an CLIXML string into new corresponding object in Windows PowerShell.
 ## SYNTAX
 
 ```
-ConvertFrom-Clixml -InputObject <string> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
+ConvertFrom-Clixml -InputObject <string> [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,21 +28,24 @@ For an example of how to do this, see Example 2.
 ## EXAMPLES
 
 ### Example 1: Import a serialized file and recreate an object
-```
-PS C:\> $clixml = Get-Process | ConvertTo-Clixml 
-PS C:\> $Processes = ConvertFrom-Clixml $clixml
+
+```powershell
+$clixml = Get-Process | ConvertTo-Clixml 
+$Processes = ConvertFrom-Clixml $clixml
 ```
 
 This command uses the ConvertTo-Clixml cmdlet to create a serialized copy of the process information returned by Get-Process.
 It then uses **ConvertFrom-Clixml** to retrieve the contents of the serialized string and re-create an object that is stored in the $Processes variable.
 
-### Example 3: Convert an encrypted credential object
-```
-PS C:\> $CredXml = $Credential | ConvertTo-Clixml
-PS C:\> $Credential = ConvertFrom-CliXml $CredXml
+### Example 2: Convert an encrypted credential object
+
+```powershell
+$CredXml = $Credential | ConvertTo-Clixml
+$Credential = ConvertFrom-CliXml $CredXml
 ```
 
-The **ConvertTo-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **ConvertTo-CliXml** cmdlet encrypts credential objects by using the
+[Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account can decrypt the contents of the credential object.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **ConvertTo-CliXml** cmdlet to serialize the credential to a string.
@@ -53,33 +55,6 @@ This time, you are running ConvertFrom-Clixml to import the secured credential o
 This eliminates the risk of exposing plain-text passwords in your script.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Specifies the CLIXML string to be converted to objects.
