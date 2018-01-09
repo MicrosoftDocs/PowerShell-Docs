@@ -3,67 +3,53 @@ ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821813
+online version:  
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Import-Clixml
+title:  ConvertFrom-Clixml
 ---
 
-# Import-Clixml
+# ConvertFrom-Clixml
 
 ## SYNOPSIS
-Imports a CLIXML file and creates corresponding objects in Windows PowerShell.
+Converts an CLIXML string into new corresponding object in Windows PowerShell.
 
 ## SYNTAX
 
-### ByPath (Default)
 ```
-Import-Clixml [-Path] <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
-```
-
-### ByLiteralPath
-```
-Import-Clixml -LiteralPath <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+ConvertFrom-Clixml -InputObject <string> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Import-CliXml** cmdlet imports a CLIXML file with data that represents Microsoft .NET Framework objects and creates the objects in Windows PowerShell.
+The **ConvertFrom-CliXml** cmdlet converts a CLIXML string with data that represents Microsoft .NET Framework objects and creates the objects in Windows PowerShell.
 
-A valuable use of **Import-CliXml** is to import credentials and secure strings that have been exported as secure XML by running the Export-Clixml cmdlet.
+A valuable use of **ConvertFrom-CliXml** is to deserialize credentials and secure strings that have been serialized as secure XML by running the ConvertTo-Clixml cmdlet.
 For an example of how to do this, see Example 2.
 
 ## EXAMPLES
 
 ### Example 1: Import a serialized file and recreate an object
 ```
-PS C:\> Get-Process | Export-Clixml pi.xml
-PS C:\> $Processes = Import-Clixml pi.xml
+PS C:\> $clixml = Get-Process | ConvertTo-Clixml 
+PS C:\> $Processes = ConvertFrom-Clixml $clixml
 ```
 
-This command uses the Export-Clixml cmdlet to save a serialized copy of the process information returned by Get-Process.
-It then uses **Import-Clixml** to retrieve the contents of the serialized file and re-create an object that is stored in the $Processes variable.
+This command uses the ConvertTo-Clixml cmdlet to create a serialized copy of the process information returned by Get-Process.
+It then uses **ConvertFrom-Clixml** to retrieve the contents of the serialized string and re-create an object that is stored in the $Processes variable.
 
-### Example 2: Import a secure credential object
+### Example 3: Convert an encrypted credential object
 ```
-PS C:\> $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $Credential | Export-CliXml $Credxmlpath
-PS C:\> $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $Credential = Import-CliXml $Credxmlpath
+PS C:\> $CredXml = $Credential | ConvertTo-Clixml
+PS C:\> $Credential = ConvertFrom-CliXml $CredXml
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **ConvertTo-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
 This ensures that only your user account can decrypt the contents of the credential object.
 
-In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk.
+In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **ConvertTo-CliXml** cmdlet to serialize the credential to a string.
 
-In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
-Replace TestScript with the name of the script with which you are loading the credential.
-
-In the second command, you pipe the credential object to **Export-CliXml**, and save it to the path, $Credxmlpath, that you specified in the first command.
-
-To import the credential automatically into your script, run the final two commands.
-This time, you are running Import-Clixml to import the secured credential object into your script.
+To deserialize the credential later, run the second command.
+This time, you are running ConvertFrom-Clixml to import the secured credential object into your script.
 This eliminates the risk of exposing plain-text passwords in your script.
 
 ## PARAMETERS
@@ -95,37 +81,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
-Specifies the XML files.
+### -InputObject
+Specifies the CLIXML string to be converted to objects.
+You can also pipe the CLIXML string to **ConvertFrom-Clixml**.
 
 ```yaml
-Type: String[]
-Parameter Sets: ByPath
+Type: string
+Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the XML files.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -184,12 +152,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path to **Import-Clixml**.
+You can pipe a string that contains a path to **ConvertFrom-Clixml**.
 
 ## OUTPUTS
 
 ### PSObject
-**Import-Clixml** returns objects that have been deserialized from the stored XML files.
+**ConvertFrom-Clixml** returns objects that have been deserialized from the stored XML files.
 
 ## NOTES
 * When specifying multiple values for a parameter, use commas to separate the values. For example, "\<parameter-name\> \<value1\>, \<value2\>".
@@ -202,9 +170,10 @@ You can pipe a string that contains a path to **Import-Clixml**.
 
 [Securely Store Credentials on Disk](http://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
+[Export-Clixml](Export-Clixml.md)
+
+[Import-Clixml](Import-Clixml.md)
+
 [ConvertTo-Clixml](ConvertTo-Clixml.md)
 
-[ConvertFrom-Clixml](ConvertFrom-Clixml.md)
-
-[Export-Clixml](Export-Clixml.md)
 
