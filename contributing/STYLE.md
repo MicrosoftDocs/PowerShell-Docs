@@ -172,8 +172,8 @@ Here is the live link:
 
 [Overview of Azure PowerShell](/powershell/azure/overview)
 
-Note that the live link does not within the GitHub view of this content.
-This link will only work on the webpage published to **docs.microsoft.com**.
+Note that the live link does not resolve within the GitHub view of this content.
+This link only works on the webpage published to **docs.microsoft.com**.
 
 ## Markdown extensions supported by Open Publishing
 The following sections describe supported extensions in Open Publishing.
