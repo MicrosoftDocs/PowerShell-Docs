@@ -18,15 +18,13 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 ```
 Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
 Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,16 +40,18 @@ For an example of how to do this, see Example 3.
 ## EXAMPLES
 
 ### Example 1: Export a string to an XML file
-```
-PS C:\> "This is a test" | Export-Clixml sample.xml
+
+```powershell
+"This is a test" | Export-Clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
 
 ### Example 2: Export an object to an XML file
-```
-PS C:\> Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
-PS C:\> $Fileacl = Import-Clixml "fileacl.xml"
+
+```powershell
+Get-Acl C:\test.txt | Export-Clixml -Path "fileacl.xml"
+$Fileacl = Import-Clixml "fileacl.xml"
 ```
 
 This example shows how to export an object to an XML file and then create an object by importing the XML from the file.
@@ -63,11 +63,12 @@ The second command uses the Import-Clixml cmdlet to create an object from the XM
 Then, it saves the object in the $FileAcl variable.
 
 ### Example 3: Encrypt an exported credential object
-```
-PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $credential | Export-CliXml $CredPath
-PS C:\> $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
-PS C:\> $Credential = Import-CliXml $CredXmlPath
+
+```powershell
+$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$credential | Export-CliXml $CredPath
+$CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credential = Import-CliXml $CredXmlPath
 ```
 
 The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
@@ -141,33 +142,6 @@ The cmdlet will attempt to reset the read-only attribute when the command comple
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-The default value can be overridden for the object type in the Types.ps1xml files. For more information, see about_Types.ps1xml.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The default value can be overridden for the object type in the Types.ps1xml files. For more information, see about_Types.ps1xml.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
 
 Required: False
 Position: Named
@@ -275,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
