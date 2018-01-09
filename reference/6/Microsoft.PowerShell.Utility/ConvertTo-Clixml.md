@@ -16,9 +16,7 @@ Converts objects to an XML-based representation and returns that as a string.
 ## SYNTAX
 
 ```
-ConvertTo-Clixml [-Depth <Int32>] -InputObject <PSObject> [-Encoding <String>] 
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] 
- [<CommonParameters>]
+ConvertTo-Clixml [-Depth <Int32>] -InputObject <PSObject> [-Encoding <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,16 +29,18 @@ For an example of how to do this, see Example 3.
 ## EXAMPLES
 
 ### Example 1: Convert a string to an XML representation
-```
-PS C:\> "This is a test" | ConvertTo-Clixml
+
+```powershell
+"This is a test" | ConvertTo-Clixml
 ```
 
 This command returns a string with am XML-based representation of the string object with a value of "This is a test".
 
 ### Example 2: Convert an object to an XML-based representation
-```
-PS C:\> $FileaclString = Get-Acl C:\test.txt | ConvertTo-Clixml
-PS C:\> $Fileacl = ConvertFrom-Clixml $FileaclString
+
+```powershell
+$FileaclString = Get-Acl C:\test.txt | ConvertTo-Clixml
+Fileacl = ConvertFrom-Clixml $FileaclString
 ```
 
 This example shows how to convert an object to an XML string and then create an object by converting the XML from the string.
@@ -53,12 +53,14 @@ The second command uses the ConvertFrom-Clixml cmdlet to create an object from t
 Then, it saves the object in the $FileAcl variable.
 
 ### Example 3: Convert an encrypted credential object
-```
-PS C:\> $CredXml = $Credential | ConvertTo-Clixml
-PS C:\> $Credential = ConvertFrom-CliXml $CredXml
+
+```powershell
+$CredXml = $Credential | ConvertTo-Clixml
+$Credential = ConvertFrom-CliXml $CredXml
 ```
 
-The **ConvertTo-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **ConvertTo-CliXml** cmdlet encrypts credential objects by using the
+[Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account can decrypt the contents of the credential object.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **ConvertTo-CliXml** cmdlet to serialize the credential to a string.
@@ -116,33 +118,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-The default value can be overridden for the object type in the Types.ps1xml files. For more information, see about_Types.ps1xml.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The default value can be overridden for the object type in the Types.ps1xml files. For more information, see about_Types.ps1xml.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the object to be converted.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -161,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
