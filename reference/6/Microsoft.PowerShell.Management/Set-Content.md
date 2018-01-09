@@ -402,8 +402,6 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-You can also refer to Set-Content by its built-in alias, "sc". For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-
 Set-Content is designed for string processing.
 If you pipe non-string objects to Set-Content, it converts the object to a string before writing it.
 To write objects to files, use Out-File.
