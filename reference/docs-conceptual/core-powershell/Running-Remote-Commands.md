@@ -6,18 +6,31 @@ ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
 
 # Running Remote Commands
+
 You can run commands on one or hundreds of computers with a single Windows PowerShell command. Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS-Management.
+
+## Remoting in PowerShell Core
+
+PowerShell Core, the newer edition of PowerShell on Windows, macOS, and Linux,
+supports WMI, WS-Management, and SSH remoting.
+(RPC is no longer supported.)
+
+For more information on setting this up, see:
+
+* [SSH Remoting in PowerShell Core][ssh-remoting]
+* [WinRM Remoting in PowerShell Core][winrm-remoting]
 
 ## Remoting Without Configuration
 Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
 
 These cmdlets include:
+
 * [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -134,3 +147,6 @@ For help with remoting errors, see [about_Remote_Troubleshooting](https://techne
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
