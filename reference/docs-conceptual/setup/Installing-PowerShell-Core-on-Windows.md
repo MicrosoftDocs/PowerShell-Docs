@@ -2,7 +2,10 @@
 
 ## MSI
 
-To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download either the MSI package from the [Microsoft Download Center][download-center] or our GitHub [releases][] page. The MSI file looks like this - `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from
+<!-- TODO: either the Download Center or -->
+our GitHub [releases][] page.
+The MSI file looks like this - `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -95,7 +98,7 @@ We publish an archive with CoreCLR bits on every CI build with [AppVeyor][].
 * Extract zip file to `bin` directory
 * `./bin/pwsh.exe`
 
-[download-center]: TODO
+<!-- [download-center]: TODO -->
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [signing]: ../../tools/Sign-Package.ps1
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
