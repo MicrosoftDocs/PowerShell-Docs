@@ -74,8 +74,8 @@
       href: core-powershell/ise-guide.md
     - name: Visual Studio Code
       items:
-      - name: Using Visual Studio Cod
-        href: core-powershell/vscode/using-vscode.m
+      - name: Using Visual Studio Code
+        href: core-powershell/vscode/using-vscode.md
     - name: Running Remote Commands
       href: core-powershell/running-remote-commands.md
       items:
