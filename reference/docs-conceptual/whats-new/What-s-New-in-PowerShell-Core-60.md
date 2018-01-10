@@ -1,33 +1,47 @@
 # What's New in PowerShell Core 6.0
 
-## Renamed `powershell(.exe)` to `pwsh(.exe)`
-
-The binary name for PowerShell Core has been changed from `powershell(.exe)` to `pwsh(.exe)`.
-This change provides a deterministic way for users to run PowerShell Core on machines where both Windows PowerShell and PowerShell Core are installed.
-`pwsh` is also much shorter and easier to type.
-
-Additional changes to `pwsh(.exe)` from `powershell.exe`:
-
-- Changed the first positional parameter from `-Command` to `-File`.
-  This change fixes the usage of `#!` (aka as a shebang) in PowerShell scripts that are being executed from non-PowerShell shells on non-Windows platforms.
-  It also means that you can run commands like `pwsh foo.ps1` or `pwsh fooScript` without specifying `-File`.
-  However, this change requires that you explicitly specify `-c` or `-Command` when trying to run commands like `pwsh.exe -Command Get-Command`. (#4019)
-- PowerShell Core accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell. (#3558)
-  This allows PowerShell to be used as a default shell on Unix platforms.
-- Removed parameters `-importsystemmodules` and `-psconsoleFile` from `pwsh.exe`. (#4995)
-- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools. (#4958 & #4931) (Thanks @iSazonov)
-- Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix standards (#4573)
-- Added `-WindowStyle` parameter on Windows. (#4573)
+[PowerShell Core 6.0][github] is a new edition of PowerShell that is cross-platform (Windows, macOS, and Linux), open-source, and built for heterogeneous environments and the hybrid cloud.
 
 ## Moved from .NET Framework to .NET Core
 
-TODO
+PowerShell Core uses [.NET Core 2.0][] as its runtime.
+.NET Core 2.0 enables PowerShell Core to work on multiple platforms (Windows, macOS, and Linux).
+PowerShell Core also exposes the API set offered by .NET Core 2.0 to be used in PowerShell cmdlets and scripts.
+
+Windows PowerShell used the .NET Framework runtime to host the PowerShell engine.
+This means that Windows PowerShell exposes the API set offered by .NET Framework.
+
+The APIs shared between .NET Core and .NET Framework are defined as part of [.NET Standard][].
+
+For more information on how this affects module/script compatibility between PowerShell Core and Windows PowerShell,
+see [Backwards compatibility with Windows PowerShell][#backwards-compatibility-with-windows-powershell]
 
 ## Support for macOS and Linux
 
-PowerShell now supports macOS and Linux, including:
+PowerShell now officially supports macOS and Linux, including:
 
-TODO
+- Windows 7, 8.1, and 10
+- Windows Server 2008 R2, 2012 R2, 2016
+- [Windows Server Semi-Annual Channel][semi-annual]
+- Ubuntu 14.04, 16.04, and 17.04
+- Debian 8.7+, and 9
+- CentOS 7
+- Red Hat Enterprise Linux 7
+- OpenSUSE 42.2
+- Fedora 25, 26
+- macOS 10.12+
+
+Our community has also contributed packages for the following platforms,
+but they are not officially supported:
+
+- Arch Linux
+- Kali Linux
+- AppImage (works on multiple Linux platforms)
+
+We also have experimental (unsupported) releases for the following platforms:
+
+- Windows on ARM32/ARM64
+- Raspbian (Stretch)
 
 A number of changes were made to in PowerShell Core 6.0 to make it work better on non-Windows systems.
 Some of these are breaking changes, which also affect Windows.
@@ -81,15 +95,34 @@ Side-by-side also enables backwards compatibility as scripts can be pinned to sp
 
 > [!NOTE]
 > By default, the MSI-based installer on Windows does an in-place update install.
-> Similarly, package-based installations updates on non-Windows platforms are in-place updates.
+>
+
+## Renamed `powershell(.exe)` to `pwsh(.exe)`
+
+The binary name for PowerShell Core has been changed from `powershell(.exe)` to `pwsh(.exe)`.
+This change provides a deterministic way for users to run PowerShell Core on machines to support side-by-side Windows PowerShell and PowerShell Core installations.
+`pwsh` is also much shorter and easier to type.
+
+Additional changes to `pwsh(.exe)` from `powershell.exe`:
+
+- Changed the first positional parameter from `-Command` to `-File`.
+  This change fixes the usage of `#!` (aka as a shebang) in PowerShell scripts that are being executed from non-PowerShell shells on non-Windows platforms.
+  It also means that you can run commands like `pwsh foo.ps1` or `pwsh fooScript` without specifying `-File`.
+  However, this change requires that you explicitly specify `-c` or `-Command` when trying to run commands like `pwsh.exe -Command Get-Command`. (#4019)
+- PowerShell Core accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell. (#3558)
+  This allows PowerShell to be used as a default shell on Unix platforms.
+- Removed parameters `-importsystemmodules` and `-psconsoleFile` from `pwsh.exe`. (#4995)
+- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools. (#4958 & #4931) (Thanks @iSazonov)
+- Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix standards (#4573)
+- Added `-WindowStyle` parameter on Windows. (#4573)
+ Similarly, package-based installations updates on non-Windows platforms are in-place updates.
 
 ## Backwards compatibility with Windows PowerShell
 
 The goal of PowerShell Core is to remain as compatible as possible with Windows PowerShell.
 PowerShell Core uses [.NET Standard][] 2.0 to provide binary compatibility with existing .NET assemblies.
 Many PowerShell modules depend on these assemblies (often times DLLs), so .NET Standard allows them to continue working with .NET Core.
-When those DLL dependencies reside in the Global Assembly Cache (GAC), PowerShell Core does its best to look up those DLLs in well-known locations on the filesystem.
-<!-- TODO: What does that sentence really mean? Is it searching well-known locations outside of the GAC? -->
+PowerShell Core also includes a heuristic to look in well-known folders--like where the Global Assembly Cache typically resides on disk--to find .NET Framework DLL dependencies.
 
 You can learn more about .NET Standard on the [.NET Blog][], in this [YouTube][] video, and via this [FAQ][] on GitHub.
 
@@ -102,7 +135,7 @@ The PowerShell team is working with these product groups and teams to validate a
 With .NET Standard and [CDXML][], many of these traditional Windows PowerShell modules do seem to work in PowerShell Core,
 but they have not been formally validated, and they are not formally supported.
 
-By installing the [`WindowsPSModulePath`][] module,
+By installing the [`WindowsPSModulePath`][windowspsmodulepath] module,
 you can use Windows PowerShell modules by appending the Windows PowerShell `PSModulePath` to your PowerShell Core `PSModulePath`.
 
 First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
@@ -122,7 +155,11 @@ Add-WindowsPSModulePath
 
 ## Docker support
 
-TODO
+PowerShell Core adds support for Docker containers for all the major platforms we support
+(including multiple Linux distros, Windows Server Core, and Nano Server).
+
+For a complete list, check out the tags on [`microsoft/powershell` on Docker Hub][docker-hub].
+For more information on Docker and PowerShell Core, see [Docker][] on GitHub.
 
 ## SSH-based PowerShell Remoting
 
@@ -341,19 +378,25 @@ For a complete list of fixes and changes, check out our [changelog][] on GitHub.
   - the exact version of PowerShell (`$PSVersionTable.GitCommitId`)
 
 If you want to opt-out of this telemetry, simply delete `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-Deleting this file bypasses all telemetry even before the first run of Powershell.
+Deleting this file bypasses all telemetry even before the first run of PowerShell.
 We also plan on exposing this telemetry data and the insights we glean from the telemetry in the [community dashboard][community-dashboard].
 You can find out more about how we use this data in this [blog post][telemetry-blog].
 
+[github]: https://github.com/PowerShell/PowerShell
+[.NET Core 2.0]: https://docs.microsoft.com/en-us/dotnet/core/
+[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
-[ssh-remoting]: TODO
-[breaking-changes]: TODO
-[changelog]: TODO
-[community-dashboard]: TODO
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/en-us/library/jj542525(v=vs.85).aspx
+[docker-hub]: https://hub.docker.com/r/microsoft/powershell/
+[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
