@@ -6,6 +6,8 @@ title:  setup reference
 
 # Setup Guide
 
+- [Installing PowerShell Core on macOS and Linux](Installing-PowerShell-Core-on-macOS-and-Linux.md)
+- [Installing PowerShell Core on Windows](Installing-PowerShell-Core-on-Windows.md)
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md)
 - [Installing the Windows PowerShell SDK](Installing-the-Windows-PowerShell-SDK.md)
@@ -17,4 +19,3 @@ title:  setup reference
 - [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
 - [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 - [WinRMSecurity](WinRMSecurity.md)
-
