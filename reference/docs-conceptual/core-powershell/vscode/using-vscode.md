@@ -42,7 +42,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 - The **Extensions** view will open on the Side Bar. Select the PowerShell extension from Microsoft.
   You will see something like below:
 
-  ![VSCode](vscode.png)
+  ![VSCode](./vscode.png)
 
 - Click the **Install** button on the PowerShell extension from Microsoft.
 - After the install, you will see the **Install** button turns to **Reload**.
@@ -173,9 +173,9 @@ There are a few blogs that may be helpful to get you started using PowerShell ex
 - [Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
-[install-pscore-windows]: ../setup/Installing-PowerShell-Core-on-Windows.md
-[install-winps]: ../setup/Installing-Windows-PowerShell.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
+[install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
 [debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
 [vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/

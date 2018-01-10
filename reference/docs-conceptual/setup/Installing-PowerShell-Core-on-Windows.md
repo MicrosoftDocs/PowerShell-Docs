@@ -16,7 +16,7 @@ There is a shortcut placed in the Start Menu upon installation.
 
 ### Prerequisites
 
-To enable PowerShell remoting over WinRM, the following prerequisites need to be met:
+To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
 
 * Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on Windows versions prior to Windows 10.
   It is available via direct download or Windows Update.
@@ -28,7 +28,7 @@ To enable PowerShell remoting over WinRM, the following prerequisites need to be
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.
 Be noted that when using the ZIP archive, you won't get the prerequisites check as in the MSI package.
-So in order for remoting over WinRM to work properly on Windows versions prior to Windows 10,
+So in order for remoting over WSMan to work properly on Windows versions prior to Windows 10,
 you need to make sure the [prerequisites](#prerequisites) are met.
 
 ## Deploying on Nano Server
@@ -77,14 +77,14 @@ Enter-PSSession $session
 Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
 ```
 
-* If you want WinRM-based remoting, follow the instructions to create a remoting endpoint using the [another instance technique](../core-powershell/WinRM-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+* If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the [another instance technique](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ## Instructions to Create a Remoting Endpoint
 
-PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WinRM and SSH. For more information, see:
+PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more information, see:
 
 * [SSH Remoting in PowerShell Core][ssh-remoting]
-* [WinRM Remoting in PowerShell Core][winrm-remoting]
+* [WSMan Remoting in PowerShell Core][wsman-remoting]
 
 ## Artifact Installation Instructions
 
@@ -102,5 +102,5 @@ We publish an archive with CoreCLR bits on every CI build with [AppVeyor][].
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [signing]: ../../tools/Sign-Package.ps1
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[winrm-remoting]: ../core-powershell/WinRM-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
