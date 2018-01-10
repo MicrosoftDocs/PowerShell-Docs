@@ -240,5 +240,7 @@
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: What's New With PowerShell
       href: whats-new/what-s-new-with-powershell.md
+  - name: PowerShell Core Support Lifecycle
+    href: PowerShell-Core-Support.md
   - name: Glossary
     href: windows-powershell-glossary.md
