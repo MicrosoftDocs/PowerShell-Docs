@@ -400,3 +400,4 @@ You can find out more about how we use this data in this [blog post][telemetry-b
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
