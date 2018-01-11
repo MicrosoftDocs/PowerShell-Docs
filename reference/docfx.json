@@ -1,7 +1,6 @@
 {
   "build": {
-    "content": [
-      {
+    "content": [{
         "files": [
           "bread-pscore/toc.yml"
         ]
@@ -196,6 +195,7 @@
         "dest": "module"
       }
     ],
+
     "resource": [
       {
         "files": [
