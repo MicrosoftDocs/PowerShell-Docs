@@ -42,7 +42,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 - The **Extensions** view will open on the Side Bar. Select the PowerShell extension from Microsoft.
   You will see something like below:
 
-  ![VSCode](./vscode.png)
+  ![VSCode](../../images/vscode.png)
 
 - Click the **Install** button on the PowerShell extension from Microsoft.
 - After the install, you will see the **Install** button turns to **Reload**.
