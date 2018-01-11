@@ -20,7 +20,8 @@
             "manager": "carmonm",
             "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows",
-            "ms.author": "sewhee"
+            "ms.author": "migreene",
+            "author": "mgreenegit"
         },
         "resource": [
             {
