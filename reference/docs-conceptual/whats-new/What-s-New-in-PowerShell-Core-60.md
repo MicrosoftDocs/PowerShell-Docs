@@ -236,7 +236,7 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
   - `PSEdition`: This is set to `Core` on PowerShell Core and `Desktop` on Windows PowerShell
   - `GitCommitId`: This is the Git commit ID of the Git branch or tag where PowerShell was built.
     On released builds, it will likely be the same as `PSVersion`.
-  - `OS`: This is an OS version string returned by `[System.Environment]::OSVersion.VersionString`
+  - `OS`: This is an OS version string returned by `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: This is returned by `[System.Environment]::OSVersion.Platform`
     It is set to `Win32NT` on Windows, `MacOSX` on macOS, and `Unix` on Linux.
 - Removed the `BuildVersion` property from `$PSVersionTable`.
