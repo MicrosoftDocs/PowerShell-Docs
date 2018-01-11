@@ -22,8 +22,8 @@ The version 6.x branch of PowerShell Core will be updated approximately once eve
 > [!IMPORTANT]
 > You must update within six months after each new minor version release to continue receiving support.
 
-For example, if PowerShell Core 6.1 is released on July 1st, 2018,
-you would be expected to update to PowerShell Core 6.1 by January 1st, 2019 to maintain support.
+For example, if PowerShell Core 6.1 is released on July 1, 2018,
+you would be expected to update to PowerShell Core 6.1 by January 1, 2019 to maintain support.
 
 ![PowerShell Core branch lifecycle][lifecycle-chart]
 
@@ -72,7 +72,7 @@ you can append the Windows PowerShell `PSModulePath` to your PowerShell Core `PS
 First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 

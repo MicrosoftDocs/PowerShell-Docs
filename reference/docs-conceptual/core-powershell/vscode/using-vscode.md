@@ -33,9 +33,9 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 ### 2. Installing PowerShell Extension
 
 - Launch the Visual Studio Code app by:
-    - **Windows**: typing `code` in your PowerShell session
-    - **Linux**: typing `code` in your terminal
-    - **macOS**: typing `code` in your terminal
+  - **Windows**: typing `code` in your PowerShell session
+  - **Linux**: typing `code` in your terminal
+  - **macOS**: typing `code` in your terminal
 
 - Launch **Quick Open** by pressing **Ctrl+P** (**Cmd+P** on Mac).
 - In Quick Open, type `ext install powershell` and hit **Enter**.
