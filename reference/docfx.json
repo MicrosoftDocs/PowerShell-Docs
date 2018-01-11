@@ -85,7 +85,6 @@
       },
       {
         "files": [
-          "**/images/**",
           "**/*.md"
         ],
         "src": "docs-conceptual",
@@ -198,8 +197,11 @@
     ],
     "resource": [{
       "files": [
-        "**/*.png",
-        "**/*.jpg"
+        "**/images/**/*.png",
+        "**/images/**/*.jpg",
+        "**/images/**/*.jpeg",
+        "**/images/**/*.gif",
+        "**/images/**/*.svg"
       ],
       "exclude": [
         "**/obj/**",
