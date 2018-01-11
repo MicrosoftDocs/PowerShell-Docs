@@ -195,19 +195,19 @@
         "dest": "module"
       }
     ],
-    "resource": [{
-      "files": [
-        "**/images/**/*.png",
-        "**/images/**/*.jpg",
-        "**/images/**/*.jpeg",
-        "**/images/**/*.gif",
-        "**/images/**/*.svg"
-      ],
-      "exclude": [
-        "**/obj/**",
-        "**/includes/**"
-      ]
-    }],
+    "resource": [
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
     "versions": {
       "powershell-3.0": {
         "dest": "powershell-3.0"
