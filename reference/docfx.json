@@ -1,7 +1,6 @@
 {
   "build": {
-    "content": [
-      {
+    "content": [{
         "files": [
           "bread-pscore/toc.yml"
         ]
@@ -86,6 +85,7 @@
       },
       {
         "files": [
+          "**/images/**",
           "**/*.md"
         ],
         "src": "docs-conceptual",
@@ -196,18 +196,16 @@
         "dest": "module"
       }
     ],
-    "resource": [
-      {
-        "files": [
-          "**/*.png",
-          "**/*.jpg"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**"
-        ]
-      }
-    ],
+    "resource": [{
+      "files": [
+        "**/*.png",
+        "**/*.jpg"
+      ],
+      "exclude": [
+        "**/obj/**",
+        "**/includes/**"
+      ]
+    }],
     "versions": {
       "powershell-3.0": {
         "dest": "powershell-3.0"
