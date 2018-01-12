@@ -17,8 +17,8 @@ supports WMI, WS-Management, and SSH remoting.
 
 For more information on setting this up, see:
 
-* [SSH Remoting in PowerShell Core][ssh-remoting]
-* [WinRM Remoting in PowerShell Core][winrm-remoting]
+* [SSH Remoting in PowerShell Core](ssh-remoting-in-powershell-core)
+* [WinRM Remoting in PowerShell Core](wsman-remoting-in-powershell-core)
 
 ## Remoting Without Configuration
 Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers. They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.
