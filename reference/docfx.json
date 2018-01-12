@@ -2,32 +2,32 @@
   "build": {
     "content": [
       { "files": [ "bread-pscore/toc.yml" ] },
-      // version 3 definitions
+
       { "files": [ "toc.yml" ], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting/powershell-3.0" },
       { "files": [ "**/*.md" ], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting" },
       { "files": [ "toc.yml" ], "src": "3.0", "version": "powershell-3.0", "dest": "module/psdocs" },
       { "files": [ "**/*.md" ], "src": "3.0", "version": "powershell-3.0", "exclude": [ "docs-conceptual/**" ], "dest": "module" },
-      // version 4 definitions
+
       { "files": [ "toc.yml" ], "src": "docs-conceptual", "version": "powershell-4.0", "dest": "scripting/powershell-4.0" },
       { "files": [ "**/*.md" ], "src": "docs-conceptual", "version": "powershell-4.0", "dest": "scripting" },
       { "files": [ "toc.yml" ], "src": "4.0", "version": "powershell-4.0", "dest": "module/psdocs" },
       { "files": [ "**/*.md" ], "src": "4.0", "version": "powershell-4.0", "exclude": [ "docs-conceptual/**" ], "dest": "module" },
-      // version 5 definitions
+
       { "files": [ "toc.yml" ], "src": "docs-conceptual", "version": "powershell-5.0", "dest": "scripting/powershell-5.0" },
       { "files": [ "**/*.md" ], "src": "docs-conceptual", "version": "powershell-5.0", "dest": "scripting" },
       { "files": [ "toc.yml" ], "src": "5.0", "version": "powershell-5.0", "dest": "module/psdocs" },
       { "files": [ "**/*.md" ], "src": "5.0", "version": "powershell-5.0", "exclude": [ "docs-conceptual/**" ], "dest": "module" },
-      // version 5.1 definitions
+
       { "files": [ "toc.yml" ], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting/powershell-5.1" },
       { "files": [ "**/*.md" ], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting" },
       { "files": [ "toc.yml" ], "src": "5.1", "version": "powershell-5.1", "dest": "module/psdocs" },
       { "files": [ "**/*.md" ], "src": "5.1", "version": "powershell-5.1", "exclude": [ "docs-conceptual/**" ], "dest": "module" },
-      // version 6 definitions
+
       { "files": [ "toc.yml" ], "src": "docs-conceptual", "version": "powershell-6", "dest": "scripting/powershell-6" },
       { "files": [ "**/*.md" ], "src": "docs-conceptual", "version": "powershell-6", "dest": "scripting" },
       { "files": [ "toc.yml" ], "src": "6", "version": "powershell-6", "dest": "module/psdocs" },
       { "files": [ "**/*.md" ], "src": "6", "version": "powershell-6", "exclude": [ "docs-conceptual/**" ], "dest": "module" },
-      // virtual folder definitions
+
       { "files": [ "**/*.md" ], "src": "virtual-directory", "dest": "scripting" },
       { "files": [ "**/*.md" ], "src": "virtual-directory-module", "dest": "module" }
     ],

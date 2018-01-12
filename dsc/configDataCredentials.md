@@ -283,8 +283,8 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > [!NOTE]
 > `NodeName` cannot equal asterisk, a specific node name is mandatory.
 
-**Microsoft advises to avoid plain text passwords
-due to the significant security risk.**
+**Microsoft advises to avoid plain text passwords due to the significant security risk.**
+
 An exception would be when using the Azure Automation DSC service,
 only because the data is always stored encrypted
 (in transit, at rest in the service, and at rest on the node).
