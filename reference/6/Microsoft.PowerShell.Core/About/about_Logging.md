@@ -148,7 +148,7 @@ sudo log stream --predicate 'process == "pwsh"' --info
 
 On Windows, logging is configured by creating ETW trace listeners or by using 
 the Event Viewer to enable Analytic logging. On Linux and MacOS, logging is 
-configured using the file `PowerShellProperties.json`. The rest of this section 
+configured using the file `powershell.config.json`. The rest of this section 
 will discuss configuring PowerShell logging on non-Windows system.
 
 By default, PowerShell enables informational logging to the operational 
@@ -157,7 +157,7 @@ marked as operational and has a log (trace) level greater then informational
 will be logged.  Occasionally, diagnoses may require additional log output, 
 such as verbose log output or enabling analytic log output.
 
-The file `PowerShellProperties.json` is a JSON formatted file residing in the 
+The file `powershell.config.json` is a JSON formatted file residing in the 
 PowerShell $PSHOME directory. Each installation of PowerShell uses it's own 
 copy of this file. For normal operation, this file is left unchanged but it 
 can be useful for diagnosis or for distinguishing between multiple PowerShell 
