@@ -30,13 +30,6 @@ For detailed information about DSC, see
 [PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkId=311940)
 in the TechNet Library.
 
-## DEVELOPING DSC RESOURCES WITH CLASSES
-
-Starting in PowerShell 5.0, you can develop DSC resources by using classes.
-For more information, see [about_Classes](about_Classes.md), and
-[Writing a custom DSC resource with PowerShell classes](http://technet.microsoft.com/library/dn948461.aspx)
-on Microsoft TechNet.
-
 ## USING DSC
 
 To use DSC to configure your environment, first define a PowerShell

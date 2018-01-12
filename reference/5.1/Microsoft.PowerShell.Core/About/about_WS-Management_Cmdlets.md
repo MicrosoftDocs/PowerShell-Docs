@@ -185,8 +185,6 @@ http://go.microsoft.com/fwlink/?LinkId=142329
 
 [Set-WSManQuickConfig](../../Microsoft.WSMan.Management/Set-WSManQuickConfig.md)
 
-[Set-WSManSessionOption](../../Microsoft.WSMan.Management/Set-WSManSessionOption.md)
-
 [Test-WSMan](../../Microsoft.WSMan.Management/Test-WSMan.md)
 
 # KEYWORDS
