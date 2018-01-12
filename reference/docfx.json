@@ -1,7 +1,6 @@
 {
   "build": {
-    "content": [
-      {
+    "content": [{
         "files": [
           "bread-pscore/toc.yml"
         ]
@@ -199,6 +198,7 @@
     "resource": [
       {
         "files": [
+          "**/images/**",
           "**/*.png",
           "**/*.jpg"
         ],
@@ -206,6 +206,66 @@
           "**/obj/**",
           "**/includes/**"
         ]
+      },
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ],
+        "version": "powershell-3.0"
+      },
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ],
+        "version": "powershell-4.0"
+      },
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ],
+        "version": "powershell-5.0"
+      },
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ],
+        "version": "powershell-5.1"
+      },
+      {
+        "files": [
+          "**/images/**",
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ],
+        "version": "powershell-6"
       }
     ],
     "versions": {
