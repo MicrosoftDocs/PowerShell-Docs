@@ -18,7 +18,10 @@ To suppress these error and warning messages use the DSC configuration data keyw
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Notes:** <p>Storing/transmitting plaintext passwords unencrypted is generally not secure. Securing credentials by using the techniques covered later in this topic is recommended.</p> <p>The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.  For information, see: [Compiling DSC Configurations / Credential Assets](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Storing/transmitting plaintext passwords unencrypted is generally not secure. Securing credentials by using the techniques covered later in this topic is recommended.
+> The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.
+> For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)
 
 The following is an example of passing plain text credentials:
 
@@ -133,7 +136,8 @@ see [Running DSC with user credentials](runAsUser.md).
 Newer resources and custom resources can use this automatic property
 instead of creating their own property for credentials.
 
->**Note:** the design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.
+> [!NOTE]
+> The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.
 
 To find the available credential properties on a resource
 use either `Get-DscResource -Name ResourceName -Syntax`
@@ -228,8 +232,8 @@ for node 'localhost'.
 ```
 
 This example has two issues:
-1.  An error explains that plain text passwords are not recommended
-2.  A warning advises against using a domain credential
+1. An error explains that plain text passwords are not recommended
+2. A warning advises against using a domain credential
 
 ## PsDscAllowPlainTextPassword
 
@@ -276,10 +280,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Note:** `NodeName` cannot equal asterisk, a specific node name is mandatory.
+> [!NOTE]
+> `NodeName` cannot equal asterisk, a specific node name is mandatory.
 
-**Microsoft advises to avoid plain text passwords
-due to the significant security risk.**
+**Microsoft advises to avoid plain text passwords due to the significant security risk.**
+
 An exception would be when using the Azure Automation DSC service,
 only because the data is always stored encrypted
 (in transit, at rest in the service, and at rest on the node).
@@ -291,8 +296,7 @@ still generates the warning that using a domain account for a credential is not 
 Using a local account eliminates potential exposure of domain credentials
 that could be used on other servers.
 
-**When using credentials with DSC resources,
-prefer a local account over a domain account when possible.**
+**When using credentials with DSC resources, prefer a local account over a domain account when possible.**
 
 If there is a '\' or '@' in the `Username` property of the credential,
 then DSC will treat it as a domain account.

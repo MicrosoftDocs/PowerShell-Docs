@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-10-16
-author:  eslesar;mgreenegit
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Enacting configurations
@@ -27,7 +26,7 @@ For example, if the configuration MOF is located at `C:\DSC\Configurations\local
 you would apply it to the local machine with the following command:
 `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the 
+> __Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the
 >[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) with the __-Wait__ parameter.
 
 ## Pull mode

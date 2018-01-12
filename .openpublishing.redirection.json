@@ -16,6 +16,21 @@
       "redirect_document_id": "False"
     },
     {
+      "source_path": "reference/docs-conceptual/core-powershell/console-guide.md",
+      "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/docs-conceptual/core-powershell/ise-guide.md",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/docs-conceptual/getting-started/understanding-concepts-reference.md",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/about-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
       "source_path": "reference/virtual-directory/index.md",
       "redirect_url": "/powershell/scripting/powershell-scripting",
       "redirect_document_id": "False"
