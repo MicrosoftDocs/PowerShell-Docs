@@ -147,28 +147,16 @@ The third command uses dot notation to call the new PadBoth script method on the
 PS C:\> $Event = Get-EventLog -LogName System -Newest 1
 PS C:\> $Event.TimeWritten | Get-MemberTypeName: System.DateTime
 Name                 MemberType     Definition
-
-
 ----                 ----------     ----------
-
-
 Add                  Method         System.DateTime Add(System.TimeSpan value) 
-
-
 AddDays              Method         System.DateTime AddDays(double value) 
-
-
 AddHours             Method         System.DateTime AddHours(double value) 
-
-
 AddMilliseconds      Method         System.DateTime AddMilliseconds(double value) 
-
-
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
-
 
 PS C:\> Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
 PS C:\> $Event.When | Get-MemberTypeName: System.String
+
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
@@ -495,17 +483,15 @@ When you use the *PassThru* parameter, this cmdlet returns the newly-extended ob
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* You can add members only to PSObject objects. To determine whether an object is a PSObject object, use the "is" operator. For instance, to test an object stored in the $obj variable, type `$obj -is \[PSObject\]`.
+You can add members only to PSObject objects. To determine whether an object is a PSObject object, use the "is" operator. For instance, to test an object stored in the $obj variable, type `$obj -is \[PSObject\]`.
 
-  The names of the *MemberType*, *Name*, *Value*, and *SecondValue* parameters are optional.
+The names of the *MemberType*, *Name*, *Value*, and *SecondValue* parameters are optional.
 If you omit the parameter names, the unnamed parameter values must appear in this order: *MemberType*, *Name*, *Value*, and *SecondValue*.
 If you include the parameter names, the parameters can appear in any order.
 
-  You can use the $this automatic variable in script blocks that define the values of new properties and methods.
+You can use the $this automatic variable in script blocks that define the values of new properties and methods.
 The $this variable refers to the instance of the object to which the properties and methods are being added.
 For more information about the $this variable, see about_Automatic_Variables.
-
-*
 
 ## RELATED LINKS
 
