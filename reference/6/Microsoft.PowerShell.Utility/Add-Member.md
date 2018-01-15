@@ -70,7 +70,8 @@ For more information, see the *PassThru* parameter description.
 PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 PS C:\> $A | Add-Member Status Done
-PS C:\> $A.StatusDone
+PS C:\> $A.Status
+Done
 ```
 
 These commands add the Status note property with a value of "Done" to the FileInfo object that represents the Test.txt file.
@@ -89,7 +90,8 @@ As the output shows, the value is "Done".
 ```
 PS C:\> $A = dir c:\ps-test\test.txt
 PS C:\> $A | Add-Member -MemberType AliasProperty -Name FileLength -Value Length
-PS C:\> $A.FileLength2394
+PS C:\> $A.FileLength
+2394
 ```
 
 These commands add the FileLength alias property to the object that represents the Test.txt file.
@@ -104,7 +106,8 @@ The third command uses dot notation to get the value of the new FileLength prope
 ### Example 3: Add a StringUse note property to a string
 ```
 PS C:\> $A = "A string"PS C:\>  $A = $A | Add-Member @{StringUse="Display"} -PassThru
-PS C:\> $A.StringUseDisplay
+PS C:\> $A.StringUse
+Display
 ```
 
 These commands add the **StringUse** note property to a string.
