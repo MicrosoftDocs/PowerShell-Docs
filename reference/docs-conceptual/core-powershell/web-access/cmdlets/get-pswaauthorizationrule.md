@@ -1,8 +1,6 @@
 ---
 description:  
-manager:  carmonm
 ms.topic:  article
-author:  jpjofre
 ms.prod:  powershell
 keywords:  powershell,cmdlet
 ms.date:  2016-12-12
