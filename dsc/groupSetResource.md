@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 description:  Provides a mechanism to manage local groups on the target node.
