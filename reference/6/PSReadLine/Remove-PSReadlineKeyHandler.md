@@ -26,12 +26,12 @@ Create a key binding by running the Set-PSReadlineKeyHandler cmdlet.
 ## EXAMPLES
 
 ### Example 1: Remove a binding
-```
-PS C:\> Remove-PSReadlineKeyHandler -Chord "Shift+Ctrl+B"
+```powershell
+Remove-PSReadlineKeyHandler -Chord Ctrl+Shift+B
 ```
 
 This command removes the binding from the key combination, or chord, Ctrl+Shift+B.
-The Ctrl+Shift+B chord is created in the Set-PSReadlineKeyHandler topic.
+The Ctrl+Shift+B chord is created in the `Set-PSReadlineKeyHandler` topic.
 
 ## PARAMETERS
 
