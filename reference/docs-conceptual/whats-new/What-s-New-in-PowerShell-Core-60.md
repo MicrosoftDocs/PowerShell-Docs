@@ -14,7 +14,7 @@ This means that Windows PowerShell exposes the API set offered by .NET Framework
 The APIs shared between .NET Core and .NET Framework are defined as part of [.NET Standard][].
 
 For more information on how this affects module/script compatibility between PowerShell Core and Windows PowerShell,
-see [Backwards compatibility with Windows PowerShell][#backwards-compatibility-with-windows-powershell]
+see [Backwards compatibility with Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## Support for macOS and Linux
 
