@@ -29,7 +29,6 @@ functions, cmdlets, or snap-ins.
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
 #Requires -ShellId <ShellId>
-#Requires -RunAsAdministrator
 ```
 
 ### RULES FOR USE
