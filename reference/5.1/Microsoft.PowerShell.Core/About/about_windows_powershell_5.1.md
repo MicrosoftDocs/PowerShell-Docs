@@ -10,7 +10,7 @@ title:  about_Windows_PowerShell_5.1
 
 ## SHORT DESCRIPTION
 
-Describes new features that are included in Windows PowerShell 5.0.
+Describes new features that are included in Windows PowerShell 5.1.
 
 ## LONG DESCRIPTION
 
