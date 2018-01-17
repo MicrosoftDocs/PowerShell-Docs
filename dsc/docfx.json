@@ -13,7 +13,6 @@
             "breadcrumb_path":"bread/toc.json",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "layout": "conceptual",
-            "ms.locale": "en-us",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "dsc",
