@@ -79,7 +79,7 @@ Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable 
 2. Change directories to the folder into which you have downloaded or copied the WMF 5.1 installation package.
 
 3. Run one of the following commands:
-	- On computers that are running Windows Server 2012 R2 or Windows 8.1 x64, run `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet`.
-	- On computers that are running Windows Server 2012, run `W2K12-KB3191565-x64.msu /quiet`.
-	- On computers that are running Windows 8.1 x86, run `Win8.1-KB3191564-x86.msu /quiet`.
+	- On computers that are running Windows Server 2012 R2 or Windows 8.1 x64, run `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet /norestart`.
+	- On computers that are running Windows Server 2012, run `W2K12-KB3191565-x64.msu /quiet /norestart`.
+	- On computers that are running Windows 8.1 x86, run `Win8.1-KB3191564-x86.msu /quiet /norestart`.
 	
