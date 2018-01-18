@@ -63,5 +63,5 @@ Note that any entries labelled "Preview" are pre-release code and are not featur
 > Because Windows PowerShell ISE requires a graphical user interface, you can’t run it on the Server Core option of Windows Server.
 
 ## See also
-- [Using the Windows PowerShell Integrated Scripting Environment](Using-the-Windows-PowerShell-ISE.md)
+- [Using the Windows PowerShell Integrated Scripting Environment](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

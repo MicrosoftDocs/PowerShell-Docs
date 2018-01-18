@@ -104,24 +104,24 @@ For more information about the PackageManagement open development project,
 including how to create a PackageManagement package provider, see the
 PackageManagement project on GitHub at https://oneget.org.
 
-# SEE ALSO
+## SEE ALSO
 
-Get-PackageProvider
+[Get-PackageProvider](../../PackageManagement/Get-PackageProvider.md)
 
-Get-PackageSource
+[Get-PackageSource](../../PackageManagement/Get-PackageSource.md)
 
-Register-PackageSource
+[Register-PackageSource](../../PackageManagement/Register-PackageSource.md)
 
-Set-PackageSource
+[Set-PackageSource](../../PackageManagement/Set-PackageSource.md)
 
-Unregister-PackageSource
+[Unregister-PackageSource](../../PackageManagement/Unregister-PackageSource.md)
 
-Get-Package
+[Get-Package](../../PackageManagement/Get-Package.md)
 
-Find-Package
+[Find-Package](../../PackageManagement/Find-Package.md)
 
-Install-Package
+[Install-Package](../../PackageManagement/Install-Package.md)
 
-Save-Package
+[Save-Package](../../PackageManagement/Save-Package.md)
 
-Uninstall-Package
+[Uninstall-Package](../../PackageManagement/Uninstall-Package.md)

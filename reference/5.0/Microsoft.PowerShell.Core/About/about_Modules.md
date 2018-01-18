@@ -495,9 +495,10 @@ The following modules (or snap-ins) are installed with PowerShell.
 * Microsoft.PowerShell.Security
 * Microsoft.PowerShell.Utility
 * Microsoft.WSMan.Management
-* OneGet
+* PackageManagement
 * PowerShellGet
 * PSDesiredStateConfiguration
+* PSReadline
 * PSScheduledJob
 * PSWorkflow
 * PSWorkflowUtility

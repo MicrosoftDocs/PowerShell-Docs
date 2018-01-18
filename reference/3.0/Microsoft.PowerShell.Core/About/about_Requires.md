@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -29,7 +29,6 @@ functions, cmdlets, or snap-ins.
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
 #Requires -ShellId <ShellId>
-#Requires -RunAsAdministrator
 ```
 
 ### RULES FOR USE
@@ -98,19 +97,6 @@ For example,
 #Requires -ShellId MyLocalShell
 ```
 
--RunAsAdministrator
-
-When this switch parameter is added to your requires statement, it specifies
-that the Windows PowerShell session in which you are running the script must
-be started with elevated user rights (Run as Administrator). This switch was
-introduced in PowerShell 4.
-
-For example,
-
-```powershell
-#Requires -RunAsAdministrator
-```
-
 ### EXAMPLES
 
 The following script has two \#Requires statements. If the requirements
@@ -145,5 +131,4 @@ always a snap-in.
 
 [about_PSSnapins](about_PSSnapins.md)
 
-Get-PSSnapin
-
+[Get-PSSnapin](../Get-PSSnapin.md)

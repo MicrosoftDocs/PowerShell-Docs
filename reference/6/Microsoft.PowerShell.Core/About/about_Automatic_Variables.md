@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-27
+ms.date:  2017-12-21
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -14,6 +14,9 @@ Describes variables that store state information for PowerShell. These
 variables are created and maintained by PowerShell.
 
 ## LONG DESCRIPTION
+
+Conceptually, these variables are considered to be read-only.
+Even though they **can** be written to, for backward compatibility they **should not** be written to.
 
 Here is a list of the automatic variables in  PowerShell:
 
@@ -268,50 +271,6 @@ foreach($day in $calendar)
 ```output
 Appointment on Tuesday: Meeting
 Appointment on Friday: Team lunch
-```
-
-### $OFS
-
-$OFS is a special variable that stores a string that you want to use as an
-output field separator. Use this variable when you are converting an array
-to a string. By default, the value of $OFS is " ", but you can change the
-value of $OFS in your session, by typing `$OFS="<value>"`. If you are
-expecting the default value of " " in your script, module, or configuration
-output, be careful that the $OFS default value has not been changed
-elsewhere in your code.
-
-For example:
-
-```powershell
-$a="1","2","3","4"
-$a
-[string]$a
-$OFS=""
-[string]$a
-$OFS=","
-[string]$a
-$OFS="--PowerShellRocks--";
-[string]$a
-$OFS="`n`n";
-[string]$a
-```
-
-```output
-1
-2
-3
-4
-1 2 3 4
-1234
-1,2,3,4
-1--PowerShellRocks--2--PowerShellRocks--3--PowerShellRocks--4
-1
-
-2
-
-3
-
-4
 ```
 
 ### $PID

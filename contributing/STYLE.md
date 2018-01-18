@@ -6,7 +6,7 @@ There are several variants of PowerShell.
 This table defines some of the different terms used to discuss PowerShell.
 
 | Terminology | Definition |
-| ----- | -----|
+| ----- | ----- |
 | PowerShell | This is the default. We are shipping PowerShell. The term PowerShell can be legitimately used to indicate any of the particular editions. This can be used to refer to the language, framework and default cmdlets, etc. |
 | PowerShell Core (PSCore) | PowerShell built on .NET Core Common Language Runtime (CoreCLR) for any of the platforms. |
 | Windows PowerShell | PowerShell built on .NET Common Language Runtime (CLR). Windows PowerShell ships only on Windows and requires the complete CLR. |
@@ -84,43 +84,6 @@ Adding or removing H2 causes a build break.
 
   This [`Write-Host`](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the **-Object** parameter to ...
 
-## Formatting code blocks
-
-* All PowerShell syntax blocks should use <code>\`\`\`powershell</code> &hellip; <code>\`\`\`</code> code fence markers.
-
-* Do **NOT** start PowerShell commands with the PowerShell prompt ("`PS C:\>`").
-
-* Avoid using line continuation characters (\`) in PowerShell code examples.
-  These are a hard to see and can cause problems if there are extra spaces on the end of the line.
-
-* Output emitted by PowerShell commands should be enclosed in a naked code block to prevent it from recieving syntax highlighting.
-
-  For example:
-
-      ```powershell
-      Get-Command -Module Microsoft.PowerShell.Security
-      ```
-
-      ```
-      CommandType     Name                                               Version    Source
-      -----------     ----                                               -------    ------
-      Cmdlet          ConvertFrom-SecureString                           3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          ConvertTo-SecureString                             3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-CmsMessage                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Credential                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-PfxCertificate                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          New-FileCatalog                                    3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Protect-CmsMessage                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Test-FileCatalog                                   3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Unprotect-CmsMessage                               3.0.0.0    Microsoft.PowerShell.Security
-      ```
-
 ## Lists
 
 * Do not end list items with a period (unless they contain multiple sentences)
@@ -148,19 +111,98 @@ to get this output:
 
 ## Links
 
-* Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url)`
-* Links should have a a friendly name when applicable, most likely the title of the linked page
-  * **Exception**: Links to non-Microsoft sites can be bare URLs
+* Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url-or-path)`
+  * **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
+* Links must have a friendly name, usually the title of the linked topic
 * All items in the "related links" section at the bottom should be hyperlinked.
+* Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
 
-## Using relative links
+### Structure of links on docs.microsoft.com
 
-You should use relative links when linking to other content that is hosted on **docs.microsoft.com**.
+Content presented on docs.microsoft.com has the following URL structure:
+
+```
+https://docs.microsoft.com/<locale>/<product-service>/[<feature-service>]/[<subfolder>]/<topic>[?view=<view-name>]
+```
+
+Examples:
+
+```
+https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
+```
+
+- **\<locale>** - identifies the language of the article (example: en-us or de-de)
+- **\<product-service>** - the name of the product or service being documented (example: powerShell, dotnet, or azure)
+- **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for example, csharp or load-balancer)
+- **[\<subfolder>]** - (optional) the name of a subfolder within a feature
+- \<topic> - the name of the article file for the topic (example: load-balancer-overview or overview)
+- **[?view=\<view-name>]** - (optional) the view name used by the version selector for content that has multiple versions available (example: azurermps-5.1.1)
+
+### Linking to content in the same repo
+
 When the content is in the same repo, the relative links are simple to calculate.
-Note that the path to cmdlet reference is created by our publishing system.
-There are special rules for linking to reference topics from conceptual topics.
+The link target must be the path to the _Markdown file_ in the repo.
+For example, the following markdown links to the about_Arrays topic in this repo.
 
-\[TO DO\] - document special rules
+```Markdown
+[about_Arrays](../reference/5.1/Microsoft.PowerShell.Core/About/about_Arrays.md)
+```
+
+Here is the live link:
+
+[about_Arrays](../reference/5.1/Microsoft.PowerShell.Core/About/about_Arrays.md)
+
+Note that the live link works within the GitHub view of this content.
+
+### Linking to content in a different repo
+
+When the content is in a different repo, the relative links are more complicated.
+The link target must be the URL path to the _published article_ on **docs.microsoft.com**.
+The relative link starts with the **\<product-service>** portion of the URL as described above.
+You should omit the **[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
+
+For example, the following markdown links to the Overview topic for Azure PowerShell.
+
+```Markdown
+[Overview of Azure PowerShell](/powershell/azure/overview)
+```
+
+Here is the live link:
+
+[Overview of Azure PowerShell](/powershell/azure/overview)
+
+Note that the live link does not resolve within the GitHub view of this content.
+This link only works on the webpage published to **docs.microsoft.com**.
+
+## Markdown extensions supported by Open Publishing
+The following sections describe supported extensions in Open Publishing.
+
+### Note, warning, tip, important
+Use specific syntax inside a block quote to indicate that the content is a type of note.
+
+```Markdown
+> [!NOTE]
+> This is a note.
+
+> [!WARNING]
+> This is a warning.
+
+> [!TIP]
+> This is a tip.
+
+> [!IMPORTANT]
+> This is important.
+
+```
+
+And it will be rendered like this:
+
+![alert boxes](./images/alert-boxes.png)
+
+## Next steps
+
+See [Formatting code blocks](FORMATTING-CODE.md).
 
 <!-- External URLs -->
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase

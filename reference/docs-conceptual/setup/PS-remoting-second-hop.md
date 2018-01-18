@@ -271,12 +271,12 @@ You can pass credentials inside the **ScriptBlock** parameter of a call to the
 - Does not require special server configuration.
 - Works on any server running WMF 2.0 or later.
 
-## Cons
+### Cons
 
 - Requires an awkward code technique.
 - If running WMF 2.0, requires different syntax for passing arguments to a remote session.
 
-## Example
+### Example
 
 The following example shows how to pass credentials in an **Invoke-Command** script block:
 

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2018-01-04
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -27,17 +27,17 @@ Hidden members are not displayed by using tab completion or IntelliSense,
 unless the completion occurs in the class that defines the hidden member.
 
 A new attribute, System.Management.Automation.HiddenAttribute, has been added,
-so that C# code can have the same semantics within Windows PowerShell.
+so that C\# code can have the same semantics within PowerShell.
 
 The Hidden keyword is useful for creating properties and methods within a
 class that you do not necessarily want other users of the class to see, or
 readily be able to edit.
 
 The Hidden keyword has no effect on how you can view or make changes to
-members of a class. Like all language keywords in Windows PowerShell, Hidden
-is not case-sensitive, and hidden members are still public.
+members of a class. Like all language keywords in PowerShell, Hidden is not
+case-sensitive, and hidden members are still public.
 
-Hidden, along with custom classes, was introduced in Windows PowerShell 5.0.
+Hidden, along with custom classes, was introduced in PowerShell 5.0.
 
 ## EXAMPLE
 
@@ -46,7 +46,7 @@ definition. The Car class method, Drive, has a property, rides, that does not
 need to be viewed or changed (it merely tallies the number of times that Drive
 is called on the Car class, a metric that is not important to users of the
 class; consider, for example, that when you are buying a car, you do not ask
-the seller on how many drives the car has been taken).
+the seller on how many drives the car has been taken.
 
 Because there is little need for users of the class to change this property,
 we can hide the property from Get-Member and automatic completion results by
@@ -79,17 +79,17 @@ class Car
 ```
 
 Now, create a new instance of the Car class, and save it in a variable,
-$TestCar.
+\$TestCar.
 
 ```powershell
 $TestCar = [Car]::new()
 ```
 
 After you create the new instance, pipe the contents of the $TestCar variable
-to Get\-Member. Observe that the rides property is not among the members
-listed in the Get\-Member command results.
+to Get-Member. Observe that the rides property is not among the members listed
+in the Get-Member command results.
 
-```powershell
+```output
 PS C:\Windows\system32> $TestCar | Get-Member
 
    TypeName: Car
@@ -104,13 +104,14 @@ ToString    Method     string ToString()
 Color       Property   string Color {get;set;}
 Distance    Property   int Distance {get;set;}
 ModelYear   Property   string ModelYear {get;set;}
+
 ```
 
-Now, try running Get\-Member again, but this time, add the –Force parameter.
+Now, try running Get-Member again, but this time, add the –Force parameter.
 Note that the results contain the hidden rides property, among other members
 that are hidden by default.
 
-```powershell
+```output
 PS C:\Windows\system32> $TestCar | Get-Member -Force
 
    TypeName: Car
@@ -139,11 +140,15 @@ Color         Property     string Color {get;set;}
 Distance      Property     int Distance {get;set;}
 ModelYear     Property     string ModelYear {get;set;}
 rides         Property     int rides {get;set;}
+
 ```
 
 ## SEE ALSO
 
-- [about_Classes](about_Classes.md)
-- [about_Language_Keywords](about_Language_Keywords.md)
-- [about_Wildcards](about_Wildcards.md)
-- [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+[about_Classes](about_Classes.md)
+
+[about_Language_Keywords](about_Language_Keywords.md)
+
+[about_Wildcards](about_Wildcards.md)
+
+[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)

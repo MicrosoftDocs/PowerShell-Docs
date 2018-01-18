@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-10-31
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Securing the MOF File
@@ -99,7 +98,7 @@ The following example:
  3. imports the public key certificate into the **my** certificate store on the **Authoring node**.
 
 #### On the Target Node: create and export the certificate
->Authoring Node: Windows Server 2016 and Windows 10
+>Target Node: Windows Server 2016 and Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -109,7 +108,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.
 
->Authoring Node: Windows Server 2012 R2/Windows 8.1 and earlier
+>Target Node: Windows Server 2012 R2/Windows 8.1 and earlier
 
 Because the New-SelfSignedCertificate cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.
 In this case you can use ```makecert.exe``` or ```certutil.exe``` to create the certificate.
@@ -127,7 +126,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

@@ -11,11 +11,13 @@ title:  Group-Object
 # Group-Object
 ## SYNOPSIS
 Groups objects that contain the same value for specified properties.
+
 ## SYNTAX
 
 ```
-Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>] [[-Property] <Object[]>]
- [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
+Group-Object [[-Property] <Object[]>] [-NoElement] [-AsHashTable] [-AsString]
+ [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -325,7 +327,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

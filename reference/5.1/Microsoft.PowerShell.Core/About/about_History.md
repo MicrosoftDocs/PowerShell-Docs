@@ -71,7 +71,7 @@ about profiles, see
 [about_Profiles](http://go.microsoft.com/fwlink/?LinkID=113729).
 
 For more information about the $MaximumHistoryCount preference variable, see
-[about_Preference_Variables](http://go.microsoft.com/fwlink/?LinkID=113248).
+[about_Preference_Variables](about_Preference_Variables.md).
 
 NOTE: In Windows PowerShell 2.0, the default value of the
 `$MaximumHistoryCount` preference variable is 64.

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  2018-01-03
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,8 +102,7 @@ For example,
 
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must
-be started with elevated user rights (Run as Administrator). This switch was
-introduced in PowerShell 4.
+be started with elevated user rights (Run as Administrator).
 
 For example,
 
@@ -145,5 +144,4 @@ always a snap-in.
 
 [about_PSSnapins](about_PSSnapins.md)
 
-Get-PSSnapin
-
+[Get-PSSnapin](../Get-PSSnapin.md)

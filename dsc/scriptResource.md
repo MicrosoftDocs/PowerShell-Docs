@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Script Resource
@@ -47,8 +46,6 @@ Script [string] #ResourceName
 
 ## Example 1
 ```powershell
-$version = Get-Content 'version.txt'
-
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
@@ -79,13 +76,13 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Version' = "$currentVersion" }
+            return @{ 'Result' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript
-            if( $state['Version'] -eq $using:version )
+            if( $state['Result'] -eq $using:version )
             {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
                 return $true
             }
             Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)

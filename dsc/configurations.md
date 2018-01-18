@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Configurations
@@ -61,11 +60,11 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
-MyDscConfiguration
+MyDscConfiguration -ComputerName <MyComputer>
 
 ```
 
-In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuraton. The name defaults to "localhost".
+In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuration. The name defaults to "localhost".
 
 ## Compiling the configuration
 

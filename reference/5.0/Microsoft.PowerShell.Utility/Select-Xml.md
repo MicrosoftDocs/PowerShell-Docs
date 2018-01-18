@@ -16,23 +16,27 @@ Finds text in an XML string or document.
 ## SYNTAX
 
 ### Xml (Default)
-```
-Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> [-Xml] <XmlNode[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Path
-```
-Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> [-Path] <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
-Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> -LiteralPath <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Content
-```
-Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> -Content <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

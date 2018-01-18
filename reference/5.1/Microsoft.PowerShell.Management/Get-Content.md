@@ -16,19 +16,23 @@ Gets the content of the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]> [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+```powershell
+Get-Content [-Path] <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
+ [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>]
- [-Stream <String>] [<CommonParameters>]
+```powershell
+Get-Content -LiteralPath <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
+ [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -368,7 +372,7 @@ This cmdlet returns strings or bytes.
 The output type depends upon the content that it gets.
 
 ## NOTES
-* This cmdlet is designed to work with the data exposed by any provider. To get the providers in your session, use the Get-PSProvider cmdlet. For more information, see about_Providers(http://go.microsoft.com/fwlink/?LinkID=113250).
+* This cmdlet is designed to work with the data exposed by any provider. To get the providers in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 *
 

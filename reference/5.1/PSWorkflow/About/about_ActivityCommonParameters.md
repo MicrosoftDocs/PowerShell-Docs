@@ -204,8 +204,7 @@ The default value is the value of the $PSSessionApplicationName
 preference variable on the target computer. If this preference
 variable is not defined, the default value is WSMAN. This value
 is appropriate for most uses. For more information, see
-about_Preference_Variables
-(http://go.microsoft.com/fwlink/?LinkID=113248).
+[about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a
 listener to service the connection request. The value of
@@ -522,8 +521,7 @@ New-PSSessionOption cmdlet
 (http://go.microsoft.com/fwlink/?LinkID=144305).
 
 For more information about the $PSSessionOption
-preference variable, see about_Preference_Variables
-(http://go.microsoft.com/fwlink/?LinkID=113248).
+preference variable, see [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 -PSUseSSL <Boolean>
 A value of $True uses the Secure Sockets Layer (SSL)

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-29
+ms.date:  2018-01-04
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -446,11 +446,8 @@ Get-Command <cmdlet-name> | Format-List -Property verb,noun,pssnapin,module
 For example, to find the source of the `Get-Date` cmdlet, type:
 
 ```powershell
-Get-Command Get-Date | Format-List -Property verb,noun,pssnapin,module
+Get-Command Get-Date | Format-List -Property verb,noun,module
 ```
-
-For more information about PowerShell snap-ins, see
-[about_PSSnapins](about_PSSnapins.md).
 
 ## Module-related Warnings and Errors
 
@@ -486,22 +483,20 @@ NOTE: Remote sessions, including sessions that are started by using the
 commands are packaged in snap-ins.
 
 The following modules (or snap-ins) are installed with PowerShell.
+* CimCmdlets
 * Microsoft.PowerShell.Archive
 * Microsoft.PowerShell.Core
 * Microsoft.PowerShell.Diagnostics
 * Microsoft.PowerShell.Host
 * Microsoft.PowerShell.Management
-* Microsoft.PowerShell.ODataUtils
 * Microsoft.PowerShell.Security
 * Microsoft.PowerShell.Utility
 * Microsoft.WSMan.Management
-* OneGet
+* PackageManagement
 * PowerShellGet
 * PSDesiredStateConfiguration
-* PSScheduledJob
-* PSWorkflow
-* PSWorkflowUtility
-* ISE
+* PSDiagnostics
+* PSReadline
 
 ## See Also
 
@@ -510,8 +505,6 @@ The following modules (or snap-ins) are installed with PowerShell.
 about_DesiredStateConfiguration
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-
-[about_PSSnapins](about_PSSnapins.md)
 
 [Get-Command](../Get-Command.md)
 

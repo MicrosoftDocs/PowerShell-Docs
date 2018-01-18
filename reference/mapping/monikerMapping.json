@@ -54,13 +54,13 @@
             "Microsoft.PowerShell.Security":{},
             "Microsoft.PowerShell.Utility":{},
             "Microsoft.WsMan.Management":{},
+            "PackageManagement":{},
+            "PowershellGet":{},
             "PSDesiredStateConfiguration":{},
             "PSReadline":{},
             "PSScheduledJob":{},
             "PSWorkflow":{},
-            "PSWorkflowUtility":{},
-            "PackageManagement":{},
-            "PowershellGet":{}
+            "PSWorkflowUtility":{}
         }
     },
     "powershell-5.1": {
@@ -81,13 +81,13 @@
             "Microsoft.PowerShell.Security":{},
             "Microsoft.PowerShell.Utility":{},
             "Microsoft.WsMan.Management":{},
+            "PackageManagement":{},
+            "PowershellGet":{},
             "PSDesiredStateConfiguration":{},
             "PSReadline":{},
             "PSScheduledJob":{},
             "PSWorkflow":{},
-            "PSWorkflowUtility":{},
-            "PackageManagement":{},
-            "PowershellGet":{}
+            "PSWorkflowUtility":{}
         }
     },
     "powershell-6": {
@@ -101,18 +101,15 @@
             "Microsoft.PowerShell.Core": {},
             "Microsoft.PowerShell.Diagnostics":{},
             "Microsoft.PowerShell.Host":{},
-            "Microsoft.PowerShell.LocalAccounts":{},
             "Microsoft.PowerShell.Management":{},
             "Microsoft.PowerShell.Security":{},
             "Microsoft.PowerShell.Utility":{},
             "Microsoft.WSMan.Management":{},
+            "PackageManagement":{},
+            "PowerShellGet":{},
             "PSDesiredStateConfiguration":{},
             "PSDiagnostics":{},
-            "PSReadLine":{},
-            "PackageManagement":{},
-            "Pester":{},
-            "PowerShellGet":{}
-
+            "PSReadLine":{}
         }
     }
 }

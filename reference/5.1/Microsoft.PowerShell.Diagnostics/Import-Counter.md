@@ -43,9 +43,9 @@ Along with the Get-Counter and Export-Counter cmdlets, this feature lets you col
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE xample 1: Import all counter data from a file --------------------------xample : Import all counter data from a file
-```
-PS C:\> $Data = Import-Counter -Path ProcessorData.csv
+### Example 1: Import all counter data from a file
+```powershell
+$Data = Import-Counter -Path ProcessorData.csv
 ```
 
 This command imports all counter data from the ProcessorData.csv file into the $Data variable.

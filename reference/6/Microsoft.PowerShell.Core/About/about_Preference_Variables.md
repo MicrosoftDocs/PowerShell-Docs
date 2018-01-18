@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-05
+ms.date:  2017-12-21
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -835,7 +835,45 @@ Valid values: Any string.
 Default: Space
 
 By default, the \$OFS variable does not exist and the output file separator is
-a space, but you can add this variable and set it to any string.
+a space, but you can add this variable and set it to any string. You can change
+the value of $OFS in your session, by typing `$OFS="<value>"`. If you are
+expecting the default value of " " in your script, module, or configuration
+output, be careful that the $OFS default value has not been changed elsewhere
+in your code.
+
+For example:
+
+```powershell
+$a="1","2","3","4"
+$a
+[string]$a
+$OFS=""
+[string]$a
+$OFS=","
+[string]$a
+$OFS="--PowerShellRocks--";
+[string]$a
+$OFS="`n`n";
+[string]$a
+```
+
+```output
+1
+2
+3
+4
+1 2 3 4
+1234
+1,2,3,4
+1--PowerShellRocks--2--PowerShellRocks--3--PowerShellRocks--4
+1
+
+2
+
+3
+
+4
+```
 
 ##### EXAMPLES
 

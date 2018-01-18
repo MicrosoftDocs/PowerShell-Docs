@@ -92,7 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies the objects to be formatted. Enter a variable that contains the objects or type a command or expression that gets the objects.
+Specifies the objects to be formatted.
+Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
 Type: Object

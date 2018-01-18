@@ -245,7 +245,7 @@ For example, to add a "Time" key with a value of "Now" to the hash table, use
 the following statement format.
 
 ```powershell
-$hash = $hash.Add("Time", "Now")
+$hash.Add("Time", "Now")
 ```
 
 And, you can add keys and values to a hash table by using the addition

@@ -47,7 +47,7 @@ Unless specified in the parameter description, if you omit a parameter from the 
 In Windows PowerShell 2.0, **New-ModuleManifest** prompts you for the values of frequently used parameters that are not specified in the command, in addition to required parameter values.
 Starting in Windows PowerShell 3.0, it prompts only when required parameter values are not specified.
 
-Module manifest (.psd1) file encoding depends on environment: if it is PowerShell Core running on Linux then encoding is UTF-8 (no BOM); otherwise encoding is UTF-16 (with BOM).
+Module manifest (.psd1) file encoding is UTF-8 (no BOM) on all platforms.
 
 ## EXAMPLES
 

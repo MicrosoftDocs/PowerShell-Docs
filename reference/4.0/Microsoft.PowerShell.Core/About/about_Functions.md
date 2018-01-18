@@ -223,7 +223,7 @@ function Get-SmallFiles {
 ```
 
 For more information about the PSDefaultValue attribute class, see
-[PSDefaultValue Attribute Members](http://msdn.microsoft.com/library/windows/desktop/system.management.automation.psdefaultvalueattribute_members(v=vs.85).asp) on MSDN.
+[PSDefaultValue Attribute Members](https://msdn.microsoft.com/library/system.management.automation.psdefaultvalueattribute_members(v=vs.85).aspx) on MSDN.
 
 
 ### Positional Parameters
