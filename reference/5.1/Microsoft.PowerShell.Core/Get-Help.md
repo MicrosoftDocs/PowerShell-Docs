@@ -11,47 +11,55 @@ title:  Get-Help
 # Get-Help
 
 ## SYNOPSIS
+
 Displays information about Windows PowerShell commands and concepts.
 
 ## SYNTAX
 
 ### AllUsersView (Default)
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Full] [<CommonParameters>]
 ```
 
 ### DetailedView
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Detailed] [<CommonParameters>]
 ```
 
 ### Examples
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Examples] [<CommonParameters>]
 ```
 
 ### Parameters
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
 ```
 
 ### Online
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Online] [<CommonParameters>]
 ```
 
 ### ShowWindow
-```
+
+```powershell
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-ShowWindow] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Help** cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
 To get help for a Windows PowerShell command, type `Get-Help` followed by the command name, such as: `Get-Help Get-Process`.
@@ -95,21 +103,24 @@ To get About topics in a module, import the module, either by using the Import-M
 ## EXAMPLES
 
 ### Example 1: Display help about the help system
-```
+
+```powershell
 PS C:\> Get-Help
 ```
 
 This command displays help about the Windows PowerShell help system.
 
 ### Example 2: Display available help topics
-```
+
+```powershell
 PS C:\> Get-Help *
 ```
 
 This command displays a list of the available help topics.
 
 ### Example 3: Display basic information about a cmdlet
-```
+
+```powershell
 PS C:\> Get-Help Get-Alias
 PS C:\> Help Get-Alias
 PS C:\> Get-Alias -?
@@ -120,7 +131,8 @@ The **Get-Help** and *?* commands display the information on a single page.
 The Help command displays the information one page at a time.
 
 ### Example 4: Display a list of conceptual topics
-```
+
+```powershell
 PS C:\> Get-Help about_*
 ```
 
@@ -132,9 +144,13 @@ This command displays the conceptual topics only when the help files for those t
 For information about downloading and installing help files in Windows PowerShell 3.0, see Update-Help.
 
 ### Example 5: Download and install help files
-```
+
 The first command uses the **Get-Help** cmdlet to get help for the Get-Command cmdlet. Without help files, **Get-Help** display the cmdlet name, syntax and alias of **Get-Command**, and prompts you to use the **Update-Help** cmdlet to get the newest help files.
+```powershell
 PS C:\> Get-Help Get-Command
+```
+
+```Output
 NAME
     Get-Command
 
@@ -160,11 +176,15 @@ REMARKS
     Get-Help cannot find the help files for this cmdlet on this computer.
     It is displaying only partial help. To download and install help files
     for this cmdlet, use **Update-Help**. 
+```
 
 The second command runs the **Update-Help** cmdlet without parameters. This command downloads help files from the Internet for all of the modules in the current session and installs them on the local computer.This command works only when the local computer is connected to the Internet. If your computer is not connected to the Internet, you might be able to install help files from a network share. For more information, see Save-Help.
+```powershell
 PS C:\> Update-Help
+```
 
 Now that the help files are downloaded, we can repeat the first command in the sequence. This command gets help for the **Get-Command** cmdlet. The cmdlet now gets more extensive help for **Get-Command** and you can use the *Detailed*, *Full*, *Example*, and *Parameter* parameters of **Get-Help** to customize the displays.You can use the **Get-Help** cmdlet as soon as the **Update-Help** command finishes. You do not have to restart Windows PowerShell. 
+```powershell
 PS C:\> Get-Help Get-Command
 ```
 
@@ -179,7 +199,8 @@ If you are not a member of the Administrators group on the computer, you cannot 
 However, you can use the *Online* parameter to open the online version of help for a command, and you can read the help for Windows PowerShell in the TechNet library starting at Scripting with Windows PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
 
 ### Example 6: Display detailed help
-```
+
+```powershell
 PS C:\> Get-Help ls -Detailed
 ```
 
@@ -190,7 +211,8 @@ To see the complete help topic for a cmdlet, use the *Full* parameter.
 The *Full* and *Detailed* parameters are effective only when help files for the command are installed on the computer.
 
 ### Example 7: Display full information for a cmdlet
-```
+
+```powershell
 PS C:\> Get-Help Format-Table -Full
 ```
 
@@ -200,7 +222,8 @@ The full view of help includes parameter descriptions, examples, and a table of 
 The *Full* parameter is effective only when help files for the command are installed on the computer.
 
 ### Example 8: Display examples for a cmdlet
-```
+
+```powershell
 PS C:\> Get-Help Start-Service -Examples
 ```
 
@@ -210,7 +233,8 @@ It uses the *Examples* parameter of **Get-Help** to display only the Examples se
 The *Examples* parameter is effective only when help files for the command are installed on the computer.
 
 ### Example 9: Display parameter help
-```
+
+```powershell
 PS C:\> Get-Help Format-List -Parameter GroupBy
 ```
 
@@ -218,7 +242,8 @@ This command uses the *Parameter* parameter of **Get-Help** to display a detaile
 For detailed descriptions of all parameters of the **Format-List** cmdlet, type `Get-Help Format-List -Parameter *`.
 
 ### Example 10: Search for a word in cmdlet help
-```
+
+```powershell
 PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
 
@@ -228,14 +253,16 @@ This command searches for the word Clixml in the full version of the help topic 
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you have to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
 
 ### Example 11: Display online version of help
-```
+
+```powershell
 PS C:\> Get-Help Get-Member -Online
 ```
 
 This command displays the online version of the help topic for the Get-Member cmdlet.
 
 ### Example 12: Display a list of topics that include a word
-```
+
+```powershell
 PS C:\> Get-Help remoting
 ```
 
@@ -244,10 +271,13 @@ This command displays a list of topics that include the word remoting.
 When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
 
 ### Example 13: Display provider specific help
-```
-The first command uses the *Path* parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
-PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
 
+The first command uses the *Path* parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
+```powershell
+PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
+```
+
+```Output
 NAME
 
     Get-Item
@@ -260,11 +290,15 @@ SYNOPSIS
     to which you have made a SQL Server PowerShell connection.
 
     ...
+```
 
 The second command uses the Set-Location cmdlet (alias = "cd") to navigate to the provider path. From that location, even without the *Path* parameter, the **Get-Help** command gets the provider-specific help for the **Get-Item** cmdlet.
+```powershell
 PS C:\> cd SQLSERVER:\DataCollection
 SQLSERVER:\DataCollection> Get-Help Get-Item
+```
 
+```Output
 NAME
 
     Get-Item
@@ -277,11 +311,14 @@ SYNOPSIS
     to which you have made a SQL Server PowerShell connection.
 
     ...
-
+```
 
 The third command shows that a **Get-Help** command in a file system path, and without the *Path* parameter, gets the standard help for the **Get-Item** cmdlet.
+```powershell
 PS C:\> Get-Item
+```
 
+```Output
 NAME
 
     Get-Item
@@ -300,7 +337,8 @@ You can also get provider-specific help for cmdlets online in the section that d
 For example, for provider-specific online help for the **New-Item** cmdlet in each WSMan provider path, see New-Item for ClientCertificatehttp://go.microsoft.com/fwlink/?LinkID=158676 in the TechNet library.
 
 ### Example 14: Display help for a script
-```
+
+```powershell
 PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
 
