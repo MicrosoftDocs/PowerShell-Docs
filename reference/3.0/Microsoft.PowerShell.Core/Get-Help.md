@@ -17,28 +17,28 @@ Displays information about Windows PowerShell commands and concepts.
 
 ### AllUsersView (Default)
 
-```powershell
+```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Full] [<CommonParameters>]
 ```
 
 ### DetailedView
 
-```powershell
+```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Detailed] [<CommonParameters>]
 ```
 
 ### Examples
 
-```powershell
+```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-Examples] [<CommonParameters>]
 ```
 
 ### Parameters
 
-```powershell
+```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 
 ### ShowWindow
 
-```powershell
+```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
  [-Functionality <String[]>] [-Role <String[]>] [-ShowWindow] [<CommonParameters>]
 ```
@@ -82,7 +82,7 @@ To download or update the help files for a module in Windows PowerShell 3.0, use
 
 You can also view the help topics for Windows PowerShell online in the TechNet Library.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-You can read all of the help topics beginning at: http://go.microsoft.com/fwlink/?LinkID=107116http://go.microsoft.com/fwlink/?LinkID=107116.
+You can read all of the help topics beginning at: http://go.microsoft.com/fwlink/?LinkID=107116.
 
 If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, **Get-Help** displays the topic contents.
 If you enter a word or word pattern that appears in several help topic titles, **Get-Help** displays a list of the matching titles.
@@ -92,8 +92,8 @@ If you enter a word that does not appear in any help topic titles, **Get-Help** 
 **Get-Help** first looks for help files in the locale set for Windows, then in the parent locale (such as "pt" for "pt-BR"), and then in a fallback locale.
 Beginning in Windows PowerShell 3.0, if **Get-Help** does not find help in the fallback locale, it looks for help topics in English ("en-US") before returning an error message or displaying auto-generated help.
 
-For information about the symbols that **Get-Help** displays in the command syntax diagram, see about_Command_Syntaxhttp://go.microsoft.com/fwlink/?LinkID=113215.
-For information about parameter attributes, such as **Required** and **Position**, see about_Parametershttp://go.microsoft.com/fwlink/?LinkID=113243.
+For information about the symbols that **Get-Help** displays in the command syntax diagram, see [about_Command_Syntax](about/about_Command_Syntax.md).
+For information about parameter attributes, such as **Required** and **Position**, see [about_Parameters](about/about_parameters.md).
 
 **TROUBLESHOOTING NOTE**: In Windows PowerShell 3.0, **Get-Help** cannot find About topics in modules unless the module is imported into the current session.
 This is a known issue.
@@ -145,6 +145,7 @@ For information about downloading and installing help files in Windows PowerShel
 ### Example 5
 
 The first command uses the **Get-Help** cmdlet to get help for the Get-Command cmdlet. Without help files, **Get-Help** display the cmdlet name, syntax and alias of **Get-Command**, and prompts you to use the Update-Help cmdlet to get the newest help files.
+
 ```powershell
 PS C:\> Get-Help Get-Command
 ```
@@ -173,11 +174,13 @@ REMARKS
 ```
 
 The second command runs the Update-Help cmdlet without parameters. This command downloads help files from the Internet for all of the modules in the current session and installs them on the local computer.This command works only when the local computer is connected to the Internet. If your computer is not connected to the Internet, you might be able to install help files from a network share. For more information, see Save-Help.
+
 ```powershell
 PS C:\> Update-Help
 ```
 
 Now that the help files are downloaded, we can repeat the first command in the sequence. This command gets help for the **Get-Command** cmdlet. The cmdlet now gets more extensive help for **Get-Command** and you can use the **Detailed**, **Full**, **Example**,  and **Parameter** parameters of **Get-Help** to customize the displays.You can use the **Get-Help** cmdlet as soon as the Update-Help command completes. You do not need to restart Windows PowerShell. 
+
 ```powershell
 PS C:\> Get-Help Get-Command
 ```
@@ -190,7 +193,7 @@ You can use the same command sequence to update the help files on your computer 
 
 To download and install the help files for the commands that come with Windows PowerShell, and for any modules in the $pshome\Modules directory, open Windows PowerShell with the "Run as administrator" option.
 If you are not a member of the Administrators group on the computer, you cannot download help for these modules.
-However, you can use the **Online** parameter to open the online version of help for a command, and you can read the help for Windows PowerShell in the TechNet Library beginning at http://go.microsoft.com/fwlink/?LinkID=107116http://go.microsoft.com/fwlink/?LinkID=107116.
+However, you can use the **Online** parameter to open the online version of help for a command, and you can read the help for Windows PowerShell at https://docs.microsoft.com/powershell/scripting.
 
 ### Example 6
 
@@ -266,6 +269,7 @@ When you enter a word that does not appear in any topic title, **Get-Help** disp
 ### Example 13
 
 The first command uses the **Path** parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
+
 ```powershell
 PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
 ```
@@ -285,6 +289,7 @@ SYNOPSIS
 ```
 
 The second command uses the Set-Location cmdlet (alias = "cd") to navigate to the provider path. From that location, even without the **Path** parameter, the **Get-Help** command gets the provider-specific help for the **Get-Item** cmdlet.
+
 ```powershell
 PS C:\> cd SQLSERVER:\DataCollection
 SQLSERVER:\DataCollection> Get-Help Get-Item
@@ -305,6 +310,7 @@ SYNOPSIS
 ```
 
 The third command shows that a **Get-Help** command in a file system path, and without the **Path** parameter, gets the standard help for the **Get-Item** cmdlet.
+
 ```powershell
 PS C:\> Get-Item
 ```
@@ -324,7 +330,7 @@ This example shows how to get help that explains how to use the Get-Item cmdlet 
 The example shows two ways of getting the provider-specific help for **Get-Item**.
 
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
-For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676http://go.microsoft.com/fwlink/?LinkID=158676.
+For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676.
 
 ### Example 14
 
@@ -333,7 +339,7 @@ PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
 
 This command gets help for the MyScript.ps1 script.
-For information about writing help for your functions and scripts, see about_Comment_Based_Helphttp://go.microsoft.com/fwlink/?LinkID=144309.
+For information about writing help for your functions and scripts, see [about_Comment_Based_Help](about/about_Comment_Based_Help.md).
 
 ## PARAMETERS
 
@@ -578,18 +584,23 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
 You cannot pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### ExtendedCmdletHelpInfo
 If you run **Get-Help** on a command that does not have a help file, **Get-Help** returns an ExtendedCmdletHelpInfo object that represents autogenerated help.
+
 ### System.String
 If you get a conceptual help topic, **Get-Help** returns it as a string.
+
 ### MamlCommandHelpInfo
 If you get a command that has a help file, **Get-Help** returns a **MamlCommandHelpInfo** object.
+
 ## NOTES
 * Without parameters, "Get-Help" displays information about the Windows PowerShell help system.
 * Windows PowerShell 3.0 does not come with help files. To download and install the help files that **Get-Help** reads, use the Update-Help cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with Windows PowerShell  and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
@@ -598,24 +609,19 @@ If you get a command that has a help file, **Get-Help** returns a **MamlCommandH
 
 * **Get-Help** displays help in the locale set for Windows or in the fallback language for that locale. If you do not have help files for the primary or fallback locale, **Get-Help** behaves as though there are no help files on the computer. To get help for a different locale, use Region and Language in Control Panel to change the settings for Windows.
 * The full view of help (-Full) includes a table of information about the parameters. The table includes the following fields:
-
   - Required:  Indicates whether the parameter is required (true) or optional (false).
-
   - Position:  Indicates whether the parameter is named or positional (numbered).
-Positional parameters must appear in a specified place in the command.
-
+    Positional parameters must appear in a specified place in the command.
   - "Named" indicates that the parameter name is required, but that the parameter can appear anywhere in the command.
-
-  - \<Number\> indicates that the parameter name is optional, but when the name is omitted, the parameter must be in the place specified by the number.
-For example, "2" indicates that when the parameter name is omitted, the parameter must be the second (2) or only unnamed parameter in the command.
-When the parameter name is used, the parameter can appear anywhere in the command.
-
+  - \<Number\> indicates that the parameter name is optional, but when the name is omitted, the parameter must be in the
+    place specified by the number.
+    For example, "2" indicates that when the parameter name is omitted, the parameter must be the second (2) or only unnamed 
+    parameter in the command. When the parameter name is used, the parameter can appear anywhere in the command.
   - Default value: The parameter value that Windows PowerShell uses if you do not include the parameter in the command.
-
   - Accepts pipeline input: Indicates whether you can (true) or cannot (false) send objects to the parameter through a pipeline.
-"By Property Name" means that the pipelined object must have a property with the same name as the parameter name.
-
+    "By Property Name" means that the pipelined object must have a property with the same name as the parameter name.
   - Accepts wildcard characters: Indicates whether the value of a parameter can include wildcard characters, such as * and ?.
+
 ## RELATED LINKS
 
 [Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
