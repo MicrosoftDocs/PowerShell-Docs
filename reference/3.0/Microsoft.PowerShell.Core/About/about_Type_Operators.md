@@ -63,9 +63,9 @@ operate on the input object as a whole. That is, if the input object is a
 collection, it is the _collection_ type that is tested, not the types of the
 collection's _elements_.
 
-If the \<input> is a type that is _derived_ from the \[.NET Type\] `-is`
+If the \<input> is a type that is _derived_ from the \[.NET Type\], `-is`
 returns`$True`. If the \<input> is a type that is _derived_ from the \[.NET
-Type\] `-as` _passes through_ converts the input to the target type. For
+Type\] `-as` converts the input to the target type. For
 example, `(Get-Item /) -is [System.IO.FileSystemInfo]` returns `$True`,
 because the type of the input, `[System.IO.DirectoryInfo]`, is _derived_ from
 the `[System.IO.FileSystemInfo]`.
