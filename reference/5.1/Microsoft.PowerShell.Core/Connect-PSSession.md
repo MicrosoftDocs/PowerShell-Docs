@@ -76,7 +76,7 @@ These include those that were started by or disconnected from other sessions on 
 However, **Connect-PSSession** cannot connect to broken or closed sessions, or interactive sessions started by using the Enter-PSSession cmdlet.
 Also you cannot connect sessions to sessions started by other users, unless you can provide the credentials of the user who created the session.
 
-For more information about the Disconnected Sessions feature, see about_Remote_Disconnected_Sessions.
+For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -326,7 +326,7 @@ The configuration name of a session is stored in the **ConfigurationName** prope
 The value of this parameter is used to select and filter sessions.
 It does not change the session configuration that the session uses.
 
-For more information about session configurations, see about_Session_Configurations.
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: String
@@ -527,7 +527,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options that includes the default values, see New-PSSessionOption.
 For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption
@@ -597,7 +597,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
