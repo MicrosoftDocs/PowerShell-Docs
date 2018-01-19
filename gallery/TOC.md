@@ -11,6 +11,7 @@
 ### [Creating a PowerShellGallery Account](psgallery/psgallery_creating_an_account.md)
 ### [Creating and publishing items](psgallery/Creating-and-Publishing-an-item.md)
 ### [Publishing guidelines and best practices](psgallery/psgallery-PublishingGuidelines.md)
+### [Item manifest and Gallery UI](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Unlisting items](psgallery/psgallery_unlist_items.md)
 ### [Deleting items](psgallery/Deleting-Items.md)
 ### [Managing item owners](psgallery/Managing-Item-Owners.md)
