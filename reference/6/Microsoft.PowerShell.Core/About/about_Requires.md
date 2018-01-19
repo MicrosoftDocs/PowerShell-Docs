@@ -40,7 +40,7 @@ functions, cmdlets, or snap-ins.
 
 ### PARAMETERS
 
--Version <N>[.<n>]
+-Version \<N\>[.\<n\>]
 
 Specifies the minimum version of Windows PowerShell that the script requires.
 Enter a major version number and optional minor version number.
@@ -51,7 +51,7 @@ For example:
 #Requires -Version 3.0
 ```
 
--PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
+-PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
 
 Specifies a Windows PowerShell snap-in that the script requires. Enter the
 snap-in name and an optional version number.
@@ -62,7 +62,7 @@ For example:
 #Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
--Modules <Module-Name> &#124; <Hashtable>
+-Modules \<Module-Name\> &#124; \<Hashtable\>
 
 Specifies Windows PowerShell modules that the script requires. Enter the
 module name and an optional version number. The Modules parameter is
