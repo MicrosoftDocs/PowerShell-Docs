@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowClobber
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoPathUpdate
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -427,7 +427,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

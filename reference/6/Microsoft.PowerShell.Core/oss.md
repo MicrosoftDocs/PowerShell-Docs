@@ -64,7 +64,7 @@ If you omit the Stream parameter, the command displays all of the aliases, becau
 ## PARAMETERS
 
 ### -InformationAction
-@{Text=}
+
 
 ```yaml
 Type: ActionPreference
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}
+
 
 ```yaml
 Type: String

@@ -45,7 +45,7 @@ These commands list only the directly contained items, much like using Cmd.exe's
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** can perform complex filtering capabilities through its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those parameters are typically based only on name. You can perform complex filtering based on other properties of items by using the **Where-Object**cmdlet. The following command finds all keys within HKCU:\\Software that have no more than one subkey and also have exactly four values:
+**Get-ChildItem** can perform complex filtering capabilities through its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those parameters are typically based only on name. You can perform complex filtering based on other properties of items by using the **Where-Object** cmdlet. The following command finds all keys within HKCU:\\Software that have no more than one subkey and also have exactly four values:
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }

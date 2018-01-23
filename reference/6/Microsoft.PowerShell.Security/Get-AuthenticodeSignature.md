@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-@{Text=}
+
 
 ```yaml
 Type: Byte[]
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePathOrExtension
-@{Text=}
+
 
 ```yaml
 Type: String[]

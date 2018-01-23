@@ -40,7 +40,7 @@ A `Get-Command *` command gets all types of commands, including all of the non-W
 
 A **Get-Command** command that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
 To enable, disable, and configure automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248) in the Microsoft TechNet library.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md) in the Microsoft TechNet library.
 
 **Get-Command** gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
 
@@ -255,7 +255,7 @@ To detect dynamic parameters that are available only when certain other paramete
 To detect the dynamic parameters that a provider adds to a cmdlet, set the value of the *ArgumentList* parameter to a path in the provider drive, such as WSMan:, HKLM:, or Cert:.
 When the command is a Windows PowerShell provider cmdlet, enter only one path in each command.
 The provider cmdlets return only the dynamic parameters for the first path the value of *ArgumentList*.
-For information about the provider cmdlets, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250) in the TechNet library.
+For information about the provider cmdlets, see [about_Providers](About/about_Providers.md).
 
 ```yaml
 Type: Object[]

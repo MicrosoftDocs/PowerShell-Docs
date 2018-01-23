@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-@{Text=}
+
 
 ```yaml
 Type: Version

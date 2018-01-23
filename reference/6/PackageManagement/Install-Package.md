@@ -571,7 +571,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowClobber
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -691,7 +691,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoPathUpdate
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -706,7 +706,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-@{Text=}
+
 
 ```yaml
 Type: Uri
@@ -721,7 +721,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -736,7 +736,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleCapability
-@{Text=}
+
 
 ```yaml
 Type: String[]
@@ -751,7 +751,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

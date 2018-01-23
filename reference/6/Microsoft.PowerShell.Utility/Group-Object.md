@@ -16,8 +16,8 @@ Groups objects that contain the same value for specified properties.
 ## SYNTAX
 
 ```
-Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>] [[-Property] <Object[]>]
- [-Culture <String>] [-CaseSensitive] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+Group-Object [[-Property] <Object[]>] [-NoElement] [-AsHashTable] [-AsString]
+ [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
  [<CommonParameters>]
 ```
 
@@ -74,20 +74,26 @@ The command uses the *Property* parameter to specify that the events should be g
 In the output, the Count column represents the number of entries in each group, the Name column represents the EventID values that define a group, and the Group column represents the objects in each group.
 
 ### Example 5: Group processes by priority class
-```
+```powershell
 PS C:\> Get-Process | Group-Object -Property PriorityClass
-Count Name                Group
------ ----                -----
-55 Normal              {System.Diagnostics.Process (AdtAgent), System.Diagnostics.Process (alg), System.Dia... 
-1                     {System.Diagnostics.Process (Idle)} 
-3 High                {System.Diagnostics.Process (Newproc), System.Diagnostics.Process (winlogon), System.D... 
-2 BelowNormal         {System.Diagnostics.Process (winperf), PS C:\> Get-Process | Group-Object -Property company -NoElement
+
+Count Name         Group
+----- ----         -----
+   55 Normal       {System.Diagnostics.Process (AdtAgent), System.Diagnosti...
+    1              {System.Diagnostics.Process (Idle)}
+    3 High         {System.Diagnostics.Process (Newproc), System.Diagnostic...
+    2 BelowNormal  {System.Diagnostics.Process (winperf),
+```
+
+```powershell
+PS C:\> Get-Process | Group-Object -Property PriorityClass -NoElement
+
 Count Name
 ----- ----
-55 Normal
-1
-3 High
-2 BelowNormal
+   55 Normal
+    1
+    3 High
+    2 BelowNormal
 ```
 
 This example demonstrates the effect of the *NoElement* parameter.
@@ -271,33 +277,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-By itself, the AsHashTable parameter returns each hash table in which each key is an instance of the grouped object. When used with the  AsString parameter, the keys in the hash table are strings.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-By itself, the AsHashTable parameter returns each hash table in which each key is an instance of the grouped object. When used with the  AsString parameter, the keys in the hash table are strings.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the objects to group.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -347,7 +326,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

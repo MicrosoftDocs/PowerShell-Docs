@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class

@@ -25,7 +25,7 @@ all the values in an array, consider using a Foreach statement.
 The following shows the For statement syntax.
 
 ```powershell
-for (>init>; <condition>; <repeat>)
+for (<init>; <condition>; <repeat>)
 {<statement list>}
 ```
 

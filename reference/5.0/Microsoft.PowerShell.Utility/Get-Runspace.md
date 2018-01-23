@@ -48,7 +48,7 @@ The **Get-Runspace** cmdlet gets active runspaces in a Windows PowerShell host p
 ## PARAMETERS
 
 ### -Id
-@{Text=}
+
 
 ```yaml
 Type: Int32[]
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+
 
 ```yaml
 Type: String[]

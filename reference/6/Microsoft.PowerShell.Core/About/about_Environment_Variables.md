@@ -305,5 +305,5 @@ For more information, see [about_Modules](about_Modules.md).
 
 ## SEE ALSO
 
-- [Environment (provider)](../../Microsoft.PowerShell.Core/Providers/Environment-Provider.md)
+- [Environment (provider)](../Providers/Environment-Provider.md)
 - [about_Modules](about_Modules.md)

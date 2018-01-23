@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -14,16 +14,16 @@ Describes the Throw keyword, which generates a terminating error.
 
 ## LONG DESCRIPTION
 
-The Throw keyword causes a terminating error. You can use the Throw keyword
-to stop the processing of a command, function, or script.
+The Throw keyword causes a terminating error. You can use the Throw keyword to
+stop the processing of a command, function, or script.
 
 For example, you can use the Throw keyword in the script block of an If
 statement to respond to a condition or in the Catch block of a
-Try-Catch-Finally statement. You can also use the Throw keyword in a
-parameter declaration to make a function parameter mandatory.
+Try-Catch-Finally statement. You can also use the Throw keyword in a parameter
+declaration to make a function parameter mandatory.
 
-The Throw keyword can throw any object, such as a user message string or
-the object that caused the error.
+The Throw keyword can throw any object, such as a user message string or the
+object that caused the error.
 
 ## SYNTAX
 
@@ -33,8 +33,8 @@ The syntax of the Throw keyword is as follows:
 throw [<expression>]
 ```
 
-The expression in the Throw syntax is optional. When the Throw statement
-does not appear in a Catch block, and it does not include an expression, it
+The expression in the Throw syntax is optional. When the Throw statement does
+not appear in a Catch block, and it does not include an expression, it
 generates a ScriptHalted error.
 
 ```powershell
@@ -47,13 +47,14 @@ At line:1 char:6
 + FullyQualifiedErrorId : ScriptHalted
 ```
 
-If the Throw keyword is used in a Catch block without an expression, it
-throws the current RuntimeException again. For more information, see
+If the Throw keyword is used in a Catch block without an expression, it throws
+the current RuntimeException again. For more information, see
 about_Try_Catch_Finally.
 
 ## THROWING A STRING
-The optional expression in a Throw statement can be a string, as shown in
-the following example:
+
+The optional expression in a Throw statement can be a string, as shown in the
+following example:
 
 ```powershell
 C:\PS> throw "This is an error."
@@ -61,7 +62,8 @@ C:\PS> throw "This is an error."
 This is an error.
 At line:1 char:6
 + throw <<<<  "This is an error."
-+ CategoryInfo          : OperationStopped: (This is an error.:String) [], RuntimeException
++ CategoryInfo          : OperationStopped: (This is an error.:String) [], R
+untimeException
 + FullyQualifiedErrorId : This is an error.
 ```
 
@@ -76,7 +78,8 @@ C:\PS> throw (get-process PowerShell)
 System.Diagnostics.Process (PowerShell)
 At line:1 char:6
 + throw <<<<  (get-process PowerShell)
-+ CategoryInfo          : OperationStopped: (System.Diagnostics.Process (PowerShell):Process) [],
++ CategoryInfo          : OperationStopped: (System.Diagnostics.Process (Pow
+erShell):Process) [],
 RuntimeException
 + FullyQualifiedErrorId : System.Diagnostics.Process (PowerShell)
 ```
@@ -105,15 +108,16 @@ One of the identified items was in an invalid format.
 At line:1 char:6
 + throw <<<<  $formatError
 + CategoryInfo          : OperationStopped: (:) [], FormatException
-+ FullyQualifiedErrorId : One of the identified items was in an invalid format.
++ FullyQualifiedErrorId : One of the identified items was in an invalid
+format.
 ```
 
 ## RESULTING ERROR
 
-The Throw keyword can generate an ErrorRecord object. The Exception
-property of the ErrorRecord object contains a RuntimeException object. The
-remainder of the ErrorRecord object and the RuntimeException object vary
-with the object that the Throw keyword throws.
+The Throw keyword can generate an ErrorRecord object. The Exception property
+of the ErrorRecord object contains a RuntimeException object. The remainder of
+the ErrorRecord object and the RuntimeException object vary with the object
+that the Throw keyword throws.
 
 The RunTimeException object is wrapped in an ErrorRecord object, and the
 ErrorRecord object is automatically saved in the $Error automatic variable.
@@ -139,7 +143,9 @@ optional.
 function Get-XMLFiles
 {
   param ($path = $(throw "The Path parameter is required."))
-  dir -path $path\*.xml -recurse | sort lastwritetime | ft lastwritetime, attributes, name  -auto
+  dir -path $path\*.xml -recurse |
+    sort lastwritetime |
+      ft lastwritetime, attributes, name  -auto
 }
 ```
 
@@ -154,4 +160,3 @@ function Get-XMLFiles
 [about_Trap](about_Trap.md)
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
-

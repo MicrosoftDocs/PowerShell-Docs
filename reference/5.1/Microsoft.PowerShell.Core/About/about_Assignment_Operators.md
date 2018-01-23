@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-24
+ms.date:  2017-11-27
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Assignment_Operators
@@ -18,16 +18,21 @@ perform numeric operations on the values before the assignment.
 
 Windows PowerShell supports the following assignment operators.
 
-| Operator | Description |
-| ------- | ----------- |
-| = | Sets the value of a variable to the specified value. |
-| += | Increases the value of a variable by the specified value, or appends the specified value to the existing value. |
-|-= | Decreases the value of a variable by the specified value. |
-| *= | Multiplies the value of a variable by the specified value, or appends the specified value to the existing value. |
-| /= | Divides the value of a variable by the specified value. |
-| %= | Divides the value of a variable by the specified value and then assigns the remainder (modulus) to the variable. |
-| ++ | Increases the value of a variable, assignable property, or array element by 1. |
-| -- | Decreases the value of a variable, assignable property, or array element by 1. |
+|Operator|Description                                                  |
+|--------|-------------------------------------------------------------|
+|=       |Sets the value of a variable to the specified value.         |
+|+=      |Increases the value of a variable by the specified value, or |
+|        |appends the specified value to the existing value.           |
+|-=      |Decreases the value of a variable by the specified value.    |
+|*=      |Multiplies the value of a variable by the specified value, or|
+|        |appends the specified value to the existing value.           |
+|/=      |Divides the value of a variable by the specified value.      |
+|%=      |Divides the value of a variable by the specified value and   |
+|        |then assigns the remainder (modulus) to the variable.        |
+|++      |Increases the value of a variable, assignable property, or   |
+|        |array element by 1.                                          |
+|--      |Decreases the value of a variable, assignable property, or   |
+|        |array element by 1.                                          |
 
 ## SYNTAX
 
@@ -335,8 +340,8 @@ $a
 You cannot use the `-=` operator to delete the values of a variable. To
 delete all the values that are assigned to a variable, use the
 [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md) or
-[Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md) cmdlets
-to assign a value of `$null` or `""` to the variable.
+[Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
+cmdlets to assign a value of `$null` or `""` to the variable.
 
 ```powershell
 $a = $null

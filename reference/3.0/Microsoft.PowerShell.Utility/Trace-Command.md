@@ -14,16 +14,19 @@ Configures and starts a trace of the specified expression or command.
 ## SYNTAX
 
 ### expressionSet (Default)
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger]
- [-PSHost] [<CommonParameters>]
+```powershell
+Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+ [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ### commandSet
-```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+```powershell
+Trace-Command [-Name] <String[]> [-Command] <String>
+ [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
@@ -85,7 +88,7 @@ Parameter Sets: commandSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -118,7 +121,7 @@ Parameter Sets: expressionSet
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -175,9 +178,18 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
-Adds optional data to the prefix of each trace message in the output.
-The valid values are None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, and Callstack.
-"None" is the default.
+Specifies optional data to the prefix of each trace message in the output.
+The acceptable values for this parameter are:
+
+- None
+- LogicalOperationStack
+- DateTime
+- Timestamp
+- ProcessId
+- ThreadId
+- Callstack
+
+None is the default.
 
 To specify multiple options, separate them with commas, but with no spaces, and enclose them in quotation marks, such as "ProcessID,ThreadID".
 
@@ -185,6 +197,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 Type: TraceOptions
 Parameter Sets: (All)
 Aliases: 
+Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
 Position: Named
@@ -205,7 +218,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
@@ -231,7 +244,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 2
 Default value: All
 Accept pipeline input: False
 Accept wildcard characters: False

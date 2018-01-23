@@ -82,7 +82,7 @@ This example installs the newest version of the module ContosoServer to $home\Do
 ## PARAMETERS
 
 ### -AllowClobber
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

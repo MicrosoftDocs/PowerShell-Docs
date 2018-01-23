@@ -16,8 +16,7 @@ Gets Windows PowerShell components that are instrumented for tracing.
 ## SYNTAX
 
 ```
-Get-TraceSource [[-Name] <String[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-TraceSource [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,33 +45,6 @@ This command gets all of the Windows PowerShell components that can be traced.
 
 ## PARAMETERS
 
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 Specifies the trace sources to get.
 Wildcards are permitted.
@@ -84,7 +56,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

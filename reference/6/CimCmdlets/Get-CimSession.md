@@ -43,7 +43,7 @@ For more information about wps_2 sessions, see about_CimSessions
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLExample 1: Get CIM sessions from the current wps_2 session. --------------------------xample: Get CIM sessions from the current wps_2 session.
+### Example 1: Get CIM sessions from the current wps_2 session
 ```
 By default, Get-CimSession only gets information about the CIM sessions that exist in the current wps_2 session. Get-CimSession does not get CIM sessions that were created in other wps_2 sessions or that were created on other computers.
 PS C:\> New-CimSession -ComputerName Server01,Server02
@@ -84,7 +84,7 @@ Protocol     : WSMAN
 
 This command first creates CIM sessions by using New-CimSession, and then gets the CIM sessions by using Get-CimSession.
 
-### -------------------------- EXAMPLE xample 2: Get the CIM sessions from a specific computer --------------------------xample : Get the CIM sessions from a specific computer
+### Example 2: Get the CIM sessions from a specific computer
 ```
 PS C:\>Get-CimSession -ComputerName Server02
 Id           : 2 
@@ -104,14 +104,14 @@ Protocol     : WSMAN
 
 This command gets the CIM sessions that are connected to the computer named Server02.
 
-### -------------------------- EXAMPLE xample 3: Get a list of CIM sessions and then format the list --------------------------xample : Get a list of CIM sessions and then format the list
+### Example 3: Get a list of CIM sessions and then format the list
 ```
 PS C:\>Get-CimSession | Format-Table -Property ComputerName,InstanceID
 ```
 
 This command gets all of the CIM sessions in the current wps_2 session, and then formats the list in a table containing only the ComputerName and InstanceID parameters.
 
-### -------------------------- EXAMPLExample 4: Get all the CIM sessions that have specific names --------------------------xample: Get all the CIM sessions that have specific names
+### Example 4: Get all the CIM sessions that have specific names
 ```
 PS C:\>Get-CimSession -ComputerName Serv*
 Id           : 1 
@@ -145,7 +145,7 @@ Protocol     : WSMAN
 
 This command gets all of the CIM sessions that have names that begin with the characters serv.
 
-### -------------------------- EXAMPLExample 5: Get a specific CIM session --------------------------xample: Get a specific CIM session
+### Example 5: Get a specific CIM session
 ```
 PS C:\>Get-CimSession -ID 2
 ```

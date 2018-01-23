@@ -16,23 +16,23 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
-```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
+ [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
-```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
+ [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
-```
+```powershell
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -225,45 +225,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-The value of the property parameter can be a calculated property, which is a hash table that specifies a name and calculates a value for the property display. Valid keys are:
-
--- Name or Label <string>
-
--- Expression <string> or <scriptblock>
-
-For more information, see the examples.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The value of the property parameter can be a calculated property, which is a hash table that specifies a name and calculates a value for the property display. Valid keys are:
-
--- Name or Label <string>
-
--- Expression <string> or <scriptblock>
-
-For more information, see the examples.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies objects to send to the cmdlet through the pipeline.
 This parameter enables you to pipe objects to **Select-Object**.
@@ -315,14 +276,14 @@ Parameter Sets: DefaultParameter, SkipLastParameter
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SkipLast
-@{Text=}
+
 
 ```yaml
 Type: Int32

@@ -79,13 +79,16 @@ Because the name of the *Property* parameter is optional, you can omit it and ty
 
 ### -DisplayError
 Indicates that this cmdlet displays errors at the command line.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a **Format-List** command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the *DisplayError* parameter with an expression.
+This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-List` command, and the expressions do not appear to be working.
+The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-PS \> Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday #ERR
+```powershell
+PS C:\> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
+
+
+DayOfWeek    : Monday
+ $_ / $null  : #ERR
+```
 
 ```yaml
 Type: SwitchParameter

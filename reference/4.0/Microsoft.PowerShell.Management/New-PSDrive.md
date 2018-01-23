@@ -376,7 +376,7 @@ You cannot pipe input to this cmdlet.
 ### System.Management.Automation.PSDriveInfo
 
 ## NOTES
-* The **New-PSDrive** cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the Get-PSProvider cmdlet. For more information about providers, see about_Providers (http://go.microsoft.com/fwlink/?LinkID=113250).
+* The **New-PSDrive** cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, use the Get-PSProvider cmdlet. For more information about providers, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 * Mapped network drives are specific to a user account. Mapped network drives that you create in sessions that are started with the "Run as administrator" option or with the credential of another user are not visible in a session that you started without explicit credentials, or with the credentials of the current user.
 
 ## RELATED LINKS

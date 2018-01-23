@@ -44,16 +44,16 @@ The script file includes valid metadata.
 
 ### Example 2: Test a script file that has values for all metadata properties
 ```
-PS C:\> Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1 | Format-List * 
+PS C:\> Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1" | Format-List *
 Name                       : Test-Runbook
 Path                       : D:\code\Test-Runbook.ps1
 ScriptBase                 : D:\code
-ReleaseNotes               : {contoso script now supports following features, Feature 1, Feature 2, Feature 3...} 
+ReleaseNotes               : {contoso script now supports following features, Feature 1, Feature 2, Feature 3...}
 Version                    : 1.0
 Guid                       : eb246b19-17da-4392-8c89-7c280f69ad0e
 Author                     : pattif
 CompanyName                : Microsoft Corporation
-Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved. 
+Copyright                  : Â© 2015 Microsoft Corporation. All rights reserved.
 Tags                       : {Tag1, Tag2, Tag3}
 LicenseUri                 : https://contoso.com/License
 ProjectUri                 : https://contoso.com/
@@ -63,7 +63,7 @@ RequiredScripts            : {Start-WFContosoServer, Stop-ContosoServerScript}
 ExternalScriptDependencies : Stop-ContosoServerScript
 Description                : Contoso Script example
 RequiredModules            : {RequiredModule1, @{ ModuleName = 'RequiredModule2'; ModuleVersion = '1.0' }, @{ ModuleName = 'RequiredModule3'; RequiredVersion = '2.0' }, ExternalModule1}
-ExportedCommands           : {Test-WebUri, ValidateAndAdd-PSScriptInfoEntry, Get-PSScriptInfo, My-Workflow...} 
+ExportedCommands           : {Test-WebUri, ValidateAndAdd-PSScriptInfoEntry, Get-PSScriptInfo, My-Workflow...}
 ExportedFunctions          : {Test-WebUri, ValidateAndAdd-PSScriptInfoEntry, Get-PSScriptInfo, My-AdvPSCmdlet}
 ExportedWorkflows          : My-Workflow
 ```
@@ -74,7 +74,7 @@ This command tests the script file Test-Runbook.ps1 and uses the pipeline operat
 ```
 PS C:\> Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
 Test-ScriptFileInfo : Script 'D:\code\Hello-World.ps1' is missing required metadata properties. Verify that the script file has Version, Description
-and Author properties. You can use the Update-ScriptFileInfo or New-ScriptFileInfo cmdlet to add or update the PSScriptInfo to the script file. 
+and Author properties. You can use the Update-ScriptFileInfo or New-ScriptFileInfo cmdlet to add or update the PSScriptInfo to the script file.
 At line:1 char:1
 + Test-ScriptFileInfo D:\code\Hello-World.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +97,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String
 Parameter Sets: LiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -114,7 +114,7 @@ The default location is the current directory (.).
 ```yaml
 Type: String
 Parameter Sets: PathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0

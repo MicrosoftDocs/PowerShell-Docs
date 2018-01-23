@@ -16,27 +16,27 @@ Finds text in an XML string or document.
 ## SYNTAX
 
 ### Xml (Default)
-```
-Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> [-Xml] <XmlNode[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Path
-```
-Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> [-Path] <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
-```
-Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> -LiteralPath <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Content
-```
-Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Select-Xml [-XPath] <String> -Content <String[]> [-Namespace <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -203,33 +203,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-@{Text=}```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-@{Text=}```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Namespace
 Specifies a hash table of the namespaces used in the XML.
 Use the format @{\<namespaceName\> = \<namespaceValue\>}.
@@ -260,7 +233,7 @@ Parameter Sets: Path
 Aliases: 
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -277,7 +250,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -295,7 +268,7 @@ Parameter Sets: Xml
 Aliases: Node
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

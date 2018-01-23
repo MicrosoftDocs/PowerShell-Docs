@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Desired State Configuration Overview for Decision Makers
@@ -37,7 +36,7 @@ Configurations are also shareable via the [PowerShell Gallery](https://powershel
 ## Desired State Configuration and DevOps
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) is a combination of people, 
-technologies, and culture that allow for rapid deployment and iteration. 
+process, and tools that allow for rapid deployment and iteration focused on delivering value to end users whether internal or external. 
 DSC was designed with DevOps in mind. 
 Having a single configuration define an environment means that developers can encode their requirements into a configuration, 
 check that configuration into source control, and operations teams can easily deploy code without having to go through error-prone manual processes. 

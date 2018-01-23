@@ -36,7 +36,7 @@ If you omit a parameter, the cmdlet creates the object with a default value for 
 The **New-PSWorkflowExecutionOption** cmdlet is part of the Windows PowerShell Workflow feature.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.630).aspx.
+For more information about workflow common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 

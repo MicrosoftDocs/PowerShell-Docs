@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configure a virtual machines at initial boot-up by using DSC
@@ -82,7 +81,7 @@ Configuration SampleIISInstall
 Rename and move that file into the proper location on the VHD as `Pending.mof` by using the [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet. For example:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Dismount the VHD by calling the [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) cmdlet. For example:
 

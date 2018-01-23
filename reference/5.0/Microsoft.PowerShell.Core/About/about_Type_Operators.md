@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-091
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -22,15 +22,20 @@ TRUE otherwise.
 
 The -as operator tries to convert the input object to the specified .NET
 Framework type. If it succeeds, it returns the converted object. It if
-fails, it returns nothing. It does not return an error.
+fails, it returns \$null. It does not return an error.
 
 The following table lists the type operators in  Windows PowerShell.
 
-|Operator|Description|Example|
-|---|---|---|
-|`-is`|Returns TRUE when the input is an instance of the specified.NET Framework type.|`C:\PS> (get-date) -is [DateTime]`<BR>`True`|
-|`-isNot`|Returns TRUE when the input is not an instance of the specified.NET Framework type.|`C:\PS> (get-date) -isNot [DateTime]`<BR>`False`|
-|`-as`|Converts the input to the specified.NET Framework type.|`C:\PS> 12/31/07 -as [DateTime]`<BR>`Monday, December 31, 2007 12:00:00 AM`|
+|Operator|Description                |Example                          |
+|--------|---------------------------|---------------------------------|
+|`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+|        |is an instance of the      |`True`                           |
+|        |specified .NET type.       |                                 |
+|`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+|        |not an instance of the     |`False`                          |
+|        |specified.NET type.        |                                 |
+|`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+|        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
 
 The syntax of the type operators is as follows:
 
@@ -52,11 +57,18 @@ example, to specify System.Diagnostics.Process, enter
 [System.Diagnostics.Process], [Diagnostics.Process], or
 "diagnostics.process".
 
-The type operators always return a Boolean value, even if the input is a
-collection of objects. However, when the input is a collection, the type
-operators match the .NET Framework type of the collection. They do not
-match the type of each object, even when all of the objects are of the same
-type.
+The Boolean type operators (-is and -isNot) always return a Boolean value,
+even if the input is a collection of objects. The type operators always
+operate on the input object as a whole. That is, if the input object is a
+collection, it is the _collection_ type that is tested, not the types of the
+collection's _elements_.
+
+If the \<input> is a type that is _derived_ from the \[.NET Type\] `-is`
+returns`$True`. If the \<input> is a type that is _derived_ from the \[.NET
+Type\] `-as` _passes through_ converts the input to the target type. For
+example, `(Get-Item /) -is [System.IO.FileSystemInfo]` returns `$True`,
+because the type of the input, `[System.IO.DirectoryInfo]`, is _derived_ from
+the `[System.IO.FileSystemInfo]`.
 
 To find the .NET Framework type of an object, use the Get-Member cmdlet.
 Or, use the GetType method of all the objects together with the FullName
@@ -64,7 +76,7 @@ property of this method. For example, the following statement gets the type
 of the return value of a Get-Culture command:
 
 ```powershell
-C:\PS> (get-culture).gettype().fullname
+PS> (get-culture).gettype().fullname
 System.Globalization.CultureInfo
 ```
 
@@ -72,25 +84,25 @@ System.Globalization.CultureInfo
 The following examples show some uses of the Type operators:
 
 ```powershell
-C:\PS> 32 -is [Float]
+PS> 32 -is [Float]
 False
 
-C:\PS> 32 -is "int"
+PS> 32 -is "int"
 True
 
-C:\PS> (get-date) -is [DateTime]
+PS> (get-date) -is [DateTime]
 True
 
-C:\PS> "12/31/2007" -is [DateTime]
+PS> "12/31/2007" -is [DateTime]
 False
 
-C:\PS> "12/31/2007" -is [String]
+PS> "12/31/2007" -is [String]
 True
 
-C:\PS> (get-process PowerShell)[0] -is [System.Diagnostics.Process]
+PS> (get-process PowerShell)[0] -is [System.Diagnostics.Process]
 True
 
-C:\PS> (get-command get-member) -is [System.Management.Automation.CmdletInfo]
+PS> (get-command get-member) -is [System.Management.Automation.CmdletInfo]
 True
 ```
 
@@ -103,53 +115,55 @@ return System.Globalization.CultureInfo objects, a collection of these
 objects is a System.Object array.
 
 ```powershell
-C:\PS> (get-culture) -is [System.Globalization.CultureInfo]
+PS> (get-culture) -is [System.Globalization.CultureInfo]
 True
 
-C:\PS> (get-uiculture) -is [System.Globalization.CultureInfo]
+PS> (get-uiculture) -is [System.Globalization.CultureInfo]
 True
 
-C:\PS> (get-culture), (get-uiculture) -is [System.Globalization.CultureInfo]
+PS> (get-culture), (get-uiculture) -is [System.Globalization.CultureInfo]
 False
 
-C:\PS> (get-culture), (get-uiculture) -is [Array]
+PS> (get-culture), (get-uiculture) -is [Array]
 True
 
-C:\PS> (get-culture), (get-uiculture) | foreach {$_ -is [System.Globalization.CultureInfo])
+PS> (get-culture), (get-uiculture) | foreach {
+  $_ -is [System.Globalization.CultureInfo])
+}
 True
 True
 
-C:\PS> (get-culture), (get-uiculture) -is [Object]
+PS> (get-culture), (get-uiculture) -is [Object]
 True
 ```
 
 The following examples show how to use the -as operator.
 
 ```powershell
-C:\PS> "12/31/07" -is [DateTime]
+PS> "12/31/07" -is [DateTime]
 False
 
-C:\PS> "12/31/07" -as [DateTime]
+PS> "12/31/07" -as [DateTime]
 Monday, December 31, 2007 12:00:00 AM
 
-C:\PS> $date = "12/31/07" -as [DateTime]
+PS> $date = "12/31/07" -as [DateTime]
 
 C:\PS>$a -is [DateTime]
 True
 
-C:\PS> 1031 -as [System.Globalization.CultureInfo]
+PS> 1031 -as [System.Globalization.CultureInfo]
 
-LCID             Name             DisplayName
-----             ----             -----------
-1031             de-DE            German (Germany)
+LCID      Name      DisplayName
+----      ----      -----------
+1031      de-DE     German (Germany)
 ```
 
 The following example shows that when the -as operator cannot convert the
 input object to the .NET Framework type, it returns nothing.
 
 ```powershell
-C:\PS> 1031 -as [System.Diagnostic.Process]
-C:\PS>
+PS> 1031 -as [System.Diagnostic.Process]
+PS>
 ```
 
 ## SEE ALSO

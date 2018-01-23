@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-27
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,28 +7,25 @@ title:  about_Enum
 ---
 
 # About Enum
-## about_Enum
 
+## SHORT DESCRIPTION
 
-# SHORT DESCRIPTION
+The `enum` statement is used to declare an enumeration. An enumeration is a
+distinct type that consists of a set of named labels called the enumerator
+list.
 
-`enum` is used to declare an enumeration;
-a distinct type that consists of a set of named labels called the
-enumerator list.
+## LONG DESCRIPTION
 
-# LONG DESCRIPTION
-
-The `enum` statement allows to create a strongly typed set of labels;
-that can be used in the code without having to parse or check for
+The `enum` statement allows you to create a strongly typed set of labels. That
+enumeration can be used in the code without having to parse or check for
 spelling errors.
 
-Enumerations are,internally, represented as integers with a starting
-value of zero.
-So, the first label in the list is assigned with the zero value;
-the reminding labels are assigned consecutive numbers, one after each other.
+Enumerations are internally represented as integers with a starting value of
+zero. The first label in the list is assigned the value zero. The remaining
+labels are assigned with consecutive numbers.
 
-In the definition, labels can be given any integer value. Labels with
-no value assigned take the next integer value.
+In the definition, labels can be given any integer value. Labels with no value
+assigned take the next integer value.
 
 ## Syntax (basic)
 
@@ -41,20 +38,12 @@ enum <enum-name> {
 
 ## Usage example
 
-The following example shows an enumeration of objects
-that can be seen as media files.
-The enumeration definition assigns explicit values to the underlying
-values of `music`, `picture`, `video`; labels coming immediately
-after an explicit assignment gets the next integer value.
-Synonyms can be created by assigning the same value to another label;
-see the constructed values for: `ogg`, `oga`, `mogg`, or `jpg`, `jpeg`,
-or `mpg`, `mpeg`.
-
-> **Warning Note**: GetNames() and GetValues() seem to return the same results;
-> however, under the hood is PowerShell is changing values into labels.
-> Read the list carefully and you'll notice that `oga` and `mogg` are
-> mentioned under the 'Get Names' results, but not under the 'Get Values';
-> similar output for `jpg`, `jpeg`, and `mpg`, `mpeg`.
+The following example shows an enumeration of objects that can be seen as
+media files. The definition assigns explicit values to the underlying values
+of `music`, `picture`, `video`. Labels immediately following an explicit
+assignment get the next integer value. Synonyms can be created by assigning
+the same value to another label; see the constructed values for: `ogg`, `oga`,
+`mogg`, or `jpg`, `jpeg`, or `mpg`, `mpeg`.
 
 ```powershell
 enum MediaTypes {
@@ -75,22 +64,12 @@ enum MediaTypes {
     avi
     m4v
 }
-
-'Get Names'
-'---------'
-[enum]::GetNames([MediaTypes])
-'Get Values'
-'----------'
-[enum]::GetValues([MediaTypes])
-'Enumerate Values'
-'----------------'
-[enum]::GetValues([MediaTypes]).foreach({$intvalue = [int]$_; "{0,-10} {1}" -f $_,$intvalue})
-
 ```
 
-```output
-Get Names
----------
+The `GetEnumNames()` method returns the list of the labels for the enumeration.
+
+```powershell
+[MediaTypes].GetEnumNames()
 unknown
 music
 mp3
@@ -107,8 +86,12 @@ mpg
 mpeg
 avi
 m4v
-Get Values
-----------
+```
+
+The `GetEnumValues()` method returns the list of the values for the enumeration.
+
+```powershell
+[MediaTypes].GetEnumValues()
 unknown
 music
 mp3
@@ -125,21 +108,34 @@ mpeg
 mpeg
 avi
 m4v
-Enumerate Values
-----------------
+```
+
+**Note**: GetEnumNames() and GetEnumValues() seem to return the same results.
+However, internally, PowerShell is changing values into labels. Read the list
+carefully and you'll notice that `oga` and `mogg` are mentioned under the 'Get
+Names' results, but not under the 'Get Values' similar output for `jpg`,
+`jpeg`, and `mpg`, `mpeg`.
+
+```powershell
+[MediaTypes].GetEnumName(15)
+oga
+
+[MediaTypes].GetEnumNames() | ForEach-Object {
+  "{0,-10} {1}" -f $_,[int]([MediaTypes]::$_)
+}
 unknown    0
 music      10
 mp3        11
 aac        12
+ogg        15
 oga        15
-oga        15
-oga        15
+mogg       15
 picture    20
-jpeg       21
+jpg        21
 jpeg       21
 png        22
 video      40
-mpeg       41
+mpg        41
 mpeg       41
 avi        42
 m4v        43
@@ -170,27 +166,26 @@ two value.
 
 In the following example the *FileAttributes* enumeration is created.
 
- ```powershell
- [Flags()] enum FileAttributes {
-     Archive = 1
-     Compressed = 2
-     Device = 4
-     Directory = 8
-     Encrypted = 16
-     Hidden = 32
- }
+```powershell
+[Flags()] enum FileAttributes {
+    Archive = 1
+    Compressed = 2
+    Device = 4
+    Directory = 8
+    Encrypted = 16
+    Hidden = 32
+}
 
-[FileAttributes]$file1 = [FileAttributes]::Archive + [FileAttributes]::Compressed + [FileAttributes]::Device
+[FileAttributes]$file1 = [FileAttributes]::Archive
+[FileAttributes]$file1 +=[FileAttributes]::Compressed
+[FileAttributes]$file1 +=  [FileAttributes]::Device
 "file1 attributes are: $file1"
 
 [FileAttributes]$file2 = [FileAttributes]28 ## => 16 + 8 + 4
 "file2 attributes are: $file2"
- ```
+```
 
 ```output
 file1 attributes are: Archive, Compressed, Device
 file2 attributes are: Device, Directory, Encrypted
-PS C:\tmp>
-
 ```
-

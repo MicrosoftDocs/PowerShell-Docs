@@ -16,26 +16,31 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 ## SYNTAX
 
 ### TypeNameSet (Default)
-```
-Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru] [<CommonParameters>]
+```powershell
+Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### MemberSet
-```
-Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
- [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
+```powershell
+Add-Member [-MemberType] <PSMemberTypes> [-Name] <String>
+ [[-Value] <Object>] [[-SecondValue] <Object>]
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### NotePropertySingleMemberSet
-```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-NotePropertyName] <String>
- [-NotePropertyValue] <Object> [<CommonParameters>]
+```powershell
+Add-Member [-NotePropertyName] <String> [-NotePropertyValue] <Object>
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### NotePropertyMultiMemberSet
-```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [-NotePropertyMembers] <IDictionary> [<CommonParameters>]
+```powershell
+Add-Member [-NotePropertyMembers] <IDictionary>
+ -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

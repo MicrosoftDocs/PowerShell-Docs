@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-30
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -58,19 +58,12 @@ directory objects are passed down the pipeline to the second command.
 
 The second command `where { $_.PsIsContainer -eq $false }` uses the
 PsIsContainer property of all file system objects to select only
-files, which have a value of False ($false) in their PsIsContainer
+files, which have a value of False (\$false) in their PsIsContainer
 property. Folders, which are containers and, thus, have a value of
-True ($true) in their PsIsContainer property, are not selected.
+True (\$true) in their PsIsContainer property, are not selected.
 
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.
-
-## For More Information
-
-Now that you understand a bit about objects, see the [about_Methods](about_Methods.md)
-help topic to learn how to find and use object methods, the
-[about_Properties](about_Properties.md) topic to learn how to find and use object properties,
-and the [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) topic, to learn how to find an object type.
 
 ## See Also
 

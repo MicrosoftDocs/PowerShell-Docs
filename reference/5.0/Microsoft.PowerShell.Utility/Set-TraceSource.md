@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
-Specifies optional data to add to the prefix of each trace message in the output.
+Specifies optional data to the prefix of each trace message in the output.
 The acceptable values for this parameter are:
 
 - None
@@ -125,7 +125,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: TraceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False

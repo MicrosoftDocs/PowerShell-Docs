@@ -58,7 +58,7 @@ The **Disable-RunspaceDebug** cmdlet disables debugging on one or more runspaces
 ## PARAMETERS
 
 ### -AppDomainName
-@{Text=}
+
 
 ```yaml
 Type: String[]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessName
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceId
-@{Text=}
+
 
 ```yaml
 Type: Int32[]
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceInstanceId
-@{Text=}
+
 
 ```yaml
 Type: Guid[]
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceName
-@{Text=}
+
 
 ```yaml
 Type: String[]

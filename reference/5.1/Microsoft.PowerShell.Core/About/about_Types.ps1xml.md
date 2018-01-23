@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,9 +7,6 @@ title:  about_Types.ps1xml
 ---
 
 # About Types.ps1xml
-## about_Types.ps1xml
-
-
 
 # SHORT DESCRIPTION
 
@@ -27,16 +24,16 @@ extended type data to a Windows PowerShell session.
 extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
-`Update-TypeData` cmdlet to add dynamic extended type data to the current session
-see [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
+`Update-TypeData` cmdlet to add dynamic extended type data to the current
+session see
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ## About Extended Type Data
 
-Extended type data defines additional properties and methods ("members")
-of object types in Windows PowerShell. You can extend any type that is
-supported by Windows PowerShell and use the added properties and methods
-in the same way that you use the properties that are defined on the object
-types.
+Extended type data defines additional properties and methods ("members") of
+object types in Windows PowerShell. You can extend any type that is supported
+by Windows PowerShell and use the added properties and methods in the same way
+that you use the properties that are defined on the object types.
 
 For example, Windows PowerShell adds a `DateTime` property to all
 `System.DateTime` objects, such as the ones that the `Get-Date` cmdlet
@@ -47,27 +44,27 @@ PS C:> (Get-Date).DateTime
 Sunday, January 29, 2012 9:43:57 AM
 ```
 
-You won't find the `DateTime` property in the description of the [`System.DateTime`
-structure](http://msdn.microsoft.com/library/system.datetime.aspx),
-because Windows PowerShell adds the property and it is visible only in
-Windows PowerShell.
+You won't find the `DateTime` property in the description of the
+[`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
+because Windows PowerShell adds the property and it is visible only in Windows
+PowerShell.
 
-To add the `DateTime` property to all Windows PowerShell sessions, Windows PowerShell
-defines the `DateTime` property in the Types.ps1xml file in the Windows PowerShell
-installation directory (`$PSHOME`).
+To add the `DateTime` property to all Windows PowerShell sessions, Windows
+PowerShell defines the `DateTime` property in the Types.ps1xml file in the
+Windows PowerShell installation directory (`$PSHOME`).
 
 ## Adding Extended Type Data to Windows PowerShell.
 
 There are three sources of extended type data in Windows PowerShell sessions.
 
 - The Types.ps1xml files in the Windows PowerShell installation directory
-are loaded automatically into every Windows PowerShell session.
+  are loaded automatically into every Windows PowerShell session.
 
 - The Types.ps1xml files that modules export are loaded when the module
-is imported into the current session.
+  is imported into the current session.
 
 - Extended type data that is defined by using the `Update-TypeData` cmdlet
-is added only to the current session. It is not saved in a file.
+  is added only to the current session. It is not saved in a file.
 
 In the session, the extended type data from the three sources is applied
 to objects in the same way and is available on all objects of the specified
@@ -78,11 +75,10 @@ types.
 The following TypeData cmdlets are included in the Microsoft.PowerShell.Utility
 module in Windows PowerShell 3.0 and later versions of Windows PowerShell.
 
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| Get-TypeData    | Gets extended type data in the current session.                 |
-| Update-TypeData | Reloads Types.ps1xml files. Adds extended type data to the current session. |
-| Remove-TypeData |  Removes extended type data from the current session.
+- `Get-TypeData`: Gets extended type data in the current session.
+- `Update-TypeData`: Reloads Types.ps1xml files. Adds extended type data to the
+  current session.
+- `Remove-TypeData`: Removes extended type data from the current session.
 
 For more information about these cmdlets, see the help topic for each cmdlet.
 
@@ -118,8 +114,8 @@ value. The following XML adds the Count property to the `System.Array` type.
 </Type>
 ```
 
-To get the new `AliasProperty`, use a `Get-Member` command on any array, as shown
-in the following example.
+To get the new `AliasProperty`, use a `Get-Member` command on any array, as
+shown in the following example.
 
 ```powershell
 Get-Member -InputObject (1,2,3,4)
@@ -127,15 +123,15 @@ Get-Member -InputObject (1,2,3,4)
 
 The command returns the following results.
 
-```powershell
-Name           MemberType    Definition
-----           ----------    ----------
-Count          AliasProperty Count = Length
-Address        Method        System.Object& Address(Int32)
-Clone          Method        System.Object Clone()
-CopyTo         Method        System.Void CopyTo(Array array, Int32 index):
-Equals         Method        System.Boolean Equals(Object obj)
-Get            Method        System.Object Get(Int32)
+```output
+Name       MemberType    Definition
+----       ----------    ----------
+Count      AliasProperty Count = Length
+Address    Method        System.Object& Address(Int32)
+Clone      Method        System.Object Clone()
+CopyTo     Method        System.Void CopyTo(Array array, Int32 index):
+Equals     Method        System.Boolean Equals(Object obj)
+Get        Method        System.Object Get(Int32)
 # ...
 ```
 
@@ -344,7 +340,9 @@ FileSystem provider.
     <CodeProperty>
       <Name>Mode</Name>
       <GetCodeReference>
-        <TypeName>Microsoft.PowerShell.Commands.FileSystemProvider</TypeName>
+        <TypeName>
+          Microsoft.PowerShell.Commands.FileSystemProvider
+        </TypeName>
         <MethodName>Mode</MethodName>
       </GetCodeReference>
     </CodeProperty>
@@ -369,7 +367,9 @@ FileSystem provider.
     <CodeProperty>
       <Name>Mode</Name>
       <GetCodeReference>
-        <TypeName>Microsoft.PowerShell.Commands.FileSystemProvider</TypeName>
+        <TypeName>
+          Microsoft.PowerShell.Commands.FileSystemProvider
+        </TypeName>
         <MethodName>Mode</MethodName>
       </GetCodeReference>
     </CodeProperty>
@@ -510,21 +510,21 @@ methods of the `System.Management.ManagementDateTimeConverter` class.
 
 ```xml
 <Type>
-  <Name>System.Management.ManagementObject</Name>
-  <Members>
-    <ScriptMethod>
-      <Name>ConvertToDateTime</Name>
-      <Script>
-        [System.Management.ManagementDateTimeConverter]::ToDateTime($args[0])
-      </Script>
-    </ScriptMethod>
-    <ScriptMethod>
-      <Name>ConvertFromDateTime</Name>
-      <Script>
-        [System.Management.ManagementDateTimeConverter]::ToDmtfDateTime($args[0])
-      </Script>
-    </ScriptMethod>
-  </Members>
+ <Name>System.Management.ManagementObject</Name>
+ <Members>
+ <ScriptMethod>
+   <Name>ConvertToDateTime</Name>
+   <Script>
+   [System.Management.ManagementDateTimeConverter]::ToDateTime($args[0])
+   </Script>
+ </ScriptMethod>
+ <ScriptMethod>
+   <Name>ConvertFromDateTime</Name>
+   <Script>
+   [System.Management.ManagementDateTimeConverter]::ToDmtfDateTime($args[0])
+   </Script>
+ </ScriptMethod>
+ </Members>
 </Type>
 ```
 
@@ -547,7 +547,7 @@ property of the `GetVersionInfo` static method of
     <ScriptProperty>
       <Name>VersionInfo</Name>
       <GetScriptBlock>
-        [System.Diagnostics.FileVersionInfo]::GetVersionInfo($this.FullName)
+      [System.Diagnostics.FileVersionInfo]::GetVersionInfo($this.FullName)
       </GetScriptBlock>
     </ScriptProperty>
   </Members>
@@ -585,8 +585,9 @@ use method syntax.
 
 ## Signing a Types.ps1xml File
 
-To protect users of your Types.ps1xml file, you can sign the file using
-a digital signature. For more information, see [about_Signing](about_Signing.md).
+To protect users of your Types.ps1xml file, you can sign the file using a
+digital signature. For more information, see
+[about_Signing](about_Signing.md).
 
 # SEE ALSO
 
@@ -603,4 +604,3 @@ a digital signature. For more information, see [about_Signing](about_Signing.md)
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
-

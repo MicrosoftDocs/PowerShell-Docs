@@ -428,7 +428,7 @@ Accept wildcard characters: False
 Specifies the Is operator, which gets objects when the property value is an instance of the specified .NET Framework type.
 Enclose the type name in square brackets.
 
-For example, `Get-Process | where StartTime -is \[DateTime\]`
+For example, `Get-Process | where StartTime -Is [DateTime]`
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -447,7 +447,7 @@ Accept wildcard characters: False
 ### -IsNot
 Specifies the Is-Not operator, which gets objects when the property value is not an instance of the specified .NET Framework type.
 
-For example, `Get-Process | where StartTime -IsNot \[System.String\]`
+For example, `Get-Process | where StartTime -IsNot [DateTime]`
 
 This parameter is introduced in Windows PowerShell 3.0.
 

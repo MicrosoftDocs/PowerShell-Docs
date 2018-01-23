@@ -119,7 +119,7 @@ These settings are designed for enterprises in which DCOM-based restarts fail be
 Indicates that this cmdlet runs as a background job.
 
 To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell by using the Run as administrator option.
-For more information, see about_Remote_Requirements (http://go.microsoft.com/fwlink/?LinkID=135187).
+For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
 When you specify the *AsJob* parameter, the command immediately returns an object that represents the background job.
 You can continue to work in the session while the job finishes.

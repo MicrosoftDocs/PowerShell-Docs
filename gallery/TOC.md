@@ -11,6 +11,7 @@
 ### [Creating a PowerShellGallery Account](psgallery/psgallery_creating_an_account.md)
 ### [Creating and publishing items](psgallery/Creating-and-Publishing-an-item.md)
 ### [Publishing guidelines and best practices](psgallery/psgallery-PublishingGuidelines.md)
+### [Item manifest and Gallery UI](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Unlisting items](psgallery/psgallery_unlist_items.md)
 ### [Deleting items](psgallery/Deleting-Items.md)
 ### [Managing item owners](psgallery/Managing-Item-Owners.md)
@@ -39,6 +40,7 @@
 ### [Publish](psget/module/psget_publish-module.md)
 ### [Modules with PSEditions](psget/module/modulewithpseditionsupport.md)
 ### [Modules Requiring License Acceptance](psget/module/RequireLicenseAcceptance.md)
+### [Prerelease Versions](psget/module/PreReleaseModule.md)
 ### [Troubleshooting](psget/psget_cmdlets_troubleshooting.md)
 
 ## Script
@@ -54,7 +56,7 @@
 ### [Publish](psget/script/psget_publish-script.md)
 ### [Scripts with PSEditions](psget/script/scriptwithpseditionsupport.md)
 ### [Require License Acceptance for Scripts](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Prerelease Versions](psget/script/PreReleaseScript.md)
 ## Repository management
 ### [Bootstrapping NuGet provider and NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Registering repository](psget/repository/psget_register-psrepository.md)

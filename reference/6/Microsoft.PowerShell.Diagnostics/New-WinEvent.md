@@ -36,7 +36,7 @@ This command uses the **New-WinEvent** cmdlet to create event 45090 for the Micr
 ## PARAMETERS
 
 ### -Id
-@{Text=}
+
 
 ```yaml
 Type: Int32
@@ -51,7 +51,7 @@ Accept wildcard characters: False
 ```
 
 ### -Payload
-@{Text=}
+
 
 ```yaml
 Type: Object[]
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
-@{Text=}
+
 
 ```yaml
 Type: String
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-@{Text=}
+
 
 ```yaml
 Type: Byte

@@ -11,48 +11,44 @@ title:  Get-Process
 # Get-Process
 
 ## SYNOPSIS
-Gets the processes that are running on the local computer or a remote computer.
+Gets the processes that are running on the local computer.
 
 ## SYNTAX
 
 ### Name (Default)
 ```
-Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo]
+ [<CommonParameters>]
 ```
 
 ### NameWithUserName
 ```
-Get-Process [[-Name] <String[]>] [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process [[-Name] <String[]>] [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-Process -Id <Int32[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -Id <Int32[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### IdWithUserName
 ```
-Get-Process -Id <Int32[]> [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Get-Process -InputObject <Process[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo]
+ [<CommonParameters>]
 ```
 
 ### InputObjectWithUserName
 ```
-Get-Process -InputObject <Process[]> [-IncludeUserName] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Process -InputObject <Process[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Process** cmdlet gets the processes on a local or remote computer.
+The **Get-Process** cmdlet gets the processes on a local computer.
 
 Without parameters, this cmdlet gets all of the processes on the local computer.
 You can also specify a particular process by process name or process ID (PID) or pass a process object through the pipeline to this cmdlet.
@@ -108,22 +104,23 @@ The pipeline operator passes the objects to the **Format-Table** cmdlet, which f
 The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
 
 ### Example 5: Add a property to the standard Get-Process output display
-```
-PS C:\> Get-Process Powershell -ComputerName S1, localhost | ft @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, @{Label="PM(K)";Expression={[int]($_.PM/1024)}},@{Label="WS(K)";Expression={[int]($_.WS/1024)}},@{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, @{Label="CPU(s)";Expression={if ($_.CPU -ne $()) { $_.CPU.ToString("N")}}}, Id, MachineName, ProcessName -Auto
-
-
-
-
-
+```powershell
+PS C:\> Get-Process pwsh |
+	ft @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
+	@{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
+	@{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
+	@{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
+	@{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
+	Id, MachineName, ProcessName -Auto
 
 NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 ------ ----- ----- ----- ------   -- ----------- -----------
-6      23500 31340   142        1980 S1          powershell
-6      23500 31348   142        4016 S1          powershell
-27     54572 54520   576        4428 localhost   powershell
+     6 23500 31340   142 1.70   1980 .           pwsh
+     6 23500 31348   142 2.75   4016 .           pwsh
+    27 54572 54520   576 5.52   4428 .           pwsh
 ```
 
-This example provides a **Format-Table** (alias = ft) command that adds the **MachineName** property to the standard **Get-Process** output display.
+This example provides a `Format-Table` (alias = ft) command that adds the MachineName property to the standard `Get-Process` output display.
 
 ### Example 6: Get version information for a process
 ```
@@ -152,72 +149,41 @@ This command gets the modules for the processes that have names that begin with 
 To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start Windows PowerShell with the Run as administrator option.
 
 ### Example 8: Find the owner of a process
-```
-PS C:\> $P = Get-WmiObject win32_process -Filter "name='powershell.exe'"
-PS C:\> $P.getowner()
+```powershell
+PS C:\> Get-Process pwsh -IncludeUserName
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-__GENUS          : 2
-__CLASS          : __PARAMETERS
-__SUPERCLASS     :
-__DYNASTY        : __PARAMETERS
-__RELPATH        :
-__PROPERTY_COUNT : 3
-__DERIVATION     : {}
-__SERVER         :
-__NAMESPACE      :
-__PATH           :
-Domain           : DOMAIN01
-ReturnValue      : 0
-User             : user01
+Handles      WS(K)   CPU(s)     Id UserName            ProcessName
+-------      -----   ------     -- --------            -----------
+    782     132080     2.08   2188 DOMAIN01\user01     pwsh
 ```
 
 This command shows how to find the owner of a process.
-Because the **System.Diagnostics.Process** object that **Get-Process** returns does not have a property or method that returns the process owner, the command uses the Get-WmiObject cmdlet to get a Win32_Process object that represents the same process.
-
-The first command uses **Get-WmiObject** to get the PowerShell process.
-It saves it in the $P variable.
-
-The second command uses the **GetOwner** method to get the owner of the process in $P.
-The command reveals that the owner is Domain01\user01.
+On Windows, the **IncludeUserName** parameter requires elevated user rights (Run as Administrator).
+The output reveals that the owner is Domain01\user01.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
-```
-PS C:\> Get-Process powershell
+```powershell
+PS C:\> Get-Process pwsh
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     83    96.21     105.95       4.33    1192  10 pwsh
+     79    83.81     117.61       2.16   10580  10 pwsh
 
 
+PS C:\> Get-Process -Id $PID
 
-
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-308      26        52308      61780   567     3.18   5632 powershell
-377      26        62676      63384   575     3.88   5888 powershell PS C:\> Get-Process -Id $pid
-
-
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-396      26        56488      57236   575     3.90   5888 powershell
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     83    96.21      77.53       4.39    1192  10 pwsh
 ```
 
-These commands show how to use the $pid automatic variable to identify the process that is hosting the current Windows PowerShell session.
-You can use this method to distinguish the host process from other Windows PowerShell processes that you might want to stop or close.
-The first command gets all of the Windows PowerShell processes in the current session.
+These commands show how to use the $PID automatic variable to identify the process that is hosting the current PowerShell session.
+You can use this method to distinguish the host process from other PowerShell processes that you might want to stop or close.
 
-The second command gets the Windows PowerShell process that is hosting the current session.
+The first command gets all of the PowerShell processes in the current session.
+
+The second command gets the PowerShell process that is hosting the current session.
 
 ### Example 10: Get all processes that have a main window title and display them in a table
 ```
@@ -231,34 +197,11 @@ To view all of the properties, pipe the results of a **Get-Process** command to 
 
 ## PARAMETERS
 
-### -ComputerName
-Specifies the computers for which this cmdlet gets active processes.
-The default is the local computer.
-
-Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one or more computers.
-To specify the local computer, type the computer name, a dot (.), or localhost.
-
-This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter of this cmdlet even if your computer is not configured to run remote commands.
-
-```yaml
-Type: String[]
-Parameter Sets: Name, Id, InputObject
-Aliases: Cn
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -FileVersionInfo
 Indicates that this cmdlet gets the file version information for the program that runs in the process.
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
-You cannot use the *FileVersionInfo* and *ComputerName* parameters of the **Get-Process** cmdlet in the same command.
 To get file version information for a process on a remote computer, use the Invoke-Command cmdlet.
 
 Using this parameter is equivalent to getting the **MainModule.FileVersionInfo** property of each process object.
@@ -309,37 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Process even if your computer is not configured to run remote commands.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers. To specify the local computer, type the computer name, a dot (.), or "localhost".
-
-This parameter does not rely on Windows PowerShell remoting. You can use the ComputerName parameter of Get-Process even if your computer is not configured to run remote commands.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies one or more process objects.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -361,7 +273,6 @@ Indicates that this cmdlet gets the modules that have been loaded by the process
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
-You cannot use the *Module* and *ComputerName* parameters of the **Get-Process** cmdlet in the same command.
 To get the modules that have been loaded by a process on a remote computer, use the **Invoke-Command** cmdlet.
 
 This parameter is equivalent to getting the Modules property of each process object.

@@ -63,7 +63,7 @@ The second command gets registered repositories and displays the results.
 ## PARAMETERS
 
 ### -Credential
-@{Text=}
+
 
 ```yaml
 Type: PSCredential
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Default
-@{Text=}
+
 
 ```yaml
 Type: SwitchParameter

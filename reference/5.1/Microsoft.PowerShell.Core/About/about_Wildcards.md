@@ -60,7 +60,7 @@ following command gets services in which the ServiceType property value
 includes "Interactive".
 
 ```powershell
-Get-Service | Where-Object {$_.ServiceType -like "Interactive"}
+Get-Service | Where-Object {$_.ServiceType -like "*Interactive*"}
 ```
 
 In the following example, wildcard characters are used to find property
@@ -71,7 +71,7 @@ value of the CreationTime property of the restore point to a log file.
 ```powershell
 $p = Get-ComputerRestorePoint
 foreach ($point in $p) {
-  if ($point.description -like "PowerShell") {
+  if ($point.description -like "*PowerShell*") {
     add-content -path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
   }
 }

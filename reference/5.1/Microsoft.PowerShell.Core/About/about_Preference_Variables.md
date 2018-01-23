@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-21
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -248,7 +248,7 @@ debug message is not displayed and processing continues. The final command
 uses the Debug parameter to override the preference for a single command.
 
 ```powershell
-PS> $debugpreference    # Get the current value of \$DebugPreference
+PS> $debugpreference    # Get the current value of $DebugPreference
 SilentlyContinue
 
 PS> write-debug "Hello, World"
@@ -301,7 +301,7 @@ uses the Debug parameter with a value of \$false to suppress the message for
 a single command.
 
 ```powershell
-PS> \$debugpreference = "Inquire"
+PS> $debugpreference = "Inquire"
 PS> write-debug "Hello, World"
 DEBUG: Hello, World
 
@@ -375,7 +375,7 @@ This example shows the effect of the SilentlyContinue value.
 
 ```powershell
 PS> # Change the value of the preference.
-PS> \$ErrorActionPreference = "SilentlyContinue"
+PS> $ErrorActionPreference = "SilentlyContinue"
 
 PS> # Generate an error message.
 PS> write-error "Hello, World"
@@ -393,14 +393,14 @@ a non-existent file, nofile.txt. The example also uses the ErrorAction common
 parameter to override the preference.
 
 ```powershell
-PS> \$erroractionpreference
+PS> $erroractionpreference
 SilentlyContinue        # Display the value of the preference.
 
 PS> get-childitem -path nofile.txt
 PS>                     # Error message is suppressed.
 
 PS> # Change the value to Continue.
-PS> \$ErrorActionPreference = "Continue"
+PS> $ErrorActionPreference = "Continue"
 
 PS> get-childitem -path nofile.txt
 Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
@@ -412,7 +412,7 @@ PS> get-childitem -path nofile.txt -erroraction SilentlyContinue
 PS> # Error message is suppressed.
 
 PS> # Change the value to Inquire.
-PS> \$ErrorActionPreference = "Inquire"
+PS> $ErrorActionPreference = "Inquire"
 PS> get-childitem -path nofile.txt
 
 Confirm
@@ -425,7 +425,7 @@ At line:1 char:4
 + get-childitem  <<<< nofile.txt
 
 PS> # Change the value to Continue.
-PS> \$ErrorActionPreference = "Continue"
+PS> $ErrorActionPreference = "Continue"
 PS> Get-Childitem nofile.txt -erroraction "Inquire"
 PS> # Use the ErrorAction parameter to override the preference value.
 
@@ -462,7 +462,7 @@ NormalView. In this case, the Get-ChildItem command is used to find a
 non-existent file.
 
 ```powershell
-PS> \$ErrorView                         # Verify the value.
+PS> $ErrorView                         # Verify the value.
 NormalView
 
 PS> get-childitem nofile.txt           # Find a non-existent file.
@@ -475,7 +475,7 @@ This example shows how the same error appears when the value of
 \$ErrorView is CategoryView.
 
 ```powershell
-PS> \$ErrorView = "CategoryView"        # Change the value to
+PS> $ErrorView = "CategoryView"        # Change the value to
 CategoryView
 
 PS> get-childitem nofile.txt
@@ -493,7 +493,7 @@ error in the error array (element 0) and formats all of the properties of the
 error object in a list.
 
 ```powershell
-PS> \$error[0] | format-list -property * -force
+PS> $error[0] | format-list -property * -force
 
 Exception    : System.Management.Automation.ItemNotFoundException: Cannot
 find path 'C:\nofile.txt' because it does not exist.
@@ -546,10 +546,10 @@ In the resulting display, the list in the Group column is now limited by the
 line length. In the final command in the example, use the Wrap parameter of
 Format-Table to display all of the processes in each Status group.
 
-PS> \$formatenumerationlimit         # Find the current value
+```powershell
+PS> $formatenumerationlimit         # Find the current value
 4
 
-```powershell
 PS> # List all services grouped by status
 PS> get-service | group-object -property status
 
@@ -560,7 +560,7 @@ Count Name                      Group
 PS> # The list is truncated after 4 items.
 
 PS> # Increase the limit to 1000.
-PS> \$formatenumerationlimit = 1000
+PS> $formatenumerationlimit = 1000
 PS> get-service | group-object -property status
 
 Count Name     Group
@@ -650,20 +650,20 @@ The Log*Event preference variables are as follows:
 To enable a Log*Event, type the variable with a value of \$true, for example:
 
 ```powershell
-\$LogCommandLifeCycleEvent
+$LogCommandLifeCycleEvent
 ```
 
 - or -
 
 ```powershell
-\$LogCommandLifeCycleEvent = \$true
+$LogCommandLifeCycleEvent = $true
 ```
 
 To disable an event type, type the variable with a value of \$false, for
 example:
 
 ```powershell
-\$LogCommandLifeCycleEvent = \$false
+$LogCommandLifeCycleEvent = $false
 ```
 
 The events that you enable are effective only for the current PowerShell
@@ -719,26 +719,26 @@ To count the errors on your system, use the Count property of the \$Error
 array. Type:
 
 ```powershell
-\$Error.count
+$Error.count
 ```
 
 To display a specific error, use array notation to display the error. For
 example, to see the most recent error, type:
 
 ```powershell
-\$Error[0]
+$Error[0]
 ```
 
 To display the oldest retained error, type:
 
 ```powershell
-\$Error[(\$Error.Count -1]
+$Error[($Error.Count -1]
 ```
 
 To display the properties of the ErrorRecord object, type:
 
 ```powershell
-\$Error[0] | format-list -property * -force
+$Error[0] | format-list -property * -force
 ```
 
 In this command, the Force parameter overrides the special formatting of
@@ -748,11 +748,11 @@ To delete all errors from the error history, use the Clear method of the error
 array.
 
 ```powershell
-PS> \$Error.count
+PS> $Error.count
 17
-PS> \$Error.clear()
+PS> $Error.clear()
 PS>
-PS> \$Error.count
+PS> $Error.count
 0
 ```
 
@@ -835,7 +835,45 @@ Valid values: Any string.
 Default: Space
 
 By default, the \$OFS variable does not exist and the output file separator is
-a space, but you can add this variable and set it to any string.
+a space, but you can add this variable and set it to any string. You can change
+the value of $OFS in your session, by typing `$OFS="<value>"`. If you are
+expecting the default value of " " in your script, module, or configuration
+output, be careful that the $OFS default value has not been changed elsewhere
+in your code.
+
+For example:
+
+```powershell
+$a="1","2","3","4"
+$a
+[string]$a
+$OFS=""
+[string]$a
+$OFS=","
+[string]$a
+$OFS="--PowerShellRocks--";
+[string]$a
+$OFS="`n`n";
+[string]$a
+```
+
+```output
+1
+2
+3
+4
+1 2 3 4
+1234
+1,2,3,4
+1--PowerShellRocks--2--PowerShellRocks--3--PowerShellRocks--4
+1
+
+2
+
+3
+
+4
+```
 
 ##### EXAMPLES
 
@@ -844,9 +882,9 @@ is converted to a string. In this case, an array of integers is stored in a
 variable and then the variable is cast as a string.
 
 ```powershell
-PS> \$array = 1,2,3                 # Store an array of integers.
+PS> $array = 1,2,3                 # Store an array of integers.
 
-PS> [string]\$array                 # Cast the array to a string.
+PS> [string]$array                 # Cast the array to a string.
 1 2 3                              # Spaces separate the elements
 ```
 
@@ -854,9 +892,9 @@ To change the separator, add the \$OFS variable by assigning a value to it.
 To work correctly, the variable must be named \$OFS.
 
 ```powershell
-PS> \$OFS = "+"                     # Create \$OFS and assign a "+"
+PS> $OFS = "+"                     # Create $OFS and assign a "+"
 
-PS> [string]\$array                 # Repeat the command
+PS> [string]$array                 # Repeat the command
 1+2+3                              # Plus signs separate the elements
 ```
 
@@ -865,10 +903,10 @@ To restore the default behavior, you can assign a space (" ") to the value of
 verifies that the separator is a space.
 
 ```powershell
-PS> Remove-Variable OFS            # Delete \$OFS
+PS> Remove-Variable OFS            # Delete $OFS
 PS>
 
-PS> [string]\$array                 # Repeat the command
+PS> [string]$array                 # Repeat the command
 1 2 3                              # Spaces separate the elements
 ```
 
@@ -897,7 +935,7 @@ The first command finds the value of \$OutputEncoding. Because the value is an
 encoding object, display only its EncodingName property.
 
 ```powershell
-PS> \$OutputEncoding.EncodingName # Find the current value US-ASCII
+PS> $OutputEncoding.EncodingName # Find the current value US-ASCII
 ```
 
 In this example, a FINDSTR command is used to search for two Chinese
@@ -918,9 +956,9 @@ locale selected for Windows. Because OutputEncoding is a static property of
 the console, use double-colons (::) in the command.
 
 ```powershell
-PS> \$OutputEncoding = [console]::outputencoding
+PS> $OutputEncoding = [console]::outputencoding
 PS> # Set the value equal to the OutputEncoding property of the console.
-PS> \$OutputEncoding.EncodingName
+PS> $OutputEncoding.EncodingName
 OEM United States
 ```
 As a result of this change, the FINDSTR command finds the characters.
@@ -1100,7 +1138,7 @@ values you prefer. Save the output in a variable called \$PSSessionOption.
 For example,
 
 ```powershell
-\$PSSessionOption = New-PSSessionOption -NoCompression
+$PSSessionOption = New-PSSessionOption -NoCompression
 ```
 
 To use the \$PSSessionOption preference variable in every PowerShell session,
@@ -1202,7 +1240,7 @@ This example shows the effect of the Inquire value.
 
 ```powershell
 PS> # Change the value to Inquire.
-PS> \$VerbosePreference = "Inquire"
+PS> $VerbosePreference = "Inquire"
 PS> Write-Verbose "Verbose message test."
 VERBOSE: Verbose message test.
 Confirm
@@ -1249,7 +1287,7 @@ value.
 This example shows the effect of the Continue value, which is the default.
 
 ```powershell
-PS> \$WarningPreference    # Find the current value.
+PS> $WarningPreference    # Find the current value.
 Continue
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
@@ -1263,7 +1301,7 @@ This example shows the effect of the SilentlyContinue value.
 
 ```powershell
 PS> # Change the value to SilentlyContinue.
-PS> \$WarningPreference = "SilentlyContinue"
+PS> $WarningPreference = "SilentlyContinue"
 PS> Write-Warning "This action can delete data."
 PS>                        # Write a warning message.
 
@@ -1280,7 +1318,7 @@ This example shows the effect of the Inquire value.
 
 ```powershell
 PS> # Change the value to Inquire.
-PS> \$WarningPreference = "Inquire"
+PS> $WarningPreference = "Inquire"
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
 
@@ -1299,7 +1337,7 @@ This example shows the effect of the Stop value.
 
 ```powershell
 PS> # Change the value to Stop.
-PS> \$WarningPreference = "Stop"
+PS> $WarningPreference = "Stop"
 
 PS> Write-Warning "This action can delete data."
 WARNING: This action can delete data.
@@ -1360,7 +1398,7 @@ This example shows the effect of the 0 (not enabled) value, which is the
 default.
 
 ```powershell
-PS> \$whatifpreference
+PS> $whatifpreference
 0                         # Check the current value.
 
 PS> # Verify that the file exists.
@@ -1400,8 +1438,8 @@ Remove-Item to delete a cmdlet, Remove-Item displays the path to the file that
 it would delete, but it does not delete the file.
 
 ```powershell
-PS> \$whatifpreference = 1
-PS> \$whatifpreference
+PS> $whatifpreference = 1
+PS> $whatifpreference
 1                        # Change the value.
 
 PS> # Try to delete a file.
@@ -1417,8 +1455,8 @@ This example shows how to delete a file when the value of \$WhatIfPreference
 is 1. It uses the WhatIf parameter with a value of \$false.
 
 ```powershell
-PS> # Use the WhatIf parameter with \$false.
-PS> remove-item test.txt -whatif:\$false
+PS> # Use the WhatIf parameter with $false.
+PS> remove-item test.txt -whatif:$false
 ```
 
 This example demonstrates that some cmdlets support WhatIf behavior and others
@@ -1430,7 +1468,7 @@ a value of \$false.
 
 ```powershell
 PS> # Change the value to 1.
-PS> \$whatifpreference = 1
+PS> $whatifpreference = 1
 
 PS> get-process winword
 A Get-Process command completes.
@@ -1443,8 +1481,8 @@ PS> # A Stop-Process command uses WhatIf.
 PS> stop-process -name winword
 What if: Performing operation "Stop-Process" on Target "WINWORD (2312)".
 
-PS> stop-process -name winword  -whatif:\$false
-PS>                      # WhatIf:\$false overrides the preference.
+PS> stop-process -name winword  -whatif:$false
+PS>                      # WhatIf:$false overrides the preference.
 
 PS> # Verify that the process is stopped.
 PS> get-process winword

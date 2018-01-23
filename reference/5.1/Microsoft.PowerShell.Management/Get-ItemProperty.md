@@ -299,8 +299,6 @@ For example, in a file system drive, it might return a file or folder.
 ## NOTES
 * The Get-ItemProperty cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PSProvider". For more information, see about_Providers.
 
-*
-
 ## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)

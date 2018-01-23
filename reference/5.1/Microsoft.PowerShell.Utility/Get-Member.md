@@ -15,9 +15,10 @@ Gets the properties and methods of objects.
 
 ## SYNTAX
 
-```
-Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
- [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
+```powershell
+Get-Member [[-Name] <String[]>] [-InputObject <PSObject>]
+ [-MemberType <PSMemberTypes>] [-View <PSMemberViewTypes>] [-Static] [-Force]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

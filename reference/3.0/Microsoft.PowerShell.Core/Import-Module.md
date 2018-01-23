@@ -58,7 +58,7 @@ The modules that you import must be installed on the local computer or a remote 
 Beginning in Windows PowerShell 3.0, installed modules are automatically imported to the session when you use any commands or providers in the module.
 However, you can still use the **Import-Module** command to import a module and you can enable and disable automatic module importing by using the **$PSModuleAutoloadingPreference** preference variable.
 For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
-For more information about the **$PSModuleAutoloadingPreference** variable, see about_Preference_Variables (http://go.microsoft.com/fwlink/?LinkID=113248).
+For more information about the **$PSModuleAutoloadingPreference** variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 A module is a package that contains members (such as cmdlets, providers, scripts, functions, variables, and other tools and files) that can be used in Windows PowerShell.
 After a module is imported, you can use the module members in your session.
@@ -322,7 +322,7 @@ This command imports the PSWorkflow module.
 It uses the **MinimumVersion** (alias=Version) parameter of **Import-Module** to import only version 3.0.0.0 or greater of the module.
 
 You can also use the **RequiredVersion** parameter to import a particular version of a module, or use the **Module** and **Version** parameters of the **#Requires** keyword to require a particular version of a module in a script.
-### Example 10
+### Example 11
 ```
 The first command uses the New-PSSession cmdlet to create a remote session (PSSession) to the Server01 computer. The command saves the PSSession in the $s variable
 PS C:\> $s = New-PSSession -ComputerName Server01
@@ -365,7 +365,7 @@ This command uses the Implicit Remoting feature of Windows PowerShell.
 
 When you import modules from another session, you can use the cmdlets in the current session.
 However, commands that use the cmdlets actually run in the remote session.
-### Example 11
+### Example 12
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
 PS C:\> $cs = New-CimSession -ComputerName RSDGF03

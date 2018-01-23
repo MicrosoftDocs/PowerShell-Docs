@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-06-12
-author:  eslesar
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Composite resources--Using a DSC configuration as a resource
@@ -94,7 +93,7 @@ Configuration xVirtualMachine
         DependsOn = "[File]ParentVHDFile"
     }
 
-    # Creae VM specific diff VHD
+    # Create VM specific diff VHD
     foreach ($Name in $VMName)
     {
         xVHD "VHD$Name"

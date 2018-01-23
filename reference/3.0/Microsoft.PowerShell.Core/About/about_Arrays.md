@@ -450,7 +450,7 @@ $a.ForEach({ $_ * $_})
 C:\ >
 ```
 
-The `Where` method can be used to swiftly cast the elements to a different
+The `ForEach` method can be used to swiftly cast the elements to a different
 type; the following example shows how to convert a list of string dates to
 `[DateTime]` type.
 
@@ -617,8 +617,8 @@ $a[-1]
 ```
 
 ```output
-0
-0
+1
+1
 4
 4
 ```

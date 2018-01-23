@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-@{Text=}
+
 
 ```yaml
 Type: Version

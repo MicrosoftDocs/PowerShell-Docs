@@ -70,7 +70,7 @@ The results of the **Get-AuthenticodeSignature** command are sent to a Where-Obj
 ## PARAMETERS
 
 ### -Content
-@{Text=}
+
 
 ```yaml
 Type: Byte[]

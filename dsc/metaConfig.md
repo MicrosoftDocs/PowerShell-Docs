@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-10-11
-author:  eslesar;mgreenegit
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 The process of applying settings to LCM is similar to applying a DSC configuration.
@@ -77,7 +76,7 @@ The following properties are available in a **Settings** block.
 
 |  Property  |  Type  |  Description   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are __"ContinueConfiguration"__ and __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Continue applying the current configuration after machine reboot. This is the default falue</li><li>__StopConfiguration__: Stop the current configuration after machine reboot.</li></ul>|
+| ActionAfterReboot| string| Specifies what happens after a reboot during the application of a configuration. The possible values are __"ContinueConfiguration"__ and __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Continue applying the current configuration after machine reboot. This is the default value</li><li>__StopConfiguration__: Stop the current configuration after machine reboot.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__ if new configurations downloaded from the pull service are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.|
 | CertificateID| string| The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Note:__ this is managed automatically if using Azure Automation DSC pull service.|
 | ConfigurationDownloadManagers| CimInstance[]| Obsolete. Use __ConfigurationRepositoryWeb__ and __ConfigurationRepositoryShare__ blocks to define configuration pull service endpoints.|
@@ -144,7 +143,7 @@ you create a **ConfigurationRepositoryWeb** block.
 A **ConfigurationRepositoryWeb** defines the following properties.
 
 |Property|Type|Description|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
 |CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull service by using a **RegistrationKey**. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
@@ -211,7 +210,7 @@ see [DSC Partial configurations](partialConfigs.md).
 **PartialConfiguration** defines the following properties.
 
 |Property|Type|Description|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|An array of names of configuration servers, previously defined in **ConfigurationRepositoryWeb** and **ConfigurationRepositoryShare** blocks, where the partial configuration is pulled from.|
 |DependsOn|string{}|A list of names of other configurations that must be completed before this partial configuration is applied.|
 |Description|string|Text used to describe the partial configuration.|
@@ -221,11 +220,11 @@ see [DSC Partial configurations](partialConfigs.md).
 
 __Note:__ partial configurations are supported with Azure Automation DSC, but only one configuration can be pulled from each automation account per node.
 
-## See Also 
+## See Also
 
 ### Concepts
 [Desired State Configuration Overview](overview.md)
- 
+
 [Getting started with Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### Other Resources

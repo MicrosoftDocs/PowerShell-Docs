@@ -16,15 +16,15 @@ Gets the aliases for the current session.
 ## SYNTAX
 
 ### Default (Default)
-```
-Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+```powershell
+Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
+ [<CommonParameters>]
 ```
 
 ### Definition
-```
+```powershell
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,11 +61,11 @@ The output shows the \<alias\> -\> \<definition\> format that was introduced in 
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 
 ### Example 2: Get aliases by name
-```
-PS C:\> Get-Alias -Name g*, s* -Exclude Get-*
+```powershell
+Get-Alias -Name gp*, sp* -Exclude *ps
 ```
 
-This command gets all aliases that begin with g or s, except for aliases that begin with Get-.
+This command gets all aliases that begin with gp or sp, except for aliases that end with ps.
 
 ### Example 3: Get aliases for a cmdlet
 ```
@@ -136,50 +136,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-This parameter is called Definition, because it searches for the item name in the Definition property of the alias object.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-This parameter is called Definition, because it searches for the item name in the Definition property of the alias object.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 Specifies the aliases that this cmdlet gets.
 Wildcards are permitted.
-By default, **Get-Alias** retrieves all aliases defined for the current session.
-The parameter name *Name* is optional.
-You can also pipe alias names to **Get-Alias**.
+By default, `Get-Alias` retrieves all aliases defined for the current session.
+The parameter name **Name** is optional.
+You can also pipe alias names to `Get-Alias`.
 
 ```yaml
 Type: String[]
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
-Position: 1
-Default value: None
+Position: 0
+Default value: All aliases
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Scope

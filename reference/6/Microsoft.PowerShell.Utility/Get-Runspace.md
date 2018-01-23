@@ -51,7 +51,7 @@ The **Get-Runspace** cmdlet gets active runspaces in a Windows PowerShell host p
 ## PARAMETERS
 
 ### -Id
-@{Text=}
+
 
 ```yaml
 Type: Int32[]
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationAction
-@{Text=}```yaml
+```yaml
 Type: ActionPreference
 Parameter Sets: (All)
 Aliases: infa
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -InformationVariable
-@{Text=}```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: iv
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-@{Text=}
+
 
 ```yaml
 Type: Guid[]
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-@{Text=}
+
 
 ```yaml
 Type: String[]

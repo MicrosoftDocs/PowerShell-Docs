@@ -1,6 +1,5 @@
 ---
 ms.date:  2017-10-13
-author:  eslesar;mgreenegit
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Desired State Configuration Overview for Decision Makers
@@ -112,15 +111,15 @@ Configuration Sample_Share
       # implement the logic of "how" to execute a task
       xSmbShare MySMBShare
       {
-          Ensure      = "Present" 
+          Ensure      = "Present"
           Name        = "MyShare"
-          Path        = "C:\Demo\Temp"  
+          Path        = "C:\Demo\Temp"
           ReadAccess  = "Alice"
           FullAccess  = "Bob"
           Description = "This is an updated description for this share"
       }
    }
-} 
+}
 #Run the function to compile the configuration
 Sample_Share
 #Pass the configuration to the nodes we defined and configure them

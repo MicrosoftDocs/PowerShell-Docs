@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-12-01
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,9 +7,6 @@ title:  about_Types.ps1xml
 ---
 
 # About Types.ps1xml
-## about_Types.ps1xml
-
-
 
 # SHORT DESCRIPTION
 
@@ -27,16 +24,16 @@ extended type data to a Windows PowerShell session.
 extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
-`Update-TypeData` cmdlet to add dynamic extended type data to the current session
-see [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
+`Update-TypeData` cmdlet to add dynamic extended type data to the current
+session see
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ## About Extended Type Data
 
-Extended type data defines additional properties and methods ("members")
-of object types in Windows PowerShell. You can extend any type that is
-supported by Windows PowerShell and use the added properties and methods
-in the same way that you use the properties that are defined on the object
-types.
+Extended type data defines additional properties and methods ("members") of
+object types in Windows PowerShell. You can extend any type that is supported
+by Windows PowerShell and use the added properties and methods in the same way
+that you use the properties that are defined on the object types.
 
 For example, Windows PowerShell adds a `DateTime` property to all
 `System.DateTime` objects, such as the ones that the `Get-Date` cmdlet
@@ -47,27 +44,27 @@ PS C:> (Get-Date).DateTime
 Sunday, January 29, 2012 9:43:57 AM
 ```
 
-You won't find the `DateTime` property in the description of the [`System.DateTime`
-structure](http://msdn.microsoft.com/library/system.datetime.aspx),
-because Windows PowerShell adds the property and it is visible only in
-Windows PowerShell.
+You won't find the `DateTime` property in the description of the
+[`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
+because Windows PowerShell adds the property and it is visible only in Windows
+PowerShell.
 
-To add the `DateTime` property to all Windows PowerShell sessions, Windows PowerShell
-defines the `DateTime` property in the Types.ps1xml file in the Windows PowerShell
-installation directory (`$PSHOME`).
+To add the `DateTime` property to all Windows PowerShell sessions, Windows
+PowerShell defines the `DateTime` property in the Types.ps1xml file in the
+Windows PowerShell installation directory (`$PSHOME`).
 
 ## Adding Extended Type Data to Windows PowerShell.
 
 There are three sources of extended type data in Windows PowerShell sessions.
 
 - The Types.ps1xml files in the Windows PowerShell installation directory
-are loaded automatically into every Windows PowerShell session.
+  are loaded automatically into every Windows PowerShell session.
 
 - The Types.ps1xml files that modules export are loaded when the module
-is imported into the current session.
+  is imported into the current session.
 
 - Extended type data that is defined by using the `Update-TypeData` cmdlet
-is added only to the current session. It is not saved in a file.
+  is added only to the current session. It is not saved in a file.
 
 In the session, the extended type data from the three sources is applied
 to objects in the same way and is available on all objects of the specified
@@ -78,18 +75,16 @@ types.
 The following TypeData cmdlets are included in the Microsoft.PowerShell.Utility
 module in Windows PowerShell 3.0 and later versions of Windows PowerShell.
 
-|                 |                                                       |
-| --------------- | ----------------------------------------------------- |
-| Get-TypeData    | Gets extended type data in the current session.       |
-| Update-TypeData | Reloads Types.ps1xml files. Adds extended type data to the current session. |
-| Remove-TypeData | Removes extended type data from the current session.  |
+- `Get-TypeData`: Gets extended type data in the current session.
+- `Update-TypeData`: Reloads Types.ps1xml files. Adds extended type data to the
+  current session.
+- `Remove-TypeData`: Removes extended type data from the current session.
 
-For more information about these cmdlets, see the help topic for each
-cmdlet.
+For more information about these cmdlets, see the help topic for each cmdlet.
 
 ## Built-in Types.ps1xml Files
 
-The Types.ps1xml files in the $PSHOME directory are added automatically to
+The Types.ps1xml files in the `$PSHOME` directory are added automatically to
 every session.
 
 The Types.ps1xml file in the Windows PowerShell installation directory
@@ -103,7 +98,7 @@ For example, by default, array objects (`System.Array`) have a `Length`
 property that lists the number of objects in the array. However, because
 the name "Length" does not clearly describe the property, Windows
 PowerShell adds an alias property named "Count" that displays the same
-value. The following XML adds the `Count` property to the `System.Array` type.
+value. The following XML adds the Count property to the `System.Array` type.
 
 ```xml
 <Type>
@@ -119,28 +114,28 @@ value. The following XML adds the `Count` property to the `System.Array` type.
 </Type>
 ```
 
-To get the new `AliasProperty`, use a `Get-Member` command on any array, as shown
-in the following example.
+To get the new `AliasProperty`, use a `Get-Member` command on any array, as
+shown in the following example.
 
 ```powershell
-Get-Member -inputobject (1,2,3,4)
+Get-Member -InputObject (1,2,3,4)
 ```
 
 The command returns the following results.
 
-```powershell
-Name           MemberType    Definition
-----           ----------    ----------
-Count          AliasProperty Count = Length
-Address        Method        System.Object& Address(Int32)
-Clone          Method        System.Object Clone()
-CopyTo         Method        System.Void CopyTo(Array array, Int32 index):
-Equals         Method        System.Boolean Equals(Object obj)
-Get            Method        System.Object Get(Int32)
+```output
+Name       MemberType    Definition
+----       ----------    ----------
+Count      AliasProperty Count = Length
+Address    Method        System.Object& Address(Int32)
+Clone      Method        System.Object Clone()
+CopyTo     Method        System.Void CopyTo(Array array, Int32 index):
+Equals     Method        System.Boolean Equals(Object obj)
+Get        Method        System.Object Get(Int32)
 # ...
 ```
 
-As a result, you can use either the `Count` property or the `Length` property
+As a result, you can use either the Count property or the Length property
 of arrays in Windows PowerShell. For example:
 
 ```powershell
@@ -171,17 +166,17 @@ installation directory.
 When you have saved the new file, use the `Update-TypeData` cmdlet to add
 the new file to your Windows PowerShell session. If you want your types
 to take precedence over the types that are defined in the built-in file,
-use the `PrependData` parameter of the `Update-TypeData` cmdlet.
+use the PrependData parameter of the `Update-TypeData` cmdlet.
 `Update-TypeData` affects only the current session. To make the change to
 all future sessions, export the console, or add the `Update-TypeData`
 command to your Windows PowerShell profile.
 
-## Types.ps1xml and `Add-Member`
+## Types.ps1xml and Add-Member
 
 The Types.ps1xml files add properties and methods to all the instances
 of the objects of the specified .NET Framework type in the affected
 Windows PowerShell session. However, if you need to add properties or
-methods only to one instance of an object, use the Add-Member cmdlet.
+methods only to one instance of an object, use the `Add-Member` cmdlet.
 
 For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
 
@@ -193,7 +188,7 @@ its creation time and the current time in days.
 
 It is easiest to use the original Types.ps1xml file as a template
 for the new file. The following command copies the original file to
-a file called MyTypes.ps1xml in the $PSHOME directory.
+a file called MyTypes.ps1xml in the `$PSHOME` directory.
 
 ```powershell
 Copy-Item Types.ps1xml MyTypes.ps1xml
@@ -256,13 +251,13 @@ information about `Update-TypeData`, see
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).)
 
 ```powershell
-Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
+Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the
 PowerShell.exe file in the `$PSHOME` directory, and then pipe the file to
 the `Format-List` cmdlet to list all of the properties of the file. As a
-result of the change, the Age property appears in the list.
+result of the change, the `Age` property appears in the list.
 
 ```powershell
 Get-ChildItem $PSHOME\PowerShell.exe | Format-List -Property *
@@ -334,7 +329,7 @@ The `<CodeMethod>` tag must have a pair of `<Name>` tags that specify
 the name of the new method and a pair of `<GetCodeReference>` tags
 that specify the code in which the method is defined.
 
-For example, the `Mode` property of directories (`System.IO.DirectoryInfo`
+For example, the Mode property of directories (`System.IO.DirectoryInfo`
 objects) is a code property defined in the Windows PowerShell
 FileSystem provider.
 
@@ -345,7 +340,9 @@ FileSystem provider.
     <CodeProperty>
       <Name>Mode</Name>
       <GetCodeReference>
-        <TypeName>Microsoft.PowerShell.Commands.FileSystemProvider</TypeName>
+        <TypeName>
+          Microsoft.PowerShell.Commands.FileSystemProvider
+        </TypeName>
         <MethodName>Mode</MethodName>
       </GetCodeReference>
     </CodeProperty>
@@ -370,7 +367,9 @@ FileSystem provider.
     <CodeProperty>
       <Name>Mode</Name>
       <GetCodeReference>
-        <TypeName>Microsoft.PowerShell.Commands.FileSystemProvider</TypeName>
+        <TypeName>
+          Microsoft.PowerShell.Commands.FileSystemProvider
+        </TypeName>
         <MethodName>Mode</MethodName>
       </GetCodeReference>
     </CodeProperty>
@@ -391,7 +390,7 @@ In Types.ps1xml files, the `<MemberSet>` tag is used to define the
 default views of the .NET Framework objects in Windows PowerShell. In
 this case, the name of the member set (the value within the `<Name>`
 tags) is always "PsStandardMembers", and the names of the properties
-(the value of the <Name> tag) are one of the following:
+(the value of the `<Name>` tag) are one of the following:
 
 - `DefaultDisplayProperty`: A single property of an object.
 
@@ -438,7 +437,7 @@ The `<NoteProperty>` tag must have a pair of `<Name>` tags that specify
 the name of the new property and a pair of `<Value>` tags that specify
 the value of the property.
 
-For example, the following XML creates a `Status` property for
+For example, the following XML creates a Status property for
 directories (`System.IO.DirectoryInfo` objects). The value of the
 `Status` property is always "Success".
 
@@ -473,7 +472,7 @@ properties for the default display of an object. You can identify the
 default displays by the value "PsStandardMembers" in the `<Name>` tag
 of a `<MemberSet>` tag.
 
-For example, the following XML creates a `Status` property for
+For example, the following XML creates a Status property for
 directories (`System.IO.DirectoryInfo` objects). The value of the `Status`
 property is always "Success".
 
@@ -495,7 +494,7 @@ property is always "Success".
       </Members>
     </MemberSet>
   </Members>
-<Type>
+</Type>
 ```
 
 `<ScriptMethod>`: Defines a method whose value is the output of a script.
@@ -511,21 +510,21 @@ methods of the `System.Management.ManagementDateTimeConverter` class.
 
 ```xml
 <Type>
-  <Name>System.Management.ManagementObject</Name>
-  <Members>
-    <ScriptMethod>
-      <Name>ConvertToDateTime</Name>
-      <Script>
-        [System.Management.ManagementDateTimeConverter]::ToDateTime($args[0])
-      </Script>
-    </ScriptMethod>
-    <ScriptMethod>
-      <Name>ConvertFromDateTime</Name>
-      <Script>
-        [System.Management.ManagementDateTimeConverter]::ToDmtfDateTime($args[0])
-      </Script>
-    </ScriptMethod>
-  </Members>
+ <Name>System.Management.ManagementObject</Name>
+ <Members>
+ <ScriptMethod>
+   <Name>ConvertToDateTime</Name>
+   <Script>
+   [System.Management.ManagementDateTimeConverter]::ToDateTime($args[0])
+   </Script>
+ </ScriptMethod>
+ <ScriptMethod>
+   <Name>ConvertFromDateTime</Name>
+   <Script>
+   [System.Management.ManagementDateTimeConverter]::ToDmtfDateTime($args[0])
+   </Script>
+ </ScriptMethod>
+ </Members>
 </Type>
 ```
 
@@ -548,7 +547,7 @@ property of the `GetVersionInfo` static method of
     <ScriptProperty>
       <Name>VersionInfo</Name>
       <GetScriptBlock>
-        [System.Diagnostics.FileVersionInfo]::GetVersionInfo($this.FullName)
+      [System.Diagnostics.FileVersionInfo]::GetVersionInfo($this.FullName)
       </GetScriptBlock>
     </ScriptProperty>
   </Members>
@@ -586,8 +585,9 @@ use method syntax.
 
 ## Signing a Types.ps1xml File
 
-To protect users of your Types.ps1xml file, you can sign the file using
-a digital signature. For more information, see [about_Signing](about_Signing.md).
+To protect users of your Types.ps1xml file, you can sign the file using a
+digital signature. For more information, see
+[about_Signing](about_Signing.md).
 
 # SEE ALSO
 
@@ -595,7 +595,7 @@ a digital signature. For more information, see [about_Signing](about_Signing.md)
 
 [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
 
-[Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-Item.md)
+[Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
 
 [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
 
@@ -604,4 +604,3 @@ a digital signature. For more information, see [about_Signing](about_Signing.md)
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
-

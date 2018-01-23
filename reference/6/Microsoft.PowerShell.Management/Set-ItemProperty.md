@@ -78,7 +78,7 @@ For example, type `final.doc | Get-Member`.
 ### Example 2: Create a registry entry and value
 ```
 PS C:\> Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Value 823
-PS C:\> Get-ItemProperty -Path "HKLM:\Software\MyCompany"
+PS C:\> Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software

@@ -16,8 +16,8 @@ Measures the time it takes to run script blocks and cmdlets.
 ## Syntax
 
 ```powershell
-Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Measure-Command [-Expression] <ScriptBlock> [-InputObject <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## Description
@@ -78,7 +78,7 @@ These commands show the value of using a provider-specific filter in Windows Pow
 
 ## Parameters
 
-### `-Expression`
+### -Expression
 Specifies the expression that is being timed.
 Enclose the expression in braces ({}).
 The parameter name ("**Expression**") is optional.
@@ -89,34 +89,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### `-InformationAction`
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
