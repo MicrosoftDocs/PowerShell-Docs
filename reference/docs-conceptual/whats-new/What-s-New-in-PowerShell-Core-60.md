@@ -248,7 +248,7 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
   `$IsWindows`, `$IsMacOs`, and `$IsLinux`.
 - Add `GitCommitId` to PowerShell Core banner.
   Now you don't have to run `$PSVersionTable` as soon as you start PowerShell to get the version! (#3916) (Thanks to @iSazonov!)
-- Add a JSON config file called `PowerShellProperties.json` in `$PSHome` to store some settings required before startup time (e.g. `ExecutionPolicy`).
+- Add a JSON config file called `powershell.config.json` in `$PSHome` to store some settings required before startup time (e.g. `ExecutionPolicy`).
 - Don't block pipeline when running Windows EXE's
 - Enabled enumeration of COM collections. (#4553)
 
