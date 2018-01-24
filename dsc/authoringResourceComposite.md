@@ -197,7 +197,7 @@ To access the user context from within a custom resource, you can use the automa
 For example the following code would write the user context under which the resource is running to the verbose output stream:
 
 ```powershell
-if (PsDscContext.RunAsUser) {
+if ($PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
