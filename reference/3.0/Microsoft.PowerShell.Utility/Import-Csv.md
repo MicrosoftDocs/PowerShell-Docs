@@ -9,8 +9,10 @@ title:  Import-Csv
 ---
 
 # Import-Csv
+
 ## SYNOPSIS
 Creates table-like custom objects from the items in a CSV file.
+
 ## SYNTAX
 
 ### Delimiter (Default)
@@ -134,9 +136,9 @@ This example shows how to use the Header parameter of Import-Csv to change the n
 ```
 The first command uses the Get-Content cmdlet to get the Links.csv file.
 PS C:\> Get-Content .\Links.csv
-113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212, 
-about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309, 
-about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219, 
+113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212,
+about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309,
+about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219,
 about_Core_Commands113220,about_Data_Sectionâ€¦
 
 The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the **Header** parameter to specify **LinkId** and **TopicTitle** as property names for the new custom objects. The command saves the imported objects in the $a variable.
@@ -147,13 +149,13 @@ PS C:\> $a | Get-Member
    TypeName: System.Management.Automation.PSCustomObject
 Name                      MemberType   Definition
 ----                      ----------   ----------
-Equals                    Method       bool 
-Equals(System.Object obj) 
-GetHashCode Method       int 
-GetHashCode()GetType     Method       type 
-GetType()ToString    Method       string 
-ToString()LinkID      NoteProperty System.String 
-LinkID=113207TopicTitle  NoteProperty System.String 
+Equals                    Method       bool
+Equals(System.Object obj)
+GetHashCode Method       int
+GetHashCode()GetType     Method       type
+GetType()ToString    Method       string
+ToString()LinkID      NoteProperty System.String
+LinkID=113207TopicTitle  NoteProperty System.String
 TopicTitle=about_Aliases
 
 This command shows that you can use the custom object like you would any object in Windows PowerShell.The command pipes the custom objects in the $a variable to the **Where-Object** cmdlet, which gets only objects with a **TopicTitle** property that includes "alias".The **Where-Object** command uses the new simplified command format that does not require symbols, script blocks, or curly braces.
@@ -178,7 +180,7 @@ ProjectID, ProjectName,,Completed13, Inventory, Redmond, True440, , FarEast, Tru
 
 The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.The output shows that Import-Csv generates a warning and substitutes a default name, H1, for the missing header row value. H1 is also used for the name of the object property.
 PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers. 
+PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
 ProjectID     ProjectName       H1               Completed
 ---------     -----------       --               ---------
 13            Inventory         Redmond          True
@@ -207,7 +209,7 @@ Instead, it returns the strings.
 ```yaml
 Type: Char
 Parameter Sets: Delimiter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -226,7 +228,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,7 +253,7 @@ Otherwise, Import-Csv creates an extra object from the items in the header row.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -267,7 +269,7 @@ You can also pipe a path to Import-Csv.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -287,7 +289,7 @@ Instead, it returns the strings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
