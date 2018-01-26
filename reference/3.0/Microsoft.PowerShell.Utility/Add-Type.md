@@ -157,18 +157,18 @@ The wildcard character allows you to get the correct assembly even when you are 
 The command uses the **PassThru** parameter to generate objects that represent the classes that are added to the session, and it saves the objects in the $accType variable.
 ### Example 4
 ```
-PS C:\> Add-Type -Path c:\ps-test\Hello.vb
-[VBFromFile]::SayHello(", World")
+PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
+PS C:\> [VBFromFile]::SayHello(", World")
 
 # From Hello.vb
 
 Public Class VBFromFile
-Public Shared Function SayHello(sourceName As String) As String
-Dim myValue As String = "Hello"
-return myValue + sourceName
-End Function
+  Public Shared Function SayHello(sourceName As String) As String
+    Dim myValue As String = "Hello"
+    return myValue + sourceName
+  End Function
 End Class
-PS C:\> [VBFromFile]::SayHello(", World")
+
 Hello, World
 ```
 
