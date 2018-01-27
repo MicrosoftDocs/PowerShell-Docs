@@ -111,7 +111,7 @@ PS C:\> (Get-Culture).TextInfo.ListSeparator
 This example shows how to use the *UseCulture* parameter of the **Import-Csv** cmdlet.
 
 In this example the processes are exported to a file that uses the culture as a delimiter.
-The next command imports the objects in the Processes.csv file into the `$P` variable. It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
+The next command imports the objects in the Processes.csv file into the $P variable. It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
 
 The second command displays the list separator for the current culture. It uses the Get-Culture cmdlet to get the current culture.
 It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
@@ -270,9 +270,11 @@ The third command uses the dot method to get the value of the H1 property of the
 ### -Delimiter
 Specifies the delimiter that separates the property values in the CSV file.
 
-- The default is a comma (,).
-- Enter a character, such as a colon (:).
-- To specify a semicolon (;), enclose it in quotation marks.
+The default is a comma (,).
+
+Enter a character, such as a colon (:).
+
+To specify a semicolon (;), enclose it in quotation marks.
 
 If you specify a character other than the actual string delimiter in the file, **Import-Csv** cannot create objects from the CSV strings.
 Instead, it returns the strings.
@@ -322,11 +324,15 @@ Accept wildcard characters: False
 ### -Header
 Specifies an alternate column header row for the imported file. The column header determines the names of the properties of the object that **Import-Csv** creates.
 
-- Enter a comma-separated list of the column headers.
-- Enclose each item in quotation marks (single or double).
-- Do not enclose the header string in quotation marks.
-- If you enter fewer column headers than there are columns, the remaining columns will have no header.
-- If you enter more headers than there are columns, the extra headers are ignored.
+Enter a comma-separated list of the column headers.
+
+Enclose each item in quotation marks (single or double).
+
+Do not enclose the header string in quotation marks.
+
+If you enter fewer column headers than there are columns, the remaining columns will have no header.
+
+If you enter more headers than there are columns, the extra headers are ignored.
 
 When using the *Header* parameter, delete the original header row from the CSV file. Otherwise, **Import-Csv** creates an extra object from the items in the header row.
 
@@ -343,7 +349,8 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies the path to the CSV file to import. Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+Specifies the path to the CSV file to import.
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
