@@ -94,61 +94,68 @@ When importing, the **Import-Csv** file uses the *Delimiter* parameter to indica
 
 ### Example 3
 ```
+PS C:\> Get-Process | Export-Csv processes.csv -UseCulture
 PS C:\> $P = Import-Csv processes.csv -UseCulture
-PS C:\> (get-culture).textinfo.listseparator
+PS C:\> (Get-Culture).TextInfo.ListSeparator
 ,
 ```
 
-This example shows how to use the *UseCulture* parameter of the Import-Csv cmdlet.
+This example shows how to use the *UseCulture* parameter of the **Import-Csv** cmdlet.
 
-The first command imports the objects in the Processes.csv file into the $P variable.
-It uses the *UseCulture* parameter to direct Import-Csv to use the list separator defined for the current culture.
+In this example the processes are exported to a file that uses the culture as a delimiter.
+The next command imports the objects in the Processes.csv file into the $P variable.
+It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
 
-The second command displays the list separator for the current culture.
-It uses the Get-Culture cmdlet to get the current culture.
+The second command displays the list separator for the current culture. It uses the Get-Culture cmdlet to get the current culture.
 It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
+
 In this example, the command returns a comma.
+
 ### Example 4
 ```
-The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer. A pipeline operator (|) sends the resulting job object to the Export-CSV cmdlet, which converts the job object to CSV format. An assignment operator (=) saves the resulting CSV in the Jobs.csv file.
-PS C:\> start-job -scriptblock { get-process } | export-csv jobs.csv
+PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv jobs.csv
+PS C:\> $Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
 
-The second command saves a header in the $header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
-PS C:\> $header = "MoreData","StatusMessage","Location","Command","State","Finished","InstanceId","SessionId","Name","ChildJobs","Output","Error","Progress","Verbose","Debug","Warning","StateChanged"
+# Delete header from file
 
-The next three commands delete the original header (the second line) from the Jobs.csv file.
-PS C:\> # Delete header from file
+PS C:\> $A = (Get-Content jobs.csv)
+PS C:\> $A = $A[0], $A[2..($A.count - 1)]
+PS C:\> $A > jobs.csv
+PS C:\> $J = Import-Csv jobs.csv -Header $Header
+PS C:\> $J
 
-PS C:\> $a = (get-content jobs.csv)
-PS C:\> $a = $a[0], $a[2..($a.count - 1)]
-PS C:\> $a > jobs.csv
 
-The sixth command uses the Import-Csv cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the Header parameter to submit the alternate header. The results are stored in the $j variable.
-PS C:\> $j = Import-Csv jobs.csv -header $header
-
-The seventh command displays the object in the $j variable. The resulting object has "MoreData" and "State" properties, as shown in the command output.
-PS C:\> $j
-
-MoreData      : True
-StatusMessage :
-Location      : localhost
-Command       : get-process
-State         : Running
-Finished      : System.Threading.ManualResetEvent
-InstanceId    : 135bdd25-40d6-4a20-bd68-05282a59abd6
-SessionId     : 1
-Name          : Job1
-ChildJobs     : System.Collections.Generic.List`1[System.Management.Automation.Job]
-Output        : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
-Error         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
-Progress      : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
-Verbose       : System.Management.Automation.PSDataCollection`1[System.String]
-Debug         : System.Management.Automation.PSDataCollection`1[System.String]
-Warning       : System.Management.Automation.PSDataCollection`1[System.String]
-StateChanged  :
+MoreData      : Running
+StatusMessage : True
+Location      :
+Command       : localhost
+State         : Get-Process
+Finished      : Running
+InstanceId    : System.Threading.ManualResetEvent
+SessionId     : 12bf8fae-4575-4041-a68e-23220b7d486f
+Name          : 3
+ChildJobs     : Job3
+Output        : System.Collections.Generic.List`1[System.Management.Automation.Job]
+Error         : 2018-01-25 3:17:34 PM
+Progress      :
+Verbose       : BackgroundJob
+Debug         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
+Warning       : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
+StateChanged  : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
 ```
 
-This example shows how to use the Header parameter of Import-Csv to change the names of properties in the resulting imported object.
+This example shows how to use the *Header* parameter of **Import-Csv** to change the names of properties in the resulting imported object.
+
+The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer. A pipeline operator (|) sends the resulting job object to the Export-CSV cmdlet, which converts the job object to CSV format. An assignment operator (=) saves the resulting CSV in the Jobs.csv file.
+
+The second command saves a header in the $Header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
+
+The next three commands delete the original header (the second line) from the Jobs.csv file.
+
+The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the *Header* parameter to submit the alternate header. The results are stored in the $j variable.
+
+The seventh command displays the object in the $j variable. The resulting object has "MoreData" and "State" properties, as shown in the command output.
+
 ### Example 5
 ```
 The first command uses the Get-Content cmdlet to get the Links.csv file.
