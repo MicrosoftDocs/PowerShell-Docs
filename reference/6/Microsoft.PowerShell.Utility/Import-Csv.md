@@ -113,15 +113,16 @@ In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
 ```
-PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv jobs.csv
-PS C:\> $Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
+PS C:\> Start-Job -Name Jobs -ScriptBlock { Get-Process } | Export-Csv Jobs.csv
+PS C:\> Stop-Job -Name Jobs
+PS C:\> $Header = "State", "MoreData", "StatusMessage", "Location", "Command", "StateInfo", "Finished", "InstanceId", "Id", "Name", "ChildJobs", "PSBeginTime", "PSEndTime", "PSJobTypeName", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "Information"
 
 # Delete header from file
 
-PS C:\> $A = (Get-Content jobs.csv)
-PS C:\> $A = $A[0], $A[2..($A.count - 1)]
-PS C:\> $A > jobs.csv
-PS C:\> $J = Import-Csv jobs.csv -Header $Header
+PS C:\> $A = Get-Content Jobs.csv
+PS C:\> $A = $A[0], $A[2..($A.Count - 1)]
+PS C:\> $A > Jobs.csv
+PS C:\> $J = Import-Csv Jobs.csv -Header $Header
 PS C:\> $J
 
 MoreData      : True
@@ -149,7 +150,7 @@ The first command uses the Start-Job cmdlet to start a background job that runs 
 A pipeline operator (|) sends the resulting job object to the Export-Csv cmdlet, which converts the job object to CSV format.
 
 The second command saves a header in the $Header variable.
-Unlike the default header, this header uses MoreData instead of HasMoreData and State instead of JobStateInfo.
+Unlike the default header, this header uses MoreData instead of HasMoreData and StateInfo instead of JobStateInfo.
 
 The next three commands delete the original header (the second line) from the Jobs.csv file.
 
