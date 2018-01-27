@@ -237,11 +237,14 @@ The third command uses the dot method to get the value of the "H1" property of t
 
 ### -Delimiter
 Specifies the delimiter that separates the property values in the CSV file.
+
 The default is a comma (,).
+
 Enter a character, such as a colon (:).
+
 To specify a semicolon (;), enclose it in quotation marks.
 
-If you specify a character other than the actual string delimiter in the file, Import-Csv cannot create objects from the CSV strings.
+If you specify a character other than the actual string delimiter in the file, **Import-Csv** cannot create objects from the CSV strings.
 Instead, it returns the strings.
 
 ```yaml
@@ -258,10 +261,21 @@ Accept wildcard characters: False
 
 ### -Encoding
 Specifies the type of character encoding that was used in the CSV file.
-Valid values are Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, and OEM.
+
+The acceptable values for this parameter are:
+
+- Unicode
+- UTF7
+- UTF8
+- ASCII
+- UTF32
+- BigEndianUnicode
+- Default
+- OEM
+
 The default is ASCII.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
