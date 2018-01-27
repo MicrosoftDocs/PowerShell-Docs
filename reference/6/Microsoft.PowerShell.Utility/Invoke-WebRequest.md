@@ -249,8 +249,10 @@ Accept wildcard characters: False
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
-To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
+To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate (`Cert:`) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
+
+> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
 
 ```yaml
 Type: X509Certificate
