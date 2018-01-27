@@ -222,13 +222,14 @@ ProjectID,ProjectName,,Completed
 440,,FarEast,True
 469,Marketing,Europe,False
 PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing
+ headers.
 
-ProjectID ProjectName H1      Completed
---------- ----------- --      ---------
-13        Inventory   Redmond True
-440                   FarEast True
-469       Marketing   Europe  False
+ProjectID                     ProjectName                   H1                            Completed
+---------                     -----------                   --                            ---------
+13                            Inventory                     Redmond                       True
+440                                                         FarEast                       True
+469                           Marketing                     Europe                        False
 
 
 PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
@@ -242,7 +243,7 @@ This example shows how the **Import-Csv** cmdlet in Windows PowerShell responds 
 
 **Import-Csv** substitutes a default name for the header row. The default name becomes the name of the property of the object that **Import-Csv** returns.
 
-The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
+The first command uses the Get-Content cmdlet to get the Projects.csv file on the "Server02" remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
 
 The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.
 
@@ -376,9 +377,6 @@ The default is based on the culture settings of the Operating System (e.g. en-US
 
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
-If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-CSV cannot create objects from the CSV strings.
-Instead, it returns the strings.
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
@@ -406,8 +404,8 @@ This cmdlet returns the objects described by the content in the CSV file.
 
 ## NOTES
 * Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the Windows PowerShell type formatting entries that format the non-CSV versions of the object type.
-* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the Count property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
-* The column header row determines the number of columns and the column names. The column names are also the names of the properties of the objects. The first row is interpreted to be the column headers, unless you use the Header parameter to specify column headers. If any row has more values than the header row, the additional values are ignored.
+* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the *Count* property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
+* The column header row determines the number of columns and the column names. The column names are also the names of the properties of the objects. The first row is interpreted to be the column headers, unless you use the *Header* parameter to specify column headers. If any row has more values than the header row, the additional values are ignored.
 * If the column header row is missing a value or contains a null or empty value, **Import-Csv** uses "H" followed by a number for the missing column header and property name.
 * In the CSV file, each object is represented by a comma-separated list of the property values of the object. The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value.
 Export-CSV does not export the methods of the object.

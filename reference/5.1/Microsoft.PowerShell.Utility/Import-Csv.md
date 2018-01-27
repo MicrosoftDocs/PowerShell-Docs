@@ -247,7 +247,7 @@ This example shows how the **Import-Csv** cmdlet in Windows PowerShell responds 
 
 **Import-Csv** substitutes a default name for the header row. The default name becomes the name of the property of the object that **Import-Csv** returns.
 
-The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed".
+The first command uses the Get-Content cmdlet to get the Projects.csv file on the "Server02" remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
 
 The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.
 
@@ -344,8 +344,7 @@ Specifies the path to the CSV file to import.
 
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed. No characters are interpreted as wildcards.
 
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -382,9 +381,6 @@ Indicates that this cmdlet uses the list separator for the current culture as th
 The default is based on the culture settings of the Operating System (e.g. en-US culture will return a comma (,) by default).
 
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
-
-If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-Csv cannot create objects from the CSV strings.
-Instead, it returns the strings.
 
 ```yaml
 Type: SwitchParameter
