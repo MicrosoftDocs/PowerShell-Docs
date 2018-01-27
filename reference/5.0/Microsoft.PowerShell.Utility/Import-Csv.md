@@ -272,6 +272,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 Specifies the type of character encoding that was used in the CSV file.
+
 The acceptable values for this parameter are:
 
 - Unicode
