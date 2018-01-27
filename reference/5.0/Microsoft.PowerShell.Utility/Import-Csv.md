@@ -89,6 +89,7 @@ When importing, the **Import-Csv** file uses the *Delimiter* parameter to indica
 
 ### Example 3: Specify the current culture for the delimiter
 ```
+PS C:\> Get-Process | Export-Csv processes.csv -UseCulture
 PS C:\> $P = Import-Csv processes.csv -UseCulture
 PS C:\> (Get-Culture).TextInfo.ListSeparator
 ,
@@ -96,12 +97,13 @@ PS C:\> (Get-Culture).TextInfo.ListSeparator
 
 This example shows how to use the *UseCulture* parameter of the **Import-Csv** cmdlet.
 
-The first command imports the objects in the Processes.csv file into the $P variable.
+In this example the processes are exported to a file that uses the culture as a delimiter.
+The next command imports the objects in the Processes.csv file into the $P variable.
 It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
 
-The second command displays the list separator for the current culture.
-It uses the Get-Culture cmdlet to get the current culture.
+The second command displays the list separator for the current culture. It uses the Get-Culture cmdlet to get the current culture.
 It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
+
 In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
@@ -142,17 +144,13 @@ This example shows how to use the *Header* parameter of **Import-Csv** to change
 The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer.
 A pipeline operator (|) sends the resulting job object to the Export-Csv cmdlet, which converts the job object to CSV format.
 
-The second command saves a header in the $Header variable.
-Unlike the default header, this header uses MoreData instead of HasMoreData and State instead of JobStateInfo.
+The second command saves a header in the $Header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
 
 The next three commands delete the original header (the second line) from the Jobs.csv file.
 
-The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object.
-The command uses the *Header* parameter to submit the alternate header.
-The results are stored in the $J variable.
+The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the *Header* parameter to submit the alternate header. The results are stored in the $J variable.
 
-The seventh command displays the object in the $J variable.
-The resulting object has MoreData and State properties, as shown in the command output.
+The seventh command displays the object in the $J variable. The resulting object has MoreData and State properties, as shown in the command output.
 
 ### Example 5: Create a custom object using a CSV file
 ```
