@@ -83,24 +83,25 @@ To display the objects, use the formatting cmdlets, such as Format-Table and For
 
 ### Example 2
 ```
-PS C:\> get-process | export-csv processes.csv -Delimiter :
-PS C:\> $p = Import-Csv processes.csv -Delimiter :
+PS C:\> Get-Process | Export-Csv processes.csv -Delimiter :
+PS C:\> $P = Import-Csv processes.csv -Delimiter :
 ```
 
-This example shows how to use the *Delimiter* parameter of the Import-Csv cmdlet.
+This example shows how to use the *Delimiter* parameter of the **Import-Csv** cmdlet.
 In this example, the processes are exported to a file that uses a colon (:) as a delimiter.
 
-When importing, the Import-Csv file uses the *Delimiter* parameter to indicate the delimiter that is used in the file.
+When importing, the **Import-Csv** file uses the *Delimiter* parameter to indicate the delimiter that is used in the file.
+
 ### Example 3
 ```
-PS C:\> $p = Import-Csv processes.csv -UseCulture
+PS C:\> $P = Import-Csv processes.csv -UseCulture
 PS C:\> (get-culture).textinfo.listseparator
 ,
 ```
 
 This example shows how to use the *UseCulture* parameter of the Import-Csv cmdlet.
 
-The first command imports the objects in the Processes.csv file into the $p variable.
+The first command imports the objects in the Processes.csv file into the $P variable.
 It uses the *UseCulture* parameter to direct Import-Csv to use the list separator defined for the current culture.
 
 The second command displays the list separator for the current culture.
