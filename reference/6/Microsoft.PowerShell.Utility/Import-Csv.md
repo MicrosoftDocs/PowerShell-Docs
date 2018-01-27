@@ -163,49 +163,54 @@ The seventh command displays the object in the $J variable. The resulting object
 ### Example 5: Create a custom object using a CSV file
 ```
 PS C:\> Get-Content .\Links.csv
-113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212,
-about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309,
-about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219,
-about_Core_Commands113220,about_Data_Sectionâ€¦ PS C:\> $A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
+113207,about_Aliases
+113208,about_Arithmetic_Operators
+113209,about_Arrays
+113210,about_Assignment_Operators
+113212,about_Automatic_Variables
+113213,about_Break
+113214,about_Command_Precedence
+113215,about_Command_Syntax
+144309,about_Comment_Based_Help
+113216,about_CommonParameters
+113217,about_Comparison_Operators
+113218,about_Continue
+113219,about_Core_Commands
+113220,about_Data_Section
+PS C:\> $A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
 PS C:\> $A | Get-Member
+
+
    TypeName: System.Management.Automation.PSCustomObject
-Name                      MemberType   Definition
-----                      ----------   ----------
-Equals                    Method       bool
-Equals(System.Object obj)
-GetHashCode               Method       int
-GetHashCode()GetType      Method       type
-GetType()ToString         Method       string
-ToString()LinkID          NoteProperty System.String
-LinkID=113207TopicTitle   NoteProperty System.String
-TopicTitle=about_Aliases PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
-LinkID            TopicTitle
-------            ----------
-113207            about_Aliases
-113432            Alias Provider
-113296            Export-Alias
-113306            Get-Alias
-113339            Import-Alias
-113352            New-Alias
-113390            Set-Alias
+
+Name        MemberType   Definition
+----        ----------   ----------
+Equals      Method       bool Equals(System.Object obj)
+GetHashCode Method       int GetHashCode()
+GetType     Method       type GetType()
+ToString    Method       string ToString()
+LinkID      NoteProperty string LinkID=113207
+TopicTitle  NoteProperty string TopicTitle=about_Aliases
+PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
+
+LinkID TopicTitle
+------ ----------
+113207 about_Aliases
 ```
 
 This example shows how to create a custom object in Windows PowerShell by using a CSV file.
 
 The first command uses the Get-Content cmdlet to get the Links.csv file.
 
-The second command uses the **Import-Csv** cmdlet to import the Links.csv file.
-The command uses the *Header* parameter to specify LinkId and TopicTitle as property names for the new custom objects.
-The command saves the imported objects in the $A variable.
+The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the *Header* parameter to specify "LinkId" and "TopicTitle" as property names for the new custom objects. The command saves the imported objects in the $A variable.
 
 The third command uses the Get-Member cmdlet to get the type and members of the custom objects in the $A variable.
 
-The output shows that **Import-Csv** returns a collection of custom objects (**PSCustomObject**).
-In addition to some default properties, the custom objects have LinkID and TopicTitle note properties.
+The output shows that **Import-Csv** returns a collection of custom objects (**PSCustomObject**). In addition to some default properties, the custom objects have "LinkId" and "TopicTitle" note properties.
 
 This command shows that you can use the custom object like you would any object in Windows PowerShell.
 
-The command pipes the custom objects in the $A variable to the **Where-Object** cmdlet, which gets only objects with a **TopicTitle** property that includes alias.
+The command pipes the custom objects in the $A variable to the **Where-Object** cmdlet, which gets only objects with a "TopicTitle" property that includes "alias".
 
 The Where-Object command uses the new simplified command format that does not require symbols, script blocks, or curly braces.
 

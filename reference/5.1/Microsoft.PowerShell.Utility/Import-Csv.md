@@ -196,7 +196,6 @@ GetType     Method       type GetType()
 ToString    Method       string ToString()
 LinkID      NoteProperty string LinkID=113207
 TopicTitle  NoteProperty string TopicTitle=about_Aliases
-
 PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
 
 LinkID TopicTitle
@@ -208,15 +207,15 @@ This example shows how to create a custom object in Windows PowerShell by using 
 
 The first command uses the Get-Content cmdlet to get the Links.csv file.
 
-The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the *Header* parameter to specify LinkId and TopicTitle as property names for the new custom objects. The command saves the imported objects in the $A variable.
+The second command uses the **Import-Csv** cmdlet to import the Links.csv file. The command uses the *Header* parameter to specify "LinkId" and "TopicTitle" as property names for the new custom objects. The command saves the imported objects in the $A variable.
 
 The third command uses the Get-Member cmdlet to get the type and members of the custom objects in the $A variable.
 
-The output shows that **Import-Csv** returns a collection of custom objects (**PSCustomObject**). In addition to some default properties, the custom objects have LinkID and TopicTitle note properties.
+The output shows that **Import-Csv** returns a collection of custom objects (**PSCustomObject**). In addition to some default properties, the custom objects have "LinkId" and "TopicTitle" note properties.
 
 This command shows that you can use the custom object like you would any object in Windows PowerShell.
 
-The command pipes the custom objects in the $A variable to the **Where-Object** cmdlet, which gets only objects with a TopicTitle property that includes "alias".
+The command pipes the custom objects in the $A variable to the **Where-Object** cmdlet, which gets only objects with a "TopicTitle" property that includes "alias".
 
 The **Where-Object** command uses the new simplified command format that does not require symbols, script blocks, or curly braces.
 
