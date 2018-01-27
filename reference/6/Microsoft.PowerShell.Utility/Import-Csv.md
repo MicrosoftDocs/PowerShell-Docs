@@ -85,30 +85,30 @@ To display the objects, use the formatting cmdlets, such as Format-Table and For
 
 ### Example 2: Specify the delimiter
 ```
-PS C:\> Get-Process | Export-Csv processes.csv -Delimiter :
-PS C:\> $P = Import-Csv processes.csv -Delimiter :
+PS C:\> Get-Process | Export-Csv Processes.csv -Delimiter :
+PS C:\> $P = Import-Csv Processes.csv -Delimiter :
 ```
 
 This example shows how to use the *Delimiter* parameter of the **Import-Csv** cmdlet.
+
 In this example, the processes are exported to a file that uses a colon (:) as a delimiter.
 
 When importing, the **Import-Csv** file uses the *Delimiter* parameter to indicate the delimiter that is used in the file.
 
 ### Example 3: Specify the current culture for the delimiter
 ```
-PS C:\> $P = Import-Csv processes.csv -UseCulture
-PS C:\> (Get-Culture).textinfo.listseparator
+PS C:\> Get-Process | Export-Csv Processes.csv -UseCulture
+PS C:\> $P = Import-Csv Processes.csv -UseCulture
+PS C:\> (Get-Culture).TextInfo.ListSeparator
 ,
 ```
 
 This example shows how to use the *UseCulture* parameter of the **Import-Csv** cmdlet.
 
-The first command imports the objects in the Processes.csv file into the $P variable.
-It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
+In this example the processes are exported to a file that uses the culture as a delimiter. The next command imports the objects in the Processes.csv file into the $P variable. It uses the *UseCulture* parameter to direct **Import-Csv** to use the list separator defined for the current culture.
 
-The second command displays the list separator for the current culture.
-It uses the Get-Culture cmdlet to get the current culture.
-It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
+The second command displays the list separator for the current culture. It uses the Get-Culture cmdlet to get the current culture. It uses the dot (.) method to get the TextInfo property of the current culture and the ListSeparator property of the object in TextInfo.
+
 In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
