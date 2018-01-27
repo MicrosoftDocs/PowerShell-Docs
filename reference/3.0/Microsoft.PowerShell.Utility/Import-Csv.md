@@ -213,27 +213,40 @@ The **Where-Object** command uses the new simplified command format that does no
 
 ### Example 6
 ```
-The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
 PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"
-ProjectID, ProjectName,,Completed13, Inventory, Redmond, True440, , FarEast, True469, Marketing, Europe, False
-
-The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.The output shows that Import-Csv generates a warning and substitutes a default name, H1, for the missing header row value. H1 is also used for the name of the object property.
+ProjectID,ProjectName,,Completed
+13,Inventory,Redmond,True
+440,,FarEast,True
+469,Marketing,Europe,False
 PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
-ProjectID     ProjectName       H1               Completed
----------     -----------       --               ---------
-13            Inventory         Redmond          True
-440                             FarEast          True
-469           Marketing         Europe           False
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
 
-The third command uses the dot method to get the value of the H1 property of the object that **Import-Csv** creates.
+ProjectID ProjectName H1      Completed
+--------- ----------- --      ---------
+13        Inventory   Redmond True
+440                   FarEast True
+469       Marketing   Europe  False
+
+
 PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
-RedmondFarEastEurope
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+Redmond
+FarEast
+Europe
 ```
 
-This example shows how the **Import-Csv** cmdlet in Windows PowerShell 3.0 responds when the header row in a CSV file includes a null or empty value.
-**Import-Csv** substitutes a default name for the header row.
-The default name becomes the name of the property of the object that **Import-Csv** returns.
+This example shows how the **Import-Csv** cmdlet in Windows PowerShell responds when the header row in a CSV file includes a null or empty value.
+
+**Import-Csv** substitutes a default name for the header row. The default name becomes the name of the property of the object that **Import-Csv** returns.
+
+The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
+
+The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.
+
+The output shows that **Import-Csv** generates a warning and substitutes a default name, "H1", for the missing header row value. "H1" is also used for the name of the object property.
+
+The third command uses the dot method to get the value of the "H1" property of the object that **Import-Csv** creates.
+
 ## PARAMETERS
 
 ### -Delimiter
