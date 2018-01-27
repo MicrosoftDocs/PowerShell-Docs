@@ -44,8 +44,8 @@ In previous versions of Windows PowerShell, if a header row entry in a CSV file 
 
 ### Example 1: Import process objects
 ```
-PS C:\> Get-Process | Export-Csv processes.csv
-PS C:\> $P = Import-Csv processes.csv
+PS C:\> Get-Process | Export-Csv Processes.csv
+PS C:\> $P = Import-Csv Processes.csv
 PS C:\> $P | Get-Member
 PS C:\> $P | Format-Table
 TypeName: CSV:System.Diagnostics.Process
@@ -63,14 +63,11 @@ Company                    NoteProperty System.String Company=Microsoft Corporat
 
 This example shows how to export and then import a CSV file of process objects.
 
-The first command uses the Get-Process cmdlet to get the processes on the local computer.
-It uses a pipeline operator (|) to send the process objects to the Export-Csv cmdlet, which exports the process objects to the Processes.csv file in the current directory.
+The first command uses the Get-Process cmdlet to get the processes on the local computer. It uses a pipeline operator (|) to send the process objects to the Export-Csv cmdlet, which exports the process objects to the Processes.csv file in the current directory.
 
-The second command uses the **Import-Csv** cmdlet to import the processes in the **Import-Csv** file.
-Then it saves the resulting process objects in the $P variable.
+The second command uses the **Import-Csv** cmdlet to import the processes in the Processes.csv file. Then it saves the resulting process objects in the $P variable.
 
-The third command uses a pipeline operator to pipe the imported objects to the Get-Member cmdlet.
-The result shows that they are **CSV:System.Diagnostic.Process** objects, not the **System.Diagnostic.Process** objects that **Get-Process** returns.
+The third command uses a pipeline operator to pipe the imported objects to the Get-Member cmdlet. The result shows that they are **CSV:System.Diagnostic.Process** objects, not the **System.Diagnostic.Process** objects that Get-Process returns.
 
 Also, because there is no entry type in the formatting files for the CSV version of the process objects, these objects are not formatted in the same way that standard process objects are formatted.
 
