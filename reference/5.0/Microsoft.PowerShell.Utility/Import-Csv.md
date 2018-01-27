@@ -90,7 +90,7 @@ When importing, the **Import-Csv** file uses the *Delimiter* parameter to indica
 ### Example 3: Specify the current culture for the delimiter
 ```
 PS C:\> $P = Import-Csv processes.csv -UseCulture
-PS C:\> (Get-Culture).textinfo.listseparator
+PS C:\> (Get-Culture).TextInfo.ListSeparator
 ,
 ```
 
@@ -117,23 +117,24 @@ PS C:\> $A > jobs.csv
 PS C:\> $J = Import-Csv jobs.csv -Header $Header
 PS C:\> $J
 
-MoreData      : True
-StatusMessage :
-Location      : localhost
-Command       : get-process
-State         : Running
-Finished      : System.Threading.ManualResetEvent
-InstanceId    : 135bdd25-40d6-4a20-bd68-05282a59abd6
-SessionId     : 1
-Name          : Job1
-ChildJobs     : System.Collections.Generic.List`1[System.Management.Automation.Job]
-Output        : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
-Error         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
-Progress      : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
-Verbose       : System.Management.Automation.PSDataCollection`1[System.String]
-Debug         : System.Management.Automation.PSDataCollection`1[System.String]
-Warning       : System.Management.Automation.PSDataCollection`1[System.String]
-StateChanged  :
+
+MoreData      : Running
+StatusMessage : True
+Location      :
+Command       : localhost
+State         : Get-Process
+Finished      : Running
+InstanceId    : System.Threading.ManualResetEvent
+SessionId     : 12bf8fae-4575-4041-a68e-23220b7d486f
+Name          : 3
+ChildJobs     : Job3
+Output        : System.Collections.Generic.List`1[System.Management.Automation.Job]
+Error         : 2018-01-25 3:17:34 PM
+Progress      :
+Verbose       : BackgroundJob
+Debug         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
+Warning       : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
+StateChanged  : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
 ```
 
 This example shows how to use the *Header* parameter of **Import-Csv** to change the names of properties in the resulting imported object.
@@ -156,31 +157,40 @@ The resulting object has MoreData and State properties, as shown in the command 
 ### Example 5: Create a custom object using a CSV file
 ```
 PS C:\> Get-Content .\Links.csv
-113207,about_Aliases113208,about_Arithmetic_Operators113209,about_Arrays113210,about_Assignment_Operators113212, 
-about_Automatic_Variables113213,about_Break113214,about_Command_Precedence113215,about_Command_Syntax144309, 
-about_Comment_Based_Help113216,about_CommonParameters113217,about_Comparison_Operators113218,about_Continue113219, 
-about_Core_Commands113220,about_Data_Sectionâ€¦ PS C:\> $A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
+113207,about_Aliases
+113208,about_Arithmetic_Operators
+113209,about_Arrays
+113210,about_Assignment_Operators
+113212,about_Automatic_Variables
+113213,about_Break
+113214,about_Command_Precedence
+113215,about_Command_Syntax
+144309,about_Comment_Based_Help
+113216,about_CommonParameters
+113217,about_Comparison_Operators
+113218,about_Continue
+113219,about_Core_Commands
+113220,about_Data_Section
+PS C:\> $A = Import-Csv -Path .\Links.csv -Header LinkID, TopicTitle
 PS C:\> $A | Get-Member
+
+
    TypeName: System.Management.Automation.PSCustomObject
-Name                      MemberType   Definition
-----                      ----------   ----------
-Equals                    Method       bool 
-Equals(System.Object obj) 
-GetHashCode               Method       int 
-GetHashCode()GetType      Method       type 
-GetType()ToString         Method       string 
-ToString()LinkID          NoteProperty System.String 
-LinkID=113207TopicTitle   NoteProperty System.String 
-TopicTitle=about_Aliases PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
-LinkID            TopicTitle
-------            ----------
-113207            about_Aliases
-113432            Alias Provider
-113296            Export-Alias
-113306            Get-Alias
-113339            Import-Alias
-113352            New-Alias
-113390            Set-Alias
+
+Name        MemberType   Definition
+----        ----------   ----------
+Equals      Method       bool Equals(System.Object obj)
+GetHashCode Method       int GetHashCode()
+GetType     Method       type GetType()
+ToString    Method       string ToString()
+LinkID      NoteProperty string LinkID=113207
+TopicTitle  NoteProperty string TopicTitle=about_Aliases
+
+PS C:\> $A | Where-Object TopicTitle -Like "*alias*"
+
+LinkID TopicTitle
+------ ----------
+113207 about_Aliases
 ```
 
 This example shows how to create a custom object in Windows PowerShell by using a CSV file.
@@ -205,17 +215,29 @@ The Where-Object command uses the new simplified command format that does not re
 ### Example 6: Import a CSV that is missing a value
 ```
 PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"
-ProjectID, ProjectName,,Completed, Inventory, Redmond, True440, , FarEast, True, Marketing, Europe, False PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
-ProjectID     ProjectName       H1               Completed
----------     -----------       --               ---------
-13            Inventory         Redmond          True
-440                             FarEast          True
-469           Marketing         Europe           False PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
-RedmondFarEastEurope
+ProjectID,ProjectName,,Completed
+13,Inventory,Redmond,True
+440,,FarEast,True
+469,Marketing,Europe,False
+PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+
+ProjectID ProjectName H1      Completed
+--------- ----------- --      ---------
+13        Inventory   Redmond True
+440                   FarEast True
+469       Marketing   Europe  False
+
+
+PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+Redmond
+FarEast
+Europe
 ```
 
-This example shows how the **Import-Csv** cmdlet in Windows PowerShell 3.0 responds when the header row in a CSV file includes a null or empty value.
+This example shows how the **Import-Csv** cmdlet in Windows PowerShell responds when the header row in a CSV file includes a null or empty value.
+
 **Import-Csv** substitutes a default name for the header row.
 The default name becomes the name of the property of the object that **Import-Csv** returns.
 
@@ -233,8 +255,11 @@ The third command uses the dot method to get the value of the H1 property of the
 
 ### -Delimiter
 Specifies the delimiter that separates the property values in the CSV file.
+
 The default is a comma (,).
+
 Enter a character, such as a colon (:).
+
 To specify a semicolon (;), enclose it in quotation marks.
 
 If you specify a character other than the actual string delimiter in the file, **Import-Csv** cannot create objects from the CSV strings.
@@ -243,7 +268,7 @@ Instead, it returns the strings.
 ```yaml
 Type: Char
 Parameter Sets: Delimiter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -272,7 +297,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
@@ -287,9 +312,13 @@ Specifies an alternate column header row for the imported file.
 The column header determines the names of the properties of the object that **Import-Csv** creates.
 
 Enter a comma-separated list of the column headers.
+
 Enclose each item in quotation marks (single or double).
+
 Do not enclose the header string in quotation marks.
+
 If you enter fewer column headers than there are columns, the remaining columns will have no header.
+
 If you enter more headers than there are columns, the extra headers are ignored.
 
 When using the *Header* parameter, delete the original header row from the CSV file.
@@ -298,7 +327,7 @@ Otherwise, **Import-Csv** creates an extra object from the items in the header r
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -311,6 +340,7 @@ Accept wildcard characters: False
 Specifies the path to the CSV file to import.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
+
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
@@ -333,7 +363,7 @@ You can also pipe a path to **Import-Csv**.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -344,7 +374,7 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Indicates that this cmdlet uses the list separator for the current culture as the item delimiter.
-The default is a comma (,).
+The default is based on the culture settings of the Operating System (e.g. en-US culture will return a comma (,) by default).
 
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-Csv cannot create objects from the CSV strings.
@@ -353,7 +383,7 @@ Instead, it returns the strings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
