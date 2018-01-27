@@ -43,14 +43,9 @@ In previous versions of Windows PowerShell, if a header row entry in a CSV file 
 
 ### Example 1
 ```
-This example shows how to export and then import a CSV file of objects.The first command uses the Get-Process cmdlet to get the process on the local computer. It uses a pipeline operator (|) to send the process objects to the Export-CSV cmdlet, which exports the process objects to the Processes.csv file in the current directory.
-PS C:\> get-process | export-csv processes.csv
-
-The second command uses the Import-Csv cmdlet to import the processes in the Import-Csv file. Then it saves the resulting process objects in the $p variable.
-PS C:\> $p = Import-Csv processes.csv
-
-The third command uses a pipeline operator to pipe the imported objects to the Get-Member cmdlets. The result shows that they are CSV:System.Diagnostic.Process objects, not the System.Diagnostic.Process objects that Get-Process returns.Also, because there is no entry type in the formatting files for the CSV version of the process objects, these objects are not formatted in the same way that standard process objects are formatted.To display the objects, use the formatting cmdlets, such as Format-Table and Format-List, or pipe the objects to Out-GridView.
-PS C:\> $p | get-member
+PS C:\> Get-Process | Export-Csv processes.csv
+PS C:\> $P = Import-Csv processes.csv
+PS C:\> $P | Get-Member
 TypeName: CSV:System.Diagnostics.Process
 Name                       MemberType   Definition
 ----                       ----------   ----------
@@ -61,10 +56,31 @@ ToString                   Method       System.String ToString()
 BasePriority               NoteProperty System.String BasePriority=8
 Company                    NoteProperty System.String Company=Microsoft Corporation
 ...
-PS C:\> $p | out-gridview
-```
+PS C:\> $P | Format-Table
 
+Name                   SI Handles VM            WS        PM        NPM    Path
+----                   -- ------- --            --        --        ---    ----
+ApplicationFrameHost   4  407     2199293489152 15884288  15151104  23792  C:\WINDOWS\system32\ApplicationFrameHost.exe
+...
+wininit                0  157     2199112204288 4591616   1630208   10376
+winlogon               4  233     2199125549056 7659520   2826240   10992  C:\WINDOWS\System32\WinLogon.exe
+WinStore.App           4  846     873435136     33652736  26607616  55432  C:\Program Files\WindowsApps\Microsoft.WindowsStore_11712.1001.13.0_x64__8weky...
+WmiPrvSE               0  201     2199100219392 8830976   3297280   10632  C:\WINDOWS\system32\wbem\wmiprvse.exe
+WmiPrvSE               0  407     2199157727232 18509824  12922880  16624  C:\WINDOWS\system32\wbem\wmiprvse.exe
+WUDFHost               0  834     2199310204928 51945472  87441408  24984  C:\Windows\System32\WUDFHost.exe
+```
 This example shows how to export and then import a CSV file of objects.
+
+The first command uses the Get-Process cmdlet to get the process on the local computer. It uses a pipeline operator (|) to send the process objects to the Export-CSV cmdlet, which exports the process objects to the Processes.csv file in the current directory.
+
+The second command uses the **Import-Csv** cmdlet to import the processes in the **Import-Csv** file. Then it saves the resulting process objects in the $P variable.
+
+The third command uses a pipeline operator to pipe the imported objects to the Get-Member cmdlets. The result shows that they are **CSV:System.Diagnostic.Process** objects, not the **System.Diagnostic.Process** objects that **Get-Process** returns.
+
+Also, because there is no entry type in the formatting files for the CSV version of the process objects, these objects are not formatted in the same way that standard process objects are formatted.
+
+To display the objects, use the formatting cmdlets, such as Format-Table and Format-List, or pipe the objects to Out-GridView.
+
 ### Example 2
 ```
 PS C:\> get-process | export-csv processes.csv -Delimiter :
