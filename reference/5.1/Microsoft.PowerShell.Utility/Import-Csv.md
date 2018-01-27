@@ -413,9 +413,9 @@ This cmdlet returns the objects described by the content in the CSV file.
 
 ## NOTES
 * Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the Windows PowerShell type formatting entries that format the non-CSV versions of the object type.
-* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the **Count** property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
+* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the *Count* property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
 * The column header row determines the number of columns and the column names. The column names are also the names of the properties of the objects. The first row is interpreted to be the column headers, unless you use the *Header* parameter to specify column headers. If any row has more values than the header row, the additional values are ignored.
-* If the column header row is missing a value or contains a null or empty value, **Import-Csv** uses H followed by a number for the missing column header and property name.
+* If the column header row is missing a value or contains a null or empty value, **Import-Csv** uses "H" followed by a number for the missing column header and property name.
 * In the CSV file, each object is represented by a comma-separated list of the property values of the object. The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value. Export-Csv does not export the methods of the object.
 
 ## RELATED LINKS
