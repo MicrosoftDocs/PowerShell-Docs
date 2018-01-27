@@ -106,15 +106,15 @@ In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
 ```
-PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv jobs.csv
+PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv Jobs.csv
 PS C:\> $Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
 
 # Delete header from file
 
-PS C:\> $A = (Get-Content jobs.csv)
-PS C:\> $A = $A[0], $A[2..($A.count - 1)]
-PS C:\> $A > jobs.csv
-PS C:\> $J = Import-Csv jobs.csv -Header $Header
+PS C:\> $A = Get-Content Jobs.csv
+PS C:\> $A = $A[0], $A[2..($A.Count - 1)]
+PS C:\> $A > Jobs.csv
+PS C:\> $J = Import-Csv Jobs.csv -Header $Header
 PS C:\> $J
 
 
