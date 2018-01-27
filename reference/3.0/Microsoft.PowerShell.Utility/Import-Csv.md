@@ -368,9 +368,11 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Use the list separator for the current culture as the item delimiter.
-The default is a comma (,).
 
-To find the list separator for a culture, use the following command: (Get-Culture).TextInfo.ListSeparator.
+The default is based on the culture settings of the Operating System (e.g. en-US culture will ret
+
+To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
+
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-CSV cannot create objects from the CSV strings.
 Instead, it returns the strings.
 
