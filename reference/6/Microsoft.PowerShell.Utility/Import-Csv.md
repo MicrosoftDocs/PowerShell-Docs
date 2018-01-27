@@ -217,36 +217,48 @@ The Where-Object command uses the new simplified command format that does not re
 ### Example 6: Import a CSV that is missing a value
 ```
 PS C:\> Get-Content "\\Server2\c$\Test\Projects.csv"
-ProjectID, ProjectName,,Completed, Inventory, Redmond, True440, , FarEast, True, Marketing, Europe, False PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
-PS C:\> WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
-ProjectID     ProjectName       H1               Completed
----------     -----------       --               ---------
-13            Inventory         Redmond          True
-440                             FarEast          True
-469           Marketing         Europe           False PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
-RedmondFarEastEurope
+ProjectID,ProjectName,,Completed
+13,Inventory,Redmond,True
+440,,FarEast,True
+469,Marketing,Europe,False
+PS C:\> Import-Csv "\\Server2\c$\Test\Projects.csv"
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+
+ProjectID ProjectName H1      Completed
+--------- ----------- --      ---------
+13        Inventory   Redmond True
+440                   FarEast True
+469       Marketing   Europe  False
+
+PS C:\> (Import-Csv "\\Server2\c$\Test\Projects.csv").H1
+WARNING: One or more headers were not specified. Default names starting with "H" have been used in place of any missing headers.
+Redmond
+FarEast
+Europe
 ```
 
-This example shows how the **Import-Csv** cmdlet in Windows PowerShell 3.0 responds when the header row in a CSV file includes a null or empty value.
-**Import-Csv** substitutes a default name for the header row.
-The default name becomes the name of the property of the object that **Import-Csv** returns.
+This example shows how the **Import-Csv** cmdlet in PowerShell responds when the header row in a CSV file includes a null or empty value.
 
-The first command uses the Get-Content cmdlet to get the Projects.csv file on the Server02 remote computer.
-The output shows that the header row of the file is missing a value between ProjectName and Completed.
+**Import-Csv** substitutes a default name for the header row. The default name becomes the name of the property of the object that **Import-Csv** returns.
+
+The first command uses the Get-Content cmdlet to get the Projects.csv file on the "Server02" remote computer. The output shows that the header row of the file is missing a value between "ProjectName" and "Completed."
 
 The second command uses the **Import-Csv** cmdlet to import the Projects.csv file.
 
-The output shows that **Import-Csv** generates a warning and substitutes a default name, H1, for the missing header row value.
-H1 is also used for the name of the object property.
+The output shows that **Import-Csv** generates a warning and substitutes a default name, "H1", for the missing header row value.
+"H1" is also used for the name of the object property.
 
-The third command uses the dot method to get the value of the H1 property of the object that **Import-Csv** creates.
+The third command uses the dot method to get the value of the "H1" property of the object that **Import-Csv** creates.
 
 ## PARAMETERS
 
 ### -Delimiter
 Specifies the delimiter that separates the property values in the CSV file.
+
 The default is a comma (,).
+
 Enter a character, such as a colon (:).
+
 To specify a semicolon (;), enclose it in quotation marks.
 
 If you specify a character other than the actual string delimiter in the file, **Import-Csv** cannot create objects from the CSV strings.
@@ -266,6 +278,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 Specifies the type of character encoding that was used in the CSV file.
+
 The acceptable values for this parameter are:
 
 - Unicode
@@ -295,17 +308,19 @@ Accept wildcard characters: False
 ```
 
 ### -Header
-Specifies an alternate column header row for the imported file.
-The column header determines the names of the properties of the object that **Import-Csv** creates.
+Specifies an alternate column header row for the imported file. The column header determines the names of the properties of the object that **Import-Csv** creates.
 
 Enter a comma-separated list of the column headers.
+
 Enclose each item in quotation marks (single or double).
+
 Do not enclose the header string in quotation marks.
+
 If you enter fewer column headers than there are columns, the remaining columns will have no header.
+
 If you enter more headers than there are columns, the extra headers are ignored.
 
-When using the *Header* parameter, delete the original header row from the CSV file.
-Otherwise, **Import-Csv** creates an extra object from the items in the header row.
+When using the *Header* parameter, delete the original header row from the CSV file. Otherwise, **Import-Csv** creates an extra object from the items in the header row.
 
 ```yaml
 Type: String[]
@@ -319,35 +334,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-If you specify a character other than the actual string delimiter in the file, Import-Csv cannot create objects from the CSV strings. Instead, it returns the strings.```yaml
-Type: ActionPreference
+### -LiteralPath
+Specifies the path to the CSV file to import.
+
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed. No characters are interpreted as wildcards.
+
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
 Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
+Aliases: PSPath
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-If you specify a character other than the actual string delimiter in the file, Import-Csv cannot create objects from the CSV strings. Instead, it returns the strings.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Path
 Specifies the path to the CSV file to import.
+
 You can also pipe a path to **Import-Csv**.
 
 ```yaml
@@ -364,11 +372,10 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Indicates that this cmdlet uses the list separator for the current culture as the item delimiter.
-The default is a comma (,).
+
+The default is based on the culture settings of the Operating System (e.g. en-US culture will return a comma (,) by default).
 
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
-If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-Csv cannot create objects from the CSV strings.
-Instead, it returns the strings.
 
 ```yaml
 Type: SwitchParameter
@@ -379,25 +386,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the path to the CSV file to import.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: PSPath
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -415,10 +403,10 @@ You can pipe a string that contains a path to **Import-Csv**.
 This cmdlet returns the objects described by the content in the CSV file.
 
 ## NOTES
-* Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the Windows PowerShell type formatting entries that format the non-CSV versions of the object type.
-* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the **Count** property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
+* Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the PowerShell type formatting entries that format the non-CSV versions of the object type.
+* The result of an **Import-Csv** command is a collection of strings that form a table-like custom object. Each row is a separate string, so you can use the *Count* property of the object to count the table rows. The columns are the properties of the object and items in the rows are the property values.
 * The column header row determines the number of columns and the column names. The column names are also the names of the properties of the objects. The first row is interpreted to be the column headers, unless you use the *Header* parameter to specify column headers. If any row has more values than the header row, the additional values are ignored.
-* If the column header row is missing a value or contains a null or empty value, **Import-Csv** uses H followed by a number for the missing column header and property name.
+* If the column header row is missing a value or contains a null or empty value, **Import-Csv** uses "H" followed by a number for the missing column header and property name.
 * In the CSV file, each object is represented by a comma-separated list of the property values of the object. The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value. Export-Csv does not export the methods of the object.
 
 ## RELATED LINKS
@@ -429,3 +417,4 @@ This cmdlet returns the objects described by the content in the CSV file.
 
 [Export-Csv](Export-Csv.md)
 
+[Get-Culture](Get-Culture.md)
