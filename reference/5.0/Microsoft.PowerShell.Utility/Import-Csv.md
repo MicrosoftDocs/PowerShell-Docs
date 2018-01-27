@@ -107,7 +107,7 @@ In this example, the command returns a comma.
 ### Example 4: Change property names in an imported object
 ```
 PS C:\> Start-Job -ScriptBlock { Get-Process } | Export-Csv Jobs.csv
-PS C:\> $Header = "MoreData", "StatusMessage", "Location", "Command", "State", "Finished", "InstanceId", "SessionId", "Name", "ChildJobs", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "StateChanged"
+PS C:\> $Header = "State", "MoreData", "StatusMessage", "Location", "Command", "JobState", "Finished", "InstanceId", "Id", "Name", "ChildJobs", "PSBeginTime", "PSEndTime", "PSJobTypeName", "Output", "Error", "Progress", "Verbose", "Debug", "Warning", "Information"
 
 # Delete header from file
 
@@ -118,29 +118,32 @@ PS C:\> $J = Import-Csv Jobs.csv -Header $Header
 PS C:\> $J
 
 
-MoreData      : Running
-StatusMessage : True
-Location      :
-Command       : localhost
-State         : Get-Process
-Finished      : Running
-InstanceId    : System.Threading.ManualResetEvent
-SessionId     : 12bf8fae-4575-4041-a68e-23220b7d486f
-Name          : 3
-ChildJobs     : Job3
-Output        : System.Collections.Generic.List`1[System.Management.Automation.Job]
-Error         : 2018-01-25 3:17:34 PM
-Progress      :
-Verbose       : BackgroundJob
-Debug         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
-Warning       : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
-StateChanged  : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
+State         : Running
+MoreData      : True
+StatusMessage :
+Location      : localhost
+Command       :  Get-Process
+JobState      : Running
+Finished      : System.Threading.ManualResetEvent
+InstanceId    : e6e44f34-c91d-46a6-ad17-ecbdb490a009
+Id            : 1
+Name          : Jobs
+ChildJobs     : System.Collections.Generic.List`1[System.Management.Automation.Job]
+PSBeginTime   : 2018-01-27 11:05:00 AM
+PSEndTime     :d
+PSJobTypeName : BackgroundJob
+Output        : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
+Error         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
+Progress      : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
+Verbose       : System.Management.Automation.PSDataCollection`1[System.Management.Automation.VerboseRecord]
+Debug         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.DebugRecord]
+Warning       : System.Management.Automation.PSDataCollection`1[System.Management.Automation.WarningRecord]
+Information   : System.Management.Automation.PSDataCollection`1[System.Management.Automation.InformationRecord]
 ```
 
 This example shows how to use the *Header* parameter of **Import-Csv** to change the names of properties in the resulting imported object.
 
-The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer.
-A pipeline operator (|) sends the resulting job object to the Export-Csv cmdlet, which converts the job object to CSV format.
+The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer. A pipeline operator (|) sends the resulting job object to the Export-Csv cmdlet, which converts the job object to CSV format.
 
 The second command saves a header in the $Header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
 
@@ -148,7 +151,7 @@ The next three commands delete the original header (the second line) from the Jo
 
 The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the *Header* parameter to submit the alternate header. The results are stored in the $J variable.
 
-The seventh command displays the object in the $J variable. The resulting object has MoreData and State properties, as shown in the command output.
+The seventh command displays the object in the $J variable. The resulting object has "MoreData" and "StateInfo" properties, as shown in the command output.
 
 ### Example 5: Create a custom object using a CSV file
 ```
