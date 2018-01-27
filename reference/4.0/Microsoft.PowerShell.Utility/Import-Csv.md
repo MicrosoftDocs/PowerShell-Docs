@@ -316,9 +316,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the path to the CSV file to import.
+
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed. No characters are interpreted as wildcards.
+
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: PSPath
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies the path to the CSV file to import.
-You can also pipe a path to Import-Csv.
+
+You can also pipe a path to **Import-Csv**.
 
 ```yaml
 Type: String[]
@@ -334,9 +354,11 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Use the list separator for the current culture as the item delimiter.
-The default is a comma (,).
 
-To find the list separator for a culture, use the following command: (Get-Culture).TextInfo.ListSeparator.
+The default is based on the culture settings of the Operating System (e.g. en-US culture will ret
+
+To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
+
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-CSV cannot create objects from the CSV strings.
 Instead, it returns the strings.
 
@@ -349,25 +371,6 @@ Required: True
 Position: Named
 Default value: "," (Comma)
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the path to the CSV file to import.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: PSPath
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
