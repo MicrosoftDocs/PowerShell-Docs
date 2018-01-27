@@ -156,17 +156,13 @@ This example shows how to use the *Header* parameter of **Import-Csv** to change
 The first command uses the Start-Job cmdlet to start a background job that runs a Get-Process command on the local computer.
 A pipeline operator (|) sends the resulting job object to the Export-Csv cmdlet, which converts the job object to CSV format.
 
-The second command saves a header in the $Header variable.
-Unlike the default header, this header uses MoreData instead of HasMoreData and State instead of JobStateInfo.
+The second command saves a header in the $Header variable. Unlike the default header, this header uses "MoreData" instead of "HasMoreData" and "State" instead of "JobStateInfo".
 
 The next three commands delete the original header (the second line) from the Jobs.csv file.
 
-The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object.
-The command uses the *Header* parameter to submit the alternate header.
-The results are stored in the $J variable.
+The sixth command uses the **Import-Csv** cmdlet to import the Jobs.csv file and convert the CSV strings into a CSV version of the job object. The command uses the *Header* parameter to submit the alternate header. The results are stored in the $J variable.
 
-The seventh command displays the object in the $J variable.
-The resulting object has MoreData and State properties, as shown in the command output.
+The seventh command displays the object in the $J variable. The resulting object has MoreData and State properties, as shown in the command output.
 
 ### Example 5: Create a custom object using a CSV file
 ```
