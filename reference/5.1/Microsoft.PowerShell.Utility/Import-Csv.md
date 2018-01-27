@@ -88,19 +88,20 @@ To display the objects, use the formatting cmdlets, such as Format-Table and For
 
 ### Example 2: Specify the delimiter
 ```
-PS C:\> Get-Process | Export-Csv processes.csv -Delimiter :
-PS C:\> $P = Import-Csv processes.csv -Delimiter :
+PS C:\> Get-Process | Export-Csv Processes.csv -Delimiter :
+PS C:\> $P = Import-Csv Processes.csv -Delimiter :
 ```
 
 This example shows how to use the *Delimiter* parameter of the **Import-Csv** cmdlet.
+
 In this example, the processes are exported to a file that uses a colon (:) as a delimiter.
 
 When importing, the **Import-Csv** file uses the *Delimiter* parameter to indicate the delimiter that is used in the file.
 
 ### Example 3: Specify the current culture for the delimiter
 ```
-PS C:\> Get-Process | Export-Csv processes.csv -UseCulture
-PS C:\> $P = Import-Csv processes.csv -UseCulture
+PS C:\> Get-Process | Export-Csv Processes.csv -UseCulture
+PS C:\> $P = Import-Csv Processes.csv -UseCulture
 PS C:\> (Get-Culture).TextInfo.ListSeparator
 ,
 ```
