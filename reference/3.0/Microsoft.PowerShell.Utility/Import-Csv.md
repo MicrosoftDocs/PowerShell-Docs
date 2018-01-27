@@ -304,17 +304,19 @@ Accept wildcard characters: False
 ```
 
 ### -Header
-Specifies an alternate column header row for the imported file.
-The column header determines the names of the properties of the object that Import-Csv creates.
+Specifies an alternate column header row for the imported file. The column header determines the names of the properties of the object that **Import-Csv** creates.
 
 Enter a comma-separated list of the column headers.
+
 Enclose each item in quotation marks (single or double).
+
 Do not enclose the header string in quotation marks.
+
 If you enter fewer column headers than there are columns, the remaining columns will have no header.
+
 If you enter more headers than there are columns, the extra headers are ignored.
 
-When using the *Header* parameter, delete the original header row from the CSV file.
-Otherwise, Import-Csv creates an extra object from the items in the header row.
+When using the *Header* parameter, delete the original header row from the CSV file. Otherwise, **Import-Csv** creates an extra object from the items in the header row.
 
 ```yaml
 Type: String[]
