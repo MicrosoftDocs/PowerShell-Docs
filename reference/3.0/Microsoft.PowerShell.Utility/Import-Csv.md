@@ -330,9 +330,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the path to the CSV file to import.
+
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed. No characters are interpreted as wildcards.
+
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: PSPath
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies the path to the CSV file to import.
-You can also pipe a path to Import-Csv.
+
+You can also pipe a path to **Import-Csv**.
 
 ```yaml
 Type: String[]
@@ -363,25 +383,6 @@ Required: True
 Position: Named
 Default value: "," (Comma)
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the path to the CSV file to import.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: PSPath
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
