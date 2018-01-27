@@ -330,11 +330,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the path to the CSV file to import.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
 
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed. No characters are interpreted as wildcards.
+
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -350,6 +349,7 @@ Accept wildcard characters: False
 
 ### -Path
 Specifies the path to the CSV file to import.
+
 You can also pipe a path to **Import-Csv**.
 
 ```yaml
@@ -366,9 +366,11 @@ Accept wildcard characters: False
 
 ### -UseCulture
 Indicates that this cmdlet uses the list separator for the current culture as the item delimiter.
+
 The default is based on the culture settings of the Operating System (e.g. en-US culture will return a comma (,) by default).
 
 To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
+
 If you specify a character other than the delimiter used in the CSV strings, ConvertFrom-Csv cannot create objects from the CSV strings.
 Instead, it returns the strings.
 
