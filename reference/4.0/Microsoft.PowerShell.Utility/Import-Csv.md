@@ -44,8 +44,8 @@ In previous versions of Windows PowerShell, if a header row entry in a CSV file 
 
 ### Example 1
 ```
-PS C:\> Get-Process | Export-Csv processes.csv
-PS C:\> $P = Import-Csv processes.csv
+PS C:\> Get-Process | Export-Csv Processes.csv
+PS C:\> $P = Import-Csv Processes.csv
 PS C:\> $P | Get-Member
 TypeName: CSV:System.Diagnostics.Process
 Name                       MemberType   Definition
