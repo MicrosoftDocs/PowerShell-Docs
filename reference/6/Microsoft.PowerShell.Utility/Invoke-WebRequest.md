@@ -23,7 +23,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Method <WebRequestMethod>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
  [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [-SslProtocol <WebSslProtocol>]
 ```
 
 ## DESCRIPTION
@@ -187,12 +187,12 @@ Available Authentication Options:
 - `OAuth`: Requires `-Token`. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for `Bearer`
 
 Supplying `-Authentication` will override any `Authorization` headers supplied to `-Headers` or included in `-WebSession`.
- 
+
 
 ```yaml
 Type: WebAuthenticationType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Basic, Bearer, OAuth
 
 Required: False
@@ -249,8 +249,10 @@ Accept wildcard characters: False
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
-To find a certificate, use Get-PfxCertificate or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
+To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate (`Cert:`) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
+
+> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
 
 ```yaml
 Type: X509Certificate
@@ -632,6 +634,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SslProtocol
+Sets the SSL/TLS protocols that are permissible for the web request. By default all, SSL/TLS protocols supported by the system are allowed. **-SslProtocol** allows for limiting to specific protocols for compliance purposes.
+
+**-SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
+
+> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
+
+```yaml
+Type: WebSslProtocol
+Parameter Sets: (All)
+Aliases:
+Accepted values: Default, Tls, Tls11, Tls12
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TimeoutSec
 Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
@@ -653,7 +675,7 @@ Accept wildcard characters: False
 ```
 
 ### -Token
-The OAuth or Bearer token to include in the request. `-Token` is required by certain `-Authentication` options. It cannot be used independently. 
+The OAuth or Bearer token to include in the request. `-Token` is required by certain `-Authentication` options. It cannot be used independently.
 
 `-Token` takes a `SecureString` containing the token. To supply the token manually use the following:
 
@@ -664,7 +686,7 @@ Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureStr
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
