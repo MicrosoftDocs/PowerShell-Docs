@@ -441,7 +441,7 @@ This method works only for classes that have a null constructor, that is, a
 constructor that has no parameters. The object properties must be public and
 settable.
 
-For more information, see [about_Object_Creation(about_Object_Creation.md)].
+For more information, see [about_Object_Creation](about_Object_Creation.md).
 
 ### ConvertFrom-StringData
 
