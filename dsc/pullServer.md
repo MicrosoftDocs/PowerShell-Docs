@@ -4,7 +4,6 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
 ---
-
 # Desired State Configuration Pull Service
 
 > Applies To: Windows PowerShell 5.0
