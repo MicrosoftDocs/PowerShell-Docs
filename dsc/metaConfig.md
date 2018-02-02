@@ -4,7 +4,6 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
 ---
-
 # Configuring the Local Configuration Manager
 
 > Applies To: Windows PowerShell 5.0
