@@ -35,7 +35,7 @@ This command displays the contents of the clipboard to the command-line.
 ### Example 2: Get the content of the clipboard and display it to the command-line
 ```
 PS C:\> Get-Clipboard
-http://upload.wikimedia.org/wikipedia/en/7/7f/Windows_PowerShell_icon.png
+https://en.wikipedia.org/wiki/PowerShell
 ```
 
 This command displays the link, as a URL, of the image that is stored in the clipboard.

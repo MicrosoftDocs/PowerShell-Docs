@@ -22,7 +22,7 @@ TRUE otherwise.
 
 The -as operator tries to convert the input object to the specified .NET
 Framework type. If it succeeds, it returns the converted object. It if
-fails, it returns nothing. It does not return an error.
+fails, it returns \$null. It does not return an error.
 
 The following table lists the type operators in  Windows PowerShell.
 
@@ -57,11 +57,18 @@ example, to specify System.Diagnostics.Process, enter
 [System.Diagnostics.Process], [Diagnostics.Process], or
 "diagnostics.process".
 
-The type operators always return a Boolean value, even if the input is a
-collection of objects. However, when the input is a collection, the type
-operators match the .NET Framework type of the collection. They do not
-match the type of each object, even when all of the objects are of the same
-type.
+The Boolean type operators (-is and -isNot) always return a Boolean value,
+even if the input is a collection of objects. The type operators always
+operate on the input object as a whole. That is, if the input object is a
+collection, it is the _collection_ type that is tested, not the types of the
+collection's _elements_.
+
+If the \<input> is a type that is _derived_ from the \[.NET Type\], `-is`
+returns`$True`. If the \<input> is a type that is _derived_ from the \[.NET
+Type\] `-as` converts the input to the target type. For
+example, `(Get-Item /) -is [System.IO.FileSystemInfo]` returns `$True`,
+because the type of the input, `[System.IO.DirectoryInfo]`, is _derived_ from
+the `[System.IO.FileSystemInfo]`.
 
 To find the .NET Framework type of an object, use the Get-Member cmdlet.
 Or, use the GetType method of all the objects together with the FullName
