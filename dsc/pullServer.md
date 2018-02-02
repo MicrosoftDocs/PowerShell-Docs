@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  2018-02-02
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
@@ -73,7 +73,7 @@ The best way to configure Windows Server to host pull service
 is to use a DSC configuration.
 An example script is provided below.
 
-## Using the xDSCWebService resource
+### Using the xDSCWebService resource
 
 The easiest way to set up a web pull server is to use the xWebService resource,
 included in the xPSDesiredStateConfiguration module.
@@ -152,7 +152,7 @@ in a configuration that sets up the web service.
 
 ```
 
-## Registration Key
+#### Registration Key
 
 To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key which was created by the above configuration is saved in a file named `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. The registration key functions as a shared secret used during the initial registration by the client with the pull server. The client will generate a self-signed certificate which is used to uniquely authenticate to the pull server once registration is successfully completed. The thumbprint of this certificate is stored locally and associated with the URL of the pull server.
 > **Note**: Registration keys are not supported in PowerShell 4.0. 
@@ -251,7 +251,7 @@ in the **ConfigurationPath** folder.
 
 >**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.
 
-## Tooling
+### Tooling
 
 In order to make setting up, validating and managing the pull server easier,
 the following tools are included as examples
@@ -269,6 +269,17 @@ in the latest version of the xPSDesiredStateConfiguration module:
     ```
 
 1. A script that validates the pull server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+
+## Community Solutions for Pull Service
+
+The DSC community has authored multiple solutions to implement
+the pull service protocol.
+For on-premises environments these offer pull service capabilities
+and an opportunity to contribute back to the community
+with incremental enhancements.
+
+- [Tug](https://github.com/powershellorg/tug)
+- [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
 
 ## Pull client configuration
 
