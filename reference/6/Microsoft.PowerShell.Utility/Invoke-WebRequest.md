@@ -84,7 +84,7 @@ $ProfileResponse = Invoke-WebRequest 'http://www.contoso.com/profile/' -WebSessi
 $ProfileResponse
 ```
 
-This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service. T
+This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service.
 
 The first call to `Invoke-WebRequest` sends a sign-in request. The command specifies a value of "Session" for the value of the **-SessionVariable** parameter, and saves the result in the `$LoginResponse` variable. When the command completes, the `$LoginResponse` variable contains an `BasicHtmlWebResponseObject` and the `$Session` variable contains a `WebRequestSession` object. This logs the user into the site.
 
@@ -126,7 +126,7 @@ The final few commands write the **Content** property to the file then disposes 
 
 Note that the **Encoding** property will be null if the web request does not return text content.
 
-### Example 3: Submit a multipart/form-data file
+### Example 4: Submit a multipart/form-data file
 ```powershell
 $FilePath = 'c:\document.txt'
 $FieldName = 'document'
