@@ -234,7 +234,6 @@ This cmdlet returns a string that contains a confirmation message and the path t
   To record an entire session, add the `Start-Transcript` command to your profile.
 For more information, see about_Profiles.
 
-*
 
 ## RELATED LINKS
 

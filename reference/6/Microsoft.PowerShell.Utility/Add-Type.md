@@ -161,9 +161,15 @@ The command uses the *PassThru* parameter to generate objects that represent the
 ```
 PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
 PS C:\> [VBFromFile]::SayHello(", World")
+
 # From Hello.vb
 
-Public Class VBFromFilePublic Shared Function SayHello(sourceName As String) As String Dim myValue As String = "Hello" return myValue + sourceName End Function End Class
+Public Class VBFromFile
+  Public Shared Function SayHello(sourceName As String) As String
+    Dim myValue As String = "Hello"
+    return myValue + sourceName
+  End Function
+End Class
 
 Hello, World
 ```
