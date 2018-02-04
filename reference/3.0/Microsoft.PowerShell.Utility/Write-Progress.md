@@ -29,19 +29,30 @@ You can select the indicators that the bar reflects and the text that appears ab
 
 ### Example 1: Display the progress of a For loop
 ```powershell
-PS C:\> for ($I = 1; $I -le 100; $I++ )
-{Write-Progress -Activity "Search in Progress" -Status "$I% Complete:" -PercentComplete $I;}
+for ($i = 1; $i -le 100; $i++ )
+{
+    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i;
+}
 ```
 
-This command displays the progress of a For loop that counts from 1 to 100.
+This command displays the progress of a for loop that counts from 1 to 100.
 The `Write-Progress` command includes a status bar heading ("activity"), a status line, and the variable $I (the counter in the For loop), which indicates the relative completeness of the task.
 
 ### Example 2: Display the progress of nested For loops
 ```powershell
-PS C:\> for($I = 1; $I -lt 101; $I++ )
-{Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop; `
-PS C:\> for($j = 1; $j -lt 101; $j++ )
-{Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop} }
+for($i = 1; $i -lt 101; $i++)
+{
+    Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $i -CurrentOperation OuterLoop;
+    for($j = 1; $j -lt 101; $j++)
+    {
+        Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop
+    } 
+}
+```
+
+You should see the following output:
+
+```
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
@@ -52,18 +63,27 @@ Progress
 InnerLoop
 ```
 
-This example displays the progress of two nested For loops, each of which is represented by a progress bar.
+This example displays the progress of two nested for loops, each of which is represented by a progress bar.
 
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that distinguishes it from the first progress bar.
 Without the **Id** parameter, the progress bars would be superimposed on each other instead of being displayed one below the other.
 
 ### Example 3: Display the progress while searching for a string
 ```powershell
-PS C:\> $Events = Get-EventLog -logname system
-PS C:\> $Events | foreach-object -begin {clear-host;$I=0;$out=""} `
--process {if($_.message -like "*bios*") {$out=$out + $_.Message}; $I = $I+1;
-Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete ($I/$Events.count*100)} `
--end {$out}
+$Events = Get-EventLog -logname system
+$Events | ForEach-Object `
+    -Begin {clear-host; $i=0; $out=""} `
+    -Process {
+        if ($_.message -like "*bios*") 
+        {
+            $out = $out + $_.Message
+        };
+
+        $i = $i + 1;
+    
+        Write-Progress -Activity "Searching Events" -Status "Progress:" -PercentComplete ($i / $Events.count*100)
+    } `
+    -End { $out }
 ```
 
 This command displays the progress of a command to find the string "bios" in the System event log.
