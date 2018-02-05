@@ -8,8 +8,7 @@ title:  Configuring the Local Configuration Manager in Previous Versions of Wind
 
 >Applies To: Windows PowerShell 4.0
 
-**For information related to Windows PowerShell 5.0 and later,
-see [Configuring the Local Configuration Manager](metaConfig.md).**
+**For information related to Windows PowerShell 5.0 and later, see [Configuring the Local Configuration Manager](metaConfig.md).**
 
 Local Configuration Manager is the Windows PowerShell Desired State Configuration (DSC) engine.
 It runs on all target nodes,
