@@ -4,7 +4,6 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
 ---
-
 # Configuring the Local Configuration Manager
 
 > Applies To: Windows PowerShell 5.0
@@ -22,9 +21,10 @@ It is also responsible for a number of other aspects of DSC, including the follo
 You use a special type of configuration to configure the LCM to specify each of these behaviors.
 The following sections describe how to configure the LCM.
 
-> **Note**: This topic applies to the LCM introduced in Windows PowerShell 5.0.
+Windows PowerShell 5.0 introduced new settings
+for managing Local Configuration Manager.
 For information about configuring the LCM in Windows PowerShell 4.0,
-see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaconfig4.md).
+see [Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell](metaconfig4.md).
 
 ## Writing and enacting an LCM configuration
 
@@ -94,47 +94,14 @@ The following properties are available in a **Settings** block.
 
 ## Pull service
 
-DSC settings allow a node to be managed by pulling configurations and modules,
-and publishing reporting data, to a remote location.
-The current options for pull service include:
-
-- Azure Automation Desired State Configuration service
-- A pull service instance running on Windows Server
-- An SMB share (does not support publishing reporting data)
-
 LCM configuration supports defining the following types of pull service endpoints:
 
 - **Configuration server**: A repository for DSC configurations. Define configuration servers by using **ConfigurationRepositoryWeb** (for web-based servers) and **ConfigurationRepositoryShare** (for SMB-based servers) blocks.
 - **Resource server**: A repository for DSC resources, packaged as PowerShell modules. Define resource servers by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
 - **Report server**: A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
 
-**The recommended solution**, and the option with the most features available,
-is [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-The Azure service can manage nodes on-premises in private datacenters,
-or in public clouds such as Azure and AWS.
-For private environments where servers cannot directly connect to the Internet,
-consider limiting outbound traffic to only the published Azure IP range
-(see [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Features of the online service that are not currently available in the pull service on Windows Server include:
-- All data is encrypted in transit and at rest
-- Client certificates are created and managed automatically
-- Secrets store for centrally managing [passwords/credentials](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), or [variables](https://docs.microsoft.com/en-us/azure/automation/automation-variables) such as server names or connection strings
-- Centrally manage node [LCM configuration](metaConfig.md#basic-settings)
-- Centrally assign configurations to client nodes
-- Release configuration changes to "canary groups" for testing before reaching production
-- Graphical reporting
-  - Status detail at the DSC resource level of granularity
-  - Verbose error messages from client machines for troubleshooting
-- [Integration with Azure Log Analytics](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) for alerting, automated tasks, Android/iOS app for reporting and alerting
-
-Alternatively, for information about
-setting up and using HTTP pull service on Windows Server,
-see [Setting up a DSC pull server](pullServer.md).
-Please be advised that it is a limited implementation with only basic
-capabilities of storing configurations/modules and capturing report data
-in to a local database.
+For more details on pull service see,
+[Desired State Configuration Pull Service](pullServer.md).
 
 ## Configuration server blocks
 
