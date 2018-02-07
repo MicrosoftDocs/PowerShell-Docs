@@ -6,64 +6,56 @@ title:  PowerShell Scripting
 
 # PowerShell
 
-Built on the .NET Framework,
-Windows PowerShell is a task-based command-line shell and scripting language;
-it is designed specifically for system administrators and power-users,
-to rapidly automate the administration of multiple operating systems
-(Linux, macOS, Unix, and Windows)
-and the processes related to the applications that run on those operating systems.
+Built on the .NET Framework, PowerShell is a task-based command-line shell and scripting language;
+it is designed specifically for system administrators and power-users, to rapidly automate the
+administration of multiple operating systems (Linux, macOS, Unix, and Windows) and the processes
+related to the applications that run on those operating systems.
 
-### PowerShell is now open source
+## PowerShell is open source
 
 PowerShell base source code is now available in GitHub and open to community
-contributions, see [PowerShell](https://github.com/powershell/powershell).
+contributions. See [PowerShell source on GitHub](https://github.com/powershell/powershell).
 
 You can start with the bits you need at [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
 Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
-> **Note:**  
-> All links about PowerShell in GitHub will take you to GitHub.
+## PowerShell design goals
+Windows PowerShell is designed to improve the command-line and scripting environment by eliminating long-standing problems and adding new features.
 
-# Documentation
+### Discoverability
+Windows PowerShell makes it easy to discover its features. For example, to find a list of cmdlets that view and change Windows services, type:
 
-The documentation collection is organized around 4 main sections:
+```
+Get-Command *-Service
+```
 
-## [What's new with PowerShell](whats-new/What-s-New-With-PowerShell.md)
-In this section you'll find all announcements about the product (version by
-version and release by release).
+After discovering which cmdlet accomplishes a task, you can learn more about the cmdlet by using the Get-Help cmdlet. For example, to display help about the Get-Service cmdlet, type:
 
-## [PowerShell Setup](setup/setup-reference.md)
-In this section you'll find all you need to know to install all
-versions of PowerShell, in all supported environments.  
+```
+Get-Help Get-Service
+```
+Most cmdlets emit objects which can be manipulated and then rendered into text for display. To fully understand the output of that cmdlet, pipe its output to the Get-Member cmdlet. For example, the following command displays information about the members of the object output by the Get-Service cmdlet.
 
-You will also find how to configure for: security, accessibility, remote access
-and management, workflows, and web access.
+```
+Get-Service | Get-Member
+```
 
-## [Getting started with PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
-This section is for users new to PowerShell to get all the information needed
-to start using the product.  
-In this section:
-- The [Getting Ready to Use Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)
-that explains the necessary steps needed to setup PowerShell to execute and try
-all code and command snippets presented in the 'Getting Started with PowerShell'
-section.
-- The [fundamental concepts](getting-started/fundamental-concepts.md) guide that
-explains what is PowerShell and the basic concepts needed to start using it.
-- A series of '[understanding &lt;concept&gt;](getting-started/understanding-concepts-reference.md)' topics
-that cover the basics of PowerShell.
-- A series of '[basic cookbook for &lt;usage&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)'
-topics that provide recipes to execute standard tasks around files, file system,
-registry, processes, services, and similar day-to-day subjects.
-- A curated guide to other sources for
-[learning PowerShell](getting-started/more-powershell-learning.md).
+### Consistency
+Managing systems can be a complex endeavor and tools that have a consistent interface help to control the inherent complexity. Unfortunately, neither command-line tools nor scriptable COM objects have been known for their consistency.
 
-## [Common PowerShell](core-powershell/core-powershell.md)
-This section contains all reference material PowerShell.  
-Find in this section:
-- The [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
-- The [PowerShell Console Window](core-powershell/console-guide.md)
-- The [PowerShell Remote Management](core-powershell/Running-Remote-Commands.md)
-- The [PowerShell Workflows](core-powershell/workflows-guide.md)
-- The [PowerShell Web Access](core-powershell/web-access.md)
-- The [PowerShell Glossary](Windows-PowerShell-Glossary.md)
+The consistency of Windows PowerShell is one of its primary assets. For example, if you learn how to use the Sort-Object cmdlet, you can use that knowledge to sort the output of any cmdlet. You do not have to learn the different sorting routines of each cmdlet.
 
+In addition, cmdlet developers do not have to design sorting features for their cmdlets. Windows PowerShell gives them a framework that provides the basic features and forces them to be consistent about many aspects of the interface. The framework eliminates some of the choices that are typically left to the developer, but, in return, it makes the development of robust and easy-to-use cmdlets much simpler.
+
+### Interactive and Scripting Environments
+Windows PowerShell is a combined interactive and scripting environment that gives you access to command-line tools and COM objects, and also enables you to use the power of the .NET Framework Class Library (FCL).
+
+This environment improves upon the Windows Command Prompt, which provides an interactive environment with multiple command-line tools. It also improves upon Windows Script Host (WSH) scripts, which let you use multiple command-line tools and COM automation objects, but do not provide an interactive environment.
+
+By combining access to all of these features, Windows PowerShell extends the ability of the interactive user and the script writer, and makes system administration more manageable.
+
+### Object Orientation
+Although you interact with Windows PowerShell by typing commands in text, Windows PowerShell is based on objects, not text. The output of a command is an object. You can send the output object to another command as its input. As a result, Windows PowerShell provides a familiar interface to people experienced with other shells, while introducing a new and powerful command-line paradigm. It extends the concept of sending data between commands by enabling you to send objects, rather than text.
+
+### Easy Transition to Scripting
+Windows PowerShell makes it easy to transition from typing commands interactively to creating and running scripts. You can type commands at the Windows PowerShell command prompt to discover the commands that perform a task. Then, you can save those commands in a transcript or a history before copying them to a file for use as a script.
