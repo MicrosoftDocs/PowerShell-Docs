@@ -32,7 +32,8 @@ collection of useful snippets is included in the box and you can more by using t
 cmdlet.
 
 **Add-on tools** that add features to the ISE can be created by writing code that interacts with
-the [The Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md).
+the [The Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+
 These tools can display controls in a tabbed pane or work invisibly in the background. The
 **Commands** add-on is a good example and is included with version 3.0 and later that displays a
 list of the available commands and their Help.
@@ -98,5 +99,4 @@ can upgrade to the latest available by installing the Windows Management Framewo
 
 ## See also
 
-[Using the Windows PowerShell Integrated Scripting Environment](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
+[Purpose of the windows power shell ise scripting object model](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

@@ -60,5 +60,3 @@ You can use the scripting object model to create keyboard shortcuts for frequent
 
 ## See also
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
