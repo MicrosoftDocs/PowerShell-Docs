@@ -108,7 +108,7 @@
 
 # The DSC pull model
 
-## [Setting up a web pull server](pullServer.md)
+## [DSC Pull Service](pullServer.md)
 
 ## [Setting up a DSC SMB pull server](pullServerSMB.md)
 
