@@ -154,7 +154,7 @@ Switch has the following parameters:
 |             |you use Wildcard, Regex and Exact are ignored. Also, if    |
 |             |the match clause is not a string, the parameter is ignored.|
 |Exact        |Indicates that the match clause, if it is a string, must   |
-|             |match exactly. Regex and Wildcard are ignored.   |
+|             |match exactly. Regex and Wildcard are ignored.             |
 |             |Also, if the match clause is not a string, this parameter  |
 |             |is ignored.                                                |
 |CaseSensitive|Performs a case-sensitive match. If the match clause is not|
