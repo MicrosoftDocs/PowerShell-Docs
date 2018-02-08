@@ -154,7 +154,7 @@ Switch has the following parameters:
 |             |you use Wildcard, Regex and Exact are ignored. Also, if    |
 |             |the match clause is not a string, the parameter is ignored.|
 |Exact        |Indicates that the match clause, if it is a string, must   |
-|             |match exactly. Regex and Wildcard and Exact are ignored.   |
+|             |match exactly. Regex and Wildcard are ignored.   |
 |             |Also, if the match clause is not a string, this parameter  |
 |             |is ignored.                                                |
 |CaseSensitive|Performs a case-sensitive match. If the match clause is not|
@@ -210,8 +210,8 @@ executed. To change this behavior, use the Break or Continue keywords.
 
 The Break keyword stops processing and exits the Switch statement.
 
-The Continue keyword continues processing the current value and any
-subsequent values.
+The Continue keyword stops processing the current value, but continues
+processing any subsequent values.
 
 If the condition is an expression or a script block, it is evaluated just
 before it is compared to the value. The value is assigned to the $_
