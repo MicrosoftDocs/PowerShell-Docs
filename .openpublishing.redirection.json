@@ -16,6 +16,76 @@
       "redirect_document_id": "False"
     },
     {
+      "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
+      "redirect_url": "/powershell/scripting/powershell-scripting",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/core-powershell/ise/using-the-windows-powershell-ise.md",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/core-powershell/ise/ise-module.md",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/core-powershell/ise/windows-powershell-ise-object-model-reference.md",
+      "redirect_url": "/powershell/scripting/core-powershell/ise/the-ise-object-model-hierarchy",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/core-powershell/web-access.md",
+      "redirect_url": "/powershell/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/getting-started/basic-cookbooks.md",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/getting-started/cookbooks/basic-cookbooks-reference.md",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/getting-started/fundamental/about-windows-powershell.md",
+      "redirect_url": "/powershell/scripting/getting-started/getting-started-with-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/getting-started/fundamental/using-windows-powershell.md",
+      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/getting-started/fundamental-concepts.md",
+      "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-windows-powershell-concepts",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/setup/setup-reference.md",
+      "redirect_url": "/powershell/scripting/setup/installing-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/setup/starting-the-32-bit-version-of-windows-powershell.md",
+      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
+      "source_path": "reference/virtual-directory/setup/starting-windows-powershell-on-earlier-versions-of-windows.md",
+      "redirect_url": "/powershell/scripting/setup/starting-windows-powershell",
+      "redirect_document_id": "False"
+    },
+    {
       "source_path": "reference/docs-conceptual/core-powershell/console-guide.md",
       "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
       "redirect_document_id": "False"
