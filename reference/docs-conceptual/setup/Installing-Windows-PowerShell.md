@@ -79,7 +79,7 @@ type PowerShell ISE.
 
 To find which version of PowerShell you have installed,
 start a PowerShell console (or the ISE) and type `$PSVersionTable`
-and press **ENTER**.
+and press **ENTER**. Look for the `PSVersion` value.
 
 ## Upgrading existing Windows PowerShell
 
