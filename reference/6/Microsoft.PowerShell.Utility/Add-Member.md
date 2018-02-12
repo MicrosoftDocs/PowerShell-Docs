@@ -105,7 +105,8 @@ The third command uses dot notation to get the value of the new FileLength prope
 
 ### Example 3: Add a StringUse note property to a string
 ```
-PS C:\> $A = "A string"PS C:\>  $A = $A | Add-Member @{StringUse="Display"} -PassThru
+PS C:\> $A = "A string"
+PS C:\>  $A = $A | Add-Member @{StringUse="Display"} -PassThru
 PS C:\> $A.StringUse
 Display
 ```
