@@ -37,8 +37,9 @@ Because the value of $DebugPreference is SilentlyContinue, the message is not di
 
 ### Example 2: Use the Debug parameter to override $DebugPreference
 ```
-PS C:\> $DebugPreference
-SilentlyContinue PS C:\> Write-Debug "Cannot open file."
+PS C:\> $DebugPreference 
+SilentlyContinue 
+PS C:\> Write-Debug "Cannot open file."
 PS C:\>
 PS C:\> Write-Debug "Cannot open file." -Debug
 DEBUG: Cannot open file.
