@@ -45,16 +45,16 @@ Get-WinEvent [-Path] <String[]> [-MaxEvents <Int64>] [-Credential <PSCredential>
  [-Oldest] [<CommonParameters>]
 ```
 
-### XmlQuerySet
-```
-Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
- [-FilterXml] <XmlDocument> [-Oldest] [<CommonParameters>]
-```
-
 ### HashQuerySet
 ```
 Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
  [-FilterHashtable] <Hashtable[]> [-Force] [-Oldest] [<CommonParameters>]
+```
+
+### XmlQuerySet
+```
+Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
+ [-FilterXml] <XmlDocument> [-Oldest] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,15 +131,15 @@ The command uses the **RecordCount** property of the **EventLogConfiguration** o
 ### Example 4: Get event logs from multiple servers
 ```
 PS C:\> $S = "Server01", "Server02", "Server03"
-PS C:\> ForEach-Object ($Server in $S) {$Server; Get-WinEvent -ListLog "Windows PowerShell" -Computername $Server}
+PS C:\> ForEach ($Server in $S) {$Server; Get-WinEvent -ListLog "Windows PowerShell" -Computername $Server}
 ```
 
 This example gets objects that represent the Windows PowerShell event logs on the Server01, Server02, and Server03 computers.
-This command uses the **ForEach-Object** keyword because the *ComputerName* parameter takes only one value.
+This command uses the **ForEach** keyword because the *ComputerName* parameter takes only one value.
 
 The first command saves the names of the computers in the $S variable.
 
-The second command uses a **ForEach-Object** statement.
+The second command uses a **ForEach** statement.
 For each of the computers in the $S variable, it performs the command in the script block (within the braces).
 First, the command prints the name of the computer.
 Then, it runs a **Get-WinEvent** command to get an object that represents the Windows PowerShell log.
@@ -312,7 +312,6 @@ Type the NetBIOS name, an Internet Protocol (IP) address, or the fully qualified
 The default value is the local computer.
 
 This parameter accepts only one computer name at a time.
-To find event logs or events on multiple computers, use a ForEach-Object statement.
 For more information about this parameter, see the examples.
 
 To get events and event logs from remote computers, the firewall port for the event log service must be configured to allow remote access.
@@ -322,7 +321,7 @@ You can use the *ComputerName* parameter even if your computer is not configured
 
 ```yaml
 Type: String
-Parameter Sets: GetLogSet, ListLogSet, ListProviderSet, GetProviderSet, XmlQuerySet, HashQuerySet
+Parameter Sets: GetLogSet, ListLogSet, ListProviderSet, GetProviderSet, HashQuerySet, XmlQuerySet
 Aliases: Cn
 
 Required: False
@@ -344,7 +343,7 @@ If you type only the parameter name, you will be prompted for both a user name a
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -387,10 +386,10 @@ The valid key-value pairs are as follows:
 ```yaml
 Type: Hashtable[]
 Parameter Sets: HashQuerySet
-Aliases: 
+Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -404,7 +403,7 @@ For more information about the XPath language, see [XPath Reference](https://msd
 ```yaml
 Type: String
 Parameter Sets: GetLogSet, GetProviderSet, FileSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -428,10 +427,10 @@ For more information about the XML schema for event log queries, see [Query Sche
 ```yaml
 Type: XmlDocument
 Parameter Sets: XmlQuerySet
-Aliases: 
+Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -446,11 +445,11 @@ By default, the **Get-WinEvent** cmdlet excludes these logs unless you specify t
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GetLogSet, ListLogSet, GetProviderSet, HashQuerySet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
-Default value: Debugging and analytic logs are not returned in response to queries that use wildcard characters.
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -464,13 +463,13 @@ To get all the logs, enter a value of *.
 ```yaml
 Type: String[]
 Parameter Sets: ListLogSet
-Aliases: 
+Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ListProvider
@@ -484,13 +483,13 @@ To get the providers of all the event logs on the computer, enter a value of *.
 ```yaml
 Type: String[]
 Parameter Sets: ListProviderSet
-Aliases: 
+Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LogName
@@ -502,13 +501,13 @@ You can also pipe log names to the **Get-WinEvent** cmdlet .
 ```yaml
 Type: String[]
 Parameter Sets: GetLogSet
-Aliases: 
+Aliases:
 
 Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -MaxEvents
@@ -518,12 +517,12 @@ The default is to return all the events in the logs or files.
 
 ```yaml
 Type: Int64
-Parameter Sets: GetLogSet, GetProviderSet, FileSet, XmlQuerySet, HashQuerySet
-Aliases: 
+Parameter Sets: GetLogSet, GetProviderSet, FileSet, HashQuerySet, XmlQuerySet
+Aliases:
 
 Required: False
 Position: Named
-Default value: All events
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -537,12 +536,12 @@ In these files, events are recorded in oldest-first order, and the events can be
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: GetLogSet, GetProviderSet, FileSet, XmlQuerySet, HashQuerySet
-Aliases: 
+Parameter Sets: GetLogSet, GetProviderSet, FileSet, HashQuerySet, XmlQuerySet
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -560,10 +559,10 @@ Parameter Sets: FileSet
 Aliases: PSPath
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ProviderName
@@ -576,13 +575,13 @@ It is not a Windows PowerShell provider.
 ```yaml
 Type: String[]
 Parameter Sets: GetProviderSet
-Aliases: 
+Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
@@ -596,8 +595,8 @@ You can pipe a *LogName* (string), a **FilterXML** query, or a **FilterHashTable
 ## OUTPUTS
 
 ### System.Diagnostics.Eventing.Reader.EventLogConfiguration, System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.Eventing.Reader.ProviderMetadata
-With the *ListLog* parameter, **Get-WinEvent** returns **System.Diagnostics.Eventing.Reader.EventLogConfiguration** objects. 
-With the *ListProvider* parameter, **Get-WinEvent** returns **System.Diagnostics.Eventing.Reader.ProviderMetadata** objects. 
+With the *ListLog* parameter, **Get-WinEvent** returns **System.Diagnostics.Eventing.Reader.EventLogConfiguration** objects.
+With the *ListProvider* parameter, **Get-WinEvent** returns **System.Diagnostics.Eventing.Reader.ProviderMetadata** objects.
 With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventing.Reader.EventLogRecord** objects.
 
 ## NOTES
