@@ -43,7 +43,7 @@ remote variable must be defined in the same PSSession.
 ```powershell
 $s = New-PSSession -ComputerName S1
 Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
-Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $ps}
+Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $ps}
 ```
 
 ## USING LOCAL VARIABLES
@@ -76,7 +76,7 @@ You can also use the Using scope modifier in PSSessions.
 ```powershell
 $s = New-PSSession -ComputerName S1
 $ps = "Windows PowerShell"
-Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
+Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 ```
 
 ## USING LOCAL VARIABLES IN WINDOWS POWERSHELL 2.0
