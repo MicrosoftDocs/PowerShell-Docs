@@ -87,6 +87,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Name
 Specifies the name of the variable to be removed.
 The parameter name (*Name*) is optional.
 
