@@ -16,8 +16,7 @@ Gets information about the specified Windows PowerShell provider.
 ## SYNTAX
 
 ```
-Get-PSProvider [[-PSProvider] <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-PSProvider [[-PSProvider] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,40 +92,13 @@ The Home property value is optional, but for the FileSystem provider, it is defi
 
 ## PARAMETERS
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PSProvider
 Specifies the name or names of the Windows PowerShell providers about which this cmdlet gets information.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

@@ -18,16 +18,15 @@ Starts, stops, and suspends a service, and changes its properties.
 ### Name (Default)
 ```
 Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
 Set-Service [-DisplayName <String>] [-Description <String>]
  [-StartupType <ServiceStartMode>] [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -164,7 +163,7 @@ To see the service description, use Get-WmiObject to get a **Win32_Service** obj
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -188,33 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies a **ServiceController** object that represents the service to change.
 Enter a variable that contains the object, or type a command or expression that gets the object, such as a **Get-Service** command.
@@ -223,7 +195,7 @@ You can also pipe a service object to Set-Service.
 ```yaml
 Type: ServiceController
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -256,7 +228,7 @@ Specifies the credentials under which the service should be run.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -272,7 +244,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +278,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Specifies the status for the service. 
+Specifies the status for the service.
 The acceptable values for this parameter are:
 
 - Running.
@@ -319,7 +291,7 @@ Suspends the service.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Running, Stopped, Paused
 
 Required: False

@@ -17,14 +17,12 @@ Changes the system time on the computer to a time that you specify.
 
 ### Date (Default)
 ```
-Set-Date [-Date] <DateTime> [-DisplayHint <DisplayHintType>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Date [-Date] <DateTime> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Adjust
 ```
-Set-Date [-Adjust] <TimeSpan> [-DisplayHint <DisplayHintType>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Date [-Adjust] <TimeSpan> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +81,7 @@ can type an adjustment in standard date and time format for your locale or use t
 ```yaml
 Type: TimeSpan
 Parameter Sets: Adjust
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -103,7 +101,7 @@ If you specify only a time, it does not change the date.
 ```yaml
 Type: DateTime
 Parameter Sets: Date
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -128,35 +126,8 @@ It does not affect the **DateTime** object that **Get-Date** retrieves.
 ```yaml
 Type: DisplayHintType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Date, Time, DateTime
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
 
 Required: False
 Position: Named

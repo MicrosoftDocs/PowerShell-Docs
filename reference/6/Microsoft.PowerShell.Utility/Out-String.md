@@ -17,14 +17,12 @@ Sends objects to the host as a series of strings.
 
 ### NoNewLineFormatting (Default)
 ```
-Out-String [-NoNewLine] [-Width <Int32>] [-InputObject <PSObject>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Out-String [-NoNewLine] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ### StreamFormatting
 ```
-Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,37 +85,6 @@ It should be noted that `-NoNewLine` does not strip newlines embedded within a s
 
 ## PARAMETERS
 
-### -InformationAction
-
-
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the objects to be written to a string.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -125,7 +92,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +110,7 @@ To use the *Stream* parameter, type `-Stream` or its alias, `ost`.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: StreamFormatting
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +128,7 @@ The default value for the Windows PowerShell console is 80 (characters).
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +143,7 @@ Removes all newlines from formatter generated output. Note that newlines present
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NoNewLineFormatting
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

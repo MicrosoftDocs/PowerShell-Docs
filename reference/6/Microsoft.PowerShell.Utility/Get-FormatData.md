@@ -16,8 +16,7 @@ Gets the formatting data in the current session.
 ## SYNTAX
 
 ```
-Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +53,7 @@ PS C:\> $F
 ```Output
 TypeName        FormatViewDefinition
 --------        --------------------
-HelpInfoShort   {help , TableControl} 
+HelpInfoShort   {help , TableControl}
 ```
 ```powershell
 PS C:\> $F.FormatViewDefinition[0].control
@@ -157,37 +156,10 @@ TypeNames                               FormatViewDefinition
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 ```
 
-This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a 
+This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a
 specified PowerShell version.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -TypeName
 Specifies the type names that this cmdlet gets for the formatting data.
@@ -197,7 +169,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -213,7 +185,7 @@ Enter a two digit number seperated by a period.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

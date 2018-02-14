@@ -16,8 +16,7 @@ Updates the formatting data in the current session.
 ## SYNTAX
 
 ```
-Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,37 +97,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-When formatting .NET objects, Windows PowerShell uses the first formatting definition that it finds for each .NET type. If you use the AppendPath parameter, Windows PowerShell searches the data from the built-in files before it encounters the formatting data that you are adding.
-
-Use this parameter to add a file that formats a .NET object that is not referenced in the built-in formatting files.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-When formatting .NET objects, Windows PowerShell uses the first formatting definition that it finds for each .NET type. If you use the AppendPath parameter, Windows PowerShell searches the data from the built-in files before it encounters the formatting data that you are adding.
-
-Use this parameter to add a file that formats a .NET object that is not referenced in the built-in formatting files.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PrependPath
 Specifies formatting files that this cmdlet adds to the session.
 The files are loaded before Windows PowerShell loads the built-in formatting files.
@@ -141,7 +109,7 @@ Use this parameter to add a file that formats a .NET object that is also referen
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

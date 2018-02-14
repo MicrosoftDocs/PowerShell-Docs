@@ -17,14 +17,12 @@ Returns unique items from a sorted list.
 
 ### AsString (Default)
 ```
-Get-Unique [-InputObject <PSObject>] [-AsString] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Unique [-InputObject <PSObject>] [-AsString] [<CommonParameters>]
 ```
 
 ### UniqueByType
 ```
-Get-Unique [-InputObject <PSObject>] [-OnType] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,34 +94,7 @@ You can use this parameter to find the unique values of object properties, such 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AsString
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +113,7 @@ Because the collection is a single item, input submitted by using *InputObject* 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +128,7 @@ Indicates that this cmdlet returns only one object of each type.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UniqueByType
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
